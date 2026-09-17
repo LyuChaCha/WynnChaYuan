@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Royal Trials",
   "count": 85,
-  "translated": 0,
+  "translated": 85,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Royal Trials#000": {
    "src": "Speak to Skyraider Guard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 하늘 약탈자 경비병에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -18,7 +18,7 @@
   },
   "Royal Trials#001": {
    "src": "Back off! No'ne enters 'til the pirate queen is chosen. What's a landwalker like you doin' here?",
-   "dst": "",
+   "dst": "물러서! 해적 여왕이 뽑히기 전엔 아무도 못 들어가. 너 같은 뭍사람이 여긴 웬일이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -28,7 +28,7 @@
   },
   "Royal Trials#002": {
    "src": "Participate? Are ye crazy? Ain't no way a landlubber is wearing the crown.",
-   "dst": "",
+   "dst": "참가? 미쳤냐? 뭍놈이 왕관을 쓸 리가 없잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -38,7 +38,7 @@
   },
   "Royal Trials#003": {
    "src": "Off with ya now! Before I call the gals to gut you. And dun' go wandering around chatting to any skyraiders!",
-   "dst": "",
+   "dst": "썩 꺼져! 동료들 불러서 배를 갈라 버리기 전에. 그리고 딴 하늘 약탈자들한테 말 걸고 다니지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -48,7 +48,7 @@
   },
   "Royal Trials#004": {
    "src": "Talk to Hrona at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 Hrona에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -58,7 +58,7 @@
   },
   "Royal Trials#005": {
    "src": "Yer wantin' to be pirate queen, ye? Don' worry, I can help ye.",
-   "dst": "",
+   "dst": "해적 여왕이 되고 싶다고? 걱정 마, 내가 도와주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -68,7 +68,7 @@
   },
   "Royal Trials#006": {
    "src": "Y'see, the other pirates ain't fit for the role. They're dumb 'n weak. All they've got is looks.",
-   "dst": "",
+   "dst": "봐, 다른 해적들은 그 자리에 안 어울려. 멍청하고 약해빠졌지. 얼굴 말곤 가진 게 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -78,7 +78,7 @@
   },
   "Royal Trials#007": {
    "src": "Yer got the lot! Looks and talent.",
-   "dst": "",
+   "dst": "넌 다 가졌잖아! 얼굴도 실력도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -88,7 +88,7 @@
   },
   "Royal Trials#008": {
    "src": "Y'know, the guard, she's dumb too. A simple disguise will fool 'er. Issue is, ye dun' look like a skyraider at all!",
-   "dst": "",
+   "dst": "그 경비병도 멍청하거든. 간단한 변장이면 속아. 문제는, 넌 하늘 약탈자처럼 하나도 안 보인다는 거지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -98,7 +98,7 @@
   },
   "Royal Trials#009": {
    "src": "Yer in luck, though. A skyraider will sell anything for a price - just look around the town and see if ye can persuade anyone to part with their outfit.",
-   "dst": "",
+   "dst": "그래도 운이 좋아. 하늘 약탈자는 값만 맞으면 뭐든 팔거든. 마을을 돌면서 옷을 넘겨줄 사람을 설득해 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -108,7 +108,7 @@
   },
   "Royal Trials#010": {
    "src": "Look around the skyraider town at [{~}, {~}, -{~}] and find a pirate outfit.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 하늘 약탈자 마을을 둘러보고 해적 옷을 구하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -118,7 +118,7 @@
   },
   "Royal Trials#011": {
    "src": "Aye? A landwalker, wanderin' around our base? Whatcha' want?",
-   "dst": "",
+   "dst": "응? 뭍사람이 우리 기지를 돌아다녀? 뭘 원하는데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -128,7 +128,7 @@
   },
   "Royal Trials#012": {
    "src": "My outfit?!",
-   "dst": "",
+   "dst": "내 옷?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -138,7 +138,7 @@
   },
   "Royal Trials#013": {
    "src": "... aye, I suppose I could be tempted to pass it on to ye... for a price.",
-   "dst": "",
+   "dst": "... 흠, 넘겨줄 마음이 생길 수도 있지... 값만 맞으면.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -148,7 +148,7 @@
   },
   "Royal Trials#014": {
    "src": "Here, these are what I'd trade it to ye for.",
-   "dst": "",
+   "dst": "자, 이걸 주면 바꿔 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -158,7 +158,7 @@
   },
   "Royal Trials#015": {
    "src": "If yer thinkin' emeralds... [{~} Emerald Blocks] seems like a fair price, heh.",
-   "dst": "",
+   "dst": "에메랄드로 하겠다면... [에메랄드 블록 {~}개]면 공정한 값이지, 헤.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -168,7 +168,7 @@
   },
   "Royal Trials#016": {
    "src": "Of course, if you're running low on funds, how about ye grab me [{~} Dragonling Eggs] instead? Y'know, the ingredient. I'm 'oping to raise some 'o the lil critters!",
-   "dst": "",
+   "dst": "물론 돈이 모자라면, 대신 [Dragonling 알 {~}개]를 구해 오는 건 어때? 그 재료 말이야. 그 꼬맹이들을 좀 키워 보고 싶거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -178,7 +178,7 @@
   },
   "Royal Trials#017": {
    "src": "But if neither of them tickle ye fancy... I've always wanted [{~} Shiny Shell] - they're just so sparkly! Ye can find them in the cave south-east of here, beside the ladders.",
-   "dst": "",
+   "dst": "둘 다 마음에 안 들면... 난 늘 [{~} Shiny Shell]이 갖고 싶었어. 엄청 반짝이거든! 여기 남동쪽 동굴, 사다리 옆에서 찾을 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -188,7 +188,7 @@
   },
   "Royal Trials#018": {
    "src": "Ye can get me one o' those three, landwalker, and ye can have my outfit!",
-   "dst": "",
+   "dst": "셋 중 하나만 갖다주면, 뭍사람, 내 옷은 네 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -198,7 +198,7 @@
   },
   "Royal Trials#019": {
    "src": "Give an item to Egpla at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 Egpla에게 물건을 주세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -208,7 +208,7 @@
   },
   "Royal Trials#020": {
    "src": "So, landwalker, are ye ready to pay up? I can see emeralds in ye pocket, hand 'em over.",
-   "dst": "",
+   "dst": "그래서, 뭍사람, 낼 준비는 됐어? 주머니에 에메랄드가 보이는데, 내놔.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -218,7 +218,7 @@
   },
   "Royal Trials#021": {
    "src": "Alrigh'! Those're exactly what I've been lookin' for. Give it here, lemme have a look...",
-   "dst": "",
+   "dst": "좋아! 딱 내가 찾던 거야. 이리 줘 봐, 좀 보자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -228,7 +228,7 @@
   },
   "Royal Trials#022": {
    "src": "Aye, landwalker! Is that the sparkle of a shiny shell I spot in ye pocket?! Lemme have a look...",
-   "dst": "",
+   "dst": "오, 뭍사람! 주머니에서 반짝이는 게 Shiny Shell 아니야?! 좀 보자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -238,7 +238,7 @@
   },
   "Royal Trials#023": {
    "src": "Alright, landwalker. Ye can have me outfit. 'ere, lemme just get changed inside.",
-   "dst": "",
+   "dst": "좋아, 뭍사람. 내 옷 가져가. 잠깐, 안에서 갈아입고 올게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -248,7 +248,7 @@
   },
   "Royal Trials#024": {
    "src": "Here ye go, landlubber. I hope ye get some kinda use out of it, whatever ye want it for.",
-   "dst": "",
+   "dst": "여기 있다, 뭍놈. 뭐에 쓰려는진 몰라도 쓸모가 있길 바라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -258,7 +258,7 @@
   },
   "Royal Trials#025": {
    "src": "Enter the trials at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 시련에 참가하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -268,7 +268,7 @@
   },
   "Royal Trials#026": {
    "src": "Another contestant, eh? That outfit looks a bit funny on ye, but I'll let yer in. Hurry up!",
-   "dst": "",
+   "dst": "또 참가자야? 옷이 좀 어색하긴 한데, 들여보내 주지. 서둘러!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -278,7 +278,7 @@
   },
   "Royal Trials#027": {
    "src": "Approach the stage.",
-   "dst": "",
+   "dst": "무대로 다가가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -288,7 +288,7 @@
   },
   "Royal Trials#028": {
    "src": "Ugh! Ye can't be the queen, ye can barely fly an airship!",
-   "dst": "",
+   "dst": "흥! 네가 여왕일 리가 없지, 비행선도 제대로 못 모는 게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -298,7 +298,7 @@
   },
   "Royal Trials#029": {
    "src": "No! I'll be the queen! I'm much more qualified than any of you sky rats!",
-   "dst": "",
+   "dst": "아니! 여왕은 나야! 너희 하늘 쥐새끼들보다 내가 훨씬 자격 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -308,7 +308,7 @@
   },
   "Royal Trials#030": {
    "src": "Listen to the Trials Overseer's speech.",
-   "dst": "",
+   "dst": "시련 감독관의 연설을 들으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -318,7 +318,7 @@
   },
   "Royal Trials#031": {
    "src": "Gather round, ladies. The next Queen is about to be selected!",
-   "dst": "",
+   "dst": "다들 모여라, 아가씨들. 다음 여왕을 뽑을 시간이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -328,7 +328,7 @@
   },
   "Royal Trials#032": {
    "src": "As ye know, our previous queen suffered a... nasty fate, murdered on her very own airship by a Wynn soldier.",
-   "dst": "",
+   "dst": "알다시피 우리 전 여왕은... 험한 꼴을 당했지. 자기 비행선에서 Wynn 병사한테 살해당했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -338,7 +338,7 @@
   },
   "Royal Trials#033": {
    "src": "But in the ashes of her honor, a new queen shall rise! Three trials. That's what ye all face now.",
-   "dst": "",
+   "dst": "하지만 그 명예의 잿더미에서 새 여왕이 일어설 거다! 시련은 셋. 그게 이제 너희가 맞설 상대다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -348,7 +348,7 @@
   },
   "Royal Trials#034": {
    "src": "Only one, who passes all trials laid before her, will pass and gain the title of Skyraider Queen.",
-   "dst": "",
+   "dst": "모든 시련을 통과한 단 한 명만이 하늘 약탈자 여왕의 칭호를 얻는다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -358,7 +358,7 @@
   },
   "Royal Trials#035": {
    "src": "Now, I introduce ye all to the first trial, to test yer capability at a vital skill for queenship - combat!",
-   "dst": "",
+   "dst": "자, 첫 번째 시련을 소개하지. 여왕에게 꼭 필요한 능력을 시험한다. 바로 전투다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -368,7 +368,7 @@
   },
   "Royal Trials#036": {
    "src": "Ladies, you may now Begin!",
-   "dst": "",
+   "dst": "아가씨들, 시작해라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -378,7 +378,7 @@
   },
   "Royal Trials#037": {
    "src": "Defeat the armory room of the combat challenge.",
-   "dst": "",
+   "dst": "전투 시련의 무기고 방을 돌파하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -388,7 +388,7 @@
   },
   "Royal Trials#038": {
    "src": "Defeat the brig room of the combat challenge.",
-   "dst": "",
+   "dst": "전투 시련의 감옥 방을 돌파하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -398,7 +398,7 @@
   },
   "Royal Trials#039": {
    "src": "Defeat the cockpit room of the combat challenge.",
-   "dst": "",
+   "dst": "전투 시련의 조종실 방을 돌파하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -408,7 +408,7 @@
   },
   "Royal Trials#040": {
    "src": "Listen to the trials overseer's speech.",
-   "dst": "",
+   "dst": "시련 감독관의 연설을 들으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -418,7 +418,7 @@
   },
   "Royal Trials#041": {
    "src": "Arr, that weeded out the weak. A queen must be strong to lead.",
-   "dst": "",
+   "dst": "하, 약한 것들은 걸러졌군. 여왕은 강해야 이끌 수 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -428,7 +428,7 @@
   },
   "Royal Trials#042": {
    "src": "Now, to the second challenge - the task of flight! Ye can't be a queen if ye can't fly yer airship!",
-   "dst": "",
+   "dst": "이제 두 번째 시련, 비행이다! 제 비행선도 못 모는 자는 여왕이 될 수 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -438,7 +438,7 @@
   },
   "Royal Trials#043": {
    "src": "Make sure ye bring yer eyes, girls, one false move and death awaits.",
-   "dst": "",
+   "dst": "눈 똑바로 뜨고 가라, 아가씨들. 한 번 실수하면 죽음이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -448,7 +448,7 @@
   },
   "Royal Trials#044": {
    "src": "This task should get rid of the rest of ye unworthy.",
-   "dst": "",
+   "dst": "이번 걸로 남은 자격 미달들은 다 떨어질 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -458,7 +458,7 @@
   },
   "Royal Trials#045": {
    "src": "Defeat the challenge of flight.",
-   "dst": "",
+   "dst": "비행 시련을 돌파하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -468,7 +468,7 @@
   },
   "Royal Trials#046": {
    "src": "Listen to the trials overseer's speech.",
-   "dst": "",
+   "dst": "시련 감독관의 연설을 들으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -478,7 +478,7 @@
   },
   "Royal Trials#047": {
    "src": "Well lookie here, an amateur made it through her flight.",
-   "dst": "",
+   "dst": "이것 봐라, 풋내기가 비행을 해냈군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -488,7 +488,7 @@
   },
   "Royal Trials#048": {
    "src": "Well let’s see how you hold up in the final task ladies.",
-   "dst": "",
+   "dst": "그럼 마지막 시련에서 얼마나 버티는지 보자고, 아가씨들.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -498,7 +498,7 @@
   },
   "Royal Trials#049": {
    "src": "Yer ain’ a pirate at all if ye can't steal, but this is different.",
-   "dst": "",
+   "dst": "훔칠 줄 모르면 해적도 아니지만, 이번엔 달라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -508,7 +508,7 @@
   },
   "Royal Trials#050": {
    "src": "This is the real deal. Stealin’ from a highly secure mansion.",
-   "dst": "",
+   "dst": "진짜배기다. 경비가 삼엄한 저택에서 훔쳐 오는 거지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -518,7 +518,7 @@
   },
   "Royal Trials#051": {
    "src": "Yer job is to steal a priceless treasure from the richest family in the sky.",
-   "dst": "",
+   "dst": "하늘에서 제일 부자인 가문의 값진 보물을 훔쳐라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -528,7 +528,7 @@
   },
   "Royal Trials#052": {
    "src": "We'll be waiting with a getaway airship at the extraction point, everyone else'll left behind.",
-   "dst": "",
+   "dst": "탈출 지점에서 도주용 비행선으로 기다리마. 늦는 놈은 두고 간다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -538,7 +538,7 @@
   },
   "Royal Trials#053": {
    "src": "Remember, this be the real thing, and the consequences of failure will be severe. Good luck, ladies.",
-   "dst": "",
+   "dst": "기억해, 이건 실전이고 실패하면 대가가 혹독하다. 행운을 빈다, 아가씨들.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -548,7 +548,7 @@
   },
   "Royal Trials#054": {
    "src": "This here is the garden you we'll tunnel into, and yer'll 'ave to find a way into the Mansion, maybe yer can just ask nicely, heh.",
-   "dst": "",
+   "dst": "여기가 우리가 굴을 파고 들어갈 정원이다. 저택에 들어갈 방법은 알아서 찾아. 공손히 부탁해 보든가, 헤.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -558,7 +558,7 @@
   },
   "Royal Trials#055": {
    "src": "Then yer'll have to sneak through these corridors to reach the treasure - and don't let the guards find yer, or they'll lock yer up and throw away the key.",
-   "dst": "",
+   "dst": "그다음엔 이 복도를 몰래 지나 보물까지 가야 해. 경비병한테 들키지 마라. 가둬 놓고 열쇠를 버릴 테니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -568,7 +568,7 @@
   },
   "Royal Trials#056": {
    "src": "This, o' course, is the mythical treasure that yer gonna want to grab and get outta here, stat. I'm sure there'll be some extra defenses, though.",
-   "dst": "",
+   "dst": "이게 바로 너희가 낚아채서 당장 튀어야 할 전설의 보물이다. 물론 추가 방어 장치가 좀 있겠지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -578,7 +578,7 @@
   },
   "Royal Trials#057": {
    "src": "And finally yer'll have to escape outta this window right 'ere - I'll be waitin' with an airship to carry all of ye out.",
-   "dst": "",
+   "dst": "마지막으로 바로 이 창문으로 빠져나와라. 비행선을 대 놓고 너희를 전부 태워 가마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -588,7 +588,7 @@
   },
   "Royal Trials#058": {
    "src": "Break into the mansion.",
-   "dst": "",
+   "dst": "저택에 침입하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -598,7 +598,7 @@
   },
   "Royal Trials#059": {
    "src": "Aye', think ye ready to try grabbin' that treasure, eh? Just 'ead outta this hole and try to find yer way into the mansion.",
-   "dst": "",
+   "dst": "그 보물 훔치러 갈 준비됐다고? 이 구멍으로 나가서 저택에 들어갈 길을 찾아 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -608,7 +608,7 @@
   },
   "Royal Trials#060": {
    "src": "Sneak past the guards and steal the treasure.",
-   "dst": "",
+   "dst": "경비병을 피해 보물을 훔치세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -618,7 +618,7 @@
   },
   "Royal Trials#061": {
    "src": "Oi', you! Whatcha' think yer' doin' sneakin' around these parts? This be a restricted area! Yer' headed to the jail cell!",
-   "dst": "",
+   "dst": "어이, 너! 여기서 뭘 몰래 기어 다녀? 여긴 출입 금지 구역이다! 감방으로 가라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -628,7 +628,7 @@
   },
   "Royal Trials#062": {
    "src": "Get the treasure to the trials overseer outside of the mansion's window.",
-   "dst": "",
+   "dst": "보물을 들고 저택 창문 밖의 시련 감독관에게 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -638,7 +638,7 @@
   },
   "Royal Trials#063": {
    "src": "Aye', men! Tha' treasure has been stolen! Prepare the defenses!",
-   "dst": "",
+   "dst": "어이, 다들! 보물을 도둑맞았다! 방어 태세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -648,7 +648,7 @@
   },
   "Royal Trials#064": {
    "src": "Aye, we caught the nasty thief! We'll be lockin' him up till' he rots!",
-   "dst": "",
+   "dst": "하, 이 더러운 도둑을 잡았다! 썩을 때까지 가둬 두마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -658,7 +658,7 @@
   },
   "Royal Trials#065": {
    "src": "Ah, I thought yer might be the first one back. Yer got a queenly look about ye...",
-   "dst": "",
+   "dst": "아, 네가 제일 먼저 돌아올 줄 알았다. 여왕다운 기운이 있거든...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -668,7 +668,7 @@
   },
   "Royal Trials#066": {
    "src": "Head to the airship behind me, lassie. We'll wait a second before the others.",
-   "dst": "",
+   "dst": "내 뒤의 비행선으로 가라, 아가씨. 다른 녀석들을 잠깐 기다리자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -678,7 +678,7 @@
   },
   "Royal Trials#067": {
    "src": "Exit the Mansion onto the airship outside.",
-   "dst": "",
+   "dst": "저택을 빠져나가 밖의 비행선에 타세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -688,7 +688,7 @@
   },
   "Royal Trials#068": {
    "src": "Listen to the trials overseer's speech.",
-   "dst": "",
+   "dst": "시련 감독관의 연설을 들으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -698,7 +698,7 @@
   },
   "Royal Trials#069": {
    "src": "Aha! I figured it'd be ye to win o'er the rest of that lot… Ye've earned the proper sovereignty of bein' our ruler, our queen of the Skyraiders.",
-   "dst": "",
+   "dst": "하! 나머지를 이길 건 너일 줄 알았지... 넌 우리의 통치자, 하늘 약탈자의 여왕이 될 자격을 제대로 얻었다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -708,7 +708,7 @@
   },
   "Royal Trials#070": {
    "src": "Don't be worryin', we got this airship armoured somethin' heavy, and we’re miles away from their cannons… Nothin' to be afraid of, we're safe in this ship.",
-   "dst": "",
+   "dst": "걱정 마, 이 비행선은 장갑을 두껍게 둘렀고 놈들 대포에서 몇 마일은 떨어졌어... 겁낼 거 없다, 이 배에선 안전해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -718,7 +718,7 @@
   },
   "Royal Trials#071": {
    "src": "But, first things first, let’s take a look inside that fancy box ye got, see what mythical treasures lay guarded behind those grubby guardsmen, shall we?",
-   "dst": "",
+   "dst": "하지만 우선, 네가 가져온 그 화려한 상자 안을 보자고. 그 꾀죄죄한 경비병들이 지키던 전설의 보물이 뭔지 말이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -728,7 +728,7 @@
   },
   "Royal Trials#072": {
    "src": "By the skies and seas…",
-   "dst": "",
+   "dst": "하늘과 바다에 맹세코...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -738,7 +738,7 @@
   },
   "Royal Trials#073": {
    "src": "I hafta wonder now if this weren't bein' guarded for a bit of a nefarious reason. This be... Quite the weapon. It'd be deadly if this got used.",
-   "dst": "",
+   "dst": "이렇게 꽁꽁 지킨 데엔 흉악한 이유가 있었던 것 같군. 이건... 대단한 무기다. 쓰이면 끔찍한 일이 벌어질 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -748,7 +748,7 @@
   },
   "Royal Trials#074": {
    "src": "Well, thanks to ye, us Skyraiders might have it now, but using this weapon against civilization would be beyond terrible. We might be pirates but we ain't heartless!",
-   "dst": "",
+   "dst": "네 덕에 이제 우리 하늘 약탈자가 가졌을지 몰라도, 이 무기를 문명에 쓰는 건 너무 끔찍한 짓이지. 해적이라도 인정머리는 있다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -758,7 +758,7 @@
   },
   "Royal Trials#075": {
    "src": "I think we'll just have to keep this locked up nice n' tight once we get back. We'll be sure to tie this little cataclysm-in-a-box down much safer th'n those idiot men did.",
-   "dst": "",
+   "dst": "돌아가면 이걸 꽁꽁 잠가 둬야겠어. 이 상자 속 재앙은 그 멍청한 사내놈들보다 훨씬 단단히 묶어 두마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -768,7 +768,7 @@
   },
   "Royal Trials#076": {
    "src": "Aha! Just gettin' back now. Let's head down and start the ceremony, shall we?",
-   "dst": "",
+   "dst": "하! 이제 막 도착했군. 내려가서 즉위식을 시작할까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -778,7 +778,7 @@
   },
   "Royal Trials#077": {
    "src": "I am pleased to introduce our {~}th Skyraider Queen. Fer the sake of our people, let her reign last more than two weeks.",
-   "dst": "",
+   "dst": "우리의 {~}번째 하늘 약탈자 여왕을 소개하게 되어 기쁘다. 우리 백성을 위해, 이번엔 2주는 넘게 버티길.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -788,7 +788,7 @@
   },
   "Royal Trials#078": {
    "src": "I, on behalf on the rest of the Skyraider people, have the honor of decoratin' you with the highest decoration of the Skyraiders, The Queen's Headpiece.",
-   "dst": "",
+   "dst": "하늘 약탈자 백성을 대표해, 하늘 약탈자 최고의 영예, The Queen's Headpiece를 네게 수여하는 영광을 누리겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -798,7 +798,7 @@
   },
   "Royal Trials#079": {
    "src": "Please use your sovereignty to lead us to the riches we deserve.",
-   "dst": "",
+   "dst": "부디 네 통치로 우리가 마땅히 누릴 부로 이끌어 다오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -808,7 +808,7 @@
   },
   "Royal Trials#080": {
    "src": "Talk to the trials overseer.",
-   "dst": "",
+   "dst": "시련 감독관에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Royal Trials",
@@ -818,7 +818,7 @@
   },
   "Royal Trials#081": {
    "src": "Yer Majesty. What an honour to have such a beautiful queen.",
-   "dst": "",
+   "dst": "폐하. 이토록 아름다운 여왕을 모시다니 영광입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -828,7 +828,7 @@
   },
   "Royal Trials#082": {
    "src": "Now, we must crown ye, and give you yer reward.",
-   "dst": "",
+   "dst": "이제 왕관을 씌워 드리고, 보상을 드려야겠군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -838,7 +838,7 @@
   },
   "Royal Trials#083": {
    "src": "Benefits of being a queen I 'spose.",
-   "dst": "",
+   "dst": "여왕이 되면 이런 게 좋은 거겠죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -848,7 +848,7 @@
   },
   "Royal Trials#084": {
    "src": "Please accept this, your majesty.",
-   "dst": "",
+   "dst": "폐하, 이것을 받아 주십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",

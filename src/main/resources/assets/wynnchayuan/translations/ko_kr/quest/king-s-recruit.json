@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "King's Recruit",
   "count": 128,
-  "translated": 3,
+  "translated": 129,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "King's Recruit#000": {
    "src": "Awaken",
-   "dst": "",
+   "dst": "각성",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -18,7 +18,7 @@
   },
   "King's Recruit#001": {
    "src": "Agh!",
-   "dst": "",
+   "dst": "으악!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -28,7 +28,7 @@
   },
   "King's Recruit#002": {
    "src": "Hey, {u}! You alright in there? Looks like we hit something.",
-   "dst": "",
+   "dst": "이봐, {u}! 안에 괜찮아? 뭔가에 부딪힌 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -38,7 +38,7 @@
   },
   "King's Recruit#003": {
    "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "마차에서 내려 [-{~}, {~}, -{~}]의 마부와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -48,7 +48,7 @@
   },
   "King's Recruit#004": {
    "src": "Hm... I swear I hit this same darn boulder every time I make this trip. Sorry folks.",
-   "dst": "",
+   "dst": "흠... 이 길 올 때마다 꼭 이 빌어먹을 바위에 부딪힌단 말이지. 미안하오, 여러분.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -58,7 +58,7 @@
   },
   "King's Recruit#005": {
    "src": "Ah. Does this mean we have to walk all the way to {p} from here?",
-   "dst": "",
+   "dst": "아. 그럼 여기서부터 {p}까지 걸어가야 한다는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -68,7 +68,7 @@
   },
   "King's Recruit#006": {
    "src": "Unfortunately so. Luckily, it's not that far from here. Just a straight path forward.",
-   "dst": "",
+   "dst": "안타깝지만 그렇소. 다행히 여기서 멀지 않소. 쭉 앞으로만 가면 되오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -78,7 +78,7 @@
   },
   "King's Recruit#007": {
    "src": "Well, nothing to do but keep moving! Tasim, {u}, I'll race you to the gate!",
-   "dst": "",
+   "dst": "뭐, 계속 가는 수밖에! Tasim, {u}, 관문까지 누가 먼저 가나 시합이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -88,7 +88,7 @@
   },
   "King's Recruit#008": {
    "src": "Wait, don't!",
-   "dst": "",
+   "dst": "잠깐, 하지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -98,7 +98,7 @@
   },
   "King's Recruit#009": {
    "src": "... He's already gone. We'll have to catch up to him. {u}, lead the way.",
-   "dst": "",
+   "dst": "... 벌써 가 버렸네. 따라잡아야겠어. {u}, 앞장서 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -108,7 +108,7 @@
   },
   "King's Recruit#010": {
    "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Wynn 지방 관문을 향해 길을 따라가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -118,7 +118,7 @@
   },
   "King's Recruit#011": {
    "src": "I don't suppose you know much about Wynn either, do you?",
-   "dst": "",
+   "dst": "너도 Wynn에 대해선 잘 모르지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -128,7 +128,7 @@
   },
   "King's Recruit#012": {
    "src": "Of course, the King of {p}'s been recruiting Fruma soldiers, but...",
-   "dst": "",
+   "dst": "물론 {p}의 왕이 Fruma 병사를 모집해 왔지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -138,7 +138,7 @@
   },
   "King's Recruit#013": {
    "src": "That war of theirs must be getting pretty bad if they need this much support.",
-   "dst": "",
+   "dst": "이만큼 지원이 필요하다면 그 전쟁이 꽤 심각한가 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -148,7 +148,7 @@
   },
   "King's Recruit#014": {
    "src": "Oh, there's Aledar! And the gate, by the looks of it.",
-   "dst": "",
+   "dst": "아, Aledar가 저기 있네! 보아하니 관문도 있고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -158,7 +158,7 @@
   },
   "King's Recruit#015": {
    "src": "There you two are! You'll have to be faster than that if you want to stand a chance against the undead.",
-   "dst": "",
+   "dst": "드디어 왔네! 언데드를 상대하려면 그것보단 빨라야 할걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -168,7 +168,7 @@
   },
   "King's Recruit#016": {
    "src": "Yes, yes, we'll be faster next time. So, is this the gate marking the border between Wynn and Fruma?",
-   "dst": "",
+   "dst": "그래, 그래, 다음엔 빨리 올게. 그래서, 이게 Wynn과 Fruma의 경계 관문이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -178,7 +178,7 @@
   },
   "King's Recruit#017": {
    "src": "It looks like it, yep! Are you two ready for the start of our new lives?",
-   "dst": "",
+   "dst": "그런 것 같아! 둘 다 새 삶을 시작할 준비 됐어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -188,7 +188,7 @@
   },
   "King's Recruit#018": {
    "src": "{u}, why don't you do the honours? Go ahead and open that gate.",
-   "dst": "",
+   "dst": "{u}, 영광은 네가 누려. 어서 저 관문을 열어 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -198,7 +198,7 @@
   },
   "King's Recruit#019": {
    "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Wynn 지방으로 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -208,7 +208,7 @@
   },
   "King's Recruit#020": {
    "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
-   "dst": "",
+   "dst": "자, 뭘 기다려? 이 지방을 한번 둘러보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -218,7 +218,7 @@
   },
   "King's Recruit#021": {
    "src": "Continue through the Wynn Province to the castle",
-   "dst": "",
+   "dst": "Wynn 지방을 지나 성으로 계속 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -228,7 +228,7 @@
   },
   "King's Recruit#022": {
    "src": "So this is Wynn we've all been hearing about... It's beautiful.",
-   "dst": "",
+   "dst": "이게 그렇게 듣던 Wynn이구나... 아름다워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -238,7 +238,7 @@
   },
   "King's Recruit#023": {
    "src": "I guess the war hasn't made it this far. This is what we'll be fighting to protect.",
-   "dst": "",
+   "dst": "전쟁이 여기까진 안 왔나 봐. 우리가 싸워서 지킬 곳이 바로 이거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -248,7 +248,7 @@
   },
   "King's Recruit#024": {
    "src": "Hey, recruits! Come over here, I have something to tell you.",
-   "dst": "",
+   "dst": "이봐, 신병들! 이리 와, 할 말이 있다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -258,7 +258,7 @@
   },
   "King's Recruit#025": {
    "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 병사와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -268,7 +268,7 @@
   },
   "King's Recruit#026": {
    "src": "A soldier? What are you doing all the way out here?",
-   "dst": "",
+   "dst": "병사? 이런 곳까지 웬일이세요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -278,7 +278,7 @@
   },
   "King's Recruit#027": {
    "src": "There's a bit of trouble up ahead. They sent me out here to intercept new recruits.",
-   "dst": "",
+   "dst": "앞쪽에 문제가 좀 생겼다. 새 신병들을 붙잡으라고 날 여기 보냈지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -288,7 +288,7 @@
   },
   "King's Recruit#028": {
    "src": "If you want to survive out here, you're going to need this.",
-   "dst": "",
+   "dst": "여기서 살아남으려면 이게 필요할 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -298,7 +298,7 @@
   },
   "King's Recruit#029": {
    "src": "And for you two.",
-   "dst": "",
+   "dst": "너희 둘도 받아라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -308,7 +308,7 @@
   },
   "King's Recruit#030": {
    "src": "Woah, awesome!",
-   "dst": "",
+   "dst": "우와, 멋지다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -318,7 +318,7 @@
   },
   "King's Recruit#031": {
    "src": "Hopefully we won't have to use these just yet.",
-   "dst": "",
+   "dst": "당분간은 이걸 쓸 일이 없으면 좋겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -328,7 +328,7 @@
   },
   "King's Recruit#032": {
    "src": "Good luck out there, recruits! Just follow this path, and there will be a bridge up ahead.",
-   "dst": "",
+   "dst": "조심해라, 신병들! 이 길을 따라가면 앞에 다리가 나올 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -338,7 +338,7 @@
   },
   "King's Recruit#033": {
    "src": "Cross the bridge at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 다리를 건너세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -348,7 +348,7 @@
   },
   "King's Recruit#034": {
    "src": "Ah, this must be the bridge the soldier was talking about. But it certainly looks very...",
-   "dst": "",
+   "dst": "아, 이게 그 병사가 말한 다리인가 봐. 그런데 확실히 좀...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -358,7 +358,7 @@
   },
   "King's Recruit#035": {
    "src": "Well, let's not keep the King of {p} waiting!",
-   "dst": "",
+   "dst": "자, {p}의 왕을 기다리게 하지 말자고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -368,7 +368,7 @@
   },
   "King's Recruit#036": {
    "src": "No, wait!",
-   "dst": "",
+   "dst": "아니, 잠깐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -378,7 +378,7 @@
   },
   "King's Recruit#037": {
    "src": "Aledar!",
-   "dst": "",
+   "dst": "Aledar!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -388,7 +388,7 @@
   },
   "King's Recruit#038": {
    "src": "That sure was close!",
-   "dst": "",
+   "dst": "진짜 아슬아슬했다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -398,7 +398,7 @@
   },
   "King's Recruit#039": {
    "src": "That's what I was trying to warn you about! Let's just get off this bridge before the rest of it collapses...",
-   "dst": "",
+   "dst": "내가 경고하려던 게 그거였어! 나머지가 무너지기 전에 다리에서 내려가자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -408,7 +408,7 @@
   },
   "King's Recruit#040": {
    "src": "Well, how are we meant to get to the other side of this ravine now? Ugh. Another thing gone wrong, just like-...",
-   "dst": "",
+   "dst": "그럼 이 협곡을 이제 어떻게 건너지? 으. 또 일이 꼬였네, 꼭 그때처럼-...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -418,7 +418,7 @@
   },
   "King's Recruit#041": {
    "src": "... Aledar? What's wrong?",
-   "dst": "",
+   "dst": "... Aledar? 왜 그래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -428,7 +428,7 @@
   },
   "King's Recruit#042": {
    "src": "That's... weird. I was just thinking about something from before Wynn, but... it's gone. I can't remember.",
-   "dst": "",
+   "dst": "그게... 이상해. Wynn에 오기 전 일을 떠올리고 있었는데... 사라졌어. 기억이 안 나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -438,7 +438,7 @@
   },
   "King's Recruit#043": {
    "src": "Hm. I can't remember anything from Fruma either... {u}, how about you?",
-   "dst": "",
+   "dst": "흠. 나도 Fruma 일이 하나도 기억 안 나... {u}, 너는?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -448,7 +448,7 @@
   },
   "King's Recruit#044": {
    "src": "Nothing. It can't be a coincidence we all lost our memories at the same time, right?",
-   "dst": "",
+   "dst": "아무것도. 다 같이 동시에 기억을 잃은 게 우연일 리 없잖아, 그렇지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -458,7 +458,7 @@
   },
   "King's Recruit#045": {
    "src": "No, but... We can worry about that later. For now, we need to find a way past this ravine. Aledar, {u}, you should look around for a way across. I'll keep looking here.",
-   "dst": "",
+   "dst": "그렇지, 하지만... 그건 나중에 걱정하자. 지금은 협곡을 건널 방법부터 찾아야 해. Aledar, {u}, 둘이 건널 길을 찾아봐. 난 여기서 계속 볼게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -468,7 +468,7 @@
   },
   "King's Recruit#046": {
    "src": "Alright! Let's go, {u}.",
-   "dst": "",
+   "dst": "좋아! 가자, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -478,7 +478,7 @@
   },
   "King's Recruit#047": {
    "src": "Search for another way across the ravine at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 협곡을 건널 다른 길을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -488,7 +488,7 @@
   },
   "King's Recruit#048": {
    "src": "Woah! That sure did the trick, {u}. Good thinking!",
-   "dst": "",
+   "dst": "우와! 제대로 통했네, {u}. 좋은 생각이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -498,7 +498,7 @@
   },
   "King's Recruit#049": {
    "src": "Hey, Tasim! Come over here, {u} found a way over!",
-   "dst": "",
+   "dst": "어이, Tasim! 이리 와, {u}이(가) 건널 길을 찾았어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -508,7 +508,7 @@
   },
   "King's Recruit#050": {
    "src": "Continue onwards to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]까지 계속 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -518,7 +518,7 @@
   },
   "King's Recruit#051": {
    "src": "Phew! We made it over safely this time at least.",
-   "dst": "",
+   "dst": "휴! 이번엔 적어도 무사히 건넜네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -528,7 +528,7 @@
   },
   "King's Recruit#052": {
    "src": "If we just continue forward, we should make it to {p} in no time!",
-   "dst": "",
+   "dst": "이대로 쭉 가면 금방 {p}에 도착할 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -538,7 +538,7 @@
   },
   "King's Recruit#053": {
    "src": "Hmm? What's that guard doing here? We should probably talk to them if we want to pass through.",
-   "dst": "",
+   "dst": "응? 저 경비병은 여기서 뭐 하지? 지나가려면 얘기해 봐야겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -558,7 +558,7 @@
   },
   "King's Recruit#055": {
    "src": "Halt, recruits!",
-   "dst": "",
+   "dst": "멈춰라, 신병들!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -568,7 +568,7 @@
   },
   "King's Recruit#056": {
    "src": "What? What's going on?",
-   "dst": "",
+   "dst": "네? 무슨 일이에요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -578,7 +578,7 @@
   },
   "King's Recruit#057": {
    "src": "A group of corrupted have sieged this underpass. I can't let you enter without any armour.",
-   "dst": "",
+   "dst": "타락한 것들 무리가 이 지하 통로를 점거했다. 방어구 없이는 들여보낼 수 없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -588,7 +588,7 @@
   },
   "King's Recruit#058": {
    "src": "Then what do we do? We have to get to {p}!",
-   "dst": "",
+   "dst": "그럼 어떡하죠? {p}에 꼭 가야 하는데요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -598,7 +598,7 @@
   },
   "King's Recruit#059": {
    "src": "Do you see that cave over there? Caves such as those often contain useful loot that can help keep you alive.",
-   "dst": "",
+   "dst": "저기 동굴 보이나? 그런 동굴엔 목숨을 지켜 줄 쓸 만한 전리품이 있곤 하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -608,7 +608,7 @@
   },
   "King's Recruit#060": {
    "src": "If you enter the cave, you should be able to find some armour to protect you. After that return to me.",
-   "dst": "",
+   "dst": "동굴에 들어가면 몸을 지킬 방어구를 찾을 수 있을 거다. 그다음 내게 돌아와라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -618,7 +618,7 @@
   },
   "King's Recruit#061": {
    "src": "What do you say {u}? Let's go see what's in that cave.",
-   "dst": "",
+   "dst": "어때, {u}? 저 동굴에 뭐가 있는지 가 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -628,7 +628,7 @@
   },
   "King's Recruit#062": {
    "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 동굴에 들어가 방어구를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -638,7 +638,7 @@
   },
   "King's Recruit#063": {
    "src": "We should return to the guard to see if he'll let us through now!",
-   "dst": "",
+   "dst": "경비병한테 돌아가서 이제 지나가게 해 줄지 보자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -658,7 +658,7 @@
   },
   "King's Recruit#065": {
    "src": "So you found some armor, huh?",
-   "dst": "",
+   "dst": "그래, 방어구를 찾았다고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -668,7 +668,7 @@
   },
   "King's Recruit#066": {
    "src": "Yes, a helmet! Will you let us pass now?",
-   "dst": "",
+   "dst": "네, 투구요! 이제 지나가도 되죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -678,7 +678,7 @@
   },
   "King's Recruit#067": {
    "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
-   "dst": "",
+   "dst": "잠깐, 신병. 방어구를 장착하려면 먼저 감정부터 해야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -688,7 +688,7 @@
   },
   "King's Recruit#068": {
    "src": "And how do we do that?",
-   "dst": "",
+   "dst": "그건 어떻게 하는데요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -698,7 +698,7 @@
   },
   "King's Recruit#069": {
    "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
-   "dst": "",
+   "dst": "아이템은 Item Identifier에게서 감정할 수 있다. 세상 모든 도시에 있고, 편의를 위해 여기도 한 명 두고 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -708,7 +708,7 @@
   },
   "King's Recruit#070": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
-   "dst": "",
+   "dst": "Item Identifier에게 투구를 감정받고 장착한 채로 돌아와라. 그러면 지나가게 해 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -718,7 +718,7 @@
   },
   "King's Recruit#071": {
    "src": "Alright! Let's go, {u}.",
-   "dst": "",
+   "dst": "좋아! 가자, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -728,7 +728,7 @@
   },
   "King's Recruit#072": {
    "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
-   "dst": "",
+   "dst": "투구를 썼군. 훌륭하다, 이제 지나가도 좋다. 문을 열어 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -738,7 +738,7 @@
   },
   "King's Recruit#073": {
    "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
-   "dst": "",
+   "dst": "안에서 행운을 빈다, 신병들! 방어구가 있어도 쉽지 않을 거다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -748,7 +748,7 @@
   },
   "King's Recruit#074": {
    "src": "Enter the underpass at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 지하 통로로 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -758,7 +758,7 @@
   },
   "King's Recruit#075": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "지하 통로를 계속 지나 [-{~}, {~}, -{~}]로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -768,7 +768,7 @@
   },
   "King's Recruit#076": {
    "src": "Wow, that guard wasn't joking. This place is crawling with the corrupt.",
-   "dst": "",
+   "dst": "와, 경비병 말이 농담이 아니었네. 여긴 타락한 것들이 득실거려.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -778,7 +778,7 @@
   },
   "King's Recruit#077": {
    "src": "Well, we've got no choice but to make it through! Finally time for us to use these weapons we got. Let's go, {u}.",
-   "dst": "",
+   "dst": "뭐, 뚫고 가는 수밖에! 드디어 받은 무기를 써 볼 때야. 가자, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -788,7 +788,7 @@
   },
   "King's Recruit#078": {
    "src": "{u}, you take the skeleton in the front. We'll handle the two zombies in the back!",
-   "dst": "",
+   "dst": "{u}, 앞에 있는 스켈레톤을 맡아. 뒤에 좀비 둘은 우리가 처리할게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -798,7 +798,7 @@
   },
   "King's Recruit#079": {
    "src": "Defeat the Skeleton!",
-   "dst": "",
+   "dst": "스켈레톤을 처치하세요!",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -808,7 +808,7 @@
   },
   "King's Recruit#080": {
    "src": "We did it!",
-   "dst": "",
+   "dst": "해냈다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -818,7 +818,7 @@
   },
   "King's Recruit#081": {
    "src": "This path opened up, let's continue through the underpass.",
-   "dst": "",
+   "dst": "길이 열렸어. 지하 통로를 계속 지나가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -828,7 +828,7 @@
   },
   "King's Recruit#082": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "지하 통로를 계속 지나 [-{~}, {~}, -{~}]로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -838,7 +838,7 @@
   },
   "King's Recruit#083": {
    "src": "Over here! You're just what I needed!",
-   "dst": "",
+   "dst": "여기다! 딱 필요한 참이었다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -848,7 +848,7 @@
   },
   "King's Recruit#084": {
    "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 중위와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -858,7 +858,7 @@
   },
   "King's Recruit#085": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
-   "dst": "",
+   "dst": "드디어 지원군이군! 잠깐... 너희 Fruma에서 막 온 거지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -868,7 +868,7 @@
   },
   "King's Recruit#086": {
    "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
-   "dst": "",
+   "dst": "뭐, 이 구역은 이제 정리됐을 거다. {p}도 바로 앞이니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -878,7 +878,7 @@
   },
   "King's Recruit#087": {
    "src": "Lieutenant, watch out behind you!",
-   "dst": "",
+   "dst": "중위님, 뒤를 조심하세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -888,7 +888,7 @@
   },
   "King's Recruit#088": {
    "src": "Quick, you have to use an ability!",
-   "dst": "",
+   "dst": "어서, 어빌리티를 써!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -898,7 +898,7 @@
   },
   "King's Recruit#089": {
    "src": "Great job, {u}!",
-   "dst": "",
+   "dst": "잘했어, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -908,7 +908,7 @@
   },
   "King's Recruit#090": {
    "src": "Wait, it's running away! We have to save the Lieutenant!",
-   "dst": "",
+   "dst": "잠깐, 도망간다! 중위님을 구해야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -918,7 +918,7 @@
   },
   "King's Recruit#091": {
    "src": "Chase the Goliath to [-{~}, {~}, -{~}]!",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]까지 Goliath를 추격하세요!",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -928,7 +928,7 @@
   },
   "King's Recruit#092": {
    "src": "Defeat the Goliath and free the Lieutenant.",
-   "dst": "",
+   "dst": "Goliath를 처치하고 중위를 구출하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -938,7 +938,7 @@
   },
   "King's Recruit#093": {
    "src": "That sure was close... Thanks for the save, {u}!",
-   "dst": "",
+   "dst": "정말 아슬아슬했군... 구해 줘서 고맙다, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -948,7 +948,7 @@
   },
   "King's Recruit#094": {
    "src": "I think you three are going to make good soldiers - not many can handle themselves like you just did.",
-   "dst": "",
+   "dst": "너희 셋은 좋은 병사가 되겠어. 방금처럼 해내는 사람은 드물지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -958,7 +958,7 @@
   },
   "King's Recruit#095": {
    "src": "It seems that beast dropped something, you should check it out before heading to {p}.",
-   "dst": "",
+   "dst": "그 짐승이 뭔가 떨어뜨린 것 같다. {p}에 가기 전에 확인해 봐라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -968,7 +968,7 @@
   },
   "King's Recruit#096": {
    "src": "Pick up the loot dropped by the Goliath.",
-   "dst": "",
+   "dst": "Goliath가 떨어뜨린 전리품을 주우세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -978,7 +978,7 @@
   },
   "King's Recruit#097": {
    "src": "That item looks rare! Maybe there's an identifier around here.",
-   "dst": "",
+   "dst": "희귀한 아이템 같아! 근처에 감정사가 있을지도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -988,7 +988,7 @@
   },
   "King's Recruit#098": {
    "src": "Onward to {p}! We're almost there.",
-   "dst": "",
+   "dst": "{p}(으)로 가자! 거의 다 왔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -998,7 +998,7 @@
   },
   "King's Recruit#099": {
    "src": "Enter the castle at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 성으로 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -1008,7 +1008,7 @@
   },
   "King's Recruit#100": {
    "src": "We... we made it! We really made it! Sure was a close call at the end.",
-   "dst": "",
+   "dst": "우리... 도착했어! 진짜 해냈어! 마지막엔 정말 아슬아슬했지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1018,7 +1018,7 @@
   },
   "King's Recruit#101": {
    "src": "... Still think those corrupted don't stand a chance against you?",
-   "dst": "",
+   "dst": "... 아직도 타락한 것들이 너한텐 상대도 안 된다고 생각해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1028,7 +1028,7 @@
   },
   "King's Recruit#102": {
    "src": "Ha ha. Very funny. Ah, {u}, there seems to be an identifier here for you to identify that rare helmet.",
-   "dst": "",
+   "dst": "하하. 퍽이나 웃기네. 아, {u}, 여기 감정사가 있으니 그 희귀한 투구를 감정받아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1038,7 +1038,7 @@
   },
   "King's Recruit#103": {
    "src": "And a blacksmith too, you can sell your old helmet there for some emeralds.",
-   "dst": "",
+   "dst": "대장장이도 있네. 쓰던 투구는 거기 팔아서 에메랄드로 바꿔.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1048,7 +1048,7 @@
   },
   "King's Recruit#104": {
    "src": "Here it is, the end of our journey.",
-   "dst": "",
+   "dst": "여기야, 우리 여정의 끝.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1058,7 +1058,7 @@
   },
   "King's Recruit#105": {
    "src": "The end of one adventure, but the beginning of another! Let's go inside and talk to the King!",
-   "dst": "",
+   "dst": "한 모험의 끝이자 또 다른 모험의 시작이지! 들어가서 왕과 얘기하자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1068,7 +1068,7 @@
   },
   "King's Recruit#106": {
    "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 {p}의 왕과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -1078,7 +1078,7 @@
   },
   "King's Recruit#107": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
-   "dst": "",
+   "dst": "Wynn 지방에 온 것을 환영한다! 행색을 보아하니 오는 길이 꽤나 험난했던 모양이군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1088,7 +1088,7 @@
   },
   "King's Recruit#108": {
    "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
-   "dst": "",
+   "dst": "신병들이여, 이곳은 우리 지방의 대도시 중 하나, 고귀한 요새 {p}이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1098,7 +1098,7 @@
   },
   "King's Recruit#109": {
    "src": "As soldiers of Wynn, it is your duty to stem the tide of corrupted monsters ravaging this land.",
-   "dst": "",
+   "dst": "Wynn의 병사로서 이 땅을 유린하는 타락한 괴물의 물결을 막는 것이 그대들의 의무다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1108,7 +1108,7 @@
   },
   "King's Recruit#110": {
    "src": "Although, you may want to gain some experience beforehand. Many lives are tragically lost every day...",
-   "dst": "",
+   "dst": "허나 그 전에 경험을 좀 쌓는 게 좋을 게다. 매일 수많은 목숨이 안타깝게 스러지니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1118,7 +1118,7 @@
   },
   "King's Recruit#111": {
    "src": "Take this [{p} Teleportation Scroll] to aid you in your journey. Upon use, it will instantly bring you back to this city, wherever you may be.",
-   "dst": "",
+   "dst": "여정에 도움이 되도록 이 [{p} Teleportation Scroll]을 가져가게. 사용하면 어디에 있든 즉시 이 도시로 돌아올 수 있다네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1128,7 +1128,7 @@
   },
   "King's Recruit#112": {
    "src": "With that, I must bid you farewell, more recruits may arrive at any time. Good luck out there, soldiers of Wynn!",
-   "dst": "",
+   "dst": "이만 작별해야겠군. 신병이 언제 또 올지 모르니. 행운을 빈다, Wynn의 병사들이여!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1138,7 +1138,7 @@
   },
   "King's Recruit#113": {
    "src": "So! Wynn, huh? It's pretty exciting to finally be here.",
-   "dst": "",
+   "dst": "자! Wynn이라, 응? 드디어 여기 오니 꽤 설레네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1148,7 +1148,7 @@
   },
   "King's Recruit#114": {
    "src": "I can't wait to discover what it looks like for myself!",
-   "dst": "",
+   "dst": "직접 어떤 곳인지 빨리 보고 싶어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1158,7 +1158,7 @@
   },
   "King's Recruit#115": {
    "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
-   "dst": "",
+   "dst": "하, 난 곧 {p} 쪽으로 갈 생각이야. 가는 길에 {p}(이)라는 곳이 있는 것 같지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1168,7 +1168,7 @@
   },
   "King's Recruit#116": {
    "src": "Enough talking already! Let's get out there and help some people!",
-   "dst": "",
+   "dst": "말은 그만하고! 나가서 사람들을 돕자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1178,7 +1178,7 @@
   },
   "King's Recruit#117": {
    "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
-   "dst": "",
+   "dst": "또 가 버렸네... 뭐, 금방 다시 만나겠지. 일단 Wynn이 진짜 어떤 곳인지 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1188,7 +1188,7 @@
   },
   "King's Recruit#118": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
-   "dst": "",
+   "dst": "아름답다... 아! 깜빡하고 말 안 할 뻔했네, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1198,7 +1198,7 @@
   },
   "King's Recruit#119": {
    "src": "There's this handy item we were all given on our way here, the Content Book. It displays most things you can do in this world; Quests, Caves, and much, much more.",
-   "dst": "",
+   "dst": "오는 길에 다들 받은 편리한 물건이 있잖아, 콘텐츠 북. 이 세계에서 할 수 있는 것 대부분을 보여 줘. 퀘스트, 동굴, 그리고 훨씬 더 많은 것들.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1208,7 +1208,7 @@
   },
   "King's Recruit#120": {
    "src": "It also lets you track any content you want, which will create beacons for you to follow.",
-   "dst": "",
+   "dst": "원하는 콘텐츠를 추적할 수도 있어. 그러면 따라갈 신호기가 생겨.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1218,7 +1218,7 @@
   },
   "King's Recruit#121": {
    "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
-   "dst": "",
+   "dst": "자, 한번 써 볼래? 콘텐츠 북을 열고 강조된 퀘스트를 클릭해 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1228,7 +1228,7 @@
   },
   "King's Recruit#122": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
-   "dst": "",
+   "dst": "그렇지! 난 {p} 끝에 있는 {p}(으)로 갈게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1238,7 +1238,7 @@
   },
   "King's Recruit#123": {
    "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u}.",
-   "dst": "",
+   "dst": "좀 더 강해지면 거기서 만나. 그럼 또 보자, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1248,7 +1248,7 @@
   },
   "King's Recruit#124": {
    "src": "What are you waiting for recruits? Go identify your helmet at the  Item Identifier and then equip it in your helmet slot!",
-   "dst": "",
+   "dst": "뭘 기다리나, 신병들? 어서  Item Identifier에게 투구를 감정받고 투구 칸에 장착해라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1256,7 +1256,7 @@
   },
   "King's Recruit#125": {
    "src": "Unless you'd rather stand around here all day, that's fine by me too.",
-   "dst": "",
+   "dst": "여기 온종일 서 있고 싶다면야, 그것도 상관없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1264,7 +1264,7 @@
   },
   "King's Recruit#126": {
    "src": "Well, what are we waiting for?",
-   "dst": "",
+   "dst": "자, 뭘 기다려?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1272,7 +1272,7 @@
   },
   "King's Recruit#127": {
    "src": "Good luck in there, recruits! You're gonna need it...",
-   "dst": "",
+   "dst": "안에서 행운을 빈다, 신병들! 필요할 거다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",

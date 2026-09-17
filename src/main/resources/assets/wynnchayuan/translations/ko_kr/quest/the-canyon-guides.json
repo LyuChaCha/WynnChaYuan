@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Canyon Guides",
   "count": 63,
-  "translated": 0,
+  "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Canyon Guides#000": {
    "src": "Speak to Gana at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 Gana와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canyon Guides",
@@ -18,7 +18,7 @@
   },
   "The Canyon Guides#001": {
    "src": "Welcome to the Bantisu Temple, wandering human. We aid travelers such as yourself in navigating the capricious canyon walls.",
-   "dst": "",
+   "dst": "Bantisu 사원에 오신 것을 환영합니다, 방랑하는 인간이여. 저희는 변덕스러운 협곡에서 길을 찾도록 여행자를 돕습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -28,7 +28,7 @@
   },
   "The Canyon Guides#002": {
    "src": "We commune with the wind, and she gives us her sight. Wherever the breeze blows, we may see.",
-   "dst": "",
+   "dst": "저희는 바람과 교감하고, 바람은 저희에게 시야를 줍니다. 바람이 닿는 곳이라면 볼 수 있지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -38,7 +38,7 @@
   },
   "The Canyon Guides#003": {
    "src": "You appear to be quite strong, and well-kept by your wits. Might we ask you to aid us, then?",
-   "dst": "",
+   "dst": "꽤 강하고 지혜로워 보이시는군요. 그렇다면 저희를 도와주시겠습니까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -48,7 +48,7 @@
   },
   "The Canyon Guides#004": {
    "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but we are unable to reach him.",
-   "dst": "",
+   "dst": "실은 길 잃은 사람 하나가 근처 절벽의 야영지에 틀어박혀 있습니다. 안타깝지만 저희는 그에게 갈 수 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -58,7 +58,7 @@
   },
   "The Canyon Guides#005": {
    "src": "The canyon creatures there are ruthless, and we are not suited to physical combat. We would be able to reach him, but we would be stranded ourselves.",
-   "dst": "",
+   "dst": "그곳 협곡 생물들은 무자비하고, 저희는 싸움에 맞지 않습니다. 가는 건 가능하나 저희마저 발이 묶일 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -68,7 +68,7 @@
   },
   "The Canyon Guides#006": {
    "src": "We ask you to guide Seluc to us. We shall send you to him, and you will bring him here. If you wish to help, you will be rewarded for your time.",
-   "dst": "",
+   "dst": "Seluc을 이리로 인도해 주십시오. 그에게 보내 드릴 테니 데려와 주십시오. 도와주신다면 보답하겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -78,7 +78,7 @@
   },
   "The Canyon Guides#007": {
    "src": "Find Seluc in his camp at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 야영지에서 Seluc을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canyon Guides",
@@ -88,7 +88,7 @@
   },
   "The Canyon Guides#008": {
    "src": "Who's that? Am I finally being rescued!?",
-   "dst": "",
+   "dst": "누구야? 드디어 구조되는 건가!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -98,7 +98,7 @@
   },
   "The Canyon Guides#009": {
    "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day off cliff diving?",
-   "dst": "",
+   "dst": "잠깐, 인간이잖아! 으, 괜히 기대했네. 뭐야, 오늘은 절벽 다이빙 쉬는 날이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -108,7 +108,7 @@
   },
   "The Canyon Guides#010": {
    "src": "If you really did intend to rescue me, you've assuredly wasted both our time.",
-   "dst": "",
+   "dst": "진짜 날 구하러 왔다면 우리 둘 다 시간 낭비한 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -118,7 +118,7 @@
   },
   "The Canyon Guides#011": {
    "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at that, right? Fetching things and people?",
-   "dst": "",
+   "dst": "진짜 쓸모 있고 싶으면 Bantisu 수도승 하나 데려와! 그런 거 잘하잖아? 물건이랑 사람 가져오는 거?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -128,7 +128,7 @@
   },
   "The Canyon Guides#012": {
    "src": "WHY YOU-",
-   "dst": "",
+   "dst": "너 이 자식-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -138,7 +138,7 @@
   },
   "The Canyon Guides#013": {
    "src": "You're trying to kill me, aren't you?! What, can't take hearing the truth? Now my coat is drenched, and! AND!",
-   "dst": "",
+   "dst": "날 죽이려는 거지?! 뭐, 진실은 못 듣겠다 이거야? 코트가 다 젖었잖아, 그리고! 그리고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -148,7 +148,7 @@
   },
   "The Canyon Guides#014": {
    "src": "These Jinko are going to pounce any second now!! I haven't got a weapon, were you expecting me to rush off and get into a rumble?!",
-   "dst": "",
+   "dst": "Jinko들이 당장이라도 덮치겠어!! 무기도 없는데 내가 뛰쳐나가 싸우길 바랐어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -158,7 +158,7 @@
   },
   "The Canyon Guides#015": {
    "src": "Kill them! Kill then now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
-   "dst": "",
+   "dst": "죽여! 당장 죽여! 그리고 날 여기서 꺼내! 네가 이렇게 만들었으니 꺼내 줘!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -168,7 +168,7 @@
   },
   "The Canyon Guides#016": {
    "src": "Escort Seluc back to Gana.",
-   "dst": "",
+   "dst": "Seluc을 Gana에게 호위해 데려가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canyon Guides",
@@ -178,7 +178,7 @@
   },
   "The Canyon Guides#017": {
    "src": "Ugh, all that danger got me flustered. I'm sweating in this coat...and it's all soaked already. Let me just...",
-   "dst": "",
+   "dst": "으, 위험해서 정신없었네. 코트 속이 땀범벅이야... 이미 다 젖었는데. 그냥...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -188,7 +188,7 @@
   },
   "The Canyon Guides#018": {
    "src": "...set that aside. Congratulations, human! I'm probably never getting that coat back, and it cost me a pretty sum. Thanks for nothing.",
-   "dst": "",
+   "dst": "...치워 두자. 축하한다, 인간! 저 코트는 아마 못 찾겠지, 꽤 비싼 건데. 참 고맙다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -198,7 +198,7 @@
   },
   "The Canyon Guides#019": {
    "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair! Besides that...",
-   "dst": "",
+   "dst": "걷기만 하고... 여기서 좀 쉴래. 날 절벽에서 뛰어내리게 했으니 난 널 늦추게 할 거야. 공평하지! 게다가...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -208,7 +208,7 @@
   },
   "The Canyon Guides#020": {
    "src": "I only even came here just to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
-   "dst": "",
+   "dst": "경치나 보러 온 거였어. 적어도 그건 못 망치겠지. 그래도 참 대단한 휴가가 됐네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -218,7 +218,7 @@
   },
   "The Canyon Guides#021": {
    "src": "Wait, what in the world- What's going on?!",
-   "dst": "",
+   "dst": "잠깐, 이게 대체- 무슨 일이야?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -228,7 +228,7 @@
   },
   "The Canyon Guides#022": {
    "src": "GAH! NOT AGAIN!!!",
-   "dst": "",
+   "dst": "으악! 또야!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -238,7 +238,7 @@
   },
   "The Canyon Guides#023": {
    "src": "NO ONE TELLS ME ANYTHING! The brochure didn't mention earthquakes, YOU didn't tell me either, but what was I expecting from a human anyways?!",
-   "dst": "",
+   "dst": "아무도 말을 안 해 줘! 안내 책자에 지진 얘긴 없었고 너도 말 안 했지. 인간한테 뭘 기대했겠어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -248,7 +248,7 @@
   },
   "The Canyon Guides#024": {
    "src": "I'm not a carrot! You'd better get me out of h- ...wait, wait, those...",
-   "dst": "",
+   "dst": "난 당근이 아니야! 빨리 꺼내- ...잠깐, 잠깐, 저건...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -258,7 +258,7 @@
   },
   "The Canyon Guides#025": {
    "src": "H-Hobgoblins. Hobgoblins HOBGOBLINS THERE'S HOBGOBLINS!! KILL THEM! AAAAH! AAH! AAAAAAH!",
-   "dst": "",
+   "dst": "호, 홉고블린. 홉고블린 홉고블린이다 홉고블린!! 죽여! 으아아! 아아! 으아아아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -268,7 +268,7 @@
   },
   "The Canyon Guides#026": {
    "src": "Sweet baby bovine I just saw my life flash before my eyes. Ugh...now pull me up. I'm stuck. But easy on the goods, I'm NOT a carrot I'll remind you!",
-   "dst": "",
+   "dst": "맙소사, 방금 주마등이 스쳤어. 으... 이제 끌어올려. 끼었어. 살살 해, 다시 말하지만 난 당근이 아니야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -278,7 +278,7 @@
   },
   "The Canyon Guides#027": {
    "src": "Great. I'm SO grateful to be covered in mud and hobgoblin blood, and to be lacking my coat, AND to be stuck with a human.",
-   "dst": "",
+   "dst": "좋네. 진흙과 홉고블린 피 범벅에 코트도 없고, 인간이랑 붙어 다니게 돼서 정말 감사하다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -288,7 +288,7 @@
   },
   "The Canyon Guides#028": {
    "src": "Just get me out of here already. See, if an actual Bantisu monk had come down I'd probably be at home already, sipping tea by the fire!",
-   "dst": "",
+   "dst": "그냥 빨리 꺼내 줘. 진짜 Bantisu 수도승이 왔으면 지금쯤 집에서 난롯가에 차나 마시고 있겠지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -298,7 +298,7 @@
   },
   "The Canyon Guides#029": {
    "src": "I know you humans are reckless, but I'd have expected you to have SOME concern, since you supposedly wanted to rescue me.",
-   "dst": "",
+   "dst": "인간이 무모한 건 알지만, 날 구하러 왔다며 조금은 신경 써 줄 줄 알았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -308,7 +308,7 @@
   },
   "The Canyon Guides#030": {
    "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into the lake and made me lose my shoes!",
-   "dst": "",
+   "dst": "으, 발 아파 죽겠어. 누가 날 호수에 빠뜨려서 신발 잃게만 안 했어도 이 길이 이렇게 나쁘진 않았을걸!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -318,7 +318,7 @@
   },
   "The Canyon Guides#031": {
    "src": "More earthquakes...? Wait-",
-   "dst": "",
+   "dst": "또 지진...? 잠깐-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -328,7 +328,7 @@
   },
   "The Canyon Guides#032": {
    "src": "The ridge is collapsing!!",
-   "dst": "",
+   "dst": "능선이 무너진다!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -338,7 +338,7 @@
   },
   "The Canyon Guides#033": {
    "src": "RUN!",
-   "dst": "",
+   "dst": "뛰어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -348,7 +348,7 @@
   },
   "The Canyon Guides#034": {
    "src": "...perfect. Just GREAT! The only available path to the temple, and now it's blocked off! Just my luck!!",
-   "dst": "",
+   "dst": "...완벽하네. 정말 대단해! 사원으로 가는 유일한 길이 막혔어! 내 운이 그렇지!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -358,7 +358,7 @@
   },
   "The Canyon Guides#035": {
    "src": "...wait. You're reckless and willing to endanger your life, right? There's no way that I could possibly use them, but I see some ledges.",
-   "dst": "",
+   "dst": "...잠깐. 넌 무모하고 목숨도 막 걸잖아? 난 절대 못 쓰겠지만, 저기 턱이 좀 보이네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -368,7 +368,7 @@
   },
   "The Canyon Guides#036": {
    "src": "See, just to the side of the rockslide? There's some ledges to jump around on.",
-   "dst": "",
+   "dst": "봐, 낙석 바로 옆에? 뛰어다닐 만한 턱이 있잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -378,7 +378,7 @@
   },
   "The Canyon Guides#037": {
    "src": "Find a way to get Seluc past the blockage.",
-   "dst": "",
+   "dst": "Seluc이 장애물을 넘어가게 할 방법을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canyon Guides",
@@ -388,7 +388,7 @@
   },
   "The Canyon Guides#038": {
    "src": "...of course it's a ladder. I'm going to be feeling this climb for weeks...",
-   "dst": "",
+   "dst": "...당연히 사다리지. 이거 오르면 몇 주는 쑤시겠네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -398,7 +398,7 @@
   },
   "The Canyon Guides#039": {
    "src": "Huff...puff... Well...huff... Wait, there's...there's no way down to the other side! Huff...what a waste!!",
-   "dst": "",
+   "dst": "헉...헉... 음...헉... 잠깐, 반대편으로... 내려갈 길이 없잖아! 헉...헛고생했네!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -408,7 +408,7 @@
   },
   "The Canyon Guides#040": {
    "src": "Can you do ANYTHING right?! There's no way I'm jumping down there, you maniac!",
-   "dst": "",
+   "dst": "하나라도 제대로 하는 게 있어?! 저기로 뛰어내릴 리가 없잖아, 이 미친놈아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -418,7 +418,7 @@
   },
   "The Canyon Guides#041": {
    "src": "YOU-!",
-   "dst": "",
+   "dst": "너 이-!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -428,7 +428,7 @@
   },
   "The Canyon Guides#042": {
    "src": "You...had better count yourself lucky I haven't broken any bones over this. Agh...but that doesn't mean I'm not aching all over!!",
-   "dst": "",
+   "dst": "너... 뼈 하나 안 부러진 걸 다행으로 알아. 아으... 그렇다고 온몸이 안 쑤신다는 건 아니야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -438,7 +438,7 @@
   },
   "The Canyon Guides#043": {
    "src": "When I said you were reckless, I was hoping that maybe you'd keep that side of yourself away from other people!!",
-   "dst": "",
+   "dst": "무모하다고 할 때, 그런 면은 남한테 안 쓰길 바랐다고!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -448,7 +448,7 @@
   },
   "The Canyon Guides#044": {
    "src": "Escort Seluc back to Gana.",
-   "dst": "",
+   "dst": "Seluc을 Gana에게 호위해 데려가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canyon Guides",
@@ -458,7 +458,7 @@
   },
   "The Canyon Guides#045": {
    "src": "At least we're nearly at the temple now. Come on Seluc, silver linings, silver linings. You're nearly away from this freak...",
-   "dst": "",
+   "dst": "그래도 사원이 거의 다 왔어. 힘내 Seluc, 좋게 생각하자, 좋게. 이 괴짜랑도 곧 끝이야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -468,7 +468,7 @@
   },
   "The Canyon Guides#046": {
    "src": "Okay, you know what? No. You've put me through QUITE a lot here, human, so you're going to do me a favor and I'm not going to move another step til it's done.",
-   "dst": "",
+   "dst": "그래, 있잖아? 안 돼. 인간, 네 탓에 고생 좀 했으니 부탁 하나 들어줘. 그 전엔 한 발짝도 안 움직여.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -478,7 +478,7 @@
   },
   "The Canyon Guides#047": {
    "src": "I paid two weeks wages for that coat you soaked. I'm not leaving here without it, and I'm way too tired to walk back down.",
-   "dst": "",
+   "dst": "네가 적신 그 코트, 2주치 품삯이야. 그거 없인 안 가, 그리고 도로 내려가기엔 너무 지쳤어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -488,7 +488,7 @@
   },
   "The Canyon Guides#048": {
    "src": "So you're going back down to the bottom of the ridge, and you're going to get me my coat. It's the least you could do.",
-   "dst": "",
+   "dst": "그러니까 네가 능선 아래로 내려가서 내 코트를 가져와. 그 정도는 해야지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -498,7 +498,7 @@
   },
   "The Canyon Guides#049": {
    "src": "And be quick about it! I feel like these quakes are going to make the whole mountain collapse. That looks like it opened up a hole straight to the bottom!",
-   "dst": "",
+   "dst": "그리고 빨리 해! 이 지진에 산 전체가 무너질 것 같아. 저기 바닥까지 곧장 구멍이 뚫린 것 같은데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -508,7 +508,7 @@
   },
   "The Canyon Guides#050": {
    "src": "Retrieve the coat Seluc left behind at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에 Seluc이 두고 온 코트를 되찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canyon Guides",
@@ -518,7 +518,7 @@
   },
   "The Canyon Guides#051": {
    "src": "Talk to Gana and Seluc.",
-   "dst": "",
+   "dst": "Gana, Seluc과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canyon Guides",
@@ -528,7 +528,7 @@
   },
   "The Canyon Guides#052": {
    "src": "Took you long enough, coat-fetcher! I'm practically frostbitten up here!",
-   "dst": "",
+   "dst": "오래도 걸렸네, 코트 셔틀! 여기서 동상 걸리는 줄 알았어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -538,7 +538,7 @@
   },
   "The Canyon Guides#053": {
    "src": "You see, I was just speaking to Gana about your dirt-poor imitation of their job! You ought to be ashamed- I had to get up here all on my own!",
-   "dst": "",
+   "dst": "마침 Gana한테 네가 이분들 일을 얼마나 형편없이 흉내 냈는지 말하던 참이야! 부끄러운 줄 알아- 난 혼자 올라왔다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -548,7 +548,7 @@
   },
   "The Canyon Guides#054": {
    "src": "...hm. I will say, there are many lost around the canyon, Seluc- it may have been a long time before we were able to help you.",
-   "dst": "",
+   "dst": "...흠. 말씀드리자면, 협곡엔 길 잃은 이가 많습니다, Seluc- 당신을 돕기까지 오래 걸렸을지도 모릅니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -558,7 +558,7 @@
   },
   "The Canyon Guides#055": {
    "src": "Anyway! Give me that coat. The monks here are going to provide me some hospitality then guide me out of these wretched canyon walls.",
-   "dst": "",
+   "dst": "아무튼! 코트 내놔. 여기 수도승들이 날 대접하고 이 지긋지긋한 협곡에서 데리고 나가 줄 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -568,7 +568,7 @@
   },
   "The Canyon Guides#056": {
    "src": "This is goodbye then, human, I won't be missing you. Shoo!",
-   "dst": "",
+   "dst": "그럼 작별이다, 인간. 보고 싶진 않을 거야. 훠이!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -578,7 +578,7 @@
   },
   "The Canyon Guides#057": {
    "src": "...He did not really guide himself here. Did he.",
-   "dst": "",
+   "dst": "...그는 스스로 길을 찾아온 게 아니군요. 그렇죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -588,7 +588,7 @@
   },
   "The Canyon Guides#058": {
    "src": "...uh. ...dang it, why you gotta did that.",
-   "dst": "",
+   "dst": "...어. ...젠장, 그걸 왜 말해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -598,7 +598,7 @@
   },
   "The Canyon Guides#059": {
    "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude towards this kind human.",
-   "dst": "",
+   "dst": "교훈으로 삼으십시오, Seluc. 바람으로 보는 자에게 거짓말은 통하지 않습니다. 이 친절한 분께 감사하십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -608,7 +608,7 @@
   },
   "The Canyon Guides#060": {
    "src": "That's right! See, Gana? After all that, at least the human isn't a liar.",
-   "dst": "",
+   "dst": "맞아! 봤지, Gana? 그래도 이 인간은 거짓말쟁이는 아니라고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -618,7 +618,7 @@
   },
   "The Canyon Guides#061": {
    "src": "...Well, 'coat fetcher', getting this man his coat is still a fine deed. And for that, you shall be rewarded.",
-   "dst": "",
+   "dst": "...그럼, '코트 셔틀'님, 이분께 코트를 찾아 드린 건 훌륭한 일입니다. 그에 대한 보상을 드리지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -628,7 +628,7 @@
   },
   "The Canyon Guides#062": {
    "src": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
-   "dst": "",
+   "dst": "감사의 뜻으로 Bantisu Air Booster도 쓰실 수 있게 해 드리겠습니다. 협곡 곳곳에 있는 마법 공기 구름입니다. 도움이 되길 바랍니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Forbidden Prison (Quest)",
   "count": 119,
-  "translated": 4,
+  "translated": 120,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Forbidden Prison (Quest)#000": {
    "src": "Talk to the Merchant at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 상인과 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -18,7 +18,7 @@
   },
   "Forbidden Prison (Quest)#001": {
    "src": "Hey, hey, humie! Yeah, I'm talkin' to ya here..",
-   "dst": "",
+   "dst": "어이, 어이, 인간! 그래, 너한테 말하는 거야..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -28,7 +28,7 @@
   },
   "Forbidden Prison (Quest)#002": {
    "src": "Y'see, I got a few things here... look around for a bit, they're all very rare...",
-   "dst": "",
+   "dst": "봐, 여기 물건이 좀 있거든... 좀 둘러봐, 다 아주 귀한 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -38,7 +38,7 @@
   },
   "Forbidden Prison (Quest)#003": {
    "src": "I see that look in yer eyes... Ya interested in something here? It's all 'fa sale...",
-   "dst": "",
+   "dst": "그 눈빛 보이는데... 뭐 관심 있는 거 있어? 전부 파는 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -48,7 +48,7 @@
   },
   "Forbidden Prison (Quest)#004": {
    "src": "..Say, humie... I ain't mean to alarm ya, but do ya know who that guy sneakin' up behind 'ye is?",
-   "dst": "",
+   "dst": "..저기, 인간... 겁주려는 건 아닌데, 네 뒤로 몰래 다가오는 저 녀석이 누군지 알아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -58,7 +58,7 @@
   },
   "Forbidden Prison (Quest)#005": {
    "src": "OI! Wake up, you damned miscreant!",
-   "dst": "",
+   "dst": "야! 일어나, 이 빌어먹을 악당아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -68,7 +68,7 @@
   },
   "Forbidden Prison (Quest)#006": {
    "src": "Took ya long enough.. Alright, listen up, maggot!",
-   "dst": "",
+   "dst": "오래도 잤군.. 좋아, 잘 들어, 구더기!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -78,7 +78,7 @@
   },
   "Forbidden Prison (Quest)#007": {
    "src": "We found ya outside of {p}, passed out near some dead body, and... Well, we had to arrest someone for that merchant's death!",
-   "dst": "",
+   "dst": "{p} 밖에서 시체 옆에 뻗어 있는 널 찾았지... 뭐, 그 상인 죽음에 누구든 잡아넣어야 했거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -88,7 +88,7 @@
   },
   "Forbidden Prison (Quest)#008": {
    "src": "So, welcome to the {p} Federal Prison. You're in here for the rest of your life, short-nose, so no use complaining about it.",
-   "dst": "",
+   "dst": "그러니 {p} 연방 교도소에 온 걸 환영한다. 평생 여기서 썩을 테니 불평해 봤자 소용없다, 짧은코.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -98,7 +98,7 @@
   },
   "Forbidden Prison (Quest)#009": {
    "src": "And don't think you get to just lounge around all day in your cell. You gotta do work here, or you're getting thrown in the hole.",
-   "dst": "",
+   "dst": "감방에서 온종일 빈둥댈 생각은 마라. 여기선 일을 해야 해, 안 그러면 독방에 처박힌다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -108,7 +108,7 @@
   },
   "Forbidden Prison (Quest)#010": {
    "src": "But for now, you’re stayin’ in your cell, understood? Now, stay here, and take a look around your cell. You'll know when it's time to work..",
-   "dst": "",
+   "dst": "하지만 지금은 감방에 있어라, 알겠나? 여기 있으면서 감방이나 둘러봐. 일할 때가 되면 알게 될 거다..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -118,7 +118,7 @@
   },
   "Forbidden Prison (Quest)#011": {
    "src": "Explore your cell",
-   "dst": "",
+   "dst": "감방을 탐험하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -128,7 +128,7 @@
   },
   "Forbidden Prison (Quest)#012": {
    "src": "GWAH! Who the hell are you?",
-   "dst": "",
+   "dst": "으악! 넌 대체 누구야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -138,7 +138,7 @@
   },
   "Forbidden Prison (Quest)#013": {
    "src": "Oh, thank grook, you're just another prisoner... So young, too...",
-   "dst": "",
+   "dst": "오, Grook 덕분이군, 그냥 다른 죄수구먼... 이렇게 젊은데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -148,7 +148,7 @@
   },
   "Forbidden Prison (Quest)#014": {
    "src": "You just got here, right? Well... I can tell you're innocent... Just like almost everyone else in this forsaken prison...",
-   "dst": "",
+   "dst": "막 들어왔지? 음... 무고한 게 보여... 이 버림받은 감옥의 거의 모두처럼...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -158,7 +158,7 @@
   },
   "Forbidden Prison (Quest)#015": {
    "src": "Listen, human... This prison... You couldn't have come to a more horrific prison in the entire world! This place is hellish!!",
-   "dst": "",
+   "dst": "들어 봐, 인간... 이 감옥은... 세상에서 이보다 끔찍한 감옥은 없어! 여긴 지옥이야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -168,7 +168,7 @@
   },
   "Forbidden Prison (Quest)#016": {
    "src": "The guards here, they're sadistic! They'll pluck random prisoners out of their cells, and nobody ever sees them again! They're trying to kill us all in here!",
-   "dst": "",
+   "dst": "여기 교도관들은 가학적이야! 아무 죄수나 감방에서 끌어내는데, 그 뒤로 아무도 못 봐! 우릴 여기서 다 죽이려는 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -178,7 +178,7 @@
   },
   "Forbidden Prison (Quest)#017": {
    "src": "I'm being serious, human! If you stay here, they'll kill you, too! You HAVE to escape this place, whatever it t-",
-   "dst": "",
+   "dst": "진심이야, 인간! 여기 있으면 너도 죽어! 반드시 탈출해야 해, 무슨 대가를 치르-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -188,7 +188,7 @@
   },
   "Forbidden Prison (Quest)#018": {
    "src": "Oi, filth! You're comin' with us. Get out of your cell, NOW!",
-   "dst": "",
+   "dst": "야, 쓰레기! 넌 우리랑 간다. 감방에서 나와, 당장!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -198,7 +198,7 @@
   },
   "Forbidden Prison (Quest)#019": {
    "src": "Are you sure, uh, sir? I don't think I'm supposed to be anywhere today...",
-   "dst": "",
+   "dst": "저, 확실하세요, 나리? 전 오늘 어디 갈 일이 없을 텐데요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -208,7 +208,7 @@
   },
   "Forbidden Prison (Quest)#020": {
    "src": "Oh, ya think you're smart, trying to resist?? Oi, Jon, block the entrance!",
-   "dst": "",
+   "dst": "오, 반항하는 게 똑똑한 줄 알아?? 야, Jon, 입구 막아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -218,7 +218,7 @@
   },
   "Forbidden Prison (Quest)#021": {
    "src": "H-HEY! WHAT ARE YOU- GET OFF- AAAAAHH!! SOMEONE!! HELP ME!!! PLEASE!!!!",
-   "dst": "",
+   "dst": "이-이봐! 뭐 하는- 놔- 으아아악!! 누가!! 살려 줘!!! 제발!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -228,7 +228,7 @@
   },
   "Forbidden Prison (Quest)#022": {
    "src": "OI! Quit starin’ off into space, maggot! Come over to your cell's bars.",
-   "dst": "",
+   "dst": "야! 멍때리지 마, 구더기! 감방 창살 쪽으로 와.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -238,7 +238,7 @@
   },
   "Forbidden Prison (Quest)#023": {
    "src": "It’s work time, filth. I'll escort you to the hallways. Once you're there, someone will tell you what to do. Do as they say, and you might come back tonight.",
-   "dst": "",
+   "dst": "일할 시간이다, 쓰레기. 복도까지 데려가 주지. 거기서 누가 할 일을 알려 줄 거다. 시키는 대로 하면 오늘 밤 돌아올 수도 있겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -248,7 +248,7 @@
   },
   "Forbidden Prison (Quest)#024": {
    "src": "You got that, wretch? Alright, now get out of your cell!",
-   "dst": "",
+   "dst": "알아들었냐, 비렁뱅이? 좋아, 이제 감방에서 나와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -258,7 +258,7 @@
   },
   "Forbidden Prison (Quest)#025": {
    "src": "Get your instructions from the guard",
-   "dst": "",
+   "dst": "교도관에게 지시를 받으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -268,7 +268,7 @@
   },
   "Forbidden Prison (Quest)#026": {
    "src": "Guess you're the one on cleanin' duty, huh? Alright. Listen up, scum!",
-   "dst": "",
+   "dst": "청소 당번이 너로군? 좋아. 잘 들어, 인간쓰레기!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -278,7 +278,7 @@
   },
   "Forbidden Prison (Quest)#027": {
    "src": "Take this sponge, and look around the hallways. If you see a mess, use the sponge to clean it up. Someone will escort you back to the cells once you're done.",
-   "dst": "",
+   "dst": "이 스펀지 들고 복도를 둘러봐. 더러운 게 보이면 스펀지로 치워. 끝나면 누가 감방까지 데려다줄 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -288,7 +288,7 @@
   },
   "Forbidden Prison (Quest)#028": {
    "src": "Got it? Alright. Now, get to work!",
-   "dst": "",
+   "dst": "알겠냐? 좋아. 이제 일해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -298,7 +298,7 @@
   },
   "Forbidden Prison (Quest)#029": {
    "src": "Search the hallways for messes to clean up",
-   "dst": "",
+   "dst": "복도에서 청소할 오물을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -308,7 +308,7 @@
   },
   "Forbidden Prison (Quest)#030": {
    "src": "Report to the prison guard at [-{~}, {~}, {~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 교도관에게 보고하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -318,7 +318,7 @@
   },
   "Forbidden Prison (Quest)#031": {
    "src": "You're done cleaning? Alright, it's time for rollcall. You're being escorted back to the cell block. Follow me, and don't move.",
-   "dst": "",
+   "dst": "청소 끝났냐? 좋아, 점호 시간이다. 감방 구역으로 데려간다. 따라와, 움직이지 말고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -328,7 +328,7 @@
   },
   "Forbidden Prison (Quest)#032": {
    "src": "Well, well, well... Looks like the dross of society is here on time!",
-   "dst": "",
+   "dst": "이런, 이런, 이런... 사회의 찌꺼기들이 제시간에 왔군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -338,7 +338,7 @@
   },
   "Forbidden Prison (Quest)#033": {
    "src": "Alright. Stay in line, and don't move, maggots! It's time for roll call...",
-   "dst": "",
+   "dst": "좋아. 줄 서고 움직이지 마, 구더기들! 점호 시간이다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -358,7 +358,7 @@
   },
   "Forbidden Prison (Quest)#035": {
    "src": "You’re all here… Ha! That’s a surprise, you outcasts can actually follow orders!",
-   "dst": "",
+   "dst": "전부 있군… 하! 놀랍네, 너희 떨거지들도 명령은 따를 줄 아는구나!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -368,7 +368,7 @@
   },
   "Forbidden Prison (Quest)#036": {
    "src": "...Hm… Looks like we’ve got a new arrival too.. Don’t worry, peon... your soul will be well secure here for the rest of eternity.",
-   "dst": "",
+   "dst": "...흠… 신입도 하나 왔군.. 걱정 마, 졸개... 네 영혼은 여기서 영원토록 안전하게 보관될 테니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -378,7 +378,7 @@
   },
   "Forbidden Prison (Quest)#037": {
    "src": "Alright. That’s it for now, you worthless menaces. It’s meal time. Head to the cafeteria, and pray that we’re not giving you your last meal.",
-   "dst": "",
+   "dst": "좋아. 지금은 여기까지다, 쓸모없는 골칫덩이들. 식사 시간이다. 식당으로 가서, 마지막 식사가 아니길 빌어라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -388,7 +388,7 @@
   },
   "Forbidden Prison (Quest)#038": {
    "src": "Find a place to sit in the cafeteria",
-   "dst": "",
+   "dst": "식당에서 앉을 자리를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -398,7 +398,7 @@
   },
   "Forbidden Prison (Quest)#039": {
    "src": "Hi... Say, could you... do something for me...?",
-   "dst": "",
+   "dst": "안녕... 저기, 혹시... 부탁 하나 들어줄 수 있어...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -408,7 +408,7 @@
   },
   "Forbidden Prison (Quest)#040": {
    "src": "I'm... starving to death here... those blasted guards won't... let me get any food...",
-   "dst": "",
+   "dst": "난... 여기서 굶어 죽어 가... 그 망할 교도관들이... 음식을 못 먹게 해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -418,7 +418,7 @@
   },
   "Forbidden Prison (Quest)#041": {
    "src": "Please... to my right... There's some food sitting there, if you could get it for me, I'd be... eternally grateful...",
-   "dst": "",
+   "dst": "제발... 내 오른쪽에... 음식이 놓여 있어, 가져다주면... 평생 은혜를 잊지 않을게...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -428,7 +428,7 @@
   },
   "Forbidden Prison (Quest)#042": {
    "src": "Is this... it's... Food!!",
-   "dst": "",
+   "dst": "이건... 이건... 음식이다!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -438,7 +438,7 @@
   },
   "Forbidden Prison (Quest)#043": {
    "src": "I... I can't thank you enough, human... I should be able to keep going with this...",
-   "dst": "",
+   "dst": "나... 뭐라 감사해야 할지, 인간... 이거면 버틸 수 있을 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -448,7 +448,7 @@
   },
   "Forbidden Prison (Quest)#044": {
    "src": "Say... if you ever get out of this slaughterhouse... could you go to {p}... and try and talk with my family, there? Let them know that I'm still alive...? I'd appreciate that....",
-   "dst": "",
+   "dst": "저기... 혹시 이 도살장을 나가게 되면... {p}에 가서... 우리 가족과 얘기해 줄래? 내가 아직 살아 있다고 전해 줘...? 정말 고마울 거야....",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -458,7 +458,7 @@
   },
   "Forbidden Prison (Quest)#045": {
    "src": "Hey.. It's alright, you can sit here, don't worry.",
-   "dst": "",
+   "dst": "이봐.. 괜찮아, 여기 앉아, 걱정 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -468,7 +468,7 @@
   },
   "Forbidden Prison (Quest)#046": {
    "src": "So... you're new here, right? Hah… Guessing you're innocent, just like the rest of us… and I mean that...",
-   "dst": "",
+   "dst": "그래서... 새로 왔지? 하… 너도 우리처럼 무고하겠지… 진심이야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -478,7 +478,7 @@
   },
   "Forbidden Prison (Quest)#047": {
    "src": "He's tellin' the truth, new guy. Most of us here are just average civilians. I worked at a transportation company in {p}, and was delivering some crates to {p} when they snatched me just out of town.",
-   "dst": "",
+   "dst": "저 말 사실이야, 신입. 여기 대부분은 평범한 시민이야. 난 {p}의 운송 회사에서 일했는데, {p}(으)로 상자를 배달하다가 마을 나서자마자 잡혀 왔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -488,7 +488,7 @@
   },
   "Forbidden Prison (Quest)#048": {
    "src": "Me too! I don't even know why I was put here at all! I wasn't even given a trial in court, or anything! They just plucked me off the streets and threw me in here!",
-   "dst": "",
+   "dst": "나도야! 왜 여기 갇혔는지도 몰라! 재판도 못 받았어! 길거리에서 그냥 끌려와서 여기 처박혔다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -498,7 +498,7 @@
   },
   "Forbidden Prison (Quest)#049": {
    "src": "They wanna kill you, that's why. Did ya hear about Revan? He got taken away a couple of days ago, after he accidentally stumbled during roll call. Nobody's heard or seen 'em since.",
-   "dst": "",
+   "dst": "널 죽이고 싶어서지, 그게 이유야. Revan 얘기 들었어? 며칠 전 점호 때 실수로 비틀거렸다가 끌려갔어. 그 뒤로 아무도 소식을 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -508,7 +508,7 @@
   },
   "Forbidden Prison (Quest)#050": {
    "src": "I… you're probably right... I just dont understand any of this anymore... I just want to escape this damn place for good...",
-   "dst": "",
+   "dst": "난… 네 말이 맞겠지... 이젠 아무것도 모르겠어... 그냥 이 망할 곳에서 영영 나가고 싶어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -518,7 +518,7 @@
   },
   "Forbidden Prison (Quest)#051": {
    "src": "...Good luck with that.. Only way out is through that exit door, and even then you gotta get into the Control Room, as well. It's...just impossible, y'know?",
-   "dst": "",
+   "dst": "...행운을 빈다.. 나가는 길은 저 출구 문뿐인데, 그러려면 통제실에도 들어가야 해. 그건... 불가능하지, 알잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -528,7 +528,7 @@
   },
   "Forbidden Prison (Quest)#052": {
    "src": "Alright, meal time's over! Get to your cells, filth!",
-   "dst": "",
+   "dst": "좋아, 식사 끝! 감방으로 가, 쓰레기들!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -538,7 +538,7 @@
   },
   "Forbidden Prison (Quest)#053": {
    "src": "...Well… That's this place in a nutshell for you, human. Just try not to get in anyone's way or step out of line, and you should be alright until they end up taking you.",
-   "dst": "",
+   "dst": "...뭐… 이곳을 한마디로 하면 그래, 인간. 누구 길을 막거나 줄에서 벗어나지만 않으면, 끌려가기 전까진 괜찮을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -548,7 +548,7 @@
   },
   "Forbidden Prison (Quest)#054": {
    "src": "Oi, who’s this guy right ‘ere? We don’t know ya. Move it!",
-   "dst": "",
+   "dst": "야, 이 녀석 누구야? 우린 널 모르는데. 비켜!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -558,7 +558,7 @@
   },
   "Forbidden Prison (Quest)#055": {
    "src": "‘Ey, ‘ey, let it rest, Don. They're not hurtin’ nobody.",
-   "dst": "",
+   "dst": "어이, 어이, 그만둬, Don. 아무도 안 건드렸잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -568,7 +568,7 @@
   },
   "Forbidden Prison (Quest)#056": {
    "src": "...Got it, boss... Sorry…",
-   "dst": "",
+   "dst": "...알겠습니다, 보스... 죄송합니다…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -578,7 +578,7 @@
   },
   "Forbidden Prison (Quest)#057": {
    "src": "Don’t worry about it. So... You know who we are, novello?",
-   "dst": "",
+   "dst": "신경 쓰지 마. 그래서... 우리가 누군지 알아, novello?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -588,7 +588,7 @@
   },
   "Forbidden Prison (Quest)#058": {
    "src": "We’re part of the Placido Crime Family. We do business across the entire world; all parts of it, you know what I’m saying?",
-   "dst": "",
+   "dst": "우린 Placido 범죄 가문 사람이야. 세계 어디서든 사업을 하지; 구석구석 전부, 무슨 말인지 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -598,7 +598,7 @@
   },
   "Forbidden Prison (Quest)#059": {
    "src": "Almost all of us at this table got caught for running with the family-... Ah, bet you’re surprised to hear that there are some guilty people up in this slaughterhouse, yeah?",
-   "dst": "",
+   "dst": "이 테이블 거의 다 가문 일을 하다가 잡혔어-... 아, 이 도살장에 진짜 죄지은 놈들이 있다니 놀랐지, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -608,7 +608,7 @@
   },
   "Forbidden Prison (Quest)#060": {
    "src": "It’s alright, you don’t have to worry about us getting plucked and killed like those other piacevole here. Guards keep on sayin’ something about “our souls are too tainted”, whatever they mean.",
-   "dst": "",
+   "dst": "괜찮아, 여기 다른 piacevole처럼 끌려가서 죽을 걱정은 없어. 교도관들이 \"영혼이 너무 더럽혀졌다\"나 뭐라나 하더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -618,7 +618,7 @@
   },
   "Forbidden Prison (Quest)#061": {
    "src": "Hah! Maybe you’ll get the same treatment too, novello. I saw it the minute I laid eyes on ya. You’re a killer too, ain't ya? Hey, gotta be one to know you're dealin' with one..",
-   "dst": "",
+   "dst": "하! 너도 같은 대접을 받을지 모르지, novello. 처음 봤을 때 알았어. 너도 살인자지, 안 그래? 이봐, 같은 부류라야 알아보는 법이지..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -628,7 +628,7 @@
   },
   "Forbidden Prison (Quest)#062": {
    "src": "..Anyways... You thinkin’ about staying in this prison, fratello? Word of advice: Don’t. If you can, you gotta escape. You might think it’s impossible for someone to escape here, or whatnot...",
-   "dst": "",
+   "dst": "..어쨌든... 이 감옥에 계속 있을 생각이야, fratello? 충고 하나: 그러지 마. 할 수 있으면 탈출해. 여기서 탈출은 불가능하다고 생각하겠지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -638,7 +638,7 @@
   },
   "Forbidden Prison (Quest)#063": {
    "src": "Alright, meal time’s over! Get to your cells, filth!",
-   "dst": "",
+   "dst": "좋아, 식사 끝! 감방으로 가, 쓰레기들!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -648,7 +648,7 @@
   },
   "Forbidden Prison (Quest)#064": {
    "src": "But no, you're different. I can see it in those eyes. You just gotta find a way into that Control Room, somehow. And hey, if you do get outta here, go and raise some hell in the Levtus Black Market for us, yeah?",
-   "dst": "",
+   "dst": "하지만 넌 달라. 그 눈에 보여. 어떻게든 통제실에 들어갈 방법만 찾으면 돼. 그리고 이봐, 여기서 나가면 우리 대신 Letvus 암시장에서 한바탕 날뛰어 줘, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -658,7 +658,7 @@
   },
   "Forbidden Prison (Quest)#065": {
    "src": "Attend morning rollcall",
-   "dst": "",
+   "dst": "아침 점호에 참석하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -668,7 +668,7 @@
   },
   "Forbidden Prison (Quest)#066": {
    "src": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
-   "dst": "",
+   "dst": "좋아! 전부, 일어나! 감방에서 나와, 당장! 점호 시간이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -678,7 +678,7 @@
   },
   "Forbidden Prison (Quest)#067": {
    "src": "Alright, look straight, scum! Morning rollcall is about to start.",
-   "dst": "",
+   "dst": "좋아, 똑바로 봐, 인간쓰레기들! 아침 점호를 시작한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -688,7 +688,7 @@
   },
   "Forbidden Prison (Quest)#068": {
    "src": "Let's see here...",
-   "dst": "",
+   "dst": "어디 보자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -698,7 +698,7 @@
   },
   "Forbidden Prison (Quest)#069": {
    "src": "...you’re all here...? Hm... Disappointing, honestly. Rollcall is over. All of you, head to wherever your job is, and get to work!",
-   "dst": "",
+   "dst": "...전부 있다고...? 흠... 솔직히 실망이군. 점호 끝. 전부 각자 일터로 가서 일해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -708,7 +708,7 @@
   },
   "Forbidden Prison (Quest)#070": {
    "src": "Search the hallways for possible escape routes, and find a guard outfit",
-   "dst": "",
+   "dst": "복도에서 탈출 경로를 찾고, 교도관 옷을 구하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -718,7 +718,7 @@
   },
   "Forbidden Prison (Quest)#071": {
    "src": "Report to the Prison Guard at [-{~}, {~}, {~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 교도관에게 보고하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -728,7 +728,7 @@
   },
   "Forbidden Prison (Quest)#072": {
    "src": "You're done? Alright, now follow me. Rollcall is about to start.",
-   "dst": "",
+   "dst": "끝났냐? 좋아, 따라와. 곧 점호가 시작된다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -738,7 +738,7 @@
   },
   "Forbidden Prison (Quest)#073": {
    "src": "What with you all, showing up late like this?? It's time for rollcall!",
-   "dst": "",
+   "dst": "너희들 이렇게 늦게 오다니 뭐 하는 거야?? 점호 시간이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -758,7 +758,7 @@
   },
   "Forbidden Prison (Quest)#075": {
    "src": "You're all here, huh? Alright then, head on to dinn-",
-   "dst": "",
+   "dst": "전부 있다, 이거지? 좋아, 그럼 저녁 먹으러-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -768,7 +768,7 @@
   },
   "Forbidden Prison (Quest)#076": {
    "src": "Oi! Quit steppin' on my shoes, cretino!",
-   "dst": "",
+   "dst": "야! 내 신발 좀 그만 밟아, cretino!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -778,7 +778,7 @@
   },
   "Forbidden Prison (Quest)#077": {
    "src": "Hey! What the hell are you talkin' about, making up something like that! I didn't do anythin'!",
-   "dst": "",
+   "dst": "이봐! 무슨 소리야, 그런 걸 지어내고! 난 아무것도 안 했어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -788,7 +788,7 @@
   },
   "Forbidden Prison (Quest)#078": {
    "src": "Shut it, fat-nose! You know what you were doin'! Now stay out of my way!",
-   "dst": "",
+   "dst": "닥쳐, 뚱뚱코! 네가 뭘 했는지 알잖아! 이제 비켜!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -798,7 +798,7 @@
   },
   "Forbidden Prison (Quest)#079": {
    "src": "OI! Are you blind, or something?!? Get those lowlifes under control, guards!",
-   "dst": "",
+   "dst": "야! 눈이 멀었나?!? 교도관들, 저 쓰레기들 통제해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -808,7 +808,7 @@
   },
   "Forbidden Prison (Quest)#080": {
    "src": "You two got some damn nerve, fightin' during rollcall!",
-   "dst": "",
+   "dst": "너희 둘 간이 부었구나, 점호 중에 싸움질이라니!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -818,7 +818,7 @@
   },
   "Forbidden Prison (Quest)#081": {
    "src": "W-Woah, HEY! This maggot has a shank! Back up!!!",
-   "dst": "",
+   "dst": "우-우와, 이봐! 이 구더기 칼 갖고 있어! 물러서!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -828,7 +828,7 @@
   },
   "Forbidden Prison (Quest)#082": {
    "src": "LOCKDOWN! LOCKDOWN! ALL OF YOU, IN YOUR CELLS, NOW!",
-   "dst": "",
+   "dst": "봉쇄! 봉쇄! 전부, 감방으로, 당장!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -838,7 +838,7 @@
   },
   "Forbidden Prison (Quest)#083": {
    "src": "You two really are stupid, huh? Fighting in the midst of all of these guards? And you got a shank, too...",
-   "dst": "",
+   "dst": "너희 둘 정말 멍청하구나? 이 많은 교도관 한가운데서 싸워? 칼까지 들고...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -848,7 +848,7 @@
   },
   "Forbidden Prison (Quest)#084": {
    "src": "Well, looks like it's game over for you two outcasts. You're heading straight to the hole!",
-   "dst": "",
+   "dst": "자, 너희 두 떨거지는 끝장이다. 곧장 독방행이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -858,7 +858,7 @@
   },
   "Forbidden Prison (Quest)#085": {
    "src": "You, take these two cretins to the hole, and you, go to my office and get one of the spare control room keys. Now, LIGHTS OUT!",
-   "dst": "",
+   "dst": "너, 이 멍청이 둘을 독방에 데려가. 그리고 너, 내 사무실에서 통제실 여분 열쇠 하나 가져와. 자, 소등!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -868,7 +868,7 @@
   },
   "Forbidden Prison (Quest)#086": {
    "src": "Attend morning rollcall",
-   "dst": "",
+   "dst": "아침 점호에 참석하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -878,7 +878,7 @@
   },
   "Forbidden Prison (Quest)#087": {
    "src": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
-   "dst": "",
+   "dst": "좋아! 전부, 일어나! 감방에서 나와, 당장! 점호 시간이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -888,7 +888,7 @@
   },
   "Forbidden Prison (Quest)#088": {
    "src": "Alright, everyone get in line, and stand straight! Don't move, or it's game over for you!",
-   "dst": "",
+   "dst": "좋아, 전부 줄 서서 똑바로 서! 움직이면 끝장이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -908,7 +908,7 @@
   },
   "Forbidden Prison (Quest)#090": {
    "src": "H-hey! Stop pushing me, mate! Seriou-",
-   "dst": "",
+   "dst": "이-이봐! 밀지 마, 친구! 진짜-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -918,7 +918,7 @@
   },
   "Forbidden Prison (Quest)#091": {
    "src": "Well, well, well... Another peon thought it was wise to step off course..",
-   "dst": "",
+   "dst": "이런, 이런, 이런... 또 한 졸개가 줄을 벗어나는 게 현명하다고 생각했군..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -928,7 +928,7 @@
   },
   "Forbidden Prison (Quest)#092": {
    "src": "W-wait a minute, miss! Someone pushed me out of line! I swear!",
-   "dst": "",
+   "dst": "자-잠깐만요! 누가 절 줄 밖으로 밀었어요! 맹세해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -938,7 +938,7 @@
   },
   "Forbidden Prison (Quest)#093": {
    "src": "BE QUIET! I didn't say you could speak, filth!",
-   "dst": "",
+   "dst": "닥쳐! 말해도 된다고 안 했다, 쓰레기!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -948,7 +948,7 @@
   },
   "Forbidden Prison (Quest)#094": {
    "src": "Get back in line! Once this is over, you're out, slime!",
-   "dst": "",
+   "dst": "줄로 돌아가! 이게 끝나면 넌 끝이다, 벌레야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -958,7 +958,7 @@
   },
   "Forbidden Prison (Quest)#095": {
    "src": "Alright, now, the rest of you, get to work! Rollcall is over for you all!",
-   "dst": "",
+   "dst": "좋아, 나머지는 일하러 가! 점호는 끝났다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -968,7 +968,7 @@
   },
   "Forbidden Prison (Quest)#096": {
    "src": "Steal the key from the warden's office, and head to the control room",
-   "dst": "",
+   "dst": "교도소장 사무실에서 열쇠를 훔쳐 통제실로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -978,7 +978,7 @@
   },
   "Forbidden Prison (Quest)#097": {
    "src": "Find a way to open the exit door",
-   "dst": "",
+   "dst": "출구 문을 열 방법을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -988,7 +988,7 @@
   },
   "Forbidden Prison (Quest)#098": {
    "src": "Head through the exit door at [-{~}, {~}, {~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 출구 문으로 나가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -998,7 +998,7 @@
   },
   "Forbidden Prison (Quest)#099": {
    "src": "Sneak past the guards and find a way to the Records Room",
-   "dst": "",
+   "dst": "교도관들을 몰래 지나 기록실로 갈 방법을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -1008,7 +1008,7 @@
   },
   "Forbidden Prison (Quest)#100": {
    "src": "Huh, what's that noise?",
-   "dst": "",
+   "dst": "응, 무슨 소리지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1018,7 +1018,7 @@
   },
   "Forbidden Prison (Quest)#101": {
    "src": "Oh, thank the bovine! There's a friendly face around here..",
-   "dst": "",
+   "dst": "오, 신성한 소여, 고맙습니다! 여기 반가운 얼굴이 있네..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1028,7 +1028,7 @@
   },
   "Forbidden Prison (Quest)#102": {
    "src": "Listen, human, you gotta get me out of here! They've been killin' people in here all day! If you don't help me out, I'll be next!",
-   "dst": "",
+   "dst": "들어 봐, 인간, 날 여기서 꺼내 줘! 놈들이 온종일 사람을 죽이고 있어! 안 도와주면 다음은 나야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1038,7 +1038,7 @@
   },
   "Forbidden Prison (Quest)#103": {
    "src": "Look, next to my cell, on that desk! There's a key! Grab it and hand it to me!",
-   "dst": "",
+   "dst": "봐, 내 감방 옆, 저 책상 위에! 열쇠가 있어! 집어서 나한테 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1048,7 +1048,7 @@
   },
   "Forbidden Prison (Quest)#104": {
    "src": "Yes, perfect, PERFECT! That's the key, hand it to me!",
-   "dst": "",
+   "dst": "그래, 완벽해, 완벽해! 그 열쇠야, 이리 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1058,7 +1058,7 @@
   },
   "Forbidden Prison (Quest)#105": {
    "src": "I can't explain the debt I owe you, human... You have no idea how grateful I am..",
-   "dst": "",
+   "dst": "이 빚을 어떻게 말로 다 해, 인간... 내가 얼마나 고마운지 모를 거야..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1068,7 +1068,7 @@
   },
   "Forbidden Prison (Quest)#106": {
    "src": "Say, what's your name, human? {u}? Alright, my name's Kaetan. Go on ahead and get out of here, I'll catch up. If you do get out of this chop-shop, meet me in {p}, I want to give you something there.",
-   "dst": "",
+   "dst": "저기, 이름이 뭐야, 인간? {u}? 좋아, 난 Kaetan이야. 먼저 나가, 곧 따라갈게. 이 도살장을 빠져나가면 {p}에서 만나, 줄 게 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1078,7 +1078,7 @@
   },
   "Forbidden Prison (Quest)#107": {
    "src": "Hh-h-hel-p-pp-p.... m-me-ee-e.. pl-ea-s-sE!",
-   "dst": "",
+   "dst": "사-사-살려... 주-주세요... 제-제발!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1088,7 +1088,7 @@
   },
   "Forbidden Prison (Quest)#108": {
    "src": "Huh...? Oh- HEY! The table caught on fire, someone get over 'ere and help me put it out!",
-   "dst": "",
+   "dst": "응...? 어- 이봐! 테이블에 불붙었어, 누가 와서 불 끄는 것 좀 도와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1098,7 +1098,7 @@
   },
   "Forbidden Prison (Quest)#109": {
    "src": "Find and destroy your criminal records",
-   "dst": "",
+   "dst": "범죄 기록을 찾아 없애세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -1108,7 +1108,7 @@
   },
   "Forbidden Prison (Quest)#110": {
    "src": "Leave the prison",
-   "dst": "",
+   "dst": "감옥을 떠나세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Forbidden Prison (Quest)",
@@ -1118,7 +1118,7 @@
   },
   "Forbidden Prison (Quest)#111": {
    "src": "Who are you? Can I help you, human?",
-   "dst": "",
+   "dst": "누구세요? 도와드릴까요, 인간?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1128,7 +1128,7 @@
   },
   "Forbidden Prison (Quest)#112": {
    "src": "WHAT?? Taron, he-he's alive?? And you... made sure he didn't starve in that prison...?",
-   "dst": "",
+   "dst": "뭐라고요?? Taron이, 사-살아 있다고요?? 그리고 당신이... 그 감옥에서 굶어 죽지 않게 해 줬다고요...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1138,7 +1138,7 @@
   },
   "Forbidden Prison (Quest)#113": {
    "src": "I... human, I can't thank you enough. Even if he doesn't get out of there, just knowing he's alive is... please, I know it's not a lot, but take this.",
-   "dst": "",
+   "dst": "저... 인간, 정말 감사해요. 거기서 못 나오더라도, 살아 있다는 것만 알아도... 제발, 많진 않지만 받아 주세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1148,7 +1148,7 @@
   },
   "Forbidden Prison (Quest)#114": {
    "src": "Good evening. Can I help you with anything?",
-   "dst": "",
+   "dst": "안녕하세요. 뭐 도와드릴까요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1158,7 +1158,7 @@
   },
   "Forbidden Prison (Quest)#115": {
    "src": "M-my son? He's alive?!? Oh, sweet baby bovine, that's...! Where is he??",
-   "dst": "",
+   "dst": "내-내 아들이요? 살아 있다고요?!? 오, 신성한 소여, 그건...! 어디 있어요??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1168,7 +1168,7 @@
   },
   "Forbidden Prison (Quest)#116": {
    "src": "...the prison, huh? Well... It's good to know that he'll be able to hold on a little longer... Thank you so much, human. Here, take this!",
-   "dst": "",
+   "dst": "...감옥이라고요? 음... 조금 더 버틸 수 있다니 다행이네요... 정말 고마워요, 인간. 자, 이거 받아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1178,7 +1178,7 @@
   },
   "Forbidden Prison (Quest)#117": {
    "src": "The only way to escape is by heading through the exit door. You'll need to access the control room in order to open it...",
-   "dst": "",
+   "dst": "탈출하는 유일한 방법은 출구 문을 지나는 것이다. 문을 열려면 통제실에 들어가야 한다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1188,7 +1188,7 @@
   },
   "Forbidden Prison (Quest)#118": {
    "src": "The Prison appears to be lying about almost everything they do to the government, and they appear to buy into it, despite all the rumors about this place.",
-   "dst": "",
+   "dst": "이 감옥은 정부에 거의 모든 일을 속이는 듯하고, 정부는 이곳에 대한 온갖 소문에도 그걸 그대로 믿는 것 같다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",

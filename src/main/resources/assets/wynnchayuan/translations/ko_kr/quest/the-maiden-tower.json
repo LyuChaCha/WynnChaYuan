@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Maiden Tower",
   "count": 36,
-  "translated": 0,
+  "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Maiden Tower#000": {
    "src": "Visit Sherk at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Sherk를 찾아가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -18,7 +18,7 @@
   },
   "The Maiden Tower#001": {
    "src": "Ah! What are you doing in my swamp?! Don't you know that Ogres live alone for a reason?",
-   "dst": "",
+   "dst": "아! 내 늪에서 뭐 하는 거야?! 오우거가 혼자 사는 데엔 이유가 있다는 거 몰라?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -28,7 +28,7 @@
   },
   "The Maiden Tower#002": {
    "src": "Eh? You're from across the sea, a land called Win? You certainly don't look like a winner to me, ya small fry.",
-   "dst": "",
+   "dst": "어? 바다 건너 Win이란 땅에서 왔다고? 내가 보기엔 위너는커녕 피라미 같은데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -38,7 +38,7 @@
   },
   "The Maiden Tower#003": {
    "src": "Fine then. Consider yourself lucky I'm in a... mood. I'll talk with you instead of crackin' yer bones for my bread.",
-   "dst": "",
+   "dst": "뭐, 좋아. 내가 지금... 기분이 괜찮은 걸 다행으로 알아. 뼈를 부숴 빵에 넣는 대신 얘기나 해 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -48,7 +48,7 @@
   },
   "The Maiden Tower#004": {
    "src": "Ogres are tough. We're independent and solitary folks. You don't bother us or interfere with our life, we leave you alone.",
-   "dst": "",
+   "dst": "오우거는 억세. 독립적이고 혼자 사는 족속이지. 네가 우릴 귀찮게 하거나 삶에 끼어들지 않으면, 우리도 널 내버려 둬.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -58,7 +58,7 @@
   },
   "The Maiden Tower#005": {
    "src": "That is, until it's time to find ourselves a partner. Then we'll turn over hell and highwater ta be together.",
-   "dst": "",
+   "dst": "짝을 찾을 때가 오기 전까진 말이야. 그땐 함께하려고 무슨 짓이든 다 하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -68,7 +68,7 @@
   },
   "The Maiden Tower#006": {
    "src": "And... well, when it's two ogres getting together, it's simple. But... I passed by a tall tower, and heard a Maiden's voice from inside.",
-   "dst": "",
+   "dst": "그리고... 뭐, 오우거끼리 만나는 건 간단해. 그런데... 높은 탑 옆을 지나다가 안에서 아가씨 목소리를 들었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -78,7 +78,7 @@
   },
   "The Maiden Tower#007": {
    "src": "Ogres don't live in fairytale towers, or have a voice that could make flowers grow with its lovely lilt!",
-   "dst": "",
+   "dst": "오우거는 동화 속 탑에 안 살고, 꽃을 피울 만큼 고운 목소리도 없다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -88,7 +88,7 @@
   },
   "The Maiden Tower#008": {
    "src": "I've been tryin' ta figure out how to approach this... I'm gettin' on in years, I need to find someone, and she's the girl.",
-   "dst": "",
+   "dst": "어떻게 다가갈지 계속 궁리했어... 나도 나이가 있으니 누굴 찾아야 하는데, 바로 그녀야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -98,7 +98,7 @@
   },
   "The Maiden Tower#009": {
    "src": "If you can help me out, I'll be real grateful. I'm sure I've got something that you'd like in exchange.",
-   "dst": "",
+   "dst": "도와주면 정말 고마울 거야. 대가로 네가 좋아할 만한 게 분명 있을 거고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -108,7 +108,7 @@
   },
   "The Maiden Tower#010": {
    "src": "Follow the rocky-looking path to find the tower. I'll meet with you there- prepare to be a wingman for an ogre.",
-   "dst": "",
+   "dst": "돌길을 따라가면 탑이 나와. 거기서 만나자. 오우거의 연애 도우미가 될 준비나 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -118,7 +118,7 @@
   },
   "The Maiden Tower#011": {
    "src": "Follow the stones in the path to the tower at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "길 위의 돌을 따라 [-{~}, {~}, -{~}]의 탑으로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -128,7 +128,7 @@
   },
   "The Maiden Tower#012": {
    "src": "This is the place. She's up at the top... Remember, I won't stop 'til I meet her. Coming here means you're in for the long haul.",
-   "dst": "",
+   "dst": "여기야. 그녀는 꼭대기에 있어... 명심해, 만날 때까진 멈추지 않아. 여기 왔으면 끝까지 가는 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -138,7 +138,7 @@
   },
   "The Maiden Tower#013": {
    "src": "I hear a voice outside! Oh, who might it be, I wonder~",
-   "dst": "",
+   "dst": "밖에서 목소리가 들려! 어머, 누구실까~",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -148,7 +148,7 @@
   },
   "The Maiden Tower#014": {
    "src": "Here goes... Hello, fair lady of the tower! I am Sherk! I heard your voice on the road- and I must meet you myself! ...that's formal enough, right?",
-   "dst": "",
+   "dst": "간다... 안녕하시오, 탑의 아름다운 아가씨! 난 Sherk요! 길에서 목소리를 듣고 꼭 직접 만나야겠소! ...이 정도면 격식 있지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -158,7 +158,7 @@
   },
   "The Maiden Tower#015": {
    "src": "Ohoho! An admirer? Such a lovely, rugged accent! However ...if you wish to meet me, I'd like to see your devotion, yes?",
-   "dst": "",
+   "dst": "오호호! 흠모하는 분인가요? 정말 멋지고 투박한 말투네요! 하지만 ...절 만나고 싶다면 헌신을 보여 주시겠어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -168,7 +168,7 @@
   },
   "The Maiden Tower#016": {
    "src": "Woman, you have no idea what you're sayin' when you ask for devotion.",
-   "dst": "",
+   "dst": "이봐요, 헌신을 요구하는 게 무슨 뜻인지 모르고 하는 소리야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -178,7 +178,7 @@
   },
   "The Maiden Tower#017": {
    "src": "There is a lovely urn my father had before. He took it with him to his grave, and I do miss my dear father so.",
-   "dst": "",
+   "dst": "아버지께서 아끼시던 예쁜 항아리가 있어요. 무덤에 함께 묻으셨는데, 사랑하는 아버지가 너무 그리워요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -188,7 +188,7 @@
   },
   "The Maiden Tower#018": {
    "src": "Retrieve the urn for me, so I can have a memento of him. Brave the crypts of {p}, behind the bank... And prove your devotion, dear suitor~",
-   "dst": "",
+   "dst": "그분을 기억할 수 있게 항아리를 찾아다 주세요. 은행 뒤 {p}의 지하 묘지에 가서... 헌신을 증명해 주세요, 내 님~",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -198,7 +198,7 @@
   },
   "The Maiden Tower#019": {
    "src": "...I'll return! You'll get your urn, no doubt! ... ...and a lovely fine boot up my backside. I don't fancy a massacre for a piece of pottery, Win person.",
-   "dst": "",
+   "dst": "...돌아오겠소! 항아리는 꼭 가져다드리지! ... ...그리고 엉덩이엔 발길질이나 받겠지. 도자기 하나 때문에 학살은 싫어, Win 사람.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -208,7 +208,7 @@
   },
   "The Maiden Tower#020": {
    "src": "I go into {p}, I'll get attacked. I get attacked, I attack back. They'll come after us... wouldn't want to present her with that. You get that urn for me, alright?",
-   "dst": "",
+   "dst": "내가 {p}에 가면 공격받아. 공격받으면 반격하지. 그럼 다들 우릴 쫓아올 거고... 그런 꼴로 그녀를 볼 순 없어. 네가 항아리를 가져와, 알겠지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -218,7 +218,7 @@
   },
   "The Maiden Tower#021": {
    "src": "Find the urn in the {p} Catacombs, behind the {p} bank at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 {p} 은행 뒤 {p} 지하 묘지에서 항아리를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -228,7 +228,7 @@
   },
   "The Maiden Tower#022": {
    "src": "And this is why I asked your help. As nice as blood spreads on toast, I have to reserve my sensibilities for the miss.",
-   "dst": "",
+   "dst": "그래서 네 도움을 청한 거야. 토스트에 피 바르는 것도 좋지만, 아가씨 앞에선 점잖아야 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -238,7 +238,7 @@
   },
   "The Maiden Tower#023": {
    "src": "I've got you some compensation already, so don't worry about getting snubbed for credit. Thank you kindly for the help.",
-   "dst": "",
+   "dst": "보상은 이미 준비해 뒀으니 공을 뺏길 걱정은 마. 도와줘서 정말 고마워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -248,7 +248,7 @@
   },
   "The Maiden Tower#024": {
    "src": "Just one last thing. I doubt she'll be expecting an ogre of all people to climb up her tower. I don't want her to get frightened away.",
-   "dst": "",
+   "dst": "마지막으로 하나만 더. 탑에 올라오는 게 하필 오우거일 줄은 그녀도 모를 거야. 놀라서 도망가면 안 되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -258,7 +258,7 @@
   },
   "The Maiden Tower#025": {
    "src": "So, Win person. Care to temper her expectations before I arrive? Head up before me.",
-   "dst": "",
+   "dst": "그러니까, Win 사람. 내가 가기 전에 기대치 좀 낮춰 줄래? 먼저 올라가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -268,7 +268,7 @@
   },
   "The Maiden Tower#026": {
    "src": "Enter the tower and make Sherk confess his love to the maiden.",
-   "dst": "",
+   "dst": "탑에 들어가 Sherk가 아가씨에게 사랑을 고백하게 하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -278,7 +278,7 @@
   },
   "The Maiden Tower#027": {
    "src": "Ohoho... you're one of those Humans I've read about, aren't you? Did you truly intend to be my suitor, dear?~",
-   "dst": "",
+   "dst": "오호호... 책에서 읽은 인간이죠? 정말 제 짝이 되러 오신 건가요, 자기?~",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -288,7 +288,7 @@
   },
   "The Maiden Tower#028": {
    "src": "Not exactly, milady! I'm the one seeking your affections- Coming up the ladder. I know I may not be a fairytale husband, but-",
-   "dst": "",
+   "dst": "그건 아니오, 아가씨! 당신을 사모하는 건 나요- 사다리로 올라가는 중이오. 동화 속 남편감은 아니겠지만-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -298,7 +298,7 @@
   },
   "The Maiden Tower#029": {
    "src": "Oh...my...goodness! A big, strong, strapping ogre!! Not a fairytale, my foot! And so polite too... Oh you'll make a perfect husband, heehee~",
-   "dst": "",
+   "dst": "어...머...나! 크고 강하고 늠름한 오우거잖아!! 동화가 아니긴 뭐가 아니야! 게다가 예의까지... 완벽한 남편이 되겠어요, 히히~",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -308,7 +308,7 @@
   },
   "The Maiden Tower#030": {
    "src": "...ehm. I. Ah.",
-   "dst": "",
+   "dst": "...음. 나. 아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -318,7 +318,7 @@
   },
   "The Maiden Tower#031": {
    "src": "Aren't your type supposed to be less... Ehm... Clefted? Grizzled? Pale?",
-   "dst": "",
+   "dst": "당신 같은 부류는 좀 덜... 음... 갈라지고? 거칠고? 창백해야 하는 거 아니오?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -328,7 +328,7 @@
   },
   "The Maiden Tower#032": {
    "src": "Oh, come here, Sherky-pie, give me a big kiss! And no need to worry, there's plenty more in store for my big hubby after that~",
-   "dst": "",
+   "dst": "어머, 이리 와요, Sherk 자기, 뽀뽀해 줘요! 걱정 마요, 그다음에도 우리 서방님을 위한 게 잔뜩 있으니까~",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -338,7 +338,7 @@
   },
   "The Maiden Tower#033": {
    "src": "Cor, lady! Even for an ogre you're layin' it on a bit thick! Aah, you see, ogres, and people like you, they have layers, right? And your first one is... Eh... ...rotten.",
-   "dst": "",
+   "dst": "맙소사, 아가씨! 오우거가 봐도 너무 들이대잖아! 아, 오우거랑 당신 같은 사람은 겹겹이 층이 있잖아, 그렇지? 당신 첫 층은... 어... ...썩었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -348,7 +348,7 @@
   },
   "The Maiden Tower#034": {
    "src": "Now I'm sure you'll find a nice lad somewhere who'll take you for who you are, but until you find someone who has no standards, shove your creepy lips where I can't see 'em!!",
-   "dst": "",
+   "dst": "있는 그대로 받아 줄 괜찮은 녀석을 언젠가 찾겠지. 하지만 기준이 없는 사람을 찾기 전까진, 그 소름 끼치는 입술 좀 치워 줘!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -358,7 +358,7 @@
   },
   "The Maiden Tower#035": {
    "src": "...I...I g-guess he was rotten to the core, despite his...l-luscious exterior ...but you'll make me feel better, right, you s-studly human? Right?! RIGHT?!!",
-   "dst": "",
+   "dst": "...저... 저, 그- 그는 속까지 썩었나 봐요, 그- 그렇게 매력적인 겉모습인데... 하지만 당신이 절 위로해 줄 거죠, 멋- 멋진 인간님? 그렇죠?! 그렇죠?!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",

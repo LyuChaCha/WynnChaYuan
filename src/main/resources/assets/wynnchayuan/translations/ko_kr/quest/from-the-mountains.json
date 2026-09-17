@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "From the Mountains",
   "count": 63,
-  "translated": 0,
+  "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "From the Mountains#000": {
    "src": "Find out what's going on at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 무슨 일이 일어나는지 알아내세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -18,7 +18,7 @@
   },
   "From the Mountains#001": {
    "src": "Mmph! Humnym! Mah houfhs fhs on fifhre! Gft hfrelp, tiff brafze womd strfp!",
-   "dst": "",
+   "dst": "읍읍! 인흔! 우히 지희 부히 나혀여! 두흥 불허혀, 불히 안 꺼혀!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -28,7 +28,7 @@
   },
   "From the Mountains#002": {
    "src": "Ouh hff do hflp! I hff nho glue wfhtsh doon fifs!",
-   "dst": "",
+   "dst": "도후혀 달하구혀! 뭐흘 해야 할히 모르헸어혀!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -38,7 +38,7 @@
   },
   "From the Mountains#003": {
    "src": "Find what Arnod wants inside of the house.",
-   "dst": "",
+   "dst": "Arnod가 원하는 것을 집 안에서 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -48,7 +48,7 @@
   },
   "From the Mountains#004": {
    "src": "...well, that explains why you didn't help. But, uh, did the RAGING FIRE escape your notice somehow?!",
-   "dst": "",
+   "dst": "...그래서 도와주지 않았군요. 그런데, 어, 그 활활 타는 불은 어떻게 못 보신 거예요?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -58,7 +58,7 @@
   },
   "From the Mountains#005": {
    "src": "I don't care who it is, get me help!! I don't care if you do it, I don't care if you get someone to do it, but someone's got to help with this crazy re-igniting fire!",
-   "dst": "",
+   "dst": "누구든 상관없으니 도움 좀 불러 줘요!! 당신이 직접 하든, 다른 사람을 부르든 상관없어요. 자꾸 다시 붙는 이 미친 불을 누가 좀 꺼 줘야 해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -68,7 +68,7 @@
   },
   "From the Mountains#006": {
    "src": "Check around {p} if you need to, but hurry up already! My house is going to burn to ashes if you don't hurry!",
-   "dst": "",
+   "dst": "필요하면 {p} 근처를 찾아보세요. 근데 제발 서둘러요! 안 서두르면 우리 집이 잿더미가 된다고요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -78,7 +78,7 @@
   },
   "From the Mountains#007": {
    "src": "Find someone in {p} who can help you with the fires.",
-   "dst": "",
+   "dst": "{p}에서 불을 해결해 줄 사람을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -88,7 +88,7 @@
   },
   "From the Mountains#008": {
    "src": "Hm... where am I going to get help now- Mh? You're one of those human types, right? Do you have-",
-   "dst": "",
+   "dst": "흠... 이제 어디서 도움을 구하지- 응? 너 인간 부류지? 혹시-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -98,7 +98,7 @@
   },
   "From the Mountains#009": {
    "src": "Huh? Someone's house is on fire? Guess that's a little more pressing than what I was going to ask. Where is it?",
-   "dst": "",
+   "dst": "응? 누구 집에 불이 났다고? 내가 물어보려던 것보다 급하겠네. 어디야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -108,7 +108,7 @@
   },
   "From the Mountains#010": {
    "src": "Oh, that valley by the gate? I think I know where you mean. Let's walk together. So, tell me what exactly happened?",
-   "dst": "",
+   "dst": "아, 성문 옆 그 골짜기? 어딘지 알 것 같아. 같이 가자. 그래서, 정확히 무슨 일이 있었는데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -118,7 +118,7 @@
   },
   "From the Mountains#011": {
    "src": "Ah, so you're like a mercenary then, and you found this man's house on fire. He said... what? It re-ignited itself? Well, that doesn't make any sense.",
-   "dst": "",
+   "dst": "아, 그러니까 넌 용병 같은 거고, 이 남자 집에 불난 걸 발견했다. 그 사람이... 뭐? 불이 저절로 다시 붙는다고? 말이 안 되는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -128,7 +128,7 @@
   },
   "From the Mountains#012": {
    "src": "Eh, I'll see when we get there. Oh, what am I doing over here? Yeah, I suppose I do look different from the fare you'd have seen. Well, I'm a dwarf.",
-   "dst": "",
+   "dst": "뭐, 가 보면 알겠지. 아, 내가 여기서 뭐 하냐고? 그래, 네가 보던 이들과는 좀 다르게 생겼겠지. 난 드워프야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -138,7 +138,7 @@
   },
   "From the Mountains#013": {
    "src": "Normally I live in the {p}, past the canyons to the east. Guess for yourself what the land is like, considering the name.",
-   "dst": "",
+   "dst": "평소엔 동쪽 협곡 너머 {p}에 살아. 이름을 생각하면 거기가 어떤 땅인지 짐작이 갈 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -148,7 +148,7 @@
   },
   "From the Mountains#014": {
    "src": "Without getting into too much detail, there's... A few problems, with how it's being governed, and I was trying to drum up support over in {p}.",
-   "dst": "",
+   "dst": "자세히 말하진 않겠지만... 거기 통치 방식에 문제가 좀 있어서, {p}에서 지지를 좀 모아 보려던 참이었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -158,7 +158,7 @@
   },
   "From the Mountains#015": {
    "src": "It, uh. Well, I'm used to getting laughed out of the room back home, but I wasn't expecting to see the same thing over there, just with quartz wallpaper.",
-   "dst": "",
+   "dst": "그게, 어. 고향에선 비웃음 사며 쫓겨나는 게 익숙한데, 거기서도 똑같을 줄은 몰랐지. 벽지만 석영이었을 뿐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -168,7 +168,7 @@
   },
   "From the Mountains#016": {
    "src": "I was going to ask if you had any way that you might've been able to help, but...well, I can smell the smoke from here. One thing at a time.",
-   "dst": "",
+   "dst": "혹시 도와줄 방법이 있는지 물어보려 했는데... 뭐, 여기서도 연기 냄새가 나네. 하나씩 하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -178,7 +178,7 @@
   },
   "From the Mountains#017": {
    "src": "...and where there's smoke, there's fire. This is, uh... that's looking a little more like home, and I'm fairly certain that it isn't supposed to be.",
-   "dst": "",
+   "dst": "...아니 땐 굴뚝에 연기 나랴. 이건, 어... 점점 고향처럼 보이는데, 그러면 안 되는 게 확실하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -188,7 +188,7 @@
   },
   "From the Mountains#018": {
    "src": "Yep, this fire isn't natural at all... Hell, this almost looks like arson to me!",
-   "dst": "",
+   "dst": "그래, 이 불은 전혀 자연스럽지 않아... 젠장, 거의 방화 같은데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -198,7 +198,7 @@
   },
   "From the Mountains#019": {
    "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-igniting, then maybe...",
-   "dst": "",
+   "dst": "그래서 저게 그 집이라고? 좋아, 뭘 할 수 있나 보자. 끄진 못해도 다시 붙는 거라면, 어쩌면...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -208,7 +208,7 @@
   },
   "From the Mountains#020": {
    "src": "Hm... didn't think they'd be this far out, but it'd make sense if...",
-   "dst": "",
+   "dst": "흠... 이렇게 멀리까지 나왔을 줄은 몰랐는데, 만약... 이라면 말이 되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -218,7 +218,7 @@
   },
   "From the Mountains#021": {
    "src": "Aha! Here's the problem. It's just a little Fleris. Ehm, to explain, they normally live in the Heights.",
-   "dst": "",
+   "dst": "아하! 여기 문제가 있네. 그냥 작은 Fleris야. 음, 설명하자면 원래 Heights에 사는 녀석들이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -228,7 +228,7 @@
   },
   "From the Mountains#022": {
    "src": "Pretty affectionate, good if you can stand the heat, but if you take them away from their mounds they get spooked.",
-   "dst": "",
+   "dst": "꽤 애교가 많아서, 열기만 견디면 좋은 친구지. 근데 자기 둥지 언덕에서 떼어 놓으면 겁을 먹어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -238,7 +238,7 @@
   },
   "From the Mountains#023": {
    "src": "One fleris could have kept setting this man's house on fire, but all the other fallout... there's certainly more where this one came from.",
-   "dst": "",
+   "dst": "Fleris 한 마리로도 이 집에 계속 불이 날 순 있지만, 다른 피해들을 보면... 분명 이 녀석 말고도 더 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -248,7 +248,7 @@
   },
   "From the Mountains#024": {
    "src": "Let's go talk to the villager outside. He might've seen where the others got off to, or where they came from.",
-   "dst": "",
+   "dst": "밖에 있는 주민한테 가서 얘기해 보자. 다른 녀석들이 어디로 갔는지, 어디서 왔는지 봤을지도 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -258,7 +258,7 @@
   },
   "From the Mountains#025": {
    "src": "Sir, I figured out why your house kept re-igniting and solved that issue, but tell me, have you seen any moving sludgy things around here?",
-   "dst": "",
+   "dst": "선생님, 집에 계속 불이 붙던 원인을 찾아서 해결했어요. 그런데 이 근처에서 움직이는 끈적한 뭔가 보셨나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -268,7 +268,7 @@
   },
   "From the Mountains#026": {
    "src": "Uhm, I don't really know. I've been trying to douse my house so many times over that I haven't really paid attention!",
-   "dst": "",
+   "dst": "음, 잘 모르겠어요. 집에 붙은 불을 끄느라 몇 번이고 물을 끼얹느라 제대로 볼 겨를이 없었거든요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -278,7 +278,7 @@
   },
   "From the Mountains#027": {
    "src": "I remember seeing some tar-looking stuff dripping from the mountains behind my house, but that's it!",
-   "dst": "",
+   "dst": "집 뒤 산에서 타르 같은 게 뚝뚝 흘러내리는 건 봤어요. 그게 다예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -288,7 +288,7 @@
   },
   "From the Mountains#028": {
    "src": "Sounds concrete enough to me. Let's check out what's going on on top of the mountain ridge. Check that book of yours if you need directions.",
-   "dst": "",
+   "dst": "그 정도면 충분히 확실하네. 산등성이 꼭대기에서 무슨 일인지 확인해 보자. 길을 모르겠으면 네 책을 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -298,7 +298,7 @@
   },
   "From the Mountains#029": {
    "src": "Go to the path at [-{~}, {~}, -{~}], and follow it up to the top of the mountain.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 길로 가서 산꼭대기까지 따라 올라가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -308,7 +308,7 @@
   },
   "From the Mountains#030": {
    "src": "Hm, you're a pretty quick climber. I thought I'd get ahead of you. Well, this looks like the scorched area down in the valley... Hm! I thought so.",
-   "dst": "",
+   "dst": "흠, 꽤 빨리 오르네. 내가 앞설 줄 알았는데. 자, 여기도 골짜기 아래 그을린 곳이랑 비슷해... 흠! 역시 그렇군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -318,7 +318,7 @@
   },
   "From the Mountains#031": {
    "src": "There's only one reason I can think of that there would be so many Flerisi around here... If that wagon's reinforced, then...",
-   "dst": "",
+   "dst": "이 주변에 Flerisi가 이렇게 많은 이유는 딱 하나밖에 생각이 안 나... 저 수레가 보강돼 있다면, 그럼...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -328,7 +328,7 @@
   },
   "From the Mountains#032": {
    "src": "Gah, I knew it. Traffickers! And incompetent ones, too, considering they couldn't hold the things.",
-   "dst": "",
+   "dst": "크, 역시나. 밀매꾼이야! 그것도 녀석들을 붙잡아 두지도 못한 서투른 놈들이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -338,7 +338,7 @@
   },
   "From the Mountains#033": {
    "src": "There's a black market issue in the {p}. Things that you can't find anywhere else is harvested in the Heights for their high value.",
-   "dst": "",
+   "dst": "{p}에는 암시장 문제가 있어. 다른 데서 못 구하는 것들을 비싸게 팔려고 Heights에서 잡아 가거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -348,7 +348,7 @@
   },
   "From the Mountains#034": {
    "src": "Flerisi are one of them. In the Heights, they're kept as pets. They're relatively friendly, keep your house warm, and don't need much care...",
-   "dst": "",
+   "dst": "Flerisi도 그중 하나야. Heights에선 애완동물로 길러. 비교적 순하고, 집을 따뜻하게 해 주고, 손도 별로 안 가지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -358,7 +358,7 @@
   },
   "From the Mountains#035": {
    "src": "...But if you take them away from a warm place, they burn everything. To think- Some people use the things as weapons. Can't leave well enough alone...",
-   "dst": "",
+   "dst": "...하지만 따뜻한 곳에서 떼어 놓으면 뭐든 다 태워 버려. 게다가 이걸 무기로 쓰는 놈들도 있다니. 가만히 두질 못하는군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -368,7 +368,7 @@
   },
   "From the Mountains#036": {
    "src": "We'll need to catch these Flerisi. Here, take this net. While you catch them, I'll repair the cart so we can put them in there later.",
-   "dst": "",
+   "dst": "이 Flerisi를 잡아야 해. 여기, 이 그물 받아. 네가 잡는 동안 난 수레를 고칠게. 나중에 거기 넣을 수 있게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -378,7 +378,7 @@
   },
   "From the Mountains#037": {
    "src": "Capture all of the rogue Flerisi and bring them to Axelus.",
-   "dst": "",
+   "dst": "날뛰는 Flerisi를 모두 잡아 Axelus에게 데려가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -388,7 +388,7 @@
   },
   "From the Mountains#038": {
    "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. There's still have work to do.",
-   "dst": "",
+   "dst": "수레는 다 고쳐서 준비됐어. Flerisi는 다 잡았어? 그럼 수레로 와. 아직 할 일이 남았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -398,7 +398,7 @@
   },
   "From the Mountains#039": {
    "src": "I'll keep the Flerisi in a smaller fire to keep them calm, see if I can't get them back to the Heights when this is done.",
-   "dst": "",
+   "dst": "Flerisi는 작은 불 속에 둬서 진정시킬게. 이 일이 끝나면 Heights로 돌려보낼 수 있을지 봐야지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -408,7 +408,7 @@
   },
   "From the Mountains#040": {
    "src": "For now, I want to see if I can find anything on who these traffickers were. Let's see if they left anything in the front of the cart.",
-   "dst": "",
+   "dst": "일단 이 밀매꾼들이 누군지 단서가 있나 찾아보고 싶어. 수레 앞쪽에 뭘 남겼는지 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -418,7 +418,7 @@
   },
   "From the Mountains#041": {
    "src": "...oh. Well, didn't notice that the fire went THAT far earlier. That's a problem, isn't it?",
-   "dst": "",
+   "dst": "...아. 음, 아까는 불이 그렇게까지 번진 줄 몰랐네. 이거 문제지, 안 그래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -428,7 +428,7 @@
   },
   "From the Mountains#042": {
    "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed of cinders and fire... And for this much damage to be caused, well...",
-   "dst": "",
+   "dst": "설명하자면, Flerisi가 다 여기서 찾은 것처럼 작은 건 아니야. 불씨와 불을 먹고 살거든... 이 정도 피해를 내려면, 음...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -438,7 +438,7 @@
   },
   "From the Mountains#043": {
    "src": "Methinks this one's getting a bit out of control. This is right next to that big forest, too. Could be a problem if we leave this one be.",
-   "dst": "",
+   "dst": "이 녀석은 좀 통제를 벗어난 것 같아. 게다가 바로 옆이 저 큰 숲이야. 그냥 두면 큰일 나겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -448,7 +448,7 @@
   },
   "From the Mountains#044": {
    "src": "We're going to have to track it down and subdue it. Here, follow me. I'll dig us down to the valley. Watch a dwarf at work!",
-   "dst": "",
+   "dst": "추적해서 제압해야겠어. 자, 따라와. 골짜기까지 땅을 파서 내려갈게. 드워프가 일하는 걸 잘 봐 둬!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -458,7 +458,7 @@
   },
   "From the Mountains#045": {
    "src": "Enter the hole at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 구멍으로 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -468,7 +468,7 @@
   },
   "From the Mountains#046": {
    "src": "Investigate the trail of fire.",
-   "dst": "",
+   "dst": "불길의 흔적을 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -478,7 +478,7 @@
   },
   "From the Mountains#047": {
    "src": "Not bad, eh? Anyways, dunno what that huge gate's for, but it looks like our Fleris friend has commandeered it for a bonfire.",
-   "dst": "",
+   "dst": "나쁘지 않지? 아무튼, 저 거대한 문이 뭔지는 모르겠지만, 우리 Fleris 친구가 모닥불로 쓰려고 차지한 모양이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -488,7 +488,7 @@
   },
   "From the Mountains#048": {
    "src": "At least it's a little more contained than I thought, being in that cave, but we still have to catch it. Lead the way. I'm right with you.",
-   "dst": "",
+   "dst": "동굴 안이라 생각보단 좀 덜 번졌지만, 그래도 잡아야 해. 앞장서. 바로 뒤에 있을게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -498,7 +498,7 @@
   },
   "From the Mountains#049": {
    "src": "What the...?! It inflamed the creatures in this cave! Fend 'em off!",
-   "dst": "",
+   "dst": "뭐야...?! 동굴 속 생물들한테 불을 붙였어! 막아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -508,7 +508,7 @@
   },
   "From the Mountains#050": {
    "src": "There are more of them coming! Get to the end of the cave!",
-   "dst": "",
+   "dst": "더 오고 있어! 동굴 끝까지 가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -518,7 +518,7 @@
   },
   "From the Mountains#051": {
    "src": "Gah, more?! Behind you!",
-   "dst": "",
+   "dst": "크, 또?! 뒤에!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -528,7 +528,7 @@
   },
   "From the Mountains#052": {
    "src": "Both of us stopping is going to make it take too much time, the traffickers might come back!",
-   "dst": "",
+   "dst": "둘 다 멈추면 시간이 너무 걸려. 밀매꾼들이 돌아올지도 몰라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -538,7 +538,7 @@
   },
   "From the Mountains#053": {
    "src": "Listen up. I'll handle these things, while you go after the Fleris. If it's a big one like we think, it'll be a downhill battle- It should shrink if you attack it!",
-   "dst": "",
+   "dst": "잘 들어. 이놈들은 내가 맡을 테니 넌 Fleris를 쫓아. 생각대로 큰 녀석이면 갈수록 쉬워질 거야. 공격하면 작아질 테니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -548,7 +548,7 @@
   },
   "From the Mountains#054": {
    "src": "Alright, time for a little royal rumble!",
-   "dst": "",
+   "dst": "좋아, 한판 붙어 보자고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -558,7 +558,7 @@
   },
   "From the Mountains#055": {
    "src": "Subdue the Fleris.",
-   "dst": "",
+   "dst": "Fleris를 제압하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -568,7 +568,7 @@
   },
   "From the Mountains#056": {
    "src": "Phew, you're alright! Charred and covered in soot, but that's to be expected. Subdued the Fleris, too! I have the net with me, so allow me.",
-   "dst": "",
+   "dst": "휴, 무사하구나! 그을리고 검댕투성이지만, 그건 예상했어. Fleris도 제압했네! 그물은 나한테 있으니 내가 할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -578,7 +578,7 @@
   },
   "From the Mountains#057": {
    "src": "Well, this is probably a bit of thankless work we just did, but so is a lot of work. Let's get out of here. We can talk outside.",
-   "dst": "",
+   "dst": "뭐, 방금 한 일은 아마 알아주는 사람 없는 일이겠지만, 세상 일이 대개 그래. 여기서 나가자. 밖에서 얘기해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -588,7 +588,7 @@
   },
   "From the Mountains#058": {
    "src": "Exit the cave and talk with Axelus at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "동굴에서 나가 [-{~}, {~}, -{~}]에서 Axelus와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -598,7 +598,7 @@
   },
   "From the Mountains#059": {
    "src": "Well, I say the work is thankless, but that won't stop me, anyways. Thank you for the help, human- This would've been overwhelming alone.",
-   "dst": "",
+   "dst": "알아주는 사람 없는 일이라 했지만, 그래도 난 안 멈춰. 도와줘서 고마워, 인간. 혼자였으면 감당 못 했을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -608,7 +608,7 @@
   },
   "From the Mountains#060": {
    "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well... I got a free cart for the ride home. There's thing for me to attend to there.",
-   "dst": "",
+   "dst": "현지 경비대에 밀매꾼을 찾았는지 물어볼게. 도망쳤다면, 뭐... 집에 타고 갈 공짜 수레는 생긴 셈이지. 거기서 처리할 일이 있거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -618,7 +618,7 @@
   },
   "From the Mountains#061": {
    "src": "Oh, where are my manners? Never even introduced myself this whole time. The name is Axelus. And yours?",
-   "dst": "",
+   "dst": "아, 내 정신 좀 봐. 여태 내 소개도 안 했네. 난 Axelus야. 넌?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -628,7 +628,7 @@
   },
   "From the Mountains#062": {
    "src": "{u}, huh? I'll try and remember that. For now, take this armor for the trouble. Safe travels, {u}!",
-   "dst": "",
+   "dst": "{u}, 그렇구나? 기억해 둘게. 우선 수고했으니 이 갑옷 받아. 조심히 가, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",

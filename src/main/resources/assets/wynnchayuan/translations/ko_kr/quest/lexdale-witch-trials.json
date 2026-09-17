@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lexdale Witch Trials",
   "count": 33,
-  "translated": 1,
+  "translated": 34,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lexdale Witch Trials#000": {
    "src": "See what's going on in the center of {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에 있는 {p} 중심가에서 무슨 일이 벌어지는지 확인하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -18,7 +18,7 @@
   },
   "Lexdale Witch Trials#001": {
    "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of magic threatens us!",
-   "dst": "",
+   "dst": "우리 {p} 안에 적이 숨어 있었습니다! 이 마녀의 불법 마법이 우리를 위협하고 있습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -28,7 +28,7 @@
   },
   "Lexdale Witch Trials#002": {
    "src": "Ms. Amira's home was found to be plagued by spreading Decay! We must kill the witch to protect our sanctity!",
-   "dst": "",
+   "dst": "Amira 씨의 집이 번져 가는 쇠락에 시달리는 게 발견됐습니다! 우리의 신성함을 지키려면 마녀를 처단해야 합니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -38,7 +38,7 @@
   },
   "Lexdale Witch Trials#003": {
    "src": "WAIT! Let me GO already! I told you what was happening!",
-   "dst": "",
+   "dst": "잠깐! 이거 좀 놔! 무슨 일인지 다 말했잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -48,7 +48,7 @@
   },
   "Lexdale Witch Trials#004": {
    "src": "The deceit of your dark magic won't work, Ms. Amira. Go quietly- leave us in peace!",
-   "dst": "",
+   "dst": "당신의 어둠의 마법으로 속이려 해도 소용없습니다, Amira 씨. 조용히 가시오- 우리를 평화롭게 놔두시오!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -58,7 +58,7 @@
   },
   "Lexdale Witch Trials#005": {
    "src": "SHUT UP ALREADY! You can't just single people out like this!!",
-   "dst": "",
+   "dst": "좀 닥쳐! 이렇게 아무나 콕 집어서 몰아가면 안 되지!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -68,7 +68,7 @@
   },
   "Lexdale Witch Trials#006": {
    "src": "Just hear me out for a second! It's not me, something infected my home! That's the reason it was so dark!!",
-   "dst": "",
+   "dst": "잠깐만 내 말 좀 들어 봐! 내가 아니라 뭔가가 우리 집을 오염시켰어! 그래서 그렇게 어두웠던 거라고!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -78,7 +78,7 @@
   },
   "Lexdale Witch Trials#007": {
    "src": "My basement, some outlandish thing dug into it! Wherever it went, the area withered and decayed!",
-   "dst": "",
+   "dst": "우리 집 지하실에 이상한 뭔가가 파고들었어! 그게 지나간 곳마다 시들고 썩어 버렸다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -88,7 +88,7 @@
   },
   "Lexdale Witch Trials#008": {
    "src": "There's proof in my house that it wasn't me! It's the one that's decayed and barren! You'll see if you LOOK, you gorehound!!",
-   "dst": "",
+   "dst": "내가 아니라는 증거가 우리 집에 있어! 썩고 황폐해진 건 그 집이야! 제대로 보기만 하면 알 거야, 이 피에 굶주린 놈아!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -98,7 +98,7 @@
   },
   "Lexdale Witch Trials#009": {
    "src": "Quit with the insults! We'll delay for now- If there's no proof of the witch's innocence she will be executed!",
-   "dst": "",
+   "dst": "모욕은 그만하시오! 일단 미루겠소- 마녀의 무죄를 증명할 증거가 없으면 처형하겠소!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -108,7 +108,7 @@
   },
   "Lexdale Witch Trials#010": {
    "src": "Explore the basement of the decayed and barren house.",
-   "dst": "",
+   "dst": "썩고 황폐해진 집의 지하실을 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -118,7 +118,7 @@
   },
   "Lexdale Witch Trials#011": {
    "src": "Follow the creature down the tunnels.",
-   "dst": "",
+   "dst": "터널을 따라 그 생물을 쫓아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -128,7 +128,7 @@
   },
   "Lexdale Witch Trials#012": {
    "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 터널에서 계속 그 생물을 쫓아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -138,7 +138,7 @@
   },
   "Lexdale Witch Trials#013": {
    "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 터널에서 계속 그 생물을 쫓아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -148,7 +148,7 @@
   },
   "Lexdale Witch Trials#014": {
    "src": "...Further... intruders...? You are not of the worms... the parasites?",
-   "dst": "",
+   "dst": "...또... 침입자...? 너는 벌레들의... 기생충들의 무리가 아니냐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -158,7 +158,7 @@
   },
   "Lexdale Witch Trials#015": {
    "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
-   "dst": "",
+   "dst": "또 다른 이방인... 터널을 보았겠지. 그것들은 돌을 병들게 하고, 뿌리를 시들게 하고, 땅을 죽음으로 물들인다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -168,7 +168,7 @@
   },
   "Lexdale Witch Trials#016": {
    "src": "And here, we starve in isolation. My people are lost, as the very earth itself warps and shifts.",
-   "dst": "",
+   "dst": "그리고 여기서 우리는 고립된 채 굶주린다. 대지가 뒤틀리고 움직이니 내 백성은 길을 잃었다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -178,7 +178,7 @@
   },
   "Lexdale Witch Trials#017": {
    "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
-   "dst": "",
+   "dst": "물은 고여 잿빛이다. 저 끔찍한 마법의 재앙들과 벌레들 말고는 먹을 것이 없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -188,7 +188,7 @@
   },
   "Lexdale Witch Trials#018": {
    "src": "We cannot escape, for the sun scourges us. There is no place to go, no place to burrow that they do not wait.",
-   "dst": "",
+   "dst": "태양이 우리를 해치니 달아날 수도 없다. 갈 곳도, 그것들이 기다리지 않는 굴도 없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -198,7 +198,7 @@
   },
   "Lexdale Witch Trials#019": {
    "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive till this torture ends...",
-   "dst": "",
+   "dst": "너는... 너는... 너에겐 생명이 있다. 심장이, 근육이, 살이 있다... 이 고통이 끝날 때까지 버티려면...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -208,7 +208,7 @@
   },
   "Lexdale Witch Trials#020": {
    "src": "Stranger, you must perish.",
-   "dst": "",
+   "dst": "이방인, 너는 죽어야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -218,7 +218,7 @@
   },
   "Lexdale Witch Trials#021": {
    "src": "Defeat the Tunnel Dweller Chieftain.",
-   "dst": "",
+   "dst": "터널 거주민 족장을 처치하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -228,7 +228,7 @@
   },
   "Lexdale Witch Trials#022": {
    "src": "Wait... These earthquakes! IT'S THEM! AGHHHHHHHHHHH!!",
-   "dst": "",
+   "dst": "잠깐... 이 지진은! 그것들이다! 으아아아아아아악!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -238,7 +238,7 @@
   },
   "Lexdale Witch Trials#023": {
    "src": "Dig yourself out of the dirt. Then go after the creature.",
-   "dst": "",
+   "dst": "흙을 파고 빠져나온 뒤, 그 생물을 쫓아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -248,7 +248,7 @@
   },
   "Lexdale Witch Trials#024": {
    "src": "Return to {p} and try to show the mayor the creature at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p}(으)로 돌아가 [-{~}, {~}, -{~}]에서 시장에게 그 생물을 보여 주세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -258,7 +258,7 @@
   },
   "Lexdale Witch Trials#025": {
    "src": "You're back. Did- Wait, what in the nine hells is THAT?!",
-   "dst": "",
+   "dst": "돌아왔군요. 혹시- 잠깐, 대체 저건 뭐요?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -268,7 +268,7 @@
   },
   "Lexdale Witch Trials#026": {
    "src": "That! That was the thing in my basement!! I knew that human could find it! Thank you!!",
-   "dst": "",
+   "dst": "저거! 저게 우리 집 지하실에 있던 놈이야!! 저 인간이라면 찾아낼 줄 알았어! 고마워!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -278,7 +278,7 @@
   },
   "Lexdale Witch Trials#027": {
    "src": "That thing was spreading the decay through my house! It's NOT witches or magic like you suddenly DECIDED one day!!",
-   "dst": "",
+   "dst": "저놈이 우리 집에 쇠락을 퍼뜨렸다고! 당신이 어느 날 갑자기 정해 버린 마녀나 마법 따위가 아니라!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -288,7 +288,7 @@
   },
   "Lexdale Witch Trials#028": {
    "src": "...Fine then. This... creature... bug... leach? This whatever- it- is... I'll accept your explanation.",
-   "dst": "",
+   "dst": "...좋소. 이... 생물... 벌레... 거머리? 이게 뭐든 간에... 그 설명을 받아들이겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -298,7 +298,7 @@
   },
   "Lexdale Witch Trials#029": {
    "src": "Step off the podium, Ms. Amira. You're innocent.",
-   "dst": "",
+   "dst": "연단에서 내려오시오, Amira 씨. 당신은 무죄요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -308,7 +308,7 @@
   },
   "Lexdale Witch Trials#030": {
    "src": "Gah, finally! You're seeing sense! It's almost like something just... took you over one day and never left 'til now!",
-   "dst": "",
+   "dst": "아, 드디어! 이제야 정신을 차렸네! 마치 뭔가가 어느 날 당신을... 사로잡았다가 지금까지 안 떠난 것 같더라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -318,7 +318,7 @@
   },
   "Lexdale Witch Trials#031": {
    "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
-   "dst": "",
+   "dst": "...흠. 그건... 음. 어쨌든. 인간이여, 당신은 믿을 만하다는 걸 증명했소. 우리의 문은 늘 열려 있을 것이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -328,7 +328,7 @@
   },
   "Lexdale Witch Trials#032": {
    "src": "As for the... THING... Well... I'll be sure to inform the Gavel government.",
-   "dst": "",
+   "dst": "그... 그것에 대해서는... 뭐... Gavel 정부에 꼭 알리겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",

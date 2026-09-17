@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Solidarity of Steel",
   "count": 516,
-  "translated": 20,
+  "translated": 526,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Solidarity of Steel#000": {
    "src": "That's what we call the {p} sewers and waterworks. Maze of pipes and brickwork, some of it old old. Vagrants and criminals been settling there for years.",
-   "dst": "",
+   "dst": "{p} 하수도랑 급수 시설을 그렇게 불러. 파이프랑 벽돌로 된 미로인데, 어떤 데는 엄청 오래됐어. 부랑자랑 범죄자들이 몇 년째 거기 자리 잡고 살아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -18,7 +18,7 @@
   },
   "Solidarity of Steel#001": {
    "src": "+{~} Coiled Stone {~}",
-   "dst": "",
+   "dst": "+{~} Coiled Stone {~}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -28,7 +28,7 @@
   },
   "Solidarity of Steel#002": {
    "src": "You need to pack something that will help Aihan sleep, something to remind her of home, and something to entertain her at the station.",
-   "dst": "",
+   "dst": "Aihan이 잠들 수 있게 해 줄 물건, 집을 떠올리게 할 물건, 역에서 심심하지 않게 해 줄 물건을 하나씩 챙겨야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -38,7 +38,7 @@
   },
   "Solidarity of Steel#003": {
    "src": "Wh-what?! H-how did you fit my whole m-mattress in here? Was... was there not anything smaller?",
-   "dst": "",
+   "dst": "뭐, 뭐라고요?! 내 매, 매트리스를 통째로 어떻게 넣은 거예요? 더... 더 작은 건 없었어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -48,7 +48,7 @@
   },
   "Solidarity of Steel#004": {
    "src": "Regroup with your friends outside {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 {p} 바깥에서 동료들과 다시 합류하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -58,7 +58,7 @@
   },
   "Solidarity of Steel#005": {
    "src": "...that's everyone, then. Good. Good, you're all safe. I wasn't certain, after...",
-   "dst": "",
+   "dst": "...그럼 다 모였네. 좋아. 좋아, 다들 무사하구나. 그 일 뒤로 확신이 없었는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -68,7 +68,7 @@
   },
   "Solidarity of Steel#006": {
    "src": "Are you just going to ignore what happened back there?",
-   "dst": "",
+   "dst": "아까 거기서 있었던 일, 그냥 모른 척할 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -88,7 +88,7 @@
   },
   "Solidarity of Steel#008": {
    "src": "Zhiraok's blessing... it gives him the power to revive himself. It takes some time, though.",
-   "dst": "",
+   "dst": "Zhiraok의 축복은... 스스로 되살아나는 힘을 줘. 다만 시간이 좀 걸리지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -98,7 +98,7 @@
   },
   "Solidarity of Steel#009": {
    "src": "If we wanted any chance to get away, I had to- I had to kill him.",
-   "dst": "",
+   "dst": "빠져나갈 기회라도 얻으려면, 내가- 내가 그를 죽일 수밖에 없었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -108,7 +108,7 @@
   },
   "Solidarity of Steel#010": {
    "src": "Well, in any case, we're all here! We'll be meeting with my contact soon, after which we'll certainly be safe, but...",
-   "dst": "",
+   "dst": "뭐, 어쨌든 다 모였잖아! 곧 내 연락책을 만날 거고, 그 뒤엔 확실히 안전할 거야. 하지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -128,7 +128,7 @@
   },
   "Solidarity of Steel#012": {
    "src": "We have some time to spare. You've had a few days to acclimate to the Roughworks - any thoughts?",
-   "dst": "",
+   "dst": "시간이 좀 남네. 며칠 동안 Roughworks에 적응해 봤을 텐데, 어때?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -138,7 +138,7 @@
   },
   "Solidarity of Steel#013": {
    "src": "It is, isn't it? It's much busier, less open, and yet... it carries a certain nostalgia for me.",
-   "dst": "",
+   "dst": "그렇지? 훨씬 붐비고, 덜 트여 있고... 그런데도 나한텐 어딘가 그리운 곳이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -148,7 +148,7 @@
   },
   "Solidarity of Steel#014": {
    "src": "Nostalgic? This place, really? What's so nostalgic about loud factories and urban sprawl?",
-   "dst": "",
+   "dst": "그립다고? 여기가, 진짜? 시끄러운 공장이랑 끝없이 퍼진 동네가 뭐가 그리워?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -158,7 +158,7 @@
   },
   "Solidarity of Steel#015": {
    "src": "...ah. Nothing much, I suppose.",
-   "dst": "",
+   "dst": "...아. 별거 아니야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -168,7 +168,7 @@
   },
   "Solidarity of Steel#016": {
    "src": "Well, I'm with Rex on th- this- this one! I wouldn't want to s- st- stay here for long, it's s- so... smoggy.",
-   "dst": "",
+   "dst": "음, 이, 이번엔 나도 Rex 편이야! 여기 오, 오래 있고 싶진 않아. 너, 너무... 매캐해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -178,7 +178,7 @@
   },
   "Solidarity of Steel#017": {
    "src": "Certainly, it is not as... clean, I suppose, as the {p}. The smell of the morning dew shall be sorely missed!",
-   "dst": "",
+   "dst": "확실히 {p}만큼... 깨끗하진 않지요. 아침 이슬 냄새가 무척 그리울 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -188,7 +188,7 @@
   },
   "Solidarity of Steel#018": {
    "src": "Alright, children, get it out of your system. Please refrain from speaking poorly of the Roughworks once we meet with my contact... I'd like to make a good first impression.",
-   "dst": "",
+   "dst": "자, 얘들아, 할 말 있으면 지금 다 해. 연락책을 만나면 Roughworks 험담은 삼가 줘... 첫인상은 좋게 남기고 싶거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -198,7 +198,7 @@
   },
   "Solidarity of Steel#019": {
    "src": "Oh, you wouldn't think so if you actually had to live here.",
-   "dst": "",
+   "dst": "오, 여기서 직접 살아 봐야 그런 소리 안 나오지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -208,7 +208,7 @@
   },
   "Solidarity of Steel#020": {
    "src": "Rex, please. Be polite.",
-   "dst": "",
+   "dst": "Rex, 제발. 예의 좀 지켜.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -218,7 +218,7 @@
   },
   "Solidarity of Steel#021": {
    "src": "What?! Most of them would agree with me!",
-   "dst": "",
+   "dst": "뭐?! 여기 사람들 대부분 내 말에 동의할걸!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -228,7 +228,7 @@
   },
   "Solidarity of Steel#022": {
    "src": "I think I'm with Rex on this- this one! I can't im-imagine- imagine living here, it's s- so... smoggy.",
-   "dst": "",
+   "dst": "이, 이번엔 나도 Rex 편인 것 같아! 여기서 사는 건 상, 상상이 안 돼. 너, 너무... 매캐해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -238,7 +238,7 @@
   },
   "Solidarity of Steel#023": {
    "src": "Certainly, it is not as... clean, I suppose, as the {p}. The smell of the morning dew shall be sorely missed!",
-   "dst": "",
+   "dst": "확실히 {p}만큼... 깨끗하진 않지요. 아침 이슬 냄새가 무척 그리울 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -248,7 +248,7 @@
   },
   "Solidarity of Steel#024": {
    "src": "Alright, children, get it out of your system. Please refrain from speaking poorly of the Roughworks once we meet with my contact... no matter how much they may or may not agree.",
-   "dst": "",
+   "dst": "자, 얘들아, 할 말 있으면 지금 다 해. 연락책을 만나면 Roughworks 험담은 삼가 줘... 그쪽이 동의하든 말든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -258,7 +258,7 @@
   },
   "Solidarity of Steel#025": {
    "src": "In any case, I was told to meet them in the city at noon - {p} is usually empty during the daytime.",
-   "dst": "",
+   "dst": "어쨌든 정오에 도시에서 만나기로 했어. {p}은(는) 낮엔 보통 텅 비거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -268,7 +268,7 @@
   },
   "Solidarity of Steel#026": {
    "src": "What? It's empty during the day? Th- that doesn't make a lot of sense.",
-   "dst": "",
+   "dst": "뭐? 낮에 텅 빈다고? 그, 그건 좀 말이 안 되는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -278,7 +278,7 @@
   },
   "Solidarity of Steel#027": {
    "src": "I'm afraid the lives of the citizens of the Roughworks revolve entirely around their work. The work day starts at sunrise, and ends with sunset. So, let's just wait...",
-   "dst": "",
+   "dst": "안타깝게도 Roughworks 사람들 삶은 전부 일을 중심으로 돌아가. 일은 해 뜰 때 시작해서 해 질 때 끝나지. 그러니 기다리자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -288,7 +288,7 @@
   },
   "Solidarity of Steel#028": {
    "src": "...oh, where are they?",
-   "dst": "",
+   "dst": "...아, 다들 어디 있는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -298,7 +298,7 @@
   },
   "Solidarity of Steel#029": {
    "src": "Maybe they, um, just read time differently, here...? Or maybe we-",
-   "dst": "",
+   "dst": "여기선, 음, 시간 보는 법이 다른 걸까...? 아니면 우리가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -308,7 +308,7 @@
   },
   "Solidarity of Steel#030": {
    "src": "Oho, Syndra!",
-   "dst": "",
+   "dst": "오호, Syndra!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -318,7 +318,7 @@
   },
   "Solidarity of Steel#031": {
    "src": "Hello, Quill. It's been a while since we've met face to face, hasn't it?",
-   "dst": "",
+   "dst": "안녕하세요, Quill. 얼굴 보고 만나는 건 오랜만이죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -328,7 +328,7 @@
   },
   "Solidarity of Steel#032": {
    "src": "Indeed, indeed... I hope your journey to cross to the Roughworks wasn't too difficult.",
-   "dst": "",
+   "dst": "그렇지, 그렇지... Roughworks로 건너오는 길이 너무 험하진 않았길 바라네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -338,7 +338,7 @@
   },
   "Solidarity of Steel#033": {
    "src": "Could have been better, could have been worse. We expected difficulties going in.",
-   "dst": "",
+   "dst": "더 나을 수도, 더 나쁠 수도 있었어요. 들어올 때부터 고생은 각오했죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -348,7 +348,7 @@
   },
   "Solidarity of Steel#034": {
    "src": "I see... You'll have to tell me more later. Now, which of you is the cursed one? I'd like a look at you.",
-   "dst": "",
+   "dst": "그렇군... 자세한 건 나중에 더 듣도록 하지. 자, 저주받은 자가 누군가? 얼굴 좀 보세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -358,7 +358,7 @@
   },
   "Solidarity of Steel#035": {
    "src": "Mmhm! So you're the one, eh? What I'd heard in correspondence had me thinking you'd be different than us. Seems like I was right!",
-   "dst": "",
+   "dst": "음흠! 자네가 그 사람이군? 편지로 들은 얘기로는 우리와 다를 거라 생각했는데. 내 짐작이 맞았군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -368,7 +368,7 @@
   },
   "Solidarity of Steel#036": {
    "src": "There's a look in your eyes, something to your gait. In all my years I've seen quite a lot, and everything that shouts \"promise\" is there in you.",
-   "dst": "",
+   "dst": "눈빛에도, 걸음걸이에도 뭔가가 있어. 오랜 세월 많은 걸 봐 왔지만, '가능성'을 외치는 건 전부 자네에게 있군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -378,7 +378,7 @@
   },
   "Solidarity of Steel#037": {
    "src": "Ha! Yes, yes, I suppose that would be the correct response to that question. You'd do well to stick to that script.",
-   "dst": "",
+   "dst": "하! 그래, 그래, 그 질문엔 그게 맞는 대답이겠지. 그 대본대로만 가면 되겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -388,7 +388,7 @@
   },
   "Solidarity of Steel#038": {
    "src": "But Syndra has already written much about you in our correspondence. No need to be shy.",
-   "dst": "",
+   "dst": "하지만 Syndra가 편지에 이미 자네 얘길 많이 써 보냈다네. 수줍어할 것 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -398,7 +398,7 @@
   },
   "Solidarity of Steel#039": {
    "src": "Blessed, cursed... They're two sides of the same coin, in my eyes. I've seen my fair share of both in my time leading this group, heh heh...",
-   "dst": "",
+   "dst": "축복받은 자, 저주받은 자... 내 눈엔 동전의 양면일세. 이 조직을 이끌면서 둘 다 볼 만큼 봤지, 허허...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -408,7 +408,7 @@
   },
   "Solidarity of Steel#040": {
    "src": "I see no reason not to celebrate differences, and what better difference could there be?",
-   "dst": "",
+   "dst": "다름을 축복하지 않을 이유가 없지. 게다가 이보다 좋은 다름이 어디 있겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -418,7 +418,7 @@
   },
   "Solidarity of Steel#041": {
    "src": "... Ah, we'll have more time to speak later. We'd best make our way down to the station, we can sort out arrangements there-",
-   "dst": "",
+   "dst": "... 아, 이야기는 나중에 더 하세. 일단 역으로 내려가는 게 좋겠어. 준비는 거기서 하면-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -428,7 +428,7 @@
   },
   "Solidarity of Steel#042": {
    "src": "Hey, hey! We're leaving before we even get our introductions in? Why'd we even come here then, man?",
-   "dst": "",
+   "dst": "어이, 어이! 인사도 안 하고 벌써 가요? 그럼 우린 여기 왜 온 거야, 참?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -438,7 +438,7 @@
   },
   "Solidarity of Steel#043": {
    "src": "Yes, Yuman, why did we come here? You're the one who dragged us all along.",
-   "dst": "",
+   "dst": "그래, Yuman, 우리가 왜 왔을까? 다 끌고 온 게 너잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -448,7 +448,7 @@
   },
   "Solidarity of Steel#044": {
    "src": "Well, hey, I just thought this old man could use some help, that's all! Six people's a lot for one guy to greet, you know?",
-   "dst": "",
+   "dst": "아니, 난 그냥 이 할아버지 좀 도와드리려던 거지! 여섯 명을 혼자 맞으려면 벅차잖아, 안 그래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -458,7 +458,7 @@
   },
   "Solidarity of Steel#045": {
    "src": "Yes, yes... Well, alright, since you all are here, we may as well handle introductions now.",
-   "dst": "",
+   "dst": "그래, 그래... 뭐, 좋아. 다들 모였으니 소개부터 하는 것도 나쁘지 않겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -468,7 +468,7 @@
   },
   "Solidarity of Steel#046": {
    "src": "I'm Yuman! I'm the greatest musician of our age, man! And I'm super muscular and cool, and-",
-   "dst": "",
+   "dst": "난 Yuman! 이 시대 최고의 음악가지! 그리고 근육도 끝내주고 멋있고, 또-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -478,7 +478,7 @@
   },
   "Solidarity of Steel#047": {
    "src": "Alright, Yuman, that's enough. I'm Yulie, oldest of three. I work as a detective in {p}.",
-   "dst": "",
+   "dst": "그래, Yuman, 그만. 난 Yulie, 삼형제 중 맏이야. {p}에서 탐정으로 일해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -488,7 +488,7 @@
   },
   "Solidarity of Steel#048": {
    "src": "Booooring! Come on, bro, have some-",
-   "dst": "",
+   "dst": "지루해애! 좀, 형, 재미 좀-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -498,7 +498,7 @@
   },
   "Solidarity of Steel#049": {
    "src": "And I'm Yusanu! I'm a mechanic. Quill's told us a lot about you, it's a pleasure to finally meet you.",
-   "dst": "",
+   "dst": "그리고 난 Yusanu! 기계공이야. Quill한테 얘기 많이 들었어. 드디어 만나서 반가워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -508,7 +508,7 @@
   },
   "Solidarity of Steel#050": {
    "src": "Uh... S- same, I guess. This is all s- st- still a bit new.",
-   "dst": "",
+   "dst": "어... 나, 나도 그런 것 같아. 아, 아직 다 좀 낯설어서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -518,7 +518,7 @@
   },
   "Solidarity of Steel#051": {
    "src": "Eh, you'll get used to it. This place has a way of growing on you.",
-   "dst": "",
+   "dst": "에이, 금방 익숙해질 거야. 여긴 은근히 정이 드는 곳이거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -528,7 +528,7 @@
   },
   "Solidarity of Steel#052": {
    "src": "Ah, if I may - I don't suppose you'd have anything prepared for us to be able to blend in better? I'd imagine we stick out a fair bit right now.",
-   "dst": "",
+   "dst": "아, 실례지만 - 우리가 눈에 덜 띌 만한 걸 준비해 두진 않으셨겠지요? 지금 꽤 튀는 것 같아서요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -538,7 +538,7 @@
   },
   "Solidarity of Steel#053": {
    "src": "Hm... I hadn't quite considered that. Boys, why don't you handle that while Syndra and I go ahead to sort out living arrangements?",
-   "dst": "",
+   "dst": "흠... 거기까진 생각을 못 했군. 얘들아, 나와 Syndra가 먼저 가서 지낼 곳을 마련할 테니 그건 너희가 맡아 주겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -548,7 +548,7 @@
   },
   "Solidarity of Steel#054": {
    "src": "Sir, yes sir!",
-   "dst": "",
+   "dst": "넵, 알겠습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -558,7 +558,7 @@
   },
   "Solidarity of Steel#055": {
    "src": "Leaves, why don't you join them? It'll be a good opportunity to get to know each other.",
-   "dst": "",
+   "dst": "잎새들, 너희도 같이 가는 게 어때? 서로 알아 갈 좋은 기회일 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -568,7 +568,7 @@
   },
   "Solidarity of Steel#056": {
    "src": "Um... I think I'd rather go with you. I'd like to rest a bit.",
-   "dst": "",
+   "dst": "음... 난 같이 가고 싶어. 좀 쉬고 싶거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -578,7 +578,7 @@
   },
   "Solidarity of Steel#057": {
    "src": "... Then I'll tag along as well. Perhaps I could be of use at the station!",
-   "dst": "",
+   "dst": "... 그럼 저도 따라가지요. 역에서 쓸모가 있을지도 모르니까요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -588,7 +588,7 @@
   },
   "Solidarity of Steel#058": {
    "src": "Very well. Follow me, we have an access point this way.",
-   "dst": "",
+   "dst": "좋아. 따라오게, 이쪽에 들어가는 길이 있네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -598,7 +598,7 @@
   },
   "Solidarity of Steel#059": {
    "src": "Well. I'm afraid I can't stay either... the station doesn't exactly run by itself. We'll have to catch up later!",
-   "dst": "",
+   "dst": "음. 나도 못 남겠네... 역이 저절로 돌아가진 않거든. 나중에 얘기하자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -608,7 +608,7 @@
   },
   "Solidarity of Steel#060": {
    "src": "Ugh, boring as usual... Oh well! Yulie and I can show you around just fine by ourselves.",
-   "dst": "",
+   "dst": "으, 역시 노잼이야... 뭐 어때! 나랑 Yulie 형 둘이서도 구경시켜 줄 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -618,7 +618,7 @@
   },
   "Solidarity of Steel#061": {
    "src": "We should start with getting you all some new clothes.",
-   "dst": "",
+   "dst": "일단 너희 새 옷부터 구하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -628,7 +628,7 @@
   },
   "Solidarity of Steel#062": {
    "src": "Hey! Wh- what's wrong with our cur- current ones!",
-   "dst": "",
+   "dst": "야! 지, 지금 옷이 뭐가 어때서!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -638,7 +638,7 @@
   },
   "Solidarity of Steel#063": {
    "src": "They make you look like poor forest people, man!",
-   "dst": "",
+   "dst": "가난한 숲사람처럼 보이잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -648,7 +648,7 @@
   },
   "Solidarity of Steel#064": {
    "src": "Yuman! Don't be rude to our guests.",
-   "dst": "",
+   "dst": "Yuman! 손님한테 무례하게 굴지 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -658,7 +658,7 @@
   },
   "Solidarity of Steel#065": {
    "src": "What, I'm just saying! Am I wrong?",
-   "dst": "",
+   "dst": "뭐, 사실이잖아! 내 말이 틀려?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -668,7 +668,7 @@
   },
   "Solidarity of Steel#066": {
    "src": "Well! At l- lea- at least we don't smell bad!",
-   "dst": "",
+   "dst": "흥! 저, 적어도 우린 냄새는 안 나거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -678,7 +678,7 @@
   },
   "Solidarity of Steel#067": {
    "src": "Alright, boys, settle down, play nice. You're both pretty. So, Yulie, what's the plan?",
-   "dst": "",
+   "dst": "자, 얘들아, 진정해, 사이좋게. 둘 다 예뻐. 그래서 Yulie, 계획은?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -688,7 +688,7 @@
   },
   "Solidarity of Steel#068": {
    "src": "I'll have to swing by some shops... Yuman, in the meantime, why don't you see if you can find any clothes around here?",
-   "dst": "",
+   "dst": "난 가게 몇 군데 좀 들러야 해... Yuman, 그동안 이 근처에서 옷을 구할 수 있나 알아볼래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -698,7 +698,7 @@
   },
   "Solidarity of Steel#069": {
    "src": "Great, I'll join you. I need to get re-acquainted with things around here.",
-   "dst": "",
+   "dst": "좋아, 나도 같이 갈게. 여기 사정에 다시 익숙해져야 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -708,7 +708,7 @@
   },
   "Solidarity of Steel#070": {
    "src": "Sure, that works. Any complaints, Yuman?",
-   "dst": "",
+   "dst": "그래, 그러자. 불만 있어, Yuman?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -718,7 +718,7 @@
   },
   "Solidarity of Steel#071": {
    "src": "If I had 'em, you'd hear it loud and clear. The plan's good, bro.",
-   "dst": "",
+   "dst": "있었으면 벌써 크게 들렸겠지. 계획 좋아, 형.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -728,7 +728,7 @@
   },
   "Solidarity of Steel#072": {
    "src": "Okay, we'll meet back at the Steel Feather once we're done. See you then!",
-   "dst": "",
+   "dst": "좋아, 다 끝나면 Steel Feather에서 다시 만나자. 이따 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -738,7 +738,7 @@
   },
   "Solidarity of Steel#073": {
    "src": "...Well! I've got a plan of my own in mind. Not exactly what Yulie had in mind, but... heh, what he doesn't know won't hurt him. Follow me, leaf people!",
-   "dst": "",
+   "dst": "...자! 나한텐 따로 계획이 있지. 형이 생각한 거랑은 좀 다르지만... 헤, 모르면 약이지. 따라와, 잎새들!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -748,7 +748,7 @@
   },
   "Solidarity of Steel#074": {
    "src": "Find clothes in the city by following Yuman at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Yuman을 따라가 도시에서 옷을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -758,7 +758,7 @@
   },
   "Solidarity of Steel#075": {
    "src": "Hey! Hold- h- hold up! What's your p- p- plan?",
-   "dst": "",
+   "dst": "야! 자, 잠깐! 네 계, 계획이 뭔데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -768,7 +768,7 @@
   },
   "Solidarity of Steel#076": {
    "src": "Oh! Right. We're going to steal from the clotheslines, of course.",
-   "dst": "",
+   "dst": "아! 맞다. 당연히 빨랫줄에서 훔치는 거지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -778,7 +778,7 @@
   },
   "Solidarity of Steel#077": {
    "src": "... I'm no stranger to st- stealing, but... isn't it a bit r- r-... a bit risky to do that in the m- middle of the city?",
-   "dst": "",
+   "dst": "... 나도 훔, 훔치는 건 익숙하지만... 도시 한복판에서 그러는 건 좀 위, 위험하지 않아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -788,7 +788,7 @@
   },
   "Solidarity of Steel#078": {
    "src": "Man, haven't you noticed how empty {p} is?",
-   "dst": "",
+   "dst": "야, {p}이(가) 얼마나 텅 비었는지 못 봤어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -798,7 +798,7 @@
   },
   "Solidarity of Steel#079": {
    "src": "Figures you wouldn't know, since you're not from around here! It's pretty simple.",
-   "dst": "",
+   "dst": "여기 사람이 아니니 모를 만도 하지! 간단해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -808,7 +808,7 @@
   },
   "Solidarity of Steel#080": {
    "src": "It's the middle of the workday! People are out at their jobs, they don't have time to stroll around the city! Got to make a living somehow, yeah?",
-   "dst": "",
+   "dst": "지금 한창 일할 시간이잖아! 다들 일하러 나가서 시내를 어슬렁거릴 틈이 없어! 먹고살아야 하니까, 그치?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -818,7 +818,7 @@
   },
   "Solidarity of Steel#081": {
    "src": "A- and since they're out at their jobs, they're n- n- not home... you want us to just walk th- through someone's apartment, then?",
-   "dst": "",
+   "dst": "그, 그리고 다들 일하러 나갔으니 지, 집엔 없고... 그러니까 남의 집을 그냥 지, 지나가자는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -828,7 +828,7 @@
   },
   "Solidarity of Steel#082": {
    "src": "Yep, yep, exaaaactly! You get it. I think you and I are gonna get along great.",
-   "dst": "",
+   "dst": "그래, 그래, 바로 그거야! 이해했네. 우리 둘이 잘 맞을 것 같은데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -838,7 +838,7 @@
   },
   "Solidarity of Steel#083": {
    "src": "Yeah... sure. L- let- let's get going! I think we can rea- reach the rooftops from this house. We'll find some clothes up there.",
-   "dst": "",
+   "dst": "그래... 뭐. 가, 가자! 이 집에서 지붕으로 올, 올라갈 수 있을 것 같아. 위에서 옷을 찾을 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -848,7 +848,7 @@
   },
   "Solidarity of Steel#084": {
    "src": "Ha! Really? You should... you should pay more attention, man. The moment you stop keeping an eye on things is the moment things go wrong, y'know? Jeez.",
-   "dst": "",
+   "dst": "하! 진짜? 너... 너 좀 더 주의를 기울여야겠다. 한눈파는 순간 일이 꼬이는 거라고, 알지? 참 나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -858,7 +858,7 @@
   },
   "Solidarity of Steel#085": {
    "src": "What I was gonna say is that it's the middle of the workday. People are out at their jobs! No time to stroll around the city, or anything.",
-   "dst": "",
+   "dst": "내가 하려던 말은, 지금 한창 일할 시간이라는 거야. 다들 일하러 나갔어! 시내를 어슬렁거릴 틈도 없고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -868,7 +868,7 @@
   },
   "Solidarity of Steel#086": {
    "src": "A- and since they're out at their jobs, they're n- not home... you want us to just walk th- through someone's apartment, then?",
-   "dst": "",
+   "dst": "그, 그리고 다들 일하러 나갔으니 지, 집엔 없고... 그러니까 남의 집을 그냥 지, 지나가자는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -878,7 +878,7 @@
   },
   "Solidarity of Steel#087": {
    "src": "Mhm, yep, you get it. They won't mind! Cause they won' know we were there, yeah?",
-   "dst": "",
+   "dst": "음, 그래, 이해했네. 신경 안 써! 우리가 다녀간 것도 모를 테니까, 그치?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -888,7 +888,7 @@
   },
   "Solidarity of Steel#088": {
    "src": "I- I- I guess. Okay, let's get going! I think we can rea- reach the rooftops from this house. We'll find some clothes up there.",
-   "dst": "",
+   "dst": "나, 나, 나도 그런 것 같아. 좋아, 가자! 이 집에서 지붕으로 올, 올라갈 수 있을 것 같아. 위에서 옷을 찾을 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -898,7 +898,7 @@
   },
   "Solidarity of Steel#089": {
    "src": "Climb up the apartment at [-{~}, {~}, -{~}] and jump across the roofs.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 아파트에 올라가 지붕을 건너뛰세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -908,7 +908,7 @@
   },
   "Solidarity of Steel#090": {
    "src": "Try n-not to fall off the roof...",
-   "dst": "",
+   "dst": "지붕에서 떠, 떨어지지 않게 조심해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -918,7 +918,7 @@
   },
   "Solidarity of Steel#091": {
    "src": "Jump across the roofs to the first spot at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "지붕을 건너뛰어 [-{~}, {~}, -{~}]의 첫 번째 장소로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -928,7 +928,7 @@
   },
   "Solidarity of Steel#092": {
    "src": "I'll be right be- behind you! Let's get up to the rooftops. I think we can rea- reach them through this building.",
-   "dst": "",
+   "dst": "바로 뒤, 뒤따라갈게! 지붕으로 올라가자. 이 건물로 올라갈 수 있을 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -938,7 +938,7 @@
   },
   "Solidarity of Steel#093": {
    "src": "...what the hell are you doin' jumpin' around?",
-   "dst": "",
+   "dst": "...대체 뭘 뛰어다니는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -948,7 +948,7 @@
   },
   "Solidarity of Steel#094": {
    "src": "Buzz off, some've us got jobs.",
-   "dst": "",
+   "dst": "꺼져, 누군 일해야 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -958,7 +958,7 @@
   },
   "Solidarity of Steel#095": {
    "src": "Here we are! Best clothes in the entire province, man! Take your pick!",
-   "dst": "",
+   "dst": "도착! 이 지방 최고의 옷이지! 골라 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -968,7 +968,7 @@
   },
   "Solidarity of Steel#096": {
    "src": "... Wait a mi- min- minute. There are only dr- dresses here?",
-   "dst": "",
+   "dst": "... 자, 잠, 잠깐. 여기 드, 드레스밖에 없잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -978,7 +978,7 @@
   },
   "Solidarity of Steel#097": {
    "src": "Oh, yeah. My bad, man! Bet you could pull it off though, eh?",
-   "dst": "",
+   "dst": "아, 그러네. 내 실수! 그래도 넌 잘 어울릴 것 같은데, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -988,7 +988,7 @@
   },
   "Solidarity of Steel#098": {
    "src": "I- y- you- wh- wh- what- h- huh? Ev- even- even if I could, Rex and Mora would- w- would never wear- wear these. A- and- and they're n- n- not-",
-   "dst": "",
+   "dst": "나- 너- 뭐- 무, 무슨- 어? 설, 설령 내가 입는다 해도, Rex랑 Mora는 저, 절대 이거 안 입- 안 입어. 그, 그리고 걔들은 아, 아니-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -998,7 +998,7 @@
   },
   "Solidarity of Steel#099": {
    "src": "Relax, I'm just messing with you, man! We'll find some more. But, hey, grab one if you want, yeah?",
-   "dst": "",
+   "dst": "진정해, 장난친 거야! 더 찾아보자. 그래도 원하면 하나 챙기든가, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1018,7 +1018,7 @@
   },
   "Solidarity of Steel#101": {
    "src": "I'll take one for Sui, just in c- cas- just in case. And let's hurry after him. I'm getting sick a- and-... s- sick and tired of this place already.",
-   "dst": "",
+   "dst": "혹시 모르니, 호, 혹시 모르니 Sui 거 하나 챙길게. 빨리 쫓아가자. 벌써 이 동네가 지, 지겨워, 진, 진짜 지겨워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1028,7 +1028,7 @@
   },
   "Solidarity of Steel#102": {
    "src": "Continue looking for clothes on the rooftops at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 지붕에서 계속 옷을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -1038,7 +1038,7 @@
   },
   "Solidarity of Steel#103": {
    "src": "It's g-going to be a long c- couple of days, huh?",
-   "dst": "",
+   "dst": "앞으로 며칠 기, 길겠다, 그치?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1048,7 +1048,7 @@
   },
   "Solidarity of Steel#104": {
    "src": "Careful there, princess! Wouldn't want to fall, eh?",
-   "dst": "",
+   "dst": "거기 조심해, 공주님! 떨어지면 안 되잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1058,7 +1058,7 @@
   },
   "Solidarity of Steel#105": {
    "src": "Huh? I- I- I'm not-",
-   "dst": "",
+   "dst": "어? 나, 나, 난 공주가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1068,7 +1068,7 @@
   },
   "Solidarity of Steel#106": {
    "src": "Anyway, these clothes should work, yeah? Looks like enough for all of you!",
-   "dst": "",
+   "dst": "어쨌든 이 옷이면 되겠지? 너희 전부 입을 만큼 있네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1078,7 +1078,7 @@
   },
   "Solidarity of Steel#107": {
    "src": "...yes, this sh- sh- should be fine. Thank you f- for showing us. Let's just grab them a- and go.",
-   "dst": "",
+   "dst": "...응, 이거면 되, 되겠어. 안내해 줘서 고, 고마워. 그냥 챙겨서 가, 가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1088,7 +1088,7 @@
   },
   "Solidarity of Steel#108": {
    "src": "Sounds good! You saw the big statue in the river when you were entering the city, yeah?",
-   "dst": "",
+   "dst": "좋아! 도시에 들어올 때 강에 있던 큰 석상 봤지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1098,7 +1098,7 @@
   },
   "Solidarity of Steel#109": {
    "src": "The one to the s- south- {u}, yes.",
-   "dst": "",
+   "dst": "나, 남쪽에 있는 거- {u}, 응.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1108,7 +1108,7 @@
   },
   "Solidarity of Steel#110": {
    "src": "That's the one! I'll wait for you there, then we can head to the station. And hurry up, would ya?",
-   "dst": "",
+   "dst": "그거야! 거기서 기다릴 테니 같이 역으로 가자. 서둘러, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1118,7 +1118,7 @@
   },
   "Solidarity of Steel#111": {
    "src": "Find the statue in the water at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 물속 석상을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -1128,7 +1128,7 @@
   },
   "Solidarity of Steel#112": {
    "src": "Ugh... How can one guy be s- s- so annoying?",
-   "dst": "",
+   "dst": "으... 사람이 어떻게 저, 저렇게 짜증 나지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1138,7 +1138,7 @@
   },
   "Solidarity of Steel#113": {
    "src": "Whatever... Let's just go to that s- st- statue. It's in the river t- to the southwest.",
-   "dst": "",
+   "dst": "됐다... 그 석, 석상으로 가자. 남서쪽 강 안, 안에 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1148,7 +1148,7 @@
   },
   "Solidarity of Steel#114": {
    "src": "Ey, there you are! What's with the holdup?",
-   "dst": "",
+   "dst": "어이, 왔구나! 왜 이렇게 늦었어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1158,7 +1158,7 @@
   },
   "Solidarity of Steel#115": {
    "src": "I was just telling Zeph all about our base of operations! Here, I can start over if you-",
-   "dst": "",
+   "dst": "Zeph한테 우리 본거지 얘기를 하던 참이었어! 자, 원하면 처음부터 다시-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1168,7 +1168,7 @@
   },
   "Solidarity of Steel#116": {
    "src": "Let's just h- head in! Even if the city's empty, the longer we stay out here, the more we ri- risk getting seen.",
-   "dst": "",
+   "dst": "그냥 들, 들어가자! 도시가 비었어도 밖에 오래 있을수록 누, 누구 눈에 띌 위험이 커져.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1178,7 +1178,7 @@
   },
   "Solidarity of Steel#117": {
    "src": "Yeah, yeah, you're right. Okay, follow me! It's just down here.",
-   "dst": "",
+   "dst": "그래, 그래, 네 말이 맞아. 좋아, 따라와! 바로 이 아래야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1188,7 +1188,7 @@
   },
   "Solidarity of Steel#118": {
    "src": "... Into the s- s- sewers?",
-   "dst": "",
+   "dst": "... 하, 하수도로?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1198,7 +1198,7 @@
   },
   "Solidarity of Steel#119": {
    "src": "Sorry if our secret base isn't up to your high standards, princess! We've got to stay hidden somehow, eh?",
-   "dst": "",
+   "dst": "비밀 기지가 높으신 눈에 안 차서 죄송하네요, 공주님! 어떻게든 숨어 지내야 하잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1208,7 +1208,7 @@
   },
   "Solidarity of Steel#120": {
    "src": "Ugh... fine.",
-   "dst": "",
+   "dst": "으... 알았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1218,7 +1218,7 @@
   },
   "Solidarity of Steel#121": {
    "src": "Follow Yuman and Zeph into the sewer at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Yuman과 Zeph를 따라 하수도로 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -1228,7 +1228,7 @@
   },
   "Solidarity of Steel#122": {
    "src": "A-after you...",
-   "dst": "",
+   "dst": "머, 먼저 가...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1238,7 +1238,7 @@
   },
   "Solidarity of Steel#123": {
    "src": "Catch up with Zeph and Rex.",
-   "dst": "",
+   "dst": "Zeph와 Rex를 따라잡으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -1248,7 +1248,7 @@
   },
   "Solidarity of Steel#124": {
    "src": "So... where are we?",
-   "dst": "",
+   "dst": "그래서... 여긴 어디야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1258,7 +1258,7 @@
   },
   "Solidarity of Steel#125": {
    "src": "Welcome to the station, man! There's a bunch of abandoned train lines down here. Dunno how we first found it, but it's where the Steel Feather operates.",
-   "dst": "",
+   "dst": "역에 온 걸 환영해! 이 아래엔 버려진 철로가 잔뜩 있어. 처음에 어떻게 찾았는진 몰라도, Steel Feather는 여기서 움직여.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1268,7 +1268,7 @@
   },
   "Solidarity of Steel#126": {
    "src": "Hey! Zeph, {u}, wait up!",
-   "dst": "",
+   "dst": "야! Zeph, {u}, 기다려!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1278,7 +1278,7 @@
   },
   "Solidarity of Steel#127": {
    "src": "Good to see you've made it down here too. Yuman, you weren't rude to our guests, were you?",
-   "dst": "",
+   "dst": "너희도 내려왔구나, 다행이야. Yuman, 손님들한테 무례하게 굴진 않았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1288,7 +1288,7 @@
   },
   "Solidarity of Steel#128": {
    "src": "What? Screw you, man, of course I was nice! When have I ever not been nice and kind and awesome?",
-   "dst": "",
+   "dst": "뭐? 너무하네, 당연히 친절했지! 내가 언제 안 친절하고 안 상냥하고 안 멋졌던 적 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1298,7 +1298,7 @@
   },
   "Solidarity of Steel#129": {
    "src": "Well, either way, I'm sure you've tired them out by now. Let's go on ahead and give them time to catch up, alright?",
-   "dst": "",
+   "dst": "뭐, 어쨌든 지금쯤 다들 지쳤을 거야. 우린 먼저 가서 좀 쉴 틈을 주자, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1308,7 +1308,7 @@
   },
   "Solidarity of Steel#130": {
    "src": "Ugh, fiiiiiine. Later, you all!",
-   "dst": "",
+   "dst": "으, 알았어어어. 다들 이따 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1318,7 +1318,7 @@
   },
   "Solidarity of Steel#131": {
    "src": "So... how've you been finding Yuman so far?",
-   "dst": "",
+   "dst": "그래서... 지금까지 Yuman은 어때?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1328,7 +1328,7 @@
   },
   "Solidarity of Steel#132": {
    "src": "Ugh. He's f- fi- fine. We got the clothes, at least.",
-   "dst": "",
+   "dst": "으. 괜, 괜찮아. 옷은 구했으니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1338,7 +1338,7 @@
   },
   "Solidarity of Steel#133": {
    "src": "Hm. You don't sound fine. Spill.",
-   "dst": "",
+   "dst": "흠. 안 괜찮아 보이는데. 털어놔.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1348,7 +1348,7 @@
   },
   "Solidarity of Steel#134": {
    "src": "Oh, that's it? He's just like that.",
-   "dst": "",
+   "dst": "아, 그게 다야? 걔는 원래 그래.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1358,7 +1358,7 @@
   },
   "Solidarity of Steel#135": {
    "src": "He's just... very p- per- persistent.",
-   "dst": "",
+   "dst": "그냥... 엄청 끈, 끈질겨.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1368,7 +1368,7 @@
   },
   "Solidarity of Steel#136": {
    "src": "Well, that says more about you than it does about him. Have you tried making it less easy for him?",
-   "dst": "",
+   "dst": "글쎄, 그건 걔보다 너에 대해 더 많은 걸 말해 주는데. 좀 덜 넘어가 주는 건 해 봤어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1378,7 +1378,7 @@
   },
   "Solidarity of Steel#137": {
    "src": "Ha ha. Very hel- hel- helpful, Rex.",
-   "dst": "",
+   "dst": "하하. 참 도, 도움 되네, Rex.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1388,7 +1388,7 @@
   },
   "Solidarity of Steel#138": {
    "src": "Makes sense, I guess. It's been a few days since we've been able to relax, hasn't it?",
-   "dst": "",
+   "dst": "그럴 만도 하지. 마음 놓고 쉰 게 며칠 만이지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1398,7 +1398,7 @@
   },
   "Solidarity of Steel#139": {
    "src": "Yeah... it'll be n- n- nice to slow down, for a while.",
-   "dst": "",
+   "dst": "응... 한동안 좀 느, 느긋해지면 좋겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1408,7 +1408,7 @@
   },
   "Solidarity of Steel#140": {
    "src": "Not sure how long we'll be slowed down... but sure. I think Syndra's got some plans in the works, but she hasn't shared them yet.",
-   "dst": "",
+   "dst": "얼마나 느긋할 수 있을진 모르겠지만... 그래. Syndra한테 뭔가 계획이 있는 것 같은데, 아직 말은 안 했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1418,7 +1418,7 @@
   },
   "Solidarity of Steel#141": {
    "src": "She's been getting... more ambitious lately. {u}, I think having you around has had something to do with that.",
-   "dst": "",
+   "dst": "요즘 좀... 욕심이 커졌어. {u}, 네가 곁에 있는 게 그거랑 관련이 있는 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1428,7 +1428,7 @@
   },
   "Solidarity of Steel#142": {
    "src": "We- we- well, how about you? Is the Roughworks just how you r- remember it?",
-   "dst": "",
+   "dst": "그, 그러는 너는? Roughworks는 기, 기억 그대로야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1438,7 +1438,7 @@
   },
   "Solidarity of Steel#143": {
    "src": "Yeah... pretty much. Things don't tend to change a lot around here, so... it's just like slotting back into place.",
-   "dst": "",
+   "dst": "응... 거의. 여긴 별로 안 변하거든. 그래서... 원래 자리에 다시 끼워지는 느낌이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1448,7 +1448,7 @@
   },
   "Solidarity of Steel#144": {
    "src": "That must be nice.",
-   "dst": "",
+   "dst": "좋겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1458,7 +1458,7 @@
   },
   "Solidarity of Steel#145": {
    "src": "Ha. No, it really isn't. The few months I spent here before Quill sent me off to Syndra were... rough.",
-   "dst": "",
+   "dst": "하. 아니, 전혀. Quill이 날 Syndra한테 보내기 전에 여기서 보낸 몇 달은... 힘들었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1468,7 +1468,7 @@
   },
   "Solidarity of Steel#146": {
    "src": "Oh... h- how come? You've never really talked about the R- R- Rough-... about the R- Roughworks.",
-   "dst": "",
+   "dst": "아... 오, 왜? Roughworks 얘긴, R, R, Rough-... Roughworks 얘긴 한 번도 안 했잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1478,7 +1478,7 @@
   },
   "Solidarity of Steel#147": {
    "src": "Uh... Hey, so about those clothes- let's take a look at what you got!",
-   "dst": "",
+   "dst": "어... 참, 그 옷 말인데- 뭘 구했는지 보자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1488,7 +1488,7 @@
   },
   "Solidarity of Steel#148": {
    "src": "R- right... right! Well, here are th- the- the, uh, workers' clothes we got f- for me, Mora, and {u}... And this is a dr- dress for Sui...",
-   "dst": "",
+   "dst": "마, 맞아... 그렇지! 음, 이건 나랑 Mora랑 {u} 입을, 어, 작업복이고... 이건 Sui 드, 드레스...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1498,7 +1498,7 @@
   },
   "Solidarity of Steel#149": {
    "src": "And, of- of- of course, a simple dress for you!",
-   "dst": "",
+   "dst": "그리고, 다, 당연히, 너한텐 수수한 드레스!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1508,7 +1508,7 @@
   },
   "Solidarity of Steel#150": {
    "src": "Oh... that's funny, I don't think I've ever worn one of those! Hey, maybe I'll just take your set and you can wear the dress?",
-   "dst": "",
+   "dst": "오... 웃기네, 그런 건 한 번도 안 입어 봤는데! 야, 그럼 내가 네 옷 입고 네가 드레스 입을래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1518,7 +1518,7 @@
   },
   "Solidarity of Steel#151": {
    "src": "Woah, ha, we- well, let's not g- g- get too hasty, haha- oh, l- look here, an extra set of re- reg- regular workers' clothes! What a c- co- coincidence!",
-   "dst": "",
+   "dst": "워, 하, 그, 그러니까, 너무 서, 서두르지 말자, 하하- 아, 봐, 봐, 여기 평범한 작업복이 한 벌 더 있네! 이런 우, 우연이!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1528,7 +1528,7 @@
   },
   "Solidarity of Steel#152": {
    "src": "...don't, uh, m- m- make me wear the dress, please?",
-   "dst": "",
+   "dst": "...저기, 나한테 드, 드레스 입히진 말아 줘, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1538,7 +1538,7 @@
   },
   "Solidarity of Steel#153": {
    "src": "Yeah, yeah. Well, that's enough fooling around - we should find Mora and Sui, see what they've figured out. I'll race you there!",
-   "dst": "",
+   "dst": "그래, 그래. 자, 장난은 그만 - Mora랑 Sui 찾아서 뭘 알아냈는지 보자. 누가 먼저 가나 시합이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1548,7 +1548,7 @@
   },
   "Solidarity of Steel#154": {
    "src": "Hey! Oh, you're going d- down!",
-   "dst": "",
+   "dst": "야! 오, 너 이제 주, 죽었어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1558,7 +1558,7 @@
   },
   "Solidarity of Steel#155": {
    "src": "Find Sui and Mora at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Sui와 Mora를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -1568,7 +1568,7 @@
   },
   "Solidarity of Steel#156": {
    "src": "Give me a moment, {u}.",
-   "dst": "",
+   "dst": "잠깐만 기다려, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1578,7 +1578,7 @@
   },
   "Solidarity of Steel#157": {
    "src": "...Oh! You're back.",
-   "dst": "",
+   "dst": "...아! 돌아왔구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1588,7 +1588,7 @@
   },
   "Solidarity of Steel#158": {
    "src": "Indeed! Tell us, friends, how go the escapades? Has anything of interest transpired up in the city?",
-   "dst": "",
+   "dst": "그래요! 말해 봐요, 친구들, 모험은 어땠나요? 도시에서 재미있는 일이라도 있었나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1598,7 +1598,7 @@
   },
   "Solidarity of Steel#159": {
    "src": "No, Mora, nothing very exciting. Yulie and I did a quick supply run in {p} while we were there.",
-   "dst": "",
+   "dst": "아니, Mora, 별로 신나는 일은 없었어. 간 김에 Yulie랑 {p}에서 보급품을 좀 챙겼어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1608,7 +1608,7 @@
   },
   "Solidarity of Steel#160": {
    "src": "And {u} and I found some cl- cl- clothes! They might not fit perfectly, but...",
-   "dst": "",
+   "dst": "그리고 {u}랑 나는 오, 옷을 구했어! 딱 맞진 않겠지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1618,7 +1618,7 @@
   },
   "Solidarity of Steel#161": {
    "src": "Ah, well, we'll take what we can get. Besides, I have to imagine they have someone around here who knows their way around modifying clothes!",
-   "dst": "",
+   "dst": "아, 뭐, 있는 대로 받아야지요. 게다가 여기라면 옷 수선할 줄 아는 사람 하나쯤은 있을 테고요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1628,7 +1628,7 @@
   },
   "Solidarity of Steel#162": {
    "src": "Speaking of, have you had time to explore this place yet? It's far larger than I could have anticipated! So many people with so many skillsets; Syndra wasn't lying when she said they had resources here, hoho!",
-   "dst": "",
+   "dst": "그러고 보니, 여기 좀 둘러봤나요? 예상보다 훨씬 넓어요! 이렇게 많은 사람과 이렇게 다양한 재주라니. 자원이 있다던 Syndra 말이 거짓이 아니었어요, 호호!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1638,7 +1638,7 @@
   },
   "Solidarity of Steel#163": {
    "src": "Yes... everyone chips in, too. I got put to work quite fast. Had an opportunity to chat with some of the people here.",
-   "dst": "",
+   "dst": "응... 다들 조금씩 거들어. 나도 금방 일을 맡았어. 여기 사람들이랑 얘기할 기회도 있었고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1648,7 +1648,7 @@
   },
   "Solidarity of Steel#164": {
    "src": "They, um... a lot of them don't have anywhere else to go... so they work hard to keep this place running.",
-   "dst": "",
+   "dst": "다들, 음... 대부분 달리 갈 데가 없어서... 여기가 계속 돌아가게 열심히 일해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1658,7 +1658,7 @@
   },
   "Solidarity of Steel#165": {
    "src": "... Yeah.",
-   "dst": "",
+   "dst": "... 그래.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1668,7 +1668,7 @@
   },
   "Solidarity of Steel#166": {
    "src": "Hey, do you know where Yusanu is? I haven't had the chance to catch up with him yet.",
-   "dst": "",
+   "dst": "야, Yusanu 어딨는지 알아? 아직 제대로 얘기를 못 나눴거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1678,7 +1678,7 @@
   },
   "Solidarity of Steel#167": {
    "src": "Oh, he seemed to have disappeared into his study some time ago, though not before I could have a chat with him! Did you know he singlehandedly repaired much of the abandoned infrastructure here?",
-   "dst": "",
+   "dst": "아, 얼마 전에 서재로 사라진 것 같던데요, 그 전에 잠깐 얘기를 나눴지요! 여기 버려진 시설 대부분을 혼자 고쳤다는 거 알아요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1688,7 +1688,7 @@
   },
   "Solidarity of Steel#168": {
    "src": "Really? That's... im- im- impressive.",
-   "dst": "",
+   "dst": "정말? 그건... 대, 대단하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1698,7 +1698,7 @@
   },
   "Solidarity of Steel#169": {
    "src": "Apparently, um, the crown was working on building this, central station, but they... abandoned the project, for, some reason. Nobody... really knows why.",
-   "dst": "",
+   "dst": "듣기로는, 음, 왕실이 이, 중앙역을 짓다가... 무슨, 이유로 공사를 버렸대. 아무도... 이유는 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1708,7 +1708,7 @@
   },
   "Solidarity of Steel#170": {
    "src": "Hm... so what are Syndra and Quill ta- talk- talking about over there?",
-   "dst": "",
+   "dst": "흠... 그럼 Syndra랑 Quill은 저기서 무슨 얘, 얘기를 하는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1718,7 +1718,7 @@
   },
   "Solidarity of Steel#171": {
    "src": "An excellent question! Nobody knows! Attempting to interject has only resulted in failure thus far.",
-   "dst": "",
+   "dst": "훌륭한 질문이에요! 아무도 몰라요! 끼어들려는 시도는 지금까지 전부 실패했지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1728,7 +1728,7 @@
   },
   "Solidarity of Steel#172": {
    "src": "I mean... should we even interrupt? I haven't seen her this... happy... in a long time.",
-   "dst": "",
+   "dst": "그러니까... 끼어들어도 되는 걸까? Syndra가 저렇게... 행복해 보이는 건... 오랜만이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1738,7 +1738,7 @@
   },
   "Solidarity of Steel#173": {
    "src": "It is a sweet moment, isn't it?",
-   "dst": "",
+   "dst": "훈훈한 장면이긴 하지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1758,7 +1758,7 @@
   },
   "Solidarity of Steel#175": {
    "src": "Well, I nominate {u} to go interrupt them. It needs to be done eventually.",
-   "dst": "",
+   "dst": "음, 난 {u}이(가) 가서 끼어드는 데 한 표. 언젠간 누가 해야 하잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1768,7 +1768,7 @@
   },
   "Solidarity of Steel#176": {
    "src": "Oh, yes, I second that notion. If it must be anyone, {u} is the one to sacrifice for the cause.",
-   "dst": "",
+   "dst": "오, 좋아요, 찬성이에요. 누군가 해야 한다면, 대의를 위해 희생할 사람은 {u}이지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1778,7 +1778,7 @@
   },
   "Solidarity of Steel#177": {
    "src": "Oh! Uh... sure, I'll... th- third it? That sounds right.",
-   "dst": "",
+   "dst": "오! 어... 그래, 나도... 세, 세 번째로 찬성? 그게 맞는 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1788,7 +1788,7 @@
   },
   "Solidarity of Steel#178": {
    "src": "Um... I'll abstain.",
-   "dst": "",
+   "dst": "음... 난 기권할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1798,7 +1798,7 @@
   },
   "Solidarity of Steel#179": {
    "src": "Well! Three for, one against. It seems the decision has been made!",
-   "dst": "",
+   "dst": "좋아요! 찬성 셋, 반대 하나. 결정이 난 것 같네요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1808,7 +1808,7 @@
   },
   "Solidarity of Steel#180": {
    "src": "Yeah, yeah! Come on, what are you waiting for? Go {u}, and find out what they're talking about.",
-   "dst": "",
+   "dst": "그래, 그래! 자, 뭘 기다려? 가라, {u}, 둘이 무슨 얘기 하는지 알아내!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1818,7 +1818,7 @@
   },
   "Solidarity of Steel#181": {
    "src": "Good luck, my friend! You'll certainly need it.",
-   "dst": "",
+   "dst": "행운을 빌어요, 친구! 분명 필요할 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1828,7 +1828,7 @@
   },
   "Solidarity of Steel#182": {
    "src": "Your sacrifice will not be in vain.",
-   "dst": "",
+   "dst": "네 희생은 헛되지 않을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1838,7 +1838,7 @@
   },
   "Solidarity of Steel#183": {
    "src": "I had no p- pa- part in this!",
-   "dst": "",
+   "dst": "난 이, 이 일에 끼, 낀 적 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1848,7 +1848,7 @@
   },
   "Solidarity of Steel#184": {
    "src": "Don't try to get out of this, Zeph. You're just as complicit in this as the rest of us.",
-   "dst": "",
+   "dst": "빠져나갈 생각 마, Zeph. 너도 우리랑 똑같이 공범이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1858,7 +1858,7 @@
   },
   "Solidarity of Steel#185": {
    "src": "Wh- I- fine... {u}, just get it o- over with. Go {u}, and find out what th- they- wh- what they're talking about.",
-   "dst": "",
+   "dst": "뭐- 나- 알았어... {u}, 그냥 빨, 빨리 끝내. 가, {u}, 둘이 무슨- 뭐, 무슨 얘기 하는지 알아내.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1868,7 +1868,7 @@
   },
   "Solidarity of Steel#186": {
    "src": "I will remember you fondly, my friend.",
-   "dst": "",
+   "dst": "당신을 애틋하게 기억할게요, 친구.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1878,7 +1878,7 @@
   },
   "Solidarity of Steel#187": {
    "src": "Find Syndra at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Syndra를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -1888,7 +1888,7 @@
   },
   "Solidarity of Steel#188": {
    "src": "Good luck on this mission, {u}.",
-   "dst": "",
+   "dst": "이번 임무도 행운을 빌어, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1898,7 +1898,7 @@
   },
   "Solidarity of Steel#189": {
    "src": "Yuman... huh?",
-   "dst": "",
+   "dst": "Yuman... 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1908,7 +1908,7 @@
   },
   "Solidarity of Steel#190": {
    "src": "H-hey! Don't you have a m-mission to do?",
-   "dst": "",
+   "dst": "야, 야! 너 임, 임무 있지 않아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1918,7 +1918,7 @@
   },
   "Solidarity of Steel#191": {
    "src": "Ah, {u}! I see you have all returned. Welcome to our home.",
-   "dst": "",
+   "dst": "아, {u}! 다들 돌아왔군. 우리 집에 온 걸 환영하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1928,7 +1928,7 @@
   },
   "Solidarity of Steel#192": {
    "src": "I hope the brothers weren't too much of a nuisance. Yuman, especially... he's a good lad, but he tends towards",
-   "dst": "",
+   "dst": "그 형제들이 너무 성가시게 굴진 않았길 바라네. 특히 Yuman은... 착한 녀석인데, 가끔",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1938,7 +1938,7 @@
   },
   "Solidarity of Steel#193": {
    "src": "Speaking of nuisances... I can't help but notice the rest of our group looking onwards at our conversation with excitement.",
-   "dst": "",
+   "dst": "성가신 얘기가 나와서 말인데요... 나머지 일행이 우리 대화를 신나게 지켜보는 게 자꾸 눈에 띄네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1948,7 +1948,7 @@
   },
   "Solidarity of Steel#194": {
    "src": "Ah! Understood. A noble one, at that.",
-   "dst": "",
+   "dst": "아! 알겠어요. 그것도 숭고한 임무네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1958,7 +1958,7 @@
   },
   "Solidarity of Steel#195": {
    "src": "In any case, Quill and I have been trying to plan out our next moves... but, if I'm being honest, most of that time has been spent catching up.",
-   "dst": "",
+   "dst": "어쨌든 Quill과 다음 행동을 계획하려던 참이에요... 하지만 솔직히, 대부분은 밀린 얘기를 하느라 보냈죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1968,7 +1968,7 @@
   },
   "Solidarity of Steel#196": {
    "src": "Don't be fooled. All of these people here are resisting to some extent, but very few are ready to go up against a God.",
-   "dst": "",
+   "dst": "속지 말게. 여기 사람들 모두 어느 정도는 저항하고 있지만, 신에게 맞설 각오가 된 이는 드물어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1978,7 +1978,7 @@
   },
   "Solidarity of Steel#197": {
    "src": "Hah! Goodness, how long has it been since we met face to face? It must have been... {~} years? Not since before you-",
-   "dst": "",
+   "dst": "하! 세상에, 얼굴 맞대고 본 게 언제였지? 아마... {~}년은 됐겠군? 자네가 그러기 전-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1988,7 +1988,7 @@
   },
   "Solidarity of Steel#198": {
    "src": "Long enough, Quill.",
-   "dst": "",
+   "dst": "그만하면 오래됐죠, Quill.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -1998,7 +1998,7 @@
   },
   "Solidarity of Steel#199": {
    "src": "...Ahem. Yes, of course. As Syndra said, we haven't truly started planning yet... You must be surprised by our numbers, yes? More members in the Steel Feather than you'd have expected.",
-   "dst": "",
+   "dst": "...흠흠. 그래, 물론이지. Syndra 말대로 아직 제대로 계획을 세우진 않았네... 우리 인원에 놀랐겠지? Steel Feather엔 생각보다 사람이 많으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2008,7 +2008,7 @@
   },
   "Solidarity of Steel#200": {
    "src": "In truth, looks may be deceiving. Everyone here is resisting in whatever ways they can manage, but few are willing to put as much of themselves into it as your group.",
-   "dst": "",
+   "dst": "사실 겉보기와는 다르다네. 여기 모두 각자 할 수 있는 방식으로 저항하지만, 자네 일행만큼 자신을 내던지려는 이는 드물지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2018,7 +2018,7 @@
   },
   "Solidarity of Steel#201": {
    "src": "Most of them are simply trying to live without the watchful eye of the monarchy. Our safe haven takes in people who are at risk. People who can't work, who have been thrown out of their homes...",
-   "dst": "",
+   "dst": "대부분은 그저 왕실의 감시를 피해 살아가려는 거네. 우리 피난처는 위태로운 이들을 받아들이지. 일할 수 없는 이들, 집에서 쫓겨난 이들...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2028,7 +2028,7 @@
   },
   "Solidarity of Steel#202": {
    "src": "But we are not helpless. The brothers and I are all ready to help, however we can. And the rest of the Steel Feather will still offer support from the sidelines. We have infrastructure, and we have resources.",
-   "dst": "",
+   "dst": "하지만 우리가 무력한 건 아니야. 나와 형제들은 할 수 있는 한 도울 준비가 됐네. Steel Feather의 다른 이들도 뒤에서 지원할 걸세. 시설도 있고, 자원도 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2038,7 +2038,7 @@
   },
   "Solidarity of Steel#203": {
    "src": "I've also suggested that you might offer to teach the basics of magic to those who are interested-",
-   "dst": "",
+   "dst": "관심 있는 사람들에게 마법 기초를 가르쳐 주면 어떻겠냐고도 제안했어요-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2048,7 +2048,7 @@
   },
   "Solidarity of Steel#204": {
    "src": "Yes, yes, but I do not believe we need curses or blessings to resist. As I've told you several times before in our correspondences, Syndra!",
-   "dst": "",
+   "dst": "그래, 그래, 하지만 저항하는 데 저주나 축복이 필요하다곤 생각하지 않네. 편지로도 몇 번이나 말했잖나, Syndra!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2058,7 +2058,7 @@
   },
   "Solidarity of Steel#205": {
    "src": "And as I've told you in response, I see no reason not to make use of all the tools available!",
-   "dst": "",
+   "dst": "그리고 저도 답장에 썼죠, 쓸 수 있는 도구를 다 쓰지 않을 이유가 없다고요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2068,7 +2068,7 @@
   },
   "Solidarity of Steel#206": {
    "src": "Syndra, I have been firm on this point for a reason. We have done well for ourselves thus far.",
-   "dst": "",
+   "dst": "Syndra, 내가 이 점에서 단호한 데엔 이유가 있네. 지금까지 우리 힘으로도 잘해 왔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2078,7 +2078,7 @@
   },
   "Solidarity of Steel#207": {
    "src": "As an example- Yusanu has grown quite proficient with machinery. He has constructed weaponry, tools- even my leg is his creation!",
-   "dst": "",
+   "dst": "예를 들자면- Yusanu는 기계를 아주 능숙하게 다루게 됐지. 무기도, 도구도 만들었고- 내 다리도 그 녀석 작품이라네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2088,7 +2088,7 @@
   },
   "Solidarity of Steel#208": {
    "src": "... I simply think that-... Sigh. Fine. Quill, we should get to discussing the reason we came here.",
-   "dst": "",
+   "dst": "... 제 말은 그냥-... 하아. 알겠어요. Quill, 우리가 여기 온 이유를 얘기해야겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2098,7 +2098,7 @@
   },
   "Solidarity of Steel#209": {
    "src": "Yes, I rather think we should. {u}, in the meantime, why don't you take a look around the station? Familiarize yourself with the area and the people.",
-   "dst": "",
+   "dst": "그래, 그게 좋겠군. {u}, 그동안 역을 한번 둘러보는 게 어떤가? 이곳과 사람들에게 익숙해지게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2108,7 +2108,7 @@
   },
   "Solidarity of Steel#210": {
    "src": "Explore the Steel Feather train station at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Steel Feather 기차역을 탐험하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -2118,7 +2118,7 @@
   },
   "Solidarity of Steel#211": {
    "src": "Take a look around the station! Familiarize yourself with the area and the people.",
-   "dst": "",
+   "dst": "역을 한번 둘러보게! 이곳과 사람들에게 익숙해지게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2128,7 +2128,7 @@
   },
   "Solidarity of Steel#212": {
    "src": "Hoho! So they return! Tell us, how did it go?",
-   "dst": "",
+   "dst": "호호! 돌아왔군요! 말해 봐요, 어땠어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2138,7 +2138,7 @@
   },
   "Solidarity of Steel#213": {
    "src": "Oh, no... what a tragedy.",
-   "dst": "",
+   "dst": "오, 이런... 이런 비극이.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2148,7 +2148,7 @@
   },
   "Solidarity of Steel#214": {
    "src": "Ah, we all knew the stakes going in! Worry not, friend, your sacrifice will not be forgotten any time soon!",
-   "dst": "",
+   "dst": "아, 다들 각오하고 들어간 거잖아요! 걱정 마요, 친구, 당신의 희생은 쉽게 잊히지 않을 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2158,7 +2158,7 @@
   },
   "Solidarity of Steel#215": {
    "src": "Hey! E- e- enough with the theatrics!",
-   "dst": "",
+   "dst": "야! 여, 연극은 그만해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2168,7 +2168,7 @@
   },
   "Solidarity of Steel#216": {
    "src": "Excellent! You have successfully defied the odds, friend!",
-   "dst": "",
+   "dst": "훌륭해요! 역경을 이겨 냈군요, 친구!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2178,7 +2178,7 @@
   },
   "Solidarity of Steel#217": {
    "src": "Zeph didn't believe you'd make it, you know.",
-   "dst": "",
+   "dst": "있잖아, Zeph는 네가 해낼 거라고 안 믿었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2188,7 +2188,7 @@
   },
   "Solidarity of Steel#218": {
    "src": "Wh- what, n- no I- I didn't- Sui!! D- don't- don't believe a word- a word she says, o- okay?",
-   "dst": "",
+   "dst": "뭐, 뭐, 아, 아니, 난- 안 그랬- Sui!! 쟤, 쟤 말 한마디도- 한마디도 믿지 마, 아, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2198,7 +2198,7 @@
   },
   "Solidarity of Steel#219": {
    "src": "Wh- what were they talking about, anyway?",
-   "dst": "",
+   "dst": "그, 그래서 둘이 무슨 얘기 했는데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2208,7 +2208,7 @@
   },
   "Solidarity of Steel#220": {
    "src": "Oh, so it was as boring as I predicted.",
-   "dst": "",
+   "dst": "오, 역시 예상대로 지루한 얘기였구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2218,7 +2218,7 @@
   },
   "Solidarity of Steel#221": {
    "src": "Don't call that boring, Rex! It's... nice for her to relax for a little, isn't it?",
-   "dst": "",
+   "dst": "지루하다고 하지 마, Rex! Syndra가... 잠깐이라도 쉬는 건 좋은 거잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2228,7 +2228,7 @@
   },
   "Solidarity of Steel#222": {
    "src": "It can be both boring and a nice thing, can it not? The nice things often tend towards the boring end of the spectrum, in any case.",
-   "dst": "",
+   "dst": "지루하면서 좋은 일일 수도 있지 않나요? 어차피 좋은 일은 대개 지루한 쪽에 가깝지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2238,7 +2238,7 @@
   },
   "Solidarity of Steel#223": {
    "src": "So, still n- nothing about the plans... when is she go- go- going to tell us anything?",
-   "dst": "",
+   "dst": "그래서 계, 계획 얘기는 여, 여전히 없고... 대체 언, 언제 말해 준대?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2248,7 +2248,7 @@
   },
   "Solidarity of Steel#224": {
    "src": "Have patience, young Leaf. She will tell us when it is time! Now, Sui and I have had the opportunity to explore, but you three have not! So, go on! Look around, talk to people.",
-   "dst": "",
+   "dst": "참을성을 가져요, 젊은 잎새. 때가 되면 말해 줄 거예요! 자, Sui와 전 둘러볼 기회가 있었지만 셋은 아직이죠! 그러니 가요! 둘러보고, 사람들과 얘기해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2258,7 +2258,7 @@
   },
   "Solidarity of Steel#225": {
    "src": "Go have a look around!",
-   "dst": "",
+   "dst": "가서 둘러봐요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2268,7 +2268,7 @@
   },
   "Solidarity of Steel#226": {
    "src": "Ah. You're all back already? Man, I totally lost track of time there... there's so much to do.",
-   "dst": "",
+   "dst": "아. 벌써 다 돌아왔어? 이런, 시간 가는 줄도 몰랐네... 할 일이 너무 많아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2278,7 +2278,7 @@
   },
   "Solidarity of Steel#227": {
    "src": "So, what's up? Sorry I couldn't talk to you more earlier- I'm the one who makes sure everything runs smoothly here.",
-   "dst": "",
+   "dst": "그래서, 무슨 일이야? 아까 더 얘기 못 해서 미안- 여기가 잘 돌아가게 챙기는 게 나거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2288,7 +2288,7 @@
   },
   "Solidarity of Steel#228": {
    "src": "Most of the infrastructure was here already, but I basically fixed it all up myself... with some help, of course. But now I'm in charge of maintaining all of it!",
-   "dst": "",
+   "dst": "시설 대부분은 원래 있었는데, 거의 다 내가 직접 고쳤어... 물론 도움은 좀 받았지. 그리고 이젠 그 전부를 유지 보수하는 게 내 담당이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2298,7 +2298,7 @@
   },
   "Solidarity of Steel#229": {
    "src": "It's not usually this... hectic. We had some stuff break down recently, and I'm the oooonly one who can deal with it!",
-   "dst": "",
+   "dst": "평소엔 이렇게... 정신없진 않아. 최근에 뭐가 좀 고장 났는데, 처리할 수 있는 사람이 나 하나뿐이거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2308,7 +2308,7 @@
   },
   "Solidarity of Steel#230": {
    "src": "Ugh...",
-   "dst": "",
+   "dst": "으윽...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2318,7 +2318,7 @@
   },
   "Solidarity of Steel#231": {
    "src": "... Still don't have time to chat, sorry! I'm nearly done, though, I'll be out in a bit.",
-   "dst": "",
+   "dst": "... 여전히 얘기할 시간이 없네, 미안! 그래도 거의 끝나 가, 금방 나갈게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2328,7 +2328,7 @@
   },
   "Solidarity of Steel#232": {
    "src": "Ayo! Where're your friends at?",
-   "dst": "",
+   "dst": "어이! 네 친구들은 어디 갔어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2338,7 +2338,7 @@
   },
   "Solidarity of Steel#233": {
    "src": "I already miss 'em.",
-   "dst": "",
+   "dst": "벌써 보고 싶네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2348,7 +2348,7 @@
   },
   "Solidarity of Steel#234": {
    "src": "Hah! Yeah, yeah, maybe. I was hoping to tease him some more.",
-   "dst": "",
+   "dst": "하! 그래, 그래, 그럴지도. 좀 더 놀려 주고 싶었는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2358,7 +2358,7 @@
   },
   "Solidarity of Steel#235": {
    "src": "He's a fun guy! But the boy's gotta learn how to tease back... it's no fun if it's one-side, y'know?",
-   "dst": "",
+   "dst": "재밌는 녀석이야! 근데 그 녀석도 받아칠 줄 알아야지... 한쪽만 놀리면 재미없잖아, 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2368,7 +2368,7 @@
   },
   "Solidarity of Steel#236": {
    "src": "...what? Ey, don't look at me like that! It's all for fun at the end of the day. If he tells me to quit it, I'll quit it.",
-   "dst": "",
+   "dst": "...뭐? 야, 그런 눈으로 보지 마! 결국 다 재미로 하는 거야. 그만하라고 하면 그만할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2378,7 +2378,7 @@
   },
   "Solidarity of Steel#237": {
    "src": "...Yep! So they are!",
-   "dst": "",
+   "dst": "...그렇지! 딱 그렇다니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2388,7 +2388,7 @@
   },
   "Solidarity of Steel#238": {
    "src": "I'll... go over there later. Eventually! ... Maybe.",
-   "dst": "",
+   "dst": "나중에... 가 볼게. 언젠가는! ... 아마도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2398,7 +2398,7 @@
   },
   "Solidarity of Steel#239": {
    "src": "Eheh. Wouldn't want to overstay my welcome, y'know? I've got things to do, anyway...",
-   "dst": "",
+   "dst": "에헤. 너무 오래 눌러앉으면 민폐잖아, 알지? 어차피 나도 할 일이 있고...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2408,7 +2408,7 @@
   },
   "Solidarity of Steel#240": {
    "src": "...so, you exploring? That's good! I'd show you around, but... eheh, I'm uh, working on a little something right now.",
-   "dst": "",
+   "dst": "...그래서, 둘러보는 중이야? 좋지! 구경시켜 주고 싶은데... 에헤, 지금 뭘 좀, 어, 만드는 중이라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2418,7 +2418,7 @@
   },
   "Solidarity of Steel#241": {
    "src": "Yo, quit trying to sneak a peak at it! No spoilers! You'll see it tonight, if I get it done.",
-   "dst": "",
+   "dst": "야, 몰래 보려고 하지 마! 스포 금지! 다 만들면 오늘 밤에 보게 될 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2428,7 +2428,7 @@
   },
   "Solidarity of Steel#242": {
    "src": "Hey! I said no peaking!",
-   "dst": "",
+   "dst": "야! 엿보지 말랬지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2438,7 +2438,7 @@
   },
   "Solidarity of Steel#243": {
    "src": "Hm. I suppose you're used to invading personal space?",
-   "dst": "",
+   "dst": "흠. 남의 공간에 들어오는 게 익숙한가 보지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2448,7 +2448,7 @@
   },
   "Solidarity of Steel#244": {
    "src": "Don't worry, I'm not upset. I appreciate the effort in familiarizing yourself with this place.",
-   "dst": "",
+   "dst": "걱정 마, 화난 거 아니야. 여기 익숙해지려고 애쓰는 건 고맙게 생각해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2458,7 +2458,7 @@
   },
   "Solidarity of Steel#245": {
    "src": "Did you have a question, or are you just looking around?",
-   "dst": "",
+   "dst": "물어볼 게 있어, 아니면 그냥 둘러보는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2468,7 +2468,7 @@
   },
   "Solidarity of Steel#246": {
    "src": "Oh, has he done something again? Of course he has... I apologize for my brother's actions.",
-   "dst": "",
+   "dst": "아, 걔가 또 뭘 했어? 당연히 했겠지... 동생 일은 내가 사과할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2478,7 +2478,7 @@
   },
   "Solidarity of Steel#247": {
    "src": "He's... hard to keep a handle on. Energetic, impulsive... I do love him, but do I ever wish he would cause less trouble.",
-   "dst": "",
+   "dst": "걔는... 감당하기 힘들어. 넘치는 기운에, 충동적이고... 사랑하긴 하지만, 말썽 좀 덜 부렸으면 정말 좋겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2498,7 +2498,7 @@
   },
   "Solidarity of Steel#249": {
    "src": "Ah. Then I apologize for my assumption.",
-   "dst": "",
+   "dst": "아. 그럼 넘겨짚어서 미안해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2508,7 +2508,7 @@
   },
   "Solidarity of Steel#250": {
    "src": "He's... I might be too hard on him sometimes. He does help out a lot around here, he does- just... like I said. Energetic and impulsive.",
-   "dst": "",
+   "dst": "걔는... 내가 가끔 너무 엄하게 대하는지도 몰라. 여기서 도움도 많이 되고, 정말로- 그냥... 말했듯이. 기운 넘치고 충동적이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2518,7 +2518,7 @@
   },
   "Solidarity of Steel#251": {
    "src": "You'll get used to his personality, with time. Everyone does.",
-   "dst": "",
+   "dst": "시간이 지나면 걔 성격에도 익숙해질 거야. 다들 그래.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2528,7 +2528,7 @@
   },
   "Solidarity of Steel#252": {
    "src": "But in any case, I'll speak with him about it. He should know better than to bother our guests.",
-   "dst": "",
+   "dst": "그래도 어쨌든 걔랑 얘기해 볼게. 손님을 귀찮게 하면 안 된다는 것쯤은 알아야지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2538,7 +2538,7 @@
   },
   "Solidarity of Steel#253": {
    "src": "I have to get back to work. I'll see you around.",
-   "dst": "",
+   "dst": "난 일하러 가 봐야 해. 또 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2548,7 +2548,7 @@
   },
   "Solidarity of Steel#254": {
    "src": "Hm? My role? That's a bit of a complex question, actually. In the Steel Feather... I don't do much.",
-   "dst": "",
+   "dst": "응? 내 역할? 사실 좀 복잡한 질문이야. Steel Feather에서... 난 하는 게 별로 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2558,7 +2558,7 @@
   },
   "Solidarity of Steel#255": {
    "src": "But I work as a consulting detective for the crown, in the city. I perform investigations for them, but I also gather information for us - keeping tabs on the military, and such.",
-   "dst": "",
+   "dst": "대신 도시에서 왕실의 자문 탐정으로 일해. 왕실을 위해 수사를 하지만, 우리를 위해 정보도 모으지 - 군의 동향을 살피는 식으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2568,7 +2568,7 @@
   },
   "Solidarity of Steel#256": {
    "src": "Besides, the pay's... decent enough. A few emeralds in my pocket helps all of us down here. Unfortunately, we can't produce everything ourselves.",
-   "dst": "",
+   "dst": "게다가 보수도... 그럭저럭 괜찮아. 내 주머니의 에메랄드 몇 개가 여기 모두에게 도움이 돼. 안타깝게도 전부 자급할 순 없거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2578,7 +2578,7 @@
   },
   "Solidarity of Steel#257": {
    "src": "But speaking of my work, I... am actually busy preparing for a meeting right now. {p}'s Commander wants us on the lookout for... something, he hasn't told us yet.",
-   "dst": "",
+   "dst": "근데 일 얘기가 나와서 말인데... 사실 지금 회의 준비로 바빠. {p} 사령관이 뭘... 경계하라는데, 아직 뭔지 안 알려 줬어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2588,7 +2588,7 @@
   },
   "Solidarity of Steel#258": {
    "src": "But it's my duty to find out, so into the city I will go. If you'll excuse me, I'll get back to preparing now.",
-   "dst": "",
+   "dst": "그래도 알아내는 게 내 임무니까 도시로 가야지. 실례할게, 다시 준비하러 가 봐야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2598,7 +2598,7 @@
   },
   "Solidarity of Steel#259": {
    "src": "Return to the main room at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 중앙 홀로 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -2608,7 +2608,7 @@
   },
   "Solidarity of Steel#260": {
    "src": "...and she's well? No changes?",
-   "dst": "",
+   "dst": "...그녀는 잘 지내요? 변화는 없고요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2618,7 +2618,7 @@
   },
   "Solidarity of Steel#261": {
    "src": "Nothing beyond what I'd written in our letters.",
-   "dst": "",
+   "dst": "편지에 쓴 것 이상은 없네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2628,7 +2628,7 @@
   },
   "Solidarity of Steel#262": {
    "src": "Alright... thank you, Quill. Just a little longer, then I-",
-   "dst": "",
+   "dst": "알겠어요... 고마워요, Quill. 조금만 더, 그러면 제가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2638,7 +2638,7 @@
   },
   "Solidarity of Steel#263": {
    "src": "Ah, {u}! What do you think of our home? It took a great deal of planning to get the station up and running, but I feel we've done a good-",
-   "dst": "",
+   "dst": "아, {u}! 우리 집은 어떤가? 역을 돌아가게 하려고 계획을 무척 많이 세웠지만, 꽤 잘해 낸 것-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2648,7 +2648,7 @@
   },
   "Solidarity of Steel#264": {
    "src": "Quill!",
-   "dst": "",
+   "dst": "Quill!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2658,7 +2658,7 @@
   },
   "Solidarity of Steel#265": {
    "src": "Jiro? What's the matter?",
-   "dst": "",
+   "dst": "Jiro? 무슨 일인가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2668,7 +2668,7 @@
   },
   "Solidarity of Steel#266": {
    "src": "I overheard... an altercation... between a woma-... and a- ...dier...",
-   "dst": "",
+   "dst": "들었어요... 말다툼을... 어떤 여... 그리고 병...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2678,7 +2678,7 @@
   },
   "Solidarity of Steel#267": {
    "src": "Calm yourself, Jiro. Take a breath, and repeat",
-   "dst": "",
+   "dst": "진정하게, Jiro. 숨 한번 쉬고, 다시 말해 보게",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2688,7 +2688,7 @@
   },
   "Solidarity of Steel#268": {
    "src": "A woman is being kicked out... again! I don't know the details, but I think she didn't reach her quota for the month.",
-   "dst": "",
+   "dst": "어떤 여자가 쫓겨나고 있어요... 또요! 자세한 건 모르지만, 이번 달 할당량을 못 채운 것 같아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2698,7 +2698,7 @@
   },
   "Solidarity of Steel#269": {
    "src": "Urgh... Where?!",
-   "dst": "",
+   "dst": "으윽... 어딘가?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2708,7 +2708,7 @@
   },
   "Solidarity of Steel#270": {
    "src": "Living Block {~} - through the southwestern tunnel.",
-   "dst": "",
+   "dst": "{~}번 거주 구역이요 - 남서쪽 터널을 지나서요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2718,7 +2718,7 @@
   },
   "Solidarity of Steel#271": {
    "src": "Yusa-",
-   "dst": "",
+   "dst": "Yusa-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2728,7 +2728,7 @@
   },
   "Solidarity of Steel#272": {
    "src": "Got it. YUMAN! YULIE!",
-   "dst": "",
+   "dst": "알았어요. YUMAN! YULIE!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2738,7 +2738,7 @@
   },
   "Solidarity of Steel#273": {
    "src": "Wh- what- what's going on?",
-   "dst": "",
+   "dst": "무, 무슨- 무슨 일이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2748,7 +2748,7 @@
   },
   "Solidarity of Steel#274": {
    "src": "We're heading out. Rescue mission. Yuman, where's Yulie?",
-   "dst": "",
+   "dst": "우리 나간다. 구출 작전이야. Yuman, Yulie 형은?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2758,7 +2758,7 @@
   },
   "Solidarity of Steel#275": {
    "src": "He has a meeting in the city today, remember? He told all of us this morning.",
-   "dst": "",
+   "dst": "형 오늘 도시에서 회의 있잖아, 기억 안 나? 아침에 다 말했는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2768,7 +2768,7 @@
   },
   "Solidarity of Steel#276": {
    "src": "...Right. Right, he did say- alright. We'll have to go in blind, then. Not ideal, but it can't be helped-",
-   "dst": "",
+   "dst": "...맞다. 맞아, 그랬지- 좋아. 그럼 아무 정보 없이 가야겠네. 안 좋지만 어쩔 수 없-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2778,7 +2778,7 @@
   },
   "Solidarity of Steel#277": {
    "src": "Damn it! Not now, of all times to-",
-   "dst": "",
+   "dst": "젠장! 하필 지금 이럴 때-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2788,7 +2788,7 @@
   },
   "Solidarity of Steel#278": {
    "src": "What's going on? Is something wrong?",
-   "dst": "",
+   "dst": "무슨 일이야? 문제라도 생겼어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2798,7 +2798,7 @@
   },
   "Solidarity of Steel#279": {
    "src": "No, no, nothing's- it's nothing bad... I hope. I just need to... check what triggered the alarm. Ugh, can anything go right today...",
-   "dst": "",
+   "dst": "아니, 아니, 별거- 나쁜 일은 아니야... 아마도. 그냥... 경보가 왜 울렸는지 봐야 해. 으, 오늘은 뭐 하나 제대로 되는 게 없네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2808,7 +2808,7 @@
   },
   "Solidarity of Steel#280": {
    "src": "Hey, bro, don't worry about it. I'll handle it! You take care of whatever you need to, 'kay?",
-   "dst": "",
+   "dst": "야, 형, 걱정 마. 내가 처리할게! 형은 형 할 일 해, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2818,7 +2818,7 @@
   },
   "Solidarity of Steel#281": {
    "src": "...Okay. Okay, thanks, Yuman. I owe you one.",
-   "dst": "",
+   "dst": "...그래. 그래, 고마워, Yuman. 신세 졌다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2828,7 +2828,7 @@
   },
   "Solidarity of Steel#282": {
    "src": "Hey, one of these days I'll collect on all those ones you owe me! Don't think you can dodge that just cause you're my bro!",
-   "dst": "",
+   "dst": "야, 언젠간 형이 진 신세 싹 다 받아 낼 거야! 형이라고 그냥 넘어갈 생각 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2838,7 +2838,7 @@
   },
   "Solidarity of Steel#283": {
    "src": "Will you n- ne- need help? {u} and I can join if y- if you need us.",
-   "dst": "",
+   "dst": "도, 도움 필요해? 피, 필요하면 {u}랑 나도 같이 갈게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2848,7 +2848,7 @@
   },
   "Solidarity of Steel#284": {
    "src": "Was just about to ask the same thing! Jiro, Zeph, {u}, you all listen to my orders 'till this is sorted! Got it?",
-   "dst": "",
+   "dst": "나도 그거 물어보려던 참이야! Jiro, Zeph, {u}, 이 일 끝날 때까지 다들 내 명령 따라! 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2858,7 +2858,7 @@
   },
   "Solidarity of Steel#285": {
    "src": "Understood.",
-   "dst": "",
+   "dst": "알았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2868,7 +2868,7 @@
   },
   "Solidarity of Steel#286": {
    "src": "You forgot the \"sir\" at the end, there! Anyway, let me grab my guitar, and let's head out!",
-   "dst": "",
+   "dst": "끝에 '대장님'을 빼먹었네! 어쨌든 기타 좀 챙기고 출발하자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2878,7 +2878,7 @@
   },
   "Solidarity of Steel#287": {
    "src": "G- g- guitar? What...",
-   "dst": "",
+   "dst": "기, 기, 기타? 뭐...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2888,7 +2888,7 @@
   },
   "Solidarity of Steel#288": {
    "src": "Don't ask, you'll find out later. We need to get moving now.",
-   "dst": "",
+   "dst": "묻지 마, 나중에 알게 돼. 지금 당장 움직여야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2898,7 +2898,7 @@
   },
   "Solidarity of Steel#289": {
    "src": "Right! {u}, let's g- g- go!",
-   "dst": "",
+   "dst": "그래! {u}, 가, 가, 가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2908,7 +2908,7 @@
   },
   "Solidarity of Steel#290": {
    "src": "Follow Yuman to the tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 터널까지 Yuman을 따라가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -2918,7 +2918,7 @@
   },
   "Solidarity of Steel#291": {
    "src": "I hope they'll be fine.",
-   "dst": "",
+   "dst": "다들 무사해야 할 텐데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2928,7 +2928,7 @@
   },
   "Solidarity of Steel#292": {
    "src": "I hope Yuman doesn't annoy them to death...",
-   "dst": "",
+   "dst": "Yuman이 저 애들을 귀찮게 해서 죽이지나 않길 바라네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2938,7 +2938,7 @@
   },
   "Solidarity of Steel#293": {
    "src": "Th- through here! Yuman and Jiro are s- sc- scouting up ahead.",
-   "dst": "",
+   "dst": "이, 이쪽이야! Yuman이랑 Jiro가 앞에서 정, 정찰 중이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2948,7 +2948,7 @@
   },
   "Solidarity of Steel#294": {
    "src": "Find the woman in trouble at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 곤경에 처한 여자를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -2958,7 +2958,7 @@
   },
   "Solidarity of Steel#295": {
    "src": "I see them up a- a- ahead... Let's join up with them. Fo- follow me!",
-   "dst": "",
+   "dst": "앞에 저, 저기 보여... 합류하자. 따, 따라와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2968,7 +2968,7 @@
   },
   "Solidarity of Steel#296": {
    "src": "Hush! Keep it down, man!",
-   "dst": "",
+   "dst": "쉿! 조용히 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2978,7 +2978,7 @@
   },
   "Solidarity of Steel#297": {
    "src": "Alright, lady! Time's up! It's time to get going.",
-   "dst": "",
+   "dst": "자, 아가씨! 시간 다 됐어! 이제 나가야지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2988,7 +2988,7 @@
   },
   "Solidarity of Steel#298": {
    "src": "We need to clean up this filthy apartment of yours for whoever's next in line. We've got a tight schedule, so don't make this harder than it needs to be, alright?",
-   "dst": "",
+   "dst": "다음 차례를 위해 이 더러운 집을 치워야 하거든. 일정이 빡빡하니까, 괜히 일 번거롭게 만들지 마, 알았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -2998,7 +2998,7 @@
   },
   "Solidarity of Steel#299": {
    "src": "W-w-wait! I still need to pack! You haven't given me enough time!",
-   "dst": "",
+   "dst": "자, 자, 잠깐만요! 아직 짐도 못 쌌어요! 시간을 충분히 안 줬잖아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3008,7 +3008,7 @@
   },
   "Solidarity of Steel#300": {
    "src": "You received an eviction notice last night, detailing the protocol, didn't you? You've had plenty of time already, lady.",
-   "dst": "",
+   "dst": "어젯밤에 절차가 적힌 퇴거 통지서 받았잖아, 안 그래? 시간은 충분했어, 아가씨.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3018,7 +3018,7 @@
   },
   "Solidarity of Steel#301": {
    "src": "Unless what you mean to say is you take issue with the system? We've got a formal complaints department, lady, but I don't think you'd enjoy paying them a visit.",
-   "dst": "",
+   "dst": "아니면 이 제도에 불만이 있다는 뜻인가? 정식 민원 부서도 있긴 한데, 아가씨, 거긴 가 봐야 좋을 거 없을걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3028,7 +3028,7 @@
   },
   "Solidarity of Steel#302": {
    "src": "N-n-no! No, it- it's fine! I-I-I just- I'm just saying th-that- I just need a couple of minutes... Please!",
-   "dst": "",
+   "dst": "아, 아, 아니요! 아니, 괜, 괜찮아요! 저, 저, 저는 그냥- 그, 그냥- 몇 분만 있으면 돼요... 제발요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3038,7 +3038,7 @@
   },
   "Solidarity of Steel#303": {
    "src": "Sigh. I did warn you, lady. Guess we're doing things the hard way, then.",
-   "dst": "",
+   "dst": "하아. 경고했지, 아가씨. 그럼 힘으로 해야겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3048,7 +3048,7 @@
   },
   "Solidarity of Steel#304": {
    "src": "N-no... I- I'm sorry!",
-   "dst": "",
+   "dst": "아, 안 돼... 죄, 죄송해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3058,7 +3058,7 @@
   },
   "Solidarity of Steel#305": {
    "src": "I'm sorry! I'm sorry, I'm sorry, I'm-",
-   "dst": "",
+   "dst": "죄송해요! 죄송해요, 죄송해요, 죄-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3068,7 +3068,7 @@
   },
   "Solidarity of Steel#306": {
    "src": "Disrespecting the crown is a serious crime, y'know. Alright, boys, you know what to do.",
-   "dst": "",
+   "dst": "왕실을 모욕하는 건 중죄야, 알지? 자, 얘들아, 할 일은 알지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3078,7 +3078,7 @@
   },
   "Solidarity of Steel#307": {
    "src": "Hey! We n- ne- need to hel- help her!",
-   "dst": "",
+   "dst": "야! 도, 도, 도와줘야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3088,7 +3088,7 @@
   },
   "Solidarity of Steel#308": {
    "src": "Quiet! It's not protocol, we need to wait until the coast's clear, or else-",
-   "dst": "",
+   "dst": "조용히! 규칙에 어긋나, 주변이 조용해질 때까지 기다려야 해, 안 그러면-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3098,7 +3098,7 @@
   },
   "Solidarity of Steel#309": {
    "src": "But th- they're going to beat her! We c- can- we c- can't just let that-",
-   "dst": "",
+   "dst": "하지만 저, 저 사람들 때리려고 하잖아! 그냥 보고만 이, 있을- 그냥 둘 순 없-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3108,7 +3108,7 @@
   },
   "Solidarity of Steel#310": {
    "src": "You're new here, so you get a pass for not knowing, but we cannot draw attention towards us.",
-   "dst": "",
+   "dst": "넌 처음이니까 모르는 건 봐주겠는데, 우리가 주목을 끌면 안 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3118,7 +3118,7 @@
   },
   "Solidarity of Steel#311": {
    "src": "Yeah, man! If the guards get a whiff of what we're doing, we're toast! The only reason we have the station is 'cause they don't know about it!",
-   "dst": "",
+   "dst": "그래! 경비들이 우리 하는 일 냄새라도 맡으면 끝장이야! 역을 지키고 있는 것도 걔들이 모르니까 가능한 거라고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3138,7 +3138,7 @@
   },
   "Solidarity of Steel#313": {
    "src": "M- m- maybe hiding is enough f- f- for you, but I c- ca- can't just let someone get h- hur- hurt!",
-   "dst": "",
+   "dst": "수, 숨는 걸로 너, 너넨 충분할지 몰라도, 난 누가 다, 다치는 걸 그, 그냥 둘 수 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3148,7 +3148,7 @@
   },
   "Solidarity of Steel#314": {
    "src": "S- so-... so sc- screw your cover! She n- n- needs help, so I- I'm going to h- he- help!",
-   "dst": "",
+   "dst": "그, 그러니까-... 위장 따위 알, 알 게 뭐야! 저 사람 도, 도움이 필요하니까 난 도, 도울 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3158,7 +3158,7 @@
   },
   "Solidarity of Steel#315": {
    "src": "Hey, don't!-... Damn it. Man, how am I gonna explain this to...",
-   "dst": "",
+   "dst": "야, 하지 마!-... 젠장. 이걸 어떻게 설명하냐...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3168,7 +3168,7 @@
   },
   "Solidarity of Steel#316": {
    "src": "Defeat the soldiers attacking the woman at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 여자를 공격하는 병사들을 처치하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -3178,7 +3178,7 @@
   },
   "Solidarity of Steel#317": {
    "src": "Fine, man! Can't just let you fight alone, can we? Let's just get this over with...",
-   "dst": "",
+   "dst": "알았어! 너 혼자 싸우게 둘 순 없잖아? 빨리 끝내자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3188,7 +3188,7 @@
   },
   "Solidarity of Steel#318": {
    "src": "Talk with the group at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 일행과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -3198,7 +3198,7 @@
   },
   "Solidarity of Steel#319": {
    "src": "..Okay. I th- th- I think the coast is clear. She sh- sh- should be-",
-   "dst": "",
+   "dst": "..좋아. 이, 이제 주변은 조, 조용한 것 같아. 그 사람은 아, 아마-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3208,7 +3208,7 @@
   },
   "Solidarity of Steel#320": {
    "src": "What the hell was that? What were you thinking?!",
-   "dst": "",
+   "dst": "방금 그게 대체 뭐야? 무슨 생각이었어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3218,7 +3218,7 @@
   },
   "Solidarity of Steel#321": {
    "src": "Jiro, man, not now.",
-   "dst": "",
+   "dst": "Jiro, 지금은 아니야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3228,7 +3228,7 @@
   },
   "Solidarity of Steel#322": {
    "src": "No, I really think I should-",
-   "dst": "",
+   "dst": "아니, 난 정말 말해야-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3238,7 +3238,7 @@
   },
   "Solidarity of Steel#323": {
    "src": "Jiro. We've got other things to worry about, man. Cool it till we're back at the station, 'kay?",
-   "dst": "",
+   "dst": "Jiro. 신경 쓸 게 따로 있잖아. 역에 돌아갈 때까진 참아, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3258,7 +3258,7 @@
   },
   "Solidarity of Steel#325": {
    "src": "...Aihan? Are you there?",
-   "dst": "",
+   "dst": "...Aihan? 거기 있어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3268,7 +3268,7 @@
   },
   "Solidarity of Steel#326": {
    "src": "Wh-who are you people? What are- what are you doing here?",
-   "dst": "",
+   "dst": "누, 누구세요? 여기서- 여기서 뭐 하는 거예요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3278,7 +3278,7 @@
   },
   "Solidarity of Steel#327": {
    "src": "One can learn so much of the community's spirit by surveying the boards. See what they're worried of, see the way they support each other, see their culture...",
-   "dst": "",
+   "dst": "게시판을 살펴보면 공동체의 정신을 많이 알 수 있지. 무엇을 걱정하는지, 어떻게 서로 돕는지, 그들의 문화까지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3288,7 +3288,7 @@
   },
   "Solidarity of Steel#328": {
    "src": "Donated {~} IA by Sovereign Zhiraok after vandalization of previous noticeboard.",
-   "dst": "",
+   "dst": "이전 게시판 훼손 후 Zhiraok 군주가 IA {~}년에 기증함.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3298,7 +3298,7 @@
   },
   "Solidarity of Steel#329": {
    "src": "Said it was the Sovereign's problem, but I know the real reason. He just didn't want to go into The Flush.",
-   "dst": "",
+   "dst": "군주 문제라고 했지만 진짜 이유는 난 알아. 그냥 배수로에 들어가기 싫었던 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3308,7 +3308,7 @@
   },
   "Solidarity of Steel#330": {
    "src": "You don't know us, and we don't know you. But we're here to help. I'm Yuman, and these are-",
-   "dst": "",
+   "dst": "우릴 모르고, 우리도 당신을 몰라요. 그래도 도우러 왔어요. 난 Yuman, 이쪽은-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3318,7 +3318,7 @@
   },
   "Solidarity of Steel#331": {
    "src": "Why... why would you... help me...?",
-   "dst": "",
+   "dst": "왜... 왜... 절 도와주는 거예요...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3328,7 +3328,7 @@
   },
   "Solidarity of Steel#332": {
    "src": "'Cause... that's what people like us should do.",
-   "dst": "",
+   "dst": "왜냐면... 우리 같은 사람은 그래야 하니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3338,7 +3338,7 @@
   },
   "Solidarity of Steel#333": {
    "src": "No! N-n-no... people like us should just do as we're told and not get involved in things that aren't ours!",
-   "dst": "",
+   "dst": "아니요! 아, 아, 아니요... 우리 같은 사람은 시키는 대로만 하고, 남의 일엔 끼어들면 안 돼요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3348,7 +3348,7 @@
   },
   "Solidarity of Steel#334": {
    "src": "Aihan... we can-",
-   "dst": "",
+   "dst": "Aihan... 우린-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3358,7 +3358,7 @@
   },
   "Solidarity of Steel#335": {
    "src": "If I just follow orders, at least I'll survive! I might lose my apartment, and maybe everything I've built for myself, and all the things I've managed to keep for myself, but- but- but at least I'll be alive!",
-   "dst": "",
+   "dst": "명령만 따르면 적어도 살아남잖아요! 집을 잃고, 어쩌면 내가 일군 모든 것도, 간신히 지켜 온 것들도 다 잃겠지만- 그래도- 그래도 적어도 살아 있을 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3368,7 +3368,7 @@
   },
   "Solidarity of Steel#336": {
    "src": "...I hear you. Trust me, Aihan, I really do.",
-   "dst": "",
+   "dst": "...무슨 말인지 알아요. 믿어요, Aihan, 정말 알아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3378,7 +3378,7 @@
   },
   "Solidarity of Steel#337": {
    "src": "Can I tell you a story?",
-   "dst": "",
+   "dst": "얘기 하나 해도 돼요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3388,7 +3388,7 @@
   },
   "Solidarity of Steel#338": {
    "src": "...okay",
-   "dst": "",
+   "dst": "...네",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3398,7 +3398,7 @@
   },
   "Solidarity of Steel#339": {
    "src": "Long, long ago, when I was just a little kid, I lost my ma. Dad's out of the picture, so... my bros had to put in the work to take care of me, even though they were just kids too.",
-   "dst": "",
+   "dst": "아주 오래전, 내가 꼬맹이였을 때 엄마를 잃었어요. 아빠는 없었고... 그래서 형들이 날 돌봐야 했죠, 자기들도 애였는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3408,7 +3408,7 @@
   },
   "Solidarity of Steel#340": {
    "src": "But, y'know, being kids... they couldn't do enough. Failed to meet their quotas, just like you. Got kicked out, had to live on the streets.",
-   "dst": "",
+   "dst": "근데, 알잖아요, 애들이니까... 역부족이었죠. 당신처럼 할당량을 못 채웠고, 쫓겨나서 길바닥에서 살았어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3418,7 +3418,7 @@
   },
   "Solidarity of Steel#341": {
    "src": "You want to know the reason we made it through that? It was 'cause someone reached out a helping hand. Gave us a place to stay, to work without the threat of not meeting expectations. To live, man.",
-   "dst": "",
+   "dst": "우리가 어떻게 버텼는지 알아요? 누군가 손을 내밀어 줬기 때문이에요. 지낼 곳을 줬고, 기대에 못 미칠까 떨지 않고 일할 곳을 줬죠. 살아갈 곳을요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3428,7 +3428,7 @@
   },
   "Solidarity of Steel#342": {
    "src": "So... please. Accept the hand that's offered to you, 'kay? You can come with us and talk to the boss, and if what we have isn't enough for you... no one will force you to stay. But give it a try, please?",
-   "dst": "",
+   "dst": "그러니까... 제발요. 내민 손을 잡아 줘요, 네? 같이 가서 대장이랑 얘기해 보고, 우리가 가진 게 부족하다 싶으면... 아무도 붙잡지 않아요. 그래도 한번 해 봐요, 네?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3438,7 +3438,7 @@
   },
   "Solidarity of Steel#343": {
    "src": "I... I...",
-   "dst": "",
+   "dst": "저... 저...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3448,7 +3448,7 @@
   },
   "Solidarity of Steel#344": {
    "src": "Not to ruin the moment, Yuman, but we've got more soldiers coming our way! We've got to get moving soon!",
-   "dst": "",
+   "dst": "분위기 깨서 미안한데, Yuman, 병사들이 더 몰려오고 있어! 빨리 움직여야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3458,7 +3458,7 @@
   },
   "Solidarity of Steel#345": {
    "src": "Damn... alright. Aihan, will you trust me?",
-   "dst": "",
+   "dst": "젠장... 알았어. Aihan, 날 믿어 줄래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3468,7 +3468,7 @@
   },
   "Solidarity of Steel#346": {
    "src": "I... okay. I'll... I'll try.",
-   "dst": "",
+   "dst": "저... 네. 해... 해 볼게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3478,7 +3478,7 @@
   },
   "Solidarity of Steel#347": {
    "src": "Okay... okay. Thank you. {u}, could you help her pack her stuff? Zeph, Jiro, help me prepare an escape route.",
-   "dst": "",
+   "dst": "좋아... 좋아요. 고마워요. {u}, 짐 싸는 것 좀 도와줄래? Zeph, Jiro, 탈출로 준비하는 거 도와줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3488,7 +3488,7 @@
   },
   "Solidarity of Steel#348": {
    "src": "W-wait! I... I don't know what I'm packing!",
-   "dst": "",
+   "dst": "자, 잠깐만요! 저... 뭘 싸야 할지 모르겠어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3498,7 +3498,7 @@
   },
   "Solidarity of Steel#349": {
    "src": "Right. Uh... don't bring anything heavy. We have food and cookware where we're going...",
-   "dst": "",
+   "dst": "맞다. 어... 무거운 건 가져오지 마요. 가는 곳에 음식이랑 조리 도구는 있으니까...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3508,7 +3508,7 @@
   },
   "Solidarity of Steel#350": {
    "src": "Bring something to with, something that ... and maybe some form of {u}, if you've got any.",
-   "dst": "",
+   "dst": "쓸 만한 거 하나, 뭔가 할 ... 거 하나, 그리고 있으면 {u} 같은 것도요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3518,7 +3518,7 @@
   },
   "Solidarity of Steel#351": {
    "src": "{u}, I'm counting on you, alright?",
-   "dst": "",
+   "dst": "{u}, 믿는다, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3528,7 +3528,7 @@
   },
   "Solidarity of Steel#352": {
    "src": "I... I can't think straight... this is all moving so fast... please- please, can you help me?",
-   "dst": "",
+   "dst": "저... 머리가 안 돌아가요... 다 너무 빨리 일어나서... 제발- 제발, 좀 도와줄래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3538,7 +3538,7 @@
   },
   "Solidarity of Steel#353": {
    "src": "Help Aihan pack up at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Aihan이 짐 싸는 것을 도우세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -3548,7 +3548,7 @@
   },
   "Solidarity of Steel#354": {
    "src": "Grab that and... pick whatever you think works...",
-   "dst": "",
+   "dst": "그거 챙기고... 괜찮다 싶은 건 아무거나 골라 줘요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3558,7 +3558,7 @@
   },
   "Solidarity of Steel#355": {
    "src": "We have to hurry but I just can't think!",
-   "dst": "",
+   "dst": "서둘러야 하는데 아무 생각이 안 나요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3568,7 +3568,7 @@
   },
   "Solidarity of Steel#356": {
    "src": "Pack something to help Aihan some form of a piece of and something to",
-   "dst": "",
+   "dst": "Aihan을 위해 필요한 물건을 챙기세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -3578,7 +3578,7 @@
   },
   "Solidarity of Steel#357": {
    "src": "{u}, h- h- hurry! We don't have m- mu- much time!",
-   "dst": "",
+   "dst": "{u}, 서, 서, 서둘러! 시간이 벌, 별로 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3588,7 +3588,7 @@
   },
   "Solidarity of Steel#358": {
    "src": "Halt! You're all under arrest!",
-   "dst": "",
+   "dst": "멈춰라! 전원 체포한다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3598,7 +3598,7 @@
   },
   "Solidarity of Steel#359": {
    "src": "Where- where are you going? D-d-don't leave me here!",
-   "dst": "",
+   "dst": "어디- 어디 가요? 여, 여기 두고 가지 마요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3608,7 +3608,7 @@
   },
   "Solidarity of Steel#360": {
    "src": "Did you get everything? Can we go?",
-   "dst": "",
+   "dst": "다 챙겼어요? 이제 가도 돼요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3618,7 +3618,7 @@
   },
   "Solidarity of Steel#361": {
    "src": "Okay... No one's here yet. Let's go!",
-   "dst": "",
+   "dst": "좋아요... 아직 아무도 안 왔어요. 가요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3628,7 +3628,7 @@
   },
   "Solidarity of Steel#362": {
    "src": "Hey! You guys done?!",
-   "dst": "",
+   "dst": "야! 다 끝났어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3638,7 +3638,7 @@
   },
   "Solidarity of Steel#363": {
    "src": "We're out of time, we have to get moving! Come on, come on!",
-   "dst": "",
+   "dst": "시간 없어, 움직여야 해! 빨리, 빨리!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3648,7 +3648,7 @@
   },
   "Solidarity of Steel#364": {
    "src": "Up the ladder, into the tunnel! Go, go, go!",
-   "dst": "",
+   "dst": "사다리 타고 터널로! 가, 가, 가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3658,7 +3658,7 @@
   },
   "Solidarity of Steel#365": {
    "src": "Yuman... c- co- come on. Let's go.",
-   "dst": "",
+   "dst": "Yuman... 가, 가자. 어서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3668,7 +3668,7 @@
   },
   "Solidarity of Steel#366": {
    "src": "Mind giving me a hand?",
-   "dst": "",
+   "dst": "손 좀 빌려줄래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3678,7 +3678,7 @@
   },
   "Solidarity of Steel#367": {
    "src": "Get to c- cl- climbing.",
-   "dst": "",
+   "dst": "올, 올라가기나 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3688,7 +3688,7 @@
   },
   "Solidarity of Steel#368": {
    "src": "Man... that was a really stupid thing for you to do. Like, astronomically stupid, yeah?",
-   "dst": "",
+   "dst": "야... 방금 그건 진짜 멍청한 짓이었어. 완전, 우주급으로 멍청했다고, 알아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3698,7 +3698,7 @@
   },
   "Solidarity of Steel#369": {
    "src": "...I'm-",
-   "dst": "",
+   "dst": "...난-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3708,7 +3708,7 @@
   },
   "Solidarity of Steel#370": {
    "src": "But I get it. I get it, y'know? If I didn't have to be a leader there, I'd've probably done the same thing!",
-   "dst": "",
+   "dst": "그래도 이해해. 이해한다고, 알지? 거기서 내가 리더만 아니었으면 나도 똑같이 했을 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3718,7 +3718,7 @@
   },
   "Solidarity of Steel#371": {
    "src": "Difference is, my bros can hold me back from that impulse. Guess I wasn't able to do that, here...",
-   "dst": "",
+   "dst": "다른 점은, 우리 형들은 그 충동을 붙잡아 준다는 거지. 난 여기서 그걸 못 했네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3728,7 +3728,7 @@
   },
   "Solidarity of Steel#372": {
    "src": "Hate to disappoint 'em, y'know? Bit late now, though. What's done is done, can't take it back.",
-   "dst": "",
+   "dst": "형들 실망시키긴 싫은데, 알지? 이제 좀 늦었지만. 엎질러진 물이지, 되돌릴 순 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3738,7 +3738,7 @@
   },
   "Solidarity of Steel#373": {
    "src": "It'll be alright. Worse things've happened. Aihan's safe, that's all that matters! We'll deal with the rest as it comes.",
-   "dst": "",
+   "dst": "괜찮을 거야. 더한 일도 있었어. Aihan은 무사하잖아, 그게 제일 중요해! 나머진 닥치면 처리하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3748,7 +3748,7 @@
   },
   "Solidarity of Steel#374": {
    "src": "I- I should've... I should've l-lis- listened to you. But, s- s- seeing the way they- they were treating her... I was j- j- just so... angry. How dare th- they look down on p- p- people like that?!",
-   "dst": "",
+   "dst": "내, 내가... 네 말을 드, 들었어야 했는데. 근데, 저, 저 사람들이 그 사람을- 그렇게 대하는 걸 보니까... 너무... 화가 났어. 어, 어떻게 사람을 그렇게 깔볼 수가 있어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3758,7 +3758,7 @@
   },
   "Solidarity of Steel#375": {
    "src": "Yeah... I hear you. Hear you loud and clear. It's not right, is it? But that's what we're working to fix down here, man. Gotta do what little you can, yeah?",
-   "dst": "",
+   "dst": "그래... 알아. 아주 잘 알지. 옳지 않잖아, 그치? 그래도 그걸 바로잡으려고 우리가 여기서 애쓰는 거야. 할 수 있는 만큼은 해야지, 그치?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3768,7 +3768,7 @@
   },
   "Solidarity of Steel#376": {
    "src": "Let's get going. They'll be expecting us. Wouldn't want to keep 'em waiting.",
-   "dst": "",
+   "dst": "가자. 다들 기다릴 거야. 오래 기다리게 하면 안 되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3778,7 +3778,7 @@
   },
   "Solidarity of Steel#377": {
    "src": "...We should f- f- follow them in.",
-   "dst": "",
+   "dst": "...우리도 따, 따라 들어가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3788,7 +3788,7 @@
   },
   "Solidarity of Steel#378": {
    "src": "Head back to the Steel Feather through the tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 터널을 지나 Steel Feather로 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -3798,7 +3798,7 @@
   },
   "Solidarity of Steel#379": {
    "src": "Report what happened to The Steel Feather at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Steel Feather에 있었던 일을 보고하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -3808,7 +3808,7 @@
   },
   "Solidarity of Steel#380": {
    "src": "Sigh...",
-   "dst": "",
+   "dst": "하아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3818,7 +3818,7 @@
   },
   "Solidarity of Steel#381": {
    "src": "Would- w- would it be weird to say it's a r- r- relief to find out he has a ser- a- a serious side to him?",
-   "dst": "",
+   "dst": "그, 그 녀석한테도 진, 진지한 면이 있다는 걸 알고 나니까 좀 안, 안심된다고 하면 이상할까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3828,7 +3828,7 @@
   },
   "Solidarity of Steel#382": {
    "src": "Not- n- not that this is how I'd have w- w- wanted to find out...",
-   "dst": "",
+   "dst": "이, 이런 식으로 알고 싶었던 건 아, 아니지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3838,7 +3838,7 @@
   },
   "Solidarity of Steel#383": {
    "src": "Hey... wh- where- where's Aihan?",
-   "dst": "",
+   "dst": "야... Aihan은 어, 어디 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3848,7 +3848,7 @@
   },
   "Solidarity of Steel#384": {
    "src": "Jiro and I got her settled. Quill's giving her the rundown as we speak.",
-   "dst": "",
+   "dst": "Jiro랑 내가 자리 잡아 줬어. 지금 Quill이 설명해 주고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3858,7 +3858,7 @@
   },
   "Solidarity of Steel#385": {
    "src": "You should... probably avoid Jiro for now, yeah? He's not exactly... happy.",
-   "dst": "",
+   "dst": "넌... 당분간 Jiro는 피하는 게 좋을 거야, 응? 별로... 기분이 안 좋거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3868,7 +3868,7 @@
   },
   "Solidarity of Steel#386": {
    "src": "Right... Got it. So- s- so... how does it wor- work now? Should we re- record this mission s- somewhere?",
-   "dst": "",
+   "dst": "알았어... 그래. 그, 그럼... 이제 어떻게 해? 이번 임무를 어, 어디에 기록해야 해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3878,7 +3878,7 @@
   },
   "Solidarity of Steel#387": {
    "src": "Yep, yep! Normally I'd go to Quill, but he's busy. Let's see if we can find Yusanu first- he'll... understand. Probably. More than Yulie, at least. I trust him to keep it quiet for now, at least... y'know?",
-   "dst": "",
+   "dst": "그래, 그래! 보통은 Quill한테 가는데, 지금 바빠. Yusanu 형부터 찾아보자- 형은... 이해해 줄 거야. 아마. 적어도 Yulie 형보단. 당분간 입도 다물어 줄 거고... 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3888,7 +3888,7 @@
   },
   "Solidarity of Steel#388": {
    "src": "Sure. Le- lead the way.",
-   "dst": "",
+   "dst": "그래. 아, 앞장서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3898,7 +3898,7 @@
   },
   "Solidarity of Steel#389": {
    "src": "Yuman, I swear. Yusanu should know better than to let you take the lead on these sorts of things! What were you thinking?",
-   "dst": "",
+   "dst": "Yuman, 진짜. Yusanu도 이런 일에 널 앞장세우면 안 된다는 것쯤은 알아야지! 무슨 생각이었어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3908,7 +3908,7 @@
   },
   "Solidarity of Steel#390": {
    "src": "Woah, woah, woah! That's a lot of accusations out of nowhere, bro! What gives?",
-   "dst": "",
+   "dst": "워, 워, 워! 갑자기 웬 비난이 이렇게 쏟아져, 형! 무슨 일인데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3918,7 +3918,7 @@
   },
   "Solidarity of Steel#391": {
    "src": "What gives? You know what gives- a whole squadron of housing enforcers turns up dead on the job, and you expect that to go over quietly?",
-   "dst": "",
+   "dst": "무슨 일이냐고? 알잖아- 주택 단속반 한 분대가 작전 중에 몰살당했는데, 조용히 넘어갈 줄 알았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3928,7 +3928,7 @@
   },
   "Solidarity of Steel#392": {
    "src": "Ahhh. That. Well, you know how it is. Things happen, right?",
-   "dst": "",
+   "dst": "아아. 그거. 뭐, 알잖아. 일이 생길 수도 있지, 그치?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3938,7 +3938,7 @@
   },
   "Solidarity of Steel#393": {
    "src": "You-... at least pretend to take this seriously, would you? Of all people, you should know what this is going to lead to.",
-   "dst": "",
+   "dst": "너-... 최소한 진지한 척이라도 해 줄래? 이게 어떤 결과로 이어질지 누구보다 네가 잘 알잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3948,7 +3948,7 @@
   },
   "Solidarity of Steel#394": {
    "src": "It- it was- was- it wasn't his f- f- fault, I-",
-   "dst": "",
+   "dst": "그, 그건- 그게- 그 녀석 자, 잘못이 아니야, 내가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3958,7 +3958,7 @@
   },
   "Solidarity of Steel#395": {
    "src": "Hey, princess, it's alright. Don't need you to cover for me, 'kay?",
-   "dst": "",
+   "dst": "야, 공주님, 괜찮아. 날 감싸 줄 필요 없어, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3968,7 +3968,7 @@
   },
   "Solidarity of Steel#396": {
    "src": "So what's the plan then, Yulie? Meeting to talk about it, as always?",
-   "dst": "",
+   "dst": "그래서 계획은 뭔데, Yulie 형? 늘 그랬듯 회의?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3978,7 +3978,7 @@
   },
   "Solidarity of Steel#397": {
    "src": "Sigh... as soon as Quill gets Aihan sorted, yes. It shouldn't take long, so everyone's gathered in advance.",
-   "dst": "",
+   "dst": "하아... Quill이 Aihan 일을 정리하는 대로, 응. 오래 안 걸릴 테니 다들 미리 모여 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -3988,7 +3988,7 @@
   },
   "Solidarity of Steel#398": {
    "src": "Attend the meeting at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 회의에 참석하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -3998,7 +3998,7 @@
   },
   "Solidarity of Steel#399": {
    "src": "Hey! What happened out there? Everyone's acting weird about it.",
-   "dst": "",
+   "dst": "야! 밖에서 무슨 일 있었어? 다들 반응이 이상해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4008,7 +4008,7 @@
   },
   "Solidarity of Steel#400": {
    "src": "We ended up f- fight- fighting some soldiers to save the w- w- the woman we went there for...",
-   "dst": "",
+   "dst": "우리가 가서 구하려던 여, 여자를 구하느라 병사 몇 명이랑 싸, 싸우게 됐어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4018,7 +4018,7 @@
   },
   "Solidarity of Steel#401": {
    "src": "Huh. Is that all? I thought it'd be way worse.",
-   "dst": "",
+   "dst": "흠. 그게 다야? 훨씬 심각한 줄 알았네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4028,7 +4028,7 @@
   },
   "Solidarity of Steel#402": {
    "src": "Yeah... they- th- they're worried about it dr- draw- drawing attention...",
-   "dst": "",
+   "dst": "응... 다들 그, 그게 이목을 끌까 봐 거, 걱정하는 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4038,7 +4038,7 @@
   },
   "Solidarity of Steel#403": {
    "src": "Uh... wh- where's Sui?",
-   "dst": "",
+   "dst": "어... Sui는 어, 어디 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4048,7 +4048,7 @@
   },
   "Solidarity of Steel#404": {
    "src": "Still helping out in the kitchen, preparing for dinner! Worry not, I will catch her up once the meeting concludes.",
-   "dst": "",
+   "dst": "아직 주방에서 저녁 준비를 돕고 있어요! 걱정 마요, 회의가 끝나면 제가 알려 줄게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4058,7 +4058,7 @@
   },
   "Solidarity of Steel#405": {
    "src": "Ah, hello everybody. Apologies for the delay.",
-   "dst": "",
+   "dst": "아, 다들 안녕하신가. 늦어서 미안하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4068,7 +4068,7 @@
   },
   "Solidarity of Steel#406": {
    "src": "Will... will Aihan be staying?",
-   "dst": "",
+   "dst": "Aihan은... 여기 남을까요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4078,7 +4078,7 @@
   },
   "Solidarity of Steel#407": {
    "src": "She hasn't quite decided yet, but she has agreed to stay the night. She's in a bad state of mind, the poor woman. Some rest will do her good.",
-   "dst": "",
+   "dst": "아직 확실히 정하진 않았지만, 오늘 밤은 묵기로 했네. 마음이 많이 상했어, 가엾게도. 좀 쉬면 나아질 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4088,7 +4088,7 @@
   },
   "Solidarity of Steel#408": {
    "src": "But that leads us well to the reason this meeting was called. The retrieval process went... poorly, I take it?",
-   "dst": "",
+   "dst": "하지만 그게 이 회의를 연 이유와도 이어지지. 구출 과정이... 순탄치 않았다고 들었네만?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4098,7 +4098,7 @@
   },
   "Solidarity of Steel#409": {
    "src": "Poorly is an understatement. The military is on high alert now! Everyone entering or leaving {p} this evening was questioned- if I hadn't used our tunnel, I'd still be stuck in line there!",
-   "dst": "",
+   "dst": "순탄치 않은 정도가 아니에요. 군이 지금 비상 경계 중이에요! 오늘 저녁 {p}에 드나든 사람은 전부 검문당했어요- 우리 터널을 안 썼으면 아직도 줄 서 있었을 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4108,7 +4108,7 @@
   },
   "Solidarity of Steel#410": {
    "src": "This is an unmitigated disaster. Yuman, what do you have to say for yourself? You should know better by now, we need to-",
-   "dst": "",
+   "dst": "이건 완전한 재앙이야. Yuman, 할 말 있어? 이제 좀 알 때도 됐잖아, 우린-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4118,7 +4118,7 @@
   },
   "Solidarity of Steel#411": {
    "src": "H- hey! It- it- it's not- it's n- not his f- f- fault! I'm the- the one who-",
-   "dst": "",
+   "dst": "야, 야! 그, 그, 그건- 그 녀석 자, 잘못이 아니야! 내, 내가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4128,7 +4128,7 @@
   },
   "Solidarity of Steel#412": {
    "src": "Nah, the blame falls on me. I was the leader, so anything that happened is my responsibility. I should've... been more firm about it.",
-   "dst": "",
+   "dst": "아냐, 내 탓이야. 내가 리더였으니까 무슨 일이 생겼든 내 책임이지. 좀 더... 단호했어야 했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4138,7 +4138,7 @@
   },
   "Solidarity of Steel#413": {
    "src": "None of this would have happened if I'd been there... damn it. The timing couldn't have been worse. This is all my-",
-   "dst": "",
+   "dst": "내가 거기 있었으면 이런 일은 없었을 텐데... 젠장. 타이밍이 최악이었어. 이게 다 내-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4148,7 +4148,7 @@
   },
   "Solidarity of Steel#414": {
    "src": "Okay, that's enough. You're all acting stupid! Who cares whose fault it was? Either way, it already happened, so let's figure out what we're going to do about it.",
-   "dst": "",
+   "dst": "좋아, 그만. 다들 바보같이 굴고 있어! 누구 잘못인지가 뭐가 중요해? 어차피 일어난 일이니 이제 어쩔지나 생각하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4158,7 +4158,7 @@
   },
   "Solidarity of Steel#415": {
    "src": "But-",
-   "dst": "",
+   "dst": "하지만-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4168,7 +4168,7 @@
   },
   "Solidarity of Steel#416": {
    "src": "And I'm not done! You're all acting like it's the end of the world that some soldiers are dead. So what? Soldiers die all the time.",
-   "dst": "",
+   "dst": "아직 안 끝났어! 병사 몇 명 죽은 게 무슨 세상 끝난 것처럼 구네. 그래서 뭐? 병사는 맨날 죽어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4178,7 +4178,7 @@
   },
   "Solidarity of Steel#417": {
    "src": "They don't die like this, though. We don't have the luxury of being able to wave off the crown's attention! If they find out what we're doing down here, we're done for.",
-   "dst": "",
+   "dst": "그래도 이런 식으론 안 죽어. 우린 왕실의 관심을 무시할 여유가 없어! 여기서 뭘 하는지 들키면 우린 끝이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4188,7 +4188,7 @@
   },
   "Solidarity of Steel#418": {
    "src": "But they haven't found out yet, have they? You have options still. For example- you're on the detective force! If suspicions arise, couldn't you just lead them elsewhere?",
-   "dst": "",
+   "dst": "근데 아직 안 들켰잖아? 아직 방법이 있어. 예를 들어- 넌 탐정단 소속이잖아! 의심이 생기면 다른 데로 돌리면 되지 않아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4198,7 +4198,7 @@
   },
   "Solidarity of Steel#419": {
    "src": "Besides. If staying hidden means having to look away as innocent people get harmed- what kind of a resistance does that make you? What's the point of any of it?",
-   "dst": "",
+   "dst": "게다가. 숨어 지내는 대가가 무고한 사람이 다치는 걸 외면하는 거라면- 그게 무슨 저항군이야? 그럼 다 무슨 의미가 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4208,7 +4208,7 @@
   },
   "Solidarity of Steel#420": {
    "src": "Rex... take care with your words. Don't say anything you'll-",
-   "dst": "",
+   "dst": "Rex... 말조심해. 괜히 나중에-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4218,7 +4218,7 @@
   },
   "Solidarity of Steel#421": {
    "src": "What's the POINT?! The POINT is all the people we ALREADY have down here who we need to protect! Quill, please, back me up here.",
-   "dst": "",
+   "dst": "무슨 의미냐고?! 의미는 이미 여기 있는 사람들이야! 우리가 지켜야 할 사람들! Quill, 제발 내 편 좀 들어 줘요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4228,7 +4228,7 @@
   },
   "Solidarity of Steel#422": {
    "src": "... No, Yulie, Rex has a point. Even if it was phrased harshly... we have been rather passive in our battle thus far. We've let people get hurt, even if only for the sake of our safety.",
-   "dst": "",
+   "dst": "... 아니, Yulie, Rex 말에도 일리가 있네. 말이 거칠긴 했지만... 우린 지금껏 꽤 소극적으로 싸워 왔지. 우리 안전을 위해서라지만, 사람들이 다치게 뒀어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4238,7 +4238,7 @@
   },
   "Solidarity of Steel#423": {
    "src": "We have had our reasons... and we have done good work, to the best of our ability. But if we are afraid to act, how will anything ever change for the better?",
-   "dst": "",
+   "dst": "우리에게도 이유는 있었고... 힘닿는 데까지 좋은 일을 해 왔지. 하지만 행동하기를 두려워한다면, 어떻게 세상이 나아지겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4258,7 +4258,7 @@
   },
   "Solidarity of Steel#425": {
    "src": "You are not wrong to feel frustration, Yulie. I, too, wish this had been handled with more care... but something like this was bound to happen eventually. We will survive this, as we have survived other hardships before.",
-   "dst": "",
+   "dst": "답답한 마음이 드는 게 잘못은 아니네, Yulie. 나도 더 신중하게 처리됐으면 했지... 하지만 이런 일은 언젠가 일어나기 마련이었어. 전에도 고비를 넘겼듯 이번에도 이겨 낼 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4268,7 +4268,7 @@
   },
   "Solidarity of Steel#426": {
    "src": "I... suppose.",
-   "dst": "",
+   "dst": "그... 렇겠죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4278,7 +4278,7 @@
   },
   "Solidarity of Steel#427": {
    "src": "...But let's lighten the mood a little! Dinner should almost be ready. Yuman, you told me earlier today you were working on a new song. Would you still like to perform it tonight?",
-   "dst": "",
+   "dst": "...자, 분위기 좀 풀어 보세! 저녁이 거의 다 됐을 거야. Yuman, 아까 새 노래를 만들고 있다고 했지. 오늘 밤에 여전히 공연하고 싶나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4288,7 +4288,7 @@
   },
   "Solidarity of Steel#428": {
    "src": "Huh? Oh, yeah, yeah man! I can do that, for sure.",
-   "dst": "",
+   "dst": "네? 아, 네, 네! 당연히 할 수 있죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4298,7 +4298,7 @@
   },
   "Solidarity of Steel#429": {
    "src": "Ahem. Before we depart, if I may- while we are all gathered here, I believe it could be beneficial to lay out some relevant information.",
-   "dst": "",
+   "dst": "흠흠. 해산하기 전에, 괜찮다면- 다들 모인 김에 관련된 정보를 좀 정리해 두면 좋을 것 같아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4308,7 +4308,7 @@
   },
   "Solidarity of Steel#430": {
    "src": "Most of us are new to the Roughworks, so getting to know the lay of the land could help.",
-   "dst": "",
+   "dst": "우리 대부분 Roughworks가 처음이니, 이곳 사정을 알아 두면 도움이 될 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4318,7 +4318,7 @@
   },
   "Solidarity of Steel#431": {
    "src": "Right, of course. I'd been meaning to suggest something similar earlier, before... this situation came up.",
-   "dst": "",
+   "dst": "맞아, 물론이지. 나도 아까 비슷한 제안을 하려 했는데... 이 일이 터지기 전에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4328,7 +4328,7 @@
   },
   "Solidarity of Steel#432": {
    "src": "Certainly, we could do that! What would you like to know?",
-   "dst": "",
+   "dst": "물론, 그러세! 뭘 알고 싶나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4338,7 +4338,7 @@
   },
   "Solidarity of Steel#433": {
    "src": "Ah, yes. Her name is Soosu. It's hard to say much about her... she's rather reclusive, staying cooped up in her mansion, working away.",
-   "dst": "",
+   "dst": "아, 그래. 이름은 Soosu일세. 그녀에 대해선 말하기 어렵네... 꽤 은둔하는 편이라 저택에 틀어박혀 일만 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4348,7 +4348,7 @@
   },
   "Solidarity of Steel#434": {
    "src": "She's the opposite of Zhiraok, in that way. Ideally, we'll avoid drawing her attention. We'll have plenty to worry about already without adding her to the list.",
-   "dst": "",
+   "dst": "그 점에선 Zhiraok와 정반대죠. 가능하면 그녀의 눈에 띄지 않는 게 좋아요. 신경 쓸 게 이미 많은데 그녀까지 더할 순 없죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4358,7 +4358,7 @@
   },
   "Solidarity of Steel#435": {
    "src": "That'd be for the best, yeah. She's... kind of a genius. She singlehandedly brought forth the Industrial Age, over a century ago! Most of the machinery you see in Fruma probably traces its origin back to her in some way.",
-   "dst": "",
+   "dst": "그게 제일 좋겠어요, 응. 그녀는... 일종의 천재예요. 한 세기도 더 전에 혼자서 산업 시대를 열었어요! Fruma에서 보는 기계 대부분은 어떤 식으로든 그녀에게서 시작됐을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4368,7 +4368,7 @@
   },
   "Solidarity of Steel#436": {
    "src": "Ha! Yeah, yeah, figures you'd know all that, bro. Nerd.",
-   "dst": "",
+   "dst": "하! 그래, 그래, 형이면 그런 거 다 알지. 범생이.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4378,7 +4378,7 @@
   },
   "Solidarity of Steel#437": {
    "src": "Wh- that's just written history, Yuman. If you're going to make fun of me, at least do it right.",
-   "dst": "",
+   "dst": "뭐- 그건 그냥 기록된 역사야, Yuman. 놀릴 거면 제대로 놀려.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4388,7 +4388,7 @@
   },
   "Solidarity of Steel#438": {
    "src": "How about her blessing? If we do run into her, we'll want to know what to watch out for.",
-   "dst": "",
+   "dst": "그녀의 축복은요? 혹시 마주치면 뭘 조심해야 할지 알아야죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4398,7 +4398,7 @@
   },
   "Solidarity of Steel#439": {
    "src": "I don't know the specifics... but what I do know is that it allows her to mold matter at will. To what extent, or with what limits... hard to say. Still, that uncertainty is dangerous. Be careful.",
-   "dst": "",
+   "dst": "자세한 건 모르네... 다만 물질을 마음대로 빚어낼 수 있다는 건 알지. 어느 정도까지, 어떤 한계가 있는지는... 모르겠군. 그래도 그 불확실함이 위험하지. 조심하게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4408,7 +4408,7 @@
   },
   "Solidarity of Steel#440": {
    "src": "Very well! Then let us adjourn for dinner.",
-   "dst": "",
+   "dst": "좋아! 그럼 저녁 먹으러 해산하세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4418,7 +4418,7 @@
   },
   "Solidarity of Steel#441": {
    "src": "Speak to Sui at [-{~}, {~}, -{~}] and watch Yuman's performance.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Sui와 대화하고 Yuman의 공연을 보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Solidarity of Steel",
@@ -4428,7 +4428,7 @@
   },
   "Solidarity of Steel#442": {
    "src": "Yuman's performance is about to start. You should grab a bite from Sui!",
-   "dst": "",
+   "dst": "곧 Yuman 공연이 시작해요. Sui한테 가서 뭐라도 좀 먹어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4438,7 +4438,7 @@
   },
   "Solidarity of Steel#443": {
    "src": "Oh, {u}! I feel like I've barely seen you around here...",
-   "dst": "",
+   "dst": "아, {u}! 여기서 너 거의 못 본 것 같아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4448,7 +4448,7 @@
   },
   "Solidarity of Steel#444": {
    "src": "I, um... Mora told me about what happened. On your mission. I'm... glad you were able to help that woman.",
-   "dst": "",
+   "dst": "나, 음... Mora한테 들었어. 임무에서 있었던 일. 난... 그 여자를 도울 수 있어서 다행이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4458,7 +4458,7 @@
   },
   "Solidarity of Steel#445": {
    "src": "I, ha, kind of wish I could've been there, to help. Though, I don't... really know what I could have done, there.",
-   "dst": "",
+   "dst": "나, 하, 나도 거기서 같이 도왔으면 좋았을 텐데. 그래도, 내가... 거기서 뭘 할 수 있었을지는 모르겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4468,7 +4468,7 @@
   },
   "Solidarity of Steel#446": {
    "src": "S-so maybe it's a good thing! That I've been, um, busy, cooking. For the Steel Feather. There's, ha, a lot of people here!",
-   "dst": "",
+   "dst": "그, 그러니까 오히려 잘된 걸지도! 내가, 음, 요리하느라 바빴던 게. Steel Feather를 위해서. 여기, 하, 사람이 정말 많거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4478,7 +4478,7 @@
   },
   "Solidarity of Steel#447": {
    "src": "But I've been learning new recipes, and getting to know new people! Oh, right, you're probably here for, um, the food. Here! Please have some.",
-   "dst": "",
+   "dst": "그래도 새 요리법도 배우고, 새로운 사람들도 알게 됐어! 아, 맞다, 아마, 음, 밥 먹으러 왔지. 자! 좀 먹어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4488,7 +4488,7 @@
   },
   "Solidarity of Steel#448": {
    "src": "...oh, hi! Are you here for some food?",
-   "dst": "",
+   "dst": "...아, 안녕! 밥 먹으러 왔어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4498,7 +4498,7 @@
   },
   "Solidarity of Steel#449": {
    "src": "Ah, n-no, I- well, yes, I'd love some food, but I'm here to- to thank {u}.",
-   "dst": "",
+   "dst": "아, 아, 아니요, 저- 음, 네, 밥도 먹고 싶지만, {u}한테- 고맙다고 하러 왔어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4508,7 +4508,7 @@
   },
   "Solidarity of Steel#450": {
    "src": "Don't- don't sell yourself short! I don't... f-fully understand yet, but, fighting the guards like... like that is dangerous, and- and I know why some people wouldn't want to...",
-   "dst": "",
+   "dst": "자, 자기를 너무 낮추지 마요! 아직... 다, 다 이해한 건 아니지만, 그렇게- 그렇게 경비랑 싸우는 건 위험하잖아요, 그리고- 왜 다들 안 하려는지도 알아요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4518,7 +4518,7 @@
   },
   "Solidarity of Steel#451": {
    "src": "But you did anyway, and- and- and it means a lot.",
-   "dst": "",
+   "dst": "그런데도 해 줬잖아요, 그, 그게- 정말 큰 의미예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4528,7 +4528,7 @@
   },
   "Solidarity of Steel#452": {
    "src": "It, um, sounds like it was a really bad situation. So I'm glad you got out alright.",
-   "dst": "",
+   "dst": "그거, 음, 정말 안 좋은 상황이었던 것 같아. 무사히 빠져나와서 다행이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4538,7 +4538,7 @@
   },
   "Solidarity of Steel#453": {
    "src": "H-ha... yes. They've been... p-pushy before, but they've never been this- this- this, ah, violent.",
-   "dst": "",
+   "dst": "하, 하... 네. 전에도... 강, 강압적이긴 했지만, 이렇게- 이렇게- 이렇게, 아, 폭력적인 적은 없었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4548,7 +4548,7 @@
   },
   "Solidarity of Steel#454": {
    "src": "Y-yes, I am. It's... new, and- and different, but everyone here has been so kind, and...",
-   "dst": "",
+   "dst": "네, 네, 맞아요. 여기는... 새롭고, 그, 그리고 낯설지만, 다들 너무 친절하고...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4558,7 +4558,7 @@
   },
   "Solidarity of Steel#455": {
    "src": "It's a little- a little strange... It almost feels like- like- like I don't deserve it! Because, I- I- I haven't... w-worked for it.",
-   "dst": "",
+   "dst": "좀- 좀 이상해요... 거의- 거의- 제가 이럴 자격이 없는 것 같아요! 왜냐면, 저, 저, 저는 아직... 이, 일한 게 없잖아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4568,7 +4568,7 @@
   },
   "Solidarity of Steel#456": {
    "src": "Um... I don't really, know, what it's like to live here... but where I'm from, people help each other. You shouldn't have to earn the right to live.",
-   "dst": "",
+   "dst": "음... 여기서 사는 게, 어떤지는, 잘 모르지만... 내가 온 곳에선 서로 도와. 살 권리를 벌어야 할 필요는 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4578,7 +4578,7 @@
   },
   "Solidarity of Steel#457": {
    "src": "Y-you must be from a much n-nicer place than- than here.",
-   "dst": "",
+   "dst": "정, 정말 여기보다- 여기보다 훨씬 조, 좋은 데서 왔나 봐요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4588,7 +4588,7 @@
   },
   "Solidarity of Steel#458": {
    "src": "Ha... it's k-kind of ridiculous, looking back. Stupid- s-stupid quotas... ouch...",
-   "dst": "",
+   "dst": "하... 돌아보면 좀 우, 우스워요. 멍청한- 머, 멍청한 할당량... 아야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4598,7 +4598,7 @@
   },
   "Solidarity of Steel#459": {
    "src": "You want to know my story?",
-   "dst": "",
+   "dst": "내 얘기가 듣고 싶어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4608,7 +4608,7 @@
   },
   "Solidarity of Steel#460": {
    "src": "Aihan! Are you okay?",
-   "dst": "",
+   "dst": "Aihan! 괜찮아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4618,7 +4618,7 @@
   },
   "Solidarity of Steel#461": {
    "src": "Oh, it- it's nothing. Just, heavy m-machinery. Hurt my shoulder when- when I went in. It- it's r-really my fault, I, I, I sh-should have been m-more careful...",
-   "dst": "",
+   "dst": "아, 벼, 별거 아니에요. 그냥, 무거운 기, 기계에. 들어갈 때- 어깨를 다쳤어요. 사, 사실 제 잘못이에요, 제, 제, 제가 더 조, 조심했어야 했는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4628,7 +4628,7 @@
   },
   "Solidarity of Steel#462": {
    "src": "Um... I- I can, ha, I can help you.",
-   "dst": "",
+   "dst": "음... 내, 내가, 하, 도와줄 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4638,7 +4638,7 @@
   },
   "Solidarity of Steel#463": {
    "src": "You... you can? H-how?",
-   "dst": "",
+   "dst": "당신이... 할 수 있어요? 어, 어떻게요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4648,7 +4648,7 @@
   },
   "Solidarity of Steel#464": {
    "src": "Just... sigh. Follow me, and- and trust me.",
-   "dst": "",
+   "dst": "그냥... 하아. 따라와, 그리고- 그리고 날 믿어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4658,7 +4658,7 @@
   },
   "Solidarity of Steel#465": {
    "src": "Uh...",
-   "dst": "",
+   "dst": "어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4668,7 +4668,7 @@
   },
   "Solidarity of Steel#466": {
    "src": "H-hey...",
-   "dst": "",
+   "dst": "저, 저기요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4678,7 +4678,7 @@
   },
   "Solidarity of Steel#467": {
    "src": "H-hey! I- I only have this shirt, I c- I can't- I-",
-   "dst": "",
+   "dst": "저, 저기요! 저, 저 이 셔츠밖에 없어요, 이거- 이건 안-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4688,7 +4688,7 @@
   },
   "Solidarity of Steel#468": {
    "src": "...huh? My- my shoulder?",
-   "dst": "",
+   "dst": "...어? 제- 제 어깨가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4698,7 +4698,7 @@
   },
   "Solidarity of Steel#469": {
    "src": "Are you... feeling better?",
-   "dst": "",
+   "dst": "좀... 나아졌어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4708,7 +4708,7 @@
   },
   "Solidarity of Steel#470": {
    "src": "How did- how did you do that?",
-   "dst": "",
+   "dst": "어떻게- 어떻게 한 거예요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4718,7 +4718,7 @@
   },
   "Solidarity of Steel#471": {
    "src": "I'm... I'm cursed. That's how.",
-   "dst": "",
+   "dst": "난... 난 저주받았어. 그래서야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4728,7 +4728,7 @@
   },
   "Solidarity of Steel#472": {
    "src": "...oh.",
-   "dst": "",
+   "dst": "...아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4738,7 +4738,7 @@
   },
   "Solidarity of Steel#473": {
    "src": "I-... th-thank you. I didn't... I didn't know cursed ones could be- could be nice.",
-   "dst": "",
+   "dst": "저-... 고, 고마워요. 몰랐어요... 저주받은 자도- 친절할 수 있다는 걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4748,7 +4748,7 @@
   },
   "Solidarity of Steel#474": {
    "src": "Um... I sh-should go. Thank you for- for the food, and- and- and for... healing my shoulder. I- I really appreciate it.",
-   "dst": "",
+   "dst": "음... 이, 이만 가 볼게요. 음식도- 고맙고, 그리고- 그리고... 어깨 고쳐 준 것도요. 정, 정말 고마워요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4768,7 +4768,7 @@
   },
   "Solidarity of Steel#476": {
    "src": "Yeah...",
-   "dst": "",
+   "dst": "응...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4778,7 +4778,7 @@
   },
   "Solidarity of Steel#477": {
    "src": "It's fine. It's what I expected. I'm... glad I could help.",
-   "dst": "",
+   "dst": "괜찮아. 예상했던 거야. 난... 도울 수 있어서 기뻐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4788,7 +4788,7 @@
   },
   "Solidarity of Steel#478": {
    "src": "I- I guess so! Ha... at least she, um, wasn't scared. Just... nervous.",
-   "dst": "",
+   "dst": "그, 그런가 봐! 하... 적어도, 음, 무서워하진 않았어. 그냥... 긴장했을 뿐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4798,7 +4798,7 @@
   },
   "Solidarity of Steel#479": {
    "src": "I'll, um, catch up with the rest of you, later.",
-   "dst": "",
+   "dst": "난, 음, 나중에 다들 있는 데로 갈게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4808,7 +4808,7 @@
   },
   "Solidarity of Steel#480": {
    "src": "Go join the others. Uh, I'll join you in a bit.",
-   "dst": "",
+   "dst": "다른 사람들한테 가 있어. 어, 나도 곧 갈게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4818,7 +4818,7 @@
   },
   "Solidarity of Steel#481": {
    "src": "{u}, it's nice of you to join us. Have you had dinner yet?",
-   "dst": "",
+   "dst": "{u}, 와 줘서 반가워요. 저녁은 먹었어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4828,7 +4828,7 @@
   },
   "Solidarity of Steel#482": {
    "src": "It's good, isn't it? Quill tells me she's managed to fit right in with the other cooks here.",
-   "dst": "",
+   "dst": "맛있죠? Quill 말로는 여기 요리사들이랑 금방 잘 어울렸대요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4838,7 +4838,7 @@
   },
   "Solidarity of Steel#483": {
    "src": "So, {u}, are you also w- wait- waiting for Yuman's performance?",
-   "dst": "",
+   "dst": "그래서, {u}, 너도 Yuman 공연 기, 기다리는 중이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4848,7 +4848,7 @@
   },
   "Solidarity of Steel#484": {
    "src": "I have heard great things about his musical talents! Though, ah, I have also heard this his variety, ah, leaves something to be desired.",
-   "dst": "",
+   "dst": "음악 재능이 대단하다는 얘길 들었어요! 그런데, 아, 곡 가짓수는, 아, 좀 아쉽다고도 들었지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4858,7 +4858,7 @@
   },
   "Solidarity of Steel#485": {
    "src": "Then worry not, for you have been reminded just now, hoho!",
-   "dst": "",
+   "dst": "그럼 걱정 마요, 방금 제가 알려 드렸으니까요, 호호!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4868,7 +4868,7 @@
   },
   "Solidarity of Steel#486": {
    "src": "Hey, maybe he's written a song about you, Zeph!",
-   "dst": "",
+   "dst": "야, 어쩌면 너에 대한 노래를 썼을지도 몰라, Zeph!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4878,7 +4878,7 @@
   },
   "Solidarity of Steel#487": {
    "src": "Wh- wh- what?! R- Rex, no h- he-... that's n- not-... wh- why would he ev- even-",
-   "dst": "",
+   "dst": "뭐, 뭐, 뭐라고?! R, Rex, 아니, 걔- 그건 아, 아니-... 왜, 왜 걔가 굳이-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4888,7 +4888,7 @@
   },
   "Solidarity of Steel#488": {
    "src": "Ha! Relax, relax, I'm just teasing ya.",
-   "dst": "",
+   "dst": "하! 진정해, 진정해, 놀린 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4898,7 +4898,7 @@
   },
   "Solidarity of Steel#489": {
    "src": "Ahem... Attention, attention! Everyone, gather around!",
-   "dst": "",
+   "dst": "흠흠... 주목, 주목! 여러분, 모여 주게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4908,7 +4908,7 @@
   },
   "Solidarity of Steel#490": {
    "src": "I am heartened to see so many of you joining us for dinner today. It feels as though it has been a while since we've had such a large attendance!",
-   "dst": "",
+   "dst": "오늘 이렇게 많은 이들이 저녁을 함께해 주니 참 기쁘네. 이렇게 많이 모인 건 꽤 오랜만인 것 같군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4918,7 +4918,7 @@
   },
   "Solidarity of Steel#491": {
    "src": "There is of course news to deliver... but first! We begin by thanking our cooks for the meal.",
-   "dst": "",
+   "dst": "물론 전할 소식이 있네... 하지만 먼저! 식사를 준비해 준 요리사들에게 감사부터 하세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4928,7 +4928,7 @@
   },
   "Solidarity of Steel#492": {
    "src": "We're all familiar with Fletch's talents, but dinner wouldn't have been possible without the help of one of our new arrivals: Sui!",
-   "dst": "",
+   "dst": "Fletch의 솜씨는 다들 잘 알겠지만, 새로 온 이의 도움이 없었다면 오늘 저녁은 불가능했을 걸세. 바로 Sui!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4938,7 +4938,7 @@
   },
   "Solidarity of Steel#493": {
    "src": "Oh...! It, ha, it- um. It was nothing. T'was my pleasure! To- to help.",
-   "dst": "",
+   "dst": "아...! 그, 하, 그- 음. 별거 아니었어요. 제가 좋아서 한걸요! 도, 도울 수 있어서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4948,7 +4948,7 @@
   },
   "Solidarity of Steel#494": {
    "src": "No need to be shy, my dear!",
-   "dst": "",
+   "dst": "수줍어할 것 없단다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4958,7 +4958,7 @@
   },
   "Solidarity of Steel#495": {
    "src": "Dinner aside, let's get to the announcements!",
-   "dst": "",
+   "dst": "저녁 얘긴 이쯤 하고, 공지 사항으로 넘어가세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4968,7 +4968,7 @@
   },
   "Solidarity of Steel#496": {
    "src": "Today, we have had not one, but seven new arrivals! In addition to Sui, please welcome Aihan, Mora, Rex, Zeph, {u}, and Syndra!",
-   "dst": "",
+   "dst": "오늘은 한 명도 아니고 일곱 명이나 새로 왔네! Sui와 더불어 Aihan, Mora, Rex, Zeph, {u}, Syndra를 환영해 주게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4978,7 +4978,7 @@
   },
   "Solidarity of Steel#497": {
    "src": "Now, I'm certain news has spread of our... altercation, shall we say, with the crown's military. I assure you, all is under control! The Steel Feather remains secure and hidden.",
-   "dst": "",
+   "dst": "그리고 왕실 군대와의... 말하자면 충돌 소식이 이미 퍼졌을 걸세. 장담하건대, 모든 건 통제되고 있네! Steel Feather는 여전히 안전하고 숨겨져 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4988,7 +4988,7 @@
   },
   "Solidarity of Steel#498": {
    "src": "It does mean expeditions out of the station will be at higher risk for a time. We will have updated guidelines available in the morning for those of you who volunteer.",
-   "dst": "",
+   "dst": "다만 당분간 역 밖으로 나가는 원정은 위험이 더 커지네. 자원하는 이들을 위해 내일 아침 새 지침을 준비해 두겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -4998,7 +4998,7 @@
   },
   "Solidarity of Steel#499": {
    "src": "But in lighter news, we have restocked candy bars and sodas at the ticket shops! Make sure to trade for some before they run out - remember the rules, one of each per person.",
-   "dst": "",
+   "dst": "그리고 좋은 소식으로, 매표소 상점에 초코바와 탄산음료가 다시 들어왔네! 떨어지기 전에 교환해 두게 - 규칙은 알지, 1인당 종류별로 하나씩.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5008,7 +5008,7 @@
   },
   "Solidarity of Steel#500": {
    "src": "Well then! Barring any surprises at this very moment, that is all for today's report. As he has volunteered himself today, I will hand over the stage to Yuman.",
-   "dst": "",
+   "dst": "자, 그럼! 지금 당장 무슨 일이 터지지 않는 한, 오늘 보고는 여기까지네. 오늘은 본인이 자원했으니, 무대를 Yuman에게 넘기겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5018,7 +5018,7 @@
   },
   "Solidarity of Steel#501": {
    "src": "Heeeeeelllllooooo people of the Steel Feather!",
-   "dst": "",
+   "dst": "Steel Feather 여러분, 안녀어어어어엉!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5028,7 +5028,7 @@
   },
   "Solidarity of Steel#502": {
    "src": "Good to see you all as always- ey, Taio, lookin' good! Mei, love what you've done with the hair! Jin, my man!",
-   "dst": "",
+   "dst": "다들 여전히 반가워- 어이, Taio, 멋진데! Mei, 머리 바꾼 거 완전 좋아! Jin, 내 친구!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5038,7 +5038,7 @@
   },
   "Solidarity of Steel#503": {
    "src": "Ah... I guess I can introduce my song. It's a new one! You guys won't be able to tease me for being an artist with only one song anymore, haha!",
-   "dst": "",
+   "dst": "아... 노래 소개를 해 볼까. 신곡이야! 이제 노래 한 곡뿐인 아티스트라고 놀리진 못할걸, 하하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5048,7 +5048,7 @@
   },
   "Solidarity of Steel#504": {
    "src": "I've been working on this one for a while. Never could find a way to end it, though... 'till now, that is. Finally managed to find some inspiration.",
-   "dst": "",
+   "dst": "이 곡은 꽤 오래 붙잡고 있었어. 근데 끝을 어떻게 맺어야 할지 도무지 몰랐지... 지금까진. 드디어 영감이 좀 왔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5058,7 +5058,7 @@
   },
   "Solidarity of Steel#505": {
    "src": "Well, enough talking from me. Here it goes!",
-   "dst": "",
+   "dst": "자, 말은 이쯤 하고. 간다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5078,7 +5078,7 @@
   },
   "Solidarity of Steel#507": {
    "src": "Hm hm hm! Look who it is!",
-   "dst": "",
+   "dst": "흠흠흠! 이게 누구야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5088,7 +5088,7 @@
   },
   "Solidarity of Steel#508": {
    "src": "???",
-   "dst": "",
+   "dst": "???",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5098,7 +5098,7 @@
   },
   "Solidarity of Steel#509": {
    "src": "Long time no see, Soosu.",
-   "dst": "",
+   "dst": "오랜만이군, Soosu.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5108,7 +5108,7 @@
   },
   "Solidarity of Steel#510": {
    "src": "Happy to see you again, Flowers.",
-   "dst": "",
+   "dst": "다시 보니 반갑군, Flowers.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5118,7 +5118,7 @@
   },
   "Solidarity of Steel#511": {
    "src": "!!!",
-   "dst": "",
+   "dst": "!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5128,7 +5128,7 @@
   },
   "Solidarity of Steel#512": {
    "src": "You need to subtract some of this security. It shouldn't need to take twenty minutes to get through just the gate. We need to talk, an hour ago.",
-   "dst": "",
+   "dst": "이 보안은 좀 빼. 문 하나 통과하는 데 20분이 걸리면 안 되지. 얘기 좀 해야겠다, 한 시간 전에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5138,7 +5138,7 @@
   },
   "Solidarity of Steel#513": {
    "src": "Wow, mister loudmouth, big words for someone who wasn't supposed to be here for a few more weeks! What gives?! You're interrupting my flow!",
-   "dst": "",
+   "dst": "와, 떠버리 씨, 몇 주 뒤에나 올 사람이 말은 크게 하네! 뭔데?! 내 흐름 끊고 있잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5148,7 +5148,7 @@
   },
   "Solidarity of Steel#514": {
    "src": "Your sche- Are you taking lessons from Oru? This provincial emergency has a much greater value than your charter, Sovereign, so I'm summing to the equatio- nnh.",
-   "dst": "",
+   "dst": "네 일정- Oru한테 과외라도 받나? 이 지방 비상사태는 네 헌장보다 값이 훨씬 커, 군주. 그러니 방정식에 더하겠- 읏.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -5158,7 +5158,7 @@
   },
   "Solidarity of Steel#515": {
    "src": "I've changed my schedule to come here early and track down a defector- Syndra, and her set of insurgents. You've heard the name, right?",
-   "dst": "",
+   "dst": "일정을 바꿔 일찍 와서 배신자를 쫓는 중이다- Syndra와 그 반란 무리를. 이름은 들어 봤지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",

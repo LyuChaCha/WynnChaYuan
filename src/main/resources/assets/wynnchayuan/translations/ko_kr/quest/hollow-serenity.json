@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Hollow Serenity",
   "count": 295,
-  "translated": 12,
+  "translated": 295,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Hollow Serenity#000": {
    "src": "Something seems off in the abandoned manor at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 버려진 저택에서 뭔가 이상한 기운이 느껴집니다",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -18,7 +18,7 @@
   },
   "Hollow Serenity#001": {
    "src": "Investigate the Faltach Manor.",
-   "dst": "",
+   "dst": "Faltach 저택을 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -28,7 +28,7 @@
   },
   "Hollow Serenity#002": {
    "src": "Investigate the Master Bedroom.",
-   "dst": "",
+   "dst": "안방을 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -48,7 +48,7 @@
   },
   "Hollow Serenity#004": {
    "src": "Do not trust that man.",
-   "dst": "",
+   "dst": "그 남자를 믿지 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -58,7 +58,7 @@
   },
   "Hollow Serenity#005": {
    "src": "Head to the forest village east of the manor at [-{~}, {~}, -{~}] and ask its residents about a man named Garvan.",
-   "dst": "",
+   "dst": "저택 동쪽 숲 마을 [-{~}, {~}, -{~}]로 가서 주민들에게 Garvan이라는 남자에 대해 물어보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -68,7 +68,7 @@
   },
   "Hollow Serenity#006": {
    "src": "Hello soldier! Welcome to this... hick village. I presume the neighbor's kid has been stealing apples again, hmm?",
-   "dst": "",
+   "dst": "안녕하세요, 병사님! 이... 시골 마을에 오신 걸 환영해요. 옆집 애가 또 사과를 훔쳤나 보죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -78,7 +78,7 @@
   },
   "Hollow Serenity#007": {
    "src": "Oh, Ann... Your voice is so delicate, so soothing that- Ah, soldier! Are you here for something... or someone?",
-   "dst": "",
+   "dst": "오, Ann... 당신 목소리는 참 섬세하고 포근해서- 아, 병사님! 뭘... 아니면 누굴 찾으러 오셨나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -88,7 +88,7 @@
   },
   "Hollow Serenity#008": {
    "src": "What do you need?",
-   "dst": "",
+   "dst": "뭐가 필요하세요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -98,7 +98,7 @@
   },
   "Hollow Serenity#009": {
    "src": "My name is Ann!",
-   "dst": "",
+   "dst": "제 이름은 Ann이에요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -108,7 +108,7 @@
   },
   "Hollow Serenity#010": {
    "src": "I'm Qunit.",
-   "dst": "",
+   "dst": "전 Qunit입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -118,7 +118,7 @@
   },
   "Hollow Serenity#011": {
    "src": "We're the best couple in the entire forest! Nobody can match our love!",
-   "dst": "",
+   "dst": "우린 이 숲 전체에서 제일가는 부부예요! 우리 사랑을 따라올 사람은 없죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -128,7 +128,7 @@
   },
   "Hollow Serenity#012": {
    "src": "Do you have someone special to you like we are, human? A handsome little man? Or a pretty little woman? Or... neither? We won't judge.",
-   "dst": "",
+   "dst": "인간님도 우리처럼 소중한 사람이 있나요? 잘생긴 남자? 예쁜 여자? 아니면... 둘 다 아닌가요? 뭐라 안 할게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -138,7 +138,7 @@
   },
   "Hollow Serenity#013": {
    "src": "Absolutely we're married! Everyone finds it very hard to believe, but I don't blame them! It's a tough would... we... live in, yes!",
-   "dst": "",
+   "dst": "당연히 결혼했죠! 다들 잘 안 믿지만 탓하진 않아요! 우리가 사는 건 험한 세... 상이... 니까요, 네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -148,7 +148,7 @@
   },
   "Hollow Serenity#014": {
    "src": "Four years it has been, since we kissed under the starry sky amidst the blossoming fields near {p}. I can still see it in my dreams...",
-   "dst": "",
+   "dst": "{p} 근처 꽃 핀 들판, 별이 가득한 하늘 아래서 입맞춘 지 4년이 흘렀죠. 아직도 꿈에서 그날이 보여요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -158,7 +158,7 @@
   },
   "Hollow Serenity#015": {
    "src": "Yeah, what Qunit said! We've been married for {~} years! And soon that number is gonna go up to infinity!",
-   "dst": "",
+   "dst": "네, Qunit 말대로예요! 우린 결혼한 지 {~}년 됐어요! 그리고 곧 그 숫자는 무한대가 될 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -168,7 +168,7 @@
   },
   "Hollow Serenity#016": {
    "src": "Be quiet.",
-   "dst": "",
+   "dst": "조용히 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -178,7 +178,7 @@
   },
   "Hollow Serenity#017": {
    "src": "Oh! Sorry about Qunit, he doesn't like thinking about our... circumstances.",
-   "dst": "",
+   "dst": "아! Qunit은 신경 쓰지 마세요, 우리... 처지를 떠올리는 걸 싫어하거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -188,7 +188,7 @@
   },
   "Hollow Serenity#018": {
    "src": "We're in heavy debt to the government. We can't afford to live anywhere else.",
-   "dst": "",
+   "dst": "우린 정부에 빚이 많아요. 다른 데서 살 형편이 안 돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -198,7 +198,7 @@
   },
   "Hollow Serenity#019": {
    "src": "This forest is also safe from their prying eyes, which has inarguably caused certain... opinions to fester here...",
-   "dst": "",
+   "dst": "게다가 이 숲은 정부의 감시에서 벗어나 있어서, 확실히 어떤... 생각들이 여기서 곪아 가고 있죠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -208,7 +208,7 @@
   },
   "Hollow Serenity#020": {
    "src": "Yeah, yeah! It doesn't matter why we're here, soldier! Haha! We're here, and we love each other! That's all that matters. Yes.",
-   "dst": "",
+   "dst": "네, 네! 우리가 왜 여기 있는지는 중요하지 않아요, 병사님! 하하! 우린 여기 있고, 서로 사랑해요! 그게 전부죠. 네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -218,7 +218,7 @@
   },
   "Hollow Serenity#021": {
    "src": "Yes, actually. There's something dark to the north. There are parasites in it. It's dangerous.",
-   "dst": "",
+   "dst": "네, 사실 있어요. 북쪽에 어두운 무언가가 있어요. 안에 기생충이 있어요. 위험해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -228,7 +228,7 @@
   },
   "Hollow Serenity#022": {
    "src": "O-oh! Don't worry about what Qunit's saying. He's been having this recurring dream of a big worm creature laying dark eggs inside of a weird cave. He won't let it go, either!",
-   "dst": "",
+   "dst": "어- 어머! Qunit 말은 신경 쓰지 마세요. 큰 벌레 괴물이 이상한 동굴 안에 검은 알을 낳는 꿈을 계속 꾼대요. 그걸 잊지도 못하고요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -238,7 +238,7 @@
   },
   "Hollow Serenity#023": {
    "src": "It's not a fantasy, Ann. I've told you this.",
-   "dst": "",
+   "dst": "환상이 아니야, Ann. 내가 말했잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -248,7 +248,7 @@
   },
   "Hollow Serenity#024": {
    "src": "Shh, honey... we'll talk about this later, not in front of the soldier... Who probably has much more important things to do, hah!",
-   "dst": "",
+   "dst": "쉿, 여보... 그 얘긴 나중에 해요, 병사님 앞에서 말고... 훨씬 중요한 일이 있으실 텐데, 하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -258,7 +258,7 @@
   },
   "Hollow Serenity#025": {
    "src": "Nope.",
-   "dst": "",
+   "dst": "아니요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -268,7 +268,7 @@
   },
   "Hollow Serenity#026": {
    "src": "No.",
-   "dst": "",
+   "dst": "아니오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -278,7 +278,7 @@
   },
   "Hollow Serenity#027": {
    "src": "See? We're both on the same wavelength! Neither of us have met this person! We're... so in love, darling...",
-   "dst": "",
+   "dst": "봤죠? 우린 마음이 딱 통해요! 둘 다 그 사람을 만난 적 없어요! 우린... 정말 사랑하죠, 자기...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -288,7 +288,7 @@
   },
   "Hollow Serenity#028": {
    "src": "Yes...",
-   "dst": "",
+   "dst": "그래...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -298,7 +298,7 @@
   },
   "Hollow Serenity#029": {
    "src": "An outsider? Here? We don't get many of you people often...",
-   "dst": "",
+   "dst": "외지인? 여기에? 너 같은 사람은 여기 잘 안 오는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -318,7 +318,7 @@
   },
   "Hollow Serenity#031": {
    "src": "The name's Aunoa. I'm a farmer. Not much else to say.",
-   "dst": "",
+   "dst": "난 Aunoa야. 농부지. 더 할 말은 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -328,7 +328,7 @@
   },
   "Hollow Serenity#032": {
    "src": "I've got a kid, but he doesn't live here. His mother took him away to live in {p} a while back. Don't have any other family.",
-   "dst": "",
+   "dst": "애가 하나 있는데 여기 안 살아. 얼마 전에 애 엄마가 데리고 {p}(으)로 갔지. 다른 가족은 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -338,7 +338,7 @@
   },
   "Hollow Serenity#033": {
    "src": "This village is the only family I have.",
-   "dst": "",
+   "dst": "이 마을이 내 유일한 가족이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -348,7 +348,7 @@
   },
   "Hollow Serenity#034": {
    "src": "It's my home. The people I know and trust live here. It's a dump, but it's still my damn home.",
-   "dst": "",
+   "dst": "내 집이니까. 내가 알고 믿는 사람들이 여기 살아. 엉망인 곳이지만 그래도 내 빌어먹을 집이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -358,7 +358,7 @@
   },
   "Hollow Serenity#035": {
    "src": "Wish I could leave, though. This forest is awful. The crops are in horrible condition. Government doesn't give a damn about us either.",
-   "dst": "",
+   "dst": "떠날 수 있으면 좋겠지만. 이 숲은 끔찍해. 작물 상태도 형편없고. 정부도 우리 따윈 신경도 안 써.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -368,7 +368,7 @@
   },
   "Hollow Serenity#036": {
    "src": "Apparently the House of Talor has a massive crypt somewhere underneath its floors. Rich people used to be buried there.",
-   "dst": "",
+   "dst": "House of Talor 바닥 아래 어딘가에 거대한 지하 묘실이 있대. 옛날에 부자들이 거기 묻혔다더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -378,7 +378,7 @@
   },
   "Hollow Serenity#037": {
    "src": "There's probably some rare artifacts down there. Go take a look if you want, but everyone here has tried and failed to find it.",
-   "dst": "",
+   "dst": "아마 거기 희귀한 유물이 좀 있을 거야. 원하면 가 봐. 근데 여기 사람들 다 찾으려다 실패했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -388,7 +388,7 @@
   },
   "Hollow Serenity#038": {
    "src": "Yes, I do. But I probably can't stop you. Humans like you have a thing for invading privacy whenever you feel like it.",
-   "dst": "",
+   "dst": "그래, 신경 쓰여. 하지만 막을 수도 없겠지. 너 같은 인간들은 내키면 남의 사생활을 멋대로 침범하니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -398,7 +398,7 @@
   },
   "Hollow Serenity#039": {
    "src": "And I'm too weak to stop you. You've got all of that strong gear on you, and I barely know a lick of magic. We're not on equal footing.",
-   "dst": "",
+   "dst": "게다가 난 널 막을 힘도 없어. 넌 좋은 장비로 무장했고, 난 마법이라곤 쥐꼬리만큼 알아. 상대가 안 되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -408,7 +408,7 @@
   },
   "Hollow Serenity#040": {
    "src": "So... don't go in, but I won't stop you if you do anyways.",
-   "dst": "",
+   "dst": "그러니까... 들어가지 마. 그래도 들어가겠다면 말리진 않을게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -418,7 +418,7 @@
   },
   "Hollow Serenity#041": {
    "src": "No clue who that is. If someone like that lived here, then they're dead.",
-   "dst": "",
+   "dst": "누군지 몰라. 그런 사람이 여기 살았다면 이미 죽었겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -428,7 +428,7 @@
   },
   "Hollow Serenity#042": {
    "src": "Ask someone else about him if you want; I don't really care about this Garvan guy you're looking for.",
-   "dst": "",
+   "dst": "궁금하면 다른 사람한테 물어봐. 네가 찾는 Garvan인지 뭔지 난 관심 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -438,7 +438,7 @@
   },
   "Hollow Serenity#043": {
    "src": "Hey, you! Got any money? If you give me {~} Liquified Emeralds, I'll give you a spot of dust from the underside of my floorboards!",
-   "dst": "",
+   "dst": "야, 너! 돈 있어? 액체 에메랄드 {~}개 주면 우리 집 마룻바닥 밑 먼지 한 줌 줄게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -448,7 +448,7 @@
   },
   "Hollow Serenity#044": {
    "src": "No? Awww... that sucks.",
-   "dst": "",
+   "dst": "없어? 에이... 아쉽네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -458,7 +458,7 @@
   },
   "Hollow Serenity#045": {
    "src": "Whatcha need?",
-   "dst": "",
+   "dst": "뭐 필요해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -468,7 +468,7 @@
   },
   "Hollow Serenity#046": {
    "src": "I'm Bip! Yeah, Bip! The greatest guy to ever grace the entertainment industry!",
-   "dst": "",
+   "dst": "난 Bip이야! 그래, Bip! 연예계를 빛낸 최고의 사나이지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -478,7 +478,7 @@
   },
   "Hollow Serenity#047": {
    "src": "Oh... I was... Man, I miss my glory days! I used to be a big time man, you know? I was living it up in {p}, but now I have to live in this dump!",
-   "dst": "",
+   "dst": "아... 난 예전에... 아, 화려했던 시절이 그립다! 나 한때 거물이었거든? {p}에서 떵떵거리며 살았는데 이제 이런 촌구석에 살아야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -488,7 +488,7 @@
   },
   "Hollow Serenity#048": {
    "src": "Damn this world! I blame them for all of this! Everything has been nothing but trouble after trouble. Now everyone can't see how much of an honest guy I am!",
-   "dst": "",
+   "dst": "빌어먹을 세상! 다 그놈들 탓이야! 사고에 사고만 이어졌지. 이젠 아무도 내가 얼마나 정직한 사람인지 몰라줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -498,7 +498,7 @@
   },
   "Hollow Serenity#049": {
    "src": "B-BE QUIET! I don't like living here, so don't remind me!",
-   "dst": "",
+   "dst": "조-조용히 해! 여기 사는 거 싫으니까 상기시키지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -508,7 +508,7 @@
   },
   "Hollow Serenity#050": {
    "src": "I don't even truly have my own place! I've gotta live with some crony who owns the house I'm staying in right now.",
-   "dst": "",
+   "dst": "제대로 된 내 집도 없어! 지금 사는 집 주인인 웬 녀석이랑 같이 살아야 한다고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -518,7 +518,7 @@
   },
   "Hollow Serenity#051": {
    "src": "One day, I'll get out of here, though! I'll be a big time man again, and I'll reclaim my status in society, just you wait!",
-   "dst": "",
+   "dst": "그래도 언젠가 여길 벗어날 거야! 다시 거물이 돼서 사회적 지위를 되찾을 거라고, 두고 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -528,7 +528,7 @@
   },
   "Hollow Serenity#052": {
    "src": "Rumors? Do I look like a gossiper to you??",
-   "dst": "",
+   "dst": "소문? 내가 수다쟁이처럼 보여??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -538,7 +538,7 @@
   },
   "Hollow Serenity#053": {
    "src": "Well, human... I'm an honest entertainer, so don't worry. Good 'ole Bip will tell you a bit of something!",
-   "dst": "",
+   "dst": "뭐, 인간... 난 정직한 연예인이니 걱정 마. 착한 Bip이 뭐 좀 알려 주지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -548,7 +548,7 @@
   },
   "Hollow Serenity#054": {
    "src": "So, apparently there's a WITCH... living in LEXDALE! OOOOOO, spooky...",
-   "dst": "",
+   "dst": "그러니까, LEXDALE에... 마녀가 산대! 우우우우, 무섭지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -558,7 +558,7 @@
   },
   "Hollow Serenity#055": {
    "src": "But the thing is, she's causing... the Decay... dun dun DUUUN!!! Uhh... I don't know, her house is decaying, or something.",
-   "dst": "",
+   "dst": "근데 문제는, 그 마녀가... 쇠락을 일으킨대... 두둥 두둥 두두둥!!! 어... 몰라, 집이 쇠락하는 중이라던가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -568,7 +568,7 @@
   },
   "Hollow Serenity#056": {
    "src": "So now, she's gonna die. The end! Didja like that story, human? Every relation to in-real life people was {~} intentional, 'cuz this is actually happening.",
-   "dst": "",
+   "dst": "그래서 이제 그 마녀는 죽을 거야. 끝! 이야기 어땠어, 인간? 실존 인물과의 유사성은 {~} 의도한 거야, 진짜로 일어나는 일이니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -578,7 +578,7 @@
   },
   "Hollow Serenity#057": {
    "src": "Oh yeah! That's the name of the guy who FIRED ME! DAMMIT!!!-",
-   "dst": "",
+   "dst": "아 그럼! 그게 날 해고한 놈 이름이야! 젠장!!!-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -588,7 +588,7 @@
   },
   "Hollow Serenity#058": {
    "src": "...Oh, wait, no. Sorry human, I was thinking about Gavin. I don't know who this Garvan guy is! Ask someone else; I can't entertain you with that knowledge.",
-   "dst": "",
+   "dst": "...아, 잠깐, 아니다. 미안, 인간, Gavin 생각했어. Garvan은 누군지 몰라! 딴 사람한테 물어봐. 그 얘기론 널 즐겁게 못 해 주겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -598,7 +598,7 @@
   },
   "Hollow Serenity#059": {
    "src": "Hey.",
-   "dst": "",
+   "dst": "안녕.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -608,7 +608,7 @@
   },
   "Hollow Serenity#060": {
    "src": "Welcome to my home.",
-   "dst": "",
+   "dst": "우리 집에 온 걸 환영해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -618,7 +618,7 @@
   },
   "Hollow Serenity#061": {
    "src": "What is it?",
-   "dst": "",
+   "dst": "무슨 일이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -628,7 +628,7 @@
   },
   "Hollow Serenity#062": {
    "src": "I'm Runo. I live here.",
-   "dst": "",
+   "dst": "난 Runo. 여기 살아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -638,7 +638,7 @@
   },
   "Hollow Serenity#063": {
    "src": "Not much else to say.",
-   "dst": "",
+   "dst": "딱히 할 말 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -648,7 +648,7 @@
   },
   "Hollow Serenity#064": {
    "src": "Since I was born.",
-   "dst": "",
+   "dst": "태어났을 때부터.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -658,7 +658,7 @@
   },
   "Hollow Serenity#065": {
    "src": "Yes, I grew up here.",
-   "dst": "",
+   "dst": "응, 여기서 자랐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -668,7 +668,7 @@
   },
   "Hollow Serenity#066": {
    "src": "{p} apparently has something hidden inside of it.",
-   "dst": "",
+   "dst": "{p} 안에 뭔가 숨겨져 있대.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -678,7 +678,7 @@
   },
   "Hollow Serenity#067": {
    "src": "The chains have something to do with it.",
-   "dst": "",
+   "dst": "사슬이랑 관련 있대.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -688,7 +688,7 @@
   },
   "Hollow Serenity#068": {
    "src": "I dunno what else to say.",
-   "dst": "",
+   "dst": "더 할 말 모르겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -698,7 +698,7 @@
   },
   "Hollow Serenity#069": {
    "src": "...You know what? Neither do you! You've said, like, {~} sentences in the last {~} minutes!",
-   "dst": "",
+   "dst": "...있잖아? 너도 마찬가지야! {~}분 동안 한 {~}마디 했잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -708,7 +708,7 @@
   },
   "Hollow Serenity#070": {
    "src": "I just don't like talking, sheesh! My voice gets way more tense if I don't keep my words short. And it hurts.",
-   "dst": "",
+   "dst": "난 말하는 게 싫을 뿐이야, 참 나! 말을 짧게 안 하면 목소리가 훨씬 긴장돼. 그리고 아파.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -718,7 +718,7 @@
   },
   "Hollow Serenity#071": {
    "src": "What, are you offended? Well, I am, too! You'd be mad if some random human walked into your village and egged you into damaging your vocal chords!",
-   "dst": "",
+   "dst": "뭐, 기분 상했어? 나도 그래! 웬 인간이 네 마을에 쳐들어와서 성대 상하게 말 시키면 너도 화날걸!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -728,7 +728,7 @@
   },
   "Hollow Serenity#072": {
    "src": "...You don't have a house?",
-   "dst": "",
+   "dst": "...집이 없어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -738,7 +738,7 @@
   },
   "Hollow Serenity#073": {
    "src": "...You poor soul. Go buy one. Unless you're one of those guys who owns those flying land bits.",
-   "dst": "",
+   "dst": "...불쌍하긴. 하나 사. 저 떠다니는 땅 쪼가리 가진 녀석들 중 하나가 아니라면.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -748,7 +748,7 @@
   },
   "Hollow Serenity#074": {
    "src": "No. Ask the old man.",
-   "dst": "",
+   "dst": "아니. 노인한테 물어봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -758,7 +758,7 @@
   },
   "Hollow Serenity#075": {
    "src": "He knows most of the things here.",
-   "dst": "",
+   "dst": "여기 일은 거의 다 알아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -768,7 +768,7 @@
   },
   "Hollow Serenity#076": {
    "src": "Huh, weird. Whatcha doing all the way out here, human? We don't see a lot of your kind often.",
-   "dst": "",
+   "dst": "어라, 이상하네. 이런 데까지 뭐 하러 왔어, 인간? 너희 같은 사람은 잘 안 보이는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -778,7 +778,7 @@
   },
   "Hollow Serenity#077": {
    "src": "Got anything you wanna say?",
-   "dst": "",
+   "dst": "하고 싶은 말 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -788,7 +788,7 @@
   },
   "Hollow Serenity#078": {
    "src": "My name's Vera. I'm a farmer, but you probably already guessed that. That's all this damn village is good for anyways.",
-   "dst": "",
+   "dst": "난 Vera. 농부야, 뭐 이미 짐작했겠지만. 이 빌어먹을 마을은 어차피 그거밖에 쓸모가 없거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -798,7 +798,7 @@
   },
   "Hollow Serenity#079": {
    "src": "I also deal with getting supplies from other towns! Pretty cool, huh?",
-   "dst": "",
+   "dst": "다른 마을에서 물자 받아 오는 일도 해! 꽤 멋지지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -808,7 +808,7 @@
   },
   "Hollow Serenity#080": {
    "src": "Uhh... all my life, actually! Too damn poor to go anywhere else, so I've just hunkered down here and decided to stick it out until I'm dead.",
-   "dst": "",
+   "dst": "어... 사실 평생! 너무 가난해서 딴 데 갈 수가 없어서, 그냥 여기 눌러앉아 죽을 때까지 버티기로 했지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -818,7 +818,7 @@
   },
   "Hollow Serenity#081": {
    "src": "It's bad, living out here, but once you get used to it some of the edge is taken off. This village is all I've really known, and I owe it to everyone here to stick around, you know what I mean?",
-   "dst": "",
+   "dst": "여기 사는 건 힘들지만 익숙해지면 좀 무뎌져. 내가 아는 곳은 이 마을뿐이고, 여기 사람들을 봐서라도 남아야 해. 무슨 말인지 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -828,7 +828,7 @@
   },
   "Hollow Serenity#082": {
    "src": "Still... adventuring sounds like fun, sometimes... The furthest I've ever gone from here is halfway through {p} County.",
-   "dst": "",
+   "dst": "그래도... 가끔은 모험이 재밌을 것 같아... 내가 가 본 제일 먼 곳이 {p} County 중간쯤이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -838,7 +838,7 @@
   },
   "Hollow Serenity#083": {
    "src": "I bet you have some pretty good stories to tell from adventuring, ain't that right human?",
-   "dst": "",
+   "dst": "넌 모험하면서 꽤 멋진 이야깃거리가 많겠지, 안 그래, 인간?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -848,7 +848,7 @@
   },
   "Hollow Serenity#084": {
    "src": "You know the massive prison near {p}? Yeah, the {p} Penitentiary.",
-   "dst": "",
+   "dst": "{p} 근처 거대한 감옥 알아? 그래, {p} 교도소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -858,7 +858,7 @@
   },
   "Hollow Serenity#085": {
    "src": "So, apparently... the place is actually really corrupt. They arrest innocent people every other day, and they never come back out.",
-   "dst": "",
+   "dst": "근데 말이야... 그곳이 사실 엄청 부패했대. 툭하면 무고한 사람을 잡아가는데, 다시는 안 나온대.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -868,7 +868,7 @@
   },
   "Hollow Serenity#086": {
    "src": "Gavel's government hasn't done anything about it, but everyone in the forest knows damn well something shady is going on there. I'd watch myself around that place if I were you!",
-   "dst": "",
+   "dst": "Gavel 정부는 아무것도 안 했지만, 숲 사람들은 거기서 수상한 일이 벌어지는 걸 다 알아. 나라면 그 근처에선 조심할 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -878,7 +878,7 @@
   },
   "Hollow Serenity#087": {
    "src": "...Hold on, WHAT?",
-   "dst": "",
+   "dst": "...잠깐, 뭐라고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -888,7 +888,7 @@
   },
   "Hollow Serenity#088": {
    "src": "Get to talking, human! You can't just leave off like that! Tell me, are the rumors about that place true?",
-   "dst": "",
+   "dst": "얘기 좀 해 봐, 인간! 그렇게 말 끊으면 안 되지! 말해 줘, 그곳 소문이 사실이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -898,7 +898,7 @@
   },
   "Hollow Serenity#089": {
    "src": "Are the rumors true??",
-   "dst": "",
+   "dst": "소문이 사실이야??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -908,7 +908,7 @@
   },
   "Hollow Serenity#090": {
    "src": "...You're serious? Y-you are?",
-   "dst": "",
+   "dst": "...진심이야? 지, 진짜로?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -918,7 +918,7 @@
   },
   "Hollow Serenity#091": {
    "src": "Oh my word... and you saw it with your own eyes?",
-   "dst": "",
+   "dst": "세상에... 네 눈으로 직접 봤다고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -928,7 +928,7 @@
   },
   "Hollow Serenity#092": {
    "src": "Human... thanks for letting me know. You gotta tell more people about this, though! You could probably publish a book about it once you spread the word! You'd be rich!",
-   "dst": "",
+   "dst": "인간... 알려 줘서 고마워. 근데 더 많은 사람한테 알려야 해! 소문이 퍼지면 책도 낼 수 있을걸! 부자 되겠다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -938,7 +938,7 @@
   },
   "Hollow Serenity#093": {
    "src": "...Well, I'm not gonna believe you if you're saying it all forced like that, you know.",
-   "dst": "",
+   "dst": "...음, 그렇게 억지로 말하면 안 믿을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -948,7 +948,7 @@
   },
   "Hollow Serenity#094": {
    "src": "I won't push it, though; it was probably just too awful to talk about, right? You don't have to go into detail if you don't wanna.",
-   "dst": "",
+   "dst": "그래도 캐묻진 않을게. 너무 끔찍해서 말하기 힘든 거지? 싫으면 자세히 얘기 안 해도 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -958,7 +958,7 @@
   },
   "Hollow Serenity#095": {
    "src": "Just stay well away from that place, and make sure nobody else goes near there, alright?",
-   "dst": "",
+   "dst": "그냥 그곳엔 절대 가까이 가지 말고, 다른 사람도 못 가게 해, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -968,7 +968,7 @@
   },
   "Hollow Serenity#096": {
    "src": "Uh... no. That doesn't ring a single bell.",
-   "dst": "",
+   "dst": "어... 아니. 전혀 짚이는 데가 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -978,7 +978,7 @@
   },
   "Hollow Serenity#097": {
    "src": "You could probably ask some other people, though! I'm only the youngest guy in the village, so the older people here would probably know who this Garvan guy is!",
-   "dst": "",
+   "dst": "그래도 다른 사람들한테 물어봐! 난 마을에서 제일 어리니까, 나이 든 사람들은 Garvan이 누군지 알 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -988,7 +988,7 @@
   },
   "Hollow Serenity#098": {
    "src": "S-Sheesh! You scared me, human! Don't you know that you shouldn't walk into people's houses out of nowhere?",
-   "dst": "",
+   "dst": "깜, 깜짝이야! 놀랐잖아, 인간! 남의 집에 불쑥 들어오면 안 되는 거 몰라?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -998,7 +998,7 @@
   },
   "Hollow Serenity#099": {
    "src": "You know there are creepy guys out here who rob people like that? You should be more careful!",
-   "dst": "",
+   "dst": "밖에 그런 식으로 사람 털어 가는 수상한 놈들 있는 거 알지? 좀 더 조심해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1008,7 +1008,7 @@
   },
   "Hollow Serenity#100": {
    "src": "How can I help you?",
-   "dst": "",
+   "dst": "뭘 도와줄까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1018,7 +1018,7 @@
   },
   "Hollow Serenity#101": {
    "src": "I'm nobody. No, I'm serious, I literally don't have a name. Parents just didn't bother to name me.",
-   "dst": "",
+   "dst": "난 아무도 아니야. 아니, 진짜로. 이름이 아예 없어. 부모님이 이름 붙이는 걸 귀찮아했거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1028,7 +1028,7 @@
   },
   "Hollow Serenity#102": {
    "src": "Apparently that's considered sacrilegious around here, so I was taken away from them and I now work for Pastor Arwes.",
-   "dst": "",
+   "dst": "여기선 그게 신성 모독이라나 봐. 그래서 부모님한테서 떼어져서 지금은 목사 Arwes 밑에서 일해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1038,7 +1038,7 @@
   },
   "Hollow Serenity#103": {
    "src": "What do the others call me? Uhh... Big-nosed girl. Yeah, I know, a bit on the nose–",
-   "dst": "",
+   "dst": "다른 사람들이 날 뭐라고 부르냐고? 어... 코쟁이. 그래, 알아, 코 얘기라니 너무 대놓고–",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1048,7 +1048,7 @@
   },
   "Hollow Serenity#104": {
    "src": "...That sailed right over my head. But it's true, though! I have the biggest nose in the village.",
-   "dst": "",
+   "dst": "...무슨 말인지 하나도 모르겠네. 그래도 사실이야! 마을에서 내 코가 제일 크거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1058,7 +1058,7 @@
   },
   "Hollow Serenity#105": {
    "src": "What should you call me? Hm... I don't know... maybe... Eua?",
-   "dst": "",
+   "dst": "뭐라고 부르면 되냐고? 음... 글쎄... 어쩌면... Eua?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1068,7 +1068,7 @@
   },
   "Hollow Serenity#106": {
    "src": "I know it won't matter anymore, but sure. Call me Eua. That sounds like a nice name.",
-   "dst": "",
+   "dst": "이제 와서 상관없겠지만, 좋아. Eua라고 불러. 괜찮은 이름 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1078,7 +1078,7 @@
   },
   "Hollow Serenity#107": {
    "src": "This one's not necessarily a rumor, but... have you ever heard of someone that they call the Wanderer?",
-   "dst": "",
+   "dst": "소문이라고 하긴 좀 그렇지만... 방랑자라고 불리는 사람 들어 봤어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1088,7 +1088,7 @@
   },
   "Hollow Serenity#108": {
    "src": "He's a weird guy who just... wanders. He's completely despondent, and doesn't really interact with anyone. Even a lot of the dangerous creatures around here just tend to ignore his presence. He's almost like... a ghost.",
-   "dst": "",
+   "dst": "그냥... 떠돌아다니는 이상한 남자야. 완전히 넋이 나가서 아무하고도 어울리지 않아. 이 근처 위험한 생물들도 대부분 그를 무시해. 거의... 유령 같지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1098,7 +1098,7 @@
   },
   "Hollow Serenity#109": {
    "src": "You've probably seen him before in the forest. Hooded guy, doesn't talk at all? That's who they call the Wanderer.",
-   "dst": "",
+   "dst": "숲에서 본 적 있을 거야. 두건 쓰고 말 한마디 안 하는 남자? 그게 바로 방랑자야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1108,7 +1108,7 @@
   },
   "Hollow Serenity#110": {
    "src": "Well, he doesn't really hurt anyone, so I don't really worry about him too much, but still... it's spooky...",
-   "dst": "",
+   "dst": "뭐, 딱히 누굴 해치진 않으니 크게 걱정은 안 하는데, 그래도... 으스스해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1118,7 +1118,7 @@
   },
   "Hollow Serenity#111": {
    "src": "Wait, THAT manor? Nah. No one goes near there anymore, not since it was abandoned. What, do you not know what happened there?",
-   "dst": "",
+   "dst": "잠깐, '그' 저택? 아니. 버려진 뒤로는 아무도 근처에 안 가. 뭐야, 거기서 무슨 일 있었는지 몰라?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1128,7 +1128,7 @@
   },
   "Hollow Serenity#112": {
    "src": "It used to be owned by a family of nobles called the Faltachs. Big, important people in the forest, very rich.",
-   "dst": "",
+   "dst": "원래 Faltach라는 귀족 가문 소유였어. 숲에서 꽤 대단한 사람들이었지, 엄청 부자였고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1138,7 +1138,7 @@
   },
   "Hollow Serenity#113": {
    "src": "Well... a lot of stuff happened with them. The mistress of the family supposedly went insane and killed her husband at some point, or something like that...",
-   "dst": "",
+   "dst": "음... 그 집안엔 일이 많았어. 안주인이 미쳐서 언젠가 남편을 죽였다던가, 뭐 그런 얘기가 있어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1148,7 +1148,7 @@
   },
   "Hollow Serenity#114": {
    "src": "There's a lot to unpack there, human. And you honestly shouldn't unpack it.",
-   "dst": "",
+   "dst": "파헤칠 게 한둘이 아니야, 인간. 솔직히 파헤치지 않는 게 좋아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1158,7 +1158,7 @@
   },
   "Hollow Serenity#115": {
    "src": "Hmm... No, can't say I have. Whoever this person is, they certainly don't live here.",
-   "dst": "",
+   "dst": "음... 아니, 모르겠어. 누군진 몰라도 여기 사는 사람은 확실히 아니야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1168,7 +1168,7 @@
   },
   "Hollow Serenity#116": {
    "src": "And nah, it's not me, either, even if I don't have a real name. I wouldn't even be here if my parents had named me something manly like Garvan anyways.",
-   "dst": "",
+   "dst": "그리고 아니, 나도 아니야. 진짜 이름이 없긴 하지만. 부모님이 Garvan 같은 남자다운 이름을 지어 줬으면 난 여기 없었겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1178,7 +1178,7 @@
   },
   "Hollow Serenity#117": {
    "src": "Ask around, though! I'm sure others probably know him.",
-   "dst": "",
+   "dst": "그래도 여기저기 물어봐! 분명 아는 사람이 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1188,7 +1188,7 @@
   },
   "Hollow Serenity#118": {
    "src": "You're new... we don't see a lot of youngsters around these days... especially humans.",
-   "dst": "",
+   "dst": "처음 보는 얼굴이군... 요즘은 젊은이를 보기 힘들지... 특히 인간은.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1198,7 +1198,7 @@
   },
   "Hollow Serenity#119": {
    "src": "How can I help you?",
-   "dst": "",
+   "dst": "뭘 도와줄까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1208,7 +1208,7 @@
   },
   "Hollow Serenity#120": {
    "src": "Very on the nose, whippersnapper. My name is Lokno. I'm what's left of this town during its olden days...",
-   "dst": "",
+   "dst": "아주 대놓고 묻는구먼, 풋내기. 내 이름은 Lokno. 옛 시절 이 마을의 마지막 남은 사람이지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1218,7 +1218,7 @@
   },
   "Hollow Serenity#121": {
    "src": "Mhm. This village... has definitely seen better days. This Decay stuff has ruined us, just take a look around! Nothing here has been suitable for living for over {~} years...",
-   "dst": "",
+   "dst": "음. 이 마을은... 확실히 좋은 시절이 있었지. 이 쇠락이란 게 우릴 망쳐 놨어, 둘러봐! {~}년 넘게 사람 살 만한 곳이 하나도 없었지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1228,7 +1228,7 @@
   },
   "Hollow Serenity#122": {
    "src": "Hah... well, right now, it's a crowd of shacks, but before the Decay came along, we used to do great...",
-   "dst": "",
+   "dst": "하... 지금은 판잣집 무더기지만, 쇠락이 오기 전엔 아주 잘 지냈다네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1238,7 +1238,7 @@
   },
   "Hollow Serenity#123": {
    "src": "We always had enough food to go around, we could sell off what we didn't need to eat, and everything was thriving.",
-   "dst": "",
+   "dst": "먹을 건 늘 넉넉했고, 남는 건 내다 팔았지. 모든 게 번창했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1248,7 +1248,7 @@
   },
   "Hollow Serenity#124": {
    "src": "My great-grandmother, Aki, always told me stories about this place. Our little village. I wish I could have been around to live in it then.",
-   "dst": "",
+   "dst": "증조할머니 Aki께서 늘 이곳 이야기를 해 주셨지. 우리 작은 마을 말일세. 그 시절에 살아 봤으면 좋았을 텐데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1258,7 +1258,7 @@
   },
   "Hollow Serenity#125": {
    "src": "She was always convinced though... that if the rightful rulers of Gavel returned, all of these issues could easily be squashed.",
-   "dst": "",
+   "dst": "그래도 할머니는 늘 확신하셨지... Gavel의 정당한 통치자가 돌아오면 이 모든 문제가 쉽게 해결될 거라고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1268,7 +1268,7 @@
   },
   "Hollow Serenity#126": {
    "src": "To be honest... I believe the same. The government has abandoned us. So... why not bring back the old one?",
-   "dst": "",
+   "dst": "솔직히... 나도 그렇게 믿네. 정부는 우릴 버렸어. 그러니... 옛 통치자를 되돌리면 안 될 이유가 있나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1278,7 +1278,7 @@
   },
   "Hollow Serenity#127": {
    "src": "I may not be the most religious villager around here, but it would feel more right to be ruled by someone who has the heavens' approval.",
-   "dst": "",
+   "dst": "내가 이 근처에서 가장 신앙심 깊은 주민은 아니지만, 하늘의 인정을 받은 자가 다스리는 게 더 옳다고 느껴지네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1288,7 +1288,7 @@
   },
   "Hollow Serenity#128": {
    "src": "Nope. I don't deal with that kind of stuff, bahaha! Sorry human; you're out of luck.",
-   "dst": "",
+   "dst": "아니. 난 그런 건 안 해, 하하하! 미안하네, 인간. 운이 없구먼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1298,7 +1298,7 @@
   },
   "Hollow Serenity#129": {
    "src": "G... Garvan... yes. I know that name.",
-   "dst": "",
+   "dst": "G... Garvan... 그래. 아는 이름이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1308,7 +1308,7 @@
   },
   "Hollow Serenity#130": {
    "src": "He isn't here, though. I don't know his whereabouts, what he's doing, or if he's even alive. He's... just nonexistant.",
-   "dst": "",
+   "dst": "하지만 여기엔 없네. 어디 있는지, 뭘 하는지, 살아는 있는지도 몰라. 그는... 그냥 없는 사람이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1318,7 +1318,7 @@
   },
   "Hollow Serenity#131": {
    "src": "I don't know why you're chasing after him, but... if you want a place to start, look at the abandoned laboratory on top of that hill, just west to the of here.",
-   "dst": "",
+   "dst": "왜 그를 쫓는지는 모르겠지만... 시작할 곳을 원한다면 여기서 바로 서쪽, 언덕 위의 버려진 실험실을 살펴보게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1328,7 +1328,7 @@
   },
   "Hollow Serenity#132": {
    "src": "Fair warning, though... My great-grandmother is the only reason I know about him, and even then... she was always put off by him, and told me to stay away from him. I'd be wary, if I were you.",
-   "dst": "",
+   "dst": "그래도 경고하지... 내가 그를 아는 건 증조할머니 덕분인데, 할머니조차... 늘 그를 꺼리셨고 가까이하지 말라 하셨네. 나라면 조심하겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1338,7 +1338,7 @@
   },
   "Hollow Serenity#133": {
    "src": "Or don't. He sounds like a nice man. You're strong, as well. I'm sure you'll be fine.",
-   "dst": "",
+   "dst": "아니면 말고. 좋은 사람 같기도 하니까. 자네도 강하고. 괜찮을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1348,7 +1348,7 @@
   },
   "Hollow Serenity#134": {
    "src": "Investigate the contents of the abandoned laboratory at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 버려진 실험실 내부를 조사하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1358,7 +1358,7 @@
   },
   "Hollow Serenity#135": {
    "src": "Hide.",
-   "dst": "",
+   "dst": "숨으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1368,7 +1368,7 @@
   },
   "Hollow Serenity#136": {
    "src": "Return to the Faltach Manor and find the entrance to the secret study at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Faltach 저택으로 돌아가 [-{~}, {~}, -{~}]에서 비밀 서재 입구를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1378,7 +1378,7 @@
   },
   "Hollow Serenity#137": {
    "src": "Uncover the secrets of the study.",
-   "dst": "",
+   "dst": "서재의 비밀을 밝혀내세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1388,7 +1388,7 @@
   },
   "Hollow Serenity#138": {
    "src": "Investigate the unlocked room in the study.",
-   "dst": "",
+   "dst": "서재에서 잠기지 않은 방을 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1398,7 +1398,7 @@
   },
   "Hollow Serenity#139": {
    "src": "Get out of the study.",
-   "dst": "",
+   "dst": "서재에서 나가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1408,7 +1408,7 @@
   },
   "Hollow Serenity#140": {
    "src": "Dammit, Katarin! I'm not dealing with that loonie anymore! It's been years since I hired that scientist, and he STILL has nothing! If he doesn't find a cure soon, then I'll just get rid of him!",
-   "dst": "",
+   "dst": "젠장, Katarin! 그 미치광이는 더 이상 못 봐주겠소! 그 과학자를 고용한 지 몇 년인데 아직도 성과가 없어! 곧 치료제를 못 찾으면 없애 버리겠소!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1418,7 +1418,7 @@
   },
   "Hollow Serenity#141": {
    "src": "Y-Yorman, you can't be serious! What we're asking him to do is heavily unresearched, firing him for taking time on that wouldn't be a good idea!",
-   "dst": "",
+   "dst": "Y-Yorman, 설마 진심은 아니죠! 우리가 맡긴 건 거의 연구된 적 없는 일이에요. 오래 걸린다고 내쫓는 건 좋지 않아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1428,7 +1428,7 @@
   },
   "Hollow Serenity#142": {
    "src": "Woman, have you SEEN the state that cretin is in?? Even if it does take long, he's in no damn shape to deal with it! Now, stop arguing with me, and help me get rid of him-",
-   "dst": "",
+   "dst": "부인, 그 얼간이 꼴을 봤소?? 오래 걸리는 건 그렇다 쳐도 그 상태론 감당도 못 해! 이제 그만 따지고 그놈 치우는 걸 도우시오-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1438,7 +1438,7 @@
   },
   "Hollow Serenity#143": {
    "src": "NO!",
-   "dst": "",
+   "dst": "안 돼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1448,7 +1448,7 @@
   },
   "Hollow Serenity#144": {
    "src": "This is too far, Yorman! Garvan MUST stay! You will do this if you still love me!",
-   "dst": "",
+   "dst": "너무하잖아요, Yorman! Garvan은 반드시 남아야 해요! 아직 날 사랑한다면 그렇게 해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1458,7 +1458,7 @@
   },
   "Hollow Serenity#145": {
    "src": "...Why do you even care so much?? Some lunatic scientist like him isn't good for anybody! We both know that we'd save more time and money by letting him run off!",
-   "dst": "",
+   "dst": "...대체 왜 그렇게까지 신경 쓰는 거요?? 그런 미친 과학자는 누구에게도 득이 안 돼! 내보내는 게 시간도 돈도 아낀다는 거 둘 다 알잖소!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1468,7 +1468,7 @@
   },
   "Hollow Serenity#146": {
    "src": "I still have faith in him, unlike you! I'll talk to him to see what's going on if I must, but I will NOT tolerate you throwing him out simply because you're too eager for results!",
-   "dst": "",
+   "dst": "당신과 달리 난 아직 그를 믿어요! 필요하면 내가 직접 얘기해 볼게요. 하지만 성과에 급급해서 그를 내쫓는 건 절대 용납 못 해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1478,7 +1478,7 @@
   },
   "Hollow Serenity#147": {
    "src": "Fine. But know this; I will see it to MYSELF that his head is taken off of his shoulders if that man continues to waste my time, understand??",
-   "dst": "",
+   "dst": "좋소. 하지만 명심하시오. 그자가 계속 내 시간을 낭비하면, 그 목이 어깨에서 떨어지는 걸 내가 직접 보고 말 거요, 알겠소??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1488,7 +1488,7 @@
   },
   "Hollow Serenity#148": {
    "src": "...I'm leaving to take care of some matters in {p}. Ask one of the maids to make sure that Eileen goes to bed. I'll be back before midnight.",
-   "dst": "",
+   "dst": "...{p}에 볼일이 있어 나가 보겠소. 하녀에게 Eileen이 잠자리에 드는지 확인하라고 하시오. 자정 전엔 돌아오겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1498,7 +1498,7 @@
   },
   "Hollow Serenity#149": {
    "src": "...That... was close... I can't have him getting between us anymore.",
-   "dst": "",
+   "dst": "...방금... 아슬아슬했어... 더는 그이가 우리 사이를 막게 둘 수 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1508,7 +1508,7 @@
   },
   "Hollow Serenity#150": {
    "src": "I-I am here, Katarin. You wished to s- speak with me...?",
-   "dst": "",
+   "dst": "와, 왔습니다, Katarin. 저와 이, 이야기하고 싶으셨다고요...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1518,7 +1518,7 @@
   },
   "Hollow Serenity#151": {
    "src": "Yes, love. Yorman is becoming suspicious of you. He thinks you're not making any progress on the cure and wasting his time. Any more of this, and he may attempt to get rid of you.",
-   "dst": "",
+   "dst": "네, 여보. Yorman이 당신을 의심하기 시작했어요. 치료제에 진척도 없이 자기 시간만 낭비한다고 생각해요. 이대로면 당신을 없애려 할지도 몰라요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1528,7 +1528,7 @@
   },
   "Hollow Serenity#152": {
    "src": "I just wanted to check on you, love. Are... you doing alright? Is your work coming along well?",
-   "dst": "",
+   "dst": "그냥 당신이 어떤지 보고 싶었어요, 여보. 괜찮...아요? 연구는 잘되고 있어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1538,7 +1538,7 @@
   },
   "Hollow Serenity#153": {
    "src": "I... I am...",
-   "dst": "",
+   "dst": "저... 저는...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1648,7 +1648,7 @@
   },
   "Hollow Serenity#164": {
    "src": "P̸̳̼̕͠Ḷ̵̭̌É̴͔̣̉A̸͍͗S̶̰̆̃E̸̠̐ ̷̧̝̊̑Ḩ̷͝E̵̼͛̋L̶̠̒̌P̶̠̘̈́̚ ̷̟̀͌M̶̨̰̉E̵̚͜",
-   "dst": "",
+   "dst": "제발 살려 줘",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1658,7 +1658,7 @@
   },
   "Hollow Serenity#165": {
    "src": "F-Fine. I am fine. I appreciate the concern, but... It truly is u-unwarranted. I'm q-quite close to finding a cure to the disease, y-yes.",
-   "dst": "",
+   "dst": "괘, 괜찮습니다. 괜찮아요. 걱정은 고맙지만... 정말 부, 불필요합니다. 병의 치료제를 거, 거의 찾았어요, 네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1668,7 +1668,7 @@
   },
   "Hollow Serenity#166": {
    "src": "Ah! That is good to hear. Now then... How are things? We haven't had many chances to catch up recently.",
-   "dst": "",
+   "dst": "아! 다행이네요. 그럼... 요즘 어때요? 최근엔 이야기 나눌 기회가 별로 없었잖아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1678,7 +1678,7 @@
   },
   "Hollow Serenity#167": {
    "src": "...Wonderful. I've met... many peers. Recently. They give me the strength I need to advance my progress. Now... how is our daughter, Eileen?",
-   "dst": "",
+   "dst": "...아주 좋습니다. 최근에... 동료들을 많이 만났어요. 연구를 진척시킬 힘을 주더군요. 그럼... 우리 딸 Eileen은 어떻습니까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1688,7 +1688,7 @@
   },
   "Hollow Serenity#168": {
    "src": "She's doing great. She takes a lot after you, actually. Intelligent, beautiful, an inquisitive mind. I just hope this Decay can be dealt with and we don't need to live in fear any longer.",
-   "dst": "",
+   "dst": "아주 잘 지내요. 당신을 많이 닮았어요. 똑똑하고, 예쁘고, 호기심도 많고. 이 쇠락만 해결돼서 더는 두려움 속에 살지 않았으면 좋겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1698,7 +1698,7 @@
   },
   "Hollow Serenity#169": {
    "src": "Wonderful. And... is our eternal bond safe? The gemstone? Has... Yorman found out about it?",
-   "dst": "",
+   "dst": "다행입니다. 그리고... 우리의 영원한 인연은 안전합니까? 그 보석 말입니다. Yorman이... 알아챘나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1708,7 +1708,7 @@
   },
   "Hollow Serenity#170": {
    "src": "Yes, it has stayed hidden. As long as it's kept intact, our souls will stay bound to it. You just need to take care of your little project and we'll ride into the sunset, just like you said, mhm?",
-   "dst": "",
+   "dst": "네, 잘 숨겨져 있어요. 그게 온전한 한 우리 영혼은 거기 묶여 있을 거예요. 당신은 그 작은 연구만 마무리해요. 그럼 당신 말대로 함께 석양 속으로 떠나는 거예요, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1718,7 +1718,7 @@
   },
   "Hollow Serenity#171": {
    "src": "...And what about our daughter?",
-   "dst": "",
+   "dst": "...그럼 우리 딸은요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1728,7 +1728,7 @@
   },
   "Hollow Serenity#172": {
    "src": "We... I will not risk her life for our love. She has a future in {p}, Garvan! She isn't a part of this, and I don't think she-",
-   "dst": "",
+   "dst": "우리... 난 우리 사랑 때문에 그 애 목숨을 걸진 않을 거예요. 그 애는 {p}에서 미래가 있어요, Garvan! 이 일과는 상관없고, 그 애가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1738,7 +1738,7 @@
   },
   "Hollow Serenity#173": {
    "src": "Eileen... She is a shining star in this world. Her noble blood and natural talent makes her something truly special.",
-   "dst": "",
+   "dst": "Eileen... 그 아이는 이 세상에서 빛나는 별입니다. 고귀한 혈통과 타고난 재능이 그 아이를 특별하게 만들지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1748,7 +1748,7 @@
   },
   "Hollow Serenity#174": {
    "src": "Do you realize, Katarin? Our daughter is a gift from the heavens! Once she has matured, she will accomplish things that Gavel has never seen! Bring back the holy and royal that was lost-",
-   "dst": "",
+   "dst": "알겠습니까, Katarin? 우리 딸은 하늘이 내린 선물입니다! 자라면 Gavel이 본 적 없는 일을 해낼 겁니다! 잃어버린 신성과 왕가를 되찾고-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1758,7 +1758,7 @@
   },
   "Hollow Serenity#175": {
    "src": "...Forgive me, I-I'm rambling once more. I... must leave now, research calls. Goodbye, my love. Great things will happen, sooner or later.",
-   "dst": "",
+   "dst": "...용서하세요, 제, 제가 또 횡설수설하는군요. 전... 이제 가야 합니다, 연구가 부르네요. 안녕, 내 사랑. 머지않아 위대한 일이 일어날 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1768,7 +1768,7 @@
   },
   "Hollow Serenity#176": {
    "src": "I truly hope so...",
-   "dst": "",
+   "dst": "정말 그러길 바라요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1778,7 +1778,7 @@
   },
   "Hollow Serenity#177": {
    "src": "Make your way to Garvan's old research outpost at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에 있는 Garvan의 옛 연구 전초기지로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1788,7 +1788,7 @@
   },
   "Hollow Serenity#178": {
    "src": "Gather as much pieces of evidence as you can in the research outpost.",
-   "dst": "",
+   "dst": "연구 전초기지에서 최대한 많은 증거를 모으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1798,7 +1798,7 @@
   },
   "Hollow Serenity#179": {
    "src": "Investigate your findings.",
-   "dst": "",
+   "dst": "찾아낸 것들을 살펴보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1808,7 +1808,7 @@
   },
   "Hollow Serenity#180": {
    "src": "Ah... N-now you're finally here. I... need you, my darling. We- no... I can cure this Decay with you.",
-   "dst": "",
+   "dst": "아... 드, 드디어 왔구나. 난... 네가 필요하단다, 얘야. 우리- 아니... 너와 함께라면 이 쇠락을 치료할 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1818,7 +1818,7 @@
   },
   "Hollow Serenity#181": {
    "src": "W-What do you mean...? I-I don't like this... I-I w-wanna go home. It's getting late and mother-",
-   "dst": "",
+   "dst": "무, 무슨 말이에요...? 이, 이거 싫어요... 지, 집에 가, 갈래요. 늦었고 엄마가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1828,7 +1828,7 @@
   },
   "Hollow Serenity#182": {
    "src": "Ssshhh... This will only take a moment.",
-   "dst": "",
+   "dst": "쉬이이... 금방 끝난단다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1838,7 +1838,7 @@
   },
   "Hollow Serenity#183": {
    "src": "W-What is that thing?? M-Mister Garvan, I-I don't understand...",
-   "dst": "",
+   "dst": "저, 저게 뭐예요?? G, Garvan 아저씨, 모, 모르겠어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1848,7 +1848,7 @@
   },
   "Hollow Serenity#184": {
    "src": "Hush, my daughter. I-I'm doing this for your s-sake... You'll t-thank me later, once it... g-grows acclimated to you.",
-   "dst": "",
+   "dst": "쉿, 내 딸아. 이, 이건 다 너를 위, 위해서란다... 그것이... 네게 저, 적응하고 나면 나중에 고마워할 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1858,7 +1858,7 @@
   },
   "Hollow Serenity#185": {
    "src": "Now then... Hold still.",
-   "dst": "",
+   "dst": "자 그럼... 가만히 있거라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1868,7 +1868,7 @@
   },
   "Hollow Serenity#186": {
    "src": "Hello, my love. I-It's... been a while.",
-   "dst": "",
+   "dst": "안녕하세요, 내 사랑. 오, 오랜만이군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1878,7 +1878,7 @@
   },
   "Hollow Serenity#187": {
    "src": "You... G-Garvan... Why are you here? And what's happened to Eileen? She has been sick for days!",
-   "dst": "",
+   "dst": "당신... G-Garvan... 여긴 왜 왔어요? 그리고 Eileen은 어떻게 된 거죠? 며칠째 아프다고요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1888,7 +1888,7 @@
   },
   "Hollow Serenity#188": {
    "src": "Mmmm... I... Ha-a-have a bit of a... how should I phrase this... a confession to make.",
-   "dst": "",
+   "dst": "음... 저... 할, 할 말이 좀... 뭐라고 해야 할지... 고백할 게 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1898,7 +1898,7 @@
   },
   "Hollow Serenity#189": {
    "src": "W-Well... I-I've done... I've...done Eileen a great service... she will live forever, just like we do. Thanks to what I have done.",
-   "dst": "",
+   "dst": "그, 그러니까... 제, 제가... Eileen에게... 큰 은혜를 베풀었어요... 그 애는 우리처럼 영원히 살 겁니다. 제가 한 일 덕분에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1908,7 +1908,7 @@
   },
   "Hollow Serenity#190": {
    "src": "Y-you... Bound her soul?? Garvan, no, I told you she wasn't part of this!! WHY??",
-   "dst": "",
+   "dst": "다, 당신... 그 애 영혼을 묶었어요?? Garvan, 안 돼, 그 애는 상관없다고 했잖아요!! 왜??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1918,7 +1918,7 @@
   },
   "Hollow Serenity#191": {
    "src": "No, no no no no. I've done much b-b-better. She has something now. In her brain... Don't worry about the s-sorry state she's in now. The parasite will need time to acclimate to her flesh.",
-   "dst": "",
+   "dst": "아뇨, 아뇨 아뇨 아뇨. 훨, 훨씬 나은 걸 했어요. 그 애 안에 이제 뭔가 있어요. 뇌 속에... 지금 딱, 딱한 상태는 걱정 마세요. 기생체가 그 애 몸에 적응할 시간이 필요할 뿐이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1928,7 +1928,7 @@
   },
   "Hollow Serenity#192": {
    "src": "I-I realized... a cure. My work is done, love... Eileen will be cured. The Decay can be s-stopped. It's wonderful-",
-   "dst": "",
+   "dst": "제, 제가 깨달았어요... 치료제를. 제 일은 끝났어요, 여보... Eileen은 나을 거예요. 쇠락도 멈, 멈출 수 있어요. 멋지죠-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1938,7 +1938,7 @@
   },
   "Hollow Serenity#193": {
    "src": "WHAT DID YOU DO TO MY DAUGHTER?? WHAT IS WRONG WITH YOU??",
-   "dst": "",
+   "dst": "내 딸한테 무슨 짓을 한 거야?? 당신 대체 왜 그래??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1948,7 +1948,7 @@
   },
   "Hollow Serenity#194": {
    "src": "Aaaahhhmmmm... True... I might have stepped out of line. But it's for the best.",
-   "dst": "",
+   "dst": "으으음... 그렇군요... 선을 넘었을지도 모르겠네요. 하지만 이게 최선입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1958,7 +1958,7 @@
   },
   "Hollow Serenity#195": {
    "src": "OUT OF LINE?? This is too far, Garvan! What even happened to you?? You've been acting like this for so, so long! I-I can't take it anymore!",
-   "dst": "",
+   "dst": "선을 넘어?? 이건 너무하잖아요, Garvan! 대체 무슨 일이 있었던 거예요?? 이렇게 군 지 정말, 정말 오래됐어요! 더, 더는 못 참아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1968,7 +1968,7 @@
   },
   "Hollow Serenity#196": {
    "src": "You've changed, Garvan! I-I can't even recognize you anymore!! I'm... I'm DONE! GET OUT! STAY AWAY FROM MY FAMILY!",
-   "dst": "",
+   "dst": "당신 변했어요, Garvan! 이, 이젠 알아보지도 못하겠어요!! 난... 난 끝이에요! 나가요! 내 가족한테서 떨어져요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1978,7 +1978,7 @@
   },
   "Hollow Serenity#197": {
    "src": "You again... W-What do you want from me this time...? You've... already ruined me.",
-   "dst": "",
+   "dst": "또 당신들이군... 이, 이번엔 또 뭘 원하는 거지...? 이미... 날 망쳐 놨잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1988,7 +1988,7 @@
   },
   "Hollow Serenity#198": {
    "src": "It doesn't matter. You've accomplished what we've planned for, and that is perfect. The girl will grow into a suitale leader... Now then, we have some questions for you.",
-   "dst": "",
+   "dst": "상관없다. 넌 우리가 계획한 일을 해냈고, 그거면 완벽하지. 그 소녀는 적합한 지도자로 자랄 거다... 자, 그럼 몇 가지 묻겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1998,7 +1998,7 @@
   },
   "Hollow Serenity#199": {
    "src": "Tell me Garvan... Where is the heir?",
-   "dst": "",
+   "dst": "말해라, Garvan... 후계자는 어디 있지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2008,7 +2008,7 @@
   },
   "Hollow Serenity#200": {
    "src": "I... will not tell you. I have lost Eileen and my love thanks to you. If I am to lose her... then you shall lose her as well.",
-   "dst": "",
+   "dst": "난... 말하지 않겠다. 너희 때문에 Eileen도, 내 사랑도 잃었어. 내가 그 아이를 잃어야 한다면... 너희도 잃게 될 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2018,7 +2018,7 @@
   },
   "Hollow Serenity#201": {
    "src": "...Lunatic. You; take him in. Keep him alive.",
-   "dst": "",
+   "dst": "...미치광이 같으니. 너, 저자를 데려가. 살려 두고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2028,7 +2028,7 @@
   },
   "Hollow Serenity#202": {
    "src": "NO, DON'T TOUCH ME!",
-   "dst": "",
+   "dst": "안 돼, 날 건드리지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2038,7 +2038,7 @@
   },
   "Hollow Serenity#203": {
    "src": "Garvan. Garvan, Garvan. I think there's a misunderstanding here. You are in no place to defy us.",
-   "dst": "",
+   "dst": "Garvan. Garvan, Garvan. 뭔가 오해가 있는 것 같군. 넌 우리에게 맞설 처지가 아니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2048,7 +2048,7 @@
   },
   "Hollow Serenity#204": {
    "src": "Now then... You will tell us where the rightful heir to the throne is... No matter the cost.",
-   "dst": "",
+   "dst": "자 그럼... 왕좌의 정당한 후계자가 어디 있는지 말하게 될 거다... 어떤 대가를 치르더라도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2058,7 +2058,7 @@
   },
   "Hollow Serenity#205": {
    "src": "Return to the Manor and search for any clues as to Eileen's whereabouts at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "저택으로 돌아가 [-{~}, {~}, -{~}]에서 Eileen의 행방에 관한 단서를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2068,7 +2068,7 @@
   },
   "Hollow Serenity#206": {
    "src": "It seems you've arrived. F-Forgive me... I-I'm not quite used to talking anymore. It's been quite a while.",
-   "dst": "",
+   "dst": "왔구나. 요, 용서해 줘... 마, 말하는 게 좀 익숙하지 않아서. 꽤 오래됐거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2078,7 +2078,7 @@
   },
   "Hollow Serenity#207": {
    "src": "...Nevermind. I d-don't want your forgiveness in particular. In fact, w-why do you even care? The forest has died, generations have lived on... and yet... You just had to tear the scar open, didn't you?",
-   "dst": "",
+   "dst": "...됐어. 딱히 네 용서를 바라는 것도 아니야. 애, 애초에 네가 왜 신경 쓰지? 숲은 죽었고, 세대는 흘러갔어... 그런데도... 굳이 그 흉터를 헤집어야 했나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2088,7 +2088,7 @@
   },
   "Hollow Serenity#208": {
    "src": "My sins... You do not need to see them... all the things I've done wrong. H-How I destroyed the bonds tying me and my love together.",
-   "dst": "",
+   "dst": "내 죄... 넌 볼 필요 없어... 내가 저지른 모든 잘못을. 내, 내가 어떻게 나와 내 사랑을 잇던 인연을 부쉈는지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2098,7 +2098,7 @@
   },
   "Hollow Serenity#209": {
    "src": "...Y-Yes... I mean her. Katarin. She's watching us as we speak, no? A-and with that, I suppose it's obvious what lies under this veil.",
-   "dst": "",
+   "dst": "...그, 그래... 그녀 말이야. Katarin. 지금도 우릴 보고 있잖아? 그, 그렇다면 이 베일 아래 뭐가 있는지는 뻔하겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2108,7 +2108,7 @@
   },
   "Hollow Serenity#210": {
    "src": "Greetings... I-I'm s-sure you're well acquainted with me, by now. I-It was me all along. Quite the- well, it was a predictable twist, I suppose...",
-   "dst": "",
+   "dst": "반갑군... 이, 이제 날 잘 알겠지. 처, 처음부터 나였어. 꽤나- 뭐, 뻔한 반전이었겠지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2118,7 +2118,7 @@
   },
   "Hollow Serenity#211": {
    "src": "...B-But... I take it you don't have the full story. So... so so so so so so... Let me explain to you, human... The bitter end to our shared tale.",
-   "dst": "",
+   "dst": "...하, 하지만... 전말은 모르는 모양이군. 그러니... 그러니 그러니 그러니... 설명해 주지, 인간... 우리가 함께 나눈 이야기의 쓰디쓴 결말을.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2128,7 +2128,7 @@
   },
   "Hollow Serenity#212": {
    "src": "AAAAAAAGGGHHH!!!! F-FINE! I-I'll tell you... I-I'll tell y-you where Eileen is...",
-   "dst": "",
+   "dst": "으아아아아아악!!!! 조, 좋아! 마, 말하지... Eileen이 어디 있는지 마, 말해 주지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2138,7 +2138,7 @@
   },
   "Hollow Serenity#213": {
    "src": "S-She... is with her mother. At the Faltach Manor. T-That is all. Just s-stop...",
-   "dst": "",
+   "dst": "그, 그 애는... 어머니와 함께 있어. Faltach 저택에. 그, 그게 다야. 그, 그만해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2148,7 +2148,7 @@
   },
   "Hollow Serenity#214": {
    "src": "...Good. This had better not be a lie. You; tell the others that we are heading there now. Kill everyone at the manor and any witnesses; leave the heir alive.",
-   "dst": "",
+   "dst": "...좋다. 거짓말이 아니어야 할 거다. 너, 다른 자들에게 지금 그리로 간다고 전해. 저택 사람과 목격자는 전부 죽이고, 후계자는 살려 둬라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2158,7 +2158,7 @@
   },
   "Hollow Serenity#215": {
    "src": "W-WHAT?",
-   "dst": "",
+   "dst": "뭐, 뭐라고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2168,7 +2168,7 @@
   },
   "Hollow Serenity#216": {
    "src": "N-NO! GET BACK HERE! DON'T YOU DARE HARM THEM! I'LL KILL YOU!! DO YOU HEAR ME???",
-   "dst": "",
+   "dst": "아, 안 돼! 돌아와! 그들을 해치기만 해 봐! 죽여 버리겠다!! 내 말 들려???",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2178,7 +2178,7 @@
   },
   "Hollow Serenity#217": {
    "src": "...M-Mother... why d-do I have to stay here?",
-   "dst": "",
+   "dst": "...어, 엄마... 왜 여, 여기 있어야 해요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2188,7 +2188,7 @@
   },
   "Hollow Serenity#218": {
    "src": "It's for your own good dear. Now, remember to stay put. Garvan won't be able to use you if you're kept inside of here...",
-   "dst": "",
+   "dst": "다 널 위해서란다, 얘야. 자, 꼭 가만히 있어. 여기 안에 있으면 Garvan이 널 이용하지 못해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2198,7 +2198,7 @@
   },
   "Hollow Serenity#219": {
    "src": "I-I miss Dad...",
-   "dst": "",
+   "dst": "아, 아빠 보고 싶어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2208,7 +2208,7 @@
   },
   "Hollow Serenity#220": {
    "src": "Yorman won't be bothering us anymore, sweetheart. He wouldn't understand, so... J- just don't worry about what happened to him. It's irrelevant-",
-   "dst": "",
+   "dst": "Yorman은 더는 우릴 괴롭히지 않을 거야, 아가. 그이는 이해 못 했을 테니... 그, 그이가 어떻게 됐는지는 신경 쓰지 마. 중요하지 않아-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2218,7 +2218,7 @@
   },
   "Hollow Serenity#221": {
    "src": "L-LADY KATARIN! T-THERE ARE INTRUDERS- AAAAAAHHHHHH!!!",
-   "dst": "",
+   "dst": "K, Katarin 마님! 치, 침입자가- 으아아아아악!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2228,7 +2228,7 @@
   },
   "Hollow Serenity#222": {
    "src": "...Who the hell are you all?",
-   "dst": "",
+   "dst": "...너희는 대체 누구지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2238,7 +2238,7 @@
   },
   "Hollow Serenity#223": {
    "src": "Step aside, Katarin Faltach. This will be much simpler if you just stand down and tell us where your daughter is.",
-   "dst": "",
+   "dst": "비켜라, Katarin Faltach. 순순히 물러나서 딸이 어디 있는지 말하면 훨씬 간단해질 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2248,7 +2248,7 @@
   },
   "Hollow Serenity#224": {
    "src": "...Come again? No. YOU WON'T TOUCH HER! GET OUT OF MY SIGHT-",
-   "dst": "",
+   "dst": "...뭐라고? 싫어. 그 애한텐 손끝 하나 못 대! 내 눈앞에서 사라져-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2258,7 +2258,7 @@
   },
   "Hollow Serenity#225": {
    "src": "You're not the one making demands here... You all, search the house and find the child.",
-   "dst": "",
+   "dst": "여기서 요구하는 건 네가 아니야... 너희, 집을 뒤져서 아이를 찾아라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2268,7 +2268,7 @@
   },
   "Hollow Serenity#226": {
    "src": "There she is. Hmm... it seems that the parasite injection worked well. Garvan wasn't so useless after all.",
-   "dst": "",
+   "dst": "저기 있군. 흠... 기생체 주입이 잘된 모양이야. Garvan이 그리 쓸모없진 않았군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2278,7 +2278,7 @@
   },
   "Hollow Serenity#227": {
    "src": "Oh? Too terrified to speak? Worry not, Eileen Faltach. You won't be harmed... too much. You're quite important to us, you see.",
-   "dst": "",
+   "dst": "오? 너무 무서워서 말도 못 하나? 걱정 마라, Eileen Faltach. 다치진 않을 거다... 많이는. 넌 우리에게 꽤 중요하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2288,7 +2288,7 @@
   },
   "Hollow Serenity#228": {
    "src": "N-NO! STAY AWAY FROM MY DAUGHTER!",
-   "dst": "",
+   "dst": "아, 안 돼! 내 딸한테서 떨어져!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2298,7 +2298,7 @@
   },
   "Hollow Serenity#229": {
    "src": "You have little choice in the matter, Miss Faltach. Stand your ground.",
-   "dst": "",
+   "dst": "당신에겐 선택의 여지가 별로 없어, Faltach 부인. 거기 가만히 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2308,7 +2308,7 @@
   },
   "Hollow Serenity#230": {
    "src": "GET AWAY FROM HER, DO YOU HEAR ME??? RAAAAAAAAAAAAAAAAGGGGGGGGHHHHHH!!!!",
-   "dst": "",
+   "dst": "그 애한테서 떨어져, 내 말 안 들려??? 으아아아아아아아아아아아악!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2318,7 +2318,7 @@
   },
   "Hollow Serenity#231": {
    "src": "Tch... Some people will never understand what we do for the world. Thank you for protecting us from her, Aki.",
-   "dst": "",
+   "dst": "쯧... 우리가 세상을 위해 하는 일을 끝내 이해 못 하는 자들이 있지. 저 여자로부터 지켜 줘서 고맙다, Aki.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2328,7 +2328,7 @@
   },
   "Hollow Serenity#232": {
    "src": "I will deal with the heir myself. You all can head back to our village. Thank you for your help today.",
-   "dst": "",
+   "dst": "후계자는 내가 직접 처리하지. 너희는 마을로 돌아가라. 오늘 도와줘서 고맙다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2338,7 +2338,7 @@
   },
   "Hollow Serenity#233": {
    "src": "...I should have known. I-I... my love... y-you're gone.",
-   "dst": "",
+   "dst": "...알았어야 했는데. 내, 내... 사랑... 다, 당신이 떠났군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2348,7 +2348,7 @@
   },
   "Hollow Serenity#234": {
    "src": "DAMN IT! DAMN IT DAMN IT DAMN IT AAAAALLLL!!!!",
-   "dst": "",
+   "dst": "젠장! 젠장 젠장 젠장 다 젠자아아앙!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2358,7 +2358,7 @@
   },
   "Hollow Serenity#235": {
    "src": "This is... W-why did this have to happen? ...I-I can't... this can't end like this...",
-   "dst": "",
+   "dst": "이건... 왜, 왜 이렇게 돼야 했지? ...나, 난 못... 이렇게 끝날 순 없어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2368,7 +2368,7 @@
   },
   "Hollow Serenity#236": {
    "src": "T-This will be enough. You have a wonderful grave, m-my love...",
-   "dst": "",
+   "dst": "이, 이 정도면 충분해요. 아름다운 무덤이에요, 내, 내 사랑...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2378,7 +2378,7 @@
   },
   "Hollow Serenity#237": {
    "src": "W-We won't be separated, though. I-I will leave our true selves here, as well.",
-   "dst": "",
+   "dst": "그, 그래도 우린 떨어지지 않을 거예요. 우, 우리의 진정한 자아도 여기 남겨 둘게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2388,7 +2388,7 @@
   },
   "Hollow Serenity#238": {
    "src": "My soul... and y-yours.",
-   "dst": "",
+   "dst": "내 영혼... 그리고 다, 당신 영혼을.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2398,7 +2398,7 @@
   },
   "Hollow Serenity#239": {
    "src": "T-This is our final act of love, K-Katarin... This stone will keep us here. Eternal, and in bliss.",
-   "dst": "",
+   "dst": "이, 이게 우리의 마지막 사랑이에요, K-Katarin... 이 돌이 우릴 여기 붙잡아 둘 거예요. 영원히, 행복하게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2408,7 +2408,7 @@
   },
   "Hollow Serenity#240": {
    "src": "I-It's like nothing ever h-happened, right?",
-   "dst": "",
+   "dst": "마, 마치 아무 일도 어, 없었던 것 같지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2418,7 +2418,7 @@
   },
   "Hollow Serenity#241": {
    "src": "But that changes now.",
-   "dst": "",
+   "dst": "하지만 이제 달라진다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2428,7 +2428,7 @@
   },
   "Hollow Serenity#242": {
    "src": "N-Now you understand. T-this is... all my fault. I have ruined everything. E-everything I touched, I destroyed.",
-   "dst": "",
+   "dst": "이, 이제 알겠지. 이, 이건... 전부 내 잘못이야. 내가 다 망쳤어. 내, 내가 손댄 건 전부 부서졌지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2438,7 +2438,7 @@
   },
   "Hollow Serenity#243": {
    "src": "Have I not repented enough? Have I not suffered enough for decades in this god-forsaken forest?? And why did you have to-",
-   "dst": "",
+   "dst": "아직도 속죄가 부족한가? 이 신에게 버림받은 숲에서 수십 년을 고통받은 걸로 부족한가?? 그런데 왜 네가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2448,7 +2448,7 @@
   },
   "Hollow Serenity#244": {
    "src": "No... You know too much. B-But I can't kill, not again. I-I can make things right. I-I'm going to fix this. I'm going to fix this. I'm going to I'm going to I'm going to I'm going to I'm going to...",
-   "dst": "",
+   "dst": "아니... 넌 너무 많이 알아. 하, 하지만 죽일 순 없어, 다시는. 바, 바로잡을 수 있어. 고, 고칠 거야. 고칠 거야. 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2458,7 +2458,7 @@
   },
   "Hollow Serenity#245": {
    "src": "I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to-",
-   "dst": "",
+   "dst": "고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야 고칠 거야-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2468,7 +2468,7 @@
   },
   "Hollow Serenity#246": {
    "src": "KATARIIIIINNNNNN!!!!!",
-   "dst": "",
+   "dst": "KATARIIIIINNNNN!!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2478,7 +2478,7 @@
   },
   "Hollow Serenity#247": {
    "src": "Get to the Master Bedroom at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 안방으로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2488,7 +2488,7 @@
   },
   "Hollow Serenity#248": {
    "src": "K-Katarin! My l-love... is that you?",
-   "dst": "",
+   "dst": "K-Katarin! 내, 내 사랑... 당신이에요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2498,7 +2498,7 @@
   },
   "Hollow Serenity#249": {
    "src": "My word... I-It is you! I missed you, love... and I'm s-so sorry... for all of this!",
-   "dst": "",
+   "dst": "세상에... 다, 당신이군요! 보고 싶었어요, 여보... 그리고 저, 정말 미안해요... 이 모든 게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2508,7 +2508,7 @@
   },
   "Hollow Serenity#250": {
    "src": "I realize n-now, thanks to this h-human's efforts. What I've done has t-torn us apart... I hurt you and our l-little girl so much...",
-   "dst": "",
+   "dst": "이 이, 인간 덕분에 이, 이제야 깨달았어요. 내가 한 짓이 우릴 가, 갈라놓았어요... 당신과 우리 어, 어린 딸을 너무 아프게 했어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2518,7 +2518,7 @@
   },
   "Hollow Serenity#251": {
    "src": "I-I'm so sorry, Katarin! P-Please, forgive me! Let us f-fix all of thi-",
-   "dst": "",
+   "dst": "저, 정말 미안해요, Katarin! 제, 제발 용서해 줘요! 우리 이 모든 걸 바, 바로잡-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2528,7 +2528,7 @@
   },
   "Hollow Serenity#252": {
    "src": "H-huh? Why c-can't I...?",
-   "dst": "",
+   "dst": "어, 어? 왜 모, 못...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2538,7 +2538,7 @@
   },
   "Hollow Serenity#253": {
    "src": "K-Katarin...?",
-   "dst": "",
+   "dst": "K-Katarin...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2548,7 +2548,7 @@
   },
   "Hollow Serenity#254": {
    "src": "For.. For... give... ness...?",
-   "dst": "",
+   "dst": "용.. 용... 서...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2558,7 +2558,7 @@
   },
   "Hollow Serenity#255": {
    "src": "What... What do you mean?? Speak, my love! I don't understand.",
-   "dst": "",
+   "dst": "뭐... 무슨 뜻이에요?? 말해 줘요, 여보! 모르겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2568,7 +2568,7 @@
   },
   "Hollow Serenity#256": {
    "src": "...Forgiveness...? You... beg for me... to forgive... you?",
-   "dst": "",
+   "dst": "...용서...? 당신이... 나한테... 용서를... 빈다고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2578,7 +2578,7 @@
   },
   "Hollow Serenity#257": {
    "src": "I... Yes, yes! P-Please, my love! I-I know I've have spent the last century and a half running away from u-us, but...",
-   "dst": "",
+   "dst": "저... 네, 네! 제, 제발요, 여보! 지난 한 세기 반 동안 우, 우리에게서 도망쳐 온 건 알지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2588,7 +2588,7 @@
   },
   "Hollow Serenity#258": {
    "src": "It was all my fault, from the beginning! I was wrong! W-We can fix this...! We can make everything go back to normal, j-just like it was before!",
-   "dst": "",
+   "dst": "처음부터 전부 제 잘못이었어요! 제가 틀렸어요! 우, 우리 이걸 바로잡을 수 있어요...! 모든 걸 예전처럼 되, 되돌릴 수 있어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2598,7 +2598,7 @@
   },
   "Hollow Serenity#259": {
    "src": "Please, Katarin! A-all I ask is that you forgive me!",
-   "dst": "",
+   "dst": "제발요, Katarin! 저, 전 용서만 받으면 돼요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2608,7 +2608,7 @@
   },
   "Hollow Serenity#260": {
    "src": "...You... You must really have a deathwish-",
-   "dst": "",
+   "dst": "...당신... 정말 죽고 싶은가 보네-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2618,7 +2618,7 @@
   },
   "Hollow Serenity#261": {
    "src": "...Maybe I can... Forgive this. But I need something from you, as well...",
-   "dst": "",
+   "dst": "...어쩌면... 용서할 수도 있어요. 하지만 나도 당신한테 받을 게 있어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2628,7 +2628,7 @@
   },
   "Hollow Serenity#262": {
    "src": "...Where is the gemstone? I'd... I'd like to know. And then... I could... forgive... this.",
-   "dst": "",
+   "dst": "...보석은 어디 있죠? 난... 알고 싶어요. 그러면... 난... 용서할... 수 있을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2638,7 +2638,7 @@
   },
   "Hollow Serenity#263": {
    "src": "O-Oh! Is that all? Of course, my love, I can tell you!",
-   "dst": "",
+   "dst": "오, 오! 그거면 돼요? 물론이죠, 여보, 알려 줄게요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2648,7 +2648,7 @@
   },
   "Hollow Serenity#264": {
    "src": "I-I placed it in the catacombs, right next to where-",
-   "dst": "",
+   "dst": "지, 지하 묘지에 뒀어요, 바로 옆에-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2658,7 +2658,7 @@
   },
   "Hollow Serenity#265": {
    "src": "W-What... W-WHAT I-IS THISS?? I-I C-CAN'T B-BREATHE! P-PLEASE!!",
-   "dst": "",
+   "dst": "뭐, 뭐야... 이, 이게 뭐야?? 수, 숨을 모, 못 쉬겠어! 제, 제발!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2668,7 +2668,7 @@
   },
   "Hollow Serenity#266": {
    "src": "NO!! NO, NO NO NO NO. HUMAN, H-HELP ME!! KATARIN... K-KATARIIIIINNNNN!!!!",
-   "dst": "",
+   "dst": "안 돼!! 안 돼 안 돼. 인간, 사, 살려 줘!! KATARIN... K-KATARIIIIINNNNN!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2678,7 +2678,7 @@
   },
   "Hollow Serenity#267": {
    "src": "YOU... TOOK... HER... FROM... ME.",
-   "dst": "",
+   "dst": "당신이... 내게서... 그 애를... 빼앗았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2688,7 +2688,7 @@
   },
   "Hollow Serenity#268": {
    "src": "YOU... POISONED... HER...!",
-   "dst": "",
+   "dst": "당신이... 그 애를... 독살했어...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2698,7 +2698,7 @@
   },
   "Hollow Serenity#269": {
    "src": "YOU... RUINED... EVERYTHING!!",
-   "dst": "",
+   "dst": "당신이... 전부... 망쳤어!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2708,7 +2708,7 @@
   },
   "Hollow Serenity#270": {
    "src": "Head to the Manor's catacombs at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 저택 지하 묘지로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2718,7 +2718,7 @@
   },
   "Hollow Serenity#271": {
    "src": "WHERE IS IT?!?!?!?!",
-   "dst": "",
+   "dst": "어디 있어?!?!?!?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2728,7 +2728,7 @@
   },
   "Hollow Serenity#272": {
    "src": "TELL ME WHERE IT IS, GARVAN! I KNOW YOU'RE STILL LISTENING!",
-   "dst": "",
+   "dst": "어디 있는지 말해, GARVAN! 아직 듣고 있는 거 알아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2738,7 +2738,7 @@
   },
   "Hollow Serenity#273": {
    "src": "You knew where it was- Hmm... what did Garvan call you things...?",
-   "dst": "",
+   "dst": "넌 어디 있는지 알았지- 흠... Garvan이 너희를 뭐라고 불렀더라...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2748,7 +2748,7 @@
   },
   "Hollow Serenity#274": {
    "src": "Right, a human. You knew... that it was just beneath this rubble?",
-   "dst": "",
+   "dst": "맞다, 인간. 넌 알았어... 그게 이 잔해 바로 밑에 있다는 걸?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2758,7 +2758,7 @@
   },
   "Hollow Serenity#275": {
    "src": "There it is... Thank you... Now this eternal hell will finally end. After so long...",
-   "dst": "",
+   "dst": "저기 있네... 고마워... 이제 이 영원한 지옥도 드디어 끝나. 이렇게 오랜 세월 끝에...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2768,7 +2768,7 @@
   },
   "Hollow Serenity#276": {
    "src": "Do you hear that? It's the ocean waves... The heavens... They're calling for me-",
-   "dst": "",
+   "dst": "들려? 파도 소리야... 하늘이... 날 부르고 있어-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2778,7 +2778,7 @@
   },
   "Hollow Serenity#277": {
    "src": "...Hm?",
-   "dst": "",
+   "dst": "...흠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2788,7 +2788,7 @@
   },
   "Hollow Serenity#278": {
    "src": "Defeat Garvan.",
-   "dst": "",
+   "dst": "Garvan을 처치하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2798,7 +2798,7 @@
   },
   "Hollow Serenity#279": {
    "src": "Shatter the gemstone.",
-   "dst": "",
+   "dst": "보석을 부수세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2808,7 +2808,7 @@
   },
   "Hollow Serenity#280": {
    "src": "He's gone... All of this will finally be done...",
-   "dst": "",
+   "dst": "그이가 사라졌어... 이 모든 게 드디어 끝나...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2818,7 +2818,7 @@
   },
   "Hollow Serenity#281": {
    "src": "Thank you, stranger. Thank you for... everything.",
-   "dst": "",
+   "dst": "고마워, 낯선 이여. 전부... 고마워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2828,7 +2828,7 @@
   },
   "Hollow Serenity#282": {
    "src": "Now I'm... finally free. But... I suppose I still have unfinished business. Before I leave, I must know something.",
-   "dst": "",
+   "dst": "이제 난... 드디어 자유야. 하지만... 아직 끝내지 못한 일이 있나 봐. 떠나기 전에 알아야 할 게 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2838,7 +2838,7 @@
   },
   "Hollow Serenity#283": {
    "src": "...What has become of my daughter, Eileen? Has she suffered any more? Or did she escape?",
-   "dst": "",
+   "dst": "...내 딸 Eileen은 어떻게 됐어? 더 고통받았니? 아니면 도망쳤니?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2848,7 +2848,7 @@
   },
   "Hollow Serenity#284": {
    "src": "I must know. Is she okay?",
-   "dst": "",
+   "dst": "알아야 해. 그 애는 괜찮아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2858,7 +2858,7 @@
   },
   "Hollow Serenity#285": {
    "src": "...I see. That is... wonderful news. Thank you, human.",
-   "dst": "",
+   "dst": "...그렇구나. 그건... 정말 좋은 소식이야. 고마워, 인간.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2868,7 +2868,7 @@
   },
   "Hollow Serenity#286": {
    "src": "I must... leave... The pain...",
-   "dst": "",
+   "dst": "가야 해... 이제... 이 고통...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2878,7 +2878,7 @@
   },
   "Hollow Serenity#287": {
    "src": "...The pain is receding... The heavens are calling... for the final time...",
-   "dst": "",
+   "dst": "...고통이 가라앉고 있어... 하늘이 부르고 있어... 마지막으로...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2888,7 +2888,7 @@
   },
   "Hollow Serenity#288": {
    "src": "Goodbye... Thank you human, from the bottom of my heart.",
-   "dst": "",
+   "dst": "잘 있어... 고마워, 인간. 진심으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2898,7 +2898,7 @@
   },
   "Hollow Serenity#289": {
    "src": "...What?",
-   "dst": "",
+   "dst": "...뭐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2908,7 +2908,7 @@
   },
   "Hollow Serenity#290": {
    "src": "No.",
-   "dst": "",
+   "dst": "아니오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2918,7 +2918,7 @@
   },
   "Hollow Serenity#291": {
    "src": "No.",
-   "dst": "",
+   "dst": "아니오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2928,7 +2928,7 @@
   },
   "Hollow Serenity#292": {
    "src": "NO NO NO NO NO NO NO NOOOOO!!!!!!",
-   "dst": "",
+   "dst": "안 돼 안 돼 안 돼 안 돼애애애!!!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2938,7 +2938,7 @@
   },
   "Hollow Serenity#293": {
    "src": "TRAITOR!! I WILL MAKE YOU ALL SUFFFEEERRRR!!! (In High Gavellian)",
-   "dst": "",
+   "dst": "배신자!! 너희 모두 고통받게 해 주겠어어어!!! (High Gavellian으로)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2948,7 +2948,7 @@
   },
   "Hollow Serenity#294": {
    "src": "Bury Garvan's body in Katarin's incomplete grave.",
-   "dst": "",
+   "dst": "Garvan의 시신을 Katarin의 미완성 무덤에 묻으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",

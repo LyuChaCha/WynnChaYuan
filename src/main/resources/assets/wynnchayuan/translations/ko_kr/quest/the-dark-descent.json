@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Dark Descent",
   "count": 49,
-  "translated": 1,
+  "translated": 50,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Dark Descent#000": {
    "src": "Talk to General Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 Graken 장군에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -18,7 +18,7 @@
   },
   "The Dark Descent#001": {
    "src": "Ah, hello there chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
-   "dst": "",
+   "dst": "아, 반갑네, 친구! 옛 {p} 연대 사람을 이런 데서 볼 줄은 몰랐네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -28,7 +28,7 @@
   },
   "The Dark Descent#002": {
    "src": "I am General Graken, leader of the {p} militia. Charmed to meet you!",
-   "dst": "",
+   "dst": "나는 {p} 민병대를 이끄는 Graken 장군일세. 만나서 반갑네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -38,7 +38,7 @@
   },
   "The Dark Descent#003": {
    "src": "You've seen all the bloody zombies faffing about everywhere, yes? They're all seeming to come from this massive skull.",
-   "dst": "",
+   "dst": "사방에서 어슬렁대는 망할 좀비들 봤겠지? 전부 저 거대한 해골에서 나오는 것 같네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -48,7 +48,7 @@
   },
   "The Dark Descent#004": {
    "src": "I'm putting together a crack team for an expedition inside, but we haven't got any bleedin' idea what's down there!",
-   "dst": "",
+   "dst": "안으로 들어갈 정예 원정대를 꾸리는 중인데, 저 아래 뭐가 있는지 도통 모르겠네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -58,7 +58,7 @@
   },
   "The Dark Descent#005": {
    "src": "If you're up for it, chap, we could absolutely do with some recon 'round the old town, look for clues and the like.",
-   "dst": "",
+   "dst": "자네만 괜찮다면, 옛 마을을 정찰하며 단서 같은 걸 좀 찾아 주면 정말 고맙겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -68,7 +68,7 @@
   },
   "The Dark Descent#006": {
    "src": "I took a gander earlier, and one of the ol' houses caught my eye - it had a bloomin' great skull right over the door!",
-   "dst": "",
+   "dst": "아까 둘러봤는데, 낡은 집 하나가 눈에 띄더군. 문 바로 위에 큼지막한 해골이 달려 있었네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -78,7 +78,7 @@
   },
   "The Dark Descent#007": {
    "src": "I didn't have time to look in proper, but I'd start the investigation there, chap.",
-   "dst": "",
+   "dst": "제대로 볼 틈은 없었지만, 나라면 거기서부터 조사를 시작하겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -88,7 +88,7 @@
   },
   "The Dark Descent#008": {
    "src": "It's just south of here. The house still had solid wood boarding in it, despite the age, so look lively, chum!",
-   "dst": "",
+   "dst": "여기서 바로 남쪽일세. 오래됐는데도 판자가 아직 튼튼하니, 정신 바짝 차리게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -98,7 +98,7 @@
   },
   "The Dark Descent#009": {
    "src": "Investigate the house in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에 있는 {p}의 집을 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -108,7 +108,7 @@
   },
   "The Dark Descent#010": {
    "src": "Oh, sod it, I knew I was forgetting something! Steady there, chum! I'm on my way!",
-   "dst": "",
+   "dst": "아이고, 뭔가 잊은 게 있더라니! 버티게, 친구! 지금 가네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -118,7 +118,7 @@
   },
   "The Dark Descent#011": {
    "src": "Drat! Too late, it seems. Yes, I forgot to mention the floor was in poor condition. Up here! You took quite the tumble, are you alright?",
-   "dst": "",
+   "dst": "이런! 늦은 모양이군. 그래, 바닥 상태가 엉망이라는 말을 깜빡했네. 여기 위일세! 제대로 굴러떨어졌는데, 괜찮은가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -128,7 +128,7 @@
   },
   "The Dark Descent#012": {
    "src": "Well, there's some good news, I suppose. Still though, seems I sent you a ticket to a bit of a sticky wicket! Do you see a way out anywhere down there?",
-   "dst": "",
+   "dst": "뭐, 좋은 소식도 있긴 하군. 그래도 자네를 꽤 곤란한 데로 보내 버린 것 같네! 거기 아래 나갈 길이 보이나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -138,7 +138,7 @@
   },
   "The Dark Descent#013": {
    "src": "There's a tunnel? Aha, spiffing! I suggest you take it immediately. I'll have to return to my post now, post-haste!",
-   "dst": "",
+   "dst": "터널이 있다고? 아하, 훌륭하군! 당장 그리로 가게. 난 이제 서둘러 내 자리로 돌아가야겠네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -148,7 +148,7 @@
   },
   "The Dark Descent#014": {
    "src": "Good luck, chum! Now, back, you cads! Back I say!",
-   "dst": "",
+   "dst": "행운을 비네, 친구! 자, 물러서라, 이 악당들아! 물러서라니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158,7 +158,7 @@
   },
   "The Dark Descent#015": {
    "src": "Keheh... Come further, little human... Step into the shadows...",
-   "dst": "",
+   "dst": "크헤헤... 더 들어오너라, 작은 인간아... 그림자 속으로 발을 들여라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -168,7 +168,7 @@
   },
   "The Dark Descent#016": {
    "src": "Explore the tunnel in the basement of the house.",
-   "dst": "",
+   "dst": "집 지하실의 터널을 탐험하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -178,7 +178,7 @@
   },
   "The Dark Descent#017": {
    "src": "Investigate the strange dark realm.",
-   "dst": "",
+   "dst": "기묘한 어둠의 세계를 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -188,7 +188,7 @@
   },
   "The Dark Descent#018": {
    "src": "Welcome...",
-   "dst": "",
+   "dst": "어서 오너라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -198,7 +198,7 @@
   },
   "The Dark Descent#019": {
    "src": "Scout! Report your findings, immediately! How many corrupteds are coming?",
-   "dst": "",
+   "dst": "척후병! 당장 보고해라! 타락한 놈들이 얼마나 오고 있나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -208,7 +208,7 @@
   },
   "The Dark Descent#020": {
    "src": "I...there...too many...th-thousands, at...at least...",
-   "dst": "",
+   "dst": "저... 저기... 너무 많습니다... 수, 수천... 적어도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -218,7 +218,7 @@
   },
   "The Dark Descent#021": {
    "src": "Thousands...? This is far worse than I expected. Men! Prepare for-",
-   "dst": "",
+   "dst": "수천...? 예상보다 훨씬 심각하군. 전원! 전투 준비-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -228,7 +228,7 @@
   },
   "The Dark Descent#022": {
    "src": "No point...we're...doomed...",
-   "dst": "",
+   "dst": "소용없어... 우린... 끝났어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -238,7 +238,7 @@
   },
   "The Dark Descent#023": {
    "src": "Wait, w-what's going on? What's happening to you?!",
-   "dst": "",
+   "dst": "잠깐, 무, 무슨 일이지? 너 왜 그러는 거야?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -248,7 +248,7 @@
   },
   "The Dark Descent#024": {
    "src": "Please, stop this! Whoever you are, leave me and my family in peace! What did we ever do to deserve this?!",
-   "dst": "",
+   "dst": "제발, 그만해요! 누군지 몰라도 나와 내 가족을 내버려 둬요! 우리가 대체 뭘 잘못했다고 이래요?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -258,7 +258,7 @@
   },
   "The Dark Descent#025": {
    "src": "Ah, but if you had only said so sooner! They have already left this mortal coil...oh, what a shame.",
-   "dst": "",
+   "dst": "아, 좀 더 일찍 말하지 그랬느냐! 그들은 이미 이승을 떠났는데... 오, 참 안됐구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -268,7 +268,7 @@
   },
   "The Dark Descent#026": {
    "src": "Y-you...I thought they...oh, god, no...",
-   "dst": "",
+   "dst": "다, 당신... 그들이... 오, 신이여, 안 돼...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -278,7 +278,7 @@
   },
   "The Dark Descent#027": {
    "src": "Hush now. I will ensure that you and your family are reunited. You will even be able to partake in...keheh...family outings, under my watchful eye...",
-   "dst": "",
+   "dst": "쉿, 조용히. 너와 네 가족을 반드시 다시 만나게 해 주마. 내 눈길 아래서... 크헤헤... 가족 나들이도 즐길 수 있을 게다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -288,7 +288,7 @@
   },
   "The Dark Descent#028": {
    "src": "Wha...you mean... N-no, please! I don't want to hurt anyone! I don't want to die!!",
-   "dst": "",
+   "dst": "뭐... 그 말은... 아, 안 돼요, 제발! 아무도 해치고 싶지 않아요! 죽고 싶지 않아요!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -298,7 +298,7 @@
   },
   "The Dark Descent#029": {
    "src": "Aha, naive girl. How cute, you believe you have a choice in the matter. What you want, is not what I need.",
-   "dst": "",
+   "dst": "아하, 순진한 아가씨. 선택권이 있다고 믿다니 귀엽구나. 네가 원하는 건 내게 필요한 게 아니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -308,7 +308,7 @@
   },
   "The Dark Descent#030": {
    "src": "Heheh...do you see now?",
-   "dst": "",
+   "dst": "헤헤... 이제 알겠느냐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -318,7 +318,7 @@
   },
   "The Dark Descent#031": {
    "src": "Do you see how easily this place fell? How quickly I became its master? And how I could simply dispose of you without a second thought?",
-   "dst": "",
+   "dst": "이곳이 얼마나 쉽게 무너졌는지 보이느냐? 내가 얼마나 빨리 주인이 됐는지? 너 따위는 생각할 것도 없이 치워 버릴 수 있다는 것도?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -328,7 +328,7 @@
   },
   "The Dark Descent#032": {
    "src": "Hundreds slaughtered in mere moments... only to rise again as my soldiers in infinite amounts.",
-   "dst": "",
+   "dst": "눈 깜짝할 새 수백이 도륙당했다... 끝없는 내 병사로 다시 일어서기 위해서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -338,7 +338,7 @@
   },
   "The Dark Descent#033": {
    "src": "You can barely keep them at bay on the surface, and yet you think you can enter my own domain, to challenge me in the Underworld?",
-   "dst": "",
+   "dst": "지상에서도 간신히 막아 내는 주제에, 내 영역에 들어와 저승에서 나에게 도전할 수 있다고 생각하느냐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -348,7 +348,7 @@
   },
   "The Dark Descent#034": {
    "src": "You will fail, and I will be free to string your body up like a puppet and make you dance for me.",
-   "dst": "",
+   "dst": "너는 실패할 것이고, 나는 네 몸을 꼭두각시처럼 매달아 내 앞에서 춤추게 할 것이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -358,7 +358,7 @@
   },
   "The Dark Descent#035": {
    "src": "So enter the mouth of the skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
-   "dst": "",
+   "dst": "그러니 해골의 입으로 들어오너라, 병사여. 땅 밑으로 내려오거라. 다음 만남이 기대되는구나, 크헤헤헤...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -368,7 +368,7 @@
   },
   "The Dark Descent#036": {
    "src": "Leave the strange dark realm.",
-   "dst": "",
+   "dst": "기묘한 어둠의 세계에서 벗어나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -378,7 +378,7 @@
   },
   "The Dark Descent#037": {
    "src": "Return the ruby to Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 Graken에게 루비를 돌려주세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -388,7 +388,7 @@
   },
   "The Dark Descent#038": {
    "src": "Return to your world, now. And if you still want to challenge me... I'll be waiting.",
-   "dst": "",
+   "dst": "이제 네 세계로 돌아가라. 그래도 내게 도전하고 싶다면... 기다리고 있으마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -398,7 +398,7 @@
   },
   "The Dark Descent#039": {
    "src": "Hey! Come on, come over here! Quit milling about with the zombies, chap!",
-   "dst": "",
+   "dst": "이봐! 어서, 이리 오게! 좀비들이랑 어슬렁대지 말고, 친구!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -408,7 +408,7 @@
   },
   "The Dark Descent#040": {
    "src": "Oi! Hallo?! Chum? Why're you wandering round all bog-eyed? Come back to me now!",
-   "dst": "",
+   "dst": "어이! 여보게?! 친구? 왜 멍한 눈으로 헤매고 있나? 어서 정신 차리게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -418,7 +418,7 @@
   },
   "The Dark Descent#041": {
    "src": "Come on, pip pip! Let's see a bit more colour in your eyes- There we are! Back now, chap?",
-   "dst": "",
+   "dst": "자, 힘내게! 눈에 생기가 좀 돌아야지- 옳지! 돌아왔나, 친구?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -428,7 +428,7 @@
   },
   "The Dark Descent#042": {
    "src": "Capital! You had me quite worried for a spot, there. Do bubble about just what went on down there, mm?",
-   "dst": "",
+   "dst": "훌륭해! 잠깐 꽤 걱정했다네. 거기 아래서 무슨 일이 있었는지 얘기 좀 해 보게, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -438,7 +438,7 @@
   },
   "The Dark Descent#043": {
    "src": "But, you were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
-   "dst": "",
+   "dst": "그런데 자네는 노망난 할멈처럼 비틀거리고, 눈은 크림처럼 허옇고, Charon인가 뭔가를 계속 중얼거렸다네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -448,7 +448,7 @@
   },
   "The Dark Descent#044": {
    "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a jolly good success!",
-   "dst": "",
+   "dst": "그자가 자네를 한 바퀴 끌고 다녔나 보군? 뭐, 확실히 죽지는 않았으니, 이번 작전은 대성공이라 해도 되겠네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -458,7 +458,7 @@
   },
   "The Dark Descent#045": {
    "src": "Your discoveries fit in jolly-well with what we already know - and I'm convinced. To stop all these bleedin' zombos, we're going to have to go down under.",
-   "dst": "",
+   "dst": "자네가 알아낸 건 우리가 아는 것과 딱 맞아떨어지네. 확신이 섰어. 이 망할 좀비들을 막으려면 지하로 내려가야 하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -468,7 +468,7 @@
   },
   "The Dark Descent#046": {
    "src": "Preliminary expeditions have brought back some real nasty bits, brains and such - but also some fancy-as-you-like jewellery!",
-   "dst": "",
+   "dst": "선발 원정대가 뇌 같은 아주 고약한 것들을 가져왔지만, 꽤 근사한 장신구도 가져왔다네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -478,7 +478,7 @@
   },
   "The Dark Descent#047": {
    "src": "Take some with you, remind you what we're up against. But keep your eyes on the prize!",
-   "dst": "",
+   "dst": "몇 개 가져가게. 우리가 뭘 상대하는지 잊지 않도록. 하지만 목표에서 눈을 떼지 말게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -488,7 +488,7 @@
   },
   "The Dark Descent#048": {
    "src": "When you're ready, I'd be chuffed to have you along again in the expedition down into the depths, old bean!",
-   "dst": "",
+   "dst": "준비되면 깊은 곳으로 내려가는 원정에 다시 함께해 주게. 그러면 정말 기쁘겠네, 친구!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",

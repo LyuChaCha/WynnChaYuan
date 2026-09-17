@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Corrupted Village",
   "count": 55,
-  "translated": 1,
+  "translated": 56,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Corrupted Village#000": {
    "src": "Speak to Orikal outside the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p} 밖에서 Orikal과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -18,7 +18,7 @@
   },
   "The Corrupted Village#001": {
    "src": "Go away! I know you're angry but there's nothing to gain her-",
-   "dst": "",
+   "dst": "저리 가! 화난 건 알지만 여기서 얻을 건 없-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -28,7 +28,7 @@
   },
   "The Corrupted Village#002": {
    "src": "Oh, you seem calm. What are you doing here? Bit close to the portal for a soldier isn't it?",
-   "dst": "",
+   "dst": "아, 차분해 보이네요. 여긴 무슨 일이죠? 병사치곤 포털에 너무 가깝지 않나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -38,7 +38,7 @@
   },
   "The Corrupted Village#003": {
    "src": "I see, you were sent to aid the public. Perfect.",
-   "dst": "",
+   "dst": "그렇군요, 주민을 도우러 파견됐군요. 잘됐네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -48,7 +48,7 @@
   },
   "The Corrupted Village#004": {
    "src": "I am Orikal, I'm trying to stop everyone here from killing each other.",
-   "dst": "",
+   "dst": "난 Orikal이에요. 여기 사람들이 서로 죽이지 못하게 막는 중이죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -58,7 +58,7 @@
   },
   "The Corrupted Village#005": {
    "src": "Do you see all these spikes? I believe they are the thing spreading corruption.",
-   "dst": "",
+   "dst": "이 가시들 보여요? 이게 타락을 퍼뜨리는 것 같아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -68,7 +68,7 @@
   },
   "The Corrupted Village#006": {
    "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
-   "dst": "",
+   "dst": "타락은 인간에겐 다른 존재와 다르게 작용해요. 훨씬 느리고, 우리에겐 정신의 감염에 가깝죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -78,7 +78,7 @@
   },
   "The Corrupted Village#007": {
    "src": "Could you inspect the peak of the spike in the village for me? It might give me valuable insight. Thanks!",
-   "dst": "",
+   "dst": "마을에 있는 가시 꼭대기를 조사해 줄래요? 중요한 단서가 될지도 몰라요. 고마워요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -88,7 +88,7 @@
   },
   "The Corrupted Village#008": {
    "src": "Examine the nearby corrupted spike to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}], 북동쪽 근처의 타락한 가시를 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -98,7 +98,7 @@
   },
   "The Corrupted Village#009": {
    "src": "Climb the spike to see if you can find anything useful about it's existance.",
-   "dst": "",
+   "dst": "가시에 올라가 그 존재에 관해 쓸 만한 걸 찾을 수 있는지 보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -108,7 +108,7 @@
   },
   "The Corrupted Village#010": {
    "src": "Report back to Orikal about your observations.",
-   "dst": "",
+   "dst": "Orikal에게 돌아가 관찰한 내용을 보고하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -118,7 +118,7 @@
   },
   "The Corrupted Village#011": {
    "src": "That was quick... did you find anything?",
-   "dst": "",
+   "dst": "빠르네요... 뭔가 찾았어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -128,7 +128,7 @@
   },
   "The Corrupted Village#012": {
    "src": "Really, nothing? You didn't even feel anything?",
-   "dst": "",
+   "dst": "정말 아무것도요? 아무 느낌도 없었어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -138,7 +138,7 @@
   },
   "The Corrupted Village#013": {
    "src": "How can it be just a spike? It must be spreading corruption somehow.",
-   "dst": "",
+   "dst": "어떻게 그냥 가시일 수 있죠? 어떻게든 타락을 퍼뜨리고 있을 텐데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -148,7 +148,7 @@
   },
   "The Corrupted Village#014": {
    "src": "Then perhaps my second theory was correct. I will have to send you underground.",
-   "dst": "",
+   "dst": "그럼 두 번째 가설이 맞나 봐요. 당신을 지하로 보내야겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -158,7 +158,7 @@
   },
   "The Corrupted Village#015": {
    "src": "There are old cave systems around here from the mining days. I sent two men down to excavate the spike, can you go down and help?",
-   "dst": "",
+   "dst": "이 근처엔 채광 시절의 오래된 동굴이 있어요. 가시를 파내라고 두 사람을 보냈는데, 내려가서 도와줄래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -168,7 +168,7 @@
   },
   "The Corrupted Village#016": {
    "src": "The entrance is a little to the northeast. In fact, you should have passed it on your way to the spike.",
-   "dst": "",
+   "dst": "입구는 북동쪽으로 조금 가면 있어요. 사실 가시로 가는 길에 지나쳤을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -178,7 +178,7 @@
   },
   "The Corrupted Village#017": {
    "src": "Find the excavators inside the nearby cave to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}], 북동쪽 근처 동굴 안에서 굴착꾼들을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -188,7 +188,7 @@
   },
   "The Corrupted Village#018": {
    "src": "Find the excavators inside the cave.",
-   "dst": "",
+   "dst": "동굴 안에서 굴착꾼들을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -198,7 +198,7 @@
   },
   "The Corrupted Village#019": {
    "src": "This is insane, why are we here?! We're looking for corruption you know that right?",
-   "dst": "",
+   "dst": "미친 짓이야, 우리가 왜 여기 있어?! 우리 타락을 찾고 있는 거 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -208,7 +208,7 @@
   },
   "The Corrupted Village#020": {
    "src": "Calm down. All we have to do is keep digging. Besides, he did say he'd pay us a lot, so stop being mad.",
-   "dst": "",
+   "dst": "진정해. 계속 파기만 하면 돼. 게다가 돈 많이 준다고 했잖아, 그만 화내.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -218,7 +218,7 @@
   },
   "The Corrupted Village#021": {
    "src": "Forget it, I don't care anymore, just prime the explosive and get clear of the blast!",
-   "dst": "",
+   "dst": "됐어, 이제 신경 안 써. 폭약 장전하고 폭발 범위에서 벗어나!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -228,7 +228,7 @@
   },
   "The Corrupted Village#022": {
    "src": "Well, that did the trick. Let's take a look.",
-   "dst": "",
+   "dst": "음, 효과가 있었네. 한번 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -238,7 +238,7 @@
   },
   "The Corrupted Village#023": {
    "src": "Oh my... What... is this?",
-   "dst": "",
+   "dst": "세상에... 이건... 뭐야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -248,7 +248,7 @@
   },
   "The Corrupted Village#024": {
    "src": "It almost looks like a giant spike... Woah. How deep does this thing go?",
-   "dst": "",
+   "dst": "거대한 가시처럼 보이는데... 와. 이거 얼마나 깊이 박힌 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -258,7 +258,7 @@
   },
   "The Corrupted Village#025": {
    "src": "Well, you know what? We did our job, so honestly I don't care. Let's get out of he-",
-   "dst": "",
+   "dst": "있잖아, 우린 할 일 했으니 솔직히 상관없어. 여기서 나가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -268,7 +268,7 @@
   },
   "The Corrupted Village#026": {
    "src": "Orikal? We’re done! Pay up! I want out. This place is getting to me.",
-   "dst": "",
+   "dst": "Orikal? 다 끝났어! 돈 내놔! 난 빠질래. 이곳은 사람을 미치게 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -278,7 +278,7 @@
   },
   "The Corrupted Village#027": {
    "src": "I came when I heard the explosion. I thought you'd hurt yourselves.",
-   "dst": "",
+   "dst": "폭발 소리 듣고 왔어요. 다친 줄 알았네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -288,7 +288,7 @@
   },
   "The Corrupted Village#028": {
    "src": "Well, I'll be darned. The spike goes this far down? And it looks like it goes even deeper than this!",
-   "dst": "",
+   "dst": "이럴 수가. 가시가 여기까지 내려와? 게다가 더 깊이 이어지는 것 같아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -298,7 +298,7 @@
   },
   "The Corrupted Village#029": {
    "src": "Well, I don't know about you, but I say we blow it to shreds! That oughta get rid of this spike!",
-   "dst": "",
+   "dst": "너희는 모르겠지만, 난 산산조각 내자고 하겠어! 그럼 이 가시도 없어지겠지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -308,7 +308,7 @@
   },
   "The Corrupted Village#030": {
    "src": "For once, I agree. I'll do it, you guys just get clear.",
-   "dst": "",
+   "dst": "이번만은 동의해요. 내가 할 테니 다들 물러나요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -318,7 +318,7 @@
   },
   "The Corrupted Village#031": {
    "src": "...Wow, that did nothing. We're going to need something MUCH more powerful than TNT...",
-   "dst": "",
+   "dst": "...와, 아무 소용 없네요. TNT보다 훨씬 강한 게 필요하겠어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -328,7 +328,7 @@
   },
   "The Corrupted Village#032": {
    "src": "Oh yeah? And just what would you have in mind?",
-   "dst": "",
+   "dst": "그래? 그럼 뭘 생각하고 있는데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -338,7 +338,7 @@
   },
   "The Corrupted Village#033": {
    "src": "Well, it's sorta complicated. That's why I've decided to give our new friend here the job of acquiring this explosive.",
-   "dst": "",
+   "dst": "음, 좀 복잡해요. 그래서 그 폭약을 구하는 일은 여기 새 친구한테 맡기기로 했죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -348,7 +348,7 @@
   },
   "The Corrupted Village#034": {
    "src": "Oh yeah, we were so busy with this spike, we forgot to address you! Sorry about that.",
-   "dst": "",
+   "dst": "아 맞다, 가시에 정신 팔려서 인사도 못 했네! 미안해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -358,7 +358,7 @@
   },
   "The Corrupted Village#035": {
    "src": "Well if you don't need us anymore then we'll just be on our way... WITH our money! So hand it over please.",
-   "dst": "",
+   "dst": "이제 우리 필요 없으면 갈게... 돈은 챙겨서! 그러니 내놔.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -368,7 +368,7 @@
   },
   "The Corrupted Village#036": {
    "src": "Alright, fine. Here's your pay. Thank you for your help.",
-   "dst": "",
+   "dst": "좋아요, 알았어요. 여기 보수예요. 도와줘서 고마워요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -378,7 +378,7 @@
   },
   "The Corrupted Village#037": {
    "src": "Gah! That's hardly anything! I'm not even surprised. Let's just go.",
-   "dst": "",
+   "dst": "으! 이게 뭐야, 쥐꼬리잖아! 놀랍지도 않다. 그냥 가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -388,7 +388,7 @@
   },
   "The Corrupted Village#038": {
    "src": "Anyway, come meet me back at my tent, friend. We will discuss what to do then.",
-   "dst": "",
+   "dst": "아무튼 친구, 내 천막으로 와요. 거기서 어떻게 할지 얘기하죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -398,7 +398,7 @@
   },
   "The Corrupted Village#039": {
    "src": "Exit the cave and speak to Orikal in his tent about his plan for destroying the spike.",
-   "dst": "",
+   "dst": "동굴을 나와 천막에 있는 Orikal과 가시 파괴 계획에 대해 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -408,7 +408,7 @@
   },
   "The Corrupted Village#040": {
    "src": "Okay. I happen to know a recipe for creating an extremely lethal magical explosive.",
-   "dst": "",
+   "dst": "좋아요. 마침 엄청나게 치명적인 마법 폭약 제조법을 알고 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -418,7 +418,7 @@
   },
   "The Corrupted Village#041": {
    "src": "There are {~} main ingredients you will need to get me: [Stabilized Corrupted Ore], [Incendiary Fluid], and a [Switch Fuse] to activate it.",
-   "dst": "",
+   "dst": "필요한 주재료는 {~}가지예요: [Stabilized Corrupted Ore], [Incendiary Fluid], 그리고 작동시킬 [Switch Fuse].",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -428,7 +428,7 @@
   },
   "The Corrupted Village#042": {
    "src": "There used to be a small mining camp a little east of this town. It's abandoned now, but you should still be able to find what you need there.",
-   "dst": "",
+   "dst": "이 마을 동쪽에 작은 채광 야영지가 있었어요. 지금은 버려졌지만 필요한 건 찾을 수 있을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -438,7 +438,7 @@
   },
   "The Corrupted Village#043": {
    "src": "It's not the big ol' abandoned mines, mind you. It's a smaller camp, in fact you should be able to see it from this village.",
-   "dst": "",
+   "dst": "그 커다란 버려진 광산 말고요. 더 작은 야영지인데, 사실 이 마을에서도 보일 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -448,7 +448,7 @@
   },
   "The Corrupted Village#044": {
    "src": "Best of luck! Oh, and also, try not to die please. These ingredients do indeed promote environmental hazards.",
-   "dst": "",
+   "dst": "행운을 빌어요! 아, 그리고 제발 죽지 마요. 이 재료들은 정말로 주변을 위험하게 만들거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -458,7 +458,7 @@
   },
   "The Corrupted Village#045": {
    "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 채광 야영지에서 TNT에 쓸 [Stabilized Corrupted Ore], [Incendiary Fluid], [Switch Fuse]를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -468,7 +468,7 @@
   },
   "The Corrupted Village#047": {
    "src": "You got 'em all! Excellent, this is exactly what we need.",
-   "dst": "",
+   "dst": "다 구했네요! 훌륭해요, 딱 필요한 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -478,7 +478,7 @@
   },
   "The Corrupted Village#048": {
    "src": "Alright, stand back. I have actually never made this before, so let's hope I don't cause a disaster.",
-   "dst": "",
+   "dst": "좋아요, 물러나요. 사실 이거 처음 만들어 보니까 사고 안 나길 빌어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -488,7 +488,7 @@
   },
   "The Corrupted Village#049": {
    "src": "Phew, glad nothing tragic happened there. This should be it, now go take it back down to the spike and destroy it once and for all!",
-   "dst": "",
+   "dst": "휴, 끔찍한 일 없어서 다행이에요. 이거면 돼요, 가시로 가져가서 완전히 끝장내 줘요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -498,7 +498,7 @@
   },
   "The Corrupted Village#050": {
    "src": "Bring the explosive to the spike in the cave and use it to destroy the spike.",
-   "dst": "",
+   "dst": "폭약을 동굴 속 가시로 가져가 가시를 파괴하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -508,7 +508,7 @@
   },
   "The Corrupted Village#051": {
    "src": "Report to Orikal about your success.",
-   "dst": "",
+   "dst": "Orikal에게 성공을 보고하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -518,7 +518,7 @@
   },
   "The Corrupted Village#052": {
    "src": "Oh, do you feel that? It's like a buzzing in my ears I never knew about has just vanished.",
-   "dst": "",
+   "dst": "아, 느껴져요? 몰랐던 귓가의 윙윙거림이 방금 사라진 것 같아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -528,7 +528,7 @@
   },
   "The Corrupted Village#053": {
    "src": "I think that worked you know. It seems the power of the spike comes from the root...",
-   "dst": "",
+   "dst": "성공한 것 같아요. 가시의 힘은 뿌리에서 나오나 봐요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -538,7 +538,7 @@
   },
   "The Corrupted Village#054": {
    "src": "But what is it connected to? That's for another day. The main thing is the village is safe.",
-   "dst": "",
+   "dst": "그런데 뭐랑 연결된 걸까요? 그건 다음에 알아보죠. 중요한 건 마을이 안전하다는 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -548,7 +548,7 @@
   },
   "The Corrupted Village#055": {
    "src": "Here, take this for your help. I found this potato in one of the houses around here, and I sure as heck don't want it!",
-   "dst": "",
+   "dst": "자, 도와준 보답이에요. 이 근처 집에서 찾은 감자인데, 난 정말 필요 없거든요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",

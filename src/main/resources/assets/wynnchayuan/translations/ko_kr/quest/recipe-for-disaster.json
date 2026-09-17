@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Recipe For Disaster",
   "count": 139,
-  "translated": 0,
+  "translated": 139,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p}의 [{~}, {~}, -{~}]에서 요리사 Hamsey와 만나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -18,7 +18,7 @@
   },
   "Recipe For Disaster#001": {
    "src": "Ah, bonjour! Welcome to my restaurant, allow me to lead you to your seat-",
-   "dst": "",
+   "dst": "Ah, bonjour! 제 레스토랑에 오신 걸 환영해요, 자리로 안내해 드리죠-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -28,7 +28,7 @@
   },
   "Recipe For Disaster#002": {
    "src": "Oh do my eyes deceive me? Serais-ce possible?!",
-   "dst": "",
+   "dst": "어라, 제 눈이 잘못됐나요? Serais-ce possible?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -38,7 +38,7 @@
   },
   "Recipe For Disaster#003": {
    "src": "It is you... the novice soldier turned hero of legends! Who would have thought?!",
-   "dst": "",
+   "dst": "당신이군요... 신참 병사에서 전설의 영웅이 된 분! 누가 알았겠어요?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -48,7 +48,7 @@
   },
   "Recipe For Disaster#004": {
    "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honore! Someone like you sitting in my restaurant!",
-   "dst": "",
+   "dst": "각지에서 당신의 활약을 들었어요, mon ami! Je suis honore! 당신 같은 분이 제 레스토랑에 앉아 있다니!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -58,7 +58,7 @@
   },
   "Recipe For Disaster#005": {
    "src": "Je suis, bien sur... Le Chef Hamsey! Famed across the lands for my flavors, as you are for your weapon!",
-   "dst": "",
+   "dst": "그리고 저는, bien sur... Le Chef Hamsey! 당신이 무기로 유명하듯, 저는 맛으로 이름났죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -68,7 +68,7 @@
   },
   "Recipe For Disaster#006": {
    "src": "I boast, I boast. Je peu t'offrir un plat... but perhaps I have a different proposition for us both.",
-   "dst": "",
+   "dst": "자랑이 심했네요. Je peu t'offrir un plat... 하지만 우리 둘을 위한 다른 제안이 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -78,7 +78,7 @@
   },
   "Recipe For Disaster#007": {
    "src": "You may have mastered the art of battle, my friend, but what of... L'Art de la Cuisine?!",
-   "dst": "",
+   "dst": "전투의 기술은 통달했겠지만, 친구, 그럼... L'Art de la Cuisine은요?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -88,7 +88,7 @@
   },
   "Recipe For Disaster#008": {
    "src": "Follow me into the kitchen behind me, and I will tell you more.",
-   "dst": "",
+   "dst": "제 뒤의 주방으로 따라오세요, 거기서 더 말씀드리죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -98,7 +98,7 @@
   },
   "Recipe For Disaster#009": {
    "src": "Find Chef Hamsey in his kitchen.",
-   "dst": "",
+   "dst": "주방에 있는 요리사 Hamsey를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -108,7 +108,7 @@
   },
   "Recipe For Disaster#010": {
    "src": "Welcome to my kitchen! C'est beau, non?",
-   "dst": "",
+   "dst": "제 주방에 어서 오세요! C'est beau, non?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -118,7 +118,7 @@
   },
   "Recipe For Disaster#011": {
    "src": "It may be on fire, but... que serais la Cuisine sans une touche de danger, eh?!",
-   "dst": "",
+   "dst": "불이 좀 났지만... que serais la Cuisine sans une touche de danger, eh?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -128,7 +128,7 @@
   },
   "Recipe For Disaster#012": {
    "src": "So, back to the challenge. What do you say to a bit of friendly competition, hehe?",
-   "dst": "",
+   "dst": "자, 도전 얘기로 돌아가죠. 친선 요리 대결 한판 어때요, 헤헤?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -138,7 +138,7 @@
   },
   "Recipe For Disaster#013": {
    "src": "You can work with one of my three best chefs on a dish and present it to me once you're done!",
-   "dst": "",
+   "dst": "제 최고의 요리사 셋 중 한 명과 요리를 만들어서 완성되면 저한테 가져오세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -148,7 +148,7 @@
   },
   "Recipe For Disaster#014": {
    "src": "I, of course, will judge your dish based on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
-   "dst": "",
+   "dst": "물론 저는 스물아홉 가지 Principes de Cuisine으로 심사하죠 - 식감, 플레이팅, 독창성...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -158,7 +158,7 @@
   },
   "Recipe For Disaster#015": {
    "src": "... aroma, magical ability... oh, and flavour!",
-   "dst": "",
+   "dst": "... 향, 마법적 능력... 아, 그리고 맛!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -168,7 +168,7 @@
   },
   "Recipe For Disaster#016": {
    "src": "S'il te plait! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
-   "dst": "",
+   "dst": "S'il te plait! 요리사들에게 인사하고, 누구와 함께할지 정하면 돌아오세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -178,7 +178,7 @@
   },
   "Recipe For Disaster#017": {
    "src": "Speak to all three chefs in Hamsey's kitchen.",
-   "dst": "",
+   "dst": "Hamsey의 주방에 있는 요리사 세 명과 모두 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -188,7 +188,7 @@
   },
   "Recipe For Disaster#018": {
    "src": "Heya! You must be the adventurer that Hamsey told me about. You know, he was almost ecstatic, but don't tell him I said that!",
-   "dst": "",
+   "dst": "안녕하세요! Hamsey가 말한 모험가시죠? 그분 거의 들떠서 난리였어요, 제가 말했다고는 하지 마세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -198,7 +198,7 @@
   },
   "Recipe For Disaster#019": {
    "src": "Oh, a cook-off? How exciting! I'll gladly help you out. Maybe this way I can prove myself a bit more to the others...?",
-   "dst": "",
+   "dst": "어, 요리 대결요? 신난다! 기꺼이 도울게요. 이러면 다른 사람들한테 저를 좀 더 증명할 수 있을지도...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -208,7 +208,7 @@
   },
   "Recipe For Disaster#020": {
    "src": "If we work together, we can make a Seasoned Voidroot Stew, how does that sound?",
-   "dst": "",
+   "dst": "같이 하면 Seasoned Voidroot Stew를 만들 수 있어요, 어때요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -218,7 +218,7 @@
   },
   "Recipe For Disaster#021": {
    "src": "You need to talk to the other chefs before deciding what to make, though!",
-   "dst": "",
+   "dst": "그래도 뭘 만들지 정하기 전에 다른 요리사들과도 얘기해 보세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -228,7 +228,7 @@
   },
   "Recipe For Disaster#022": {
    "src": "Good friend of Hamsey's, are you? I'll believe it when - no, if - you somehow win this competition.",
-   "dst": "",
+   "dst": "Hamsey 절친이라고? 네가 이 대결에서 이기면 - 아니, 이긴다면 - 믿어 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -238,7 +238,7 @@
   },
   "Recipe For Disaster#023": {
    "src": "I don't need any amateurs like yourself getting in my way when I'm cooking up a storm!",
-   "dst": "",
+   "dst": "한창 요리 솜씨 부릴 때 너 같은 아마추어가 방해하는 건 필요 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -248,7 +248,7 @@
   },
   "Recipe For Disaster#024": {
    "src": "Are you still here? Just... go chitchat to someone else, please.",
-   "dst": "",
+   "dst": "아직 여기 있어? 그냥... 다른 데 가서 수다 떨어 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -258,7 +258,7 @@
   },
   "Recipe For Disaster#025": {
    "src": "Yo, dawg. Name's Frank. Hamsey said you guys go waaay back. Any friend of Hamsey's is good with me, man.",
-   "dst": "",
+   "dst": "요, 친구. 난 Frank야. Hamsey가 너희 엄청 오래된 사이래. Hamsey 친구면 나한테도 친구지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -268,7 +268,7 @@
   },
   "Recipe For Disaster#026": {
    "src": "Nothin' too sure on what we're gonna cook yet, figure I'll dream somethin' up before the time comes.",
-   "dst": "",
+   "dst": "뭘 요리할지는 아직 잘 모르겠어, 때가 되면 뭐든 떠오르겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -278,7 +278,7 @@
   },
   "Recipe For Disaster#027": {
    "src": "Thinkin' a pie, maybe? Not too much effort there, can't go far wrong, right?",
-   "dst": "",
+   "dst": "파이는 어때? 손도 별로 안 가고, 크게 망칠 일도 없잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -288,7 +288,7 @@
   },
   "Recipe For Disaster#028": {
    "src": "Talk to Hamsey and choose a chef to work with.",
-   "dst": "",
+   "dst": "Hamsey와 대화하고 함께할 요리사를 고르세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -298,7 +298,7 @@
   },
   "Recipe For Disaster#029": {
    "src": "Ah, you have introduced yourself to tous mes cuisiners? Who do you want to work with?!",
-   "dst": "",
+   "dst": "Ah, tous mes cuisiners와 인사를 나눴나요? 누구와 함께하고 싶어요?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -308,7 +308,7 @@
   },
   "Recipe For Disaster#030": {
    "src": "Ah, Brie! An excellent chef... and an even better cheese! I jest, I jest. You will work well together, I am certain.",
-   "dst": "",
+   "dst": "Ah, Brie! 훌륭한 요리사죠... 치즈로는 더 훌륭하고요! 농담이에요, 농담. 분명 잘 맞을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -318,7 +318,7 @@
   },
   "Recipe For Disaster#031": {
    "src": "Ah, Kale. One of my most talented chefs, though he can be stubborn at times!",
-   "dst": "",
+   "dst": "Ah, Kale. 가장 재능 있는 요리사 중 하나죠, 가끔 고집이 세지만요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -328,7 +328,7 @@
   },
   "Recipe For Disaster#032": {
    "src": "Frank! Whilst he may seem rather... relaxed, at times, I assure you he is a most capable chef!",
-   "dst": "",
+   "dst": "Frank! 가끔은 좀... 느긋해 보여도, 정말 유능한 요리사라고 장담해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -338,7 +338,7 @@
   },
   "Recipe For Disaster#033": {
    "src": "Maitenant, mon ami, head over to your chef and start cooking!",
-   "dst": "",
+   "dst": "Maitenant, mon ami, 요리사에게 가서 요리를 시작하세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -348,7 +348,7 @@
   },
   "Recipe For Disaster#034": {
    "src": "Talk to your chosen chef about the dish.",
-   "dst": "",
+   "dst": "고른 요리사와 요리에 대해 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -358,7 +358,7 @@
   },
   "Recipe For Disaster#035": {
    "src": "Heya again! So you decided to make the Seasoned Voidroot Stew with me? Hurray!",
-   "dst": "",
+   "dst": "또 만났네요! 저랑 Seasoned Voidroot Stew를 만들기로 했어요? 만세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -368,7 +368,7 @@
   },
   "Recipe For Disaster#036": {
    "src": "It's not quite as easy as it might seem, but I think together we'll be able to handle it.",
-   "dst": "",
+   "dst": "보기만큼 쉽진 않지만, 우리 둘이면 해낼 수 있을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -378,7 +378,7 @@
   },
   "Recipe For Disaster#037": {
    "src": "Like I said before, about proving myself... I'm the newest chef here at the kitchen and some of the other chefs disapprove of my ideas. This could be my chance!",
-   "dst": "",
+   "dst": "아까 말한 증명 얘기요... 제가 이 주방 막내라서, 몇몇 요리사들이 제 아이디어를 안 좋아해요. 이번이 기회일지도 몰라요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -388,7 +388,7 @@
   },
   "Recipe For Disaster#038": {
    "src": "I've been perfecting the recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
-   "dst": "",
+   "dst": "Voidroot Stew 레시피를 몇 달째 다듬어 왔는데, 드디어 제 실력을 모두에게 보여 줄 기회예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -398,7 +398,7 @@
   },
   "Recipe For Disaster#039": {
    "src": "The first one is some [Snail Slime] available on Snail Island! We only need one for this dish.",
-   "dst": "",
+   "dst": "첫 번째는 Snail Island에서 구할 수 있는 [Snail Slime]이에요! 이 요리엔 하나면 돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -408,7 +408,7 @@
   },
   "Recipe For Disaster#040": {
    "src": "Next up, we need some [Voidroot], a super rare root found deep in the Void. I've heard someone in the {p} can take you down there.",
-   "dst": "",
+   "dst": "다음은 [Voidroot]가 필요해요, 공허 깊은 곳에서 나는 아주 희귀한 뿌리죠. {p}에 거기로 데려다줄 사람이 있대요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -418,7 +418,7 @@
   },
   "Recipe For Disaster#041": {
    "src": "Lastly, we need some [Moonsalt], which is famously hard to obtain. Luckily, self-proclaimed 'Space Wizard' Astralaus should have some, so you can just pop over to his tower and ask for some!",
-   "dst": "",
+   "dst": "마지막으로 [Moonsalt]가 필요한데, 구하기 어렵기로 유명해요. 다행히 자칭 '우주 마법사' Astralaus가 갖고 있을 테니, 그의 탑에 가서 좀 달라고 하면 돼요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -428,7 +428,7 @@
   },
   "Recipe For Disaster#042": {
    "src": "And that should do it! I'll give you a Recipe Book, just right-click to open it up and track your ingredients. Good luck!",
-   "dst": "",
+   "dst": "그럼 다 됐어요! 레시피 북을 드릴게요, 우클릭하면 열려서 재료를 확인할 수 있어요. 행운을 빌어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -438,7 +438,7 @@
   },
   "Recipe For Disaster#043": {
    "src": "Ugh. Stay out of my way, and we'll get along just fine.",
-   "dst": "",
+   "dst": "하. 내 앞길만 막지 마, 그럼 잘 지낼 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -448,7 +448,7 @@
   },
   "Recipe For Disaster#044": {
    "src": "Make yourself useful and get me everything we need. I'm not in the mood for chit-chat.",
-   "dst": "",
+   "dst": "쓸모 있게 굴어서 필요한 거 전부 구해 와. 수다 떨 기분 아니야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -458,7 +458,7 @@
   },
   "Recipe For Disaster#045": {
    "src": "I don't want my reputation tarnished by the likes of you...",
-   "dst": "",
+   "dst": "너 같은 녀석 때문에 내 명성에 먹칠하고 싶진 않아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -468,7 +468,7 @@
   },
   "Recipe For Disaster#046": {
    "src": "Listen up, I'm *not* going to say this again. Take notes.",
-   "dst": "",
+   "dst": "잘 들어, 두 번은 *안* 말해. 받아 적어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -478,7 +478,7 @@
   },
   "Recipe For Disaster#047": {
    "src": "The key ingredient in my amazing omelette is obviously the [Blue-Ring Grook Egg], which of course you didn't know.",
-   "dst": "",
+   "dst": "내 끝내주는 오믈렛의 핵심 재료는 당연히 [Blue-Ring Grook Egg]지. 물론 넌 몰랐겠지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -488,7 +488,7 @@
   },
   "Recipe For Disaster#048": {
    "src": "Secondly what we need is some [Snail Slime], which is at Snail Island, obviously. Any seasoned chef could tell you that.",
-   "dst": "",
+   "dst": "두 번째로 필요한 건 [Snail Slime]이야, 당연히 Snail Island에 있지. 경험 있는 요리사면 다 알아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -498,7 +498,7 @@
   },
   "Recipe For Disaster#049": {
    "src": "Lastly you need a [Talking Mushroom] which is found on the swamp Sky Island, provided you have a functioning sense of sight.",
-   "dst": "",
+   "dst": "마지막으로 [Talking Mushroom]이 필요해. 늪지 하늘 섬에 있어, 네 눈이 제대로 달려 있다면 말이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -508,7 +508,7 @@
   },
   "Recipe For Disaster#050": {
    "src": "YOU FORGOT ALREADY?? I TOLD YOU TO TAKE NOTES!",
-   "dst": "",
+   "dst": "벌써 잊었어?? 받아 적으라고 했잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -518,7 +518,7 @@
   },
   "Recipe For Disaster#051": {
    "src": "Lucky for you, at least one of us here is competent. I wrote everything down in this recipe book. Right-click to open it. Now get me my ingredients and scram!",
-   "dst": "",
+   "dst": "다행히 여기 한 명은 유능하지. 이 레시피 북에 다 적어 뒀어. 우클릭하면 열려. 이제 재료 구해 와, 얼른 가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -528,7 +528,7 @@
   },
   "Recipe For Disaster#052": {
    "src": "Thrilled to be workin' with you, dude! We'll blow Hamsey's mind.",
-   "dst": "",
+   "dst": "너랑 같이 하게 돼서 신난다, 친구! Hamsey 깜짝 놀라게 해 주자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -538,7 +538,7 @@
   },
   "Recipe For Disaster#053": {
    "src": "Hmmm, now what kinda pie should we be bakin', here?",
-   "dst": "",
+   "dst": "흐음, 그럼 어떤 파이를 구워 볼까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -548,7 +548,7 @@
   },
   "Recipe For Disaster#054": {
    "src": "Well, I might be a lil' lazy, but when it comes to cookin', I've got the eye. And to me, dude? You look like a real Skyhigh Pie kind of guy! Heheh.",
-   "dst": "",
+   "dst": "내가 좀 게으르긴 해도, 요리에 관해선 보는 눈이 있거든. 내가 보기에 넌? 딱 Skyhigh Pie 스타일이야! 헤헤.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -558,7 +558,7 @@
   },
   "Recipe For Disaster#055": {
    "src": "Welp, guess you know how to cook up a simple Skyhigh Pie, right? Off you go, I'll be waiting here when you have the ingredients.",
-   "dst": "",
+   "dst": "자, 간단한 Skyhigh Pie 만드는 법은 알지? 다녀와, 재료 구하면 여기서 기다리고 있을게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -568,7 +568,7 @@
   },
   "Recipe For Disaster#056": {
    "src": "Hehe, just messin' with you, man! Shoulda seen your face.",
-   "dst": "",
+   "dst": "헤헤, 장난이야, 친구! 네 표정 봤어야 했는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -578,7 +578,7 @@
   },
   "Recipe For Disaster#057": {
    "src": "First, we're gonna need some kinda flour. A lil' [Sunrise Flour] aughtta do.",
-   "dst": "",
+   "dst": "먼저 밀가루가 좀 필요해. [Sunrise Flour] 조금이면 될 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -588,7 +588,7 @@
   },
   "Recipe For Disaster#058": {
    "src": "A good-sized [Blue-Ring Grook Egg] should give us a lil' kick. Not as much as those grooks'll give you a kick if they see you pilfering their eggs, though!",
-   "dst": "",
+   "dst": "큼직한 [Blue-Ring Grook Egg]면 맛에 한 방 더해 줄 거야. 알 훔치다 grook한테 들키면 너한테 날아올 한 방만큼은 아니지만!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -598,7 +598,7 @@
   },
   "Recipe For Disaster#059": {
    "src": "Finally, the secret ingredient - A [Skyhigh Raspberry]. Real good stuff, but it's a fair way out. Guess a lil' walking never hurt anyone, huh? Not that I've ever bothered.",
-   "dst": "",
+   "dst": "마지막으로 비밀 재료 - [Skyhigh Raspberry]. 진짜 좋은 건데, 좀 멀리 있어. 좀 걷는다고 안 죽잖아? 나야 가 본 적 없지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -608,7 +608,7 @@
   },
   "Recipe For Disaster#060": {
    "src": "Huh, you've got a bad memory? Yeah, me too, man. Here's a Recipe Book, just right-click to open it up and check where to grab the ingredients!",
-   "dst": "",
+   "dst": "어, 기억력이 나쁘다고? 나도 그래, 친구. 여기 레시피 북이야, 우클릭해서 열면 재료 구할 곳이 나와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -618,7 +618,7 @@
   },
   "Recipe For Disaster#061": {
    "src": "Return here once you've got them all. Peace out, dude!",
-   "dst": "",
+   "dst": "다 구하면 여기로 와. 그럼 이따 봐, 친구!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -628,7 +628,7 @@
   },
   "Recipe For Disaster#062": {
    "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "",
+   "dst": "[X, Y, Z]에서 [{~} {Ingredient}]을(를) 모으거나 레시피 북을 확인하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -638,7 +638,7 @@
   },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
-   "dst": "",
+   "dst": "Astralus의 별빛 저택에 온 걸 환영한다! 중력을 뒤집어 꼭대기까지 갈 수 있겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -648,7 +648,7 @@
   },
   "Recipe For Disaster#064": {
    "src": "Astronomical progress! But this is just the beginning!",
-   "dst": "",
+   "dst": "천문학적인 진전이군! 하지만 이건 시작일 뿐이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -658,7 +658,7 @@
   },
   "Recipe For Disaster#065": {
    "src": "...And why did you come to my tower?",
-   "dst": "",
+   "dst": "...그래서 내 탑엔 왜 왔지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -668,7 +668,7 @@
   },
   "Recipe For Disaster#066": {
    "src": "My Moonsalt? How absurd! I collected mine myself, you collect yours! It's only fair.",
-   "dst": "",
+   "dst": "내 Moonsalt? 터무니없군! 내 건 내가 직접 모았으니 네 건 네가 모아! 그게 공평하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -678,7 +678,7 @@
   },
   "Recipe For Disaster#067": {
    "src": "Darn humans, you never listen! I said... Get. It. Yourself.",
-   "dst": "",
+   "dst": "빌어먹을 인간들, 도통 말을 안 들어! 말했잖나... 직. 접. 구. 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -688,7 +688,7 @@
   },
   "Recipe For Disaster#068": {
    "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick elsewhere strangeling!",
-   "dst": "",
+   "dst": "여기 왜 오심, 낯선이? 무슨 이름함 가짐? 휴-먼? 우리는 휴민 주장함! 나쁜 고름, 딴 데서 골라, 낯선이!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -698,7 +698,7 @@
   },
   "Recipe For Disaster#069": {
    "src": "Investigating for helping? How many conveniences! Humyns requires assistancing! You observers, humyns failflies into large crater-rock!",
-   "dst": "",
+   "dst": "도움 위해 조사함? 얼마나 많은 편리함! 휴민 도움함 필요함! 너 관찰자, 휴민 큰 구덩이바위로 추락실패함!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -708,7 +708,7 @@
   },
   "Recipe For Disaster#070": {
    "src": "Burnmilk run out and one direction to retrieve it is moonsalt! We strike lucknugget and discover moonsalt on crater-rock!",
-   "dst": "",
+   "dst": "불우유 떨어짐, 되찾는 한 방향은 moonsalt! 우리 행운덩이 쳐서 구덩이바위에서 moonsalt 발견함!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -718,7 +718,7 @@
   },
   "Recipe For Disaster#071": {
    "src": "Refined moonsalt gives burnmilk for spacezoom! Inconveniencing, spacezoom destroyed. Humyns create miniscule Spacezoom!",
-   "dst": "",
+   "dst": "정제 moonsalt는 우주쓩에 불우유 줌! 불편하게도, 우주쓩 부서짐. 휴민 아주작은 우주쓩 만듦!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -728,7 +728,7 @@
   },
   "Recipe For Disaster#072": {
    "src": "Only singular humyn can fit in current spacezoom. If strangeling helps humyns will let strangeling in spacezoom. Humyns can create new spacezoom in given time!",
-   "dst": "",
+   "dst": "지금 우주쓩엔 단수 휴민만 들어감. 낯선이 도우면 휴민이 낯선이 우주쓩에 태워 줌. 휴민 주어진 시간에 새 우주쓩 만들 수 있음!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -738,7 +738,7 @@
   },
   "Recipe For Disaster#073": {
    "src": "Humyns currently residing on crater-rock, meaning waiting is not result of death!",
-   "dst": "",
+   "dst": "휴민 현재 구덩이바위 거주함, 기다림은 죽음의 결과 아님 뜻함!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -748,7 +748,7 @@
   },
   "Recipe For Disaster#074": {
    "src": "Moonsalt discovered in saltcave in north, strangeling follow path!",
-   "dst": "",
+   "dst": "Moonsalt 북쪽 소금동굴에서 발견함, 낯선이 길 따라감!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -758,7 +758,7 @@
   },
   "Recipe For Disaster#075": {
    "src": "Just [{~} Unrefined Moonsalt] need for burnmilk, strangeling can grab any left over!",
-   "dst": "",
+   "dst": "불우유엔 [{~} Unrefined Moonsalt]만 필요함, 남은 건 낯선이 가져가도 됨!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -768,7 +768,7 @@
   },
   "Recipe For Disaster#076": {
    "src": "When strangeling has moonsalt, refine at device beside humyn and go zoom in spacezoom!",
-   "dst": "",
+   "dst": "낯선이 moonsalt 가지면, 휴민 옆 장치에서 정제하고 우주쓩 타고 쓩 감!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -778,7 +778,7 @@
   },
   "Recipe For Disaster#077": {
    "src": "Hello aaand welcome to the Racetrack of the Century!",
-   "dst": "",
+   "dst": "안녕하세요오오, 세기의 경주장에 오신 걸 환영합니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -788,7 +788,7 @@
   },
   "Recipe For Disaster#078": {
    "src": "One winner, one loser. And Usnail Bolt eats losers for breakfast.",
-   "dst": "",
+   "dst": "승자 하나, 패자 하나. 그리고 Usnail Bolt는 패자를 아침으로 먹죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -798,7 +798,7 @@
   },
   "Recipe For Disaster#079": {
    "src": "Breakfast? Wait, did I have breakfast? A little breckkie could be good fo-",
-   "dst": "",
+   "dst": "아침? 잠깐, 나 아침 먹었나? 간단히 아침 좀 먹으면 좋을 텐-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -808,7 +808,7 @@
   },
   "Recipe For Disaster#080": {
    "src": "Well, no matter. What do you say, adventurer? Enter the race against Usnail Bolt. The grand prize is some Snail Slime!",
-   "dst": "",
+   "dst": "뭐, 상관없죠. 어때요, 모험가님? Usnail Bolt와 경주해 보세요. 1등 상품은 Snail Slime이에요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -818,7 +818,7 @@
   },
   "Recipe For Disaster#081": {
    "src": "Aaaaaand they're off!",
-   "dst": "",
+   "dst": "출바아아아알!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -828,7 +828,7 @@
   },
   "Recipe For Disaster#082": {
    "src": "Shame, could've been a great race. See you around, adventurer!",
-   "dst": "",
+   "dst": "아쉽네요, 멋진 경주가 될 수 있었는데. 또 봐요, 모험가님!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -838,7 +838,7 @@
   },
   "Recipe For Disaster#083": {
    "src": "Well well well... looks like Usnail Bolt has won this one. Again.",
-   "dst": "",
+   "dst": "이런 이런 이런... Usnail Bolt가 이겼군요. 또요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -848,7 +848,7 @@
   },
   "Recipe For Disaster#084": {
    "src": "Not your lucky day, human. Oh well, you know the price for losing. Guards!",
-   "dst": "",
+   "dst": "운이 없는 날이네요, 인간. 뭐, 지면 어떻게 되는지 알죠. 경비병!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -858,7 +858,7 @@
   },
   "Recipe For Disaster#085": {
    "src": "Wowee! In what turned out to be an amazing race, the human has managed to steal the lead right out from Usnail Bolt's nose!",
-   "dst": "",
+   "dst": "와우! 놀라운 경주 끝에, 인간이 Usnail Bolt의 코앞에서 선두를 가로챘습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -868,7 +868,7 @@
   },
   "Recipe For Disaster#086": {
    "src": "Here, human. Take this slime as your prize.",
-   "dst": "",
+   "dst": "자, 인간. 상품으로 이 점액을 받아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -878,7 +878,7 @@
   },
   "Recipe For Disaster#087": {
    "src": "ISN'T THIS JUST ABSOLUTELY FANTASTIC. A HUMAN?! WHO WOULD HAVE GUESSED.",
-   "dst": "",
+   "dst": "이거 정말 끝내주게 환상적이네. 인간?! 누가 알았겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -888,7 +888,7 @@
   },
   "Recipe For Disaster#088": {
    "src": "YOU'RE THE SEVENTH ONE PASSING ME TODAY AND YOU'RE NO DIFFERENT FROM THE OTHERS.",
-   "dst": "",
+   "dst": "오늘 날 지나간 게 네가 일곱 번째인데, 다른 놈들이랑 다를 게 하나도 없네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -898,7 +898,7 @@
   },
   "Recipe For Disaster#089": {
    "src": "EVERY SINGLE ONE WITH THAT DOPEY SHEEPISH LOOK ON THEIR FACE, AS IF A TALKING MUSHROOM IS OUT OF THE BLUE.",
-   "dst": "",
+   "dst": "하나같이 멍청하고 머쓱한 얼굴로, 말하는 버섯이 무슨 날벼락이라도 되는 것처럼 쳐다보지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -908,7 +908,7 @@
   },
   "Recipe For Disaster#090": {
    "src": "GIVE ME A BREAK, I'VE HAD ENOUGH OF JERKS PICKING ME UP AND DISRESPECTING ME LIKE THAT. PRIVATE SPACE, EVER HEARD OF IT?",
-   "dst": "",
+   "dst": "좀 봐줘, 날 뽑아 들고 그렇게 무시하는 녀석들한테 질렸어. 사생활이라고, 들어는 봤어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -918,7 +918,7 @@
   },
   "Recipe For Disaster#091": {
    "src": "WHY DO I EVEN TRY. JUST LOOK AT YOU! THE EPITOME OF CLUELESS. WHAT NOW, GONNA TAKE ME ON SOME LOONEY ADVENTURE ACROSS THE SKY ISLANDS?",
-   "dst": "",
+   "dst": "내가 뭘 기대하겠어. 너 좀 봐! 눈치 없음의 결정체네. 이번엔 뭐, 하늘 섬들을 누비는 황당한 모험에라도 끌고 가게?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -928,7 +928,7 @@
   },
   "Recipe For Disaster#092": {
    "src": "I HOPE NOT, IF YOU WERE THINKING THAT. I'VE ALREADY LOST A STEM TODAY BECAUSE SOME DIMWIT TRIED TAKING A BITE OUT OF ME... LIVE!",
-   "dst": "",
+   "dst": "그 생각이었다면 제발 아니길. 오늘 어떤 멍청이가 날 한입 베어 물려고 해서 줄기를 벌써 하나 잃었거든... 산 채로!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -938,7 +938,7 @@
   },
   "Recipe For Disaster#093": {
    "src": "DON'T TELL ME, ARE YOU TAKING ME ON SOME LOONEY ADVENTURE ACROSS THE SKY ISLANDS? HOW LOVELY.",
-   "dst": "",
+   "dst": "설마, 날 하늘 섬들을 누비는 황당한 모험에 끌고 가는 거야? 참 좋기도 하겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -948,7 +948,7 @@
   },
   "Recipe For Disaster#094": {
    "src": "A KITCHEN YOU SAY, WELL, IF IT'LL PUT ME OUT OF MY MISERY AS SOON AS POSSIBLE, THEN WHY NOT.",
-   "dst": "",
+   "dst": "주방이라고, 뭐, 이 비참함을 빨리 끝내 준다면야, 안 될 거 없지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -958,7 +958,7 @@
   },
   "Recipe For Disaster#095": {
    "src": "WAIT, WHY ARE YOU STUFFING ME INTO YOUR BAG? HOW DO YOU EXPECT ME TO BREATHE IN HERE?!",
-   "dst": "",
+   "dst": "잠깐, 왜 날 가방에 쑤셔 넣는 건데? 이 안에서 숨을 어떻게 쉬라고?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -968,7 +968,7 @@
   },
   "Recipe For Disaster#096": {
    "src": "Hello there! I can see you knead you some sunrise flour, don't you?",
-   "dst": "",
+   "dst": "안녕하세요! 해돋이 밀가루가 필요하시군요, 척 보면 빵 알죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -978,7 +978,7 @@
   },
   "Recipe For Disaster#097": {
    "src": "It's needed rye away? Well no worries, friend!",
-   "dst": "",
+   "dst": "빵리 필요하다고요? 걱정 마세요, 친구! 제가 반죽해 드리죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -988,7 +988,7 @@
   },
   "Recipe For Disaster#098": {
    "src": "Well butter me up and call me toast, it seems I ran out of the stuff, there's none left.",
-   "dst": "",
+   "dst": "이런, 빵 터질 노릇이네, 밀가루가 다 떨어져서 하나도 없어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -998,7 +998,7 @@
   },
   "Recipe For Disaster#099": {
    "src": "I'm sorry if I see to just be loafing around, but at yeast I know how to make some more.",
-   "dst": "",
+   "dst": "빈둥빵둥 노는 것처럼 보였다면 미안해요, 그래도 더 만드는 법은 제가 알죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1008,7 +1008,7 @@
   },
   "Recipe For Disaster#100": {
    "src": "Can you see that wheat field over there, next to the bakery? You can farm up some wheat and pop it on the mill.",
-   "dst": "",
+   "dst": "빵집 옆에 저 밀밭 보이죠? 거기서 밀을 수확해서 방앗간에 넣으면 돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1018,7 +1018,7 @@
   },
   "Recipe For Disaster#101": {
    "src": "Grab a scythe from the tool merchant next dough and get to work!",
-   "dst": "",
+   "dst": "빵집 옆집 도구 상인에게 낫을 받아서 일을 시작하세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1028,7 +1028,7 @@
   },
   "Recipe For Disaster#102": {
    "src": "Make as much as you want, I've made all the bread I need for today already.",
-   "dst": "",
+   "dst": "원하는 만큼 만드세요, 오늘 필요한 빵은 벌써 다 구웠거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1038,7 +1038,7 @@
   },
   "Recipe For Disaster#103": {
    "src": "Howdy, pal! Looking for some Skyhigh Raspberries? They work great in a pie!",
-   "dst": "",
+   "dst": "안녕, 친구! Skyhigh Raspberry 찾아요? 파이에 넣으면 최고예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1048,7 +1048,7 @@
   },
   "Recipe For Disaster#104": {
    "src": "If you're interested, it's just a small fee of {~} Emeralds to get access to the island.",
-   "dst": "",
+   "dst": "관심 있으면, 섬에 들어가는 데 {~} 에메랄드만 내면 돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1058,7 +1058,7 @@
   },
   "Recipe For Disaster#105": {
    "src": "A man's gotta make a living somehow, so I've set up a system of cannons to take you right up to the island they grow on!",
-   "dst": "",
+   "dst": "먹고살아야 하니까, 산딸기가 자라는 섬까지 바로 보내 주는 대포 시스템을 만들었죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1068,7 +1068,7 @@
   },
   "Recipe For Disaster#106": {
    "src": "So, whaddya say? Small price for a little adventure, and as many raspberries as you can eat!",
-   "dst": "",
+   "dst": "그래서, 어때요? 작은 모험에 소소한 값, 산딸기는 먹고 싶은 만큼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1078,7 +1078,7 @@
   },
   "Recipe For Disaster#107": {
    "src": "Alrighty! Just head on over to that island beside me and jump in the cannon - it's perfectly safe, I promise!",
-   "dst": "",
+   "dst": "좋아요! 제 옆 섬으로 가서 대포에 뛰어드세요 - 완전 안전해요, 약속해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1088,7 +1088,7 @@
   },
   "Recipe For Disaster#108": {
    "src": "Find your way up the island and grab as many raspberries as you want! When you're done just jump in the big cannon and come back to shore!",
-   "dst": "",
+   "dst": "섬 위로 올라가서 산딸기를 원하는 만큼 따세요! 다 따면 큰 대포에 뛰어들어 해안으로 돌아오면 돼요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1098,7 +1098,7 @@
   },
   "Recipe For Disaster#109": {
    "src": "Alrighty, no worries. Feel free to come back if you're ever in the mood for some!",
-   "dst": "",
+   "dst": "좋아요, 괜찮아요. 먹고 싶어지면 언제든 다시 와요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1108,7 +1108,7 @@
   },
   "Recipe For Disaster#110": {
    "src": "Present the ingredients to your chosen chef.",
-   "dst": "",
+   "dst": "고른 요리사에게 재료를 전달하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -1118,7 +1118,7 @@
   },
   "Recipe For Disaster#111": {
    "src": "Have you got all the ingredients? Amazing!",
-   "dst": "",
+   "dst": "재료 다 구했어요? 대단해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1128,7 +1128,7 @@
   },
   "Recipe For Disaster#112": {
    "src": "Okay you set back and let me work on the cooking, just pass over the ingredients!",
-   "dst": "",
+   "dst": "좋아요, 뒤로 물러서서 요리는 저한테 맡기세요, 재료만 넘겨주면 돼요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1138,7 +1138,7 @@
   },
   "Recipe For Disaster#113": {
    "src": "Aha! That should do it! Hopefully I've done everything correctly... but wow, would you look at the color of that soup!",
-   "dst": "",
+   "dst": "아하! 이러면 됐어요! 다 제대로 했으면 좋겠는데... 그런데 와, 이 수프 색깔 좀 봐요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1148,7 +1148,7 @@
   },
   "Recipe For Disaster#114": {
    "src": "You should bring it over to Hamsey to see what he thinks!",
-   "dst": "",
+   "dst": "이거 Hamsey한테 가져가서 어떻게 생각하는지 들어 봐요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1158,7 +1158,7 @@
   },
   "Recipe For Disaster#115": {
    "src": "You got everything? Took you long enough.",
-   "dst": "",
+   "dst": "다 구했어? 되게 오래 걸렸네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1168,7 +1168,7 @@
   },
   "Recipe For Disaster#116": {
    "src": "Let's get started. Everyone else already finished. Stay back while I work my magic.",
-   "dst": "",
+   "dst": "시작하자. 다른 사람들은 벌써 끝냈어. 내가 솜씨 부리는 동안 물러나 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1178,7 +1178,7 @@
   },
   "Recipe For Disaster#117": {
    "src": "Mwah! My masterdish is finished. Present this to the chef, I'm sure he'll love it!",
-   "dst": "",
+   "dst": "쪽! 내 걸작 요리 완성이다. 이거 셰프한테 가져가, 분명 좋아할 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1188,7 +1188,7 @@
   },
   "Recipe For Disaster#118": {
    "src": "And be CAREFUL taking it over. That food could be worth HUNDREDS once I'm famous!",
-   "dst": "",
+   "dst": "그리고 '조심해서' 가져가. 내가 유명해지면 이 요리는 '수백'은 나갈 거라고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1198,7 +1198,7 @@
   },
   "Recipe For Disaster#119": {
    "src": "You got everything? Awesome stuff, dude.",
-   "dst": "",
+   "dst": "다 구했어? 끝내주네, 친구.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1208,7 +1208,7 @@
   },
   "Recipe For Disaster#120": {
    "src": "I'll just take a smallll bit of this raspberry - chef's commission, eh? And let's get started!",
-   "dst": "",
+   "dst": "이 산딸기 조오금만 먹을게 - 요리사 수수료 알지? 그럼 시작하자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1218,7 +1218,7 @@
   },
   "Recipe For Disaster#121": {
    "src": "And we're all done. Hamsey's gonna love this.",
-   "dst": "",
+   "dst": "다 됐다. Hamsey가 엄청 좋아할 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1228,7 +1228,7 @@
   },
   "Recipe For Disaster#122": {
    "src": "Here you go, dawg. Pleasure working with you - show this to Hamsey and we'll see what he thinks. Make sure you don't \"lose\" any of it on the way over - you know what they say about your own supply!",
-   "dst": "",
+   "dst": "여기 있어, 친구. 같이 해서 즐거웠어 - Hamsey한테 보여 주고 뭐라는지 보자. 가는 길에 조금이라도 \"잃어버리면\" 안 된다 - 자기 물건 손대면 어떻게 되는지 알지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1238,7 +1238,7 @@
   },
   "Recipe For Disaster#123": {
    "src": "Talk to Hamsey with your finished dish.",
-   "dst": "",
+   "dst": "완성된 요리를 들고 Hamsey와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -1248,7 +1248,7 @@
   },
   "Recipe For Disaster#124": {
    "src": "Ah, you have finished your dish? Well, then, il est temps de goûter!",
-   "dst": "",
+   "dst": "Ah, 요리를 완성했나요? 그럼, il est temps de goûter!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1258,7 +1258,7 @@
   },
   "Recipe For Disaster#125": {
    "src": "Let us retreat to my private dining room... this way!",
-   "dst": "",
+   "dst": "제 전용 식당으로 자리를 옮기죠... 이쪽이에요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1268,7 +1268,7 @@
   },
   "Recipe For Disaster#126": {
    "src": "Meet Hamsey in the dining room at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 식당에서 Hamsey와 만나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -1278,7 +1278,7 @@
   },
   "Recipe For Disaster#127": {
    "src": "Welcome back, mon ami! I see you've return with a dish in hand!",
-   "dst": "",
+   "dst": "어서 와요, mon ami! 요리를 들고 돌아왔군요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1288,7 +1288,7 @@
   },
   "Recipe For Disaster#128": {
    "src": "A stew? Seems simple, but even the simplest things in life can be le meilleur!",
-   "dst": "",
+   "dst": "스튜? 단순해 보이지만, 인생에서 가장 단순한 것도 le meilleur일 수 있죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1298,7 +1298,7 @@
   },
   "Recipe For Disaster#129": {
    "src": "Adventurer, are you sure you made this dish? It is so good I might as well close the restaurant!",
-   "dst": "",
+   "dst": "모험가님, 정말 이걸 직접 만들었어요? 너무 맛있어서 레스토랑 문을 닫아야겠어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1308,7 +1308,7 @@
   },
   "Recipe For Disaster#130": {
    "src": "You never fail to surprise me, friend. Here, take this apron, an essential of any true chef.",
-   "dst": "",
+   "dst": "늘 저를 놀라게 하는군요, 친구. 자, 이 앞치마를 받아요, 진정한 요리사의 필수품이죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1318,7 +1318,7 @@
   },
   "Recipe For Disaster#131": {
    "src": "I cannot help but notice that your dish is ready!",
-   "dst": "",
+   "dst": "요리가 준비된 게 눈에 띄지 않을 수가 없군요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1328,7 +1328,7 @@
   },
   "Recipe For Disaster#132": {
    "src": "Let me taste your dish and I will present you mine! Mon dieu, une omelette?",
-   "dst": "",
+   "dst": "당신 요리를 맛보고 제 요리를 보여 드리죠! Mon dieu, une omelette?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1338,7 +1338,7 @@
   },
   "Recipe For Disaster#133": {
    "src": "Je suis déçu, ami. I would prefer biting into a mule derrière! This thing... a Gert wouldn't touch it!",
-   "dst": "",
+   "dst": "Je suis déçu, ami. 차라리 노새 derrière를 깨물겠어요! 이건... Gert도 안 먹겠어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1348,7 +1348,7 @@
   },
   "Recipe For Disaster#134": {
    "src": "I see you haven't improved in the art of cuisine. Leave me be, and come back when you have learned what good food is!",
-   "dst": "",
+   "dst": "요리 실력은 전혀 늘지 않았군요. 날 내버려 두고, 좋은 음식이 뭔지 알게 되면 돌아와요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1358,7 +1358,7 @@
   },
   "Recipe For Disaster#135": {
    "src": "I see you've returned, and not empty handed. Please, show me what you've created!",
-   "dst": "",
+   "dst": "돌아왔군요, 빈손도 아니고요. 자, 무엇을 만들었는지 보여 줘요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1368,7 +1368,7 @@
   },
   "Recipe For Disaster#136": {
    "src": "A pie? Why, you must have been helped by Frank. He always has a thing for making pie!",
-   "dst": "",
+   "dst": "파이? 이런, Frank가 도와줬군요. 그 친구는 파이 만드는 걸 좋아하거든요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1378,7 +1378,7 @@
   },
   "Recipe For Disaster#137": {
    "src": "I can see that your compétences culinaires are very well developed!",
-   "dst": "",
+   "dst": "당신의 compétences culinaires가 아주 잘 발달했군요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1388,7 +1388,7 @@
   },
   "Recipe For Disaster#138": {
    "src": "Though I will not truly call you a chef quite yet, you are très bien! Have this reward as congratulations!",
-   "dst": "",
+   "dst": "아직 진정한 요리사라고 부를 순 없지만, 당신은 très bien! 축하의 의미로 이 보상을 받아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",

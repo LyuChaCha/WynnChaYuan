@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Breaking Point",
   "count": 281,
-  "translated": 29,
+  "translated": 304,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Breaking Point#000": {
    "src": "Speak to General Elix at [{~}, {~}, -{~}] in {p}.",
-   "dst": "",
+   "dst": "{p}의 [{~}, {~}, -{~}]에서 Elix 장군에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -18,7 +18,7 @@
   },
   "The Breaking Point#001": {
    "src": "... Alright, let's see here... Private! Give me a report!",
-   "dst": "",
+   "dst": "... 좋아, 어디 보자... 이병! 보고해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -28,7 +28,7 @@
   },
   "The Breaking Point#002": {
    "src": "Sir, our readings are postive! Stablility is at {~}, and shows no sign of dropping.",
-   "dst": "",
+   "dst": "장군님, 수치 양호합니다! 안정도 {~}, 떨어질 기미가 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -38,7 +38,7 @@
   },
   "The Breaking Point#003": {
    "src": "Readings are positive!",
-   "dst": "",
+   "dst": "수치 양호합니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -48,7 +48,7 @@
   },
   "The Breaking Point#004": {
    "src": "Excellent. Keep an eye on everything, and let me know if something comes up. Now, I need to go find...-",
-   "dst": "",
+   "dst": "좋아. 전부 잘 지켜보고, 무슨 일 생기면 보고해. 이제 나는 찾으러 가야 할...-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -58,7 +58,7 @@
   },
   "The Breaking Point#005": {
    "src": "Hmph. And who exactly are you? This site is off-limits to civilians.",
-   "dst": "",
+   "dst": "흠. 그런데 넌 누구지? 여긴 민간인 출입 금지 구역이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -68,7 +68,7 @@
   },
   "The Breaking Point#006": {
    "src": "Adventurer. Of course. Well, as it stands, we're doing rather dangerous work here. I'll have to ask you to-",
-   "dst": "",
+   "dst": "모험가라. 그렇겠지. 보다시피 여기선 꽤 위험한 일을 하고 있다. 그러니 부탁인데-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -78,7 +78,7 @@
   },
   "The Breaking Point#007": {
    "src": "... The stabilizer? We're doing rather dangerous work here, keeping the thing beyond that cliff passive. So, I'll have to ask you to-",
-   "dst": "",
+   "dst": "... 안정 장치? 저 절벽 너머에 있는 놈을 잠재워 두는 위험한 일을 하고 있다. 그러니 부탁인데-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -88,7 +88,7 @@
   },
   "The Breaking Point#008": {
    "src": "General! Stability is dropping, and fast!",
-   "dst": "",
+   "dst": "장군님! 안정도가 급격히 떨어집니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -98,7 +98,7 @@
   },
   "The Breaking Point#009": {
    "src": "General!",
-   "dst": "",
+   "dst": "장군님!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -108,7 +108,7 @@
   },
   "The Breaking Point#010": {
    "src": "What?! Of all times for it to-",
-   "dst": "",
+   "dst": "뭐?! 하필 이럴 때-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -118,7 +118,7 @@
   },
   "The Breaking Point#011": {
    "src": "Urgh... Soldiers, follow protocol! Secure what you can, and leave what you can't! And- you! I haven't forgotten about you. As soon as this all cleans up, we'll-",
-   "dst": "",
+   "dst": "으윽... 병사들, 수칙대로 해! 챙길 수 있는 건 챙기고 못 챙기는 건 버려! 그리고- 너! 널 잊은 건 아니다. 이게 수습되는 대로-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -128,7 +128,7 @@
   },
   "The Breaking Point#012": {
    "src": "Gah! This damned Colossus! What I wouldn't give to...",
-   "dst": "",
+   "dst": "크윽! 이 망할 거상 같으니! 뭘 바쳐서라도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -138,7 +138,7 @@
   },
   "The Breaking Point#013": {
    "src": "... It's over. Walder! Survey the damages to our equipment! Morec! Take count of injuries around the base, make sure everyone's safe!",
-   "dst": "",
+   "dst": "... 끝났군. Walder! 장비 피해를 조사해! Morec! 기지 주변 부상자를 파악하고, 모두 무사한지 확인해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -148,7 +148,7 @@
   },
   "The Breaking Point#014": {
    "src": "Yes sir!",
-   "dst": "",
+   "dst": "예, 알겠습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -158,7 +158,7 @@
   },
   "The Breaking Point#015": {
    "src": "General! We came as soon as we could- we were down in the library and the exit co- Oh. Wow.",
-   "dst": "",
+   "dst": "장군님! 최대한 빨리 왔어요. 도서관 아래에 있었는데 출구가 무- 아. 세상에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -168,7 +168,7 @@
   },
   "The Breaking Point#016": {
    "src": "Well, Rhay, you're here now, yes? What do you think, can you fix it? We'll need to get it working before-",
-   "dst": "",
+   "dst": "그래, Rhay, 이제 왔군? 어떤가, 고칠 수 있나? 그 전에 작동시켜야 한다-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -178,7 +178,7 @@
   },
   "The Breaking Point#017": {
    "src": "Can I- No, of course I can't fix it! Not on my own, especially since we don't have the proper equipment around here! Ugh, how long has it even been since last time?",
-   "dst": "",
+   "dst": "제가 고칠- 아뇨, 당연히 못 고치죠! 저 혼자선 무리예요, 여긴 제대로 된 장비도 없다고요! 으, 지난번 이후로 얼마나 지났죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -188,7 +188,7 @@
   },
   "The Breaking Point#018": {
    "src": "It has been... three days... give or take. Rhay... you know we can't keep-",
-   "dst": "",
+   "dst": "사흘... 정도... 지났다. Rhay... 이대로 계속할 수는-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -198,7 +198,7 @@
   },
   "The Breaking Point#019": {
    "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
-   "dst": "",
+   "dst": "지금까지 안정 장치는 잘 작동했어, Ineos! 우리 지방이 내놓을 수 있는 최고의 기술이고, 실제로 효과가 있었다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -208,7 +208,7 @@
   },
   "The Breaking Point#020": {
    "src": "Rhay, you know... as well as I do... that it is getting worse. The Protector is... growing resistant to... your machines. We need... a new plan.",
-   "dst": "",
+   "dst": "Rhay, 자네도... 나만큼... 알고 있잖나... 상황이 악화되고 있다는 걸. 수호자께서... 자네 기계에... 내성이 생기고 있네. 새로운... 계획이 필요하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -218,7 +218,7 @@
   },
   "The Breaking Point#021": {
    "src": "Yes, well, as soon as you come up with one, I'll be glad to hear it! But so far, you've barely gotten anything-",
-   "dst": "",
+   "dst": "그래, 뭐, 네가 계획을 하나 내놓으면 기꺼이 들어 줄게! 그런데 지금까지 넌 거의 아무것도-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -248,7 +248,7 @@
   },
   "The Breaking Point#024": {
    "src": "... Sorry. I'm sorry, I didn't mean that. General, to answer your question... The stabilizer itself is damaged, but you should have what's needed to repair it here.",
-   "dst": "",
+   "dst": "... 미안. 미안해, 그런 뜻이 아니었어. 장군님, 질문에 답하자면... 안정 장치 자체가 손상됐지만, 수리에 필요한 건 여기 다 있을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -258,7 +258,7 @@
   },
   "The Breaking Point#025": {
    "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
-   "dst": "",
+   "dst": "문제는 제어 장치가 타 버린 것 같다는 거예요! 여긴 교체 부품도 없고요. Corkus까지 다녀와야 하는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -268,7 +268,7 @@
   },
   "The Breaking Point#026": {
    "src": "... Right. You. You're an adventurer, yes? And you appear to be well-equipped. Then you'll be traveling to Corkus with Rhay, and assist with whatever is needed there.",
-   "dst": "",
+   "dst": "... 좋다. 너. 모험가라고 했지? 장비도 제법 갖춘 것 같군. 그럼 Rhay와 함께 Corkus로 가서 필요한 일을 돕도록.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -278,7 +278,7 @@
   },
   "The Breaking Point#027": {
    "src": "Huh?",
-   "dst": "",
+   "dst": "응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -288,7 +288,7 @@
   },
   "The Breaking Point#028": {
    "src": "Wait, General-... Right. Alright. In that case... I'll give you time to prepare. We'll take the Hot Air Balloon to travel to Corkus, so I'll meet you there. We don't have any time to waste.",
-   "dst": "",
+   "dst": "잠깐만요, 장군님-... 네. 알겠어요. 그렇다면... 준비할 시간을 줄게. 열기구를 타고 Corkus로 갈 거니까 거기서 만나. 낭비할 시간이 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -298,7 +298,7 @@
   },
   "The Breaking Point#029": {
    "src": "And I will... return to the library. I trust... you will succeed... But we must... prepare for the... worst.",
-   "dst": "",
+   "dst": "그리고 나는... 도서관으로 돌아가겠네. 자네들이... 해낼 거라 믿네... 하지만... 최악에... 대비해야 하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -308,7 +308,7 @@
   },
   "The Breaking Point#030": {
    "src": "Alright...",
-   "dst": "",
+   "dst": "알겠어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -318,7 +318,7 @@
   },
   "The Breaking Point#031": {
    "src": "Meet Rhay at the Hot Air Balloon at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 열기구에서 Rhay를 만나세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -328,7 +328,7 @@
   },
   "The Breaking Point#032": {
    "src": "Ah, you're here! Well, if you're ready, then we'd best be off. Just hop aboard this balloon, and the captain will take us where we need to go.",
-   "dst": "",
+   "dst": "아, 왔구나! 준비됐으면 바로 출발하자. 이 열기구에 타기만 하면 선장이 목적지까지 데려다줄 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -338,7 +338,7 @@
   },
   "The Breaking Point#033": {
    "src": "I can tell you more while we travel, but we need to get going quick. There's no telling how much time we have before-",
-   "dst": "",
+   "dst": "가는 동안 더 얘기해 줄게. 지금은 서둘러야 해. 얼마나 시간이 남았는지 모르니까-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -348,7 +348,7 @@
   },
   "The Breaking Point#034": {
    "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, obvious reasons. Just hop aboard.",
-   "dst": "",
+   "dst": "그래, 그래. 신경 쓰지 마, 그냥 좀 예민해서 그래... 뭐, 이유야 뻔하지. 어서 타.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -358,7 +358,7 @@
   },
   "The Breaking Point#035": {
    "src": "Travel to {p} via the Hot Air Balloon at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 열기구를 타고 {p}(으)로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -368,7 +368,7 @@
   },
   "The Breaking Point#036": {
    "src": "Well, there it is! The Canyon Colossus itself. The source of all our problems here at {p}.",
-   "dst": "",
+   "dst": "자, 저기 있어! 협곡의 거상 그 자체야. 여기 {p}에서 겪는 모든 문제의 근원이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -378,7 +378,7 @@
   },
   "The Breaking Point#037": {
    "src": "So! How much do you already know? I know we dragged you into this without telling you much, so... I can fill you in on the details.",
-   "dst": "",
+   "dst": "자! 얼마나 알고 있어? 제대로 설명도 안 하고 끌어들였으니... 자세한 건 내가 알려 줄게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -388,7 +388,7 @@
   },
   "The Breaking Point#038": {
    "src": "Oh, he did? Right, that makes sense. Well, you're right in that it's the source of the earthquakes, but there's more to it than that.",
-   "dst": "",
+   "dst": "아, 그 사람이 말해 줬어? 그렇구나. 맞아, 저게 지진의 원인이긴 한데, 그게 다가 아니야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -398,7 +398,7 @@
   },
   "The Breaking Point#039": {
    "src": "You've seen the {p}, right? Heard of the Fracturing. From what I can tell, what happened to that region a thousand years ago is happening again, here and now.",
-   "dst": "",
+   "dst": "{p} 봤지? 균열에 대해서도 들었고. 내가 보기엔 천 년 전 그 지역에 일어난 일이 지금 여기서 다시 일어나고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -408,7 +408,7 @@
   },
   "The Breaking Point#040": {
    "src": "Yes, exactly. It's been malfunctioning for a long time now, and it's starting to tear the canyon apart. That's where we come in.",
-   "dst": "",
+   "dst": "그래, 바로 그거야. 오랫동안 고장 난 상태였는데, 이제 협곡을 찢어 놓기 시작했어. 그래서 우리가 나선 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -418,7 +418,7 @@
   },
   "The Breaking Point#041": {
    "src": "Well... To start with, it's an ancient thing. It was built long before even the doguns can remember, and they've lived in this region for thousands of years.",
-   "dst": "",
+   "dst": "음... 우선, 저건 아주 오래된 거야. Dogun의 기억보다도 훨씬 전에 만들어졌는데, 그들은 이 지역에서 수천 년을 살아왔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -428,7 +428,7 @@
   },
   "The Breaking Point#042": {
    "src": "According to Ineos, the doguns used to be responsible for keeping it calm, but ever since the dwarves came in and started their war, that knowledge has been lost to time.",
-   "dst": "",
+   "dst": "Ineos 말로는 원래 Dogun이 저걸 진정시키는 역할을 했는데, 드워프가 들어와 전쟁을 벌인 뒤로 그 지식이 잊혀 버렸대.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -438,7 +438,7 @@
   },
   "The Breaking Point#043": {
    "src": "Which is... a problem! {p} has been malfunctioning for hundreds of years, and it's reaching its breaking point. If we don't stop it, it'll tear the canyon apart.",
-   "dst": "",
+   "dst": "그게... 문제야! {p}은(는) 수백 년째 고장 난 채로 한계점에 다다르고 있어. 막지 못하면 협곡이 찢어질 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -448,7 +448,7 @@
   },
   "The Breaking Point#044": {
    "src": "Oh? So you've traveled the canyon, then. Yeah, then you've seen how the canyon twists and changes.",
-   "dst": "",
+   "dst": "오? 그럼 협곡을 돌아다녀 봤구나. 그래, 그럼 협곡이 뒤틀리고 변하는 걸 봤겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -458,7 +458,7 @@
   },
   "The Breaking Point#045": {
    "src": "It destroys peoples' homes, it traps them deep within the maze-like valleys... And, more recently, it has been tearing a hole into the void.",
-   "dst": "",
+   "dst": "사람들 집을 부수고, 미로 같은 골짜기 깊숙이 가둬 버리지... 게다가 최근엔 공허에 구멍까지 뚫고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -468,7 +468,7 @@
   },
   "The Breaking Point#046": {
    "src": "This thing is ancient, and we don't know how it works. The best we can do is try to keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
-   "dst": "",
+   "dst": "이건 아주 오래된 물건이고, 어떻게 작동하는지도 몰라. 우리가 할 수 있는 건 이게 한계점에 이르지 않게 막아서, 협곡이 {p}와(과) 같은 운명을 맞지 않게 하는 것뿐이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -478,7 +478,7 @@
   },
   "The Breaking Point#047": {
    "src": "So, Gavel's government contacted us in Corkus some time ago, requesting our help to deal with this threat.",
-   "dst": "",
+   "dst": "그래서 얼마 전 Gavel 정부가 Corkus에 있는 우리에게 연락해서 이 위협에 대처할 도움을 요청했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -488,7 +488,7 @@
   },
   "The Breaking Point#048": {
    "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified that Colossus long ago.",
-   "dst": "",
+   "dst": "의회도 동의했고, 우리는 오래전 거상을 잠재웠던 Dogun 마법을 재현할 기계를 설계하기 시작했지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -498,7 +498,7 @@
   },
   "The Breaking Point#049": {
    "src": "We've had Ineos' help on that front. He and I have been working here in {p} to ensure things are running smoothly. Which... evidently, they are not.",
-   "dst": "",
+   "dst": "그 일엔 Ineos가 도와줬어. 그와 난 {p}에서 모든 게 잘 돌아가도록 일해 왔지. 근데... 보다시피 전혀 아니네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -508,7 +508,7 @@
   },
   "The Breaking Point#050": {
    "src": "... We'll be fine! We're going to meet up with my husband at Corkus, and he'll know what to do. He always does.",
-   "dst": "",
+   "dst": "... 괜찮을 거야! Corkus에서 남편을 만날 건데, 그 사람은 어떻게 할지 알 거야. 늘 그랬거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -518,7 +518,7 @@
   },
   "The Breaking Point#051": {
    "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
-   "dst": "",
+   "dst": "거기 사람들이 장치 수리에 필요한 부품을 구해 줄 거야. 이게... 폭발한 게 처음은 아니야. 이번엔 안정시킬 수 있길 바랐는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -528,7 +528,7 @@
   },
   "The Breaking Point#052": {
    "src": "But, hey! We have it under control. We're always able to repair it quickly enough to keep it running while the Colossus is active.",
-   "dst": "",
+   "dst": "하지만, 뭐! 통제는 하고 있어. 거상이 활동하는 동안에도 늘 금방 고쳐서 계속 돌아가게 했거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -538,7 +538,7 @@
   },
   "The Breaking Point#053": {
    "src": "Oh! Yeah. He's the one responsible for the design and production of this device. He's got a talent for designing these sorts of things, without him... well, we'd be in a much worse situation than we are now.",
-   "dst": "",
+   "dst": "아! 응. 이 장치를 설계하고 만든 게 그 사람이야. 이런 걸 설계하는 데 재능이 있거든. 그 사람이 없었으면... 지금보다 훨씬 나쁜 상황이었을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -548,7 +548,7 @@
   },
   "The Breaking Point#054": {
    "src": "I'll be glad to see him again. It's been a while since I last had to travel to Corkus, and... Well, I'm confident he'll know what to do here. He always does.",
-   "dst": "",
+   "dst": "다시 만나면 반가울 거야. Corkus에 가 본 지도 꽤 됐고... 뭐, 그 사람은 어떻게 할지 알 거라고 믿어. 늘 그랬거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -558,7 +558,7 @@
   },
   "The Breaking Point#055": {
    "src": "... Right! Hey, it looks like we're almost there. We'll be able to get this all sorted out, and we'll be back to {p} in no time.",
-   "dst": "",
+   "dst": "... 그래! 이봐, 거의 다 온 것 같아. 이 일을 전부 해결하고 금방 {p}(으)로 돌아갈 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -568,7 +568,7 @@
   },
   "The Breaking Point#056": {
    "src": "Find the contact in the factory at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 공장에서 연락책을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -578,7 +578,7 @@
   },
   "The Breaking Point#057": {
    "src": "Alright, let's just head on in. My husband should be around here somewhere...",
-   "dst": "",
+   "dst": "좋아, 그냥 들어가자. 남편이 이 근처 어딘가에 있을 텐데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -588,7 +588,7 @@
   },
   "The Breaking Point#058": {
    "src": "Rhay, love! You're back already? Our next routine maitenance isn't for another- Wait, {u}? What are you doing here?",
-   "dst": "",
+   "dst": "Rhay, 자기야! 벌써 돌아왔어? 다음 정기 점검은 아직- 잠깐, {u}? 네가 여기서 뭐 해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -598,7 +598,7 @@
   },
   "The Breaking Point#059": {
    "src": "I... You two know each other?",
-   "dst": "",
+   "dst": "어... 둘이 아는 사이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -608,7 +608,7 @@
   },
   "The Breaking Point#060": {
    "src": "Of course we do - they're the one who helped me with all the Factory stuff! How did you two meet?",
-   "dst": "",
+   "dst": "당연하지. 공장 일 전부 도와준 게 바로 이 친구야! 둘은 어떻게 만났어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -618,7 +618,7 @@
   },
   "The Breaking Point#061": {
    "src": "They just showed up at {p} and agreed to help us with... - Why didn't you bring this up earlier?",
-   "dst": "",
+   "dst": "{p}에 불쑥 나타나서 우리를 돕겠다고... 왜 이 얘기를 미리 안 했어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -628,7 +628,7 @@
   },
   "The Breaking Point#062": {
    "src": "It must have...- right. Well, if anything that makes you even more qualified to help us out, I guess! I can't believe I didn't recognize you...?",
-   "dst": "",
+   "dst": "분명...- 그렇지. 뭐, 그렇다면 우릴 도울 자격이 더 충분하다는 거겠지! 내가 널 못 알아봤다니...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -638,7 +638,7 @@
   },
   "The Breaking Point#063": {
    "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maitenance, isn't there?",
-   "dst": "",
+   "dst": "좋아, 그래, 다시 질문으로 - 너희 둘 벌써 여기서 뭐 해? 다음 정기 점검까지 며칠 더 남지 않았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -648,7 +648,7 @@
   },
   "The Breaking Point#064": {
    "src": "I did send you an invite! I gave it to... you know, that that one captain who ferries people around! But then you didn't show up to the wedding, so I guess it didn't reach you...",
-   "dst": "",
+   "dst": "초대장 보냈다니까! 그... 사람들 태워 나르는 그 선장한테 맡겼어! 근데 결혼식에 안 왔으니 못 받았나 봐...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -658,7 +658,7 @@
   },
   "The Breaking Point#065": {
    "src": "Look, you're a hard person to reach! You've been all over the world at this point, including {p} of all places- speaking of, why are you two here?",
-   "dst": "",
+   "dst": "봐, 너 연락하기 진짜 힘들어! 이미 온 세상을 다 돌아다녔잖아, 하필 {p}까지- 그나저나 둘은 왜 여기 온 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -668,7 +668,7 @@
   },
   "The Breaking Point#066": {
    "src": "!!!",
-   "dst": "",
+   "dst": "!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -678,7 +678,7 @@
   },
   "The Breaking Point#067": {
    "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an undetected seismic event, and the device was heavily damaged.",
-   "dst": "",
+   "dst": "맞아! 맞아. 잠깐 딴생각을 했네... 어, {p}에서 문제가 생겼어. 감지 못한 지진이 일어나서 장치가 크게 망가졌어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -688,7 +688,7 @@
   },
   "The Breaking Point#068": {
    "src": "We should be able to finish most of the repairs with what materials we have there, but we're missing a Magmaflux Capacitor for the control panel.",
-   "dst": "",
+   "dst": "수리는 대부분 거기 있는 재료로 할 수 있는데, 제어판에 들어갈 마그마플럭스 축전기가 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -698,7 +698,7 @@
   },
   "The Breaking Point#069": {
    "src": "... Oh. That's going to be a problem. We haven't had an opportunity to make more parts yet - it hasn't been long enough since our last maitenance. So... I'm not sure what we-",
-   "dst": "",
+   "dst": "... 아. 그건 문제네. 아직 부품을 더 만들 기회가 없었어. 지난 점검 이후로 얼마 안 됐거든. 그러니까... 어떻게 해야 할지-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -708,7 +708,7 @@
   },
   "The Breaking Point#070": {
    "src": "I overheard the conversation from over there- good to see you Rhay, by the way- But. We may not have any capacitors left up here, but I know where you can get one.",
-   "dst": "",
+   "dst": "저쪽에서 얘기 들었어- 그나저나 반가워, Rhay- 아무튼. 여기엔 축전기가 안 남았을지 몰라도, 구할 수 있는 곳은 알아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -718,7 +718,7 @@
   },
   "The Breaking Point#071": {
    "src": "We repurposed this factory for our needs, but it was built here to process resources from the mines below.",
-   "dst": "",
+   "dst": "이 공장은 우리 필요에 맞게 개조했지만, 원래는 아래 광산의 자원을 처리하려고 지은 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -728,7 +728,7 @@
   },
   "The Breaking Point#072": {
    "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
-   "dst": "",
+   "dst": "지금은 가동을 멈췄지만, 아래엔 아직 채굴 기계병이 남아 있을 가능성이 커. 고성능 모델 중엔 요즘 축전기와 아주 비슷한 회로를 쓴 것도 있었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -738,7 +738,7 @@
   },
   "The Breaking Point#073": {
    "src": "... You're right! If they're still down there, we should be able to scrap one of the bots and reuse its circuits. {u}, we can send you down into the mines to find what we need, while we prepare up here!",
-   "dst": "",
+   "dst": "... 맞아! 아직 아래에 있다면, 봇 하나를 분해해서 회로를 재활용할 수 있을 거야. {u}, 네가 광산에 내려가서 필요한 걸 찾아 줘. 우린 위에서 준비할게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -748,7 +748,7 @@
   },
   "The Breaking Point#074": {
    "src": "Alright... Good luck down there! Find the bot, destroy it, and bring the capacitor back up! Just step on the platform in the middle of the factory when you're ready.",
-   "dst": "",
+   "dst": "좋아... 조심해! 봇을 찾아 부수고 축전기를 가져와! 준비되면 공장 한가운데 발판에 올라서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -758,7 +758,7 @@
   },
   "The Breaking Point#075": {
    "src": "Okay. That's fine, just make it quick! You know we can't waste any time here.",
-   "dst": "",
+   "dst": "좋아. 괜찮은데, 빨리 끝내! 여기서 시간 낭비할 여유 없는 거 알지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -768,7 +768,7 @@
   },
   "The Breaking Point#076": {
    "src": "Retrieve the part from the cave at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 동굴에서 부품을 회수하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -778,7 +778,7 @@
   },
   "The Breaking Point#077": {
    "src": "Door opening in {~}...",
-   "dst": "",
+   "dst": "{~}초 뒤 문이 열려...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -788,7 +788,7 @@
   },
   "The Breaking Point#078": {
    "src": "{~}...",
-   "dst": "",
+   "dst": "{~}...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -798,7 +798,7 @@
   },
   "The Breaking Point#079": {
    "src": "{~}...",
-   "dst": "",
+   "dst": "{~}...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -808,7 +808,7 @@
   },
   "The Breaking Point#080": {
    "src": "INTRUDER DETECTED. HOSTILE ENGAGEMENT AUTHORISED.",
-   "dst": "",
+   "dst": "침입자 감지. 적대 교전 승인.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -818,7 +818,7 @@
   },
   "The Breaking Point#081": {
    "src": "DEPLOYING SECONDARY ANTI-INTRUDER MEASURES.",
-   "dst": "",
+   "dst": "보조 침입자 대응 수단 전개.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -828,7 +828,7 @@
   },
   "The Breaking Point#082": {
    "src": "DIVERTING ALL AVAILABLE UNITS TO HALT INTRUDER.",
-   "dst": "",
+   "dst": "모든 가용 유닛을 침입자 저지에 투입.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -838,7 +838,7 @@
   },
   "The Breaking Point#083": {
    "src": "THIS IS A RESTRICTED AREA. REQUESTING AUTHORISATION FOR USE OF LETHAL FORCE AGAINST INTRUDER...",
-   "dst": "",
+   "dst": "이곳은 제한 구역. 침입자에 대한 치명적 무력 사용 승인을 요청...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -848,7 +848,7 @@
   },
   "The Breaking Point#084": {
    "src": "AUTHORISATION GRANTED.",
-   "dst": "",
+   "dst": "승인 완료.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -858,7 +858,7 @@
   },
   "The Breaking Point#085": {
    "src": "DIVERTING MINER MECHS TO HALT INTRUDER.",
-   "dst": "",
+   "dst": "채굴 기계병을 침입자 저지에 투입.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -868,7 +868,7 @@
   },
   "The Breaking Point#086": {
    "src": "Return to the hot air balloon at [-{~}, {~}, -{~}] with the Magmaflux Capacitor.",
-   "dst": "",
+   "dst": "마그마플럭스 축전기를 가지고 [-{~}, {~}, -{~}]의 열기구로 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -878,7 +878,7 @@
   },
   "The Breaking Point#087": {
    "src": "Amazing work! I'll get us back to {p} with that capacitor as quick as possible.",
-   "dst": "",
+   "dst": "훌륭해! 그 축전기를 가지고 최대한 빨리 {p}(으)로 돌아가도록 하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -888,7 +888,7 @@
   },
   "The Breaking Point#088": {
    "src": "Good to see you again, {u}. Good luck with the colossus. And Rhay... come home as soon as you can.",
-   "dst": "",
+   "dst": "다시 만나서 반가웠어, {u}. 거상 일 잘 해결하길 바랄게. 그리고 Rhay... 최대한 빨리 집에 와.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -898,7 +898,7 @@
   },
   "The Breaking Point#089": {
    "src": "Fly safe, both of you.",
-   "dst": "",
+   "dst": "둘 다 조심히 날아가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -908,7 +908,7 @@
   },
   "The Breaking Point#090": {
    "src": "Return to General Elix with the Corkian Stabiliser",
-   "dst": "",
+   "dst": "Corkus 안정 장치를 가지고 Elix 장군에게 돌아가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -918,7 +918,7 @@
   },
   "The Breaking Point#091": {
    "src": "Well... that went better than expected, really. I still can't believe you didn't tell me you already knew Maxie.",
-   "dst": "",
+   "dst": "음... 솔직히 생각보다 잘 풀렸네. 네가 Maxie를 이미 안다는 걸 말 안 했다니 아직도 믿기지 않아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -928,7 +928,7 @@
   },
   "The Breaking Point#092": {
    "src": "Oh, wow. It looks like they've managed to fix up the machine pretty well, all things considered. Just this part left to get it running again...",
-   "dst": "",
+   "dst": "오, 와. 이것저것 따져 보면 기계를 꽤 잘 고쳐 놨네. 이 부품만 있으면 다시 돌아갈 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -938,7 +938,7 @@
   },
   "The Breaking Point#093": {
    "src": "Hmph. Rhay, there you are. Seeing as you've returned, I gather everything went smoothly at Corkus?",
-   "dst": "",
+   "dst": "흠. Rhay, 왔군. 돌아온 걸 보니 Corkus 일은 순조로웠나 보지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -948,7 +948,7 @@
   },
   "The Breaking Point#094": {
    "src": "Smoothly enough, General! We have what we need to repair the control panel. We'll be able to get the stabilizer running again!",
-   "dst": "",
+   "dst": "충분히 순조로웠어요, 장군님! 제어판 수리에 필요한 걸 구했어요. 안정 장치를 다시 가동할 수 있어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -958,7 +958,7 @@
   },
   "The Breaking Point#095": {
    "src": "Well?! What are you waiting for? Finish the repairs, we can't afford to lose any time with this damned Colossus looming over us.",
-   "dst": "",
+   "dst": "그래서?! 뭘 기다리나? 수리를 끝내라. 저 망할 거상이 코앞에 버티고 있으니 한시도 낭비할 수 없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -968,7 +968,7 @@
   },
   "The Breaking Point#096": {
    "src": "Yes, sir! Alright. {u}, just slot the capacitor in right... there. I'll make sure it runs smoothly.",
-   "dst": "",
+   "dst": "네, 장군님! 좋아. {u}, 축전기를 바로... 거기에 끼워. 잘 돌아가는지는 내가 확인할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -978,7 +978,7 @@
   },
   "The Breaking Point#097": {
    "src": "There we are. Now, let's get this thing running again! Walder, keep an eye on stability! And... Rhay. You're confident this will work?",
-   "dst": "",
+   "dst": "됐군. 자, 이놈을 다시 가동하자! Walder, 안정도를 지켜봐! 그리고... Rhay. 이게 통할 거라고 확신하나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -988,7 +988,7 @@
   },
   "The Breaking Point#098": {
    "src": "I-I'm sure. This is our last chance. We have to hold out hope that the stabilizer will hold.",
-   "dst": "",
+   "dst": "화, 확신해요. 이게 마지막 기회예요. 안정 장치가 버텨 줄 거라는 희망을 붙잡아야 해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -998,7 +998,7 @@
   },
   "The Breaking Point#099": {
    "src": "Alright, alright... It's now or never... Hold, stabilizer, hold!",
-   "dst": "",
+   "dst": "좋아, 좋아... 지금 아니면 끝이야... 버텨, 안정 장치, 버텨!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1008,7 +1008,7 @@
   },
   "The Breaking Point#100": {
    "src": "... Oh. That's... that's it, then. It's over. We failed.",
-   "dst": "",
+   "dst": "... 아. 이걸로... 끝이구나. 다 끝났어. 우린 실패했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1018,7 +1018,7 @@
   },
   "The Breaking Point#101": {
    "src": "I... am sorry, Rhay. I had... hoped it would work. In truth... I do not have... a plan... either.",
-   "dst": "",
+   "dst": "미안... 하네, Rhay. 나도... 통하길 바랐네. 사실... 나에게도... 계획은... 없네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1028,7 +1028,7 @@
   },
   "The Breaking Point#102": {
    "src": "The Elders... would have known... what to do... But they are... long gone. Nothing but... ruins remain.",
-   "dst": "",
+   "dst": "장로들이라면... 어떻게 할지... 알았을 텐데... 하지만 그분들은... 오래전에 사라졌네. 남은 건... 폐허뿐이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1038,7 +1038,7 @@
   },
   "The Breaking Point#103": {
    "src": "The Elders... They were... the greatest... of doguns. As old... as the oldest stones... and wise... as the earth itself...",
-   "dst": "",
+   "dst": "장로들은... Dogun 중에서... 가장 위대한... 분들이었네. 가장 오래된 돌만큼... 늙었고... 대지만큼... 지혜로웠지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1048,7 +1048,7 @@
   },
   "The Breaking Point#104": {
    "src": "They were capable... of magic... beyond what any... of us could achieve. They alone... could calm our... Protector.",
-   "dst": "",
+   "dst": "그분들은... 우리 누구도... 이를 수 없는... 마법을 부렸네. 오직 그분들만이... 우리의... 수호자를 진정시킬 수 있었지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1058,7 +1058,7 @@
   },
   "The Breaking Point#105": {
    "src": "They were... sealed away. Frozen in... the deepest... of ice. When the dwarves... slew Garaheth... the Elders... fell with him.",
-   "dst": "",
+   "dst": "그분들은... 봉인되었네. 가장 깊은... 얼음 속에... 얼어붙었지. 드워프가... Garaheth를 죽였을 때... 장로들도... 함께 쓰러졌네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1068,7 +1068,7 @@
   },
   "The Breaking Point#106": {
    "src": "Such atrocities... The war... My people... But it is not... to dwell on, now. There are... more important... things at hand.",
-   "dst": "",
+   "dst": "그런 만행이... 그 전쟁이... 내 동족이... 하지만 지금은... 곱씹을 때가 아니네. 더 중요한... 일이... 눈앞에 있으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1078,7 +1078,7 @@
   },
   "The Breaking Point#107": {
    "src": "I... I did not... know of this. My people... are free? How long... has it been... since I have seen... my home?",
-   "dst": "",
+   "dst": "나는... 나는... 몰랐네. 내 동족이... 자유롭다고? 내가... 고향을... 본 지... 얼마나 된 건가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1088,7 +1088,7 @@
   },
   "The Breaking Point#108": {
    "src": "You... Adventurer. We must... speak to my people. Our chieftain... will know... how we may free... the Elders.",
-   "dst": "",
+   "dst": "자네... 모험가여. 우리는... 내 동족과 이야기해야 하네. 우리 족장이라면... 장로들을... 풀어 줄 방법을... 알 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1098,7 +1098,7 @@
   },
   "The Breaking Point#109": {
    "src": "If there's a chance... We have to take it. Ineos, {u}, take the balloon. We'll do what we can here. Now, go! There's no time to waste!",
-   "dst": "",
+   "dst": "기회가 있다면... 잡아야지. Ineos, {u}, 열기구를 타라. 여긴 우리가 할 수 있는 걸 하겠다. 어서 가! 낭비할 시간이 없다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1108,7 +1108,7 @@
   },
   "The Breaking Point#110": {
    "src": "Meet Ineos and Rhay at the Hot Air Balloon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 열기구에서 Ineos, Rhay와 만나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1118,7 +1118,7 @@
   },
   "The Breaking Point#111": {
    "src": "I have never... seen the Heights... from above. I wonder... if their glow... holds the same strength... it does from below...",
-   "dst": "",
+   "dst": "나는... 고원을... 위에서 본 적이... 없네. 저 빛이... 위에서도... 아래에서 보던 만큼... 강할지... 궁금하군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1128,7 +1128,7 @@
   },
   "The Breaking Point#112": {
    "src": "I only hope... the Elders... are not gone... for good. We greatly need... their wisdom.",
-   "dst": "",
+   "dst": "그저 바랄 뿐이네... 장로들이... 영영... 사라진 게 아니기를. 우리에겐... 그분들의 지혜가... 절실하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1138,7 +1138,7 @@
   },
   "The Breaking Point#113": {
    "src": "Ah... I believe us... to be landing...",
-   "dst": "",
+   "dst": "아... 이제... 착륙하는... 것 같군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1148,7 +1148,7 @@
   },
   "The Breaking Point#114": {
    "src": "Travel to {p} with Ineos via the Hot Air Balloon at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Ineos와 함께 [{~}, {~}, -{~}]의 열기구를 타고 {p}(으)로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1158,7 +1158,7 @@
   },
   "The Breaking Point#115": {
    "src": "... Hello. What a... strange sight... to see you landing... at our village... in such a contraption...",
-   "dst": "",
+   "dst": "... 안녕하신가. 참으로... 기묘한 광경이군... 그런 장치를 타고... 우리 마을에... 내려오다니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1168,7 +1168,7 @@
   },
   "The Breaking Point#116": {
    "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
-   "dst": "",
+   "dst": "그리고... 저건... Ineos인가? 우리는... 드워프가... 자네를 돌무더기로 만든 줄 알았네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1178,7 +1178,7 @@
   },
   "The Breaking Point#117": {
    "src": "I escaped... It is a long... story, Korzim. We do not... have time. Where is... your father?",
-   "dst": "",
+   "dst": "탈출했네... 긴... 이야기지, Korzim. 우리에겐... 시간이 없네. 자네... 아버지는 어디 계신가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1188,7 +1188,7 @@
   },
   "The Breaking Point#118": {
    "src": "He is... below. They are... freeing the frozen... in New Taloka. Why do you... wish to speak... with him?",
-   "dst": "",
+   "dst": "아버지는... 아래에 계시네. New Taloka에서... 얼어붙은 이들을... 풀어 주고 있지. 왜... 아버지를 찾는 건가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1198,7 +1198,7 @@
   },
   "The Breaking Point#119": {
    "src": "The Protector... is angered. We must find... the Elders. They will know... how to calm it.",
-   "dst": "",
+   "dst": "수호자께서... 분노하셨네. 우리는... 장로들을 찾아야 하네. 그분들은... 진정시킬 방법을... 아실 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1208,7 +1208,7 @@
   },
   "The Breaking Point#120": {
    "src": "The... Protector... I understand. I will... bring you two... to him. Sidio... Raetin... I leave you two... in charge.",
-   "dst": "",
+   "dst": "수호자... 께서... 알겠네. 내가... 두 사람을... 아버지께 데려가지. Sidio... Raetin... 여기는... 둘에게 맡기겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1218,7 +1218,7 @@
   },
   "The Breaking Point#121": {
    "src": "Now, let us travel... through flame... and through stone...",
-   "dst": "",
+   "dst": "자, 가세... 불꽃을 지나... 돌을 지나...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1228,7 +1228,7 @@
   },
   "The Breaking Point#122": {
    "src": "Speak to {p}'s King and the Dogun Chieftain at New Taloka at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 New Taloka에서 {p}의 왕과 Dogun 족장에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1238,7 +1238,7 @@
   },
   "The Breaking Point#123": {
    "src": "We are... here. Taloka was... one of the first to fall... in the war. We have been... working with the dwarves... to restore it.",
-   "dst": "",
+   "dst": "도착... 했네. Taloka는... 전쟁에서... 가장 먼저 무너진 곳 중 하나였지. 우리는... 드워프와 함께... 복구하고 있네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1248,7 +1248,7 @@
   },
   "The Breaking Point#124": {
    "src": "Are we all ready?",
-   "dst": "",
+   "dst": "모두 준비됐나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1258,7 +1258,7 @@
   },
   "The Breaking Point#125": {
    "src": "Ready...",
-   "dst": "",
+   "dst": "준비됐다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1268,7 +1268,7 @@
   },
   "The Breaking Point#126": {
    "src": "Ready!",
-   "dst": "",
+   "dst": "준비됐습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1278,7 +1278,7 @@
   },
   "The Breaking Point#127": {
    "src": "Very well. Begin on three. One... Two... Three!",
-   "dst": "",
+   "dst": "좋네. 셋에 시작하지. 하나... 둘... 셋!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1288,7 +1288,7 @@
   },
   "The Breaking Point#128": {
    "src": "Beginning reheating cycle! Stand back from the subject.",
-   "dst": "",
+   "dst": "재가열 순환 시작! 대상에게서 물러서세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1298,7 +1298,7 @@
   },
   "The Breaking Point#129": {
    "src": "... Where... am... I? How long... has it... been...?",
-   "dst": "",
+   "dst": "... 여기가... 어디... 지? 얼마나... 지난... 거지...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1308,7 +1308,7 @@
   },
   "The Breaking Point#130": {
    "src": "...Dwarf... You... you froze me... I will... I will...!",
-   "dst": "",
+   "dst": "...드워프... 네놈이... 날 얼렸지... 가만두지... 가만두지 않겠다...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1318,7 +1318,7 @@
   },
   "The Breaking Point#131": {
    "src": "Calm yourself... Delg. Our war... has ended. We are... freed. You have been... freed.",
-   "dst": "",
+   "dst": "진정해라... Delg. 우리의 전쟁은... 끝났다. 우리는... 자유다. 너도... 풀려났다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1328,7 +1328,7 @@
   },
   "The Breaking Point#132": {
    "src": "... Freedom? Hundreds... of years... of war... And we are... free?",
-   "dst": "",
+   "dst": "... 자유? 수백... 년의... 전쟁... 끝에... 우리가... 자유라고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1338,7 +1338,7 @@
   },
   "The Breaking Point#133": {
    "src": "Yes. We are free... to roam our home... once more. Edac... Escort Delg... and help him re-adjust... to the heights.",
-   "dst": "",
+   "dst": "그렇다. 우리는 다시... 고향을... 누빌 수 있다. Edac... Delg를 데려가... 고원에... 다시 적응하게... 도와라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1348,7 +1348,7 @@
   },
   "The Breaking Point#134": {
    "src": "Ah, {u}! It's good to see you again. We haven't seen you around here since... since the end of it.",
-   "dst": "",
+   "dst": "아, {u}! 다시 보니 반갑군. 그... 그 일이 끝난 뒤로 이 근처에서 통 못 봤는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1358,7 +1358,7 @@
   },
   "The Breaking Point#135": {
    "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed bretheren... have been returned to life.",
-   "dst": "",
+   "dst": "그렇다. 우리는... 지난 몇 주 동안... 열심히 일했다. Taloka는 곧... 다시 일어설 것이다. 그리고 봉인되었던... 많은 동포들이... 되살아났다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1368,7 +1368,7 @@
   },
   "The Breaking Point#136": {
    "src": "Ah, but we can talk more about that later. Tell me, what brings you here today? Is there something you need from us?",
-   "dst": "",
+   "dst": "아, 그 얘기는 나중에 더 하지. 말해 보게, 오늘은 무슨 일로 왔나? 우리에게 필요한 거라도 있나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1378,7 +1378,7 @@
   },
   "The Breaking Point#137": {
    "src": "The situtation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
-   "dst": "",
+   "dst": "상황이... 심각하다. 위대한 수호자께서... 너무 오랫동안... 홀로 남겨지셨다. 우리에게는... 장로들의... 지혜가 필요하다. 그들이 어디에... 봉인되어 있는지 아는가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1388,7 +1388,7 @@
   },
   "The Breaking Point#138": {
    "src": "The Elders?! Yes, we know where they are sealed. However, retrieving them is no simple task. It would take us years to break past the defenses, and we have countless other doguns to release first.",
-   "dst": "",
+   "dst": "장로들?! 그래, 어디 봉인됐는지는 알고 있네. 하지만 꺼내는 건 쉬운 일이 아니야. 방어를 뚫는 데만 몇 년은 걸릴 테고, 먼저 풀어 줄 Dogun도 셀 수 없이 많네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1398,7 +1398,7 @@
   },
   "The Breaking Point#139": {
    "src": "The Protector?!",
-   "dst": "",
+   "dst": "수호자께서?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1408,7 +1408,7 @@
   },
   "The Breaking Point#140": {
    "src": "Ineos... I want our Elders free... as much as you do. But our Protector... has stood firm... for hundreds of years. It can stand... for another-",
-   "dst": "",
+   "dst": "Ineos... 나도 너만큼... 장로들이 풀려나길 바란다. 하지만 수호자께서는... 수백 년을... 굳건히 버텨 오셨다. 앞으로도... 버틸 수-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1418,7 +1418,7 @@
   },
   "The Breaking Point#141": {
    "src": "No... Has it truly... fallen this far..?",
-   "dst": "",
+   "dst": "안 돼... 정말... 이 지경까지..?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1428,7 +1428,7 @@
   },
   "The Breaking Point#142": {
    "src": "... That was your Protector? How powerful is it, if it can reach this far?",
-   "dst": "",
+   "dst": "... 저게 자네들 수호자인가? 여기까지 닿을 정도라니, 얼마나 강한 건가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1438,7 +1438,7 @@
   },
   "The Breaking Point#143": {
    "src": "If the Protector... could shake even the Heights... It could destroy... half of this province.",
-   "dst": "",
+   "dst": "수호자께서... 고원마저 뒤흔들 수 있다면... 이 지방의... 절반을... 파괴할 수도 있네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1448,7 +1448,7 @@
   },
   "The Breaking Point#144": {
    "src": "Draani... the Elders must be freed. They alone... would know how to calm it.",
-   "dst": "",
+   "dst": "Draani... 장로들을 풀어 줘야 한다. 오직 그분들만이... 진정시킬 방법을 아신다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1458,7 +1458,7 @@
   },
   "The Breaking Point#145": {
    "src": "Yes... I understand. Very well. {u}, I will take you to the Elders' vault. I hold the keys to open the way forward. Paku, gather your people. See if anyone has alternative solutions.",
-   "dst": "",
+   "dst": "그래... 알겠네. 좋아. {u}, 장로들의 금고로 데려가겠네. 길을 여는 열쇠는 내가 갖고 있지. Paku, 동족을 모으게. 다른 해결책이 있는지 알아보게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1468,7 +1468,7 @@
   },
   "The Breaking Point#146": {
    "src": "We will... search for one. I cannot... promise that one exists.",
-   "dst": "",
+   "dst": "찾아... 보겠다. 있다고... 약속할 수는 없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1478,7 +1478,7 @@
   },
   "The Breaking Point#147": {
    "src": "{u}, let us go. It sounds as if we have very little time to waste.",
-   "dst": "",
+   "dst": "{u}, 가세. 들어 보니 낭비할 시간이 거의 없는 것 같군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1488,7 +1488,7 @@
   },
   "The Breaking Point#148": {
    "src": "I will make preparations, and meet you at the Vault of Ice.",
-   "dst": "",
+   "dst": "준비를 해 두고 얼음 금고에서 만나겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1498,7 +1498,7 @@
   },
   "The Breaking Point#149": {
    "src": "Enter the Dogun Vault within the lower Freezing Heights at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 Freezing Heights 아래쪽에 있는 Dogun 금고로 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1508,7 +1508,7 @@
   },
   "The Breaking Point#150": {
    "src": "... Ahem. This is the entrance, then. One of our most closely guarded secrets... I was hoping not to have to confront this reminder for a while yet...",
-   "dst": "",
+   "dst": "... 흠흠. 여기가 입구일세. 우리가 가장 철저히 지켜 온 비밀 중 하나지... 이 기억과는 한동안 마주치지 않길 바랐건만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1518,7 +1518,7 @@
   },
   "The Breaking Point#151": {
    "src": "But it seems we don't have much choice now. I have the keys, let's go inside.",
-   "dst": "",
+   "dst": "하지만 이제는 선택의 여지가 없는 것 같군. 열쇠는 내게 있으니 들어가세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1528,7 +1528,7 @@
   },
   "The Breaking Point#152": {
    "src": "Unlock the Dogun Vault to find the Elders.",
-   "dst": "",
+   "dst": "Dogun 금고의 잠금을 풀고 장로들을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1538,7 +1538,7 @@
   },
   "The Breaking Point#153": {
    "src": "Rather cold in here, isn't it? A vault carved into a drake's True Ice... I suppose my ancestors hoped to seal these doguns in here forever. I'll be glad to disappoint them.",
-   "dst": "",
+   "dst": "꽤 춥지 않나? 드레이크의 True Ice를 깎아 만든 금고라니... 선조들은 이 Dogun들을 영원히 가둬 둘 생각이었나 보군. 기꺼이 실망시켜 드리지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1548,7 +1548,7 @@
   },
   "The Breaking Point#154": {
    "src": "Quickly, then, let us proceed to the primary door. I pray the Elders will be responsive to our situation with the Colossus.",
-   "dst": "",
+   "dst": "자, 서둘러 정문으로 가세. 장로들이 거상에 관한 우리 사정에 귀 기울여 주길 비네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1558,7 +1558,7 @@
   },
   "The Breaking Point#155": {
    "src": "In any case... Let me see if I can open this second gate. It should be as simple as...",
-   "dst": "",
+   "dst": "아무튼... 이 두 번째 문을 열 수 있나 보세. 이렇게만 하면...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1568,7 +1568,7 @@
   },
   "The Breaking Point#156": {
    "src": "Hm. That... didn't work. This magic is old, and I have never took the time to learn it properly... Alright. We have alternatives.",
-   "dst": "",
+   "dst": "흠. 그건... 안 통했군. 이 마법은 오래된 것이라, 제대로 배울 시간을 낸 적이 없었지... 좋아. 다른 방법이 있네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1578,7 +1578,7 @@
   },
   "The Breaking Point#157": {
    "src": "If my memory serves correctly, there should be a manual override on the other side of this chasm.",
-   "dst": "",
+   "dst": "내 기억이 맞다면, 이 틈 건너편에 수동 제어 장치가 있을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1588,7 +1588,7 @@
   },
   "The Breaking Point#158": {
    "src": "The issue is that treacherous pool of lava on the way... and I don't think my knees are up to the task of jumping over it all.",
-   "dst": "",
+   "dst": "문제는 가는 길에 있는 위험한 용암 웅덩이인데... 내 무릎으로는 그걸 다 뛰어넘기 힘들 것 같네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1598,7 +1598,7 @@
   },
   "The Breaking Point#159": {
    "src": "I would never usually do this, but these are desperate times. Here, take my Trusty Grappling Hook. It should help you get over to the switch.",
-   "dst": "",
+   "dst": "평소라면 절대 안 하겠지만, 지금은 비상시국이니. 자, 내 믿음직한 Grappling Hook을 받게. 스위치까지 가는 데 도움이 될 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1608,7 +1608,7 @@
   },
   "The Breaking Point#160": {
    "src": "It has limitations, though. It will only be able to latch onto those blue rocks on the walls - and I'll be taking it back once you're finished, thank you very much!",
-   "dst": "",
+   "dst": "다만 한계가 있네. 벽에 있는 파란 바위에만 걸 수 있지. 그리고 다 쓰면 돌려받을 걸세, 고맙네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1618,7 +1618,7 @@
   },
   "The Breaking Point#161": {
    "src": "Hey, {u}! Looks like you're doing good so far, but if you get stuck remember you can jump and then grapple mid-air, that might help on some of those trickier platforms!",
-   "dst": "",
+   "dst": "이보게, {u}! 지금까지 잘하고 있군. 막히면 점프한 뒤 공중에서 갈고리를 걸 수 있다는 걸 기억하게. 까다로운 발판에서 도움이 될 걸세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1628,7 +1628,7 @@
   },
   "The Breaking Point#162": {
    "src": "Looks like that unlocked it, {u}! Get yourself back over here and I'll open the door.",
-   "dst": "",
+   "dst": "그걸로 잠금이 풀린 것 같군, {u}! 이쪽으로 돌아오게, 문을 열겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1638,7 +1638,7 @@
   },
   "The Breaking Point#163": {
    "src": "There we are! Excellent work. You used that hook like a true expert! Ah, reminds me of the time-...",
-   "dst": "",
+   "dst": "됐네! 훌륭하군. 갈고리를 진짜 전문가처럼 다루는군! 아, 옛날 생각이 나는군-...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1648,7 +1648,7 @@
   },
   "The Breaking Point#164": {
    "src": "...Ahem. Excellent work, indeed. With the override activated, I should be able to do the rest of the work to open the gate.",
-   "dst": "",
+   "dst": "...흠흠. 정말 훌륭했네. 제어 장치가 작동했으니 나머지 문 여는 작업은 내가 할 수 있을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1658,7 +1658,7 @@
   },
   "The Breaking Point#165": {
    "src": "First, though, I'll be having that grappling hook back! Think of what could happen if you had free reign of that all over.",
-   "dst": "",
+   "dst": "하지만 먼저 그 갈고리는 돌려받겠네! 자네가 그걸 아무 데서나 마음대로 쓰면 무슨 일이 벌어질지 생각해 보게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1668,7 +1668,7 @@
   },
   "The Breaking Point#166": {
    "src": "And so... I believe we have gone as far as we can.",
-   "dst": "",
+   "dst": "그리고... 우리가 갈 수 있는 곳은 여기까지인 것 같군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1678,7 +1678,7 @@
   },
   "The Breaking Point#167": {
    "src": "This is True Ice, {u}. It has scarred this part of the Heights for centuries, ever since it was created by an ice dragon in my ancestors' conquest.",
-   "dst": "",
+   "dst": "이건 True Ice일세, {u}. 선조들의 정복 때 얼음 용이 만들어 낸 뒤로 수백 년간 고원의 이 일대에 상처로 남아 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1688,7 +1688,7 @@
   },
   "The Breaking Point#168": {
    "src": "It cannot be melted or burned through by any means. It is why this location was chosen for their tomb. I'm afraid there is nothing more we can do.",
-   "dst": "",
+   "dst": "어떤 방법으로도 녹이거나 태워 뚫을 수 없네. 그래서 이곳이 그들의 무덤으로 선택된 거지. 유감이지만 더 할 수 있는 게 없네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1698,7 +1698,7 @@
   },
   "The Breaking Point#169": {
    "src": "At the end of the war, I imagine.",
-   "dst": "",
+   "dst": "전쟁이 끝날 무렵이었을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1708,7 +1708,7 @@
   },
   "The Breaking Point#170": {
    "src": "As the final dogun settlements fell, and as Garaheth was slain for the first time, my ancestors must have sealed them deep in this ice.",
-   "dst": "",
+   "dst": "마지막 Dogun 정착지가 무너지고 Garaheth가 처음 죽임을 당했을 때, 선조들이 그들을 이 얼음 깊숙이 봉인했을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1718,7 +1718,7 @@
   },
   "The Breaking Point#171": {
    "src": "The... actions of the Dwarves after winning the war are well documented. I would not be surprised if our accounts describe this imprisonment as a great victory.",
-   "dst": "",
+   "dst": "전쟁에서 이긴 뒤 드워프가... 한 일은 기록이 잘 남아 있네. 우리 기록이 이 감금을 위대한 승리로 묘사한다 해도 놀랍지 않을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1728,7 +1728,7 @@
   },
   "The Breaking Point#172": {
    "src": "The Dwarves, of course. Who else?",
-   "dst": "",
+   "dst": "물론 드워프지. 누가 또 있겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1738,7 +1738,7 @@
   },
   "The Breaking Point#173": {
    "src": "I believe it was General Algard of the Dwarven army to order the Elders' imprisonments.",
-   "dst": "",
+   "dst": "장로들의 감금을 명령한 건 드워프 군의 Algard 장군이었을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1748,7 +1748,7 @@
   },
   "The Breaking Point#174": {
    "src": "He was lauded as a hero, naturally. Now... we must reap the consequences of such a decision.",
-   "dst": "",
+   "dst": "당연히 영웅으로 칭송받았지. 이제... 우리가 그 결정의 대가를 치러야 하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1758,7 +1758,7 @@
   },
   "The Breaking Point#175": {
    "src": "True Ice is a material that cannot be melted or burned through by any means. Not even dogun magic has been able to make a dent.",
-   "dst": "",
+   "dst": "True Ice는 어떤 방법으로도 녹이거나 태워 뚫을 수 없는 물질일세. Dogun 마법으로도 흠집 하나 못 냈지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1768,7 +1768,7 @@
   },
   "The Breaking Point#176": {
    "src": "... I imagine why this location was chosen to hold the elders. A prison from which they would never be able to escape.",
-   "dst": "",
+   "dst": "... 왜 이곳에 장로들을 가뒀는지 알 것 같네. 절대 빠져나올 수 없는 감옥이니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1778,7 +1778,7 @@
   },
   "The Breaking Point#177": {
    "src": "It is known for it to form naturally under extreme conditions... But the ice here is nowhere near natural.",
-   "dst": "",
+   "dst": "극한 환경에서 자연적으로 생긴다고 알려져 있지... 하지만 여기 얼음은 전혀 자연적이지 않네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1788,7 +1788,7 @@
   },
   "The Breaking Point#178": {
    "src": "It was formed by an Ice Drake's Breath partway through the war- and, well, as you can see, it has remained here ever since.",
-   "dst": "",
+   "dst": "전쟁 중에 얼음 드레이크의 숨결로 생겨났지- 그리고, 뭐, 보다시피 그 뒤로 계속 여기 남아 있네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1798,7 +1798,7 @@
   },
   "The Breaking Point#179": {
    "src": "Just another remnant of our past mistakes, I suppose...",
-   "dst": "",
+   "dst": "우리가 과거에 저지른 실수의 흔적 중 하나일 뿐이겠지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1808,7 +1808,7 @@
   },
   "The Breaking Point#180": {
    "src": "Ahem. In any case- as I said, True Ice is impossible to break through, even with the most scorching flames.",
-   "dst": "",
+   "dst": "흠흠. 아무튼- 말했듯이 True Ice는 아무리 뜨거운 불꽃으로도 뚫을 수 없네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1818,7 +1818,7 @@
   },
   "The Breaking Point#181": {
    "src": "I... I suppose that a dragon's breath might be able to melt it. That logic does make sense.",
-   "dst": "",
+   "dst": "나... 나도 용의 숨결이라면 녹일 수 있을지도 모른다고 생각하네. 논리적으로는 말이 되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1828,7 +1828,7 @@
   },
   "The Breaking Point#182": {
    "src": "We have little knowledge of what dragons were like, though. As they went extinct, that information became... useless. And so, it was lost.",
-   "dst": "",
+   "dst": "하지만 용이 어땠는지는 거의 알려진 게 없네. 멸종한 뒤로 그런 지식은... 쓸모가 없어졌지. 그래서 잊혔고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1838,7 +1838,7 @@
   },
   "The Breaking Point#183": {
    "src": "If anyone would know more about dragons, it would be the doguns.",
-   "dst": "",
+   "dst": "용에 대해 더 아는 자가 있다면, Dogun일 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1848,7 +1848,7 @@
   },
   "The Breaking Point#184": {
    "src": "But none of that matters. All the dragons are gone, after all. We still have no options.",
-   "dst": "",
+   "dst": "하지만 다 소용없는 얘기지. 어쨌든 용은 전부 사라졌으니. 여전히 방법이 없네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1858,7 +1858,7 @@
   },
   "The Breaking Point#185": {
    "src": "Why, they died out. As Gavellian civilizations grew in size, the ferocity and size of a dragon was simply too much of a threat.",
-   "dst": "",
+   "dst": "그야, 멸종했지. Gavel 문명이 커지면서 용의 사나움과 덩치는 너무 큰 위협이 됐거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1868,7 +1868,7 @@
   },
   "The Breaking Point#186": {
    "src": "Some were hunted. Some died of starvation. Eggs were taken from nests and shattered over boulders for the birds to feed on.",
-   "dst": "",
+   "dst": "일부는 사냥당했고, 일부는 굶어 죽었네. 알은 둥지에서 꺼내져 바위에 깨뜨려 새들의 먹이가 됐지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1878,7 +1878,7 @@
   },
   "The Breaking Point#187": {
    "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
-   "dst": "",
+   "dst": "이제 남은 건 새끼 용뿐일세. 한때 위대했던 선조의 메아리로, 갑옷을 그을릴 불꽃조차 겨우 뿜지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1888,7 +1888,7 @@
   },
   "The Breaking Point#188": {
    "src": "You- what? Near {p}?",
-   "dst": "",
+   "dst": "자네- 뭐라고? {p} 근처에?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1898,7 +1898,7 @@
   },
   "The Breaking Point#189": {
    "src": "A living dragon... You've done quite a lot, haven't you? Stopped a war, moved a dragon...",
-   "dst": "",
+   "dst": "살아 있는 용이라니... 자네 참 많은 일을 했군? 전쟁을 막고, 용을 옮기고...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1908,7 +1908,7 @@
   },
   "The Breaking Point#190": {
    "src": "Well... if there is a living dragon at {p}... Then we still have hope! {u}, we must ask for its help.",
-   "dst": "",
+   "dst": "그렇다면... {p}에 살아 있는 용이 있다면... 아직 희망이 있네! {u}, 그 용에게 도움을 청해야 하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1918,7 +1918,7 @@
   },
   "The Breaking Point#191": {
    "src": "Let us return to the others. I asked them to wait outside of {p}... perhaps they'll be able to confirm that a dragon's breath would do the job.",
-   "dst": "",
+   "dst": "다른 이들에게 돌아가세. {p} 밖에서 기다리라고 했으니... 용의 숨결이 통할지 확인해 줄 수 있을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1928,7 +1928,7 @@
   },
   "The Breaking Point#192": {
    "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
-   "dst": "",
+   "dst": "그렇다네. 전쟁 중 그들 편에 섰던 화염 용들이지. Freezing Heights 바로 밖에 있는 해골은 봤을 테지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1938,7 +1938,7 @@
   },
   "The Breaking Point#193": {
    "src": "Yes, well... the Dwarves needed a counter to the sheer power of a fire dragon in battle, and so they resorted to enslaving dragons and drakes of other elements.",
-   "dst": "",
+   "dst": "그래, 음... 드워프는 전장에서 화염 용의 압도적인 힘에 맞설 수단이 필요했네. 그래서 다른 속성의 용과 드레이크를 노예로 부렸지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1948,7 +1948,7 @@
   },
   "The Breaking Point#194": {
    "src": "Like the Ice Drake that created this vault, and encased the Elders in the truest of ice.",
-   "dst": "",
+   "dst": "이 금고를 만들고 장로들을 가장 순수한 얼음에 가둔 얼음 드레이크처럼 말일세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1958,7 +1958,7 @@
   },
   "The Breaking Point#195": {
    "src": "... Well, there was this excellent novel of about one of those creatures from the Shiar, who had to travel to the Heights with this ring he had inherited-",
-   "dst": "",
+   "dst": "... 음, Shiar 출신의 그런 생물에 관한 훌륭한 소설이 있었지. 물려받은 반지를 들고 고원까지 여행해야 했던-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1968,7 +1968,7 @@
   },
   "The Breaking Point#196": {
    "src": "But I confess, these questions seem almost irrelevant. We have a more pressing issue at hand, {u}.",
-   "dst": "",
+   "dst": "하지만 솔직히 이런 질문은 지금 별 의미가 없네. 더 급한 문제가 있잖나, {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1978,7 +1978,7 @@
   },
   "The Breaking Point#197": {
    "src": "This ice is harder than obsidian itself. The crystals which form the material are bonded by ancient magic.",
-   "dst": "",
+   "dst": "이 얼음은 흑요석보다도 단단하네. 이 물질을 이루는 결정은 고대 마법으로 결합되어 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1988,7 +1988,7 @@
   },
   "The Breaking Point#198": {
    "src": "Shattering it with such tools isn't an option. Perhaps there is a weapon that could break through, somewhere deep in our armory- after all, this vault had to be carved somehow...",
-   "dst": "",
+   "dst": "그런 도구로 깨뜨리는 건 불가능하네. 무기고 깊숙한 곳에 뚫을 수 있는 무기가 있을지도 모르지. 어쨌든 이 금고도 뭔가로 깎아 냈을 테니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1998,7 +1998,7 @@
   },
   "The Breaking Point#199": {
    "src": "However, given the circumstances, I don't think we have the time to search for it. Even if we started now, our armory is enormous. It would take weeks to find what we need.",
-   "dst": "",
+   "dst": "하지만 상황을 보면 그걸 찾을 시간이 없을 것 같네. 지금 시작해도 무기고가 워낙 넓어서, 필요한 걸 찾는 데 몇 주는 걸릴 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2008,7 +2008,7 @@
   },
   "The Breaking Point#200": {
    "src": "The lava of the Heights is nothing more than molten rock. Just a remnant of the shaping of these caverns.",
-   "dst": "",
+   "dst": "고원의 용암은 녹은 바위에 불과하네. 이 동굴들이 생겨날 때 남은 찌꺼기일 뿐이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2018,7 +2018,7 @@
   },
   "The Breaking Point#201": {
    "src": "It's not nearly hot enough to melt True Ice. If it could, the Freezing Heights would have faded long ago.",
-   "dst": "",
+   "dst": "True Ice를 녹이기엔 턱없이 뜨겁지 않네. 그게 가능했다면 Freezing Heights는 오래전에 사라졌겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2028,7 +2028,7 @@
   },
   "The Breaking Point#202": {
    "src": "My... uhm... green is nice, I suppose? Though perhaps not very Dwarven...",
-   "dst": "",
+   "dst": "내... 음... 초록색이 좋지 않나 싶네? 드워프다운 색은 아닐지 몰라도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2038,7 +2038,7 @@
   },
   "The Breaking Point#203": {
    "src": "Red, then. Or orange! ...Although my bedsheets are the most wonderful shade of navy blue...",
-   "dst": "",
+   "dst": "그럼 빨간색. 아니면 주황색! ...그래도 내 침대 시트의 남색이 제일 멋지긴 하지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2048,7 +2048,7 @@
   },
   "The Breaking Point#204": {
    "src": "Breakfast... I had some eggs, I suppose. Though, I had no idea that breakfast would be my last, did I..?",
-   "dst": "",
+   "dst": "아침... 달걀을 좀 먹었던 것 같네. 그게 마지막 아침일 줄은 몰랐지, 안 그런가..?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2058,7 +2058,7 @@
   },
   "The Breaking Point#205": {
    "src": "Hm... Had I known, maybe I would have chosen differently. Maybe I would have-... nevermind.",
-   "dst": "",
+   "dst": "흠... 알았다면 다른 걸 골랐을지도. 어쩌면 나는-... 아닐세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2068,7 +2068,7 @@
   },
   "The Breaking Point#206": {
    "src": "Regroup at outside {p} at [{~}, {~}, -{~}] to figure out how to free the Elders.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p} 밖에서 합류해 장로들을 풀어 줄 방법을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2078,7 +2078,7 @@
   },
   "The Breaking Point#207": {
    "src": "... so this is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
-   "dst": "",
+   "dst": "... 그래서 우리가 이런 상황에 처해 있네. Paku, 어떻게 생각하나? 그런 계획이 통하겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2088,7 +2088,7 @@
   },
   "The Breaking Point#208": {
    "src": "Hm... You may be correct... Draani. The magic in... a dragon's breath... was very potent. And to think... mighty Ozoth had survived... all these years...",
-   "dst": "",
+   "dst": "흠... 네 말이 맞을지도... 모른다, Draani. 용의 숨결에 깃든... 마법은... 무척 강력했다. 강대한 Ozoth가... 지금껏... 살아 있었다니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2098,7 +2098,7 @@
   },
   "The Breaking Point#209": {
    "src": "If Ozoth is alive... we must seek her help. If the doguns ask... for her aid, she will... give it.",
-   "dst": "",
+   "dst": "Ozoth가 살아 있다면... 그녀에게 도움을 청해야 하네. Dogun이 청한다면... 그녀는... 도와줄 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2108,7 +2108,7 @@
   },
   "The Breaking Point#210": {
    "src": "Well, that's as good a plan as any. {u}, you'll travel to seek this dragon's counsel, along with... Ineos, was it? Good luck.",
-   "dst": "",
+   "dst": "뭐, 그만한 계획도 없지. {u}, 이 용의 조언을 구하러 가게. 함께 갈 이는... Ineos였던가? 행운을 비네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2118,7 +2118,7 @@
   },
   "The Breaking Point#211": {
    "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
-   "dst": "",
+   "dst": "교역 터널을... 이용하게... {u}. 좌표는... 퀘스트 북에... 적어 두겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2128,7 +2128,7 @@
   },
   "The Breaking Point#212": {
    "src": "Use the {p} trading tunnel at [{~}, {~}, -{~}] to travel to {p}.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p} 교역 터널을 이용해 {p}(으)로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2138,7 +2138,7 @@
   },
   "The Breaking Point#213": {
    "src": "Travel to {p} at [{~}, {~}, -{~}] in an attempt to speak with her.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p}(으)로 가서 그녀와 이야기해 보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2148,7 +2148,7 @@
   },
   "The Breaking Point#214": {
    "src": "Ah... it is... good to... see you. We must... proceed to Ozoth... with all haste.",
-   "dst": "",
+   "dst": "아... 다시... 보니... 반갑네. 서둘러... Ozoth에게... 가야 하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2158,7 +2158,7 @@
   },
   "The Breaking Point#215": {
    "src": "Ozoth the Dragon... Endless Kindler... we have come... to ask for your aid.",
-   "dst": "",
+   "dst": "용 Ozoth여... 끝없는 점화자여... 우리는... 도움을 청하러... 왔습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2178,7 +2178,7 @@
   },
   "The Breaking Point#217": {
    "src": "We are searching... for a way... to melt the truest... of ice. The fate... of Gavel... hangs in the balance.",
-   "dst": "",
+   "dst": "우리는... 가장 순수한... 얼음을 녹일... 방법을 찾고 있습니다. Gavel의... 운명이... 위태롭습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2188,7 +2188,7 @@
   },
   "The Breaking Point#218": {
    "src": "Doguns... and Dragons... our fates have been entwined... for centuries. We call on you now... Endless Kindler... to save this province.",
-   "dst": "",
+   "dst": "Dogun과... 용은... 수백 년간... 운명을 함께해 왔습니다. 이제... 끝없는 점화자여... 이 지방을 구해 주십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2208,7 +2208,7 @@
   },
   "The Breaking Point#220": {
    "src": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
-   "dst": "",
+   "dst": "그렇군... Ozoth가 말하길... 영원의 불꽃이... 장로들을 풀어 줄 거라네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2218,7 +2218,7 @@
   },
   "The Breaking Point#221": {
    "src": "... well...",
-   "dst": "",
+   "dst": "... 그게...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2228,7 +2228,7 @@
   },
   "The Breaking Point#222": {
    "src": "The Endless Kindler... is willing to part... with hers. You must... retrieve it... from her stomach.",
-   "dst": "",
+   "dst": "끝없는 점화자께서... 자신의 것을... 내어 주시겠다네. 자네가... 그녀의 뱃속에서... 꺼내 와야 하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2248,7 +2248,7 @@
   },
   "The Breaking Point#224": {
    "src": "I would advise you... not to think... too much about this. When... you are ready... enter Ozoth's mouth and retrieve... the flame.",
-   "dst": "",
+   "dst": "이 일에 대해서는... 너무 깊이... 생각하지 않길... 권하네. 준비가... 되면... Ozoth의 입으로 들어가... 불꽃을 꺼내 오게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2258,7 +2258,7 @@
   },
   "The Breaking Point#225": {
    "src": "Descend into Ozoth's belly to retrieve an Everflame.",
-   "dst": "",
+   "dst": "Ozoth의 뱃속으로 내려가 영원의 불꽃을 가져오세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2268,7 +2268,7 @@
   },
   "The Breaking Point#226": {
    "src": "Travel to {p} at [{~}, {~}, -{~}] with an Everflame.",
-   "dst": "",
+   "dst": "영원의 불꽃을 가지고 [{~}, {~}, -{~}]의 {p}(으)로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2278,7 +2278,7 @@
   },
   "The Breaking Point#227": {
    "src": "{u}! Have you retrieved... the Eternal Flame?",
-   "dst": "",
+   "dst": "{u}! 영원의 불꽃을... 가져왔는가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2288,7 +2288,7 @@
   },
   "The Breaking Point#228": {
    "src": "Excellent. Endless Kindler... thank you... for your sacrifice. I will ensure... that your flame... is returned to you.",
-   "dst": "",
+   "dst": "훌륭하네. 끝없는 점화자여... 희생에... 감사드립니다. 당신의 불꽃이... 반드시... 돌아오게 하겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2308,7 +2308,7 @@
   },
   "The Breaking Point#230": {
    "src": "Ozoth apologises... if it was a bit hot... in there.",
-   "dst": "",
+   "dst": "Ozoth가... 안이 좀... 뜨거웠다면... 미안하다고 하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2318,7 +2318,7 @@
   },
   "The Breaking Point#231": {
    "src": "Now, {u}... I was never the best... at the ancient magic... but I hope I have enough skill... to take us the short route back...",
-   "dst": "",
+   "dst": "자, {u}... 나는 고대 마법에... 능한 편은... 아니었지만... 지름길로 돌아갈 만한... 실력은 있기를 바라네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2328,7 +2328,7 @@
   },
   "The Breaking Point#232": {
    "src": "You have returned! Is there news from {p}? Did the dragon offer aid?",
-   "dst": "",
+   "dst": "돌아왔군! {p}에서 소식이 있나? 용이 도와준다던가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2338,7 +2338,7 @@
   },
   "The Breaking Point#233": {
    "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Eternal Flame... to melt the ice.",
-   "dst": "",
+   "dst": "그녀는 해냈다... Ozoth는 이 지방을 위해... 큰 희생을 했다... 하지만 우리에게는 얼음을 녹일... 영원의 불꽃이 있다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2348,7 +2348,7 @@
   },
   "The Breaking Point#234": {
    "src": "Well done... both of you. I will ensure... that the doguns thank her... properly. The dwarves would do well... to do the same.",
-   "dst": "",
+   "dst": "잘했다... 둘 다. Dogun이 그녀에게... 제대로... 감사하도록 하겠다. 드워프도... 그리하는 게 좋을 것이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2358,7 +2358,7 @@
   },
   "The Breaking Point#235": {
    "src": "Yes, yes, but there's no time to worry about that now. Quick, let's get back to the-",
-   "dst": "",
+   "dst": "그래, 그래, 하지만 지금은 그걸 걱정할 때가 아닐세. 어서 돌아가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2368,7 +2368,7 @@
   },
   "The Breaking Point#236": {
    "src": "Be wary... of the Elders... Draani. It is unlikely they will react well... after their imprisonment. It is vital... you explain the situation... to them.",
-   "dst": "",
+   "dst": "장로들을... 조심해라... Draani. 감금을 겪은 뒤라... 좋게 반응할 리 없다. 반드시... 그분들께... 상황을 설명해야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2378,7 +2378,7 @@
   },
   "The Breaking Point#237": {
    "src": "I would join you... both... but the ice is inhospitable... to my kind. I wish the both of you... the best of luck.",
-   "dst": "",
+   "dst": "나도... 둘과... 함께 가고 싶지만... 그 얼음은 우리 종족에게... 가혹하다. 둘 모두에게... 행운을 빈다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2388,7 +2388,7 @@
   },
   "The Breaking Point#238": {
    "src": "...right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
-   "dst": "",
+   "dst": "...그래. 그렇지. 뭐, 피할 방법은 없군. 가세, {u}. 장로들을 해동하고 우리 말을 듣게 해야 하네. 불꽃을 가져오게, 금고에서 만나지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2398,7 +2398,7 @@
   },
   "The Breaking Point#239": {
    "src": "Return to the Dogun Vault at [{~}, {~}, -{~}] to free the Dogun Elders.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 Dogun 금고로 돌아가 Dogun 장로들을 풀어 주세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2408,7 +2408,7 @@
   },
   "The Breaking Point#240": {
    "src": "Well then, what are we waiting for! Let's free these elders, shall we?",
-   "dst": "",
+   "dst": "자, 뭘 기다리나! 장로들을 풀어 드리세, 어떤가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2418,7 +2418,7 @@
   },
   "The Breaking Point#241": {
    "src": "Just bring the Everflame to each of the cells, and melt through that True Ice.",
-   "dst": "",
+   "dst": "영원의 불꽃을 각 감방에 가져가서 True Ice를 녹여 뚫기만 하면 되네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2428,7 +2428,7 @@
   },
   "The Breaking Point#242": {
    "src": "Excellent! We've done it! Now we just need to explain the situation-...",
-   "dst": "",
+   "dst": "훌륭하네! 해냈어! 이제 상황만 설명하면-...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2438,7 +2438,7 @@
   },
   "The Breaking Point#243": {
    "src": "We are freed.",
-   "dst": "",
+   "dst": "우리는 풀려났다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2448,7 +2448,7 @@
   },
   "The Breaking Point#244": {
    "src": "...Ah. I suppose I did not... think this through. Ehm. Elders, I must apo-",
-   "dst": "",
+   "dst": "...아. 이 일을 제대로... 생각하지 않았군. 음. 장로님들, 사죄를 드-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2458,7 +2458,7 @@
   },
   "The Breaking Point#245": {
    "src": "Dwarf... Hm. The crimes... of your ancestors... must be repaid.",
-   "dst": "",
+   "dst": "드워프... 흠. 네 선조들의... 죄는... 갚아야 할 것이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2468,7 +2468,7 @@
   },
   "The Breaking Point#246": {
    "src": "However. We have... heard you speak. We have... learned of... the Protector's state.",
-   "dst": "",
+   "dst": "하지만. 우리는... 너희의 말을 들었다. 수호자의... 상태를... 알게 되었다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2478,7 +2478,7 @@
   },
   "The Breaking Point#247": {
    "src": "We will... settle your debt... later. This situation... is a more pressing... concern. The Protector... must be calmed.",
-   "dst": "",
+   "dst": "너희의 빚은... 나중에... 청산하겠다. 지금 상황이... 더 급한... 문제다. 수호자를... 진정시켜야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2488,7 +2488,7 @@
   },
   "The Breaking Point#248": {
    "src": "...Yes. You. Human. That was... dragonfire... was it not?",
-   "dst": "",
+   "dst": "...그렇다. 너. 인간. 그것은... 용의 불꽃... 아니더냐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2498,7 +2498,7 @@
   },
   "The Breaking Point#249": {
    "src": "Then allow me... to borrow it. Its strength... will allow us... to restore ours. Now... Who now holds... the title... of Chieftain?",
-   "dst": "",
+   "dst": "그렇다면... 내가 빌리겠다. 그 힘이면... 우리 힘을... 되찾을 수 있다. 그런데... 지금 족장의... 자리는... 누가 맡고 있느냐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2508,7 +2508,7 @@
   },
   "The Breaking Point#250": {
    "src": "A-ah! Paku is now the Dogun Chieftain. He would be at... At Taloka.",
-   "dst": "",
+   "dst": "아, 아! 지금은 Paku가 Dogun 족장입니다. 그는... Taloka에 있을 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2518,7 +2518,7 @@
   },
   "The Breaking Point#251": {
    "src": "Very well... We shall travel... through flame... and through stone...",
-   "dst": "",
+   "dst": "좋다... 떠나자... 불꽃을 지나... 돌을 지나...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2528,7 +2528,7 @@
   },
   "The Breaking Point#252": {
    "src": "...The Elders... after all this time... to see you, again... in the flesh...",
-   "dst": "",
+   "dst": "...장로님들... 이토록 오랜 세월 끝에... 다시... 직접 뵙다니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2538,7 +2538,7 @@
   },
   "The Breaking Point#253": {
    "src": "Greetings, Paku. We have much... to discuss. But first... we must travel... to the Protector.",
-   "dst": "",
+   "dst": "반갑다, Paku. 나눌 이야기가... 많다. 하지만 먼저... 수호자에게... 가야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2548,7 +2548,7 @@
   },
   "The Breaking Point#254": {
    "src": "Join us... Ineos and Paku. There is... very little time... to waste.",
-   "dst": "",
+   "dst": "함께 가자... Ineos, Paku. 낭비할... 시간이... 거의 없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2558,7 +2558,7 @@
   },
   "The Breaking Point#255": {
    "src": "Now, let us travel... (The following part of the line is High Gavellian) Through flame... and through stone...",
-   "dst": "",
+   "dst": "자, 떠나자... (이어지는 대사는 High Gavellian) 불꽃을 지나... 돌을 지나...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2568,7 +2568,7 @@
   },
   "The Breaking Point#256": {
    "src": "Korzim... my son... join us. The Elders must see... to the Protector.",
-   "dst": "",
+   "dst": "Korzim... 내 아들아... 함께 가자. 장로들께서... 수호자를 살피셔야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2578,7 +2578,7 @@
   },
   "The Breaking Point#257": {
    "src": "Iscor... Astal... Desint... it has been... too long. I will come.",
-   "dst": "",
+   "dst": "Iscor... Astal... Desint... 너무... 오래되었군요. 저도 가겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2588,7 +2588,7 @@
   },
   "The Breaking Point#258": {
    "src": "Earth and flame... fire and stone... transport us through your form! (In High Gavellian)",
-   "dst": "",
+   "dst": "대지와 불꽃이여... 불과 돌이여... 너희의 몸으로 우리를 옮겨라! (High Gavellian으로)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2598,7 +2598,7 @@
   },
   "The Breaking Point#259": {
    "src": "-have to trust that they'll return!",
-   "dst": "",
+   "dst": "-돌아올 거라고 믿어야 해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2608,7 +2608,7 @@
   },
   "The Breaking Point#260": {
    "src": "There's no time! I can feel the damned ground cracking beneath my feet, we have to turn to the final option. We've had demolition mages on standby the past few days, our only choice is to-",
-   "dst": "",
+   "dst": "시간이 없다! 발밑에서 망할 땅이 갈라지는 게 느껴진다. 최후의 수단을 써야 해. 며칠째 폭파 마법사들을 대기시켜 뒀으니, 유일한 선택은-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2618,7 +2618,7 @@
   },
   "The Breaking Point#261": {
    "src": "Rhay. Elix. My Elders... have been freed. They are here... to help... the Protector.",
-   "dst": "",
+   "dst": "Rhay. Elix. 내 장로들께서... 풀려나셨네. 그분들이... 수호자를... 도우러... 오셨네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2628,7 +2628,7 @@
   },
   "The Breaking Point#262": {
    "src": "Join us... brave ones. You will see... that your efforts to save this Province... have not been in vain.",
-   "dst": "",
+   "dst": "함께 가자... 용감한 자들이여. 이 지방을 구하려던... 너희의 노력이... 헛되지 않았음을... 보게 될 것이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2638,7 +2638,7 @@
   },
   "The Breaking Point#263": {
    "src": "Flames of the earth... take us to the Great Protector... to make our plea! (In High Gavellian)",
-   "dst": "",
+   "dst": "대지의 불꽃이여... 위대한 수호자에게 데려가라... 우리의 간청을 전하도록! (High Gavellian으로)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2648,7 +2648,7 @@
   },
   "The Breaking Point#264": {
    "src": "Travel to the Canyon Colossus at [{~}, {~}, -{~}] to attempt to calm it.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 협곡의 거상으로 가서 진정시켜 보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2658,7 +2658,7 @@
   },
   "The Breaking Point#265": {
    "src": "Great Protector... It is furious.",
-   "dst": "",
+   "dst": "위대한 수호자여... 격노하셨구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2668,7 +2668,7 @@
   },
   "The Breaking Point#266": {
    "src": "Hmph. Foolish dwarves... This is what has come...of your needless war... You are fortunate...to have freed us now...",
-   "dst": "",
+   "dst": "흥. 어리석은 드워프들... 이것이... 쓸데없는 전쟁이... 낳은 결과다... 지금 우리를 풀어 준 걸... 다행으로 여겨라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2678,7 +2678,7 @@
   },
   "The Breaking Point#267": {
    "src": "Desint... Iscor... I will prepare... the ritual. Defend me... as I do so.",
-   "dst": "",
+   "dst": "Desint... Iscor... 나는... 의식을 준비하겠다. 그동안... 나를 지켜라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2688,7 +2688,7 @@
   },
   "The Breaking Point#268": {
    "src": "Human. We will pull the Protector... away from the brink. That is all we can do now. All the power... we can muster.",
-   "dst": "",
+   "dst": "인간. 우리가 수호자를... 벼랑 끝에서 끌어내겠다. 지금 할 수 있는 건 그것뿐이다. 모을 수 있는... 모든 힘으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2698,7 +2698,7 @@
   },
   "The Breaking Point#269": {
    "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
-   "dst": "",
+   "dst": "너는... 이 성지로... 들어가야 한다. 끝까지 싸워 나가... 정신을... 차리게 해라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2708,7 +2708,7 @@
   },
   "The Breaking Point#270": {
    "src": "Adventurer... We are counting...on you. We will try to...support you however we can.",
-   "dst": "",
+   "dst": "모험가여... 자네에게... 달렸네. 우리도... 할 수 있는 한... 돕겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2718,7 +2718,7 @@
   },
   "The Breaking Point#271": {
    "src": "We'll do the best we can out here! I have some ideas already...",
-   "dst": "",
+   "dst": "우린 밖에서 최선을 다할게! 벌써 몇 가지 생각이 있어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2728,7 +2728,7 @@
   },
   "The Breaking Point#272": {
    "src": "Rhay, this isn't the time. Human. We have your back. You can do this.",
-   "dst": "",
+   "dst": "Rhay, 지금은 그럴 때가 아니다. 인간. 뒤는 우리가 맡는다. 넌 해낼 수 있다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2738,7 +2738,7 @@
   },
   "The Breaking Point#273": {
    "src": "You have faced...worse odds before...have you not? You will face them...again.",
-   "dst": "",
+   "dst": "자네는... 더 나쁜 상황도... 겪어 보지 않았나? 이번에도... 이겨 낼 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2748,7 +2748,7 @@
   },
   "The Breaking Point#274": {
    "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
-   "dst": "",
+   "dst": "끝났다. Desint... Iscor... 자리를 잡아라. 우리가... 붙잡아 두어야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2758,7 +2758,7 @@
   },
   "The Breaking Point#275": {
    "src": "Great Protector, lord of stone, hear our burning call. Your fury clouds your vision, your anger burns and twists our home. (In High Gavellian)",
-   "dst": "",
+   "dst": "위대한 수호자여, 돌의 군주여, 우리의 타오르는 부름을 들으소서. 분노가 눈을 가리고, 격노가 우리의 터전을 태우고 뒤틀고 있나이다. (High Gavellian으로)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2768,7 +2768,7 @@
   },
   "The Breaking Point#276": {
    "src": "We, the doguns, who now hold the final flame of a fallen god... We will hold you back. We will keep this land intact! (In High Gavellian)",
-   "dst": "",
+   "dst": "쓰러진 신의 마지막 불꽃을 지닌 우리 Dogun이... 당신을 막아서겠나이다. 이 땅을 지켜 내겠나이다! (High Gavellian으로)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2778,7 +2778,7 @@
   },
   "The Breaking Point#277": {
    "src": "We will... hold it from here... human. Now... go! We will not... be able to hold it... for long...",
-   "dst": "",
+   "dst": "우리가... 여기서 붙잡아 두겠다... 인간. 이제... 가라! 오래... 버티지는... 못한다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2788,7 +2788,7 @@
   },
   "The Breaking Point#278": {
    "src": "This crystal...will let you harness...our flame. Use it...to break through...its defenses.",
-   "dst": "",
+   "dst": "이 수정이... 우리의 불꽃을... 다루게 해 줄 것이다. 그것으로... 저것의 방어를... 뚫어라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2798,7 +2798,7 @@
   },
   "The Breaking Point#279": {
    "src": "... Before you go. I will offer you... these powerful relics. Our people... have held them for... longer than I have lived. They may... help you on your quest.",
-   "dst": "",
+   "dst": "... 떠나기 전에. 이 강력한 유물들을... 주겠다. 우리 동족이... 내가 산 세월보다... 오래 간직해 온 것이다. 네 여정에... 도움이 될 것이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2808,7 +2808,7 @@
   },
   "The Breaking Point#280": {
    "src": "I cannot give you something as unique as what Paku has offered, but I can still lend you a sum from our treasury. Use it as you must, so long as you can calm that thing. Good luck.",
-   "dst": "",
+   "dst": "Paku가 준 것만큼 특별한 건 줄 수 없지만, 국고에서 얼마쯤 빌려줄 수는 있네. 저것을 진정시킬 수만 있다면 마음대로 쓰게. 행운을 비네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Jungle Fever",
   "count": 32,
-  "translated": 0,
+  "translated": 32,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Jungle Fever#000": {
    "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 정글 마을에서 Worid와 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -18,7 +18,7 @@
   },
   "Jungle Fever#001": {
    "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
-   "dst": "",
+   "dst": "아, 만나서 정말 반가워! *콜록*, 지독한 열병에 걸려서 도움이 꼭 필요해! *콜록*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -28,7 +28,7 @@
   },
   "Jungle Fever#002": {
    "src": "The only cure against this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
-   "dst": "",
+   "dst": "이 열병을 낫게 하는 건 액체 에메랄드를 마시는 것뿐이야! 그래, 바로 그거! *콜록*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -38,7 +38,7 @@
   },
   "Jungle Fever#003": {
    "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
-   "dst": "",
+   "dst": "{p}의 은행원한테 가서, 글쎄, [{~} 액체 에메랄드]쯤 줄 수 있는지 물어봐 줄래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -48,7 +48,7 @@
   },
   "Jungle Fever#004": {
    "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
-   "dst": "",
+   "dst": "그 사람이 뻔뻔하게 *콜록* 거절하면... 힘으로 해결해야지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -58,7 +58,7 @@
   },
   "Jungle Fever#005": {
    "src": "Break into *cough* to the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
-   "dst": "",
+   "dst": "*콜록* 에메랄드 창고에 쳐들어가. 근데 아무것도 가져오진 말고... 살아 나오면 바로 나한테 와, 헤헤...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -68,7 +68,7 @@
   },
   "Jungle Fever#006": {
    "src": "Oh, uh... I mean *cough* *cough*",
-   "dst": "",
+   "dst": "아, 어... 그러니까 *콜록* *콜록*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -78,7 +78,7 @@
   },
   "Jungle Fever#007": {
    "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 {p}의 은행원에게 Worid의 치료제에 대해 말하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -88,7 +88,7 @@
   },
   "Jungle Fever#008": {
    "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
-   "dst": "",
+   "dst": "[{~} 액체 에메랄드]요? 미쳤군요! 액체 에메랄드로는 아무 병도 못 고쳐요. 가난이라면 몰라도!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -98,7 +98,7 @@
   },
   "Jungle Fever#009": {
    "src": "I will not participate in this pathetic fraud attempt!",
-   "dst": "",
+   "dst": "이런 한심한 사기에 가담할 생각 없어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -108,7 +108,7 @@
   },
   "Jungle Fever#010": {
    "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p} 에메랄드 창고에 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -118,7 +118,7 @@
   },
   "Jungle Fever#011": {
    "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
-   "dst": "",
+   "dst": "안 돼! 액체 에메랄드 없이 내 병을 어떻게 고치라고?... *콜록*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -128,7 +128,7 @@
   },
   "Jungle Fever#012": {
    "src": "We'll have to change our strategy, we won't ask for permission. It's to help me after all.",
-   "dst": "",
+   "dst": "작전을 바꿔야겠어. 허락 따윈 안 구해. 어차피 날 돕는 일이잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -138,7 +138,7 @@
   },
   "Jungle Fever#013": {
    "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
-   "dst": "",
+   "dst": "우선 네가 은행에 쉽게 침입할 수 있는지 확인해야겠어. {p}의 비밀 창고에 들어가 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -148,7 +148,7 @@
   },
   "Jungle Fever#014": {
    "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
-   "dst": "",
+   "dst": "끝나면 다시 말 걸어. 조심하고. 경비병이 있을지도 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -158,7 +158,7 @@
   },
   "Jungle Fever#015": {
    "src": "Return to Worid",
-   "dst": "",
+   "dst": "Worid에게 돌아가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -168,7 +168,7 @@
   },
   "Jungle Fever#016": {
    "src": "What? You're here already. I thought you would take too long so I just went myself.",
-   "dst": "",
+   "dst": "뭐? 벌써 왔어? 오래 걸릴 것 같아서 그냥 내가 직접 다녀왔는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -178,7 +178,7 @@
   },
   "Jungle Fever#017": {
    "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
-   "dst": "",
+   "dst": "내 병? 아 맞다. *콜록* 아픈 사람한테 네 일을 시키다니 반성해야 할걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -188,7 +188,7 @@
   },
   "Jungle Fever#018": {
    "src": "Anyway I see you proved yourself, we can start the real thing now.",
-   "dst": "",
+   "dst": "아무튼 실력은 증명했으니 이제 진짜 일을 시작하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -198,7 +198,7 @@
   },
   "Jungle Fever#019": {
    "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
-   "dst": "",
+   "dst": "있잖아, {p}에는 \"에메랄드 미궁\"이라는 삼엄한 에메랄드 금고가 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -208,7 +208,7 @@
   },
   "Jungle Fever#020": {
    "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
-   "dst": "",
+   "dst": "잘 훈련된 경비 골렘이 잔뜩 지키고 있어서 어떤 모험가든 쉽게 죽일 수 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -218,7 +218,7 @@
   },
   "Jungle Fever#021": {
    "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
-   "dst": "",
+   "dst": "비밀 금고의 은행원은 지루해서 미칠 지경일 테니, 네가 찾아가도 싫어하진 않을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -228,7 +228,7 @@
   },
   "Jungle Fever#022": {
    "src": "Good luck with that. Haha.. I mean, *cough*.",
-   "dst": "",
+   "dst": "행운을 빌어. 하하.. 아니, *콜록*.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -238,7 +238,7 @@
   },
   "Jungle Fever#023": {
    "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] 지하에 있는 {p}의 비밀 에메랄드 미궁에 잠입해 에메랄드 방의 은행원을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -248,7 +248,7 @@
   },
   "Jungle Fever#024": {
    "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
-   "dst": "",
+   "dst": "오, 어! 사람이다! 사람 본 게 대체 얼마 만이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -258,7 +258,7 @@
   },
   "Jungle Fever#025": {
    "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
-   "dst": "",
+   "dst": "액체 에메랄드요? 물론이죠, 물론! 잔뜩 있어요! 자, 가져가요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -268,7 +268,7 @@
   },
   "Jungle Fever#026": {
    "src": "Talk to Worid at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 Worid와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -278,7 +278,7 @@
   },
   "Jungle Fever#027": {
    "src": "You are back! Wonderful!",
-   "dst": "",
+   "dst": "돌아왔구나! 잘됐다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -288,7 +288,7 @@
   },
   "Jungle Fever#028": {
    "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
-   "dst": "",
+   "dst": "큰돈이네, 정말 고마워. 드디어... *콜록* 내 병을 고칠 수 있겠어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -298,7 +298,7 @@
   },
   "Jungle Fever#029": {
    "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
-   "dst": "",
+   "dst": "자, 이건 네 몫이야. 받을 만해. 돈은 대부분... *콜록* 치료에 써야 해서, 대신 열쇠로 줄게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -308,7 +308,7 @@
   },
   "Jungle Fever#030": {
    "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
-   "dst": "",
+   "dst": "우리 부족장한테서 훔- *콜록* 아니, 빌린 거야. 거대한 악을 가두는 데 썼다나 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -318,7 +318,7 @@
   },
   "Jungle Fever#031": {
    "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
-   "dst": "",
+   "dst": "잘 뒈- *콜록* 어... 행운을. 그래, 행운을 빌어, 모험가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",

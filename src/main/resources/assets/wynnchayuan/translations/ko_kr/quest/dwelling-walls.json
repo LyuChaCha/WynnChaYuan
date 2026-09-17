@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Dwelling Walls",
   "count": 17,
-  "translated": 1,
+  "translated": 17,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dwelling Walls#000": {
    "src": "Talk to Leucsaa at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 Leucsaa에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -18,7 +18,7 @@
   },
   "Dwelling Walls#001": {
    "src": "Let's see here... mother's old vase... check!",
-   "dst": "",
+   "dst": "어디 보자... 어머니의 낡은 꽃병... 확인!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -28,7 +28,7 @@
   },
   "Dwelling Walls#002": {
    "src": "Dining room table... got it here, check!",
-   "dst": "",
+   "dst": "식당 탁자... 여기 있고, 확인!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -38,7 +38,7 @@
   },
   "Dwelling Walls#003": {
    "src": "Finally, the journal. It's out here somewhere, I assume. I'll look around.",
-   "dst": "",
+   "dst": "마지막으로 일지. 이 근처 어딘가 있겠죠. 좀 찾아볼게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -58,7 +58,7 @@
   },
   "Dwelling Walls#005": {
    "src": "Hold on, what? The journal! I must have forgotten it inside the mansion!",
-   "dst": "",
+   "dst": "잠깐, 뭐라고? 일지! 저택 안에 두고 온 게 분명해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -68,7 +68,7 @@
   },
   "Dwelling Walls#006": {
    "src": "You there! Would you mind doing me a deed?",
-   "dst": "",
+   "dst": "거기 당신! 부탁 하나 들어줄래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -78,7 +78,7 @@
   },
   "Dwelling Walls#007": {
    "src": "I left a very precious journal inside this mansion, a hell within walls. It was my great grandfather's!",
-   "dst": "",
+   "dst": "이 저택, 벽 안의 지옥에 아주 소중한 일지를 두고 왔어요. 증조할아버지 거였죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -88,7 +88,7 @@
   },
   "Dwelling Walls#008": {
    "src": "The mansion was designed by a Corkian architect, and I was scammed into buying it.",
-   "dst": "",
+   "dst": "저택은 Corkus 건축가가 설계했는데, 전 사기당해서 샀어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -98,7 +98,7 @@
   },
   "Dwelling Walls#009": {
    "src": "If you step inside the mansion just for a few moments, you'll understand why the sellers had to trick someone into investing in their god forsaken real estate!",
-   "dst": "",
+   "dst": "저택에 잠깐만 들어가 보면, 판매자들이 왜 누굴 속여서라도 이 몹쓸 부동산을 떠넘겨야 했는지 알 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -108,7 +108,7 @@
   },
   "Dwelling Walls#010": {
    "src": "Navigating from room to room is nearly impossible, the rooms move around. I've only been in the mansion for a week and I'm already packing my bags and moving to {p}.",
-   "dst": "",
+   "dst": "방에서 방으로 가는 게 거의 불가능해요, 방이 움직이거든요. 들어온 지 일주일인데 벌써 짐 싸서 {p}(으)로 이사 가요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -118,7 +118,7 @@
   },
   "Dwelling Walls#011": {
    "src": "Enter the mansion",
-   "dst": "",
+   "dst": "저택에 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -128,7 +128,7 @@
   },
   "Dwelling Walls#012": {
    "src": "Navigate the mansion to the room holding the journal",
-   "dst": "",
+   "dst": "저택을 헤쳐 나가 일지가 있는 방으로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -138,7 +138,7 @@
   },
   "Dwelling Walls#013": {
    "src": "Talk to Leucsaa",
-   "dst": "",
+   "dst": "Leucsaa에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -148,7 +148,7 @@
   },
   "Dwelling Walls#014": {
    "src": "The journal! You outsmarted the mansion!",
-   "dst": "",
+   "dst": "일지! 저택을 이겼네요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -158,7 +158,7 @@
   },
   "Dwelling Walls#015": {
    "src": "I must thank you, that journal was priceless to my family.",
-   "dst": "",
+   "dst": "정말 고마워요, 그 일지는 우리 가족에게 값을 매길 수 없어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -168,7 +168,7 @@
   },
   "Dwelling Walls#016": {
    "src": "Let this be a life lesson to you. Never buy a house from a Corkian architect.",
-   "dst": "",
+   "dst": "이걸 인생 교훈으로 삼아요. Corkus 건축가한테선 절대 집 사지 마세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",

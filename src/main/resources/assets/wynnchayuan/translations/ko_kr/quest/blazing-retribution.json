@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Blazing Retribution",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Blazing Retribution#000": {
    "src": "Speak to Piere in the {p} Plains at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 {p} 평원에서 Piere와 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -18,7 +18,7 @@
   },
   "Blazing Retribution#001": {
    "src": "Oh sweet baby bovine, my house, what am I going to do? Wait, who are you?",
-   "dst": "",
+   "dst": "아이고 맙소사, 내 집, 이제 어떡하지? 잠깐, 누구세요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -28,7 +28,7 @@
   },
   "Blazing Retribution#002": {
    "src": "Oh, a Human. Did the {p} authorities send you?",
-   "dst": "",
+   "dst": "아, 인간이네요. {p} 당국에서 보냈나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -38,7 +38,7 @@
   },
   "Blazing Retribution#003": {
    "src": "Detective Jackson has already been here. Not that he's doing anything useful.",
-   "dst": "",
+   "dst": "Jackson 형사가 벌써 다녀갔어요. 쓸모 있는 일을 하는 것도 아니지만요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -48,7 +48,7 @@
   },
   "Blazing Retribution#004": {
    "src": "An Orc managed to find some fire-imbued magical axe and burned down my house! Jackson didn't even call a firefighter!!",
-   "dst": "",
+   "dst": "웬 오크가 불의 힘이 깃든 마법 도끼를 구해서 우리 집을 태워 버렸어요! Jackson은 소방관도 안 불렀다고요!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -58,7 +58,7 @@
   },
   "Blazing Retribution#005": {
    "src": "I don't know what to do, but maybe if you find Detective Jackson, you can kick his sorry rear into gear...",
-   "dst": "",
+   "dst": "어떡해야 할지 모르겠지만, Jackson 형사를 찾으면 그 게으른 엉덩이를 좀 걷어차 줄 수 있을지도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -68,7 +68,7 @@
   },
   "Blazing Retribution#006": {
    "src": "The Orcs are already savage brutes. If they really have their hands on magical weapons, we're all in trouble!",
-   "dst": "",
+   "dst": "오크는 원래도 야만적인 짐승들이에요. 정말 마법 무기를 손에 넣었다면 우린 다 큰일이에요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -78,7 +78,7 @@
   },
   "Blazing Retribution#007": {
    "src": "I believe Detective Jackson is by his cart \"planning his next move.\" He's not far from here. Just continue past my farm!",
-   "dst": "",
+   "dst": "Jackson 형사는 자기 수레 옆에서 \"다음 수를 계획하는\" 중일 거예요. 멀지 않아요. 우리 농장을 지나 쭉 가세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -88,7 +88,7 @@
   },
   "Blazing Retribution#008": {
    "src": "Report the attack to Detective Jackson at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Jackson 형사에게 습격 사실을 알리세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -98,7 +98,7 @@
   },
   "Blazing Retribution#009": {
    "src": "How can I go about this...? I can't get involved myself, and they won't let me near... Wait, a human?",
-   "dst": "",
+   "dst": "이걸 어떻게 해야 하지...? 내가 직접 나설 순 없고, 놈들은 접근도 못 하게 하고... 잠깐, 인간?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -108,7 +108,7 @@
   },
   "Blazing Retribution#010": {
    "src": "...what do you MEAN \"what am I doing?\" This is a delicate situation! I need to- wait...actually, you might just be the help I need.",
-   "dst": "",
+   "dst": "...\"뭐 하냐\"니 그게 무슨 소리야? 미묘한 상황이라고! 난 해야- 잠깐... 사실, 네가 딱 필요한 도움일지도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -118,7 +118,7 @@
   },
   "Blazing Retribution#011": {
    "src": "I'll give you the lowdown- we believe the orcs stole magical weaponry from within {p}, particularly a flaming axe.",
-   "dst": "",
+   "dst": "간단히 설명하지- 오크들이 {p}에서 마법 무기를 훔쳐 간 것 같아. 특히 불타는 도끼 하나를.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -128,7 +128,7 @@
   },
   "Blazing Retribution#012": {
    "src": "However, that's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
-   "dst": "",
+   "dst": "그런데 그건 오크와 맺은 휴전 협정의 허점이야. 절도는 공격 행위로 안 치거든...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -138,7 +138,7 @@
   },
   "Blazing Retribution#013": {
    "src": "And that means my hands are tied. Humans, however, were not mentioned in the notes, so you'll need to retrieve it.",
-   "dst": "",
+   "dst": "그래서 난 손이 묶였어. 하지만 조항에 인간 얘긴 없으니, 네가 되찾아 와야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -148,7 +148,7 @@
   },
   "Blazing Retribution#014": {
    "src": "Our only saving grace is that it'll be impossible for them to replicate its power- Orcs are hilariously inept at magic.",
-   "dst": "",
+   "dst": "그나마 다행인 건 놈들이 그 힘을 복제할 수 없다는 거지- 오크들은 우스울 만큼 마법에 서툴거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -158,7 +158,7 @@
   },
   "Blazing Retribution#015": {
    "src": "But, to the primary problem- You've probably seen how many orc camps are around here. Searching will take a long while...",
-   "dst": "",
+   "dst": "하지만 본론으로- 이 근처에 오크 야영지가 얼마나 많은지 봤겠지. 찾는 데 한참 걸릴 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -168,7 +168,7 @@
   },
   "Blazing Retribution#016": {
    "src": "My only leads are that the \"Sablestone\" and \"Loamsprout\" camps seem to be celebrating recently. Best to start there, yes?",
-   "dst": "",
+   "dst": "단서라곤 \"Sablestone\"과 \"Loamsprout\" 야영지가 요즘 뭔가 축하하는 것 같다는 것뿐이야. 거기서 시작하는 게 좋겠지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -178,7 +178,7 @@
   },
   "Blazing Retribution#017": {
    "src": "Just to review- You need to search those two camps for the Axe of {p}, and then return it to me if you find it.",
-   "dst": "",
+   "dst": "정리하자면- 두 야영지에서 {p}의 도끼를 찾고, 찾으면 나한테 가져와.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -188,7 +188,7 @@
   },
   "Blazing Retribution#018": {
    "src": "Sablestone is to the north, and Loamsprout to the south. They will be guarded, so don't be afraid to knock some heads.",
-   "dst": "",
+   "dst": "Sablestone은 북쪽, Loamsprout는 남쪽이야. 경비가 있을 테니 머리 좀 깨는 걸 겁내지 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -198,7 +198,7 @@
   },
   "Blazing Retribution#019": {
    "src": "Look for the stolen weapon at the Sablestone and Loamsprout Orc camps",
-   "dst": "",
+   "dst": "Sablestone과 Loamsprout 오크 야영지에서 도난당한 무기를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -208,7 +208,7 @@
   },
   "Blazing Retribution#020": {
    "src": "Return to Detective Jackson with the news",
-   "dst": "",
+   "dst": "Jackson 형사에게 돌아가 소식을 전하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -218,7 +218,7 @@
   },
   "Blazing Retribution#021": {
    "src": "I see no axe in your hands, so I should assume neither Sablestone or Loamsprout had it.",
-   "dst": "",
+   "dst": "손에 도끼가 없는 걸 보니 Sablestone에도 Loamsprout에도 없었나 보군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -228,7 +228,7 @@
   },
   "Blazing Retribution#022": {
    "src": "Wait, really? A stick was the most powerful weapon they had? And Loamsprout...threw their dinner at you...?",
-   "dst": "",
+   "dst": "잠깐, 진짜? 놈들 최강 무기가 막대기였다고? 그리고 Loamsprout는... 너한테 저녁밥을 던졌다고...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -238,7 +238,7 @@
   },
   "Blazing Retribution#023": {
    "src": "I can't believe this! How are those...those THINGS outsmarting us?! Are they shuffling the axe between camps?",
-   "dst": "",
+   "dst": "믿을 수가 없군! 어떻게 저... 저 녀석들이 우릴 앞지르는 거지?! 야영지끼리 도끼를 돌리고 있나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -248,7 +248,7 @@
   },
   "Blazing Retribution#024": {
    "src": "There are over a dozen camps between the Orcs and Goblins that they could be swapping it between!",
-   "dst": "",
+   "dst": "오크랑 고블린 야영지를 합치면 서로 넘길 만한 곳이 열 곳이 넘는다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -258,7 +258,7 @@
   },
   "Blazing Retribution#025": {
    "src": "What if the GOBLINS get a hold of it?! They're the cleverest by half of all of them, so that could actually be a threat!",
-   "dst": "",
+   "dst": "고블린들이 그걸 손에 넣으면 어쩌지?! 그놈들이 제일 영리하니까 진짜 위협이 될 수도 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -268,7 +268,7 @@
   },
   "Blazing Retribution#026": {
    "src": "Searching all the camps one by one will be far too slow, gah!! How am I going to fix this?!",
-   "dst": "",
+   "dst": "야영지를 하나하나 뒤지는 건 너무 느려, 으악!! 이걸 대체 어떻게 수습하지?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -278,7 +278,7 @@
   },
   "Blazing Retribution#027": {
    "src": "There's Earthpit, and Cliffhearth, Shineridge and Stonecave, Sunspark, Mudspring, Holehold, I-",
-   "dst": "",
+   "dst": "Earthpit, Cliffhearth, Shineridge, Stonecave, Sunspark, Mudspring, Holehold도 있고, 난-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -288,7 +288,7 @@
   },
   "Blazing Retribution#028": {
    "src": "Fire! Stop!! I hold magic cutter! LISTEN TO POXPER!!",
-   "dst": "",
+   "dst": "불! 멈춰!! 나 마법 칼 있다! POXPER 말 들어!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -298,7 +298,7 @@
   },
   "Blazing Retribution#029": {
    "src": "I- I can't believe it, that has to be the one! AFTER THAT ORC, NOW!!",
-   "dst": "",
+   "dst": "마, 말도 안 돼, 저게 틀림없어! 저 오크를 쫓아, 당장!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -308,7 +308,7 @@
   },
   "Blazing Retribution#030": {
    "src": "Find the hidden camp in the water near Piere's house at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Piere 집 근처 물속에 숨겨진 야영지를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -318,7 +318,7 @@
   },
   "Blazing Retribution#031": {
    "src": "GRRRH!! What 'Uthniiazek' mean?!",
-   "dst": "",
+   "dst": "크르르!! 'Uthniiazek' 무슨 뜻?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -328,7 +328,7 @@
   },
   "Blazing Retribution#032": {
    "src": "Kill Orc Leader Poxper",
-   "dst": "",
+   "dst": "오크 우두머리 Poxper를 처치하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -338,7 +338,7 @@
   },
   "Blazing Retribution#033": {
    "src": "Uthniiazek! Uthniiazek!! WHY NO LISTEN TO Poxper?",
-   "dst": "",
+   "dst": "Uthniiazek! Uthniiazek!! 왜 Poxper 말 안 들어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -348,7 +348,7 @@
   },
   "Blazing Retribution#034": {
    "src": "Stupid Villager magic thing! Why fire no listen?",
-   "dst": "",
+   "dst": "멍청한 주민 마법 물건! 불 왜 말 안 들어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -358,7 +358,7 @@
   },
   "Blazing Retribution#035": {
    "src": "Poxper say thing and make fire...what else axe say? 'Azektoluth?'",
-   "dst": "",
+   "dst": "Poxper 말하면 불 나옴...도끼 또 뭐라 함? 'Azektoluth?'",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -368,7 +368,7 @@
   },
   "Blazing Retribution#036": {
    "src": "Hraahah! Poxper control fire! Fire- kill human with Poxper! Uthniiazek! Azektoluth!",
-   "dst": "",
+   "dst": "흐라하하! Poxper 불 조종한다! 불- Poxper랑 인간 죽여! Uthniiazek! Azektoluth!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -378,7 +378,7 @@
   },
   "Blazing Retribution#037": {
    "src": "Return the Magic Axe to the Detective",
-   "dst": "",
+   "dst": "마법 도끼를 형사에게 돌려주세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -388,7 +388,7 @@
   },
   "Blazing Retribution#038": {
    "src": "That looks like the axe of {p} to me! Blue finish, hot to the touch- well done! What Orc boss had stolen it?",
-   "dst": "",
+   "dst": "내가 보기엔 {p}의 도끼가 맞아! 푸른 마감에 만지면 뜨겁고- 잘했어! 어떤 오크 두목이 훔쳤지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -398,7 +398,7 @@
   },
   "Blazing Retribution#039": {
    "src": "Poxper? That...hm. This could be bad. I've head that name, and he's a fairly prolific Orc chief. You killed him, right?",
-   "dst": "",
+   "dst": "Poxper? 그건... 흠. 안 좋을 수도 있겠군. 들어 본 이름이야. 꽤 이름난 오크 족장이지. 죽였지, 그렇지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -408,7 +408,7 @@
   },
   "Blazing Retribution#040": {
    "src": "Mmm... Hopefully that Veretel won't catch wind of it. Regardless, you've done a great service for Villager-kind!",
-   "dst": "",
+   "dst": "음... 그 Veretel이 눈치채지 않길 바라야지. 아무튼 주민들을 위해 큰일을 해 줬어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -418,7 +418,7 @@
   },
   "Blazing Retribution#041": {
    "src": "Here's your compensation for that. Thank you for the aid!",
-   "dst": "",
+   "dst": "여기 보상이야. 도와줘서 고마워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",

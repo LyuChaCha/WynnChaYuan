@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "One Thousand Meters Under",
   "count": 105,
-  "translated": 2,
+  "translated": 105,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "One Thousand Meters Under#000": {
    "src": "Read the Help Wanted sign in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p}의 [{~}, {~}, -{~}]에 있는 구인 게시판을 읽으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -18,7 +18,7 @@
   },
   "One Thousand Meters Under#002": {
    "src": "Talk to The Secretary at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에 있는 비서에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -28,7 +28,7 @@
   },
   "One Thousand Meters Under#003": {
    "src": "Hello, welcome to Ynnos' facility.",
-   "dst": "",
+   "dst": "안녕하세요, Ynnos의 연구 시설입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -38,7 +38,7 @@
   },
   "One Thousand Meters Under#004": {
    "src": "Oh, you're here about the job vacancy? Well, you're a little late.",
-   "dst": "",
+   "dst": "아, 구인 공고 보고 오셨어요? 음, 조금 늦으셨네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -48,7 +48,7 @@
   },
   "One Thousand Meters Under#005": {
    "src": "There might still be time, just sneak in to the conference room behind me.",
-   "dst": "",
+   "dst": "아직 시간이 있을지도 몰라요. 제 뒤 회의실로 몰래 들어가세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -58,7 +58,7 @@
   },
   "One Thousand Meters Under#006": {
    "src": "Enter the conference room and listen to the scientist.",
-   "dst": "",
+   "dst": "회의실에 들어가 과학자의 말을 들으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -68,7 +68,7 @@
   },
   "One Thousand Meters Under#007": {
    "src": "*Ahem* Welcome, everyone.",
-   "dst": "",
+   "dst": "*흠흠* 모두 환영합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -78,7 +78,7 @@
   },
   "One Thousand Meters Under#008": {
    "src": "I am Ynnos, one of the leading scientists in Gavel. You're here because... Well you read the help wanted sign.",
-   "dst": "",
+   "dst": "저는 Ynnos, Gavel 최고의 과학자 중 한 명입니다. 여러분이 여기 온 건... 뭐, 구인 공고를 봤기 때문이죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -88,7 +88,7 @@
   },
   "One Thousand Meters Under#009": {
    "src": "Allow me to explain the situation we're in. It's a series of unfortunate events. I study the amazing properties of crystals and other geodes.",
-   "dst": "",
+   "dst": "지금 우리 상황을 설명하죠. 불운이 연달아 겹쳤습니다. 저는 수정과 다른 정동석의 놀라운 성질을 연구하고 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -98,7 +98,7 @@
   },
   "One Thousand Meters Under#010": {
    "src": "I am funded by a private organization, however that seems to have stopped. So... We had to make cuts in the budget.",
-   "dst": "",
+   "dst": "한 민간 단체에서 자금을 받았는데, 그게 끊긴 것 같아요. 그래서... 예산을 줄여야 했죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -108,7 +108,7 @@
   },
   "One Thousand Meters Under#011": {
    "src": "One of these, was using cheaper rope. While moving the crystal across {p}, well, it snapped. The crystal fell.",
-   "dst": "",
+   "dst": "그중 하나가 싼 밧줄을 쓴 거였어요. 수정을 옮겨 {p}을(를) 건너던 중, 뚝 끊어졌죠. 수정이 떨어졌습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -118,7 +118,7 @@
   },
   "One Thousand Meters Under#012": {
    "src": "I can not stress the value of that crystal. It had many unique properties that are allowing me to understand why the {p} float the way they do.",
-   "dst": "",
+   "dst": "그 수정이 얼마나 귀한지 말로 다 못 해요. 독특한 성질이 많아서, {p}이(가) 왜 그렇게 떠 있는지 이해하게 해 주었죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -128,7 +128,7 @@
   },
   "One Thousand Meters Under#013": {
    "src": "They hold the very key to restoring this land to being whole once more... But it's gone.",
-   "dst": "",
+   "dst": "이 땅을 다시 온전하게 되돌릴 열쇠가 바로 거기 있어요... 그런데 사라졌습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -138,7 +138,7 @@
   },
   "One Thousand Meters Under#014": {
    "src": "Fortunately, I detected an impact. It's hit something down in the void. We're not sure what, however or how deep.",
-   "dst": "",
+   "dst": "다행히 충돌을 감지했어요. 공허 아래 무언가에 부딪혔죠. 그게 뭔지, 얼마나 깊은지는 모릅니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -148,7 +148,7 @@
   },
   "One Thousand Meters Under#015": {
    "src": "Your mission will be to retrieve the crystal in a specially designed ship to withstand the void. We barely scraped it out of the budget, so try to bring it back in one piece.",
-   "dst": "",
+   "dst": "여러분의 임무는 공허를 견디도록 특수 설계한 배를 타고 수정을 회수하는 겁니다. 예산을 겨우 짜내 만든 배니까, 부디 멀쩡히 가져와 주세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -158,7 +158,7 @@
   },
   "One Thousand Meters Under#016": {
    "src": "If you think you are not up for the challenge, leave now...",
-   "dst": "",
+   "dst": "이 도전을 감당할 자신이 없다면, 지금 떠나세요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -168,7 +168,7 @@
   },
   "One Thousand Meters Under#017": {
    "src": "When you think you are ready, exit the room behind me and meet me at the dock as soon as possible.",
-   "dst": "",
+   "dst": "준비됐다 싶으면 제 뒤쪽 출구로 나가서, 되도록 빨리 선착장에서 만납시다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -178,7 +178,7 @@
   },
   "One Thousand Meters Under#018": {
    "src": "Enter the submarine at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 잠수함에 탑승하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -188,7 +188,7 @@
   },
   "One Thousand Meters Under#019": {
    "src": "Wait for the submarine to arrive at the void islands.",
-   "dst": "",
+   "dst": "잠수함이 공허 섬에 도착할 때까지 기다리세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -198,7 +198,7 @@
   },
   "One Thousand Meters Under#020": {
    "src": "Attention crew members.",
-   "dst": "",
+   "dst": "승무원 여러분, 주목.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -208,7 +208,7 @@
   },
   "One Thousand Meters Under#021": {
    "src": "This is the ship's mechanic. There appears to be a fault on the lower deck. I request urgent assistance.",
-   "dst": "",
+   "dst": "기관사다. 아래 갑판에 고장이 난 것 같다. 긴급 지원을 요청한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -218,7 +218,7 @@
   },
   "One Thousand Meters Under#022": {
    "src": "I wonder what the mechanic is doing?",
-   "dst": "",
+   "dst": "기관사는 뭘 하고 있는 걸까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -228,7 +228,7 @@
   },
   "One Thousand Meters Under#023": {
    "src": "He has been screaming and crying for a while now. I hope everything is alright down there.",
-   "dst": "",
+   "dst": "아까부터 계속 소리 지르고 울고 있어. 아래는 별일 없으면 좋겠는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -238,7 +238,7 @@
   },
   "One Thousand Meters Under#024": {
    "src": "Ah finally! One of the air pipes has shattered, we need to patch it up ASAP!",
-   "dst": "",
+   "dst": "아, 드디어! 공기관 하나가 깨졌어, 당장 막아야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -248,7 +248,7 @@
   },
   "One Thousand Meters Under#025": {
    "src": "Quick, head into the room behind me and line up the white glass with the blue blocks. I'll control things from here!",
-   "dst": "",
+   "dst": "어서 내 뒤 방으로 가서 흰 유리를 파란 블록에 맞춰 줘. 조작은 내가 여기서 할게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -258,7 +258,7 @@
   },
   "One Thousand Meters Under#026": {
    "src": "Take a nap in the resting room.",
-   "dst": "",
+   "dst": "휴게실에서 낮잠을 자세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -268,7 +268,7 @@
   },
   "One Thousand Meters Under#027": {
    "src": "Oh wow, thanks for the help! You should head up to the resting room and take a nap before we arrive at the first island.",
-   "dst": "",
+   "dst": "오, 도와줘서 고마워! 첫 섬에 도착하기 전에 휴게실에 올라가서 한숨 자 둬.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -278,7 +278,7 @@
   },
   "One Thousand Meters Under#028": {
    "src": "Talk to the captain outside of the submarine.",
-   "dst": "",
+   "dst": "잠수함 밖에서 선장에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -288,7 +288,7 @@
   },
   "One Thousand Meters Under#029": {
    "src": "We have encountered out first island, {~}m down. Crew members, climb up the ladder and search the island for the crystal.",
-   "dst": "",
+   "dst": "첫 번째 섬에 도착했다, 깊이 {~}m. 승무원들은 사다리를 올라가 섬에서 수정을 찾아라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -298,7 +298,7 @@
   },
   "One Thousand Meters Under#030": {
    "src": "We've arrived at the next void island.",
-   "dst": "",
+   "dst": "다음 공허 섬에 도착했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -308,7 +308,7 @@
   },
   "One Thousand Meters Under#031": {
    "src": "The void islands are really different from Gavel... Or are we still even in Gavel?",
-   "dst": "",
+   "dst": "공허 섬은 Gavel이랑 정말 다르군... 아니, 여기가 아직 Gavel이긴 한가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -318,7 +318,7 @@
   },
   "One Thousand Meters Under#032": {
    "src": "Anyway, let's explore the island, look for the void crystal, and return to {p}!",
-   "dst": "",
+   "dst": "아무튼 섬을 탐색해서 공허 수정을 찾고, {p}(으)로 돌아가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -328,7 +328,7 @@
   },
   "One Thousand Meters Under#033": {
    "src": "Explore the island and look for the crystal.",
-   "dst": "",
+   "dst": "섬을 탐색하며 수정을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -338,7 +338,7 @@
   },
   "One Thousand Meters Under#034": {
    "src": "Return to the submarine and continue your journey.",
-   "dst": "",
+   "dst": "잠수함으로 돌아가 여정을 계속하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -348,7 +348,7 @@
   },
   "One Thousand Meters Under#035": {
    "src": "Continue your journey.",
-   "dst": "",
+   "dst": "여정을 계속하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -358,7 +358,7 @@
   },
   "One Thousand Meters Under#036": {
    "src": "Oh my, what are these creatures!?",
-   "dst": "",
+   "dst": "이런, 저 생물들은 뭐야!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -368,7 +368,7 @@
   },
   "One Thousand Meters Under#037": {
    "src": "They are attacking the windshield in the front room, it looks like it's about to break at any moment!",
-   "dst": "",
+   "dst": "앞쪽 방 앞유리를 공격하고 있어, 당장이라도 깨질 것 같다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -378,7 +378,7 @@
   },
   "One Thousand Meters Under#038": {
    "src": "Quick, you! Come into the cockpit and press on the window to scare them off!",
-   "dst": "",
+   "dst": "거기 자네, 빨리! 조종실로 와서 창문을 눌러 쫓아내!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -388,7 +388,7 @@
   },
   "One Thousand Meters Under#039": {
    "src": "This is not good, the creatures destroyed part of the windshield.",
-   "dst": "",
+   "dst": "큰일이군, 저놈들이 앞유리 일부를 부숴 버렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -398,7 +398,7 @@
   },
   "One Thousand Meters Under#040": {
    "src": "We can't continue much longer with a broken windshield, we'll have to repair it at another island.",
-   "dst": "",
+   "dst": "앞유리가 깨진 채로는 오래 못 간다. 다른 섬에서 고쳐야겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -408,7 +408,7 @@
   },
   "One Thousand Meters Under#041": {
    "src": "Ynnos said the void has pockets of toxic gas... Go take a nap, I'll wake you up when we're there.",
-   "dst": "",
+   "dst": "Ynnos 말로는 공허 곳곳에 독가스가 고여 있다더군... 가서 자 둬, 도착하면 깨우지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -418,7 +418,7 @@
   },
   "One Thousand Meters Under#042": {
    "src": "Head to the resting room.",
-   "dst": "",
+   "dst": "휴게실로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -428,7 +428,7 @@
   },
   "One Thousand Meters Under#043": {
    "src": "Meet up with the captain outside the submarine.",
-   "dst": "",
+   "dst": "잠수함 밖에서 선장과 합류하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -438,7 +438,7 @@
   },
   "One Thousand Meters Under#044": {
    "src": "Attention crew. We have arrived at the second island, {~}m down. We cannot progress without making some emergency repairs.",
-   "dst": "",
+   "dst": "승무원들, 주목. 두 번째 섬에 도착했다, 깊이 {~}m. 긴급 수리 없이는 더 나아갈 수 없다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -448,7 +448,7 @@
   },
   "One Thousand Meters Under#045": {
    "src": "Crew, please disembark and search resources to help repair the ship. We need glass and some kind of glue.",
-   "dst": "",
+   "dst": "승무원들은 하선해서 배 수리에 쓸 자원을 찾아라. 유리와 접착제 같은 게 필요하다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -458,7 +458,7 @@
   },
   "One Thousand Meters Under#046": {
    "src": "The void creatures did heavy damage to our craft, we need to repair the submarine.",
-   "dst": "",
+   "dst": "공허 생물들 때문에 배가 크게 망가졌어. 잠수함을 고쳐야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -468,7 +468,7 @@
   },
   "One Thousand Meters Under#047": {
    "src": "I'm not sure what we'll find here, but we'll need some glue and glass...",
-   "dst": "",
+   "dst": "여기서 뭘 찾을진 모르지만, 접착제랑 유리가 필요해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -478,7 +478,7 @@
   },
   "One Thousand Meters Under#048": {
    "src": "I doubt we'll find those exact things, so get resourceful!",
-   "dst": "",
+   "dst": "딱 그 물건을 찾긴 어려울 테니, 머리를 좀 써 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -488,7 +488,7 @@
   },
   "One Thousand Meters Under#049": {
    "src": "Bring me [{~} Sand Substitutes] and [{~} Glue Substitutes], that should be enough.",
-   "dst": "",
+   "dst": "[{~} Sand Substitutes], [{~} Glue Substitutes]를 가져와. 그 정도면 충분할 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -498,7 +498,7 @@
   },
   "One Thousand Meters Under#050": {
    "src": "Find [{~} Sand] and [{~} Glue] on the void island.",
-   "dst": "",
+   "dst": "공허 섬에서 [{~} Sand], [{~} Glue]를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -508,7 +508,7 @@
   },
   "One Thousand Meters Under#051": {
    "src": "Ech! What is this stuff? Well, this should do the trick.",
-   "dst": "",
+   "dst": "윽! 이게 뭐야? 뭐, 이거면 되겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -518,7 +518,7 @@
   },
   "One Thousand Meters Under#052": {
    "src": "Me and the mechanic will start repairing. It'll take a while, so enter the submarine and rest up.",
-   "dst": "",
+   "dst": "나랑 기관사가 수리를 시작하지. 시간이 걸리니 잠수함에 들어가 쉬어 둬.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -528,7 +528,7 @@
   },
   "One Thousand Meters Under#053": {
    "src": "We'll continue the trip when we've repaired the ship.",
-   "dst": "",
+   "dst": "배를 다 고치면 여정을 계속하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -538,7 +538,7 @@
   },
   "One Thousand Meters Under#054": {
    "src": "Continue your journey.",
-   "dst": "",
+   "dst": "여정을 계속하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -548,7 +548,7 @@
   },
   "One Thousand Meters Under#055": {
    "src": "This is the mechanic, requesting urgent assistence in the basement!",
-   "dst": "",
+   "dst": "기관사다, 지하층에 긴급 지원 바란다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -558,7 +558,7 @@
   },
   "One Thousand Meters Under#056": {
    "src": "Toxic gas has leaked in through the submarine's vents, someone will have to manually close them.",
-   "dst": "",
+   "dst": "잠수함 환기구로 독가스가 새어 들어왔어. 누가 직접 닫아야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -568,7 +568,7 @@
   },
   "One Thousand Meters Under#057": {
    "src": "I'll control things from here, someone get down to the lowest level and close those vents!",
-   "dst": "",
+   "dst": "조작은 내가 여기서 할게. 누가 맨 아래층에 내려가서 환기구 좀 닫아 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -578,7 +578,7 @@
   },
   "One Thousand Meters Under#058": {
    "src": "Attention crew. We have arrived at the next island {~}m down.",
-   "dst": "",
+   "dst": "승무원들, 주목. 깊이 {~}m, 다음 섬에 도착했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -588,7 +588,7 @@
   },
   "One Thousand Meters Under#059": {
    "src": "Disembark and start the search for the crystal.",
-   "dst": "",
+   "dst": "하선해서 수정 수색을 시작해라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -598,7 +598,7 @@
   },
   "One Thousand Meters Under#060": {
    "src": "Let's hope it's here... I don't know how much more void my body can handle.",
-   "dst": "",
+   "dst": "이번엔 여기 있길... 내 몸이 공허를 얼마나 더 버틸지 모르겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -608,7 +608,7 @@
   },
   "One Thousand Meters Under#061": {
    "src": "Look out! {u}, we'll build a bridge to the other island whilst you defend us from the mobs!",
-   "dst": "",
+   "dst": "조심해! {u}, 우리가 저쪽 섬까지 다리를 놓을 테니 몹들을 막아 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -618,7 +618,7 @@
   },
   "One Thousand Meters Under#062": {
    "src": "Don't die back there!",
-   "dst": "",
+   "dst": "거기서 죽지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -628,7 +628,7 @@
   },
   "One Thousand Meters Under#063": {
    "src": "Keep fighting! We're almost halfway to the other side!",
-   "dst": "",
+   "dst": "계속 싸워! 거의 절반까지 왔어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -638,7 +638,7 @@
   },
   "One Thousand Meters Under#064": {
    "src": "Almost done!",
-   "dst": "",
+   "dst": "거의 다 됐어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -648,7 +648,7 @@
   },
   "One Thousand Meters Under#065": {
    "src": "Hey, the bridge is ready!",
-   "dst": "",
+   "dst": "야, 다리 완성됐어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -658,7 +658,7 @@
   },
   "One Thousand Meters Under#066": {
    "src": "Return to the submarine and continue the journey.",
-   "dst": "",
+   "dst": "잠수함으로 돌아가 여정을 계속하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -668,7 +668,7 @@
   },
   "One Thousand Meters Under#067": {
    "src": "We didn't find the crystal here either. Maybe it just fell in the void?",
-   "dst": "",
+   "dst": "여기서도 수정을 못 찾았네. 그냥 공허로 떨어진 거 아냐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -678,7 +678,7 @@
   },
   "One Thousand Meters Under#068": {
    "src": "No, it must have hit an island. The scientist said he detected a collision.",
-   "dst": "",
+   "dst": "아니, 분명 섬에 부딪혔어. 과학자가 충돌을 감지했다잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -688,7 +688,7 @@
   },
   "One Thousand Meters Under#069": {
    "src": "Wait... What's that sound?",
-   "dst": "",
+   "dst": "잠깐... 이거 무슨 소리지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -698,7 +698,7 @@
   },
   "One Thousand Meters Under#070": {
    "src": "The ropes are snapping! Quick! Abandon ship!",
-   "dst": "",
+   "dst": "밧줄이 끊어진다! 빨리! 배를 버려!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -708,7 +708,7 @@
   },
   "One Thousand Meters Under#071": {
    "src": "Find a way out of the void.",
-   "dst": "",
+   "dst": "공허에서 빠져나갈 방법을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -718,7 +718,7 @@
   },
   "One Thousand Meters Under#072": {
    "src": "Whoooooooo are you!?",
-   "dst": "",
+   "dst": "너어어어어는 누구냐!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -728,7 +728,7 @@
   },
   "One Thousand Meters Under#073": {
    "src": "A...HUUUUUUMAN!? In the void?",
-   "dst": "",
+   "dst": "이... 이이인가아안!? 공허에?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -738,7 +738,7 @@
   },
   "One Thousand Meters Under#074": {
    "src": "Someone dropped a boooook about you people! Warriors! Workers!",
-   "dst": "",
+   "dst": "누가 너희에 대한 채애애액을 떨어뜨렸지! 전사! 일꾼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -748,7 +748,7 @@
   },
   "One Thousand Meters Under#075": {
    "src": "Ah. Yoooou want to know about this place?",
-   "dst": "",
+   "dst": "아. 너어어는 이곳이 궁금한가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -758,7 +758,7 @@
   },
   "One Thousand Meters Under#076": {
    "src": "Well... We were once Villagers. I think we still are, a bit.",
-   "dst": "",
+   "dst": "음... 우린 한때 주민이었다. 지금도 조금은 그렇겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -768,7 +768,7 @@
   },
   "One Thousand Meters Under#077": {
    "src": "For some reason, {~} years agoooo. The sky islands ruptured.",
-   "dst": "",
+   "dst": "무슨 이유에선지, {~}년 저어어언에. 하늘 섬들이 갈라졌다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -778,7 +778,7 @@
   },
   "One Thousand Meters Under#078": {
    "src": "Some stayed. Others fell. We somehow survived the fall into the vooooid.",
-   "dst": "",
+   "dst": "누구는 남고, 누구는 떨어졌지. 우린 어떻게인가 공허어어로 떨어지고도 살아남았다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -788,7 +788,7 @@
   },
   "One Thousand Meters Under#079": {
    "src": "How we have lived for so long, I doooo not know. But one thing we know for sure. The void provides.",
-   "dst": "",
+   "dst": "어떻게 이리 오래 살았는지는 모르겠다아아. 하지만 확실한 게 하나 있지. 공허는 베푼다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -798,7 +798,7 @@
   },
   "One Thousand Meters Under#080": {
    "src": "We are stuck here now. The void has forever changed our physiology.",
-   "dst": "",
+   "dst": "이제 우린 여기 갇혔다. 공허가 우리 몸을 영영 바꿔 놨지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -808,7 +808,7 @@
   },
   "One Thousand Meters Under#081": {
    "src": "The crystal yoooou are looking for fell on this island. But...",
-   "dst": "",
+   "dst": "너어어가 찾는 수정은 이 섬에 떨어졌다. 하지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -818,7 +818,7 @@
   },
   "One Thousand Meters Under#082": {
    "src": "We need it. It will aid us for years.",
-   "dst": "",
+   "dst": "우린 그게 필요하다. 몇 년은 버티겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -828,7 +828,7 @@
   },
   "One Thousand Meters Under#083": {
    "src": "We have very limited resources here. That's why a power source like this is soooo valuable.",
-   "dst": "",
+   "dst": "여긴 자원이 아주 부족하다. 그래서 이런 동력원이 너어어무 귀하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -838,7 +838,7 @@
   },
   "One Thousand Meters Under#084": {
    "src": "If you go to the east, you will find Rontaid, our chief scientist. He'll know what to doooo.",
-   "dst": "",
+   "dst": "동쪽으로 가면 우리 수석 과학자 Rontaid가 있다. 그라면 어떻게 할지 알 거다아아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -848,7 +848,7 @@
   },
   "One Thousand Meters Under#085": {
    "src": "Talk to Rontaid outside the town at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 마을 밖에서 Rontaid에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -858,7 +858,7 @@
   },
   "One Thousand Meters Under#086": {
    "src": "WHAT...WHO...Humans in the void!?",
-   "dst": "",
+   "dst": "뭐야...누구야...공허에 인간이!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -868,7 +868,7 @@
   },
   "One Thousand Meters Under#087": {
    "src": "Well, looks like the book we found wasn't fiction after all!",
-   "dst": "",
+   "dst": "허, 우리가 주운 그 책이 지어낸 얘기가 아니었군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -878,7 +878,7 @@
   },
   "One Thousand Meters Under#088": {
    "src": "This crystal is going toooo be our saviour. I was trying to create one of my own, you know.",
-   "dst": "",
+   "dst": "이 수정은 우리를 구해 줄 거야아아. 사실 나도 직접 하나 만들어 보려던 참이었지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -888,7 +888,7 @@
   },
   "One Thousand Meters Under#089": {
    "src": "I think I have the formula, but we don't have what we need to make it.",
-   "dst": "",
+   "dst": "공식은 알아낸 것 같은데, 만들 재료가 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -898,7 +898,7 @@
   },
   "One Thousand Meters Under#090": {
    "src": "Instead of taking this crystal back, why don't I exchange it for the recipe?",
-   "dst": "",
+   "dst": "이 수정을 가져가는 대신, 제조법이랑 바꾸는 게 어때?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -908,7 +908,7 @@
   },
   "One Thousand Meters Under#091": {
    "src": "That way, you can make however many crystals youuuu want, and we can keep this one.",
-   "dst": "",
+   "dst": "그러면 너어어는 수정을 원하는 만큼 만들고, 우린 이걸 가지면 되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -918,7 +918,7 @@
   },
   "One Thousand Meters Under#092": {
    "src": "Here's the recipe, give it to a scientist or someone a bit...smarter than yourself. No offense.",
-   "dst": "",
+   "dst": "여기 제조법이야. 과학자나 너보다 좀... 똑똑한 사람한테 줘. 악의는 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -928,7 +928,7 @@
   },
   "One Thousand Meters Under#093": {
    "src": "A platform was lowered from the surface a while ago at your crash site, as well. If youuuu wish to return, follow this path, I made a shortcut.",
-   "dst": "",
+   "dst": "얼마 전 너희 추락 지점에 지상에서 발판도 내려왔어. 돌아가고 싶으며언, 이 길을 따라가. 지름길을 만들어 뒀지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -938,7 +938,7 @@
   },
   "One Thousand Meters Under#094": {
    "src": "Return to the crash site by following the road.",
-   "dst": "",
+   "dst": "길을 따라 추락 지점으로 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -948,7 +948,7 @@
   },
   "One Thousand Meters Under#095": {
    "src": "Return to the scientist and tell him the news.",
-   "dst": "",
+   "dst": "과학자에게 돌아가 소식을 전하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -958,7 +958,7 @@
   },
   "One Thousand Meters Under#096": {
    "src": "You survived! Where is everyone else?",
-   "dst": "",
+   "dst": "살아남았군요! 다른 사람들은요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -978,7 +978,7 @@
   },
   "One Thousand Meters Under#098": {
    "src": "I knew some must have died... But all of them?",
-   "dst": "",
+   "dst": "몇 명은 죽었겠다 싶었지만... 전부 다요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -988,7 +988,7 @@
   },
   "One Thousand Meters Under#099": {
    "src": "Well... At least I don't have to pay them! Hah!",
-   "dst": "",
+   "dst": "뭐... 적어도 급료는 안 줘도 되겠네요! 하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -998,7 +998,7 @@
   },
   "One Thousand Meters Under#100": {
    "src": "...That was heartless of me, I'm sorry. The rope we used was too weak to hold you down there.",
-   "dst": "",
+   "dst": "...제가 너무 매정했네요, 미안합니다. 우리가 쓴 밧줄이 너무 약해서 버티지 못했어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1008,7 +1008,7 @@
   },
   "One Thousand Meters Under#101": {
    "src": "My calculations didn't account for the void's physics, it seems.",
-   "dst": "",
+   "dst": "제 계산이 공허의 물리 법칙을 고려하지 못했나 봐요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1018,7 +1018,7 @@
   },
   "One Thousand Meters Under#102": {
    "src": "At least we got you back in one piece. You can tell us what happened.",
-   "dst": "",
+   "dst": "그래도 당신은 멀쩡히 돌아왔군요. 무슨 일이 있었는지 말해 주세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1038,7 +1038,7 @@
   },
   "One Thousand Meters Under#104": {
    "src": "Well I'll be damned. I'll start sending post down there! We can work together.",
-   "dst": "",
+   "dst": "이럴 수가. 거기로 우편을 보내기 시작해야겠어요! 같이 일할 수 있겠군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1048,7 +1048,7 @@
   },
   "One Thousand Meters Under#105": {
    "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this as well as your money.",
-   "dst": "",
+   "dst": "여기서 있었던 일은 전부 비밀로 하는 게 좋겠어요. 얼마 안 되는 자금마저 잃고 싶진 않거든요. 이 제조법은 천재적이군요! 자, 이것도 보수와 함께 받으세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Creeper Infiltration",
   "count": 44,
-  "translated": 8,
+  "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Creeper Infiltration#000": {
    "src": "Talk to Thomas in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p}의 [-{~}, {~}, -{~}]에 있는 Thomas에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -18,7 +18,7 @@
   },
   "Creeper Infiltration#001": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
-   "dst": "",
+   "dst": "누구 없어요! 누가- 아, 안녕하세요. 저를 도와줄 만큼 강해 보이네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -28,7 +28,7 @@
   },
   "Creeper Infiltration#002": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "전 Thomas예요. 피그맨 협곡에 있는 마을의 물자 관리를 돕고 있죠. 그런데 문제가 좀 생겼어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -38,7 +38,7 @@
   },
   "Creeper Infiltration#003": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "주식으로 쓰는 협곡 곡물이 거의 떨어졌어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48,7 +48,7 @@
   },
   "Creeper Infiltration#004": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "보통은 직접 구해 오는데, 최근에 성난 피그맨 무리가 곡식이 자라는 협곡 꼭대기로 가는 터널을 차지해 버렸어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -58,7 +58,7 @@
   },
   "Creeper Infiltration#005": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "지난번에 들어갔을 때 위에서 폭발음이 들렸어요. 피그맨들이 TNT로 곡물을 날려 버리는 것 같아요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -68,7 +68,7 @@
   },
   "Creeper Infiltration#006": {
    "src": "I came here to {p} to see if I could find help here, but I've had no luck. Until now, that is. Would you be willing to help?",
-   "dst": "",
+   "dst": "도움을 구하러 {p}에 왔는데 영 소득이 없었어요. 지금까지는요. 도와주실래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -78,7 +78,7 @@
   },
   "Creeper Infiltration#007": {
    "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
-   "dst": "",
+   "dst": "정말요? 생명의 은인이에요. 마을에서 봬요. 마을 밖 길을 따라가서 협곡 맨 북쪽 입구로 들어오세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -88,7 +88,7 @@
   },
   "Creeper Infiltration#008": {
    "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "도착하면 협곡 오른쪽 벽을 따라 계단을 올라 입구로 가세요. 그리고 터널에선 조심하세요. 피그맨들이 돌을 던지거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -98,7 +98,7 @@
   },
   "Creeper Infiltration#009": {
    "src": "Oh, finally, someone has come to this hidden village!",
-   "dst": "",
+   "dst": "아, 드디어 이 숨겨진 마을에 누가 왔네요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -108,7 +108,7 @@
   },
   "Creeper Infiltration#010": {
    "src": "I am Thomas, and I help manage the supplies for this ravine village. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "전 Thomas예요. 이 협곡 마을의 물자 관리를 돕고 있죠. 그런데 문제가 좀 생겼어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -118,7 +118,7 @@
   },
   "Creeper Infiltration#011": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "주식으로 쓰는 협곡 곡물이 거의 떨어졌어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -128,7 +128,7 @@
   },
   "Creeper Infiltration#012": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "보통은 직접 구해 오는데, 최근에 성난 피그맨 무리가 곡식이 자라는 협곡 꼭대기로 가는 터널을 차지해 버렸어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -138,7 +138,7 @@
   },
   "Creeper Infiltration#013": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "지난번에 들어갔을 때 위에서 폭발음이 들렸어요. 피그맨들이 TNT로 곡물을 날려 버리는 것 같아요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -148,7 +148,7 @@
   },
   "Creeper Infiltration#014": {
    "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
-   "dst": "",
+   "dst": "저보다 훨씬 강해 보이시니, 터널의 피그맨을 뚫고 꼭대기의 폭발을 멈출 수 있을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -158,7 +158,7 @@
   },
   "Creeper Infiltration#015": {
    "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "협곡 오른쪽 벽을 따라 계단을 올라 입구로 가세요. 그리고 터널에선 조심하세요. 피그맨들이 돌을 던지거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -168,7 +168,7 @@
   },
   "Creeper Infiltration#016": {
    "src": "Enter the tunnel at [-{~}, {~}, -{~}] and reach the top of the ravine",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 터널로 들어가 협곡 꼭대기에 도달하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -178,7 +178,7 @@
   },
   "Creeper Infiltration#017": {
    "src": "Bring back the [Creeper Skin] to Thomas at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[Creeper Skin]을 [-{~}, {~}, -{~}]의 Thomas에게 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -188,7 +188,7 @@
   },
   "Creeper Infiltration#018": {
    "src": "I didn't expect you to fall out of the sky like that. Are you okay, or should I go get the potion merchant to heal you?",
-   "dst": "",
+   "dst": "그렇게 하늘에서 떨어질 줄은 몰랐어요. 괜찮아요? 물약 상인을 불러 치료해 드릴까요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -198,7 +198,7 @@
   },
   "Creeper Infiltration#019": {
    "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
-   "dst": "",
+   "dst": "괜찮다고요? 다행이네요. 피그맨이랑 폭발물은 처리하셨어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -208,7 +208,7 @@
   },
   "Creeper Infiltration#020": {
    "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
-   "dst": "",
+   "dst": "초록색 생물? \"크리퍼\"요? 이 세상에 그런 건 없어요. 게다가 사방에 피그맨인데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -218,7 +218,7 @@
   },
   "Creeper Infiltration#021": {
    "src": "Oh, you brought a piece of skin back. How odd, I've seen this skin before...",
-   "dst": "",
+   "dst": "아, 가죽 조각을 가져오셨네요. 이상하네, 이 가죽 본 적이 있어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -228,7 +228,7 @@
   },
   "Creeper Infiltration#022": {
    "src": "There's a large cave over to the south. I tried to enter it, but I got ambushed by green creatures...",
-   "dst": "",
+   "dst": "남쪽에 큰 동굴이 있어요. 들어가 보려다가 초록색 생물들한테 기습당했죠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -238,7 +238,7 @@
   },
   "Creeper Infiltration#023": {
    "src": "I thought I was just dreaming, but these \"creepers\" you talk about...they might live in that cave.",
-   "dst": "",
+   "dst": "꿈인 줄 알았는데, 말씀하신 \"크리퍼\"가... 그 동굴에 사는지도 몰라요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -248,7 +248,7 @@
   },
   "Creeper Infiltration#024": {
    "src": "I have an idea. I need to know for sure that they live there. A merchant can make you a mask with the skin and another material.",
-   "dst": "",
+   "dst": "좋은 생각이 있어요. 거기 사는 게 확실한지 알아야 해요. 상인이 이 가죽과 다른 재료로 가면을 만들어 줄 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -258,7 +258,7 @@
   },
   "Creeper Infiltration#025": {
    "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
-   "dst": "",
+   "dst": "근처 동굴에 가끔 피그맨 대군주가 나타나요. 그걸 잡으면 가면을 만들 만큼 질긴 피그맨 가죽을 얻을 수 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -268,7 +268,7 @@
   },
   "Creeper Infiltration#026": {
    "src": "If you continue on the western path past the tunnel entrance, you should find a camp where the Overlord is located.",
-   "dst": "",
+   "dst": "터널 입구를 지나 서쪽 길로 계속 가면 대군주가 있는 야영지가 나올 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -278,7 +278,7 @@
   },
   "Creeper Infiltration#027": {
    "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
-   "dst": "",
+   "dst": "피그맨 가죽을 구해서 다시 오세요. 그다음 할 일을 알려 드릴게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -288,7 +288,7 @@
   },
   "Creeper Infiltration#028": {
    "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
-   "dst": "",
+   "dst": "[-{~2}, {~3}, -{~4}] 근처의 피그맨 대군주에게서 [{~1} Pigman Hide]를 얻어 Thomas에게 돌아가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -298,7 +298,7 @@
   },
   "Creeper Infiltration#029": {
    "src": "I see you have the hide. This skin will work perfectly for my plan.",
-   "dst": "",
+   "dst": "가죽을 구하셨네요. 이 가죽이면 제 계획에 딱 맞아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -308,7 +308,7 @@
   },
   "Creeper Infiltration#030": {
    "src": "There is a Mask Merchant in this village. He can make you a mask with the two materials I have.",
-   "dst": "",
+   "dst": "이 마을엔 가면 상인이 있어요. 제가 가진 두 재료로 가면을 만들어 줄 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -318,7 +318,7 @@
   },
   "Creeper Infiltration#031": {
    "src": "With the mask, you can put it on and go undetected into the cave with these \"creepers\". Only then will we know the truth.",
-   "dst": "",
+   "dst": "가면을 쓰면 들키지 않고 \"크리퍼\"들이 있는 동굴에 들어갈 수 있어요. 그래야 진실을 알 수 있죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -328,7 +328,7 @@
   },
   "Creeper Infiltration#032": {
    "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
-   "dst": "",
+   "dst": "크리퍼 동굴에 가려면 서쪽 길을 따라가다 피그맨 야영지에서 왼쪽으로 꺾으세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -338,7 +338,7 @@
   },
   "Creeper Infiltration#033": {
    "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
-   "dst": "",
+   "dst": "혹시 가면을 잃어버리면, 가죽과 피그맨 가죽을 하나씩 다시 가져가면 상인이 또 만들어 줄 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -348,7 +348,7 @@
   },
   "Creeper Infiltration#034": {
    "src": "Here are the materials. Be careful out there. Who knows what those green monsters could do to you...",
-   "dst": "",
+   "dst": "여기 재료요. 조심하세요. 그 초록 괴물들이 무슨 짓을 할지 모르니까요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -358,7 +358,7 @@
   },
   "Creeper Infiltration#035": {
    "src": "Buy the creeper mask from the merchant and enter the creeper hideout at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "상인에게서 크리퍼 가면을 사고 [-{~}, {~}, -{~}]의 크리퍼 은신처에 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -368,7 +368,7 @@
   },
   "Creeper Infiltration#036": {
    "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~2}, {~3}, -{~4}]의 Thomas에게 [{~1} Creeper Powder]를 가져가 Wynn에 크리퍼가 있음을 증명하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -378,7 +378,7 @@
   },
   "Creeper Infiltration#037": {
    "src": "So, what was in the cave? Were there really creepers in there?",
-   "dst": "",
+   "dst": "그래서, 동굴에 뭐가 있었어요? 정말 크리퍼가 있었어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -388,7 +388,7 @@
   },
   "Creeper Infiltration#038": {
    "src": "What's this? It smells like gunpowder...but more earthy. And this came from the cave?",
-   "dst": "",
+   "dst": "이게 뭐죠? 화약 냄새가 나는데... 흙냄새가 더 강하네요. 이게 그 동굴에서 나왔어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -398,7 +398,7 @@
   },
   "Creeper Infiltration#039": {
    "src": "This powder is definitely not native to this area. It has to have come from those creepers.",
-   "dst": "",
+   "dst": "이 가루는 확실히 이 지역 것이 아니에요. 그 크리퍼들한테서 나온 게 분명해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -408,7 +408,7 @@
   },
   "Creeper Infiltration#040": {
    "src": "I guess for now we'll leave them at peace. If they do exist, they don't need to be hunted down to extinction.",
-   "dst": "",
+   "dst": "일단은 가만히 둬야겠네요. 정말 있다 해도, 멸종할 때까지 사냥할 필요는 없으니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -418,7 +418,7 @@
   },
   "Creeper Infiltration#041": {
    "src": "Besides, if they are composed of gunpowder, they could easily blow this ravine to pieces.",
-   "dst": "",
+   "dst": "게다가 화약으로 이루어져 있다면, 이 협곡쯤은 쉽게 날려 버릴 수 있을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -428,7 +428,7 @@
   },
   "Creeper Infiltration#042": {
    "src": "Thank you for your help. I guess you deserve some sort of reward, considering you helped solve the ravine's big mystery.",
-   "dst": "",
+   "dst": "도와줘서 고마워요. 협곡의 큰 수수께끼를 풀어 주셨으니 보상을 받으셔야죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -438,7 +438,7 @@
   },
   "Creeper Infiltration#043": {
    "src": "Feel free to come back to our village any time. By then our food supply should be stable.",
-   "dst": "",
+   "dst": "언제든 마을에 다시 들러 주세요. 그때쯤이면 식량 사정도 안정됐을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",

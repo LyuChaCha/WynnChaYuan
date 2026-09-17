@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Queen's Recruit",
   "count": 675,
-  "translated": 66,
+  "translated": 706,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Queen's Recruit#000": {
    "src": "...He doesn't know.",
-   "dst": "",
+   "dst": "...그는 모른다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -18,7 +18,7 @@
   },
   "Queen's Recruit#001": {
    "src": "Tasim is looking to catch up in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p}에서 Tasim이 이야기를 나누고 싶어 합니다.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -28,7 +28,7 @@
   },
   "Queen's Recruit#002": {
    "src": "{u}! Hey! It's lucky I managed to catch you here.",
-   "dst": "",
+   "dst": "{u}! 어이! 여기서 널 만나다니 운이 좋네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -38,7 +38,7 @@
   },
   "Queen's Recruit#003": {
    "src": "It's been a while, hasn't it? We should catch up! You've probably had lots of adventures, right?",
-   "dst": "",
+   "dst": "오랜만이지? 밀린 얘기 좀 하자! 그동안 모험 많이 했겠지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -48,7 +48,7 @@
   },
   "Queen's Recruit#004": {
    "src": "But before that... I've just got to find...",
-   "dst": "",
+   "dst": "근데 그 전에... 찾아야 할 게...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -58,7 +58,7 @@
   },
   "Queen's Recruit#005": {
    "src": "Huh? What am I oh, yeah. I'm trying to find Aledar.",
-   "dst": "",
+   "dst": "응? 내가 뭘... 아, 맞다. Aledar를 찾고 있었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -68,7 +68,7 @@
   },
   "Queen's Recruit#006": {
    "src": "He sent me a letter asking me to join him on some... scouting mission. But I haven't been able to find him.",
-   "dst": "",
+   "dst": "무슨... 정찰 임무에 같이 가자고 편지를 보냈더라고. 근데 도통 못 찾겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -78,7 +78,7 @@
   },
   "Queen's Recruit#007": {
    "src": "It did take me a while to get here... so maybe he's gone somewhere else by now. Aegis did tell me the mission ended up being called off, so...",
-   "dst": "",
+   "dst": "여기 오는 데 좀 오래 걸렸으니까... 벌써 딴 데로 갔을지도. Aegis 말로는 그 임무도 결국 취소됐다던데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -88,7 +88,7 @@
   },
   "Queen's Recruit#008": {
    "src": "But if he's not here, then I should probably stop trying to catch him on the streets, huh? I'll just leave a message for him at the barracks.",
-   "dst": "",
+   "dst": "여기 없으면 길에서 찾아 헤맬 필요는 없겠지? 병영에 메시지나 남겨 둘게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -98,7 +98,7 @@
   },
   "Queen's Recruit#009": {
    "src": "We can head to the tavern and catch up! Gods, I've missed the Rusty Recruit's drinks... that barkeeper, he says it's the same as anywhere else, but it really isn't! Nowhere else pours it like he does.",
-   "dst": "",
+   "dst": "우리는 술집에 가서 회포나 풀자! 아, Rusty Recruit 술이 그리웠어... 거기 주인은 딴 데랑 똑같다지만, 절대 아니야! 그렇게 따르는 데는 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -108,7 +108,7 @@
   },
   "Queen's Recruit#010": {
    "src": "Pardon me, excuse me coming through! Coming through! Ah, you two! Just the folks I was looking for.",
-   "dst": "",
+   "dst": "실례합니다, 잠시만요- 지나갈게요! 지나갑니다! 아, 두 분! 딱 찾던 분들이네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118,7 +118,7 @@
   },
   "Queen's Recruit#011": {
    "src": "Huh? Us two specifically?",
-   "dst": "",
+   "dst": "네? 콕 집어서 저희 둘이요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -128,7 +128,7 @@
   },
   "Queen's Recruit#012": {
    "src": "Well, perhaps not specifically. I've got a list of folks to try and track down, and the two of you are on it! Tasim and {u}, right?",
-   "dst": "",
+   "dst": "뭐, 콕 집은 건 아니고요. 찾아야 할 사람 명단이 있는데, 두 분도 거기 있거든요! Tasim이랑 {u}, 맞죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -138,7 +138,7 @@
   },
   "Queen's Recruit#013": {
    "src": "I've got an important missive from {p}. Direct from the King himself, yep yep!",
-   "dst": "",
+   "dst": "{p}에서 온 중요한 서신이 있어요. 국왕 폐하께서 직접 보내신 거예요, 네네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -148,7 +148,7 @@
   },
   "Queen's Recruit#014": {
    "src": "Really? I don't think I've even seen him since... what could he possibly want us for?",
-   "dst": "",
+   "dst": "정말? 그분 뵌 지가 언제더라... 대체 우리한테 무슨 볼일이지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -158,7 +158,7 @@
   },
   "Queen's Recruit#015": {
    "src": "I'm not privy to the details I'm afraid! He's summoning a number of you seasoned visitors to the castle, for some sort of meeting.",
-   "dst": "",
+   "dst": "자세한 건 저도 몰라요! 두 분 같은 노련한 방문자 여럿을 회의 같은 걸로 성으로 부르고 계세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -168,7 +168,7 @@
   },
   "Queen's Recruit#016": {
    "src": "Anyway, I've got more to try and track down, so I'll give you the written letters and be on my way! Best of luck with whatever it is!",
-   "dst": "",
+   "dst": "아무튼 전 찾을 사람이 더 있어서, 편지만 드리고 가 볼게요! 무슨 일이든 행운을 빌어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -178,7 +178,7 @@
   },
   "Queen's Recruit#017": {
    "src": "Thanks...",
-   "dst": "",
+   "dst": "고마워요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -188,7 +188,7 @@
   },
   "Queen's Recruit#018": {
    "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks for later... probably for the best. Maybe I'll be able to catch him before...",
-   "dst": "",
+   "dst": "흠. 이상하지 않아? 술은 나중으로 미뤄야겠네... 차라리 잘됐지. 어쩌면 그 전에 그를 만날 수도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -198,7 +198,7 @@
   },
   "Queen's Recruit#019": {
    "src": "Oh, uh- you go on ahead. I have to stop by the barracks first. I'll meet you in {p}, then?",
-   "dst": "",
+   "dst": "아, 어- 먼저 가. 난 병영에 먼저 들러야 해. {p}에서 만나자, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -208,7 +208,7 @@
   },
   "Queen's Recruit#020": {
    "src": "I'll meet you in {p}. I have to deal with some things at the barracks first.",
-   "dst": "",
+   "dst": "{p}에서 만나자. 병영에서 처리할 일이 좀 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -218,7 +218,7 @@
   },
   "Queen's Recruit#021": {
    "src": "Attend the meeting with the King in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 {p}에서 국왕과의 회의에 참석하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -228,7 +228,7 @@
   },
   "Queen's Recruit#022": {
    "src": "...oh, there you are. Didn't you head out before me?",
-   "dst": "",
+   "dst": "...아, 여기 있었네. 나보다 먼저 출발하지 않았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -238,7 +238,7 @@
   },
   "Queen's Recruit#023": {
    "src": "I don't know most of the people here, so I'll stick with you for now.",
-   "dst": "",
+   "dst": "여기 아는 사람이 거의 없으니까, 일단 너랑 붙어 있을게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -248,7 +248,7 @@
   },
   "Queen's Recruit#024": {
    "src": "...and it's all crashing down, right? So I knock the zombie back, grab the kid, and jump for",
-   "dst": "",
+   "dst": "...그러고 다 무너지는 거야, 알지? 그래서 좀비를 쳐내고, 애를 붙잡고, 뛰어서-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -258,7 +258,7 @@
   },
   "Queen's Recruit#025": {
    "src": "Wait, wait wait wait you're tellin' me there was a kid involved? And you still set off the bombs?!",
-   "dst": "",
+   "dst": "잠깐, 잠깐잠깐잠깐, 애가 있었다고? 그런데도 폭탄을 터뜨렸어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -268,7 +268,7 @@
   },
   "Queen's Recruit#026": {
    "src": "Yeah! I said that already, right? That was the whole reason I",
-   "dst": "",
+   "dst": "응! 아까 말했잖아? 그게 바로 내가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -278,7 +278,7 @@
   },
   "Queen's Recruit#027": {
    "src": "Ahem. Pause the story for a bit, Linton. We have company.",
-   "dst": "",
+   "dst": "에헴. 이야기는 잠깐 멈춰요, Linton. 손님이 왔어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -288,7 +288,7 @@
   },
   "Queen's Recruit#028": {
    "src": "Well if it ain't {u}! It's good to see someone else familiar 'round here.",
-   "dst": "",
+   "dst": "아이고, {u} 아니야! 이런 데서 아는 얼굴 보니 좋네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -298,7 +298,7 @@
   },
   "Queen's Recruit#029": {
    "src": "What, and I'm not familiar?",
-   "dst": "",
+   "dst": "뭐야, 난 아는 얼굴 아니야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -308,7 +308,7 @@
   },
   "Queen's Recruit#030": {
    "src": "I do try to keep my distance.",
-   "dst": "",
+   "dst": "난 되도록 거리를 두려고 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -318,7 +318,7 @@
   },
   "Queen's Recruit#031": {
    "src": "So, you received the summons too? The King has a lot of people here. It's interesting.",
-   "dst": "",
+   "dst": "당신도 소집장을 받았군요? 국왕께서 많이도 부르셨네요. 흥미로워요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -328,7 +328,7 @@
   },
   "Queen's Recruit#032": {
    "src": "We did, yes. And it sounded like they had even more people on that list that they were searching for.",
-   "dst": "",
+   "dst": "네, 받았어요. 게다가 명단에 찾는 사람이 더 있는 것 같더라고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -338,7 +338,7 @@
   },
   "Queen's Recruit#033": {
    "src": "Oh, apologies, I hadn't noticed you there. You're a friend of {u}'s, I take it?",
-   "dst": "",
+   "dst": "아, 미안해요, 못 봤네요. {u}의 친구죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -348,7 +348,7 @@
   },
   "Queen's Recruit#034": {
    "src": "I am! We arrived in Wynn on the same caravan. I'm Tasim.",
-   "dst": "",
+   "dst": "네! 같은 마차를 타고 Wynn에 왔어요. 전 Tasim이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -358,7 +358,7 @@
   },
   "Queen's Recruit#035": {
    "src": "Tasim?! You're Tasim?",
-   "dst": "",
+   "dst": "Tasim?! 네가 Tasim이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -368,7 +368,7 @@
   },
   "Queen's Recruit#036": {
    "src": "So you're the one Aledar was always talking about! I thought you were off in Gavel?",
-   "dst": "",
+   "dst": "Aledar가 맨날 말하던 게 너구나! Gavel에 간 줄 알았는데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -378,7 +378,7 @@
   },
   "Queen's Recruit#037": {
    "src": "I... was. How do you all know him?",
-   "dst": "",
+   "dst": "가... 있었죠. 다들 그를 어떻게 알아요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -388,7 +388,7 @@
   },
   "Queen's Recruit#038": {
    "src": "I believe we first met on a mission to reclaim {p}'s barracks from a treasonous commander. We've run into each other a few times since.",
-   "dst": "",
+   "dst": "처음 만난 건 반역한 지휘관에게서 {p}의 병영을 되찾는 임무였을 거예요. 그 뒤로 몇 번 마주쳤죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -398,7 +398,7 @@
   },
   "Queen's Recruit#039": {
    "src": "Still, it's good to finally get t' meet you! We've heard lots of stories! Including somethin' about not respondin' to letters...?",
-   "dst": "",
+   "dst": "그래도, 드디어 만나서 반갑다! 얘기 많이 들었어! 편지에 답장 안 했다는 얘기도 있던데...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -408,7 +408,7 @@
   },
   "Queen's Recruit#040": {
    "src": "Oh... right. We, uh... sorted that out.",
-   "dst": "",
+   "dst": "아... 네. 그건, 어... 잘 풀었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -418,7 +418,7 @@
   },
   "Queen's Recruit#041": {
    "src": "But speaking of have any of you seen him recently?",
-   "dst": "",
+   "dst": "그런데 말 나온 김에... 최근에 그를 본 사람 있어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -428,7 +428,7 @@
   },
   "Queen's Recruit#042": {
    "src": "'fraid not. I don't think our paths've crossed since... was it the siege at {p}? Must've been.",
-   "dst": "",
+   "dst": "아쉽지만 없어. 마지막으로 마주친 게... {p} 공성전이었나? 그랬을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -438,7 +438,7 @@
   },
   "Queen's Recruit#043": {
    "src": "I saw him a month ago in {p}! I asked him what he was working on and if I could help and he just brushed me off. Weird, right?",
-   "dst": "",
+   "dst": "한 달 전에 {p}에서 봤어! 뭐 하냐고, 도와줄까 물었더니 그냥 날 떼어 내더라. 이상하지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -448,7 +448,7 @@
   },
   "Queen's Recruit#044": {
    "src": "Mmn. No, that sounds like him. I think he had enough of your antics last time.",
-   "dst": "",
+   "dst": "음. 아뇨, 그 사람답네요. 지난번 당신 장난질에 질렸나 보죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -458,7 +458,7 @@
   },
   "Queen's Recruit#045": {
    "src": "What?! I'm capable. C'mon, Mel, tell her I'm capable.",
-   "dst": "",
+   "dst": "뭐?! 나 유능하거든. 아 좀, Mel, 나 유능하다고 말해 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -468,7 +468,7 @@
   },
   "Queen's Recruit#046": {
    "src": "Linton, y'were just tellin' us about how you caved in a whole temple by",
-   "dst": "",
+   "dst": "Linton, 방금 네가 신전 하나를 통째로 무너뜨린 얘기를 했잖아-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -478,7 +478,7 @@
   },
   "Queen's Recruit#047": {
    "src": "Okay! Okay, okay okay, let's talk about literally anything else! Tasim, right? What's... uh...",
-   "dst": "",
+   "dst": "알았어! 알았어, 알았다고, 딴 얘기 하자, 아무거나! Tasim이랬지? 너... 어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -488,7 +488,7 @@
   },
   "Queen's Recruit#048": {
    "src": "...so, your... no, no, give me a moment you were... and... um... oh, right...",
-   "dst": "",
+   "dst": "...그러니까, 네... 아니, 아니, 잠깐만- 너는... 그리고... 음... 아, 맞다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -498,7 +498,7 @@
   },
   "Queen's Recruit#049": {
    "src": "...d'you like guys?",
-   "dst": "",
+   "dst": "...너 남자 좋아해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -518,7 +518,7 @@
   },
   "Queen's Recruit#051": {
    "src": "Linton!! Y'can't just ask someone that!!",
-   "dst": "",
+   "dst": "Linton!! 그런 걸 막 물어보면 어떡해!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -528,7 +528,7 @@
   },
   "Queen's Recruit#052": {
    "src": "...uh",
-   "dst": "",
+   "dst": "...어",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -538,7 +538,7 @@
   },
   "Queen's Recruit#053": {
    "src": "It was nice meeting you, Tasim. I look forward to working with you during this mission.",
-   "dst": "",
+   "dst": "만나서 반가웠어요, Tasim. 이번 임무 함께하길 기대할게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -548,7 +548,7 @@
   },
   "Queen's Recruit#054": {
    "src": "...likewise. It's always nice meeting friends of Aledar.",
-   "dst": "",
+   "dst": "...저도요. Aledar의 친구들을 만나는 건 늘 좋네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -558,7 +558,7 @@
   },
   "Queen's Recruit#055": {
    "src": "Well, look at you! It's been quite a time since we last spoke. Far above the task of cleaning out sewers now, eh?",
-   "dst": "",
+   "dst": "이야, 이게 누구야! 마지막으로 얘기한 게 한참 전이구먼. 이제 하수도 청소할 급은 아니겠지, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -568,7 +568,7 @@
   },
   "Queen's Recruit#056": {
    "src": "I've heard some tell of your accomplishments. Fine work, fine work.",
-   "dst": "",
+   "dst": "네 활약 얘기 좀 들었다. 잘했어, 잘했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -578,7 +578,7 @@
   },
   "Queen's Recruit#057": {
    "src": "And... hm. Aren't you the one who ran off to Gavel without sayin' a word? Didn't expect you to be one o' the ones picked out for this.",
-   "dst": "",
+   "dst": "그리고... 흠. 너 한마디 없이 Gavel로 떠난 녀석 아니냐? 이번에 뽑힐 줄은 몰랐구먼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -588,7 +588,7 @@
   },
   "Queen's Recruit#058": {
    "src": "I... didn't expect it either. I didn't even realize the King still remembered me, truth be told.",
-   "dst": "",
+   "dst": "저도... 몰랐어요. 솔직히 국왕께서 절 기억하시는 줄도 몰랐고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -598,7 +598,7 @@
   },
   "Queen's Recruit#059": {
    "src": "Mmn. Well, whatever the reason, you're here now. Don't suppose it matters much the path you took to get here. We need all the folks we can get or so Kymer's been sayin'.",
-   "dst": "",
+   "dst": "음. 뭐, 이유가 뭐든 지금 여기 있잖냐. 어떤 길로 왔는지는 별로 중요하지 않겠지. 사람은 있는 대로 다 필요하니까... Kymer 말로는 그렇다더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -608,7 +608,7 @@
   },
   "Queen's Recruit#060": {
    "src": "Well well! If my eyes don't deceive me! {u} and Tasim!",
-   "dst": "",
+   "dst": "이런, 이런! 내 눈이 틀리지 않았다면! {u}와 Tasim 아닌가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -618,7 +618,7 @@
   },
   "Queen's Recruit#061": {
    "src": "I'll say, I didn't quite expect them to track you down! What with your... extended stint off in Gavel.",
-   "dst": "",
+   "dst": "솔직히 자네들을 찾아낼 줄은 몰랐네! Gavel에서... 꽤 오래 있었으니 말이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -628,7 +628,7 @@
   },
   "Queen's Recruit#062": {
    "src": "I should say the same about you, captain. Did {p} no longer have a use for you once the war ended?",
-   "dst": "",
+   "dst": "저도 같은 말씀 드리고 싶네요, 대장님. 전쟁이 끝나니 {p}에서 쓸모가 없어졌나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -638,7 +638,7 @@
   },
   "Queen's Recruit#063": {
    "src": "Ah... nothing of the sort. You know, I was sent out there initially to serve as more of an envoy from {p}! If the King needs a diplomatic situation sorted, I'm the one he turns to first.",
-   "dst": "",
+   "dst": "아... 그런 게 아닐세. 난 원래 {p}의 사절에 가까운 역할로 거기 파견됐다네! 폐하께서 외교 문제를 해결하실 때 가장 먼저 찾는 게 나지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -648,7 +648,7 @@
   },
   "Queen's Recruit#064": {
    "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've entered a tricky situation with our... neighboring province.",
-   "dst": "",
+   "dst": "그래서... 지금 여기 온 거고. 몇 주 전에 꽤 급하게 소환됐지. 우리가 그... 이웃 지방과 곤란한 상황에 놓인 모양이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -658,7 +658,7 @@
   },
   "Queen's Recruit#065": {
    "src": "But! I shan't say more before the King arrives. He'll tell you all of the problem that hopefully we will be able to resolve.",
-   "dst": "",
+   "dst": "하지만! 폐하께서 오시기 전엔 더 말하지 않겠네. 문제는 폐하께서 직접 말씀하실 걸세. 해결할 수 있으면 좋겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -668,7 +668,7 @@
   },
   "Queen's Recruit#066": {
    "src": "...I see. We'll leave you to it, then.",
-   "dst": "",
+   "dst": "...알겠습니다. 그럼 이만 가 볼게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -678,7 +678,7 @@
   },
   "Queen's Recruit#067": {
    "src": "If we align the manaflow with Water, then nudge it to the side, maybe... ah Reynauld, pass me my notes on... damn, what was it oh, yes, the recovery period! Pass me those ones.",
-   "dst": "",
+   "dst": "마나 흐름을 물에 맞추고, 옆으로 살짝 밀면, 아마... 아 Reynauld, 내 노트 좀... 젠장, 뭐였더라- 아 맞다, 회복 기간! 그거 줘요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -688,7 +688,7 @@
   },
   "Queen's Recruit#068": {
    "src": "...You already have them on your left, doctor.",
-   "dst": "",
+   "dst": "...이미 왼쪽에 있잖아요, 박사님.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -698,7 +698,7 @@
   },
   "Queen's Recruit#069": {
    "src": "Do I now! It seems I do... oh, but this is only the first half where did I leave the rest...",
-   "dst": "",
+   "dst": "그래요?! 그렇군요... 아, 근데 이건 앞부분뿐인데- 나머진 어디 뒀더라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -708,7 +708,7 @@
   },
   "Queen's Recruit#070": {
    "src": "Sigh... If you'd just allow me to organize for you, maybe you wouldn't",
-   "dst": "",
+   "dst": "휴... 제가 정리하게만 해 주시면, 아마-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -718,7 +718,7 @@
   },
   "Queen's Recruit#071": {
    "src": "And ruin my predefined sorting system?! No, Reynauld, I do think it works perfectly well as it is, thank you very much! Now, where could it have",
-   "dst": "",
+   "dst": "그래서 내 분류 체계를 망치자고요?! 아뇨, Reynauld, 지금 이대로 완벽하게 돌아가요, 고마워요! 자, 그게 어디-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -728,7 +728,7 @@
   },
   "Queen's Recruit#072": {
    "src": "Ah! You two! Good, good, you're here I was worried Reynauld would be the only other one with recovered memories around here!",
-   "dst": "",
+   "dst": "아! 두 사람! 좋아요, 좋아, 왔군요- 기억을 되찾은 사람이 Reynauld뿐일까 봐 걱정했어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -738,7 +738,7 @@
   },
   "Queen's Recruit#073": {
    "src": "What, you didn't test it on anyone else after we left?",
-   "dst": "",
+   "dst": "뭐예요, 우리가 떠난 뒤로 딴 사람한테 안 써 봤어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -748,7 +748,7 @@
   },
   "Queen's Recruit#074": {
    "src": "Test it on no, of course not! After what I saw? No, no, that would certainly not have been worth the risk. No new test subjects until I am certain it's flawless!",
-   "dst": "",
+   "dst": "딴 사람한테- 당연히 안 했죠! 그걸 보고 나서요? 아뇨, 그런 위험은 감수할 가치가 없어요. 완벽해질 때까진 새 실험 대상은 없어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -758,7 +758,7 @@
   },
   "Queen's Recruit#075": {
    "src": "I've been using it on myself instead! And, let me tell you the breakthroughs I have made... there is much to be learned.",
-   "dst": "",
+   "dst": "대신 제 자신한테 쓰고 있어요! 그리고 말이죠- 제가 이룬 돌파구란... 배울 게 너무 많아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -768,7 +768,7 @@
   },
   "Queen's Recruit#076": {
    "src": "And is that... safe?",
-   "dst": "",
+   "dst": "그건... 안전해요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -778,7 +778,7 @@
   },
   "Queen's Recruit#077": {
    "src": "Pah! \"Safety\" a meaningless term made only to stifle progress. Have there been side effects certainly! But it has all been worth it.",
-   "dst": "",
+   "dst": "흥! '안전'- 진보를 막으려고 만든 무의미한 말이죠. 부작용이 있었냐고요- 물론이죠! 하지만 다 그럴 가치가 있었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -788,7 +788,7 @@
   },
   "Queen's Recruit#078": {
    "src": "Now, I must return to the pages... I've some equations I need to perfect before the King arrives...",
-   "dst": "",
+   "dst": "자, 원고로 돌아가야겠어요... 국왕께서 오시기 전에 다듬을 방정식이 있거든요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -798,7 +798,7 @@
   },
   "Queen's Recruit#079": {
    "src": "Hm. I can't say I would have expected you to be here, Tasim.",
-   "dst": "",
+   "dst": "흠. 여기서 널 볼 줄은 몰랐어, Tasim.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -808,7 +808,7 @@
   },
   "Queen's Recruit#080": {
    "src": "Well... fate has other plans, I guess. How about you? Did you stay in {p}?",
-   "dst": "",
+   "dst": "글쎄... 운명이 딴 계획이 있었나 봐. 너는? {p}에 계속 있었어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -818,7 +818,7 @@
   },
   "Queen's Recruit#081": {
    "src": "Mostly. Moved around for a few assignments here and there, but I kept coming back.",
-   "dst": "",
+   "dst": "대체로. 임무 몇 개로 여기저기 옮겼지만, 결국 계속 돌아갔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -828,7 +828,7 @@
   },
   "Queen's Recruit#082": {
    "src": "...we haven't spoken in a while. Are you... doing well? How have you been managing the memories?",
-   "dst": "",
+   "dst": "...오랫동안 얘기 못 했네. 넌... 잘 지내? 그 기억들은 어떻게 감당하고 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -848,7 +848,7 @@
   },
   "Queen's Recruit#084": {
    "src": "As well as I could be expected to, I guess. It was rough for the first few months. Eventually, I got used to it.",
-   "dst": "",
+   "dst": "그럭저럭. 처음 몇 달은 힘들었어. 결국 익숙해지더라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -858,7 +858,7 @@
   },
   "Queen's Recruit#085": {
    "src": "How about you? I also wouldn't have expected you to show for a mission like this.",
-   "dst": "",
+   "dst": "너는? 네가 이런 임무에 나타날 줄은 몰랐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -868,7 +868,7 @@
   },
   "Queen's Recruit#086": {
    "src": "Same as you. Helped that Caid and I managed to talk it through. We meet every so often, talk about it. He talks about his sister, how he wants to find her one day.",
-   "dst": "",
+   "dst": "너랑 같지. Caid랑 터놓고 얘기한 게 도움이 됐어. 가끔 만나서 그 얘길 해. 걔는 여동생 얘기를 해. 언젠가 꼭 찾겠대.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -878,7 +878,7 @@
   },
   "Queen's Recruit#087": {
    "src": "That's... good. Happy for you.",
-   "dst": "",
+   "dst": "그거... 다행이다. 잘됐네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -888,7 +888,7 @@
   },
   "Queen's Recruit#088": {
    "src": "Hm. Nothing stopping you from stopping by, yourself. It might even help you.",
-   "dst": "",
+   "dst": "흠. 너도 들르면 되잖아. 너한테도 도움이 될지 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -898,7 +898,7 @@
   },
   "Queen's Recruit#089": {
    "src": "I'll... consider it. Good to see you again, Reynauld.",
-   "dst": "",
+   "dst": "생각... 해 볼게. 다시 봐서 반가웠어, Reynauld.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -908,7 +908,7 @@
   },
   "Queen's Recruit#090": {
    "src": "Another soldier? Allow me to see your summons.",
-   "dst": "",
+   "dst": "또 병사인가? 소집장을 보여 주십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -918,7 +918,7 @@
   },
   "Queen's Recruit#091": {
    "src": "...good. Come on in, {u}. The King will be arriving shortly.",
-   "dst": "",
+   "dst": "...좋습니다. 들어오십시오, {u}. 폐하께서 곧 도착하십니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -928,7 +928,7 @@
   },
   "Queen's Recruit#092": {
    "src": "Right this way.",
-   "dst": "",
+   "dst": "이쪽으로 오십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -938,7 +938,7 @@
   },
   "Queen's Recruit#093": {
    "src": "If you insist. Don't take too long.",
-   "dst": "",
+   "dst": "정 그러시다면. 오래 걸리진 마십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -948,7 +948,7 @@
   },
   "Queen's Recruit#094": {
    "src": "Ah... here we are. I thank you all for coming on such short notice. It has been some time since I have seen many of you.",
-   "dst": "",
+   "dst": "아... 모두 모였군요. 급한 부름에 와 주셔서 감사합니다. 여러분 중 많은 분을 뵌 지 오래되었군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -958,7 +958,7 @@
   },
   "Queen's Recruit#095": {
    "src": "...I'll get right to the point. We find ourselves in a very delicate position when it comes to relations with our neighboring province, Fruma.",
-   "dst": "",
+   "dst": "...바로 본론으로 들어가죠. 이웃 지방인 Fruma와의 관계에 있어서 우리는 매우 미묘한 처지에 놓여 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -968,7 +968,7 @@
   },
   "Queen's Recruit#096": {
    "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once they have chosen to do so.",
-   "dst": "",
+   "dst": "우리는 그들이 보내 주는 신병에 크게 의존하지만, 그 지방에 연락할 방법이 없습니다. 연락은 오직 그들만이, 그들이 원할 때만 할 수 있죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -978,7 +978,7 @@
   },
   "Queen's Recruit#097": {
    "src": "...several weeks ago, we received a cloaked visitor through the outskirts. She claimed to be of Fruma, one of their Sovereigns.",
-   "dst": "",
+   "dst": "...몇 주 전, 외곽으로 망토를 쓴 방문객이 왔습니다. 자신이 Fruma의 군주 중 하나라고 하더군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -988,7 +988,7 @@
   },
   "Queen's Recruit#098": {
    "src": "We were extended an invitation, of sorts. Of all the recruits we have ever received, we were to select the greatest, and send them into Fruma for some sort of celebration.",
-   "dst": "",
+   "dst": "일종의 초대를 받았습니다. 지금껏 받은 모든 신병 중 가장 뛰어난 이들을 골라, 어떤 축제를 위해 Fruma로 보내라는 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -998,7 +998,7 @@
   },
   "Queen's Recruit#099": {
    "src": "Is that who we are? The greatest?",
-   "dst": "",
+   "dst": "그게 우리예요? 가장 뛰어난?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1008,7 +1008,7 @@
   },
   "Queen's Recruit#100": {
    "src": "The ones that could be reached, at the very least! Perhaps some were greater yet, but we all know the roaming habits of your sort, and tracking them down really can prove",
-   "dst": "",
+   "dst": "최소한 연락이 닿은 이들 중에선 말일세! 더 뛰어난 자도 있었겠지만, 자네들 같은 이들의 떠돌이 습성은 다들 알잖나. 찾아내기가 정말-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1018,7 +1018,7 @@
   },
   "Queen's Recruit#101": {
    "src": "Ugh, we're not going along with this, are we?",
-   "dst": "",
+   "dst": "으, 설마 이걸 따르려는 건 아니지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1028,7 +1028,7 @@
   },
   "Queen's Recruit#102": {
    "src": "Linton! You can't just",
-   "dst": "",
+   "dst": "Linton! 그렇게 막-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1038,7 +1038,7 @@
   },
   "Queen's Recruit#103": {
    "src": "What? They're demanding something weird and obviously suspicious, so why should we just accept it?",
-   "dst": "",
+   "dst": "뭐? 이상하고 딱 봐도 수상한 걸 요구하는데, 왜 그냥 받아들여야 해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1048,7 +1048,7 @@
   },
   "Queen's Recruit#104": {
    "src": "I'm afraid we don't have a choice in the matter. As I mentioned, the recruits we receive make all the difference in our province's continued survival. If we were to reject this invitation...",
-   "dst": "",
+   "dst": "유감이지만 우리에겐 선택권이 없습니다. 말했듯이, 받는 신병들이 우리 지방의 존속을 좌우합니다. 만약 이 초대를 거절한다면...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1058,7 +1058,7 @@
   },
   "Queen's Recruit#105": {
    "src": "...who's to say they wouldn't just stop sendin' 'em, eh? Tough.",
-   "dst": "",
+   "dst": "...신병을 아예 안 보낼지 누가 알겠냐, 응? 골치 아프구먼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1068,7 +1068,7 @@
   },
   "Queen's Recruit#106": {
    "src": "Besides all that, think of the opportunity this presents! A true, freely-given view of what lies beyond those walls! We'd be fools not to accept it, no matter the implied threat!",
-   "dst": "",
+   "dst": "게다가, 이게 얼마나 좋은 기회인지 생각해 봐요! 저 벽 너머를 제대로, 그쪽이 먼저 보여 준다고요! 위협이 숨어 있든 말든 거절하면 바보죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1078,7 +1078,7 @@
   },
   "Queen's Recruit#107": {
    "src": "Indeed. I regret that I must request this of you... but there is no other choice. You must accept this invitation.",
-   "dst": "",
+   "dst": "그렇습니다. 이런 부탁을 드려 유감이지만... 다른 방법이 없습니다. 이 초대를 받아들여야 합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1088,7 +1088,7 @@
   },
   "Queen's Recruit#108": {
    "src": "...even those of us with bad experiences of the province?",
-   "dst": "",
+   "dst": "...그 지방에 안 좋은 기억이 있는 우리까지도요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1098,7 +1098,7 @@
   },
   "Queen's Recruit#109": {
    "src": "I apologize... but you must. My hands are tied.",
-   "dst": "",
+   "dst": "미안합니다... 하지만 가야 합니다. 저도 어쩔 수 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1108,7 +1108,7 @@
   },
   "Queen's Recruit#110": {
    "src": "I take it we are expected to gather as much intelligence on Fruma as we can while we're in there?",
-   "dst": "",
+   "dst": "그렇다면 그곳에 있는 동안 Fruma에 대한 정보를 최대한 모아 오라는 거겠죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1118,7 +1118,7 @@
   },
   "Queen's Recruit#111": {
    "src": "That's the plan, indeed! I'll explain more once we're there, but I believe we're on a time limit, correct?",
-   "dst": "",
+   "dst": "바로 그게 계획입니다! 도착하면 더 설명드릴게요. 근데 시간 제한이 있죠, 맞죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1128,7 +1128,7 @@
   },
   "Queen's Recruit#112": {
    "src": "You are correct, doctor. I have been told that a representative will greet you all at the royal gates of Fruma, situated on the western coast.",
-   "dst": "",
+   "dst": "맞습니다, 박사. 서쪽 해안에 있는 Fruma의 왕실 관문에서 대표가 여러분을 맞이할 거라고 들었습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1138,7 +1138,7 @@
   },
   "Queen's Recruit#113": {
    "src": "I've sent a courier ahead to {p} to inform the local captains of the destination they are to take you to.",
-   "dst": "",
+   "dst": "{p}에 먼저 전령을 보내, 그곳 선장들에게 여러분을 데려갈 목적지를 알려 두었습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1148,7 +1148,7 @@
   },
   "Queen's Recruit#114": {
    "src": "{p}... I know a captain there. {u}, want to join me?",
-   "dst": "",
+   "dst": "{p}... 거기 아는 선장이 있어. {u}, 같이 갈래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1158,7 +1158,7 @@
   },
   "Queen's Recruit#115": {
    "src": "Finally... a glimpse at the province's inner workings... how long have I been seeking these answers?",
-   "dst": "",
+   "dst": "드디어... 그 지방의 속사정을 엿볼 수 있다니... 이 답을 얼마나 오래 찾아 헤맸던가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1168,7 +1168,7 @@
   },
   "Queen's Recruit#116": {
    "src": "So many theories... how many will be proven right? How many will be wrong? I cannot wait to find out!",
-   "dst": "",
+   "dst": "가설이 이렇게나 많은데... 몇 개나 맞을까? 몇 개나 틀릴까? 빨리 알고 싶네요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1178,7 +1178,7 @@
   },
   "Queen's Recruit#117": {
    "src": "Sigh... I did know this was coming. Why else would the doctor have been summoned? But I hoped I was wrong.",
-   "dst": "",
+   "dst": "휴... 이렇게 될 줄 알았어. 아니면 박사님을 왜 불렀겠어? 틀리길 바랐는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1188,7 +1188,7 @@
   },
   "Queen's Recruit#118": {
    "src": "Tough situation, isn't it? Lots o' secrecy on part of the Frumans...",
-   "dst": "",
+   "dst": "골치 아픈 상황이지? Fruma 사람들은 숨기는 게 참 많아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1198,7 +1198,7 @@
   },
   "Queen's Recruit#119": {
    "src": "But we'll handle it. Everyone here's plenty capable, after all.",
-   "dst": "",
+   "dst": "그래도 해낼 거다. 여기 있는 녀석들은 다 실력이 좋으니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1208,7 +1208,7 @@
   },
   "Queen's Recruit#120": {
    "src": "Hm... what a situation it is we find ourselves in! Diplomacy is my specialty, of course, but my expertise has not prepared me for... this.",
-   "dst": "",
+   "dst": "흠... 참 묘한 상황에 처했군! 외교야 물론 내 특기지만, 내 경험으로도 이런 건... 대비가 안 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1218,7 +1218,7 @@
   },
   "Queen's Recruit#121": {
    "src": "Fruma knows what they want, and know they are strong enough that they can afford to let up their position.",
-   "dst": "",
+   "dst": "Fruma는 뭘 원하는지 알고, 한발 물러서도 될 만큼 강하다는 것도 알지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1228,7 +1228,7 @@
   },
   "Queen's Recruit#122": {
    "src": "Another top secret mission already? And I'm not even allowed to bring my explosives?",
-   "dst": "",
+   "dst": "벌써 또 극비 임무야? 게다가 폭탄도 못 가져가고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1238,7 +1238,7 @@
   },
   "Queen's Recruit#123": {
    "src": "It's interesting, at least! Way better than that last assignment...",
-   "dst": "",
+   "dst": "그래도 재밌잖아! 지난번 임무보단 훨씬 낫네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1248,7 +1248,7 @@
   },
   "Queen's Recruit#124": {
    "src": "This mission's a big deal, huh? Lot's o' strong folks recalled for it, at least.",
-   "dst": "",
+   "dst": "이번 임무 큰일이지? 불러들인 강자만 해도 한가득이잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1258,7 +1258,7 @@
   },
   "Queen's Recruit#125": {
    "src": "Makes me a bit nervous, honestly!",
-   "dst": "",
+   "dst": "솔직히 좀 긴장돼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1268,7 +1268,7 @@
   },
   "Queen's Recruit#126": {
    "src": "Fruma... I can't say it's been on my mind much. It's a mystery, yes, but not one with any available answers.",
-   "dst": "",
+   "dst": "Fruma라... 크게 생각해 본 적은 없어요. 수수께끼긴 하지만, 답을 구할 수 없는 쪽이었죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1278,7 +1278,7 @@
   },
   "Queen's Recruit#127": {
    "src": "Well, until now, I suppose. I'll have to prepare a list of details to look out for...",
-   "dst": "",
+   "dst": "뭐, 지금까지는요. 살펴볼 세부 사항 목록부터 준비해야겠네요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1288,7 +1288,7 @@
   },
   "Queen's Recruit#128": {
    "src": "And yet again, I must send you all into danger... a different sort, this time around, but danger nonetheless.",
-   "dst": "",
+   "dst": "또다시 여러분을 위험 속으로 보내야 하는군요... 이번엔 종류가 다르지만, 위험은 위험입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1298,7 +1298,7 @@
   },
   "Queen's Recruit#129": {
    "src": "I remember each face which passes through my castle. I rarely see any of them again.",
-   "dst": "",
+   "dst": "이 성을 거쳐 간 얼굴은 모두 기억합니다. 그중 다시 보는 이는 드물지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1308,7 +1308,7 @@
   },
   "Queen's Recruit#130": {
    "src": "But this time... I have faith we will meet once more. Go on, young hero. Your mission lies ahead of you.",
-   "dst": "",
+   "dst": "하지만 이번엔... 다시 만나리라 믿습니다. 가십시오, 젊은 영웅이여. 임무가 기다립니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1318,7 +1318,7 @@
   },
   "Queen's Recruit#131": {
    "src": "...back to Fruma. I've only just come back to Wynn, and now...",
-   "dst": "",
+   "dst": "...다시 Fruma로. Wynn에 막 돌아왔는데, 이젠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1328,7 +1328,7 @@
   },
   "Queen's Recruit#132": {
    "src": "But it had to happen eventually. And I do want answers. So... in we go.",
-   "dst": "",
+   "dst": "그래도 언젠간 일어날 일이었어. 답도 알고 싶고. 그러니... 가 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1338,7 +1338,7 @@
   },
   "Queen's Recruit#133": {
    "src": "I'll be heading to the {p} Seaskipper, if you want to tag along.",
-   "dst": "",
+   "dst": "난 {p} 연락선으로 갈 거야. 같이 갈 거면 따라와.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1348,7 +1348,7 @@
   },
   "Queen's Recruit#134": {
    "src": "Travel to the Gate of Fruma at [-{~}, {~}, -{~}] or meet up with Tasim in {p}.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Fruma 관문으로 가거나, {p}에서 Tasim과 만나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -1358,7 +1358,7 @@
   },
   "Queen's Recruit#135": {
    "src": "...Oh! You're here! Lost in thought, sorry.",
-   "dst": "",
+   "dst": "...아! 왔구나! 미안, 생각에 빠져 있었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1368,7 +1368,7 @@
   },
   "Queen's Recruit#136": {
    "src": "It's all a little surreal, isn't it? I only just got back to Wynn, and now... Fruma!",
-   "dst": "",
+   "dst": "좀 비현실적이지 않아? Wynn에 막 돌아왔는데, 이젠... Fruma라니!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1378,7 +1378,7 @@
   },
   "Queen's Recruit#137": {
    "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
-   "dst": "",
+   "dst": "Aledar도 여기 있으면 좋겠다. 셋이 또 모험하는 거잖아! 돌아가는 거야... 고향으로...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1388,7 +1388,7 @@
   },
   "Queen's Recruit#138": {
    "src": "I guess we'll just have to tell him all about it when we get back. He'll be sad he missed it, I bet.",
-   "dst": "",
+   "dst": "돌아가면 전부 얘기해 줘야겠다. 놓쳐서 아쉬워하겠지, 분명.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1398,7 +1398,7 @@
   },
   "Queen's Recruit#139": {
    "src": "Oi, there! Are those my two favorite customers I see?",
-   "dst": "",
+   "dst": "어이, 거기! 내가 제일 좋아하는 손님 둘 아닌가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1408,7 +1408,7 @@
   },
   "Queen's Recruit#140": {
    "src": "You call everyone your favorite customer, captain! Don't think I didn't notice!",
-   "dst": "",
+   "dst": "선장님은 누구한테나 제일 좋아하는 손님이라잖아요! 모를 줄 알았어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1418,7 +1418,7 @@
   },
   "Queen's Recruit#141": {
    "src": "Eheheheh, well, it's true, ain't it? I got lots o' favorites! Ah, anyhow, you're here for a trip, ain't'cha?",
-   "dst": "",
+   "dst": "에헤헤헤, 그래도 사실이잖아? 좋아하는 손님이 많은 거지! 아, 그나저나 배 타러 왔지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1428,7 +1428,7 @@
   },
   "Queen's Recruit#142": {
    "src": "We are! You've... probably heard the details already? There should have been something about a new destination.",
-   "dst": "",
+   "dst": "네! 아마... 벌써 들으셨죠? 새 목적지에 대한 얘기가 있었을 텐데요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1438,7 +1438,7 @@
   },
   "Queen's Recruit#143": {
    "src": "Aye. That I have. Some scrawny {p} courier wooshed past earlier! I barely got a word in before he was off again! Real interesting fellow.",
-   "dst": "",
+   "dst": "그래. 들었지. 아까 삐쩍 마른 {p} 전령이 휙 지나가더라고! 한마디 하기도 전에 사라졌어! 재밌는 녀석이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1448,7 +1448,7 @@
   },
   "Queen's Recruit#144": {
    "src": "... Not a part o' the sea I like to visit, but I reckon I can make an exception this time.",
-   "dst": "",
+   "dst": "...내가 즐겨 가는 바다는 아니지만, 이번엔 예외로 해 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1458,7 +1458,7 @@
   },
   "Queen's Recruit#145": {
    "src": "Hm... I can pay you extra for the trip, if you'd like.",
-   "dst": "",
+   "dst": "흠... 원하시면 뱃삯을 더 드릴게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1468,7 +1468,7 @@
   },
   "Queen's Recruit#146": {
    "src": "Ha! No, no, there's no need for that. It's free of charge for my two favorite customers, eheh!",
-   "dst": "",
+   "dst": "하! 아냐, 아냐, 그럴 필요 없어. 제일 좋아하는 손님 둘은 공짜야, 에헤!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1478,7 +1478,7 @@
   },
   "Queen's Recruit#147": {
    "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
-   "dst": "",
+   "dst": "...그리고 뭐, 어차피 {p} 왕실 금고에서 다 내는 거고. 자, 내 맘 바뀌어서 두고 가기 전에 얼른 타!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1488,7 +1488,7 @@
   },
   "Queen's Recruit#148": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "네, 선장님!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1498,7 +1498,7 @@
   },
   "Queen's Recruit#149": {
    "src": "...Oh! You're here! Lost in thought, sorry.",
-   "dst": "",
+   "dst": "...아! 왔구나! 미안, 생각에 빠져 있었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1508,7 +1508,7 @@
   },
   "Queen's Recruit#150": {
    "src": "It's all a little surreal, isn't it? I only just got back to Wynn, and now... Fruma!",
-   "dst": "",
+   "dst": "좀 비현실적이지 않아? Wynn에 막 돌아왔는데, 이젠... Fruma라니!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1518,7 +1518,7 @@
   },
   "Queen's Recruit#151": {
    "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
-   "dst": "",
+   "dst": "Aledar도 여기 있으면 좋겠다. 셋이 또 모험하는 거잖아! 돌아가는 거야... 고향으로...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1528,7 +1528,7 @@
   },
   "Queen's Recruit#152": {
    "src": "I guess we'll just have to tell him all about it when we get back. He'll be sad he missed it, I bet.",
-   "dst": "",
+   "dst": "돌아가면 전부 얘기해 줘야겠다. 놓쳐서 아쉬워하겠지, 분명.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1538,7 +1538,7 @@
   },
   "Queen's Recruit#153": {
    "src": "Oi, there! Are those my two favorite customers I see?",
-   "dst": "",
+   "dst": "어이, 거기! 내가 제일 좋아하는 손님 둘 아닌가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1548,7 +1548,7 @@
   },
   "Queen's Recruit#154": {
    "src": "You call everyone your favorite customer, captain! Don't think I didn't notice!",
-   "dst": "",
+   "dst": "선장님은 누구한테나 제일 좋아하는 손님이라잖아요! 모를 줄 알았어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1558,7 +1558,7 @@
   },
   "Queen's Recruit#155": {
    "src": "Eheheheh, well, it's true, ain't it? I got lots o' favorites! Ah, anyhow, you're here for a trip, ain't'cha?",
-   "dst": "",
+   "dst": "에헤헤헤, 그래도 사실이잖아? 좋아하는 손님이 많은 거지! 아, 그나저나 배 타러 왔지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1568,7 +1568,7 @@
   },
   "Queen's Recruit#156": {
    "src": "We are! You've... probably heard the details already? There should have been something about a new destination.",
-   "dst": "",
+   "dst": "네! 아마... 벌써 들으셨죠? 새 목적지에 대한 얘기가 있었을 텐데요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1578,7 +1578,7 @@
   },
   "Queen's Recruit#157": {
    "src": "Aye. That I have. Some scrawny {p} courier wooshed past earlier! I barely got a word in before he was off again! Real interesting fellow.",
-   "dst": "",
+   "dst": "그래. 들었지. 아까 삐쩍 마른 {p} 전령이 휙 지나가더라고! 한마디 하기도 전에 사라졌어! 재밌는 녀석이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1588,7 +1588,7 @@
   },
   "Queen's Recruit#158": {
    "src": "... Not a part o' the sea I like to visit, but I reckon I can make an exception this time.",
-   "dst": "",
+   "dst": "...내가 즐겨 가는 바다는 아니지만, 이번엔 예외로 해 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1598,7 +1598,7 @@
   },
   "Queen's Recruit#159": {
    "src": "Hm... I can pay you extra for the trip, if you'd like.",
-   "dst": "",
+   "dst": "흠... 원하시면 뱃삯을 더 드릴게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1608,7 +1608,7 @@
   },
   "Queen's Recruit#160": {
    "src": "Ha! No, no, there's no need for that. It's free of charge for my two favorite customers, eheh!",
-   "dst": "",
+   "dst": "하! 아냐, 아냐, 그럴 필요 없어. 제일 좋아하는 손님 둘은 공짜야, 에헤!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1618,7 +1618,7 @@
   },
   "Queen's Recruit#161": {
    "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
-   "dst": "",
+   "dst": "...그리고 뭐, 어차피 {p} 왕실 금고에서 다 내는 거고. 자, 내 맘 바뀌어서 두고 가기 전에 얼른 타!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1628,7 +1628,7 @@
   },
   "Queen's Recruit#162": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "네, 선장님!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1638,7 +1638,7 @@
   },
   "Queen's Recruit#163": {
    "src": "...so, Fruma, eh? I'd ask what business ya've got there, but... figure it's top secret.",
-   "dst": "",
+   "dst": "...그래, Fruma라고? 무슨 볼일인지 묻고 싶지만... 극비겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1648,7 +1648,7 @@
   },
   "Queen's Recruit#164": {
    "src": "We've been... invited into the province. Supposedly, it's for some sort of celebration, but...",
-   "dst": "",
+   "dst": "그 지방에... 초대받았어요. 무슨 축제 때문이라는데, 그게...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1658,7 +1658,7 @@
   },
   "Queen's Recruit#165": {
    "src": "Mmn. Aye, knowin' the rumors... not the kind o' place to just invite folks in, is it?",
-   "dst": "",
+   "dst": "음. 그래, 소문을 생각하면... 사람을 쉽게 초대할 곳은 아니지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1668,7 +1668,7 @@
   },
   "Queen's Recruit#166": {
    "src": "...no. It isn't.",
-   "dst": "",
+   "dst": "...네. 아니죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1688,7 +1688,7 @@
   },
   "Queen's Recruit#168": {
    "src": "Tell me, what's on yer mind then? The both o' you. Speakin' thoughts out tends to make 'em easier to manage, in my experience.",
-   "dst": "",
+   "dst": "그럼 말해 봐, 무슨 생각을 하고 있어? 둘 다. 내 경험상, 생각은 입 밖에 내면 다루기가 쉬워지거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1698,7 +1698,7 @@
   },
   "Queen's Recruit#169": {
    "src": "Fruma went through all that trouble to erase our memories, to get rid of us... just to ask for us back out of nowhere.",
-   "dst": "",
+   "dst": "Fruma는 그렇게 공들여 우리 기억을 지우고, 우릴 내쫓았어요... 그래 놓고 갑자기 돌아오라니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1708,7 +1708,7 @@
   },
   "Queen's Recruit#170": {
    "src": "I don't know why they're doing it, but I'm worried there's more going on.",
-   "dst": "",
+   "dst": "왜 이러는지 모르겠지만, 뭔가 더 있는 것 같아 걱정돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1718,7 +1718,7 @@
   },
   "Queen's Recruit#171": {
    "src": "I've not got more of a clue than either o' you, but I reckon that suspicion is warranted.",
-   "dst": "",
+   "dst": "나도 너희보다 아는 건 없지만, 그렇게 의심할 만하다고 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1728,7 +1728,7 @@
   },
   "Queen's Recruit#172": {
    "src": "But don't let it consume you, aye? Some suspicion is healthy, but if it colors everything ya do, it'll hurt ya just as bad as naivety would. Keep an open mind.",
-   "dst": "",
+   "dst": "하지만 의심에 잡아먹히진 마, 알았지? 적당한 의심은 좋지만, 모든 걸 의심으로 물들이면 순진한 것만큼이나 해로워. 마음을 열어 둬.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1738,7 +1738,7 @@
   },
   "Queen's Recruit#173": {
    "src": "...it's possible. I hope you're right, and it is all fine, and we are all overthinking it...",
-   "dst": "",
+   "dst": "...그럴 수도 있죠. 선장님 말이 맞고, 다 괜찮고, 우리가 괜히 걱정하는 거면 좋겠어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1748,7 +1748,7 @@
   },
   "Queen's Recruit#174": {
    "src": "But I can't let my guard down. Everything about this situation is screaming that something isn't right, and... I don't know what.",
-   "dst": "",
+   "dst": "그래도 방심할 순 없어요. 이 상황 전부가 뭔가 잘못됐다고 외치는데... 그게 뭔지 모르겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1758,7 +1758,7 @@
   },
   "Queen's Recruit#175": {
    "src": "Nothin' wrong with hopin' for the best. Stayin' positive is all ya can really do, sometimes.",
-   "dst": "",
+   "dst": "좋은 쪽을 바라는 건 나쁜 게 아냐. 때로는 긍정적으로 사는 게 할 수 있는 전부지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1768,7 +1768,7 @@
   },
   "Queen's Recruit#176": {
    "src": "Out here on the sea, we have a saying... go searchin' for the storm, and it'll find ya itself. Don't expect the worst, or it'll find a way to come to pass.",
-   "dst": "",
+   "dst": "바다에선 이런 말이 있어... 폭풍을 찾아다니면, 폭풍이 널 찾아온다. 최악을 예상하지 마, 그럼 정말 그렇게 되니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1778,7 +1778,7 @@
   },
   "Queen's Recruit#177": {
    "src": "...home? Home. I guess. It'll be nice to have more memories of it than just... you know. Curses, and all that.",
-   "dst": "",
+   "dst": "...고향? 고향. 그런가 봐요. 그냥... 그런 거 말고 기억이 더 있으면 좋겠어요. 저주 같은 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1788,7 +1788,7 @@
   },
   "Queen's Recruit#178": {
    "src": "Hm. I don’t got much of a home to get back to, either. Had it taken from me by those I trusted, eheh!",
-   "dst": "",
+   "dst": "흠. 나도 돌아갈 고향은 별로 없어. 믿었던 놈들한테 빼앗겼거든, 에헤!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1798,7 +1798,7 @@
   },
   "Queen's Recruit#179": {
    "src": "... But, I made my own home, out here on the sea. Think even if I could go back now, I wouldn’t!",
-   "dst": "",
+   "dst": "...그래도, 여기 바다에 내 집을 만들었지. 지금 돌아갈 수 있대도 안 돌아갈 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1808,7 +1808,7 @@
   },
   "Queen's Recruit#180": {
    "src": "So, if y’don’t like what ya find... don’t feel forced to take it, y’hear?",
-   "dst": "",
+   "dst": "그러니까, 거기서 본 게 맘에 안 들면... 억지로 받아들이지 마, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1818,7 +1818,7 @@
   },
   "Queen's Recruit#181": {
    "src": "...I'll keep that in mind. Thank you, captain.",
-   "dst": "",
+   "dst": "...명심할게요. 고마워요, 선장님.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1828,7 +1828,7 @@
   },
   "Queen's Recruit#182": {
    "src": "Ah, it's what I'm here for, ain't it? Givin' sage advice and salin' folks around the sea!",
-   "dst": "",
+   "dst": "아, 그게 내 일 아니겠어? 좋은 조언 해 주고 사람들 바다 건너 태워 주는 거!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1838,7 +1838,7 @@
   },
   "Queen's Recruit#183": {
    "src": "And look at that, on the horizon! Shinin' opulent docks... seems we've arrived.",
-   "dst": "",
+   "dst": "저기 봐, 수평선에! 번쩍이는 호화 부두라니... 다 온 모양이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1848,7 +1848,7 @@
   },
   "Queen's Recruit#184": {
    "src": "Dunno what you'll be facin' in there... but good luck anyway, aye?",
-   "dst": "",
+   "dst": "거기서 뭘 마주할진 모르겠지만... 아무튼 행운을 빌어, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1858,7 +1858,7 @@
   },
   "Queen's Recruit#185": {
    "src": "We'll need it. Thanks for bringing us here, captain.",
-   "dst": "",
+   "dst": "행운이 필요할 거예요. 데려다줘서 고마워요, 선장님.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1878,7 +1878,7 @@
   },
   "Queen's Recruit#187": {
    "src": "It's... impressive. To build something like this for a gate no one ever uses...",
-   "dst": "",
+   "dst": "이거... 대단하다. 아무도 안 쓰는 관문을 이렇게 짓다니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1888,7 +1888,7 @@
   },
   "Queen's Recruit#188": {
    "src": "I guess they have the resources to spare.",
-   "dst": "",
+   "dst": "여유 자원이 넘치나 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1898,7 +1898,7 @@
   },
   "Queen's Recruit#189": {
    "src": "Meet up with the group at the gate at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 관문에서 일행과 합류하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -1908,7 +1908,7 @@
   },
   "Queen's Recruit#190": {
    "src": "Finally! The stragglers arrive. You certainly took your time, didn't you?",
-   "dst": "",
+   "dst": "드디어! 낙오자들이 오는군. 참 느긋하게도 왔구먼?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1928,7 +1928,7 @@
   },
   "Queen's Recruit#192": {
    "src": "Not the time, Kymer. Leave the poor man be for an hour, eh? Got bigger fish to fry, n' all that.",
-   "dst": "",
+   "dst": "지금 그럴 때가 아냐, Kymer. 한 시간만이라도 놔둬, 응? 더 급한 일이 있잖냐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1938,7 +1938,7 @@
   },
   "Queen's Recruit#193": {
    "src": "Yes, yes, fine. We've not been able to get a word out of any of these soldiers! Do we even have the right time and place?",
-   "dst": "",
+   "dst": "그래, 그래, 알았네. 이 병사들한텐 한마디도 못 들었어! 시간과 장소가 맞긴 한 건가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1948,7 +1948,7 @@
   },
   "Queen's Recruit#194": {
    "src": "Nah, you just haven't been trying hard enough. Hey, tin can! This is Fruma, right?",
-   "dst": "",
+   "dst": "에이, 덜 열심히 해서 그래. 어이, 깡통! 여기 Fruma 맞지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1968,7 +1968,7 @@
   },
   "Queen's Recruit#196": {
    "src": "Wow. Nevermind, you were right.",
-   "dst": "",
+   "dst": "와. 됐다, 네 말이 맞네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1978,7 +1978,7 @@
   },
   "Queen's Recruit#197": {
    "src": "As I often am!",
-   "dst": "",
+   "dst": "나야 늘 맞지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1988,7 +1988,7 @@
   },
   "Queen's Recruit#198": {
    "src": "It really is an impressive construction, isn't it? All this for a closed-off province.",
-   "dst": "",
+   "dst": "정말 대단한 건축물이죠? 닫힌 지방에 이렇게까지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1998,7 +1998,7 @@
   },
   "Queen's Recruit#199": {
    "src": "Impressive or not, we have work to do! On your guard, everyone. We don't know what to expect, so watch your backs.",
-   "dst": "",
+   "dst": "대단하든 말든, 할 일이 있어요! 다들 경계해요. 뭐가 나올지 모르니 뒤를 조심해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2008,7 +2008,7 @@
   },
   "Queen's Recruit#200": {
    "src": "S'anyone's guess when they'll actually let us in...",
-   "dst": "",
+   "dst": "언제 들여보내 줄지는 아무도 모르지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2018,7 +2018,7 @@
   },
   "Queen's Recruit#201": {
    "src": "Oh! The gate!!",
-   "dst": "",
+   "dst": "앗! 관문이!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2028,7 +2028,7 @@
   },
   "Queen's Recruit#202": {
    "src": "Thank you, Xao. Now!",
-   "dst": "",
+   "dst": "고맙다, Xao. 지금이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2038,7 +2038,7 @@
   },
   "Queen's Recruit#203": {
    "src": "Soldiers of Wynn! Her Majesty welcomes you to the province, as guests of the crown!",
-   "dst": "",
+   "dst": "Wynn의 병사들이여! 여왕 폐하께서 왕실의 손님으로 여러분을 환영하십니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2048,7 +2048,7 @@
   },
   "Queen's Recruit#204": {
    "src": "Follow me, and you will be escorted to the royal palace. Let's not keep her waiting you all are of great importance to her.",
-   "dst": "",
+   "dst": "저를 따라오시면 왕궁까지 호위해 드리겠습니다. 폐하를 기다리게 하지 맙시다- 여러분은 폐하께 아주 중요하니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2058,7 +2058,7 @@
   },
   "Queen's Recruit#205": {
    "src": "Listen to the introduction. Go to [-{~}, {~}, -{~}] to return to the palace.",
-   "dst": "",
+   "dst": "소개를 들으세요. [-{~}, {~}, -{~}]로 가서 왕궁으로 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2068,7 +2068,7 @@
   },
   "Queen's Recruit#206": {
    "src": "Fruma's... a lot bigger than what I saw in my memories...",
-   "dst": "",
+   "dst": "Fruma가... 내 기억에서 본 것보다 훨씬 크네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2078,7 +2078,7 @@
   },
   "Queen's Recruit#207": {
    "src": "I guess that makes sense. I probably didn't travel much, back then. But... still.",
-   "dst": "",
+   "dst": "그럴 만도 하지. 그땐 별로 돌아다니지 않았을 테니까. 그래도... 좀.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2088,7 +2088,7 @@
   },
   "Queen's Recruit#208": {
    "src": "What'd you think?",
-   "dst": "",
+   "dst": "넌 어땠어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2098,7 +2098,7 @@
   },
   "Queen's Recruit#209": {
    "src": "It... was. I don't know what I expected going in, but... it was stunning.",
-   "dst": "",
+   "dst": "그랬... 지. 뭘 기대했는지 모르겠지만... 굉장했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2108,7 +2108,7 @@
   },
   "Queen's Recruit#210": {
    "src": "Ha! Yeah, you know, I think you're right. It was impressive, but Gavel also has impressive sights.",
-   "dst": "",
+   "dst": "하! 그래, 네 말이 맞는 것 같아. 인상적이긴 했지만, Gavel에도 멋진 풍경은 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2118,7 +2118,7 @@
   },
   "Queen's Recruit#211": {
    "src": "But let's not get distracted. The tour felt very... controlled. We were never let out of the carriages, and the Sovereign was keeping a watchful eye on us.",
-   "dst": "",
+   "dst": "그래도 한눈팔진 말자. 투어가 너무... 통제된 느낌이었어. 마차에서 한 번도 못 내렸고, 군주가 계속 우릴 지켜봤잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2128,7 +2128,7 @@
   },
   "Queen's Recruit#212": {
    "src": "I'm interested in what they're choosing not to show us...",
-   "dst": "",
+   "dst": "오히려 안 보여 주기로 한 게 뭔지 궁금해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2138,7 +2138,7 @@
   },
   "Queen's Recruit#213": {
    "src": "Hey! Someone's coming!",
-   "dst": "",
+   "dst": "어이! 누가 온다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2148,7 +2148,7 @@
   },
   "Queen's Recruit#214": {
    "src": "Greetings, soldiers of Wynn.",
-   "dst": "",
+   "dst": "반갑습니다, Wynn의 병사들이여.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2158,7 +2158,7 @@
   },
   "Queen's Recruit#215": {
    "src": "It is my honor as Queen to facilitate your return to our wonderful province. Though long you have spent away, you will always remain children of Fruma!",
-   "dst": "",
+   "dst": "여왕으로서 여러분이 이 멋진 지방으로 돌아오게 되어 영광입니다. 오래 떠나 있었어도, 여러분은 영원히 Fruma의 자녀입니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2168,7 +2168,7 @@
   },
   "Queen's Recruit#216": {
    "src": "Your work to battle against the blight beyond our walls has been of great interest. You have certainly made our province proud.",
-   "dst": "",
+   "dst": "벽 너머의 역병에 맞선 여러분의 활약은 큰 관심거리였습니다. 여러분은 분명 이 지방의 자랑입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2178,7 +2178,7 @@
   },
   "Queen's Recruit#217": {
    "src": "You must have questions on the nature of your summons. All will be revealed but first, allow me to introduce two of my wonderful Sovereigns.",
-   "dst": "",
+   "dst": "소집된 이유가 궁금하겠지요. 모두 밝혀질 겁니다- 하지만 먼저, 훌륭한 군주 두 명을 소개하지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2188,7 +2188,7 @@
   },
   "Queen's Recruit#218": {
    "src": "You heard my name, but let me introduce myself. I am",
-   "dst": "",
+   "dst": "제 이름은 들으셨겠지만, 소개하겠습니다. 저는-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2198,7 +2198,7 @@
   },
   "Queen's Recruit#219": {
    "src": "Majin of House Thalas, the Morning Star, Sovereign of our fair {p}. It's a pleasure, dear soldiers, to join our Queen for this ceremony!",
-   "dst": "",
+   "dst": "Thalas 가문의 Majin, 샛별이자 아름다운 {p}의 군주랍니다. 친애하는 병사 여러분, 여왕 폐하와 이 의식을 함께하게 되어 기뻐요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2218,7 +2218,7 @@
   },
   "Queen's Recruit#221": {
    "src": "...Zhiraok Nasin, Sovereign of the {p}. The value of that title should speak for itself.",
-   "dst": "",
+   "dst": "...Zhiraok Nasin, {p}의 군주입니다. 그 칭호의 값은 굳이 말할 필요 없겠지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2228,7 +2228,7 @@
   },
   "Queen's Recruit#222": {
    "src": "Thank you, Sovereigns. These two, and the rest, are my council for ruling over our province. Each Sovereign is given governance over their own district, and works to serve the people there.",
-   "dst": "",
+   "dst": "고맙습니다, 군주들. 이 둘과 다른 군주들이 이 지방을 다스리는 제 의회입니다. 각 군주는 자기 구역을 맡아 그곳 백성을 위해 일합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2238,7 +2238,7 @@
   },
   "Queen's Recruit#223": {
    "src": "There are others. Though none could attend this event they find themselves occupied with various assignments.",
-   "dst": "",
+   "dst": "다른 군주들도 있습니다. 하지만 아무도 이번 행사에는 올 수 없었죠- 다들 여러 임무로 바쁘거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2248,7 +2248,7 @@
   },
   "Queen's Recruit#224": {
    "src": "Enough of the boring talk! It is time for the welcoming feast!",
-   "dst": "",
+   "dst": "지루한 얘기는 이만! 환영 연회 시간입니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2258,7 +2258,7 @@
   },
   "Queen's Recruit#225": {
    "src": "We would like to share a taste of what our province has to deliver. Please find your way to the grand dining hall, situated just behind me.",
-   "dst": "",
+   "dst": "이 지방이 내놓을 수 있는 맛을 보여 드리고 싶군요. 제 뒤편의 대연회장으로 가 주십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2268,7 +2268,7 @@
   },
   "Queen's Recruit#226": {
    "src": "Head to the royal dining hall at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 왕실 연회장으로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2278,7 +2278,7 @@
   },
   "Queen's Recruit#227": {
    "src": "Make your way to the dining hall, the Queen will be starting her speech soon.",
-   "dst": "",
+   "dst": "연회장으로 가십시오. 여왕 폐하의 연설이 곧 시작됩니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2288,7 +2288,7 @@
   },
   "Queen's Recruit#228": {
    "src": "...you can't even follow the order of operations while Her Majesty is watching?! What kind of expected value must the recruits ha",
-   "dst": "",
+   "dst": "...폐하께서 보시는데 연산 순서도 못 따라가오?! 신병들 기댓값이 대체 얼마나-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2298,7 +2298,7 @@
   },
   "Queen's Recruit#229": {
    "src": "Now, now, Nasin, settle down. We wouldn't want to leave a poor impression on our guest, would we?",
-   "dst": "",
+   "dst": "자, 자, Nasin, 진정하시죠. 손님께 나쁜 인상을 남기면 안 되잖아요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2308,7 +2308,7 @@
   },
   "Queen's Recruit#230": {
    "src": "Quit interrupting my sequence, hypocr",
-   "dst": "",
+   "dst": "내 수열 좀 그만 끊으시오, 위선-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2318,7 +2318,7 @@
   },
   "Queen's Recruit#231": {
    "src": "Oh, you. You should report to the dining hall with the remainder of your group.",
-   "dst": "",
+   "dst": "아, 당신. 나머지 일행과 함께 연회장으로 가십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2328,7 +2328,7 @@
   },
   "Queen's Recruit#232": {
    "src": "Yes, yes, move along. You certainly don't want to keep Her Majesty waiting!",
-   "dst": "",
+   "dst": "네, 네, 어서 가세요. 여왕 폐하를 기다리게 하고 싶진 않겠죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2338,7 +2338,7 @@
   },
   "Queen's Recruit#233": {
    "src": "Well, I have put it off long enough. Before the first course is served, I will reveal the purpose of your presence here today.",
-   "dst": "",
+   "dst": "자, 충분히 미뤘군요. 첫 요리가 나오기 전에, 오늘 여러분이 여기 온 목적을 밝히겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2348,7 +2348,7 @@
   },
   "Queen's Recruit#234": {
    "src": "In celebration of your work in the Wynn Province, we shall be hosting a tournament! You will all partake in a set of duels in order to crown the greatest soldier among you.",
-   "dst": "",
+   "dst": "Wynn 지방에서의 활약을 기념하여, 대회를 열겠습니다! 모두 결투에 참가해 여러분 중 최고의 병사를 가리게 됩니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2358,7 +2358,7 @@
   },
   "Queen's Recruit#235": {
    "src": "You have all grown in your time spent beyond our walls, and what better way to show it?",
-   "dst": "",
+   "dst": "모두 벽 너머에서 성장했을 테니, 그걸 보여 줄 더 좋은 방법이 있을까요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2368,7 +2368,7 @@
   },
   "Queen's Recruit#236": {
    "src": "We will, of course, provide compensation for all participants. A generous monetary reward shall be granted to each of you, no matter your placing in the tournament.",
-   "dst": "",
+   "dst": "물론 참가자 전원에게 보상이 있습니다. 대회 순위와 상관없이 각자에게 넉넉한 상금을 드리겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2378,7 +2378,7 @@
   },
   "Queen's Recruit#237": {
    "src": "However, for whichever of you finds themselves crowned winner... a greater reward awaits. The specifics shall be revealed once the tournament has concluded.",
-   "dst": "",
+   "dst": "하지만 우승자로 오르는 분에게는... 더 큰 보상이 기다립니다. 자세한 내용은 대회가 끝나면 밝히겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2388,7 +2388,7 @@
   },
   "Queen's Recruit#238": {
    "src": "Ah, your majesty if I may... I am not much of a fighter my specialty is in research and study of magic.",
-   "dst": "",
+   "dst": "아, 폐하- 괜찮으시다면... 전 싸움엔 소질이 없습니다- 제 전문은 마법 연구거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2398,7 +2398,7 @@
   },
   "Queen's Recruit#239": {
    "src": "...very well. Accommodations shall be made. A different request may be made of you later, in exchange.",
-   "dst": "",
+   "dst": "...좋습니다. 배려하지요. 대신 나중에 다른 부탁을 드릴 수도 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2408,7 +2408,7 @@
   },
   "Queen's Recruit#240": {
    "src": "I thank you for your grace and understanding, your majesty.",
-   "dst": "",
+   "dst": "너그러이 이해해 주셔서 감사합니다, 폐하.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2418,7 +2418,7 @@
   },
   "Queen's Recruit#241": {
    "src": "Yes... now. Once the meal comes to a close, you shall all be assigned a room to stay in for the remainder of your stay in my palace.",
-   "dst": "",
+   "dst": "그래요... 자. 식사가 끝나면, 궁에 머무는 동안 지낼 방을 각자 배정받을 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2428,7 +2428,7 @@
   },
   "Queen's Recruit#242": {
    "src": "Ah! It seems the first course has been prepared! Please, enjoy our province's finest cuisine.",
-   "dst": "",
+   "dst": "아! 첫 요리가 준비된 모양이군요! 이 지방 최고의 요리를 즐기십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2438,7 +2438,7 @@
   },
   "Queen's Recruit#243": {
    "src": "...I can't say I was expecting that, of all things.",
-   "dst": "",
+   "dst": "...하필 이런 전개일 줄은 몰랐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2448,7 +2448,7 @@
   },
   "Queen's Recruit#244": {
    "src": "You'll be joining the tournament, right?",
-   "dst": "",
+   "dst": "너 대회 나갈 거지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2468,7 +2468,7 @@
   },
   "Queen's Recruit#246": {
    "src": "We'd better get going and find our rooms everyone else headed south.",
-   "dst": "",
+   "dst": "얼른 가서 방 찾자- 다들 남쪽으로 갔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2478,7 +2478,7 @@
   },
   "Queen's Recruit#247": {
    "src": "Get your assigned room from the representative at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 담당자에게 배정된 방을 받으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2488,7 +2488,7 @@
   },
   "Queen's Recruit#248": {
    "src": "Welcome to the courtyard.",
-   "dst": "",
+   "dst": "안뜰에 오신 것을 환영합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2498,7 +2498,7 @@
   },
   "Queen's Recruit#249": {
    "src": "Your rooms are located on the east and west side of here.",
-   "dst": "",
+   "dst": "여러분의 방은 이곳 동쪽과 서쪽에 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2508,7 +2508,7 @@
   },
   "Queen's Recruit#250": {
    "src": "Your rooms are on the other side of the castle. Please make your way over there.",
-   "dst": "",
+   "dst": "여러분의 방은 성 반대편에 있습니다. 그쪽으로 가십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2518,7 +2518,7 @@
   },
   "Queen's Recruit#251": {
    "src": "Guests. Hm...",
-   "dst": "",
+   "dst": "손님들. 흠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2528,7 +2528,7 @@
   },
   "Queen's Recruit#252": {
    "src": "Allow me a moment.",
-   "dst": "",
+   "dst": "잠깐 기다려.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2538,7 +2538,7 @@
   },
   "Queen's Recruit#253": {
    "src": "Name?",
-   "dst": "",
+   "dst": "이름?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2548,7 +2548,7 @@
   },
   "Queen's Recruit#254": {
    "src": "...that's {u} and I'm Tasim.",
-   "dst": "",
+   "dst": "...이쪽은 {u}, 전 Tasim이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2558,7 +2558,7 @@
   },
   "Queen's Recruit#255": {
    "src": "Talk about a fancy feast, huh?",
-   "dst": "",
+   "dst": "연회 한번 거창하더라, 그치?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2568,7 +2568,7 @@
   },
   "Queen's Recruit#256": {
    "src": "They're really pullin' out all the stops, huh? Don't think I've had anythin' that good in a long while.",
-   "dst": "",
+   "dst": "진짜 있는 힘껏 차렸더라? 그렇게 맛있는 건 오랜만에 먹어 봤어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2578,7 +2578,7 @@
   },
   "Queen's Recruit#257": {
    "src": "Yeah, that was probably the best meal I've had in a long time... Really tired me out. Can't wait for a long and good rest.",
-   "dst": "",
+   "dst": "응, 요즘 먹은 것 중에 최고였어... 그래서 완전 지쳤어. 푹 좀 쉬고 싶다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2588,7 +2588,7 @@
   },
   "Queen's Recruit#258": {
    "src": "Ah, there we are. Tasim and {u}, you'll be in room W3... in the western wing.",
-   "dst": "",
+   "dst": "아, 여기 있군. Tasim과 {u}, 너희는 W3호실이야... 서쪽 동에 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2598,7 +2598,7 @@
   },
   "Queen's Recruit#259": {
    "src": "How 'bout us? I'm Mel, and this is Linton.",
-   "dst": "",
+   "dst": "우리는요? 난 Mel, 이쪽은 Linton.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2608,7 +2608,7 @@
   },
   "Queen's Recruit#260": {
    "src": "Let's see...",
-   "dst": "",
+   "dst": "어디 보자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2618,7 +2618,7 @@
   },
   "Queen's Recruit#261": {
    "src": "...hm.",
-   "dst": "",
+   "dst": "...흠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2628,7 +2628,7 @@
   },
   "Queen's Recruit#262": {
    "src": "Mel and Lanu, you'll be in E2.",
-   "dst": "",
+   "dst": "Mel과 Lanu, 너희는 E2야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2638,7 +2638,7 @@
   },
   "Queen's Recruit#263": {
    "src": "Uh hey, I think you forgot someone! Where am I staying?",
-   "dst": "",
+   "dst": "어- 저기, 한 명 빼먹었는데! 난 어디서 자?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2648,7 +2648,7 @@
   },
   "Queen's Recruit#264": {
    "src": "Linton... let me see...",
-   "dst": "",
+   "dst": "Linton... 어디 보자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2658,7 +2658,7 @@
   },
   "Queen's Recruit#265": {
    "src": "Ehm..... Hm........ Oh....",
-   "dst": "",
+   "dst": "음..... 흠........ 아....",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2668,7 +2668,7 @@
   },
   "Queen's Recruit#266": {
    "src": "Linton and Kymer are in W2.",
-   "dst": "",
+   "dst": "Linton과 Kymer는 W2야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2678,7 +2678,7 @@
   },
   "Queen's Recruit#267": {
    "src": "Oh... uh, Kymer, huh? That's... hm. Okay.",
-   "dst": "",
+   "dst": "아... 어, Kymer라고? 그건... 흠. 알았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2688,7 +2688,7 @@
   },
   "Queen's Recruit#268": {
    "src": "Ha. Good luck with that.",
-   "dst": "",
+   "dst": "하. 행운을 빈다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2698,7 +2698,7 @@
   },
   "Queen's Recruit#269": {
    "src": "Head to your room, W-{~}, and check it out.",
-   "dst": "",
+   "dst": "배정된 방 W-{~}으로 가서 둘러보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2708,7 +2708,7 @@
   },
   "Queen's Recruit#270": {
    "src": "Room W3... Now get going. I have a lot of rooms to assign...",
-   "dst": "",
+   "dst": "W3호실... 이제 가 봐. 배정할 방이 아직 많아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2718,7 +2718,7 @@
   },
   "Queen's Recruit#271": {
    "src": "I'm just gonna wait here for Lanu.",
-   "dst": "",
+   "dst": "난 여기서 Lanu 기다릴래.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2728,7 +2728,7 @@
   },
   "Queen's Recruit#272": {
    "src": "Hm... {u}? Think you've got the wrong room!",
-   "dst": "",
+   "dst": "흠... {u}? 방 잘못 찾은 것 같은데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2738,7 +2738,7 @@
   },
   "Queen's Recruit#273": {
    "src": "Odd that I've got a room all to myself... but eh, I won't complain.",
-   "dst": "",
+   "dst": "나 혼자 방을 쓰다니 이상하구먼... 뭐, 불평은 안 하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2748,7 +2748,7 @@
   },
   "Queen's Recruit#274": {
    "src": "Kymer. Sure! Cool, cool cool cool... I can stay with the... big biceps... yep. That's... fine. That's fine. Good, even.",
-   "dst": "",
+   "dst": "Kymer. 좋지! 좋아, 좋아좋아좋아... 그... 우람한 이두근이랑 같이 자면... 되지. 그건... 괜찮아. 괜찮아. 좋은 거야, 오히려.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2758,7 +2758,7 @@
   },
   "Queen's Recruit#275": {
    "src": "So, this is our room?",
-   "dst": "",
+   "dst": "그래서, 여기가 우리 방이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2768,7 +2768,7 @@
   },
   "Queen's Recruit#276": {
    "src": "It seems cozy enough, I guess... hard to relax, though, given... you know. all of it.",
-   "dst": "",
+   "dst": "꽤 아늑하긴 하네... 그래도 쉬기는 어렵다, 그... 알잖아. 이 모든 거.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2778,7 +2778,7 @@
   },
   "Queen's Recruit#277": {
    "src": "...it's easier than I thought it would be, being in Fruma. There's enough distance from... the, uh, memories.",
-   "dst": "",
+   "dst": "...Fruma에 있는 게 생각보다 쉬워. 그... 어, 기억이랑은 거리가 충분히 있어서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2788,7 +2788,7 @@
   },
   "Queen's Recruit#278": {
    "src": "But, okay, we're in private now. So.. what do you actually think of the tournament? It's weird, right? Why would we be invited for this?",
-   "dst": "",
+   "dst": "그래도, 좋아, 이제 우리끼리야. 그래서... 대회 진짜 어떻게 생각해? 이상하지? 왜 이것 때문에 우리를 불렀을까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2798,7 +2798,7 @@
   },
   "Queen's Recruit#279": {
    "src": "Me neither. I don't know what I was expecting when we were entering Fruma, but it wasn't... this.",
-   "dst": "",
+   "dst": "나도야. Fruma에 들어올 때 뭘 기대했는지 모르겠지만, 이건... 아니었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2808,7 +2808,7 @@
   },
   "Queen's Recruit#280": {
    "src": "I think we'll have to participate, but keep an eye out. Maybe the secret reward will have some answers..",
-   "dst": "",
+   "dst": "참가는 해야겠지만, 잘 지켜보자. 그 비밀 보상에 답이 있을지도 몰라..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2818,7 +2818,7 @@
   },
   "Queen's Recruit#281": {
    "src": "Hm... you're probably right, I just don't know what it could possibly be.",
-   "dst": "",
+   "dst": "흠... 네 말이 맞을 거야, 그게 뭔지 도저히 모르겠을 뿐이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2828,7 +2828,7 @@
   },
   "Queen's Recruit#282": {
    "src": "Maybe there's something going on with that secret reward for the winner... we'll have to wait and see, I guess.",
-   "dst": "",
+   "dst": "우승자한테 주는 비밀 보상에 뭔가 있을지도... 기다려 보는 수밖에 없겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2838,7 +2838,7 @@
   },
   "Queen's Recruit#283": {
    "src": "Ha! Yeah, alright. I'm a little excited, too. I haven't had any friendly duels for a long time, so maybe it'll be nice to test my strength.",
-   "dst": "",
+   "dst": "하! 그래, 알았어. 나도 좀 기대돼. 친선 대결을 오랫동안 못 해 봤으니, 실력을 시험해 보는 것도 좋겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2848,7 +2848,7 @@
   },
   "Queen's Recruit#284": {
    "src": "But don’t forget why we’re here. Keep your guard up. Something about that reward she mentioned... it makes me uneasy.",
-   "dst": "",
+   "dst": "하지만 우리가 왜 여기 왔는지 잊지 마. 경계는 늦추지 말고. 그 보상 얘기가... 영 불안해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2858,7 +2858,7 @@
   },
   "Queen's Recruit#285": {
    "src": "It strikes me as the kind of thing Aledar would enjoy. What better way to prove himself than to win this big tournament?",
-   "dst": "",
+   "dst": "Aledar가 딱 좋아할 만한 일이야. 큰 대회에서 우승하는 것만큼 자신을 증명할 방법이 또 있겠어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2868,7 +2868,7 @@
   },
   "Queen's Recruit#286": {
    "src": "He'd get to use all his potions and tricks, too! He's always telling me about the horrific creations he's mixed together.",
-   "dst": "",
+   "dst": "물약이랑 잔재주도 전부 쓸 수 있잖아! 맨날 자기가 섞어 만든 끔찍한 물건 얘기를 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2878,7 +2878,7 @@
   },
   "Queen's Recruit#287": {
    "src": "...I think I miss him.",
-   "dst": "",
+   "dst": "...보고 싶은 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2888,7 +2888,7 @@
   },
   "Queen's Recruit#288": {
    "src": "So, this is our room?",
-   "dst": "",
+   "dst": "그래서, 여기가 우리 방이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2898,7 +2898,7 @@
   },
   "Queen's Recruit#289": {
    "src": "It seems cozy enough, I guess... hard to relax, though, given... you know. all of it.",
-   "dst": "",
+   "dst": "꽤 아늑하긴 하네... 그래도 쉬기는 어렵다, 그... 알잖아. 이 모든 거.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2908,7 +2908,7 @@
   },
   "Queen's Recruit#290": {
    "src": "...it's easier than I thought it would be, being in Fruma. There's enough distance from... the, uh, memories.",
-   "dst": "",
+   "dst": "...Fruma에 있는 게 생각보다 쉬워. 그... 어, 기억이랑은 거리가 충분히 있어서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2918,7 +2918,7 @@
   },
   "Queen's Recruit#291": {
    "src": "But, okay, we're in private now. So.. what do you actually think of the tournament? It's weird, right? Why would we be invited for this?",
-   "dst": "",
+   "dst": "그래도, 좋아, 이제 우리끼리야. 그래서... 대회 진짜 어떻게 생각해? 이상하지? 왜 이것 때문에 우리를 불렀을까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2928,7 +2928,7 @@
   },
   "Queen's Recruit#292": {
    "src": "Me neither. I don't know what I was expecting when we were entering Fruma, but it wasn't... this.",
-   "dst": "",
+   "dst": "나도야. Fruma에 들어올 때 뭘 기대했는지 모르겠지만, 이건... 아니었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2938,7 +2938,7 @@
   },
   "Queen's Recruit#293": {
    "src": "I think we'll have to participate, but keep an eye out. Maybe the secret reward will have some answers..",
-   "dst": "",
+   "dst": "참가는 해야겠지만, 잘 지켜보자. 그 비밀 보상에 답이 있을지도 몰라..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2948,7 +2948,7 @@
   },
   "Queen's Recruit#294": {
    "src": "Hm... you're probably right, I just don't know what it could possibly be.",
-   "dst": "",
+   "dst": "흠... 네 말이 맞을 거야, 그게 뭔지 도저히 모르겠을 뿐이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2958,7 +2958,7 @@
   },
   "Queen's Recruit#295": {
    "src": "Maybe there's something going on with that secret reward for the winner... we'll have to wait and see, I guess.",
-   "dst": "",
+   "dst": "우승자한테 주는 비밀 보상에 뭔가 있을지도... 기다려 보는 수밖에 없겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2968,7 +2968,7 @@
   },
   "Queen's Recruit#296": {
    "src": "Ha! Yeah, alright. I'm a little excited, too. I haven't had any friendly duels for a long time, so maybe it'll be nice to test my strength.",
-   "dst": "",
+   "dst": "하! 그래, 알았어. 나도 좀 기대돼. 친선 대결을 오랫동안 못 해 봤으니, 실력을 시험해 보는 것도 좋겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2978,7 +2978,7 @@
   },
   "Queen's Recruit#297": {
    "src": "But don’t forget why we’re here. Keep your guard up. Something about that reward she mentioned... it makes me uneasy.",
-   "dst": "",
+   "dst": "하지만 우리가 왜 여기 왔는지 잊지 마. 경계는 늦추지 말고. 그 보상 얘기가... 영 불안해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2988,7 +2988,7 @@
   },
   "Queen's Recruit#298": {
    "src": "It strikes me as the kind of thing Aledar would enjoy. What better way to prove himself than to win this big tournament?",
-   "dst": "",
+   "dst": "Aledar가 딱 좋아할 만한 일이야. 큰 대회에서 우승하는 것만큼 자신을 증명할 방법이 또 있겠어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2998,7 +2998,7 @@
   },
   "Queen's Recruit#299": {
    "src": "He'd get to use all his potions and tricks, too! He's always telling me about the horrific creations he's mixed together.",
-   "dst": "",
+   "dst": "물약이랑 잔재주도 전부 쓸 수 있잖아! 맨날 자기가 섞어 만든 끔찍한 물건 얘기를 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3008,7 +3008,7 @@
   },
   "Queen's Recruit#300": {
    "src": "...I think I miss him.",
-   "dst": "",
+   "dst": "...보고 싶은 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3018,7 +3018,7 @@
   },
   "Queen's Recruit#301": {
    "src": "Uh... come in?",
-   "dst": "",
+   "dst": "어... 들어와요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3028,7 +3028,7 @@
   },
   "Queen's Recruit#302": {
    "src": "Hey! You two!",
-   "dst": "",
+   "dst": "어이! 너희 둘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3038,7 +3038,7 @@
   },
   "Queen's Recruit#303": {
    "src": "Linton? What's going on?",
-   "dst": "",
+   "dst": "Linton? 무슨 일이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3048,7 +3048,7 @@
   },
   "Queen's Recruit#304": {
    "src": "Oh, uh, nothing much. Just a secret meeting. In Jenprest's room that's W1, at the start of the corridor.",
-   "dst": "",
+   "dst": "아, 어, 별거 아냐. 그냥 비밀 회의. Jenprest 방에서- W1, 복도 맨 앞이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3058,7 +3058,7 @@
   },
   "Queen's Recruit#305": {
    "src": "Picard says we should talk about what we've got so far. He also said to space out people coming to the room so wait a few minutes before stopping by!",
-   "dst": "",
+   "dst": "Picard가 지금까지 알아낸 걸 얘기해 보재. 그리고 방에 오는 시간 간격을 두랬어- 그러니 몇 분 기다렸다가 와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3068,7 +3068,7 @@
   },
   "Queen's Recruit#306": {
    "src": "I... guess that makes sense. But why are you here, and not",
-   "dst": "",
+   "dst": "그건... 말이 되네. 근데 왜 네가 온 거야, 다른-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3078,7 +3078,7 @@
   },
   "Queen's Recruit#307": {
    "src": "'Cause I'm fast and stealthy. Gotta run now, I don't want to draw the guards' attention. Remember, room W1!",
-   "dst": "",
+   "dst": "내가 빠르고 은밀하니까. 이제 가야 해, 경비병 눈에 띄기 싫거든. 기억해, W1호실!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3088,7 +3088,7 @@
   },
   "Queen's Recruit#308": {
    "src": "...he's energetic, huh. Okay, let's head over to the meeting. I wonder what the others have noticed.",
-   "dst": "",
+   "dst": "...기운 넘치네. 좋아, 회의하러 가자. 다들 뭘 알아냈을까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3098,7 +3098,7 @@
   },
   "Queen's Recruit#309": {
    "src": "Meet up with the others in room W-{~} at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~2}, {~3}, {~4}]의 W-{~1}호실에서 다른 사람들과 만나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -3108,7 +3108,7 @@
   },
   "Queen's Recruit#310": {
    "src": "Ah, good, they're here. Come in, come in. Quickly now.",
-   "dst": "",
+   "dst": "아, 좋아요, 왔군요. 들어와요, 들어와요. 빨리요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3118,7 +3118,7 @@
   },
   "Queen's Recruit#311": {
    "src": "Are we the last ones in?",
-   "dst": "",
+   "dst": "우리가 마지막이에요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3128,7 +3128,7 @@
   },
   "Queen's Recruit#312": {
    "src": "That y'are. Now, Picard, mind tellin' me what was on your damned mind when you commandeered my room without sayin' a word ?!",
-   "dst": "",
+   "dst": "그렇지. 자, Picard, 한마디 말도 없이 내 방을 징발할 때 대체 무슨 생각이었는지 말해 보시지?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3138,7 +3138,7 @@
   },
   "Queen's Recruit#313": {
    "src": "Ah, eheh, well I suppose it, er, may have slipped the mind... not important! We're under a time constraint!",
-   "dst": "",
+   "dst": "아, 에헤, 그게- 그러니까, 어, 깜빡했나 봐요... 중요한 게 아니에요! 시간이 없어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3148,7 +3148,7 @@
   },
   "Queen's Recruit#314": {
    "src": "We've made it this far, but we'll need to plan our next steps. Firstly, however let us start with what information we have gleaned thus far.",
-   "dst": "",
+   "dst": "여기까진 왔지만, 다음 단계를 계획해야 해요. 하지만 먼저- 지금까지 모은 정보부터 정리합시다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3158,7 +3158,7 @@
   },
   "Queen's Recruit#315": {
    "src": "Well, the crown certainly has money to spare! What we've seen thus far seems to rival even the richest of nobility I had the pleasure of working with in {p}.",
-   "dst": "",
+   "dst": "음, 왕실에 돈이 넘치는 건 확실하군! 지금까지 본 걸로는 내가 {p}에서 함께 일해 본 최고 부자 귀족들과도 견줄 만해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3168,7 +3168,7 @@
   },
   "Queen's Recruit#316": {
    "src": "And the architectural style... it's unique. I haven't seen anything like it before. I suppose it would make sense, if the province has been closed off so long...",
-   "dst": "",
+   "dst": "그리고 건축 양식이... 독특해요. 이런 건 처음 봐요. 하긴, 이 지방이 그렇게 오래 닫혀 있었으니 당연하겠죠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3178,7 +3178,7 @@
   },
   "Queen's Recruit#317": {
    "src": "Eh, enough of the unimportant details any of the rest o' you feelin' strange about the tournament? Seems an odd thing to invite us folks back for.",
-   "dst": "",
+   "dst": "에이, 사소한 건 그만- 다른 사람들, 대회가 이상하다고 느끼지 않냐? 우릴 불러들일 이유로는 좀 묘하잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3188,7 +3188,7 @@
   },
   "Queen's Recruit#318": {
    "src": "I was thinking the same thing. And they're willing to pay all of us for participating, no matter how we do... I don't get why.",
-   "dst": "",
+   "dst": "저도 같은 생각이었어요. 게다가 성적과 상관없이 전원에게 돈을 준다니... 왜 그러는지 모르겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3198,7 +3198,7 @@
   },
   "Queen's Recruit#319": {
    "src": "Hm, well, in truth I am not overly concerned about it",
-   "dst": "",
+   "dst": "흠, 뭐, 솔직히 전 별로 걱정 안 해요-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3208,7 +3208,7 @@
   },
   "Queen's Recruit#320": {
    "src": "Yes, actually, Picard, what was that back there in the dining hall? You're going to draw attention to yourself by opting out of it?",
-   "dst": "",
+   "dst": "그래, 그러고 보니 Picard, 아까 연회장에서 그건 뭐였나? 빠지겠다고 하면 오히려 눈에 띌 텐데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3218,7 +3218,7 @@
   },
   "Queen's Recruit#321": {
    "src": "Oh, what use is there in placing me in such a combat scenario?! I'll be far more useful outside of that structure, free to look around the palace.",
-   "dst": "",
+   "dst": "아니, 날 그런 전투 상황에 넣어서 뭐 하게요?! 그 틀 밖에서 궁을 자유롭게 둘러보는 게 훨씬 쓸모 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3228,7 +3228,7 @@
   },
   "Queen's Recruit#322": {
    "src": "And besides, they have me giving them a summary of my research notes, so it's not as though I'm free of it entirely, not to mention",
-   "dst": "",
+   "dst": "게다가 연구 노트 요약을 내라고 해서 완전히 자유로운 것도 아니에요, 말할 것도 없이-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3238,7 +3238,7 @@
   },
   "Queen's Recruit#323": {
    "src": "Alright, settle down y'all! Limited time, remember? We've gone off track. They're rich, fancy, and want us fightin' for some reason. What else?",
-   "dst": "",
+   "dst": "자, 다들 진정해! 시간 없다며? 얘기가 샜어. 부자고, 화려하고, 무슨 이유로 우릴 싸우게 하려고 해. 또 뭐 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3248,7 +3248,7 @@
   },
   "Queen's Recruit#324": {
    "src": "...as I was saying before I was rudely interrupted- I don't believe there is much to be gleaned from the tournament just yet. It's a puzzle piece we'll have to connect later.",
-   "dst": "",
+   "dst": "...무례하게 끊기기 전에 하던 말인데- 대회에서는 아직 건질 게 별로 없다고 봐요. 나중에 맞춰야 할 퍼즐 조각이죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3258,7 +3258,7 @@
   },
   "Queen's Recruit#325": {
    "src": "Do we have anything on the Queen and her Sovereigns? It's an interesting governmental structure, but I suppose having a more direct line to the Queen has value for the districts.",
-   "dst": "",
+   "dst": "여왕과 군주들에 대해 알아낸 게 있나요? 흥미로운 통치 구조예요. 여왕에게 바로 닿는 통로가 있다는 건 구역들한테 가치가 있겠죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3268,7 +3268,7 @@
   },
   "Queen's Recruit#326": {
    "src": "Well, they're obviously putting on an act. They're definitely hiding something from us, and I don't think any of them are as happy to see us as they say they are.",
-   "dst": "",
+   "dst": "음, 딱 봐도 연기하고 있어. 분명 뭔가 숨기고 있고, 말만큼 우릴 반기는 사람은 하나도 없는 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3278,7 +3278,7 @@
   },
   "Queen's Recruit#327": {
    "src": "Yes, indeed... we were sent to Wynn as exiles, not as honored soldiers. So why are they pretending otherwise? They called us back here.",
-   "dst": "",
+   "dst": "맞아... 우린 영예로운 병사가 아니라 추방자로 Wynn에 보내졌어. 그런데 왜 아닌 척하지? 우릴 다시 부른 건 저쪽인데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3288,7 +3288,7 @@
   },
   "Queen's Recruit#328": {
    "src": "Ah! Perhaps they're unaware that we've cracked that memory spell? For all they know, we still believe their lies.",
-   "dst": "",
+   "dst": "아! 우리가 기억 주문을 풀었다는 걸 모르는 걸지도요? 저들이 보기엔, 우린 아직 거짓말을 믿고 있는 거죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3298,7 +3298,7 @@
   },
   "Queen's Recruit#329": {
    "src": "It'd explain some things, for certain...",
-   "dst": "",
+   "dst": "그럼 설명되는 게 좀 있긴 하네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3308,7 +3308,7 @@
   },
   "Queen's Recruit#330": {
    "src": "So am I the only one confused by the amount of guards around?",
-   "dst": "",
+   "dst": "그런데 경비병 수가 이상하다고 느끼는 게 나뿐이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3318,7 +3318,7 @@
   },
   "Queen's Recruit#331": {
    "src": "You'd think that nine strangers entering the royal palace would be placed under more watchful eyes.",
-   "dst": "",
+   "dst": "낯선 사람 아홉이 왕궁에 들어왔으면 더 삼엄하게 감시할 줄 알았는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3328,7 +3328,7 @@
   },
   "Queen's Recruit#332": {
    "src": "Now that you mention it... the only guards I saw on the way to our rooms were by the courtyard exit. There aren't any outside our rooms.",
-   "dst": "",
+   "dst": "그러고 보니... 방으로 오는 길에 본 경비병은 안뜰 출구에만 있었어. 방 앞엔 아무도 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3338,7 +3338,7 @@
   },
   "Queen's Recruit#333": {
    "src": "...so we don't need to do the whole stealthy thing?",
-   "dst": "",
+   "dst": "...그럼 몰래 다니는 거 안 해도 되는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3348,7 +3348,7 @@
   },
   "Queen's Recruit#334": {
    "src": "I thought it was fun!",
-   "dst": "",
+   "dst": "난 재밌었는데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3358,7 +3358,7 @@
   },
   "Queen's Recruit#335": {
    "src": "Seems they want us t' feel safe and trusted. They've got to know we'll be talkin' about everything we see, so why not leave a good impression, eh?",
-   "dst": "",
+   "dst": "우리가 안전하고 신뢰받는다고 느끼게 하려는 것 같구먼. 본 걸 전부 얘기할 거란 걸 알 테니, 좋은 인상을 남기려는 거 아니겠어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3368,7 +3368,7 @@
   },
   "Queen's Recruit#336": {
    "src": "Besides, they've got those two Sovereigns lookin' over us. Pretty strong, aren't they? Figure that's enough incentive not to cause trouble.",
-   "dst": "",
+   "dst": "게다가, 군주 둘이 우릴 지켜보잖냐. 꽤 강하지 않냐? 말썽 피우지 말라는 경고로는 그걸로 충분하겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3378,7 +3378,7 @@
   },
   "Queen's Recruit#337": {
    "src": "Speakin' of the Sovereigns... and the guards by extension anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
-   "dst": "",
+   "dst": "군주 얘기가 나와서 말인데... 경비병도 그렇고- 마나 읽는 데 능한 사람 있어? 마나를 쓰는 기색이 거의 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3388,7 +3388,7 @@
   },
   "Queen's Recruit#338": {
    "src": "I was going to bring that up. I haven't seen any mages at all. The closest I've seen is the higher ranked soldiers wielding magical weapons.",
-   "dst": "",
+   "dst": "그 얘기 하려던 참이에요. 마법사를 한 명도 못 봤어요. 가장 가까운 게 마법 무기를 든 고위 병사들이었죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3398,7 +3398,7 @@
   },
   "Queen's Recruit#339": {
    "src": "I'm not as good with reading mana, but... there's something wrong with the Sovereigns. They've got an incredibly powerful aura surrounding them. It feels... unnatural.",
-   "dst": "",
+   "dst": "난 마나를 잘 읽진 못하지만... 군주들한테 뭔가 이상한 게 있어. 엄청나게 강한 기운에 둘러싸여 있어. 뭔가... 부자연스러워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3408,7 +3408,7 @@
   },
   "Queen's Recruit#340": {
    "src": "Yes, you're right. They, and the Queen, are the only ones I've seen here who possess innate magical abilities. If anything, all three of them seem closely linked in terms of energy...",
-   "dst": "",
+   "dst": "네, 맞아요. 그 둘과 여왕만이 여기서 타고난 마법 능력을 가진 사람들이에요. 오히려 셋 다 에너지 면에서 밀접하게 연결된 것 같아요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3418,7 +3418,7 @@
   },
   "Queen's Recruit#341": {
    "src": "As interesting as that is, it doesn't leave much for the rest of us to go off of. Doctor, you're the one who organized us here. What are our plans?",
-   "dst": "",
+   "dst": "흥미롭긴 한데, 나머지 우리가 파고들 건 별로 없네요. 박사님, 우릴 여기 모은 건 박사님이잖아요. 계획이 뭐예요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3428,7 +3428,7 @@
   },
   "Queen's Recruit#342": {
    "src": "Yes, that I am... well, it seems our most promising lead is the Sovereigns. We'll want to focus on them though, do not neglect general information. We still want to know as much about Fruma as possible.",
-   "dst": "",
+   "dst": "네, 제가 그렇죠... 음, 가장 유력한 단서는 군주들인 것 같습니다. 그들에게 집중해야겠지만- 일반 정보도 소홀히 하지 마세요. Fruma에 대해 가능한 한 많이 알아야 하니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3438,7 +3438,7 @@
   },
   "Queen's Recruit#343": {
    "src": "We've been running long enough, let's call it a day. Everyone, get some rest, we must be at our best performance tomorrow.",
-   "dst": "",
+   "dst": "오래 얘기했으니 오늘은 여기까지 하죠. 다들 쉬어요, 내일 최상의 상태여야 하니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3448,7 +3448,7 @@
   },
   "Queen's Recruit#344": {
    "src": "Let us gather here again tomorrow evening for another meeting. Goodnight, everyone.",
-   "dst": "",
+   "dst": "내일 저녁에 여기서 다시 모여 회의합시다. 다들 잘 자요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3458,7 +3458,7 @@
   },
   "Queen's Recruit#345": {
    "src": "Make your way back to W-{~} and sleep.",
-   "dst": "",
+   "dst": "W-{~}호실로 돌아가 잠을 자세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -3468,7 +3468,7 @@
   },
   "Queen's Recruit#346": {
    "src": "Those Sovereigns... they do concern me. If Fruma's leadership holds this much power, then...",
-   "dst": "",
+   "dst": "그 군주들... 신경 쓰이는군. Fruma의 지도층이 그만한 힘을 가졌다면...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3478,7 +3478,7 @@
   },
   "Queen's Recruit#347": {
    "src": "Hm. Perhaps our King is right not to get on their bad side.",
-   "dst": "",
+   "dst": "흠. 폐하께서 그들 비위를 거스르지 않으려는 게 옳을지도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3488,7 +3488,7 @@
   },
   "Queen's Recruit#348": {
    "src": "Ah, great, now all o' you are lingerin'. Get out of my room! Not gonna get a lick o' sleep till you're gone...",
-   "dst": "",
+   "dst": "아, 좋구먼, 이제 다들 눌러앉았네. 내 방에서 나가! 너희가 안 나가면 한숨도 못 자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3498,7 +3498,7 @@
   },
   "Queen's Recruit#349": {
    "src": "...damned Doctor should'a just used his own room!!",
-   "dst": "",
+   "dst": "...망할 박사, 자기 방을 쓰면 될 것을!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3508,7 +3508,7 @@
   },
   "Queen's Recruit#350": {
    "src": "...sigh. What am I doing here? I should have stayed back in {p}.",
-   "dst": "",
+   "dst": "...휴. 난 여기서 뭘 하는 거지? {p}에 남았어야 했는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3518,7 +3518,7 @@
   },
   "Queen's Recruit#351": {
    "src": "I just hope nobody here knew me before. I'm not sure I could handle that.",
-   "dst": "",
+   "dst": "여기 옛날의 날 아는 사람이 없길 바랄 뿐이야. 그건 감당 못 할 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3528,7 +3528,7 @@
   },
   "Queen's Recruit#352": {
    "src": "Hm... a shame I could not fight in the tournament. A monetary reward would be appreciated, given my dwindling research funds...",
-   "dst": "",
+   "dst": "흠... 대회에 못 나가서 아쉽네요. 연구 자금이 줄어드는 판에, 상금이면 고마웠을 텐데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3538,7 +3538,7 @@
   },
   "Queen's Recruit#353": {
    "src": "But, alas, I am no fighter. Perhaps the King would be willing to fund my future research...",
-   "dst": "",
+   "dst": "하지만, 아아, 난 싸움꾼이 아니죠. 어쩌면 국왕께서 앞으로의 연구를 지원해 주실지도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3548,7 +3548,7 @@
   },
   "Queen's Recruit#354": {
    "src": "Gosh, I hope my match tomorrow goes well. I'm a bit nervous... never really dueled anyone before!",
-   "dst": "",
+   "dst": "아이고, 내일 경기 잘 풀렸으면 좋겠다. 좀 긴장돼... 누구랑 제대로 결투해 본 적이 없거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3558,7 +3558,7 @@
   },
   "Queen's Recruit#355": {
    "src": "yaaaawn",
-   "dst": "",
+   "dst": "하아아암",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3568,7 +3568,7 @@
   },
   "Queen's Recruit#356": {
    "src": "What? It's been a long day.",
-   "dst": "",
+   "dst": "뭐? 긴 하루였잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3578,7 +3578,7 @@
   },
   "Queen's Recruit#357": {
    "src": "That magic... why does it feel familiar? I can't pinpoint what it is, but...",
-   "dst": "",
+   "dst": "그 마법... 왜 익숙하게 느껴질까요? 뭔지 짚어낼 수는 없지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3588,7 +3588,7 @@
   },
   "Queen's Recruit#358": {
    "src": "Let's just go get some sleep.",
-   "dst": "",
+   "dst": "그냥 가서 자자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3598,7 +3598,7 @@
   },
   "Queen's Recruit#359": {
    "src": "Goodnight, {u}. I hope you'll sleep better than I will.",
-   "dst": "",
+   "dst": "잘 자, {u}. 나보단 잘 자길 바라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3608,7 +3608,7 @@
   },
   "Queen's Recruit#360": {
    "src": "See you in the morning.",
-   "dst": "",
+   "dst": "아침에 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3618,7 +3618,7 @@
   },
   "Queen's Recruit#361": {
    "src": "{u}! We're going to miss the first round if you sleep any longer!",
-   "dst": "",
+   "dst": "{u}! 더 자면 우리 첫 라운드 놓친다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3628,7 +3628,7 @@
   },
   "Queen's Recruit#362": {
    "src": "Ah, you're up! Good morning.",
-   "dst": "",
+   "dst": "아, 일어났구나! 좋은 아침.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3638,7 +3638,7 @@
   },
   "Queen's Recruit#363": {
    "src": "Sleep well?",
-   "dst": "",
+   "dst": "잘 잤어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3648,7 +3648,7 @@
   },
   "Queen's Recruit#364": {
    "src": "Well, I feel your pain. I don't think I got more than an hour or two. I kept... I should have expected it'd be worse here. I just hoped... well, it is what it is.",
-   "dst": "",
+   "dst": "그 마음 알아. 난 한두 시간도 못 잔 것 같아. 계속... 여기선 더 심할 거라고 예상했어야 했는데. 그냥 바랐지... 뭐, 어쩔 수 없지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3658,7 +3658,7 @@
   },
   "Queen's Recruit#365": {
    "src": "But anyway, it's good you're up. A soldier just came by to tell us to head over to the tournament arena.",
-   "dst": "",
+   "dst": "아무튼 일어나서 다행이다. 방금 병사가 와서 대회 투기장으로 오라고 했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3668,7 +3668,7 @@
   },
   "Queen's Recruit#366": {
    "src": "You... no, they just... knocked and slid the notice under the door.",
-   "dst": "",
+   "dst": "네가... 아니, 그냥... 노크하고 문 밑으로 쪽지를 밀어 넣었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3678,7 +3678,7 @@
   },
   "Queen's Recruit#367": {
    "src": "Was someone in our room during the night...?",
-   "dst": "",
+   "dst": "밤중에 누가 우리 방에 들어왔었나...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3688,7 +3688,7 @@
   },
   "Queen's Recruit#368": {
    "src": "I don't... like... that. Not at all.",
-   "dst": "",
+   "dst": "그거... 싫다... 정말. 전혀 안 좋아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3698,7 +3698,7 @@
   },
   "Queen's Recruit#369": {
    "src": "Still. We need to head over to the arena. Apparently, it's in the northern part of the palace.",
-   "dst": "",
+   "dst": "그래도. 투기장으로 가야 해. 왕궁 북쪽에 있대.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3708,7 +3708,7 @@
   },
   "Queen's Recruit#370": {
    "src": "Find the location of the tournament in the northern side of the palace at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 왕궁 북쪽에서 대회 장소를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -3718,7 +3718,7 @@
   },
   "Queen's Recruit#371": {
    "src": "Well, well. Looks like we'll finally get to test which o' us is stronger, eh, captain?",
-   "dst": "",
+   "dst": "자, 자. 드디어 누가 더 센지 가려 볼 수 있겠구먼, 응, 대장?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3728,7 +3728,7 @@
   },
   "Queen's Recruit#372": {
    "src": "Oh, finally? I wasn't aware there was even a question! Lieutenant, do you truly think you stand a chance against me?",
-   "dst": "",
+   "dst": "오, 드디어? 그게 가릴 문제인 줄도 몰랐군! 중위, 정말 날 이길 가망이 있다고 생각하나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3738,7 +3738,7 @@
   },
   "Queen's Recruit#373": {
    "src": "Ah, enough o' your posturin', Kymer! You might be all up n' fancy these days, but I still remember when you were but a rookie, all afraid of a lil' old zombie!",
-   "dst": "",
+   "dst": "아, 폼 좀 그만 잡아, Kymer! 요즘은 잘나가는지 몰라도, 네가 신참 시절 늙은 좀비 하나에 벌벌 떨던 거 난 기억한다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3748,7 +3748,7 @@
   },
   "Queen's Recruit#374": {
    "src": "Ha! Ah, good times. Good times. You'll get your recognition too one of these days, you know. Maybe you'll even surpass my rank someday!",
-   "dst": "",
+   "dst": "하! 아, 좋은 시절이었지. 좋은 시절. 자네도 언젠가 인정받을 걸세. 언젠간 내 계급을 넘어설지도 모르지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3758,7 +3758,7 @@
   },
   "Queen's Recruit#375": {
    "src": "Eh, you say that every time. Besides, the lower ranks suit me well. Don't think I'd do well with all that \"responsibility\" the big wigs put on your shoulders.",
-   "dst": "",
+   "dst": "에이, 맨날 그 소리. 게다가 낮은 계급이 나한테 맞아. 높으신 분들이 지우는 그 '책임'은 난 못 감당해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3768,7 +3768,7 @@
   },
   "Queen's Recruit#376": {
    "src": "...all that bein' said, you're still goin' down when it's our go! I got some new tricks since the last time we fought, so don't get too cocky!",
-   "dst": "",
+   "dst": "...그건 그렇고, 우리 차례가 오면 넌 쓰러질 거다! 지난번 싸운 뒤로 새 기술 좀 익혔으니, 너무 까불지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3778,7 +3778,7 @@
   },
   "Queen's Recruit#377": {
    "src": "Ha! Then I look forward to seeing them.",
-   "dst": "",
+   "dst": "하! 그럼 기대하겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3788,7 +3788,7 @@
   },
   "Queen's Recruit#378": {
    "src": "If you're looking for the tournament arena, go down this corridor then turn to the left.",
-   "dst": "",
+   "dst": "대회 투기장을 찾으신다면, 이 복도로 내려가서 왼쪽으로 도십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3798,7 +3798,7 @@
   },
   "Queen's Recruit#379": {
    "src": "The tournament arena is further down the corridor.",
-   "dst": "",
+   "dst": "대회 투기장은 복도 더 안쪽에 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3808,7 +3808,7 @@
   },
   "Queen's Recruit#380": {
    "src": "This area is unfortunately not accessible at this moment.",
-   "dst": "",
+   "dst": "안타깝게도 이 구역은 지금 출입할 수 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3818,7 +3818,7 @@
   },
   "Queen's Recruit#381": {
    "src": "This is Her Majesty's own personal quarter.",
-   "dst": "",
+   "dst": "이곳은 여왕 폐하의 개인 거처입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3828,7 +3828,7 @@
   },
   "Queen's Recruit#382": {
    "src": "I'm afraid I can't let you in just yet. Not until",
-   "dst": "",
+   "dst": "아직은 들여보내 드릴 수 없습니다. 그 전에-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3838,7 +3838,7 @@
   },
   "Queen's Recruit#383": {
    "src": "Yes, yes, my research notes, I am aware. It has been sorted already. May I visit the library now?",
-   "dst": "",
+   "dst": "네, 네, 연구 노트요, 알아요. 이미 정리했어요. 이제 도서관 가도 돼요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3848,7 +3848,7 @@
   },
   "Queen's Recruit#384": {
    "src": "Don't interrupt me. You can't enter until this round of tournament matches concludes. Her Majesty's orders.",
-   "dst": "",
+   "dst": "끊지 마십시오. 이번 대회 경기가 끝나야 들어갈 수 있습니다. 여왕 폐하의 명입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3858,7 +3858,7 @@
   },
   "Queen's Recruit#385": {
    "src": "Pah. Fine! Fine, yes, I'll wait. Good grief.",
-   "dst": "",
+   "dst": "흥. 좋아요! 좋아, 네, 기다리죠. 원 참.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3868,7 +3868,7 @@
   },
   "Queen's Recruit#386": {
    "src": "You'd think I would have some level of freedom, but no! What does it matter if I don't want to watch the matches if there's nothing else to do?!",
-   "dst": "",
+   "dst": "좀 자유가 있을 줄 알았는데, 없네요! 할 것도 없는데 경기 안 보고 싶다는 게 뭐가 문제죠?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3878,7 +3878,7 @@
   },
   "Queen's Recruit#387": {
    "src": "Oh, just go and get your match over with. Quit stalling.",
-   "dst": "",
+   "dst": "아, 얼른 가서 경기나 끝내요. 꾸물대지 말고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3888,7 +3888,7 @@
   },
   "Queen's Recruit#388": {
    "src": "Hey! No entry!",
-   "dst": "",
+   "dst": "이봐! 출입 금지다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3898,7 +3898,7 @@
   },
   "Queen's Recruit#389": {
    "src": "Just head down these stairs to find the tournament arena.",
-   "dst": "",
+   "dst": "이 계단을 내려가면 대회 투기장입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3908,7 +3908,7 @@
   },
   "Queen's Recruit#390": {
    "src": "The match ups will be announced once everyone is present.",
-   "dst": "",
+   "dst": "모두 모이면 대진을 발표합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3918,7 +3918,7 @@
   },
   "Queen's Recruit#391": {
    "src": "Uh. Sovereign... Majin? Sovereign Majin. We're all here.",
-   "dst": "",
+   "dst": "어. Majin... 군주? Majin 군주. 다 모였어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3928,7 +3928,7 @@
   },
   "Queen's Recruit#392": {
    "src": "My, it's about time! As guests of the crown, it would do you well to arrive on time for such things, hm? Tardiness is not a good look.",
-   "dst": "",
+   "dst": "어머, 이제야! 왕실의 손님이라면 이런 자리엔 제시간에 오는 게 좋지 않겠어요? 지각은 보기 안 좋답니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3938,7 +3938,7 @@
   },
   "Queen's Recruit#393": {
    "src": "Our apologies, Sovereign. It would seem we were not given the time to be here in advance a humble mistake, I'm certain.",
-   "dst": "",
+   "dst": "죄송합니다, 군주님. 미리 올 시간을 안내받지 못한 것 같습니다- 사소한 실수겠지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3948,7 +3948,7 @@
   },
   "Queen's Recruit#394": {
    "src": "Ah, the incompetence of our lessers... it never ceases to amaze! Nevertheless, the duty of arriving on schedule remains on your shoulders. Do better next time, would you?",
-   "dst": "",
+   "dst": "아, 아랫것들의 무능이란... 언제 봐도 놀랍네요! 그래도 제시간에 올 책임은 여러분에게 있어요. 다음엔 더 잘하세요, 네?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3958,7 +3958,7 @@
   },
   "Queen's Recruit#395": {
    "src": "Now, I am a very busy man, so I will keep this brief. As Her Majesty has already explained, this tournament will consist of multiple duels! You are not required to watch each match.",
-   "dst": "",
+   "dst": "자, 전 무척 바쁜 사람이니 짧게 하죠. 여왕 폐하께서 말씀하셨듯, 이 대회는 여러 번의 결투로 이뤄집니다! 경기를 전부 볼 필요는 없어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3968,7 +3968,7 @@
   },
   "Queen's Recruit#396": {
    "src": "The standard rules apply. No killing, no maiming, no attacking anyone outside the arena - though, do try, I'd find much pleasure in watching you fail!",
-   "dst": "",
+   "dst": "기본 규칙대로입니다. 살해 금지, 불구 금지, 투기장 밖 공격 금지- 뭐, 해 보세요, 실패하는 꼴을 보면 아주 즐거울 테니!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3978,7 +3978,7 @@
   },
   "Queen's Recruit#397": {
    "src": "With that settled, are there any questions? I would certainly hope not, I have much to return to once this is",
-   "dst": "",
+   "dst": "그럼, 질문 있나요? 없길 바라요, 이게 끝나면 돌아가서 할 일이-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3988,7 +3988,7 @@
   },
   "Queen's Recruit#398": {
    "src": "Ah, I do I am not participating in the tournament. I had been told to expect some alternative today.",
-   "dst": "",
+   "dst": "아, 저요- 전 대회에 안 나가요. 오늘 다른 걸 준비해 준다고 들었는데요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3998,7 +3998,7 @@
   },
   "Queen's Recruit#399": {
    "src": "Oh, yes... you. What did you say you were again, a... researcher?",
-   "dst": "",
+   "dst": "아, 그래... 당신. 뭐라고 했죠, 무슨... 연구원?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4008,7 +4008,7 @@
   },
   "Queen's Recruit#400": {
    "src": "Ahahaha! Oh, and they selected you as one of your province's greatest? Don't make me laugh! Ahahahahaha!",
-   "dst": "",
+   "dst": "아하하하! 오, 그런데 당신네 지방 최고 인재로 뽑혔다고요? 웃기지 마세요! 아하하하하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4018,7 +4018,7 @@
   },
   "Queen's Recruit#401": {
    "src": "Ah, but it's just as well, I suppose. Nine certainly doesn't fit cleanly for such a tournament. Better a researcher than a ninth fighter!",
-   "dst": "",
+   "dst": "아, 그래도 차라리 잘됐네요. 아홉 명은 대회에 딱 맞지 않거든요. 아홉 번째 전사보다는 연구원이 낫죠!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4028,7 +4028,7 @@
   },
   "Queen's Recruit#402": {
    "src": "Yes, someone will be with you shortly. Just sit on the sidelines and twiddle your thumbs, or whatever you do you certainly aren't my problem anymore.",
-   "dst": "",
+   "dst": "네, 곧 누가 와서 도와줄 겁니다. 옆에 앉아서 손가락이나 돌리든지, 뭘 하든지 하세요- 이제 당신은 제 알 바가 아니니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4038,7 +4038,7 @@
   },
   "Queen's Recruit#403": {
    "src": "Now! Any more questions?",
-   "dst": "",
+   "dst": "자! 질문 더 있나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4048,7 +4048,7 @@
   },
   "Queen's Recruit#404": {
    "src": "Yes, actua",
-   "dst": "",
+   "dst": "네, 사실-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4058,7 +4058,7 @@
   },
   "Queen's Recruit#405": {
    "src": "Excellent! The first match up appears to be... {u} and Mel. Step forward, the two of you.",
-   "dst": "",
+   "dst": "훌륭해요! 첫 대진은... {u}와 Mel이군요. 두 사람, 앞으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4068,7 +4068,7 @@
   },
   "Queen's Recruit#406": {
    "src": "That's me!",
-   "dst": "",
+   "dst": "나다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4078,7 +4078,7 @@
   },
   "Queen's Recruit#407": {
    "src": "How wonderful. Mel and {u}.",
-   "dst": "",
+   "dst": "멋지네요. Mel과 {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4088,7 +4088,7 @@
   },
   "Queen's Recruit#408": {
    "src": "Well, hurry up now, get prepared! Choose a corridor each, north or south, and get to fighting already!",
-   "dst": "",
+   "dst": "자, 서둘러 준비하세요! 북쪽이든 남쪽이든 복도를 하나씩 골라서 어서 싸우세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4098,7 +4098,7 @@
   },
   "Queen's Recruit#409": {
    "src": "As for the rest of you... oh, I can't be bothered. Read your matchups on the board yourselves.",
-   "dst": "",
+   "dst": "나머지는... 아, 귀찮네요. 대진은 게시판에서 알아서 보세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4108,7 +4108,7 @@
   },
   "Queen's Recruit#410": {
    "src": "Uh... alrighty then. I guess I'll choose this one.",
-   "dst": "",
+   "dst": "어... 알았어. 그럼 난 이쪽.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4118,7 +4118,7 @@
   },
   "Queen's Recruit#411": {
    "src": "Begin your fight against Mel in the southern waiting room.",
-   "dst": "",
+   "dst": "남쪽 대기실에서 Mel과의 대결을 시작하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4128,7 +4128,7 @@
   },
   "Queen's Recruit#412": {
    "src": "Hey, good luck out there!",
-   "dst": "",
+   "dst": "야, 잘해 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4138,7 +4138,7 @@
   },
   "Queen's Recruit#413": {
    "src": "Just 'cause we've got a mission here, doesn't mean I'll go easy on ya!",
-   "dst": "",
+   "dst": "여기 임무가 있다고 봐줄 거라 생각하지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4148,7 +4148,7 @@
   },
   "Queen's Recruit#414": {
    "src": "Ready to go?! Let's show them what we're made of!",
-   "dst": "",
+   "dst": "준비됐어?! 우리 실력 좀 보여 주자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4158,7 +4158,7 @@
   },
   "Queen's Recruit#415": {
    "src": "Phew! What a fight! Got my blood rushin'!",
-   "dst": "",
+   "dst": "휴! 대단한 싸움이었어! 피가 끓는다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4168,7 +4168,7 @@
   },
   "Queen's Recruit#416": {
    "src": "What'd you think of my trick? Pretty good, right? Makes me less of a sittin' duck in combat!",
-   "dst": "",
+   "dst": "내 기술 어땠어? 괜찮지? 덕분에 싸울 때 가만히 얻어맞지만은 않거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4178,7 +4178,7 @@
   },
   "Queen's Recruit#417": {
    "src": "Ah, I didn't think I was gonna be winnin' anything, really. But it was fun givin' it a shot.",
-   "dst": "",
+   "dst": "아, 난 뭘 이길 거라곤 생각 안 했어. 그래도 도전해 보니 재밌었다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4188,7 +4188,7 @@
   },
   "Queen's Recruit#418": {
    "src": "{u} has bested Mel in the first round, and will progress to the next!",
-   "dst": "",
+   "dst": "{u}님이 1라운드에서 Mel을 꺾고 다음 라운드에 진출합니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4198,7 +4198,7 @@
   },
   "Queen's Recruit#419": {
    "src": "Hm, so what now?",
-   "dst": "",
+   "dst": "흠, 그럼 이제 뭐 해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4208,7 +4208,7 @@
   },
   "Queen's Recruit#420": {
    "src": "You will be permitted to remain in the palace for the duration of the tournament. You will be paid for your participation at the end of your stay.",
-   "dst": "",
+   "dst": "대회 기간 동안 왕궁에 머물 수 있습니다. 참가 보상은 체류가 끝날 때 지급됩니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4218,7 +4218,7 @@
   },
   "Queen's Recruit#421": {
    "src": "I figure that makes sense. I wonder when Lanu's match is...",
-   "dst": "",
+   "dst": "그럼 말이 되네. Lanu 경기는 언제일까...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4228,7 +4228,7 @@
   },
   "Queen's Recruit#422": {
    "src": "{u}, congratulations on your victory. You will be notified when your next match is. In the meantime, feel free to rest.",
-   "dst": "",
+   "dst": "{u}님, 승리를 축하드립니다. 다음 경기는 따로 알려 드리겠습니다. 그동안 편히 쉬십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4238,7 +4238,7 @@
   },
   "Queen's Recruit#423": {
    "src": "Leave the arena waiting room and find Picard at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "투기장 대기실을 나와 [-{~}, {~}, {~}]에서 Picard를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4248,7 +4248,7 @@
   },
   "Queen's Recruit#424": {
    "src": "It was a good fight! But you'd better win in my honor now, y'hear?",
-   "dst": "",
+   "dst": "좋은 싸움이었어! 대신 이제 내 몫까지 꼭 이겨야 한다, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4258,7 +4258,7 @@
   },
   "Queen's Recruit#425": {
    "src": "We will announce your next match later. Please feel free to rest or enjoy the palace in the meantime.",
-   "dst": "",
+   "dst": "다음 경기는 나중에 발표합니다. 그동안 편히 쉬시거나 왕궁을 둘러보십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4268,7 +4268,7 @@
   },
   "Queen's Recruit#426": {
    "src": "Ah, {u}, I saw the match! Very good technique, better than many soldiers I've seen pass through {p} in my time.",
-   "dst": "",
+   "dst": "아, {u}, 경기 봤어요! 기술이 아주 좋더군요. 제가 {p}에서 본 많은 병사들보다 나아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4278,7 +4278,7 @@
   },
   "Queen's Recruit#427": {
    "src": "I suppose I'm not surprised! When the tournament was announced, you came to mind as a potential winner. You, and one other person, that is.",
-   "dst": "",
+   "dst": "하긴 놀랍지도 않네요! 대회가 발표됐을 때 우승 후보로 떠오른 게 당신이었거든요. 당신이랑, 한 사람 더요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4288,7 +4288,7 @@
   },
   "Queen's Recruit#428": {
    "src": "Hm... maybe I could start taking bets on who will win... ah, no, no, I'm far too busy. Stay focused, Picard.",
-   "dst": "",
+   "dst": "흠... 누가 이길지 내기라도 걸어 볼까... 아, 안 돼, 안 돼, 너무 바빠요. 집중해, Picard.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4298,7 +4298,7 @@
   },
   "Queen's Recruit#429": {
    "src": "Hm? Oh dear, I'd forgotten you were here! Yes, I was going to do something...",
-   "dst": "",
+   "dst": "응? 이런, 여기 있는 걸 깜빡했네요! 그래, 뭘 하려고 했는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4308,7 +4308,7 @@
   },
   "Queen's Recruit#430": {
    "src": "Oh! The library! Can you believe it, that damnable guard finally stepped away! It's ridiculous, really who even cares to guard a library of all things?!",
-   "dst": "",
+   "dst": "아! 도서관! 믿어져요? 그 망할 경비병이 드디어 자리를 떴어요! 말도 안 되죠- 대체 누가 도서관을 지켜요?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4318,7 +4318,7 @@
   },
   "Queen's Recruit#431": {
    "src": "But. But but but. The way is open, and although the tournament round is still ongoing, I'd like to take the opportunity while I can!",
-   "dst": "",
+   "dst": "하지만. 하지만하지만하지만. 길이 열렸고, 대회 라운드는 아직 진행 중이지만, 기회 있을 때 잡고 싶어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4328,7 +4328,7 @@
   },
   "Queen's Recruit#432": {
    "src": "Care to join me? I'm sure there's something you'll find interesting in there. What sorts of knowledge have the Frumans kept hidden in these walls...",
-   "dst": "",
+   "dst": "같이 갈래요? 분명 흥미로운 게 있을 거예요. Fruma 사람들이 이 벽 안에 어떤 지식을 숨겨 뒀을까...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4338,7 +4338,7 @@
   },
   "Queen's Recruit#433": {
    "src": "Well, are you coming? Come now, quickly, before the guard returns!",
-   "dst": "",
+   "dst": "자, 올 거예요? 어서요, 빨리, 경비병이 돌아오기 전에!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4348,7 +4348,7 @@
   },
   "Queen's Recruit#434": {
    "src": "Follow Picard into the library.",
-   "dst": "",
+   "dst": "Picard를 따라 도서관으로 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4358,7 +4358,7 @@
   },
   "Queen's Recruit#435": {
    "src": "Goodness, where to even begin? There's so much here...",
-   "dst": "",
+   "dst": "세상에, 어디서부터 시작하죠? 여기 너무 많아요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4368,7 +4368,7 @@
   },
   "Queen's Recruit#436": {
    "src": "I hereby introduce to you The Evermoving Zephyr, the ruler of the {p}, the latest in the line of one of Fruma's great noble houses! His lordship, Sovereign Zhiraok Nasin!",
-   "dst": "",
+   "dst": "이제 소개합니다. 멈추지 않는 산들바람, {p}의 통치자, Fruma 명문 귀족 가문의 최신 계승자! 각하, Zhiraok Nasin 군주!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4378,7 +4378,7 @@
   },
   "Queen's Recruit#437": {
    "src": "...and that we're rifling through the Cursed instead of our own citizens is an incalculable risk!",
-   "dst": "",
+   "dst": "...그리고 우리 시민 대신 저주받은 자들을 뒤지는 건 계산할 수조차 없는 위험이오!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4388,7 +4388,7 @@
   },
   "Queen's Recruit#438": {
    "src": "What was that?! Quickly, quickly now, follow me!",
-   "dst": "",
+   "dst": "방금 뭐죠?! 빨리, 빨리요, 따라와요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4398,7 +4398,7 @@
   },
   "Queen's Recruit#439": {
    "src": "Do you have eyes on the speaker? Who is it?",
-   "dst": "",
+   "dst": "말하는 사람 보여요? 누구예요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4408,7 +4408,7 @@
   },
   "Queen's Recruit#440": {
    "src": "I can't find her angle for this hunt.",
-   "dst": "",
+   "dst": "이번 사냥에서 그녀의 각도를 못 구하겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4418,7 +4418,7 @@
   },
   "Queen's Recruit#441": {
    "src": "Ah, it's like I'm talking with her again! It's so nostalgic to speak with a clueless Nasin trying their hardest, in spite of their incompe",
-   "dst": "",
+   "dst": "아, 마치 그녀와 다시 얘기하는 것 같네요! 아무것도 모르는 Nasin이 무능한데도 필사적으로 애쓰는 걸 보니 참 그립-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4428,7 +4428,7 @@
   },
   "Queen's Recruit#442": {
    "src": "I'M SORRY, YOU IGNORANT INTEGRAND? You really think now is the time for- Rrgh... Why. Do I even bother.",
-   "dst": "",
+   "dst": "뭐라고, 이 무지한 피적분 함수 같으니? 지금이 그럴 때라고- 크윽... 내가. 왜 상대를 하는지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4438,7 +4438,7 @@
   },
   "Queen's Recruit#443": {
    "src": "Why, indeed! It truly is a bad habit. Something to work on while your seniors do the important work, hm?",
-   "dst": "",
+   "dst": "그러게 말이에요! 정말 나쁜 버릇이죠. 선배들이 중요한 일을 하는 동안 고쳐 보세요, 네?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4448,7 +4448,7 @@
   },
   "Queen's Recruit#444": {
    "src": "Speaking of, I must put forth that I do find this all a bit strange. We most certainly aren't lacking in strength here, so why bother with the exiles?",
-   "dst": "",
+   "dst": "그 얘기가 나와서 말인데, 전 이 모든 게 좀 이상하다고 봐요. 여기 힘이 부족한 것도 아닌데, 왜 굳이 추방자들을?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4458,7 +4458,7 @@
   },
   "Queen's Recruit#445": {
    "src": "...sigh... The risk factor is much greater than I'd bet on. She has to know more than we do, so maybe we'll get a summation later.",
-   "dst": "",
+   "dst": "...하아... 위험 계수가 내가 걸 만한 수준보다 훨씬 크오. 그녀가 우리보다 더 알 테니, 나중에 총합을 받을지도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4468,7 +4468,7 @@
   },
   "Queen's Recruit#446": {
    "src": "Are you two done?",
-   "dst": "",
+   "dst": "둘 다 끝났나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4478,7 +4478,7 @@
   },
   "Queen's Recruit#447": {
    "src": "Ah, there she is. Fashionably late as always!",
-   "dst": "",
+   "dst": "아, 오셨네. 언제나처럼 멋지게 늦으셨군요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4488,7 +4488,7 @@
   },
   "Queen's Recruit#448": {
    "src": "Hm. If anything, I was early.",
-   "dst": "",
+   "dst": "흠. 굳이 말하자면, 일찍 왔다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4498,7 +4498,7 @@
   },
   "Queen's Recruit#449": {
    "src": "I'd say your timing was golden- if you're here for that summation I mentioned, and this isn't anything else.",
-   "dst": "",
+   "dst": "시기가 황금비였다고 하겠소- 내가 말한 총합 때문에 온 거고, 다른 일이 아니라면.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4508,7 +4508,7 @@
   },
   "Queen's Recruit#450": {
    "src": "It's the former. But first, have you been watching the battles? Do any of the contestants stick out to you?",
-   "dst": "",
+   "dst": "앞의 것이다. 하지만 먼저, 결투는 보고 있었나? 눈에 띄는 참가자는?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4518,7 +4518,7 @@
   },
   "Queen's Recruit#451": {
    "src": "Stick out? Hardly. Thus far, I have been thoroughly unimpressed.",
-   "dst": "",
+   "dst": "눈에 띈다고요? 전혀요. 지금까지 전혀 감흥이 없었네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4528,7 +4528,7 @@
   },
   "Queen's Recruit#452": {
    "src": "Naturally you would be. I've seen some generally promising things, but I need to know the expected solution to narrow the pool",
-   "dst": "",
+   "dst": "당연히 그러시겠지. 대체로 유망한 건 좀 봤소만, 후보군을 좁히려면 기대 해를 알아야-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4538,7 +4538,7 @@
   },
   "Queen's Recruit#453": {
    "src": "Ah, ah! Settle down, Nasin, your betters are speaking. Calculate yourself out of dead last, first.",
-   "dst": "",
+   "dst": "아, 아! 진정해요, Nasin, 윗사람들이 말하잖아요. 꼴찌에서 벗어나는 계산부터 하세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4548,7 +4548,7 @@
   },
   "Queen's Recruit#454": {
    "src": "Later, then. We have problems. The contestants have been sneaking around. And the doctor has been taking meticulous notes.",
-   "dst": "",
+   "dst": "그럼 나중에. 문제가 생겼다. 참가자들이 몰래 돌아다니고 있어. 그리고 박사는 꼼꼼히 기록을 남기고 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4558,7 +4558,7 @@
   },
   "Queen's Recruit#455": {
    "src": "...looks like you letting him sit out the problem was a miscalculation, huh?",
-   "dst": "",
+   "dst": "...그를 이 문제에서 빼 준 게 오산이었나 보군?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4568,7 +4568,7 @@
   },
   "Queen's Recruit#456": {
    "src": "For once, we appear to be in agreement. What a pity, what a hassle... it hardly seems worth the effort to me.",
-   "dst": "",
+   "dst": "웬일로 의견이 같네요. 딱하고, 귀찮아라... 그렇게까지 애쓸 가치가 있나 싶어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4578,7 +4578,7 @@
   },
   "Queen's Recruit#457": {
    "src": "It will be. But I've spent too much time here already. You'll have to wait for answers.",
-   "dst": "",
+   "dst": "있을 거다. 하지만 여기 너무 오래 있었군. 답은 기다려야 할 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4588,7 +4588,7 @@
   },
   "Queen's Recruit#458": {
    "src": "Of course. How much more irrational can we get, I wonder.",
-   "dst": "",
+   "dst": "물론이오. 우리가 얼마나 더 무리수가 될 수 있을지 궁금하군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4598,7 +4598,7 @@
   },
   "Queen's Recruit#459": {
    "src": "If you'd like something to look out for, one of the more promising candidates is set to have a match soon. Go watch it.",
-   "dst": "",
+   "dst": "지켜볼 게 필요하다면, 유망한 후보 하나가 곧 경기를 한다. 가서 봐라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4608,7 +4608,7 @@
   },
   "Queen's Recruit#460": {
    "src": "A joy as always. Well, you heard her, Nasin! Chop chop, off to the stands we go!",
-   "dst": "",
+   "dst": "언제나 즐겁네요. 자, 들었죠, Nasin! 어서어서, 관중석으로 가요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4618,7 +4618,7 @@
   },
   "Queen's Recruit#461": {
    "src": "...so not even the Sovereigns know what's happening. Fascinating. Very fascinating.",
-   "dst": "",
+   "dst": "...그러니까 군주들조차 무슨 일인지 모른다는 거군요. 흥미로워요. 아주 흥미로워요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4628,7 +4628,7 @@
   },
   "Queen's Recruit#462": {
    "src": "And there was a third! Who were they? Another Sovereign...? Damn it, damn it all, how did I not notice?",
-   "dst": "",
+   "dst": "그리고 세 번째가 있었어요! 누구였죠? 또 다른 군주...? 젠장, 젠장, 어떻게 눈치를 못 챘지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4638,7 +4638,7 @@
   },
   "Queen's Recruit#463": {
    "src": "Well, they appear to be onto us. No matter. We'll need to be more careful.",
-   "dst": "",
+   "dst": "음, 우릴 눈치챈 것 같네요. 상관없어요. 더 조심해야겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4648,7 +4648,7 @@
   },
   "Queen's Recruit#464": {
    "src": "You'd best get back to the arena. In the meantime, I'll keep searching here... there must be something useful!",
-   "dst": "",
+   "dst": "투기장으로 돌아가는 게 좋겠어요. 그동안 난 여기서 계속 찾을게요... 분명 쓸 만한 게 있을 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4658,7 +4658,7 @@
   },
   "Queen's Recruit#465": {
    "src": "Leave the library.",
-   "dst": "",
+   "dst": "도서관에서 나가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4668,7 +4668,7 @@
   },
   "Queen's Recruit#466": {
    "src": "...hm? Oh, yes, fine, I'll tell the rest about what we heard. After I'm done here, of course.",
-   "dst": "",
+   "dst": "...응? 아, 네, 알았어요, 들은 건 다른 사람들한테 말할게요. 물론 여기 일 끝나고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4678,7 +4678,7 @@
   },
   "Queen's Recruit#467": {
    "src": "The first round of the tournament has concluded!",
-   "dst": "",
+   "dst": "대회 1라운드가 끝났습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4688,7 +4688,7 @@
   },
   "Queen's Recruit#468": {
    "src": "The names that will proceed to the next round... {u}! Tasim! Reynauld! Kymer!",
-   "dst": "",
+   "dst": "다음 라운드에 진출할 이름은... {u}! Tasim! Reynauld! Kymer!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4698,7 +4698,7 @@
   },
   "Queen's Recruit#469": {
    "src": "{u}, your match will begin shortly. Your opponent is already in the waiting room.",
-   "dst": "",
+   "dst": "{u}님, 곧 경기가 시작됩니다. 상대는 이미 대기실에 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4708,7 +4708,7 @@
   },
   "Queen's Recruit#470": {
    "src": "Make your way to the arena.",
-   "dst": "",
+   "dst": "투기장으로 가십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4718,7 +4718,7 @@
   },
   "Queen's Recruit#471": {
    "src": "Begin your next duel in the arena down the stairs.",
-   "dst": "",
+   "dst": "계단 아래 투기장에서 다음 결투를 시작하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4728,7 +4728,7 @@
   },
   "Queen's Recruit#472": {
    "src": "Please make your way to the arena by following the stairs down.",
-   "dst": "",
+   "dst": "계단을 따라 내려가 투기장으로 가십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4738,7 +4738,7 @@
   },
   "Queen's Recruit#473": {
    "src": "Please go to the waiting room and prepare for the battle.",
-   "dst": "",
+   "dst": "대기실로 가서 전투를 준비하십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4748,7 +4748,7 @@
   },
   "Queen's Recruit#474": {
    "src": "Ah, it's you.",
-   "dst": "",
+   "dst": "아, 너구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4758,7 +4758,7 @@
   },
   "Queen's Recruit#475": {
    "src": "Well, you'll likely prove more of a challenge than Linton, that's for sure.",
-   "dst": "",
+   "dst": "뭐, Linton보다는 확실히 상대하기 어렵겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4768,7 +4768,7 @@
   },
   "Queen's Recruit#476": {
    "src": "You've come a long way since {p}, haven't you? Well, so have I! Let's battle.",
-   "dst": "",
+   "dst": "{p} 이후로 많이 컸지? 뭐, 나도 그래! 붙어 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4778,7 +4778,7 @@
   },
   "Queen's Recruit#477": {
    "src": "The battle is decided! {u} has come out victorious.",
-   "dst": "",
+   "dst": "승부가 났습니다! {u}님이 승리했습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4788,7 +4788,7 @@
   },
   "Queen's Recruit#478": {
    "src": "Ah... good fighting, {u}. I even used some of my most powerful arrows.",
-   "dst": "",
+   "dst": "아... 잘 싸웠어, {u}. 가장 강한 화살까지 몇 발 썼는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4798,7 +4798,7 @@
   },
   "Queen's Recruit#479": {
    "src": "Reynauld, you have been eliminated.",
-   "dst": "",
+   "dst": "Reynauld, 탈락입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4808,7 +4808,7 @@
   },
   "Queen's Recruit#480": {
    "src": "I know, I know. You were a worthy opponent, {u}. Now, you'll be winning this whole thing, yes?",
-   "dst": "",
+   "dst": "알아, 알아. 훌륭한 상대였어, {u}. 이제 전부 이겨 버릴 거지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4818,7 +4818,7 @@
   },
   "Queen's Recruit#481": {
    "src": "{u}, congratulations on reaching the finals. All other opponents have been defeated, except for you and your fellow finalist.",
-   "dst": "",
+   "dst": "{u}님, 결승 진출을 축하드립니다. 당신과 다른 결승 진출자를 제외한 모든 상대가 패배했습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4828,7 +4828,7 @@
   },
   "Queen's Recruit#482": {
    "src": "Hmph. That will be announced shortly. Please make your way to the courtyard and await further instructions.",
-   "dst": "",
+   "dst": "흠. 곧 발표될 겁니다. 안뜰로 가서 추가 지시를 기다리십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4838,7 +4838,7 @@
   },
   "Queen's Recruit#483": {
    "src": "Return to the courtyard at [-{~}, {~}, {~}] and find other contestants.",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 안뜰로 돌아가 다른 참가자들을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4848,7 +4848,7 @@
   },
   "Queen's Recruit#484": {
    "src": "I did well enough, I suppose. I'll be glad for this to all be over, anyway.",
-   "dst": "",
+   "dst": "그럭저럭 잘한 것 같아. 어쨌든 이게 다 끝나면 좋겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4858,7 +4858,7 @@
   },
   "Queen's Recruit#485": {
    "src": "Please make your way to the courtyard and await further instructions.",
-   "dst": "",
+   "dst": "안뜰로 가서 추가 지시를 기다리십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4868,7 +4868,7 @@
   },
   "Queen's Recruit#486": {
    "src": "{u}, you return! Well, how did your match go?",
-   "dst": "",
+   "dst": "{u}, 돌아왔군요! 그래, 경기는 어땠어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4878,7 +4878,7 @@
   },
   "Queen's Recruit#487": {
    "src": "You? I suppose that would make sense. No offense intended, Reynauld, but I would have bet on {u} if I had the chance.",
-   "dst": "",
+   "dst": "자네가? 뭐 그럴 만하지. 기분 나쁘게 듣지 말게, Reynauld. 기회가 있었다면 난 {u}에게 걸었을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4888,7 +4888,7 @@
   },
   "Queen's Recruit#488": {
    "src": "Ha. For me, certainly! It felt like I could barely make a dent in your stamina.",
-   "dst": "",
+   "dst": "하. 나라도 그랬겠죠! 체력에 흠집 하나 못 낸 기분이었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4898,7 +4898,7 @@
   },
   "Queen's Recruit#489": {
    "src": "Yes, yes, congratulations are in order, and all that we have problems.",
-   "dst": "",
+   "dst": "네, 네, 축하할 일이죠, 그건 그렇고- 문제가 생겼어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4908,7 +4908,7 @@
   },
   "Queen's Recruit#490": {
    "src": "It was problem enough that he was called here in the first place... to think, he could",
-   "dst": "",
+   "dst": "애초에 그가 여기 불려 온 것부터가 문제였지... 생각해 보게, 그가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4918,7 +4918,7 @@
   },
   "Queen's Recruit#491": {
    "src": "That is enough about the tournament. I don't want to hear about it anymore. The doctor is right.",
-   "dst": "",
+   "dst": "대회 얘기는 그만해요. 더는 듣고 싶지 않아요. 박사님 말이 맞아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4928,7 +4928,7 @@
   },
   "Queen's Recruit#492": {
    "src": "Yes, well, it's not your honour on the line... but fine, I admit, this third Sovereign is... troubling.",
-   "dst": "",
+   "dst": "그래, 뭐, 자네 명예가 걸린 건 아니니까... 하지만 좋아, 인정하지. 세 번째 군주는... 골치 아프군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4938,7 +4938,7 @@
   },
   "Queen's Recruit#493": {
    "src": "Hm. Have we been able to find the information we needed?",
-   "dst": "",
+   "dst": "흠. 필요한 정보는 찾았나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4948,7 +4948,7 @@
   },
   "Queen's Recruit#494": {
    "src": "No! And that is precisely our problem we are missing something, and we are running out of time! One final match, and then it's done.",
-   "dst": "",
+   "dst": "아뇨! 바로 그게 문제예요- 뭔가 놓치고 있는데, 시간이 없어요! 마지막 경기 하나면 끝이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4958,7 +4958,7 @@
   },
   "Queen's Recruit#495": {
    "src": "...truthfully, I'm surprised you were on my side for that match.",
-   "dst": "",
+   "dst": "...솔직히 그 경기에서 제 편을 들어 주실 줄은 몰랐어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4968,7 +4968,7 @@
   },
   "Queen's Recruit#496": {
    "src": "Ah, well, someone had t' take him down a peg! Guess that someone was you.",
-   "dst": "",
+   "dst": "아, 뭐, 누군가는 그놈 콧대를 꺾어야지! 그게 너였나 보다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4978,7 +4978,7 @@
   },
   "Queen's Recruit#497": {
    "src": "Oh, give me a break, lieutenant. Him? Of all people to",
-   "dst": "",
+   "dst": "아, 좀 봐주게, 중위. 그 친구가? 하필이면-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4988,7 +4988,7 @@
   },
   "Queen's Recruit#498": {
    "src": "Hey, everyone's here! Is... this where they wanted everyone to gather up?",
-   "dst": "",
+   "dst": "어, 다들 여기 있네! 여기가... 모두 모이라던 곳이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4998,7 +4998,7 @@
   },
   "Queen's Recruit#499": {
    "src": "Seems that way. You won your match?",
-   "dst": "",
+   "dst": "그런 것 같아요. 경기 이겼어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5008,7 +5008,7 @@
   },
   "Queen's Recruit#500": {
    "src": "I did. It seems I'm a finalist now. So, who's the other one?",
-   "dst": "",
+   "dst": "네. 이제 결승 진출자래요. 그럼, 다른 한 명은 누구예요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5018,7 +5018,7 @@
   },
   "Queen's Recruit#501": {
    "src": "Oh! Well, congratulations! Though, I guess we'll be facing each other soon.",
-   "dst": "",
+   "dst": "아! 그럼, 축하해! 그래도 곧 서로 맞붙겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5028,7 +5028,7 @@
   },
   "Queen's Recruit#502": {
    "src": "Good grief... yes, the tournament has happened, congratulations to the finalists, whatever where are Mel and Linton? We need to discuss what's next, before",
-   "dst": "",
+   "dst": "원 참... 그래, 대회는 끝났고, 결승 진출자들 축하하고, 됐고- Mel과 Linton은 어디 있죠? 다음 일을 의논해야 해요, 그 전에-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5038,7 +5038,7 @@
   },
   "Queen's Recruit#503": {
    "src": "...and so, what, I'm not allowed to take a nap now? I wasn't even fighting!! Mel, back me up, come on!",
-   "dst": "",
+   "dst": "...그래서 뭐, 이제 낮잠도 못 자? 난 싸우지도 않았다고!! Mel, 편 좀 들어 줘, 응!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5048,7 +5048,7 @@
   },
   "Queen's Recruit#504": {
    "src": "He's right, this hardly seems fair! We were told we could stay in our rooms until the tournament had concluded, so why the change?!",
-   "dst": "",
+   "dst": "Linton 말이 맞아, 이건 불공평해! 대회 끝날 때까진 방에 있어도 된다고 했잖아, 왜 바뀌었어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5058,7 +5058,7 @@
   },
   "Queen's Recruit#505": {
    "src": "...what's going on?",
-   "dst": "",
+   "dst": "...무슨 일이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5068,7 +5068,7 @@
   },
   "Queen's Recruit#506": {
    "src": "Any competitors who have lost in the tournament are to be escorted out of Fruma, effective immediately.",
-   "dst": "",
+   "dst": "대회에서 패배한 참가자는 즉시 Fruma 밖으로 호송된다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5078,7 +5078,7 @@
   },
   "Queen's Recruit#507": {
    "src": "what is the meaning of this?!",
-   "dst": "",
+   "dst": "이게 무슨 짓이오?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5088,7 +5088,7 @@
   },
   "Queen's Recruit#508": {
    "src": "SILENCE! These are new orders from Her Majesty.",
-   "dst": "",
+   "dst": "조용! 여왕 폐하의 새 명령이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5098,7 +5098,7 @@
   },
   "Queen's Recruit#509": {
    "src": "Only {u} and Tasim are permitted to remain in the palace. Any defiance will be seen as an official threat against Fruma from the Wynn province.",
-   "dst": "",
+   "dst": "{u}와 Tasim만 왕궁에 남는다. 거역하면 Wynn 지방이 Fruma에 가하는 공식 위협으로 간주한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5108,7 +5108,7 @@
   },
   "Queen's Recruit#510": {
    "src": "Comply, and no one will be hurt. You will still receive your promised reward for participation.",
-   "dst": "",
+   "dst": "따르면 아무도 다치지 않는다. 약속된 참가 보상은 그대로 받는다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5118,7 +5118,7 @@
   },
   "Queen's Recruit#511": {
    "src": "...this is an outrage. The disrespect",
-   "dst": "",
+   "dst": "...이건 모욕이오. 이런 무례를-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5128,7 +5128,7 @@
   },
   "Queen's Recruit#512": {
    "src": "Enough, Kymer. What's done is done. We have no choice.",
-   "dst": "",
+   "dst": "그만해요, Kymer. 엎질러진 물이에요. 선택지가 없어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5148,7 +5148,7 @@
   },
   "Queen's Recruit#514": {
    "src": "You two. Stay safe, and be on guard. I'll report back to the King with this news. If you're not released safely...",
-   "dst": "",
+   "dst": "자네 둘. 몸조심하고, 경계하게. 이 소식은 폐하께 보고하겠네. 자네들이 무사히 풀려나지 않으면...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5158,7 +5158,7 @@
   },
   "Queen's Recruit#515": {
    "src": "...{u}. Tasim. I've gotten what I came here for originally, but... I don't know what they're planning. You'll have to handle it on your own.",
-   "dst": "",
+   "dst": "...{u}. Tasim. 원래 여기 온 목적은 이뤘지만... 저들이 뭘 꾸미는지 모르겠어요. 스스로 해결해야 할 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5168,7 +5168,7 @@
   },
   "Queen's Recruit#516": {
    "src": "Good luck.",
-   "dst": "",
+   "dst": "행운을 비네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5178,7 +5178,7 @@
   },
   "Queen's Recruit#517": {
    "src": "Remaining finalists, you are expected in the dining hall shortly. Attend your last meal before the finals.",
-   "dst": "",
+   "dst": "남은 결승 진출자는 곧 연회장으로 오도록. 결승 전 마지막 식사에 참석하라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5198,7 +5198,7 @@
   },
   "Queen's Recruit#519": {
    "src": "What was that? What just happened?",
-   "dst": "",
+   "dst": "방금 뭐였지? 무슨 일이 벌어진 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5208,7 +5208,7 @@
   },
   "Queen's Recruit#520": {
    "src": "They've changed the rules on us, and now... ugh, we have no choice... We need to see it through.",
-   "dst": "",
+   "dst": "규칙을 바꿔 버렸고, 이제... 으, 선택지가 없어... 끝까지 가 보는 수밖에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5218,7 +5218,7 @@
   },
   "Queen's Recruit#521": {
    "src": "Well... come on. Let's attend our final dinner here.",
-   "dst": "",
+   "dst": "자... 가자. 여기서의 마지막 저녁 먹으러.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5228,7 +5228,7 @@
   },
   "Queen's Recruit#522": {
    "src": "Attend the royal dinner at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]에서 왕실 만찬에 참석하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5238,7 +5238,7 @@
   },
   "Queen's Recruit#523": {
    "src": "What are we supposed to do...?",
-   "dst": "",
+   "dst": "우리 어떻게 해야 하지...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5248,7 +5248,7 @@
   },
   "Queen's Recruit#524": {
    "src": "They'll let us out. They have to. It'd be a diplomatic disaster if they didn't.",
-   "dst": "",
+   "dst": "내보내 줄 거야. 그래야만 해. 안 그러면 외교적 재앙이니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5258,7 +5258,7 @@
   },
   "Queen's Recruit#525": {
    "src": "Finalists. Welcome.",
-   "dst": "",
+   "dst": "결승 진출자들. 어서 오십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5268,7 +5268,7 @@
   },
   "Queen's Recruit#526": {
    "src": "If you were not already aware, your fellow soldiers have been returned to Wynn. Safely.",
-   "dst": "",
+   "dst": "모르셨다면 말씀드리지요, 동료 병사들은 Wynn으로 돌려보냈습니다. 무사히.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5278,7 +5278,7 @@
   },
   "Queen's Recruit#527": {
    "src": "...if you don't mind me asking, Your Majesty, I thought we had an agreement? We would all remain here until the tournament concluded with the finals.",
-   "dst": "",
+   "dst": "...여쭤도 된다면, 폐하, 약속이 있지 않았나요? 결승으로 대회가 끝날 때까지 모두 여기 머무르기로요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5288,7 +5288,7 @@
   },
   "Queen's Recruit#528": {
    "src": "Oh? And would you like to join the rest of them? That could certainly be arranged we could simply select a victor here and now, and be done with this whole",
-   "dst": "",
+   "dst": "오? 그럼 당신도 그들과 함께 가고 싶나요? 얼마든지 가능하죠- 그냥 지금 여기서 우승자를 뽑고 이 모든 걸-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5298,7 +5298,7 @@
   },
   "Queen's Recruit#529": {
    "src": "What is your problem, Thalas?! They're guests of Her Majesty! How irrational are you, trying to subtract them without her appr",
-   "dst": "",
+   "dst": "대체 무슨 문제요, Thalas?! 폐하의 손님이오! 폐하 허락도 없이 빼 버리려 하다니 얼마나 비합리-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5308,7 +5308,7 @@
   },
   "Queen's Recruit#530": {
    "src": "Enough. Both of you.",
-   "dst": "",
+   "dst": "그만. 둘 다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5318,7 +5318,7 @@
   },
   "Queen's Recruit#531": {
    "src": "To answer your question, the circumstances have changed. There is no need for the rest of your group to remain here.",
-   "dst": "",
+   "dst": "질문에 답하자면, 상황이 바뀌었습니다. 나머지 일행이 여기 남을 필요는 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5328,7 +5328,7 @@
   },
   "Queen's Recruit#532": {
    "src": "The remainder of the tournament will proceed as expected.",
-   "dst": "",
+   "dst": "남은 대회는 예정대로 진행됩니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5338,7 +5338,7 @@
   },
   "Queen's Recruit#533": {
    "src": "I... see.",
-   "dst": "",
+   "dst": "그... 렇군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5348,7 +5348,7 @@
   },
   "Queen's Recruit#534": {
    "src": "Good. Now, let us enjoy the meal!",
-   "dst": "",
+   "dst": "좋습니다. 자, 식사를 즐기지요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5358,7 +5358,7 @@
   },
   "Queen's Recruit#535": {
    "src": "Another taste of Fruman cuisine... the meat was imported the {p}, and the vegetables came from the royal garden.",
-   "dst": "",
+   "dst": "Fruma 요리를 한 번 더... 고기는 {p}에서 들여왔고, 채소는 왕실 정원에서 가져왔습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5368,7 +5368,7 @@
   },
   "Queen's Recruit#536": {
    "src": "Now, to business. The final will take place tomorrow morning. But first, I would like to speak to each of you individually.",
-   "dst": "",
+   "dst": "자, 본론입니다. 결승은 내일 아침에 열립니다. 하지만 먼저, 한 사람씩 따로 이야기하고 싶군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5378,7 +5378,7 @@
   },
   "Queen's Recruit#537": {
    "src": "Let us begin with... {u}. Please come to the north-eastern wing when you are ready.",
-   "dst": "",
+   "dst": "먼저... {u}부터 시작하죠. 준비되면 북동쪽 동으로 오십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5388,7 +5388,7 @@
   },
   "Queen's Recruit#538": {
    "src": "Sigh... good luck out there.",
-   "dst": "",
+   "dst": "휴... 잘 다녀와.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5398,7 +5398,7 @@
   },
   "Queen's Recruit#539": {
    "src": "Talk to Her Majesty in the north-eastern wing of the palace at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}]의 왕궁 북동쪽 동에서 여왕 폐하와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5408,7 +5408,7 @@
   },
   "Queen's Recruit#540": {
    "src": "Good luck.",
-   "dst": "",
+   "dst": "행운을 비네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5428,7 +5428,7 @@
   },
   "Queen's Recruit#542": {
    "src": "Well. I suppose congratulations are in order, finalist.",
-   "dst": "",
+   "dst": "자. 축하할 일이군요, 결승 진출자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5438,7 +5438,7 @@
   },
   "Queen's Recruit#543": {
    "src": "You're curious, surely? For what purpose would I call you soldiers back to our province?",
-   "dst": "",
+   "dst": "궁금하겠지요? 무슨 목적으로 당신들 병사를 이 지방으로 불러들였는지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5448,7 +5448,7 @@
   },
   "Queen's Recruit#544": {
    "src": "Certainly not for a vanity tournament. A meaningless celebration.",
-   "dst": "",
+   "dst": "허영 가득한 대회 때문은 분명 아닙니다. 무의미한 축제지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5458,7 +5458,7 @@
   },
   "Queen's Recruit#545": {
    "src": "Oh, let us drop the facade. I know what you have been doing in secret. I am not blind.",
-   "dst": "",
+   "dst": "아, 겉치레는 그만두지요. 몰래 무엇을 했는지 압니다. 저는 눈이 멀지 않았습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5468,7 +5468,7 @@
   },
   "Queen's Recruit#546": {
    "src": "You chose this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
-   "dst": "",
+   "dst": "당신들은 이 기회를 이 지방의 정보를 캐는 데 썼습니다. 알아낸 약간의 것은 감수할 만한 대가로 판단했습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5478,7 +5478,7 @@
   },
   "Queen's Recruit#547": {
    "src": "Given the circumstances, I would have sacrificed much, much more if necessary.",
-   "dst": "",
+   "dst": "상황을 생각하면, 필요하다면 훨씬, 훨씬 더 많이 희생했을 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5488,7 +5488,7 @@
   },
   "Queen's Recruit#548": {
    "src": "The greatest that Wynn has... a broad category. We had to thin the numbers a contest of strength did the job nicely.",
-   "dst": "",
+   "dst": "Wynn 최고의 인재들이라... 범위가 넓죠. 인원을 줄여야 했고, 힘겨루기가 그 일을 훌륭히 해냈습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5498,7 +5498,7 @@
   },
   "Queen's Recruit#549": {
    "src": "And now... two candidates remain. You have done well to make it this far. I have been watching the duels intently, and you are certainly not unimpressive.",
-   "dst": "",
+   "dst": "그리고 이제... 두 후보가 남았습니다. 여기까지 온 건 잘한 일입니다. 결투를 유심히 지켜봤는데, 당신도 분명 인상적이었습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5508,7 +5508,7 @@
   },
   "Queen's Recruit#550": {
    "src": "Yet of the two of you... you certainly leave a lesser impression than him. You are one amongst hundreds, thousands... indistinguishable.",
-   "dst": "",
+   "dst": "하지만 둘 중에서는... 당신은 그보다 인상이 약합니다. 수백, 수천 중 하나일 뿐... 구별되지 않지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5518,7 +5518,7 @@
   },
   "Queen's Recruit#551": {
    "src": "And still, here you stand. It intrigues me. What is so special about you? What strength has led you here?",
-   "dst": "",
+   "dst": "그런데도 당신은 여기 서 있군요. 흥미롭습니다. 당신의 무엇이 특별하죠? 어떤 힘이 당신을 여기로 이끌었습니까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5528,7 +5528,7 @@
   },
   "Queen's Recruit#552": {
    "src": "But no matter. Answers will come with time... should you be selected. I can tell you have a question. Speak it.",
-   "dst": "",
+   "dst": "하지만 상관없습니다. 답은 때가 되면 옵니다... 당신이 선택된다면. 질문이 있어 보이는군요. 말해 보십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5538,7 +5538,7 @@
   },
   "Queen's Recruit#553": {
    "src": "Hm. A blank slate... to be able to see the outside world, for all its splendor and all its faults, to witness firsthand the deep rooted seeds of its inevitable destruction... there is value to that.",
-   "dst": "",
+   "dst": "흠. 백지 상태라... 바깥세상을 볼 수 있다는 것, 그 모든 영광과 결함을, 필연적 파멸의 깊이 뿌리내린 씨앗을 직접 목격한다는 것... 거기엔 가치가 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5548,7 +5548,7 @@
   },
   "Queen's Recruit#554": {
    "src": "You have seen it, haven't you? Forces beyond any of us vie for control of our world, caring not for what destruction they instill.",
-   "dst": "",
+   "dst": "당신도 봤겠지요? 우리 모두를 넘어선 힘들이 세상의 지배권을 두고 다투며, 어떤 파괴를 낳든 개의치 않습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5558,7 +5558,7 @@
   },
   "Queen's Recruit#555": {
    "src": "And it truly is a beautiful world, isn't it? To think, it could be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
-   "dst": "",
+   "dst": "그리고 정말 아름다운 세상이지 않습니까? 의미도 목적도 없는 끝없는 전쟁 때문에 파괴되고 빼앗길 수 있다니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5568,7 +5568,7 @@
   },
   "Queen's Recruit#556": {
    "src": "Then you have seen firsthand the benefits. The province is unburdened by those who may cause problems, and Wynn's front in its war is bolstered.",
-   "dst": "",
+   "dst": "그렇다면 이점도 직접 봤겠군요. 이 지방은 문제를 일으킬 자들의 짐을 덜고, Wynn의 전선은 강화되지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5578,7 +5578,7 @@
   },
   "Queen's Recruit#557": {
    "src": "Of course, many will refuse the call. Many more will grow stagnant in their newfound roles. Yet, in a select few... there is potential for much, much more.",
-   "dst": "",
+   "dst": "물론 많은 이가 부름을 거부합니다. 더 많은 이는 새 역할에 안주하지요. 하지만 극소수에게는... 훨씬, 훨씬 더 큰 잠재력이 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5588,7 +5588,7 @@
   },
   "Queen's Recruit#558": {
    "src": "I wonder... which are you?",
-   "dst": "",
+   "dst": "궁금하군요... 당신은 어느 쪽일지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5598,7 +5598,7 @@
   },
   "Queen's Recruit#559": {
    "src": "That will be all. Return to your chambers for the night. I will be sending for the other finalist shortly.",
-   "dst": "",
+   "dst": "이상입니다. 오늘 밤은 방으로 돌아가십시오. 곧 다른 결승 진출자를 부르겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5608,7 +5608,7 @@
   },
   "Queen's Recruit#560": {
    "src": "Return to room W-{~} and talk to Tasim at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "W-{~1}호실로 돌아가 [-{~2}, {~3}, {~4}]에서 Tasim과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5618,7 +5618,7 @@
   },
   "Queen's Recruit#561": {
    "src": "Please, make your exit.",
-   "dst": "",
+   "dst": "나가 주십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5628,7 +5628,7 @@
   },
   "Queen's Recruit#562": {
    "src": "You're back! Still in one piece?",
-   "dst": "",
+   "dst": "돌아왔구나! 멀쩡해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5638,7 +5638,7 @@
   },
   "Queen's Recruit#563": {
    "src": "...I was getting a little worried. You were up there a while.",
-   "dst": "",
+   "dst": "...좀 걱정했어. 꽤 오래 있었잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5648,7 +5648,7 @@
   },
   "Queen's Recruit#564": {
    "src": "What did she want?",
-   "dst": "",
+   "dst": "뭘 원하던데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5658,7 +5658,7 @@
   },
   "Queen's Recruit#565": {
    "src": "... right. A weird conversation, then?",
-   "dst": "",
+   "dst": "...그렇구나. 이상한 대화였다고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5668,7 +5668,7 @@
   },
   "Queen's Recruit#566": {
    "src": "Ha. Well, now I'm a little nervous.",
-   "dst": "",
+   "dst": "하. 이제 내가 좀 긴장되네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5678,7 +5678,7 @@
   },
   "Queen's Recruit#567": {
    "src": "...really. A... blank slate...",
-   "dst": "",
+   "dst": "...정말. 백지... 상태라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5688,7 +5688,7 @@
   },
   "Queen's Recruit#568": {
    "src": "I'll... need to ask some follow-up questions.",
-   "dst": "",
+   "dst": "좀... 더 물어봐야 할 게 있겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5708,7 +5708,7 @@
   },
   "Queen's Recruit#570": {
    "src": "Oh, this is a disaster. We've been separated, and now we're stuck in here.",
-   "dst": "",
+   "dst": "아, 큰일이다. 다들 흩어졌고, 우린 여기 갇혔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5718,7 +5718,7 @@
   },
   "Queen's Recruit#571": {
    "src": "We need to come up with a plan... is there a way we could",
-   "dst": "",
+   "dst": "계획을 세워야 해... 우리가 혹시-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5728,7 +5728,7 @@
   },
   "Queen's Recruit#572": {
    "src": "Tasim! Her Majesty will speak with you now.",
-   "dst": "",
+   "dst": "Tasim! 여왕 폐하께서 지금 당신과 이야기하실 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5738,7 +5738,7 @@
   },
   "Queen's Recruit#573": {
    "src": "Oh. There it is.",
-   "dst": "",
+   "dst": "아. 왔구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5748,7 +5748,7 @@
   },
   "Queen's Recruit#574": {
    "src": "Okay, wish me luck. I'll be back.",
-   "dst": "",
+   "dst": "좋아, 행운을 빌어 줘. 다녀올게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5758,7 +5758,7 @@
   },
   "Queen's Recruit#575": {
    "src": "Don't... stay up waiting for me. You can go rest. I'll be... fine, probably.",
-   "dst": "",
+   "dst": "날... 기다리느라 깨어 있지 마. 가서 쉬어. 난... 괜찮을 거야, 아마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5768,7 +5768,7 @@
   },
   "Queen's Recruit#576": {
    "src": "Rest for the night.",
-   "dst": "",
+   "dst": "밤새 휴식하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5778,7 +5778,7 @@
   },
   "Queen's Recruit#577": {
    "src": "Catch up with Tasim.",
-   "dst": "",
+   "dst": "Tasim을 만나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5788,7 +5788,7 @@
   },
   "Queen's Recruit#578": {
    "src": "...oh, you're up.",
-   "dst": "",
+   "dst": "...아, 깼구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5798,7 +5798,7 @@
   },
   "Queen's Recruit#579": {
    "src": "Sorry for waking you.",
-   "dst": "",
+   "dst": "깨워서 미안.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5808,7 +5808,7 @@
   },
   "Queen's Recruit#580": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
-   "dst": "",
+   "dst": "그럭저럭... 괜찮았어. 너한테 한 말이랑... 대부분 비슷했을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5828,7 +5828,7 @@
   },
   "Queen's Recruit#582": {
    "src": "Hey, {u}...",
-   "dst": "",
+   "dst": "저기, {u}...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5838,7 +5838,7 @@
   },
   "Queen's Recruit#583": {
    "src": "Could I ask you a favor?",
-   "dst": "",
+   "dst": "부탁 하나 해도 될까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5848,7 +5848,7 @@
   },
   "Queen's Recruit#584": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
-   "dst": "",
+   "dst": "대련할래? 연습 경기, 내일... 내일 전에. 옛날처럼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5858,7 +5858,7 @@
   },
   "Queen's Recruit#585": {
    "src": "Just, get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "그냥, 준비하고 투기장에서 만나. 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5868,7 +5868,7 @@
   },
   "Queen's Recruit#586": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
-   "dst": "",
+   "dst": "난- 응. 괜찮아. 그냥... 대련할래? 연습 경기, 내일... 전에. 옛정을 생각해서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5878,7 +5878,7 @@
   },
   "Queen's Recruit#587": {
    "src": "Just... get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "그냥... 준비하고 투기장에서 만나. 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5888,7 +5888,7 @@
   },
   "Queen's Recruit#588": {
    "src": "...oh, you're up.",
-   "dst": "",
+   "dst": "...아, 깼구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5898,7 +5898,7 @@
   },
   "Queen's Recruit#589": {
    "src": "Sorry for waking you.",
-   "dst": "",
+   "dst": "깨워서 미안.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5908,7 +5908,7 @@
   },
   "Queen's Recruit#590": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
-   "dst": "",
+   "dst": "그럭저럭... 괜찮았어. 너한테 한 말이랑... 대부분 비슷했을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5938,7 +5938,7 @@
   },
   "Queen's Recruit#593": {
    "src": "I was going to ask if I could ask you a favor.",
-   "dst": "",
+   "dst": "부탁 하나 해도 되냐고 물어보려던 참이었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5948,7 +5948,7 @@
   },
   "Queen's Recruit#594": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
-   "dst": "",
+   "dst": "대련할래? 연습 경기, 내일... 내일 전에. 옛날처럼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5958,7 +5958,7 @@
   },
   "Queen's Recruit#595": {
    "src": "Just, get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "그냥, 준비하고 투기장에서 만나. 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5968,7 +5968,7 @@
   },
   "Queen's Recruit#596": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
-   "dst": "",
+   "dst": "난- 응. 괜찮아. 그냥... 대련할래? 연습 경기, 내일... 전에. 옛정을 생각해서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5978,7 +5978,7 @@
   },
   "Queen's Recruit#597": {
    "src": "Just... get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "그냥... 준비하고 투기장에서 만나. 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5988,7 +5988,7 @@
   },
   "Queen's Recruit#598": {
    "src": "H... huh?",
-   "dst": "",
+   "dst": "뭐... 뭐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5998,7 +5998,7 @@
   },
   "Queen's Recruit#599": {
    "src": "He's... n-no, that",
-   "dst": "",
+   "dst": "그가... 아, 아냐, 그건-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6018,7 +6018,7 @@
   },
   "Queen's Recruit#601": {
    "src": "What...?",
-   "dst": "",
+   "dst": "뭐...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6028,7 +6028,7 @@
   },
   "Queen's Recruit#602": {
    "src": "I... I... I don't understand.",
-   "dst": "",
+   "dst": "난... 난... 이해가 안 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6038,7 +6038,7 @@
   },
   "Queen's Recruit#603": {
    "src": "He's... what what happened? How do you know? How how could you know?",
-   "dst": "",
+   "dst": "그가... 무- 무슨 일이 있었는데? 어떻게 알아? 어떻- 어떻게 네가 알아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6068,7 +6068,7 @@
   },
   "Queen's Recruit#606": {
    "src": "...oh. That mission.",
-   "dst": "",
+   "dst": "...아. 그 임무.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6118,7 +6118,7 @@
   },
   "Queen's Recruit#611": {
    "src": "I... Gods. And, you you've been tr-trying to",
-   "dst": "",
+   "dst": "난... 세상에. 그리고, 너- 너는 계속 마, 말하려고-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6138,7 +6138,7 @@
   },
   "Queen's Recruit#613": {
    "src": "I I need to go. I need some space. I'll I'm going to the arena. I need to... to...",
-   "dst": "",
+   "dst": "나- 나 가야겠어. 혼자 있고 싶어. 난- 투기장에 갈게. 나 좀... 좀...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6148,7 +6148,7 @@
   },
   "Queen's Recruit#614": {
    "src": "No. No, d-don't. Don't do that. Not now, not not now. If... if you need me... you'll you'll know where I am.",
-   "dst": "",
+   "dst": "아니. 아니, 하, 하지 마. 그러지 마. 지금은 안 돼, 지금- 지금은. 만약... 내가 필요하면... 너- 넌 내가 어디 있는지 알 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6158,7 +6158,7 @@
   },
   "Queen's Recruit#615": {
    "src": "Head to the arena for a training match against Tasim.",
-   "dst": "",
+   "dst": "투기장으로 가서 Tasim과 연습 경기를 하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6168,7 +6168,7 @@
   },
   "Queen's Recruit#616": {
    "src": "Get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "준비하고 투기장에서 만나. 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6178,7 +6178,7 @@
   },
   "Queen's Recruit#617": {
    "src": "It's... quiet. No guards in sight.",
-   "dst": "",
+   "dst": "여긴... 조용하네. 경비병도 안 보여.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6198,7 +6198,7 @@
   },
   "Queen's Recruit#619": {
    "src": "Sigh. There's no point in trying to get out of here. We have to just see it through to the end.",
-   "dst": "",
+   "dst": "휴. 여기서 나가려 해 봤자 소용없어. 끝까지 지켜보는 수밖에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6218,7 +6218,7 @@
   },
   "Queen's Recruit#621": {
    "src": "What do you think? About what she said? About... forces destroying the world.",
-   "dst": "",
+   "dst": "넌 어떻게 생각해? 그녀가 한 말. 세상을... 파괴하는 힘들에 대해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6228,7 +6228,7 @@
   },
   "Queen's Recruit#622": {
    "src": "She's right. I've seen it I know you've seen it. It's... getting worse.",
-   "dst": "",
+   "dst": "그녀 말이 맞아. 나도 봤고- 너도 봤잖아. 점점... 심해지고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6238,7 +6238,7 @@
   },
   "Queen's Recruit#623": {
    "src": "But... the recruits. The recruits. I can't get over that. It's so...",
-   "dst": "",
+   "dst": "그래도... 신병들. 그 신병들. 그게 도저히 안 넘어가. 너무...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6258,7 +6258,7 @@
   },
   "Queen's Recruit#625": {
    "src": "Let's just get down there and fight. Usual spots, right?",
-   "dst": "",
+   "dst": "그냥 내려가서 싸우자. 늘 서던 자리, 맞지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6278,7 +6278,7 @@
   },
   "Queen's Recruit#627": {
    "src": "...so you're here.",
-   "dst": "",
+   "dst": "...왔구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6288,7 +6288,7 @@
   },
   "Queen's Recruit#628": {
    "src": "No words. Let's fight. Just just a training battle. To... test our skills.",
-   "dst": "",
+   "dst": "말은 필요 없어. 싸우자. 그냥- 그냥 연습 전투야. 실력을... 시험하는 거지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6308,7 +6308,7 @@
   },
   "Queen's Recruit#630": {
    "src": "Ha. You've gotten strong, huh?",
-   "dst": "",
+   "dst": "하. 강해졌네?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6318,7 +6318,7 @@
   },
   "Queen's Recruit#631": {
    "src": "Still can't beat you, huh...",
-   "dst": "",
+   "dst": "여전히 못 이기네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6328,7 +6328,7 @@
   },
   "Queen's Recruit#632": {
    "src": "I guess we know how tomorrow will turn out, then.",
-   "dst": "",
+   "dst": "그럼 내일 어떻게 될지는 뻔하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6338,7 +6338,7 @@
   },
   "Queen's Recruit#633": {
    "src": "No don't deny it. We both know I'm right.",
-   "dst": "",
+   "dst": "아니- 부정하지 마. 내 말이 맞다는 거 우리 둘 다 알잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6358,7 +6358,7 @@
   },
   "Queen's Recruit#635": {
    "src": "She gave me a choice, you know?",
-   "dst": "",
+   "dst": "그녀가 나한테 선택지를 줬어, 알아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6368,7 +6368,7 @@
   },
   "Queen's Recruit#636": {
    "src": "A choice. I don't know what to do with it. And... I'm afraid of taking either option.",
-   "dst": "",
+   "dst": "선택지. 어떻게 해야 할지 모르겠어. 그리고... 어느 쪽을 골라도 두려워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6378,7 +6378,7 @@
   },
   "Queen's Recruit#637": {
    "src": "I... I need to think over it some more. And we both need to rest.",
-   "dst": "",
+   "dst": "난... 좀 더 생각해 봐야겠어. 그리고 우리 둘 다 쉬어야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6388,7 +6388,7 @@
   },
   "Queen's Recruit#638": {
    "src": "Huh? I... yes. I think I am. I just have a lot on my mind.",
-   "dst": "",
+   "dst": "응? 난... 응. 괜찮은 것 같아. 그냥 생각이 많아서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6398,7 +6398,7 @@
   },
   "Queen's Recruit#639": {
    "src": "I'll... tell you in the morning. I just have a lot on my mind.",
-   "dst": "",
+   "dst": "아침에... 말해 줄게. 그냥 생각이 많아서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6408,7 +6408,7 @@
   },
   "Queen's Recruit#640": {
    "src": "Ha. You're you're good. Oof. I'll be feeling that one for... for a while.",
-   "dst": "",
+   "dst": "하. 너- 너 잘하네. 윽. 이건 한동안... 한동안 욱신거리겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6428,7 +6428,7 @@
   },
   "Queen's Recruit#642": {
    "src": "Why did it have to come to this? Why couldn't why couldn't we all have just been happy?",
-   "dst": "",
+   "dst": "왜 이렇게까지 된 걸까? 왜- 왜 우린 다 같이 행복할 수 없었을까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6438,7 +6438,7 @@
   },
   "Queen's Recruit#643": {
    "src": "He he sent me a letter for that mission, you know. Did I tell you that? It's why I went back to Wynn.",
-   "dst": "",
+   "dst": "그가- 그가 그 임무 때문에 편지를 보냈었어. 말했던가? 그래서 Wynn에 돌아온 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6448,7 +6448,7 @@
   },
   "Queen's Recruit#644": {
    "src": "And, it turns out he was already... already gone. And you were there, and I wasn't.",
-   "dst": "",
+   "dst": "그런데, 알고 보니 그는 이미... 이미 떠났더라. 넌 거기 있었고, 난 없었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6468,7 +6468,7 @@
   },
   "Queen's Recruit#646": {
    "src": "I want to blame you for it. I want to be able to be mad, to hate you. But... I can't. I just can't.",
-   "dst": "",
+   "dst": "네 탓을 하고 싶어. 화내고, 널 미워하고 싶어. 근데... 못 하겠어. 도저히 못 하겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6478,7 +6478,7 @@
   },
   "Queen's Recruit#647": {
    "src": "I wish I could've been there. I wish I could've done it better. Maybe I could have or maybe it would've just gone the same way.",
-   "dst": "",
+   "dst": "내가 거기 있었으면 좋았을 텐데. 더 잘할 수 있었으면 좋았을 텐데. 어쩌면 그럴 수 있었을지도- 아니면 결국 똑같았을지도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6488,7 +6488,7 @@
   },
   "Queen's Recruit#648": {
    "src": "...maybe it'd have gone worse.",
-   "dst": "",
+   "dst": "...더 나빴을지도 모르지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6498,7 +6498,7 @@
   },
   "Queen's Recruit#649": {
    "src": "And now we're both here in the place we were all exiled from! But he's he isn't. He's gone, and and we're still here.",
-   "dst": "",
+   "dst": "이제 우리 둘 다 우리가 쫓겨났던 곳에 와 있어! 근데 그는- 그는 없어. 떠났고, 그- 그런데 우린 아직 여기 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6508,7 +6508,7 @@
   },
   "Queen's Recruit#650": {
    "src": "...what am I supposed to do? What are we supposed to do? About all of this?",
-   "dst": "",
+   "dst": "...난 어떻게 해야 하지? 우린 어떻게 해야 해? 이 모든 걸?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6528,7 +6528,7 @@
   },
   "Queen's Recruit#652": {
    "src": "She gave me a choice.",
-   "dst": "",
+   "dst": "그녀가 나한테 선택지를 줬어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6538,7 +6538,7 @@
   },
   "Queen's Recruit#653": {
    "src": "I asked a lot of questions. I didn't like all the answers, but... she left me with a choice.",
-   "dst": "",
+   "dst": "질문을 많이 했어. 답이 다 마음에 들진 않았지만... 선택지를 남겨 줬어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6558,7 +6558,7 @@
   },
   "Queen's Recruit#655": {
    "src": "I don't know what to do. I need to... to... I need to think.",
-   "dst": "",
+   "dst": "어떻게 해야 할지 모르겠어. 난... 좀... 생각을 좀 해야겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6568,7 +6568,7 @@
   },
   "Queen's Recruit#656": {
    "src": "Give me some space, please. I'll see you in the morning.",
-   "dst": "",
+   "dst": "혼자 있게 해 줘, 부탁이야. 아침에 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6578,7 +6578,7 @@
   },
   "Queen's Recruit#657": {
    "src": "Return to your room and sleep for the night.",
-   "dst": "",
+   "dst": "방으로 돌아가 밤새 잠을 자세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6598,7 +6598,7 @@
   },
   "Queen's Recruit#659": {
    "src": "Read the note Tasim left you before heading out.",
-   "dst": "",
+   "dst": "나가기 전에 Tasim이 남긴 쪽지를 읽으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6608,7 +6608,7 @@
   },
   "Queen's Recruit#660": {
    "src": "Head to Her Majesty's office for her decision.",
-   "dst": "",
+   "dst": "여왕 폐하의 집무실로 가서 결정을 들으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6618,7 +6618,7 @@
   },
   "Queen's Recruit#661": {
    "src": "Choices, choices, choices, choices...",
-   "dst": "",
+   "dst": "선택, 선택, 선택, 선택...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6628,7 +6628,7 @@
   },
   "Queen's Recruit#662": {
    "src": "You've already failed, you know. You did not meet her criteria for selection.",
-   "dst": "",
+   "dst": "넌 이미 실패했다, 알고 있나? 그녀의 선발 기준에 못 미쳤지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6638,7 +6638,7 @@
   },
   "Queen's Recruit#663": {
    "src": "But is dismissing you outright an error? Certainly, you're powerful. Perhaps even more so than you should be, given the circumstances.",
-   "dst": "",
+   "dst": "하지만 널 바로 내치는 게 실수일까? 확실히 넌 강하다. 어쩌면 네 처지치고는 지나칠 만큼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6648,7 +6648,7 @@
   },
   "Queen's Recruit#664": {
    "src": "Still. You lack the drive, the perspective. The dedication. The understanding.",
-   "dst": "",
+   "dst": "그래도. 넌 추진력이, 관점이 부족하다. 헌신이. 이해가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6658,7 +6658,7 @@
   },
   "Queen's Recruit#665": {
    "src": "And, most critically - you're unpredictable. And that makes you dangerous.",
-   "dst": "",
+   "dst": "그리고 가장 결정적으로- 넌 예측할 수 없다. 그래서 위험하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6668,7 +6668,7 @@
   },
   "Queen's Recruit#666": {
    "src": "Ah! It seems Her Majesty and I have come to the same conclusion. Wonderful.",
-   "dst": "",
+   "dst": "아! 여왕 폐하와 내가 같은 결론에 이른 모양이군. 훌륭해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6678,7 +6678,7 @@
   },
   "Queen's Recruit#667": {
    "src": "So, where does that leave you? Cast out, discarded?",
-   "dst": "",
+   "dst": "그럼, 넌 어떻게 되는 걸까? 쫓겨나고, 버려지고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6688,7 +6688,7 @@
   },
   "Queen's Recruit#668": {
    "src": "All the unanswered questions. Will you choose to let go? Dismiss the possibilities?",
-   "dst": "",
+   "dst": "답 없는 질문이 이렇게나 많은데. 놓아 버리기로 할까? 가능성을 외면할까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6698,7 +6698,7 @@
   },
   "Queen's Recruit#669": {
    "src": "And if not? What would you do for a glimpse of the truth? For a chance of receiving answers?",
-   "dst": "",
+   "dst": "아니라면? 진실을 엿보기 위해 뭘 할 수 있지? 답을 얻을 기회를 위해서라면?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6708,7 +6708,7 @@
   },
   "Queen's Recruit#670": {
    "src": "Hm. Whatever the case, the choice is yours. Perhaps you'll surprise me, after all! Wouldn't that be exciting?",
-   "dst": "",
+   "dst": "흠. 어쨌든 선택은 네 몫이다. 어쩌면 날 놀라게 할지도! 그러면 꽤 흥미롭겠군?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6718,7 +6718,7 @@
   },
   "Queen's Recruit#671": {
    "src": "{u}, under order of Her Majesty, you are to be escorted out of Fruma, effective immediately.",
-   "dst": "",
+   "dst": "{u}, 여왕 폐하의 명에 따라, 너는 즉시 Fruma 밖으로 호송된다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6728,7 +6728,7 @@
   },
   "Queen's Recruit#672": {
    "src": "Any defiance will be seen as an official threat against Fruma from the Wynn province. Comply, and no one will be hurt.",
-   "dst": "",
+   "dst": "거역하면 Wynn 지방이 Fruma에 가하는 공식 위협으로 간주한다. 따르면 아무도 다치지 않는다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6738,7 +6738,7 @@
   },
   "Queen's Recruit#673": {
    "src": "You hold no power here. This choice is not yours. You will follow orders, or face the consequences.",
-   "dst": "",
+   "dst": "넌 여기서 아무 힘도 없다. 이건 네가 고를 일이 아니다. 명령에 따르든가, 대가를 치르든가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
