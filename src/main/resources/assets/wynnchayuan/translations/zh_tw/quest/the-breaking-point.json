@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Breaking Point",
-  "count": 284,
-  "translated": 284,
+  "count": 304,
+  "translated": 301,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -31,6 +31,32 @@
    "source": "captured"
   },
   "The Breaking Point#002": {
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
+    "file": "quest/the-breaking-point.json",
+    "ratio": 0.98,
+    "reason": "placeholders"
+   }
+  },
+  "The Breaking Point#003": {
+   "src": "You need to get onto the path up to {p}. There should be signposts outside of {p}...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#004": {
    "src": "Speak to General Elix at [{~}, {~}, -{~}] in {p}.",
    "dst": "到 {p} 的 [{~1}, {~2}, -{~3}] 與 Elix 將軍談話。",
    "role": "desc",
@@ -40,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#003": {
+  "The Breaking Point#005": {
    "src": "... Alright, let's see here... Private! Give me a report!",
    "dst": "……好，我看看……二等兵！給我一份報告！",
    "role": "desc",
@@ -50,7 +76,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#004": {
+  "The Breaking Point#006": {
    "src": "Sir, our readings are postive! Stablility is at {~}, and shows no sign of dropping.",
    "dst": "長官，讀數正常！穩定度在 {~}，而且沒有下降的跡象。",
    "role": "desc",
@@ -60,7 +86,7 @@
    "speaker": "Private Walder",
    "source": "wiki"
   },
-  "The Breaking Point#005": {
+  "The Breaking Point#007": {
    "src": "Readings are positive!",
    "dst": "讀數正常！",
    "role": "desc",
@@ -70,7 +96,7 @@
    "speaker": "Private Walder",
    "source": "wiki"
   },
-  "The Breaking Point#006": {
+  "The Breaking Point#008": {
    "src": "Excellent. Keep an eye on everything, and let me know if something comes up. Now, I need to go find...-",
    "dst": "很好。所有東西都盯緊，有狀況就告訴我。現在，我得去找——",
    "role": "desc",
@@ -80,7 +106,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#007": {
+  "The Breaking Point#009": {
    "src": "Hmph. And who exactly are you? This site is off-limits to civilians.",
    "dst": "哼。你到底是什麼人？這個場地不對平民開放。",
    "role": "desc",
@@ -90,7 +116,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#008": {
+  "The Breaking Point#010": {
    "src": "Adventurer. Of course. Well, as it stands, we're doing rather dangerous work here. I'll have to ask you to-",
    "dst": "冒險者。當然。嗯，就目前而言，我們在這裡做的是相當危險的工作。我得請你——",
    "role": "desc",
@@ -100,7 +126,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#009": {
+  "The Breaking Point#011": {
    "src": "... The stabilizer? We're doing rather dangerous work here, keeping the thing beyond that cliff passive. So, I'll have to ask you to-",
    "dst": "……穩定器？我們在這裡做的是相當危險的工作，要讓那道懸崖後面那個東西保持安分。所以，我得請你——",
    "role": "desc",
@@ -110,7 +136,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#010": {
+  "The Breaking Point#012": {
    "src": "General! Stability is dropping, and fast!",
    "dst": "將軍！穩定度正在下降，而且很快！",
    "role": "desc",
@@ -120,7 +146,7 @@
    "speaker": "Private Walder",
    "source": "wiki"
   },
-  "The Breaking Point#011": {
+  "The Breaking Point#013": {
    "src": "General!",
    "dst": "將軍！",
    "role": "desc",
@@ -130,7 +156,7 @@
    "speaker": "Private Walder",
    "source": "wiki"
   },
-  "The Breaking Point#012": {
+  "The Breaking Point#014": {
    "src": "What?! Of all times for it to-",
    "dst": "什麼？！偏偏挑這種時候——",
    "role": "desc",
@@ -140,7 +166,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#013": {
+  "The Breaking Point#015": {
    "src": "Urgh... Soldiers, follow protocol! Secure what you can, and leave what you can't! And- you! I haven't forgotten about you. As soon as this all cleans up, we'll-",
    "dst": "唔……士兵們，照程序走！能保住的保住，保不住的就放棄！還有——你！我沒忘記你。等這一切收拾完，我們就——",
    "role": "desc",
@@ -150,7 +176,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#014": {
+  "The Breaking Point#016": {
    "src": "Gah! This damned Colossus! What I wouldn't give to...",
    "dst": "啊！這該死的 Colossus！我真願意付出任何代價來……",
    "role": "desc",
@@ -160,7 +186,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#015": {
+  "The Breaking Point#017": {
    "src": "... It's over. Walder! Survey the damages to our equipment! Morec! Take count of injuries around the base, make sure everyone's safe!",
    "dst": "……結束了。Walder！清點我們設備的損害！Morec！統計基地周圍的傷亡，確認每個人都平安！",
    "role": "desc",
@@ -170,7 +196,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#016": {
+  "The Breaking Point#018": {
    "src": "Yes sir!",
    "dst": "是，長官！",
    "role": "desc",
@@ -180,7 +206,7 @@
    "speaker": "Private Walder",
    "source": "wiki"
   },
-  "The Breaking Point#017": {
+  "The Breaking Point#019": {
    "src": "General! We came as soon as we could- we were down in the library and the exit co- Oh. Wow.",
    "dst": "將軍！我們一收到消息就趕來了——我們剛剛在下面的圖書室，出口又——噢。哇。",
    "role": "desc",
@@ -190,7 +216,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Breaking Point#018": {
+  "The Breaking Point#020": {
    "src": "Well, Rhay, you're here now, yes? What do you think, can you fix it? We'll need to get it working before-",
    "dst": "好吧，Rhay，你人到了，是吧？你怎麼看，修得好嗎？我們得在——之前讓它重新運作。",
    "role": "desc",
@@ -200,7 +226,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#019": {
+  "The Breaking Point#021": {
    "src": "Can I- No, of course I can't fix it! Not on my own, especially since we don't have the proper equipment around here! Ugh, how long has it even been since last time?",
    "dst": "我能不能——不，我當然修不好！光靠我一個人不行，尤其這裡根本沒有適當的設備！唉，距離上一次到底過了多久了？",
    "role": "desc",
@@ -210,7 +236,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#020": {
+  "The Breaking Point#022": {
    "src": "It has been... three days... give or take. Rhay... you know we can't keep-",
    "dst": "已經……三天了……前後差不了多少。Rhay……你知道我們不能一直——",
    "role": "desc",
@@ -220,7 +246,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Breaking Point#021": {
+  "The Breaking Point#023": {
    "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
    "dst": "穩定器到目前為止一直有效，Ineos！那是我們行省拿得出來最精良的技術之一，而且它一直都有效！",
    "role": "desc",
@@ -230,7 +256,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#022": {
+  "The Breaking Point#024": {
    "src": "Rhay, you know... as well as I do... that it is getting worse. The Protector is... growing resistant to... your machines. We need... a new plan.",
    "dst": "Rhay，你跟我一樣清楚……情況正在惡化。守護者……正在對你的機器……產生抗性。我們需要……新的計畫。",
    "role": "desc",
@@ -240,7 +266,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#023": {
+  "The Breaking Point#025": {
    "src": "Yes, well, as soon as you come up with one, I'll be glad to hear it! But so far, you've barely gotten anything-",
    "dst": "是啊，那等你想出一個來，我很樂意洗耳恭聽！可是到目前為止，你幾乎什麼都沒——",
    "role": "desc",
@@ -250,7 +276,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#024": {
+  "The Breaking Point#026": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -260,7 +286,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#025": {
+  "The Breaking Point#027": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -270,7 +296,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#026": {
+  "The Breaking Point#028": {
    "src": "... Sorry. I'm sorry, I didn't mean that. General, to answer your question... The stabilizer itself is damaged, but you should have what's needed to repair it here.",
    "dst": "……抱歉。對不起，我不是那個意思。將軍，回答你的問題……穩定器本身受損了，不過修理它所需要的東西，這裡應該都有。",
    "role": "desc",
@@ -280,7 +306,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#027": {
+  "The Breaking Point#029": {
    "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
    "dst": "問題是控制面板看起來已經燒掉了！而我們這裡沒有存放任何替換零件。我們得回一趟 Corkus，然後……",
    "role": "desc",
@@ -290,8 +316,8 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#028": {
-   "src": "...Right. You. You're an adventurer, yes? And you appear to be well-equipped. Then you'll be traveling to Corkus with Rhay, and assist with whatever is needed there.",
+  "The Breaking Point#030": {
+   "src": "... Right. You. You're an adventurer, yes? And you appear to be well-equipped. Then you'll be traveling to Corkus with Rhay, and assist with whatever is needed there.",
    "dst": "……好。你。你是冒險者，對吧？而且看起來裝備齊全。那麼你就跟 Rhay 一起去 Corkus，那邊需要什麼就幫什麼。",
    "role": "desc",
    "kind": "dialogue",
@@ -300,7 +326,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#029": {
+  "The Breaking Point#031": {
    "src": "Huh?",
    "dst": "啊？",
    "role": "desc",
@@ -310,7 +336,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#030": {
+  "The Breaking Point#032": {
    "src": "Wait, General-... Right. Alright. In that case... I'll give you time to prepare. We'll take the Hot Air Balloon to travel to Corkus, so I'll meet you there. We don't have any time to waste.",
    "dst": "等等，將軍——好吧。好。那樣的話……我給你一點時間準備。我們會搭熱氣球去 Corkus，我在那裡等你。我們沒有時間可以浪費。",
    "role": "desc",
@@ -320,7 +346,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#031": {
+  "The Breaking Point#033": {
    "src": "And I will... return to the library. I trust... you will succeed... But we must... prepare for the... worst.",
    "dst": "而我會……回圖書室去。我相信……你們會成功……但我們必須……為最壞的情況……做準備。",
    "role": "desc",
@@ -330,7 +356,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#032": {
+  "The Breaking Point#034": {
    "src": "Alright...",
    "dst": "好吧……",
    "role": "desc",
@@ -340,7 +366,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#033": {
+  "The Breaking Point#035": {
    "src": "Meet Rhay at the Hot Air Balloon at [{~}, {~}, -{~}]",
    "dst": "到 [{~1}, {~2}, -{~3}] 的熱氣球與 Rhay 會合",
    "role": "desc",
@@ -350,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#034": {
+  "The Breaking Point#036": {
    "src": "Ah, you're here! Well, if you're ready, then we'd best be off. Just hop aboard this balloon, and the captain will take us where we need to go.",
    "dst": "啊，你來了！好，你要是準備好了，我們最好就出發。跳上這顆氣球，船長會載我們去該去的地方。",
    "role": "desc",
@@ -360,7 +386,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#035": {
+  "The Breaking Point#037": {
    "src": "I can tell you more while we travel, but we need to get going quick. There's no telling how much time we have before-",
    "dst": "路上我可以多跟你說一些，不過我們得快點出發。誰知道在那之前我們還有多少時間——",
    "role": "desc",
@@ -370,7 +396,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#036": {
+  "The Breaking Point#038": {
    "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, obvious reasons. Just hop aboard.",
    "dst": "好、好。別理我，我只是有點緊繃，因為……嗯，理由很明顯。上來就是了。",
    "role": "desc",
@@ -380,7 +406,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#037": {
+  "The Breaking Point#039": {
    "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, for obvious reasons. Just hop aboard.",
    "dst": "好、好。別理我，我只是有點緊繃，因為……嗯，理由很明顯。上來就是了。",
    "role": "desc",
@@ -390,7 +416,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#038": {
+  "The Breaking Point#040": {
    "src": "Travel to {p} via the Hot Air Balloon at [{~}, {~}, -{~}]",
    "dst": "搭乘 [{~1}, {~2}, -{~3}] 的熱氣球前往 {p}",
    "role": "desc",
@@ -400,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#039": {
+  "The Breaking Point#041": {
    "src": "Well, there it is! The Canyon Colossus itself. The source of all our problems here at {p}.",
    "dst": "看，就在那裡！Canyon Colossus 本尊。我們在 {p} 這裡所有問題的根源。",
    "role": "desc",
@@ -410,7 +436,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#040": {
+  "The Breaking Point#042": {
    "src": "Well, there it is! The Canyon Colossus itself. The source of all of our problems here at {p}.",
    "dst": "看，就在那裡！Canyon Colossus 本尊。我們在 {p} 這裡所有問題的根源。",
    "role": "desc",
@@ -420,7 +446,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#041": {
+  "The Breaking Point#043": {
    "src": "So! How much do you already know? I know we dragged you into this without telling you much, so... I can fill you in on the details.",
    "dst": "那麼！你已經知道多少了？我知道我們沒說清楚就把你拖進來了，所以……細節我可以補給你。",
    "role": "desc",
@@ -430,7 +456,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#042": {
+  "The Breaking Point#044": {
    "src": "Oh, he did? Right, that makes sense. Well, you're right in that it's the source of the earthquakes, but there's more to it than that.",
    "dst": "噢，他說了？好，那說得通。嗯，你說它是地震的來源沒錯，但事情不只如此。",
    "role": "desc",
@@ -440,7 +466,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#043": {
+  "The Breaking Point#045": {
    "src": "You've seen the {p}, right? Heard of the Fracturing. From what I can tell, what happened to that region a thousand years ago is happening again, here and now.",
    "dst": "你見過 {p} 吧？聽過碎裂。就我所知，一千年前發生在那個區域的事，正在此時此地重演。",
    "role": "desc",
@@ -450,7 +476,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#044": {
+  "The Breaking Point#046": {
    "src": "Yes, exactly. It's been malfunctioning for a long time now, and it's starting to tear the canyon apart. That's where we come in.",
    "dst": "對，正是如此。它已經失常很久了，而且開始把峽谷撕開。那就是我們登場的地方。",
    "role": "desc",
@@ -460,7 +486,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#045": {
+  "The Breaking Point#047": {
    "src": "Well... To start with, it's an ancient thing. It was built long before even the doguns can remember, and they've lived in this region for thousands of years.",
    "dst": "嗯……首先，那是個古老的東西。它被造出來的時候，連 dogun 都還記不得，而他們已經在這個區域住了幾千年。",
    "role": "desc",
@@ -470,7 +496,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#046": {
+  "The Breaking Point#048": {
    "src": "According to Ineos, the doguns used to be responsible for keeping it calm, but ever since the dwarves came in and started their war, that knowledge has been lost to time.",
    "dst": "根據 Ineos 的說法，過去是由 dogun 負責讓它保持平靜，但自從矮人打進來、開啟那場戰爭之後，那份知識就隨時間失傳了。",
    "role": "desc",
@@ -480,7 +506,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#047": {
+  "The Breaking Point#049": {
    "src": "Which is... a problem! {p} has been malfunctioning for hundreds of years, and it's reaching its breaking point. If we don't stop it, it'll tear the canyon apart.",
    "dst": "而那……就是問題所在！{p} 已經失常了好幾百年，而且正逼近它的臨界點。我們要是不阻止它，它會把整道峽谷撕開。",
    "role": "desc",
@@ -490,7 +516,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#048": {
+  "The Breaking Point#050": {
    "src": "Oh? So you've traveled the canyon, then. Yeah, then you've seen how the canyon twists and changes.",
    "dst": "噢？所以你走過這道峽谷了。是啊，那你就見過峽谷是怎麼扭曲、變形的。",
    "role": "desc",
@@ -500,7 +526,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#049": {
+  "The Breaking Point#051": {
    "src": "It destroys peoples' homes, it traps them deep within the maze-like valleys... And, more recently, it has been tearing a hole into the void.",
    "dst": "它摧毀人們的家園，把他們困在迷宮般的谷地深處……而且最近，它還在虛空上撕出一個洞。",
    "role": "desc",
@@ -510,7 +536,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#050": {
+  "The Breaking Point#052": {
    "src": "This thing is ancient, and we don't know how it works. The best we can do is try to keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
    "dst": "這東西很古老，我們不知道它怎麼運作。我們最多只能設法阻止它到達臨界點，別讓峽谷落得跟 {p} 一樣的下場。",
    "role": "desc",
@@ -520,7 +546,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#051": {
+  "The Breaking Point#053": {
    "src": "This thing is ancient, and we don't know how it works. The best we can do is try and keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
    "dst": "這東西很古老，我們不知道它怎麼運作。我們最多只能設法阻止它到達臨界點，別讓峽谷落得跟 {p} 一樣的下場。",
    "role": "desc",
@@ -530,7 +556,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#052": {
+  "The Breaking Point#054": {
    "src": "So, Gavel's government contacted us in Corkus some time ago, requesting our help to deal with this threat.",
    "dst": "所以，Gavel 的政府前一陣子聯絡了我們 Corkus，請求協助處理這個威脅。",
    "role": "desc",
@@ -540,7 +566,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#053": {
+  "The Breaking Point#055": {
    "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified that Colossus long ago.",
    "dst": "我們的議會同意了，於是我們開始設計一台機器，想複製很久以前讓那尊 Colossus 平靜下來的 dogun 魔法。",
    "role": "desc",
@@ -550,7 +576,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#054": {
+  "The Breaking Point#056": {
    "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified the Colossus long ago.",
    "dst": "我們的議會同意了，於是我們開始設計一台機器，想複製很久以前讓那尊 Colossus 平靜下來的 dogun 魔法。",
    "role": "desc",
@@ -560,7 +586,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#055": {
+  "The Breaking Point#057": {
    "src": "We've had Ineos' help on that front. He and I have been working here in {p} to ensure things are running smoothly. Which... evidently, they are not.",
    "dst": "這方面我們一直有 Ineos 的協助。他和我在 {p} 這裡確保一切順利運作。而……顯然，並不順利。",
    "role": "desc",
@@ -570,7 +596,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#056": {
+  "The Breaking Point#058": {
    "src": "... We'll be fine! We're going to meet up with my husband at Corkus, and he'll know what to do. He always does.",
    "dst": "……我們不會有事的！我們要去 Corkus 跟我丈夫會合，他會知道該怎麼辦。他一向都知道。",
    "role": "desc",
@@ -580,7 +606,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#057": {
+  "The Breaking Point#059": {
    "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
    "dst": "我們在那裡的人有辦法弄到修理裝置所需的零件。這……這不是它第一次爆炸。我本來希望這次我們能讓它穩定下來，可是……",
    "role": "desc",
@@ -590,7 +616,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#058": {
+  "The Breaking Point#060": {
    "src": "But, hey! We have it under control. We're always able to repair it quickly enough to keep it running while the Colossus is active.",
    "dst": "不過，欸！情況在我們掌握之中。只要 Colossus 一活動，我們總是能夠及時修好它，讓它繼續運轉。",
    "role": "desc",
@@ -600,7 +626,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#059": {
+  "The Breaking Point#061": {
    "src": "Oh! Yeah. He's the one responsible for the design and production of this device. He's got a talent for designing these sorts of things, without him... well, we'd be in a much worse situation than we are now.",
    "dst": "噢！對。這個裝置的設計與製造都是他負責的。他對設計這類東西很有天分，沒有他……嗯，我們的處境會比現在糟糕得多。",
    "role": "desc",
@@ -610,7 +636,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#060": {
+  "The Breaking Point#062": {
    "src": "I'll be glad to see him again. It's been a while since I last had to travel to Corkus, and... Well, I'm confident he'll know what to do here. He always does.",
    "dst": "能再見到他我很高興。我上次去 Corkus 已經是好一陣子以前了，而且……嗯，我有信心他會知道該怎麼辦。他一向都知道。",
    "role": "desc",
@@ -620,7 +646,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#061": {
+  "The Breaking Point#063": {
    "src": "... Right! Hey, it looks like we're almost there. We'll be able to get this all sorted out, and we'll be back to {p} in no time.",
    "dst": "……好！欸，看來我們快到了。我們會把這一切解決掉，然後很快就回到 {p}。",
    "role": "desc",
@@ -630,7 +656,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#062": {
+  "The Breaking Point#064": {
    "src": "Find the contact in the factory at [-{~}, {~}, -{~}]",
    "dst": "到 [-{~1}, {~2}, -{~3}] 的工廠找到聯絡人",
    "role": "desc",
@@ -640,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#063": {
+  "The Breaking Point#065": {
    "src": "Alright, let's just head on in. My husband should be around here somewhere...",
    "dst": "好，我們直接進去吧。我丈夫應該就在這附近……",
    "role": "desc",
@@ -650,7 +676,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#064": {
+  "The Breaking Point#066": {
    "src": "Rhay, love! You're back already? Our next routine maitenance isn't for another- Wait, {u}? What are you doing here?",
    "dst": "Rhay，親愛的！你這麼快就回來了？我們下一次例行維護還要再等——等等，{u}？你怎麼會在這裡？",
    "role": "desc",
@@ -660,7 +686,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#065": {
+  "The Breaking Point#067": {
    "src": "I... You two know each other?",
    "dst": "我……你們兩個認識？",
    "role": "desc",
@@ -670,7 +696,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#066": {
+  "The Breaking Point#068": {
    "src": "Of course we do - they're the one who helped me with all the Factory stuff! How did you two meet?",
    "dst": "我們當然認識——工廠那整件事就是他們幫我的！你們兩個是怎麼認識的？",
    "role": "desc",
@@ -680,7 +706,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#067": {
+  "The Breaking Point#069": {
    "src": "They just showed up at {p} and agreed to help us with... - Why didn't you bring this up earlier?",
    "dst": "他們就這樣出現在 {p}，然後答應幫我們——你為什麼沒有早點提這件事？",
    "role": "desc",
@@ -690,7 +716,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#068": {
+  "The Breaking Point#070": {
    "src": "It must have...- right. Well, if anything that makes you even more qualified to help us out, I guess! I can't believe I didn't recognize you...?",
    "dst": "那一定是……好吧。嗯，真要說的話，這反而讓你更有資格幫我們了！我居然沒認出你來……？",
    "role": "desc",
@@ -700,7 +726,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#069": {
+  "The Breaking Point#071": {
    "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maitenance, isn't there?",
    "dst": "好，回到問題——你們兩個怎麼這麼快就來了？距離下一次例行維護不是還有幾天嗎？",
    "role": "desc",
@@ -710,7 +736,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#070": {
+  "The Breaking Point#072": {
    "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maintenance, isn't there?",
    "dst": "好，回到問題——你們兩個怎麼這麼快就來了？距離下一次例行維護不是還有幾天嗎？",
    "role": "desc",
@@ -720,7 +746,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#071": {
+  "The Breaking Point#073": {
    "src": "I did send you an invite! I gave it to... you know, that that one captain who ferries people around! But then you didn't show up to the wedding, so I guess it didn't reach you...",
    "dst": "我真的有寄邀請函給你！我交給了……你知道的，那個到處載人的船長！可是後來你沒來婚禮，所以我猜它沒送到你手上……",
    "role": "desc",
@@ -730,7 +756,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#072": {
+  "The Breaking Point#074": {
    "src": "Look, you're a hard person to reach! You've been all over the world at this point, including {p} of all places- speaking of, why are you two here?",
    "dst": "聽著，你這個人很難找！你到現在為止走遍了全世界，連 {p} 那種地方都去過——說到這個，你們兩個到底為什麼來這裡？",
    "role": "desc",
@@ -740,7 +766,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#073": {
+  "The Breaking Point#075": {
    "src": "!!!",
    "dst": "！！！",
    "role": "desc",
@@ -750,7 +776,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#074": {
+  "The Breaking Point#076": {
    "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an undetected seismic event, and the device was heavily damaged.",
    "dst": "對！對。剛剛有點分心了……呃，我們在 {p} 那邊遇上了問題。我們碰到一次沒被偵測到的地震事件，裝置嚴重受損。",
    "role": "desc",
@@ -760,7 +786,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#075": {
+  "The Breaking Point#077": {
    "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an unexpected seismic event, and the device was heavily damaged.",
    "dst": "對！對。剛剛有點分心了……呃，我們在 {p} 那邊遇上了問題。我們碰到一次沒被偵測到的地震事件，裝置嚴重受損。",
    "role": "desc",
@@ -770,7 +796,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#076": {
+  "The Breaking Point#078": {
    "src": "We should be able to finish most of the repairs with what materials we have there, but we're missing a Magmaflux Capacitor for the control panel.",
    "dst": "大部分的修理應該可以用那邊現有的材料完成，但我們缺一個給控制面板用的 Magmaflux 電容器。",
    "role": "desc",
@@ -780,7 +806,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#077": {
+  "The Breaking Point#079": {
    "src": "... Oh. That's going to be a problem. We haven't had an opportunity to make more parts yet - it hasn't been long enough since our last maitenance. So... I'm not sure what we-",
    "dst": "……噢。那會是個問題。我們還沒有機會做更多零件——距離上次維護還不夠久。所以……我不確定我們能——",
    "role": "desc",
@@ -790,7 +816,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#078": {
+  "The Breaking Point#080": {
    "src": "I overheard the conversation from over there- good to see you Rhay, by the way- But. We may not have any capacitors left up here, but I know where you can get one.",
    "dst": "我在那邊聽到你們的對話了——順帶一提，很高興見到你，Rhay——不過。我們這上面或許沒有多餘的電容器，但我知道哪裡弄得到。",
    "role": "desc",
@@ -800,7 +826,7 @@
    "speaker": "Nodise",
    "source": "wiki"
   },
-  "The Breaking Point#079": {
+  "The Breaking Point#081": {
    "src": "We repurposed this factory for our needs, but it was built here to process resources from the mines below.",
    "dst": "我們把這座工廠改成符合自己的需求，但它當初建在這裡，是為了處理底下礦坑的資源。",
    "role": "desc",
@@ -810,7 +836,7 @@
    "speaker": "Nodise",
    "source": "wiki"
   },
-  "The Breaking Point#080": {
+  "The Breaking Point#082": {
    "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
    "dst": "雖然已經停用了，但下面很可能還有採礦機兵——而其中一些比較強的型號，用的電路跟我們今天用的電容器非常相似。",
    "role": "desc",
@@ -820,7 +846,7 @@
    "speaker": "Nodise",
    "source": "wiki"
   },
-  "The Breaking Point#081": {
+  "The Breaking Point#083": {
    "src": "... You're right! If they're still down there, we should be able to scrap one of the bots and reuse its circuits. {u}, we can send you down into the mines to find what we need, while we prepare up here!",
    "dst": "……你說得對！如果它們還在下面，我們應該可以拆掉其中一具機器人，重複利用它的電路。{u}，我們可以把你送進礦坑找我們需要的東西，我們在上面準備！",
    "role": "desc",
@@ -830,7 +856,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#082": {
+  "The Breaking Point#084": {
    "src": "Alright... Good luck down there! Find the bot, destroy it, and bring the capacitor back up! Just step on the platform in the middle of the factory when you're ready.",
    "dst": "好……下面小心！找到那具機器人、把它摧毀，然後把電容器帶上來！準備好了就站到工廠中央那個平台上。",
    "role": "desc",
@@ -840,7 +866,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#083": {
+  "The Breaking Point#085": {
    "src": "Okay. That's fine, just make it quick! You know we can't waste any time here.",
    "dst": "好。沒問題，只是動作要快！你知道我們在這裡浪費不起任何時間。",
    "role": "desc",
@@ -850,7 +876,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#084": {
+  "The Breaking Point#086": {
    "src": "Retrieve the part from the cave at [-{~}, {~}, -{~}]",
    "dst": "到 [-{~1}, {~2}, -{~3}] 的洞穴取得零件",
    "role": "desc",
@@ -860,7 +886,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#085": {
+  "The Breaking Point#087": {
    "src": "Door opening in {~}...",
    "dst": "門將在 {~} 後開啟……",
    "role": "desc",
@@ -870,27 +896,27 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#086": {
-   "src": "{~}...",
-   "dst": "{~}……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 5",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Breaking Point#087": {
-   "src": "{~}...",
-   "dst": "{~}……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 5",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
   "The Breaking Point#088": {
+   "src": "{~}...",
+   "dst": "{~}……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#089": {
+   "src": "{~}...",
+   "dst": "{~}……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#090": {
    "src": "INTRUDER DETECTED. HOSTILE ENGAGEMENT AUTHORISED.",
    "dst": "偵測到入侵者。已授權敵對交戰。",
    "role": "desc",
@@ -900,7 +926,7 @@
    "speaker": "Mining Robots",
    "source": "wiki"
   },
-  "The Breaking Point#089": {
+  "The Breaking Point#091": {
    "src": "DEPLOYING SECONDARY ANTI-INTRUDER MEASURES.",
    "dst": "部署次級反入侵措施。",
    "role": "desc",
@@ -910,7 +936,7 @@
    "speaker": "Mining Robots",
    "source": "wiki"
   },
-  "The Breaking Point#090": {
+  "The Breaking Point#092": {
    "src": "DIVERTING ALL AVAILABLE UNITS TO HALT INTRUDER.",
    "dst": "調派所有可用單位攔截入侵者。",
    "role": "desc",
@@ -920,8 +946,8 @@
    "speaker": "Mining Robots",
    "source": "wiki"
   },
-  "The Breaking Point#091": {
-   "src": "THIS IS A RESTRICTED AREA. REQUESTING AUTHORISATION FOR USE OF LETHAL FORCE AGAINST INTRUDER.",
+  "The Breaking Point#093": {
+   "src": "THIS IS A RESTRICTED AREA. REQUESTING AUTHORISATION FOR USE OF LETHAL FORCE AGAINST INTRUDER...",
    "dst": "此為管制區域。請求授權對入侵者使用致命武力。",
    "role": "desc",
    "kind": "dialogue",
@@ -930,7 +956,7 @@
    "speaker": "The Mother Drill",
    "source": "wiki"
   },
-  "The Breaking Point#092": {
+  "The Breaking Point#094": {
    "src": "AUTHORISATION GRANTED.",
    "dst": "授權核准。",
    "role": "desc",
@@ -940,7 +966,7 @@
    "speaker": "The Mother Drill",
    "source": "wiki"
   },
-  "The Breaking Point#093": {
+  "The Breaking Point#095": {
    "src": "DIVERTING MINER MECHS TO HALT INTRUDER.",
    "dst": "調派採礦機兵攔截入侵者。",
    "role": "desc",
@@ -950,7 +976,7 @@
    "speaker": "The Mother Drill",
    "source": "wiki"
   },
-  "The Breaking Point#094": {
+  "The Breaking Point#096": {
    "src": "Return to the hot air balloon at [-{~}, {~}, -{~}] with the Magmaflux Capacitor.",
    "dst": "帶著 Magmaflux 電容器回到 [-{~1}, {~2}, -{~3}] 的熱氣球。",
    "role": "desc",
@@ -960,7 +986,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#095": {
+  "The Breaking Point#097": {
    "src": "Amazing work! I'll get us back to {p} with that capacitor as quick as possible.",
    "dst": "做得太好了！我會盡快帶著那個電容器把我們送回 {p}。",
    "role": "desc",
@@ -970,7 +996,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#096": {
+  "The Breaking Point#098": {
    "src": "Good to see you again, {u}. Good luck with the colossus. And Rhay... come home as soon as you can.",
    "dst": "很高興再見到你，{u}。祝你跟那尊 colossus 順利。還有 Rhay……盡快回家。",
    "role": "desc",
@@ -980,7 +1006,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#097": {
+  "The Breaking Point#099": {
    "src": "Fly safe, both of you.",
    "dst": "你們兩個，一路平安。",
    "role": "desc",
@@ -990,7 +1016,7 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Breaking Point#098": {
+  "The Breaking Point#100": {
    "src": "Return to General Elix with the Corkian Stabiliser",
    "dst": "帶著 Corkus 穩定器回去找 Elix 將軍",
    "role": "desc",
@@ -1000,7 +1026,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#099": {
+  "The Breaking Point#101": {
    "src": "Well... that went better than expected, really. I still can't believe you didn't tell me you already knew Maxie.",
    "dst": "嗯……說真的，那比預期順利。我還是不敢相信你居然沒告訴我你早就認識 Maxie。",
    "role": "desc",
@@ -1010,7 +1036,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#100": {
+  "The Breaking Point#102": {
    "src": "Oh, wow. It looks like they've managed to fix up the machine pretty well, all things considered. Just this part left to get it running again...",
    "dst": "噢，哇。考慮到情況，看來他們把機器修得相當不錯。只差這個零件就能讓它重新運轉了……",
    "role": "desc",
@@ -1020,7 +1046,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#101": {
+  "The Breaking Point#103": {
    "src": "Hmph. Rhay, there you are. Seeing as you've returned, I gather everything went smoothly at Corkus?",
    "dst": "哼。Rhay，你回來了。既然你回來了，我想 Corkus 那邊一切順利？",
    "role": "desc",
@@ -1030,7 +1056,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#102": {
+  "The Breaking Point#104": {
    "src": "Smoothly enough, General! We have what we need to repair the control panel. We'll be able to get the stabilizer running again!",
    "dst": "夠順利了，將軍！我們拿到修理控制面板所需要的東西。我們能讓穩定器重新運轉！",
    "role": "desc",
@@ -1040,7 +1066,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#103": {
+  "The Breaking Point#105": {
    "src": "Well?! What are you waiting for? Finish the repairs, we can't afford to lose any time with this damned Colossus looming over us.",
    "dst": "那還等什麼？！把修理完成，這該死的 Colossus 就懸在我們頭上，我們浪費不起任何時間。",
    "role": "desc",
@@ -1050,7 +1076,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#104": {
+  "The Breaking Point#106": {
    "src": "Yes, sir! Alright. {u}, just slot the capacitor in right... there. I'll make sure it runs smoothly.",
    "dst": "是，長官！好。{u}，把電容器插進……那裡就好。我會確保它順利運轉。",
    "role": "desc",
@@ -1060,7 +1086,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#105": {
+  "The Breaking Point#107": {
    "src": "There we are. Now, let's get this thing running again! Walder, keep an eye on stability! And... Rhay. You're confident this will work?",
    "dst": "好了。現在，讓這東西重新運轉起來吧！Walder，盯著穩定度！還有……Rhay。你有把握這會成功嗎？",
    "role": "desc",
@@ -1070,7 +1096,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#106": {
+  "The Breaking Point#108": {
    "src": "I-I'm sure. This is our last chance. We have to hold out hope that the stabilizer will hold.",
    "dst": "我、我確定。這是我們最後的機會。我們必須抱著希望，相信穩定器撐得住。",
    "role": "desc",
@@ -1080,7 +1106,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#107": {
+  "The Breaking Point#109": {
    "src": "Alright, alright... It's now or never... Hold, stabilizer, hold!",
    "dst": "好、好……成敗在此一舉……撐住，穩定器，撐住！",
    "role": "desc",
@@ -1090,7 +1116,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#108": {
+  "The Breaking Point#110": {
    "src": "... Oh. That's... that's it, then. It's over. We failed.",
    "dst": "……噢。那……那就這樣了。結束了。我們失敗了。",
    "role": "desc",
@@ -1100,7 +1126,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#109": {
+  "The Breaking Point#111": {
    "src": "I... am sorry, Rhay. I had... hoped it would work. In truth... I do not have... a plan... either.",
    "dst": "我……很抱歉，Rhay。我曾……希望它會成功。老實說……我也……沒有計畫。",
    "role": "desc",
@@ -1110,7 +1136,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#110": {
+  "The Breaking Point#112": {
    "src": "The Elders... would have known... what to do... But they are... long gone. Nothing but... ruins remain.",
    "dst": "長老們……會知道……該怎麼做……但他們……早已不在。留下的……只有廢墟。",
    "role": "desc",
@@ -1120,7 +1146,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#111": {
+  "The Breaking Point#113": {
    "src": "The Elders... They were... the greatest... of doguns. As old... as the oldest stones... and wise... as the earth itself...",
    "dst": "長老們……他們是……dogun 之中……最偉大的。老……如最古老的岩石……智慧……如大地本身……",
    "role": "desc",
@@ -1130,7 +1156,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#112": {
+  "The Breaking Point#114": {
    "src": "They were capable... of magic... beyond what any... of us could achieve. They alone... could calm our... Protector.",
    "dst": "他們能施展的……魔法……超出我們任何人……所能企及。唯有他們……能安撫我們的……守護者。",
    "role": "desc",
@@ -1140,7 +1166,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#113": {
+  "The Breaking Point#115": {
    "src": "They were... sealed away. Frozen in... the deepest... of ice. When the dwarves... slew Garaheth... the Elders... fell with him.",
    "dst": "他們被……封印了。凍在……最深的……冰裡。當矮人……殺死 Garaheth 時……長老們……也隨他一同倒下。",
    "role": "desc",
@@ -1150,7 +1176,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#114": {
+  "The Breaking Point#116": {
    "src": "Such atrocities... The war... My people... But it is not... to dwell on, now. There are... more important... things at hand.",
    "dst": "那樣的暴行……那場戰爭……我的族人……但現在……不是沉溺於此的時候。眼前……還有更重要的……事。",
    "role": "desc",
@@ -1160,7 +1186,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#115": {
+  "The Breaking Point#117": {
    "src": "I... I did not... know of this. My people... are free? How long... has it been... since I have seen... my home?",
    "dst": "我……我並不……知道這件事。我的族人……自由了？距離我上次見到……我的家鄉……已經多久了？",
    "role": "desc",
@@ -1170,7 +1196,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#116": {
+  "The Breaking Point#118": {
    "src": "You... Adventurer. We must... speak to my people. Our chieftain... will know... how we may free... the Elders.",
    "dst": "你……冒險者。我們必須……去見我的族人。我們的族長……會知道……我們該如何解放……長老們。",
    "role": "desc",
@@ -1180,8 +1206,8 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#117": {
-   "src": "If there is a chance... We have to take it. Ineos, {u}, take the balloon. We'll do whatever we can here. Now, go! There's no time to waste!",
+  "The Breaking Point#119": {
+   "src": "If there's a chance... We have to take it. Ineos, {u}, take the balloon. We'll do what we can here. Now, go! There's no time to waste!",
    "dst": "如果還有一絲機會……我們就得抓住。Ineos、{u}，搭氣球去。這裡我們會盡全力。快去！沒有時間可以浪費了！",
    "role": "desc",
    "kind": "dialogue",
@@ -1190,7 +1216,17 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#118": {
+  "The Breaking Point#120": {
+   "src": "It looks like Ozoth's body is trying to prevent you from getting the Everflame!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#121": {
    "src": "Meet Ineos and Rhay at the Hot Air Balloon at [{~}, {~}, -{~}].",
    "dst": "到 [{~1}, {~2}, -{~3}] 的熱氣球與 Ineos 和 Rhay 會合。",
    "role": "desc",
@@ -1200,7 +1236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#119": {
+  "The Breaking Point#122": {
    "src": "I have never... seen the Heights... from above. I wonder... if their glow... holds the same strength... it does from below...",
    "dst": "我從未……從空中……看過 Heights。不知道……它們的光……從上面看……是否還有同樣的力量……",
    "role": "desc",
@@ -1210,7 +1246,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#120": {
+  "The Breaking Point#123": {
    "src": "I only hope... the Elders... are not gone... for good. We greatly need... their wisdom.",
    "dst": "我只希望……長老們……不是永遠……消失了。我們非常需要……他們的智慧。",
    "role": "desc",
@@ -1220,7 +1256,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#121": {
+  "The Breaking Point#124": {
    "src": "Ah... I believe us... to be landing...",
    "dst": "啊……我想我們……要降落了……",
    "role": "desc",
@@ -1230,7 +1266,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#122": {
+  "The Breaking Point#125": {
    "src": "Travel to {p} with Ineos via the Hot Air Balloon at [{~}, {~}, -{~}]",
    "dst": "與 Ineos 一同搭乘 [{~1}, {~2}, -{~3}] 的熱氣球前往 {p}",
    "role": "desc",
@@ -1240,7 +1276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#123": {
+  "The Breaking Point#126": {
    "src": "... Hello. What a... strange sight... to see you landing... at our village... in such a contraption...",
    "dst": "……你好。真是……奇特的景象……看見你們乘著這樣的裝置……降落在我們的村子……",
    "role": "desc",
@@ -1250,7 +1286,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#124": {
+  "The Breaking Point#127": {
    "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
    "dst": "而且……那是……Ineos 嗎？我們以為……矮人……早把你化成瓦礫了……",
    "role": "desc",
@@ -1260,7 +1296,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#125": {
+  "The Breaking Point#128": {
    "src": "I escaped... It is a long... story, Korzim. We do not... have time. Where is... your father?",
    "dst": "我逃出來了……說來話長……Korzim。我們沒有……時間。你父親……在哪裡？",
    "role": "desc",
@@ -1270,7 +1306,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#126": {
+  "The Breaking Point#129": {
    "src": "He is... below. They are... freeing the frozen... in New Taloka. Why do you... wish to speak... with him?",
    "dst": "他在……下面。他們正在……解放那些被冰封的……在 New Taloka。你為什麼……想跟他……談話？",
    "role": "desc",
@@ -1280,7 +1316,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#127": {
+  "The Breaking Point#130": {
    "src": "The Protector... is angered. We must find... the Elders. They will know... how to calm it.",
    "dst": "守護者……被激怒了。我們必須找到……長老們。他們會知道……如何安撫它。",
    "role": "desc",
@@ -1290,7 +1326,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#128": {
+  "The Breaking Point#131": {
    "src": "The... Protector... I understand. I will... bring you two... to him. Sidio... Raetin... I leave you two... in charge.",
    "dst": "守……護者……我明白了。我會……帶你們兩位……去見他。Sidio……Raetin……這裡就交給你們兩個……主持。",
    "role": "desc",
@@ -1300,7 +1336,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#129": {
+  "The Breaking Point#132": {
    "src": "Now, let us travel... through flame... and through stone...",
    "dst": "那麼，讓我們……啟程。穿越烈焰……穿越岩石……",
    "role": "desc",
@@ -1310,7 +1346,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#130": {
+  "The Breaking Point#133": {
    "src": "Speak to {p}'s King and the Dogun Chieftain at New Taloka at [{~}, {~}, -{~}]",
    "dst": "到 New Taloka [{~1}, {~2}, -{~3}] 與 {p} 的國王和 dogun 族長談話",
    "role": "desc",
@@ -1320,7 +1356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#131": {
+  "The Breaking Point#134": {
    "src": "We are... here. Taloka was... one of the first to fall... in the war. We have been... working with the dwarves... to restore it.",
    "dst": "我們……到了。Taloka 是……戰爭中最早陷落的地方之一。我們一直……和矮人合作……重建它。",
    "role": "desc",
@@ -1330,7 +1366,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#132": {
+  "The Breaking Point#135": {
    "src": "Are we all ready?",
    "dst": "大家都準備好了嗎？",
    "role": "desc",
@@ -1340,7 +1376,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#133": {
+  "The Breaking Point#136": {
    "src": "Ready...",
    "dst": "準備好了……",
    "role": "desc",
@@ -1350,7 +1386,7 @@
    "speaker": "Edac",
    "source": "wiki"
   },
-  "The Breaking Point#134": {
+  "The Breaking Point#137": {
    "src": "Ready!",
    "dst": "準備好了！",
    "role": "desc",
@@ -1360,7 +1396,7 @@
    "speaker": "Dwarven Technician",
    "source": "wiki"
   },
-  "The Breaking Point#135": {
+  "The Breaking Point#138": {
    "src": "Very well. Begin on three. One... Two... Three!",
    "dst": "很好。數到三開始。一……二……三！",
    "role": "desc",
@@ -1370,7 +1406,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#136": {
+  "The Breaking Point#139": {
    "src": "Beginning reheating cycle! Stand back from the subject.",
    "dst": "開始加熱循環！請退離對象。",
    "role": "desc",
@@ -1380,7 +1416,7 @@
    "speaker": "Dwarven Technician",
    "source": "wiki"
   },
-  "The Breaking Point#137": {
+  "The Breaking Point#140": {
    "src": "... Where... am... I? How long... has it... been...?",
    "dst": "……我……在……哪裡？過了……多久……了……？",
    "role": "desc",
@@ -1390,7 +1426,7 @@
    "speaker": "Unsealed Dogun",
    "source": "wiki"
   },
-  "The Breaking Point#138": {
+  "The Breaking Point#141": {
    "src": "...Dwarf... You... you froze me... I will... I will...!",
    "dst": "……矮人……你……是你把我凍起來的……我要……我要……！",
    "role": "desc",
@@ -1400,7 +1436,7 @@
    "speaker": "Unsealed Dogun",
    "source": "wiki"
   },
-  "The Breaking Point#139": {
+  "The Breaking Point#142": {
    "src": "Calm yourself... Delg. Our war... has ended. We are... freed. You have been... freed.",
    "dst": "冷靜下來……Delg。我們的戰爭……已經結束了。我們……自由了。你……也自由了。",
    "role": "desc",
@@ -1410,7 +1446,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#140": {
+  "The Breaking Point#143": {
    "src": "... Freedom? Hundreds... of years... of war... And we are... free?",
    "dst": "……自由？幾百年的……戰爭……而我們……自由了？",
    "role": "desc",
@@ -1420,7 +1456,7 @@
    "speaker": "Dogun Delg",
    "source": "wiki"
   },
-  "The Breaking Point#141": {
+  "The Breaking Point#144": {
    "src": "Yes. We are free... to roam our home... once more. Edac... Escort Delg... and help him re-adjust... to the heights.",
    "dst": "是的。我們自由了……能再一次……走在自己的家園上。Edac……護送 Delg……幫他重新適應……Heights。",
    "role": "desc",
@@ -1430,7 +1466,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#142": {
+  "The Breaking Point#145": {
    "src": "Ah, {u}! It's good to see you again. We haven't seen you around here since... since the end of it.",
    "dst": "啊，{u}！很高興再見到你。自從……自從那件事結束之後，我們就沒在這一帶見過你了。",
    "role": "desc",
@@ -1440,7 +1476,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#143": {
+  "The Breaking Point#146": {
    "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed bretheren... have been returned to life.",
    "dst": "是的。這幾個星期……我們一直……在忙。Taloka 很快……就會再次矗立。而我們許多……被封印的同胞……也已經重返人世。",
    "role": "desc",
@@ -1450,7 +1486,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#144": {
+  "The Breaking Point#147": {
    "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed brethren... have been returned to life.",
    "dst": "是的。這幾個星期……我們一直……在忙。Taloka 很快……就會再次矗立。而我們許多……被封印的同胞……也已經重返人世。",
    "role": "desc",
@@ -1460,7 +1496,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#145": {
+  "The Breaking Point#148": {
    "src": "[-{~} Magmaflux Capacitor]",
    "dst": "[-{~} 熔流電容器]",
    "role": "desc",
@@ -1470,7 +1506,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Breaking Point#146": {
+  "The Breaking Point#149": {
    "src": "You use the grappling hook to swing back to the King in a dazzling feat of trapeze consisting of mid-air flips and acrobatic flourishes.",
    "dst": "你用 Grappling Hook 盪回國王身邊，在半空中翻騰、秀出各種特技花招，上演了一場令人眼花撩亂的空中飛人絕技。",
    "role": "desc",
@@ -1480,7 +1516,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Breaking Point#147": {
+  "The Breaking Point#150": {
    "src": "Ah, but we can talk more about that later. Tell me, what brings you here today? Is there something you need from us?",
    "dst": "啊，不過那些我們可以晚點再聊。告訴我，今天是什麼風把你吹來的？有什麼需要我們幫忙的嗎？",
    "role": "desc",
@@ -1490,7 +1526,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#148": {
+  "The Breaking Point#151": {
    "src": "The situtation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
    "dst": "情勢……危急。偉大的守護者……被獨自留下……太久了。我們需要……長老們的……智慧。你知道……他們被封印在……哪裡嗎？",
    "role": "desc",
@@ -1500,7 +1536,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#149": {
+  "The Breaking Point#152": {
    "src": "The situation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
    "dst": "情勢……危急。偉大的守護者……被獨自留下……太久了。我們需要……長老們的……智慧。你知道……他們被封印在……哪裡嗎？",
    "role": "desc",
@@ -1510,7 +1546,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#150": {
+  "The Breaking Point#153": {
    "src": "The Elders?! Yes, we know where they are sealed. However, retrieving them is no simple task. It would take us years to break past the defenses, and we have countless other doguns to release first.",
    "dst": "長老們？！知道，我們知道他們被封印在哪裡。不過要把他們取出來可不簡單。要突破那些防禦得花上好幾年，而且我們還有數不清的其他 dogun 要先釋放。",
    "role": "desc",
@@ -1520,7 +1556,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#151": {
+  "The Breaking Point#154": {
    "src": "The Protector?!",
    "dst": "守護者？！",
    "role": "desc",
@@ -1530,7 +1566,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#152": {
+  "The Breaking Point#155": {
    "src": "Ineos... I want our Elders free... as much as you do. But our Protector... has stood firm... for hundreds of years. It can stand... for another-",
    "dst": "Ineos……我跟你一樣……希望我們的長老重獲自由。但我們的守護者……已經屹立了……好幾百年。它還可以再撐——",
    "role": "desc",
@@ -1540,7 +1576,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#153": {
+  "The Breaking Point#156": {
    "src": "No... Has it truly... fallen this far..?",
    "dst": "不……真的……已經惡化到這種地步了嗎……？",
    "role": "desc",
@@ -1550,7 +1586,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#154": {
+  "The Breaking Point#157": {
    "src": "... That was your Protector? How powerful is it, if it can reach this far?",
    "dst": "……那是你們的守護者？它要是能影響到這麼遠，究竟有多強大？",
    "role": "desc",
@@ -1560,7 +1596,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#155": {
+  "The Breaking Point#158": {
    "src": "If the Protector... could shake even the Heights... It could destroy... half of this province.",
    "dst": "如果守護者……連 Heights 都能撼動……它足以摧毀……這個行省的一半。",
    "role": "desc",
@@ -1570,7 +1606,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#156": {
+  "The Breaking Point#159": {
    "src": "Draani... the Elders must be freed. They alone... would know how to calm it.",
    "dst": "Draani……必須解放長老們。唯有他們……知道該如何安撫它。",
    "role": "desc",
@@ -1580,7 +1616,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#157": {
+  "The Breaking Point#160": {
    "src": "Yes... I understand. Very well. {u}, I will take you to the Elders' vault. I hold the keys to open the way forward. Paku, gather your people. See if anyone has alternative solutions.",
    "dst": "好……我明白了。那就這樣。{u}，我帶你去長老們的地窖。開啟前路的鑰匙在我手上。Paku，召集你的族人。看看有沒有人有其他辦法。",
    "role": "desc",
@@ -1590,7 +1626,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#158": {
+  "The Breaking Point#161": {
    "src": "We will... search for one. I cannot... promise that one exists.",
    "dst": "我們會……去找。但我不能……保證真的有。",
    "role": "desc",
@@ -1600,7 +1636,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#159": {
+  "The Breaking Point#162": {
    "src": "{u}, let us go. It sounds as if we have very little time to waste.",
    "dst": "{u}，我們走。聽起來我們沒有多少時間可以浪費了。",
    "role": "desc",
@@ -1610,7 +1646,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#160": {
+  "The Breaking Point#163": {
    "src": "I will make preparations, and meet you at the Vault of Ice.",
    "dst": "我去做準備，我們在冰之地窖碰面。",
    "role": "desc",
@@ -1620,7 +1656,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#161": {
+  "The Breaking Point#164": {
    "src": "Enter the Dogun Vault within the lower Freezing Heights at [{~}, {~}, -{~}]",
    "dst": "進入 [{~1}, {~2}, -{~3}] 下層 Freezing Heights 裡的 dogun 地窖",
    "role": "desc",
@@ -1630,7 +1666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#162": {
+  "The Breaking Point#165": {
    "src": "... Ahem. This is the entrance, then. One of our most closely guarded secrets... I was hoping not to have to confront this reminder for a while yet...",
    "dst": "……咳。那麼，這就是入口了。我們守得最嚴的秘密之一……我本來還希望能再晚一點才面對這個提醒……",
    "role": "desc",
@@ -1640,7 +1676,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#163": {
+  "The Breaking Point#166": {
    "src": "But it seems we don't have much choice now. I have the keys, let's go inside.",
    "dst": "但看來我們現在沒什麼選擇了。鑰匙在我這裡，我們進去吧。",
    "role": "desc",
@@ -1650,7 +1686,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#164": {
+  "The Breaking Point#167": {
    "src": "Unlock the Dogun Vault to find the Elders.",
    "dst": "解鎖 dogun 地窖，找到長老們。",
    "role": "desc",
@@ -1660,7 +1696,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#165": {
+  "The Breaking Point#168": {
    "src": "Rather cold in here, isn't it? A vault carved into a drake's True Ice... I suppose my ancestors hoped to seal these doguns in here forever. I'll be glad to disappoint them.",
    "dst": "這裡挺冷的，不是嗎？一座鑿進亞龍真冰裡的地窖……我猜我的祖先希望把這些 dogun 永遠封在這裡。能讓他們失望，我很樂意。",
    "role": "desc",
@@ -1670,7 +1706,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#166": {
+  "The Breaking Point#169": {
    "src": "Quickly, then, let us proceed to the primary door. I pray the Elders will be responsive to our situation with the Colossus.",
    "dst": "那麼，我們快點前進到主閘門。我祈禱長老們會對我們 Colossus 的狀況有所回應。",
    "role": "desc",
@@ -1680,7 +1716,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#167": {
+  "The Breaking Point#170": {
    "src": "In any case... Let me see if I can open this second gate. It should be as simple as...",
    "dst": "無論如何……讓我看看能不能打開這第二道閘門。應該只要這樣就……",
    "role": "desc",
@@ -1690,7 +1726,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#168": {
+  "The Breaking Point#171": {
    "src": "Hm. That... didn't work. This magic is old, and I have never took the time to learn it properly... Alright. We have alternatives.",
    "dst": "唔。那……沒用。這道魔法很古老，而我從來沒花時間好好學過……好吧。我們還有別的辦法。",
    "role": "desc",
@@ -1700,7 +1736,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#169": {
+  "The Breaking Point#172": {
    "src": "If my memory serves correctly, there should be a manual override on the other side of this chasm.",
    "dst": "如果我沒記錯，這道深淵的另一頭應該有個手動的緊急開關。",
    "role": "desc",
@@ -1710,7 +1746,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#170": {
+  "The Breaking Point#173": {
    "src": "Hm. That... didn't work. This magic is old, and I never took the time to learn it properly... Alright. We have alternatives.",
    "dst": "唔。那……沒用。這道魔法很古老，而我從來沒花時間好好學過……好吧。我們還有別的辦法。",
    "role": "desc",
@@ -1720,7 +1756,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#171": {
+  "The Breaking Point#174": {
    "src": "If my memory serves correctly, there should be a manual override on the other end of this chasm.",
    "dst": "如果我沒記錯，這道深淵的另一頭應該有個手動的緊急開關。",
    "role": "desc",
@@ -1730,7 +1766,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#172": {
+  "The Breaking Point#175": {
    "src": "[+{~} Trusty Grappling Hook]",
    "dst": "[+{~} 可靠的 Grappling Hook]",
    "role": "desc",
@@ -1740,7 +1776,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Breaking Point#173": {
+  "The Breaking Point#176": {
    "src": "The issue is that treacherous pool of lava on the way... and I don't think my knees are up to the task of jumping over it all.",
    "dst": "問題是路上那攤要命的岩漿……而且我這雙膝蓋大概沒辦法從上面跳過去。",
    "role": "desc",
@@ -1750,8 +1786,8 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#174": {
-   "src": "I would usually never do this, but these are desperate times. Here, take my Trusty Grappling Hook. It should help you get over to the switch.",
+  "The Breaking Point#177": {
+   "src": "I would never usually do this, but these are desperate times. Here, take my Trusty Grappling Hook. It should help you get over to the switch.",
    "dst": "我平常絕不會這麼做，但非常時期。來，拿去，我那把可靠的 Grappling Hook。它應該能幫你過去按下開關。",
    "role": "desc",
    "kind": "dialogue",
@@ -1760,7 +1796,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#175": {
+  "The Breaking Point#178": {
    "src": "It has limitations, though. It will only be able to latch onto those blue rocks on the walls - and I'll be taking it back once you're finished, thank you very much!",
    "dst": "不過它有限制。它只能勾住牆上那些藍色的岩石——而且等你用完，我可是要收回來的，多謝！",
    "role": "desc",
@@ -1770,7 +1806,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#176": {
+  "The Breaking Point#179": {
    "src": "Hey, {u}! Looks like you're doing good so far, but if you get stuck remember you can jump and then grapple mid-air, that might help on some of those trickier platforms!",
    "dst": "嘿，{u}！看來你到目前為止都做得不錯，不過要是卡住了，記得你可以先跳再在空中勾——碰到比較刁鑽的平台時那招或許有用！",
    "role": "desc",
@@ -1780,7 +1816,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#177": {
+  "The Breaking Point#180": {
    "src": "Looks like that unlocked it, {u}! Get yourself back over here and I'll open the door.",
    "dst": "看來那把它解鎖了，{u}！回到這邊來，我把門打開。",
    "role": "desc",
@@ -1790,7 +1826,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#178": {
+  "The Breaking Point#181": {
    "src": "There we are! Excellent work. You used that hook like a true expert! Ah, reminds me of the time-...",
    "dst": "成了！做得漂亮。你用那把鉤子的樣子簡直像個老手！啊，讓我想起當年——",
    "role": "desc",
@@ -1800,7 +1836,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#179": {
+  "The Breaking Point#182": {
    "src": "...Ahem. Excellent work, indeed. With the override activated, I should be able to do the rest of the work to open the gate.",
    "dst": "……咳。總之，做得非常好。緊急開關啟動了，剩下開門的工作我應該做得來。",
    "role": "desc",
@@ -1810,7 +1846,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#180": {
+  "The Breaking Point#183": {
    "src": "First, though, I'll be having that grappling hook back! Think of what could happen if you had free reign of that all over.",
    "dst": "不過首先，那把 Grappling Hook 我要收回來了！你想想看，要是讓你到處隨便用會出什麼事。",
    "role": "desc",
@@ -1820,7 +1856,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#181": {
+  "The Breaking Point#184": {
    "src": "And so... I believe we have gone as far as we can.",
    "dst": "那麼……我想我們能走到的就到這裡了。",
    "role": "desc",
@@ -1830,7 +1866,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#182": {
+  "The Breaking Point#185": {
    "src": "This is True Ice, {u}. It has scarred this part of the Heights for centuries, ever since it was created by an ice dragon in my ancestors' conquest.",
    "dst": "這是真冰，{u}。自從我祖先那場征戰中一頭冰龍把它造出來以來，它就在 Heights 的這一角留下了幾個世紀的傷疤。",
    "role": "desc",
@@ -1840,7 +1876,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#183": {
+  "The Breaking Point#186": {
    "src": "It cannot be melted or burned through by any means. It is why this location was chosen for their tomb. I'm afraid there is nothing more we can do.",
    "dst": "它無法用任何方式融化或燒穿。這正是這個地點被選為他們墳墓的原因。恐怕我們沒有別的辦法了。",
    "role": "desc",
@@ -1850,7 +1886,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#184": {
+  "The Breaking Point#187": {
    "src": "At the end of the war, I imagine.",
    "dst": "我想是在戰爭結束的時候。",
    "role": "desc",
@@ -1860,7 +1896,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#185": {
+  "The Breaking Point#188": {
    "src": "As the final dogun settlements fell, and as Garaheth was slain for the first time, my ancestors must have sealed them deep in this ice.",
    "dst": "當最後幾座 dogun 聚落陷落、Garaheth 第一次被殺死時，我的祖先一定是把他們封進了這片冰的深處。",
    "role": "desc",
@@ -1870,7 +1906,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#186": {
+  "The Breaking Point#189": {
    "src": "The... actions of the Dwarves after winning the war are well documented. I would not be surprised if our accounts describe this imprisonment as a great victory.",
    "dst": "矮人在贏得戰爭之後……做了什麼，記載得很清楚。如果我們的史料把這場囚禁描述成一場偉大的勝利，我一點也不會意外。",
    "role": "desc",
@@ -1880,7 +1916,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#187": {
+  "The Breaking Point#190": {
    "src": "The Dwarves, of course. Who else?",
    "dst": "當然是矮人。還會有誰？",
    "role": "desc",
@@ -1890,7 +1926,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#188": {
+  "The Breaking Point#191": {
    "src": "I believe it was General Algard of the Dwarven army to order the Elders' imprisonments.",
    "dst": "我相信下令囚禁長老們的，是矮人軍隊的 Algard 將軍。",
    "role": "desc",
@@ -1900,7 +1936,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#189": {
+  "The Breaking Point#192": {
    "src": "He was lauded as a hero, naturally. Now... we must reap the consequences of such a decision.",
    "dst": "他理所當然被歌頌為英雄。而如今……我們必須承受那個決定的後果。",
    "role": "desc",
@@ -1910,7 +1946,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#190": {
+  "The Breaking Point#193": {
    "src": "True Ice is a material that cannot be melted or burned through by any means. Not even dogun magic has been able to make a dent.",
    "dst": "真冰是一種無法以任何方式融化或燒穿的材料。連 dogun 魔法都無法在上面留下一道刻痕。",
    "role": "desc",
@@ -1920,7 +1956,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#191": {
+  "The Breaking Point#194": {
    "src": "... I imagine why this location was chosen to hold the elders. A prison from which they would never be able to escape.",
    "dst": "……我大概能想像為什麼會選這個地點來關押長老。一座他們永遠無法逃脫的牢獄。",
    "role": "desc",
@@ -1930,7 +1966,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#192": {
+  "The Breaking Point#195": {
    "src": "It is known for it to form naturally under extreme conditions... But the ice here is nowhere near natural.",
    "dst": "據說它在極端條件下會自然形成……但這裡的冰一點也不自然。",
    "role": "desc",
@@ -1940,7 +1976,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#193": {
+  "The Breaking Point#196": {
    "src": "It was formed by an Ice Drake's Breath partway through the war- and, well, as you can see, it has remained here ever since.",
    "dst": "它是戰爭進行到一半時，由一頭冰亞龍的吐息造成的——然後，嗯，如你所見，它就一直留在這裡。",
    "role": "desc",
@@ -1950,7 +1986,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#194": {
+  "The Breaking Point#197": {
    "src": "Just another remnant of our past mistakes, I suppose...",
    "dst": "我想，不過是我們過去那些錯誤留下的又一道殘跡罷了……",
    "role": "desc",
@@ -1960,7 +1996,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#195": {
+  "The Breaking Point#198": {
    "src": "Ahem. In any case- as I said, True Ice is impossible to break through, even with the most scorching flames.",
    "dst": "咳。總之——就像我說的，真冰是不可能突破的，就算用最灼熱的火焰也一樣。",
    "role": "desc",
@@ -1970,7 +2006,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#196": {
+  "The Breaking Point#199": {
    "src": "I... I suppose that a dragon's breath might be able to melt it. That logic does make sense.",
    "dst": "我……我想龍的吐息或許能融化它。這個邏輯確實說得通。",
    "role": "desc",
@@ -1980,7 +2016,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#197": {
+  "The Breaking Point#200": {
    "src": "We have little knowledge of what dragons were like, though. As they went extinct, that information became... useless. And so, it was lost.",
    "dst": "不過我們對龍是什麼樣子所知甚少。牠們絕種之後，那些知識就變得……沒有用處。於是，它失傳了。",
    "role": "desc",
@@ -1990,7 +2026,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#198": {
+  "The Breaking Point#201": {
    "src": "If anyone would know more about dragons, it would be the doguns.",
    "dst": "如果有誰會更了解龍，那應該是 dogun。",
    "role": "desc",
@@ -2000,7 +2036,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#199": {
+  "The Breaking Point#202": {
    "src": "But none of that matters. All the dragons are gone, after all. We still have no options.",
    "dst": "但那些都不重要了。畢竟所有的龍都不在了。我們還是沒有辦法。",
    "role": "desc",
@@ -2010,7 +2046,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#200": {
+  "The Breaking Point#203": {
    "src": "Why, they died out. As Gavellian civilizations grew in size, the ferocity and size of a dragon was simply too much of a threat.",
    "dst": "為什麼？牠們滅絕了。隨著 Gavel 的文明規模擴大，龍的兇猛與體型實在是太大的威脅。",
    "role": "desc",
@@ -2020,7 +2056,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#201": {
+  "The Breaking Point#204": {
    "src": "Some were hunted. Some died of starvation. Eggs were taken from nests and shattered over boulders for the birds to feed on.",
    "dst": "有些被獵殺。有些餓死。卵被從巢裡取走，砸碎在巨石上餵鳥。",
    "role": "desc",
@@ -2030,7 +2066,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#202": {
+  "The Breaking Point#205": {
    "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
    "dst": "如今剩下的只有幼龍——牠們曾經偉大的祖先所留下的迴響，噴出的火焰勉強只能燎焦你的盔甲。",
    "role": "desc",
@@ -2040,7 +2076,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#203": {
+  "The Breaking Point#206": {
    "src": "You- what? Near {p}?",
    "dst": "你——什麼？在 {p} 附近？",
    "role": "desc",
@@ -2050,7 +2086,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#204": {
+  "The Breaking Point#207": {
    "src": "A living dragon... You've done quite a lot, haven't you? Stopped a war, moved a dragon...",
    "dst": "一頭活著的龍……你做過的事還真不少，是吧？阻止了一場戰爭，還挪動了一頭龍……",
    "role": "desc",
@@ -2060,7 +2096,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#205": {
+  "The Breaking Point#208": {
    "src": "Well... if there is a living dragon at {p}... Then we still have hope! {u}, we must ask for its help.",
    "dst": "嗯……如果 {p} 真有一頭活著的龍……那我們還有希望！{u}，我們必須去請求牠的協助。",
    "role": "desc",
@@ -2070,7 +2106,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#206": {
+  "The Breaking Point#209": {
    "src": "Let us return to the others. I asked them to wait outside of {p}... perhaps they'll be able to confirm that a dragon's breath would do the job.",
    "dst": "我們回去找其他人吧。我請他們在 {p} 外面等……或許他們能確認龍的吐息真的辦得到。",
    "role": "desc",
@@ -2080,7 +2116,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#207": {
+  "The Breaking Point#210": {
    "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
    "dst": "沒錯。就是戰爭期間站在他們那邊的火龍。你應該見過 Freezing Heights 外面那具骸骨吧？",
    "role": "desc",
@@ -2090,7 +2126,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#208": {
+  "The Breaking Point#211": {
    "src": "Yes, well... the Dwarves needed a counter to the sheer power of a fire dragon in battle, and so they resorted to enslaving dragons and drakes of other elements.",
    "dst": "是的，嗯……矮人需要某種東西來抗衡火龍在戰場上的純粹威力，於是他們訴諸奴役其他屬性的龍與亞龍。",
    "role": "desc",
@@ -2100,7 +2136,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#209": {
+  "The Breaking Point#212": {
    "src": "Like the Ice Drake that created this vault, and encased the Elders in the truest of ice.",
    "dst": "就像造出這座地窖、把長老封進最真的冰裡的那頭冰亞龍。",
    "role": "desc",
@@ -2110,7 +2146,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#210": {
+  "The Breaking Point#213": {
    "src": "... Well, there was this excellent novel of about one of those creatures from the Shiar, who had to travel to the Heights with this ring he had inherited-",
    "dst": "……嗯，有一本很棒的小說寫的就是 Shiar 來的那種生物，牠帶著一枚繼承來的戒指，得一路旅行到 Heights——",
    "role": "desc",
@@ -2120,7 +2156,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#211": {
+  "The Breaking Point#214": {
    "src": "But I confess, these questions seem almost irrelevant. We have a more pressing issue at hand, {u}.",
    "dst": "不過我承認，這些問題現在幾乎無關緊要。我們眼前有更急迫的問題，{u}。",
    "role": "desc",
@@ -2130,7 +2166,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#212": {
+  "The Breaking Point#215": {
    "src": "This ice is harder than obsidian itself. The crystals which form the material are bonded by ancient magic.",
    "dst": "這片冰比黑曜石本身還硬。構成這種材料的晶體是由古老的魔法結合起來的。",
    "role": "desc",
@@ -2140,7 +2176,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#213": {
+  "The Breaking Point#216": {
    "src": "Shattering it with such tools isn't an option. Perhaps there is a weapon that could break through, somewhere deep in our armory- after all, this vault had to be carved somehow...",
    "dst": "用那種工具把它敲碎並不可行。或許我們軍械庫的深處有某種能突破它的武器——畢竟這座地窖總得用什麼東西鑿出來……",
    "role": "desc",
@@ -2150,7 +2186,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#214": {
+  "The Breaking Point#217": {
    "src": "However, given the circumstances, I don't think we have the time to search for it. Even if we started now, our armory is enormous. It would take weeks to find what we need.",
    "dst": "不過考慮到現在的情況，我不認為我們有時間去找。就算現在開始，我們的軍械庫也大得驚人。要找到需要的東西得花上好幾個星期。",
    "role": "desc",
@@ -2160,7 +2196,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#215": {
+  "The Breaking Point#218": {
    "src": "The lava of the Heights is nothing more than molten rock. Just a remnant of the shaping of these caverns.",
    "dst": "Heights 的岩漿不過是熔化的岩石。只是這些洞窟成形時留下的殘餘。",
    "role": "desc",
@@ -2170,7 +2206,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#216": {
+  "The Breaking Point#219": {
    "src": "It's not nearly hot enough to melt True Ice. If it could, the Freezing Heights would have faded long ago.",
    "dst": "它遠遠不夠熱，融不了真冰。要是可以，Freezing Heights 早就不存在了。",
    "role": "desc",
@@ -2180,7 +2216,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#217": {
+  "The Breaking Point#220": {
    "src": "My... uhm... green is nice, I suppose? Though perhaps not very Dwarven...",
    "dst": "我的……呃……綠色不錯吧，我想？雖然可能不太有矮人的味道……",
    "role": "desc",
@@ -2190,7 +2226,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#218": {
+  "The Breaking Point#221": {
    "src": "Red, then. Or orange! ...Although my bedsheets are the most wonderful shade of navy blue...",
    "dst": "那就紅色吧。或者橘色！……不過話說回來，我的床單是最美的那種海軍藍……",
    "role": "desc",
@@ -2200,7 +2236,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#219": {
+  "The Breaking Point#222": {
    "src": "Breakfast... I had some eggs, I suppose. Though, I had no idea that breakfast would be my last, did I..?",
    "dst": "早餐……我大概吃了幾顆蛋吧。不過話說回來，我當時可不曉得那會是我最後一頓早餐，對吧？",
    "role": "desc",
@@ -2210,7 +2246,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#220": {
+  "The Breaking Point#223": {
    "src": "Hm... Had I known, maybe I would have chosen differently. Maybe I would have-... nevermind.",
    "dst": "唔……早知道的話，我或許會選點別的。或許我會——算了。",
    "role": "desc",
@@ -2220,7 +2256,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#221": {
+  "The Breaking Point#224": {
    "src": "Regroup at outside {p} at [{~}, {~}, -{~}] to figure out how to free the Elders.",
    "dst": "在 [{~1}, {~2}, -{~3}] 的 {p} 外集合，想辦法解放長老們。",
    "role": "desc",
@@ -2230,7 +2266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#222": {
+  "The Breaking Point#225": {
    "src": "... so this is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
    "dst": "……我們的處境就是這樣。Paku，你怎麼看？這樣的計畫行得通嗎？",
    "role": "desc",
@@ -2240,7 +2276,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#223": {
+  "The Breaking Point#226": {
    "src": "... so that is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
    "dst": "……我們的處境就是這樣。Paku，你怎麼看？這樣的計畫行得通嗎？",
    "role": "desc",
@@ -2250,7 +2286,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#224": {
+  "The Breaking Point#227": {
    "src": "Hm... You may be correct... Draani. The magic in... a dragon's breath... was very potent. And to think... mighty Ozoth had survived... all these years...",
    "dst": "唔……你或許是對的……Draani。龍的吐息裡……那份魔法……非常強大。而且想不到……強大的 Ozoth……竟然還活著……",
    "role": "desc",
@@ -2260,7 +2296,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#225": {
+  "The Breaking Point#228": {
    "src": "If Ozoth is alive... we must seek her help. If the doguns ask... for her aid, she will... give it.",
    "dst": "如果 Ozoth 還活著……我們必須尋求她的幫助。若由 dogun 開口……請求援助，她會答應的。",
    "role": "desc",
@@ -2270,7 +2306,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#226": {
+  "The Breaking Point#229": {
    "src": "Well, that's as good a plan as any. {u}, you'll travel to seek this dragon's counsel, along with... Ineos, was it? Good luck.",
    "dst": "嗯，這計畫跟其他任何計畫一樣好。{u}，你去尋求這頭龍的意見，跟……Ineos，是這個名字吧？祝你們好運。",
    "role": "desc",
@@ -2280,7 +2316,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#227": {
+  "The Breaking Point#230": {
    "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
    "dst": "你們應該……走貿易隧道……{u}。我會把座標……放進你的任務書裡。",
    "role": "desc",
@@ -2290,7 +2326,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#228": {
+  "The Breaking Point#231": {
    "src": "Use the {p} trading tunnel at [{~}, {~}, -{~}] to travel to {p}.",
    "dst": "利用 [{~1}, {~2}, -{~3}] 的 {p} 貿易隧道前往 {p}。",
    "role": "desc",
@@ -2300,7 +2336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#229": {
+  "The Breaking Point#232": {
    "src": "Travel to {p} at [{~}, {~}, -{~}] in an attempt to speak with her.",
    "dst": "前往 [{~1}, {~2}, -{~3}] 的 {p}，試著與她交談。",
    "role": "desc",
@@ -2310,7 +2346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#230": {
+  "The Breaking Point#233": {
    "src": "Ah... it is... good to... see you. We must... proceed to Ozoth... with all haste.",
    "dst": "啊……真高興……見到你。我們必須……盡速前往……Ozoth 那裡。",
    "role": "desc",
@@ -2320,39 +2356,9 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#231": {
+  "The Breaking Point#234": {
    "src": "Ozoth the Dragon... Endless Kindler... we have come... to ask for your aid.",
    "dst": "巨龍 Ozoth……無盡點火者……我們前來……請求您的援助。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 15",
-   "speaker": "Ineos",
-   "source": "wiki"
-  },
-  "The Breaking Point#232": {
-   "src": "...",
-   "dst": "……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 15",
-   "speaker": "Ozoth",
-   "source": "wiki"
-  },
-  "The Breaking Point#233": {
-   "src": "We are searching... for a way... to melt the truest... of ice. The fate... of Gavel... hangs in the balance.",
-   "dst": "我們正在尋找……一個能融化最真之冰的……方法。Gavel 的命運……懸於一線。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 15",
-   "speaker": "Ineos",
-   "source": "wiki"
-  },
-  "The Breaking Point#234": {
-   "src": "Doguns... and Dragons... our fates have been entwined... for centuries. We call on you now... Endless Kindler... to save this province.",
-   "dst": "dogun……與龍……我們的命運交纏……已有數百年。我們此刻呼喚您……無盡點火者……來拯救這個行省。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2371,6 +2377,36 @@
    "source": "wiki"
   },
   "The Breaking Point#236": {
+   "src": "We are searching... for a way... to melt the truest... of ice. The fate... of Gavel... hangs in the balance.",
+   "dst": "我們正在尋找……一個能融化最真之冰的……方法。Gavel 的命運……懸於一線。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#237": {
+   "src": "Doguns... and Dragons... our fates have been entwined... for centuries. We call on you now... Endless Kindler... to save this province.",
+   "dst": "dogun……與龍……我們的命運交纏……已有數百年。我們此刻呼喚您……無盡點火者……來拯救這個行省。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#238": {
+   "src": "...",
+   "dst": "……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ozoth",
+   "source": "wiki"
+  },
+  "The Breaking Point#239": {
    "src": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
    "dst": "我……明白了。……Ozoth 告訴我……一道永焰……能解放長老們。",
    "role": "desc",
@@ -2380,7 +2416,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#237": {
+  "The Breaking Point#240": {
    "src": "... well...",
    "dst": "……這個嘛……",
    "role": "desc",
@@ -2390,7 +2426,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#238": {
+  "The Breaking Point#241": {
    "src": "The Endless Kindler... is willing to part... with hers. You must... retrieve it... from her stomach.",
    "dst": "無盡點火者……願意割捨……她自己的那一道。你必須……從她的胃裡……把它取出來。",
    "role": "desc",
@@ -2400,7 +2436,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#239": {
+  "The Breaking Point#242": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -2410,7 +2446,7 @@
    "speaker": "Ozoth",
    "source": "wiki"
   },
-  "The Breaking Point#240": {
+  "The Breaking Point#243": {
    "src": "I would advise you... not to think... too much about this. When... you are ready... enter Ozoth's mouth and retrieve... the flame.",
    "dst": "我會建議你……不要對這件事……想太多。等你……準備好了……就走進 Ozoth 的口中，取出……那道火焰。",
    "role": "desc",
@@ -2420,7 +2456,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#241": {
+  "The Breaking Point#244": {
    "src": "Descend into Ozoth's belly to retrieve an Everflame.",
    "dst": "潛入 Ozoth 的腹中，取得一道永焰。",
    "role": "desc",
@@ -2430,7 +2466,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#242": {
+  "The Breaking Point#245": {
    "src": "Travel to {p} at [{~}, {~}, -{~}] with an Everflame.",
    "dst": "帶著一道永焰前往 [{~1}, {~2}, -{~3}] 的 {p}。",
    "role": "desc",
@@ -2440,7 +2476,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#243": {
+  "The Breaking Point#246": {
    "src": "{u}! Have you retrieved... the Eternal Flame?",
    "dst": "{u}！你取得……那道永恆之焰了嗎？",
    "role": "desc",
@@ -2450,7 +2486,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#244": {
+  "The Breaking Point#247": {
    "src": "{u}! Have you retrieved... the Everflame?",
    "dst": "{u}！你取得……那道永恆之焰了嗎？",
    "role": "desc",
@@ -2460,7 +2496,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#245": {
+  "The Breaking Point#248": {
    "src": "Excellent. Endless Kindler... thank you... for your sacrifice. I will ensure... that your flame... is returned to you.",
    "dst": "太好了。無盡點火者……謝謝您……的犧牲。我會確保……您的火焰……回到您身上。",
    "role": "desc",
@@ -2470,7 +2506,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#246": {
+  "The Breaking Point#249": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -2480,7 +2516,7 @@
    "speaker": "Ozoth",
    "source": "wiki"
   },
-  "The Breaking Point#247": {
+  "The Breaking Point#250": {
    "src": "Ozoth apologises... if it was a bit hot... in there.",
    "dst": "Ozoth 說……如果裡面有點熱……她很抱歉。",
    "role": "desc",
@@ -2490,7 +2526,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#248": {
+  "The Breaking Point#251": {
    "src": "Now, {u}... I was never the best... at the ancient magic... but I hope I have enough skill... to take us the short route back...",
    "dst": "那麼，{u}……我一向不擅長……古代魔法……但我希望我的本事……足以帶我們走捷徑回去……",
    "role": "desc",
@@ -2500,7 +2536,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#249": {
+  "The Breaking Point#252": {
    "src": "You have returned! Is there news from {p}? Did the dragon offer aid?",
    "dst": "你們回來了！{p} 那邊有消息嗎？那頭龍願意幫忙嗎？",
    "role": "desc",
@@ -2510,7 +2546,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#250": {
+  "The Breaking Point#253": {
    "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Eternal Flame... to melt the ice.",
    "dst": "她願意……Ozoth 為這個行省……做出了巨大的犧牲……但我們拿到了一道永恆之焰……可以融化那片冰。",
    "role": "desc",
@@ -2520,7 +2556,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#251": {
+  "The Breaking Point#254": {
    "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Everflame... to melt the ice.",
    "dst": "她願意……Ozoth 為這個行省……做出了巨大的犧牲……但我們拿到了一道永恆之焰……可以融化那片冰。",
    "role": "desc",
@@ -2530,7 +2566,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#252": {
+  "The Breaking Point#255": {
    "src": "Well done... both of you. I will ensure... that the doguns thank her... properly. The dwarves would do well... to do the same.",
    "dst": "做得好……你們兩位。我會確保……dogun 好好向她……道謝。矮人也該……照做才是。",
    "role": "desc",
@@ -2540,7 +2576,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#253": {
+  "The Breaking Point#256": {
    "src": "Yes, yes, but there's no time to worry about that now. Quick, let's get back to the-",
    "dst": "是、是，不過現在沒時間擔心那個了。快，我們回去——",
    "role": "desc",
@@ -2550,7 +2586,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#254": {
+  "The Breaking Point#257": {
    "src": "Be wary... of the Elders... Draani. It is unlikely they will react well... after their imprisonment. It is vital... you explain the situation... to them.",
    "dst": "要小心……那些長老……Draani。他們在經歷那場囚禁之後……不太可能反應良好。你務必……把情況……向他們解釋清楚。",
    "role": "desc",
@@ -2560,7 +2596,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#255": {
+  "The Breaking Point#258": {
    "src": "I would join you... both... but the ice is inhospitable... to my kind. I wish the both of you... the best of luck.",
    "dst": "我很想……跟你們兩位一起去……但那片冰……對我的族人並不友善。祝你們兩位……一切順利。",
    "role": "desc",
@@ -2570,7 +2606,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#256": {
+  "The Breaking Point#259": {
    "src": "...right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
    "dst": "……好吧。是的。嗯，這是躲不掉的。來吧，{u}。我們得把長老們解凍，並讓他們聽我們說話。把火焰帶上，我在地窖等你。",
    "role": "desc",
@@ -2580,7 +2616,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#257": {
+  "The Breaking Point#260": {
    "src": "... right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
    "dst": "……好吧。是的。嗯，這是躲不掉的。來吧，{u}。我們得把長老們解凍，並讓他們聽我們說話。把火焰帶上，我在地窖等你。",
    "role": "desc",
@@ -2590,7 +2626,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#258": {
+  "The Breaking Point#261": {
    "src": "Return to the Dogun Vault at [{~}, {~}, -{~}] to free the Dogun Elders.",
    "dst": "回到 [{~1}, {~2}, -{~3}] 的 dogun 地窖，解放 dogun 長老。",
    "role": "desc",
@@ -2600,7 +2636,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#259": {
+  "The Breaking Point#262": {
    "src": "Well then, what are we waiting for! Let's free these elders, shall we?",
    "dst": "那麼，我們還等什麼！我們來解放這些長老吧，好嗎？",
    "role": "desc",
@@ -2610,7 +2646,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#260": {
+  "The Breaking Point#263": {
    "src": "Just bring the Everflame to each of the cells, and melt through that True Ice.",
    "dst": "只要把永焰帶到每一間牢室，把那片真冰融穿就行了。",
    "role": "desc",
@@ -2620,7 +2656,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#261": {
+  "The Breaking Point#264": {
    "src": "Excellent! We've done it! Now we just need to explain the situation-...",
    "dst": "太好了！我們做到了！現在只要把情況解釋清楚——",
    "role": "desc",
@@ -2630,7 +2666,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#262": {
+  "The Breaking Point#265": {
    "src": "We are freed.",
    "dst": "我們自由了。",
    "role": "desc",
@@ -2640,7 +2676,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#263": {
+  "The Breaking Point#266": {
    "src": "...Ah. I suppose I did not... think this through. Ehm. Elders, I must apo-",
    "dst": "……啊。我想我……沒有把這件事想清楚。呃。長老們，我必須道——",
    "role": "desc",
@@ -2650,7 +2686,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#264": {
+  "The Breaking Point#267": {
    "src": "Dwarf... Hm. The crimes... of your ancestors... must be repaid.",
    "dst": "矮人……哼。你祖先犯下的……罪……必須償還。",
    "role": "desc",
@@ -2660,7 +2696,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#265": {
+  "The Breaking Point#268": {
    "src": "However. We have... heard you speak. We have... learned of... the Protector's state.",
    "dst": "然而。我們……聽見你們說的話了。我們……得知了……守護者的狀態。",
    "role": "desc",
@@ -2670,7 +2706,7 @@
    "speaker": "Elder Desint",
    "source": "wiki"
   },
-  "The Breaking Point#266": {
+  "The Breaking Point#269": {
    "src": "We will... settle your debt... later. This situation... is a more pressing... concern. The Protector... must be calmed.",
    "dst": "我們會……晚點……跟你算這筆帳。眼前的情況……更為急迫。守護者……必須被安撫。",
    "role": "desc",
@@ -2680,7 +2716,7 @@
    "speaker": "Elder Iscor",
    "source": "wiki"
   },
-  "The Breaking Point#267": {
+  "The Breaking Point#270": {
    "src": "...Yes. You. Human. That was... dragonfire... was it not?",
    "dst": "……是的。你。人類。那是……龍焰……對吧？",
    "role": "desc",
@@ -2690,7 +2726,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#268": {
+  "The Breaking Point#271": {
    "src": "Then allow me... to borrow it. Its strength... will allow us... to restore ours. Now... Who now holds... the title... of Chieftain?",
    "dst": "那就讓我……借用它。它的力量……能讓我們……恢復自己的力量。現在……如今誰持有……族長之位？",
    "role": "desc",
@@ -2700,7 +2736,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#269": {
+  "The Breaking Point#272": {
    "src": "A-ah! Paku is now the Dogun Chieftain. He would be at... At Taloka.",
    "dst": "啊！Paku 現在是 dogun 族長。他應該在……在 Taloka。",
    "role": "desc",
@@ -2710,7 +2746,7 @@
    "speaker": "King Draani",
    "source": "wiki"
   },
-  "The Breaking Point#270": {
+  "The Breaking Point#273": {
    "src": "Very well... We shall travel... through flame... and through stone...",
    "dst": "很好……我們將啟程……穿越烈焰……穿越岩石……",
    "role": "desc",
@@ -2720,7 +2756,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#271": {
+  "The Breaking Point#274": {
    "src": "...The Elders... after all this time... to see you, again... in the flesh...",
    "dst": "……長老們……過了這麼久……能再一次……親眼見到你們……",
    "role": "desc",
@@ -2730,7 +2766,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#272": {
+  "The Breaking Point#275": {
    "src": "Greetings, Paku. We have much... to discuss. But first... we must travel... to the Protector.",
    "dst": "你好，Paku。我們有許多事……要談。但首先……我們必須前往……守護者那裡。",
    "role": "desc",
@@ -2740,7 +2776,7 @@
    "speaker": "Elder Desint",
    "source": "wiki"
   },
-  "The Breaking Point#273": {
+  "The Breaking Point#276": {
    "src": "Join us... Ineos and Paku. There is... very little time... to waste.",
    "dst": "加入我們……Ineos、Paku。已經……沒有多少時間……可以浪費了。",
    "role": "desc",
@@ -2750,7 +2786,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#274": {
+  "The Breaking Point#277": {
    "src": "Now, let us travel... (The following part of the line is High Gavellian) Through flame... and through stone...",
    "dst": "那麼，讓我們啟程……(以下這段是高階 Gavel 語)穿越烈焰……穿越岩石……",
    "role": "desc",
@@ -2760,7 +2796,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#275": {
+  "The Breaking Point#278": {
    "src": "Korzim... my son... join us. The Elders must see... to the Protector.",
    "dst": "Korzim……我兒……加入我們。長老們必須……去看看守護者。",
    "role": "desc",
@@ -2770,7 +2806,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#276": {
+  "The Breaking Point#279": {
    "src": "Iscor... Astal... Desint... it has been... too long. I will come.",
    "dst": "Iscor……Astal……Desint……太久了。我會同行。",
    "role": "desc",
@@ -2780,7 +2816,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#277": {
+  "The Breaking Point#280": {
    "src": "Earth and flame... fire and stone... transport us through your form! (In High Gavellian)",
    "dst": "大地與烈焰……火與石……以你們的形體載我們前行！(以高階 Gavel 語)",
    "role": "desc",
@@ -2790,7 +2826,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#278": {
+  "The Breaking Point#281": {
    "src": "-have to trust that they'll return!",
    "dst": "——只能相信他們會回來！",
    "role": "desc",
@@ -2800,7 +2836,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#279": {
+  "The Breaking Point#282": {
    "src": "There's no time! I can feel the damned ground cracking beneath my feet, we have to turn to the final option. We've had demolition mages on standby the past few days, our only choice is to-",
    "dst": "沒有時間了！我感覺得到該死的地面在我腳下龜裂，我們得動用最後的選項。這幾天我們一直讓爆破法師待命，我們唯一的選擇就是——",
    "role": "desc",
@@ -2810,7 +2846,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#280": {
+  "The Breaking Point#283": {
    "src": "Rhay. Elix. My Elders... have been freed. They are here... to help... the Protector.",
    "dst": "Rhay。Elix。我的長老們……已經自由了。他們來了……來幫助……守護者。",
    "role": "desc",
@@ -2820,7 +2856,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#281": {
+  "The Breaking Point#284": {
    "src": "Join us... brave ones. You will see... that your efforts to save this Province... have not been in vain.",
    "dst": "加入我們……勇者們。你們會看見……你們為拯救這個行省……付出的努力……並非徒勞。",
    "role": "desc",
@@ -2830,7 +2866,7 @@
    "speaker": "Elder Iscor",
    "source": "wiki"
   },
-  "The Breaking Point#282": {
+  "The Breaking Point#285": {
    "src": "Flames of the earth... take us to the Great Protector... to make our plea! (In High Gavellian)",
    "dst": "大地的烈焰啊……帶我們去見偉大的守護者……讓我們陳情！(以高階 Gavel 語)",
    "role": "desc",
@@ -2840,7 +2876,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#283": {
+  "The Breaking Point#286": {
    "src": "Travel to the Canyon Colossus at [{~}, {~}, -{~}] to attempt to calm it.",
    "dst": "前往 [{~1}, {~2}, -{~3}] 的 Canyon Colossus，試著安撫它。",
    "role": "desc",
@@ -2850,7 +2886,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Breaking Point#284": {
+  "The Breaking Point#287": {
    "src": "Great Protector... It is furious.",
    "dst": "偉大的守護者……它盛怒著。",
    "role": "desc",
@@ -2860,7 +2896,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#285": {
+  "The Breaking Point#288": {
    "src": "Hmph. Foolish dwarves... This is what has come...of your needless war... You are fortunate...to have freed us now...",
    "dst": "哼。愚蠢的矮人……這就是你們那場……不必要的戰爭……帶來的結果……你們很幸運……現在把我們放了出來……",
    "role": "desc",
@@ -2870,7 +2906,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#286": {
+  "The Breaking Point#289": {
    "src": "Desint... Iscor... I will prepare... the ritual. Defend me... as I do so.",
    "dst": "Desint……Iscor……我來準備……儀式。在我準備的時候……保護我。",
    "role": "desc",
@@ -2880,7 +2916,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#287": {
+  "The Breaking Point#290": {
    "src": "Human. We will pull the Protector... away from the brink. That is all we can do now. All the power... we can muster.",
    "dst": "人類。我們會把守護者……從崩潰的邊緣拉回來。那是我們現在唯一能做的。傾盡……我們所能聚起的全部力量。",
    "role": "desc",
@@ -2890,7 +2926,7 @@
    "speaker": "Elder Desint",
    "source": "wiki"
   },
-  "The Breaking Point#288": {
+  "The Breaking Point#291": {
    "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
    "dst": "你必須進入……這片聖地。一路殺到盡頭……把它打醒。",
    "role": "desc",
@@ -2900,7 +2936,7 @@
    "speaker": "Elder Iscor",
    "source": "wiki"
   },
-  "The Breaking Point#289": {
+  "The Breaking Point#292": {
    "src": "Adventurer... We are counting...on you. We will try to...support you however we can.",
    "dst": "冒險者……我們就……指望你了。我們會盡一切所能……支援你。",
    "role": "desc",
@@ -2910,7 +2946,7 @@
    "speaker": "Ineos",
    "source": "wiki"
   },
-  "The Breaking Point#290": {
+  "The Breaking Point#293": {
    "src": "We'll do the best we can out here! I have some ideas already...",
    "dst": "我們在外面會盡全力！我已經有一些想法了……",
    "role": "desc",
@@ -2920,7 +2956,7 @@
    "speaker": "Rhay",
    "source": "wiki"
   },
-  "The Breaking Point#291": {
+  "The Breaking Point#294": {
    "src": "Rhay, this isn't the time. Human. We have your back. You can do this.",
    "dst": "Rhay，現在不是時候。人類。我們在你身後。你辦得到。",
    "role": "desc",
@@ -2930,7 +2966,7 @@
    "speaker": "General Elix",
    "source": "wiki"
   },
-  "The Breaking Point#292": {
+  "The Breaking Point#295": {
    "src": "You have faced...worse odds before...have you not? You will face them...again.",
    "dst": "你面對過……比這更糟的勝算……不是嗎？你還會再面對……一次。",
    "role": "desc",
@@ -2940,7 +2976,7 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "The Breaking Point#293": {
+  "The Breaking Point#296": {
    "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
    "dst": "完成了。Desint……Iscor……各就各位。我們必須……把它擋下來。",
    "role": "desc",
@@ -2950,7 +2986,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#294": {
+  "The Breaking Point#297": {
    "src": "Great Protector, lord of stone, hear our burning call. Your fury clouds your vision, your anger burns and twists our home. (In High Gavellian)",
    "dst": "偉大的守護者，磐石之主，聽見我們熾烈的呼喚。你的怒火蒙蔽了你的視線，你的憤怒正焚燒並扭曲我們的家園。(以高階 Gavel 語)",
    "role": "desc",
@@ -2960,7 +2996,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#295": {
+  "The Breaking Point#298": {
    "src": "We, the doguns, who now hold the final flame of a fallen god... We will hold you back. We will keep this land intact! (In High Gavellian)",
    "dst": "我們，dogun，如今持有一位殞落之神的最後一道火焰……我們將把你擋下。我們將保全這片土地！(以高階 Gavel 語)",
    "role": "desc",
@@ -2970,7 +3006,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#296": {
+  "The Breaking Point#299": {
    "src": "We will... hold it from here... human. Now... go! We will not... be able to hold it... for long...",
    "dst": "我們會……從這裡撐住它……人類。現在……去吧！我們撐不了……太久……",
    "role": "desc",
@@ -2980,7 +3016,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#297": {
+  "The Breaking Point#300": {
    "src": "This crystal...will let you harness...our flame. Use it...to break through...its defenses.",
    "dst": "這枚水晶……能讓你駕馭……我們的火焰。用它……突破……它的防禦。",
    "role": "desc",
@@ -2990,7 +3026,7 @@
    "speaker": "Elder Astal",
    "source": "wiki"
   },
-  "The Breaking Point#298": {
+  "The Breaking Point#301": {
    "src": "... Before you go. I will offer you... these powerful relics. Our people... have held them for... longer than I have lived. They may... help you on your quest.",
    "dst": "……在你出發之前。我要把這些……強大的遺物……交給你。我的族人……持有它們的時間……比我活過的還久。它們或許……能在你的旅途上……幫上忙。",
    "role": "desc",
@@ -3000,7 +3036,7 @@
    "speaker": "Chieftain Paku",
    "source": "wiki"
   },
-  "The Breaking Point#299": {
+  "The Breaking Point#302": {
    "src": "I cannot give you something as unique as what Paku has offered, but I can still lend you a sum from our treasury. Use it as you must, so long as you can calm that thing. Good luck.",
    "dst": "我無法給你像 Paku 提供的那樣獨一無二的東西，但我還是可以從我們的國庫裡借你一筆。你需要怎麼用就怎麼用，只要你能安撫那個東西。祝你好運。",
    "role": "desc",
@@ -3009,6 +3045,16 @@
    "stage": "Stage 19",
    "speaker": "King Draani",
    "source": "wiki"
+  },
+  "The Breaking Point#303": {
+   "src": "[+{~} Magmaflux Capacitor]",
+   "dst": "[+{~} 熔流電容器]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

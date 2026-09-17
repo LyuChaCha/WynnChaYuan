@@ -1,11 +1,27 @@
 {
  "_meta": {
   "quest": "A Journey Further",
-  "count": 90,
+  "count": 91,
   "translated": 90,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
+  "A Journey Further#000": {
+   "src": "Agh... Don't worry...a-abou",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Agh... Don't worry...a-about me",
+    "file": "quest/a-journey-further.json",
+    "ratio": 0.931,
+    "reason": "prefix"
+   }
+  },
   "A Journey Further#001": {
    "src": "Please don't leave me!",
    "dst": "拜託不要丟下我！",
@@ -296,7 +312,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#031": {
+  "A Journey Further#030": {
    "src": "A mysterious force pushes you back...",
    "dst": "一股神秘的力量把你推了回去……",
    "role": "desc",
@@ -306,7 +322,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Further#032": {
+  "A Journey Further#031": {
    "src": "Oh no, I think something is coming... {u}! Fight it off, I don't think I can defend myself right now!",
    "dst": "糟了，好像有東西過來了……{u}！你擋一下，我現在連自己都護不住！",
    "role": "desc",
@@ -316,7 +332,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#033": {
+  "A Journey Further#032": {
    "src": "Defend Aledar from the Radiated Spiders.",
    "dst": "保護 Aledar，擊退 Radiated Spider。",
    "role": "desc",
@@ -326,7 +342,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Further#034": {
+  "A Journey Further#033": {
    "src": "Huff... Not feeling totally better, but... At least I can still defend myself.",
    "dst": "呼……還沒完全恢復，不過……至少我還能自保。",
    "role": "desc",
@@ -336,7 +352,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#035": {
+  "A Journey Further#034": {
    "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
    "dst": "胃裡空空的，想吐都吐不出來……為什麼還是這麼暈？也許喝點藥水會好一些……",
    "role": "desc",
@@ -346,7 +362,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#036": {
+  "A Journey Further#035": {
    "src": "Hm. No, not that one...",
    "dst": "唔。不對，不是這瓶……",
    "role": "desc",
@@ -356,7 +372,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#037": {
+  "A Journey Further#036": {
    "src": "Urgh, pfft! My vomit tasted better than that coming up...",
    "dst": "嘔，呸！這味道比我吐出來的還難喝……",
    "role": "desc",
@@ -366,7 +382,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#038": {
+  "A Journey Further#037": {
    "src": "Hah...that's the ticket. Which potion was this anyways... ... hair loss treatment? Why did THAT work?",
    "dst": "哈……這瓶對了。話說回來這到底是什麼藥水……生髮水？這東西為什麼會有效？",
    "role": "desc",
@@ -376,7 +392,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#039": {
+  "A Journey Further#038": {
    "src": "Though, you saw what happened to that beast I attacked? Follow me.",
    "dst": "對了，你剛剛看到我打飛的那隻怪物怎麼了嗎？跟我來。",
    "role": "desc",
@@ -386,7 +402,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#040": {
+  "A Journey Further#039": {
    "src": "This, from what I recall of the mission statements, is referred to as a \"Void Hole.\" It's a sort of portal.",
    "dst": "照我記得的任務簡報，這東西叫「Void Hole」，是一種傳送門。",
    "role": "desc",
@@ -396,7 +412,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#041": {
+  "A Journey Further#040": {
    "src": "They connect to each other in odd ways, but we saw the beast come out of that one when I knocked it in, so...",
    "dst": "它們彼此之間連接的方式很怪，不過我把那隻怪物打進去之後，牠是從那一頭出來的，所以——",
    "role": "desc",
@@ -406,7 +422,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#042": {
+  "A Journey Further#041": {
    "src": "Watch. I'll come out the other side.",
    "dst": "看好。我會從另一頭出來。",
    "role": "desc",
@@ -416,7 +432,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#043": {
+  "A Journey Further#042": {
    "src": "Alright, good! It does connect up consistently, at least. You try now.",
    "dst": "好，很好！至少連接的位置是固定的。換你試試。",
    "role": "desc",
@@ -426,7 +442,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#044": {
+  "A Journey Further#043": {
    "src": "Jump into the void hole.",
    "dst": "跳進 Void Hole。",
    "role": "desc",
@@ -436,7 +452,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Further#045": {
+  "A Journey Further#044": {
    "src": "Continue on the trail with Aledar.",
    "dst": "跟著 Aledar 沿小徑前進。",
    "role": "desc",
@@ -446,7 +462,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Further#046": {
+  "A Journey Further#045": {
    "src": "I bring this up because if we're seeing one, we'll be seeing more soon. You'll need to adjust yourself to the sight of them.",
    "dst": "我會提這件事，是因為既然看到了一個，接下來一定還會看到更多。你得先習慣它們的樣子。",
    "role": "desc",
@@ -456,7 +472,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#047": {
+  "A Journey Further#046": {
    "src": "You lead again, please.",
    "dst": "麻煩你再帶一次路。",
    "role": "desc",
@@ -466,7 +482,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#048": {
+  "A Journey Further#047": {
    "src": "We grossly underestimated the difficulties we would have here. And, by that, I mean myself, Elphie, and Lucio did...",
    "dst": "我們嚴重低估了這裡的難度。而且我說的「我們」，是指我、Elphie 和 Lucio……",
    "role": "desc",
@@ -476,7 +492,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#049": {
+  "A Journey Further#048": {
    "src": "We were each unprepared and cocky. If it weren't for you, I'd be dead now, for what it's worth.",
    "dst": "我們每一個都準備不足又自以為是。要不是有你，我現在早就死了，這話我說得出口。",
    "role": "desc",
@@ -486,7 +502,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#050": {
+  "A Journey Further#049": {
    "src": "I wasn't certain at first about you coming along, but you've more than shown you were the right one for the job.",
    "dst": "一開始我對你同行這件事沒什麼把握，但你已經證明得夠多了——這趟就該是你來。",
    "role": "desc",
@@ -496,7 +512,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#051": {
+  "A Journey Further#050": {
    "src": "...I had to figure this map was outdated. This wall of spikes isn't listed on it, and the path goes through here!",
    "dst": "……我早該想到這張地圖過時了。上面根本沒標這道尖刺牆，而路就是從這裡穿過去的！",
    "role": "desc",
@@ -506,7 +522,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#052": {
+  "A Journey Further#051": {
    "src": "I'll have to assume they're new...and if they're new, I might be able to bash through them.",
    "dst": "只能當作是新長出來的……既然是新的，也許我能把它砸開。",
    "role": "desc",
@@ -516,7 +532,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#053": {
+  "A Journey Further#052": {
    "src": "{u}, try throwing a spell at the same time! Let's crack through these things!",
    "dst": "{u}，你同時丟一個法術過來！我們把這些東西轟破！",
    "role": "desc",
@@ -526,7 +542,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#054": {
+  "A Journey Further#053": {
    "src": "Ok, {~}... {~}... {~}...!",
    "dst": "好，{~1}……{~2}……{~3}……！",
    "role": "desc",
@@ -536,7 +552,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#055": {
+  "A Journey Further#054": {
    "src": "...aagh... I... H-how are these so resilient...?",
    "dst": "……啊啊……我……這、這些東西怎麼會這麼硬……？",
    "role": "desc",
@@ -546,7 +562,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#056": {
+  "A Journey Further#055": {
    "src": "I'm an idiot... I nearly killed myself trying that. I nearly ruined the mission...",
    "dst": "我真是個白痴……剛剛差點把自己弄死。差點毀了整個任務……",
    "role": "desc",
@@ -556,7 +572,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#057": {
+  "A Journey Further#056": {
    "src": "I'm sorry, but you'll have to go without me. I can't move another step for now.",
    "dst": "抱歉，接下來你得自己走了。我現在連一步都動不了。",
    "role": "desc",
@@ -566,7 +582,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#058": {
+  "A Journey Further#057": {
    "src": "There's a lot of void holes around here, remember my warning... You can probably get past these spikes with one.",
    "dst": "這一帶有很多 Void Hole，記得我剛才說的……你大概可以靠它繞到尖刺後面。",
    "role": "desc",
@@ -576,7 +592,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#059": {
+  "A Journey Further#058": {
    "src": "If I'd been thinking I would have suggested it earlier... Once you're past, we'll...uh. We'll do something.",
    "dst": "我要是早點想到就好了……等你過去之後，我們再……呃。再想辦法。",
    "role": "desc",
@@ -586,7 +602,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#060": {
+  "A Journey Further#059": {
    "src": "Just...be careful where you go. The void holes could lead anywhere. They might lead you someplace very, very dangerous, too dangerous even for you. I pray they won't...",
    "dst": "只是……小心你要去的地方。Void Hole 可能通往任何地方，也可能把你送到非常、非常危險的地方，危險到連你都應付不來。我只能祈禱不會……",
    "role": "desc",
@@ -596,7 +612,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#061": {
+  "A Journey Further#060": {
    "src": "There's a void hole right there to try out first. Get going, now. You have to do this.",
    "dst": "那邊就有一個 Void Hole，先拿它試試。快去吧。這件事非你不可。",
    "role": "desc",
@@ -606,7 +622,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#062": {
+  "A Journey Further#061": {
    "src": "Use Void Holes to try and get behind the spike barrier",
    "dst": "利用 Void Hole 設法繞到尖刺屏障後方",
    "role": "desc",
@@ -616,7 +632,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Further#063": {
+  "A Journey Further#062": {
    "src": "Find a way to help Aledar get to the other side of the spike barrier.",
    "dst": "想辦法幫 Aledar 到尖刺屏障的另一邊。",
    "role": "desc",
@@ -626,7 +642,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Further#064": {
+  "A Journey Further#063": {
    "src": "...wait, {u}? You got to the other side then...? Good...",
    "dst": "……等等，{u}？你已經到另一邊了……？太好了……",
    "role": "desc",
@@ -636,7 +652,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#065": {
+  "A Journey Further#064": {
    "src": "I don't know what you did, but whatever it was, it's made cracks in the spikes that I can see from this side.",
    "dst": "我不知道你做了什麼，但不管是什麼，尖刺上出現的裂痕從這一側都看得見。",
    "role": "desc",
@@ -646,7 +662,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#066": {
+  "A Journey Further#065": {
    "src": "I've got some of my energy back...let's try spellcasting again. If we do it at the same time, we might make some headway.",
    "dst": "我恢復了一點力氣……再試一次法術吧。如果我們同時施法，也許能打開一個缺口。",
    "role": "desc",
@@ -656,7 +672,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#067": {
+  "A Journey Further#066": {
    "src": "I won't crack my skull open on the spikes again though. Promise.",
    "dst": "這次我不會再拿頭去撞尖刺了。我保證。",
    "role": "desc",
@@ -666,7 +682,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#068": {
+  "A Journey Further#067": {
    "src": "You lead. I'll cast my spell as soon as I hear yours.",
    "dst": "你先動手。我一聽到你的法術就跟上。",
    "role": "desc",
@@ -676,7 +692,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#069": {
+  "A Journey Further#068": {
    "src": "Thank god it worked... That's our destination there, the Eldritch Outlook.",
    "dst": "謝天謝地，成功了……那裡就是我們的目的地，詭異瞭望台。",
    "role": "desc",
@@ -686,7 +702,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#070": {
+  "A Journey Further#069": {
    "src": "Now comes the hardest part... Come along. I'll need you there for it.",
    "dst": "最難的部分來了……跟我來。這一段我需要你在場。",
    "role": "desc",
@@ -696,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#071": {
+  "A Journey Further#070": {
    "src": "That blade there...it's made for sacrifice. See how that gate is shut?",
    "dst": "那邊那把劍……是用來獻祭的。看到那道門是關著的嗎？",
    "role": "desc",
@@ -706,7 +722,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#072": {
+  "A Journey Further#071": {
    "src": "In order to open the doors to the Outlook, we need to sacrifice a powerful soul.",
    "dst": "要打開通往 Outlook 的門，我們得獻祭一個強大的靈魂。",
    "role": "desc",
@@ -716,7 +732,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#073": {
+  "A Journey Further#072": {
    "src": "We... we should have told you from the start. You and Lucio. Elphie and I, we knew. We knew this would be here.",
    "dst": "我們……我們一開始就該告訴你的。你和 Lucio 都不知道。Elphie 和我知道。我們早就知道這裡有這個。",
    "role": "desc",
@@ -726,7 +742,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#074": {
+  "A Journey Further#073": {
    "src": "We didn't have... we didn't have a sacrifice in mind. We decided that it would be best decided once we reached that point. And I think we both knew it would have to be one of us.",
    "dst": "我們沒有……我們心裡沒有預定的人選。我們說好等真的走到這一步再決定。而我想我們兩個都清楚，最後一定是我們其中一個。",
    "role": "desc",
@@ -736,7 +752,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#075": {
+  "A Journey Further#074": {
    "src": "...I think she would have insisted it be her. Even though both of us had something we would be le-...",
    "dst": "……我想她會堅持由她來。即使我們兩個都還有放不下的……",
    "role": "desc",
@@ -746,7 +762,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#076": {
+  "A Journey Further#075": {
    "src": "It doesn't matter now. It's just us left. And I've been mulling it over since we got to the town... you'll sacrifice me. I won't take no for an answer.",
    "dst": "現在說這些也沒意義了。只剩我們了。從進到那座鎮上開始我就一直在想這件事……由你來獻祭我。這件事我不接受拒絕。",
    "role": "desc",
@@ -756,7 +772,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#077": {
+  "A Journey Further#076": {
    "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
    "dst": "你看看我現在這副樣子，{u}！我已經站在鬼門關前了，而你早就證明自己遠比全盛時期的我還強。",
    "role": "desc",
@@ -766,7 +782,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#078": {
+  "A Journey Further#077": {
    "src": "Here. You can take everything I had on me. My emeralds, and the key to the dungeon. I certainly won't be able to use them anymore.",
    "dst": "拿去。我身上的東西你全帶走。我的綠寶石，還有地城的鑰匙。反正我也用不到了。",
    "role": "desc",
@@ -776,7 +792,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#079": {
+  "A Journey Further#078": {
    "src": "Upon the top of the tower is... Well, something. We don't know for certain what it is, but it will prevent you from passing through.",
    "dst": "塔頂上有……嗯，某個東西。我們不確定那究竟是什麼，但它會擋住你的去路。",
    "role": "desc",
@@ -786,7 +802,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#080": {
+  "A Journey Further#079": {
    "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
    "dst": "你得殺了它才能破除屏障。不過……去找其他能幫你的士兵。一個人是打不贏的。",
    "role": "desc",
@@ -796,7 +812,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#081": {
+  "A Journey Further#080": {
    "src": "...no more putting it off, then. I'm bleeding out.",
    "dst": "……那就別再拖了。我血快流乾了。",
    "role": "desc",
@@ -806,7 +822,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#082": {
+  "A Journey Further#081": {
    "src": "Grab the blade, {u}.",
    "dst": "拿起那把劍，{u}。",
    "role": "desc",
@@ -816,7 +832,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#083": {
+  "A Journey Further#082": {
    "src": "Right click to grab the blade in the altar.",
    "dst": "右鍵拿起祭壇上的劍。",
    "role": "desc",
@@ -826,7 +842,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Further#084": {
+  "A Journey Further#083": {
    "src": "Now...strike me down. My soul will unlock the gate...",
    "dst": "現在……砍下來吧。我的靈魂會打開那道門……",
    "role": "desc",
@@ -836,7 +852,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#085": {
+  "A Journey Further#084": {
    "src": "Sacrifice Aledar.",
    "dst": "獻祭 Aledar。",
    "role": "desc",
@@ -846,7 +862,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Further#086": {
+  "A Journey Further#085": {
    "src": "Agh... Don't worry...a-about me...",
    "dst": "啊……別……別管我……",
    "role": "desc",
@@ -856,7 +872,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#087": {
+  "A Journey Further#086": {
    "src": "You...can do this. I know y-you can.",
    "dst": "你……做得到的。我知道你、你可以。",
    "role": "desc",
@@ -866,7 +882,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#088": {
+  "A Journey Further#087": {
    "src": "Gah... D-Destroy it...",
    "dst": "咳……去、去毀了它……",
    "role": "desc",
@@ -876,7 +892,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#089": {
+  "A Journey Further#088": {
    "src": "The monster w-watching us...",
    "dst": "那隻一直在看著我們的怪物……",
    "role": "desc",
@@ -886,7 +902,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#090": {
+  "A Journey Further#089": {
    "src": "AAAAGH!!",
    "dst": "啊啊啊啊！！",
    "role": "desc",
@@ -896,7 +912,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#091": {
+  "A Journey Further#090": {
    "src": "{~}px",
    "dst": "{~}px",
    "role": "desc",
