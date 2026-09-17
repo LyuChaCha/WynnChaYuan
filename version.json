@@ -1,12 +1,30 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0_2",
+ "latest": "0.2.0_3",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0_3": {
+   "headline": "Dialogue no longer freezes halfway",
+   "items": [
+    "Dialogue that starts like another line no longer stops on a half-translated or half-typed sentence"
+   ],
+   "zh_tw": {
+    "headline": "對話不再翻到一半卡住",
+    "items": [
+     "開頭跟其他台詞相同的對話，不再停在半句譯文或半句英文上"
+    ]
+   },
+   "zh_cn": {
+    "headline": "对话不再翻到一半卡住",
+    "items": [
+     "开头与其他台词相同的对话，不再停在半句译文或半句英文上"
+    ]
+   }
+  },
   "0.2.0_2": {
    "headline": "Tracker title and welcome message colours fixed",
    "items": [

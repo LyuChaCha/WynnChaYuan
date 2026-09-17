@@ -53,6 +53,7 @@ public final class DialogueTypingTest {
 
         fragments();
         composite();
+        diverged();
         glyphs();
 
         TranslationStore store = new TranslationStore();
@@ -124,6 +125,35 @@ public final class DialogueTypingTest {
         check("拼出來的整句翻得出來（實際 " + frames.get(frames.size() - 1) + "）",
               "新任務開始：國王的新兵".equals(frames.get(frames.size() - 1)));
         check("任務名打到一半不會掉回英文", steady(frames));
+    }
+
+    /**
+     * 開頭對上了別條、打下去才岔開的句子，不准卡在那條的半句譯文上。
+     *
+     * <h2>issue #751</h2>
+     * Ensemble of Hope 裡「You tell them about the War of the Realms…」打到
+     * 「You tell the」時，語料裡以這幾個字開頭的只有 Out of my Mind 的
+     * 「You tell the group of kids…」，於是先貼上「你向那群」。再打一個字就岔開了，
+     * 可是沿用上一幀的那道（{@code kept}）只看原文有沒有繼續長——原文當然一直在長，
+     * 畫面就整句停在「你向那群」，連英文都看不到。
+     */
+    private static void diverged() throws Exception {
+        TranslationStore store = miniStore("""
+                {
+                  "You tell the group of kids your experiences of strange creatures, even stranger men as well as a hazy memory about... a coconut?":
+                      "你向那群孩子講述自己遇過的奇怪生物、更奇怪的人，還有一段模糊的記憶……跟椰子有關？"
+                }
+                """);
+        CurrentQuest.set(null);
+        String src = "You tell them about the War of the Realms. Of Light and Dark and War.";
+        List<String> frames = typeOut(src, store, src.length());
+        int split = "You tell them".length() - 1;
+        boolean stuck = false;
+        for (int at = split; at < frames.size(); at++) {
+            stuck |= frames.get(at) != null;
+        }
+        check("岔開之後不會停在別句的半句譯文上（實際最後一幀 "
+                        + frames.get(frames.size() - 1) + "）", !stuck);
     }
 
     /**
