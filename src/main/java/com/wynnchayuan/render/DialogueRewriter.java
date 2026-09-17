@@ -695,6 +695,7 @@ public final class DialogueRewriter {
         spoken = null;
         held = null;
         heldRaw = "";
+        heldSource = null;
     }
 
     /**
@@ -992,7 +993,7 @@ public final class DialogueRewriter {
             // 已經貼上去的譯文留著就好：它不會變得比較不對，而畫面穩定。
             //
             // 只在原文<b>還是同一句</b>（繼續往後長）時沿用；換句話了就放手。
-            String held = kept(raw);
+            String held = kept(raw, typed, steady);
             if (held != null || exact == null || !sentenceEnd(typed)) {
                 return held;
             }
@@ -1019,7 +1020,7 @@ public final class DialogueRewriter {
             // 讓玩家看見完整的英文，比看見被切掉一半的譯文好。
             // 這一條是<b>刻意</b>不沿用上一幀的：那會讓畫面停在半句中文，
             // 正是這裡要避免的東西。
-            return wrap(hit, rows, style, width) != null ? show(raw, hit) : drop();
+            return wrap(hit, rows, style, width) != null ? show(raw, hit, null) : drop();
         }
         // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。
         //
@@ -1042,7 +1043,7 @@ public final class DialogueRewriter {
             }
             part = typedSoFar(part, lo, part.length());
         }
-        return part.isEmpty() ? kept(raw) : show(raw, part);
+        return part.isEmpty() ? kept(raw, typed, steady) : show(raw, part, source);
     }
 
     /** 上一幀貼上畫面的譯文，以及當時原文打到哪。見 {@link #kept}。 */
@@ -1050,13 +1051,21 @@ public final class DialogueRewriter {
     private static String heldRaw = "";
 
     /**
+     * 貼上 {@link #held} 時，那段譯文是<b>哪一條語料的前半截</b>；
+     * 整句查到的（不是打到一半）是 {@code null}。見 {@link #kept}。
+     */
+    private static String heldSource;
+
+    /**
      * 記住這一幀貼上去的譯文。
      *
-     * @return 原樣回傳 {@code text}，讓呼叫端可以寫成 {@code return show(raw, text)}
+     * @param source 打到一半時是語料裡哪一條；整句定案時傳 {@code null}
+     * @return 原樣回傳 {@code text}，讓呼叫端可以寫成 {@code return show(raw, text, source)}
      */
-    private static String show(String raw, String text) {
+    private static String show(String raw, String text, String source) {
         heldRaw = raw;
         held = text;
+        heldSource = source;
         return text;
     }
 
@@ -1066,9 +1075,21 @@ public final class DialogueRewriter {
      * <p>只在原文<b>還是同一句</b>時沿用：原文是一個字一個字加上去的，
      * 所以「還是同一句」就是「這一幀的原文以上一幀的原文開頭」。
      * 換句話了（或字變短了）就放手，不然會把上一句的中文黏在下一句上。
+     *
+     * <h2>光看原文有沒有繼續長不夠（issue #751）</h2>
+     * 原文一個字一個字長，「繼續長」<b>永遠</b>成立。Ensemble of Hope 的
+     * 「You tell them about…」打到「You tell the」時前綴對上了另一個任務的
+     * 「You tell the group of kids…」，貼上「你向那群」；下一個字就岔開了，
+     * 這裡卻照樣沿用，整句停在那四個字，英文也看不到。所以再加兩道：
+     * <ul>
+     *   <li>那段是<b>前綴比對</b>貼上的，而現在打出來的字已經不是那條的開頭 → 放手。</li>
+     *   <li>字已經停下來（{@link #settled}），還是認不出來 → 放手，讓玩家看完整的英文。</li>
+     * </ul>
      */
-    private static String kept(String raw) {
-        if (held == null || heldRaw.isEmpty() || !raw.startsWith(heldRaw)) {
+    private static String kept(String raw, String typed, boolean steady) {
+        if (held == null || heldRaw.isEmpty() || !raw.startsWith(heldRaw)
+                || steady
+                || (heldSource != null && !within(heldSource, typed))) {
             return drop();
         }
         return held;
@@ -1078,6 +1099,7 @@ public final class DialogueRewriter {
     private static String drop() {
         held = null;
         heldRaw = "";
+        heldSource = null;
         return null;
     }
 
