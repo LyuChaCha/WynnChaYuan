@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22895,
-  "translated": 22838,
+  "count": 22898,
+  "translated": 22841,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -4830,7 +4830,7 @@
    "source": "wiki"
   },
   "A Hunter's Calling#258": {
-   "src": "???: But here...you will gain the power to bring an end. To be brought yours.",
+   "src": "But here... you will gain the power to bring an end. To be brought yours.",
    "dst": "但在這裡……你將獲得帶來終結的力量。以及被帶來屬於你的終結。",
    "role": "desc",
    "kind": "dialogue",
@@ -4946,6 +4946,16 @@
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
    "stage": "Stage 30",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "A Hunter's Calling#270": {
+   "src": "???: But here...you will gain the power to bring an end. To be brought yours.",
+   "dst": "???：但在這裡……你將獲得帶來終結的力量。以及被帶來屬於你的終結。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Hunter's Calling",
+   "stage": "Stage 29",
    "speaker": "???",
    "source": "wiki"
   },
@@ -112883,7 +112893,7 @@
   },
   "Overture to Despair#014": {
    "src": "You open a page at random...",
-   "dst": "你隨手翻開另一頁……",
+   "dst": "你隨手翻開一頁……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -149980,7 +149990,7 @@
    "source": "wiki"
   },
   "Taproot#065": {
-   "src": "Lari\nPlease... You can't DO this to me!!",
+   "src": "Please... You can't DO this to me!!",
    "dst": "拜託……你不能這樣對我！！",
    "role": "desc",
    "kind": "dialogue",
@@ -150396,6 +150406,16 @@
    "kind": "dialogue",
    "quest": "Taproot",
    "stage": "Stage 12",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Taproot#107": {
+   "src": "Lari\nPlease... You can't DO this to me!!",
+   "dst": "Lari\n拜託……你不能這樣對我！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "Stage 8",
    "speaker": "Lari",
    "source": "wiki"
   },
@@ -154076,7 +154096,7 @@
    "source": "wiki"
   },
   "The Breaking Point#148": {
-   "src": "[+{~} Magmaflux Capacitor]",
+   "src": "[-{~} Magmaflux Capacitor]",
    "dst": "[-{~} 熔流電容器]",
    "role": "desc",
    "kind": "dialogue",
@@ -155624,6 +155644,16 @@
    "stage": "Stage 19",
    "speaker": "King Draani",
    "source": "wiki"
+  },
+  "The Breaking Point#303": {
+   "src": "[+{~} Magmaflux Capacitor]",
+   "dst": "[+{~} 熔流電容器]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "The Canary Calls#000": {
    "src": "Day {~}, {~} AP",
@@ -200629,7 +200659,7 @@
   },
   "The Price of Ingenuity#488": {
    "src": "...maybe I should've been paying more attention. I didn't realize her project was putting so much weight on your shoulders. And I promised to help, too...",
-   "dst": "……也許我早該多留意一點的。我沒有意識到她的計畫把這麼重的擔子壓在你的士兵身上。而我還答應過要幫忙……",
+   "dst": "……也許我早該多留意一點的。我沒有意識到她的計畫把這麼重的擔子壓在你的肩上。而我還答應過要幫忙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
@@ -219165,7 +219195,7 @@
   },
   "True Colours#145": {
    "src": "Sigh... she mentioned it to you too, didn't she? That ceaseless war over our world, fought by forces beyond our power?",
-   "dst": "她也跟你提過吧？那場籠罩我們世界、由遠超我們能力的力量在打的無止盡戰爭？",
+   "dst": "唉……她也跟你提過吧？那場籠罩我們世界、由遠超我們能力的力量在打的無止盡戰爭？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
