@@ -284,6 +284,20 @@ public final class WynntilsText {
         return translated == null ? name : translated;
     }
 
+    /** mixin 的入口：Wynntils「手持物品名稱」疊層記下的那份字。見 {@code HeldItemOverlayMixin}。 */
+    public static StyledText heldItemText(StyledText text) {
+        try {
+            if (text == null || text.isEmpty()) {
+                return text;
+            }
+            net.minecraft.network.chat.Component shown = heldItemName(text.getComponent(),
+                    WynnChaYuan.config(), WynnChaYuan.translations());
+            return shown == text.getComponent() ? text : StyledText.fromComponent(shown);
+        } catch (Throwable t) {
+            return text;
+        }
+    }
+
     /** 這一塊是追蹤欄嗎。用類別名比對，不必把 Wynntils 的型別帶進來。 */
     private static boolean tracker(Object overlay) {
         return overlay != null && TRACKER.equals(overlay.getClass().getSimpleName());

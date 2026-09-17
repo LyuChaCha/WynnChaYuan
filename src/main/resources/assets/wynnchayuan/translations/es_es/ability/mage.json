@@ -1,0 +1,4571 @@
+{
+ "_meta": {
+  "domain": "ability/mage",
+  "itemNames": false,
+  "lang": "zh_tw",
+  "count": 320,
+  "translated": 0,
+  "note": "法師的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
+  "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
+  "_note_from_98": "我快被 AI 改的文本氣瘋了。"
+ },
+ "entries": {
+  "ability-mage#0242": {
+   "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#}{#}to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities or heal to charge your Ultimate Meter {#}{#}to {~}",
+   "_raw": "Activate abilities or heal to charge\nyour Ultimate Meter  to 100%",
+   "ability": "Dawn",
+   "code": "MAGE"
+  },
+  "ability-mage#0246": {
+   "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Tangled Origin",
+    "mage/Gravitational Collapse",
+    "archer/Angelic Ascension",
+    "archer/The Twilight Zone"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities to charge your Ultimate Meter {#}{#}to {~}",
+   "_raw": "Activate abilities to charge\nyour Ultimate Meter  to 100%",
+   "ability": "Tangled Origin、Gravitational Collapse、Angelic Ascension、The Twilight Zone",
+   "code": "MAGE"
+  },
+  "ability-mage#0236": {
+   "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~}{#}Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": 5,
+   "flat": "Casting Meteor summons an additional meteor near the target location for every {~}{#}Distortion {#} you have. (Max {~} Meteors, only one Meteor Shower can be active at the same time.)",
+   "_raw": "Casting Meteor summons an additional\nmeteor near the target location for\nevery 20 Distortion  you have.\n(Max 20 Meteors, only one Meteor\nShower can be active at the same time.)",
+   "ability": "Meteor Shower",
+   "code": "MAGE"
+  },
+  "ability-mage#0241": {
+   "src": "For every +{~}{#}Distortion {#}, Vacuokinesis\ndeals +{~}{#}{#}{#}Damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Vacuokinesis"
+   ],
+   "lines": 2,
+   "flat": "For every +{~}{#}Distortion {#}, Vacuokinesis deals +{~}{#}{#}{#}Damage.",
+   "_raw": "For every +1 Distortion , Vacuokinesis\ndeals +0.8%  Damage.",
+   "ability": "Vacuokinesis",
+   "code": "MAGE"
+  },
+  "ability-mage#0244": {
+   "src": "For every +{~}{#}Distortion {#}, the\nmana is refunded -{~}s faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Paradox"
+   ],
+   "lines": 2,
+   "flat": "For every +{~}{#}Distortion {#}, the mana is refunded -{~}s faster.",
+   "_raw": "For every +1 Distortion , the\nmana is refunded -0.02s faster.",
+   "ability": "Paradox",
+   "code": "MAGE"
+  },
+  "ability-mage#0238": {
+   "src": "For every +{~}{#}Distortion {#}, the tornado gains\n+{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": 2,
+   "flat": "For every +{~}{#}Distortion {#}, the tornado gains +{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
+   "_raw": "For every +1 Distortion , the tornado gains\n+0.015  Area of Effect and +1.1%  Damage.",
+   "ability": "Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0245": {
+   "src": "Lightweaver{#}applies +{~} Crystallized {#}\nto enemies it hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Crystallize"
+   ],
+   "lines": 2,
+   "flat": "Lightweaver{#}applies +{~} Crystallized {#} to enemies it hits.",
+   "_raw": "Lightweaver applies +7 Crystallized \nto enemies it hits.",
+   "ability": "Crystallize",
+   "code": "MAGE"
+  },
+  "ability-mage#0237": {
+   "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~}{#}{#}{#}Damage and\nlosing -{~}{#}{#}{#}Area of Effect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": 3,
+   "flat": "Meteor and Astral Fragmentation become smaller, dealing -{~}{#}{#}{#}Damage and losing -{~}{#}{#}{#}Area of Effect.",
+   "_raw": "Meteor and Astral Fragmentation become\nsmaller, dealing -20%  Damage and\nlosing -20%  Area of Effect.",
+   "ability": "Meteor Shower",
+   "code": "MAGE"
+  },
+  "ability-mage#0240": {
+   "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#}{#}to deal +{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Induced Instability"
+   ],
+   "lines": 2,
+   "flat": "Meteor, Main Attack and Powder Specials consume Unstable {#}{#}to deal +{~} damage.",
+   "_raw": "Meteor, Main Attack and Powder Specials\nconsume Unstable  to deal +100% damage.",
+   "ability": "Induced Instability",
+   "code": "MAGE"
+  },
+  "ability-mage#0243": {
+   "src": "You gain +{~}{#}Distortion {#} for every enemy weakened.\n(Up to +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Devitalize"
+   ],
+   "lines": 2,
+   "flat": "You gain +{~}{#}Distortion {#} for every enemy weakened. (Up to +{~})",
+   "_raw": "You gain +5 Distortion  for every enemy weakened.\n(Up to +15)",
+   "ability": "Devitalize",
+   "code": "MAGE"
+  },
+  "ability-mage#0239": {
+   "src": "Your Dimensional Tear{#}overloads, growing\nin size and damage while pulling all enemies in.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": 2,
+   "flat": "Your Dimensional Tear{#}overloads, growing in size and damage while pulling all enemies in.",
+   "_raw": "Your Dimensional Tear overloads, growing\nin size and damage while pulling all enemies in.",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0315": {
+   "src": "{#}({#}{#}Air: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Incandescence",
+    "mage/Void Acceleration",
+    "shaman/Storm Dance",
+    "warrior/Iron Lungs"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Air: +10%)",
+   "ability": "Incandescence、Void Acceleration、Storm Dance、Iron Lungs",
+   "code": "MAGE"
+  },
+  "ability-mage#0319": {
+   "src": "{#}({#}{#}Air: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Etheric Slash",
+    "mage/Frozen Tornado",
+    "mage/Dimensional Tear",
+    "mage/Rift Rupture"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Air: 50%)",
+   "ability": "Etheric Slash、Frozen Tornado、Dimensional Tear、Rift Rupture",
+   "code": "MAGE"
+  },
+  "ability-mage#0301": {
+   "src": "{#}({#}{#}Damage: -{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination",
+    "shaman/Flaming Tongue",
+    "warrior/Double Bash",
+    "warrior/Quadruple Bash"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Damage: -20%)",
+   "ability": "Divination、Flaming Tongue、Double Bash、Quadruple Bash",
+   "code": "MAGE"
+  },
+  "ability-mage#0305": {
+   "src": "{#}({#}{#}Damage: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Sunshower",
+    "mage/Burning Sigil"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Damage: 330%)",
+   "ability": "Meteor、Ice Snake、Sunshower、Burning Sigil",
+   "code": "MAGE"
+  },
+  "ability-mage#0306": {
+   "src": "{#}({#}{#}Earth: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Astral Fragmentation",
+    "shaman/Crystal Knives",
+    "warrior/Comet",
+    "warrior/Spectacle"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Earth: +30%)",
+   "ability": "Astral Fragmentation、Crystal Knives、Comet、Spectacle",
+   "code": "MAGE"
+  },
+  "ability-mage#0310": {
+   "src": "{#}({#}{#}Earth: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Dimensional Tear",
+    "mage/Rift Rupture",
+    "mage/Portal to the Beyond"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Earth: 70%)",
+   "ability": "Meteor、Dimensional Tear、Rift Rupture、Portal to the Beyond",
+   "code": "MAGE"
+  },
+  "ability-mage#0311": {
+   "src": "{#}({#}{#}Fire: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Searing Light",
+    "shaman/Flaming Tongue",
+    "warrior/Hallowed Blaze"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Fire: +20%)",
+   "ability": "Crashing Comet、Searing Light、Flaming Tongue、Hallowed Blaze",
+   "code": "MAGE"
+  },
+  "ability-mage#0295": {
+   "src": "{#}({#}{#}Thunder: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Blitz",
+    "shaman/Shocking Aura",
+    "shaman/Lashing Lance",
+    "warrior/Fireworks"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Thunder: +25%)",
+   "ability": "Blitz、Shocking Aura、Lashing Lance、Fireworks",
+   "code": "MAGE"
+  },
+  "ability-mage#0296": {
+   "src": "{#}({#}{#}Thunder: -{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination",
+    "shaman/Flaming Tongue",
+    "archer/Windstorm"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Thunder: -5%)",
+   "ability": "Divination、Flaming Tongue、Windstorm",
+   "code": "MAGE"
+  },
+  "ability-mage#0302": {
+   "src": "{#}({#}{#}Thunder: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Ophanim",
+    "mage/Judrajim",
+    "mage/Thunderstorm",
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Thunder: 15%)",
+   "ability": "Ophanim、Judrajim、Thunderstorm、Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0307": {
+   "src": "{#}({#}{#}Water: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp",
+    "mage/Searing Light"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Water: +15%)",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp、Searing Light",
+   "code": "MAGE"
+  },
+  "ability-mage#0308": {
+   "src": "{#}({#}{#}Water: -{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Water: -5%)",
+   "ability": "Divination",
+   "code": "MAGE"
+  },
+  "ability-mage#0312": {
+   "src": "{#}({#}{#}Water: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Ice Snake",
+    "mage/Sunshower",
+    "mage/Ophanim",
+    "mage/Frozen Tornado"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Water: 55%)",
+   "ability": "Ice Snake、Sunshower、Ophanim、Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0309": {
+   "src": "{#}{#}Air Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Air Mastery",
+    "shaman/Air Mastery",
+    "warrior/Air Mastery",
+    "archer/Air Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Air Damage: +15%",
+   "ability": "Air Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0293": {
+   "src": "{#}{#}Air Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Air Mastery",
+    "shaman/Air Mastery",
+    "warrior/Air Mastery",
+    "archer/Air Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Air Damage: +3-4",
+   "ability": "Air Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0288": {
+   "src": "{#}{#}Area of Effect: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: +100%",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0259": {
+   "src": "{#}{#}Area of Effect: +{~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Riftbound",
+    "shaman/Totemic Reach",
+    "warrior/Thunderclap",
+    "archer/Honed Shield"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: +50% Blocks (Circle-Shaped)",
+   "ability": "Riftbound、Totemic Reach、Thunderclap、Honed Shield",
+   "code": "MAGE"
+  },
+  "ability-mage#0261": {
+   "src": "{#}{#}Area of Effect: {~} Block (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Lightweaver"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 1.5 Block (Circle-Shaped)",
+   "ability": "Lightweaver",
+   "code": "MAGE"
+  },
+  "ability-mage#0260": {
+   "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Burning Sigil",
+    "mage/Etheric Slash"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 5 Blocks (Circle-Shaped)",
+   "ability": "Meteor、Ice Snake、Burning Sigil、Etheric Slash",
+   "code": "MAGE"
+  },
+  "ability-mage#0316": {
+   "src": "{#}{#}Cooldown: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Burning Sigil",
+    "mage/Displacement",
+    "mage/Purification",
+    "mage/Fortitude"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 8s",
+   "ability": "Burning Sigil、Displacement、Purification、Fortitude",
+   "code": "MAGE"
+  },
+  "ability-mage#0280": {
+   "src": "{#}{#}Cooldown: {~}s (Riftbound)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Rift Rupture"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 2s (Riftbound)",
+   "ability": "Rift Rupture",
+   "code": "MAGE"
+  },
+  "ability-mage#0284": {
+   "src": "{#}{#}Delay: {~}s (per pulse)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Orphion's Pulse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Delay: 1.5s (per pulse)",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE"
+  },
+  "ability-mage#0285": {
+   "src": "{#}{#}Drift Range: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Drift Range: 10 Blocks",
+   "ability": "Sentient Snake",
+   "code": "MAGE"
+  },
+  "ability-mage#0317": {
+   "src": "{#}{#}Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Heal",
+    "mage/Ice Snake",
+    "mage/Burning Sigil",
+    "mage/Fortitude"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Duration: 0.6s",
+   "ability": "Heal、Ice Snake、Burning Sigil、Fortitude",
+   "code": "MAGE"
+  },
+  "ability-mage#0297": {
+   "src": "{#}{#}Earth Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Earth Mastery",
+    "shaman/Earth Mastery",
+    "warrior/Earth Mastery",
+    "archer/Earth Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Earth Damage: +20%",
+   "ability": "Earth Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0290": {
+   "src": "{#}{#}Earth Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Earth Mastery",
+    "shaman/Earth Mastery",
+    "warrior/Earth Mastery",
+    "archer/Earth Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Earth Damage: +2-4",
+   "ability": "Earth Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0267": {
+   "src": "{#}{#}Effect: +{~} Slowness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Frigid Grasp"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +10% Slowness () to Enemies",
+   "ability": "Frigid Grasp",
+   "code": "MAGE"
+  },
+  "ability-mage#0248": {
+   "src": "{#}{#}Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Time Dilation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +10% Walk Speed to Allies (per 1s, +140% Max)",
+   "ability": "Time Dilation",
+   "code": "MAGE"
+  },
+  "ability-mage#0256": {
+   "src": "{#}{#}Effect: -{~}{#}Damage Bonus ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Devitalize"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: -15% Damage Bonus () to Enemies",
+   "ability": "Devitalize",
+   "code": "MAGE"
+  },
+  "ability-mage#0268": {
+   "src": "{#}{#}Effect: {~} Damage Bonus (⚔) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Fortitude"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 40% Damage Bonus (⚔) to Allies",
+   "ability": "Fortitude",
+   "code": "MAGE"
+  },
+  "ability-mage#0274": {
+   "src": "{#}{#}Effect: {~} Resistance Bonus (❁)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dimensional Tear",
+    "archer/Arrow Shield"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 15% Resistance Bonus (❁)",
+   "ability": "Dimensional Tear、Arrow Shield",
+   "code": "MAGE"
+  },
+  "ability-mage#0270": {
+   "src": "{#}{#}Effect: {~} Slowness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Ice Snake",
+    "mage/Frozen Tornado",
+    "mage/Arctic Snake",
+    "mage/Crystallize"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 40% Slowness () to Enemies",
+   "ability": "Ice Snake、Frozen Tornado、Arctic Snake、Crystallize",
+   "code": "MAGE"
+  },
+  "ability-mage#0281": {
+   "src": "{#}{#}Effects: +{~} Walk Speed",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Arcane Speed"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: +40% Walk Speed",
+   "ability": "Arcane Speed",
+   "code": "MAGE"
+  },
+  "ability-mage#0247": {
+   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Freezing Sigil",
+    "archer/Chilling Snare"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: 15% Slowness () to Enemies, per hit (Max 60%)",
+   "ability": "Freezing Sigil、Chilling Snare",
+   "code": "MAGE"
+  },
+  "ability-mage#0303": {
+   "src": "{#}{#}Fire Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Fire Mastery",
+    "shaman/Fire Mastery",
+    "warrior/Fire Mastery",
+    "archer/Fire Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fire Damage: +15%",
+   "ability": "Fire Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0292": {
+   "src": "{#}{#}Fire Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Fire Mastery",
+    "shaman/Fire Mastery",
+    "warrior/Fire Mastery",
+    "archer/Fire Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fire Damage: +3-5",
+   "ability": "Fire Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0250": {
+   "src": "{#}{#}Health Regen: {~} per second (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Health Regen: 5% per second (of your max health)",
+   "ability": "Sunflare",
+   "code": "MAGE"
+  },
+  "ability-mage#0282": {
+   "src": "{#}{#}Main Attack Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Wand Proficiency I",
+    "mage/Wand Proficiency II",
+    "shaman/Relik Proficiency I",
+    "warrior/Spear Proficiency I"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Damage: +5%",
+   "ability": "Wand Proficiency I、Wand Proficiency II、Relik Proficiency I、Spear Proficiency I",
+   "code": "MAGE"
+  },
+  "ability-mage#0252": {
+   "src": "{#}{#}Main Attack Damage: +{~}{#}(per {~} Walk Speed)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Accelerated Strike"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Damage: +4% (per 10% Walk Speed)",
+   "ability": "Accelerated Strike",
+   "code": "MAGE"
+  },
+  "ability-mage#0279": {
+   "src": "{#}{#}Main Attack Range: +{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Wand Proficiency I",
+    "mage/Wand Proficiency II",
+    "archer/Bow Proficiency"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Range: +2 Blocks",
+   "ability": "Wand Proficiency I、Wand Proficiency II、Bow Proficiency",
+   "code": "MAGE"
+  },
+  "ability-mage#0313": {
+   "src": "{#}{#}Mana Cost: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Ophanim",
+    "warrior/Axe Kick",
+    "archer/Mana Trap"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Cost: +30",
+   "ability": "Ophanim、Axe Kick、Mana Trap",
+   "code": "MAGE"
+  },
+  "ability-mage#0314": {
+   "src": "{#}{#}Mana Cost: -{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Cheaper Meteor",
+    "mage/Cheaper Teleport",
+    "mage/Cheaper Heal",
+    "mage/Cheaper Teleport II"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Cost: -10",
+   "ability": "Cheaper Meteor、Cheaper Teleport、Cheaper Heal、Cheaper Teleport II",
+   "code": "MAGE"
+  },
+  "ability-mage#0318": {
+   "src": "{#}{#}Mana Cost: {~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Teleport",
+    "mage/Heal",
+    "mage/Ice Snake"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Cost: 50",
+   "ability": "Meteor、Teleport、Heal、Ice Snake",
+   "code": "MAGE"
+  },
+  "ability-mage#0254": {
+   "src": "{#}{#}Mana Regen: {~} per second (of your max mana)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Regen: 5% per second (of your max mana)",
+   "ability": "Sunflare",
+   "code": "MAGE"
+  },
+  "ability-mage#0251": {
+   "src": "{#}{#}Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Meteor Area of Effect: 6 Blocks (Circle-Shaped)",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE"
+  },
+  "ability-mage#0262": {
+   "src": "{#}{#}Pulse Self Heal: {~} (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Orphion's Pulse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Pulse Self Heal: 20% (of your max health)",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE"
+  },
+  "ability-mage#0298": {
+   "src": "{#}{#}Range: +{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Larger Heal",
+    "mage/Psychokinesis",
+    "shaman/Overseer",
+    "warrior/Double Bash"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: +2 Blocks",
+   "ability": "Larger Heal、Psychokinesis、Overseer、Double Bash",
+   "code": "MAGE"
+  },
+  "ability-mage#0304": {
+   "src": "{#}{#}Range: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Teleport",
+    "mage/Heal",
+    "mage/Ice Snake"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: 18 Blocks",
+   "ability": "Meteor、Teleport、Heal、Ice Snake",
+   "code": "MAGE"
+  },
+  "ability-mage#0294": {
+   "src": "{#}{#}Slow Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Slow Duration: 1s",
+   "ability": "Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0263": {
+   "src": "{#}{#}Target Radius: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Target Radius: 1 Blocks (Circle-Shaped)",
+   "ability": "Meteor Shower",
+   "code": "MAGE"
+  },
+  "ability-mage#0289": {
+   "src": "{#}{#}Thunder Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Thunder Mastery",
+    "shaman/Thunder Mastery",
+    "warrior/Thunder Mastery",
+    "archer/Thunder Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Thunder Damage: +10%",
+   "ability": "Thunder Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0283": {
+   "src": "{#}{#}Thunder Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Thunder Mastery",
+    "shaman/Thunder Mastery",
+    "warrior/Thunder Mastery",
+    "archer/Thunder Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Thunder Damage: +1-8",
+   "ability": "Thunder Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0286": {
+   "src": "{#}{#}Tornado Duration: +{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Time Vortex"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Tornado Duration: +3s",
+   "ability": "Time Vortex",
+   "code": "MAGE"
+  },
+  "ability-mage#0287": {
+   "src": "{#}{#}Tornado Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Tornado Duration: 5s",
+   "ability": "Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0275": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Incandescence",
+    "mage/Searing Light",
+    "mage/Void Acceleration"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +90% (of your DPS)",
+   "ability": "Crashing Comet、Incandescence、Searing Light、Void Acceleration",
+   "code": "MAGE"
+  },
+  "ability-mage#0249": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Frozen Tornado)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +15% (of your DPS, for Frozen Tornado)",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp",
+   "code": "MAGE"
+  },
+  "ability-mage#0253": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ice Snake)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp",
+    "mage/Blitz"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +40% (of your DPS, for Ice Snake)",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp、Blitz",
+   "code": "MAGE"
+  },
+  "ability-mage#0257": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Meteor)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +120% (of your DPS, for Meteor)",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE"
+  },
+  "ability-mage#0255": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ophanim)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +40% (of your DPS, for Ophanim)",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE"
+  },
+  "ability-mage#0276": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Divination",
+    "warrior/Half-Moon Swipe",
+    "assassin/Double Spin",
+    "assassin/Wall of Smoke"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: -30% (of your DPS)",
+   "ability": "Divination、Half-Moon Swipe、Double Spin、Wall of Smoke",
+   "code": "MAGE"
+  },
+  "ability-mage#0269": {
+   "src": "{#}{#}Total Damage: {~} (Main Attack Damage)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Pyrokinesis",
+    "mage/Vacuokinesis",
+    "warrior/Zenith Stance",
+    "archer/Twain's Arc"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 200% (Main Attack Damage)",
+   "ability": "Pyrokinesis、Vacuokinesis、Zenith Stance、Twain's Arc",
+   "code": "MAGE"
+  },
+  "ability-mage#0277": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Sunshower",
+    "mage/Burning Sigil"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 400% (of your DPS)",
+   "ability": "Meteor、Ice Snake、Sunshower、Burning Sigil",
+   "code": "MAGE"
+  },
+  "ability-mage#0264": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Collapse)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 8000% (of your DPS, Collapse)",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0258": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Deadly Beam)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 300% (of your DPS, Deadly Beam)",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0271": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Fire)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 2000% (of your DPS, Fire)",
+   "ability": "Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0266": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Thunder)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 900% (of your DPS, Thunder)",
+   "ability": "Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0265": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per Wisp)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 300% (of your DPS, per Wisp)",
+   "ability": "Dawn",
+   "code": "MAGE"
+  },
+  "ability-mage#0278": {
+   "src": "{#}{#}Total Heal: {~} (of max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Heal: 10% (of max health)",
+   "ability": "Dawn",
+   "code": "MAGE"
+  },
+  "ability-mage#0272": {
+   "src": "{#}{#}Total Heal: {~} (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Heal",
+    "shaman/Sacrificial Shrine",
+    "shaman/Regeneration"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Heal: 15% (of your max health)",
+   "ability": "Heal、Sacrificial Shrine、Regeneration",
+   "code": "MAGE"
+  },
+  "ability-mage#0299": {
+   "src": "{#}{#}Vision: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Vision: 15 Blocks",
+   "ability": "Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0273": {
+   "src": "{#}{#}Vision: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Portal to the Beyond",
+    "shaman/Crimson Effigy",
+    "shaman/Hummingbird's Song",
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Vision: 12 Blocks (Circle-Shaped)",
+   "ability": "Portal to the Beyond、Crimson Effigy、Hummingbird's Song、Patchwork Abomination",
+   "code": "MAGE"
+  },
+  "ability-mage#0300": {
+   "src": "{#}{#}Water Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Water Mastery",
+    "shaman/Water Mastery",
+    "warrior/Water Mastery",
+    "archer/Water Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Water Damage: +15%",
+   "ability": "Water Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0291": {
+   "src": "{#}{#}Water Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Water Mastery",
+    "shaman/Water Mastery",
+    "warrior/Water Mastery",
+    "archer/Water Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Water Damage: +2-4",
+   "ability": "Water Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0000": {
+   "src": "Meteor",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/01/000/004",
+   "ability": "Meteor",
+   "code": "MAGE-P1-R00-C04"
+  },
+  "ability-mage#0001": {
+   "src": "Conjures a slow but powerful meteor\nfrom the sky, dealing massive\ndamage over a large area.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor"
+   ],
+   "lines": 3,
+   "flat": "Conjures a slow but powerful meteor from the sky, dealing massive damage over a large area.",
+   "_raw": "Conjures a slow but powerful meteor\nfrom the sky, dealing massive\ndamage over a large area.",
+   "tree": "01/mage/01/000/004",
+   "ability": "Meteor",
+   "code": "MAGE-P1-R00-C04"
+  },
+  "ability-mage#0002": {
+   "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Burning Sigil",
+    "mage/Etheric Slash"
+   ],
+   "_raw": " Area of Effect: 5 Blocks (Circle-Shaped)",
+   "tree": "01/mage/01/000/004",
+   "ability": "Meteor、Ice Snake、Burning Sigil、Etheric Slash",
+   "code": "MAGE-P1-R00-C04"
+  },
+  "ability-mage#0003": {
+   "src": "{#} Mana Cost: {~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Teleport",
+    "mage/Heal",
+    "mage/Ice Snake"
+   ],
+   "_raw": " Mana Cost: 50",
+   "tree": "01/mage/01/000/004",
+   "ability": "Meteor、Teleport、Heal、Ice Snake",
+   "code": "MAGE-P1-R00-C04"
+  },
+  "ability-mage#0004": {
+   "src": "{#} Range: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Teleport",
+    "mage/Heal",
+    "mage/Ice Snake"
+   ],
+   "_raw": " Range: 18 Blocks",
+   "tree": "01/mage/01/000/004",
+   "ability": "Meteor、Teleport、Heal、Ice Snake",
+   "code": "MAGE-P1-R00-C04"
+  },
+  "ability-mage#0005": {
+   "src": "{#} Total Damage: {~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Sunshower",
+    "mage/Burning Sigil"
+   ],
+   "_raw": " Total Damage: 400% (of your DPS)",
+   "tree": "01/mage/01/000/004",
+   "ability": "Meteor、Ice Snake、Sunshower、Burning Sigil",
+   "code": "MAGE-P1-R00-C04"
+  },
+  "ability-mage#0006": {
+   "src": "Wand Proficiency I",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/01/002/004",
+   "ability": "Wand Proficiency I",
+   "code": "MAGE-P1-R02-C04"
+  },
+  "ability-mage#0007": {
+   "src": "Improve your Main Attack's damage\nand range when using a wand.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Wand Proficiency I",
+    "mage/Wand Proficiency II"
+   ],
+   "lines": 2,
+   "flat": "Improve your Main Attack's damage and range when using a wand.",
+   "_raw": "Improve your Main Attack's damage\nand range when using a wand.",
+   "tree": "01/mage/01/002/004",
+   "ability": "Wand Proficiency I、Wand Proficiency II",
+   "code": "MAGE-P1-R02-C04"
+  },
+  "ability-mage#0008": {
+   "src": "Cheaper Meteor",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/01/002/006",
+   "ability": "Cheaper Meteor",
+   "code": "MAGE-P1-R02-C06"
+  },
+  "ability-mage#0009": {
+   "src": "Reduce the mana cost of Meteor.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Cheaper Meteor",
+    "mage/Cheaper Meteor II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Meteor.",
+   "_raw": "Reduce the mana cost of Meteor.",
+   "tree": "01/mage/01/002/006",
+   "ability": "Cheaper Meteor、Cheaper Meteor II",
+   "code": "MAGE-P1-R02-C06"
+  },
+  "ability-mage#0010": {
+   "src": "{#} Mana Cost: -{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Cheaper Meteor",
+    "mage/Cheaper Teleport",
+    "mage/Cheaper Heal",
+    "mage/Cheaper Teleport II"
+   ],
+   "_raw": " Mana Cost: -10",
+   "tree": "01/mage/01/002/006",
+   "ability": "Cheaper Meteor、Cheaper Teleport、Cheaper Heal、Cheaper Teleport II",
+   "code": "MAGE-P1-R02-C06"
+  },
+  "ability-mage#0011": {
+   "src": "Shooting Star",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/01/004/004",
+   "ability": "Shooting Star",
+   "code": "MAGE-P1-R04-C04"
+  },
+  "ability-mage#0012": {
+   "src": "Drastically increase the\nspeed of your Meteor ability.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Shooting Star"
+   ],
+   "lines": 2,
+   "flat": "Drastically increase the speed of your Meteor ability.",
+   "_raw": "Drastically increase the\nspeed of your Meteor ability.",
+   "tree": "01/mage/01/004/004",
+   "ability": "Shooting Star",
+   "code": "MAGE-P1-R04-C04"
+  },
+  "ability-mage#0013": {
+   "src": "Wand Proficiency II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/02/001/002",
+   "ability": "Wand Proficiency II",
+   "code": "MAGE-P2-R01-C02"
+  },
+  "ability-mage#0014": {
+   "src": "Teleport",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/02/001/004",
+   "ability": "Teleport",
+   "code": "MAGE-P2-R01-C04"
+  },
+  "ability-mage#0015": {
+   "src": "Instantly teleport in the\ndirection you're facing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Teleport"
+   ],
+   "lines": 2,
+   "flat": "Instantly teleport in the direction you're facing.",
+   "_raw": "Instantly teleport in the\ndirection you're facing.",
+   "tree": "01/mage/02/001/004",
+   "ability": "Teleport",
+   "code": "MAGE-P2-R01-C04"
+  },
+  "ability-mage#0016": {
+   "src": "Wisdom",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/02/001/006",
+   "ability": "Wisdom",
+   "code": "MAGE-P2-R01-C06"
+  },
+  "ability-mage#0017": {
+   "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Wisdom"
+   ],
+   "lines": 2,
+   "flat": "For every {~} or {~} Raw Spell Damage you have from items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
+   "_raw": "For every 2% or 2 Raw Spell Damage you have\nfrom items, gain +1/5s Mana Regen (Max 5/5s)",
+   "tree": "01/mage/02/001/006",
+   "ability": "Wisdom",
+   "code": "MAGE-P2-R01-C06"
+  },
+  "ability-mage#0018": {
+   "src": "Heal",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/02/003/002",
+   "ability": "Heal",
+   "code": "MAGE-P2-R03-C02"
+  },
+  "ability-mage#0019": {
+   "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Heal"
+   ],
+   "lines": 4,
+   "flat": "Heals you and nearby allies in a large area around you. (When healing others, you can't heal more than {~} of their max health)",
+   "_raw": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than 50% of their max health)",
+   "tree": "01/mage/02/003/002",
+   "ability": "Heal",
+   "code": "MAGE-P2-R03-C02"
+  },
+  "ability-mage#0020": {
+   "src": "{#} Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Heal",
+    "mage/Ice Snake",
+    "mage/Burning Sigil",
+    "mage/Fortitude"
+   ],
+   "_raw": " Duration: 0.6s",
+   "tree": "01/mage/02/003/002",
+   "ability": "Heal、Ice Snake、Burning Sigil、Fortitude",
+   "code": "MAGE-P2-R03-C02"
+  },
+  "ability-mage#0021": {
+   "src": "Cheaper Teleport",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/02/003/004",
+   "ability": "Cheaper Teleport",
+   "code": "MAGE-P2-R03-C04"
+  },
+  "ability-mage#0022": {
+   "src": "Reduce the mana cost of Teleport.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Cheaper Teleport",
+    "mage/Cheaper Teleport II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Teleport.",
+   "_raw": "Reduce the mana cost of Teleport.",
+   "tree": "01/mage/02/003/004",
+   "ability": "Cheaper Teleport、Cheaper Teleport II",
+   "code": "MAGE-P2-R03-C04"
+  },
+  "ability-mage#0023": {
+   "src": "Ice Snake",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/02/003/006",
+   "ability": "Ice Snake",
+   "code": "MAGE-P2-R03-C06"
+  },
+  "ability-mage#0024": {
+   "src": "Conjures a fast-moving ice snake that\ndamages and slows enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Ice Snake"
+   ],
+   "lines": 2,
+   "flat": "Conjures a fast-moving ice snake that damages and slows enemies.",
+   "_raw": "Conjures a fast-moving ice snake that\ndamages and slows enemies.",
+   "tree": "01/mage/02/003/006",
+   "ability": "Ice Snake",
+   "code": "MAGE-P2-R03-C06"
+  },
+  "ability-mage#0025": {
+   "src": "Sunshower",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/03/003/001",
+   "ability": "Sunshower",
+   "code": "MAGE-P3-R03-C01"
+  },
+  "ability-mage#0026": {
+   "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Sunshower"
+   ],
+   "lines": 2,
+   "flat": "Arcane Transfer will damage nearby enemies when transferring {~}+ Mana.",
+   "_raw": "Arcane Transfer will damage nearby\nenemies when transferring 30+ Mana.",
+   "tree": "01/mage/03/003/001",
+   "ability": "Sunshower",
+   "code": "MAGE-P3-R03-C01"
+  },
+  "ability-mage#0027": {
+   "src": "Heal emits a strong light,\ndamaging nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Sunshower"
+   ],
+   "lines": 2,
+   "flat": "Heal emits a strong light, damaging nearby enemies.",
+   "_raw": "Heal emits a strong light,\ndamaging nearby enemies.",
+   "tree": "01/mage/03/003/001",
+   "ability": "Sunshower",
+   "code": "MAGE-P3-R03-C01"
+  },
+  "ability-mage#0028": {
+   "src": "Burning Sigil",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/03/003/007",
+   "ability": "Burning Sigil",
+   "code": "MAGE-P3-R03-C07"
+  },
+  "ability-mage#0029": {
+   "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Burning Sigil"
+   ],
+   "lines": 2,
+   "flat": "Meteor and Ophanim will leave a sigil of fire on the ground that damages enemies every {~}s.",
+   "_raw": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every 0.4s.",
+   "tree": "01/mage/03/003/007",
+   "ability": "Burning Sigil",
+   "code": "MAGE-P3-R03-C07"
+  },
+  "ability-mage#0031": {
+   "src": "{#} Cooldown: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Burning Sigil",
+    "mage/Displacement",
+    "mage/Purification",
+    "mage/Fortitude"
+   ],
+   "_raw": " Cooldown: 8s",
+   "tree": "01/mage/03/003/007",
+   "ability": "Burning Sigil、Displacement、Purification、Fortitude",
+   "code": "MAGE-P3-R03-C07"
+  },
+  "ability-mage#0030": {
+   "src": "{#}({#}{#}Fire: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Burning Sigil",
+    "mage/Lightweaver",
+    "mage/Dawn",
+    "mage/Tangled Origin"
+   ],
+   "_raw": "( Fire: 15%)",
+   "tree": "01/mage/03/003/007",
+   "ability": "Burning Sigil、Lightweaver、Dawn、Tangled Origin",
+   "code": "MAGE-P3-R03-C07"
+  },
+  "ability-mage#0032": {
+   "src": "Etheric Slash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/03/004/004",
+   "ability": "Etheric Slash",
+   "code": "MAGE-P3-R04-C04"
+  },
+  "ability-mage#0033": {
+   "src": "When using Teleport, slash through reality\nand deal damage to enemies you pierce.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Etheric Slash"
+   ],
+   "lines": 2,
+   "flat": "When using Teleport, slash through reality and deal damage to enemies you pierce.",
+   "_raw": "When using Teleport, slash through reality\nand deal damage to enemies you pierce.",
+   "tree": "01/mage/03/004/004",
+   "ability": "Etheric Slash",
+   "code": "MAGE-P3-R04-C04"
+  },
+  "ability-mage#0034": {
+   "src": "Crashing Comet",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/03/004/006",
+   "ability": "Crashing Comet",
+   "code": "MAGE-P3-R04-C06"
+  },
+  "ability-mage#0035": {
+   "src": "Increase the damage of Meteor.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Crashing Comet"
+   ],
+   "lines": 1,
+   "flat": "Increase the damage of Meteor.",
+   "_raw": "Increase the damage of Meteor.",
+   "tree": "01/mage/03/004/006",
+   "ability": "Crashing Comet",
+   "code": "MAGE-P3-R04-C06"
+  },
+  "ability-mage#0037": {
+   "src": "{#} Total Damage: +{~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Incandescence",
+    "mage/Searing Light",
+    "mage/Void Acceleration"
+   ],
+   "_raw": " Total Damage: +90% (of your DPS)",
+   "tree": "01/mage/03/004/006",
+   "ability": "Crashing Comet、Incandescence、Searing Light、Void Acceleration",
+   "code": "MAGE-P3-R04-C06"
+  },
+  "ability-mage#0036": {
+   "src": "{#}({#}{#}Damage: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Astral Fragmentation",
+    "mage/Sentient Snake",
+    "mage/Snake Nest"
+   ],
+   "_raw": "( Damage: +70%)",
+   "tree": "01/mage/03/004/006",
+   "ability": "Crashing Comet、Astral Fragmentation、Sentient Snake、Snake Nest",
+   "code": "MAGE-P3-R04-C06"
+  },
+  "ability-mage#0038": {
+   "src": "Ophanim",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/001/000",
+   "ability": "Ophanim",
+   "code": "MAGE-P4-R01-C00"
+  },
+  "ability-mage#0039": {
+   "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Ophanim"
+   ],
+   "lines": 3,
+   "flat": "When casting Meteor, instead summon {~} orbs of light with {~} Health that will attack when you use your Main Attack.",
+   "_raw": "When casting Meteor, instead summon\n2 orbs of light with 200 Health that will\nattack when you use your Main Attack.",
+   "tree": "01/mage/04/001/000",
+   "ability": "Ophanim",
+   "code": "MAGE-P4-R01-C00"
+  },
+  "ability-mage#0040": {
+   "src": "When they damage an enemy, they lose {~}\nof their Health. They can be healed back.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Ophanim"
+   ],
+   "lines": 2,
+   "flat": "When they damage an enemy, they lose {~} of their Health. They can be healed back.",
+   "_raw": "When they damage an enemy, they lose 20%\nof their Health. They can be healed back.",
+   "tree": "01/mage/04/001/000",
+   "ability": "Ophanim",
+   "code": "MAGE-P4-R01-C00"
+  },
+  "ability-mage#0041": {
+   "src": "Distortion",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/001/004",
+   "ability": "Distortion",
+   "code": "MAGE-P4-R01-C04"
+  },
+  "ability-mage#0042": {
+   "src": "Each Distortion {#} gives +{~} Raw Damage\nand decays at a rate of -{~} per second,\nincreasing as you gain Distortion {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Distortion"
+   ],
+   "lines": 3,
+   "flat": "Each Distortion {#} gives +{~} Raw Damage and decays at a rate of -{~} per second, increasing as you gain Distortion {#}.",
+   "_raw": "Each Distortion  gives +1 Raw Damage\nand decays at a rate of -1 per second,\nincreasing as you gain Distortion .",
+   "tree": "01/mage/04/001/004",
+   "ability": "Distortion",
+   "code": "MAGE-P4-R01-C04"
+  },
+  "ability-mage#0043": {
+   "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Distortion"
+   ],
+   "lines": 2,
+   "flat": "Hitting an enemy with Etheric Slash grants up to +{~} Distortion {#} per {~}s.",
+   "_raw": "Hitting an enemy with Etheric Slash grants up\nto +20 Distortion  per 4s.",
+   "tree": "01/mage/04/001/004",
+   "ability": "Distortion",
+   "code": "MAGE-P4-R01-C04"
+  },
+  "ability-mage#0044": {
+   "src": "Displacement",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/001/006",
+   "ability": "Displacement",
+   "code": "MAGE-P4-R01-C06"
+  },
+  "ability-mage#0045": {
+   "src": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Displacement"
+   ],
+   "lines": 2,
+   "flat": "Casting Teleport while sneaking places an ethereal image of yourself at your location.",
+   "_raw": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
+   "tree": "01/mage/04/001/006",
+   "ability": "Displacement",
+   "code": "MAGE-P4-R01-C06"
+  },
+  "ability-mage#0046": {
+   "src": "You're teleported to its location upon recasting it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Displacement"
+   ],
+   "lines": 1,
+   "flat": "You're teleported to its location upon recasting it.",
+   "_raw": "You're teleported to its location upon recasting it.",
+   "tree": "01/mage/04/001/006",
+   "ability": "Displacement",
+   "code": "MAGE-P4-R01-C06"
+  },
+  "ability-mage#0047": {
+   "src": "Arcane Transfer",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/001/008",
+   "ability": "Arcane Transfer",
+   "code": "MAGE-P4-R01-C08"
+  },
+  "ability-mage#0048": {
+   "src": "Heal will now transfer the contents of your\nMana Bank ✺ into usable Mana instead of healing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Transfer"
+   ],
+   "lines": 2,
+   "flat": "Heal will now transfer the contents of your Mana Bank ✺ into usable Mana instead of healing.",
+   "_raw": "Heal will now transfer the contents of your\nMana Bank ✺ into usable Mana instead of healing.",
+   "tree": "01/mage/04/001/008",
+   "ability": "Arcane Transfer",
+   "code": "MAGE-P4-R01-C08"
+  },
+  "ability-mage#0049": {
+   "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\na Mana Bank ✺ for every aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Transfer"
+   ],
+   "lines": 3,
+   "flat": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to a Mana Bank ✺ for every aggressive enemy you hit. Frozen Tornado and Meteor Shower will add +{~} Mana.",
+   "_raw": "Meteor, Ice Snake, and Etheric Slash will add +13 Mana to\na Mana Bank ✺ for every aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +4 Mana.",
+   "tree": "01/mage/04/001/008",
+   "ability": "Arcane Transfer",
+   "code": "MAGE-P4-R01-C08"
+  },
+  "ability-mage#0050": {
+   "src": "Astral Fragmentation",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/002/005",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE-P4-R02-C05"
+  },
+  "ability-mage#0051": {
+   "src": "Meteor scatters into debris upon\nlanding, dealing additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": 2,
+   "flat": "Meteor scatters into debris upon landing, dealing additional damage.",
+   "_raw": "Meteor scatters into debris upon\nlanding, dealing additional damage.",
+   "tree": "01/mage/04/002/005",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE-P4-R02-C05"
+  },
+  "ability-mage#0052": {
+   "src": "Ophanim draws light from the\nstars, dealing additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": 2,
+   "flat": "Ophanim draws light from the stars, dealing additional damage.",
+   "_raw": "Ophanim draws light from the\nstars, dealing additional damage.",
+   "tree": "01/mage/04/002/005",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE-P4-R02-C05"
+  },
+  "ability-mage#0053": {
+   "src": "{#} Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "_raw": " Meteor Area of Effect: 6 Blocks (Circle-Shaped)",
+   "tree": "01/mage/04/002/005",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE-P4-R02-C05"
+  },
+  "ability-mage#0054": {
+   "src": "{#} Total Damage: +{~} (of your DPS, for Meteor)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "_raw": " Total Damage: +120% (of your DPS, for Meteor)",
+   "tree": "01/mage/04/002/005",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE-P4-R02-C05"
+  },
+  "ability-mage#0055": {
+   "src": "{#} Total Damage: +{~} (of your DPS, for Ophanim)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "_raw": " Total Damage: +40% (of your DPS, for Ophanim)",
+   "tree": "01/mage/04/002/005",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE-P4-R02-C05"
+  },
+  "ability-mage#0056": {
+   "src": "Purification",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/003/000",
+   "ability": "Purification",
+   "code": "MAGE-P4-R03-C00"
+  },
+  "ability-mage#0057": {
+   "src": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Purification"
+   ],
+   "lines": 2,
+   "flat": "Heal and Arcane Transfer will purify allies of all negative effects and fire.",
+   "_raw": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
+   "tree": "01/mage/04/003/000",
+   "ability": "Purification",
+   "code": "MAGE-P4-R03-C00"
+  },
+  "ability-mage#0058": {
+   "src": "Cheaper Heal",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/003/002",
+   "ability": "Cheaper Heal",
+   "code": "MAGE-P4-R03-C02"
+  },
+  "ability-mage#0059": {
+   "src": "Reduce the mana cost of Heal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Cheaper Heal",
+    "mage/Cheaper Heal II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Heal.",
+   "_raw": "Reduce the mana cost of Heal.",
+   "tree": "01/mage/04/003/002",
+   "ability": "Cheaper Heal、Cheaper Heal II",
+   "code": "MAGE-P4-R03-C02"
+  },
+  "ability-mage#0060": {
+   "src": "Frozen Tornado",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/003/004",
+   "ability": "Frozen Tornado",
+   "code": "MAGE-P4-R03-C04"
+  },
+  "ability-mage#0061": {
+   "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": 2,
+   "flat": "Casting Ice Snake instead summons a frozen tornado that deals damage every {~}s.",
+   "_raw": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every 0.5s.",
+   "tree": "01/mage/04/003/004",
+   "ability": "Frozen Tornado",
+   "code": "MAGE-P4-R03-C04"
+  },
+  "ability-mage#0062": {
+   "src": "For every +{~} Distortion {#}, the tornado gains\n+{~} {#} Area of Effect and +{~} {#} Damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": 2,
+   "flat": "For every +{~} Distortion {#}, the tornado gains +{~} {#} Area of Effect and +{~} {#} Damage.",
+   "_raw": "For every +1 Distortion , the tornado gains\n+0.015  Area of Effect and +1.1%  Damage.",
+   "tree": "01/mage/04/003/004",
+   "ability": "Frozen Tornado",
+   "code": "MAGE-P4-R03-C04"
+  },
+  "ability-mage#0063": {
+   "src": "{#} Slow Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "_raw": " Slow Duration: 1s",
+   "tree": "01/mage/04/003/004",
+   "ability": "Frozen Tornado",
+   "code": "MAGE-P4-R03-C04"
+  },
+  "ability-mage#0064": {
+   "src": "{#} Tornado Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "_raw": " Tornado Duration: 5s",
+   "tree": "01/mage/04/003/004",
+   "ability": "Frozen Tornado",
+   "code": "MAGE-P4-R03-C04"
+  },
+  "ability-mage#0065": {
+   "src": "Sentient Snake",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/003/008",
+   "ability": "Sentient Snake",
+   "code": "MAGE-P4-R03-C08"
+  },
+  "ability-mage#0066": {
+   "src": "Frozen Tornado drifts towards nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Sentient Snake"
+   ],
+   "lines": 1,
+   "flat": "Frozen Tornado drifts towards nearby enemies.",
+   "_raw": "Frozen Tornado drifts towards nearby enemies.",
+   "tree": "01/mage/04/003/008",
+   "ability": "Sentient Snake",
+   "code": "MAGE-P4-R03-C08"
+  },
+  "ability-mage#0067": {
+   "src": "Ice Snake will follow the direction you're\nfacing, allowing you to control it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Sentient Snake"
+   ],
+   "lines": 2,
+   "flat": "Ice Snake will follow the direction you're facing, allowing you to control it.",
+   "_raw": "Ice Snake will follow the direction you're\nfacing, allowing you to control it.",
+   "tree": "01/mage/04/003/008",
+   "ability": "Sentient Snake",
+   "code": "MAGE-P4-R03-C08"
+  },
+  "ability-mage#0068": {
+   "src": "({#} Water: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp",
+    "mage/Searing Light"
+   ],
+   "_raw": "( Water: +15%)",
+   "tree": "01/mage/04/003/008",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp、Searing Light",
+   "code": "MAGE-P4-R03-C08"
+  },
+  "ability-mage#0069": {
+   "src": "{#} Drift Range: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake"
+   ],
+   "_raw": " Drift Range: 10 Blocks",
+   "tree": "01/mage/04/003/008",
+   "ability": "Sentient Snake",
+   "code": "MAGE-P4-R03-C08"
+  },
+  "ability-mage#0070": {
+   "src": "{#} Total Damage: +{~} (of your DPS, for Frozen Tornado)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp"
+   ],
+   "_raw": " Total Damage: +15% (of your DPS, for Frozen Tornado)",
+   "tree": "01/mage/04/003/008",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp",
+   "code": "MAGE-P4-R03-C08"
+  },
+  "ability-mage#0071": {
+   "src": "{#} Total Damage: +{~} (of your DPS, for Ice Snake)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp",
+    "mage/Blitz"
+   ],
+   "_raw": " Total Damage: +40% (of your DPS, for Ice Snake)",
+   "tree": "01/mage/04/003/008",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp、Blitz",
+   "code": "MAGE-P4-R03-C08"
+  },
+  "ability-mage#0072": {
+   "src": "Larger Heal",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/004/001",
+   "ability": "Larger Heal",
+   "code": "MAGE-P4-R04-C01"
+  },
+  "ability-mage#0073": {
+   "src": "Increase your Heal's range.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Larger Heal"
+   ],
+   "lines": 1,
+   "flat": "Increase your Heal's range.",
+   "_raw": "Increase your Heal's range.",
+   "tree": "01/mage/04/004/001",
+   "ability": "Larger Heal",
+   "code": "MAGE-P4-R04-C01"
+  },
+  "ability-mage#0074": {
+   "src": "Warp Blast",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/004/003",
+   "ability": "Warp Blast",
+   "code": "MAGE-P4-R04-C03"
+  },
+  "ability-mage#0075": {
+   "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Warp Blast"
+   ],
+   "lines": 2,
+   "flat": "Hitting an enemy with Main Attack grants up to +{~} Distortion {#} per {~}s.",
+   "_raw": "Hitting an enemy with Main Attack grants up\nto +8 Distortion  per 4s.",
+   "tree": "01/mage/04/004/003",
+   "ability": "Warp Blast",
+   "code": "MAGE-P4-R04-C03"
+  },
+  "ability-mage#0076": {
+   "src": "Larger Mana Bank",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/04/004/007",
+   "ability": "Larger Mana Bank",
+   "code": "MAGE-P4-R04-C07"
+  },
+  "ability-mage#0077": {
+   "src": "Increase your maximum\nMana Bank ✺ by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Larger Mana Bank",
+    "mage/Larger Mana Bank II",
+    "mage/Larger Mana Bank III"
+   ],
+   "lines": 2,
+   "flat": "Increase your maximum Mana Bank ✺ by +{~}.",
+   "_raw": "Increase your maximum\nMana Bank ✺ by +30.",
+   "tree": "01/mage/04/004/007",
+   "ability": "Larger Mana Bank、Larger Mana Bank II、Larger Mana Bank III",
+   "code": "MAGE-P4-R04-C07"
+  },
+  "ability-mage#0078": {
+   "src": "Cheaper Teleport II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/001/000",
+   "ability": "Cheaper Teleport II",
+   "code": "MAGE-P5-R01-C00"
+  },
+  "ability-mage#0079": {
+   "src": "Fortitude",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/001/002",
+   "ability": "Fortitude",
+   "code": "MAGE-P5-R01-C02"
+  },
+  "ability-mage#0080": {
+   "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Fortitude"
+   ],
+   "lines": 3,
+   "flat": "Healing {~} of your max health within {~}s will apply a damage bonus to every player you've healed.",
+   "_raw": "Healing 120% of your max health\nwithin 10s will apply a damage bonus\nto every player you've healed.",
+   "tree": "01/mage/05/001/002",
+   "ability": "Fortitude",
+   "code": "MAGE-P5-R01-C02"
+  },
+  "ability-mage#0081": {
+   "src": "{#} Effect: {~} Damage Bonus (⚔) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Fortitude"
+   ],
+   "_raw": " Effect: 40% Damage Bonus (⚔) to Allies",
+   "tree": "01/mage/05/001/002",
+   "ability": "Fortitude",
+   "code": "MAGE-P5-R01-C02"
+  },
+  "ability-mage#0082": {
+   "src": "Cheaper Ice Snake",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/001/004",
+   "ability": "Cheaper Ice Snake",
+   "code": "MAGE-P5-R01-C04"
+  },
+  "ability-mage#0083": {
+   "src": "Reduce the mana cost of Ice Snake.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Cheaper Ice Snake",
+    "mage/Cheaper Ice Snake II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Ice Snake.",
+   "_raw": "Reduce the mana cost of Ice Snake.",
+   "tree": "01/mage/05/001/004",
+   "ability": "Cheaper Ice Snake、Cheaper Ice Snake II",
+   "code": "MAGE-P5-R01-C04"
+  },
+  "ability-mage#0084": {
+   "src": "Pyrokinesis",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/001/008",
+   "ability": "Pyrokinesis",
+   "code": "MAGE-P5-R01-C08"
+  },
+  "ability-mage#0085": {
+   "src": "When your Mana Bank ✺ reaches {~},\nyour Main Attack will explode\nupon impact with enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Pyrokinesis"
+   ],
+   "lines": 3,
+   "flat": "When your Mana Bank ✺ reaches {~}, your Main Attack will explode upon impact with enemies.",
+   "_raw": "When your Mana Bank ✺ reaches 30,\nyour Main Attack will explode\nupon impact with enemies.",
+   "tree": "01/mage/05/001/008",
+   "ability": "Pyrokinesis",
+   "code": "MAGE-P5-R01-C08"
+  },
+  "ability-mage#0086": {
+   "src": "Freezing Sigil",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/002/001",
+   "ability": "Freezing Sigil",
+   "code": "MAGE-P5-R02-C01"
+  },
+  "ability-mage#0087": {
+   "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Freezing Sigil"
+   ],
+   "lines": 4,
+   "flat": "Ice Snake will leave a sigil of ice beneath you that slows and damages enemies every {~}s. Allies standing on the sigil will be immune to knockback.",
+   "_raw": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every 0.8s. Allies standing on\nthe sigil will be immune to knockback.",
+   "tree": "01/mage/05/002/001",
+   "ability": "Freezing Sigil",
+   "code": "MAGE-P5-R02-C01"
+  },
+  "ability-mage#0088": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Knockback Immunity to Allies",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Freezing Sigil"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Knockback Immunity to Allies",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Knockback Immunity to Allies",
+   "tree": "01/mage/05/002/001",
+   "ability": "Freezing Sigil",
+   "code": "MAGE-P5-R02-C01"
+  },
+  "ability-mage#0089": {
+   "src": "Vacuokinesis",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/003/003",
+   "ability": "Vacuokinesis",
+   "code": "MAGE-P5-R03-C03"
+  },
+  "ability-mage#0090": {
+   "src": "For every +{~} Distortion {#}, Vacuokinesis\ndeals +{~} {#} Damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Vacuokinesis"
+   ],
+   "lines": 2,
+   "flat": "For every +{~}{#}Distortion {#}, Vacuokinesis deals +{~}{#}{#}{#}Damage.",
+   "_raw": "For every +1 Distortion , Vacuokinesis\ndeals +0.8%  Damage.",
+   "tree": "01/mage/05/003/003",
+   "ability": "Vacuokinesis",
+   "code": "MAGE-P5-R03-C03"
+  },
+  "ability-mage#0091": {
+   "src": "Your Main Attack is imbued with vacuum,\ndealing additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Vacuokinesis"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack is imbued with vacuum, dealing additional damage.",
+   "_raw": "Your Main Attack is imbued with vacuum,\ndealing additional damage.",
+   "tree": "01/mage/05/003/003",
+   "ability": "Vacuokinesis",
+   "code": "MAGE-P5-R03-C03"
+  },
+  "ability-mage#0092": {
+   "src": "Snake Nest",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/003/006",
+   "ability": "Snake Nest",
+   "code": "MAGE-P5-R03-C06"
+  },
+  "ability-mage#0093": {
+   "src": "Frozen Tornado will summon {~} tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Snake Nest"
+   ],
+   "lines": 3,
+   "flat": "Frozen Tornado will summon {~} tornados. (Enemies cannot be damaged by multiple tornados or snakes at the same time.)",
+   "_raw": "Frozen Tornado will summon 3 tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
+   "tree": "01/mage/05/003/006",
+   "ability": "Snake Nest",
+   "code": "MAGE-P5-R03-C06"
+  },
+  "ability-mage#0094": {
+   "src": "Ice Snake will summon {~} snakes.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Snake Nest"
+   ],
+   "lines": 1,
+   "flat": "Ice Snake will summon {~} snakes.",
+   "_raw": "Ice Snake will summon 3 snakes.",
+   "tree": "01/mage/05/003/006",
+   "ability": "Snake Nest",
+   "code": "MAGE-P5-R03-C06"
+  },
+  "ability-mage#0095": {
+   "src": "Seance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/003/008",
+   "ability": "Seance",
+   "code": "MAGE-P5-R03-C08"
+  },
+  "ability-mage#0096": {
+   "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Seance"
+   ],
+   "lines": 2,
+   "flat": "For every {~}/{~}s Lifesteal you have from items, gain +{~} Spell Damage. (Max {~})",
+   "_raw": "For every 5/3s Lifesteal you have\nfrom items, gain +1% Spell Damage. (Max 50%)",
+   "tree": "01/mage/05/003/008",
+   "ability": "Seance",
+   "code": "MAGE-P5-R03-C08"
+  },
+  "ability-mage#0097": {
+   "src": "Orphion's Pulse",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/004/000",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE-P5-R04-C00"
+  },
+  "ability-mage#0098": {
+   "src": "Heal becomes slower and stronger,\npulsing {~} more times for greater healing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Orphion's Pulse"
+   ],
+   "lines": 2,
+   "flat": "Heal becomes slower and stronger, pulsing {~} more times for greater healing.",
+   "_raw": "Heal becomes slower and stronger,\npulsing 2 more times for greater healing.",
+   "tree": "01/mage/05/004/000",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE-P5-R04-C00"
+  },
+  "ability-mage#0099": {
+   "src": "{#} Delay: {~}s (per pulse)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Orphion's Pulse"
+   ],
+   "_raw": " Delay: 1.5s (per pulse)",
+   "tree": "01/mage/05/004/000",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE-P5-R04-C00"
+  },
+  "ability-mage#0100": {
+   "src": "{#} Pulse Self Heal: {~} (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Orphion's Pulse"
+   ],
+   "_raw": " Pulse Self Heal: 20% (of your max health)",
+   "tree": "01/mage/05/004/000",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE-P5-R04-C00"
+  },
+  "ability-mage#0101": {
+   "src": "Meteor Shower",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/004/004",
+   "ability": "Meteor Shower",
+   "code": "MAGE-P5-R04-C04"
+  },
+  "ability-mage#0102": {
+   "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~} Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": 5,
+   "flat": "Casting Meteor summons an additional meteor near the target location for every {~} Distortion {#} you have. (Max {~} Meteors, only one Meteor Shower can be active at the same time.)",
+   "_raw": "Casting Meteor summons an additional\nmeteor near the target location for\nevery 20 Distortion  you have.\n(Max 20 Meteors, only one Meteor\nShower can be active at the same time.)",
+   "tree": "01/mage/05/004/004",
+   "ability": "Meteor Shower",
+   "code": "MAGE-P5-R04-C04"
+  },
+  "ability-mage#0103": {
+   "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~} {#} Damage and\nlosing -{~} {#} Area of Effect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": 3,
+   "flat": "Meteor and Astral Fragmentation become smaller, dealing -{~} {#} Damage and losing -{~} {#} Area of Effect.",
+   "_raw": "Meteor and Astral Fragmentation become\nsmaller, dealing -20%  Damage and\nlosing -20%  Area of Effect.",
+   "tree": "01/mage/05/004/004",
+   "ability": "Meteor Shower",
+   "code": "MAGE-P5-R04-C04"
+  },
+  "ability-mage#0104": {
+   "src": "{#} Target Radius: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "_raw": " Target Radius: 1 Blocks (Circle-Shaped)",
+   "tree": "01/mage/05/004/004",
+   "ability": "Meteor Shower",
+   "code": "MAGE-P5-R04-C04"
+  },
+  "ability-mage#0105": {
+   "src": "Arcane Restoration",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/004/007",
+   "ability": "Arcane Restoration",
+   "code": "MAGE-P5-R04-C07"
+  },
+  "ability-mage#0106": {
+   "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Restoration"
+   ],
+   "lines": 3,
+   "flat": "Pyrokinesis will add +{~} Mana every {~}s to your Mana Bank ✺ when hitting an aggressive enemy.",
+   "_raw": "Pyrokinesis will add +1 Mana every\n0.25s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
+   "tree": "01/mage/05/004/007",
+   "ability": "Arcane Restoration",
+   "code": "MAGE-P5-R04-C07"
+  },
+  "ability-mage#0107": {
+   "src": "Resilient Light",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/005/001",
+   "ability": "Resilient Light",
+   "code": "MAGE-P5-R05-C01"
+  },
+  "ability-mage#0108": {
+   "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Resilient Light"
+   ],
+   "lines": 3,
+   "flat": "Increases the health of Ophanim's orbs by +{~} and reduces the damage they take when attacking by -{~}.",
+   "_raw": "Increases the health of Ophanim's\norbs by +800 and reduces the\ndamage they take when attacking by -5%.",
+   "tree": "01/mage/05/005/001",
+   "ability": "Resilient Light",
+   "code": "MAGE-P5-R05-C01"
+  },
+  "ability-mage#0109": {
+   "src": "Incandescence",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/05/005/003",
+   "ability": "Incandescence",
+   "code": "MAGE-P5-R05-C03"
+  },
+  "ability-mage#0110": {
+   "src": "Increase the damage of Ophanim.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Incandescence",
+    "mage/Gleam"
+   ],
+   "lines": 1,
+   "flat": "Increase the damage of Ophanim.",
+   "_raw": "Increase the damage of Ophanim.",
+   "tree": "01/mage/05/005/003",
+   "ability": "Incandescence、Gleam",
+   "code": "MAGE-P5-R05-C03"
+  },
+  "ability-mage#0111": {
+   "src": "Lightweaver",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/001/000",
+   "ability": "Lightweaver",
+   "code": "MAGE-P6-R01-C00"
+  },
+  "ability-mage#0112": {
+   "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Lightweaver"
+   ],
+   "lines": 3,
+   "flat": "Healing {~} of your max health within {~}s will summon a rotating orb that damages enemies upon contact. (Max {~} orbs)",
+   "_raw": "Healing 50% of your max health within\n10s will summon a rotating orb that\ndamages enemies upon contact. (Max 3 orbs)",
+   "tree": "01/mage/06/001/000",
+   "ability": "Lightweaver",
+   "code": "MAGE-P6-R01-C00"
+  },
+  "ability-mage#0113": {
+   "src": "{#} Area of Effect: {~} Block (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Lightweaver"
+   ],
+   "_raw": " Area of Effect: 1.5 Block (Circle-Shaped)",
+   "tree": "01/mage/06/001/000",
+   "ability": "Lightweaver",
+   "code": "MAGE-P6-R01-C00"
+  },
+  "ability-mage#0114": {
+   "src": "Dimensional Tear",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/001/004",
+   "ability": "Dimensional Tear",
+   "code": "MAGE-P6-R01-C04"
+  },
+  "ability-mage#0115": {
+   "src": "Hitting an enemy with Etheric Slash tears\nopen a dimensional rift between you\nand your destination.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dimensional Tear"
+   ],
+   "lines": 3,
+   "flat": "Hitting an enemy with Etheric Slash tears open a dimensional rift between you and your destination.",
+   "_raw": "Hitting an enemy with Etheric Slash tears\nopen a dimensional rift between you\nand your destination.",
+   "tree": "01/mage/06/001/004",
+   "ability": "Dimensional Tear",
+   "code": "MAGE-P6-R01-C04"
+  },
+  "ability-mage#0116": {
+   "src": "The rift damages enemies every {~}s, increases\nyour Distortion {#} gain by +{~} and reduces\ndamage taken while standing in it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dimensional Tear"
+   ],
+   "lines": 3,
+   "flat": "The rift damages enemies every {~}s, increases your Distortion {#} gain by +{~} and reduces damage taken while standing in it.",
+   "_raw": "The rift damages enemies every 0.4s, increases\nyour Distortion  gain by +25% and reduces\ndamage taken while standing in it.",
+   "tree": "01/mage/06/001/004",
+   "ability": "Dimensional Tear",
+   "code": "MAGE-P6-R01-C04"
+  },
+  "ability-mage#0117": {
+   "src": "The rift's benefits and damage linger\nfor {~}s upon leaving its area.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dimensional Tear"
+   ],
+   "lines": 2,
+   "flat": "The rift's benefits and damage linger for {~}s upon leaving its area.",
+   "_raw": "The rift's benefits and damage linger\nfor 3s upon leaving its area.",
+   "tree": "01/mage/06/001/004",
+   "ability": "Dimensional Tear",
+   "code": "MAGE-P6-R01-C04"
+  },
+  "ability-mage#0118": {
+   "src": "Arcane Speed",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/001/006",
+   "ability": "Arcane Speed",
+   "code": "MAGE-P6-R01-C06"
+  },
+  "ability-mage#0119": {
+   "src": "You gain a walk speed buff after\ncasting Heal or Arcane Transfer.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Speed"
+   ],
+   "lines": 2,
+   "flat": "You gain a walk speed buff after casting Heal or Arcane Transfer.",
+   "_raw": "You gain a walk speed buff after\ncasting Heal or Arcane Transfer.",
+   "tree": "01/mage/06/001/006",
+   "ability": "Arcane Speed",
+   "code": "MAGE-P6-R01-C06"
+  },
+  "ability-mage#0120": {
+   "src": "{#} Effects: +{~} Walk Speed",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Arcane Speed"
+   ],
+   "_raw": " Effects: +40% Walk Speed",
+   "tree": "01/mage/06/001/006",
+   "ability": "Arcane Speed",
+   "code": "MAGE-P6-R01-C06"
+  },
+  "ability-mage#0121": {
+   "src": "Larger Mana Bank II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/001/008",
+   "ability": "Larger Mana Bank II",
+   "code": "MAGE-P6-R01-C08"
+  },
+  "ability-mage#0122": {
+   "src": "Cheaper Meteor II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/002/001",
+   "ability": "Cheaper Meteor II",
+   "code": "MAGE-P6-R02-C01"
+  },
+  "ability-mage#0123": {
+   "src": "Rift Rupture",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/002/003",
+   "ability": "Rift Rupture",
+   "code": "MAGE-P6-R02-C03"
+  },
+  "ability-mage#0124": {
+   "src": "Dimensional Tear erupts violently when\ncreated, damaging enemies inside it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Rift Rupture"
+   ],
+   "lines": 2,
+   "flat": "Dimensional Tear erupts violently when created, damaging enemies inside it.",
+   "_raw": "Dimensional Tear erupts violently when\ncreated, damaging enemies inside it.",
+   "tree": "01/mage/06/002/003",
+   "ability": "Rift Rupture",
+   "code": "MAGE-P6-R02-C03"
+  },
+  "ability-mage#0125": {
+   "src": "While Riftbound, Etheric Slash implodes your\nbound rift instead, damaging nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Rift Rupture"
+   ],
+   "lines": 2,
+   "flat": "While Riftbound, Etheric Slash implodes your bound rift instead, damaging nearby enemies.",
+   "_raw": "While Riftbound, Etheric Slash implodes your\nbound rift instead, damaging nearby enemies.",
+   "tree": "01/mage/06/002/003",
+   "ability": "Rift Rupture",
+   "code": "MAGE-P6-R02-C03"
+  },
+  "ability-mage#0126": {
+   "src": "{#} Cooldown: {~}s (Riftbound)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Rift Rupture"
+   ],
+   "_raw": " Cooldown: 2s (Riftbound)",
+   "tree": "01/mage/06/002/003",
+   "ability": "Rift Rupture",
+   "code": "MAGE-P6-R02-C03"
+  },
+  "ability-mage#0127": {
+   "src": "Cheaper Ice Snake II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/002/005",
+   "ability": "Cheaper Ice Snake II",
+   "code": "MAGE-P6-R02-C05"
+  },
+  "ability-mage#0128": {
+   "src": "Psychokinesis",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/002/007",
+   "ability": "Psychokinesis",
+   "code": "MAGE-P6-R02-C07"
+  },
+  "ability-mage#0129": {
+   "src": "Shoots Meteor from you as a slow projectile.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Psychokinesis"
+   ],
+   "lines": 1,
+   "flat": "Shoots Meteor from you as a slow projectile.",
+   "_raw": "Shoots Meteor from you as a slow projectile.",
+   "tree": "01/mage/06/002/007",
+   "ability": "Psychokinesis",
+   "code": "MAGE-P6-R02-C07"
+  },
+  "ability-mage#0130": {
+   "src": "Chaos Explosion",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/003/008",
+   "ability": "Chaos Explosion",
+   "code": "MAGE-P6-R03-C08"
+  },
+  "ability-mage#0131": {
+   "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer will rapidly unleash\nthe last {~} spells you've cast in order.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Chaos Explosion"
+   ],
+   "lines": 3,
+   "flat": "When your Mana Bank ✺ reaches {~}, casting Arcane Transfer will rapidly unleash the last {~} spells you've cast in order.",
+   "_raw": "When your Mana Bank ✺ reaches 120,\ncasting Arcane Transfer will rapidly unleash\nthe last 3 spells you've cast in order.",
+   "tree": "01/mage/06/003/008",
+   "ability": "Chaos Explosion",
+   "code": "MAGE-P6-R03-C08"
+  },
+  "ability-mage#0132": {
+   "src": "Augury",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/004/000",
+   "ability": "Augury",
+   "code": "MAGE-P6-R04-C00"
+  },
+  "ability-mage#0133": {
+   "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Augury"
+   ],
+   "lines": 2,
+   "flat": "Increase your maximum orbs from Ophanim by +{~}.",
+   "_raw": "Increase your maximum orbs\nfrom Ophanim by +1.",
+   "tree": "01/mage/06/004/000",
+   "ability": "Augury",
+   "code": "MAGE-P6-R04-C00"
+  },
+  "ability-mage#0134": {
+   "src": "Frigid Grasp",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/004/002",
+   "ability": "Frigid Grasp",
+   "code": "MAGE-P6-R04-C02"
+  },
+  "ability-mage#0135": {
+   "src": "Ice Snake and Frozen Tornado now deal\nincreased damage and their slow is stronger.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Frigid Grasp"
+   ],
+   "lines": 2,
+   "flat": "Ice Snake and Frozen Tornado now deal increased damage and their slow is stronger.",
+   "_raw": "Ice Snake and Frozen Tornado now deal\nincreased damage and their slow is stronger.",
+   "tree": "01/mage/06/004/002",
+   "ability": "Frigid Grasp",
+   "code": "MAGE-P6-R04-C02"
+  },
+  "ability-mage#0136": {
+   "src": "{#} Effect: +{~} Slowness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Frigid Grasp"
+   ],
+   "_raw": " Effect: +10% Slowness () to Enemies",
+   "tree": "01/mage/06/004/002",
+   "ability": "Frigid Grasp",
+   "code": "MAGE-P6-R04-C02"
+  },
+  "ability-mage#0137": {
+   "src": "Time Dilation",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/004/004",
+   "ability": "Time Dilation",
+   "code": "MAGE-P6-R04-C04"
+  },
+  "ability-mage#0138": {
+   "src": "Creates an area of effect when sprinting\nthat increases the walk speed of all\nallies the longer they run in it.\n(You lose {~} Walk Speed Bonus every second\nonce you stop running)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Time Dilation"
+   ],
+   "lines": 5,
+   "flat": "Creates an area of effect when sprinting that increases the walk speed of all allies the longer they run in it. (You lose {~} Walk Speed Bonus every second once you stop running)",
+   "_raw": "Creates an area of effect when sprinting\nthat increases the walk speed of all\nallies the longer they run in it.\n(You lose 20% Walk Speed Bonus every second\nonce you stop running)",
+   "tree": "01/mage/06/004/004",
+   "ability": "Time Dilation",
+   "code": "MAGE-P6-R04-C04"
+  },
+  "ability-mage#0139": {
+   "src": "{#} Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Time Dilation"
+   ],
+   "_raw": " Effect: +10% Walk Speed to Allies (per 1s, +140% Max)",
+   "tree": "01/mage/06/004/004",
+   "ability": "Time Dilation",
+   "code": "MAGE-P6-R04-C04"
+  },
+  "ability-mage#0140": {
+   "src": "Arctic Snake",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/004/007",
+   "ability": "Arctic Snake",
+   "code": "MAGE-P6-R04-C07"
+  },
+  "ability-mage#0141": {
+   "src": "Ice Snake will freeze enemies for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arctic Snake"
+   ],
+   "lines": 1,
+   "flat": "Ice Snake will freeze enemies for {~}s.",
+   "_raw": "Ice Snake will freeze enemies for 2s.",
+   "tree": "01/mage/06/004/007",
+   "ability": "Arctic Snake",
+   "code": "MAGE-P6-R04-C07"
+  },
+  "ability-mage#0142": {
+   "src": "Searing Light",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/005/001",
+   "ability": "Searing Light",
+   "code": "MAGE-P6-R05-C01"
+  },
+  "ability-mage#0143": {
+   "src": "Increase the damage of Sunshower.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Searing Light"
+   ],
+   "lines": 1,
+   "flat": "Increase the damage of Sunshower.",
+   "_raw": "Increase the damage of Sunshower.",
+   "tree": "01/mage/06/005/001",
+   "ability": "Searing Light",
+   "code": "MAGE-P6-R05-C01"
+  },
+  "ability-mage#0144": {
+   "src": "Accelerated Strike",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/005/003",
+   "ability": "Accelerated Strike",
+   "code": "MAGE-P6-R05-C03"
+  },
+  "ability-mage#0145": {
+   "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Accelerated Strike"
+   ],
+   "lines": 2,
+   "flat": "Hitting an enemy with your Main Attack stops Time Dilation from decaying for {~}s.",
+   "_raw": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for 2s.",
+   "tree": "01/mage/06/005/003",
+   "ability": "Accelerated Strike",
+   "code": "MAGE-P6-R05-C03"
+  },
+  "ability-mage#0146": {
+   "src": "Time Dilation increases your Main Attack damage\nfor every {~} Walk Speed you gain from it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Accelerated Strike"
+   ],
+   "lines": 2,
+   "flat": "Time Dilation increases your Main Attack damage for every {~} Walk Speed you gain from it.",
+   "_raw": "Time Dilation increases your Main Attack damage\nfor every 10% Walk Speed you gain from it.",
+   "tree": "01/mage/06/005/003",
+   "ability": "Accelerated Strike",
+   "code": "MAGE-P6-R05-C03"
+  },
+  "ability-mage#0147": {
+   "src": "{#} Main Attack Damage: +{~} (per {~} Walk Speed)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Accelerated Strike"
+   ],
+   "_raw": " Main Attack Damage: +4% (per 10% Walk Speed)",
+   "tree": "01/mage/06/005/003",
+   "ability": "Accelerated Strike",
+   "code": "MAGE-P6-R05-C03"
+  },
+  "ability-mage#0148": {
+   "src": "Arcane Power",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/06/005/006",
+   "ability": "Arcane Power",
+   "code": "MAGE-P6-R05-C06"
+  },
+  "ability-mage#0149": {
+   "src": "Arcane Restoration will restore mana {~}s faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Power"
+   ],
+   "lines": 1,
+   "flat": "Arcane Restoration will restore mana {~}s faster.",
+   "_raw": "Arcane Restoration will restore mana 0.1s faster.",
+   "tree": "01/mage/06/005/006",
+   "ability": "Arcane Power",
+   "code": "MAGE-P6-R05-C06"
+  },
+  "ability-mage#0150": {
+   "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Power"
+   ],
+   "lines": 3,
+   "flat": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to your Mana Bank ✺ for each aggressive enemy you hit. Frozen Tornado and Meteor Shower will add +{~} Mana.",
+   "_raw": "Meteor, Ice Snake, and Etheric Slash will add +8 Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +4 Mana.",
+   "tree": "01/mage/06/005/006",
+   "ability": "Arcane Power",
+   "code": "MAGE-P6-R05-C06"
+  },
+  "ability-mage#0151": {
+   "src": "Everlasting Light",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/001/000",
+   "ability": "Everlasting Light",
+   "code": "MAGE-P7-R01-C00"
+  },
+  "ability-mage#0152": {
+   "src": "Increase the health of your orbs\nfrom Ophanim by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Everlasting Light"
+   ],
+   "lines": 2,
+   "flat": "Increase the health of your orbs from Ophanim by +{~}.",
+   "_raw": "Increase the health of your orbs\nfrom Ophanim by +3000.",
+   "tree": "01/mage/07/001/000",
+   "ability": "Everlasting Light",
+   "code": "MAGE-P7-R01-C00"
+  },
+  "ability-mage#0153": {
+   "src": "Devitalize",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/001/002",
+   "ability": "Devitalize",
+   "code": "MAGE-P7-R01-C02"
+  },
+  "ability-mage#0154": {
+   "src": "Heal and Arcane Transfer weaken nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Devitalize"
+   ],
+   "lines": 1,
+   "flat": "Heal and Arcane Transfer weaken nearby enemies.",
+   "_raw": "Heal and Arcane Transfer weaken nearby enemies.",
+   "tree": "01/mage/07/001/002",
+   "ability": "Devitalize",
+   "code": "MAGE-P7-R01-C02"
+  },
+  "ability-mage#0155": {
+   "src": "You gain +{~} Distortion {#} for every enemy weakened.\n(Up to +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Devitalize"
+   ],
+   "lines": 2,
+   "flat": "You gain +{~} Distortion {#} for every enemy weakened. (Up to +{~})",
+   "_raw": "You gain +5 Distortion  for every enemy weakened.\n(Up to +15)",
+   "tree": "01/mage/07/001/002",
+   "ability": "Devitalize",
+   "code": "MAGE-P7-R01-C02"
+  },
+  "ability-mage#0156": {
+   "src": "{#} Effect: -{~} Damage Bonus ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Devitalize"
+   ],
+   "_raw": " Effect: -15% Damage Bonus () to Enemies",
+   "tree": "01/mage/07/001/002",
+   "ability": "Devitalize",
+   "code": "MAGE-P7-R01-C02"
+  },
+  "ability-mage#0157": {
+   "src": "Influx Shift",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/001/004",
+   "ability": "Influx Shift",
+   "code": "MAGE-P7-R01-C04"
+  },
+  "ability-mage#0158": {
+   "src": "Increase the effects gained from Distortion {#} by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Influx Shift"
+   ],
+   "lines": 1,
+   "flat": "Increase the effects gained from Distortion {#} by +{~}.",
+   "_raw": "Increase the effects gained from Distortion  by +25%.",
+   "tree": "01/mage/07/001/004",
+   "ability": "Influx Shift",
+   "code": "MAGE-P7-R01-C04"
+  },
+  "ability-mage#0159": {
+   "src": "Larger Mana Bank III",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/001/007",
+   "ability": "Larger Mana Bank III",
+   "code": "MAGE-P7-R01-C07"
+  },
+  "ability-mage#0160": {
+   "src": "Divination",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/002/001",
+   "ability": "Divination",
+   "code": "MAGE-P7-R02-C01"
+  },
+  "ability-mage#0161": {
+   "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Divination"
+   ],
+   "lines": 3,
+   "flat": "Increases your maximum orbs from Ophanim by +{~} and reduces their damage.",
+   "_raw": "Increases your maximum orbs\nfrom Ophanim by +3 and\nreduces their damage.",
+   "tree": "01/mage/07/002/001",
+   "ability": "Divination",
+   "code": "MAGE-P7-R02-C01"
+  },
+  "ability-mage#0162": {
+   "src": "Void Acceleration",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/002/005",
+   "ability": "Void Acceleration",
+   "code": "MAGE-P7-R02-C05"
+  },
+  "ability-mage#0163": {
+   "src": "Double Meteor's speed and increase its damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Void Acceleration"
+   ],
+   "lines": 1,
+   "flat": "Double Meteor's speed and increase its damage.",
+   "_raw": "Double Meteor's speed and increase its damage.",
+   "tree": "01/mage/07/002/005",
+   "ability": "Void Acceleration",
+   "code": "MAGE-P7-R02-C05"
+  },
+  "ability-mage#0164": {
+   "src": "Meteor Shower summons meteors +{~} faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Void Acceleration"
+   ],
+   "lines": 1,
+   "flat": "Meteor Shower summons meteors +{~} faster.",
+   "_raw": "Meteor Shower summons meteors +25% faster.",
+   "tree": "01/mage/07/002/005",
+   "ability": "Void Acceleration",
+   "code": "MAGE-P7-R02-C05"
+  },
+  "ability-mage#0165": {
+   "src": "Riftbound",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/003/004",
+   "ability": "Riftbound",
+   "code": "MAGE-P7-R03-C04"
+  },
+  "ability-mage#0166": {
+   "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Riftbound"
+   ],
+   "lines": 2,
+   "flat": "Casting Heal while sneaking binds you to your Dimensional Tear, making you Riftbound.",
+   "_raw": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
+   "tree": "01/mage/07/003/004",
+   "ability": "Riftbound",
+   "code": "MAGE-P7-R03-C04"
+  },
+  "ability-mage#0167": {
+   "src": "While Riftbound, your Dimensional Tear follows you,\nreaches further and your Distortion {#} stops decaying.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Riftbound"
+   ],
+   "lines": 2,
+   "flat": "While Riftbound, your Dimensional Tear follows you, reaches further and your Distortion {#} stops decaying.",
+   "_raw": "While Riftbound, your Dimensional Tear follows you,\nreaches further and your Distortion  stops decaying.",
+   "tree": "01/mage/07/003/004",
+   "ability": "Riftbound",
+   "code": "MAGE-P7-R03-C04"
+  },
+  "ability-mage#0168": {
+   "src": "Sunflare",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/004/000",
+   "ability": "Sunflare",
+   "code": "MAGE-P7-R04-C00"
+  },
+  "ability-mage#0169": {
+   "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "lines": 2,
+   "flat": "Healing {~} of your max health within {~}s will make your next Heal activate Sunflare.",
+   "_raw": "Healing 250% of your max health within 10s\nwill make your next Heal activate Sunflare.",
+   "tree": "01/mage/07/004/000",
+   "ability": "Sunflare",
+   "code": "MAGE-P7-R04-C00"
+  },
+  "ability-mage#0170": {
+   "src": "While Sunflare is active, you will restore\nhealth and mana to all nearby allies, and\nyour Ophanim orbs will attack constantly.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "lines": 3,
+   "flat": "While Sunflare is active, you will restore health and mana to all nearby allies, and your Ophanim orbs will attack constantly.",
+   "_raw": "While Sunflare is active, you will restore\nhealth and mana to all nearby allies, and\nyour Ophanim orbs will attack constantly.",
+   "tree": "01/mage/07/004/000",
+   "ability": "Sunflare",
+   "code": "MAGE-P7-R04-C00"
+  },
+  "ability-mage#0171": {
+   "src": "{#} Health Regen: {~} per second (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "_raw": " Health Regen: 5% per second (of your max health)",
+   "tree": "01/mage/07/004/000",
+   "ability": "Sunflare",
+   "code": "MAGE-P7-R04-C00"
+  },
+  "ability-mage#0172": {
+   "src": "{#} Mana Regen: {~} per second (of your max mana)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "_raw": " Mana Regen: 5% per second (of your max mana)",
+   "tree": "01/mage/07/004/000",
+   "ability": "Sunflare",
+   "code": "MAGE-P7-R04-C00"
+  },
+  "ability-mage#0173": {
+   "src": "Cheaper Heal II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/004/003",
+   "ability": "Cheaper Heal II",
+   "code": "MAGE-P7-R04-C03"
+  },
+  "ability-mage#0174": {
+   "src": "Manastorm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/004/005",
+   "ability": "Manastorm",
+   "code": "MAGE-P7-R04-C05"
+  },
+  "ability-mage#0175": {
+   "src": "If you have more than {~}\nMana, casting a spell will give\nyou +{~} Mana over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Manastorm"
+   ],
+   "lines": 3,
+   "flat": "If you have more than {~} Mana, casting a spell will give you +{~} Mana over {~}s.",
+   "_raw": "If you have more than 100\nMana, casting a spell will give\nyou +5 Mana over 2s.",
+   "tree": "01/mage/07/004/005",
+   "ability": "Manastorm",
+   "code": "MAGE-P7-R04-C05"
+  },
+  "ability-mage#0176": {
+   "src": "Judrajim",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/004/007",
+   "ability": "Judrajim",
+   "code": "MAGE-P7-R04-C07"
+  },
+  "ability-mage#0177": {
+   "src": "Mana cost and damage increase by\n{~} every time it deals damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Judrajim"
+   ],
+   "lines": 2,
+   "flat": "Mana cost and damage increase by {~} every time it deals damage.",
+   "_raw": "Mana cost and damage increase by\n20% every time it deals damage.",
+   "tree": "01/mage/07/004/007",
+   "ability": "Judrajim",
+   "code": "MAGE-P7-R04-C07"
+  },
+  "ability-mage#0178": {
+   "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Judrajim"
+   ],
+   "lines": 6,
+   "flat": "When your Mana Bank ✺ reaches {~}, casting Arcane Transfer while sneaking will summon a ball lightning that deals damage to nearby enemies and drains {~} Mana every {~}s, until you run out of Mana.",
+   "_raw": "When your Mana Bank ✺ reaches 140,\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n2 Mana every 0.25s, until you run out\nof Mana.",
+   "tree": "01/mage/07/004/007",
+   "ability": "Judrajim",
+   "code": "MAGE-P7-R04-C07"
+  },
+  "ability-mage#0179": {
+   "src": "Halo",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/005/002",
+   "ability": "Halo",
+   "code": "MAGE-P7-R05-C02"
+  },
+  "ability-mage#0180": {
+   "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Halo"
+   ],
+   "lines": 2,
+   "flat": "Increase your Max Orbs from Lightweaver by +{~}.",
+   "_raw": "Increase your Max Orbs\nfrom Lightweaver by +2.",
+   "tree": "01/mage/07/005/002",
+   "ability": "Halo",
+   "code": "MAGE-P7-R05-C02"
+  },
+  "ability-mage#0181": {
+   "src": "Memory Recollection",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/07/005/008",
+   "ability": "Memory Recollection",
+   "code": "MAGE-P7-R05-C08"
+  },
+  "ability-mage#0182": {
+   "src": "Chaos Explosion will cast +{~} spells.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Memory Recollection"
+   ],
+   "lines": 1,
+   "flat": "Chaos Explosion will cast +{~} spells.",
+   "_raw": "Chaos Explosion will cast +2 spells.",
+   "tree": "01/mage/07/005/008",
+   "ability": "Memory Recollection",
+   "code": "MAGE-P7-R05-C08"
+  },
+  "ability-mage#0183": {
+   "src": "Interweave",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/001/000",
+   "ability": "Interweave",
+   "code": "MAGE-P8-R01-C00"
+  },
+  "ability-mage#0184": {
+   "src": "Hitting an ally with a Lightweaver orb\nconsumes the orb and applies Shining {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Interweave"
+   ],
+   "lines": 2,
+   "flat": "Hitting an ally with a Lightweaver orb consumes the orb and applies Shining {#}.",
+   "_raw": "Hitting an ally with a Lightweaver orb\nconsumes the orb and applies Shining .",
+   "tree": "01/mage/08/001/000",
+   "ability": "Interweave",
+   "code": "MAGE-P8-R01-C00"
+  },
+  "ability-mage#0185": {
+   "src": "Shining {#} players can be healed from\nany distance, and they deal the orb's\ndamage to nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Interweave"
+   ],
+   "lines": 3,
+   "flat": "Shining {#} players can be healed from any distance, and they deal the orb's damage to nearby enemies.",
+   "_raw": "Shining  players can be healed from\nany distance, and they deal the orb's\ndamage to nearby enemies.",
+   "tree": "01/mage/08/001/000",
+   "ability": "Interweave",
+   "code": "MAGE-P8-R01-C00"
+  },
+  "ability-mage#0186": {
+   "src": "Time Vortex",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/001/004",
+   "ability": "Time Vortex",
+   "code": "MAGE-P8-R01-C04"
+  },
+  "ability-mage#0187": {
+   "src": "Casting Frozen Tornado inside your Dimensional\nTear infuses it with otherworldly energies,\nturning it into a Time Vortex.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Time Vortex"
+   ],
+   "lines": 3,
+   "flat": "Casting Frozen Tornado inside your Dimensional Tear infuses it with otherworldly energies, turning it into a Time Vortex.",
+   "_raw": "Casting Frozen Tornado inside your Dimensional\nTear infuses it with otherworldly energies,\nturning it into a Time Vortex.",
+   "tree": "01/mage/08/001/004",
+   "ability": "Time Vortex",
+   "code": "MAGE-P8-R01-C04"
+  },
+  "ability-mage#0188": {
+   "src": "Time Vortex deals damage {~} faster, lasts\nlonger and grants +{~} Distortion {#} every\ntime it deals damage to an enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Time Vortex"
+   ],
+   "lines": 3,
+   "flat": "Time Vortex deals damage {~} faster, lasts longer and grants +{~} Distortion {#} every time it deals damage to an enemy.",
+   "_raw": "Time Vortex deals damage 25% faster, lasts\nlonger and grants +1.25 Distortion  every\ntime it deals damage to an enemy.",
+   "tree": "01/mage/08/001/004",
+   "ability": "Time Vortex",
+   "code": "MAGE-P8-R01-C04"
+  },
+  "ability-mage#0189": {
+   "src": "{#} Tornado Duration: +{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Time Vortex"
+   ],
+   "_raw": " Tornado Duration: +3s",
+   "tree": "01/mage/08/001/004",
+   "ability": "Time Vortex",
+   "code": "MAGE-P8-R01-C04"
+  },
+  "ability-mage#0190": {
+   "src": "Arcane Overflow",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/001/007",
+   "ability": "Arcane Overflow",
+   "code": "MAGE-P8-R01-C07"
+  },
+  "ability-mage#0191": {
+   "src": "Arcane Transfer will allow you to overflow\nyour mana over its maximum limits. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Arcane Overflow"
+   ],
+   "lines": 2,
+   "flat": "Arcane Transfer will allow you to overflow your mana over its maximum limits. (Max {~})",
+   "_raw": "Arcane Transfer will allow you to overflow\nyour mana over its maximum limits. (Max 300)",
+   "tree": "01/mage/08/001/007",
+   "ability": "Arcane Overflow",
+   "code": "MAGE-P8-R01-C07"
+  },
+  "ability-mage#0192": {
+   "src": "Gospel of Light",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/002/002",
+   "ability": "Gospel of Light",
+   "code": "MAGE-P8-R02-C02"
+  },
+  "ability-mage#0193": {
+   "src": "Nearby players gain {~}\nof the Mana you gain from\nMana Regen and Mana Steal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Gospel of Light"
+   ],
+   "lines": 3,
+   "flat": "Nearby players gain {~} of the Mana you gain from Mana Regen and Mana Steal.",
+   "_raw": "Nearby players gain 20%\nof the Mana you gain from\nMana Regen and Mana Steal.",
+   "tree": "01/mage/08/002/002",
+   "ability": "Gospel of Light",
+   "code": "MAGE-P8-R02-C02"
+  },
+  "ability-mage#0194": {
+   "src": "Blitz",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/002/006",
+   "ability": "Blitz",
+   "code": "MAGE-P8-R02-C06"
+  },
+  "ability-mage#0195": {
+   "src": "Increase the damage of Frozen Tornado\nby an additional +{~} every time\nthe tornado damages an enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Blitz"
+   ],
+   "lines": 3,
+   "flat": "Increase the damage of Frozen Tornado by an additional +{~} every time the tornado damages an enemy.",
+   "_raw": "Increase the damage of Frozen Tornado\nby an additional +3% every time\nthe tornado damages an enemy.",
+   "tree": "01/mage/08/002/006",
+   "ability": "Blitz",
+   "code": "MAGE-P8-R02-C06"
+  },
+  "ability-mage#0196": {
+   "src": "Increase the damage of Ice Snake\nand double its speed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Blitz"
+   ],
+   "lines": 2,
+   "flat": "Increase the damage of Ice Snake and double its speed.",
+   "_raw": "Increase the damage of Ice Snake\nand double its speed.",
+   "tree": "01/mage/08/002/006",
+   "ability": "Blitz",
+   "code": "MAGE-P8-R02-C06"
+  },
+  "ability-mage#0197": {
+   "src": "Crystallize",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/003/000",
+   "ability": "Crystallize",
+   "code": "MAGE-P8-R03-C00"
+  },
+  "ability-mage#0198": {
+   "src": "Casting Ice Snake shatters\nenemies with {~} Crystallized {#},\ndamaging and slowing them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Crystallize"
+   ],
+   "lines": 3,
+   "flat": "Casting Ice Snake shatters enemies with {~} Crystallized {#}, damaging and slowing them.",
+   "_raw": "Casting Ice Snake shatters\nenemies with 100 Crystallized ,\ndamaging and slowing them.",
+   "tree": "01/mage/08/003/000",
+   "ability": "Crystallize",
+   "code": "MAGE-P8-R03-C00"
+  },
+  "ability-mage#0199": {
+   "src": "Crystallized {#} starts decaying at\na rate of -{~} every second if\nnone is applied for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Crystallize"
+   ],
+   "lines": 3,
+   "flat": "Crystallized {#} starts decaying at a rate of -{~} every second if none is applied for {~}s.",
+   "_raw": "Crystallized  starts decaying at\na rate of -5 every second if\nnone is applied for 5s.",
+   "tree": "01/mage/08/003/000",
+   "ability": "Crystallize",
+   "code": "MAGE-P8-R03-C00"
+  },
+  "ability-mage#0200": {
+   "src": "Lightweaver applies +{~} Crystallized {#}\nto enemies it hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Crystallize"
+   ],
+   "lines": 2,
+   "flat": "Lightweaver applies +{~} Crystallized {#} to enemies it hits.",
+   "_raw": "Lightweaver applies +7 Crystallized \nto enemies it hits.",
+   "tree": "01/mage/08/003/000",
+   "ability": "Crystallize",
+   "code": "MAGE-P8-R03-C00"
+  },
+  "ability-mage#0201": {
+   "src": "Gleam",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/004/001",
+   "ability": "Gleam",
+   "code": "MAGE-P8-R04-C01"
+  },
+  "ability-mage#0202": {
+   "src": "Portal to the Beyond",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/004/003",
+   "ability": "Portal to the Beyond",
+   "code": "MAGE-P8-R04-C03"
+  },
+  "ability-mage#0203": {
+   "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Portal to the Beyond"
+   ],
+   "lines": 2,
+   "flat": "Dimensional Tear is now inhabited by a Riftspawn while active.",
+   "_raw": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
+   "tree": "01/mage/08/004/003",
+   "ability": "Portal to the Beyond",
+   "code": "MAGE-P8-R04-C03"
+  },
+  "ability-mage#0204": {
+   "src": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every {~}s,\ndealing damage and increasing your\nDistortion {#} by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Portal to the Beyond"
+   ],
+   "lines": 4,
+   "flat": "The Riftspawn shoots homing distorting blasts to nearby enemies every {~}s, dealing damage and increasing your Distortion {#} by +{~}.",
+   "_raw": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every 0.5s,\ndealing damage and increasing your\nDistortion  by +1.",
+   "tree": "01/mage/08/004/003",
+   "ability": "Portal to the Beyond",
+   "code": "MAGE-P8-R04-C03"
+  },
+  "ability-mage#0205": {
+   "src": "Paradox",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/004/005",
+   "ability": "Paradox",
+   "code": "MAGE-P8-R04-C05"
+  },
+  "ability-mage#0206": {
+   "src": "For every +{~} Distortion {#}, the\nmana is refunded -{~}s faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Paradox"
+   ],
+   "lines": 2,
+   "flat": "For every +{~} Distortion {#}, the mana is refunded -{~}s faster.",
+   "_raw": "For every +1 Distortion , the\nmana is refunded -0.02s faster.",
+   "tree": "01/mage/08/004/005",
+   "ability": "Paradox",
+   "code": "MAGE-P8-R04-C05"
+  },
+  "ability-mage#0207": {
+   "src": "You send {~} of the damage you take\nto the future, dealing it over {~}s and\nborrow mana from the past, refunding\n{~} of your spent mana over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Paradox"
+   ],
+   "lines": 4,
+   "flat": "You send {~} of the damage you take to the future, dealing it over {~}s and borrow mana from the past, refunding {~} of your spent mana over {~}s.",
+   "_raw": "You send 15% of the damage you take\nto the future, dealing it over 6s and\nborrow mana from the past, refunding\n25% of your spent mana over 10s.",
+   "tree": "01/mage/08/004/005",
+   "ability": "Paradox",
+   "code": "MAGE-P8-R04-C05"
+  },
+  "ability-mage#0208": {
+   "src": "Induced Instability",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/004/008",
+   "ability": "Induced Instability",
+   "code": "MAGE-P8-R04-C08"
+  },
+  "ability-mage#0209": {
+   "src": "Judrajim applies Unstable {#} to enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Induced Instability"
+   ],
+   "lines": 1,
+   "flat": "Judrajim applies Unstable {#} to enemies.",
+   "_raw": "Judrajim applies Unstable  to enemies.",
+   "tree": "01/mage/08/004/008",
+   "ability": "Induced Instability",
+   "code": "MAGE-P8-R04-C08"
+  },
+  "ability-mage#0210": {
+   "src": "Meteor, Pyrokinesis and Powder Specials\nconsume Unstable {#} to deal +{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Induced Instability"
+   ],
+   "lines": 2,
+   "flat": "Meteor, Pyrokinesis and Powder Specials consume Unstable {#} to deal +{~} damage.",
+   "_raw": "Meteor, Pyrokinesis and Powder Specials\nconsume Unstable  to deal +100% damage.",
+   "tree": "01/mage/08/004/008",
+   "ability": "Induced Instability",
+   "code": "MAGE-P8-R04-C08"
+  },
+  "ability-mage#0211": {
+   "src": "Diffraction",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/005/000",
+   "ability": "Diffraction",
+   "code": "MAGE-P8-R05-C00"
+  },
+  "ability-mage#0212": {
+   "src": "Ophanim also applies +{~} Crystallized {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Diffraction"
+   ],
+   "lines": 1,
+   "flat": "Ophanim also applies +{~} Crystallized {#}.",
+   "_raw": "Ophanim also applies +2 Crystallized .",
+   "tree": "01/mage/08/005/000",
+   "ability": "Diffraction",
+   "code": "MAGE-P8-R05-C00"
+  },
+  "ability-mage#0213": {
+   "src": "When an enemy dies, leftover Crystallized {#}\nis transferred to other nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Diffraction"
+   ],
+   "lines": 2,
+   "flat": "When an enemy dies, leftover Crystallized {#} is transferred to other nearby enemies.",
+   "_raw": "When an enemy dies, leftover Crystallized \nis transferred to other nearby enemies.",
+   "tree": "01/mage/08/005/000",
+   "ability": "Diffraction",
+   "code": "MAGE-P8-R05-C00"
+  },
+  "ability-mage#0214": {
+   "src": "Thunderstorm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/08/005/006",
+   "ability": "Thunderstorm",
+   "code": "MAGE-P8-R05-C06"
+  },
+  "ability-mage#0215": {
+   "src": "After casting Meteor, generate a lightning\nstrike near the point of impact that\nadds +{~} Mana to your Mana Bank ✺\nfor each aggressive enemy you hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Thunderstorm"
+   ],
+   "lines": 4,
+   "flat": "After casting Meteor, generate a lightning strike near the point of impact that adds +{~} Mana to your Mana Bank ✺ for each aggressive enemy you hit.",
+   "_raw": "After casting Meteor, generate a lightning\nstrike near the point of impact that\nadds +8 Mana to your Mana Bank ✺\nfor each aggressive enemy you hit.",
+   "tree": "01/mage/08/005/006",
+   "ability": "Thunderstorm",
+   "code": "MAGE-P8-R05-C06"
+  },
+  "ability-mage#0216": {
+   "src": "Dawn",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/09/002/001",
+   "ability": "Dawn",
+   "code": "MAGE-P9-R02-C01"
+  },
+  "ability-mage#0217": {
+   "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#} to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities or heal to charge your Ultimate Meter {#} to {~}",
+   "_raw": "Activate abilities or heal to charge\nyour Ultimate Meter  to 100%",
+   "tree": "01/mage/09/002/001",
+   "ability": "Dawn",
+   "code": "MAGE-P9-R02-C01"
+  },
+  "ability-mage#0218": {
+   "src": "Channel the power of Orphion and summon\nthe sun itself above you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": 2,
+   "flat": "Channel the power of Orphion and summon the sun itself above you.",
+   "_raw": "Channel the power of Orphion and summon\nthe sun itself above you.",
+   "tree": "01/mage/09/002/001",
+   "ability": "Dawn",
+   "code": "MAGE-P9-R02-C01"
+  },
+  "ability-mage#0219": {
+   "src": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": 3,
+   "flat": "The Sun will summon solar wisps that move outwards, damaging all enemies and healing all allies in their path.",
+   "_raw": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.",
+   "tree": "01/mage/09/002/001",
+   "ability": "Dawn",
+   "code": "MAGE-P9-R02-C01"
+  },
+  "ability-mage#0220": {
+   "src": "{#} Total Damage: {~} (of your DPS, per Wisp)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "_raw": " Total Damage: 300% (of your DPS, per Wisp)",
+   "tree": "01/mage/09/002/001",
+   "ability": "Dawn",
+   "code": "MAGE-P9-R02-C01"
+  },
+  "ability-mage#0221": {
+   "src": "{#} Total Heal: {~} (of max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "_raw": " Total Heal: 10% (of max health)",
+   "tree": "01/mage/09/002/001",
+   "ability": "Dawn",
+   "code": "MAGE-P9-R02-C01"
+  },
+  "ability-mage#0222": {
+   "src": "Tangled Origin",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/09/002/007",
+   "ability": "Tangled Origin",
+   "code": "MAGE-P9-R02-C07"
+  },
+  "ability-mage#0223": {
+   "src": "Summon a Thunder Serpent and a Fire\nSerpent, which will attack nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": 2,
+   "flat": "Summon a Thunder Serpent and a Fire Serpent, which will attack nearby enemies.",
+   "_raw": "Summon a Thunder Serpent and a Fire\nSerpent, which will attack nearby enemies.",
+   "tree": "01/mage/09/002/007",
+   "ability": "Tangled Origin",
+   "code": "MAGE-P9-R02-C07"
+  },
+  "ability-mage#0224": {
+   "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": 2,
+   "flat": "The Fire Serpent fires at Unstable {#} targets every {~}s, gaining the damage bonus.",
+   "_raw": "The Fire Serpent fires at Unstable \ntargets every 3s, gaining the damage bonus.",
+   "tree": "01/mage/09/002/007",
+   "ability": "Tangled Origin",
+   "code": "MAGE-P9-R02-C07"
+  },
+  "ability-mage#0225": {
+   "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": 3,
+   "flat": "The Thunder Serpent strikes up to {~} enemies with arcing lightning every {~}s, making them Unstable {#}.",
+   "_raw": "The Thunder Serpent strikes up to\n4 enemies with arcing lightning\nevery 1s, making them Unstable .",
+   "tree": "01/mage/09/002/007",
+   "ability": "Tangled Origin",
+   "code": "MAGE-P9-R02-C07"
+  },
+  "ability-mage#0226": {
+   "src": "{#} Total Damage: {~} (of your DPS, Fire)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "_raw": " Total Damage: 2000% (of your DPS, Fire)",
+   "tree": "01/mage/09/002/007",
+   "ability": "Tangled Origin",
+   "code": "MAGE-P9-R02-C07"
+  },
+  "ability-mage#0227": {
+   "src": "{#} Total Damage: {~} (of your DPS, Thunder)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "_raw": " Total Damage: 900% (of your DPS, Thunder)",
+   "tree": "01/mage/09/002/007",
+   "ability": "Tangled Origin",
+   "code": "MAGE-P9-R02-C07"
+  },
+  "ability-mage#0228": {
+   "src": "{#} Vision: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "_raw": " Vision: 15 Blocks",
+   "tree": "01/mage/09/002/007",
+   "ability": "Tangled Origin",
+   "code": "MAGE-P9-R02-C07"
+  },
+  "ability-mage#0229": {
+   "src": "Gravitational Collapse",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱"
+   ],
+   "tree": "01/mage/09/003/004",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE-P9-R03-C04"
+  },
+  "ability-mage#0230": {
+   "src": "The Dimensional Tear collapses when it expires,\ndealing massive damage to nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": 2,
+   "flat": "The Dimensional Tear collapses when it expires, dealing massive damage to nearby enemies.",
+   "_raw": "The Dimensional Tear collapses when it expires,\ndealing massive damage to nearby enemies.",
+   "tree": "01/mage/09/003/004",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE-P9-R03-C04"
+  },
+  "ability-mage#0231": {
+   "src": "While it is overloaded, it deals +{~} increased\ndamage, turns your Teleport into a deadly ray\nthat fires off {~} times in quick succession,\nprovides flight, and prevents mana drain.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": 4,
+   "flat": "While it is overloaded, it deals +{~} increased damage, turns your Teleport into a deadly ray that fires off {~} times in quick succession, provides flight, and prevents mana drain.",
+   "_raw": "While it is overloaded, it deals +400% increased\ndamage, turns your Teleport into a deadly ray\nthat fires off 5 times in quick succession,\nprovides flight, and prevents mana drain.",
+   "tree": "01/mage/09/003/004",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE-P9-R03-C04"
+  },
+  "ability-mage#0232": {
+   "src": "Your Dimensional Tear overloads, growing\nin size and damage while pulling all enemies in.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": 2,
+   "flat": "Your Dimensional Tear overloads, growing in size and damage while pulling all enemies in.",
+   "_raw": "Your Dimensional Tear overloads, growing\nin size and damage while pulling all enemies in.",
+   "tree": "01/mage/09/003/004",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE-P9-R03-C04"
+  },
+  "ability-mage#0233": {
+   "src": "{#} Area of Effect: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "_raw": " Area of Effect: +100%",
+   "tree": "01/mage/09/003/004",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE-P9-R03-C04"
+  },
+  "ability-mage#0234": {
+   "src": "{#} Total Damage: {~} (of your DPS, Collapse)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "_raw": " Total Damage: 8000% (of your DPS, Collapse)",
+   "tree": "01/mage/09/003/004",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE-P9-R03-C04"
+  },
+  "ability-mage#0235": {
+   "src": "{#} Total Damage: {~} (of your DPS, Deadly Beam)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "_raw": " Total Damage: 300% (of your DPS, Deadly Beam)",
+   "tree": "01/mage/09/003/004",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE-P9-R03-C04"
+  }
+ }
+}

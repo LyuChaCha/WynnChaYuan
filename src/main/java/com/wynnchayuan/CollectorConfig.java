@@ -118,10 +118,9 @@ public final class CollectorConfig {
     /**
      * 切換手上物品時，快捷列上方跳出來的那行名稱要不要翻。
      *
-     * <p>預設關閉：裝備名稱照慣例留英文，對得上 wiki 與交易市場；
-     * 這個開關給想連那一行都看中文的人自己打開。
+     * <p>預設打開（使用者要求）。不想看的人在 F6 關掉。
      */
-    private boolean translateHeldItem = false;
+    private boolean translateHeldItem = true;
 
     /**
      * 要不要記下最近的聊天訊息，供「複製聊天」使用。

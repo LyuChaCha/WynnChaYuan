@@ -66,7 +66,62 @@ public final class TranslationCache {
      */
     public static int prepare(Path langDir, String lang) {
         check(langDir);
-        return StarterFiles.installIfEmpty(langDir, lang);
+        int refreshed = refreshAfterUpgrade(langDir, lang);
+        return refreshed + StarterFiles.installIfEmpty(langDir, lang);
+    }
+
+    /**
+     * 換了模組版本：同步下來的檔先換成<b>這一版 jar 內建</b>的那一份。
+     *
+     * <h2>實機回報</h2>
+     * 裝上 0.2.0_4 之後，右下角還是「贏得地城」。快取裡是 0.2.0_3 時從 GitHub
+     * 抓的舊檔，而載入時快取蓋在 jar 內建的上面——新版 jar 裡的新譯文完全沒被讀到，
+     * 要等背景同步整輪跑完、重載之後才會出現；同步慢或中途關遊戲就一直是舊的。
+     *
+     * <p>只換戳記裡記著「同步來的」那些檔：使用者自己放進資料夾的檔從來不在戳記裡，
+     * 不會被蓋掉。換完把戳記的版本改成這一版，下次啟動就不再重做。
+     * 背景同步照常跑，GitHub 上若比 jar 更新，隨後會再換上去。
+     *
+     * @return 換了幾個檔
+     */
+    static int refreshAfterUpgrade(Path langDir, String lang) {
+        if (modVersion == null || modVersion.isBlank() || "?".equals(modVersion)) {
+            return 0;
+        }
+        Path stampFile = langDir.resolve(STAMP);
+        JsonObject stamp = SafeFiles.readObject(stampFile, 1L << 20);
+        if (stamp == null || !stamp.has("files") || !stamp.get("files").isJsonArray()) {
+            return 0;
+        }
+        String mod = stamp.has("mod") && stamp.get("mod").isJsonPrimitive()
+                ? stamp.get("mod").getAsString() : "";
+        if (modVersion.equals(mod)) {
+            return 0;
+        }
+        int refreshed = 0;
+        for (JsonElement el : stamp.getAsJsonArray("files")) {
+            if (!el.isJsonPrimitive()) {
+                continue;
+            }
+            String name = el.getAsString();
+            if (name.endsWith(".json") && FileIndex.safeName(name)
+                    && StarterFiles.restore(langDir, lang, name)) {
+                refreshed++;
+            }
+        }
+        StarterFiles.restore(langDir, lang, "_index.json");
+        stamp.addProperty("mod", modVersion);
+        try {
+            SafeFiles.writeAtomically(stampFile,
+                    new GsonBuilder().setPrettyPrinting().create().toJson(stamp));
+        } catch (Exception e) {
+            System.err.println("[WynnChaYuan] 寫不出譯文快取記錄：" + e);
+        }
+        if (refreshed > 0) {
+            System.out.println("[WynnChaYuan] 模組換了版本（" + mod + " → " + modVersion
+                    + "），譯文快取 " + langDir.getFileName() + " 換回內建的 " + refreshed + " 個檔");
+        }
+        return refreshed;
     }
 
     /**

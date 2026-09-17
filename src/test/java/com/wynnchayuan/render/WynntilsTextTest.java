@@ -165,12 +165,12 @@ public final class WynntilsTextTest {
     private static void heldItem(CollectorConfig config, TranslationStore store) {
         net.minecraft.network.chat.Component scroll =
                 net.minecraft.network.chat.Component.literal("Ragni Teleportation Scroll [3/3]");
-        check("手持物品名稱預設不翻", !config.translateHeldItem()
-                && WynntilsText.heldItemName(scroll, config, store) == scroll);
-        config.toggleHeldItem();
+        check("手持物品名稱預設打開", config.translateHeldItem());
         String shown = WynntilsText.heldItemName(scroll, config, store).getString();
-        check("打開之後手持物品名稱翻得出來（實際 " + shown + "）",
+        check("手持物品名稱翻得出來（實際 " + shown + "）",
               shown.contains("傳送卷軸") && shown.contains("3/3"));
+        config.toggleHeldItem();
+        check("關掉之後原樣回去", WynntilsText.heldItemName(scroll, config, store) == scroll);
         config.toggleHeldItem();
     }
 
