@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "ko_kr",
   "count": 270,
-  "translated": 0,
+  "translated": 270,
   "note": "弓箭手的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-archer#0234": {
    "src": "Arrow Bomb{#}and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "Arrow Bomb{#}와 Arrow Storm에 더 이상 반동이\n없으며, Arrow Bomb이 자신에게 피해를 주지 않습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -25,7 +25,7 @@
   },
   "ability-archer#0231": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#}{#}stack on a target.",
-   "dst": "",
+   "dst": "지속 시간이 끝나거나 F로 시전하면, 표식이 남은 모든 적에게\n주문 화살과 기본 공격 화살을 한 발씩 발사합니다.\n화살은 대상에게 쌓인 황혼 {#}{#}중첩마다\n추가 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,7 +39,7 @@
   },
   "ability-archer#0235": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap{#}have no cooldown.",
-   "dst": "",
+   "dst": "빛의 힘을 불러내 {~}초 동안\n공격을 강화하고\nLeap{#}의 재사용 대기시간을 없앱니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -53,7 +53,7 @@
   },
   "ability-archer#0236": {
    "src": "Gives Arrow Shield{#}+{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield{#}의 충전 횟수가 +{~} 증가합니다.\nGuardian Angels의 피해가 -{~} 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -67,7 +67,7 @@
   },
   "ability-archer#0238": {
    "src": "Increase your maximum Focus {#}{#}by +{~}.",
-   "dst": "",
+   "dst": "최대 집중 {#}{#}이 +{~} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -82,7 +82,7 @@
   },
   "ability-archer#0233": {
    "src": "Not missing with Phantom Ray{#}{~}{#}times\nin a row will transform your next\nMain Attack{#}into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "Phantom Ray{#}를 {~}{#}회 연속으로 빗맞히지 않으면\n다음 기본 공격{#}이\nTwain's Arc 광선으로 바뀝니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -96,7 +96,7 @@
   },
   "ability-archer#0237": {
    "src": "While in this state, lose {~} Focus {#}{#}every {~}s.",
-   "dst": "",
+   "dst": "이 상태에서는 {~2}초마다 집중 {#}{#}을 {~1} 잃습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -110,7 +110,7 @@
   },
   "ability-archer#0232": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#}{#}every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "이 상태에서는 더 높이 뛰고 더 천천히 떨어지며,\n시야 안의 모든 적이 {~1}초마다\n황혼 {#}{#}표식을 받습니다. (최대 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -124,7 +124,7 @@
   },
   "ability-archer#0254": {
    "src": "{#}{#}Area of Effect: +{~} Block (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}효과 범위: +{~}블록 (원형)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -141,7 +141,7 @@
   },
   "ability-archer#0266": {
    "src": "{#}{#}Area of Effect: +{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}효과 범위: +{~}블록",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -156,7 +156,7 @@
   },
   "ability-archer#0265": {
    "src": "{#}{#}Damage Bonus: +{~} (per Focus)",
-   "dst": "",
+   "dst": "{#}{#}피해 보너스: +{~} (집중당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -170,7 +170,7 @@
   },
   "ability-archer#0269": {
    "src": "{#}{#}Duration: +{~}s",
-   "dst": "",
+   "dst": "{#}{#}지속 시간: +{~}초",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -185,7 +185,7 @@
   },
   "ability-archer#0260": {
    "src": "{#}{#}Effect: +{~} Speed Bonus (➲) to Allies",
-   "dst": "",
+   "dst": "{#}{#}효과: 아군에게 속도 보너스 +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -200,7 +200,7 @@
   },
   "ability-archer#0262": {
    "src": "{#}{#}Effect: +{~} Walk Speed (➲) to Self",
-   "dst": "",
+   "dst": "{#}{#}효과: 자신에게 이동 속도 +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -214,7 +214,7 @@
   },
   "ability-archer#0248": {
    "src": "{#}{#}Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}효과: 적에게 저항 보너스 -{~} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-archer#0264": {
    "src": "{#}{#}Effect: Blindness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}효과: 적에게 실명 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -244,7 +244,7 @@
   },
   "ability-archer#0250": {
    "src": "{#}{#}Effects: -{~}{#}Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}효과: 적에게 피해 보너스 -{~}{#}({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -259,7 +259,7 @@
   },
   "ability-archer#0267": {
    "src": "{#}{#}Main Attack Damage: -{~}",
-   "dst": "",
+   "dst": "{#}{#}기본 공격 피해: -{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -273,7 +273,7 @@
   },
   "ability-archer#0261": {
    "src": "{#}{#}Main Attack Damage: -{~} (per arrow)",
-   "dst": "",
+   "dst": "{#}{#}기본 공격 피해: -{~} (화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -287,7 +287,7 @@
   },
   "ability-archer#0268": {
    "src": "{#}{#}Range: ±{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}사거리: ±{~}블록",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -302,7 +302,7 @@
   },
   "ability-archer#0241": {
    "src": "{#}{#}Total Damage: +{~} (Main Attack Damage, per Twilight)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: +{~} (기본 공격 피해, 황혼당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -316,7 +316,7 @@
   },
   "ability-archer#0243": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Arrow Shield)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: +{~} (DPS 대비, Arrow Shield)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -330,7 +330,7 @@
   },
   "ability-archer#0240": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: +{~} (DPS 대비, Buckshot, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -344,7 +344,7 @@
   },
   "ability-archer#0239": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: +{~} (DPS 대비, Guardian Angels, 발당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -359,7 +359,7 @@
   },
   "ability-archer#0249": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per Twilight)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: +{~} (DPS 대비, 황혼당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -373,7 +373,7 @@
   },
   "ability-archer#0252": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: +{~} (DPS 대비, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -388,7 +388,7 @@
   },
   "ability-archer#0256": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per ray)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: +{~} (DPS 대비, 광선당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -402,7 +402,7 @@
   },
   "ability-archer#0263": {
    "src": "{#}{#}Total Damage: -{~} (after piercing)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: -{~} (관통 후)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -416,7 +416,7 @@
   },
   "ability-archer#0253": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: -{~} (DPS 대비, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -430,7 +430,7 @@
   },
   "ability-archer#0245": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow/ray)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: -{~} (DPS 대비, 화살/광선당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -444,7 +444,7 @@
   },
   "ability-archer#0244": {
    "src": "{#}{#}Total Damage: {~} (Main Attack Damage, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (기본 공격 피해, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -458,7 +458,7 @@
   },
   "ability-archer#0242": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, Arrow Bomb의 강타)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -472,7 +472,7 @@
   },
   "ability-archer#0246": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, for Arrow Bomb)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -486,7 +486,7 @@
   },
   "ability-archer#0247": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, for Grape Bomb)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, Grape Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -500,7 +500,7 @@
   },
   "ability-archer#0255": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -517,7 +517,7 @@
   },
   "ability-archer#0259": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, 타격당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -532,7 +532,7 @@
   },
   "ability-archer#0257": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per shot)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, 발당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -546,7 +546,7 @@
   },
   "ability-archer#0251": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per shrapnel)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, 파편당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -560,7 +560,7 @@
   },
   "ability-archer#0258": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per wave)",
-   "dst": "",
+   "dst": "{#}{#}총 피해: {~} (DPS 대비, 파동당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -574,7 +574,7 @@
   },
   "ability-archer#0000": {
    "src": "Arrow Bomb",
-   "dst": "",
+   "dst": "화살 폭탄",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -586,7 +586,7 @@
   },
   "ability-archer#0001": {
    "src": "Click Combo: LEFT-RIGHT-RIGHT",
-   "dst": "",
+   "dst": "클릭 조합: 좌-우-우",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -601,7 +601,7 @@
   },
   "ability-archer#0002": {
    "src": "Shoots a long-ranged arrow that explodes\nand deals high damage over a large area.\n(Self-damage for {~} of your DPS)",
-   "dst": "",
+   "dst": "멀리 날아가 폭발하는 화살을 쏘아\n넓은 범위에 높은 피해를 줍니다.\n(자신에게 DPS의 {~}만큼 피해)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -616,7 +616,7 @@
   },
   "ability-archer#0003": {
    "src": "{#} Range: ±{~} Blocks",
-   "dst": "",
+   "dst": "{#} 사거리: ±{~}블록",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -630,7 +630,7 @@
   },
   "ability-archer#0004": {
    "src": "Bow Proficiency",
-   "dst": "",
+   "dst": "활 숙련",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -642,7 +642,7 @@
   },
   "ability-archer#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a bow.",
-   "dst": "",
+   "dst": "활을 사용할 때 기본 공격의\n피해와 사거리가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -657,7 +657,7 @@
   },
   "ability-archer#0006": {
    "src": "Cheaper Arrow Bomb",
-   "dst": "",
+   "dst": "화살 폭탄 비용 절감",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -669,7 +669,7 @@
   },
   "ability-archer#0007": {
    "src": "Reduce the Mana cost of Arrow Bomb.",
-   "dst": "",
+   "dst": "화살 폭탄의 마나 소모가 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -685,7 +685,7 @@
   },
   "ability-archer#0008": {
    "src": "Heart Shatter",
-   "dst": "",
+   "dst": "심장 파쇄",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -697,7 +697,7 @@
   },
   "ability-archer#0009": {
    "src": "Hitting a mob directly with Arrow Bomb\nwill shatter its heart and deal additional damage.",
-   "dst": "",
+   "dst": "화살 폭탄으로 몹을 직접 맞히면\n심장을 부숴 추가 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -712,7 +712,7 @@
   },
   "ability-archer#0010": {
    "src": "Double Shots",
-   "dst": "",
+   "dst": "이중 사격",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -724,7 +724,7 @@
   },
   "ability-archer#0011": {
    "src": "Doubles Main Attack arrows\nand reduces their damage.\n(Harder to hit distant enemies)",
-   "dst": "",
+   "dst": "기본 공격 화살이 두 배가 되지만\n피해가 감소합니다.\n(먼 적을 맞히기 어려워짐)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -739,7 +739,7 @@
   },
   "ability-archer#0012": {
    "src": "{#} Main Attack Damage: -{~} (per arrow)",
-   "dst": "",
+   "dst": "{#} 기본 공격 피해: -{~} (화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -752,7 +752,7 @@
   },
   "ability-archer#0013": {
    "src": "Escape",
-   "dst": "",
+   "dst": "탈출",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -764,7 +764,7 @@
   },
   "ability-archer#0014": {
    "src": "Click Combo: LEFT-LEFT-LEFT",
-   "dst": "",
+   "dst": "클릭 조합: 좌-좌-좌",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -779,7 +779,7 @@
   },
   "ability-archer#0015": {
    "src": "Throw yourself backward to avoid danger.\n(Hold shift while escaping to cancel)",
-   "dst": "",
+   "dst": "뒤로 몸을 날려 위험을 피합니다.\n(탈출 중 Shift를 누르고 있으면 취소)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -794,7 +794,7 @@
   },
   "ability-archer#0016": {
    "src": "Power Shots",
-   "dst": "",
+   "dst": "강력한 사격",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -806,7 +806,7 @@
   },
   "ability-archer#0017": {
    "src": "Your Main Attack arrows have\nincreased speed and knockback.",
-   "dst": "",
+   "dst": "기본 공격 화살의\n속도와 넉백이 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -821,7 +821,7 @@
   },
   "ability-archer#0018": {
    "src": "Arrow Storm",
-   "dst": "",
+   "dst": "화살 폭풍",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -833,7 +833,7 @@
   },
   "ability-archer#0019": {
    "src": "Click Combo: LEFT-RIGHT-LEFT",
-   "dst": "",
+   "dst": "클릭 조합: 좌-우-좌",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -848,7 +848,7 @@
   },
   "ability-archer#0020": {
    "src": "Shoots a stream of {~} arrows,\ndealing significant damage to close\nmobs and pushing them away.",
-   "dst": "",
+   "dst": "화살 {~}발을 연속으로 쏘아\n가까운 몹에게 큰 피해를 주고\n뒤로 밀어냅니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -863,7 +863,7 @@
   },
   "ability-archer#0021": {
    "src": "{#} Total Damage: {~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (DPS 대비, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -879,7 +879,7 @@
   },
   "ability-archer#0022": {
    "src": "Cheaper Escape",
-   "dst": "",
+   "dst": "탈출 비용 절감",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -891,7 +891,7 @@
   },
   "ability-archer#0023": {
    "src": "Reduce the Mana cost of Escape.",
-   "dst": "",
+   "dst": "탈출의 마나 소모가 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -907,7 +907,7 @@
   },
   "ability-archer#0024": {
    "src": "Arrow Shield",
-   "dst": "",
+   "dst": "화살 방패",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -919,7 +919,7 @@
   },
   "ability-archer#0025": {
    "src": "Click Combo: LEFT-LEFT-RIGHT",
-   "dst": "",
+   "dst": "클릭 조합: 좌-좌-우",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -934,7 +934,7 @@
   },
   "ability-archer#0026": {
    "src": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. ({~} charges)",
-   "dst": "",
+   "dst": "주위에 받는 피해를 약간 줄여 주는 방패를\n만듭니다. 공격받으면 방패의 충전이\n하나 소모됩니다. 너무 가까이 온 적은\n피해를 입고 밀려납니다. (충전 {~}회)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -949,7 +949,7 @@
   },
   "ability-archer#0027": {
    "src": "Windy Feet",
-   "dst": "",
+   "dst": "바람의 발걸음",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -961,7 +961,7 @@
   },
   "ability-archer#0028": {
    "src": "Casting Escape grants a speed buff\nto you and nearby players.",
-   "dst": "",
+   "dst": "탈출을 시전하면 자신과 주변 플레이어에게\n속도 버프를 부여합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -976,7 +976,7 @@
   },
   "ability-archer#0029": {
    "src": "{#} Effect: +{~} Speed Bonus (➲) to Allies",
-   "dst": "",
+   "dst": "{#} 효과: 아군에게 속도 보너스 +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -990,7 +990,7 @@
   },
   "ability-archer#0030": {
    "src": "Nimble String",
-   "dst": "",
+   "dst": "민첩한 시위",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1002,7 +1002,7 @@
   },
   "ability-archer#0031": {
    "src": "Arrow Storm fires twice as fast and\nshoots +{~} arrows per stream.",
-   "dst": "",
+   "dst": "화살 폭풍의 발사 속도가 두 배가 되고\n연사당 화살이 +{~}발 늘어납니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1017,7 +1017,7 @@
   },
   "ability-archer#0032": {
    "src": "Phantom Ray hits twice as fast but lasts half as long.",
-   "dst": "",
+   "dst": "환영 광선의 타격 속도가 두 배가 되지만 지속 시간은 절반이 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1032,7 +1032,7 @@
   },
   "ability-archer#0033": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow/ray)",
-   "dst": "",
+   "dst": "{#} 총 피해: -{~} (DPS 대비, 화살/광선당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1045,7 +1045,7 @@
   },
   "ability-archer#0034": {
    "src": "Buckshot",
-   "dst": "",
+   "dst": "산탄 사격",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1057,7 +1057,7 @@
   },
   "ability-archer#0035": {
    "src": "When Arrow Shield loses its last charge, spew\n{~} piercing arrows forth from your bow.",
-   "dst": "",
+   "dst": "화살 방패의 마지막 충전이 사라지면\n활에서 관통 화살 {~}발을 뿜어냅니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1072,7 +1072,7 @@
   },
   "ability-archer#0036": {
    "src": "Triple Shots",
-   "dst": "",
+   "dst": "삼중 사격",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1084,7 +1084,7 @@
   },
   "ability-archer#0037": {
    "src": "Triples Main Attack arrows but they deal\n-{~} of normal Main Attack arrow damage.",
-   "dst": "",
+   "dst": "기본 공격 화살이 세 배가 되지만\n일반 기본 공격 화살 피해의 -{~}만 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1099,7 +1099,7 @@
   },
   "ability-archer#0038": {
    "src": "{#} Main Attack Damage: -{~}",
-   "dst": "",
+   "dst": "{#} 기본 공격 피해: -{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1112,7 +1112,7 @@
   },
   "ability-archer#0039": {
    "src": "Bryophyte Roots",
-   "dst": "",
+   "dst": "이끼 뿌리",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1124,7 +1124,7 @@
   },
   "ability-archer#0040": {
    "src": "Hitting an enemy with Arrow Storm will\ncreate an area of effect that slows them\ndown and deals damage every {~}s.",
-   "dst": "",
+   "dst": "화살 폭풍으로 적을 맞히면\n적을 둔화시키고 {~}초마다\n피해를 주는 영역이 생성됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1139,7 +1139,7 @@
   },
   "ability-archer#0041": {
    "src": "Fire Creep",
-   "dst": "",
+   "dst": "번지는 불길",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1151,7 +1151,7 @@
   },
   "ability-archer#0042": {
    "src": "Arrow Bomb will leave a trail of\nfire for {~}s. Enemies that walk\ninto it take damage every {~}s.",
-   "dst": "",
+   "dst": "화살 폭탄이 {~}초 동안 불길을\n남깁니다. 불길에 들어온 적은\n{~}초마다 피해를 입습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1166,7 +1166,7 @@
   },
   "ability-archer#0043": {
    "src": "Phantom Ray",
-   "dst": "",
+   "dst": "환영 광선",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1178,7 +1178,7 @@
   },
   "ability-archer#0044": {
    "src": "Condense Arrow Storm into a single ray\nthat damages enemies {~} times per second.",
-   "dst": "",
+   "dst": "화살 폭풍을 하나의 광선으로 압축해\n초당 {~}회 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1193,7 +1193,7 @@
   },
   "ability-archer#0045": {
    "src": "Guardian Angels",
-   "dst": "",
+   "dst": "수호 천사",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1205,7 +1205,7 @@
   },
   "ability-archer#0046": {
    "src": "Your Arrow Shield turns into {~} sentient bows\nthat fire at nearby enemies every {~}s, each\nwith {~} ammunition. (Arrow Shield will no longer\npush enemies away or provide resistance)",
-   "dst": "",
+   "dst": "화살 방패가 스스로 움직이는 활 {~}개로 바뀌어\n{~}초마다 주변 적에게 사격합니다. 각 활은\n탄약 {~}발을 가집니다. (화살 방패가 더 이상\n적을 밀어내거나 저항을 주지 않음)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1220,7 +1220,7 @@
   },
   "ability-archer#0047": {
    "src": "{#} Total Damage: {~} (of your DPS, per shot)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (DPS 대비, 발당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1233,7 +1233,7 @@
   },
   "ability-archer#0048": {
    "src": "Basaltic Trap",
-   "dst": "",
+   "dst": "현무암 덫",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1245,7 +1245,7 @@
   },
   "ability-archer#0049": {
    "src": "When you hit the ground with Arrow Bomb, leave\na Trap that damages enemies. (Max {~} Traps)",
-   "dst": "",
+   "dst": "화살 폭탄이 지면에 닿으면 적에게\n피해를 주는 덫을 남깁니다. (최대 덫 {~}개)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1260,7 +1260,7 @@
   },
   "ability-archer#0050": {
    "src": "Focus",
-   "dst": "",
+   "dst": "집중",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1272,7 +1272,7 @@
   },
   "ability-archer#0051": {
    "src": "When hitting an aggressive enemy {~}+\nblocks away, gain +{~} Focus {#}. (Max {~})\n(Lose {~} Focus if you miss once)",
-   "dst": "",
+   "dst": "{~}블록 이상 떨어진 적대적인 적을 맞히면\n집중 {#}을 +{~} 얻습니다. (최대 {~})\n(한 번 빗맞히면 집중 {~} 상실)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1287,7 +1287,7 @@
   },
   "ability-archer#0052": {
    "src": "{#} Damage Bonus: +{~} (per Focus)",
-   "dst": "",
+   "dst": "{#} 피해 보너스: +{~} (집중당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1300,7 +1300,7 @@
   },
   "ability-archer#0053": {
    "src": "Leap",
-   "dst": "",
+   "dst": "도약",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1312,7 +1312,7 @@
   },
   "ability-archer#0054": {
    "src": "Leap in the direction of your movement\nwhen you double jump.",
-   "dst": "",
+   "dst": "이중 점프하면 이동 방향으로\n도약합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1327,7 +1327,7 @@
   },
   "ability-archer#0055": {
    "src": "The distance scales with your Walk Speed.",
-   "dst": "",
+   "dst": "도약 거리는 이동 속도에 비례합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1342,7 +1342,7 @@
   },
   "ability-archer#0056": {
    "src": "Cheaper Arrow Storm",
-   "dst": "",
+   "dst": "화살 폭풍 비용 절감",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1354,7 +1354,7 @@
   },
   "ability-archer#0057": {
    "src": "Reduce the Mana cost of Arrow Storm.",
-   "dst": "",
+   "dst": "화살 폭풍의 마나 소모가 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1370,7 +1370,7 @@
   },
   "ability-archer#0058": {
    "src": "Implosion",
-   "dst": "",
+   "dst": "내파",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1382,7 +1382,7 @@
   },
   "ability-archer#0059": {
    "src": "Arrow Bomb pulls enemies\ntowards you. If a Trap is nearby,\nit will pull them towards it instead.\nIncreases Heart Shatter's damage.",
-   "dst": "",
+   "dst": "화살 폭탄이 적을 자신 쪽으로\n끌어당깁니다. 근처에 덫이 있으면\n대신 덫 쪽으로 끌어당깁니다.\n심장 파쇄의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "ability-archer#0060": {
    "src": "Arrow Wall",
-   "dst": "",
+   "dst": "화살 벽",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1409,7 +1409,7 @@
   },
   "ability-archer#0061": {
    "src": "Gives Arrow Shield +{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield의 충전 횟수가 +{~} 증가합니다.\nGuardian Angels의 피해가 -{~} 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1424,7 +1424,7 @@
   },
   "ability-archer#0062": {
    "src": "Arsenal Synergy",
-   "dst": "",
+   "dst": "무기고 시너지",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1436,7 +1436,7 @@
   },
   "ability-archer#0063": {
    "src": "For every {~} arrows shot by Arrow Storm\nrecently, your Main Attacks will additionally\nfire a flint arrow that damages enemies.\n(Max {~} flints per main attack)",
-   "dst": "",
+   "dst": "최근 화살 폭풍으로 쏜 화살 {~}발마다\n기본 공격이 적에게 피해를 주는\n부싯돌 화살을 추가로 발사합니다.\n(기본 공격당 최대 부싯돌 화살 {~}발)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1451,7 +1451,7 @@
   },
   "ability-archer#0064": {
    "src": "{#} Total Damage: {~} (Main Attack Damage, per arrow)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (기본 공격 피해, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1464,7 +1464,7 @@
   },
   "ability-archer#0065": {
    "src": "Fierce Stomp",
-   "dst": "",
+   "dst": "사나운 발구르기",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1476,7 +1476,7 @@
   },
   "ability-archer#0066": {
    "src": "When using Escape, hold shift to\nquickly drop down to deal damage\nand blind enemies.",
-   "dst": "",
+   "dst": "탈출 중 Shift를 누르고 있으면\n빠르게 내려꽂혀 피해를 주고\n적을 실명시킵니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1491,7 +1491,7 @@
   },
   "ability-archer#0067": {
    "src": "Patient Hunter",
-   "dst": "",
+   "dst": "인내하는 사냥꾼",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1503,7 +1503,7 @@
   },
   "ability-archer#0068": {
    "src": "Increase your maximum Traps by +{~}.",
-   "dst": "",
+   "dst": "최대 덫 개수가 +{~} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1521,7 +1521,7 @@
   },
   "ability-archer#0069": {
    "src": "Your Traps will deal +{~} more damage\nfor every second it's active. (Max +{~})",
-   "dst": "",
+   "dst": "덫이 활성화된 동안 매초 피해가\n+{~}씩 증가합니다. (최대 +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1536,7 +1536,7 @@
   },
   "ability-archer#0070": {
    "src": "Grappling Hook",
-   "dst": "",
+   "dst": "갈고리",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1548,7 +1548,7 @@
   },
   "ability-archer#0071": {
    "src": "Holding Shift while casting\nwill pull any enemy you hit.",
-   "dst": "",
+   "dst": "시전 중 Shift를 누르고 있으면\n맞힌 적을 끌어당깁니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1563,7 +1563,7 @@
   },
   "ability-archer#0072": {
    "src": "When casting Escape, throw a hook\nthat pulls you when hitting a block.\n(Escape will not throw you backward anymore)",
-   "dst": "",
+   "dst": "탈출을 시전하면 블록에 닿았을 때\n자신을 끌어당기는 갈고리를 던집니다.\n(탈출이 더 이상 뒤로 날려 보내지 않음)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1578,7 +1578,7 @@
   },
   "ability-archer#0073": {
    "src": "More Focus",
-   "dst": "",
+   "dst": "집중 증가",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1590,7 +1590,7 @@
   },
   "ability-archer#0074": {
    "src": "Increase your maximum Focus {#} by +{~}.",
-   "dst": "",
+   "dst": "최대 집중 {#}이 +{~} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1606,7 +1606,7 @@
   },
   "ability-archer#0075": {
    "src": "Murder Flock",
-   "dst": "",
+   "dst": "살육의 까마귀 떼",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1618,7 +1618,7 @@
   },
   "ability-archer#0076": {
    "src": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every {~}s. (Max {~})\nDamaged enemies will be distracted for {~}s.",
-   "dst": "",
+   "dst": "현무암 덫이 폭발하면 까마귀를 소환해\n{~}초마다 적대적인 적을 쪼아댑니다. (최대 {~})\n피해를 입은 적은 {~}초 동안 주의가 분산됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1633,7 +1633,7 @@
   },
   "ability-archer#0077": {
    "src": "Refined Gunpowder",
-   "dst": "",
+   "dst": "정제된 화약",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1645,7 +1645,7 @@
   },
   "ability-archer#0078": {
    "src": "Increase the damage of Arrow Bomb.",
-   "dst": "",
+   "dst": "화살 폭탄의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1660,7 +1660,7 @@
   },
   "ability-archer#0079": {
    "src": "Phantom Force",
-   "dst": "",
+   "dst": "환영의 힘",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1672,7 +1672,7 @@
   },
   "ability-archer#0080": {
    "src": "Phantom Ray gains extra forward\nrange and becomes wider.",
-   "dst": "",
+   "dst": "환영 광선의 전방 사거리가\n늘어나고 더 넓어집니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1687,7 +1687,7 @@
   },
   "ability-archer#0081": {
    "src": "Windstorm",
-   "dst": "",
+   "dst": "폭풍우",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1699,7 +1699,7 @@
   },
   "ability-archer#0082": {
    "src": "Arrow Storm gains recoil while midair.",
-   "dst": "",
+   "dst": "공중에서 화살 폭풍을 쓰면 반동이 생깁니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1714,7 +1714,7 @@
   },
   "ability-archer#0083": {
    "src": "Arrow Storm will shoot +{~} stream\nof arrows and +{~} extra arrows per stream.",
-   "dst": "",
+   "dst": "화살 폭풍이 +{~}회 더 연사하고\n연사당 화살이 +{~}발 늘어납니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1729,7 +1729,7 @@
   },
   "ability-archer#0084": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 총 피해: -{~} (DPS 대비, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1742,7 +1742,7 @@
   },
   "ability-archer#0085": {
    "src": "Grape Bomb",
-   "dst": "",
+   "dst": "포도탄",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1754,7 +1754,7 @@
   },
   "ability-archer#0086": {
    "src": "Arrow Bomb will throw {~} additional\nsmaller bombs when exploding.",
-   "dst": "",
+   "dst": "화살 폭탄이 폭발할 때 작은 폭탄\n{~}개를 추가로 흩뿌립니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1769,7 +1769,7 @@
   },
   "ability-archer#0087": {
    "src": "Ivyroot Mamba",
-   "dst": "",
+   "dst": "담쟁이 맘바",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1781,7 +1781,7 @@
   },
   "ability-archer#0088": {
    "src": "Bryophyte Roots summons a Snake after\ndisappearing that will spit weakening\nvenom at aggressive enemies every {~}s. (Max {~})\nEnemies will be weakened for {~}s.",
-   "dst": "",
+   "dst": "이끼 뿌리가 사라진 뒤 뱀을 소환해\n{~}초마다 적대적인 적에게 약화 독을\n뱉습니다. (최대 {~})\n적은 {~}초 동안 약화됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1796,7 +1796,7 @@
   },
   "ability-archer#0089": {
    "src": "Twain's Arc",
-   "dst": "",
+   "dst": "Twain의 호",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1808,7 +1808,7 @@
   },
   "ability-archer#0090": {
    "src": "If you have {~}+ Focus {#}, holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
-   "dst": "",
+   "dst": "집중 {#}이 {~} 이상이면 Shift를 눌러\nTwain의 호를 소환합니다. 충전하면\n파괴적인 장거리 광선을 발사합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1823,7 +1823,7 @@
   },
   "ability-archer#0091": {
    "src": "Frenzy",
-   "dst": "",
+   "dst": "광분",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1835,7 +1835,7 @@
   },
   "ability-archer#0092": {
    "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to {~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "적을 맞히면 잠시 이동 속도가 +{~} 증가하며,\n초당 최대 {~}까지 쌓입니다. (최대 +{~})\n매초 보너스가 -{~}씩 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1850,7 +1850,7 @@
   },
   "ability-archer#0093": {
    "src": "Shrapnel Bomb",
-   "dst": "",
+   "dst": "파편 폭탄",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1862,7 +1862,7 @@
   },
   "ability-archer#0094": {
    "src": "Arrow Bomb's explosion will fling {~}\nshrapnel, dealing damage in a large area.\n(Each enemy can only be hit by three shrapnel)",
-   "dst": "",
+   "dst": "화살 폭탄이 폭발하며 파편 {~}개를\n흩뿌려 넓은 범위에 피해를 줍니다.\n(적 하나당 파편은 세 개까지만 적중)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1877,7 +1877,7 @@
   },
   "ability-archer#0095": {
    "src": "{#} Total Damage: {~} (of your DPS, per shrapnel)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (DPS 대비, 파편당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1890,7 +1890,7 @@
   },
   "ability-archer#0096": {
    "src": "Rocket Jump",
-   "dst": "",
+   "dst": "로켓 점프",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1902,7 +1902,7 @@
   },
   "ability-archer#0097": {
    "src": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to {~}.",
-   "dst": "",
+   "dst": "화살 폭탄의 반동이 증가하고\n자신에게 주는 피해가 {~}로 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1917,7 +1917,7 @@
   },
   "ability-archer#0098": {
    "src": "Scorched Earth",
-   "dst": "",
+   "dst": "불탄 대지",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1929,7 +1929,7 @@
   },
   "ability-archer#0099": {
    "src": "Fire Creep becomes much stronger.",
-   "dst": "",
+   "dst": "번지는 불길이 훨씬 강해집니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1944,7 +1944,7 @@
   },
   "ability-archer#0100": {
    "src": "{#} Duration: +{~}s",
-   "dst": "",
+   "dst": "{#} 지속 시간: +{~}초",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1958,7 +1958,7 @@
   },
   "ability-archer#0101": {
    "src": "More Traps",
-   "dst": "",
+   "dst": "덫 증가",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-archer#0102": {
    "src": "Divine Intervention",
-   "dst": "",
+   "dst": "신의 개입",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1982,7 +1982,7 @@
   },
   "ability-archer#0103": {
    "src": "Casting Arrow Bomb will cause them to\nshoot explosive shots, dealing +{~} damage.",
-   "dst": "",
+   "dst": "화살 폭탄을 시전하면 천사들이\n폭발탄을 쏘아 +{~} 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-archer#0104": {
    "src": "Casting Arrow Storm will cause them to\nshoot {~}x faster while Arrow Storm is active",
-   "dst": "",
+   "dst": "Arrow Storm을 시전하면 Arrow Storm이 유지되는\n동안 천사들의 사격 속도가 {~}배 빨라집니다",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2012,7 +2012,7 @@
   },
   "ability-archer#0105": {
    "src": "Guardian Angels gain +{~} additional ammunition.\nWhenever you cast a spell, your Guardian Angels\nbecome briefly empowered.",
-   "dst": "",
+   "dst": "수호 천사의 탄약이 +{~} 증가합니다.\n주문을 시전할 때마다 수호 천사가\n잠시 강화됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2027,7 +2027,7 @@
   },
   "ability-archer#0106": {
    "src": "Cheaper Arrow Shield",
-   "dst": "",
+   "dst": "화살 방패 비용 절감",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2039,7 +2039,7 @@
   },
   "ability-archer#0107": {
    "src": "Reduce the Mana cost of Arrow Shield.",
-   "dst": "",
+   "dst": "화살 방패의 마나 소모가 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2055,7 +2055,7 @@
   },
   "ability-archer#0108": {
    "src": "Honed Shield",
-   "dst": "",
+   "dst": "연마된 방패",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2067,7 +2067,7 @@
   },
   "ability-archer#0109": {
    "src": "Arrow Shield's radius, knockback,\nand damage is increased.",
-   "dst": "",
+   "dst": "화살 방패의 반경, 넉백,\n피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2082,7 +2082,7 @@
   },
   "ability-archer#0110": {
    "src": "Guardian Angels' damage is increased.",
-   "dst": "",
+   "dst": "수호 천사의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2097,7 +2097,7 @@
   },
   "ability-archer#0111": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Arrow Shield)",
-   "dst": "",
+   "dst": "{#} 총 피해: +{~} (DPS 대비, Arrow Shield)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2110,7 +2110,7 @@
   },
   "ability-archer#0112": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-   "dst": "",
+   "dst": "{#} 총 피해: +{~} (DPS 대비, Guardian Angels, 발당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2124,7 +2124,7 @@
   },
   "ability-archer#0113": {
    "src": "Shocking Bomb",
-   "dst": "",
+   "dst": "전격 폭탄",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2136,7 +2136,7 @@
   },
   "ability-archer#0114": {
    "src": "Arrow Bomb will be unaffected by\ngravity and increase its explosion damage.",
-   "dst": "",
+   "dst": "화살 폭탄이 중력의 영향을 받지 않고\n폭발 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2151,7 +2151,7 @@
   },
   "ability-archer#0115": {
    "src": "Stormy Feet",
-   "dst": "",
+   "dst": "폭풍의 발걸음",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2163,7 +2163,7 @@
   },
   "ability-archer#0116": {
    "src": "Windy Feet will last longer and grant a stronger\nspeed buff.",
-   "dst": "",
+   "dst": "바람의 발걸음이 더 오래 지속되고 더 강한\n속도 버프를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2178,7 +2178,7 @@
   },
   "ability-archer#0117": {
    "src": "Bounding Stride",
-   "dst": "",
+   "dst": "힘찬 도약",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2190,7 +2190,7 @@
   },
   "ability-archer#0118": {
    "src": "Leap will launch you further.",
-   "dst": "",
+   "dst": "도약으로 더 멀리 날아갑니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2205,7 +2205,7 @@
   },
   "ability-archer#0119": {
    "src": "Homing Shots",
-   "dst": "",
+   "dst": "유도 사격",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2217,7 +2217,7 @@
   },
   "ability-archer#0120": {
    "src": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
-   "dst": "",
+   "dst": "기본 공격 화살이 주변 적을 따라가며\n중력의 영향을 받지 않습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2232,7 +2232,7 @@
   },
   "ability-archer#0121": {
    "src": "Recycling",
-   "dst": "",
+   "dst": "재활용",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2244,7 +2244,7 @@
   },
   "ability-archer#0122": {
    "src": "When any of your projectiles miss, gain +{~} Mana.",
-   "dst": "",
+   "dst": "투사체가 빗나갈 때마다 마나를 +{~} 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2259,7 +2259,7 @@
   },
   "ability-archer#0123": {
    "src": "Mana Trap",
-   "dst": "",
+   "dst": "마나 덫",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2271,7 +2271,7 @@
   },
   "ability-archer#0124": {
    "src": "Your Traps will give you {~} Mana\nper second and {~} Mana\nwhen they explode.",
-   "dst": "",
+   "dst": "덫이 초당 마나 {~}, 폭발할 때\n마나 {~}을\n회복시켜 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2286,7 +2286,7 @@
   },
   "ability-archer#0125": {
    "src": "Cheaper Escape II",
-   "dst": "",
+   "dst": "탈출 비용 절감 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2298,7 +2298,7 @@
   },
   "ability-archer#0126": {
    "src": "Initiator",
-   "dst": "",
+   "dst": "선제공격",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2310,7 +2310,7 @@
   },
   "ability-archer#0127": {
    "src": "If you do not damage an enemy for\n{~}s or more, your next successful hit\nwill deal +{~} damage and add +{~} Focus {#}.",
-   "dst": "",
+   "dst": "{~}초 이상 적에게 피해를 주지 않으면\n다음 적중이 +{~} 피해를 주고\n집중 {#}을 +{~} 더합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2325,7 +2325,7 @@
   },
   "ability-archer#0128": {
    "src": "Courier's Edict",
-   "dst": "",
+   "dst": "전령의 칙령",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2337,7 +2337,7 @@
   },
   "ability-archer#0129": {
    "src": "Fierce Stomp sends out {~} waves of\nheavenly light in front of you.",
-   "dst": "",
+   "dst": "사나운 발구르기가 전방으로\n천상의 빛의 파동 {~}개를 내보냅니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2352,7 +2352,7 @@
   },
   "ability-archer#0130": {
    "src": "Landing after Leap triggers Fierce Stomp.",
-   "dst": "",
+   "dst": "도약 후 착지하면 사나운 발구르기가 발동합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2367,7 +2367,7 @@
   },
   "ability-archer#0131": {
    "src": "{#} Total Damage: {~} (of your DPS, per wave)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (DPS 대비, 파동당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2380,7 +2380,7 @@
   },
   "ability-archer#0132": {
    "src": "Vigilant Sentinels",
-   "dst": "",
+   "dst": "경계하는 파수꾼",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2392,7 +2392,7 @@
   },
   "ability-archer#0133": {
    "src": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
-   "dst": "",
+   "dst": "수호 천사가 활성화된 동안 화살 방패를 시전하면\n산탄 사격도 시전됩니다. 산탄 사격의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2407,7 +2407,7 @@
   },
   "ability-archer#0134": {
    "src": "Increase Guardian Angels' range and damage.",
-   "dst": "",
+   "dst": "수호 천사의 사거리와 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2422,7 +2422,7 @@
   },
   "ability-archer#0135": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-   "dst": "",
+   "dst": "{#} 총 피해: +{~} (DPS 대비, Buckshot, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2435,7 +2435,7 @@
   },
   "ability-archer#0136": {
    "src": "Call of the Hound",
-   "dst": "",
+   "dst": "사냥개의 부름",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2447,7 +2447,7 @@
   },
   "ability-archer#0137": {
    "src": "Arrow Shield summons a Hound that will\nattack aggressive enemies every {~}s\nand drag them towards your traps.",
-   "dst": "",
+   "dst": "화살 방패가 사냥개를 소환해\n{~}초마다 적대적인 적을 공격하고\n덫 쪽으로 끌고 갑니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2462,7 +2462,7 @@
   },
   "ability-archer#0138": {
    "src": "Decimator",
-   "dst": "",
+   "dst": "섬멸자",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2474,7 +2474,7 @@
   },
   "ability-archer#0139": {
    "src": "Phantom Ray gains extra forward range.",
-   "dst": "",
+   "dst": "환영 광선의 전방 사거리가 늘어납니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2489,7 +2489,7 @@
   },
   "ability-archer#0140": {
    "src": "Phantom Ray will increase its damage by {~}\nevery time you do not miss with it. (Max {~})",
-   "dst": "",
+   "dst": "환영 광선을 빗맞히지 않을 때마다\n피해가 {~} 증가합니다. (최대 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2504,7 +2504,7 @@
   },
   "ability-archer#0141": {
    "src": "Phasing Beam",
-   "dst": "",
+   "dst": "위상 광선",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2516,7 +2516,7 @@
   },
   "ability-archer#0142": {
    "src": "Twain's Arc charges {~} faster, and\ncan now pierce through up to {~} enemies,\ndealing reduced damage after piercing.\n(Damage is dealt as Main Attack Damage)",
-   "dst": "",
+   "dst": "Twain의 호의 충전 속도가 {~} 빨라지고\n최대 {~}명의 적을 관통하며,\n관통 후에는 피해가 감소합니다.\n(피해는 기본 공격 피해로 적용)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2531,7 +2531,7 @@
   },
   "ability-archer#0143": {
    "src": "{#} Total Damage: -{~} (after piercing)",
-   "dst": "",
+   "dst": "{#} 총 피해: -{~} (관통 후)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2544,7 +2544,7 @@
   },
   "ability-archer#0144": {
    "src": "Spectral Hover",
-   "dst": "",
+   "dst": "유령 부유",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2556,7 +2556,7 @@
   },
   "ability-archer#0145": {
    "src": "Slow Falling is applied upon using Escape.\nCrouching at any point will cancel this effect.\n(Effect cannot be refreshed mid-air)",
-   "dst": "",
+   "dst": "탈출을 사용하면 느린 낙하가 적용됩니다.\n언제든 웅크리면 이 효과가 취소됩니다.\n(공중에서는 효과를 갱신할 수 없음)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2571,7 +2571,7 @@
   },
   "ability-archer#0146": {
    "src": "Parting Gift",
-   "dst": "",
+   "dst": "작별 선물",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2583,7 +2583,7 @@
   },
   "ability-archer#0147": {
    "src": "When casting Escape, release a\ncluster bomb mid-air that explodes,\nsending a payload of {~} arrows\nto your previous location.\n(Each enemy can only be hit by one arrow)",
-   "dst": "",
+   "dst": "탈출을 시전하면 공중에서\n집속 폭탄을 떨어뜨려 폭발시키고,\n화살 {~}발을\n이전 위치로 쏟아붓습니다.\n(적 하나당 화살 하나만 적중)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2598,7 +2598,7 @@
   },
   "ability-archer#0148": {
    "src": "Bouncing Bomb",
-   "dst": "",
+   "dst": "튕기는 폭탄",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2610,7 +2610,7 @@
   },
   "ability-archer#0149": {
    "src": "Arrow Bomb will travel {~} slower and\nbounce once when hitting a block or enemy.",
-   "dst": "",
+   "dst": "화살 폭탄이 {~} 느리게 날아가고\n블록이나 적에 닿으면 한 번 튕깁니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2625,7 +2625,7 @@
   },
   "ability-archer#0150": {
    "src": "Cheaper Arrow Storm II",
-   "dst": "",
+   "dst": "화살 폭풍 비용 절감 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2637,7 +2637,7 @@
   },
   "ability-archer#0151": {
    "src": "Cheaper Arrow Shield II",
-   "dst": "",
+   "dst": "화살 방패 비용 절감 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2649,7 +2649,7 @@
   },
   "ability-archer#0152": {
    "src": "Hookshot",
-   "dst": "",
+   "dst": "훅샷",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2661,7 +2661,7 @@
   },
   "ability-archer#0153": {
    "src": "Increases your Grappling Hook's\nrange, speed and strength.",
-   "dst": "",
+   "dst": "갈고리의 사거리, 속도,\n힘이 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2676,7 +2676,7 @@
   },
   "ability-archer#0154": {
    "src": "Ghostly Trigger",
-   "dst": "",
+   "dst": "유령 방아쇠",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2688,7 +2688,7 @@
   },
   "ability-archer#0155": {
    "src": "While airborne after casting Escape, your\nnext {~} Main Attacks can be fired in quick\nsuccession regardless of attack speed,\nand will instantly fire from Twain's Arc.",
-   "dst": "",
+   "dst": "탈출 시전 후 공중에 있는 동안 다음\n기본 공격 {~}회를 공격 속도와 관계없이\n빠르게 연달아 쏠 수 있으며,\nTwain의 호로 즉시 발사됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2703,7 +2703,7 @@
   },
   "ability-archer#0156": {
    "src": "Arrow Hurricane",
-   "dst": "",
+   "dst": "화살 허리케인",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2715,7 +2715,7 @@
   },
   "ability-archer#0157": {
    "src": "Arrow Storm will shoot +{~} extra streams of arrows.",
-   "dst": "",
+   "dst": "화살 폭풍이 +{~}회 더 연사합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2730,7 +2730,7 @@
   },
   "ability-archer#0158": {
    "src": "Arrow Storm's recoil is doubled.",
-   "dst": "",
+   "dst": "화살 폭풍의 반동이 두 배가 됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2745,7 +2745,7 @@
   },
   "ability-archer#0159": {
    "src": "Beast Lore",
-   "dst": "",
+   "dst": "야수의 지혜",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2757,7 +2757,7 @@
   },
   "ability-archer#0160": {
    "src": "Increase your maximum Snakes by +{~}.\nIncrease your maximum Crows by +{~}.\nIncrease the damage of your Hound.",
-   "dst": "",
+   "dst": "최대 뱀 수가 +{~} 증가합니다.\n최대 까마귀 수가 +{~} 증가합니다.\n사냥개의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2772,7 +2772,7 @@
   },
   "ability-archer#0161": {
    "src": "Tangled Traps",
-   "dst": "",
+   "dst": "얽힌 덫",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2784,7 +2784,7 @@
   },
   "ability-archer#0162": {
    "src": "Grape Bomb gains +{~} grape.",
-   "dst": "",
+   "dst": "Grape Bomb의 폭탄이 +{~}개 늘어납니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2799,7 +2799,7 @@
   },
   "ability-archer#0163": {
    "src": "Your Traps will be connected by a rope\nthat deals damage to enemies every {~}s.",
-   "dst": "",
+   "dst": "덫끼리 밧줄로 연결되어\n{~}초마다 적에게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2814,7 +2814,7 @@
   },
   "ability-archer#0164": {
    "src": "Coursing Restraints",
-   "dst": "",
+   "dst": "흐르는 속박",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2826,7 +2826,7 @@
   },
   "ability-archer#0165": {
    "src": "Shocking Bomb will temporarily shock\nenemies, reducing their defences.",
-   "dst": "",
+   "dst": "전격 폭탄이 적을 잠시 감전시켜\n방어력을 낮춥니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2841,7 +2841,7 @@
   },
   "ability-archer#0166": {
    "src": "{#} Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 효과: 적에게 저항 보너스 -{~} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2854,7 +2854,7 @@
   },
   "ability-archer#0167": {
    "src": "Elusive",
-   "dst": "",
+   "dst": "포착 불가",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2866,7 +2866,7 @@
   },
   "ability-archer#0168": {
    "src": "Arrow Bomb and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "화살 폭탄과 화살 폭풍에 더 이상 반동이\n없으며, 화살 폭탄이 자신에게 피해를 주지 않습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2881,7 +2881,7 @@
   },
   "ability-archer#0169": {
    "src": "Chilling Snare",
-   "dst": "",
+   "dst": "서리 올가미",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2893,7 +2893,7 @@
   },
   "ability-archer#0170": {
    "src": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every {~}s after it detonates.",
-   "dst": "",
+   "dst": "현무암 덫에 얼음 올가미를 달아\n폭발 후 {~}초마다 주변 적을\n크게 묶어 두고 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2908,7 +2908,7 @@
   },
   "ability-archer#0171": {
    "src": "Feedback Loop",
-   "dst": "",
+   "dst": "피드백 루프",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2920,7 +2920,7 @@
   },
   "ability-archer#0172": {
    "src": "Hitting {~} flint arrow will make your next\nArrow Storm shoot +{~} arrow per stream. (Max {~})",
-   "dst": "",
+   "dst": "부싯돌 화살 {~}발을 맞히면 다음\n화살 폭풍의 연사당 화살이 +{~}발 늘어납니다. (최대 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2935,7 +2935,7 @@
   },
   "ability-archer#0173": {
    "src": "Swift Primer",
-   "dst": "",
+   "dst": "신속한 기폭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2947,7 +2947,7 @@
   },
   "ability-archer#0174": {
    "src": "Patient Hunter will increase its damage by +{~}\nper second, and increase its Max Damage by +{~}.",
-   "dst": "",
+   "dst": "인내하는 사냥꾼의 초당 피해 증가량이 +{~},\n최대 피해가 +{~} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2962,7 +2962,7 @@
   },
   "ability-archer#0175": {
    "src": "Crepuscular Ray",
-   "dst": "",
+   "dst": "박명광선",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2974,7 +2974,7 @@
   },
   "ability-archer#0176": {
    "src": "If you have {~}+ Focus {#}, casting Arrow Storm\nwhile {~}+ blocks above the ground will cause\nyou to levitate and shoot {~} homing arrows\nper second until you run out of Focus {#}.",
-   "dst": "",
+   "dst": "집중 {#}이 {~} 이상일 때 지면에서 {~}블록 이상\n떠 있는 상태로 Arrow Storm을 시전하면\n공중에 떠서 초당 유도 화살 {~}발을\n집중 {#}이 바닥날 때까지 쏩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2989,7 +2989,7 @@
   },
   "ability-archer#0177": {
    "src": "While in this state, lose {~} Focus {#} every {~}s.",
-   "dst": "",
+   "dst": "이 상태에서는 {~2}초마다 집중 {#}을 {~1} 잃습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3004,7 +3004,7 @@
   },
   "ability-archer#0178": {
    "src": "Transience",
-   "dst": "",
+   "dst": "찰나",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3016,7 +3016,7 @@
   },
   "ability-archer#0179": {
    "src": "Arrow Storm will pierce enemies.",
-   "dst": "",
+   "dst": "화살 폭풍이 적을 관통합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3031,7 +3031,7 @@
   },
   "ability-archer#0180": {
    "src": "Snow Storm",
-   "dst": "",
+   "dst": "눈보라",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3043,7 +3043,7 @@
   },
   "ability-archer#0181": {
    "src": "Enemies near you will be slowed down.",
-   "dst": "",
+   "dst": "주변의 적이 둔화됩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3058,7 +3058,7 @@
   },
   "ability-archer#0182": {
    "src": "Cheaper Arrow Bomb II",
-   "dst": "",
+   "dst": "화살 폭탄 비용 절감 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3070,7 +3070,7 @@
   },
   "ability-archer#0183": {
    "src": "More Focus II",
-   "dst": "",
+   "dst": "집중 증가 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3082,7 +3082,7 @@
   },
   "ability-archer#0184": {
    "src": "Wild Light",
-   "dst": "",
+   "dst": "야생의 빛",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3094,7 +3094,7 @@
   },
   "ability-archer#0185": {
    "src": "Increase your Main Attack's damage by +{~}\nfor every +{~} Walk Speed you gain from Frenzy.",
-   "dst": "",
+   "dst": "광분으로 얻는 이동 속도 +{~2}마다\n기본 공격 피해가 +{~1} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3109,7 +3109,7 @@
   },
   "ability-archer#0186": {
    "src": "Fimbulwinter",
-   "dst": "",
+   "dst": "핌불베트르",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3121,7 +3121,7 @@
   },
   "ability-archer#0187": {
    "src": "Enemies take additional damage after standing\ninside of Chilling Snare for {~}s.",
-   "dst": "",
+   "dst": "서리 올가미 안에 {~}초 동안 머문\n적은 추가 피해를 입습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3136,7 +3136,7 @@
   },
   "ability-archer#0188": {
    "src": "Warding Wisps",
-   "dst": "",
+   "dst": "수호 도깨비불",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3148,7 +3148,7 @@
   },
   "ability-archer#0189": {
    "src": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max {~})",
-   "dst": "",
+   "dst": "Arrow Shield의 충전이 사라지면\n자신을 따라다니며 보호하는\n도깨비불을 소환합니다. (최대 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3163,7 +3163,7 @@
   },
   "ability-archer#0190": {
    "src": "Your Wisps can possess nearby\nenemies for {~}s, dealing damage\nevery {~}s and slowing them.",
-   "dst": "",
+   "dst": "도깨비불이 {~}초 동안 주변 적에게\n빙의하여 {~}초마다 피해를 주고\n둔화시킵니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3178,7 +3178,7 @@
   },
   "ability-archer#0191": {
    "src": "Shrieking Arrows",
-   "dst": "",
+   "dst": "비명 화살",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3190,7 +3190,7 @@
   },
   "ability-archer#0192": {
    "src": "Arrow Storm and Phantom Ray will deal additional damage.",
-   "dst": "",
+   "dst": "Arrow Storm과 Phantom Ray의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3205,7 +3205,7 @@
   },
   "ability-archer#0193": {
    "src": "{#} Total Damage: +{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 총 피해: +{~} (DPS 대비, 화살당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3219,7 +3219,7 @@
   },
   "ability-archer#0194": {
    "src": "{#} Total Damage: +{~} (of your DPS, per ray)",
-   "dst": "",
+   "dst": "{#} 총 피해: +{~} (DPS 대비, 광선당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3232,7 +3232,7 @@
   },
   "ability-archer#0195": {
    "src": "Overgrowth",
-   "dst": "",
+   "dst": "과성장",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3244,7 +3244,7 @@
   },
   "ability-archer#0196": {
    "src": "Bryophyte Roots spreads further\nand deals damage {~} faster.",
-   "dst": "",
+   "dst": "Bryophyte Roots가 더 넓게 퍼지고\n{~} 더 빠르게 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3259,7 +3259,7 @@
   },
   "ability-archer#0197": {
    "src": "Quick Draw",
-   "dst": "",
+   "dst": "속사",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3271,7 +3271,7 @@
   },
   "ability-archer#0198": {
    "src": "Not missing with Phantom Ray {~} times\nin a row will transform your next\nMain Attack into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "Phantom Ray를 {~}회 연속으로 빗맞히지 않으면\n다음 기본 공격이\nTwain의 호 광선으로 바뀝니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3286,7 +3286,7 @@
   },
   "ability-archer#0199": {
    "src": "Sniffer Dog",
-   "dst": "",
+   "dst": "탐지견",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3298,7 +3298,7 @@
   },
   "ability-archer#0200": {
    "src": "Your Hound has a {~} chance to\ndig up a Trap when attacking enemies.",
-   "dst": "",
+   "dst": "사냥개가 적을 공격할 때 {~} 확률로\n덫을 파냅니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3313,7 +3313,7 @@
   },
   "ability-archer#0201": {
    "src": "Repel",
-   "dst": "",
+   "dst": "격퇴",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3325,7 +3325,7 @@
   },
   "ability-archer#0202": {
    "src": "Casting Arrow Shield will push back nearby\nenemies and provide a brief burst of resistance.",
-   "dst": "",
+   "dst": "Arrow Shield를 시전하면 주변 적을 밀쳐내고\n잠시 저항을 크게 얻습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3340,7 +3340,7 @@
   },
   "ability-archer#0203": {
    "src": "Reduce this ability's cooldown by {~}s\nevery time Arrow Shield loses a charge.",
-   "dst": "",
+   "dst": "Arrow Shield의 충전이 사라질 때마다\n이 어빌리티의 재사용 대기시간이 {~}초 감소합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3355,7 +3355,7 @@
   },
   "ability-archer#0204": {
    "src": "Pyrotechnics",
-   "dst": "",
+   "dst": "불꽃놀이",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3367,7 +3367,7 @@
   },
   "ability-archer#0205": {
    "src": "Arrow Bomb and Grape Bomb\nbecome much hotter, increasing\nthe damage of their explosion.",
-   "dst": "",
+   "dst": "Arrow Bomb과 Grape Bomb이\n훨씬 뜨거워져\n폭발 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3382,7 +3382,7 @@
   },
   "ability-archer#0206": {
    "src": "{#} Total Damage: {~} (of your DPS, for Arrow Bomb)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (DPS 대비, Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3395,7 +3395,7 @@
   },
   "ability-archer#0207": {
    "src": "{#} Total Damage: {~} (of your DPS, for Grape Bomb)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (DPS 대비, Grape Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3408,7 +3408,7 @@
   },
   "ability-archer#0208": {
    "src": "Canine Colleague",
-   "dst": "",
+   "dst": "개 동료",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3420,7 +3420,7 @@
   },
   "ability-archer#0209": {
    "src": "Increase your maximum Hounds by +{~}.",
-   "dst": "",
+   "dst": "최대 사냥개 수가 +{~} 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3435,7 +3435,7 @@
   },
   "ability-archer#0210": {
    "src": "Mael's Quiver",
-   "dst": "",
+   "dst": "Mael의 화살통",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3447,7 +3447,7 @@
   },
   "ability-archer#0211": {
    "src": "Increase the damage of Crepuscular Ray.",
-   "dst": "",
+   "dst": "Crepuscular Ray의 피해가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3462,7 +3462,7 @@
   },
   "ability-archer#0212": {
    "src": "Repositioning",
-   "dst": "",
+   "dst": "재배치",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3474,7 +3474,7 @@
   },
   "ability-archer#0213": {
    "src": "Gain a brief speed boost\nafter shooting Twain's Arc.",
-   "dst": "",
+   "dst": "Twain의 호를 쏜 뒤\n잠시 속도가 증가합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3489,7 +3489,7 @@
   },
   "ability-archer#0214": {
    "src": "{#} Effect: +{~} Walk Speed (➲) to Self",
-   "dst": "",
+   "dst": "{#} 효과: 자신에게 이동 속도 +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3502,7 +3502,7 @@
   },
   "ability-archer#0215": {
    "src": "Angelic Ascension",
-   "dst": "",
+   "dst": "천사의 승천",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3514,7 +3514,7 @@
   },
   "ability-archer#0216": {
    "src": "Arrow Bomb will smite enemies it hits\ndirectly with a bolt from the heavens.",
-   "dst": "",
+   "dst": "Arrow Bomb이 직접 맞힌 적에게\n하늘의 번개를 내리칩니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3529,7 +3529,7 @@
   },
   "ability-archer#0217": {
    "src": "Arrow Storm last {~} times longer\nand releases in a tighter spread",
-   "dst": "",
+   "dst": "Arrow Storm이 {~}배 더 오래 지속되고\n더 좁게 퍼져 발사됩니다",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3544,7 +3544,7 @@
   },
   "ability-archer#0218": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap have no cooldown.",
-   "dst": "",
+   "dst": "빛의 힘을 불러내 {~}초 동안\n공격을 강화하고\nLeap의 재사용 대기시간을 없앱니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3559,7 +3559,7 @@
   },
   "ability-archer#0219": {
    "src": "Guardian Angels will have unlimited ammunition\nand trigger Buckshot after firing {~} volleys.",
-   "dst": "",
+   "dst": "Guardian Angels의 탄약이 무한해지고\n{~}회 일제 사격 후 Buckshot을 발동합니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3574,7 +3574,7 @@
   },
   "ability-archer#0220": {
    "src": "Main Attack will instead shoot Light Arrows\nthat deal {~} more damage over {~}s.",
-   "dst": "",
+   "dst": "기본 공격이 대신 빛의 화살을 쏘아\n{~2}초에 걸쳐 {~1} 추가 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3589,7 +3589,7 @@
   },
   "ability-archer#0221": {
    "src": "{#} Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-   "dst": "",
+   "dst": "{#} 총 피해: {~} (DPS 대비, Arrow Bomb의 강타)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3602,7 +3602,7 @@
   },
   "ability-archer#0222": {
    "src": "The Twilight Zone",
-   "dst": "",
+   "dst": "황혼 지대",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3614,7 +3614,7 @@
   },
   "ability-archer#0223": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#} stack on a target.",
-   "dst": "",
+   "dst": "지속 시간이 끝나거나 F로 시전하면, 표식이 남은 모든 적에게\n주문 화살과 기본 공격 화살을 한 발씩 발사합니다.\n화살은 대상에게 쌓인\n황혼 {#} 중첩마다 추가 피해를 줍니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3629,7 +3629,7 @@
   },
   "ability-archer#0224": {
    "src": "Enter a focused state for {~}s.",
-   "dst": "",
+   "dst": "{~}초 동안 집중 상태에 들어갑니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3644,7 +3644,7 @@
   },
   "ability-archer#0225": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#} every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "이 상태에서는 더 높이 뛰고 더 천천히 떨어지며,\n시야 안의 모든 적이 {~1}초마다\n황혼 {#} 표식을 받습니다. (최대 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3659,7 +3659,7 @@
   },
   "ability-archer#0226": {
    "src": "{#} Total Damage: +{~} (Main Attack Damage, per Twilight)",
-   "dst": "",
+   "dst": "{#} 총 피해: +{~} (기본 공격 피해, 황혼당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3672,7 +3672,7 @@
   },
   "ability-archer#0227": {
    "src": "{#} Total Damage: +{~} (of your DPS, per Twilight)",
-   "dst": "",
+   "dst": "{#} 총 피해: +{~} (DPS 대비, 황혼당)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3685,7 +3685,7 @@
   },
   "ability-archer#0228": {
    "src": "Extinction Event",
-   "dst": "",
+   "dst": "멸종 사건",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3697,7 +3697,7 @@
   },
   "ability-archer#0229": {
    "src": "Bombs will leave behind Basaltic Traps\nand occasionally Chilling Snares.",
-   "dst": "",
+   "dst": "폭탄이 현무암 덫을 남기고\n가끔 서리 올가미도 남깁니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3712,7 +3712,7 @@
   },
   "ability-archer#0230": {
    "src": "Calls forth a flock of tactical crows\nwhich will perform a carpet bombing of\na large area in front of you.",
-   "dst": "",
+   "dst": "전술 까마귀 떼를 불러내\n전방의 넓은 지역에\n융단 폭격을 퍼붓습니다.",
    "role": "desc",
    "kind": "block",
    "ctx": [

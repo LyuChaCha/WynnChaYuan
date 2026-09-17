@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Overture to Despair",
   "count": 603,
-  "translated": 603,
+  "translated": 658,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -6035,6 +6035,568 @@
    "stage": "Stage 20",
    "speaker": "Sovereign Tasim",
    "source": "wiki"
+  },
+  "Overture to Despair#000~1": {
+   "src": "- No weaponry or blessed equipment in common areas.",
+   "dst": "- 公共区域禁止携带武器或受祝福的装备。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#001~1": {
+   "src": "{p} Gardening {~}",
+   "dst": "{p} 园艺 {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#002~1": {
+   "src": "No matter, it can be sorted ou-",
+   "dst": "没关系，可以解决……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#003~1": {
+   "src": "The horse bit you!",
+   "dst": "马咬了你！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#004~1": {
+   "src": "Fire, air, water clear",
+   "dst": "火、风、清水",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#005~1": {
+   "src": "May we unearth the truth long buried and bring forth change.",
+   "dst": "愿我们揭开久埋的真相，带来改变。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "May we unearth the truth long buried and bring forth change. Never forget that.",
+    "file": "quest/overture-to-despair.json",
+    "ratio": 0.863,
+    "reason": "candidate"
+   }
+  },
+  "Overture to Despair#006~1": {
+   "src": "Different plants require different soils, temperatures and water requirements.",
+   "dst": "不同的植物需要不同的土壤、温度和水分。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#007~1": {
+   "src": "At first, I was afraid of being labeled as cursed. But power does not come without risk. I am willing to risk everything for power.",
+   "dst": "一开始，我很怕被贴上“受诅咒”的标签。但力量从来不是没有风险的。为了力量，我愿意赌上一切。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#008~1": {
+   "src": "Shock! No colors?",
+   "dst": "震惊！竟然没有颜色？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#009~1": {
+   "src": "Mini-Quest Started: Collect White Lilies",
+   "dst": "迷你任务开始：采集白百合",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Mini-Quest Started: Collect Liff Leaves",
+    "file": "quest.json",
+    "ratio": 0.835,
+    "reason": "candidate"
+   }
+  },
+  "Overture to Despair#010~1": {
+   "src": "I only serve customers with something to show me.",
+   "dst": "我只招待拿得出东西给我看的客人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#011~1": {
+   "src": "Now playing: Status ({p})...",
+   "dst": "正在播放：Status ({p})……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#012~1": {
+   "src": "Do you want to play a song?",
+   "dst": "你想弹首曲子吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#013~1": {
+   "src": "- Late checkout will come with a {~}  fine.",
+   "dst": "- 延迟退房将罚款 {~} 。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#014~1": {
+   "src": "You open a page at random...",
+   "dst": "你随手翻开一页……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#015~1": {
+   "src": "Unsurprisingly, it's talking about Majin's love life. You look inside.",
+   "dst": "不出所料，讲的是 Majin 的感情生活。你往里面看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#016~1": {
+   "src": "- No pets allowed.",
+   "dst": "- 禁止携带宠物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#017~1": {
+   "src": "The painting most likely symbolises the destruction of the Auburn of old and the hope of a better time to come.",
+   "dst": "这幅画多半象征着旧 Auburn 的毁灭，以及对更美好时代的盼望。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#018~1": {
+   "src": "Painted in {~}NA by Piju Rae. This oil masterpiece embraces revolutionary color techniques using pigments sourced from the highland dye production.",
+   "dst": "Piju Rae 绘于 {~}NA。这幅油画杰作运用了革命性的色彩技法，颜料取自高地的染料产区。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#019~1": {
+   "src": "Yes, hello, you staring at me from across the desk, give me a moment I've ran out of ink.",
+   "dst": "是是，你就这样从桌子对面盯着我，等我一下，我的墨水用完了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#020~1": {
+   "src": "To a lesser extent we also monitor trade between the other districts in Fruma, including anything transported via rail.",
+   "dst": "其次，我们也监管 Fruma 各区之间的贸易，包括所有经由铁路运输的东西。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#021~1": {
+   "src": "Elemental Magic",
+   "dst": "元素魔法",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#022~1": {
+   "src": "Life is built for strength",
+   "dst": "生命为力量而生",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#023~1": {
+   "src": "Heather is a simple starting plant to grow in the {p}. Any acidic soil from the {p} can be used in the gardening bed or flower pot.",
+   "dst": "石楠是在 {p} 很容易上手的入门植物。{p} 的任何酸性土壤都可以用在花圃或花盆里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#024~1": {
+   "src": "Excuse me. It has been a long day. Again, any questions?",
+   "dst": "抱歉，今天实在太漫长了。再问一次，还有什么问题吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#025~1": {
+   "src": "To keep it working as intended, the power to issue death sentences should be limited. Giving one trusted official, besides Her Majesty, the right to pass",
+   "dst": "要让它按原本的用意运作，判处死刑的权力就该受到限制。除了女王陛下之外，只让一位受信任的官员有权宣判",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#026~1": {
+   "src": "Petals fall upon our fate",
+   "dst": "花瓣落在我们的命运上",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#027~1": {
+   "src": "Would you like to keep reading?",
+   "dst": "要继续读下去吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#028~1": {
+   "src": "Right. that is the thirty first time I have had to write that sentence today, the third pot of ink I've been through, and my hands are starting to shake.",
+   "dst": "好。这是我今天第三十一次写这句话，用掉第三瓶墨水，手都开始抖了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#029~1": {
+   "src": "Do you want to get some ice?",
+   "dst": "你想去弄点冰吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#030~1": {
+   "src": "Paper published and written by Majin in {~}IA.",
+   "dst": "论文由 Majin 于 {~}IA 撰写发表。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#031~1": {
+   "src": "The Hope in the Depths",
+   "dst": "深处的希望",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#032~1": {
+   "src": "[+{~} {p} Clothes]",
+   "dst": "[+{~} {p} 服装]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#033~1": {
+   "src": "You are gripped by terror. You can't bear to read more.",
+   "dst": "你被恐惧紧紧攫住。你再也读不下去了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#034~1": {
+   "src": "\"SO YEAH, OF COURSE WE'RE GOING TO REPEAT A FEW QUESTIONS. ALRIGHT? GET OVER YOURSELVES.\"",
+   "dst": "“所以没错，我们当然会重复几个问题。懂吗？别太把自己当回事。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#035~1": {
+   "src": "There's a picture of a funny looking fish. The headline reads as follows:",
+   "dst": "上面有一张长相滑稽的鱼的照片。标题如下：",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#036~1": {
+   "src": "New Chapter Started: Blossom of Blades",
+   "dst": "新章节开始：刃之绽放",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#037~1": {
+   "src": "\"Fish Experts Warn Dangerous New Invasive Fish Headed For {p}. Its Diet? Your-\"",
+   "dst": "“鱼类专家警告：危险的新入侵鱼种正朝 {p} 而来。它吃什么？你的……”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#106~1": {
+   "src": "Here, the cheapest I have available. In total, that will cost you... {~} .",
+   "dst": "来，这是我这里最便宜的。总共是……{~} 。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "Clothes Merchant",
+   "source": "wiki"
+  },
+  "Overture to Despair#107~1": {
+   "src": "Where regions meet through lines of burrowed steel.",
+   "dst": "各地区以埋入地底的钢轨交会之处。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#125~1": {
+   "src": "I see. I see. That certainly complicates things...",
+   "dst": "我明白了。我明白了。那确实让事情复杂了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 3",
+   "speaker": "Receptionist",
+   "source": "wiki"
+  },
+  "Overture to Despair#126~1": {
+   "src": "\"Day after day, the voices greet the seekers. Identify the truth, and read the secrets printed.\"",
+   "dst": "“日复一日，那些声音迎接着寻觅者。辨明真相，读出印下的秘密。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#227~1": {
+   "src": "I'm... feeling a lot better now. Um... what should we do now, then? While we... wait for midnight.",
+   "dst": "我……现在感觉好多了。嗯……那我们现在该做什么？在我们……等午夜的时候。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 10",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "Overture to Despair#228~1": {
+   "src": "I long for a worthy opponent, someone I can fully explore the depths of the endless cosmos with. Maybe then my hunger will be satiated.",
+   "dst": "我渴望一位旗鼓相当的对手，一个能与我一同彻底探索无尽宇宙深处的人。或许到那时，我的饥渴才能得到满足。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#242~1": {
+   "src": "I'm... ugh. I'm still so angry. At... everything! The crown, the sovereigns, the... the people of {p}, too!! For... for still living their lives, even... even when it feels like the world's ended.",
+   "dst": "我……唉。我还是好生气。对……一切！对王室、对统领们、对……对 {p} 的人也是！！因为……因为他们还在照常过日子，即使……即使这世界感觉已经完了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 11",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "Overture to Despair#243~1": {
+   "src": "[+{~} Letter]",
+   "dst": "[+{~} 信件]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#392~1": {
+   "src": "I mean, really, what use could I actually have had for those two? Waste my efforts pulling information out of them that I already know?",
+   "dst": "我是说，说真的，我留那两个能有什么用？浪费力气从他们嘴里撬出我早就知道的情报？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 15",
+   "speaker": "Sovereign Majin",
+   "source": "wiki"
+  },
+  "Overture to Despair#393~1": {
+   "src": "You tell her how you finally killed it. How it fought, and fought, and fought, but could not take you down. How the Light was freed from the Shadows.",
+   "dst": "你告诉她你最后是怎么杀死它的。它如何奋战、奋战、再奋战，却始终无法打倒你。光明又是如何从暗影中获得解放。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#642": {
+   "src": "...from the moment of conception, It was given nothing. It was Their hatred, Their disdain, Their battlefield, suddenly given the mind to think and form to feel.",
+   "dst": "……从诞生的那一刻起，它就一无所有。它是祂们的憎恨、祂们的鄙夷、祂们的战场，却突然被赋予了能思考的心智与能感受的形体。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 20",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Overture to Despair#643": {
+   "src": "...but we have some hope. F-finally. Rex and Zeph... there's still a chance. There's still a chance we'll get to see them again.",
+   "dst": "……但我们有一点希望了。终、终于。Rex 和 Zeph……还有机会。我们还有机会再见到他们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#644": {
+   "src": "\"Rooted deep atop the house of wealth and greed, the branches hear the whispers on the breeze.\"",
+   "dst": "“深深扎根于财富与贪婪之屋的顶上，枝丫聆听着风中的低语。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#645": {
+   "src": "You tell her about entering the portal with Lari. About seeing the realm's connections severed, made smaller.",
+   "dst": "你告诉她你和 Lari 一起进入传送门的事。告诉她你看见那个领域的连结被切断、变得狭小。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#646": {
+   "src": "\"The whispers speak of unity, called forth where regions meet through lines of burrowed steel.\"",
+   "dst": "“低语诉说着团结，在各地区以埋入地底的钢轨交会之处被唤起。”",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#647": {
+   "src": "You tell her about fighting through the nexus. About the battle between Light and Dark ongoing within.",
+   "dst": "你告诉她你一路杀穿枢纽的事。告诉她里面仍在进行的光明与黑暗之战。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#648": {
+   "src": "Casting simple spells drawing power from the cosmos feels like holding fragile explosives in my hand. One wrong move and I'm afraid it will swallow me, or the world, whole.",
+   "dst": "借用宇宙之力施放简单的法术，感觉就像手里捧着一触即发的炸药。只要走错一步，我怕它会把我、甚至整个世界一口吞下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

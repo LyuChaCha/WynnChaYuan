@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "The Breaking Point",
   "count": 281,
-  "translated": 281,
+  "translated": 304,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -2815,6 +2815,242 @@
    "stage": "Stage 19",
    "speaker": "King Draani",
    "source": "wiki"
+  },
+  "The Breaking Point#000~1": {
+   "src": "Hey, keep up! We need to get this part into the machine as quickly as we can!",
+   "dst": "喂，跟上！我们得尽快把这个零件装进机器里！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#001~1": {
+   "src": "Amazing work! I'll get us back to Kandon Beda with that capacitor as quick as possible.",
+   "dst": "太棒了！我会尽快带着那个电容器把我们送回 Kandon Beda。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#002~1": {
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame... will free the Elders.",
+   "dst": "我……明白了。{u}……Ozoth 告诉我……一团不熄之焰……就能解放长老们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
+    "file": "quest/the-breaking-point.json",
+    "ratio": 0.98,
+    "reason": "placeholders"
+   }
+  },
+  "The Breaking Point#003~1": {
+   "src": "You need to get onto the path up to {p}. There should be signposts outside of {p}...",
+   "dst": "你需要找到通往 {p} 的路。{p} 外面应该有路标……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#039~1": {
+   "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, for obvious reasons. Just hop aboard.",
+   "dst": "好、好。别在意我，我只是有点紧张，因为……嗯，原因很明显。上来吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#042~1": {
+   "src": "Well, there it is! The Canyon Colossus itself. The source of all of our problems here at {p}.",
+   "dst": "看，就在那里！峡谷巨像本尊。我们在 {p} 这里所有问题的根源。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#053~1": {
+   "src": "This thing is ancient, and we don't know how it works. The best we can do is try and keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
+   "dst": "这东西非常古老，我们也不知道它是怎么运作的。我们最多只能设法不让它到达临界点，别让峡谷落得跟 {p} 一样的下场。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#056~1": {
+   "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified the Colossus long ago.",
+   "dst": "我们的议会同意了，于是我们开始设计一台机器，想复制很久以前让巨像平静下来的 Dogun 魔法。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#072~1": {
+   "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maintenance, isn't there?",
+   "dst": "好，对，回到问题：你们两个怎么这么快就来了？离下一次例行维护不是还有几天吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#077~1": {
+   "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an unexpected seismic event, and the device was heavily damaged.",
+   "dst": "对！对。刚刚有点走神……呃，我们在 {p} 那边遇上了问题。我们碰上了一次意料之外的地震，装置严重受损。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#120~1": {
+   "src": "It looks like Ozoth's body is trying to prevent you from getting the Everflame!",
+   "dst": "看来 Ozoth 的身体在阻止你拿到不熄之焰！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#147~1": {
+   "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed brethren... have been returned to life.",
+   "dst": "是的。这几个星期……我们一直……在努力。Taloka 很快……就会重新矗立。而我们许多……被封印的同胞……也已经重获新生。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#148~1": {
+   "src": "[-{~} Magmaflux Capacitor]",
+   "dst": "[-{~} 熔流电容器]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#149~1": {
+   "src": "You use the grappling hook to swing back to the King in a dazzling feat of trapeze consisting of mid-air flips and acrobatic flourishes.",
+   "dst": "你用抓钩荡回国王身边，在半空中翻腾、秀出各种杂技花招，上演了一场令人眼花缭乱的空中飞人绝技。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#152~1": {
+   "src": "The situation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
+   "dst": "情况……危急。伟大的守护者……被独自留下……太久了。我们需要……长老们的……智慧。你知道……他们被封印在……哪里吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#173~1": {
+   "src": "Hm. That... didn't work. This magic is old, and I never took the time to learn it properly... Alright. We have alternatives.",
+   "dst": "唔。那……没用。这魔法很古老，我从来没花时间好好学过……好吧。我们还有别的办法。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#174~1": {
+   "src": "If my memory serves correctly, there should be a manual override on the other end of this chasm.",
+   "dst": "如果我没记错，这道深渊的另一头应该有个手动控制开关。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#175~1": {
+   "src": "[+{~} Trusty Grappling Hook]",
+   "dst": "[+{~} 可靠的抓钩]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#226~1": {
+   "src": "... so that is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
+   "dst": "……我们的处境就是这样。Paku，你怎么看？这样的计划行得通吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#247~1": {
+   "src": "{u}! Have you retrieved... the Everflame?",
+   "dst": "{u}！你取回……不熄之焰了吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#254~1": {
+   "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Everflame... to melt the ice.",
+   "dst": "她愿意……Ozoth 为这个行省……做出了巨大的牺牲……但我们拿到了不熄之焰……可以融化那些冰了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#260~1": {
+   "src": "... right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "……好吧。是的。嗯，这是躲不掉的。来吧，{u}。我们得把长老们解冻，让他们听我们说话。把火焰带上，我在地窖等你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#303": {
+   "src": "[+{~} Magmaflux Capacitor]",
+   "dst": "[+{~} 熔流电容器]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

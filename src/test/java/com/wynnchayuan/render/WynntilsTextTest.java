@@ -41,6 +41,7 @@ public final class WynntilsTextTest {
         objectives(config, store);
         markers(config, store);
         heldItem(config, store);
+        bossBar(config, store);
 
         System.out.println(failures == 0 ? "\n就地取代：全部通過"
                 : "\n就地取代：" + failures + " 項失敗");
@@ -172,6 +173,23 @@ public final class WynntilsTextTest {
         config.toggleHeldItem();
         check("關掉之後原樣回去", WynntilsText.heldItemName(scroll, config, store) == scroll);
         config.toggleHeldItem();
+    }
+
+    private static void bossBar(CollectorConfig config, TranslationStore store) {
+        net.minecraft.network.chat.Component bar = net.minecraft.network.chat.Component.literal("Horse")
+                .withStyle(net.minecraft.ChatFormatting.GREEN)
+                .append(net.minecraft.network.chat.Component.literal(" - ")
+                        .withStyle(net.minecraft.ChatFormatting.GRAY))
+                .append(net.minecraft.network.chat.Component.literal("47❤")
+                        .withStyle(net.minecraft.ChatFormatting.RED));
+        String shown = WynntilsText.bossBar(bar, config, store).getString();
+        check("boss bar 的生物名翻得出來、血量留著（實際 " + shown + "）",
+              shown.startsWith("馬") && shown.endsWith("47❤"));
+        check("同一條再畫一次拿到同一份", WynntilsText.bossBar(bar, config, store)
+                == WynntilsText.bossBar(bar, config, store));
+        config.toggleNametags();
+        check("名牌翻譯關掉時 boss bar 原樣回去", WynntilsText.bossBar(bar, config, store) == bar);
+        config.toggleNametags();
     }
 
     private static void check(String what, boolean ok) {

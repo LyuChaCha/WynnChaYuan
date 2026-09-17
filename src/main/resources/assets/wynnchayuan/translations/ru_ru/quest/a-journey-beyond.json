@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "A Journey Beyond",
   "count": 247,
-  "translated": 244,
+  "translated": 251,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -2469,6 +2469,82 @@
   "A Journey Beyond#247": {
    "src": "Let's take some time to gather ourselves before we press on. I'll meet you on the other side of town.",
    "dst": "Давай переведём дух, прежде чем идти дальше. Встретимся на другом конце посёлка.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 18",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Beyond#000~1": {
+   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+   "dst": "Ну… да, но сперва я хочу ввести {u} в курс дела. Миссия опасная, так что… лучше всё объяснить.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+    "file": "quest/a-journey-beyond.json",
+    "ratio": 0.985,
+    "reason": "placeholders"
+   }
+  },
+  "A Journey Beyond#021~1": {
+   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
+   "dst": "Говорили, что сама земля проклята. Не осквернена - это они подчёркивали.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 1",
+   "speaker": "Elphaba",
+   "source": "wiki"
+  },
+  "A Journey Beyond#069~1": {
+   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
+   "dst": "Похоже, дело не в огневой мощи. Тут что-то иное. Наше оружие будто вообще на него не действует.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Beyond#094~1": {
+   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
+   "dst": "Так. Aledar, вы с {u} берёте предмет Тьмы, а мы с Lucio - предмет Света.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 5",
+   "speaker": "Elphaba",
+   "source": "wiki"
+  },
+  "A Journey Beyond#149~1": {
+   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
+   "dst": "Ыыы… Мне как-то нехоро-… Аааа!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Elphaba",
+   "source": "wiki"
+  },
+  "A Journey Beyond#210~1": {
+   "src": "I feel a bit better.. But something's still wrong.",
+   "dst": "Мне чуть лучше… Но что-то всё ещё не так.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Beyond#246~1": {
+   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
+   "dst": "Сработало… Вроде. Мне как минимум на {~}. Путь ещё долгий.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",

@@ -284,6 +284,48 @@ public final class WynntilsText {
         return translated == null ? name : translated;
     }
 
+    /** mixin 的入口：畫面頂端的 boss bar 標題。見 {@code BossBarNameMixin}。 */
+    public static net.minecraft.network.chat.Component bossBar(
+            net.minecraft.network.chat.Component name) {
+        try {
+            return bossBar(name, WynnChaYuan.config(), WynnChaYuan.translations());
+        } catch (Throwable t) {
+            return name;
+        }
+    }
+
+    /**
+     * boss bar 標題：攻擊生物時掛上的「Horse - 47❤」這種。
+     *
+     * <p>整行查不到時一段一段查——名字與血量是不同顏色的兩段，名字就是名牌語料裡那一條。
+     * 跟名牌翻譯同一個開關。每一幀都會畫，結果照原字記下；血量一直在變，記滿就清。
+     *
+     * @return 翻好的標題；關掉或翻不出來時原樣回傳
+     */
+    static net.minecraft.network.chat.Component bossBar(
+            net.minecraft.network.chat.Component name, CollectorConfig config,
+            TranslationStore store) {
+        if (name == null || store == null || config == null || !config.translateNametags()) {
+            return name;
+        }
+        if (store != barStore || BARS.size() > 256) {
+            BARS.clear();
+            barStore = store;
+        }
+        net.minecraft.network.chat.Component hit = BARS.get(name);
+        if (hit == null) {
+            StyledText text = StyledText.fromComponent(name);
+            StyledText shown = line(text, store);
+            hit = shown == text ? name : shown.getComponent();
+            BARS.put(name, hit);
+        }
+        return hit;
+    }
+
+    private static final java.util.Map<net.minecraft.network.chat.Component,
+            net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
+    private static TranslationStore barStore;
+
     /** mixin 的入口：Wynntils「手持物品名稱」疊層記下的那份字。見 {@code HeldItemOverlayMixin}。 */
     public static StyledText heldItemText(StyledText text) {
         try {

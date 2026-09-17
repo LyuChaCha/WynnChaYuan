@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Point of No Return",
   "count": 51,
-  "translated": 0,
+  "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -58,7 +58,7 @@
   },
   "Point of No Return#006": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -118,7 +118,7 @@
   },
   "Point of No Return#012": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -128,7 +128,7 @@
   },
   "Point of No Return#013": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -138,7 +138,7 @@
   },
   "Point of No Return#014": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -148,7 +148,7 @@
   },
   "Point of No Return#015": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -158,7 +158,7 @@
   },
   "Point of No Return#016": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -168,7 +168,7 @@
   },
   "Point of No Return#017": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -178,7 +178,7 @@
   },
   "Point of No Return#018": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -188,7 +188,7 @@
   },
   "Point of No Return#019": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "objective",
    "quest": "Point of No Return",
@@ -378,7 +378,7 @@
   },
   "Point of No Return#040": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -508,13 +508,149 @@
   },
   "Point of No Return#053": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
    "stage": "Stage 12",
    "speaker": "Lutho Citizen",
    "source": "wiki"
+  },
+  "Point of No Return#000~1": {
+   "src": "Where did your soul go?",
+   "dst": "네 영혼은 어디로 갔지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Where did your soul go?!",
+    "file": "quest/point-of-no-return.json",
+    "ratio": 0.979,
+    "reason": "prefix"
+   }
+  },
+  "Point of No Return#001~1": {
+   "src": "The passage to the next area has opened...",
+   "dst": "다음 구역으로 가는 통로가 열렸다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#002~1": {
+   "src": "When soul and body synchronize, the way is opened...",
+   "dst": "영혼과 육체가 하나로 맞춰질 때, 길이 열린다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#003": {
+   "src": "{u}. {u}, {u}, {u}. You can hear me. For once, for one small moment, we are nearly as one again.",
+   "dst": "{u}. {u}, {u}, {u}. 내 목소리가 들리지. 이번만은, 아주 잠깐 동안, 우리는 다시 하나에 가까워졌다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#004~1": {
+   "src": "Tying you to something you no longer are.",
+   "dst": "더는 네가 아닌 무언가에 너를 묶어 두고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#005~1": {
+   "src": "[-{~} Soul Retainer]",
+   "dst": "[-{~} 영혼 보관기]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#006~1": {
+   "src": "And then, when it was done, we lost what little still was left.",
+   "dst": "그리고 모든 게 끝났을 때, 우리는 조금 남아 있던 것마저 잃었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#007~1": {
+   "src": "Did your soul just stop following you?",
+   "dst": "영혼이 그냥 따라오지 않게 된 거야?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#008~1": {
+   "src": "...you have to let it go.",
+   "dst": "...놓아줘야 해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#009~1": {
+   "src": "Something which can no longer leave.",
+   "dst": "더는 떠날 수 없는 무언가.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#010~1": {
+   "src": "... Maybe you should talk to that citizen again.",
+   "dst": "... 그 시민과 다시 이야기해 보는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#011~1": {
+   "src": "You're... f",
+   "dst": "넌... 자",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Point of No Return#012~1": {
+   "src": "You're... free. But, something is...",
+   "dst": "넌... 자유야. 하지만, 뭔가가...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Point of No Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

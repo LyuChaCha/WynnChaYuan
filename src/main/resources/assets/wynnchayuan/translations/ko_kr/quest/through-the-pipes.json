@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Through the Pipes",
   "count": 211,
-  "translated": 0,
+  "translated": 16,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -298,7 +298,7 @@
   },
   "Through the Pipes#029": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -348,7 +348,7 @@
   },
   "Through the Pipes#034": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -518,7 +518,7 @@
   },
   "Through the Pipes#051": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -638,7 +638,7 @@
   },
   "Through the Pipes#063": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -2115,6 +2115,132 @@
    "stage": "Stage 11",
    "speaker": "Fichu",
    "source": "wiki"
+  },
+  "Through the Pipes#000~1": {
+   "src": "[+{~} Valve Handle]",
+   "dst": "[+{~} 밸브 손잡이]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#001~1": {
+   "src": "You're a lifesaver, {u}. I cannot thank you enough!",
+   "dst": "당신은 생명의 은인이에요, {u}. 정말 감사드려요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#002~1": {
+   "src": "WAIT! MY ART BAG IS MISSING! Did I accidentally drop it somewhere?",
+   "dst": "잠깐! 내 미술 가방이 없어! 어디 떨어뜨렸나?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#003~1": {
+   "src": "Do you want us to sink?!",
+   "dst": "우리를 가라앉힐 셈이야?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "So you want us to sneak in?",
+    "file": "quest/aldorei-s-secret-part-ii.json",
+    "ratio": 0.824,
+    "reason": "candidate"
+   }
+  },
+  "Through the Pipes#004~1": {
+   "src": "What's your name... {u}? Great, I will resume searching for that fool as well. Best of luck to you!",
+   "dst": "이름이... {u}라고? 좋아, 나도 그 멍청이를 계속 찾아보지. 행운을 비네!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#005~1": {
+   "src": "I've had it!",
+   "dst": "더는 못 참아!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#006~1": {
+   "src": "Maybe it's best to continue forward...",
+   "dst": "계속 앞으로 가는 게 좋겠다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#007~1": {
+   "src": "[+{~} Curious Bag]",
+   "dst": "[+{~} 수상한 가방]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#173~1": {
+   "src": "I gotta get off of this thing!",
+   "dst": "이것에서 내려야겠어!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 10",
+   "speaker": "Fichu",
+   "source": "wiki"
+  },
+  "Through the Pipes#174~1": {
+   "src": "That's the exit! Go past this gate, then I never want to board anything sailed by you again!",
+   "dst": "저기가 출구야! 이 문만 지나가면, 두 번 다시 네가 모는 건 아무것도 안 탈 거야!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Through the Pipes#207~1": {
+   "src": "{u}, from the very start, you have been a massive help. I cannot thank you enough for your efforts!",
+   "dst": "{u}, 처음부터 당신은 정말 큰 도움이 됐어요. 그 노고에 뭐라 감사해야 할지 모르겠어요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "Stage 11",
+   "speaker": "Fichu",
+   "source": "wiki"
+  },
+  "Through the Pipes#208~1": {
+   "src": "...You don't think that was a little too brutal, do you?",
+   "dst": "...좀 너무 잔인했다고 생각하진 않지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Through the Pipes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }
