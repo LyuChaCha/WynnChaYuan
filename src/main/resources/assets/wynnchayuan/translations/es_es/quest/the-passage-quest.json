@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Passage (Quest)",
   "count": 26,
-  "translated": 0,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Passage (Quest)#000": {
    "src": "Talk to Wirt in {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Habla con Wirt en {p}, en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -18,7 +18,7 @@
   },
   "The Passage (Quest)#001": {
    "src": "Not so fast, you!",
-   "dst": "",
+   "dst": "¡Alto ahí, tú!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -28,7 +28,7 @@
   },
   "The Passage (Quest)#002": {
    "src": "My dad said I can't let any strangers through this passage!",
-   "dst": "",
+   "dst": "¡Mi padre dijo que no deje pasar a ningún desconocido por aquí!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -38,7 +38,7 @@
   },
   "The Passage (Quest)#003": {
    "src": "If you want access, talk to him, he's the recruiter of the town! His name is Ildan. He's just southwest of here.",
-   "dst": "",
+   "dst": "Si quieres pasar, habla con él, ¡es el reclutador del pueblo! Se llama Ildan y está al suroeste de aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -48,7 +48,7 @@
   },
   "The Passage (Quest)#004": {
    "src": "Find Ildan in {p} at [-{~}, {~}, -{~}] and ask to be a member of the town",
-   "dst": "",
+   "dst": "Encuentra a Ildan en {p}, en [-{~}, {~}, -{~}], y pide ser miembro del pueblo",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -58,7 +58,7 @@
   },
   "The Passage (Quest)#005": {
    "src": "Oh! So you want to become a member of this town?",
-   "dst": "",
+   "dst": "¡Ah! ¿Así que quieres ser miembro de este pueblo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -68,7 +68,7 @@
   },
   "The Passage (Quest)#006": {
    "src": "You will have to help us first, of course!",
-   "dst": "",
+   "dst": "¡Primero tendrás que ayudarnos, claro!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -78,7 +78,7 @@
   },
   "The Passage (Quest)#007": {
    "src": "I'm sure you've noticed, but there is a tribe camp not too far from here.",
-   "dst": "",
+   "dst": "Seguro que lo has visto: hay un campamento tribal no muy lejos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -88,7 +88,7 @@
   },
   "The Passage (Quest)#008": {
    "src": "They used to have a powerful chief, but he eventually died in battle.",
-   "dst": "",
+   "dst": "Tenían un jefe poderoso, pero acabó muriendo en combate.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -98,7 +98,7 @@
   },
   "The Passage (Quest)#009": {
    "src": "The tribe couldn't bear the fact that he was dead. They performed some unethical necromancy spell on him.",
-   "dst": "",
+   "dst": "La tribu no soportó su muerte. Le lanzaron cierto hechizo de nigromancia poco ético.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -108,7 +108,7 @@
   },
   "The Passage (Quest)#010": {
    "src": "They quickly realized that is was a bad idea, so they locked him in a tomb.",
-   "dst": "",
+   "dst": "Pronto vieron que era mala idea, así que lo encerraron en una tumba.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -118,7 +118,7 @@
   },
   "The Passage (Quest)#011": {
    "src": "He keeps reviving his minions and it's causing quite some problems to our army.",
-   "dst": "",
+   "dst": "No para de revivir a sus siervos y eso da problemas a nuestro ejército.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -128,7 +128,7 @@
   },
   "The Passage (Quest)#012": {
    "src": "You can access the tomb from a sacrificial shrine, I've heard, but I'm not sure how. There are probably hints nearby the shrine.",
-   "dst": "",
+   "dst": "He oído que se entra a la tumba desde un santuario de sacrificios, pero no sé cómo. Seguramente haya pistas cerca del santuario.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -138,7 +138,7 @@
   },
   "The Passage (Quest)#013": {
    "src": "Bring me back [{~} Antic Bead] as a proof of its death, and I will let you become a citizen.",
-   "dst": "",
+   "dst": "Tráeme [{~} Antic Bead] como prueba de su muerte y te dejaré ser ciudadano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -148,7 +148,7 @@
   },
   "The Passage (Quest)#014": {
    "src": "I've marked the direction to the shrine in your book. Remember, there should be hints right nearby the shrine. Good luck.",
-   "dst": "",
+   "dst": "Te he marcado la dirección del santuario en tu libro. Recuerda: debería haber pistas justo al lado. Suerte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -158,7 +158,7 @@
   },
   "The Passage (Quest)#015": {
    "src": "Search for clues near [-{~}, {~}, -{~}] and bring back [{~} Antic Bead] to Ildan.",
-   "dst": "",
+   "dst": "Busca pistas cerca de [-{~}, {~}, -{~}] y llévale a Ildan [{~} Antic Bead].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -168,7 +168,7 @@
   },
   "The Passage (Quest)#016": {
    "src": "Impressive! You got the bead!",
-   "dst": "",
+   "dst": "¡Impresionante! ¡Tienes la cuenta!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -178,7 +178,7 @@
   },
   "The Passage (Quest)#017": {
    "src": "Well, welcome to this town, adventurer! You are now officially a citizen.",
-   "dst": "",
+   "dst": "¡Bienvenido a este pueblo, aventurero! Ya eres ciudadano oficialmente.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -188,7 +188,7 @@
   },
   "The Passage (Quest)#018": {
    "src": "Oh, but before you go! I do have a few things to say. First, about the beads here.",
-   "dst": "",
+   "dst": "¡Ah, pero antes de que te vayas! Tengo un par de cosas que decir. Primero, sobre las cuentas de por aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -198,7 +198,7 @@
   },
   "The Passage (Quest)#019": {
    "src": "The tribesmen accept these as currency, so if you collect enough, I've heard they can offer you powerful masks.",
-   "dst": "",
+   "dst": "Los de la tribu las aceptan como moneda; si juntas suficientes, dicen que te dan máscaras poderosas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -208,7 +208,7 @@
   },
   "The Passage (Quest)#020": {
    "src": "Second, about the shrine. Now, this is just a rumor, but apparently that tomb is not unique.",
-   "dst": "",
+   "dst": "Segundo, sobre el santuario. Es solo un rumor, pero por lo visto esa tumba no es la única.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -218,7 +218,7 @@
   },
   "The Passage (Quest)#021": {
    "src": "There are supposed to be a bunch of these altars scattered around the province, even in Gavel too!",
-   "dst": "",
+   "dst": "Dicen que hay un montón de estos altares repartidos por la provincia, ¡y hasta en Gavel!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -228,7 +228,7 @@
   },
   "The Passage (Quest)#022": {
    "src": "If true, you should look for them. While the fights will be tough, I would imagine great rewards could be gotten from them!",
-   "dst": "",
+   "dst": "Si es cierto, deberías buscarlos. Las peleas serán duras, ¡pero me imagino que las recompensas serán enormes!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -238,7 +238,7 @@
   },
   "The Passage (Quest)#023": {
    "src": "Anyway, I've talked enough. I'm proud to have such a powerful fighter join our town! I wish you luck, friend!",
-   "dst": "",
+   "dst": "En fin, ya he hablado bastante. ¡Me enorgullece que un luchador tan fuerte entre en nuestro pueblo! ¡Suerte, amigo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -248,7 +248,7 @@
   },
   "The Passage (Quest)#024": {
    "src": "Outsiders! Kill the outsiders!",
-   "dst": "",
+   "dst": "¡Forasteros! ¡Matadlos!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -258,7 +258,7 @@
   },
   "The Passage (Quest)#025": {
    "src": "Kill the outsiders!",
-   "dst": "",
+   "dst": "¡Matad a los forasteros!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",

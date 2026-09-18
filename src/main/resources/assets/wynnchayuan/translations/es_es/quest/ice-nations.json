@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Ice Nations",
   "count": 26,
-  "translated": 0,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Ice Nations#000": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Habla con Adigard en {p} en [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -18,7 +18,7 @@
   },
   "Ice Nations#001": {
    "src": "Welcome traveler, to our humble island...",
-   "dst": "",
+   "dst": "Bienvenido a nuestra isla, viajero...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -28,7 +28,7 @@
   },
   "Ice Nations#002": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
-   "dst": "",
+   "dst": "Mi pueblo y yo llegamos aquí hace muchos años. Por desgracia, nuestro barco no lo logró...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -38,7 +38,7 @@
   },
   "Ice Nations#003": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
-   "dst": "",
+   "dst": "Quisimos fundar una nación en estas islas, pero con los años acabamos divididos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -48,7 +48,7 @@
   },
   "Ice Nations#004": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
-   "dst": "",
+   "dst": "Por eso libramos una guerra inútil contra nuestros vecinos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -58,7 +58,7 @@
   },
   "Ice Nations#005": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
-   "dst": "",
+   "dst": "Creo que deberíamos firmar un tratado de paz, pero temo que me maten si salgo de la isla...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -68,7 +68,7 @@
   },
   "Ice Nations#006": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
-   "dst": "",
+   "dst": "¿Nos ayudarías? Habla con Hallfred sobre el tratado. Vive en otra isla de hielo cercana.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -78,7 +78,7 @@
   },
   "Ice Nations#007": {
    "src": "Talk to Hallfred about the peace treaty",
-   "dst": "",
+   "dst": "Habla con Hallfred sobre el tratado de paz",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -88,7 +88,7 @@
   },
   "Ice Nations#008": {
    "src": "Welcome traveler! What brings you to our island?",
-   "dst": "",
+   "dst": "¡Bienvenido, viajero! ¿Qué te trae a nuestra isla?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -98,7 +98,7 @@
   },
   "Ice Nations#009": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
-   "dst": "",
+   "dst": "¡Ah, ya veo que Adigard manda a extraños por cobardía! ¿Teme que lo maten?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -108,7 +108,7 @@
   },
   "Ice Nations#010": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
-   "dst": "",
+   "dst": "Lo repito por última vez: firmaremos la paz el día que Adigard y su nación nos devuelvan... el tesoro.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -118,7 +118,7 @@
   },
   "Ice Nations#011": {
    "src": "The one that they kept and hid from us after the shipwreck.",
-   "dst": "",
+   "dst": "El que se quedaron y nos ocultaron tras el naufragio.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -128,7 +128,7 @@
   },
   "Ice Nations#012": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
-   "dst": "",
+   "dst": "¡Oro puro, valiosísimo y rarísimo! Dile que lo espero. Y nada de esa historia absurda otra vez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -138,7 +138,7 @@
   },
   "Ice Nations#013": {
    "src": "Talk back to Adigard about Hallfred's response",
-   "dst": "",
+   "dst": "Vuelve con Adigard y cuéntale la respuesta de Hallfred",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -148,7 +148,7 @@
   },
   "Ice Nations#014": {
    "src": "I should have expected that. Hallfred was always very greedy...",
-   "dst": "",
+   "dst": "Debí imaginarlo. Hallfred siempre fue muy codicioso...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -158,7 +158,7 @@
   },
   "Ice Nations#015": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
-   "dst": "",
+   "dst": "Intentamos hacerle entender que no tenemos el tesoro, sin mucho éxito.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -168,7 +168,7 @@
   },
   "Ice Nations#016": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
-   "dst": "",
+   "dst": "... Verás, nuestro naufragio no fue por causas naturales. Nos atacaron...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -178,7 +178,7 @@
   },
   "Ice Nations#017": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
-   "dst": "",
+   "dst": "¿Por quién? Los no muertos. Fantasmas y demonios en un barco monstruoso. Nos pillaron por sorpresa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -188,7 +188,7 @@
   },
   "Ice Nations#018": {
    "src": "I believe they also stole our treasure during the attack.",
-   "dst": "",
+   "dst": "Creo que también robaron nuestro tesoro durante el ataque.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -198,7 +198,7 @@
   },
   "Ice Nations#019": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
-   "dst": "",
+   "dst": "¿Ayudarías a reunir de nuevo a nuestra nación? Encuentra ese barco y lleva el tesoro a Hallfred para que por fin vivamos en paz.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -208,7 +208,7 @@
   },
   "Ice Nations#020": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
-   "dst": "",
+   "dst": "Navega al norte. Allí nos atacaron hace años. Será fácil de encontrar; seguro que siguen anclados allí, orgullosos... Gracias.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -218,7 +218,7 @@
   },
   "Ice Nations#021": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
-   "dst": "",
+   "dst": "Encuentra el barco fantasma y lleva el [Ancient Treasure] a Hallfred",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -228,7 +228,7 @@
   },
   "Ice Nations#022": {
    "src": "Incredible! He actually delivered the treasure!",
-   "dst": "",
+   "dst": "¡Increíble! ¡De verdad ha entregado el tesoro!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -238,7 +238,7 @@
   },
   "Ice Nations#023": {
    "src": "I suppose that means the end of the war between our nations!",
-   "dst": "",
+   "dst": "¡Supongo que eso pone fin a la guerra entre nuestras naciones!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -248,7 +248,7 @@
   },
   "Ice Nations#024": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
-   "dst": "",
+   "dst": "¡Es un gran día! Toma, por ayudar a nuestra nación.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -258,7 +258,7 @@
   },
   "Ice Nations#025": {
    "src": "I'm sure you'll find a use for this helmet one day!",
-   "dst": "",
+   "dst": "¡Seguro que algún día le darás uso a este casco!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",

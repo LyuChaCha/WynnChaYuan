@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Underwater",
   "count": 24,
-  "translated": 0,
+  "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underwater#000": {
    "src": "Talk to Omango located at the North of {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Habla con Omango, al norte de {p}, en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -18,7 +18,7 @@
   },
   "Underwater#001": {
    "src": "Hi, my name is Omango. I am a resident of the {p} village, on top of the hill.",
-   "dst": "",
+   "dst": "Hola, me llamo Omango. Vivo en el pueblo de {p}, en lo alto de la colina.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -28,7 +28,7 @@
   },
   "Underwater#002": {
    "src": "As you may know, our people came to your land years ago, and this is the ship they used.",
-   "dst": "",
+   "dst": "Como sabrás, mi pueblo llegó a tus tierras hace años, y este es el barco que usaron.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -38,7 +38,7 @@
   },
   "Underwater#003": {
    "src": "They brought lots of luxurious goods with them. Most of them got lost in the wreck.",
-   "dst": "",
+   "dst": "Trajeron muchos bienes de lujo. La mayoría se perdieron en el naufragio.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -48,7 +48,7 @@
   },
   "Underwater#004": {
    "src": "But recently, a small hole has opened in the shipwreck here. It is believed that fortune is hidden within it.",
-   "dst": "",
+   "dst": "Pero hace poco se abrió un pequeño agujero en el pecio. Se cree que dentro hay una fortuna escondida.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -58,7 +58,7 @@
   },
   "Underwater#005": {
    "src": "Unfortunately, nobody has been able to explore it. It is too deep, no creature can survive underwater that long!",
-   "dst": "",
+   "dst": "Por desgracia, nadie ha podido explorarlo. ¡Está demasiado hondo, nadie aguanta tanto bajo el agua!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -68,7 +68,7 @@
   },
   "Underwater#006": {
    "src": "However, my old friend Sayrr is a fisherman, and I know that he has a very special helmet...",
-   "dst": "",
+   "dst": "Pero mi viejo amigo Sayrr es pescador, y sé que tiene un casco muy especial...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -78,7 +78,7 @@
   },
   "Underwater#007": {
    "src": "If you convince him to give you this helmet, and find the treasure, I'll give you a part of it!",
-   "dst": "",
+   "dst": "Si lo convences de que te dé ese casco y encuentras el tesoro, ¡te daré una parte!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -88,7 +88,7 @@
   },
   "Underwater#008": {
    "src": "Sayrr is out on his boat, but the cave next to me is a quick way over to where he does his fishing. Be careful on the way, though.",
-   "dst": "",
+   "dst": "Sayrr está en su barca, pero la cueva de al lado es un atajo hasta donde pesca. Eso sí, ten cuidado por el camino.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -98,7 +98,7 @@
   },
   "Underwater#009": {
    "src": "When you finally have the helmet, explore the ship and bring me back [{~} Ancient Treasure]. Good luck.",
-   "dst": "",
+   "dst": "Cuando tengas el casco, explora el barco y tráeme [{~} Ancient Treasure]. Buena suerte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -108,7 +108,7 @@
   },
   "Underwater#010": {
    "src": "Go through the cave at [-{~}, {~}, -{~}] to find Sayrr on his boat on the other side",
-   "dst": "",
+   "dst": "Cruza la cueva en [-{~}, {~}, -{~}] para encontrar a Sayrr en su barca al otro lado",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -118,7 +118,7 @@
   },
   "Underwater#011": {
    "src": "Why ya looking at me like that? Is it cause I'm small, eh? I'll have you know that I caught fish that were twice your size!",
-   "dst": "",
+   "dst": "¿Por qué me miras así? Porque soy pequeño, ¿eh? ¡Que sepas que he pescado peces que te doblaban en tamaño!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -128,7 +128,7 @@
   },
   "Underwater#012": {
    "src": "...or, well, I used to be able to. Nothing's biting recently- wait a sec, why'd you hop on my boat anyways, stranger?",
-   "dst": "",
+   "dst": "...o bueno, antes podía. Últimamente no pica nada. Espera, ¿por qué te subiste a mi barca, forastero?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -138,7 +138,7 @@
   },
   "Underwater#013": {
    "src": "Ahah! Yes, I still have that old breathing helmet. You want it? You'll have to do something for me first.",
-   "dst": "",
+   "dst": "¡Ajá! Sí, aún tengo ese viejo casco de respiración. ¿Lo quieres? Primero tendrás que hacer algo por mí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -148,7 +148,7 @@
   },
   "Underwater#014": {
    "src": "I'm sure you heard me, but the fish just aren't biting around here anymore! I need to make a living somehow! There's some fish in that cave, but...",
-   "dst": "",
+   "dst": "Ya me has oído: ¡aquí los peces ya no pican! ¡Y de algo tengo que vivir! En esa cueva hay algunos peces, pero...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -158,7 +158,7 @@
   },
   "Underwater#015": {
    "src": "...it's a bit dangerous. Tell ya what, I'll give you my fishing rod, and you can go catch me, say, [{~} Gudgeon Meat] down there.",
-   "dst": "",
+   "dst": "...es algo peligrosa. Mira, te doy mi caña de pescar y tú me pescas ahí abajo, digamos, [{~} Gudgeon Meat].",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -168,7 +168,7 @@
   },
   "Underwater#016": {
    "src": "The helmet will be all yours after that.",
-   "dst": "",
+   "dst": "Después, el casco será todo tuyo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -178,7 +178,7 @@
   },
   "Underwater#017": {
    "src": "Bring back [{~} Gudgeon Meat] found in the cave at [-{~}, {~}, -{~}] to Sayrr",
-   "dst": "",
+   "dst": "Lleva a Sayrr [{~} Gudgeon Meat] de la cueva en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -188,7 +188,7 @@
   },
   "Underwater#018": {
    "src": "Ah! Welcome back! Any luck with the fish?",
-   "dst": "",
+   "dst": "¡Ah! ¡Ya has vuelto! ¿Qué tal con los peces?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -198,7 +198,7 @@
   },
   "Underwater#019": {
    "src": "Great, and I'll thank you kindly. Here's your helmet, have fun with that.",
-   "dst": "",
+   "dst": "Genial, te lo agradezco mucho. Aquí tienes tu casco, que lo disfrutes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -208,7 +208,7 @@
   },
   "Underwater#020": {
    "src": "Explore the crashed ship for a lost treasure at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Explora el barco naufragado en busca de un tesoro perdido en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -218,7 +218,7 @@
   },
   "Underwater#021": {
    "src": "Break the crate and bring [{~} Old Treasure] to Omango at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Rompe la caja y lleva [{~} Old Treasure] a Omango en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -228,7 +228,7 @@
   },
   "Underwater#022": {
    "src": "You got it! You found the treasure!",
-   "dst": "",
+   "dst": "¡Lo lograste! ¡Encontraste el tesoro!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -238,7 +238,7 @@
   },
   "Underwater#023": {
    "src": "As promised, here's your part of the loot.",
-   "dst": "",
+   "dst": "Como te prometí, aquí tienes tu parte del botín.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",

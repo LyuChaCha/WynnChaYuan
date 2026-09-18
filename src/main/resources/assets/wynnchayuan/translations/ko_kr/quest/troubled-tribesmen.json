@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Troubled Tribesmen",
   "count": 26,
-  "translated": 0,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Troubled Tribesmen#000": {
    "src": "Talk to Ka L'argwit.",
-   "dst": "",
+   "dst": "Ka L'argwit에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -18,7 +18,7 @@
   },
   "Troubled Tribesmen#001": {
    "src": "Talk to Krattson.",
-   "dst": "",
+   "dst": "Krattson에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -28,7 +28,7 @@
   },
   "Troubled Tribesmen#002": {
    "src": "Hey! Aren't these people fascinating? They sure smell bad, though! What? That Tribesman said my name?! Amazing! I've been trying to communicate with them for weeks.",
-   "dst": "",
+   "dst": "이봐요! 이 사람들 정말 흥미롭지 않아요? 냄새는 고약하지만요! 뭐라고요? 저 부족민이 내 이름을 불렀어요?! 굉장해! 몇 주째 소통하려고 애쓰는 중이거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -38,7 +38,7 @@
   },
   "Troubled Tribesmen#003": {
    "src": "He sure seems like a distressed little fellow. He keeps pointing to that huge tree right there. A {p} keeper once told me it's possible to speak with them.",
-   "dst": "",
+   "dst": "무척 괴로워하는 꼬마 같네요. 계속 저기 커다란 나무를 가리켜요. {p}의 관리인이 저들과 대화할 수 있다고 한 적이 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -48,7 +48,7 @@
   },
   "Troubled Tribesmen#004": {
    "src": "He told me that within the woods there is a Shaman who will grant certain people permission to speak their language. I did some traveling through the jungle and actually found him!",
-   "dst": "",
+   "dst": "숲속에 특정한 사람에게 저들의 언어를 쓰게 해 주는 샤먼이 있다더군요. 정글을 좀 돌아다녔더니 진짜로 찾았어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -58,7 +58,7 @@
   },
   "Troubled Tribesmen#005": {
    "src": "But despite my efforts, he just sat in silence with his eyes closed. He must of known I wasn't a threat because he was totally exposed. He had no interest in speaking with me, though.",
-   "dst": "",
+   "dst": "그런데 아무리 애써도 눈을 감은 채 말없이 앉아만 있었어요. 완전히 무방비였던 걸 보면 내가 위협이 아니란 걸 알았나 봐요. 나랑 얘기할 생각은 없었지만요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -68,7 +68,7 @@
   },
   "Troubled Tribesmen#006": {
    "src": "Say, who knows, maybe the Shaman will talk to you. It would greatly assist my research if you could help me talk to them. So why don't you give it a shot?",
-   "dst": "",
+   "dst": "그런데, 혹시 샤먼이 당신하고는 얘기할지도 몰라요. 저들과 대화하게 도와주면 연구에 큰 도움이 될 거예요. 한번 해 볼래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -78,7 +78,7 @@
   },
   "Troubled Tribesmen#007": {
    "src": "Follow this path to the north. Keep going past the pond and the path will split to the West and to the East. Take the West path, and you will see the Shaman.",
-   "dst": "",
+   "dst": "이 길을 따라 북쪽으로 가요. 연못을 지나면 길이 서쪽과 동쪽으로 갈라져요. 서쪽 길로 가면 샤먼이 보일 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -88,7 +88,7 @@
   },
   "Troubled Tribesmen#008": {
    "src": "Talk to Shaman Inrekei.",
-   "dst": "",
+   "dst": "샤먼 Inrekei에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -98,7 +98,7 @@
   },
   "Troubled Tribesmen#009": {
    "src": "Oui ryja y bufanvim vaam ypuid oui, cdnyhkan. So baubma yna eh tyhkan. Bmayca, dyga drec yht ramb bas.",
-   "dst": "",
+   "dst": "Oui ryja y bufanvim vaam ypuid oui, cdnyhkan. So baubma yna eh tyhkan. Bmayca, dyga drec yht ramb bas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -108,7 +108,7 @@
   },
   "Troubled Tribesmen#010": {
    "src": "I have cast a spell on you. If you can understand me, you are pure of heart.",
-   "dst": "",
+   "dst": "그대에게 주문을 걸었소. 내 말을 알아듣는다면 그대는 마음이 순수한 자요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -118,7 +118,7 @@
   },
   "Troubled Tribesmen#011": {
    "src": "This spell will allow those of true spirit to speak and comprehend our language. I have entrusted you with this because of my connection with our sacred tree, who we call Entamis.",
-   "dst": "",
+   "dst": "이 주문은 참된 영혼을 지닌 자가 우리 말을 하고 이해하게 해 주오. 이를 그대에게 맡긴 건 우리가 Entamis라 부르는 신성한 나무와 내가 이어져 있기 때문이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -128,7 +128,7 @@
   },
   "Troubled Tribesmen#012": {
    "src": "I am the shaman of my tribe. I sit here every day with my eyes closed and carefully monitor Entamis' wavelengths. She has not been responding to my calls as of late...",
-   "dst": "",
+   "dst": "나는 우리 부족의 샤먼이오. 매일 여기 눈을 감고 앉아 Entamis의 파동을 세심히 살피지. 그런데 요즘 그녀가 내 부름에 응답하지 않소...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -138,7 +138,7 @@
   },
   "Troubled Tribesmen#013": {
    "src": "Dear human, your presence emits warmth and trust. Please go speak with my apprentice, Ka L'argwit. He is to take my place as shaman when I pass from this life.",
-   "dst": "",
+   "dst": "인간이여, 그대에게선 따스함과 믿음이 느껴지오. 내 제자 Ka L'argwit와 이야기해 주시오. 내가 이승을 떠나면 그가 샤먼 자리를 잇게 될 것이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -148,7 +148,7 @@
   },
   "Troubled Tribesmen#014": {
    "src": "He would know if anything is causing our beautiful tree discomfort. The spell I have cast on you will allow you to speak with him.",
-   "dst": "",
+   "dst": "무엇이 우리의 아름다운 나무를 괴롭히는지 그라면 알 것이오. 내가 건 주문으로 그와 대화할 수 있을 것이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -158,7 +158,7 @@
   },
   "Troubled Tribesmen#015": {
    "src": "Now, please go seek out Ka L'argwit.",
-   "dst": "",
+   "dst": "자, 어서 Ka L'argwit를 찾아가시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -168,7 +168,7 @@
   },
   "Troubled Tribesmen#016": {
    "src": "Return to Ka L'argwit.",
-   "dst": "",
+   "dst": "Ka L'argwit에게 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -178,7 +178,7 @@
   },
   "Troubled Tribesmen#017": {
    "src": "Investigate the roots of Entamis.",
-   "dst": "",
+   "dst": "Entamis의 뿌리를 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -188,7 +188,7 @@
   },
   "Troubled Tribesmen#018": {
    "src": "Thank you for coming. We haven't but moments. The monster's name is Aenara. He's a fiendish monster of corruption.",
-   "dst": "",
+   "dst": "와 주어 고맙습니다. 시간이 얼마 없어요. 괴물의 이름은 Aenara. 타락의 흉악한 괴물입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -198,7 +198,7 @@
   },
   "Troubled Tribesmen#019": {
    "src": "He unleashed egg pods that host a variety of magic draining insects. They are eating me alive and replacing my magic with evil magic. Soon I will die.",
-   "dst": "",
+   "dst": "놈이 마력을 빨아먹는 온갖 벌레가 든 알주머니를 퍼뜨렸어요. 벌레들이 날 산 채로 먹으며 내 마력을 사악한 마력으로 바꾸고 있어요. 곧 죽을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -208,7 +208,7 @@
   },
   "Troubled Tribesmen#020": {
    "src": "You mustn't let me be reborn a creature of evil...",
-   "dst": "",
+   "dst": "내가 사악한 존재로 다시 태어나게 두어선 안 됩니다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -218,7 +218,7 @@
   },
   "Troubled Tribesmen#021": {
    "src": "Kill Aenara and bring an Insect of Corruption to Shaman Inrekei.",
-   "dst": "",
+   "dst": "Aenara를 처치하고 타락의 벌레를 샤먼 Inrekei에게 가져가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -228,7 +228,7 @@
   },
   "Troubled Tribesmen#022": {
    "src": "Hello again. I am grateful you returned. You don't need to say anything, though. I can no longer sense Entamis. I know she has died..",
-   "dst": "",
+   "dst": "다시 보는구려. 돌아와 줘서 고맙소. 하지만 아무 말 하지 않아도 되오. 더는 Entamis가 느껴지지 않소. 그녀가 죽었음을 아오..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -238,7 +238,7 @@
   },
   "Troubled Tribesmen#023": {
    "src": "You still have managed to prevent her corrupted magic to spread any further. And for that, my people are forever in your debt.",
-   "dst": "",
+   "dst": "그래도 그대는 그녀의 타락한 마력이 더 퍼지는 걸 막아 주었소. 그 일로 우리 부족은 영원히 그대에게 빚을 졌소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -248,7 +248,7 @@
   },
   "Troubled Tribesmen#024": {
    "src": "This insect appears to be the queen. I'll need to perform a ritual to kill it permanently. But never mind that, I can do that in my own time.",
-   "dst": "",
+   "dst": "이 벌레가 여왕인 듯하오. 완전히 죽이려면 의식을 치러야 하오. 하지만 그건 신경 쓰지 마시오, 내가 틈날 때 하면 되니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -258,7 +258,7 @@
   },
   "Troubled Tribesmen#025": {
    "src": "Please take this. It is but a small gift. Your currency means nothing to us. In times of peril, few step forward and risk their lives to save those they do not know.",
-   "dst": "",
+   "dst": "이걸 받아 주시오. 작은 선물일 뿐이오. 그대들의 화폐는 우리에게 아무 의미가 없소. 위기의 순간에 모르는 이를 위해 목숨을 거는 자는 드물다오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",

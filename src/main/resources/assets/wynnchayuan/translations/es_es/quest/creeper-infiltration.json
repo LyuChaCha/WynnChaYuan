@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Creeper Infiltration",
   "count": 52,
-  "translated": 0,
+  "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Creeper Infiltration#000": {
    "src": "Talk to Thomas in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Habla con Thomas en {p}, en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -18,7 +18,7 @@
   },
   "Creeper Infiltration#001": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
-   "dst": "",
+   "dst": "¡Alguien! ¿Hay alguien- ah, hola. Pareces bastante fuerte para ayudarme.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -28,7 +28,7 @@
   },
   "Creeper Infiltration#002": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "Soy Thomas, y ayudo a gestionar los suministros de una aldea del Barranco de los Hombres Cerdo. Aunque tengo un pequeño problema...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -38,7 +38,7 @@
   },
   "Creeper Infiltration#003": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "Se nos acaba el grano del barranco, que es nuestro alimento básico.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48,7 +48,7 @@
   },
   "Creeper Infiltration#004": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "Solemos recogerlo nosotros, pero hace poco un grupo de hombres cerdo furiosos tomó el túnel que sube a lo alto del barranco, donde crece el grano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -58,7 +58,7 @@
   },
   "Creeper Infiltration#005": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "La última vez que entramos oí una explosión arriba. Me temo que los hombres cerdo están volando nuestro grano con TNT...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -68,7 +68,7 @@
   },
   "Creeper Infiltration#006": {
    "src": "I came here to {p} to see if I could find help here, but I've had no luck. Until now, that is. Would you be willing to help?",
-   "dst": "",
+   "dst": "Vine a {p} a ver si encontraba ayuda, pero no hubo suerte. Hasta ahora, claro. ¿Estarías dispuesto a ayudar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -78,7 +78,7 @@
   },
   "Creeper Infiltration#007": {
    "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
-   "dst": "",
+   "dst": "¿Sí? Eres mi salvación. Nos vemos en la aldea; sigue el camino que sale del pueblo y entra por la entrada más al norte de los barrancos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -88,7 +88,7 @@
   },
   "Creeper Infiltration#008": {
    "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "Cuando llegues, pégate a la pared derecha del barranco y sube las escaleras hasta la entrada. Y ten cuidado en el túnel: los hombres cerdo lanzan piedras como arma.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -98,7 +98,7 @@
   },
   "Creeper Infiltration#009": {
    "src": "Oh, finally, someone has come to this hidden village!",
-   "dst": "",
+   "dst": "¡Ay, por fin ha venido alguien a esta aldea escondida!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -108,7 +108,7 @@
   },
   "Creeper Infiltration#010": {
    "src": "I am Thomas, and I help manage the supplies for this ravine village. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "Soy Thomas, y ayudo a gestionar los suministros de esta aldea del barranco. Aunque tengo un pequeño problema...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -118,7 +118,7 @@
   },
   "Creeper Infiltration#011": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "Se nos acaba el grano del barranco, que es nuestro alimento básico.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -128,7 +128,7 @@
   },
   "Creeper Infiltration#012": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "Solemos recogerlo nosotros, pero hace poco un grupo de hombres cerdo furiosos tomó el túnel que sube a lo alto del barranco, donde crece el grano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -138,7 +138,7 @@
   },
   "Creeper Infiltration#013": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "La última vez que entramos oí una explosión arriba. Me temo que los hombres cerdo están volando nuestro grano con TNT...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -148,7 +148,7 @@
   },
   "Creeper Infiltration#014": {
    "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
-   "dst": "",
+   "dst": "Pareces mucho más fuerte que yo, así que quizá puedas pasar a los hombres cerdo del túnel y acabar con las explosiones de arriba.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -158,7 +158,7 @@
   },
   "Creeper Infiltration#015": {
    "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "Solo pégate a la pared derecha del barranco y sube las escaleras hasta la entrada. Y ten cuidado en el túnel: los hombres cerdo lanzan piedras como arma.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -168,7 +168,7 @@
   },
   "Creeper Infiltration#016": {
    "src": "Enter the tunnel at [-{~}, {~}, -{~}] and reach the top of the ravine",
-   "dst": "",
+   "dst": "Entra en el túnel en [-{~}, {~}, -{~}] y llega a lo alto del barranco",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -178,7 +178,7 @@
   },
   "Creeper Infiltration#017": {
    "src": "Bring back the [Creeper Skin] to Thomas at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Llévale la [Creeper Skin] a Thomas en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -188,7 +188,7 @@
   },
   "Creeper Infiltration#018": {
    "src": "I didn't expect you to fall out of the sky like that. Are you okay, or should I go get the potion merchant to heal you?",
-   "dst": "",
+   "dst": "No esperaba que cayeras del cielo así. ¿Estás bien, o voy a por el mercader de pociones para que te cure?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -198,7 +198,7 @@
   },
   "Creeper Infiltration#019": {
    "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
-   "dst": "",
+   "dst": "¿Estás bien? Ah, me alegro. ¿Lograste acabar con los hombres cerdo y sus explosivos?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -208,7 +208,7 @@
   },
   "Creeper Infiltration#020": {
    "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
-   "dst": "",
+   "dst": "¿Una criatura verde? ¿Un \"creeper\"? ¡Eso no existe en este mundo, y menos con los hombres cerdo por todas partes!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -218,7 +218,7 @@
   },
   "Creeper Infiltration#021": {
    "src": "Oh, you brought a piece of skin back. How odd, I've seen this skin before...",
-   "dst": "",
+   "dst": "Ah, has traído un trozo de piel. Qué raro, yo he visto esta piel antes...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -228,7 +228,7 @@
   },
   "Creeper Infiltration#022": {
    "src": "There's a large cave over to the south. I tried to enter it, but I got ambushed by green creatures...",
-   "dst": "",
+   "dst": "Hay una cueva grande hacia el sur. Intenté entrar, pero me emboscaron unas criaturas verdes...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -238,7 +238,7 @@
   },
   "Creeper Infiltration#023": {
    "src": "I thought I was just dreaming, but these \"creepers\" you talk about...they might live in that cave.",
-   "dst": "",
+   "dst": "Creí que solo estaba soñando, pero esos \"creepers\" de los que hablas...quizá vivan en esa cueva.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -248,7 +248,7 @@
   },
   "Creeper Infiltration#024": {
    "src": "I have an idea. I need to know for sure that they live there. A merchant can make you a mask with the skin and another material.",
-   "dst": "",
+   "dst": "Tengo una idea. Necesito saber con certeza que viven ahí. Un mercader puede hacerte una máscara con esa piel y otro material.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -258,7 +258,7 @@
   },
   "Creeper Infiltration#025": {
    "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
-   "dst": "",
+   "dst": "Hay un Pigman Overlord que a veces ronda una cueva cercana. Si logras matarlo, sacarás un cuero de hombre cerdo bastante fuerte para la máscara.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -268,7 +268,7 @@
   },
   "Creeper Infiltration#026": {
    "src": "If you continue on the western path past the tunnel entrance, you should find a camp where the Overlord is located.",
-   "dst": "",
+   "dst": "Si sigues el camino oeste más allá de la entrada del túnel, deberías encontrar el campamento donde está el Overlord.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -278,7 +278,7 @@
   },
   "Creeper Infiltration#027": {
    "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
-   "dst": "",
+   "dst": "Ve a por el cuero de hombre cerdo y vuelve aquí para que te diga qué hacer después.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -288,7 +288,7 @@
   },
   "Creeper Infiltration#028": {
    "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
-   "dst": "",
+   "dst": "Consigue [{~} Pigman Hide] del Pigman Overlord cerca de [-{~}, {~}, -{~}] y vuelve con Thomas",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -298,7 +298,7 @@
   },
   "Creeper Infiltration#029": {
    "src": "I see you have the hide. This skin will work perfectly for my plan.",
-   "dst": "",
+   "dst": "Veo que tienes el cuero. Esta piel le viene perfecta a mi plan.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -308,7 +308,7 @@
   },
   "Creeper Infiltration#030": {
    "src": "There is a Mask Merchant in this village. He can make you a mask with the two materials I have.",
-   "dst": "",
+   "dst": "En esta aldea hay un Mask Merchant. Puede hacerte una máscara con los dos materiales que tengo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -318,7 +318,7 @@
   },
   "Creeper Infiltration#031": {
    "src": "With the mask, you can put it on and go undetected into the cave with these \"creepers\". Only then will we know the truth.",
-   "dst": "",
+   "dst": "Con la máscara puesta podrás entrar sin que te detecten en la cueva de esos \"creepers\". Solo así sabremos la verdad.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -328,7 +328,7 @@
   },
   "Creeper Infiltration#032": {
    "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
-   "dst": "",
+   "dst": "Para ir a la cueva creeper, sigue el camino oeste y gira a la izquierda en el campamento de hombres cerdo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -338,7 +338,7 @@
   },
   "Creeper Infiltration#033": {
    "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
-   "dst": "",
+   "dst": "Y si pierdes la máscara, el mercader puede hacerte otra si le llevas otro trozo de piel y de cuero.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -348,7 +348,7 @@
   },
   "Creeper Infiltration#034": {
    "src": "Here are the materials. Be careful out there. Who knows what those green monsters could do to you...",
-   "dst": "",
+   "dst": "Aquí tienes los materiales. Ten cuidado ahí fuera. Quién sabe qué podrían hacerte esos monstruos verdes...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -358,7 +358,7 @@
   },
   "Creeper Infiltration#035": {
    "src": "Buy the creeper mask from the merchant and enter the creeper hideout at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Compra la máscara de creeper al mercader y entra en la guarida de los creepers en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -368,7 +368,7 @@
   },
   "Creeper Infiltration#036": {
    "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Lleva a Thomas [{~} Creeper Powder] para demostrarle que los creepers existen en Wynn, en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -378,7 +378,7 @@
   },
   "Creeper Infiltration#037": {
    "src": "So, what was in the cave? Were there really creepers in there?",
-   "dst": "",
+   "dst": "¿Y bien, qué había en la cueva? ¿De verdad había creepers ahí?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -388,7 +388,7 @@
   },
   "Creeper Infiltration#038": {
    "src": "What's this? It smells like gunpowder...but more earthy. And this came from the cave?",
-   "dst": "",
+   "dst": "¿Qué es esto? Huele a pólvora...pero más terroso. ¿Y esto viene de la cueva?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -398,7 +398,7 @@
   },
   "Creeper Infiltration#039": {
    "src": "This powder is definitely not native to this area. It has to have come from those creepers.",
-   "dst": "",
+   "dst": "Este polvo desde luego no es de esta zona. Tiene que venir de esos creepers.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -408,7 +408,7 @@
   },
   "Creeper Infiltration#040": {
    "src": "I guess for now we'll leave them at peace. If they do exist, they don't need to be hunted down to extinction.",
-   "dst": "",
+   "dst": "Supongo que por ahora los dejaremos en paz. Si existen, no hace falta cazarlos hasta la extinción.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -418,7 +418,7 @@
   },
   "Creeper Infiltration#041": {
    "src": "Besides, if they are composed of gunpowder, they could easily blow this ravine to pieces.",
-   "dst": "",
+   "dst": "Además, si están hechos de pólvora, podrían volar este barranco en pedazos sin esfuerzo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -428,7 +428,7 @@
   },
   "Creeper Infiltration#042": {
    "src": "Thank you for your help. I guess you deserve some sort of reward, considering you helped solve the ravine's big mystery.",
-   "dst": "",
+   "dst": "Gracias por tu ayuda. Supongo que mereces alguna recompensa, ya que has ayudado a resolver el gran misterio del barranco.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -438,7 +438,7 @@
   },
   "Creeper Infiltration#043": {
    "src": "Feel free to come back to our village any time. By then our food supply should be stable.",
-   "dst": "",
+   "dst": "Vuelve a nuestra aldea cuando quieras. Para entonces nuestro suministro de comida debería ser estable.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -448,7 +448,7 @@
   },
   "Creeper Infiltration#044": {
    "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
-   "dst": "",
+   "dst": "¡Ah, qué bien verte de nuevo, amigo! ¡Perdona que no te invitara a la celebración, pero parecías muy ocupado!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -456,7 +456,7 @@
   },
   "Creeper Infiltration#045": {
    "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
-   "dst": "",
+   "dst": "¡Ah, eres tú! Aaaagg... Gracias por lo que hiciste por nosotros, te lo... mmhhgg... agradecemos mucho...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -464,7 +464,7 @@
   },
   "Creeper Infiltration#046": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to be able to help me.",
-   "dst": "",
+   "dst": "¡Alguien! ¿Hay alguien- ah, hola. Pareces bastante fuerte para poder ayudarme.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -472,7 +472,7 @@
   },
   "Creeper Infiltration#047": {
    "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "Solemos recogerlo nosotros, pero hace poco un grupo de hombres cerdo furiosos tomó el túnel que sube a lo alto del barranco, donde crece el grano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -480,7 +480,7 @@
   },
   "Creeper Infiltration#048": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
-   "dst": "",
+   "dst": "¿Has ido a la cueva creeper? Sigue el oeste y gira a la izquierda en los campamentos de hombres cerdo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -488,7 +488,7 @@
   },
   "Creeper Infiltration#049": {
    "src": "Oh, a visitor? Interesting. I thought I only knew about this cave, considering I was called crazy by my master.",
-   "dst": "",
+   "dst": "¿Ah, una visita? Interesante. Creía que solo yo conocía esta cueva, ya que mi maestro me llamó loco.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -496,7 +496,7 @@
   },
   "Creeper Infiltration#050": {
    "src": "I've lived down here for a while now, studying the creepers. They are mythical in this region, and I want to prove everyone wrong.",
-   "dst": "",
+   "dst": "Llevo ya un tiempo viviendo aquí abajo, estudiando a los creepers. En esta región son un mito, y quiero demostrar que todos se equivocan.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -504,7 +504,7 @@
   },
   "Creeper Infiltration#051": {
    "src": "Don't worry about being trapped in here, though. There's a magic doorway right outside my house that can teleport you out if you wish to leave.",
-   "dst": "",
+   "dst": "Pero no temas quedarte atrapado aquí. Justo fuera de mi casa hay una puerta mágica que puede teletransportarte fuera si quieres irte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Zhight Island (Quest)",
   "count": 50,
-  "translated": 0,
+  "translated": 50,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Zhight Island (Quest)#000": {
    "src": "Talk to Zhight of {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 {p}의 Zhight에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -18,7 +18,7 @@
   },
   "Zhight Island (Quest)#001": {
    "src": "Hello, esteemed tourist sir or madame! I see you have found my illustrious resort, {p}!",
-   "dst": "",
+   "dst": "안녕하십니까, 귀하신 관광객 선생님 혹은 사모님! 제 찬란한 휴양지 {p}을(를) 찾아오셨군요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -28,7 +28,7 @@
   },
   "Zhight Island (Quest)#002": {
    "src": "Normally, you'd need a reservation to stay here, but our human visitors are ALWAYS welcome! Ehm...",
-   "dst": "",
+   "dst": "원래는 예약이 있어야 묵으실 수 있지만, 인간 손님은 언제나 환영입니다! 어흠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -38,7 +38,7 @@
   },
   "Zhight Island (Quest)#003": {
    "src": "...w-well, actually...wait, no, it's nothing, nothing, friend! I guarantee you'll enjoy your stay here!",
-   "dst": "",
+   "dst": "...그, 그게 실은...아니, 아닙니다, 아무것도 아니에요, 친구여! 즐겁게 묵으실 거라 장담합니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -48,7 +48,7 @@
   },
   "Zhight Island (Quest)#004": {
    "src": "Even if m-my usual supplies haven't arrived in weeks, I, um, I'm TOTALLY sure we can accommodate for you!",
-   "dst": "",
+   "dst": "제, 제 평소 보급품이 몇 주째 안 왔어도, 저, 음, 손님은 완벽히 모실 수 있다고 확신합니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -58,7 +58,7 @@
   },
   "Zhight Island (Quest)#005": {
    "src": "We can just...um...w-well, I won't impose on you, dearest most welcomest traveller, no sir! Or madame!",
-   "dst": "",
+   "dst": "그냥...음...그, 글쎄요, 부담 드리진 않겠습니다, 가장 소중하고 환영받는 여행자님! 아니면 사모님!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -68,7 +68,7 @@
   },
   "Zhight Island (Quest)#006": {
    "src": "B-But, if, perchance, you were to, um...happen to find my supplier, Phief, who hasn't come around in weeks the bas-",
-   "dst": "",
+   "dst": "하, 하지만 혹시라도, 음...몇 주째 코빼기도 안 비치는 제 납품업자 Phief를 만나신다면, 그 자식-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -78,7 +78,7 @@
   },
   "Zhight Island (Quest)#007": {
    "src": "I! I mean! Nothing, nothing! Just, ehm, our extra reliable supplier often stops by {p} for supplies...",
-   "dst": "",
+   "dst": "저! 그러니까! 아무것도 아닙니다! 그저, 어흠, 아주 믿음직한 저희 납품업자가 {p}에 자주 들르거든요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -88,7 +88,7 @@
   },
   "Zhight Island (Quest)#008": {
    "src": "S-So, if you just happen to stop by there after your lovely stay here, and tell him to get off his sorry butt and send me my supplies that'd be just peachy!",
-   "dst": "",
+   "dst": "그, 그러니 여기서 즐겁게 묵으신 뒤 혹시 그쪽에 들르시거든, 게으른 엉덩이 좀 떼고 제 보급품을 보내라고 전해 주시면 정말 더없이 좋겠습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -98,7 +98,7 @@
   },
   "Zhight Island (Quest)#009": {
    "src": "Look for Phief at {p}",
-   "dst": "",
+   "dst": "{p}에서 Phief를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -108,7 +108,7 @@
   },
   "Zhight Island (Quest)#010": {
    "src": "Hello there. I see Zhight has sent you, correct?",
-   "dst": "",
+   "dst": "안녕하세요. Zhight가 보냈군요, 맞죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -118,7 +118,7 @@
   },
   "Zhight Island (Quest)#011": {
    "src": "I do hope he isn't mad at me. I fully intended to bring the supplies to him.",
-   "dst": "",
+   "dst": "화나지 않았으면 좋겠네요. 보급품은 정말 가져다줄 생각이었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -128,7 +128,7 @@
   },
   "Zhight Island (Quest)#012": {
    "src": "But things took a turn for the worst quickly, and I no longer have access to my ship.",
-   "dst": "",
+   "dst": "그런데 상황이 순식간에 나빠져서, 이젠 제 배에 손도 못 대게 됐어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -138,7 +138,7 @@
   },
   "Zhight Island (Quest)#013": {
    "src": "A madman jumped onto my ship, overpowered me, and held me hostage!",
-   "dst": "",
+   "dst": "미친놈이 배에 뛰어올라 날 제압하고 인질로 잡았어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -148,7 +148,7 @@
   },
   "Zhight Island (Quest)#014": {
    "src": "He was telling me how he wanted to \"take back what was stolen from him\", and it looked like he was heading to {p}.",
-   "dst": "",
+   "dst": "자기한테서 \"훔쳐 간 걸 되찾겠다\"고 떠들더군요. {p} 쪽으로 가는 것 같았고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -158,7 +158,7 @@
   },
   "Zhight Island (Quest)#015": {
    "src": "I have no clue whether he was deranged, paranoid, or if someone really did take something from him.",
-   "dst": "",
+   "dst": "그자가 미친 건지, 피해망상인지, 아니면 정말 누가 뭘 빼앗은 건지는 모르겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -168,7 +168,7 @@
   },
   "Zhight Island (Quest)#016": {
    "src": "I am certain of one thing. Nobody is going to sail my boat but me. I took my first chance to escape, broke the controls.",
-   "dst": "",
+   "dst": "하나는 확실해요. 내 배는 나 말고 아무도 못 몹니다. 기회를 잡자마자 탈출하면서 조종 장치를 부숴 놨죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -178,7 +178,7 @@
   },
   "Zhight Island (Quest)#017": {
    "src": "And I swam back to land, here. Problem is, I haven't exactly decided how I'll get the ship back for myself.",
-   "dst": "",
+   "dst": "그리고 여기 뭍까지 헤엄쳐 왔어요. 문제는 배를 어떻게 되찾을지 아직 못 정했다는 거죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -188,7 +188,7 @@
   },
   "Zhight Island (Quest)#018": {
    "src": "Maybe you can help me with that. The ship should still be stuck, due north of here. I'd love to get my sea legs back.",
-   "dst": "",
+   "dst": "그걸 좀 도와주시겠어요? 배는 여기서 정북쪽에 아직 묶여 있을 거예요. 다시 바다에 서고 싶네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -198,7 +198,7 @@
   },
   "Zhight Island (Quest)#019": {
    "src": "Find Phief's ship, and return it to its rightful owner",
-   "dst": "",
+   "dst": "Phief의 배를 찾아 정당한 주인에게 돌려주세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -208,7 +208,7 @@
   },
   "Zhight Island (Quest)#020": {
    "src": "He told you what?! That fumbleknuckle...",
-   "dst": "",
+   "dst": "걔가 뭐라고 했다고?! 그 멍청이가...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -218,7 +218,7 @@
   },
   "Zhight Island (Quest)#021": {
    "src": "We didn't steal the ship from Phief, we were taking back what he stole from us years ago!",
-   "dst": "",
+   "dst": "우린 Phief 배를 훔친 게 아냐. 몇 년 전에 걔가 우리한테서 훔친 걸 되찾은 거라고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -228,7 +228,7 @@
   },
   "Zhight Island (Quest)#022": {
    "src": "He attacked us on our way home to {p}, kicked us off the boat, and sailed it to who-knows-where.",
-   "dst": "",
+   "dst": "{p}(으)로 돌아가는 길에 우릴 습격해서 배 밖으로 걷어차고는 어디론가 몰고 가 버렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -238,7 +238,7 @@
   },
   "Zhight Island (Quest)#023": {
    "src": "We didn't think we would ever get it back, until we started seeing him sailing to that doofbumble Zhight.",
-   "dst": "",
+   "dst": "영영 못 찾을 줄 알았지, 걔가 그 얼간이 Zhight한테 배 타고 드나드는 걸 보기 전까진.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -248,7 +248,7 @@
   },
   "Zhight Island (Quest)#024": {
    "src": "Luckily, he decided to claim an island so close to {p}, or else we would have never seen him.",
-   "dst": "",
+   "dst": "다행히 {p} 코앞에 있는 섬을 차지했으니 망정이지, 아니었으면 영영 못 봤을걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -258,7 +258,7 @@
   },
   "Zhight Island (Quest)#025": {
    "src": "My father started following him with a small sailboat he made, and decided on the perfect place to attack.",
-   "dst": "",
+   "dst": "아빠가 직접 만든 작은 돛단배로 걔를 쫓기 시작했고, 딱 좋은 습격 장소를 골랐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -268,7 +268,7 @@
   },
   "Zhight Island (Quest)#026": {
    "src": "But then Phief just had to throw a hissy fit and leave us stranded here.",
-   "dst": "",
+   "dst": "근데 Phief가 성질을 부려서 우린 여기 발이 묶였지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -278,7 +278,7 @@
   },
   "Zhight Island (Quest)#027": {
    "src": "My father took a paddleboat back to {p} to gather supplies. He took the cargo the ship had with him.",
-   "dst": "",
+   "dst": "아빠는 보급품 구하러 나룻배로 {p}에 갔어. 배에 있던 짐도 다 들고 갔고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -288,7 +288,7 @@
   },
   "Zhight Island (Quest)#028": {
    "src": "If you need that, you should go talk to him. His name is Czytash.",
-   "dst": "",
+   "dst": "그게 필요하면 아빠한테 가 봐. 이름은 Czytash야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -298,7 +298,7 @@
   },
   "Zhight Island (Quest)#029": {
    "src": "Get Zhight's supplies from Czytash at {p}",
-   "dst": "",
+   "dst": "{p}의 Czytash에게서 Zhight의 보급품을 받으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -308,7 +308,7 @@
   },
   "Zhight Island (Quest)#030": {
    "src": "Ah, yes, I did find plenty o' supplies on that ship.",
-   "dst": "",
+   "dst": "아, 그래, 그 배에서 보급품을 잔뜩 찾긴 했지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -318,7 +318,7 @@
   },
   "Zhight Island (Quest)#031": {
    "src": "I assumed it was more of Phief's thiefed goods, so I took it home to use it myself.",
-   "dst": "",
+   "dst": "또 Phief가 훔친 물건인 줄 알고 집에 가져와 내가 쓰려고 했지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -328,7 +328,7 @@
   },
   "Zhight Island (Quest)#032": {
    "src": "It is Zhight's supplies you say?",
-   "dst": "",
+   "dst": "그게 Zhight 보급품이라고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -338,7 +338,7 @@
   },
   "Zhight Island (Quest)#033": {
    "src": "Aye, of course it had to be that idiot's.",
-   "dst": "",
+   "dst": "허, 하필 그 멍청이 거였군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -348,7 +348,7 @@
   },
   "Zhight Island (Quest)#034": {
    "src": "I guess me thinking he's dumber'n a box o' rocks is no reason for me to let him starve... Here, take the crate.",
-   "dst": "",
+   "dst": "걔가 돌덩이보다 멍청하다고 굶겨 죽일 이유는 없겠지... 자, 상자 가져가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -358,7 +358,7 @@
   },
   "Zhight Island (Quest)#035": {
    "src": "I haven't opened it yet, so everything is left exactly how he ordered it.",
-   "dst": "",
+   "dst": "아직 안 열었으니 걔가 주문한 그대로 들어 있을 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -368,7 +368,7 @@
   },
   "Zhight Island (Quest)#036": {
    "src": "I wonder what is on that numbskull's menu, that crate smelled rancid. Almost threw it off me boat.",
-   "dst": "",
+   "dst": "그 멍청이 차림표엔 뭐가 있으려나, 상자에서 썩은 내가 나더군. 배 밖으로 던질 뻔했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -378,7 +378,7 @@
   },
   "Zhight Island (Quest)#037": {
    "src": "Anyways, good luck on your adventure matey.",
-   "dst": "",
+   "dst": "아무튼 모험 잘 하시게, 친구.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -388,7 +388,7 @@
   },
   "Zhight Island (Quest)#038": {
    "src": "Sorry, what was that? My son?",
-   "dst": "",
+   "dst": "응, 뭐라고? 내 아들?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -398,7 +398,7 @@
   },
   "Zhight Island (Quest)#039": {
    "src": "Ah, I figured it is about time he learned how to maneuver a boat. I fixed everything before I left.",
-   "dst": "",
+   "dst": "아, 이제 걔도 배 모는 법을 배울 때가 됐다 싶었지. 떠나기 전에 다 고쳐 놨어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -408,7 +408,7 @@
   },
   "Zhight Island (Quest)#040": {
    "src": "When he returns, he will return a man.",
-   "dst": "",
+   "dst": "돌아올 땐 사내가 돼서 올 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -418,7 +418,7 @@
   },
   "Zhight Island (Quest)#041": {
    "src": "Wait, why am I telling you this? Butt out of my personal life, and just bring the man his crate.",
-   "dst": "",
+   "dst": "잠깐, 내가 왜 이런 얘길 하지? 남의 사생활에 끼어들지 말고 그 양반한테 상자나 갖다줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -428,7 +428,7 @@
   },
   "Zhight Island (Quest)#042": {
    "src": "Give Zhight his supplies",
-   "dst": "",
+   "dst": "Zhight에게 보급품을 전달하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -438,7 +438,7 @@
   },
   "Zhight Island (Quest)#043": {
    "src": "Ahaaa, esteemed sir! Or madame! I can't actually tell under all that armour...",
-   "dst": "",
+   "dst": "아하아, 귀하신 선생님! 아니면 사모님! 갑옷 때문에 도통 구별이...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -448,7 +448,7 @@
   },
   "Zhight Island (Quest)#044": {
    "src": "ER! I MEAN! N-No trouble at all, esteemed visitor! We at {p} Resort are always welcoming!",
-   "dst": "",
+   "dst": "어! 그러니까! 저, 전혀 문제없습니다, 귀하신 손님! 저희 {p} 리조트는 언제나 환영입니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -458,7 +458,7 @@
   },
   "Zhight Island (Quest)#045": {
    "src": "...wait, is that the... Oh my! The supply crate! You went out and found Phief?! What an upstanding fellow you are!",
-   "dst": "",
+   "dst": "...잠깐, 저건... 세상에! 보급 상자! 정말 Phief를 찾아내셨습니까?! 정말 훌륭한 분이시군요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -468,7 +468,7 @@
   },
   "Zhight Island (Quest)#046": {
    "src": "Wait, he was a boat thief? Well, good thing you've told me, we can't have pirates here at our resort! I'll blacklist him ASAP!",
-   "dst": "",
+   "dst": "잠깐, 그자가 배 도둑이었다고요? 말씀해 주셔서 다행입니다, 저희 리조트에 해적은 안 되죠! 당장 출입 금지 명단에 올리겠습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -478,7 +478,7 @@
   },
   "Zhight Island (Quest)#047": {
    "src": "You're only a visitor but you've been more help today than anyone else, really, I'm honestly in your debt.",
-   "dst": "",
+   "dst": "한낱 손님이신데 오늘 누구보다 큰 도움을 주셨습니다. 정말이지 신세를 졌네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -488,7 +488,7 @@
   },
   "Zhight Island (Quest)#048": {
    "src": "So here! The repairs at the Zhight Grand Exchange and Zhight Treasure Tour have just finished, so you can head in and see the fruits of your labor!",
-   "dst": "",
+   "dst": "그래서 말인데요! Zhight 대거래소와 Zhight 보물 탐방의 수리가 막 끝났으니, 들어가서 수고의 결실을 보십시오!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -498,7 +498,7 @@
   },
   "Zhight Island (Quest)#049": {
    "src": "And, as a token of my thanks, some exclusive currency for our resort, Zhight Money, on the house and just for you! I hope you enjoy your stay!",
-   "dst": "",
+   "dst": "그리고 감사의 표시로 저희 리조트 전용 화폐인 Zhight 머니를 손님께만 공짜로 드립니다! 즐겁게 묵으시길 바랍니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",

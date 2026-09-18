@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "WynnExcavation Site B",
   "count": 28,
-  "translated": 0,
+  "translated": 28,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site B#000": {
    "src": "Bring the Yellow Crystal Shard to Excavator Lykron at [{~}, {~}, -{~}] The entrance to the cave is at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "노란 수정 조각을 [{~}, {~}, -{~}]의 발굴꾼 Lykron에게 가져가세요. 동굴 입구는 [{~}, {~}, -{~}]입니다.",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site B",
@@ -18,7 +18,7 @@
   },
   "WynnExcavation Site B#001": {
    "src": "Good day! You're the person that helped us out in the desert aren't you? Excellent! Just the person I need! Can you help me out with a problem I have?",
-   "dst": "",
+   "dst": "안녕하세요! 사막에서 우릴 도와준 그분 맞죠? 훌륭해요! 딱 필요한 사람이에요! 제 문제 하나만 도와주시겠어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -28,7 +28,7 @@
   },
   "WynnExcavation Site B#002": {
    "src": "Perfect! You see, we are supposed to be searching for some of the... uhhh... long lost ruins of ancient Wynn, just like in the desert!",
-   "dst": "",
+   "dst": "완벽해요! 그러니까 우리는... 어어... 고대 Wynn의 잃어버린 유적을 찾는 일을 하고 있어요, 사막에서처럼요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -38,7 +38,7 @@
   },
   "WynnExcavation Site B#003": {
    "src": "However, it seems no progress has been made recently; my workers have stopped working!",
-   "dst": "",
+   "dst": "그런데 최근엔 진전이 전혀 없어요. 인부들이 일을 멈춰 버렸거든요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -48,7 +48,7 @@
   },
   "WynnExcavation Site B#004": {
    "src": "The problem is, there are strange creatures down at the bottom of the cave disturbing them.",
-   "dst": "",
+   "dst": "문제는 동굴 밑바닥에 이상한 생물들이 있어서 그들을 방해한다는 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -58,7 +58,7 @@
   },
   "WynnExcavation Site B#005": {
    "src": "I need you to go and kill them, but first you should go talk to one of my colleagues, he has more information for you.",
-   "dst": "",
+   "dst": "가서 그것들을 처치해 주세요. 다만 먼저 제 동료에게 가서 얘기해 보세요, 더 자세한 정보를 줄 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -68,7 +68,7 @@
   },
   "WynnExcavation Site B#006": {
    "src": "He is located directly at the bottom of this cave, go speak to him, go on now! Off you go!",
-   "dst": "",
+   "dst": "그는 이 동굴 맨 아래에 있어요, 가서 말을 걸어 보세요, 어서요! 출발!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -78,7 +78,7 @@
   },
   "WynnExcavation Site B#007": {
    "src": "Investigate the depths of the cave",
-   "dst": "",
+   "dst": "동굴 깊은 곳을 조사하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site B",
@@ -88,7 +88,7 @@
   },
   "WynnExcavation Site B#008": {
    "src": "We know what you stole from us in the desert! Take THIS! You won't be escaping this dead end any time soon!",
-   "dst": "",
+   "dst": "사막에서 우리한테서 뭘 훔쳤는지 다 알아! 이거나 받아라! 이 막다른 길에서 쉽게는 못 빠져나갈걸!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -98,7 +98,7 @@
   },
   "WynnExcavation Site B#009": {
    "src": "Solve the puzzle",
-   "dst": "",
+   "dst": "수수께끼를 푸세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site B",
@@ -108,7 +108,7 @@
   },
   "WynnExcavation Site B#010": {
    "src": "Find the crystal",
-   "dst": "",
+   "dst": "수정을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site B",
@@ -118,7 +118,7 @@
   },
   "WynnExcavation Site B#011": {
    "src": "What are you doing here?!",
-   "dst": "",
+   "dst": "여기서 뭐 하는 거야?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -128,7 +128,7 @@
   },
   "WynnExcavation Site B#012": {
    "src": "This door is closed; the mine entrance behind it isn't open at this time.",
-   "dst": "",
+   "dst": "이 문은 닫혀 있다. 뒤쪽 광산 입구는 지금 개방되지 않는다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -138,7 +138,7 @@
   },
   "WynnExcavation Site B#013": {
    "src": "I'm here to make sure no one uses the passage while the archaeologist works.",
-   "dst": "",
+   "dst": "고고학자가 작업하는 동안 아무도 이 통로를 쓰지 못하게 지키고 있다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -148,7 +148,7 @@
   },
   "WynnExcavation Site B#014": {
    "src": "You will have to find another exit if you want to get out!",
-   "dst": "",
+   "dst": "나가고 싶으면 다른 출구를 찾아야 할 거다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -158,7 +158,7 @@
   },
   "WynnExcavation Site B#015": {
    "src": "Baffling... What a puzzling situation I am in...",
-   "dst": "",
+   "dst": "당혹스럽군... 참으로 난감한 상황에 처했어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -168,7 +168,7 @@
   },
   "WynnExcavation Site B#016": {
    "src": "I cannot open this door for some reason...",
-   "dst": "",
+   "dst": "무슨 영문인지 이 문이 열리지 않는군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -178,7 +178,7 @@
   },
   "WynnExcavation Site B#017": {
    "src": "We suspect the purple crystal is behind this door, but the descriptions in the scriptures don't match this door.",
-   "dst": "",
+   "dst": "보라 수정이 이 문 뒤에 있다고 보는데, 경전의 묘사가 이 문과 맞지 않아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -188,7 +188,7 @@
   },
   "WynnExcavation Site B#018": {
    "src": "They seem to describe another door, but all our evidence says otherwise.",
-   "dst": "",
+   "dst": "다른 문을 묘사한 것 같은데, 우리 증거는 모두 반대를 가리키지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -198,7 +198,7 @@
   },
   "WynnExcavation Site B#019": {
    "src": "The scriptures also say something about hidden within the rocks... But we removed them all!",
-   "dst": "",
+   "dst": "경전엔 바위 속에 숨겨져 있다는 말도 있는데... 우린 바위를 다 치웠다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -208,7 +208,7 @@
   },
   "WynnExcavation Site B#020": {
    "src": "Well, the writing isn't actually all that clear. It could mean virtually anything, I think one of these words means hippo! Guess we'll have to find out!",
-   "dst": "",
+   "dst": "사실 글이 그리 명확하지도 않아. 거의 무슨 뜻으로든 읽히지, 이 단어 중 하나는 하마 같단 말이야! 결국 해 봐야 알겠군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -218,7 +218,7 @@
   },
   "WynnExcavation Site B#021": {
    "src": "Anyway, back to figuring out what needs to be done here... Wait, who are you, you're not an employee of WynnExcavation!",
-   "dst": "",
+   "dst": "아무튼, 여기서 뭘 해야 할지 다시 궁리해 보자... 잠깐, 넌 누구야, WynnExcavation 직원이 아니잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -228,7 +228,7 @@
   },
   "WynnExcavation Site B#022": {
    "src": "Talk to Excavator Lykron",
-   "dst": "",
+   "dst": "발굴꾼 Lykron에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site B",
@@ -238,7 +238,7 @@
   },
   "WynnExcavation Site B#023": {
    "src": "I have to admit, I'm impressed. I genuinely thought our plan would be successful. Who knew that dead end had a secret exit.",
-   "dst": "",
+   "dst": "인정하죠, 감탄했어요. 우리 계획이 성공할 거라 진심으로 믿었는데. 그 막다른 길에 비밀 출구가 있을 줄이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -248,7 +248,7 @@
   },
   "WynnExcavation Site B#024": {
    "src": "Not me apparently. We know what you took in the desert, you were just some kid expected to do a delivery job, who knew you'd take a shard of the crystal.",
-   "dst": "",
+   "dst": "난 몰랐죠. 사막에서 뭘 가져갔는지 우린 알아요. 그냥 심부름이나 할 꼬마인 줄 알았는데, 수정 조각을 챙겨 갈 줄이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -258,7 +258,7 @@
   },
   "WynnExcavation Site B#025": {
    "src": "Don't pretend like you don't know what it is, you know as well as I do combining the four crystal shards is told to bring unlimited power!",
-   "dst": "",
+   "dst": "그게 뭔지 모르는 척하지 마요. 네 개의 수정 조각을 합치면 무한한 힘이 나온다는 걸 나만큼 잘 알잖아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -268,7 +268,7 @@
   },
   "WynnExcavation Site B#026": {
    "src": "You will not interfere any longer. The location of the remaining crystals are known only to us; the fire and leaf crystals are safe.",
-   "dst": "",
+   "dst": "더는 방해하지 못할 거예요. 남은 수정의 위치는 우리만 알죠. 불의 수정과 잎의 수정은 안전합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
@@ -278,7 +278,7 @@
   },
   "WynnExcavation Site B#027": {
    "src": "I see that tricking you isn't the way to defeating you. If we ever meet again, we'll be using force and upping our security. Now I never want to see you again. Our socie- I mean company, will not tolerate your interference again.",
-   "dst": "",
+   "dst": "속임수로는 당신을 이길 수 없다는 걸 알겠군요. 다시 만나게 되면 무력을 쓰고 경비도 강화할 겁니다. 이제 두 번 다시 보고 싶지 않군요. 우리 결사- 아니, 회사는 당신의 간섭을 다시는 용납하지 않을 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",

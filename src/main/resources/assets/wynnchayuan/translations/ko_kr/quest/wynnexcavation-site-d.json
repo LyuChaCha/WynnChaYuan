@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "WynnExcavation Site D",
   "count": 97,
-  "translated": 1,
+  "translated": 98,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site D#000": {
    "src": "Talk to Royal Advisor Carlos in {p} Castle at [-{~}, {~}, -{~}] (Requires shard from Site C)",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 {p} 성에 있는 왕실 고문 Carlos에게 말을 거세요 (Site C의 파편 필요)",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -18,7 +18,7 @@
   },
   "WynnExcavation Site D#001": {
    "src": "His majesty Lord King of {p} is indisposed at this moment.",
-   "dst": "",
+   "dst": "{p}의 국왕 폐하께서는 지금 자리를 비우셨습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -28,7 +28,7 @@
   },
   "WynnExcavation Site D#002": {
    "src": "He recieved a message and made his way frantically down to the panic room, which is somewhere inside of this throne room.",
-   "dst": "",
+   "dst": "전갈을 받으시더니 황급히 대피실로 내려가셨습니다. 이 왕좌의 방 어딘가에 있지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -38,7 +38,7 @@
   },
   "WynnExcavation Site D#003": {
    "src": "He hasn't been seen since. Only the King knows how to get into the panic room, but I've had my suspicions about it for a while now.",
-   "dst": "",
+   "dst": "그 뒤로 아무도 못 뵈었습니다. 대피실에 들어가는 법은 폐하만 아시지만, 저도 한동안 나름의 짐작은 해 왔지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -48,7 +48,7 @@
   },
   "WynnExcavation Site D#004": {
    "src": "He seemed to be expecting someone, but I'm fed up of waiting.",
-   "dst": "",
+   "dst": "누군가를 기다리시는 듯했지만, 저는 이제 기다리다 지쳤습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -58,7 +58,7 @@
   },
   "WynnExcavation Site D#005": {
    "src": "I managed to hear a few things he was muttering to himself just before he disappeared, though.",
-   "dst": "",
+   "dst": "다만 사라지시기 직전에 혼잣말하시던 걸 몇 마디 듣긴 했습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -68,7 +68,7 @@
   },
   "WynnExcavation Site D#006": {
    "src": "He mentioned something about a fourth crystal... a green one.",
-   "dst": "",
+   "dst": "네 번째 수정 얘기를 하셨습니다... 초록색이라고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -78,7 +78,7 @@
   },
   "WynnExcavation Site D#007": {
    "src": "And then he said \"The order of the crystals will open the way\".Maybe it's a clue as to how to find him?",
-   "dst": "",
+   "dst": "그리고 \"수정의 순서가 길을 열리라\"라고 하셨지요. 그분을 찾을 단서일까요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -88,7 +88,7 @@
   },
   "WynnExcavation Site D#008": {
    "src": "Please, we need to find him, I'm sick of telling everyone he's indisposed!",
-   "dst": "",
+   "dst": "제발 그분을 찾아야 합니다. 부재중이시라고 둘러대기도 지쳤어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -98,7 +98,7 @@
   },
   "WynnExcavation Site D#009": {
    "src": "Find the secret passageway inside of the throne room",
-   "dst": "",
+   "dst": "왕좌의 방 안에서 비밀 통로를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -108,7 +108,7 @@
   },
   "WynnExcavation Site D#010": {
    "src": "Oh my, a secret passage has opened up beneath the throne! Quickly, head inside!",
-   "dst": "",
+   "dst": "세상에, 왕좌 아래 비밀 통로가 열렸습니다! 어서 들어가세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -118,7 +118,7 @@
   },
   "WynnExcavation Site D#011": {
    "src": "Explore the secrets beneath {p} Castle",
-   "dst": "",
+   "dst": "{p} 성 아래의 비밀을 탐험하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -128,7 +128,7 @@
   },
   "WynnExcavation Site D#012": {
    "src": "Talk to the King",
-   "dst": "",
+   "dst": "국왕과 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -138,7 +138,7 @@
   },
   "WynnExcavation Site D#013": {
    "src": "I am impressed you managed to find me. Someone of my intellect is not normally found when he hasn't the intention of being so.",
-   "dst": "",
+   "dst": "여기까지 찾아오다니 감탄스럽군. 나 정도 되는 지성은 들킬 생각이 없으면 보통은 들키지 않는 법인데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -148,7 +148,7 @@
   },
   "WynnExcavation Site D#014": {
    "src": "I suppose I at least owe you the truth for getting this far, not that it matters.",
-   "dst": "",
+   "dst": "여기까지 온 값으로 진실 정도는 들려줘야겠지. 이제 와서 달라질 건 없지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -158,7 +158,7 @@
   },
   "WynnExcavation Site D#015": {
    "src": "WynnExcavation, the Gavel company is a fake, a facade. It's not real....",
-   "dst": "",
+   "dst": "WynnExcavation, 그 Gavel 회사는 가짜다. 겉껍데기일 뿐....",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -168,7 +168,7 @@
   },
   "WynnExcavation Site D#016": {
    "src": "It's actually a secret society run by the high and mighty of Gavel.",
-   "dst": "",
+   "dst": "실은 Gavel의 높으신 분들이 굴리는 비밀 결사지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -178,7 +178,7 @@
   },
   "WynnExcavation Site D#017": {
    "src": "They have one goal, complete control.",
-   "dst": "",
+   "dst": "목표는 하나, 완전한 지배다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -188,7 +188,7 @@
   },
   "WynnExcavation Site D#018": {
    "src": "You can't compete with them, kid. I tried to at first, but they had turned my inner circle before getting to me.",
-   "dst": "",
+   "dst": "꼬마야, 넌 저들을 이길 수 없다. 나도 처음엔 맞섰지만, 저들은 내게 오기 전에 이미 측근들을 돌려놨더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -198,7 +198,7 @@
   },
   "WynnExcavation Site D#019": {
    "src": "Though I cannot admit I fought hard, their ideals are admirable.",
-   "dst": "",
+   "dst": "치열하게 싸웠다고는 못 하겠지만, 저들의 이상은 훌륭하다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -208,7 +208,7 @@
   },
   "WynnExcavation Site D#020": {
    "src": "So I hope you will forgive me, I act only for the greater good of the world.",
-   "dst": "",
+   "dst": "그러니 용서하게. 나는 오직 세상의 더 큰 선을 위해 움직일 뿐이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -218,7 +218,7 @@
   },
   "WynnExcavation Site D#021": {
    "src": "As you will not be leaving the city, I wish you a fond farewell. When you leave, you will be accused of treason and will be hunted. It is the only way...",
-   "dst": "",
+   "dst": "자네는 이 도시를 나가지 못할 테니, 여기서 작별을 고하지. 나가는 순간 반역죄로 몰려 쫓기게 될 걸세. 이 길밖에 없어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -228,7 +228,7 @@
   },
   "WynnExcavation Site D#022": {
    "src": "Exit the King's room",
-   "dst": "",
+   "dst": "국왕의 방에서 나가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -238,7 +238,7 @@
   },
   "WynnExcavation Site D#023": {
    "src": "Time is short, so I'll have to spare you the details, but let's just say I'm on your side.",
-   "dst": "",
+   "dst": "시간이 없어서 자세한 건 생략할게요. 그냥 제가 당신 편이라고만 알아 두세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -248,7 +248,7 @@
   },
   "WynnExcavation Site D#024": {
    "src": "The King just placed you under arrest for treason. They've locked down the entire city.",
-   "dst": "",
+   "dst": "국왕이 방금 당신을 반역죄로 체포하라 명했어요. 도시 전체가 봉쇄됐고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -258,7 +258,7 @@
   },
   "WynnExcavation Site D#025": {
    "src": "Both the front gate and the Passage are closed down. So we've created another exit for you.",
-   "dst": "",
+   "dst": "정문도 통로도 다 막혔어요. 그래서 우리가 다른 출구를 하나 뚫어 놨습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -268,7 +268,7 @@
   },
   "WynnExcavation Site D#026": {
    "src": "Just follow the path to your left around the city. Keep going until you see a villager next to a tunnel. We'll clear your name once you've escaped.",
-   "dst": "",
+   "dst": "왼쪽 길을 따라 도시를 빙 돌아가세요. 터널 옆에 선 주민이 보일 때까지 계속 가고요. 탈출하면 누명은 저희가 벗겨 드릴게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -278,7 +278,7 @@
   },
   "WynnExcavation Site D#027": {
    "src": "You'll pass through the army headquarters on your way, so be prepared for a fight. I'm the only guard here to help you.",
-   "dst": "",
+   "dst": "가는 길에 군 본부를 지나게 되니 싸울 각오를 하세요. 여기서 도울 경비병은 저뿐이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -288,7 +288,7 @@
   },
   "WynnExcavation Site D#028": {
    "src": "Now run! We don't have another moment to waste!",
-   "dst": "",
+   "dst": "이제 뛰어요! 한순간도 낭비할 수 없어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -298,7 +298,7 @@
   },
   "WynnExcavation Site D#029": {
    "src": "Escape {p}",
-   "dst": "",
+   "dst": "{p}에서 탈출하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -308,7 +308,7 @@
   },
   "WynnExcavation Site D#030": {
    "src": "Hey, psst. Come here!",
-   "dst": "",
+   "dst": "야, 쉿. 이리 와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -318,7 +318,7 @@
   },
   "WynnExcavation Site D#031": {
    "src": "Take this, and run! You need to get out!",
-   "dst": "",
+   "dst": "이거 받고 뛰어! 여길 나가야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -328,7 +328,7 @@
   },
   "WynnExcavation Site D#032": {
    "src": "Head to those coordinates, there is no time to explain, now go! I'll close the tunnel behind you.",
-   "dst": "",
+   "dst": "그 좌표로 가. 설명할 시간 없어, 어서! 터널은 내가 뒤에서 막을게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -338,7 +338,7 @@
   },
   "WynnExcavation Site D#033": {
    "src": "I'VE FOUND THE TRAITOR! THEY'RE OVER HERE!",
-   "dst": "",
+   "dst": "배신자를 찾았다! 여기 있다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -348,7 +348,7 @@
   },
   "WynnExcavation Site D#034": {
    "src": "Head to the location on the note",
-   "dst": "",
+   "dst": "쪽지에 적힌 장소로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -358,7 +358,7 @@
   },
   "WynnExcavation Site D#035": {
    "src": "Speak to Traitor Thomas",
-   "dst": "",
+   "dst": "배신자 Thomas에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -368,7 +368,7 @@
   },
   "WynnExcavation Site D#036": {
    "src": "I'm sorry, I can't let you in there.",
-   "dst": "",
+   "dst": "미안하지만 들여보낼 순 없어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -378,7 +378,7 @@
   },
   "WynnExcavation Site D#037": {
    "src": "I can't let you in there, not until you have proven you are truly on our side.",
-   "dst": "",
+   "dst": "들여보낼 수 없어요. 정말 우리 편이라는 걸 증명하기 전까진.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -388,7 +388,7 @@
   },
   "WynnExcavation Site D#038": {
    "src": "We never know who to believe anymore. Unfortunately there is no way for you to prove your loyalty.",
-   "dst": "",
+   "dst": "이젠 누굴 믿어야 할지 모르겠어요. 안타깝지만 당신이 충성을 증명할 방법은 없고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -398,7 +398,7 @@
   },
   "WynnExcavation Site D#039": {
    "src": "Now if you would excuse me, I have to hunt for the lost map fragments of Dernel. I'm sure these eyes have something to do with it...",
-   "dst": "",
+   "dst": "그럼 실례할게요. Dernel의 잃어버린 지도 조각을 찾아야 해서요. 저 눈들이 분명 관련이 있을 텐데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -408,7 +408,7 @@
   },
   "WynnExcavation Site D#040": {
    "src": "Find the three map fragments by following the eyes and return to Thomas.",
-   "dst": "",
+   "dst": "눈을 따라가 지도 조각 세 개를 찾아 Thomas에게 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -418,7 +418,7 @@
   },
   "WynnExcavation Site D#041": {
    "src": "I can't let you in, we're busy looking for an important document, I'm sure these eyes have something to do with it...",
-   "dst": "",
+   "dst": "들여보낼 수 없어요. 중요한 문서를 찾느라 바빠서요. 저 눈들이 분명 관련이 있을 거예요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -428,7 +428,7 @@
   },
   "WynnExcavation Site D#042": {
    "src": "Is that... The map fragments? You found them!",
-   "dst": "",
+   "dst": "그건... 지도 조각? 찾아냈군요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -438,7 +438,7 @@
   },
   "WynnExcavation Site D#043": {
    "src": "Oh my, you better come in.",
-   "dst": "",
+   "dst": "이런, 얼른 들어와요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -448,7 +448,7 @@
   },
   "WynnExcavation Site D#044": {
    "src": "There's not enough time! We need to combine those fragments with ours!",
-   "dst": "",
+   "dst": "시간이 없어요! 그 조각들을 우리 것과 합쳐야 해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -458,7 +458,7 @@
   },
   "WynnExcavation Site D#045": {
    "src": "Hurry, get in the hideout!",
-   "dst": "",
+   "dst": "어서, 은신처로!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -468,7 +468,7 @@
   },
   "WynnExcavation Site D#046": {
    "src": "Enter the traitor camp",
-   "dst": "",
+   "dst": "배신자 야영지로 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -478,7 +478,7 @@
   },
   "WynnExcavation Site D#047": {
    "src": "Speak to Rebel Leader Amadel",
-   "dst": "",
+   "dst": "반란군 지도자 Amadel에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -488,7 +488,7 @@
   },
   "WynnExcavation Site D#048": {
    "src": "Welcome, friend. I knew you would figure it all out.",
-   "dst": "",
+   "dst": "어서 와요, 친구. 다 알아낼 줄 알았어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -498,7 +498,7 @@
   },
   "WynnExcavation Site D#049": {
    "src": "You must be surprised to see me. The excavation crew at site C tried very hard to kill me.",
-   "dst": "",
+   "dst": "날 보고 놀랐겠죠. Site C의 발굴대가 날 죽이려고 무진 애를 썼거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -508,7 +508,7 @@
   },
   "WynnExcavation Site D#050": {
    "src": "They didn't succeed though. I got away, and I swiped a fragment of a map, and I found out what it's for.",
-   "dst": "",
+   "dst": "하지만 실패했죠. 난 빠져나왔고, 지도 조각 하나를 슬쩍해서 용도까지 알아냈어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -518,7 +518,7 @@
   },
   "WynnExcavation Site D#051": {
    "src": "If you made it this far, you know Wynn Excavation are not what they seem. They want to harness Wynn's ancient power.",
-   "dst": "",
+   "dst": "여기까지 왔다면 Wynn Excavation의 실체를 알겠죠. 그들은 Wynn의 고대 힘을 원해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -528,7 +528,7 @@
   },
   "WynnExcavation Site D#052": {
    "src": "They control our governments, authorities and seem to be {~} steps ahead of any of us that oppose them.",
-   "dst": "",
+   "dst": "정부도 당국도 그들 손아귀예요. 맞서는 우리보다 늘 {~}걸음 앞서 있죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -538,7 +538,7 @@
   },
   "WynnExcavation Site D#053": {
    "src": "That is, unless we're able to beat the excavationists to the last crystal.",
-   "dst": "",
+   "dst": "발굴자들보다 먼저 마지막 수정을 손에 넣지 못한다면요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -548,7 +548,7 @@
   },
   "WynnExcavation Site D#054": {
    "src": "They cannot use a single shard of power without combining them all.",
-   "dst": "",
+   "dst": "전부 합치지 않으면 파편 하나의 힘도 못 써요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -558,7 +558,7 @@
   },
   "WynnExcavation Site D#055": {
    "src": "Here, I've combined the map fragments behind me. It looks it's deep in the jungle, I wonder where...",
-   "dst": "",
+   "dst": "자, 뒤에 지도 조각을 다 맞춰 놨어요. 정글 깊은 곳 같은데, 어디일까요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -568,7 +568,7 @@
   },
   "WynnExcavation Site D#056": {
    "src": "WynnExcavation have done really horrible things, and I used to help...",
-   "dst": "",
+   "dst": "WynnExcavation은 정말 끔찍한 짓을 저질렀어요. 나도 거들었었고...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -578,7 +578,7 @@
   },
   "WynnExcavation Site D#057": {
    "src": "WynnExcavation will be destroyed, no matter what!",
-   "dst": "",
+   "dst": "무슨 수를 써서라도 WynnExcavation은 무너뜨린다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -588,7 +588,7 @@
   },
   "WynnExcavation Site D#058": {
    "src": "Go to Site D [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Site D [-{~}, {~}, -{~}](으)로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -598,7 +598,7 @@
   },
   "WynnExcavation Site D#059": {
    "src": "Solve the puzzle",
-   "dst": "",
+   "dst": "수수께끼를 푸세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -608,7 +608,7 @@
   },
   "WynnExcavation Site D#060": {
    "src": "Search the excavation site",
-   "dst": "",
+   "dst": "발굴 현장을 수색하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -618,7 +618,7 @@
   },
   "WynnExcavation Site D#061": {
    "src": "Talk to Excavator Admin Uci.",
-   "dst": "",
+   "dst": "발굴 관리자 Uci와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -628,7 +628,7 @@
   },
   "WynnExcavation Site D#062": {
    "src": "Oh my. It's you. I can't say I'm surprised to see you, we thought you might be stupid enough to come here.",
-   "dst": "",
+   "dst": "이런. 너였군. 놀랍진 않아. 네가 여기까지 올 만큼 멍청할 거라 생각했거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -638,7 +638,7 @@
   },
   "WynnExcavation Site D#063": {
    "src": "Stupid enough to come here, yet, smart enough to make it.",
-   "dst": "",
+   "dst": "여기 올 만큼 멍청하면서, 도착할 만큼은 똑똑했군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -648,7 +648,7 @@
   },
   "WynnExcavation Site D#064": {
    "src": "You were at every site, taking shards and attempting to thwart us.",
-   "dst": "",
+   "dst": "현장마다 나타나 파편을 챙기고 우릴 방해했지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -658,7 +658,7 @@
   },
   "WynnExcavation Site D#065": {
    "src": "This time we won, and you lost.",
-   "dst": "",
+   "dst": "이번엔 우리가 이겼고, 넌 졌어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -668,7 +668,7 @@
   },
   "WynnExcavation Site D#066": {
    "src": "What do your shards mean to us when we have all four crystals?",
-   "dst": "",
+   "dst": "수정 넷을 다 가진 우리에게 네 파편이 무슨 의미겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -678,7 +678,7 @@
   },
   "WynnExcavation Site D#067": {
    "src": "Nothing, that's what.",
-   "dst": "",
+   "dst": "아무 의미도 없지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -688,7 +688,7 @@
   },
   "WynnExcavation Site D#068": {
    "src": "The boss wants to speak to you, I don't recommend keeping him waiting, he's not a patient man.",
-   "dst": "",
+   "dst": "우두머리가 널 보자신다. 기다리게 하지 마라, 인내심 있는 분이 아니니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -698,7 +698,7 @@
   },
   "WynnExcavation Site D#069": {
    "src": "He'll be waiting for you, head through that door.",
-   "dst": "",
+   "dst": "저 문으로 들어가. 기다리고 계실 거다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -708,7 +708,7 @@
   },
   "WynnExcavation Site D#070": {
    "src": "My boss Uci is a bit of a mean guy, but hey the perks of minionship aren't bad!",
-   "dst": "",
+   "dst": "우리 상사 Uci는 좀 못됐지만, 뭐 부하 노릇 혜택은 나쁘지 않아요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -718,7 +718,7 @@
   },
   "WynnExcavation Site D#071": {
    "src": "This leads deeper into this dungeon, but it seems like it has to be activated from the other side.",
-   "dst": "",
+   "dst": "이건 던전 더 깊은 곳으로 이어지는데, 반대편에서 작동시켜야 하는 것 같아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -728,7 +728,7 @@
   },
   "WynnExcavation Site D#072": {
    "src": "Enter The Ancient Dungeon",
-   "dst": "",
+   "dst": "The Ancient Dungeon에 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -738,7 +738,7 @@
   },
   "WynnExcavation Site D#073": {
    "src": "Complete the parkour",
-   "dst": "",
+   "dst": "파쿠르를 완주하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -748,7 +748,7 @@
   },
   "WynnExcavation Site D#074": {
    "src": "Solve The Yellow Puzzle",
-   "dst": "",
+   "dst": "노란색 퍼즐을 푸세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -758,7 +758,7 @@
   },
   "WynnExcavation Site D#075": {
    "src": "Solve The Purple Puzzle",
-   "dst": "",
+   "dst": "보라색 퍼즐을 푸세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -768,7 +768,7 @@
   },
   "WynnExcavation Site D#076": {
    "src": "Solve The Red Puzzle",
-   "dst": "",
+   "dst": "빨간색 퍼즐을 푸세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -778,7 +778,7 @@
   },
   "WynnExcavation Site D#077": {
    "src": "Escape The Green Room",
-   "dst": "",
+   "dst": "초록색 방에서 탈출하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -788,7 +788,7 @@
   },
   "WynnExcavation Site D#078": {
    "src": "Talk to Excavator Amadel",
-   "dst": "",
+   "dst": "발굴꾼 Amadel과 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -798,7 +798,7 @@
   },
   "WynnExcavation Site D#079": {
    "src": "Well, well. Looks like you've finally made it.",
-   "dst": "",
+   "dst": "이런, 이런. 드디어 도착했군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -808,7 +808,7 @@
   },
   "WynnExcavation Site D#080": {
    "src": "You might be a little shocked to see me here...",
-   "dst": "",
+   "dst": "여기서 날 보니 좀 놀랐겠지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -818,7 +818,7 @@
   },
   "WynnExcavation Site D#081": {
    "src": "Everything was planned you see...",
-   "dst": "",
+   "dst": "모든 게 계획대로였다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -828,7 +828,7 @@
   },
   "WynnExcavation Site D#082": {
    "src": "You finding that old fool in the desert, you surviving that fall.",
-   "dst": "",
+   "dst": "사막에서 그 늙은 바보를 만난 것도, 그 추락에서 살아남은 것도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -838,7 +838,7 @@
   },
   "WynnExcavation Site D#083": {
    "src": "You finding that notebook, and eventually meeting me.",
-   "dst": "",
+   "dst": "그 수첩을 찾은 것도, 끝내 날 만난 것도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -848,7 +848,7 @@
   },
   "WynnExcavation Site D#084": {
    "src": "Everything that you have done has been planned by the mastermind behind this organisation, me.",
-   "dst": "",
+   "dst": "네가 한 모든 일은 이 조직의 배후에 있는 주모자, 바로 내가 짜 둔 것이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -858,7 +858,7 @@
   },
   "WynnExcavation Site D#085": {
    "src": "You don't get it, do you? We needed you. The otherworldly crystals are a powerful magic, but a dangerous one at that.",
-   "dst": "",
+   "dst": "아직 모르겠나? 우린 네가 필요했다. 이계의 수정은 강력한 마법이지만, 동시에 위험한 마법이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -868,7 +868,7 @@
   },
   "WynnExcavation Site D#086": {
    "src": "We needed you, an unaware human with some form of pure intent to bring empowered shards here. Anyone else would have ran off with the shards, and turned against us. It's just how it all works. I don't expect you to understand.. Now. Enough talking.",
-   "dst": "",
+   "dst": "아무것도 모르면서 어떤 순수한 의도를 지닌 인간이 충전된 파편을 여기까지 가져와야 했다. 다른 자였다면 파편을 들고 달아나 우리에게 등을 돌렸겠지. 원래 그런 거다. 네가 이해하리라 기대하진 않아.. 자. 말은 이만하면 됐다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -878,7 +878,7 @@
   },
   "WynnExcavation Site D#087": {
    "src": "Teleport to the Ancient City",
-   "dst": "",
+   "dst": "The Ancient City로 순간이동하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -888,7 +888,7 @@
   },
   "WynnExcavation Site D#088": {
    "src": "Explore The Ancient City",
-   "dst": "",
+   "dst": "The Ancient City를 탐험하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -898,7 +898,7 @@
   },
   "WynnExcavation Site D#089": {
    "src": "Speak to Amadel's Assistant",
-   "dst": "",
+   "dst": "Amadel의 조수에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -908,7 +908,7 @@
   },
   "WynnExcavation Site D#090": {
    "src": "Kill Corrupted Amadel",
-   "dst": "",
+   "dst": "타락한 Amadel을 처치하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -918,7 +918,7 @@
   },
   "WynnExcavation Site D#091": {
    "src": "The crystals combine the power of the stars themselves.. an ultimate power... the power to reign over the entire WORLD!",
-   "dst": "",
+   "dst": "수정은 별 그 자체의 힘을 하나로 모은다.. 궁극의 힘... 온 세계를 지배할 힘이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -928,7 +928,7 @@
   },
   "WynnExcavation Site D#092": {
    "src": "Kill Shadow Amadel",
-   "dst": "",
+   "dst": "그림자 Amadel을 처치하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -938,7 +938,7 @@
   },
   "WynnExcavation Site D#093": {
    "src": "I- I- I feel... unstoppable.. this power... will not aļ͢͠͠͡l̶̀͜͏͏ów me to lớ̀͠͝se..!!!",
-   "dst": "",
+   "dst": "나- 나- 난... 막을 수 없어.. 이 힘은... 날 지게 두지 않아..!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -948,7 +948,7 @@
   },
   "WynnExcavation Site D#094": {
    "src": "Kill Amadel",
-   "dst": "",
+   "dst": "Amadel을 처치하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -958,7 +958,7 @@
   },
   "WynnExcavation Site D#095": {
    "src": "DID YOU REALLY THINK YOU COULD WIN?!?! YOU ARE NOTHING COMPARED TO ME! NOTHING!! I WILL EXTERMINATE ALL LIFE, STARTING WITH YOU!! NOW, PERISH!!!",
-   "dst": "",
+   "dst": "정말 네가 이길 수 있다고 생각했나?!?! 나에 비하면 넌 아무것도 아니다! 아무것도!! 모든 생명을 몰살하겠다, 너부터!! 자, 죽어라!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -968,7 +968,7 @@
   },
   "WynnExcavation Site D#096": {
    "src": "Talk to The King of {p}",
-   "dst": "",
+   "dst": "{p}의 국왕과 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",

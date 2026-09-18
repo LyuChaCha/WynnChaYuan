@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lost Royalty",
   "count": 26,
-  "translated": 0,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Royalty#000": {
    "src": "Talk to Yavlis in {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Habla con Yavlis en {p}, en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -18,7 +18,7 @@
   },
   "Lost Royalty#001": {
    "src": "Oh, hello there! I had hoped not to bother you, adventurer, but this is urgent.",
-   "dst": "",
+   "dst": "¡Ah, hola! No quería molestarle, aventurero, pero es urgente.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -28,7 +28,7 @@
   },
   "Lost Royalty#002": {
    "src": "You see, the king is very... erm, distracted, and you are just the kind of willing, able-bodied person I need.",
-   "dst": "",
+   "dst": "Verá, el rey está muy... ejem, distraído, y usted es justo la persona dispuesta y capaz que necesito.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -38,7 +38,7 @@
   },
   "Lost Royalty#003": {
    "src": "You see, the king's son has gone missing, and with him worrying so much, the problems of the city have festered unsolved.",
-   "dst": "",
+   "dst": "Resulta que el hijo del rey ha desaparecido, y con él tan preocupado, los problemas de la ciudad se pudren sin resolver.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -48,7 +48,7 @@
   },
   "Lost Royalty#004": {
    "src": "We believe he was kidnapped by the splinter cell mercenaries in the jungle... Unfortunate, too. They used to be quite honourable.",
-   "dst": "",
+   "dst": "Creemos que lo secuestraron los mercenarios escindidos de la jungla... Una pena, además. Antes eran bastante honorables.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -58,7 +58,7 @@
   },
   "Lost Royalty#005": {
    "src": "Well, anyway, they're usually spotted outside the run-down farm outside of town. Go there and see what they want in return for the young prince.",
-   "dst": "",
+   "dst": "En fin, suelen verse junto a la granja ruinosa de las afueras. Vaya allí y averigüe qué piden a cambio del joven príncipe.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -68,7 +68,7 @@
   },
   "Lost Royalty#006": {
    "src": "Talk to the Mercenary Leader in their hideout outside {p}",
-   "dst": "",
+   "dst": "Habla con el Líder Mercenario en su escondite a las afueras de {p}",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -78,7 +78,7 @@
   },
   "Lost Royalty#007": {
    "src": "Excuse me?! What are you doing here, how did you find our secret hideout?",
-   "dst": "",
+   "dst": "¿¡Perdona!? ¿Qué haces aquí, cómo encontraste nuestro escondite secreto?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -88,7 +88,7 @@
   },
   "Lost Royalty#008": {
    "src": "Oh, you're here for the boy? A mighty fine steal, that one! The boy won't be leaving this establishment for free. I'll need some nice loot for him.",
-   "dst": "",
+   "dst": "Ah, ¿vienes por el chaval? ¡Vaya golpe, ese! No saldrá de aquí gratis. Voy a necesitar un buen botín a cambio.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -98,7 +98,7 @@
   },
   "Lost Royalty#009": {
    "src": "Ah, but what to have you fetch...oh, haha! This would be a perfect opportunity to obtain that... Alright, ears open!",
-   "dst": "",
+   "dst": "Ah, pero qué te mando a buscar... ¡oh, jaja! Sería la ocasión perfecta para conseguir aquello... ¡Venga, oídos abiertos!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -108,7 +108,7 @@
   },
   "Lost Royalty#010": {
    "src": "There's a certain talisman that we aren't able to get to in the temple not far from here. It has special abilities that allow my men to be strengthened, see.",
-   "dst": "",
+   "dst": "Hay cierto talismán en el templo de aquí cerca al que no logramos llegar. Tiene poderes especiales que refuerzan a mis hombres, ¿ves?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -118,7 +118,7 @@
   },
   "Lost Royalty#011": {
    "src": "The guardians there pack quite the punch, and there's some nasty mechanism in the way that we just can't crack.",
-   "dst": "",
+   "dst": "Los guardianes de allí pegan fuerte, y hay un mecanismo endiablado de por medio que no logramos resolver.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -128,7 +128,7 @@
   },
   "Lost Royalty#012": {
    "src": "The temple is found just across the waterway, in a crevice in the mountain. It used to be blocked until those WynnExcavation fellows tried digging there.",
-   "dst": "",
+   "dst": "El templo está justo al otro lado del canal, en una grieta de la montaña. Estaba tapiado hasta que los de WynnExcavation se pusieron a excavar allí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -138,7 +138,7 @@
   },
   "Lost Royalty#013": {
    "src": "You get that talisman in my hands, and the king's boy is yours. Now off you pip! I'm a very busy man.",
-   "dst": "",
+   "dst": "Pon ese talismán en mis manos y el hijo del rey es tuyo. ¡Venga, largo! Soy un hombre muy ocupado.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -148,7 +148,7 @@
   },
   "Lost Royalty#014": {
    "src": "Go to the jungle temple and retrieve the talisman at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Ve al templo de la jungla y recupera el talismán en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -158,7 +158,7 @@
   },
   "Lost Royalty#015": {
    "src": "Bring the talisman back to the Mercenary Leader.",
-   "dst": "",
+   "dst": "Lleva el talismán de vuelta al Líder Mercenario.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -168,7 +168,7 @@
   },
   "Lost Royalty#016": {
    "src": "You've gotten the talisman! I can't believe you actually got through that puzzle!",
-   "dst": "",
+   "dst": "¡Has conseguido el talismán! ¡No me creo que superaras ese rompecabezas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -178,7 +178,7 @@
   },
   "Lost Royalty#017": {
    "src": "At this point I would usually keep the kid and throw you out of here, but since you've done what I've asked in such a timely fashion, he's all yours.",
-   "dst": "",
+   "dst": "Normalmente me quedaría con el crío y te echaría de aquí, pero como has hecho lo que te pedí tan rápido, es todo tuyo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -188,7 +188,7 @@
   },
   "Lost Royalty#018": {
    "src": "When you get back to whoever asked you to do this, tell him to leave my men and I alone! We guildsmen lay down our lives every day, we don't need any more hostile onlookers!",
-   "dst": "",
+   "dst": "Cuando vuelvas con quien te mandó, ¡dile que nos deje en paz a mis hombres y a mí! Los del gremio nos jugamos la vida a diario, ¡no necesitamos más miradas hostiles!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -198,7 +198,7 @@
   },
   "Lost Royalty#019": {
    "src": "Talk to the Prince of {p} in the jail cell",
-   "dst": "",
+   "dst": "Habla con el Príncipe de {p} en la celda",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -208,7 +208,7 @@
   },
   "Lost Royalty#020": {
    "src": "Report back to Yavlis with the news",
-   "dst": "",
+   "dst": "Informa a Yavlis de las novedades",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -218,7 +218,7 @@
   },
   "Lost Royalty#021": {
    "src": "Ah, finally! You're back. Did they let you bring him back? Those mercenaries have an awful habit of failing to honour their deals.",
-   "dst": "",
+   "dst": "¡Ah, por fin! Ha vuelto. ¿Le dejaron traerlo? Esos mercenarios tienen la pésima costumbre de no cumplir sus tratos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -228,7 +228,7 @@
   },
   "Lost Royalty#022": {
    "src": "Wait, the prince said what? He truly wants to be a mercenary? Oh my... then he must have escaped on his own.",
-   "dst": "",
+   "dst": "Espere, ¿el príncipe dijo qué? ¿De verdad quiere ser mercenario? Cielos... entonces escapó por su cuenta.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -238,7 +238,7 @@
   },
   "Lost Royalty#023": {
    "src": "Alright then, if that's the path the king's son chooses to walk, then there's nothing we can do.",
-   "dst": "",
+   "dst": "Está bien; si ese es el camino que elige el hijo del rey, nada podemos hacer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -248,7 +248,7 @@
   },
   "Lost Royalty#024": {
    "src": "I can only hope that he chose to join them out of a will to protect the people, rather than simply brutishness or money.",
-   "dst": "",
+   "dst": "Solo cabe esperar que se uniera a ellos por voluntad de proteger al pueblo, y no por mera brutalidad o dinero.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -258,7 +258,7 @@
   },
   "Lost Royalty#025": {
    "src": "Such a shame that old guild has stooped to such a level. Well, we must thank you for your help. You can have the emerald ransom we had intended to pay.",
-   "dst": "",
+   "dst": "Qué lástima que ese viejo gremio haya caído tan bajo. En fin, gracias por su ayuda. Quédese con las esmeraldas del rescate que íbamos a pagar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",

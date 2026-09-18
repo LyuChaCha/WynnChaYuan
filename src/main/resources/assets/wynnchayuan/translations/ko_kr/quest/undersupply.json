@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Undersupply",
   "count": 125,
-  "translated": 0,
+  "translated": 125,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Undersupply#000": {
    "src": "Investigate the river settlement's water troubles at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 강가 마을의 물 문제를 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Undersupply",
@@ -18,7 +18,7 @@
   },
   "Undersupply#001": {
    "src": "Oho, now that's some dress I've not seen in many a moon! You're one of those {p} folk, aren't ya? Quite some luxury ya must've lived with.",
-   "dst": "",
+   "dst": "오호, 그런 옷차림은 정말 오랜만에 보는구먼! {p} 사람이지, 안 그런가? 꽤나 호화롭게 살았겠구먼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -28,7 +28,7 @@
   },
   "Undersupply#002": {
    "src": "'s a bit more humble down here in the shadow of the dam. Surprised someone like you would take the trip, but it ain't a complaint. Getting about to see the world is a fine endeavor!",
-   "dst": "",
+   "dst": "여기 댐 그늘 아래는 좀 더 소박하다네. 자네 같은 사람이 여기까지 올 줄은 몰랐지만, 불평은 아닐세. 세상 구경 다니는 건 훌륭한 일이지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -38,7 +38,7 @@
   },
   "Undersupply#003": {
    "src": "Unfortunately, the bar here's dry. Sure, I got alcohol, but you drink that, and you'll be passing more water than ya took in. Dries you right out, and right now we haven't got any water to spare. Dangerous, y'know?",
-   "dst": "",
+   "dst": "안타깝게도 여긴 술집인데 물이 말랐네. 술이야 있지만, 그걸 마시면 들어간 것보다 더 많은 물이 빠져나가지. 사람을 바짝 말려 버린다네. 지금은 남는 물도 없고. 위험하지 않겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -48,7 +48,7 @@
   },
   "Undersupply#004": {
    "src": "The dam opens up every month or so to let out some water for us, but is passes through a noble manor, past the hill, rationed out to the rest of the forest.",
-   "dst": "",
+   "dst": "댐은 한 달에 한 번쯤 열려서 물을 조금 내려보내지. 그런데 그 물이 언덕 너머 귀족 저택을 거쳐 숲 나머지에 배급된다네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -58,7 +58,7 @@
   },
   "Undersupply#005": {
    "src": "It's so little though, nowadays. The children are going thirsty. The muck in the riverbeds is more mud than water- so even if ya boil it out like I do, what you get is foul trifles.",
-   "dst": "",
+   "dst": "그런데 요즘은 양이 너무 적어. 아이들이 목말라하고 있네. 강바닥에 남은 건 물보다 진흙에 가까워서, 나처럼 끓여 봐야 나오는 건 역겨운 찌꺼기뿐이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -68,7 +68,7 @@
   },
   "Undersupply#006": {
    "src": "Didn't used to be like this, though. Ain't sure what's changed, but I'm just an old geezer. I've lived my life enough- it's what it's doing to the kids that has me worried. ...say, stranger.",
-   "dst": "",
+   "dst": "예전엔 이렇지 않았는데. 뭐가 달라졌는지는 모르겠네, 난 그저 늙은이일 뿐이니. 내 인생은 충분히 살았어- 걱정되는 건 아이들이지. ...이보게, 낯선 양반.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -78,7 +78,7 @@
   },
   "Undersupply#007": {
    "src": "If you're touring about here, you'll probably see the manor soon enough. If ya could get them to spare us some more water a while, I'll give ya a discount! How's about it?",
-   "dst": "",
+   "dst": "이 근방을 둘러본다면 머잖아 그 저택도 보게 될 걸세. 저들이 우리에게 물을 좀 더 내주게 해 준다면, 자네한테 할인을 해 주지! 어떤가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -88,7 +88,7 @@
   },
   "Undersupply#008": {
    "src": "Ain't quite sure how you would go about convincing the nobles to let out more water for us, I admit. If I did, I'd take the trek up the hill myself- even in spite of my creaky ol' back.",
-   "dst": "",
+   "dst": "솔직히 그 귀족들을 어떻게 설득해야 물을 더 내줄지는 나도 모르겠네. 알았다면 이 삐걱대는 허리를 끌고서라도 내가 직접 언덕을 올랐겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -98,7 +98,7 @@
   },
   "Undersupply#009": {
    "src": "Even if it's just getting them to put a word in to the Sovereign. I imagine that come-lately Zhiraok would do something about it all. I swear that man doesn't know what sleep is...",
-   "dst": "",
+   "dst": "군주께 말 한마디만 넣어 줘도 좋으련만. 새로 온 그 Zhiraok이라면 뭐라도 해 줄 것 같은데. 그 양반은 잠이 뭔지도 모르는 게 분명해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -108,7 +108,7 @@
   },
   "Undersupply#010": {
    "src": "I can appreciate a young'un with some spark in their eyes, but he needs to learn to slow down! What's that saying about the brightest candle burning twice as fast?",
-   "dst": "",
+   "dst": "눈빛에 불꽃이 있는 젊은이는 나도 좋아하네만, 그 친구는 좀 늦추는 법을 배워야 해! 가장 밝은 초가 두 배로 빨리 탄다는 말, 그게 뭐였더라?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -118,7 +118,7 @@
   },
   "Undersupply#011": {
    "src": "Oh, my! Who are you? In such fantastical equipment! Certainly not a guard- I've never seen anything like it! Oh me, oh my...",
-   "dst": "",
+   "dst": "어머나! 누구세요? 그렇게 환상적인 장비를 걸치고! 경비병은 분명 아니고- 저런 건 처음 봐요! 어머, 세상에...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -128,7 +128,7 @@
   },
   "Undersupply#012": {
    "src": "Unless... Are you, perhaps...I have heard whispers on the wind of a new Sovereign? I have seen our Sovereign dress rather differently, so maybe-",
-   "dst": "",
+   "dst": "설마... 혹시 당신이...새 군주가 나셨다는 소문을 바람결에 들었거든요. 우리 군주님 차림은 좀 달랐으니, 어쩌면-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -138,7 +138,7 @@
   },
   "Undersupply#013": {
    "src": "No? You aren't? Hm! Well, be that as it may, I do wish I could welcome you more hospitably, stranger, but we are in the lean time of the month- the leanest I have seen.",
-   "dst": "",
+   "dst": "아니라고요? 흠! 그렇다 해도 낯선 분을 더 잘 대접하고 싶지만, 지금은 이 달에서 가장 궁핍한 때예요- 제가 본 중에 가장 심하죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -148,7 +148,7 @@
   },
   "Undersupply#014": {
    "src": "*cough* Oh dear, excuse me. My throat is simply so dry... My children need the water more than I, but I would darn a dozen robes for but a glass now.",
-   "dst": "",
+   "dst": "*콜록* 어머, 실례했어요. 목이 너무 말라서요... 물은 저보다 아이들에게 더 필요하지만, 한 잔만 준다면 지금 옷 열두 벌이라도 기워 드릴 텐데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -158,7 +158,7 @@
   },
   "Undersupply#015": {
    "src": "The dam opens every month or so- I assume you wouldn't know, stranger. The water is rationed to us by the nobles in a manor over the hill.",
-   "dst": "",
+   "dst": "댐은 한 달에 한 번쯤 열려요- 낯선 분은 모르시겠죠. 물은 언덕 너머 저택의 귀족들이 우리에게 배급해 줘요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -168,7 +168,7 @@
   },
   "Undersupply#016": {
    "src": "This time of year is usually dry, but the amount of water we have received lately has been less and less. I wonder what is happening...",
-   "dst": "",
+   "dst": "이맘때는 원래 건조하지만, 요즘 받는 물의 양이 갈수록 줄고 있어요. 대체 무슨 일일까요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -178,7 +178,7 @@
   },
   "Undersupply#017": {
    "src": "This kind lumberer has been visiting and passing out bottles, and without him I am certain my children wouldn't have made it. I'm unsure how much longer I can keep my family healthy...",
-   "dst": "",
+   "dst": "친절한 나무꾼 한 분이 찾아와 물병을 나눠 주는데, 그분이 없었다면 제 아이들은 버티지 못했을 거예요. 가족을 얼마나 더 건강히 지킬 수 있을지 모르겠어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -188,7 +188,7 @@
   },
   "Undersupply#018": {
    "src": "Oh, if only those nobles could spare more for us... Perhaps I could speak with them- but then, who would watch over my children here?",
-   "dst": "",
+   "dst": "아, 그 귀족들이 조금만 더 나눠 준다면... 제가 직접 말해 볼까도 싶지만- 그러면 여기 아이들은 누가 보나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -198,7 +198,7 @@
   },
   "Undersupply#019": {
    "src": "So...as much as I would like to welcome you with a meal and a hot cup of tea... I simply can't. I am just so sorry for this, stranger.",
-   "dst": "",
+   "dst": "그래서...식사와 따뜻한 차로 맞이하고 싶지만... 그럴 수가 없어요. 정말 죄송해요, 낯선 분.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -208,7 +208,7 @@
   },
   "Undersupply#020": {
    "src": "I beg your pardon for it. I cannot spare the hospitality. Even my gardens I've had to abandon... My great-grandmother's flowers have wilted.",
-   "dst": "",
+   "dst": "너그러이 봐 주세요. 대접할 여유가 없네요. 정원까지 버려둘 수밖에 없었어요... 증조할머니의 꽃들도 다 시들었죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -218,7 +218,7 @@
   },
   "Undersupply#021": {
    "src": "My son had the idea to press the flowers so they would not be gone forever...But as it is, the risk of losing the rest of my family for the drought... I can't bear it!",
-   "dst": "",
+   "dst": "아들이 꽃을 눌러 말려 두자고 했어요, 영영 사라지지 않게요...하지만 이대로면 가뭄에 남은 가족까지 잃을 수도 있어요... 견딜 수 없어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -228,7 +228,7 @@
   },
   "Undersupply#022": {
    "src": "...it may be rude to ask, but...could you ask the nobles of the manor, perhaps? To spare a drop or two extra? I'd be forever indebted to you...",
-   "dst": "",
+   "dst": "...실례인 줄 알지만...혹시 저택의 귀족들에게 부탁해 주시겠어요? 한두 방울만 더 내달라고요? 평생 은혜를 잊지 않을게요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -238,7 +238,7 @@
   },
   "Undersupply#023": {
    "src": "Whoa. That is positively outlandish dress. You...couldn't be a crown guard, can you be? That's simply so far out of uniform...so are you from the {p}, maybe?",
-   "dst": "",
+   "dst": "와. 참으로 별난 옷차림이군요. 설마...왕실 근위병은 아니시죠? 제복과는 너무 동떨어졌는데...그럼 혹시 {p}에서 오셨나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -248,7 +248,7 @@
   },
   "Undersupply#024": {
    "src": "But then, why would you be here? The Festival...isn't that soon over in {p}? Why come all the way over here? I've hardly anything to trade, even.",
-   "dst": "",
+   "dst": "그런데 왜 여기까지 오셨나요? 축제...곧 {p}에서 열리지 않나요? 굳이 이 먼 데까지? 저는 팔 물건조차 거의 없는데요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -258,7 +258,7 @@
   },
   "Undersupply#025": {
    "src": "It's the dry season, you know. End of the month, I'm sure you- ehm, wait. Perhaps, since you live atop the dam, that isn't the case? Oh, what I would do for that luxury!",
-   "dst": "",
+   "dst": "지금은 건기잖아요. 월말이라 아마 당신도- 어, 잠깐. 댐 위쪽에 사신다면 사정이 다르려나요? 아, 그런 호사라면 무엇이든 하겠어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -268,7 +268,7 @@
   },
   "Undersupply#026": {
    "src": "Well, to the point- I've nothing to sell but dry herbs. A sad state for our village, when the apothecary cannot even make medicine, but every bit of water has to go towards necessities.",
-   "dst": "",
+   "dst": "본론을 말하자면- 제가 팔 수 있는 건 마른 약초뿐이에요. 약재상이 약도 못 만드는 마을이라니 서글프죠. 물 한 방울까지 생필품에 써야 하니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -278,7 +278,7 @@
   },
   "Undersupply#027": {
    "src": "We've been receiving less and less. Some generous folks have been sharing, but that does only so far. A glass here and there cannot revitalize my poor garden.",
-   "dst": "",
+   "dst": "받는 양이 갈수록 줄고 있어요. 인심 좋은 분들이 나눠 주긴 하지만 거기까지죠. 여기 한 잔 저기 한 잔으로는 제 가련한 정원을 되살릴 수 없어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -288,7 +288,7 @@
   },
   "Undersupply#028": {
    "src": "If you want to find something more suited to the luxuries you might be used to, perhaps visit the manor over the hill? They do ration out the water to us, as well.",
-   "dst": "",
+   "dst": "익숙하신 호사에 더 어울리는 물건을 찾으신다면, 언덕 너머 저택에 가 보시는 건 어때요? 우리에게 물을 배급하는 것도 그분들이고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -298,7 +298,7 @@
   },
   "Undersupply#029": {
    "src": "...far be it from me to make demands of a visitor, but... Should you visit, could you put in a word with them? A kindness begets a kindness, after all.",
-   "dst": "",
+   "dst": "...손님에게 뭘 요구할 처지는 아니지만... 가시게 되면 저희 얘기 좀 전해 주시겠어요? 친절은 친절을 부르는 법이니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -308,7 +308,7 @@
   },
   "Undersupply#030": {
    "src": "I've lived here all my life, I have. And I've always been learned to make everything stretch, to be diligent and frugal, but with things as they are, those skills fail me.",
-   "dst": "",
+   "dst": "저는 평생 여기서 살았어요. 뭐든 아껴 늘려 쓰고 부지런하고 검소하라 배웠죠. 그런데 사정이 이러니 그 재주도 소용이 없네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -318,7 +318,7 @@
   },
   "Undersupply#031": {
    "src": "People could fall ill without my services, could die, and I would hate to see our families broken apart, but I may have no choice but to leave if this keeps up.",
-   "dst": "",
+   "dst": "제가 없으면 사람들이 병들고 죽을 수도 있어요. 가족이 흩어지는 건 정말 보고 싶지 않지만, 이대로라면 떠날 수밖에 없을지도요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -328,7 +328,7 @@
   },
   "Undersupply#032": {
    "src": "Oh, but I'm sure a sightseer like yourself doesn't want to hear the qualms of a man such as myself. Do enjoy the sights of our humble forest, would you?",
-   "dst": "",
+   "dst": "아, 관광객께서 저 같은 사람의 푸념을 듣고 싶진 않으시겠죠. 저희 소박한 숲의 경치나 즐기고 가세요, 네?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -338,7 +338,7 @@
   },
   "Undersupply#033": {
    "src": "Oho, now that's some dress I've not seen in many a moon! You're one of those {p} folk, aren't ya? Quite some luxury ya must've lived with.",
-   "dst": "",
+   "dst": "오호, 그런 옷차림은 정말 오랜만에 보는구먼! {p} 사람이지, 안 그런가? 꽤나 호화롭게 살았겠구먼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -348,7 +348,7 @@
   },
   "Undersupply#034": {
    "src": "'s a bit more humble down here in the shadow of the dam. Surprised someone like you would take the trip, but it ain't a complaint. Getting about to see the world is a fine endeavor!",
-   "dst": "",
+   "dst": "여기 댐 그늘 아래는 좀 더 소박하다네. 자네 같은 사람이 여기까지 올 줄은 몰랐지만, 불평은 아닐세. 세상 구경 다니는 건 훌륭한 일이지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -358,7 +358,7 @@
   },
   "Undersupply#035": {
    "src": "Unfortunately, the bar here's dry. Sure, I got alcohol, but you drink that, and you'll be passing more water than ya took in. Dries you right out, and right now we haven't got any water to spare. Dangerous, y'know?",
-   "dst": "",
+   "dst": "안타깝게도 여긴 술집인데 물이 말랐네. 술이야 있지만, 그걸 마시면 들어간 것보다 더 많은 물이 빠져나가지. 사람을 바짝 말려 버린다네. 지금은 남는 물도 없고. 위험하지 않겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -368,7 +368,7 @@
   },
   "Undersupply#036": {
    "src": "With the manor over the hill there barely letting out water for us anymore, it's all getting so much tougher. Kills me to see the children struggling like this...",
-   "dst": "",
+   "dst": "언덕 너머 저택이 이제 물을 거의 안 내주니 살기가 훨씬 팍팍해졌네. 아이들이 저렇게 고생하는 걸 보면 속이 다 타는구먼...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -378,7 +378,7 @@
   },
   "Undersupply#037": {
    "src": "Oh, my! Who are you? In such fantastical equipment! Certainly not a guard- I've never seen anything like it! Oh me, oh my...",
-   "dst": "",
+   "dst": "어머나! 누구세요? 그렇게 환상적인 장비를 걸치고! 경비병은 분명 아니고- 저런 건 처음 봐요! 어머, 세상에...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -388,7 +388,7 @@
   },
   "Undersupply#038": {
    "src": "Unless... Are you, perhaps...I have heard whispers on the wind of a new Sovereign? I have seen our Sovereign dress rather differently, so maybe-",
-   "dst": "",
+   "dst": "설마... 혹시 당신이...새 군주가 나셨다는 소문을 바람결에 들었거든요. 우리 군주님 차림은 좀 달랐으니, 어쩌면-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -398,7 +398,7 @@
   },
   "Undersupply#039": {
    "src": "No? You aren't? Hm! Well, be that as it may, I do wish I could welcome you more hospitably, stranger, but we are in the lean time of the month- the leanest I have seen.",
-   "dst": "",
+   "dst": "아니라고요? 흠! 그렇다 해도 낯선 분을 더 잘 대접하고 싶지만, 지금은 이 달에서 가장 궁핍한 때예요- 제가 본 중에 가장 심하죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -408,7 +408,7 @@
   },
   "Undersupply#040": {
    "src": "So...as much as I would like to welcome you with a meal and a hot cup of tea... I simply can't. I am just so sorry for this, stranger- there is barely enough water for my own family to drink.",
-   "dst": "",
+   "dst": "그래서...식사와 따뜻한 차로 맞이하고 싶지만... 그럴 수가 없어요. 정말 죄송해요, 낯선 분- 식구들이 마실 물조차 빠듯하거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -418,7 +418,7 @@
   },
   "Undersupply#041": {
    "src": "Oh, if only those nobles could spare more for us... Perhaps I could speak with them- but then, who would watch over my children here?",
-   "dst": "",
+   "dst": "아, 그 귀족들이 조금만 더 나눠 준다면... 제가 직접 말해 볼까도 싶지만- 그러면 여기 아이들은 누가 보나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -428,7 +428,7 @@
   },
   "Undersupply#042": {
    "src": "Whoa. That is positively outlandish dress. You...couldn't be a crown guard, can you be? That's simply so far out of uniform...so are you from the {p}, maybe?",
-   "dst": "",
+   "dst": "와. 참으로 별난 옷차림이군요. 설마...왕실 근위병은 아니시죠? 제복과는 너무 동떨어졌는데...그럼 혹시 {p}에서 오셨나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -438,7 +438,7 @@
   },
   "Undersupply#043": {
    "src": "But then, why would you be here? The Festival...isn't that soon over in {p}? Why come all the way over here? I've hardly anything to trade, even.",
-   "dst": "",
+   "dst": "그런데 왜 여기까지 오셨나요? 축제...곧 {p}에서 열리지 않나요? 굳이 이 먼 데까지? 저는 팔 물건조차 거의 없는데요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -448,7 +448,7 @@
   },
   "Undersupply#044": {
    "src": "It's the dry season, you know. End of the month, I'm sure you- ehm, wait. Perhaps, since you live atop the dam, that isn't the case? Oh, what I would do for that luxury!",
-   "dst": "",
+   "dst": "지금은 건기잖아요. 월말이라 아마 당신도- 어, 잠깐. 댐 위쪽에 사신다면 사정이 다르려나요? 아, 그런 호사라면 무엇이든 하겠어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -458,7 +458,7 @@
   },
   "Undersupply#045": {
    "src": "Either way... It is difficult here. Perhaps I ought petition the Sovereeign to increase the rations. I'm sure he would listen, given how much he has helped in the past twenty years, or so.",
-   "dst": "",
+   "dst": "어찌 됐든... 여긴 살기 힘들어요. 배급을 늘려 달라고 군주께 청원해야 할지도 모르겠네요. 지난 이십 년쯤 그렇게 많이 도와주셨으니 분명 들어주실 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -468,7 +468,7 @@
   },
   "Undersupply#046": {
    "src": "Hrm. Can't even wash my clothes with the streams this claggy and slow... What a dilemma.",
-   "dst": "",
+   "dst": "흠. 개울이 이렇게 걸쭉하고 느려서야 빨래도 못 하겠군... 참 난감하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -478,7 +478,7 @@
   },
   "Undersupply#047": {
    "src": "I'm telling you, the guards in the dam are putting something in the water to turn the frogs gigantic!",
-   "dst": "",
+   "dst": "내 말이 맞다니까, 댐의 경비병들이 물에 뭘 타서 개구리를 거대하게 만든다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -488,7 +488,7 @@
   },
   "Undersupply#048": {
    "src": "I've seen one with my own eyes, wandering about! Soon enough they'll send them to eat us!",
-   "dst": "",
+   "dst": "내 두 눈으로 돌아다니는 걸 봤어! 머잖아 우릴 잡아먹으라고 풀어놓을 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -498,7 +498,7 @@
   },
   "Undersupply#049": {
    "src": "What? Selling the house? What do you- Oh, that!",
-   "dst": "",
+   "dst": "네? 집을 판다고요? 무슨 소리- 아, 그거요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -508,7 +508,7 @@
   },
   "Undersupply#050": {
    "src": "No, no, a salesman sold me a 'For Sale' sign, in case I wanted to sell something. I wasn't sure where else to put it, is all.",
-   "dst": "",
+   "dst": "아니에요, 어떤 외판원이 뭔가 팔 때 쓰라고 '판매 중' 팻말을 팔았거든요. 달리 둘 데가 없어서 거기 놔둔 것뿐이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -518,7 +518,7 @@
   },
   "Undersupply#051": {
    "src": "It's dry enough here that I have considered it, though...",
-   "dst": "",
+   "dst": "하긴 여기가 하도 메말라서 생각은 해 봤어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -528,7 +528,7 @@
   },
   "Undersupply#052": {
    "src": "Make your way to the manor and question them. [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "저택으로 가서 그들에게 따져 물으세요. [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Undersupply",
@@ -538,7 +538,7 @@
   },
   "Undersupply#053": {
    "src": "Welcome to the manor. Have the townspeople sent you?",
-   "dst": "",
+   "dst": "저택에 오신 것을 환영합니다. 마을 사람들이 보냈습니까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -548,7 +548,7 @@
   },
   "Undersupply#054": {
    "src": "As I had expected. In that case, let me walk you to the masters.",
-   "dst": "",
+   "dst": "예상대로군요. 그러면 두 주인께 안내하겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -558,7 +558,7 @@
   },
   "Undersupply#055": {
    "src": "Still- allow me to lead you to the masters.",
-   "dst": "",
+   "dst": "그래도- 두 주인께 안내해 드리겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -568,7 +568,7 @@
   },
   "Undersupply#056": {
    "src": "Ah, haha! Hayn, who might this be? Ostentatious dress, I must declare! Is this a tourist come to tour the manor, mayhaps?",
-   "dst": "",
+   "dst": "아, 하하! Hayn, 이분은 누구신가? 참으로 화려한 옷차림이로군! 혹시 저택을 구경하러 온 관광객인가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -578,7 +578,7 @@
   },
   "Undersupply#057": {
    "src": "Ohh... I see! The locals sent you. Then, allow me to enlighten you on the matter. You see, the Crown has entrusted us to manage the water supplied from the dam.",
-   "dst": "",
+   "dst": "오오... 그렇군! 마을 사람들이 보냈구려. 그렇다면 이 일을 설명해 드리지. 왕실이 댐에서 내려오는 물의 관리를 우리에게 맡겼다네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -588,7 +588,7 @@
   },
   "Undersupply#058": {
    "src": "All potable water in the forest comes through us- it is our responsibility to ensure the rations we are given are spread to where it is most needed.",
-   "dst": "",
+   "dst": "숲의 모든 식수는 우리를 거쳐 가지- 주어진 배급을 가장 필요한 곳으로 돌리는 것이 우리의 책임일세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -598,7 +598,7 @@
   },
   "Undersupply#059": {
    "src": "With the Crown Festival in {p} being about this time, the water must go there! Additionally, with all the new construction recently, there have been more places to ration out to.",
-   "dst": "",
+   "dst": "이맘때 {p}에서 왕관 축제가 열리니 물은 그리로 가야 하네! 게다가 요즘 새로 짓는 곳이 많아 배급할 데도 늘었지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -608,7 +608,7 @@
   },
   "Undersupply#060": {
    "src": "We, too, have taken a smaller share than normal. The village down there, unfortunately, has been the lowest priority for some months now. I have petitioned the Sovereign for more water...",
-   "dst": "",
+   "dst": "우리도 평소보다 적은 몫을 받고 있다네. 안타깝게도 저 아래 마을은 몇 달째 우선순위가 가장 낮았지. 물을 더 달라고 군주께 청원은 넣어 두었네만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -618,7 +618,7 @@
   },
   "Undersupply#061": {
    "src": "...but that will not solve the problem here and now. Neither would a gulp here, or a bottle there. It does break my heart, it truly does! But we must take our responsibilities seriously.",
-   "dst": "",
+   "dst": "...그것으로 지금 당장의 문제가 풀리진 않아. 여기 한 모금, 저기 한 병도 마찬가지고. 가슴이 아프다네, 정말이야! 하지만 우리는 책임을 엄중히 여겨야 하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -628,7 +628,7 @@
   },
   "Undersupply#062": {
    "src": "...Hm. Hm, hm, hm... But perhaps...what if...",
-   "dst": "",
+   "dst": "...흠. 흠, 흠, 흠... 하지만 혹시...만약에...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -638,7 +638,7 @@
   },
   "Undersupply#063": {
    "src": "Oh, do speak up! I hear you turning over an idea in your head, good Sir!",
-   "dst": "",
+   "dst": "오, 말해 보시게! 머릿속에서 생각을 굴리는 소리가 들리는군, 경!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -648,7 +648,7 @@
   },
   "Undersupply#064": {
    "src": "Well, perhaps it is a foolish thought. But, if they were to tinker with the dam's systems and let out more water for all of us earlier than the next month? Tide us over 'til the Nasin gets his head on straight?",
-   "dst": "",
+   "dst": "어리석은 생각일지도 모릅니다. 하지만 누군가 댐의 장치를 만져서 다음 달보다 일찍 모두에게 물을 더 내보낸다면요? Nasin 가문 사람이 정신을 차릴 때까지 버틸 수 있지 않겠습니까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -658,7 +658,7 @@
   },
   "Undersupply#065": {
    "src": "Hm! Foolish indeed! Quite unlike you, I must say- only us and the highest ranks of the military have access to the dam! Why, we would be suspects number one, two, and three!",
-   "dst": "",
+   "dst": "흠! 과연 어리석군! 자네답지 않은 말이야- 댐에 들어갈 수 있는 건 우리와 군 최고위층뿐일세! 그러면 우리가 용의자 일 번, 이 번, 삼 번이 아닌가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -668,7 +668,7 @@
   },
   "Undersupply#066": {
    "src": "And what if we were to...have some scofflaw break into the mansion, and lift the key, good Master? Why, we would be helpless bystanders, free of responsibility and suspicion.",
-   "dst": "",
+   "dst": "그러면 어떤...무법자가 저택에 침입해 열쇠를 훔쳐 간다면 어떻겠습니까, 주인님? 우리는 그저 무력한 구경꾼이 되어 책임도 혐의도 없게 되지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -678,7 +678,7 @@
   },
   "Undersupply#067": {
    "src": "...you mean, to have this traveler pose as a thief, and steal the key to the dam?",
-   "dst": "",
+   "dst": "...그러니까 이 여행자를 도둑으로 꾸며 댐 열쇠를 훔치게 하자는 말인가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -688,7 +688,7 @@
   },
   "Undersupply#068": {
    "src": "Hahaha!! There is wisdom I have known from you for so long! What a magnificient idea! It would not be without risk for you, traveler, but we all stand to gain!",
-   "dst": "",
+   "dst": "하하하!! 내가 오래도록 알아 온 그 지혜로구먼! 참으로 훌륭한 생각이야! 여행자여, 자네에게 위험이 없진 않겠지만 우리 모두가 득을 볼 걸세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -698,7 +698,7 @@
   },
   "Undersupply#069": {
    "src": "The dam is guarded heavily, and assuredly the Crown's military would pursue you...but if you were to succeed, we could have more than enough water 'til the Sovereign receives our petition!",
-   "dst": "",
+   "dst": "댐은 경비가 삼엄하고 왕실 군대가 자네를 쫓을 것이 분명하네...하지만 성공한다면 군주께서 청원을 받으실 때까지 물이 넘치도록 남을 걸세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -708,7 +708,7 @@
   },
   "Undersupply#070": {
    "src": "That being said, should you take it upon yourself to do this, we must pretend to have never met! To keep suspicion away from us, you know. Still, our gratitude will abound!",
-   "dst": "",
+   "dst": "다만 자네가 이 일을 맡는다면, 우리는 만난 적도 없는 척해야 하네! 혐의를 피하려면 말이지. 그래도 우리의 감사는 넘칠 걸세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -718,7 +718,7 @@
   },
   "Undersupply#071": {
    "src": "Hayn! Please bring the stranger to the rose, under which we have hidden the key. And good tidings to you!",
-   "dst": "",
+   "dst": "Hayn! 이 손님을 열쇠를 숨겨 둔 장미로 안내하게. 그럼 행운을 비네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -728,7 +728,7 @@
   },
   "Undersupply#072": {
    "src": "Take the key to the dam from under the rose. [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "장미 아래에서 댐 열쇠를 가져오세요. [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Undersupply",
@@ -738,7 +738,7 @@
   },
   "Undersupply#073": {
    "src": "Now, away with you, 'scofflaw!' Ah, haha! I shall be looking forward to sharing a veritable tidal wave of water with the forest!",
-   "dst": "",
+   "dst": "자, 어서 가게, '무법자'여! 아, 하하! 숲과 함께 진짜 해일 같은 물을 나눌 날이 기다려지는군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -748,7 +748,7 @@
   },
   "Undersupply#074": {
    "src": "We shall call for the guards only after you are well out of sight. Be sure to leave a scene- it may delay them for longer.",
-   "dst": "",
+   "dst": "당신이 충분히 멀어진 뒤에야 경비병을 부르겠습니다. 현장은 반드시 어지럽혀 두십시오- 그편이 더 오래 시간을 벌어 줄 겁니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -758,7 +758,7 @@
   },
   "Undersupply#075": {
    "src": "Do make a mess, please. The masters will want a convincing scene.",
-   "dst": "",
+   "dst": "부디 어질러 놓으십시오. 주인들께는 그럴듯한 현장이 필요합니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -768,7 +768,7 @@
   },
   "Undersupply#076": {
    "src": "If you've taken the key, take it to the entrance east of here.",
-   "dst": "",
+   "dst": "열쇠를 가지셨다면 여기서 동쪽 입구로 가십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -778,7 +778,7 @@
   },
   "Undersupply#077": {
    "src": "Enter the Fruma Dam and find a way to make the water flow. [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Fruma Dam에 들어가 물이 흐르게 할 방법을 찾으세요. [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Undersupply",
@@ -788,7 +788,7 @@
   },
   "Undersupply#078": {
    "src": "Hm... Then, once you have entered the dam, you should avoid returning here. I would hate to see you escape, but be caught returning to the scene of the crime.",
-   "dst": "",
+   "dst": "흠... 그럼 댐에 들어간 뒤로는 이곳에 돌아오지 마십시오. 잘 달아나고도 범행 현장에 돌아오다 붙잡히는 꼴은 보고 싶지 않군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -798,7 +798,7 @@
   },
   "Undersupply#079": {
    "src": "So this is the scene of the robbery, then. And you say they took the key to the dam?",
-   "dst": "",
+   "dst": "여기가 도난 현장이라는 거군. 그리고 댐 열쇠를 가져갔다고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -808,7 +808,7 @@
   },
   "Undersupply#080": {
    "src": "Yes sir. It is.",
-   "dst": "",
+   "dst": "그렇습니다. 맞습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -818,7 +818,7 @@
   },
   "Undersupply#081": {
    "src": "This room is too open to guard effectively. Reverse psychology doesn't work on thieves- they'll check the obvious spots to cover their bases.",
-   "dst": "",
+   "dst": "이 방은 너무 트여 있어 제대로 지킬 수 없다. 도둑에게 역심리 따위는 안 통해- 뻔한 자리부터 빠짐없이 뒤지거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -828,7 +828,7 @@
   },
   "Undersupply#082": {
    "src": "By this point...they likely will have gone into the dam. I'll have to mobilize the forces and deal with them.",
-   "dst": "",
+   "dst": "이쯤이면...이미 댐에 들어갔겠군. 병력을 동원해 처리해야겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -838,7 +838,7 @@
   },
   "Undersupply#083": {
    "src": "I'll be reporting this. You'll get a replacement key, but lose it again and you'll be relieved of your responsibilities. Consider this your one chance.",
-   "dst": "",
+   "dst": "이 건은 보고하겠다. 대체 열쇠를 받겠지만, 또 잃어버리면 직무에서 해임될 것이다. 이번이 마지막 기회라고 여겨라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -848,7 +848,7 @@
   },
   "Undersupply#084": {
    "src": "Time to clean...",
-   "dst": "",
+   "dst": "청소할 시간이군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -858,7 +858,7 @@
   },
   "Undersupply#085": {
    "src": "So this was your plan! Here to sabotage the game... trying to steal water for yourself? Or did you mean to bring destruction? Cause a flood?",
-   "dst": "",
+   "dst": "이게 네 계획이었군! 방해 공작을 하러 와서... 혼자 물을 훔치려 했나? 아니면 파괴가 목적이었나? 홍수를 일으키려고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -868,7 +868,7 @@
   },
   "Undersupply#086": {
    "src": "I'll not be letting you get away with such heinous crimes. Lay down your weapons!",
-   "dst": "",
+   "dst": "이런 흉악한 죄를 저지르고 빠져나가게 두지 않겠다. 무기를 버려라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -878,7 +878,7 @@
   },
   "Undersupply#087": {
    "src": "Return to the settlement and tell them about your success. [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "마을로 돌아가 성공했다고 알리세요. [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Undersupply",
@@ -888,7 +888,7 @@
   },
   "Undersupply#088": {
    "src": "The water seems to be flowing! Isn't it too early this month? I have to get back and tell the others.",
-   "dst": "",
+   "dst": "물이 흐르는 것 같은데! 이번 달은 너무 이르지 않나? 돌아가서 다들한테 알려야겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -898,7 +898,7 @@
   },
   "Undersupply#089": {
    "src": "Wonderful, wonderful! I've sent Hayn with your payment to the village. Now hurry, hurry, 'scofflaw!' You wouldn't want to be caught, after all that trouble!",
-   "dst": "",
+   "dst": "훌륭해, 훌륭해! 자네 보수는 Hayn 편에 마을로 보냈네. 자, 어서, 어서 가게, '무법자'여! 그 고생을 하고 잡히면 안 되지 않겠나!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -908,7 +908,7 @@
   },
   "Undersupply#090": {
    "src": "Hm! You'd best be going, else the guards may catch you. Our butler has gone away to the village with a dividend of payment. Do hurry there, would you?",
-   "dst": "",
+   "dst": "흠! 어서 가시는 게 좋겠습니다, 안 그러면 경비병에게 잡힐 테니. 집사가 보수를 나눠 들고 마을로 갔습니다. 서둘러 가 보시지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -918,7 +918,7 @@
   },
   "Undersupply#091": {
    "src": "My... My land! The well!! Everyone, the well is filling!! My children- They'll have their water!!",
-   "dst": "",
+   "dst": "세상에... 맙소사! 우물이!! 여러분, 우물이 차오르고 있어요!! 우리 아이들- 이제 물을 마실 수 있어요!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -928,7 +928,7 @@
   },
   "Undersupply#092": {
    "src": "The river flows, as well! It certainly is not yet the time of the month for another ration... But I will not complain of good fortune!",
-   "dst": "",
+   "dst": "강물도 흐르고 있어요! 다음 배급 때가 되려면 아직 멀었는데... 그래도 행운을 두고 불평하진 않겠어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -938,7 +938,7 @@
   },
   "Undersupply#093": {
    "src": "Seems like the stranger with that spark in their eyes did it! Have to give 'em that discount I mentioned. I'll get to open up the bar proper again! What a fine day this is.",
-   "dst": "",
+   "dst": "눈에 불꽃이 있던 그 낯선 양반이 해낸 모양이구먼! 말했던 할인은 해 줘야지. 이제 술집을 제대로 다시 열 수 있겠어! 참 좋은 날이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -948,7 +948,7 @@
   },
   "Undersupply#094": {
    "src": "My... My land! The well!! Everyone, the well is filling!! Was this... That strange fellow in the Sovereign-like dress... Did they...?! They must have!! My children- They'll have their water!!",
-   "dst": "",
+   "dst": "세상에... 맙소사! 우물이!! 여러분, 우물이 차오르고 있어요!! 혹시... 군주 같은 차림의 그 낯선 분이... 설마?! 분명 그분일 거예요!! 우리 아이들- 이제 물을 마셔요!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -958,7 +958,7 @@
   },
   "Undersupply#095": {
    "src": "The river flows, as well! It certainly is not yet the time of the month for another ration... But I will not complain of good fortune!",
-   "dst": "",
+   "dst": "강물도 흐르고 있어요! 다음 배급 때가 되려면 아직 멀었는데... 그래도 행운을 두고 불평하진 않겠어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -968,7 +968,7 @@
   },
   "Undersupply#096": {
    "src": "I'll get to open up the bar proper again! What a fine day this is. Say, stranger...",
-   "dst": "",
+   "dst": "이제 술집을 제대로 다시 열겠구먼! 참 좋은 날이야. 이보게, 낯선 양반...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -978,7 +978,7 @@
   },
   "Undersupply#097": {
    "src": "My... My land! The well!! Everyone, the well is filling!! My children- They'll have their water!!",
-   "dst": "",
+   "dst": "세상에... 맙소사! 우물이!! 여러분, 우물이 차오르고 있어요!! 우리 아이들- 이제 물을 마실 수 있어요!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -988,7 +988,7 @@
   },
   "Undersupply#098": {
    "src": "The river flows, as well! It certainly is not yet the time of the month for another ration... Oh! It must have been that tourist! Perhaps they asked the manor to release some extra?",
-   "dst": "",
+   "dst": "강물도 흐르고 있어요! 다음 배급 때가 되려면 아직 멀었는데... 아! 분명 그 관광객이었을 거예요! 저택에 물을 더 내달라고 부탁했나 봐요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -998,7 +998,7 @@
   },
   "Undersupply#099": {
    "src": "I'll get to open up the bar proper again! What a fine day this is. Say, stranger...",
-   "dst": "",
+   "dst": "이제 술집을 제대로 다시 열겠구먼! 참 좋은 날이야. 이보게, 낯선 양반...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1008,7 +1008,7 @@
   },
   "Undersupply#100": {
    "src": "So then! I have to figure this was you! Got the manor to let out a little extra, did you?",
-   "dst": "",
+   "dst": "자 그럼! 이건 자네가 한 일이겠구먼! 저택이 물을 좀 더 내놓게 만든 거지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1018,7 +1018,7 @@
   },
   "Undersupply#101": {
    "src": "They have risked life and limb to enter the dam and allow the water to flow freely. Show your thanks, and do not report them.",
-   "dst": "",
+   "dst": "이분은 목숨을 걸고 댐에 들어가 물이 자유로이 흐르게 했습니다. 감사를 표하시고, 신고하지는 마십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1028,7 +1028,7 @@
   },
   "Undersupply#102": {
    "src": "The masters have sent me to hand out compensation for your dangerous actions.",
-   "dst": "",
+   "dst": "주인들께서 위험한 일을 하신 보상을 전하라고 저를 보내셨습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1038,7 +1038,7 @@
   },
   "Undersupply#103": {
    "src": "Wait, the ro- Why did you jump off th- The masters, wh- Are you from the manor?! Why did-",
-   "dst": "",
+   "dst": "잠깐, 지붕- 왜 거기서 뛰어내- 주인들이라니, 무- 저택에서 오셨어요?! 어째서-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1048,7 +1048,7 @@
   },
   "Undersupply#104": {
    "src": "There was no more water for the masters to give. They have fixed the problem for all of us.",
-   "dst": "",
+   "dst": "주인들께 더 내줄 물이 없었습니다. 이분이 우리 모두의 문제를 해결하셨습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1058,7 +1058,7 @@
   },
   "Undersupply#105": {
    "src": "Even you were short? Gracious. Still...our gardens may now grow, our children may now drink... We can only give you our utmost thanks, stranger!",
-   "dst": "",
+   "dst": "그쪽도 모자랐다고요? 저런. 그래도...이제 정원이 자라고 아이들이 물을 마실 수 있겠네요... 낯선 분, 그저 깊이 감사드릴 뿐이에요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1068,7 +1068,7 @@
   },
   "Undersupply#106": {
    "src": "Thank ye traveler. I gotta get myself back to the bar. See ye around and stay safe!",
-   "dst": "",
+   "dst": "고맙네, 여행자. 난 술집으로 돌아가야겠어. 또 보세, 몸조심하고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1078,7 +1078,7 @@
   },
   "Undersupply#107": {
    "src": "Did the butler just jump off the roof!? W-whatever, I have to get home! Thank you!",
-   "dst": "",
+   "dst": "방금 집사가 지붕에서 뛰어내린 건가요!? 어, 아무튼 저는 집에 가야 해요! 고마워요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1088,7 +1088,7 @@
   },
   "Undersupply#108": {
    "src": "The water helps out the manor too, eh? It can't be helped, atleast they deliver it around the whole forest.",
-   "dst": "",
+   "dst": "그 물이 저택에도 도움이 되겠죠? 어쩔 수 없죠, 적어도 숲 전체에 나눠 주기는 하니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1098,7 +1098,7 @@
   },
   "Undersupply#109": {
    "src": "They're pretty smart businessmen, I can understand the hustle. Maybe I'll ask them for advice some time soon!",
-   "dst": "",
+   "dst": "꽤 영리한 장사꾼들이에요, 그 수완은 저도 이해해요. 조만간 조언이라도 구해 볼까 봐요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1108,7 +1108,7 @@
   },
   "Undersupply#110": {
    "src": "I must be going now. The guards won't forgive you for slaying Balsura, but hopefully you can keep from being caught. Good luck.",
-   "dst": "",
+   "dst": "이만 가 봐야겠습니다. Balsura를 죽인 일을 경비대가 용서하진 않겠지만, 부디 붙잡히지 않으시길. 행운을 빕니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1118,7 +1118,7 @@
   },
   "Undersupply#111": {
    "src": "Hey traveler, remember my promise? Discounted water for life! What do ye say? Want some?",
-   "dst": "",
+   "dst": "이보게 여행자, 내 약속 기억하나? 평생 물 할인! 어떤가? 좀 마시려나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1128,7 +1128,7 @@
   },
   "Undersupply#112": {
    "src": "It'll cost ye {~} emeralds.",
-   "dst": "",
+   "dst": "에메랄드 {~}개면 되네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1138,7 +1138,7 @@
   },
   "Undersupply#113": {
    "src": "Pleasure doing business with ye! Jokes aside, thanks for all you've done.",
-   "dst": "",
+   "dst": "거래해서 즐거웠네! 농담은 접고, 자네가 해 준 모든 일에 고맙네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1148,7 +1148,7 @@
   },
   "Undersupply#114": {
    "src": "Guh, you must be pulling my leg...! ...Thanks for all you've done, traveler.",
-   "dst": "",
+   "dst": "허, 날 놀리는 게로군...! ...해 준 모든 일에 고맙네, 여행자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1158,7 +1158,7 @@
   },
   "Undersupply#115": {
    "src": "Hey traveler, good work out there. Whenever the heat's off ye, come visit me!",
-   "dst": "",
+   "dst": "이보게 여행자, 바깥일 잘했네. 소동이 잦아들거든 언제든 찾아오게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1168,7 +1168,7 @@
   },
   "Undersupply#116": {
    "src": "You're still around, traveler! Stay safe, please! I don't know what I would do if you were caught!",
-   "dst": "",
+   "dst": "여행자님, 아직 여기 계셨군요! 부디 조심하세요! 붙잡히기라도 하면 어쩌나 싶어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1178,7 +1178,7 @@
   },
   "Undersupply#117": {
    "src": "Although, if you ever need some water, feel free to stop by!",
-   "dst": "",
+   "dst": "그래도 물이 필요하시면 언제든 들르세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1188,7 +1188,7 @@
   },
   "Undersupply#118": {
    "src": "The water helps out the manor too, eh? It can't be helped, atleast they deliver it around the whole forest.",
-   "dst": "",
+   "dst": "그 물이 저택에도 도움이 되겠죠? 어쩔 수 없죠, 적어도 숲 전체에 나눠 주기는 하니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1198,7 +1198,7 @@
   },
   "Undersupply#119": {
    "src": "They're pretty smart businessmen, I can understand the hustle. Maybe I'll ask them for advice some time soon!",
-   "dst": "",
+   "dst": "꽤 영리한 장사꾼들이에요, 그 수완은 저도 이해해요. 조만간 조언이라도 구해 볼까 봐요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1208,7 +1208,7 @@
   },
   "Undersupply#120": {
    "src": "Hrm. I got so used to the stream being slow that I lost my last robe to the water flow. What a dilemma.",
-   "dst": "",
+   "dst": "흠. 개울이 느린 데 익숙해진 탓에 마지막 남은 옷을 물살에 떠내려 보냈군. 참 난감하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1218,7 +1218,7 @@
   },
   "Undersupply#121": {
    "src": "I really ought to put away that 'For Sale' sign so no one else gets confused...",
-   "dst": "",
+   "dst": "저 '판매 중' 팻말은 치워야겠어요, 또 누가 헷갈리기 전에...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1228,7 +1228,7 @@
   },
   "Undersupply#122": {
    "src": "Fine work, indeed! I might welcome you with a cup of tea, but I cannot abide by 'scofflaws' such as yourself- wink, wink! Now away with you! Ah, haha!",
-   "dst": "",
+   "dst": "참으로 훌륭한 솜씨야! 차라도 대접하고 싶지만 자네 같은 '무법자'를 두고 볼 순 없지- 윙크, 윙크! 자, 어서 가게! 아, 하하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1238,7 +1238,7 @@
   },
   "Undersupply#123": {
    "src": "Hm. Hm, hm, hm... I should keep better track of the ledgers. If I had noticed earlier, petitioned earlier... But of course, a Nasin wouldn't have thought ahead... Hm...",
-   "dst": "",
+   "dst": "흠. 흠, 흠, 흠... 장부를 더 꼼꼼히 챙겼어야 했어. 더 일찍 알아채고 더 일찍 청원했더라면... 하긴, Nasin 가문 사람이 앞일을 내다볼 리가... 흠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
@@ -1248,7 +1248,7 @@
   },
   "Undersupply#124": {
    "src": "Stay out of trouble from now on. The beginning of strife is as when one lets out water.",
-   "dst": "",
+   "dst": "앞으로는 말썽을 피하십시오. 다툼의 시작은 둑을 터뜨리는 것과 같습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Undersupply",
