@@ -42,6 +42,7 @@ public final class WynntilsTextTest {
         markers(config, store);
         heldItem(config, store);
         bossBar(config, store);
+        entityName(config, store);
 
         System.out.println(failures == 0 ? "\n就地取代：全部通過"
                 : "\n就地取代：" + failures + " 項失敗");
@@ -189,6 +190,23 @@ public final class WynntilsTextTest {
                 == WynntilsText.bossBar(bar, config, store));
         config.toggleNametags();
         check("名牌翻譯關掉時 boss bar 原樣回去", WynntilsText.bossBar(bar, config, store) == bar);
+        config.toggleNametags();
+    }
+
+    /** 盔甲座疊出來的浮空字：討伐戰祭壇上方那種。 */
+    private static void entityName(CollectorConfig config, TranslationStore store) {
+        net.minecraft.network.chat.Component altar = net.minecraft.network.chat.Component
+                .literal("Corrupted Altar").withStyle(net.minecraft.ChatFormatting.LIGHT_PURPLE);
+        net.minecraft.network.chat.Component shown = WynntilsText.entityName(altar, config, store);
+        check("浮空字翻得出來（實際 " + shown.getString() + "）",
+              shown.getString().equals("腐敗祭壇"));
+        check("顏色照抄", shown.getStyle().getColor() != null
+                || shown.getSiblings().stream().anyMatch(s -> s.getStyle().getColor() != null));
+        net.minecraft.network.chat.Component odd =
+                net.minecraft.network.chat.Component.literal("Qwertyuiop Zxcv");
+        check("翻不出來的原樣回去", WynntilsText.entityName(odd, config, store) == odd);
+        config.toggleNametags();
+        check("名牌翻譯關掉時原樣回去", WynntilsText.entityName(altar, config, store) == altar);
         config.toggleNametags();
     }
 

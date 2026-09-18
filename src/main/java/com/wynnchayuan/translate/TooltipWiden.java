@@ -43,6 +43,9 @@ import java.util.function.ToIntFunction;
  * <h2>什麼時候什麼都不做</h2>
  * 每一行都放得進 W（中文、日文就是這樣）時<b>原封不動回傳</b>，連物件都是同一個。
  * 這一步是給「寬的語言」的，不能讓短的語言多出任何一個像素的差別。
+ *
+ * <p>唯一的例外是框整個縮窄了：沒有欄位行頂著外框（aspect 那種全是敘述的），
+ * 最寬的譯文行比 W 窄，置中的行就照縮窄後的寬度重新置中。
  */
 public final class TooltipWiden {
 
@@ -160,7 +163,41 @@ public final class TooltipWiden {
         }
 
         if (!columnsOver && !centresOver) {
-            return translated;                 // 每一行都放得下：原封不動
+            // 每一行都放得下。但沒有欄位行撐住外框時（aspect 那種全是敘述的
+            // tooltip），框會縮成譯文的寬度，置中的行卻還照英文的寬度置中——
+            // 看起來整行往右偏。照縮完的寬度重新置中。
+            int box = 0;
+            boolean any = false;
+            for (int i = 0; i < n; i++) {
+                box = Math.max(box, centre[i] ? content[i] : madeW[i]);
+                any |= centre[i];
+            }
+            if (!any || box >= frame - EDGE_TOLERANCE) {
+                return translated;             // 框沒有縮：原封不動
+            }
+            List<Component> out = null;
+            StringBuilder log = new StringBuilder();
+            log.append(String.format("  原文最寬 %d  譯文縮到 %d%n", frame, box));
+            for (int i = 0; i < n; i++) {
+                if (!centre[i]) {
+                    continue;
+                }
+                int newLead = Math.max(0, (box - content[i]) / 2);
+                if (Math.abs(newLead - lead[i]) <= 1) {
+                    continue;
+                }
+                if (out == null) {
+                    out = new ArrayList<>(translated);
+                }
+                out.set(i, withLead(rows.get(i), newLead));
+                log.append(String.format("  [%d] 置中 內容 %d  縮排 %d -> %d  %s%n",
+                        i, content[i], lead[i], newLead, text(rows.get(i))));
+            }
+            if (out == null) {
+                return translated;
+            }
+            LineDebug.pieces("縮窄 " + translated.get(0).getString(), log.toString());
+            return out;
         }
 
         int widened = Math.max(frame, Math.max(columnsNeed, centresNeed));
