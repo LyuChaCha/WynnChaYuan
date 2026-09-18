@@ -1,12 +1,122 @@
 {
  "_meta": {
   "quest": "Pirate's Trove",
-  "count": 16,
-  "translated": 16,
+  "count": 27,
+  "translated": 27,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Pirate's Trove#000": {
+   "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
+   "dst": "Pero basta de cortesías. Dime... ¿has oído la historia del gran pirata, el capitán Hastor? Surcó los mares hace mucho tiempo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#001": {
+   "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune someplace within the walls!",
+   "dst": "¡Cuentan que, cuando {p} fue reconstruida hace años, escondió su fortuna en algún lugar de las murallas!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#002": {
+   "src": "This first riddle goes like so: Toward the sunset, among northern flowers shaded by quartz.",
+   "dst": "El primer acertijo dice así: Hacia el ocaso, entre las flores del norte a la sombra del cuarzo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#003": {
+   "src": "How is your search going? I've written the first clue into your book. I've heard that the others are engraved on blocks of black stone; maybe you should look for those.",
+   "dst": "¿Qué tal va la búsqueda? He escrito la primera pista en tu libro. He oído que las demás están grabadas en bloques de piedra negra; quizá deberías buscarlos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#004": {
+   "src": "A message is carved into the pedestal: In a place of identity, above the leaves and between the glass",
+   "dst": "Hay un mensaje tallado en el pedestal: En un lugar de identidad, sobre las hojas y entre el cristal",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#005": {
+   "src": "Oh sorry, am I blocking the shelf? I'm doing some research concerning Siegfried. He plays quite an astounding role in the current history of Gavel.",
+   "dst": "Ay, perdona, ¿estoy tapando la estantería? Estoy investigando sobre Siegfried. Tiene un papel asombroso en la historia actual de Gavel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#006": {
+   "src": "I used to not believe in the stories of his heroic quests, however I can't deny the fact that he and his life are well documented.",
+   "dst": "Antes no creía en las historias de sus heroicas aventuras, pero no puedo negar que él y su vida están bien documentados.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#007": {
+   "src": "After all, he is still alive and writing new books about his adventures, such as this one about his journey to slay an entire pack of werewolves threatening the town of {p}.",
+   "dst": "Al fin y al cabo, sigue vivo y escribiendo libros sobre sus aventuras, como este sobre su viaje para acabar con una manada de hombres lobo que amenazaba el pueblo de {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#008": {
+   "src": "Oh would you look at that, that actually happened a week ago. He seems so selfless and brave, I can see why we tell our children about him.",
+   "dst": "Vaya, fíjate, eso pasó hace solo una semana. Parece tan generoso y valiente... Entiendo que les hablemos de él a nuestros hijos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#009": {
+   "src": "A message is carved into the obsidian: In an emerald fountain, surrounded by the wealth of the villagers",
+   "dst": "Hay un mensaje tallado en la obsidiana: En una fuente de esmeraldas, rodeado por la riqueza de los aldeanos",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#010": {
+   "src": "A message is carved into the obsidian: Beneath the cowl of an eastern titan, keeping watch over our heads",
+   "dst": "Hay un mensaje tallado en la obsidiana: Bajo la capucha de un titán del este, que vela sobre nuestras cabezas",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#011": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
    "dst": "Habla con Damiral, fuera de {p}, en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#001": {
+  "Pirate's Trove#012": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
    "dst": "¡Eh, aventurero! Bienvenido a la gran provincia de Gavel, hogar de los aldeanos y de este servidor. ¡Pronto entrarás en la gran ciudadela de {p}!",
    "role": "desc",
@@ -26,7 +136,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#002": {
+  "Pirate's Trove#013": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
    "dst": "Pero basta de cortesías. Dime... ¿has oído la historia del gran pirata, el capitán Hastor? Surcó los mares hace mucho tiempo.",
    "role": "desc",
@@ -36,7 +146,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#003": {
+  "Pirate's Trove#014": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
    "dst": "¡Cuentan que, cuando {p} fue reconstruida hace años, escondió su fortuna en algún punto de las murallas!",
    "role": "desc",
@@ -46,7 +156,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#004": {
+  "Pirate's Trove#015": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
    "dst": "Ya soy un marinero jubilado, pero no me vendrían mal unas esmeraldas de ese tesoro. Quizá, si te animas... ¿llegamos a un acuerdo?",
    "role": "desc",
@@ -56,7 +166,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#005": {
+  "Pirate's Trove#016": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
    "dst": "Tengo un acertijo, la primera de varias pistas que llevan al escondite de Hastor, pero no hay manera de resolverlo.",
    "role": "desc",
@@ -66,7 +176,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#006": {
+  "Pirate's Trove#017": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
    "dst": "Puede que tú sí puedas. ¡Si lo consigues, te juro que reparto el tesoro contigo!",
    "role": "desc",
@@ -76,7 +186,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#007": {
+  "Pirate's Trove#018": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
    "dst": "El primer acertijo dice así: “Hacia el ocaso, entre las flores del norte a la sombra del cuarzo”.",
    "role": "desc",
@@ -86,7 +196,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#008": {
+  "Pirate's Trove#019": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
    "dst": "¡Te deseo mucha suerte, aventurero! Recuerda: todo lo que necesitas para resolver las pistas está en algún lugar de {p}.",
    "role": "desc",
@@ -96,7 +206,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#009": {
+  "Pirate's Trove#020": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
    "dst": "Pista I: Hacia el ocaso, entre las flores del norte a la sombra del cuarzo",
    "role": "desc",
@@ -106,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#010": {
+  "Pirate's Trove#021": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
    "dst": "Pista II: En un lugar de identidad, sobre las hojas y entre el cristal",
    "role": "desc",
@@ -116,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#011": {
+  "Pirate's Trove#022": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
    "dst": "Pista III: En una fuente de esmeraldas, rodeado por la riqueza de los aldeanos",
    "role": "desc",
@@ -126,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#012": {
+  "Pirate's Trove#023": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
    "dst": "Pista IV: Bajo la capucha de un titán del este, que vela sobre nuestras cabezas",
    "role": "desc",
@@ -136,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#013": {
+  "Pirate's Trove#024": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
    "dst": "¡Ajá! ¡Venía a ver qué tal ibas y te vi saltar hasta aquí!",
    "role": "desc",
@@ -146,7 +256,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#014": {
+  "Pirate's Trove#025": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
    "dst": "Un trabajo magnífico, camarada. Aunque... ¿recuerdas nuestro trato?",
    "role": "desc",
@@ -156,7 +266,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#015": {
+  "Pirate's Trove#026": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
    "dst": "Tú encuentras el tesoro, yo te doy tu parte. ¡Cojo lo mío y me marcho!",
    "role": "desc",

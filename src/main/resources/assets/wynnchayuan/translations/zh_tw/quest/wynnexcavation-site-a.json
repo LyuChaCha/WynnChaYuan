@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site A",
-  "count": 28,
-  "translated": 28,
+  "count": 33,
+  "translated": 33,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site A#000": {
+   "src": "Questline Started: WynnExcavation",
+   "dst": "新任務線開始：WynnExcavation",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#001": {
+   "src": "Oh, Vade sent you?",
+   "dst": "喔，是 Vade 派你來的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#002": {
+   "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
+   "dst": "一塊石板完成了！拿回去給 Vade。喔對了，別偷看內容！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#003": {
+   "src": "A strange force pushes you back!",
+   "dst": "一股奇怪的力量把你推了回來！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#004": {
+   "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
+   "dst": "你怎麼還在這裡？快去把你的工作做完！內容都寫在你的任務書裡了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#005": {
    "src": "Speak to Excavator Vade at [{~}, {~}, -{~}]",
    "dst": "前往 [{~1}, {~2}, -{~3}] 與挖掘員 Vade 對話",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#001": {
+  "WynnExcavation Site A#006": {
    "src": "Oh, hey kid. Wanna make some money?",
    "dst": "喔，嘿，小鬼。想賺點錢嗎？",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#002": {
+  "WynnExcavation Site A#007": {
    "src": "I need you to translate this ancient text.",
    "dst": "我要你把這段古文拿去翻譯。",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#003": {
+  "WynnExcavation Site A#008": {
    "src": "Just run it down to the lab assistant, Tesha.",
    "dst": "把它送去給實驗室助理 Tesha 就行了。",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#004": {
+  "WynnExcavation Site A#009": {
    "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
    "dst": "我是可以自己跑一趟，可是我這麼重要的人怎麼能幹雜活！實驗室就在上面那頂帳篷裡，還有，你敢弄壞那份譯文試試看！",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#005": {
+  "WynnExcavation Site A#010": {
    "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
    "dst": "把那份古代文書帶到 [{~1}, {~2}, -{~3}] 帳篷區交給 Tesha",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#006": {
+  "WynnExcavation Site A#011": {
    "src": "Hello, welcome to WynnExcavation Labs!",
    "dst": "你好，歡迎來到 WynnExcavation 實驗室！",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#007": {
+  "WynnExcavation Site A#012": {
    "src": "Oh Vade sent you?",
    "dst": "哦，是 Vade 派你來的？",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#008": {
+  "WynnExcavation Site A#013": {
    "src": "Oh yes, the tablet I was waiting for!",
    "dst": "哦對，我等的就是這塊石板！",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#009": {
+  "WynnExcavation Site A#014": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#010": {
+  "WynnExcavation Site A#015": {
    "src": "Oh my! This is quite interesting..",
    "dst": "我的天！這可有意思了……",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#011": {
+  "WynnExcavation Site A#016": {
    "src": "Here, let me finish this up...",
    "dst": "來，讓我把它處理完……",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#012": {
+  "WynnExcavation Site A#017": {
    "src": "..and there you are!",
    "dst": "……好了，完成！",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#013": {
+  "WynnExcavation Site A#018": {
    "src": "One tablet complete! Return it to Vade. Oh and don't read it!",
    "dst": "一塊石板搞定！拿回去給 Vade。哦，還有，別讀它！",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#014": {
+  "WynnExcavation Site A#019": {
    "src": "Return to Excavator Vade with the translated writing",
    "dst": "帶著譯好的文書回去找挖掘員 Vade",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#015": {
+  "WynnExcavation Site A#020": {
    "src": "Who are you?",
    "dst": "你是誰？",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#016": {
+  "WynnExcavation Site A#021": {
    "src": "Oh right, you're that kid I sent out!",
    "dst": "哦對，你就是我派出去的那個小鬼！",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#017": {
+  "WynnExcavation Site A#022": {
    "src": "Well do you have the translated text or not?",
    "dst": "所以譯文你到底有沒有拿到？",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#018": {
+  "WynnExcavation Site A#023": {
    "src": "You do! Brilliant! Let's take a look at that...",
    "dst": "你拿到了！太好了！我們來看看寫了什麼……",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#019": {
+  "WynnExcavation Site A#024": {
    "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "「向那株突出的樹木獻上一件祭品，角度對了，路便會開」",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#020": {
+  "WynnExcavation Site A#025": {
    "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
    "dst": "這說的該不會是神廟裡面吧……哦，呃，我忘了你還在。這事你別插手，小鬼，這是大人的事！",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#021": {
+  "WynnExcavation Site A#026": {
    "src": "Solve this riddle in the tomb: \"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "在墓中解開這則謎語：「向那株突出的樹木獻上一件祭品，角度對了，路便會開」",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#022": {
+  "WynnExcavation Site A#027": {
    "src": "Search the tombs",
    "dst": "搜索墓穴",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#023": {
+  "WynnExcavation Site A#028": {
    "src": "Return and talk to Excavator Vade",
    "dst": "回去與挖掘員 Vade 對話",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#024": {
+  "WynnExcavation Site A#029": {
    "src": "Hey kid, did you just come from the tomb?",
    "dst": "嘿，小鬼，你剛才是從墓裡出來的？",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#025": {
+  "WynnExcavation Site A#030": {
    "src": "I knew I shouldn't have been so lazy and got someone else to do the leg work!",
    "dst": "我就知道我不該偷懶找別人去跑腿！",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#026": {
+  "WynnExcavation Site A#031": {
    "src": "Gosh, I can't tell my boss about this, he'll have my head! Literally! Wynn Excavation is not a group you want to betray, they are more powerful than you will ever know.",
    "dst": "天啊，這件事我不能讓上頭知道，他會要我的腦袋！我是說字面上的！WynnExcavation 不是你會想背叛的組織，他們的勢力遠超過你想像。",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#027": {
+  "WynnExcavation Site A#032": {
    "src": "YOU'D BETTER NOT HAVE TAKEN ANYTHING! THAT IS OFFICIAL WYNNEXCAVATION PROPERTY!",
    "dst": "你最好什麼都沒拿走！那可是 WynnExcavation 的正式財產！",
    "role": "desc",

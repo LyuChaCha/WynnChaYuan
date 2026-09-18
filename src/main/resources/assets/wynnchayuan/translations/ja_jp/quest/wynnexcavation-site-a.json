@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site A",
-  "count": 28,
-  "translated": 28,
+  "count": 33,
+  "translated": 33,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site A#000": {
+   "src": "Questline Started: WynnExcavation",
+   "dst": "クエストライン開始: WynnExcavation",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#001": {
+   "src": "Oh, Vade sent you?",
+   "dst": "Vade に言われて来たの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#002": {
+   "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
+   "dst": "石板ひとつ完成！Vade に返してね。あ、読んじゃダメよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#003": {
+   "src": "A strange force pushes you back!",
+   "dst": "奇妙な力に押し戻された！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#004": {
+   "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
+   "dst": "まだこんな所で何してんだ？さっさと仕事を終わらせろ！コンテンツブックに書いてあるだろ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#005": {
    "src": "Speak to Excavator Vade at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] にいる発掘者 Vade と話す",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#001": {
+  "WynnExcavation Site A#006": {
    "src": "Oh, hey kid. Wanna make some money?",
    "dst": "おう、小僧。稼ぎたいか？",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#002": {
+  "WynnExcavation Site A#007": {
    "src": "I need you to translate this ancient text.",
    "dst": "この古代文書を翻訳してもらいたい。",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#003": {
+  "WynnExcavation Site A#008": {
    "src": "Just run it down to the lab assistant, Tesha.",
    "dst": "研究助手の Tesha に持っていくだけでいい。",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#004": {
+  "WynnExcavation Site A#009": {
    "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
    "dst": "自分で行ってもいいが、俺みたいな大物が雑用なんてやれるか！研究所は上のテントだ。翻訳に傷なんかつけるなよ！",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#005": {
+  "WynnExcavation Site A#010": {
    "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
    "dst": "古代の文書を [{~}, {~}, -{~}] のテントにいる Tesha に届ける",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#006": {
+  "WynnExcavation Site A#011": {
    "src": "Hello, welcome to WynnExcavation Labs!",
    "dst": "WynnExcavation 研究所へようこそ！",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#007": {
+  "WynnExcavation Site A#012": {
    "src": "Oh Vade sent you?",
    "dst": "Vade に言われて来たの？",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#008": {
+  "WynnExcavation Site A#013": {
    "src": "Oh yes, the tablet I was waiting for!",
    "dst": "そうそう、待ってた石板！",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#009": {
+  "WynnExcavation Site A#014": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#010": {
+  "WynnExcavation Site A#015": {
    "src": "Oh my! This is quite interesting..",
    "dst": "まあ！これは面白い…",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#011": {
+  "WynnExcavation Site A#016": {
    "src": "Here, let me finish this up...",
    "dst": "さて、仕上げちゃうね…",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#012": {
+  "WynnExcavation Site A#017": {
    "src": "..and there you are!",
    "dst": "…はい、できた！",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#013": {
+  "WynnExcavation Site A#018": {
    "src": "One tablet complete! Return it to Vade. Oh and don't read it!",
    "dst": "石板ひとつ完成！Vade に返してね。あ、読んじゃダメよ！",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#014": {
+  "WynnExcavation Site A#019": {
    "src": "Return to Excavator Vade with the translated writing",
    "dst": "翻訳された文書を持って発掘者 Vade のもとへ戻る",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#015": {
+  "WynnExcavation Site A#020": {
    "src": "Who are you?",
    "dst": "誰だお前？",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#016": {
+  "WynnExcavation Site A#021": {
    "src": "Oh right, you're that kid I sent out!",
    "dst": "ああ、俺が使いに出した小僧か！",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#017": {
+  "WynnExcavation Site A#022": {
    "src": "Well do you have the translated text or not?",
    "dst": "で、翻訳は持ってきたのか？",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#018": {
+  "WynnExcavation Site A#023": {
    "src": "You do! Brilliant! Let's take a look at that...",
    "dst": "持ってるな！上出来だ！どれ、見せてみろ…",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#019": {
+  "WynnExcavation Site A#024": {
    "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "「際立つ木に供物を投げよ。正しき角度が道を開く」",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#020": {
+  "WynnExcavation Site A#025": {
    "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
    "dst": "神殿の中のことを言ってるのか…おっと、お前がいるのを忘れてた。首を突っ込むなよ小僧、大人の仕事だ！",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#021": {
+  "WynnExcavation Site A#026": {
    "src": "Solve this riddle in the tomb: \"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "墓の中でこの謎を解く:「際立つ木に供物を投げよ。正しき角度が道を開く」",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#022": {
+  "WynnExcavation Site A#027": {
    "src": "Search the tombs",
    "dst": "墓を探索する",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#023": {
+  "WynnExcavation Site A#028": {
    "src": "Return and talk to Excavator Vade",
    "dst": "戻って発掘者 Vade と話す",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#024": {
+  "WynnExcavation Site A#029": {
    "src": "Hey kid, did you just come from the tomb?",
    "dst": "おい小僧、今墓から出てきたのか？",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#025": {
+  "WynnExcavation Site A#030": {
    "src": "I knew I shouldn't have been so lazy and got someone else to do the leg work!",
    "dst": "怠けて他人に足を使わせるんじゃなかった！",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#026": {
+  "WynnExcavation Site A#031": {
    "src": "Gosh, I can't tell my boss about this, he'll have my head! Literally! Wynn Excavation is not a group you want to betray, they are more powerful than you will ever know.",
    "dst": "くそっ、ボスには言えねえ、首が飛ぶ！文字通りな！Wynn Excavation は裏切っちゃいけねえ組織だ。お前の想像以上に力を持ってる。",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#027": {
+  "WynnExcavation Site A#032": {
    "src": "YOU'D BETTER NOT HAVE TAKEN ANYTHING! THAT IS OFFICIAL WYNNEXCAVATION PROPERTY!",
    "dst": "何も持ち出してねえだろうな！あれは WYNNEXCAVATION の正式な所有物だ！",
    "role": "desc",

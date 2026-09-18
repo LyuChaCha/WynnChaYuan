@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Ice Nations",
-  "count": 26,
-  "translated": 26,
+  "count": 28,
+  "translated": 28,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Ice Nations#000": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "…実はな、我々が難破したのは自然のせいではない。襲われたのだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "Have you made any progress?",
+   "dst": "何か進展はあったか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
    "dst": "{p} の [{~}, {~}, -{~}] で Adigard と話す",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#001": {
+  "Ice Nations#003": {
    "src": "Welcome traveler, to our humble island...",
    "dst": "ようこそ旅人、我らの小さな島へ…",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#002": {
+  "Ice Nations#004": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
    "dst": "私と民は何年も前にこの地に流れ着いた。不幸にも、船は持たなかった…",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#003": {
+  "Ice Nations#005": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
    "dst": "この島々に国を築こうとしたが、年月とともに分裂してしまった。",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#004": {
+  "Ice Nations#006": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
    "dst": "そのせいで、隣人と無益な戦争をしている。",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#005": {
+  "Ice Nations#007": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
    "dst": "和平条約を結ぶべきだと思うが、島を離れれば殺されるのではと恐れている…",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#006": {
+  "Ice Nations#008": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
    "dst": "手を貸してくれないか？条約について Hallfred と話してくれ。近くの別の氷の島に住んでいる。",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#007": {
+  "Ice Nations#009": {
    "src": "Talk to Hallfred about the peace treaty",
    "dst": "和平条約について Hallfred と話す",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#008": {
+  "Ice Nations#010": {
    "src": "Welcome traveler! What brings you to our island?",
    "dst": "ようこそ旅人！俺たちの島に何の用だ？",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#009": {
+  "Ice Nations#011": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
    "dst": "ほう、Adigard の奴、臆病風に吹かれてよそ者を寄越したか！殺されるのが怖いんだろ？",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#010": {
+  "Ice Nations#012": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
    "dst": "これが最後だ。Adigard とその国が俺たちに…宝を返した日に、和平条約に署名してやる。",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#011": {
+  "Ice Nations#013": {
    "src": "The one that they kept and hid from us after the shipwreck.",
    "dst": "難破の後、奴らが隠して独り占めしたやつだ。",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#012": {
+  "Ice Nations#014": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
    "dst": "純金だ、貴重で希少なんだ！待ってると伝えろ。あのくだらん作り話はもう無しだぞ。",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#013": {
+  "Ice Nations#015": {
    "src": "Talk back to Adigard about Hallfred's response",
    "dst": "Hallfred の返事を Adigard に伝える",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#014": {
+  "Ice Nations#016": {
    "src": "I should have expected that. Hallfred was always very greedy...",
    "dst": "予想すべきだった。Hallfred は昔から強欲でな…",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#015": {
+  "Ice Nations#017": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
    "dst": "宝など持っていないと分からせようとしたが、うまくいかなかった。",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#016": {
+  "Ice Nations#018": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
    "dst": "…実はな、我々が難破したのは自然のせいではない。襲われたのだ…",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#017": {
+  "Ice Nations#019": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
    "dst": "誰に？亡者だ。化け物のような船を操る幽霊と悪魔。不意を突かれた。",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#018": {
+  "Ice Nations#020": {
    "src": "I believe they also stole our treasure during the attack.",
    "dst": "宝もその襲撃で奪われたのだと思う。",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#019": {
+  "Ice Nations#021": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
    "dst": "我らの国を再び一つにしてくれないか？その船を見つけ、宝を Hallfred に届けてくれ。そうすればやっと平和に暮らせる。",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#020": {
+  "Ice Nations#022": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
    "dst": "北へ航海してくれ。何年も前に奴らが我々を襲った場所だ。見つけやすいはずだ、きっと堂々と停泊している…ありがとう。",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#021": {
+  "Ice Nations#023": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
    "dst": "幽霊船を見つけ、[Ancient Treasure] を Hallfred に届ける",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#022": {
+  "Ice Nations#024": {
    "src": "Incredible! He actually delivered the treasure!",
    "dst": "信じられん！本当に宝を渡してきやがった！",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#023": {
+  "Ice Nations#025": {
    "src": "I suppose that means the end of the war between our nations!",
    "dst": "これで俺たちの国の戦争も終わりってわけだ！",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#024": {
+  "Ice Nations#026": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
    "dst": "めでたい日だ！ほら、国を助けてくれた礼にこれをやる。",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#025": {
+  "Ice Nations#027": {
    "src": "I'm sure you'll find a use for this helmet one day!",
    "dst": "この兜もいつか役に立つだろうさ！",
    "role": "desc",

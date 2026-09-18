@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23295,
-  "translated": 23286,
+  "count": 23377,
+  "translated": 23377,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -7445,35 +7445,9 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#000": {
-   "src": "Agh... Don't worry...a-abou",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Agh... Don't worry...a-about me",
-    "file": "quest/a-journey-further.json",
-    "ratio": 0.931,
-    "reason": "prefix"
-   }
-  },
   "A Journey Further#001": {
    "src": "Please don't leave me!",
    "dst": "置いていかないで！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "A Journey Further#002": {
-   "src": "Agh... Don't worry...a-about me",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -29541,16 +29515,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Apotheosis (Quest)#205": {
-   "src": "Oh, how",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Apotheosis (Quest)",
-   "stage": "Stage 12",
-   "speaker": "Her Majesty",
-   "source": "wiki"
-  },
   "Apotheosis (Quest)#206": {
    "src": "So it would I cannot rely on my Sovereigns for anything!",
    "dst": "やはりわたくしの君主たちは何ひとつ当てにならない！",
@@ -47508,6 +47472,96 @@
    "source": "wiki"
   },
   "Clearing the Camps#000": {
+   "src": "Did you hear about the requests from the Villagers we've gotten? They say these 'Orcs' and 'Goblins' are threatening their towns and cities.",
+   "dst": "村人からの要請は聞いたか？「Orc」と「Goblin」とやらが、彼らの町や都市を脅かしているそうだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#001": {
+   "src": "Primitive, brutal things, apparently little better than the zombies we're used to, at least according to the {p} military.",
+   "dst": "{p} 軍によれば、原始的で凶暴な連中で、見慣れたゾンビとたいして変わらんらしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#002": {
+   "src": "Our scouts have identified three 'chief' orcs in the area- Elisu, Ceifko, and Veltu. Though, strangely, Veltu is always surrounded by goblins...",
+   "dst": "斥候がこの辺りで「族長」のオークを三体見つけた。Elisu、Ceifko、Veltu だ。妙なことに Veltu はいつもゴブリンに囲まれている…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#003": {
+   "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags - search the plains, and return once they're dealt with!",
+   "dst": "ともかく、我々はここで {p} を守らねばならん。族長どもを任せられるか？緑の旗の野営地に潜んでいるらしい。平原を探し、片付けたら戻ってくれ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#004": {
+   "src": "Ah, good, more of you small-noses are here to fight.",
+   "dst": "ああ、いいぞ、また鼻の小さい連中が戦いに来たか。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#005": {
+   "src": "You're good for battle, so the government can focus more on the real issues.",
+   "dst": "お前たちは戦いに向いている。おかげで政府は本当の問題に専念できる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#006": {
+   "src": "Can't afford to have all our resources on war when we have the Decay to deal with up north.",
+   "dst": "北に腐朽を抱えているのに、資源を全部戦争につぎ込む余裕はない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#007": {
+   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead or alive, as long as they're dealt with. I have your share of the reward here.",
+   "dst": "思ったより…荒っぽいが、まあいい…片付きさえすれば、村人は生死なんて気にしないしな。これがお前の取り分の報酬だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#008": {
+   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah... livelier than usual. Better get used to it.",
+   "dst": "外で見ただろう、Gavel の生き物は Wynn のとは別物だ。なんというか…いつもより元気がいい。慣れておけ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#009": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
    "dst": "{p} の外 [-{~}, {~}, -{~}] にいる Kymer 隊長と話す",
    "role": "desc",
@@ -47517,7 +47571,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#001": {
+  "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "おお、また {p} の兵か？心から歓迎するよ。",
    "role": "desc",
@@ -47527,7 +47581,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#002": {
+  "Clearing the Camps#011": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
    "dst": "村人からの要請は聞いたか？「Orc」と「Goblin」とやらが、彼らの町を脅かしているそうだ。",
    "role": "desc",
@@ -47537,7 +47591,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#003": {
+  "Clearing the Camps#012": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
    "dst": "{p} 軍によれば、原始的で凶暴な連中で、見慣れたゾンビとたいして変わらんらしい。",
    "role": "desc",
@@ -47547,7 +47601,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#004": {
+  "Clearing the Camps#013": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
    "dst": "そこで、奴らが力こそ正義なら、首領を倒せば怯えて従うだろうと考えた。",
    "role": "desc",
@@ -47557,7 +47611,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#005": {
+  "Clearing the Camps#014": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
    "dst": "斥候がこの辺りで「族長」のオークを三体見つけた。Elisu、Ceifko、Veltu だ。妙なことに Veltu はいつもゴブリンに囲まれている…",
    "role": "desc",
@@ -47567,7 +47621,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#006": {
+  "Clearing the Camps#015": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
    "dst": "ともかく、我々はここで {p} を守らねばならん。族長どもを任せられるか？緑の旗の野営地に潜んでいるらしい。平原を探し、片付けたら戻ってくれ！",
    "role": "desc",
@@ -47577,7 +47631,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#007": {
+  "Clearing the Camps#016": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
    "dst": "{p} 周辺の野営地でオークの族長 Elisu、Veltu、Ceifko を見つけて倒す。緑の旗が目印",
    "role": "desc",
@@ -47587,7 +47641,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#008": {
+  "Clearing the Camps#017": {
    "src": "Report back to Captain Kymer once you have the three heads.",
    "dst": "三つの首を手に入れたら Kymer 隊長に報告する。",
    "role": "desc",
@@ -47597,7 +47651,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#009": {
+  "Clearing the Camps#018": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
    "dst": "おお、さっきの兵か！戻ったな。奴らの討伐は——…うわ。それ、奴らの首か？",
    "role": "desc",
@@ -47607,7 +47661,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#010": {
+  "Clearing the Camps#019": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
    "dst": "思ったより…荒っぽいが、まあいい…片付きさえすれば、村人は生死なんて気にしないしな。これがお前の取り分の報酬だ。",
    "role": "desc",
@@ -47617,7 +47671,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#011": {
+  "Clearing the Camps#020": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
    "dst": "こういう精密な一撃で、オークとの全面戦争は避けられるはずだ。地方ごとに大戦争なんて御免だからな、はは！",
    "role": "desc",
@@ -47627,7 +47681,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#012": {
+  "Clearing the Camps#021": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
    "dst": "外で見ただろう、Gavel の生き物は Wynn のとは別物だ。なんというか…いつもより元気がいい。慣れておけ。",
    "role": "desc",
@@ -47637,7 +47691,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#013": {
+  "Clearing the Camps#022": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
    "dst": "次の大きな集落は北の沼地にある {p} だが、沼のオーガは平原の連中よりずっと手強いと聞く。まずはここで鍛えるといい。",
    "role": "desc",
@@ -51876,6 +51930,16 @@
    "source": "captured"
   },
   "Dearly Departed#000": {
+   "src": "[+{~} Muddy Shovel]",
+   "dst": "[+{~} Muddy Shovel]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dearly Departed#001": {
    "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] で農夫 Cevalus と話す",
    "role": "desc",
@@ -51885,7 +51949,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#001": {
+  "Dearly Departed#002": {
    "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
    "dst": "おお、新兵さんだね！私の張り紙を見たのかい？よしよし。",
    "role": "desc",
@@ -51895,7 +51959,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#002": {
+  "Dearly Departed#003": {
    "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
    "dst": "実はね、親愛なる義父が最近亡くなって、裏に急いで埋葬したんだ。神父を呼んできちんと葬る時間がなくてね…",
    "role": "desc",
@@ -51905,7 +51969,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#003": {
+  "Dearly Departed#004": {
    "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
    "dst": "あいにく、埋葬している時に結婚指輪が抜け落ちてしまったらしくてね…",
    "role": "desc",
@@ -51915,7 +51979,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#004": {
+  "Dearly Departed#005": {
    "src": "I need you to go back there and, well, recover the ring.",
    "dst": "君にはそこへ行って、その、指輪を回収してほしいんだ。",
    "role": "desc",
@@ -51925,7 +51989,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#005": {
+  "Dearly Departed#006": {
    "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
    "dst": "もちろん自分でもできることなんだが、妻がもう何か疑っていてね、それに父親を亡くしたばかりだし…",
    "role": "desc",
@@ -51935,7 +51999,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#006": {
+  "Dearly Departed#007": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
    "dst": "私の立場は分かるだろう？哀れな男を助けると思って、あそこの [Muddy Shovel] を取ってきて、戻ってきてくれ。",
    "role": "desc",
@@ -51945,7 +52009,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#007": {
+  "Dearly Departed#008": {
    "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] でシャベルを拾う。",
    "role": "desc",
@@ -51955,7 +52019,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#008": {
+  "Dearly Departed#009": {
    "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
    "dst": "[Muddy Shovel] はすぐそこだ。助かるよ、新兵さん。",
    "role": "desc",
@@ -51965,7 +52029,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#009": {
+  "Dearly Departed#010": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の農夫 Cevalus のもとへ戻る",
    "role": "desc",
@@ -51975,7 +52039,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#010": {
+  "Dearly Departed#011": {
    "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
    "dst": "シャベルを手に入れた？素晴らしい！丈夫な防具と武器もあるんだろうね？",
    "role": "desc",
@@ -51985,7 +52049,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#011": {
+  "Dearly Departed#012": {
    "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
    "dst": "よしよし。用心に越したことはない…私の口癖さ！いつもね、はは…",
    "role": "desc",
@@ -51995,7 +52059,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#012": {
+  "Dearly Departed#013": {
    "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
    "dst": "いや、特に理由はないさ！念のためだよ、はは…あそこは全く安全なはずさ、全く。",
    "role": "desc",
@@ -52005,7 +52069,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#013": {
+  "Dearly Departed#014": {
    "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
    "dst": "スキルポイントも振ってあるよね？何かあった時に役立つからね。",
    "role": "desc",
@@ -52015,7 +52079,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#014": {
+  "Dearly Departed#015": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
    "dst": "スキルポイントだよ！レベルが上がるともらえて、振り分ければ戦闘でボーナスが得られる。私は兵士じゃないが、それでも使うべきだと分かるよ…",
    "role": "desc",
@@ -52025,7 +52089,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#015": {
+  "Dearly Departed#016": {
    "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
    "dst": "五種類ある。筋力、器用さ、知力、防御、俊敏さ、それぞれ別のボーナスがあるんだ。",
    "role": "desc",
@@ -52035,7 +52099,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#016": {
+  "Dearly Departed#017": {
    "src": "You get it, or do you want me to tell you what they are?",
    "dst": "分かったかい、それとも一つずつ説明しようか？",
    "role": "desc",
@@ -52045,7 +52109,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#017": {
+  "Dearly Departed#018": {
    "src": "is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "は、敵をなかなか倒せない時に便利だ。攻撃が重くなる、単純な話さ。",
    "role": "desc",
@@ -52055,7 +52119,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#018": {
+  "Dearly Departed#019": {
    "src": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
    "dst": "は少し厄介でね。多いほど、攻撃が二倍のダメージになる確率が上がる。いいだろう？",
    "role": "desc",
@@ -52065,7 +52129,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#019": {
+  "Dearly Departed#020": {
    "src": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
    "dst": "は魔法使い向けだ。呪文の消費を下げて、最大マナを増やしてくれる。",
    "role": "desc",
@@ -52075,7 +52139,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#020": {
+  "Dearly Departed#021": {
    "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
    "dst": "は、生き延びるのに苦労しているなら一番だ。受けるダメージが減る、それだけさ。",
    "role": "desc",
@@ -52085,7 +52149,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#021": {
+  "Dearly Departed#022": {
    "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
    "dst": "俊敏さ、これは危険を好む人向けだ。多いほど攻撃を回避しやすくなり、ダメージをほとんど打ち消せる。",
    "role": "desc",
@@ -52095,7 +52159,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#022": {
+  "Dearly Departed#023": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
    "dst": "何よりいいのは、クラスや戦い方に関係なく、好きなように組み合わせられることさ。",
    "role": "desc",
@@ -52105,7 +52169,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#023": {
+  "Dearly Departed#024": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
    "dst": "コンパスを開けばスキルポイントを振れる。準備ができたら中に入って、私の指輪を取ってきてくれ。",
    "role": "desc",
@@ -52115,7 +52179,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#024": {
+  "Dearly Departed#025": {
    "src": "Dig up the grave at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] の墓を掘り返す。",
    "role": "desc",
@@ -52125,7 +52189,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#025": {
+  "Dearly Departed#026": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
    "dst": "さあ行け、兵士よ！{p} 軍の力を見せてくれ！えっと、つまり…指輪を取ってきてくれ！",
    "role": "desc",
@@ -52135,7 +52199,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#026": {
+  "Dearly Departed#027": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
    "dst": "中はどうなってる、兵士よ？指輪はもう見つかったかい？",
    "role": "desc",
@@ -52145,7 +52209,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#027": {
+  "Dearly Departed#028": {
    "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
    "dst": "急いだほうがいいよ、その前に…いや何でもない！とにかく指輪を見つけて出てくるんだ！",
    "role": "desc",
@@ -52155,7 +52219,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#028": {
+  "Dearly Departed#029": {
    "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
    "dst": "牛神様！あれは…あれは…奴が戻ってきた！早く倒してくれ！",
    "role": "desc",
@@ -52165,7 +52229,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#029": {
+  "Dearly Departed#030": {
    "src": "Kill the Corrupted Father-in-Law!",
    "dst": "腐敗した義父を倒せ！",
    "role": "desc",
@@ -52175,7 +52239,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#030": {
+  "Dearly Departed#031": {
    "src": "You did it! Come back here now, so I can finally get my ring back.",
    "dst": "やったね！さあ戻っておいで、ついに指輪を取り戻せる。",
    "role": "desc",
@@ -52185,7 +52249,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#031": {
+  "Dearly Departed#032": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の農夫 Cevalus のもとへ戻る",
    "role": "desc",
@@ -52195,7 +52259,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#032": {
+  "Dearly Departed#033": {
    "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
    "dst": "いやはや、思ったより少々刺激的だったね、ふむ。とにかくよくやった！あの怪物を始末できてよかったよ…",
    "role": "desc",
@@ -52205,7 +52269,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#033": {
+  "Dearly Departed#034": {
    "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
    "dst": "いや…かわいそうな義父さん！妻にどう説明すればいいのか…",
    "role": "desc",
@@ -52215,7 +52279,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#034": {
+  "Dearly Departed#035": {
    "src": "I'll take the ring now, it's rather precious to me...",
    "dst": "指輪はもらうよ、私にとってはかなり大切な物でね…",
    "role": "desc",
@@ -52225,7 +52289,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#035": {
+  "Dearly Departed#036": {
    "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
    "dst": "ともかく、今日の、その、働きに見合った報酬を受け取ってくれ。この調子なら、いつか Ragnar のような英雄になれるかもね。",
    "role": "desc",
@@ -52235,7 +52299,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#036": {
+  "Dearly Departed#037": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
    "dst": "こんにちは、旅の方。何か私にお話でも？",
    "role": "desc",
@@ -52245,7 +52309,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#037": {
+  "Dearly Departed#038": {
    "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
    "dst": "怒るべきなんでしょうけど…驚いたふりはできないわ。あの人は昔から忘れっぽい間抜けなのよ。",
    "role": "desc",
@@ -52255,7 +52319,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#038": {
+  "Dearly Departed#039": {
    "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
    "dst": "でも、それで色々納得がいくわ…父が亡くなってから様子が変だったの。そういうことだったのね、教えてくれてありがとう。",
    "role": "desc",
@@ -52265,7 +52329,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#039": {
+  "Dearly Departed#040": {
    "src": "That's right. The one and only, ha ha...",
    "dst": "そうよ。唯一無二のね、はは…",
    "role": "desc",
@@ -52275,7 +52339,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#040": {
+  "Dearly Departed#041": {
    "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
    "dst": "私たちはただの農家で、なんとか暮らしてるの。父の世話をしてたんだけど…その…ええ…",
    "role": "desc",
@@ -52285,7 +52349,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#041": {
+  "Dearly Departed#042": {
    "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
    "dst": "ありがとう…何もかも突然だったの。{p} へ発った日、父はいつも通り元気だったのに、戻ったらもう埋葬されてた。病気がよほど急だったのね…",
    "role": "desc",
@@ -52295,7 +52359,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#042": {
+  "Dearly Departed#043": {
    "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
    "dst": "でもあの歳だから、驚きはしないわ…ただ、神父を間に合うよう呼べなかったのが残念。父はとても信心深い人だったの。",
    "role": "desc",
@@ -52305,7 +52369,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#043": {
+  "Dearly Departed#044": {
    "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
    "dst": "父は…何より優しくて、いつも気前が良かった。この農場を丸ごと遺してくれたの。とても信心深い、本物の信者でもあった。だから長生きしたのかも…",
    "role": "desc",
@@ -52315,7 +52379,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#044": {
+  "Dearly Departed#045": {
    "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
    "dst": "ああ…これ以上話したら、また泣いちゃうわ。",
    "role": "desc",
@@ -52325,7 +52389,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#045": {
+  "Dearly Departed#046": {
    "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
    "dst": "スキルポイントも振ってあるよね？何かあった時に役立つかもしれないからね。",
    "role": "desc",
@@ -52333,7 +52397,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#046": {
+  "Dearly Departed#047": {
    "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
    "dst": "五種類ある。筋力、器用さ、知力、防御、俊敏さ、それぞれ別のボーナスがあるんだ。",
    "role": "desc",
@@ -52341,7 +52405,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#047": {
+  "Dearly Departed#048": {
    "src": "Why are you asking me that?",
    "dst": "どうしてそんなことを？",
    "role": "desc",
@@ -52349,7 +52413,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#048": {
+  "Dearly Departed#049": {
    "src": "What are Skill Points?",
    "dst": "スキルポイントって？",
    "role": "desc",
@@ -52357,7 +52421,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#049": {
+  "Dearly Departed#050": {
    "src": "I got it.",
    "dst": "分かった。",
    "role": "desc",
@@ -52365,7 +52429,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#050": {
+  "Dearly Departed#051": {
    "src": "About Strength.",
    "dst": "筋力について。",
    "role": "desc",
@@ -52373,7 +52437,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#051": {
+  "Dearly Departed#052": {
    "src": "About Dexterity.",
    "dst": "器用さについて。",
    "role": "desc",
@@ -52381,7 +52445,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#052": {
+  "Dearly Departed#053": {
    "src": "About Intelligence.",
    "dst": "知力について。",
    "role": "desc",
@@ -52389,7 +52453,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#053": {
+  "Dearly Departed#054": {
    "src": "Not yet...",
    "dst": "まだだ…",
    "role": "desc",
@@ -52397,7 +52461,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#054": {
+  "Dearly Departed#055": {
    "src": "Dig up the grave?",
    "dst": "墓を掘り返す？",
    "role": "desc",
@@ -52405,7 +52469,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#055": {
+  "Dearly Departed#056": {
    "src": "There you go...",
    "dst": "よし…",
    "role": "desc",
@@ -52413,7 +52477,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#056": {
+  "Dearly Departed#057": {
    "src": "Now to see if you can find that ring Cevalus mentioned...",
    "dst": "あとは Cevalus が言っていた指輪を見つけられるか…",
    "role": "desc",
@@ -52421,7 +52485,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#057": {
+  "Dearly Departed#058": {
    "src": "You manage to pry the ring off the monster's finger...",
    "dst": "怪物の指から、なんとか指輪をこじ取った…",
    "role": "desc",
@@ -52429,7 +52493,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#058": {
+  "Dearly Departed#059": {
    "src": "About Defence.",
    "dst": "防御について。",
    "role": "desc",
@@ -52437,7 +52501,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#059": {
+  "Dearly Departed#060": {
    "src": "About Agility.",
    "dst": "俊敏さについて。",
    "role": "desc",
@@ -52445,7 +52509,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#060": {
+  "Dearly Departed#061": {
    "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "{#} 筋力は、敵をなかなか倒せない時に便利だ。攻撃が重くなる、単純な話さ。",
    "role": "desc",
@@ -77992,6 +78056,226 @@
    "source": "wiki"
   },
   "Fate of the Fallen#000": {
+   "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
+   "dst": "おや、{p} 軍の者か。この凍てついた墳墓のことをもっと知りたいと思っている。力を貸してほしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#001": {
+   "src": "Did you listen?",
+   "dst": "聞いていたか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#002": {
+   "src": "If you don't remember what I said, I remember you writing something in your book. Try looking there.",
+   "dst": "私の話を覚えていないなら、本に何か書き留めていただろう。そこを見てみるといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#003": {
+   "src": "You should head back to the mage with the wand.",
+   "dst": "杖を持ったあの魔術師のところへ戻るといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#004": {
+   "src": "This is the Temple of Time...",
+   "dst": "ここは Temple of Time…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#005": {
+   "src": "Here you can visit the memories of this land...",
+   "dst": "ここでは、この地の記憶を訪れることができる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#006": {
+   "src": "The altar requires an item from the time you desire to access...",
+   "dst": "祭壇には、行きたい時代の品が必要だ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#007": {
+   "src": "You will access a memory as if you were present, but when you return it will be as if you were never there.",
+   "dst": "その場にいるかのように記憶の中へ入れるが、戻れば、まるでそこにいなかったかのようになる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#008": {
+   "src": "You should stick around to find out how to reverse the spell.",
+   "dst": "ここに残って、魔法を解く方法を突き止めるといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#009": {
+   "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too far gone. It needs time to heal...and my powers m-must be dampened...frozen...",
+   "dst": "ぐああ…皆に…伝えろ。私はこの地を凍らせる。私は…も、もう手遅れだ。この地には癒える時間が要る…そして私の力は、封じ…凍らせねば…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#010": {
+   "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits linger. I would...prefer against giving him a harder time.",
+   "dst": "あの鼻持ちならない奴…Mael から学んだことがあるとすれば…理由なき死は魂をさまよわせる。あいつにこれ以上苦労をかけたくはない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#011": {
+   "src": "Wha... so many revelations... ice magic staves off corruption...? It is true that this place has seen less corrupted threats than other places in the province...",
+   "dst": "何と…これほどの真実が…氷の魔法が腐敗を防ぐ…？確かにここは地方の他の場所より腐敗の脅威が少なかった…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#012": {
+   "src": "Dear gods... We've had it all wrong this whole time... It was to protect everyone... but surely he would have told someone his intentions if he was of that sound a mind!",
+   "dst": "なんということだ…ずっと勘違いしていた…皆を守るためだった…だが正気なら、誰かに意図を伝えたはずだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#013": {
+   "src": "Soldier! I'm not sure it is wise to be here... An icy death awaits you if you proceed. A death that I will cause..",
+   "dst": "兵士よ！ここにいるのは賢明ではない…進めば冷たい死が待っている。私がもたらす死が…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#014": {
+   "src": "I have many regrets of my time spent alive in Wynn. I do not wish for my lingering mistakes to harm anyone else. Turn back.",
+   "dst": "Wynn で生きていた頃、私は多くの後悔を残した。残された過ちで、これ以上誰も傷つけたくない。引き返せ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#016": {
+   "src": "You must think you can save me? There is no cure for what I have.",
+   "dst": "私を救えるとでも思っているのか？私の病に治療法はない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#017": {
+   "src": "Unless.. You want to set me free?",
+   "dst": "それとも…私を解放してくれるのか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#020": {
+   "src": "I froze this land to allow it to heal.. People did not understand.. They came for me here, seeking revenge.",
+   "dst": "この地を凍らせたのは癒すためだった…人々には理解されなかった…彼らは復讐を求めてここへ来た。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#021": {
+   "src": "Of course, just like you.. They can not leave. Their souls are stuck here. For the spell must not be broken.",
+   "dst": "もちろん、お前と同じく…彼らは去れない。魂がここに囚われている。この魔法は決して破られてはならぬからだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#023": {
+   "src": "Even if you think you can cure me.. I can not allow you to try for if it were to fail my corrupted body would wreak havoc on the world!",
+   "dst": "私を治せると思っていても…試させるわけにはいかない。失敗すれば、この腐敗した体が世界を破壊し尽くすだろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#024": {
+   "src": "It will be dangerous...perhaps your toughest fight yet...but it must be done. If you need time to prepare, do so. But you must end Theorick's pain.",
+   "dst": "危険だろう…おそらくこれまでで最も厳しい戦いになる…だが、やらねばならない。準備が要るなら整えてくれ。だが、Theorick の苦しみは必ず終わらせてくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#025": {
+   "src": "Don't you just love fishing? The little waves in the river, the wind and the rewarding feeling when you catch something, those are my favorite things about it.",
+   "dst": "釣りって最高じゃない？川のさざ波、風、何かが釣れた時の満足感、そこが一番好きなんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#027": {
    "src": "You can not return until your goal is fulfilled...",
    "dst": "目的を果たすまで、戻ることはできない…",
    "role": "desc",
@@ -78001,7 +78285,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Fate of the Fallen#001": {
+  "Fate of the Fallen#028": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
    "dst": "[{~1}, {~2}, -{~3}] で魔術師 Telvu と話す。",
    "role": "desc",
@@ -78011,7 +78295,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#002": {
+  "Fate of the Fallen#029": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
    "dst": "おや、{p} 軍の者か。この凍てついた墳墓に入ろうとしているところだ。力を貸してほしい。",
    "role": "desc",
@@ -78021,7 +78305,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#003": {
+  "Fate of the Fallen#030": {
    "src": "Are you familiar with the story of Theorick and {p}?",
    "dst": "Theorick と {p} の話は知っているか？",
    "role": "desc",
@@ -78031,7 +78315,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#004": {
+  "Fate of the Fallen#031": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
    "dst": "知らないだろうな。実は、{p} は昔から凍っていたわけではない。",
    "role": "desc",
@@ -78041,7 +78325,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#005": {
+  "Fate of the Fallen#032": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
    "dst": "Theorick の時代、ここは Wynn の平原のように暖かく、耕作に適していた。",
    "role": "desc",
@@ -78051,7 +78335,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#006": {
+  "Fate of the Fallen#033": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
    "dst": "なぜか Theorick Twain は強大な力でこの地を凍らせ、自らをここに追放した。",
    "role": "desc",
@@ -78061,7 +78345,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#007": {
+  "Fate of the Fallen#034": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
    "dst": "この魔法を解くには理由を突き止めねば。魔力の源はおそらく墳墓の中にある…だが手ぶらで入りたくはない。",
    "role": "desc",
@@ -78071,7 +78355,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#008": {
+  "Fate of the Fallen#035": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
    "dst": "そこで…{p} という場所を聞いたことは？それを使って過去に戻り、Theorick の行いを探れるかもしれない。",
    "role": "desc",
@@ -78081,7 +78365,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#009": {
+  "Fate of the Fallen#036": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
    "dst": "まあ…ある意味ではな。この手の魔法には法則がある。一つ、見たい時代の品が必要だ。二つ、過去は見られても変えられない。",
    "role": "desc",
@@ -78091,7 +78375,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#010": {
+  "Fate of the Fallen#037": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
    "dst": "Theorick の杖の一本が {p} の銀行に展示されている。目的には使えるはずだ。どうにか取ってこられるか？",
    "role": "desc",
@@ -78101,7 +78385,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#011": {
+  "Fate of the Fallen#038": {
    "src": "Find Theorick's stave at {p} bank.",
    "dst": "{p} の銀行で Theorick の杖を見つける。",
    "role": "desc",
@@ -78111,7 +78395,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#012": {
+  "Fate of the Fallen#039": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
    "dst": "ははあ、早いな。杖を手に入れたか。銀行員に手放させるには、相当口が回ったのだろう。",
    "role": "desc",
@@ -78121,7 +78405,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#013": {
+  "Fate of the Fallen#040": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
    "dst": "さて、{p} までは長い道のりだ。だが歩く必要はない、私が転送しよう。たぶんな。",
    "role": "desc",
@@ -78131,7 +78415,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#014": {
+  "Fate of the Fallen#041": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
    "dst": "着いたら Temple of Time に入れ。そこへ行けば何をすべきか分かるはずだ。時間旅行には気をつけろ、友よ…何に出くわすか分からん。",
    "role": "desc",
@@ -78141,7 +78425,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#015": {
+  "Fate of the Fallen#042": {
    "src": "Just step into the portal.",
    "dst": "ポータルに入るだけでいい。",
    "role": "desc",
@@ -78151,7 +78435,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#016": {
+  "Fate of the Fallen#043": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
    "dst": "何かあれば、ここに残って神殿へ転送し戻そう。",
    "role": "desc",
@@ -78161,7 +78445,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#017": {
+  "Fate of the Fallen#044": {
    "src": "Enter the portal the mage made.",
    "dst": "魔術師が作ったポータルに入る。",
    "role": "desc",
@@ -78171,7 +78455,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#018": {
+  "Fate of the Fallen#045": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
    "dst": "[-{~1}, {~2}, -{~3}] の Gate of Time に入り、過去へ遡る。",
    "role": "desc",
@@ -78181,7 +78465,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#019": {
+  "Fate of the Fallen#046": {
    "src": "Explore Past {p}.",
    "dst": "過去の {p} を探索する。",
    "role": "desc",
@@ -78191,7 +78475,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#020": {
+  "Fate of the Fallen#047": {
    "src": "What the...",
    "dst": "何だ…",
    "role": "desc",
@@ -78201,7 +78485,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#021": {
+  "Fate of the Fallen#048": {
    "src": "Woah, your weaponry and armour is so advanced!",
    "dst": "うわ、君の武器も防具もすごく進んでる！",
    "role": "desc",
@@ -78211,7 +78495,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#022": {
+  "Fate of the Fallen#049": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
    "dst": "Twain 家の人？あんな魔法は Twain 家しか使えないよ。",
    "role": "desc",
@@ -78221,7 +78505,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#023": {
+  "Fate of the Fallen#050": {
    "src": "Oh, you're looking for Theorick.",
    "dst": "ああ、Theorick を探してるんだ。",
    "role": "desc",
@@ -78231,7 +78515,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#024": {
+  "Fate of the Fallen#051": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
    "dst": "彼は戦争で忙しいよ。君も戦うべきじゃない？",
    "role": "desc",
@@ -78241,7 +78525,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#025": {
+  "Fate of the Fallen#052": {
    "src": "He went west. There was some kind of emergency.",
    "dst": "西へ向かったよ。何か緊急事態があったみたい。",
    "role": "desc",
@@ -78251,7 +78535,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#026": {
+  "Fate of the Fallen#053": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
    "dst": "僕らは何年も腐敗と戦ってきた。ついに {p} まで飲み込まれそうなんだ。",
    "role": "desc",
@@ -78261,7 +78545,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#027": {
+  "Fate of the Fallen#054": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
    "dst": "{p} の西の森で Theorick を見つける [{~1}, {~2}, {~3}]。",
    "role": "desc",
@@ -78271,7 +78555,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#028": {
+  "Fate of the Fallen#055": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
    "dst": "確かにこっちへ行ったはずだが…ああ、今度は何だ、また愚か者か？この森は危険なんだぞ！",
    "role": "desc",
@@ -78281,7 +78565,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#029": {
+  "Fate of the Fallen#056": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
    "dst": "助けが要るなら衛兵に苦情でも出せ。私は忙しい。この忌々しい地方を救う最中に、お前の牛乳を冷やしに行けるか！！",
    "role": "desc",
@@ -78291,7 +78575,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#030": {
+  "Fate of the Fallen#057": {
    "src": "Are your ears full of wax?! I said-",
    "dst": "耳が詰まってるのか？！言っただろう―",
    "role": "desc",
@@ -78301,7 +78585,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#031": {
+  "Fate of the Fallen#058": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
    "dst": "くっ、奴らがついて来た！ほら見ろ！どいていろ。",
    "role": "desc",
@@ -78311,7 +78595,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#032": {
+  "Fate of the Fallen#059": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
    "dst": "助ける相手が二人も要るか！さっさと失せろ、行方不明の女を探さねばならんのだ！",
    "role": "desc",
@@ -78321,7 +78605,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#033": {
+  "Fate of the Fallen#060": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
    "dst": "助けてー！逃げ切れない！！！衛兵！誰か！！",
    "role": "desc",
@@ -78331,7 +78615,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Fate of the Fallen#034": {
+  "Fate of the Fallen#061": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
    "dst": "むっ！あの女の声だ！どこだ？！この辺りは片付けたばかりだぞ！",
    "role": "desc",
@@ -78341,7 +78625,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#035": {
+  "Fate of the Fallen#062": {
    "src": "Th-Theorick!! There's corrupteds!!",
    "dst": "テ、Theorick！！腐敗体がいるの！！",
    "role": "desc",
@@ -78351,7 +78635,7 @@
    "speaker": "Girl",
    "source": "wiki"
   },
-  "Fate of the Fallen#036": {
+  "Fate of the Fallen#063": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
    "dst": "くっ、西から奴らを引き連れてきたのか？！そこのお前、凍りたくなければ今すぐ私の後ろに下がれ！！",
    "role": "desc",
@@ -78361,7 +78645,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#037": {
+  "Fate of the Fallen#064": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
    "dst": "ふう…もう安全だ。だが町を出なければ、そもそも危険な目に遭うこともなかったんだ！",
    "role": "desc",
@@ -78371,7 +78655,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#038": {
+  "Fate of the Fallen#065": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
    "dst": "謝るのはいい、町に戻れ。今すぐだ。",
    "role": "desc",
@@ -78381,7 +78665,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#039": {
+  "Fate of the Fallen#066": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
    "dst": "次に森で花摘みだか何だかしたくなったら、自分の命を思い出せ、いいな？！",
    "role": "desc",
@@ -78391,7 +78675,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#040": {
+  "Fate of the Fallen#067": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
    "dst": "毎日、腐敗体は増え、死者も増える…手はひとつ。私自ら片をつける。根を断ち…この地獄の雑草を殺す。",
    "role": "desc",
@@ -78401,7 +78685,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#041": {
+  "Fate of the Fallen#068": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
    "dst": "まだいたのか？なら聞け。私と数人で危険な計画を立てている。正気を失おうが構わん、あのポータルを通らねばならん。",
    "role": "desc",
@@ -78411,7 +78695,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#042": {
+  "Fate of the Fallen#069": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
    "dst": "装備は立派なようだから、お前を徴用する。直ちに拠点に来い。川沿いに南へ行けば、右手に家が見える。",
    "role": "desc",
@@ -78421,7 +78705,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#043": {
+  "Fate of the Fallen#070": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
    "dst": "{p} の南にある作戦拠点へ向かう [{~1}, {~2}, {~3}]。",
    "role": "desc",
@@ -78431,7 +78715,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#044": {
+  "Fate of the Fallen#071": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
    "dst": "まあ、これは認めよう。少なくとも命令にはすぐ従うな。我々は {p} へ向かう。",
    "role": "desc",
@@ -78441,7 +78725,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#045": {
+  "Fate of the Fallen#072": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
    "dst": "ポータルに入って戻った最後の男は Bak’al になった…だがわずかでも可能性があるなら、今はそれに賭けるしかない。",
    "role": "desc",
@@ -78451,7 +78735,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#046": {
+  "Fate of the Fallen#073": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
    "dst": "出発だ。道中休憩はなしだ、準備はできているだろうな。",
    "role": "desc",
@@ -78461,7 +78745,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#047": {
+  "Fate of the Fallen#074": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
    "dst": "さて。私の操る極寒は腐敗そのものを食い止められる。お前たちに同じことが言えるとは思えん。私一人で入る。",
    "role": "desc",
@@ -78471,7 +78755,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#048": {
+  "Fate of the Fallen#075": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
    "dst": "私が入れば…推測だが、腐敗体が後を追ってポータルに群がるだろう。お前の役目？奴らを倒せ。中で気を散らすわけにはいかん。",
    "role": "desc",
@@ -78481,7 +78765,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#049": {
+  "Fate of the Fallen#076": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
    "dst": "私がポータルから出るまで、持ち場を離れるな。分かったな？",
    "role": "desc",
@@ -78491,7 +78775,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#050": {
+  "Fate of the Fallen#077": {
    "src": "Protect the portal.",
    "dst": "ポータルを守る。",
    "role": "desc",
@@ -78501,7 +78785,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#051": {
+  "Fate of the Fallen#078": {
    "src": "...no...",
    "dst": "…だめだ…",
    "role": "desc",
@@ -78511,7 +78795,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#052": {
+  "Fate of the Fallen#079": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
    "dst": "…だめだ、だめだ、だめだ！！くそっ！！",
    "role": "desc",
@@ -78521,7 +78805,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#053": {
+  "Fate of the Fallen#080": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
    "dst": "何が起きたか分かるか？！負けたんだ！！完全に変わり果てれば、私は地方を滅ぼす！離れろ、今すぐ！聞こえるか？！逃げろ！！",
    "role": "desc",
@@ -78531,7 +78815,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#054": {
+  "Fate of the Fallen#081": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
    "dst": "私は…お、落ち着け、Theorick…飲まれるな…まだ…解決策は…一つ…",
    "role": "desc",
@@ -78541,7 +78825,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#055": {
+  "Fate of the Fallen#082": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
    "dst": "ああ…またお前か…他の者は…死んだ？逃げた？臆病者め…うぐっ…",
    "role": "desc",
@@ -78551,7 +78835,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#056": {
+  "Fate of the Fallen#083": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
    "dst": "生きているなら…顔を上げろ。聞け。私が変われば…い、いや、変わった時…だ、だめだ…ぐああ、私は滅ぼ…んぐっ…",
    "role": "desc",
@@ -78561,7 +78845,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#057": {
+  "Fate of the Fallen#084": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
    "dst": "長くはもたん、分かるだろう…今…私を殺すのは不可能だ、この愚かな弱…ぐっ、私の頭から出ていけ！！",
    "role": "desc",
@@ -78571,7 +78855,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#058": {
+  "Fate of the Fallen#085": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
    "dst": "ぐああ…皆に…伝えろ。私はこの地を凍らせる。私は…も、もう手遅れだ。この地には癒える時間が要る…そして私の力は、封じ…凍らせねば…",
    "role": "desc",
@@ -78581,7 +78865,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#059": {
+  "Fate of the Fallen#086": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
    "dst": "皆、役立たずだ…いや、違う…彼らにも生きる資格はある…この魔法は…必ず犠牲を出す。どうか、理由を伝えてくれ…",
    "role": "desc",
@@ -78591,7 +78875,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#060": {
+  "Fate of the Fallen#087": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
    "dst": "あの鼻持ちならない奴…Mael から学んだことがあるとすれば…理由なき死は魂をさまよわせる。あいつにこれ以上苦労をかけたくはない。",
    "role": "desc",
@@ -78601,7 +78885,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#061": {
+  "Fate of the Fallen#088": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
    "dst": "す、進み続けろ。お前の装備…皆がお前ほど強ければ…勝ち目はあるかもしれん。私が弱った暁には、これで私を終わらせられるだろう。",
    "role": "desc",
@@ -78611,7 +78895,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#062": {
+  "Fate of the Fallen#089": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
    "dst": "知らしめよ…Theorick Twain は死んでいない。殺すことはできぬ…全ては燃える…未来の日まで。ここ、この呪われた地で。私を見つけ…全てを終わらせよ。",
    "role": "desc",
@@ -78621,7 +78905,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#063": {
+  "Fate of the Fallen#090": {
    "src": "Tell Telvu the mage what happened.",
    "dst": "魔術師 Telvu に何があったか伝える。",
    "role": "desc",
@@ -78631,7 +78915,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#064": {
+  "Fate of the Fallen#091": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
    "dst": "成功したようだな、でなければまだ過去の記憶の中にいるはずだ。君から強い魔力を感じる。",
    "role": "desc",
@@ -78641,7 +78925,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#065": {
+  "Fate of the Fallen#092": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
    "dst": "それで、Theorick に会ったのか？大凍結の後、彼は英雄から堕ちたと言われてきた。",
    "role": "desc",
@@ -78651,7 +78935,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#066": {
+  "Fate of the Fallen#093": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
    "dst": "せめて、なぜ彼がここを凍らせたのかは分かったか？",
    "role": "desc",
@@ -78661,7 +78945,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#067": {
+  "Fate of the Fallen#094": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
    "dst": "何と…これほどの真実が…氷の魔法が腐敗を防ぐ…？確かにここは地方の他の場所より腐敗の脅威が少なかった…",
    "role": "desc",
@@ -78671,7 +78955,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#068": {
+  "Fate of the Fallen#095": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
    "dst": "なんということだ…ずっと勘違いしていた…これは皆を守るためだった…だが正気なら、誰かに意図を伝えたはずだ！",
    "role": "desc",
@@ -78681,7 +78965,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#069": {
+  "Fate of the Fallen#096": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
    "dst": "これほど長く、生き埋めのまま腐敗と戦ってきたとは。その顔を見るに、君もぞっとしているようだな。彼を殺すことは慈悲になるだろう。",
    "role": "desc",
@@ -78691,7 +78975,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#070": {
+  "Fate of the Fallen#097": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
    "dst": "ほら、これを使え。氷の墳墓の中で身を守ってくれるかもしれない……頼む、兵士よ。Theorick の守護天使になってくれ。彼をこの苦しみから解き放ってやってくれ。",
    "role": "desc",
@@ -87092,6 +87376,106 @@
    "source": "wiki"
   },
   "Heart of Llevigar#000": {
+   "src": "Gweh, a visitor?! Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
+   "dst": "うえっ、客？！出ていってくれ！工場は保守で停止中…待って、あなたが雇った電磁魔法の専門家？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#001": {
+   "src": "We didn't even need to get Corkian consultation on this! We had this system all figured out ourselves, but now nothing's working right!",
+   "dst": "Corkus の助言すら要らなかった！全部自分たちで作り上げたのに、今は何もかもおかしい！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#002": {
+   "src": "New Quest Started: Heart of {p}",
+   "dst": "新しいクエスト開始: {p} の心臓",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#003": {
+   "src": "Come on now, hurry! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer already!",
+   "dst": "ほら、早く！銀行の向かいに発電所への入口がある、そこで技師長に会ってきて！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#004": {
+   "src": "My grandfather and his engineers jury-rigged this whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
+   "dst": "じいさんとその技師たちがシステム全体を応急でこしらえた。リセットすれば直るはずだが、安全規定で俺がここで立ち会う必要がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#005": {
+   "src": "I have to stay put here, so get through the system and find the reset button for me. These holes in the walls are tunnels that'll lead you around the generator rooms!",
+   "dst": "俺はここを離れられん。だからシステムを抜けてリセットボタンを探してくれ。壁のこの穴はトンネルで、発電機室を回れるようになってる！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#006": {
+   "src": "Maybe you can find a way to reset the system. That ought to do it...",
+   "dst": "システムをリセットする方法が見つかるかもな。それで直るはずだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#007": {
+   "src": "...what, are you asleep or something? Of course there was a bug, we just fixed it!",
+   "dst": "…寝ぼけてんのか？バグがあったから今直したんだろうが！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#008": {
+   "src": "D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system back the way you got here, it hooks up to the sewer exit.",
+   "dst": "名前を正しく言うのがそんなに大事か？とにかく、出口はお前が来た道の水冷システムの先で、下水道の出口につながってる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#009": {
+   "src": "Glad you got here when you did though! Some phony came through saying he was the expert. Clearly, he was just here to take your contract money...",
+   "dst": "でも間に合ってよかった！専門家を名乗る偽者が来たんだ。明らかにあなたの報酬を横取りしに来ただけだよ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#010": {
    "src": "Find Zenam in the {p} power control center at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の {p} 電力制御センターで Zenam を探す",
    "role": "desc",
@@ -87101,7 +87485,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#001": {
+  "Heart of Llevigar#011": {
    "src": "Aaah, no no no! This doesn't make any sense, what in the world is going on?! Nothing's working!",
    "dst": "ああっ、だめだめだめ！意味が分からない、一体どうなってるんだ！？何も動かない！",
    "role": "desc",
@@ -87111,7 +87495,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#002": {
+  "Heart of Llevigar#012": {
    "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
    "dst": "うえっ、客？出ていってくれ！工場は保守で停止中――待って、あなたが雇った電磁魔法の専門家？",
    "role": "desc",
@@ -87121,7 +87505,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#003": {
+  "Heart of Llevigar#013": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
    "dst": "そうだよね？そうだよね！？もう待てないんだ！このシステムは絶対に壊れない、完璧な設計のはずだったのに！",
    "role": "desc",
@@ -87131,7 +87515,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#004": {
+  "Heart of Llevigar#014": {
    "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
    "dst": "Corkus の助言すら要らなかった、全部自分たちで作り上げたんだ、なのに今は何もかもおかしい！",
    "role": "desc",
@@ -87141,7 +87525,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#005": {
+  "Heart of Llevigar#015": {
    "src": "You're seeing all these sparks and hearing all this crackling? We have no idea what could possibly be going wrong with this! That's why you're needed here!",
    "dst": "この火花とバチバチ音が分かるよね？何が悪いのかまったく見当もつかない！だからあなたが必要なんだ！",
    "role": "desc",
@@ -87151,7 +87535,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#006": {
+  "Heart of Llevigar#016": {
    "src": "We don't have much time until full meltdown! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer!",
    "dst": "完全なメルトダウンまで時間がない！銀行の向かいに発電所への入口がある、そこで技師長に会って！",
    "role": "desc",
@@ -87161,7 +87545,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#007": {
+  "Heart of Llevigar#017": {
    "src": "Enter the sewers opposite of the bank of {p}.",
    "dst": "{p} の銀行の向かいから下水道に入る。",
    "role": "desc",
@@ -87171,7 +87555,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#008": {
+  "Heart of Llevigar#018": {
    "src": "Find the head engineer at the {p} power plant",
    "dst": "{p} 発電所で技師長を探す",
    "role": "desc",
@@ -87181,7 +87565,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#009": {
+  "Heart of Llevigar#019": {
    "src": "Whew, finally Zeman found a guy for the job. I told him weeks ago this was a two-person task...",
    "dst": "ふう、やっと Zeman が人を見つけたか。二人がかりの仕事だって何週間も前に言ったのに…",
    "role": "desc",
@@ -87191,7 +87575,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#010": {
+  "Heart of Llevigar#020": {
    "src": "Wait, it's Zenam? Eh, what does it matter? You knew who I was talkin' about. Lemme give you the lowdown real fast.",
    "dst": "待て、Zenam だっけ？まあ、どっちでもいいだろ？誰のことか分かったんだから。手短に説明するぞ。",
    "role": "desc",
@@ -87201,7 +87585,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#011": {
+  "Heart of Llevigar#021": {
    "src": "About a month ago, there was a big blackout, and the generator here started acting up. Power surges, appliances overloading...heck, some of our lights turned purple!",
    "dst": "ひと月ほど前に大停電があって、ここの発電機がおかしくなりだした。電力サージ、機器の過負荷…しまいには照明が紫になったんだ！",
    "role": "desc",
@@ -87211,7 +87595,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#012": {
+  "Heart of Llevigar#022": {
    "src": "My grandfather and his engineers jury-rigged the whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
    "dst": "じいさんとその技師たちがシステム全体を応急でこしらえた。リセットすれば直るはずだが、安全規定で俺がここで立ち会う必要がある。",
    "role": "desc",
@@ -87221,7 +87605,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#013": {
+  "Heart of Llevigar#023": {
    "src": "So that's your job- get through the system and find the reset button. These holes'll lead you around the generator rooms. Better get going!",
    "dst": "そこでお前の仕事だ――システムを抜けてリセットボタンを探せ。この穴を通れば発電機室を回れる。さっさと行け！",
    "role": "desc",
@@ -87231,7 +87615,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#014": {
+  "Heart of Llevigar#024": {
    "src": "Try to find a way into the machine",
    "dst": "機械の中へ入る方法を探す",
    "role": "desc",
@@ -87241,7 +87625,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#015": {
+  "Heart of Llevigar#025": {
    "src": "Find a way to proceed to the inner parts of the machinery",
    "dst": "機械の内部へ進む方法を探す",
    "role": "desc",
@@ -87251,7 +87635,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#016": {
+  "Heart of Llevigar#026": {
    "src": "Reach the center of the restricted area",
    "dst": "制限区域の中心にたどり着く",
    "role": "desc",
@@ -87261,7 +87645,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#017": {
+  "Heart of Llevigar#027": {
    "src": "Find the reset button.",
    "dst": "リセットボタンを見つける。",
    "role": "desc",
@@ -87271,7 +87655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#018": {
+  "Heart of Llevigar#028": {
    "src": "Report back to the Head Engineer",
    "dst": "技師長に報告する",
    "role": "desc",
@@ -87281,7 +87665,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#019": {
+  "Heart of Llevigar#029": {
    "src": "Alright, that should do it- Ah, you're back. The system reset just fine, like I said. Everything should be winding down now.",
    "dst": "よし、これでいいはず――おっ、戻ったか。言った通り、リセットはうまくいった。もう全部落ち着いてくるはずだ。",
    "role": "desc",
@@ -87291,7 +87675,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#020": {
+  "Heart of Llevigar#030": {
    "src": "It's purging the excess energy now- might have a few more power surges and crackles for a while, but it'll go back to normal soon enough.",
    "dst": "今は余分なエネルギーを排出してる――しばらくはサージやバチバチが残るかもしれんが、すぐ元に戻るさ。",
    "role": "desc",
@@ -87301,7 +87685,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#021": {
+  "Heart of Llevigar#031": {
    "src": "Hm? What, there was a bug in the system? ...what, are you asleep or something? Of course there was a bug, we just fixed it!",
    "dst": "ん？何、システムの中に虫がいた？…寝ぼけてんのか？バグがあったから今直したんだろうが！",
    "role": "desc",
@@ -87311,7 +87695,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#022": {
+  "Heart of Llevigar#032": {
    "src": "Well, anyways, Zebra should have our payment all settled. You go on ahead- I still need to stay down here to make sure everything stays smooth.",
    "dst": "まあとにかく、報酬は Zebra が用意してるはずだ。先に行ってくれ――俺は全部うまく回るか見届けなきゃならん。",
    "role": "desc",
@@ -87321,7 +87705,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#023": {
+  "Heart of Llevigar#033": {
    "src": "...oh, it's Zenam? D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system, it hooks up to the sewer exit.",
    "dst": "…あ、Zenam だっけ？名前を正しく言うのがそんなに大事か？とにかく、出口は水冷システムの先で、下水道の出口につながってる。",
    "role": "desc",
@@ -87331,7 +87715,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#024": {
+  "Heart of Llevigar#034": {
    "src": "Ask Zenam for your reward",
    "dst": "Zenam に報酬をもらう",
    "role": "desc",
@@ -87341,7 +87725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#025": {
+  "Heart of Llevigar#035": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
    "dst": "ふう…おかえり。電力が戻った――すべてまたフル稼働だ。システムは今、余剰分を流しているだけだと思う。",
    "role": "desc",
@@ -87351,7 +87735,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#026": {
+  "Heart of Llevigar#036": {
    "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
    "dst": "でも間に合ってよかった――専門家を名乗る偽者が来たんだ。明らかにあなたの報酬を横取りしに来ただけだよ…",
    "role": "desc",
@@ -87361,7 +87745,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#027": {
+  "Heart of Llevigar#037": {
    "src": "Though, I was panicking so much I probably would've believed him... Speaking of which, here's your cut of the pay, and something extra for the trouble.",
    "dst": "まあ、あんなに慌ててたら信じてたかもしれないけど…そうそう、これがあなたの取り分、それと迷惑料も少し。",
    "role": "desc",
@@ -87371,7 +87755,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#028": {
+  "Heart of Llevigar#038": {
    "src": "Here's to hoping that the system won't run into any more trouble in the future. I don't want to be faced with an impending cataclysm like that again...",
    "dst": "今後はシステムに何も起きないことを祈るよ。あんな差し迫った大惨事にまた直面するのはごめんだ…",
    "role": "desc",
@@ -87381,7 +87765,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#029": {
+  "Heart of Llevigar#039": {
    "src": "Aah, this is bad, where's the keys to my toolbox?! Zenam said it was important, I need to find them!",
    "dst": "ああっ、まずい、工具箱の鍵はどこだ！？Zenam が重要だって言ってたんだ、見つけないと！",
    "role": "desc",
@@ -87391,7 +87775,7 @@
    "speaker": "Electromagic Expert",
    "source": "wiki"
   },
-  "Heart of Llevigar#030": {
+  "Heart of Llevigar#040": {
    "src": "I still can't believe it, a human has done my job and taken my emeralds... Just because I lost my keys...",
    "dst": "まだ信じられない、人間が私の仕事をしてエメラルドを持っていった…鍵をなくしただけで…",
    "role": "desc",
@@ -92242,6 +92626,26 @@
    "source": "wiki"
   },
   "Ice Nations#000": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "…実はな、我々が難破したのは自然のせいではない。襲われたのだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "Have you made any progress?",
+   "dst": "何か進展はあったか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
    "dst": "{p} の [{~}, {~}, -{~}] で Adigard と話す",
    "role": "desc",
@@ -92251,7 +92655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#001": {
+  "Ice Nations#003": {
    "src": "Welcome traveler, to our humble island...",
    "dst": "ようこそ旅人、我らの小さな島へ…",
    "role": "desc",
@@ -92261,7 +92665,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#002": {
+  "Ice Nations#004": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
    "dst": "私と民は何年も前にこの地に流れ着いた。不幸にも、船は持たなかった…",
    "role": "desc",
@@ -92271,7 +92675,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#003": {
+  "Ice Nations#005": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
    "dst": "この島々に国を築こうとしたが、年月とともに分裂してしまった。",
    "role": "desc",
@@ -92281,7 +92685,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#004": {
+  "Ice Nations#006": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
    "dst": "そのせいで、隣人と無益な戦争をしている。",
    "role": "desc",
@@ -92291,7 +92695,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#005": {
+  "Ice Nations#007": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
    "dst": "和平条約を結ぶべきだと思うが、島を離れれば殺されるのではと恐れている…",
    "role": "desc",
@@ -92301,7 +92705,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#006": {
+  "Ice Nations#008": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
    "dst": "手を貸してくれないか？条約について Hallfred と話してくれ。近くの別の氷の島に住んでいる。",
    "role": "desc",
@@ -92311,7 +92715,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#007": {
+  "Ice Nations#009": {
    "src": "Talk to Hallfred about the peace treaty",
    "dst": "和平条約について Hallfred と話す",
    "role": "desc",
@@ -92321,7 +92725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#008": {
+  "Ice Nations#010": {
    "src": "Welcome traveler! What brings you to our island?",
    "dst": "ようこそ旅人！俺たちの島に何の用だ？",
    "role": "desc",
@@ -92331,7 +92735,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#009": {
+  "Ice Nations#011": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
    "dst": "ほう、Adigard の奴、臆病風に吹かれてよそ者を寄越したか！殺されるのが怖いんだろ？",
    "role": "desc",
@@ -92341,7 +92745,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#010": {
+  "Ice Nations#012": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
    "dst": "これが最後だ。Adigard とその国が俺たちに…宝を返した日に、和平条約に署名してやる。",
    "role": "desc",
@@ -92351,7 +92755,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#011": {
+  "Ice Nations#013": {
    "src": "The one that they kept and hid from us after the shipwreck.",
    "dst": "難破の後、奴らが隠して独り占めしたやつだ。",
    "role": "desc",
@@ -92361,7 +92765,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#012": {
+  "Ice Nations#014": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
    "dst": "純金だ、貴重で希少なんだ！待ってると伝えろ。あのくだらん作り話はもう無しだぞ。",
    "role": "desc",
@@ -92371,7 +92775,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#013": {
+  "Ice Nations#015": {
    "src": "Talk back to Adigard about Hallfred's response",
    "dst": "Hallfred の返事を Adigard に伝える",
    "role": "desc",
@@ -92381,7 +92785,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#014": {
+  "Ice Nations#016": {
    "src": "I should have expected that. Hallfred was always very greedy...",
    "dst": "予想すべきだった。Hallfred は昔から強欲でな…",
    "role": "desc",
@@ -92391,7 +92795,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#015": {
+  "Ice Nations#017": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
    "dst": "宝など持っていないと分からせようとしたが、うまくいかなかった。",
    "role": "desc",
@@ -92401,7 +92805,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#016": {
+  "Ice Nations#018": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
    "dst": "…実はな、我々が難破したのは自然のせいではない。襲われたのだ…",
    "role": "desc",
@@ -92411,7 +92815,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#017": {
+  "Ice Nations#019": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
    "dst": "誰に？亡者だ。化け物のような船を操る幽霊と悪魔。不意を突かれた。",
    "role": "desc",
@@ -92421,7 +92825,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#018": {
+  "Ice Nations#020": {
    "src": "I believe they also stole our treasure during the attack.",
    "dst": "宝もその襲撃で奪われたのだと思う。",
    "role": "desc",
@@ -92431,7 +92835,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#019": {
+  "Ice Nations#021": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
    "dst": "我らの国を再び一つにしてくれないか？その船を見つけ、宝を Hallfred に届けてくれ。そうすればやっと平和に暮らせる。",
    "role": "desc",
@@ -92441,7 +92845,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#020": {
+  "Ice Nations#022": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
    "dst": "北へ航海してくれ。何年も前に奴らが我々を襲った場所だ。見つけやすいはずだ、きっと堂々と停泊している…ありがとう。",
    "role": "desc",
@@ -92451,7 +92855,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#021": {
+  "Ice Nations#023": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
    "dst": "幽霊船を見つけ、[Ancient Treasure] を Hallfred に届ける",
    "role": "desc",
@@ -92461,7 +92865,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#022": {
+  "Ice Nations#024": {
    "src": "Incredible! He actually delivered the treasure!",
    "dst": "信じられん！本当に宝を渡してきやがった！",
    "role": "desc",
@@ -92471,7 +92875,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#023": {
+  "Ice Nations#025": {
    "src": "I suppose that means the end of the war between our nations!",
    "dst": "これで俺たちの国の戦争も終わりってわけだ！",
    "role": "desc",
@@ -92481,7 +92885,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#024": {
+  "Ice Nations#026": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
    "dst": "めでたい日だ！ほら、国を助けてくれた礼にこれをやる。",
    "role": "desc",
@@ -92491,7 +92895,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#025": {
+  "Ice Nations#027": {
    "src": "I'm sure you'll find a use for this helmet one day!",
    "dst": "この兜もいつか役に立つだろうさ！",
    "role": "desc",
@@ -101550,6 +101954,306 @@
    "source": "captured"
   },
   "Misadventure on the Sea#033": {
+   "src": "The only boat that will take ye directly to {p}.",
+   "dst": "{p} まで直行する唯一の船だぜ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#034": {
+   "src": "Hey! You aren't allowed on my ship!",
+   "dst": "おい！俺の船に乗るんじゃねえ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#035": {
+   "src": "This hologram will teleport you back on the island to continue the quest or Reset your quest.",
+   "dst": "このホログラムで島へ戻ってクエストを続けるか、クエストをリセットできる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#036": {
+   "src": "Are you sure you wish to Reset your quest?",
+   "dst": "本当にクエストをリセットしますか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#037": {
+   "src": "Misadventure On The Sea has been reset!",
+   "dst": "「海の災難」がリセットされました！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#038": {
+   "src": "Maybe you could somehow use it..? There's no way to tell how dangerous it is. Probably very.",
+   "dst": "それを何とか使えるかもしれない…？どれほど危険かは分からない。たぶん、かなり危険だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#039": {
+   "src": "It must be the one up you saw up there! That's got to be the way to escape!",
+   "dst": "きっと上で見たあれだ！あれが脱出路に違いない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#040": {
+   "src": "Who knows, maybe there's gunpowder in there?",
+   "dst": "ひょっとしたら、中に火薬があるかもな？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#041": {
+   "src": "Seems like it likes you now!",
+   "dst": "すっかりなついたみたいだな！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#042": {
+   "src": "Not done yet? Well, take your time!",
+   "dst": "まだか？まあ、ゆっくりやれ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#043": {
+   "src": "We sometimes hear unusually loud footsteps, along with some really eerie squeaking...",
+   "dst": "時々やけにでかい足音が聞こえるし、すげえ不気味なキーキー声もする…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#044": {
+   "src": "Looks like this crate is filled with rat hair, with some eaten carrots.",
+   "dst": "この木箱はネズミの毛と、かじられたニンジンでいっぱいのようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#045": {
+   "src": "You defeated the rats! You should grab the gunpowder and the fuse before leaving.",
+   "dst": "ネズミを倒した！出る前に火薬と導火線を持っていこう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#046": {
+   "src": "[+{~} Cannon Fuse]",
+   "dst": "[+{~} 大砲の導火線]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#047": {
+   "src": "[+{~} Gunpowder Cra",
+   "dst": "[+{~} 火薬箱",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#048": {
+   "src": "You've got enough gunpowder already.",
+   "dst": "火薬はもう十分ある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#049": {
+   "src": "Looks like this crate is filled with even more rat hair!",
+   "dst": "この木箱には、さらに多くのネズミの毛が詰まっている！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#050": {
+   "src": "You picked up a dusty key!",
+   "dst": "ほこりまみれの鍵を拾った！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#051": {
+   "src": "You already got fuse.",
+   "dst": "導火線はもう手に入れた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#053": {
+   "src": "You got the fuse as well as the gunpowder. Looks like you can use that cannon now!",
+   "dst": "導火線も火薬も手に入れた。これであの大砲が使えそうだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#054": {
+   "src": "You put the gunpowder in the cannon and attach the fuse...",
+   "dst": "大砲に火薬を詰め、導火線を取り付けた…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#055": {
+   "src": "Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.",
+   "dst": "完全に使えるようだ。海賊に見つからないように！一度出たら、もう戻れない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#056": {
+   "src": "You crawl into the cannon...",
+   "dst": "大砲の中に這い込んだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#057": {
+   "src": "You dig up some sand...",
+   "dst": "砂を掘り出した…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#058": {
+   "src": "There's more sand.",
+   "dst": "まだ砂がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#059": {
+   "src": "It's a coconut.",
+   "dst": "ココナッツだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#060": {
+   "src": "It's a palm tree!",
+   "dst": "ヤシの木だ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#061": {
+   "src": "Huh? Something's approaching off in the distance...",
+   "dst": "ん？遠くから何かが近づいてくる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#062": {
+   "src": "Looks like they're headed toward the island! Is that..?",
+   "dst": "こっちの島へ向かってくるようだ！あれは…？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#063": {
+   "src": "Ah... Trust. Say, why don't I make it so you can travel to {p} for free? That way, if ya ever think o' doin' somethin' foolish like that again, ya can jus' take a trip on my ol' ship!",
+   "dst": "ああ…信頼か。そうだ、これからは {p} までタダで乗せてやるってのはどうだ？そうすりゃ、またあんな馬鹿なことをしたくなっても、俺のおんぼろ船でひとっ走りすりゃいい！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#064": {
    "src": "Visit the {p} bar at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] にある {p} の酒場を訪ねる",
    "role": "desc",
@@ -101559,7 +102263,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#034": {
+  "Misadventure on the Sea#065": {
    "src": "Hello there soldier! What can I get you?",
    "dst": "よう兵隊さん！何にする？",
    "role": "desc",
@@ -101569,7 +102273,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#035": {
+  "Misadventure on the Sea#066": {
    "src": "I'll take {~} {p} Whiskeys. One for me, one for this chap.",
    "dst": "{p} ウイスキーを {~} 杯。俺の分と、こいつの分だ。",
    "role": "desc",
@@ -101579,7 +102283,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#036": {
+  "Misadventure on the Sea#067": {
    "src": "You got it.",
    "dst": "あいよ。",
    "role": "desc",
@@ -101589,7 +102293,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#037": {
+  "Misadventure on the Sea#068": {
    "src": "So... I've seen ya around town. I saw how happy that guy was when you brought him some journal.",
    "dst": "で…町でお前を見かけたぜ。日誌を届けてやった時、あの男がえらく喜んでたな。",
    "role": "desc",
@@ -101599,7 +102303,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#038": {
+  "Misadventure on the Sea#069": {
    "src": "{~} {p} Whiskeys, coming up!",
    "dst": "{p} ウイスキー {~} 杯、お待ち！",
    "role": "desc",
@@ -101609,7 +102313,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#039": {
+  "Misadventure on the Sea#070": {
    "src": "So... Soldier. Are ya up for sailin' the ocean with me? I got a fancier boat than that seaskipper!",
    "dst": "で…兵隊さんよ。俺と海に出る気はねえか？あの Seaskipper より上等な船があるんだ！",
    "role": "desc",
@@ -101619,7 +102323,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#040": {
+  "Misadventure on the Sea#071": {
    "src": "I figured you'd be interested in explorin' the waters!",
    "dst": "海の探検に興味があると思ってな！",
    "role": "desc",
@@ -101629,7 +102333,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#041": {
+  "Misadventure on the Sea#072": {
    "src": "I'll wait for ya on the docks. Don't worry, ya can't miss the boat!",
    "dst": "波止場で待ってるぜ。心配すんな、船は見りゃすぐ分かる！",
    "role": "desc",
@@ -101639,7 +102343,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#042": {
+  "Misadventure on the Sea#073": {
    "src": "Meet Honip at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] で Honip と合流する",
    "role": "desc",
@@ -101649,7 +102353,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#043": {
+  "Misadventure on the Sea#074": {
    "src": "There you are! Ready? Follow me, the boat's over here!",
    "dst": "来たな！準備はいいか？ついて来い、船はこっちだ！",
    "role": "desc",
@@ -101659,7 +102363,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#044": {
+  "Misadventure on the Sea#075": {
    "src": "Look at this.. Magnificent! Much better than whatever the Seaskipper is using!",
    "dst": "見ろよ…見事だろ！Seaskipper のボロ船よりずっといい！",
    "role": "desc",
@@ -101669,7 +102373,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#045": {
+  "Misadventure on the Sea#076": {
    "src": "Well, what are you waiting for? Hop aboard!",
    "dst": "で、何を待ってる？乗りな！",
    "role": "desc",
@@ -101679,7 +102383,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#046": {
+  "Misadventure on the Sea#077": {
    "src": "Then it's settled, we're goin' on an adventure!",
    "dst": "じゃあ決まりだ、冒険に出発だぜ！",
    "role": "desc",
@@ -101689,7 +102393,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#047": {
+  "Misadventure on the Sea#078": {
    "src": "Buckle up, we got waves to catch.",
    "dst": "しっかりつかまれ、波に乗るぞ。",
    "role": "desc",
@@ -101699,7 +102403,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#048": {
+  "Misadventure on the Sea#079": {
    "src": "So... I should warn ya', this is actually my first time sailing...",
    "dst": "あー…言っとくが、実は船を操るのは初めてでな…",
    "role": "desc",
@@ -101709,7 +102413,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#049": {
+  "Misadventure on the Sea#080": {
    "src": "It doesn't seem too difficult though, a little to the left...",
    "dst": "でも大して難しくなさそうだ、ちょいと左に…",
    "role": "desc",
@@ -101719,7 +102423,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#050": {
+  "Misadventure on the Sea#081": {
    "src": "Hmm, looks like we're not the only ones out on the water today.",
    "dst": "ふむ、今日海に出てるのは俺たちだけじゃないらしい。",
    "role": "desc",
@@ -101729,7 +102433,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#051": {
+  "Misadventure on the Sea#082": {
    "src": "They are a bit too head on, don't you think?",
    "dst": "あいつら、ちょっと真正面から来すぎじゃねえか？",
    "role": "desc",
@@ -101739,7 +102443,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#052": {
+  "Misadventure on the Sea#083": {
    "src": "I'm trying to steer the ship but it's not budging...",
    "dst": "舵を切ろうとしてるんだが、びくともしねえ…",
    "role": "desc",
@@ -101749,7 +102453,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#053": {
+  "Misadventure on the Sea#084": {
    "src": "That's unfortunate...",
    "dst": "こいつは不運だ…",
    "role": "desc",
@@ -101759,7 +102463,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#054": {
+  "Misadventure on the Sea#085": {
    "src": "Unfortunate... For YOU!",
    "dst": "不運なのは…「お前」だがな！",
    "role": "desc",
@@ -101769,7 +102473,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#055": {
+  "Misadventure on the Sea#086": {
    "src": "Hey, you're finally awake.",
    "dst": "よう、やっと目が覚めたか。",
    "role": "desc",
@@ -101779,7 +102483,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#056": {
+  "Misadventure on the Sea#087": {
    "src": "I honestly, truly can't believe you fell for that. Let me sum it up for you...",
    "dst": "正直、あんなのに引っかかるなんて信じられねえ。まとめてやるよ…",
    "role": "desc",
@@ -101789,7 +102493,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#057": {
+  "Misadventure on the Sea#088": {
    "src": "Some extremely suspicious pirate comes up, offers you a drink, and leads you to his suspicious boat.",
    "dst": "めちゃくちゃ怪しい海賊が近づいてきて、酒をおごり、怪しい船に案内する。",
    "role": "desc",
@@ -101799,7 +102503,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#058": {
+  "Misadventure on the Sea#089": {
    "src": "Any normal person would've turned back by then. But what do you do? You hop on! Well, now you're stuck with us.",
    "dst": "普通の奴ならその時点で引き返す。なのにお前は？飛び乗った！ってわけで、もう俺たちから逃げられねえ。",
    "role": "desc",
@@ -101809,7 +102513,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#059": {
+  "Misadventure on the Sea#090": {
    "src": "Let me make this quick. This boat needs renovation, and we want you to do it.",
    "dst": "手短に言う。この船は修繕が必要で、お前にやってもらう。",
    "role": "desc",
@@ -101819,7 +102523,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#060": {
+  "Misadventure on the Sea#091": {
    "src": "Why? You're a soldier! All you do is take orders! Anyway, we'll need you to clean our stuff. Here, get out.",
    "dst": "なぜかって？お前は兵隊だろ！命令に従うのが仕事だ！とにかく、俺たちの物を掃除してもらう。ほら、出ろ。",
    "role": "desc",
@@ -101829,7 +102533,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#061": {
+  "Misadventure on the Sea#092": {
    "src": "Stay back!",
    "dst": "下がれ！",
    "role": "desc",
@@ -101839,7 +102543,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#062": {
+  "Misadventure on the Sea#093": {
    "src": "I told you to stay back!",
    "dst": "下がれって言っただろ！",
    "role": "desc",
@@ -101849,7 +102553,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#063": {
+  "Misadventure on the Sea#094": {
    "src": "Alright, that's enough!",
    "dst": "よし、そこまでだ！",
    "role": "desc",
@@ -101859,7 +102563,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#064": {
+  "Misadventure on the Sea#095": {
    "src": "So, there's quite a few skeletons in there, and we never bothered throwin' them out!",
    "dst": "中には骸骨がけっこうあってな、わざわざ捨てたこともねえんだ！",
    "role": "desc",
@@ -101869,7 +102573,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#065": {
+  "Misadventure on the Sea#096": {
    "src": "Go ahead, here's a sponge for the dried blood as well. Just wack the skeletons with it!",
    "dst": "さあ行け、乾いた血用のスポンジもやる。骸骨はそれでぶっ叩きゃいい！",
    "role": "desc",
@@ -101879,7 +102583,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#066": {
+  "Misadventure on the Sea#097": {
    "src": "If you need me, I'll be on the deck. And, uh, don't go in the hold. We've got a BIG rat problem.",
    "dst": "用があれば甲板にいる。それと、あー、船倉には入るな。ネズミがひどくてな。",
    "role": "desc",
@@ -101889,7 +102593,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#067": {
+  "Misadventure on the Sea#098": {
    "src": "Also, for the sake of my crew, could you be more cooperative? I don't have an unlimited amount of these potions.",
    "dst": "あと、手下のためにも、もう少し協力的になってくれねえか？この薬も無限にあるわけじゃねえんだ。",
    "role": "desc",
@@ -101899,7 +102603,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#068": {
+  "Misadventure on the Sea#099": {
    "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: #/{~}",
    "dst": "船内の死体を掃除する。同時に脱出の手がかりを探す。-掃除した死体: #/{~}",
    "role": "desc",
@@ -101909,7 +102613,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#069": {
+  "Misadventure on the Sea#100": {
    "src": "Hey, so you're our personal guard, huh?",
    "dst": "よう、お前が俺たちの専属護衛か？",
    "role": "desc",
@@ -101919,7 +102623,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#070": {
+  "Misadventure on the Sea#101": {
    "src": "Nice to meet ya!",
    "dst": "よろしくな！",
    "role": "desc",
@@ -101929,7 +102633,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#071": {
+  "Misadventure on the Sea#102": {
    "src": "That ladder leads to the hold, but right now it's locked... We've got a severe case of rats.",
    "dst": "そのはしごは船倉に通じてるが、今は鍵がかかってる…ネズミがひどくてな。",
    "role": "desc",
@@ -101939,7 +102643,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#072": {
+  "Misadventure on the Sea#103": {
    "src": "Pep is just a treasure, ain't I right? I'm glad you're taking care of him too!",
    "dst": "Pep はまさにお宝だよな？お前も世話してくれて嬉しいぜ！",
    "role": "desc",
@@ -101949,7 +102653,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#073": {
+  "Misadventure on the Sea#104": {
    "src": "Honip has a pet chicken, weird right?",
    "dst": "Honip はニワトリを飼ってる、変だろ？",
    "role": "desc",
@@ -101959,7 +102663,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#074": {
+  "Misadventure on the Sea#105": {
    "src": "I bet he got inspiration from that weird guy on his island...",
    "dst": "きっと自分の島にいた変な奴から思いついたんだろうな…",
    "role": "desc",
@@ -101969,7 +102673,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#075": {
+  "Misadventure on the Sea#106": {
    "src": "What? You murdered that guy's most prized chicken? You're an odd one, soldier.",
    "dst": "何？あいつの一番大事なニワトリを殺した？変わった奴だな、兵隊さん。",
    "role": "desc",
@@ -101979,7 +102683,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#076": {
+  "Misadventure on the Sea#107": {
    "src": "Oh, uh... Don't worry about that, 'ay?",
    "dst": "あー、えっと…それは気にすんな、な？",
    "role": "desc",
@@ -101989,7 +102693,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#077": {
+  "Misadventure on the Sea#108": {
    "src": "That's our... fuel source.",
    "dst": "あれは俺たちの…燃料源だ。",
    "role": "desc",
@@ -101999,7 +102703,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#078": {
+  "Misadventure on the Sea#109": {
    "src": "Oh, that's my cannon! Pretty cool, right? I made it using a bunch of arm- Nevermind...",
    "dst": "おお、それは俺の大砲だ！かっこいいだろ？たくさんの腕を使って作―いや、何でもない…",
    "role": "desc",
@@ -102009,7 +102713,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#079": {
+  "Misadventure on the Sea#110": {
    "src": "Oh, Snoo likes you!",
    "dst": "おっ、Snoo が気に入ったみたいだ！",
    "role": "desc",
@@ -102019,7 +102723,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#080": {
+  "Misadventure on the Sea#111": {
    "src": "He's a strong chicken alright, trust me on that one.",
    "dst": "こいつは強いニワトリだぜ、そこは信じてくれ。",
    "role": "desc",
@@ -102029,7 +102733,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#081": {
+  "Misadventure on the Sea#112": {
    "src": "Anyway, get back to work!",
    "dst": "とにかく、仕事に戻れ！",
    "role": "desc",
@@ -102039,7 +102743,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#082": {
+  "Misadventure on the Sea#113": {
    "src": "I'm just goin' to... Wait here... With my cannons...",
    "dst": "俺はただ…ここで待ってるよ…大砲と一緒に…",
    "role": "desc",
@@ -102049,7 +102753,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#083": {
+  "Misadventure on the Sea#114": {
    "src": "Talk to Honip on the deck to get your next task",
    "dst": "甲板の Honip と話し、次の仕事をもらう",
    "role": "desc",
@@ -102059,7 +102763,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#084": {
+  "Misadventure on the Sea#115": {
    "src": "Hey! The boat's lookin' real nice now!",
    "dst": "おい！船がずいぶん綺麗になったな！",
    "role": "desc",
@@ -102069,7 +102773,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#085": {
+  "Misadventure on the Sea#116": {
    "src": "I'll probably let you rest so- hold on.",
    "dst": "そろそろ休ませてやるか―待て。",
    "role": "desc",
@@ -102079,7 +102783,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#086": {
+  "Misadventure on the Sea#117": {
    "src": "Ho-Honip! One of the guys said he saw something really weird coming right for us!",
    "dst": "ホ、Honip！仲間の一人が、何かすげえ変なもんがまっすぐこっちに来るのを見たって！",
    "role": "desc",
@@ -102089,7 +102793,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#087": {
+  "Misadventure on the Sea#118": {
    "src": "Wait... What? Soldier, come!",
    "dst": "待て…何だと？兵隊、来い！",
    "role": "desc",
@@ -102099,7 +102803,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#088": {
+  "Misadventure on the Sea#119": {
    "src": "What's happening?!",
    "dst": "何が起きてる？！",
    "role": "desc",
@@ -102109,7 +102813,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#089": {
+  "Misadventure on the Sea#120": {
    "src": "We-we don't know! We can't exactly see it, but it seems huge!",
    "dst": "わ、分からねえ！よく見えねえが、とんでもなくデカいらしい！",
    "role": "desc",
@@ -102119,7 +102823,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#090": {
+  "Misadventure on the Sea#121": {
    "src": "I- Let me see.",
    "dst": "お、俺に見せろ。",
    "role": "desc",
@@ -102129,7 +102833,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#091": {
+  "Misadventure on the Sea#122": {
    "src": "Uh... Where am I supposed to be looking at, exactly?",
    "dst": "あー…具体的にどこを見りゃいいんだ？",
    "role": "desc",
@@ -102139,7 +102843,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#092": {
+  "Misadventure on the Sea#123": {
    "src": "I swear, it felt like the whole ocean was getting crazy a second ago!",
    "dst": "誓って言う、さっきは海全体が狂ったみたいだったんだ！",
    "role": "desc",
@@ -102149,7 +102853,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#093": {
+  "Misadventure on the Sea#124": {
    "src": "If this is another one of your jokes...",
    "dst": "これがまたお前らの冗談なら…",
    "role": "desc",
@@ -102159,7 +102863,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#094": {
+  "Misadventure on the Sea#125": {
    "src": "LOOK OUT!",
    "dst": "危ない！",
    "role": "desc",
@@ -102169,7 +102873,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#095": {
+  "Misadventure on the Sea#126": {
    "src": "What the hell is that??",
    "dst": "ありゃ一体何だ？？",
    "role": "desc",
@@ -102179,7 +102883,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#096": {
+  "Misadventure on the Sea#127": {
    "src": "I don't know, this wasn't planned!",
    "dst": "知らねえ、こんなの予定にねえぞ！",
    "role": "desc",
@@ -102189,7 +102893,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#097": {
+  "Misadventure on the Sea#128": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "兵隊、お前の見せ場だ！呪文か何かで追っ払え！",
    "role": "desc",
@@ -102199,7 +102903,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#098": {
+  "Misadventure on the Sea#129": {
    "src": "It's working! Do that again!",
    "dst": "効いてるぞ！もう一回だ！",
    "role": "desc",
@@ -102209,7 +102913,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#099": {
+  "Misadventure on the Sea#130": {
    "src": "One more...",
    "dst": "もう一発…",
    "role": "desc",
@@ -102219,7 +102923,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#100": {
+  "Misadventure on the Sea#131": {
    "src": "It's starting to panic!",
    "dst": "慌て始めたぞ！",
    "role": "desc",
@@ -102229,7 +102933,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#101": {
+  "Misadventure on the Sea#132": {
    "src": "That's right, get back!",
    "dst": "そうだ、下がりやがれ！",
    "role": "desc",
@@ -102239,7 +102943,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#102": {
+  "Misadventure on the Sea#133": {
    "src": "I knew you had it in ya, haha!",
    "dst": "やれると思ってたぜ、ははっ！",
    "role": "desc",
@@ -102249,7 +102953,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#103": {
+  "Misadventure on the Sea#134": {
    "src": "What a show! Come, I've got some things to tell ya!",
    "dst": "大したもんだ！来い、話がある！",
    "role": "desc",
@@ -102259,7 +102963,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#104": {
+  "Misadventure on the Sea#135": {
    "src": "I don't know where that creature came from, but thanks to you it's gone.",
    "dst": "あの化け物がどこから来たかは知らねえが、お前のおかげで消えた。",
    "role": "desc",
@@ -102269,7 +102973,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#105": {
+  "Misadventure on the Sea#136": {
    "src": "I've got something else for you to tackle. It's about... the rats.",
    "dst": "もう一つ片付けてほしいことがある。例の…ネズミだ。",
    "role": "desc",
@@ -102279,7 +102983,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#106": {
+  "Misadventure on the Sea#137": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "船倉に来い、道すがら説明する。",
    "role": "desc",
@@ -102289,7 +102993,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#107": {
+  "Misadventure on the Sea#138": {
    "src": "I think we have quite a hellish problem on our hands.",
    "dst": "どうもこいつは地獄みてえな問題らしい。",
    "role": "desc",
@@ -102299,7 +103003,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#108": {
+  "Misadventure on the Sea#139": {
    "src": "I'm not sure what y'all find there, but these are NOT normal rats.",
    "dst": "そこで何が見つかるか知らねえが、あいつらは普通のネズミ「じゃねえ」。",
    "role": "desc",
@@ -102309,7 +103013,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#109": {
+  "Misadventure on the Sea#140": {
    "src": "So please, get in there... and kill everything, alright?",
    "dst": "だから頼む、中に入って…全部ぶっ殺してくれ、いいな？",
    "role": "desc",
@@ -102319,7 +103023,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#110": {
+  "Misadventure on the Sea#141": {
    "src": "I've got faith in ya. Here goes nothin'!",
    "dst": "信じてるぜ。いざ勝負！",
    "role": "desc",
@@ -102329,7 +103033,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#111": {
+  "Misadventure on the Sea#142": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "兵隊、お前の見せ場だ！呪文か何かで追っ払え！",
    "role": "desc",
@@ -102339,7 +103043,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#112": {
+  "Misadventure on the Sea#143": {
    "src": "Just cast one of your fancy spells!",
    "dst": "ご自慢の呪文を使えよ！",
    "role": "desc",
@@ -102349,7 +103053,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#113": {
+  "Misadventure on the Sea#144": {
    "src": "That was... Phew... That was something.",
    "dst": "今のは…ふう…大したもんだった。",
    "role": "desc",
@@ -102359,7 +103063,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#114": {
+  "Misadventure on the Sea#145": {
    "src": "Now, for an even bigger surprise...",
    "dst": "さて、もっと大きなお楽しみだ…",
    "role": "desc",
@@ -102369,7 +103073,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#115": {
+  "Misadventure on the Sea#146": {
    "src": "What the hell soldier?? What don't you get in the \"soldier\" part of your job?",
    "dst": "何やってんだ兵隊？？仕事の「兵隊」って部分の何が分からねえんだ？",
    "role": "desc",
@@ -102379,7 +103083,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#116": {
+  "Misadventure on the Sea#147": {
    "src": "Come, let's figure some things out.",
    "dst": "来い、いくつか話をつけよう。",
    "role": "desc",
@@ -102389,7 +103093,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#117": {
+  "Misadventure on the Sea#148": {
    "src": "You've been a massive disappointment, y'know?",
    "dst": "お前にはがっかりさせられっぱなしだ、分かるか？",
    "role": "desc",
@@ -102399,7 +103103,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#118": {
+  "Misadventure on the Sea#149": {
    "src": "But you can still redeem yourself.",
    "dst": "だが、まだ挽回はできる。",
    "role": "desc",
@@ -102409,7 +103113,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#119": {
+  "Misadventure on the Sea#150": {
    "src": "Follow me, I'll explain on the way.",
    "dst": "ついて来い、道すがら説明する。",
    "role": "desc",
@@ -102419,7 +103123,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#120": {
+  "Misadventure on the Sea#151": {
    "src": "I mentioned a rat problem earlier... It's, uh, not a small one.",
    "dst": "さっきネズミの話をしたろ…あー、ちっとやそっとの話じゃねえ。",
    "role": "desc",
@@ -102429,7 +103133,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#121": {
+  "Misadventure on the Sea#152": {
    "src": "We've got gunpowder to retrieve, so you're the one who's gonna clear the hold.",
    "dst": "取り戻す火薬があるんでな、船倉を片付けるのはお前だ。",
    "role": "desc",
@@ -102439,7 +103143,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#122": {
+  "Misadventure on the Sea#153": {
    "src": "So get in there... and try to kill everything, alright?",
    "dst": "だから中に入って…全部殺すつもりでやれ、いいな？",
    "role": "desc",
@@ -102449,7 +103153,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#123": {
+  "Misadventure on the Sea#154": {
    "src": "Don't be as bad as earlier. You're a soldier.",
    "dst": "さっきみたいなヘマはすんなよ。お前は兵隊だろ。",
    "role": "desc",
@@ -102459,7 +103163,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#124": {
+  "Misadventure on the Sea#155": {
    "src": "What.",
    "dst": "は？",
    "role": "desc",
@@ -102469,7 +103173,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#125": {
+  "Misadventure on the Sea#156": {
    "src": "Well... That's a twist.",
    "dst": "おっと…そう来たか。",
    "role": "desc",
@@ -102479,7 +103183,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#126": {
+  "Misadventure on the Sea#157": {
    "src": "I expected you to do somethin', soldier, not him!",
    "dst": "兵隊、何かするのはお前だと思ってたんだ、そいつじゃねえ！",
    "role": "desc",
@@ -102489,7 +103193,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#127": {
+  "Misadventure on the Sea#158": {
    "src": "Anyway, come talk to me.",
    "dst": "とにかく、話がある、来い。",
    "role": "desc",
@@ -102499,7 +103203,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#128": {
+  "Misadventure on the Sea#159": {
    "src": "I have another task for you. It's about... the rats.",
    "dst": "もう一つ頼みがある。例の…ネズミだ。",
    "role": "desc",
@@ -102509,7 +103213,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#129": {
+  "Misadventure on the Sea#160": {
    "src": "See, I really don't think we have your usual type of problem.",
    "dst": "いいか、どうもよくある類の問題じゃねえ気がするんだ。",
    "role": "desc",
@@ -102519,7 +103223,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#130": {
+  "Misadventure on the Sea#161": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "船倉に来い、道すがら説明する。",
    "role": "desc",
@@ -102529,7 +103233,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#131": {
+  "Misadventure on the Sea#162": {
    "src": "We sometimes hear unusually load footsteps, along with some really eerie squeaking...",
    "dst": "時々やけにでかい足音が聞こえるし、すげえ不気味なキーキー声もする…",
    "role": "desc",
@@ -102539,7 +103243,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#132": {
+  "Misadventure on the Sea#163": {
    "src": "That's why we're not too fond of goin' in... But our gunpowder there! We need it, as pirates!",
    "dst": "だから入りたくねえんだが…火薬はあそこなんだ！海賊にゃ必要なんだよ！",
    "role": "desc",
@@ -102549,7 +103253,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#133": {
+  "Misadventure on the Sea#164": {
    "src": "So, I need you to get in... and kill everything, alright?",
    "dst": "だから、中に入って…全部ぶっ殺してくれ、いいな？",
    "role": "desc",
@@ -102559,7 +103263,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#134": {
+  "Misadventure on the Sea#165": {
    "src": "Here goes nothing. Snoo, ya stay there!",
    "dst": "いざ勝負。Snoo、お前はそこにいろ！",
    "role": "desc",
@@ -102569,7 +103273,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#135": {
+  "Misadventure on the Sea#166": {
    "src": "Explore the hold and kill the rats",
    "dst": "船倉を探索してネズミを倒す",
    "role": "desc",
@@ -102579,7 +103283,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#136": {
+  "Misadventure on the Sea#167": {
    "src": "Defeat the Colossal Rat in the hold",
    "dst": "船倉の Colossal Rat を倒す",
    "role": "desc",
@@ -102589,7 +103293,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#137": {
+  "Misadventure on the Sea#168": {
    "src": "Use the gunpowder and the fuse to activate the cannon and escape",
    "dst": "火薬と導火線で大砲を動かし、脱出する",
    "role": "desc",
@@ -102599,7 +103303,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#138": {
+  "Misadventure on the Sea#169": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "おう！いい知らせか？",
    "role": "desc",
@@ -102609,7 +103313,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#139": {
+  "Misadventure on the Sea#170": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "あの忌々しい盗人ネズミどもを片付けた？…Colossal Rat だと？",
    "role": "desc",
@@ -102619,7 +103323,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#140": {
+  "Misadventure on the Sea#171": {
    "src": "Nicely done, I knew I could count on ya! C'mere, take these!",
    "dst": "よくやった、頼りになると思ってたぜ！こっち来い、これを持ってけ！",
    "role": "desc",
@@ -102629,7 +103333,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#141": {
+  "Misadventure on the Sea#172": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "とにかく、今は休むなり好きにするなりしていいぞ！",
    "role": "desc",
@@ -102639,7 +103343,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#142": {
+  "Misadventure on the Sea#173": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "おう！いい知らせか？",
    "role": "desc",
@@ -102649,7 +103353,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#143": {
+  "Misadventure on the Sea#174": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "あの忌々しい盗人ネズミどもを片付けた？…Colossal Rat だと？",
    "role": "desc",
@@ -102659,7 +103363,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#144": {
+  "Misadventure on the Sea#175": {
    "src": "Well, shiver me timbers! You did redeem yourself soldier!",
    "dst": "こいつはたまげた！ちゃんと挽回したな、兵隊！",
    "role": "desc",
@@ -102669,7 +103373,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#145": {
+  "Misadventure on the Sea#176": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "とにかく、今は休むなり好きにするなりしていいぞ！",
    "role": "desc",
@@ -102679,7 +103383,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#146": {
+  "Misadventure on the Sea#177": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "おう！いい知らせか？",
    "role": "desc",
@@ -102689,7 +103393,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#147": {
+  "Misadventure on the Sea#178": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "あの忌々しい盗人ネズミどもを片付けた？…Colossal Rat だと？",
    "role": "desc",
@@ -102699,7 +103403,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#148": {
+  "Misadventure on the Sea#179": {
    "src": "That sounds absolutely terrifying! And ya did that alone! You know what, her', take these.",
    "dst": "そりゃ恐ろしい話だ！しかも一人でやったのか！よし、ほら、これを持ってけ。",
    "role": "desc",
@@ -102709,7 +103413,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#149": {
+  "Misadventure on the Sea#180": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "とにかく、今は休むなり好きにするなりしていいぞ！",
    "role": "desc",
@@ -102719,7 +103423,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#150": {
+  "Misadventure on the Sea#181": {
    "src": "Hey! What do you think you're doin'?!",
    "dst": "おい！何してやがる？！",
    "role": "desc",
@@ -102729,7 +103433,7 @@
    "speaker": "Pirate Guard",
    "source": "wiki"
   },
-  "Misadventure on the Sea#151": {
+  "Misadventure on the Sea#182": {
    "src": "...Seth? Have ya seen the soldier?",
    "dst": "…Seth？兵隊を見なかったか？",
    "role": "desc",
@@ -102739,7 +103443,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#152": {
+  "Misadventure on the Sea#183": {
    "src": "No, but they did a great job in the hold! Some gunpowder went missing though.",
    "dst": "いや、でも船倉ではいい仕事してたぜ！火薬がいくらか消えたけどな。",
    "role": "desc",
@@ -102749,7 +103453,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#153": {
+  "Misadventure on the Sea#184": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -102759,7 +103463,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#154": {
+  "Misadventure on the Sea#185": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -102769,7 +103473,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#155": {
+  "Misadventure on the Sea#186": {
    "src": "Wait a minute.",
    "dst": "ちょっと待て。",
    "role": "desc",
@@ -102779,7 +103483,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#156": {
+  "Misadventure on the Sea#187": {
    "src": "Find out where you are and a way to flee the island",
    "dst": "現在地を確かめ、島から逃げる方法を探す",
    "role": "desc",
@@ -102789,7 +103493,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#157": {
+  "Misadventure on the Sea#188": {
    "src": "'ey there soldier! Looks like ya're in a bit of a pickle! How 'bout ya hop on?'",
    "dst": "よう兵隊さん！困ってるみてえだな！乗ってくかい？",
    "role": "desc",
@@ -102799,7 +103503,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#158": {
+  "Misadventure on the Sea#189": {
    "src": "Well... We're headed for {p}, the heart of the ocean! Which is safer than wherever you were, heh!",
    "dst": "さて…行き先は海の中心、{p} だ！さっきまでいた所よりは安全だぜ、へへ！",
    "role": "desc",
@@ -102809,7 +103513,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#159": {
+  "Misadventure on the Sea#190": {
    "src": "I was casually takin' a scenic detour when I saw you and your shiny equipment on that island.",
    "dst": "景色のいい寄り道をしてたら、あの島にいるお前さんとピカピカの装備が見えたんでな。",
    "role": "desc",
@@ -102819,7 +103523,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#160": {
+  "Misadventure on the Sea#191": {
    "src": "So, ya gotta tell me what happened!",
    "dst": "で、何があったか聞かせてくれ！",
    "role": "desc",
@@ -102829,7 +103533,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#161": {
+  "Misadventure on the Sea#192": {
    "src": "Oh, kidnapped by pirates I see! How unfortunate...",
    "dst": "ほう、海賊にさらわれたか！そりゃ災難だ…",
    "role": "desc",
@@ -102839,7 +103543,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#162": {
+  "Misadventure on the Sea#193": {
    "src": "I guess that'll show ya, tryin' to avoid using good ol' seaskipper! I'm the only trustworthy one 'round here.",
    "dst": "頼れる Seaskipper を避けようとするからだぜ！この辺で信用できるのは俺だけさ。",
    "role": "desc",
@@ -102849,7 +103553,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#163": {
+  "Misadventure on the Sea#194": {
    "src": "Well, I hope they weren't too bad with ya! Here, I'll make you travel to {p} for free as compensation.",
    "dst": "ま、ひどい目に遭ってなきゃいいが！ほら、お詫びに {p} までタダで乗せてやる。",
    "role": "desc",
@@ -102859,7 +103563,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#164": {
+  "Misadventure on the Sea#195": {
    "src": "Anyway, I can see the shore off in the distance! Hang tight, we're almost there!",
    "dst": "とにかく、遠くに岸が見えてきた！つかまってな、もうすぐだ！",
    "role": "desc",
@@ -121182,6 +121886,116 @@
    "source": "wiki"
   },
   "Pirate's Trove#000": {
+   "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
+   "dst": "だが挨拶はこのへんにしよう。なあ…大海賊 Hastor 船長の話を聞いたことはあるか？遥か昔に海を渡った男だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#001": {
+   "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune someplace within the walls!",
+   "dst": "伝説によれば、昔 {p} が再建されたとき、奴は城壁のどこかに財宝を隠したそうだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#002": {
+   "src": "This first riddle goes like so: Toward the sunset, among northern flowers shaded by quartz.",
+   "dst": "最初の謎はこうだ。「日の沈む方、石英に陰る北の花々の間に」。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#003": {
+   "src": "How is your search going? I've written the first clue into your book. I've heard that the others are engraved on blocks of black stone; maybe you should look for those.",
+   "dst": "探索はどうだ？最初の手がかりはお前の本に書いておいた。残りは黒い石のブロックに刻まれているらしい。それを探してみるといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#004": {
+   "src": "A message is carved into the pedestal: In a place of identity, above the leaves and between the glass",
+   "dst": "台座に言葉が刻まれている:「身元の場所、葉の上、ガラスの間に」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#005": {
+   "src": "Oh sorry, am I blocking the shelf? I'm doing some research concerning Siegfried. He plays quite an astounding role in the current history of Gavel.",
+   "dst": "あら、ごめんなさい、棚の前をふさいでた？Siegfried について調べているの。彼は Gavel の近代史でとても大きな役割を果たしているのよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#006": {
+   "src": "I used to not believe in the stories of his heroic quests, however I can't deny the fact that he and his life are well documented.",
+   "dst": "昔は彼の英雄的な冒険の話なんて信じていなかったけど、彼とその生涯がしっかり記録されているのは否定できないわ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#007": {
+   "src": "After all, he is still alive and writing new books about his adventures, such as this one about his journey to slay an entire pack of werewolves threatening the town of {p}.",
+   "dst": "だって彼はまだ生きていて、自分の冒険の新しい本を書き続けているのよ。これなんて、{p} の町を脅かす人狼の群れを丸ごと討伐しに行った旅の話。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#008": {
+   "src": "Oh would you look at that, that actually happened a week ago. He seems so selfless and brave, I can see why we tell our children about him.",
+   "dst": "あら見て、これって実は一週間前の出来事なのね。とても無私で勇敢な人みたい。子どもたちに彼の話を聞かせるのも分かるわ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#009": {
+   "src": "A message is carved into the obsidian: In an emerald fountain, surrounded by the wealth of the villagers",
+   "dst": "黒曜石に言葉が刻まれている:「エメラルドの泉の中、村人たちの富に囲まれて」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#010": {
+   "src": "A message is carved into the obsidian: Beneath the cowl of an eastern titan, keeping watch over our heads",
+   "dst": "黒曜石に言葉が刻まれている:「東の巨人の頭巾の下、我らの頭上を見守る」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#011": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
    "dst": "{p} の外、[-{~}, {~}, -{~}] で Damiral と話す",
    "role": "desc",
@@ -121191,7 +122005,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#001": {
+  "Pirate's Trove#012": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
    "dst": "おお、冒険者よ！偉大なる Gavel 地方へようこそ。村人族の故郷であり、この俺の故郷だ。もうすぐ壮大な城塞都市 {p} に入るぞ！",
    "role": "desc",
@@ -121201,7 +122015,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#002": {
+  "Pirate's Trove#013": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
    "dst": "だが挨拶はこのへんにしよう。なあ…大海賊 Hastor 船長の話を聞いたことはあるか？遥か昔に海を渡った男だ。",
    "role": "desc",
@@ -121211,7 +122025,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#003": {
+  "Pirate's Trove#014": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
    "dst": "伝説によれば、昔 {p} が再建されたとき、奴は城壁のどこかに財宝を隠したそうだ！",
    "role": "desc",
@@ -121221,7 +122035,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#004": {
+  "Pirate's Trove#015": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
    "dst": "俺はもう引退した船乗りだが、その財宝から少しエメラルドをいただけるならありがたい。どうだ、やる気があるなら…取引といかないか？",
    "role": "desc",
@@ -121231,7 +122045,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#005": {
+  "Pirate's Trove#016": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
    "dst": "謎かけを一つ持っている。Hastor の隠し場所へ導く手がかりの最初の一つなんだが、どうしても解けんのだ。",
    "role": "desc",
@@ -121241,7 +122055,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#006": {
+  "Pirate's Trove#017": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
    "dst": "お前なら解けるかもしれん。解けたら、財宝は必ず山分けにしよう！",
    "role": "desc",
@@ -121251,7 +122065,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#007": {
+  "Pirate's Trove#018": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
    "dst": "最初の謎はこうだ。「日の沈む方、石英に陰る北の花々の間に」。",
    "role": "desc",
@@ -121261,7 +122075,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#008": {
+  "Pirate's Trove#019": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
    "dst": "幸運を祈るぞ、冒険者！いいか、手がかりを解くのに必要なものは、すべて {p} の中のどこかにあるはずだ。",
    "role": "desc",
@@ -121271,7 +122085,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#009": {
+  "Pirate's Trove#020": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
    "dst": "手がかり I: 日の沈む方、石英に陰る北の花々の間に",
    "role": "desc",
@@ -121281,7 +122095,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#010": {
+  "Pirate's Trove#021": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
    "dst": "手がかり II: 身元の場所にて、葉の上、ガラスの間に",
    "role": "desc",
@@ -121291,7 +122105,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#011": {
+  "Pirate's Trove#022": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
    "dst": "手がかり III: エメラルドの泉にて、村人の富に囲まれて",
    "role": "desc",
@@ -121301,7 +122115,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#012": {
+  "Pirate's Trove#023": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
    "dst": "手がかり IV: 東の巨人の頭巾の下、我らの頭上を見守る",
    "role": "desc",
@@ -121311,7 +122125,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#013": {
+  "Pirate's Trove#024": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
    "dst": "おお！様子を聞きに来たら、お前がこっちへ跳んでくるのが見えたぞ！",
    "role": "desc",
@@ -121321,7 +122135,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#014": {
+  "Pirate's Trove#025": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
    "dst": "見事な働きだ、相棒よ。ところで、約束は覚えているな？",
    "role": "desc",
@@ -121331,7 +122145,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#015": {
+  "Pirate's Trove#026": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
    "dst": "財宝を見つけたら分け前をやる。俺は自分の分をもらって行くとしよう！",
    "role": "desc",
@@ -121590,16 +122404,6 @@
   "Point of No Return#010": {
    "src": "... Maybe you should talk to that citizen again.",
    "dst": "…あの住人ともう一度話したほうがいいかも。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Point of No Return#011": {
-   "src": "You're... f",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -127551,16 +128355,6 @@
    "quest": "Queen's Recruit",
    "stage": "Stage 11",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
-  },
-  "Queen's Recruit#422": {
-   "src": "Yes, actua",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 11",
-   "speaker": "Lanu",
    "source": "wiki"
   },
   "Queen's Recruit#423": {
@@ -149609,16 +150403,6 @@
    "speaker": "Aihan",
    "source": "wiki"
   },
-  "Solidarity of Steel#457": {
-   "src": "Alrigh",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Solidarity of Steel",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "Solidarity of Steel#458": {
    "src": "We- no, no, no, this- this won't work, I can't- you need to pack different things, I can't go with- with this, pleas",
    "dst": "私たち- だめ、だめ、だめ、これじゃ- これじゃだめ、無理- 別の物を詰めて、これじゃ- 行けない、お願",
@@ -167545,16 +168329,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Dark Descent#032": {
-   "src": "I see",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Dark Descent#033": {
    "src": "I have an entire undead army at my service. Do you really think you stand a chance?",
    "dst": "我が配下にはアンデッドの軍勢がいる。本当に勝ち目があると思っているのか？",
@@ -169368,16 +170142,6 @@
   "The Envoy Part II#010": {
    "src": "I'll have to use electromagic to make it launch, so you'll have to go alone.",
    "dst": "発射には電磁魔法を使うから、君は一人で行ってくれ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "The Envoy Part II#011": {
-   "src": "Press the button when",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -199407,16 +200171,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Price of Ingenuity#001": {
-   "src": "*yaaaaw",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Price of Ingenuity",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Price of Ingenuity#002": {
    "src": "Previously implemented locomotive models employ an engine with relatively low efficiency.",
    "dst": "従来の機関車の型式は、比較的効率の低いエンジンを採用していた。",
@@ -221083,6 +221837,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "Tower of Ascension (Quest)#019": {
+   "src": "I need five tokens from the enemies in this room as evidence that you are strong enough to ascend.",
+   "dst": "この部屋の敵からトークンを5枚集めてこい。登るに足る強さの証としてな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tower of Ascension (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Tribal Aggression#000": {
    "src": "My tribe worries our own business, stranger.",
    "dst": "我が部族のことは我らの問題だ、よそ者よ。",
@@ -230430,6 +231194,56 @@
    "source": "wiki"
   },
   "WynnExcavation Site A#000": {
+   "src": "Questline Started: WynnExcavation",
+   "dst": "クエストライン開始: WynnExcavation",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#001": {
+   "src": "Oh, Vade sent you?",
+   "dst": "Vade に言われて来たの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#002": {
+   "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
+   "dst": "石板ひとつ完成！Vade に返してね。あ、読んじゃダメよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#003": {
+   "src": "A strange force pushes you back!",
+   "dst": "奇妙な力に押し戻された！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#004": {
+   "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
+   "dst": "まだこんな所で何してんだ？さっさと仕事を終わらせろ！コンテンツブックに書いてあるだろ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#005": {
    "src": "Speak to Excavator Vade at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] にいる発掘者 Vade と話す",
    "role": "desc",
@@ -230439,7 +231253,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#001": {
+  "WynnExcavation Site A#006": {
    "src": "Oh, hey kid. Wanna make some money?",
    "dst": "おう、小僧。稼ぎたいか？",
    "role": "desc",
@@ -230449,7 +231263,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#002": {
+  "WynnExcavation Site A#007": {
    "src": "I need you to translate this ancient text.",
    "dst": "この古代文書を翻訳してもらいたい。",
    "role": "desc",
@@ -230459,7 +231273,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#003": {
+  "WynnExcavation Site A#008": {
    "src": "Just run it down to the lab assistant, Tesha.",
    "dst": "研究助手の Tesha に持っていくだけでいい。",
    "role": "desc",
@@ -230469,7 +231283,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#004": {
+  "WynnExcavation Site A#009": {
    "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
    "dst": "自分で行ってもいいが、俺みたいな大物が雑用なんてやれるか！研究所は上のテントだ。翻訳に傷なんかつけるなよ！",
    "role": "desc",
@@ -230479,7 +231293,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#005": {
+  "WynnExcavation Site A#010": {
    "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
    "dst": "古代の文書を [{~}, {~}, -{~}] のテントにいる Tesha に届ける",
    "role": "desc",
@@ -230489,7 +231303,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#006": {
+  "WynnExcavation Site A#011": {
    "src": "Hello, welcome to WynnExcavation Labs!",
    "dst": "WynnExcavation 研究所へようこそ！",
    "role": "desc",
@@ -230499,7 +231313,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#007": {
+  "WynnExcavation Site A#012": {
    "src": "Oh Vade sent you?",
    "dst": "Vade に言われて来たの？",
    "role": "desc",
@@ -230509,7 +231323,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#008": {
+  "WynnExcavation Site A#013": {
    "src": "Oh yes, the tablet I was waiting for!",
    "dst": "そうそう、待ってた石板！",
    "role": "desc",
@@ -230519,7 +231333,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#009": {
+  "WynnExcavation Site A#014": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -230529,7 +231343,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#010": {
+  "WynnExcavation Site A#015": {
    "src": "Oh my! This is quite interesting..",
    "dst": "まあ！これは面白い…",
    "role": "desc",
@@ -230539,7 +231353,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#011": {
+  "WynnExcavation Site A#016": {
    "src": "Here, let me finish this up...",
    "dst": "さて、仕上げちゃうね…",
    "role": "desc",
@@ -230549,7 +231363,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#012": {
+  "WynnExcavation Site A#017": {
    "src": "..and there you are!",
    "dst": "…はい、できた！",
    "role": "desc",
@@ -230559,7 +231373,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#013": {
+  "WynnExcavation Site A#018": {
    "src": "One tablet complete! Return it to Vade. Oh and don't read it!",
    "dst": "石板ひとつ完成！Vade に返してね。あ、読んじゃダメよ！",
    "role": "desc",
@@ -230569,7 +231383,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#014": {
+  "WynnExcavation Site A#019": {
    "src": "Return to Excavator Vade with the translated writing",
    "dst": "翻訳された文書を持って発掘者 Vade のもとへ戻る",
    "role": "desc",
@@ -230579,7 +231393,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#015": {
+  "WynnExcavation Site A#020": {
    "src": "Who are you?",
    "dst": "誰だお前？",
    "role": "desc",
@@ -230589,7 +231403,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#016": {
+  "WynnExcavation Site A#021": {
    "src": "Oh right, you're that kid I sent out!",
    "dst": "ああ、俺が使いに出した小僧か！",
    "role": "desc",
@@ -230599,7 +231413,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#017": {
+  "WynnExcavation Site A#022": {
    "src": "Well do you have the translated text or not?",
    "dst": "で、翻訳は持ってきたのか？",
    "role": "desc",
@@ -230609,7 +231423,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#018": {
+  "WynnExcavation Site A#023": {
    "src": "You do! Brilliant! Let's take a look at that...",
    "dst": "持ってるな！上出来だ！どれ、見せてみろ…",
    "role": "desc",
@@ -230619,7 +231433,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#019": {
+  "WynnExcavation Site A#024": {
    "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "「際立つ木に供物を投げよ。正しき角度が道を開く」",
    "role": "desc",
@@ -230629,7 +231443,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#020": {
+  "WynnExcavation Site A#025": {
    "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
    "dst": "神殿の中のことを言ってるのか…おっと、お前がいるのを忘れてた。首を突っ込むなよ小僧、大人の仕事だ！",
    "role": "desc",
@@ -230639,7 +231453,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#021": {
+  "WynnExcavation Site A#026": {
    "src": "Solve this riddle in the tomb: \"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "墓の中でこの謎を解く:「際立つ木に供物を投げよ。正しき角度が道を開く」",
    "role": "desc",
@@ -230649,7 +231463,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#022": {
+  "WynnExcavation Site A#027": {
    "src": "Search the tombs",
    "dst": "墓を探索する",
    "role": "desc",
@@ -230659,7 +231473,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#023": {
+  "WynnExcavation Site A#028": {
    "src": "Return and talk to Excavator Vade",
    "dst": "戻って発掘者 Vade と話す",
    "role": "desc",
@@ -230669,7 +231483,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#024": {
+  "WynnExcavation Site A#029": {
    "src": "Hey kid, did you just come from the tomb?",
    "dst": "おい小僧、今墓から出てきたのか？",
    "role": "desc",
@@ -230679,7 +231493,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#025": {
+  "WynnExcavation Site A#030": {
    "src": "I knew I shouldn't have been so lazy and got someone else to do the leg work!",
    "dst": "怠けて他人に足を使わせるんじゃなかった！",
    "role": "desc",
@@ -230689,7 +231503,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#026": {
+  "WynnExcavation Site A#031": {
    "src": "Gosh, I can't tell my boss about this, he'll have my head! Literally! Wynn Excavation is not a group you want to betray, they are more powerful than you will ever know.",
    "dst": "くそっ、ボスには言えねえ、首が飛ぶ！文字通りな！Wynn Excavation は裏切っちゃいけねえ組織だ。お前の想像以上に力を持ってる。",
    "role": "desc",
@@ -230699,7 +231513,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#027": {
+  "WynnExcavation Site A#032": {
    "src": "YOU'D BETTER NOT HAVE TAKEN ANYTHING! THAT IS OFFICIAL WYNNEXCAVATION PROPERTY!",
    "dst": "何も持ち出してねえだろうな！あれは WYNNEXCAVATION の正式な所有物だ！",
    "role": "desc",

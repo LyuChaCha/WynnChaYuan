@@ -1,12 +1,112 @@
 {
  "_meta": {
   "quest": "Heart of Llevigar",
-  "count": 31,
-  "translated": 31,
+  "count": 41,
+  "translated": 41,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Heart of Llevigar#000": {
+   "src": "Gweh, a visitor?! Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
+   "dst": "Gweh, ¿¡una visita!? ¡Fuera de aquí! La planta está parada por mantenimiento- espera, ¿eres el experto en electromagia al que pagamos?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#001": {
+   "src": "We didn't even need to get Corkian consultation on this! We had this system all figured out ourselves, but now nothing's working right!",
+   "dst": "¡Ni siquiera nos hizo falta asesoría corkiana! Resolvimos el sistema entero nosotros, ¡y ahora nada va bien!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#002": {
+   "src": "New Quest Started: Heart of {p}",
+   "dst": "Nueva misión: El corazón de {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#003": {
+   "src": "Come on now, hurry! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer already!",
+   "dst": "¡Vamos, deprisa! Frente al banco hay una entrada a la central: ¡ve allí y reúnete ya con el ingeniero jefe!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#004": {
+   "src": "My grandfather and his engineers jury-rigged this whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
+   "dst": "Mi abuelo y sus ingenieros apañaron este sistema entero. Un reinicio debería arreglarlo, pero por seguridad tengo que estar aquí supervisándolo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#005": {
+   "src": "I have to stay put here, so get through the system and find the reset button for me. These holes in the walls are tunnels that'll lead you around the generator rooms!",
+   "dst": "Tengo que quedarme aquí, así que cruza el sistema y encuéntrame el botón de reinicio. ¡Estos agujeros de las paredes son túneles que te llevarán por las salas de generadores!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#006": {
+   "src": "Maybe you can find a way to reset the system. That ought to do it...",
+   "dst": "Quizá encuentres la forma de reiniciar el sistema. Con eso bastaría...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#007": {
+   "src": "...what, are you asleep or something? Of course there was a bug, we just fixed it!",
+   "dst": "...¿estás dormido o qué? ¡Claro que había un fallo, acabamos de arreglarlo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#008": {
+   "src": "D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system back the way you got here, it hooks up to the sewer exit.",
+   "dst": "¿De verdad te importa tanto acertar con su nombre? En fin, la salida está por el sistema de refrigeración, por donde viniste; da a la salida de la alcantarilla.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#009": {
+   "src": "Glad you got here when you did though! Some phony came through saying he was the expert. Clearly, he was just here to take your contract money...",
+   "dst": "¡Menos mal que llegaste a tiempo! Vino un farsante diciendo que él era el experto. Estaba claro que solo venía a llevarse el dinero de tu contrato...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#010": {
    "src": "Find Zenam in the {p} power control center at [-{~}, {~}, -{~}]",
    "dst": "Encuentra a Zenam en el centro de control de energía de {p} en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#001": {
+  "Heart of Llevigar#011": {
    "src": "Aaah, no no no! This doesn't make any sense, what in the world is going on?! Nothing's working!",
    "dst": "¡Aaah, no, no, no! Esto no tiene ningún sentido, ¿¡qué demonios pasa!? ¡Nada funciona!",
    "role": "desc",
@@ -26,7 +126,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#002": {
+  "Heart of Llevigar#012": {
    "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
    "dst": "Gweh, ¿una visita? ¡Fuera de aquí! La planta está parada por mantenimiento- espera, ¿eres el experto en electromagia al que pagamos?",
    "role": "desc",
@@ -36,7 +136,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#003": {
+  "Heart of Llevigar#013": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
    "dst": "Lo eres, ¿no? ¿¡Verdad!? ¡Porque no podemos esperar más! ¡Este sistema iba a ser indestructible, un diseño impecable!",
    "role": "desc",
@@ -46,7 +146,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#004": {
+  "Heart of Llevigar#014": {
    "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
    "dst": "¡Ni siquiera nos hizo falta asesoría corkiana, resolvimos el sistema entero nosotros, y ahora nada va bien!",
    "role": "desc",
@@ -56,7 +156,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#005": {
+  "Heart of Llevigar#015": {
    "src": "You're seeing all these sparks and hearing all this crackling? We have no idea what could possibly be going wrong with this! That's why you're needed here!",
    "dst": "¿Ves todas estas chispas y oyes todos estos chisporroteos? ¡No tenemos ni idea de qué puede estar fallando! ¡Por eso te necesitamos aquí!",
    "role": "desc",
@@ -66,7 +166,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#006": {
+  "Heart of Llevigar#016": {
    "src": "We don't have much time until full meltdown! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer!",
    "dst": "¡Queda poco para la fusión total! Frente al banco hay una entrada a la central: ¡ve allí y reúnete con el ingeniero jefe!",
    "role": "desc",
@@ -76,7 +176,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#007": {
+  "Heart of Llevigar#017": {
    "src": "Enter the sewers opposite of the bank of {p}.",
    "dst": "Entra en las alcantarillas frente al banco de {p}.",
    "role": "desc",
@@ -86,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#008": {
+  "Heart of Llevigar#018": {
    "src": "Find the head engineer at the {p} power plant",
    "dst": "Encuentra al ingeniero jefe en la central de {p}",
    "role": "desc",
@@ -96,7 +196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#009": {
+  "Heart of Llevigar#019": {
    "src": "Whew, finally Zeman found a guy for the job. I told him weeks ago this was a two-person task...",
    "dst": "Uf, por fin Zeman ha encontrado a alguien. Hace semanas que le dije que esto era tarea de dos...",
    "role": "desc",
@@ -106,7 +206,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#010": {
+  "Heart of Llevigar#020": {
    "src": "Wait, it's Zenam? Eh, what does it matter? You knew who I was talkin' about. Lemme give you the lowdown real fast.",
    "dst": "Espera, ¿que es Zenam? Bah, ¿qué más da? Ya sabías de quién hablaba. Te pongo al día rapidito.",
    "role": "desc",
@@ -116,7 +216,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#011": {
+  "Heart of Llevigar#021": {
    "src": "About a month ago, there was a big blackout, and the generator here started acting up. Power surges, appliances overloading...heck, some of our lights turned purple!",
    "dst": "Hace un mes hubo un apagón enorme y el generador empezó a fallar. Picos de tensión, aparatos sobrecargados... ¡hasta se nos volvieron moradas las luces!",
    "role": "desc",
@@ -126,7 +226,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#012": {
+  "Heart of Llevigar#022": {
    "src": "My grandfather and his engineers jury-rigged the whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
    "dst": "Mi abuelo y sus ingenieros apañaron el sistema entero. Un reinicio debería arreglarlo, pero por seguridad tengo que estar aquí supervisándolo.",
    "role": "desc",
@@ -136,7 +236,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#013": {
+  "Heart of Llevigar#023": {
    "src": "So that's your job- get through the system and find the reset button. These holes'll lead you around the generator rooms. Better get going!",
    "dst": "Ese es tu trabajo: cruzar el sistema y encontrar el botón de reinicio. Estos huecos te llevarán por las salas de generadores. ¡En marcha!",
    "role": "desc",
@@ -146,7 +246,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#014": {
+  "Heart of Llevigar#024": {
    "src": "Try to find a way into the machine",
    "dst": "Intenta encontrar la forma de entrar en la máquina",
    "role": "desc",
@@ -156,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#015": {
+  "Heart of Llevigar#025": {
    "src": "Find a way to proceed to the inner parts of the machinery",
    "dst": "Busca la forma de avanzar hacia el interior de la maquinaria",
    "role": "desc",
@@ -166,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#016": {
+  "Heart of Llevigar#026": {
    "src": "Reach the center of the restricted area",
    "dst": "Llega al centro de la zona restringida",
    "role": "desc",
@@ -176,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#017": {
+  "Heart of Llevigar#027": {
    "src": "Find the reset button.",
    "dst": "Encuentra el botón de reinicio.",
    "role": "desc",
@@ -186,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#018": {
+  "Heart of Llevigar#028": {
    "src": "Report back to the Head Engineer",
    "dst": "Informa al ingeniero jefe",
    "role": "desc",
@@ -196,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#019": {
+  "Heart of Llevigar#029": {
    "src": "Alright, that should do it- Ah, you're back. The system reset just fine, like I said. Everything should be winding down now.",
    "dst": "Bien, con esto bastará- Ah, has vuelto. El sistema se reinició sin problema, como dije. Ya debería ir calmándose todo.",
    "role": "desc",
@@ -206,7 +306,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#020": {
+  "Heart of Llevigar#030": {
    "src": "It's purging the excess energy now- might have a few more power surges and crackles for a while, but it'll go back to normal soon enough.",
    "dst": "Ahora está purgando la energía sobrante- habrá algún pico y chisporroteo más un rato, pero pronto volverá a la normalidad.",
    "role": "desc",
@@ -216,7 +316,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#021": {
+  "Heart of Llevigar#031": {
    "src": "Hm? What, there was a bug in the system? ...what, are you asleep or something? Of course there was a bug, we just fixed it!",
    "dst": "¿Hm? ¿Que había un bicho en el sistema? ...¿qué pasa, estás dormido o qué? ¡Claro que había un fallo, acabamos de arreglarlo!",
    "role": "desc",
@@ -226,7 +326,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#022": {
+  "Heart of Llevigar#032": {
    "src": "Well, anyways, Zebra should have our payment all settled. You go on ahead- I still need to stay down here to make sure everything stays smooth.",
    "dst": "Bueno, en fin, Zebra ya debería tener nuestro pago listo. Tú adelántate- yo tengo que quedarme aquí abajo y vigilar que todo siga bien.",
    "role": "desc",
@@ -236,7 +336,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#023": {
+  "Heart of Llevigar#033": {
    "src": "...oh, it's Zenam? D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system, it hooks up to the sewer exit.",
    "dst": "...ah, ¿que es Zenam? ¿De verdad te importa tanto acertar con su nombre? En fin, la salida está por el sistema de refrigeración, que da a la alcantarilla.",
    "role": "desc",
@@ -246,7 +346,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#024": {
+  "Heart of Llevigar#034": {
    "src": "Ask Zenam for your reward",
    "dst": "Pide tu recompensa a Zenam",
    "role": "desc",
@@ -256,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#025": {
+  "Heart of Llevigar#035": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
    "dst": "Uf... bienvenido de vuelta. La energía ha vuelto- todo funciona otra vez a pleno rendimiento. Creo que el sistema solo está soltando el exceso.",
    "role": "desc",
@@ -266,7 +366,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#026": {
+  "Heart of Llevigar#036": {
    "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
    "dst": "Menos mal que llegaste cuando llegaste- vino un farsante diciendo que era el experto. Está claro que solo quería tu dinero del contrato...",
    "role": "desc",
@@ -276,7 +376,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#027": {
+  "Heart of Llevigar#037": {
    "src": "Though, I was panicking so much I probably would've believed him... Speaking of which, here's your cut of the pay, and something extra for the trouble.",
    "dst": "Aunque, con el pánico que tenía, seguramente me lo habría creído... Por cierto, aquí tienes tu parte del pago y algo extra por las molestias.",
    "role": "desc",
@@ -286,7 +386,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#028": {
+  "Heart of Llevigar#038": {
    "src": "Here's to hoping that the system won't run into any more trouble in the future. I don't want to be faced with an impending cataclysm like that again...",
    "dst": "Esperemos que el sistema no dé más problemas en el futuro. No quiero volver a enfrentarme a un cataclismo inminente como ese...",
    "role": "desc",
@@ -296,7 +396,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#029": {
+  "Heart of Llevigar#039": {
    "src": "Aah, this is bad, where's the keys to my toolbox?! Zenam said it was important, I need to find them!",
    "dst": "¡Aah, qué mal! ¿Dónde están las llaves de mi caja de herramientas? Zenam dijo que era importante, ¡las necesito!",
    "role": "desc",
@@ -306,7 +406,7 @@
    "speaker": "Electromagic Expert",
    "source": "wiki"
   },
-  "Heart of Llevigar#030": {
+  "Heart of Llevigar#040": {
    "src": "I still can't believe it, a human has done my job and taken my emeralds... Just because I lost my keys...",
    "dst": "Aún no me lo creo: un humano ha hecho mi trabajo y se ha llevado mis esmeraldas... Y todo por perder las llaves...",
    "role": "desc",

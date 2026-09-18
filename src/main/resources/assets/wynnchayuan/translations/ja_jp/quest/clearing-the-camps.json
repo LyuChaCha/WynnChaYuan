@@ -1,12 +1,102 @@
 {
  "_meta": {
   "quest": "Clearing the Camps",
-  "count": 14,
-  "translated": 14,
+  "count": 23,
+  "translated": 23,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Clearing the Camps#000": {
+   "src": "Did you hear about the requests from the Villagers we've gotten? They say these 'Orcs' and 'Goblins' are threatening their towns and cities.",
+   "dst": "村人からの要請は聞いたか？「Orc」と「Goblin」とやらが、彼らの町や都市を脅かしているそうだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#001": {
+   "src": "Primitive, brutal things, apparently little better than the zombies we're used to, at least according to the {p} military.",
+   "dst": "{p} 軍によれば、原始的で凶暴な連中で、見慣れたゾンビとたいして変わらんらしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#002": {
+   "src": "Our scouts have identified three 'chief' orcs in the area- Elisu, Ceifko, and Veltu. Though, strangely, Veltu is always surrounded by goblins...",
+   "dst": "斥候がこの辺りで「族長」のオークを三体見つけた。Elisu、Ceifko、Veltu だ。妙なことに Veltu はいつもゴブリンに囲まれている…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#003": {
+   "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags - search the plains, and return once they're dealt with!",
+   "dst": "ともかく、我々はここで {p} を守らねばならん。族長どもを任せられるか？緑の旗の野営地に潜んでいるらしい。平原を探し、片付けたら戻ってくれ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#004": {
+   "src": "Ah, good, more of you small-noses are here to fight.",
+   "dst": "ああ、いいぞ、また鼻の小さい連中が戦いに来たか。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#005": {
+   "src": "You're good for battle, so the government can focus more on the real issues.",
+   "dst": "お前たちは戦いに向いている。おかげで政府は本当の問題に専念できる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#006": {
+   "src": "Can't afford to have all our resources on war when we have the Decay to deal with up north.",
+   "dst": "北に腐朽を抱えているのに、資源を全部戦争につぎ込む余裕はない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#007": {
+   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead or alive, as long as they're dealt with. I have your share of the reward here.",
+   "dst": "思ったより…荒っぽいが、まあいい…片付きさえすれば、村人は生死なんて気にしないしな。これがお前の取り分の報酬だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#008": {
+   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah... livelier than usual. Better get used to it.",
+   "dst": "外で見ただろう、Gavel の生き物は Wynn のとは別物だ。なんというか…いつもより元気がいい。慣れておけ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#009": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
    "dst": "{p} の外 [-{~}, {~}, -{~}] にいる Kymer 隊長と話す",
    "role": "desc",
@@ -16,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#001": {
+  "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "おお、また {p} の兵か？心から歓迎するよ。",
    "role": "desc",
@@ -26,7 +116,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#002": {
+  "Clearing the Camps#011": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
    "dst": "村人からの要請は聞いたか？「Orc」と「Goblin」とやらが、彼らの町を脅かしているそうだ。",
    "role": "desc",
@@ -36,7 +126,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#003": {
+  "Clearing the Camps#012": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
    "dst": "{p} 軍によれば、原始的で凶暴な連中で、見慣れたゾンビとたいして変わらんらしい。",
    "role": "desc",
@@ -46,7 +136,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#004": {
+  "Clearing the Camps#013": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
    "dst": "そこで、奴らが力こそ正義なら、首領を倒せば怯えて従うだろうと考えた。",
    "role": "desc",
@@ -56,7 +146,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#005": {
+  "Clearing the Camps#014": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
    "dst": "斥候がこの辺りで「族長」のオークを三体見つけた。Elisu、Ceifko、Veltu だ。妙なことに Veltu はいつもゴブリンに囲まれている…",
    "role": "desc",
@@ -66,7 +156,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#006": {
+  "Clearing the Camps#015": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
    "dst": "ともかく、我々はここで {p} を守らねばならん。族長どもを任せられるか？緑の旗の野営地に潜んでいるらしい。平原を探し、片付けたら戻ってくれ！",
    "role": "desc",
@@ -76,7 +166,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#007": {
+  "Clearing the Camps#016": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
    "dst": "{p} 周辺の野営地でオークの族長 Elisu、Veltu、Ceifko を見つけて倒す。緑の旗が目印",
    "role": "desc",
@@ -86,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#008": {
+  "Clearing the Camps#017": {
    "src": "Report back to Captain Kymer once you have the three heads.",
    "dst": "三つの首を手に入れたら Kymer 隊長に報告する。",
    "role": "desc",
@@ -96,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#009": {
+  "Clearing the Camps#018": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
    "dst": "おお、さっきの兵か！戻ったな。奴らの討伐は——…うわ。それ、奴らの首か？",
    "role": "desc",
@@ -106,7 +196,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#010": {
+  "Clearing the Camps#019": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
    "dst": "思ったより…荒っぽいが、まあいい…片付きさえすれば、村人は生死なんて気にしないしな。これがお前の取り分の報酬だ。",
    "role": "desc",
@@ -116,7 +206,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#011": {
+  "Clearing the Camps#020": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
    "dst": "こういう精密な一撃で、オークとの全面戦争は避けられるはずだ。地方ごとに大戦争なんて御免だからな、はは！",
    "role": "desc",
@@ -126,7 +216,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#012": {
+  "Clearing the Camps#021": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
    "dst": "外で見ただろう、Gavel の生き物は Wynn のとは別物だ。なんというか…いつもより元気がいい。慣れておけ。",
    "role": "desc",
@@ -136,7 +226,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#013": {
+  "Clearing the Camps#022": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
    "dst": "次の大きな集落は北の沼地にある {p} だが、沼のオーガは平原の連中よりずっと手強いと聞く。まずはここで鍛えるといい。",
    "role": "desc",

@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 23295,
-  "translated": 23286,
+  "count": 23377,
+  "translated": 23377,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -7445,35 +7445,9 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#000": {
-   "src": "Agh... Don't worry...a-abou",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Agh... Don't worry...a-about me",
-    "file": "quest/a-journey-further.json",
-    "ratio": 0.931,
-    "reason": "prefix"
-   }
-  },
   "A Journey Further#001": {
    "src": "Please don't leave me!",
    "dst": "求你别丢下我！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "A Journey Further#002": {
-   "src": "Agh... Don't worry...a-about me",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -29541,16 +29515,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Apotheosis (Quest)#205": {
-   "src": "Oh, how",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Apotheosis (Quest)",
-   "stage": "Stage 12",
-   "speaker": "Her Majesty",
-   "source": "wiki"
-  },
   "Apotheosis (Quest)#206": {
    "src": "So it would I cannot rely on my Sovereigns for anything!",
    "dst": "看来我什么事都不能指望我的统领们！",
@@ -47508,6 +47472,96 @@
    "source": "wiki"
   },
   "Clearing the Camps#000": {
+   "src": "Did you hear about the requests from the Villagers we've gotten? They say these 'Orcs' and 'Goblins' are threatening their towns and cities.",
+   "dst": "你听说我们收到的村民请求了吗？他们说那些“兽人”和“哥布林”正在威胁他们的城镇。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#001": {
+   "src": "Primitive, brutal things, apparently little better than the zombies we're used to, at least according to the {p} military.",
+   "dst": "据说是些原始又野蛮的东西，比我们平常对付的僵尸好不了多少，至少 {p} 军方是这么说的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#002": {
+   "src": "Our scouts have identified three 'chief' orcs in the area- Elisu, Ceifko, and Veltu. Though, strangely, Veltu is always surrounded by goblins...",
+   "dst": "我们的斥候在这一带找到了三个兽人“酋长”：Elisu、Ceifko 和 Veltu。不过奇怪的是，Veltu 身边总是围着哥布林……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#003": {
+   "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags - search the plains, and return once they're dealt with!",
+   "dst": "好了，不管怎样，这里需要我们守着 {p}。那些酋长你能对付吗？它们好像躲在插着绿旗的营地里。去平原上搜一搜，解决之后再回来！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#004": {
+   "src": "Ah, good, more of you small-noses are here to fight.",
+   "dst": "啊，很好，又来了几个小鼻子要打仗。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#005": {
+   "src": "You're good for battle, so the government can focus more on the real issues.",
+   "dst": "你们适合上战场，这样政府就能多花心思在真正的问题上。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#006": {
+   "src": "Can't afford to have all our resources on war when we have the Decay to deal with up north.",
+   "dst": "北边还有黯蚀要对付，我们可没法把资源全砸在战争上。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#007": {
+   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead or alive, as long as they're dealt with. I have your share of the reward here.",
+   "dst": "这……比我预想的狠了点，不过也行……反正村民也不在乎它们是死是活，只要解决了就好。你那份奖励在我这儿。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#008": {
+   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah... livelier than usual. Better get used to it.",
+   "dst": "你出去的时候发现了吧，Gavel 的生物跟 Wynn 那边的不太一样？它们有点，呃……比平常更有活力。最好早点习惯。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#009": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
    "dst": "与 {p} 外 [-{~}, {~}, -{~}] 的 Kymer 队长对话",
    "role": "desc",
@@ -47517,7 +47571,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#001": {
+  "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "啊哈，又一个 {p} 的士兵，是吧？好啊，热烈欢迎。",
    "role": "desc",
@@ -47527,7 +47581,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#002": {
+  "Clearing the Camps#011": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
    "dst": "你听说我们收到的村民请求了吗？他们说那些“兽人”和“哥布林”正在威胁他们的城镇。",
    "role": "desc",
@@ -47537,7 +47591,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#003": {
+  "Clearing the Camps#012": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
    "dst": "据说是些原始又野蛮的生物，比我们平常对付的僵尸好不了多少——至少 {p} 军方是这么说的。",
    "role": "desc",
@@ -47547,7 +47601,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#004": {
+  "Clearing the Camps#013": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
    "dst": "所以我们想，既然对它们来说拳头大就是道理，那打败它们的首领应该就能把它们吓得服服帖帖。",
    "role": "desc",
@@ -47557,7 +47611,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#005": {
+  "Clearing the Camps#014": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
    "dst": "我们的斥候在这一带找到了三个兽人“酋长”——Elisu、Ceifko 和 Veltu。不过奇怪的是，Veltu 身边总是围着哥布林……",
    "role": "desc",
@@ -47567,7 +47621,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#006": {
+  "Clearing the Camps#015": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
    "dst": "好了，不管怎样，这里需要我们守着 {p}。那些酋长你能对付吗？它们好像躲在插着绿旗的营地里——去平原上搜一搜，解决之后再回来！",
    "role": "desc",
@@ -47577,7 +47631,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#007": {
+  "Clearing the Camps#016": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
    "dst": "在 {p} 周围的营地找到并击杀兽人酋长 Elisu、Veltu 和 Ceifko——留意绿色旗帜",
    "role": "desc",
@@ -47587,7 +47641,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#008": {
+  "Clearing the Camps#017": {
    "src": "Report back to Captain Kymer once you have the three heads.",
    "dst": "拿到三颗首级后，回去向 Kymer 队长报告。",
    "role": "desc",
@@ -47597,7 +47651,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#009": {
+  "Clearing the Camps#018": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
    "dst": "啊，刚才那个士兵！看来你回来了。打败那些家伙的事顺利——……哎哟。那是它们的头？",
    "role": "desc",
@@ -47607,7 +47661,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#010": {
+  "Clearing the Camps#019": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
    "dst": "这……比我预想的狠了点，不过也行……反正村民也不在乎它们是死是活，只要解决了就好。你那份奖励在我这儿。",
    "role": "desc",
@@ -47617,7 +47671,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#011": {
+  "Clearing the Camps#020": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
    "dst": "这种精准打击应该能避免跟兽人全面开战。我们可不想每个行省都得打一场全面战争，哈！",
    "role": "desc",
@@ -47627,7 +47681,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#012": {
+  "Clearing the Camps#021": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
    "dst": "你出去的时候发现了吧，Gavel 的生物跟 Wynn 那边的不太一样？它们有点，呃……比平常更有活力。最好早点习惯。",
    "role": "desc",
@@ -47637,7 +47691,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#013": {
+  "Clearing the Camps#022": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
    "dst": "下一个大聚落是北边沼泽里的 {p}，不过我听说沼泽食人魔比平原上的家伙难对付多了。我会先留在这附近练练。",
    "role": "desc",
@@ -51876,6 +51930,16 @@
    "source": "captured"
   },
   "Dearly Departed#000": {
+   "src": "[+{~} Muddy Shovel]",
+   "dst": "[+{~} 沾满泥的铲子]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dearly Departed#001": {
    "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "前往 [-{~}, {~}, -{~}] 与农夫 Cevalus 交谈",
    "role": "desc",
@@ -51885,7 +51949,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#001": {
+  "Dearly Departed#002": {
    "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
    "dst": "啊，看起来是个新兵！你看到我贴的告示了吗？很好，很好。",
    "role": "desc",
@@ -51895,7 +51959,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#002": {
+  "Dearly Departed#003": {
    "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
    "dst": "是这样的，我亲爱的岳父最近过世了，我只好匆匆忙忙把他埋在屋后。没来得及请牧师来好好安葬他……",
    "role": "desc",
@@ -51905,7 +51969,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#003": {
+  "Dearly Departed#004": {
    "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
    "dst": "不幸的是，我在让他入土为安的时候，结婚戒指可能刚好滑掉了……",
    "role": "desc",
@@ -51915,7 +51979,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#004": {
+  "Dearly Departed#005": {
    "src": "I need you to go back there and, well, recover the ring.",
    "dst": "我需要你去后面，嗯，把戒指找回来。",
    "role": "desc",
@@ -51925,7 +51989,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#005": {
+  "Dearly Departed#006": {
    "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
    "dst": "当然，这种事我自己也办得到，可是我老婆已经起疑了，而且她亲爱的父亲才刚过世……",
    "role": "desc",
@@ -51935,7 +51999,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#006": {
+  "Dearly Departed#007": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
    "dst": "嗯，你明白我的处境了吧？帮帮我这可怜人，去把那边那把 [沾满泥的铲子] 拿来，然后回来找我。",
    "role": "desc",
@@ -51945,7 +52009,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#007": {
+  "Dearly Departed#008": {
    "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 捡起铲子。",
    "role": "desc",
@@ -51955,7 +52019,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#008": {
+  "Dearly Departed#009": {
    "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
    "dst": "[沾满泥的铲子] 就在那边。你帮我这个忙，我会非常感激的，新兵。",
    "role": "desc",
@@ -51965,7 +52029,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#009": {
+  "Dearly Departed#010": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "回到 [-{~}, {~}, -{~}] 找农夫 Cevalus",
    "role": "desc",
@@ -51975,7 +52039,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#010": {
+  "Dearly Departed#011": {
    "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
    "dst": "铲子拿到了？太好了！我猜你也有结实的护甲和武器吧？",
    "role": "desc",
@@ -51985,7 +52049,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#011": {
+  "Dearly Departed#012": {
    "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
    "dst": "很好，很好。小心驶得万年船……我一向这么说！一向，哈哈……",
    "role": "desc",
@@ -51995,7 +52059,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#012": {
+  "Dearly Departed#013": {
    "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
    "dst": "噢，其实也没什么原因！只是确认一下，哈哈……后面应该非常安全，非常安全。",
    "role": "desc",
@@ -52005,7 +52069,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#013": {
+  "Dearly Departed#014": {
    "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
    "dst": "你的技能点也用了吧？万一出了什么事，它们很派得上用场。",
    "role": "desc",
@@ -52015,7 +52079,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#014": {
+  "Dearly Departed#015": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
    "dst": "嗯，就是技能点啊！升级的时候会获得，然后可以分配它们来获得战斗加成。听着，我不是士兵，但连我都知道你真的应该用掉它们……",
    "role": "desc",
@@ -52025,7 +52089,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#015": {
+  "Dearly Departed#016": {
    "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
    "dst": "一共有五项。力量、灵巧、智力、防御和敏捷，各有不同的加成。",
    "role": "desc",
@@ -52035,7 +52099,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#016": {
+  "Dearly Departed#017": {
    "src": "You get it, or do you want me to tell you what they are?",
    "dst": "你懂了吗，还是要我跟你说说它们是什么？",
    "role": "desc",
@@ -52045,7 +52109,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#017": {
+  "Dearly Departed#018": {
    "src": "is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "在你难以击倒敌人时很有用。它能让你的攻击更痛，就这么简单。",
    "role": "desc",
@@ -52055,7 +52119,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#018": {
+  "Dearly Departed#019": {
    "src": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
    "dst": "有点讲究。点得越多，你的攻击造成双倍伤害的几率就越高。不错吧？",
    "role": "desc",
@@ -52065,7 +52129,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#019": {
+  "Dearly Departed#020": {
    "src": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
    "dst": "是给施法者的，它能降低施法消耗，并提高你的法力上限。",
    "role": "desc",
@@ -52075,7 +52139,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#020": {
+  "Dearly Departed#021": {
    "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
    "dst": "如果你总是活不下来，它是你最好的选择。减少你受到的伤害，大概就是这样。",
    "role": "desc",
@@ -52085,7 +52149,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#021": {
+  "Dearly Departed#022": {
    "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
    "dst": "敏捷嘛，那是给爱冒险的人的。点得越多，你就越有可能闪避来袭的攻击，抵消掉大部分伤害。",
    "role": "desc",
@@ -52095,7 +52159,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#022": {
+  "Dearly Departed#023": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
    "dst": "最棒的是，不管你是什么职业、什么战斗风格，都可以随意搭配。",
    "role": "desc",
@@ -52105,7 +52169,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#023": {
+  "Dearly Departed#024": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
    "dst": "打开你的罗盘就能分配技能点。然后，等你准备好了，就进去把我的戒指拿来。",
    "role": "desc",
@@ -52115,7 +52179,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#024": {
+  "Dearly Departed#025": {
    "src": "Dig up the grave at [-{~}, {~}, -{~}].",
    "dst": "挖开 [-{~}, {~}, -{~}] 的坟墓。",
    "role": "desc",
@@ -52125,7 +52189,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#025": {
+  "Dearly Departed#026": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
    "dst": "去吧，士兵！让我们见识 {p} 军队的威力！呃，我是说……帮我把戒指拿来！",
    "role": "desc",
@@ -52135,7 +52199,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#026": {
+  "Dearly Departed#027": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
    "dst": "里面怎么样了，士兵？找到戒指了吗？",
    "role": "desc",
@@ -52145,7 +52209,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#027": {
+  "Dearly Departed#028": {
    "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
    "dst": "你真的得快点，免得……算了！找到戒指就赶快出来！",
    "role": "desc",
@@ -52155,7 +52219,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#028": {
+  "Dearly Departed#029": {
    "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
    "dst": "神圣的牛啊！那……那……他回来了！快杀了它！",
    "role": "desc",
@@ -52165,7 +52229,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#029": {
+  "Dearly Departed#030": {
    "src": "Kill the Corrupted Father-in-Law!",
    "dst": "杀死腐化的岳父！",
    "role": "desc",
@@ -52175,7 +52239,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#030": {
+  "Dearly Departed#031": {
    "src": "You did it! Come back here now, so I can finally get my ring back.",
    "dst": "你成功了！快回来，好让我终于能拿回我的戒指。",
    "role": "desc",
@@ -52185,7 +52249,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#031": {
+  "Dearly Departed#032": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "回到 [-{~}, {~}, -{~}] 找农夫 Cevalus",
    "role": "desc",
@@ -52195,7 +52259,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#032": {
+  "Dearly Departed#033": {
    "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
    "dst": "天哪，这比我预想的刺激了一点，哼。不过，干得好！我很高兴我们能除掉那个怪物……",
    "role": "desc",
@@ -52205,7 +52269,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#033": {
+  "Dearly Departed#034": {
    "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
    "dst": "我是说……可怜的岳父！我不知道该怎么跟老婆解释……",
    "role": "desc",
@@ -52215,7 +52279,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#034": {
+  "Dearly Departed#035": {
    "src": "I'll take the ring now, it's rather precious to me...",
    "dst": "戒指我现在就拿走了，它对我来说挺珍贵的……",
    "role": "desc",
@@ -52225,7 +52289,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#035": {
+  "Dearly Departed#036": {
    "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
    "dst": "总之，拿着这份奖励吧，是你今天，嗯，这番作为应得的。说不定你继续努力下去，有一天还能成为像 Ragnar 那样的英雄。",
    "role": "desc",
@@ -52235,7 +52299,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#036": {
+  "Dearly Departed#037": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
    "dst": "你好，陌生人。你有什么事想跟我说吗？",
    "role": "desc",
@@ -52245,7 +52309,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#037": {
+  "Dearly Departed#038": {
    "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
    "dst": "我应该生气的，可是……我也没法假装惊讶。他一向是个健忘的傻大个。",
    "role": "desc",
@@ -52255,7 +52319,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#038": {
+  "Dearly Departed#039": {
    "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
    "dst": "不过，这就说得通了……自从爸爸过世，他最近就一直怪怪的。一定就是这么回事，谢谢你告诉我。",
    "role": "desc",
@@ -52265,7 +52329,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#039": {
+  "Dearly Departed#040": {
    "src": "That's right. The one and only, ha ha...",
    "dst": "没错。就是他本人，哈哈……",
    "role": "desc",
@@ -52275,7 +52339,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#040": {
+  "Dearly Departed#041": {
    "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
    "dst": "我们只是普通的农民，努力过日子。我们一直在照顾我爸爸，直到……嗯……唉……",
    "role": "desc",
@@ -52285,7 +52349,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#041": {
+  "Dearly Departed#042": {
    "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
    "dst": "谢谢你……一切都发生得太突然了。我去 {p} 的那天，爸爸还跟平常一样健康，可等我回来，他已经被埋了。病一定来得很快……",
    "role": "desc",
@@ -52295,7 +52359,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#042": {
+  "Dearly Departed#043": {
    "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
    "dst": "不过以他的年纪，我也不意外……只是可惜我们没能及时请牧师来，爸爸是那么虔诚的人。",
    "role": "desc",
@@ -52305,7 +52369,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#043": {
+  "Dearly Departed#044": {
    "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
    "dst": "爸爸……最重要的是，他很善良，一向慷慨。他把整座农场都留给了我们。而且非常虔诚，是个真正的信徒。也许这就是他能活那么久的原因……",
    "role": "desc",
@@ -52315,7 +52379,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#044": {
+  "Dearly Departed#045": {
    "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
    "dst": "噢，天哪……再说下去，我又要哭了。",
    "role": "desc",
@@ -52325,7 +52389,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#045": {
+  "Dearly Departed#046": {
    "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
    "dst": "你也把技能点分配好了吧？万一出了什么事，它们会派上用场。",
    "role": "desc",
@@ -52333,7 +52397,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#046": {
+  "Dearly Departed#047": {
    "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
    "dst": "一共有五项。力量、灵巧、智力、防御和敏捷，各有不同的加成。",
    "role": "desc",
@@ -52341,7 +52405,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#047": {
+  "Dearly Departed#048": {
    "src": "Why are you asking me that?",
    "dst": "你为什么问我这个？",
    "role": "desc",
@@ -52349,7 +52413,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#048": {
+  "Dearly Departed#049": {
    "src": "What are Skill Points?",
    "dst": "技能点是什么？",
    "role": "desc",
@@ -52357,7 +52421,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#049": {
+  "Dearly Departed#050": {
    "src": "I got it.",
    "dst": "我明白了。",
    "role": "desc",
@@ -52365,7 +52429,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#050": {
+  "Dearly Departed#051": {
    "src": "About Strength.",
    "dst": "说说力量。",
    "role": "desc",
@@ -52373,7 +52437,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#051": {
+  "Dearly Departed#052": {
    "src": "About Dexterity.",
    "dst": "说说灵巧。",
    "role": "desc",
@@ -52381,7 +52445,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#052": {
+  "Dearly Departed#053": {
    "src": "About Intelligence.",
    "dst": "说说智力。",
    "role": "desc",
@@ -52389,7 +52453,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#053": {
+  "Dearly Departed#054": {
    "src": "Not yet...",
    "dst": "还没……",
    "role": "desc",
@@ -52397,7 +52461,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#054": {
+  "Dearly Departed#055": {
    "src": "Dig up the grave?",
    "dst": "要挖开坟墓吗？",
    "role": "desc",
@@ -52405,7 +52469,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#055": {
+  "Dearly Departed#056": {
    "src": "There you go...",
    "dst": "好了……",
    "role": "desc",
@@ -52413,7 +52477,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#056": {
+  "Dearly Departed#057": {
    "src": "Now to see if you can find that ring Cevalus mentioned...",
    "dst": "接下来看看你能不能找到 Cevalus 说的那枚戒指……",
    "role": "desc",
@@ -52421,7 +52485,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#057": {
+  "Dearly Departed#058": {
    "src": "You manage to pry the ring off the monster's finger...",
    "dst": "你费了点劲，把戒指从怪物的手指上撬了下来……",
    "role": "desc",
@@ -52429,7 +52493,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#058": {
+  "Dearly Departed#059": {
    "src": "About Defence.",
    "dst": "说说防御。",
    "role": "desc",
@@ -52437,7 +52501,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#059": {
+  "Dearly Departed#060": {
    "src": "About Agility.",
    "dst": "说说敏捷。",
    "role": "desc",
@@ -52445,7 +52509,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#060": {
+  "Dearly Departed#061": {
    "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "{#} 力量在你打不动敌人的时候很有用。它能让你的攻击更痛，就这么简单。",
    "role": "desc",
@@ -77992,6 +78056,226 @@
    "source": "wiki"
   },
   "Fate of the Fallen#000": {
+   "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
+   "dst": "啊，{p} 军队的一员。我们正想多了解这座冰封的坟冢。我们需要你的帮助。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#001": {
+   "src": "Did you listen?",
+   "dst": "你听进去了吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#002": {
+   "src": "If you don't remember what I said, I remember you writing something in your book. Try looking there.",
+   "dst": "如果你不记得我说了什么，我记得你在本子上写了些东西。翻翻看吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#003": {
+   "src": "You should head back to the mage with the wand.",
+   "dst": "你该回去找那个拿着法杖的法师了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#004": {
+   "src": "This is the Temple of Time...",
+   "dst": "这里是时间神殿……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#005": {
+   "src": "Here you can visit the memories of this land...",
+   "dst": "在这里，你可以造访这片土地的记忆……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#006": {
+   "src": "The altar requires an item from the time you desire to access...",
+   "dst": "祭坛需要一件来自你想前往的那个时代的物品……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#007": {
+   "src": "You will access a memory as if you were present, but when you return it will be as if you were never there.",
+   "dst": "你会像身临其境一样进入一段记忆，但回来之后，一切都会像你从未去过一样。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#008": {
+   "src": "You should stick around to find out how to reverse the spell.",
+   "dst": "你该留下来，查出怎么解除这个法术。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#009": {
+   "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too far gone. It needs time to heal...and my powers m-must be dampened...frozen...",
+   "dst": "啊啊……告诉……所有人。我要冻住这个地方。我……已、已经陷得太深。这里需要时间痊愈……而我的力量必、必须被压制……冻结……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#010": {
+   "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits linger. I would...prefer against giving him a harder time.",
+   "dst": "如果说我从那个讨人厌的混-……从 Mael 身上学到了什么……那就是死得不明不白会让灵魂徘徊不去。我……不想给他添更多麻烦。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#011": {
+   "src": "Wha... so many revelations... ice magic staves off corruption...? It is true that this place has seen less corrupted threats than other places in the province...",
+   "dst": "什……这么多真相……冰魔法能抵挡腐化……？这里遭受的腐化威胁确实比行省其他地方少……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#012": {
+   "src": "Dear gods... We've had it all wrong this whole time... It was to protect everyone... but surely he would have told someone his intentions if he was of that sound a mind!",
+   "dst": "天哪……我们一直都搞错了……这是为了保护所有人……可如果他神志清醒到那个地步，肯定会把自己的用意告诉谁吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#013": {
+   "src": "Soldier! I'm not sure it is wise to be here... An icy death awaits you if you proceed. A death that I will cause..",
+   "dst": "士兵！待在这里恐怕不太明智……再往前走，等着你的是冰冷的死亡。一场由我造成的死亡……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#014": {
+   "src": "I have many regrets of my time spent alive in Wynn. I do not wish for my lingering mistakes to harm anyone else. Turn back.",
+   "dst": "我在 Wynn 活着的那段日子留下了许多悔恨。我不希望我残存的过错再伤害任何人。回头吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#016": {
+   "src": "You must think you can save me? There is no cure for what I have.",
+   "dst": "你以为你救得了我？我身上的东西，没有药能治。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#017": {
+   "src": "Unless.. You want to set me free?",
+   "dst": "除非……你想让我解脱？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#020": {
+   "src": "I froze this land to allow it to heal.. People did not understand.. They came for me here, seeking revenge.",
+   "dst": "我冻住这片土地，是为了让它痊愈……人们不明白……他们追到这里来找我，想要复仇。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#021": {
+   "src": "Of course, just like you.. They can not leave. Their souls are stuck here. For the spell must not be broken.",
+   "dst": "当然，就跟你一样……他们离不开。他们的灵魂被困在这里。因为这个法术绝不能被打破。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#023": {
+   "src": "Even if you think you can cure me.. I can not allow you to try for if it were to fail my corrupted body would wreak havoc on the world!",
+   "dst": "就算你以为能治好我……我也不能让你尝试，因为一旦失败，我这腐化的躯体会给世界带来浩劫！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#024": {
+   "src": "It will be dangerous...perhaps your toughest fight yet...but it must be done. If you need time to prepare, do so. But you must end Theorick's pain.",
+   "dst": "这会很危险……也许是你至今最艰难的一战……但非做不可。需要时间准备就去准备吧。但你一定要终结 Theorick 的痛苦。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#025": {
+   "src": "Don't you just love fishing? The little waves in the river, the wind and the rewarding feeling when you catch something, those are my favorite things about it.",
+   "dst": "你不觉得钓鱼很棒吗？河里的小波浪、微风，还有钓到东西时那种满足感，这些就是我最喜欢的地方。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#027": {
    "src": "You can not return until your goal is fulfilled...",
    "dst": "在达成目标之前，你无法返回……",
    "role": "desc",
@@ -78001,7 +78285,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Fate of the Fallen#001": {
+  "Fate of the Fallen#028": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
    "dst": "与 [{~}, {~}, -{~}] 的法师 Telvu 交谈。",
    "role": "desc",
@@ -78011,7 +78295,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#002": {
+  "Fate of the Fallen#029": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
    "dst": "啊，{p} 军队的一员。我们正想办法进入这座冰封的坟冢。我们需要你的帮助。",
    "role": "desc",
@@ -78021,7 +78305,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#003": {
+  "Fate of the Fallen#030": {
    "src": "Are you familiar with the story of Theorick and {p}?",
    "dst": "你知道 Theorick 和 {p} 的故事吗？",
    "role": "desc",
@@ -78031,7 +78315,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#004": {
+  "Fate of the Fallen#031": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
    "dst": "大概不知道吧。嗯，你看，{p} 并不是一直都冰封着的。",
    "role": "desc",
@@ -78041,7 +78325,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#005": {
+  "Fate of the Fallen#032": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
    "dst": "在 Theorick 的时代，这里就像 Wynn 平原一样，温暖又适合耕种。",
    "role": "desc",
@@ -78051,7 +78335,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#006": {
+  "Fate of the Fallen#033": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
    "dst": "不知为何，Theorick Twain 用他强大的力量冻住了这片土地，然后把自己放逐到这里。",
    "role": "desc",
@@ -78061,7 +78345,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#007": {
+  "Fate of the Fallen#034": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
    "dst": "我们得查出原因，才能逆转这个法术。那个法术的魔法源头想必就在坟冢里……但我们不想空手进去。",
    "role": "desc",
@@ -78071,7 +78355,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#008": {
+  "Fate of the Fallen#035": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
    "dst": "所以……你听说过一个叫 {p} 的地方吗？我们可以利用它回到过去，试着更了解 Theorick 的所作所为。",
    "role": "desc",
@@ -78081,7 +78365,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#009": {
+  "Fate of the Fallen#036": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
    "dst": "嗯……至少某种意义上是这样。这类魔法有它的规则。第一，你需要一件来自我们想看的那个时代的物品。第二，你只能见证过去，不能改变它。",
    "role": "desc",
@@ -78091,7 +78375,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#010": {
+  "Fate of the Fallen#037": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
    "dst": "Theorick 的一根法杖正展示在 {p} 银行里。它应该能满足我们的需要。你能想办法把它拿来吗？",
    "role": "desc",
@@ -78101,7 +78385,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#011": {
+  "Fate of the Fallen#038": {
    "src": "Find Theorick's stave at {p} bank.",
    "dst": "在 {p} 银行找到 Theorick 的法杖。",
    "role": "desc",
@@ -78111,7 +78395,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#012": {
+  "Fate of the Fallen#039": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
    "dst": "啊哈，真快。看来你拿到法杖了。想必得靠一张利嘴才能让银行家交出来。",
    "role": "desc",
@@ -78121,7 +78405,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#013": {
+  "Fate of the Fallen#040": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
    "dst": "好了，去 {p} 路途遥远。不过你不必走那一趟，我可以把你传送过去。但愿如此。",
    "role": "desc",
@@ -78131,7 +78415,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#014": {
+  "Fate of the Fallen#041": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
    "dst": "到了之后，进入时间神殿。到那里你应该就知道该怎么做了。时间旅行要小心，朋友……谁知道你会发现什么。",
    "role": "desc",
@@ -78141,7 +78425,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#015": {
+  "Fate of the Fallen#042": {
    "src": "Just step into the portal.",
    "dst": "走进传送门就行。",
    "role": "desc",
@@ -78151,7 +78435,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#016": {
+  "Fate of the Fallen#043": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
    "dst": "万一出了什么差错，我会留在这里，把你传送回神殿。",
    "role": "desc",
@@ -78161,7 +78445,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#017": {
+  "Fate of the Fallen#044": {
    "src": "Enter the portal the mage made.",
    "dst": "进入法师开启的传送门。",
    "role": "desc",
@@ -78171,7 +78455,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#018": {
+  "Fate of the Fallen#045": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
    "dst": "进入 [-{~}, {~}, -{~}] 的时间之门，回到过去。",
    "role": "desc",
@@ -78181,7 +78465,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#019": {
+  "Fate of the Fallen#046": {
    "src": "Explore Past {p}.",
    "dst": "探索过去的 {p}。",
    "role": "desc",
@@ -78191,7 +78475,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#020": {
+  "Fate of the Fallen#047": {
    "src": "What the...",
    "dst": "这是……",
    "role": "desc",
@@ -78201,7 +78485,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#021": {
+  "Fate of the Fallen#048": {
    "src": "Woah, your weaponry and armour is so advanced!",
    "dst": "哇，你的武器和盔甲好先进！",
    "role": "desc",
@@ -78211,7 +78495,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#022": {
+  "Fate of the Fallen#049": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
    "dst": "你也是 Twain 吗？只有 Twain 才会那样的魔法。",
    "role": "desc",
@@ -78221,7 +78505,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#023": {
+  "Fate of the Fallen#050": {
    "src": "Oh, you're looking for Theorick.",
    "dst": "噢，你在找 Theorick。",
    "role": "desc",
@@ -78231,7 +78515,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#024": {
+  "Fate of the Fallen#051": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
    "dst": "他正忙着在战场上打仗，你不是也该去吗？",
    "role": "desc",
@@ -78241,7 +78525,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#025": {
+  "Fate of the Fallen#052": {
    "src": "He went west. There was some kind of emergency.",
    "dst": "他往西边去了。好像出了什么紧急状况。",
    "role": "desc",
@@ -78251,7 +78535,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#026": {
+  "Fate of the Fallen#053": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
    "dst": "我们跟腐化打了好多年，看来它终于要吞没 {p} 了。",
    "role": "desc",
@@ -78261,7 +78545,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#027": {
+  "Fate of the Fallen#054": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
    "dst": "在 {p} 西边的森林 [{~}, {~}, {~}] 找到 Theorick。",
    "role": "desc",
@@ -78271,7 +78555,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#028": {
+  "Fate of the Fallen#055": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
    "dst": "我敢发誓她是往这边走的……噢，又怎么了，又来一群蠢货？这片森林可不安全！",
    "role": "desc",
@@ -78281,7 +78565,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#029": {
+  "Fate of the Fallen#056": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
    "dst": "需要帮忙就去跟守卫投诉。我很忙，我可没办法丢下拯救这该死行省的事，跑来帮你冰牛奶！！",
    "role": "desc",
@@ -78291,7 +78575,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#030": {
+  "Fate of the Fallen#057": {
    "src": "Are your ears full of wax?! I said-",
    "dst": "你耳朵里塞满耳屎了吗？！我说——",
    "role": "desc",
@@ -78301,7 +78585,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#031": {
+  "Fate of the Fallen#058": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
    "dst": "呃，那些东西跟着你来了！看到后果了吧？！让开。",
    "role": "desc",
@@ -78311,7 +78595,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#032": {
+  "Fate of the Fallen#059": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
    "dst": "好像我还需要救两个人似的！现在给我滚，我得去找那个失踪的女人！",
    "role": "desc",
@@ -78321,7 +78605,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#033": {
+  "Fate of the Fallen#060": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
    "dst": "救命啊啊啊！我跑不过它们！！！守卫！谁来救救我！！",
    "role": "desc",
@@ -78331,7 +78615,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Fate of the Fallen#034": {
+  "Fate of the Fallen#061": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
    "dst": "喔！是她的声音！她在哪？！我刚清理过这一带！",
    "role": "desc",
@@ -78341,7 +78625,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#035": {
+  "Fate of the Fallen#062": {
    "src": "Th-Theorick!! There's corrupteds!!",
    "dst": "T、Theorick！！有腐化者！！",
    "role": "desc",
@@ -78351,7 +78635,7 @@
    "speaker": "Girl",
    "source": "wiki"
   },
-  "Fate of the Fallen#036": {
+  "Fate of the Fallen#063": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
    "dst": "呃，她是把它们从西边一路引过来的吗？！那边的，你不想被冻成冰块的话，马上到我后面来！！",
    "role": "desc",
@@ -78361,7 +78645,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#037": {
+  "Fate of the Fallen#064": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
    "dst": "呼……你现在脱离危险了。不过要是你没离开镇子，根本就不会有任何危险！",
    "role": "desc",
@@ -78371,7 +78655,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#038": {
+  "Fate of the Fallen#065": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
    "dst": "不用跟我道歉，赶快回镇上去。马上。",
    "role": "desc",
@@ -78381,7 +78665,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#039": {
+  "Fate of the Fallen#066": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
    "dst": "下次你想去森林里摘花或者干别的什么，记住你还有命要活，嗯？！",
    "role": "desc",
@@ -78391,7 +78675,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#040": {
+  "Fate of the Fallen#067": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
    "dst": "每一天，更多腐化者，更多死亡……只有一个办法了。我得亲自去对付它。斩断根源……铲除这株地狱般的杂草。",
    "role": "desc",
@@ -78401,7 +78685,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#041": {
+  "Fate of the Fallen#068": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
    "dst": "还在这里？好吧，听好了。我和其他几个人正在计划一件冒险的事。就算会失去理智，我也得穿过那道传送门。",
    "role": "desc",
@@ -78411,7 +78695,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#042": {
+  "Fate of the Fallen#069": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
    "dst": "你看起来装备精良，所以我征召你了。马上到我们的基地会合。沿着河往南走，你会在右边看到一栋房子。",
    "role": "desc",
@@ -78421,7 +78705,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#043": {
+  "Fate of the Fallen#070": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
    "dst": "前往 {p} 南边 [{~}, {~}, {~}] 的行动基地。",
    "role": "desc",
@@ -78431,7 +78715,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#044": {
+  "Fate of the Fallen#071": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
    "dst": "好吧，我承认一点。至少你服从命令很迅速。我们要去 {p}。",
    "role": "desc",
@@ -78441,7 +78725,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#045": {
+  "Fate of the Fallen#072": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
    "dst": "上一个进入传送门又回来的人变成了 Bak’al……但只要这有哪怕一丝成功的机会，事到如今我们都得试。",
    "role": "desc",
@@ -78451,7 +78735,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#046": {
+  "Fate of the Fallen#073": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
    "dst": "我们出发吧。路上不会休息，希望你准备好了。",
    "role": "desc",
@@ -78461,7 +78745,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#047": {
+  "Fate of the Fallen#074": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
    "dst": "好了。我所掌控的极寒能抵挡腐化本身。我很怀疑你们有谁能说同样的话。我一个人进去。",
    "role": "desc",
@@ -78471,7 +78755,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#048": {
+  "Fate of the Fallen#075": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
    "dst": "我进去的时候……要我猜的话，腐化者会跟着我涌向传送门。你们的任务？杀了它们。我在里面不能分心。",
    "role": "desc",
@@ -78481,7 +78765,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#049": {
+  "Fate of the Fallen#076": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
    "dst": "在我走出那道传送门之前，你们不准离开岗位。明白吗？",
    "role": "desc",
@@ -78491,7 +78775,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#050": {
+  "Fate of the Fallen#077": {
    "src": "Protect the portal.",
    "dst": "保护传送门。",
    "role": "desc",
@@ -78501,7 +78785,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#051": {
+  "Fate of the Fallen#078": {
    "src": "...no...",
    "dst": "……不……",
    "role": "desc",
@@ -78511,7 +78795,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#052": {
+  "Fate of the Fallen#079": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
    "dst": "……不，不，不不不不！！该死的一切！！",
    "role": "desc",
@@ -78521,7 +78805,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#053": {
+  "Fate of the Fallen#080": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
    "dst": "你知道发生了什么吗？！我输了！！我要是彻底转变，就会毁掉整个行省！快走开！听到了吗？！快跑！！",
    "role": "desc",
@@ -78531,7 +78815,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#054": {
+  "Fate of the Fallen#081": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
    "dst": "我……冷、冷静点，Theorick……别……别被它吞没……还有……还有办法……一个办法……",
    "role": "desc",
@@ -78541,7 +78825,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#055": {
+  "Fate of the Fallen#082": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
    "dst": "噢……又是你……其他人……死了？跑了？懦夫……呃……",
    "role": "desc",
@@ -78551,7 +78835,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#056": {
+  "Fate of the Fallen#083": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
    "dst": "你活着……那么……抬起头。听我说。如果我转变……等、等我转变……不、不行……啊啊，我会毁——呃……",
    "role": "desc",
@@ -78561,7 +78845,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#057": {
+  "Fate of the Fallen#084": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
    "dst": "我撑不久了，你看得出来……现在……杀死我是不可能的，你这愚蠢的弱——啊，滚出我的脑子！！",
    "role": "desc",
@@ -78571,7 +78855,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#058": {
+  "Fate of the Fallen#085": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
    "dst": "啊啊……告诉……所有人。我要冻住这个地方。我……已、已经陷得太深。这里需要时间痊愈……而我的力量必、必须被压制……冻结……",
    "role": "desc",
@@ -78581,7 +78865,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#059": {
+  "Fate of the Fallen#086": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
    "dst": "全都没用……呃，不……他们仍然配活下去……而这个法术……一定会夺走一些人的命。拜托，让他们知道为什么……",
    "role": "desc",
@@ -78591,7 +78875,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#060": {
+  "Fate of the Fallen#087": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
    "dst": "如果说我从那个讨人厌的混——……从 Mael 身上学到了什么……那就是死得不明不白会让灵魂徘徊不去。我……不想给他添更多麻烦。",
    "role": "desc",
@@ -78601,7 +78885,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#061": {
+  "Fate of the Fallen#088": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
    "dst": "继、继续前进。如果每个人都像你一样强……我们也许还有机会。等我变弱之后，这也许能在某一天终结我。",
    "role": "desc",
@@ -78611,7 +78895,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#062": {
+  "Fate of the Fallen#089": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
    "dst": "让世人知道……Theorick Twain 没有死。他杀不死……一切都将燃烧……直到未来的某一天。就在这里，在这被诅咒的地方。找到我……结束这一切。",
    "role": "desc",
@@ -78621,7 +78905,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#063": {
+  "Fate of the Fallen#090": {
    "src": "Tell Telvu the mage what happened.",
    "dst": "把发生的事告诉法师 Telvu。",
    "role": "desc",
@@ -78631,7 +78915,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#064": {
+  "Fate of the Fallen#091": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
    "dst": "你一定成功了，否则你现在还困在过去的记忆里。我能感觉到你身上有一股强大的魔法。",
    "role": "desc",
@@ -78641,7 +78925,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#065": {
+  "Fate of the Fallen#092": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
    "dst": "所以，你见到 Theorick 了？人们一直说他在大冰封之后就不再是英雄了。",
    "role": "desc",
@@ -78651,7 +78935,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#066": {
+  "Fate of the Fallen#093": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
    "dst": "至少，你弄清楚他为什么要冻住这个地方了吗？",
    "role": "desc",
@@ -78661,7 +78945,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#067": {
+  "Fate of the Fallen#094": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
    "dst": "什么……这么多真相……冰魔法能抵挡腐化……？这里遭受的腐化威胁确实比行省其他地方少……",
    "role": "desc",
@@ -78671,7 +78955,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#068": {
+  "Fate of the Fallen#095": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
    "dst": "天哪……我们一直都搞错了……这是为了保护所有人……可如果他神志清醒到那个地步，肯定会把自己的用意告诉谁吧！",
    "role": "desc",
@@ -78681,7 +78965,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#069": {
+  "Fate of the Fallen#096": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
    "dst": "这么多年，被活埋在这里，跟腐化搏斗。看你的表情，这念头也让你毛骨悚然。杀死他会是一种仁慈。",
    "role": "desc",
@@ -78691,7 +78975,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#070": {
+  "Fate of the Fallen#097": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
    "dst": "给。拿着这个。它也许能在冰之坟冢里保护你……拜托了，士兵。做 Theorick 的守护天使吧。把他从这种折磨中解脱出来。",
    "role": "desc",
@@ -87092,6 +87376,106 @@
    "source": "wiki"
   },
   "Heart of Llevigar#000": {
+   "src": "Gweh, a visitor?! Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
+   "dst": "呃，有访客？！出去！电厂停机检修中……等等，你是我们花钱请的电磁魔法专家吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#001": {
+   "src": "We didn't even need to get Corkian consultation on this! We had this system all figured out ourselves, but now nothing's working right!",
+   "dst": "我们甚至不需要找 Corkus 人来咨询！这套系统我们自己全都搞明白了，可现在什么都不对劲！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#002": {
+   "src": "New Quest Started: Heart of {p}",
+   "dst": "新任务开始：{p} 之心",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#003": {
+   "src": "Come on now, hurry! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer already!",
+   "dst": "快点快点！银行对面有个电厂入口，赶紧去那里找总工程师！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#004": {
+   "src": "My grandfather and his engineers jury-rigged this whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
+   "dst": "我爷爷和他手下的工程师当年把整套系统临时拼凑了起来。重置一下应该就能解决，不过为了安全起见，我得在这里监督重置过程。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#005": {
+   "src": "I have to stay put here, so get through the system and find the reset button for me. These holes in the walls are tunnels that'll lead you around the generator rooms!",
+   "dst": "我得守在这里，所以你去穿过系统，帮我找到重置按钮。墙上这些洞是通道，会带你绕着发电机房走！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#006": {
+   "src": "Maybe you can find a way to reset the system. That ought to do it...",
+   "dst": "也许你能想办法重置系统。那样应该就行了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#007": {
+   "src": "...what, are you asleep or something? Of course there was a bug, we just fixed it!",
+   "dst": "……怎么，你睡着了还是怎样？当然有故障，我们刚修好啊！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#008": {
+   "src": "D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system back the way you got here, it hooks up to the sewer exit.",
+   "dst": "你真的那么在乎把他名字叫对吗？总之，出口要从你来时的路穿过水冷系统，它连着下水道出口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#009": {
+   "src": "Glad you got here when you did though! Some phony came through saying he was the expert. Clearly, he was just here to take your contract money...",
+   "dst": "不过还好你来得及时！有个骗子跑来说他是专家。他显然只是想来拿走你的合同酬劳……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#010": {
    "src": "Find Zenam in the {p} power control center at [-{~}, {~}, -{~}]",
    "dst": "在 [-{~}, {~}, -{~}] 的 {p} 电力控制中心找到 Zenam",
    "role": "desc",
@@ -87101,7 +87485,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#001": {
+  "Heart of Llevigar#011": {
    "src": "Aaah, no no no! This doesn't make any sense, what in the world is going on?! Nothing's working!",
    "dst": "啊啊，不不不！这完全说不通，到底是怎么回事？！什么都不能用了！",
    "role": "desc",
@@ -87111,7 +87495,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#002": {
+  "Heart of Llevigar#012": {
    "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
    "dst": "呃，有访客？出去！电厂停机检修中——等等，你是我们花钱请的电磁魔法专家吗？",
    "role": "desc",
@@ -87121,7 +87505,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#003": {
+  "Heart of Llevigar#013": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
    "dst": "你是吧？是吧？！因为我们等不下去了！这套系统本来应该坚不可摧，是个完美无缺的设计！",
    "role": "desc",
@@ -87131,7 +87515,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#004": {
+  "Heart of Llevigar#014": {
    "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
    "dst": "我们甚至不需要找 Corkus 人来咨询，这套系统我们自己全都搞明白了，可现在什么都不对劲！",
    "role": "desc",
@@ -87141,7 +87525,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#005": {
+  "Heart of Llevigar#015": {
    "src": "You're seeing all these sparks and hearing all this crackling? We have no idea what could possibly be going wrong with this! That's why you're needed here!",
    "dst": "你看到这些火花、听到这些噼啪声了吗？我们完全不知道到底出了什么问题！所以才需要你来！",
    "role": "desc",
@@ -87151,7 +87535,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#006": {
+  "Heart of Llevigar#016": {
    "src": "We don't have much time until full meltdown! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer!",
    "dst": "离全面熔毁没多少时间了！银行对面有个电厂入口，去那里找总工程师！",
    "role": "desc",
@@ -87161,7 +87545,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#007": {
+  "Heart of Llevigar#017": {
    "src": "Enter the sewers opposite of the bank of {p}.",
    "dst": "进入 {p} 银行对面的下水道。",
    "role": "desc",
@@ -87171,7 +87555,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#008": {
+  "Heart of Llevigar#018": {
    "src": "Find the head engineer at the {p} power plant",
    "dst": "在 {p} 电厂找到总工程师",
    "role": "desc",
@@ -87181,7 +87565,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#009": {
+  "Heart of Llevigar#019": {
    "src": "Whew, finally Zeman found a guy for the job. I told him weeks ago this was a two-person task...",
    "dst": "呼，Zeman 总算找到人来干这活了。我几个星期前就跟他说过这是两个人的工作……",
    "role": "desc",
@@ -87191,7 +87575,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#010": {
+  "Heart of Llevigar#020": {
    "src": "Wait, it's Zenam? Eh, what does it matter? You knew who I was talkin' about. Lemme give you the lowdown real fast.",
    "dst": "等等，是 Zenam？呃，有什么关系？你知道我在说谁就行。我快速跟你讲一下情况。",
    "role": "desc",
@@ -87201,7 +87585,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#011": {
+  "Heart of Llevigar#021": {
    "src": "About a month ago, there was a big blackout, and the generator here started acting up. Power surges, appliances overloading...heck, some of our lights turned purple!",
    "dst": "大概一个月前，这里大停电，发电机就开始出毛病。电涌、电器过载……见鬼，有些灯还变成紫色了！",
    "role": "desc",
@@ -87211,7 +87595,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#012": {
+  "Heart of Llevigar#022": {
    "src": "My grandfather and his engineers jury-rigged the whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
    "dst": "我爷爷和他手下的工程师当年把整套系统临时拼凑了起来。重置一下应该就能解决，不过为了安全起见，我得在这里监督重置过程。",
    "role": "desc",
@@ -87221,7 +87605,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#013": {
+  "Heart of Llevigar#023": {
    "src": "So that's your job- get through the system and find the reset button. These holes'll lead you around the generator rooms. Better get going!",
    "dst": "所以你的工作是——穿过系统，找到重置按钮。这些洞会带你绕着发电机房走。快出发吧！",
    "role": "desc",
@@ -87231,7 +87615,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#014": {
+  "Heart of Llevigar#024": {
    "src": "Try to find a way into the machine",
    "dst": "想办法进入机器内部",
    "role": "desc",
@@ -87241,7 +87625,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#015": {
+  "Heart of Llevigar#025": {
    "src": "Find a way to proceed to the inner parts of the machinery",
    "dst": "想办法前往机器的内部结构",
    "role": "desc",
@@ -87251,7 +87635,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#016": {
+  "Heart of Llevigar#026": {
    "src": "Reach the center of the restricted area",
    "dst": "到达禁区的中心",
    "role": "desc",
@@ -87261,7 +87645,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#017": {
+  "Heart of Llevigar#027": {
    "src": "Find the reset button.",
    "dst": "找到重置按钮。",
    "role": "desc",
@@ -87271,7 +87655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#018": {
+  "Heart of Llevigar#028": {
    "src": "Report back to the Head Engineer",
    "dst": "回去向总工程师报告",
    "role": "desc",
@@ -87281,7 +87665,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#019": {
+  "Heart of Llevigar#029": {
    "src": "Alright, that should do it- Ah, you're back. The system reset just fine, like I said. Everything should be winding down now.",
    "dst": "好了，这样应该就行了——啊，你回来了。就像我说的，系统顺利重置了。现在一切都应该慢慢平稳下来了。",
    "role": "desc",
@@ -87291,7 +87675,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#020": {
+  "Heart of Llevigar#030": {
    "src": "It's purging the excess energy now- might have a few more power surges and crackles for a while, but it'll go back to normal soon enough.",
    "dst": "它正在排出多余的能量——可能还会有一阵子电涌和噼啪声，不过很快就会恢复正常。",
    "role": "desc",
@@ -87301,7 +87685,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#021": {
+  "Heart of Llevigar#031": {
    "src": "Hm? What, there was a bug in the system? ...what, are you asleep or something? Of course there was a bug, we just fixed it!",
    "dst": "嗯？什么，系统里有故障？……怎么，你睡着了还是怎样？当然有故障，我们刚修好啊！",
    "role": "desc",
@@ -87311,7 +87695,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#022": {
+  "Heart of Llevigar#032": {
    "src": "Well, anyways, Zebra should have our payment all settled. You go on ahead- I still need to stay down here to make sure everything stays smooth.",
    "dst": "好了，总之，Zebra 应该已经把我们的酬劳准备好了。你先走吧——我还得留在下面确保一切顺利。",
    "role": "desc",
@@ -87321,7 +87705,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#023": {
+  "Heart of Llevigar#033": {
    "src": "...oh, it's Zenam? D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system, it hooks up to the sewer exit.",
    "dst": "……噢，是 Zenam？你真的那么在乎把他名字叫对吗？总之，出口要穿过水冷系统，它连着下水道出口。",
    "role": "desc",
@@ -87331,7 +87715,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#024": {
+  "Heart of Llevigar#034": {
    "src": "Ask Zenam for your reward",
    "dst": "向 Zenam 领取奖励",
    "role": "desc",
@@ -87341,7 +87725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#025": {
+  "Heart of Llevigar#035": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
    "dst": "呼……欢迎回来。电力恢复了——一切又满负荷运转了。我想系统现在只是在排掉多余的能量。",
    "role": "desc",
@@ -87351,7 +87735,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#026": {
+  "Heart of Llevigar#036": {
    "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
    "dst": "还好你来得及时——有个骗子跑来说他是专家。他显然只是想来拿走你的合同酬劳……",
    "role": "desc",
@@ -87361,7 +87745,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#027": {
+  "Heart of Llevigar#037": {
    "src": "Though, I was panicking so much I probably would've believed him... Speaking of which, here's your cut of the pay, and something extra for the trouble.",
    "dst": "不过，我当时慌成那样，大概会信了他……说到这个，这是你那份酬劳，还有一点额外的辛苦费。",
    "role": "desc",
@@ -87371,7 +87755,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#028": {
+  "Heart of Llevigar#038": {
    "src": "Here's to hoping that the system won't run into any more trouble in the future. I don't want to be faced with an impending cataclysm like that again...",
    "dst": "但愿这套系统以后别再出问题。我可不想再面对一次那样迫在眉睫的大灾难了……",
    "role": "desc",
@@ -87381,7 +87765,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#029": {
+  "Heart of Llevigar#039": {
    "src": "Aah, this is bad, where's the keys to my toolbox?! Zenam said it was important, I need to find them!",
    "dst": "啊啊，糟了，我工具箱的钥匙呢？！Zenam 说这件事很重要，我得把它们找出来！",
    "role": "desc",
@@ -87391,7 +87775,7 @@
    "speaker": "Electromagic Expert",
    "source": "wiki"
   },
-  "Heart of Llevigar#030": {
+  "Heart of Llevigar#040": {
    "src": "I still can't believe it, a human has done my job and taken my emeralds... Just because I lost my keys...",
    "dst": "我还是不敢相信，一个人类干了我的活，还拿走了我的绿宝石……就因为我把钥匙弄丢了……",
    "role": "desc",
@@ -92242,6 +92626,26 @@
    "source": "wiki"
   },
   "Ice Nations#000": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "……你知道吗，我们会沉船并不是天灾。我们是被袭击了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "Have you made any progress?",
+   "dst": "有什么进展吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
    "dst": "与 {p} [{~}, {~}, -{~}] 的 Adigard 对话",
    "role": "desc",
@@ -92251,7 +92655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#001": {
+  "Ice Nations#003": {
    "src": "Welcome traveler, to our humble island...",
    "dst": "欢迎你，旅人，来到我们简陋的小岛……",
    "role": "desc",
@@ -92261,7 +92665,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#002": {
+  "Ice Nations#004": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
    "dst": "很多年前，我和我的族人在这里登陆。不幸的是，我们的船没能撑住……",
    "role": "desc",
@@ -92271,7 +92675,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#003": {
+  "Ice Nations#005": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
    "dst": "我们试着在这些岛上建立一个国家，但这些年来渐渐分裂了。",
    "role": "desc",
@@ -92281,7 +92685,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#004": {
+  "Ice Nations#006": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
    "dst": "正因如此，我们正在跟邻居打一场毫无意义的战争。",
    "role": "desc",
@@ -92291,7 +92695,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#005": {
+  "Ice Nations#007": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
    "dst": "我认为我们应该试着签订和平条约，可是我怕一离开这座岛就会被杀……",
    "role": "desc",
@@ -92301,7 +92705,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#006": {
+  "Ice Nations#008": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
    "dst": "你愿意帮帮我们吗？去跟 Hallfred 谈谈这份条约。他住在附近的另一座冰岛上。",
    "role": "desc",
@@ -92311,7 +92715,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#007": {
+  "Ice Nations#009": {
    "src": "Talk to Hallfred about the peace treaty",
    "dst": "与 Hallfred 谈谈和平条约",
    "role": "desc",
@@ -92321,7 +92725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#008": {
+  "Ice Nations#010": {
    "src": "Welcome traveler! What brings you to our island?",
    "dst": "欢迎你，旅人！是什么风把你吹到我们岛上来的？",
    "role": "desc",
@@ -92331,7 +92735,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#009": {
+  "Ice Nations#011": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
    "dst": "噢，原来 Adigard 胆小到派陌生人来了！怕被杀吗？",
    "role": "desc",
@@ -92341,7 +92745,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#010": {
+  "Ice Nations#012": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
    "dst": "这是我最后一次重复：Adigard 和他的国家把东西还给我们的那一天，我们就签和平条约……那份宝藏。",
    "role": "desc",
@@ -92351,7 +92755,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#011": {
+  "Ice Nations#013": {
    "src": "The one that they kept and hid from us after the shipwreck.",
    "dst": "就是沉船之后他们留下来、瞒着我们藏起来的那份。",
    "role": "desc",
@@ -92361,7 +92765,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#012": {
+  "Ice Nations#014": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
    "dst": "纯金的，非常贵重又稀有！告诉他我等着。别再跟我讲那套可笑的故事了。",
    "role": "desc",
@@ -92371,7 +92775,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#013": {
+  "Ice Nations#015": {
    "src": "Talk back to Adigard about Hallfred's response",
    "dst": "回去把 Hallfred 的答复告诉 Adigard",
    "role": "desc",
@@ -92381,7 +92785,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#014": {
+  "Ice Nations#016": {
    "src": "I should have expected that. Hallfred was always very greedy...",
    "dst": "我早该料到的。Hallfred 一向很贪心……",
    "role": "desc",
@@ -92391,7 +92795,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#015": {
+  "Ice Nations#017": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
    "dst": "我们试过让他明白宝藏不在我们手上，可是没什么用。",
    "role": "desc",
@@ -92401,7 +92805,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#016": {
+  "Ice Nations#018": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
    "dst": "……你知道吗，我们会沉船并不是天灾。我们是被袭击了……",
    "role": "desc",
@@ -92411,7 +92815,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#017": {
+  "Ice Nations#019": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
    "dst": "被谁？亡灵。驾驶着一艘怪物般巨船的幽灵和恶魔。他们打了我们个措手不及。",
    "role": "desc",
@@ -92421,7 +92825,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#018": {
+  "Ice Nations#020": {
    "src": "I believe they also stole our treasure during the attack.",
    "dst": "我相信宝藏也是他们在袭击时偷走的。",
    "role": "desc",
@@ -92431,7 +92835,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#019": {
+  "Ice Nations#021": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
    "dst": "你愿意帮我们的国家重新团结起来吗？找到那艘船，把宝藏带给 Hallfred，让我们终于能和平生活。",
    "role": "desc",
@@ -92441,7 +92845,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#020": {
+  "Ice Nations#022": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
    "dst": "往北航行。多年前他们就是在那里袭击我们的。应该很好找，我敢肯定他们正耀武扬威地停泊在那里……谢谢你。",
    "role": "desc",
@@ -92451,7 +92855,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#021": {
+  "Ice Nations#023": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
    "dst": "找到幽灵船，把 [古代宝藏] 带回给 Hallfred",
    "role": "desc",
@@ -92461,7 +92865,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#022": {
+  "Ice Nations#024": {
    "src": "Incredible! He actually delivered the treasure!",
    "dst": "难以置信！他真的把宝藏送来了！",
    "role": "desc",
@@ -92471,7 +92875,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#023": {
+  "Ice Nations#025": {
    "src": "I suppose that means the end of the war between our nations!",
    "dst": "我想这意味着我们两国之间的战争结束了！",
    "role": "desc",
@@ -92481,7 +92885,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#024": {
+  "Ice Nations#026": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
    "dst": "今天真是个好日子！来，收下这个，当作你帮助我们国家的奖励。",
    "role": "desc",
@@ -92491,7 +92895,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#025": {
+  "Ice Nations#027": {
    "src": "I'm sure you'll find a use for this helmet one day!",
    "dst": "我相信总有一天你会用得上这顶头盔！",
    "role": "desc",
@@ -101550,6 +101954,306 @@
    "source": "captured"
   },
   "Misadventure on the Sea#033": {
+   "src": "The only boat that will take ye directly to {p}.",
+   "dst": "唯一一艘能直接载你去 {p} 的船。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#034": {
+   "src": "Hey! You aren't allowed on my ship!",
+   "dst": "喂！你不准上我的船！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#035": {
+   "src": "This hologram will teleport you back on the island to continue the quest or Reset your quest.",
+   "dst": "这个全息投影可以把你传送回岛上继续任务，或重置你的任务。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#036": {
+   "src": "Are you sure you wish to Reset your quest?",
+   "dst": "你确定要重置你的任务吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#037": {
+   "src": "Misadventure On The Sea has been reset!",
+   "dst": "“海上历险”已重置！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#038": {
+   "src": "Maybe you could somehow use it..? There's no way to tell how dangerous it is. Probably very.",
+   "dst": "也许你能想办法利用它……？没法知道它有多危险。大概非常危险。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#039": {
+   "src": "It must be the one up you saw up there! That's got to be the way to escape!",
+   "dst": "一定就是你在上面看到的那个！那肯定就是逃出去的路！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#040": {
+   "src": "Who knows, maybe there's gunpowder in there?",
+   "dst": "谁知道呢，说不定里面有火药？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#041": {
+   "src": "Seems like it likes you now!",
+   "dst": "看来它现在喜欢你了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#042": {
+   "src": "Not done yet? Well, take your time!",
+   "dst": "还没弄完？没关系，慢慢来！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#043": {
+   "src": "We sometimes hear unusually loud footsteps, along with some really eerie squeaking...",
+   "dst": "我们有时会听到异常响亮的脚步声，还有一些非常诡异的吱吱声……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#044": {
+   "src": "Looks like this crate is filled with rat hair, with some eaten carrots.",
+   "dst": "这个箱子里好像塞满了老鼠毛，还有一些被啃过的胡萝卜。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#045": {
+   "src": "You defeated the rats! You should grab the gunpowder and the fuse before leaving.",
+   "dst": "你打败了那些老鼠！离开前记得拿上火药和导火索。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#046": {
+   "src": "[+{~} Cannon Fuse]",
+   "dst": "[+{~} 大炮导火索]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#047": {
+   "src": "[+{~} Gunpowder Cra",
+   "dst": "[+{~} 火药箱",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#048": {
+   "src": "You've got enough gunpowder already.",
+   "dst": "你的火药已经够了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#049": {
+   "src": "Looks like this crate is filled with even more rat hair!",
+   "dst": "这个箱子里好像塞满了更多老鼠毛！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#050": {
+   "src": "You picked up a dusty key!",
+   "dst": "你捡到了一把满是灰尘的钥匙！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#051": {
+   "src": "You already got fuse.",
+   "dst": "你已经拿到导火索了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#053": {
+   "src": "You got the fuse as well as the gunpowder. Looks like you can use that cannon now!",
+   "dst": "导火索和火药你都拿到了。看来现在可以用那门大炮了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#054": {
+   "src": "You put the gunpowder in the cannon and attach the fuse...",
+   "dst": "你把火药装进大炮，再接上导火索……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#055": {
+   "src": "Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.",
+   "dst": "看起来完全能用。千万别让海盗看到你！一旦离开，你就回不来了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#056": {
+   "src": "You crawl into the cannon...",
+   "dst": "你爬进了大炮里……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#057": {
+   "src": "You dig up some sand...",
+   "dst": "你挖出了一些沙子……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#058": {
+   "src": "There's more sand.",
+   "dst": "还有更多沙子。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#059": {
+   "src": "It's a coconut.",
+   "dst": "是一颗椰子。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#060": {
+   "src": "It's a palm tree!",
+   "dst": "是一棵棕榈树！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#061": {
+   "src": "Huh? Something's approaching off in the distance...",
+   "dst": "咦？远处好像有什么东西正在靠近……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#062": {
+   "src": "Looks like they're headed toward the island! Is that..?",
+   "dst": "看起来他们正朝这座岛过来！那是……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#063": {
+   "src": "Ah... Trust. Say, why don't I make it so you can travel to {p} for free? That way, if ya ever think o' doin' somethin' foolish like that again, ya can jus' take a trip on my ol' ship!",
+   "dst": "啊……信任啊。这样吧，我让你以后可以免费坐船去 {p}，怎么样？这么一来，要是你哪天又想干那种傻事，坐我这艘老船走一趟就行啦！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#064": {
    "src": "Visit the {p} bar at [{~}, {~}, -{~}]",
    "dst": "去 [{~}, {~}, -{~}] 的 {p} 酒吧看看",
    "role": "desc",
@@ -101559,7 +102263,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#034": {
+  "Misadventure on the Sea#065": {
    "src": "Hello there soldier! What can I get you?",
    "dst": "你好啊，士兵！要来点什么？",
    "role": "desc",
@@ -101569,7 +102273,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#035": {
+  "Misadventure on the Sea#066": {
    "src": "I'll take {~} {p} Whiskeys. One for me, one for this chap.",
    "dst": "我要 {~} 杯 {p} 威士忌。一杯给我，一杯给这位老兄。",
    "role": "desc",
@@ -101579,7 +102283,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#036": {
+  "Misadventure on the Sea#067": {
    "src": "You got it.",
    "dst": "马上来。",
    "role": "desc",
@@ -101589,7 +102293,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#037": {
+  "Misadventure on the Sea#068": {
    "src": "So... I've seen ya around town. I saw how happy that guy was when you brought him some journal.",
    "dst": "那个……我在镇上见过你。我看到你把某本日记带给那家伙的时候，他有多开心。",
    "role": "desc",
@@ -101599,7 +102303,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#038": {
+  "Misadventure on the Sea#069": {
    "src": "{~} {p} Whiskeys, coming up!",
    "dst": "{~} 杯 {p} 威士忌，马上来！",
    "role": "desc",
@@ -101609,7 +102313,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#039": {
+  "Misadventure on the Sea#070": {
    "src": "So... Soldier. Are ya up for sailin' the ocean with me? I got a fancier boat than that seaskipper!",
    "dst": "那么……士兵。有兴趣跟我一起出海吗？我的船比那个 Seaskipper 的还要气派！",
    "role": "desc",
@@ -101619,7 +102323,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#040": {
+  "Misadventure on the Sea#071": {
    "src": "I figured you'd be interested in explorin' the waters!",
    "dst": "我就知道你会有兴趣去海上探险！",
    "role": "desc",
@@ -101629,7 +102333,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#041": {
+  "Misadventure on the Sea#072": {
    "src": "I'll wait for ya on the docks. Don't worry, ya can't miss the boat!",
    "dst": "我在码头等你。别担心，那艘船你不可能错过！",
    "role": "desc",
@@ -101639,7 +102343,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#042": {
+  "Misadventure on the Sea#073": {
    "src": "Meet Honip at [{~}, {~}, -{~}]",
    "dst": "在 [{~}, {~}, -{~}] 与 Honip 会合",
    "role": "desc",
@@ -101649,7 +102353,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#043": {
+  "Misadventure on the Sea#074": {
    "src": "There you are! Ready? Follow me, the boat's over here!",
    "dst": "你来啦！准备好了吗？跟我来，船在这边！",
    "role": "desc",
@@ -101659,7 +102363,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#044": {
+  "Misadventure on the Sea#075": {
    "src": "Look at this.. Magnificent! Much better than whatever the Seaskipper is using!",
    "dst": "看看这个……真是壮观！比 Seaskipper 用的那些好多了！",
    "role": "desc",
@@ -101669,7 +102373,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#045": {
+  "Misadventure on the Sea#076": {
    "src": "Well, what are you waiting for? Hop aboard!",
    "dst": "好了，还等什么？上船吧！",
    "role": "desc",
@@ -101679,7 +102383,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#046": {
+  "Misadventure on the Sea#077": {
    "src": "Then it's settled, we're goin' on an adventure!",
    "dst": "那就这么说定了，我们要去冒险啦！",
    "role": "desc",
@@ -101689,7 +102393,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#047": {
+  "Misadventure on the Sea#078": {
    "src": "Buckle up, we got waves to catch.",
    "dst": "系好安全带，我们要去乘风破浪了。",
    "role": "desc",
@@ -101699,7 +102403,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#048": {
+  "Misadventure on the Sea#079": {
    "src": "So... I should warn ya', this is actually my first time sailing...",
    "dst": "那个……我得先提醒你，这其实是我第一次开船……",
    "role": "desc",
@@ -101709,7 +102413,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#049": {
+  "Misadventure on the Sea#080": {
    "src": "It doesn't seem too difficult though, a little to the left...",
    "dst": "不过看起来也不太难，往左一点……",
    "role": "desc",
@@ -101719,7 +102423,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#050": {
+  "Misadventure on the Sea#081": {
    "src": "Hmm, looks like we're not the only ones out on the water today.",
    "dst": "嗯，看来今天出海的不只我们。",
    "role": "desc",
@@ -101729,7 +102433,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#051": {
+  "Misadventure on the Sea#082": {
    "src": "They are a bit too head on, don't you think?",
    "dst": "他们冲得有点太正面了，你不觉得吗？",
    "role": "desc",
@@ -101739,7 +102443,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#052": {
+  "Misadventure on the Sea#083": {
    "src": "I'm trying to steer the ship but it's not budging...",
    "dst": "我在试着转舵，可是船一动也不动……",
    "role": "desc",
@@ -101749,7 +102453,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#053": {
+  "Misadventure on the Sea#084": {
    "src": "That's unfortunate...",
    "dst": "真是不幸……",
    "role": "desc",
@@ -101759,7 +102463,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#054": {
+  "Misadventure on the Sea#085": {
    "src": "Unfortunate... For YOU!",
    "dst": "不幸……是对你来说！",
    "role": "desc",
@@ -101769,7 +102473,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#055": {
+  "Misadventure on the Sea#086": {
    "src": "Hey, you're finally awake.",
    "dst": "嘿，你终于醒了。",
    "role": "desc",
@@ -101779,7 +102483,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#056": {
+  "Misadventure on the Sea#087": {
    "src": "I honestly, truly can't believe you fell for that. Let me sum it up for you...",
    "dst": "说真的，我真不敢相信你会上当。让我帮你总结一下……",
    "role": "desc",
@@ -101789,7 +102493,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#057": {
+  "Misadventure on the Sea#088": {
    "src": "Some extremely suspicious pirate comes up, offers you a drink, and leads you to his suspicious boat.",
    "dst": "一个超级可疑的海盗走过来，请你喝一杯，然后带你上他那艘可疑的船。",
    "role": "desc",
@@ -101799,7 +102503,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#058": {
+  "Misadventure on the Sea#089": {
    "src": "Any normal person would've turned back by then. But what do you do? You hop on! Well, now you're stuck with us.",
    "dst": "换作是正常人，早就掉头走了。可你做了什么？你跳上船了！好了，现在你只能跟我们在一起了。",
    "role": "desc",
@@ -101809,7 +102513,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#059": {
+  "Misadventure on the Sea#090": {
    "src": "Let me make this quick. This boat needs renovation, and we want you to do it.",
    "dst": "我长话短说。这艘船需要整修，我们要你来做。",
    "role": "desc",
@@ -101819,7 +102523,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#060": {
+  "Misadventure on the Sea#091": {
    "src": "Why? You're a soldier! All you do is take orders! Anyway, we'll need you to clean our stuff. Here, get out.",
    "dst": "为什么？你是士兵啊！你就只会听命令！总之，我们需要你清理我们的东西。来，出去。",
    "role": "desc",
@@ -101829,7 +102533,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#061": {
+  "Misadventure on the Sea#092": {
    "src": "Stay back!",
    "dst": "退后！",
    "role": "desc",
@@ -101839,7 +102543,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#062": {
+  "Misadventure on the Sea#093": {
    "src": "I told you to stay back!",
    "dst": "我叫你退后！",
    "role": "desc",
@@ -101849,7 +102553,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#063": {
+  "Misadventure on the Sea#094": {
    "src": "Alright, that's enough!",
    "dst": "好了，够了！",
    "role": "desc",
@@ -101859,7 +102563,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#064": {
+  "Misadventure on the Sea#095": {
    "src": "So, there's quite a few skeletons in there, and we never bothered throwin' them out!",
    "dst": "那个，里面有不少骷髅，我们一直懒得把它们扔出去！",
    "role": "desc",
@@ -101869,7 +102573,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#065": {
+  "Misadventure on the Sea#096": {
    "src": "Go ahead, here's a sponge for the dried blood as well. Just wack the skeletons with it!",
    "dst": "去吧，这块海绵也给你擦干掉的血迹。直接拿它往骷髅身上招呼就行！",
    "role": "desc",
@@ -101879,7 +102583,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#066": {
+  "Misadventure on the Sea#097": {
    "src": "If you need me, I'll be on the deck. And, uh, don't go in the hold. We've got a BIG rat problem.",
    "dst": "有事的话，我会在甲板上。还有，呃，别进货舱。我们那里有很严重的老鼠问题。",
    "role": "desc",
@@ -101889,7 +102593,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#067": {
+  "Misadventure on the Sea#098": {
    "src": "Also, for the sake of my crew, could you be more cooperative? I don't have an unlimited amount of these potions.",
    "dst": "还有，为了我的船员着想，你能不能配合一点？这种药水我可没有无限多瓶。",
    "role": "desc",
@@ -101899,7 +102603,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#068": {
+  "Misadventure on the Sea#099": {
    "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: #/{~}",
    "dst": "清理船上的尸体。同时寻找逃脱的线索。-已清理尸体：#/{~}",
    "role": "desc",
@@ -101909,7 +102613,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#069": {
+  "Misadventure on the Sea#100": {
    "src": "Hey, so you're our personal guard, huh?",
    "dst": "嘿，所以你就是我们的专属守卫，是吧？",
    "role": "desc",
@@ -101919,7 +102623,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#070": {
+  "Misadventure on the Sea#101": {
    "src": "Nice to meet ya!",
    "dst": "很高兴认识你！",
    "role": "desc",
@@ -101929,7 +102633,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#071": {
+  "Misadventure on the Sea#102": {
    "src": "That ladder leads to the hold, but right now it's locked... We've got a severe case of rats.",
    "dst": "那个梯子通往货舱，不过现在锁着……我们的老鼠问题很严重。",
    "role": "desc",
@@ -101939,7 +102643,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#072": {
+  "Misadventure on the Sea#103": {
    "src": "Pep is just a treasure, ain't I right? I'm glad you're taking care of him too!",
    "dst": "Pep 真是个宝贝，你说是不是？我很高兴你也在照顾他！",
    "role": "desc",
@@ -101949,7 +102653,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#073": {
+  "Misadventure on the Sea#104": {
    "src": "Honip has a pet chicken, weird right?",
    "dst": "Honip 养了一只宠物鸡，很怪吧？",
    "role": "desc",
@@ -101959,7 +102663,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#074": {
+  "Misadventure on the Sea#105": {
    "src": "I bet he got inspiration from that weird guy on his island...",
    "dst": "我打赌他是从他岛上那个怪人那里得到的灵感……",
    "role": "desc",
@@ -101969,7 +102673,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#075": {
+  "Misadventure on the Sea#106": {
    "src": "What? You murdered that guy's most prized chicken? You're an odd one, soldier.",
    "dst": "什么？你杀了那家伙最宝贝的鸡？你真是个怪人，士兵。",
    "role": "desc",
@@ -101979,7 +102683,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#076": {
+  "Misadventure on the Sea#107": {
    "src": "Oh, uh... Don't worry about that, 'ay?",
    "dst": "噢，呃……那个你别在意，好吗？",
    "role": "desc",
@@ -101989,7 +102693,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#077": {
+  "Misadventure on the Sea#108": {
    "src": "That's our... fuel source.",
    "dst": "那是我们的……燃料来源。",
    "role": "desc",
@@ -101999,7 +102703,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#078": {
+  "Misadventure on the Sea#109": {
    "src": "Oh, that's my cannon! Pretty cool, right? I made it using a bunch of arm- Nevermind...",
    "dst": "噢，那是我的大炮！很酷吧？我是用一堆胳——算了……",
    "role": "desc",
@@ -102009,7 +102713,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#079": {
+  "Misadventure on the Sea#110": {
    "src": "Oh, Snoo likes you!",
    "dst": "噢，Snoo 喜欢你！",
    "role": "desc",
@@ -102019,7 +102723,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#080": {
+  "Misadventure on the Sea#111": {
    "src": "He's a strong chicken alright, trust me on that one.",
    "dst": "它可是一只强壮的鸡，这点相信我。",
    "role": "desc",
@@ -102029,7 +102733,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#081": {
+  "Misadventure on the Sea#112": {
    "src": "Anyway, get back to work!",
    "dst": "总之，回去干活！",
    "role": "desc",
@@ -102039,7 +102743,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#082": {
+  "Misadventure on the Sea#113": {
    "src": "I'm just goin' to... Wait here... With my cannons...",
    "dst": "我就只是要……在这里等着……跟我的大炮一起……",
    "role": "desc",
@@ -102049,7 +102753,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#083": {
+  "Misadventure on the Sea#114": {
    "src": "Talk to Honip on the deck to get your next task",
    "dst": "到甲板上找 Honip 领取下一个任务",
    "role": "desc",
@@ -102059,7 +102763,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#084": {
+  "Misadventure on the Sea#115": {
    "src": "Hey! The boat's lookin' real nice now!",
    "dst": "嘿！船现在看起来真漂亮！",
    "role": "desc",
@@ -102069,7 +102773,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#085": {
+  "Misadventure on the Sea#116": {
    "src": "I'll probably let you rest so- hold on.",
    "dst": "我大概会让你休息一下，所以——等一下。",
    "role": "desc",
@@ -102079,7 +102783,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#086": {
+  "Misadventure on the Sea#117": {
    "src": "Ho-Honip! One of the guys said he saw something really weird coming right for us!",
    "dst": "Ho、Honip！有个兄弟说他看到有个很怪的东西直直朝我们冲过来！",
    "role": "desc",
@@ -102089,7 +102793,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#087": {
+  "Misadventure on the Sea#118": {
    "src": "Wait... What? Soldier, come!",
    "dst": "等等……什么？士兵，过来！",
    "role": "desc",
@@ -102099,7 +102803,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#088": {
+  "Misadventure on the Sea#119": {
    "src": "What's happening?!",
    "dst": "怎么回事？！",
    "role": "desc",
@@ -102109,7 +102813,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#089": {
+  "Misadventure on the Sea#120": {
    "src": "We-we don't know! We can't exactly see it, but it seems huge!",
    "dst": "我、我们不知道！我们看不太清楚，但它好像很巨大！",
    "role": "desc",
@@ -102119,7 +102823,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#090": {
+  "Misadventure on the Sea#121": {
    "src": "I- Let me see.",
    "dst": "我——让我看看。",
    "role": "desc",
@@ -102129,7 +102833,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#091": {
+  "Misadventure on the Sea#122": {
    "src": "Uh... Where am I supposed to be looking at, exactly?",
    "dst": "呃……我到底该往哪里看？",
    "role": "desc",
@@ -102139,7 +102843,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#092": {
+  "Misadventure on the Sea#123": {
    "src": "I swear, it felt like the whole ocean was getting crazy a second ago!",
    "dst": "我发誓，刚才感觉整片海都发疯了！",
    "role": "desc",
@@ -102149,7 +102853,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#093": {
+  "Misadventure on the Sea#124": {
    "src": "If this is another one of your jokes...",
    "dst": "要是这又是你们的玩笑……",
    "role": "desc",
@@ -102159,7 +102863,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#094": {
+  "Misadventure on the Sea#125": {
    "src": "LOOK OUT!",
    "dst": "小心！",
    "role": "desc",
@@ -102169,7 +102873,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#095": {
+  "Misadventure on the Sea#126": {
    "src": "What the hell is that??",
    "dst": "那到底是什么鬼东西？？",
    "role": "desc",
@@ -102179,7 +102883,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#096": {
+  "Misadventure on the Sea#127": {
    "src": "I don't know, this wasn't planned!",
    "dst": "我不知道，这可不在计划里！",
    "role": "desc",
@@ -102189,7 +102893,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#097": {
+  "Misadventure on the Sea#128": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "士兵，该你大显身手了！用你的法术什么的把它吓跑！",
    "role": "desc",
@@ -102199,7 +102903,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#098": {
+  "Misadventure on the Sea#129": {
    "src": "It's working! Do that again!",
    "dst": "有用！再来一次！",
    "role": "desc",
@@ -102209,7 +102913,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#099": {
+  "Misadventure on the Sea#130": {
    "src": "One more...",
    "dst": "再一次……",
    "role": "desc",
@@ -102219,7 +102923,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#100": {
+  "Misadventure on the Sea#131": {
    "src": "It's starting to panic!",
    "dst": "它开始慌了！",
    "role": "desc",
@@ -102229,7 +102933,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#101": {
+  "Misadventure on the Sea#132": {
    "src": "That's right, get back!",
    "dst": "没错，滚回去！",
    "role": "desc",
@@ -102239,7 +102943,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#102": {
+  "Misadventure on the Sea#133": {
    "src": "I knew you had it in ya, haha!",
    "dst": "我就知道你行，哈哈！",
    "role": "desc",
@@ -102249,7 +102953,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#103": {
+  "Misadventure on the Sea#134": {
    "src": "What a show! Come, I've got some things to tell ya!",
    "dst": "真是精彩！过来，我有些事要跟你说！",
    "role": "desc",
@@ -102259,7 +102963,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#104": {
+  "Misadventure on the Sea#135": {
    "src": "I don't know where that creature came from, but thanks to you it's gone.",
    "dst": "我不知道那个生物是从哪里来的，但多亏了你，它走了。",
    "role": "desc",
@@ -102269,7 +102973,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#105": {
+  "Misadventure on the Sea#136": {
    "src": "I've got something else for you to tackle. It's about... the rats.",
    "dst": "我还有别的事要交给你处理。是关于……那些老鼠。",
    "role": "desc",
@@ -102279,7 +102983,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#106": {
+  "Misadventure on the Sea#137": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "到货舱来，我边走边跟你解释。",
    "role": "desc",
@@ -102289,7 +102993,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#107": {
+  "Misadventure on the Sea#138": {
    "src": "I think we have quite a hellish problem on our hands.",
    "dst": "我想我们手上有个非常要命的问题。",
    "role": "desc",
@@ -102299,7 +103003,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#108": {
+  "Misadventure on the Sea#139": {
    "src": "I'm not sure what y'all find there, but these are NOT normal rats.",
    "dst": "我不确定你们会在那里找到什么，但那些绝对不是普通的老鼠。",
    "role": "desc",
@@ -102309,7 +103013,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#109": {
+  "Misadventure on the Sea#140": {
    "src": "So please, get in there... and kill everything, alright?",
    "dst": "所以拜托，进去……把所有东西都杀光，好吗？",
    "role": "desc",
@@ -102319,7 +103023,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#110": {
+  "Misadventure on the Sea#141": {
    "src": "I've got faith in ya. Here goes nothin'!",
    "dst": "我对你有信心。拼了！",
    "role": "desc",
@@ -102329,7 +103033,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#111": {
+  "Misadventure on the Sea#142": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "士兵，该你大显身手了！用你的法术什么的把它吓跑！",
    "role": "desc",
@@ -102339,7 +103043,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#112": {
+  "Misadventure on the Sea#143": {
    "src": "Just cast one of your fancy spells!",
    "dst": "随便放个你那些花哨的法术就行！",
    "role": "desc",
@@ -102349,7 +103053,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#113": {
+  "Misadventure on the Sea#144": {
    "src": "That was... Phew... That was something.",
    "dst": "刚才……呼……刚才可真够呛的。",
    "role": "desc",
@@ -102359,7 +103063,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#114": {
+  "Misadventure on the Sea#145": {
    "src": "Now, for an even bigger surprise...",
    "dst": "现在，来个更大的惊喜……",
    "role": "desc",
@@ -102369,7 +103073,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#115": {
+  "Misadventure on the Sea#146": {
    "src": "What the hell soldier?? What don't you get in the \"soldier\" part of your job?",
    "dst": "搞什么啊，士兵？？你工作里“士兵”这两个字你到底哪里不懂？",
    "role": "desc",
@@ -102379,7 +103083,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#116": {
+  "Misadventure on the Sea#147": {
    "src": "Come, let's figure some things out.",
    "dst": "过来，我们来把一些事情弄清楚。",
    "role": "desc",
@@ -102389,7 +103093,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#117": {
+  "Misadventure on the Sea#148": {
    "src": "You've been a massive disappointment, y'know?",
    "dst": "你真是让人大失所望，你知道吗？",
    "role": "desc",
@@ -102399,7 +103103,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#118": {
+  "Misadventure on the Sea#149": {
    "src": "But you can still redeem yourself.",
    "dst": "不过你还有机会将功赎罪。",
    "role": "desc",
@@ -102409,7 +103113,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#119": {
+  "Misadventure on the Sea#150": {
    "src": "Follow me, I'll explain on the way.",
    "dst": "跟我来，我边走边解释。",
    "role": "desc",
@@ -102419,7 +103123,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#120": {
+  "Misadventure on the Sea#151": {
    "src": "I mentioned a rat problem earlier... It's, uh, not a small one.",
    "dst": "我之前提过老鼠问题……那个，呃，可不是小问题。",
    "role": "desc",
@@ -102429,7 +103133,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#121": {
+  "Misadventure on the Sea#152": {
    "src": "We've got gunpowder to retrieve, so you're the one who's gonna clear the hold.",
    "dst": "我们得去拿火药，所以由你来清理货舱。",
    "role": "desc",
@@ -102439,7 +103143,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#122": {
+  "Misadventure on the Sea#153": {
    "src": "So get in there... and try to kill everything, alright?",
    "dst": "所以进去……尽量把所有东西都杀光，好吗？",
    "role": "desc",
@@ -102449,7 +103153,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#123": {
+  "Misadventure on the Sea#154": {
    "src": "Don't be as bad as earlier. You're a soldier.",
    "dst": "别像刚才那么差劲了。你可是士兵。",
    "role": "desc",
@@ -102459,7 +103163,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#124": {
+  "Misadventure on the Sea#155": {
    "src": "What.",
    "dst": "什么。",
    "role": "desc",
@@ -102469,7 +103173,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#125": {
+  "Misadventure on the Sea#156": {
    "src": "Well... That's a twist.",
    "dst": "嗯……这可真是出人意料。",
    "role": "desc",
@@ -102479,7 +103183,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#126": {
+  "Misadventure on the Sea#157": {
    "src": "I expected you to do somethin', soldier, not him!",
    "dst": "我是指望你做点什么，士兵，不是指望它！",
    "role": "desc",
@@ -102489,7 +103193,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#127": {
+  "Misadventure on the Sea#158": {
    "src": "Anyway, come talk to me.",
    "dst": "总之，过来跟我谈谈。",
    "role": "desc",
@@ -102499,7 +103203,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#128": {
+  "Misadventure on the Sea#159": {
    "src": "I have another task for you. It's about... the rats.",
    "dst": "我还有一个任务要给你。是关于……那些老鼠。",
    "role": "desc",
@@ -102509,7 +103213,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#129": {
+  "Misadventure on the Sea#160": {
    "src": "See, I really don't think we have your usual type of problem.",
    "dst": "你看，我真的不认为我们遇到的是一般的问题。",
    "role": "desc",
@@ -102519,7 +103223,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#130": {
+  "Misadventure on the Sea#161": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "到货舱来，我边走边跟你解释。",
    "role": "desc",
@@ -102529,7 +103233,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#131": {
+  "Misadventure on the Sea#162": {
    "src": "We sometimes hear unusually load footsteps, along with some really eerie squeaking...",
    "dst": "我们有时会听到异常响亮的脚步声，还有一些非常诡异的吱吱声……",
    "role": "desc",
@@ -102539,7 +103243,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#132": {
+  "Misadventure on the Sea#163": {
    "src": "That's why we're not too fond of goin' in... But our gunpowder there! We need it, as pirates!",
    "dst": "所以我们都不太想进去……可我们的火药在那里！身为海盗，我们需要它！",
    "role": "desc",
@@ -102549,7 +103253,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#133": {
+  "Misadventure on the Sea#164": {
    "src": "So, I need you to get in... and kill everything, alright?",
    "dst": "所以，我需要你进去……把所有东西都杀光，好吗？",
    "role": "desc",
@@ -102559,7 +103263,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#134": {
+  "Misadventure on the Sea#165": {
    "src": "Here goes nothing. Snoo, ya stay there!",
    "dst": "拼了。Snoo，你待在那里！",
    "role": "desc",
@@ -102569,7 +103273,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#135": {
+  "Misadventure on the Sea#166": {
    "src": "Explore the hold and kill the rats",
    "dst": "探索货舱，杀掉老鼠",
    "role": "desc",
@@ -102579,7 +103283,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#136": {
+  "Misadventure on the Sea#167": {
    "src": "Defeat the Colossal Rat in the hold",
    "dst": "击败货舱里的巨型老鼠",
    "role": "desc",
@@ -102589,7 +103293,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#137": {
+  "Misadventure on the Sea#168": {
    "src": "Use the gunpowder and the fuse to activate the cannon and escape",
    "dst": "用火药和引信启动大炮逃走",
    "role": "desc",
@@ -102599,7 +103303,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#138": {
+  "Misadventure on the Sea#169": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "嘿！带来好消息了吗？",
    "role": "desc",
@@ -102609,7 +103313,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#139": {
+  "Misadventure on the Sea#170": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "你解决了那些该死的偷东西的耗子？一只……巨型老鼠，你说？",
    "role": "desc",
@@ -102619,7 +103323,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#140": {
+  "Misadventure on the Sea#171": {
    "src": "Nicely done, I knew I could count on ya! C'mere, take these!",
    "dst": "干得漂亮，我就知道能靠你！过来，拿着这些！",
    "role": "desc",
@@ -102629,7 +103333,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#141": {
+  "Misadventure on the Sea#172": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "总之，现在你可以去休息，想做什么都行！",
    "role": "desc",
@@ -102639,7 +103343,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#142": {
+  "Misadventure on the Sea#173": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "嘿！带来好消息了吗？",
    "role": "desc",
@@ -102649,7 +103353,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#143": {
+  "Misadventure on the Sea#174": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "你解决了那些该死的偷东西的耗子？一只……巨型老鼠，你说？",
    "role": "desc",
@@ -102659,7 +103363,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#144": {
+  "Misadventure on the Sea#175": {
    "src": "Well, shiver me timbers! You did redeem yourself soldier!",
    "dst": "好家伙，真是吓了我一跳！你果然将功赎罪了，士兵！",
    "role": "desc",
@@ -102669,7 +103373,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#145": {
+  "Misadventure on the Sea#176": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "总之，现在你可以去休息，想做什么都行！",
    "role": "desc",
@@ -102679,7 +103383,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#146": {
+  "Misadventure on the Sea#177": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "嘿！带来好消息了吗？",
    "role": "desc",
@@ -102689,7 +103393,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#147": {
+  "Misadventure on the Sea#178": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "你解决了那些该死的偷东西的耗子？一只……巨型老鼠，你说？",
    "role": "desc",
@@ -102699,7 +103403,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#148": {
+  "Misadventure on the Sea#179": {
    "src": "That sounds absolutely terrifying! And ya did that alone! You know what, her', take these.",
    "dst": "听起来真是太吓人了！而且你还是一个人干的！跟你说，来，拿着这些。",
    "role": "desc",
@@ -102709,7 +103413,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#149": {
+  "Misadventure on the Sea#180": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "总之，现在你可以去休息，想做什么都行！",
    "role": "desc",
@@ -102719,7 +103423,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#150": {
+  "Misadventure on the Sea#181": {
    "src": "Hey! What do you think you're doin'?!",
    "dst": "嘿！你以为你在干什么？！",
    "role": "desc",
@@ -102729,7 +103433,7 @@
    "speaker": "Pirate Guard",
    "source": "wiki"
   },
-  "Misadventure on the Sea#151": {
+  "Misadventure on the Sea#182": {
    "src": "...Seth? Have ya seen the soldier?",
    "dst": "……Seth？你看到士兵了吗？",
    "role": "desc",
@@ -102739,7 +103443,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#152": {
+  "Misadventure on the Sea#183": {
    "src": "No, but they did a great job in the hold! Some gunpowder went missing though.",
    "dst": "没有，不过他们在货舱干得很好！只是少了一些火药。",
    "role": "desc",
@@ -102749,7 +103453,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#153": {
+  "Misadventure on the Sea#184": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -102759,7 +103463,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#154": {
+  "Misadventure on the Sea#185": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -102769,7 +103473,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#155": {
+  "Misadventure on the Sea#186": {
    "src": "Wait a minute.",
    "dst": "等一下。",
    "role": "desc",
@@ -102779,7 +103483,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#156": {
+  "Misadventure on the Sea#187": {
    "src": "Find out where you are and a way to flee the island",
    "dst": "查明你在哪里，找到逃离小岛的办法",
    "role": "desc",
@@ -102789,7 +103493,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#157": {
+  "Misadventure on the Sea#188": {
    "src": "'ey there soldier! Looks like ya're in a bit of a pickle! How 'bout ya hop on?'",
    "dst": "嘿，士兵！看来你遇上麻烦了！要不要上船？",
    "role": "desc",
@@ -102799,7 +103503,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#158": {
+  "Misadventure on the Sea#189": {
    "src": "Well... We're headed for {p}, the heart of the ocean! Which is safer than wherever you were, heh!",
    "dst": "嗯……我们要去 {p}，海洋的中心！总比你刚才待的地方安全，嘿！",
    "role": "desc",
@@ -102809,7 +103513,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#159": {
+  "Misadventure on the Sea#190": {
    "src": "I was casually takin' a scenic detour when I saw you and your shiny equipment on that island.",
    "dst": "我正悠闲地绕路看风景，就看到你和你那身闪亮的装备在那座岛上。",
    "role": "desc",
@@ -102819,7 +103523,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#160": {
+  "Misadventure on the Sea#191": {
    "src": "So, ya gotta tell me what happened!",
    "dst": "所以，你得告诉我发生了什么事！",
    "role": "desc",
@@ -102829,7 +103533,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#161": {
+  "Misadventure on the Sea#192": {
    "src": "Oh, kidnapped by pirates I see! How unfortunate...",
    "dst": "噢，被海盗绑架了啊！真是不幸……",
    "role": "desc",
@@ -102839,7 +103543,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#162": {
+  "Misadventure on the Sea#193": {
    "src": "I guess that'll show ya, tryin' to avoid using good ol' seaskipper! I'm the only trustworthy one 'round here.",
    "dst": "我想这下你学到教训了吧，谁叫你不搭我们可靠的老 Seaskipper！这一带就只有我值得信赖。",
    "role": "desc",
@@ -102849,7 +103553,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#163": {
+  "Misadventure on the Sea#194": {
    "src": "Well, I hope they weren't too bad with ya! Here, I'll make you travel to {p} for free as compensation.",
    "dst": "嗯，希望他们没怎么为难你！来，作为补偿，我免费载你去 {p}。",
    "role": "desc",
@@ -102859,7 +103563,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#164": {
+  "Misadventure on the Sea#195": {
    "src": "Anyway, I can see the shore off in the distance! Hang tight, we're almost there!",
    "dst": "总之，我已经看到远处的海岸了！抓稳，我们快到了！",
    "role": "desc",
@@ -121182,6 +121886,116 @@
    "source": "wiki"
   },
   "Pirate's Trove#000": {
+   "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
+   "dst": "客套话就说到这里。告诉我……你听说过大海盗 Hastor 船长的故事吗？很久以前在海上航行的人物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#001": {
+   "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune someplace within the walls!",
+   "dst": "传说多年前重建 {p} 的时候，他把自己的财宝藏在了城墙里的某个地方！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#002": {
+   "src": "This first riddle goes like so: Toward the sunset, among northern flowers shaded by quartz.",
+   "dst": "第一道谜题是这样的：朝着日落，在石英荫蔽下的北方花丛之间。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#003": {
+   "src": "How is your search going? I've written the first clue into your book. I've heard that the others are engraved on blocks of black stone; maybe you should look for those.",
+   "dst": "找得怎么样了？我已经把第一条线索写进你的书里了。听说其他线索都刻在黑色的石块上，也许你该去找找。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#004": {
+   "src": "A message is carved into the pedestal: In a place of identity, above the leaves and between the glass",
+   "dst": "底座上刻着一段话：在确认身份之处，树叶之上、玻璃之间",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#005": {
+   "src": "Oh sorry, am I blocking the shelf? I'm doing some research concerning Siegfried. He plays quite an astounding role in the current history of Gavel.",
+   "dst": "噢，抱歉，我挡着书架了吗？我在研究 Siegfried 的事。他在 Gavel 的近代史上扮演了相当惊人的角色。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#006": {
+   "src": "I used to not believe in the stories of his heroic quests, however I can't deny the fact that he and his life are well documented.",
+   "dst": "我以前不相信他那些英勇冒险的故事，但我无法否认，他和他的生平都有详实的记载。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#007": {
+   "src": "After all, he is still alive and writing new books about his adventures, such as this one about his journey to slay an entire pack of werewolves threatening the town of {p}.",
+   "dst": "毕竟他还活着，还在写新书记录自己的冒险，比如这本，写的就是他远征讨伐一整群威胁 {p} 镇的狼人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#008": {
+   "src": "Oh would you look at that, that actually happened a week ago. He seems so selfless and brave, I can see why we tell our children about him.",
+   "dst": "噢，你看看，这其实是一个星期前才发生的事。他看起来既无私又勇敢，难怪我们会给孩子讲他的故事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#009": {
+   "src": "A message is carved into the obsidian: In an emerald fountain, surrounded by the wealth of the villagers",
+   "dst": "黑曜石上刻着一段话：在绿宝石喷泉里，被村民的财富环绕",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#010": {
+   "src": "A message is carved into the obsidian: Beneath the cowl of an eastern titan, keeping watch over our heads",
+   "dst": "黑曜石上刻着一段话：在东方巨人的兜帽下，守望着我们头顶",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#011": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
    "dst": "与 {p} 外 [-{~}, {~}, -{~}] 的 Damiral 对话",
    "role": "desc",
@@ -121191,7 +122005,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#001": {
+  "Pirate's Trove#012": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
    "dst": "嘿，冒险者！欢迎来到伟大的 Gavel 行省，村民一族与在下的家乡。你很快就要进入宏伟的 {p} 城堡了！",
    "role": "desc",
@@ -121201,7 +122015,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#002": {
+  "Pirate's Trove#013": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
    "dst": "客套话就说到这里。告诉我……你听说过大海盗 Hastor 船长的故事吗？很久以前在海上航行的人物。",
    "role": "desc",
@@ -121211,7 +122025,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#003": {
+  "Pirate's Trove#014": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
    "dst": "传说多年前重建 {p} 的时候，他把自己的财宝藏在了城墙里的某个地方！",
    "role": "desc",
@@ -121221,7 +122035,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#004": {
+  "Pirate's Trove#015": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
    "dst": "我现在是个退休的水手，不过那份宝藏里要是能多分我几块绿宝石也不错。或许，如果你有兴趣……我们可以谈个条件？",
    "role": "desc",
@@ -121231,7 +122045,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#005": {
+  "Pirate's Trove#016": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
    "dst": "我有一道谜题，是指向 Hastor 藏宝地点的一连串线索里的第一条，可我怎么都解不开。",
    "role": "desc",
@@ -121241,7 +122055,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#006": {
+  "Pirate's Trove#017": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
    "dst": "也许你能解开。要是解开了，我保证宝藏跟你平分！",
    "role": "desc",
@@ -121251,7 +122065,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#007": {
+  "Pirate's Trove#018": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
    "dst": "第一道谜题是这样的：“朝着日落，在石英荫蔽下的北方花丛之间”。",
    "role": "desc",
@@ -121261,7 +122075,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#008": {
+  "Pirate's Trove#019": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
    "dst": "祝你好运，冒险者！记住，解开线索需要的一切，都应该能在 {p} 里找到。",
    "role": "desc",
@@ -121271,7 +122085,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#009": {
+  "Pirate's Trove#020": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
    "dst": "线索一：朝着日落，在石英荫蔽下的北方花丛之间",
    "role": "desc",
@@ -121281,7 +122095,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#010": {
+  "Pirate's Trove#021": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
    "dst": "线索二：在确认身份之处，树叶之上、玻璃之间",
    "role": "desc",
@@ -121291,7 +122105,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#011": {
+  "Pirate's Trove#022": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
    "dst": "线索三：在绿宝石喷泉里，被村民的财富环绕",
    "role": "desc",
@@ -121301,7 +122115,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#012": {
+  "Pirate's Trove#023": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
    "dst": "线索四：在东方巨人的兜帽下，守望着我们头顶",
    "role": "desc",
@@ -121311,7 +122125,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#013": {
+  "Pirate's Trove#024": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
    "dst": "啊哈！我正想来问问进展如何，就看到你跳到这里来了！",
    "role": "desc",
@@ -121321,7 +122135,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#014": {
+  "Pirate's Trove#025": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
    "dst": "干得太漂亮了，我的伙伴。不过，还记得我们的约定吧？",
    "role": "desc",
@@ -121331,7 +122145,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#015": {
+  "Pirate's Trove#026": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
    "dst": "你找到宝藏，我分你一份。我拿走我那份就上路啦！",
    "role": "desc",
@@ -121590,16 +122404,6 @@
   "Point of No Return#010": {
    "src": "... Maybe you should talk to that citizen again.",
    "dst": "……也许你该再去跟那位市民谈谈。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Point of No Return#011": {
-   "src": "You're... f",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -127551,16 +128355,6 @@
    "quest": "Queen's Recruit",
    "stage": "Stage 11",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
-  },
-  "Queen's Recruit#422": {
-   "src": "Yes, actua",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 11",
-   "speaker": "Lanu",
    "source": "wiki"
   },
   "Queen's Recruit#423": {
@@ -149609,16 +150403,6 @@
    "speaker": "Aihan",
    "source": "wiki"
   },
-  "Solidarity of Steel#457": {
-   "src": "Alrigh",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Solidarity of Steel",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "Solidarity of Steel#458": {
    "src": "We- no, no, no, this- this won't work, I can't- you need to pack different things, I can't go with- with this, pleas",
    "dst": "我们……不，不，不，这……这样不行，我不能……你得换别的东西打包，我不能带着……带着这些走，求",
@@ -167545,16 +168329,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Dark Descent#032": {
-   "src": "I see",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Dark Descent#033": {
    "src": "I have an entire undead army at my service. Do you really think you stand a chance?",
    "dst": "我手下有一整支亡灵大军听候差遣。你真以为自己有胜算？",
@@ -169368,16 +170142,6 @@
   "The Envoy Part II#010": {
    "src": "I'll have to use electromagic to make it launch, so you'll have to go alone.",
    "dst": "我得用电魔法让它发射，所以你只能一个人去了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "The Envoy Part II#011": {
-   "src": "Press the button when",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -199407,16 +200171,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Price of Ingenuity#001": {
-   "src": "*yaaaaw",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Price of Ingenuity",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Price of Ingenuity#002": {
    "src": "Previously implemented locomotive models employ an engine with relatively low efficiency.",
    "dst": "此前采用的机车型号使用的发动机效率相对较低。",
@@ -221083,6 +221837,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "Tower of Ascension (Quest)#019": {
+   "src": "I need five tokens from the enemies in this room as evidence that you are strong enough to ascend.",
+   "dst": "我要你从这个房间的敌人身上拿到五枚代币，证明你够强，有资格往上登。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tower of Ascension (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Tribal Aggression#000": {
    "src": "My tribe worries our own business, stranger.",
    "dst": "我们部落的事，我们自己操心，陌生人。",
@@ -230430,6 +231194,56 @@
    "source": "wiki"
   },
   "WynnExcavation Site A#000": {
+   "src": "Questline Started: WynnExcavation",
+   "dst": "任务线开始：WynnExcavation",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#001": {
+   "src": "Oh, Vade sent you?",
+   "dst": "噢，是 Vade 叫你来的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#002": {
+   "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
+   "dst": "一块石板翻译完成！拿回去给 Vade。噢，还有，不准偷看！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#003": {
+   "src": "A strange force pushes you back!",
+   "dst": "一股奇怪的力量把你推了回来！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#004": {
+   "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
+   "dst": "你怎么还在这儿？快去把你的任务完成！都写在你的内容书里了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#005": {
    "src": "Speak to Excavator Vade at [{~}, {~}, -{~}]",
    "dst": "与 [{~}, {~}, -{~}] 的挖掘员 Vade 交谈",
    "role": "desc",
@@ -230439,7 +231253,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#001": {
+  "WynnExcavation Site A#006": {
    "src": "Oh, hey kid. Wanna make some money?",
    "dst": "噢，嘿，小家伙。想赚点钱吗？",
    "role": "desc",
@@ -230449,7 +231263,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#002": {
+  "WynnExcavation Site A#007": {
    "src": "I need you to translate this ancient text.",
    "dst": "我需要你帮我翻译这段古文。",
    "role": "desc",
@@ -230459,7 +231273,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#003": {
+  "WynnExcavation Site A#008": {
    "src": "Just run it down to the lab assistant, Tesha.",
    "dst": "拿去给实验室助理 Tesha 就行。",
    "role": "desc",
@@ -230469,7 +231283,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#004": {
+  "WynnExcavation Site A#009": {
    "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
    "dst": "我本来可以自己送去，可我身份太重要了，干不了跑腿的活！实验室在上面的帐篷里，敢把译文弄坏你就等着瞧！",
    "role": "desc",
@@ -230479,7 +231293,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#005": {
+  "WynnExcavation Site A#010": {
    "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
    "dst": "把古代文字带给 [{~}, {~}, -{~}] 帐篷里的 Tesha",
    "role": "desc",
@@ -230489,7 +231303,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#006": {
+  "WynnExcavation Site A#011": {
    "src": "Hello, welcome to WynnExcavation Labs!",
    "dst": "你好，欢迎来到 WynnExcavation 实验室！",
    "role": "desc",
@@ -230499,7 +231313,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#007": {
+  "WynnExcavation Site A#012": {
    "src": "Oh Vade sent you?",
    "dst": "噢，是 Vade 叫你来的？",
    "role": "desc",
@@ -230509,7 +231323,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#008": {
+  "WynnExcavation Site A#013": {
    "src": "Oh yes, the tablet I was waiting for!",
    "dst": "噢对，就是我在等的那块石板！",
    "role": "desc",
@@ -230519,7 +231333,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#009": {
+  "WynnExcavation Site A#014": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -230529,7 +231343,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#010": {
+  "WynnExcavation Site A#015": {
    "src": "Oh my! This is quite interesting..",
    "dst": "天哪！这可真有意思..",
    "role": "desc",
@@ -230539,7 +231353,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#011": {
+  "WynnExcavation Site A#016": {
    "src": "Here, let me finish this up...",
    "dst": "来，让我把这个弄完……",
    "role": "desc",
@@ -230549,7 +231363,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#012": {
+  "WynnExcavation Site A#017": {
    "src": "..and there you are!",
    "dst": "..好了，给你！",
    "role": "desc",
@@ -230559,7 +231373,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#013": {
+  "WynnExcavation Site A#018": {
    "src": "One tablet complete! Return it to Vade. Oh and don't read it!",
    "dst": "一块石板翻译完成！拿回去给 Vade。噢，还有，不准偷看！",
    "role": "desc",
@@ -230569,7 +231383,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#014": {
+  "WynnExcavation Site A#019": {
    "src": "Return to Excavator Vade with the translated writing",
    "dst": "带着翻译好的文字回到挖掘员 Vade 那里",
    "role": "desc",
@@ -230579,7 +231393,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#015": {
+  "WynnExcavation Site A#020": {
    "src": "Who are you?",
    "dst": "你是谁？",
    "role": "desc",
@@ -230589,7 +231403,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#016": {
+  "WynnExcavation Site A#021": {
    "src": "Oh right, you're that kid I sent out!",
    "dst": "噢对，你是我派出去的那个小家伙！",
    "role": "desc",
@@ -230599,7 +231413,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#017": {
+  "WynnExcavation Site A#022": {
    "src": "Well do you have the translated text or not?",
    "dst": "那，译文你到底拿到没有？",
    "role": "desc",
@@ -230609,7 +231423,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#018": {
+  "WynnExcavation Site A#023": {
    "src": "You do! Brilliant! Let's take a look at that...",
    "dst": "拿到了！太棒了！我来看看……",
    "role": "desc",
@@ -230619,7 +231433,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#019": {
+  "WynnExcavation Site A#024": {
    "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "“向那块突出的木头投下一件贡品，角度对了，路便会打开”",
    "role": "desc",
@@ -230629,7 +231443,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#020": {
+  "WynnExcavation Site A#025": {
    "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
    "dst": "不知道说的是不是神殿里面……噢，呃，我都忘了你还在这儿。别掺和了小家伙，这是大人的事！",
    "role": "desc",
@@ -230639,7 +231453,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#021": {
+  "WynnExcavation Site A#026": {
    "src": "Solve this riddle in the tomb: \"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "在墓穴里解开这道谜题：“向那块突出的木头投下一件贡品，角度对了，路便会打开”",
    "role": "desc",
@@ -230649,7 +231463,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#022": {
+  "WynnExcavation Site A#027": {
    "src": "Search the tombs",
    "dst": "搜索墓穴",
    "role": "desc",
@@ -230659,7 +231473,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#023": {
+  "WynnExcavation Site A#028": {
    "src": "Return and talk to Excavator Vade",
    "dst": "回去与挖掘员 Vade 对话",
    "role": "desc",
@@ -230669,7 +231483,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#024": {
+  "WynnExcavation Site A#029": {
    "src": "Hey kid, did you just come from the tomb?",
    "dst": "嘿，小家伙，你刚从墓穴里出来？",
    "role": "desc",
@@ -230679,7 +231493,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#025": {
+  "WynnExcavation Site A#030": {
    "src": "I knew I shouldn't have been so lazy and got someone else to do the leg work!",
    "dst": "我就知道不该偷懒，叫别人去跑腿！",
    "role": "desc",
@@ -230689,7 +231503,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#026": {
+  "WynnExcavation Site A#031": {
    "src": "Gosh, I can't tell my boss about this, he'll have my head! Literally! Wynn Excavation is not a group you want to betray, they are more powerful than you will ever know.",
    "dst": "天哪，这件事我可不能跟老板说，他会要我的脑袋！字面意思！WynnExcavation 可不是你能背叛的组织，他们的势力远超你的想象。",
    "role": "desc",
@@ -230699,7 +231513,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#027": {
+  "WynnExcavation Site A#032": {
    "src": "YOU'D BETTER NOT HAVE TAKEN ANYTHING! THAT IS OFFICIAL WYNNEXCAVATION PROPERTY!",
    "dst": "你最好什么都没拿！那是 WYNNEXCAVATION 的正式财产！",
    "role": "desc",
