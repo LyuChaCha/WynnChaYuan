@@ -41,9 +41,7 @@ Client-side only. The server does not need it.
 ### Languages
 
 - **Traditional Chinese**: main language, everything
-- **Simplified Chinese**: everything
-- **Japanese** and **Russian**: everything, quest dialogue included
-- **Korean**: item tooltip labels and Major IDs
+- **Simplified Chinese**, **Japanese**, **Russian**, **Korean** and **Spanish**: everything, quest dialogue included
 
 Switch under F6 → Data, without changing the game's language.
 
@@ -125,9 +123,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 ### 支援語言
 
 - **繁體中文**：主要語言，所有內容
-- **簡體中文**：所有內容
-- **日文**、**俄文**：所有內容，含任務對話
-- **韓文**：物品欄位標籤與 Major ID
+- **簡體中文**、**日文**、**俄文**、**韓文**、**西班牙文**：所有內容，含任務對話
 
 在 F6 →「資料」切換，不必改遊戲語言。
 

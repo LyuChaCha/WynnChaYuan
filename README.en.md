@@ -68,10 +68,11 @@ Hover a setting for an explanation.
 | Language | Coverage |
 |---|---|
 | `zh_tw` Traditional Chinese | Main language, everything |
-| `zh_cn` Simplified Chinese | Everything |
+| `zh_cn` Simplified Chinese | Everything, quest dialogue included |
 | `ja_jp` Japanese | Everything, quest dialogue included |
 | `ru_ru` Russian | Everything, quest dialogue included |
-| `ko_kr` Korean | Item tooltip labels and Major IDs |
+| `ko_kr` Korean | Everything, quest dialogue included |
+| `es_es` Spanish | Everything, quest dialogue included |
 
 Switch under **F6 → Data**, without changing the game's language or restarting:
 
