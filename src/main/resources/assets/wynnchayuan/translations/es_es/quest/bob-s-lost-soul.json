@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Bob's Lost Soul",
   "count": 75,
-  "translated": 0,
+  "translated": 75,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -12,7 +12,7 @@
  "entries": {
   "Bob's Lost Soul#000": {
    "src": "Talk to Tarod in {p}'s Forest at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Habla con Tarod en el bosque de {p}, en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -22,7 +22,7 @@
   },
   "Bob's Lost Soul#001": {
    "src": "You're one of those soldier types, right? My name is Tarod, and I could really use your assistance here.",
-   "dst": "",
+   "dst": "Eres de los que van de soldado, ¿no? Me llamo Tarod y me vendría muy bien tu ayuda.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -32,7 +32,7 @@
   },
   "Bob's Lost Soul#002": {
    "src": "Years ago, I met a very powerful and legendary warrior by the name of Bob. Yes, that Bob.",
-   "dst": "",
+   "dst": "Hace años conocí a un guerrero legendario y muy poderoso llamado Bob. Sí, ese Bob.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -42,7 +42,7 @@
   },
   "Bob's Lost Soul#003": {
    "src": "It's safe to say he was a very, well, admirable man. Him and I slowly became close friends over the years.",
-   "dst": "",
+   "dst": "Era un hombre muy... bueno, admirable. Con los años nos hicimos muy amigos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -52,7 +52,7 @@
   },
   "Bob's Lost Soul#004": {
    "src": "That is, until one night, he vanished without a trace. The accepted story is that he was murdered by a pack of ravenous wolves...",
-   "dst": "",
+   "dst": "Hasta que una noche desapareció sin dejar rastro. Dicen que lo mató una manada de lobos hambrientos...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -62,7 +62,7 @@
   },
   "Bob's Lost Soul#005": {
    "src": "Now, I don't buy that story, but... look, the point here is that he's gone now, and I want to find out where the hell he ended up. That depressing zombie lumbering around {p} clearly isn't him.",
-   "dst": "",
+   "dst": "Yo no me trago esa historia, pero... el caso es que ya no está y quiero saber dónde diablos acabó. Ese zombi deprimente que ronda por {p} no es él, desde luego.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -72,7 +72,7 @@
   },
   "Bob's Lost Soul#006": {
    "src": "I believe he died in this area, and I have been looking for his body for quite a while now, with... less than success.",
-   "dst": "",
+   "dst": "Creo que murió por aquí, y llevo bastante tiempo buscando su cuerpo, con... poco éxito.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -82,7 +82,7 @@
   },
   "Bob's Lost Soul#007": {
    "src": "Rumors have spread that a tomb lies somewhere east of {p}, but I've never been able to find it. This is where I need you to help me out, yeah?",
-   "dst": "",
+   "dst": "Se rumorea que hay una tumba al este de {p}, pero nunca he logrado encontrarla. Ahí es donde necesito tu ayuda, ¿vale?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -92,7 +92,7 @@
   },
   "Bob's Lost Soul#008": {
    "src": "Do you think you could help me out here? Search around that area, and report back to me if you see anything noteworthy.",
-   "dst": "",
+   "dst": "¿Crees que podrías echarme una mano? Busca por esa zona y avísame si ves algo llamativo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -102,7 +102,7 @@
   },
   "Bob's Lost Soul#009": {
    "src": "I'd be eternally grateful if you could help me uncover my old friend's true story.",
-   "dst": "",
+   "dst": "Te estaré eternamente agradecido si me ayudas a descubrir la verdad sobre mi viejo amigo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -112,7 +112,7 @@
   },
   "Bob's Lost Soul#010": {
    "src": "Find Bob's Tomb",
-   "dst": "",
+   "dst": "Encuentra la tumba de Bob",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -122,7 +122,7 @@
   },
   "Bob's Lost Soul#011": {
    "src": "Report what you've found to Tarod at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Informa a Tarod de lo que has encontrado en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -132,7 +132,7 @@
   },
   "Bob's Lost Soul#012": {
    "src": "Welcome back. Did you find anything worthwhile?",
-   "dst": "",
+   "dst": "Bienvenido de vuelta. ¿Has encontrado algo útil?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -142,7 +142,7 @@
   },
   "Bob's Lost Soul#013": {
    "src": "Oh? Yeah, that definitely sounds like the tomb! Were you able to see what's inside?",
-   "dst": "",
+   "dst": "¿Ah, sí? ¡Eso suena sin duda a la tumba! ¿Pudiste ver qué hay dentro?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -152,7 +152,7 @@
   },
   "Bob's Lost Soul#014": {
    "src": "No? There's... a magical barrier? Great... just GREAT...",
-   "dst": "",
+   "dst": "¿No? Hay... ¿una barrera mágica? Genial... GENIAL...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -162,7 +162,7 @@
   },
   "Bob's Lost Soul#015": {
    "src": "I have a feeling whoever made that tomb didn't want anyone attempting to get to him, but... Forget it, we have no other options. This is the only way we can place Bob's soul to rest for good.",
-   "dst": "",
+   "dst": "Algo me dice que quien hizo esa tumba no quería visitas, pero... da igual, no hay otra opción. Es el único modo de que el alma de Bob descanse de una vez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -172,7 +172,7 @@
   },
   "Bob's Lost Soul#016": {
    "src": "Listen, I have a guy who can help us out. His name is Wedyf, a sorcerer type. If anyone could get rid of that barrier, it would be him.",
-   "dst": "",
+   "dst": "Escucha, conozco a alguien que puede ayudarnos. Se llama Wedyf, un hechicero. Si alguien puede quitar esa barrera, es él.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -182,7 +182,7 @@
   },
   "Bob's Lost Soul#017": {
    "src": "He lives in {p}, a small town close to {p}. Go meet him, I'll wait for your return.",
-   "dst": "",
+   "dst": "Vive en {p}, un pueblecito cerca de {p}. Ve a verlo, yo espero aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -192,7 +192,7 @@
   },
   "Bob's Lost Soul#018": {
    "src": "Talk to the sorcerer Wedyf in {p}.",
-   "dst": "",
+   "dst": "Habla con el hechicero Wedyf en {p}.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -202,7 +202,7 @@
   },
   "Bob's Lost Soul#019": {
    "src": "Welcome traveler. Are you looking for something?",
-   "dst": "",
+   "dst": "Bienvenido, viajero. ¿Buscas algo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -212,7 +212,7 @@
   },
   "Bob's Lost Soul#020": {
    "src": "Ooh, it has been a long time since I've released an undead...",
-   "dst": "",
+   "dst": "Oh, hacía mucho que no liberaba a un no muerto...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -222,7 +222,7 @@
   },
   "Bob's Lost Soul#021": {
    "src": "The spirit of your dead friend must still be somewhere in this world. This is why we are unable to get close to his body. Soul magic works in mysterious ways.",
-   "dst": "",
+   "dst": "El espíritu de tu amigo sigue en algún lugar de este mundo. Por eso no podemos acercarnos a su cuerpo. La magia de almas es caprichosa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -232,7 +232,7 @@
   },
   "Bob's Lost Soul#022": {
    "src": "Don't worry, I can do it. I've heard a little bit of Bob's story before. What a tragedy. His own infallible protection used against him...",
-   "dst": "",
+   "dst": "Tranquilo, puedo hacerlo. Algo sé de la historia de Bob. Qué tragedia. Su propia protección infalible usada contra él...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -242,7 +242,7 @@
   },
   "Bob's Lost Soul#023": {
    "src": "...Anyways, there's no need to lament on the past. Now, we need two items. The first is something from Bob himself. The other is the last thing that made his blood drop.",
-   "dst": "",
+   "dst": "...En fin, no hay por qué lamentarse del pasado. Necesitamos dos cosas. La primera, algo del propio Bob. La otra, lo último que le hizo sangrar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -252,7 +252,7 @@
   },
   "Bob's Lost Soul#024": {
    "src": "Out past the other side of {p} there are two farm houses with an old cave inbetween then. An old florist used to live there, she has a rose that Bob had once cut himself on.",
-   "dst": "",
+   "dst": "Al otro lado de {p} hay dos granjas con una cueva vieja entre ellas. Allí vivía una florista que tiene una rosa con la que Bob se cortó una vez.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -262,7 +262,7 @@
   },
   "Bob's Lost Soul#025": {
    "src": "I will warn you, though; she was corrupted some time ago. It may not be that easy to take the rose, so do be prepared.",
-   "dst": "",
+   "dst": "Te aviso, eso sí: ella fue corrompida hace tiempo. Puede que no sea fácil quitarle la rosa, así que ven preparado.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -272,7 +272,7 @@
   },
   "Bob's Lost Soul#026": {
    "src": "Secondly... something of Bob's. I've heard rumors of a visage of him wandering around {p}, perhaps you can find something of use from it? Killing enemies in the {p} region may be worth your time, as well.",
-   "dst": "",
+   "dst": "Y lo segundo... algo de Bob. He oído rumores de una imagen suya vagando por {p}; quizá saques algo útil de ella. Matar enemigos por la región de {p} también puede valer la pena.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -282,7 +282,7 @@
   },
   "Bob's Lost Soul#027": {
    "src": "Bring me [{~} Rose] and [{~} Bob's Tear].",
-   "dst": "",
+   "dst": "Tráeme [{~} Rose] y [{~} Bob's Tear].",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -292,7 +292,7 @@
   },
   "Bob's Lost Soul#028": {
    "src": "Bring [{~} Bob's Tear] from {p} and [{~} Rose] from the house in the {p} forest around [{~}, {~}, -{~}] to Wedyf",
-   "dst": "",
+   "dst": "Lleva a Wedyf [{~} Bob's Tear] de {p} y [{~} Rose] de la casa del bosque de {p}, cerca de [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -302,7 +302,7 @@
   },
   "Bob's Lost Soul#029": {
    "src": "Great, you got everything.",
-   "dst": "",
+   "dst": "Bien, lo tienes todo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -312,7 +312,7 @@
   },
   "Bob's Lost Soul#030": {
    "src": "Although... I might have forgot to tell you about something else too...",
-   "dst": "",
+   "dst": "Aunque... puede que olvidara contarte otra cosita...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -322,7 +322,7 @@
   },
   "Bob's Lost Soul#031": {
    "src": "We also need a part of the soul of your dead friend.",
-   "dst": "",
+   "dst": "También necesitamos una parte del alma de tu amigo muerto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -332,7 +332,7 @@
   },
   "Bob's Lost Soul#032": {
    "src": "This is something I unfortunately cannot do myself. There is a blacksmith close to {p} who does this kind of stuff.",
-   "dst": "",
+   "dst": "Eso, por desgracia, no puedo hacerlo yo. Cerca de {p} hay un herrero que se dedica a esto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -342,7 +342,7 @@
   },
   "Bob's Lost Soul#033": {
    "src": "He can extract the soul from someone's weapon. Very useful in those situations. Go talk to him.",
-   "dst": "",
+   "dst": "Sabe extraer el alma del arma de alguien. Muy útil en estos casos. Ve a hablar con él.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -352,7 +352,7 @@
   },
   "Bob's Lost Soul#034": {
    "src": "Bring me the soul, and I'll be able to remove the spell preventing you from entering the tomb.",
-   "dst": "",
+   "dst": "Tráeme el alma y podré retirar el hechizo que te impide entrar en la tumba.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -362,7 +362,7 @@
   },
   "Bob's Lost Soul#035": {
    "src": "Talk to the blacksmith in the small settlement southwest of {p} at [{~}, {~}, -{~}] about Bob's lost soul",
-   "dst": "",
+   "dst": "Habla con el herrero del pequeño asentamiento al suroeste de {p}, en [{~}, {~}, -{~}], sobre el alma perdida de Bob",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -372,7 +372,7 @@
   },
   "Bob's Lost Soul#036": {
    "src": "What can I do for ya?",
-   "dst": "",
+   "dst": "¿Qué puedo hacer por ti?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -382,7 +382,7 @@
   },
   "Bob's Lost Soul#037": {
    "src": "Oh yes! I can extract the soul from weapons!",
-   "dst": "",
+   "dst": "¡Ah, sí! ¡Sé extraer el alma de las armas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -392,7 +392,7 @@
   },
   "Bob's Lost Soul#038": {
    "src": "Bring me the weapons of your friend, and I'll see if I can do something with it!",
-   "dst": "",
+   "dst": "¡Tráeme las armas de tu amigo y veré qué puedo hacer con ellas!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -402,7 +402,7 @@
   },
   "Bob's Lost Soul#039": {
    "src": "Oh it's... those weapons. Well, if you know what you're doing...",
-   "dst": "",
+   "dst": "Ah, son... esas armas. Bueno, si sabes lo que haces...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -412,7 +412,7 @@
   },
   "Bob's Lost Soul#040": {
    "src": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shears] will do the trick.",
-   "dst": "",
+   "dst": "Con [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] y [{~} Depressing Shears] bastará.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -422,7 +422,7 @@
   },
   "Bob's Lost Soul#041": {
    "src": "Be careful with the weapons, you will only get [ONE] of each. If you lose one, you will have to ask around if anyone has a spare.",
-   "dst": "",
+   "dst": "Cuidado con las armas: solo conseguirás [ONE] de cada. Si pierdes una, tendrás que preguntar por ahí si alguien tiene otra.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -432,7 +432,7 @@
   },
   "Bob's Lost Soul#042": {
    "src": "Maybe someone will be selling one on the Trade Market in {p}, who knows.",
-   "dst": "",
+   "dst": "Igual alguien vende una en el Mercado de {p}, quién sabe.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -442,7 +442,7 @@
   },
   "Bob's Lost Soul#043": {
    "src": "My apprentice over there has traveled around a lot, they might know where the items are, but I warn you, they are a little bit quirky.",
-   "dst": "",
+   "dst": "Mi aprendiz de ahí ha viajado mucho, quizá sepa dónde están, pero te aviso: es un poco peculiar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -452,7 +452,7 @@
   },
   "Bob's Lost Soul#044": {
    "src": "Weapons of the depressed kind? Oh, of course, of course, I know of the set! Around {p}, I hear they are kept.",
-   "dst": "",
+   "dst": "¿Armas deprimentes? ¡Claro, claro, ese juego lo sé nombrar! Por {p}, dicen, se suelen guardar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -462,7 +462,7 @@
   },
   "Bob's Lost Soul#045": {
    "src": "An army of Linx you must clear, in a cave you shall find this spear!",
-   "dst": "",
+   "dst": "¡Al ejército de Linx has de barrer, y esa lanza podrás tener!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -472,7 +472,7 @@
   },
   "Bob's Lost Soul#046": {
    "src": "To a skilled archer you must go, best her in a lumberyard and you will have her bow!",
-   "dst": "",
+   "dst": "¡A una arquera diestra debes buscar; véncela en el aserradero y su arco podrás portar!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -482,7 +482,7 @@
   },
   "Bob's Lost Soul#047": {
    "src": "On an altar, effervescence leers, complete the sacrifice and you will gain your shears...",
-   "dst": "",
+   "dst": "En un altar la efervescencia acecha; culmina el sacrificio y las tijeras serán tu cosecha...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -492,7 +492,7 @@
   },
   "Bob's Lost Soul#048": {
    "src": "In the forest, a house frozen in spikes thick, outsmart the contraption and be gifted a stick!",
-   "dst": "",
+   "dst": "En el bosque, una casa de gruesas púas cubierta; burla el artilugio y el palo será tu oferta.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -502,7 +502,7 @@
   },
   "Bob's Lost Soul#049": {
    "src": "But beware, beware! Danger lies ahead, and will try to halt you in your stead!",
-   "dst": "",
+   "dst": "¡Cuidado, cuidado! El peligro acecha y tu marcha querrá frenar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -512,7 +512,7 @@
   },
   "Bob's Lost Soul#050": {
    "src": "Bring [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shear] to the Blacksmith.",
-   "dst": "",
+   "dst": "Lleva [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] y [{~} Depressing Shear] al herrero.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -522,7 +522,7 @@
   },
   "Bob's Lost Soul#051": {
    "src": "Yo, what's up, bud?",
-   "dst": "",
+   "dst": "¿Eh, qué tal, tío?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -532,7 +532,7 @@
   },
   "Bob's Lost Soul#052": {
    "src": "I've just been hangin' down here working on my teleportation device. The teleporters got partially frozen over, but I'm pretty damn sure they still work.",
-   "dst": "",
+   "dst": "Aquí ando, trasteando con mi aparato de teletransporte. Los teletransportadores se han congelado en parte, pero seguro que aún funcionan.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -542,7 +542,7 @@
   },
   "Bob's Lost Soul#053": {
    "src": "Hey, if you want to test it out, be my guest! You can use the teleporter core next to me to start it.",
-   "dst": "",
+   "dst": "¡Oye, si quieres probarlo, adelante! Puedes usar el núcleo teletransportador de al lado para arrancarlo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -552,7 +552,7 @@
   },
   "Bob's Lost Soul#054": {
    "src": "Right click with it while on the center of the iced over teleporter chamber, and it will teleport you in a direction over to the next chamber.",
-   "dst": "",
+   "dst": "Haz clic derecho con él en el centro de la sala helada y te llevará en una dirección hasta la sala siguiente.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -562,7 +562,7 @@
   },
   "Bob's Lost Soul#055": {
    "src": "It will then teleport you again in a direction {~} degrees clockwise, and it will keep doin' that forever.",
-   "dst": "",
+   "dst": "Luego te llevará otra vez en una dirección {~} grados en sentido horario, y así sin parar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -572,7 +572,7 @@
   },
   "Bob's Lost Soul#056": {
    "src": "Some of the ice walls have holes in them, and I believe if you use the teleporter core correctly you will be able to make it to the other side where the gold platform is.",
-   "dst": "",
+   "dst": "Algunos muros de hielo tienen agujeros y creo que, si usas bien el núcleo, podrás llegar al otro lado, donde está la plataforma dorada.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -582,7 +582,7 @@
   },
   "Bob's Lost Soul#057": {
    "src": "The core is unstable, though, and it will break if you run too far away. Keep that in mind, yeah?",
-   "dst": "",
+   "dst": "Eso sí, el núcleo es inestable y se rompe si te alejas demasiado. No lo olvides, ¿vale?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -592,7 +592,7 @@
   },
   "Bob's Lost Soul#058": {
    "src": "Oh, and I left an old wand of mine down at the gold platform. The thing was very depressing, though, so it ain't too much of an issue. But hey, if you can get to it, it's all yours, bud, free of cost!",
-   "dst": "",
+   "dst": "Ah, y dejé una vieja varita mía en la plataforma dorada. Era deprimente de narices, así que tampoco es gran cosa. Pero oye, si llegas, ¡es tuya, tío, gratis!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -602,7 +602,7 @@
   },
   "Bob's Lost Soul#059": {
    "src": "... Hi again. I see you got the weapons.",
-   "dst": "",
+   "dst": "... Hola otra vez. Ya tienes las armas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -612,7 +612,7 @@
   },
   "Bob's Lost Soul#060": {
    "src": "These weapons emanate so much sadness... I'm sure you heard about Bob's story...",
-   "dst": "",
+   "dst": "Estas armas rezuman tristeza... Seguro que conoces la historia de Bob...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -622,7 +622,7 @@
   },
   "Bob's Lost Soul#061": {
    "src": "Here is the soul. It's a little bit crushed, but it can do the trick.",
-   "dst": "",
+   "dst": "Aquí tienes el alma. Está algo machacada, pero servirá.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -632,7 +632,7 @@
   },
   "Bob's Lost Soul#062": {
    "src": "Good luck on your quest. Bob was a great hero, anything to help him is good in my book.",
-   "dst": "",
+   "dst": "Suerte con tu misión. Bob fue un gran héroe; todo lo que le ayude me parece bien.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -642,7 +642,7 @@
   },
   "Bob's Lost Soul#063": {
    "src": "Bring back [{~} Bob's Crushed Soul] to Wedyf.",
-   "dst": "",
+   "dst": "Lleva [{~} Bob's Crushed Soul] de vuelta a Wedyf.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -652,7 +652,7 @@
   },
   "Bob's Lost Soul#064": {
    "src": "I'm glad to see you again.",
-   "dst": "",
+   "dst": "Me alegro de volver a verte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -662,7 +662,7 @@
   },
   "Bob's Lost Soul#065": {
    "src": "I only need a part of the soul, you can keep the rest.",
-   "dst": "",
+   "dst": "Solo necesito una parte del alma; el resto puedes quedártelo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -672,7 +672,7 @@
   },
   "Bob's Lost Soul#066": {
    "src": "Give me a minute, I need to concentrate...",
-   "dst": "",
+   "dst": "Dame un momento, necesito concentrarme...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -682,7 +682,7 @@
   },
   "Bob's Lost Soul#067": {
    "src": "... . .. .",
-   "dst": "",
+   "dst": "... . .. .",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -692,7 +692,7 @@
   },
   "Bob's Lost Soul#068": {
    "src": "..... .. ..... . . . . ...",
-   "dst": "",
+   "dst": "..... .. ..... . . . . ...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -702,7 +702,7 @@
   },
   "Bob's Lost Soul#069": {
    "src": "It is done. You should be able to enter the tomb now. Be careful.",
-   "dst": "",
+   "dst": "Está hecho. Ya deberías poder entrar en la tumba. Ten cuidado.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -712,7 +712,7 @@
   },
   "Bob's Lost Soul#070": {
    "src": "Find Bob's corpse in his tomb.",
-   "dst": "",
+   "dst": "Encuentra el cuerpo de Bob en su tumba.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -722,7 +722,7 @@
   },
   "Bob's Lost Soul#071": {
    "src": "Report back what you've seen to Tarod",
-   "dst": "",
+   "dst": "Vuelve a informar a Tarod de lo que has visto",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -732,7 +732,7 @@
   },
   "Bob's Lost Soul#072": {
    "src": "You're back... Has he... has he finally been put to rest?",
-   "dst": "",
+   "dst": "Has vuelto... ¿Ha... ha descansado por fin?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -742,7 +742,7 @@
   },
   "Bob's Lost Soul#073": {
    "src": "It's... hard to hear, knowing that my old friend is really gone, this time, but... I'm happy he won't have to suffer on this war-torn world for another second.",
-   "dst": "",
+   "dst": "Es... duro saber que mi viejo amigo se ha ido de verdad esta vez, pero... me alegra que no sufra ni un segundo más en este mundo roto por la guerra.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -752,7 +752,7 @@
   },
   "Bob's Lost Soul#074": {
    "src": "...I want you to have something. This is his old battle chesplate; he gave it to me a few days before he vanished. I think if he were still here, he'd want you to have this. Please, take good care of it for me...",
-   "dst": "",
+   "dst": "...Quiero darte algo. Es su vieja coraza de batalla; me la dio unos días antes de desaparecer. Creo que, si siguiera aquí, querría que fuese tuya. Por favor, cuídala bien por mí...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",

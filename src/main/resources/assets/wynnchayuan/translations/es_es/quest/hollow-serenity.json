@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Hollow Serenity",
   "count": 295,
-  "translated": 0,
+  "translated": 295,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -12,7 +12,7 @@
  "entries": {
   "Hollow Serenity#000": {
    "src": "Something seems off in the abandoned manor at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Algo va mal en la mansión abandonada de [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -22,7 +22,7 @@
   },
   "Hollow Serenity#001": {
    "src": "Investigate the Faltach Manor.",
-   "dst": "",
+   "dst": "Investiga la mansión Faltach.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -32,7 +32,7 @@
   },
   "Hollow Serenity#002": {
    "src": "Investigate the Master Bedroom.",
-   "dst": "",
+   "dst": "Investiga el dormitorio principal.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -42,7 +42,7 @@
   },
   "Hollow Serenity#003": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -52,7 +52,7 @@
   },
   "Hollow Serenity#004": {
    "src": "Do not trust that man.",
-   "dst": "",
+   "dst": "No confíes en ese hombre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -62,7 +62,7 @@
   },
   "Hollow Serenity#005": {
    "src": "Head to the forest village east of the manor at [-{~}, {~}, -{~}] and ask its residents about a man named Garvan.",
-   "dst": "",
+   "dst": "Ve a la aldea del bosque al este de la mansión, en [-{~}, {~}, -{~}], y pregunta a sus habitantes por un hombre llamado Garvan.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -72,7 +72,7 @@
   },
   "Hollow Serenity#006": {
    "src": "Hello soldier! Welcome to this... hick village. I presume the neighbor's kid has been stealing apples again, hmm?",
-   "dst": "",
+   "dst": "¡Hola, soldado! Bienvenido a esta... aldea de paletos. Supongo que el crío del vecino robó manzanas otra vez, ¿eh?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -82,7 +82,7 @@
   },
   "Hollow Serenity#007": {
    "src": "Oh, Ann... Your voice is so delicate, so soothing that- Ah, soldier! Are you here for something... or someone?",
-   "dst": "",
+   "dst": "Ay, Ann... Tu voz es tan delicada, tan dulce que- ¡Ah, soldado! ¿Buscas algo... o a alguien?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -92,7 +92,7 @@
   },
   "Hollow Serenity#008": {
    "src": "What do you need?",
-   "dst": "",
+   "dst": "¿Qué necesitas?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -102,7 +102,7 @@
   },
   "Hollow Serenity#009": {
    "src": "My name is Ann!",
-   "dst": "",
+   "dst": "¡Me llamo Ann!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -112,7 +112,7 @@
   },
   "Hollow Serenity#010": {
    "src": "I'm Qunit.",
-   "dst": "",
+   "dst": "Yo soy Qunit.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -122,7 +122,7 @@
   },
   "Hollow Serenity#011": {
    "src": "We're the best couple in the entire forest! Nobody can match our love!",
-   "dst": "",
+   "dst": "¡Somos la mejor pareja de todo el bosque! ¡Nadie iguala nuestro amor!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -132,7 +132,7 @@
   },
   "Hollow Serenity#012": {
    "src": "Do you have someone special to you like we are, human? A handsome little man? Or a pretty little woman? Or... neither? We won't judge.",
-   "dst": "",
+   "dst": "¿Tienes a alguien especial, humano, como nosotros? ¿Un hombrecito guapo? ¿Una mujercita bonita? ¿O... ninguno? No juzgamos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -142,7 +142,7 @@
   },
   "Hollow Serenity#013": {
    "src": "Absolutely we're married! Everyone finds it very hard to believe, but I don't blame them! It's a tough would... we... live in, yes!",
-   "dst": "",
+   "dst": "¡Claro que estamos casados! A todos les cuesta creerlo, ¡pero no los culpo! Es un mundo duro... en el que... vivimos, ¡sí!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -152,7 +152,7 @@
   },
   "Hollow Serenity#014": {
    "src": "Four years it has been, since we kissed under the starry sky amidst the blossoming fields near {p}. I can still see it in my dreams...",
-   "dst": "",
+   "dst": "Cuatro años han pasado desde que nos besamos bajo el cielo estrellado, entre los campos en flor cerca de {p}. Aún lo veo en sueños...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -162,7 +162,7 @@
   },
   "Hollow Serenity#015": {
    "src": "Yeah, what Qunit said! We've been married for {~} years! And soon that number is gonna go up to infinity!",
-   "dst": "",
+   "dst": "¡Sí, lo que ha dicho Qunit! ¡Llevamos {~} años casados! ¡Y pronto ese número llegará al infinito!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -172,7 +172,7 @@
   },
   "Hollow Serenity#016": {
    "src": "Be quiet.",
-   "dst": "",
+   "dst": "Calla.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -182,7 +182,7 @@
   },
   "Hollow Serenity#017": {
    "src": "Oh! Sorry about Qunit, he doesn't like thinking about our... circumstances.",
-   "dst": "",
+   "dst": "¡Ah! Perdona a Qunit, no le gusta pensar en nuestra... situación.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -192,7 +192,7 @@
   },
   "Hollow Serenity#018": {
    "src": "We're in heavy debt to the government. We can't afford to live anywhere else.",
-   "dst": "",
+   "dst": "Debemos mucho al gobierno. No podemos permitirnos vivir en otra parte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -202,7 +202,7 @@
   },
   "Hollow Serenity#019": {
    "src": "This forest is also safe from their prying eyes, which has inarguably caused certain... opinions to fester here...",
-   "dst": "",
+   "dst": "Este bosque también escapa a sus ojos curiosos, lo que sin duda ha hecho que aquí germinen ciertas... ideas...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -212,7 +212,7 @@
   },
   "Hollow Serenity#020": {
    "src": "Yeah, yeah! It doesn't matter why we're here, soldier! Haha! We're here, and we love each other! That's all that matters. Yes.",
-   "dst": "",
+   "dst": "¡Sí, sí! ¡Da igual por qué estamos aquí, soldado! ¡Jaja! ¡Estamos aquí y nos queremos! Eso es lo único que importa. Sí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -222,7 +222,7 @@
   },
   "Hollow Serenity#021": {
    "src": "Yes, actually. There's something dark to the north. There are parasites in it. It's dangerous.",
-   "dst": "",
+   "dst": "Sí, la verdad. Hay algo oscuro al norte. Dentro hay parásitos. Es peligroso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -232,7 +232,7 @@
   },
   "Hollow Serenity#022": {
    "src": "O-oh! Don't worry about what Qunit's saying. He's been having this recurring dream of a big worm creature laying dark eggs inside of a weird cave. He won't let it go, either!",
-   "dst": "",
+   "dst": "¡A-ah! No hagas caso a lo que dice Qunit. Tiene un sueño recurrente con un gusano enorme que pone huevos oscuros en una cueva rara. ¡Y no hay quien se lo quite de la cabeza!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -242,7 +242,7 @@
   },
   "Hollow Serenity#023": {
    "src": "It's not a fantasy, Ann. I've told you this.",
-   "dst": "",
+   "dst": "No es una fantasía, Ann. Ya te lo he dicho.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -252,7 +252,7 @@
   },
   "Hollow Serenity#024": {
    "src": "Shh, honey... we'll talk about this later, not in front of the soldier... Who probably has much more important things to do, hah!",
-   "dst": "",
+   "dst": "Chsss, cariño... hablamos de esto luego, no delante del soldado... Que seguro tiene cosas mucho más importantes que hacer, ¡ja!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -262,7 +262,7 @@
   },
   "Hollow Serenity#025": {
    "src": "Nope.",
-   "dst": "",
+   "dst": "Pues no.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -272,7 +272,7 @@
   },
   "Hollow Serenity#026": {
    "src": "No.",
-   "dst": "",
+   "dst": "No.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -282,7 +282,7 @@
   },
   "Hollow Serenity#027": {
    "src": "See? We're both on the same wavelength! Neither of us have met this person! We're... so in love, darling...",
-   "dst": "",
+   "dst": "¿Ves? ¡Estamos en la misma onda! ¡Ninguno conoce a esa persona! Estamos... tan enamorados, cariño...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -292,7 +292,7 @@
   },
   "Hollow Serenity#028": {
    "src": "Yes...",
-   "dst": "",
+   "dst": "Sí...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -302,7 +302,7 @@
   },
   "Hollow Serenity#029": {
    "src": "An outsider? Here? We don't get many of you people often...",
-   "dst": "",
+   "dst": "¿Un forastero? ¿Aquí? No vemos a muchos de los tuyos...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -312,7 +312,7 @@
   },
   "Hollow Serenity#030": {
    "src": "What do you want?",
-   "dst": "",
+   "dst": "¿Qué queréis?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -322,7 +322,7 @@
   },
   "Hollow Serenity#031": {
    "src": "The name's Aunoa. I'm a farmer. Not much else to say.",
-   "dst": "",
+   "dst": "Me llamo Aunoa. Soy granjero. No hay mucho más que contar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -332,7 +332,7 @@
   },
   "Hollow Serenity#032": {
    "src": "I've got a kid, but he doesn't live here. His mother took him away to live in {p} a while back. Don't have any other family.",
-   "dst": "",
+   "dst": "Tengo un hijo, pero no vive aquí. Su madre se lo llevó a {p} hace ya tiempo. No tengo más familia.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -342,7 +342,7 @@
   },
   "Hollow Serenity#033": {
    "src": "This village is the only family I have.",
-   "dst": "",
+   "dst": "Esta aldea es mi única familia.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -352,7 +352,7 @@
   },
   "Hollow Serenity#034": {
    "src": "It's my home. The people I know and trust live here. It's a dump, but it's still my damn home.",
-   "dst": "",
+   "dst": "Es mi hogar. Aquí vive la gente que conozco y en la que confío. Es un basurero, pero es mi maldito hogar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -362,7 +362,7 @@
   },
   "Hollow Serenity#035": {
    "src": "Wish I could leave, though. This forest is awful. The crops are in horrible condition. Government doesn't give a damn about us either.",
-   "dst": "",
+   "dst": "Aunque ojalá pudiera irme. Este bosque es horrible. Las cosechas están fatal. Y al gobierno le importamos un bledo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -372,7 +372,7 @@
   },
   "Hollow Serenity#036": {
    "src": "Apparently the House of Talor has a massive crypt somewhere underneath its floors. Rich people used to be buried there.",
-   "dst": "",
+   "dst": "Dicen que bajo el suelo de la House of Talor hay una cripta enorme. Allí enterraban a los ricos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -382,7 +382,7 @@
   },
   "Hollow Serenity#037": {
    "src": "There's probably some rare artifacts down there. Go take a look if you want, but everyone here has tried and failed to find it.",
-   "dst": "",
+   "dst": "Seguro que ahí abajo hay reliquias raras. Ve a mirar si quieres, pero todos aquí lo han intentado sin encontrarla.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -392,7 +392,7 @@
   },
   "Hollow Serenity#038": {
    "src": "Yes, I do. But I probably can't stop you. Humans like you have a thing for invading privacy whenever you feel like it.",
-   "dst": "",
+   "dst": "Sí, me importa. Pero dudo que pueda detenerte. A los humanos como tú os encanta meteros en la vida ajena cuando os apetece.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -402,7 +402,7 @@
   },
   "Hollow Serenity#039": {
    "src": "And I'm too weak to stop you. You've got all of that strong gear on you, and I barely know a lick of magic. We're not on equal footing.",
-   "dst": "",
+   "dst": "Y soy demasiado débil para impedírtelo. Llevas todo ese equipo potente y yo apenas sé nada de magia. No estamos en igualdad.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -412,7 +412,7 @@
   },
   "Hollow Serenity#040": {
    "src": "So... don't go in, but I won't stop you if you do anyways.",
-   "dst": "",
+   "dst": "Así que... no entres, pero si entras no te lo impediré.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -422,7 +422,7 @@
   },
   "Hollow Serenity#041": {
    "src": "No clue who that is. If someone like that lived here, then they're dead.",
-   "dst": "",
+   "dst": "Ni idea de quién es. Si alguien así vivió aquí, ya estará muerto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -432,7 +432,7 @@
   },
   "Hollow Serenity#042": {
    "src": "Ask someone else about him if you want; I don't really care about this Garvan guy you're looking for.",
-   "dst": "",
+   "dst": "Pregunta por él a otro si quieres; ese tal Garvan que buscas me trae sin cuidado.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -442,7 +442,7 @@
   },
   "Hollow Serenity#043": {
    "src": "Hey, you! Got any money? If you give me {~} Liquified Emeralds, I'll give you a spot of dust from the underside of my floorboards!",
-   "dst": "",
+   "dst": "¡Eh, tú! ¿Tienes dinero? ¡Si me das {~} esmeraldas líquidas, te doy una pizca de polvo de debajo de mis tablas del suelo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -452,7 +452,7 @@
   },
   "Hollow Serenity#044": {
    "src": "No? Awww... that sucks.",
-   "dst": "",
+   "dst": "¿No? Bah... qué rollo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -462,7 +462,7 @@
   },
   "Hollow Serenity#045": {
    "src": "Whatcha need?",
-   "dst": "",
+   "dst": "¿Qué quieres?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -472,7 +472,7 @@
   },
   "Hollow Serenity#046": {
    "src": "I'm Bip! Yeah, Bip! The greatest guy to ever grace the entertainment industry!",
-   "dst": "",
+   "dst": "¡Soy Bip! ¡Sí, Bip! ¡El tipo más grande del espectáculo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -482,7 +482,7 @@
   },
   "Hollow Serenity#047": {
    "src": "Oh... I was... Man, I miss my glory days! I used to be a big time man, you know? I was living it up in {p}, but now I have to live in this dump!",
-   "dst": "",
+   "dst": "Ah... yo era... ¡Cómo echo de menos mis días de gloria! Era un pez gordo, ¿sabes? Me lo pasaba en grande en {p}, ¡y ahora vivo en este basurero!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -492,7 +492,7 @@
   },
   "Hollow Serenity#048": {
    "src": "Damn this world! I blame them for all of this! Everything has been nothing but trouble after trouble. Now everyone can't see how much of an honest guy I am!",
-   "dst": "",
+   "dst": "¡Maldito mundo! ¡De todo esto tienen la culpa ellos! No ha sido más que un problema tras otro. ¡Y ahora nadie ve lo honrado que soy!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -502,7 +502,7 @@
   },
   "Hollow Serenity#049": {
    "src": "B-BE QUIET! I don't like living here, so don't remind me!",
-   "dst": "",
+   "dst": "¡C-CÁLLATE! ¡No me gusta vivir aquí, no me lo recuerdes!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -512,7 +512,7 @@
   },
   "Hollow Serenity#050": {
    "src": "I don't even truly have my own place! I've gotta live with some crony who owns the house I'm staying in right now.",
-   "dst": "",
+   "dst": "¡Ni siquiera tengo casa propia! Tengo que vivir con un compinche que es el dueño de donde me alojo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -522,7 +522,7 @@
   },
   "Hollow Serenity#051": {
    "src": "One day, I'll get out of here, though! I'll be a big time man again, and I'll reclaim my status in society, just you wait!",
-   "dst": "",
+   "dst": "¡Pero algún día saldré de aquí! ¡Volveré a ser un pez gordo y recuperaré mi puesto en la sociedad, ya lo verás!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -532,7 +532,7 @@
   },
   "Hollow Serenity#052": {
    "src": "Rumors? Do I look like a gossiper to you??",
-   "dst": "",
+   "dst": "¿Rumores? ¿Te parezco un cotilla?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -542,7 +542,7 @@
   },
   "Hollow Serenity#053": {
    "src": "Well, human... I'm an honest entertainer, so don't worry. Good 'ole Bip will tell you a bit of something!",
-   "dst": "",
+   "dst": "Bueno, humano... soy un artista honrado, tranquilo. ¡El bueno de Bip te va a contar algo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -552,7 +552,7 @@
   },
   "Hollow Serenity#054": {
    "src": "So, apparently there's a WITCH... living in LEXDALE! OOOOOO, spooky...",
-   "dst": "",
+   "dst": "Dicen que hay una BRUJA... ¡en LEXDALE! Uuuuuh, qué miedo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -562,7 +562,7 @@
   },
   "Hollow Serenity#055": {
    "src": "But the thing is, she's causing... the Decay... dun dun DUUUN!!! Uhh... I don't know, her house is decaying, or something.",
-   "dst": "",
+   "dst": "Pero resulta que ella causa... la Decadencia... ¡chan chan CHAAAN! Eh... no sé, su casa se pudre o algo así.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -572,7 +572,7 @@
   },
   "Hollow Serenity#056": {
    "src": "So now, she's gonna die. The end! Didja like that story, human? Every relation to in-real life people was {~} intentional, 'cuz this is actually happening.",
-   "dst": "",
+   "dst": "Y ahora se va a morir. ¡Fin! ¿Te ha gustado la historia, humano? Todo parecido con personas reales es {~} intencionado, porque esto pasa de verdad.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -582,7 +582,7 @@
   },
   "Hollow Serenity#057": {
    "src": "Oh yeah! That's the name of the guy who FIRED ME! DAMMIT!!!-",
-   "dst": "",
+   "dst": "¡Ah, sí! ¡Así se llamaba el que ME DESPIDIÓ! ¡MALDITA SEA!-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -592,7 +592,7 @@
   },
   "Hollow Serenity#058": {
    "src": "...Oh, wait, no. Sorry human, I was thinking about Gavin. I don't know who this Garvan guy is! Ask someone else; I can't entertain you with that knowledge.",
-   "dst": "",
+   "dst": "...Ah, espera, no. Perdona, humano, pensaba en Gavin. ¡No sé quién es ese tal Garvan! Pregunta a otro; con eso no puedo entretenerte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -602,7 +602,7 @@
   },
   "Hollow Serenity#059": {
    "src": "Hey.",
-   "dst": "",
+   "dst": "Hola.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -612,7 +612,7 @@
   },
   "Hollow Serenity#060": {
    "src": "Welcome to my home.",
-   "dst": "",
+   "dst": "Bienvenido a mi casa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -622,7 +622,7 @@
   },
   "Hollow Serenity#061": {
    "src": "What is it?",
-   "dst": "",
+   "dst": "¿Qué pasa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -632,7 +632,7 @@
   },
   "Hollow Serenity#062": {
    "src": "I'm Runo. I live here.",
-   "dst": "",
+   "dst": "Soy Runo. Vivo aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -642,7 +642,7 @@
   },
   "Hollow Serenity#063": {
    "src": "Not much else to say.",
-   "dst": "",
+   "dst": "Poco más que decir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -652,7 +652,7 @@
   },
   "Hollow Serenity#064": {
    "src": "Since I was born.",
-   "dst": "",
+   "dst": "Desde que nací.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -662,7 +662,7 @@
   },
   "Hollow Serenity#065": {
    "src": "Yes, I grew up here.",
-   "dst": "",
+   "dst": "Sí, crecí aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -672,7 +672,7 @@
   },
   "Hollow Serenity#066": {
    "src": "{p} apparently has something hidden inside of it.",
-   "dst": "",
+   "dst": "Dicen que {p} esconde algo dentro.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -682,7 +682,7 @@
   },
   "Hollow Serenity#067": {
    "src": "The chains have something to do with it.",
-   "dst": "",
+   "dst": "Las cadenas tienen algo que ver.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -692,7 +692,7 @@
   },
   "Hollow Serenity#068": {
    "src": "I dunno what else to say.",
-   "dst": "",
+   "dst": "No sé qué más decir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -702,7 +702,7 @@
   },
   "Hollow Serenity#069": {
    "src": "...You know what? Neither do you! You've said, like, {~} sentences in the last {~} minutes!",
-   "dst": "",
+   "dst": "...¿Sabes qué? ¡Tú tampoco! ¡Has dicho como {~} frases en los últimos {~} minutos!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -712,7 +712,7 @@
   },
   "Hollow Serenity#070": {
    "src": "I just don't like talking, sheesh! My voice gets way more tense if I don't keep my words short. And it hurts.",
-   "dst": "",
+   "dst": "¡Es que no me gusta hablar, jolín! Si no digo frases cortas, la voz se me tensa. Y duele.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -722,7 +722,7 @@
   },
   "Hollow Serenity#071": {
    "src": "What, are you offended? Well, I am, too! You'd be mad if some random human walked into your village and egged you into damaging your vocal chords!",
-   "dst": "",
+   "dst": "¿Qué, te ofende? ¡Pues a mí también! ¡Tú te enfadarías si un humano cualquiera entrara en tu aldea y te hiciera destrozarte las cuerdas vocales!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -732,7 +732,7 @@
   },
   "Hollow Serenity#072": {
    "src": "...You don't have a house?",
-   "dst": "",
+   "dst": "...¿No tienes casa?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -742,7 +742,7 @@
   },
   "Hollow Serenity#073": {
    "src": "...You poor soul. Go buy one. Unless you're one of those guys who owns those flying land bits.",
-   "dst": "",
+   "dst": "...Pobrecillo. Cómprate una. Salvo que seas de los que tienen esos trozos de tierra voladores.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -752,7 +752,7 @@
   },
   "Hollow Serenity#074": {
    "src": "No. Ask the old man.",
-   "dst": "",
+   "dst": "No. Pregunta al anciano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -762,7 +762,7 @@
   },
   "Hollow Serenity#075": {
    "src": "He knows most of the things here.",
-   "dst": "",
+   "dst": "Él sabe casi todo de aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -772,7 +772,7 @@
   },
   "Hollow Serenity#076": {
    "src": "Huh, weird. Whatcha doing all the way out here, human? We don't see a lot of your kind often.",
-   "dst": "",
+   "dst": "Vaya, qué raro. ¿Qué haces tan lejos por aquí, humano? No vemos a muchos de los tuyos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -782,7 +782,7 @@
   },
   "Hollow Serenity#077": {
    "src": "Got anything you wanna say?",
-   "dst": "",
+   "dst": "¿Quieres decir algo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -792,7 +792,7 @@
   },
   "Hollow Serenity#078": {
    "src": "My name's Vera. I'm a farmer, but you probably already guessed that. That's all this damn village is good for anyways.",
-   "dst": "",
+   "dst": "Me llamo Vera. Soy granjero, pero ya lo habrás adivinado. Es para lo único que sirve esta maldita aldea.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -802,7 +802,7 @@
   },
   "Hollow Serenity#079": {
    "src": "I also deal with getting supplies from other towns! Pretty cool, huh?",
-   "dst": "",
+   "dst": "¡También traigo suministros de otros pueblos! Mola, ¿eh?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -812,7 +812,7 @@
   },
   "Hollow Serenity#080": {
    "src": "Uhh... all my life, actually! Too damn poor to go anywhere else, so I've just hunkered down here and decided to stick it out until I'm dead.",
-   "dst": "",
+   "dst": "Eh... ¡toda mi vida, la verdad! Demasiado pobre para irme a otro sitio, así que me atrinchero aquí y aguanto hasta morirme.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -822,7 +822,7 @@
   },
   "Hollow Serenity#081": {
    "src": "It's bad, living out here, but once you get used to it some of the edge is taken off. This village is all I've really known, and I owe it to everyone here to stick around, you know what I mean?",
-   "dst": "",
+   "dst": "Vivir aquí es duro, pero cuando te acostumbras se lleva mejor. Esta aldea es lo único que he conocido, y le debo a todos quedarme, ¿me entiendes?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -832,7 +832,7 @@
   },
   "Hollow Serenity#082": {
    "src": "Still... adventuring sounds like fun, sometimes... The furthest I've ever gone from here is halfway through {p} County.",
-   "dst": "",
+   "dst": "Aun así... a veces la aventura suena divertida... Lo más lejos que he llegado es a mitad del condado de {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -842,7 +842,7 @@
   },
   "Hollow Serenity#083": {
    "src": "I bet you have some pretty good stories to tell from adventuring, ain't that right human?",
-   "dst": "",
+   "dst": "Seguro que tienes buenas historias de tus aventuras, ¿a que sí, humano?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -852,7 +852,7 @@
   },
   "Hollow Serenity#084": {
    "src": "You know the massive prison near {p}? Yeah, the {p} Penitentiary.",
-   "dst": "",
+   "dst": "¿Conoces la gran prisión cerca de {p}? Sí, la Penitenciaría de {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -862,7 +862,7 @@
   },
   "Hollow Serenity#085": {
    "src": "So, apparently... the place is actually really corrupt. They arrest innocent people every other day, and they never come back out.",
-   "dst": "",
+   "dst": "Pues dicen... que ese sitio está podrido de verdad. Detienen a inocentes un día sí y otro no, y no vuelven a salir.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -872,7 +872,7 @@
   },
   "Hollow Serenity#086": {
    "src": "Gavel's government hasn't done anything about it, but everyone in the forest knows damn well something shady is going on there. I'd watch myself around that place if I were you!",
-   "dst": "",
+   "dst": "El gobierno de Gavel no ha hecho nada, pero todos en el bosque saben de sobra que ahí pasa algo turbio. ¡Yo en tu lugar andaría con mucho ojo cerca de ese sitio!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -882,7 +882,7 @@
   },
   "Hollow Serenity#087": {
    "src": "...Hold on, WHAT?",
-   "dst": "",
+   "dst": "...Espera, ¿QUÉ?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -892,7 +892,7 @@
   },
   "Hollow Serenity#088": {
    "src": "Get to talking, human! You can't just leave off like that! Tell me, are the rumors about that place true?",
-   "dst": "",
+   "dst": "¡Habla, humano! ¡No puedes dejarlo ahí! Dime, ¿son ciertos los rumores sobre ese sitio?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -902,7 +902,7 @@
   },
   "Hollow Serenity#089": {
    "src": "Are the rumors true??",
-   "dst": "",
+   "dst": "¿Son ciertos los rumores?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -912,7 +912,7 @@
   },
   "Hollow Serenity#090": {
    "src": "...You're serious? Y-you are?",
-   "dst": "",
+   "dst": "...¿En serio? ¿D-de verdad?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -922,7 +922,7 @@
   },
   "Hollow Serenity#091": {
    "src": "Oh my word... and you saw it with your own eyes?",
-   "dst": "",
+   "dst": "Madre mía... ¿y lo viste con tus propios ojos?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -932,7 +932,7 @@
   },
   "Hollow Serenity#092": {
    "src": "Human... thanks for letting me know. You gotta tell more people about this, though! You could probably publish a book about it once you spread the word! You'd be rich!",
-   "dst": "",
+   "dst": "Humano... gracias por contármelo. ¡Pero tienes que decírselo a más gente! ¡Cuando corra la voz, hasta podrías publicar un libro! ¡Te harías rico!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -942,7 +942,7 @@
   },
   "Hollow Serenity#093": {
    "src": "...Well, I'm not gonna believe you if you're saying it all forced like that, you know.",
-   "dst": "",
+   "dst": "...Mira, si lo dices así, tan forzado, no te voy a creer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -952,7 +952,7 @@
   },
   "Hollow Serenity#094": {
    "src": "I won't push it, though; it was probably just too awful to talk about, right? You don't have to go into detail if you don't wanna.",
-   "dst": "",
+   "dst": "Aunque no insistiré; seguro que era demasiado horrible para contarlo, ¿verdad? No hace falta que entres en detalles si no quieres.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -962,7 +962,7 @@
   },
   "Hollow Serenity#095": {
    "src": "Just stay well away from that place, and make sure nobody else goes near there, alright?",
-   "dst": "",
+   "dst": "Tú mantente bien lejos de ese sitio, y que nadie más se acerque, ¿vale?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -972,7 +972,7 @@
   },
   "Hollow Serenity#096": {
    "src": "Uh... no. That doesn't ring a single bell.",
-   "dst": "",
+   "dst": "Eh... no. No me suena de nada.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -982,7 +982,7 @@
   },
   "Hollow Serenity#097": {
    "src": "You could probably ask some other people, though! I'm only the youngest guy in the village, so the older people here would probably know who this Garvan guy is!",
-   "dst": "",
+   "dst": "¡Pero puedes preguntar a otros! Yo solo soy el más joven de la aldea; los mayores seguro que saben quién es ese tal Garvan.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -992,7 +992,7 @@
   },
   "Hollow Serenity#098": {
    "src": "S-Sheesh! You scared me, human! Don't you know that you shouldn't walk into people's houses out of nowhere?",
-   "dst": "",
+   "dst": "¡A-ay! ¡Qué susto, humano! ¿No sabes que no se entra así como así en casa de la gente?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1002,7 +1002,7 @@
   },
   "Hollow Serenity#099": {
    "src": "You know there are creepy guys out here who rob people like that? You should be more careful!",
-   "dst": "",
+   "dst": "¿Sabes que por aquí hay tipos raros que roban justo así? ¡Deberías tener más cuidado!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1012,7 +1012,7 @@
   },
   "Hollow Serenity#100": {
    "src": "How can I help you?",
-   "dst": "",
+   "dst": "¿En qué puedo ayudarte?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1022,7 +1022,7 @@
   },
   "Hollow Serenity#101": {
    "src": "I'm nobody. No, I'm serious, I literally don't have a name. Parents just didn't bother to name me.",
-   "dst": "",
+   "dst": "No soy nadie. En serio, literalmente no tengo nombre. Mis padres no se molestaron en ponerme uno.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1032,7 +1032,7 @@
   },
   "Hollow Serenity#102": {
    "src": "Apparently that's considered sacrilegious around here, so I was taken away from them and I now work for Pastor Arwes.",
-   "dst": "",
+   "dst": "Por lo visto aquí eso es un sacrilegio, así que me apartaron de ellos y ahora trabajo para el pastor Arwes.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1042,7 +1042,7 @@
   },
   "Hollow Serenity#103": {
    "src": "What do the others call me? Uhh... Big-nosed girl. Yeah, I know, a bit on the nose–",
-   "dst": "",
+   "dst": "¿Cómo me llaman los demás? Eh... La chica narizotas. Sí, ya lo sé, salta a la vista–",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1052,7 +1052,7 @@
   },
   "Hollow Serenity#104": {
    "src": "...That sailed right over my head. But it's true, though! I have the biggest nose in the village.",
-   "dst": "",
+   "dst": "...Eso se me ha escapado del todo. ¡Pero es verdad! Tengo la nariz más grande de la aldea.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1062,7 +1062,7 @@
   },
   "Hollow Serenity#105": {
    "src": "What should you call me? Hm... I don't know... maybe... Eua?",
-   "dst": "",
+   "dst": "¿Cómo llamarme? Hm... no sé... ¿quizá... Eua?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1072,7 +1072,7 @@
   },
   "Hollow Serenity#106": {
    "src": "I know it won't matter anymore, but sure. Call me Eua. That sounds like a nice name.",
-   "dst": "",
+   "dst": "Sé que ya dará igual, pero vale. Llámame Eua. Suena a nombre bonito.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1082,7 +1082,7 @@
   },
   "Hollow Serenity#107": {
    "src": "This one's not necessarily a rumor, but... have you ever heard of someone that they call the Wanderer?",
-   "dst": "",
+   "dst": "Esto no es un rumor exactamente, pero... ¿has oído hablar de alguien al que llaman el Errante?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1092,7 +1092,7 @@
   },
   "Hollow Serenity#108": {
    "src": "He's a weird guy who just... wanders. He's completely despondent, and doesn't really interact with anyone. Even a lot of the dangerous creatures around here just tend to ignore his presence. He's almost like... a ghost.",
-   "dst": "",
+   "dst": "Es un tipo raro que solo... vaga. Está totalmente abatido y no se relaciona con nadie. Hasta muchas de las criaturas peligrosas de por aquí ignoran su presencia. Es casi como... un fantasma.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1102,7 +1102,7 @@
   },
   "Hollow Serenity#109": {
    "src": "You've probably seen him before in the forest. Hooded guy, doesn't talk at all? That's who they call the Wanderer.",
-   "dst": "",
+   "dst": "Seguro que lo has visto en el bosque. ¿Un encapuchado que no habla nada? A ese lo llaman el Errante.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1112,7 +1112,7 @@
   },
   "Hollow Serenity#110": {
    "src": "Well, he doesn't really hurt anyone, so I don't really worry about him too much, but still... it's spooky...",
-   "dst": "",
+   "dst": "Bueno, no hace daño a nadie, así que tampoco me preocupa mucho, pero aun así... da yuyu...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1122,7 +1122,7 @@
   },
   "Hollow Serenity#111": {
    "src": "Wait, THAT manor? Nah. No one goes near there anymore, not since it was abandoned. What, do you not know what happened there?",
-   "dst": "",
+   "dst": "Espera, ¿ESA mansión? Qué va. Ya nadie se acerca desde que la abandonaron. ¿Qué, no sabes lo que pasó allí?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1132,7 +1132,7 @@
   },
   "Hollow Serenity#112": {
    "src": "It used to be owned by a family of nobles called the Faltachs. Big, important people in the forest, very rich.",
-   "dst": "",
+   "dst": "Era de una familia noble, los Faltach. Gente importante en el bosque, muy rica.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1142,7 +1142,7 @@
   },
   "Hollow Serenity#113": {
    "src": "Well... a lot of stuff happened with them. The mistress of the family supposedly went insane and killed her husband at some point, or something like that...",
-   "dst": "",
+   "dst": "Pues... les pasaron muchas cosas. Dicen que la señora de la casa se volvió loca y en algún momento mató a su marido, o algo así...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1152,7 +1152,7 @@
   },
   "Hollow Serenity#114": {
    "src": "There's a lot to unpack there, human. And you honestly shouldn't unpack it.",
-   "dst": "",
+   "dst": "Ahí hay mucho que desenterrar, humano. Y mejor que no lo hagas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1162,7 +1162,7 @@
   },
   "Hollow Serenity#115": {
    "src": "Hmm... No, can't say I have. Whoever this person is, they certainly don't live here.",
-   "dst": "",
+   "dst": "Hmm... No, no me suena. Sea quien sea esa persona, desde luego aquí no vive.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1172,7 +1172,7 @@
   },
   "Hollow Serenity#116": {
    "src": "And nah, it's not me, either, even if I don't have a real name. I wouldn't even be here if my parents had named me something manly like Garvan anyways.",
-   "dst": "",
+   "dst": "Y no, tampoco soy yo, aunque no tenga un nombre de verdad. Si mis padres me hubieran puesto algo varonil como Garvan, ni estaría aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1182,7 +1182,7 @@
   },
   "Hollow Serenity#117": {
    "src": "Ask around, though! I'm sure others probably know him.",
-   "dst": "",
+   "dst": "¡Pero pregunta por ahí! Seguro que otros lo conocen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1192,7 +1192,7 @@
   },
   "Hollow Serenity#118": {
    "src": "You're new... we don't see a lot of youngsters around these days... especially humans.",
-   "dst": "",
+   "dst": "Eres nuevo... estos días no vemos muchos jóvenes por aquí... y menos humanos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1202,7 +1202,7 @@
   },
   "Hollow Serenity#119": {
    "src": "How can I help you?",
-   "dst": "",
+   "dst": "¿En qué puedo ayudarte?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1212,7 +1212,7 @@
   },
   "Hollow Serenity#120": {
    "src": "Very on the nose, whippersnapper. My name is Lokno. I'm what's left of this town during its olden days...",
-   "dst": "",
+   "dst": "Muy directo, mocoso. Me llamo Lokno. Soy lo que queda de este pueblo de sus viejos tiempos...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1222,7 +1222,7 @@
   },
   "Hollow Serenity#121": {
    "src": "Mhm. This village... has definitely seen better days. This Decay stuff has ruined us, just take a look around! Nothing here has been suitable for living for over {~} years...",
-   "dst": "",
+   "dst": "Mmm. Esta aldea... ha visto días mejores, desde luego. Esa Decadencia nos ha arruinado, ¡mira alrededor! Aquí nada es habitable desde hace más de {~} años...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1232,7 +1232,7 @@
   },
   "Hollow Serenity#122": {
    "src": "Hah... well, right now, it's a crowd of shacks, but before the Decay came along, we used to do great...",
-   "dst": "",
+   "dst": "Ja... ahora es un montón de chabolas, pero antes de que llegara la Decadencia nos iba de maravilla...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1242,7 +1242,7 @@
   },
   "Hollow Serenity#123": {
    "src": "We always had enough food to go around, we could sell off what we didn't need to eat, and everything was thriving.",
-   "dst": "",
+   "dst": "Siempre había comida para todos, vendíamos lo que sobraba y todo prosperaba.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1252,7 +1252,7 @@
   },
   "Hollow Serenity#124": {
    "src": "My great-grandmother, Aki, always told me stories about this place. Our little village. I wish I could have been around to live in it then.",
-   "dst": "",
+   "dst": "Mi bisabuela Aki siempre me contaba historias de este lugar. Nuestra pequeña aldea. Ojalá hubiera podido vivir aquí entonces.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1262,7 +1262,7 @@
   },
   "Hollow Serenity#125": {
    "src": "She was always convinced though... that if the rightful rulers of Gavel returned, all of these issues could easily be squashed.",
-   "dst": "",
+   "dst": "Aunque ella siempre estuvo convencida... de que si volvieran los legítimos gobernantes de Gavel, todos estos males se acabarían fácilmente.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1272,7 +1272,7 @@
   },
   "Hollow Serenity#126": {
    "src": "To be honest... I believe the same. The government has abandoned us. So... why not bring back the old one?",
-   "dst": "",
+   "dst": "La verdad... yo pienso igual. El gobierno nos abandonó. Así que... ¿por qué no traer al antiguo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1282,7 +1282,7 @@
   },
   "Hollow Serenity#127": {
    "src": "I may not be the most religious villager around here, but it would feel more right to be ruled by someone who has the heavens' approval.",
-   "dst": "",
+   "dst": "Puede que no sea el aldeano más devoto de aquí, pero se sentiría más justo ser gobernados por alguien con la bendición de los cielos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1292,7 +1292,7 @@
   },
   "Hollow Serenity#128": {
    "src": "Nope. I don't deal with that kind of stuff, bahaha! Sorry human; you're out of luck.",
-   "dst": "",
+   "dst": "No. Yo no me meto en esas cosas, ¡bajaja! Lo siento, humano; no hay suerte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1302,7 +1302,7 @@
   },
   "Hollow Serenity#129": {
    "src": "G... Garvan... yes. I know that name.",
-   "dst": "",
+   "dst": "G... Garvan... sí. Conozco ese nombre.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1312,7 +1312,7 @@
   },
   "Hollow Serenity#130": {
    "src": "He isn't here, though. I don't know his whereabouts, what he's doing, or if he's even alive. He's... just nonexistant.",
-   "dst": "",
+   "dst": "Pero aquí no está. No sé dónde anda, qué hace, ni siquiera si vive. Es como si... no existiera.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1322,7 +1322,7 @@
   },
   "Hollow Serenity#131": {
    "src": "I don't know why you're chasing after him, but... if you want a place to start, look at the abandoned laboratory on top of that hill, just west to the of here.",
-   "dst": "",
+   "dst": "No sé por qué lo persigues, pero... si quieres un punto de partida, mira el laboratorio abandonado en lo alto de esa colina, justo al oeste de aquí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1332,7 +1332,7 @@
   },
   "Hollow Serenity#132": {
    "src": "Fair warning, though... My great-grandmother is the only reason I know about him, and even then... she was always put off by him, and told me to stay away from him. I'd be wary, if I were you.",
-   "dst": "",
+   "dst": "Pero te aviso... solo sé de él por mi bisabuela, y aun así... ella siempre lo evitaba y me decía que me mantuviera lejos de él. Yo en tu lugar andaría con cuidado.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1342,7 +1342,7 @@
   },
   "Hollow Serenity#133": {
    "src": "Or don't. He sounds like a nice man. You're strong, as well. I'm sure you'll be fine.",
-   "dst": "",
+   "dst": "O no. Parece buen hombre. Y tú eres fuerte. Seguro que te va bien.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1352,7 +1352,7 @@
   },
   "Hollow Serenity#134": {
    "src": "Investigate the contents of the abandoned laboratory at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Investiga el contenido del laboratorio abandonado de [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1362,7 +1362,7 @@
   },
   "Hollow Serenity#135": {
    "src": "Hide.",
-   "dst": "",
+   "dst": "Escóndete.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1372,7 +1372,7 @@
   },
   "Hollow Serenity#136": {
    "src": "Return to the Faltach Manor and find the entrance to the secret study at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Vuelve a la mansión Faltach y encuentra la entrada al estudio secreto en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1382,7 +1382,7 @@
   },
   "Hollow Serenity#137": {
    "src": "Uncover the secrets of the study.",
-   "dst": "",
+   "dst": "Descubre los secretos del estudio.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1392,7 +1392,7 @@
   },
   "Hollow Serenity#138": {
    "src": "Investigate the unlocked room in the study.",
-   "dst": "",
+   "dst": "Investiga la habitación sin cerrar del estudio.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1402,7 +1402,7 @@
   },
   "Hollow Serenity#139": {
    "src": "Get out of the study.",
-   "dst": "",
+   "dst": "Sal del estudio.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1412,7 +1412,7 @@
   },
   "Hollow Serenity#140": {
    "src": "Dammit, Katarin! I'm not dealing with that loonie anymore! It's been years since I hired that scientist, and he STILL has nothing! If he doesn't find a cure soon, then I'll just get rid of him!",
-   "dst": "",
+   "dst": "¡Maldita sea, Katarin! ¡No pienso aguantar más a ese chiflado! ¡Contraté a ese científico hace años y SIGUE sin tener nada! ¡Como no encuentre pronto una cura, me deshago de él!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1422,7 +1422,7 @@
   },
   "Hollow Serenity#141": {
    "src": "Y-Yorman, you can't be serious! What we're asking him to do is heavily unresearched, firing him for taking time on that wouldn't be a good idea!",
-   "dst": "",
+   "dst": "¡Y-Yorman, no puedes hablar en serio! Lo que le pedimos casi no está investigado; despedirlo por tardar no sería buena idea.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1432,7 +1432,7 @@
   },
   "Hollow Serenity#142": {
    "src": "Woman, have you SEEN the state that cretin is in?? Even if it does take long, he's in no damn shape to deal with it! Now, stop arguing with me, and help me get rid of him-",
-   "dst": "",
+   "dst": "Mujer, ¿has VISTO en qué estado está ese cretino?? ¡Aunque lleve tiempo, no está en condiciones de hacerlo! ¡Deja de discutir y ayúdame a quitármelo de encima-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1442,7 +1442,7 @@
   },
   "Hollow Serenity#143": {
    "src": "NO!",
-   "dst": "",
+   "dst": "¡NO!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1452,7 +1452,7 @@
   },
   "Hollow Serenity#144": {
    "src": "This is too far, Yorman! Garvan MUST stay! You will do this if you still love me!",
-   "dst": "",
+   "dst": "¡Esto es pasarse, Yorman! ¡Garvan DEBE quedarse! ¡Lo harás si aún me quieres!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1462,7 +1462,7 @@
   },
   "Hollow Serenity#145": {
    "src": "...Why do you even care so much?? Some lunatic scientist like him isn't good for anybody! We both know that we'd save more time and money by letting him run off!",
-   "dst": "",
+   "dst": "...¿Y a ti por qué te importa tanto?? ¡Un científico lunático como él no le sirve a nadie! ¡Los dos sabemos que ahorraríamos tiempo y dinero dejándolo marchar!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1472,7 +1472,7 @@
   },
   "Hollow Serenity#146": {
    "src": "I still have faith in him, unlike you! I'll talk to him to see what's going on if I must, but I will NOT tolerate you throwing him out simply because you're too eager for results!",
-   "dst": "",
+   "dst": "¡Yo aún confío en él, a diferencia de ti! Si hace falta hablaré con él para ver qué pasa, ¡pero NO pienso tolerar que lo eches solo porque ansías resultados!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1482,7 +1482,7 @@
   },
   "Hollow Serenity#147": {
    "src": "Fine. But know this; I will see it to MYSELF that his head is taken off of his shoulders if that man continues to waste my time, understand??",
-   "dst": "",
+   "dst": "Bien. Pero que quede claro: si ese hombre sigue haciéndome perder el tiempo, me encargaré YO MISMO de que pierda la cabeza, ¿entendido??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1492,7 +1492,7 @@
   },
   "Hollow Serenity#148": {
    "src": "...I'm leaving to take care of some matters in {p}. Ask one of the maids to make sure that Eileen goes to bed. I'll be back before midnight.",
-   "dst": "",
+   "dst": "...Me voy a atender unos asuntos en {p}. Dile a una criada que se asegure de que Eileen se acueste. Volveré antes de medianoche.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1502,7 +1502,7 @@
   },
   "Hollow Serenity#149": {
    "src": "...That... was close... I can't have him getting between us anymore.",
-   "dst": "",
+   "dst": "...Ha... estado cerca... No puedo dejar que siga interponiéndose.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1512,7 +1512,7 @@
   },
   "Hollow Serenity#150": {
    "src": "I-I am here, Katarin. You wished to s- speak with me...?",
-   "dst": "",
+   "dst": "Y-ya estoy aquí, Katarin. ¿Querías h- hablar conmigo...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1522,7 +1522,7 @@
   },
   "Hollow Serenity#151": {
    "src": "Yes, love. Yorman is becoming suspicious of you. He thinks you're not making any progress on the cure and wasting his time. Any more of this, and he may attempt to get rid of you.",
-   "dst": "",
+   "dst": "Sí, amor. Yorman empieza a sospechar de ti. Cree que no avanzas con la cura y que le haces perder el tiempo. Un poco más y puede que intente deshacerse de ti.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1532,7 +1532,7 @@
   },
   "Hollow Serenity#152": {
    "src": "I just wanted to check on you, love. Are... you doing alright? Is your work coming along well?",
-   "dst": "",
+   "dst": "Solo quería ver cómo estás, amor. ¿Te... encuentras bien? ¿Va bien tu trabajo?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1542,7 +1542,7 @@
   },
   "Hollow Serenity#153": {
    "src": "I... I am...",
-   "dst": "",
+   "dst": "Yo... yo estoy...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1552,7 +1552,7 @@
   },
   "Hollow Serenity#154": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1562,7 +1562,7 @@
   },
   "Hollow Serenity#155": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1572,7 +1572,7 @@
   },
   "Hollow Serenity#156": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1582,7 +1582,7 @@
   },
   "Hollow Serenity#157": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1592,7 +1592,7 @@
   },
   "Hollow Serenity#158": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1602,7 +1602,7 @@
   },
   "Hollow Serenity#159": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1612,7 +1612,7 @@
   },
   "Hollow Serenity#160": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1622,7 +1622,7 @@
   },
   "Hollow Serenity#161": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1632,7 +1632,7 @@
   },
   "Hollow Serenity#162": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1642,7 +1642,7 @@
   },
   "Hollow Serenity#163": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1652,7 +1652,7 @@
   },
   "Hollow Serenity#164": {
    "src": "P̸̳̼̕͠Ḷ̵̭̌É̴͔̣̉A̸͍͗S̶̰̆̃E̸̠̐ ̷̧̝̊̑Ḩ̷͝E̵̼͛̋L̶̠̒̌P̶̠̘̈́̚ ̷̟̀͌M̶̨̰̉E̵̚͜",
-   "dst": "",
+   "dst": "AYÚDAME",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1662,7 +1662,7 @@
   },
   "Hollow Serenity#165": {
    "src": "F-Fine. I am fine. I appreciate the concern, but... It truly is u-unwarranted. I'm q-quite close to finding a cure to the disease, y-yes.",
-   "dst": "",
+   "dst": "B-bien. Estoy bien. Agradezco tu preocupación, pero... es de verdad in-innecesaria. Estoy m-muy cerca de hallar la cura de la enfermedad, s-sí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1672,7 +1672,7 @@
   },
   "Hollow Serenity#166": {
    "src": "Ah! That is good to hear. Now then... How are things? We haven't had many chances to catch up recently.",
-   "dst": "",
+   "dst": "¡Ah! Me alegra oírlo. Y bien... ¿cómo va todo? Últimamente no hemos podido hablar mucho.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1682,7 +1682,7 @@
   },
   "Hollow Serenity#167": {
    "src": "...Wonderful. I've met... many peers. Recently. They give me the strength I need to advance my progress. Now... how is our daughter, Eileen?",
-   "dst": "",
+   "dst": "...Maravilloso. He conocido... a muchos colegas. Hace poco. Me dan la fuerza que necesito para avanzar. Y bien... ¿cómo está nuestra hija, Eileen?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1692,7 +1692,7 @@
   },
   "Hollow Serenity#168": {
    "src": "She's doing great. She takes a lot after you, actually. Intelligent, beautiful, an inquisitive mind. I just hope this Decay can be dealt with and we don't need to live in fear any longer.",
-   "dst": "",
+   "dst": "Está estupenda. En realidad se parece mucho a ti. Inteligente, hermosa, con una mente curiosa. Solo espero que puedan acabar con la Decadencia y dejemos de vivir con miedo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1702,7 +1702,7 @@
   },
   "Hollow Serenity#169": {
    "src": "Wonderful. And... is our eternal bond safe? The gemstone? Has... Yorman found out about it?",
-   "dst": "",
+   "dst": "Maravilloso. Y... ¿está a salvo nuestro vínculo eterno? ¿La gema? ¿Se ha... enterado Yorman?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1712,7 +1712,7 @@
   },
   "Hollow Serenity#170": {
    "src": "Yes, it has stayed hidden. As long as it's kept intact, our souls will stay bound to it. You just need to take care of your little project and we'll ride into the sunset, just like you said, mhm?",
-   "dst": "",
+   "dst": "Sí, sigue escondida. Mientras se conserve intacta, nuestras almas seguirán ligadas a ella. Tú ocúpate de tu pequeño proyecto y nos iremos hacia el atardecer, como dijiste, ¿mmm?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1722,7 +1722,7 @@
   },
   "Hollow Serenity#171": {
    "src": "...And what about our daughter?",
-   "dst": "",
+   "dst": "...¿Y nuestra hija?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1732,7 +1732,7 @@
   },
   "Hollow Serenity#172": {
    "src": "We... I will not risk her life for our love. She has a future in {p}, Garvan! She isn't a part of this, and I don't think she-",
-   "dst": "",
+   "dst": "Nosotros... No arriesgaré su vida por nuestro amor. ¡Ella tiene un futuro en {p}, Garvan! No forma parte de esto, y no creo que ella-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1742,7 +1742,7 @@
   },
   "Hollow Serenity#173": {
    "src": "Eileen... She is a shining star in this world. Her noble blood and natural talent makes her something truly special.",
-   "dst": "",
+   "dst": "Eileen... Es una estrella brillante de este mundo. Su sangre noble y su talento la hacen muy especial.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1752,7 +1752,7 @@
   },
   "Hollow Serenity#174": {
    "src": "Do you realize, Katarin? Our daughter is a gift from the heavens! Once she has matured, she will accomplish things that Gavel has never seen! Bring back the holy and royal that was lost-",
-   "dst": "",
+   "dst": "¿Te das cuenta, Katarin? ¡Nuestra hija es un regalo de los cielos! ¡Cuando madure logrará cosas que Gavel jamás ha visto! Devolverá lo sagrado y lo real que se perdió-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1762,7 +1762,7 @@
   },
   "Hollow Serenity#175": {
    "src": "...Forgive me, I-I'm rambling once more. I... must leave now, research calls. Goodbye, my love. Great things will happen, sooner or later.",
-   "dst": "",
+   "dst": "...Perdóname, v-vuelvo a divagar. Debo... irme ya, la investigación llama. Adiós, amor mío. Grandes cosas ocurrirán, tarde o temprano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1772,7 +1772,7 @@
   },
   "Hollow Serenity#176": {
    "src": "I truly hope so...",
-   "dst": "",
+   "dst": "Eso espero de verdad...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1782,7 +1782,7 @@
   },
   "Hollow Serenity#177": {
    "src": "Make your way to Garvan's old research outpost at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Dirígete al antiguo puesto de investigación de Garvan en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1792,7 +1792,7 @@
   },
   "Hollow Serenity#178": {
    "src": "Gather as much pieces of evidence as you can in the research outpost.",
-   "dst": "",
+   "dst": "Reúne todas las pruebas que puedas en el puesto de investigación.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1802,7 +1802,7 @@
   },
   "Hollow Serenity#179": {
    "src": "Investigate your findings.",
-   "dst": "",
+   "dst": "Examina lo que has encontrado.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -1812,7 +1812,7 @@
   },
   "Hollow Serenity#180": {
    "src": "Ah... N-now you're finally here. I... need you, my darling. We- no... I can cure this Decay with you.",
-   "dst": "",
+   "dst": "Ah... P-por fin estás aquí. Te... necesito, querida. Nos- no... contigo puedo curar esta Decadencia.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1822,7 +1822,7 @@
   },
   "Hollow Serenity#181": {
    "src": "W-What do you mean...? I-I don't like this... I-I w-wanna go home. It's getting late and mother-",
-   "dst": "",
+   "dst": "¿Q-qué quiere decir...? N-no me gusta esto... Q-quiero irme a casa. Se hace tarde y mi madre-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1832,7 +1832,7 @@
   },
   "Hollow Serenity#182": {
    "src": "Ssshhh... This will only take a moment.",
-   "dst": "",
+   "dst": "Chssss... Solo será un momento.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1842,7 +1842,7 @@
   },
   "Hollow Serenity#183": {
    "src": "W-What is that thing?? M-Mister Garvan, I-I don't understand...",
-   "dst": "",
+   "dst": "¿Q-qué es esa cosa?? S-señor Garvan, n-no lo entiendo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1852,7 +1852,7 @@
   },
   "Hollow Serenity#184": {
    "src": "Hush, my daughter. I-I'm doing this for your s-sake... You'll t-thank me later, once it... g-grows acclimated to you.",
-   "dst": "",
+   "dst": "Calla, hija mía. L-lo hago por tu b-bien... Me lo a-agradecerás luego, cuando... se a-adapte a ti.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1862,7 +1862,7 @@
   },
   "Hollow Serenity#185": {
    "src": "Now then... Hold still.",
-   "dst": "",
+   "dst": "Y ahora... no te muevas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1872,7 +1872,7 @@
   },
   "Hollow Serenity#186": {
    "src": "Hello, my love. I-It's... been a while.",
-   "dst": "",
+   "dst": "Hola, amor mío. C-cuánto... tiempo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1882,7 +1882,7 @@
   },
   "Hollow Serenity#187": {
    "src": "You... G-Garvan... Why are you here? And what's happened to Eileen? She has been sick for days!",
-   "dst": "",
+   "dst": "Tú... G-Garvan... ¿Qué haces aquí? ¿Y qué le ha pasado a Eileen? ¡Lleva días enferma!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1892,7 +1892,7 @@
   },
   "Hollow Serenity#188": {
    "src": "Mmmm... I... Ha-a-have a bit of a... how should I phrase this... a confession to make.",
-   "dst": "",
+   "dst": "Mmmm... Yo... T-t-tengo una especie de... ¿cómo lo diría?... confesión que hacer.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1902,7 +1902,7 @@
   },
   "Hollow Serenity#189": {
    "src": "W-Well... I-I've done... I've...done Eileen a great service... she will live forever, just like we do. Thanks to what I have done.",
-   "dst": "",
+   "dst": "B-bueno... y-yo he... Le he... hecho a Eileen un gran favor... vivirá para siempre, igual que nosotros. Gracias a lo que he hecho.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1912,7 +1912,7 @@
   },
   "Hollow Serenity#190": {
    "src": "Y-you... Bound her soul?? Garvan, no, I told you she wasn't part of this!! WHY??",
-   "dst": "",
+   "dst": "T-tú... ¿¿Ataste su alma?? Garvan, no, ¡¡te dije que ella no era parte de esto!! ¿¿POR QUÉ??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1922,7 +1922,7 @@
   },
   "Hollow Serenity#191": {
    "src": "No, no no no no. I've done much b-b-better. She has something now. In her brain... Don't worry about the s-sorry state she's in now. The parasite will need time to acclimate to her flesh.",
-   "dst": "",
+   "dst": "No, no no no no. He hecho algo m-m-mucho mejor. Ahora tiene algo dentro. En el cerebro... No te preocupes por su l-lamentable estado. El parásito necesita tiempo para adaptarse a su carne.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1932,7 +1932,7 @@
   },
   "Hollow Serenity#192": {
    "src": "I-I realized... a cure. My work is done, love... Eileen will be cured. The Decay can be s-stopped. It's wonderful-",
-   "dst": "",
+   "dst": "H-he hallado... la cura. Mi obra terminó, amor... Eileen sanará. La Decadencia puede d-detenerse. Es maravillo-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1942,7 +1942,7 @@
   },
   "Hollow Serenity#193": {
    "src": "WHAT DID YOU DO TO MY DAUGHTER?? WHAT IS WRONG WITH YOU??",
-   "dst": "",
+   "dst": "¿¿QUÉ LE HAS HECHO A MI HIJA?? ¿¿QUÉ TE PASA??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1952,7 +1952,7 @@
   },
   "Hollow Serenity#194": {
    "src": "Aaaahhhmmmm... True... I might have stepped out of line. But it's for the best.",
-   "dst": "",
+   "dst": "Aaaahhhmmm... Cierto... Quizá me haya pasado de la raya. Pero es lo mejor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1962,7 +1962,7 @@
   },
   "Hollow Serenity#195": {
    "src": "OUT OF LINE?? This is too far, Garvan! What even happened to you?? You've been acting like this for so, so long! I-I can't take it anymore!",
-   "dst": "",
+   "dst": "¿¿DE LA RAYA?? ¡Esto es pasarse, Garvan! ¿¿Qué te ha pasado?? ¡Llevas muchísimo tiempo comportándote así! ¡N-no lo aguanto más!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1972,7 +1972,7 @@
   },
   "Hollow Serenity#196": {
    "src": "You've changed, Garvan! I-I can't even recognize you anymore!! I'm... I'm DONE! GET OUT! STAY AWAY FROM MY FAMILY!",
-   "dst": "",
+   "dst": "¡Has cambiado, Garvan! ¡¡Y-ya ni te reconozco!! ¡Se... se ACABÓ! ¡FUERA! ¡ALÉJATE DE MI FAMILIA!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1982,7 +1982,7 @@
   },
   "Hollow Serenity#197": {
    "src": "You again... W-What do you want from me this time...? You've... already ruined me.",
-   "dst": "",
+   "dst": "Vosotros otra vez... ¿Q-qué queréis de mí esta vez...? Ya... me habéis destruido.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -1992,7 +1992,7 @@
   },
   "Hollow Serenity#198": {
    "src": "It doesn't matter. You've accomplished what we've planned for, and that is perfect. The girl will grow into a suitale leader... Now then, we have some questions for you.",
-   "dst": "",
+   "dst": "No importa. Has logrado lo que teníamos planeado, y eso es perfecto. La niña crecerá hasta ser una líder adecuada... Ahora bien, tenemos algunas preguntas para ti.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2002,7 +2002,7 @@
   },
   "Hollow Serenity#199": {
    "src": "Tell me Garvan... Where is the heir?",
-   "dst": "",
+   "dst": "Dime, Garvan... ¿dónde está la heredera?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2012,7 +2012,7 @@
   },
   "Hollow Serenity#200": {
    "src": "I... will not tell you. I have lost Eileen and my love thanks to you. If I am to lose her... then you shall lose her as well.",
-   "dst": "",
+   "dst": "No... os lo diré. Por vuestra culpa he perdido a Eileen y a mi amor. Si yo he de perderla... vosotros también la perderéis.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2022,7 +2022,7 @@
   },
   "Hollow Serenity#201": {
    "src": "...Lunatic. You; take him in. Keep him alive.",
-   "dst": "",
+   "dst": "...Lunático. Tú, llévatelo. Mantenlo con vida.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2032,7 +2032,7 @@
   },
   "Hollow Serenity#202": {
    "src": "NO, DON'T TOUCH ME!",
-   "dst": "",
+   "dst": "¡NO, NO ME TOQUÉIS!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2042,7 +2042,7 @@
   },
   "Hollow Serenity#203": {
    "src": "Garvan. Garvan, Garvan. I think there's a misunderstanding here. You are in no place to defy us.",
-   "dst": "",
+   "dst": "Garvan. Garvan, Garvan. Creo que aquí hay un malentendido. No estás en posición de desafiarnos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2052,7 +2052,7 @@
   },
   "Hollow Serenity#204": {
    "src": "Now then... You will tell us where the rightful heir to the throne is... No matter the cost.",
-   "dst": "",
+   "dst": "Y ahora... nos dirás dónde está la legítima heredera al trono... Cueste lo que cueste.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2062,7 +2062,7 @@
   },
   "Hollow Serenity#205": {
    "src": "Return to the Manor and search for any clues as to Eileen's whereabouts at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Vuelve a la mansión y busca cualquier pista sobre el paradero de Eileen en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2072,7 +2072,7 @@
   },
   "Hollow Serenity#206": {
    "src": "It seems you've arrived. F-Forgive me... I-I'm not quite used to talking anymore. It's been quite a while.",
-   "dst": "",
+   "dst": "Parece que has llegado. P-perdóname... y-ya no estoy muy acostumbrado a hablar. Ha pasado mucho tiempo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2082,7 +2082,7 @@
   },
   "Hollow Serenity#207": {
    "src": "...Nevermind. I d-don't want your forgiveness in particular. In fact, w-why do you even care? The forest has died, generations have lived on... and yet... You just had to tear the scar open, didn't you?",
-   "dst": "",
+   "dst": "...Da igual. N-no busco tu perdón en concreto. De hecho, ¿p-por qué te importa siquiera? El bosque ha muerto, han pasado generaciones... y aun así... tenías que abrir la cicatriz, ¿verdad?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2092,7 +2092,7 @@
   },
   "Hollow Serenity#208": {
    "src": "My sins... You do not need to see them... all the things I've done wrong. H-How I destroyed the bonds tying me and my love together.",
-   "dst": "",
+   "dst": "Mis pecados... No necesitas verlos... todo lo que hice mal. C-cómo destruí los lazos que me unían a mi amor.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2102,7 +2102,7 @@
   },
   "Hollow Serenity#209": {
    "src": "...Y-Yes... I mean her. Katarin. She's watching us as we speak, no? A-and with that, I suppose it's obvious what lies under this veil.",
-   "dst": "",
+   "dst": "...S-sí... Hablo de ella. Katarin. Nos está mirando ahora mismo, ¿no? Y-y siendo así, supongo que es obvio qué hay bajo este velo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2112,7 +2112,7 @@
   },
   "Hollow Serenity#210": {
    "src": "Greetings... I-I'm s-sure you're well acquainted with me, by now. I-It was me all along. Quite the- well, it was a predictable twist, I suppose...",
-   "dst": "",
+   "dst": "Saludos... E-estoy s-seguro de que ya me conoces bien. E-era yo desde el principio. Vaya- bueno, supongo que era un giro predecible...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2122,7 +2122,7 @@
   },
   "Hollow Serenity#211": {
    "src": "...B-But... I take it you don't have the full story. So... so so so so so so... Let me explain to you, human... The bitter end to our shared tale.",
-   "dst": "",
+   "dst": "...P-pero... supongo que no sabes la historia entera. Así... así así así así así así... Deja que te lo cuente, humano... El amargo final de nuestro relato.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2132,7 +2132,7 @@
   },
   "Hollow Serenity#212": {
    "src": "AAAAAAAGGGHHH!!!! F-FINE! I-I'll tell you... I-I'll tell y-you where Eileen is...",
-   "dst": "",
+   "dst": "¡AAAAAAAGGGHHH!!!! ¡E-ESTÁ BIEN! O-os lo diré... O-os diré d-dónde está Eileen...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2142,7 +2142,7 @@
   },
   "Hollow Serenity#213": {
    "src": "S-She... is with her mother. At the Faltach Manor. T-That is all. Just s-stop...",
-   "dst": "",
+   "dst": "E-ella... está con su madre. En la mansión Faltach. E-eso es todo. Solo p-parad...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2152,7 +2152,7 @@
   },
   "Hollow Serenity#214": {
    "src": "...Good. This had better not be a lie. You; tell the others that we are heading there now. Kill everyone at the manor and any witnesses; leave the heir alive.",
-   "dst": "",
+   "dst": "...Bien. Más vale que no sea mentira. Tú, avisa a los demás: vamos para allá. Matad a todos en la mansión y a los testigos; dejad viva a la heredera.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2162,7 +2162,7 @@
   },
   "Hollow Serenity#215": {
    "src": "W-WHAT?",
-   "dst": "",
+   "dst": "¿Q-QUÉ?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2172,7 +2172,7 @@
   },
   "Hollow Serenity#216": {
    "src": "N-NO! GET BACK HERE! DON'T YOU DARE HARM THEM! I'LL KILL YOU!! DO YOU HEAR ME???",
-   "dst": "",
+   "dst": "¡N-NO! ¡VOLVED AQUÍ! ¡NO OS ATREVÁIS A HACERLES DAÑO! ¡¡OS MATARÉ!! ¿¿¿ME OÍS???",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2182,7 +2182,7 @@
   },
   "Hollow Serenity#217": {
    "src": "...M-Mother... why d-do I have to stay here?",
-   "dst": "",
+   "dst": "...M-madre... ¿por q-qué tengo que quedarme aquí?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2192,7 +2192,7 @@
   },
   "Hollow Serenity#218": {
    "src": "It's for your own good dear. Now, remember to stay put. Garvan won't be able to use you if you're kept inside of here...",
-   "dst": "",
+   "dst": "Es por tu bien, cariño. Ahora recuerda: no te muevas. Garvan no podrá usarte si te quedas aquí dentro...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2202,7 +2202,7 @@
   },
   "Hollow Serenity#219": {
    "src": "I-I miss Dad...",
-   "dst": "",
+   "dst": "E-echo de menos a papá...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2212,7 +2212,7 @@
   },
   "Hollow Serenity#220": {
    "src": "Yorman won't be bothering us anymore, sweetheart. He wouldn't understand, so... J- just don't worry about what happened to him. It's irrelevant-",
-   "dst": "",
+   "dst": "Yorman ya no nos molestará, tesoro. Él no lo entendería, así que... n- no te preocupes por lo que le pasó. Da igual-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2222,7 +2222,7 @@
   },
   "Hollow Serenity#221": {
    "src": "L-LADY KATARIN! T-THERE ARE INTRUDERS- AAAAAAHHHHHH!!!",
-   "dst": "",
+   "dst": "¡S-SEÑORA KATARIN! H-HAY INTRUSOS- ¡AAAAAAHHHHHH!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2232,7 +2232,7 @@
   },
   "Hollow Serenity#222": {
    "src": "...Who the hell are you all?",
-   "dst": "",
+   "dst": "...¿Quiénes demonios sois?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2242,7 +2242,7 @@
   },
   "Hollow Serenity#223": {
    "src": "Step aside, Katarin Faltach. This will be much simpler if you just stand down and tell us where your daughter is.",
-   "dst": "",
+   "dst": "Apártese, Katarin Faltach. Esto será mucho más sencillo si se retira y nos dice dónde está su hija.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2252,7 +2252,7 @@
   },
   "Hollow Serenity#224": {
    "src": "...Come again? No. YOU WON'T TOUCH HER! GET OUT OF MY SIGHT-",
-   "dst": "",
+   "dst": "...¿Cómo dice? No. ¡NO LA TOCARÉIS! ¡FUERA DE MI VISTA-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2262,7 +2262,7 @@
   },
   "Hollow Serenity#225": {
    "src": "You're not the one making demands here... You all, search the house and find the child.",
-   "dst": "",
+   "dst": "No es usted quien pone condiciones aquí... Vosotros, registrad la casa y encontrad a la niña.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2272,7 +2272,7 @@
   },
   "Hollow Serenity#226": {
    "src": "There she is. Hmm... it seems that the parasite injection worked well. Garvan wasn't so useless after all.",
-   "dst": "",
+   "dst": "Ahí está. Hmm... parece que la inyección del parásito funcionó. Al final Garvan no era tan inútil.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2282,7 +2282,7 @@
   },
   "Hollow Serenity#227": {
    "src": "Oh? Too terrified to speak? Worry not, Eileen Faltach. You won't be harmed... too much. You're quite important to us, you see.",
-   "dst": "",
+   "dst": "¿Oh? ¿Demasiado asustada para hablar? No temas, Eileen Faltach. No te haremos daño... mucho daño. Verás, eres bastante importante para nosotros.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2292,7 +2292,7 @@
   },
   "Hollow Serenity#228": {
    "src": "N-NO! STAY AWAY FROM MY DAUGHTER!",
-   "dst": "",
+   "dst": "¡N-NO! ¡ALEJAOS DE MI HIJA!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2302,7 +2302,7 @@
   },
   "Hollow Serenity#229": {
    "src": "You have little choice in the matter, Miss Faltach. Stand your ground.",
-   "dst": "",
+   "dst": "No tiene mucha elección, señora Faltach. Quédese quieta.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2312,7 +2312,7 @@
   },
   "Hollow Serenity#230": {
    "src": "GET AWAY FROM HER, DO YOU HEAR ME??? RAAAAAAAAAAAAAAAAGGGGGGGGHHHHHH!!!!",
-   "dst": "",
+   "dst": "¡ALEJAOS DE ELLA! ¿¿¿ME OÍS??? ¡RAAAAAAAAAAAAAAAAGGGGGGGGHHHHHH!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2322,7 +2322,7 @@
   },
   "Hollow Serenity#231": {
    "src": "Tch... Some people will never understand what we do for the world. Thank you for protecting us from her, Aki.",
-   "dst": "",
+   "dst": "Tch... Algunos nunca entenderán lo que hacemos por el mundo. Gracias por protegernos de ella, Aki.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2332,7 +2332,7 @@
   },
   "Hollow Serenity#232": {
    "src": "I will deal with the heir myself. You all can head back to our village. Thank you for your help today.",
-   "dst": "",
+   "dst": "De la heredera me ocuparé yo mismo. Los demás podéis volver a nuestra aldea. Gracias por la ayuda de hoy.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2342,7 +2342,7 @@
   },
   "Hollow Serenity#233": {
    "src": "...I should have known. I-I... my love... y-you're gone.",
-   "dst": "",
+   "dst": "...Debí saberlo. Y-yo... amor mío... y-ya no estás.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2352,7 +2352,7 @@
   },
   "Hollow Serenity#234": {
    "src": "DAMN IT! DAMN IT DAMN IT DAMN IT AAAAALLLL!!!!",
-   "dst": "",
+   "dst": "¡MALDITA SEA! ¡MALDITA, MALDITA, MALDITA SEA TOOODOO!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2362,7 +2362,7 @@
   },
   "Hollow Serenity#235": {
    "src": "This is... W-why did this have to happen? ...I-I can't... this can't end like this...",
-   "dst": "",
+   "dst": "Esto es... ¿P-por qué tenía que pasar esto? ...N-no puedo... esto no puede acabar así...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2372,7 +2372,7 @@
   },
   "Hollow Serenity#236": {
    "src": "T-This will be enough. You have a wonderful grave, m-my love...",
-   "dst": "",
+   "dst": "C-con esto bastará. Tienes una tumba preciosa, a-amor mío...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2382,7 +2382,7 @@
   },
   "Hollow Serenity#237": {
    "src": "W-We won't be separated, though. I-I will leave our true selves here, as well.",
-   "dst": "",
+   "dst": "P-pero no nos separarán. D-dejaré aquí también nuestro ser verdadero.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2392,7 +2392,7 @@
   },
   "Hollow Serenity#238": {
    "src": "My soul... and y-yours.",
-   "dst": "",
+   "dst": "Mi alma... y l-la tuya.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2402,7 +2402,7 @@
   },
   "Hollow Serenity#239": {
    "src": "T-This is our final act of love, K-Katarin... This stone will keep us here. Eternal, and in bliss.",
-   "dst": "",
+   "dst": "E-este es nuestro último acto de amor, K-Katarin... Esta piedra nos mantendrá aquí. Eternos, y en dicha.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2412,7 +2412,7 @@
   },
   "Hollow Serenity#240": {
    "src": "I-It's like nothing ever h-happened, right?",
-   "dst": "",
+   "dst": "E-es como si nunca h-hubiera pasado nada, ¿verdad?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2422,7 +2422,7 @@
   },
   "Hollow Serenity#241": {
    "src": "But that changes now.",
-   "dst": "",
+   "dst": "Pero eso cambia ahora.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2432,7 +2432,7 @@
   },
   "Hollow Serenity#242": {
    "src": "N-Now you understand. T-this is... all my fault. I have ruined everything. E-everything I touched, I destroyed.",
-   "dst": "",
+   "dst": "A-ahora lo entiendes. E-esto es... todo culpa mía. Lo arruiné todo. T-todo lo que toqué, lo destruí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2442,7 +2442,7 @@
   },
   "Hollow Serenity#243": {
    "src": "Have I not repented enough? Have I not suffered enough for decades in this god-forsaken forest?? And why did you have to-",
-   "dst": "",
+   "dst": "¿No me he arrepentido bastante? ¿¿No he sufrido bastante durante décadas en este bosque dejado de la mano de Dios?? ¿Y por qué tenías que-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2452,7 +2452,7 @@
   },
   "Hollow Serenity#244": {
    "src": "No... You know too much. B-But I can't kill, not again. I-I can make things right. I-I'm going to fix this. I'm going to fix this. I'm going to I'm going to I'm going to I'm going to I'm going to...",
-   "dst": "",
+   "dst": "No... Sabes demasiado. P-pero no puedo matar, otra vez no. P-puedo arreglarlo. V-voy a arreglar esto. Voy a arreglar esto. Voy a voy a voy a voy a voy a...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2462,7 +2462,7 @@
   },
   "Hollow Serenity#245": {
    "src": "I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to I'm going to-",
-   "dst": "",
+   "dst": "Voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a voy a-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2472,7 +2472,7 @@
   },
   "Hollow Serenity#246": {
    "src": "KATARIIIIINNNNNN!!!!!",
-   "dst": "",
+   "dst": "¡KATARIIIIINNNNN!!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2482,7 +2482,7 @@
   },
   "Hollow Serenity#247": {
    "src": "Get to the Master Bedroom at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Llega al dormitorio principal en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2492,7 +2492,7 @@
   },
   "Hollow Serenity#248": {
    "src": "K-Katarin! My l-love... is that you?",
-   "dst": "",
+   "dst": "¡K-Katarin! A-amor mío... ¿eres tú?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2502,7 +2502,7 @@
   },
   "Hollow Serenity#249": {
    "src": "My word... I-It is you! I missed you, love... and I'm s-so sorry... for all of this!",
-   "dst": "",
+   "dst": "Cielos... ¡E-eres tú! Te he echado de menos, amor... y l-lo siento t-tanto... ¡por todo esto!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2512,7 +2512,7 @@
   },
   "Hollow Serenity#250": {
    "src": "I realize n-now, thanks to this h-human's efforts. What I've done has t-torn us apart... I hurt you and our l-little girl so much...",
-   "dst": "",
+   "dst": "A-ahora lo veo, gracias al esfuerzo de este h-humano. Lo que hice nos s-separó... Os hice tanto daño a ti y a nuestra n-niña...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2522,7 +2522,7 @@
   },
   "Hollow Serenity#251": {
    "src": "I-I'm so sorry, Katarin! P-Please, forgive me! Let us f-fix all of thi-",
-   "dst": "",
+   "dst": "¡L-lo siento, Katarin! ¡P-perdóname, por favor! Vamos a a-arreglar es-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2532,7 +2532,7 @@
   },
   "Hollow Serenity#252": {
    "src": "H-huh? Why c-can't I...?",
-   "dst": "",
+   "dst": "¿E-eh? ¿Por q-qué no puedo...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2542,7 +2542,7 @@
   },
   "Hollow Serenity#253": {
    "src": "K-Katarin...?",
-   "dst": "",
+   "dst": "¿K-Katarin...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2552,7 +2552,7 @@
   },
   "Hollow Serenity#254": {
    "src": "For.. For... give... ness...?",
-   "dst": "",
+   "dst": "¿Per.. Per... dón...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2562,7 +2562,7 @@
   },
   "Hollow Serenity#255": {
    "src": "What... What do you mean?? Speak, my love! I don't understand.",
-   "dst": "",
+   "dst": "Qué... ¿¿Qué quieres decir?? ¡Habla, amor mío! No lo entiendo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2572,7 +2572,7 @@
   },
   "Hollow Serenity#256": {
    "src": "...Forgiveness...? You... beg for me... to forgive... you?",
-   "dst": "",
+   "dst": "...¿Perdón...? ¿Me... suplicas... que te... perdone?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2582,7 +2582,7 @@
   },
   "Hollow Serenity#257": {
    "src": "I... Yes, yes! P-Please, my love! I-I know I've have spent the last century and a half running away from u-us, but...",
-   "dst": "",
+   "dst": "Yo... ¡Sí, sí! ¡P-por favor, amor mío! S-sé que llevo siglo y medio huyendo de n-nosotros, pero...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2592,7 +2592,7 @@
   },
   "Hollow Serenity#258": {
    "src": "It was all my fault, from the beginning! I was wrong! W-We can fix this...! We can make everything go back to normal, j-just like it was before!",
-   "dst": "",
+   "dst": "¡Todo fue culpa mía, desde el principio! ¡Me equivoqué! ¡P-podemos arreglarlo...! ¡Podemos hacer que todo vuelva a ser como antes, i-igual que antes!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2602,7 +2602,7 @@
   },
   "Hollow Serenity#259": {
    "src": "Please, Katarin! A-all I ask is that you forgive me!",
-   "dst": "",
+   "dst": "¡Por favor, Katarin! ¡S-solo te pido que me perdones!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2612,7 +2612,7 @@
   },
   "Hollow Serenity#260": {
    "src": "...You... You must really have a deathwish-",
-   "dst": "",
+   "dst": "...Tú... Tú sí que tienes ganas de morir-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2622,7 +2622,7 @@
   },
   "Hollow Serenity#261": {
    "src": "...Maybe I can... Forgive this. But I need something from you, as well...",
-   "dst": "",
+   "dst": "...Quizá pueda... perdonarlo. Pero yo también necesito algo de ti...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2632,7 +2632,7 @@
   },
   "Hollow Serenity#262": {
    "src": "...Where is the gemstone? I'd... I'd like to know. And then... I could... forgive... this.",
-   "dst": "",
+   "dst": "...¿Dónde está la gema? Me... me gustaría saberlo. Y entonces... podría... perdonar... esto.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2642,7 +2642,7 @@
   },
   "Hollow Serenity#263": {
    "src": "O-Oh! Is that all? Of course, my love, I can tell you!",
-   "dst": "",
+   "dst": "¡A-ah! ¿Nada más? ¡Claro, amor mío, te lo diré!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2652,7 +2652,7 @@
   },
   "Hollow Serenity#264": {
    "src": "I-I placed it in the catacombs, right next to where-",
-   "dst": "",
+   "dst": "L-la dejé en las catacumbas, justo al lado de donde-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2662,7 +2662,7 @@
   },
   "Hollow Serenity#265": {
    "src": "W-What... W-WHAT I-IS THISS?? I-I C-CAN'T B-BREATHE! P-PLEASE!!",
-   "dst": "",
+   "dst": "Q-qué... ¿¿Q-QUÉ E-ES ESTOO?? ¡N-NO R-RESPIRO! ¡¡P-POR FAVOR!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2672,7 +2672,7 @@
   },
   "Hollow Serenity#266": {
    "src": "NO!! NO, NO NO NO NO. HUMAN, H-HELP ME!! KATARIN... K-KATARIIIIINNNNN!!!!",
-   "dst": "",
+   "dst": "¡¡NO!! NO, NO NO NO. ¡¡HUMANO, A-AYÚDAME!! ¡K-KATARIIIIINNNNN!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2682,7 +2682,7 @@
   },
   "Hollow Serenity#267": {
    "src": "YOU... TOOK... HER... FROM... ME.",
-   "dst": "",
+   "dst": "TÚ... ME... LA... QUITASTE.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2692,7 +2692,7 @@
   },
   "Hollow Serenity#268": {
    "src": "YOU... POISONED... HER...!",
-   "dst": "",
+   "dst": "¡TÚ... LA... ENVENENASTE...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2702,7 +2702,7 @@
   },
   "Hollow Serenity#269": {
    "src": "YOU... RUINED... EVERYTHING!!",
-   "dst": "",
+   "dst": "¡TÚ... LO ARRUINASTE... TODO!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2712,7 +2712,7 @@
   },
   "Hollow Serenity#270": {
    "src": "Head to the Manor's catacombs at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Dirígete a las catacumbas de la mansión en [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2722,7 +2722,7 @@
   },
   "Hollow Serenity#271": {
    "src": "WHERE IS IT?!?!?!?!",
-   "dst": "",
+   "dst": "¡¿DÓNDE ESTÁ?!?!?!?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2732,7 +2732,7 @@
   },
   "Hollow Serenity#272": {
    "src": "TELL ME WHERE IT IS, GARVAN! I KNOW YOU'RE STILL LISTENING!",
-   "dst": "",
+   "dst": "¡DIME DÓNDE ESTÁ, GARVAN! ¡SÉ QUE SIGUES ESCUCHANDO!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2742,7 +2742,7 @@
   },
   "Hollow Serenity#273": {
    "src": "You knew where it was- Hmm... what did Garvan call you things...?",
-   "dst": "",
+   "dst": "Tú sabías dónde estaba- Hmm... ¿cómo os llamaba Garvan a los tuyos...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2752,7 +2752,7 @@
   },
   "Hollow Serenity#274": {
    "src": "Right, a human. You knew... that it was just beneath this rubble?",
-   "dst": "",
+   "dst": "Cierto, un humano. ¿Sabías... que estaba bajo estos escombros?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2762,7 +2762,7 @@
   },
   "Hollow Serenity#275": {
    "src": "There it is... Thank you... Now this eternal hell will finally end. After so long...",
-   "dst": "",
+   "dst": "Ahí está... Gracias... Por fin acabará este infierno eterno. Después de tanto tiempo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2772,7 +2772,7 @@
   },
   "Hollow Serenity#276": {
    "src": "Do you hear that? It's the ocean waves... The heavens... They're calling for me-",
-   "dst": "",
+   "dst": "¿Lo oyes? Son las olas del mar... Los cielos... Me están llamando-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2782,7 +2782,7 @@
   },
   "Hollow Serenity#277": {
    "src": "...Hm?",
-   "dst": "",
+   "dst": "...¿Hm?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2792,7 +2792,7 @@
   },
   "Hollow Serenity#278": {
    "src": "Defeat Garvan.",
-   "dst": "",
+   "dst": "Derrota a Garvan.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2802,7 +2802,7 @@
   },
   "Hollow Serenity#279": {
    "src": "Shatter the gemstone.",
-   "dst": "",
+   "dst": "Destroza la gema.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",
@@ -2812,7 +2812,7 @@
   },
   "Hollow Serenity#280": {
    "src": "He's gone... All of this will finally be done...",
-   "dst": "",
+   "dst": "Ya no está... Por fin todo esto terminará...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2822,7 +2822,7 @@
   },
   "Hollow Serenity#281": {
    "src": "Thank you, stranger. Thank you for... everything.",
-   "dst": "",
+   "dst": "Gracias, forastero. Gracias por... todo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2832,7 +2832,7 @@
   },
   "Hollow Serenity#282": {
    "src": "Now I'm... finally free. But... I suppose I still have unfinished business. Before I leave, I must know something.",
-   "dst": "",
+   "dst": "Ahora soy... por fin libre. Pero... supongo que aún tengo asuntos pendientes. Antes de irme, debo saber algo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2842,7 +2842,7 @@
   },
   "Hollow Serenity#283": {
    "src": "...What has become of my daughter, Eileen? Has she suffered any more? Or did she escape?",
-   "dst": "",
+   "dst": "...¿Qué fue de mi hija, Eileen? ¿Sufrió aún más? ¿O logró escapar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2852,7 +2852,7 @@
   },
   "Hollow Serenity#284": {
    "src": "I must know. Is she okay?",
-   "dst": "",
+   "dst": "Debo saberlo. ¿Está bien?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2862,7 +2862,7 @@
   },
   "Hollow Serenity#285": {
    "src": "...I see. That is... wonderful news. Thank you, human.",
-   "dst": "",
+   "dst": "...Ya veo. Eso es... una noticia maravillosa. Gracias, humano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2872,7 +2872,7 @@
   },
   "Hollow Serenity#286": {
    "src": "I must... leave... The pain...",
-   "dst": "",
+   "dst": "Debo... irme... El dolor...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2882,7 +2882,7 @@
   },
   "Hollow Serenity#287": {
    "src": "...The pain is receding... The heavens are calling... for the final time...",
-   "dst": "",
+   "dst": "...El dolor se retira... Los cielos llaman... por última vez...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2892,7 +2892,7 @@
   },
   "Hollow Serenity#288": {
    "src": "Goodbye... Thank you human, from the bottom of my heart.",
-   "dst": "",
+   "dst": "Adiós... Gracias, humano, de todo corazón.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2902,7 +2902,7 @@
   },
   "Hollow Serenity#289": {
    "src": "...What?",
-   "dst": "",
+   "dst": "...¿Qué?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2912,7 +2912,7 @@
   },
   "Hollow Serenity#290": {
    "src": "No.",
-   "dst": "",
+   "dst": "No.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2922,7 +2922,7 @@
   },
   "Hollow Serenity#291": {
    "src": "No.",
-   "dst": "",
+   "dst": "No.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2932,7 +2932,7 @@
   },
   "Hollow Serenity#292": {
    "src": "NO NO NO NO NO NO NO NOOOOO!!!!!!",
-   "dst": "",
+   "dst": "¡NO NO NO NO NO NO NO NOOOOO!!!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2942,7 +2942,7 @@
   },
   "Hollow Serenity#293": {
    "src": "TRAITOR!! I WILL MAKE YOU ALL SUFFFEEERRRR!!! (In High Gavellian)",
-   "dst": "",
+   "dst": "¡¡TRAIDOR!! ¡¡¡OS HARÉ SUFRIIIRRR A TODOS!!! (En alto gavelliano)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -2952,7 +2952,7 @@
   },
   "Hollow Serenity#294": {
    "src": "Bury Garvan's body in Katarin's incomplete grave.",
-   "dst": "",
+   "dst": "Entierra el cuerpo de Garvan en la tumba inacabada de Katarin.",
    "role": "desc",
    "kind": "objective",
    "quest": "Hollow Serenity",

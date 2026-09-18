@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Worm Holes",
   "count": 85,
-  "translated": 1,
+  "translated": 86,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Worm Holes#000": {
    "src": "Find out what's going on at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 무슨 일이 일어나는지 알아보세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Worm Holes",
@@ -18,7 +18,7 @@
   },
   "The Worm Holes#001": {
    "src": "Arrighty fellers, let's get this wrapped up now! 'ere's plenty more holes where this one came from!",
-   "dst": "",
+   "dst": "좋아 다들, 이제 여기 마무리하자고! 이런 구멍은 아직 한참 남았어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -28,7 +28,7 @@
   },
   "The Worm Holes#002": {
    "src": "...what in...aw no!",
-   "dst": "",
+   "dst": "...이게 무슨... 아 안 돼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -38,7 +38,7 @@
   },
   "The Worm Holes#003": {
    "src": "The scaffolds are crackin'! Everyone, get offa there, now!!",
-   "dst": "",
+   "dst": "비계가 갈라진다! 다들 당장 거기서 내려와!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -48,7 +48,7 @@
   },
   "The Worm Holes#004": {
    "src": "GwaaAAAAAH!!",
-   "dst": "",
+   "dst": "으아아아아악!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -58,7 +58,7 @@
   },
   "The Worm Holes#005": {
    "src": "Aw, hell... I knew this project was a bust from the start...there goes Willam and Clint cause a' this!",
-   "dst": "",
+   "dst": "아, 젠장... 처음부터 이 공사는 글렀다고 생각했어... 이것 때문에 Willam이랑 Clint가 갔구먼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -68,7 +68,7 @@
   },
   "The Worm Holes#006": {
    "src": "I gotta get someone tough enough to get down there...hm? Hey, a human! Git on over here!",
-   "dst": "",
+   "dst": "저 아래 내려갈 만큼 튼튼한 녀석이 필요한데... 응? 어이, 인간이잖아! 이리 와 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -78,7 +78,7 @@
   },
   "The Worm Holes#007": {
    "src": "I gotta ask, how much 'a that didja see, Wynn feller? Wasn't pretty, and I'm in charge a' them folks, so I gotta take responsibility fer that.",
-   "dst": "",
+   "dst": "하나 묻자, 방금 거 얼마나 봤나, Wynn 친구? 보기 좋은 꼴은 아니었지. 내가 저 사람들 책임자니까 책임을 져야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -88,7 +88,7 @@
   },
   "The Worm Holes#008": {
    "src": "Th' mayor of {p} there saw these holes poppin' up, and hired us out to cover 'em up. Thing is, the ground's too unstable to build.",
-   "dst": "",
+   "dst": "저기 {p} 시장이 이 구멍들이 생기는 걸 보고 메우라고 우릴 고용했지. 문제는 땅이 너무 불안정해서 뭘 지을 수가 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -98,7 +98,7 @@
   },
   "The Worm Holes#009": {
    "src": "It's gettin' real worrying round here. They only started openin' up recently, and there've been quakes too. Feels like the place is gonna collapse!",
-   "dst": "",
+   "dst": "이 근처가 점점 걱정스러워. 구멍은 최근에야 생기기 시작했고, 지진도 있었어. 이러다 여기 통째로 무너질 것 같다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -108,7 +108,7 @@
   },
   "The Worm Holes#010": {
    "src": "I think we oughta head down there and figure out what 'n heck's goin' on, and you're the best armed outta any of us, being human 'n all.",
-   "dst": "",
+   "dst": "저 아래 내려가서 대체 무슨 일인지 알아봐야 할 것 같아. 인간이니 우리 중에 네가 제일 무장이 잘돼 있고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -118,7 +118,7 @@
   },
   "The Worm Holes#011": {
    "src": "Think y'all could head down 'n see if you can rustle up any leads? There's a path down just to the left of the hole.",
-   "dst": "",
+   "dst": "내려가서 단서 좀 찾아봐 줄 수 있겠나? 구멍 바로 왼쪽에 내려가는 길이 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -128,7 +128,7 @@
   },
   "The Worm Holes#012": {
    "src": "Go down the hole and look for what's causing this and return to Malo at [-{~}, {~}, -{~}] with proof.",
-   "dst": "",
+   "dst": "구멍 아래로 내려가 원인을 찾고 증거를 가지고 [-{~}, {~}, -{~}]의 Malo에게 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Worm Holes",
@@ -138,7 +138,7 @@
   },
   "The Worm Holes#013": {
    "src": "What in tarnation...? The heck did you find down there, soldier?",
-   "dst": "",
+   "dst": "이게 대체 뭐야...? 저 아래서 뭘 찾은 거야, 병사?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -148,7 +148,7 @@
   },
   "The Worm Holes#014": {
    "src": "Oh, it was just the skin, huh? Dang...was hopin' you'd've seen what it was, cause I got no clue 'bout this.",
-   "dst": "",
+   "dst": "아, 그냥 허물이었어? 젠장... 정체를 봤길 바랐는데. 난 이게 뭔지 전혀 모르겠거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -158,7 +158,7 @@
   },
   "The Worm Holes#015": {
    "src": "Urgh. Only gal I know who might have an idea 'bout this is that durn elf lady...",
-   "dst": "",
+   "dst": "으. 이걸 알 만한 여자는 그 빌어먹을 엘프 아가씨밖에 없는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -168,7 +168,7 @@
   },
   "The Worm Holes#016": {
    "src": "She's got purple hair and's been wanderin' round like she knows everything. Yeah, she's a bright penny but she ain't gotta be so uppity ta all of us 'bout it.",
-   "dst": "",
+   "dst": "보라색 머리에, 다 아는 척하면서 여기저기 돌아다니지. 그래, 똑똑하긴 한데 우리한테 그렇게 잘난 척할 필요는 없잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -178,7 +178,7 @@
   },
   "The Worm Holes#017": {
    "src": "She put up a camp just east of here. She'll prob'ly react better to you than me, so I'll go to the authorities and see if they have any leads.",
-   "dst": "",
+   "dst": "여기서 바로 동쪽에 야영지를 차렸어. 나보단 너한테 더 잘 대해 줄 거야. 난 당국에 가서 단서가 있나 알아보지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -188,7 +188,7 @@
   },
   "The Worm Holes#018": {
    "src": "Look for Lari and ask what is going on at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Lari를 찾아 무슨 일인지 물어보세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Worm Holes",
@@ -198,7 +198,7 @@
   },
   "The Worm Holes#019": {
    "src": "...Haven’t we met? I have witnessed your presence in Gavel more than once.",
-   "dst": "",
+   "dst": "...우리 만난 적 있지 않아? Gavel에서 네 존재를 여러 번 목격했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -208,7 +208,7 @@
   },
   "The Worm Holes#020": {
    "src": "I am Lari. I might have greeted you properly before if I were not so busy, which reminds me. You have a reason to be here, yes?",
-   "dst": "",
+   "dst": "난 Lari야. 이렇게 바쁘지 않았다면 전에 제대로 인사했을 텐데, 그러고 보니. 여기 온 이유가 있지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -218,7 +218,7 @@
   },
   "The Worm Holes#021": {
    "src": "Hm...I believe I know what you have found, by your description. That dead skin too, is proof enough, I would say.",
-   "dst": "",
+   "dst": "흠... 설명을 들어 보니 네가 뭘 찾았는지 알 것 같아. 그 허물도 충분한 증거고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -228,7 +228,7 @@
   },
   "The Worm Holes#022": {
    "src": "The creature which shed that skin is known as a Grootslang. Though large, they are rather peaceful. Gentle giants, I believe the saying is?",
-   "dst": "",
+   "dst": "그 허물을 벗은 생물은 그루트슬랭이야. 덩치는 크지만 꽤 온순해. 온화한 거인이라고들 하지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -238,7 +238,7 @@
   },
   "The Worm Holes#023": {
    "src": "This horrid Decay...it affects their habitats underground. They are seeking shelter closer to the surface. I have been trying to scrub the Decay without success...",
-   "dst": "",
+   "dst": "이 끔찍한 쇠락이... 땅속의 서식지에 영향을 주고 있어. 그래서 지표 가까이로 피난처를 찾는 거야. 쇠락을 씻어 내려 했지만 소용없었어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -248,7 +248,7 @@
   },
   "The Worm Holes#024": {
    "src": "Wait... More holes appeared just today? There...there were deaths?! W-where, when?!",
-   "dst": "",
+   "dst": "잠깐... 오늘 구멍이 더 생겼다고? 그럼... 사람이 죽었어?! 어, 어디서, 언제?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -258,7 +258,7 @@
   },
   "The Worm Holes#025": {
    "src": "No, no...! I refuse to be responsible for any more deaths... Human, tell me your name, please.",
-   "dst": "",
+   "dst": "안 돼, 안 돼...! 더는 누구의 죽음도 책임질 수 없어... 인간, 이름을 알려 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -268,7 +268,7 @@
   },
   "The Worm Holes#026": {
    "src": "{u}, then... Let us head to the site. {u}. I need to fix this... Please, help me get to the root of this problem so I may soothe the land's pain.",
-   "dst": "",
+   "dst": "{u}, 그렇구나... 현장으로 가자. {u}. 이걸 바로잡아야 해... 이 땅의 고통을 달랠 수 있게 문제의 근원을 찾도록 도와줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -278,7 +278,7 @@
   },
   "The Worm Holes#027": {
    "src": "Meet up with Lari at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에서 Lari와 만나세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Worm Holes",
@@ -288,7 +288,7 @@
   },
   "The Worm Holes#028": {
    "src": "So this is the site... [Gavellian Spell]...",
-   "dst": "",
+   "dst": "여기가 현장이구나... [Gavellian Spell]...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -298,7 +298,7 @@
   },
   "The Worm Holes#029": {
    "src": "Here. Allow me to provide at least one person safe passage into the pit.",
-   "dst": "",
+   "dst": "자. 적어도 한 사람은 안전하게 구덩이로 내려보내 줄게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -308,7 +308,7 @@
   },
   "The Worm Holes#030": {
    "src": "Have faith- Jump in. I will carry you down slowly.",
-   "dst": "",
+   "dst": "날 믿어- 뛰어내려. 천천히 내려가게 해 줄게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -318,7 +318,7 @@
   },
   "The Worm Holes#031": {
    "src": "Take the lead. If we can find any further evidence of the Grootslangs around here, it will aid in my understanding.",
-   "dst": "",
+   "dst": "앞장서. 이 근처에서 그루트슬랭의 흔적을 더 찾으면 이해하는 데 도움이 될 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -328,7 +328,7 @@
   },
   "The Worm Holes#032": {
    "src": "Hm? This wall looks like it's been disturbed recently...",
-   "dst": "",
+   "dst": "응? 이 벽, 최근에 누가 건드린 것 같은데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -338,7 +338,7 @@
   },
   "The Worm Holes#033": {
    "src": "I can hear it...but where is it crawling...?",
-   "dst": "",
+   "dst": "소리는 들리는데... 어디로 기어가는 거지...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -348,7 +348,7 @@
   },
   "The Worm Holes#034": {
    "src": "That's the mother Wyrm! She must be what is making the holes. We need to follow her!",
-   "dst": "",
+   "dst": "어미 웜이야! 구멍을 만드는 게 저 녀석인가 봐. 따라가야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -358,7 +358,7 @@
   },
   "The Worm Holes#035": {
    "src": "Never mind the spiders, we need to keep following the Wyrm!",
-   "dst": "",
+   "dst": "거미는 신경 쓰지 마, 계속 웜을 따라가야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -368,7 +368,7 @@
   },
   "The Worm Holes#036": {
    "src": "Ah...ehm, {u}? I've... Um, this is...a bit difficult to say, but...",
-   "dst": "",
+   "dst": "아... 저기, {u}? 나... 음, 이건... 말하기 좀 어렵지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -378,7 +378,7 @@
   },
   "The Worm Holes#037": {
    "src": "I...do not believe we need to fight, or to kill, here? The creatures are native to here, we are invading their space.",
-   "dst": "",
+   "dst": "나는... 여기서 싸우거나 죽일 필요는 없다고 생각해. 이 생물들은 원래 여기 살아. 우리가 침입한 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -388,7 +388,7 @@
   },
   "The Worm Holes#038": {
    "src": "Why should they be attacked for merely existing in their territory? Even if they are animals, I believe that you can solve these problems without killing.",
-   "dst": "",
+   "dst": "자기 영역에 존재한다는 이유만으로 공격받아야 해? 동물이라 해도, 넌 죽이지 않고도 해결할 수 있다고 믿어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -398,7 +398,7 @@
   },
   "The Worm Holes#039": {
    "src": "I...understand you may not have the same powers as myself... And I, ah...am not free of guilt, either. But I think you could stand to take a peaceful stance.",
-   "dst": "",
+   "dst": "나는... 네게 나 같은 힘이 없다는 건 알아... 그리고 나도, 아... 죄가 없는 건 아니야. 그래도 평화로운 태도를 취해 볼 수 있을 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -408,7 +408,7 @@
   },
   "The Worm Holes#040": {
    "src": "Even if I am alone on that front...though I understand you are taught differently where you come from. I do not envy you, though I still thank you for your aid thusfar.",
-   "dst": "",
+   "dst": "그런 생각을 하는 게 나 혼자뿐이라 해도... 네 고향에선 다르게 배운다는 것도 알아. 네가 부럽진 않지만, 지금까지 도와준 건 고마워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -418,7 +418,7 @@
   },
   "The Worm Holes#041": {
    "src": "Your methods are...disagreeable, but you still have a sense of right to you, I feel... Well, the tunnel diverges here. We'll need to split apart.",
-   "dst": "",
+   "dst": "네 방식엔... 동의할 수 없지만, 그래도 옳고 그름을 아는 사람 같아... 자, 굴이 여기서 갈라져. 따로 가야겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -428,7 +428,7 @@
   },
   "The Worm Holes#042": {
    "src": "I'll go to the right, so you ought to continue to the left here. I will meet up with you again soon, hopefully.",
-   "dst": "",
+   "dst": "난 오른쪽으로 갈게, 넌 여기서 왼쪽으로 계속 가. 곧 다시 만나길 바라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -438,7 +438,7 @@
   },
   "The Worm Holes#043": {
    "src": "Take the lead.",
-   "dst": "",
+   "dst": "앞장서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -448,7 +448,7 @@
   },
   "The Worm Holes#044": {
    "src": "Investigate the worm tunnels.",
-   "dst": "",
+   "dst": "벌레 굴을 조사하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Worm Holes",
@@ -458,7 +458,7 @@
   },
   "The Worm Holes#045": {
    "src": "Aah! {u}! Don't...don't make any sudden movements.",
-   "dst": "",
+   "dst": "아아! {u}! 가, 갑자기 움직이지 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -468,7 +468,7 @@
   },
   "The Worm Holes#046": {
    "src": "This Grootslang is uncharacteristically aggressive... She's scared, being so close to the surface. Stay behind me, please.",
-   "dst": "",
+   "dst": "이 그루트슬랭, 평소답지 않게 사나워... 지표에 너무 가까워서 겁먹은 거야. 내 뒤에 있어 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -478,7 +478,7 @@
   },
   "The Worm Holes#047": {
    "src": "AH! [Gavellian Spell]!",
-   "dst": "",
+   "dst": "아! [Gavellian Spell]!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -488,7 +488,7 @@
   },
   "The Worm Holes#048": {
    "src": "Do not approach it! The power of the Wyrm is far too much for you!",
-   "dst": "",
+   "dst": "다가가지 마! 웜의 힘은 너한테 너무 벅차!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -498,7 +498,7 @@
   },
   "The Worm Holes#049": {
    "src": "W-wait, again? [Gavellian Spell]- Aah, MOVE!",
-   "dst": "",
+   "dst": "자, 잠깐, 또? [Gavellian Spell]- 아, 비켜!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -508,7 +508,7 @@
   },
   "The Worm Holes#050": {
    "src": "{u}!! You're unharmed, yes? She's scared and in pain!",
-   "dst": "",
+   "dst": "{u}!! 다친 데 없지? 저 녀석, 겁먹고 아파하고 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -518,7 +518,7 @@
   },
   "The Worm Holes#051": {
    "src": "I have to get it right this time... I'm going to talk her down, stay there!",
-   "dst": "",
+   "dst": "이번엔 제대로 해야 해... 내가 진정시킬게, 거기 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -528,7 +528,7 @@
   },
   "The Worm Holes#052": {
    "src": "You must be calm, I beg you. Retreat to the earth- You harm those above!",
-   "dst": "",
+   "dst": "제발 진정해. 땅속으로 돌아가- 위에 있는 이들이 다치고 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -538,7 +538,7 @@
   },
   "The Worm Holes#053": {
    "src": "The earth rotting... I take full responsibility, but does the grass above not rot also?",
-   "dst": "",
+   "dst": "땅이 썩어 가는 건... 전부 내 책임이야. 하지만 위의 풀도 썩어 가잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -548,7 +548,7 @@
   },
   "The Worm Holes#054": {
    "src": "I wish to soothe your pain, but you must allow me to aid you- You must listen!",
-   "dst": "",
+   "dst": "네 고통을 달래 주고 싶어. 그러니 날 도와줄 수 있게 해 줘- 내 말 들어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -558,7 +558,7 @@
   },
   "The Worm Holes#055": {
    "src": "What does this violence solve? Be calm, please!",
-   "dst": "",
+   "dst": "이런 폭력으로 뭐가 해결돼? 제발 진정해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -568,7 +568,7 @@
   },
   "The Worm Holes#056": {
    "src": "{u}, it won't budge... There's something in its mind rejecting me. Distract it- but don't approach! It will kill you if you get close. Just...be loud!",
-   "dst": "",
+   "dst": "{u}, 꿈쩍도 안 해... 뭔가가 머릿속에서 날 거부하고 있어. 주의를 끌어- 다가가진 마! 가까이 가면 죽어. 그냥... 시끄럽게 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -578,7 +578,7 @@
   },
   "The Worm Holes#057": {
    "src": "Fight the Grootslang with Lari",
-   "dst": "",
+   "dst": "Lari와 함께 그루트슬랭과 싸우세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Worm Holes",
@@ -588,7 +588,7 @@
   },
   "The Worm Holes#058": {
    "src": "AIYEE! {u}! Hold on in there!",
-   "dst": "",
+   "dst": "꺄악! {u}! 거기서 버텨!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -598,7 +598,7 @@
   },
   "The Worm Holes#059": {
    "src": "Can you hear me?! I'll get her to...to...s-something! Spit you up, I don't know! Just...please, d-don't die!",
-   "dst": "",
+   "dst": "내 말 들려?! 저 녀석이... 뭐, 뭐라도 하게 할게! 뱉어 내게 하든, 모르겠어! 그러니까... 제발, 주, 죽지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -608,7 +608,7 @@
   },
   "The Worm Holes#060": {
    "src": "W-We have... We have not laid a blow against you! It is not right for you to do the same!",
-   "dst": "",
+   "dst": "우, 우린... 우린 너한테 한 대도 안 때렸어! 네가 그러는 건 옳지 않아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -618,7 +618,7 @@
   },
   "The Worm Holes#061": {
    "src": "You would wound and consume everything in your rage? Even knowing the consequences?",
-   "dst": "",
+   "dst": "분노에 휩쓸려 모든 걸 다치게 하고 삼킬 거야? 결과를 알면서도?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -628,7 +628,7 @@
   },
   "The Worm Holes#062": {
    "src": "Your hunger cannot be sated with this fruitless destruction! I beg of you, let them out!",
-   "dst": "",
+   "dst": "이런 헛된 파괴로는 굶주림을 채울 수 없어! 제발, 그들을 내보내 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -638,7 +638,7 @@
   },
   "The Worm Holes#063": {
    "src": "You know th- W-wait...where did you... AAAH!",
-   "dst": "",
+   "dst": "너도 알잖- 자, 잠깐... 어디서... 으아아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -648,7 +648,7 @@
   },
   "The Worm Holes#064": {
    "src": "...y-you... ... I...y-you're still alright? I...*hic* I...",
-   "dst": "",
+   "dst": "...너, 너... ... 나... 괜, 괜찮은 거야? 나...*딸꾹* 나...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -658,7 +658,7 @@
   },
   "The Worm Holes#065": {
    "src": "I tried...w-why does no one listen to me? Why won't a-anything change for me?",
-   "dst": "",
+   "dst": "노력했는데... 왜 아무도 내 말을 안 들어? 왜 나한텐 아, 아무것도 안 변해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -668,7 +668,7 @@
   },
   "The Worm Holes#066": {
    "src": "She...she's been eating dark parasites. They're wracking her insides and h-hurting her head...",
-   "dst": "",
+   "dst": "저 녀석... 어둠의 기생충을 먹어 왔어. 그게 속을 갉아먹고 머리를 아, 아프게 해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -678,7 +678,7 @@
   },
   "The Worm Holes#067": {
    "src": "I...i-it's so d-dark... I c-can't breathe... This...th-this can't be the end...",
-   "dst": "",
+   "dst": "나... 너, 너무 어, 어두워... 수, 숨을 못 쉬겠어... 이게... 이, 이게 끝일 리 없어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -688,7 +688,7 @@
   },
   "The Worm Holes#068": {
    "src": "I...n-no, I can't die in here... I-I'm needed still... You're n-needed still! I... I...",
-   "dst": "",
+   "dst": "나... 아, 안 돼, 여기서 죽을 순 없어... 나, 난 아직 필요해... 너도 아, 아직 필요하고! 나... 나...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -698,7 +698,7 @@
   },
   "The Worm Holes#069": {
    "src": "I n-need... Or... O-Or... C-Concentrate, Lari... You can do this...",
-   "dst": "",
+   "dst": "피, 필요한 건... 아니면... 아, 아니면... 지, 집중해, Lari... 할 수 있어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -708,7 +708,7 @@
   },
   "The Worm Holes#070": {
    "src": "[Gavellian Spell]! [Gavellian Spell]!",
-   "dst": "",
+   "dst": "[Gavellian Spell]! [Gavellian Spell]!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -718,7 +718,7 @@
   },
   "The Worm Holes#071": {
    "src": "LET US OUT! LET US OUT OF HERE! DON'T LET US DIE LIKE THIS! I'M BEGGING YOU, PLEASE!!",
-   "dst": "",
+   "dst": "내보내 줘! 여기서 내보내 줘! 이렇게 죽게 두지 마! 제발 부탁이야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -728,7 +728,7 @@
   },
   "The Worm Holes#072": {
    "src": "...I...oh no... It's...d-d... I... I j-just... I just w-wanted out... Ohhh...n-no...",
-   "dst": "",
+   "dst": "...안 돼... 주, 죽었어... 난 그, 그냥 나가고 싶었을 뿐인데... 아, 안 돼...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -738,7 +738,7 @@
   },
   "The Worm Holes#073": {
    "src": "...w-we're...leaving. I...I c-can't look at this any more...",
-   "dst": "",
+   "dst": "...이, 이제... 가자. 나... 더는 못 보, 보겠어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -748,7 +748,7 @@
   },
   "The Worm Holes#074": {
    "src": "...I... That's...m-my fault...",
-   "dst": "",
+   "dst": "...나... 저건... 내, 내 잘못이야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -758,7 +758,7 @@
   },
   "The Worm Holes#075": {
    "src": "I'm...I'm so sorry, {u}. If I'd...I don't... I don't even know what else I could have d-done...",
-   "dst": "",
+   "dst": "정말... 정말 미안해, {u}. 내가 만약... 난... 내가 달리 뭘 할 수 있었을지도 모르겠어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -768,7 +768,7 @@
   },
   "The Worm Holes#076": {
    "src": "There...it didn’t feel like there was...anything left to it... But, if I’d just been quicker, then... Would it...would it even have made a difference?",
-   "dst": "",
+   "dst": "거긴... 남은 게... 아무것도 없는 것 같았어... 그래도 내가 좀 더 빨랐다면... 그럼... 달라지긴 했을까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -778,7 +778,7 @@
   },
   "The Worm Holes#077": {
    "src": "...some savior I am... I need to be better, but what else even is there that...ugh, I'm going in circles...",
-   "dst": "",
+   "dst": "...구원자는 무슨... 더 잘해야 하는데, 달리 뭐가... 으, 같은 생각만 맴돌아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -788,7 +788,7 @@
   },
   "The Worm Holes#078": {
    "src": "Let's... Let's just leave...",
-   "dst": "",
+   "dst": "그냥... 그냥 가자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -798,7 +798,7 @@
   },
   "The Worm Holes#079": {
    "src": "...I...I can't believe this. This is...does destiny just hate me? What have I done to deserve this?!",
-   "dst": "",
+   "dst": "...나... 믿을 수가 없어. 이건... 운명이 날 미워하는 걸까? 내가 뭘 잘못했길래?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -808,7 +808,7 @@
   },
   "The Worm Holes#080": {
    "src": "The Mother Wyrm laid eggs... Eggs infested with parasites! Every single one is going to be born berserk!!",
-   "dst": "",
+   "dst": "어미 웜이 알을 낳았어... 기생충에 감염된 알을! 하나하나가 전부 미쳐 날뛰는 채로 태어날 거야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -818,7 +818,7 @@
   },
   "The Worm Holes#081": {
    "src": "You saw how strong the mother was...an infestation like this could cause the entire region of Gavel to collapse in a quake...",
-   "dst": "",
+   "dst": "어미가 얼마나 강했는지 봤잖아... 이렇게 감염이 퍼지면 Gavel 지역 전체가 지진으로 무너질지도 몰라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -828,7 +828,7 @@
   },
   "The Worm Holes#082": {
    "src": "They...they need to be stopped, but...I can't do it. I c-can't kill... I'm sorry, I just can't!",
-   "dst": "",
+   "dst": "저것들... 막아야 하는데... 난 못 해. 난 주, 죽일 수 없어... 미안, 도저히 못 하겠어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -838,7 +838,7 @@
   },
   "The Worm Holes#083": {
    "src": "Bring a group... Even Whelps can be a terror if they're enraged. Just...p-please, take care of this quickly.",
-   "dst": "",
+   "dst": "사람들을 데려와... 새끼라도 분노하면 무시무시할 수 있어. 그러니... 제, 제발 빨리 처리해 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",
@@ -848,7 +848,7 @@
   },
   "The Worm Holes#084": {
    "src": "You deserve the best... But that's more than I can give...so here. Take these. I'll move along.",
-   "dst": "",
+   "dst": "넌 최고의 보상을 받을 자격이 있지만... 내가 줄 수 있는 건 이게 다야... 자, 이거 받아. 난 이만 갈게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Worm Holes",

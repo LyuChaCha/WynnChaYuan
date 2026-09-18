@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "True Colours",
   "count": 570,
-  "translated": 567,
+  "translated": 570,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -12,7 +12,7 @@
  "entries": {
   "True Colours#000": {
    "src": "- Subject #{~}. Stole food from cafeteria.",
-   "dst": "",
+   "dst": "- 第 {~} 號實驗體。從食堂偷竊食物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -22,7 +22,7 @@
   },
   "True Colours#001": {
    "src": "- Subjects require sustenance based on the form they are currently using.",
-   "dst": "",
+   "dst": "- 實驗體所需的食物量取決於其當前使用的形態。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",
@@ -1472,7 +1472,7 @@
   },
   "True Colours#146": {
    "src": "The chest is empty...",
-   "dst": "",
+   "dst": "箱子是空的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "True Colours",

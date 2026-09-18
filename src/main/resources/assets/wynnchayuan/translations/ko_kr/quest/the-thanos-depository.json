@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Thanos Depository",
   "count": 42,
-  "translated": 9,
+  "translated": 51,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Thanos Depository#000": {
    "src": "Find out what's happening at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 무슨 일이 일어나는지 알아보세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -18,7 +18,7 @@
   },
   "The Thanos Depository#001": {
    "src": "This is just a disaster... I pray nothing goes awry with the recovery team.",
-   "dst": "",
+   "dst": "이건 완전히 재앙이야... 회수팀에 더는 문제가 없길 빌 뿐이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -28,7 +28,7 @@
   },
   "The Thanos Depository#002": {
    "src": "I'd never be able to live it off if I'm responsible for more deaths.",
-   "dst": "",
+   "dst": "내 탓으로 또 사람이 죽는다면 평생 떨쳐 내지 못할 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -38,7 +38,7 @@
   },
   "The Thanos Depository#003": {
    "src": "But I must do what it takes to prevent {p} from any more disaster.",
-   "dst": "",
+   "dst": "하지만 {p}에 더는 재앙이 닥치지 않게 할 수 있는 건 다 해야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -48,7 +48,7 @@
   },
   "The Thanos Depository#004": {
    "src": "Sir! Coulmis, sir!",
-   "dst": "",
+   "dst": "대장님! Coulmis 대장님!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -58,7 +58,7 @@
   },
   "The Thanos Depository#005": {
    "src": "Atila, you're back! Give it to me straight, did they succeed? We can't afford any more losses.",
-   "dst": "",
+   "dst": "Atila, 돌아왔군! 솔직히 말해 봐, 성공했나? 더는 희생을 감당할 여유가 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -68,7 +68,7 @@
   },
   "The Thanos Depository#006": {
    "src": "No, sir... I'm afraid not.",
-   "dst": "",
+   "dst": "아뇨, 대장님... 유감이지만 실패했습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -78,7 +78,7 @@
   },
   "The Thanos Depository#007": {
    "src": "The elevator leads right in to where the dragon lays. Without knowing when it's asleep, it's a gamble.",
-   "dst": "",
+   "dst": "승강기는 용이 누워 있는 곳으로 곧장 이어집니다. 언제 잠드는지 모르니 도박이나 마찬가지예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -88,7 +88,7 @@
   },
   "The Thanos Depository#008": {
    "src": "So we truly do need to go through the vault. But with the defense systems gone haywire...",
-   "dst": "",
+   "dst": "그럼 정말 금고를 지나가야 하는군. 하지만 방어 체계가 엉망이 된 지금은...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -98,7 +98,7 @@
   },
   "The Thanos Depository#009": {
    "src": "I'm sorry sir...",
-   "dst": "",
+   "dst": "죄송합니다, 대장님...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -108,7 +108,7 @@
   },
   "The Thanos Depository#010": {
    "src": "Think nothing of it, let's get back to the drawing board.",
-   "dst": "",
+   "dst": "신경 쓰지 마. 처음부터 다시 계획을 세워 보자고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -118,7 +118,7 @@
   },
   "The Thanos Depository#011": {
    "src": "Yes, I'll get to it immediately.",
-   "dst": "",
+   "dst": "네, 바로 착수하겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -128,7 +128,7 @@
   },
   "The Thanos Depository#012": {
    "src": "You there, human! What's your business here? Come speak to me.",
-   "dst": "",
+   "dst": "거기, 인간! 여긴 무슨 일인가? 이리 와서 얘기 좀 하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -138,7 +138,7 @@
   },
   "The Thanos Depository#013": {
    "src": "What's your business here? This place is off limits, the vault is very dangerous right now.",
-   "dst": "",
+   "dst": "여긴 무슨 일인가? 출입 금지 구역이야. 지금 금고는 아주 위험하다고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -148,7 +148,7 @@
   },
   "The Thanos Depository#014": {
    "src": "Now that I look, say, that gear of yours is pretty high-quality, yeah? What's your name?",
-   "dst": "",
+   "dst": "다시 보니, 이봐, 자네 장비 꽤 고급이잖아? 이름이 뭔가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -158,7 +158,7 @@
   },
   "The Thanos Depository#015": {
    "src": "... where have I heard that name before... Oh, I remember! You're that guy who defeated that Qira woman, yeah?",
-   "dst": "",
+   "dst": "...그 이름 어디서 들었더라... 아, 기억났다! 자네가 그 Qira라는 여자를 쓰러뜨린 사람이지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -168,7 +168,7 @@
   },
   "The Thanos Depository#016": {
    "src": "... where have I heard that name before... Oh, I remember! You're the one who helped resolve the whole Dogun thing, right?",
-   "dst": "",
+   "dst": "...그 이름 어디서 들었더라... 아, 기억났다! 자네가 그 Dogun 사태 해결을 도운 사람이지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -178,7 +178,7 @@
   },
   "The Thanos Depository#017": {
    "src": "I see, I haven't seen you around before.",
-   "dst": "",
+   "dst": "그렇군, 이 근처에선 처음 보는 얼굴이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -188,7 +188,7 @@
   },
   "The Thanos Depository#018": {
    "src": "Nevertheless, {p} is in danger. To put it simply, a dragon is living uninvited in our depository.",
-   "dst": "",
+   "dst": "아무튼 {p}이(가) 위험에 처했네. 간단히 말해, 용 한 마리가 허락도 없이 우리 보관소에 살고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -198,7 +198,7 @@
   },
   "The Thanos Depository#019": {
    "src": "Perhaps, you've seen its lair above our city. Normally she leaves us unharmed, but one day she suddenly made her way in to this vault.",
-   "dst": "",
+   "dst": "도시 위에 있는 둥지를 봤을지도 모르겠군. 평소엔 우릴 해치지 않는데, 어느 날 갑자기 이 금고로 들어와 버렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -208,7 +208,7 @@
   },
   "The Thanos Depository#020": {
    "src": "My great friend Atila has been leading a recon squad, he's discerned that she's nesting an egg.",
-   "dst": "",
+   "dst": "내 좋은 친구 Atila가 정찰대를 이끌고 있는데, 용이 알을 품고 있다는 걸 알아냈지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -218,7 +218,7 @@
   },
   "The Thanos Depository#021": {
    "src": "We've tried at our greatest expenses to steal the egg, and bring it back to her nest, so that maybe she would leave... But, as you've heard, it's not going well.",
-   "dst": "",
+   "dst": "막대한 대가를 치르며 알을 훔쳐 둥지로 돌려놓으려 했어. 그러면 떠날지도 모르니까... 하지만 들었다시피 잘 풀리지 않고 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -228,7 +228,7 @@
   },
   "The Thanos Depository#022": {
    "src": "I don't normally ask this of strangers, but we've run ourselves thin. Do you think you're up to help? I'll make sure it's all worth your trouble.",
-   "dst": "",
+   "dst": "보통 낯선 이에게 이런 부탁은 안 하지만, 우린 한계에 다다랐어. 도와줄 수 있겠나? 수고한 만큼 꼭 보답하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -238,7 +238,7 @@
   },
   "The Thanos Depository#023": {
    "src": "So you'll help!? Thank you so much! I'll make sure it's worth every moment!",
-   "dst": "",
+   "dst": "도와주겠다고!? 정말 고맙네! 한순간도 헛되지 않게 해 주지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -248,7 +248,7 @@
   },
   "The Thanos Depository#024": {
    "src": "You'll have to go through this chamber behind me to reach the depository. Our only other way in is right where the dragon is...",
-   "dst": "",
+   "dst": "보관소에 가려면 내 뒤에 있는 이 방을 지나가야 해. 다른 입구는 딱 용이 있는 곳밖에 없거든...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -258,7 +258,7 @@
   },
   "The Thanos Depository#025": {
    "src": "Atila knows some of the inner workings of the vault. I bid you good luck and will be praying for your success. Your courage will inspire {p}.",
-   "dst": "",
+   "dst": "Atila가 금고 내부 구조를 좀 알고 있어. 행운을 비네, 성공을 기도하지. 자네의 용기가 {p}에 힘이 될 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -268,7 +268,7 @@
   },
   "The Thanos Depository#026": {
    "src": "Oh, so it wasn't meant to be I suppose...",
-   "dst": "",
+   "dst": "아, 역시 안 될 일이었나 보군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -278,7 +278,7 @@
   },
   "The Thanos Depository#027": {
    "src": "Well, if we cross paths again, I'll always much appreciate your help... Back to the drawing board...",
-   "dst": "",
+   "dst": "뭐, 다시 만나게 되면 언제든 도움은 고맙게 받겠네... 처음부터 다시 계획을 세워야겠군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -288,7 +288,7 @@
   },
   "The Thanos Depository#028": {
    "src": "Enter the vault at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 금고에 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -298,7 +298,7 @@
   },
   "The Thanos Depository#029": {
    "src": "Head to the {p} Depository at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p} 보관소로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -308,7 +308,7 @@
   },
   "The Thanos Depository#030": {
    "src": "Find a way through the depository.",
-   "dst": "",
+   "dst": "보관소를 통과할 길을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -318,7 +318,7 @@
   },
   "The Thanos Depository#031": {
    "src": "Ride the minecarts to get further in to the depository",
-   "dst": "",
+   "dst": "광차를 타고 보관소 더 깊숙이 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -328,7 +328,7 @@
   },
   "The Thanos Depository#032": {
    "src": "Steal Ozoth's egg and escape the depository.",
-   "dst": "",
+   "dst": "Ozoth의 알을 훔쳐 보관소에서 탈출하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -338,7 +338,7 @@
   },
   "The Thanos Depository#033": {
    "src": "Use the lift to escape.",
-   "dst": "",
+   "dst": "승강기를 타고 탈출하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -348,7 +348,7 @@
   },
   "The Thanos Depository#034": {
    "src": "Oh-oh my gosh!! I took you for dead, and thought the dragon was sending me up a corpse!",
-   "dst": "",
+   "dst": "오, 세상에!! 죽은 줄 알았어! 용이 시체를 올려 보내는 줄 알았다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -358,7 +358,7 @@
   },
   "The Thanos Depository#035": {
    "src": "You really got it!? Hurry, then, the nest is up through this cave! Maybe {p} can finally be rid of its woes...",
-   "dst": "",
+   "dst": "정말 가져왔어!? 그럼 서둘러, 둥지는 이 동굴 위쪽이야! 어쩌면 {p}도 드디어 시름을 덜겠군...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -368,7 +368,7 @@
   },
   "The Thanos Depository#036": {
    "src": "Place Ozoth's egg back in her nest at [{~},-{~}].",
-   "dst": "",
+   "dst": "Ozoth의 알을 [{~},-{~}]의 둥지에 돌려놓으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -378,7 +378,7 @@
   },
   "The Thanos Depository#037": {
    "src": "Talk to Atila.",
-   "dst": "",
+   "dst": "Atila에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -388,7 +388,7 @@
   },
   "The Thanos Depository#038": {
    "src": "She's a beauty, isn't she? A monster though, nevertheless.",
-   "dst": "",
+   "dst": "아름답지 않아? 그래도 괴물은 괴물이지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -398,7 +398,7 @@
   },
   "The Thanos Depository#039": {
    "src": "{u}! Over here... Atila told me the news, I came as fast as I could!",
-   "dst": "",
+   "dst": "{u}! 여기야... Atila한테 소식 듣고 최대한 빨리 왔네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -408,7 +408,7 @@
   },
   "The Thanos Depository#040": {
    "src": "You're a hero, lad! With the dragon out of our city, {p} no longer has to live in fear.",
-   "dst": "",
+   "dst": "자넨 영웅이야! 용이 도시에서 떠났으니 {p}도 더는 두려움 속에 살지 않아도 되네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -418,7 +418,7 @@
   },
   "The Thanos Depository#041": {
    "src": "I've prepared your reward. The people of {p} will remember your contribution for years to come.",
-   "dst": "",
+   "dst": "보상은 준비해 뒀네. {p} 사람들은 자네의 공헌을 오래도록 기억할 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",

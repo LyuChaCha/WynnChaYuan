@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Potion Making",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Potion Making#000": {
    "src": "Talk to The Assistant in {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Habla con el Ayudante en {p}, en [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -18,7 +18,7 @@
   },
   "Potion Making#001": {
    "src": "Heeh...stranger. I...may need your assistance...",
-   "dst": "",
+   "dst": "Jeje...forastero. Puede...que necesite tu ayuda...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -28,7 +28,7 @@
   },
   "Potion Making#002": {
    "src": "My master...wishes to create a very dangerous potion...a transformative elixir of invincibility...",
-   "dst": "",
+   "dst": "Mi maestro...quiere crear una poción muy peligrosa...un elixir de invencibilidad que transforma...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -38,7 +38,7 @@
   },
   "Potion Making#003": {
    "src": "I was...in support of this... but then, he accrued essence of...the corruption. I had to run away...",
-   "dst": "",
+   "dst": "Yo...lo apoyaba... pero luego consiguió esencia de...la Corrupción. Tuve que huir...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -48,7 +48,7 @@
   },
   "Potion Making#004": {
    "src": "I fear...that he may be going...too far. I need your help...",
-   "dst": "",
+   "dst": "Me temo...que está yendo...demasiado lejos. Necesito tu ayuda...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -58,7 +58,7 @@
   },
   "Potion Making#005": {
    "src": "I want...to stop him...but I need you to...get me the necessary ingredients... to neutralize the potion...",
-   "dst": "",
+   "dst": "Quiero...detenerlo...pero necesito que...me traigas los ingredientes... para neutralizar la poción...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -68,7 +68,7 @@
   },
   "Potion Making#006": {
    "src": "Get me...[{~} Red Mushroom], they can be found outside the east gate behind me.",
-   "dst": "",
+   "dst": "Tráeme...[{~} Red Mushroom], se encuentran fuera de la puerta este, detrás de mí.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -78,7 +78,7 @@
   },
   "Potion Making#007": {
    "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
-   "dst": "",
+   "dst": "Mata Mooshrooms de los alrededores y lleva [{~} Red Mushrooms] al Ayudante en {p}",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -88,7 +88,7 @@
   },
   "Potion Making#008": {
    "src": "Quickly, get me... [{~} Red Mushroom] as I asked... go through the {p} outside the east gate from here.",
-   "dst": "",
+   "dst": "Rápido, tráeme... [{~} Red Mushroom] como te pedí... sal por la puerta este y cruza {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -98,7 +98,7 @@
   },
   "Potion Making#009": {
    "src": "The...the...cows. Steal...from them.",
-   "dst": "",
+   "dst": "Las...las...vacas. Róbaselas...a ellas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -108,7 +108,7 @@
   },
   "Potion Making#010": {
    "src": "Good... Hurry..!",
-   "dst": "",
+   "dst": "Bien... ¡Deprisa..!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -118,7 +118,7 @@
   },
   "Potion Making#011": {
    "src": "Good...good. You have the mushrooms.",
-   "dst": "",
+   "dst": "Bien...bien. Ya tienes las setas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -128,7 +128,7 @@
   },
   "Potion Making#012": {
    "src": "I'll... return to my master's house...and sneak the mushrooms into...his potion. Wait for me here...",
-   "dst": "",
+   "dst": "Volveré... a casa de mi maestro...y colaré las setas en...su poción. Espérame aquí...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -138,7 +138,7 @@
   },
   "Potion Making#013": {
    "src": "I...have returned... He came back...just as I finished slipping the mushrooms in and...told me...to get out.",
-   "dst": "",
+   "dst": "He...vuelto... Volvió...justo cuando acababa de echar las setas y...me dijo...que me largara.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -148,7 +148,7 @@
   },
   "Potion Making#014": {
    "src": "You must...ensure that it has worked. You...are much stronger than I, stranger...",
-   "dst": "",
+   "dst": "Tienes que...asegurarte de que ha funcionado. Tú...eres mucho más fuerte que yo, forastero...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -158,7 +158,7 @@
   },
   "Potion Making#015": {
    "src": "Did you see the orange witch hat roofed hut when you were gathering the mushrooms?",
-   "dst": "",
+   "dst": "¿Viste una cabaña con tejado de sombrero de bruja naranja mientras recogías las setas?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -168,7 +168,7 @@
   },
   "Potion Making#016": {
    "src": "That is my master's house, you...must go back out the east gate and enter the hut.",
-   "dst": "",
+   "dst": "Esa es la casa de mi maestro; tienes...que salir otra vez por la puerta este y entrar en la cabaña.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -178,7 +178,7 @@
   },
   "Potion Making#017": {
    "src": "You must...make sure...he has not managed...to become invincible... Do what has to be done....",
-   "dst": "",
+   "dst": "Tienes que...asegurarte...de que no ha logrado...volverse invencible... Haz lo que haya que hacer....",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -188,7 +188,7 @@
   },
   "Potion Making#018": {
    "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
-   "dst": "",
+   "dst": "Entra en la cabaña en [{~}, {~}, -{~}], mata a Essren y llévate su abrigo.",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -198,7 +198,7 @@
   },
   "Potion Making#019": {
    "src": "You must go back out the east gate and enter the hut, it is my master's house.",
-   "dst": "",
+   "dst": "Vuelve a salir por la puerta este y entra en la cabaña; es la casa de mi maestro.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -208,7 +208,7 @@
   },
   "Potion Making#020": {
    "src": "Don't forget... Do what you must...",
-   "dst": "",
+   "dst": "No olvides... Haz lo que debas...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -218,7 +218,7 @@
   },
   "Potion Making#021": {
    "src": "Ah, you must be the one my assistant told me about.",
-   "dst": "",
+   "dst": "Ah, tú debes de ser de quien me habló mi ayudante.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -228,7 +228,7 @@
   },
   "Potion Making#022": {
    "src": "If you are trying to stop me, it's too late. I already drank the pot...",
-   "dst": "",
+   "dst": "Si intentas detenerme, llegas tarde. Ya me he bebido la po...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -238,7 +238,7 @@
   },
   "Potion Making#023": {
    "src": "What is this taste? Mushrooms? This can't b",
-   "dst": "",
+   "dst": "¿Qué sabor es este? ¿Setas? No puede s",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -248,7 +248,7 @@
   },
   "Potion Making#024": {
    "src": "Aaaaargh!!!!!",
-   "dst": "",
+   "dst": "¡Aaaaargh!!!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -258,7 +258,7 @@
   },
   "Potion Making#025": {
    "src": "What have you done to this potion, human?! You will pay for it!",
-   "dst": "",
+   "dst": "¡¿Qué le has hecho a esta poción, humano?! ¡Lo pagarás!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -268,7 +268,7 @@
   },
   "Potion Making#026": {
    "src": "Bring back Essren's Dusty Coat to The Assistant in {p}",
-   "dst": "",
+   "dst": "Lleva el Abrigo Polvoriento de Essren al Ayudante en {p}",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -278,7 +278,7 @@
   },
   "Potion Making#027": {
    "src": "I...must thank you, stranger...",
-   "dst": "",
+   "dst": "Debo...darte las gracias, forastero...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -288,7 +288,7 @@
   },
   "Potion Making#028": {
    "src": "Don't believe...everything people tell you... If master managed to...discover invincibility... No...too...dangerous.",
-   "dst": "",
+   "dst": "No creas...todo lo que te cuentan... Si el maestro hubiera...logrado la invencibilidad... No...muy...peligroso.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -298,7 +298,7 @@
   },
   "Potion Making#029": {
    "src": "This was...for the better...",
-   "dst": "",
+   "dst": "Esto era...lo mejor...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -308,7 +308,7 @@
   },
   "Potion Making#030": {
    "src": "Now. I...do not want you saying anything about...these events. Take these, and...never speak of this again.",
-   "dst": "",
+   "dst": "Ahora. No...quiero que digas nada sobre...todo esto. Toma esto y...no vuelvas a hablar del tema.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",

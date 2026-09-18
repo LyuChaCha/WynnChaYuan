@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Ultimate Weapon",
   "count": 77,
-  "translated": 1,
+  "translated": 77,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Ultimate Weapon#000": {
    "src": "Speak to Dodegar Bandysnoot at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Dodegar Bandysnoot에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -18,7 +18,7 @@
   },
   "The Ultimate Weapon#001": {
    "src": "I'm glad you came along, I could do with a little help if you're not too busy.",
-   "dst": "",
+   "dst": "잘 와 줬어. 너무 바쁘지 않다면 도움이 좀 필요하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -28,7 +28,7 @@
   },
   "The Ultimate Weapon#002": {
    "src": "I'm Dodegar Bandysnoot, the world famous Hobbit swordsmith! Perhaps you've heard of me?",
-   "dst": "",
+   "dst": "난 Dodegar Bandysnoot, 세계적으로 유명한 호빗 도검 장인이야! 들어 봤지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -38,7 +38,7 @@
   },
   "The Ultimate Weapon#003": {
    "src": "No? Oh... Well, I've had an idea about how I could make the best weapon that the world has ever seen!",
-   "dst": "",
+   "dst": "아니라고? 아... 뭐, 세상에 없던 최고의 무기를 만들 아이디어가 떠올랐거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -48,7 +48,7 @@
   },
   "The Ultimate Weapon#004": {
    "src": "But, I need some help getting the special resources to make it.",
-   "dst": "",
+   "dst": "그런데 그걸 만들 특별한 재료를 구하는 데 도움이 필요해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -58,7 +58,7 @@
   },
   "The Ultimate Weapon#005": {
    "src": "You'll help?! Excellent! We shall gather enough resources to make one for each of us!",
-   "dst": "",
+   "dst": "도와준다고?! 좋아! 우리 둘 몫을 만들 만큼 재료를 모으자고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -68,7 +68,7 @@
   },
   "The Ultimate Weapon#006": {
    "src": "So firstly, I need some living wood for the handle, [{~} Enchanted Stick] should be enough.",
-   "dst": "",
+   "dst": "우선 손잡이에 쓸 살아 있는 나무가 필요해. [{~} 마법 막대기]면 충분할 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -78,7 +78,7 @@
   },
   "The Ultimate Weapon#007": {
    "src": "The wood sprites located across the river to the west, in a big tree trunk, have magical properties! The handle can then mold to the user's hand! One shouldn't be too hard to come across!",
-   "dst": "",
+   "dst": "서쪽 강 건너 커다란 나무 둥치에 사는 나무 정령들에겐 마력이 있어! 그러면 손잡이가 쓰는 사람 손에 맞춰지지! 하나쯤은 어렵지 않게 구할 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -88,7 +88,7 @@
   },
   "The Ultimate Weapon#008": {
    "src": "I hope you are prepared, this will be your best quest yet!",
-   "dst": "",
+   "dst": "준비됐길 바라. 지금까지 한 퀘스트 중 최고가 될 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -98,7 +98,7 @@
   },
   "The Ultimate Weapon#009": {
    "src": "Collect [{~} Enchanted Stick] from Wood Sprites at [-{~}, {~}, -{~}] and return them to Dodegar",
-   "dst": "",
+   "dst": "[-{~2}, {~3}, -{~4}]의 나무 정령에게서 [{~1} 마법 막대기]를 모아 Dodegar에게 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -108,7 +108,7 @@
   },
   "The Ultimate Weapon#010": {
    "src": "Wow! You got the wood I needed, thanks!",
-   "dst": "",
+   "dst": "와! 필요한 나무를 구해 왔네, 고마워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -118,7 +118,7 @@
   },
   "The Ultimate Weapon#011": {
    "src": "While I'm making the handle, could you help me with the blade?",
-   "dst": "",
+   "dst": "내가 손잡이를 만드는 동안 칼날 좀 도와줄래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -128,7 +128,7 @@
   },
   "The Ultimate Weapon#012": {
    "src": "Since we want this weapon to be as good as possible we need to find some sacred Hobbit metal!",
-   "dst": "",
+   "dst": "최고의 무기를 만들려면 신성한 호빗 금속을 찾아야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -138,7 +138,7 @@
   },
   "The Ultimate Weapon#013": {
    "src": "The hobbit village, The Shiar, is really close! Follow the southern road. My brother Gogedar should be there!",
-   "dst": "",
+   "dst": "호빗 마을 Shiar가 아주 가까워! 남쪽 길을 따라가. 내 동생 Gogedar가 거기 있을 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -148,7 +148,7 @@
   },
   "The Ultimate Weapon#014": {
    "src": "Dodegar needs [{~} Sacred Hobbit Metal] from the Shiar at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Dodegar에게 [-{~2}, {~3}, -{~4}]의 Shiar에서 [{~1} 신성한 호빗 금속]이 필요합니다",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -158,7 +158,7 @@
   },
   "The Ultimate Weapon#015": {
    "src": "My brother you say... Trying to create a weapon...",
-   "dst": "",
+   "dst": "우리 형이라고... 무기를 만들려고 한다고...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -168,7 +168,7 @@
   },
   "The Ultimate Weapon#016": {
    "src": "Hmmm...",
-   "dst": "",
+   "dst": "흐으음...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -178,7 +178,7 @@
   },
   "The Ultimate Weapon#017": {
    "src": "Oh he needs Sacred Hobbit Metal!?",
-   "dst": "",
+   "dst": "아, 신성한 호빗 금속이 필요하다고!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -188,7 +188,7 @@
   },
   "The Ultimate Weapon#018": {
    "src": "Hmm...!",
-   "dst": "",
+   "dst": "흐음...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -198,7 +198,7 @@
   },
   "The Ultimate Weapon#019": {
    "src": "Sorry can't help you. I don't really know what that is.",
-   "dst": "",
+   "dst": "미안, 못 도와주겠어. 그게 뭔지 잘 모르거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -208,7 +208,7 @@
   },
   "The Ultimate Weapon#020": {
    "src": "Maybe ask our cousin, Togedar?",
-   "dst": "",
+   "dst": "사촌 Togedar한테 물어보는 건 어때?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -218,7 +218,7 @@
   },
   "The Ultimate Weapon#021": {
    "src": "Find Togedar in the Shiar.",
-   "dst": "",
+   "dst": "Shiar에서 Togedar를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -228,7 +228,7 @@
   },
   "The Ultimate Weapon#022": {
    "src": "Dodegar? Does not really ring a bell I'm afraid.",
-   "dst": "",
+   "dst": "Dodegar? 미안하지만 잘 모르겠는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -238,7 +238,7 @@
   },
   "The Ultimate Weapon#023": {
    "src": "Oh! Gogedar's brother, why didn't you tell me that.",
-   "dst": "",
+   "dst": "아! Gogedar의 형이구나, 진작 말하지 그랬어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -248,7 +248,7 @@
   },
   "The Ultimate Weapon#024": {
    "src": "Sacred Hobbit Metal... This is a metal forged by master blacksmith hobbits within our village. It is a bit expensive to get by but holds great potential, if used properly.",
-   "dst": "",
+   "dst": "신성한 호빗 금속... 우리 마을의 대장장이 호빗 장인들이 벼려 낸 금속이야. 구하기엔 좀 비싸지만 제대로 쓰면 잠재력이 엄청나지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -258,7 +258,7 @@
   },
   "The Ultimate Weapon#025": {
    "src": "Oh. You need a piece?",
-   "dst": "",
+   "dst": "아. 한 조각 필요해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -268,7 +268,7 @@
   },
   "The Ultimate Weapon#026": {
    "src": "I don't have any. Maybe ask my nephew's brother Alegdar?",
-   "dst": "",
+   "dst": "난 없어. 내 조카의 형 Alegdar한테 물어봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -278,7 +278,7 @@
   },
   "The Ultimate Weapon#027": {
    "src": "Find Alegdar in the Shiar.",
-   "dst": "",
+   "dst": "Shiar에서 Alegdar를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -288,7 +288,7 @@
   },
   "The Ultimate Weapon#028": {
    "src": "Oh?",
-   "dst": "",
+   "dst": "응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -298,7 +298,7 @@
   },
   "The Ultimate Weapon#029": {
    "src": "I actually don't know much about... anything.",
-   "dst": "",
+   "dst": "사실 난 아는 게... 아무것도 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -308,7 +308,7 @@
   },
   "The Ultimate Weapon#030": {
    "src": "I kind of just... stand around here.",
-   "dst": "",
+   "dst": "그냥... 여기 서 있을 뿐이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -318,7 +318,7 @@
   },
   "The Ultimate Weapon#031": {
    "src": "Everyone I have ever met just calls me annoying and useless. So I decided to stop trying.",
-   "dst": "",
+   "dst": "만나는 사람마다 나더러 짜증 나고 쓸모없대. 그래서 노력하는 걸 그만뒀어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -328,7 +328,7 @@
   },
   "The Ultimate Weapon#032": {
    "src": "You know, life is hard. We all just have to fight through, and then eventually, we might become happy.",
-   "dst": "",
+   "dst": "있잖아, 인생은 힘들어. 다들 버텨 내다 보면 언젠간 행복해질지도 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -338,7 +338,7 @@
   },
   "The Ultimate Weapon#033": {
    "src": "Right sorry... Ask Balegar for any information. He is way smarter.",
-   "dst": "",
+   "dst": "아, 미안... 정보는 Balegar한테 물어봐. 나보다 훨씬 똑똑하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -348,7 +348,7 @@
   },
   "The Ultimate Weapon#034": {
    "src": "Find Balegar in the Shiar.",
-   "dst": "",
+   "dst": "Shiar에서 Balegar를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -358,7 +358,7 @@
   },
   "The Ultimate Weapon#035": {
    "src": "My cousin's nephew's dad has had a rough year... I feel bad for him.",
-   "dst": "",
+   "dst": "내 사촌의 조카의 아빠가 올해 힘들었대... 딱하더라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -368,7 +368,7 @@
   },
   "The Ultimate Weapon#036": {
    "src": "Oh well!",
-   "dst": "",
+   "dst": "뭐, 어쩔 수 없지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -378,7 +378,7 @@
   },
   "The Ultimate Weapon#037": {
    "src": "I have nooooo clue about that metal. I heard it was just a valuable as a normal rock.",
-   "dst": "",
+   "dst": "그 금속은 저어어언혀 모르겠어. 그냥 평범한 돌만큼 값지다던데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -388,7 +388,7 @@
   },
   "The Ultimate Weapon#038": {
    "src": "Maybe my cousin Reyoretrsed knows anything about it.",
-   "dst": "",
+   "dst": "내 사촌 Reyoretrsed라면 뭐라도 알지 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -398,7 +398,7 @@
   },
   "The Ultimate Weapon#039": {
    "src": "Find Reyoretrsed in the Shiar.",
-   "dst": "",
+   "dst": "Shiar에서 Reyoretrsed를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -408,7 +408,7 @@
   },
   "The Ultimate Weapon#040": {
    "src": "Reyoretrsed? That's me!",
-   "dst": "",
+   "dst": "Reyoretrsed? 그게 나야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -418,7 +418,7 @@
   },
   "The Ultimate Weapon#041": {
    "src": "You are wondering how my name is pronounced? What a rude question.",
-   "dst": "",
+   "dst": "내 이름을 어떻게 읽는지 궁금하다고? 무례한 질문이군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -428,7 +428,7 @@
   },
   "The Ultimate Weapon#042": {
    "src": "Ray-ore-tree-sed, obviously. What is a human doing here?",
-   "dst": "",
+   "dst": "당연히 레이-오어-트리-세드지. 인간이 여기서 뭐 해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -438,7 +438,7 @@
   },
   "The Ultimate Weapon#043": {
    "src": "You are wondering if I have Sacred whatever metal?",
-   "dst": "",
+   "dst": "신성한 뭐시기 금속이 있냐고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -448,7 +448,7 @@
   },
   "The Ultimate Weapon#044": {
    "src": "I'm {~}. Now if you excuse me, I am busy standing still. Go bother Richard or something.",
-   "dst": "",
+   "dst": "난 {~}살이야. 이제 실례할게, 가만히 서 있느라 바쁘거든. Richard나 가서 귀찮게 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -458,7 +458,7 @@
   },
   "The Ultimate Weapon#045": {
    "src": "Find Richard in the Shiar.",
-   "dst": "",
+   "dst": "Shiar에서 Richard를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -468,7 +468,7 @@
   },
   "The Ultimate Weapon#046": {
    "src": "I've been trying to tell you that I have what you need.",
-   "dst": "",
+   "dst": "네가 찾는 거 나한테 있다고 계속 말하려 했잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -478,7 +478,7 @@
   },
   "The Ultimate Weapon#047": {
    "src": "You humans really need to practice your communication skills, please.",
-   "dst": "",
+   "dst": "너희 인간들은 제발 소통하는 법 좀 연습해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -488,7 +488,7 @@
   },
   "The Ultimate Weapon#048": {
    "src": "Anyway, here. Take it! This metal is just a scam anyway, nothing special with it.",
-   "dst": "",
+   "dst": "아무튼, 자. 가져가! 어차피 이 금속은 사기야, 특별할 것도 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -498,7 +498,7 @@
   },
   "The Ultimate Weapon#049": {
    "src": "Return to Dodegar with the metal.",
-   "dst": "",
+   "dst": "금속을 가지고 Dodegar에게 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -508,7 +508,7 @@
   },
   "The Ultimate Weapon#050": {
    "src": "I hope it wasn't too much of an issue to get!",
-   "dst": "",
+   "dst": "구하는 데 너무 고생하지 않았길 바라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -518,7 +518,7 @@
   },
   "The Ultimate Weapon#051": {
    "src": "... I forgot a step. I can't attach a blade without a binder material.",
-   "dst": "",
+   "dst": "...한 단계를 잊었네. 접합 재료 없이는 칼날을 붙일 수 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -528,7 +528,7 @@
   },
   "The Ultimate Weapon#052": {
    "src": "I need the nectar of a native flower of the forest to attach it. [{~} Diplacus Aurantiacus] would do the trick.",
-   "dst": "",
+   "dst": "칼날을 붙이려면 숲에 자생하는 꽃의 꿀이 필요해. [{~} Diplacus Aurantiacus]면 될 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -538,7 +538,7 @@
   },
   "The Ultimate Weapon#053": {
    "src": "Finding the flower can be rather difficult, here's a riddle on how to find it.",
-   "dst": "",
+   "dst": "그 꽃은 찾기가 꽤 어려워. 찾는 방법을 알려 줄 수수께끼가 여기 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -548,7 +548,7 @@
   },
   "The Ultimate Weapon#054": {
    "src": "On the side of a hut, hidden inside a hole. Resting in a forest of light, without plight. Whatever that would mean.",
-   "dst": "",
+   "dst": "오두막 옆면, 구멍 속에 숨어 있네. 빛의 숲에서 걱정 없이 쉬고 있네. 무슨 뜻인지는 모르겠지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -558,7 +558,7 @@
   },
   "The Ultimate Weapon#055": {
    "src": "Find the Diplacus Aurantiacus by following the riddle to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "수수께끼를 따라 [-{~}, {~}, -{~}]에서 Diplacus Aurantiacus를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -568,7 +568,7 @@
   },
   "The Ultimate Weapon#056": {
    "src": "Hold up! This feels waaay, toooo easy.",
-   "dst": "",
+   "dst": "잠깐! 이건 너어어무 쉬운 것 같은데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -578,7 +578,7 @@
   },
   "The Ultimate Weapon#057": {
    "src": "If I'm going to give you this amazingly, incredible, showstopping, crazy item particulary for free, you need to at least work for it!",
-   "dst": "",
+   "dst": "이 놀랍고 믿기지 않고 끝내주고 미친 아이템을 무료로 줄 거라면, 적어도 노력은 해야지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -588,7 +588,7 @@
   },
   "The Ultimate Weapon#058": {
    "src": "Give me that!",
-   "dst": "",
+   "dst": "그거 이리 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -608,7 +608,7 @@
   },
   "The Ultimate Weapon#060": {
    "src": "This looks so much better! Anyway, bring me that flower now!",
-   "dst": "",
+   "dst": "훨씬 낫네! 아무튼, 이제 그 꽃을 가져와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -618,7 +618,7 @@
   },
   "The Ultimate Weapon#061": {
    "src": "Talk to Dodegar with the Diplacus Aurantiacus.",
-   "dst": "",
+   "dst": "Diplacus Aurantiacus를 가지고 Dodegar에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -628,7 +628,7 @@
   },
   "The Ultimate Weapon#062": {
    "src": "Took you a while, did it not?",
-   "dst": "",
+   "dst": "꽤 오래 걸렸지, 그렇지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -638,7 +638,7 @@
   },
   "The Ultimate Weapon#063": {
    "src": "It's starting to look pretty amazing! Just like it's supposed to I'm sure!",
-   "dst": "",
+   "dst": "점점 끝내주게 보이기 시작하네! 분명 원래 이런 모습일 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -648,7 +648,7 @@
   },
   "The Ultimate Weapon#064": {
    "src": "Maybe this will actually work out. Either way, last ingredient we need!",
-   "dst": "",
+   "dst": "어쩌면 진짜 잘될지도 몰라. 어쨌든 마지막 재료가 필요해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -658,7 +658,7 @@
   },
   "The Ultimate Weapon#065": {
    "src": "So to finalize and apply some magical properties to this uniquely amazing item we need something known as Luster Blood.",
-   "dst": "",
+   "dst": "이 독보적으로 멋진 아이템을 마무리하고 마력을 입히려면 광택의 피라는 게 필요해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -668,7 +668,7 @@
   },
   "The Ultimate Weapon#066": {
    "src": "The only known creature in the west, probably in the whole world, if I'm being frank, is known as the Glow Dust Leaf Beetle of the Underworld, not sure where the name comes from.",
-   "dst": "",
+   "dst": "서쪽에서, 솔직히 말하면 아마 전 세계에서 유일하게 알려진 생물이 Glow Dust Leaf Beetle of the Underworld라는 녀석이야. 이름은 어디서 왔는지 모르겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -678,7 +678,7 @@
   },
   "The Ultimate Weapon#067": {
    "src": "I happen to know that this beetle lives in a cave in the eastern ravine thingy! If you walk straight east, you should stumble upon it, I promise!",
-   "dst": "",
+   "dst": "마침 그 딱정벌레가 동쪽 협곡 어딘가의 동굴에 산다는 걸 알고 있지! 동쪽으로 쭉 걸어가면 틀림없이 마주칠 거야, 약속해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -688,7 +688,7 @@
   },
   "The Ultimate Weapon#068": {
    "src": "Oh! Almost forgot to mention, about {~} Luster Blood is probably enough.",
-   "dst": "",
+   "dst": "아! 말하는 걸 깜빡할 뻔했네. 광택의 피는 {~}개쯤이면 충분할 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -698,7 +698,7 @@
   },
   "The Ultimate Weapon#069": {
    "src": "Find the cave at [-{~}, {~}, -{~}] and bring back [{~} Luster Blood] and bring it back to Dodegar.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 동굴을 찾아 [{~} 광택의 피]를 Dodegar에게 가져가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Ultimate Weapon",
@@ -708,7 +708,7 @@
   },
   "The Ultimate Weapon#070": {
    "src": "Do not step any closer... Or I will be forced to obliterate you!",
-   "dst": "",
+   "dst": "더 다가오지 마라... 그렇지 않으면 널 없애 버릴 수밖에 없다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -718,7 +718,7 @@
   },
   "The Ultimate Weapon#071": {
    "src": "The final component! It is finally here!",
-   "dst": "",
+   "dst": "마지막 재료! 드디어 손에 넣었어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -728,7 +728,7 @@
   },
   "The Ultimate Weapon#072": {
    "src": "Oh my Orphion!",
-   "dst": "",
+   "dst": "오 Orphion이시여!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -738,7 +738,7 @@
   },
   "The Ultimate Weapon#073": {
    "src": "Do you see how it's glowing, sparkling and... and radiating!",
-   "dst": "",
+   "dst": "이게 빛나고, 반짝이고... 광채를 뿜는 거 보여?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -748,7 +748,7 @@
   },
   "The Ultimate Weapon#074": {
    "src": "You don't? Uhm... maybe you need glasses humie.",
-   "dst": "",
+   "dst": "안 보인다고? 음... 인간, 안경이 필요한가 본데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -758,7 +758,7 @@
   },
   "The Ultimate Weapon#075": {
    "src": "As promised! Here you go! Always happy to practice the art of weapon creation.",
-   "dst": "",
+   "dst": "약속대로야! 자, 받아! 무기 제작 기술을 연습하는 건 언제나 즐거워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -768,7 +768,7 @@
   },
   "The Ultimate Weapon#000~1": {
    "src": "The metal is rather rare so I don't know if you can even find it...",
-   "dst": "",
+   "dst": "그 금속은 꽤 희귀해서 네가 찾을 수 있을지 모르겠어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",

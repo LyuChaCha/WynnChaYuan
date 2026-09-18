@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Blazing Retribution",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Blazing Retribution#000": {
    "src": "Speak to Piere in the {p} Plains at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Habla con Piere en las llanuras de {p}, en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -18,7 +18,7 @@
   },
   "Blazing Retribution#001": {
    "src": "Oh sweet baby bovine, my house, what am I going to do? Wait, who are you?",
-   "dst": "",
+   "dst": "Ay, por la sagrada vaquilla, mi casa, ¿qué voy a hacer? Espera, ¿quién eres?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -28,7 +28,7 @@
   },
   "Blazing Retribution#002": {
    "src": "Oh, a Human. Did the {p} authorities send you?",
-   "dst": "",
+   "dst": "Oh, un humano. ¿Te envían las autoridades de {p}?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -38,7 +38,7 @@
   },
   "Blazing Retribution#003": {
    "src": "Detective Jackson has already been here. Not that he's doing anything useful.",
-   "dst": "",
+   "dst": "El detective Jackson ya ha estado aquí. No es que esté haciendo nada útil.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -48,7 +48,7 @@
   },
   "Blazing Retribution#004": {
    "src": "An Orc managed to find some fire-imbued magical axe and burned down my house! Jackson didn't even call a firefighter!!",
-   "dst": "",
+   "dst": "¡Un orco consiguió un hacha mágica imbuida de fuego y quemó mi casa! ¡¡Jackson ni siquiera llamó a un bombero!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -58,7 +58,7 @@
   },
   "Blazing Retribution#005": {
    "src": "I don't know what to do, but maybe if you find Detective Jackson, you can kick his sorry rear into gear...",
-   "dst": "",
+   "dst": "No sé qué hacer, pero quizá si encuentras al detective Jackson puedas darle una patada para que espabile...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -68,7 +68,7 @@
   },
   "Blazing Retribution#006": {
    "src": "The Orcs are already savage brutes. If they really have their hands on magical weapons, we're all in trouble!",
-   "dst": "",
+   "dst": "Los orcos ya son unos brutos salvajes. ¡Si de verdad tienen armas mágicas, estamos todos en peligro!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -78,7 +78,7 @@
   },
   "Blazing Retribution#007": {
    "src": "I believe Detective Jackson is by his cart \"planning his next move.\" He's not far from here. Just continue past my farm!",
-   "dst": "",
+   "dst": "Creo que el detective Jackson está junto a su carro \"planeando su próximo paso\". No está lejos de aquí. ¡Sigue más allá de mi granja!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -88,7 +88,7 @@
   },
   "Blazing Retribution#008": {
    "src": "Report the attack to Detective Jackson at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Informa del ataque al detective Jackson en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -98,7 +98,7 @@
   },
   "Blazing Retribution#009": {
    "src": "How can I go about this...? I can't get involved myself, and they won't let me near... Wait, a human?",
-   "dst": "",
+   "dst": "¿Cómo lo hago...? Yo no puedo intervenir, y no me dejan acercarme... Espera, ¿un humano?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -108,7 +108,7 @@
   },
   "Blazing Retribution#010": {
    "src": "...what do you MEAN \"what am I doing?\" This is a delicate situation! I need to- wait...actually, you might just be the help I need.",
-   "dst": "",
+   "dst": "...¿cómo que QUÉ estoy haciendo? ¡Es una situación delicada! Necesito... espera... en realidad, puede que seas justo la ayuda que necesito.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -118,7 +118,7 @@
   },
   "Blazing Retribution#011": {
    "src": "I'll give you the lowdown- we believe the orcs stole magical weaponry from within {p}, particularly a flaming axe.",
-   "dst": "",
+   "dst": "Te pongo al día: creemos que los orcos robaron armas mágicas de dentro de {p}, en concreto un hacha llameante.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -128,7 +128,7 @@
   },
   "Blazing Retribution#012": {
    "src": "However, that's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
-   "dst": "",
+   "dst": "Pero eso es un vacío legal en el alto el fuego que pactamos con los orcos. El robo no cuenta como acto de agresión...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -138,7 +138,7 @@
   },
   "Blazing Retribution#013": {
    "src": "And that means my hands are tied. Humans, however, were not mentioned in the notes, so you'll need to retrieve it.",
-   "dst": "",
+   "dst": "Y eso me ata las manos. A los humanos, en cambio, no se los mencionaba, así que tendrás que recuperarla tú.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -148,7 +148,7 @@
   },
   "Blazing Retribution#014": {
    "src": "Our only saving grace is that it'll be impossible for them to replicate its power- Orcs are hilariously inept at magic.",
-   "dst": "",
+   "dst": "Lo único que nos salva es que les será imposible replicar su poder: los orcos son ridículamente ineptos con la magia.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -158,7 +158,7 @@
   },
   "Blazing Retribution#015": {
    "src": "But, to the primary problem- You've probably seen how many orc camps are around here. Searching will take a long while...",
-   "dst": "",
+   "dst": "Pero, al problema principal: habrás visto cuántos campamentos orcos hay por aquí. Buscar llevará muchísimo tiempo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -168,7 +168,7 @@
   },
   "Blazing Retribution#016": {
    "src": "My only leads are that the \"Sablestone\" and \"Loamsprout\" camps seem to be celebrating recently. Best to start there, yes?",
-   "dst": "",
+   "dst": "Mis únicas pistas son que los campamentos Sablestone y Loamsprout parecen estar de celebración. Mejor empezar por ahí, ¿no?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -178,7 +178,7 @@
   },
   "Blazing Retribution#017": {
    "src": "Just to review- You need to search those two camps for the Axe of {p}, and then return it to me if you find it.",
-   "dst": "",
+   "dst": "Repasemos: tienes que buscar el hacha de {p} en esos dos campamentos y traérmela si la encuentras.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -188,7 +188,7 @@
   },
   "Blazing Retribution#018": {
    "src": "Sablestone is to the north, and Loamsprout to the south. They will be guarded, so don't be afraid to knock some heads.",
-   "dst": "",
+   "dst": "Sablestone está al norte y Loamsprout al sur. Estarán vigilados, así que no te cortes a la hora de repartir leña.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -198,7 +198,7 @@
   },
   "Blazing Retribution#019": {
    "src": "Look for the stolen weapon at the Sablestone and Loamsprout Orc camps",
-   "dst": "",
+   "dst": "Busca el arma robada en los campamentos orcos Sablestone y Loamsprout",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -208,7 +208,7 @@
   },
   "Blazing Retribution#020": {
    "src": "Return to Detective Jackson with the news",
-   "dst": "",
+   "dst": "Vuelve con el detective Jackson con las noticias",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -218,7 +218,7 @@
   },
   "Blazing Retribution#021": {
    "src": "I see no axe in your hands, so I should assume neither Sablestone or Loamsprout had it.",
-   "dst": "",
+   "dst": "No veo ningún hacha en tus manos, así que supongo que ni Sablestone ni Loamsprout la tenían.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -228,7 +228,7 @@
   },
   "Blazing Retribution#022": {
    "src": "Wait, really? A stick was the most powerful weapon they had? And Loamsprout...threw their dinner at you...?",
-   "dst": "",
+   "dst": "Espera, ¿en serio? ¿Un palo era el arma más potente que tenían? Y en Loamsprout... ¿te tiraron la cena...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -238,7 +238,7 @@
   },
   "Blazing Retribution#023": {
    "src": "I can't believe this! How are those...those THINGS outsmarting us?! Are they shuffling the axe between camps?",
-   "dst": "",
+   "dst": "¡No me lo puedo creer! ¿Cómo esas... esas COSAS son más listas que nosotros? ¿Se pasan el hacha entre campamentos?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -248,7 +248,7 @@
   },
   "Blazing Retribution#024": {
    "src": "There are over a dozen camps between the Orcs and Goblins that they could be swapping it between!",
-   "dst": "",
+   "dst": "¡Hay más de una docena de campamentos entre orcos y goblins por los que podrían ir pasándola!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -258,7 +258,7 @@
   },
   "Blazing Retribution#025": {
    "src": "What if the GOBLINS get a hold of it?! They're the cleverest by half of all of them, so that could actually be a threat!",
-   "dst": "",
+   "dst": "¿Y si la consiguen los GOBLINS? ¡Son los más listos con diferencia, así que eso sí sería una amenaza!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -268,7 +268,7 @@
   },
   "Blazing Retribution#026": {
    "src": "Searching all the camps one by one will be far too slow, gah!! How am I going to fix this?!",
-   "dst": "",
+   "dst": "Buscar campamento por campamento será demasiado lento, ¡¡agh!! ¿¡Cómo voy a arreglar esto!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -278,7 +278,7 @@
   },
   "Blazing Retribution#027": {
    "src": "There's Earthpit, and Cliffhearth, Shineridge and Stonecave, Sunspark, Mudspring, Holehold, I-",
-   "dst": "",
+   "dst": "Están Earthpit, y Cliffhearth, Shineridge y Stonecave, Sunspark, Mudspring, Holehold, yo-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -288,7 +288,7 @@
   },
   "Blazing Retribution#028": {
    "src": "Fire! Stop!! I hold magic cutter! LISTEN TO POXPER!!",
-   "dst": "",
+   "dst": "¡Fuego! ¡¡Parar!! ¡Yo tener cortador mágico! ¡¡ESCUCHAR A POXPER!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -298,7 +298,7 @@
   },
   "Blazing Retribution#029": {
    "src": "I- I can't believe it, that has to be the one! AFTER THAT ORC, NOW!!",
-   "dst": "",
+   "dst": "N-no me lo puedo creer, ¡tiene que ser esa! ¡¡TRAS ESE ORCO, YA!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -308,7 +308,7 @@
   },
   "Blazing Retribution#030": {
    "src": "Find the hidden camp in the water near Piere's house at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Encuentra el campamento oculto en el agua cerca de la casa de Piere, en [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -318,7 +318,7 @@
   },
   "Blazing Retribution#031": {
    "src": "GRRRH!! What 'Uthniiazek' mean?!",
-   "dst": "",
+   "dst": "¡¡GRRRH!! ¿¡Qué significar 'Uthniiazek'!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -328,7 +328,7 @@
   },
   "Blazing Retribution#032": {
    "src": "Kill Orc Leader Poxper",
-   "dst": "",
+   "dst": "Mata al líder orco Poxper",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -338,7 +338,7 @@
   },
   "Blazing Retribution#033": {
    "src": "Uthniiazek! Uthniiazek!! WHY NO LISTEN TO Poxper?",
-   "dst": "",
+   "dst": "¡Uthniiazek! ¡¡Uthniiazek!! ¿¡Por qué no escuchar a Poxper!?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -348,7 +348,7 @@
   },
   "Blazing Retribution#034": {
    "src": "Stupid Villager magic thing! Why fire no listen?",
-   "dst": "",
+   "dst": "¡Estúpida cosa mágica de aldeano! ¿Por qué fuego no escuchar?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -358,7 +358,7 @@
   },
   "Blazing Retribution#035": {
    "src": "Poxper say thing and make fire...what else axe say? 'Azektoluth?'",
-   "dst": "",
+   "dst": "Poxper decir cosa y hacer fuego... ¿qué más decir hacha? ¿'Azektoluth'?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -368,7 +368,7 @@
   },
   "Blazing Retribution#036": {
    "src": "Hraahah! Poxper control fire! Fire- kill human with Poxper! Uthniiazek! Azektoluth!",
-   "dst": "",
+   "dst": "¡Hraahah! ¡Poxper controlar fuego! ¡Fuego, matar humano con Poxper! ¡Uthniiazek! ¡Azektoluth!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -378,7 +378,7 @@
   },
   "Blazing Retribution#037": {
    "src": "Return the Magic Axe to the Detective",
-   "dst": "",
+   "dst": "Devuelve el hacha mágica al detective",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -388,7 +388,7 @@
   },
   "Blazing Retribution#038": {
    "src": "That looks like the axe of {p} to me! Blue finish, hot to the touch- well done! What Orc boss had stolen it?",
-   "dst": "",
+   "dst": "¡A mí eso me parece el hacha de {p}! Acabado azul, caliente al tacto... ¡bien hecho! ¿Qué jefe orco la había robado?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -398,7 +398,7 @@
   },
   "Blazing Retribution#039": {
    "src": "Poxper? That...hm. This could be bad. I've head that name, and he's a fairly prolific Orc chief. You killed him, right?",
-   "dst": "",
+   "dst": "¿Poxper? Eso... hm. Esto puede ser malo. He oído ese nombre; es un cacique orco bastante prolífico. Lo mataste, ¿verdad?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -408,7 +408,7 @@
   },
   "Blazing Retribution#040": {
    "src": "Mmm... Hopefully that Veretel won't catch wind of it. Regardless, you've done a great service for Villager-kind!",
-   "dst": "",
+   "dst": "Mmm... Ojalá ese Veretel no se entere. En cualquier caso, ¡has prestado un gran servicio a los aldeanos!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -418,7 +418,7 @@
   },
   "Blazing Retribution#041": {
    "src": "Here's your compensation for that. Thank you for the aid!",
-   "dst": "",
+   "dst": "Aquí tienes tu compensación. ¡Gracias por la ayuda!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
