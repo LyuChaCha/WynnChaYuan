@@ -156,6 +156,11 @@ public final class CaptureStore {
         if (template == null || template.isBlank() || !GlyphSplitter.hasLetter(template)) {
             return false;   // 沒有字母 = 純符號或純數字，不值得記錄
         }
+        if (OwnOutputs.isOwn(template)) {
+            // 我們自己畫出去的譯文、模組自己的訊息，不是遊戲原文。見 OwnOutputs。
+            noteEvent("skipped.ownOutput");
+            return false;
+        }
         if (translated.test(template)) {
             // 已經翻好了，這不是缺口。記個數就好——數字留著，
             // 「明明有譯文卻還是英文」那種問題才看得出來。

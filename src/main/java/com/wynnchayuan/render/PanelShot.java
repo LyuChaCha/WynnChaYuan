@@ -638,13 +638,14 @@ public final class PanelShot {
     private static void say(Minecraft mc, Component message) {
         toast(mc, message);
         if (mc.player != null) {
-            mc.player.displayClientMessage(
-                    Component.literal("[").withStyle(ChatFormatting.DARK_GRAY)
-                            .append(Component.literal(WynnChaYuan.MOD_NAME)
-                                    .withStyle(ChatFormatting.AQUA))
-                            .append(Component.literal("] ")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
-                            .append(message), false);
+            Component line = Component.literal("[").withStyle(ChatFormatting.DARK_GRAY)
+                    .append(Component.literal(WynnChaYuan.MOD_NAME)
+                            .withStyle(ChatFormatting.AQUA))
+                    .append(Component.literal("] ")
+                            .withStyle(ChatFormatting.DARK_GRAY))
+                    .append(message);
+            com.wynnchayuan.capture.OwnOutputs.note(line);
+            mc.player.displayClientMessage(line, false);
             mc.player.playSound(
                     net.minecraft.sounds.SoundEvents.UI_BUTTON_CLICK.value(), 1f, 1f);
         }
