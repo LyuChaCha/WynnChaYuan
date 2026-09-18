@@ -326,6 +326,103 @@ public final class WynntilsText {
             net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
     private static TranslationStore barStore;
 
+    /**
+     * mixin 的入口：Wynntils 通知框（畫面中下方帶暗底的那一行）。
+     * 見 {@code NotificationMixin}。
+     *
+     * <p>Wynntils 會把某些系統訊息攔下來改畫在這個框裡，那些訊息就不會再走聊天事件——
+     * 所以先前既沒翻、也沒收進 capture。聊天翻譯關掉時不動。
+     */
+    public static StyledText notification(StyledText text) {
+        try {
+            CollectorConfig config = WynnChaYuan.config();
+            TranslationStore store = WynnChaYuan.translations();
+            if (text == null || text.isEmpty() || config == null || store == null
+                    || config.chatMode() == CollectorConfig.ChatMode.OFF) {
+                return text;
+            }
+            StyledText shown = line(text, store);
+            if (shown == text && config.collect()
+                    && !com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)) {
+                String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(text);
+                var captured = WynnChaYuan.store();
+                if (captured != null && !template.isBlank()
+                        && !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)) {
+                    captured.record(template, "desc", "chat", "chat/notification");
+                }
+            }
+            return shown;
+        } catch (Throwable t) {
+            return text;
+        }
+    }
+
+    /** mixin 的入口：實體頭上的自訂名稱。見 {@code EntityNameMixin}。 */
+    public static net.minecraft.network.chat.Component entityName(
+            net.minecraft.network.chat.Component name) {
+        try {
+            return entityName(name, WynnChaYuan.config(), WynnChaYuan.translations());
+        } catch (Throwable t) {
+            return name;
+        }
+    }
+
+    /**
+     * 實體的自訂名稱：隱形盔甲座疊出來的那種浮空字（討伐戰的「Void Altar」
+     * 與下面那行提示）。
+     *
+     * <p>這種字不是 TextDisplay，Wynntils 的名牌事件收不到，先前完全沒經過模組——
+     * 沒翻、也沒收進 capture。跟名牌翻譯同一個開關。
+     *
+     * <p>每一幀都會畫，結果照原字記下；查不到的只在第一次看到時收進 capture。
+     *
+     * @return 翻好的名稱；關掉或翻不出來時原樣回傳
+     */
+    static net.minecraft.network.chat.Component entityName(
+            net.minecraft.network.chat.Component name, CollectorConfig config,
+            TranslationStore store) {
+        if (name == null || store == null || config == null || !config.translateNametags()) {
+            return name;
+        }
+        if (store != nameStore || NAMES.size() > 512) {
+            NAMES.clear();
+            nameStore = store;
+        }
+        net.minecraft.network.chat.Component hit = NAMES.get(name);
+        if (hit == null) {
+            StyledText text = StyledText.fromComponent(name);
+            StyledText shown = line(text, store);
+            hit = shown == text ? name : shown.getComponent();
+            NAMES.put(name, hit);
+            if (hit == name && config.collect()) {
+                collectName(text);
+            }
+        }
+        return hit;
+    }
+
+    /** 沒譯文的浮空字收進 capture，濾網跟 TextDisplay 那條路一樣。 */
+    private static void collectName(StyledText text) {
+        if (text.isEmpty() || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
+                || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
+            return;
+        }
+        String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(text);
+        if (template.isBlank() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
+                || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
+                || com.wynnchayuan.capture.PlayerDataFilter.looksPlayerNamed(template)) {
+            return;
+        }
+        var captured = WynnChaYuan.store();
+        if (captured != null) {
+            captured.record(template, "name", "label", "label/floating");
+        }
+    }
+
+    private static final java.util.Map<net.minecraft.network.chat.Component,
+            net.minecraft.network.chat.Component> NAMES = new java.util.HashMap<>();
+    private static TranslationStore nameStore;
+
     /** mixin 的入口：Wynntils「手持物品名稱」疊層記下的那份字。見 {@code HeldItemOverlayMixin}。 */
     public static StyledText heldItemText(StyledText text) {
         try {

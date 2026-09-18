@@ -1,12 +1,36 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.1",
+ "latest": "0.2.1_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.1_1": {
+   "headline": "Raid text and tooltip fixes",
+   "items": [
+    "Floating hologram text (such as the Void Altar in raids) is now translated",
+    "Messages shown in the Wynntils notification box are now translated",
+    "Centred lines in tooltips without stat rows (such as aspects) stay centred after translation"
+   ],
+   "zh_tw": {
+    "headline": "討伐戰文字與提示框修正",
+    "items": [
+     "浮空字（例如討伐戰的虛空祭壇）現在會翻譯",
+     "Wynntils 通知框裡的訊息現在會翻譯",
+     "沒有屬性列的提示框（例如 aspect）翻譯後置中的行不再偏移"
+    ]
+   },
+   "zh_cn": {
+    "headline": "团本文字与提示框修正",
+    "items": [
+     "浮空字（例如团本的虚空祭坛）现在会翻译",
+     "Wynntils 通知框里的消息现在会翻译",
+     "没有属性行的提示框（例如 aspect）翻译后居中的行不再偏移"
+    ]
+   }
+  },
   "0.2.1": {
    "headline": "A tidier F6",
    "items": [
