@@ -53,6 +53,7 @@ public final class TooltipWidenTest {
         statBlock();
         centredBlock();
         shorterLanguage();
+        shrunkBox();
         noFont();
 
         System.out.println(failures == 0
@@ -207,6 +208,9 @@ public final class TooltipWidenTest {
                        "its potential."};
         String[] zh = {"這件物品的力量被封印了，", " 鑑定師可以解開", "它的潛力。"};
         int frame = CHAR * en[0].length();
+        // 頂著外框右緣的屬性行：中文照樣頂著，框不會縮
+        orig.add(parts("Health", frame - 36 - 18, "+24"));
+        made.add(parts("生命", frame - 12 - 18, "+24"));
         for (int k = 0; k < en.length; k++) {
             int enW = CHAR * en[k].length();
             int zhW = CHAR * zh[k].length();
@@ -214,7 +218,7 @@ public final class TooltipWidenTest {
             orig.add(indented(enLead, en[k]));
             made.add(indented(enLead + (enW - zhW) / 2, zh[k]));
         }
-        boolean[] centred = {false, false, false, true, true, true};
+        boolean[] centred = {false, false, false, false, true, true, true};
 
         List<Component> out = TooltipWiden.fit(orig, made, centred, false, WIDTH);
         boolean same = out == made;
@@ -222,6 +226,35 @@ public final class TooltipWidenTest {
             same = out.get(i) == made.get(i);
         }
         report("★ 中文每行都放得下：整份原封不動（同一份清單、同一批物件）", same);
+    }
+
+    /**
+     * aspect：沒有欄位行撐住外框，全是敘述。中文每行都比英文短，框跟著縮窄，
+     * 置中的「四阶 [MAX]」卻還照英文的寬度置中——實機看起來整行偏右。
+     *
+     * <p>要照縮窄後的寬度（最寬的那行）重新置中；靠左的行不能動。
+     */
+    private static void shrunkBox() {
+        String[] en = {"Tier IV [MAX]", "Increases the damage of Arrow Bomb"};
+        String[] zh = {"四阶 [MAX]", "提高箭矢炸弹的伤害"};
+        int frame = CHAR * en[1].length();
+        List<Component> orig = new ArrayList<>();
+        List<Component> made = new ArrayList<>();
+        orig.add(indented((frame - CHAR * en[0].length()) / 2, en[0]));
+        int enW = CHAR * en[0].length();
+        int zhW = CHAR * zh[0].length();
+        made.add(indented((frame - enW) / 2 + (enW - zhW) / 2, zh[0]));
+        orig.add(line(en[1]));
+        made.add(line(zh[1]));
+        boolean[] centred = {true, false};
+
+        List<Component> out = TooltipWiden.fit(orig, made, centred, false, WIDTH);
+        int box = CHAR * zh[1].length();
+        int want = (box - zhW) / 2;
+        report("★ 框縮到 " + box + "px 時置中行照新寬度置中（縮排 "
+                        + leadOf(made.get(0)) + " -> " + leadOf(out.get(0)) + "，應為 " + want + "）",
+                leadOf(out.get(0)) == want);
+        report("靠左的行沒動", out.get(1) == made.get(1));
     }
 
     /** 沒有字型時量不到寬度，什麼都判斷不了，也就什麼都不做。 */
