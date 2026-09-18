@@ -1287,9 +1287,10 @@ public final class SettingsScreen extends Screen {
         say(Component.literal((ok ? "✔ " : "✘ ") + result)
                 .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED));
         if (this.minecraft != null && this.minecraft.player != null) {
-            this.minecraft.player.displayClientMessage(
-                    Component.literal("[WynnChaYuan] " + result)
-                            .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED), false);
+            Component line = Component.literal("[WynnChaYuan] " + result)
+                    .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED);
+            com.wynnchayuan.capture.OwnOutputs.note(line);
+            this.minecraft.player.displayClientMessage(line, false);
         }
     }
 }

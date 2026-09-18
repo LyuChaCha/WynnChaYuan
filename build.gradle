@@ -840,3 +840,11 @@ tasks.register('runMarketAmountChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.MarketAmountTooltipTest'
 }
 tasks.named('check') { dependsOn 'runMarketAmountChecks' }
+
+tasks.register('runOwnOutputChecks', JavaExec) {
+    group = 'verification'
+    description = '收集語料時略過我們自己畫出去的譯文與模組訊息'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.OwnOutputsTest'
+}
+tasks.named('check') { dependsOn 'runOwnOutputChecks' }

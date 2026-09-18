@@ -147,6 +147,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         store.knowsTranslations(WynnChaYuan::alreadyTranslated);
         // 語料收過、只是還沒翻的不當缺口，但照樣記次數——見 CaptureStore#knowsSources。
         store.knowsSources(WynnChaYuan::alreadyCollected);
+        // 切換語言之後，先前畫出去的譯文會被當成原文收進來——見 OwnOutputs。
+        com.wynnchayuan.capture.OwnOutputs.buildAsync();
         // 同語族的語言先鋪一層當底，再把選定的那一種疊上去。
         //
         // 新語言是從 zh_tw 複製出來、dst 全部清空的骨架，剛開張時一條譯文

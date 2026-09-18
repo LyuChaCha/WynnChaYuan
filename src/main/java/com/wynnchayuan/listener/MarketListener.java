@@ -265,6 +265,7 @@ public final class MarketListener {
     private static void say(Component text) {
         Minecraft mc = Minecraft.getInstance();
         if (mc != null && mc.player != null) {
+            com.wynnchayuan.capture.OwnOutputs.note(text);
             mc.player.displayClientMessage(text, false);
         }
     }

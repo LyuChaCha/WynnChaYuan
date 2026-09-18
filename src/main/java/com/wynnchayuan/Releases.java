@@ -185,17 +185,17 @@ public final class Releases {
         WynnChaYuan.config().notifiedVersion(latest);
 
         String url = downloadUrl();
-        client.player.displayClientMessage(
+        tell(client, 
                 com.wynnchayuan.client.T.c("chat.update.line1",
                                 latest, WynnChaYuan.version())
                         .withStyle(net.minecraft.ChatFormatting.AQUA), false);
         Notes notes = notesFor(latest);
         if (notes != null && !notes.headline().isBlank()) {
-            client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
+            tell(client, net.minecraft.network.chat.Component.literal(
                     "  " + notes.headline())
                     .withStyle(net.minecraft.ChatFormatting.GRAY), false);
         }
-        client.player.displayClientMessage(
+        tell(client, 
                 com.wynnchayuan.client.T.c("chat.update.link")
                 .withStyle(style -> style
                         .withColor(net.minecraft.ChatFormatting.YELLOW)
@@ -205,9 +205,16 @@ public final class Releases {
                         .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
                                 net.minecraft.network.chat.Component.literal(url)))),
                 false);
-        client.player.displayClientMessage(
+        tell(client, 
                 com.wynnchayuan.client.T.c("chat.update.where")
                         .withStyle(net.minecraft.ChatFormatting.DARK_GRAY), false);
+    }
+
+    /** 送一行更新通知。先記下來，收集語料時才不會把它當成遊戲原文，見 OwnOutputs。 */
+    private static void tell(net.minecraft.client.Minecraft client,
+                             net.minecraft.network.chat.Component line, boolean overlay) {
+        com.wynnchayuan.capture.OwnOutputs.note(line);
+        client.player.displayClientMessage(line, overlay);
     }
 
     /** 這一場講過了沒。見 {@link #tellOnce}。 */
