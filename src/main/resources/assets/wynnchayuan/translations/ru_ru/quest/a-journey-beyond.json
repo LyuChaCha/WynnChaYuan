@@ -1,12 +1,28 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 247,
-  "translated": 254,
+  "count": 248,
+  "translated": 248,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Beyond#000": {
+   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+   "dst": "Ну… да, но сперва я хочу ввести {u} в курс дела. Миссия опасная, так что… лучше всё объяснить.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+    "file": "quest/a-journey-beyond.json",
+    "ratio": 0.985,
+    "reason": "placeholders"
+   }
+  },
+  "A Journey Beyond#001": {
    "src": "Join Elphaba on a mission in {p} at [{~}, {~}, -{~}].",
    "dst": "Присоединись к миссии Elphaba: {p}, [{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +32,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#001": {
+  "A Journey Beyond#002": {
    "src": "...Hm? Oh- uh, hello there. Sorry, we have this space reserved for...",
    "dst": "…Хм? Ой, э-э, привет. Прости, это место занято для…",
    "role": "desc",
@@ -26,7 +42,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#002": {
+  "A Journey Beyond#003": {
    "src": "Wait. You might be just what we're looking for. You look like you're capable in combat. How would you like to join a dangerous top secret mission?",
    "dst": "Постой. А ты, пожалуй, нам подходишь. Вид у тебя боевой. Хочешь в опасную сверхсекретную миссию?",
    "role": "desc",
@@ -36,7 +52,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#003": {
+  "A Journey Beyond#004": {
    "src": "...I could have phrased that better. Look, the point is- we need a fourth. Let me give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "…Можно было сказать и получше. Суть в том, что нам нужен четвёртый. Я расскажу, в чём дело, и если не захочешь с нами… найдём кого-то другого. Идёт? Ладно, иди за мной.",
    "role": "desc",
@@ -46,7 +62,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#004": {
+  "A Journey Beyond#005": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "А это кто? Ты правда нашла четвёртого? Да брось, я же говорил, нам никто не нужен!",
    "role": "desc",
@@ -56,7 +72,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#005": {
+  "A Journey Beyond#006": {
    "src": "And we both keep telling you why you're wrong. This is... sorry. I didn't catch your name. {u}? .",
    "dst": "А мы оба твердим, почему ты неправ. Это… прости, как тебя зовут? {u}?",
    "role": "desc",
@@ -66,7 +82,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#006": {
+  "A Journey Beyond#007": {
    "src": "... {u}, is that you? Wow, it's been a while. Sorry, I don't have time to chat right now. We're preparing for a dangerous mission, and...",
    "dst": "…{u}, это ты? Надо же, сколько лет! Прости, сейчас не до разговоров. Мы готовимся к опасной миссии, и…",
    "role": "desc",
@@ -76,7 +92,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#007": {
+  "A Journey Beyond#008": {
    "src": "Well. Actually, we were looking for a fourth person to join us. And... you look like you fit the requirements for that position. If- if you'd like to join, that is.",
    "dst": "Хм. Вообще-то нам нужен четвёртый. И… ты, похоже, подходишь на эту роль. Если… если, конечно, захочешь.",
    "role": "desc",
@@ -86,7 +102,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#008": {
+  "A Journey Beyond#009": {
    "src": "Tell you what. I'll give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "Давай так. Я расскажу, в чём дело, и если не захочешь с нами… найдём другого. Идёт? Ладно, иди за мной.",
    "role": "desc",
@@ -96,7 +112,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#009": {
+  "A Journey Beyond#010": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "А это кто? Ты правда нашла четвёртого? Да брось, я же говорил, нам никто не нужен!",
    "role": "desc",
@@ -106,7 +122,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#010": {
+  "A Journey Beyond#011": {
    "src": "And we both keep telling you why you're wrong. This is {u}, we've worked together before.",
    "dst": "А мы оба твердим, почему ты неправ. Это {u}, мы уже работали вместе.",
    "role": "desc",
@@ -116,7 +132,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#011": {
+  "A Journey Beyond#012": {
    "src": "Anyway, I want to give them the briefing before we head",
    "dst": "В общем, хочу ввести всех в курс дела, пока мы не",
    "role": "desc",
@@ -126,7 +142,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#012": {
+  "A Journey Beyond#013": {
    "src": "Elphie, I'm back! I finally managed to catch Aegis, but he's not... happy. He thinks we should",
    "dst": "Elphie, я вернулся! Поймал-таки Aegis, но он… не в восторге. Считает, что нам стоит",
    "role": "desc",
@@ -136,7 +152,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#013": {
+  "A Journey Beyond#014": {
    "src": "Oh. {u}? What are you doing here? Gods, it's been a while, hasn't it?",
    "dst": "О. {u}? Ты что тут делаешь? Боги, давно не виделись, да?",
    "role": "desc",
@@ -146,7 +162,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#014": {
+  "A Journey Beyond#015": {
    "src": "They're our fourth. What were you saying about the Admiral?",
    "dst": "Это наш четвёртый. Так что там с Адмиралом?",
    "role": "desc",
@@ -156,7 +172,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#015": {
+  "A Journey Beyond#016": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -166,7 +182,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#016": {
+  "A Journey Beyond#017": {
    "src": "Nothing. If we have our fourth, we should be all set to go, shouldn't we?",
    "dst": "Ничего. Раз четвёртый есть, можно выступать, так?",
    "role": "desc",
@@ -176,7 +192,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#017": {
+  "A Journey Beyond#018": {
    "src": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "Ну… можно, но сначала я хочу всё объяснить. Миссия опасная, так что… лучше рассказать всё как есть.",
    "role": "desc",
@@ -186,7 +202,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#018": {
+  "A Journey Beyond#019": {
    "src": "So! You're aware of the {p}, yes? Hundreds of years ago, mining operations took place to extract emeralds from the earth. Until, for some unknown reason, they were halted.",
    "dst": "Итак! Ты ведь знаешь про {p}? Сотни лет назад там добывали изумруды из недр. Пока по неизвестной причине работы не остановили.",
    "role": "desc",
@@ -196,7 +212,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#019": {
+  "A Journey Beyond#020": {
    "src": "We don't know everything, but... evidence suggests they broke through to an undiscovered section of the Wynn province. There, they found... something.",
    "dst": "Мы знаем не всё, но… похоже, шахтёры прорвались в неизведанную часть провинции Wynn. И там нашли… что-то.",
    "role": "desc",
@@ -206,9 +222,9 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#020": {
-   "src": "The land itself was said to be cursed. Not corrupted they were very clear on that.",
-   "dst": "Говорят, сама земля там проклята. Не осквернена - на этом они особо настаивали.",
+  "A Journey Beyond#021": {
+   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
+   "dst": "Говорили, что сама земля проклята. Не осквернена - это они подчёркивали.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -216,7 +232,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#021": {
+  "A Journey Beyond#022": {
    "src": "Some other force makes its home in that place. The few reports we could find refer to it only as the Silent Expanse.",
    "dst": "Там обитает иная сила. В немногих найденных отчётах это место зовут просто Silent Expanse.",
    "role": "desc",
@@ -226,7 +242,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#022": {
+  "A Journey Beyond#023": {
    "src": "The mines were sealed to prevent the spread of this new threat, but the cracks are beginning to show.",
    "dst": "Шахты запечатали, чтобы угроза не расползлась, но печати уже дают трещину.",
    "role": "desc",
@@ -236,7 +252,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#023": {
+  "A Journey Beyond#024": {
    "src": "Strange and otherworldly creatures have begun to find their way through, threatening our province.",
    "dst": "Сквозь них пробираются странные, нездешние твари и угрожают нашей провинции.",
    "role": "desc",
@@ -246,7 +262,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#024": {
+  "A Journey Beyond#025": {
    "src": "The existence of this place has been kept on a strict need-to-know basis.",
    "dst": "О существовании этого места знают лишь те, кому положено.",
    "role": "desc",
@@ -256,7 +272,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#025": {
+  "A Journey Beyond#026": {
    "src": "That's where we come in! We're to battle our way through the mines, and scout out the potential danger level.",
    "dst": "Тут-то и нужны мы! Пробьёмся через шахты и выясним, насколько там опасно.",
    "role": "desc",
@@ -266,7 +282,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#026": {
+  "A Journey Beyond#027": {
    "src": "And we aren't going to be able to do it if we keep sitting around! The newbie's been briefed, let's get going already!",
    "dst": "И ничего не выясним, если будем сидеть! Новичка ввели в курс дела, пошли уже!",
    "role": "desc",
@@ -276,7 +292,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#027": {
+  "A Journey Beyond#028": {
    "src": "H-hey! What're you doing to my fine establishment!",
    "dst": "Э-эй! Что вы творите с моим славным заведением!",
    "role": "desc",
@@ -286,7 +302,7 @@
    "speaker": "Rusty Bartender",
    "source": "wiki"
   },
-  "A Journey Beyond#028": {
+  "A Journey Beyond#029": {
    "src": "...Shoot. Forgot he was still here. Sorry, barkeep! I'll fix it!",
    "dst": "…Чёрт. Забыл, что он тут. Прости, трактирщик! Я всё починю!",
    "role": "desc",
@@ -296,7 +312,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#029": {
+  "A Journey Beyond#030": {
    "src": "Lucio, you can't keep... ugh, forget it. I'll gather our supplies... Aledar, can you get us to the mines?",
    "dst": "Lucio, хватит уже… а, забудь. Я соберу припасы… Aledar, доведёшь нас до шахт?",
    "role": "desc",
@@ -306,7 +322,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#030": {
+  "A Journey Beyond#031": {
    "src": "Yes, ma'am! {u}, when you're ready, let's get going.",
    "dst": "Есть, командир! {u}, как соберёшься, выступаем.",
    "role": "desc",
@@ -316,7 +332,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#031": {
+  "A Journey Beyond#032": {
    "src": "Follow your team towards the Silent Expanse's entrance.",
    "dst": "Следуй за отрядом ко входу в Silent Expanse.",
    "role": "desc",
@@ -326,7 +342,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#032": {
+  "A Journey Beyond#033": {
    "src": "Everyone ready? I'll lead.",
    "dst": "Все готовы? Я поведу.",
    "role": "desc",
@@ -336,7 +352,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#033": {
+  "A Journey Beyond#034": {
    "src": "It's a twist of fate that our paths have converged here, {u}. We started our journey together and now...",
    "dst": "Сама судьба свела здесь наши пути, {u}. Мы начинали путь вместе, а теперь…",
    "role": "desc",
@@ -346,7 +362,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#034": {
+  "A Journey Beyond#035": {
    "src": "Aledar...",
    "dst": "Aledar…",
    "role": "desc",
@@ -356,7 +372,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#035": {
+  "A Journey Beyond#036": {
    "src": "I hear them too.",
    "dst": "Я тоже их слышу.",
    "role": "desc",
@@ -366,7 +382,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#036": {
+  "A Journey Beyond#037": {
    "src": "Ah, no problem. I'll take care of these.",
    "dst": "А, без проблем. Я с ними разберусь.",
    "role": "desc",
@@ -376,7 +392,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#037": {
+  "A Journey Beyond#038": {
    "src": "No more running for us, huh ? Ah, we're here.",
    "dst": "Больше никаких побегов, а? А, мы на месте.",
    "role": "desc",
@@ -386,7 +402,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#038": {
+  "A Journey Beyond#039": {
    "src": "This is actually our second attempt. The first time, it didn't go too well.",
    "dst": "Вообще-то это наша вторая попытка. Первая прошла неважно.",
    "role": "desc",
@@ -396,7 +412,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#039": {
+  "A Journey Beyond#040": {
    "src": "We have more numbers now, Lucio and yourself should help us overpower it.",
    "dst": "Теперь нас больше, с Lucio и тобой мы его одолеем.",
    "role": "desc",
@@ -406,7 +422,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#040": {
+  "A Journey Beyond#041": {
    "src": "Can't be that strong, bet I can take it myself.",
    "dst": "Не может он быть таким сильным. Спорим, я один справлюсь?",
    "role": "desc",
@@ -416,7 +432,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#041": {
+  "A Journey Beyond#042": {
    "src": "We managed to seal it in but with the {~} of us I'm sure we ca-",
    "dst": "Тогда мы его заперли, но теперь нас {~}, и я уверена, мы смо-",
    "role": "desc",
@@ -426,7 +442,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#042": {
+  "A Journey Beyond#043": {
    "src": "Let's just do it!",
    "dst": "Давайте уже!",
    "role": "desc",
@@ -436,7 +452,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#043": {
+  "A Journey Beyond#044": {
    "src": "Wait... No!",
    "dst": "Стой… Нет!",
    "role": "desc",
@@ -446,7 +462,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#044": {
+  "A Journey Beyond#045": {
    "src": "Lucio! You FOOL!",
    "dst": "Lucio! Ты БОЛВАН!",
    "role": "desc",
@@ -456,7 +472,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#045": {
+  "A Journey Beyond#046": {
    "src": "What's the big deal? You said yourself we can take it!",
    "dst": "Да что такого? Ты сам сказал, мы его одолеем!",
    "role": "desc",
@@ -466,7 +482,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#046": {
+  "A Journey Beyond#047": {
    "src": "Ouch...",
    "dst": "Ой…",
    "role": "desc",
@@ -476,7 +492,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#047": {
+  "A Journey Beyond#048": {
    "src": "We need a PLAN.",
    "dst": "Нам нужен ПЛАН.",
    "role": "desc",
@@ -486,7 +502,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#048": {
+  "A Journey Beyond#049": {
    "src": "Defeat the Beast",
    "dst": "Одолей Зверя",
    "role": "desc",
@@ -496,7 +512,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#049": {
+  "A Journey Beyond#050": {
    "src": "The plan is attack!",
    "dst": "План такой: атаковать!",
    "role": "desc",
@@ -506,7 +522,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#050": {
+  "A Journey Beyond#051": {
    "src": "Argh!",
    "dst": "Аргх!",
    "role": "desc",
@@ -516,7 +532,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#051": {
+  "A Journey Beyond#052": {
    "src": "Lucio!",
    "dst": "Lucio!",
    "role": "desc",
@@ -526,7 +542,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#052": {
+  "A Journey Beyond#053": {
    "src": "Ahh!",
    "dst": "А-а!",
    "role": "desc",
@@ -536,7 +552,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#053": {
+  "A Journey Beyond#054": {
    "src": "No! Stop hurting them!",
    "dst": "Нет! Не трогай их!",
    "role": "desc",
@@ -546,7 +562,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#054": {
+  "A Journey Beyond#055": {
    "src": "Ouch! This isn't working...",
    "dst": "Ай! Не выходит…",
    "role": "desc",
@@ -556,7 +572,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#055": {
+  "A Journey Beyond#056": {
    "src": "Is it just me or are our attacks doing NOTHING?",
    "dst": "Мне кажется, или наши атаки НИЧЕГО не делают?",
    "role": "desc",
@@ -566,7 +582,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#056": {
+  "A Journey Beyond#057": {
    "src": "Lucio's right! Change of plan. Lucio, help me hold it in place.",
    "dst": "Lucio прав! Меняем план. Lucio, помоги мне его удержать.",
    "role": "desc",
@@ -576,7 +592,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#057": {
+  "A Journey Beyond#058": {
    "src": "Aledar, you know what to do.",
    "dst": "Aledar, ты знаешь, что делать.",
    "role": "desc",
@@ -586,7 +602,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#058": {
+  "A Journey Beyond#059": {
    "src": "{u}, come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
    "dst": "{u}, за мной! Закрой вход в пещеру заклинанием, чтобы тварь не вырвалась.",
    "role": "desc",
@@ -596,7 +612,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#059": {
+  "A Journey Beyond#060": {
    "src": "I'll block it from attacking, you block it up with a spell.",
    "dst": "Я отвлеку его атаки, а ты запечатай проход заклинанием.",
    "role": "desc",
@@ -606,7 +622,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#060": {
+  "A Journey Beyond#061": {
    "src": "They won't be able to hold it for long.",
    "dst": "Долго они его не удержат.",
    "role": "desc",
@@ -616,7 +632,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#061": {
+  "A Journey Beyond#062": {
    "src": "Ready?! Cast any spell!",
    "dst": "Пора! Любое заклинание!",
    "role": "desc",
@@ -626,7 +642,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#062": {
+  "A Journey Beyond#063": {
    "src": "Lucio, Elphaba! Run!",
    "dst": "Lucio, Elphaba! Бегите!",
    "role": "desc",
@@ -636,7 +652,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#063": {
+  "A Journey Beyond#064": {
    "src": "Plan a way of killing the beast.",
    "dst": "Придумай, как убить зверя.",
    "role": "desc",
@@ -646,7 +662,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#064": {
+  "A Journey Beyond#065": {
    "src": "We all here? Where's Lucio?",
    "dst": "Все здесь? Где Lucio?",
    "role": "desc",
@@ -656,7 +672,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#065": {
+  "A Journey Beyond#066": {
    "src": "Guys... Any help? I'm stuck!",
    "dst": "Народ… Поможете? Я застрял!",
    "role": "desc",
@@ -666,7 +682,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#066": {
+  "A Journey Beyond#067": {
    "src": "Phew, here. Let me get you out.",
    "dst": "Уф, держи. Сейчас вытащу.",
    "role": "desc",
@@ -676,7 +692,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#067": {
+  "A Journey Beyond#068": {
    "src": "I'm sorry, team. I've never seen a monster like that before.",
    "dst": "Простите, ребята. Никогда не видел такого чудища.",
    "role": "desc",
@@ -686,9 +702,9 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#068": {
-   "src": "It looks like our problem isn't fire power. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "Похоже, дело не в огневой мощи, а в чём-то другом. Наше оружие его будто вообще не берёт.",
+  "A Journey Beyond#069": {
+   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
+   "dst": "Похоже, дело не в огневой мощи. Тут что-то иное. Наше оружие будто вообще на него не действует.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -696,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#069": {
+  "A Journey Beyond#070": {
    "src": "I know someone who might be able to help us. A blacksmith on {p}.",
    "dst": "Я знаю, кто может помочь. Кузнец из {p}.",
    "role": "desc",
@@ -706,7 +722,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#070": {
+  "A Journey Beyond#071": {
    "src": "{u}, I've written the house's coordinates on your book. Meet us there.",
    "dst": "{u}, я записала координаты дома в твою книгу. Встретимся там.",
    "role": "desc",
@@ -716,7 +732,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#071": {
+  "A Journey Beyond#072": {
    "src": "Meet the other soldiers at [{~}, {~}, -{~}].",
    "dst": "Встреться с остальными солдатами в [{~}, {~}, -{~}].",
    "role": "desc",
@@ -726,7 +742,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#072": {
+  "A Journey Beyond#073": {
    "src": "Just in time. We're all here.",
    "dst": "Как раз вовремя. Все в сборе.",
    "role": "desc",
@@ -736,7 +752,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#073": {
+  "A Journey Beyond#074": {
    "src": "It looks like the Blacksmith knows what's wrong...",
    "dst": "Похоже, кузнец знает, в чём дело…",
    "role": "desc",
@@ -746,7 +762,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#074": {
+  "A Journey Beyond#075": {
    "src": "So, Dren. Do you know why we can't damage the beast?",
    "dst": "Итак, Dren. Знаете, почему зверь неуязвим для нас?",
    "role": "desc",
@@ -756,7 +772,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#075": {
+  "A Journey Beyond#076": {
    "src": "Certainly! Your issue is elemental. As you know, there are {~} elements...",
    "dst": "Разумеется! Всё дело в стихиях. Как вы знаете, стихий {~}…",
    "role": "desc",
@@ -766,7 +782,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#076": {
+  "A Journey Beyond#077": {
    "src": "Earth...",
    "dst": "Земля…",
    "role": "desc",
@@ -776,7 +792,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#077": {
+  "A Journey Beyond#078": {
    "src": "Fire...",
    "dst": "Огонь…",
    "role": "desc",
@@ -786,7 +802,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#078": {
+  "A Journey Beyond#079": {
    "src": "Air...",
    "dst": "Воздух…",
    "role": "desc",
@@ -796,7 +812,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#079": {
+  "A Journey Beyond#080": {
    "src": "Water...",
    "dst": "Вода…",
    "role": "desc",
@@ -806,7 +822,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#080": {
+  "A Journey Beyond#081": {
    "src": "And Thunder...",
    "dst": "И Гром…",
    "role": "desc",
@@ -816,7 +832,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#081": {
+  "A Journey Beyond#082": {
    "src": "But.. There is a hidden element, Darkness .",
    "dst": "Но… есть и скрытая стихия - Тьма.",
    "role": "desc",
@@ -826,7 +842,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#082": {
+  "A Journey Beyond#083": {
    "src": "Thank grook for that. I was wondering if we'd ever be rid of this nightmare.",
    "dst": "Слава Grook! Я уж думал, этот кошмар никогда не кончится.",
    "role": "desc",
@@ -836,7 +852,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Beyond#083": {
+  "A Journey Beyond#084": {
    "src": "And we both keep telling you why you're wrong. This is... sorry, I didn't catch your name. {u}? {u}.",
    "dst": "А мы оба твердим, почему ты неправ. Это… прости, как тебя зовут? {u}? {u}.",
    "role": "desc",
@@ -937,7 +953,7 @@
    "source": "captured"
   },
   "A Journey Beyond#094": {
-   "src": "Alright. Aledar, you get the darkness item with {u}, and I'll go get the Light item with Lucio.",
+   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
    "dst": "Так. Aledar, вы с {u} берёте предмет Тьмы, а мы с Lucio - предмет Света.",
    "role": "desc",
    "kind": "dialogue",
@@ -1487,8 +1503,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#149": {
-   "src": "Uhhh... I'm not feeling very wel-... Aahhh!",
-   "dst": "Э-э… Мне что-то нехоро-… А-а-а!",
+   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
+   "dst": "Ыыы… Мне как-то нехоро-… Аааа!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2097,7 +2113,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#210": {
-   "src": "I feel a bit better.. But something is still wrong.",
+   "src": "I feel a bit better.. But something's still wrong.",
    "dst": "Мне чуть лучше… Но что-то всё ещё не так.",
    "role": "desc",
    "kind": "dialogue",
@@ -2457,8 +2473,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#246": {
-   "src": "It worked... Kind of. I feel at least {~}.. We still have a ways to go.",
-   "dst": "Сработало… Вроде. Мне как минимум на {~}… Путь ещё долгий.",
+   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
+   "dst": "Сработало… Вроде. Мне как минимум на {~}. Путь ещё долгий.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2469,82 +2485,6 @@
   "A Journey Beyond#247": {
    "src": "Let's take some time to gather ourselves before we press on. I'll meet you on the other side of town.",
    "dst": "Давай переведём дух, прежде чем идти дальше. Встретимся на другом конце посёлка.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 18",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#000~1": {
-   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-   "dst": "Ну… да, но сперва я хочу ввести {u} в курс дела. Миссия опасная, так что… лучше всё объяснить.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-    "file": "quest/a-journey-beyond.json",
-    "ratio": 0.985,
-    "reason": "placeholders"
-   }
-  },
-  "A Journey Beyond#021~1": {
-   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
-   "dst": "Говорили, что сама земля проклята. Не осквернена - это они подчёркивали.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 1",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#069~1": {
-   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "Похоже, дело не в огневой мощи. Тут что-то иное. Наше оружие будто вообще на него не действует.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#094~1": {
-   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "Так. Aledar, вы с {u} берёте предмет Тьмы, а мы с Lucio - предмет Света.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#149~1": {
-   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
-   "dst": "Ыыы… Мне как-то нехоро-… Аааа!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 14",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#210~1": {
-   "src": "I feel a bit better.. But something's still wrong.",
-   "dst": "Мне чуть лучше… Но что-то всё ещё не так.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 17",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#246~1": {
-   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
-   "dst": "Сработало… Вроде. Мне как минимум на {~}. Путь ещё долгий.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",

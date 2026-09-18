@@ -1,12 +1,152 @@
 {
  "_meta": {
   "quest": "The Mercenary",
-  "count": 141,
+  "count": 155,
   "translated": 141,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Mercenary#000": {
+   "src": "Looks like the others have gone ahead. You should rendezvous with them closer to the barracks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#001": {
+   "src": "Dang, you're right. Can't forget about the historical value. Good catch.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#002": {
+   "src": "I've seen soldiers fall and fall and fall, then rise back up again. I've lived through the chaos and death of battle more times than I can count.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#003": {
+   "src": "I suppose I'll start with you. What are two more when compared to dozens?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#004": {
+   "src": "So, I surrender! Don't see the point in fightin' a pointless battle. Not like we're goin' to be paid after this mess, anyhow.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#005": {
+   "src": "[+{~} Tower Key]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#006": {
+   "src": "The door is locked...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#007": {
+   "src": "[+{~} Takan's Badge]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#008": {
+   "src": "Takan is dead. You should regroup with the others outside the barracks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#009": {
+   "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a very dangerous man.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#010": {
+   "src": "Admiral, sir. Some of what Takan was saying, it was-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#011": {
+   "src": "I wouldn't put too much stock in that traitor's words. People like him... all they do is spit vitriol with no merit, riling up the masses against the order we hold.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#012": {
+   "src": "He was an angry man holding a grudge for an imagined wrongdoing. There is nothing more to it than that. I would suggest putting it out of your mind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#013": {
+   "src": "A general location is useful, though. I'll see if I can get any letters through to him. Thanks for telling me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#014": {
    "src": "Talk to the Scout in {p} at [{~}, {~}, -{~}] or find one in another town.",
    "dst": "Поговори с разведчиком в {p} на [{~}, {~}, -{~}] или найди другого в любом городе.",
    "role": "desc",
@@ -14,146 +154,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Mercenary#001": {
-   "src": "Ho, soldier! Soldier! Ahem...",
-   "dst": "Эй, солдат! Солдат! Кхм...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#002": {
-   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
-   "dst": "Адмирал Amerigo из армии Almuj просит помощи у крепких и свободных солдат со всей провинции Wynn.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#003": {
-   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
-   "dst": "Скажу прямо... у них там беда. Постоянная армия {p} взята в плен, а пустынные казармы захвачены.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#004": {
-   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
-   "dst": "Адмирал разослал разведчиков собрать всех свободных солдат, чтобы... исправить положение.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#005": {
-   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
-   "dst": "... По-моему, он хочет решить дело тихо и без шума. И я его, в общем-то, не виню, учитывая обстоятельства.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#006": {
-   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
-   "dst": "Так или иначе, если можешь, отправляйся туда. {p} - пустынный город к востоку от {p}, если что.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#007": {
-   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
-   "dst": "На этом всё, я пошёл! Надо найти ещё много солдат. Удачи, если откликнешься на призыв!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#008": {
-   "src": "Ho, soldier! Soldier! Ahem...",
-   "dst": "Эй, солдат! Солдат! Кхм...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#009": {
-   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
-   "dst": "Адмирал Amerigo из армии Almuj просит помощи у крепких и свободных солдат со всей провинции Wynn.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#010": {
-   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
-   "dst": "Скажу прямо... у них там беда. Постоянная армия {p} взята в плен, а пустынные казармы захвачены.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#011": {
-   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
-   "dst": "Адмирал разослал разведчиков собрать всех свободных солдат, чтобы... исправить положение.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#012": {
-   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
-   "dst": "... По-моему, он хочет решить дело тихо и без шума. И я его, в общем-то, не виню, учитывая обстоятельства.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#013": {
-   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
-   "dst": "Так или иначе, если можешь, отправляйся туда. {p} - пустынный город к востоку от {p}, если что.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#014": {
-   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
-   "dst": "На этом всё, я пошёл! Надо найти ещё много солдат. Удачи, если откликнешься на призыв!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
    "source": "wiki"
   },
   "The Mercenary#015": {
@@ -207,8 +207,8 @@
    "source": "wiki"
   },
   "The Mercenary#020": {
-   "src": "Anyhow, if you can, head on over to the Admiral's office. It's just by the bank, you can't miss it.",
-   "dst": "Так или иначе, если можешь, загляни в кабинет адмирала. Он у самого банка, не промахнёшься.",
+   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
+   "dst": "Так или иначе, если можешь, отправляйся туда. {p} - пустынный город к востоку от {p}, если что.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
@@ -227,6 +227,146 @@
    "source": "wiki"
   },
   "The Mercenary#022": {
+   "src": "Ho, soldier! Soldier! Ahem...",
+   "dst": "Эй, солдат! Солдат! Кхм...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#023": {
+   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
+   "dst": "Адмирал Amerigo из армии Almuj просит помощи у крепких и свободных солдат со всей провинции Wynn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#024": {
+   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
+   "dst": "Скажу прямо... у них там беда. Постоянная армия {p} взята в плен, а пустынные казармы захвачены.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#025": {
+   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
+   "dst": "Адмирал разослал разведчиков собрать всех свободных солдат, чтобы... исправить положение.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#026": {
+   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
+   "dst": "... По-моему, он хочет решить дело тихо и без шума. И я его, в общем-то, не виню, учитывая обстоятельства.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#027": {
+   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
+   "dst": "Так или иначе, если можешь, отправляйся туда. {p} - пустынный город к востоку от {p}, если что.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#028": {
+   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
+   "dst": "На этом всё, я пошёл! Надо найти ещё много солдат. Удачи, если откликнешься на призыв!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#029": {
+   "src": "Ho, soldier! Soldier! Ahem...",
+   "dst": "Эй, солдат! Солдат! Кхм...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#030": {
+   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
+   "dst": "Адмирал Amerigo из армии Almuj просит помощи у крепких и свободных солдат со всей провинции Wynn.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#031": {
+   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
+   "dst": "Скажу прямо... у них там беда. Постоянная армия {p} взята в плен, а пустынные казармы захвачены.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#032": {
+   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
+   "dst": "Адмирал разослал разведчиков собрать всех свободных солдат, чтобы... исправить положение.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#033": {
+   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
+   "dst": "... По-моему, он хочет решить дело тихо и без шума. И я его, в общем-то, не виню, учитывая обстоятельства.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#034": {
+   "src": "Anyhow, if you can, head on over to the Admiral's office. It's just by the bank, you can't miss it.",
+   "dst": "Так или иначе, если можешь, загляни в кабинет адмирала. Он у самого банка, не промахнёшься.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#035": {
+   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
+   "dst": "На этом всё, я пошёл! Надо найти ещё много солдат. Удачи, если откликнешься на призыв!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#036": {
    "src": "Talk to Amerigo in {p} at [{~}, {~}, -{~}].",
    "dst": "Поговори с Amerigo в {p} на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -236,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#023": {
+  "The Mercenary#037": {
    "src": "Ugh, for crying out loud- I'm busy, can't you see that? I don't have time to...",
    "dst": "Ох, ради всего святого... Я занят, не видишь? У меня нет времени на...",
    "role": "desc",
@@ -246,7 +386,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#024": {
+  "The Mercenary#038": {
    "src": "Ah. You're a soldier. Good, that's one more to add to the list. You met the scout, I'm sure.",
    "dst": "А. Ты солдат. Хорошо, пополним список. Тебя, полагаю, прислал разведчик.",
    "role": "desc",
@@ -256,7 +396,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#025": {
+  "The Mercenary#039": {
    "src": "Not as many of you lot as I would have hoped for, but it'll have to do. Come down here, the others are in the briefing room already.",
    "dst": "Вас меньше, чем я надеялся, но придётся обойтись. Спускайся, остальные уже в комнате для инструктажа.",
    "role": "desc",
@@ -266,7 +406,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#026": {
+  "The Mercenary#040": {
    "src": "Hmph. I suppose this is as many soldiers as we'll be able to get. Very well!",
    "dst": "Хмф. Видимо, больше солдат нам не собрать. Что ж!",
    "role": "desc",
@@ -276,7 +416,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#027": {
+  "The Mercenary#041": {
    "src": "To begin with - the situation. Commander Takan of {p} has abandoned his post, and has taken the lead of a group of local bandits.",
    "dst": "Итак, обстановка. Takan, командир {p}, покинул пост и возглавил банду местных разбойников.",
    "role": "desc",
@@ -286,7 +426,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#028": {
+  "The Mercenary#042": {
    "src": "Under his command, they were able to strike our forces in the dead of night, and have taken over the barracks to the northeast.",
    "dst": "Под его началом они ударили по нашим силам глубокой ночью и захватили казармы на северо-востоке.",
    "role": "desc",
@@ -296,7 +436,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#029": {
+  "The Mercenary#043": {
    "src": "Our entire military force, captured or killed! What a disgrace. We've sent messengers to {p}, and they have promised their support...",
    "dst": "Вся наша армия - в плену или перебита! Какой позор. Мы отправили гонцов в {p}, и нам обещали поддержку...",
    "role": "desc",
@@ -306,7 +446,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#030": {
+  "The Mercenary#044": {
    "src": "But I would like this dealt with quickly and quietly. That's where you five come in.",
    "dst": "Но я хочу разобраться с этим быстро и тихо. Для этого здесь вы пятеро.",
    "role": "desc",
@@ -316,7 +456,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#031": {
+  "The Mercenary#045": {
    "src": "You will attack and infiltrate the barracks, and assassinate our treasonous commander. I will leave the strategizing to you, as there is much I still must handle here.",
    "dst": "Вы проникнете в казармы и устраните нашего командира-предателя. Стратегию оставляю вам - у меня здесь ещё масса дел.",
    "role": "desc",
@@ -326,7 +466,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#032": {
+  "The Mercenary#046": {
    "src": "A question, if I may. Do we know the commander's reasoning for this attack? It seems out of character.",
    "dst": "Позвольте вопрос. Известно, зачем командир напал? Это на него не похоже.",
    "role": "desc",
@@ -336,7 +476,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#033": {
+  "The Mercenary#047": {
    "src": "...No. There is nothing that I can recall that would motivate such an attack. Will that be all?",
    "dst": "...Нет. Ничего, что толкнуло бы на такое, мне не припоминается. Это всё?",
    "role": "desc",
@@ -346,7 +486,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#034": {
+  "The Mercenary#048": {
    "src": "...I suppose.",
    "dst": "...Пожалуй.",
    "role": "desc",
@@ -356,7 +496,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#035": {
+  "The Mercenary#049": {
    "src": "Then I must be off! Good luck, soldiers. I hope for a swift end to this disaster.",
    "dst": "Тогда мне пора! Удачи, солдаты. Надеюсь, эта беда скоро кончится.",
    "role": "desc",
@@ -366,7 +506,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#036": {
+  "The Mercenary#050": {
    "src": "...Well, darn. Bandits sound like trouble. Do we know what sort?",
    "dst": "...Вот ведь. Разбойники - это морока. Известно, какие?",
    "role": "desc",
@@ -376,7 +516,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#037": {
+  "The Mercenary#051": {
    "src": "Does it matter? We'll probably be fighting them no matter what kind they are.",
    "dst": "А есть разница? Какие бы ни были, драться с ними, скорее всего, придётся.",
    "role": "desc",
@@ -386,7 +526,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#038": {
+  "The Mercenary#052": {
    "src": "It might, actually... Some bandit groups are stronger than others. If we know which group we're dealing with ahead of time, it might-",
    "dst": "Вообще-то есть... Одни банды сильнее других. Если заранее знать, с кем имеем дело, можно-",
    "role": "desc",
@@ -396,7 +536,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#039": {
+  "The Mercenary#053": {
    "src": "We've been standing around here for too long. Come on, let's make our way closer to the barracks. We can come up with a plan there.",
    "dst": "Мы тут слишком долго стоим. Идём, подберёмся ближе к казармам. План придумаем на месте.",
    "role": "desc",
@@ -406,7 +546,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#040": {
+  "The Mercenary#054": {
    "src": "Not a bad idea.",
    "dst": "Неплохая мысль.",
    "role": "desc",
@@ -416,7 +556,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#041": {
+  "The Mercenary#055": {
    "src": "Fine by me!",
    "dst": "Я не против!",
    "role": "desc",
@@ -426,7 +566,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#042": {
+  "The Mercenary#056": {
    "src": "Suppose that works.",
    "dst": "Пожалуй, годится.",
    "role": "desc",
@@ -436,7 +576,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#043": {
+  "The Mercenary#057": {
    "src": "Rendezvous near the barracks at [{~}, {~}, -{~}].",
    "dst": "Соберись у казарм на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -446,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#044": {
+  "The Mercenary#058": {
    "src": "Well, darn. The place is swarming with bandits...",
    "dst": "Вот ведь. Там кишат разбойники...",
    "role": "desc",
@@ -456,7 +596,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#045": {
+  "The Mercenary#059": {
    "src": "I don't see how that's a problem! We can just launch explosives into the crowd, and boom, problem solved.",
    "dst": "Не вижу проблемы! Закидаем толпу взрывчаткой - бум, и проблема решена.",
    "role": "desc",
@@ -466,7 +606,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#046": {
+  "The Mercenary#060": {
    "src": "...What?",
    "dst": "…Что?",
    "role": "desc",
@@ -476,7 +616,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#047": {
+  "The Mercenary#061": {
    "src": "We can't do that. You'd almost certainly damage the structure in the process!",
    "dst": "Так нельзя. Ты почти наверняка повредишь само здание!",
    "role": "desc",
@@ -486,7 +626,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#048": {
+  "The Mercenary#062": {
    "src": "Ah, true. Can't forget about the historical value. Good catch.",
    "dst": "А, верно. Историческая ценность, как же. Хорошо подмечено.",
    "role": "desc",
@@ -496,7 +636,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#049": {
+  "The Mercenary#063": {
    "src": "...Right. Well, anyway, I don't think we can get through those bandits with brute force. We'll have to try to find a way around them...",
    "dst": "...Ясно. В общем, силой через этих разбойников не пробиться. Надо искать обход...",
    "role": "desc",
@@ -506,7 +646,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#050": {
+  "The Mercenary#064": {
    "src": "Well, if I may interject- I reckon I won't be of much use in proper combat! Injured leg, 'n all. Makes moving a little hard!",
    "dst": "Ну, позвольте вставить слово - в настоящем бою от меня толку мало! Нога ранена и всё такое. Двигаться тяжко!",
    "role": "desc",
@@ -516,7 +656,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#051": {
+  "The Mercenary#065": {
    "src": "So, if we think goin' right in won't work, I could try to create a distraction? I've got the magic for it, and I'd be of much more use out here.",
    "dst": "Раз в лоб идти не выйдет, может, я устрою отвлекающий манёвр? Магия для этого есть, а снаружи я пригожусь больше.",
    "role": "desc",
@@ -526,7 +666,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#052": {
+  "The Mercenary#066": {
    "src": "It could work... if I join you, we'd be able to draw attention towards us while the others sneak in from a different angle.",
    "dst": "Может сработать... Если я пойду с тобой, мы отвлечём их на себя, пока другие проберутся с другой стороны.",
    "role": "desc",
@@ -536,7 +676,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#053": {
+  "The Mercenary#067": {
    "src": "Good idea. But, how do we get in? I don't think there is another entrance, other than that one in front.",
    "dst": "Хорошая мысль. Но как нам войти? Кроме того, что спереди, другого входа, по-моему, нет.",
    "role": "desc",
@@ -546,7 +686,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#054": {
+  "The Mercenary#068": {
    "src": "Ahem. If you'll allow me-",
    "dst": "Кхм. Если позволите-",
    "role": "desc",
@@ -556,7 +696,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#055": {
+  "The Mercenary#069": {
    "src": "This had better not be going where I think it is, Linton.",
    "dst": "Надеюсь, ты не к тому клонишь, о чём я думаю, Linton.",
    "role": "desc",
@@ -566,7 +706,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#056": {
+  "The Mercenary#070": {
    "src": "Okay, maybe it is. But, listen! We don't have any entrances, right? What if we made our own... by blowing a hole through a wall?",
    "dst": "Ладно, может, и к тому. Но слушай! Входов нет, так? А что, если сделать свой... взорвав дыру в стене?",
    "role": "desc",
@@ -576,7 +716,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#057": {
+  "The Mercenary#071": {
    "src": "...Alright, fine. That sounds like it could work.",
    "dst": "...Ладно, хорошо. Похоже, это может сработать.",
    "role": "desc",
@@ -586,7 +726,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#058": {
+  "The Mercenary#072": {
    "src": "...Didn't we just say we wouldn't-",
    "dst": "...Мы же сказали, что не будем-",
    "role": "desc",
@@ -596,7 +736,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#059": {
+  "The Mercenary#073": {
    "src": "Exactly! You need to have more faith in the experts, Aledar.",
    "dst": "Именно! Надо больше доверять специалистам, Aledar.",
    "role": "desc",
@@ -606,7 +746,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#060": {
+  "The Mercenary#074": {
    "src": "We all need to make sacrifices, Lanu.",
    "dst": "Жертвы нужны от всех, Lanu.",
    "role": "desc",
@@ -616,7 +756,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#061": {
+  "The Mercenary#075": {
    "src": "Hm. No, I don't think I do. Either way, that sounds like a plan. {u}, Linton, and I will break into the barracks then.",
    "dst": "Хм. Нет, мне так не кажется. Как бы то ни было, план есть. {u}, Linton и я прорвёмся в казармы.",
    "role": "desc",
@@ -626,7 +766,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#062": {
+  "The Mercenary#076": {
    "src": "I suppose.",
    "dst": "Пожалуй.",
    "role": "desc",
@@ -636,7 +776,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#063": {
+  "The Mercenary#077": {
    "src": "And Lanu and I can distract 'em while you do so. Sounds like a plan! Let's get goin'.",
    "dst": "А мы с Lanu отвлечём их, пока вы там. Отличный план! Пошли.",
    "role": "desc",
@@ -646,7 +786,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#064": {
+  "The Mercenary#078": {
    "src": "Storm the barracks at [{~}, {~}, -{~}].",
    "dst": "Штурмуй казармы на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -656,7 +796,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#065": {
+  "The Mercenary#079": {
    "src": "Well, well. This looks like a good place to break our way in, wouldn't you say, Aledar?",
    "dst": "Так-так. Отличное место, чтобы проделать вход, не находишь, Aledar?",
    "role": "desc",
@@ -666,7 +806,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#066": {
+  "The Mercenary#080": {
    "src": "Yes, Linton, it looks fine. {u}, we'll be looking for Takan. I think the two of us could take him out.",
    "dst": "Да, Linton, неплохое. {u}, мы ищем Takan. Думаю, вдвоём мы с ним справимся.",
    "role": "desc",
@@ -676,7 +816,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#067": {
+  "The Mercenary#081": {
    "src": "And I'll be looking for the captured soldiers! I stole a map of the barracks from Amerigo's desk, so I'll be able to find them easily enough!",
    "dst": "А я поищу пленных солдат! Я стащил у Amerigo со стола карту казарм, так что найду их без труда!",
    "role": "desc",
@@ -686,7 +826,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#068": {
+  "The Mercenary#082": {
    "src": "You-... nevermind, I don't care. Just do your job, please?",
    "dst": "Ты-... неважно, мне всё равно. Просто делай своё дело, ладно?",
    "role": "desc",
@@ -696,7 +836,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#069": {
+  "The Mercenary#083": {
    "src": "On it, boss!",
    "dst": "Есть, босс!",
    "role": "desc",
@@ -706,7 +846,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#070": {
+  "The Mercenary#084": {
    "src": "See you two on the other side!",
    "dst": "Увидимся на той стороне!",
    "role": "desc",
@@ -716,7 +856,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#071": {
+  "The Mercenary#085": {
    "src": "Alright, let's get to work!",
    "dst": "Ну, за дело!",
    "role": "desc",
@@ -726,7 +866,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#072": {
+  "The Mercenary#086": {
    "src": "Continue through the barracks.",
    "dst": "Продолжи путь через казармы.",
    "role": "desc",
@@ -736,7 +876,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#073": {
+  "The Mercenary#087": {
    "src": "Damn it... damn it, damn it, damn it ALL! Couldn't give me a MOMENT of peace, could he, that rat Amerigo...",
    "dst": "Проклятье... проклятье, проклятье, будь оно ВСЁ проклято! Ни МИНУТЫ покоя не даст, крыса Amerigo...",
    "role": "desc",
@@ -746,7 +886,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#074": {
+  "The Mercenary#088": {
    "src": "...do I really need to do everything myself?! It's almost as though-",
    "dst": "...мне правда всё делать самому?! Прямо как будто-",
    "role": "desc",
@@ -756,7 +896,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#075": {
+  "The Mercenary#089": {
    "src": "Oh, I see. I see what's going on. More of Amerigo's dogs, here to take care of his business, huh?! Get out here where I can see you.",
    "dst": "А, понятно. Понятно, в чём дело. Опять псы Amerigo пришли делать за него грязную работу?! Выходите, чтобы я вас видел.",
    "role": "desc",
@@ -766,7 +906,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#076": {
+  "The Mercenary#090": {
    "src": "You look new... haven't been around long enough to really see the face of War up close and personal yet, have you?",
    "dst": "Свежие лица... Ещё не видали лицо Войны вблизи, а?",
    "role": "desc",
@@ -776,7 +916,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#077": {
+  "The Mercenary#091": {
    "src": "You think this is right? You think it's right that those DAMNED admirals get all the wealth and fame, when WE'RE the ones out fighting in the trenches?!",
    "dst": "Думаешь, это правильно? Правильно, что ПРОКЛЯТЫЕ адмиралы гребут богатство и славу, пока в окопах воюем МЫ?!",
    "role": "desc",
@@ -786,7 +926,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#078": {
+  "The Mercenary#092": {
    "src": "I've seen soldiers fall and fall and fall, then rise back up again. I've lived through the chaos and death of battle more times than I could count.",
    "dst": "Я видел, как солдаты падали, падали и падали, а потом вставали снова. Я пережил хаос и смерть битвы больше раз, чем могу сосчитать.",
    "role": "desc",
@@ -796,7 +936,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#079": {
+  "The Mercenary#093": {
    "src": "And these IDIOTS think they deserve their power? Their authority?!",
    "dst": "И эти ИДИОТЫ думают, что заслужили свою власть? Свои полномочия?!",
    "role": "desc",
@@ -806,7 +946,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#080": {
+  "The Mercenary#094": {
    "src": "...You've killed dozens, and you're keeping dozens more captured.",
    "dst": "...Ты убил десятки людей и держишь в плену ещё десятки.",
    "role": "desc",
@@ -816,7 +956,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#081": {
+  "The Mercenary#095": {
    "src": "And I'd do all that and more, just to prove my point! They think they hold power?! I'll show them power...",
    "dst": "И сделаю ещё больше, чтобы доказать свою правоту! Думают, у них власть?! Я им покажу власть...",
    "role": "desc",
@@ -826,7 +966,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#082": {
+  "The Mercenary#096": {
    "src": "I suppose I'll start with you. What are two more compared to dozens?",
    "dst": "Начну, пожалуй, с вас. Что такое ещё двое после десятков?",
    "role": "desc",
@@ -836,7 +976,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#083": {
+  "The Mercenary#097": {
    "src": "Step aside, Shadow Spears. I'd like to deal with these dogs myself.",
    "dst": "В сторону, Shadow Spears. С этими псами я разберусь сам.",
    "role": "desc",
@@ -846,7 +986,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#084": {
+  "The Mercenary#098": {
    "src": "...We won't make it easy for you.",
    "dst": "...Мы не дадимся тебе легко.",
    "role": "desc",
@@ -856,7 +996,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#085": {
+  "The Mercenary#099": {
    "src": "Defeat Takan.",
    "dst": "Победи Takan.",
    "role": "desc",
@@ -866,7 +1006,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#086": {
+  "The Mercenary#100": {
    "src": "Hrrk-...",
    "dst": "Хррк-...",
    "role": "desc",
@@ -876,7 +1016,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#087": {
+  "The Mercenary#101": {
    "src": "Y-you won't-... Stay back!",
    "dst": "В-вы не-... Назад!",
    "role": "desc",
@@ -886,7 +1026,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#088": {
+  "The Mercenary#102": {
    "src": "Damn it, he's getting away!",
    "dst": "Проклятье, он уходит!",
    "role": "desc",
@@ -896,7 +1036,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#089": {
+  "The Mercenary#103": {
    "src": "This tower can only go up... Come on, we need to chase after him! We can't let him get away!",
    "dst": "Из этой башни путь только наверх... Скорее, надо его догнать! Нельзя дать ему уйти!",
    "role": "desc",
@@ -906,7 +1046,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#090": {
+  "The Mercenary#104": {
    "src": "Continue up the stairs in the barracks.",
    "dst": "Поднимись дальше по лестнице в казармах.",
    "role": "desc",
@@ -916,7 +1056,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#091": {
+  "The Mercenary#105": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -926,7 +1066,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#092": {
+  "The Mercenary#106": {
    "src": "No need to be hasty.",
    "dst": "Не стоит спешить.",
    "role": "desc",
@@ -936,7 +1076,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#093": {
+  "The Mercenary#107": {
    "src": "Look, it's obvious we've lost here. Even if that idiot escapes, you military folk will find him.",
    "dst": "Слушайте, ясно, что мы проиграли. Даже если этот идиот сбежит, вы, военные, его найдёте.",
    "role": "desc",
@@ -946,7 +1086,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#094": {
+  "The Mercenary#108": {
    "src": "So, I surrender! Don't see the point in fightin' a pointless battle. Not like we're gonna be paid after this mess, anyhow.",
    "dst": "Так что я сдаюсь! Не вижу смысла в бессмысленной драке. Всё равно после этой каши нам не заплатят.",
    "role": "desc",
@@ -956,7 +1096,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#095": {
+  "The Mercenary#109": {
    "src": "Here, take the key to the tower. A sign of good faith. Do what you will with him, I really don't care.",
    "dst": "Вот, ключ от башни. В знак доброй воли. Делайте с ним что хотите, мне правда всё равно.",
    "role": "desc",
@@ -966,7 +1106,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#096": {
+  "The Mercenary#110": {
    "src": "I always preferred his brother anyway. Much quieter.",
    "dst": "Мне всегда больше нравился его брат. Куда тише.",
    "role": "desc",
@@ -976,7 +1116,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#097": {
+  "The Mercenary#111": {
    "src": "Ugh, more bandits... I'll hold them off here.",
    "dst": "Ох, опять разбойники... Я задержу их здесь.",
    "role": "desc",
@@ -986,7 +1126,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#098": {
+  "The Mercenary#112": {
    "src": "Keep going after Takan! I'll be fine!",
    "dst": "Догоняй Takan! Я справлюсь!",
    "role": "desc",
@@ -996,7 +1136,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#099": {
+  "The Mercenary#113": {
    "src": "Head up the tower and take out Takan.",
    "dst": "Поднимись на башню и покончи с Takan.",
    "role": "desc",
@@ -1006,7 +1146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#100": {
+  "The Mercenary#114": {
    "src": "Urgh... Why did I even come up here?! There's nowhere for me to-",
    "dst": "Угх... И зачем я сюда полез?! Мне некуда-",
    "role": "desc",
@@ -1016,7 +1156,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#101": {
+  "The Mercenary#115": {
    "src": "...Oh. L-listen. We can talk this out-",
    "dst": "...О. П-послушай. Договоримся-",
    "role": "desc",
@@ -1026,7 +1166,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#102": {
+  "The Mercenary#116": {
    "src": "N-no... not- l-like... this...",
    "dst": "Н-нет... не- т-так...",
    "role": "desc",
@@ -1036,7 +1176,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#103": {
+  "The Mercenary#117": {
    "src": "Regroup with your companions at [{~}, {~}, -{~}].",
    "dst": "Встреться с товарищами на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -1046,7 +1186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#104": {
+  "The Mercenary#118": {
    "src": "...and so then, I had to free them somehow! So I shouted at them to brace for it, and-",
    "dst": "...и тогда пришлось их как-то освобождать! Я крикнул им держаться, и-",
    "role": "desc",
@@ -1056,7 +1196,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#105": {
+  "The Mercenary#119": {
    "src": "{u}! There you are! I'm glad you made it out safely. It looks like the bandits are dispersing.",
    "dst": "{u}! Вот ты где! Рад видеть тебя в целости. Похоже, разбойники разбегаются.",
    "role": "desc",
@@ -1066,7 +1206,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#106": {
+  "The Mercenary#120": {
    "src": "And so is my train of thought for my story. So! Did you get him?",
    "dst": "Как и мои мысли об истории. Итак! Достали его?",
    "role": "desc",
@@ -1076,7 +1216,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#107": {
+  "The Mercenary#121": {
    "src": "That's good to hear. At least something good came of this whole situation...",
    "dst": "Приятно слышать. Хоть что-то хорошее вышло из всей этой истории...",
    "role": "desc",
@@ -1086,7 +1226,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#108": {
+  "The Mercenary#122": {
    "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a dangerous man.",
    "dst": "Рад, что мы всё-таки его одолели. Что он говорил... он казался опасным человеком.",
    "role": "desc",
@@ -1096,7 +1236,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#109": {
+  "The Mercenary#123": {
    "src": "Oh, not this again. You're still on that?",
    "dst": "Ох, опять ты за своё?",
    "role": "desc",
@@ -1106,7 +1246,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#110": {
+  "The Mercenary#124": {
    "src": "I caught a few of the things he was shoutin' from outside. It didn't sound very pleasant.",
    "dst": "Снаружи до меня долетело кое-что из его криков. Звучало не очень-то приятно.",
    "role": "desc",
@@ -1116,7 +1256,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#111": {
+  "The Mercenary#125": {
    "src": "Lanu:\nSome of us care about history, Mel.",
    "dst": "Некоторым из нас важна история, Mel.",
    "role": "desc",
@@ -1126,7 +1266,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#112": {
+  "The Mercenary#126": {
    "src": "Well, I didn't hear a thing. Probably on account of the ringing in my ears. It seems to me we're done here, though, right?",
    "dst": "Ну, а я ничего не слышал. Наверное, из-за звона в ушах. Но, по-моему, мы тут закончили, так?",
    "role": "desc",
@@ -1136,7 +1276,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#113": {
+  "The Mercenary#127": {
    "src": "It looks like it, yes. I think I'll stay behind to help the soldiers clear out the remaining bandits.",
    "dst": "Похоже на то. Думаю, останусь помочь солдатам добить оставшихся разбойников.",
    "role": "desc",
@@ -1146,7 +1286,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#114": {
+  "The Mercenary#128": {
    "src": "I figure I'll stick around too. Don't got anythin' better to do right now, anyway!",
    "dst": "Я, пожалуй, тоже задержусь. Всё равно заняться сейчас нечем!",
    "role": "desc",
@@ -1156,7 +1296,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#115": {
+  "The Mercenary#129": {
    "src": "Well, I'm out of here. I've got places to be! Things to do! Explosives to return! Goodbye!",
    "dst": "Ну, а я пошёл. Меня ждут места! Дела! Взрывчатка, которую надо вернуть! Пока!",
    "role": "desc",
@@ -1166,7 +1306,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#116": {
+  "The Mercenary#130": {
    "src": "{u}, I guess that leaves the two of us to return to {p} with the news! Let's get going.",
    "dst": "{u}, выходит, возвращаться в {p} с вестями нам двоим! Идём.",
    "role": "desc",
@@ -1176,7 +1316,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#117": {
+  "The Mercenary#131": {
    "src": "Bring Takan's badge to Amerigo at [{~}, {~}, -{~}].",
    "dst": "Отнеси значок Takan Amerigo на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -1186,7 +1326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#118": {
+  "The Mercenary#132": {
    "src": "Soldiers! Report! Don't tell me you're the only two survivors, damn it all...",
    "dst": "Солдаты! Доклад! Только не говорите, что выжили лишь вы двое, проклятье...",
    "role": "desc",
@@ -1196,7 +1336,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#119": {
+  "The Mercenary#133": {
    "src": "No, sir, the mission was a success. Takan is dead.",
    "dst": "Нет, сэр, задание выполнено. Takan мёртв.",
    "role": "desc",
@@ -1206,7 +1346,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#120": {
+  "The Mercenary#134": {
    "src": "You're certain of this? You have his badge, surely...?",
    "dst": "Вы уверены? Его значок ведь при вас...?",
    "role": "desc",
@@ -1216,7 +1356,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#121": {
+  "The Mercenary#135": {
    "src": "I see... satisfactory work, soldiers. You two, and the others, have {p}'s gratitude.",
    "dst": "Вижу... удовлетворительная работа, солдаты. Вам двоим и остальным - благодарность {p}.",
    "role": "desc",
@@ -1226,7 +1366,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#122": {
+  "The Mercenary#136": {
    "src": "Admiral, sir. Some of what Takan is saying, it was-",
    "dst": "Адмирал, сэр. Кое-что из того, что говорил Takan, было-",
    "role": "desc",
@@ -1236,7 +1376,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#123": {
+  "The Mercenary#137": {
    "src": "I wouldn't put too much stock in those traitor's words. People like him, who spit vitriol with no merit, riling up the masses against the order we hold.",
    "dst": "Я бы не придавал значения словам этого предателя. Такие, как он, изрыгают пустой яд и настраивают толпу против нашего порядка.",
    "role": "desc",
@@ -1246,7 +1386,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#124": {
+  "The Mercenary#138": {
    "src": "He is an angry man holding a grudge for an imagined wrongdoing. There is nothing more to it than that. I would suggest putting it out of your mind.",
    "dst": "Он злобный человек, затаивший обиду за выдуманную несправедливость. Больше тут ничего нет. Советую выбросить это из головы.",
    "role": "desc",
@@ -1256,7 +1396,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#125": {
+  "The Mercenary#139": {
    "src": "You will all be well-compensated for your work today. Now, run along. I have to collect my honorary badge for taking out Ex-Commander Takan.",
    "dst": "Все вы получите щедрую награду за сегодня. А теперь ступайте. Мне пора получить почётный значок за устранение бывшего командира Takan.",
    "role": "desc",
@@ -1266,7 +1406,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#126": {
+  "The Mercenary#140": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -1276,7 +1416,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#127": {
+  "The Mercenary#141": {
    "src": "I'm starting to see why Takan hated him so much.",
    "dst": "Кажется, я начинаю понимать, за что Takan так его ненавидел.",
    "role": "desc",
@@ -1286,7 +1426,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#128": {
+  "The Mercenary#142": {
    "src": "I'll... probably try to speak to Admiral Aegis about that the next time I'm in {p}.",
    "dst": "Я... наверное, попробую поговорить об этом с адмиралом Aegis, когда буду в {p}.",
    "role": "desc",
@@ -1296,7 +1436,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#129": {
+  "The Mercenary#143": {
    "src": "Anyway! What an adventure, right? I can't wait to tell Tasim about it.",
    "dst": "В общем! Вот это приключение, да? Не терпится рассказать Tasim.",
    "role": "desc",
@@ -1306,7 +1446,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#130": {
+  "The Mercenary#144": {
    "src": "...Speaking of. Have you heard from him recently? I can't seem to get ahold of him at all.",
    "dst": "...Кстати. О нём есть какие-то вести? Никак не могу с ним связаться.",
    "role": "desc",
@@ -1316,7 +1456,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#131": {
+  "The Mercenary#145": {
    "src": "It's weird. Last I heard, he was at {p}, but he's not there anymore.",
    "dst": "Странно. Последнее, что я слышал, - он был в {p}, но теперь его там нет.",
    "role": "desc",
@@ -1326,7 +1466,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#132": {
+  "The Mercenary#146": {
    "src": "He- what? Really? And he didn't even tell me...",
    "dst": "Он- что? Правда? И даже мне не сказал...",
    "role": "desc",
@@ -1336,7 +1476,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#133": {
+  "The Mercenary#147": {
    "src": "...I guess it must have slipped his mind. That's alright. We're all busy around here, right?",
    "dst": "...Наверное, из головы вылетело. Ничего страшного. Мы тут все заняты, так?",
    "role": "desc",
@@ -1346,7 +1486,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#134": {
+  "The Mercenary#148": {
    "src": "A general location is useful, though. I'll see if I can get any letters to him. Thanks for telling me.",
    "dst": "Но хоть примерное место - уже что-то. Попробую отправить ему письмо. Спасибо за весть.",
    "role": "desc",
@@ -1356,7 +1496,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#135": {
+  "The Mercenary#149": {
    "src": "Yeah, that makes two of us...",
    "dst": "Да, я тоже...",
    "role": "desc",
@@ -1366,7 +1506,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#136": {
+  "The Mercenary#150": {
    "src": "Well, it's probably fine. I'm sure he'll pop up eventually! We just need to wait.",
    "dst": "Ну, наверное, всё в порядке. Уверен, он объявится! Надо лишь подождать.",
    "role": "desc",
@@ -1376,7 +1516,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#137": {
+  "The Mercenary#151": {
    "src": "I wonder where he's gone off to? Some kind of assignment in {p}, maybe? Or could he have gone off to Gavel...?",
    "dst": "Интересно, куда он делся? Может, какое-то задание в {p}? Или он отправился в Gavel...?",
    "role": "desc",
@@ -1386,7 +1526,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#138": {
+  "The Mercenary#152": {
    "src": "Well, whatever. It was good to see you again! Even if... well. Even if it was strange.",
    "dst": "Ну, неважно. Рад был снова тебя увидеть! Даже если... ну. Даже если всё было странно.",
    "role": "desc",
@@ -1396,7 +1536,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#139": {
+  "The Mercenary#153": {
    "src": "I'll see you around, {u}.",
    "dst": "Ещё увидимся, {u}.",
    "role": "desc",
@@ -1406,7 +1546,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#140": {
+  "The Mercenary#154": {
    "src": "Well, I guess I'm going to head off. I'll see you around, {u}!",
    "dst": "Что ж, пожалуй, я пойду. Ещё увидимся, {u}!",
    "role": "desc",

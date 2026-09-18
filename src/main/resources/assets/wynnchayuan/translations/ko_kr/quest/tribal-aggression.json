@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Tribal Aggression",
-  "count": 24,
+  "count": 29,
   "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Tribal Aggression#000": {
+   "src": "My tribe worries our own business, stranger.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#001": {
+   "src": "I'm sure they hid the totem, but if you are able to find it, I await your return!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#002": {
+   "src": "Hopefully, we two camps will never set foot on another's land in an attempt to steal back the totems, and live in peace.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#003": {
+   "src": "I-Is that, the totem? My, it has been a long time since the owl has been with me. Though I wonder if the Eagle and Owl totem possess the same mystic powers.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#004": {
+   "src": "Have you gotten our totem back yet? The Eagle camp is across the river, on the other side of the canyon.",
+   "dst": "우리 토템은 되찾아 왔나? 독수리 부족 야영지는 강 건너, 협곡 반대편에 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#005": {
    "src": "Talk to Caras at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]의 Caras에게 말을 거세요",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tribal Aggression#001": {
+  "Tribal Aggression#006": {
    "src": "My tribes worries our own business, stranger.",
    "dst": "우리 부족 일은 우리가 알아서 하오, 이방인.",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#002": {
+  "Tribal Aggression#007": {
    "src": "Oh, my apologies, I did not realize you are a warrior of the province! We would be grateful of your help.",
    "dst": "오, 실례했소. 이 지방의 전사인 줄 몰랐구려! 도와준다면 감사하겠소.",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#003": {
+  "Tribal Aggression#008": {
    "src": "Our sacred owl totem that we worship was stolen by the cunning Eagle Tribe many years ago. Its magical properties used to bring prosperity to our camp.",
    "dst": "우리가 섬기는 신성한 올빼미 토템을 오래전 교활한 독수리 부족이 훔쳐 갔소. 그 마력이 우리 야영지에 번영을 가져다주었는데.",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#004": {
+  "Tribal Aggression#009": {
    "src": "However, the Eagle tribe are not victorious, we possess their mystic eagle totem, but alas, I do not know who was the original thief.",
    "dst": "하지만 독수리 부족도 이긴 게 아니오. 그들의 신비한 독수리 토템이 우리에게 있으니. 다만 누가 먼저 훔쳤는지는 모르겠소.",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#005": {
+  "Tribal Aggression#010": {
    "src": "We have been at war for years now, despite being neighbors. Without our totem, our rivalry will continue for ages and peace will never again be felt in our hearts.",
    "dst": "이웃이면서도 수년째 전쟁 중이오. 토템이 없으면 이 반목은 영원히 이어질 것이고, 우리 마음에 평화가 다시 찾아오지 않을 것이오.",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#006": {
+  "Tribal Aggression#011": {
    "src": "Retrieve our totem, and the blessing of the Owl spirit will be with you.",
    "dst": "우리 토템을 되찾아 주면 올빼미 영혼의 축복이 그대와 함께할 것이오.",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#007": {
+  "Tribal Aggression#012": {
    "src": "Now, enter the Eagle Camp across the river, you may have to search the camp, I'm sure they have hidden our totem!",
    "dst": "자, 강 건너 독수리 부족 야영지로 들어가시오. 야영지를 뒤져야 할지도 모르오. 분명 토템을 숨겨 두었을 테니!",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#008": {
+  "Tribal Aggression#013": {
    "src": "Enter the Eagle Camp and talk to Favian",
    "dst": "독수리 부족 야영지에 들어가 Favian에게 말을 거세요",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tribal Aggression#009": {
+  "Tribal Aggression#014": {
    "src": "Greetings, what brings you to the noble Eagle tribe?",
    "dst": "반갑소. 고귀한 독수리 부족에겐 무슨 일로 왔소?",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#010": {
+  "Tribal Aggression#015": {
    "src": "You seek the Owl totem? The cursed Owl tribe trying to retain their lost dignity again.",
    "dst": "올빼미 토템을 찾는다고? 저주받은 올빼미 부족이 또 잃어버린 체면을 되찾으려 하는군.",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#011": {
+  "Tribal Aggression#016": {
    "src": "Why should we give you their totem back? They stole our source of enlightenment all those years ago.",
    "dst": "왜 우리가 그들의 토템을 돌려줘야 하오? 그 옛날 우리의 깨달음의 원천을 훔쳐 간 건 그들이오.",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#012": {
+  "Tribal Aggression#017": {
    "src": "Tell you what, if you can retrieve our Eagle Totem, I will allow you to go return the Owl totem.",
    "dst": "이렇게 하지. 우리 독수리 토템을 되찾아 오면, 올빼미 토템을 돌려주러 가게 해 주겠소.",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#013": {
+  "Tribal Aggression#018": {
    "src": "I'm sure they hid the totem, but if you are able to find, I await your return!",
    "dst": "분명 토템을 숨겼겠지만, 찾아낼 수 있다면 돌아오길 기다리겠소!",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#014": {
+  "Tribal Aggression#019": {
    "src": "Bring back the Eagle Totem from the Owl Camp",
    "dst": "올빼미 부족 야영지에서 독수리 토템을 되찾아 오세요",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tribal Aggression#015": {
+  "Tribal Aggression#020": {
    "src": "Wonderful! You may now enter the cave to retrieve the blasted Owl totem.",
    "dst": "훌륭하오! 이제 동굴에 들어가 그 빌어먹을 올빼미 토템을 가져가도 좋소.",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#016": {
+  "Tribal Aggression#021": {
    "src": "Be careful, there are Eagle guardians in the cave, be prepared traveller.",
    "dst": "조심하시오. 동굴엔 독수리 수호자들이 있으니 대비하시오, 여행자여.",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#017": {
+  "Tribal Aggression#022": {
    "src": "Once you get the totem, you may return it to its original tribe.",
    "dst": "토템을 손에 넣으면 원래 부족에게 돌려줘도 좋소.",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#018": {
+  "Tribal Aggression#023": {
    "src": "Hopefully, we two camps will never set foot on another's land in an attempt steal back the totems, and live in peace.",
    "dst": "바라건대 우리 두 야영지가 다시는 토템을 훔치려 서로의 땅을 밟지 않고 평화롭게 살았으면 하오.",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#019": {
+  "Tribal Aggression#024": {
    "src": "Anyways, hurry up, even the thought of the two totems sharing the same space makes me sick.",
    "dst": "아무튼 서두르시오. 두 토템이 한 곳에 있다는 생각만 해도 속이 뒤집히니.",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#020": {
+  "Tribal Aggression#025": {
    "src": "Retrieve the Owl Totem and return it to the Owl Camp",
    "dst": "올빼미 토템을 되찾아 올빼미 부족 야영지에 돌려주세요",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tribal Aggression#021": {
+  "Tribal Aggression#026": {
    "src": "I-Is that, the totem? My, it has been a long time since the owl has been with me. Though I wonder if the Eagle and the Owl totem possess the same mystic powers.",
    "dst": "그, 그것이 토템이오? 이런, 올빼미가 내 곁을 떠난 지 참 오래되었소. 그런데 독수리 토템과 올빼미 토템이 같은 신비한 힘을 지녔는지 궁금하구려.",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#022": {
+  "Tribal Aggression#027": {
    "src": "To think, such a long war could end so quickly and by the help of a single person.",
    "dst": "이토록 긴 전쟁이 한 사람의 도움으로 이렇게 빨리 끝날 줄이야.",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "Caras",
    "source": "wiki"
   },
-  "Tribal Aggression#023": {
+  "Tribal Aggression#028": {
    "src": "Many thanks to you! I shall keep my promise, please accept this reward, and may the Owl be forever with you.",
    "dst": "정말 고맙소! 약속을 지키겠소. 이 보상을 받아 주시오. 올빼미가 영원히 그대와 함께하길.",
    "role": "desc",
@@ -245,16 +295,6 @@
    "stage": "Stage 4",
    "speaker": "Caras",
    "source": "wiki"
-  },
-  "Tribal Aggression#000~1": {
-   "src": "Have you gotten our totem back yet? The Eagle camp is across the river, on the other side of the canyon.",
-   "dst": "우리 토템은 되찾아 왔나? 독수리 부족 야영지는 강 건너, 협곡 반대편에 있다.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tribal Aggression",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

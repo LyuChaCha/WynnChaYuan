@@ -1,12 +1,72 @@
 {
  "_meta": {
   "quest": "Tempo Town Trouble",
-  "count": 57,
+  "count": 63,
   "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Tempo Town Trouble#000": {
+   "src": "New Quest Started: {p} Trouble",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tempo Town Trouble#001": {
+   "src": "But... There's probably some kind of wacky magic keeping it shut, since I can't get it open at all!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tempo Town Trouble#002": {
+   "src": "The monster you just killed was known as a Time Trouble. They're odd creatures that were forced into a day-long temporal loop by some fools long ago.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tempo Town Trouble#003": {
+   "src": "Oh, he actually showed his face after you took care of the thing? What, did you beat him to the punch or something?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tempo Town Trouble#004": {
+   "src": "Wait... What? He was...trying to seal the thing away, instead of killing it, and...you destroying it broke the seal?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tempo Town Trouble#005": {
+   "src": "...hm. Well, this is a bit awkward- I don't have a reward ready for you. Making this place took a lot of money... Hopefully gratitude is enough- thank you, sincerely!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tempo Town Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tempo Town Trouble#006": {
    "src": "Talk to Tyko at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の Tyko と話す",
    "role": "desc",
@@ -16,7 +76,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tempo Town Trouble#001": {
+  "Tempo Town Trouble#007": {
    "src": "Hey, excuse me! I'm in need of- ...yeah, just walk right by me. Maybe I shoulda gone to {p} for help, these people here have enough problems...",
    "dst": "おーい、すまん！助けが…って、素通りかよ。{p} に頼みに行きゃよかったか、ここの連中も手一杯だしな…",
    "role": "desc",
@@ -26,7 +86,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#002": {
+  "Tempo Town Trouble#008": {
    "src": "Don't suppose you'd be willing to help, huh? Bet you're busy- Wait, you've got spare time? Criminy, only took a week of asking! Good to meet ya.",
    "dst": "手伝ってくれる気は…ないよな？忙しいだろうし…え、暇がある？うわ、一週間頼み続けた甲斐があった！よろしくな。",
    "role": "desc",
@@ -36,7 +96,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#003": {
+  "Tempo Town Trouble#009": {
    "src": "Alright, My name is Tyko, and I got asked to find a capable soldier for- well, lemme explain. So, I'm from a place called {p}, by {p}. It's a recent establishment.",
    "dst": "よし、俺は Tyko。腕の立つ兵士を探すよう頼まれてて…まあ説明させてくれ。俺は {p} って所から来た。{p} のそばの、できたばかりの場所だ。",
    "role": "desc",
@@ -46,7 +106,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#004": {
+  "Tempo Town Trouble#010": {
    "src": "I'm buddies with the mayor- he set up {p} as kind of a homeless shelter for people whose homes got ruined by corrupted attacks, since {p} doesn't seem corrupted.",
    "dst": "町長とは仲がよくてさ。町長は {p} を、腐敗者に家を壊された人の避難所にしたんだ。{p} は腐敗してないみたいだからな。",
    "role": "desc",
@@ -56,7 +116,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#005": {
+  "Tempo Town Trouble#011": {
    "src": "Some old guy with jaundice or something swings by, some kind of keeper- Says to set up on a ridge overlooking a lake. So, we did! Everything was going well for a bit.",
    "dst": "黄疸だか何だかの爺さんが通りかかって、番人か何かでさ、湖を見下ろす尾根に住めって言うんだ。だからそうした！しばらくは順調だった。",
    "role": "desc",
@@ -66,7 +126,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#006": {
+  "Tempo Town Trouble#012": {
    "src": "And then some freaky time monster starts showing up in the middle of the night and tries to bust down our doors! We were told that ridge was safe, but that was clearly a lie.",
    "dst": "そしたら変な時間の化け物が夜中に現れて、うちの扉をぶち破ろうとするんだ！あの尾根は安全だって言われたのに、真っ赤な嘘だった。",
    "role": "desc",
@@ -76,7 +136,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#007": {
+  "Tempo Town Trouble#013": {
    "src": "So, that's why I'm here. No one at {p} is tough enough to kill that thing, so I ran over here to ask for some backup. Glad I ran into ya!",
    "dst": "それで俺はここにいる。{p} にはあいつを倒せる強い奴がいないから、応援を頼みに走ってきたんだ。会えてよかった！",
    "role": "desc",
@@ -86,7 +146,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#008": {
+  "Tempo Town Trouble#014": {
    "src": "Lemme write down the coordinates for ya in your book. I'm gonna stick around and see if anyone else feels like helping.",
    "dst": "本に座標を書いとくよ。俺はここに残って、他にも手伝ってくれる奴がいないか探す。",
    "role": "desc",
@@ -96,7 +156,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#009": {
+  "Tempo Town Trouble#015": {
    "src": "The coordinates to where you need to go should be in your book. Help us out, yeah?",
    "dst": "行き先の座標は本に書いてあるはずだ。助けてくれるよな？",
    "role": "desc",
@@ -106,7 +166,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#010": {
+  "Tempo Town Trouble#016": {
    "src": "Go to {p} at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の {p} へ行く",
    "role": "desc",
@@ -116,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tempo Town Trouble#011": {
+  "Tempo Town Trouble#017": {
    "src": "Hello- Welcome to {p}, friend! Established only two months ago, I'm proud to provide aid to those displaced by corrupted raids.",
    "dst": "こんにちは、{p} へようこそ！まだ二か月前にできたばかりですが、腐敗者の襲撃で住まいを失った人々を支援しています。",
    "role": "desc",
@@ -126,7 +186,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#012": {
+  "Tempo Town Trouble#018": {
    "src": "Come to think of it, you look like a {p} representative... Can I bother you to deliver some paperwork to the castle about getting officially established here?",
    "dst": "そういえば、{p} の代表の方に見えますね…ここを正式に設立する書類を、城まで届けていただけませんか？",
    "role": "desc",
@@ -136,7 +196,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#013": {
+  "Tempo Town Trouble#019": {
    "src": "...Repeat that? ...OH! Oh, no wonder you- Agh, my mind's all over the place from stress, I'm so relieved he found help finally!",
    "dst": "…もう一度？…ああ！なるほど、だから―ああ、心労で頭がぐちゃぐちゃで。彼がやっと助けを見つけてくれて本当によかった！",
    "role": "desc",
@@ -146,7 +206,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#014": {
+  "Tempo Town Trouble#020": {
    "src": "Alright, Tyko told you about the monster, right? We were told by that old man Martyn to settle on this ridge because there weren't any dangerous creatures here!",
    "dst": "Tyko から化け物のことは聞きましたよね？あの Martyn という老人に、危険な生き物がいないからこの尾根に住めと言われたんです！",
    "role": "desc",
@@ -156,7 +216,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#015": {
+  "Tempo Town Trouble#021": {
    "src": "Oh, not that kind of soldier? That's too bad... But- oh, this is a shot in the dark, but... maybe you'd be the type of soldier to take out a monster for us?",
    "dst": "あ、そういう兵士さんじゃない？残念…でも…ダメ元ですが…化け物を退治してくれるような兵士さんだったりしませんか？",
    "role": "desc",
@@ -166,7 +226,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#016": {
+  "Tempo Town Trouble#022": {
    "src": "You- you would!? Oh, thank goodness you arrived when you did! You see- we were told by that old man Martyn to settle on this ridge because there apparently weren't any dangerous creatures here!",
    "dst": "え、やってくれるんですか！？ああ、ちょうどいい時に来てくださった！実は、あの Martyn という老人に、危険な生き物はいないはずだからこの尾根に住めと言われたんです！",
    "role": "desc",
@@ -176,7 +236,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#017": {
+  "Tempo Town Trouble#023": {
    "src": "But every night, the same monster emerges from one of the ruins, and tries to smash the buildings down! Every single night, at the same time!",
    "dst": "でも毎晩、同じ化け物が遺跡の一つから出てきて、建物を壊そうとするんです！毎晩、同じ時刻に！",
    "role": "desc",
@@ -186,7 +246,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#018": {
+  "Tempo Town Trouble#024": {
    "src": "The guards are getting run ragged, and I refuse to be responsible for any deaths when I'm trying to save these folks!",
    "dst": "衛兵はへとへとですし、人々を救おうとしているのに死者を出すわけにはいきません！",
    "role": "desc",
@@ -196,7 +256,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#019": {
+  "Tempo Town Trouble#025": {
    "src": "We found the ruin it came out of, too- Er, one of the folks here, Doug, did! Here, let me write down the location for you- no, no, I insist, let me do it!",
    "dst": "出てきた遺跡も見つけました…いえ、ここに住む Doug が見つけたんです！場所を書きますね…いえいえ、ぜひ私に書かせてください！",
    "role": "desc",
@@ -206,7 +266,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#020": {
+  "Tempo Town Trouble#026": {
    "src": "There's the coordinates in case you forget, but it's in the temple just up the hill! Please, please hurry and take care of that horrible monster!",
    "dst": "忘れた時のための座標です。でも丘を登ってすぐの神殿の中です！どうか、どうか急いであの恐ろしい化け物を片付けてください！",
    "role": "desc",
@@ -216,7 +276,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#021": {
+  "Tempo Town Trouble#027": {
    "src": "The coordinates are in your book, but it's in the temple just up the hill! Please, please hurry and take care of that horrible monster!",
    "dst": "座標は本に書いてありますが、丘を登ってすぐの神殿の中です！どうか、どうか急いであの恐ろしい化け物を片付けてください！",
    "role": "desc",
@@ -226,7 +286,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#022": {
+  "Tempo Town Trouble#028": {
    "src": "Investigate the ruin at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の遺跡を調べる",
    "role": "desc",
@@ -236,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tempo Town Trouble#023": {
+  "Tempo Town Trouble#029": {
    "src": "Grr... I KNOW I saw that beast go in here, where the heck is it?!",
    "dst": "くそ…あの獣がここに入るのを確かに見たんだ、どこ行きやがった？！",
    "role": "desc",
@@ -246,7 +306,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#024": {
+  "Tempo Town Trouble#030": {
    "src": "Hey soldier, does that disk look like some type of door to you?",
    "dst": "おい兵士、あの円盤、何かの扉に見えないか？",
    "role": "desc",
@@ -256,7 +316,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#025": {
+  "Tempo Town Trouble#031": {
    "src": "I saw some creature that I've been tracking for a few days disappear around here, and I think it's somewhere behind this disk...",
    "dst": "何日も追ってた生き物がこの辺で消えたんだ。たぶんこの円盤の奥のどこかにいる…",
    "role": "desc",
@@ -266,7 +326,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#026": {
+  "Tempo Town Trouble#032": {
    "src": "There's probably some kind of wacky magic keeping it shut, since I can't get it open at all!",
    "dst": "妙な魔法で閉じてるんだろう、まったく開かないからな！",
    "role": "desc",
@@ -276,7 +336,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#027": {
+  "Tempo Town Trouble#033": {
    "src": "Hey, you're able to use magic, right? Maybe using one of your fancy spells on the disk will get it open?",
    "dst": "なあ、お前は魔法が使えるんだろ？円盤にご自慢の呪文でも撃てば開くんじゃないか？",
    "role": "desc",
@@ -286,7 +346,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#028": {
+  "Tempo Town Trouble#034": {
    "src": "Stand on the disk and cast any spell. That should probably get it open, then we can finally kill that freak of nature lurking inside of there!",
    "dst": "円盤の上に立って何か呪文を唱えてくれ。それで開くはずだ、そしたら中に潜んでる化け物をやっと仕留められる！",
    "role": "desc",
@@ -296,7 +356,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#029": {
+  "Tempo Town Trouble#035": {
    "src": "Let's see... What kind of secrets do these odd temples house?",
    "dst": "さて…この妙な神殿にはどんな秘密があるのやら？",
    "role": "desc",
@@ -306,7 +366,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#030": {
+  "Tempo Town Trouble#036": {
    "src": "Use spells to break open the temple at [-{~}, {~}, -{~}]",
    "dst": "呪文で [-{~}, {~}, -{~}] の神殿をこじ開ける",
    "role": "desc",
@@ -316,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tempo Town Trouble#031": {
+  "Tempo Town Trouble#037": {
    "src": "What was going through your noggin, {u}?",
    "dst": "何を考えておったのじゃ、{u}？",
    "role": "desc",
@@ -326,7 +386,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#032": {
+  "Tempo Town Trouble#038": {
    "src": "Do you have any idea what you were doing? Bashing around that room I just sealed off for good?",
    "dst": "自分が何をしておったか分かっておるのか？わしが封じたばかりの部屋で暴れおって？",
    "role": "desc",
@@ -336,7 +396,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#033": {
+  "Tempo Town Trouble#039": {
    "src": "You need to be careful, soldier! This Valley's secrets are NOT to be meddled with.",
    "dst": "気をつけねばならんぞ、兵士よ！この谷の秘密に手を出してはならん。",
    "role": "desc",
@@ -346,7 +406,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#034": {
+  "Tempo Town Trouble#040": {
    "src": "I assume the mayor of that place called {p} sent you here. You are going to have to tell that lad that his problems just got worse.",
    "dst": "{p} とかいう所の長に頼まれて来たのじゃろう。あの若造に、厄介事がさらに増えたと伝えねばならんぞ。",
    "role": "desc",
@@ -356,7 +416,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#035": {
+  "Tempo Town Trouble#041": {
    "src": "The monster you killed was known as a Time Trouble. They're odd creatures that were forced into a day-long temporal loop by some fools long ago.",
    "dst": "お前が倒した化け物はタイムトラブルと呼ばれる。遥か昔、愚か者どもに一日の時の輪へ押し込められた奇妙な生き物じゃ。",
    "role": "desc",
@@ -366,7 +426,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#036": {
+  "Tempo Town Trouble#042": {
    "src": "The only way to keep them at bay effectively is to seal them, like I just did here. But now, that stunt you just pulled sent ripples across the entire Valley. Now, every single Time Trouble is responding to this one's termination!",
    "dst": "奴らを確実に抑える唯一の手は、わしが今ここでしたように封じることじゃ。じゃが今の無茶のせいで谷じゅうに波紋が広がり、全てのタイムトラブルがこやつの死に反応しておる！",
    "role": "desc",
@@ -376,7 +436,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#037": {
+  "Tempo Town Trouble#043": {
    "src": "Now, one Time Trouble I can handle, but this? I can't keep them all at bay... and now, you went and awakened every single one of those critters.",
    "dst": "一匹ならわしでも手に負えるが、これは？全部は抑えきれん…しかもお前が一匹残らず目覚めさせてしもうた。",
    "role": "desc",
@@ -386,7 +446,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#038": {
+  "Tempo Town Trouble#044": {
    "src": "I can fix this seal, so you'll have one less to deal with, but the rest of the Troubles will have to be taken down daily with brute force.",
    "dst": "この封印は直せるから一匹は減るが、残りのトラブルは毎日力ずくで倒すしかない。",
    "role": "desc",
@@ -396,7 +456,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#039": {
+  "Tempo Town Trouble#045": {
    "src": "You're going to have to deal with those, soldier. I have far too much to take care of in this valley.",
    "dst": "そっちはお前が片付けるのじゃ、兵士よ。わしはこの谷で手一杯でな。",
    "role": "desc",
@@ -406,7 +466,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#040": {
+  "Tempo Town Trouble#046": {
    "src": "They'll have to be exterminated every single day. Now, I'm sure the work won't be thankless, perhaps you'll be rewarded by the townsfolk of {p} for taking care of them.",
    "dst": "奴らは毎日退治せねばならん。まあ骨折り損にはなるまい、{p} の住人が礼をくれるかもしれんぞ。",
    "role": "desc",
@@ -416,7 +476,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#041": {
+  "Tempo Town Trouble#047": {
    "src": "Now please, be careful in the Valley. I already have to look after one person, nevermind the mess of time that the Olm were so-",
    "dst": "ともかく、谷では用心するのじゃぞ。わしはすでに一人の面倒を見ておる、Olm どもがこしらえた時の混乱は言うまでも―",
    "role": "desc",
@@ -426,7 +486,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#042": {
+  "Tempo Town Trouble#048": {
    "src": "...I digress, I'm just rambling again. Now, let me bring us back outside this temple, and you should head back to that shanty town.",
    "dst": "…話がそれた、また長話じゃ。さて、神殿の外へ連れ出してやろう。お前はあの掘っ立て小屋の町へ戻るがよい。",
    "role": "desc",
@@ -436,7 +496,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Tempo Town Trouble#043": {
+  "Tempo Town Trouble#049": {
    "src": "Report back to the mayor in {p} at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の {p} の町長に報告する",
    "role": "desc",
@@ -446,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tempo Town Trouble#044": {
+  "Tempo Town Trouble#050": {
    "src": "You're back! I heard some kind of weird chime coming from the temple on the hill- is that a good sign?",
    "dst": "お帰りなさい！丘の神殿から妙な鐘の音が聞こえました…いい兆しですか？",
    "role": "desc",
@@ -456,7 +516,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#045": {
+  "Tempo Town Trouble#051": {
    "src": "You did?! Oh, thank goodness... Honestly, Martyn told us he would deal with it, but then he just disappeared off into nowhere!",
    "dst": "やったんですか？！ああ、よかった…正直、Martyn は自分が何とかすると言ったのに、どこかへ消えてしまって！",
    "role": "desc",
@@ -466,7 +526,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#046": {
+  "Tempo Town Trouble#052": {
    "src": "Oh, he actually showed his face after you took care of that thing? What, did you beat him to the punch or something?",
    "dst": "え、あなたが片付けた後で顔を出したんですか？何です、先を越したとか？",
    "role": "desc",
@@ -476,7 +536,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#047": {
+  "Tempo Town Trouble#053": {
    "src": "Wait... What? He was... trying to seal the thing away, instead of killing it, and... you destroying it broke the seal?",
    "dst": "待って…え？あの人は…殺すんじゃなく封印しようとしていて…あなたが倒したせいで封印が壊れた？",
    "role": "desc",
@@ -486,7 +546,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#048": {
+  "Tempo Town Trouble#054": {
    "src": "And now there's more of them? Why didn't he just tell us?! Now they'll need to be stopped every day to keep them in check!!",
    "dst": "しかも増えた？どうして言ってくれなかったの？！これじゃ毎日抑え込まないといけないじゃないですか！！",
    "role": "desc",
@@ -496,7 +556,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#049": {
+  "Tempo Town Trouble#055": {
    "src": "Gah, this is a disaster... It isn't your fault, you didn't know- Wait, what's that boxy thing you have? A [Time Fragment]? ...oh, so the monster dropped it.",
    "dst": "ああ、大変なことに…あなたのせいじゃありません、知らなかったんですし…あれ、その四角いのは？[Time Fragment]？…ああ、化け物が落としたんですね。",
    "role": "desc",
@@ -506,7 +566,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#050": {
+  "Tempo Town Trouble#056": {
    "src": "Interesting... One of the townsfolk likes to collect those sorts of things! He's that Mysterious Merchant just behind me.",
    "dst": "面白い…町にそういう物を集めるのが好きな人がいるんです！私の後ろにいる謎の商人ですよ。",
    "role": "desc",
@@ -516,7 +576,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#051": {
+  "Tempo Town Trouble#057": {
    "src": "Go talk with him about those! He might give you something worth your while if you trade them with him.",
    "dst": "その件で彼と話してみてください！交換すれば、いい物をくれるかもしれません。",
    "role": "desc",
@@ -526,7 +586,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#052": {
+  "Tempo Town Trouble#058": {
    "src": "...also, while you were away, that strange magic stone up on the hill started glowing. We're not sure what to do with it, really! Might be worth your attention.",
    "dst": "…それと、あなたがいない間に、丘の上の不思議な魔法の石が光り出したんです。どうしたらいいのか分からなくて！見ておく価値があるかも。",
    "role": "desc",
@@ -536,7 +596,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#053": {
+  "Tempo Town Trouble#059": {
    "src": "...though, this is a bit awkward- I don't have a reward ready for you. Making this place took a lot of money... Hopefully gratitude is enough- thank you, sincerely!",
    "dst": "…ただ、少し気まずいのですが…お礼を用意できていないんです。この場所を作るのにお金がかかって…感謝の気持ちで足りれば…本当にありがとう！",
    "role": "desc",
@@ -546,7 +606,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#054": {
+  "Tempo Town Trouble#060": {
    "src": "Heya! Heard from the mayor that you helped out the town! Can't thank you enough for that.",
    "dst": "よう！町長から、町を助けてくれたって聞いたぜ！いくら感謝しても足りないよ。",
    "role": "desc",
@@ -556,7 +616,7 @@
    "speaker": "Tyko",
    "source": "wiki"
   },
-  "Tempo Town Trouble#055": {
+  "Tempo Town Trouble#061": {
    "src": "Oh hey, it's you! I hope you've been keeping those Time Troubles at bay.",
    "dst": "あ、あなたでしたか！タイムトラブルを抑えてくれているといいのですが。",
    "role": "desc",
@@ -566,7 +626,7 @@
    "speaker": "Homeless Mayor",
    "source": "wiki"
   },
-  "Tempo Town Trouble#056": {
+  "Tempo Town Trouble#062": {
    "src": "Oh, hey! I hope that monster wasn't too difficult for you to defeat.",
    "dst": "おっ、よう！あの化け物、倒すのに苦労しなかったならいいが。",
    "role": "desc",

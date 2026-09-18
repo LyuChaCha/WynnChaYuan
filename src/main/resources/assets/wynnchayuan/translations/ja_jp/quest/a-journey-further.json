@@ -1,902 +1,12 @@
 {
  "_meta": {
   "quest": "A Journey Further",
-  "count": 89,
+  "count": 91,
   "translated": 91,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Further#000": {
-   "src": "Agh... Don't worry...a-about me",
-   "dst": "うっ…心配…しないで",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "A Journey Further#001": {
-   "src": "{u}, good news. I'm basically as recovered as I think I'll get.",
-   "dst": "{u}、いい知らせだ。もうこれ以上は望めないくらい回復した。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "A Journey Further#002": {
-   "src": ">and the hero shall blind the ancient seer. good luck.",
-   "dst": ">そして英雄は古の予言者の目をくらます。幸運を。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "A Journey Further#003": {
-   "src": "Talk to Aledar in {p} at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] の {p} で Aledar と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#004": {
-   "src": "Alright, let's go. I'll tell you more about our journey on the way.",
-   "dst": "よし、行こう。道すがら、この旅のことをもっと話すよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 1",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#005": {
-   "src": "Continue your journey with Aledar.",
-   "dst": "Aledar と旅を続ける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#006": {
-   "src": "We should try to follow the path as closely as we can. You lead, I'll follow.",
-   "dst": "できるだけ道に沿って進もう。君が先導して、僕が続く。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#007": {
-   "src": "Follow the Path.",
-   "dst": "道をたどる。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#008": {
-   "src": "Stop! Did you hear that?",
-   "dst": "止まれ！ 今の聞こえた？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#009": {
-   "src": "It’s an ambush! Stay sharp, {u}!",
-   "dst": "待ち伏せだ！ 気を抜くな、{u}！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#010": {
-   "src": "Defeat the Parasitic Slimers.",
-   "dst": "Parasitic Slimer を倒す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#011": {
-   "src": "Good work. Seems that killing the king made the other creatures run off. We’re lucky about that-",
-   "dst": "よくやった。王を倒したら他の奴らは逃げたみたいだ。運がよかった―",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#012": {
-   "src": "Wait, {u}, what's going on? Are you alright?",
-   "dst": "待って、{u}、どうした？ 大丈夫か？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#013": {
-   "src": "Oh, no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
-   "dst": "ああ、だめだめ！ これに効く薬がある、どこだ、どこだ、あった！ ほら、飲んで！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#014": {
-   "src": "One of those things must have infected your wounds... Everything in this area looks completely hazardous and sickening.",
-   "dst": "あいつらに傷口から感染させられたんだ…この辺りは何もかも危険で気分が悪くなる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#015": {
-   "src": "I expected the worst, so I tried to bring anything and everything that might help. Let's keep moving.",
-   "dst": "最悪を想定して、役に立ちそうな物は全部持ってきたんだ。先へ進もう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#016": {
-   "src": "Continue on the main path with Aledar.",
-   "dst": "Aledar と本道を進み続ける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#017": {
-   "src": "LOOK OUT!",
-   "dst": "危ない！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#018": {
-   "src": "{u}, a-agh...you're okay, right?",
-   "dst": "{u}、う、うう…無事だよね？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#019": {
-   "src": "I'm... I'm going to lead us for now. At least for a little...while... I can't have you g-getting-",
-   "dst": "僕が…しばらく先導するよ。少しの…間だけでも…君をまた、き、傷つけ―",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#020": {
-   "src": "GAH!! AAAGH!",
-   "dst": "ぐあっ！！ ああああ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#021": {
-   "src": "...urgh... I...sorry. I just... I need a moment.",
-   "dst": "…うう…僕は…ごめん。ちょっと…少し休ませて。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#022": {
-   "src": "{u}, you just... you have to realize, I can't have you getting hurt.",
-   "dst": "{u}、君は…わかってほしい。君を傷つけさせるわけにはいかないんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#023": {
-   "src": "I want to stress this... We NEED to get to the end of this path, together.",
-   "dst": "念を押しておく…僕らは一緒にこの道の果てへ行かなきゃならない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#024": {
-   "src": "Hrk... Ugh, dizzy...",
-   "dst": "うっ…ああ、目が回る…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#025": {
-   "src": "Okay. I'm as good as I can get right now. Let's move.",
-   "dst": "よし。今はこれが精一杯だ。行こう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#026": {
-   "src": "Ah? What... What just... Why do I...",
-   "dst": "え？ 何…今のは…どうして僕は…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#027": {
-   "src": "I'll be fine, I just...why did I feel so empty all of the sudden...?",
-   "dst": "大丈夫、ただ…なぜ急にこんなに空っぽな気がしたんだろう…？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#029": {
-   "src": "A mysterious force pushes you back...",
-   "dst": "謎の力に押し戻された…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "A Journey Further#030": {
-   "src": "Oh no, I think something is coming... {u}! Fight it off, I don't think I can defend myself right now!",
-   "dst": "まずい、何か来る…{u}！ 追い払ってくれ、今の僕じゃ身を守れない！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#031": {
-   "src": "Defend Aledar from the Radiated Spiders.",
-   "dst": "Radiated Spider から Aledar を守る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#032": {
-   "src": "Huff... Not feeling totally better, but... At least I can still defend myself.",
-   "dst": "はあ…まだ本調子じゃないけど…少なくとも自分の身は守れる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#033": {
-   "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
-   "dst": "胃が空っぽで吐くこともできない…なぜまだこんなに目が回るんだ？ 薬が効くかも…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#034": {
-   "src": "Hm. No, not that one...",
-   "dst": "うーん。いや、これじゃない…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#035": {
-   "src": "Urgh, pfft! My vomit tasted better than that coming up...",
-   "dst": "うえっ、ぺっ！ 吐いた物のほうがまだマシな味だった…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#036": {
-   "src": "Hah...that's the ticket. Which potion was this anyways... ... hair loss treatment? Why did THAT work?",
-   "dst": "はあ…これだ。ところで何の薬だったんだ…育毛剤？ なんでそれが効くんだ？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#037": {
-   "src": "Though, you saw what happened to that beast I attacked? Follow me.",
-   "dst": "ところで、僕が攻撃したあの獣がどうなったか見た？ ついてきて。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#038": {
-   "src": "This, from what I recall of the mission statements, is referred to as a \"Void Hole.\" It's a sort of portal.",
-   "dst": "任務の資料によると、これは「虚無の穴」と呼ばれている。一種のポータルだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#039": {
-   "src": "They connect to each other in odd ways, but we saw the beast come out of that one when I knocked it in, so...",
-   "dst": "妙な形でつながってるけど、僕が叩き込んだ獣はあっちから出てきた。だから…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#040": {
-   "src": "Watch. I'll come out the other side.",
-   "dst": "見てて。反対側から出てくる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#041": {
-   "src": "Alright, good! It does connect up consistently, at least. You try now.",
-   "dst": "よし、いいぞ！ 少なくとも出口は毎回同じだ。今度は君がやってみて。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#042": {
-   "src": "Jump into the void hole.",
-   "dst": "虚無の穴 に飛び込む。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 7",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#043": {
-   "src": "Continue on the trail with Aledar.",
-   "dst": "Aledar と小道を進み続ける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#044": {
-   "src": "I bring this up because if we're seeing one, we'll be seeing more soon. You'll need to adjust yourself to the sight of them.",
-   "dst": "こんな話をするのは、一つ見かけたらすぐにもっと出てくるからだ。見慣れておいたほうがいい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#045": {
-   "src": "You lead again, please.",
-   "dst": "また先導を頼むよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#046": {
-   "src": "We grossly underestimated the difficulties we would have here. And, by that, I mean myself, Elphie, and Lucio did...",
-   "dst": "ここの困難をひどく甘く見ていた。僕らというのは、僕と Elphie と Lucio のことだ…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#047": {
-   "src": "We were each unprepared and cocky. If it weren't for you, I'd be dead now, for what it's worth.",
-   "dst": "みんな準備不足でうぬぼれていた。君がいなければ、今ごろ僕は死んでいただろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#048": {
-   "src": "I wasn't certain at first about you coming along, but you've more than shown you were the right one for the job.",
-   "dst": "最初は君が来ることに確信がなかった。でも、君こそ適任だと十分すぎるほど示してくれた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#049": {
-   "src": "...I had to figure this map was outdated. This wall of spikes isn't listed on it, and the path goes through here!",
-   "dst": "…この地図は古いと思うべきだった。このトゲの壁は載ってないのに、道はここを通ってる！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#050": {
-   "src": "I'll have to assume they're new...and if they're new, I might be able to bash through them.",
-   "dst": "新しくできたと考えるしかない…新しいなら、叩き壊せるかもしれない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#051": {
-   "src": "{u}, try throwing a spell at the same time! Let's crack through these things!",
-   "dst": "{u}、同時に呪文を撃ってみて！ こいつを突き破ろう！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#052": {
-   "src": "Ok, {~}... {~}... {~}...!",
-   "dst": "よし、{~}…{~}…{~}…！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#053": {
-   "src": "...aagh... I... H-how are these so resilient...?",
-   "dst": "…ぐっ…僕は…な、なんでこんなに硬いんだ…？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#054": {
-   "src": "I'm an idiot... I nearly killed myself trying that. I nearly ruined the mission...",
-   "dst": "僕はバカだ…あんなことして死ぬところだった。任務を台無しにするところだった…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#055": {
-   "src": "I'm sorry, but you'll have to go without me. I can't move another step for now.",
-   "dst": "すまない、ここからは一人で行ってくれ。今はもう一歩も動けない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#056": {
-   "src": "There's a lot of void holes around here, remember my warning... You can probably get past these spikes with one.",
-   "dst": "この辺りには 虚無の穴 がたくさんある。警告を忘れないで…それでトゲを越えられるかもしれない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#057": {
-   "src": "If I'd been thinking I would have suggested it earlier... Once you're past, we'll...uh. We'll do something.",
-   "dst": "もっと早く思いつけばよかった…君が越えたら、僕らは…ええと。何とかしよう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#058": {
-   "src": "Just...be careful where you go. The void holes could lead anywhere. They might lead you someplace very, very dangerous, too dangerous even for you. I pray they won't...",
-   "dst": "ただ…行き先には気をつけて。虚無の穴 はどこに通じているかわからない。とても、とても危険な場所…君でも手に負えない所に出るかもしれない。そうならないよう祈ってる…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#059": {
-   "src": "There's a void hole right there to try out first. Get going, now. You have to do this.",
-   "dst": "すぐそこに 虚無の穴 がある、まずそれを試して。さあ行って。君がやるしかないんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 8",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#060": {
-   "src": "Use Void Holes to try and get behind the spike barrier",
-   "dst": "虚無の穴 を使ってトゲの障壁の裏側へ回り込む",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 9",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#061": {
-   "src": "Find a way to help Aledar get to the other side of the spike barrier.",
-   "dst": "Aledar がトゲの障壁の反対側へ行ける方法を探す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#062": {
-   "src": "...wait, {u}? You got to the other side then...? Good...",
-   "dst": "…待って、{u}？ 向こう側に行けたのか…？ よかった…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#063": {
-   "src": "I don't know what you did, but whatever it was, it's made cracks in the spikes that I can see from this side.",
-   "dst": "何をしたのかわからないけど、とにかくトゲにひびが入って、こっちからも見える。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#064": {
-   "src": "I've got some of my energy back...let's try spellcasting again. If we do it at the same time, we might make some headway.",
-   "dst": "力が少し戻った…もう一度呪文を試そう。同時に撃てば、突破口が開けるかもしれない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#065": {
-   "src": "I won't crack my skull open on the spikes again though. Promise.",
-   "dst": "でも、もう頭をトゲに打ちつけたりはしないよ。約束する。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#066": {
-   "src": "You lead. I'll cast my spell as soon as I hear yours.",
-   "dst": "先にやって。君の呪文が聞こえたらすぐ僕も撃つ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#067": {
-   "src": "Thank god it worked... That's our destination there, the Eldritch Outlook.",
-   "dst": "よかった、うまくいった……あそこが目的地、異形の展望台だ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#068": {
-   "src": "Now comes the hardest part... Come along. I'll need you there for it.",
-   "dst": "ここからが一番つらいところだ…来てくれ。君にいてもらう必要がある。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#069": {
-   "src": "That blade there...it's made for sacrifice. See how that gate is shut?",
-   "dst": "あそこの刃…あれは生贄のためのものだ。あの門が閉じているだろう？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#070": {
-   "src": "In order to open the doors to the Outlook, we need to sacrifice a powerful soul.",
-   "dst": "Outlook への扉を開くには、強い魂を生贄に捧げる必要がある。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#071": {
-   "src": "We... we should have told you from the start. You and Lucio. Elphie and I, we knew. We knew this would be here.",
-   "dst": "僕ら…最初から話すべきだった。君と Lucio に。Elphie と僕は知っていた。ここにこれがあると。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#072": {
-   "src": "We didn't have... we didn't have a sacrifice in mind. We decided that it would be best decided once we reached that point. And I think we both knew it would have to be one of us.",
-   "dst": "僕らは…誰を生贄にするか決めていなかった。ここに着いてから決めるのが一番だと話し合った。そして二人とも、僕らのどちらかになるとわかっていたと思う。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#073": {
-   "src": "...I think she would have insisted it be her. Even though both of us had something we would be le-...",
-   "dst": "…彼女なら自分がやると言い張っただろうな。二人とも残していくものがあったのに…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#074": {
-   "src": "It doesn't matter now. It's just us left. And I've been mulling it over since we got to the town... you'll sacrifice me. I won't take no for an answer.",
-   "dst": "もうどうでもいい。残ったのは僕らだけだ。町に着いてからずっと考えていた…君が僕を生贄にするんだ。反論は受けつけない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#075": {
-   "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
-   "dst": "だって…今の僕の有様を見てくれ、{u}！ もう死にかけてるし、君は万全の僕よりずっと強いと証明した。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#076": {
-   "src": "Here. You can take everything I had on me. My emeralds, and the key to the dungeon. I certainly won't be able to use them anymore.",
-   "dst": "ほら。僕の持ち物を全部持っていって。エメラルドと、ダンジョンの鍵だ。僕にはもう使えないからね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#077": {
-   "src": "Upon the top of the tower is... Well, something. We don't know for certain what it is, but it will prevent you from passing through.",
-   "dst": "塔の頂上には…何かがいる。正体ははっきりしないけど、そいつが君の行く手を阻むはずだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#078": {
-   "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
-   "dst": "障壁を破るにはそいつを倒すしかない。でも…手を貸してくれる兵士を探して。一人じゃ絶対に勝てない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#079": {
-   "src": "...no more putting it off, then. I'm bleeding out.",
-   "dst": "…じゃあ、もう先延ばしはやめよう。血が止まらないんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#080": {
-   "src": "Grab the blade, {u}.",
-   "dst": "刃を取って、{u}。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#081": {
-   "src": "Right click to grab the blade in the altar.",
-   "dst": "右クリックで祭壇の刃を手に取る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 11",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#082": {
-   "src": "Now...strike me down. My soul will unlock the gate...",
-   "dst": "さあ…僕を斬ってくれ。僕の魂が門を開く…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 11",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#083": {
-   "src": "Sacrifice Aledar.",
-   "dst": "Aledar を生贄に捧げる。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 12",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Journey Further#084": {
-   "src": "Agh... Don't worry...a-about me...",
-   "dst": "うっ…心配…しないで…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 12",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#085": {
-   "src": "You...can do this. I know y-you can.",
-   "dst": "君なら…できる。わかってる、き、君なら。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 12",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#086": {
-   "src": "Gah... D-Destroy it...",
-   "dst": "ぐっ…た、倒してくれ…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 12",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#087": {
-   "src": "The monster w-watching us...",
-   "dst": "僕らを、み、見ている怪物を…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 12",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#088": {
-   "src": "AAAAGH!!",
-   "dst": "ぐああああ！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 12",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Further#089": {
-   "src": "{~}px",
-   "dst": "{~}px",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "Stage 12",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "A Journey Further#000~1": {
    "src": "Agh... Don't worry...a-abou",
    "dst": "うっ…心配…しな",
    "role": "desc",
@@ -912,7 +22,7 @@
     "reason": "prefix"
    }
   },
-  "A Journey Further#001~1": {
+  "A Journey Further#001": {
    "src": "Please don't leave me!",
    "dst": "置いていかないで！",
    "role": "desc",
@@ -921,6 +31,896 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "A Journey Further#002": {
+   "src": "Agh... Don't worry...a-about me",
+   "dst": "うっ…心配…しないで",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Further#003": {
+   "src": "{u}, good news. I'm basically as recovered as I think I'll get.",
+   "dst": "{u}、いい知らせだ。もうこれ以上は望めないくらい回復した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Further#004": {
+   "src": ">and the hero shall blind the ancient seer. good luck.",
+   "dst": ">そして英雄は古の予言者の目をくらます。幸運を。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Further#005": {
+   "src": "Talk to Aledar in {p} at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] の {p} で Aledar と話す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#006": {
+   "src": "Alright, let's go. I'll tell you more about our journey on the way.",
+   "dst": "よし、行こう。道すがら、この旅のことをもっと話すよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#007": {
+   "src": "Continue your journey with Aledar.",
+   "dst": "Aledar と旅を続ける。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#008": {
+   "src": "We should try to follow the path as closely as we can. You lead, I'll follow.",
+   "dst": "できるだけ道に沿って進もう。君が先導して、僕が続く。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#009": {
+   "src": "Follow the Path.",
+   "dst": "道をたどる。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#010": {
+   "src": "Stop! Did you hear that?",
+   "dst": "止まれ！ 今の聞こえた？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#011": {
+   "src": "It’s an ambush! Stay sharp, {u}!",
+   "dst": "待ち伏せだ！ 気を抜くな、{u}！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#012": {
+   "src": "Defeat the Parasitic Slimers.",
+   "dst": "Parasitic Slimer を倒す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#013": {
+   "src": "Good work. Seems that killing the king made the other creatures run off. We’re lucky about that-",
+   "dst": "よくやった。王を倒したら他の奴らは逃げたみたいだ。運がよかった―",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#014": {
+   "src": "Wait, {u}, what's going on? Are you alright?",
+   "dst": "待って、{u}、どうした？ 大丈夫か？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#015": {
+   "src": "Oh, no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
+   "dst": "ああ、だめだめ！ これに効く薬がある、どこだ、どこだ、あった！ ほら、飲んで！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#016": {
+   "src": "One of those things must have infected your wounds... Everything in this area looks completely hazardous and sickening.",
+   "dst": "あいつらに傷口から感染させられたんだ…この辺りは何もかも危険で気分が悪くなる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#017": {
+   "src": "I expected the worst, so I tried to bring anything and everything that might help. Let's keep moving.",
+   "dst": "最悪を想定して、役に立ちそうな物は全部持ってきたんだ。先へ進もう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#018": {
+   "src": "Continue on the main path with Aledar.",
+   "dst": "Aledar と本道を進み続ける。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#019": {
+   "src": "LOOK OUT!",
+   "dst": "危ない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#020": {
+   "src": "{u}, a-agh...you're okay, right?",
+   "dst": "{u}、う、うう…無事だよね？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#021": {
+   "src": "I'm... I'm going to lead us for now. At least for a little...while... I can't have you g-getting-",
+   "dst": "僕が…しばらく先導するよ。少しの…間だけでも…君をまた、き、傷つけ―",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#022": {
+   "src": "GAH!! AAAGH!",
+   "dst": "ぐあっ！！ ああああ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#023": {
+   "src": "...urgh... I...sorry. I just... I need a moment.",
+   "dst": "…うう…僕は…ごめん。ちょっと…少し休ませて。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#024": {
+   "src": "{u}, you just... you have to realize, I can't have you getting hurt.",
+   "dst": "{u}、君は…わかってほしい。君を傷つけさせるわけにはいかないんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#025": {
+   "src": "I want to stress this... We NEED to get to the end of this path, together.",
+   "dst": "念を押しておく…僕らは一緒にこの道の果てへ行かなきゃならない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#026": {
+   "src": "Hrk... Ugh, dizzy...",
+   "dst": "うっ…ああ、目が回る…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#027": {
+   "src": "Okay. I'm as good as I can get right now. Let's move.",
+   "dst": "よし。今はこれが精一杯だ。行こう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#028": {
+   "src": "Ah? What... What just... Why do I...",
+   "dst": "え？ 何…今のは…どうして僕は…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#029": {
+   "src": "I'll be fine, I just...why did I feel so empty all of the sudden...?",
+   "dst": "大丈夫、ただ…なぜ急にこんなに空っぽな気がしたんだろう…？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#030": {
+   "src": "A mysterious force pushes you back...",
+   "dst": "謎の力に押し戻された…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Further#031": {
+   "src": "Oh no, I think something is coming... {u}! Fight it off, I don't think I can defend myself right now!",
+   "dst": "まずい、何か来る…{u}！ 追い払ってくれ、今の僕じゃ身を守れない！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#032": {
+   "src": "Defend Aledar from the Radiated Spiders.",
+   "dst": "Radiated Spider から Aledar を守る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#033": {
+   "src": "Huff... Not feeling totally better, but... At least I can still defend myself.",
+   "dst": "はあ…まだ本調子じゃないけど…少なくとも自分の身は守れる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#034": {
+   "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
+   "dst": "胃が空っぽで吐くこともできない…なぜまだこんなに目が回るんだ？ 薬が効くかも…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#035": {
+   "src": "Hm. No, not that one...",
+   "dst": "うーん。いや、これじゃない…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#036": {
+   "src": "Urgh, pfft! My vomit tasted better than that coming up...",
+   "dst": "うえっ、ぺっ！ 吐いた物のほうがまだマシな味だった…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#037": {
+   "src": "Hah...that's the ticket. Which potion was this anyways... ... hair loss treatment? Why did THAT work?",
+   "dst": "はあ…これだ。ところで何の薬だったんだ…育毛剤？ なんでそれが効くんだ？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#038": {
+   "src": "Though, you saw what happened to that beast I attacked? Follow me.",
+   "dst": "ところで、僕が攻撃したあの獣がどうなったか見た？ ついてきて。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#039": {
+   "src": "This, from what I recall of the mission statements, is referred to as a \"Void Hole.\" It's a sort of portal.",
+   "dst": "任務の資料によると、これは「虚無の穴」と呼ばれている。一種のポータルだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#040": {
+   "src": "They connect to each other in odd ways, but we saw the beast come out of that one when I knocked it in, so...",
+   "dst": "妙な形でつながってるけど、僕が叩き込んだ獣はあっちから出てきた。だから…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#041": {
+   "src": "Watch. I'll come out the other side.",
+   "dst": "見てて。反対側から出てくる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#042": {
+   "src": "Alright, good! It does connect up consistently, at least. You try now.",
+   "dst": "よし、いいぞ！ 少なくとも出口は毎回同じだ。今度は君がやってみて。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#043": {
+   "src": "Jump into the void hole.",
+   "dst": "虚無の穴 に飛び込む。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#044": {
+   "src": "Continue on the trail with Aledar.",
+   "dst": "Aledar と小道を進み続ける。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#045": {
+   "src": "I bring this up because if we're seeing one, we'll be seeing more soon. You'll need to adjust yourself to the sight of them.",
+   "dst": "こんな話をするのは、一つ見かけたらすぐにもっと出てくるからだ。見慣れておいたほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#046": {
+   "src": "You lead again, please.",
+   "dst": "また先導を頼むよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#047": {
+   "src": "We grossly underestimated the difficulties we would have here. And, by that, I mean myself, Elphie, and Lucio did...",
+   "dst": "ここの困難をひどく甘く見ていた。僕らというのは、僕と Elphie と Lucio のことだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#048": {
+   "src": "We were each unprepared and cocky. If it weren't for you, I'd be dead now, for what it's worth.",
+   "dst": "みんな準備不足でうぬぼれていた。君がいなければ、今ごろ僕は死んでいただろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#049": {
+   "src": "I wasn't certain at first about you coming along, but you've more than shown you were the right one for the job.",
+   "dst": "最初は君が来ることに確信がなかった。でも、君こそ適任だと十分すぎるほど示してくれた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#050": {
+   "src": "...I had to figure this map was outdated. This wall of spikes isn't listed on it, and the path goes through here!",
+   "dst": "…この地図は古いと思うべきだった。このトゲの壁は載ってないのに、道はここを通ってる！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#051": {
+   "src": "I'll have to assume they're new...and if they're new, I might be able to bash through them.",
+   "dst": "新しくできたと考えるしかない…新しいなら、叩き壊せるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#052": {
+   "src": "{u}, try throwing a spell at the same time! Let's crack through these things!",
+   "dst": "{u}、同時に呪文を撃ってみて！ こいつを突き破ろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#053": {
+   "src": "Ok, {~}... {~}... {~}...!",
+   "dst": "よし、{~}…{~}…{~}…！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#054": {
+   "src": "...aagh... I... H-how are these so resilient...?",
+   "dst": "…ぐっ…僕は…な、なんでこんなに硬いんだ…？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#055": {
+   "src": "I'm an idiot... I nearly killed myself trying that. I nearly ruined the mission...",
+   "dst": "僕はバカだ…あんなことして死ぬところだった。任務を台無しにするところだった…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#056": {
+   "src": "I'm sorry, but you'll have to go without me. I can't move another step for now.",
+   "dst": "すまない、ここからは一人で行ってくれ。今はもう一歩も動けない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#057": {
+   "src": "There's a lot of void holes around here, remember my warning... You can probably get past these spikes with one.",
+   "dst": "この辺りには 虚無の穴 がたくさんある。警告を忘れないで…それでトゲを越えられるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#058": {
+   "src": "If I'd been thinking I would have suggested it earlier... Once you're past, we'll...uh. We'll do something.",
+   "dst": "もっと早く思いつけばよかった…君が越えたら、僕らは…ええと。何とかしよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#059": {
+   "src": "Just...be careful where you go. The void holes could lead anywhere. They might lead you someplace very, very dangerous, too dangerous even for you. I pray they won't...",
+   "dst": "ただ…行き先には気をつけて。虚無の穴 はどこに通じているかわからない。とても、とても危険な場所…君でも手に負えない所に出るかもしれない。そうならないよう祈ってる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#060": {
+   "src": "There's a void hole right there to try out first. Get going, now. You have to do this.",
+   "dst": "すぐそこに 虚無の穴 がある、まずそれを試して。さあ行って。君がやるしかないんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#061": {
+   "src": "Use Void Holes to try and get behind the spike barrier",
+   "dst": "虚無の穴 を使ってトゲの障壁の裏側へ回り込む",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#062": {
+   "src": "Find a way to help Aledar get to the other side of the spike barrier.",
+   "dst": "Aledar がトゲの障壁の反対側へ行ける方法を探す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#063": {
+   "src": "...wait, {u}? You got to the other side then...? Good...",
+   "dst": "…待って、{u}？ 向こう側に行けたのか…？ よかった…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#064": {
+   "src": "I don't know what you did, but whatever it was, it's made cracks in the spikes that I can see from this side.",
+   "dst": "何をしたのかわからないけど、とにかくトゲにひびが入って、こっちからも見える。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#065": {
+   "src": "I've got some of my energy back...let's try spellcasting again. If we do it at the same time, we might make some headway.",
+   "dst": "力が少し戻った…もう一度呪文を試そう。同時に撃てば、突破口が開けるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#066": {
+   "src": "I won't crack my skull open on the spikes again though. Promise.",
+   "dst": "でも、もう頭をトゲに打ちつけたりはしないよ。約束する。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#067": {
+   "src": "You lead. I'll cast my spell as soon as I hear yours.",
+   "dst": "先にやって。君の呪文が聞こえたらすぐ僕も撃つ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#068": {
+   "src": "Thank god it worked... That's our destination there, the Eldritch Outlook.",
+   "dst": "よかった、うまくいった……あそこが目的地、異形の展望台だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#069": {
+   "src": "Now comes the hardest part... Come along. I'll need you there for it.",
+   "dst": "ここからが一番つらいところだ…来てくれ。君にいてもらう必要がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#070": {
+   "src": "That blade there...it's made for sacrifice. See how that gate is shut?",
+   "dst": "あそこの刃…あれは生贄のためのものだ。あの門が閉じているだろう？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#071": {
+   "src": "In order to open the doors to the Outlook, we need to sacrifice a powerful soul.",
+   "dst": "Outlook への扉を開くには、強い魂を生贄に捧げる必要がある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#072": {
+   "src": "We... we should have told you from the start. You and Lucio. Elphie and I, we knew. We knew this would be here.",
+   "dst": "僕ら…最初から話すべきだった。君と Lucio に。Elphie と僕は知っていた。ここにこれがあると。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#073": {
+   "src": "We didn't have... we didn't have a sacrifice in mind. We decided that it would be best decided once we reached that point. And I think we both knew it would have to be one of us.",
+   "dst": "僕らは…誰を生贄にするか決めていなかった。ここに着いてから決めるのが一番だと話し合った。そして二人とも、僕らのどちらかになるとわかっていたと思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#074": {
+   "src": "...I think she would have insisted it be her. Even though both of us had something we would be le-...",
+   "dst": "…彼女なら自分がやると言い張っただろうな。二人とも残していくものがあったのに…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#075": {
+   "src": "It doesn't matter now. It's just us left. And I've been mulling it over since we got to the town... you'll sacrifice me. I won't take no for an answer.",
+   "dst": "もうどうでもいい。残ったのは僕らだけだ。町に着いてからずっと考えていた…君が僕を生贄にするんだ。反論は受けつけない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#076": {
+   "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
+   "dst": "だって…今の僕の有様を見てくれ、{u}！ もう死にかけてるし、君は万全の僕よりずっと強いと証明した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#077": {
+   "src": "Here. You can take everything I had on me. My emeralds, and the key to the dungeon. I certainly won't be able to use them anymore.",
+   "dst": "ほら。僕の持ち物を全部持っていって。エメラルドと、ダンジョンの鍵だ。僕にはもう使えないからね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#078": {
+   "src": "Upon the top of the tower is... Well, something. We don't know for certain what it is, but it will prevent you from passing through.",
+   "dst": "塔の頂上には…何かがいる。正体ははっきりしないけど、そいつが君の行く手を阻むはずだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#079": {
+   "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
+   "dst": "障壁を破るにはそいつを倒すしかない。でも…手を貸してくれる兵士を探して。一人じゃ絶対に勝てない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#080": {
+   "src": "...no more putting it off, then. I'm bleeding out.",
+   "dst": "…じゃあ、もう先延ばしはやめよう。血が止まらないんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#081": {
+   "src": "Grab the blade, {u}.",
+   "dst": "刃を取って、{u}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#082": {
+   "src": "Right click to grab the blade in the altar.",
+   "dst": "右クリックで祭壇の刃を手に取る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#083": {
+   "src": "Now...strike me down. My soul will unlock the gate...",
+   "dst": "さあ…僕を斬ってくれ。僕の魂が門を開く…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 11",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#084": {
+   "src": "Sacrifice Aledar.",
+   "dst": "Aledar を生贄に捧げる。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Further#085": {
+   "src": "Agh... Don't worry...a-about me...",
+   "dst": "うっ…心配…しないで…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#086": {
+   "src": "You...can do this. I know y-you can.",
+   "dst": "君なら…できる。わかってる、き、君なら。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#087": {
+   "src": "Gah... D-Destroy it...",
+   "dst": "ぐっ…た、倒してくれ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#088": {
+   "src": "The monster w-watching us...",
+   "dst": "僕らを、み、見ている怪物を…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#089": {
+   "src": "AAAAGH!!",
+   "dst": "ぐああああ！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Further#090": {
+   "src": "{~}px",
+   "dst": "{~}px",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Further",
+   "stage": "Stage 12",
+   "speaker": "???",
+   "source": "wiki"
   }
  }
 }

@@ -1,12 +1,102 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 41,
+  "count": 50,
   "translated": 41,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lava Springs#000": {
+   "src": "[{~}/{~} Corrupted Evidence]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#001": {
+   "src": "You've already collected this evidence.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#002": {
+   "src": "This should be enough evidence. You should report back to Colonel Gailard.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#003": {
+   "src": "Wait... I've got an idea... Alright, listen up soldier! There's a lil' town North of here named {p}, yeah? There's a healer person there that can help us out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#004": {
+   "src": "They're holed up inside of some important well in the center of the town. There's a password ya need to hop into that place, though...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#005": {
+   "src": "...Corrupted... lava springs...? You realize how stupid that sounds, yeah? Well, I completely believe you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#006": {
+   "src": "Now, you have somewhere to be, right? Right. Go and report back to the Colonel, soldier. Tell him I said hi, by the way.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#007": {
+   "src": "You can feel your body heat adjusting as the potion courses through your body...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#008": {
+   "src": "Ye're a good ally, soldier! And a great help to the army, at that!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lava Springs",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lava Springs#009": {
    "src": "Talk to Colonel Gailard at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] で Gailard 大佐と話す",
    "role": "desc",
@@ -16,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#001": {
+  "Lava Springs#010": {
    "src": "Oh, good, good! I bet'cha you're a {p} soldier, aren't ya? Listen up, soldier! I've got a task here that 'ye can help out with.",
    "dst": "おう、いいぞいいぞ！さてはお前、{p} の兵だな？よく聞け、兵士！手伝ってほしい任務がある。",
    "role": "desc",
@@ -26,7 +116,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#002": {
+  "Lava Springs#011": {
    "src": "Ya see that lava spring right there? It just went and popped up out of nowhere! The brass is real concerned about it, mhm?",
    "dst": "あそこの溶岩泉が見えるか？どこからともなく湧いて出たんだ！上層部はえらく気にしてるぜ、なあ？",
    "role": "desc",
@@ -36,7 +126,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#003": {
+  "Lava Springs#012": {
    "src": "They've been yappin' about it bein' related to the Corruption, and 'ye can bet that that means trouble. BAD trouble.",
    "dst": "腐敗が関係してるってわめいてるが、そいつは間違いなく厄介事だ。とびきりの厄介事だぞ。",
    "role": "desc",
@@ -46,7 +136,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#004": {
+  "Lava Springs#013": {
    "src": "Now, this here Savannah has always had some Corruption lurkin' about, but not to the point where it can do this! It won't be safe around here if we don't do somethin' about it!",
    "dst": "このサバンナには昔から腐敗が潜んじゃいたが、こんな真似ができるほどじゃなかった！何か手を打たねえと、この辺りは危ねえ！",
    "role": "desc",
@@ -56,7 +146,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#005": {
+  "Lava Springs#014": {
    "src": "Anyways, high command ain't gonna provide support for this until they know there's actual Corruption, so we've gotta find some evidence around the springs, understand?",
    "dst": "とにかく、本物の腐敗だと分かるまで司令部は支援を寄越さねえ。だから泉の周りで証拠を探すんだ、分かったか？",
    "role": "desc",
@@ -66,7 +156,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#006": {
+  "Lava Springs#015": {
    "src": "Take a look around the springs, soldier! Find me some damn evidence around here! [{~} Pieces of Evidence] should be enough! Now, get movin'!",
    "dst": "泉の周りを見てこい、兵士！証拠を見つけてこい！[{~} 個の証拠] があれば十分だ！さあ、動け！",
    "role": "desc",
@@ -76,7 +166,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#007": {
+  "Lava Springs#016": {
    "src": "Look for three pieces of corrupted evidence around the Lava Spring at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の溶岩泉の周りで腐敗の証拠を三つ探す",
    "role": "desc",
@@ -86,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#008": {
+  "Lava Springs#017": {
    "src": "Go back to Colonel Gailard at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の Gailard 大佐の所へ戻る",
    "role": "desc",
@@ -96,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#009": {
+  "Lava Springs#018": {
    "src": "Alright, good! Ya found some evidence, let me take a look at that!",
    "dst": "よし、いいぞ！証拠を見つけたか、見せてみろ！",
    "role": "desc",
@@ -106,7 +196,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#010": {
+  "Lava Springs#019": {
    "src": "Oh... This is bad... very, VERY bad...",
    "dst": "おお… まずい… 本当に、マジでまずい…",
    "role": "desc",
@@ -116,7 +206,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#011": {
+  "Lava Springs#020": {
    "src": "This here is some physical corruption. If it's gettin' onto the surface, then 'ye can bet one of those weeds is spreadin' underground, right beneath the springs...",
    "dst": "こいつは実体化した腐敗だ。地表に出てきてるってことは、泉の真下で根っこが広がってるに違いねえ…",
    "role": "desc",
@@ -126,7 +216,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#012": {
+  "Lava Springs#021": {
    "src": "If ya could get underneath the spring, 'ye could probably sever whatever damn root is causing this, but... the heat would be sure to fry your skin off...",
    "dst": "泉の下に潜り込めば、元凶の根を断ち切れるかもしれねえが… あの熱じゃ皮膚が焼け落ちちまう…",
    "role": "desc",
@@ -136,7 +226,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#013": {
+  "Lava Springs#022": {
    "src": "Wait... I've got an idea... Alright, listen up soldier! There's a lil' town North of here called {p}, yeah? There's a healer person there that can help us out.",
    "dst": "待て… いい考えがある… よし、よく聞け兵士！この北に {p} って小さな町があるだろ？そこにいる治療師が力になってくれる。",
    "role": "desc",
@@ -146,7 +236,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#014": {
+  "Lava Springs#023": {
    "src": "They're holed up inside of some important well in the center of town. There's a password ya need to hop into that place, though...",
    "dst": "町の中心の大事な井戸にこもってる。ただ、入るには合言葉が要るんだが…",
    "role": "desc",
@@ -156,7 +246,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#015": {
+  "Lava Springs#024": {
    "src": "Don't have much to go on, but I'm pretty damn sure the password is Bob, or something. After the hero himself.",
    "dst": "手がかりは少ねえが、合言葉は Bob とか何とかだったはずだ。あの英雄にちなんでな。",
    "role": "desc",
@@ -166,7 +256,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#016": {
+  "Lava Springs#025": {
    "src": "Right, ye're headin' there to find a potion that can keep ya weak little hide safe from the heat, understand? Here, let me write down the location in that book of yours.",
    "dst": "よし、お前はそこで、そのひ弱な体を熱から守る薬を手に入れるんだ、分かったな？ほら、お前の本に場所を書いといてやる。",
    "role": "desc",
@@ -176,7 +266,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#017": {
+  "Lava Springs#026": {
    "src": "Talk to Gregor outside the {p} well at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の {p} の井戸の外で Gregor と話す",
    "role": "desc",
@@ -186,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#018": {
+  "Lava Springs#027": {
    "src": "Hey, hey hey hey! Darling, what do you think you're doing? You can't just waltz in here without telling me the password!",
    "dst": "ちょっと、ちょっとちょっと！あんた、何してるつもり？合言葉も言わずにずかずか入れると思って？",
    "role": "desc",
@@ -196,7 +286,7 @@
    "speaker": "Gregor",
    "source": "wiki"
   },
-  "Lava Springs#019": {
+  "Lava Springs#028": {
    "src": "Hmm... Your face... confidence... it gleans with confidence... yet... you still haven't spoken to me since you arrived...",
    "dst": "ふうん… その顔… 自信… 自信に満ちあふれてる… なのに… 来てから一言も口をきいてないわね…",
    "role": "desc",
@@ -206,7 +296,7 @@
    "speaker": "Gregor",
    "source": "wiki"
   },
-  "Lava Springs#020": {
+  "Lava Springs#029": {
    "src": "Could it be... you know that the password is penguin eggs, but you're just too shy to talk? Yeah... yeah, that's gotta be it!",
    "dst": "もしかして… 合言葉が「ペンギンの卵」だと知ってるのに、恥ずかしくて言えないだけ？そう… きっとそうね！",
    "role": "desc",
@@ -216,7 +306,7 @@
    "speaker": "Gregor",
    "source": "wiki"
   },
-  "Lava Springs#021": {
+  "Lava Springs#030": {
    "src": "You've convinced me, little mute darling... You can enter the well. Go on, now!",
    "dst": "負けたわ、無口なおチビさん… 井戸に入っていいわよ。ほら、行きなさい！",
    "role": "desc",
@@ -226,7 +316,7 @@
    "speaker": "Gregor",
    "source": "wiki"
   },
-  "Lava Springs#022": {
+  "Lava Springs#031": {
    "src": "Enter the {p} well and talk to the healer at [{~}, {~}, -{~}]",
    "dst": "{p} の井戸に入り、[{~}, {~}, -{~}] で治療師と話す",
    "role": "desc",
@@ -236,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#023": {
+  "Lava Springs#032": {
    "src": "G'day to you, friend. How can I help you?",
    "dst": "やあ、こんにちは。何かお困り？",
    "role": "desc",
@@ -246,7 +336,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#024": {
+  "Lava Springs#033": {
    "src": "Hm? The Colonel sent you? what for?",
    "dst": "ん？大佐に言われて来たの？何のために？",
    "role": "desc",
@@ -256,7 +346,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#025": {
+  "Lava Springs#034": {
    "src": "...Corrupted... lava springs...? You realize how ridiculous that sounds, yeah? Well, I completely believe you.",
    "dst": "…腐敗した… 溶岩泉…？どれだけ馬鹿げて聞こえるか分かってる？まあ、私は信じるけど。",
    "role": "desc",
@@ -266,7 +356,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#026": {
+  "Lava Springs#035": {
    "src": "Right, you said lava, sooo... You need a heat resistance potion, yes?",
    "dst": "で、溶岩って言ったよね… つまり、耐熱のポーションが必要ってこと？",
    "role": "desc",
@@ -276,7 +366,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#027": {
+  "Lava Springs#036": {
    "src": "Welp, you're in luck, kinda... I have a potion that can resist the heat of lava, but the brew will not let you swim in lava.",
    "dst": "運がいいね、一応… 溶岩の熱に耐えるポーションはあるけど、溶岩の中を泳げるわけじゃないよ。",
    "role": "desc",
@@ -286,7 +376,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#028": {
+  "Lava Springs#037": {
    "src": "Oh that works, you just need to enter a borehole that goes through the lava? Perfect",
    "dst": "ああ、それなら大丈夫。溶岩を貫く縦穴に入るだけ？完璧。",
    "role": "desc",
@@ -296,7 +386,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#029": {
+  "Lava Springs#038": {
    "src": "Anyways, if you ever need any more special brews, my assistant will be happy to sell some at a very affordable price.",
    "dst": "それと、特製の薬がまた必要になったら、助手が格安で売ってくれるよ。",
    "role": "desc",
@@ -306,7 +396,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#030": {
+  "Lava Springs#039": {
    "src": "Now, you have somewhere to be, right? Right. Go and report to the Colonel, soldier. Tell him I said hi, by the way.",
    "dst": "さて、行くところがあるんでしょ？だよね。大佐に報告してきな、兵士さん。よろしく伝えといて。",
    "role": "desc",
@@ -316,7 +406,7 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#031": {
+  "Lava Springs#040": {
    "src": "Report back to Colonel Gailard at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の Gailard 大佐に報告する",
    "role": "desc",
@@ -326,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#032": {
+  "Lava Springs#041": {
    "src": "Report! Ya got the potion yet, soldier? Good, drink it if ya haven't already!",
    "dst": "報告！ポーションは手に入れたか、兵士？よし、まだなら飲んどけ！",
    "role": "desc",
@@ -336,7 +426,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#033": {
+  "Lava Springs#042": {
    "src": "Right, that's what I like to hear! Now, LOOK TO THE LEFT SOLDIER! There is a borehole out there we dug to try and hit the source of this weed.",
    "dst": "そうだ、それを聞きたかった！さあ、左を見ろ、兵士！雑草の根源を狙って掘った縦穴があるだろう。",
    "role": "desc",
@@ -346,7 +436,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#034": {
+  "Lava Springs#043": {
    "src": "We found a pretty damn hot cave lying underneath the surface! If ya jumped into the borehole, 'ye could probably find the source of the Corruption and stop it.",
    "dst": "地表の下にえらく暑い洞窟が見つかったんだ！縦穴に飛び込めば、腐敗の源を見つけて止められるはずだ。",
    "role": "desc",
@@ -356,7 +446,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#035": {
+  "Lava Springs#044": {
    "src": "Now, the roots and spikes of Corruption are very sturdy, but we ain't never seen something like lava burstin' out of the ground.",
    "dst": "腐敗の根やトゲは頑丈だが、地面から溶岩が噴き出すなんてのは見たことがねえ。",
    "role": "desc",
@@ -366,7 +456,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#036": {
+  "Lava Springs#045": {
    "src": "Had a small chat with the brass, earlier. They got a hunch that there's a heart to the Corruption that's pumpin' out all the lava!",
    "dst": "さっき上層部と少し話した。溶岩をくみ上げてる腐敗の心臓があるんじゃねえかってな！",
    "role": "desc",
@@ -376,7 +466,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#037": {
+  "Lava Springs#046": {
    "src": "That's gotta be our ticket, yeah? If 'ye destroy that, ya should be able to stop the spread of the lava! Now, get movin'! Head into the borehole, soldier!",
    "dst": "そいつが突破口だ、だろ？それを壊せば溶岩の広がりを止められるはずだ！さあ、動け！縦穴に入れ、兵士！",
    "role": "desc",
@@ -386,7 +476,7 @@
    "speaker": "Colonel Gailard",
    "source": "wiki"
   },
-  "Lava Springs#038": {
+  "Lava Springs#047": {
    "src": "Drink the Potion of Obsidian Skin, then enter the lava spring through the borehole at [{~}, {~}, -{~}] and look for a corrupted heart",
    "dst": "黒曜の肌のポーションを飲み、[{~}, {~}, -{~}] の縦穴から溶岩泉に入って腐敗した心臓を探す",
    "role": "desc",
@@ -396,7 +486,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#039": {
+  "Lava Springs#048": {
    "src": "Tell Colonel Gailard at [{~}, {~}, -{~}] that you destroyed the heart",
    "dst": "[{~}, {~}, -{~}] の Gailard 大佐に心臓を破壊したと伝える",
    "role": "desc",
@@ -406,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lava Springs#040": {
+  "Lava Springs#049": {
    "src": "Hah! I knew ya'd give me results! Ye're pretty damn reliable, soldier! Here, take this for your trouble!",
    "dst": "はっ！お前ならやってくれると思ってたぜ！頼りになる兵士だ！ほら、手間賃だ、取っとけ！",
    "role": "desc",

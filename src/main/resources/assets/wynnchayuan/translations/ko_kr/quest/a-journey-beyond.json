@@ -1,12 +1,28 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 247,
-  "translated": 254,
+  "count": 248,
+  "translated": 248,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Beyond#000": {
+   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+   "dst": "뭐... 그렇긴 한데, 먼저 {u}에게 자세한 내용을 알려 주고 싶어. 위험한 임무니까... 제대로 설명해 두는 게 좋겠어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+    "file": "quest/a-journey-beyond.json",
+    "ratio": 0.985,
+    "reason": "placeholders"
+   }
+  },
+  "A Journey Beyond#001": {
    "src": "Join Elphaba on a mission in {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 {p}에서 Elphaba의 임무에 합류하세요.",
    "role": "desc",
@@ -16,7 +32,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#001": {
+  "A Journey Beyond#002": {
    "src": "...Hm? Oh- uh, hello there. Sorry, we have this space reserved for...",
    "dst": "...음? 아- 어, 안녕하세요. 죄송해요, 이 자리는 예약된...",
    "role": "desc",
@@ -26,7 +42,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#002": {
+  "A Journey Beyond#003": {
    "src": "Wait. You might be just what we're looking for. You look like you're capable in combat. How would you like to join a dangerous top secret mission?",
    "dst": "잠깐만요. 딱 우리가 찾던 사람일지도 몰라요. 싸움 좀 하게 생겼네요. 위험한 일급 기밀 임무에 합류해 볼래요?",
    "role": "desc",
@@ -36,7 +52,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#003": {
+  "A Journey Beyond#004": {
    "src": "...I could have phrased that better. Look, the point is- we need a fourth. Let me give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "...말을 좀 더 잘할 걸 그랬네요. 요점은- 네 번째 사람이 필요해요. 브리핑을 해 줄 테니, 합류하기 싫으면... 다른 사람을 찾을게요. 어때요? 좋아요, 이쪽으로 따라와요.",
    "role": "desc",
@@ -46,7 +62,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#004": {
+  "A Journey Beyond#005": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "이건 또 누구야? 진짜 네 번째를 찾았어? 아 좀, 필요 없다고 했잖아!",
    "role": "desc",
@@ -56,7 +72,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#005": {
+  "A Journey Beyond#006": {
    "src": "And we both keep telling you why you're wrong. This is... sorry. I didn't catch your name. {u}? .",
    "dst": "그리고 우리 둘이 계속 네가 틀렸다고 말하잖아. 이쪽은... 미안해요. 이름을 못 들었네요. {u}? .",
    "role": "desc",
@@ -66,7 +82,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#006": {
+  "A Journey Beyond#007": {
    "src": "... {u}, is that you? Wow, it's been a while. Sorry, I don't have time to chat right now. We're preparing for a dangerous mission, and...",
    "dst": "... {u}, 당신이에요? 와, 오랜만이네요. 미안해요, 지금은 얘기할 시간이 없어요. 위험한 임무를 준비 중이라...",
    "role": "desc",
@@ -76,7 +92,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#007": {
+  "A Journey Beyond#008": {
    "src": "Well. Actually, we were looking for a fourth person to join us. And... you look like you fit the requirements for that position. If- if you'd like to join, that is.",
    "dst": "음. 사실 우리와 함께할 네 번째 사람을 찾고 있었어요. 그리고... 당신이 그 자리에 딱 맞아 보여요. 그- 그러니까, 합류하고 싶다면요.",
    "role": "desc",
@@ -86,7 +102,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#008": {
+  "A Journey Beyond#009": {
    "src": "Tell you what. I'll give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "이렇게 하죠. 브리핑을 해 줄 테니, 합류하기 싫으면... 다른 사람을 찾을게요. 어때요? 좋아요, 이쪽으로 따라와요.",
    "role": "desc",
@@ -96,7 +112,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#009": {
+  "A Journey Beyond#010": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "이건 또 누구야? 진짜 네 번째를 찾았어? 아 좀, 필요 없다고 했잖아!",
    "role": "desc",
@@ -106,7 +122,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#010": {
+  "A Journey Beyond#011": {
    "src": "And we both keep telling you why you're wrong. This is {u}, we've worked together before.",
    "dst": "그리고 우리 둘이 계속 네가 틀렸다고 말하잖아. 이쪽은 {u}, 전에 같이 일한 적이 있어.",
    "role": "desc",
@@ -116,7 +132,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#011": {
+  "A Journey Beyond#012": {
    "src": "Anyway, I want to give them the briefing before we head",
    "dst": "아무튼, 출발하기 전에 브리핑부터 해 주고 싶은데",
    "role": "desc",
@@ -126,7 +142,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#012": {
+  "A Journey Beyond#013": {
    "src": "Elphie, I'm back! I finally managed to catch Aegis, but he's not... happy. He thinks we should",
    "dst": "Elphie, 나 왔어! 드디어 Aegis를 붙잡았는데, 별로... 기분이 안 좋아. 우리가 해야 한다고",
    "role": "desc",
@@ -136,7 +152,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#013": {
+  "A Journey Beyond#014": {
    "src": "Oh. {u}? What are you doing here? Gods, it's been a while, hasn't it?",
    "dst": "어. {u}? 여긴 웬일이야? 세상에, 정말 오랜만이다, 그렇지?",
    "role": "desc",
@@ -146,7 +162,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#014": {
+  "A Journey Beyond#015": {
    "src": "They're our fourth. What were you saying about the Admiral?",
    "dst": "이쪽이 우리 네 번째야. Admiral이 뭐라고 했다고?",
    "role": "desc",
@@ -156,7 +172,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#015": {
+  "A Journey Beyond#016": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -166,7 +182,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#016": {
+  "A Journey Beyond#017": {
    "src": "Nothing. If we have our fourth, we should be all set to go, shouldn't we?",
    "dst": "아무것도 아니야. 네 번째도 찾았으니 출발 준비는 다 된 거지?",
    "role": "desc",
@@ -176,7 +192,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#017": {
+  "A Journey Beyond#018": {
    "src": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "음... 그렇긴 한데, 세부 사항부터 브리핑하고 싶어. 위험한 임무니까... 제대로 알려 주는 게 좋겠어.",
    "role": "desc",
@@ -186,7 +202,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#018": {
+  "A Journey Beyond#019": {
    "src": "So! You're aware of the {p}, yes? Hundreds of years ago, mining operations took place to extract emeralds from the earth. Until, for some unknown reason, they were halted.",
    "dst": "자! {p}은(는) 알죠? 수백 년 전, 땅에서 에메랄드를 캐내는 채굴 작업이 있었어요. 그런데 알 수 없는 이유로 중단됐죠.",
    "role": "desc",
@@ -196,7 +212,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#019": {
+  "A Journey Beyond#020": {
    "src": "We don't know everything, but... evidence suggests they broke through to an undiscovered section of the Wynn province. There, they found... something.",
    "dst": "다 알진 못하지만... 증거로 보아 Wynn 지방의 미발견 구역까지 뚫고 들어갔던 것 같아요. 거기서... 무언가를 찾았죠.",
    "role": "desc",
@@ -206,9 +222,9 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#020": {
-   "src": "The land itself was said to be cursed. Not corrupted they were very clear on that.",
-   "dst": "그 땅 자체가 저주받았다고 했어요. 타락이 아니라고 아주 분명히 적어 뒀죠.",
+  "A Journey Beyond#021": {
+   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
+   "dst": "그 땅 자체가 저주받았다고 했다. 타락이 아니라- 그 점은 아주 분명히 했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -216,7 +232,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#021": {
+  "A Journey Beyond#022": {
    "src": "Some other force makes its home in that place. The few reports we could find refer to it only as the Silent Expanse.",
    "dst": "다른 어떤 힘이 그곳에 자리 잡고 있어요. 몇 안 되는 보고서에선 그곳을 Silent Expanse라고만 불러요.",
    "role": "desc",
@@ -226,7 +242,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#022": {
+  "A Journey Beyond#023": {
    "src": "The mines were sealed to prevent the spread of this new threat, but the cracks are beginning to show.",
    "dst": "새로운 위협이 퍼지지 않게 광산을 봉인했지만, 이제 균열이 드러나기 시작했어요.",
    "role": "desc",
@@ -236,7 +252,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#023": {
+  "A Journey Beyond#024": {
    "src": "Strange and otherworldly creatures have begun to find their way through, threatening our province.",
    "dst": "기묘한 이계의 생물들이 틈을 찾아 넘어오며 우리 지방을 위협하고 있어요.",
    "role": "desc",
@@ -246,7 +262,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#024": {
+  "A Journey Beyond#025": {
    "src": "The existence of this place has been kept on a strict need-to-know basis.",
    "dst": "이곳의 존재는 꼭 알아야 할 사람만 아는 극비예요.",
    "role": "desc",
@@ -256,7 +272,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#025": {
+  "A Journey Beyond#026": {
    "src": "That's where we come in! We're to battle our way through the mines, and scout out the potential danger level.",
    "dst": "그래서 우리가 나선 거야! 광산을 뚫고 싸워 나가면서 위험 수준을 정찰하는 거지.",
    "role": "desc",
@@ -266,7 +282,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#026": {
+  "A Journey Beyond#027": {
    "src": "And we aren't going to be able to do it if we keep sitting around! The newbie's been briefed, let's get going already!",
    "dst": "계속 앉아만 있으면 아무것도 못 한다고! 신입 브리핑도 끝났으니 얼른 가자!",
    "role": "desc",
@@ -276,7 +292,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#027": {
+  "A Journey Beyond#028": {
    "src": "H-hey! What're you doing to my fine establishment!",
    "dst": "야-야! 내 멋진 가게에 무슨 짓이야!",
    "role": "desc",
@@ -286,7 +302,7 @@
    "speaker": "Rusty Bartender",
    "source": "wiki"
   },
-  "A Journey Beyond#028": {
+  "A Journey Beyond#029": {
    "src": "...Shoot. Forgot he was still here. Sorry, barkeep! I'll fix it!",
    "dst": "...이런. 아직 있는 걸 깜빡했네. 미안, 주인장! 고쳐 놓을게!",
    "role": "desc",
@@ -296,7 +312,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#029": {
+  "A Journey Beyond#030": {
    "src": "Lucio, you can't keep... ugh, forget it. I'll gather our supplies... Aledar, can you get us to the mines?",
    "dst": "Lucio, 너 계속 그러면... 으, 됐다. 보급품은 내가 챙길게... Aledar, 광산까지 데려다줄래?",
    "role": "desc",
@@ -306,7 +322,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#030": {
+  "A Journey Beyond#031": {
    "src": "Yes, ma'am! {u}, when you're ready, let's get going.",
    "dst": "네, 대장님! {u}, 준비되면 출발하자.",
    "role": "desc",
@@ -316,7 +332,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#031": {
+  "A Journey Beyond#032": {
    "src": "Follow your team towards the Silent Expanse's entrance.",
    "dst": "팀을 따라 Silent Expanse 입구로 가세요.",
    "role": "desc",
@@ -326,7 +342,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#032": {
+  "A Journey Beyond#033": {
    "src": "Everyone ready? I'll lead.",
    "dst": "다들 준비됐지? 내가 앞장설게.",
    "role": "desc",
@@ -336,7 +352,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#033": {
+  "A Journey Beyond#034": {
    "src": "It's a twist of fate that our paths have converged here, {u}. We started our journey together and now...",
    "dst": "우리 길이 여기서 다시 만나다니 운명의 장난이네, {u}. 함께 여정을 시작했는데 이제...",
    "role": "desc",
@@ -346,7 +362,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#034": {
+  "A Journey Beyond#035": {
    "src": "Aledar...",
    "dst": "Aledar...",
    "role": "desc",
@@ -356,7 +372,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#035": {
+  "A Journey Beyond#036": {
    "src": "I hear them too.",
    "dst": "나도 들려.",
    "role": "desc",
@@ -366,7 +382,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#036": {
+  "A Journey Beyond#037": {
    "src": "Ah, no problem. I'll take care of these.",
    "dst": "아, 문제없어. 이놈들은 내가 맡을게.",
    "role": "desc",
@@ -376,7 +392,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#037": {
+  "A Journey Beyond#038": {
    "src": "No more running for us, huh ? Ah, we're here.",
    "dst": "이제 도망칠 일은 없겠지? 아, 다 왔다.",
    "role": "desc",
@@ -386,7 +402,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#038": {
+  "A Journey Beyond#039": {
    "src": "This is actually our second attempt. The first time, it didn't go too well.",
    "dst": "사실 이번이 두 번째 시도예요. 처음엔 잘 안 풀렸거든요.",
    "role": "desc",
@@ -396,7 +412,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#039": {
+  "A Journey Beyond#040": {
    "src": "We have more numbers now, Lucio and yourself should help us overpower it.",
    "dst": "이젠 인원이 늘었으니 Lucio랑 당신이 제압하는 걸 도와줄 거예요.",
    "role": "desc",
@@ -406,7 +422,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#040": {
+  "A Journey Beyond#041": {
    "src": "Can't be that strong, bet I can take it myself.",
    "dst": "강해 봤자지, 나 혼자서도 해치울걸.",
    "role": "desc",
@@ -416,7 +432,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#041": {
+  "A Journey Beyond#042": {
    "src": "We managed to seal it in but with the {~} of us I'm sure we ca-",
    "dst": "간신히 가둬 두긴 했지만 {~}명이면 분명 할 수-",
    "role": "desc",
@@ -426,7 +442,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#042": {
+  "A Journey Beyond#043": {
    "src": "Let's just do it!",
    "dst": "그냥 해치우자!",
    "role": "desc",
@@ -436,7 +452,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#043": {
+  "A Journey Beyond#044": {
    "src": "Wait... No!",
    "dst": "잠깐... 안 돼!",
    "role": "desc",
@@ -446,7 +462,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#044": {
+  "A Journey Beyond#045": {
    "src": "Lucio! You FOOL!",
    "dst": "Lucio! 이 멍청아!",
    "role": "desc",
@@ -456,7 +472,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#045": {
+  "A Journey Beyond#046": {
    "src": "What's the big deal? You said yourself we can take it!",
    "dst": "뭐가 대수라고? 이길 수 있다고 너도 말했잖아!",
    "role": "desc",
@@ -466,7 +482,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#046": {
+  "A Journey Beyond#047": {
    "src": "Ouch...",
    "dst": "아야...",
    "role": "desc",
@@ -476,7 +492,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#047": {
+  "A Journey Beyond#048": {
    "src": "We need a PLAN.",
    "dst": "계획이 필요하다고.",
    "role": "desc",
@@ -486,7 +502,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#048": {
+  "A Journey Beyond#049": {
    "src": "Defeat the Beast",
    "dst": "Beast를 처치하세요",
    "role": "desc",
@@ -496,7 +512,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#049": {
+  "A Journey Beyond#050": {
    "src": "The plan is attack!",
    "dst": "계획은 공격이다!",
    "role": "desc",
@@ -506,7 +522,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#050": {
+  "A Journey Beyond#051": {
    "src": "Argh!",
    "dst": "으악!",
    "role": "desc",
@@ -516,7 +532,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#051": {
+  "A Journey Beyond#052": {
    "src": "Lucio!",
    "dst": "Lucio!",
    "role": "desc",
@@ -526,7 +542,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#052": {
+  "A Journey Beyond#053": {
    "src": "Ahh!",
    "dst": "으아!",
    "role": "desc",
@@ -536,7 +552,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#053": {
+  "A Journey Beyond#054": {
    "src": "No! Stop hurting them!",
    "dst": "안 돼! 그만 괴롭혀!",
    "role": "desc",
@@ -546,7 +562,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#054": {
+  "A Journey Beyond#055": {
    "src": "Ouch! This isn't working...",
    "dst": "아야! 이러면 안 되는데...",
    "role": "desc",
@@ -556,7 +572,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#055": {
+  "A Journey Beyond#056": {
    "src": "Is it just me or are our attacks doing NOTHING?",
    "dst": "나만 그래, 아니면 우리 공격이 전혀 안 먹혀?",
    "role": "desc",
@@ -566,7 +582,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#056": {
+  "A Journey Beyond#057": {
    "src": "Lucio's right! Change of plan. Lucio, help me hold it in place.",
    "dst": "Lucio 말이 맞아요! 계획 변경. Lucio, 저놈 붙잡는 거 도와줘.",
    "role": "desc",
@@ -576,7 +592,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#057": {
+  "A Journey Beyond#058": {
    "src": "Aledar, you know what to do.",
    "dst": "Aledar, 할 일 알지?",
    "role": "desc",
@@ -586,7 +602,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#058": {
+  "A Journey Beyond#059": {
    "src": "{u}, come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
    "dst": "{u}, 따라와! 괴물이 못 나가게 주문을 써서 동굴 입구를 막아.",
    "role": "desc",
@@ -596,7 +612,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#059": {
+  "A Journey Beyond#060": {
    "src": "I'll block it from attacking, you block it up with a spell.",
    "dst": "공격은 내가 막을 테니, 넌 주문으로 입구를 막아.",
    "role": "desc",
@@ -606,7 +622,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#060": {
+  "A Journey Beyond#061": {
    "src": "They won't be able to hold it for long.",
    "dst": "저 둘은 오래 못 버텨.",
    "role": "desc",
@@ -616,7 +632,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#061": {
+  "A Journey Beyond#062": {
    "src": "Ready?! Cast any spell!",
    "dst": "준비됐어?! 아무 주문이나 써!",
    "role": "desc",
@@ -626,7 +642,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#062": {
+  "A Journey Beyond#063": {
    "src": "Lucio, Elphaba! Run!",
    "dst": "Lucio, Elphaba! 뛰어!",
    "role": "desc",
@@ -636,7 +652,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#063": {
+  "A Journey Beyond#064": {
    "src": "Plan a way of killing the beast.",
    "dst": "야수를 죽일 방법을 계획하세요.",
    "role": "desc",
@@ -646,7 +662,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#064": {
+  "A Journey Beyond#065": {
    "src": "We all here? Where's Lucio?",
    "dst": "다 모였어요? Lucio는요?",
    "role": "desc",
@@ -656,7 +672,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#065": {
+  "A Journey Beyond#066": {
    "src": "Guys... Any help? I'm stuck!",
    "dst": "얘들아... 좀 도와줄래? 끼었어!",
    "role": "desc",
@@ -666,7 +682,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#066": {
+  "A Journey Beyond#067": {
    "src": "Phew, here. Let me get you out.",
    "dst": "휴, 자. 꺼내 줄게.",
    "role": "desc",
@@ -676,7 +692,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#067": {
+  "A Journey Beyond#068": {
    "src": "I'm sorry, team. I've never seen a monster like that before.",
    "dst": "미안해, 다들. 저런 괴물은 처음 봤어.",
    "role": "desc",
@@ -686,9 +702,9 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#068": {
-   "src": "It looks like our problem isn't fire power. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "문제는 화력이 아닌 것 같아. 다른 뭔가가 있어. 우리 무기가 전혀 안 통하는 것 같았어.",
+  "A Journey Beyond#069": {
+   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
+   "dst": "문제는 화력이 아닌 것 같아. 다른 뭔가야. 우리 무기가 그것에 전혀 먹히지 않는 것 같았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -696,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#069": {
+  "A Journey Beyond#070": {
    "src": "I know someone who might be able to help us. A blacksmith on {p}.",
    "dst": "도와줄 만한 사람을 알아. {p}에 사는 대장장이야.",
    "role": "desc",
@@ -706,7 +722,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#070": {
+  "A Journey Beyond#071": {
    "src": "{u}, I've written the house's coordinates on your book. Meet us there.",
    "dst": "{u}, 그 집 좌표를 책에 적어 뒀어요. 거기서 만나요.",
    "role": "desc",
@@ -716,7 +732,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#071": {
+  "A Journey Beyond#072": {
    "src": "Meet the other soldiers at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]에서 다른 병사들과 만나세요.",
    "role": "desc",
@@ -726,7 +742,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#072": {
+  "A Journey Beyond#073": {
    "src": "Just in time. We're all here.",
    "dst": "딱 맞춰 왔네요. 다 모였어요.",
    "role": "desc",
@@ -736,7 +752,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#073": {
+  "A Journey Beyond#074": {
    "src": "It looks like the Blacksmith knows what's wrong...",
    "dst": "대장장이가 뭐가 문제인지 아는 것 같아요...",
    "role": "desc",
@@ -746,7 +762,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#074": {
+  "A Journey Beyond#075": {
    "src": "So, Dren. Do you know why we can't damage the beast?",
    "dst": "그래서, Dren. 왜 저 야수에게 피해를 못 주는지 알아요?",
    "role": "desc",
@@ -756,7 +772,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#075": {
+  "A Journey Beyond#076": {
    "src": "Certainly! Your issue is elemental. As you know, there are {~} elements...",
    "dst": "물론이죠! 문제는 원소예요. 알다시피 원소는 {~}가지가 있죠...",
    "role": "desc",
@@ -766,7 +782,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#076": {
+  "A Journey Beyond#077": {
    "src": "Earth...",
    "dst": "대지...",
    "role": "desc",
@@ -776,7 +792,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#077": {
+  "A Journey Beyond#078": {
    "src": "Fire...",
    "dst": "화염...",
    "role": "desc",
@@ -786,7 +802,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#078": {
+  "A Journey Beyond#079": {
    "src": "Air...",
    "dst": "바람...",
    "role": "desc",
@@ -796,7 +812,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#079": {
+  "A Journey Beyond#080": {
    "src": "Water...",
    "dst": "물...",
    "role": "desc",
@@ -806,7 +822,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#080": {
+  "A Journey Beyond#081": {
    "src": "And Thunder...",
    "dst": "그리고 번개...",
    "role": "desc",
@@ -816,7 +832,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#081": {
+  "A Journey Beyond#082": {
    "src": "But.. There is a hidden element, Darkness .",
    "dst": "하지만.. 숨겨진 원소가 있어요, 어둠 .",
    "role": "desc",
@@ -826,7 +842,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#082": {
+  "A Journey Beyond#083": {
    "src": "Thank grook for that. I was wondering if we'd ever be rid of this nightmare.",
    "dst": "다행이다. 이 악몽에서 벗어날 수 있을까 싶었어.",
    "role": "desc",
@@ -836,7 +852,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Beyond#083": {
+  "A Journey Beyond#084": {
    "src": "And we both keep telling you why you're wrong. This is... sorry, I didn't catch your name. {u}? {u}.",
    "dst": "그리고 우리 둘이 계속 네가 틀렸다고 말하잖아. 이쪽은... 미안, 이름을 못 들었네요. {u}? {u}.",
    "role": "desc",
@@ -937,8 +953,8 @@
    "source": "captured"
   },
   "A Journey Beyond#094": {
-   "src": "Alright. Aledar, you get the darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "좋아. Aledar, 넌 {u}와(과) 어둠의 물건을 구해 와. 난 Lucio랑 빛의 물건을 구할게.",
+   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
+   "dst": "좋아. Aledar, 너는 {u}와(과) 어둠의 물건을 가져와. 난 Lucio와 빛의 물건을 가지러 갈게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1487,8 +1503,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#149": {
-   "src": "Uhhh... I'm not feeling very wel-... Aahhh!",
-   "dst": "으으... 몸이 좀 안 좋- ... 아아악!",
+   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
+   "dst": "으으... 몸이 좀 안 좋-... 으아아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2097,8 +2113,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#210": {
-   "src": "I feel a bit better.. But something is still wrong.",
-   "dst": "좀 나아졌어.. 그래도 아직 뭔가 이상해.",
+   "src": "I feel a bit better.. But something's still wrong.",
+   "dst": "조금 나아졌어.. 그래도 아직 뭔가 이상해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2457,8 +2473,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#246": {
-   "src": "It worked... Kind of. I feel at least {~}.. We still have a ways to go.",
-   "dst": "효과가 있어... 조금은. 적어도 {~}쯤은 된 것 같아.. 아직 갈 길이 멀어.",
+   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
+   "dst": "효과가 있었어... 어느 정도는. 적어도 {~}은 된 것 같아. 아직 갈 길이 멀어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2469,82 +2485,6 @@
   "A Journey Beyond#247": {
    "src": "Let's take some time to gather ourselves before we press on. I'll meet you on the other side of town.",
    "dst": "계속 가기 전에 잠시 정비하자. 마을 반대편에서 만나.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 18",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#000~1": {
-   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-   "dst": "뭐... 그렇긴 한데, 먼저 {u}에게 자세한 내용을 알려 주고 싶어. 위험한 임무니까... 제대로 설명해 두는 게 좋겠어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-    "file": "quest/a-journey-beyond.json",
-    "ratio": 0.985,
-    "reason": "placeholders"
-   }
-  },
-  "A Journey Beyond#021~1": {
-   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
-   "dst": "그 땅 자체가 저주받았다고 했다. 타락이 아니라- 그 점은 아주 분명히 했다.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 1",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#069~1": {
-   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "문제는 화력이 아닌 것 같아. 다른 뭔가야. 우리 무기가 그것에 전혀 먹히지 않는 것 같았어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#094~1": {
-   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "좋아. Aledar, 너는 {u}와(과) 어둠의 물건을 가져와. 난 Lucio와 빛의 물건을 가지러 갈게.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#149~1": {
-   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
-   "dst": "으으... 몸이 좀 안 좋-... 으아아!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 14",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#210~1": {
-   "src": "I feel a bit better.. But something's still wrong.",
-   "dst": "조금 나아졌어.. 그래도 아직 뭔가 이상해.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 17",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#246~1": {
-   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
-   "dst": "효과가 있었어... 어느 정도는. 적어도 {~}은 된 것 같아. 아직 갈 길이 멀어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",

@@ -1,12 +1,152 @@
 {
  "_meta": {
   "quest": "The Mercenary",
-  "count": 141,
+  "count": 155,
   "translated": 141,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Mercenary#000": {
+   "src": "Looks like the others have gone ahead. You should rendezvous with them closer to the barracks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#001": {
+   "src": "Dang, you're right. Can't forget about the historical value. Good catch.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#002": {
+   "src": "I've seen soldiers fall and fall and fall, then rise back up again. I've lived through the chaos and death of battle more times than I can count.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#003": {
+   "src": "I suppose I'll start with you. What are two more when compared to dozens?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#004": {
+   "src": "So, I surrender! Don't see the point in fightin' a pointless battle. Not like we're goin' to be paid after this mess, anyhow.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#005": {
+   "src": "[+{~} Tower Key]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#006": {
+   "src": "The door is locked...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#007": {
+   "src": "[+{~} Takan's Badge]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#008": {
+   "src": "Takan is dead. You should regroup with the others outside the barracks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#009": {
+   "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a very dangerous man.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#010": {
+   "src": "Admiral, sir. Some of what Takan was saying, it was-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#011": {
+   "src": "I wouldn't put too much stock in that traitor's words. People like him... all they do is spit vitriol with no merit, riling up the masses against the order we hold.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#012": {
+   "src": "He was an angry man holding a grudge for an imagined wrongdoing. There is nothing more to it than that. I would suggest putting it out of your mind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#013": {
+   "src": "A general location is useful, though. I'll see if I can get any letters through to him. Thanks for telling me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Mercenary#014": {
    "src": "Talk to the Scout in {p} at [{~}, {~}, -{~}] or find one in another town.",
    "dst": "与 {p} [{~}, {~}, -{~}] 的斥候交谈，或者在其他城镇找一位斥候。",
    "role": "desc",
@@ -14,146 +154,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Mercenary#001": {
-   "src": "Ho, soldier! Soldier! Ahem...",
-   "dst": "嗬，士兵！士兵！咳咳……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#002": {
-   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
-   "dst": "Almuj 军队的 Amerigo 上将，请求 Wynn 行省各地身强体健、目前没有任务在身的士兵支援。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#003": {
-   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
-   "dst": "直说吧……他们那边遇上麻烦了。{p} 的常备军被俘，沙漠兵营也被占领了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#004": {
-   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
-   "dst": "上将派了斥候四处召集能自由行动的士兵来帮他……收拾这个局面。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#005": {
-   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
-   "dst": "……要我说，我猜他想悄悄地、低调地把这件事处理掉。考虑到当下的情况，我也不怪他。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#006": {
-   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
-   "dst": "总之，可以的话，就往那边去吧。{p} 是 {p} 东边的沙漠城市，如果你没去过的话。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#007": {
-   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
-   "dst": "就这样，我走了！还有很多士兵要找。如果你决定响应召集，祝你好运！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#008": {
-   "src": "Ho, soldier! Soldier! Ahem...",
-   "dst": "嗬，士兵！士兵！咳咳……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#009": {
-   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
-   "dst": "Almuj 军队的 Amerigo 上将，请求 Wynn 行省各地身强体健、目前没有任务在身的士兵支援。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#010": {
-   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
-   "dst": "直说吧……他们那边遇上麻烦了。{p} 的常备军被俘，沙漠兵营也被占领了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#011": {
-   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
-   "dst": "上将派了斥候四处召集能自由行动的士兵来帮他……收拾这个局面。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#012": {
-   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
-   "dst": "……要我说，我猜他想悄悄地、低调地把这件事处理掉。考虑到当下的情况，我也不怪他。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#013": {
-   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
-   "dst": "总之，可以的话，就往那边去吧。{p} 是 {p} 东边的沙漠城市，如果你没去过的话。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
-   "source": "wiki"
-  },
-  "The Mercenary#014": {
-   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
-   "dst": "就这样，我走了！还有很多士兵要找。如果你决定响应召集，祝你好运！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 1",
-   "speaker": "Military Scout",
    "source": "wiki"
   },
   "The Mercenary#015": {
@@ -207,8 +207,8 @@
    "source": "wiki"
   },
   "The Mercenary#020": {
-   "src": "Anyhow, if you can, head on over to the Admiral's office. It's just by the bank, you can't miss it.",
-   "dst": "总之，可以的话，就去上将的办公室吧。就在银行旁边，你不会找不到的。",
+   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
+   "dst": "总之，可以的话，就往那边去吧。{p} 是 {p} 东边的沙漠城市，如果你没去过的话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
@@ -227,6 +227,146 @@
    "source": "wiki"
   },
   "The Mercenary#022": {
+   "src": "Ho, soldier! Soldier! Ahem...",
+   "dst": "嗬，士兵！士兵！咳咳……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#023": {
+   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
+   "dst": "Almuj 军队的 Amerigo 上将，请求 Wynn 行省各地身强体健、目前没有任务在身的士兵支援。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#024": {
+   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
+   "dst": "直说吧……他们那边遇上麻烦了。{p} 的常备军被俘，沙漠兵营也被占领了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#025": {
+   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
+   "dst": "上将派了斥候四处召集能自由行动的士兵来帮他……收拾这个局面。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#026": {
+   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
+   "dst": "……要我说，我猜他想悄悄地、低调地把这件事处理掉。考虑到当下的情况，我也不怪他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#027": {
+   "src": "Anyhow, if you can, travel on over that way. {p} is the desert city to the east of {p}, if you've never seen it.",
+   "dst": "总之，可以的话，就往那边去吧。{p} 是 {p} 东边的沙漠城市，如果你没去过的话。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#028": {
+   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
+   "dst": "就这样，我走了！还有很多士兵要找。如果你决定响应召集，祝你好运！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#029": {
+   "src": "Ho, soldier! Soldier! Ahem...",
+   "dst": "嗬，士兵！士兵！咳咳……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#030": {
+   "src": "Admiral Amerigo of the Almuji Army requests the aid of able-bodied and unmoored soldiers from around the Province of Wynn.",
+   "dst": "Almuj 军队的 Amerigo 上将，请求 Wynn 行省各地身强体健、目前没有任务在身的士兵支援。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#031": {
+   "src": "To put it bluntly... they've run into a predicament over there. {p}'s standing army has been taken captive, and the desert barracks overtaken.",
+   "dst": "直说吧……他们那边遇上麻烦了。{p} 的常备军被俘，沙漠兵营也被占领了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#032": {
+   "src": "The Admiral has sent scouts round to gather any free-moving soldiers to help him... remedy the situation.",
+   "dst": "上将派了斥候四处召集能自由行动的士兵来帮他……收拾这个局面。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#033": {
+   "src": "... If you ask me, I reckon he'd like this taken care of quietly and discreetly. I don't blame the man, really, given the circumstances.",
+   "dst": "……要我说，我猜他想悄悄地、低调地把这件事处理掉。考虑到当下的情况，我也不怪他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#034": {
+   "src": "Anyhow, if you can, head on over to the Admiral's office. It's just by the bank, you can't miss it.",
+   "dst": "总之，可以的话，就去上将的办公室吧。就在银行旁边，你不会找不到的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#035": {
+   "src": "With that, I'm off! There are many more soldiers to find. Good luck, if you choose to heed the summons!",
+   "dst": "就这样，我走了！还有很多士兵要找。如果你决定响应召集，祝你好运！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 1",
+   "speaker": "Military Scout",
+   "source": "wiki"
+  },
+  "The Mercenary#036": {
    "src": "Talk to Amerigo in {p} at [{~}, {~}, -{~}].",
    "dst": "与 {p} [{~}, {~}, -{~}] 的 Amerigo 交谈。",
    "role": "desc",
@@ -236,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#023": {
+  "The Mercenary#037": {
    "src": "Ugh, for crying out loud- I'm busy, can't you see that? I don't have time to...",
    "dst": "呃，拜托——我很忙，你看不出来吗？我没时间……",
    "role": "desc",
@@ -246,7 +386,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#024": {
+  "The Mercenary#038": {
    "src": "Ah. You're a soldier. Good, that's one more to add to the list. You met the scout, I'm sure.",
    "dst": "啊。你是士兵。很好，名单上又多一个。我想你见过斥候了。",
    "role": "desc",
@@ -256,7 +396,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#025": {
+  "The Mercenary#039": {
    "src": "Not as many of you lot as I would have hoped for, but it'll have to do. Come down here, the others are in the briefing room already.",
    "dst": "你们这些人没我希望的那么多，不过也只能这样了。下来吧，其他人已经在简报室了。",
    "role": "desc",
@@ -266,7 +406,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#026": {
+  "The Mercenary#040": {
    "src": "Hmph. I suppose this is as many soldiers as we'll be able to get. Very well!",
    "dst": "哼。我想我们能召集到的士兵也就这么多了。很好！",
    "role": "desc",
@@ -276,7 +416,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#027": {
+  "The Mercenary#041": {
    "src": "To begin with - the situation. Commander Takan of {p} has abandoned his post, and has taken the lead of a group of local bandits.",
    "dst": "首先——现在的情况。{p} 的 Takan 指挥官擅离职守，还当上了一群本地强盗的头目。",
    "role": "desc",
@@ -286,7 +426,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#028": {
+  "The Mercenary#042": {
    "src": "Under his command, they were able to strike our forces in the dead of night, and have taken over the barracks to the northeast.",
    "dst": "在他的指挥下，他们趁深夜袭击了我们的部队，占领了东北边的兵营。",
    "role": "desc",
@@ -296,7 +436,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#029": {
+  "The Mercenary#043": {
    "src": "Our entire military force, captured or killed! What a disgrace. We've sent messengers to {p}, and they have promised their support...",
    "dst": "我们整支军队，不是被俘就是被杀！真是奇耻大辱。我们已经派信使去 {p}，他们也答应支援……",
    "role": "desc",
@@ -306,7 +446,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#030": {
+  "The Mercenary#044": {
    "src": "But I would like this dealt with quickly and quietly. That's where you five come in.",
    "dst": "但我希望这件事能快速、低调地解决。这就是你们五个的任务。",
    "role": "desc",
@@ -316,7 +456,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#031": {
+  "The Mercenary#045": {
    "src": "You will attack and infiltrate the barracks, and assassinate our treasonous commander. I will leave the strategizing to you, as there is much I still must handle here.",
    "dst": "你们要进攻并潜入兵营，刺杀我们那个叛国的指挥官。策略就交给你们了，我这边还有很多事要处理。",
    "role": "desc",
@@ -326,7 +466,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#032": {
+  "The Mercenary#046": {
    "src": "A question, if I may. Do we know the commander's reasoning for this attack? It seems out of character.",
    "dst": "请问可以提个问题吗？我们知道指挥官发动这次袭击的原因吗？这不像他会做的事。",
    "role": "desc",
@@ -336,7 +476,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#033": {
+  "The Mercenary#047": {
    "src": "...No. There is nothing that I can recall that would motivate such an attack. Will that be all?",
    "dst": "……不知道。我想不出任何会促使他发动这种袭击的事。还有别的问题吗？",
    "role": "desc",
@@ -346,7 +486,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#034": {
+  "The Mercenary#048": {
    "src": "...I suppose.",
    "dst": "……应该没有了。",
    "role": "desc",
@@ -356,7 +496,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#035": {
+  "The Mercenary#049": {
    "src": "Then I must be off! Good luck, soldiers. I hope for a swift end to this disaster.",
    "dst": "那我得走了！祝你们好运，士兵们。希望这场灾难能尽快结束。",
    "role": "desc",
@@ -366,7 +506,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#036": {
+  "The Mercenary#050": {
    "src": "...Well, darn. Bandits sound like trouble. Do we know what sort?",
    "dst": "……嗯，糟糕。强盗听起来很麻烦。我们知道是哪一种吗？",
    "role": "desc",
@@ -376,7 +516,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#037": {
+  "The Mercenary#051": {
    "src": "Does it matter? We'll probably be fighting them no matter what kind they are.",
    "dst": "有差吗？不管是哪种，我们大概都得跟他们打。",
    "role": "desc",
@@ -386,7 +526,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#038": {
+  "The Mercenary#052": {
    "src": "It might, actually... Some bandit groups are stronger than others. If we know which group we're dealing with ahead of time, it might-",
    "dst": "其实可能有差……有些强盗团比其他的强。如果我们事先知道对付的是哪一伙，也许——",
    "role": "desc",
@@ -396,7 +536,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#039": {
+  "The Mercenary#053": {
    "src": "We've been standing around here for too long. Come on, let's make our way closer to the barracks. We can come up with a plan there.",
    "dst": "我们在这里站太久了。走吧，我们靠近兵营一点。到了那里再想计划。",
    "role": "desc",
@@ -406,7 +546,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#040": {
+  "The Mercenary#054": {
    "src": "Not a bad idea.",
    "dst": "主意不错。",
    "role": "desc",
@@ -416,7 +556,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#041": {
+  "The Mercenary#055": {
    "src": "Fine by me!",
    "dst": "我没意见！",
    "role": "desc",
@@ -426,7 +566,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#042": {
+  "The Mercenary#056": {
    "src": "Suppose that works.",
    "dst": "我想行得通。",
    "role": "desc",
@@ -436,7 +576,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#043": {
+  "The Mercenary#057": {
    "src": "Rendezvous near the barracks at [{~}, {~}, -{~}].",
    "dst": "在 [{~}, {~}, -{~}] 的兵营附近集合。",
    "role": "desc",
@@ -446,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#044": {
+  "The Mercenary#058": {
    "src": "Well, darn. The place is swarming with bandits...",
    "dst": "嗯，糟糕。这地方到处都是强盗……",
    "role": "desc",
@@ -456,7 +596,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#045": {
+  "The Mercenary#059": {
    "src": "I don't see how that's a problem! We can just launch explosives into the crowd, and boom, problem solved.",
    "dst": "我看不出这有什么问题！我们直接把炸药扔进人堆里，砰，问题解决。",
    "role": "desc",
@@ -466,7 +606,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#046": {
+  "The Mercenary#060": {
    "src": "...What?",
    "dst": "……什么？",
    "role": "desc",
@@ -476,7 +616,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#047": {
+  "The Mercenary#061": {
    "src": "We can't do that. You'd almost certainly damage the structure in the process!",
    "dst": "不能那样做。那样几乎肯定会炸坏建筑！",
    "role": "desc",
@@ -486,7 +626,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#048": {
+  "The Mercenary#062": {
    "src": "Ah, true. Can't forget about the historical value. Good catch.",
    "dst": "啊，也对。可不能忘了它的历史价值。提醒得好。",
    "role": "desc",
@@ -496,7 +636,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#049": {
+  "The Mercenary#063": {
    "src": "...Right. Well, anyway, I don't think we can get through those bandits with brute force. We'll have to try to find a way around them...",
    "dst": "……好吧。总之，我不认为我们能靠蛮力突破那些强盗。我们得想办法绕过他们……",
    "role": "desc",
@@ -506,7 +646,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#050": {
+  "The Mercenary#064": {
    "src": "Well, if I may interject- I reckon I won't be of much use in proper combat! Injured leg, 'n all. Makes moving a little hard!",
    "dst": "那个，我插句话——我想正面打起来我帮不上什么忙！腿受伤了嘛。行动有点不方便！",
    "role": "desc",
@@ -516,7 +656,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#051": {
+  "The Mercenary#065": {
    "src": "So, if we think goin' right in won't work, I could try to create a distraction? I've got the magic for it, and I'd be of much more use out here.",
    "dst": "所以，如果我们觉得直接冲进去行不通，我可以试着制造点混乱引开他们？我有这方面的魔法，在外面我能派上更多用场。",
    "role": "desc",
@@ -526,7 +666,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#052": {
+  "The Mercenary#066": {
    "src": "It could work... if I join you, we'd be able to draw attention towards us while the others sneak in from a different angle.",
    "dst": "行得通……如果我跟你一起，我们就能把注意力吸引过来，让其他人从别的方向溜进去。",
    "role": "desc",
@@ -536,7 +676,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#053": {
+  "The Mercenary#067": {
    "src": "Good idea. But, how do we get in? I don't think there is another entrance, other than that one in front.",
    "dst": "好主意。可是我们要怎么进去？除了前面那个入口，我不认为还有别的入口。",
    "role": "desc",
@@ -546,7 +686,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#054": {
+  "The Mercenary#068": {
    "src": "Ahem. If you'll allow me-",
    "dst": "咳咳。如果你们允许我——",
    "role": "desc",
@@ -556,7 +696,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#055": {
+  "The Mercenary#069": {
    "src": "This had better not be going where I think it is, Linton.",
    "dst": "最好别是我想的那样，Linton。",
    "role": "desc",
@@ -566,7 +706,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#056": {
+  "The Mercenary#070": {
    "src": "Okay, maybe it is. But, listen! We don't have any entrances, right? What if we made our own... by blowing a hole through a wall?",
    "dst": "好吧，也许就是。但是，听着！我们没有入口，对吧？如果我们自己造一个……在墙上炸个洞呢？",
    "role": "desc",
@@ -576,7 +716,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#057": {
+  "The Mercenary#071": {
    "src": "...Alright, fine. That sounds like it could work.",
    "dst": "……好吧，行。听起来可能行得通。",
    "role": "desc",
@@ -586,7 +726,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#058": {
+  "The Mercenary#072": {
    "src": "...Didn't we just say we wouldn't-",
    "dst": "……我们不是刚说好不要——",
    "role": "desc",
@@ -596,7 +736,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#059": {
+  "The Mercenary#073": {
    "src": "Exactly! You need to have more faith in the experts, Aledar.",
    "dst": "正是！你得多相信专家一点，Aledar。",
    "role": "desc",
@@ -606,7 +746,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#060": {
+  "The Mercenary#074": {
    "src": "We all need to make sacrifices, Lanu.",
    "dst": "我们都得做出牺牲，Lanu。",
    "role": "desc",
@@ -616,7 +756,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#061": {
+  "The Mercenary#075": {
    "src": "Hm. No, I don't think I do. Either way, that sounds like a plan. {u}, Linton, and I will break into the barracks then.",
    "dst": "嗯。不，我不觉得我需要。不管怎样，这听起来是个计划。那就由 {u}、Linton 和我闯进兵营。",
    "role": "desc",
@@ -626,7 +766,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#062": {
+  "The Mercenary#076": {
    "src": "I suppose.",
    "dst": "我想可以吧。",
    "role": "desc",
@@ -636,7 +776,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#063": {
+  "The Mercenary#077": {
    "src": "And Lanu and I can distract 'em while you do so. Sounds like a plan! Let's get goin'.",
    "dst": "我和 Lanu 在你们行动的时候引开他们。听起来是个好计划！我们出发吧。",
    "role": "desc",
@@ -646,7 +786,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#064": {
+  "The Mercenary#078": {
    "src": "Storm the barracks at [{~}, {~}, -{~}].",
    "dst": "突袭 [{~}, {~}, -{~}] 的兵营。",
    "role": "desc",
@@ -656,7 +796,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#065": {
+  "The Mercenary#079": {
    "src": "Well, well. This looks like a good place to break our way in, wouldn't you say, Aledar?",
    "dst": "哎呀呀。这看起来是个炸开进去的好地方，你说是吧，Aledar？",
    "role": "desc",
@@ -666,7 +806,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#066": {
+  "The Mercenary#080": {
    "src": "Yes, Linton, it looks fine. {u}, we'll be looking for Takan. I think the two of us could take him out.",
    "dst": "是，Linton，看起来不错。{u}，我们去找 Takan。我想我们俩能解决他。",
    "role": "desc",
@@ -676,7 +816,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#067": {
+  "The Mercenary#081": {
    "src": "And I'll be looking for the captured soldiers! I stole a map of the barracks from Amerigo's desk, so I'll be able to find them easily enough!",
    "dst": "我去找被俘的士兵！我从 Amerigo 的桌上偷了一张兵营的地图，所以我能轻松找到他们！",
    "role": "desc",
@@ -686,7 +826,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#068": {
+  "The Mercenary#082": {
    "src": "You-... nevermind, I don't care. Just do your job, please?",
    "dst": "你——……算了，我不在乎。拜托你做好你的工作就行？",
    "role": "desc",
@@ -696,7 +836,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#069": {
+  "The Mercenary#083": {
    "src": "On it, boss!",
    "dst": "马上办，老大！",
    "role": "desc",
@@ -706,7 +846,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#070": {
+  "The Mercenary#084": {
    "src": "See you two on the other side!",
    "dst": "我们在另一边见！",
    "role": "desc",
@@ -716,7 +856,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#071": {
+  "The Mercenary#085": {
    "src": "Alright, let's get to work!",
    "dst": "好，开工吧！",
    "role": "desc",
@@ -726,7 +866,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#072": {
+  "The Mercenary#086": {
    "src": "Continue through the barracks.",
    "dst": "继续穿过兵营。",
    "role": "desc",
@@ -736,7 +876,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#073": {
+  "The Mercenary#087": {
    "src": "Damn it... damn it, damn it, damn it ALL! Couldn't give me a MOMENT of peace, could he, that rat Amerigo...",
    "dst": "该死……该死，该死，全都该死！就不能让我清静一下吗，那只老鼠 Amerigo……",
    "role": "desc",
@@ -746,7 +886,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#074": {
+  "The Mercenary#088": {
    "src": "...do I really need to do everything myself?! It's almost as though-",
    "dst": "……难道什么事都得我自己来吗？！简直就像——",
    "role": "desc",
@@ -756,7 +896,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#075": {
+  "The Mercenary#089": {
    "src": "Oh, I see. I see what's going on. More of Amerigo's dogs, here to take care of his business, huh?! Get out here where I can see you.",
    "dst": "噢，我明白了。我明白是怎么回事了。又是 Amerigo 派来替他办事的走狗，是吧？！给我出来，让我看看你们。",
    "role": "desc",
@@ -766,7 +906,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#076": {
+  "The Mercenary#090": {
    "src": "You look new... haven't been around long enough to really see the face of War up close and personal yet, have you?",
    "dst": "你看起来是新来的……还没待够久，没亲眼近距离见识过战争的真面目吧？",
    "role": "desc",
@@ -776,7 +916,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#077": {
+  "The Mercenary#091": {
    "src": "You think this is right? You think it's right that those DAMNED admirals get all the wealth and fame, when WE'RE the ones out fighting in the trenches?!",
    "dst": "你觉得这样对吗？你觉得那些该死的上将坐拥所有财富和名声，而在战壕里拼命的是我们，这样对吗？！",
    "role": "desc",
@@ -786,7 +926,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#078": {
+  "The Mercenary#092": {
    "src": "I've seen soldiers fall and fall and fall, then rise back up again. I've lived through the chaos and death of battle more times than I could count.",
    "dst": "我看过士兵倒下、倒下、再倒下，然后又重新站起来。我经历过的战场混乱与死亡，多到我数都数不清。",
    "role": "desc",
@@ -796,7 +936,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#079": {
+  "The Mercenary#093": {
    "src": "And these IDIOTS think they deserve their power? Their authority?!",
    "dst": "而这些白痴觉得他们配得上他们的权力？他们的权威？！",
    "role": "desc",
@@ -806,7 +946,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#080": {
+  "The Mercenary#094": {
    "src": "...You've killed dozens, and you're keeping dozens more captured.",
    "dst": "……你杀了几十个人，还关押着另外几十个人。",
    "role": "desc",
@@ -816,7 +956,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#081": {
+  "The Mercenary#095": {
    "src": "And I'd do all that and more, just to prove my point! They think they hold power?! I'll show them power...",
    "dst": "为了证明我的观点，我还会做得更多！他们以为自己掌握权力？！我就让他们见识什么是权力……",
    "role": "desc",
@@ -826,7 +966,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#082": {
+  "The Mercenary#096": {
    "src": "I suppose I'll start with you. What are two more compared to dozens?",
    "dst": "我想就从你们开始吧。跟几十个人比起来，多两个又算什么？",
    "role": "desc",
@@ -836,7 +976,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#083": {
+  "The Mercenary#097": {
    "src": "Step aside, Shadow Spears. I'd like to deal with these dogs myself.",
    "dst": "让开，暗影之矛。我要亲自对付这两条走狗。",
    "role": "desc",
@@ -846,7 +986,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#084": {
+  "The Mercenary#098": {
    "src": "...We won't make it easy for you.",
    "dst": "……我们不会让你好过的。",
    "role": "desc",
@@ -856,7 +996,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#085": {
+  "The Mercenary#099": {
    "src": "Defeat Takan.",
    "dst": "击败 Takan。",
    "role": "desc",
@@ -866,7 +1006,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#086": {
+  "The Mercenary#100": {
    "src": "Hrrk-...",
    "dst": "呃——……",
    "role": "desc",
@@ -876,7 +1016,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#087": {
+  "The Mercenary#101": {
    "src": "Y-you won't-... Stay back!",
    "dst": "你、你们别想——……退后！",
    "role": "desc",
@@ -886,7 +1026,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#088": {
+  "The Mercenary#102": {
    "src": "Damn it, he's getting away!",
    "dst": "该死，他要逃了！",
    "role": "desc",
@@ -896,7 +1036,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#089": {
+  "The Mercenary#103": {
    "src": "This tower can only go up... Come on, we need to chase after him! We can't let him get away!",
    "dst": "这座塔只能往上走……快，我们得追上他！不能让他跑了！",
    "role": "desc",
@@ -906,7 +1046,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#090": {
+  "The Mercenary#104": {
    "src": "Continue up the stairs in the barracks.",
    "dst": "继续爬上兵营的楼梯。",
    "role": "desc",
@@ -916,7 +1056,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#091": {
+  "The Mercenary#105": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -926,7 +1066,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#092": {
+  "The Mercenary#106": {
    "src": "No need to be hasty.",
    "dst": "不用急。",
    "role": "desc",
@@ -936,7 +1076,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#093": {
+  "The Mercenary#107": {
    "src": "Look, it's obvious we've lost here. Even if that idiot escapes, you military folk will find him.",
    "dst": "听着，很明显我们在这里输了。就算那个白痴逃了，你们军队的人也会找到他。",
    "role": "desc",
@@ -946,7 +1086,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#094": {
+  "The Mercenary#108": {
    "src": "So, I surrender! Don't see the point in fightin' a pointless battle. Not like we're gonna be paid after this mess, anyhow.",
    "dst": "所以，我投降！没必要打一场毫无意义的仗。反正经过这场乱子，我们也拿不到钱了。",
    "role": "desc",
@@ -956,7 +1096,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#095": {
+  "The Mercenary#109": {
    "src": "Here, take the key to the tower. A sign of good faith. Do what you will with him, I really don't care.",
    "dst": "来，拿去塔的钥匙。算是表示诚意。你们想怎么处置他都行，我真的不在乎。",
    "role": "desc",
@@ -966,7 +1106,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#096": {
+  "The Mercenary#110": {
    "src": "I always preferred his brother anyway. Much quieter.",
    "dst": "反正我一直比较喜欢他哥哥。安静多了。",
    "role": "desc",
@@ -976,7 +1116,7 @@
    "speaker": "Shadow Spears Leader",
    "source": "wiki"
   },
-  "The Mercenary#097": {
+  "The Mercenary#111": {
    "src": "Ugh, more bandits... I'll hold them off here.",
    "dst": "呃，又是强盗……我在这里挡住他们。",
    "role": "desc",
@@ -986,7 +1126,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#098": {
+  "The Mercenary#112": {
    "src": "Keep going after Takan! I'll be fine!",
    "dst": "继续去追 Takan！我不会有事的！",
    "role": "desc",
@@ -996,7 +1136,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#099": {
+  "The Mercenary#113": {
    "src": "Head up the tower and take out Takan.",
    "dst": "爬上塔，解决 Takan。",
    "role": "desc",
@@ -1006,7 +1146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#100": {
+  "The Mercenary#114": {
    "src": "Urgh... Why did I even come up here?! There's nowhere for me to-",
    "dst": "呃……我到底为什么要跑上来？！我根本无处可——",
    "role": "desc",
@@ -1016,7 +1156,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#101": {
+  "The Mercenary#115": {
    "src": "...Oh. L-listen. We can talk this out-",
    "dst": "……噢。听、听着。我们可以好好谈谈——",
    "role": "desc",
@@ -1026,7 +1166,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#102": {
+  "The Mercenary#116": {
    "src": "N-no... not- l-like... this...",
    "dst": "不、不……不要……这、这样……",
    "role": "desc",
@@ -1036,7 +1176,7 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#103": {
+  "The Mercenary#117": {
    "src": "Regroup with your companions at [{~}, {~}, -{~}].",
    "dst": "在 [{~}, {~}, -{~}] 与同伴会合。",
    "role": "desc",
@@ -1046,7 +1186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#104": {
+  "The Mercenary#118": {
    "src": "...and so then, I had to free them somehow! So I shouted at them to brace for it, and-",
    "dst": "……然后呢，我得想办法放他们出来！所以我就大喊叫他们做好准备，然后——",
    "role": "desc",
@@ -1056,7 +1196,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#105": {
+  "The Mercenary#119": {
    "src": "{u}! There you are! I'm glad you made it out safely. It looks like the bandits are dispersing.",
    "dst": "{u}！你在这里！很高兴你平安出来了。看来强盗们正在散去。",
    "role": "desc",
@@ -1066,7 +1206,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#106": {
+  "The Mercenary#120": {
    "src": "And so is my train of thought for my story. So! Did you get him?",
    "dst": "我讲故事的思路也跟着散了。那么！你们抓到他了吗？",
    "role": "desc",
@@ -1076,7 +1216,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#107": {
+  "The Mercenary#121": {
    "src": "That's good to hear. At least something good came of this whole situation...",
    "dst": "那真是好消息。至少这整件事总算有件好事……",
    "role": "desc",
@@ -1086,7 +1226,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#108": {
+  "The Mercenary#122": {
    "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a dangerous man.",
    "dst": "我很高兴我们最后还是解决了他。他说的那些话……他看起来是个危险的人。",
    "role": "desc",
@@ -1096,7 +1236,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#109": {
+  "The Mercenary#123": {
    "src": "Oh, not this again. You're still on that?",
    "dst": "噢，又来了。你还在想那件事？",
    "role": "desc",
@@ -1106,7 +1246,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#110": {
+  "The Mercenary#124": {
    "src": "I caught a few of the things he was shoutin' from outside. It didn't sound very pleasant.",
    "dst": "我在外面听到了一些他喊的话。听起来不太好。",
    "role": "desc",
@@ -1116,7 +1256,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#111": {
+  "The Mercenary#125": {
    "src": "Lanu:\nSome of us care about history, Mel.",
    "dst": "我们之中有些人是在乎历史的，Mel。",
    "role": "desc",
@@ -1126,7 +1266,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#112": {
+  "The Mercenary#126": {
    "src": "Well, I didn't hear a thing. Probably on account of the ringing in my ears. It seems to me we're done here, though, right?",
    "dst": "嗯，我什么都没听到。大概是因为我耳朵还在嗡嗡响。不过我看我们这边已经搞定了，对吧？",
    "role": "desc",
@@ -1136,7 +1276,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#113": {
+  "The Mercenary#127": {
    "src": "It looks like it, yes. I think I'll stay behind to help the soldiers clear out the remaining bandits.",
    "dst": "看来是的。我想我会留下来帮士兵清理剩下的强盗。",
    "role": "desc",
@@ -1146,7 +1286,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#114": {
+  "The Mercenary#128": {
    "src": "I figure I'll stick around too. Don't got anythin' better to do right now, anyway!",
    "dst": "我想我也留下来。反正现在也没什么更好的事可做！",
    "role": "desc",
@@ -1156,7 +1296,7 @@
    "speaker": "Mel",
    "source": "wiki"
   },
-  "The Mercenary#115": {
+  "The Mercenary#129": {
    "src": "Well, I'm out of here. I've got places to be! Things to do! Explosives to return! Goodbye!",
    "dst": "嗯，我要走了。我有地方要去！有事要做！有炸药要还！再见！",
    "role": "desc",
@@ -1166,7 +1306,7 @@
    "speaker": "Linton",
    "source": "wiki"
   },
-  "The Mercenary#116": {
+  "The Mercenary#130": {
    "src": "{u}, I guess that leaves the two of us to return to {p} with the news! Let's get going.",
    "dst": "{u}，看来只剩我们两个回 {p} 报信了！出发吧。",
    "role": "desc",
@@ -1176,7 +1316,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#117": {
+  "The Mercenary#131": {
    "src": "Bring Takan's badge to Amerigo at [{~}, {~}, -{~}].",
    "dst": "把 Takan 的徽章带给 [{~}, {~}, -{~}] 的 Amerigo。",
    "role": "desc",
@@ -1186,7 +1326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Mercenary#118": {
+  "The Mercenary#132": {
    "src": "Soldiers! Report! Don't tell me you're the only two survivors, damn it all...",
    "dst": "士兵们！报告！别跟我说只有你们两个活下来，该死……",
    "role": "desc",
@@ -1196,7 +1336,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#119": {
+  "The Mercenary#133": {
    "src": "No, sir, the mission was a success. Takan is dead.",
    "dst": "不，长官，任务成功了。Takan 死了。",
    "role": "desc",
@@ -1206,7 +1346,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#120": {
+  "The Mercenary#134": {
    "src": "You're certain of this? You have his badge, surely...?",
    "dst": "你确定吗？你们一定拿到他的徽章了吧……？",
    "role": "desc",
@@ -1216,7 +1356,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#121": {
+  "The Mercenary#135": {
    "src": "I see... satisfactory work, soldiers. You two, and the others, have {p}'s gratitude.",
    "dst": "我明白了……干得还算可以，士兵们。你们两个，还有其他人，{p} 都感谢你们。",
    "role": "desc",
@@ -1226,7 +1366,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#122": {
+  "The Mercenary#136": {
    "src": "Admiral, sir. Some of what Takan is saying, it was-",
    "dst": "上将，长官。Takan 说的一些话，那是——",
    "role": "desc",
@@ -1236,7 +1376,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#123": {
+  "The Mercenary#137": {
    "src": "I wouldn't put too much stock in those traitor's words. People like him, who spit vitriol with no merit, riling up the masses against the order we hold.",
    "dst": "我不会太把那个叛徒的话当回事。像他那种人，满口毫无根据的恶言，煽动群众反抗我们维持的秩序。",
    "role": "desc",
@@ -1246,7 +1386,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#124": {
+  "The Mercenary#138": {
    "src": "He is an angry man holding a grudge for an imagined wrongdoing. There is nothing more to it than that. I would suggest putting it out of your mind.",
    "dst": "他只是个为想象出来的冤屈怀恨在心的愤怒之人。仅此而已。我建议你们别再想了。",
    "role": "desc",
@@ -1256,7 +1396,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#125": {
+  "The Mercenary#139": {
    "src": "You will all be well-compensated for your work today. Now, run along. I have to collect my honorary badge for taking out Ex-Commander Takan.",
    "dst": "你们今天的工作都会得到丰厚的报酬。好了，走吧。我得去领我因为解决前指挥官 Takan 而获得的荣誉徽章了。",
    "role": "desc",
@@ -1266,7 +1406,7 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#126": {
+  "The Mercenary#140": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -1276,7 +1416,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#127": {
+  "The Mercenary#141": {
    "src": "I'm starting to see why Takan hated him so much.",
    "dst": "我开始明白 Takan 为什么那么恨他了。",
    "role": "desc",
@@ -1286,7 +1426,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#128": {
+  "The Mercenary#142": {
    "src": "I'll... probably try to speak to Admiral Aegis about that the next time I'm in {p}.",
    "dst": "下次去 {p} 的时候……我大概会试着跟 Aegis 上将谈谈这件事。",
    "role": "desc",
@@ -1296,7 +1436,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#129": {
+  "The Mercenary#143": {
    "src": "Anyway! What an adventure, right? I can't wait to tell Tasim about it.",
    "dst": "总之！真是一场冒险，对吧？我等不及要跟 Tasim 说了。",
    "role": "desc",
@@ -1306,7 +1446,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#130": {
+  "The Mercenary#144": {
    "src": "...Speaking of. Have you heard from him recently? I can't seem to get ahold of him at all.",
    "dst": "……说到这个。你最近有他的消息吗？我好像怎么都联系不上他。",
    "role": "desc",
@@ -1316,7 +1456,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#131": {
+  "The Mercenary#145": {
    "src": "It's weird. Last I heard, he was at {p}, but he's not there anymore.",
    "dst": "真奇怪。我上次听说他在 {p}，可他已经不在那里了。",
    "role": "desc",
@@ -1326,7 +1466,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#132": {
+  "The Mercenary#146": {
    "src": "He- what? Really? And he didn't even tell me...",
    "dst": "他——什么？真的？他居然都没告诉我……",
    "role": "desc",
@@ -1336,7 +1476,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#133": {
+  "The Mercenary#147": {
    "src": "...I guess it must have slipped his mind. That's alright. We're all busy around here, right?",
    "dst": "……我想他大概是忘了吧。没关系。这里大家都很忙，对吧？",
    "role": "desc",
@@ -1346,7 +1486,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#134": {
+  "The Mercenary#148": {
    "src": "A general location is useful, though. I'll see if I can get any letters to him. Thanks for telling me.",
    "dst": "不过知道个大概的位置还是有用的。我看看能不能寄几封信给他。谢谢你告诉我。",
    "role": "desc",
@@ -1356,7 +1496,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#135": {
+  "The Mercenary#149": {
    "src": "Yeah, that makes two of us...",
    "dst": "是啊，我也一样……",
    "role": "desc",
@@ -1366,7 +1506,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#136": {
+  "The Mercenary#150": {
    "src": "Well, it's probably fine. I'm sure he'll pop up eventually! We just need to wait.",
    "dst": "嗯，大概没事吧。我相信他迟早会冒出来的！我们只要等着就行。",
    "role": "desc",
@@ -1376,7 +1516,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#137": {
+  "The Mercenary#151": {
    "src": "I wonder where he's gone off to? Some kind of assignment in {p}, maybe? Or could he have gone off to Gavel...?",
    "dst": "不知道他去哪了？也许是在 {p} 执行什么任务？还是说他去了 Gavel……？",
    "role": "desc",
@@ -1386,7 +1526,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#138": {
+  "The Mercenary#152": {
    "src": "Well, whatever. It was good to see you again! Even if... well. Even if it was strange.",
    "dst": "嗯，算了。很高兴又见到你！就算……嗯。就算有点怪。",
    "role": "desc",
@@ -1396,7 +1536,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#139": {
+  "The Mercenary#153": {
    "src": "I'll see you around, {u}.",
    "dst": "回头见，{u}。",
    "role": "desc",
@@ -1406,7 +1546,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#140": {
+  "The Mercenary#154": {
    "src": "Well, I guess I'm going to head off. I'll see you around, {u}!",
    "dst": "好了，我想我该走了。回头见，{u}！",
    "role": "desc",

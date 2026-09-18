@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Underwater",
-  "count": 24,
+  "count": 25,
   "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underwater#000": {
+   "src": "But recently, a small hole has opened in the shipwreck here. It is believed that our fortune is hidden within it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underwater#001": {
    "src": "Talk to Omango located at the North of {p} at [-{~}, {~}, -{~}]",
    "dst": "{p} 북쪽 [-{~}, {~}, -{~}]에 있는 Omango에게 말을 거세요",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#001": {
+  "Underwater#002": {
    "src": "Hi, my name is Omango. I am a resident of the {p} village, on top of the hill.",
    "dst": "안녕하세요, 저는 Omango예요. 언덕 위 {p} 마을 주민이죠.",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#002": {
+  "Underwater#003": {
    "src": "As you may know, our people came to your land years ago, and this is the ship they used.",
    "dst": "아시다시피 우리 민족은 오래전 당신들의 땅으로 왔고, 이게 그때 탄 배예요.",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#003": {
+  "Underwater#004": {
    "src": "They brought lots of luxurious goods with them. Most of them got lost in the wreck.",
    "dst": "그들은 값비싼 물건을 잔뜩 가져왔어요. 대부분은 난파와 함께 사라졌지만요.",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#004": {
+  "Underwater#005": {
    "src": "But recently, a small hole has opened in the shipwreck here. It is believed that fortune is hidden within it.",
    "dst": "그런데 최근 이 난파선에 작은 구멍이 뚫렸어요. 그 안에 재물이 숨겨져 있다고들 하죠.",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#005": {
+  "Underwater#006": {
    "src": "Unfortunately, nobody has been able to explore it. It is too deep, no creature can survive underwater that long!",
    "dst": "안타깝게도 아무도 탐사하지 못했어요. 너무 깊어서 그렇게 오래 물속에서 버틸 생물이 없거든요!",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#006": {
+  "Underwater#007": {
    "src": "However, my old friend Sayrr is a fisherman, and I know that he has a very special helmet...",
    "dst": "그런데 제 오랜 친구 Sayrr가 어부인데, 아주 특별한 투구를 갖고 있어요...",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#007": {
+  "Underwater#008": {
    "src": "If you convince him to give you this helmet, and find the treasure, I'll give you a part of it!",
    "dst": "그 투구를 받아 내고 보물을 찾아오면, 제가 그 몫을 나눠 드릴게요!",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#008": {
+  "Underwater#009": {
    "src": "Sayrr is out on his boat, but the cave next to me is a quick way over to where he does his fishing. Be careful on the way, though.",
    "dst": "Sayrr는 배에 나가 있지만, 제 옆 동굴이 그가 낚시하는 곳으로 가는 지름길이에요. 가는 길엔 조심하세요.",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#009": {
+  "Underwater#010": {
    "src": "When you finally have the helmet, explore the ship and bring me back [{~} Ancient Treasure]. Good luck.",
    "dst": "투구를 손에 넣거든 배를 탐사해서 [{~} Ancient Treasure]를 가져다주세요. 행운을 빌어요.",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#010": {
+  "Underwater#011": {
    "src": "Go through the cave at [-{~}, {~}, -{~}] to find Sayrr on his boat on the other side",
    "dst": "[-{~}, {~}, -{~}]의 동굴을 지나 반대편 배 위에 있는 Sayrr를 찾으세요",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#011": {
+  "Underwater#012": {
    "src": "Why ya looking at me like that? Is it cause I'm small, eh? I'll have you know that I caught fish that were twice your size!",
    "dst": "왜 그런 눈으로 봐? 내가 작아서 그래, 응? 내가 네 두 배만 한 물고기도 잡아 봤다고!",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#012": {
+  "Underwater#013": {
    "src": "...or, well, I used to be able to. Nothing's biting recently- wait a sec, why'd you hop on my boat anyways, stranger?",
    "dst": "...뭐, 예전엔 그랬지. 요즘은 통 안 물어- 잠깐, 낯선 양반, 대체 왜 내 배에 올라탄 거야?",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#013": {
+  "Underwater#014": {
    "src": "Ahah! Yes, I still have that old breathing helmet. You want it? You'll have to do something for me first.",
    "dst": "아하! 그래, 그 낡은 호흡 투구는 아직 있지. 갖고 싶어? 그럼 먼저 내 부탁을 하나 들어줘야 해.",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#014": {
+  "Underwater#015": {
    "src": "I'm sure you heard me, but the fish just aren't biting around here anymore! I need to make a living somehow! There's some fish in that cave, but...",
    "dst": "아까 들었겠지만, 이 근처엔 이제 물고기가 안 물어! 나도 먹고살아야 할 거 아냐! 저 동굴엔 물고기가 좀 있는데...",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#015": {
+  "Underwater#016": {
    "src": "...it's a bit dangerous. Tell ya what, I'll give you my fishing rod, and you can go catch me, say, [{~} Gudgeon Meat] down there.",
    "dst": "...거긴 좀 위험해. 이렇게 하자, 내 낚싯대를 줄 테니 저 아래서 [{~} Gudgeon Meat] 정도만 잡아다 줘.",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#016": {
+  "Underwater#017": {
    "src": "The helmet will be all yours after that.",
    "dst": "그럼 투구는 다 네 거야.",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#017": {
+  "Underwater#018": {
    "src": "Bring back [{~} Gudgeon Meat] found in the cave at [-{~}, {~}, -{~}] to Sayrr",
    "dst": "[{~} Gudgeon Meat]를 [-{~}, {~}, -{~}]의 동굴에서 구해 Sayrr에게 가져가세요",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#018": {
+  "Underwater#019": {
    "src": "Ah! Welcome back! Any luck with the fish?",
    "dst": "오! 돌아왔군! 물고기는 좀 잡았어?",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#019": {
+  "Underwater#020": {
    "src": "Great, and I'll thank you kindly. Here's your helmet, have fun with that.",
    "dst": "좋아, 정말 고맙다. 여기 투구, 재밌게 써.",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#020": {
+  "Underwater#021": {
    "src": "Explore the crashed ship for a lost treasure at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]의 난파선을 탐사해 잃어버린 보물을 찾으세요",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#021": {
+  "Underwater#022": {
    "src": "Break the crate and bring [{~} Old Treasure] to Omango at [-{~}, {~}, -{~}]",
    "dst": "상자를 부수고 [{~} Old Treasure]를 [-{~}, {~}, -{~}]의 Omango에게 가져가세요",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#022": {
+  "Underwater#023": {
    "src": "You got it! You found the treasure!",
    "dst": "해냈군요! 보물을 찾았어요!",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#023": {
+  "Underwater#024": {
    "src": "As promised, here's your part of the loot.",
    "dst": "약속대로, 이건 당신 몫이에요.",
    "role": "desc",

@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "Deja Vu",
-  "count": 87,
+  "count": 90,
   "translated": 87,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Deja Vu#000": {
+   "src": "Whatever that odd feeling was, it's over now. And there's Asher's shovel! Better return this to him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Deja Vu",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Deja Vu#002": {
+   "src": "Whenever you're ready to save Asher, step through the rift.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Deja Vu",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Deja Vu#003": {
+   "src": "Woah! Where did-?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Deja Vu",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Deja Vu#004": {
    "src": "Talk to Asher near {p} at [-{~}, {~}, -{~}].",
    "dst": "Habla con Asher cerca de {p} en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#001": {
+  "Deja Vu#005": {
    "src": "Well well well, look who decided to come back with their tail between their legs.",
    "dst": "Vaya, vaya, vaya, mira quién vuelve con el rabo entre las piernas.",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#002": {
+  "Deja Vu#006": {
    "src": "Two weeks now and you still haven't found it? Ugh, I can't believe I ever trusted you with such a simple task.",
    "dst": "¿Dos semanas y aún no la has encontrado? Puf, no me creo que te confiara algo tan sencillo.",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#003": {
+  "Deja Vu#007": {
    "src": "Who am I? WHAT DO YOU MEAN WHO AM I? You offered to help find my shovel, and I've been waiting two weeks!",
    "dst": "¿Que quién soy? ¿¡CÓMO QUE QUIÉN SOY!? ¡Te ofreciste a buscar mi pala y llevo dos semanas esperando!",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#004": {
+  "Deja Vu#008": {
    "src": "Forget about your payment. Unless you either pay me back or get my shovel right now!",
    "dst": "Olvídate de tu paga. ¡A menos que me compenses o me traigas la pala ahora mismo!",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#005": {
+  "Deja Vu#009": {
    "src": "My shovel? That's why I sent you out in the first place! It's somewhere in {p}. I lost it while following a trail of flowers.",
    "dst": "¿Mi pala? ¡Para eso te mandé, para empezar! Está en algún punto de {p}. La perdí siguiendo un rastro de flores.",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#006": {
+  "Deja Vu#010": {
    "src": "I think it was south west of the large ruined gate. Now go get it!",
    "dst": "Creo que al suroeste de la gran puerta en ruinas. ¡Venga, a por ella!",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#007": {
+  "Deja Vu#011": {
    "src": "Find Asher's Shovel near [-{~}, {~}, -{~}]",
    "dst": "Encuentra la pala de Asher cerca de [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#008": {
+  "Deja Vu#012": {
    "src": "Return Asher's Shovel to Asher.",
    "dst": "Devuelve la pala a Asher.",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#009": {
+  "Deja Vu#013": {
    "src": "Well hello there, stranger! Welcome to {p}! Always nice to see a new face around here.",
    "dst": "¡Hola, forastero! ¡Bienvenido a {p}! Siempre gusta ver una cara nueva por aquí.",
    "role": "desc",
@@ -106,7 +136,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#010": {
+  "Deja Vu#014": {
    "src": "Mad at you? Why would I be mad at you? We've never met.",
    "dst": "¿Enfadado contigo? ¿Por qué iba a estarlo? No nos conocemos.",
    "role": "desc",
@@ -116,7 +146,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#011": {
+  "Deja Vu#015": {
    "src": "I know this a bit forward, but I need to ask for your help with-",
    "dst": "Sé que es un poco atrevido, pero necesito pedirte ayuda con-",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#012": {
+  "Deja Vu#016": {
    "src": "Wait, is that-? It is! You've found my shovel! I recognize those markings anywhere.",
    "dst": "Espera, ¿eso es-? ¡Lo es! ¡Has encontrado mi pala! Reconocería esas marcas donde fuera.",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#013": {
+  "Deja Vu#017": {
    "src": "But why is it so rusty? Ah, no matter. Give that to me and I'll head inside to get you a nice reward.",
    "dst": "¿Y por qué está tan oxidada? Bah, da igual. Dámela y entro a buscarte una buena recompensa.",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#014": {
+  "Deja Vu#018": {
    "src": "Thank you. Now, about that reward-",
    "dst": "Gracias. Y ahora, la recompensa-",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#015": {
+  "Deja Vu#019": {
    "src": "Wha- What's happening?",
    "dst": "¿Qu- Qué está pasando?",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#016": {
+  "Deja Vu#020": {
    "src": "Oh dear, there he goes again. Poor fool ignored my warnings and touched that shovel.",
    "dst": "Vaya por Dios, ya está otra vez. El pobre iluso ignoró mis avisos y tocó esa pala.",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#017": {
+  "Deja Vu#021": {
    "src": "He's gone and got himself stuck in a loop.",
    "dst": "Ha ido y se ha quedado atrapado en un bucle.",
    "role": "desc",
@@ -186,7 +216,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#018": {
+  "Deja Vu#022": {
    "src": "Head inside, soldier, and I'll explain what's happening here.",
    "dst": "Entra, soldado, y te explicaré lo que pasa aquí.",
    "role": "desc",
@@ -196,7 +226,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#019": {
+  "Deja Vu#023": {
    "src": "Enter Asher's house.",
    "dst": "Entra en la casa de Asher.",
    "role": "desc",
@@ -206,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#020": {
+  "Deja Vu#024": {
    "src": "Without Asher, his house has vanished from time.",
    "dst": "Sin Asher, su casa ha desaparecido del tiempo.",
    "role": "desc",
@@ -216,7 +246,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#021": {
+  "Deja Vu#025": {
    "src": "Talk to Old Man Martyn.",
    "dst": "Habla con el viejo Martyn.",
    "role": "desc",
@@ -226,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#022": {
+  "Deja Vu#026": {
    "src": "Let me explain why Asher disappeared...",
    "dst": "Te explico por qué Asher desapareció...",
    "role": "desc",
@@ -236,7 +266,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#023": {
+  "Deja Vu#027": {
    "src": "{p} was built many years ago by a long-lost civilization.",
    "dst": "{p} lo construyó hace años una civilización perdida.",
    "role": "desc",
@@ -246,7 +276,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#024": {
+  "Deja Vu#028": {
    "src": "They had odd powers. They ended up distorting time itself.",
    "dst": "Tenían poderes extraños. Acabaron distorsionando el tiempo.",
    "role": "desc",
@@ -256,7 +286,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#025": {
+  "Deja Vu#029": {
    "src": "The tools they used to make these structures are imbued with their power.",
    "dst": "Las herramientas con que alzaron esto guardan su poder.",
    "role": "desc",
@@ -266,7 +296,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#026": {
+  "Deja Vu#030": {
    "src": "Asher found one of these tools: the shovel.",
    "dst": "Asher encontró una de esas herramientas: la pala.",
    "role": "desc",
@@ -276,7 +306,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#027": {
+  "Deja Vu#031": {
    "src": "The shovel is tethering its time of influence to today. It keeps sending Asher back.",
    "dst": "La pala ancla su tiempo de influencia al día de hoy. No para de enviar a Asher al pasado.",
    "role": "desc",
@@ -286,7 +316,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#028": {
+  "Deja Vu#032": {
    "src": "The issue is, Asher died in the past. This creates a paradox.",
    "dst": "El problema es que Asher murió en el pasado. Eso crea una paradoja.",
    "role": "desc",
@@ -296,7 +326,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#029": {
+  "Deja Vu#033": {
    "src": "We can save him if I send you back to prevent his death. Go through this rift to join him in the past.",
    "dst": "Podemos salvarlo si te envío a impedir su muerte. Cruza esta grieta para reunirte con él en el pasado.",
    "role": "desc",
@@ -306,7 +336,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#030": {
+  "Deja Vu#034": {
    "src": "Find a way to save Asher from his death.",
    "dst": "Encuentra la forma de salvar a Asher de su muerte.",
    "role": "desc",
@@ -316,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#031": {
+  "Deja Vu#035": {
    "src": "Huh? Where is everyone?",
    "dst": "¿Eh? ¿Dónde está todo el mundo?",
    "role": "desc",
@@ -326,7 +356,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#032": {
+  "Deja Vu#036": {
    "src": "Usually this place is filled with workers.",
    "dst": "Normalmente esto está lleno de obreros.",
    "role": "desc",
@@ -336,7 +366,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#033": {
+  "Deja Vu#037": {
    "src": "But no one's here. And this place is clearly not done.",
    "dst": "Pero no hay nadie. Y esto está claramente sin terminar.",
    "role": "desc",
@@ -346,7 +376,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#034": {
+  "Deja Vu#038": {
    "src": "Whatever the case, I should probably find my shovel.",
    "dst": "Sea como sea, será mejor que busque mi pala.",
    "role": "desc",
@@ -356,7 +386,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#035": {
+  "Deja Vu#039": {
    "src": "If I were a shovel, where would I be?",
    "dst": "Si yo fuera una pala, ¿dónde estaría?",
    "role": "desc",
@@ -366,7 +396,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#036": {
+  "Deja Vu#040": {
    "src": "Hmmm. Not around here.",
    "dst": "Mmm. Por aquí no.",
    "role": "desc",
@@ -376,7 +406,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#037": {
+  "Deja Vu#041": {
    "src": "This place... There's so much going on but no one here.",
    "dst": "Este sitio... Hay mucho en marcha, pero no hay nadie.",
    "role": "desc",
@@ -386,7 +416,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#038": {
+  "Deja Vu#042": {
    "src": "What I don't understand, though, is why this place looks brand new.",
    "dst": "Lo que no entiendo es por qué esto parece recién hecho.",
    "role": "desc",
@@ -396,7 +426,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#039": {
+  "Deja Vu#043": {
    "src": "This place looks like it's just being built!",
    "dst": "¡Parece que lo están construyendo ahora mismo!",
    "role": "desc",
@@ -406,7 +436,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#040": {
+  "Deja Vu#044": {
    "src": "This must be something to do with the valley's magic. Wouldn't be the first time.",
    "dst": "Esto tendrá que ver con la magia del valle. No sería la primera vez.",
    "role": "desc",
@@ -416,7 +446,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#041": {
+  "Deja Vu#045": {
    "src": "Heh, time.",
    "dst": "Je, el tiempo.",
    "role": "desc",
@@ -426,7 +456,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#042": {
+  "Deja Vu#046": {
    "src": "In fact, whenever I hold that shovel, this kind of stuff seems to happen.",
    "dst": "De hecho, siempre que sostengo esa pala pasan estas cosas.",
    "role": "desc",
@@ -436,7 +466,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#043": {
+  "Deja Vu#047": {
    "src": "Maybe it's sent me way back. Back to the construction of this place.",
    "dst": "Quizá me ha mandado muy atrás. A cuando construían este lugar.",
    "role": "desc",
@@ -446,7 +476,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#044": {
+  "Deja Vu#048": {
    "src": "Then why is no one here?",
    "dst": "¿Y por qué no hay nadie?",
    "role": "desc",
@@ -456,7 +486,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#045": {
+  "Deja Vu#049": {
    "src": "Woah, that tree looks like it might fall over!",
    "dst": "¡Uy, parece que ese árbol se va a caer!",
    "role": "desc",
@@ -466,7 +496,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#046": {
+  "Deja Vu#050": {
    "src": "That was a close one!",
    "dst": "¡Por poco!",
    "role": "desc",
@@ -476,7 +506,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#047": {
+  "Deja Vu#051": {
    "src": "Uhf! How do they have a cannon? These guys must be super advanced.",
    "dst": "¡Uf! ¿Cómo tienen un cañón? Esta gente va muy avanzada.",
    "role": "desc",
@@ -486,7 +516,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#048": {
+  "Deja Vu#052": {
    "src": "I think I'm close now. I can just feel that shovel close by.",
    "dst": "Creo que ya estoy cerca. Noto la pala aquí al lado.",
    "role": "desc",
@@ -496,7 +526,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#049": {
+  "Deja Vu#053": {
    "src": "Wait, what's that-?",
    "dst": "Espera, ¿qué es eso-?",
    "role": "desc",
@@ -506,7 +536,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#050": {
+  "Deja Vu#054": {
    "src": "My my, a crushing defeat to be sure. You'll have to find a way to stop that.",
    "dst": "Vaya, vaya, una derrota aplastante. Habrá que evitar eso.",
    "role": "desc",
@@ -516,7 +546,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#051": {
+  "Deja Vu#055": {
    "src": "Go back through the rift and make sure Asher doesn't become a pancake this time.",
    "dst": "Vuelve a cruzar la grieta y evita que Asher acabe hecho una tortita.",
    "role": "desc",
@@ -526,7 +556,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#052": {
+  "Deja Vu#056": {
    "src": "Wait, what's that-?",
    "dst": "Espera, ¿qué es eso-?",
    "role": "desc",
@@ -536,7 +566,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#053": {
+  "Deja Vu#057": {
    "src": "Well that was quite the explosive end to our friend there. There must be a way to prevent that.",
    "dst": "Pues vaya final más explosivo el de nuestro amigo. Tiene que haber forma de evitarlo.",
    "role": "desc",
@@ -546,7 +576,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#054": {
+  "Deja Vu#058": {
    "src": "Head back in there. This time with less explosions.",
    "dst": "Vuelve a entrar. Esta vez con menos explosiones.",
    "role": "desc",
@@ -556,7 +586,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#055": {
+  "Deja Vu#059": {
    "src": "Oh, so close on that try. Who could've guessed that was how our friend met his end?",
    "dst": "Ay, por poco esta vez. ¿Quién iba a imaginar semejante final para nuestro amigo?",
    "role": "desc",
@@ -566,7 +596,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#056": {
+  "Deja Vu#060": {
    "src": "I'm sure you'll nail it this time. Not sure how you will stop a cosmic event, though.",
    "dst": "Seguro que esta vez lo clavas. Aunque no sé cómo detendrás un suceso cósmico.",
    "role": "desc",
@@ -576,7 +606,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#057": {
+  "Deja Vu#061": {
    "src": "Oh there it is! My shovel!",
    "dst": "¡Ahí está! ¡Mi pala!",
    "role": "desc",
@@ -586,7 +616,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#058": {
+  "Deja Vu#062": {
    "src": "I'm surprised it took me back this far this time.",
    "dst": "Me sorprende que esta vez me llevara tan atrás.",
    "role": "desc",
@@ -596,7 +626,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#059": {
+  "Deja Vu#063": {
    "src": "Well, time to head on back-",
    "dst": "Bueno, hora de volver-",
    "role": "desc",
@@ -606,7 +636,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#060": {
+  "Deja Vu#064": {
    "src": "Wait, Martyn?",
    "dst": "Espera, ¿Martyn?",
    "role": "desc",
@@ -616,7 +646,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#061": {
+  "Deja Vu#065": {
    "src": "Ow! What was that for?",
    "dst": "¡Ay! ¿Y eso por qué?",
    "role": "desc",
@@ -626,7 +656,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#062": {
+  "Deja Vu#066": {
    "src": "Asher, you remember when I allowed you to live in the valley, I told you not to touch any odd objects.",
    "dst": "Asher, cuando te dejé vivir en el valle te dije que no tocaras objetos raros.",
    "role": "desc",
@@ -636,7 +666,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#063": {
+  "Deja Vu#067": {
    "src": "I... Might recall it.",
    "dst": "Puede... que lo recuerde.",
    "role": "desc",
@@ -646,7 +676,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#064": {
+  "Deja Vu#068": {
    "src": "You got yourself stuck hundreds of years ago. If it wasn't for this guard, you'd be removed from existence.",
    "dst": "Te quedaste atrapado hace siglos. De no ser por este guardia, habrías dejado de existir.",
    "role": "desc",
@@ -656,7 +686,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#065": {
+  "Deja Vu#069": {
    "src": "Oh... So that's where I am. I am so sorry Martyn. Please don't kick me out of the valley.",
    "dst": "Ah... Así que ahí estaba. Lo siento mucho, Martyn. No me eches del valle, por favor.",
    "role": "desc",
@@ -666,7 +696,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#066": {
+  "Deja Vu#070": {
    "src": "I know time travel can be tempting. But it's far more dangerous than you can ever understand.",
    "dst": "Sé que viajar en el tiempo es tentador. Pero es mucho más peligroso de lo que imaginas.",
    "role": "desc",
@@ -676,7 +706,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#067": {
+  "Deja Vu#071": {
    "src": "The valley is banned for most citizens. I watch over this timeline because of poor souls like Asher.",
    "dst": "El valle está vedado a casi todos. Vigilo esta línea temporal por pobres almas como Asher.",
    "role": "desc",
@@ -686,7 +716,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#068": {
+  "Deja Vu#072": {
    "src": "Listen to Old Man Martyn.",
    "dst": "Escucha al viejo Martyn.",
    "role": "desc",
@@ -696,7 +726,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#069": {
+  "Deja Vu#073": {
    "src": "Holy Bovine!",
    "dst": "¡Santa Vaca!",
    "role": "desc",
@@ -706,7 +736,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#070": {
+  "Deja Vu#074": {
    "src": "Ah, we're back.",
    "dst": "Ah, ya estamos de vuelta.",
    "role": "desc",
@@ -716,7 +746,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#071": {
+  "Deja Vu#075": {
    "src": "How did you get these powers? Are you even human?",
    "dst": "¿Cómo conseguiste esos poderes? ¿Eres humano siquiera?",
    "role": "desc",
@@ -726,7 +756,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#072": {
+  "Deja Vu#076": {
    "src": "Oh you know. I've read a book or two in my time.",
    "dst": "Ya sabes. He leído algún que otro libro en mi vida.",
    "role": "desc",
@@ -736,7 +766,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#073": {
+  "Deja Vu#077": {
    "src": "{u}, I'm sorry I got you dragged into this. I wish I could have done it myself.",
    "dst": "{u}, siento haberte metido en esto. Ojalá hubiera podido hacerlo yo.",
    "role": "desc",
@@ -746,7 +776,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#074": {
+  "Deja Vu#078": {
    "src": "I probably could have gotten myself out...",
    "dst": "Seguro que yo solo habría salido...",
    "role": "desc",
@@ -756,7 +786,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#075": {
+  "Deja Vu#079": {
    "src": "You died in the past. Multiple times.",
    "dst": "Moriste en el pasado. Varias veces.",
    "role": "desc",
@@ -766,7 +796,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#076": {
+  "Deja Vu#080": {
    "src": "I did?",
    "dst": "¿En serio?",
    "role": "desc",
@@ -776,7 +806,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#077": {
+  "Deja Vu#081": {
    "src": "Yes. In some surprising ways too.",
    "dst": "Sí. Y de formas sorprendentes.",
    "role": "desc",
@@ -786,7 +816,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#078": {
+  "Deja Vu#082": {
    "src": "{u}, I'm sure we will meet again... in time.",
    "dst": "{u}, seguro que volveremos a vernos... con el tiempo.",
    "role": "desc",
@@ -796,7 +826,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#079": {
+  "Deja Vu#083": {
    "src": "See you around.",
    "dst": "Hasta otra.",
    "role": "desc",
@@ -806,7 +836,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#080": {
+  "Deja Vu#084": {
    "src": "Uh, you're still here.",
    "dst": "Eh, sigues aquí.",
    "role": "desc",
@@ -816,7 +846,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#081": {
+  "Deja Vu#085": {
    "src": "Am I?",
    "dst": "¿Sí?",
    "role": "desc",
@@ -826,7 +856,7 @@
    "speaker": "Old Man Martyn",
    "source": "wiki"
   },
-  "Deja Vu#082": {
+  "Deja Vu#086": {
    "src": "I don't understand Martyn. He seems to know everything about the past. Here, come closer, I want to whisper something.",
    "dst": "No entiendo a Martyn. Parece saberlo todo del pasado. Ven, acércate, quiero contarte algo.",
    "role": "desc",
@@ -836,7 +866,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#083": {
+  "Deja Vu#087": {
    "src": "Talk to Asher.",
    "dst": "Habla con Asher.",
    "role": "desc",
@@ -846,7 +876,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Deja Vu#084": {
+  "Deja Vu#088": {
    "src": "I think he might have known Bob. I saw some letters in his house.",
    "dst": "Creo que pudo conocer a Bob. Vi unas cartas en su casa.",
    "role": "desc",
@@ -856,7 +886,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#085": {
+  "Deja Vu#089": {
    "src": "Weird, right? Bob was a hard guy to know.",
    "dst": "Raro, ¿no? A Bob no era fácil conocerlo.",
    "role": "desc",
@@ -866,7 +896,7 @@
    "speaker": "Asher",
    "source": "wiki"
   },
-  "Deja Vu#086": {
+  "Deja Vu#090": {
    "src": "Anyway, take this. It's the least I can do to pay you for saving me.",
    "dst": "En fin, toma esto. Es lo mínimo por haberme salvado.",
    "role": "desc",

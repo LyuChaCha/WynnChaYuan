@@ -1,12 +1,162 @@
 {
  "_meta": {
   "quest": "Kingdom of Sand",
-  "count": 60,
+  "count": 75,
   "translated": 60,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Kingdom of Sand#000": {
+   "src": "... Until now. I believe I've managed to trace its possession to a nearby group of bandits. They probably have no idea what they're sitting on.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#001": {
+   "src": "Oi! Remember, yer need to nab that journal from the big mansion in {p}, if yer want to get in with us.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#002": {
+   "src": "Out with yer!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#003": {
+   "src": "Looks like this is the room the journal is kept in...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#004": {
+   "src": "What yer waiting for, get in here!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#005": {
+   "src": "Seems like there's a meeting going on...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#006": {
+   "src": "Seems like that broken cart by the river might be worth checking out...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#007": {
+   "src": "Get 'em!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#008": {
+   "src": "Seems like that note might give you a clue...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#009": {
+   "src": "The sceptre hums with unmeasurable power, filled with a thousand years of Desert history.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#010": {
+   "src": "You should get this back to Junes as soon as possible.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#011": {
+   "src": "[-{~} The Emperor's Sceptre]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#012": {
+   "src": "I should get it to {p} right away. Thank you, {u}. You have my eternal gratitude.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#013": {
+   "src": "Are you thinking of exploring the tomb? I'm sure you could learn so much about the Empire... but you best be careful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#014": {
+   "src": "I have little to offer you for your help, but please accept these emeralds, and this lesser treasure I found nearby.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#015": {
    "src": "Talk to Junes at [{~}, {~}, -{~}]",
    "dst": "Habla con Junes en [{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#001": {
+  "Kingdom of Sand#016": {
    "src": "A {p} soldier! I imagine you're here to investigate the tomb up the hill?",
    "dst": "¡Un soldado de {p}! Supongo que vienes a investigar la tumba de la colina, ¿no?",
    "role": "desc",
@@ -26,7 +176,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#002": {
+  "Kingdom of Sand#017": {
    "src": "It's believed to house the remains of Prince Hashr, the son of the old Desert Emperor, but it's far too dangerous for me to explore personally.",
    "dst": "Se cree que alberga los restos del príncipe Hashr, hijo del viejo Emperador del Desierto, pero es demasiado peligrosa para explorarla yo misma.",
    "role": "desc",
@@ -36,7 +186,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#003": {
+  "Kingdom of Sand#018": {
    "src": "Instead I've been looking into a related legend - the Emperor's Sceptre.",
    "dst": "Así que me he dedicado a una leyenda relacionada: el Emperor's Sceptre.",
    "role": "desc",
@@ -46,7 +196,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#004": {
+  "Kingdom of Sand#019": {
    "src": "It was the source of his power, and potentially one of the most important artifacts in history.",
    "dst": "Era la fuente de su poder y quizá uno de los artefactos más importantes de la historia.",
    "role": "desc",
@@ -56,7 +206,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#005": {
+  "Kingdom of Sand#020": {
    "src": "When the Emperor was slain by his son, Hashr, it is said that the sceptre was lost amongst the raging sandstorm that followed.",
    "dst": "Cuando el Emperador cayó a manos de su hijo, Hashr, se dice que el cetro se perdió en la tormenta de arena que vino después.",
    "role": "desc",
@@ -66,7 +216,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#006": {
+  "Kingdom of Sand#021": {
    "src": "... Until now. I believe I have been able to trace its possession to a nearby group of bandits. They probably have no idea what they're sitting on.",
    "dst": "... Hasta ahora. Creo que he seguido su rastro hasta un grupo de bandidos cercano. Seguramente no tienen ni idea de lo que poseen.",
    "role": "desc",
@@ -76,7 +226,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#007": {
+  "Kingdom of Sand#022": {
    "src": "I'm not prepared to confront them myself, but... this artifact belongs in a museum, in the hands of careful and respectful researchers.",
    "dst": "No estoy preparada para enfrentarme a ellos, pero... este artefacto pertenece a un museo, en manos de investigadores cuidadosos y respetuosos.",
    "role": "desc",
@@ -86,7 +236,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#008": {
+  "Kingdom of Sand#023": {
    "src": "I would be in your debt if you could try to retrieve it, for the sake of history.",
    "dst": "Te estaría en deuda si intentaras recuperarlo, por el bien de la historia.",
    "role": "desc",
@@ -96,7 +246,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#009": {
+  "Kingdom of Sand#024": {
    "src": "Attempt to enter the bandit hideout at [{~}, {~}, -{~}].",
    "dst": "Intenta entrar en el escondite de los bandidos en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -106,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#010": {
+  "Kingdom of Sand#025": {
    "src": "What, wanna enter the hideout?",
    "dst": "¿Qué, quiés entrar al escondite?",
    "role": "desc",
@@ -116,7 +266,7 @@
    "speaker": "Vault Guard",
    "source": "wiki"
   },
-  "Kingdom of Sand#011": {
+  "Kingdom of Sand#026": {
    "src": "Even if yer a crooked soldier, we can't jus let yer in.",
    "dst": "Aunque seas un soldao corrupto, no podemos dejarte pasar así como así.",
    "role": "desc",
@@ -126,7 +276,7 @@
    "speaker": "Vault Guard",
    "source": "wiki"
   },
-  "Kingdom of Sand#012": {
+  "Kingdom of Sand#027": {
    "src": "That is, unless yer got the password?",
    "dst": "A no ser que sepas la contraseña, claro.",
    "role": "desc",
@@ -136,7 +286,7 @@
    "speaker": "Vault Guard",
    "source": "wiki"
   },
-  "Kingdom of Sand#013": {
+  "Kingdom of Sand#028": {
    "src": "Didn’t think so. Now get lost, wasted enough of my t-",
    "dst": "Ya me lo imaginaba. Largo de aquí, bastante tiempo me has hecho perd-",
    "role": "desc",
@@ -146,7 +296,7 @@
    "speaker": "Vault Guard",
    "source": "wiki"
   },
-  "Kingdom of Sand#014": {
+  "Kingdom of Sand#029": {
    "src": "Now would you look at that... Even soldiers think they can waltz in ere.",
    "dst": "Vaya, vaya... Hasta los soldaos se creen que pueden entrar aquí.",
    "role": "desc",
@@ -156,7 +306,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#015": {
+  "Kingdom of Sand#030": {
    "src": "Having fun thinking of a password? Sorry to spoil your lunch, but there isn’t one!",
    "dst": "¿Te diviertes pensando una contraseña? Siento aguarte la fiesta, ¡pero no hay ninguna!",
    "role": "desc",
@@ -166,7 +316,7 @@
    "speaker": "Geo",
    "source": "wiki"
   },
-  "Kingdom of Sand#016": {
+  "Kingdom of Sand#031": {
    "src": "We could use a few more officials on the roster.",
    "dst": "No nos vendrían mal un par de funcionarios más en la lista.",
    "role": "desc",
@@ -176,7 +326,7 @@
    "speaker": "Geo",
    "source": "wiki"
   },
-  "Kingdom of Sand#017": {
+  "Kingdom of Sand#032": {
    "src": "If yer are on the liberal side of the law, talk to us outside.",
    "dst": "Si estás del lado flojo de la ley, hablamos fuera.",
    "role": "desc",
@@ -186,7 +336,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#018": {
+  "Kingdom of Sand#033": {
    "src": "Meet with Geo & Tarek at [{~}, {~}, -{~}].",
    "dst": "Reúnete con Geo y Tarek en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -196,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#019": {
+  "Kingdom of Sand#034": {
    "src": "Looks like yer in. Look, there ain't a password cause we're meant to be the best thieves in the land, right?",
    "dst": "Parece que te apuntas. Mira, no hay contraseña porque se supone que somos los mejores ladrones del país, ¿no?",
    "role": "desc",
@@ -206,7 +356,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#020": {
+  "Kingdom of Sand#035": {
    "src": "So what good are words? Yer gotta give the guard somethin' stolen, aintcha!",
    "dst": "¿De qué sirven las palabras? ¡Al guardia hay que darle algo robao!",
    "role": "desc",
@@ -216,7 +366,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#021": {
+  "Kingdom of Sand#036": {
    "src": "And we just so happen to have the opportunity of a lifetime for you. {p} has gone soft see, a new Mayor is cleaning things up.",
    "dst": "Y da la casualidad de que tenemos la oportunidad de tu vida. {p} se ha ablandao, ¿ves?, hay un alcalde nuevo poniendo orden.",
    "role": "desc",
@@ -226,7 +376,7 @@
    "speaker": "Geo",
    "source": "wiki"
   },
-  "Kingdom of Sand#022": {
+  "Kingdom of Sand#037": {
    "src": "Well, we can't have government not under our control. {p} will always be bandit capital.",
    "dst": "No podemos dejar que el gobierno se nos escape. {p} siempre será la capital de los bandidos.",
    "role": "desc",
@@ -236,7 +386,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#023": {
+  "Kingdom of Sand#038": {
    "src": "So how about we give him a taste of his own medicine, and get hold of that journal he keeps? I'm sure that’ll dig up some dirt on him.",
    "dst": "¿Y si le damos de su propia medicina y nos hacemos con ese diario suyo? Seguro que saca a la luz sus trapos sucios.",
    "role": "desc",
@@ -246,7 +396,7 @@
    "speaker": "Geo",
    "source": "wiki"
   },
-  "Kingdom of Sand#024": {
+  "Kingdom of Sand#039": {
    "src": "And by \"we\", we mean you. You'll have to sneak through the mansion and avoid guards.",
    "dst": "Y cuando decimos \"nosotros\", decimos tú. Tendrás que colarte en la mansión esquivando a los guardias.",
    "role": "desc",
@@ -256,7 +406,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#025": {
+  "Kingdom of Sand#040": {
    "src": "He keeps his journal in the highest room. Might need to distract some guards too. It's the biggest mansion in {p}, can't miss it.",
    "dst": "Guarda el diario en la habitación más alta. Quizá tengas que distraer a algún guardia. Es la mansión más grande de {p}, no tiene pérdida.",
    "role": "desc",
@@ -266,7 +416,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#026": {
+  "Kingdom of Sand#041": {
    "src": "Sneak into the highest room of the {p} Mansion at [{~}, {~}, -{~}].",
    "dst": "Cuélate en la habitación más alta de la {p} Mansion en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -276,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#027": {
+  "Kingdom of Sand#042": {
    "src": "Arh, there's the thief I saw a-sneakin' round the Mansion! Get them!",
    "dst": "¡Ajá, ahí está el ladrón que vi merodeando por la mansión! ¡A por él!",
    "role": "desc",
@@ -286,7 +436,7 @@
    "speaker": "Mansion Guard",
    "source": "wiki"
   },
-  "Kingdom of Sand#028": {
+  "Kingdom of Sand#043": {
    "src": "Yer know you could get kicked out of the army fer this.",
    "dst": "Que sepas que por esto te pueden echar del ejército.",
    "role": "desc",
@@ -296,7 +446,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#029": {
+  "Kingdom of Sand#044": {
    "src": "Heh, guess yer the real thing. Hop in, lets get out of ‘ere.",
    "dst": "Je, parece que vas en serio. Sube, vámonos de aquí.",
    "role": "desc",
@@ -306,7 +456,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#030": {
+  "Kingdom of Sand#045": {
    "src": "That journal is more valuable than any gem, you'll be able to get in fer sure.",
    "dst": "Ese diario vale más que cualquier gema, seguro que ahora te dejan entrar.",
    "role": "desc",
@@ -316,7 +466,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#031": {
+  "Kingdom of Sand#046": {
    "src": "Bring the journal from the {p} Mansion to the Vault Guard to enter the hideout.",
    "dst": "Lleva el diario de la {p} Mansion al Vault Guard para entrar en el escondite.",
    "role": "desc",
@@ -326,7 +476,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#032": {
+  "Kingdom of Sand#047": {
    "src": "Off we go!",
    "dst": "¡En marcha!",
    "role": "desc",
@@ -336,7 +486,7 @@
    "speaker": "Tarek",
    "source": "wiki"
   },
-  "Kingdom of Sand#033": {
+  "Kingdom of Sand#048": {
    "src": "Password?",
    "dst": "¿Contraseña?",
    "role": "desc",
@@ -346,7 +496,7 @@
    "speaker": "Vault Guard",
    "source": "wiki"
   },
-  "Kingdom of Sand#034": {
+  "Kingdom of Sand#049": {
    "src": "Oh, this is quite the password, \"soldier\". I think this will do nicely, on you go.",
    "dst": "Oh, menuda contraseña, \"soldado\". Con esto vale, pasa.",
    "role": "desc",
@@ -356,7 +506,7 @@
    "speaker": "Vault Guard",
    "source": "wiki"
   },
-  "Kingdom of Sand#035": {
+  "Kingdom of Sand#050": {
    "src": "Look for the sceptre within the bandit hideout at [{~}, {~}, -{~}].",
    "dst": "Busca el cetro en el escondite de los bandidos en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -366,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#036": {
+  "Kingdom of Sand#051": {
    "src": "Right, then, you lot. Give me your reports.",
    "dst": "Muy bien, vosotros. Dadme vuestros informes.",
    "role": "desc",
@@ -376,7 +526,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#037": {
+  "Kingdom of Sand#052": {
    "src": "Gold relieved from Mesa travellers last week counted just over {~} bars.",
    "dst": "El oro de los viajeros de Mesa de la semana pasada pasa de {~} lingotes.",
    "role": "desc",
@@ -386,7 +536,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Kingdom of Sand#038": {
+  "Kingdom of Sand#053": {
    "src": "Good, good. And?",
    "dst": "Bien, bien. ¿Y?",
    "role": "desc",
@@ -396,7 +546,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#039": {
+  "Kingdom of Sand#054": {
    "src": "We're working on exposing that blasted {p} Mayor with a stolen journal. {p} should be back under Creden Tibus control within the week.",
    "dst": "Estamos desacreditando al maldito alcalde de {p} con un diario robado. {p} volverá a estar bajo control de Creden Tibus en una semana.",
    "role": "desc",
@@ -406,7 +556,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Kingdom of Sand#040": {
+  "Kingdom of Sand#055": {
    "src": "Fine work. Anything else?",
    "dst": "Buen trabajo. ¿Algo más?",
    "role": "desc",
@@ -416,7 +566,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#041": {
+  "Kingdom of Sand#056": {
    "src": "Well... someone's been hanging around the old tomb. An archaeologist, looks like. I reckon she's lookin' for the sceptre.",
    "dst": "Pues... alguien anda rondando la vieja tumba. Parece una arqueóloga. Yo diría que busca el cetro.",
    "role": "desc",
@@ -426,7 +576,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Kingdom of Sand#042": {
+  "Kingdom of Sand#057": {
    "src": "Ah... that sceptre's too valuable for us to lose. Maybe we pay 'er a visit, persuade her to... stop lookin'.",
    "dst": "Ah... ese cetro vale demasiado para perderlo. Igual le hacemos una visita y la convencemos de que... deje de buscar.",
    "role": "desc",
@@ -436,7 +586,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#043": {
+  "Kingdom of Sand#058": {
    "src": "Right you are, boss. Good thing no one will think to look for it in that broken cart by the river, ey?!",
    "dst": "¡Eso es, jefe! Menos mal que a nadie se le ocurrirá buscarlo en el carro roto que hay junto al río, ¿eh?",
    "role": "desc",
@@ -446,7 +596,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Kingdom of Sand#044": {
+  "Kingdom of Sand#059": {
    "src": "Shut it, you fool! What did I just say? Anyway, I'll decide what to do with this archaeologist. Dismissed!",
    "dst": "¡Cierra el pico, idiota! ¿Qué acabo de decir? En fin, yo decidiré qué hacemos con esa arqueóloga. ¡Retiraos!",
    "role": "desc",
@@ -456,7 +606,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#045": {
+  "Kingdom of Sand#060": {
    "src": "Search the broken cart at [{~}, {~}, -{~}].",
    "dst": "Registra el carro roto en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -466,7 +616,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#046": {
+  "Kingdom of Sand#061": {
    "src": "I knew someone was listening.",
    "dst": "Sabía que alguien estaba escuchando.",
    "role": "desc",
@@ -476,7 +626,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#047": {
+  "Kingdom of Sand#062": {
    "src": "We might be bandits, but we’re not stupid. That sceptre is left better off alone.",
    "dst": "Seremos bandidos, pero no somos tontos. A ese cetro más vale no tocarlo.",
    "role": "desc",
@@ -486,7 +636,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#048": {
+  "Kingdom of Sand#063": {
    "src": "Get ‘em!",
    "dst": "¡A por ellos!",
    "role": "desc",
@@ -496,7 +646,7 @@
    "speaker": "Desert Raider",
    "source": "wiki"
   },
-  "Kingdom of Sand#049": {
+  "Kingdom of Sand#064": {
    "src": "Search the abandoned house at [{~}, {~}, -{~}].",
    "dst": "Registra la casa abandonada en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -506,7 +656,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#050": {
+  "Kingdom of Sand#065": {
    "src": "Return to the tomb and give Junes the sceptre at [{~}, {~}, -{~}].",
    "dst": "Vuelve a la tumba y dale el cetro a Junes en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -516,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#051": {
+  "Kingdom of Sand#066": {
    "src": "Ah, {u}. I couldn't help myself - I simply had to see the tomb up close.",
    "dst": "Ah, {u}. No he podido resistirme: tenía que ver la tumba de cerca.",
    "role": "desc",
@@ -526,7 +676,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#052": {
+  "Kingdom of Sand#067": {
    "src": "You have no idea how tempted I am to go inside, but I doubt I'd make it out alive.",
    "dst": "No te imaginas las ganas que tengo de entrar, pero dudo que saliera con vida.",
    "role": "desc",
@@ -536,7 +686,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#053": {
+  "Kingdom of Sand#068": {
    "src": "You... you found the sceptre? Oh! This is incredible! I can't believe it!",
    "dst": "¿Has... has encontrado el cetro? ¡Oh! ¡Es increíble! ¡No me lo puedo creer!",
    "role": "desc",
@@ -546,7 +696,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#054": {
+  "Kingdom of Sand#069": {
    "src": "This artifact, it witnessed the rise and fall of the Empire, thousands of years ago. And you've just been... holding it, without gloves...",
    "dst": "Este artefacto presenció el auge y la caída del Imperio hace miles de años. Y tú lo has estado... sosteniendo, sin guantes...",
    "role": "desc",
@@ -556,7 +706,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#055": {
+  "Kingdom of Sand#070": {
    "src": "Under the circumstances, I think I can let that slide. But the things I could learn from studying it...",
    "dst": "Dadas las circunstancias, creo que puedo pasarlo por alto. Pero lo que podría aprender estudiándolo...",
    "role": "desc",
@@ -566,7 +716,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#056": {
+  "Kingdom of Sand#071": {
    "src": "I should get to {p} right away. Thank you, {u}. You have my eternal gratitude.",
    "dst": "Debo ir a {p} de inmediato. Gracias, {u}. Te estaré eternamente agradecida.",
    "role": "desc",
@@ -576,7 +726,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#057": {
+  "Kingdom of Sand#072": {
    "src": "Are you thinking of exploring the tomb? I'm sure you can learn so much about the Empire... but you best be careful.",
    "dst": "¿Piensas explorar la tumba? Seguro que aprendes muchísimo sobre el Imperio... pero ten mucho cuidado.",
    "role": "desc",
@@ -586,7 +736,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#058": {
+  "Kingdom of Sand#073": {
    "src": "There are nasty legends of what it holds. Silverfish, skeletons... even Prince Hashr himself. Make sure to gear up!",
    "dst": "Hay leyendas desagradables sobre lo que guarda. Lepismas, esqueletos... hasta el propio príncipe Hashr. ¡Equípate bien!",
    "role": "desc",
@@ -596,7 +746,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#059": {
+  "Kingdom of Sand#074": {
    "src": "I have little to offer you for your help, but please accept these emeralds, and a fossil bone I found around here.",
    "dst": "Poco puedo ofrecerte por tu ayuda, pero acepta estas esmeraldas y un hueso fósil que encontré por aquí.",
    "role": "desc",

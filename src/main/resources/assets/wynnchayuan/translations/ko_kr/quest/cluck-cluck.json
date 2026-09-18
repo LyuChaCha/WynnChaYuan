@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "Cluck Cluck",
-  "count": 10,
+  "count": 13,
   "translated": 10,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cluck Cluck#000": {
+   "src": "Have you taken care of Cluckles yet? If you can't find him, I hid him in my basement.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cluck Cluck",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cluck Cluck#001": {
+   "src": "You need to be Farming Lv. {~} to start this Mini-Quest.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cluck Cluck",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cluck Cluck#002": {
+   "src": "Sometimes I wish animals could respawn... hey! What are you doing here? Go away!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cluck Cluck",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cluck Cluck#003": {
    "src": "Talk to Nohno on {p} at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에서 {p}의 Nohno에게 말을 거세요",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cluck Cluck#001": {
+  "Cluck Cluck#004": {
    "src": "Hey, you aren't a chicken! Wait, you're a human! You can help me! Maybe you are the guy who helped my brother Yahya, but who knows, you humans all look the same to me.",
    "dst": "어이, 넌 닭이 아니잖아! 잠깐, 인간이구나! 날 도와줄 수 있겠어! 내 형제 Yahya를 도와준 녀석일지도 모르지만, 누가 알아, 인간은 다 똑같이 생겼거든.",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#002": {
+  "Cluck Cluck#005": {
    "src": "I really love my chickens, but there is one that I just cannot control...",
    "dst": "난 내 닭들을 정말 사랑하는데, 도저히 감당 못 할 녀석이 하나 있어...",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#003": {
+  "Cluck Cluck#006": {
    "src": "His name is Cluckles, he was given to me by a man named Bob before he went to war, but when Bob never came back, Cluckles got angry...",
    "dst": "이름은 Cluckles야. Bob이라는 사람이 전쟁에 나가기 전에 준 녀석인데, Bob이 돌아오지 않자 Cluckles가 화가 나 버렸어...",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#004": {
+  "Cluck Cluck#007": {
    "src": "He's really dangerous to keep on my lovely island, so I keep him in my basement...",
    "dst": "내 아름다운 섬에 두기엔 너무 위험해서 지하실에 가둬 뒀어...",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#005": {
+  "Cluck Cluck#008": {
    "src": "I want to take care of him, but my wife says it's too dangerous. Where's my wife you say? Oh, I think she's around here eating some grain.",
    "dst": "돌봐 주고 싶은데 아내가 너무 위험하대. 아내가 어디 있냐고? 아, 이 근처에서 곡식 먹고 있을걸.",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#006": {
+  "Cluck Cluck#009": {
    "src": "Anyway, I need you to go down there and... Take care of him for me. I would really appreciate it.",
    "dst": "아무튼, 네가 내려가서... 그 녀석 좀 처리해 줘. 정말 고마울 거야.",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#007": {
+  "Cluck Cluck#010": {
    "src": "Bring back [{~} Cluckles' Favourite Feather] to Nohno.",
    "dst": "[{~} Cluckles' Favourite Feather]를 Nohno에게 가져가세요.",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cluck Cluck#008": {
+  "Cluck Cluck#011": {
    "src": "What is this?! His feather? What did you do to Cluckles?! I wanted you to take care of him, not kill him!",
    "dst": "이게 뭐야?! 그 녀석 깃털? Cluckles한테 무슨 짓을 한 거야?! 돌봐 달랬지, 죽이라곤 안 했어!",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#009": {
+  "Cluck Cluck#012": {
    "src": "You monster! Leave this place now, and keep that feather to remind you of your hideous crime!",
    "dst": "이 괴물! 당장 여기서 나가, 그 깃털은 네 끔찍한 죄를 기억하도록 갖고 있어!",
    "role": "desc",

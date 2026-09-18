@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Creeper Infiltration",
-  "count": 52,
+  "count": 53,
   "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Creeper Infiltration#000": {
+   "src": "You had a piece of skin? Well, you don't seem to have it now, so I can't say I believe you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#001": {
    "src": "Talk to Thomas in {p} at [-{~}, {~}, -{~}].",
    "dst": "Поговори с Thomas в {p} в [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Creeper Infiltration#001": {
+  "Creeper Infiltration#002": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
    "dst": "Кто-нибудь! Помогите… о, здравствуйте. Вы, похоже, сильны и сможете помочь.",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#002": {
+  "Creeper Infiltration#003": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
    "dst": "Я Thomas, веду припасы деревни в Ущелье свинолюдов. Только у меня небольшая беда…",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#003": {
+  "Creeper Infiltration#004": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
    "dst": "У нас кончается зерно ущелья - наша главная пища.",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#004": {
+  "Creeper Infiltration#005": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
    "dst": "Обычно мы собираем его сами, но недавно злая шайка свинолюдов захватила туннель к вершине ущелья, где растёт зерно.",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#005": {
+  "Creeper Infiltration#006": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
    "dst": "В последний раз, когда мы вошли, сверху грохнул взрыв. Боюсь, свинолюды взрывают наше зерно динамитом…",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#006": {
+  "Creeper Infiltration#007": {
    "src": "I came here to {p} to see if I could find help here, but I've had no luck. Until now, that is. Would you be willing to help?",
    "dst": "Я пришёл в {p} искать помощи, но не везло. До этой минуты. Вы согласны помочь?",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#007": {
+  "Creeper Infiltration#008": {
    "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
    "dst": "Правда? Вы меня спасаете. Встретимся в деревне: идите по дороге из города к самому северному входу в ущелья.",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#008": {
+  "Creeper Infiltration#009": {
    "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
    "dst": "На месте держитесь правой стены ущелья и поднимитесь по лестнице ко входу. И осторожнее в туннеле: свинолюды швыряются камнями.",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#009": {
+  "Creeper Infiltration#010": {
    "src": "Oh, finally, someone has come to this hidden village!",
    "dst": "О, наконец-то кто-то добрался до этой скрытой деревни!",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#010": {
+  "Creeper Infiltration#011": {
    "src": "I am Thomas, and I help manage the supplies for this ravine village. Though, I have a bit of a problem...",
    "dst": "Я Thomas, веду припасы этой деревни в ущелье. Только у меня небольшая беда…",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#011": {
+  "Creeper Infiltration#012": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
    "dst": "У нас кончается зерно ущелья - наша главная пища.",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#012": {
+  "Creeper Infiltration#013": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
    "dst": "Обычно мы собираем его сами, но недавно злая шайка свинолюдов захватила туннель к вершине ущелья, где растёт зерно.",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#013": {
+  "Creeper Infiltration#014": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
    "dst": "В последний раз, когда мы вошли, сверху грохнул взрыв. Боюсь, свинолюды взрывают наше зерно динамитом…",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#014": {
+  "Creeper Infiltration#015": {
    "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
    "dst": "Вы явно куда сильнее меня. Может, пробьётесь мимо свинолюдов в туннеле и прекратите взрывы наверху.",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#015": {
+  "Creeper Infiltration#016": {
    "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
    "dst": "Держитесь правой стены ущелья и поднимитесь по лестнице ко входу. И осторожнее в туннеле: свинолюды швыряются камнями.",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#016": {
+  "Creeper Infiltration#017": {
    "src": "Enter the tunnel at [-{~}, {~}, -{~}] and reach the top of the ravine",
    "dst": "Войди в туннель в [-{~}, {~}, -{~}] и поднимись на вершину ущелья",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Creeper Infiltration#017": {
+  "Creeper Infiltration#018": {
    "src": "Bring back the [Creeper Skin] to Thomas at [-{~}, {~}, -{~}]",
    "dst": "Принеси [Creeper Skin] Thomas в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Creeper Infiltration#018": {
+  "Creeper Infiltration#019": {
    "src": "I didn't expect you to fall out of the sky like that. Are you okay, or should I go get the potion merchant to heal you?",
    "dst": "Не ожидал, что вы вот так свалитесь с неба. Вы в порядке, или позвать торговца зельями, чтобы подлечил?",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#019": {
+  "Creeper Infiltration#020": {
    "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
    "dst": "Всё хорошо? О, рад слышать. Удалось избавиться от свинолюдов и их взрывчатки?",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#020": {
+  "Creeper Infiltration#021": {
    "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
    "dst": "Зелёное существо? «Крипер»? Таких в этом мире нет, тем более среди свинолюдов!",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#021": {
+  "Creeper Infiltration#022": {
    "src": "Oh, you brought a piece of skin back. How odd, I've seen this skin before...",
    "dst": "О, вы принесли кусок кожи. Странно, я уже видел такую кожу…",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#022": {
+  "Creeper Infiltration#023": {
    "src": "There's a large cave over to the south. I tried to enter it, but I got ambushed by green creatures...",
    "dst": "К югу есть большая пещера. Я пытался войти, но на меня напали зелёные твари…",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#023": {
+  "Creeper Infiltration#024": {
    "src": "I thought I was just dreaming, but these \"creepers\" you talk about...they might live in that cave.",
    "dst": "Я думал, мне приснилось, но эти ваши «криперы»… может, они живут в той пещере.",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#024": {
+  "Creeper Infiltration#025": {
    "src": "I have an idea. I need to know for sure that they live there. A merchant can make you a mask with the skin and another material.",
    "dst": "Есть идея. Мне нужно знать наверняка, что они там живут. Торговец сделает вам маску из этой кожи и ещё одного материала.",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#025": {
+  "Creeper Infiltration#026": {
    "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
    "dst": "В пещере неподалёку порой бывает Повелитель свинолюдов. Убейте его - и получите шкуру свинолюда, достаточно прочную для маски.",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#026": {
+  "Creeper Infiltration#027": {
    "src": "If you continue on the western path past the tunnel entrance, you should find a camp where the Overlord is located.",
    "dst": "Идите по западной тропе мимо входа в туннель - там будет лагерь, где засел Повелитель.",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#027": {
+  "Creeper Infiltration#028": {
    "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
    "dst": "Добудьте шкуру свинолюда и возвращайтесь ко мне, я скажу, что делать дальше.",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#028": {
+  "Creeper Infiltration#029": {
    "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
    "dst": "Добудь [{~} Pigman Hide] у Повелителя свинолюдов близ [-{~}, {~}, -{~}] и вернись к Thomas",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Creeper Infiltration#029": {
+  "Creeper Infiltration#030": {
    "src": "I see you have the hide. This skin will work perfectly for my plan.",
    "dst": "Вижу, шкура у вас. Эта кожа отлично подойдёт для моего плана.",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#030": {
+  "Creeper Infiltration#031": {
    "src": "There is a Mask Merchant in this village. He can make you a mask with the two materials I have.",
    "dst": "В деревне есть Торговец масками. Он сделает вам маску из двух моих материалов.",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#031": {
+  "Creeper Infiltration#032": {
    "src": "With the mask, you can put it on and go undetected into the cave with these \"creepers\". Only then will we know the truth.",
    "dst": "Надев маску, вы незаметно проникнете в пещеру к этим «криперам». Только тогда мы узнаем правду.",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#032": {
+  "Creeper Infiltration#033": {
    "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
    "dst": "Чтобы попасть в пещеру криперов, идите по западной тропе и у лагерей свинолюдов сверните налево.",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#033": {
+  "Creeper Infiltration#034": {
    "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
    "dst": "И если вдруг потеряете маску, торговец сделает новую, если принесёте ему ещё кожу и шкуру.",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#034": {
+  "Creeper Infiltration#035": {
    "src": "Here are the materials. Be careful out there. Who knows what those green monsters could do to you...",
    "dst": "Вот материалы. Будьте осторожны. Кто знает, что эти зелёные чудища могут с вами сделать…",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#035": {
+  "Creeper Infiltration#036": {
    "src": "Buy the creeper mask from the merchant and enter the creeper hideout at [-{~}, {~}, -{~}]",
    "dst": "Купи маску крипера у торговца и войди в логово криперов в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Creeper Infiltration#036": {
+  "Creeper Infiltration#037": {
    "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
    "dst": "Принеси [{~} Creeper Powder] Thomas в [-{~}, {~}, -{~}] как доказательство, что в Wynn есть криперы",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Creeper Infiltration#037": {
+  "Creeper Infiltration#038": {
    "src": "So, what was in the cave? Were there really creepers in there?",
    "dst": "Ну, что было в пещере? Там правда были криперы?",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#038": {
+  "Creeper Infiltration#039": {
    "src": "What's this? It smells like gunpowder...but more earthy. And this came from the cave?",
    "dst": "Что это? Пахнет порохом… но землистее. И это из той пещеры?",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#039": {
+  "Creeper Infiltration#040": {
    "src": "This powder is definitely not native to this area. It has to have come from those creepers.",
    "dst": "Этот порошок точно не здешний. Он наверняка от тех криперов.",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#040": {
+  "Creeper Infiltration#041": {
    "src": "I guess for now we'll leave them at peace. If they do exist, they don't need to be hunted down to extinction.",
    "dst": "Пожалуй, пока оставим их в покое. Если они и существуют, незачем истреблять их всех.",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#041": {
+  "Creeper Infiltration#042": {
    "src": "Besides, if they are composed of gunpowder, they could easily blow this ravine to pieces.",
    "dst": "К тому же, если они из пороха, они запросто разнесут это ущелье в клочья.",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#042": {
+  "Creeper Infiltration#043": {
    "src": "Thank you for your help. I guess you deserve some sort of reward, considering you helped solve the ravine's big mystery.",
    "dst": "Спасибо за помощь. Вы заслужили награду - всё-таки помогли разгадать большую тайну ущелья.",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#043": {
+  "Creeper Infiltration#044": {
    "src": "Feel free to come back to our village any time. By then our food supply should be stable.",
    "dst": "Заходите в нашу деревню когда угодно. К тому времени с едой всё наладится.",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#044": {
+  "Creeper Infiltration#045": {
    "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
    "dst": "А, рад снова тебя видеть, приятель! Прости, что не позвал на праздник, но ты, похоже, был очень занят!",
    "role": "desc",
@@ -454,7 +464,7 @@
    "quest": "Creeper Infiltration",
    "source": "captured"
   },
-  "Creeper Infiltration#045": {
+  "Creeper Infiltration#046": {
    "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
    "dst": "О, это ты! А-а-агх... Спасибо за то, что ты для нас сделал, это... м-м-мгх... правда очень ценно...",
    "role": "desc",
@@ -462,7 +472,7 @@
    "quest": "Creeper Infiltration",
    "source": "captured"
   },
-  "Creeper Infiltration#046": {
+  "Creeper Infiltration#047": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to be able to help me.",
    "dst": "Кто-нибудь! Помогите… о, здравствуйте. Вы, похоже, сильны и сможете помочь.",
    "role": "desc",
@@ -470,7 +480,7 @@
    "quest": "Creeper Infiltration",
    "source": "captured"
   },
-  "Creeper Infiltration#047": {
+  "Creeper Infiltration#048": {
    "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
    "dst": "Обычно мы собираем его сами, но недавно злая шайка свинолюдов захватила туннель к вершине ущелья, где растёт зерно.",
    "role": "desc",
@@ -478,7 +488,7 @@
    "quest": "Creeper Infiltration",
    "source": "captured"
   },
-  "Creeper Infiltration#048": {
+  "Creeper Infiltration#049": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
    "dst": "Вы уже были в пещере криперов? Просто идите по западной тропе и у лагерей свинолюдов сверните налево.",
    "role": "desc",
@@ -486,7 +496,7 @@
    "quest": "Creeper Infiltration",
    "source": "captured"
   },
-  "Creeper Infiltration#049": {
+  "Creeper Infiltration#050": {
    "src": "Oh, a visitor? Interesting. I thought I only knew about this cave, considering I was called crazy by my master.",
    "dst": "О, гость? Любопытно. Я думал, что об этой пещере знаю только я, ведь наставник называл меня сумасшедшим.",
    "role": "desc",
@@ -494,7 +504,7 @@
    "quest": "Creeper Infiltration",
    "source": "captured"
   },
-  "Creeper Infiltration#050": {
+  "Creeper Infiltration#051": {
    "src": "I've lived down here for a while now, studying the creepers. They are mythical in this region, and I want to prove everyone wrong.",
    "dst": "Я уже давно живу здесь, внизу, и изучаю криперов. В этих краях их считают мифом, а я хочу доказать всем, что они ошибаются.",
    "role": "desc",
@@ -502,7 +512,7 @@
    "quest": "Creeper Infiltration",
    "source": "captured"
   },
-  "Creeper Infiltration#051": {
+  "Creeper Infiltration#052": {
    "src": "Don't worry about being trapped in here, though. There's a magic doorway right outside my house that can teleport you out if you wish to leave.",
    "dst": "Но не бойся оказаться здесь в ловушке. Прямо у моего дома есть волшебная дверь: она перенесёт тебя наружу, если захочешь уйти.",
    "role": "desc",

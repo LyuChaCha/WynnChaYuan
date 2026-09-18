@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "Green Gloop",
-  "count": 32,
+  "count": 35,
   "translated": 32,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Green Gloop#000": {
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Green Gloop#001": {
+   "src": "I'll need [{~} Slimey Goo] since we'll need a big batch of drinks. If you help, I'll be sure to tell my friend, and he^ll probably let you into his shop.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Green Gloop#002": {
+   "src": "Ah, you've got the scooper! Head into the cave now - remember, I need [{~} Slimey Goo] to make the drink!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Green Gloop#003": {
    "src": "Talk to Eluzterp at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]에서 Eluzterp와 대화하세요",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#001": {
+  "Green Gloop#004": {
    "src": "Oh, hey! You, adventurer over there! Would you mind helping me?",
    "dst": "오, 저기요! 거기 모험가님! 좀 도와주실래요?",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#002": {
+  "Green Gloop#005": {
    "src": "You see, this cave behind me has been troubling me for the past while now.",
    "dst": "그게, 제 뒤에 있는 이 동굴 때문에 요즘 골치가 아파요.",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#003": {
+  "Green Gloop#006": {
    "src": "There are special slimes that live in there, and they drop a certain goo that is quite a delicacy when brewed into a drink!",
    "dst": "안에 특별한 슬라임이 사는데, 걔들이 떨구는 끈적이를 음료로 우리면 꽤 별미거든요!",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#004": {
+  "Green Gloop#007": {
    "src": "They are called Gooey Slimes, and should be at the very back. A friend of mine drinks the stuff like water, and he refuses to work without it.",
    "dst": "끈적 슬라임이라고 하는데, 맨 안쪽에 있을 거예요. 제 친구가 그걸 물처럼 마시는데, 그게 없으면 일을 안 하겠대요.",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#005": {
+  "Green Gloop#008": {
    "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "그런데 한 달쯤 전부터 슬라임들이 강해졌어요. 더는 못 구하겠어요, 몇 번이나 죽을 뻔했다고요!",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#006": {
+  "Green Gloop#009": {
    "src": "You, however, seem much better equipped than I. Hopefully you can do it.",
    "dst": "그래도 모험가님은 저보다 장비가 훨씬 좋아 보여요. 해내실 수 있길 바라요.",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#007": {
+  "Green Gloop#010": {
    "src": "If you decide to help me, you'll need to obtain a special device for retrieving it, as the slime will dry up quickly in the air.",
    "dst": "도와주실 거라면 채집용 특수 도구가 필요해요. 끈적이는 공기에 닿으면 금방 말라 버리거든요.",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#008": {
+  "Green Gloop#011": {
    "src": "A...less fickle glassblower, Yodbon, can make it for you. He should be living in a house in front of the {p} bank.",
    "dst": "좀... 덜 까다로운 유리공 Yodbon이 만들어 줄 거예요. {p} 은행 앞 집에 살고 있을 거예요.",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#009": {
+  "Green Gloop#012": {
    "src": "I'll need [{~} Slimey Goo] since we'll need a big batch of drinks. If you help, I'll be sure to tell my friend, and he'll probably let you into his shop.",
    "dst": "음료를 잔뜩 만들어야 해서 [{~} Slimey Goo]가 필요해요. 도와주시면 친구한테 꼭 말할게요. 아마 가게에 들여보내 줄 거예요.",
    "role": "desc",
@@ -106,7 +136,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#010": {
+  "Green Gloop#013": {
    "src": "Find Yodbon near the {p} Bank at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]의 {p} 은행 근처에서 Yodbon을 찾으세요",
    "role": "desc",
@@ -116,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#011": {
+  "Green Gloop#014": {
    "src": "Welcome to Yodbon's Glass Blowery, what can I do f-",
    "dst": "Yodbon 유리 공방에 어서 오세요, 뭘 도와드-",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#012": {
+  "Green Gloop#015": {
    "src": "Oh, another stinkin' adventurer, eh...",
    "dst": "아, 또 냄새나는 모험가로군...",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#013": {
+  "Green Gloop#016": {
    "src": "So many've been coming up to me recently, askin' for a bloody Slime Scooper...",
    "dst": "요즘 죄다 나한테 와서 빌어먹을 슬라임 국자를 달라더군...",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#014": {
+  "Green Gloop#017": {
    "src": "Izzat brother o' mine stopped workin' again? I swear, he's addicted to that slop...",
    "dst": "내 동생 놈이 또 일 안 하냐? 진짜, 그 녀석 그 꿀꿀이죽에 중독됐다니까...",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#015": {
+  "Green Gloop#018": {
    "src": "Anyways, for me to make you a scooper you'll need to get [{~} Soft Sand].",
    "dst": "아무튼, 국자를 만들어 주려면 [{~} Soft Sand]를 구해 와야 해.",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#016": {
+  "Green Gloop#019": {
    "src": "Come back to me once you've gotten ahold of it. You can dig it up from those sand piles 'round the desert.",
    "dst": "구하면 다시 와. 사막 여기저기 있는 모래 더미에서 파낼 수 있어.",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#017": {
+  "Green Gloop#020": {
    "src": "Bring [{~} Soft Sand] from enemies in the desert to Yodbon at [{~}, {~}, -{~}]",
    "dst": "사막의 적에게서 [{~} Soft Sand]를 얻어 [{~}, {~}, -{~}]의 Yodbon에게 가져가세요",
    "role": "desc",
@@ -186,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#018": {
+  "Green Gloop#021": {
    "src": "You've returned, I see.",
    "dst": "돌아왔군.",
    "role": "desc",
@@ -196,7 +226,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#019": {
+  "Green Gloop#022": {
    "src": "A'ight, fork 'em over and I'll make you the scooper.",
    "dst": "좋아, 내놔. 국자 만들어 줄게.",
    "role": "desc",
@@ -206,7 +236,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#020": {
+  "Green Gloop#023": {
    "src": "..There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
    "dst": "..자, 여기. 걔가 왜 그걸 찾는지 모르겠네. 먹다 보면 맛들이는 건가...",
    "role": "desc",
@@ -216,7 +246,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#021": {
+  "Green Gloop#024": {
    "src": "G'luck on whatever you're doing.",
    "dst": "뭘 하든 잘해 봐.",
    "role": "desc",
@@ -226,7 +256,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#022": {
+  "Green Gloop#025": {
    "src": "Fetch [{~} Slimey Goo] for Eluzterp from the cave at [{~}, {~}, -{~}]",
    "dst": "[{~} Slimey Goo]를 [{~}, {~}, -{~}]의 동굴에서 구해 Eluzterp에게 가져가세요",
    "role": "desc",
@@ -236,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#023": {
+  "Green Gloop#026": {
    "src": "Oh, you're back! Good to see you were able to get through there. Have you got a full Slime Scooper?",
    "dst": "오, 돌아오셨네요! 무사히 다녀오셔서 다행이에요. 슬라임 국자는 가득 채우셨어요?",
    "role": "desc",
@@ -246,7 +276,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#024": {
+  "Green Gloop#027": {
    "src": "Hmm, yes, everything seems to be in order. Perfect!",
    "dst": "음, 네, 다 괜찮아 보이네요. 완벽해요!",
    "role": "desc",
@@ -256,7 +286,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#025": {
+  "Green Gloop#028": {
    "src": "Thank you very much. Finally, I'll be able to get him in gear again... Why are all Villagers so fickle like that?",
    "dst": "정말 고마워요. 드디어 그 녀석을 다시 일하게 만들 수 있겠어요... 주민들은 왜 다 저렇게 변덕스러울까요?",
    "role": "desc",
@@ -266,7 +296,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#026": {
+  "Green Gloop#029": {
    "src": "Well, I suppose that's beside the point. I'll be sure to let him know you got him his most recent fix.",
    "dst": "뭐, 그건 중요한 게 아니죠. 이번 물량을 모험가님이 구해 줬다고 꼭 전할게요.",
    "role": "desc",
@@ -276,7 +306,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#027": {
+  "Green Gloop#030": {
    "src": "He hangs around in a little black stall in the bazaar, there's a basement to it. He should let you inside now.",
    "dst": "시장의 작고 검은 가판대에 늘 있는데, 거기 지하실이 있어요. 이제 들여보내 줄 거예요.",
    "role": "desc",
@@ -286,7 +316,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#028": {
+  "Green Gloop#031": {
    "src": "And, for your troubles, a little something from me as well.",
    "dst": "그리고 수고하셨으니 제가 드리는 작은 선물이에요.",
    "role": "desc",
@@ -296,7 +326,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#029": {
+  "Green Gloop#032": {
    "src": "Ah, hello again. This latest batch of drinks apparently really revitalized him. He said he's looking to make some great craft.",
    "dst": "아, 또 뵙네요. 이번 음료가 그 녀석을 정말 되살렸나 봐요. 대단한 물건을 만들어 보겠대요.",
    "role": "desc",
@@ -306,7 +336,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#030": {
+  "Green Gloop#033": {
    "src": "Those Villagers are a little bit crazy though... I have no idea what kind of material it is that he insists he needs for it.",
    "dst": "그래도 주민들은 좀 이상하다니까요... 그걸 만드는 데 꼭 필요하다는 재료가 뭔지 전혀 모르겠어요.",
    "role": "desc",
@@ -316,7 +346,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#031": {
+  "Green Gloop#034": {
    "src": "Oh, it's you again. Yes, my brother there just loves makin' his little trinkets. He oughta make somethin' useful out of his glass instead...",
    "dst": "아, 또 너냐. 그래, 내 동생은 자잘한 장신구 만드는 걸 아주 좋아하지. 그 유리로 쓸모 있는 거나 만들 것이지...",
    "role": "desc",

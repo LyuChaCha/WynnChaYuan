@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Lost Tower",
-  "count": 10,
+  "count": 12,
   "translated": 10,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Tower#000": {
+   "src": "Hey, adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Tower#001": {
+   "src": "A long time ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Tower#002": {
    "src": "Talk to Laen in {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]에 있는 {p}의 Laen에게 말을 거세요.",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#001": {
+  "Lost Tower#003": {
    "src": "Hey adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
    "dst": "안녕하세요, 모험가님! 잠깐 도와주실 수 있나요? 곤란한 일이 좀 생겼거든요.",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#002": {
+  "Lost Tower#004": {
    "src": "A while ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
    "dst": "오래전 {p}이(가) 파괴되기 전, 우리 가문엔 강대한 힘을 지닌 장소와 존재에 대한 지식이 담긴 꽤 흥미로운 책이 있었어요.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#003": {
+  "Lost Tower#005": {
    "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",
    "dst": "안타깝게도 {p}을(를) 파괴한 습격 때 어떤 생물이 그 책을 훔쳐 갔고, 그 뒤로 아무도 본 적이 없어요.",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#004": {
+  "Lost Tower#006": {
    "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
    "dst": "도와주실 거라면 [{~} Book of the Bones]를 가져다주세요. 지금은 {p}의 오래된 탑에 있는 해골들 손에 있을 거예요.",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#005": {
+  "Lost Tower#007": {
    "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
    "dst": "그 탑을 찾아보세요. 아마 안에 있는 해골 중 하나가 책을 가지고 있을 거예요.",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#006": {
+  "Lost Tower#008": {
    "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]에 있는 {p}의 잃어버린 탑을 찾으세요.",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#007": {
+  "Lost Tower#009": {
    "src": "Find the book in the tower, and bring it back to Laen.",
    "dst": "탑에서 책을 찾아 Laen에게 가져가세요.",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#008": {
+  "Lost Tower#010": {
    "src": "Bring back the book to Laen.",
    "dst": "책을 Laen에게 가져가세요.",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#009": {
+  "Lost Tower#011": {
    "src": "Great! This will be very interesting to read, thank you!",
    "dst": "좋아요! 정말 흥미롭게 읽을 수 있겠어요, 고마워요!",
    "role": "desc",

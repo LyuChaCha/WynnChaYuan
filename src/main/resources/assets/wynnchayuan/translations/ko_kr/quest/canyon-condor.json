@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Canyon Condor",
-  "count": 42,
+  "count": 47,
   "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Canyon Condor#000": {
+   "src": "Hey there friend! Looking teh barter fer some weapons or trinkets?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#001": {
+   "src": "Scum! That guy jus' stole a necklace! Catch 'im and jus' take this as payment!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#002": {
+   "src": "Go fetch me [{~} Gold Chunks] from the end of the shaft and I'll tell ye where ye need to go next.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#003": {
+   "src": "Hey pal, want to use these elevators? Talk to Svin in {p}, he is a friend of mine. He could give you access.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#004": {
+   "src": "Although recently a strange hermit has been trying to control them and prevent access... I'm sure you can reason with him, though.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#005": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 {p}에서 Svin과 대화하세요.",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#001": {
+  "Canyon Condor#006": {
    "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
    "dst": "난 위대한 {p}의 수호자 중 하나예요. 거기서 세상의 비밀을 모아 두죠.",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#002": {
+  "Canyon Condor#007": {
    "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
    "dst": "이 협곡의 옛이야기를 조사하러 왔어요. 흥미 있나요? 분명 있겠죠!",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#003": {
+  "Canyon Condor#008": {
    "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
    "dst": "전설에 따르면 이 절벽들 사이에 사나운 짐승이 산대요. 오랜 세월 살아남은 위험한 새죠.",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#004": {
+  "Canyon Condor#009": {
    "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
    "dst": "그 짐승을 찾아보고 싶은데, 이곳 원주민들은 서로 도둑질하느라 바빠서 알려 주질 않네요.",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#005": {
+  "Canyon Condor#010": {
    "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
    "dst": "근처에 이 메사를 두루 돌아다닌 늙은 광맥꾼이 있다고 들었어요. 뭔가 알지도 몰라요.",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#006": {
+  "Canyon Condor#011": {
    "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
    "dst": "이름은 Jankan이고 {p} 동쪽에 살아요. 찾아가서 그 흉측한 짐승에 대해 물어봐 줄래요?",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#007": {
+  "Canyon Condor#012": {
    "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
    "dst": "도와주면 협곡 곳곳의 승강기를 쓰게 해 줄게요. 그게...",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#008": {
+  "Canyon Condor#013": {
    "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
    "dst": "웬 괴상한 은둔자가 승강기를 차지해 버렸는데, 말이 통할 거예요.",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#009": {
+  "Canyon Condor#014": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
    "dst": "짐승을 찾길 바라요. 찾으면 증거로 [{~} Beast Egg]를 가져다줄래요?",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#010": {
+  "Canyon Condor#015": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 {p} 동쪽에 있는 Jankan과 대화하세요.",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#011": {
+  "Canyon Condor#016": {
    "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
    "dst": "어이 반갑네, 젊은이! 사람들이 떠들던 그 외지인이구먼.",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#012": {
+  "Canyon Condor#017": {
    "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
    "dst": "금 찾으러 왔으면, 이 갱도엔 자네 몫 따윈 없다고 장담하지!",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#013": {
+  "Canyon Condor#018": {
    "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
    "dst": "오.. 날개 달린 야수를 찾는다고? 자네 정신 나갔나?",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#014": {
+  "Canyon Condor#019": {
    "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
    "dst": "그 악마 같은 새는 혼돈 그 자체여! 울음 한 번에 산이 움직인다니까! 자네 두 배 덩치인 사내들도 보고 울었어!",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#015": {
+  "Canyon Condor#020": {
    "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
    "dst": "그게 말이여, 저 동굴에서 번 걸 옮기다 허리를 삐끗해서, 맨 안쪽에 그냥 두고 왔지 뭐여.",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#016": {
+  "Canyon Condor#021": {
    "src": "Go fetch me Gold Chunk and I'll tell ye where ye need to go next.",
    "dst": "Gold Chunk 좀 가져다주면 다음에 어디 가야 할지 알려 주지.",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#017": {
+  "Canyon Condor#022": {
    "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
    "dst": "[{~2}, {~3}, -{~4}]의 갱도에서 Jankan을 위해 [{~1} Gold Chunks]를 모으세요.",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#018": {
+  "Canyon Condor#023": {
    "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
    "dst": "드디어! 오래도 걸렸네, 이리 내! 아 맞다.. 뭘 원한댔지.",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#019": {
+  "Canyon Condor#024": {
    "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
    "dst": "자네 제 무덤 파는 걸 도울 생각은 없지만, 도와줄지 모를 젊은 친구한테 보내 줄 순 있지.",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#020": {
+  "Canyon Condor#025": {
    "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
    "dst": "은둔자 녀석을 찾아가 봐, 제대로 미친놈이여. 그 새한테 먹이까지 준다니까.",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#021": {
+  "Canyon Condor#026": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
    "dst": "산 위로 올라가 협곡 낭떠러지 건너편에 있을 거여. 친절한 놈은 아니라는 것만은 말해 두지.",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#022": {
+  "Canyon Condor#027": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
    "dst": "협곡 승강기를 타고 [{~}, {~}, -{~}]의 은둔자에게 가세요.",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#023": {
+  "Canyon Condor#028": {
    "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
    "dst": "여기서 뭐 하는 거냐, 꼬마? 내 누추한 집에 멋대로 들어와서 내 다리를 건너겠다고?",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#024": {
+  "Canyon Condor#029": {
    "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
    "dst": "오, 산의 새에 대해 알고 싶다고? 하, 너 같은 잡초는 상대도 안 돼.",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#025": {
+  "Canyon Condor#030": {
    "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
    "dst": "그놈은 낯선 자를 반기지 않아. 밀렵꾼 무리를 재로 만드는 걸 본 적도 있지!",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#026": {
+  "Canyon Condor#031": {
    "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
    "dst": "여길 지나가려면 대가를 치러야지. 아, 돈은 필요 없어, 돈이 왜 필요해, 난 다 가졌거든!",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#027": {
+  "Canyon Condor#032": {
    "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
    "dst": "이 고원들에 가고 싶으면 내 작은 동굴에 둘 희귀한 꽃을 찾아와.",
    "role": "desc",
@@ -286,7 +336,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#028": {
+  "Canyon Condor#033": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
    "dst": "메사의 돌기둥 중 하나 꼭대기에 있어. 찾기 그리 어렵진 않을 거다.",
    "role": "desc",
@@ -296,7 +346,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#029": {
+  "Canyon Condor#034": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
    "dst": "[{~} Rare Rose]를 가져오면 메사의 괴물에게 가게 해 주지.",
    "role": "desc",
@@ -306,7 +356,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#030": {
+  "Canyon Condor#035": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
    "dst": "은둔자를 위해 [{~2}, {~3}, -{~4}]에서 [{~1} Rare Rose]를 찾아 모으세요",
    "role": "desc",
@@ -316,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#031": {
+  "Canyon Condor#036": {
    "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
    "dst": "아하! 이거면 딱이야. 우리 병아리가 좋아하겠군! 이제 다리를 건너도 좋다.",
    "role": "desc",
@@ -326,7 +376,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#032": {
+  "Canyon Condor#037": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
    "dst": "그 짐승은 이 고원 중 한 곳 꼭대기에 살아. 조금만 찾아보면 찾을 수 있을 거다.",
    "role": "desc",
@@ -336,7 +386,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#033": {
+  "Canyon Condor#038": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
    "dst": "내 승강기도 쓰게 해 주지. 어차피 오래 버티지도 못할 테니...",
    "role": "desc",
@@ -346,7 +396,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#034": {
+  "Canyon Condor#039": {
    "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
    "dst": "그 짐승을 상대할 수 있던 여행자는 딱 하나 들어 봤지. 그놈 알을 가져가서 애완동물로 삼았다더군, 하!",
    "role": "desc",
@@ -356,7 +406,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#035": {
+  "Canyon Condor#040": {
    "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
    "dst": "그자는 오래전에 사라졌어, 너도 곧 그렇게 되겠지. 몰라서 반가웠다, 꼬마.",
    "role": "desc",
@@ -366,7 +416,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#036": {
+  "Canyon Condor#041": {
    "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
    "dst": "[{~}, {~}, -{~}]에서 코카트리스를 물리치고 Svin을 위해 알을 가져오세요",
    "role": "desc",
@@ -376,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#037": {
+  "Canyon Condor#042": {
    "src": "Traveler! You have returned! Tell me, what have you learned?",
    "dst": "여행자! 돌아왔군요! 말해 봐요, 뭘 알아냈나요?",
    "role": "desc",
@@ -386,7 +436,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#038": {
+  "Canyon Condor#043": {
    "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
    "dst": "찾았다고요?! 정말 좋은 소식이에요! 둥지에서 알까지 가져왔다고요? 정말 용감하시네요!",
    "role": "desc",
@@ -396,7 +446,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#039": {
+  "Canyon Condor#044": {
    "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
    "dst": "코카트리스의 전설이 사실이었군요! 직접 보고 용기로 맞서 싸웠다니!",
    "role": "desc",
@@ -406,7 +456,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#040": {
+  "Canyon Condor#045": {
    "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
    "dst": "당신도 {p}에 들어올 수 있다면 좋을 텐데, 용감한 영혼이여! 하지만 이제 헤어질 때인가 봐요.",
    "role": "desc",
@@ -416,7 +466,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#041": {
+  "Canyon Condor#046": {
    "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
    "dst": "걱정 마요, 알은 제가 잘 지킬게요. 언젠가 당신의 전설도 그만큼 널리 전해질 거예요!",
    "role": "desc",

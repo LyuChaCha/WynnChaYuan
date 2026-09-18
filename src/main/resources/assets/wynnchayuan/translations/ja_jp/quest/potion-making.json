@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Potion Making",
-  "count": 31,
+  "count": 36,
   "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Potion Making#000": {
+   "src": "I was...in support of this...but then, he accrued essence of...the corruption. I had to run away...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#001": {
+   "src": "Get me... [{~} Red Mushroom], they can be found outside the east gate behind me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#002": {
+   "src": "You must...ensure that it worked. You...are much stronger than I, stranger...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#003": {
+   "src": "What have you done to this potion, human!? You will pay for it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#004": {
+   "src": "It's time to head back to The Assistant in {p} and show him the proof.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#005": {
    "src": "Talk to The Assistant in {p} at [{~}, {~}, -{~}]",
    "dst": "{p} の [{~}, {~}, -{~}] にいる助手と話す",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#001": {
+  "Potion Making#006": {
    "src": "Heeh...stranger. I...may need your assistance...",
    "dst": "へへ…旅の人。あなたの…助けが要るかも…",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#002": {
+  "Potion Making#007": {
    "src": "My master...wishes to create a very dangerous potion...a transformative elixir of invincibility...",
    "dst": "師匠が…とても危険な薬を作ろうとしている…無敵になる変身の霊薬を…",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#003": {
+  "Potion Making#008": {
    "src": "I was...in support of this... but then, he accrued essence of...the corruption. I had to run away...",
    "dst": "私も…賛成していた…でも、師匠は…腐敗のエッセンスを手に入れた。逃げるしかなかった…",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#004": {
+  "Potion Making#009": {
    "src": "I fear...that he may be going...too far. I need your help...",
    "dst": "怖い…師匠は…やりすぎているかもしれない。助けてほしい…",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#005": {
+  "Potion Making#010": {
    "src": "I want...to stop him...but I need you to...get me the necessary ingredients... to neutralize the potion...",
    "dst": "止めたい…でも、あなたに…薬を中和する…材料を集めてほしい…",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#006": {
+  "Potion Making#011": {
    "src": "Get me...[{~} Red Mushroom], they can be found outside the east gate behind me.",
    "dst": "持ってきて…[{~} 赤いキノコ]。私の後ろの東門の外で見つかる。",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#007": {
+  "Potion Making#012": {
    "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
    "dst": "近くのムーシュルームを倒し、[{~} 赤いキノコ] を {p} の助手に届ける",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#008": {
+  "Potion Making#013": {
    "src": "Quickly, get me... [{~} Red Mushroom] as I asked... go through the {p} outside the east gate from here.",
    "dst": "早く…頼んだ [{~} 赤いキノコ] を…ここから東門を出て {p} を抜けて。",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#009": {
+  "Potion Making#014": {
    "src": "The...the...cows. Steal...from them.",
    "dst": "あの…あの…牛。奪って…",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#010": {
+  "Potion Making#015": {
    "src": "Good... Hurry..!",
    "dst": "いい…急いで…！",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#011": {
+  "Potion Making#016": {
    "src": "Good...good. You have the mushrooms.",
    "dst": "いい…よし。キノコを持ってきた。",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#012": {
+  "Potion Making#017": {
    "src": "I'll... return to my master's house...and sneak the mushrooms into...his potion. Wait for me here...",
    "dst": "私は…師匠の家に戻って…薬にこっそりキノコを…混ぜる。ここで待っていて…",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#013": {
+  "Potion Making#018": {
    "src": "I...have returned... He came back...just as I finished slipping the mushrooms in and...told me...to get out.",
    "dst": "戻った…キノコを入れ終えたところで…師匠が帰ってきて…出ていけと…言われた。",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#014": {
+  "Potion Making#019": {
    "src": "You must...ensure that it has worked. You...are much stronger than I, stranger...",
    "dst": "効いたか…確かめてほしい。あなたは…私よりずっと強い、旅の人…",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#015": {
+  "Potion Making#020": {
    "src": "Did you see the orange witch hat roofed hut when you were gathering the mushrooms?",
    "dst": "キノコを集めていた時、オレンジの魔女帽みたいな屋根の小屋を見た？",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#016": {
+  "Potion Making#021": {
    "src": "That is my master's house, you...must go back out the east gate and enter the hut.",
    "dst": "あれが師匠の家。あなたは…また東門を出て、あの小屋に入って。",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#017": {
+  "Potion Making#022": {
    "src": "You must...make sure...he has not managed...to become invincible... Do what has to be done....",
    "dst": "師匠が…無敵に…なっていないか…確かめて…やるべきことを、やって…",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#018": {
+  "Potion Making#023": {
    "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
    "dst": "[{~}, {~}, -{~}] の小屋に入り、Essren を倒して上着を奪う。",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#019": {
+  "Potion Making#024": {
    "src": "You must go back out the east gate and enter the hut, it is my master's house.",
    "dst": "また東門を出て、小屋に入って。そこが師匠の家。",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#020": {
+  "Potion Making#025": {
    "src": "Don't forget... Do what you must...",
    "dst": "忘れないで…やるべきことを…",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#021": {
+  "Potion Making#026": {
    "src": "Ah, you must be the one my assistant told me about.",
    "dst": "ああ、君が助手の言っていた者だな。",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#022": {
+  "Potion Making#027": {
    "src": "If you are trying to stop me, it's too late. I already drank the pot...",
    "dst": "私を止めに来たのなら、もう遅い。薬はすでに飲ん…",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#023": {
+  "Potion Making#028": {
    "src": "What is this taste? Mushrooms? This can't b",
    "dst": "何だこの味は？キノコ？ありえな",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#024": {
+  "Potion Making#029": {
    "src": "Aaaaargh!!!!!",
    "dst": "ぐあああああ！！！！！",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#025": {
+  "Potion Making#030": {
    "src": "What have you done to this potion, human?! You will pay for it!",
    "dst": "薬に何をした、人間？！この報いは受けてもらうぞ！",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#026": {
+  "Potion Making#031": {
    "src": "Bring back Essren's Dusty Coat to The Assistant in {p}",
    "dst": "Essren の埃っぽい上着を {p} の助手に届ける",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#027": {
+  "Potion Making#032": {
    "src": "I...must thank you, stranger...",
    "dst": "あなたに…感謝しないと、旅の人…",
    "role": "desc",
@@ -286,7 +336,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#028": {
+  "Potion Making#033": {
    "src": "Don't believe...everything people tell you... If master managed to...discover invincibility... No...too...dangerous.",
    "dst": "人の言うことを…すべて信じないで…師匠が本当に…無敵を見つけていたら…いや…危険すぎる。",
    "role": "desc",
@@ -296,7 +346,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#029": {
+  "Potion Making#034": {
    "src": "This was...for the better...",
    "dst": "これで…よかった…",
    "role": "desc",
@@ -306,7 +356,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#030": {
+  "Potion Making#035": {
    "src": "Now. I...do not want you saying anything about...these events. Take these, and...never speak of this again.",
    "dst": "さて。私は…この件を…誰にも話してほしくない。これを受け取って…二度と口にしないで。",
    "role": "desc",

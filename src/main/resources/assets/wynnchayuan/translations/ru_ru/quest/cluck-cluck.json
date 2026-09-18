@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "Cluck Cluck",
-  "count": 10,
+  "count": 13,
   "translated": 10,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cluck Cluck#000": {
+   "src": "Have you taken care of Cluckles yet? If you can't find him, I hid him in my basement.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cluck Cluck",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cluck Cluck#001": {
+   "src": "You need to be Farming Lv. {~} to start this Mini-Quest.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cluck Cluck",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cluck Cluck#002": {
+   "src": "Sometimes I wish animals could respawn... hey! What are you doing here? Go away!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cluck Cluck",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cluck Cluck#003": {
    "src": "Talk to Nohno on {p} at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Nohno на {p} в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cluck Cluck#001": {
+  "Cluck Cluck#004": {
    "src": "Hey, you aren't a chicken! Wait, you're a human! You can help me! Maybe you are the guy who helped my brother Yahya, but who knows, you humans all look the same to me.",
    "dst": "Эй, да ты не курица! Погоди, ты человек! Ты мне поможешь! Может, именно тебя благодарил мой брат Yahya, но кто знает, вы, люди, для меня все на одно лицо.",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#002": {
+  "Cluck Cluck#005": {
    "src": "I really love my chickens, but there is one that I just cannot control...",
    "dst": "Я очень люблю своих кур, но с одним петухом мне никак не совладать…",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#003": {
+  "Cluck Cluck#006": {
    "src": "His name is Cluckles, he was given to me by a man named Bob before he went to war, but when Bob never came back, Cluckles got angry...",
    "dst": "Его зовут Cluckles, мне подарил его человек по имени Bob перед уходом на войну, но Bob так и не вернулся, и Cluckles разозлился…",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#004": {
+  "Cluck Cluck#007": {
    "src": "He's really dangerous to keep on my lovely island, so I keep him in my basement...",
    "dst": "Держать его на моём чудесном острове опасно, так что я запер его в подвале…",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#005": {
+  "Cluck Cluck#008": {
    "src": "I want to take care of him, but my wife says it's too dangerous. Where's my wife you say? Oh, I think she's around here eating some grain.",
    "dst": "Я хочу о нём позаботиться, но жена говорит, что слишком опасно. Где жена? О, кажется, где-то тут клюёт зерно.",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#006": {
+  "Cluck Cluck#009": {
    "src": "Anyway, I need you to go down there and... Take care of him for me. I would really appreciate it.",
    "dst": "В общем, спустись туда и… позаботься о нём за меня. Буду очень благодарен.",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#007": {
+  "Cluck Cluck#010": {
    "src": "Bring back [{~} Cluckles' Favourite Feather] to Nohno.",
    "dst": "Принеси [{~} Cluckles' Favourite Feather] Nohno.",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cluck Cluck#008": {
+  "Cluck Cluck#011": {
    "src": "What is this?! His feather? What did you do to Cluckles?! I wanted you to take care of him, not kill him!",
    "dst": "Что это?! Его перо? Что с Cluckles?! Я просил позаботиться о нём, а не убивать!",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "Nohno",
    "source": "wiki"
   },
-  "Cluck Cluck#009": {
+  "Cluck Cluck#012": {
    "src": "You monster! Leave this place now, and keep that feather to remind you of your hideous crime!",
    "dst": "Чудовище! Уходи отсюда и храни это перо, чтобы помнить о своём гнусном злодеянии!",
    "role": "desc",

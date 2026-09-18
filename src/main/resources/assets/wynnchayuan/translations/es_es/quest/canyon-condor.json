@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Canyon Condor",
-  "count": 42,
+  "count": 47,
   "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Canyon Condor#000": {
+   "src": "Hey there friend! Looking teh barter fer some weapons or trinkets?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#001": {
+   "src": "Scum! That guy jus' stole a necklace! Catch 'im and jus' take this as payment!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#002": {
+   "src": "Go fetch me [{~} Gold Chunks] from the end of the shaft and I'll tell ye where ye need to go next.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#003": {
+   "src": "Hey pal, want to use these elevators? Talk to Svin in {p}, he is a friend of mine. He could give you access.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#004": {
+   "src": "Although recently a strange hermit has been trying to control them and prevent access... I'm sure you can reason with him, though.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Canyon Condor",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Canyon Condor#005": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
    "dst": "Habla con Svin en {p}, en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#001": {
+  "Canyon Condor#006": {
    "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
    "dst": "Soy uno de los Guardianes de la gran {p}. Allí atesoramos los secretos del mundo.",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#002": {
+  "Canyon Condor#007": {
    "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
    "dst": "He venido a investigar una vieja leyenda del cañón. ¿Te interesa? ¡Seguro que sí!",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#003": {
+  "Canyon Condor#008": {
    "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
    "dst": "Cuenta la leyenda que entre estos riscos vive una bestia feroz. Un ave peligrosa que lleva muchos años sobreviviendo.",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#004": {
+  "Canyon Condor#009": {
    "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
    "dst": "Me encantaría dar con ella, pero los lugareños andan tan ocupados robándose entre sí que no me cuentan nada.",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#005": {
+  "Canyon Condor#010": {
    "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
    "dst": "He oído que cerca vive un viejo buscador de oro que ha recorrido toda esta meseta. Quizá sepa algo.",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#006": {
+  "Canyon Condor#011": {
    "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
    "dst": "Se llama Jankan y vive al este de {p}. ¿Podrías buscarlo y preguntarle por esa bestia inmunda?",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#007": {
+  "Canyon Condor#012": {
    "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
    "dst": "Si me ayudas, te dejaré usar los ascensores del cañón. Bueno...",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#008": {
+  "Canyon Condor#013": {
    "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
    "dst": "Un ermitaño extraño decidió apoderarse de ellos, pero seguro que podemos razonar con él.",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#009": {
+  "Canyon Condor#014": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
    "dst": "Espero que encuentres a la bestia y, si lo haces, ¿podrías traerme [{~} Beast Egg] como prueba?",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#010": {
+  "Canyon Condor#015": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
    "dst": "Habla con Jankan al este de {p}, en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#011": {
+  "Canyon Condor#016": {
    "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
    "dst": "¡Hola, mozalbete! Tú debes de ser el forastero del que habla la gente.",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#012": {
+  "Canyon Condor#017": {
    "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
    "dst": "¡Si vienes buscando oro, te aseguro que en esta mina no hay na' pa' ti!",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#013": {
+  "Canyon Condor#018": {
    "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
    "dst": "Ah... ¿Andas buscando una bestia alada? ¿Estás mal de la cabeza?",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#014": {
+  "Canyon Condor#019": {
    "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
    "dst": "¡Ese pájaro del demonio es puro caos! ¡De un chillido mueve montañas! ¡Hombres el doble de grandes que tú han llorao al verlo!",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#015": {
+  "Canyon Condor#020": {
    "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
    "dst": "Mira por dónde, me destrocé la espalda sacando mis ganancias de esa cueva y las dejé al fondo del todo.",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#016": {
+  "Canyon Condor#021": {
    "src": "Go fetch me Gold Chunk and I'll tell ye where ye need to go next.",
    "dst": "Tráeme el Gold Chunk y te digo adónde tienes que ir luego.",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#017": {
+  "Canyon Condor#022": {
    "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
    "dst": "Recoge [{~} Gold Chunks] para Jankan en la mina en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#018": {
+  "Canyon Condor#023": {
    "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
    "dst": "¡Por fin! Ya era hora, ¡trae pa' acá! Ah, sí... tú querías algo.",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#019": {
+  "Canyon Condor#024": {
    "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
    "dst": "No pienso ayudarte a buscar tu perdición, pero puedo mandarte con un mozo que quizá sí lo haga.",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#020": {
+  "Canyon Condor#025": {
    "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
    "dst": "Hay un ermitaño con el que deberías hablar; ese está como una cabra. Hasta le da de comer al bicho.",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#021": {
+  "Canyon Condor#026": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
    "dst": "Creo que lo hallarás monte arriba, al otro lado del abismo del cañón. No es tipo simpático, eso te lo digo yo.",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "Jankan",
    "source": "wiki"
   },
-  "Canyon Condor#022": {
+  "Canyon Condor#027": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
    "dst": "Sube en el ascensor del cañón hasta el ermitaño en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#023": {
+  "Canyon Condor#028": {
    "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
    "dst": "¿Qué crees que haces aquí, chaval? ¿Te crees que puedes entrar en mi humilde morada y cruzar mi puente?",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#024": {
+  "Canyon Condor#029": {
    "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
    "dst": "Ah, ¿quieres saber del pájaro de la montaña? Ja, un hierbajo como tú no tendría nada que hacer contra él.",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#025": {
+  "Canyon Condor#030": {
    "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
    "dst": "No le gustan los desconocidos, ¿sabes? ¡Una vez lo vi convertir en ceniza a unos cazadores furtivos!",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#026": {
+  "Canyon Condor#031": {
    "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
    "dst": "Si quieres pasar por aquí, tendrás que pagar. Ah, no quiero tu dinero, ¿para qué lo necesito? ¡Lo tengo todo!",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#027": {
+  "Canyon Condor#032": {
    "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
    "dst": "Si quieres acceder a estos altiplanos, tendrás que buscarme una flor rara para mi cuevita.",
    "role": "desc",
@@ -286,7 +336,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#028": {
+  "Canyon Condor#033": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
    "dst": "Crece en lo alto de una de las agujas de roca de la meseta; no debería costarte encontrarla.",
    "role": "desc",
@@ -296,7 +346,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#029": {
+  "Canyon Condor#034": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
    "dst": "Tráeme [{~} Rare Rose] y te dejaré pasar hacia la criatura de la meseta.",
    "role": "desc",
@@ -306,7 +356,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#030": {
+  "Canyon Condor#035": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
    "dst": "Encuentra y recoge [{~} Rare Rose] en [{~}, {~}, -{~}] para el ermitaño",
    "role": "desc",
@@ -316,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#031": {
+  "Canyon Condor#036": {
    "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
    "dst": "¡Ajá! Esta servirá perfectamente. ¡A mi polluelo le encantará! Supongo que ya puedes cruzar el puente.",
    "role": "desc",
@@ -326,7 +376,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#032": {
+  "Canyon Condor#037": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
    "dst": "La bestia habita en lo alto de uno de estos altiplanos. Buscando un poco deberías dar con ella.",
    "role": "desc",
@@ -336,7 +386,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#033": {
+  "Canyon Condor#038": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
    "dst": "También te dejaré usar mis ascensores. Total, tampoco vas a durar mucho...",
    "role": "desc",
@@ -346,7 +396,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#034": {
+  "Canyon Condor#039": {
    "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
    "dst": "Solo sé de un viajero capaz de plantar cara a la bestia. Creo que le robó un huevo de mascota, ¡ja!",
    "role": "desc",
@@ -356,7 +406,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#035": {
+  "Canyon Condor#040": {
    "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
    "dst": "Hace mucho que no está, igual que tú dentro de un rato. Ha sido un placer no conocerte, chaval.",
    "role": "desc",
@@ -366,7 +416,7 @@
    "speaker": "Hermit",
    "source": "wiki"
   },
-  "Canyon Condor#036": {
+  "Canyon Condor#041": {
    "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
    "dst": "Derrota al Cockatrice en [{~}, {~}, -{~}] y consigue un huevo para Svin",
    "role": "desc",
@@ -376,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Canyon Condor#037": {
+  "Canyon Condor#042": {
    "src": "Traveler! You have returned! Tell me, what have you learned?",
    "dst": "¡Viajero! ¡Has vuelto! Dime, ¿qué has averiguado?",
    "role": "desc",
@@ -386,7 +436,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#038": {
+  "Canyon Condor#043": {
    "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
    "dst": "¿¡La encontraste!? ¡Qué gran noticia! ¿Y también cogiste un huevo de su nido? ¡Eres muy valiente!",
    "role": "desc",
@@ -396,7 +446,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#039": {
+  "Canyon Condor#044": {
    "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
    "dst": "¡Así que la leyenda del Cockatrice es cierta! ¡Lo has visto y lo has combatido con tu propio valor!",
    "role": "desc",
@@ -406,7 +456,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#040": {
+  "Canyon Condor#045": {
    "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
    "dst": "¡Ojalá pudieras entrar en {p}, alma valiente! Pero parece que nuestros caminos se separan aquí.",
    "role": "desc",
@@ -416,7 +466,7 @@
    "speaker": "Svin",
    "source": "wiki"
   },
-  "Canyon Condor#041": {
+  "Canyon Condor#046": {
    "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
    "dst": "No te preocupes, guardaré el huevo a salvo. ¡Algún día tu leyenda se contará igual de grande!",
    "role": "desc",

@@ -1,252 +1,12 @@
 {
  "_meta": {
   "quest": "Enzan's Brother",
-  "count": 25,
+  "count": 31,
   "translated": 31,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Enzan's Brother#000": {
-   "src": "Welcome to the V.S.S. Seaskipper, from Seasail Enterprises! There's nothin' better than Seasail if you're lookin' to travel!",
-   "dst": "欢迎乘坐 Seasail 企业的 V.S.S. Seaskipper 号！想出门旅行，没有比 Seasail 更好的选择了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Enzan's Brother#001": {
-   "src": "Just hop on the boat and buy a pass so you can get goin' to almost anywhere on the ocean!",
-   "dst": "上船买张通行证，大海上几乎哪儿都能去！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Enzan's Brother#002": {
-   "src": "Talk to Enzan close to the exit of {p} at [-{~}, {~}, -{~}].",
-   "dst": "与 [-{~}, {~}, -{~}] 靠近 {p} 出口的 Enzan 对话。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Enzan's Brother#003": {
-   "src": "I see you want to venture into the wilderness!",
-   "dst": "看来你想去荒野闯一闯！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 1",
-   "speaker": "Enzan",
-   "source": "wiki"
-  },
-  "Enzan's Brother#004": {
-   "src": "My name is Enzan, and I am now a retired knight. I've spent most of my life fighting for {p}'s army, just like you.",
-   "dst": "我叫 Enzan，现在是个退役骑士。我这辈子大部分时间都在为 {p} 的军队作战，就跟你一样。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 1",
-   "speaker": "Enzan",
-   "source": "wiki"
-  },
-  "Enzan's Brother#005": {
-   "src": "I know how hard it must be to be a recruit at this time, so I've got something that could help you! Well, I don't have it, but my brother does!",
-   "dst": "我知道这个时候当新兵有多辛苦，所以我有样东西能帮到你！嗯，东西不在我这儿，在我兄弟那儿！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 1",
-   "speaker": "Enzan",
-   "source": "wiki"
-  },
-  "Enzan's Brother#006": {
-   "src": "Follow this road, he's just past the item identifier, you can't miss him. Just head to the big set of stairs, past the item identifier.",
-   "dst": "沿着这条路走，他就在物品鉴定师过去一点，你不会错过的。往那段大楼梯走，过了物品鉴定师就是。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 1",
-   "speaker": "Enzan",
-   "source": "wiki"
-  },
-  "Enzan's Brother#007": {
-   "src": "Tell him I sent you! He can be such a jerk to strangers sometimes, especially when he's focused on his stairs...",
-   "dst": "告诉他是我叫你去的！他有时候对陌生人很不客气，尤其是在专心研究他的楼梯的时候……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 1",
-   "speaker": "Enzan",
-   "source": "wiki"
-  },
-  "Enzan's Brother#008": {
-   "src": "Find Enzan's brother near the Item Identifier on the {p} at [-{~}, {~}, -{~}].",
-   "dst": "在 {p} [-{~}, {~}, -{~}] 的物品鉴定师附近找到 Enzan 的兄弟。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Enzan's Brother#009": {
-   "src": "Excuse me? Can't you see I'm busy?",
-   "dst": "干什么？没看到我很忙吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 2",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#010": {
-   "src": "Oh, my brother? Sorry, I didn't know.",
-   "dst": "噢，我兄弟叫你来的？抱歉，我不知道。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 2",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#011": {
-   "src": "Why yes, I actually have something that could help you...",
-   "dst": "是啊，我确实有样东西能帮到你……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 2",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#012": {
-   "src": "But before I give it to you, why don't you help me with something first?",
-   "dst": "不过给你之前，你何不先帮我一个忙？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 2",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#013": {
-   "src": "You see, there's a special kind of mushroom that grows in this cave. I hear it has certain... energizing properties.",
-   "dst": "你看，这个洞窟里长着一种特别的蘑菇。听说它有某种……提神的功效。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 2",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#014": {
-   "src": "If you can bring me [{~} Energy Mushroom], I'll help you out. Enter the cave down the stairs, and bring me that mushroom!",
-   "dst": "如果你能给我带来 [{~} 能量蘑菇]，我就帮你。从楼梯下去进入洞窟，把那个蘑菇带给我！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 2",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#015": {
-   "src": "Descend into the cave at [-{~}, {~}, -{~}] and bring [{~} Energy Mushroom] to Therck",
-   "dst": "下到 [-{~}, {~}, -{~}] 的洞窟，把 [{~} 能量蘑菇] 带给 Therck",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Enzan's Brother#016": {
-   "src": "Ah, you're back! Do you have the mushroom?",
-   "dst": "啊，你回来了！蘑菇拿到了吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 3",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#017": {
-   "src": "Take this ring. It's an accessory item! You can identify it at the nearby Item Identifier.",
-   "dst": "拿着这枚戒指。这是饰品！你可以在附近的物品鉴定师那里鉴定它。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 3",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#018": {
-   "src": "It's a very good ring for someone starting out like you. There's just one small issue...",
-   "dst": "对你这样刚起步的人来说，这是枚很好的戒指。只是有个小问题……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 3",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#019": {
-   "src": "To wear it, you must help my friend back in {p}. He's been pestering me for days about needing help.",
-   "dst": "要戴上它，你得去帮我在 {p} 的朋友。他已经缠着我好几天说需要帮忙了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 3",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#020": {
-   "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u} .",
-   "dst": "等你变强一点，就到那里来找我吧。好了，回头见，{u}。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "source": "capture"
-  },
-  "Enzan's Brother#021": {
-   "src": "Ah, you're back. Do you have the mushroom?",
-   "dst": "啊，你回来了。蘑菇拿到了吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "source": "capture"
-  },
-  "Enzan's Brother#022": {
-   "src": "Excellent... Now I might finally be able to climb these stairs...",
-   "dst": "太好了……这下我也许终于能爬上这些楼梯了……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "source": "capture"
-  },
-  "Enzan's Brother#023": {
-   "src": "Who knows, maybe there's a treasure or something up there?",
-   "dst": "谁知道呢，也许上面有宝藏之类的？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "source": "capture"
-  },
-  "Enzan's Brother#024": {
-   "src": "Take this ring. It's an accessory item. You can identify it at the nearby Item Identifier.",
-   "dst": "收下这枚戒指。这是一件饰品，你可以去附近的物品鉴定师那里鉴定。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "source": "capture"
-  },
-  "Enzan's Brother#000~1": {
    "src": "Well, I'd best get back to my business. It was nice talking to you, traveler. Come around anytime.",
    "dst": "好了，我得回去忙我的生意了。跟你聊得很愉快，旅人。随时再来。",
    "role": "desc",
@@ -256,7 +16,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Enzan's Brother#001~1": {
+  "Enzan's Brother#001": {
    "src": "Business is a touch slow today, but feel free to have a seat. Would you like a {p} Whiskey? On the house.",
    "dst": "今天生意有点冷清，不过请随便坐。要来杯 {p} 威士忌吗？我请客。",
    "role": "desc",
@@ -266,7 +26,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Enzan's Brother#002~1": {
+  "Enzan's Brother#002": {
    "src": "You can even take your pals along with you for free if you're in a party!",
    "dst": "如果你在队伍里，甚至可以免费带伙伴一起走！",
    "role": "desc",
@@ -276,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Enzan's Brother#003~1": {
+  "Enzan's Brother#003": {
    "src": "You've joined that mission of theirs then, have you? Good luck. From what parts I overheard, it'll be quite treacherous.",
    "dst": "所以你加入他们那个任务了，是吧？祝你好运。从我偷听到的片段来看，那会相当凶险。",
    "role": "desc",
@@ -286,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Enzan's Brother#004~1": {
+  "Enzan's Brother#004": {
    "src": "Here you are, then!",
    "dst": "好啦，到了！",
    "role": "desc",
@@ -296,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Enzan's Brother#005~1": {
+  "Enzan's Brother#005": {
    "src": "He just got back. You can't... tell him now. You'll do it later, once he's settled in.",
    "dst": "他才刚回来。你现在不能……告诉他。等他安顿下来，你再说吧。",
    "role": "desc",
@@ -305,6 +65,246 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
+  },
+  "Enzan's Brother#006": {
+   "src": "Welcome to the V.S.S. Seaskipper, from Seasail Enterprises! There's nothin' better than Seasail if you're lookin' to travel!",
+   "dst": "欢迎乘坐 Seasail 企业的 V.S.S. Seaskipper 号！想出门旅行，没有比 Seasail 更好的选择了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enzan's Brother#007": {
+   "src": "Just hop on the boat and buy a pass so you can get goin' to almost anywhere on the ocean!",
+   "dst": "上船买张通行证，大海上几乎哪儿都能去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enzan's Brother#008": {
+   "src": "Talk to Enzan close to the exit of {p} at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 靠近 {p} 出口的 Enzan 对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enzan's Brother#009": {
+   "src": "I see you want to venture into the wilderness!",
+   "dst": "看来你想去荒野闯一闯！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 1",
+   "speaker": "Enzan",
+   "source": "wiki"
+  },
+  "Enzan's Brother#010": {
+   "src": "My name is Enzan, and I am now a retired knight. I've spent most of my life fighting for {p}'s army, just like you.",
+   "dst": "我叫 Enzan，现在是个退役骑士。我这辈子大部分时间都在为 {p} 的军队作战，就跟你一样。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 1",
+   "speaker": "Enzan",
+   "source": "wiki"
+  },
+  "Enzan's Brother#011": {
+   "src": "I know how hard it must be to be a recruit at this time, so I've got something that could help you! Well, I don't have it, but my brother does!",
+   "dst": "我知道这个时候当新兵有多辛苦，所以我有样东西能帮到你！嗯，东西不在我这儿，在我兄弟那儿！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 1",
+   "speaker": "Enzan",
+   "source": "wiki"
+  },
+  "Enzan's Brother#012": {
+   "src": "Follow this road, he's just past the item identifier, you can't miss him. Just head to the big set of stairs, past the item identifier.",
+   "dst": "沿着这条路走，他就在物品鉴定师过去一点，你不会错过的。往那段大楼梯走，过了物品鉴定师就是。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 1",
+   "speaker": "Enzan",
+   "source": "wiki"
+  },
+  "Enzan's Brother#013": {
+   "src": "Tell him I sent you! He can be such a jerk to strangers sometimes, especially when he's focused on his stairs...",
+   "dst": "告诉他是我叫你去的！他有时候对陌生人很不客气，尤其是在专心研究他的楼梯的时候……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 1",
+   "speaker": "Enzan",
+   "source": "wiki"
+  },
+  "Enzan's Brother#014": {
+   "src": "Find Enzan's brother near the Item Identifier on the {p} at [-{~}, {~}, -{~}].",
+   "dst": "在 {p} [-{~}, {~}, -{~}] 的物品鉴定师附近找到 Enzan 的兄弟。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enzan's Brother#015": {
+   "src": "Excuse me? Can't you see I'm busy?",
+   "dst": "干什么？没看到我很忙吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#016": {
+   "src": "Oh, my brother? Sorry, I didn't know.",
+   "dst": "噢，我兄弟叫你来的？抱歉，我不知道。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#017": {
+   "src": "Why yes, I actually have something that could help you...",
+   "dst": "是啊，我确实有样东西能帮到你……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#018": {
+   "src": "But before I give it to you, why don't you help me with something first?",
+   "dst": "不过给你之前，你何不先帮我一个忙？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#019": {
+   "src": "You see, there's a special kind of mushroom that grows in this cave. I hear it has certain... energizing properties.",
+   "dst": "你看，这个洞窟里长着一种特别的蘑菇。听说它有某种……提神的功效。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#020": {
+   "src": "If you can bring me [{~} Energy Mushroom], I'll help you out. Enter the cave down the stairs, and bring me that mushroom!",
+   "dst": "如果你能给我带来 [{~} 能量蘑菇]，我就帮你。从楼梯下去进入洞窟，把那个蘑菇带给我！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 2",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#021": {
+   "src": "Descend into the cave at [-{~}, {~}, -{~}] and bring [{~} Energy Mushroom] to Therck",
+   "dst": "下到 [-{~}, {~}, -{~}] 的洞窟，把 [{~} 能量蘑菇] 带给 Therck",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enzan's Brother#022": {
+   "src": "Ah, you're back! Do you have the mushroom?",
+   "dst": "啊，你回来了！蘑菇拿到了吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 3",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#023": {
+   "src": "Take this ring. It's an accessory item! You can identify it at the nearby Item Identifier.",
+   "dst": "拿着这枚戒指。这是饰品！你可以在附近的物品鉴定师那里鉴定它。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 3",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#024": {
+   "src": "It's a very good ring for someone starting out like you. There's just one small issue...",
+   "dst": "对你这样刚起步的人来说，这是枚很好的戒指。只是有个小问题……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 3",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#025": {
+   "src": "To wear it, you must help my friend back in {p}. He's been pestering me for days about needing help.",
+   "dst": "要戴上它，你得去帮我在 {p} 的朋友。他已经缠着我好几天说需要帮忙了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "stage": "Stage 3",
+   "speaker": "Therck",
+   "source": "wiki"
+  },
+  "Enzan's Brother#026": {
+   "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u} .",
+   "dst": "等你变强一点，就到那里来找我吧。好了，回头见，{u}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#027": {
+   "src": "Ah, you're back. Do you have the mushroom?",
+   "dst": "啊，你回来了。蘑菇拿到了吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#028": {
+   "src": "Excellent... Now I might finally be able to climb these stairs...",
+   "dst": "太好了……这下我也许终于能爬上这些楼梯了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#029": {
+   "src": "Who knows, maybe there's a treasure or something up there?",
+   "dst": "谁知道呢，也许上面有宝藏之类的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#030": {
+   "src": "Take this ring. It's an accessory item. You can identify it at the nearby Item Identifier.",
+   "dst": "收下这枚戒指。这是一件饰品，你可以去附近的物品鉴定师那里鉴定。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
   }
  }
 }
