@@ -207,6 +207,8 @@ gradle build
 - 對話框的中日韓與俄文字形：[Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)（SIL OFL 1.1，全文見
   `src/main/resources/assets/wynnchayuan/font/ofl-fusion.txt`）。字型缺字的句子維持原文，不畫方框
 - 材質包符號與排版屬於 Wynncraft，本模組只顯示、不修改
-- 程式碼：[MIT](LICENSE)
+- 程式碼：[GNU AGPLv3](LICENSE)
+- 翻譯與資料（`src/main/resources/assets/wynnchayuan/translations/` 的語料、`GLOSSARY.md` 等）：[CC BY-NC-SA 4.0](LICENSE-DATA)。
+  取自 Wynncraft Wiki 的內容仍依原本的 CC BY-SA
 
 與 Wynncraft 官方及 Wynntils 團隊**無隸屬關係**，是社群自發的翻譯專案。

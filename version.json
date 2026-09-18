@@ -1,12 +1,33 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0_7",
+ "latest": "0.2.0_8",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0_8": {
+   "headline": "Fixes lootrun beacon markers staying behind with WynnMod",
+   "items": [
+    "With WynnMod installed, its lootrun beacon markers now clear when a lootrun ends (lootrun start, end and challenge titles stay in English for WynnMod)",
+    "License changed: code is now GNU AGPLv3, translations and data are CC BY-NC-SA 4.0"
+   ],
+   "zh_tw": {
+    "headline": "修正與 WynnMod 同時使用時 lootrun 信標殘留",
+    "items": [
+     "裝了 WynnMod 時，結束 lootrun 後 WynnMod 的信標標記會正常清除（lootrun 開始、結束與挑戰的標題為了讓 WynnMod 辨識，保留英文）",
+     "授權改為：程式碼 GNU AGPLv3，翻譯與資料 CC BY-NC-SA 4.0"
+    ]
+   },
+   "zh_cn": {
+    "headline": "修复与 WynnMod 同时使用时 lootrun 信标残留",
+    "items": [
+     "安装 WynnMod 时，结束 lootrun 后 WynnMod 的信标标记会正常清除（lootrun 开始、结束与挑战的标题为了让 WynnMod 识别，保留英文）",
+     "许可证改为：代码 GNU AGPLv3，翻译与数据 CC BY-NC-SA 4.0"
+    ]
+   }
+  },
   "0.2.0_7": {
    "headline": "Dialogue lines that call you by your nickname are translated again",
    "items": [

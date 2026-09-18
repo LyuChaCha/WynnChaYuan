@@ -219,6 +219,8 @@ Translate one line and you are on this list. See [CONTRIBUTING.en.md](CONTRIBUTI
   full text in `src/main/resources/assets/wynnchayuan/font/ofl-fusion.txt`). A line containing a glyph the font
   lacks stays in English instead of drawing boxes
 - Resource-pack glyphs and layout belong to Wynncraft; this mod only displays them
-- Code: [MIT](LICENSE)
+- Code: [GNU AGPLv3](LICENSE)
+- Translations and data (the corpus under `src/main/resources/assets/wynnchayuan/translations/`, `GLOSSARY.md`, etc.): [CC BY-NC-SA 4.0](LICENSE-DATA).
+  Content taken from the Wynncraft Wiki stays under its original CC BY-SA
 
 **Not affiliated with Wynncraft or the Wynntils team.** A community translation project.

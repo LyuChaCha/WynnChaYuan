@@ -101,7 +101,7 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 
 ### Licence
 
-[MIT](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE). Item and ability data come from the public CDN used by Wynntils. Dialogue-box glyphs use [Fusion Pixel](https://github.com/TakWolf/fusion-pixel-font) (SIL OFL 1.1).
+Code: [GNU AGPLv3](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE). Translations and data: [CC BY-NC-SA 4.0](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE-DATA). Item and ability data come from the public CDN used by Wynntils. Dialogue-box glyphs use [Fusion Pixel](https://github.com/TakWolf/fusion-pixel-font) (SIL OFL 1.1).
 
 **Not affiliated with Wynncraft or the Wynntils team.** A community translation project.
 
@@ -196,6 +196,6 @@ jar 放進 `mods/`，進遊戲按 **F6**。
 
 ### 授權
 
-[MIT](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE)。物品與技能資料取自 Wynntils 使用的公開 CDN；對話框字形使用 [Fusion Pixel](https://github.com/TakWolf/fusion-pixel-font)（SIL OFL 1.1）。
+程式碼：[GNU AGPLv3](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE)；翻譯與資料：[CC BY-NC-SA 4.0](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE-DATA)。物品與技能資料取自 Wynntils 使用的公開 CDN；對話框字形使用 [Fusion Pixel](https://github.com/TakWolf/fusion-pixel-font)（SIL OFL 1.1）。
 
 與 Wynncraft 官方及 Wynntils 團隊**無隸屬關係**，是社群自發的翻譯專案。
