@@ -51,10 +51,11 @@ Client-side only. The server does not need it.
 | Language | Coverage |
 |---|---|
 | Traditional Chinese | Main language, everything |
-| Simplified Chinese | Everything |
+| Simplified Chinese | Everything, quest dialogue included |
 | Japanese | Everything, quest dialogue included |
 | Russian | Everything, quest dialogue included |
-| Korean | Item tooltip labels and Major IDs |
+| Korean | Everything, quest dialogue included |
+| Spanish | Everything, quest dialogue included |
 
 Switch under F6 → Data, without changing the game's language.
 
@@ -65,12 +66,12 @@ Switch under F6 → Data, without changing the game's language.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `es_es` Español | ██████████ 100.0% | 46,642 / 46,664 |
-| `ja_jp` 日本語 | ██████████ 100.0% | 46,642 / 46,664 |
-| `ru_ru` Русский | ██████████ 100.0% | 46,642 / 46,664 |
-| `zh_cn` 简体中文 | ██████████ 100.0% | 46,642 / 46,664 |
-| `ko_kr` 한국어 | ██████████ 100.0% | 46,641 / 46,664 |
-| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,580 / 46,664 |
+| `es_es` Español | ██████████ 100.0% | 46,646 / 46,668 |
+| `ja_jp` 日本語 | ██████████ 100.0% | 46,646 / 46,668 |
+| `ru_ru` Русский | ██████████ 100.0% | 46,646 / 46,668 |
+| `zh_cn` 简体中文 | ██████████ 100.0% | 46,646 / 46,668 |
+| `ko_kr` 한국어 | ██████████ 100.0% | 46,645 / 46,668 |
+| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,584 / 46,668 |
 
 各語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)
 <!-- 進度:結束 -->
@@ -146,10 +147,11 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 | 語言 | 內容 |
 |---|---|
 | 繁體中文 | 主要語言，所有內容 |
-| 簡體中文 | 所有內容 |
+| 簡體中文 | 所有內容，含任務對話 |
 | 日文 | 所有內容，含任務對話 |
 | 俄文 | 所有內容，含任務對話 |
-| 韓文 | 物品欄位標籤與 Major ID |
+| 韓文 | 所有內容，含任務對話 |
+| 西班牙文 | 所有內容，含任務對話 |
 
 在 F6 →「資料」切換，不必改遊戲語言。
 
@@ -160,12 +162,12 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `es_es` Español | ██████████ 100.0% | 46,642 / 46,664 |
-| `ja_jp` 日本語 | ██████████ 100.0% | 46,642 / 46,664 |
-| `ru_ru` Русский | ██████████ 100.0% | 46,642 / 46,664 |
-| `zh_cn` 简体中文 | ██████████ 100.0% | 46,642 / 46,664 |
-| `ko_kr` 한국어 | ██████████ 100.0% | 46,641 / 46,664 |
-| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,580 / 46,664 |
+| `es_es` Español | ██████████ 100.0% | 46,646 / 46,668 |
+| `ja_jp` 日本語 | ██████████ 100.0% | 46,646 / 46,668 |
+| `ru_ru` Русский | ██████████ 100.0% | 46,646 / 46,668 |
+| `zh_cn` 简体中文 | ██████████ 100.0% | 46,646 / 46,668 |
+| `ko_kr` 한국어 | ██████████ 100.0% | 46,645 / 46,668 |
+| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,584 / 46,668 |
 
 各語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)
 <!-- 進度:結束 -->

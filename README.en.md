@@ -68,10 +68,11 @@ Hover a setting for an explanation.
 | Language | Coverage |
 |---|---|
 | `zh_tw` Traditional Chinese | Main language, everything |
-| `zh_cn` Simplified Chinese | Everything |
+| `zh_cn` Simplified Chinese | Everything, quest dialogue included |
 | `ja_jp` Japanese | Everything, quest dialogue included |
 | `ru_ru` Russian | Everything, quest dialogue included |
-| `ko_kr` Korean | Item tooltip labels and Major IDs |
+| `ko_kr` Korean | Everything, quest dialogue included |
+| `es_es` Spanish | Everything, quest dialogue included |
 
 Switch under **F6 → Data**, without changing the game's language or restarting:
 
@@ -84,12 +85,12 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `es_es` Español | ██████████ 100.0% | 46,642 / 46,664 |
-| `ja_jp` 日本語 | ██████████ 100.0% | 46,642 / 46,664 |
-| `ru_ru` Русский | ██████████ 100.0% | 46,642 / 46,664 |
-| `zh_cn` 简体中文 | ██████████ 100.0% | 46,642 / 46,664 |
-| `ko_kr` 한국어 | ██████████ 100.0% | 46,641 / 46,664 |
-| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,580 / 46,664 |
+| `es_es` Español | ██████████ 100.0% | 46,646 / 46,668 |
+| `ja_jp` 日本語 | ██████████ 100.0% | 46,646 / 46,668 |
+| `ru_ru` Русский | ██████████ 100.0% | 46,646 / 46,668 |
+| `zh_cn` 简体中文 | ██████████ 100.0% | 46,646 / 46,668 |
+| `ko_kr` 한국어 | ██████████ 100.0% | 46,645 / 46,668 |
+| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,584 / 46,668 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
