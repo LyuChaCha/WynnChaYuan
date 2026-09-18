@@ -1,12 +1,30 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0_9",
+ "latest": "0.2.0_10",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0_10": {
+   "headline": "Long scrolling dialogue choices stay translated",
+   "items": [
+    "Dialogue choices too long to fit scroll sideways; in in-place mode they now keep their translation while scrolling instead of flickering back to English"
+   ],
+   "zh_tw": {
+    "headline": "會捲動的長選項維持翻譯",
+    "items": [
+     "太長而左右捲動的對話選項，在就地取代模式下捲動時會維持中文，不再閃回英文"
+    ]
+   },
+   "zh_cn": {
+    "headline": "会滚动的长选项保持翻译",
+    "items": [
+     "太长而左右滚动的对话选项，在就地替换模式下滚动时会保持中文，不再闪回英文"
+    ]
+   }
+  },
   "0.2.0_9": {
    "headline": "Collecting untranslated text no longer picks up our own translations",
    "items": [

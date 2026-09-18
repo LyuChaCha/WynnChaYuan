@@ -280,6 +280,14 @@ public final class DialogueRewriter {
             Integer trail = offsetOf(texts.get(end + 1));
             String row = rowText(texts, i, end);
             String pick = store.lookup(row.strip());
+            String rowFont = fontOf(styles.get(i));
+            if (pick != null && !pick.isBlank()) {
+                Marquee.remember(rowFont, row.strip(), pick);
+            } else {
+                // 太長的選項會像跑馬燈一樣往左捲，每一格都是從字中間切開的視窗，
+                // 查不到。接得上上一格就是同一個選項，沿用它的譯文，見 Marquee。
+                pick = Marquee.follow(rowFont, row.strip());
+            }
             if (pick == null || pick.isBlank() || !renderable(pick)) {
                 i = end;
                 continue;                       // 查不到就留英文，不要換一半

@@ -848,3 +848,11 @@ tasks.register('runOwnOutputChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.capture.OwnOutputsTest'
 }
 tasks.named('check') { dependsOn 'runOwnOutputChecks' }
+
+tasks.register('runMarqueeChecks', JavaExec) {
+    group = 'verification'
+    description = '對話選項跑馬燈：捲動中的每一格沿用第一格的譯文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.MarqueeTest'
+}
+tasks.named('check') { dependsOn 'runMarqueeChecks' }
