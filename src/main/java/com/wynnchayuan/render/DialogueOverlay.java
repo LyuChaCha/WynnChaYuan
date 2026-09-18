@@ -286,6 +286,11 @@ public final class DialogueOverlay {
      */
     static LineResult translateLine(StyledText line, String template, TranslationStore store,
                                     boolean steady) {
+        // 小框這條路也要認名字，見 DialogueRewriter#learnName。這一句剛認出來的話，
+        // 呼叫端傳進來的模板還留著名字本人，要重算一次才對得上語料的 {u}。
+        if (DialogueRewriter.learnName(line.getString(), store)) {
+            template = com.wynnchayuan.capture.LineParts.of(line).template();
+        }
         Component translated = LineTranslator.translate(line, store);
         String source = translated == null ? null : template;
         if (translated != null && !steady && unfinished(template, store)) {

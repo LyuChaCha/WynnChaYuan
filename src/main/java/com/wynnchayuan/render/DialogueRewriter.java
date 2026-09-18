@@ -851,6 +851,28 @@ public final class DialogueRewriter {
      * 全部留在英文。{@link #wrap} 本來就是為了攤成多行才寫的，
      * 攤不進去它會回 {@code null}，所以這裡不必再擋一次。
      */
+    /**
+     * 暱稱不在任何一個 Minecraft API 裡，所以反過來問語料。見
+     * {@link TranslationStore#playerNameIn}：認出來一次，往後每一句都自己抽成 {@code {u}}。
+     *
+     * <p>對話有兩條路（就地取代與小框），兩條都要叫這裡。先前只有就地取代在叫，
+     * 用小框看對話的人名字永遠學不到，叫到名字的台詞全部留在英文，
+     * 收集語料時還把名字原樣收了進去（實機回報 2026-09-18）。
+     *
+     * @return 這一句讓我們<b>新認出</b>一個名字
+     */
+    static boolean learnName(String raw, TranslationStore store) {
+        if (raw == null || com.wynnchayuan.capture.SelfNames.find(raw) != null) {
+            return false;
+        }
+        TranslationStore.Guess guess = store.playerNameIn(raw.strip());
+        if (guess == null) {
+            return false;
+        }
+        com.wynnchayuan.capture.SelfNames.propose(guess.name(), guess.source());
+        return com.wynnchayuan.capture.SelfNames.find(raw) != null;
+    }
+
     static String line(String text, TranslationStore store, int rows,
             Style style, int width) {
         // 先參數化再查表。
@@ -860,14 +882,7 @@ public final class DialogueRewriter {
         // 一律查不到——側邊面板翻得出來、就地取代翻不出來，差別就在這一步。
         // 用的是跟語料同一支參數化程式，兩邊算出來的模板才會一樣。
         String raw = text.strip();
-        // 暱稱不在任何一個 Minecraft API 裡，所以反過來問語料。見
-        // TranslationStore#playerNameIn：認出來一次，往後每一句都自己抽成 {u}。
-        if (com.wynnchayuan.capture.SelfNames.find(raw) == null) {
-            TranslationStore.Guess guess = store.playerNameIn(raw);
-            if (guess != null) {
-                com.wynnchayuan.capture.SelfNames.propose(guess.name(), guess.source());
-            }
-        }
+        learnName(raw, store);
         LineParts parts = LineParts.of(StyledText.fromString(raw));
         // 遊戲有時候真的印出「Player」這四個字，而不是玩家的名字——新手任務
         // 就有好幾句。那幾句語料裡早就翻好了（鍵是 {u}），只是模板對不起來。

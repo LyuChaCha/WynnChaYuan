@@ -70,6 +70,16 @@ public final class PlayerNameFromCorpusTest {
                        == null);
         report("空字串不會爆", store.playerNameIn("") == null);
 
+        // ★ 實機回報 2026-09-18：這幾句整句都在語料裡（鍵帶 {u}），名字卻沒被認出來，
+        // 收集語料時整句連同名字原樣收了進去。
+        String hey = "Hey " + NICK + "! What's up?";
+        report("★ 「Hey X! What's up?」夾得出暱稱（實際 " + name(store, hey) + "）",
+               NICK.equals(name(store, hey)));
+        String meet = NICK + "! Nice to meet you! I haven't been here in Detlas for long"
+                + " myself... still trying to figure things out.";
+        report("★ 名字在句首、後面還有地名（實際 " + name(store, meet) + "）",
+               NICK.equals(name(store, meet)));
+
         // ★ 實機那一句：打到「…out here, you're」時，語料裡某條 {u} 的鍵
         // 會把半句台詞夾出來當名字。v1.99.172 真的收了它，於是往後每一句
         // 含這幾個字的台詞都翻不出來。

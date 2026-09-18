@@ -622,7 +622,9 @@ public final class TranslationStore {
         if (post.length() < NAME_EVIDENCE) {
             return;                        // 名字後面沒幾個字，認不準
         }
-        playerKeys.add(new String[] {pre, post});
+        // 第三欄：後面那一段是不是被下一個佔位符截斷的。截斷的話畫面上
+        // 那一段之後還會接著地名、數字，見 #nameBetween。
+        playerKeys.add(new String[] {pre, post, stop >= 0 ? "open" : ""});
     }
 
     /**
@@ -663,7 +665,7 @@ public final class TranslationStore {
         }
         Guess found = null;
         for (String[] key : playerKeys) {
-            String name = nameBetween(raw, key[0], key[1]);
+            String name = nameBetween(raw, key[0], key[1], !key[2].isEmpty());
             if (name == null) {
                 continue;
             }
@@ -684,12 +686,28 @@ public final class TranslationStore {
      */
     public record Guess(String name, String source) {}
 
-    /** {@code raw} 去掉開頭的 {@code pre}、結尾對得上 {@code post} 之後夾著的那一段。 */
-    private String nameBetween(String raw, String pre, String post) {
+    /**
+     * {@code raw} 去掉開頭的 {@code pre}、結尾對得上 {@code post} 之後夾著的那一段。
+     *
+     * @param open {@code post} 在語料裡後面還接著佔位符（「{@code {u}! Nice to meet
+     *             you! I haven't been here in {p}…}」）。畫面上那一段之後會接著地名
+     *             和剩下的句子，永遠不會「以 post 結尾」——先前只比結尾，這種鍵
+     *             一條都認不出名字。這時改成找 post <b>第一次出現</b>的位置：
+     *             post 已經整段打出來了，證據跟整句吻合一樣強。
+     */
+    private String nameBetween(String raw, String pre, String post, boolean open) {
         if (!raw.startsWith(pre)) {
             return null;
         }
         String rest = raw.substring(pre.length());
+        if (open) {
+            int at = rest.indexOf(post);
+            if (at <= 0 || at > post.length()) {
+                return null;               // 還沒打到，或夾出來的比後面那段還長
+            }
+            String name = rest.substring(0, at);
+            return plausibleName(name) ? name : null;
+        }
         // 名字後面那一段要<b>整段</b>對上，不能只對上前幾個字。
         //
         // 先前為了「打字打到一半就認出名字」而放寬成只要對上

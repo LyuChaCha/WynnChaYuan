@@ -1,12 +1,33 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0_6",
+ "latest": "0.2.0_7",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0_7": {
+   "headline": "Dialogue lines that call you by your nickname are translated again",
+   "items": [
+    "The dialogue side panel now recognises your nickname, so lines that call you by name are translated",
+    "Your nickname is also recognised when a place name follows it in the same line"
+   ],
+   "zh_tw": {
+    "headline": "叫到你暱稱的台詞又能翻譯了",
+    "items": [
+     "對話小框也認得玩家暱稱，叫到你名字的台詞會正常翻譯",
+     "暱稱後面接著地名的台詞也認得出名字"
+    ]
+   },
+   "zh_cn": {
+    "headline": "叫到你昵称的台词又能翻译了",
+    "items": [
+     "对话小框也能识别玩家昵称，叫到你名字的台词会正常翻译",
+     "昵称后面接着地名的台词也能识别出名字"
+    ]
+   }
+  },
   "0.2.0_6": {
    "headline": "Boss bar names are translated, and Korean passes 50%",
    "items": [
