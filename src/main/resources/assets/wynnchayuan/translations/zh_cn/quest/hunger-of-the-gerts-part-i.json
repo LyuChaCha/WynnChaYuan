@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Hunger of the Gerts Part I",
-  "count": 112,
+  "count": 113,
   "translated": 113,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Hunger of the Gerts Part I#000": {
+   "src": "You should put the mask on before you leave.",
+   "dst": "出发前你最好先戴上面具。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Hunger of the Gerts Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Hunger of the Gerts Part I#001": {
    "src": "Talk to Cikal at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的 Cikal 交谈。",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#001": {
+  "Hunger of the Gerts Part I#002": {
    "src": "Oh, ho ho. What is this? A Human? What brings you to Gylia Watch - want to let your hair down a bit, I bet!",
    "dst": "噢，呵呵呵。这是什么？人类？什么风把你吹到 Gylia 守望队来了——我打赌是想来放松一下吧！",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#002": {
+  "Hunger of the Gerts Part I#003": {
    "src": "Of course you know who we are! The Gylia Watch was founded over {~} years ago in wake of the Villager victory in the war.",
    "dst": "你当然知道我们是谁！Gylia 守望队是在村民打赢那场战争之后成立的，已经有 {~} 多年了。",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#003": {
+  "Hunger of the Gerts Part I#004": {
    "src": "The Gerten war! Only the most famous war in all of modern Gavel! The might of the Villagers crushed those blasted Gerts - not that they were particularly hard to beat, heh.",
    "dst": "Gert 战争！现代 Gavel 最有名的战争！村民的力量把那些该死的 Gert 族打得落花流水——倒也不是说他们有多难打，嘿。",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#004": {
+  "Hunger of the Gerts Part I#005": {
    "src": "Gerts are stupid brutes, you see. The only thing they ever think about is food.",
    "dst": "你看，Gert 族都是些愚蠢的蛮子。他们脑子里除了吃什么都没有。",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#005": {
+  "Hunger of the Gerts Part I#006": {
    "src": "Get too close to one and it'll chomp your fingers off, quick as you like. And then the rest of you as well!",
    "dst": "离他们太近，他们眨眼间就会把你的手指咬掉。然后把你整个人也吃了！",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#006": {
+  "Hunger of the Gerts Part I#007": {
    "src": "The peace treaty keeps them inside their borders, and we get a delivery of supplies every month from {p} to send over to them.",
    "dst": "和平条约让他们待在自己的边界内，我们每个月会从 {p} 收到一批补给，再转送给他们。",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#007": {
+  "Hunger of the Gerts Part I#008": {
    "src": "Of course, we have to keep some of the supplies for ourselves - you've seen how hard these men are working, they deserve a bit of a party!",
    "dst": "当然，我们得留一些补给给自己——你也看到这些人工作多辛苦了，他们值得开个派对！",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#008": {
+  "Hunger of the Gerts Part I#009": {
    "src": "The Watch keeps a lookout over the Gerten borders day and night... well, maybe not on poker nights!",
    "dst": "守望队日夜监视着 Gert 的边界……嗯，打扑克的晚上可能不算！",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#009": {
+  "Hunger of the Gerts Part I#010": {
    "src": "Although... we have heard a couple of nasty rumors floating about - farmers disappearing from their houses and the such.",
    "dst": "不过……我们确实听到了一些不太好的传闻——农夫从家里失踪之类的。",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#010": {
+  "Hunger of the Gerts Part I#011": {
    "src": "If I really can't tempt you with a glass of wine and a round of poker, maybe you could go and check them out for us?",
    "dst": "如果一杯葡萄酒加一局扑克真的打动不了你，也许你可以帮我们去查查看？",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#011": {
+  "Hunger of the Gerts Part I#012": {
    "src": "I'd send the men, but... well, I'd feel bad if one of them went and missed all the partying!",
    "dst": "我是可以派手下去，可是……嗯，要是他们哪个错过了派对，我会过意不去的！",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#012": {
+  "Hunger of the Gerts Part I#013": {
    "src": "Here, you should head over and talk to Jitak, they're one of the farmers that lodged a complaint. Their house is west of here, I'll write down the co-ordinates.",
    "dst": "来，你该去找 Jitak 谈谈，他们是提出投诉的农夫之一。他们家在这里西边，我把坐标写给你。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#013": {
+  "Hunger of the Gerts Part I#014": {
    "src": "Talk to Jitak at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的 Jitak 交谈。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#014": {
+  "Hunger of the Gerts Part I#015": {
    "src": "If you are looking for a suit or something, I can't help you. Now is a very bad time.",
    "dst": "如果你是来找西装之类的，我帮不了你。现在很不是时候。",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#015": {
+  "Hunger of the Gerts Part I#016": {
    "src": "Oh, you're here on behalf of the Watch? Ha, even sending Humans to do their work is not beneath them.",
    "dst": "噢，你是替守望队来的？哈，他们连派人类来替他们干活都做得出来。",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#016": {
+  "Hunger of the Gerts Part I#017": {
    "src": "All they do is sit up in that tower playing drinking games and act like they own this region!",
    "dst": "他们就只会坐在那座塔上玩喝酒游戏，还表现得好像这片地区是他们的！",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#017": {
+  "Hunger of the Gerts Part I#018": {
    "src": "I reported the fact there is clearly a Gert camp right in front of my house and they just ignored me! Now look, my pigs are all gone!",
    "dst": "我报告说我家门前明明就有个 Gert 营地，他们却不理我！现在你看，我的猪全没了！",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#018": {
+  "Hunger of the Gerts Part I#019": {
    "src": "I knew it was a mistake getting this property so close to gerten borders. See, gerts aren't the 'brutes' people insist, but...",
    "dst": "我就知道把房子买在离 Gert 边界这么近的地方是个错误。你看，Gert 族并不像大家说的是“蛮子”，但是……",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#019": {
+  "Hunger of the Gerts Part I#020": {
    "src": "Well, they'll eat anything! Animals, fish, monsters, villagers, even humans! Biologically, they're just constantly hungry.",
    "dst": "嗯，他们什么都吃！动物、鱼、怪物、村民，连人类都吃！从生物学上来说，他们就是一直在饿。",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#020": {
+  "Hunger of the Gerts Part I#021": {
    "src": "The watch is meant to keep them behind their borders...",
    "dst": "守望队本该把他们挡在边界里面……",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#021": {
+  "Hunger of the Gerts Part I#022": {
    "src": "I even bought a golem to watch over them - Got it for a good price because of some incident down at the {p} factory.",
    "dst": "我甚至买了一台魔像来盯着他们——因为 {p} 工厂出了些事故，买得挺便宜的。",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#022": {
+  "Hunger of the Gerts Part I#023": {
    "src": "But somehow the gerts are managing to avoid it! Look, if you're here from the watch, could you help me out?",
    "dst": "可 Gert 族不知怎么就是能避开它！听着，如果你是守望队派来的，能帮帮我吗？",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#023": {
+  "Hunger of the Gerts Part I#024": {
    "src": "Go to the gert camp west of here and find out how they are doing all of this!",
    "dst": "去这里西边的 Gert 营地，查出他们是怎么做到这一切的！",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#024": {
+  "Hunger of the Gerts Part I#025": {
    "src": "Inspect the Gerten Forwarding Camp at [-{~}, {~}, -{~}].",
    "dst": "调查 [-{~}, {~}, -{~}] 的 Gert 前哨营地。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#025": {
+  "Hunger of the Gerts Part I#026": {
    "src": "Investigate the cave in the back of the camp at [-{~}, {~}, -{~}].",
    "dst": "调查 [-{~}, {~}, -{~}] 营地后方的洞穴。",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#026": {
+  "Hunger of the Gerts Part I#027": {
    "src": "Explore the Gerten cave.",
    "dst": "探索 Gert 洞穴。",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#027": {
+  "Hunger of the Gerts Part I#028": {
    "src": "-Good job to all of you! I am proud to say we made the cave road very well.",
    "dst": "——大家都干得好！我很骄傲地说，我们把洞穴路挖得很好。",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Gerten Chief Snaga",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#028": {
+  "Hunger of the Gerts Part I#029": {
    "src": "The town folk at Gylia steal the stuff meant for us for their party, and leave us high and dry!",
    "dst": "Gylia 的镇民拿走给我们的东西去开派对，让我们什么都拿不到！",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Gerten Chief Snaga",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#029": {
+  "Hunger of the Gerts Part I#030": {
    "src": "But those dumb over fed town folk did not catch us when we dug our cave road right under their watch house.",
    "dst": "可是那些吃太饱的笨镇民，没发现我们就在他们的守望屋底下挖了洞穴路。",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Gerten Chief Snaga",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#030": {
+  "Hunger of the Gerts Part I#031": {
    "src": "With our new way to get to Gylia land we have more stuff than ever!",
    "dst": "有了去 Gylia 地盘的新路，我们的东西比以前都多！",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Gerten Chief Snaga",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#031": {
+  "Hunger of the Gerts Part I#032": {
    "src": "Exit the gerten cave.",
    "dst": "离开 Gert 洞穴。",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#032": {
+  "Hunger of the Gerts Part I#033": {
    "src": "Return to Jitak at [-{~}, {~}, -{~}].",
    "dst": "回到 [-{~}, {~}, -{~}] 的 Jitak 那里。",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#033": {
+  "Hunger of the Gerts Part I#034": {
    "src": "Human! You're back... and haven't been eaten by a Gert!",
    "dst": "人类！你回来了……而且没被 Gert 吃掉！",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#034": {
+  "Hunger of the Gerts Part I#035": {
    "src": "What did you discover in the camp?",
    "dst": "你在营地里发现了什么？",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#035": {
+  "Hunger of the Gerts Part I#036": {
    "src": "A tunnel?! Past Gerten borders? That must be how they're managing to get in and steal my livestock.",
    "dst": "隧道？！穿过 Gert 边界？他们一定就是这样溜进来偷我的牲畜的。",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#036": {
+  "Hunger of the Gerts Part I#037": {
    "src": "Look, human. The Watch aren't gonna do anything about this. Please... maybe you can help me.",
    "dst": "听着，人类。守望队是不会管这件事的。拜托……也许你能帮我。",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#037": {
+  "Hunger of the Gerts Part I#038": {
    "src": "If you can disguise yourself as a Gert maybe you could sneak into their main camp and check out this tunnel?",
    "dst": "如果你能伪装成 Gert，也许就能偷偷溜进他们的主营地，查查这条隧道？",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#038": {
+  "Hunger of the Gerts Part I#039": {
    "src": "Okay! As you can see, all Gerts wear a carved pumpkin on their head - something to do with their culture.",
    "dst": "好！你也看到了，所有 Gert 头上都戴着雕刻过的南瓜——跟他们的文化有关。",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#039": {
+  "Hunger of the Gerts Part I#040": {
    "src": "There's a pumpkin farm near here at [-{~}, {~}, -{~}]... maybe you could get one from there?",
    "dst": "这附近 [-{~}, {~}, -{~}] 有个南瓜田……也许你可以从那里弄一个？",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#040": {
+  "Hunger of the Gerts Part I#041": {
    "src": "Go to the gerten pumpkin farm at [-{~}, {~}, -{~}].",
    "dst": "前往 [-{~}, {~}, -{~}] 的 Gert 南瓜田。",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#041": {
+  "Hunger of the Gerts Part I#042": {
    "src": "... hello.",
    "dst": "……你好。",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#042": {
+  "Hunger of the Gerts Part I#043": {
    "src": "Oh good, were you sent here to be my lunch?",
    "dst": "噢太好了，你是被派来当我午饭的吗？",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#043": {
+  "Hunger of the Gerts Part I#044": {
    "src": "Are you here to be my lunch?",
    "dst": "你是来当我午饭的吗？",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#044": {
+  "Hunger of the Gerts Part I#045": {
    "src": "Oh, goodie!",
    "dst": "噢，太棒了！",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#045": {
+  "Hunger of the Gerts Part I#046": {
    "src": "Oh. What are you then, some kind of snack?",
    "dst": "噢。那你是什么，某种点心吗？",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#046": {
+  "Hunger of the Gerts Part I#047": {
    "src": "... Is that a joke? What are you, some kind of snack?",
    "dst": "……那是在开玩笑吗？你是什么，某种点心吗？",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#047": {
+  "Hunger of the Gerts Part I#048": {
    "src": "A who.. man? Oh, you mean new folk! All the way here in gerten lands? I have not seen one of you here.",
    "dst": "一个人……类？噢，你是说新来的人！大老远跑到 Gert 的地盘来？我在这里还没见过你们这种人。",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#048": {
+  "Hunger of the Gerts Part I#049": {
    "src": "I do want to know how you taste...",
    "dst": "我真的很想知道你是什么味道……",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#049": {
+  "Hunger of the Gerts Part I#050": {
    "src": "Doing? I am here to guard the orange gourd farm, of course!",
    "dst": "在做什么？我当然是在这里看守橙色葫芦田啊！",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#050": {
+  "Hunger of the Gerts Part I#051": {
    "src": "This farm right here is where all the gerts get their day mask from!",
    "dst": "所有 Gert 的白天面具都是从这片田里来的！",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#051": {
+  "Hunger of the Gerts Part I#052": {
    "src": "No, new folk. Gerts only in this farm.",
    "dst": "不行，新来的人。这片田只让 Gert 进。",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#052": {
+  "Hunger of the Gerts Part I#053": {
    "src": "That is why I am put here. To make sure no one gets in.",
    "dst": "所以才派我在这里。确保没有人进去。",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#053": {
+  "Hunger of the Gerts Part I#054": {
    "src": "But but I get so bored... and I really want to eat...",
    "dst": "可是可是我好无聊……而且我真的好想吃东西……",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#054": {
+  "Hunger of the Gerts Part I#055": {
    "src": "Like, with the clear green rocks?",
    "dst": "像是，那种透明的绿石头？",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#055": {
+  "Hunger of the Gerts Part I#056": {
    "src": "No new folk, gerts do not have any need for green rocks. But...",
    "dst": "不要，新来的人，Gert 不需要绿石头。可是……",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#056": {
+  "Hunger of the Gerts Part I#057": {
    "src": "How about this - I will just eat you!",
    "dst": "不如这样——我直接把你吃了！",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#057": {
+  "Hunger of the Gerts Part I#058": {
    "src": "Amazing! Here I go!",
    "dst": "太好了！我要开动了！",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#058": {
+  "Hunger of the Gerts Part I#059": {
    "src": "Oh...",
    "dst": "噢……",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#059": {
+  "Hunger of the Gerts Part I#060": {
    "src": "Well, I think I will still eat you. Just how it is!",
    "dst": "嗯，我想我还是要吃你。就是这样！",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#060": {
+  "Hunger of the Gerts Part I#061": {
    "src": "Oh, it is a thing gerts have been doing for as long as we know.",
    "dst": "噢，那是 Gert 从我们记得的时候就一直在做的事。",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#061": {
+  "Hunger of the Gerts Part I#062": {
    "src": "At wake time each day a gert takes an orange gourd and eats into it a shape that shows their mood!",
    "dst": "每天起床的时候，Gert 会拿一个橙色葫芦，在上面咬出代表自己心情的形状！",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#062": {
+  "Hunger of the Gerts Part I#063": {
    "src": "It is really nice, is it not?",
    "dst": "真的很不错，对吧？",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#063": {
+  "Hunger of the Gerts Part I#064": {
    "src": "We all want to eat all the time!",
    "dst": "我们一直都想吃东西！",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#064": {
+  "Hunger of the Gerts Part I#065": {
    "src": "On that note...",
    "dst": "说到这个……",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#065": {
+  "Hunger of the Gerts Part I#066": {
    "src": "Oh... goodbye. Come back soon? With some food?",
    "dst": "噢……再见。快点回来好吗？带点吃的？",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#066": {
+  "Hunger of the Gerts Part I#067": {
    "src": "Find a way to distract the Gert Guard with some food nearby.",
    "dst": "在附近找些食物引开 Gert 守卫的注意。",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#067": {
+  "Hunger of the Gerts Part I#068": {
    "src": "Oh man, a red tree fruit! I should not leave my post... but I want to eat...",
    "dst": "噢天啊，红色的树果！我不该离开岗位……可是我想吃……",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#068": {
+  "Hunger of the Gerts Part I#069": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#069": {
+  "Hunger of the Gerts Part I#070": {
    "src": "It is only a few steps that way...",
    "dst": "只要往那边走几步……",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#070": {
+  "Hunger of the Gerts Part I#071": {
    "src": "That tastes so good! What a good red tree fruit.",
    "dst": "太好吃了！真是个好红树果。",
    "role": "desc",
@@ -716,7 +726,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#071": {
+  "Hunger of the Gerts Part I#072": {
    "src": "... If I wait here, more might fall from the sky!",
    "dst": "……如果我在这里等，也许还会有更多从天上掉下来！",
    "role": "desc",
@@ -726,7 +736,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#072": {
+  "Hunger of the Gerts Part I#073": {
    "src": "Enter the pumpkin farm at [-{~}, {~}, -{~}].",
    "dst": "进入 [-{~}, {~}, -{~}] 的南瓜田。",
    "role": "desc",
@@ -736,7 +746,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#073": {
+  "Hunger of the Gerts Part I#074": {
    "src": "Find a pumpkin to use as a gert mask.",
    "dst": "找一个南瓜当作 Gert 面具。",
    "role": "desc",
@@ -746,7 +756,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#074": {
+  "Hunger of the Gerts Part I#075": {
    "src": "Hey! What're you doing in the pumpkin farm at this hour?",
    "dst": "嘿！这个时间你在南瓜田里干什么？",
    "role": "desc",
@@ -756,7 +766,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#075": {
+  "Hunger of the Gerts Part I#076": {
    "src": "Wait a minute... why does your pumpkin look like that?!",
    "dst": "等一下……你的南瓜为什么长那样？！",
    "role": "desc",
@@ -766,7 +776,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#076": {
+  "Hunger of the Gerts Part I#077": {
    "src": "Why isn't your pumpkin like all the others?",
    "dst": "你的南瓜为什么跟其他人的不一样？",
    "role": "desc",
@@ -776,7 +786,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#077": {
+  "Hunger of the Gerts Part I#078": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -786,7 +796,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#078": {
+  "Hunger of the Gerts Part I#079": {
    "src": "You're not a gert at all! You're a human! Gerts are never not hungry!",
    "dst": "你根本不是 Gert！你是人类！Gert 从来不会不饿！",
    "role": "desc",
@@ -796,7 +806,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#079": {
+  "Hunger of the Gerts Part I#080": {
    "src": "Sorry, human, but this is private gerten land. And, well... a gert's gotta eat!",
    "dst": "抱歉了，人类，这里是 Gert 的私有土地。而且，嗯……Gert 总得吃饭嘛！",
    "role": "desc",
@@ -806,7 +816,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#080": {
+  "Hunger of the Gerts Part I#081": {
    "src": "Hey! Why are you at the orange gourd farm so late?",
    "dst": "嘿！你这么晚在橙色葫芦田干什么？",
    "role": "desc",
@@ -816,7 +826,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#081": {
+  "Hunger of the Gerts Part I#082": {
    "src": "Look, we need some gerts for a trip to hunt in the new cave road.",
    "dst": "听着，我们需要一些 Gert 去新的洞穴路打猎。",
    "role": "desc",
@@ -826,7 +836,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#082": {
+  "Hunger of the Gerts Part I#083": {
    "src": "You know, the one in the camp just north of the Gylia Watch?",
    "dst": "你知道的，就是 Gylia 守望队北边那个营地里的那条？",
    "role": "desc",
@@ -836,7 +846,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#083": {
+  "Hunger of the Gerts Part I#084": {
    "src": "Come over here to help us!",
    "dst": "过来帮我们！",
    "role": "desc",
@@ -846,7 +856,7 @@
    "speaker": "Gert Guard",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#084": {
+  "Hunger of the Gerts Part I#085": {
    "src": "Return to Jitak with the gert mask at [-{~}, {~}, -{~}].",
    "dst": "带着 Gert 面具回到 [-{~}, {~}, -{~}] 的 Jitak 那里。",
    "role": "desc",
@@ -856,7 +866,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#085": {
+  "Hunger of the Gerts Part I#086": {
    "src": "Ah, a Gert!",
    "dst": "啊，一个 Gert！",
    "role": "desc",
@@ -866,7 +876,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#086": {
+  "Hunger of the Gerts Part I#087": {
    "src": "Oh wait...human, it's you! Wow, you look exactly like a Gert. You're definitely going to blend in at the main camp.",
    "dst": "噢等等……人类，是你！哇，你看起来跟 Gert 一模一样。你到主营地一定能混进去。",
    "role": "desc",
@@ -876,7 +886,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#087": {
+  "Hunger of the Gerts Part I#088": {
    "src": "Okay, head over to the main camp at [-{~}, {~}, -{~}] and see if you can find the tunnel!",
    "dst": "好，去 [-{~}, {~}, -{~}] 的主营地，看看能不能找到隧道！",
    "role": "desc",
@@ -886,7 +896,7 @@
    "speaker": "Jitak",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#088": {
+  "Hunger of the Gerts Part I#089": {
    "src": "Enter the secret gert tunnel at [-{~}, {~}, -{~}].",
    "dst": "进入 [-{~}, {~}, -{~}] 的 Gert 秘密隧道。",
    "role": "desc",
@@ -896,7 +906,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#089": {
+  "Hunger of the Gerts Part I#090": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -906,7 +916,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#090": {
+  "Hunger of the Gerts Part I#091": {
    "src": "Why aren't you eating?",
    "dst": "你怎么不吃东西？",
    "role": "desc",
@@ -916,7 +926,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#091": {
+  "Hunger of the Gerts Part I#092": {
    "src": "You're not a gert... you're a human! Get them!",
    "dst": "你不是 Gert……你是人类！抓住他们！",
    "role": "desc",
@@ -926,7 +936,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#092": {
+  "Hunger of the Gerts Part I#093": {
    "src": "Quiet! We need to try to hear what the bad town folk at the watch house talk about!",
    "dst": "安静！我们得试着听听守望屋那些坏镇民在说什么！",
    "role": "desc",
@@ -936,7 +946,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#093": {
+  "Hunger of the Gerts Part I#094": {
    "src": "Watch!",
    "dst": "看！",
    "role": "desc",
@@ -946,7 +956,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#094": {
+  "Hunger of the Gerts Part I#095": {
    "src": "-silly gerts don't even know we're taking their supplies!",
    "dst": "——那些蠢 Gert 根本不知道我们在拿他们的补给！",
    "role": "desc",
@@ -956,7 +966,7 @@
    "speaker": "Gylia Captain",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#095": {
+  "Hunger of the Gerts Part I#096": {
    "src": "Besides, we need those supplies more than they do... especially the alcohol, eh boys?!",
    "dst": "况且，我们比他们更需要那些补给……尤其是酒，对吧兄弟们？！",
    "role": "desc",
@@ -966,7 +976,7 @@
    "speaker": "Gylia Watchman",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#096": {
+  "Hunger of the Gerts Part I#097": {
    "src": "I don't even know why {p} keeps on sending all this stuff for the Gerts - can't we just starve 'em out? Screw the lot of 'em, I say!",
    "dst": "我真搞不懂 {p} 为什么一直给 Gert 族送这些东西——就不能饿死他们吗？我说，让他们全都去死吧！",
    "role": "desc",
@@ -976,7 +986,7 @@
    "speaker": "Gylia Watchman",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#097": {
+  "Hunger of the Gerts Part I#098": {
    "src": "Damned right, boys! Now look, another shipment just came in - let's skim a little more of the top this time, eh?",
    "dst": "说得好，兄弟们！看，又来了一批货——这次我们再多揩一点油，嗯？",
    "role": "desc",
@@ -986,7 +996,7 @@
    "speaker": "Gylia Captain",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#098": {
+  "Hunger of the Gerts Part I#099": {
    "src": "Our kegs have been running a bit low again.",
    "dst": "我们的酒桶又快见底了。",
    "role": "desc",
@@ -996,7 +1006,7 @@
    "speaker": "Gylia Captain",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#099": {
+  "Hunger of the Gerts Part I#100": {
    "src": "Agh! That stuff is meant to be ours... the peace deal said we have to get some stuff each month!",
    "dst": "啊！那些东西本来是我们的……和平协议说我们每个月都要拿到一些东西！",
    "role": "desc",
@@ -1006,7 +1016,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#100": {
+  "Hunger of the Gerts Part I#101": {
    "src": "Those bad town folk... -you! go tell the chief!",
    "dst": "那些坏镇民……——你！去告诉首领！",
    "role": "desc",
@@ -1016,7 +1026,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#101": {
+  "Hunger of the Gerts Part I#102": {
    "src": "tell the chief what we heard! It might be time to fight back at the watch house!",
    "dst": "把我们听到的告诉首领！也许是时候反击守望屋了！",
    "role": "desc",
@@ -1026,7 +1036,7 @@
    "speaker": "Gert",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#102": {
+  "Hunger of the Gerts Part I#103": {
    "src": "Leave the tunnel and inform someone about the information you overheard.",
    "dst": "离开隧道，把你偷听到的情报告诉别人。",
    "role": "desc",
@@ -1036,7 +1046,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#103": {
+  "Hunger of the Gerts Part I#104": {
    "src": "What? The town folk talk out loud that they take our stuff!",
    "dst": "什么？镇民大声说他们拿走我们的东西！",
    "role": "desc",
@@ -1046,7 +1056,7 @@
    "speaker": "Gert Battle Chief",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#104": {
+  "Hunger of the Gerts Part I#105": {
    "src": "That is it! We will go to war with them!",
    "dst": "够了！我们要跟他们开战！",
    "role": "desc",
@@ -1056,7 +1066,7 @@
    "speaker": "Gert Battle Chief",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#105": {
+  "Hunger of the Gerts Part I#106": {
    "src": "Thank you, small gert, that you told me this! We will crush the lazy town folk and eat what is left of them!",
    "dst": "谢谢你，小 Gert，把这件事告诉我！我们要打垮那些懒惰的镇民，把他们剩下的都吃掉！",
    "role": "desc",
@@ -1066,7 +1076,7 @@
    "speaker": "Gert Battle Chief",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#106": {
+  "Hunger of the Gerts Part I#107": {
    "src": "Hey there! How's the - burp - investigation going, heh?",
    "dst": "嘿，你好！调查进行得——嗝——怎么样了，嘿？",
    "role": "desc",
@@ -1076,7 +1086,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#107": {
+  "Hunger of the Gerts Part I#108": {
    "src": "Eh? Oh, you're back.",
    "dst": "嗯？噢，你回来了。",
    "role": "desc",
@@ -1086,7 +1096,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#108": {
+  "Hunger of the Gerts Part I#109": {
    "src": "What's that?! You're accusing the Watch of stealing supplies from the Gerts? Well I don't even know what to say, I've never even HEARD of such-",
    "dst": "什么？！你指控守望队偷 Gert 族的补给？我简直不知道该说什么，我从来没听说过这种——",
    "role": "desc",
@@ -1096,7 +1106,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#109": {
+  "Hunger of the Gerts Part I#110": {
    "src": "Actually, you know what? I was going to make up a lie, but why bother? We have been stealing those supplies!",
    "dst": "其实，你知道吗？我本来想编个谎，但何必呢？我们确实一直在偷那些补给！",
    "role": "desc",
@@ -1106,7 +1116,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#110": {
+  "Hunger of the Gerts Part I#111": {
    "src": "It's not like the Gerts deserve them - all they do is sit in their little camps talk about how tasty the Watch members must be.",
    "dst": "反正 Gert 族也不配拿——他们就只会坐在自己的小营地里，谈论守望队的人吃起来会有多香。",
    "role": "desc",
@@ -1116,7 +1126,7 @@
    "speaker": "Cikal",
    "source": "wiki"
   },
-  "Hunger of the Gerts Part I#111": {
+  "Hunger of the Gerts Part I#112": {
    "src": "So if they think they can attack us, the might Gylia Watch, let them try! And you, human, would do well to stay out of the way!",
    "dst": "所以如果他们以为能攻击我们，攻击强大的 Gylia 守望队，就让他们来试试！至于你，人类，最好别挡路！",
    "role": "desc",
@@ -1125,16 +1135,6 @@
    "stage": "Stage 14",
    "speaker": "Cikal",
    "source": "wiki"
-  },
-  "Hunger of the Gerts Part I#000~1": {
-   "src": "You should put the mask on before you leave.",
-   "dst": "出发前你最好先戴上面具。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hunger of the Gerts Part I",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

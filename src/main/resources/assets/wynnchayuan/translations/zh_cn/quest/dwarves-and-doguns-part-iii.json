@@ -1,762 +1,12 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part III",
-  "count": 75,
+  "count": 80,
   "translated": 80,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dwarves and Doguns Part III#000": {
-   "src": "Return to the Dogun Village with the letter and speak to Korzim.",
-   "dst": "带着信回到 Dogun 村，与 Korzim 交谈。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#001": {
-   "src": "We...have an issue. A dire one... Where is...Axelus at a time...like this?",
-   "dst": "我们……有麻烦了。很严重的麻烦……在这种时候……Axelus 去哪了？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#002": {
-   "src": "...human... This is a brick.",
-   "dst": "……人类……这是一块砖头。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#003": {
-   "src": "Oh... From Axelus, then...? He could not find...a stone? That...does not bode well.",
-   "dst": "噢……那么是 Axelus 给的……？他找不到……石头？那……可不是好兆头。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#004": {
-   "src": "He is trying to...reason with the Dwarven King? There is...no one else...then. You... You will have to...help.",
-   "dst": "他在试着……跟矮人国王讲道理？那……就没有别人了。你……你得……帮忙。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#005": {
-   "src": "The chieftain is...desperate. He has enacted a...terrible plan. They are planning on summoning Garaheth.",
-   "dst": "酋长……走投无路了。他启动了一个……可怕的计划。他们打算召唤 Garaheth。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#006": {
-   "src": "If they succeed...we all die. Dwarves... Doguns... Possibly even Villagers...and then... Humans as well.",
-   "dst": "如果他们成功了……我们全都会死。矮人……Dogun……甚至可能连村民……然后……人类也一样。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#007": {
-   "src": "Garaheth is a...horrible demon. We used to worship him...thousands of years ago.",
-   "dst": "Garaheth 是个……可怕的恶魔。我们曾经……在几千年前崇拜过他。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#008": {
-   "src": "I only overheard parts... But enough to be certain. They are preparing...to the south. At a disused...ritual site.",
-   "dst": "我只偷听到一部分……但足以确定。他们正在……南边准备。在一个废弃的……仪式场地。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#009": {
-   "src": "Meet me there... Do not just attack. We may be able to...resolve it peacefully. I will wait...by the staircase.",
-   "dst": "在那里跟我会合……不要直接动手。我们也许能……和平解决。我会在……楼梯旁等你。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#010": {
-   "src": "Investigate the structure to the south.",
-   "dst": "调查南边的建筑。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#011": {
-   "src": "We shall take the east tower... Hide there...and watch.",
-   "dst": "我们去东边的塔……躲在那里……观察。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 2",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#012": {
-   "src": "Interrupting...at this point will have...disastrous consequences. We must let them continue...and pray they fail.",
-   "dst": "这个时候打断……会造成……灾难性的后果。我们只能让他们继续……祈祷他们失败。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 2",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#013": {
-   "src": "Reach into the darkness...and grasp the hand of Garaheth to purge the intruders...",
-   "dst": "伸入黑暗……握住 Garaheth 之手，清除入侵者……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 2",
-   "speaker": "Dogun Chieftain",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#014": {
-   "src": "This is a worst-case scenario... Meet me in {p}. We will talk more there...",
-   "dst": "这是最坏的情况……到 {p} 跟我会合。我们到那里再详谈……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 2",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#015": {
-   "src": "Travel to {p} and meet Korzim at the entrance. [{~},-{~}]",
-   "dst": "前往 {p}，在入口与 Korzim 会合。[{~},-{~}]",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#016": {
-   "src": "Hoho...! Over here...fine traveler! Join me at the gates!",
-   "dst": "呵呵……！这边……尊贵的旅人！到城门这里来找我！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 3",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#017": {
-   "src": "This dwarf voice is...horrible on my throat...but it is an effective disguise...is it not?",
-   "dst": "这矮人的嗓音……对我的喉咙真是折磨……不过这伪装……挺有效的……不是吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 3",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#018": {
-   "src": "We are headed to...a blacksmith in town. Follow me...",
-   "dst": "我们要去……镇上的一个铁匠那里。跟我来……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 3",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#019": {
-   "src": "Talk to the blacksmith in {p} at {~} {~} -{~}",
-   "dst": "与 {p} {~} {~} -{~} 的铁匠交谈",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#020": {
-   "src": "...Korzim...what in the name of all that is holy is that disguise?",
-   "dst": "……Korzim……以一切神圣之名，你这是什么伪装？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#021": {
-   "src": "I'm flabbergasted you fooled anyone with that thing! How did you stop the beard from burning?",
-   "dst": "你竟然能用那玩意骗过别人，我简直惊呆了！你是怎么让胡子不烧起来的？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#022": {
-   "src": "But, erm...more importantly, who's the buck in the fancy armour there?",
-   "dst": "不过，呃……更重要的是，那边穿着华丽盔甲的家伙是谁？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#023": {
-   "src": "An ally...of the coalition. No time...Edula. Doguns... summoning... Garaheth.",
-   "dst": "一个盟友……联盟的。没时间了……Edula。Dogun……在召唤……Garaheth。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#024": {
-   "src": "So...so it's really down to that low, then. Burning your own house down to kill the rats.",
-   "dst": "所以……所以真的到了这个地步了。为了杀老鼠，把自己的房子都烧了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#025": {
-   "src": "Good thing we've got this prepared. One fallout will prevent the next. Soldier, I've got a list of materials we need!",
-   "dst": "还好我们早有准备。一场灾难能防住下一场。士兵，我这里有一张我们需要的材料清单！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#026": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
-   "dst": "你需要 [{~} 火焰蛛丝]。镇子底下的热疤蜘蛛会吐这种丝，入口拱门旁边就有个洞窟。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#027": {
-   "src": "Then, [{~} Magmatic Crystals] from the {p} mines. I'd get them myself, but...I'm banned from there since the rubber mallet incident.",
-   "dst": "然后，从 {p} 矿坑拿 [{~} 岩浆水晶]。我本来可以自己去拿，可是……自从橡胶锤事件之后我就被禁止进去了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#028": {
-   "src": "Lastly, [{~} Crystallized Lava]. The closest source is in the lava lake just outside {p}. There's a protruding crater in the lake.",
-   "dst": "最后，[{~} 结晶熔岩]。最近的来源在 {p} 外面的熔岩湖里。湖里有个突起的火山口。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#029": {
-   "src": "Bring back [{~} Fire Webs], [{~} Magmatic Crystals], and [{~} Crystallized lava].",
-   "dst": "带回 [{~} 火焰蛛丝]、[{~} 岩浆水晶] 和 [{~} 结晶熔岩]。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#030": {
-   "src": "The crystal formation... It is definitely here.",
-   "dst": "水晶群……肯定就在这里。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#031": {
-   "src": "I will clear the lava... On my signal, move. And do not stop.",
-   "dst": "我来清开熔岩……等我信号，就走。而且别停。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#032": {
-   "src": "Move! Move! MOVE!",
-   "dst": "走！走！快走！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#033": {
-   "src": "Mhm, looks like everything's in order. Now, for a short explanation.",
-   "dst": "嗯嗯，看起来都没问题。现在，简单解释一下。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#034": {
-   "src": "These materials go into crafting a special charm. It will allow you to resist demon fire.",
-   "dst": "这些材料是用来打造一种特殊护符的。它能让你抵挡恶魔之火。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#035": {
-   "src": "We need to account for if they finish the summoning, so this'll help keep you safe if you end up having to square off with Garaheth.",
-   "dst": "我们得考虑到他们完成召唤的可能，所以万一你得跟 Garaheth 正面交锋，这能帮你保住性命。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#036": {
-   "src": "You will need to craft it yourself, so its magic will bond to you. I've got a station just for it.",
-   "dst": "你得亲手打造它，这样它的魔法才会跟你结合。我有一个专门的工作台。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#037": {
-   "src": "Right-click the crafting table in the back and put it together.",
-   "dst": "右键点击后面的工作台，把它组装起来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 5",
-   "speaker": "Edula",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#038": {
-   "src": "Craft the amulet in the crafting table.",
-   "dst": "在工作台上打造护符。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#039": {
-   "src": "We must... visit... Sanba... the enchanter.",
-   "dst": "我们必须……去找……附魔师……Sanba。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 6",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#040": {
-   "src": "Go to the enchanter and enchant the amulet.",
-   "dst": "前往附魔师那里给护符附魔。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 7",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#041": {
-   "src": "Erm...Korzim, what on earth are you doing here? It's not safe for you!",
-   "dst": "呃……Korzim，你到底在这里干什么？这里对你不安全！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 7",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#042": {
-   "src": "Wait, that amulet...oh no, really? Okay, I know what^s going on.",
-   "dst": "等等，那个护符……噢不，真的吗？好，我知道是怎么回事了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 7",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#043": {
-   "src": "We're going to need to give this a little extra kick if you're going to use this for what I think you are.",
-   "dst": "如果你们要拿它去做我想的那件事，我们得给它再加点料。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 7",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#044": {
-   "src": "A pinch of fire scarab tail, splash of sulphur, exactly three ounces of old brimstone...!",
-   "dst": "一撮火甲虫尾巴，一点硫磺，刚好三盎司的陈年硫磺石……！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 7",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#045": {
-   "src": "Infunde hoc monile, alta intra monte. Magia!",
-   "dst": "Infunde hoc monile, alta intra monte. Magia!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 7",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#046": {
-   "src": "Meet me in the back, we can't talk out here. You never know who's listening...",
-   "dst": "到后面来找我，在这里不能谈。你永远不知道谁在偷听……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 7",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#047": {
-   "src": "Enter the storage room in the enchanter's house.",
-   "dst": "进入附魔师家的储藏室。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#048": {
-   "src": "Supposing you're here to help, Soldier. Garaheth's being summoned if you're getting this...",
-   "dst": "我想你是来帮忙的吧，士兵。如果你拿到这个，就代表 Garaheth 正在被召唤……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#049": {
-   "src": "Axelus prepped a contingency plan for this, but having to put it in action is surreal. Let me fill you in.",
-   "dst": "Axelus 为这种情况准备了应急计划，可真到了要执行的时候，还是觉得很不真实。我来给你讲讲。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#050": {
-   "src": "That dragon skeleton lying in the Heights belonged to an Ice Drake. Centuries ago, it was used in the Dogun wars.",
-   "dst": "躺在高地的那具龙骨属于一头冰龙。几百年前，它在 Dogun 战争中被派上用场。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#051": {
-   "src": "It had incredibly potent magic, particularly in its icy breath. The area it hit is still frozen to this day, and shows no signs of thaw.",
-   "dst": "它拥有极其强大的魔法，尤其是它冰冷的吐息。被它击中的地方至今仍然冰封，丝毫没有解冻的迹象。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#052": {
-   "src": "According to Axelus' stories, its breath travelled through the tunnels and coalesced someplace deep within...",
-   "dst": "根据 Axelus 的说法，它的吐息穿过隧道，在深处某个地方凝聚了起来……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#053": {
-   "src": "...becoming True Ice, a potent mixture of sheer cold and magic energy. That's what we will need to combat Garaheth.'",
-   "dst": "……变成了真冰，一种极寒与魔法能量的强效混合物。那就是我们对付 Garaheth 需要的东西。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#054": {
-   "src": "If you bring me [{~} True Ice] I can make a staff capable of harnessing it...and we can freeze Garaheth in its tracks.",
-   "dst": "如果你给我带来 [{~} 真冰]，我就能做一根能驾驭它的法杖……然后我们就能把 Garaheth 冻在原地。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#055": {
-   "src": "Head north to the Freezing Heights and make your way to the top, now! We've got no time at all!",
-   "dst": "往北去冰冻高地，爬到最上面，快！我们一点时间都没有了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 8",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#056": {
-   "src": "Travel to the frozen heights and find {~} True Ice.",
-   "dst": "前往冰冻高地，找到 {~} 块真冰。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#057": {
-   "src": "... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
-   "dst": "……这里……这里以前是……一个 Dogun 小镇。矮人把它变成了荒地。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#058": {
-   "src": "They used the Drake... They chained it up and...forced it to attack. We had to kill it...",
-   "dst": "他们利用了那头冰龙……他们用锁链锁住它……逼它攻击。我们只好杀了它……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#059": {
-   "src": "It... froze my town... as it died. I was there... {~} years ago.",
-   "dst": "它……在死去时……冻住了我的小镇。我当时就在……{~} 年前。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#060": {
-   "src": "I know the way... into the caves.",
-   "dst": "我知道……进洞穴的路。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#061": {
-   "src": "The True Ice...is deep inside. I will struggle to...stay warm here.",
-   "dst": "真冰……在很深的地方。在这里我很难……保持温暖。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#062": {
-   "src": "I will try to run through...as quickly as possible. The ice is...painful.",
-   "dst": "我会尽量……快速跑过去。这冰……好痛。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#063": {
-   "src": "We must... move fast... or... we will both.... freeze.",
-   "dst": "我们必须……快点走……否则……我们俩都会……冻住。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#064": {
-   "src": "Maybe... I am... hotter than... I thought... do you.. Hear that?",
-   "dst": "也许……我比……我想的……还热……你……听到了吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#065": {
-   "src": "Oh no... I think... It's... COLLAPSING.",
-   "dst": "噢不……我想……它……要塌了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#066": {
-   "src": "My... feet are... solid... Keep... running.",
-   "dst": "我的……脚……冻僵了……继续……跑。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#067": {
-   "src": "This is it... The thing that... Killed my families... [{~} True Ice].",
-   "dst": "就是它……那个……杀死我家人的东西……[{~} 真冰]。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 9",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#068": {
-   "src": "Return to the enchanter with the True Ice.",
-   "dst": "带着真冰回到附魔师那里。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#069": {
-   "src": "Impressive, you two. Must've been tough to get that...doubly so for Korzim.",
-   "dst": "厉害，你们俩。拿到那个一定很辛苦……对 Korzim 来说更是加倍辛苦。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 10",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#070": {
-   "src": "Here is the staff, {u}. Keep it safe, and don't you go dying on us.",
-   "dst": "法杖在这里，{u}。好好保管，可别死了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 10",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#071": {
-   "src": "My husband and I will round up the coalition and get them to act now. We need to get going before-",
-   "dst": "我和我丈夫会召集联盟，让他们马上行动。我们得赶紧出发，免得——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 10",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#072": {
-   "src": "...that's the barracks door. That's the barracks door!!",
-   "dst": "……那是兵营的门。那是兵营的门！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 10",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#073": {
-   "src": "Men! We have to meet for briefing on the surface, the war is due any hour now! Move faster!",
-   "dst": "弟兄们！我们得到地面上集合听简报，战争随时都会开始！快点！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 10",
-   "speaker": "Maex Soldier",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#074": {
-   "src": "They're already going?! We're out of time! Korzim is waiting for you just upstairs when you reach level {~}. Go train! NOW!",
-   "dst": "他们已经出发了？！我们没时间了！等你到了 {~} 级，Korzim 就在楼上等你。去练级！马上！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 10",
-   "speaker": "Sanba",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#000~1": {
    "src": "{u}...I take back my statement. They have already begun... There cannot be reasoning.",
    "dst": "{u}……我收回我的话。他们已经开始了……没有讲道理的余地了。",
    "role": "desc",
@@ -766,7 +16,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Dwarves and Doguns Part III#001~1": {
+  "Dwarves and Doguns Part III#001": {
    "src": "A door slamming open is heard in the distance...",
    "dst": "远处传来一声门被猛然撞开的声响……",
    "role": "desc",
@@ -776,7 +26,557 @@
    "speaker": "",
    "source": "captured"
   },
-  "Dwarves and Doguns Part III#057~1": {
+  "Dwarves and Doguns Part III#002": {
+   "src": "Return to the Dogun Village with the letter and speak to Korzim.",
+   "dst": "带着信回到 Dogun 村，与 Korzim 交谈。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#003": {
+   "src": "We...have an issue. A dire one... Where is...Axelus at a time...like this?",
+   "dst": "我们……有麻烦了。很严重的麻烦……在这种时候……Axelus 去哪了？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#004": {
+   "src": "...human... This is a brick.",
+   "dst": "……人类……这是一块砖头。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#005": {
+   "src": "Oh... From Axelus, then...? He could not find...a stone? That...does not bode well.",
+   "dst": "噢……那么是 Axelus 给的……？他找不到……石头？那……可不是好兆头。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#006": {
+   "src": "He is trying to...reason with the Dwarven King? There is...no one else...then. You... You will have to...help.",
+   "dst": "他在试着……跟矮人国王讲道理？那……就没有别人了。你……你得……帮忙。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#007": {
+   "src": "The chieftain is...desperate. He has enacted a...terrible plan. They are planning on summoning Garaheth.",
+   "dst": "酋长……走投无路了。他启动了一个……可怕的计划。他们打算召唤 Garaheth。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#008": {
+   "src": "If they succeed...we all die. Dwarves... Doguns... Possibly even Villagers...and then... Humans as well.",
+   "dst": "如果他们成功了……我们全都会死。矮人……Dogun……甚至可能连村民……然后……人类也一样。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#009": {
+   "src": "Garaheth is a...horrible demon. We used to worship him...thousands of years ago.",
+   "dst": "Garaheth 是个……可怕的恶魔。我们曾经……在几千年前崇拜过他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#010": {
+   "src": "I only overheard parts... But enough to be certain. They are preparing...to the south. At a disused...ritual site.",
+   "dst": "我只偷听到一部分……但足以确定。他们正在……南边准备。在一个废弃的……仪式场地。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#011": {
+   "src": "Meet me there... Do not just attack. We may be able to...resolve it peacefully. I will wait...by the staircase.",
+   "dst": "在那里跟我会合……不要直接动手。我们也许能……和平解决。我会在……楼梯旁等你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#012": {
+   "src": "Investigate the structure to the south.",
+   "dst": "调查南边的建筑。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#013": {
+   "src": "We shall take the east tower... Hide there...and watch.",
+   "dst": "我们去东边的塔……躲在那里……观察。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 2",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#014": {
+   "src": "Interrupting...at this point will have...disastrous consequences. We must let them continue...and pray they fail.",
+   "dst": "这个时候打断……会造成……灾难性的后果。我们只能让他们继续……祈祷他们失败。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 2",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#015": {
+   "src": "Reach into the darkness...and grasp the hand of Garaheth to purge the intruders...",
+   "dst": "伸入黑暗……握住 Garaheth 之手，清除入侵者……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#016": {
+   "src": "This is a worst-case scenario... Meet me in {p}. We will talk more there...",
+   "dst": "这是最坏的情况……到 {p} 跟我会合。我们到那里再详谈……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 2",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#017": {
+   "src": "Travel to {p} and meet Korzim at the entrance. [{~},-{~}]",
+   "dst": "前往 {p}，在入口与 Korzim 会合。[{~},-{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#018": {
+   "src": "Hoho...! Over here...fine traveler! Join me at the gates!",
+   "dst": "呵呵……！这边……尊贵的旅人！到城门这里来找我！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#019": {
+   "src": "This dwarf voice is...horrible on my throat...but it is an effective disguise...is it not?",
+   "dst": "这矮人的嗓音……对我的喉咙真是折磨……不过这伪装……挺有效的……不是吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#020": {
+   "src": "We are headed to...a blacksmith in town. Follow me...",
+   "dst": "我们要去……镇上的一个铁匠那里。跟我来……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#021": {
+   "src": "Talk to the blacksmith in {p} at {~} {~} -{~}",
+   "dst": "与 {p} {~} {~} -{~} 的铁匠交谈",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#022": {
+   "src": "...Korzim...what in the name of all that is holy is that disguise?",
+   "dst": "……Korzim……以一切神圣之名，你这是什么伪装？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#023": {
+   "src": "I'm flabbergasted you fooled anyone with that thing! How did you stop the beard from burning?",
+   "dst": "你竟然能用那玩意骗过别人，我简直惊呆了！你是怎么让胡子不烧起来的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#024": {
+   "src": "But, erm...more importantly, who's the buck in the fancy armour there?",
+   "dst": "不过，呃……更重要的是，那边穿着华丽盔甲的家伙是谁？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#025": {
+   "src": "An ally...of the coalition. No time...Edula. Doguns... summoning... Garaheth.",
+   "dst": "一个盟友……联盟的。没时间了……Edula。Dogun……在召唤……Garaheth。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#026": {
+   "src": "So...so it's really down to that low, then. Burning your own house down to kill the rats.",
+   "dst": "所以……所以真的到了这个地步了。为了杀老鼠，把自己的房子都烧了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#027": {
+   "src": "Good thing we've got this prepared. One fallout will prevent the next. Soldier, I've got a list of materials we need!",
+   "dst": "还好我们早有准备。一场灾难能防住下一场。士兵，我这里有一张我们需要的材料清单！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#028": {
+   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "dst": "你需要 [{~} 火焰蛛丝]。镇子底下的热疤蜘蛛会吐这种丝，入口拱门旁边就有个洞窟。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#029": {
+   "src": "Then, [{~} Magmatic Crystals] from the {p} mines. I'd get them myself, but...I'm banned from there since the rubber mallet incident.",
+   "dst": "然后，从 {p} 矿坑拿 [{~} 岩浆水晶]。我本来可以自己去拿，可是……自从橡胶锤事件之后我就被禁止进去了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#030": {
+   "src": "Lastly, [{~} Crystallized Lava]. The closest source is in the lava lake just outside {p}. There's a protruding crater in the lake.",
+   "dst": "最后，[{~} 结晶熔岩]。最近的来源在 {p} 外面的熔岩湖里。湖里有个突起的火山口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#031": {
+   "src": "Bring back [{~} Fire Webs], [{~} Magmatic Crystals], and [{~} Crystallized lava].",
+   "dst": "带回 [{~} 火焰蛛丝]、[{~} 岩浆水晶] 和 [{~} 结晶熔岩]。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#032": {
+   "src": "The crystal formation... It is definitely here.",
+   "dst": "水晶群……肯定就在这里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#033": {
+   "src": "I will clear the lava... On my signal, move. And do not stop.",
+   "dst": "我来清开熔岩……等我信号，就走。而且别停。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#034": {
+   "src": "Move! Move! MOVE!",
+   "dst": "走！走！快走！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#035": {
+   "src": "Mhm, looks like everything's in order. Now, for a short explanation.",
+   "dst": "嗯嗯，看起来都没问题。现在，简单解释一下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#036": {
+   "src": "These materials go into crafting a special charm. It will allow you to resist demon fire.",
+   "dst": "这些材料是用来打造一种特殊护符的。它能让你抵挡恶魔之火。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#037": {
+   "src": "We need to account for if they finish the summoning, so this'll help keep you safe if you end up having to square off with Garaheth.",
+   "dst": "我们得考虑到他们完成召唤的可能，所以万一你得跟 Garaheth 正面交锋，这能帮你保住性命。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#038": {
+   "src": "You will need to craft it yourself, so its magic will bond to you. I've got a station just for it.",
+   "dst": "你得亲手打造它，这样它的魔法才会跟你结合。我有一个专门的工作台。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#039": {
+   "src": "Right-click the crafting table in the back and put it together.",
+   "dst": "右键点击后面的工作台，把它组装起来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 5",
+   "speaker": "Edula",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#040": {
+   "src": "Craft the amulet in the crafting table.",
+   "dst": "在工作台上打造护符。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#041": {
+   "src": "We must... visit... Sanba... the enchanter.",
+   "dst": "我们必须……去找……附魔师……Sanba。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 6",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#042": {
+   "src": "Go to the enchanter and enchant the amulet.",
+   "dst": "前往附魔师那里给护符附魔。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#043": {
+   "src": "Erm...Korzim, what on earth are you doing here? It's not safe for you!",
+   "dst": "呃……Korzim，你到底在这里干什么？这里对你不安全！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#044": {
+   "src": "Wait, that amulet...oh no, really? Okay, I know what^s going on.",
+   "dst": "等等，那个护符……噢不，真的吗？好，我知道是怎么回事了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#045": {
+   "src": "We're going to need to give this a little extra kick if you're going to use this for what I think you are.",
+   "dst": "如果你们要拿它去做我想的那件事，我们得给它再加点料。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#046": {
+   "src": "A pinch of fire scarab tail, splash of sulphur, exactly three ounces of old brimstone...!",
+   "dst": "一撮火甲虫尾巴，一点硫磺，刚好三盎司的陈年硫磺石……！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#047": {
+   "src": "Infunde hoc monile, alta intra monte. Magia!",
+   "dst": "Infunde hoc monile, alta intra monte. Magia!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#048": {
+   "src": "Meet me in the back, we can't talk out here. You never know who's listening...",
+   "dst": "到后面来找我，在这里不能谈。你永远不知道谁在偷听……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#049": {
+   "src": "Enter the storage room in the enchanter's house.",
+   "dst": "进入附魔师家的储藏室。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#050": {
+   "src": "Supposing you're here to help, Soldier. Garaheth's being summoned if you're getting this...",
+   "dst": "我想你是来帮忙的吧，士兵。如果你拿到这个，就代表 Garaheth 正在被召唤……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#051": {
+   "src": "Axelus prepped a contingency plan for this, but having to put it in action is surreal. Let me fill you in.",
+   "dst": "Axelus 为这种情况准备了应急计划，可真到了要执行的时候，还是觉得很不真实。我来给你讲讲。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#052": {
+   "src": "That dragon skeleton lying in the Heights belonged to an Ice Drake. Centuries ago, it was used in the Dogun wars.",
+   "dst": "躺在高地的那具龙骨属于一头冰龙。几百年前，它在 Dogun 战争中被派上用场。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#053": {
+   "src": "It had incredibly potent magic, particularly in its icy breath. The area it hit is still frozen to this day, and shows no signs of thaw.",
+   "dst": "它拥有极其强大的魔法，尤其是它冰冷的吐息。被它击中的地方至今仍然冰封，丝毫没有解冻的迹象。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#054": {
+   "src": "According to Axelus' stories, its breath travelled through the tunnels and coalesced someplace deep within...",
+   "dst": "根据 Axelus 的说法，它的吐息穿过隧道，在深处某个地方凝聚了起来……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#055": {
+   "src": "...becoming True Ice, a potent mixture of sheer cold and magic energy. That's what we will need to combat Garaheth.'",
+   "dst": "……变成了真冰，一种极寒与魔法能量的强效混合物。那就是我们对付 Garaheth 需要的东西。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#056": {
+   "src": "If you bring me [{~} True Ice] I can make a staff capable of harnessing it...and we can freeze Garaheth in its tracks.",
+   "dst": "如果你给我带来 [{~} 真冰]，我就能做一根能驾驭它的法杖……然后我们就能把 Garaheth 冻在原地。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#057": {
    "src": "If you bring me [{~} True Ice] I can make a staff capable of harnessing it...and we can freeze Garahath in its tracks.",
    "dst": "只要你带 [{~} 真冰] 回来，我就能做出一根能驾驭它的法杖……我们就能把 Garaheth 原地冻住。",
    "role": "desc",
@@ -786,7 +586,7 @@
    "speaker": "Sanba",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part III#058~1": {
+  "Dwarves and Doguns Part III#058": {
    "src": "Me and my husband will support the coalition as long as we live.",
    "dst": "只要我们还活着，我和我丈夫都会支持联盟。",
    "role": "desc",
@@ -796,9 +596,209 @@
    "speaker": "",
    "source": "captured"
   },
-  "Dwarves and Doguns Part III#074~1": {
+  "Dwarves and Doguns Part III#059": {
+   "src": "Head north to the Freezing Heights and make your way to the top, now! We've got no time at all!",
+   "dst": "往北去冰冻高地，爬到最上面，快！我们一点时间都没有了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 8",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#060": {
+   "src": "Travel to the frozen heights and find {~} True Ice.",
+   "dst": "前往冰冻高地，找到 {~} 块真冰。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#061": {
+   "src": "... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
+   "dst": "……这里……这里以前是……一个 Dogun 小镇。矮人把它变成了荒地。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#062": {
+   "src": "They used the Drake... They chained it up and...forced it to attack. We had to kill it...",
+   "dst": "他们利用了那头冰龙……他们用锁链锁住它……逼它攻击。我们只好杀了它……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#063": {
+   "src": "It... froze my town... as it died. I was there... {~} years ago.",
+   "dst": "它……在死去时……冻住了我的小镇。我当时就在……{~} 年前。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#064": {
+   "src": "I know the way... into the caves.",
+   "dst": "我知道……进洞穴的路。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#065": {
+   "src": "The True Ice...is deep inside. I will struggle to...stay warm here.",
+   "dst": "真冰……在很深的地方。在这里我很难……保持温暖。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#066": {
+   "src": "I will try to run through...as quickly as possible. The ice is...painful.",
+   "dst": "我会尽量……快速跑过去。这冰……好痛。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#067": {
+   "src": "We must... move fast... or... we will both.... freeze.",
+   "dst": "我们必须……快点走……否则……我们俩都会……冻住。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#068": {
+   "src": "Maybe... I am... hotter than... I thought... do you.. Hear that?",
+   "dst": "也许……我比……我想的……还热……你……听到了吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#069": {
+   "src": "Oh no... I think... It's... COLLAPSING.",
+   "dst": "噢不……我想……它……要塌了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#070": {
+   "src": "My... feet are... solid... Keep... running.",
+   "dst": "我的……脚……冻僵了……继续……跑。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#071": {
+   "src": "This is it... The thing that... Killed my families... [{~} True Ice].",
+   "dst": "就是它……那个……杀死我家人的东西……[{~} 真冰]。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#072": {
+   "src": "Return to the enchanter with the True Ice.",
+   "dst": "带着真冰回到附魔师那里。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#073": {
+   "src": "Impressive, you two. Must've been tough to get that...doubly so for Korzim.",
+   "dst": "厉害，你们俩。拿到那个一定很辛苦……对 Korzim 来说更是加倍辛苦。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 10",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#074": {
    "src": "Impressive, you two. Must have been tough to get that...doubly so for Korzim.",
    "dst": "你们两个真行。那东西肯定不好拿……对 Korzim 来说更是加倍艰难。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 10",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#075": {
+   "src": "Here is the staff, {u}. Keep it safe, and don't you go dying on us.",
+   "dst": "法杖在这里，{u}。好好保管，可别死了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 10",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#076": {
+   "src": "My husband and I will round up the coalition and get them to act now. We need to get going before-",
+   "dst": "我和我丈夫会召集联盟，让他们马上行动。我们得赶紧出发，免得——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 10",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#077": {
+   "src": "...that's the barracks door. That's the barracks door!!",
+   "dst": "……那是兵营的门。那是兵营的门！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 10",
+   "speaker": "Sanba",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#078": {
+   "src": "Men! We have to meet for briefing on the surface, the war is due any hour now! Move faster!",
+   "dst": "弟兄们！我们得到地面上集合听简报，战争随时都会开始！快点！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 10",
+   "speaker": "Maex Soldier",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#079": {
+   "src": "They're already going?! We're out of time! Korzim is waiting for you just upstairs when you reach level {~}. Go train! NOW!",
+   "dst": "他们已经出发了？！我们没时间了！等你到了 {~} 级，Korzim 就在楼上等你。去练级！马上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",

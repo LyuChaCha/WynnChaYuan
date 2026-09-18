@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "Green Gloop",
-  "count": 32,
-  "translated": 32,
+  "count": 35,
+  "translated": 35,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Green Gloop#000": {
+   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I^ve come close to getting killed a few times!",
+   "dst": "Но где-то месяц назад слизни стали сильнее. Я больше не могу её добыть, пару раз чуть не погиб!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Green Gloop#001": {
+   "src": "I'll need [{~} Slimey Goo] since we'll need a big batch of drinks. If you help, I'll be sure to tell my friend, and he^ll probably let you into his shop.",
+   "dst": "Мне нужно [{~} Slimey Goo], ведь напитков нужна большая партия. Поможете - расскажу другу, и он, наверное, пустит вас в свою лавку.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Green Gloop#002": {
+   "src": "Ah, you've got the scooper! Head into the cave now - remember, I need [{~} Slimey Goo] to make the drink!",
+   "dst": "А, черпак у вас! Теперь в пещеру - помните, для напитка мне нужно [{~} Slimey Goo]!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Green Gloop",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Green Gloop#003": {
    "src": "Talk to Eluzterp at [{~}, {~}, -{~}]",
    "dst": "Поговори с Eluzterp на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#001": {
+  "Green Gloop#004": {
    "src": "Oh, hey! You, adventurer over there! Would you mind helping me?",
    "dst": "О, эй! Вы, искатель приключений! Не поможете мне?",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#002": {
+  "Green Gloop#005": {
    "src": "You see, this cave behind me has been troubling me for the past while now.",
    "dst": "Видите ли, эта пещера позади меня уже давно не даёт мне покоя.",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#003": {
+  "Green Gloop#006": {
    "src": "There are special slimes that live in there, and they drop a certain goo that is quite a delicacy when brewed into a drink!",
    "dst": "Там живут особые слизни, и из них выпадает слизь, которая, если сварить из неё напиток, - настоящий деликатес!",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#004": {
+  "Green Gloop#007": {
    "src": "They are called Gooey Slimes, and should be at the very back. A friend of mine drinks the stuff like water, and he refuses to work without it.",
    "dst": "Их называют липкими слизнями, они в самой глубине. Мой друг пьёт эту штуку как воду и без неё отказывается работать.",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#005": {
+  "Green Gloop#008": {
    "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
    "dst": "Но где-то месяц назад слизни стали сильнее. Я больше не могу её добыть, пару раз чуть не погиб!",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#006": {
+  "Green Gloop#009": {
    "src": "You, however, seem much better equipped than I. Hopefully you can do it.",
    "dst": "А вы, похоже, снаряжены куда лучше меня. Надеюсь, у вас получится.",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#007": {
+  "Green Gloop#010": {
    "src": "If you decide to help me, you'll need to obtain a special device for retrieving it, as the slime will dry up quickly in the air.",
    "dst": "Если решите помочь, понадобится особое приспособление для сбора - на воздухе слизь быстро высыхает.",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#008": {
+  "Green Gloop#011": {
    "src": "A...less fickle glassblower, Yodbon, can make it for you. He should be living in a house in front of the {p} bank.",
    "dst": "Его сделает стеклодув Yodbon... не такой капризный. Он живёт в доме напротив банка {p}.",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#009": {
+  "Green Gloop#012": {
    "src": "I'll need [{~} Slimey Goo] since we'll need a big batch of drinks. If you help, I'll be sure to tell my friend, and he'll probably let you into his shop.",
    "dst": "Мне нужно [{~} Slimey Goo], ведь напитков нужна большая партия. Поможете - расскажу другу, и он, наверное, пустит вас в свою лавку.",
    "role": "desc",
@@ -106,7 +136,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#010": {
+  "Green Gloop#013": {
    "src": "Find Yodbon near the {p} Bank at [{~}, {~}, -{~}]",
    "dst": "Найди Yodbon у банка {p} на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -116,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#011": {
+  "Green Gloop#014": {
    "src": "Welcome to Yodbon's Glass Blowery, what can I do f-",
    "dst": "Добро пожаловать в стеклодувню Yodbon, чем могу пом-",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#012": {
+  "Green Gloop#015": {
    "src": "Oh, another stinkin' adventurer, eh...",
    "dst": "А, ещё один вонючий авантюрист...",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#013": {
+  "Green Gloop#016": {
    "src": "So many've been coming up to me recently, askin' for a bloody Slime Scooper...",
    "dst": "Столько вас в последнее время ходит, все просят чёртов черпак для слизи...",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#014": {
+  "Green Gloop#017": {
    "src": "Izzat brother o' mine stopped workin' again? I swear, he's addicted to that slop...",
    "dst": "Мой братец опять работать перестал? Клянусь, он подсел на эту бурду...",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#015": {
+  "Green Gloop#018": {
    "src": "Anyways, for me to make you a scooper you'll need to get [{~} Soft Sand].",
    "dst": "Короче, чтобы я сделал тебе черпак, принеси [{~} Soft Sand].",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#016": {
+  "Green Gloop#019": {
    "src": "Come back to me once you've gotten ahold of it. You can dig it up from those sand piles 'round the desert.",
    "dst": "Как добудешь - возвращайся. Накопать можно в песчаных кучах в пустыне.",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#017": {
+  "Green Gloop#020": {
    "src": "Bring [{~} Soft Sand] from enemies in the desert to Yodbon at [{~}, {~}, -{~}]",
    "dst": "Принеси Yodbon [{~} Soft Sand] с врагов в пустыне на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -186,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#018": {
+  "Green Gloop#021": {
    "src": "You've returned, I see.",
    "dst": "А, снова ты.",
    "role": "desc",
@@ -196,7 +226,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#019": {
+  "Green Gloop#022": {
    "src": "A'ight, fork 'em over and I'll make you the scooper.",
    "dst": "Лады, давай сюда, сделаю тебе черпак.",
    "role": "desc",
@@ -206,7 +236,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#020": {
+  "Green Gloop#023": {
    "src": "..There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
    "dst": "..Держи. Понятия не имею, зачем ему эта дрянь. Может, к ней надо привыкнуть...",
    "role": "desc",
@@ -216,7 +246,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#021": {
+  "Green Gloop#024": {
    "src": "G'luck on whatever you're doing.",
    "dst": "Удачи в твоих делах.",
    "role": "desc",
@@ -226,7 +256,7 @@
    "speaker": "Yodbon",
    "source": "wiki"
   },
-  "Green Gloop#022": {
+  "Green Gloop#025": {
    "src": "Fetch [{~} Slimey Goo] for Eluzterp from the cave at [{~}, {~}, -{~}]",
    "dst": "Добудь для Eluzterp [{~} Slimey Goo] в пещере на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -236,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Green Gloop#023": {
+  "Green Gloop#026": {
    "src": "Oh, you're back! Good to see you were able to get through there. Have you got a full Slime Scooper?",
    "dst": "О, вы вернулись! Рад, что вам удалось пройти. Черпак для слизи полон?",
    "role": "desc",
@@ -246,7 +276,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#024": {
+  "Green Gloop#027": {
    "src": "Hmm, yes, everything seems to be in order. Perfect!",
    "dst": "Хм, да, всё в порядке. Отлично!",
    "role": "desc",
@@ -256,7 +286,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#025": {
+  "Green Gloop#028": {
    "src": "Thank you very much. Finally, I'll be able to get him in gear again... Why are all Villagers so fickle like that?",
    "dst": "Огромное спасибо. Наконец-то я снова смогу его расшевелить... И почему все жители такие капризные?",
    "role": "desc",
@@ -266,7 +296,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#026": {
+  "Green Gloop#029": {
    "src": "Well, I suppose that's beside the point. I'll be sure to let him know you got him his most recent fix.",
    "dst": "Ну, это к делу не относится. Обязательно скажу ему, что свежую дозу добыли вы.",
    "role": "desc",
@@ -276,7 +306,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#027": {
+  "Green Gloop#030": {
    "src": "He hangs around in a little black stall in the bazaar, there's a basement to it. He should let you inside now.",
    "dst": "Он сидит в маленькой чёрной лавке на базаре, там есть подвал. Теперь он должен вас пустить.",
    "role": "desc",
@@ -286,7 +316,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#028": {
+  "Green Gloop#031": {
    "src": "And, for your troubles, a little something from me as well.",
    "dst": "И за ваши хлопоты - небольшой подарок от меня.",
    "role": "desc",
@@ -296,7 +326,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#029": {
+  "Green Gloop#032": {
    "src": "Ah, hello again. This latest batch of drinks apparently really revitalized him. He said he's looking to make some great craft.",
    "dst": "А, снова здравствуйте. Свежая партия напитков, похоже, его здорово взбодрила. Говорит, хочет смастерить что-то великое.",
    "role": "desc",
@@ -306,7 +336,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#030": {
+  "Green Gloop#033": {
    "src": "Those Villagers are a little bit crazy though... I have no idea what kind of material it is that he insists he needs for it.",
    "dst": "Эти жители всё-таки немного чокнутые... Понятия не имею, какой материал ему, по его словам, так нужен.",
    "role": "desc",
@@ -316,7 +346,7 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#031": {
+  "Green Gloop#034": {
    "src": "Oh, it's you again. Yes, my brother there just loves makin' his little trinkets. He oughta make somethin' useful out of his glass instead...",
    "dst": "О, опять ты. Да, мой братец просто обожает мастерить свои безделушки. Лучше бы делал из стекла что-то полезное...",
    "role": "desc",

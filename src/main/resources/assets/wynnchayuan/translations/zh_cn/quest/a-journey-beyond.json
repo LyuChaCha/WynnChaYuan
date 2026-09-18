@@ -1,12 +1,28 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 247,
-  "translated": 254,
+  "count": 248,
+  "translated": 248,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Beyond#000": {
+   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+   "dst": "嗯……是这样，不过我想先跟 {u} 说明细节。这是个危险的任务，所以……我觉得最好让他们了解一下情况。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+    "file": "quest/a-journey-beyond.json",
+    "ratio": 0.985,
+    "reason": "placeholders"
+   }
+  },
+  "A Journey Beyond#001": {
    "src": "Join Elphaba on a mission in {p} at [{~}, {~}, -{~}].",
    "dst": "在 {p} [{~}, {~}, -{~}] 与 Elphaba 一起执行任务。",
    "role": "desc",
@@ -16,7 +32,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#001": {
+  "A Journey Beyond#002": {
    "src": "...Hm? Oh- uh, hello there. Sorry, we have this space reserved for...",
    "dst": "……嗯？噢——呃，你好。抱歉，这个位子我们已经预订给……",
    "role": "desc",
@@ -26,7 +42,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#002": {
+  "A Journey Beyond#003": {
    "src": "Wait. You might be just what we're looking for. You look like you're capable in combat. How would you like to join a dangerous top secret mission?",
    "dst": "等等。你可能正是我们在找的人。你看起来很能打。你愿不愿意加入一项危险的绝密任务？",
    "role": "desc",
@@ -36,7 +52,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#003": {
+  "A Journey Beyond#004": {
    "src": "...I could have phrased that better. Look, the point is- we need a fourth. Let me give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "……我可以说得更好听一点的。听着，重点是——我们需要第四个人。我先给你做个简报，如果你不想加入……我们再找别人。怎么样？好，来，跟我来。",
    "role": "desc",
@@ -46,7 +62,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#004": {
+  "A Journey Beyond#005": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "这位是谁？你真的找到第四个人了？拜托，我跟你说过我们不需要！",
    "role": "desc",
@@ -56,7 +72,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#005": {
+  "A Journey Beyond#006": {
    "src": "And we both keep telling you why you're wrong. This is... sorry. I didn't catch your name. {u}? .",
    "dst": "我们俩也一直在告诉你为什么你错了。这位是……抱歉。我没听清你的名字。{u}？ 。",
    "role": "desc",
@@ -66,7 +82,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#006": {
+  "A Journey Beyond#007": {
    "src": "... {u}, is that you? Wow, it's been a while. Sorry, I don't have time to chat right now. We're preparing for a dangerous mission, and...",
    "dst": "……{u}，是你吗？哇，好久不见了。抱歉，我现在没时间聊。我们正在准备一项危险的任务，而且……",
    "role": "desc",
@@ -76,7 +92,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#007": {
+  "A Journey Beyond#008": {
    "src": "Well. Actually, we were looking for a fourth person to join us. And... you look like you fit the requirements for that position. If- if you'd like to join, that is.",
    "dst": "嗯。其实，我们正在找第四个人加入。而且……你看起来符合那个位置的条件。如果——如果你愿意加入的话。",
    "role": "desc",
@@ -86,7 +102,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#008": {
+  "A Journey Beyond#009": {
    "src": "Tell you what. I'll give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "这样吧。我先给你做个简报，如果你不想加入……我们再找别人。怎么样？好，来，跟我来。",
    "role": "desc",
@@ -96,7 +112,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#009": {
+  "A Journey Beyond#010": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "这位是谁？你真的找到第四个人了？拜托，我跟你说过我们不需要！",
    "role": "desc",
@@ -106,7 +122,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#010": {
+  "A Journey Beyond#011": {
    "src": "And we both keep telling you why you're wrong. This is {u}, we've worked together before.",
    "dst": "我们俩一直在跟你说你错在哪。这位是 {u}，我们以前合作过。",
    "role": "desc",
@@ -116,7 +132,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#011": {
+  "A Journey Beyond#012": {
    "src": "Anyway, I want to give them the briefing before we head",
    "dst": "总之，出发之前我想先给他们做个简报",
    "role": "desc",
@@ -126,7 +142,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#012": {
+  "A Journey Beyond#013": {
    "src": "Elphie, I'm back! I finally managed to catch Aegis, but he's not... happy. He thinks we should",
    "dst": "Elphie，我回来了！我终于逮到 Aegis 了，可他不太……高兴。他认为我们应该",
    "role": "desc",
@@ -136,7 +152,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#013": {
+  "A Journey Beyond#014": {
    "src": "Oh. {u}? What are you doing here? Gods, it's been a while, hasn't it?",
    "dst": "噢。{u}？你在这里做什么？天啊，好久不见了，对吧？",
    "role": "desc",
@@ -146,7 +162,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#014": {
+  "A Journey Beyond#015": {
    "src": "They're our fourth. What were you saying about the Admiral?",
    "dst": "他们是我们的第四个人。你刚才说上将怎么了？",
    "role": "desc",
@@ -156,7 +172,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#015": {
+  "A Journey Beyond#016": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -166,7 +182,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#016": {
+  "A Journey Beyond#017": {
    "src": "Nothing. If we have our fourth, we should be all set to go, shouldn't we?",
    "dst": "没什么。既然有了第四个人，我们应该都准备好出发了，对吧？",
    "role": "desc",
@@ -176,7 +192,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#017": {
+  "A Journey Beyond#018": {
    "src": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "嗯……是准备好了，但我想先说明细节。这是一项危险的任务，所以……我觉得最好让他们了解一下。",
    "role": "desc",
@@ -186,7 +202,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#018": {
+  "A Journey Beyond#019": {
    "src": "So! You're aware of the {p}, yes? Hundreds of years ago, mining operations took place to extract emeralds from the earth. Until, for some unknown reason, they were halted.",
    "dst": "那么！你知道 {p} 吧？几百年前，那里曾经开采绿宝石。直到后来，因为某种不明原因，停工了。",
    "role": "desc",
@@ -196,7 +212,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#019": {
+  "A Journey Beyond#020": {
    "src": "We don't know everything, but... evidence suggests they broke through to an undiscovered section of the Wynn province. There, they found... something.",
    "dst": "我们并不知道全部，但……有证据显示他们挖通了 Wynn 行省一个未被发现的区域。在那里，他们发现了……某样东西。",
    "role": "desc",
@@ -206,9 +222,9 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#020": {
-   "src": "The land itself was said to be cursed. Not corrupted they were very clear on that.",
-   "dst": "据说那片土地本身受到了诅咒。不是腐化，他们对这点说得很清楚。",
+  "A Journey Beyond#021": {
+   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
+   "dst": "据说那片土地本身受了诅咒。不是腐化，这一点他们写得非常清楚。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -216,7 +232,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#021": {
+  "A Journey Beyond#022": {
    "src": "Some other force makes its home in that place. The few reports we could find refer to it only as the Silent Expanse.",
    "dst": "某种别的力量盘踞在那个地方。我们找得到的少数报告只称它为寂静荒原。",
    "role": "desc",
@@ -226,7 +242,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#022": {
+  "A Journey Beyond#023": {
    "src": "The mines were sealed to prevent the spread of this new threat, but the cracks are beginning to show.",
    "dst": "矿坑被封起来，以防这个新威胁扩散，但裂缝开始出现了。",
    "role": "desc",
@@ -236,7 +252,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#023": {
+  "A Journey Beyond#024": {
    "src": "Strange and otherworldly creatures have begun to find their way through, threatening our province.",
    "dst": "奇异的异界生物已经开始钻出来，威胁我们的行省。",
    "role": "desc",
@@ -246,7 +262,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#024": {
+  "A Journey Beyond#025": {
    "src": "The existence of this place has been kept on a strict need-to-know basis.",
    "dst": "这个地方的存在一直严格保密，只告诉需要知道的人。",
    "role": "desc",
@@ -256,7 +272,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#025": {
+  "A Journey Beyond#026": {
    "src": "That's where we come in! We're to battle our way through the mines, and scout out the potential danger level.",
    "dst": "这就是我们出场的时候了！我们要一路杀穿矿坑，侦察潜在的危险程度。",
    "role": "desc",
@@ -266,7 +282,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#026": {
+  "A Journey Beyond#027": {
    "src": "And we aren't going to be able to do it if we keep sitting around! The newbie's been briefed, let's get going already!",
    "dst": "要是我们一直坐着不动就办不到了！新人已经听完简报了，快出发吧！",
    "role": "desc",
@@ -276,7 +292,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#027": {
+  "A Journey Beyond#028": {
    "src": "H-hey! What're you doing to my fine establishment!",
    "dst": "嘿、嘿！你们对我这间高级店干了什么！",
    "role": "desc",
@@ -286,7 +302,7 @@
    "speaker": "Rusty Bartender",
    "source": "wiki"
   },
-  "A Journey Beyond#028": {
+  "A Journey Beyond#029": {
    "src": "...Shoot. Forgot he was still here. Sorry, barkeep! I'll fix it!",
    "dst": "……糟了。忘了他还在这里。抱歉，老板！我会修好的！",
    "role": "desc",
@@ -296,7 +312,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#029": {
+  "A Journey Beyond#030": {
    "src": "Lucio, you can't keep... ugh, forget it. I'll gather our supplies... Aledar, can you get us to the mines?",
    "dst": "Lucio，你不能老是……唉，算了。我去收拾补给……Aledar，你能带我们去矿坑吗？",
    "role": "desc",
@@ -306,7 +322,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#030": {
+  "A Journey Beyond#031": {
    "src": "Yes, ma'am! {u}, when you're ready, let's get going.",
    "dst": "是，长官！{u}，准备好了我们就出发。",
    "role": "desc",
@@ -316,7 +332,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#031": {
+  "A Journey Beyond#032": {
    "src": "Follow your team towards the Silent Expanse's entrance.",
    "dst": "跟着你的队伍前往寂静荒原的入口。",
    "role": "desc",
@@ -326,7 +342,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#032": {
+  "A Journey Beyond#033": {
    "src": "Everyone ready? I'll lead.",
    "dst": "大家都准备好了吗？我来带路。",
    "role": "desc",
@@ -336,7 +352,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#033": {
+  "A Journey Beyond#034": {
    "src": "It's a twist of fate that our paths have converged here, {u}. We started our journey together and now...",
    "dst": "命运真奇妙，我们的路又在这里交会了，{u}。我们一起开始了旅程，而现在……",
    "role": "desc",
@@ -346,7 +362,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#034": {
+  "A Journey Beyond#035": {
    "src": "Aledar...",
    "dst": "Aledar……",
    "role": "desc",
@@ -356,7 +372,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#035": {
+  "A Journey Beyond#036": {
    "src": "I hear them too.",
    "dst": "我也听到了。",
    "role": "desc",
@@ -366,7 +382,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#036": {
+  "A Journey Beyond#037": {
    "src": "Ah, no problem. I'll take care of these.",
    "dst": "啊，没问题。这些交给我。",
    "role": "desc",
@@ -376,7 +392,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#037": {
+  "A Journey Beyond#038": {
    "src": "No more running for us, huh ? Ah, we're here.",
    "dst": "我们再也不用逃了，是吧 ？啊，我们到了。",
    "role": "desc",
@@ -386,7 +402,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#038": {
+  "A Journey Beyond#039": {
    "src": "This is actually our second attempt. The first time, it didn't go too well.",
    "dst": "这其实是我们第二次尝试了。第一次不太顺利。",
    "role": "desc",
@@ -396,7 +412,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#039": {
+  "A Journey Beyond#040": {
    "src": "We have more numbers now, Lucio and yourself should help us overpower it.",
    "dst": "我们现在人更多了，有 Lucio 和你，应该能帮我们压制它。",
    "role": "desc",
@@ -406,7 +422,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#040": {
+  "A Journey Beyond#041": {
    "src": "Can't be that strong, bet I can take it myself.",
    "dst": "不可能有多强，我打赌我一个人就搞得定。",
    "role": "desc",
@@ -416,7 +432,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#041": {
+  "A Journey Beyond#042": {
    "src": "We managed to seal it in but with the {~} of us I'm sure we ca-",
    "dst": "我们成功把它封在里面了，不过有我们 {~} 个人，我相信我们一定能——",
    "role": "desc",
@@ -426,7 +442,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#042": {
+  "A Journey Beyond#043": {
    "src": "Let's just do it!",
    "dst": "直接上吧！",
    "role": "desc",
@@ -436,7 +452,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#043": {
+  "A Journey Beyond#044": {
    "src": "Wait... No!",
    "dst": "等等……不！",
    "role": "desc",
@@ -446,7 +462,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#044": {
+  "A Journey Beyond#045": {
    "src": "Lucio! You FOOL!",
    "dst": "Lucio！你这个蠢货！",
    "role": "desc",
@@ -456,7 +472,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#045": {
+  "A Journey Beyond#046": {
    "src": "What's the big deal? You said yourself we can take it!",
    "dst": "有什么大不了的？你自己也说我们打得过它！",
    "role": "desc",
@@ -466,7 +482,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#046": {
+  "A Journey Beyond#047": {
    "src": "Ouch...",
    "dst": "哎哟……",
    "role": "desc",
@@ -476,7 +492,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#047": {
+  "A Journey Beyond#048": {
    "src": "We need a PLAN.",
    "dst": "我们需要一个计划。",
    "role": "desc",
@@ -486,7 +502,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#048": {
+  "A Journey Beyond#049": {
    "src": "Defeat the Beast",
    "dst": "击败野兽",
    "role": "desc",
@@ -496,7 +512,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#049": {
+  "A Journey Beyond#050": {
    "src": "The plan is attack!",
    "dst": "计划就是进攻！",
    "role": "desc",
@@ -506,7 +522,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#050": {
+  "A Journey Beyond#051": {
    "src": "Argh!",
    "dst": "啊！",
    "role": "desc",
@@ -516,7 +532,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#051": {
+  "A Journey Beyond#052": {
    "src": "Lucio!",
    "dst": "Lucio！",
    "role": "desc",
@@ -526,7 +542,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#052": {
+  "A Journey Beyond#053": {
    "src": "Ahh!",
    "dst": "啊啊！",
    "role": "desc",
@@ -536,7 +552,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#053": {
+  "A Journey Beyond#054": {
    "src": "No! Stop hurting them!",
    "dst": "不！别再伤害他们了！",
    "role": "desc",
@@ -546,7 +562,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#054": {
+  "A Journey Beyond#055": {
    "src": "Ouch! This isn't working...",
    "dst": "哎哟！这样行不通……",
    "role": "desc",
@@ -556,7 +572,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#055": {
+  "A Journey Beyond#056": {
    "src": "Is it just me or are our attacks doing NOTHING?",
    "dst": "是我的错觉，还是我们的攻击完全没用？",
    "role": "desc",
@@ -566,7 +582,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#056": {
+  "A Journey Beyond#057": {
    "src": "Lucio's right! Change of plan. Lucio, help me hold it in place.",
    "dst": "Lucio 说得对！改变计划。Lucio，帮我把它固定住。",
    "role": "desc",
@@ -576,7 +592,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#057": {
+  "A Journey Beyond#058": {
    "src": "Aledar, you know what to do.",
    "dst": "Aledar，你知道该怎么做。",
    "role": "desc",
@@ -586,7 +602,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#058": {
+  "A Journey Beyond#059": {
    "src": "{u}, come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
    "dst": "{u}，跟我来！施个法术把洞口封住，别让怪物跑出去。",
    "role": "desc",
@@ -596,7 +612,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#059": {
+  "A Journey Beyond#060": {
    "src": "I'll block it from attacking, you block it up with a spell.",
    "dst": "我来挡住它的攻击，你用法术把入口封起来。",
    "role": "desc",
@@ -606,7 +622,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#060": {
+  "A Journey Beyond#061": {
    "src": "They won't be able to hold it for long.",
    "dst": "他们撑不了多久。",
    "role": "desc",
@@ -616,7 +632,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#061": {
+  "A Journey Beyond#062": {
    "src": "Ready?! Cast any spell!",
    "dst": "准备好了吗？！随便施个法术！",
    "role": "desc",
@@ -626,7 +642,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#062": {
+  "A Journey Beyond#063": {
    "src": "Lucio, Elphaba! Run!",
    "dst": "Lucio、Elphaba！快跑！",
    "role": "desc",
@@ -636,7 +652,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#063": {
+  "A Journey Beyond#064": {
    "src": "Plan a way of killing the beast.",
    "dst": "想个杀死野兽的办法。",
    "role": "desc",
@@ -646,7 +662,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#064": {
+  "A Journey Beyond#065": {
    "src": "We all here? Where's Lucio?",
    "dst": "大家都到了吗？Lucio 呢？",
    "role": "desc",
@@ -656,7 +672,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#065": {
+  "A Journey Beyond#066": {
    "src": "Guys... Any help? I'm stuck!",
    "dst": "各位……谁来帮个忙？我卡住了！",
    "role": "desc",
@@ -666,7 +682,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#066": {
+  "A Journey Beyond#067": {
    "src": "Phew, here. Let me get you out.",
    "dst": "呼，来。我把你弄出来。",
    "role": "desc",
@@ -676,7 +692,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#067": {
+  "A Journey Beyond#068": {
    "src": "I'm sorry, team. I've never seen a monster like that before.",
    "dst": "抱歉，各位。我从来没见过那样的怪物。",
    "role": "desc",
@@ -686,9 +702,9 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#068": {
-   "src": "It looks like our problem isn't fire power. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "看来我们的问题不是火力不足。是别的原因。我们的武器好像完全影响不了它。",
+  "A Journey Beyond#069": {
+   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
+   "dst": "看来我们的问题不在火力，而是别的东西。我们的武器好像完全伤不到它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -696,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#069": {
+  "A Journey Beyond#070": {
    "src": "I know someone who might be able to help us. A blacksmith on {p}.",
    "dst": "我认识一个也许能帮我们的人。{p} 上的一位铁匠。",
    "role": "desc",
@@ -706,7 +722,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#070": {
+  "A Journey Beyond#071": {
    "src": "{u}, I've written the house's coordinates on your book. Meet us there.",
    "dst": "{u}，我把那栋房子的坐标写在你的书上了。我们在那里会合。",
    "role": "desc",
@@ -716,7 +732,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#071": {
+  "A Journey Beyond#072": {
    "src": "Meet the other soldiers at [{~}, {~}, -{~}].",
    "dst": "在 [{~}, {~}, -{~}] 与其他士兵会合。",
    "role": "desc",
@@ -726,7 +742,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#072": {
+  "A Journey Beyond#073": {
    "src": "Just in time. We're all here.",
    "dst": "来得正好。我们都到齐了。",
    "role": "desc",
@@ -736,7 +752,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#073": {
+  "A Journey Beyond#074": {
    "src": "It looks like the Blacksmith knows what's wrong...",
    "dst": "看来铁匠知道问题出在哪里……",
    "role": "desc",
@@ -746,7 +762,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#074": {
+  "A Journey Beyond#075": {
    "src": "So, Dren. Do you know why we can't damage the beast?",
    "dst": "那么，Dren。你知道为什么我们伤不了那头野兽吗？",
    "role": "desc",
@@ -756,7 +772,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#075": {
+  "A Journey Beyond#076": {
    "src": "Certainly! Your issue is elemental. As you know, there are {~} elements...",
    "dst": "当然！你们的问题出在元素上。你们都知道，元素有 {~} 种……",
    "role": "desc",
@@ -766,7 +782,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#076": {
+  "A Journey Beyond#077": {
    "src": "Earth...",
    "dst": "土……",
    "role": "desc",
@@ -776,7 +792,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#077": {
+  "A Journey Beyond#078": {
    "src": "Fire...",
    "dst": "火……",
    "role": "desc",
@@ -786,7 +802,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#078": {
+  "A Journey Beyond#079": {
    "src": "Air...",
    "dst": "风……",
    "role": "desc",
@@ -796,7 +812,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#079": {
+  "A Journey Beyond#080": {
    "src": "Water...",
    "dst": "水……",
    "role": "desc",
@@ -806,7 +822,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#080": {
+  "A Journey Beyond#081": {
    "src": "And Thunder...",
    "dst": "还有雷……",
    "role": "desc",
@@ -816,7 +832,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#081": {
+  "A Journey Beyond#082": {
    "src": "But.. There is a hidden element, Darkness .",
    "dst": "但是……还有一种隐藏的元素，❂暗……",
    "role": "desc",
@@ -826,7 +842,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#082": {
+  "A Journey Beyond#083": {
    "src": "Thank grook for that. I was wondering if we'd ever be rid of this nightmare.",
    "dst": "谢天谢地。我还在想我们到底能不能摆脱这场噩梦。",
    "role": "desc",
@@ -836,7 +852,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Beyond#083": {
+  "A Journey Beyond#084": {
    "src": "And we both keep telling you why you're wrong. This is... sorry, I didn't catch your name. {u}? {u}.",
    "dst": "我们俩一直在跟你说你错在哪。这位是……抱歉，我没听清你的名字。{u}？{u}。",
    "role": "desc",
@@ -937,7 +953,7 @@
    "source": "captured"
   },
   "A Journey Beyond#094": {
-   "src": "Alright. Aledar, you get the darkness item with {u}, and I'll go get the Light item with Lucio.",
+   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
    "dst": "好。Aledar，你跟 {u} 去拿黑暗物品，我跟 Lucio 去拿光明物品。",
    "role": "desc",
    "kind": "dialogue",
@@ -1487,8 +1503,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#149": {
-   "src": "Uhhh... I'm not feeling very wel-... Aahhh!",
-   "dst": "呃……我觉得不太舒——……啊啊啊！",
+   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
+   "dst": "呃……我觉得不太舒……啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2097,7 +2113,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#210": {
-   "src": "I feel a bit better.. But something is still wrong.",
+   "src": "I feel a bit better.. But something's still wrong.",
    "dst": "我感觉好一点了……但还是有什么不对劲。",
    "role": "desc",
    "kind": "dialogue",
@@ -2457,8 +2473,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#246": {
-   "src": "It worked... Kind of. I feel at least {~}.. We still have a ways to go.",
-   "dst": "有用了……算是吧。我感觉至少恢复了 {~}……我们还有很长的路要走。",
+   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
+   "dst": "有用了……算是吧。我感觉至少恢复了 {~}。我们还有很长的路要走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2469,82 +2485,6 @@
   "A Journey Beyond#247": {
    "src": "Let's take some time to gather ourselves before we press on. I'll meet you on the other side of town.",
    "dst": "我们先花点时间整理一下再继续前进。我在小镇的另一头跟你会合。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 18",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#000~1": {
-   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-   "dst": "嗯……是这样，不过我想先跟 {u} 说明细节。这是个危险的任务，所以……我觉得最好让他们了解一下情况。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-    "file": "quest/a-journey-beyond.json",
-    "ratio": 0.985,
-    "reason": "placeholders"
-   }
-  },
-  "A Journey Beyond#021~1": {
-   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
-   "dst": "据说那片土地本身受了诅咒。不是腐化，这一点他们写得非常清楚。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 1",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#069~1": {
-   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "看来我们的问题不在火力，而是别的东西。我们的武器好像完全伤不到它。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#094~1": {
-   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "好。Aledar，你跟 {u} 去拿黑暗物品，我跟 Lucio 去拿光明物品。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#149~1": {
-   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
-   "dst": "呃……我觉得不太舒……啊啊啊！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 14",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#210~1": {
-   "src": "I feel a bit better.. But something's still wrong.",
-   "dst": "我感觉好一点了……但还是有什么不对劲。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 17",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#246~1": {
-   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
-   "dst": "有用了……算是吧。我感觉至少恢复了 {~}。我们还有很长的路要走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",

@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Corrupted Betrayal",
-  "count": 51,
+  "count": 52,
   "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#000": {
+   "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
+   "dst": "В {~} AP {p} стоял на коленях. Орды нежити калечили армию и замок.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#001": {
    "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
    "dst": "Поговори с Lanu в [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#001": {
+  "Corrupted Betrayal#002": {
    "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
    "dst": "Эй, солдат! Да, ты! Есть минутка помочь?",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#002": {
+  "Corrupted Betrayal#003": {
    "src": "We've got a major issue with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
    "dst": "С этой старой крепостью большая беда. Из неё лезут чёртовы слизни, а она слишком близко к {p}.",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#003": {
+  "Corrupted Betrayal#004": {
    "src": "Soldiers are spending half their guard duty slicing the critters into sludge. Ideally we'd raid the cave, cut out the source, but...",
    "dst": "Солдаты полсмены рубят этих тварей в кашу. Лучше бы взять пещеру штурмом и уничтожить источник, но…",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#004": {
+  "Corrupted Betrayal#005": {
    "src": "This place has some history. Nasty stuff. I'd prefer not to head in blind, so I've been checking for any clues to what we might find inside.",
    "dst": "У этого места тёмная история. Лезть вслепую не хочу, вот и ищу подсказки, что нас ждёт внутри.",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#005": {
+  "Corrupted Betrayal#006": {
    "src": "Haven't found much... except this verse, 'scribed into the wall over there. Go on, check it out and let me know what you think.",
    "dst": "Нашла немного… разве что стих, высеченный вон на той стене. Глянь и скажи, что думаешь.",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#006": {
+  "Corrupted Betrayal#007": {
    "src": "Nonsense, if you ask me. Most likely kids from {p} messing about. But we haven't found anything else, so... if you've got any time, fancy checking it out for me?",
    "dst": "По-моему, чепуха. Скорее всего, дети из {p} балуются. Но других зацепок нет, так что… найдётся время проверить?",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#007": {
+  "Corrupted Betrayal#008": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "Первая строка явно про Великий мост, а что значит остальное - без понятия. Сходи туда, осмотрись и скажи, если что найдёшь.",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#008": {
+  "Corrupted Betrayal#009": {
    "src": "Found anything interesting around the riddle yet? Do you need to hear it again?",
    "dst": "Нашёл что-нибудь по загадке? Прочесть её ещё раз?",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#009": {
+  "Corrupted Betrayal#010": {
    "src": "Near a corrupted bridge, a ruin past its prime..",
    "dst": "Близ моста осквернённого, у руин с сединой…",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#010": {
+  "Corrupted Betrayal#011": {
    "src": "Lives a cursed sheep, with the color of lime...",
    "dst": "Живёт овца проклятая с шерстью лаймовой…",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#011": {
+  "Corrupted Betrayal#012": {
    "src": "Lead it down the trail, headed to the slime...",
    "dst": "По тропе веди её к слизи густой…",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#012": {
+  "Corrupted Betrayal#013": {
    "src": "Sacrifice its soul, in the blood and the grime.",
    "dst": "Душу в жертву принеси в крови и грязи земной.",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#013": {
+  "Corrupted Betrayal#014": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "Первая строка явно про Великий мост, а что значит остальное - без понятия. Сходи туда, осмотрись и скажи, если что найдёшь.",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#014": {
+  "Corrupted Betrayal#015": {
    "src": "Alrighty. Let me know what when you've got something then.",
    "dst": "Ладно. Как что найдёшь - дай знать.",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#015": {
+  "Corrupted Betrayal#016": {
    "src": "Use the Mage's riddle to figure out where it leads",
    "dst": "Разгадай загадку мага и пойми, куда она ведёт",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#016": {
+  "Corrupted Betrayal#017": {
    "src": "If you are heading towards the Great Bridge, be cautious in the plains around the jungle entrance.",
    "dst": "Если направляетесь к Великому мосту, будьте осторожны на равнинах у входа в джунгли.",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#017": {
+  "Corrupted Betrayal#018": {
    "src": "I have received reports of a strange cursed sheep taking refuge in one of the more fortified ruins around there.",
    "dst": "Мне доложили о странной проклятой овце, что укрылась в одних укреплённых руинах неподалёку.",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#018": {
+  "Corrupted Betrayal#019": {
    "src": "As far as I know, it is trapped in the ruins by some jungle growth, though if it was cut down it might escape...",
    "dst": "Насколько я знаю, её держат в руинах заросли джунглей, но если их срубить, она может сбежать…",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#019": {
+  "Corrupted Betrayal#020": {
    "src": "Explore the temple for a way to break the barrier.",
    "dst": "Исследуй храм и найди способ сломать барьер.",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#020": {
+  "Corrupted Betrayal#021": {
    "src": "Go to Slykaar's residence at [-{~}, {~}, -{~}] to find out what is hidden there.",
    "dst": "Отправляйся в дом Slykaar в [-{~}, {~}, -{~}] и узнай, что там скрыто.",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#021": {
+  "Corrupted Betrayal#022": {
    "src": "By order of the city of {p}, I am here to keep other citizens from entering this house.",
    "dst": "По приказу города {p} я не пускаю горожан в этот дом.",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#022": {
+  "Corrupted Betrayal#023": {
    "src": "From past experiences, everyone who has entered this house has vanished from existence...",
    "dst": "По опыту, все, кто входил в этот дом, бесследно исчезали…",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#023": {
+  "Corrupted Betrayal#024": {
    "src": "I would advise not going inside unless you know what you are doing.",
    "dst": "Не советую входить, если не знаете, что делаете.",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#024": {
+  "Corrupted Betrayal#025": {
    "src": "Well, I guess you must know who I am.",
    "dst": "Что ж, ты наверняка знаешь, кто я.",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#025": {
+  "Corrupted Betrayal#026": {
    "src": "Welcome to my domain. I am the hero of {p}, Slykaar.",
    "dst": "Добро пожаловать в мои владения. Я - герой {p}, Slykaar.",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#026": {
+  "Corrupted Betrayal#027": {
    "src": "Well, I used to be. Banished by the very people who asked for my help. Pathetic.",
    "dst": "Точнее, был им. Изгнан теми, кто просил о помощи. Жалко.",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#027": {
+  "Corrupted Betrayal#028": {
    "src": "They couldn't give me a few peasants for their safety? Weak.",
    "dst": "Им жаль было пары крестьян ради своей безопасности? Слабаки.",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#028": {
+  "Corrupted Betrayal#029": {
    "src": "Journey through Slykaar's dimension.",
    "dst": "Пройди через измерение Slykaar.",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#029": {
+  "Corrupted Betrayal#030": {
    "src": "I experimented my shamanism for many years underground to create the perfect mix of monster.",
    "dst": "Много лет я ставил шаманские опыты под землёй, чтобы создать идеальную помесь чудовищ.",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#030": {
+  "Corrupted Betrayal#031": {
    "src": "Most ended in horrific slimes. Aggressive and powerful, but alas, just slimes.",
    "dst": "Почти всё кончалось жуткими слизнями. Злыми и сильными, но увы - слизнями.",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#031": {
+  "Corrupted Betrayal#032": {
    "src": "Then I found this place. A dark land. A dark god. A source of power.",
    "dst": "Потом я нашёл это место. Тёмный край. Тёмный бог. Источник силы.",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#032": {
+  "Corrupted Betrayal#033": {
    "src": "You mediocre wielders of magic have no idea what this world holds.",
    "dst": "Вы, маги-посредственности, не знаете, что таит этот мир.",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#033": {
+  "Corrupted Betrayal#034": {
    "src": "You all strive to be that hero of heroes, “Bob”, but here's the truth. He's lost. You're lost.",
    "dst": "Все вы рвётесь стать героем героев, «Bob», но правда такова. Он пропал. Вы пропали.",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#034": {
+  "Corrupted Betrayal#035": {
    "src": "No one in the Wynn province is willing to make the sacrifices I am to gain power.",
    "dst": "Никто в провинции Wynn не готов на жертвы, что принёс я ради силы.",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#035": {
+  "Corrupted Betrayal#036": {
    "src": "If you want power, you have to give some. Sacrifice a few to save many.",
    "dst": "Хочешь силы - отдай что-то взамен. Пожертвуй немногими ради многих.",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#036": {
+  "Corrupted Betrayal#037": {
    "src": "They were willing to give me a few peasants in {~}, when the hordes crossed the bridge.",
    "dst": "В {~} году, когда орды перешли мост, они охотно отдали мне пару крестьян.",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#037": {
+  "Corrupted Betrayal#038": {
    "src": "The king was happy to throw away lives to save his. But then the hero of Wynn waltzed in a few years later.",
    "dst": "Король с радостью бросал чужие жизни ради своей. А через пару лет явился герой Wynn.",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#038": {
+  "Corrupted Betrayal#039": {
    "src": "They banished me like a rotten fruit. Their hero, their protector. So what if a few hundred nobodies died for it.",
    "dst": "Меня выкинули, как гнилой плод. Их героя, их защитника. Ну умерли за это сотни никчёмных, и что?",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#039": {
+  "Corrupted Betrayal#040": {
    "src": "Looks like we have a Bob aspirer. Pale imitation.",
    "dst": "Вижу, у нас подражатель Bob. Жалкая копия.",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#040": {
+  "Corrupted Betrayal#041": {
    "src": "So. Feel free to visit me down below, bring the entire might of the {p} army upon me. It will not be enough.",
    "dst": "Что ж. Спускайся ко мне, приводи всю мощь армии {p}. Этого не хватит.",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#041": {
+  "Corrupted Betrayal#042": {
    "src": "I am ready. Soon, {p} will be in ruins. And I shall have my revenge.",
    "dst": "Я готов. Скоро {p} падёт в руины. И я свершу месть.",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#042": {
+  "Corrupted Betrayal#043": {
    "src": "Go have fun in while you can. It's not like you have much of a life to live, anyways.",
    "dst": "Развлекайся, пока можешь. Жить тебе всё равно осталось недолго.",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#043": {
+  "Corrupted Betrayal#044": {
    "src": "Report back to Lanu about what you've learned.",
    "dst": "Доложи Lanu о том, что удалось узнать.",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#044": {
+  "Corrupted Betrayal#045": {
    "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of this cave.",
    "dst": "А, вернулся. Нашёл что интересное? А я тут отбиваюсь от слизней, что изредка вылезают из пещеры.",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#045": {
+  "Corrupted Betrayal#046": {
    "src": "You... saw Slykaar? In another dimension?!",
    "dst": "Ты… видел Slykaar? В другом измерении?!",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#046": {
+  "Corrupted Betrayal#047": {
    "src": "This is bad. If he can materialise outside of this cave, even psychoactively... he's getting stronger. It explains the slimes, the attacks on {p}...",
    "dst": "Плохо дело. Если он может являться вне пещеры, пусть даже мысленно… он крепнет. Вот откуда слизни и нападения на {p}…",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#047": {
+  "Corrupted Betrayal#048": {
    "src": "He's an incredibly powerful shaman, {u}. He has to be stopped, but it would take forever for {p} to mobile a force against him.",
    "dst": "Он невероятно сильный шаман, {u}. Его надо остановить, но {p} целую вечность будет собирать против него отряд.",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#048": {
+  "Corrupted Betrayal#049": {
    "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
    "dst": "Если сможешь, иди туда и… добей его. Только сперва снарядись и найди друзей, чтоб прикрыли.",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#049": {
+  "Corrupted Betrayal#050": {
    "src": "{u}, how's it going? Run into another shaman hallucination at all?",
    "dst": "{u}, как дела? Больше не видел шаманских видений?",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#050": {
+  "Corrupted Betrayal#051": {
    "src": "Anyway, good luck in the cave. If you choose to go in, be careful.",
    "dst": "В общем, удачи в пещере. Если решишь войти - будь осторожен.",
    "role": "desc",
@@ -515,16 +525,6 @@
    "stage": "Stage 6",
    "speaker": "Lanu",
    "source": "wiki"
-  },
-  "Corrupted Betrayal#000~1": {
-   "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
-   "dst": "В {~} AP {p} стоял на коленях. Орды нежити калечили армию и замок.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Corrupted Betrayal",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

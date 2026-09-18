@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Potion Making",
-  "count": 31,
-  "translated": 31,
+  "count": 36,
+  "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Potion Making#000": {
+   "src": "I was...in support of this...but then, he accrued essence of...the corruption. I had to run away...",
+   "dst": "저도... 찬성했었죠... 그런데 그가... 타락의 정수를 손에 넣었어요. 도망칠 수밖에...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#001": {
+   "src": "Get me... [{~} Red Mushroom], they can be found outside the east gate behind me.",
+   "dst": "구해 주세요... [{~} 빨간 버섯]을요. 제 뒤 동문 밖에 있어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#002": {
+   "src": "You must...ensure that it worked. You...are much stronger than I, stranger...",
+   "dst": "효과가 있는지... 확인해 줘요. 당신은... 저보다 훨씬 강하니까요, 낯선 분...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#003": {
+   "src": "What have you done to this potion, human!? You will pay for it!",
+   "dst": "물약에 무슨 짓을 한 거냐, 인간!? 대가를 치르게 해 주마!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#004": {
+   "src": "It's time to head back to The Assistant in {p} and show him the proof.",
+   "dst": "이제 {p}의 조수에게 돌아가 증거를 보여 줄 때다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Potion Making",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Potion Making#005": {
    "src": "Talk to The Assistant in {p} at [{~}, {~}, -{~}]",
    "dst": "{p}의 [{~}, {~}, -{~}]에 있는 조수에게 말을 거세요",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#001": {
+  "Potion Making#006": {
    "src": "Heeh...stranger. I...may need your assistance...",
    "dst": "헤헤... 낯선 분. 저... 도움이 필요할지도...",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#002": {
+  "Potion Making#007": {
    "src": "My master...wishes to create a very dangerous potion...a transformative elixir of invincibility...",
    "dst": "제 주인님이... 아주 위험한 물약을 만들려 해요... 무적이 되는 변신의 영약을...",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#003": {
+  "Potion Making#008": {
    "src": "I was...in support of this... but then, he accrued essence of...the corruption. I had to run away...",
    "dst": "저도... 찬성했었죠... 그런데 그가... 타락의 정수를 손에 넣었어요. 도망칠 수밖에...",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#004": {
+  "Potion Making#009": {
    "src": "I fear...that he may be going...too far. I need your help...",
    "dst": "그가... 너무 멀리 가는 것 같아서... 도움이 필요해요...",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#005": {
+  "Potion Making#010": {
    "src": "I want...to stop him...but I need you to...get me the necessary ingredients... to neutralize the potion...",
    "dst": "그를... 막고 싶어요... 그러니... 물약을 중화할... 재료를 구해 주세요...",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#006": {
+  "Potion Making#011": {
    "src": "Get me...[{~} Red Mushroom], they can be found outside the east gate behind me.",
    "dst": "구해 주세요... [{~} 빨간 버섯]을요. 제 뒤 동문 밖에 있어요.",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#007": {
+  "Potion Making#012": {
    "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
    "dst": "{p} 근처에서 무시룸을 처치하고 [{~} 빨간 버섯]을(를) 조수에게 가져가세요",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#008": {
+  "Potion Making#013": {
    "src": "Quickly, get me... [{~} Red Mushroom] as I asked... go through the {p} outside the east gate from here.",
    "dst": "어서... 부탁한 [{~} 빨간 버섯]을 구해 주세요... 여기서 동문으로 나가 {p}을(를) 지나요.",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#009": {
+  "Potion Making#014": {
    "src": "The...the...cows. Steal...from them.",
    "dst": "그... 그... 소들. 그들한테서... 훔쳐요.",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#010": {
+  "Potion Making#015": {
    "src": "Good... Hurry..!",
    "dst": "좋아요... 서둘러요..!",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#011": {
+  "Potion Making#016": {
    "src": "Good...good. You have the mushrooms.",
    "dst": "좋아요...좋아. 버섯을 구했군요.",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#012": {
+  "Potion Making#017": {
    "src": "I'll... return to my master's house...and sneak the mushrooms into...his potion. Wait for me here...",
    "dst": "전... 주인님 집에 돌아가서... 버섯을 몰래... 물약에 넣을게요. 여기서 기다려요...",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#013": {
+  "Potion Making#018": {
    "src": "I...have returned... He came back...just as I finished slipping the mushrooms in and...told me...to get out.",
    "dst": "저... 돌아왔어요... 버섯을 막 넣었는데... 그가 돌아와서... 저더러... 나가라고 했어요.",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#014": {
+  "Potion Making#019": {
    "src": "You must...ensure that it has worked. You...are much stronger than I, stranger...",
    "dst": "당신이... 효과가 있었는지 확인해야 해요. 당신은... 저보다 훨씬 강하니까요, 낯선 분...",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#015": {
+  "Potion Making#020": {
    "src": "Did you see the orange witch hat roofed hut when you were gathering the mushrooms?",
    "dst": "버섯 모을 때 주황색 마녀 모자 지붕의 오두막 봤어요?",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#016": {
+  "Potion Making#021": {
    "src": "That is my master's house, you...must go back out the east gate and enter the hut.",
    "dst": "거기가 주인님 집이에요. 당신이... 다시 동문으로 나가 오두막에 들어가야 해요.",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#017": {
+  "Potion Making#022": {
    "src": "You must...make sure...he has not managed...to become invincible... Do what has to be done....",
    "dst": "반드시... 그가... 무적이 되지... 못했는지 확인하세요... 해야 할 일을 하세요....",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#018": {
+  "Potion Making#023": {
    "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
    "dst": "[{~}, {~}, -{~}]의 오두막에 들어가 Essren을 처치하고 그의 외투를 가져오세요.",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#019": {
+  "Potion Making#024": {
    "src": "You must go back out the east gate and enter the hut, it is my master's house.",
    "dst": "다시 동문으로 나가 오두막에 들어가요. 제 주인님 집이에요.",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#020": {
+  "Potion Making#025": {
    "src": "Don't forget... Do what you must...",
    "dst": "잊지 마세요... 해야 할 일을...",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#021": {
+  "Potion Making#026": {
    "src": "Ah, you must be the one my assistant told me about.",
    "dst": "아, 네가 내 조수가 말한 그 사람이군.",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#022": {
+  "Potion Making#027": {
    "src": "If you are trying to stop me, it's too late. I already drank the pot...",
    "dst": "날 막으러 왔다면 너무 늦었다. 이미 물약을 마셨으니...",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#023": {
+  "Potion Making#028": {
    "src": "What is this taste? Mushrooms? This can't b",
    "dst": "이 맛은 뭐지? 버섯? 이럴 리가 없",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#024": {
+  "Potion Making#029": {
    "src": "Aaaaargh!!!!!",
    "dst": "끄아아아악!!!!!",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#025": {
+  "Potion Making#030": {
    "src": "What have you done to this potion, human?! You will pay for it!",
    "dst": "물약에 무슨 짓을 한 거냐, 인간?! 대가를 치르게 해 주마!",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Dr. Essren",
    "source": "wiki"
   },
-  "Potion Making#026": {
+  "Potion Making#031": {
    "src": "Bring back Essren's Dusty Coat to The Assistant in {p}",
    "dst": "Essren's Dusty Coat를 {p}의 조수에게 가져가세요",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Potion Making#027": {
+  "Potion Making#032": {
    "src": "I...must thank you, stranger...",
    "dst": "저... 고마워요, 낯선 분...",
    "role": "desc",
@@ -286,7 +336,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#028": {
+  "Potion Making#033": {
    "src": "Don't believe...everything people tell you... If master managed to...discover invincibility... No...too...dangerous.",
    "dst": "사람들 말을... 전부 믿지 마세요... 주인님이 정말... 무적을 찾아냈다면... 안 돼요...너무...위험해요.",
    "role": "desc",
@@ -296,7 +346,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#029": {
+  "Potion Making#034": {
    "src": "This was...for the better...",
    "dst": "이게... 나은 거예요...",
    "role": "desc",
@@ -306,7 +356,7 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#030": {
+  "Potion Making#035": {
    "src": "Now. I...do not want you saying anything about...these events. Take these, and...never speak of this again.",
    "dst": "자. 이... 일에 대해선... 아무 말도 하지 마세요. 이걸 받고... 다시는 입에 올리지 마세요.",
    "role": "desc",

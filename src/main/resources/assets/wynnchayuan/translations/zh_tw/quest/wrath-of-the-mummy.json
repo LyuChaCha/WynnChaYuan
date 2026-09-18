@@ -1,12 +1,82 @@
 {
  "_meta": {
   "quest": "Wrath of the Mummy",
-  "count": 33,
-  "translated": 33,
+  "count": 40,
+  "translated": 40,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Wrath of the Mummy#000": {
+   "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",
+   "dst": "問我懂不懂木乃伊？那當然！我這輩子都在研究牠們！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#001": {
+   "src": "Mummies aren't known to be weak, especially that one. It's demonic... pure evil. It's easily one of the most powerful specimens I've encountered.",
+   "dst": "木乃伊向來不是什麼弱者，尤其是那一具。牠是惡魔性的……純粹的邪惡。輕輕鬆鬆就能排進我見過最強的幾具之一。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#002": {
+   "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just restocked.",
+   "dst": "除非……這樣吧。我一直想弄到一些粉紅色羊毛，而唯一有賣的那家店剛好剛補完貨。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#003": {
+   "src": "Or better yet, if you happen to have some of that pink wool on you. If you give it to me, well... the tomb is all yours.",
+   "dst": "或者更好的是，你身上剛好帶著一些粉紅羊毛。你要是把它給我，嗯……那座墓就全歸你了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#004": {
+   "src": "Either way, you can take my wagon over there to {p}, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
+   "dst": "不管怎樣，你都可以搭我那邊的推車去 {p}，不過回來得自己想辦法。把 [{~} 粉紅羊毛] 給我，我就放你過去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#005": {
+   "src": "Have you got me [{~} Pink Wool] yet!? You can get it from the shop in {p}.",
+   "dst": "[{~} 粉紅羊毛] 弄到了沒！？{p} 的商店就買得到。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#006": {
+   "src": "I don't know you, and you don't know me. Got it?",
+   "dst": "我不認識你，你也不認識我。懂了嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#007": {
    "src": "Talk to Ormrod in the desert of {p} at [{~}, {~}, -{~}].",
    "dst": "前往 {p} 沙漠的 [{~1}, {~2}, -{~3}] 與 Ormrod 對話。",
    "role": "desc",
@@ -16,7 +86,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#001": {
+  "Wrath of the Mummy#008": {
    "src": "Stay away, friend!",
    "dst": "別靠近，朋友！",
    "role": "desc",
@@ -26,7 +96,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#002": {
+  "Wrath of the Mummy#009": {
    "src": "I live in this camp by choice. A curse follows me... and now trouble starts wherever I go. I left civilization and made camp in the desert, where I could do no more harm.",
    "dst": "我是自願住在這個營地的。有個詛咒跟著我……如今我走到哪，麻煩就跟到哪。我離開了文明，在沙漠裡紮營，這樣就不會再害到別人。",
    "role": "desc",
@@ -36,7 +106,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#003": {
+  "Wrath of the Mummy#010": {
    "src": "I do miss the comforts of {p} some days, though... you look like a learned adventurer. If I asked you to investigate this curse, perhaps you could help me rid myself of it?",
    "dst": "不過有些日子我還是會想念 {p} 的舒適……你看起來像個有見識的冒險者。如果我請你去調查這個詛咒，或許你能幫我擺脫它？",
    "role": "desc",
@@ -46,7 +116,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#004": {
+  "Wrath of the Mummy#011": {
    "src": "It all started when I discovered an old tomb in the North of the desert. Upon entering it, the ground started shaking and I heard inhuman screams coming from deeper within.",
    "dst": "一切都是從我在沙漠北邊發現一座古墓開始的。我一走進去，地面就開始震動，深處還傳來不像人的尖嘯。",
    "role": "desc",
@@ -56,7 +126,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#005": {
+  "Wrath of the Mummy#012": {
    "src": "I ran as fast as I could, learning later the tomb housed the remains of an ancient Mummy... which I accidentally awoke. If the Mummy could be put back to rest, perhaps the curse would go away.",
    "dst": "我拚了命地跑，後來才知道那座墓裡放著一具古代木乃伊的遺骸……而我不小心把它喚醒了。如果能讓那具木乃伊重新安息，詛咒或許就會消失。",
    "role": "desc",
@@ -66,7 +136,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#006": {
+  "Wrath of the Mummy#013": {
    "src": "I have heard of a scholar in {p}, Achper, who may know more about the tomb. I am reluctant to return to the city, in case my presence hurts anyone else.",
    "dst": "我聽說 {p} 有位學者叫 Achper，可能對那座墓知道得更多。我不太願意回城裡去，怕我的存在又害到別人。",
    "role": "desc",
@@ -76,7 +146,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#007": {
+  "Wrath of the Mummy#014": {
    "src": "If you would truly like to help, you should start by talking to him.",
    "dst": "你要是真心想幫忙，就先去找他談談吧。",
    "role": "desc",
@@ -86,7 +156,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#008": {
+  "Wrath of the Mummy#015": {
    "src": "Talk to Achper in {p} about the curse at [{~}, {~}, -{~}].",
    "dst": "前往 [{~1}, {~2}, -{~3}] 的 {p}，向 Achper 打聽那個詛咒。",
    "role": "desc",
@@ -96,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#009": {
+  "Wrath of the Mummy#016": {
    "src": "If I know about mummies? Of course! I've spent my entire life studying them!",
    "dst": "問我懂不懂木乃伊？那當然！我這輩子都在研究牠們！",
    "role": "desc",
@@ -106,7 +176,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#010": {
+  "Wrath of the Mummy#017": {
    "src": "They usually are very hard to reach, hidden in their tomb... and they don't like being disturbed.",
    "dst": "牠們通常很難接近，都藏在自己的墓裡……而且牠們很不喜歡被打擾。",
    "role": "desc",
@@ -116,7 +186,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#011": {
+  "Wrath of the Mummy#018": {
    "src": "I have heard of the curse that follows Ormrod, and the only way to remove its effects would be to kill the mummy.",
    "dst": "我聽說過跟著 Ormrod 的那個詛咒，要解除它的影響，唯一的辦法就是殺掉那具木乃伊。",
    "role": "desc",
@@ -126,7 +196,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#012": {
+  "Wrath of the Mummy#019": {
    "src": "The tomb lies in the North of the desert, but be very careful!",
    "dst": "那座墓在沙漠北邊，不過你千萬要小心！",
    "role": "desc",
@@ -136,7 +206,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#013": {
+  "Wrath of the Mummy#020": {
    "src": "Mummies aren't known to be weak... especially that one. It's demonic... pure evil, It's easily one of the most powerful specimens I've encountered.",
    "dst": "木乃伊向來不是什麼弱者……尤其是那一具。牠是惡魔性的……純粹的邪惡，輕輕鬆鬆就能排進我見過最強的幾具之一。",
    "role": "desc",
@@ -146,7 +216,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#014": {
+  "Wrath of the Mummy#021": {
    "src": "On top of that, the Creden Tibus bandit clan have been ransacking the tombs around the desert. You might run into trouble with them, so be prepared.",
    "dst": "除此之外，Creden Tibus 那個盜匪幫最近一直在洗劫沙漠周圍的墓穴。你可能會跟他們槓上，先做好準備。",
    "role": "desc",
@@ -156,7 +226,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#015": {
+  "Wrath of the Mummy#022": {
    "src": "Attempt to enter the Mummy's tomb at [{~}, {~}, -{~}]",
    "dst": "嘗試進入 [{~1}, {~2}, -{~3}] 的木乃伊之墓",
    "role": "desc",
@@ -166,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#016": {
+  "Wrath of the Mummy#023": {
    "src": "Stop! If you're thinking about looting the tomb, you're too late. The Creden Tibus have laid claim here, and you're not getting past.",
    "dst": "站住！你要是想來盜墓，那你來晚了。這裡已經被 Creden Tibus 佔了，你過不去的。",
    "role": "desc",
@@ -176,7 +246,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#017": {
+  "Wrath of the Mummy#024": {
    "src": "Mummy? Curse? I don't know anything about that, but I can't let you in - how do I know you won't just grab the gold?",
    "dst": "木乃伊？詛咒？那些我一概不知，但我不能放你進去——我怎麼知道你不會順手把金子摸走？",
    "role": "desc",
@@ -186,7 +256,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#018": {
+  "Wrath of the Mummy#025": {
    "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just been restocked.",
    "dst": "除非……這樣吧。我一直想弄到一些粉紅色羊毛，而唯一有賣的那家店剛好剛補完貨。",
    "role": "desc",
@@ -196,7 +266,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#019": {
+  "Wrath of the Mummy#026": {
    "src": "Trouble is, the shop's over in {p} and I'm stuck guarding this tomb. If you go and grab me some before it sells out, I can look the other way.",
    "dst": "問題是那家店在 {p}，而我被綁在這裡守墓。你要是能趕在賣完之前幫我弄一些回來，我就睜一隻眼閉一隻眼。",
    "role": "desc",
@@ -206,7 +276,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#020": {
+  "Wrath of the Mummy#027": {
    "src": "You can take my wagon over there, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
    "dst": "你可以搭我那邊的推車過去，不過回來得自己想辦法。把 [{~} 粉紅羊毛] 給我，我就放你過去。",
    "role": "desc",
@@ -216,7 +286,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#021": {
+  "Wrath of the Mummy#028": {
    "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}.",
    "dst": "搭乘 [{~1}, {~2}, -{~3}] 的盜匪推車前往 {p}。",
    "role": "desc",
@@ -226,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#022": {
+  "Wrath of the Mummy#029": {
    "src": "Bring back [{~} Pink Wool] to the bandit at [{~}, {~}, -{~}].",
    "dst": "把 [{~1} 粉紅羊毛] 帶回 [{~2}, {~3}, -{~4}] 交給那名盜匪。",
    "role": "desc",
@@ -236,7 +306,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#023": {
+  "Wrath of the Mummy#030": {
    "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
    "dst": "嘿，瞧瞧這是什麼？你真的弄到粉紅羊毛了！好，交過來，我就當作沒看見，放你進墓裡。",
    "role": "desc",
@@ -246,7 +316,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#024": {
+  "Wrath of the Mummy#031": {
    "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
    "dst": "不過別碰任何金子，嗯？還有，換作是我，我不會往太深處走。",
    "role": "desc",
@@ -256,7 +326,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#025": {
+  "Wrath of the Mummy#032": {
    "src": "The clan was going to explore further inside, but the sounds...",
    "dst": "幫裡本來打算往裡頭再探一探的，可是那些聲音……",
    "role": "desc",
@@ -266,7 +336,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#026": {
+  "Wrath of the Mummy#033": {
    "src": "Anyway, I'll still let you inside if you want. Just remember, if anyone asks, this conversation never happened.",
    "dst": "總之，你想進去我還是會放你進去。只要記得，要是有人問起，這段對話從來沒發生過。",
    "role": "desc",
@@ -276,7 +346,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#027": {
+  "Wrath of the Mummy#034": {
    "src": "Enter the tomb at [{~}, {~}, -{~}] and kill the Mummy.",
    "dst": "進入 [{~1}, {~2}, -{~3}] 的墓穴，殺死那具木乃伊。",
    "role": "desc",
@@ -286,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#028": {
+  "Wrath of the Mummy#035": {
    "src": "Bring [{~} Mummy's Bandage] to Ormrod at [{~}, {~}, -{~}].",
    "dst": "把 [{~1} 木乃伊的繃帶] 帶到 [{~2}, {~3}, -{~4}] 交給 Ormrod。",
    "role": "desc",
@@ -296,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#029": {
+  "Wrath of the Mummy#036": {
    "src": "Hello, again... have you had any luck?",
    "dst": "你好，又見面了……有沒有什麼進展？",
    "role": "desc",
@@ -306,7 +376,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#030": {
+  "Wrath of the Mummy#037": {
    "src": "Those are the Mummy's bandages?! You did it? My curse is finally lifted!",
    "dst": "那些是木乃伊的繃帶？！你做到了？我的詛咒終於解除了！",
    "role": "desc",
@@ -316,7 +386,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#031": {
+  "Wrath of the Mummy#038": {
    "src": "I can't thank you enough! As a reward, take this rag I got from the Mummy when I entered the tomb.",
    "dst": "我真不知該怎麼謝你！當作報酬，這塊我進墓時從木乃伊身上拿到的破布給你。",
    "role": "desc",
@@ -326,7 +396,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#032": {
+  "Wrath of the Mummy#039": {
    "src": "I am not strong enough to wear it, but I'm sure you are! Take these emeralds too, that's the least I can do!",
    "dst": "我沒有那個力量穿戴它，但我相信你有！這些綠寶石也拿去，這是我最起碼能做的！",
    "role": "desc",

@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "The Worm Holes",
-  "count": 85,
+  "count": 86,
   "translated": 86,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Worm Holes#000": {
+   "src": "New Questline Started: The Realm of Light",
+   "dst": "开始新任务线：光之领域",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#001": {
    "src": "Find out what's going on at [-{~}, {~}, -{~}]",
    "dst": "查明 [-{~}, {~}, -{~}] 发生了什么事",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Worm Holes#001": {
+  "The Worm Holes#002": {
    "src": "Arrighty fellers, let's get this wrapped up now! 'ere's plenty more holes where this one came from!",
    "dst": "好啦伙计们，这个赶紧收尾！这种洞多的是！",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#002": {
+  "The Worm Holes#003": {
    "src": "...what in...aw no!",
    "dst": "……这是……噢不！",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#003": {
+  "The Worm Holes#004": {
    "src": "The scaffolds are crackin'! Everyone, get offa there, now!!",
    "dst": "脚手架裂了！所有人，马上下来！！",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#004": {
+  "The Worm Holes#005": {
    "src": "GwaaAAAAAH!!",
    "dst": "哇啊啊啊啊！！",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "The Worm Holes#005": {
+  "The Worm Holes#006": {
    "src": "Aw, hell... I knew this project was a bust from the start...there goes Willam and Clint cause a' this!",
    "dst": "噢，该死……我就知道这项工程打从一开始就是个失败……Willam 和 Clint 就这样没了！",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#006": {
+  "The Worm Holes#007": {
    "src": "I gotta get someone tough enough to get down there...hm? Hey, a human! Git on over here!",
    "dst": "我得找个够强悍的人下去……嗯？嘿，一个人类！过来这边！",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#007": {
+  "The Worm Holes#008": {
    "src": "I gotta ask, how much 'a that didja see, Wynn feller? Wasn't pretty, and I'm in charge a' them folks, so I gotta take responsibility fer that.",
    "dst": "我得问问，刚才的事你看到多少，Wynn 来的伙计？场面不好看，而我是那些人的头儿，我得负起责任。",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#008": {
+  "The Worm Holes#009": {
    "src": "Th' mayor of {p} there saw these holes poppin' up, and hired us out to cover 'em up. Thing is, the ground's too unstable to build.",
    "dst": "{p} 的镇长看到这些洞冒出来，就雇我们来把它们填上。问题是，地面太不稳，根本没法施工。",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#009": {
+  "The Worm Holes#010": {
    "src": "It's gettin' real worrying round here. They only started openin' up recently, and there've been quakes too. Feels like the place is gonna collapse!",
    "dst": "这一带越来越让人担心了。这些洞最近才开始冒出来，还有地震。感觉整个地方都要塌了！",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#010": {
+  "The Worm Holes#011": {
    "src": "I think we oughta head down there and figure out what 'n heck's goin' on, and you're the best armed outta any of us, being human 'n all.",
    "dst": "我觉得我们该下去弄清楚到底是怎么回事，而你是我们当中装备最好的，毕竟是人类嘛。",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#011": {
+  "The Worm Holes#012": {
    "src": "Think y'all could head down 'n see if you can rustle up any leads? There's a path down just to the left of the hole.",
    "dst": "你能不能下去看看，找点线索？洞的左边就有条路可以下去。",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#012": {
+  "The Worm Holes#013": {
    "src": "Go down the hole and look for what's causing this and return to Malo at [-{~}, {~}, -{~}] with proof.",
    "dst": "下到洞里找出这件事的起因，带着证据回到 [-{~}, {~}, -{~}] 的 Malo 那里。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Worm Holes#013": {
+  "The Worm Holes#014": {
    "src": "What in tarnation...? The heck did you find down there, soldier?",
    "dst": "这到底是什么鬼……？你在下面找到了什么，士兵？",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#014": {
+  "The Worm Holes#015": {
    "src": "Oh, it was just the skin, huh? Dang...was hopin' you'd've seen what it was, cause I got no clue 'bout this.",
    "dst": "噢，只是一张皮，是吗？可恶……还希望你看到了是什么东西，因为这事我一点头绪都没有。",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#015": {
+  "The Worm Holes#016": {
    "src": "Urgh. Only gal I know who might have an idea 'bout this is that durn elf lady...",
    "dst": "呃。我认识的人里，唯一可能知道这事的，就是那个讨厌的精灵女人……",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#016": {
+  "The Worm Holes#017": {
    "src": "She's got purple hair and's been wanderin' round like she knows everything. Yeah, she's a bright penny but she ain't gotta be so uppity ta all of us 'bout it.",
    "dst": "她一头紫发，到处晃来晃去，好像什么都懂。是啦，她是很聪明，但也不必对我们所有人那么高高在上吧。",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#017": {
+  "The Worm Holes#018": {
    "src": "She put up a camp just east of here. She'll prob'ly react better to you than me, so I'll go to the authorities and see if they have any leads.",
    "dst": "她在这里东边扎了营。她对你的态度大概会比对我好，所以我去找官方，看看他们有没有线索。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Malo",
    "source": "wiki"
   },
-  "The Worm Holes#018": {
+  "The Worm Holes#019": {
    "src": "Look for Lari and ask what is going on at [-{~}, {~}, -{~}]",
    "dst": "在 [-{~}, {~}, -{~}] 找到 Lari，问问是怎么回事",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Worm Holes#019": {
+  "The Worm Holes#020": {
    "src": "...Haven’t we met? I have witnessed your presence in Gavel more than once.",
    "dst": "……我们见过吗？我在 Gavel 不止一次看到过你。",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#020": {
+  "The Worm Holes#021": {
    "src": "I am Lari. I might have greeted you properly before if I were not so busy, which reminds me. You have a reason to be here, yes?",
    "dst": "我是 Lari。要不是之前太忙，我也许早就好好跟你打过招呼了，说到这个。你来这里是有原因的，对吧？",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#021": {
+  "The Worm Holes#022": {
    "src": "Hm...I believe I know what you have found, by your description. That dead skin too, is proof enough, I would say.",
    "dst": "嗯……听你的描述，我想我知道你发现了什么。我想，那张死皮也足以证明了。",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#022": {
+  "The Worm Holes#023": {
    "src": "The creature which shed that skin is known as a Grootslang. Though large, they are rather peaceful. Gentle giants, I believe the saying is?",
    "dst": "蜕下那张皮的生物叫作 Grootslang。它们虽然体型庞大，却相当温和。我记得有句话叫“温柔的巨人”，是吧？",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#023": {
+  "The Worm Holes#024": {
    "src": "This horrid Decay...it affects their habitats underground. They are seeking shelter closer to the surface. I have been trying to scrub the Decay without success...",
    "dst": "这可怕的衰败……影响了它们在地底的栖息地。它们正往离地面更近的地方寻找藏身处。我一直在试着清除衰败，却没有成功……",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#024": {
+  "The Worm Holes#025": {
    "src": "Wait... More holes appeared just today? There...there were deaths?! W-where, when?!",
    "dst": "等等……今天又冒出了更多洞？有……有人死了？！在、在哪里，什么时候？！",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#025": {
+  "The Worm Holes#026": {
    "src": "No, no...! I refuse to be responsible for any more deaths... Human, tell me your name, please.",
    "dst": "不，不……！我不愿再为任何人的死负责……人类，请告诉我你的名字。",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#026": {
+  "The Worm Holes#027": {
    "src": "{u}, then... Let us head to the site. {u}. I need to fix this... Please, help me get to the root of this problem so I may soothe the land's pain.",
    "dst": "{u}，是吗……我们去现场吧。{u}。我必须解决这件事……请帮我找到问题的根源，好让我抚平这片土地的伤痛。",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#027": {
+  "The Worm Holes#028": {
    "src": "Meet up with Lari at [-{~}, {~}, -{~}]",
    "dst": "在 [-{~}, {~}, -{~}] 与 Lari 会合",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Worm Holes#028": {
+  "The Worm Holes#029": {
    "src": "So this is the site... [Gavellian Spell]...",
    "dst": "原来这就是现场……[Gavel 咒语]……",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#029": {
+  "The Worm Holes#030": {
    "src": "Here. Allow me to provide at least one person safe passage into the pit.",
    "dst": "来。至少让我护送一个人安全进入深坑。",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#030": {
+  "The Worm Holes#031": {
    "src": "Have faith- Jump in. I will carry you down slowly.",
    "dst": "相信我——跳下去。我会让你慢慢降落。",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#031": {
+  "The Worm Holes#032": {
    "src": "Take the lead. If we can find any further evidence of the Grootslangs around here, it will aid in my understanding.",
    "dst": "你带路。如果能在这附近找到更多 Grootslang 的痕迹，会有助于我了解情况。",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#032": {
+  "The Worm Holes#033": {
    "src": "Hm? This wall looks like it's been disturbed recently...",
    "dst": "嗯？这面墙看起来最近被动过……",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#033": {
+  "The Worm Holes#034": {
    "src": "I can hear it...but where is it crawling...?",
    "dst": "我听得到……但它在往哪里爬……？",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#034": {
+  "The Worm Holes#035": {
    "src": "That's the mother Wyrm! She must be what is making the holes. We need to follow her!",
    "dst": "那是巨虫之母！这些洞一定是她弄出来的。我们得跟上她！",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#035": {
+  "The Worm Holes#036": {
    "src": "Never mind the spiders, we need to keep following the Wyrm!",
    "dst": "别管那些蜘蛛了，我们得继续跟着巨虫！",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#036": {
+  "The Worm Holes#037": {
    "src": "Ah...ehm, {u}? I've... Um, this is...a bit difficult to say, but...",
    "dst": "啊……呃，{u}？我……嗯，这个……有点难开口，不过……",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#037": {
+  "The Worm Holes#038": {
    "src": "I...do not believe we need to fight, or to kill, here? The creatures are native to here, we are invading their space.",
    "dst": "我……不认为我们在这里需要战斗，或是杀戮？这些生物原本就住在这里，是我们闯进了它们的地盘。",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#038": {
+  "The Worm Holes#039": {
    "src": "Why should they be attacked for merely existing in their territory? Even if they are animals, I believe that you can solve these problems without killing.",
    "dst": "它们只是在自己的领地里生活，凭什么要被攻击？就算它们是动物，我相信不用杀戮也能解决这些问题。",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#039": {
+  "The Worm Holes#040": {
    "src": "I...understand you may not have the same powers as myself... And I, ah...am not free of guilt, either. But I think you could stand to take a peaceful stance.",
    "dst": "我……明白你也许没有我这样的力量……而我，呃……也不是毫无罪过。但我认为你可以试着采取和平的立场。",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#040": {
+  "The Worm Holes#041": {
    "src": "Even if I am alone on that front...though I understand you are taught differently where you come from. I do not envy you, though I still thank you for your aid thusfar.",
    "dst": "就算在这点上只有我这么想……尽管我明白你的家乡教你的是另一套。我并不羡慕你，不过我还是感谢你一路以来的帮助。",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#041": {
+  "The Worm Holes#042": {
    "src": "Your methods are...disagreeable, but you still have a sense of right to you, I feel... Well, the tunnel diverges here. We'll need to split apart.",
    "dst": "你的做法……我不认同，但我觉得你依然有是非之心……好了，隧道在这里分岔了。我们得分头行动。",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#042": {
+  "The Worm Holes#043": {
    "src": "I'll go to the right, so you ought to continue to the left here. I will meet up with you again soon, hopefully.",
    "dst": "我走右边，所以你应该继续往左走。希望我们很快就能再会合。",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#043": {
+  "The Worm Holes#044": {
    "src": "Take the lead.",
    "dst": "你带路。",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#044": {
+  "The Worm Holes#045": {
    "src": "Investigate the worm tunnels.",
    "dst": "调查巨虫隧道。",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Worm Holes#045": {
+  "The Worm Holes#046": {
    "src": "Aah! {u}! Don't...don't make any sudden movements.",
    "dst": "啊！{u}！别……别突然乱动。",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#046": {
+  "The Worm Holes#047": {
    "src": "This Grootslang is uncharacteristically aggressive... She's scared, being so close to the surface. Stay behind me, please.",
    "dst": "这只 Grootslang 反常地凶暴……离地面这么近，她很害怕。请待在我身后。",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#047": {
+  "The Worm Holes#048": {
    "src": "AH! [Gavellian Spell]!",
    "dst": "啊！[Gavel 咒语]！",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#048": {
+  "The Worm Holes#049": {
    "src": "Do not approach it! The power of the Wyrm is far too much for you!",
    "dst": "别靠近它！巨虫的力量远远不是你能承受的！",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#049": {
+  "The Worm Holes#050": {
    "src": "W-wait, again? [Gavellian Spell]- Aah, MOVE!",
    "dst": "又、又来？[Gavel 咒语]——啊，快闪开！",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#050": {
+  "The Worm Holes#051": {
    "src": "{u}!! You're unharmed, yes? She's scared and in pain!",
    "dst": "{u}！！你没受伤吧？她又害怕又痛苦！",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#051": {
+  "The Worm Holes#052": {
    "src": "I have to get it right this time... I'm going to talk her down, stay there!",
    "dst": "这次我一定要做对……我要去安抚她，你待在那里别动！",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#052": {
+  "The Worm Holes#053": {
    "src": "You must be calm, I beg you. Retreat to the earth- You harm those above!",
    "dst": "请你冷静下来，我求求你。回到大地深处——你伤害到上面的人了！",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#053": {
+  "The Worm Holes#054": {
    "src": "The earth rotting... I take full responsibility, but does the grass above not rot also?",
    "dst": "大地正在腐烂……我愿负起全部责任，但上面的草地不也在腐烂吗？",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#054": {
+  "The Worm Holes#055": {
    "src": "I wish to soothe your pain, but you must allow me to aid you- You must listen!",
    "dst": "我想抚平你的痛苦，但你得让我帮你——你必须听我说！",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#055": {
+  "The Worm Holes#056": {
    "src": "What does this violence solve? Be calm, please!",
    "dst": "这样的暴力能解决什么？请冷静下来！",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#056": {
+  "The Worm Holes#057": {
    "src": "{u}, it won't budge... There's something in its mind rejecting me. Distract it- but don't approach! It will kill you if you get close. Just...be loud!",
    "dst": "{u}，它纹丝不动……它的意识里有什么在排斥我。去分散它的注意——但别靠近！你一靠近它就会杀了你。就……大声点！",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#057": {
+  "The Worm Holes#058": {
    "src": "Fight the Grootslang with Lari",
    "dst": "与 Lari 一起对抗 Grootslang",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Worm Holes#058": {
+  "The Worm Holes#059": {
    "src": "AIYEE! {u}! Hold on in there!",
    "dst": "呀啊！{u}！在里面撑住！",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#059": {
+  "The Worm Holes#060": {
    "src": "Can you hear me?! I'll get her to...to...s-something! Spit you up, I don't know! Just...please, d-don't die!",
    "dst": "你听得到吗？！我会让她……让她……做点什么！把你吐出来，我也不知道！只要……求求你，别、别死！",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#060": {
+  "The Worm Holes#061": {
    "src": "W-We have... We have not laid a blow against you! It is not right for you to do the same!",
    "dst": "我、我们……我们没有对你出过手！你这样对我们是不对的！",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#061": {
+  "The Worm Holes#062": {
    "src": "You would wound and consume everything in your rage? Even knowing the consequences?",
    "dst": "你要在愤怒中伤害并吞噬一切？就算明知道后果？",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#062": {
+  "The Worm Holes#063": {
    "src": "Your hunger cannot be sated with this fruitless destruction! I beg of you, let them out!",
    "dst": "这种徒劳的破坏满足不了你的饥饿！我求求你，放他们出来！",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#063": {
+  "The Worm Holes#064": {
    "src": "You know th- W-wait...where did you... AAAH!",
    "dst": "你明明知——等、等等……你从哪里……啊啊啊！",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#064": {
+  "The Worm Holes#065": {
    "src": "...y-you... ... I...y-you're still alright? I...*hic* I...",
    "dst": "……你、你……我……你、你还好吗？我……*抽泣* 我……",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#065": {
+  "The Worm Holes#066": {
    "src": "I tried...w-why does no one listen to me? Why won't a-anything change for me?",
    "dst": "我努力过了……为、为什么没人听我的？为什么什、什么都不会为我改变？",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#066": {
+  "The Worm Holes#067": {
    "src": "She...she's been eating dark parasites. They're wracking her insides and h-hurting her head...",
    "dst": "她……她一直在吃黑暗寄生虫。它们正在折磨她的内脏，让她头痛欲、欲裂……",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#067": {
+  "The Worm Holes#068": {
    "src": "I...i-it's so d-dark... I c-can't breathe... This...th-this can't be the end...",
    "dst": "我……好、好暗……我没、没法呼吸……这……这不能就这样结束……",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#068": {
+  "The Worm Holes#069": {
    "src": "I...n-no, I can't die in here... I-I'm needed still... You're n-needed still! I... I...",
    "dst": "我……不、不，我不能死在这里……还有人需、需要我……也还有人需、需要你！我……我……",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#069": {
+  "The Worm Holes#070": {
    "src": "I n-need... Or... O-Or... C-Concentrate, Lari... You can do this...",
    "dst": "我需、需要……或者……或、或者……集、集中精神，Lari……你做得到的……",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#070": {
+  "The Worm Holes#071": {
    "src": "[Gavellian Spell]! [Gavellian Spell]!",
    "dst": "[Gavel 咒语]！[Gavel 咒语]！",
    "role": "desc",
@@ -716,7 +726,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#071": {
+  "The Worm Holes#072": {
    "src": "LET US OUT! LET US OUT OF HERE! DON'T LET US DIE LIKE THIS! I'M BEGGING YOU, PLEASE!!",
    "dst": "放我们出去！放我们离开这里！别让我们这样死掉！我求求你了！！",
    "role": "desc",
@@ -726,7 +736,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#072": {
+  "The Worm Holes#073": {
    "src": "...I...oh no... It's...d-d... I... I j-just... I just w-wanted out... Ohhh...n-no...",
    "dst": "……我……噢不……它……死、死……我……我只、只是……我只是想出、出去……噢……不、不……",
    "role": "desc",
@@ -736,7 +746,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#073": {
+  "The Worm Holes#074": {
    "src": "...w-we're...leaving. I...I c-can't look at this any more...",
    "dst": "……我、我们……走吧。我……我没、没办法再看下去了……",
    "role": "desc",
@@ -746,7 +756,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#074": {
+  "The Worm Holes#075": {
    "src": "...I... That's...m-my fault...",
    "dst": "……我……那是……我、我的错……",
    "role": "desc",
@@ -756,7 +766,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#075": {
+  "The Worm Holes#076": {
    "src": "I'm...I'm so sorry, {u}. If I'd...I don't... I don't even know what else I could have d-done...",
    "dst": "我……我真的很抱歉，{u}。如果我……我不……我根本不知道自己还能做、做些什么……",
    "role": "desc",
@@ -766,7 +776,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#076": {
+  "The Worm Holes#077": {
    "src": "There...it didn’t feel like there was...anything left to it... But, if I’d just been quicker, then... Would it...would it even have made a difference?",
    "dst": "那时候……感觉它已经……什么都不剩了……可是，如果我能再快一点……会不会……会不会有什么不同？",
    "role": "desc",
@@ -776,7 +786,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#077": {
+  "The Worm Holes#078": {
    "src": "...some savior I am... I need to be better, but what else even is there that...ugh, I'm going in circles...",
    "dst": "……我算什么救世主……我得做得更好，可是还能怎么……唉，我在原地打转……",
    "role": "desc",
@@ -786,7 +796,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#078": {
+  "The Worm Holes#079": {
    "src": "Let's... Let's just leave...",
    "dst": "我们……我们还是走吧……",
    "role": "desc",
@@ -796,7 +806,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#079": {
+  "The Worm Holes#080": {
    "src": "...I...I can't believe this. This is...does destiny just hate me? What have I done to deserve this?!",
    "dst": "……我……我不敢相信。这……难道命运就是跟我过不去吗？我到底做了什么要遭受这些？！",
    "role": "desc",
@@ -806,7 +816,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#080": {
+  "The Worm Holes#081": {
    "src": "The Mother Wyrm laid eggs... Eggs infested with parasites! Every single one is going to be born berserk!!",
    "dst": "巨虫之母产了卵……被寄生虫侵染的卵！每一颗孵出来都会发狂！！",
    "role": "desc",
@@ -816,7 +826,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#081": {
+  "The Worm Holes#082": {
    "src": "You saw how strong the mother was...an infestation like this could cause the entire region of Gavel to collapse in a quake...",
    "dst": "你看到那个母亲有多强了……这样的侵染可能引发地震，让整个 Gavel 地区崩塌……",
    "role": "desc",
@@ -826,7 +836,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#082": {
+  "The Worm Holes#083": {
    "src": "They...they need to be stopped, but...I can't do it. I c-can't kill... I'm sorry, I just can't!",
    "dst": "它们……它们必须被阻止，但是……我做不到。我没、没法杀……对不起，我就是做不到！",
    "role": "desc",
@@ -836,7 +846,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#083": {
+  "The Worm Holes#084": {
    "src": "Bring a group... Even Whelps can be a terror if they're enraged. Just...p-please, take care of this quickly.",
    "dst": "带一队人去……发狂的话，就连幼虫也很可怕。只要……求、求你，快点解决这件事。",
    "role": "desc",
@@ -846,7 +856,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Worm Holes#084": {
+  "The Worm Holes#085": {
    "src": "You deserve the best... But that's more than I can give...so here. Take these. I'll move along.",
    "dst": "你值得最好的……但那超出了我能给的……所以，给你。收下这些吧。我该走了。",
    "role": "desc",
@@ -855,16 +865,6 @@
    "stage": "Stage 6",
    "speaker": "Lari",
    "source": "wiki"
-  },
-  "The Worm Holes#000~1": {
-   "src": "New Questline Started: The Realm of Light",
-   "dst": "开始新任务线：光之领域",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Worm Holes",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

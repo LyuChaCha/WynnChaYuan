@@ -1,12 +1,162 @@
 {
  "_meta": {
   "quest": "Brothers Return",
-  "count": 93,
-  "translated": 93,
+  "count": 108,
+  "translated": 108,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Brothers Return#000": {
+   "src": "Hey! Don't put that down there—",
+   "dst": "おい！そこに置くなって—",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#001": {
+   "src": "If you could go to {p} and see if Drucksh has the will, I would be forever in your debt, pal.",
+   "dst": "{p} に行って Drucksh が遺言状を持ってるか確かめてくれたら、一生恩に着るよ、相棒。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#002": {
+   "src": "Mmmmmgghh... aaauuughh... need... mmgh... more...",
+   "dst": "むぅぅ… うぁぁ… もっと… むぐ… 飲ませ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#003": {
+   "src": "There must be something around here that could make him talk...",
+   "dst": "この辺りに、彼の口を割らせる何かがあるはずだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#004": {
+   "src": "You may have forgotten already, but I unfortunately must inform you that your brother is indeed dead.",
+   "dst": "もう忘れたのかもしれないが、残念ながら君の兄上は確かに亡くなったと伝えねばならん。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#005": {
+   "src": "As I already told you, your brother is dead and buried. It's not like—",
+   "dst": "何度も言うが、君の兄上は死んで埋葬された。別に—",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#006": {
+   "src": "They've what!? Holy Bovine! It's even worse than I feared!",
+   "dst": "何だと！？聖なる牛よ！恐れていた以上にひどい！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#007": {
+   "src": "[-{~} Second Floor Key]",
+   "dst": "[-{~} 二階の鍵]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#008": {
+   "src": "[-{~} Sealed Room Key]",
+   "dst": "[-{~} 封印された部屋の鍵]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#009": {
+   "src": "You find the will tucked into an inner pocket of Sayleros' brother's crumbling tunic.",
+   "dst": "Sayleros の兄の朽ちかけた上着の内ポケットに、遺言状が押し込まれていた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#010": {
+   "src": "[+{~} Dusty Will]",
+   "dst": "[+{~} 埃まみれの遺言状]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#011": {
+   "src": "The exit seems to be opening...",
+   "dst": "出口が開いていくようだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#012": {
+   "src": "[-{~} Dusty Will]",
+   "dst": "[-{~} 埃まみれの遺言状]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#013": {
+   "src": "Please, take these as proof of my gratitude, pal. You really helped us out, in more ways than one.",
+   "dst": "感謝のしるしに、これを受け取ってくれ、相棒。いろんな意味で本当に助かったよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#014": {
+   "src": "The obelisk does not react to your touch. [Req: {p} Trouble]",
+   "dst": "オベリスクは触れても反応しない。[必要: {p}の災難]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Brothers Return#015": {
    "src": "Talk to Sayleros at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] で Sayleros と話す。",
    "role": "desc",
@@ -16,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#001": {
+  "Brothers Return#016": {
    "src": "Hey! Don't put that down there",
    "dst": "おい！そこに置くなって",
    "role": "desc",
@@ -26,7 +176,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#002": {
+  "Brothers Return#017": {
    "src": "Oh, hello there, adventurer! I was just looking for someone like you! My name is Sayleros. I lived in {p} my whole life, but recently decided to move to {p}.",
    "dst": "やあ、冒険者！君みたいな人を探してたんだ！俺は Sayleros。ずっと {p} で暮らしてたが、最近 {p} に引っ越すことにしてね。",
    "role": "desc",
@@ -36,7 +186,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#003": {
+  "Brothers Return#018": {
    "src": "You see, my older brother just passed. I would have taken care of it, if only I weren't so busy with the move!",
    "dst": "実は兄貴が亡くなったばかりでね。引っ越しで忙しくなけりゃ、俺が片付けたんだが！",
    "role": "desc",
@@ -46,7 +196,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#004": {
+  "Brothers Return#019": {
    "src": "I had to leave it all to my younger brother, Drucksh. He's still in {p}, but well, he's not the most reliable...",
    "dst": "全部弟の Drucksh に任せるしかなかった。まだ {p} にいるが、まあ、あまり頼りにならなくて…",
    "role": "desc",
@@ -56,7 +206,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#005": {
+  "Brothers Return#020": {
    "src": "My older brother had amassed quite some wealth before he passed. He should have left us part of it in his will, only I don't exactly trust Drucksh to handle it...",
    "dst": "兄貴は死ぬ前にかなりの財産を貯めてた。遺言で俺たちにも分けてくれたはずだが、Drucksh に任せるのはどうも不安で…",
    "role": "desc",
@@ -66,7 +216,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#006": {
+  "Brothers Return#021": {
    "src": "If you could go to {p} and see if Drucksh has the will, I would forever be in your debt, pal.",
    "dst": "{p} に行って Drucksh が遺言状を持ってるか確かめてくれたら、一生恩に着るよ、相棒。",
    "role": "desc",
@@ -76,7 +226,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#007": {
+  "Brothers Return#022": {
    "src": "Drucksh shouldn't be hard to find, he usually spends his time in the bar in {p}. Just follow this road out of {p} to get there.",
    "dst": "Drucksh ならすぐ見つかる。たいてい {p} の酒場に入り浸ってるからな。この道を {p} から出ていけば着くよ。",
    "role": "desc",
@@ -86,7 +236,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#008": {
+  "Brothers Return#023": {
    "src": "Find Drucksh at the bar in {p} at [{~}, {~}, -{~}].",
    "dst": "{p} の酒場 [{~}, {~}, -{~}] で Drucksh を探す。",
    "role": "desc",
@@ -96,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#009": {
+  "Brothers Return#024": {
    "src": "Thanks again for doing this, pal. Just follow this road out of {p} to get to {p}, Drucksh's usually at the bar there.",
    "dst": "引き受けてくれて改めてありがとう、相棒。この道で {p} を出れば {p} だ。Drucksh はたいていそこの酒場にいる。",
    "role": "desc",
@@ -106,7 +256,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#010": {
+  "Brothers Return#025": {
    "src": "Anythin' to drink?",
    "dst": "何か飲むかい？",
    "role": "desc",
@@ -116,7 +266,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#011": {
+  "Brothers Return#026": {
    "src": "Mmmmmgghh... aaauuugh... need... mmgh... more...",
    "dst": "むぅぅ… うぁぁ… もっと… むぐ… 飲ませ…",
    "role": "desc",
@@ -126,7 +276,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#012": {
+  "Brothers Return#027": {
    "src": "Aauuughh... s-something... mmmmgh... to... drink... aaaughh...",
    "dst": "うぁぁ… な、何か… むぐぅ… 飲む… もの… あぁ…",
    "role": "desc",
@@ -136,7 +286,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#013": {
+  "Brothers Return#028": {
    "src": "Find a way to make Drucksh tell you about the will.",
    "dst": "Drucksh に遺言状のことを話させる方法を探す。",
    "role": "desc",
@@ -146,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#014": {
+  "Brothers Return#029": {
    "src": "Aauuughh... s-something... mmmmgh... to... drink... aaaughh...",
    "dst": "うぁぁ… な、何か… むぐぅ… 飲む… もの… あぁ…",
    "role": "desc",
@@ -156,7 +306,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#015": {
+  "Brothers Return#030": {
    "src": "Anythin' to drink?",
    "dst": "何か飲むかい？",
    "role": "desc",
@@ -166,7 +316,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#016": {
+  "Brothers Return#031": {
    "src": "Anythin' is possible. If ya have [{~} Emeralds] to spare, that is.",
    "dst": "何だってできるさ。[{~} エメラルド] 払えるならな。",
    "role": "desc",
@@ -176,7 +326,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#017": {
+  "Brothers Return#032": {
    "src": "One {p} Whiskey, shipwrecked against the rocks, comin' right up.",
    "dst": "{p} ウイスキーを座礁ロックで一丁、すぐ出すぜ。",
    "role": "desc",
@@ -186,7 +336,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#018": {
+  "Brothers Return#033": {
    "src": "Hey, Drucksh. Hey, can you hear me? Hey!",
    "dst": "おい、Drucksh。聞こえるか？おい！",
    "role": "desc",
@@ -196,7 +346,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#019": {
+  "Brothers Return#034": {
    "src": "Ughhhhhh... W-what is it now?",
    "dst": "うぅぅ… な、何だよ今度は？",
    "role": "desc",
@@ -206,7 +356,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#020": {
+  "Brothers Return#035": {
    "src": "This nice fella got ya a drink. A {p} Whiskey, yer favourite.",
    "dst": "気前のいい客が一杯おごってくれたぞ。好物の {p} ウイスキーだ。",
    "role": "desc",
@@ -216,7 +366,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#021": {
+  "Brothers Return#036": {
    "src": "Aauuughh... W-what d'you want?",
    "dst": "うぁぁ… な、何の用だ？",
    "role": "desc",
@@ -226,7 +376,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#022": {
+  "Brothers Return#037": {
    "src": "Hey! They paid for yer drink, ya know. Ya could at least try to be courteous.",
    "dst": "おい！その酒はこの人のおごりだぞ。少しは礼儀ってもんを見せろ。",
    "role": "desc",
@@ -236,7 +386,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#023": {
+  "Brothers Return#038": {
    "src": "Oh, s-shut up. I c-can pay for my own drinks!",
    "dst": "う、うるせぇ。じ、自分の酒代くらい払える！",
    "role": "desc",
@@ -246,7 +396,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#024": {
+  "Brothers Return#039": {
    "src": "Well, call me if ya need anythin' else.",
    "dst": "ま、用があったら呼んでくれ。",
    "role": "desc",
@@ -256,7 +406,7 @@
    "speaker": "Barkeep",
    "source": "wiki"
   },
-  "Brothers Return#025": {
+  "Brothers Return#040": {
    "src": "So... W-what did you want?",
    "dst": "で… な、何の用だっけ？",
    "role": "desc",
@@ -266,7 +416,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#026": {
+  "Brothers Return#041": {
    "src": "W-will? W-what will?",
    "dst": "ゆ、遺言？ な、何の遺言だ？",
    "role": "desc",
@@ -276,7 +426,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#027": {
+  "Brothers Return#042": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -286,7 +436,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#028": {
+  "Brothers Return#043": {
    "src": "Oh! Right, the will!",
    "dst": "おっ！そうだ、遺言な！",
    "role": "desc",
@@ -296,7 +446,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#029": {
+  "Brothers Return#044": {
    "src": "Yeah, there ain't no will, pal. After brother died, those Bovemists came and picked 'im up.",
    "dst": "ああ、遺言なんてねぇよ、相棒。兄貴が死んだあと、Bovemist の連中が来て引き取ってった。",
    "role": "desc",
@@ -306,7 +456,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#030": {
+  "Brothers Return#045": {
    "src": "Gave 'im a proper funeral and everything. Shame my dear, oh so dear brother couldn't attend. What kind of person can't be there for their own brother's funeral, y'know?",
    "dst": "葬式もちゃんと挙げてくれたよ。残念ながら親愛なる、ああ実に親愛なる兄さんは来られなかったがな。兄弟の葬式にも顔を出せねぇなんて、どんな奴だよ、なあ？",
    "role": "desc",
@@ -316,7 +466,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#031": {
+  "Brothers Return#046": {
    "src": "Well, I couldn't be there either, bein' here and all, but that's besides the point...",
    "dst": "まあ、俺もここにいたから出てねぇけど、それは別の話で…",
    "role": "desc",
@@ -326,7 +476,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#032": {
+  "Brothers Return#047": {
    "src": "Anyway, the Bishop gave me a bit of money for my troubles and sent me on my merry way. Then, I ended up here, and haven't left since!",
    "dst": "とにかく、司教が迷惑料だって少し金をくれて、さっさと追い払われた。で、ここに流れ着いて、それっきり出てねぇ！",
    "role": "desc",
@@ -336,7 +486,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#033": {
+  "Brothers Return#048": {
    "src": "So, as I already told you... There ain't no will, pal! Forget it.",
    "dst": "だから、言っただろ… 遺言なんてねぇよ、相棒！忘れな。",
    "role": "desc",
@@ -346,7 +496,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#034": {
+  "Brothers Return#049": {
    "src": "W-what? Sayleros told you about a will, a-and about money too, t-that brother left us?",
    "dst": "な、何だって？ Sayleros が遺言の話を、そ、それに兄貴が俺たちに残した金の話もしたって？",
    "role": "desc",
@@ -356,7 +506,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#035": {
+  "Brothers Return#050": {
    "src": "So then why did the Bishop...",
    "dst": "じゃあなんで司教は…",
    "role": "desc",
@@ -366,7 +516,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#036": {
+  "Brothers Return#051": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -376,7 +526,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#037": {
+  "Brothers Return#052": {
    "src": "S-stop! Hold your horses... That would mean...",
    "dst": "ま、待て！落ち着け… ってことは…",
    "role": "desc",
@@ -386,7 +536,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#038": {
+  "Brothers Return#053": {
    "src": "Hey, soldier! We're leaving, right now! W-we're gonna find that will!",
    "dst": "おい、兵隊さん！今すぐ行くぞ！ゆ、遺言状を見つけるんだ！",
    "role": "desc",
@@ -396,7 +546,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#039": {
+  "Brothers Return#054": {
    "src": "Speak to the Bishop Kaideus in {p} at [{~}, {~}, -{~}].",
    "dst": "{p} の [{~}, {~}, -{~}] で Bishop Kaideus と話す。",
    "role": "desc",
@@ -406,7 +556,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#040": {
+  "Brothers Return#055": {
    "src": "Yes, yes. A little more to the right! Hurry!",
    "dst": "そう、そうだ。もう少し右へ！急げ！",
    "role": "desc",
@@ -416,7 +566,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#041": {
+  "Brothers Return#056": {
    "src": "Hey! Priest man, guy, whatever! Where's my brother!",
    "dst": "おい！坊さん、そこの人、何でもいい！俺の兄貴はどこだ！",
    "role": "desc",
@@ -426,7 +576,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#042": {
+  "Brothers Return#057": {
    "src": "Oh, it's you. For your information, the proper term of address is your excellency.",
    "dst": "おや、君か。言っておくが、正しい呼び方は「閣下」だ。",
    "role": "desc",
@@ -436,7 +586,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#043": {
+  "Brothers Return#058": {
    "src": "You may have forgotten already, but I must inform you that your brother is indeed dead.",
    "dst": "もう忘れたのかもしれないが、君の兄上は確かに亡くなったと伝えねばならん。",
    "role": "desc",
@@ -446,7 +596,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#044": {
+  "Brothers Return#059": {
    "src": "Y-yes, I know all that, y-your priestliness. But where's my brother? I want to see 'im.",
    "dst": "わ、わかってるよ、お坊さま。けど兄貴はどこだ？会わせろ。",
    "role": "desc",
@@ -456,7 +606,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#045": {
+  "Brothers Return#060": {
    "src": "You! Talk some sense into your, um, friend here. We buried his brother in the crypt here some time ago.",
    "dst": "君！この、ええと、友人に道理を説いてやってくれ。兄上は少し前にここの地下墓所に葬ったのだ。",
    "role": "desc",
@@ -466,7 +616,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#046": {
+  "Brothers Return#061": {
    "src": "Now, please leave this peaceful house of worship, you're causing a ruckus. I have some quite important business to attend to, you see.",
    "dst": "さあ、この静かな礼拝の場から出ていってくれ。騒ぎになっている。私にはとても大事な用があるのでね。",
    "role": "desc",
@@ -476,7 +626,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#047": {
+  "Brothers Return#062": {
    "src": "Hey! I'm not leaving without my brother! No way, pal!",
    "dst": "おい！兄貴に会うまで帰らねぇぞ！絶対にな、相棒！",
    "role": "desc",
@@ -486,7 +636,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#048": {
+  "Brothers Return#063": {
    "src": "As I already told you, your brother is dead and buried. It's not like",
    "dst": "何度も言うが、君の兄上は死んで埋葬された。別に",
    "role": "desc",
@@ -496,7 +646,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#049": {
+  "Brothers Return#064": {
    "src": "Your excellency! Th-th-they've risen!",
    "dst": "閣下！や、や、奴らが蘇りました！",
    "role": "desc",
@@ -506,7 +656,7 @@
    "speaker": "Apprentice Arkech",
    "source": "wiki"
   },
-  "Brothers Return#050": {
+  "Brothers Return#065": {
    "src": "Holy Bovine! It's even worse than I feared!",
    "dst": "聖なる牛よ！恐れていた以上にひどい！",
    "role": "desc",
@@ -516,7 +666,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#051": {
+  "Brothers Return#066": {
    "src": "You, soldier! You better not stick your nose in this! It's not for the likes of you to mess with the affairs of the church!",
    "dst": "そこの兵士！この件に首を突っ込むなよ！教会の問題は君のような者が口を出すことではない！",
    "role": "desc",
@@ -526,7 +676,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#052": {
+  "Brothers Return#067": {
    "src": "Now's our chance, pal! Go find my brother in the crypts! I-I'll stay behind, guarding the rear!",
    "dst": "今がチャンスだ、相棒！地下墓所で兄貴を探してくれ！お、俺はここで後ろを守っとく！",
    "role": "desc",
@@ -536,7 +686,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#053": {
+  "Brothers Return#068": {
    "src": "Enter the crypt at [{~}, {~}, -{~}] and find Sayleros' Brother.",
    "dst": "[{~}, {~}, -{~}] の地下墓所に入り、Sayleros の兄を探す。",
    "role": "desc",
@@ -546,7 +696,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#054": {
+  "Brothers Return#069": {
    "src": "Now's our chance, pal! Go find my brother in the crypts! I-I'll stay behind, guarding the rear!",
    "dst": "今がチャンスだ、相棒！地下墓所で兄貴を探してくれ！お、俺はここで後ろを守っとく！",
    "role": "desc",
@@ -556,7 +706,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#055": {
+  "Brothers Return#070": {
    "src": "You better not stick your nose in this, soldier! It's not for the likes of you to mess with the affairs of the church!",
    "dst": "この件に首を突っ込むなよ、兵士！教会の問題は君のような者が口を出すことではない！",
    "role": "desc",
@@ -566,7 +716,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#056": {
+  "Brothers Return#071": {
    "src": "Don't ask me about anything! I just work here!",
    "dst": "何も聞かないでくれ！俺はただの作業員だ！",
    "role": "desc",
@@ -576,7 +726,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Brothers Return#057": {
+  "Brothers Return#072": {
    "src": "Return to the crypt at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の地下墓所に戻る。",
    "role": "desc",
@@ -586,7 +736,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#058": {
+  "Brothers Return#073": {
    "src": "Find the first crypt key.",
    "dst": "一つ目の墓所の鍵を見つける。",
    "role": "desc",
@@ -596,7 +746,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#059": {
+  "Brothers Return#074": {
    "src": "Open the door at [{~}, {~}, -{~}] using the Crypt Basement Key.",
    "dst": "Crypt Basement Key で [{~}, {~}, -{~}] の扉を開ける。",
    "role": "desc",
@@ -606,7 +756,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#060": {
+  "Brothers Return#075": {
    "src": "Find the second crypt key.",
    "dst": "二つ目の墓所の鍵を見つける。",
    "role": "desc",
@@ -616,7 +766,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#061": {
+  "Brothers Return#076": {
    "src": "Open the door at [{~}, {~}, -{~}] using the Sealed Crypt Key.",
    "dst": "Sealed Crypt Key で [{~}, {~}, -{~}] の扉を開ける。",
    "role": "desc",
@@ -626,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#062": {
+  "Brothers Return#077": {
    "src": "Enter the sealed crypt at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の封印された墓所に入る。",
    "role": "desc",
@@ -636,7 +786,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#063": {
+  "Brothers Return#078": {
    "src": "Defeat Sayleros' Brother!",
    "dst": "Sayleros の兄を倒せ！",
    "role": "desc",
@@ -646,7 +796,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#064": {
+  "Brothers Return#079": {
    "src": "Exit the sealed crypt at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の封印された墓所から出る。",
    "role": "desc",
@@ -656,7 +806,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#065": {
+  "Brothers Return#080": {
    "src": "Bring back Sayleros' brother's will to [{~}, {~}, -{~}].",
    "dst": "Sayleros の兄の遺言状を [{~}, {~}, -{~}] に持ち帰る。",
    "role": "desc",
@@ -666,7 +816,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#066": {
+  "Brothers Return#081": {
    "src": "As I've already told you a thousand times, I don't know what will you're talking about! Besides, I don't have the time for this!",
    "dst": "千回は言ったが、何の遺言の話かさっぱりわからん！そもそもそんなことに構っている暇はない！",
    "role": "desc",
@@ -676,7 +826,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#067": {
+  "Brothers Return#082": {
    "src": "Y-you're back! Did you find 'im?",
    "dst": "も、戻ったか！見つかったか？",
    "role": "desc",
@@ -686,7 +836,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#068": {
+  "Brothers Return#083": {
    "src": "I certainly hope you didn't use the usual methods of your sort...",
    "dst": "まさか君らのような者のいつもの手口を使ったのではなかろうな…",
    "role": "desc",
@@ -696,7 +846,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#069": {
+  "Brothers Return#084": {
    "src": "... B-brother! What are y-you doing here?",
    "dst": "… に、兄さん！こ、ここで何してんだ？",
    "role": "desc",
@@ -706,7 +856,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#070": {
+  "Brothers Return#085": {
    "src": "Drucksh! Likewise, what are you doing here?",
    "dst": "Drucksh！お前こそ、ここで何してる？",
    "role": "desc",
@@ -716,7 +866,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#071": {
+  "Brothers Return#086": {
    "src": "W-well... I-I thought I'd take responsibility for our family for once...",
    "dst": "い、いや… た、たまには俺が家族の責任を取ろうと思って…",
    "role": "desc",
@@ -726,7 +876,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#072": {
+  "Brothers Return#087": {
    "src": "I thought I wouldn't live to see the day! Here I was, worried Drucksh wouldn't cooperate, but it seems like the two of you've got it all under control after all.",
    "dst": "こんな日が来るとは思わなかった！Drucksh が協力しないかと心配してたのに、二人でちゃんと片付けてくれたみたいだな。",
    "role": "desc",
@@ -736,7 +886,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#073": {
+  "Brothers Return#088": {
    "src": "Under control!? This... This... renegade stormed into the crypts and k-k-killed your brother!",
    "dst": "片付けた！？この… この… 無法者が墓所に押し入って、君の兄上をこ、こ、殺したのだぞ！",
    "role": "desc",
@@ -746,7 +896,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#074": {
+  "Brothers Return#089": {
    "src": "He's our brother, your priestliness! Let us w-worry about 'im and you can worry about your great cow in the sky, or whatever it is.",
    "dst": "俺たちの兄貴だぞ、お坊さま！兄貴のことは俺たちに任せて、あんたは空の上のでっかい牛だか何だかの心配でもしてな。",
    "role": "desc",
@@ -756,7 +906,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#075": {
+  "Brothers Return#090": {
    "src": "That's right, your priestliness! Here, I'll take the will.",
    "dst": "その通りだ、お坊さま！ほら、遺言状は俺が預かる。",
    "role": "desc",
@@ -766,7 +916,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#076": {
+  "Brothers Return#091": {
    "src": "Hey, brother, why don't we head to the ol' watering hole. For old brother's sake.",
    "dst": "なあ、兄弟、いつもの酒場に行こうぜ。兄貴を偲んでさ。",
    "role": "desc",
@@ -776,7 +926,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#077": {
+  "Brothers Return#092": {
    "src": "Well, i-if it's for his sake, then I c-can hardly refuse, can I?",
    "dst": "ま、まあ、あ、兄貴のためなら、断れねぇよな？",
    "role": "desc",
@@ -786,7 +936,7 @@
    "speaker": "Drucksh",
    "source": "wiki"
   },
-  "Brothers Return#078": {
+  "Brothers Return#093": {
    "src": "Please, take this as proof of my gratitude, pal. You really helped us out, in more ways than one.",
    "dst": "感謝のしるしに、これを受け取ってくれ、相棒。いろんな意味で本当に助かったよ。",
    "role": "desc",
@@ -796,7 +946,7 @@
    "speaker": "Sayleros",
    "source": "wiki"
   },
-  "Brothers Return#079": {
+  "Brothers Return#094": {
    "src": "Hey soldier! That's quite the gear you're lugging around. Anything I can do for you?",
    "dst": "やあ、兵士さん！すごい装備を担いでるね。何か手伝えることある？",
    "role": "desc",
@@ -806,7 +956,7 @@
    "speaker": "Alfe",
    "source": "wiki"
   },
-  "Brothers Return#080": {
+  "Brothers Return#095": {
    "src": "Oh, really? I don't think I've seen you before, but I'm not so good with faces, especially armoured ones! I'm new to Wynn, just came through on the caravan. The name's Alfe, and yours?",
    "dst": "へえ、そうなの？会ったことない気がするけど、顔を覚えるのは苦手で、兜をかぶってたら特にね！Wynn には来たばかりで、キャラバンで着いたところ。私は Alfe、あなたは？",
    "role": "desc",
@@ -816,7 +966,7 @@
    "speaker": "Alfe",
    "source": "wiki"
   },
-  "Brothers Return#081": {
+  "Brothers Return#096": {
    "src": "{u}, huh? I think I've heard of you somewhere... Laen was regaling stories at the {p} bar, you helped them find some old book, yeah? And I think the Bishop mentioned...",
    "dst": "{u}、ね？どこかで聞いた名前… Laen が {p} の酒場で話してたっけ、古い本を探すのを手伝ったんでしょ？それに司教も確か…",
    "role": "desc",
@@ -826,7 +976,7 @@
    "speaker": "Alfe",
    "source": "wiki"
   },
-  "Brothers Return#082": {
+  "Brothers Return#097": {
    "src": "You! Back again to cause more mayhem, are we?",
    "dst": "君か！また騒ぎを起こしに戻ってきたのか？",
    "role": "desc",
@@ -836,7 +986,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#083": {
+  "Brothers Return#098": {
    "src": "No need to be so hostile, your excellency! We were just discussing our time here in Wynn. {u} here even helped Laen find an old book of theirs, did you know that?",
    "dst": "閣下、そんなに敵意を向けなくても！Wynn での日々を話してただけです。この {u} は Laen の古い本を見つけてあげたんですよ、ご存じでした？",
    "role": "desc",
@@ -846,7 +996,7 @@
    "speaker": "Alfe",
    "source": "wiki"
   },
-  "Brothers Return#084": {
+  "Brothers Return#099": {
    "src": "Hm... Well, you certainly are not, my young apprentice. That much is true...",
    "dst": "ふむ… まあ、君は確かに違うな、若き弟子よ。それは事実だ…",
    "role": "desc",
@@ -856,7 +1006,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#085": {
+  "Brothers Return#100": {
    "src": "Right, {u}! We could really use your help here, isn't that right Kaideus?",
    "dst": "そうだ、{u}！ここで手を貸してほしいんだ、ね、Kaideus？",
    "role": "desc",
@@ -866,7 +1016,7 @@
    "speaker": "Alfe",
    "source": "wiki"
   },
-  "Brothers Return#086": {
+  "Brothers Return#101": {
    "src": "Another pair of hands on the task wouldn't hurt, you are right about that...",
    "dst": "人手が増えて困ることはない、それは君の言う通りだ…",
    "role": "desc",
@@ -876,7 +1026,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#087": {
+  "Brothers Return#102": {
    "src": "Fine! You may inspect the texts, but only if you are very, very careful.",
    "dst": "よかろう！文献を調べてもよいが、くれぐれも慎重にな。",
    "role": "desc",
@@ -886,7 +1036,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#088": {
+  "Brothers Return#103": {
    "src": "Well, you see {u}! I've been in {p} for the past little while helping to protect the city. But after Kaideus here stumbled across a shelf of old records I came here to help sort and clean them.",
    "dst": "あのね、{u}！私はしばらく {p} で街の防衛を手伝ってたの。でも Kaideus が古い記録の棚を見つけたから、整理と掃除を手伝いに来たんだ。",
    "role": "desc",
@@ -896,7 +1046,7 @@
    "speaker": "Alfe",
    "source": "wiki"
   },
-  "Brothers Return#089": {
+  "Brothers Return#104": {
    "src": "They're positively ancient! It's all nonsense to me, but Laen says they must be over a thousand years old!",
    "dst": "本当に大昔のものなの！私にはさっぱりだけど、Laen は千年以上前のものに違いないって！",
    "role": "desc",
@@ -906,7 +1056,7 @@
    "speaker": "Alfe",
    "source": "wiki"
   },
-  "Brothers Return#090": {
+  "Brothers Return#105": {
    "src": "You recruits are much to excitable, but she is right. Having dedicated my life to this cathedral, I have not been afforded the opportunity to see much of the world beyond these plains.",
    "dst": "新入りどもはすぐ興奮しすぎるが、彼女の言う通りだ。この大聖堂に生涯を捧げてきた私は、この平原の外の世界をろくに見る機会がなかった。",
    "role": "desc",
@@ -916,7 +1066,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#091": {
+  "Brothers Return#106": {
    "src": "So, {u}, why don't you take a look? You've traveled quite a bit, perhaps even to the lands described within. I may not like your methods, but perhaps, just this once, they may prove useful.",
    "dst": "そこで {u}、目を通してみてはどうかね？君は各地を旅してきた。記された土地にも行ったことがあるかもしれん。君のやり方は好かんが、今回ばかりは役に立つかもしれん。",
    "role": "desc",
@@ -926,7 +1076,7 @@
    "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
-  "Brothers Return#092": {
+  "Brothers Return#107": {
    "src": "Well then, what would you like to read?",
    "dst": "それじゃ、どれを読む？",
    "role": "desc",

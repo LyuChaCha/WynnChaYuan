@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site D",
-  "count": 97,
+  "count": 98,
   "translated": 98,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site D#000": {
+   "src": "I remember being told something by my adoptive father, and he was a king of {p} himself!",
+   "dst": "養父から聞いたことがあるんだ。しかも養父は {p} の王その人だったんだぞ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site D",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site D#001": {
    "src": "Talk to Royal Advisor Carlos in {p} Castle at [-{~}, {~}, -{~}] (Requires shard from Site C)",
    "dst": "[-{~}, {~}, -{~}] の {p} 城で Royal Advisor Carlos と話す (C 地点の欠片が必要)",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#001": {
+  "WynnExcavation Site D#002": {
    "src": "His majesty Lord King of {p} is indisposed at this moment.",
    "dst": "{p} 国王陛下は、ただいまご都合がつきません。",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#002": {
+  "WynnExcavation Site D#003": {
    "src": "He recieved a message and made his way frantically down to the panic room, which is somewhere inside of this throne room.",
    "dst": "伝令を受け取るや、慌てて緊急避難室へ降りていかれました。この玉座の間のどこかにあります。",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#003": {
+  "WynnExcavation Site D#004": {
    "src": "He hasn't been seen since. Only the King knows how to get into the panic room, but I've had my suspicions about it for a while now.",
    "dst": "それ以来お姿を見た者はおりません。避難室への入り方は陛下しかご存じありませんが、私は以前から怪しいと思っていたのです。",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#004": {
+  "WynnExcavation Site D#005": {
    "src": "He seemed to be expecting someone, but I'm fed up of waiting.",
    "dst": "誰かを待っておられたようですが、私はもう待ちくたびれました。",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#005": {
+  "WynnExcavation Site D#006": {
    "src": "I managed to hear a few things he was muttering to himself just before he disappeared, though.",
    "dst": "ですが、お姿を消される直前の独り言を、いくつか聞き取ることができました。",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#006": {
+  "WynnExcavation Site D#007": {
    "src": "He mentioned something about a fourth crystal... a green one.",
    "dst": "第四のクリスタルのことを…緑のものだと仰っていました。",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#007": {
+  "WynnExcavation Site D#008": {
    "src": "And then he said \"The order of the crystals will open the way\".Maybe it's a clue as to how to find him?",
    "dst": "それから「クリスタルの順序が道を開く」と。陛下を見つける手がかりかもしれません。",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#008": {
+  "WynnExcavation Site D#009": {
    "src": "Please, we need to find him, I'm sick of telling everyone he's indisposed!",
    "dst": "どうか陛下を見つけてください、ご不在の言い訳はもううんざりです！",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#009": {
+  "WynnExcavation Site D#010": {
    "src": "Find the secret passageway inside of the throne room",
    "dst": "玉座の間にある隠し通路を見つける",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#010": {
+  "WynnExcavation Site D#011": {
    "src": "Oh my, a secret passage has opened up beneath the throne! Quickly, head inside!",
    "dst": "なんと、玉座の下に隠し通路が！さあ、早く中へ！",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#011": {
+  "WynnExcavation Site D#012": {
    "src": "Explore the secrets beneath {p} Castle",
    "dst": "{p} 城の地下の秘密を探る",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#012": {
+  "WynnExcavation Site D#013": {
    "src": "Talk to the King",
    "dst": "王と話す",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#013": {
+  "WynnExcavation Site D#014": {
    "src": "I am impressed you managed to find me. Someone of my intellect is not normally found when he hasn't the intention of being so.",
    "dst": "よく私を見つけたものだ。私ほどの知性の持ち主は、見つかるつもりがなければ普通は見つからぬものなのだがな。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#014": {
+  "WynnExcavation Site D#015": {
    "src": "I suppose I at least owe you the truth for getting this far, not that it matters.",
    "dst": "ここまで来た褒美に、せめて真実くらいは教えてやろう。どうせ何も変わらんがな。",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#015": {
+  "WynnExcavation Site D#016": {
    "src": "WynnExcavation, the Gavel company is a fake, a facade. It's not real....",
    "dst": "WynnExcavation、あの Gavel の会社は偽物、見せかけだ。実在などしない…",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#016": {
+  "WynnExcavation Site D#017": {
    "src": "It's actually a secret society run by the high and mighty of Gavel.",
    "dst": "実際は Gavel の権力者どもが動かす秘密結社なのだ。",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#017": {
+  "WynnExcavation Site D#018": {
    "src": "They have one goal, complete control.",
    "dst": "目的はただ一つ、完全な支配だ。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#018": {
+  "WynnExcavation Site D#019": {
    "src": "You can't compete with them, kid. I tried to at first, but they had turned my inner circle before getting to me.",
    "dst": "奴らには敵わんよ、小僧。私も最初は抗ったが、奴らは私に迫る前に側近を寝返らせていた。",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#019": {
+  "WynnExcavation Site D#020": {
    "src": "Though I cannot admit I fought hard, their ideals are admirable.",
    "dst": "必死に戦ったとは言えんが、奴らの理想は立派なものだ。",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#020": {
+  "WynnExcavation Site D#021": {
    "src": "So I hope you will forgive me, I act only for the greater good of the world.",
    "dst": "だから許してくれ。私はただ世界のより大きな善のために動いておるのだ。",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#021": {
+  "WynnExcavation Site D#022": {
    "src": "As you will not be leaving the city, I wish you a fond farewell. When you leave, you will be accused of treason and will be hunted. It is the only way...",
    "dst": "お前はこの街から出られぬだろうから、心から別れを告げよう。ここを出れば反逆罪に問われ、追われる身となる。これしか道はないのだ…",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#022": {
+  "WynnExcavation Site D#023": {
    "src": "Exit the King's room",
    "dst": "王の部屋を出る",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#023": {
+  "WynnExcavation Site D#024": {
    "src": "Time is short, so I'll have to spare you the details, but let's just say I'm on your side.",
    "dst": "時間がないから詳しくは話せないが、とにかく俺はあんたの味方だ。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#024": {
+  "WynnExcavation Site D#025": {
    "src": "The King just placed you under arrest for treason. They've locked down the entire city.",
    "dst": "王があんたを反逆罪で逮捕させた。街全体が封鎖されてる。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#025": {
+  "WynnExcavation Site D#026": {
    "src": "Both the front gate and the Passage are closed down. So we've created another exit for you.",
    "dst": "正門も通路も閉鎖された。だから俺たちで別の出口を用意しておいた。",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#026": {
+  "WynnExcavation Site D#027": {
    "src": "Just follow the path to your left around the city. Keep going until you see a villager next to a tunnel. We'll clear your name once you've escaped.",
    "dst": "左の道を進んで街を回り込め。トンネルの横に村人がいるから、そこまで行くんだ。逃げ延びたら俺たちが汚名を晴らしてやる。",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#027": {
+  "WynnExcavation Site D#028": {
    "src": "You'll pass through the army headquarters on your way, so be prepared for a fight. I'm the only guard here to help you.",
    "dst": "途中で軍の本部を通るから、戦う覚悟をしておけ。ここで味方の衛兵は俺だけだ。",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#028": {
+  "WynnExcavation Site D#029": {
    "src": "Now run! We don't have another moment to waste!",
    "dst": "さあ走れ！一刻も無駄にできない！",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#029": {
+  "WynnExcavation Site D#030": {
    "src": "Escape {p}",
    "dst": "{p} から脱出する",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#030": {
+  "WynnExcavation Site D#031": {
    "src": "Hey, psst. Come here!",
    "dst": "おい、しっ。こっちへ！",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#031": {
+  "WynnExcavation Site D#032": {
    "src": "Take this, and run! You need to get out!",
    "dst": "これを持って逃げろ！早く出るんだ！",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#032": {
+  "WynnExcavation Site D#033": {
    "src": "Head to those coordinates, there is no time to explain, now go! I'll close the tunnel behind you.",
    "dst": "その座標へ向かえ。説明してる暇はない、行け！トンネルは後ろで塞いでおく。",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#033": {
+  "WynnExcavation Site D#034": {
    "src": "I'VE FOUND THE TRAITOR! THEY'RE OVER HERE!",
    "dst": "裏切り者を見つけたぞ！こっちだ！",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#034": {
+  "WynnExcavation Site D#035": {
    "src": "Head to the location on the note",
    "dst": "メモに書かれた場所へ向かう",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#035": {
+  "WynnExcavation Site D#036": {
    "src": "Speak to Traitor Thomas",
    "dst": "Traitor Thomas と話す",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#036": {
+  "WynnExcavation Site D#037": {
    "src": "I'm sorry, I can't let you in there.",
    "dst": "悪いけど、中には入れられないよ。",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#037": {
+  "WynnExcavation Site D#038": {
    "src": "I can't let you in there, not until you have proven you are truly on our side.",
    "dst": "入れるわけにはいかない。本当に僕らの味方だと証明するまではね。",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#038": {
+  "WynnExcavation Site D#039": {
    "src": "We never know who to believe anymore. Unfortunately there is no way for you to prove your loyalty.",
    "dst": "もう誰を信じればいいかわからないんだ。残念だけど、君が忠誠を証明する方法はないよ。",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#039": {
+  "WynnExcavation Site D#040": {
    "src": "Now if you would excuse me, I have to hunt for the lost map fragments of Dernel. I'm sure these eyes have something to do with it...",
    "dst": "じゃあ失礼するよ。Dernel の失われた地図の欠片を探さないと。きっとこの目玉たちが関係してるはずなんだ…",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#040": {
+  "WynnExcavation Site D#041": {
    "src": "Find the three map fragments by following the eyes and return to Thomas.",
    "dst": "目玉をたどって地図の欠片を3つ見つけ、Thomas のもとへ戻る。",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#041": {
+  "WynnExcavation Site D#042": {
    "src": "I can't let you in, we're busy looking for an important document, I'm sure these eyes have something to do with it...",
    "dst": "入れられないよ。大事な文書を探してて忙しいんだ。きっとこの目玉たちが関係してるはず…",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#042": {
+  "WynnExcavation Site D#043": {
    "src": "Is that... The map fragments? You found them!",
    "dst": "それは…地図の欠片？見つけてくれたんだね！",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#043": {
+  "WynnExcavation Site D#044": {
    "src": "Oh my, you better come in.",
    "dst": "なんてこった、早く入って。",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#044": {
+  "WynnExcavation Site D#045": {
    "src": "There's not enough time! We need to combine those fragments with ours!",
    "dst": "時間がない！その欠片を僕らのと合わせないと！",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#045": {
+  "WynnExcavation Site D#046": {
    "src": "Hurry, get in the hideout!",
    "dst": "急いで、隠れ家に入って！",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#046": {
+  "WynnExcavation Site D#047": {
    "src": "Enter the traitor camp",
    "dst": "裏切り者の野営地に入る",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#047": {
+  "WynnExcavation Site D#048": {
    "src": "Speak to Rebel Leader Amadel",
    "dst": "Rebel Leader Amadel と話す",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#048": {
+  "WynnExcavation Site D#049": {
    "src": "Welcome, friend. I knew you would figure it all out.",
    "dst": "ようこそ、友よ。君ならすべて見抜くと思っていたよ。",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#049": {
+  "WynnExcavation Site D#050": {
    "src": "You must be surprised to see me. The excavation crew at site C tried very hard to kill me.",
    "dst": "私に会って驚いただろう。C 地点の発掘隊は、本気で私を殺そうとしたからね。",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#050": {
+  "WynnExcavation Site D#051": {
    "src": "They didn't succeed though. I got away, and I swiped a fragment of a map, and I found out what it's for.",
    "dst": "だが失敗した。私は逃げ出し、地図の欠片をひとつ盗んで、その用途を突き止めたんだ。",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#051": {
+  "WynnExcavation Site D#052": {
    "src": "If you made it this far, you know Wynn Excavation are not what they seem. They want to harness Wynn's ancient power.",
    "dst": "ここまで来たなら、Wynn Excavation が見かけ通りでないのはわかるだろう。奴らは Wynn の古の力を使おうとしている。",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#052": {
+  "WynnExcavation Site D#053": {
    "src": "They control our governments, authorities and seem to be {~} steps ahead of any of us that oppose them.",
    "dst": "奴らは政府も当局も牛耳り、逆らう者の常に {~} 歩先を行っているようだ。",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#053": {
+  "WynnExcavation Site D#054": {
    "src": "That is, unless we're able to beat the excavationists to the last crystal.",
    "dst": "ただし、最後のクリスタルを奴らより先に手に入れられれば話は別だ。",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#054": {
+  "WynnExcavation Site D#055": {
    "src": "They cannot use a single shard of power without combining them all.",
    "dst": "すべてを揃えない限り、奴らは欠片の力を一つも使えない。",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#055": {
+  "WynnExcavation Site D#056": {
    "src": "Here, I've combined the map fragments behind me. It looks it's deep in the jungle, I wonder where...",
    "dst": "ほら、後ろにある地図の欠片を繋ぎ合わせた。ジャングルの奥地のようだが、いったいどこだろう…",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#056": {
+  "WynnExcavation Site D#057": {
    "src": "WynnExcavation have done really horrible things, and I used to help...",
    "dst": "WynnExcavation は本当にひどいことをしてきた。僕も昔は手伝ってたんだ…",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "Traitor Buice",
    "source": "wiki"
   },
-  "WynnExcavation Site D#057": {
+  "WynnExcavation Site D#058": {
    "src": "WynnExcavation will be destroyed, no matter what!",
    "dst": "何があろうと、WynnExcavation は潰してやる！",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "Traitor Jaynar",
    "source": "wiki"
   },
-  "WynnExcavation Site D#058": {
+  "WynnExcavation Site D#059": {
    "src": "Go to Site D [-{~}, {~}, -{~}]",
    "dst": "D 地点 [-{~}, {~}, -{~}] へ向かう",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#059": {
+  "WynnExcavation Site D#060": {
    "src": "Solve the puzzle",
    "dst": "仕掛けを解く",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#060": {
+  "WynnExcavation Site D#061": {
    "src": "Search the excavation site",
    "dst": "発掘現場を捜索する",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#061": {
+  "WynnExcavation Site D#062": {
    "src": "Talk to Excavator Admin Uci.",
    "dst": "Excavator Admin Uci と話す。",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#062": {
+  "WynnExcavation Site D#063": {
    "src": "Oh my. It's you. I can't say I'm surprised to see you, we thought you might be stupid enough to come here.",
    "dst": "おやおや。お前か。驚きはしないな、ここに来るほど愚かだろうと思っていたよ。",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#063": {
+  "WynnExcavation Site D#064": {
    "src": "Stupid enough to come here, yet, smart enough to make it.",
    "dst": "ここに来るほど愚かで、辿り着けるほどには賢い。",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#064": {
+  "WynnExcavation Site D#065": {
    "src": "You were at every site, taking shards and attempting to thwart us.",
    "dst": "お前はどの現場にも現れ、欠片を奪って我々の邪魔をしようとした。",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#065": {
+  "WynnExcavation Site D#066": {
    "src": "This time we won, and you lost.",
    "dst": "今回は我々の勝ち、お前の負けだ。",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#066": {
+  "WynnExcavation Site D#067": {
    "src": "What do your shards mean to us when we have all four crystals?",
    "dst": "クリスタルを4つとも揃えた我々に、お前の欠片が何の意味を持つ？",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#067": {
+  "WynnExcavation Site D#068": {
    "src": "Nothing, that's what.",
    "dst": "何の意味もない、そういうことだ。",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#068": {
+  "WynnExcavation Site D#069": {
    "src": "The boss wants to speak to you, I don't recommend keeping him waiting, he's not a patient man.",
    "dst": "ボスがお前と話したいそうだ。待たせないほうがいい、気の長いお方じゃないからな。",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#069": {
+  "WynnExcavation Site D#070": {
    "src": "He'll be waiting for you, head through that door.",
    "dst": "ボスがお待ちだ。その扉を抜けて行け。",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#070": {
+  "WynnExcavation Site D#071": {
    "src": "My boss Uci is a bit of a mean guy, but hey the perks of minionship aren't bad!",
    "dst": "Uci ボスはちょっと意地悪だけど、手下にもいい役得があるんだよな！",
    "role": "desc",
@@ -716,7 +726,7 @@
    "speaker": "Excavator Sean",
    "source": "wiki"
   },
-  "WynnExcavation Site D#071": {
+  "WynnExcavation Site D#072": {
    "src": "This leads deeper into this dungeon, but it seems like it has to be activated from the other side.",
    "dst": "ここはダンジョンの奥へ続いてるけど、向こう側から起動しないといけないみたい。",
    "role": "desc",
@@ -726,7 +736,7 @@
    "speaker": "WynnExcavation Scientist Azure",
    "source": "wiki"
   },
-  "WynnExcavation Site D#072": {
+  "WynnExcavation Site D#073": {
    "src": "Enter The Ancient Dungeon",
    "dst": "The Ancient Dungeon に入る",
    "role": "desc",
@@ -736,7 +746,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#073": {
+  "WynnExcavation Site D#074": {
    "src": "Complete the parkour",
    "dst": "パルクールをクリアする",
    "role": "desc",
@@ -746,7 +756,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#074": {
+  "WynnExcavation Site D#075": {
    "src": "Solve The Yellow Puzzle",
    "dst": "黄色のパズルを解く",
    "role": "desc",
@@ -756,7 +766,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#075": {
+  "WynnExcavation Site D#076": {
    "src": "Solve The Purple Puzzle",
    "dst": "紫のパズルを解く",
    "role": "desc",
@@ -766,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#076": {
+  "WynnExcavation Site D#077": {
    "src": "Solve The Red Puzzle",
    "dst": "赤のパズルを解く",
    "role": "desc",
@@ -776,7 +786,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#077": {
+  "WynnExcavation Site D#078": {
    "src": "Escape The Green Room",
    "dst": "緑の部屋から脱出する",
    "role": "desc",
@@ -786,7 +796,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#078": {
+  "WynnExcavation Site D#079": {
    "src": "Talk to Excavator Amadel",
    "dst": "Excavator Amadel と話す",
    "role": "desc",
@@ -796,7 +806,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#079": {
+  "WynnExcavation Site D#080": {
    "src": "Well, well. Looks like you've finally made it.",
    "dst": "ほう、ほう。ようやく辿り着いたようだな。",
    "role": "desc",
@@ -806,7 +816,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#080": {
+  "WynnExcavation Site D#081": {
    "src": "You might be a little shocked to see me here...",
    "dst": "ここで私を見て、少々驚いているかもしれんな…",
    "role": "desc",
@@ -816,7 +826,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#081": {
+  "WynnExcavation Site D#082": {
    "src": "Everything was planned you see...",
    "dst": "すべては計画通りだったのさ…",
    "role": "desc",
@@ -826,7 +836,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#082": {
+  "WynnExcavation Site D#083": {
    "src": "You finding that old fool in the desert, you surviving that fall.",
    "dst": "砂漠であの老いぼれを見つけたのも、あの落下で生き延びたのも。",
    "role": "desc",
@@ -836,7 +846,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#083": {
+  "WynnExcavation Site D#084": {
    "src": "You finding that notebook, and eventually meeting me.",
    "dst": "あの手帳を見つけたのも、そして最後に私と出会ったのも。",
    "role": "desc",
@@ -846,7 +856,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#084": {
+  "WynnExcavation Site D#085": {
    "src": "Everything that you have done has been planned by the mastermind behind this organisation, me.",
    "dst": "お前のしてきたことはすべて、この組織の黒幕が仕組んだもの。つまり、この私だ。",
    "role": "desc",
@@ -856,7 +866,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#085": {
+  "WynnExcavation Site D#086": {
    "src": "You don't get it, do you? We needed you. The otherworldly crystals are a powerful magic, but a dangerous one at that.",
    "dst": "まだわからないのか？我々にはお前が必要だった。異界のクリスタルは強力な魔法だが、同時に危険でもある。",
    "role": "desc",
@@ -866,7 +876,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#086": {
+  "WynnExcavation Site D#087": {
    "src": "We needed you, an unaware human with some form of pure intent to bring empowered shards here. Anyone else would have ran off with the shards, and turned against us. It's just how it all works. I don't expect you to understand.. Now. Enough talking.",
    "dst": "我々に必要だったのは、何も知らず、ある種の純粋な意志を持つ人間だ。力を得た欠片をここへ運ばせるためにな。他の者なら欠片を持ち逃げし、我々に歯向かっただろう。そういう仕組みなのだ。理解してもらおうとは思わん…さて。話は終わりだ。",
    "role": "desc",
@@ -876,7 +886,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#087": {
+  "WynnExcavation Site D#088": {
    "src": "Teleport to the Ancient City",
    "dst": "The Ancient City へテレポートする",
    "role": "desc",
@@ -886,7 +896,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#088": {
+  "WynnExcavation Site D#089": {
    "src": "Explore The Ancient City",
    "dst": "The Ancient City を探索する",
    "role": "desc",
@@ -896,7 +906,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#089": {
+  "WynnExcavation Site D#090": {
    "src": "Speak to Amadel's Assistant",
    "dst": "Amadel の助手と話す",
    "role": "desc",
@@ -906,7 +916,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#090": {
+  "WynnExcavation Site D#091": {
    "src": "Kill Corrupted Amadel",
    "dst": "Corrupted Amadel を倒す",
    "role": "desc",
@@ -916,7 +926,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#091": {
+  "WynnExcavation Site D#092": {
    "src": "The crystals combine the power of the stars themselves.. an ultimate power... the power to reign over the entire WORLD!",
    "dst": "クリスタルは星々そのものの力を束ねる…究極の力…「全世界」を支配する力だ！",
    "role": "desc",
@@ -926,7 +936,7 @@
    "speaker": "Corrupted Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#092": {
+  "WynnExcavation Site D#093": {
    "src": "Kill Shadow Amadel",
    "dst": "Shadow Amadel を倒す",
    "role": "desc",
@@ -936,7 +946,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#093": {
+  "WynnExcavation Site D#094": {
    "src": "I- I- I feel... unstoppable.. this power... will not aļ͢͠͠͡l̶̀͜͏͏ów me to lớ̀͠͝se..!!!",
    "dst": "わ、わ、私は…止められない…この力が…ま、負けを許さない…！！！",
    "role": "desc",
@@ -946,7 +956,7 @@
    "speaker": "Shadow Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#094": {
+  "WynnExcavation Site D#095": {
    "src": "Kill Amadel",
    "dst": "Amadel を倒す",
    "role": "desc",
@@ -956,7 +966,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#095": {
+  "WynnExcavation Site D#096": {
    "src": "DID YOU REALLY THINK YOU COULD WIN?!?! YOU ARE NOTHING COMPARED TO ME! NOTHING!! I WILL EXTERMINATE ALL LIFE, STARTING WITH YOU!! NOW, PERISH!!!",
    "dst": "本気で勝てると思ったのか？！お前など私の足元にも及ばない！無に等しい！！あらゆる生命を根絶やしにしてやる、まずはお前からだ！！さあ、滅びろ！！！",
    "role": "desc",
@@ -966,7 +976,7 @@
    "speaker": "Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#096": {
+  "WynnExcavation Site D#097": {
    "src": "Talk to The King of {p}",
    "dst": "{p} の王と話す",
    "role": "desc",
@@ -975,16 +985,6 @@
    "stage": "Stage 29",
    "speaker": "",
    "source": "wiki"
-  },
-  "WynnExcavation Site D#000~1": {
-   "src": "I remember being told something by my adoptive father, and he was a king of {p} himself!",
-   "dst": "養父から聞いたことがあるんだ。しかも養父は {p} の王その人だったんだぞ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "WynnExcavation Site D",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

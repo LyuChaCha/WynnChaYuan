@@ -14,7 +14,7 @@
   `Wynncraft 繁體中文翻譯 — 譯文顯示在獨立面板，不取代原文`
 - **Categories**：`Utility`、`Social`（翻譯類沒有專屬分類）
 - **Environment**：Client `required` / Server `unsupported`
-- **License**：程式碼 AGPLv3、翻譯與資料 CC BY-NC-SA 4.0
+- **License**：程式碼 AGPLv3 或之後的版本、翻譯與資料 CC BY-NC-SA 4.0
 - **Links**：Source 與 Issues 都指向 GitHub repo
 - **Gallery**：截圖。**這一項最重要**——翻譯模組光看文字說不清楚
   「原文留著、譯文另外顯示」是什麼樣子。建議放：

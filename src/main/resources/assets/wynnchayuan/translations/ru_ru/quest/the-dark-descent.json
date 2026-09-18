@@ -1,12 +1,342 @@
 {
  "_meta": {
   "quest": "The Dark Descent",
-  "count": 49,
-  "translated": 50,
+  "count": 82,
+  "translated": 81,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Dark Descent#000": {
+   "src": "Hello there, chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
+   "dst": "Привет, дружище! Признаться, не ждал увидеть здесь кого-то из старого полка {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#001": {
+   "src": "I... there... too many... th-thousands, at... at least...",
+   "dst": "Я… там… слишком много… т-тысячи, как… как минимум…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#002": {
+   "src": "There's... no point... we're... doomed...",
+   "dst": "Без толку… мы… обречены…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#003": {
+   "src": "Please, stop this! Whoever you are, leave me and my family in peace!",
+   "dst": "Прошу, хватит! Кто бы ты ни был, оставь в покое меня и мою семью!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#004": {
+   "src": "Ah, but if you had only said so sooner! I'm afraid they have already joined me, down below.",
+   "dst": "Ах, что ж ты раньше не сказала! Боюсь, они уже присоединились ко мне, там, внизу.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#005": {
+   "src": "Y-you... I thought they... oh, gods, no...",
+   "dst": "Т-ты… я думала, они… о боги, нет…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#006": {
+   "src": "Hush, now. You and your family will make fine additions to my legion.",
+   "dst": "Тише. Ты и твоя семья станете славным пополнением моего легиона.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#007": {
+   "src": "Wha... you mean... N-no, please! I don't want to hurt anyone!",
+   "dst": "Что… ты хочешь… Н-нет, прошу! Я не хочу никому вредить!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#008": {
+   "src": "How naive. Fear not. You will rise again, and then you will serve my purpose.",
+   "dst": "Как наивно. Не бойся. Ты восстанешь вновь и тогда послужишь моей цели.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#009": {
+   "src": "Heheh... do you see now?",
+   "dst": "Хехе… теперь видишь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#010": {
+   "src": "How easily this place fell? How quickly I became its master?",
+   "dst": "Как легко пало это место? Как быстро я стал его хозяином?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#011": {
+   "src": "You can barely keep them at bay on the surface, and yet you think to enter my own domain, to challenge me in the Underworld?",
+   "dst": "Вы едва сдерживаете их на поверхности, а ты думаешь войти в мои владения и бросить мне вызов в Подземном мире?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#012": {
+   "src": "So enter the mouth of my skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
+   "dst": "Так войди же в пасть моего черепа, солдат, спустись под землю. Жду нашей новой встречи, кехехе…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#013": {
+   "src": "Looks like the only way to go is into the skull...",
+   "dst": "Похоже, единственный путь - внутрь черепа…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#014": {
+   "src": "You were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
+   "dst": "Тебя шатало, как выжившую из ума старуху, взгляд пустой, как сливки, а на устах - какой-то Charon.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#015": {
+   "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a success!",
+   "dst": "Полагаю, это он тебя так закружил? Ну, ты, слава богу, не на том свете, так что назову операцию успехом!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#016": {
+   "src": "When you're ready, I'd be chuffed to have you along in the expedition down into the depths, old bean!",
+   "dst": "Как соберёшься, я буду чертовски рад взять тебя в экспедицию в глубины, старина!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#017": {
+   "src": "How foolish. You might think you are strong, adventurer, but you have no idea what you are about to face...",
+   "dst": "Как глупо. Ты мнишь себя сильным, искатель приключений, но не знаешь, что тебя ждёт…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#018": {
+   "src": "Simply marvellous work, chap! You've made it this far, so no time to fill your boots. Be prepared, we are about to fight Charon's undead army.",
+   "dst": "Просто великолепно, дружище! Раз уж забрались так далеко, расслабляться некогда. Готовься, нам предстоит битва с армией нежити Charon.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#019": {
+   "src": "We've lost a lot of good men on the way here, but I believe we can still throw a heavy punch.",
+   "dst": "По пути сюда мы потеряли много славных ребят, но, думаю, ещё можем крепко врезать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#020": {
+   "src": "You've earned a lot of respect from the boys this fight, better than all of us I'd say. For this fight, I'll let you direct the army.",
+   "dst": "Ребята тебя очень зауважали за этот бой - больше, чем любого из нас, я бы сказал. В этой битве командовать войском будешь ты.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#021": {
+   "src": "Don't take it as a promotion though, old bean. It's only for this fight, although you'll be getting a medal of valor if I can wangle it! Charon's army is remarkably strong, we need as much help as we can get.",
+   "dst": "Только не считай это повышением, старина. Это лишь на эту битву, хотя, если сумею выхлопотать, получишь медаль за доблесть! Армия Charon на редкость сильна, нам нужна любая помощь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#022": {
+   "src": "Aey- careful now, {u}, the cretin must be lurking around here somewhere.",
+   "dst": "Эй- осторожно, {u}, этот кретин наверняка где-то тут притаился.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#023": {
+   "src": "I see you've brought aid, you aren't as foolish as I thought.",
+   "dst": "Вижу, с тобой подмога - ты не так глуп, как я думал.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#024": {
+   "src": "Tell me, how do you plan to defeat an army that cannot die!?",
+   "dst": "Скажи-ка, как ты собираешься победить армию, которая не может умереть!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#026": {
+   "src": "Aha, chap! Wonderful, the {p} regiment's gotten its representative down 'ere. All rested up, I suppose, so let me give you an earful.",
+   "dst": "Ага, дружище! Чудесно, полк {p} прислал сюда своего представителя. Ты, полагаю, отдохнул, так что позволь тебя просветить.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#027": {
+   "src": "Those blighting zombies are all over the place. I tell ya, this skull's been giving the folk in {p} the collywobbles. Just as I thought, they're all coming from here.",
+   "dst": "Эти треклятые зомби повсюду. Говорю тебе, этот череп нагнал на жителей {p} страху. Так я и думал: все они лезут отсюда.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#028": {
+   "src": "Now, I don't wish to alarm you old bean, but I believe we are in front of the literal gates to hell.",
+   "dst": "Не хочу тебя пугать, старина, но, похоже, мы стоим у самых настоящих врат ада.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#029": {
+   "src": "Not to worry chuck! Don't look so glum, I've called for aid from the nearby towns. Once they get here we'll give them a good kicking, and you've already gotten out of there before, ain't ya?",
+   "dst": "Не волнуйся, дружок! Не вешай нос, я позвал подмогу из ближних городов. Как подоспеют, зададим им жару, а ты ведь уже однажды оттуда выбрался, а?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#030": {
+   "src": "Now is finally our chance to take down his army... It will be a jolly difficult battle, knowing our opponent and what he's managed, even away from his lair.",
+   "dst": "Наконец-то у нас есть шанс разбить его армию… Битва будет чертовски тяжёлой, учитывая, кто наш враг и чего он добился даже вдали от своего логова.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#031": {
+   "src": "Still, early days to say what he could be like in person! I'll take another route, but we'll meet in front of his door, right after crossing the river. Good luck, old bean!",
+   "dst": "Впрочем, рано судить, каков он лично! Я пойду другим путём, но встретимся у его дверей, сразу за рекой. Удачи, старина!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#032": {
+   "src": "I see",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#033": {
+   "src": "I have an entire undead army at my service. Do you really think you stand a chance?",
+   "dst": "У меня в услужении целая армия нежити. Ты правда думаешь, что у тебя есть шанс?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Dark Descent#034": {
    "src": "Talk to General Graken at [{~}, {~}, -{~}]",
    "dst": "Поговори с генералом Graken: [{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Dark Descent#001": {
+  "The Dark Descent#035": {
    "src": "Ah, hello there chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
    "dst": "А, привет, дружище! Признаться, не ждал увидеть здесь кого-то из старого полка {p}.",
    "role": "desc",
@@ -26,7 +356,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#002": {
+  "The Dark Descent#036": {
    "src": "I am General Graken, leader of the {p} militia. Charmed to meet you!",
    "dst": "Я генерал Graken, командир ополчения {p}. Рад знакомству!",
    "role": "desc",
@@ -36,7 +366,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#003": {
+  "The Dark Descent#037": {
    "src": "You've seen all the bloody zombies faffing about everywhere, yes? They're all seeming to come from this massive skull.",
    "dst": "Видал этих треклятых зомби, что шатаются повсюду? Похоже, все они лезут из того огромного черепа.",
    "role": "desc",
@@ -46,7 +376,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#004": {
+  "The Dark Descent#038": {
    "src": "I'm putting together a crack team for an expedition inside, but we haven't got any bleedin' idea what's down there!",
    "dst": "Собираю отборный отряд для вылазки внутрь, но мы ни черта не знаем, что там внизу!",
    "role": "desc",
@@ -56,7 +386,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#005": {
+  "The Dark Descent#039": {
    "src": "If you're up for it, chap, we could absolutely do with some recon 'round the old town, look for clues and the like.",
    "dst": "Если ты не против, дружище, разведай старый город - поищи улики и всё такое.",
    "role": "desc",
@@ -66,7 +396,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#006": {
+  "The Dark Descent#040": {
    "src": "I took a gander earlier, and one of the ol' houses caught my eye - it had a bloomin' great skull right over the door!",
    "dst": "Я тут глянул мельком, и один старый дом мне приглянулся: над дверью здоровенный череп!",
    "role": "desc",
@@ -76,7 +406,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#007": {
+  "The Dark Descent#041": {
    "src": "I didn't have time to look in proper, but I'd start the investigation there, chap.",
    "dst": "Толком осмотреть не успел, но я бы начал расследование оттуда.",
    "role": "desc",
@@ -86,7 +416,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#008": {
+  "The Dark Descent#042": {
    "src": "It's just south of here. The house still had solid wood boarding in it, despite the age, so look lively, chum!",
    "dst": "Это к югу отсюда. Доски там, несмотря на годы, ещё крепкие, так что не зевай, приятель!",
    "role": "desc",
@@ -96,7 +426,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#009": {
+  "The Dark Descent#043": {
    "src": "Investigate the house in {p} at [{~}, {~}, -{~}].",
    "dst": "Обследуй дом в {p}: [{~}, {~}, -{~}].",
    "role": "desc",
@@ -106,7 +436,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Dark Descent#010": {
+  "The Dark Descent#044": {
    "src": "Oh, sod it, I knew I was forgetting something! Steady there, chum! I'm on my way!",
    "dst": "Ох, чёрт, так и знал, что что-то забыл! Держись, приятель! Уже иду!",
    "role": "desc",
@@ -116,7 +446,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#011": {
+  "The Dark Descent#045": {
    "src": "Drat! Too late, it seems. Yes, I forgot to mention the floor was in poor condition. Up here! You took quite the tumble, are you alright?",
    "dst": "Проклятье! Похоже, опоздал. Да, забыл сказать, что пол там гнилой. Я наверху! Ну и падение! Как самочувствие?",
    "role": "desc",
@@ -126,7 +456,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#012": {
+  "The Dark Descent#046": {
    "src": "Well, there's some good news, I suppose. Still though, seems I sent you a ticket to a bit of a sticky wicket! Do you see a way out anywhere down there?",
    "dst": "Что ж, есть и хорошая новость. И всё же, похоже, я отправил тебя прямиком в переплёт! Видишь там внизу выход?",
    "role": "desc",
@@ -136,7 +466,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#013": {
+  "The Dark Descent#047": {
    "src": "There's a tunnel? Aha, spiffing! I suggest you take it immediately. I'll have to return to my post now, post-haste!",
    "dst": "Туннель? Ага, превосходно! Советую идти туда немедля. А мне пора на пост, и пулей!",
    "role": "desc",
@@ -146,7 +476,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#014": {
+  "The Dark Descent#048": {
    "src": "Good luck, chum! Now, back, you cads! Back I say!",
    "dst": "Удачи, приятель! А ну назад, мерзавцы! Назад, кому говорю!",
    "role": "desc",
@@ -156,7 +486,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#015": {
+  "The Dark Descent#049": {
    "src": "Keheh... Come further, little human... Step into the shadows...",
    "dst": "Кехе… Подойди ближе, человечек… Шагни в тени…",
    "role": "desc",
@@ -166,7 +496,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#016": {
+  "The Dark Descent#050": {
    "src": "Explore the tunnel in the basement of the house.",
    "dst": "Исследуй туннель в подвале дома.",
    "role": "desc",
@@ -176,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Dark Descent#017": {
+  "The Dark Descent#051": {
    "src": "Investigate the strange dark realm.",
    "dst": "Исследуй странное тёмное царство.",
    "role": "desc",
@@ -186,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Dark Descent#018": {
+  "The Dark Descent#052": {
    "src": "Welcome...",
    "dst": "Добро пожаловать…",
    "role": "desc",
@@ -196,7 +526,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#019": {
+  "The Dark Descent#053": {
    "src": "Scout! Report your findings, immediately! How many corrupteds are coming?",
    "dst": "Разведчик! Докладывай, живо! Сколько осквернённых идёт?",
    "role": "desc",
@@ -206,7 +536,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "The Dark Descent#020": {
+  "The Dark Descent#054": {
    "src": "I...there...too many...th-thousands, at...at least...",
    "dst": "Я… там… слишком много… т-тысячи, как… как минимум…",
    "role": "desc",
@@ -216,7 +546,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "The Dark Descent#021": {
+  "The Dark Descent#055": {
    "src": "Thousands...? This is far worse than I expected. Men! Prepare for-",
    "dst": "Тысячи…? Хуже, чем я думал. Бойцы! Готовьтесь к-",
    "role": "desc",
@@ -226,7 +556,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "The Dark Descent#022": {
+  "The Dark Descent#056": {
    "src": "No point...we're...doomed...",
    "dst": "Без толку… мы… обречены…",
    "role": "desc",
@@ -236,7 +566,7 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "The Dark Descent#023": {
+  "The Dark Descent#057": {
    "src": "Wait, w-what's going on? What's happening to you?!",
    "dst": "Стой, ч-что происходит? Что с тобой творится?!",
    "role": "desc",
@@ -246,7 +576,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "The Dark Descent#024": {
+  "The Dark Descent#058": {
    "src": "Please, stop this! Whoever you are, leave me and my family in peace! What did we ever do to deserve this?!",
    "dst": "Прошу, хватит! Кто бы ты ни был, оставь в покое меня и мою семью! Чем мы это заслужили?!",
    "role": "desc",
@@ -256,7 +586,7 @@
    "speaker": "Lost Soul",
    "source": "wiki"
   },
-  "The Dark Descent#025": {
+  "The Dark Descent#059": {
    "src": "Ah, but if you had only said so sooner! They have already left this mortal coil...oh, what a shame.",
    "dst": "Ах, что ж ты раньше не сказала! Они уже покинули этот бренный мир… какая жалость.",
    "role": "desc",
@@ -266,7 +596,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#026": {
+  "The Dark Descent#060": {
    "src": "Y-you...I thought they...oh, god, no...",
    "dst": "Т-ты… я думала, они… боже, нет…",
    "role": "desc",
@@ -276,7 +606,7 @@
    "speaker": "Lost Soul",
    "source": "wiki"
   },
-  "The Dark Descent#027": {
+  "The Dark Descent#061": {
    "src": "Hush now. I will ensure that you and your family are reunited. You will even be able to partake in...keheh...family outings, under my watchful eye...",
    "dst": "Тише. Я позабочусь, чтобы ты воссоединилась с семьёй. Вы даже сможете… кехе… гулять всей семьёй под моим неусыпным взором…",
    "role": "desc",
@@ -286,7 +616,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#028": {
+  "The Dark Descent#062": {
    "src": "Wha...you mean... N-no, please! I don't want to hurt anyone! I don't want to die!!",
    "dst": "Что… ты хочешь… Н-нет, прошу! Я не хочу никому вредить! Я не хочу умирать!!",
    "role": "desc",
@@ -296,7 +626,7 @@
    "speaker": "Lost Soul",
    "source": "wiki"
   },
-  "The Dark Descent#029": {
+  "The Dark Descent#063": {
    "src": "Aha, naive girl. How cute, you believe you have a choice in the matter. What you want, is not what I need.",
    "dst": "Ага, наивная девочка. Как мило, ты думаешь, что у тебя есть выбор. Чего хочешь ты - не то, что нужно мне.",
    "role": "desc",
@@ -306,7 +636,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#030": {
+  "The Dark Descent#064": {
    "src": "Heheh...do you see now?",
    "dst": "Хехе… теперь видишь?",
    "role": "desc",
@@ -316,7 +646,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#031": {
+  "The Dark Descent#065": {
    "src": "Do you see how easily this place fell? How quickly I became its master? And how I could simply dispose of you without a second thought?",
    "dst": "Видишь, как легко пало это место? Как быстро я стал его хозяином? И как просто я могу избавиться от тебя, не задумываясь?",
    "role": "desc",
@@ -326,7 +656,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#032": {
+  "The Dark Descent#066": {
    "src": "Hundreds slaughtered in mere moments... only to rise again as my soldiers in infinite amounts.",
    "dst": "Сотни убиты в мгновение ока… лишь чтобы восстать моими бессчётными солдатами.",
    "role": "desc",
@@ -336,7 +666,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#033": {
+  "The Dark Descent#067": {
    "src": "You can barely keep them at bay on the surface, and yet you think you can enter my own domain, to challenge me in the Underworld?",
    "dst": "Вы едва сдерживаете их на поверхности, а ты думаешь войти в мои владения и бросить мне вызов в Подземном мире?",
    "role": "desc",
@@ -346,7 +676,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#034": {
+  "The Dark Descent#068": {
    "src": "You will fail, and I will be free to string your body up like a puppet and make you dance for me.",
    "dst": "Ты проиграешь, а я подвешу твоё тело, как марионетку, и заставлю плясать для меня.",
    "role": "desc",
@@ -356,7 +686,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#035": {
+  "The Dark Descent#069": {
    "src": "So enter the mouth of the skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
    "dst": "Так войди же в пасть черепа, солдат, спустись под землю. Жду нашей новой встречи, кехехе…",
    "role": "desc",
@@ -366,7 +696,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#036": {
+  "The Dark Descent#070": {
    "src": "Leave the strange dark realm.",
    "dst": "Покинь странное тёмное царство.",
    "role": "desc",
@@ -376,7 +706,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Dark Descent#037": {
+  "The Dark Descent#071": {
    "src": "Return the ruby to Graken at [{~}, {~}, -{~}]",
    "dst": "Верни рубин Graken: [{~}, {~}, -{~}]",
    "role": "desc",
@@ -386,7 +716,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Dark Descent#038": {
+  "The Dark Descent#072": {
    "src": "Return to your world, now. And if you still want to challenge me... I'll be waiting.",
    "dst": "А теперь возвращайся в свой мир. И если всё ещё хочешь бросить мне вызов… я буду ждать.",
    "role": "desc",
@@ -396,7 +726,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#039": {
+  "The Dark Descent#073": {
    "src": "Hey! Come on, come over here! Quit milling about with the zombies, chap!",
    "dst": "Эй! Давай-ка сюда! Хватит слоняться с зомби, дружище!",
    "role": "desc",
@@ -406,7 +736,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#040": {
+  "The Dark Descent#074": {
    "src": "Oi! Hallo?! Chum? Why're you wandering round all bog-eyed? Come back to me now!",
    "dst": "Эй! Алло?! Приятель? Чего бродишь с остекленевшими глазами? Очнись!",
    "role": "desc",
@@ -416,7 +746,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#041": {
+  "The Dark Descent#075": {
    "src": "Come on, pip pip! Let's see a bit more colour in your eyes- There we are! Back now, chap?",
    "dst": "Ну же, живее! Дай-ка глазам вернуть цвет… Вот так! Ты с нами, дружище?",
    "role": "desc",
@@ -426,7 +756,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#042": {
+  "The Dark Descent#076": {
    "src": "Capital! You had me quite worried for a spot, there. Do bubble about just what went on down there, mm?",
    "dst": "Превосходно! Я уж было всерьёз забеспокоился. Ну-ка, выкладывай, что там внизу стряслось, а?",
    "role": "desc",
@@ -436,7 +766,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#043": {
+  "The Dark Descent#077": {
    "src": "But, you were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
    "dst": "Но тебя шатало, как выжившую из ума старуху, глаза пустые, как сливки, и с губ всё срывалось что-то про какого-то Charon.",
    "role": "desc",
@@ -446,7 +776,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#044": {
+  "The Dark Descent#078": {
    "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a jolly good success!",
    "dst": "Полагаю, это он тебя так закружил? Ну, ты, слава богу, не на том свете, так что назову операцию блестящим успехом!",
    "role": "desc",
@@ -456,7 +786,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#045": {
+  "The Dark Descent#079": {
    "src": "Your discoveries fit in jolly-well with what we already know - and I'm convinced. To stop all these bleedin' zombos, we're going to have to go down under.",
    "dst": "Твои находки прекрасно сходятся с тем, что мы знаем, - я убеждён. Чтобы остановить этих треклятых зомби, придётся спуститься вниз.",
    "role": "desc",
@@ -466,7 +796,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#046": {
+  "The Dark Descent#080": {
    "src": "Preliminary expeditions have brought back some real nasty bits, brains and such - but also some fancy-as-you-like jewellery!",
    "dst": "Первые вылазки принесли всякую мерзость, мозги и прочее, но и весьма нарядные драгоценности!",
    "role": "desc",
@@ -476,7 +806,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#047": {
+  "The Dark Descent#081": {
    "src": "Take some with you, remind you what we're up against. But keep your eyes on the prize!",
    "dst": "Возьми немного с собой - пусть напоминают, с кем мы воюем. Но не упускай главного!",
    "role": "desc",
@@ -486,7 +816,7 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#048": {
+  "The Dark Descent#082": {
    "src": "When you're ready, I'd be chuffed to have you along again in the expedition down into the depths, old bean!",
    "dst": "Как соберёшься, я буду чертовски рад снова взять тебя в экспедицию в глубины, старина!",
    "role": "desc",
@@ -495,16 +825,6 @@
    "stage": "Stage 6",
    "speaker": "General Graken",
    "source": "wiki"
-  },
-  "The Dark Descent#000~1": {
-   "src": "I have an entire undead army at my service. Do you really think you stand a chance?",
-   "dst": "У меня в услужении целая армия нежити. Ты правда думаешь, что у тебя есть шанс?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

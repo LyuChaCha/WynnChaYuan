@@ -84,12 +84,12 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `es_es` Español | ██████████ 100.0% | 45,451 / 45,451 |
-| `ja_jp` 日本語 | ██████████ 100.0% | 45,500 / 45,500 |
-| `ru_ru` Русский | ██████████ 100.0% | 45,500 / 45,500 |
-| `zh_cn` 简体中文 | ██████████ 100.0% | 45,500 / 45,500 |
-| `ko_kr` 한국어 | ██████████ 100.0% | 45,500 / 45,501 |
-| `zh_tw` 繁體中文 | ██████████ 99.9% | 45,389 / 45,451 |
+| `es_es` Español | ██████████ 100.0% | 46,642 / 46,664 |
+| `ja_jp` 日本語 | ██████████ 100.0% | 46,642 / 46,664 |
+| `ru_ru` Русский | ██████████ 100.0% | 46,642 / 46,664 |
+| `zh_cn` 简体中文 | ██████████ 100.0% | 46,642 / 46,664 |
+| `ko_kr` 한국어 | ██████████ 100.0% | 46,641 / 46,664 |
+| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,580 / 46,664 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -219,7 +219,7 @@ Translate one line and you are on this list. See [CONTRIBUTING.en.md](CONTRIBUTI
   full text in `src/main/resources/assets/wynnchayuan/font/ofl-fusion.txt`). A line containing a glyph the font
   lacks stays in English instead of drawing boxes
 - Resource-pack glyphs and layout belong to Wynncraft; this mod only displays them
-- Code: [GNU AGPLv3](LICENSE)
+- Code: [GNU AGPLv3 or later](LICENSE)
 - Translations and data (the corpus under `src/main/resources/assets/wynnchayuan/translations/`, `GLOSSARY.md`, etc.): [CC BY-NC-SA 4.0](LICENSE-DATA).
   Content taken from the Wynncraft Wiki stays under its original CC BY-SA
 

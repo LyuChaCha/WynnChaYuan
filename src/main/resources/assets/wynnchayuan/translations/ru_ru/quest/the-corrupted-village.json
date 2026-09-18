@@ -1,12 +1,172 @@
 {
  "_meta": {
   "quest": "The Corrupted Village",
-  "count": 55,
-  "translated": 56,
+  "count": 71,
+  "translated": 71,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Corrupted Village#000": {
+   "src": "Did you do what I asked? No? Check your content book.",
+   "dst": "Ну как, то, о чём я просил, сделано? Нет? Загляни в книгу заданий.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#001": {
+   "src": "HEY! YOU! What are you looking at? You want to go do ya?!",
+   "dst": "ЭЙ! ТЫ! Чего уставился? Подраться хочешь?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#002": {
+   "src": "I swear if you don't leave right now, I am going to PUMMEL YOUR FACE INTO THE GROUND.",
+   "dst": "Клянусь, если ты сейчас же не уйдёшь, я ВКОЛОЧУ ТВОЮ РОЖУ В ЗЕМЛЮ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#003": {
+   "src": "Orikal pays the excavators.",
+   "dst": "Orikal платит землекопам.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#004": {
+   "src": "We were performing our usual routines when suddenly an unknown explosion caused a massive cave-in at the entrance to our main mining supply area.",
+   "dst": "Мы работали как обычно, как вдруг неизвестный взрыв вызвал огромный обвал у входа на наш главный склад горных припасов.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#005": {
+   "src": "Something must be done to remove the debris, we cannot easily continue our mining operations without our supplies.",
+   "dst": "Завал надо как-то разобрать: без припасов нам трудно продолжать добычу.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#006": {
+   "src": "There also may be people trapped on the other side, and I would hate to lose even more miners to these catastrophes.",
+   "dst": "К тому же по ту сторону могут быть люди, и я не хочу терять в этих бедствиях ещё больше шахтёров.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#007": {
+   "src": "Maybe we could use the Wrecking Ball to demolish the debris, but if we don't act soon...",
+   "dst": "Может, снести завал Шаром-разрушителем, но если не поторопимся…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#008": {
+   "src": "How to Use the Explosive-Cloaker Machine:",
+   "dst": "Как пользоваться машиной-маскировщиком взрывчатки:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#009": {
+   "src": "- Acquire an explosive item.",
+   "dst": "- Добудь взрывоопасный предмет.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#010": {
+   "src": "- Insert explosive item into the hole of the INPUT slot of the machine.",
+   "dst": "- Вставь взрывоопасный предмет в отверстие слота INPUT машины.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#011": {
+   "src": "- Wait while the machine temporarily disables the item's explosive property.",
+   "dst": "- Подожди, пока машина временно лишит предмет взрывоопасности.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#012": {
+   "src": "- Take item out of OUTPUT slot.",
+   "dst": "- Забери предмет из слота OUTPUT.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#013": {
+   "src": "- Can be very useful for disabling explosive properties of unstable ores found in caves.",
+   "dst": "- Очень полезно, чтобы обезвреживать нестабильную руду, которая встречается в пещерах.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#014": {
+   "src": "Orikal takes the materials you retrieved and puts them in a container. He mutters some words in an unknown language, and suddenly the container turns into some sort of Magical TNT.",
+   "dst": "Orikal берёт добытые тобой материалы и кладёт их в сосуд. Он бормочет что-то на незнакомом языке, и сосуд вдруг превращается в какой-то магический TNT.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#015": {
+   "src": "But what is it connected to? That's for another day. The main thing is the village is safe. Here, take this for your help.",
+   "dst": "Но с чем он связан? Это в другой раз. Главное - деревня в безопасности. Вот, возьми за помощь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Corrupted Village",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Corrupted Village#016": {
    "src": "Speak to Orikal outside the {p} at [{~}, {~}, -{~}].",
    "dst": "Поговори с Orikal у {p} на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#001": {
+  "The Corrupted Village#017": {
    "src": "Go away! I know you're angry but there's nothing to gain her-",
    "dst": "Уходи! Знаю, ты злишься, но тут нечего взя-",
    "role": "desc",
@@ -26,7 +186,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#002": {
+  "The Corrupted Village#018": {
    "src": "Oh, you seem calm. What are you doing here? Bit close to the portal for a soldier isn't it?",
    "dst": "О, ты вроде не буйствуешь. Что ты тут делаешь? Для солдата близковато к порталу, нет?",
    "role": "desc",
@@ -36,7 +196,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#003": {
+  "The Corrupted Village#019": {
    "src": "I see, you were sent to aid the public. Perfect.",
    "dst": "Ясно, тебя прислали помочь людям. Отлично.",
    "role": "desc",
@@ -46,7 +206,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#004": {
+  "The Corrupted Village#020": {
    "src": "I am Orikal, I'm trying to stop everyone here from killing each other.",
    "dst": "Я Orikal. Пытаюсь не дать здешним поубивать друг друга.",
    "role": "desc",
@@ -56,7 +216,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#005": {
+  "The Corrupted Village#021": {
    "src": "Do you see all these spikes? I believe they are the thing spreading corruption.",
    "dst": "Видишь все эти шипы? Думаю, это они распространяют Скверну.",
    "role": "desc",
@@ -66,7 +226,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#006": {
+  "The Corrupted Village#022": {
    "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
    "dst": "Скверна действует на людей не так, как на других. Гораздо медленнее - для нас это скорее заражение разума.",
    "role": "desc",
@@ -76,7 +236,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#007": {
+  "The Corrupted Village#023": {
    "src": "Could you inspect the peak of the spike in the village for me? It might give me valuable insight. Thanks!",
    "dst": "Осмотришь для меня верхушку шипа в деревне? Может, узнаю что-то ценное. Спасибо!",
    "role": "desc",
@@ -86,7 +246,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#008": {
+  "The Corrupted Village#024": {
    "src": "Examine the nearby corrupted spike to the northeast at [{~}, {~}, -{~}].",
    "dst": "Осмотри ближайший осквернённый шип на северо-востоке на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -96,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#009": {
+  "The Corrupted Village#025": {
    "src": "Climb the spike to see if you can find anything useful about it's existance.",
    "dst": "Взберись на шип и поищи что-нибудь полезное о его происхождении.",
    "role": "desc",
@@ -106,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#010": {
+  "The Corrupted Village#026": {
    "src": "Report back to Orikal about your observations.",
    "dst": "Расскажи Orikal о своих наблюдениях.",
    "role": "desc",
@@ -116,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#011": {
+  "The Corrupted Village#027": {
    "src": "That was quick... did you find anything?",
    "dst": "Быстро ты… нашлось что-нибудь?",
    "role": "desc",
@@ -126,7 +286,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#012": {
+  "The Corrupted Village#028": {
    "src": "Really, nothing? You didn't even feel anything?",
    "dst": "Совсем ничего? Даже не ощущалось ничего?",
    "role": "desc",
@@ -136,7 +296,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#013": {
+  "The Corrupted Village#029": {
    "src": "How can it be just a spike? It must be spreading corruption somehow.",
    "dst": "Как это может быть просто шип? Он же как-то распространяет Скверну.",
    "role": "desc",
@@ -146,7 +306,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#014": {
+  "The Corrupted Village#030": {
    "src": "Then perhaps my second theory was correct. I will have to send you underground.",
    "dst": "Тогда, может, права моя вторая теория. Придётся отправить тебя под землю.",
    "role": "desc",
@@ -156,7 +316,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#015": {
+  "The Corrupted Village#031": {
    "src": "There are old cave systems around here from the mining days. I sent two men down to excavate the spike, can you go down and help?",
    "dst": "Тут со времён добычи остались старые пещеры. Я послал двоих раскопать шип, спустишься помочь?",
    "role": "desc",
@@ -166,7 +326,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#016": {
+  "The Corrupted Village#032": {
    "src": "The entrance is a little to the northeast. In fact, you should have passed it on your way to the spike.",
    "dst": "Вход чуть к северо-востоку. По пути к шипу он был прямо у тебя на дороге.",
    "role": "desc",
@@ -176,7 +336,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#017": {
+  "The Corrupted Village#033": {
    "src": "Find the excavators inside the nearby cave to the northeast at [{~}, {~}, -{~}].",
    "dst": "Найди землекопов в пещере на северо-востоке на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -186,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#018": {
+  "The Corrupted Village#034": {
    "src": "Find the excavators inside the cave.",
    "dst": "Найди землекопов в пещере.",
    "role": "desc",
@@ -196,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#019": {
+  "The Corrupted Village#035": {
    "src": "This is insane, why are we here?! We're looking for corruption you know that right?",
    "dst": "Это безумие, зачем мы здесь?! Мы ищем Скверну, ты это понимаешь?",
    "role": "desc",
@@ -206,7 +366,7 @@
    "speaker": "Alfonse",
    "source": "wiki"
   },
-  "The Corrupted Village#020": {
+  "The Corrupted Village#036": {
    "src": "Calm down. All we have to do is keep digging. Besides, he did say he'd pay us a lot, so stop being mad.",
    "dst": "Спокойно. Нам надо просто копать. К тому же он обещал много заплатить, так что не злись.",
    "role": "desc",
@@ -216,7 +376,7 @@
    "speaker": "Roy",
    "source": "wiki"
   },
-  "The Corrupted Village#021": {
+  "The Corrupted Village#037": {
    "src": "Forget it, I don't care anymore, just prime the explosive and get clear of the blast!",
    "dst": "Забудь, мне уже всё равно, взводи заряд и отходи от взрыва!",
    "role": "desc",
@@ -226,7 +386,7 @@
    "speaker": "Alfonse",
    "source": "wiki"
   },
-  "The Corrupted Village#022": {
+  "The Corrupted Village#038": {
    "src": "Well, that did the trick. Let's take a look.",
    "dst": "Ну, сработало. Давай глянем.",
    "role": "desc",
@@ -236,7 +396,7 @@
    "speaker": "Roy",
    "source": "wiki"
   },
-  "The Corrupted Village#023": {
+  "The Corrupted Village#039": {
    "src": "Oh my... What... is this?",
    "dst": "Боже… Что… это такое?",
    "role": "desc",
@@ -246,7 +406,7 @@
    "speaker": "Alfonse",
    "source": "wiki"
   },
-  "The Corrupted Village#024": {
+  "The Corrupted Village#040": {
    "src": "It almost looks like a giant spike... Woah. How deep does this thing go?",
    "dst": "Похоже на гигантский шип… Ого. Как глубоко он уходит?",
    "role": "desc",
@@ -256,7 +416,7 @@
    "speaker": "Roy",
    "source": "wiki"
   },
-  "The Corrupted Village#025": {
+  "The Corrupted Village#041": {
    "src": "Well, you know what? We did our job, so honestly I don't care. Let's get out of he-",
    "dst": "Знаешь что? Работу мы сделали, так что мне честно плевать. Пошли отсю-",
    "role": "desc",
@@ -266,9 +426,9 @@
    "speaker": "Alfonse",
    "source": "wiki"
   },
-  "The Corrupted Village#026": {
-   "src": "Orikal? We’re done! Pay up! I want out. This place is getting to me.",
-   "dst": "Orikal? Мы закончили! Плати! Я ухожу. Это место давит на меня.",
+  "The Corrupted Village#042": {
+   "src": "Orikal? We're done! Pay up! I want out. This place is getting to me.",
+   "dst": "Orikal? Мы закончили! Плати! Я хочу уйти. Это место меня достало.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -276,7 +436,7 @@
    "speaker": "Alfonse",
    "source": "wiki"
   },
-  "The Corrupted Village#027": {
+  "The Corrupted Village#043": {
    "src": "I came when I heard the explosion. I thought you'd hurt yourselves.",
    "dst": "Я пришёл, как услышал взрыв. Думал, вы покалечились.",
    "role": "desc",
@@ -286,7 +446,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#028": {
+  "The Corrupted Village#044": {
    "src": "Well, I'll be darned. The spike goes this far down? And it looks like it goes even deeper than this!",
    "dst": "Вот это да. Шип уходит так глубоко? И, похоже, ещё глубже!",
    "role": "desc",
@@ -296,7 +456,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#029": {
+  "The Corrupted Village#045": {
    "src": "Well, I don't know about you, but I say we blow it to shreds! That oughta get rid of this spike!",
    "dst": "Не знаю, как вы, а я говорю - взорвать его в клочья! Уж это избавит нас от шипа!",
    "role": "desc",
@@ -306,7 +466,7 @@
    "speaker": "Roy",
    "source": "wiki"
   },
-  "The Corrupted Village#030": {
+  "The Corrupted Village#046": {
    "src": "For once, I agree. I'll do it, you guys just get clear.",
    "dst": "На этот раз согласен. Я сам, а вы отойдите.",
    "role": "desc",
@@ -316,7 +476,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#031": {
+  "The Corrupted Village#047": {
    "src": "...Wow, that did nothing. We're going to need something MUCH more powerful than TNT...",
    "dst": "…Ого, ноль эффекта. Нам нужно что-то НАМНОГО мощнее TNT…",
    "role": "desc",
@@ -326,7 +486,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#032": {
+  "The Corrupted Village#048": {
    "src": "Oh yeah? And just what would you have in mind?",
    "dst": "Да ну? И что же ты задумал?",
    "role": "desc",
@@ -336,7 +496,7 @@
    "speaker": "Alfonse",
    "source": "wiki"
   },
-  "The Corrupted Village#033": {
+  "The Corrupted Village#049": {
    "src": "Well, it's sorta complicated. That's why I've decided to give our new friend here the job of acquiring this explosive.",
    "dst": "Ну, всё сложновато. Поэтому добыть эту взрывчатку я поручу нашему новому другу.",
    "role": "desc",
@@ -346,7 +506,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#034": {
+  "The Corrupted Village#050": {
    "src": "Oh yeah, we were so busy with this spike, we forgot to address you! Sorry about that.",
    "dst": "Ах да, мы так возились с шипом, что забыли с тобой поздороваться! Прости.",
    "role": "desc",
@@ -356,7 +516,7 @@
    "speaker": "Roy",
    "source": "wiki"
   },
-  "The Corrupted Village#035": {
+  "The Corrupted Village#051": {
    "src": "Well if you don't need us anymore then we'll just be on our way... WITH our money! So hand it over please.",
    "dst": "Ну, раз мы больше не нужны, мы пойдём… С ДЕНЬГАМИ! Так что гони их, пожалуйста.",
    "role": "desc",
@@ -366,7 +526,7 @@
    "speaker": "Alfonse",
    "source": "wiki"
   },
-  "The Corrupted Village#036": {
+  "The Corrupted Village#052": {
    "src": "Alright, fine. Here's your pay. Thank you for your help.",
    "dst": "Ладно, ладно. Вот ваша плата. Спасибо за помощь.",
    "role": "desc",
@@ -376,7 +536,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#037": {
+  "The Corrupted Village#053": {
    "src": "Gah! That's hardly anything! I'm not even surprised. Let's just go.",
    "dst": "Ах! Да это же гроши! Я даже не удивлён. Пошли.",
    "role": "desc",
@@ -386,7 +546,7 @@
    "speaker": "Roy",
    "source": "wiki"
   },
-  "The Corrupted Village#038": {
+  "The Corrupted Village#054": {
    "src": "Anyway, come meet me back at my tent, friend. We will discuss what to do then.",
    "dst": "В общем, возвращайся ко мне в палатку, друг. Там и обсудим, что делать.",
    "role": "desc",
@@ -396,7 +556,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#039": {
+  "The Corrupted Village#055": {
    "src": "Exit the cave and speak to Orikal in his tent about his plan for destroying the spike.",
    "dst": "Выйди из пещеры и обсуди с Orikal в его палатке план уничтожения шипа.",
    "role": "desc",
@@ -406,7 +566,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#040": {
+  "The Corrupted Village#056": {
    "src": "Okay. I happen to know a recipe for creating an extremely lethal magical explosive.",
    "dst": "Итак. Я как раз знаю рецепт невероятно смертоносной магической взрывчатки.",
    "role": "desc",
@@ -416,7 +576,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#041": {
+  "The Corrupted Village#057": {
    "src": "There are {~} main ingredients you will need to get me: [Stabilized Corrupted Ore], [Incendiary Fluid], and a [Switch Fuse] to activate it.",
    "dst": "Добудь мне основные компоненты ({~}): [Stabilized Corrupted Ore], [Incendiary Fluid] и [Switch Fuse] для запуска.",
    "role": "desc",
@@ -426,7 +586,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#042": {
+  "The Corrupted Village#058": {
    "src": "There used to be a small mining camp a little east of this town. It's abandoned now, but you should still be able to find what you need there.",
    "dst": "Чуть восточнее этого города был маленький шахтёрский лагерь. Сейчас он заброшен, но нужное там ещё найдётся.",
    "role": "desc",
@@ -436,7 +596,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#043": {
+  "The Corrupted Village#059": {
    "src": "It's not the big ol' abandoned mines, mind you. It's a smaller camp, in fact you should be able to see it from this village.",
    "dst": "Только это не большие старые заброшенные шахты. Лагерь поменьше, его даже из деревни видно.",
    "role": "desc",
@@ -446,7 +606,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#044": {
+  "The Corrupted Village#060": {
    "src": "Best of luck! Oh, and also, try not to die please. These ingredients do indeed promote environmental hazards.",
    "dst": "Удачи! И ещё - постарайся не умереть, пожалуйста. Эти компоненты и правда опасны для окружающих.",
    "role": "desc",
@@ -456,7 +616,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#045": {
+  "The Corrupted Village#061": {
    "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
    "dst": "Найди [Stabilized Corrupted Ore], [Incendiary Fluid] и [Switch Fuse] для TNT в шахтёрском лагере на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -466,7 +626,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#047": {
+  "The Corrupted Village#062": {
    "src": "You got 'em all! Excellent, this is exactly what we need.",
    "dst": "Всё собрано! Отлично, это ровно то, что нужно.",
    "role": "desc",
@@ -476,7 +636,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#048": {
+  "The Corrupted Village#063": {
    "src": "Alright, stand back. I have actually never made this before, so let's hope I don't cause a disaster.",
    "dst": "Так, отойди. Я такое вообще никогда не делал, так что будем надеяться, обойдётся без катастрофы.",
    "role": "desc",
@@ -486,7 +646,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#049": {
+  "The Corrupted Village#064": {
    "src": "Phew, glad nothing tragic happened there. This should be it, now go take it back down to the spike and destroy it once and for all!",
    "dst": "Фух, хорошо, что обошлось без беды. Вот, должно быть готово. Неси это к шипу и уничтожь его раз и навсегда!",
    "role": "desc",
@@ -496,7 +656,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#050": {
+  "The Corrupted Village#065": {
    "src": "Bring the explosive to the spike in the cave and use it to destroy the spike.",
    "dst": "Отнеси взрывчатку к шипу в пещере и уничтожь шип.",
    "role": "desc",
@@ -506,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#051": {
+  "The Corrupted Village#066": {
    "src": "Report to Orikal about your success.",
    "dst": "Доложи Orikal об успехе.",
    "role": "desc",
@@ -516,7 +676,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Corrupted Village#052": {
+  "The Corrupted Village#067": {
    "src": "Oh, do you feel that? It's like a buzzing in my ears I never knew about has just vanished.",
    "dst": "О, чувствуешь? Будто в ушах гудело что-то, чего я не замечал, а теперь стихло.",
    "role": "desc",
@@ -526,7 +686,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#053": {
+  "The Corrupted Village#068": {
    "src": "I think that worked you know. It seems the power of the spike comes from the root...",
    "dst": "Знаешь, по-моему, сработало. Похоже, сила шипа идёт от корня…",
    "role": "desc",
@@ -536,7 +696,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#054": {
+  "The Corrupted Village#069": {
    "src": "But what is it connected to? That's for another day. The main thing is the village is safe.",
    "dst": "Но с чем он связан? Это в другой раз. Главное - деревня в безопасности.",
    "role": "desc",
@@ -546,7 +706,7 @@
    "speaker": "Orikal",
    "source": "wiki"
   },
-  "The Corrupted Village#055": {
+  "The Corrupted Village#070": {
    "src": "Here, take this for your help. I found this potato in one of the houses around here, and I sure as heck don't want it!",
    "dst": "Вот, держи за помощь. Нашёл эту картошку в одном из домов тут, и мне она даром не нужна!",
    "role": "desc",
@@ -554,16 +714,6 @@
    "quest": "The Corrupted Village",
    "stage": "Stage 10",
    "speaker": "Orikal",
-   "source": "wiki"
-  },
-  "The Corrupted Village#026~1": {
-   "src": "Orikal? We're done! Pay up! I want out. This place is getting to me.",
-   "dst": "Orikal? Мы закончили! Плати! Я хочу уйти. Это место меня достало.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Corrupted Village",
-   "stage": "Stage 6",
-   "speaker": "Alfonse",
    "source": "wiki"
   }
  }

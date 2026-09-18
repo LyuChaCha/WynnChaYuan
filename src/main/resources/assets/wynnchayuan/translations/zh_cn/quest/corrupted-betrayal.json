@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Corrupted Betrayal",
-  "count": 51,
+  "count": 52,
   "translated": 52,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#000": {
+   "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
+   "dst": "{~} AP 时，{p} 已被逼入绝境。成群的亡灵重创了军队与城堡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#001": {
    "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的 Lanu 对话。",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#001": {
+  "Corrupted Betrayal#002": {
    "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
    "dst": "嘿，士兵！对，就是你！有空搭把手吗？",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#002": {
+  "Corrupted Betrayal#003": {
    "src": "We've got a major issue with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
    "dst": "这座老要塞出了个大问题。它不停地冒出一堆该死的史莱姆，而且离 {p} 太近，惹了不少麻烦。",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#003": {
+  "Corrupted Betrayal#004": {
    "src": "Soldiers are spending half their guard duty slicing the critters into sludge. Ideally we'd raid the cave, cut out the source, but...",
    "dst": "士兵们站岗的时间有一半都花在把这些小东西剁成烂泥上。最好是突袭洞窟，把源头除掉，可是……",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#004": {
+  "Corrupted Betrayal#005": {
    "src": "This place has some history. Nasty stuff. I'd prefer not to head in blind, so I've been checking for any clues to what we might find inside.",
    "dst": "这地方有些历史。不好的历史。我不想瞎闯进去，所以一直在找线索，看看里面可能有什么。",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#005": {
+  "Corrupted Betrayal#006": {
    "src": "Haven't found much... except this verse, 'scribed into the wall over there. Go on, check it out and let me know what you think.",
    "dst": "没找到多少……只有那边墙上刻的这首诗。去看看，然后告诉我你怎么想。",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#006": {
+  "Corrupted Betrayal#007": {
    "src": "Nonsense, if you ask me. Most likely kids from {p} messing about. But we haven't found anything else, so... if you've got any time, fancy checking it out for me?",
    "dst": "要我说全是胡扯。多半是 {p} 的小孩在瞎闹。可我们也没找到别的，所以……如果你有空，能帮我去查查吗？",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#007": {
+  "Corrupted Betrayal#008": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "第一句显然说的是大桥，可剩下的意思我完全摸不着头脑。去那边四处看看，找到什么有意思的就告诉我。",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#008": {
+  "Corrupted Betrayal#009": {
    "src": "Found anything interesting around the riddle yet? Do you need to hear it again?",
    "dst": "在谜题附近找到什么有意思的了吗？要不要再听一遍？",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#009": {
+  "Corrupted Betrayal#010": {
    "src": "Near a corrupted bridge, a ruin past its prime..",
    "dst": "腐化的桥边，废墟早已凋残..",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#010": {
+  "Corrupted Betrayal#011": {
    "src": "Lives a cursed sheep, with the color of lime...",
    "dst": "住着一只受诅的羊，颜色像青柠一般……",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#011": {
+  "Corrupted Betrayal#012": {
    "src": "Lead it down the trail, headed to the slime...",
    "dst": "领它沿着小路，走向史莱姆那边……",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#012": {
+  "Corrupted Betrayal#013": {
    "src": "Sacrifice its soul, in the blood and the grime.",
    "dst": "献上它的灵魂，在血与污秽之间。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#013": {
+  "Corrupted Betrayal#014": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "第一句显然说的是大桥，可剩下的意思我完全摸不着头脑。去那边四处看看，找到什么有意思的就告诉我。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#014": {
+  "Corrupted Betrayal#015": {
    "src": "Alrighty. Let me know what when you've got something then.",
    "dst": "好嘞。那等你有发现了再跟我说。",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#015": {
+  "Corrupted Betrayal#016": {
    "src": "Use the Mage's riddle to figure out where it leads",
    "dst": "用法师的谜题找出它指向哪里",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#016": {
+  "Corrupted Betrayal#017": {
    "src": "If you are heading towards the Great Bridge, be cautious in the plains around the jungle entrance.",
    "dst": "如果你要去大桥，在丛林入口附近的平原上要小心。",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#017": {
+  "Corrupted Betrayal#018": {
    "src": "I have received reports of a strange cursed sheep taking refuge in one of the more fortified ruins around there.",
    "dst": "我收到报告，说有一只奇怪的受诅之羊躲在那一带比较坚固的废墟里。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#018": {
+  "Corrupted Betrayal#019": {
    "src": "As far as I know, it is trapped in the ruins by some jungle growth, though if it was cut down it might escape...",
    "dst": "据我所知，它被丛林的植物困在废墟里了，不过要是把那些植物砍掉，它可能就会逃出来……",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#019": {
+  "Corrupted Betrayal#020": {
    "src": "Explore the temple for a way to break the barrier.",
    "dst": "探索神殿，寻找打破屏障的方法。",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#020": {
+  "Corrupted Betrayal#021": {
    "src": "Go to Slykaar's residence at [-{~}, {~}, -{~}] to find out what is hidden there.",
    "dst": "前往 [-{~}, {~}, -{~}] 的 Slykaar 住所，查明那里藏着什么。",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#021": {
+  "Corrupted Betrayal#022": {
    "src": "By order of the city of {p}, I am here to keep other citizens from entering this house.",
    "dst": "奉 {p} 城之命，我在这里阻止其他市民进入这栋房子。",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#022": {
+  "Corrupted Betrayal#023": {
    "src": "From past experiences, everyone who has entered this house has vanished from existence...",
    "dst": "根据以往的经验，进过这栋房子的人全都凭空消失了……",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#023": {
+  "Corrupted Betrayal#024": {
    "src": "I would advise not going inside unless you know what you are doing.",
    "dst": "除非你知道自己在做什么，否则我劝你别进去。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#024": {
+  "Corrupted Betrayal#025": {
    "src": "Well, I guess you must know who I am.",
    "dst": "好吧，我想你一定知道我是谁。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#025": {
+  "Corrupted Betrayal#026": {
    "src": "Welcome to my domain. I am the hero of {p}, Slykaar.",
    "dst": "欢迎来到我的领域。我是 {p} 的英雄，Slykaar。",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#026": {
+  "Corrupted Betrayal#027": {
    "src": "Well, I used to be. Banished by the very people who asked for my help. Pathetic.",
    "dst": "嗯，曾经是。被当初求我帮忙的那群人放逐了。真可悲。",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#027": {
+  "Corrupted Betrayal#028": {
    "src": "They couldn't give me a few peasants for their safety? Weak.",
    "dst": "为了他们自己的安全，连几个农民都不肯给我？软弱。",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#028": {
+  "Corrupted Betrayal#029": {
    "src": "Journey through Slykaar's dimension.",
    "dst": "穿越 Slykaar 的维度。",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#029": {
+  "Corrupted Betrayal#030": {
    "src": "I experimented my shamanism for many years underground to create the perfect mix of monster.",
    "dst": "我在地下用我的萨满之术实验了很多年，想创造出完美的混合怪物。",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#030": {
+  "Corrupted Betrayal#031": {
    "src": "Most ended in horrific slimes. Aggressive and powerful, but alas, just slimes.",
    "dst": "大多数都成了可怕的史莱姆。凶猛又强大，可惜，终究只是史莱姆。",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#031": {
+  "Corrupted Betrayal#032": {
    "src": "Then I found this place. A dark land. A dark god. A source of power.",
    "dst": "然后我找到了这个地方。一片黑暗之地。一位黑暗之神。一个力量之源。",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#032": {
+  "Corrupted Betrayal#033": {
    "src": "You mediocre wielders of magic have no idea what this world holds.",
    "dst": "你们这些平庸的魔法使用者根本不知道这个世界藏着什么。",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#033": {
+  "Corrupted Betrayal#034": {
    "src": "You all strive to be that hero of heroes, “Bob”, but here's the truth. He's lost. You're lost.",
    "dst": "你们全都想成为那位英雄中的英雄，“Bob”，但真相是这样的。他迷失了。你们也迷失了。",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#034": {
+  "Corrupted Betrayal#035": {
    "src": "No one in the Wynn province is willing to make the sacrifices I am to gain power.",
    "dst": "Wynn 行省没有一个人愿意像我一样为了力量做出牺牲。",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#035": {
+  "Corrupted Betrayal#036": {
    "src": "If you want power, you have to give some. Sacrifice a few to save many.",
    "dst": "想要力量，就得付出。牺牲少数，拯救多数。",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#036": {
+  "Corrupted Betrayal#037": {
    "src": "They were willing to give me a few peasants in {~}, when the hordes crossed the bridge.",
    "dst": "{~} 年，大军越过大桥时，他们还愿意给我几个农民。",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#037": {
+  "Corrupted Betrayal#038": {
    "src": "The king was happy to throw away lives to save his. But then the hero of Wynn waltzed in a few years later.",
    "dst": "国王很乐意牺牲别人的命来保住自己的。可是几年后，Wynn 的英雄大摇大摆地来了。",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#038": {
+  "Corrupted Betrayal#039": {
    "src": "They banished me like a rotten fruit. Their hero, their protector. So what if a few hundred nobodies died for it.",
    "dst": "他们像扔烂水果一样把我放逐了。他们的英雄，他们的守护者。就算为此死了几百个无名小卒又怎样。",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#039": {
+  "Corrupted Betrayal#040": {
    "src": "Looks like we have a Bob aspirer. Pale imitation.",
    "dst": "看来又来了一个想当 Bob 的人。拙劣的模仿。",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#040": {
+  "Corrupted Betrayal#041": {
    "src": "So. Feel free to visit me down below, bring the entire might of the {p} army upon me. It will not be enough.",
    "dst": "那么。欢迎下来找我，把 {p} 军队的全部力量都带来吧。那也不够。",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#041": {
+  "Corrupted Betrayal#042": {
    "src": "I am ready. Soon, {p} will be in ruins. And I shall have my revenge.",
    "dst": "我已经准备好了。很快，{p} 就会化为废墟。而我将完成我的复仇。",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#042": {
+  "Corrupted Betrayal#043": {
    "src": "Go have fun in while you can. It's not like you have much of a life to live, anyways.",
    "dst": "趁还能玩就好好玩吧。反正你也没多少日子可活了。",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#043": {
+  "Corrupted Betrayal#044": {
    "src": "Report back to Lanu about what you've learned.",
    "dst": "回去向 Lanu 报告你发现的事。",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#044": {
+  "Corrupted Betrayal#045": {
    "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of this cave.",
    "dst": "啊，你回来了。找到什么有意思的了吗？我一直在这里收拾偶尔从洞里冒出来的史莱姆。",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#045": {
+  "Corrupted Betrayal#046": {
    "src": "You... saw Slykaar? In another dimension?!",
    "dst": "你……看到了 Slykaar？在另一个维度？！",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#046": {
+  "Corrupted Betrayal#047": {
    "src": "This is bad. If he can materialise outside of this cave, even psychoactively... he's getting stronger. It explains the slimes, the attacks on {p}...",
    "dst": "这下糟了。如果他能在这个洞窟外面显形，哪怕只是精神上的……那说明他越来越强了。这就解释了那些史莱姆，还有对 {p} 的袭击……",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#047": {
+  "Corrupted Betrayal#048": {
    "src": "He's an incredibly powerful shaman, {u}. He has to be stopped, but it would take forever for {p} to mobile a force against him.",
    "dst": "他是个极其强大的萨满，{u}。必须阻止他，可 {p} 要调集部队对付他得花上好久。",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#048": {
+  "Corrupted Betrayal#049": {
    "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
    "dst": "如果可以，你应该进去……把他解决掉。不过先把装备准备好，再找几个朋友帮你掩护。",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#049": {
+  "Corrupted Betrayal#050": {
    "src": "{u}, how's it going? Run into another shaman hallucination at all?",
    "dst": "{u}，最近怎么样？又碰到萨满的幻象了吗？",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#050": {
+  "Corrupted Betrayal#051": {
    "src": "Anyway, good luck in the cave. If you choose to go in, be careful.",
    "dst": "总之，祝你在洞里好运。如果你决定进去，一定要小心。",
    "role": "desc",
@@ -515,16 +525,6 @@
    "stage": "Stage 6",
    "speaker": "Lanu",
    "source": "wiki"
-  },
-  "Corrupted Betrayal#000~1": {
-   "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
-   "dst": "{~} AP 时，{p} 已被逼入绝境。成群的亡灵重创了军队与城堡。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Corrupted Betrayal",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

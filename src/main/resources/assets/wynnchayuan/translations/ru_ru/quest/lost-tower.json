@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Lost Tower",
-  "count": 10,
-  "translated": 10,
+  "count": 12,
+  "translated": 12,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Tower#000": {
+   "src": "Hey, adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
+   "dst": "Эй, путник! Не поможешь мне? У меня тут небольшая проблема.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Tower#001": {
+   "src": "A long time ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
+   "dst": "Давным-давно, ещё до разрушения {p}, у моей семьи была очень любопытная книга - о местах и существах великой силы.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Tower#002": {
    "src": "Talk to Laen in {p} at [{~}, {~}, -{~}].",
    "dst": "Поговори с Laen в {p}, [{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#001": {
+  "Lost Tower#003": {
    "src": "Hey adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
    "dst": "Эй, путник! Не поможешь мне? У меня тут небольшая проблема.",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#002": {
+  "Lost Tower#004": {
    "src": "A while ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
    "dst": "Давно, ещё до разрушения {p}, у моей семьи была очень любопытная книга - о местах и существах великой силы.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#003": {
+  "Lost Tower#005": {
    "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",
    "dst": "Увы, её украло какое-то существо во время нападения, погубившего {p}, и с тех пор её никто не видел.",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#004": {
+  "Lost Tower#006": {
    "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
    "dst": "Если хочешь помочь, принеси мне [{~} Book of the Bones]. Думаю, книга у скелетов в старой башне в {p}.",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#005": {
+  "Lost Tower#007": {
    "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
    "dst": "Попробуй найти ту башню - книга, скорее всего, у одного из скелетов внутри.",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Laen",
    "source": "wiki"
   },
-  "Lost Tower#006": {
+  "Lost Tower#008": {
    "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
    "dst": "Найди потерянную башню в {p}, [{~}, {~}, -{~}].",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#007": {
+  "Lost Tower#009": {
    "src": "Find the book in the tower, and bring it back to Laen.",
    "dst": "Найди книгу в башне и принеси её Laen.",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#008": {
+  "Lost Tower#010": {
    "src": "Bring back the book to Laen.",
    "dst": "Принеси книгу Laen.",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Tower#009": {
+  "Lost Tower#011": {
    "src": "Great! This will be very interesting to read, thank you!",
    "dst": "Отлично! Будет очень интересно почитать, спасибо!",
    "role": "desc",
