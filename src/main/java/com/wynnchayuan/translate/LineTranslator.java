@@ -1949,6 +1949,17 @@ public final class LineTranslator {
             // 包在文字片段裡的話補償程式碰不到它，譯文變短數值就往左跑。
             String tail = SpaceOffset.trailingOffsets(raw);
             String body = raw.substring(0, raw.length() - tail.length());
+            // 反過來也有：間隔掛在<b>後面</b>那一欄的片段開頭，跟著它的顏色。
+            // 商城階級說明的「[間隔]★[間隔]Super Priority Queue」就是這樣，
+            // 不拆出來的話這一列根本數不到第二欄，見 #splitOffsets。
+            String lead = SpaceOffset.leadingOffsets(body);
+            if (lead.length() == body.length() || !isAdjustableSpace(style, lead)) {
+                lead = "";
+            }
+            body = body.substring(lead.length());
+            if (!lead.isEmpty()) {
+                pieces.add(Piece.space(SpaceOffset.decode(lead), SpaceOffset.styleFor(style)));
+            }
 
             Component replaced = body.isEmpty()
                     ? null : translateOneSegment(body, style, store, percent);
@@ -1956,7 +1967,7 @@ public final class LineTranslator {
                 if (!body.isEmpty() && isConnectorSegment(body)) {
                     connectorAt.add(pieces.size());
                 }
-                pieces.add(Piece.text(raw, style));
+                pieces.add(Piece.text(raw.substring(lead.length()), style));
                 continue;
             }
             any = true;
@@ -4417,18 +4428,71 @@ public final class LineTranslator {
         List<Run> out = new ArrayList<>(runs.size() + 2);
         boolean split = false;
         for (Run r : runs) {
-            String tail = r.space() ? "" : SpaceOffset.trailingOffsets(r.text());
-            if (tail.isEmpty() || tail.length() == r.text().length()
-                    || !isGap.test(r.style(), tail)) {
+            List<Run> pieces = r.space() ? null : splitOffsets(r, isGap);
+            if (pieces == null) {
                 out.add(r);
                 continue;
             }
-            String head = r.text().substring(0, r.text().length() - tail.length());
-            out.add(new Run(false, 0, r.style(), head));
-            out.add(new Run(true, SpaceOffset.decode(tail), r.style(), tail));
+            out.addAll(pieces);
             split = true;
         }
         return split ? out : runs;
+    }
+
+    /**
+     * 把一段文字裡的偏移全部拆成獨立的間隔——不只行尾那一段。
+     *
+     * <h2>為什麼行尾不夠</h2>
+     * 商城的階級說明是兩欄：
+     *
+     * <pre>
+     *   +16 Market Slots [間隔]★[間隔]Super Priority Queue
+     *   +10 Character Slots [間隔]Beta Access
+     * </pre>
+     *
+     * 間隔跟著<b>後面</b>那段的顏色（★ 的顏色），或者整列同一個顏色、間隔夾在
+     * 文字中間。兩種都不在行尾，先前只剝行尾的做法一個都拆不到——診斷檔裡
+     * 這幾列都只數到行首那一個間隔（{@code 原文段寬=[0, 235]}），第二欄完全
+     * 沒補償，照各列中文縮短的量各自往左偏，排出來參差不齊。
+     *
+     * @return 拆好的幾段；沒有可拆的、或整段本來就是偏移時回傳 {@code null}
+     */
+    private static List<Run> splitOffsets(Run r,
+                                          java.util.function.BiPredicate<Style, String> isGap) {
+        String text = r.text();
+        List<Run> out = new ArrayList<>(3);
+        boolean any = false;
+        int from = 0;
+        int i = 0;
+        while (i < text.length()) {
+            int cp = text.codePointAt(i);
+            if (!SpaceOffset.isOffset(cp)) {
+                i += Character.charCount(cp);
+                continue;
+            }
+            int end = i;
+            while (end < text.length() && SpaceOffset.isOffset(text.codePointAt(end))) {
+                end += Character.charCount(text.codePointAt(end));
+            }
+            String gap = text.substring(i, end);
+            // 整段都是偏移的本來就是一個間隔，不拆成「空字串 + 間隔」
+            if (gap.length() < text.length() && isGap.test(r.style(), gap)) {
+                if (i > from) {
+                    out.add(new Run(false, 0, r.style(), text.substring(from, i)));
+                }
+                out.add(new Run(true, SpaceOffset.decode(gap), r.style(), gap));
+                from = end;
+                any = true;
+            }
+            i = end;
+        }
+        if (!any) {
+            return null;
+        }
+        if (from < text.length()) {
+            out.add(new Run(false, 0, r.style(), text.substring(from)));
+        }
+        return out;
     }
 
     /**
