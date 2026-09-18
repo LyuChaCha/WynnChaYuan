@@ -136,6 +136,8 @@ public final class SettingsScreen extends Screen {
         final String name;
         final String hint;
         final List<AbstractWidget> widgets = new ArrayList<>();
+        /** 屬於底下那一組「工具」（一次性的動作），見 {@link #tools}。 */
+        boolean tool;
         int y;
 
         Row(String name, String hint) {
@@ -190,6 +192,7 @@ public final class SettingsScreen extends Screen {
     protected void init() {
         rows.clear();
         backward.clear();
+        toolRows = false;
         buildRows();
 
         // 換分類之後列數變少，捲動位置要跟著收回來，不然會停在空白處。
@@ -217,7 +220,7 @@ public final class SettingsScreen extends Screen {
             addRenderableWidget(Button.builder(
                     // 選到的那一類靠<b>左邊那條主題色</b>表示，不加「▸」——
                     // 加了字會被推右，跟其他幾個對不齊，一眼就看得出來歪。
-                    Component.literal(Cards.fit(this.font, tabName(i), TAB_W - 8)),
+                    Component.literal(tabName(i)),
                     b -> {
                         tab = which;
                         scroll = 0;
@@ -257,8 +260,24 @@ public final class SettingsScreen extends Screen {
 
     private Row add(String name, String hint) {
         Row row = new Row(name, hint);
+        row.tool = toolRows;
         rows.add(row);
         return row;
+    }
+
+    /** 這之後加的列都算「工具」那一組。每次重建列時歸零。 */
+    private boolean toolRows;
+
+    /**
+     * 從這裡開始是<b>工具</b>：按了就做一件事、或在兩個來源之間選，
+     * 不是「開著／關著」的設定。
+     *
+     * <p>它們的按鈕是白字（見 {@link #pick}），先前跟有顏色的開關夾雜在一起，
+     * 一整頁看起來像隨便排的。集中到最下面、墊一層淡淡的底色、上面一條
+     * 主題色的分隔線，一眼就分得出「上面是設定、下面是動作」。
+     */
+    private void tools() {
+        toolRows = true;
     }
 
     /** 一顆佔滿控制項那一半的按鈕（切換、循環都用這個）。 */
@@ -529,7 +548,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private void data() {
-        // 語言擺在「譯文來源」前面：先決定要哪一種語言，再談那一種從哪裡來。
+        // 語言擺在最前面：先決定要哪一種語言，其他設定才有意義。
         languageRow();
         fallbackRow();
         back(cycle("data.ui", this::uiLanguageLabel, b -> {
@@ -541,16 +560,6 @@ public final class SettingsScreen extends Screen {
             b.setMessage(uiLanguageLabel());
             rebuildWidgets();
         });
-        cycle("data.source",
-                this::sourceLabel, b -> {
-                    WynnChaYuan.config().toggleSource();
-                    b.setMessage(sourceLabel());
-                    reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
-                });
-        reloadButton = action("data.reload",
-                T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
-                        ? "data.reload.github" : "data.reload.local"),
-                reloadLabel(), this::reload);
         cycle("data.collect",
                 this::collectLabel, b -> {
                     WynnChaYuan.config().toggleCollect();
@@ -561,14 +570,6 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleCollectGuiText();
                     b.setMessage(guiCollectLabel());
                 });
-        // 先前這裡是「分享給翻譯團隊」的開關。模組現在不送任何東西出去，
-        // 改成兩顆按鈕：匯出成本機檔案、打開 Issue 表單——看不看、交不交由玩家決定。
-        action("data.export", T.s("data.export.hint"),
-                pick(T.s("data.export.button")), this::exportCorpus);
-        action("data.submit", T.s("data.submit.hint"),
-                pick(T.s("data.submit.button")),
-                // 跟原版開連結一樣先跳確認畫面：網址擺在玩家眼前，按了才開瀏覽器。
-                () -> ConfirmLinkScreen.confirmLinkNow(this, CorpusExport.ISSUE_URL));
         cycle("data.debug",
                 this::debugLabel, b -> {
                     WynnChaYuan.config().toggleDebugDumps();
@@ -577,6 +578,27 @@ public final class SettingsScreen extends Screen {
                             ? "data.debug.on" : "data.debug.off")
                             .withStyle(ChatFormatting.GREEN));
                 });
+
+        // 底下是工具：譯文從哪裡來、現在就重抓、匯出、提交。
+        tools();
+        cycle("data.source",
+                this::sourceLabel, b -> {
+                    WynnChaYuan.config().toggleSource();
+                    b.setMessage(sourceLabel());
+                    reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
+                });
+        reloadButton = action("data.reload",
+                T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
+                        ? "data.reload.github" : "data.reload.local"),
+                reloadLabel(), this::reload);
+        // 先前這裡是「分享給翻譯團隊」的開關。模組現在不送任何東西出去，
+        // 改成兩顆按鈕：匯出成本機檔案、打開 Issue 表單——看不看、交不交由玩家決定。
+        action("data.export", T.s("data.export.hint"),
+                pick(T.s("data.export.button")), this::exportCorpus);
+        action("data.submit", T.s("data.submit.hint"),
+                pick(T.s("data.submit.button")),
+                // 跟原版開連結一樣先跳確認畫面：網址擺在玩家眼前，按了才開瀏覽器。
+                () -> ConfirmLinkScreen.confirmLinkNow(this, CorpusExport.ISSUE_URL));
     }
 
     // ------------------------------------------------------------ 繪製
@@ -628,13 +650,24 @@ public final class SettingsScreen extends Screen {
             int hiR = box.listCardX() + box.listCardW() - 1;
             boolean on = mouseX >= hiL && mouseX <= hiR
                     && mouseY >= row.y - 2 && mouseY < row.y + 22;
+            int half = (box.rowH() - 20) / 2;
+            boolean groupStart = row.tool && (i == 0 || !rows.get(i - 1).tool);
+            if (row.tool) {
+                // 工具那一組墊一層淡淡的主題色，整組看起來是一塊
+                g.fill(hiL, row.y - half, hiR, row.y + 20 + half,
+                        (accent & 0xFFFFFF) | 0x10000000);
+            }
             if (on) {
                 hovered = row.hint;
                 g.fill(hiL, row.y - 2, hiR, row.y + 22, 0x18FFFFFF);
             }
             // 列與列之間一條很淡的線。滑鼠沒指著任何一列時，眼睛也分得出來
             // 哪個控制項配哪個名稱——右邊那一欄離名稱有一段距離。
-            if (at > 0) {
+            // 工具那一組的第一列上面改成主題色的線，當作分段。
+            if (groupStart && at > 0) {
+                g.fill(hiL + 3, row.y - half - 1, hiR - 3, row.y - half,
+                       (accent & 0xFFFFFF) | 0x90000000);
+            } else if (at > 0) {
                 g.fill(hiL + 3, row.y - (box.rowH() - 20) / 2 - 1,
                        hiR - 3, row.y - (box.rowH() - 20) / 2,
                        0x14FFFFFF);
@@ -710,8 +743,9 @@ public final class SettingsScreen extends Screen {
     //
     // 只寫「值」，不寫「名稱：值」——名稱已經在左邊那一欄了。
     //
-    // 全部走 #ctrl／#ctrlNarrow：按鍵名稱這種<b>長度事先不知道</b>的字
-    // （「Left Control」、「Mouse Button 4」）不截的話會凸出按鈕外面。
+    // 放不下的字<b>不截斷</b>：原版按鈕會自己左右慢慢捲動，把整句秀出來。
+    // 先前截成「…」，西班牙文的「Según las traducciones (Es…」就永遠看不到後半。
+    //
 
     /**
      * 開關類的值：開著用主題色、關著灰色。
@@ -725,7 +759,7 @@ public final class SettingsScreen extends Screen {
      * 〈面板〉→〈框線顏色〉自己換成任何喜歡的顏色。
      */
     private Component ctrl(String text) {
-        return state(Component.literal(Cards.fit(this.font, text, ctrlW() - 8)), text);
+        return state(Component.literal(text), text);
     }
 
     private Component state(Component text, String value) {
@@ -758,12 +792,12 @@ public final class SettingsScreen extends Screen {
      * 上了顏色反而像在暗示哪一個才對。
      */
     private Component pick(String text) {
-        return Component.literal(Cards.fit(this.font, text, ctrlW() - 8));
+        return Component.literal(text);
     }
 
     /** 右邊還帶一顆小按鈕的那一列，主按鈕窄 46px。見 {@link #cycleWith}。 */
     private Component ctrlNarrow(String text) {
-        return state(Component.literal(Cards.fit(this.font, text, ctrlW() - 46 - 8)), text);
+        return state(Component.literal(text), text);
     }
 
     private Component tooltipModeLabel() {

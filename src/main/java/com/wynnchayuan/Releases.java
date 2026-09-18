@@ -286,6 +286,16 @@ public final class Releases {
     }
 
     public static Notes notesFor(String version) {
+        return notesFor(version, null);
+    }
+
+    /**
+     * 指定語言的更新說明。
+     *
+     * @param lang {@code en_us} 是每一版底下那份預設（英文）；其他代碼找那一版
+     *             底下同名的物件，沒有就退回英文；{@code null} 照 F6 介面語言挑
+     */
+    public static Notes notesFor(String version, String lang) {
         JsonObject o = data;
         if (o == null || !o.has("notes")) {
             return null;
@@ -294,7 +304,10 @@ public final class Releases {
         if (!all.has(version)) {
             return null;
         }
-        JsonObject one = localised(all.getAsJsonObject(version));
+        JsonObject raw = all.getAsJsonObject(version);
+        JsonObject one = lang == null ? localised(raw)
+                : raw.has(lang) && raw.get(lang).isJsonObject() ? raw.getAsJsonObject(lang)
+                : raw;
         List<String> items = new ArrayList<>();
         if (one.has("items")) {
             JsonArray rows = one.getAsJsonArray("items");
