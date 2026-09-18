@@ -828,3 +828,11 @@ tasks.register('runOverlayTextChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.WynntilsTextTest'
 }
 tasks.named('check') { dependsOn 'runOverlayTextChecks' }
+
+tasks.register('runMarketAmountChecks', JavaExec) {
+    group = 'verification'
+    description = '市場數量按鈕的說明兩行都要翻到'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.MarketAmountTooltipTest'
+}
+tasks.named('check') { dependsOn 'runMarketAmountChecks' }
