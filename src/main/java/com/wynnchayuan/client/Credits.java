@@ -24,14 +24,28 @@ import java.util.List;
 public final class Credits {
 
     /** 一位貢獻者。{@code mc} 有填就會顯示 Minecraft 頭像。 */
-    public record Member(String name, String mc) {
+    public record Member(String label, String key, String mc) {
         public boolean hasHead() {
             return mc != null && !mc.isBlank();
+        }
+
+        /** 畫面上的稱呼。資料來源那類有 {@code key}，照 F6 介面語言翻。 */
+        public String name() {
+            return key == null ? label : T.s(key);
         }
     }
 
     /** 一個分區，例如「開發者」。 */
-    public record Section(String role, int color, List<Member> members) {}
+    public record Section(String label, String key, int color, List<Member> members) {
+        /**
+         * 分區標題，照 F6 介面語言翻（{@code credits.json} 的 {@code key}）。
+         *
+         * <p>先前直接印檔案裡的中文：介面切成英文或西班牙文，標題還是「開發者」。
+         */
+        public String role() {
+            return key == null ? label : T.s(key);
+        }
+    }
 
     private static List<Section> cached;
 
@@ -83,11 +97,13 @@ public final class Credits {
                     continue;
                 }
                 members.add(new Member(name,
+                        m.has("key") ? m.get("key").getAsString() : null,
                         m.has("mc") ? m.get("mc").getAsString() : null));
             }
         }
         // 空分區照樣留著：「貢獻者」欄位空著本身就是在邀請別人來填
-        return new Section(role, color, List.copyOf(members));
+        return new Section(role, obj.has("key") ? obj.get("key").getAsString() : null,
+                color, List.copyOf(members));
     }
 
     private static int parseHex(String hex) {

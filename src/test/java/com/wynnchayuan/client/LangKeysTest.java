@@ -233,6 +233,12 @@ public final class LangKeysTest {
                 }
             }
         }
+        // 貢獻者頁的分區標題寫在 credits.json 的 "key"，不在程式碼裡。
+        Matcher credit = Pattern.compile("\"key\"\\s*:\\s*\"([^\"]+)\"").matcher(
+                Files.readString(Path.of("src/main/resources/assets/wynnchayuan/credits.json")));
+        while (credit.find()) {
+            out.add(credit.group(1));
+        }
         // 分類名是照 TAB_KEYS 拼出來的，掃不到。
         for (String key : new String[] {"tab.items", "tab.panel", "tab.dialogue",
                                         "tab.world", "tab.data"}) {
