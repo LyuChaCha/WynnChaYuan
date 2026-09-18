@@ -856,3 +856,11 @@ tasks.register('runMarqueeChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.MarqueeTest'
 }
 tasks.named('check') { dependsOn 'runMarqueeChecks' }
+
+tasks.register('runModeColourChecks', JavaExec) {
+    group = 'verification'
+    description = 'F6 模式顏色：另開、就地取代、原文加譯文、關閉各一色，且都讀得清楚'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.client.ModeColoursTest'
+}
+tasks.named('check') { dependsOn 'runModeColourChecks' }

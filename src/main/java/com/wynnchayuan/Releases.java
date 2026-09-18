@@ -233,12 +233,15 @@ public final class Releases {
      * （見 {@code client.T}）。
      */
     private static JsonObject localised(JsonObject one) {
-        String lang;
-        try {
-            lang = net.minecraft.client.Minecraft.getInstance()
-                    .getLanguageManager().getSelected();
-        } catch (Exception e) {
-            return one;        // 還沒有遊戲實例（測試、啟動極早期）
+        // 跟 F6 介面同一個語言，見 T#pinnedLanguage；沒指名才看遊戲語言。
+        String lang = com.wynnchayuan.client.T.pinnedLanguage();
+        if (lang == null) {
+            try {
+                lang = net.minecraft.client.Minecraft.getInstance()
+                        .getLanguageManager().getSelected();
+            } catch (Exception e) {
+                return one;    // 還沒有遊戲實例（測試、啟動極早期）
+            }
         }
         return lang != null && one.has(lang) && one.get(lang).isJsonObject()
                 ? one.getAsJsonObject(lang) : one;

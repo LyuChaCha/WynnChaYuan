@@ -29,6 +29,9 @@ public final class CollectorConfig {
     private TooltipMode tooltipMode = TooltipMode.PANEL;
 
     /** PANEL 另開面板；REPLACE 就地取代；OFF 不翻譯物品。 */
+    // 每一種模式的列舉都照同一個順序排：另開（面板／小框）→ 就地取代 →
+    // 原文加譯文 → 關閉。F6 按鈕照這個順序循環，每一項點起來的節奏都一樣，
+    // 「關閉」永遠在最後。設定檔存的是名稱不是序號，所以調順序不影響舊設定。
     public enum TooltipMode { PANEL, REPLACE, OFF }
 
     /**
@@ -78,7 +81,7 @@ public final class CollectorConfig {
     private ChatMode chatMode = ChatMode.BOTH;
 
     /** OFF 不翻；REPLACE 就地取代；BOTH 原文下面再補一行譯文。 */
-    public enum ChatMode { OFF, REPLACE, BOTH }
+    public enum ChatMode { REPLACE, BOTH, OFF }
 
     /**
      * 螢幕正中央那行大字要不要翻（見 {@code TitleListener}）。
@@ -151,7 +154,7 @@ public final class CollectorConfig {
     private ShotMode shotMode = ShotMode.KEY;
 
     /** OFF 不拍；KEY 按鍵才拍；AUTO 看到沒拍過的譯文就拍。 */
-    public enum ShotMode { OFF, KEY, AUTO }
+    public enum ShotMode { KEY, AUTO, OFF }
 
     public ShotMode shotMode() {
         return shotMode;
@@ -238,7 +241,7 @@ public final class CollectorConfig {
     private NametagMode nametagMode = NametagMode.REPLACE;
 
     /** OFF 不翻；LOOK_AT 注視時顯示小框；REPLACE 直接取代名牌文字。 */
-    public enum NametagMode { OFF, LOOK_AT, REPLACE }
+    public enum NametagMode { LOOK_AT, REPLACE, OFF }
 
     /** tooltip 面板放在原本 tooltip 的哪一邊。 */
     private PanelSide panelSide = PanelSide.AUTO;
