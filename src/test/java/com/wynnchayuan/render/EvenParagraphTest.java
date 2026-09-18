@@ -100,6 +100,15 @@ public final class EvenParagraphTest {
              List.of("To", "Health +120"),
              new boolean[] {true, false});
 
+        // 網址翻不了，不能拿它判定「翻了一半」
+        same("後面接網址的那一句照樣翻",
+             List.of("You can get individual boosts at", "wynncraft.com/store"),
+             new boolean[] {true, false});
+        check("wynncraft.com/store 是網址", TooltipPanel.isAddress("wynncraft.com/store"));
+        check("wynn.gg/rules 是網址", TooltipPanel.isAddress("wynn.gg/rules"));
+        check("一般句子不是網址", !TooltipPanel.isAddress("Guild Bank"));
+        check("句點結尾的句子不是網址", !TooltipPanel.isAddress("This item has been sealed."));
+
         keyTooltip();
         skillPointTooltip();
 
