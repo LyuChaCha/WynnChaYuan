@@ -38,7 +38,7 @@ public final class LanguageFallbackTest {
      */
     static String pickOnlyTw(TranslationStore tw, TranslationStore cn) {
         for (String key : new java.util.TreeSet<>(tw.sourceKeys())) {
-            if (key.length() >= 20 && key.indexOf(' ') > 0
+            if (key.length() >= 20 && Character.isLetter(key.charAt(0)) && key.indexOf(' ') > 0
                     && key.indexOf('{') < 0 && key.indexOf('\n') < 0
                     && tw.lookup(key) != null && !cn.hasTranslation(key)) {
                 return key;
@@ -58,14 +58,22 @@ public final class LanguageFallbackTest {
      */
     private static final String LONG = "Earth Main Attack Damage:";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         TranslationStore tw = new TranslationStore();
         tw.loadAll(ROOT.resolve("zh_tw"));
         int alone = tw.size();
 
+        Path cnDir = ROOT.resolve("zh_cn");
         TranslationStore cn = new TranslationStore();
-        cn.loadAll(ROOT.resolve("zh_cn"));
+        cn.loadAll(cnDir);
         String onlyTw = pickOnlyTw(tw, cn);
+        if (onlyTw == null) {
+            // 簡體已經跟繁體一樣多，語料裡挑不出缺口——自己造一個，見 CorpusGap
+            onlyTw = pickOnlyTw(tw, new TranslationStore());
+            cnDir = com.wynnchayuan.CorpusGap.without(cnDir, onlyTw);
+            cn = new TranslationStore();
+            cn.loadAll(cnDir);
+        }
         check("找得到一句繁體有、簡體沒翻的台詞（" + onlyTw + "）", onlyTw != null);
         String twLine = onlyTw == null ? null : tw.lookup(onlyTw);
         check("繁體本來就有那一句（" + alone + " 條）", twLine != null);
@@ -74,7 +82,7 @@ public final class LanguageFallbackTest {
 
         // ---- 疊起來 ----
         TranslationStore both = new TranslationStore();
-        both.loadAll(List.of(ROOT.resolve("zh_tw"), ROOT.resolve("zh_cn")));
+        both.loadAll(List.of(ROOT.resolve("zh_tw"), cnDir));
 
         check("★ 疊完之後，繁體那一層還在（先前這裡是 null）",
                 twLine != null && twLine.equals(both.lookup(onlyTw)));
@@ -87,7 +95,7 @@ public final class LanguageFallbackTest {
 
         // 順序反過來就該是繁體勝出——證明「後面的蓋前面的」不是碰巧
         TranslationStore flipped = new TranslationStore();
-        flipped.loadAll(List.of(ROOT.resolve("zh_cn"), ROOT.resolve("zh_tw")));
+        flipped.loadAll(List.of(cnDir, ROOT.resolve("zh_tw")));
         check("順序反過來就換繁體勝出（拿到 " + flipped.lookup(BOTH) + "）",
                 "戰鬥等級".equals(flipped.lookup(BOTH)));
 

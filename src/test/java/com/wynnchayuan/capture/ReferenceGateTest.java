@@ -36,21 +36,20 @@ public final class ReferenceGateTest {
         tw.loadAll(ROOT.resolve(Languages.DEFAULT));
 
         // ---- 模擬「輔助語言＝顯示原文」：畫面上只鋪簡體 ----
-        TranslationStore alone = new TranslationStore();
-        alone.loadAll(ROOT.resolve("zh_cn"));
+        TranslationStore cnOnly = new TranslationStore();
+        cnOnly.loadAll(ROOT.resolve("zh_cn"));
 
         // 一句繁體翻好了、<b>簡體還沒翻</b>的台詞。兩邊都有的句子測不出東西：
         // 簡體自己就查得到，舊行為也不會記。從語料當場挑，不寫死——簡體一直在補，
         // 寫死的那一句遲早會被翻掉（先前那一句就是 #679 翻掉的）。
-        String picked = null;
-        for (String key : new java.util.TreeSet<>(tw.sourceKeys())) {
-            if (key.length() >= 20 && key.indexOf(' ') > 0
-                    && key.indexOf('{') < 0 && key.indexOf('\n') < 0
-                    && tw.hasTranslation(key) && !alone.hasTranslation(key)) {
-                picked = key;
-                break;
-            }
+        String picked = pick(tw, cnOnly);
+        if (picked == null) {
+            // 簡體已經補到跟繁體一樣多，挑不出缺口——自己造一個，見 CorpusGap
+            picked = pick(tw, new TranslationStore());
+            cnOnly = new TranslationStore();
+            cnOnly.loadAll(com.wynnchayuan.CorpusGap.without(ROOT.resolve("zh_cn"), picked));
         }
+        final TranslationStore alone = cnOnly;
         check("找得到一句繁體有、簡體沒翻的台詞（" + picked + "）", picked != null);
         final String KNOWN = picked == null ? "" : picked;
         check("繁體本來就有這一句（" + tw.size() + " 條）", tw.hasTranslation(KNOWN));
@@ -83,6 +82,17 @@ public final class ReferenceGateTest {
                 fixed.record(gap, "desc", "gui", "gui/line"));
 
         report();
+    }
+
+    private static String pick(TranslationStore tw, TranslationStore other) {
+        for (String key : new java.util.TreeSet<>(tw.sourceKeys())) {
+            if (key.length() >= 20 && Character.isLetter(key.charAt(0)) && key.indexOf(' ') > 0
+                    && key.indexOf('{') < 0 && key.indexOf('\n') < 0
+                    && tw.hasTranslation(key) && !other.hasTranslation(key)) {
+                return key;
+            }
+        }
+        return null;
     }
 
     private static void check(String what, boolean ok) {
