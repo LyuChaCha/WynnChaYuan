@@ -290,7 +290,7 @@ public final class TooltipPanel {
         // 換成中文，畫面上變成「自由跑者: When your sprint」接三行英文。見 LineTranslator#rejoin。
         for (StyledText line : styled) {
             String text = com.wynnchayuan.capture.GlyphSplitter
-                    .stripGlyphChars(line.getStringWithoutFormatting()).strip();
+                    .stripGlyphChars(visibleText(line)).strip();
             plain.add(text.substring(TranslationStore.indentOf(text)).strip());
         }
         if (evenOut(plain, hit)) {
@@ -393,6 +393,12 @@ public final class TooltipPanel {
                 boolean some = false;
                 boolean all = true;
                 for (int k = i; k < end; k++) {
+                    // 網址本來就不翻，不能拿它來判定「這段只翻了一半」。
+                    // 「You can get individual boosts at / wynncraft.com/store」
+                    // 就是因為第二行永遠是英文，第一行也跟著被收回英文。
+                    if (isAddress(plain.get(k))) {
+                        continue;
+                    }
                     some |= hit[k];
                     all &= hit[k];
                 }
@@ -406,6 +412,41 @@ public final class TooltipPanel {
             i = end;
         }
         return changed;
+    }
+
+    /** 整行只是一個網址（{@code wynncraft.com/store}、{@code wynn.gg/rules}）。 */
+    static boolean isAddress(String line) {
+        return line != null && ADDRESS.matcher(line.strip()).matches();
+    }
+
+    private static final java.util.regex.Pattern ADDRESS = java.util.regex.Pattern.compile(
+            "(?:https?://)?[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+(?:/\\S*)?");
+
+    /**
+     * 畫面上看得到的字。{@code minecraft:invisible} 字型底下的東西不算。
+     *
+     * <p>角色選單的「Character Info」下面掛著一行看不見的識別碼（{@code f213e17b}），
+     * 小寫開頭，被當成標題的續行——識別碼翻不了，標題也跟著被收回英文。
+     */
+    static String visibleText(StyledText line) {
+        StringBuilder out = new StringBuilder();
+        for (com.wynntils.core.text.StyledTextPart part : line) {
+            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
+            if (ps != null && isInvisibleFont(ps.getStyle())) {
+                continue;
+            }
+            out.append(part.getString(null, com.wynntils.core.text.type.StyleType.NONE));
+        }
+        return out.toString();
+    }
+
+    private static boolean isInvisibleFont(net.minecraft.network.chat.Style style) {
+        if (style == null) {
+            return false;
+        }
+        net.minecraft.network.chat.FontDescription font = style.getFont();
+        return font instanceof net.minecraft.network.chat.FontDescription.Resource resource
+                && resource.id() != null && "invisible".equals(resource.id().getPath());
     }
 
     /** 下一行是不是<b>接續</b>上一行的同一句話。 */

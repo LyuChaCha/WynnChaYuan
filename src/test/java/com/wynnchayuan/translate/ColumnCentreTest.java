@@ -120,6 +120,33 @@ public final class ColumnCentreTest {
                 new LineTranslator.Run(false, 0, s, gap));
         check("整段都是偏移時不拆",
               LineTranslator.splitGaps(pure, isGap).size() == 1);
+
+        // ★ 商城階級說明：間隔掛在後面那一欄的開頭（跟著 ★ 的顏色）。
+        String nudge = SpaceOffset.encode(3);
+        List<LineTranslator.Run> star = List.of(
+                new LineTranslator.Run(false, 0, s, "+16 Market Slots "),
+                new LineTranslator.Run(false, 0, s, gap + "★" + nudge),
+                new LineTranslator.Run(false, 0, s, "Super Priority Queue"));
+        List<LineTranslator.Run> starSplit = LineTranslator.splitGaps(star, isGap);
+        check("開頭的間隔拆得出來（實際 " + starSplit.size() + " 段）",
+              starSplit.size() == 5);
+        check("★ 前面那段是 60px 的間隔",
+              starSplit.size() == 5 && starSplit.get(1).space()
+                      && starSplit.get(1).px() == 60);
+        check("★ 本身還是文字",
+              starSplit.size() == 5 && "★".equals(starSplit.get(2).text()));
+        check("★ 後面的微調也獨立出來，但不算欄界",
+              starSplit.size() == 5 && starSplit.get(3).space()
+                      && !LineTranslator.isColumnGap(starSplit.get(3)));
+
+        // ★ 整列同一個顏色：間隔夾在兩欄文字中間。
+        List<LineTranslator.Run> inner = List.of(
+                new LineTranslator.Run(false, 0, s, "+10 Character Slots " + gap + "Beta Access"));
+        List<LineTranslator.Run> innerSplit = LineTranslator.splitGaps(inner, isGap);
+        check("夾在中間的間隔拆得出來（實際 " + innerSplit.size() + " 段）",
+              innerSplit.size() == 3 && innerSplit.get(1).space()
+                      && "+10 Character Slots ".equals(innerSplit.get(0).text())
+                      && "Beta Access".equals(innerSplit.get(2).text()));
     }
 
     /** 一行拆成幾個「欄」。 */

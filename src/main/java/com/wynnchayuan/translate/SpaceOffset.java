@@ -105,12 +105,29 @@ public final class SpaceOffset {
         for (int i = 0; i < text.length(); ) {
             int cp = text.codePointAt(i);
             i += Character.charCount(cp);
-            int px = cp - ZERO;
-            if (px < -LIMIT || px > LIMIT) {
+            if (!isOffset(cp)) {
                 return false;
             }
         }
         return true;
+    }
+
+    /** 這段文字開頭連續的寬度偏移，{@link #trailingOffsets} 的反方向。 */
+    public static String leadingOffsets(String text) {
+        if (text == null || text.isEmpty()) {
+            return "";
+        }
+        int end = 0;
+        while (end < text.length() && isOffset(text.codePointAt(end))) {
+            end += Character.charCount(text.codePointAt(end));
+        }
+        return text.substring(0, end);
+    }
+
+    /** 這個碼位落在寬度偏移的範圍內嗎。見 {@link #isOffsetRun}。 */
+    public static boolean isOffset(int cp) {
+        int px = cp - ZERO;
+        return px >= -LIMIT && px <= LIMIT;
     }
 
     /**

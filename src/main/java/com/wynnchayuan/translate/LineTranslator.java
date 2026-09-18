@@ -1949,6 +1949,17 @@ public final class LineTranslator {
             // 包在文字片段裡的話補償程式碰不到它，譯文變短數值就往左跑。
             String tail = SpaceOffset.trailingOffsets(raw);
             String body = raw.substring(0, raw.length() - tail.length());
+            // 反過來也有：間隔掛在<b>後面</b>那一欄的片段開頭，跟著它的顏色。
+            // 商城階級說明的「[間隔]★[間隔]Super Priority Queue」就是這樣，
+            // 不拆出來的話這一列根本數不到第二欄，見 #splitOffsets。
+            String lead = SpaceOffset.leadingOffsets(body);
+            if (lead.length() == body.length() || !isAdjustableSpace(style, lead)) {
+                lead = "";
+            }
+            body = body.substring(lead.length());
+            if (!lead.isEmpty()) {
+                pieces.add(Piece.space(SpaceOffset.decode(lead), SpaceOffset.styleFor(style)));
+            }
 
             Component replaced = body.isEmpty()
                     ? null : translateOneSegment(body, style, store, percent);
@@ -1956,7 +1967,7 @@ public final class LineTranslator {
                 if (!body.isEmpty() && isConnectorSegment(body)) {
                     connectorAt.add(pieces.size());
                 }
-                pieces.add(Piece.text(raw, style));
+                pieces.add(Piece.text(raw.substring(lead.length()), style));
                 continue;
             }
             any = true;
@@ -1988,7 +1999,10 @@ public final class LineTranslator {
                     SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
 
-        List<Piece> aligned = settle(alignColumns(pieces, leftAligned), line);
+        // 靠左的清單不能拿「整行寬度」來收尾：那等於把最後一欄改成靠右，
+        // 商城階級說明的「住宅特權」「商人攤位」就是這樣被推到最右邊的。
+        List<Piece> columns = alignColumns(pieces, leftAligned);
+        List<Piece> aligned = leftAligned ? columns : settle(columns, line);
         // 每一行都記（同一句只記一次，見 LineDebug）。先前只記「有排版空白」的行，
         // 結果真正壞掉的那些——間隔不是用空白字元做的——反而完全看不到。
         LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
@@ -2064,6 +2078,10 @@ public final class LineTranslator {
         int x = 0;
         int start = -1;
         boolean sawGap = false;
+        // 要看「前面有沒有字」，不是 x > 0：行首的縮排常常是兩個偏移
+        // （10px + 12px），第二個的 x 已經大於 0，會被誤認成欄界，
+        // 第一欄就被當成第二欄量了。
+        boolean sawText = false;
         for (StyledTextPart part : line) {
             String raw = part.getString(null, StyleType.NONE);
             if (raw.isEmpty()) {
@@ -2074,7 +2092,7 @@ public final class LineTranslator {
             if (isAdjustableSpace(style, raw)) {
                 int px = SpaceOffset.decode(raw);
                 // 夠寬的間隔才是欄位交界；一兩像素只是字距
-                if (px >= COLUMN_GAP_PX && start < 0 && x > 0) {
+                if (px >= COLUMN_GAP_PX && start < 0 && sawText) {
                     sawGap = true;
                 }
                 x += px;
@@ -2082,6 +2100,9 @@ public final class LineTranslator {
             }
             if (sawGap && start < 0 && !raw.isBlank()) {
                 start = x;
+            }
+            if (!raw.isBlank()) {
+                sawText = true;
             }
             x += widthOf(literal(raw, style));
         }
@@ -2472,7 +2493,9 @@ public final class LineTranslator {
      * @param adjusted 補償之後的間隔
      */
     static int narrowed(int original, int adjusted) {
-        return original > 0 ? Math.max(MIN_GAP, adjusted)
+        // 原本就比 MIN_GAP 窄的（★ 旁邊 2～3px 的微調）不能被撐寬，
+        // 不然沒有要補償的間隔也會自己變大。
+        return original > 0 ? Math.max(Math.min(MIN_GAP, original), adjusted)
                             : Math.max(original, adjusted);
     }
 
@@ -3050,6 +3073,13 @@ public final class LineTranslator {
             FlowedDebug.rows(original.getString(), log.toString());
             return rebuilt;
         }
+        if (leftAligned) {
+            Component left = realignLeft(orig, made);
+            if (left != null) {
+                FlowedDebug.rows(original.getString(), "  靠左：每一欄的起點對回原文");
+                return left;
+            }
+        }
         int spaces = countSpaces(made);
         if (spaces == 0 || spaces != countSpaces(orig)) {
             if (log != null) {
@@ -3117,6 +3147,94 @@ public final class LineTranslator {
            .append(System.lineSeparator());
         FlowedDebug.rows(original.getString(), log.toString());
         return apply(made, adjust);
+    }
+
+    /**
+     * 靠左的兩欄：每一段文字的<b>起點</b>都要落回原文的位置。
+     *
+     * <h2>為什麼另外寫</h2>
+     * 商城的階級說明（CHAMPION／HERO+／HERO）是一格一格的清單，第二欄全部
+     * 從同一個 x 開始。原本那條路有兩個地方對不上它：
+     *
+     * <ul>
+     *   <li>行首的縮排是<b>兩個</b>偏移（10px + 12px），重建後併成一個 22px，
+     *       兩邊的間隔數對不上，整行原樣返回、完全沒補償；</li>
+     *   <li>★ 前面的間隔只有 5～6px，不到欄界的門檻，「每日寶箱 第 2 階」
+     *       縮短多少，後面的 ★ 就往左跑多少。</li>
+     * </ul>
+     *
+     * 靠左的清單不需要分辨欄界：兩側都有東西的間隔，全部照原文的座標重算，
+     * 前後的內容就一格一格對齊了。
+     *
+     * @return 對好的一行；兩邊的間隔數對不上時回傳 {@code null}，走原本的路
+     */
+    private static Component realignLeft(List<Run> orig, List<Run> made) {
+        List<Run> o = mergeSpaces(orig);
+        List<Run> m = mergeSpaces(made);
+        int gaps = 0;
+        for (Run r : o) {
+            if (r.space()) {
+                gaps++;
+            }
+        }
+        int madeGaps = 0;
+        for (Run r : m) {
+            if (r.space()) {
+                madeGaps++;
+            }
+        }
+        if (gaps == 0 || gaps != madeGaps) {
+            return null;
+        }
+        // 原文每個間隔「之後」的 x 座標
+        int[] target = new int[gaps];
+        int x = 0;
+        int g = 0;
+        for (Run r : o) {
+            x += r.space() ? r.px() : widthOf(literal(r.text(), r.style()));
+            if (r.space()) {
+                target[g++] = x;
+            }
+        }
+        MutableComponent out = Component.empty();
+        x = 0;
+        g = 0;
+        boolean textBefore = false;
+        for (Run r : m) {
+            if (!r.space()) {
+                out.append(literal(r.text(), r.style()));
+                x += widthOf(literal(r.text(), r.style()));
+                textBefore = true;
+                continue;
+            }
+            int px = r.px();
+            // 行首縮排、疊字用的負偏移都照原樣
+            if (textBefore && px >= 0) {
+                px = Math.max(Math.min(px, 1), target[g] - x);
+            }
+            g++;
+            String encoded = SpaceOffset.encode(px);
+            if (!encoded.isEmpty()) {
+                out.append(literal(encoded, r.style()));
+            }
+            x += px;
+        }
+        return out;
+    }
+
+    /** 相鄰的偏移併成一段，寬度相加。 */
+    static List<Run> mergeSpaces(List<Run> runs) {
+        List<Run> out = new ArrayList<>(runs.size());
+        for (Run r : runs) {
+            if (r.space() && !out.isEmpty() && out.get(out.size() - 1).space()) {
+                Run prev = out.remove(out.size() - 1);
+                out.add(new Run(true, prev.px() + r.px(), prev.style(),
+                        prev.text() + r.text()));
+            } else {
+                out.add(r);
+            }
+        }
+        return out;
     }
 
     /** 診斷用的一行摘要：兩邊的段寬與算出來的補正。 */
@@ -4417,18 +4535,71 @@ public final class LineTranslator {
         List<Run> out = new ArrayList<>(runs.size() + 2);
         boolean split = false;
         for (Run r : runs) {
-            String tail = r.space() ? "" : SpaceOffset.trailingOffsets(r.text());
-            if (tail.isEmpty() || tail.length() == r.text().length()
-                    || !isGap.test(r.style(), tail)) {
+            List<Run> pieces = r.space() ? null : splitOffsets(r, isGap);
+            if (pieces == null) {
                 out.add(r);
                 continue;
             }
-            String head = r.text().substring(0, r.text().length() - tail.length());
-            out.add(new Run(false, 0, r.style(), head));
-            out.add(new Run(true, SpaceOffset.decode(tail), r.style(), tail));
+            out.addAll(pieces);
             split = true;
         }
         return split ? out : runs;
+    }
+
+    /**
+     * 把一段文字裡的偏移全部拆成獨立的間隔——不只行尾那一段。
+     *
+     * <h2>為什麼行尾不夠</h2>
+     * 商城的階級說明是兩欄：
+     *
+     * <pre>
+     *   +16 Market Slots [間隔]★[間隔]Super Priority Queue
+     *   +10 Character Slots [間隔]Beta Access
+     * </pre>
+     *
+     * 間隔跟著<b>後面</b>那段的顏色（★ 的顏色），或者整列同一個顏色、間隔夾在
+     * 文字中間。兩種都不在行尾，先前只剝行尾的做法一個都拆不到——診斷檔裡
+     * 這幾列都只數到行首那一個間隔（{@code 原文段寬=[0, 235]}），第二欄完全
+     * 沒補償，照各列中文縮短的量各自往左偏，排出來參差不齊。
+     *
+     * @return 拆好的幾段；沒有可拆的、或整段本來就是偏移時回傳 {@code null}
+     */
+    private static List<Run> splitOffsets(Run r,
+                                          java.util.function.BiPredicate<Style, String> isGap) {
+        String text = r.text();
+        List<Run> out = new ArrayList<>(3);
+        boolean any = false;
+        int from = 0;
+        int i = 0;
+        while (i < text.length()) {
+            int cp = text.codePointAt(i);
+            if (!SpaceOffset.isOffset(cp)) {
+                i += Character.charCount(cp);
+                continue;
+            }
+            int end = i;
+            while (end < text.length() && SpaceOffset.isOffset(text.codePointAt(end))) {
+                end += Character.charCount(text.codePointAt(end));
+            }
+            String gap = text.substring(i, end);
+            // 整段都是偏移的本來就是一個間隔，不拆成「空字串 + 間隔」
+            if (gap.length() < text.length() && isGap.test(r.style(), gap)) {
+                if (i > from) {
+                    out.add(new Run(false, 0, r.style(), text.substring(from, i)));
+                }
+                out.add(new Run(true, SpaceOffset.decode(gap), r.style(), gap));
+                from = end;
+                any = true;
+            }
+            i = end;
+        }
+        if (!any) {
+            return null;
+        }
+        if (from < text.length()) {
+            out.add(new Run(false, 0, r.style(), text.substring(from)));
+        }
+        return out;
     }
 
     /**
