@@ -68,23 +68,34 @@ public final class T {
      *         {@code null}，由呼叫端退回遊戲語言那條路
      */
     private static String pinned(String key) {
-        String lang;
-        try {
-            // 介面語言指名了就用它；沒指名才跟著譯文語言走。
-            // 日文與韓文的介面檔做好了卻選不到，就是因為先前只看譯文語言。
-            lang = com.wynnchayuan.WynnChaYuan.config().uiLanguage();
-            if (lang == null || lang.isBlank()) {
-                lang = com.wynnchayuan.WynnChaYuan.config().language();
-            }
-        } catch (Exception e) {
-            return null;                  // 設定還沒建立（測試、啟動極早期）
-        }
+        String lang = pinnedLanguage();
         if (lang == null || lang.isBlank()) {
             return null;
         }
         String value = load(lang).get(PREFIX + key);
         // 指名的那一份沒有這一條，就退回 en_us；再沒有才交給遊戲語言。
         return value != null ? value : load("en_us").get(PREFIX + key);
+    }
+
+    /**
+     * F6 介面現在用哪一種語言：介面語言指名了就用它，沒指名才跟著譯文語言走。
+     * 日文與韓文的介面檔做好了卻選不到，就是因為先前只看譯文語言。
+     *
+     * <p>更新說明也照這個挑（見 {@code Releases}）——先前它看的是<b>遊戲</b>的語言，
+     * 遊戲開英文、F6 設繁中的人，介面是中文、更新說明卻是英文。
+     *
+     * @return 語言代碼；都沒指名、或設定還沒建立時回傳 {@code null}
+     */
+    public static String pinnedLanguage() {
+        try {
+            String lang = com.wynnchayuan.WynnChaYuan.config().uiLanguage();
+            if (lang == null || lang.isBlank()) {
+                lang = com.wynnchayuan.WynnChaYuan.config().language();
+            }
+            return lang == null || lang.isBlank() ? null : lang;
+        } catch (Exception e) {
+            return null;                  // 設定還沒建立（測試、啟動極早期）
+        }
     }
 
     private static Map<String, String> load(String lang) {

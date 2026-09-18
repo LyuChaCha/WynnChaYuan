@@ -1,12 +1,45 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0_11",
+ "latest": "0.2.1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.1": {
+   "headline": "A tidier F6",
+   "items": [
+    "F6 shows each display mode in its own colour (separate panel, replace in place, original + translation, off), all derived from your theme colour",
+    "Every mode button cycles in the same order, with Off always last",
+    "The Data tab keeps the one-off tools (source, reload, export, submit) together at the bottom",
+    "Button text that is too long now scrolls sideways instead of being cut off",
+    "Release notes in F6 can be switched between English, Traditional Chinese and Simplified Chinese",
+    "The credits screen follows the F6 interface language"
+   ],
+   "zh_tw": {
+    "headline": "F6 介面整理",
+    "items": [
+     "F6 的每種顯示方式各有一個顏色（另開面板、就地取代、原文加譯文、關閉），都從主題色推出來",
+     "所有模式按鈕都照同一個順序切換，關閉永遠在最後",
+     "〈資料〉分頁把譯文來源、重新載入、匯出、提交這些工具集中到最下面",
+     "按鈕上太長的字會左右捲動顯示完整，不再被截斷",
+     "F6 的更新說明可以在英文、繁中、簡中之間切換",
+     "貢獻者頁跟著 F6 介面語言顯示"
+    ]
+   },
+   "zh_cn": {
+    "headline": "F6 界面整理",
+    "items": [
+     "F6 的每种显示方式各有一个颜色（另开面板、就地替换、原文加译文、关闭），都从主题色推出来",
+     "所有模式按钮都按同一个顺序切换，关闭永远在最后",
+     "〈数据〉分页把译文来源、重新载入、导出、提交这些工具集中到最下面",
+     "按钮上太长的字会左右滚动显示完整，不再被截断",
+     "F6 的更新说明可以在英文、繁中、简中之间切换",
+     "贡献者页跟随 F6 界面语言显示"
+    ]
+   }
+  },
   "0.2.0_11": {
    "headline": "Store rank perks line up again",
    "items": [

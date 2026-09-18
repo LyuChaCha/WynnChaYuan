@@ -51,6 +51,34 @@ public final class ReleaseNotesScreen extends Screen {
     private final Screen parent;
 
     private int scroll = 0;
+
+    /**
+     * 更新說明用哪一種語言看。
+     *
+     * <p>每一版都寫了英文、繁中、簡中三份。預設跟著 F6 介面語言，但玩家可以在
+     * 右上角自己切——想拿英文那份去跟別人講、或介面是日文卻想看中文說明都行。
+     * 關掉再開會記得上一次選的。
+     */
+    private static final String[] LANGS = {"en_us", "zh_tw", "zh_cn"};
+    private static String chosen;
+
+    /** 目前顯示的是哪一種：選過就是選的那個，沒選過照介面語言、再退回英文。 */
+    private static String shown() {
+        if (chosen != null) {
+            return chosen;
+        }
+        String pinned = T.pinnedLanguage();
+        for (String l : LANGS) {
+            if (l.equals(pinned)) {
+                return l;
+            }
+        }
+        return "en_us";
+    }
+
+    private static Component langLabel() {
+        return T.c("notes.lang", T.s("notes.lang." + shown()));
+    }
     private int contentHeight = 0;
 
     public ReleaseNotesScreen(Screen parent) {
@@ -71,6 +99,19 @@ public final class ReleaseNotesScreen extends Screen {
                     b -> ConfirmLinkScreen.confirmLinkNow(this, url))
                     .bounds(cx - 100, this.height - 52, 200, 20).build());
         }
+        addRenderableWidget(Button.builder(langLabel(), b -> {
+                    String now = shown();
+                    int at = 0;
+                    for (int i = 0; i < LANGS.length; i++) {
+                        if (LANGS[i].equals(now)) {
+                            at = i;
+                        }
+                    }
+                    chosen = LANGS[(at + 1) % LANGS.length];
+                    b.setMessage(langLabel());
+                    scroll = 0;
+                })
+                .bounds(this.width - 128, 8, 120, 20).build());
         addRenderableWidget(Button.builder(T.c("button.back"), b -> onClose())
                 .bounds(cx - 50, this.height - 26, 100, 20).build());
     }
@@ -134,7 +175,7 @@ public final class ReleaseNotesScreen extends Screen {
         int y = top() - scroll;
         int total = 0;
         for (String version : versions) {
-            Releases.Notes notes = Releases.notesFor(version);
+            Releases.Notes notes = Releases.notesFor(version, shown());
             if (notes == null) {
                 continue;
             }
