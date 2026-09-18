@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Stable Story",
   "count": 36,
-  "translated": 19,
+  "translated": 36,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Stable Story#000": {
    "src": "Howdy! Lookin' to hitch a ride off to {p}? Well, lucky you! The wagon's been fixed up all nice and new!",
-   "dst": "",
+   "dst": "你好啊！想搭车去 {p} 吗？算你走运！马车已经修得跟新的一样了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -18,7 +18,7 @@
   },
   "Stable Story#001": {
    "src": "Just hop on aboard, and I'll get you to {p} in a jiffy!",
-   "dst": "",
+   "dst": "上车就行，我一眨眼就把你送到 {p}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -28,7 +28,7 @@
   },
   "Stable Story#002": {
    "src": "Ain't far to {p} from here! We'll be there in a jiffy, just you wait.",
-   "dst": "",
+   "dst": "从这里到 {p} 不远啦！一眨眼就到，等着瞧吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -38,7 +38,7 @@
   },
   "Stable Story#003": {
    "src": "Usually, I'd be charging a high price for these horses- Not to be rude, but one you couldn't afford.",
-   "dst": "",
+   "dst": "平常这些马我是要高价卖的，不是我说话难听，是你买不起的价钱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -48,7 +48,7 @@
   },
   "Stable Story#004": {
    "src": "So, let's cut a deal- They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "",
+   "dst": "所以，我们做个交易吧：他们偷走了我的马厩钥匙。如果你能去我在 {p} 的马厩……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -58,7 +58,7 @@
   },
   "Stable Story#005": {
    "src": "And return that key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
-   "dst": "",
+   "dst": "把那把钥匙还给我，我就大发慈悲送你一匹马。这笔交易比你想的还划算……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -68,7 +68,7 @@
   },
   "Stable Story#006": {
    "src": "Hm. Cows, huh? Ah- who knows!? Life is full of mysteries, huh?",
-   "dst": "",
+   "dst": "嗯。牛，是吧？啊，谁知道呢！？人生充满了谜团，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -78,7 +78,7 @@
   },
   "Stable Story#007": {
    "src": "Either way. As the great bovine above is my witness if I see the smallest bruise on Betty I will-",
-   "dst": "",
+   "dst": "不管怎样。伟大的天上神牛为我作证，要是让我在 Betty 身上看到一丁点瘀伤，我就……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -88,7 +88,7 @@
   },
   "Stable Story#008": {
    "src": "Ah! I can't just hand you a horse without telling you how to care for that beautiful creature, can I?",
-   "dst": "",
+   "dst": "啊！我总不能不教你怎么照顾那美丽的生灵，就把马交给你吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -98,7 +98,7 @@
   },
   "Stable Story#009": {
    "src": "Those rich {p} folk have no respect for horses, let me tell you!",
-   "dst": "",
+   "dst": "我跟你说，那些 {p} 的有钱人一点都不尊重马！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -108,7 +108,7 @@
   },
   "Stable Story#010": {
    "src": "Now! Right Click the Feeder and place your [Horse Saddle] in there.",
-   "dst": "",
+   "dst": "好了！右键点击饲料槽，把你的 [马鞍] 放进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -118,7 +118,7 @@
   },
   "Stable Story#011": {
    "src": "Use the [{~} Wheat Grains] I gave you earlier to feed your new friend.",
-   "dst": "",
+   "dst": "用我刚才给你的 [{~} 小麦谷物] 喂你的新朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -128,7 +128,7 @@
   },
   "Stable Story#012": {
    "src": "Just Right Click the Feeder again.",
-   "dst": "",
+   "dst": "再右键点击饲料槽一次就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -138,7 +138,7 @@
   },
   "Stable Story#013": {
    "src": "Horses are sensitive creatures, you see. They don't grow strong over night, they require patience and a good stable diet.",
-   "dst": "",
+   "dst": "你看，马是很敏感的生物。它们不会一夜之间变强壮，需要耐心和稳定良好的饮食。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -148,7 +148,7 @@
   },
   "Stable Story#014": {
    "src": "However, you also need to take them out on walks so they get some well needed exercise, otherwise they will never reach their full potential.",
-   "dst": "",
+   "dst": "不过，你也得带它们出去走走，让它们得到必要的运动，不然它们永远发挥不出全部潜力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -158,7 +158,7 @@
   },
   "Stable Story#015": {
    "src": "I almost forgot! If you really want to master the art of a horse trainer you can breed two horses using the Feeder.",
-   "dst": "",
+   "dst": "我差点忘了！如果你真想精通驯马师这门手艺，可以用饲料槽让两匹马繁殖。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -168,7 +168,7 @@
   },
   "Stable Story#016": {
    "src": "Anyway! I wish you luck on your horse training career!",
-   "dst": "",
+   "dst": "总之！祝你的驯马生涯一切顺利！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",

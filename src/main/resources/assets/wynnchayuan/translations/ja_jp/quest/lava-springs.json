@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lava Springs",
   "count": 50,
-  "translated": 41,
+  "translated": 50,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lava Springs#000": {
    "src": "[{~}/{~} Corrupted Evidence]",
-   "dst": "",
+   "dst": "[{~}/{~} 腐敗の証拠]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -18,7 +18,7 @@
   },
   "Lava Springs#001": {
    "src": "You've already collected this evidence.",
-   "dst": "",
+   "dst": "この証拠はもう集めた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -28,7 +28,7 @@
   },
   "Lava Springs#002": {
    "src": "This should be enough evidence. You should report back to Colonel Gailard.",
-   "dst": "",
+   "dst": "証拠はこれで十分だろう。Gailard 大佐に報告しに戻ろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -38,7 +38,7 @@
   },
   "Lava Springs#003": {
    "src": "Wait... I've got an idea... Alright, listen up soldier! There's a lil' town North of here named {p}, yeah? There's a healer person there that can help us out.",
-   "dst": "",
+   "dst": "待て… いい考えがある… よし、よく聞け兵士！この北に {p} って小さな町があるだろ？そこにいる治療師が力になってくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -48,7 +48,7 @@
   },
   "Lava Springs#004": {
    "src": "They're holed up inside of some important well in the center of the town. There's a password ya need to hop into that place, though...",
-   "dst": "",
+   "dst": "町の中心の大事な井戸にこもってる。ただ、入るには合言葉が要るんだが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -58,7 +58,7 @@
   },
   "Lava Springs#005": {
    "src": "...Corrupted... lava springs...? You realize how stupid that sounds, yeah? Well, I completely believe you.",
-   "dst": "",
+   "dst": "…腐敗した… 溶岩泉…？どれだけ間抜けに聞こえるか分かってる？まあ、私は信じるけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -68,7 +68,7 @@
   },
   "Lava Springs#006": {
    "src": "Now, you have somewhere to be, right? Right. Go and report back to the Colonel, soldier. Tell him I said hi, by the way.",
-   "dst": "",
+   "dst": "さて、行くところがあるんでしょ？だよね。大佐に報告してきな、兵士さん。よろしく伝えといて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -78,7 +78,7 @@
   },
   "Lava Springs#007": {
    "src": "You can feel your body heat adjusting as the potion courses through your body...",
-   "dst": "",
+   "dst": "ポーションが全身を巡り、体温が順応していくのを感じる…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -88,7 +88,7 @@
   },
   "Lava Springs#008": {
    "src": "Ye're a good ally, soldier! And a great help to the army, at that!",
-   "dst": "",
+   "dst": "お前はいい味方だ、兵士！軍にとっても大きな助けだぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",

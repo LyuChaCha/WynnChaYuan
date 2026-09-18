@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Sandy Scandal",
   "count": 98,
-  "translated": 67,
+  "translated": 98,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Sandy Scandal#000": {
    "src": "You look like a hardy one! {p} army, is it? Would you be willing to help {p} a bit?",
-   "dst": "",
+   "dst": "튼튼해 보이네요! {p} 군대인가요? {p}을(를) 좀 도와줄래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -18,7 +18,7 @@
   },
   "A Sandy Scandal#001": {
    "src": "We're looking into some witness reports to try to gain information on the bandits' plan.",
-   "dst": "",
+   "dst": "강도들의 계획을 알아내려고 목격자 진술서 몇 건을 조사하고 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -28,7 +28,7 @@
   },
   "A Sandy Scandal#002": {
    "src": "You read the report and visualize its words.",
-   "dst": "",
+   "dst": "진술서를 읽자 그 장면이 눈앞에 그려진다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -38,7 +38,7 @@
   },
   "A Sandy Scandal#003": {
    "src": "WITNESS REPORT I - TOLD BY ODIN GIBBS, SHOP OWNER - GIBBS' MINING SUPPLY STORE CO.",
-   "dst": "",
+   "dst": "목격자 진술서 I - 진술자: ODIN GIBBS, 가게 주인 - GIBBS' MINING SUPPLY STORE CO.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -48,7 +48,7 @@
   },
   "A Sandy Scandal#004": {
    "src": "Business was slow that day, until two rugged, oddly-dressed men stormed into my shop, with a lot of nerve.",
-   "dst": "",
+   "dst": "그날은 장사가 한산했다. 그런데 괴상한 차림의 험상궂은 사내 둘이 뻔뻔하게 가게로 들이닥쳤다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -58,7 +58,7 @@
   },
   "A Sandy Scandal#005": {
    "src": "Before I could close any deal with them, the man with a dagger started threatening me!",
-   "dst": "",
+   "dst": "거래를 하기도 전에, 단검을 든 사내가 나를 협박하기 시작했다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -68,7 +68,7 @@
   },
   "A Sandy Scandal#006": {
    "src": "I tried to make peace with the crooks.",
-   "dst": "",
+   "dst": "나는 그 악당들을 달래 보려 했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -78,7 +78,7 @@
   },
   "A Sandy Scandal#007": {
    "src": "The bandit put the knife closer to me and started demanding the code to the TNT vault downstairs!",
-   "dst": "",
+   "dst": "강도는 칼을 더 들이대며 지하 TNT 금고의 비밀번호를 내놓으라고 했다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -88,7 +88,7 @@
   },
   "A Sandy Scandal#008": {
    "src": "The bandits grew agitated and resorted to violence to obtain the combination.",
-   "dst": "",
+   "dst": "강도들은 점점 초조해지더니 비밀번호를 얻으려고 폭력을 휘둘렀다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -98,7 +98,7 @@
   },
   "A Sandy Scandal#009": {
    "src": "They swiped their knife at me, leaving a sizeable wound on my arm.",
-   "dst": "",
+   "dst": "그들이 칼을 휘둘러 내 팔에 꽤 큰 상처를 냈다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -108,7 +108,7 @@
   },
   "A Sandy Scandal#010": {
    "src": "I had no choice but to give up the combination, which was {~}.",
-   "dst": "",
+   "dst": "어쩔 수 없이 비밀번호를 알려 줬다. 번호는 {~}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -118,7 +118,7 @@
   },
   "A Sandy Scandal#011": {
    "src": "After I gave up the combination, they knocked me out!",
-   "dst": "",
+   "dst": "비밀번호를 알려 주자 그들은 나를 때려 기절시켰다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -128,7 +128,7 @@
   },
   "A Sandy Scandal#012": {
    "src": "I had no idea what the criminals did after that, I haven't been back to my shop since the incident.",
-   "dst": "",
+   "dst": "그 뒤로 범인들이 무슨 짓을 했는지는 모른다. 그 일 이후로 가게에 돌아가지 않았다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -138,7 +138,7 @@
   },
   "A Sandy Scandal#013": {
    "src": "The bandits must've taken the explosives! You should investigate.",
-   "dst": "",
+   "dst": "강도들이 폭약을 가져간 게 분명하다! 조사해 봐야겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -148,7 +148,7 @@
   },
   "A Sandy Scandal#014": {
    "src": "Looks like the bandit's took almost all of the TNT from the shopkeeper's vault.",
-   "dst": "",
+   "dst": "강도들이 가게 주인의 금고에서 TNT를 거의 다 가져간 것 같다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -158,7 +158,7 @@
   },
   "A Sandy Scandal#015": {
    "src": "They seem to have dropped their knife during all the looting...",
-   "dst": "",
+   "dst": "약탈하던 중에 칼을 떨어뜨린 모양이다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -168,7 +168,7 @@
   },
   "A Sandy Scandal#016": {
    "src": "You should return to the {p} Bank Guard with your information.",
-   "dst": "",
+   "dst": "알아낸 정보를 가지고 {p} 은행 경비병에게 돌아가야겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -178,7 +178,7 @@
   },
   "A Sandy Scandal#017": {
    "src": "WITNESS REPORT II - TOLD BY SCROLL MERCHANT, SHOP OWNER - ALMUJ SCROLL SHOP",
-   "dst": "",
+   "dst": "목격자 진술서 II - 진술자: 두루마리 상인, 가게 주인 - ALMUJ SCROLL SHOP",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -188,7 +188,7 @@
   },
   "A Sandy Scandal#018": {
    "src": "I was having a fine time tending to my rooftop garden after a lengthy day of selling scrolls.",
-   "dst": "",
+   "dst": "두루마리를 팔며 긴 하루를 보낸 뒤, 옥상 정원을 여유롭게 가꾸고 있었다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -198,7 +198,7 @@
   },
   "A Sandy Scandal#019": {
    "src": "While looking down on the street, I saw two unsavory men, one with TNT in hand, marching down the path.",
-   "dst": "",
+   "dst": "길을 내려다보니 수상쩍은 사내 둘이 걸어가고 있었다. 한 명은 손에 TNT를 들고 있었다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -208,7 +208,7 @@
   },
   "A Sandy Scandal#020": {
    "src": "I was suspicious, so I tried to get their attention, but they ignored me.",
-   "dst": "",
+   "dst": "수상해서 불러 세우려 했지만, 그들은 나를 무시했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -218,7 +218,7 @@
   },
   "A Sandy Scandal#021": {
    "src": "I tried to yell for the attention of a guard or official, but nobody could hear me.",
-   "dst": "",
+   "dst": "경비병이나 관리를 부르려고 소리쳤지만, 아무도 듣지 못했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -228,7 +228,7 @@
   },
   "A Sandy Scandal#022": {
    "src": "I wasn't sure what to do at this point... I didn't try to confront them, that'd have been way too risky!",
-   "dst": "",
+   "dst": "그때는 어떻게 해야 할지 몰랐다... 맞서지는 않았다. 그건 너무 위험했을 테니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -238,7 +238,7 @@
   },
   "A Sandy Scandal#023": {
    "src": "I have no idea where they went off to afterwards.",
-   "dst": "",
+   "dst": "그 뒤로 그들이 어디로 갔는지는 전혀 모른다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -248,7 +248,7 @@
   },
   "A Sandy Scandal#024": {
    "src": "You should check out the house that the explosion came from!",
-   "dst": "",
+   "dst": "폭발이 일어난 집을 확인해 봐야겠다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -258,7 +258,7 @@
   },
   "A Sandy Scandal#025": {
    "src": "Two weapons are missing from the wealthy estate owner's weapon rack!",
-   "dst": "",
+   "dst": "부유한 저택 주인의 무기 거치대에서 무기 두 개가 사라졌다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -268,7 +268,7 @@
   },
   "A Sandy Scandal#026": {
    "src": "With such powerful weapons the bandits could easily break through the bank's defenses.",
-   "dst": "",
+   "dst": "저렇게 강력한 무기라면 강도들은 은행 방어선을 쉽게 뚫을 수 있다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -278,7 +278,7 @@
   },
   "A Sandy Scandal#027": {
    "src": "The whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
-   "dst": "",
+   "dst": "몇 초 뒤면 여기가 전부 날아가고 증거는 모래에 묻힐 거다. 빠져나갈 수 있으면 해 봐라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -288,7 +288,7 @@
   },
   "A Sandy Scandal#028": {
    "src": "Looks like the bandit's have started their heist! You should follow them into the bank and stop them.",
-   "dst": "",
+   "dst": "강도들이 은행 털이를 시작한 것 같다! 따라서 은행에 들어가 막아야 한다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -298,7 +298,7 @@
   },
   "A Sandy Scandal#029": {
    "src": "It's too late to stop us now! We're about to bust out of here with the grand prize - the contents of the emerald vault!",
-   "dst": "",
+   "dst": "이제 와서 막기엔 너무 늦었어! 우린 곧 최고의 전리품 - 에메랄드 금고 안의 것들을 들고 튈 거다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -308,7 +308,7 @@
   },
   "A Sandy Scandal#030": {
    "src": "We think the bandits might have made the first move in their heist, we're mobilising a troop to-",
-   "dst": "",
+   "dst": "강도들이 은행 털이의 첫 수를 둔 것 같아요. 부대를 동원해서-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",

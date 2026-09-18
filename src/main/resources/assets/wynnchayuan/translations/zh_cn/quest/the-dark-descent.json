@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Dark Descent",
   "count": 82,
-  "translated": 50,
+  "translated": 81,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Dark Descent#000": {
    "src": "Hello there, chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
-   "dst": "",
+   "dst": "你好啊，老兄！我得说，真没想到会在这边见到老 {p} 部队的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -18,7 +18,7 @@
   },
   "The Dark Descent#001": {
    "src": "I... there... too many... th-thousands, at... at least...",
-   "dst": "",
+   "dst": "我……那边……太多了……至、至少……有几千……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -28,7 +28,7 @@
   },
   "The Dark Descent#002": {
    "src": "There's... no point... we're... doomed...",
-   "dst": "",
+   "dst": "没用的……我们……完了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -38,7 +38,7 @@
   },
   "The Dark Descent#003": {
    "src": "Please, stop this! Whoever you are, leave me and my family in peace!",
-   "dst": "",
+   "dst": "求求你，住手！不管你是谁，放过我和我的家人吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -48,7 +48,7 @@
   },
   "The Dark Descent#004": {
    "src": "Ah, but if you had only said so sooner! I'm afraid they have already joined me, down below.",
-   "dst": "",
+   "dst": "啊，你要是早点说就好了！恐怕他们已经先到下面陪我了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -58,7 +58,7 @@
   },
   "The Dark Descent#005": {
    "src": "Y-you... I thought they... oh, gods, no...",
-   "dst": "",
+   "dst": "你、你……我还以为他们……噢，天哪，不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -68,7 +68,7 @@
   },
   "The Dark Descent#006": {
    "src": "Hush, now. You and your family will make fine additions to my legion.",
-   "dst": "",
+   "dst": "嘘，安静。你和你的家人会是我军团里的好成员。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -78,7 +78,7 @@
   },
   "The Dark Descent#007": {
    "src": "Wha... you mean... N-no, please! I don't want to hurt anyone!",
-   "dst": "",
+   "dst": "什……你是说……不、不，求你了！我不想伤害任何人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -88,7 +88,7 @@
   },
   "The Dark Descent#008": {
    "src": "How naive. Fear not. You will rise again, and then you will serve my purpose.",
-   "dst": "",
+   "dst": "真天真。别怕。你会再次站起来，然后为我效力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -98,7 +98,7 @@
   },
   "The Dark Descent#009": {
    "src": "Heheh... do you see now?",
-   "dst": "",
+   "dst": "嘿嘿……现在你明白了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -108,7 +108,7 @@
   },
   "The Dark Descent#010": {
    "src": "How easily this place fell? How quickly I became its master?",
-   "dst": "",
+   "dst": "这地方有多容易沦陷？我多快就成了它的主人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -118,7 +118,7 @@
   },
   "The Dark Descent#011": {
    "src": "You can barely keep them at bay on the surface, and yet you think to enter my own domain, to challenge me in the Underworld?",
-   "dst": "",
+   "dst": "你们在地面上都快挡不住它们了，竟然还想闯进我的领地，在冥界向我挑战？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -128,7 +128,7 @@
   },
   "The Dark Descent#012": {
    "src": "So enter the mouth of my skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
-   "dst": "",
+   "dst": "那就走进我这头骨的嘴里吧，士兵，往地底下去。我很期待我们下一次见面，嘿嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -138,7 +138,7 @@
   },
   "The Dark Descent#013": {
    "src": "Looks like the only way to go is into the skull...",
-   "dst": "",
+   "dst": "看来唯一的路就是走进头骨里……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -148,7 +148,7 @@
   },
   "The Dark Descent#014": {
    "src": "You were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
-   "dst": "",
+   "dst": "你刚才跌跌撞撞的像个老糊涂，眼神空得跟奶油一样，嘴里还一直念叨着什么 Charon。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158,7 +158,7 @@
   },
   "The Dark Descent#015": {
    "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a success!",
-   "dst": "",
+   "dst": "我猜就是他带你去兜了一圈吧？好吧，你肯定没翘辫子，那我就当这次行动成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -168,7 +168,7 @@
   },
   "The Dark Descent#016": {
    "src": "When you're ready, I'd be chuffed to have you along in the expedition down into the depths, old bean!",
-   "dst": "",
+   "dst": "等你准备好了，要是你能跟我们一起下到深处探险，我会非常高兴的，老伙计！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -178,7 +178,7 @@
   },
   "The Dark Descent#017": {
    "src": "How foolish. You might think you are strong, adventurer, but you have no idea what you are about to face...",
-   "dst": "",
+   "dst": "真愚蠢。你也许以为自己很强，冒险者，但你根本不知道自己将要面对什么……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -188,7 +188,7 @@
   },
   "The Dark Descent#018": {
    "src": "Simply marvellous work, chap! You've made it this far, so no time to fill your boots. Be prepared, we are about to fight Charon's undead army.",
-   "dst": "",
+   "dst": "干得真漂亮，老兄！你都走到这一步了，可别在这时候松懈。做好准备，我们就要跟 Charon 的亡灵大军开战了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -198,7 +198,7 @@
   },
   "The Dark Descent#019": {
    "src": "We've lost a lot of good men on the way here, but I believe we can still throw a heavy punch.",
-   "dst": "",
+   "dst": "来这里的路上我们折损了不少好兄弟，不过我相信我们还是能狠狠揍他们一拳。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -208,7 +208,7 @@
   },
   "The Dark Descent#020": {
    "src": "You've earned a lot of respect from the boys this fight, better than all of us I'd say. For this fight, I'll let you direct the army.",
-   "dst": "",
+   "dst": "这一仗打下来，弟兄们都对你刮目相看，我敢说你比我们谁都强。这场战斗，就由你来指挥部队。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -218,7 +218,7 @@
   },
   "The Dark Descent#021": {
    "src": "Don't take it as a promotion though, old bean. It's only for this fight, although you'll be getting a medal of valor if I can wangle it! Charon's army is remarkably strong, we need as much help as we can get.",
-   "dst": "",
+   "dst": "不过可别当成升官了，老伙计。只限这一仗，不过我要是能想办法疏通，你还能拿到一枚英勇勋章！Charon 的大军强得出奇，我们需要尽可能多的援手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -228,7 +228,7 @@
   },
   "The Dark Descent#022": {
    "src": "Aey- careful now, {u}, the cretin must be lurking around here somewhere.",
-   "dst": "",
+   "dst": "哎，小心点，{u}，那个混账一定就躲在这附近什么地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -238,7 +238,7 @@
   },
   "The Dark Descent#023": {
    "src": "I see you've brought aid, you aren't as foolish as I thought.",
-   "dst": "",
+   "dst": "看来你带了援兵，你没我想的那么愚蠢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -248,7 +248,7 @@
   },
   "The Dark Descent#024": {
    "src": "Tell me, how do you plan to defeat an army that cannot die!?",
-   "dst": "",
+   "dst": "告诉我，你打算怎么打败一支死不了的军队！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -258,7 +258,7 @@
   },
   "The Dark Descent#026": {
    "src": "Aha, chap! Wonderful, the {p} regiment's gotten its representative down 'ere. All rested up, I suppose, so let me give you an earful.",
-   "dst": "",
+   "dst": "啊哈，老兄！太好了，{p} 部队的代表下来这边了。想必你已经歇够了，那就让我好好跟你说道说道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -268,7 +268,7 @@
   },
   "The Dark Descent#027": {
    "src": "Those blighting zombies are all over the place. I tell ya, this skull's been giving the folk in {p} the collywobbles. Just as I thought, they're all coming from here.",
-   "dst": "",
+   "dst": "那些该死的僵尸到处都是。我跟你说，这个头骨可把 {p} 的居民吓得够呛。果然跟我想的一样，它们全是从这里冒出来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -278,7 +278,7 @@
   },
   "The Dark Descent#028": {
    "src": "Now, I don't wish to alarm you old bean, but I believe we are in front of the literal gates to hell.",
-   "dst": "",
+   "dst": "好了，我不想吓你，老伙计，但我相信我们现在就站在货真价实的地狱之门前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -288,7 +288,7 @@
   },
   "The Dark Descent#029": {
    "src": "Not to worry chuck! Don't look so glum, I've called for aid from the nearby towns. Once they get here we'll give them a good kicking, and you've already gotten out of there before, ain't ya?",
-   "dst": "",
+   "dst": "别担心，老弟！别愁眉苦脸的，我已经向附近的城镇求援了。等他们一到，我们就好好教训那帮家伙，而且你之前不就从那里逃出来过一次了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -298,7 +298,7 @@
   },
   "The Dark Descent#030": {
    "src": "Now is finally our chance to take down his army... It will be a jolly difficult battle, knowing our opponent and what he's managed, even away from his lair.",
-   "dst": "",
+   "dst": "现在终于有机会击垮他的大军了……想想我们的对手，还有他就算不在巢穴里也办到的那些事，这一仗肯定难打得很。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -308,7 +308,7 @@
   },
   "The Dark Descent#031": {
    "src": "Still, early days to say what he could be like in person! I'll take another route, but we'll meet in front of his door, right after crossing the river. Good luck, old bean!",
-   "dst": "",
+   "dst": "不过，要说他本人是什么样子，现在还言之过早！我走另一条路，我们过了河之后在他门前会合。祝你好运，老伙计！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",

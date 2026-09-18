@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Corrupted Village",
   "count": 71,
-  "translated": 55,
+  "translated": 71,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Corrupted Village#000": {
    "src": "Did you do what I asked? No? Check your content book.",
-   "dst": "",
+   "dst": "Ну как, то, о чём я просил, сделано? Нет? Загляни в книгу заданий.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -18,7 +18,7 @@
   },
   "The Corrupted Village#001": {
    "src": "HEY! YOU! What are you looking at? You want to go do ya?!",
-   "dst": "",
+   "dst": "ЭЙ! ТЫ! Чего уставился? Подраться хочешь?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -28,7 +28,7 @@
   },
   "The Corrupted Village#002": {
    "src": "I swear if you don't leave right now, I am going to PUMMEL YOUR FACE INTO THE GROUND.",
-   "dst": "",
+   "dst": "Клянусь, если ты сейчас же не уйдёшь, я ВКОЛОЧУ ТВОЮ РОЖУ В ЗЕМЛЮ.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -38,7 +38,7 @@
   },
   "The Corrupted Village#003": {
    "src": "Orikal pays the excavators.",
-   "dst": "",
+   "dst": "Orikal платит землекопам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -48,7 +48,7 @@
   },
   "The Corrupted Village#004": {
    "src": "We were performing our usual routines when suddenly an unknown explosion caused a massive cave-in at the entrance to our main mining supply area.",
-   "dst": "",
+   "dst": "Мы работали как обычно, как вдруг неизвестный взрыв вызвал огромный обвал у входа на наш главный склад горных припасов.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -58,7 +58,7 @@
   },
   "The Corrupted Village#005": {
    "src": "Something must be done to remove the debris, we cannot easily continue our mining operations without our supplies.",
-   "dst": "",
+   "dst": "Завал надо как-то разобрать: без припасов нам трудно продолжать добычу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -68,7 +68,7 @@
   },
   "The Corrupted Village#006": {
    "src": "There also may be people trapped on the other side, and I would hate to lose even more miners to these catastrophes.",
-   "dst": "",
+   "dst": "К тому же по ту сторону могут быть люди, и я не хочу терять в этих бедствиях ещё больше шахтёров.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -78,7 +78,7 @@
   },
   "The Corrupted Village#007": {
    "src": "Maybe we could use the Wrecking Ball to demolish the debris, but if we don't act soon...",
-   "dst": "",
+   "dst": "Может, снести завал Шаром-разрушителем, но если не поторопимся…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -88,7 +88,7 @@
   },
   "The Corrupted Village#008": {
    "src": "How to Use the Explosive-Cloaker Machine:",
-   "dst": "",
+   "dst": "Как пользоваться машиной-маскировщиком взрывчатки:",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -98,7 +98,7 @@
   },
   "The Corrupted Village#009": {
    "src": "- Acquire an explosive item.",
-   "dst": "",
+   "dst": "- Добудь взрывоопасный предмет.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -108,7 +108,7 @@
   },
   "The Corrupted Village#010": {
    "src": "- Insert explosive item into the hole of the INPUT slot of the machine.",
-   "dst": "",
+   "dst": "- Вставь взрывоопасный предмет в отверстие слота INPUT машины.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -118,7 +118,7 @@
   },
   "The Corrupted Village#011": {
    "src": "- Wait while the machine temporarily disables the item's explosive property.",
-   "dst": "",
+   "dst": "- Подожди, пока машина временно лишит предмет взрывоопасности.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -128,7 +128,7 @@
   },
   "The Corrupted Village#012": {
    "src": "- Take item out of OUTPUT slot.",
-   "dst": "",
+   "dst": "- Забери предмет из слота OUTPUT.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -138,7 +138,7 @@
   },
   "The Corrupted Village#013": {
    "src": "- Can be very useful for disabling explosive properties of unstable ores found in caves.",
-   "dst": "",
+   "dst": "- Очень полезно, чтобы обезвреживать нестабильную руду, которая встречается в пещерах.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -148,7 +148,7 @@
   },
   "The Corrupted Village#014": {
    "src": "Orikal takes the materials you retrieved and puts them in a container. He mutters some words in an unknown language, and suddenly the container turns into some sort of Magical TNT.",
-   "dst": "",
+   "dst": "Orikal берёт добытые тобой материалы и кладёт их в сосуд. Он бормочет что-то на незнакомом языке, и сосуд вдруг превращается в какой-то магический TNT.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -158,7 +158,7 @@
   },
   "The Corrupted Village#015": {
    "src": "But what is it connected to? That's for another day. The main thing is the village is safe. Here, take this for your help.",
-   "dst": "",
+   "dst": "Но с чем он связан? Это в другой раз. Главное - деревня в безопасности. Вот, возьми за помощь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",

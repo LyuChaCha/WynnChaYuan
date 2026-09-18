@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Misadventure on the Sea",
   "count": 164,
-  "translated": 132,
+  "translated": 164,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Misadventure on the Sea#000": {
    "src": "Sitting on this stool will start Misadventure on the Sea.",
-   "dst": "",
+   "dst": "이 의자에 앉으면 '바다 위의 불운' 퀘스트가 시작됩니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -18,7 +18,7 @@
   },
   "Misadventure on the Sea#001": {
    "src": "I'll take two {p} Whiskeys. One for me, one for this chap.",
-   "dst": "",
+   "dst": "{p} 위스키 두 잔 주게. 하나는 내 거, 하나는 이 친구 거.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -28,7 +28,7 @@
   },
   "Misadventure on the Sea#002": {
    "src": "Two {p} Whiskeys, comin' right up!",
-   "dst": "",
+   "dst": "{p} 위스키 두 잔, 나갑니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -38,7 +38,7 @@
   },
   "Misadventure on the Sea#003": {
    "src": "I'll wait for ya at the docks. Don't worry, ya can't miss the boat!",
-   "dst": "",
+   "dst": "부두에서 기다리지. 걱정 마, 배는 못 보고 지나칠 수가 없으니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -48,7 +48,7 @@
   },
   "Misadventure on the Sea#005": {
    "src": "They're a bit too head on, don't you think?",
-   "dst": "",
+   "dst": "저쪽이 너무 정면으로 오는 것 같지 않나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -58,7 +58,7 @@
   },
   "Misadventure on the Sea#006": {
    "src": "I'm tryin' to steer the ship but it's not budging...",
-   "dst": "",
+   "dst": "키를 돌리려는데 꿈쩍도 안 해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -68,7 +68,7 @@
   },
   "Misadventure on the Sea#007": {
    "src": "Sounds like you're being dragged around...",
-   "dst": "",
+   "dst": "누군가에게 끌려다니는 것 같다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -78,7 +78,7 @@
   },
   "Misadventure on the Sea#008": {
    "src": "You pick up a small sign...",
-   "dst": "",
+   "dst": "작은 표지판을 주웠다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -88,7 +88,7 @@
   },
   "Misadventure on the Sea#009": {
    "src": "It reads: 'Behind you, idiot.'",
-   "dst": "",
+   "dst": "'네 뒤다, 멍청아.'라고 적혀 있다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -98,7 +98,7 @@
   },
   "Misadventure on the Sea#010": {
    "src": "So, there's quite a few bodies in there, and we never bothered throwin' em out!",
-   "dst": "",
+   "dst": "저 안에 시체가 꽤 많은데, 우린 한 번도 내다 버릴 생각을 안 했거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -108,7 +108,7 @@
   },
   "Misadventure on the Sea#011": {
    "src": "Go ahead, here's a sponge for the dried blood as well. Just wack the bodies with it!",
-   "dst": "",
+   "dst": "가 봐, 말라붙은 피 닦을 스펀지도 줄게. 시체는 그냥 이걸로 후려치면 돼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -118,7 +118,7 @@
   },
   "Misadventure on the Sea#012": {
    "src": "[+{~} Sponge]",
-   "dst": "",
+   "dst": "[+{~} 스펀지]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -128,7 +128,7 @@
   },
   "Misadventure on the Sea#013": {
    "src": "You take a look inside the furnaces...",
-   "dst": "",
+   "dst": "화로 안을 들여다본다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -138,7 +138,7 @@
   },
   "Misadventure on the Sea#014": {
    "src": "There's nothing, except for...",
-   "dst": "",
+   "dst": "아무것도 없다, 다만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -148,7 +148,7 @@
   },
   "Misadventure on the Sea#015": {
    "src": "An absurd amount of wood shavings, for some reason.",
-   "dst": "",
+   "dst": "웬일인지 대팻밥이 어마어마하게 쌓여 있다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -158,7 +158,7 @@
   },
   "Misadventure on the Sea#016": {
    "src": "Looks like the door that leads to the hold...",
-   "dst": "",
+   "dst": "선창으로 이어지는 문인 것 같다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -168,7 +168,7 @@
   },
   "Misadventure on the Sea#017": {
    "src": "It's locked. Probably because of the rat issue. Honip must have the key.",
-   "dst": "",
+   "dst": "잠겨 있다. 쥐 문제 때문이겠지. 열쇠는 Honip에게 있을 것이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -178,7 +178,7 @@
   },
   "Misadventure on the Sea#018": {
    "src": "You find some notes on the table.",
-   "dst": "",
+   "dst": "탁자 위에서 메모를 발견했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -188,7 +188,7 @@
   },
   "Misadventure on the Sea#019": {
    "src": "There's mentions of... A human cannon? How does that make sense?",
-   "dst": "",
+   "dst": "뭔가 적혀 있다... 인간 대포? 그게 말이 되나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -198,7 +198,7 @@
   },
   "Misadventure on the Sea#020": {
    "src": "Apparently, only gunpowder is needed, as well as a fuse.",
-   "dst": "",
+   "dst": "화약과 도화선만 있으면 되는 모양이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -208,7 +208,7 @@
   },
   "Misadventure on the Sea#021": {
    "src": "This cannon is aiming slightly upwards, and it seems less powerful than the others.",
-   "dst": "",
+   "dst": "이 대포는 살짝 위를 향해 있고, 다른 대포들보다 약해 보인다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -218,7 +218,7 @@
   },
   "Misadventure on the Sea#022": {
    "src": "According to the notes you saw, it's probably the \"human\" cannon. This must be your escape route!",
-   "dst": "",
+   "dst": "본 메모대로라면 이게 그 \"인간\" 대포일 것이다. 이게 탈출구다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -228,7 +228,7 @@
   },
   "Misadventure on the Sea#023": {
    "src": "You pick up some notes.",
-   "dst": "",
+   "dst": "메모를 몇 장 주웠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -238,7 +238,7 @@
   },
   "Misadventure on the Sea#024": {
    "src": "There are mentions of a hidden key in the hold...",
-   "dst": "",
+   "dst": "선창에 숨겨진 열쇠에 대한 내용이 있다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -248,7 +248,7 @@
   },
   "Misadventure on the Sea#025": {
    "src": "You should probably search the hold later, when possible.",
-   "dst": "",
+   "dst": "나중에 기회가 되면 선창을 뒤져 보는 게 좋겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -258,7 +258,7 @@
   },
   "Misadventure on the Sea#026": {
    "src": "You cleaned the bodies! You should talk to Honip on the deck.",
-   "dst": "",
+   "dst": "시체를 다 청소했다! 갑판에 있는 Honip과 대화해야겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -268,7 +268,7 @@
   },
   "Misadventure on the Sea#027": {
    "src": "'ey! How's the cleaning? Don't forget to check everywhere, ya never know what you might find!",
-   "dst": "",
+   "dst": "어이! 청소는 잘 돼 가? 구석구석 확인하는 거 잊지 마, 뭐가 나올지 모르니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -278,7 +278,7 @@
   },
   "Misadventure on the Sea#028": {
    "src": "You're done? Well good job! Honip's next to the helm if you're lookin' for him.",
-   "dst": "",
+   "dst": "다 했어? 잘했네! Honip 찾으면 키 옆에 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -288,7 +288,7 @@
   },
   "Misadventure on the Sea#029": {
    "src": "You've been running around the boat for a while now!",
-   "dst": "",
+   "dst": "너 한참 동안 배를 뛰어다니고 있잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -298,7 +298,7 @@
   },
   "Misadventure on the Sea#030": {
    "src": "You picked up some seeds.",
-   "dst": "",
+   "dst": "씨앗을 주웠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -308,7 +308,7 @@
   },
   "Misadventure on the Sea#031": {
    "src": "Honip's probably waitin' for ya by now! Take these ladders next to me, he's up there.",
-   "dst": "",
+   "dst": "Honip이 지금쯤 기다리고 있을걸! 내 옆 사다리로 올라가, 거기 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -318,7 +318,7 @@
   },
   "Misadventure on the Sea#032": {
    "src": "If you lose your sponge, Honip can give you a new one on the deck.",
-   "dst": "",
+   "dst": "스펀지를 잃어버리면 갑판에서 Honip이 새로 줄 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",

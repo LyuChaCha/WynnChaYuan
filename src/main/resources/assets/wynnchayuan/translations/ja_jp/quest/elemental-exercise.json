@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Elemental Exercise",
   "count": 78,
-  "translated": 65,
+  "translated": 78,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Elemental Exercise#000": {
    "src": "I do have one. If our enemies are susceptible to the elements in this way, would that also apply to us?",
-   "dst": "",
+   "dst": "一つあります。敵がそうやって属性の影響を受けるなら、僕たちにも当てはまるんですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -18,7 +18,7 @@
   },
   "Elemental Exercise#001": {
    "src": "Ah, yes. A fine observation. Indeed, you are also bound to the rules of the elements. Elemental defenses and weaknesses from your equipment will affect you in the very same way.",
-   "dst": "",
+   "dst": "ああ、そうだ。いいところに気付いた。君たちも属性の法則に縛られている。装備の属性防御や弱点も、まったく同じように君たちに影響する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -28,7 +28,7 @@
   },
   "Elemental Exercise#002": {
    "src": "However, you have another tool at your disposal in the form of your spells! Different spells will deal different elemental damage, even if your weapon does not use that element by default.",
-   "dst": "",
+   "dst": "だが、君たちにはもう一つの手段、呪文がある！呪文ごとに与える属性ダメージは異なる。武器の基本属性と違っていてもだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -38,7 +38,7 @@
   },
   "Elemental Exercise#003": {
    "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
-   "dst": "",
+   "dst": "…あっ！じゃあ武器が水属性だけでも、バッシュは土属性ダメージになるんですね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -48,7 +48,7 @@
   },
   "Elemental Exercise#004": {
    "src": "Correct! Now, let's see... We have the two of you here. Why don't we have a friendly duel? A chance to test your battle skills in a safe environment.",
-   "dst": "",
+   "dst": "正解！さて…ちょうど二人いるな。親善試合をしてはどうだ？安全な環境で戦いの腕を試す好機だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -58,7 +58,7 @@
   },
   "Elemental Exercise#005": {
    "src": "The leader has been slain! Take out the stragglers, soldiers! The battle has been won!",
-   "dst": "",
+   "dst": "頭目を討ち取った！残党を片付けろ、兵士たち！戦いは我々の勝利だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -68,7 +68,7 @@
   },
   "Elemental Exercise#006": {
    "src": "We've been seeing more attacks from {p} recently... good grief, when will that Graken do his job and sort it out?",
-   "dst": "",
+   "dst": "最近 {p} からの襲撃が増えている… やれやれ、Graken はいつになったら務めを果たして片を付けるのだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -78,7 +78,7 @@
   },
   "Elemental Exercise#007": {
    "src": "Hmph. Well, regardless, the two of you fought well! The training seems to have paid off.",
-   "dst": "",
+   "dst": "ふん。まあ、ともかく二人ともよく戦った！訓練の成果が出たようだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -88,7 +88,7 @@
   },
   "Elemental Exercise#008": {
    "src": "Thank you, sir! That summoner was a tough foe, but it was nothing we couldn't handle... right, {u}?",
-   "dst": "",
+   "dst": "ありがとうございます！あの召喚士は手強かったけど、僕たちの手に負えない相手じゃなかった… だよね、{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -98,7 +98,7 @@
   },
   "Elemental Exercise#009": {
    "src": "Hm... Let us return to the barracks. I'll have to speak to the Admiral when he returns, and I'd like for the two of you to be present.",
-   "dst": "",
+   "dst": "ふむ… 兵舎に戻ろう。提督が戻ったら話をせねばならん。二人にも同席してもらいたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -108,7 +108,7 @@
   },
   "Elemental Exercise#010": {
    "src": "He wants us to be there for a meeting with the Admiral...? Huh. What do you think that could be about?",
-   "dst": "",
+   "dst": "提督との会議に僕たちも同席しろって…？へえ。何の話だと思う？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -118,7 +118,7 @@
   },
   "Elemental Exercise#011": {
    "src": "... Hopefully it's not anything bad. He did seem to approve of our combat prowess, but-... Nevermind. We should get going.",
-   "dst": "",
+   "dst": "…悪い話じゃないといいけど。僕たちの戦いぶりは認めてくれたみたいだけど…いや、何でもない。行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -128,7 +128,7 @@
   },
   "Elemental Exercise#012": {
    "src": "Ahem. Before you return to your business, I have something for the two of you. Payment for your work today, and a special piece of equipment. Make good use of it.",
-   "dst": "",
+   "dst": "ゴホン。二人が自分の務めに戻る前に、渡す物がある。今日の働きへの報酬と、特別な装備だ。有効に使いたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
