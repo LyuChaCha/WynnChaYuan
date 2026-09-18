@@ -1,12 +1,322 @@
 {
  "_meta": {
   "quest": "A Sandy Scandal",
-  "count": 67,
-  "translated": 67,
+  "count": 98,
+  "translated": 98,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Sandy Scandal#000": {
+   "src": "You look like a hardy one! {p} army, is it? Would you be willing to help {p} a bit?",
+   "dst": "你看起来挺能扛的！{p} 军队的是吧？愿不愿意帮 {p} 一点忙？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#001": {
+   "src": "We're looking into some witness reports to try to gain information on the bandits' plan.",
+   "dst": "我们正在调查一些目击报告，想弄清楚强盗的计划。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#002": {
+   "src": "You read the report and visualize its words.",
+   "dst": "你读着报告，脑海中浮现出上面描述的情景。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#003": {
+   "src": "WITNESS REPORT I - TOLD BY ODIN GIBBS, SHOP OWNER - GIBBS' MINING SUPPLY STORE CO.",
+   "dst": "目击报告 I - 口述者：ODIN GIBBS，店主 - GIBBS 采矿用品店",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#004": {
+   "src": "Business was slow that day, until two rugged, oddly-dressed men stormed into my shop, with a lot of nerve.",
+   "dst": "那天生意很冷清，直到两个粗犷、打扮古怪的男人大摇大摆地闯进我的店里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#005": {
+   "src": "Before I could close any deal with them, the man with a dagger started threatening me!",
+   "dst": "我还没来得及跟他们谈成买卖，那个拿匕首的男人就开始威胁我！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#006": {
+   "src": "I tried to make peace with the crooks.",
+   "dst": "我试着跟那两个恶棍讲和。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#007": {
+   "src": "The bandit put the knife closer to me and started demanding the code to the TNT vault downstairs!",
+   "dst": "那个强盗把刀凑得更近，开始逼我交出楼下 TNT 金库的密码！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#008": {
+   "src": "The bandits grew agitated and resorted to violence to obtain the combination.",
+   "dst": "强盗们越来越急躁，干脆动粗逼问密码。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#009": {
+   "src": "They swiped their knife at me, leaving a sizeable wound on my arm.",
+   "dst": "他们拿刀朝我一挥，在我胳膊上留下一道不小的伤口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#010": {
+   "src": "I had no choice but to give up the combination, which was {~}.",
+   "dst": "我别无选择，只能交出密码，密码是 {~}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#011": {
+   "src": "After I gave up the combination, they knocked me out!",
+   "dst": "我一交出密码，他们就把我打晕了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#012": {
+   "src": "I had no idea what the criminals did after that, I haven't been back to my shop since the incident.",
+   "dst": "之后那些罪犯干了什么我完全不知道，出事以后我就再也没回过店里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#013": {
+   "src": "The bandits must've taken the explosives! You should investigate.",
+   "dst": "那些强盗一定把炸药拿走了！你该去调查一下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#014": {
+   "src": "Looks like the bandit's took almost all of the TNT from the shopkeeper's vault.",
+   "dst": "看来强盗几乎把店主金库里的 TNT 全拿走了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#015": {
+   "src": "They seem to have dropped their knife during all the looting...",
+   "dst": "他们好像在洗劫的时候把刀弄掉了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#016": {
+   "src": "You should return to the {p} Bank Guard with your information.",
+   "dst": "你该带着查到的情报回去找 {p} 银行守卫。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#017": {
+   "src": "WITNESS REPORT II - TOLD BY SCROLL MERCHANT, SHOP OWNER - ALMUJ SCROLL SHOP",
+   "dst": "目击报告 II - 口述者：卷轴商人，店主 - ALMUJ 卷轴店",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#018": {
+   "src": "I was having a fine time tending to my rooftop garden after a lengthy day of selling scrolls.",
+   "dst": "卖了一整天卷轴之后，我正悠闲地打理我的屋顶花园。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#019": {
+   "src": "While looking down on the street, I saw two unsavory men, one with TNT in hand, marching down the path.",
+   "dst": "我往街上一看，看到两个形迹可疑的男人沿着路走过去，其中一个手里拿着 TNT。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#020": {
+   "src": "I was suspicious, so I tried to get their attention, but they ignored me.",
+   "dst": "我起了疑心，想引起他们注意，可他们根本不理我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#021": {
+   "src": "I tried to yell for the attention of a guard or official, but nobody could hear me.",
+   "dst": "我试着大喊，想叫卫兵或官员过来，可是没人听得见。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#022": {
+   "src": "I wasn't sure what to do at this point... I didn't try to confront them, that'd have been way too risky!",
+   "dst": "那时候我也不知道该怎么办……我没敢去拦他们，那样太危险了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#023": {
+   "src": "I have no idea where they went off to afterwards.",
+   "dst": "他们后来跑哪儿去了，我完全不知道。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#024": {
+   "src": "You should check out the house that the explosion came from!",
+   "dst": "你该去看看发生爆炸的那栋房子！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#025": {
+   "src": "Two weapons are missing from the wealthy estate owner's weapon rack!",
+   "dst": "那位富有庄园主的武器架上少了两件武器！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#026": {
+   "src": "With such powerful weapons the bandits could easily break through the bank's defenses.",
+   "dst": "有了这么强大的武器，强盗要突破银行的防线易如反掌。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#027": {
+   "src": "The whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
+   "dst": "几秒钟后这整个地方就会炸上天，所有证据都会埋进沙子里。祝你能逃出去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#028": {
+   "src": "Looks like the bandit's have started their heist! You should follow them into the bank and stop them.",
+   "dst": "看来强盗已经开始抢银行了！你该跟着他们进银行，阻止他们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#029": {
+   "src": "It's too late to stop us now! We're about to bust out of here with the grand prize - the contents of the emerald vault!",
+   "dst": "现在想阻止我们已经太迟了！我们马上就要带着头奖冲出去了：绿宝石金库里的东西！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#030": {
+   "src": "We think the bandits might have made the first move in their heist, we're mobilising a troop to-",
+   "dst": "我们认为那些强盗可能已经开始动手了，正在调派一支部队去-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#031": {
    "src": "Before anybody could hear me, a large explosion occurred inside of the house the bandits intruded.",
    "dst": "还没等任何人听见我，强盗闯入的那栋房子里就发生了一场大爆炸。",
    "role": "desc",
@@ -16,7 +326,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Sandy Scandal#001": {
+  "A Sandy Scandal#032": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
    "dst": "与 [{~}, {~}, -{~}] 的 {p} 银行守卫对话",
    "role": "desc",
@@ -26,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#002": {
+  "A Sandy Scandal#033": {
    "src": "You look like a hardy one! {p} army is it? Would you be willing to help {p} a bit?",
    "dst": "你看起来挺能扛的！{p} 军队的是吧？愿不愿意帮 {p} 一点忙？",
    "role": "desc",
@@ -36,7 +346,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#003": {
+  "A Sandy Scandal#034": {
    "src": "{p} bank tends to be a prime target for bandits, and there's been a string of incidents that have made us suspicious.",
    "dst": "{p} 银行一向是强盗的头号目标，最近又接连出了几件事，让我们起了疑心。",
    "role": "desc",
@@ -46,7 +356,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#004": {
+  "A Sandy Scandal#035": {
    "src": "We're looking into some witness reports to try and gain information on the bandits' plan.",
    "dst": "我们正在调查一些目击报告，想弄清楚强盗的计划。",
    "role": "desc",
@@ -56,7 +366,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#005": {
+  "A Sandy Scandal#036": {
    "src": "If I give you some of the reports, will you help check them out for clues?",
    "dst": "如果我给你几份报告，你愿意帮忙去查查线索吗？",
    "role": "desc",
@@ -66,7 +376,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#006": {
+  "A Sandy Scandal#037": {
    "src": "Great! The store from the first witness report is straight down the stairs, just past this building right behind me.",
    "dst": "太好了！第一份目击报告里的那家店，从楼梯直走下去，就在我身后这栋楼过去一点。",
    "role": "desc",
@@ -76,7 +386,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#007": {
+  "A Sandy Scandal#038": {
    "src": "It's called \"Gibbs' Mining Supply Store\", and the owner reported a robbery a few days ago.",
    "dst": "那家店叫“Gibbs 采矿用品店”，店主几天前报了一起抢劫案。",
    "role": "desc",
@@ -86,7 +396,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#008": {
+  "A Sandy Scandal#039": {
    "src": "Good luck! Report back to me if you find any information.",
    "dst": "祝你好运！找到什么情报就回来向我报告。",
    "role": "desc",
@@ -96,7 +406,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#009": {
+  "A Sandy Scandal#040": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
    "dst": "前往 [{~}, {~}, -{~}] 的目击报告地点。",
    "role": "desc",
@@ -106,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#010": {
+  "A Sandy Scandal#041": {
    "src": "Hello gentlemen! What can I interest you in today? Some industrial torches? Pickaxes?",
    "dst": "你们好啊，先生们！今天想看点什么？工业火把？镐子？",
    "role": "desc",
@@ -116,7 +426,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#011": {
+  "A Sandy Scandal#042": {
    "src": "Shut yer’ trap, old man. We came for a different kind of business.",
    "dst": "闭上你的嘴，老头。我们来谈的是另一种生意。",
    "role": "desc",
@@ -126,7 +436,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#012": {
+  "A Sandy Scandal#043": {
    "src": "Wha-? Look, fellows. Just step out of my store, and nobody gets hurt. I don't want any trouble.",
    "dst": "什——？听着，伙计们。你们离开我的店，谁都不会受伤。我不想惹麻烦。",
    "role": "desc",
@@ -136,7 +446,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#013": {
+  "A Sandy Scandal#044": {
    "src": "Listen up old man, tell us the code to the TNT vault in the basement, or I decorate my necklace with your fingers!",
    "dst": "听好了老头，告诉我们地下室 TNT 金库的密码，不然我就拿你的手指来装饰我的项链！",
    "role": "desc",
@@ -146,7 +456,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#014": {
+  "A Sandy Scandal#045": {
    "src": "Certainly not! That TNT is for licensed mining companies only, not your average amateur miner.",
    "dst": "休想！那些 TNT 只卖给有执照的采矿公司，不是给你们这种业余矿工的。",
    "role": "desc",
@@ -156,7 +466,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#015": {
+  "A Sandy Scandal#046": {
    "src": "Well then! I guess you'll still be able to grasp a pick with four fingers, eh?",
    "dst": "那好吧！我猜你剩四根手指也还握得住镐子，是吧？",
    "role": "desc",
@@ -166,7 +476,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#016": {
+  "A Sandy Scandal#047": {
    "src": "Gaaah! Alright, alright! No more violence, please!",
    "dst": "啊啊啊！好，好！别再动手了，拜托！",
    "role": "desc",
@@ -176,7 +486,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#017": {
+  "A Sandy Scandal#048": {
    "src": "The code is {~}-{~}-{~}-{~}... please don't hurt me!",
    "dst": "密码是 {~}-{~}-{~}-{~}……求你们别伤害我！",
    "role": "desc",
@@ -186,7 +496,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#018": {
+  "A Sandy Scandal#049": {
    "src": "{~}-{~}-{~}-{~}... thanks! We won't be needing you anymore... now go to sleep!",
    "dst": "{~}-{~}-{~}-{~}……谢啦！我们不再需要你了……现在睡一觉吧！",
    "role": "desc",
@@ -196,7 +506,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#019": {
+  "A Sandy Scandal#050": {
    "src": "Open the vault in the basement [Code: {~}].",
    "dst": "打开地下室的金库 [密码：{~}]。",
    "role": "desc",
@@ -206,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#020": {
+  "A Sandy Scandal#051": {
    "src": "Inspect the vault.",
    "dst": "检查金库。",
    "role": "desc",
@@ -216,7 +526,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#021": {
+  "A Sandy Scandal#052": {
    "src": "Exit the vault.",
    "dst": "离开金库。",
    "role": "desc",
@@ -226,7 +536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#022": {
+  "A Sandy Scandal#053": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
    "dst": "与 [{~}, {~}, -{~}] 的 {p} 银行守卫对话",
    "role": "desc",
@@ -236,7 +546,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#023": {
+  "A Sandy Scandal#054": {
    "src": "Ah, you're back! Did you find anything interesting in the report?",
    "dst": "啊，你回来了！报告里有什么有意思的发现吗？",
    "role": "desc",
@@ -246,7 +556,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#024": {
+  "A Sandy Scandal#055": {
    "src": "Missing TNT in the shop's vault? Looks like the shopkeeper was telling the truth.",
    "dst": "店里的金库少了 TNT？看来店主说的是实话。",
    "role": "desc",
@@ -256,7 +566,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#025": {
+  "A Sandy Scandal#056": {
    "src": "We need to catch these criminals quickly if they have access to that amount of TNT - they could blow a hole right into the bank's vault!",
    "dst": "如果这些罪犯手上有那么多 TNT，我们得赶快抓住他们——他们能直接炸穿银行的金库！",
    "role": "desc",
@@ -266,7 +576,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#026": {
+  "A Sandy Scandal#057": {
    "src": "You should check out another witness report, from after the attack on the shopkeeper.",
    "dst": "你应该去看看另一份目击报告，是店主遇袭之后的。",
    "role": "desc",
@@ -276,7 +586,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#027": {
+  "A Sandy Scandal#058": {
    "src": "It was taken from the rooftop garden of the Scroll Merchant's residence, you should take a look.",
    "dst": "那份报告是从卷轴商人家的屋顶花园得来的，你该去看看。",
    "role": "desc",
@@ -286,7 +596,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#028": {
+  "A Sandy Scandal#059": {
    "src": "Be quick! We don't have much time if we want to stop these bandits.",
    "dst": "快点！如果想阻止这些强盗，我们没多少时间了。",
    "role": "desc",
@@ -296,7 +606,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#029": {
+  "A Sandy Scandal#060": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
    "dst": "前往 [{~}, {~}, -{~}] 的目击报告地点。",
    "role": "desc",
@@ -306,7 +616,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#030": {
+  "A Sandy Scandal#061": {
    "src": "Read the witness report.",
    "dst": "阅读目击报告。",
    "role": "desc",
@@ -316,7 +626,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#031": {
+  "A Sandy Scandal#062": {
    "src": "Ey', what do you two blighters think you're doing with those dangerous explosives in the city?",
    "dst": "喂，你们两个混蛋拿着那些危险的炸药在城里干什么？",
    "role": "desc",
@@ -326,7 +636,7 @@
    "speaker": "Scroll Merchant",
    "source": "wiki"
   },
-  "A Sandy Scandal#032": {
+  "A Sandy Scandal#063": {
    "src": "Guards! Guards! Robber! Come quick! Urgently!",
    "dst": "守卫！守卫！有强盗！快来！十万火急！",
    "role": "desc",
@@ -336,7 +646,7 @@
    "speaker": "Scroll Merchant",
    "source": "wiki"
   },
-  "A Sandy Scandal#033": {
+  "A Sandy Scandal#064": {
    "src": "Gaaah!",
    "dst": "啊啊啊！",
    "role": "desc",
@@ -346,7 +656,7 @@
    "speaker": "Scroll Merchant",
    "source": "wiki"
   },
-  "A Sandy Scandal#034": {
+  "A Sandy Scandal#065": {
    "src": "Find the source of the detonation at [{~}, {~}, {~}].",
    "dst": "找到 [{~}, {~}, {~}] 的爆炸源头。",
    "role": "desc",
@@ -356,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#035": {
+  "A Sandy Scandal#066": {
    "src": "Inspect the safe.",
    "dst": "检查保险箱。",
    "role": "desc",
@@ -366,7 +676,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#036": {
+  "A Sandy Scandal#067": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}].",
    "dst": "与 [{~}, {~}, -{~}] 的 {p} 银行守卫对话。",
    "role": "desc",
@@ -376,7 +686,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#037": {
+  "A Sandy Scandal#068": {
    "src": "Were you able to uncover any new information regarding the status of the criminals?",
    "dst": "关于那些罪犯的动向，你查到什么新情报了吗？",
    "role": "desc",
@@ -386,7 +696,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#038": {
+  "A Sandy Scandal#069": {
    "src": "Ah... that's troubling. The criminals plundered two very powerful weapons.",
    "dst": "啊……这可麻烦了。那些罪犯抢走了两件非常强大的武器。",
    "role": "desc",
@@ -396,7 +706,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#039": {
+  "A Sandy Scandal#070": {
    "src": "It won't be easy facing those criminals if they decide to raid the bank with those weapons.",
    "dst": "如果他们决定带着那些武器来抢银行，要对付他们可不容易。",
    "role": "desc",
@@ -406,7 +716,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#040": {
+  "A Sandy Scandal#071": {
    "src": "I'm not certain how to proceed from here, we didn't receive any more witness reports, and-",
    "dst": "我不确定接下来该怎么办，我们没有再收到目击报告，而且——",
    "role": "desc",
@@ -416,7 +726,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#041": {
+  "A Sandy Scandal#072": {
    "src": "Boss, I just received urgent reports of a robbery underway in the left residential area of {p}!",
    "dst": "老大，我刚收到紧急报告，{p} 左边的住宅区正在发生抢劫！",
    "role": "desc",
@@ -426,7 +736,7 @@
    "speaker": "Almuj Sentry",
    "source": "wiki"
   },
-  "A Sandy Scandal#042": {
+  "A Sandy Scandal#073": {
    "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
    "dst": "天哪……你！士兵！快！抢劫就发生在桥对面，在你今天去过的第一栋房子旁边！可能就是我们在找的强盗。",
    "role": "desc",
@@ -436,7 +746,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#043": {
+  "A Sandy Scandal#074": {
    "src": "There will be somebody waiting for you outside of the house once you get to the residential area!",
    "dst": "你到住宅区之后，会有人在那栋房子外面等你！",
    "role": "desc",
@@ -446,7 +756,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#044": {
+  "A Sandy Scandal#075": {
    "src": "If you still can't find it, I've written the coordinates in your content book. Now quickly, get to the house!",
    "dst": "如果你还是找不到，我已经把坐标写在你的内容书里了。快，赶去那栋房子！",
    "role": "desc",
@@ -456,7 +766,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#045": {
+  "A Sandy Scandal#076": {
    "src": "Quickly! Go to the house at [{~}, {~}, -{~}].",
    "dst": "快！前往 [{~}, {~}, -{~}] 的房子。",
    "role": "desc",
@@ -466,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#046": {
+  "A Sandy Scandal#077": {
    "src": "Hello? Are you with the guards? Good! Hurry! Some bandits just ransacked my house, and left with lots of emeralds!",
    "dst": "你好？你是守卫那边的吗？太好了！快！有一群强盗刚把我家洗劫一空，带着一大堆绿宝石跑了！",
    "role": "desc",
@@ -476,7 +786,7 @@
    "speaker": "Almuj Citizen",
    "source": "wiki"
   },
-  "A Sandy Scandal#047": {
+  "A Sandy Scandal#078": {
    "src": "Follow me to my house, hopefully you can find the bandits! They stole lots of my precious gems!",
    "dst": "跟我去我家，希望你能找到那些强盗！他们偷走了我好多珍贵的宝石！",
    "role": "desc",
@@ -486,7 +796,7 @@
    "speaker": "Almuj Citizen",
    "source": "wiki"
   },
-  "A Sandy Scandal#048": {
+  "A Sandy Scandal#079": {
    "src": "Look for signs of the bandits' whereabouts.",
    "dst": "寻找强盗下落的线索。",
    "role": "desc",
@@ -496,7 +806,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#049": {
+  "A Sandy Scandal#080": {
    "src": "Listen to the bandits.",
    "dst": "偷听强盗说话。",
    "role": "desc",
@@ -506,7 +816,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#050": {
+  "A Sandy Scandal#081": {
    "src": "Ready, boys? We've got the TNT, weapons, and the fastest horses those emeralds could buy. Now we just-",
    "dst": "准备好了吗，弟兄们？TNT、武器都到手了，还有那些绿宝石买得到的最快的马。现在我们只要——",
    "role": "desc",
@@ -516,7 +826,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#051": {
+  "A Sandy Scandal#082": {
    "src": "Ahah. I had a feeling we had a guard on our tail.",
    "dst": "啊哈。我就感觉有守卫跟在我们后面。",
    "role": "desc",
@@ -526,7 +836,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#052": {
+  "A Sandy Scandal#083": {
    "src": "No point wasting these brand-new weapons on you... since we're blowing up this hideout anyway!",
    "dst": "没必要把这些全新的武器浪费在你身上……反正我们本来就要炸掉这个藏身处！",
    "role": "desc",
@@ -536,7 +846,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#053": {
+  "A Sandy Scandal#084": {
    "src": "This whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
    "dst": "几秒钟后这整个地方就会炸上天，所有证据都会埋进沙子里。祝你能逃出去！",
    "role": "desc",
@@ -546,7 +856,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#054": {
+  "A Sandy Scandal#085": {
    "src": "Escape the hideout!",
    "dst": "逃出藏身处！",
    "role": "desc",
@@ -556,7 +866,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#055": {
+  "A Sandy Scandal#086": {
    "src": "Find where the bandits blasted a hole to get into the bank at [{~}, {~}, -{~}].",
    "dst": "找到强盗在 [{~}, {~}, -{~}] 炸开洞口进入银行的地方。",
    "role": "desc",
@@ -566,7 +876,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#056": {
+  "A Sandy Scandal#087": {
    "src": "It’s too late to stop us now! We’re already about to bust out of here with the grand prize - the contents of the emerald vault!",
    "dst": "现在想阻止我们已经太迟了！我们正准备带着头奖——绿宝石金库里的东西——冲出去！",
    "role": "desc",
@@ -576,7 +886,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#057": {
+  "A Sandy Scandal#088": {
    "src": "Follow the criminals into the other room.",
    "dst": "跟着罪犯进入另一个房间。",
    "role": "desc",
@@ -586,7 +896,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#058": {
+  "A Sandy Scandal#089": {
    "src": "Look here, the soldier decided they wanted to follow us. Dumb move.",
    "dst": "你们看，这个士兵决定跟着我们。蠢到家了。",
    "role": "desc",
@@ -596,7 +906,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#059": {
+  "A Sandy Scandal#090": {
    "src": "I guess we can kill two birds with one stone: escaping the bank, and killing this pest.",
    "dst": "我想我们可以一举两得：逃出银行，顺便干掉这个讨厌鬼。",
    "role": "desc",
@@ -606,7 +916,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#060": {
+  "A Sandy Scandal#091": {
    "src": "Block the entrance, bandits!",
    "dst": "堵住入口，强盗们！",
    "role": "desc",
@@ -616,7 +926,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#061": {
+  "A Sandy Scandal#092": {
    "src": "Don't let the bandits escape!",
    "dst": "别让强盗逃走！",
    "role": "desc",
@@ -626,7 +936,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#062": {
+  "A Sandy Scandal#093": {
    "src": "Report back to the {p} Bank Guard at [{~}, {~}, -{~}].",
    "dst": "回去向 [{~}, {~}, -{~}] 的 {p} 银行守卫报告。",
    "role": "desc",
@@ -636,7 +946,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#063": {
+  "A Sandy Scandal#094": {
    "src": "Soldier! Where did you disappear to? Did you hear those explosions, below the bank?",
    "dst": "士兵！你跑哪去了？你听到银行底下的爆炸声了吗？",
    "role": "desc",
@@ -646,7 +956,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#064": {
+  "A Sandy Scandal#095": {
    "src": "We think those bandits might have made their first move in the heist, we're mobilising a troop to-",
    "dst": "我们认为那些强盗可能已经开始动手了，正在调派一支部队去——",
    "role": "desc",
@@ -656,7 +966,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#065": {
+  "A Sandy Scandal#096": {
    "src": "You've already stopped them? And reclaimed the stolen weapons and explosives..?",
    "dst": "你已经阻止他们了？还夺回了被偷的武器和炸药……？",
    "role": "desc",
@@ -666,7 +976,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#066": {
+  "A Sandy Scandal#097": {
    "src": "Wow. Excellent work, soldier. {p} is in your debt. Please accept these from our vault, as a token of our thanks.",
    "dst": "哇。干得太好了，士兵。{p} 欠你一份人情。请收下这些从我们金库拿出来的东西，聊表谢意。",
    "role": "desc",

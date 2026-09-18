@@ -1,12 +1,242 @@
 {
  "_meta": {
   "quest": "The Sewers of Ragni",
-  "count": 31,
-  "translated": 31,
+  "count": 54,
+  "translated": 54,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Sewers of Ragni#000": {
+   "src": "Soldier! Good timing. We've been requestin' help for ages.",
+   "dst": "士兵！來得正好。我們求援求了好久了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#001": {
+   "src": "With the corrupted hordes terrorisin' the Plains, more and more people are moving to {p}.",
+   "dst": "腐敗大軍在平原橫行，越來越多人搬進 {p}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#002": {
+   "src": "Issue is, a major sewer pipe's been blocked up. No wonder nobody wanted the job.",
+   "dst": "問題是，一條主下水道管被堵住了。難怪沒人想接這差事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#003": {
+   "src": "I'm going to need ya to get your hands dirty. I'll need some assistance with the blockage.",
+   "dst": "我需要你弄髒一下手。清那個阻塞得有人幫我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#004": {
+   "src": "Here's the brief. We get in, deploy small explosives to dislodge the blockage, and get out.",
+   "dst": "任務簡報是這樣：我們進去，放小型炸藥把堵塞物炸開，然後出來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#005": {
+   "src": "We're usin' this side pipe. The larger one down the hill, well... ya don't want to stray too far into that one.",
+   "dst": "我們走這條側管。山坡下那條比較大的，嗯……你不會想走太深進去的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#006": {
+   "src": "Keep your wits about you in there. All sorts of things could be lurkin'. Ready? Let's go!",
+   "dst": "在裡面提高警覺。什麼東西都可能潛伏在那裡。準備好了嗎？走吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#007": {
+   "src": "New Quest Started: The Sewers of {p}",
+   "dst": "新任務開始：{p} 的下水道",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#008": {
+   "src": "Good, ya caught up. Watch your step around this place, soldier.",
+   "dst": "很好，你跟上了。在這裡走路小心點，士兵。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#009": {
+   "src": "Our scouts've confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
+   "dst": "我們的偵察兵確認過這一區是安全的，不過走錯一個彎就會走進那座舊監獄。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#010": {
+   "src": "I... we really don't want t' end up there.",
+   "dst": "我……我們真的不會想跑到那裡去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#011": {
+   "src": "Here's a small explosive. I placed one at the blockage already, if that alone doesn't work, use this.",
+   "dst": "這是一顆小型炸藥。堵塞處那邊我已經放了一顆，如果光那顆不夠，就用這顆。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#012": {
+   "src": "The exit has opened...",
+   "dst": "出口打開了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#013": {
+   "src": "The pillar seems very unstable...",
+   "dst": "這根柱子看起來非常不穩……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#014": {
+   "src": "Ah, you're alive! Looks like we underestimated the amount of sewage.",
+   "dst": "啊，你還活著！看來我們低估了污水的量。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#015": {
+   "src": "... ah. This sewer has some history, y'know. Back durin' the {p} Raids, they used to hide civilians here, in the old prison.",
+   "dst": "……啊。這條下水道是有點歷史的。當年 {p} 大掠襲的時候，他們會把平民藏在這裡，藏在那座舊監獄裡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#016": {
+   "src": "Let's get out of here. D'you still have the explosive I gave you?",
+   "dst": "我們出去吧。我給你的那顆炸藥還在嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#017": {
+   "src": "Phew! Looks like that first explosion cleared the pipe, the {p} citizens are going to be happy.",
+   "dst": "呼！看來第一顆炸藥就把管路清通了，{p} 的居民要開心了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#018": {
+   "src": "... I don't know exactly what's in there, soldier.",
+   "dst": "……我也說不準裡面到底有什麼，士兵。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#019": {
+   "src": "I can't stop you from explorin' the dungeon, but I recommend you gear up first.",
+   "dst": "我沒辦法阻止你去闖那座地城，但我建議你先把裝備弄好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#020": {
+   "src": "Legend has it that Bob, the legendary warrior, was born in 'em durin' a raid on {p}.",
+   "dst": "傳說中，那位傳奇戰士 Bob 就是在 {p} 遭到掠襲時，在裡面出生的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#021": {
+   "src": "His mother died in childbirth, but some people say she lay down there for years. Rotting. Waiting.",
+   "dst": "他母親難產過世了，不過有人說她在下面躺了好多年。腐爛著。等著。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#022": {
+   "src": "But that's just a story! Thanks for your help, soldier, an' good luck.",
+   "dst": "不過那只是個故事罷了！謝謝你的幫忙，士兵，祝你好運。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#023": {
    "src": "The Lieutenant at [-{~}, {~}, -{~}] needs help.",
    "dst": "[-{~1}, {~2}, -{~3}] 的中尉需要幫忙。",
    "role": "desc",
@@ -16,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#001": {
+  "The Sewers of Ragni#024": {
    "src": "Soldier! Good timing. We've been requesting help for ages.",
    "dst": "士兵！來得正好。我們求援求了好久了。",
    "role": "desc",
@@ -26,7 +256,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#002": {
+  "The Sewers of Ragni#025": {
    "src": "With the corrupted hordes terrorising the Wynn Plains, more and more people are moving to {p}.",
    "dst": "腐敗大軍在 Wynn 平原橫行，越來越多人搬進 {p}。",
    "role": "desc",
@@ -36,7 +266,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#003": {
+  "The Sewers of Ragni#026": {
    "src": "Issue is, a major sewage pipe's been blocked up. No wonder nobody wanted the job.",
    "dst": "問題是，一條主排污管被堵住了。難怪沒人想接這差事。",
    "role": "desc",
@@ -46,7 +276,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#004": {
+  "The Sewers of Ragni#027": {
    "src": "I'm going to need you to get your hands dirty. I'll need some assistance with the blockage.",
    "dst": "我需要你弄髒一下手。清那個阻塞得有人幫我。",
    "role": "desc",
@@ -56,7 +286,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#005": {
+  "The Sewers of Ragni#028": {
    "src": "Here's the brief. We get in, deploy some small explosives to dislodge the blockage, and get out.",
    "dst": "任務簡報是這樣：我們進去，放幾顆小型炸藥把堵塞物炸開，然後出來。",
    "role": "desc",
@@ -66,7 +296,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#006": {
+  "The Sewers of Ragni#029": {
    "src": "We're using the side pipe. The larger one down the hill, well... you don't want to stray too far into that one.",
    "dst": "我們走側管。山坡下那條比較大的，嗯……你不會想走太深進去的。",
    "role": "desc",
@@ -76,7 +306,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#007": {
+  "The Sewers of Ragni#030": {
    "src": "Keep your wits about you in there. All sorts of things could be lurking. Ready? Let's go!",
    "dst": "在裡面提高警覺。什麼東西都可能潛伏在那裡。準備好了嗎？走吧！",
    "role": "desc",
@@ -86,7 +316,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#008": {
+  "The Sewers of Ragni#031": {
    "src": "Enter the sewer at [-{~}, {~}, -{~}] and find the blockage.",
    "dst": "從 [-{~1}, {~2}, -{~3}] 進入下水道，找到堵塞處。",
    "role": "desc",
@@ -96,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#009": {
+  "The Sewers of Ragni#032": {
    "src": "Explore the sewer and find the blockage.",
    "dst": "探索下水道，找到堵塞處。",
    "role": "desc",
@@ -106,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#010": {
+  "The Sewers of Ragni#033": {
    "src": "Good, you caught up. Watch your step around this place, soldier.",
    "dst": "很好，你跟上了。在這裡走路小心點，士兵。",
    "role": "desc",
@@ -116,7 +346,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#011": {
+  "The Sewers of Ragni#034": {
    "src": "Our scouts have confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
    "dst": "我們的偵察兵確認過這一區是安全的，不過走錯一個彎就會走進那座舊監獄。",
    "role": "desc",
@@ -126,7 +356,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#012": {
+  "The Sewers of Ragni#035": {
    "src": "I... we really don't want to end up there.",
    "dst": "我……我們真的不會想跑到那裡去。",
    "role": "desc",
@@ -136,7 +366,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#013": {
+  "The Sewers of Ragni#036": {
    "src": "Anyway, I've found the blockage. It's right up ahead.",
    "dst": "總之，我找到堵塞處了。就在前面。",
    "role": "desc",
@@ -146,7 +376,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#014": {
+  "The Sewers of Ragni#037": {
    "src": "Here's a small explosive. I placed this one at the blockage already, if that alone doesn't work, use this.",
    "dst": "這是一顆小型炸藥。堵塞處那邊我已經放了一顆，如果那顆不夠，就用這顆。",
    "role": "desc",
@@ -156,7 +386,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#015": {
+  "The Sewers of Ragni#038": {
    "src": "Find a way to fix the blockage.",
    "dst": "想辦法清除堵塞。",
    "role": "desc",
@@ -166,7 +396,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#016": {
+  "The Sewers of Ragni#039": {
    "src": "Find a way out of the spooky sewer.",
    "dst": "想辦法離開這條陰森的下水道。",
    "role": "desc",
@@ -176,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#017": {
+  "The Sewers of Ragni#040": {
    "src": "Ah, you're alive. Looks like we underestimated the amount of sewage.",
    "dst": "啊，你還活著。看來我們低估了污水的量。",
    "role": "desc",
@@ -186,7 +416,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#018": {
+  "The Sewers of Ragni#041": {
    "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
    "dst": "剛才有一陣子跟你走散了。老實說，能再會合算是運氣好。",
    "role": "desc",
@@ -196,7 +426,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#019": {
+  "The Sewers of Ragni#042": {
    "src": "... ah. This sewer has some history, you know. Back during the {p} Raids, they used to hide civilians here, in the old prison.",
    "dst": "……啊。這條下水道是有點歷史的。當年 {p} 大掠襲的時候，他們會把平民藏在這裡，藏在那座舊監獄裡。",
    "role": "desc",
@@ -206,7 +436,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#020": {
+  "The Sewers of Ragni#043": {
    "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
    "dst": "有時候……有時候還是不夠。有人說那裡到現在還有……東西在遊蕩。那些屠殺留下來的。",
    "role": "desc",
@@ -216,7 +446,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#021": {
+  "The Sewers of Ragni#044": {
    "src": "Let's get out of here. Do you still have the explosive I gave you?",
    "dst": "我們出去吧。我給你的那顆炸藥還在嗎？",
    "role": "desc",
@@ -226,7 +456,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#022": {
+  "The Sewers of Ragni#045": {
    "src": "Good, let's use it on this wall, it looks like we can break right through...",
    "dst": "很好，就炸這面牆，看起來我們可以直接打通……",
    "role": "desc",
@@ -236,7 +466,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#023": {
+  "The Sewers of Ragni#046": {
    "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
    "dst": "到 [-{~1}, {~2}, -{~3}] 跟 Jenprest 談話",
    "role": "desc",
@@ -246,7 +476,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#024": {
+  "The Sewers of Ragni#047": {
    "src": "Phew! Looks like that first explosion cleared the pipe, and the {p} citizens are going to be happy.",
    "dst": "呼！看來第一顆炸藥就把管路清通了，{p} 的居民要開心了。",
    "role": "desc",
@@ -256,7 +486,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#025": {
+  "The Sewers of Ragni#048": {
    "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
    "dst": "而且算我們走運，在裡面沒撞上什麼太難纏的東西。那些傳聞啊……",
    "role": "desc",
@@ -266,7 +496,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#026": {
+  "The Sewers of Ragni#049": {
    "src": "... I don't exactly know what's in there, soldier.",
    "dst": "……我也說不準裡面到底有什麼，士兵。",
    "role": "desc",
@@ -276,7 +506,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#027": {
+  "The Sewers of Ragni#050": {
    "src": "I can't stop you from exploring the dungeon, but I recommend you gear up first.",
    "dst": "我沒辦法阻止你去闖那座地城，但我建議你先把裝備弄好。",
    "role": "desc",
@@ -286,7 +516,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#028": {
+  "The Sewers of Ragni#051": {
    "src": "Legend has it that Bob, the legendary warrior, was born in them during a raid on {p}.",
    "dst": "傳說中，那位傳奇戰士 Bob 就是在 {p} 遭到掠襲時，在裡面出生的。",
    "role": "desc",
@@ -296,7 +526,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#029": {
+  "The Sewers of Ragni#052": {
    "src": "His mother died in childbirth, but some people said she lay down there for years. Rotting. Waiting.",
    "dst": "他母親難產過世了，不過有人說她在下面躺了好多年。腐爛著。等著。",
    "role": "desc",
@@ -306,7 +536,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#030": {
+  "The Sewers of Ragni#053": {
    "src": "But that's just a story! Thanks for your help, soldier, and good luck.",
    "dst": "不過那只是個故事罷了！謝謝你的幫忙，士兵，祝你好運。",
    "role": "desc",

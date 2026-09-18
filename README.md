@@ -81,12 +81,12 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `es_es` Español | ██████████ 100.0% | 45,451 / 45,451 |
-| `ja_jp` 日本語 | ██████████ 100.0% | 45,500 / 45,500 |
-| `ru_ru` Русский | ██████████ 100.0% | 45,500 / 45,500 |
-| `zh_cn` 简体中文 | ██████████ 100.0% | 45,500 / 45,500 |
-| `ko_kr` 한국어 | ██████████ 100.0% | 45,500 / 45,501 |
-| `zh_tw` 繁體中文 | ██████████ 99.9% | 45,389 / 45,451 |
+| `es_es` Español | ██████████ 100.0% | 46,642 / 46,664 |
+| `ja_jp` 日本語 | ██████████ 100.0% | 46,642 / 46,664 |
+| `ru_ru` Русский | ██████████ 100.0% | 46,642 / 46,664 |
+| `zh_cn` 简体中文 | ██████████ 100.0% | 46,642 / 46,664 |
+| `ko_kr` 한국어 | ██████████ 100.0% | 46,641 / 46,664 |
+| `zh_tw` 繁體中文 | ██████████ 99.8% | 46,580 / 46,664 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -207,7 +207,7 @@ gradle build
 - 對話框的中日韓與俄文字形：[Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)（SIL OFL 1.1，全文見
   `src/main/resources/assets/wynnchayuan/font/ofl-fusion.txt`）。字型缺字的句子維持原文，不畫方框
 - 材質包符號與排版屬於 Wynncraft，本模組只顯示、不修改
-- 程式碼：[GNU AGPLv3](LICENSE)
+- 程式碼：[GNU AGPLv3 或之後的版本](LICENSE)
 - 翻譯與資料（`src/main/resources/assets/wynnchayuan/translations/` 的語料、`GLOSSARY.md` 等）：[CC BY-NC-SA 4.0](LICENSE-DATA)。
   取自 Wynncraft Wiki 的內容仍依原本的 CC BY-SA
 

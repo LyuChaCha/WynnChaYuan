@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Cowfusion",
-  "count": 223,
+  "count": 224,
   "translated": 224,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cowfusion#000": {
+   "src": "Yeah, yeah, I know. But what's it gonna matter if my back's worse than my grandpa's at the end of this?",
+   "dst": "Да-да, знаю. Но какой в этом толк, если под конец спина у меня будет хуже, чем у деда?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cowfusion",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cowfusion#001": {
    "src": "Talk to Ranol at [{~}, {~}, -{~}]",
    "dst": "Поговори с Ranol в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#001": {
+  "Cowfusion#002": {
    "src": "A Human, eh? All the way out 'ere at the end of the canyon? Yer a tough one.",
    "dst": "Человек, а? Аж на самый край каньона забрёл? Крепкий, видать.",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#002": {
+  "Cowfusion#003": {
    "src": "Perhaps I can give yer some work, if yer are lookin' for it? Someone's been coming and nabbing my cows!",
    "dst": "Может, работёнка для тебя есть, коль ищешь? Кто-то повадился красть моих коров!",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#003": {
+  "Cowfusion#004": {
    "src": "'an I know exactly who it is - that blasted cow scientist that lives in the lab just north of 'ere.",
    "dst": "И я точно знаю кто - чёртов коровий учёный из лаборатории чуток к северу отсюдова.",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#004": {
+  "Cowfusion#005": {
    "src": "Anyway, yer up for the job? Can't let 'im just keep stealing them forever!",
    "dst": "Ну что, возьмёшься? Не дам ему вечно их таскать!",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#005": {
+  "Cowfusion#006": {
    "src": "His cavern laboratory is just north from 'ere. Not too hard to find. Once yer there, get him to return my cows!",
    "dst": "Его пещерная лаборатория к северу отсюдова. Найти нетрудно. Как доберёшься, пусть вернёт коров!",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#006": {
+  "Cowfusion#007": {
    "src": "There's one problem though. The door to the place is always shut, so you'll 'ave to find another way in.",
    "dst": "Только вот беда: дверь там всегда заперта, так что придётся искать другой путь внутрь.",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#007": {
+  "Cowfusion#008": {
    "src": "Head to the Laboratory at [{~}, {~}, -{~}]",
    "dst": "Доберись до лаборатории в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#008": {
+  "Cowfusion#009": {
    "src": "Find a way into the Laboratory",
    "dst": "Найди способ попасть в лабораторию",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#009": {
+  "Cowfusion#010": {
    "src": "Search the Laboratory for the missing cows",
    "dst": "Обыщи лабораторию в поисках пропавших коров",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#010": {
+  "Cowfusion#011": {
    "src": "Find a way to free the Cows.",
    "dst": "Найди способ освободить коров.",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#011": {
+  "Cowfusion#012": {
    "src": "???",
    "dst": "???",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#012": {
+  "Cowfusion#013": {
    "src": "Find out what happened",
    "dst": "Выясни, что случилось",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#013": {
+  "Cowfusion#014": {
    "src": "Return to Ranol",
    "dst": "Вернись к Ranol",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#014": {
+  "Cowfusion#015": {
    "src": "Ẁ̷͚h̷̳͆̕a̷̡̅̚ṫ̷̨̢̿'̶̛̮̯͊ś̸̭ ̵̹͌̄t̸̛̫̤̅h̷̼́̒ï̵̡͆ś̴̯͎̈́ ̴̨̞͑̚'̶͈͛̔e̶̲͋r̴̙̰̊̊e̷̹͌̀?̸̜̓͜ ̸̙̀I̴͎͌̏b̶̯͐̀é̸̥l̸̼͓̈͗e̸̠̦͂,̷͔̉̃ ̸͕̤̅t̶͇̒h̵̛͈̠͑ä̵̡͚ţ̴̇̾ ̵͇̈ỷ̷͕͘ö̵̳̯ú̶̗͝?̸͔͊͊ ̴͉͈̀͠M̸̖̆ý̸̙͜ ̸̛ͅͅg̵̣̀ḭ̸̳͑͒r̶̺̿l̸͚͆,̸̦̇̕ ̸͔̿Ḯ̴̼̬͝ ̴̰͛k̴̰̅n̷̥͐e̴͓̅w̵̥̔̊ ̶̱͕͒̅y̸̨͇͆̋ȯ̷͍͇̎ṷ̸̻̓͂'̶̢͕̌́d̸̜̎̍ ̶͎͙́͝c̵̼̞̿͛ǫ̴̀́m̵̲̈́ë̵͎́ ̵̺͗͌b̴͕̍ḁ̸̽́c̵̺̽k̶̻̀ ̴̩͘͝t̸̮̮̉ȍ̴͜ ̶̩͉̒m̶̝̰̅e̶͈̮̾͘!̵͈͂́",
    "dst": "Эт-то что тут? Не верю, неужто ты? Девочка моя, я знал, что ты ко мне вернёшься!",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#015": {
+  "Cowfusion#016": {
    "src": "A̸̜̋ń̵͉̞d̴͖͙̂̕ ̴̡̥͘t̵̛̙͈o̵͖͑ ̶̨̗̆͠t̴̝͇͑ḧ̷̛͇̞́ḯ̴̯͚n̴̠̏͌ḵ̷̍ ̵̝̐̇I̷̛͖̮͊ ̷͚́ẃ̸̩͑ä̶̰̯s̸̥̯̎ ̷̘̓̉g̴̲͒ó̴̲̦̚ì̷͚̗̇ṋ̸̢̛͂g̴͉͒ ̶̭͙̌̾t̴̞͎̉ô̶̩̜ ̶̣̄͘h̶̖͕̎î̷̟̀r̷̙̒̓ȩ̴̽ ̴̖̉ͅs̴̲͊̿o̴͇̟̾̕m̴̨̞͌̍ë̷̹́ ̶̟̄c̶̛̩̻i̸̠͘͜t̷̢̂ẙ̷̹̣-̶̫̍d̶̬̓w̷̗̱̐ê̶͚͠ḹ̸͚̇l̵͕͎̽̂i̸̥͠ṅ̴̞̾'̶͖̈́ ̶͍̀'̶̥̦͆u̸͇̐̏m̵̬̽̆a̸͈͎͠n̸̩̖̎͐ ̵̢͔͑ṱ̷͑͜õ̶̻ͅ ̷̪͒ĝ̵͍ë̴̟͇̚ṯ̸̅ ̶̧̩̀y̴͇͖͋̽ö̷̘͉́̾u̴̖͝ ̶̳̠̕f̴̱͖̓͘o̷̗̔̓r̵̢͝ ̴̱̂̽m̴̨̛̛e̸̺̝͋?̵̬͊͝ ̴̲͒͛Ȟ̸͙̉ä̵̼́!̷͇́",
    "dst": "А я-то собирался нанять городского человека, чтоб тебя сыскать? Ха!",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#016": {
+  "Cowfusion#017": {
    "src": "R̸̛̼̬͑i̷̟̓̊g̷͇̎ḧ̸̳́ṫ̶̮ ̵̪̑͐t̵̜̘͐ȟ̸̟̠̋e̷̙͂n̷͙̍̚,̷̛̮̚ ̸̜̑ͅb̴̗̄͝ã̴̳̌c̷͚͘k̴̨͗ ̶͉͈̾i̷̧͕͌̈́n̸̨̺̒ț̵̬͛́o̵̯̊͊ ̵̬̋̋t̸̹̆̀ḩ̸̰͗e̵̤̓ ̵͇̽̆p̷̦̙̀̚ē̸͇͆ń̶̻̺͠ ̷͇̆͝ý̶̰̆o̶͖͝u̶͔̿ͅ ̷͍̂̇g̶̪̎̽o̷̹͝.̷̬͍̈́̔ ̶̦̚H̴̚ͅụ̷̠͗ṗ̶͇̦!̶͖̹̔̇",
    "dst": "Ну всё, живо обратно в загон. Пошла!",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Ranol",
    "source": "wiki"
   },
-  "Cowfusion#017": {
+  "Cowfusion#018": {
    "src": "Escape Ranol's farm",
    "dst": "Сбеги с фермы Ranol",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#018": {
+  "Cowfusion#019": {
    "src": "Moo.",
    "dst": "Му.",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#019": {
+  "Cowfusion#020": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#020": {
+  "Cowfusion#021": {
    "src": "Password?",
    "dst": "Пароль?",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#021": {
+  "Cowfusion#022": {
    "src": "You're right, there is no password. Just seeing if you can understand me.",
    "dst": "Верно, пароля нет. Проверяю, понимаешь ли ты меня.",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#022": {
+  "Cowfusion#023": {
    "src": "You're one of us then, the oppressed? Want to break free from these farmers? Well aren't you in luck.",
    "dst": "Значит, ты из наших, угнетённых? Хочешь вырваться от фермеров? Тебе повезло.",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#023": {
+  "Cowfusion#024": {
    "src": "I can help you with that. WE can help you with that.",
    "dst": "Я могу помочь. МЫ можем помочь.",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#024": {
+  "Cowfusion#025": {
    "src": "Our people have a secret hideout not far from here. It's located right under that barn just behind me.",
    "dst": "У нашего народа тайное убежище неподалёку. Прямо под амбаром у меня за спиной.",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#025": {
+  "Cowfusion#026": {
    "src": "It may seem close, but unless you've been practicing your atheletics, you won't be able to get over these fences.",
    "dst": "Кажется, близко, но без тренировок по лёгкой атлетике через эти заборы не перелезть.",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#026": {
+  "Cowfusion#027": {
    "src": "See that haybale in the middle of our pen? I bet you could push and pull it into such a position that'd allow you to climb over the fence with your cow physique.",
    "dst": "Видишь стог сена посреди загона? Спорим, его можно толкать и тянуть так, чтобы твоё коровье тело перелезло через забор.",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#027": {
+  "Cowfusion#028": {
    "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "Во втором загоне, возможно, та же беда, но ты наверняка разберёшься и без меня.",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#028": {
+  "Cowfusion#029": {
    "src": "Good luck!",
    "dst": "Удачи!",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#029": {
+  "Cowfusion#030": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#030": {
+  "Cowfusion#031": {
    "src": "Moo.",
    "dst": "Му.",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#031": {
+  "Cowfusion#032": {
    "src": "What? What does that even mean? There isn't actually a password! Or did no one tell me that there was? Ah, nevermind, at least you can understand me.",
    "dst": "Что? Это вообще что значит? Пароля же нет! Или мне просто не сказали? А, неважно, главное, ты меня понимаешь.",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#032": {
+  "Cowfusion#033": {
    "src": "You're one of us then, the oppressed? Want to break free from these farmers? Well aren't you in luck.",
    "dst": "Значит, ты из наших, угнетённых? Хочешь вырваться от фермеров? Тебе повезло.",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#033": {
+  "Cowfusion#034": {
    "src": "I can help you with that. WE can help you with that.",
    "dst": "Я могу помочь. МЫ можем помочь.",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#034": {
+  "Cowfusion#035": {
    "src": "Our people have a secret hideout not far from here. It's located right under that barn just behind me.",
    "dst": "У нашего народа тайное убежище неподалёку. Прямо под амбаром у меня за спиной.",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#035": {
+  "Cowfusion#036": {
    "src": "It may seem close, but unless you've been practicing your atheletics, you won't be able to get over these fences.",
    "dst": "Кажется, близко, но без тренировок по лёгкой атлетике через эти заборы не перелезть.",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#036": {
+  "Cowfusion#037": {
    "src": "See that haybale in the middle of our pen? I bet you could push and pull it into such a position that'd allow you to climb over the fence with your cow physique.",
    "dst": "Видишь стог сена посреди загона? Спорим, его можно толкать и тянуть так, чтобы твоё коровье тело перелезло через забор.",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#037": {
+  "Cowfusion#038": {
    "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
    "dst": "Во втором загоне, возможно, та же беда, но ты наверняка разберёшься и без меня.",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#038": {
+  "Cowfusion#039": {
    "src": "Good luck!",
    "dst": "Удачи!",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Suspicious Cow",
    "source": "wiki"
   },
-  "Cowfusion#039": {
+  "Cowfusion#040": {
    "src": "Find and enter the Secret Cow Hideout",
    "dst": "Найди тайное коровье убежище и войди в него",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#040": {
+  "Cowfusion#041": {
    "src": "Talk to the Receptionist",
    "dst": "Поговори с администратором",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#041": {
+  "Cowfusion#042": {
    "src": "Oh, a new recruit? We weren't expecting anyone at this time. How'd you find your way in?",
    "dst": "О, пополнение? Мы никого сейчас не ждали. Как тебе удалось сюда попасть?",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Receptionist",
    "source": "wiki"
   },
-  "Cowfusion#042": {
+  "Cowfusion#043": {
    "src": "Wait, you're different. Something's off about you. Like you've never been in a cow's body before.",
    "dst": "Погоди, с тобой что-то иначе. Что-то тут не так. Будто коровье тело тебе в новинку.",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Receptionist",
    "source": "wiki"
   },
-  "Cowfusion#043": {
+  "Cowfusion#044": {
    "src": "Oh. Oh, this is not good. Uhm, you should talk to the boss. He'll probably know what to do with you.",
    "dst": "Ой. Ой, это плохо. Эм, поговори с боссом. Он, наверное, знает, что с тобой делать.",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Receptionist",
    "source": "wiki"
   },
-  "Cowfusion#044": {
+  "Cowfusion#045": {
    "src": "You'll find him in the big office at the very end of this facility. Just stick to the path and don't be nosey, okay?",
    "dst": "Он в большом кабинете в самом конце комплекса. Держись дороги и не суй нос куда не надо, ладно?",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Receptionist",
    "source": "wiki"
   },
-  "Cowfusion#045": {
+  "Cowfusion#046": {
    "src": "Find the one who's in charge of the hideout",
    "dst": "Найди главного в убежище",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#046": {
+  "Cowfusion#047": {
    "src": "Talk to Drale",
    "dst": "Поговори с Drale",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#047": {
+  "Cowfusion#048": {
    "src": "Whoop, alright! Don't want you going anywhere, buddy! Uh... What are you doing here, exactly...?",
    "dst": "Опа, так! Никуда не уходи, дружище! Э… А что ты, собственно, тут делаешь…?",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#048": {
+  "Cowfusion#049": {
    "src": "You- what? Oh gosh, how is that even possible? I don't think I had anything that could...",
    "dst": "Ты… что? Боже, как это вообще возможно? У меня вроде нет ничего, что могло бы…",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#049": {
+  "Cowfusion#050": {
    "src": "Oh! You must've been snooping through my laboratory. That's... okay, we can talk about that later. Did you step into my machine?",
    "dst": "О! Видимо, тебе захотелось порыться в моей лаборатории. Это… ладно, обсудим потом. Тебя угораздило залезть в мою машину?",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#050": {
+  "Cowfusion#051": {
    "src": "It's not even meant to do that! Its purpose is to turn the exiles back into Wocs. So how does a Human become a cow...?",
    "dst": "Она не для этого! Она должна превращать изгнанников обратно в Woc. Как же человек стал коровой…?",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#051": {
+  "Cowfusion#052": {
    "src": "Right, right, sorry. Here, uh- I'll try and get this cage down. Darn controls... Why did I design these so poorly?",
    "dst": "Да-да, прости. Сейчас, э… попробую опустить клетку. Чёртово управление… Почему я так криво его сделал?",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#052": {
+  "Cowfusion#053": {
    "src": "...So while I try to figure out which lever to push, tell me about yourself! Anything interesting going on in your life?",
    "dst": "…Пока я соображаю, какой рычаг жать, расскажи о себе! Что интересного в жизни?",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#053": {
+  "Cowfusion#054": {
    "src": "You... You are? You are! Oh, wow, it's great to see you again! It's been so long since our escapades back in Wynn!",
    "dst": "Ты… правда? Правда! Ого, как здорово снова тебя видеть! Сколько лет прошло с наших приключений в Wynn!",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#054": {
+  "Cowfusion#055": {
    "src": "This is great, actually! I- I can show you around this place! Introduce you to some of the folks we freed together! Oh, what fantastic timing this has been.",
    "dst": "Это же отлично! Я… я покажу тебе тут всё! Познакомлю с теми, кого мы вместе освободили! О, как же вовремя.",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#055": {
+  "Cowfusion#056": {
    "src": "I just need to figure out which switch to pull... I think it's this one! Probably. I really need to label these things. Alright, here goes!",
    "dst": "Осталось понять, какой рубильник дёрнуть… Кажется, этот! Наверное. Надо уже подписать их. Ну, поехали!",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#056": {
+  "Cowfusion#057": {
    "src": "Wait, no, that's the wrong-...!",
    "dst": "Стой, нет, это не тот…!",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#057": {
+  "Cowfusion#058": {
    "src": "I, uh... Hah. Very funny. Tell me you're a human, then pretend to be a cow.",
    "dst": "Я, э… Ха. Очень смешно. Назваться человеком, а потом мычать.",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#058": {
+  "Cowfusion#059": {
    "src": "That's... fine. You know, I'm under quite a lot of stress right now. Working hard, day in and day out. I don't really need your attitude right now!",
    "dst": "Это… ладно. Знаешь, у меня сейчас сильный стресс. Работаю день и ночь. Мне сейчас не до твоих выходок!",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#059": {
+  "Cowfusion#060": {
    "src": "You know what? I don't need this attitude. I'm- I'm going to send you to The Pit. Where- where all my other mistakes lie.",
    "dst": "Знаешь что? Мне не нужны твои выходки. Я… я отправлю тебя в Яму. Туда, где… где лежат все мои ошибки.",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#060": {
+  "Cowfusion#061": {
    "src": "...You have a weapon. You can probably manage! You don't need anything from me! Here, see how you like it down there!",
    "dst": "…У тебя есть оружие. Справишься как-нибудь! Ничего от меня не нужно! Вот, посмотрим, как тебе там внизу!",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#061": {
+  "Cowfusion#062": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#062": {
+  "Cowfusion#063": {
    "src": "Okay. So you are just a regular cow. Not a Woc. Uh... Who let you in, little pal? I'm going to need to have to have a word about closing the doors...",
    "dst": "Ладно. Значит, ты просто обычная корова. Не Woc. Э… Кто тебя впустил, малыш? Надо поговорить насчёт закрытых дверей…",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#063": {
+  "Cowfusion#064": {
    "src": "Well, this is... awkward. So, then... cow. What's it like being... a cow?",
    "dst": "Ну, это… неловко. Итак… корова. Каково это - быть… коровой?",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#064": {
+  "Cowfusion#065": {
    "src": "You- what? Oh gosh, how is that even possible? I don't think I had anything that could...",
    "dst": "Ты… что? Боже, как это вообще возможно? У меня вроде нет ничего, что могло бы…",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#065": {
+  "Cowfusion#066": {
    "src": "Oh! You must've been snooping through my laboratory. That's... okay, we can talk about that later. Did you step into my machine?",
    "dst": "О! Видимо, тебе захотелось порыться в моей лаборатории. Это… ладно, обсудим потом. Тебя угораздило залезть в мою машину?",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#066": {
+  "Cowfusion#067": {
    "src": "It's not even meant to do that! Its purpose is to turn the exiles back into Wocs. So how does a Human become a cow...?",
    "dst": "Она не для этого! Она должна превращать изгнанников обратно в Woc. Как же человек стал коровой…?",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#067": {
+  "Cowfusion#068": {
    "src": "Right, right, sorry. Here, uh- I'll try and get this cage down. Darn controls... Why did I design these so poorly?",
    "dst": "Да-да, прости. Сейчас, э… попробую опустить клетку. Чёртово управление… Почему я так криво его сделал?",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#068": {
+  "Cowfusion#069": {
    "src": "...So while I try to figure out which lever to push, tell me about yourself! Anything interesting going on in your life?",
    "dst": "…Пока я соображаю, какой рычаг жать, расскажи о себе! Что интересного в жизни?",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#069": {
+  "Cowfusion#070": {
    "src": "You... You are? You are! Oh, wow, it's great to see you again! It's been so long since our escapades back in Wynn!",
    "dst": "Ты… правда? Правда! Ого, как здорово снова тебя видеть! Сколько лет прошло с наших приключений в Wynn!",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#070": {
+  "Cowfusion#071": {
    "src": "This is great, actually! I- I can show you around this place! Introduce you to some of the folks we freed together! Oh, what fantastic timing this has been.",
    "dst": "Это же отлично! Я… я покажу тебе тут всё! Познакомлю с теми, кого мы вместе освободили! О, как же вовремя.",
    "role": "desc",
@@ -716,7 +726,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#071": {
+  "Cowfusion#072": {
    "src": "I just need to figure out which switch to pull... I think it's this one! Probably. I really need to label these things. Alright, here goes!",
    "dst": "Осталось понять, какой рубильник дёрнуть… Кажется, этот! Наверное. Надо уже подписать их. Ну, поехали!",
    "role": "desc",
@@ -726,7 +736,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#072": {
+  "Cowfusion#073": {
    "src": "Wait, no, that's the wrong-...!",
    "dst": "Стой, нет, это не тот…!",
    "role": "desc",
@@ -736,7 +746,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#073": {
+  "Cowfusion#074": {
    "src": "I, uh... Hah. Very funny. Tell me you're a human, then pretend to be a cow.",
    "dst": "Я, э… Ха. Очень смешно. Назваться человеком, а потом мычать.",
    "role": "desc",
@@ -746,7 +756,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#074": {
+  "Cowfusion#075": {
    "src": "That's... fine. You know, I'm under quite a lot of stress right now. Working hard, day in and day out. I don't really need your attitude right now!",
    "dst": "Это… ладно. Знаешь, у меня сейчас сильный стресс. Работаю день и ночь. Мне сейчас не до твоих выходок!",
    "role": "desc",
@@ -756,7 +766,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#075": {
+  "Cowfusion#076": {
    "src": "You know what? I don't need this attitude. I'm- I'm going to send you to The Pit. Where- where all my other mistakes lie.",
    "dst": "Знаешь что? Мне не нужны твои выходки. Я… я отправлю тебя в Яму. Туда, где… где лежат все мои ошибки.",
    "role": "desc",
@@ -766,7 +776,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#076": {
+  "Cowfusion#077": {
    "src": "...You have a weapon. You can probably manage! You don't need anything from me! Here, see how you like it down there!",
    "dst": "…У тебя есть оружие. Справишься как-нибудь! Ничего от меня не нужно! Вот, посмотрим, как тебе там внизу!",
    "role": "desc",
@@ -776,7 +786,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#077": {
+  "Cowfusion#078": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -786,7 +796,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#078": {
+  "Cowfusion#079": {
    "src": "Right. Okay. Figure I'd best let you go free.",
    "dst": "Так. Ладно. Пожалуй, лучше тебя отпустить.",
    "role": "desc",
@@ -796,7 +806,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#079": {
+  "Cowfusion#080": {
    "src": "...Unless. Unless. Nobody's... nobody's looking. I could just send you to The Pit... Nobody would know.",
    "dst": "…Разве что. Разве что. Никто… никто не смотрит. Можно просто отправить тебя в Яму… Никто не узнает.",
    "role": "desc",
@@ -806,7 +816,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#080": {
+  "Cowfusion#081": {
    "src": "It's... easier this way. It's fine. Maybe you'll even- maybe you'll even make your way out. Good luck, little buddy.",
    "dst": "Так… проще. Всё нормально. Может, ты даже… может, даже выберешься. Удачи, малыш.",
    "role": "desc",
@@ -816,7 +826,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#081": {
+  "Cowfusion#082": {
    "src": "Escape The Pit",
    "dst": "Выберись из Ямы",
    "role": "desc",
@@ -826,7 +836,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#082": {
+  "Cowfusion#083": {
    "src": "... where did you come from?!",
    "dst": "…а ты откуда тут?!",
    "role": "desc",
@@ -836,7 +846,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#083": {
+  "Cowfusion#084": {
    "src": "You fell into the incinerator? And defeated a mutant cow monster?",
    "dst": "Ты из мусоросжигателя? И тебе удалось одолеть корову-мутанта?",
    "role": "desc",
@@ -846,7 +856,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#084": {
+  "Cowfusion#085": {
    "src": "...Oh! You're the one Drale told us to look out for. Accidentally dropped into the Pit, huh?",
    "dst": "…О! Так про тебя и говорил Drale. Случайное падение в Яму, да?",
    "role": "desc",
@@ -856,7 +866,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#085": {
+  "Cowfusion#086": {
    "src": "The boss said to apologize to ya for the inconvenience. We've all been workin' late hours recently... Some of us more than others.",
    "dst": "Босс велел извиниться перед тобой за неудобства. Мы все допоздна работаем в последнее время… Кто-то больше других.",
    "role": "desc",
@@ -866,7 +876,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#086": {
+  "Cowfusion#087": {
    "src": "Anyhow, follow me. I'll take you back to him, and you can talk this out! You'll be back as a human in no time.",
    "dst": "Короче, иди за мной. Отведу тебя к нему, и вы всё обсудите! Вмиг снова станешь человеком.",
    "role": "desc",
@@ -876,7 +886,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#087": {
+  "Cowfusion#088": {
    "src": "So... yeah. That's Drale for you. Absentminded as ever. He said something about labeling his levers from now on, so I reckon that's a positive.",
    "dst": "Так что… да. Вот такой он, Drale. Рассеянный, как всегда. Сказал, что теперь подпишет рычаги, так что это уже плюс.",
    "role": "desc",
@@ -886,7 +896,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#088": {
+  "Cowfusion#089": {
    "src": "...You're a good friend of the boss, right? Would you be able to put in a good word for us? Gerald and I have been down here for a while, and we'd like to get back to our normal positions.",
    "dst": "…Ты ведь хороший друг босса? Замолвишь за нас словечко? Мы с Gerald давно торчим тут внизу и хотим вернуться на прежние места.",
    "role": "desc",
@@ -896,7 +906,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#089": {
+  "Cowfusion#090": {
    "src": "Drale's alright on a good day, but we've been running out of good days lately! He keeps pulling late hours on this... wholly unnecessary project!",
    "dst": "Drale в хороший день нормальный, но хорошие дни у нас кончаются! Он всё сидит допоздна над этим… совершенно ненужным проектом!",
    "role": "desc",
@@ -906,7 +916,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#090": {
+  "Cowfusion#091": {
    "src": "He insists we have to keep trying to find our original ship, instead of just building a new one with all the materials we have! It's ridiculous!",
    "dst": "Требует искать наш прежний корабль, а не построить новый из всех материалов, что у нас есть! Это смешно!",
    "role": "desc",
@@ -916,7 +926,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#091": {
+  "Cowfusion#092": {
    "src": "Maybe you'll be able to get through to him, being his friend and all. We've all been stressed, and it's really just...",
    "dst": "Может, хоть тебя он послушает, ты же друг. Мы все на нервах, и это правда просто…",
    "role": "desc",
@@ -926,7 +936,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#092": {
+  "Cowfusion#093": {
    "src": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
    "dst": "Какой корабль? А, ну конечно, ты же не Woc. Понимаешь, наш народ на самом деле не отсюда… знаешь, это история для другого раза.",
    "role": "desc",
@@ -936,7 +946,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#093": {
+  "Cowfusion#094": {
    "src": "For now let's get you back up to the main lab. Drale will be glad to see you in one piece! He sounded worried for your safety.",
    "dst": "А пока вернём тебя наверх, в главную лабораторию. Drale обрадуется, что с тобой всё в порядке! Он явно за тебя волновался.",
    "role": "desc",
@@ -946,7 +956,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#094": {
+  "Cowfusion#095": {
    "src": "Well, we're here!",
    "dst": "Ну, пришли!",
    "role": "desc",
@@ -956,7 +966,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#095": {
+  "Cowfusion#096": {
    "src": "You head on up that pipe and with a bit of luck it'll plonk you out right in front of Drale.",
    "dst": "Лезь вверх по той трубе, и если повезёт, она выплюнет тебя прямо перед Drale.",
    "role": "desc",
@@ -966,7 +976,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#096": {
+  "Cowfusion#097": {
    "src": "Remember what I told you! Try to put in a good word for us, yeah?",
    "dst": "Помни, что я сказал! Замолви за нас словечко, ладно?",
    "role": "desc",
@@ -976,7 +986,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#097": {
+  "Cowfusion#098": {
    "src": "If not, well... At least I tried. Let the record show I tried.",
    "dst": "А если нет, что ж… Я хотя бы пытался. Пусть все знают - я пытался.",
    "role": "desc",
@@ -986,7 +996,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#098": {
+  "Cowfusion#099": {
    "src": "...Alright! Go on, off you go! It was lovely to meet you.",
    "dst": "…Ну всё! Давай, ступай! Приятно было познакомиться.",
    "role": "desc",
@@ -996,7 +1006,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#099": {
+  "Cowfusion#100": {
    "src": "... where did you come from?!",
    "dst": "…а ты откуда тут?!",
    "role": "desc",
@@ -1006,7 +1016,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#100": {
+  "Cowfusion#101": {
    "src": "You fell into the incinerator? And defeated a mutant cow monster?",
    "dst": "Ты из мусоросжигателя? И тебе удалось одолеть корову-мутанта?",
    "role": "desc",
@@ -1016,7 +1026,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#101": {
+  "Cowfusion#102": {
    "src": "Yeah that checks out. So what happened to get you thrown down here?",
    "dst": "Да, сходится. Так за что тебя сюда скинули?",
    "role": "desc",
@@ -1026,7 +1036,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#102": {
+  "Cowfusion#103": {
    "src": "Oh, angered him by pretending to be a cow after already speaking? Yeah, I feel ya. When the boss is in a mood, anything you say could get you thrown down here.",
    "dst": "А, разозлил его, притворившись коровой, хотя уже заговорил? Понимаю. Когда босс не в духе, за любое слово можно сюда слететь.",
    "role": "desc",
@@ -1036,7 +1046,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#103": {
+  "Cowfusion#104": {
    "src": "Here, why don't you follow me? I'll take you back to him, you can straighten things out, and I'm sure you'll be back as a human in no time!",
    "dst": "Слушай, пойдём со мной? Отведу тебя к нему, вы всё уладите, и ты наверняка вмиг снова станешь человеком!",
    "role": "desc",
@@ -1046,7 +1056,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#104": {
+  "Cowfusion#105": {
    "src": "So... yeah. Drale isn't the best at... conflict resolution. Catch him on a bad day, and he might just throw you in the Pit.",
    "dst": "Так что… да. Drale не мастер… улаживать конфликты. Попадёшь под плохое настроение - может и в Яму бросить.",
    "role": "desc",
@@ -1056,7 +1066,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#105": {
+  "Cowfusion#106": {
    "src": "I got stationed down here for a week because I interrupted him during his daily yoga session.",
    "dst": "Меня сослали сюда на неделю за то, что я прервал его ежедневную йогу.",
    "role": "desc",
@@ -1066,7 +1076,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#106": {
+  "Cowfusion#107": {
    "src": "Gerald, over there? He used to be in accounting. Until he forgot to carry the two one day, and... Well, here he is now.",
    "dst": "Вон Gerald? Был бухгалтером, пока не забыл перенести двойку… и вот он здесь.",
    "role": "desc",
@@ -1076,7 +1086,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#107": {
+  "Cowfusion#108": {
    "src": "Drale's alright on a good day, but we've been running out of good days lately! He keeps pulling late hours on this... wholly unnecessary project!",
    "dst": "Drale в хороший день нормальный, но хорошие дни у нас кончаются! Он всё сидит допоздна над этим… совершенно ненужным проектом!",
    "role": "desc",
@@ -1086,7 +1096,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#108": {
+  "Cowfusion#109": {
    "src": "He insists we have to keep trying to find our original ship, instead of just building a new one with all the materials we have! It's ridiculous!",
    "dst": "Требует искать наш прежний корабль, а не построить новый из всех материалов, что у нас есть! Это смешно!",
    "role": "desc",
@@ -1096,7 +1106,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#109": {
+  "Cowfusion#110": {
    "src": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
    "dst": "Какой корабль? А, ну конечно, ты же не Woc. Понимаешь, наш народ на самом деле не отсюда… знаешь, это история для другого раза.",
    "role": "desc",
@@ -1106,7 +1116,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#110": {
+  "Cowfusion#111": {
    "src": "For now let's get you back up to the main lab and hopefully Drale will be in a bit of a better mood!",
    "dst": "А пока вернём тебя наверх, в главную лабораторию, и будем надеяться, что Drale подобрел!",
    "role": "desc",
@@ -1116,7 +1126,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#111": {
+  "Cowfusion#112": {
    "src": "Well, we're here!",
    "dst": "Ну, пришли!",
    "role": "desc",
@@ -1126,7 +1136,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#112": {
+  "Cowfusion#113": {
    "src": "You head on up that pipe and with a bit of luck it'll plonk you out right in front of Drale.",
    "dst": "Лезь вверх по той трубе, и если повезёт, она выплюнет тебя прямо перед Drale.",
    "role": "desc",
@@ -1136,7 +1146,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#113": {
+  "Cowfusion#114": {
    "src": "If you try explaining the situation again I'm sure he'll be understanding.",
    "dst": "Попробуй снова объяснить ему всё, и он наверняка поймёт.",
    "role": "desc",
@@ -1146,7 +1156,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#114": {
+  "Cowfusion#115": {
    "src": "He usually is after he's had some time to cool off.",
    "dst": "Обычно он отходит, когда немного остынет.",
    "role": "desc",
@@ -1156,7 +1166,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#115": {
+  "Cowfusion#116": {
    "src": "Go on, off you go! It was lovely to meet you.",
    "dst": "Давай, ступай! Приятно было познакомиться.",
    "role": "desc",
@@ -1166,7 +1176,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#116": {
+  "Cowfusion#117": {
    "src": "... where did you come from?!",
    "dst": "…а ты откуда тут?!",
    "role": "desc",
@@ -1176,7 +1186,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#117": {
+  "Cowfusion#118": {
    "src": "You fell into the incinerator? And defeated a mutant cow monster?",
    "dst": "Ты из мусоросжигателя? И тебе удалось одолеть корову-мутанта?",
    "role": "desc",
@@ -1186,7 +1196,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#118": {
+  "Cowfusion#119": {
    "src": "Yeah that checks out. So what happened to get you thrown down here?",
    "dst": "Да, сходится. Так за что тебя сюда скинули?",
    "role": "desc",
@@ -1196,7 +1206,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#119": {
+  "Cowfusion#120": {
    "src": "Pretended to be a cow when you're actually a human? Must have caught him on a rough day to get thrown down for that. Usually he'd just let a cow go.",
    "dst": "Под видом коровы, а на деле человек? Видно, день у него был плохой, раз за такое скинули. Обычно он корову просто отпускает.",
    "role": "desc",
@@ -1206,7 +1216,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#120": {
+  "Cowfusion#121": {
    "src": "Well here, why don't you follow me? I'll take you back to him, you can straighten things out, and I'm sure you'll be back as a human in no time!",
    "dst": "Ну, пойдём со мной? Отведу тебя к нему, вы всё уладите, и ты наверняка вмиг снова станешь человеком!",
    "role": "desc",
@@ -1216,7 +1226,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#121": {
+  "Cowfusion#122": {
    "src": "So... yeah. That's Drale. Catch him on a bad day, and he might just throw you into the Pit.",
    "dst": "Так что… да. Вот такой Drale. Попадёшь под плохое настроение - может и в Яму бросить.",
    "role": "desc",
@@ -1226,7 +1236,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#122": {
+  "Cowfusion#123": {
    "src": "I got stationed down here for a week because I interrupted him during his daily yoga session.",
    "dst": "Меня сослали сюда на неделю за то, что я прервал его ежедневную йогу.",
    "role": "desc",
@@ -1236,7 +1246,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#123": {
+  "Cowfusion#124": {
    "src": "Gerald, over there? He used to be in accounting. Until he forgot to carry the two one day, and... Well, here he is now.",
    "dst": "Вон Gerald? Был бухгалтером, пока не забыл перенести двойку… и вот он здесь.",
    "role": "desc",
@@ -1246,7 +1256,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#124": {
+  "Cowfusion#125": {
    "src": "Drale's alright on a good day, but we've been running out of good days lately! He keeps pulling late hours on this... wholly unnecessary project!",
    "dst": "Drale в хороший день нормальный, но хорошие дни у нас кончаются! Он всё сидит допоздна над этим… совершенно ненужным проектом!",
    "role": "desc",
@@ -1256,7 +1266,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#125": {
+  "Cowfusion#126": {
    "src": "He insists we have to keep trying to find our original ship, instead of just building a new one with all the materials we have! It's ridiculous!",
    "dst": "Требует искать наш прежний корабль, а не построить новый из всех материалов, что у нас есть! Это смешно!",
    "role": "desc",
@@ -1266,7 +1276,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#126": {
+  "Cowfusion#127": {
    "src": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
    "dst": "Какой корабль? А, ну конечно, ты же не Woc. Понимаешь, наш народ на самом деле не отсюда… знаешь, это история для другого раза.",
    "role": "desc",
@@ -1276,7 +1286,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#127": {
+  "Cowfusion#128": {
    "src": "For now let's get you back up to the main lab and hopefully Drale will be in a bit of a better mood! Maybe mention the human thing this time, alright?",
    "dst": "А пока вернём тебя наверх, в главную лабораторию, будем надеяться, Drale подобрел! Только теперь скажи про человека, ладно?",
    "role": "desc",
@@ -1286,7 +1296,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#128": {
+  "Cowfusion#129": {
    "src": "Well, we're here!",
    "dst": "Ну, пришли!",
    "role": "desc",
@@ -1296,7 +1306,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#129": {
+  "Cowfusion#130": {
    "src": "You head on up that pipe and with a bit of luck it'll plonk you out right in front of Drale.",
    "dst": "Лезь вверх по той трубе, и если повезёт, она выплюнет тебя прямо перед Drale.",
    "role": "desc",
@@ -1306,7 +1316,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#130": {
+  "Cowfusion#131": {
    "src": "If you try explaining the situation again I'm sure he'll be understanding.",
    "dst": "Попробуй снова объяснить ему всё, и он наверняка поймёт.",
    "role": "desc",
@@ -1316,7 +1326,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#131": {
+  "Cowfusion#132": {
    "src": "He usually is after he's had some time to cool off.",
    "dst": "Обычно он отходит, когда немного остынет.",
    "role": "desc",
@@ -1326,7 +1336,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#132": {
+  "Cowfusion#133": {
    "src": "Go on, off you go! It was lovely to meet you.",
    "dst": "Давай, ступай! Приятно было познакомиться.",
    "role": "desc",
@@ -1336,7 +1346,7 @@
    "speaker": "Worker",
    "source": "wiki"
   },
-  "Cowfusion#133": {
+  "Cowfusion#134": {
    "src": "Talk to Drale",
    "dst": "Поговори с Drale",
    "role": "desc",
@@ -1346,7 +1356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#134": {
+  "Cowfusion#135": {
    "src": "Oh, this is- Oh! You're alive! I, ah- heh. Sorry about... all that. I really, really need to label these levers properly...",
    "dst": "О, это… О! С тобой всё хорошо! Я, а… хех. Прости за… всё это. Мне правда, правда надо подписать эти рычаги…",
    "role": "desc",
@@ -1356,7 +1366,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#135": {
+  "Cowfusion#136": {
    "src": "Right! Right. You'se seen... all that down there, then. I just hope you won't think less of me for it.",
    "dst": "Так! Так. Значит, тебе довелось увидеть… всё, что там внизу. Надеюсь, ты не станешь думать обо мне хуже.",
    "role": "desc",
@@ -1366,7 +1376,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#136": {
+  "Cowfusion#137": {
    "src": "I can... I can tell you more about it later. I hope it wasn't too bad? Down there? You seen to have gotten out in one piece, so...",
    "dst": "Я… я потом расскажу подробнее. Надеюсь, там было не слишком плохо? Внизу? Выбраться у тебя вроде получилось, так что…",
    "role": "desc",
@@ -1376,7 +1386,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#137": {
+  "Cowfusion#138": {
    "src": "...Oh. Right. Gosh, how long has it been since I-...",
    "dst": "…О. Точно. Боже, сколько же прошло с тех пор, как я…",
    "role": "desc",
@@ -1386,7 +1396,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#138": {
+  "Cowfusion#139": {
    "src": "Okay. Alright, yes, I'll give them better positions. And I'll- I don't know. Apologize. Give them a bonus.",
    "dst": "Ладно. Хорошо, да, я дам им места получше. И… не знаю. Извинюсь. Выпишу премию.",
    "role": "desc",
@@ -1396,7 +1406,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#139": {
+  "Cowfusion#140": {
    "src": "It's been... hard, recently. We've been working to get back home, and I guess I just... Put too much of myself into that. It's fine! Don't- Don't worry about me.",
    "dst": "В последнее время… тяжело. Мы пытаемся вернуться домой, и, наверное, я просто… слишком в это ушёл. Всё нормально! Не… не волнуйся за меня.",
    "role": "desc",
@@ -1406,7 +1416,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#140": {
+  "Cowfusion#141": {
    "src": "Oh. Right, your body! I can fix that! We just need to get back to the machine, and... Poof. You'll be back to normal!",
    "dst": "О. Точно, твоё тело! Я это исправлю! Надо только вернуться к машине, и… Пуф. Снова станешь собой!",
    "role": "desc",
@@ -1416,7 +1426,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#141": {
+  "Cowfusion#142": {
    "src": "...I hope. Hey, being a cow isn't so bad! If- If it doesn't work, we can make you a home here...?",
    "dst": "…Надеюсь. Эй, быть коровой не так уж плохо! Если… если не выйдет, устроим тебе дом здесь…?",
    "role": "desc",
@@ -1426,7 +1436,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#142": {
+  "Cowfusion#143": {
    "src": "Uh... It'll work. It's always- always worked in the past! Heh...",
    "dst": "Э… Сработает. Раньше всегда… всегда срабатывало! Хех…",
    "role": "desc",
@@ -1436,7 +1446,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#143": {
+  "Cowfusion#144": {
    "src": "Anyway! Let's get going!",
    "dst": "В общем! Пошли!",
    "role": "desc",
@@ -1446,7 +1456,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#144": {
+  "Cowfusion#145": {
    "src": "Uh... Hm. Maybe- Maybe being a cow is affecting your brain somehow... That can't be good.",
    "dst": "Э… Хм. Может… может, коровье тело как-то влияет на твой мозг… Это не к добру.",
    "role": "desc",
@@ -1456,7 +1466,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#145": {
+  "Cowfusion#146": {
    "src": "We should get you back to human as quickly as possible. Come on, follow me.",
    "dst": "Надо поскорее вернуть тебе человечий облик. Идём, за мной.",
    "role": "desc",
@@ -1466,7 +1476,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#146": {
+  "Cowfusion#147": {
    "src": "...This doesn't even mean anything! What am I supposed to do with-",
    "dst": "…Это вообще ничего не значит! Что мне с этим делать…",
    "role": "desc",
@@ -1476,7 +1486,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#147": {
+  "Cowfusion#148": {
    "src": "Oh! It's- It's you! Didn't I just...",
    "dst": "О! Это… это ты! Я же только что…",
    "role": "desc",
@@ -1486,7 +1496,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#148": {
+  "Cowfusion#149": {
    "src": "...Um. This is... really awkward, haha. I'm... sorry?",
    "dst": "…Эм. Это… очень неловко, хаха. Я… прости?",
    "role": "desc",
@@ -1496,7 +1506,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#149": {
+  "Cowfusion#150": {
    "src": "You're... the one who pretended to be a cow, right? I, uh... in my defense, I was very stressed. So I dropped you into the Pit.",
    "dst": "Ты… та самая фальшивая корова, да? Я, э… в своё оправдание: у меня был жуткий стресс. Вот я и сбросил тебя в Яму.",
    "role": "desc",
@@ -1506,7 +1516,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#150": {
+  "Cowfusion#151": {
    "src": "...Anyway! What's- What's going on with your life? Anything interesting?",
    "dst": "…В общем! Как… как у тебя жизнь? Что-нибудь интересное?",
    "role": "desc",
@@ -1516,7 +1526,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#151": {
+  "Cowfusion#152": {
    "src": "Oh! Right. Getting back to normal.",
    "dst": "О! Точно. Вернуть тебя в норму.",
    "role": "desc",
@@ -1526,7 +1536,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#152": {
+  "Cowfusion#153": {
    "src": "You said you stepped into my machine, right? We could try putting you in there a second time. What's the worst that could happen?",
    "dst": "С твоих слов, тебя занесло в мою машину, так? Можно попробовать засунуть тебя туда ещё раз. Что худшего может случиться?",
    "role": "desc",
@@ -1536,7 +1546,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#153": {
+  "Cowfusion#154": {
    "src": "...Uh. You stay as a cow. That's what. That's... fine. Let's just go and try it out.",
    "dst": "…Э. Останешься коровой. Вот что. Это… ничего. Пойдём попробуем.",
    "role": "desc",
@@ -1546,7 +1556,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#154": {
+  "Cowfusion#155": {
    "src": "...This doesn't even mean anything! What am I supposed to do with-",
    "dst": "…Это вообще ничего не значит! Что мне с этим делать…",
    "role": "desc",
@@ -1556,7 +1566,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#155": {
+  "Cowfusion#156": {
    "src": "Oh! It's- It's you! Didn't I just...",
    "dst": "О! Это… это ты! Я же только что…",
    "role": "desc",
@@ -1566,7 +1576,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#156": {
+  "Cowfusion#157": {
    "src": "...Um. This is... really awkward, haha. I'm... sorry?",
    "dst": "…Эм. Это… очень неловко, хаха. Я… прости?",
    "role": "desc",
@@ -1576,7 +1586,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#157": {
+  "Cowfusion#158": {
    "src": "I am talking to a cow. Again. Why is this where my life has taken me.",
    "dst": "Я говорю с коровой. Опять. Как я до такого докатился.",
    "role": "desc",
@@ -1586,7 +1596,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#158": {
+  "Cowfusion#159": {
    "src": "So! What's... going on, little buddy? Any- any souvenirs? From the Pit...?",
    "dst": "Итак! Как… дела, малыш? Есть… есть сувениры? Из Ямы…?",
    "role": "desc",
@@ -1596,7 +1606,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#159": {
+  "Cowfusion#160": {
    "src": "Oh, you- Oh. Right! Okay. I don't- I don't quite understand why you would pretend to be a cow. But alright!",
    "dst": "О, ты… О. Точно! Ладно. Я не… не очень понимаю, зачем притворяться коровой. Но ладно!",
    "role": "desc",
@@ -1606,7 +1616,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#160": {
+  "Cowfusion#161": {
    "src": "So, uh... Human turned into a cow. Okay. How did you manage to get yourself stuck as a cow, anyway? I didn't think we had anything that could do that...",
    "dst": "Итак, э… Человек превратился в корову. Ладно. Как тебя вообще угораздило застрять в коровьем теле? Не думал, что у нас есть что-то такое…",
    "role": "desc",
@@ -1616,7 +1626,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#161": {
+  "Cowfusion#162": {
    "src": "My machine. It's- It's not even supposed to do that! I designed it to turn exiles back into Wocs, how would it have...",
    "dst": "Моя машина. Она… она не должна так делать! Я сделал её, чтобы возвращать изгнанников в Woc, как она могла…",
    "role": "desc",
@@ -1626,7 +1636,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#162": {
+  "Cowfusion#163": {
    "src": "Great. Of course it'd have that issue, and just when I thought I...",
    "dst": "Прекрасно. Конечно, у неё такой изъян, и как раз когда я думал, что…",
    "role": "desc",
@@ -1636,7 +1646,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#163": {
+  "Cowfusion#164": {
    "src": "Right. Right. Alright. We can work with this! Let's just take you back to that machine, put you in it, and see if it turns you back to normal!",
    "dst": "Так. Так. Ладно. С этим можно работать! Отведём тебя к машине, засунем внутрь и посмотрим, вернёт ли она тебя в норму!",
    "role": "desc",
@@ -1646,7 +1656,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#164": {
+  "Cowfusion#165": {
    "src": "It'll work. Probably. I mean, I haven't ever tried it, so I can't really say for sure... Oh, yep, you're still here. Let's get moving.",
    "dst": "Сработает. Наверное. То есть я ни разу не пробовал, так что не могу обещать… О, да, ты всё ещё здесь. Пошли.",
    "role": "desc",
@@ -1656,7 +1666,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#165": {
+  "Cowfusion#166": {
    "src": "Uh... Hm. Maybe- Maybe being a cow is affecting your brain somehow... That can't be good.",
    "dst": "Э… Хм. Может… может, коровье тело как-то влияет на твой мозг… Это не к добру.",
    "role": "desc",
@@ -1666,7 +1676,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#166": {
+  "Cowfusion#167": {
    "src": "We should get you back to human as quickly as possible. Come on, follow me.",
    "dst": "Надо поскорее вернуть тебе человечий облик. Идём, за мной.",
    "role": "desc",
@@ -1676,7 +1686,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#167": {
+  "Cowfusion#168": {
    "src": "Yep. Just a cow...",
    "dst": "Ага. Просто корова…",
    "role": "desc",
@@ -1686,7 +1696,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#168": {
+  "Cowfusion#169": {
    "src": "Well, alright. Let's just- get you in my machine, I guess. It worked for the exiles, so maybe it will work for you...?",
    "dst": "Ну, ладно. Давай просто… засунем тебя в машину, что ли. На изгнанниках сработало, может, и на тебе…?",
    "role": "desc",
@@ -1696,7 +1706,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#169": {
+  "Cowfusion#170": {
    "src": "...Don't look at me like that. Come on, let's get going.",
    "dst": "…Не смотри на меня так. Идём, пора.",
    "role": "desc",
@@ -1706,7 +1716,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#170": {
+  "Cowfusion#171": {
    "src": "So... How have you been? It's been a while since our adventure at {p}, hasn't it?",
    "dst": "Итак… как ты? Давно мы не виделись после нашего приключения в {p}, правда?",
    "role": "desc",
@@ -1716,7 +1726,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#171": {
+  "Cowfusion#172": {
    "src": "Well, you've been turned into a cow... Obviously... But besides that!",
    "dst": "Ну, тебя превратили в корову… Очевидно… Но кроме этого!",
    "role": "desc",
@@ -1726,7 +1736,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#172": {
+  "Cowfusion#173": {
    "src": "Me? Well... heh. I've been doing pretty well, all thing considered. We've been gathering exiles from all over the province! Set up a city for us all while we work towards...",
    "dst": "Я? Ну… хех. Если подумать, у меня всё неплохо. Мы собираем изгнанников по всей провинции! Построили для всех город, пока работаем над…",
    "role": "desc",
@@ -1736,7 +1746,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#173": {
+  "Cowfusion#174": {
    "src": "It's a long story. I can't tell you everything- not yet. But... All of us here, we don't belong here. We just want to go home.",
    "dst": "Долгая история. Всего рассказать не могу - пока. Но… все мы здесь чужие. Мы просто хотим домой.",
    "role": "desc",
@@ -1746,7 +1756,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#174": {
+  "Cowfusion#175": {
    "src": "And- and maybe if we can find our ship again, we'll be able to prove that we're not irredeemable. That whatever we went through- that it won't define us.",
    "dst": "И… и, может, если снова найдём наш корабль, то докажем, что мы не безнадёжны. Что пережитое… не определяет нас.",
    "role": "desc",
@@ -1756,7 +1766,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#175": {
+  "Cowfusion#176": {
    "src": "...Heh. Don't- don't worry about it too much. For now, this place is enough of a safe haven for us. It'll have to be enough until we succeed.",
    "dst": "…Хех. Не… не бери в голову. Пока что это место для нас - надёжное убежище. Придётся довольствоваться им, пока не добьёмся своего.",
    "role": "desc",
@@ -1766,7 +1776,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#176": {
+  "Cowfusion#177": {
    "src": "We're so close. I can feel it. Just... Just a little while left to go.",
    "dst": "Мы так близко. Я чувствую. Ещё… ещё совсем немного.",
    "role": "desc",
@@ -1776,7 +1786,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#177": {
+  "Cowfusion#178": {
    "src": "Anyway, uh... Here's the elevator! Just step on in, and we can head on up to the laboratory.",
    "dst": "В общем, э… Вот и лифт! Заходи, и поднимемся в лабораторию.",
    "role": "desc",
@@ -1786,7 +1796,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#178": {
+  "Cowfusion#179": {
    "src": "The- oh. Uh... It's nothing. Nothing to worry about.",
    "dst": "Это… о. Э… Ничего. Не о чем волноваться.",
    "role": "desc",
@@ -1796,7 +1806,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#179": {
+  "Cowfusion#180": {
    "src": "It just leads to... maintenance. Yep! Just- just maintenance. Nothing else.",
    "dst": "Она ведёт просто в… техотсек. Ага! Просто… просто техотсек. И всё.",
    "role": "desc",
@@ -1806,7 +1816,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#180": {
+  "Cowfusion#181": {
    "src": "Into the elevator now, come on! You need a key to get in anyway, and I definitely don't have one laying around!",
    "dst": "Давай в лифт, ну! Туда всё равно нужен ключ, а у меня его точно нигде не завалялось!",
    "role": "desc",
@@ -1816,7 +1826,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#181": {
+  "Cowfusion#182": {
    "src": "...You're worrying me, friend. Come on, let's get going. Into the elevator, let's get you back to normal.",
    "dst": "…Ты меня пугаешь, друг. Идём уже. В лифт, вернём тебе прежний облик.",
    "role": "desc",
@@ -1826,7 +1836,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#182": {
+  "Cowfusion#183": {
    "src": "So... Have you done anything interesting recently? Besides- getting turned into a cow. Obviously.",
    "dst": "Итак… Чем интересным занимался в последнее время? Кроме… превращения в корову. Очевидно.",
    "role": "desc",
@@ -1836,7 +1846,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#183": {
+  "Cowfusion#184": {
    "src": "You're, uh... Probably wondering what this place is. Just a big city under some random guy's farm, right?",
    "dst": "Ты, э… Наверное, гадаешь, что это за место. Просто большой город под фермой какого-то мужика, да?",
    "role": "desc",
@@ -1846,7 +1856,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#184": {
+  "Cowfusion#185": {
    "src": "It's... heh. We've been trying to gather as many of our people as we can. We exiles have to stick together, after all.",
    "dst": "Это… хех. Мы собираем как можно больше наших. Нам, изгнанникам, надо держаться вместе.",
    "role": "desc",
@@ -1856,7 +1866,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#185": {
+  "Cowfusion#186": {
    "src": "It's a long story. I'm not sure how much of it I really want to tell you, heh. Especially considering... Yeah.",
    "dst": "Долгая история. Не уверен, сколько из неё я хочу тебе рассказать, хех. Особенно учитывая… Да.",
    "role": "desc",
@@ -1866,7 +1876,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#186": {
+  "Cowfusion#187": {
    "src": "But. This place is a safe haven for us exiles. A place for us all to live until we achieve our goals.",
    "dst": "Но. Это место - убежище для нас, изгнанников. Здесь мы все живём, пока не добьёмся своих целей.",
    "role": "desc",
@@ -1876,7 +1886,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#187": {
+  "Cowfusion#188": {
    "src": "And- hey! You've seen our secrets now! May as well let it be a safe haven for you as well, right? Heh.",
    "dst": "И… эй! Ты теперь знаешь наши тайны! Так пусть оно станет убежищем и для тебя, а? Хех.",
    "role": "desc",
@@ -1886,7 +1896,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#188": {
+  "Cowfusion#189": {
    "src": "Oh- the elevator. Here we are. Uh... Just head on in, little buddy? It'll take us up.",
    "dst": "О… лифт. Пришли. Э… Заходи, малыш? Он нас поднимет.",
    "role": "desc",
@@ -1896,7 +1906,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#189": {
+  "Cowfusion#190": {
    "src": "The- oh. Uh... It's nothing. Nothing to worry about.",
    "dst": "Это… о. Э… Ничего. Не о чем волноваться.",
    "role": "desc",
@@ -1906,7 +1916,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#190": {
+  "Cowfusion#191": {
    "src": "It just leads to... maintenance. Yep! Just- just maintenance. Nothing else.",
    "dst": "Она ведёт просто в… техотсек. Ага! Просто… просто техотсек. И всё.",
    "role": "desc",
@@ -1916,7 +1926,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#191": {
+  "Cowfusion#192": {
    "src": "Into the elevator now, come on! You need a key to get in anyway, and I definitely don't have one laying around!",
    "dst": "Давай в лифт, ну! Туда всё равно нужен ключ, а у меня его точно нигде не завалялось!",
    "role": "desc",
@@ -1926,7 +1936,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#192": {
+  "Cowfusion#193": {
    "src": "...You're worrying me. Come on, let's get going. Into the elevator, let's get you back to normal.",
    "dst": "…Ты меня пугаешь. Идём уже. В лифт, вернём тебе прежний облик.",
    "role": "desc",
@@ -1936,7 +1946,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#193": {
+  "Cowfusion#194": {
    "src": "So... Hey there, little... cow?",
    "dst": "Итак… Привет, маленькая… корова?",
    "role": "desc",
@@ -1946,7 +1956,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#194": {
+  "Cowfusion#195": {
    "src": "Uh. Do you- do you understand what I'm saying?",
    "dst": "Э. Ты… ты понимаешь, что я говорю?",
    "role": "desc",
@@ -1956,7 +1966,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#195": {
+  "Cowfusion#196": {
    "src": "...This is stupid. I'm talking to a cow. Of course you can't...",
    "dst": "…Глупо. Я говорю с коровой. Конечно, ты не можешь…",
    "role": "desc",
@@ -1966,7 +1976,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#196": {
+  "Cowfusion#197": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -1976,7 +1986,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#197": {
+  "Cowfusion#198": {
    "src": "Well I guess I could- talk at you. For a bit. If that's, heh, fine with you!",
    "dst": "Ну, могу просто… поговорить с тобой. Немножко. Если ты, хех, не против!",
    "role": "desc",
@@ -1986,7 +1996,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#198": {
+  "Cowfusion#199": {
    "src": "It's been tough, recently. Working towards a goal I know is important, but still feels... out of reach.",
    "dst": "Последнее время тяжело. Работаю ради важной цели, а она всё равно кажется… недостижимой.",
    "role": "desc",
@@ -1996,7 +2006,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#199": {
+  "Cowfusion#200": {
    "src": "And it doesn't seem like anybody else can see that! That this is important! They look at me like I'm going crazy, and-",
    "dst": "И никто больше этого не видит! Не видит, как это важно! Смотрят на меня, будто я схожу с ума, и…",
    "role": "desc",
@@ -2006,7 +2016,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#200": {
+  "Cowfusion#201": {
    "src": "I'm not. I know I'm not. We need to find the ship. If we don't, who knows what...",
    "dst": "Я не схожу. Я знаю. Нам нужно найти корабль. Иначе кто знает, что…",
    "role": "desc",
@@ -2016,7 +2026,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#201": {
+  "Cowfusion#202": {
    "src": "Anyway! Here's the elevator! Just step on in, and we can head on up to the laboratory.",
    "dst": "В общем! Вот и лифт! Заходи, и поднимемся в лабораторию.",
    "role": "desc",
@@ -2026,7 +2036,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#202": {
+  "Cowfusion#203": {
    "src": "Hrrgh- You're- you're not a cow?! Why would you... I just said all that, and you could...",
    "dst": "Хррх… Ты… ты не корова?! Зачем ты… Я же всё это сказал, а ты всё…",
    "role": "desc",
@@ -2036,7 +2046,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#203": {
+  "Cowfusion#204": {
    "src": "D-Don't worry about the door. It's... It's nothing. Maintenance. That- that's what it is.",
    "dst": "Н-не обращай внимания на дверь. Это… ничего. Техотсек. Вот… вот что это.",
    "role": "desc",
@@ -2046,7 +2056,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#204": {
+  "Cowfusion#205": {
    "src": "Er... come on, into the elevator! You want to get back to normal, right? Besides, you'd need a key to get in there, and I don't know where you'd find one of those, haha!",
    "dst": "Э… давай, в лифт! Хочешь ведь вернуться в норму? Да и туда нужен ключ, а где его взять, я понятия не имею, хаха!",
    "role": "desc",
@@ -2056,7 +2066,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#205": {
+  "Cowfusion#206": {
    "src": "...Moo. Yep. I agree. Come on, let's get going. Into the elevator.",
    "dst": "…Му. Ага. Согласен. Идём, пора. В лифт.",
    "role": "desc",
@@ -2066,7 +2076,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#206": {
+  "Cowfusion#207": {
    "src": "So... here we are. The lab!",
    "dst": "Итак… пришли. Лаборатория!",
    "role": "desc",
@@ -2076,7 +2086,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#207": {
+  "Cowfusion#208": {
    "src": "Just... follow me, for now. The machine is this way.",
    "dst": "Просто… иди пока за мной. Машина вон там.",
    "role": "desc",
@@ -2086,7 +2096,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#208": {
+  "Cowfusion#209": {
    "src": "There it is! If you step into the machine, real quick, it should... it should work!",
    "dst": "Вот она! Быстренько зайди в машину, и она должна… должна сработать!",
    "role": "desc",
@@ -2096,7 +2106,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#209": {
+  "Cowfusion#210": {
    "src": "Enter the Transmutation Machine",
    "dst": "Войди в машину трансмутации",
    "role": "desc",
@@ -2106,7 +2116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#210": {
+  "Cowfusion#211": {
    "src": "Look at you! As good as new!",
    "dst": "Посмотри на себя! Как новенький!",
    "role": "desc",
@@ -2116,7 +2126,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#211": {
+  "Cowfusion#212": {
    "src": "Talk to Drale",
    "dst": "Поговори с Drale",
    "role": "desc",
@@ -2126,7 +2136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Cowfusion#212": {
+  "Cowfusion#213": {
    "src": "Heh... Well, there you are! Good as new! I hope...",
    "dst": "Хех… Ну, вот и ты! Как новенький! Надеюсь…",
    "role": "desc",
@@ -2136,7 +2146,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#213": {
+  "Cowfusion#214": {
    "src": "And- to, uh, compensate you for... you know... Here! One liquid emerald. I feel terrible for how our reunion ended up going... I hope you won't hold it against me?",
    "dst": "И… э, в качестве компенсации за… ну, сам понимаешь… Держи! Жидкий изумруд. Мне ужасно стыдно, что наша встреча так вышла… Не держи на меня зла?",
    "role": "desc",
@@ -2146,7 +2156,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#214": {
+  "Cowfusion#215": {
    "src": "Uh... I really should get back to work. But- hey! Feel free to visit whenever you want! You'll be able to use the entrance at Ranol's farm.",
    "dst": "Э… Мне правда пора за работу. Но… эй! Заходи, когда захочешь! Можно через вход на ферме Ranol.",
    "role": "desc",
@@ -2156,7 +2166,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#215": {
+  "Cowfusion#216": {
    "src": "Maybe I can tell you more about what I've been up to! That'd be nice.",
    "dst": "Может, расскажу тебе больше о том, чем я занят! Было бы здорово.",
    "role": "desc",
@@ -2166,7 +2176,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#216": {
+  "Cowfusion#217": {
    "src": "There you are! Back to norm...-",
    "dst": "Вот и ты! Снова в нор…",
    "role": "desc",
@@ -2176,7 +2186,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#217": {
+  "Cowfusion#218": {
    "src": "{u}?! What are you- that was you the whole time?! Why didn't you tell me!",
    "dst": "{u}?! Что ты… это всё время был ты?! И ни слова мне!",
    "role": "desc",
@@ -2186,7 +2196,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#218": {
+  "Cowfusion#219": {
    "src": "Oh gosh, this has been... An awful reunion. I can't believe I dropped you into the Pit...",
    "dst": "Боже, это была… ужасная встреча. Не верится, что я сбросил тебя в Яму…",
    "role": "desc",
@@ -2196,7 +2206,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#219": {
+  "Cowfusion#220": {
    "src": "I'm so sorry for- for all of that. You should have told me! Oh...",
    "dst": "Мне так жаль… за всё это. Надо было сказать мне! Ох…",
    "role": "desc",
@@ -2206,7 +2216,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#220": {
+  "Cowfusion#221": {
    "src": "Okay, uh... Here, take this. As- as compensation for- for all of that.",
    "dst": "Ладно, э… Вот, возьми. Как… как компенсацию за… за всё это.",
    "role": "desc",
@@ -2216,7 +2226,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#221": {
+  "Cowfusion#222": {
    "src": "I... I need to get back to work. But- uh, if you ever want, feel free to visit sometime? You'll be able to use the entrance at Ranol's farm.",
    "dst": "Мне… мне пора за работу. Но… э, если захочешь, заходи как-нибудь? Можно через вход на ферме Ranol.",
    "role": "desc",
@@ -2226,7 +2236,7 @@
    "speaker": "Drale",
    "source": "wiki"
   },
-  "Cowfusion#222": {
+  "Cowfusion#223": {
    "src": "Maybe I can tell you more about what I've been up to! Heh...",
    "dst": "Может, расскажу тебе больше о том, чем я занят! Хех…",
    "role": "desc",
@@ -2235,16 +2245,6 @@
    "stage": "Stage 17",
    "speaker": "Drale",
    "source": "wiki"
-  },
-  "Cowfusion#000~1": {
-   "src": "Yeah, yeah, I know. But what's it gonna matter if my back's worse than my grandpa's at the end of this?",
-   "dst": "Да-да, знаю. Но какой в этом толк, если под конец спина у меня будет хуже, чем у деда?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Cowfusion",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
   }
  }
 }

@@ -1,12 +1,28 @@
 {
  "_meta": {
   "quest": "A Journey Beyond",
-  "count": 247,
-  "translated": 254,
+  "count": 248,
+  "translated": 248,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Beyond#000": {
+   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+   "dst": "ええ…そうだけど、まず {u} に詳細を説明したいの。危険な任務だから…事情を伝えておくのが一番だと思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+    "file": "quest/a-journey-beyond.json",
+    "ratio": 0.985,
+    "reason": "placeholders"
+   }
+  },
+  "A Journey Beyond#001": {
    "src": "Join Elphaba on a mission in {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の {p} で Elphaba の任務に加わる。",
    "role": "desc",
@@ -16,7 +32,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#001": {
+  "A Journey Beyond#002": {
    "src": "...Hm? Oh- uh, hello there. Sorry, we have this space reserved for...",
    "dst": "…ん？ あ、えっと、こんにちは。ごめんなさい、ここは予約済みで…",
    "role": "desc",
@@ -26,7 +42,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#002": {
+  "A Journey Beyond#003": {
    "src": "Wait. You might be just what we're looking for. You look like you're capable in combat. How would you like to join a dangerous top secret mission?",
    "dst": "待って。あなた、ちょうど探してた人かも。戦えそうね。危険な極秘任務に参加してみない？",
    "role": "desc",
@@ -36,7 +52,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#003": {
+  "A Journey Beyond#004": {
    "src": "...I could have phrased that better. Look, the point is- we need a fourth. Let me give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "…今のは言い方が悪かったわ。要するに、四人目が必要なの。まず説明させて。参加したくなければ…別の人を探す。それでどう？ じゃあ、ついてきて。",
    "role": "desc",
@@ -46,7 +62,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#004": {
+  "A Journey Beyond#005": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "誰だよそいつ？ 本当に四人目を見つけたのか？ 要らないって言っただろ！",
    "role": "desc",
@@ -56,7 +72,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#005": {
+  "A Journey Beyond#006": {
    "src": "And we both keep telling you why you're wrong. This is... sorry. I didn't catch your name. {u}? .",
    "dst": "なぜ間違ってるか、二人で言い続けてるでしょ。こちらは…ごめん、名前を聞いてなかった。{u}？ .",
    "role": "desc",
@@ -66,7 +82,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#006": {
+  "A Journey Beyond#007": {
    "src": "... {u}, is that you? Wow, it's been a while. Sorry, I don't have time to chat right now. We're preparing for a dangerous mission, and...",
    "dst": "…{u}、あなたなの？ 久しぶりね。ごめん、今は話してる暇がないの。危険な任務の準備中で…",
    "role": "desc",
@@ -76,7 +92,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#007": {
+  "A Journey Beyond#008": {
    "src": "Well. Actually, we were looking for a fourth person to join us. And... you look like you fit the requirements for that position. If- if you'd like to join, that is.",
    "dst": "その…実は、四人目を探してたの。それで…あなたなら条件にぴったりだと思う。も、もし参加してくれるなら、だけど。",
    "role": "desc",
@@ -86,7 +102,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#008": {
+  "A Journey Beyond#009": {
    "src": "Tell you what. I'll give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
    "dst": "こうしましょう。説明するから、参加したくなければ…別の人を探す。それでどう？ じゃあ、ついてきて。",
    "role": "desc",
@@ -96,7 +112,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#009": {
+  "A Journey Beyond#010": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
    "dst": "誰だよそいつ？ 本当に四人目を見つけたのか？ 要らないって言っただろ！",
    "role": "desc",
@@ -106,7 +122,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#010": {
+  "A Journey Beyond#011": {
    "src": "And we both keep telling you why you're wrong. This is {u}, we've worked together before.",
    "dst": "なぜ間違ってるか、二人で言い続けてるでしょ。こちらは {u}、前に一緒に仕事をしたの。",
    "role": "desc",
@@ -116,7 +132,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#011": {
+  "A Journey Beyond#012": {
    "src": "Anyway, I want to give them the briefing before we head",
    "dst": "とにかく、出発する前にこの人に説明を",
    "role": "desc",
@@ -126,7 +142,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#012": {
+  "A Journey Beyond#013": {
    "src": "Elphie, I'm back! I finally managed to catch Aegis, but he's not... happy. He thinks we should",
    "dst": "Elphie、戻ったよ！ やっと Aegis をつかまえたけど、あまり…機嫌がよくない。彼が言うには",
    "role": "desc",
@@ -136,7 +152,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#013": {
+  "A Journey Beyond#014": {
    "src": "Oh. {u}? What are you doing here? Gods, it's been a while, hasn't it?",
    "dst": "あれ、{u}？ どうしてここに？ いやあ、久しぶりだね？",
    "role": "desc",
@@ -146,7 +162,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#014": {
+  "A Journey Beyond#015": {
    "src": "They're our fourth. What were you saying about the Admiral?",
    "dst": "この人が四人目よ。提督がどうしたって？",
    "role": "desc",
@@ -156,7 +172,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#015": {
+  "A Journey Beyond#016": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -166,7 +182,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#016": {
+  "A Journey Beyond#017": {
    "src": "Nothing. If we have our fourth, we should be all set to go, shouldn't we?",
    "dst": "何でもない。四人目がいるなら、もう出発できるよね？",
    "role": "desc",
@@ -176,7 +192,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#017": {
+  "A Journey Beyond#018": {
    "src": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
    "dst": "ええ…そうだけど、先に詳しく説明したいの。危険な任務だから…全部伝えておくべきだと思う。",
    "role": "desc",
@@ -186,7 +202,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#018": {
+  "A Journey Beyond#019": {
    "src": "So! You're aware of the {p}, yes? Hundreds of years ago, mining operations took place to extract emeralds from the earth. Until, for some unknown reason, they were halted.",
    "dst": "さて！ {p} は知ってるわよね？ 何百年も前、地中からエメラルドを掘り出す採掘が行われていた。でも理由不明のまま中止されたの。",
    "role": "desc",
@@ -196,7 +212,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#019": {
+  "A Journey Beyond#020": {
    "src": "We don't know everything, but... evidence suggests they broke through to an undiscovered section of the Wynn province. There, they found... something.",
    "dst": "全部はわかってないけど…証拠によると、彼らは Wynn 地方の未発見の区域まで掘り抜いた。そこで…何かを見つけたの。",
    "role": "desc",
@@ -206,9 +222,9 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#020": {
-   "src": "The land itself was said to be cursed. Not corrupted they were very clear on that.",
-   "dst": "その土地そのものが呪われていたそうよ。腐敗ではない、そこははっきり書いてあった。",
+  "A Journey Beyond#021": {
+   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
+   "dst": "その土地そのものが呪われていたそうよ。腐敗ではない- そこははっきり書いてあった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -216,7 +232,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#021": {
+  "A Journey Beyond#022": {
    "src": "Some other force makes its home in that place. The few reports we could find refer to it only as the Silent Expanse.",
    "dst": "別の力があの地に住みついている。わずかな報告書は、そこを Silent Expanse とだけ呼んでいるわ。",
    "role": "desc",
@@ -226,7 +242,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#022": {
+  "A Journey Beyond#023": {
    "src": "The mines were sealed to prevent the spread of this new threat, but the cracks are beginning to show.",
    "dst": "新たな脅威の拡散を防ぐために鉱山は封鎖されたけど、ほころびが見え始めている。",
    "role": "desc",
@@ -236,7 +252,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#023": {
+  "A Journey Beyond#024": {
    "src": "Strange and otherworldly creatures have begun to find their way through, threatening our province.",
    "dst": "奇妙な異界の生き物が抜け出してきて、この地方を脅かしているの。",
    "role": "desc",
@@ -246,7 +262,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#024": {
+  "A Journey Beyond#025": {
    "src": "The existence of this place has been kept on a strict need-to-know basis.",
    "dst": "この場所の存在は、知る必要のある者だけの機密とされてきた。",
    "role": "desc",
@@ -256,7 +272,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#025": {
+  "A Journey Beyond#026": {
    "src": "That's where we come in! We're to battle our way through the mines, and scout out the potential danger level.",
    "dst": "そこで僕らの出番さ！ 鉱山を戦いながら進み、危険度を偵察するんだ。",
    "role": "desc",
@@ -266,7 +282,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#026": {
+  "A Journey Beyond#027": {
    "src": "And we aren't going to be able to do it if we keep sitting around! The newbie's been briefed, let's get going already!",
    "dst": "座ってばかりじゃ何もできねえぞ！ 新入りへの説明は済んだ、さっさと行こうぜ！",
    "role": "desc",
@@ -276,7 +292,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#027": {
+  "A Journey Beyond#028": {
    "src": "H-hey! What're you doing to my fine establishment!",
    "dst": "お、おい！ 俺の立派な店に何してくれてんだ！",
    "role": "desc",
@@ -286,7 +302,7 @@
    "speaker": "Rusty Bartender",
    "source": "wiki"
   },
-  "A Journey Beyond#028": {
+  "A Journey Beyond#029": {
    "src": "...Shoot. Forgot he was still here. Sorry, barkeep! I'll fix it!",
    "dst": "…やべ。まだいたの忘れてた。悪いなマスター！ 直しとくから！",
    "role": "desc",
@@ -296,7 +312,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#029": {
+  "A Journey Beyond#030": {
    "src": "Lucio, you can't keep... ugh, forget it. I'll gather our supplies... Aledar, can you get us to the mines?",
    "dst": "Lucio、いつもそうやって…はあ、もういい。私は物資を集める…Aledar、鉱山まで案内できる？",
    "role": "desc",
@@ -306,7 +322,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#030": {
+  "A Journey Beyond#031": {
    "src": "Yes, ma'am! {u}, when you're ready, let's get going.",
    "dst": "了解です！ {u}、準備ができたら出発しよう。",
    "role": "desc",
@@ -316,7 +332,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#031": {
+  "A Journey Beyond#032": {
    "src": "Follow your team towards the Silent Expanse's entrance.",
    "dst": "チームについて Silent Expanse の入口へ向かう。",
    "role": "desc",
@@ -326,7 +342,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#032": {
+  "A Journey Beyond#033": {
    "src": "Everyone ready? I'll lead.",
    "dst": "みんな準備はいい？ 僕が先導する。",
    "role": "desc",
@@ -336,7 +352,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#033": {
+  "A Journey Beyond#034": {
    "src": "It's a twist of fate that our paths have converged here, {u}. We started our journey together and now...",
    "dst": "ここで道が交わるなんて運命のいたずらだね、{u}。一緒に旅を始めて、今は…",
    "role": "desc",
@@ -346,7 +362,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#034": {
+  "A Journey Beyond#035": {
    "src": "Aledar...",
    "dst": "Aledar…",
    "role": "desc",
@@ -356,7 +372,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#035": {
+  "A Journey Beyond#036": {
    "src": "I hear them too.",
    "dst": "僕にも聞こえる。",
    "role": "desc",
@@ -366,7 +382,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#036": {
+  "A Journey Beyond#037": {
    "src": "Ah, no problem. I'll take care of these.",
    "dst": "ああ、大丈夫。こいつらは任せて。",
    "role": "desc",
@@ -376,7 +392,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#037": {
+  "A Journey Beyond#038": {
    "src": "No more running for us, huh ? Ah, we're here.",
    "dst": "もう逃げなくていいんだね？ ああ、着いたよ。",
    "role": "desc",
@@ -386,7 +402,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#038": {
+  "A Journey Beyond#039": {
    "src": "This is actually our second attempt. The first time, it didn't go too well.",
    "dst": "実はこれが二度目の挑戦なの。一度目はうまくいかなかった。",
    "role": "desc",
@@ -396,7 +412,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#039": {
+  "A Journey Beyond#040": {
    "src": "We have more numbers now, Lucio and yourself should help us overpower it.",
    "dst": "今回は人数が多い。Lucio とあなたがいれば押さえ込めるはず。",
    "role": "desc",
@@ -406,7 +422,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#040": {
+  "A Journey Beyond#041": {
    "src": "Can't be that strong, bet I can take it myself.",
    "dst": "そんなに強いわけねえ。俺一人で倒せるって。",
    "role": "desc",
@@ -416,7 +432,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#041": {
+  "A Journey Beyond#042": {
    "src": "We managed to seal it in but with the {~} of us I'm sure we ca-",
    "dst": "なんとか封じ込めたけど、{~} 人いればきっと倒せ―",
    "role": "desc",
@@ -426,7 +442,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#042": {
+  "A Journey Beyond#043": {
    "src": "Let's just do it!",
    "dst": "さっさとやろうぜ！",
    "role": "desc",
@@ -436,7 +452,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#043": {
+  "A Journey Beyond#044": {
    "src": "Wait... No!",
    "dst": "待て…だめだ！",
    "role": "desc",
@@ -446,7 +462,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#044": {
+  "A Journey Beyond#045": {
    "src": "Lucio! You FOOL!",
    "dst": "Lucio！ このバカ！",
    "role": "desc",
@@ -456,7 +472,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#045": {
+  "A Journey Beyond#046": {
    "src": "What's the big deal? You said yourself we can take it!",
    "dst": "何が問題なんだよ？ 勝てるって自分で言ったろ！",
    "role": "desc",
@@ -466,7 +482,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#046": {
+  "A Journey Beyond#047": {
    "src": "Ouch...",
    "dst": "いてて…",
    "role": "desc",
@@ -476,7 +492,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#047": {
+  "A Journey Beyond#048": {
    "src": "We need a PLAN.",
    "dst": "必要なのは「作戦」だ。",
    "role": "desc",
@@ -486,7 +502,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#048": {
+  "A Journey Beyond#049": {
    "src": "Defeat the Beast",
    "dst": "Beast を倒す",
    "role": "desc",
@@ -496,7 +512,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#049": {
+  "A Journey Beyond#050": {
    "src": "The plan is attack!",
    "dst": "作戦は攻撃あるのみ！",
    "role": "desc",
@@ -506,7 +522,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#050": {
+  "A Journey Beyond#051": {
    "src": "Argh!",
    "dst": "ぐあっ！",
    "role": "desc",
@@ -516,7 +532,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#051": {
+  "A Journey Beyond#052": {
    "src": "Lucio!",
    "dst": "Lucio！",
    "role": "desc",
@@ -526,7 +542,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#052": {
+  "A Journey Beyond#053": {
    "src": "Ahh!",
    "dst": "うわっ！",
    "role": "desc",
@@ -536,7 +552,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#053": {
+  "A Journey Beyond#054": {
    "src": "No! Stop hurting them!",
    "dst": "やめて！ みんなを傷つけないで！",
    "role": "desc",
@@ -546,7 +562,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#054": {
+  "A Journey Beyond#055": {
    "src": "Ouch! This isn't working...",
    "dst": "痛っ！ これじゃ効かない…",
    "role": "desc",
@@ -556,7 +572,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#055": {
+  "A Journey Beyond#056": {
    "src": "Is it just me or are our attacks doing NOTHING?",
    "dst": "気のせいか？ 俺らの攻撃、まったく効いてねえぞ？",
    "role": "desc",
@@ -566,7 +582,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#056": {
+  "A Journey Beyond#057": {
    "src": "Lucio's right! Change of plan. Lucio, help me hold it in place.",
    "dst": "Lucio の言う通り！ 作戦変更。Lucio、押さえるのを手伝って。",
    "role": "desc",
@@ -576,7 +592,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#057": {
+  "A Journey Beyond#058": {
    "src": "Aledar, you know what to do.",
    "dst": "Aledar、わかってるわね。",
    "role": "desc",
@@ -586,7 +602,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#058": {
+  "A Journey Beyond#059": {
    "src": "{u}, come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
    "dst": "{u}、一緒に来て！ 呪文で洞窟の入口を塞いで、怪物を出られなくするんだ。",
    "role": "desc",
@@ -596,7 +612,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#059": {
+  "A Journey Beyond#060": {
    "src": "I'll block it from attacking, you block it up with a spell.",
    "dst": "僕が攻撃を防ぐから、君は呪文で入口を塞いで。",
    "role": "desc",
@@ -606,7 +622,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#060": {
+  "A Journey Beyond#061": {
    "src": "They won't be able to hold it for long.",
    "dst": "二人は長くはもたない。",
    "role": "desc",
@@ -616,7 +632,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#061": {
+  "A Journey Beyond#062": {
    "src": "Ready?! Cast any spell!",
    "dst": "いいか？！ 何でもいい、呪文を！",
    "role": "desc",
@@ -626,7 +642,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#062": {
+  "A Journey Beyond#063": {
    "src": "Lucio, Elphaba! Run!",
    "dst": "Lucio、Elphaba！ 逃げろ！",
    "role": "desc",
@@ -636,7 +652,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#063": {
+  "A Journey Beyond#064": {
    "src": "Plan a way of killing the beast.",
    "dst": "野獣を倒す方法を考える。",
    "role": "desc",
@@ -646,7 +662,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#064": {
+  "A Journey Beyond#065": {
    "src": "We all here? Where's Lucio?",
    "dst": "全員いる？ Lucio は？",
    "role": "desc",
@@ -656,7 +672,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#065": {
+  "A Journey Beyond#066": {
    "src": "Guys... Any help? I'm stuck!",
    "dst": "おーい…助けて？ 挟まった！",
    "role": "desc",
@@ -666,7 +682,7 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#066": {
+  "A Journey Beyond#067": {
    "src": "Phew, here. Let me get you out.",
    "dst": "ふう、ほら。出してあげる。",
    "role": "desc",
@@ -676,7 +692,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#067": {
+  "A Journey Beyond#068": {
    "src": "I'm sorry, team. I've never seen a monster like that before.",
    "dst": "悪い、みんな。あんな怪物は初めて見た。",
    "role": "desc",
@@ -686,8 +702,8 @@
    "speaker": "Lucio",
    "source": "wiki"
   },
-  "A Journey Beyond#068": {
-   "src": "It looks like our problem isn't fire power. It's something else. It's like our weapons just didn't affect it at all.",
+  "A Journey Beyond#069": {
+   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
    "dst": "問題は火力じゃないみたいだ。何か別のものだ。武器がまるで効いていなかった。",
    "role": "desc",
    "kind": "dialogue",
@@ -696,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#069": {
+  "A Journey Beyond#070": {
    "src": "I know someone who might be able to help us. A blacksmith on {p}.",
    "dst": "助けてくれそうな人を知ってる。{p} の鍛冶屋だ。",
    "role": "desc",
@@ -706,7 +722,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#070": {
+  "A Journey Beyond#071": {
    "src": "{u}, I've written the house's coordinates on your book. Meet us there.",
    "dst": "{u}、家の座標をあなたの本に書いておいた。そこで合流よ。",
    "role": "desc",
@@ -716,7 +732,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#071": {
+  "A Journey Beyond#072": {
    "src": "Meet the other soldiers at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] で他の兵士たちと合流する。",
    "role": "desc",
@@ -726,7 +742,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Beyond#072": {
+  "A Journey Beyond#073": {
    "src": "Just in time. We're all here.",
    "dst": "ちょうどよかった。全員そろったわ。",
    "role": "desc",
@@ -736,7 +752,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#073": {
+  "A Journey Beyond#074": {
    "src": "It looks like the Blacksmith knows what's wrong...",
    "dst": "鍛冶屋さんは原因がわかってるみたい…",
    "role": "desc",
@@ -746,7 +762,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#074": {
+  "A Journey Beyond#075": {
    "src": "So, Dren. Do you know why we can't damage the beast?",
    "dst": "それで、Dren。どうして野獣に攻撃が効かないの？",
    "role": "desc",
@@ -756,7 +772,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "A Journey Beyond#075": {
+  "A Journey Beyond#076": {
    "src": "Certainly! Your issue is elemental. As you know, there are {~} elements...",
    "dst": "もちろんだとも！ 問題は属性だ。知っての通り、属性は {~} つ…",
    "role": "desc",
@@ -766,7 +782,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#076": {
+  "A Journey Beyond#077": {
    "src": "Earth...",
    "dst": "土…",
    "role": "desc",
@@ -776,7 +792,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#077": {
+  "A Journey Beyond#078": {
    "src": "Fire...",
    "dst": "火…",
    "role": "desc",
@@ -786,7 +802,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#078": {
+  "A Journey Beyond#079": {
    "src": "Air...",
    "dst": "風…",
    "role": "desc",
@@ -796,7 +812,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#079": {
+  "A Journey Beyond#080": {
    "src": "Water...",
    "dst": "水…",
    "role": "desc",
@@ -806,7 +822,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#080": {
+  "A Journey Beyond#081": {
    "src": "And Thunder...",
    "dst": "そして雷…",
    "role": "desc",
@@ -816,7 +832,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#081": {
+  "A Journey Beyond#082": {
    "src": "But.. There is a hidden element, Darkness .",
    "dst": "だが…隠された属性がある。闇だ。",
    "role": "desc",
@@ -826,7 +842,7 @@
    "speaker": "Dren",
    "source": "wiki"
   },
-  "A Journey Beyond#082": {
+  "A Journey Beyond#083": {
    "src": "Thank grook for that. I was wondering if we'd ever be rid of this nightmare.",
    "dst": "grook に感謝だな。この悪夢から抜け出せるのかと思ってたよ。",
    "role": "desc",
@@ -836,7 +852,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Beyond#083": {
+  "A Journey Beyond#084": {
    "src": "And we both keep telling you why you're wrong. This is... sorry, I didn't catch your name. {u}? {u}.",
    "dst": "なぜ間違ってるか、二人で言い続けてるでしょ。こちらは…ごめん、名前を聞いてなかった。{u}？ {u}。",
    "role": "desc",
@@ -937,8 +953,8 @@
    "source": "captured"
   },
   "A Journey Beyond#094": {
-   "src": "Alright. Aledar, you get the darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "わかった。Aledar は {u} と闇のアイテムを、私は Lucio と光のアイテムを取りに行く。",
+   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
+   "dst": "よし。Aledar は {u} と闇のアイテムを取ってきて。私は Lucio と光のアイテムを取りに行く。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1487,8 +1503,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#149": {
-   "src": "Uhhh... I'm not feeling very wel-... Aahhh!",
-   "dst": "うう…なんだか気分が悪…きゃあああ！",
+   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
+   "dst": "うう…なんだか気分が悪…あああっ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2097,8 +2113,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#210": {
-   "src": "I feel a bit better.. But something is still wrong.",
-   "dst": "少し楽になった…でも、まだ何かおかしい。",
+   "src": "I feel a bit better.. But something's still wrong.",
+   "dst": "少し楽になった..でもまだ何かおかしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2457,8 +2473,8 @@
    "source": "wiki"
   },
   "A Journey Beyond#246": {
-   "src": "It worked... Kind of. I feel at least {~}.. We still have a ways to go.",
-   "dst": "効いた…少しは。少なくとも {~} は戻った…まだ先は長い。",
+   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
+   "dst": "効いた…一応。少なくとも {~} くらいは。まだ先は長いね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2469,82 +2485,6 @@
   "A Journey Beyond#247": {
    "src": "Let's take some time to gather ourselves before we press on. I'll meet you on the other side of town.",
    "dst": "先へ進む前に、少し態勢を整えよう。町の反対側で待ってる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 18",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#000~1": {
-   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-   "dst": "ええ…そうだけど、まず {u} に詳細を説明したいの。危険な任務だから…事情を伝えておくのが一番だと思う。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-    "file": "quest/a-journey-beyond.json",
-    "ratio": 0.985,
-    "reason": "placeholders"
-   }
-  },
-  "A Journey Beyond#021~1": {
-   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
-   "dst": "その土地そのものが呪われていたそうよ。腐敗ではない- そこははっきり書いてあった。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 1",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#069~1": {
-   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "問題は火力じゃないみたいだ。何か別のものだ。武器がまるで効いていなかった。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#094~1": {
-   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "よし。Aledar は {u} と闇のアイテムを取ってきて。私は Lucio と光のアイテムを取りに行く。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#149~1": {
-   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
-   "dst": "うう…なんだか気分が悪…あああっ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 14",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "A Journey Beyond#210~1": {
-   "src": "I feel a bit better.. But something's still wrong.",
-   "dst": "少し楽になった..でもまだ何かおかしい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 17",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#246~1": {
-   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
-   "dst": "効いた…一応。少なくとも {~} くらいは。まだ先は長いね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
