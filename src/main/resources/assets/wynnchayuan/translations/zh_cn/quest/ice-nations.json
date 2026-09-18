@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Ice Nations",
-  "count": 26,
-  "translated": 26,
+  "count": 28,
+  "translated": 28,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Ice Nations#000": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "……你知道吗，我们会沉船并不是天灾。我们是被袭击了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "Have you made any progress?",
+   "dst": "有什么进展吗？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
    "dst": "与 {p} [{~}, {~}, -{~}] 的 Adigard 对话",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#001": {
+  "Ice Nations#003": {
    "src": "Welcome traveler, to our humble island...",
    "dst": "欢迎你，旅人，来到我们简陋的小岛……",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#002": {
+  "Ice Nations#004": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
    "dst": "很多年前，我和我的族人在这里登陆。不幸的是，我们的船没能撑住……",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#003": {
+  "Ice Nations#005": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
    "dst": "我们试着在这些岛上建立一个国家，但这些年来渐渐分裂了。",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#004": {
+  "Ice Nations#006": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
    "dst": "正因如此，我们正在跟邻居打一场毫无意义的战争。",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#005": {
+  "Ice Nations#007": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
    "dst": "我认为我们应该试着签订和平条约，可是我怕一离开这座岛就会被杀……",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#006": {
+  "Ice Nations#008": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
    "dst": "你愿意帮帮我们吗？去跟 Hallfred 谈谈这份条约。他住在附近的另一座冰岛上。",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#007": {
+  "Ice Nations#009": {
    "src": "Talk to Hallfred about the peace treaty",
    "dst": "与 Hallfred 谈谈和平条约",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#008": {
+  "Ice Nations#010": {
    "src": "Welcome traveler! What brings you to our island?",
    "dst": "欢迎你，旅人！是什么风把你吹到我们岛上来的？",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#009": {
+  "Ice Nations#011": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
    "dst": "噢，原来 Adigard 胆小到派陌生人来了！怕被杀吗？",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#010": {
+  "Ice Nations#012": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
    "dst": "这是我最后一次重复：Adigard 和他的国家把东西还给我们的那一天，我们就签和平条约……那份宝藏。",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#011": {
+  "Ice Nations#013": {
    "src": "The one that they kept and hid from us after the shipwreck.",
    "dst": "就是沉船之后他们留下来、瞒着我们藏起来的那份。",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#012": {
+  "Ice Nations#014": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
    "dst": "纯金的，非常贵重又稀有！告诉他我等着。别再跟我讲那套可笑的故事了。",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#013": {
+  "Ice Nations#015": {
    "src": "Talk back to Adigard about Hallfred's response",
    "dst": "回去把 Hallfred 的答复告诉 Adigard",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#014": {
+  "Ice Nations#016": {
    "src": "I should have expected that. Hallfred was always very greedy...",
    "dst": "我早该料到的。Hallfred 一向很贪心……",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#015": {
+  "Ice Nations#017": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
    "dst": "我们试过让他明白宝藏不在我们手上，可是没什么用。",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#016": {
+  "Ice Nations#018": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
    "dst": "……你知道吗，我们会沉船并不是天灾。我们是被袭击了……",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#017": {
+  "Ice Nations#019": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
    "dst": "被谁？亡灵。驾驶着一艘怪物般巨船的幽灵和恶魔。他们打了我们个措手不及。",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#018": {
+  "Ice Nations#020": {
    "src": "I believe they also stole our treasure during the attack.",
    "dst": "我相信宝藏也是他们在袭击时偷走的。",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#019": {
+  "Ice Nations#021": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
    "dst": "你愿意帮我们的国家重新团结起来吗？找到那艘船，把宝藏带给 Hallfred，让我们终于能和平生活。",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#020": {
+  "Ice Nations#022": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
    "dst": "往北航行。多年前他们就是在那里袭击我们的。应该很好找，我敢肯定他们正耀武扬威地停泊在那里……谢谢你。",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#021": {
+  "Ice Nations#023": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
    "dst": "找到幽灵船，把 [古代宝藏] 带回给 Hallfred",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#022": {
+  "Ice Nations#024": {
    "src": "Incredible! He actually delivered the treasure!",
    "dst": "难以置信！他真的把宝藏送来了！",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#023": {
+  "Ice Nations#025": {
    "src": "I suppose that means the end of the war between our nations!",
    "dst": "我想这意味着我们两国之间的战争结束了！",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#024": {
+  "Ice Nations#026": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
    "dst": "今天真是个好日子！来，收下这个，当作你帮助我们国家的奖励。",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#025": {
+  "Ice Nations#027": {
    "src": "I'm sure you'll find a use for this helmet one day!",
    "dst": "我相信总有一天你会用得上这顶头盔！",
    "role": "desc",

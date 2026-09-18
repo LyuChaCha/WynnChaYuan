@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Misadventure on the Sea",
-  "count": 164,
-  "translated": 164,
+  "count": 194,
+  "translated": 194,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -327,6 +327,306 @@
    "source": "captured"
   },
   "Misadventure on the Sea#033": {
+   "src": "The only boat that will take ye directly to {p}.",
+   "dst": "{p}까지 곧장 데려다주는 유일한 배지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#034": {
+   "src": "Hey! You aren't allowed on my ship!",
+   "dst": "이봐! 내 배에 타면 안 돼!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#035": {
+   "src": "This hologram will teleport you back on the island to continue the quest or Reset your quest.",
+   "dst": "이 홀로그램으로 섬에 돌아가 퀘스트를 계속하거나, 퀘스트를 초기화할 수 있습니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#036": {
+   "src": "Are you sure you wish to Reset your quest?",
+   "dst": "정말 퀘스트를 초기화하시겠습니까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#037": {
+   "src": "Misadventure On The Sea has been reset!",
+   "dst": "바다 위의 불운이 초기화되었습니다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#038": {
+   "src": "Maybe you could somehow use it..? There's no way to tell how dangerous it is. Probably very.",
+   "dst": "어떻게든 이걸 쓸 수 있을지도..? 얼마나 위험한지 알 방법이 없다. 아마 아주 위험하겠지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#039": {
+   "src": "It must be the one up you saw up there! That's got to be the way to escape!",
+   "dst": "분명 아까 위에서 본 그거다! 저게 탈출구가 틀림없다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#040": {
+   "src": "Who knows, maybe there's gunpowder in there?",
+   "dst": "혹시 모르지, 저 안에 화약이 있을지도?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#041": {
+   "src": "Seems like it likes you now!",
+   "dst": "이제 너를 좋아하는 것 같다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#042": {
+   "src": "Not done yet? Well, take your time!",
+   "dst": "아직 안 끝났어? 뭐, 천천히 해!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#043": {
+   "src": "We sometimes hear unusually loud footsteps, along with some really eerie squeaking...",
+   "dst": "가끔 이상하게 큰 발소리가 들리고, 아주 소름 끼치는 찍찍 소리도 나...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#044": {
+   "src": "Looks like this crate is filled with rat hair, with some eaten carrots.",
+   "dst": "이 상자엔 쥐털이 가득하고, 갉아 먹은 당근이 좀 있는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#045": {
+   "src": "You defeated the rats! You should grab the gunpowder and the fuse before leaving.",
+   "dst": "쥐들을 물리쳤다! 떠나기 전에 화약과 도화선을 챙겨야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#046": {
+   "src": "[+{~} Cannon Fuse]",
+   "dst": "[+{~} 대포 도화선]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#047": {
+   "src": "[+{~} Gunpowder Cra",
+   "dst": "[+{~} 화약 상자",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#048": {
+   "src": "You've got enough gunpowder already.",
+   "dst": "화약은 이미 충분하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#049": {
+   "src": "Looks like this crate is filled with even more rat hair!",
+   "dst": "이 상자엔 쥐털이 더 잔뜩 들어 있는 것 같다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#050": {
+   "src": "You picked up a dusty key!",
+   "dst": "먼지 쌓인 열쇠를 주웠다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#051": {
+   "src": "You already got fuse.",
+   "dst": "도화선은 이미 챙겼다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#053": {
+   "src": "You got the fuse as well as the gunpowder. Looks like you can use that cannon now!",
+   "dst": "화약과 도화선을 모두 챙겼다. 이제 저 대포를 쓸 수 있겠다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#054": {
+   "src": "You put the gunpowder in the cannon and attach the fuse...",
+   "dst": "대포에 화약을 넣고 도화선을 연결한다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#055": {
+   "src": "Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.",
+   "dst": "완전히 작동하는 것 같다. 해적들에게 들키지 않게 조심하자! 한번 떠나면 돌아올 수 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#056": {
+   "src": "You crawl into the cannon...",
+   "dst": "대포 안으로 기어 들어간다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#057": {
+   "src": "You dig up some sand...",
+   "dst": "모래를 좀 파냈다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#058": {
+   "src": "There's more sand.",
+   "dst": "모래가 더 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#059": {
+   "src": "It's a coconut.",
+   "dst": "코코넛이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#060": {
+   "src": "It's a palm tree!",
+   "dst": "야자수다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#061": {
+   "src": "Huh? Something's approaching off in the distance...",
+   "dst": "응? 저 멀리서 뭔가 다가오고 있다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#062": {
+   "src": "Looks like they're headed toward the island! Is that..?",
+   "dst": "섬 쪽으로 오는 것 같다! 저건..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#063": {
+   "src": "Ah... Trust. Say, why don't I make it so you can travel to {p} for free? That way, if ya ever think o' doin' somethin' foolish like that again, ya can jus' take a trip on my ol' ship!",
+   "dst": "아... 신뢰라. 그럼 이렇게 하지, {p}까지 공짜로 다닐 수 있게 해 주면 어때? 그러면 또 그런 바보짓을 하고 싶어질 때, 그냥 내 낡은 배를 타면 되잖아!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#064": {
    "src": "Visit the {p} bar at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]의 {p} 술집에 가 보세요",
    "role": "desc",
@@ -336,7 +636,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#034": {
+  "Misadventure on the Sea#065": {
    "src": "Hello there soldier! What can I get you?",
    "dst": "어서 오게, 병사 양반! 뭘 드릴까?",
    "role": "desc",
@@ -346,7 +646,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#035": {
+  "Misadventure on the Sea#066": {
    "src": "I'll take {~} {p} Whiskeys. One for me, one for this chap.",
    "dst": "{p} 위스키 {~}잔 주게. 하나는 내 거, 하나는 이 친구 거.",
    "role": "desc",
@@ -356,7 +656,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#036": {
+  "Misadventure on the Sea#067": {
    "src": "You got it.",
    "dst": "알겠네.",
    "role": "desc",
@@ -366,7 +666,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#037": {
+  "Misadventure on the Sea#068": {
    "src": "So... I've seen ya around town. I saw how happy that guy was when you brought him some journal.",
    "dst": "그래서... 마을에서 널 몇 번 봤지. 네가 일지를 갖다주니까 그 녀석이 엄청 좋아하더군.",
    "role": "desc",
@@ -376,7 +676,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#038": {
+  "Misadventure on the Sea#069": {
    "src": "{~} {p} Whiskeys, coming up!",
    "dst": "{p} 위스키 {~}잔, 나갑니다!",
    "role": "desc",
@@ -386,7 +686,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#039": {
+  "Misadventure on the Sea#070": {
    "src": "So... Soldier. Are ya up for sailin' the ocean with me? I got a fancier boat than that seaskipper!",
    "dst": "그래서... 병사 양반. 나랑 바다 항해 한번 해 볼 텐가? 내 배는 연락선보다 훨씬 멋지다고!",
    "role": "desc",
@@ -396,7 +696,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#040": {
+  "Misadventure on the Sea#071": {
    "src": "I figured you'd be interested in explorin' the waters!",
    "dst": "바다 탐험에 관심 있을 줄 알았지!",
    "role": "desc",
@@ -406,7 +706,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#041": {
+  "Misadventure on the Sea#072": {
    "src": "I'll wait for ya on the docks. Don't worry, ya can't miss the boat!",
    "dst": "부두에서 기다리지. 걱정 마, 배는 못 보고 지나칠 수가 없으니까!",
    "role": "desc",
@@ -416,7 +716,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#042": {
+  "Misadventure on the Sea#073": {
    "src": "Meet Honip at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]에서 Honip과 만나세요",
    "role": "desc",
@@ -426,7 +726,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#043": {
+  "Misadventure on the Sea#074": {
    "src": "There you are! Ready? Follow me, the boat's over here!",
    "dst": "왔구나! 준비됐나? 따라와, 배는 이쪽이야!",
    "role": "desc",
@@ -436,7 +736,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#044": {
+  "Misadventure on the Sea#075": {
    "src": "Look at this.. Magnificent! Much better than whatever the Seaskipper is using!",
    "dst": "이것 좀 봐.. 멋지지! 연락선이 쓰는 배보다 훨씬 낫다고!",
    "role": "desc",
@@ -446,7 +746,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#045": {
+  "Misadventure on the Sea#076": {
    "src": "Well, what are you waiting for? Hop aboard!",
    "dst": "자, 뭘 기다려? 어서 타!",
    "role": "desc",
@@ -456,7 +756,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#046": {
+  "Misadventure on the Sea#077": {
    "src": "Then it's settled, we're goin' on an adventure!",
    "dst": "그럼 정해졌군, 모험을 떠나자고!",
    "role": "desc",
@@ -466,7 +766,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#047": {
+  "Misadventure on the Sea#078": {
    "src": "Buckle up, we got waves to catch.",
    "dst": "꽉 잡아, 파도 타러 간다.",
    "role": "desc",
@@ -476,7 +776,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#048": {
+  "Misadventure on the Sea#079": {
    "src": "So... I should warn ya', this is actually my first time sailing...",
    "dst": "그런데... 미리 말해 두자면, 사실 항해는 이번이 처음이야...",
    "role": "desc",
@@ -486,7 +786,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#049": {
+  "Misadventure on the Sea#080": {
    "src": "It doesn't seem too difficult though, a little to the left...",
    "dst": "그래도 별로 어려워 보이진 않는데, 왼쪽으로 조금...",
    "role": "desc",
@@ -496,7 +796,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#050": {
+  "Misadventure on the Sea#081": {
    "src": "Hmm, looks like we're not the only ones out on the water today.",
    "dst": "흠, 오늘 바다에 나온 게 우리만은 아닌 것 같군.",
    "role": "desc",
@@ -506,7 +806,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#051": {
+  "Misadventure on the Sea#082": {
    "src": "They are a bit too head on, don't you think?",
    "dst": "저쪽이 너무 정면으로 오는 것 같지 않나?",
    "role": "desc",
@@ -516,7 +816,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#052": {
+  "Misadventure on the Sea#083": {
    "src": "I'm trying to steer the ship but it's not budging...",
    "dst": "키를 돌리려는데 꿈쩍도 안 해...",
    "role": "desc",
@@ -526,7 +826,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#053": {
+  "Misadventure on the Sea#084": {
    "src": "That's unfortunate...",
    "dst": "그거 참 안됐군...",
    "role": "desc",
@@ -536,7 +836,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#054": {
+  "Misadventure on the Sea#085": {
    "src": "Unfortunate... For YOU!",
    "dst": "안됐다고... 너한테 말이야!",
    "role": "desc",
@@ -546,7 +846,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#055": {
+  "Misadventure on the Sea#086": {
    "src": "Hey, you're finally awake.",
    "dst": "이봐, 드디어 깼군.",
    "role": "desc",
@@ -556,7 +856,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#056": {
+  "Misadventure on the Sea#087": {
    "src": "I honestly, truly can't believe you fell for that. Let me sum it up for you...",
    "dst": "솔직히 그런 데 넘어갈 줄은 정말 몰랐다. 정리해 주지...",
    "role": "desc",
@@ -566,7 +866,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#057": {
+  "Misadventure on the Sea#088": {
    "src": "Some extremely suspicious pirate comes up, offers you a drink, and leads you to his suspicious boat.",
    "dst": "엄청 수상한 해적이 다가와서 술을 사 주더니, 자기 수상한 배로 데려간다.",
    "role": "desc",
@@ -576,7 +876,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#058": {
+  "Misadventure on the Sea#089": {
    "src": "Any normal person would've turned back by then. But what do you do? You hop on! Well, now you're stuck with us.",
    "dst": "보통 사람이면 그쯤에서 돌아섰겠지. 근데 넌? 냉큼 올라탔잖아! 자, 이제 우리랑 한배를 탄 거다.",
    "role": "desc",
@@ -586,7 +886,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#059": {
+  "Misadventure on the Sea#090": {
    "src": "Let me make this quick. This boat needs renovation, and we want you to do it.",
    "dst": "짧게 말하지. 이 배는 수리가 필요하고, 그걸 네가 해 줘야겠다.",
    "role": "desc",
@@ -596,7 +896,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#060": {
+  "Misadventure on the Sea#091": {
    "src": "Why? You're a soldier! All you do is take orders! Anyway, we'll need you to clean our stuff. Here, get out.",
    "dst": "왜냐고? 넌 병사잖아! 명령받는 게 일이지! 아무튼 우리 물건 청소를 맡아 줘야겠어. 자, 나가.",
    "role": "desc",
@@ -606,7 +906,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#061": {
+  "Misadventure on the Sea#092": {
    "src": "Stay back!",
    "dst": "물러서!",
    "role": "desc",
@@ -616,7 +916,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#062": {
+  "Misadventure on the Sea#093": {
    "src": "I told you to stay back!",
    "dst": "물러서라고 했잖아!",
    "role": "desc",
@@ -626,7 +926,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#063": {
+  "Misadventure on the Sea#094": {
    "src": "Alright, that's enough!",
    "dst": "좋아, 그만하면 됐어!",
    "role": "desc",
@@ -636,7 +936,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#064": {
+  "Misadventure on the Sea#095": {
    "src": "So, there's quite a few skeletons in there, and we never bothered throwin' them out!",
    "dst": "저 안에 해골이 꽤 많은데, 우린 한 번도 내다 버릴 생각을 안 했거든!",
    "role": "desc",
@@ -646,7 +946,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#065": {
+  "Misadventure on the Sea#096": {
    "src": "Go ahead, here's a sponge for the dried blood as well. Just wack the skeletons with it!",
    "dst": "가 봐, 말라붙은 피 닦을 스펀지도 줄게. 해골은 그냥 이걸로 후려치면 돼!",
    "role": "desc",
@@ -656,7 +956,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#066": {
+  "Misadventure on the Sea#097": {
    "src": "If you need me, I'll be on the deck. And, uh, don't go in the hold. We've got a BIG rat problem.",
    "dst": "볼일 있으면 난 갑판에 있을 거야. 그리고, 어, 선창엔 들어가지 마. 쥐 문제가 아주 심각하거든.",
    "role": "desc",
@@ -666,7 +966,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#067": {
+  "Misadventure on the Sea#098": {
    "src": "Also, for the sake of my crew, could you be more cooperative? I don't have an unlimited amount of these potions.",
    "dst": "그리고 내 선원들을 생각해서 좀 협조해 줄래? 이 물약도 무한정 있는 게 아니라고.",
    "role": "desc",
@@ -676,7 +976,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#068": {
+  "Misadventure on the Sea#099": {
    "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: #/{~}",
    "dst": "배 안의 시체를 청소하세요. 동시에 탈출할 단서를 찾으세요. -청소한 시체: #/{~}",
    "role": "desc",
@@ -686,7 +986,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#069": {
+  "Misadventure on the Sea#100": {
    "src": "Hey, so you're our personal guard, huh?",
    "dst": "이봐, 네가 우리 전속 경비라며?",
    "role": "desc",
@@ -696,7 +996,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#070": {
+  "Misadventure on the Sea#101": {
    "src": "Nice to meet ya!",
    "dst": "반갑다!",
    "role": "desc",
@@ -706,7 +1006,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#071": {
+  "Misadventure on the Sea#102": {
    "src": "That ladder leads to the hold, but right now it's locked... We've got a severe case of rats.",
    "dst": "저 사다리는 선창으로 이어지는데, 지금은 잠겨 있어... 쥐 문제가 심각하거든.",
    "role": "desc",
@@ -716,7 +1016,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#072": {
+  "Misadventure on the Sea#103": {
    "src": "Pep is just a treasure, ain't I right? I'm glad you're taking care of him too!",
    "dst": "Pep은 정말 보물이지, 안 그래? 너도 걔를 챙겨 주니 다행이다!",
    "role": "desc",
@@ -726,7 +1026,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#073": {
+  "Misadventure on the Sea#104": {
    "src": "Honip has a pet chicken, weird right?",
    "dst": "Honip은 애완 닭을 키워, 이상하지?",
    "role": "desc",
@@ -736,7 +1036,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#074": {
+  "Misadventure on the Sea#105": {
    "src": "I bet he got inspiration from that weird guy on his island...",
    "dst": "분명 자기 섬에 사는 그 이상한 녀석한테 영향받았을 거야...",
    "role": "desc",
@@ -746,7 +1046,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#075": {
+  "Misadventure on the Sea#106": {
    "src": "What? You murdered that guy's most prized chicken? You're an odd one, soldier.",
    "dst": "뭐? 그 녀석이 제일 아끼는 닭을 죽였다고? 너도 참 별난 놈이다, 병사.",
    "role": "desc",
@@ -756,7 +1056,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#076": {
+  "Misadventure on the Sea#107": {
    "src": "Oh, uh... Don't worry about that, 'ay?",
    "dst": "아, 어... 그건 신경 쓰지 마, 응?",
    "role": "desc",
@@ -766,7 +1066,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#077": {
+  "Misadventure on the Sea#108": {
    "src": "That's our... fuel source.",
    "dst": "그건 우리... 연료야.",
    "role": "desc",
@@ -776,7 +1076,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#078": {
+  "Misadventure on the Sea#109": {
    "src": "Oh, that's my cannon! Pretty cool, right? I made it using a bunch of arm- Nevermind...",
    "dst": "아, 그건 내 대포야! 멋지지? 팔을 잔뜩 써서 만들- 아니, 됐어...",
    "role": "desc",
@@ -786,7 +1086,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#079": {
+  "Misadventure on the Sea#110": {
    "src": "Oh, Snoo likes you!",
    "dst": "오, 스누가 널 좋아하네!",
    "role": "desc",
@@ -796,7 +1096,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#080": {
+  "Misadventure on the Sea#111": {
    "src": "He's a strong chicken alright, trust me on that one.",
    "dst": "튼튼한 닭이지, 그건 내 말을 믿어.",
    "role": "desc",
@@ -806,7 +1106,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#081": {
+  "Misadventure on the Sea#112": {
    "src": "Anyway, get back to work!",
    "dst": "아무튼, 일하러 돌아가!",
    "role": "desc",
@@ -816,7 +1116,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#082": {
+  "Misadventure on the Sea#113": {
    "src": "I'm just goin' to... Wait here... With my cannons...",
    "dst": "난 그냥... 여기서 기다릴게... 내 대포들이랑...",
    "role": "desc",
@@ -826,7 +1126,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#083": {
+  "Misadventure on the Sea#114": {
    "src": "Talk to Honip on the deck to get your next task",
    "dst": "갑판에서 Honip과 대화하여 다음 일을 받으세요",
    "role": "desc",
@@ -836,7 +1136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#084": {
+  "Misadventure on the Sea#115": {
    "src": "Hey! The boat's lookin' real nice now!",
    "dst": "이봐! 이제 배가 제법 번듯하군!",
    "role": "desc",
@@ -846,7 +1146,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#085": {
+  "Misadventure on the Sea#116": {
    "src": "I'll probably let you rest so- hold on.",
    "dst": "이제 좀 쉬게 해 줄까 하는데- 잠깐.",
    "role": "desc",
@@ -856,7 +1156,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#086": {
+  "Misadventure on the Sea#117": {
    "src": "Ho-Honip! One of the guys said he saw something really weird coming right for us!",
    "dst": "호-Honip! 누가 엄청 이상한 게 우리 쪽으로 곧장 온다고 했어요!",
    "role": "desc",
@@ -866,7 +1166,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#087": {
+  "Misadventure on the Sea#118": {
    "src": "Wait... What? Soldier, come!",
    "dst": "잠깐... 뭐? 병사, 따라와!",
    "role": "desc",
@@ -876,7 +1176,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#088": {
+  "Misadventure on the Sea#119": {
    "src": "What's happening?!",
    "dst": "무슨 일이야?!",
    "role": "desc",
@@ -886,7 +1186,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#089": {
+  "Misadventure on the Sea#120": {
    "src": "We-we don't know! We can't exactly see it, but it seems huge!",
    "dst": "모-모르겠어요! 잘 보이진 않는데 엄청 커요!",
    "role": "desc",
@@ -896,7 +1196,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#090": {
+  "Misadventure on the Sea#121": {
    "src": "I- Let me see.",
    "dst": "나- 어디 보자.",
    "role": "desc",
@@ -906,7 +1206,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#091": {
+  "Misadventure on the Sea#122": {
    "src": "Uh... Where am I supposed to be looking at, exactly?",
    "dst": "어... 정확히 어디를 봐야 하는 건데?",
    "role": "desc",
@@ -916,7 +1216,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#092": {
+  "Misadventure on the Sea#123": {
    "src": "I swear, it felt like the whole ocean was getting crazy a second ago!",
    "dst": "맹세컨대, 방금 바다 전체가 미쳐 날뛰는 것 같았어요!",
    "role": "desc",
@@ -926,7 +1226,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#093": {
+  "Misadventure on the Sea#124": {
    "src": "If this is another one of your jokes...",
    "dst": "이게 또 너희 장난이라면...",
    "role": "desc",
@@ -936,7 +1236,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#094": {
+  "Misadventure on the Sea#125": {
    "src": "LOOK OUT!",
    "dst": "조심해!",
    "role": "desc",
@@ -946,7 +1246,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#095": {
+  "Misadventure on the Sea#126": {
    "src": "What the hell is that??",
    "dst": "저게 대체 뭐야??",
    "role": "desc",
@@ -956,7 +1256,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#096": {
+  "Misadventure on the Sea#127": {
    "src": "I don't know, this wasn't planned!",
    "dst": "몰라, 이건 계획에 없었어!",
    "role": "desc",
@@ -966,7 +1266,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#097": {
+  "Misadventure on the Sea#128": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "병사, 이제 네가 활약할 때다! 주문이든 뭐든 써서 저놈을 쫓아내!",
    "role": "desc",
@@ -976,7 +1276,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#098": {
+  "Misadventure on the Sea#129": {
    "src": "It's working! Do that again!",
    "dst": "통한다! 한 번 더!",
    "role": "desc",
@@ -986,7 +1286,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#099": {
+  "Misadventure on the Sea#130": {
    "src": "One more...",
    "dst": "하나 더...",
    "role": "desc",
@@ -996,7 +1296,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#100": {
+  "Misadventure on the Sea#131": {
    "src": "It's starting to panic!",
    "dst": "당황하기 시작했어!",
    "role": "desc",
@@ -1006,7 +1306,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#101": {
+  "Misadventure on the Sea#132": {
    "src": "That's right, get back!",
    "dst": "그렇지, 물러가라!",
    "role": "desc",
@@ -1016,7 +1316,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#102": {
+  "Misadventure on the Sea#133": {
    "src": "I knew you had it in ya, haha!",
    "dst": "해낼 줄 알았다니까, 하하!",
    "role": "desc",
@@ -1026,7 +1326,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#103": {
+  "Misadventure on the Sea#134": {
    "src": "What a show! Come, I've got some things to tell ya!",
    "dst": "대단한 구경이었어! 이리 와, 할 얘기가 있어!",
    "role": "desc",
@@ -1036,7 +1336,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#104": {
+  "Misadventure on the Sea#135": {
    "src": "I don't know where that creature came from, but thanks to you it's gone.",
    "dst": "저 괴물이 어디서 왔는지는 몰라도, 네 덕에 사라졌군.",
    "role": "desc",
@@ -1046,7 +1346,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#105": {
+  "Misadventure on the Sea#136": {
    "src": "I've got something else for you to tackle. It's about... the rats.",
    "dst": "맡길 일이 하나 더 있어. 그게... 쥐 얘기야.",
    "role": "desc",
@@ -1056,7 +1356,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#106": {
+  "Misadventure on the Sea#137": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "선창으로 와, 가면서 설명하지.",
    "role": "desc",
@@ -1066,7 +1366,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#107": {
+  "Misadventure on the Sea#138": {
    "src": "I think we have quite a hellish problem on our hands.",
    "dst": "아무래도 골치 아픈 문제가 생긴 것 같아.",
    "role": "desc",
@@ -1076,7 +1376,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#108": {
+  "Misadventure on the Sea#139": {
    "src": "I'm not sure what y'all find there, but these are NOT normal rats.",
    "dst": "거기서 뭘 찾을지는 몰라도, 그건 평범한 쥐가 아니야.",
    "role": "desc",
@@ -1086,7 +1386,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#109": {
+  "Misadventure on the Sea#140": {
    "src": "So please, get in there... and kill everything, alright?",
    "dst": "그러니 부탁인데, 들어가서... 싹 다 죽여 줘, 알겠지?",
    "role": "desc",
@@ -1096,7 +1396,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#110": {
+  "Misadventure on the Sea#141": {
    "src": "I've got faith in ya. Here goes nothin'!",
    "dst": "널 믿는다. 에라, 모르겠다!",
    "role": "desc",
@@ -1106,7 +1406,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#111": {
+  "Misadventure on the Sea#142": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "병사, 이제 네가 활약할 때다! 주문이든 뭐든 써서 저놈을 쫓아내!",
    "role": "desc",
@@ -1116,7 +1416,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#112": {
+  "Misadventure on the Sea#143": {
    "src": "Just cast one of your fancy spells!",
    "dst": "그 멋진 주문이나 좀 써 봐!",
    "role": "desc",
@@ -1126,7 +1426,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#113": {
+  "Misadventure on the Sea#144": {
    "src": "That was... Phew... That was something.",
    "dst": "그거... 휴... 굉장했다.",
    "role": "desc",
@@ -1136,7 +1436,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#114": {
+  "Misadventure on the Sea#145": {
    "src": "Now, for an even bigger surprise...",
    "dst": "자, 이제 더 큰 깜짝 선물이...",
    "role": "desc",
@@ -1146,7 +1446,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#115": {
+  "Misadventure on the Sea#146": {
    "src": "What the hell soldier?? What don't you get in the \"soldier\" part of your job?",
    "dst": "뭐 하는 거야, 병사?? '병사'라는 일에서 뭘 모르겠다는 거야?",
    "role": "desc",
@@ -1156,7 +1456,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#116": {
+  "Misadventure on the Sea#147": {
    "src": "Come, let's figure some things out.",
    "dst": "이리 와, 몇 가지 정리 좀 하자.",
    "role": "desc",
@@ -1166,7 +1466,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#117": {
+  "Misadventure on the Sea#148": {
    "src": "You've been a massive disappointment, y'know?",
    "dst": "넌 정말 실망 덩어리야, 알아?",
    "role": "desc",
@@ -1176,7 +1476,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#118": {
+  "Misadventure on the Sea#149": {
    "src": "But you can still redeem yourself.",
    "dst": "그래도 아직 만회할 기회는 있어.",
    "role": "desc",
@@ -1186,7 +1486,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#119": {
+  "Misadventure on the Sea#150": {
    "src": "Follow me, I'll explain on the way.",
    "dst": "따라와, 가면서 설명하지.",
    "role": "desc",
@@ -1196,7 +1496,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#120": {
+  "Misadventure on the Sea#151": {
    "src": "I mentioned a rat problem earlier... It's, uh, not a small one.",
    "dst": "아까 쥐 문제 얘기했지... 그게, 어, 작은 문제가 아니야.",
    "role": "desc",
@@ -1206,7 +1506,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#121": {
+  "Misadventure on the Sea#152": {
    "src": "We've got gunpowder to retrieve, so you're the one who's gonna clear the hold.",
    "dst": "화약을 되찾아야 하니, 선창은 네가 치워 줘야겠어.",
    "role": "desc",
@@ -1216,7 +1516,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#122": {
+  "Misadventure on the Sea#153": {
    "src": "So get in there... and try to kill everything, alright?",
    "dst": "그러니 들어가서... 최대한 다 죽여 봐, 알겠지?",
    "role": "desc",
@@ -1226,7 +1526,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#123": {
+  "Misadventure on the Sea#154": {
    "src": "Don't be as bad as earlier. You're a soldier.",
    "dst": "아까처럼 형편없진 마. 넌 병사잖아.",
    "role": "desc",
@@ -1236,7 +1536,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#124": {
+  "Misadventure on the Sea#155": {
    "src": "What.",
    "dst": "네?",
    "role": "desc",
@@ -1246,7 +1546,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#125": {
+  "Misadventure on the Sea#156": {
    "src": "Well... That's a twist.",
    "dst": "음... 이거 반전인데.",
    "role": "desc",
@@ -1256,7 +1556,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#126": {
+  "Misadventure on the Sea#157": {
    "src": "I expected you to do somethin', soldier, not him!",
    "dst": "병사, 난 네가 뭘 해 주길 바랐지 저 녀석이 아니라고!",
    "role": "desc",
@@ -1266,7 +1566,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#127": {
+  "Misadventure on the Sea#158": {
    "src": "Anyway, come talk to me.",
    "dst": "아무튼, 나랑 얘기 좀 하자.",
    "role": "desc",
@@ -1276,7 +1576,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#128": {
+  "Misadventure on the Sea#159": {
    "src": "I have another task for you. It's about... the rats.",
    "dst": "맡길 일이 하나 더 있어. 그게... 쥐 얘기야.",
    "role": "desc",
@@ -1286,7 +1586,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#129": {
+  "Misadventure on the Sea#160": {
    "src": "See, I really don't think we have your usual type of problem.",
    "dst": "아무래도 흔한 쥐 문제가 아닌 것 같거든.",
    "role": "desc",
@@ -1296,7 +1596,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#130": {
+  "Misadventure on the Sea#161": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "선창으로 와, 가면서 설명하지.",
    "role": "desc",
@@ -1306,7 +1606,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#131": {
+  "Misadventure on the Sea#162": {
    "src": "We sometimes hear unusually load footsteps, along with some really eerie squeaking...",
    "dst": "가끔 이상하게 큰 발소리가 들리고, 아주 소름 끼치는 찍찍 소리도 나...",
    "role": "desc",
@@ -1316,7 +1616,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#132": {
+  "Misadventure on the Sea#163": {
    "src": "That's why we're not too fond of goin' in... But our gunpowder there! We need it, as pirates!",
    "dst": "그래서 다들 들어가기 싫어하지... 근데 거기 화약이 있어! 해적한텐 필수라고!",
    "role": "desc",
@@ -1326,7 +1626,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#133": {
+  "Misadventure on the Sea#164": {
    "src": "So, I need you to get in... and kill everything, alright?",
    "dst": "그러니 들어가서... 싹 다 죽여 줘, 알겠지?",
    "role": "desc",
@@ -1336,7 +1636,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#134": {
+  "Misadventure on the Sea#165": {
    "src": "Here goes nothing. Snoo, ya stay there!",
    "dst": "에라, 모르겠다. 스누, 넌 거기 있어!",
    "role": "desc",
@@ -1346,7 +1646,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#135": {
+  "Misadventure on the Sea#166": {
    "src": "Explore the hold and kill the rats",
    "dst": "선창을 탐험하고 쥐를 처치하세요",
    "role": "desc",
@@ -1356,7 +1656,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#136": {
+  "Misadventure on the Sea#167": {
    "src": "Defeat the Colossal Rat in the hold",
    "dst": "선창에서 거대 쥐를 처치하세요",
    "role": "desc",
@@ -1366,7 +1666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#137": {
+  "Misadventure on the Sea#168": {
    "src": "Use the gunpowder and the fuse to activate the cannon and escape",
    "dst": "화약과 도화선으로 대포를 작동시켜 탈출하세요",
    "role": "desc",
@@ -1376,7 +1676,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#138": {
+  "Misadventure on the Sea#169": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "이봐! 좋은 소식 가져왔나?",
    "role": "desc",
@@ -1386,7 +1686,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#139": {
+  "Misadventure on the Sea#170": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "그 망할 도둑 쥐새끼들을 처리했다고? 거대... 쥐라고?",
    "role": "desc",
@@ -1396,7 +1696,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#140": {
+  "Misadventure on the Sea#171": {
    "src": "Nicely done, I knew I could count on ya! C'mere, take these!",
    "dst": "잘했어, 믿을 만할 줄 알았지! 이리 와, 이거 받아!",
    "role": "desc",
@@ -1406,7 +1706,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#141": {
+  "Misadventure on the Sea#172": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "아무튼, 이제 가서 쉬든 뭘 하든 마음대로 해!",
    "role": "desc",
@@ -1416,7 +1716,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#142": {
+  "Misadventure on the Sea#173": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "이봐! 좋은 소식 가져왔나?",
    "role": "desc",
@@ -1426,7 +1726,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#143": {
+  "Misadventure on the Sea#174": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "그 망할 도둑 쥐새끼들을 처리했다고? 거대... 쥐라고?",
    "role": "desc",
@@ -1436,7 +1736,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#144": {
+  "Misadventure on the Sea#175": {
    "src": "Well, shiver me timbers! You did redeem yourself soldier!",
    "dst": "이야, 놀랍군! 정말 만회했구나, 병사!",
    "role": "desc",
@@ -1446,7 +1746,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#145": {
+  "Misadventure on the Sea#176": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "아무튼, 이제 가서 쉬든 뭘 하든 마음대로 해!",
    "role": "desc",
@@ -1456,7 +1756,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#146": {
+  "Misadventure on the Sea#177": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "이봐! 좋은 소식 가져왔나?",
    "role": "desc",
@@ -1466,7 +1766,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#147": {
+  "Misadventure on the Sea#178": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "그 망할 도둑 쥐새끼들을 처리했다고? 거대... 쥐라고?",
    "role": "desc",
@@ -1476,7 +1776,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#148": {
+  "Misadventure on the Sea#179": {
    "src": "That sounds absolutely terrifying! And ya did that alone! You know what, her', take these.",
    "dst": "완전 끔찍하게 들리는데! 그걸 혼자 해냈다고! 좋아, 자, 이거 받아.",
    "role": "desc",
@@ -1486,7 +1786,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#149": {
+  "Misadventure on the Sea#180": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "아무튼, 이제 가서 쉬든 뭘 하든 마음대로 해!",
    "role": "desc",
@@ -1496,7 +1796,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#150": {
+  "Misadventure on the Sea#181": {
    "src": "Hey! What do you think you're doin'?!",
    "dst": "이봐! 대체 뭐 하는 거야?!",
    "role": "desc",
@@ -1506,7 +1806,7 @@
    "speaker": "Pirate Guard",
    "source": "wiki"
   },
-  "Misadventure on the Sea#151": {
+  "Misadventure on the Sea#182": {
    "src": "...Seth? Have ya seen the soldier?",
    "dst": "...Seth? 그 병사 봤나?",
    "role": "desc",
@@ -1516,7 +1816,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#152": {
+  "Misadventure on the Sea#183": {
    "src": "No, but they did a great job in the hold! Some gunpowder went missing though.",
    "dst": "아뇨, 근데 선창 일은 아주 잘했어요! 화약이 좀 없어지긴 했지만.",
    "role": "desc",
@@ -1526,7 +1826,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#153": {
+  "Misadventure on the Sea#184": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -1536,7 +1836,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#154": {
+  "Misadventure on the Sea#185": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -1546,7 +1846,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#155": {
+  "Misadventure on the Sea#186": {
    "src": "Wait a minute.",
    "dst": "잠깐만.",
    "role": "desc",
@@ -1556,7 +1856,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#156": {
+  "Misadventure on the Sea#187": {
    "src": "Find out where you are and a way to flee the island",
    "dst": "자신이 어디 있는지 알아내고 섬을 빠져나갈 방법을 찾으세요",
    "role": "desc",
@@ -1566,7 +1866,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#157": {
+  "Misadventure on the Sea#188": {
    "src": "'ey there soldier! Looks like ya're in a bit of a pickle! How 'bout ya hop on?'",
    "dst": "어이 병사! 좀 곤란한 처지 같구먼! 타는 게 어때?",
    "role": "desc",
@@ -1576,7 +1876,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#158": {
+  "Misadventure on the Sea#189": {
    "src": "Well... We're headed for {p}, the heart of the ocean! Which is safer than wherever you were, heh!",
    "dst": "음... 우린 바다의 심장, {p}로 가는 중이야! 네가 있던 곳보다야 안전하지, 헤!",
    "role": "desc",
@@ -1586,7 +1886,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#159": {
+  "Misadventure on the Sea#190": {
    "src": "I was casually takin' a scenic detour when I saw you and your shiny equipment on that island.",
    "dst": "경치 구경하러 슬쩍 돌아가는데, 저 섬에 너랑 반짝이는 장비가 보이더라고.",
    "role": "desc",
@@ -1596,7 +1896,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#160": {
+  "Misadventure on the Sea#191": {
    "src": "So, ya gotta tell me what happened!",
    "dst": "그러니 무슨 일인지 얘기 좀 해 봐!",
    "role": "desc",
@@ -1606,7 +1906,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#161": {
+  "Misadventure on the Sea#192": {
    "src": "Oh, kidnapped by pirates I see! How unfortunate...",
    "dst": "오, 해적한테 납치당했구먼! 딱하게 됐네...",
    "role": "desc",
@@ -1616,7 +1916,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#162": {
+  "Misadventure on the Sea#193": {
    "src": "I guess that'll show ya, tryin' to avoid using good ol' seaskipper! I'm the only trustworthy one 'round here.",
    "dst": "믿음직한 연락선을 피하려 들더니 꼴좋다! 이 근방에서 믿을 건 나뿐이라고.",
    "role": "desc",
@@ -1626,7 +1926,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#163": {
+  "Misadventure on the Sea#194": {
    "src": "Well, I hope they weren't too bad with ya! Here, I'll make you travel to {p} for free as compensation.",
    "dst": "뭐, 너무 험하게 굴진 않았길 바라! 보상으로 {p}까지 공짜로 태워 주지.",
    "role": "desc",
@@ -1636,7 +1936,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#164": {
+  "Misadventure on the Sea#195": {
    "src": "Anyway, I can see the shore off in the distance! Hang tight, we're almost there!",
    "dst": "아무튼, 저 멀리 해안이 보인다! 꽉 잡아, 거의 다 왔어!",
    "role": "desc",

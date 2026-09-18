@@ -1,12 +1,102 @@
 {
  "_meta": {
   "quest": "Clearing the Camps",
-  "count": 14,
-  "translated": 14,
+  "count": 23,
+  "translated": 23,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Clearing the Camps#000": {
+   "src": "Did you hear about the requests from the Villagers we've gotten? They say these 'Orcs' and 'Goblins' are threatening their towns and cities.",
+   "dst": "¿Te has enterado de las peticiones que nos llegan de los aldeanos? Dicen que esos 'orcos' y 'goblins' amenazan sus pueblos y ciudades.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#001": {
+   "src": "Primitive, brutal things, apparently little better than the zombies we're used to, at least according to the {p} military.",
+   "dst": "Seres primitivos y brutales, poco mejores que los zombis a los que estamos acostumbrados, o eso dice el ejército de {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#002": {
+   "src": "Our scouts have identified three 'chief' orcs in the area- Elisu, Ceifko, and Veltu. Though, strangely, Veltu is always surrounded by goblins...",
+   "dst": "Nuestros exploradores han identificado a tres orcos 'jefe' en la zona- Elisu, Ceifko y Veltu. Aunque, qué raro, a Veltu siempre lo rodean goblins...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#003": {
+   "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags - search the plains, and return once they're dealt with!",
+   "dst": "En fin, da igual: se nos necesita aquí, defendiendo {p}. ¿Te encargas tú de los jefes? Parecen esconderse en los campamentos con bandera verde - busca en las llanuras, ¡y vuelve al acabar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#004": {
+   "src": "Ah, good, more of you small-noses are here to fight.",
+   "dst": "Ah, bien, más naricitas que vienen a luchar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#005": {
+   "src": "You're good for battle, so the government can focus more on the real issues.",
+   "dst": "Sirves para la batalla, así el gobierno puede centrarse en los problemas de verdad.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#006": {
+   "src": "Can't afford to have all our resources on war when we have the Decay to deal with up north.",
+   "dst": "No podemos gastar todos los recursos en la guerra con la Decadencia al norte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#007": {
+   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead or alive, as long as they're dealt with. I have your share of the reward here.",
+   "dst": "Es...más brutal de lo que pretendía, pero sirve... A los aldeanos les da igual si están vivos o muertos, con tal de resolverlo. Aquí tienes tu parte de la recompensa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#008": {
+   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah... livelier than usual. Better get used to it.",
+   "dst": "Ahí fuera habrás visto que las criaturas de Gavel no son como las de Wynn, ¿no? Son un poco, ah... más vivas de lo normal. Ve acostumbrándote.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#009": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
    "dst": "Habla con el capitán Kymer a las afueras de {p} en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#001": {
+  "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "Ajá, otro soldado de {p}, ¿eh? Bueno, te doy la bienvenida.",
    "role": "desc",
@@ -26,7 +116,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#002": {
+  "Clearing the Camps#011": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
    "dst": "¿Te has enterado de las peticiones que nos llegan de los aldeanos? Dicen que esos \"orcos\" y \"goblins\" amenazan sus pueblos y ciudades.",
    "role": "desc",
@@ -36,7 +126,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#003": {
+  "Clearing the Camps#012": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
    "dst": "Criaturas primitivas y brutales, poco mejores que los zombis a los que estamos acostumbrados, o eso dice el ejército de {p}.",
    "role": "desc",
@@ -46,7 +136,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#004": {
+  "Clearing the Camps#013": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
    "dst": "Suponemos que, si entre ellos manda la fuerza, derrotar a sus líderes bastará para someterlos por miedo.",
    "role": "desc",
@@ -56,7 +146,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#005": {
+  "Clearing the Camps#014": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
    "dst": "Nuestros exploradores han identificado a tres orcos \"jefe\" en la zona- Elisu, Ceifko y Veltu. Aunque, qué raro, a Veltu siempre lo rodean goblins...",
    "role": "desc",
@@ -66,7 +156,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#006": {
+  "Clearing the Camps#015": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
    "dst": "En fin, da igual: se nos necesita aquí, defendiendo {p}. ¿Te encargas tú de los jefes? Parecen esconderse en los campamentos con bandera verde- ¡busca en las llanuras y vuelve al acabar!",
    "role": "desc",
@@ -76,7 +166,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#007": {
+  "Clearing the Camps#016": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
    "dst": "Encuentra y mata a los jefes orcos Elisu, Veltu y Ceifko en los campamentos alrededor de {p}- busca las banderas verdes",
    "role": "desc",
@@ -86,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#008": {
+  "Clearing the Camps#017": {
    "src": "Report back to Captain Kymer once you have the three heads.",
    "dst": "Vuelve con el capitán Kymer cuando tengas las tres cabezas.",
    "role": "desc",
@@ -96,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#009": {
+  "Clearing the Camps#018": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
    "dst": "¡Ah, el soldado de antes! Veo que has vuelto. ¿Pudiste acabar con esos- ...puaj. ¿Eso son sus cabezas?",
    "role": "desc",
@@ -106,7 +196,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#010": {
+  "Clearing the Camps#019": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
    "dst": "Es...más brutal de lo que pretendía, pero sirve... A los aldeanos les da igual si están vivos o muertos, con tal de resolverlo. Aquí tienes tu parte de la recompensa.",
    "role": "desc",
@@ -116,7 +206,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#011": {
+  "Clearing the Camps#020": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
    "dst": "Un golpe quirúrgico así debería evitar una guerra abierta con los orcos. ¡No nos conviene tener una guerra a gran escala en cada provincia, ja!",
    "role": "desc",
@@ -126,7 +216,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#012": {
+  "Clearing the Camps#021": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
    "dst": "Ahí fuera habrás visto que las criaturas de Gavel no son como las de Wynn, ¿no? Son un poco, ah...más vivas de lo normal. Ve acostumbrándote.",
    "role": "desc",
@@ -136,7 +226,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#013": {
+  "Clearing the Camps#022": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
    "dst": "El siguiente pueblo grande es {p}, en el pantano del norte, pero dicen que los ogros de allí son mucho más duros que los de las llanuras. Yo me quedaría a entrenar aquí primero.",
    "role": "desc",

@@ -1,12 +1,232 @@
 {
  "_meta": {
   "quest": "Fate of the Fallen",
-  "count": 71,
-  "translated": 71,
+  "count": 93,
+  "translated": 93,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Fate of the Fallen#000": {
+   "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
+   "dst": "おや、{p} 軍の者か。この凍てついた墳墓のことをもっと知りたいと思っている。力を貸してほしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#001": {
+   "src": "Did you listen?",
+   "dst": "聞いていたか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#002": {
+   "src": "If you don't remember what I said, I remember you writing something in your book. Try looking there.",
+   "dst": "私の話を覚えていないなら、本に何か書き留めていただろう。そこを見てみるといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#003": {
+   "src": "You should head back to the mage with the wand.",
+   "dst": "杖を持ったあの魔術師のところへ戻るといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#004": {
+   "src": "This is the Temple of Time...",
+   "dst": "ここは Temple of Time…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#005": {
+   "src": "Here you can visit the memories of this land...",
+   "dst": "ここでは、この地の記憶を訪れることができる…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#006": {
+   "src": "The altar requires an item from the time you desire to access...",
+   "dst": "祭壇には、行きたい時代の品が必要だ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#007": {
+   "src": "You will access a memory as if you were present, but when you return it will be as if you were never there.",
+   "dst": "その場にいるかのように記憶の中へ入れるが、戻れば、まるでそこにいなかったかのようになる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#008": {
+   "src": "You should stick around to find out how to reverse the spell.",
+   "dst": "ここに残って、魔法を解く方法を突き止めるといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#009": {
+   "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too far gone. It needs time to heal...and my powers m-must be dampened...frozen...",
+   "dst": "ぐああ…皆に…伝えろ。私はこの地を凍らせる。私は…も、もう手遅れだ。この地には癒える時間が要る…そして私の力は、封じ…凍らせねば…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#010": {
+   "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits linger. I would...prefer against giving him a harder time.",
+   "dst": "あの鼻持ちならない奴…Mael から学んだことがあるとすれば…理由なき死は魂をさまよわせる。あいつにこれ以上苦労をかけたくはない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#011": {
+   "src": "Wha... so many revelations... ice magic staves off corruption...? It is true that this place has seen less corrupted threats than other places in the province...",
+   "dst": "何と…これほどの真実が…氷の魔法が腐敗を防ぐ…？確かにここは地方の他の場所より腐敗の脅威が少なかった…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#012": {
+   "src": "Dear gods... We've had it all wrong this whole time... It was to protect everyone... but surely he would have told someone his intentions if he was of that sound a mind!",
+   "dst": "なんということだ…ずっと勘違いしていた…皆を守るためだった…だが正気なら、誰かに意図を伝えたはずだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#013": {
+   "src": "Soldier! I'm not sure it is wise to be here... An icy death awaits you if you proceed. A death that I will cause..",
+   "dst": "兵士よ！ここにいるのは賢明ではない…進めば冷たい死が待っている。私がもたらす死が…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#014": {
+   "src": "I have many regrets of my time spent alive in Wynn. I do not wish for my lingering mistakes to harm anyone else. Turn back.",
+   "dst": "Wynn で生きていた頃、私は多くの後悔を残した。残された過ちで、これ以上誰も傷つけたくない。引き返せ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#016": {
+   "src": "You must think you can save me? There is no cure for what I have.",
+   "dst": "私を救えるとでも思っているのか？私の病に治療法はない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#017": {
+   "src": "Unless.. You want to set me free?",
+   "dst": "それとも…私を解放してくれるのか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#020": {
+   "src": "I froze this land to allow it to heal.. People did not understand.. They came for me here, seeking revenge.",
+   "dst": "この地を凍らせたのは癒すためだった…人々には理解されなかった…彼らは復讐を求めてここへ来た。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#021": {
+   "src": "Of course, just like you.. They can not leave. Their souls are stuck here. For the spell must not be broken.",
+   "dst": "もちろん、お前と同じく…彼らは去れない。魂がここに囚われている。この魔法は決して破られてはならぬからだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#023": {
+   "src": "Even if you think you can cure me.. I can not allow you to try for if it were to fail my corrupted body would wreak havoc on the world!",
+   "dst": "私を治せると思っていても…試させるわけにはいかない。失敗すれば、この腐敗した体が世界を破壊し尽くすだろう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#024": {
+   "src": "It will be dangerous...perhaps your toughest fight yet...but it must be done. If you need time to prepare, do so. But you must end Theorick's pain.",
+   "dst": "危険だろう…おそらくこれまでで最も厳しい戦いになる…だが、やらねばならない。準備が要るなら整えてくれ。だが、Theorick の苦しみは必ず終わらせてくれ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#025": {
+   "src": "Don't you just love fishing? The little waves in the river, the wind and the rewarding feeling when you catch something, those are my favorite things about it.",
+   "dst": "釣りって最高じゃない？川のさざ波、風、何かが釣れた時の満足感、そこが一番好きなんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#027": {
    "src": "You can not return until your goal is fulfilled...",
    "dst": "目的を果たすまで、戻ることはできない…",
    "role": "desc",
@@ -16,7 +236,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Fate of the Fallen#001": {
+  "Fate of the Fallen#028": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
    "dst": "[{~1}, {~2}, -{~3}] で魔術師 Telvu と話す。",
    "role": "desc",
@@ -26,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#002": {
+  "Fate of the Fallen#029": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
    "dst": "おや、{p} 軍の者か。この凍てついた墳墓に入ろうとしているところだ。力を貸してほしい。",
    "role": "desc",
@@ -36,7 +256,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#003": {
+  "Fate of the Fallen#030": {
    "src": "Are you familiar with the story of Theorick and {p}?",
    "dst": "Theorick と {p} の話は知っているか？",
    "role": "desc",
@@ -46,7 +266,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#004": {
+  "Fate of the Fallen#031": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
    "dst": "知らないだろうな。実は、{p} は昔から凍っていたわけではない。",
    "role": "desc",
@@ -56,7 +276,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#005": {
+  "Fate of the Fallen#032": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
    "dst": "Theorick の時代、ここは Wynn の平原のように暖かく、耕作に適していた。",
    "role": "desc",
@@ -66,7 +286,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#006": {
+  "Fate of the Fallen#033": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
    "dst": "なぜか Theorick Twain は強大な力でこの地を凍らせ、自らをここに追放した。",
    "role": "desc",
@@ -76,7 +296,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#007": {
+  "Fate of the Fallen#034": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
    "dst": "この魔法を解くには理由を突き止めねば。魔力の源はおそらく墳墓の中にある…だが手ぶらで入りたくはない。",
    "role": "desc",
@@ -86,7 +306,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#008": {
+  "Fate of the Fallen#035": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
    "dst": "そこで…{p} という場所を聞いたことは？それを使って過去に戻り、Theorick の行いを探れるかもしれない。",
    "role": "desc",
@@ -96,7 +316,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#009": {
+  "Fate of the Fallen#036": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
    "dst": "まあ…ある意味ではな。この手の魔法には法則がある。一つ、見たい時代の品が必要だ。二つ、過去は見られても変えられない。",
    "role": "desc",
@@ -106,7 +326,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#010": {
+  "Fate of the Fallen#037": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
    "dst": "Theorick の杖の一本が {p} の銀行に展示されている。目的には使えるはずだ。どうにか取ってこられるか？",
    "role": "desc",
@@ -116,7 +336,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#011": {
+  "Fate of the Fallen#038": {
    "src": "Find Theorick's stave at {p} bank.",
    "dst": "{p} の銀行で Theorick の杖を見つける。",
    "role": "desc",
@@ -126,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#012": {
+  "Fate of the Fallen#039": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
    "dst": "ははあ、早いな。杖を手に入れたか。銀行員に手放させるには、相当口が回ったのだろう。",
    "role": "desc",
@@ -136,7 +356,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#013": {
+  "Fate of the Fallen#040": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
    "dst": "さて、{p} までは長い道のりだ。だが歩く必要はない、私が転送しよう。たぶんな。",
    "role": "desc",
@@ -146,7 +366,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#014": {
+  "Fate of the Fallen#041": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
    "dst": "着いたら Temple of Time に入れ。そこへ行けば何をすべきか分かるはずだ。時間旅行には気をつけろ、友よ…何に出くわすか分からん。",
    "role": "desc",
@@ -156,7 +376,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#015": {
+  "Fate of the Fallen#042": {
    "src": "Just step into the portal.",
    "dst": "ポータルに入るだけでいい。",
    "role": "desc",
@@ -166,7 +386,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#016": {
+  "Fate of the Fallen#043": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
    "dst": "何かあれば、ここに残って神殿へ転送し戻そう。",
    "role": "desc",
@@ -176,7 +396,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#017": {
+  "Fate of the Fallen#044": {
    "src": "Enter the portal the mage made.",
    "dst": "魔術師が作ったポータルに入る。",
    "role": "desc",
@@ -186,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#018": {
+  "Fate of the Fallen#045": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
    "dst": "[-{~1}, {~2}, -{~3}] の Gate of Time に入り、過去へ遡る。",
    "role": "desc",
@@ -196,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#019": {
+  "Fate of the Fallen#046": {
    "src": "Explore Past {p}.",
    "dst": "過去の {p} を探索する。",
    "role": "desc",
@@ -206,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#020": {
+  "Fate of the Fallen#047": {
    "src": "What the...",
    "dst": "何だ…",
    "role": "desc",
@@ -216,7 +436,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#021": {
+  "Fate of the Fallen#048": {
    "src": "Woah, your weaponry and armour is so advanced!",
    "dst": "うわ、君の武器も防具もすごく進んでる！",
    "role": "desc",
@@ -226,7 +446,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#022": {
+  "Fate of the Fallen#049": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
    "dst": "Twain 家の人？あんな魔法は Twain 家しか使えないよ。",
    "role": "desc",
@@ -236,7 +456,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#023": {
+  "Fate of the Fallen#050": {
    "src": "Oh, you're looking for Theorick.",
    "dst": "ああ、Theorick を探してるんだ。",
    "role": "desc",
@@ -246,7 +466,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#024": {
+  "Fate of the Fallen#051": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
    "dst": "彼は戦争で忙しいよ。君も戦うべきじゃない？",
    "role": "desc",
@@ -256,7 +476,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#025": {
+  "Fate of the Fallen#052": {
    "src": "He went west. There was some kind of emergency.",
    "dst": "西へ向かったよ。何か緊急事態があったみたい。",
    "role": "desc",
@@ -266,7 +486,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#026": {
+  "Fate of the Fallen#053": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
    "dst": "僕らは何年も腐敗と戦ってきた。ついに {p} まで飲み込まれそうなんだ。",
    "role": "desc",
@@ -276,7 +496,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#027": {
+  "Fate of the Fallen#054": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
    "dst": "{p} の西の森で Theorick を見つける [{~1}, {~2}, {~3}]。",
    "role": "desc",
@@ -286,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#028": {
+  "Fate of the Fallen#055": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
    "dst": "確かにこっちへ行ったはずだが…ああ、今度は何だ、また愚か者か？この森は危険なんだぞ！",
    "role": "desc",
@@ -296,7 +516,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#029": {
+  "Fate of the Fallen#056": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
    "dst": "助けが要るなら衛兵に苦情でも出せ。私は忙しい。この忌々しい地方を救う最中に、お前の牛乳を冷やしに行けるか！！",
    "role": "desc",
@@ -306,7 +526,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#030": {
+  "Fate of the Fallen#057": {
    "src": "Are your ears full of wax?! I said-",
    "dst": "耳が詰まってるのか？！言っただろう―",
    "role": "desc",
@@ -316,7 +536,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#031": {
+  "Fate of the Fallen#058": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
    "dst": "くっ、奴らがついて来た！ほら見ろ！どいていろ。",
    "role": "desc",
@@ -326,7 +546,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#032": {
+  "Fate of the Fallen#059": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
    "dst": "助ける相手が二人も要るか！さっさと失せろ、行方不明の女を探さねばならんのだ！",
    "role": "desc",
@@ -336,7 +556,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#033": {
+  "Fate of the Fallen#060": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
    "dst": "助けてー！逃げ切れない！！！衛兵！誰か！！",
    "role": "desc",
@@ -346,7 +566,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Fate of the Fallen#034": {
+  "Fate of the Fallen#061": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
    "dst": "むっ！あの女の声だ！どこだ？！この辺りは片付けたばかりだぞ！",
    "role": "desc",
@@ -356,7 +576,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#035": {
+  "Fate of the Fallen#062": {
    "src": "Th-Theorick!! There's corrupteds!!",
    "dst": "テ、Theorick！！腐敗体がいるの！！",
    "role": "desc",
@@ -366,7 +586,7 @@
    "speaker": "Girl",
    "source": "wiki"
   },
-  "Fate of the Fallen#036": {
+  "Fate of the Fallen#063": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
    "dst": "くっ、西から奴らを引き連れてきたのか？！そこのお前、凍りたくなければ今すぐ私の後ろに下がれ！！",
    "role": "desc",
@@ -376,7 +596,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#037": {
+  "Fate of the Fallen#064": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
    "dst": "ふう…もう安全だ。だが町を出なければ、そもそも危険な目に遭うこともなかったんだ！",
    "role": "desc",
@@ -386,7 +606,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#038": {
+  "Fate of the Fallen#065": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
    "dst": "謝るのはいい、町に戻れ。今すぐだ。",
    "role": "desc",
@@ -396,7 +616,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#039": {
+  "Fate of the Fallen#066": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
    "dst": "次に森で花摘みだか何だかしたくなったら、自分の命を思い出せ、いいな？！",
    "role": "desc",
@@ -406,7 +626,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#040": {
+  "Fate of the Fallen#067": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
    "dst": "毎日、腐敗体は増え、死者も増える…手はひとつ。私自ら片をつける。根を断ち…この地獄の雑草を殺す。",
    "role": "desc",
@@ -416,7 +636,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#041": {
+  "Fate of the Fallen#068": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
    "dst": "まだいたのか？なら聞け。私と数人で危険な計画を立てている。正気を失おうが構わん、あのポータルを通らねばならん。",
    "role": "desc",
@@ -426,7 +646,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#042": {
+  "Fate of the Fallen#069": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
    "dst": "装備は立派なようだから、お前を徴用する。直ちに拠点に来い。川沿いに南へ行けば、右手に家が見える。",
    "role": "desc",
@@ -436,7 +656,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#043": {
+  "Fate of the Fallen#070": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
    "dst": "{p} の南にある作戦拠点へ向かう [{~1}, {~2}, {~3}]。",
    "role": "desc",
@@ -446,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#044": {
+  "Fate of the Fallen#071": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
    "dst": "まあ、これは認めよう。少なくとも命令にはすぐ従うな。我々は {p} へ向かう。",
    "role": "desc",
@@ -456,7 +676,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#045": {
+  "Fate of the Fallen#072": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
    "dst": "ポータルに入って戻った最後の男は Bak’al になった…だがわずかでも可能性があるなら、今はそれに賭けるしかない。",
    "role": "desc",
@@ -466,7 +686,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#046": {
+  "Fate of the Fallen#073": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
    "dst": "出発だ。道中休憩はなしだ、準備はできているだろうな。",
    "role": "desc",
@@ -476,7 +696,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#047": {
+  "Fate of the Fallen#074": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
    "dst": "さて。私の操る極寒は腐敗そのものを食い止められる。お前たちに同じことが言えるとは思えん。私一人で入る。",
    "role": "desc",
@@ -486,7 +706,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#048": {
+  "Fate of the Fallen#075": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
    "dst": "私が入れば…推測だが、腐敗体が後を追ってポータルに群がるだろう。お前の役目？奴らを倒せ。中で気を散らすわけにはいかん。",
    "role": "desc",
@@ -496,7 +716,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#049": {
+  "Fate of the Fallen#076": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
    "dst": "私がポータルから出るまで、持ち場を離れるな。分かったな？",
    "role": "desc",
@@ -506,7 +726,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#050": {
+  "Fate of the Fallen#077": {
    "src": "Protect the portal.",
    "dst": "ポータルを守る。",
    "role": "desc",
@@ -516,7 +736,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#051": {
+  "Fate of the Fallen#078": {
    "src": "...no...",
    "dst": "…だめだ…",
    "role": "desc",
@@ -526,7 +746,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#052": {
+  "Fate of the Fallen#079": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
    "dst": "…だめだ、だめだ、だめだ！！くそっ！！",
    "role": "desc",
@@ -536,7 +756,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#053": {
+  "Fate of the Fallen#080": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
    "dst": "何が起きたか分かるか？！負けたんだ！！完全に変わり果てれば、私は地方を滅ぼす！離れろ、今すぐ！聞こえるか？！逃げろ！！",
    "role": "desc",
@@ -546,7 +766,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#054": {
+  "Fate of the Fallen#081": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
    "dst": "私は…お、落ち着け、Theorick…飲まれるな…まだ…解決策は…一つ…",
    "role": "desc",
@@ -556,7 +776,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#055": {
+  "Fate of the Fallen#082": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
    "dst": "ああ…またお前か…他の者は…死んだ？逃げた？臆病者め…うぐっ…",
    "role": "desc",
@@ -566,7 +786,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#056": {
+  "Fate of the Fallen#083": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
    "dst": "生きているなら…顔を上げろ。聞け。私が変われば…い、いや、変わった時…だ、だめだ…ぐああ、私は滅ぼ…んぐっ…",
    "role": "desc",
@@ -576,7 +796,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#057": {
+  "Fate of the Fallen#084": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
    "dst": "長くはもたん、分かるだろう…今…私を殺すのは不可能だ、この愚かな弱…ぐっ、私の頭から出ていけ！！",
    "role": "desc",
@@ -586,7 +806,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#058": {
+  "Fate of the Fallen#085": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
    "dst": "ぐああ…皆に…伝えろ。私はこの地を凍らせる。私は…も、もう手遅れだ。この地には癒える時間が要る…そして私の力は、封じ…凍らせねば…",
    "role": "desc",
@@ -596,7 +816,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#059": {
+  "Fate of the Fallen#086": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
    "dst": "皆、役立たずだ…いや、違う…彼らにも生きる資格はある…この魔法は…必ず犠牲を出す。どうか、理由を伝えてくれ…",
    "role": "desc",
@@ -606,7 +826,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#060": {
+  "Fate of the Fallen#087": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
    "dst": "あの鼻持ちならない奴…Mael から学んだことがあるとすれば…理由なき死は魂をさまよわせる。あいつにこれ以上苦労をかけたくはない。",
    "role": "desc",
@@ -616,7 +836,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#061": {
+  "Fate of the Fallen#088": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
    "dst": "す、進み続けろ。お前の装備…皆がお前ほど強ければ…勝ち目はあるかもしれん。私が弱った暁には、これで私を終わらせられるだろう。",
    "role": "desc",
@@ -626,7 +846,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#062": {
+  "Fate of the Fallen#089": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
    "dst": "知らしめよ…Theorick Twain は死んでいない。殺すことはできぬ…全ては燃える…未来の日まで。ここ、この呪われた地で。私を見つけ…全てを終わらせよ。",
    "role": "desc",
@@ -636,7 +856,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#063": {
+  "Fate of the Fallen#090": {
    "src": "Tell Telvu the mage what happened.",
    "dst": "魔術師 Telvu に何があったか伝える。",
    "role": "desc",
@@ -646,7 +866,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#064": {
+  "Fate of the Fallen#091": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
    "dst": "成功したようだな、でなければまだ過去の記憶の中にいるはずだ。君から強い魔力を感じる。",
    "role": "desc",
@@ -656,7 +876,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#065": {
+  "Fate of the Fallen#092": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
    "dst": "それで、Theorick に会ったのか？大凍結の後、彼は英雄から堕ちたと言われてきた。",
    "role": "desc",
@@ -666,7 +886,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#066": {
+  "Fate of the Fallen#093": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
    "dst": "せめて、なぜ彼がここを凍らせたのかは分かったか？",
    "role": "desc",
@@ -676,7 +896,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#067": {
+  "Fate of the Fallen#094": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
    "dst": "何と…これほどの真実が…氷の魔法が腐敗を防ぐ…？確かにここは地方の他の場所より腐敗の脅威が少なかった…",
    "role": "desc",
@@ -686,7 +906,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#068": {
+  "Fate of the Fallen#095": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
    "dst": "なんということだ…ずっと勘違いしていた…これは皆を守るためだった…だが正気なら、誰かに意図を伝えたはずだ！",
    "role": "desc",
@@ -696,7 +916,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#069": {
+  "Fate of the Fallen#096": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
    "dst": "これほど長く、生き埋めのまま腐敗と戦ってきたとは。その顔を見るに、君もぞっとしているようだな。彼を殺すことは慈悲になるだろう。",
    "role": "desc",
@@ -706,7 +926,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#070": {
+  "Fate of the Fallen#097": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
    "dst": "ほら、これを使え。氷の墳墓の中で身を守ってくれるかもしれない……頼む、兵士よ。Theorick の守護天使になってくれ。彼をこの苦しみから解き放ってやってくれ。",
    "role": "desc",

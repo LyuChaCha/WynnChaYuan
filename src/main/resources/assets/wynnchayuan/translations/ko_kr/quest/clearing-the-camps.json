@@ -1,12 +1,102 @@
 {
  "_meta": {
   "quest": "Clearing the Camps",
-  "count": 14,
-  "translated": 14,
+  "count": 23,
+  "translated": 23,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Clearing the Camps#000": {
+   "src": "Did you hear about the requests from the Villagers we've gotten? They say these 'Orcs' and 'Goblins' are threatening their towns and cities.",
+   "dst": "주민들이 보낸 요청 소식 들었나? 'Orcs'니 'Goblins'니 하는 것들이 마을과 도시를 위협한다더군.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#001": {
+   "src": "Primitive, brutal things, apparently little better than the zombies we're used to, at least according to the {p} military.",
+   "dst": "{p} 군 말로는 원시적이고 난폭한 놈들이라, 우리가 익숙한 좀비보다 딱히 나을 게 없다더군.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#002": {
+   "src": "Our scouts have identified three 'chief' orcs in the area- Elisu, Ceifko, and Veltu. Though, strangely, Veltu is always surrounded by goblins...",
+   "dst": "정찰병들이 이 일대에서 오크 '족장' 셋을 찾아냈네. Elisu, Ceifko, Veltu. 그런데 이상하게 Veltu 주변엔 늘 고블린이...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#003": {
+   "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags - search the plains, and return once they're dealt with!",
+   "dst": "뭐, 어쨌든 우린 여기서 {p}을(를) 지켜야 하네. 족장들을 맡아 주겠나? 초록 깃발이 꽂힌 야영지에 숨어 있는 듯하네. 평원을 뒤져서 처리하면 돌아오게!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#004": {
+   "src": "Ah, good, more of you small-noses are here to fight.",
+   "dst": "아, 좋아, 코 작은 녀석들이 또 싸우러 왔군.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#005": {
+   "src": "You're good for battle, so the government can focus more on the real issues.",
+   "dst": "너희는 싸움에 쓸 만하니, 정부는 진짜 문제에 더 집중할 수 있지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#006": {
+   "src": "Can't afford to have all our resources on war when we have the Decay to deal with up north.",
+   "dst": "북쪽에서 쇠락을 상대해야 하는데 자원을 전부 전쟁에 쏟을 순 없거든.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#007": {
+   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead or alive, as long as they're dealt with. I have your share of the reward here.",
+   "dst": "그건... 생각보다 좀 과격하지만, 뭐 효과는 있지... 주민들도 처리만 되면 죽든 살든 상관 안 할 테니. 자네 몫의 보상일세.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#008": {
+   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah... livelier than usual. Better get used to it.",
+   "dst": "밖에서 봤겠지만, Gavel의 생물들은 Wynn 것들과 차원이 다르지? 좀, 어... 유난히 팔팔하다네. 익숙해지는 게 좋을 걸세.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#009": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에서 {p} 밖에 있는 대장 Kymer에게 말을 거세요",
    "role": "desc",
@@ -16,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#001": {
+  "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "아하, {p} 병사가 또 왔군? 뭐, 따뜻하게 환영하지.",
    "role": "desc",
@@ -26,7 +116,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#002": {
+  "Clearing the Camps#011": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
    "dst": "주민들이 보낸 요청 소식 들었나? \"Orcs\"니 \"Goblins\"니 하는 것들이 마을과 도시를 위협한다더군.",
    "role": "desc",
@@ -36,7 +126,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#003": {
+  "Clearing the Camps#012": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
    "dst": "{p} 군 말로는 원시적이고 난폭한 놈들이라, 우리가 익숙한 좀비보다 딱히 나을 게 없다더군.",
    "role": "desc",
@@ -46,7 +136,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#004": {
+  "Clearing the Camps#013": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
    "dst": "그래서 힘이 곧 정의인 놈들이라면, 우두머리를 쓰러뜨리면 겁먹고 굴복할 거라 봤지.",
    "role": "desc",
@@ -56,7 +146,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#005": {
+  "Clearing the Camps#014": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
    "dst": "정찰병들이 이 일대에서 오크 \"족장\" 셋을 찾아냈네. Elisu, Ceifko, Veltu. 그런데 이상하게 Veltu 주변엔 늘 고블린이...",
    "role": "desc",
@@ -66,7 +156,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#006": {
+  "Clearing the Camps#015": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
    "dst": "뭐, 어쨌든 우린 여기서 {p}을(를) 지켜야 하네. 족장들을 맡아 주겠나? 초록 깃발이 꽂힌 야영지에 숨어 있는 듯하네. 평원을 뒤져서 처리하면 돌아오게!",
    "role": "desc",
@@ -76,7 +166,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#007": {
+  "Clearing the Camps#016": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
    "dst": "{p} 주변 야영지에서 오크 족장 Elisu, Veltu, Ceifko를 찾아 처치하세요- 초록 깃발을 찾으세요",
    "role": "desc",
@@ -86,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#008": {
+  "Clearing the Camps#017": {
    "src": "Report back to Captain Kymer once you have the three heads.",
    "dst": "세 족장의 머리를 얻으면 대장 Kymer에게 보고하세요.",
    "role": "desc",
@@ -96,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#009": {
+  "Clearing the Camps#018": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
    "dst": "아, 아까 그 병사로군! 돌아왔구먼. 그놈들은 처리했- ...으악. 그거 놈들 머리인가?",
    "role": "desc",
@@ -106,7 +196,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#010": {
+  "Clearing the Camps#019": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
    "dst": "그건... 생각보다 좀 과격하지만, 뭐 효과는 있지... 주민들도 처리만 되면 죽든 살든 상관 안 할 테니. 자네 몫의 보상일세.",
    "role": "desc",
@@ -116,7 +206,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#011": {
+  "Clearing the Camps#020": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
    "dst": "이런 정밀 타격이면 오크와의 전면전은 막을 수 있겠지. 지방마다 전면전을 치르고 싶진 않으니까, 하!",
    "role": "desc",
@@ -126,7 +216,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#012": {
+  "Clearing the Camps#021": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
    "dst": "밖에서 봤겠지만, Gavel의 생물들은 Wynn 것들과 차원이 다르지? 좀, 어... 유난히 팔팔하다네. 익숙해지는 게 좋을 걸세.",
    "role": "desc",
@@ -136,7 +226,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#013": {
+  "Clearing the Camps#022": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
    "dst": "다음 큰 정착지는 북쪽 늪의 {p}인데, 늪 오우거는 평원 놈들보다 훨씬 강하다더군. 나라면 여기서 먼저 수련하겠네.",
    "role": "desc",

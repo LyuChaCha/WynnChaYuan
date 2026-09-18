@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 23295,
-  "translated": 23286,
+  "count": 23377,
+  "translated": 23377,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -7445,35 +7445,9 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Further#000": {
-   "src": "Agh... Don't worry...a-abou",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Agh... Don't worry...a-about me",
-    "file": "quest/a-journey-further.json",
-    "ratio": 0.931,
-    "reason": "prefix"
-   }
-  },
   "A Journey Further#001": {
    "src": "Please don't leave me!",
    "dst": "Не бросай меня!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Further",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "A Journey Further#002": {
-   "src": "Agh... Don't worry...a-about me",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -29541,16 +29515,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Apotheosis (Quest)#205": {
-   "src": "Oh, how",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Apotheosis (Quest)",
-   "stage": "Stage 12",
-   "speaker": "Her Majesty",
-   "source": "wiki"
-  },
   "Apotheosis (Quest)#206": {
    "src": "So it would I cannot rely on my Sovereigns for anything!",
    "dst": "Выходит, на моих Суверенов ни в чём нельзя положиться!",
@@ -47508,6 +47472,96 @@
    "source": "wiki"
   },
   "Clearing the Camps#000": {
+   "src": "Did you hear about the requests from the Villagers we've gotten? They say these 'Orcs' and 'Goblins' are threatening their towns and cities.",
+   "dst": "Знаешь о просьбах, что пришли от селян? Говорят, какие-то «Orcs» и «Goblins» угрожают их городам и сёлам.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#001": {
+   "src": "Primitive, brutal things, apparently little better than the zombies we're used to, at least according to the {p} military.",
+   "dst": "Первобытные, жестокие твари - по словам военных {p}, немногим лучше привычных нам зомби.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#002": {
+   "src": "Our scouts have identified three 'chief' orcs in the area- Elisu, Ceifko, and Veltu. Though, strangely, Veltu is always surrounded by goblins...",
+   "dst": "Разведчики нашли в округе трёх «вождей» орков - Elisu, Ceifko и Veltu. Хотя Veltu почему-то всегда окружён гоблинами…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#003": {
+   "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags - search the plains, and return once they're dealt with!",
+   "dst": "В общем, нам нужно оборонять {p}. Справишься с вождями? Они, похоже, прячутся в лагерях с зелёными флагами - обыщи равнины и возвращайся, когда разберёшься!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#004": {
+   "src": "Ah, good, more of you small-noses are here to fight.",
+   "dst": "А, хорошо, ещё курносые пришли воевать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#005": {
+   "src": "You're good for battle, so the government can focus more on the real issues.",
+   "dst": "В бою от вас толк есть, так что правительство сможет заняться настоящими проблемами.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#006": {
+   "src": "Can't afford to have all our resources on war when we have the Decay to deal with up north.",
+   "dst": "Нельзя бросать все силы на войну, когда на севере у нас Тлен.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#007": {
+   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead or alive, as long as they're dealt with. I have your share of the reward here.",
+   "dst": "Это… жёстче, чем я задумывал, но сойдёт… Селянам всё равно, живы они или мертвы, лишь бы с ними покончили. Вот твоя доля награды.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#008": {
+   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah... livelier than usual. Better get used to it.",
+   "dst": "Ты ведь видишь, что твари в Gavel - не чета тем, что в Wynn? Они, э-э… пободрее обычного. Привыкай.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Clearing the Camps",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Clearing the Camps#009": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Капитаном Kymer за пределами {p} в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -47517,7 +47571,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#001": {
+  "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "Ага, ещё один солдат из {p}, а? Что ж, добро пожаловать.",
    "role": "desc",
@@ -47527,7 +47581,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#002": {
+  "Clearing the Camps#011": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
    "dst": "Знаешь о просьбах, что пришли от селян? Говорят, какие-то «Orcs» и «Goblins» угрожают их городам и сёлам.",
    "role": "desc",
@@ -47537,7 +47591,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#003": {
+  "Clearing the Camps#012": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
    "dst": "Первобытные, жестокие твари - по словам военных {p}, немногим лучше привычных нам зомби.",
    "role": "desc",
@@ -47547,7 +47601,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#004": {
+  "Clearing the Camps#013": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
    "dst": "Вот мы и решили: раз у них прав тот, кто сильнее, победа над вожаками их запугает.",
    "role": "desc",
@@ -47557,7 +47611,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#005": {
+  "Clearing the Camps#014": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
    "dst": "Разведчики нашли в округе трёх «вождей» орков - Elisu, Ceifko и Veltu. Хотя Veltu почему-то всегда окружён гоблинами…",
    "role": "desc",
@@ -47567,7 +47621,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#006": {
+  "Clearing the Camps#015": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
    "dst": "В общем, нам нужно оборонять {p}. Справишься с вождями? Они, похоже, прячутся в лагерях с зелёными флагами - обыщи равнины и возвращайся, когда разберёшься!",
    "role": "desc",
@@ -47577,7 +47631,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#007": {
+  "Clearing the Camps#016": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
    "dst": "Найди и убей вождей орков Elisu, Veltu и Ceifko в лагерях вокруг {p} - ищи зелёные флаги",
    "role": "desc",
@@ -47587,7 +47641,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#008": {
+  "Clearing the Camps#017": {
    "src": "Report back to Captain Kymer once you have the three heads.",
    "dst": "Вернись к Капитану Kymer с тремя головами.",
    "role": "desc",
@@ -47597,7 +47651,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Clearing the Camps#009": {
+  "Clearing the Camps#018": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
    "dst": "А, солдат из недавнего! Снова здесь, вижу. Как успехи с этими… брр. Это их головы?",
    "role": "desc",
@@ -47607,7 +47661,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#010": {
+  "Clearing the Camps#019": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
    "dst": "Это… жёстче, чем я задумывал, но сойдёт… Селянам всё равно, живы они или мертвы, лишь бы с ними покончили. Вот твоя доля награды.",
    "role": "desc",
@@ -47617,7 +47671,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#011": {
+  "Clearing the Camps#020": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
    "dst": "Такой точечный удар поможет избежать войны с орками. Не хватало нам ещё полномасштабной войны в каждой провинции, ха!",
    "role": "desc",
@@ -47627,7 +47681,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#012": {
+  "Clearing the Camps#021": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
    "dst": "Ты ведь видишь, что твари в Gavel - не чета тем, что в Wynn? Они, э-э… пободрее обычного. Привыкай.",
    "role": "desc",
@@ -47637,7 +47691,7 @@
    "speaker": "Captain Kymer",
    "source": "wiki"
   },
-  "Clearing the Camps#013": {
+  "Clearing the Camps#022": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
    "dst": "Следующее крупное поселение - {p}, в болоте на севере, но болотные огры, говорят, куда крепче равнинных. На твоём месте я бы сперва потренировался здесь.",
    "role": "desc",
@@ -51876,6 +51930,16 @@
    "source": "captured"
   },
   "Dearly Departed#000": {
+   "src": "[+{~} Muddy Shovel]",
+   "dst": "[+{~} Muddy Shovel]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dearly Departed#001": {
    "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "Поговори с фермером Cevalus в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -51885,7 +51949,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#001": {
+  "Dearly Departed#002": {
    "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
    "dst": "А, похоже, новобранец! Видел моё объявление? Хорошо, хорошо.",
    "role": "desc",
@@ -51895,7 +51959,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#002": {
+  "Dearly Departed#003": {
    "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
    "dst": "Видишь ли, мой дорогой тесть недавно скончался, и пришлось наспех похоронить его за домом. Священника вовремя не дозвался…",
    "role": "desc",
@@ -51905,7 +51969,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#003": {
+  "Dearly Departed#004": {
    "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
    "dst": "К несчастью, так вышло, что моё обручальное кольцо, кажется, соскользнуло, пока я его хоронил…",
    "role": "desc",
@@ -51915,7 +51979,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#004": {
+  "Dearly Departed#005": {
    "src": "I need you to go back there and, well, recover the ring.",
    "dst": "Нужно сходить туда и, ну, достать кольцо.",
    "role": "desc",
@@ -51925,7 +51989,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#005": {
+  "Dearly Departed#006": {
    "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
    "dst": "Сам бы я, конечно, справился, но жена уже что-то подозревает, а её дорогой отец так недавно умер…",
    "role": "desc",
@@ -51935,7 +51999,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#006": {
+  "Dearly Departed#007": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
    "dst": "Ну, понимаешь моё положение? Выручи беднягу: возьми вон ту [Muddy Shovel] и возвращайся ко мне.",
    "role": "desc",
@@ -51945,7 +52009,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#007": {
+  "Dearly Departed#008": {
    "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
    "dst": "Подбери лопату в [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -51955,7 +52019,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#008": {
+  "Dearly Departed#009": {
    "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
    "dst": "[Muddy Shovel] вон там. Буду очень благодарен за помощь, новобранец.",
    "role": "desc",
@@ -51965,7 +52029,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#009": {
+  "Dearly Departed#010": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "Вернись к фермеру Cevalus в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -51975,7 +52039,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#010": {
+  "Dearly Departed#011": {
    "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
    "dst": "Лопата у тебя? Отлично! Крепкая броня и оружие тоже есть, я полагаю?",
    "role": "desc",
@@ -51985,7 +52049,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#011": {
+  "Dearly Departed#012": {
    "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
    "dst": "Хорошо, хорошо. Бережёного бог бережёт… Как я всегда говорю! Всегда, ха-ха…",
    "role": "desc",
@@ -51995,7 +52059,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#012": {
+  "Dearly Departed#013": {
    "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
    "dst": "О, да просто так! На всякий случай, ха-ха… Там должно быть совершенно безопасно, совершенно.",
    "role": "desc",
@@ -52005,7 +52069,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#013": {
+  "Dearly Departed#014": {
    "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
    "dst": "Очки навыков у тебя тоже распределены? Пригодятся, если что-то случится.",
    "role": "desc",
@@ -52015,7 +52079,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#014": {
+  "Dearly Departed#015": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
    "dst": "Ну, это очки навыков! Их получаешь с уровнем, а потом распределяешь ради бонусов в бою. Я не солдат, но даже я знаю, что их надо использовать…",
    "role": "desc",
@@ -52025,7 +52089,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#015": {
+  "Dearly Departed#016": {
    "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
    "dst": "Их пять. Сила, Ловкость, Интеллект, Защита и Проворство, у каждого свои бонусы.",
    "role": "desc",
@@ -52035,7 +52099,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#016": {
+  "Dearly Departed#017": {
    "src": "You get it, or do you want me to tell you what they are?",
    "dst": "Понял, или рассказать, что они дают?",
    "role": "desc",
@@ -52045,7 +52109,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#017": {
+  "Dearly Departed#018": {
    "src": "is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "пригодится, если трудно одолеть врагов. Твои удары бьют сильнее, вот и всё.",
    "role": "desc",
@@ -52055,7 +52119,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#018": {
+  "Dearly Departed#019": {
    "src": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
    "dst": "штука хитрая. Чем её больше, тем выше шанс, что удар нанесёт двойной урон. Здорово, да?",
    "role": "desc",
@@ -52065,7 +52129,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#019": {
+  "Dearly Departed#020": {
    "src": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
    "dst": "для заклинателей: снижает стоимость заклинаний и повышает запас маны.",
    "role": "desc",
@@ -52075,7 +52139,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#020": {
+  "Dearly Departed#021": {
    "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
    "dst": "выручит, если трудно выжить. Снижает получаемый урон, вот и всё.",
    "role": "desc",
@@ -52085,7 +52149,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#021": {
+  "Dearly Departed#022": {
    "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
    "dst": "Проворство - это для любителей риска. Чем его больше, тем чаще уклоняешься от атак, почти не получая урона.",
    "role": "desc",
@@ -52095,7 +52159,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#022": {
+  "Dearly Departed#023": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
    "dst": "А главное, их можно сочетать как угодно, какой бы ни был класс или стиль боя.",
    "role": "desc",
@@ -52105,7 +52169,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#023": {
+  "Dearly Departed#024": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
    "dst": "Открой компас, чтобы распределить очки навыков. А как будешь готов, иди туда и достань моё кольцо.",
    "role": "desc",
@@ -52115,7 +52179,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#024": {
+  "Dearly Departed#025": {
    "src": "Dig up the grave at [-{~}, {~}, -{~}].",
    "dst": "Раскопай могилу в [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -52125,7 +52189,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#025": {
+  "Dearly Departed#026": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
    "dst": "Вперёд, солдат! Покажи мощь армии {p}! То есть… достань мне кольцо!",
    "role": "desc",
@@ -52135,7 +52199,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#026": {
+  "Dearly Departed#027": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
    "dst": "Что там у тебя, солдат? Кольцо уже нашёл?",
    "role": "desc",
@@ -52145,7 +52209,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#027": {
+  "Dearly Departed#028": {
    "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
    "dst": "Тебе стоит поторопиться, пока… неважно! Просто найди кольцо и уходи оттуда!",
    "role": "desc",
@@ -52155,7 +52219,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#028": {
+  "Dearly Departed#029": {
    "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
    "dst": "Святая корова! Это… это… он вернулся! Убей его, скорее!",
    "role": "desc",
@@ -52165,7 +52229,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#029": {
+  "Dearly Departed#030": {
    "src": "Kill the Corrupted Father-in-Law!",
    "dst": "Убей осквернённого тестя!",
    "role": "desc",
@@ -52175,7 +52239,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#030": {
+  "Dearly Departed#031": {
    "src": "You did it! Come back here now, so I can finally get my ring back.",
    "dst": "Получилось! Возвращайся скорее, я наконец заберу своё кольцо.",
    "role": "desc",
@@ -52185,7 +52249,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#031": {
+  "Dearly Departed#032": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "Вернись к фермеру Cevalus в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -52195,7 +52259,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#032": {
+  "Dearly Departed#033": {
    "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
    "dst": "Батюшки, это было чуть волнительнее, чем я ожидал, хм. Но отличная работа! Рад, что мы избавились от этого чудища…",
    "role": "desc",
@@ -52205,7 +52269,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#033": {
+  "Dearly Departed#034": {
    "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
    "dst": "То есть… бедный тесть! Не знаю, как объяснить это жене…",
    "role": "desc",
@@ -52215,7 +52279,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#034": {
+  "Dearly Departed#035": {
    "src": "I'll take the ring now, it's rather precious to me...",
    "dst": "Кольцо я заберу, оно мне весьма дорого…",
    "role": "desc",
@@ -52225,7 +52289,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#035": {
+  "Dearly Departed#036": {
    "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
    "dst": "Так или иначе, прими заслуженную награду за, кхм, сегодняшние дела. Может, если так пойдёт, однажды станешь героем, как Ragnar.",
    "role": "desc",
@@ -52235,7 +52299,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#036": {
+  "Dearly Departed#037": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
    "dst": "Здравствуйте, путник. Вы хотели о чём-то со мной поговорить?",
    "role": "desc",
@@ -52245,7 +52309,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#037": {
+  "Dearly Departed#038": {
    "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
    "dst": "Мне бы разозлиться, но… удивлённой притвориться не могу. Он всегда был рассеянным увальнем.",
    "role": "desc",
@@ -52255,7 +52319,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#038": {
+  "Dearly Departed#039": {
    "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
    "dst": "Но это многое объясняет… Он странно себя ведёт с тех пор, как умер папа. Вот, значит, в чём дело. Спасибо, что рассказали.",
    "role": "desc",
@@ -52265,7 +52329,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#039": {
+  "Dearly Departed#040": {
    "src": "That's right. The one and only, ha ha...",
    "dst": "Она самая, единственная, ха-ха…",
    "role": "desc",
@@ -52275,7 +52339,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#040": {
+  "Dearly Departed#041": {
    "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
    "dst": "Мы простые фермеры, живём как можем. Мы ухаживали за папой, пока… ну… да…",
    "role": "desc",
@@ -52285,7 +52349,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#041": {
+  "Dearly Departed#042": {
    "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
    "dst": "Спасибо… Всё случилось так внезапно. В день, когда я уехала в {p}, папа был здоров как никогда, а когда вернулась, его уже похоронили. Болезнь, видно, была скоротечной…",
    "role": "desc",
@@ -52295,7 +52359,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#042": {
+  "Dearly Departed#043": {
    "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
    "dst": "Но в его годы я не удивлена… Жаль только, что не успели позвать священника, папа был очень набожным.",
    "role": "desc",
@@ -52305,7 +52369,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#043": {
+  "Dearly Departed#044": {
    "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
    "dst": "Папа… Прежде всего он был добрым и щедрым. Оставил нам всю эту ферму. И очень набожным, истинно верующим. Может, поэтому и прожил так долго…",
    "role": "desc",
@@ -52315,7 +52379,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#044": {
+  "Dearly Departed#045": {
    "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
    "dst": "Ох… Если не остановлюсь, опять расплачусь.",
    "role": "desc",
@@ -52325,7 +52389,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#045": {
+  "Dearly Departed#046": {
    "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
    "dst": "Очки навыков у тебя тоже распределены? Могут пригодиться, если что-то случится.",
    "role": "desc",
@@ -52333,7 +52397,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#046": {
+  "Dearly Departed#047": {
    "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
    "dst": "Их пять.  Сила,  Ловкость,  Интеллект,  Защита и  Проворство, у каждого свои бонусы.",
    "role": "desc",
@@ -52341,7 +52405,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#047": {
+  "Dearly Departed#048": {
    "src": "Why are you asking me that?",
    "dst": "Зачем ты это спрашиваешь?",
    "role": "desc",
@@ -52349,7 +52413,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#048": {
+  "Dearly Departed#049": {
    "src": "What are Skill Points?",
    "dst": "Что такое очки навыков?",
    "role": "desc",
@@ -52357,7 +52421,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#049": {
+  "Dearly Departed#050": {
    "src": "I got it.",
    "dst": "Понятно.",
    "role": "desc",
@@ -52365,7 +52429,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#050": {
+  "Dearly Departed#051": {
    "src": "About Strength.",
    "dst": "Про Силу.",
    "role": "desc",
@@ -52373,7 +52437,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#051": {
+  "Dearly Departed#052": {
    "src": "About Dexterity.",
    "dst": "Про Ловкость.",
    "role": "desc",
@@ -52381,7 +52445,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#052": {
+  "Dearly Departed#053": {
    "src": "About Intelligence.",
    "dst": "Про Интеллект.",
    "role": "desc",
@@ -52389,7 +52453,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#053": {
+  "Dearly Departed#054": {
    "src": "Not yet...",
    "dst": "Пока нет…",
    "role": "desc",
@@ -52397,7 +52461,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#054": {
+  "Dearly Departed#055": {
    "src": "Dig up the grave?",
    "dst": "Раскопать могилу?",
    "role": "desc",
@@ -52405,7 +52469,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#055": {
+  "Dearly Departed#056": {
    "src": "There you go...",
    "dst": "Готово…",
    "role": "desc",
@@ -52413,7 +52477,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#056": {
+  "Dearly Departed#057": {
    "src": "Now to see if you can find that ring Cevalus mentioned...",
    "dst": "Теперь посмотрим, найдётся ли кольцо, о котором говорил Cevalus…",
    "role": "desc",
@@ -52421,7 +52485,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#057": {
+  "Dearly Departed#058": {
    "src": "You manage to pry the ring off the monster's finger...",
    "dst": "Удаётся кое-как сорвать кольцо с пальца чудовища…",
    "role": "desc",
@@ -52429,7 +52493,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#058": {
+  "Dearly Departed#059": {
    "src": "About Defence.",
    "dst": "О защите.",
    "role": "desc",
@@ -52437,7 +52501,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#059": {
+  "Dearly Departed#060": {
    "src": "About Agility.",
    "dst": "О проворстве.",
    "role": "desc",
@@ -52445,7 +52509,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#060": {
+  "Dearly Departed#061": {
    "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "{#} Сила пригодится, если врагов трудно одолеть. С ней атаки бьют сильнее, всё просто.",
    "role": "desc",
@@ -77992,6 +78056,226 @@
    "source": "wiki"
   },
   "Fate of the Fallen#000": {
+   "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
+   "dst": "А, солдат армии {p}. Мы хотим побольше узнать об этом ледяном кургане. Твоя помощь пригодится.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#001": {
+   "src": "Did you listen?",
+   "dst": "Ты меня слушал?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#002": {
+   "src": "If you don't remember what I said, I remember you writing something in your book. Try looking there.",
+   "dst": "Если не помнишь, что я говорил, - я помню, ты что-то записывал в свою книгу. Загляни туда.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#003": {
+   "src": "You should head back to the mage with the wand.",
+   "dst": "Тебе стоит вернуться к магу с посохом.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#004": {
+   "src": "This is the Temple of Time...",
+   "dst": "Это Temple of Time…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#005": {
+   "src": "Here you can visit the memories of this land...",
+   "dst": "Здесь можно посетить воспоминания этой земли…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#006": {
+   "src": "The altar requires an item from the time you desire to access...",
+   "dst": "Алтарю нужен предмет из того времени, куда ты хочешь попасть…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#007": {
+   "src": "You will access a memory as if you were present, but when you return it will be as if you were never there.",
+   "dst": "Ты увидишь воспоминание, словно ты там, но вернёшься так, будто тебя там и не было.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#008": {
+   "src": "You should stick around to find out how to reverse the spell.",
+   "dst": "Тебе стоит задержаться и узнать, как снять заклятие.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#009": {
+   "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too far gone. It needs time to heal...and my powers m-must be dampened...frozen...",
+   "dst": "Ааах… Передай… всем. Я заморожу эти земли. Я… с-слишком поздно. Земле нужно время… а мою силу н-надо унять… заморозить…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#010": {
+   "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits linger. I would...prefer against giving him a harder time.",
+   "dst": "Если я чему и научился у этого несносного ду- …у Mael… так тому, что смерть без причины держит духов на земле. Не хотелось бы… добавлять ему хлопот.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#011": {
+   "src": "Wha... so many revelations... ice magic staves off corruption...? It is true that this place has seen less corrupted threats than other places in the province...",
+   "dst": "Что… столько откровений… ледяная магия сдерживает Скверну…? И правда, осквернённых здесь меньше, чем в других краях провинции…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#012": {
+   "src": "Dear gods... We've had it all wrong this whole time... It was to protect everyone... but surely he would have told someone his intentions if he was of that sound a mind!",
+   "dst": "Боги… Мы всё это время ошибались… Он хотел всех защитить… но будь он в здравом уме, он бы уж точно кому-то сказал о своих намерениях!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#013": {
+   "src": "Soldier! I'm not sure it is wise to be here... An icy death awaits you if you proceed. A death that I will cause..",
+   "dst": "Солдат! Зря ты сюда пришёл… Пойдёшь дальше - ждёт ледяная смерть. Смерть от моей руки..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#014": {
+   "src": "I have many regrets of my time spent alive in Wynn. I do not wish for my lingering mistakes to harm anyone else. Turn back.",
+   "dst": "Я о многом жалею в той жизни, что прожил в Wynn. Не хочу, чтобы мои давние ошибки навредили кому-то ещё. Возвращайся.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#016": {
+   "src": "You must think you can save me? There is no cure for what I have.",
+   "dst": "Думаешь, сможешь меня спасти? От того, что во мне, лекарства нет.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#017": {
+   "src": "Unless.. You want to set me free?",
+   "dst": "Разве что.. ты хочешь меня освободить?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#020": {
+   "src": "I froze this land to allow it to heal.. People did not understand.. They came for me here, seeking revenge.",
+   "dst": "Я заморозил эту землю, чтобы она исцелилась.. Люди не поняли.. Они пришли сюда за мной, жаждая мести.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#021": {
+   "src": "Of course, just like you.. They can not leave. Their souls are stuck here. For the spell must not be broken.",
+   "dst": "Конечно, как и ты.. Они не могут уйти. Их души заперты здесь. Ибо заклятие не должно быть нарушено.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#023": {
+   "src": "Even if you think you can cure me.. I can not allow you to try for if it were to fail my corrupted body would wreak havoc on the world!",
+   "dst": "Даже если ты думаешь, что можешь меня исцелить.. я не позволю тебе попытаться: если не выйдет, моё осквернённое тело обрушит на мир хаос!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#024": {
+   "src": "It will be dangerous...perhaps your toughest fight yet...but it must be done. If you need time to prepare, do so. But you must end Theorick's pain.",
+   "dst": "Будет опасно… может, это твой самый тяжёлый бой… но так надо. Нужно время на подготовку - готовься. Но ты должен прекратить муки Theorick.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#025": {
+   "src": "Don't you just love fishing? The little waves in the river, the wind and the rewarding feeling when you catch something, those are my favorite things about it.",
+   "dst": "Разве ты не любишь рыбалку? Мелкая рябь на реке, ветер и приятное чувство, когда что-то поймал, - вот что мне в ней нравится больше всего.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#027": {
    "src": "You can not return until your goal is fulfilled...",
    "dst": "Ты не вернёшься, пока цель не будет достигнута…",
    "role": "desc",
@@ -78001,7 +78285,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Fate of the Fallen#001": {
+  "Fate of the Fallen#028": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
    "dst": "Поговори с магом Telvu: [{~}, {~}, -{~}].",
    "role": "desc",
@@ -78011,7 +78295,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#002": {
+  "Fate of the Fallen#029": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
    "dst": "А, солдат армии {p}. Мы пытаемся попасть в этот ледяной курган. Твоя помощь пригодится.",
    "role": "desc",
@@ -78021,7 +78305,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#003": {
+  "Fate of the Fallen#030": {
    "src": "Are you familiar with the story of Theorick and {p}?",
    "dst": "Знаешь историю Theorick и {p}?",
    "role": "desc",
@@ -78031,7 +78315,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#004": {
+  "Fate of the Fallen#031": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
    "dst": "Вряд ли. Видишь ли, льды в {p} были не всегда.",
    "role": "desc",
@@ -78041,7 +78325,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#005": {
+  "Fate of the Fallen#032": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
    "dst": "При Theorick здесь было как на равнинах Wynn - тепло и плодородно.",
    "role": "desc",
@@ -78051,7 +78335,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#006": {
+  "Fate of the Fallen#033": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
    "dst": "Почему-то Theorick Twain своей огромной силой заморозил эти земли, а затем изгнал себя сюда.",
    "role": "desc",
@@ -78061,7 +78345,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#007": {
+  "Fate of the Fallen#034": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
    "dst": "Нужно узнать почему, чтобы снять это заклятие. Видимо, источник его магии где-то в кургане… но идти туда с пустыми руками не хочется.",
    "role": "desc",
@@ -78071,7 +78355,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#008": {
+  "Fate of the Fallen#035": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
    "dst": "Так вот… слышал о месте под названием {p}? С его помощью можно вернуться в прошлое и узнать больше о поступках Theorick.",
    "role": "desc",
@@ -78081,7 +78365,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#009": {
+  "Fate of the Fallen#036": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
    "dst": "Ну… в каком-то смысле. У такой магии есть законы. Во-первых, нужен предмет из того самого времени. Во-вторых, прошлое можно увидеть, но не изменить.",
    "role": "desc",
@@ -78091,7 +78375,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#010": {
+  "Fate of the Fallen#037": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
    "dst": "Один из посохов Theorick выставлен в банке {p}. Думаю, он подойдёт. Сможешь его как-нибудь достать?",
    "role": "desc",
@@ -78101,7 +78385,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#011": {
+  "Fate of the Fallen#038": {
    "src": "Find Theorick's stave at {p} bank.",
    "dst": "Найди посох Theorick в банке {p}.",
    "role": "desc",
@@ -78111,7 +78395,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#012": {
+  "Fate of the Fallen#039": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
    "dst": "Ага, быстро управился. Вижу, посох у тебя. Язык, видать, подвешен, раз банкиры его отдали.",
    "role": "desc",
@@ -78121,7 +78405,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#013": {
+  "Fate of the Fallen#040": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
    "dst": "До {p} идти долго. Но идти не придётся: я тебя туда перенесу. Надеюсь.",
    "role": "desc",
@@ -78131,7 +78415,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#014": {
+  "Fate of the Fallen#041": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
    "dst": "Там войди в Temple of Time. На месте поймёшь, что делать. Осторожнее с путешествиями во времени, друг… Неизвестно, что ты там найдёшь.",
    "role": "desc",
@@ -78141,7 +78425,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#015": {
+  "Fate of the Fallen#042": {
    "src": "Just step into the portal.",
    "dst": "Просто шагни в портал.",
    "role": "desc",
@@ -78151,7 +78435,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#016": {
+  "Fate of the Fallen#043": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
    "dst": "Если что-то пойдёт не так, я верну тебя в храм.",
    "role": "desc",
@@ -78161,7 +78445,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#017": {
+  "Fate of the Fallen#044": {
    "src": "Enter the portal the mage made.",
    "dst": "Войди в портал, созданный магом.",
    "role": "desc",
@@ -78171,7 +78455,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#018": {
+  "Fate of the Fallen#045": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
    "dst": "Войди в Gate of Time [-{~}, {~}, -{~}] и отправляйся в прошлое.",
    "role": "desc",
@@ -78181,7 +78465,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#019": {
+  "Fate of the Fallen#046": {
    "src": "Explore Past {p}.",
    "dst": "Исследуй прошлое {p}.",
    "role": "desc",
@@ -78191,7 +78475,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#020": {
+  "Fate of the Fallen#047": {
    "src": "What the...",
    "dst": "Что за…",
    "role": "desc",
@@ -78201,7 +78485,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#021": {
+  "Fate of the Fallen#048": {
    "src": "Woah, your weaponry and armour is so advanced!",
    "dst": "Ого, какое у тебя передовое оружие и броня!",
    "role": "desc",
@@ -78211,7 +78495,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#022": {
+  "Fate of the Fallen#049": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
    "dst": "Ты тоже из Twain? Такую магию знают только Twain.",
    "role": "desc",
@@ -78221,7 +78505,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#023": {
+  "Fate of the Fallen#050": {
    "src": "Oh, you're looking for Theorick.",
    "dst": "О, ты ищешь Theorick.",
    "role": "desc",
@@ -78231,7 +78515,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#024": {
+  "Fate of the Fallen#051": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
    "dst": "Он сражается на войне. Разве тебе не туда же?",
    "role": "desc",
@@ -78241,7 +78525,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#025": {
+  "Fate of the Fallen#052": {
    "src": "He went west. There was some kind of emergency.",
    "dst": "Он ушёл на запад. Там что-то срочное.",
    "role": "desc",
@@ -78251,7 +78535,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#026": {
+  "Fate of the Fallen#053": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
    "dst": "Мы годами бьёмся со Скверной, и, похоже, она вот-вот поглотит {p}.",
    "role": "desc",
@@ -78261,7 +78545,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#027": {
+  "Fate of the Fallen#054": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
    "dst": "Найди Theorick в лесу к западу от {p} [{~}, {~}, {~}].",
    "role": "desc",
@@ -78271,7 +78555,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#028": {
+  "Fate of the Fallen#055": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
    "dst": "Готов поклясться, она пошла сюда… Ну что ещё, опять болваны? В этом лесу бродить опасно!",
    "role": "desc",
@@ -78281,7 +78565,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#029": {
+  "Fate of the Fallen#056": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
    "dst": "Нужна помощь - жалуйся страже. Я занят и не могу бросить спасение этой треклятой провинции, чтобы охлаждать тебе молоко!!",
    "role": "desc",
@@ -78291,7 +78575,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#030": {
+  "Fate of the Fallen#057": {
    "src": "Are your ears full of wax?! I said-",
    "dst": "Уши воском забиты?! Я сказал-",
    "role": "desc",
@@ -78301,7 +78585,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#031": {
+  "Fate of the Fallen#058": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
    "dst": "Тьфу, твари шли за тобой! Видишь, что вышло?! ОТОЙДИ.",
    "role": "desc",
@@ -78311,7 +78595,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#032": {
+  "Fate of the Fallen#059": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
    "dst": "Будто мне мало было спасать одного! Прочь отсюда, мне надо найти пропавшую женщину!",
    "role": "desc",
@@ -78321,7 +78605,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#033": {
+  "Fate of the Fallen#060": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
    "dst": "ПОМОГИИИТЕ! Мне от них не убежать!!! Стража! Кто-нибудь!!",
    "role": "desc",
@@ -78331,7 +78615,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Fate of the Fallen#034": {
+  "Fate of the Fallen#061": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
    "dst": "Ха! Это её голос! Где она?! Я только что зачистил эту округу!",
    "role": "desc",
@@ -78341,7 +78625,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#035": {
+  "Fate of the Fallen#062": {
    "src": "Th-Theorick!! There's corrupteds!!",
    "dst": "Th-Theorick!! Там осквернённые!!",
    "role": "desc",
@@ -78351,7 +78635,7 @@
    "speaker": "Girl",
    "source": "wiki"
   },
-  "Fate of the Fallen#036": {
+  "Fate of the Fallen#063": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
    "dst": "Ох, она что, с запада их тащит?! Эй, ты! Не хочешь замёрзнуть - ЖИВО ЗА МОЮ СПИНУ!!",
    "role": "desc",
@@ -78361,7 +78645,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#037": {
+  "Fate of the Fallen#064": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
    "dst": "Фух… Опасность миновала. Но не уйди ты из города, никакой опасности и не было бы!",
    "role": "desc",
@@ -78371,7 +78655,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#038": {
+  "Fate of the Fallen#065": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
    "dst": "Не извиняйся, просто иди в город. Сейчас же.",
    "role": "desc",
@@ -78381,7 +78665,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#039": {
+  "Fate of the Fallen#066": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
    "dst": "Захочешь снова собирать в лесу цветочки или что там ещё - помни, что жизнь одна, ясно?!",
    "role": "desc",
@@ -78391,7 +78675,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#040": {
+  "Fate of the Fallen#067": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
    "dst": "Каждый день больше осквернённых, больше смертей… Выход один: взяться самому. Подрубить корни… и убить этот адский сорняк.",
    "role": "desc",
@@ -78401,7 +78685,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#041": {
+  "Fate of the Fallen#068": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
    "dst": "Всё ещё здесь? Слушай. Мы с парой людей затеваем опасное дело. Пусть мы хоть рассудка лишимся - я должен пройти через тот портал.",
    "role": "desc",
@@ -78411,7 +78695,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#042": {
+  "Fate of the Fallen#069": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
    "dst": "Снаряжён ты неплохо, так что я тебя призываю. Немедленно явись на нашу базу. Иди вдоль реки на юг, справа увидишь дом.",
    "role": "desc",
@@ -78421,7 +78705,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#043": {
+  "Fate of the Fallen#070": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
    "dst": "Приди на базу операции к югу от {p} [{~}, {~}, {~}].",
    "role": "desc",
@@ -78431,7 +78715,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#044": {
+  "Fate of the Fallen#071": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
    "dst": "Что ж, отдам тебе должное: приказы ты хоть исполняешь быстро. Мы идём в {p}.",
    "role": "desc",
@@ -78441,7 +78725,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#045": {
+  "Fate of the Fallen#072": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
    "dst": "Последний, кто вошёл в портал и вернулся, стал Bak'al… Но если есть хоть малейший шанс, сейчас мы обязаны им воспользоваться.",
    "role": "desc",
@@ -78451,7 +78735,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#046": {
+  "Fate of the Fallen#073": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
    "dst": "Выдвигаемся. Привалов не будет, надеюсь, сил у тебя хватит.",
    "role": "desc",
@@ -78461,7 +78745,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#047": {
+  "Fate of the Fallen#074": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
    "dst": "Итак. Холод, которым я повелеваю, сдерживает саму Скверну. Сомневаюсь, что кто-то из вас может так же. Я пойду один.",
    "role": "desc",
@@ -78471,7 +78755,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#048": {
+  "Fate of the Fallen#075": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
    "dst": "Когда я войду… полагаю, осквернённые ринутся к порталу за мной. Ваша задача? Убить их. Мне там отвлекаться нельзя.",
    "role": "desc",
@@ -78481,7 +78765,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#049": {
+  "Fate of the Fallen#076": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
    "dst": "Не покидать пост, пока я не выйду из портала. Ясно?",
    "role": "desc",
@@ -78491,7 +78775,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#050": {
+  "Fate of the Fallen#077": {
    "src": "Protect the portal.",
    "dst": "Защити портал.",
    "role": "desc",
@@ -78501,7 +78785,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#051": {
+  "Fate of the Fallen#078": {
    "src": "...no...",
    "dst": "…нет…",
    "role": "desc",
@@ -78511,7 +78795,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#052": {
+  "Fate of the Fallen#079": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
    "dst": "…нет, нет, НЕТ!! ПРОКЛЯТЬЕ!!",
    "role": "desc",
@@ -78521,7 +78805,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#053": {
+  "Fate of the Fallen#080": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
    "dst": "Знаешь, что случилось?! Я проиграл!! Если я обращусь полностью, я уничтожу провинцию! ПРОЧЬ, СЕЙЧАС ЖЕ! СЛЫШИШЬ?! БЕГИ!!",
    "role": "desc",
@@ -78531,7 +78815,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#054": {
+  "Fate of the Fallen#081": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
    "dst": "Я… С-спокойно, Theorick… не… не дай ему себя поглотить… есть… ещё выход… один путь…",
    "role": "desc",
@@ -78541,7 +78825,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#055": {
+  "Fate of the Fallen#082": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
    "dst": "А… опять ты… остальные… мертвы? Сбежали? Трусы… ургх…",
    "role": "desc",
@@ -78551,7 +78835,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#056": {
+  "Fate of the Fallen#083": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
    "dst": "Ты дышишь… так… слушай меня. Если я обращусь… к-когда… когда обращусь… н-нет… ааах, я уничт- Нгх…",
    "role": "desc",
@@ -78561,7 +78845,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#057": {
+  "Fate of the Fallen#084": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
    "dst": "Долго мне не протянуть, сам видишь… Сейчас… убить меня невозможно, жалкий ты слаб- Агх, ПРОЧЬ ИЗ МОЕЙ ГОЛОВЫ!!",
    "role": "desc",
@@ -78571,7 +78855,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#058": {
+  "Fate of the Fallen#085": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
    "dst": "Ааах… Передай… всем. Я заморожу эти земли. Я… с-слишком поздно. Земле нужно время… а мою силу н-надо унять… заморозить…",
    "role": "desc",
@@ -78581,7 +78865,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#059": {
+  "Fate of the Fallen#086": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
    "dst": "Все ничтожны… Ургх, нет… они достойны жить… а это заклятие… наверняка кого-то погубит. Прошу, пусть знают, почему…",
    "role": "desc",
@@ -78591,7 +78875,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#060": {
+  "Fate of the Fallen#087": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
    "dst": "Если я чему и научился у этого несносного ду- …у Mael… так тому, что смерть без причины держит духов на земле. Не хотелось бы… добавлять ему хлопот.",
    "role": "desc",
@@ -78601,7 +78885,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#061": {
+  "Fate of the Fallen#088": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
    "dst": "П-продолжай бой. Твоё снаряжение… будь все так сильны, как ты… у нас был бы шанс. Со временем, когда ослабну, это меня и прикончит.",
    "role": "desc",
@@ -78611,7 +78895,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#062": {
+  "Fate of the Fallen#089": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
    "dst": "Пусть знают… Theorick Twain не мёртв. Его не убить… всё будет гореть… до поры. Здесь, в проклятом месте. Найди меня… и положи всему конец.",
    "role": "desc",
@@ -78621,7 +78905,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#063": {
+  "Fate of the Fallen#090": {
    "src": "Tell Telvu the mage what happened.",
    "dst": "Расскажи магу Telvu о случившемся.",
    "role": "desc",
@@ -78631,7 +78915,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#064": {
+  "Fate of the Fallen#091": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
    "dst": "Видимо, у тебя получилось, иначе тебя бы держала память прошлого. Чувствую на тебе мощную магию.",
    "role": "desc",
@@ -78641,7 +78925,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#065": {
+  "Fate of the Fallen#092": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
    "dst": "Так тебе довелось встретить Theorick? Говорят, после великого оледенения он пал со своей геройской высоты.",
    "role": "desc",
@@ -78651,7 +78935,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#066": {
+  "Fate of the Fallen#093": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
    "dst": "Удалось хоть узнать, зачем он заморозил это место?",
    "role": "desc",
@@ -78661,7 +78945,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#067": {
+  "Fate of the Fallen#094": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
    "dst": "Что… столько откровений… ледяная магия сдерживает Скверну…? И правда, осквернённых здесь меньше, чем в других краях провинции…",
    "role": "desc",
@@ -78671,7 +78955,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#068": {
+  "Fate of the Fallen#095": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
    "dst": "Боги… Мы всё это время ошибались… Он хотел всех защитить… но будь он в здравом уме, он бы уж точно кому-то сказал о своих намерениях!",
    "role": "desc",
@@ -78681,7 +78965,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#069": {
+  "Fate of the Fallen#096": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
    "dst": "Всё это время, погребённый заживо, он борется со Скверной. Вижу по лицу, тебя это тоже ужасает. Убить его будет милосердием.",
    "role": "desc",
@@ -78691,7 +78975,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#070": {
+  "Fate of the Fallen#097": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
    "dst": "Вот. Возьми. Это может защитить тебя в Ледяных курганах… Прошу, солдат. Будь ангелом-хранителем Theorick. Избавь его от мучений.",
    "role": "desc",
@@ -87092,6 +87376,106 @@
    "source": "wiki"
   },
   "Heart of Llevigar#000": {
+   "src": "Gweh, a visitor?! Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
+   "dst": "Гве, посетитель?! Вон отсюда! Станция закрыта на ремонт… стоп, ты тот эксперт по электромагии, которому мы платим?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#001": {
+   "src": "We didn't even need to get Corkian consultation on this! We had this system all figured out ourselves, but now nothing's working right!",
+   "dst": "Нам даже консультация Corkian не понадобилась! Мы сами всю систему продумали, а теперь всё идёт наперекосяк!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#002": {
+   "src": "New Quest Started: Heart of {p}",
+   "dst": "Новое задание: Сердце {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#003": {
+   "src": "Come on now, hurry! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer already!",
+   "dst": "Давай-давай, живее! Напротив банка есть вход на электростанцию, иди уже туда к главному инженеру!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#004": {
+   "src": "My grandfather and his engineers jury-rigged this whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
+   "dst": "Мой дед с инженерами собрал всю эту систему на коленке. Сброс всё исправит, но по технике безопасности я должен лично за ним следить.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#005": {
+   "src": "I have to stay put here, so get through the system and find the reset button for me. These holes in the walls are tunnels that'll lead you around the generator rooms!",
+   "dst": "Мне надо оставаться здесь, так что пройди через систему и найди мне кнопку сброса. Эти дыры в стенах - туннели, они выведут тебя к генераторным!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#006": {
+   "src": "Maybe you can find a way to reset the system. That ought to do it...",
+   "dst": "Может, ты найдёшь способ сбросить систему. Это должно помочь…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#007": {
+   "src": "...what, are you asleep or something? Of course there was a bug, we just fixed it!",
+   "dst": "…ты что, спишь? Конечно, там был баг, мы его только что исправили!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#008": {
+   "src": "D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system back the way you got here, it hooks up to the sewer exit.",
+   "dst": "Тебе правда так важно, как его зовут? Короче, выход через систему водяного охлаждения, там, откуда ты пришёл, - она ведёт к выходу из канализации.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#009": {
+   "src": "Glad you got here when you did though! Some phony came through saying he was the expert. Clearly, he was just here to take your contract money...",
+   "dst": "Хорошо, что ты вовремя! Тут один проходимец выдавал себя за эксперта. Ясное дело, хотел увести твой гонорар…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Heart of Llevigar",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Heart of Llevigar#010": {
    "src": "Find Zenam in the {p} power control center at [-{~}, {~}, -{~}]",
    "dst": "Найди Zenam в центре управления энергией {p} [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -87101,7 +87485,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#001": {
+  "Heart of Llevigar#011": {
    "src": "Aaah, no no no! This doesn't make any sense, what in the world is going on?! Nothing's working!",
    "dst": "Ааа, нет-нет-нет! Бессмыслица какая-то, что вообще происходит?! Ничего не работает!",
    "role": "desc",
@@ -87111,7 +87495,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#002": {
+  "Heart of Llevigar#012": {
    "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
    "dst": "Гве, посетитель? Вон отсюда! Станция закрыта на ремонт… стоп, ты тот эксперт по электромагии, которому мы платим?",
    "role": "desc",
@@ -87121,7 +87505,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#003": {
+  "Heart of Llevigar#013": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
    "dst": "Ведь ты, да? Да?! Потому что ждать мы больше не можем! Эта система должна была быть несокрушимой, безупречной!",
    "role": "desc",
@@ -87131,7 +87515,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#004": {
+  "Heart of Llevigar#014": {
    "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
    "dst": "Нам даже консультация Corkian не понадобилась, мы сами всю систему продумали, а теперь всё идёт наперекосяк!",
    "role": "desc",
@@ -87141,7 +87525,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#005": {
+  "Heart of Llevigar#015": {
    "src": "You're seeing all these sparks and hearing all this crackling? We have no idea what could possibly be going wrong with this! That's why you're needed here!",
    "dst": "Видишь все эти искры и слышишь треск? Мы понятия не имеем, в чём дело! Потому без тебя и не обойтись!",
    "role": "desc",
@@ -87151,7 +87535,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#006": {
+  "Heart of Llevigar#016": {
    "src": "We don't have much time until full meltdown! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer!",
    "dst": "До полного расплавления осталось недолго! Напротив банка есть вход на электростанцию, иди туда к главному инженеру!",
    "role": "desc",
@@ -87161,7 +87545,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#007": {
+  "Heart of Llevigar#017": {
    "src": "Enter the sewers opposite of the bank of {p}.",
    "dst": "Спустись в канализацию напротив банка {p}.",
    "role": "desc",
@@ -87171,7 +87555,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#008": {
+  "Heart of Llevigar#018": {
    "src": "Find the head engineer at the {p} power plant",
    "dst": "Найди главного инженера на электростанции {p}",
    "role": "desc",
@@ -87181,7 +87565,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#009": {
+  "Heart of Llevigar#019": {
    "src": "Whew, finally Zeman found a guy for the job. I told him weeks ago this was a two-person task...",
    "dst": "Фух, наконец-то Zeman нашёл кого-то на эту работу. Я ему ещё недели назад говорил, что тут нужны двое…",
    "role": "desc",
@@ -87191,7 +87575,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#010": {
+  "Heart of Llevigar#020": {
    "src": "Wait, it's Zenam? Eh, what does it matter? You knew who I was talkin' about. Lemme give you the lowdown real fast.",
    "dst": "Стоп, он Zenam? Эх, какая разница? Ясно же, о ком я. Давай быстро введу в курс дела.",
    "role": "desc",
@@ -87201,7 +87585,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#011": {
+  "Heart of Llevigar#021": {
    "src": "About a month ago, there was a big blackout, and the generator here started acting up. Power surges, appliances overloading...heck, some of our lights turned purple!",
    "dst": "С месяц назад случилось большое отключение, и генератор начал барахлить. Скачки напряжения, приборы перегружаются… чёрт, у нас лампы стали фиолетовыми!",
    "role": "desc",
@@ -87211,7 +87595,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#012": {
+  "Heart of Llevigar#022": {
    "src": "My grandfather and his engineers jury-rigged the whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
    "dst": "Дед с инженерами собрал систему на коленке. Сброс всё исправит, но по технике безопасности я должен лично за ним следить.",
    "role": "desc",
@@ -87221,7 +87605,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#013": {
+  "Heart of Llevigar#023": {
    "src": "So that's your job- get through the system and find the reset button. These holes'll lead you around the generator rooms. Better get going!",
    "dst": "Так что твоя задача - пройти через систему и найти кнопку сброса. Эти люки выведут тебя к генераторным. Давай, вперёд!",
    "role": "desc",
@@ -87231,7 +87615,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#014": {
+  "Heart of Llevigar#024": {
    "src": "Try to find a way into the machine",
    "dst": "Найди путь внутрь машины",
    "role": "desc",
@@ -87241,7 +87625,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#015": {
+  "Heart of Llevigar#025": {
    "src": "Find a way to proceed to the inner parts of the machinery",
    "dst": "Найди путь во внутренние части механизма",
    "role": "desc",
@@ -87251,7 +87635,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#016": {
+  "Heart of Llevigar#026": {
    "src": "Reach the center of the restricted area",
    "dst": "Доберись до центра запретной зоны",
    "role": "desc",
@@ -87261,7 +87645,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#017": {
+  "Heart of Llevigar#027": {
    "src": "Find the reset button.",
    "dst": "Найди кнопку сброса.",
    "role": "desc",
@@ -87271,7 +87655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#018": {
+  "Heart of Llevigar#028": {
    "src": "Report back to the Head Engineer",
    "dst": "Доложи главному инженеру",
    "role": "desc",
@@ -87281,7 +87665,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#019": {
+  "Heart of Llevigar#029": {
    "src": "Alright, that should do it- Ah, you're back. The system reset just fine, like I said. Everything should be winding down now.",
    "dst": "Так, этого должно хватить… А, ты здесь. Система сбросилась как надо, я же говорил. Теперь всё должно понемногу успокоиться.",
    "role": "desc",
@@ -87291,7 +87675,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#020": {
+  "Heart of Llevigar#030": {
    "src": "It's purging the excess energy now- might have a few more power surges and crackles for a while, but it'll go back to normal soon enough.",
    "dst": "Сейчас она сбрасывает лишнюю энергию - ещё какое-то время будут скачки и треск, но скоро всё придёт в норму.",
    "role": "desc",
@@ -87301,7 +87685,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#021": {
+  "Heart of Llevigar#031": {
    "src": "Hm? What, there was a bug in the system? ...what, are you asleep or something? Of course there was a bug, we just fixed it!",
    "dst": "Хм? Что, в системе завёлся жук? …ты что, спишь? Конечно, там был баг, мы его только что исправили!",
    "role": "desc",
@@ -87311,7 +87695,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#022": {
+  "Heart of Llevigar#032": {
    "src": "Well, anyways, Zebra should have our payment all settled. You go on ahead- I still need to stay down here to make sure everything stays smooth.",
    "dst": "В общем, Zebra уже должен был с нами рассчитаться. Иди - мне ещё надо остаться внизу и проследить, чтобы всё шло гладко.",
    "role": "desc",
@@ -87321,7 +87705,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#023": {
+  "Heart of Llevigar#033": {
    "src": "...oh, it's Zenam? D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system, it hooks up to the sewer exit.",
    "dst": "…а, он Zenam? Тебе правда так важно, как его зовут? Короче, выход через систему водяного охлаждения, она ведёт к выходу из канализации.",
    "role": "desc",
@@ -87331,7 +87715,7 @@
    "speaker": "Head Engineer",
    "source": "wiki"
   },
-  "Heart of Llevigar#024": {
+  "Heart of Llevigar#034": {
    "src": "Ask Zenam for your reward",
    "dst": "Получи награду у Zenam",
    "role": "desc",
@@ -87341,7 +87725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Heart of Llevigar#025": {
+  "Heart of Llevigar#035": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
    "dst": "Фух… с возвращением. Энергия снова есть - всё опять работает на полную мощность. Думаю, система просто сбрасывает излишки.",
    "role": "desc",
@@ -87351,7 +87735,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#026": {
+  "Heart of Llevigar#036": {
    "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
    "dst": "Хорошо, что ты вовремя - тут один проходимец выдавал себя за эксперта. Ясное дело, хотел увести твой гонорар…",
    "role": "desc",
@@ -87361,7 +87745,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#027": {
+  "Heart of Llevigar#037": {
    "src": "Though, I was panicking so much I probably would've believed him... Speaking of which, here's your cut of the pay, and something extra for the trouble.",
    "dst": "Хотя я так паниковал, что, наверное, поверил бы ему… Кстати, вот твоя доля оплаты и кое-что сверху за хлопоты.",
    "role": "desc",
@@ -87371,7 +87755,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#028": {
+  "Heart of Llevigar#038": {
    "src": "Here's to hoping that the system won't run into any more trouble in the future. I don't want to be faced with an impending cataclysm like that again...",
    "dst": "Будем надеяться, что с системой больше не будет проблем. Не хочу снова стоять на пороге такой катастрофы…",
    "role": "desc",
@@ -87381,7 +87765,7 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#029": {
+  "Heart of Llevigar#039": {
    "src": "Aah, this is bad, where's the keys to my toolbox?! Zenam said it was important, I need to find them!",
    "dst": "Ааа, беда, где ключи от моего ящика с инструментами?! Zenam сказал, это важно, надо их найти!",
    "role": "desc",
@@ -87391,7 +87775,7 @@
    "speaker": "Electromagic Expert",
    "source": "wiki"
   },
-  "Heart of Llevigar#030": {
+  "Heart of Llevigar#040": {
    "src": "I still can't believe it, a human has done my job and taken my emeralds... Just because I lost my keys...",
    "dst": "Не верится: человек сделал мою работу и забрал мои изумруды… А всё из-за потерянных ключей…",
    "role": "desc",
@@ -92242,6 +92626,26 @@
    "source": "wiki"
   },
   "Ice Nations#000": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "...Видишь ли, кораблекрушение было не случайным. На нас напали...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "Have you made any progress?",
+   "dst": "Есть успехи?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
    "dst": "Поговори с Adigard на {p} в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -92251,7 +92655,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#001": {
+  "Ice Nations#003": {
    "src": "Welcome traveler, to our humble island...",
    "dst": "Добро пожаловать на наш остров...",
    "role": "desc",
@@ -92261,7 +92665,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#002": {
+  "Ice Nations#004": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
    "dst": "Мы с моим народом высадились здесь много лет назад. Увы, наш корабль не уцелел...",
    "role": "desc",
@@ -92271,7 +92675,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#003": {
+  "Ice Nations#005": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
    "dst": "Мы пытались построить на этих островах державу, но за годы раскололись.",
    "role": "desc",
@@ -92281,7 +92685,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#004": {
+  "Ice Nations#006": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
    "dst": "Потому мы и ведём бессмысленную войну с соседями.",
    "role": "desc",
@@ -92291,7 +92695,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#005": {
+  "Ice Nations#007": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
    "dst": "Я думаю, надо заключить мир, но боюсь, что меня убьют, если я покину остров...",
    "role": "desc",
@@ -92301,7 +92705,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#006": {
+  "Ice Nations#008": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
    "dst": "Поможешь нам? Поговори с Hallfred о договоре. Он живёт на соседнем ледяном острове.",
    "role": "desc",
@@ -92311,7 +92715,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#007": {
+  "Ice Nations#009": {
    "src": "Talk to Hallfred about the peace treaty",
    "dst": "Поговори с Hallfred о мирном договоре",
    "role": "desc",
@@ -92321,7 +92725,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#008": {
+  "Ice Nations#010": {
    "src": "Welcome traveler! What brings you to our island?",
    "dst": "Добро пожаловать, путник! Что привело тебя на наш остров?",
    "role": "desc",
@@ -92331,7 +92735,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#009": {
+  "Ice Nations#011": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
    "dst": "О, вижу, Adigard из трусости уже шлёт чужаков! Боится, что его убьют?",
    "role": "desc",
@@ -92341,7 +92745,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#010": {
+  "Ice Nations#012": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
    "dst": "Повторяю в последний раз: мы подпишем мир в тот день, когда Adigard и его народ вернут нам... сокровище.",
    "role": "desc",
@@ -92351,7 +92755,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#011": {
+  "Ice Nations#013": {
    "src": "The one that they kept and hid from us after the shipwreck.",
    "dst": "То, что они утаили от нас после крушения.",
    "role": "desc",
@@ -92361,7 +92765,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#012": {
+  "Ice Nations#014": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
    "dst": "Чистое золото, ценное и редкое! Передай, что я жду. И никаких больше глупых баек.",
    "role": "desc",
@@ -92371,7 +92775,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#013": {
+  "Ice Nations#015": {
    "src": "Talk back to Adigard about Hallfred's response",
    "dst": "Передай Adigard ответ Hallfred",
    "role": "desc",
@@ -92381,7 +92785,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#014": {
+  "Ice Nations#016": {
    "src": "I should have expected that. Hallfred was always very greedy...",
    "dst": "Следовало ожидать. Hallfred всегда был жаден...",
    "role": "desc",
@@ -92391,7 +92795,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#015": {
+  "Ice Nations#017": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
    "dst": "Мы пытались объяснить ему, что сокровища у нас нет, но без толку.",
    "role": "desc",
@@ -92401,7 +92805,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#016": {
+  "Ice Nations#018": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
    "dst": "...Видишь ли, кораблекрушение было не случайным. На нас напали...",
    "role": "desc",
@@ -92411,7 +92815,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#017": {
+  "Ice Nations#019": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
    "dst": "Кто? Нежить. Призраки и демоны на чудовищном корабле. Застали нас врасплох.",
    "role": "desc",
@@ -92421,7 +92825,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#018": {
+  "Ice Nations#020": {
    "src": "I believe they also stole our treasure during the attack.",
    "dst": "Думаю, сокровище они тоже украли тогда.",
    "role": "desc",
@@ -92431,7 +92835,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#019": {
+  "Ice Nations#021": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
    "dst": "Поможешь нашему народу вновь объединиться? Найди этот корабль и отнеси сокровище Hallfred, чтобы мы наконец жили в мире.",
    "role": "desc",
@@ -92441,7 +92845,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#020": {
+  "Ice Nations#022": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
    "dst": "Плыви на север. Там они напали на нас много лет назад. Найти несложно - уверен, они там гордо стоят на якоре... Спасибо.",
    "role": "desc",
@@ -92451,7 +92855,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#021": {
+  "Ice Nations#023": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
    "dst": "Найди корабль-призрак и отнеси [Ancient Treasure] Hallfred",
    "role": "desc",
@@ -92461,7 +92865,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#022": {
+  "Ice Nations#024": {
    "src": "Incredible! He actually delivered the treasure!",
    "dst": "Невероятно! Он и правда отдал сокровище!",
    "role": "desc",
@@ -92471,7 +92875,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#023": {
+  "Ice Nations#025": {
    "src": "I suppose that means the end of the war between our nations!",
    "dst": "Значит, войне между нашими народами конец!",
    "role": "desc",
@@ -92481,7 +92885,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#024": {
+  "Ice Nations#026": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
    "dst": "Великий день! Вот, возьми награду за помощь нашему народу.",
    "role": "desc",
@@ -92491,7 +92895,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#025": {
+  "Ice Nations#027": {
    "src": "I'm sure you'll find a use for this helmet one day!",
    "dst": "Уверен, этот шлем тебе однажды пригодится!",
    "role": "desc",
@@ -101550,6 +101954,306 @@
    "source": "captured"
   },
   "Misadventure on the Sea#033": {
+   "src": "The only boat that will take ye directly to {p}.",
+   "dst": "Единственная лодка, что довезёт тебя прямо до {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#034": {
+   "src": "Hey! You aren't allowed on my ship!",
+   "dst": "Эй! Тебе нельзя на мой корабль!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#035": {
+   "src": "This hologram will teleport you back on the island to continue the quest or Reset your quest.",
+   "dst": "Эта голограмма вернёт тебя на остров, чтобы продолжить задание, или сбросит твоё задание.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#036": {
+   "src": "Are you sure you wish to Reset your quest?",
+   "dst": "Точно хочешь сбросить задание?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#037": {
+   "src": "Misadventure On The Sea has been reset!",
+   "dst": "Задание сброшено: Злоключения на море!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#038": {
+   "src": "Maybe you could somehow use it..? There's no way to tell how dangerous it is. Probably very.",
+   "dst": "Может, его как-то можно использовать..? Неизвестно, насколько это опасно. Наверное, очень.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#039": {
+   "src": "It must be the one up you saw up there! That's got to be the way to escape!",
+   "dst": "Должно быть, это та, что ты видел наверху! Это точно путь к побегу!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#040": {
+   "src": "Who knows, maybe there's gunpowder in there?",
+   "dst": "Кто знает, может, там есть порох?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#041": {
+   "src": "Seems like it likes you now!",
+   "dst": "Похоже, теперь ты ему нравишься!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#042": {
+   "src": "Not done yet? Well, take your time!",
+   "dst": "Ещё не всё? Ну, не торопись!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#043": {
+   "src": "We sometimes hear unusually loud footsteps, along with some really eerie squeaking...",
+   "dst": "Иногда слышим необычно громкие шаги и очень жуткий писк...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#044": {
+   "src": "Looks like this crate is filled with rat hair, with some eaten carrots.",
+   "dst": "Похоже, этот ящик набит крысиной шерстью и объеденной морковью.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#045": {
+   "src": "You defeated the rats! You should grab the gunpowder and the fuse before leaving.",
+   "dst": "Ты победил крыс! Перед уходом забери порох и фитиль.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#046": {
+   "src": "[+{~} Cannon Fuse]",
+   "dst": "[+{~} Пушечный фитиль]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#047": {
+   "src": "[+{~} Gunpowder Cra",
+   "dst": "[+{~} Ящик пороха",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#048": {
+   "src": "You've got enough gunpowder already.",
+   "dst": "Пороха у тебя уже достаточно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#049": {
+   "src": "Looks like this crate is filled with even more rat hair!",
+   "dst": "Похоже, этот ящик набит ещё большим количеством крысиной шерсти!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#050": {
+   "src": "You picked up a dusty key!",
+   "dst": "Ты подобрал пыльный ключ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#051": {
+   "src": "You already got fuse.",
+   "dst": "Фитиль у тебя уже есть.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#053": {
+   "src": "You got the fuse as well as the gunpowder. Looks like you can use that cannon now!",
+   "dst": "У тебя есть и фитиль, и порох. Похоже, теперь можно воспользоваться той пушкой!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#054": {
+   "src": "You put the gunpowder in the cannon and attach the fuse...",
+   "dst": "Ты засыпаешь порох в пушку и прикрепляешь фитиль...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#055": {
+   "src": "Looks like it's fully functional. Make sure the pirates don't see you! Once you leave, you won't be able to come back.",
+   "dst": "Похоже, она полностью исправна. Смотри, чтобы пираты тебя не заметили! Уйдёшь - обратно уже не вернёшься.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#056": {
+   "src": "You crawl into the cannon...",
+   "dst": "Ты залезаешь в пушку...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#057": {
+   "src": "You dig up some sand...",
+   "dst": "Ты выкапываешь немного песка...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#058": {
+   "src": "There's more sand.",
+   "dst": "Тут ещё песок.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#059": {
+   "src": "It's a coconut.",
+   "dst": "Это кокос.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#060": {
+   "src": "It's a palm tree!",
+   "dst": "Это пальма!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#061": {
+   "src": "Huh? Something's approaching off in the distance...",
+   "dst": "А? Вдалеке что-то приближается...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#062": {
+   "src": "Looks like they're headed toward the island! Is that..?",
+   "dst": "Похоже, они плывут к острову! Неужели это..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#063": {
+   "src": "Ah... Trust. Say, why don't I make it so you can travel to {p} for free? That way, if ya ever think o' doin' somethin' foolish like that again, ya can jus' take a trip on my ol' ship!",
+   "dst": "Ах... Доверие. Слушай, а давай я буду возить тебя в {p} бесплатно? Если снова вздумаешь выкинуть такую глупость, просто прокатишься на моём старом корабле!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Misadventure on the Sea",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Misadventure on the Sea#064": {
    "src": "Visit the {p} bar at [{~}, {~}, -{~}]",
    "dst": "Зайди в бар {p} в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -101559,7 +102263,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#034": {
+  "Misadventure on the Sea#065": {
    "src": "Hello there soldier! What can I get you?",
    "dst": "Здравствуй, боец! Что налить?",
    "role": "desc",
@@ -101569,7 +102273,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#035": {
+  "Misadventure on the Sea#066": {
    "src": "I'll take {~} {p} Whiskeys. One for me, one for this chap.",
    "dst": "Мне {~} виски {p}. Один мне, один этому парню.",
    "role": "desc",
@@ -101579,7 +102283,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#036": {
+  "Misadventure on the Sea#067": {
    "src": "You got it.",
    "dst": "Будет сделано.",
    "role": "desc",
@@ -101589,7 +102293,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#037": {
+  "Misadventure on the Sea#068": {
    "src": "So... I've seen ya around town. I saw how happy that guy was when you brought him some journal.",
    "dst": "Так вот... Видал тебя в городе. Видал, как обрадовался тот тип, получив от тебя какой-то журнал.",
    "role": "desc",
@@ -101599,7 +102303,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#038": {
+  "Misadventure on the Sea#069": {
    "src": "{~} {p} Whiskeys, coming up!",
    "dst": "{~} виски {p}, сейчас будет!",
    "role": "desc",
@@ -101609,7 +102313,7 @@
    "speaker": "Barman",
    "source": "wiki"
   },
-  "Misadventure on the Sea#039": {
+  "Misadventure on the Sea#070": {
    "src": "So... Soldier. Are ya up for sailin' the ocean with me? I got a fancier boat than that seaskipper!",
    "dst": "Так вот... боец. Не хочешь со мной в плавание? Моя лодка покруче того парома!",
    "role": "desc",
@@ -101619,7 +102323,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#040": {
+  "Misadventure on the Sea#071": {
    "src": "I figured you'd be interested in explorin' the waters!",
    "dst": "Я так и думал, что тебе охота исследовать моря!",
    "role": "desc",
@@ -101629,7 +102333,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#041": {
+  "Misadventure on the Sea#072": {
    "src": "I'll wait for ya on the docks. Don't worry, ya can't miss the boat!",
    "dst": "Жду на пристани. Не бойся, мимо лодки не пройдёшь!",
    "role": "desc",
@@ -101639,7 +102343,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#042": {
+  "Misadventure on the Sea#073": {
    "src": "Meet Honip at [{~}, {~}, -{~}]",
    "dst": "Встреться с Honip в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -101649,7 +102353,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#043": {
+  "Misadventure on the Sea#074": {
    "src": "There you are! Ready? Follow me, the boat's over here!",
    "dst": "Вот и ты! Ну что, в путь? За мной, лодка здесь!",
    "role": "desc",
@@ -101659,7 +102363,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#044": {
+  "Misadventure on the Sea#075": {
    "src": "Look at this.. Magnificent! Much better than whatever the Seaskipper is using!",
    "dst": "Глянь-ка.. Великолепно! Куда лучше, чем у того парома!",
    "role": "desc",
@@ -101669,7 +102373,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#045": {
+  "Misadventure on the Sea#076": {
    "src": "Well, what are you waiting for? Hop aboard!",
    "dst": "Ну, чего ждёшь? Прыгай на борт!",
    "role": "desc",
@@ -101679,7 +102383,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#046": {
+  "Misadventure on the Sea#077": {
    "src": "Then it's settled, we're goin' on an adventure!",
    "dst": "Решено, отправляемся в приключение!",
    "role": "desc",
@@ -101689,7 +102393,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#047": {
+  "Misadventure on the Sea#078": {
    "src": "Buckle up, we got waves to catch.",
    "dst": "Держись крепче, ловим волну.",
    "role": "desc",
@@ -101699,7 +102403,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#048": {
+  "Misadventure on the Sea#079": {
    "src": "So... I should warn ya', this is actually my first time sailing...",
    "dst": "Так вот... предупрежу: я вообще-то впервые хожу под парусом...",
    "role": "desc",
@@ -101709,7 +102413,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#049": {
+  "Misadventure on the Sea#080": {
    "src": "It doesn't seem too difficult though, a little to the left...",
    "dst": "Хотя вроде не так уж сложно, чуть левее...",
    "role": "desc",
@@ -101719,7 +102423,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#050": {
+  "Misadventure on the Sea#081": {
    "src": "Hmm, looks like we're not the only ones out on the water today.",
    "dst": "Хм, похоже, не мы одни сегодня в море.",
    "role": "desc",
@@ -101729,7 +102433,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#051": {
+  "Misadventure on the Sea#082": {
    "src": "They are a bit too head on, don't you think?",
    "dst": "Идут прямо на нас, не находишь?",
    "role": "desc",
@@ -101739,7 +102443,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#052": {
+  "Misadventure on the Sea#083": {
    "src": "I'm trying to steer the ship but it's not budging...",
    "dst": "Пытаюсь повернуть, но руль не двигается...",
    "role": "desc",
@@ -101749,7 +102453,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#053": {
+  "Misadventure on the Sea#084": {
    "src": "That's unfortunate...",
    "dst": "Не повезло...",
    "role": "desc",
@@ -101759,7 +102463,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#054": {
+  "Misadventure on the Sea#085": {
    "src": "Unfortunate... For YOU!",
    "dst": "Не повезло... ТЕБЕ!",
    "role": "desc",
@@ -101769,7 +102473,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#055": {
+  "Misadventure on the Sea#086": {
    "src": "Hey, you're finally awake.",
    "dst": "Эй, ты. С пробуждением.",
    "role": "desc",
@@ -101779,7 +102483,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#056": {
+  "Misadventure on the Sea#087": {
    "src": "I honestly, truly can't believe you fell for that. Let me sum it up for you...",
    "dst": "Честно, не верится, что тебя так легко провели. Давай подытожу...",
    "role": "desc",
@@ -101789,7 +102493,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#057": {
+  "Misadventure on the Sea#088": {
    "src": "Some extremely suspicious pirate comes up, offers you a drink, and leads you to his suspicious boat.",
    "dst": "Подходит крайне подозрительный пират, угощает выпивкой и ведёт к своей подозрительной лодке.",
    "role": "desc",
@@ -101799,7 +102503,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#058": {
+  "Misadventure on the Sea#089": {
    "src": "Any normal person would've turned back by then. But what do you do? You hop on! Well, now you're stuck with us.",
    "dst": "Любой нормальный давно бы ушёл. А ты что? Прыгаешь на борт! Ну, теперь ты с нами.",
    "role": "desc",
@@ -101809,7 +102513,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#059": {
+  "Misadventure on the Sea#090": {
    "src": "Let me make this quick. This boat needs renovation, and we want you to do it.",
    "dst": "Буду краток. Лодке нужен ремонт, и сделаешь его ты.",
    "role": "desc",
@@ -101819,7 +102523,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#060": {
+  "Misadventure on the Sea#091": {
    "src": "Why? You're a soldier! All you do is take orders! Anyway, we'll need you to clean our stuff. Here, get out.",
    "dst": "Почему? Ты же боец! Твоё дело - приказы! В общем, будешь чистить наше барахло. Давай, выходи.",
    "role": "desc",
@@ -101829,7 +102533,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#061": {
+  "Misadventure on the Sea#092": {
    "src": "Stay back!",
    "dst": "Назад!",
    "role": "desc",
@@ -101839,7 +102543,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#062": {
+  "Misadventure on the Sea#093": {
    "src": "I told you to stay back!",
    "dst": "Я сказал - назад!",
    "role": "desc",
@@ -101849,7 +102553,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#063": {
+  "Misadventure on the Sea#094": {
    "src": "Alright, that's enough!",
    "dst": "Всё, хватит!",
    "role": "desc",
@@ -101859,7 +102563,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#064": {
+  "Misadventure on the Sea#095": {
    "src": "So, there's quite a few skeletons in there, and we never bothered throwin' them out!",
    "dst": "Там полно скелетов, а мы так и не удосужились их выкинуть!",
    "role": "desc",
@@ -101869,7 +102573,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#065": {
+  "Misadventure on the Sea#096": {
    "src": "Go ahead, here's a sponge for the dried blood as well. Just wack the skeletons with it!",
    "dst": "Давай, вот и губка для засохшей крови. Лупи ею скелетов!",
    "role": "desc",
@@ -101879,7 +102583,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#066": {
+  "Misadventure on the Sea#097": {
    "src": "If you need me, I'll be on the deck. And, uh, don't go in the hold. We've got a BIG rat problem.",
    "dst": "Я на палубе, если что. И, э, в трюм не лезь. У нас там БОЛЬШАЯ беда с крысами.",
    "role": "desc",
@@ -101889,7 +102593,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#067": {
+  "Misadventure on the Sea#098": {
    "src": "Also, for the sake of my crew, could you be more cooperative? I don't have an unlimited amount of these potions.",
    "dst": "И ради моей команды, будь сговорчивей? Этих зелий у меня не бесконечно.",
    "role": "desc",
@@ -101899,7 +102603,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#068": {
+  "Misadventure on the Sea#099": {
    "src": "Clean the bodies in the boat. Look for clues on how to escape at the same time. -Bodies cleaned: #/{~}",
    "dst": "Очисти тела на корабле. Заодно ищи способ сбежать. -Очищено тел: #/{~}",
    "role": "desc",
@@ -101909,7 +102613,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#069": {
+  "Misadventure on the Sea#100": {
    "src": "Hey, so you're our personal guard, huh?",
    "dst": "Эй, так ты наш личный страж, а?",
    "role": "desc",
@@ -101919,7 +102623,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#070": {
+  "Misadventure on the Sea#101": {
    "src": "Nice to meet ya!",
    "dst": "Рад знакомству!",
    "role": "desc",
@@ -101929,7 +102633,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#071": {
+  "Misadventure on the Sea#102": {
    "src": "That ladder leads to the hold, but right now it's locked... We've got a severe case of rats.",
    "dst": "Лестница ведёт в трюм, но он сейчас заперт... У нас там сильно крысы.",
    "role": "desc",
@@ -101939,7 +102643,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#072": {
+  "Misadventure on the Sea#103": {
    "src": "Pep is just a treasure, ain't I right? I'm glad you're taking care of him too!",
    "dst": "Pep просто сокровище, скажи? Рад, что ты тоже о нём заботишься!",
    "role": "desc",
@@ -101949,7 +102653,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#073": {
+  "Misadventure on the Sea#104": {
    "src": "Honip has a pet chicken, weird right?",
    "dst": "У Honip ручная курица, странно, да?",
    "role": "desc",
@@ -101959,7 +102663,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#074": {
+  "Misadventure on the Sea#105": {
    "src": "I bet he got inspiration from that weird guy on his island...",
    "dst": "Спорю, это он у того чудака с острова перенял...",
    "role": "desc",
@@ -101969,7 +102673,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#075": {
+  "Misadventure on the Sea#106": {
    "src": "What? You murdered that guy's most prized chicken? You're an odd one, soldier.",
    "dst": "Что? Из-за тебя погибла самая ценная курица того типа? Ну ты даёшь, боец.",
    "role": "desc",
@@ -101979,7 +102683,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#076": {
+  "Misadventure on the Sea#107": {
    "src": "Oh, uh... Don't worry about that, 'ay?",
    "dst": "О, э... Не бери в голову, а?",
    "role": "desc",
@@ -101989,7 +102693,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#077": {
+  "Misadventure on the Sea#108": {
    "src": "That's our... fuel source.",
    "dst": "Это наш... источник топлива.",
    "role": "desc",
@@ -101999,7 +102703,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#078": {
+  "Misadventure on the Sea#109": {
    "src": "Oh, that's my cannon! Pretty cool, right? I made it using a bunch of arm- Nevermind...",
    "dst": "О, это моя пушка! Круто, да? Сделал её из кучи рук- Неважно...",
    "role": "desc",
@@ -102009,7 +102713,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#079": {
+  "Misadventure on the Sea#110": {
    "src": "Oh, Snoo likes you!",
    "dst": "О, ты нравишься Snoo!",
    "role": "desc",
@@ -102019,7 +102723,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#080": {
+  "Misadventure on the Sea#111": {
    "src": "He's a strong chicken alright, trust me on that one.",
    "dst": "Он у нас сильная птица, уж поверь.",
    "role": "desc",
@@ -102029,7 +102733,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#081": {
+  "Misadventure on the Sea#112": {
    "src": "Anyway, get back to work!",
    "dst": "В общем, за работу!",
    "role": "desc",
@@ -102039,7 +102743,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#082": {
+  "Misadventure on the Sea#113": {
    "src": "I'm just goin' to... Wait here... With my cannons...",
    "dst": "Я просто... Подожду здесь... С пушками...",
    "role": "desc",
@@ -102049,7 +102753,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#083": {
+  "Misadventure on the Sea#114": {
    "src": "Talk to Honip on the deck to get your next task",
    "dst": "Поговори с Honip на палубе, чтобы получить новое поручение",
    "role": "desc",
@@ -102059,7 +102763,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#084": {
+  "Misadventure on the Sea#115": {
    "src": "Hey! The boat's lookin' real nice now!",
    "dst": "Эй! Лодка теперь выглядит что надо!",
    "role": "desc",
@@ -102069,7 +102773,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#085": {
+  "Misadventure on the Sea#116": {
    "src": "I'll probably let you rest so- hold on.",
    "dst": "Пожалуй, дам тебе отдохнуть- погоди.",
    "role": "desc",
@@ -102079,7 +102783,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#086": {
+  "Misadventure on the Sea#117": {
    "src": "Ho-Honip! One of the guys said he saw something really weird coming right for us!",
    "dst": "Х-Honip! Один из ребят говорит, прямо на нас идёт что-то очень странное!",
    "role": "desc",
@@ -102089,7 +102793,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#087": {
+  "Misadventure on the Sea#118": {
    "src": "Wait... What? Soldier, come!",
    "dst": "Погоди... Что? Боец, за мной!",
    "role": "desc",
@@ -102099,7 +102803,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#088": {
+  "Misadventure on the Sea#119": {
    "src": "What's happening?!",
    "dst": "Что происходит?!",
    "role": "desc",
@@ -102109,7 +102813,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#089": {
+  "Misadventure on the Sea#120": {
    "src": "We-we don't know! We can't exactly see it, but it seems huge!",
    "dst": "М-мы не знаем! Толком не видно, но оно огромное!",
    "role": "desc",
@@ -102119,7 +102823,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#090": {
+  "Misadventure on the Sea#121": {
    "src": "I- Let me see.",
    "dst": "Я- Дай гляну.",
    "role": "desc",
@@ -102129,7 +102833,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#091": {
+  "Misadventure on the Sea#122": {
    "src": "Uh... Where am I supposed to be looking at, exactly?",
    "dst": "Э... А куда именно смотреть-то?",
    "role": "desc",
@@ -102139,7 +102843,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#092": {
+  "Misadventure on the Sea#123": {
    "src": "I swear, it felt like the whole ocean was getting crazy a second ago!",
    "dst": "Клянусь, секунду назад весь океан будто взбесился!",
    "role": "desc",
@@ -102149,7 +102853,7 @@
    "speaker": "Pirate",
    "source": "wiki"
   },
-  "Misadventure on the Sea#093": {
+  "Misadventure on the Sea#124": {
    "src": "If this is another one of your jokes...",
    "dst": "Если это опять ваши шуточки...",
    "role": "desc",
@@ -102159,7 +102863,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#094": {
+  "Misadventure on the Sea#125": {
    "src": "LOOK OUT!",
    "dst": "БЕРЕГИСЬ!",
    "role": "desc",
@@ -102169,7 +102873,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#095": {
+  "Misadventure on the Sea#126": {
    "src": "What the hell is that??",
    "dst": "Что это за чертовщина??",
    "role": "desc",
@@ -102179,7 +102883,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#096": {
+  "Misadventure on the Sea#127": {
    "src": "I don't know, this wasn't planned!",
    "dst": "Не знаю, этого не было в планах!",
    "role": "desc",
@@ -102189,7 +102893,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#097": {
+  "Misadventure on the Sea#128": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "Боец, твой звёздный час! Спугни его заклинанием или чем-нибудь!",
    "role": "desc",
@@ -102199,7 +102903,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#098": {
+  "Misadventure on the Sea#129": {
    "src": "It's working! Do that again!",
    "dst": "Работает! Ещё раз!",
    "role": "desc",
@@ -102209,7 +102913,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#099": {
+  "Misadventure on the Sea#130": {
    "src": "One more...",
    "dst": "Ещё разок...",
    "role": "desc",
@@ -102219,7 +102923,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#100": {
+  "Misadventure on the Sea#131": {
    "src": "It's starting to panic!",
    "dst": "Оно паникует!",
    "role": "desc",
@@ -102229,7 +102933,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#101": {
+  "Misadventure on the Sea#132": {
    "src": "That's right, get back!",
    "dst": "Вот так, пошло прочь!",
    "role": "desc",
@@ -102239,7 +102943,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#102": {
+  "Misadventure on the Sea#133": {
    "src": "I knew you had it in ya, haha!",
    "dst": "Я знал, что ты сможешь, ха-ха!",
    "role": "desc",
@@ -102249,7 +102953,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#103": {
+  "Misadventure on the Sea#134": {
    "src": "What a show! Come, I've got some things to tell ya!",
    "dst": "Вот это шоу! Идём, есть разговор!",
    "role": "desc",
@@ -102259,7 +102963,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#104": {
+  "Misadventure on the Sea#135": {
    "src": "I don't know where that creature came from, but thanks to you it's gone.",
    "dst": "Не знаю, откуда взялась эта тварь, но благодаря тебе её нет.",
    "role": "desc",
@@ -102269,7 +102973,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#105": {
+  "Misadventure on the Sea#136": {
    "src": "I've got something else for you to tackle. It's about... the rats.",
    "dst": "Есть для тебя ещё дело. Насчёт... крыс.",
    "role": "desc",
@@ -102279,7 +102983,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#106": {
+  "Misadventure on the Sea#137": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "Иди в трюм, по пути объясню.",
    "role": "desc",
@@ -102289,7 +102993,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#107": {
+  "Misadventure on the Sea#138": {
    "src": "I think we have quite a hellish problem on our hands.",
    "dst": "Похоже, у нас тут адская проблема.",
    "role": "desc",
@@ -102299,7 +103003,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#108": {
+  "Misadventure on the Sea#139": {
    "src": "I'm not sure what y'all find there, but these are NOT normal rats.",
    "dst": "Не знаю, что ты там найдёшь, но это НЕ обычные крысы.",
    "role": "desc",
@@ -102309,7 +103013,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#109": {
+  "Misadventure on the Sea#140": {
    "src": "So please, get in there... and kill everything, alright?",
    "dst": "Так что прошу, иди туда... и убей всё живое, лады?",
    "role": "desc",
@@ -102319,7 +103023,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#110": {
+  "Misadventure on the Sea#141": {
    "src": "I've got faith in ya. Here goes nothin'!",
    "dst": "Я в тебя верю. Была не была!",
    "role": "desc",
@@ -102329,7 +103033,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#111": {
+  "Misadventure on the Sea#142": {
    "src": "Soldier, now's your time to shine! Scare it off with one of your spells or something!",
    "dst": "Боец, твой звёздный час! Спугни его заклинанием или чем-нибудь!",
    "role": "desc",
@@ -102339,7 +103043,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#112": {
+  "Misadventure on the Sea#143": {
    "src": "Just cast one of your fancy spells!",
    "dst": "Кинь своё хитрое заклинание!",
    "role": "desc",
@@ -102349,7 +103053,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#113": {
+  "Misadventure on the Sea#144": {
    "src": "That was... Phew... That was something.",
    "dst": "Это было... Фух... Это было нечто.",
    "role": "desc",
@@ -102359,7 +103063,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#114": {
+  "Misadventure on the Sea#145": {
    "src": "Now, for an even bigger surprise...",
    "dst": "А теперь сюрприз ещё больше...",
    "role": "desc",
@@ -102369,7 +103073,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#115": {
+  "Misadventure on the Sea#146": {
    "src": "What the hell soldier?? What don't you get in the \"soldier\" part of your job?",
    "dst": "Какого чёрта, боец?? Что тебе непонятно в слове «боец»?",
    "role": "desc",
@@ -102379,7 +103083,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#116": {
+  "Misadventure on the Sea#147": {
    "src": "Come, let's figure some things out.",
    "dst": "Идём, кое-что обсудим.",
    "role": "desc",
@@ -102389,7 +103093,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#117": {
+  "Misadventure on the Sea#148": {
    "src": "You've been a massive disappointment, y'know?",
    "dst": "Ты сплошное разочарование, знаешь?",
    "role": "desc",
@@ -102399,7 +103103,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#118": {
+  "Misadventure on the Sea#149": {
    "src": "But you can still redeem yourself.",
    "dst": "Но ещё можно искупить вину.",
    "role": "desc",
@@ -102409,7 +103113,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#119": {
+  "Misadventure on the Sea#150": {
    "src": "Follow me, I'll explain on the way.",
    "dst": "За мной, по пути объясню.",
    "role": "desc",
@@ -102419,7 +103123,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#120": {
+  "Misadventure on the Sea#151": {
    "src": "I mentioned a rat problem earlier... It's, uh, not a small one.",
    "dst": "Я говорил про крыс... Там, э, не мелочь.",
    "role": "desc",
@@ -102429,7 +103133,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#121": {
+  "Misadventure on the Sea#152": {
    "src": "We've got gunpowder to retrieve, so you're the one who's gonna clear the hold.",
    "dst": "Надо забрать порох, так что трюм зачищать тебе.",
    "role": "desc",
@@ -102439,7 +103143,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#122": {
+  "Misadventure on the Sea#153": {
    "src": "So get in there... and try to kill everything, alright?",
    "dst": "Так что иди... и постарайся убить всё, лады?",
    "role": "desc",
@@ -102449,7 +103153,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#123": {
+  "Misadventure on the Sea#154": {
    "src": "Don't be as bad as earlier. You're a soldier.",
    "dst": "Не позорься, как в прошлый раз. Ты же боец.",
    "role": "desc",
@@ -102459,7 +103163,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#124": {
+  "Misadventure on the Sea#155": {
    "src": "What.",
    "dst": "Что.",
    "role": "desc",
@@ -102469,7 +103173,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#125": {
+  "Misadventure on the Sea#156": {
    "src": "Well... That's a twist.",
    "dst": "Ну... Вот это поворот.",
    "role": "desc",
@@ -102479,7 +103183,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#126": {
+  "Misadventure on the Sea#157": {
    "src": "I expected you to do somethin', soldier, not him!",
    "dst": "Я ждал, что что-то сделаешь ты, боец, а не он!",
    "role": "desc",
@@ -102489,7 +103193,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#127": {
+  "Misadventure on the Sea#158": {
    "src": "Anyway, come talk to me.",
    "dst": "В общем, подойди ко мне.",
    "role": "desc",
@@ -102499,7 +103203,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#128": {
+  "Misadventure on the Sea#159": {
    "src": "I have another task for you. It's about... the rats.",
    "dst": "Есть для тебя ещё дело. Насчёт... крыс.",
    "role": "desc",
@@ -102509,7 +103213,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#129": {
+  "Misadventure on the Sea#160": {
    "src": "See, I really don't think we have your usual type of problem.",
    "dst": "Понимаешь, не думаю, что проблема у нас обычная.",
    "role": "desc",
@@ -102519,7 +103223,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#130": {
+  "Misadventure on the Sea#161": {
    "src": "Come to the hold, I'll explain on the way.",
    "dst": "Иди в трюм, по пути объясню.",
    "role": "desc",
@@ -102529,7 +103233,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#131": {
+  "Misadventure on the Sea#162": {
    "src": "We sometimes hear unusually load footsteps, along with some really eerie squeaking...",
    "dst": "Иногда слышим необычно громкие шаги и очень жуткий писк...",
    "role": "desc",
@@ -102539,7 +103243,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#132": {
+  "Misadventure on the Sea#163": {
    "src": "That's why we're not too fond of goin' in... But our gunpowder there! We need it, as pirates!",
    "dst": "Потому и не рвёмся туда... Но там наш порох! А пирату без него никак!",
    "role": "desc",
@@ -102549,7 +103253,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#133": {
+  "Misadventure on the Sea#164": {
    "src": "So, I need you to get in... and kill everything, alright?",
    "dst": "Так что иди туда... и убей всё живое, лады?",
    "role": "desc",
@@ -102559,7 +103263,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#134": {
+  "Misadventure on the Sea#165": {
    "src": "Here goes nothing. Snoo, ya stay there!",
    "dst": "Была не была. Snoo, сиди тут!",
    "role": "desc",
@@ -102569,7 +103273,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#135": {
+  "Misadventure on the Sea#166": {
    "src": "Explore the hold and kill the rats",
    "dst": "Осмотри трюм и перебей крыс",
    "role": "desc",
@@ -102579,7 +103283,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#136": {
+  "Misadventure on the Sea#167": {
    "src": "Defeat the Colossal Rat in the hold",
    "dst": "Победи Colossal Rat в трюме",
    "role": "desc",
@@ -102589,7 +103293,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#137": {
+  "Misadventure on the Sea#168": {
    "src": "Use the gunpowder and the fuse to activate the cannon and escape",
    "dst": "Заряди пушку порохом и фитилём и сбеги",
    "role": "desc",
@@ -102599,7 +103303,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#138": {
+  "Misadventure on the Sea#169": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "Эй! С хорошими новостями?",
    "role": "desc",
@@ -102609,7 +103313,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#139": {
+  "Misadventure on the Sea#170": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "С проклятыми крысами-воришками покончено? Говоришь... Colossal Rat?",
    "role": "desc",
@@ -102619,7 +103323,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#140": {
+  "Misadventure on the Sea#171": {
    "src": "Nicely done, I knew I could count on ya! C'mere, take these!",
    "dst": "Отлично, знал, что на тебя можно положиться! Держи-ка!",
    "role": "desc",
@@ -102629,7 +103333,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#141": {
+  "Misadventure on the Sea#172": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "В общем, пока можешь отдыхать и делать что хочешь!",
    "role": "desc",
@@ -102639,7 +103343,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#142": {
+  "Misadventure on the Sea#173": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "Эй! С хорошими новостями?",
    "role": "desc",
@@ -102649,7 +103353,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#143": {
+  "Misadventure on the Sea#174": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "С проклятыми крысами-воришками покончено? Говоришь... Colossal Rat?",
    "role": "desc",
@@ -102659,7 +103363,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#144": {
+  "Misadventure on the Sea#175": {
    "src": "Well, shiver me timbers! You did redeem yourself soldier!",
    "dst": "Тысяча чертей! Вина искуплена, боец!",
    "role": "desc",
@@ -102669,7 +103373,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#145": {
+  "Misadventure on the Sea#176": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "В общем, пока можешь отдыхать и делать что хочешь!",
    "role": "desc",
@@ -102679,7 +103383,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#146": {
+  "Misadventure on the Sea#177": {
    "src": "Hey there! Ya bringin' me good news?",
    "dst": "Эй! С хорошими новостями?",
    "role": "desc",
@@ -102689,7 +103393,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#147": {
+  "Misadventure on the Sea#178": {
    "src": "You took care of these damn thieving rodents? A... colossal rat you say?",
    "dst": "С проклятыми крысами-воришками покончено? Говоришь... Colossal Rat?",
    "role": "desc",
@@ -102699,7 +103403,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#148": {
+  "Misadventure on the Sea#179": {
    "src": "That sounds absolutely terrifying! And ya did that alone! You know what, her', take these.",
    "dst": "Звучит жутко! И всё в одиночку! Знаешь что, держи вот это.",
    "role": "desc",
@@ -102709,7 +103413,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#149": {
+  "Misadventure on the Sea#180": {
    "src": "Anyway, for now, you can go rest and do whatever you want!",
    "dst": "В общем, пока можешь отдыхать и делать что хочешь!",
    "role": "desc",
@@ -102719,7 +103423,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#150": {
+  "Misadventure on the Sea#181": {
    "src": "Hey! What do you think you're doin'?!",
    "dst": "Эй! Ты что это делаешь?!",
    "role": "desc",
@@ -102729,7 +103433,7 @@
    "speaker": "Pirate Guard",
    "source": "wiki"
   },
-  "Misadventure on the Sea#151": {
+  "Misadventure on the Sea#182": {
    "src": "...Seth? Have ya seen the soldier?",
    "dst": "...Seth? Бойца не видал?",
    "role": "desc",
@@ -102739,7 +103443,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#152": {
+  "Misadventure on the Sea#183": {
    "src": "No, but they did a great job in the hold! Some gunpowder went missing though.",
    "dst": "Нет, но в трюме поработали на славу! Правда, пропало немного пороха.",
    "role": "desc",
@@ -102749,7 +103453,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#153": {
+  "Misadventure on the Sea#184": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -102759,7 +103463,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#154": {
+  "Misadventure on the Sea#185": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -102769,7 +103473,7 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#155": {
+  "Misadventure on the Sea#186": {
    "src": "Wait a minute.",
    "dst": "Минуточку.",
    "role": "desc",
@@ -102779,7 +103483,7 @@
    "speaker": "Seth",
    "source": "wiki"
   },
-  "Misadventure on the Sea#156": {
+  "Misadventure on the Sea#187": {
    "src": "Find out where you are and a way to flee the island",
    "dst": "Выясни своё местонахождение и найди способ покинуть остров",
    "role": "desc",
@@ -102789,7 +103493,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Misadventure on the Sea#157": {
+  "Misadventure on the Sea#188": {
    "src": "'ey there soldier! Looks like ya're in a bit of a pickle! How 'bout ya hop on?'",
    "dst": "Эй, боец! Похоже, ты влип! Может, запрыгнешь?",
    "role": "desc",
@@ -102799,7 +103503,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#158": {
+  "Misadventure on the Sea#189": {
    "src": "Well... We're headed for {p}, the heart of the ocean! Which is safer than wherever you were, heh!",
    "dst": "Ну... Мы идём в {p}, сердце океана! Уж точно безопаснее, чем там, где тебя носило, хех!",
    "role": "desc",
@@ -102809,7 +103513,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#159": {
+  "Misadventure on the Sea#190": {
    "src": "I was casually takin' a scenic detour when I saw you and your shiny equipment on that island.",
    "dst": "Шёл себе живописным крюком и тут вижу на острове тебя с блестящим снаряжением.",
    "role": "desc",
@@ -102819,7 +103523,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#160": {
+  "Misadventure on the Sea#191": {
    "src": "So, ya gotta tell me what happened!",
    "dst": "Так что рассказывай, что стряслось!",
    "role": "desc",
@@ -102829,7 +103533,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#161": {
+  "Misadventure on the Sea#192": {
    "src": "Oh, kidnapped by pirates I see! How unfortunate...",
    "dst": "О, пираты похитили! Вот незадача...",
    "role": "desc",
@@ -102839,7 +103543,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#162": {
+  "Misadventure on the Sea#193": {
    "src": "I guess that'll show ya, tryin' to avoid using good ol' seaskipper! I'm the only trustworthy one 'round here.",
    "dst": "Будешь знать, как обходить старый добрый паром! Я тут единственный, кому можно верить.",
    "role": "desc",
@@ -102849,7 +103553,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#163": {
+  "Misadventure on the Sea#194": {
    "src": "Well, I hope they weren't too bad with ya! Here, I'll make you travel to {p} for free as compensation.",
    "dst": "Надеюсь, они не слишком тебя мучили! Вот, в награду за беды довезу до {p} бесплатно.",
    "role": "desc",
@@ -102859,7 +103563,7 @@
    "speaker": "Seaskipper Captain",
    "source": "wiki"
   },
-  "Misadventure on the Sea#164": {
+  "Misadventure on the Sea#195": {
    "src": "Anyway, I can see the shore off in the distance! Hang tight, we're almost there!",
    "dst": "Вижу берег вдалеке! Держись крепче, мы почти на месте!",
    "role": "desc",
@@ -121182,6 +121886,116 @@
    "source": "wiki"
   },
   "Pirate's Trove#000": {
+   "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
+   "dst": "Но довольно любезностей. Скажи… знаешь историю великого пирата, капитана Hastor? Бороздил моря давным-давно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#001": {
+   "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune someplace within the walls!",
+   "dst": "Говорят, когда {p} отстраивали много лет назад, он спрятал своё богатство где-то в стенах!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#002": {
+   "src": "This first riddle goes like so: Toward the sunset, among northern flowers shaded by quartz.",
+   "dst": "Первая загадка звучит так: На закат, среди северных цветов в тени кварца.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#003": {
+   "src": "How is your search going? I've written the first clue into your book. I've heard that the others are engraved on blocks of black stone; maybe you should look for those.",
+   "dst": "Как продвигаются поиски? Я записал первую подсказку в твою книгу. Говорят, остальные высечены на блоках чёрного камня; может, тебе стоит их поискать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#004": {
+   "src": "A message is carved into the pedestal: In a place of identity, above the leaves and between the glass",
+   "dst": "На постаменте высечено послание: В месте личности, над листвой, меж стекла",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#005": {
+   "src": "Oh sorry, am I blocking the shelf? I'm doing some research concerning Siegfried. He plays quite an astounding role in the current history of Gavel.",
+   "dst": "Ой, простите, я загораживаю полку? Я изучаю всё, что касается Siegfried. Он играет поразительную роль в современной истории Gavel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#006": {
+   "src": "I used to not believe in the stories of his heroic quests, however I can't deny the fact that he and his life are well documented.",
+   "dst": "Раньше я не верил рассказам о его героических подвигах, но не могу отрицать, что его жизнь хорошо задокументирована.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#007": {
+   "src": "After all, he is still alive and writing new books about his adventures, such as this one about his journey to slay an entire pack of werewolves threatening the town of {p}.",
+   "dst": "В конце концов, он всё ещё жив и пишет новые книги о своих приключениях - вот, например, эта, о его походе против целой стаи оборотней, угрожавших городу {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#008": {
+   "src": "Oh would you look at that, that actually happened a week ago. He seems so selfless and brave, I can see why we tell our children about him.",
+   "dst": "О, гляньте-ка, это ведь было всего неделю назад. Он такой самоотверженный и храбрый - ясно, почему мы рассказываем о нём детям.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#009": {
+   "src": "A message is carved into the obsidian: In an emerald fountain, surrounded by the wealth of the villagers",
+   "dst": "На обсидиане высечено послание: В изумрудном фонтане, среди богатств жителей",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#010": {
+   "src": "A message is carved into the obsidian: Beneath the cowl of an eastern titan, keeping watch over our heads",
+   "dst": "На обсидиане высечено послание: Под капюшоном восточного титана, что стережёт нас сверху",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#011": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Damiral у {p} в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -121191,7 +122005,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#001": {
+  "Pirate's Trove#012": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
    "dst": "Эй, путник! Добро пожаловать в великую провинцию Gavel, родину жителей и вашего покорного слуги. Скоро ты войдёшь в цитадель {p}!",
    "role": "desc",
@@ -121201,7 +122015,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#002": {
+  "Pirate's Trove#013": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
    "dst": "Но довольно любезностей. Скажи… знаешь историю великого пирата, капитана Hastor? Бороздил моря давным-давно.",
    "role": "desc",
@@ -121211,7 +122025,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#003": {
+  "Pirate's Trove#014": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
    "dst": "Говорят, когда {p} отстраивали много лет назад, он спрятал своё богатство где-то в стенах!",
    "role": "desc",
@@ -121221,7 +122035,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#004": {
+  "Pirate's Trove#015": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
    "dst": "Я уже отставной моряк, но пара лишних изумрудов из того клада мне не помешает. Может, если ты не против… договоримся?",
    "role": "desc",
@@ -121231,7 +122045,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#005": {
+  "Pirate's Trove#016": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
    "dst": "У меня есть загадка - первая из подсказок, что ведут к тайнику Hastor, но я хоть убей не могу её разгадать.",
    "role": "desc",
@@ -121241,7 +122055,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#006": {
+  "Pirate's Trove#017": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
    "dst": "Может, у тебя получится. Если разгадаешь, клянусь, клад поделим с тобой!",
    "role": "desc",
@@ -121251,7 +122065,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#007": {
+  "Pirate's Trove#018": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
    "dst": "Первая загадка звучит так: «На закат, среди северных цветов в тени кварца».",
    "role": "desc",
@@ -121261,7 +122075,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#008": {
+  "Pirate's Trove#019": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
    "dst": "Желаю удачи, путник! Помни: всё, что нужно для разгадки, находится где-то в {p}.",
    "role": "desc",
@@ -121271,7 +122085,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#009": {
+  "Pirate's Trove#020": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
    "dst": "Подсказка I: На закат, среди северных цветов в тени кварца",
    "role": "desc",
@@ -121281,7 +122095,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#010": {
+  "Pirate's Trove#021": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
    "dst": "Подсказка II: В месте личности, над листвой, меж стекла",
    "role": "desc",
@@ -121291,7 +122105,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#011": {
+  "Pirate's Trove#022": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
    "dst": "Подсказка III: В изумрудном фонтане, среди богатств жителей",
    "role": "desc",
@@ -121301,7 +122115,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#012": {
+  "Pirate's Trove#023": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
    "dst": "Подсказка IV: Под капюшоном восточного титана, что стережёт нас сверху",
    "role": "desc",
@@ -121311,7 +122125,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#013": {
+  "Pirate's Trove#024": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
    "dst": "Ага! Шёл узнать, как успехи, и тут вижу - ты прыгаешь сюда!",
    "role": "desc",
@@ -121321,7 +122135,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#014": {
+  "Pirate's Trove#025": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
    "dst": "Блестяще, товарищ. Но ты ведь помнишь наш уговор?",
    "role": "desc",
@@ -121331,7 +122145,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#015": {
+  "Pirate's Trove#026": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
    "dst": "Ты находишь клад, я даю тебе долю. Заберу свою часть - и в путь!",
    "role": "desc",
@@ -121590,16 +122404,6 @@
   "Point of No Return#010": {
    "src": "... Maybe you should talk to that citizen again.",
    "dst": "…Может, стоит снова поговорить с тем жителем.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Point of No Return",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Point of No Return#011": {
-   "src": "You're... f",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Point of No Return",
@@ -127551,16 +128355,6 @@
    "quest": "Queen's Recruit",
    "stage": "Stage 11",
    "speaker": "Sovereign Majin",
-   "source": "wiki"
-  },
-  "Queen's Recruit#422": {
-   "src": "Yes, actua",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 11",
-   "speaker": "Lanu",
    "source": "wiki"
   },
   "Queen's Recruit#423": {
@@ -149609,16 +150403,6 @@
    "speaker": "Aihan",
    "source": "wiki"
   },
-  "Solidarity of Steel#457": {
-   "src": "Alrigh",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Solidarity of Steel",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "Solidarity of Steel#458": {
    "src": "We- no, no, no, this- this won't work, I can't- you need to pack different things, I can't go with- with this, pleas",
    "dst": "Мы- нет, нет, нет, это- так не пойдёт, я не могу- собери другие вещи, я не могу пойти с- с этим, пожалуйс",
@@ -167545,16 +168329,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Dark Descent#032": {
-   "src": "I see",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Dark Descent#033": {
    "src": "I have an entire undead army at my service. Do you really think you stand a chance?",
    "dst": "У меня в услужении целая армия нежити. Ты правда думаешь, что у тебя есть шанс?",
@@ -169368,16 +170142,6 @@
   "The Envoy Part II#010": {
    "src": "I'll have to use electromagic to make it launch, so you'll have to go alone.",
    "dst": "Запущу её электромагией, так что летишь без меня.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "The Envoy Part II#011": {
-   "src": "Press the button when",
-   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -199407,16 +200171,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Price of Ingenuity#001": {
-   "src": "*yaaaaw",
-   "dst": "",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Price of Ingenuity",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
   "The Price of Ingenuity#002": {
    "src": "Previously implemented locomotive models employ an engine with relatively low efficiency.",
    "dst": "В прежних моделях локомотивов стоял двигатель со сравнительно низким КПД.",
@@ -221083,6 +221837,16 @@
    "speaker": "",
    "source": "captured"
   },
+  "Tower of Ascension (Quest)#019": {
+   "src": "I need five tokens from the enemies in this room as evidence that you are strong enough to ascend.",
+   "dst": "Мне нужно пять жетонов с врагов этой комнаты - доказательство, что ты достаточно силён, чтобы подняться.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tower of Ascension (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Tribal Aggression#000": {
    "src": "My tribe worries our own business, stranger.",
    "dst": "Моё племя занято своими делами, чужак.",
@@ -230430,6 +231194,56 @@
    "source": "wiki"
   },
   "WynnExcavation Site A#000": {
+   "src": "Questline Started: WynnExcavation",
+   "dst": "Цепочка заданий: WynnExcavation",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#001": {
+   "src": "Oh, Vade sent you?",
+   "dst": "О, тебя прислал Vade?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#002": {
+   "src": "One tablet complete! Return it to Vade. Oh, and don't read it!",
+   "dst": "Табличка готова! Верни её Vade. И не читай!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#003": {
+   "src": "A strange force pushes you back!",
+   "dst": "Странная сила отталкивает тебя назад!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#004": {
+   "src": "What are you still doing over here? Go finish your assignment! It's written in your content book.",
+   "dst": "Ты чего тут ещё торчишь? Иди доделывай своё задание! Всё записано в твоей книге заданий.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site A",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site A#005": {
    "src": "Speak to Excavator Vade at [{~}, {~}, -{~}]",
    "dst": "Поговори с Землекопом Vade на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -230439,7 +231253,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#001": {
+  "WynnExcavation Site A#006": {
    "src": "Oh, hey kid. Wanna make some money?",
    "dst": "Эй, малец. Подзаработать хочешь?",
    "role": "desc",
@@ -230449,7 +231263,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#002": {
+  "WynnExcavation Site A#007": {
    "src": "I need you to translate this ancient text.",
    "dst": "Нужно перевести этот древний текст.",
    "role": "desc",
@@ -230459,7 +231273,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#003": {
+  "WynnExcavation Site A#008": {
    "src": "Just run it down to the lab assistant, Tesha.",
    "dst": "Просто отнеси его лаборантке Tesha.",
    "role": "desc",
@@ -230469,7 +231283,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#004": {
+  "WynnExcavation Site A#009": {
    "src": "I'd take it myself, but I'm far too important for grunt work! The lab is up there in the tent, and don't you dare damage the translation!",
    "dst": "Отнёс бы сам, но я слишком важная персона для чёрной работы! Лаборатория в палатке наверху, и не смей повредить перевод!",
    "role": "desc",
@@ -230479,7 +231293,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#005": {
+  "WynnExcavation Site A#010": {
    "src": "Bring the Ancient Writing to Tesha in the tents at [{~}, {~}, -{~}]",
    "dst": "Отнеси древнюю рукопись Tesha в палатки на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -230489,7 +231303,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#006": {
+  "WynnExcavation Site A#011": {
    "src": "Hello, welcome to WynnExcavation Labs!",
    "dst": "Привет! Лаборатория WynnExcavation!",
    "role": "desc",
@@ -230499,7 +231313,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#007": {
+  "WynnExcavation Site A#012": {
    "src": "Oh Vade sent you?",
    "dst": "О, тебя прислал Vade?",
    "role": "desc",
@@ -230509,7 +231323,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#008": {
+  "WynnExcavation Site A#013": {
    "src": "Oh yes, the tablet I was waiting for!",
    "dst": "О да, та самая табличка!",
    "role": "desc",
@@ -230519,7 +231333,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#009": {
+  "WynnExcavation Site A#014": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -230529,7 +231343,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#010": {
+  "WynnExcavation Site A#015": {
    "src": "Oh my! This is quite interesting..",
    "dst": "Ого! Как интересно...",
    "role": "desc",
@@ -230539,7 +231353,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#011": {
+  "WynnExcavation Site A#016": {
    "src": "Here, let me finish this up...",
    "dst": "Сейчас, закончу...",
    "role": "desc",
@@ -230549,7 +231363,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#012": {
+  "WynnExcavation Site A#017": {
    "src": "..and there you are!",
    "dst": "...и готово!",
    "role": "desc",
@@ -230559,7 +231373,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#013": {
+  "WynnExcavation Site A#018": {
    "src": "One tablet complete! Return it to Vade. Oh and don't read it!",
    "dst": "Табличка готова! Верни её Vade. И не читай!",
    "role": "desc",
@@ -230569,7 +231383,7 @@
    "speaker": "Tesha",
    "source": "wiki"
   },
-  "WynnExcavation Site A#014": {
+  "WynnExcavation Site A#019": {
    "src": "Return to Excavator Vade with the translated writing",
    "dst": "Вернись к Землекопу Vade с переводом",
    "role": "desc",
@@ -230579,7 +231393,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#015": {
+  "WynnExcavation Site A#020": {
    "src": "Who are you?",
    "dst": "Ты кто?",
    "role": "desc",
@@ -230589,7 +231403,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#016": {
+  "WynnExcavation Site A#021": {
    "src": "Oh right, you're that kid I sent out!",
    "dst": "А, это тебя я посылал, малявка!",
    "role": "desc",
@@ -230599,7 +231413,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#017": {
+  "WynnExcavation Site A#022": {
    "src": "Well do you have the translated text or not?",
    "dst": "Ну, перевод у тебя или нет?",
    "role": "desc",
@@ -230609,7 +231423,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#018": {
+  "WynnExcavation Site A#023": {
    "src": "You do! Brilliant! Let's take a look at that...",
    "dst": "Есть! Блестяще! Посмотрим, что там...",
    "role": "desc",
@@ -230619,7 +231433,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#019": {
+  "WynnExcavation Site A#024": {
    "src": "\"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "«Брось дар древу, что выделяется, верный угол откроет путь»",
    "role": "desc",
@@ -230629,7 +231443,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#020": {
+  "WynnExcavation Site A#025": {
    "src": "I wonder if it is talking about inside the temple... Oh, uh, I forgot you were here. Stay out of this kid, it's grown up business!",
    "dst": "Интересно, речь о том, что внутри храма... О, э, забыл, что ты здесь. Не лезь, малявка, это взрослые дела!",
    "role": "desc",
@@ -230639,7 +231453,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#021": {
+  "WynnExcavation Site A#026": {
    "src": "Solve this riddle in the tomb: \"Throw tribute an item to the wood that stands out, the right angle will open the way\"",
    "dst": "Разгадай загадку в гробнице: «Брось дар древу, что выделяется, верный угол откроет путь»",
    "role": "desc",
@@ -230649,7 +231463,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#022": {
+  "WynnExcavation Site A#027": {
    "src": "Search the tombs",
    "dst": "Обыщи гробницы",
    "role": "desc",
@@ -230659,7 +231473,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#023": {
+  "WynnExcavation Site A#028": {
    "src": "Return and talk to Excavator Vade",
    "dst": "Вернись и поговори с Землекопом Vade",
    "role": "desc",
@@ -230669,7 +231483,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site A#024": {
+  "WynnExcavation Site A#029": {
    "src": "Hey kid, did you just come from the tomb?",
    "dst": "Эй, малец, ты что, из гробницы?",
    "role": "desc",
@@ -230679,7 +231493,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#025": {
+  "WynnExcavation Site A#030": {
    "src": "I knew I shouldn't have been so lazy and got someone else to do the leg work!",
    "dst": "Знал же, не надо было лениться и гонять других!",
    "role": "desc",
@@ -230689,7 +231503,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#026": {
+  "WynnExcavation Site A#031": {
    "src": "Gosh, I can't tell my boss about this, he'll have my head! Literally! Wynn Excavation is not a group you want to betray, they are more powerful than you will ever know.",
    "dst": "Боже, начальству об этом нельзя, он мне голову оторвёт! Буквально! WynnExcavation не та контора, которую стоит предавать, их сила больше, чем ты думаешь.",
    "role": "desc",
@@ -230699,7 +231513,7 @@
    "speaker": "Excavator Vade",
    "source": "wiki"
   },
-  "WynnExcavation Site A#027": {
+  "WynnExcavation Site A#032": {
    "src": "YOU'D BETTER NOT HAVE TAKEN ANYTHING! THAT IS OFFICIAL WYNNEXCAVATION PROPERTY!",
    "dst": "ЛУЧШЕ БЫ ТЕБЕ НИЧЕГО НЕ БРАТЬ! ЭТО ОФИЦИАЛЬНАЯ СОБСТВЕННОСТЬ WYNNEXCAVATION!",
    "role": "desc",

@@ -1,12 +1,232 @@
 {
  "_meta": {
   "quest": "Fate of the Fallen",
-  "count": 71,
-  "translated": 71,
+  "count": 93,
+  "translated": 93,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Fate of the Fallen#000": {
+   "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
+   "dst": "아, {p} 군대 분이군요. 이 얼어붙은 봉분에 대해 더 알아보려는 중인데, 도움이 필요해요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#001": {
+   "src": "Did you listen?",
+   "dst": "제 말 들으셨어요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#002": {
+   "src": "If you don't remember what I said, I remember you writing something in your book. Try looking there.",
+   "dst": "제가 한 말이 기억 안 나시면, 책에 뭔가 적으시는 걸 봤어요. 거기 한번 보세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#003": {
+   "src": "You should head back to the mage with the wand.",
+   "dst": "지팡이를 가지고 마법사에게 돌아가야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#004": {
+   "src": "This is the Temple of Time...",
+   "dst": "이곳은 Temple of Time이다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#005": {
+   "src": "Here you can visit the memories of this land...",
+   "dst": "여기서 이 땅의 기억을 찾아갈 수 있다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#006": {
+   "src": "The altar requires an item from the time you desire to access...",
+   "dst": "제단에는 가고자 하는 시대의 물건이 필요하다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#007": {
+   "src": "You will access a memory as if you were present, but when you return it will be as if you were never there.",
+   "dst": "그 자리에 있는 것처럼 기억 속에 들어가지만, 돌아오면 마치 그곳에 간 적이 없었던 것처럼 된다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#008": {
+   "src": "You should stick around to find out how to reverse the spell.",
+   "dst": "남아서 주문을 되돌리는 방법을 알아내는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#009": {
+   "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too far gone. It needs time to heal...and my powers m-must be dampened...frozen...",
+   "dst": "크아악... 모두에게... 전해라. 이곳을 얼리겠다. 난... 너-너무 늦었어. 이 땅은 치유할 시간이... 내 힘도 억눌러야... 얼려서...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#010": {
+   "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits linger. I would...prefer against giving him a harder time.",
+   "dst": "그 참을 수 없는 녀- ...Mael한테서 배운 게 있다면... 이유 없는 죽음은 영혼을 떠돌게 한다는 거다. 난... 그 녀석을 더 힘들게 하고 싶지 않아.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#011": {
+   "src": "Wha... so many revelations... ice magic staves off corruption...? It is true that this place has seen less corrupted threats than other places in the province...",
+   "dst": "뭐라고요... 이런 사실들이... 얼음 마법이 타락을 막는다고...? 확실히 여긴 지방의 다른 곳보다 타락 피해가 적었죠...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#012": {
+   "src": "Dear gods... We've had it all wrong this whole time... It was to protect everyone... but surely he would have told someone his intentions if he was of that sound a mind!",
+   "dst": "세상에... 우린 내내 완전히 오해했어요... 모두를 지키려던 거였다니... 정신이 멀쩡했다면 누군가에게 의도를 말했을 텐데요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#013": {
+   "src": "Soldier! I'm not sure it is wise to be here... An icy death awaits you if you proceed. A death that I will cause..",
+   "dst": "병사여! 여기 있는 건 현명하지 않을 텐데... 더 나아가면 차가운 죽음이 기다린다. 내가 내릴 죽음이..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#014": {
+   "src": "I have many regrets of my time spent alive in Wynn. I do not wish for my lingering mistakes to harm anyone else. Turn back.",
+   "dst": "나는 Wynn에서 살던 시절에 후회가 많다. 남은 내 과오가 다른 이를 해치길 원치 않는다. 돌아가라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#016": {
+   "src": "You must think you can save me? There is no cure for what I have.",
+   "dst": "날 구할 수 있다고 생각하나? 내 병엔 치료법이 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#017": {
+   "src": "Unless.. You want to set me free?",
+   "dst": "아니면.. 날 해방시켜 주겠다는 건가?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#020": {
+   "src": "I froze this land to allow it to heal.. People did not understand.. They came for me here, seeking revenge.",
+   "dst": "이 땅이 치유되도록 얼린 것이다.. 사람들은 이해하지 못했지.. 복수하려고 여기까지 날 찾아왔다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#021": {
+   "src": "Of course, just like you.. They can not leave. Their souls are stuck here. For the spell must not be broken.",
+   "dst": "물론, 너처럼 말이지.. 그들은 떠날 수 없다. 영혼이 이곳에 묶여 있다. 주문이 깨져선 안 되니까.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#023": {
+   "src": "Even if you think you can cure me.. I can not allow you to try for if it were to fail my corrupted body would wreak havoc on the world!",
+   "dst": "날 치료할 수 있다고 생각해도.. 시도하게 둘 순 없다. 실패하면 타락한 내 몸이 세상을 파멸시킬 테니!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#024": {
+   "src": "It will be dangerous...perhaps your toughest fight yet...but it must be done. If you need time to prepare, do so. But you must end Theorick's pain.",
+   "dst": "위험할 거예요... 어쩌면 지금까지 중 가장 힘든 싸움일지도... 하지만 해야만 해요. 준비할 시간이 필요하면 하세요. 하지만 Theorick의 고통은 꼭 끝내 주셔야 해요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#025": {
+   "src": "Don't you just love fishing? The little waves in the river, the wind and the rewarding feeling when you catch something, those are my favorite things about it.",
+   "dst": "낚시 정말 좋지 않아요? 강의 잔물결, 바람, 그리고 뭔가 낚았을 때의 뿌듯함, 그게 제가 제일 좋아하는 점이에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#027": {
    "src": "You can not return until your goal is fulfilled...",
    "dst": "목표를 이루기 전까지는 돌아갈 수 없다...",
    "role": "desc",
@@ -16,7 +236,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Fate of the Fallen#001": {
+  "Fate of the Fallen#028": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]에 있는 마법사 Telvu와 대화하세요.",
    "role": "desc",
@@ -26,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#002": {
+  "Fate of the Fallen#029": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
    "dst": "아, {p} 군대 분이군요. 이 얼어붙은 봉분에 들어가려는 중인데, 도움이 필요해요.",
    "role": "desc",
@@ -36,7 +256,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#003": {
+  "Fate of the Fallen#030": {
    "src": "Are you familiar with the story of Theorick and {p}?",
    "dst": "Theorick과 {p} 이야기를 아시나요?",
    "role": "desc",
@@ -46,7 +266,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#004": {
+  "Fate of the Fallen#031": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
    "dst": "모르시겠죠. 사실 {p}은(는) 원래 얼어 있던 곳이 아니에요.",
    "role": "desc",
@@ -56,7 +276,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#005": {
+  "Fate of the Fallen#032": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
    "dst": "Theorick 시절, 이곳은 Wynn 평원처럼 따뜻하고 비옥했죠.",
    "role": "desc",
@@ -66,7 +286,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#006": {
+  "Fate of the Fallen#033": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
    "dst": "웬일인지 Theorick Twain은 엄청난 힘으로 이 땅을 얼리고, 스스로 이곳에 유배됐어요.",
    "role": "desc",
@@ -76,7 +296,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#007": {
+  "Fate of the Fallen#034": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
    "dst": "그 이유를 알아야 이 주문을 되돌릴 수 있어요. 주문의 근원은 아마 봉분 안에 있겠지만... 빈손으로 들어가고 싶진 않네요.",
    "role": "desc",
@@ -86,7 +306,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#008": {
+  "Fate of the Fallen#035": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
    "dst": "그래서 말인데... {p}(이)라는 곳을 아세요? 거길 이용하면 과거로 가서 Theorick의 행적을 더 알아볼 수 있어요.",
    "role": "desc",
@@ -96,7 +316,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#009": {
+  "Fate of the Fallen#036": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
    "dst": "음... 어떤 의미로는요. 이런 마법엔 규칙이 있어요. 첫째, 보려는 시대의 물건이 필요해요. 둘째, 과거는 볼 수만 있고 바꿀 순 없어요.",
    "role": "desc",
@@ -106,7 +326,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#010": {
+  "Fate of the Fallen#037": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
    "dst": "Theorick의 지팡이 하나가 {p} 은행에 전시돼 있어요. 그거면 될 거예요. 어떻게든 가져와 주실래요?",
    "role": "desc",
@@ -116,7 +336,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#011": {
+  "Fate of the Fallen#038": {
    "src": "Find Theorick's stave at {p} bank.",
    "dst": "{p} 은행에서 Theorick의 지팡이를 찾으세요.",
    "role": "desc",
@@ -126,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#012": {
+  "Fate of the Fallen#039": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
    "dst": "하하, 빠르시네요. 지팡이를 구하셨군요. 은행원들을 설득하려면 말솜씨가 좋아야 했을 텐데.",
    "role": "desc",
@@ -136,7 +356,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#013": {
+  "Fate of the Fallen#040": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
    "dst": "{p}까지는 먼 길이에요. 하지만 걸어갈 필요 없어요. 제가 순간이동시켜 드릴게요. 아마도요.",
    "role": "desc",
@@ -146,7 +366,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#014": {
+  "Fate of the Fallen#041": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
    "dst": "도착하면 Temple of Time에 들어가세요. 가 보면 할 일을 알게 될 거예요. 시간 여행은 조심하세요, 친구... 무엇을 만날지 몰라요.",
    "role": "desc",
@@ -156,7 +376,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#015": {
+  "Fate of the Fallen#042": {
    "src": "Just step into the portal.",
    "dst": "포털로 들어가기만 하세요.",
    "role": "desc",
@@ -166,7 +386,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#016": {
+  "Fate of the Fallen#043": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
    "dst": "문제가 생기면 제가 여기서 신전으로 다시 보내 드릴게요.",
    "role": "desc",
@@ -176,7 +396,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#017": {
+  "Fate of the Fallen#044": {
    "src": "Enter the portal the mage made.",
    "dst": "마법사가 만든 포털로 들어가세요.",
    "role": "desc",
@@ -186,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#018": {
+  "Fate of the Fallen#045": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
    "dst": "[-{~}, {~}, -{~}]의 Gate of Time에 들어가 과거로 가세요.",
    "role": "desc",
@@ -196,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#019": {
+  "Fate of the Fallen#046": {
    "src": "Explore Past {p}.",
    "dst": "과거의 {p}을(를) 탐험하세요.",
    "role": "desc",
@@ -206,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#020": {
+  "Fate of the Fallen#047": {
    "src": "What the...",
    "dst": "이게 무슨...",
    "role": "desc",
@@ -216,7 +436,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#021": {
+  "Fate of the Fallen#048": {
    "src": "Woah, your weaponry and armour is so advanced!",
    "dst": "우와, 무기랑 갑옷이 엄청 최신식이네요!",
    "role": "desc",
@@ -226,7 +446,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#022": {
+  "Fate of the Fallen#049": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
    "dst": "당신도 Twain인가요? 그런 마법은 Twain 가문만 쓰는데.",
    "role": "desc",
@@ -236,7 +456,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#023": {
+  "Fate of the Fallen#050": {
    "src": "Oh, you're looking for Theorick.",
    "dst": "아, Theorick을 찾으시는군요.",
    "role": "desc",
@@ -246,7 +466,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#024": {
+  "Fate of the Fallen#051": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
    "dst": "그분은 전쟁에서 싸우느라 바빠요. 당신도 그래야 하지 않아요?",
    "role": "desc",
@@ -256,7 +476,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#025": {
+  "Fate of the Fallen#052": {
    "src": "He went west. There was some kind of emergency.",
    "dst": "서쪽으로 가셨어요. 무슨 급한 일이 있었나 봐요.",
    "role": "desc",
@@ -266,7 +486,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#026": {
+  "Fate of the Fallen#053": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
    "dst": "몇 년째 타락과 싸우고 있는데, 결국 {p}까지 삼켜 버릴 것 같아요.",
    "role": "desc",
@@ -276,7 +496,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#027": {
+  "Fate of the Fallen#054": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
    "dst": "{p} 서쪽 숲에서 Theorick을 찾으세요 [{~}, {~}, {~}].",
    "role": "desc",
@@ -286,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#028": {
+  "Fate of the Fallen#055": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
    "dst": "분명 이쪽으로 갔는데... 뭐야, 또 멍청이야? 이 숲은 함부로 다닐 데가 아니다!",
    "role": "desc",
@@ -296,7 +516,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#029": {
+  "Fate of the Fallen#056": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
    "dst": "도움이 필요하면 경비병한테 민원이나 넣어. 난 바빠. 이 빌어먹을 지방을 구하다 말고 네 우유나 식혀 줄 순 없다고!!",
    "role": "desc",
@@ -306,7 +526,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#030": {
+  "Fate of the Fallen#057": {
    "src": "Are your ears full of wax?! I said-",
    "dst": "귀에 귀지라도 찼냐?! 내가 말했지-",
    "role": "desc",
@@ -316,7 +536,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#031": {
+  "Fate of the Fallen#058": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
    "dst": "으, 놈들이 너를 따라왔잖아! 봤냐?! 비켜.",
    "role": "desc",
@@ -326,7 +546,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#032": {
+  "Fate of the Fallen#059": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
    "dst": "구할 사람이 둘이나 필요했던 것처럼! 이제 가, 실종된 여자를 찾아야 해!",
    "role": "desc",
@@ -336,7 +556,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#033": {
+  "Fate of the Fallen#060": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
    "dst": "살려줘요! 도망칠 수가 없어요!!! 경비병! 누구든!!",
    "role": "desc",
@@ -346,7 +566,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Fate of the Fallen#034": {
+  "Fate of the Fallen#061": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
    "dst": "헉! 그 여자 목소리다! 어디 있지?! 방금 여길 정리했는데!",
    "role": "desc",
@@ -356,7 +576,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#035": {
+  "Fate of the Fallen#062": {
    "src": "Th-Theorick!! There's corrupteds!!",
    "dst": "Th-Theorick!! 타락자들이에요!!",
    "role": "desc",
@@ -366,7 +586,7 @@
    "speaker": "Girl",
    "source": "wiki"
   },
-  "Fate of the Fallen#036": {
+  "Fate of the Fallen#063": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
    "dst": "으, 서쪽에서 놈들을 끌고 온 거야?! 거기 너, 얼어붙기 싫으면 당장 내 뒤로 와!!",
    "role": "desc",
@@ -376,7 +596,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#037": {
+  "Fate of the Fallen#064": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
    "dst": "휴... 이제 안전해. 그런데 애초에 마을을 안 나왔으면 위험할 일도 없었잖아!",
    "role": "desc",
@@ -386,7 +606,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#038": {
+  "Fate of the Fallen#065": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
    "dst": "사과할 필요 없어. 마을로 돌아가. 당장.",
    "role": "desc",
@@ -396,7 +616,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#039": {
+  "Fate of the Fallen#066": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
    "dst": "다음에 숲에서 꽃이나 따고 싶어지면, 목숨은 하나라는 걸 기억해, 알겠어?!",
    "role": "desc",
@@ -406,7 +626,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#040": {
+  "Fate of the Fallen#067": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
    "dst": "매일 타락자는 늘고, 죽는 사람도 늘고... 방법은 하나뿐이야. 내가 직접 처리해야 해. 뿌리를 잘라... 이 지옥 같은 잡초를 없애야지.",
    "role": "desc",
@@ -416,7 +636,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#041": {
+  "Fate of the Fallen#068": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
    "dst": "아직 있냐? 그럼 잘 들어. 나랑 몇 명이 위험한 일을 꾸미고 있어. 정신을 잃더라도, 난 그 포털을 넘어가야 해.",
    "role": "desc",
@@ -426,7 +646,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#042": {
+  "Fate of the Fallen#069": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
    "dst": "장비가 든든해 보이니 널 징집하겠다. 당장 우리 기지로 와. 강을 따라 남쪽으로 가면 오른편에 집이 보일 거야.",
    "role": "desc",
@@ -436,7 +656,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#043": {
+  "Fate of the Fallen#070": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
    "dst": "{p} 남쪽의 작전 기지로 가세요 [{~}, {~}, {~}].",
    "role": "desc",
@@ -446,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#044": {
+  "Fate of the Fallen#071": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
    "dst": "좋아, 이건 인정하지. 적어도 명령은 빨리 듣는군. 우린 {p}(으)로 간다.",
    "role": "desc",
@@ -456,7 +676,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#045": {
+  "Fate of the Fallen#072": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
    "dst": "마지막으로 포털에 들어갔다 돌아온 자는 Bak’al이 됐다... 하지만 조금이라도 가능성이 있다면, 이제는 해 봐야 해.",
    "role": "desc",
@@ -466,7 +686,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#046": {
+  "Fate of the Fallen#073": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
    "dst": "출발하자. 가는 길에 쉬지 않을 거니까, 각오는 했길 바란다.",
    "role": "desc",
@@ -476,7 +696,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#047": {
+  "Fate of the Fallen#074": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
    "dst": "자. 내가 다루는 혹한은 타락 자체도 막아 낸다. 너희 중에 그런 놈은 없겠지. 나 혼자 들어간다.",
    "role": "desc",
@@ -486,7 +706,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#048": {
+  "Fate of the Fallen#075": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
    "dst": "내가 들어가면... 짐작건대 타락자들이 날 쫓아 포털로 몰려들 거다. 너희 임무? 놈들을 처치해. 안에서 방해받을 순 없어.",
    "role": "desc",
@@ -496,7 +716,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#049": {
+  "Fate of the Fallen#076": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
    "dst": "내가 포털에서 나올 때까지 자리를 뜨지 마라. 알겠나?",
    "role": "desc",
@@ -506,7 +726,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#050": {
+  "Fate of the Fallen#077": {
    "src": "Protect the portal.",
    "dst": "포털을 지키세요.",
    "role": "desc",
@@ -516,7 +736,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#051": {
+  "Fate of the Fallen#078": {
    "src": "...no...",
    "dst": "...안 돼...",
    "role": "desc",
@@ -526,7 +746,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#052": {
+  "Fate of the Fallen#079": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
    "dst": "...안 돼, 안 돼, 안 돼!! 빌어먹을!!",
    "role": "desc",
@@ -536,7 +756,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#053": {
+  "Fate of the Fallen#080": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
    "dst": "무슨 일인지 알아?! 내가 졌어!! 완전히 변하면 지방을 파괴할 거다! 떨어져, 당장! 들려?! 도망쳐!!",
    "role": "desc",
@@ -546,7 +766,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#054": {
+  "Fate of the Fallen#081": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
    "dst": "나... 지-진정해라, Theorick... 휩쓸리지... 마라... 아직... 방법이... 하나...",
    "role": "desc",
@@ -556,7 +776,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#055": {
+  "Fate of the Fallen#082": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
    "dst": "아... 또 너냐... 다른 놈들은... 죽었나? 도망갔나? 겁쟁이들... 으...",
    "role": "desc",
@@ -566,7 +786,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#056": {
+  "Fate of the Fallen#083": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
    "dst": "살아 있군... 그럼... 똑바로 봐. 들어. 내가 변하면... 아니, 변할 때... 아-안 돼... 크아악, 파괴하- 으윽...",
    "role": "desc",
@@ -576,7 +796,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#057": {
+  "Fate of the Fallen#084": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
    "dst": "오래 못 버티는 거 알겠지... 지금은... 날 죽이는 건 불가능해, 이 멍청한 약골- 악, 내 머릿속에서 나가!!",
    "role": "desc",
@@ -586,7 +806,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#058": {
+  "Fate of the Fallen#085": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
    "dst": "크아악... 모두에게... 전해라. 이곳을 얼리겠다. 난... 너-너무 늦었어. 이 땅은 치유할 시간이... 내 힘도 억눌러야... 얼려서...",
    "role": "desc",
@@ -596,7 +816,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#059": {
+  "Fate of the Fallen#086": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
    "dst": "다 쓸모없는... 으, 아니... 그들도 살 자격이 있다... 이 주문은... 분명 누군가의 목숨을 앗아가겠지. 부디, 이유를 알려 줘...",
    "role": "desc",
@@ -606,7 +826,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#060": {
+  "Fate of the Fallen#087": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
    "dst": "그 참을 수 없는 녀- ...Mael한테서 배운 게 있다면... 이유 없는 죽음은 영혼을 떠돌게 한다는 거다. 난... 그 녀석을 더 힘들게 하고 싶지 않아.",
    "role": "desc",
@@ -616,7 +836,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#061": {
+  "Fate of the Fallen#088": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
    "dst": "계-계속 나아가라. 네 장비... 모두가 너만큼 강하다면... 승산이 있을지도. 내가 약해지면, 언젠가 이걸로 날 끝낼 수 있겠지.",
    "role": "desc",
@@ -626,7 +846,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#062": {
+  "Fate of the Fallen#089": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
    "dst": "알려라... Theorick Twain은 죽지 않았다. 죽일 수 없다... 모든 게 불탄다... 먼 훗날까지. 이 저주받은 곳에서. 날 찾아... 끝내라.",
    "role": "desc",
@@ -636,7 +856,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#063": {
+  "Fate of the Fallen#090": {
    "src": "Tell Telvu the mage what happened.",
    "dst": "마법사 Telvu에게 있었던 일을 알리세요.",
    "role": "desc",
@@ -646,7 +866,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#064": {
+  "Fate of the Fallen#091": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
    "dst": "성공하셨군요. 아니면 아직 과거의 기억 속에 있었겠죠. 강력한 마력이 느껴져요.",
    "role": "desc",
@@ -656,7 +876,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#065": {
+  "Fate of the Fallen#092": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
    "dst": "그래서, Theorick을 만났나요? 대빙결 이후 영웅에서 타락했다고들 했죠.",
    "role": "desc",
@@ -666,7 +886,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#066": {
+  "Fate of the Fallen#093": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
    "dst": "적어도 그가 왜 이곳을 얼렸는지는 알아내셨나요?",
    "role": "desc",
@@ -676,7 +896,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#067": {
+  "Fate of the Fallen#094": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
    "dst": "뭐라고요... 이런 사실들이... 얼음 마법이 타락을 막는다고...? 확실히 여긴 지방의 다른 곳보다 타락 피해가 적었죠...",
    "role": "desc",
@@ -686,7 +906,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#068": {
+  "Fate of the Fallen#095": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
    "dst": "세상에... 우린 내내 완전히 오해했어요... 모두를 지키려던 거였다니... 정신이 멀쩡했다면 누군가에게 의도를 말했을 텐데요!",
    "role": "desc",
@@ -696,7 +916,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#069": {
+  "Fate of the Fallen#096": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
    "dst": "그 긴 세월을 산 채로 묻혀 타락과 싸우다니. 표정을 보니 당신도 끔찍하게 느끼는군요. 그를 죽이는 게 자비겠죠.",
    "role": "desc",
@@ -706,7 +926,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#070": {
+  "Fate of the Fallen#097": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
    "dst": "여기요. 이걸 쓰세요. 얼음 봉분 안에서 지켜 줄지도 몰라요... 부탁해요, 병사님. Theorick의 수호천사가 되어 주세요. 고통에서 풀어 주세요.",
    "role": "desc",

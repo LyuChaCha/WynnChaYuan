@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Ice Nations",
-  "count": 26,
-  "translated": 26,
+  "count": 28,
+  "translated": 28,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Ice Nations#000": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "...Видишь ли, кораблекрушение было не случайным. На нас напали...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "Have you made any progress?",
+   "dst": "Есть успехи?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
    "dst": "Поговори с Adigard на {p} в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#001": {
+  "Ice Nations#003": {
    "src": "Welcome traveler, to our humble island...",
    "dst": "Добро пожаловать на наш остров...",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#002": {
+  "Ice Nations#004": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
    "dst": "Мы с моим народом высадились здесь много лет назад. Увы, наш корабль не уцелел...",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#003": {
+  "Ice Nations#005": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
    "dst": "Мы пытались построить на этих островах державу, но за годы раскололись.",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#004": {
+  "Ice Nations#006": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
    "dst": "Потому мы и ведём бессмысленную войну с соседями.",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#005": {
+  "Ice Nations#007": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
    "dst": "Я думаю, надо заключить мир, но боюсь, что меня убьют, если я покину остров...",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#006": {
+  "Ice Nations#008": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
    "dst": "Поможешь нам? Поговори с Hallfred о договоре. Он живёт на соседнем ледяном острове.",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#007": {
+  "Ice Nations#009": {
    "src": "Talk to Hallfred about the peace treaty",
    "dst": "Поговори с Hallfred о мирном договоре",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#008": {
+  "Ice Nations#010": {
    "src": "Welcome traveler! What brings you to our island?",
    "dst": "Добро пожаловать, путник! Что привело тебя на наш остров?",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#009": {
+  "Ice Nations#011": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
    "dst": "О, вижу, Adigard из трусости уже шлёт чужаков! Боится, что его убьют?",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#010": {
+  "Ice Nations#012": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
    "dst": "Повторяю в последний раз: мы подпишем мир в тот день, когда Adigard и его народ вернут нам... сокровище.",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#011": {
+  "Ice Nations#013": {
    "src": "The one that they kept and hid from us after the shipwreck.",
    "dst": "То, что они утаили от нас после крушения.",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#012": {
+  "Ice Nations#014": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
    "dst": "Чистое золото, ценное и редкое! Передай, что я жду. И никаких больше глупых баек.",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#013": {
+  "Ice Nations#015": {
    "src": "Talk back to Adigard about Hallfred's response",
    "dst": "Передай Adigard ответ Hallfred",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#014": {
+  "Ice Nations#016": {
    "src": "I should have expected that. Hallfred was always very greedy...",
    "dst": "Следовало ожидать. Hallfred всегда был жаден...",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#015": {
+  "Ice Nations#017": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
    "dst": "Мы пытались объяснить ему, что сокровища у нас нет, но без толку.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#016": {
+  "Ice Nations#018": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
    "dst": "...Видишь ли, кораблекрушение было не случайным. На нас напали...",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#017": {
+  "Ice Nations#019": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
    "dst": "Кто? Нежить. Призраки и демоны на чудовищном корабле. Застали нас врасплох.",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#018": {
+  "Ice Nations#020": {
    "src": "I believe they also stole our treasure during the attack.",
    "dst": "Думаю, сокровище они тоже украли тогда.",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#019": {
+  "Ice Nations#021": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
    "dst": "Поможешь нашему народу вновь объединиться? Найди этот корабль и отнеси сокровище Hallfred, чтобы мы наконец жили в мире.",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#020": {
+  "Ice Nations#022": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
    "dst": "Плыви на север. Там они напали на нас много лет назад. Найти несложно - уверен, они там гордо стоят на якоре... Спасибо.",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Adigard",
    "source": "wiki"
   },
-  "Ice Nations#021": {
+  "Ice Nations#023": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
    "dst": "Найди корабль-призрак и отнеси [Ancient Treasure] Hallfred",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Ice Nations#022": {
+  "Ice Nations#024": {
    "src": "Incredible! He actually delivered the treasure!",
    "dst": "Невероятно! Он и правда отдал сокровище!",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#023": {
+  "Ice Nations#025": {
    "src": "I suppose that means the end of the war between our nations!",
    "dst": "Значит, войне между нашими народами конец!",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#024": {
+  "Ice Nations#026": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
    "dst": "Великий день! Вот, возьми награду за помощь нашему народу.",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Hallfred",
    "source": "wiki"
   },
-  "Ice Nations#025": {
+  "Ice Nations#027": {
    "src": "I'm sure you'll find a use for this helmet one day!",
    "dst": "Уверен, этот шлем тебе однажды пригодится!",
    "role": "desc",

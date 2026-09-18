@@ -1,12 +1,122 @@
 {
  "_meta": {
   "quest": "Pirate's Trove",
-  "count": 16,
-  "translated": 16,
+  "count": 27,
+  "translated": 27,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Pirate's Trove#000": {
+   "src": "But enough with the pleasantries. Tell me... Ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
+   "dst": "だが挨拶はこのへんにしよう。なあ…大海賊 Hastor 船長の話を聞いたことはあるか？遥か昔に海を渡った男だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#001": {
+   "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune someplace within the walls!",
+   "dst": "伝説によれば、昔 {p} が再建されたとき、奴は城壁のどこかに財宝を隠したそうだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#002": {
+   "src": "This first riddle goes like so: Toward the sunset, among northern flowers shaded by quartz.",
+   "dst": "最初の謎はこうだ。「日の沈む方、石英に陰る北の花々の間に」。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#003": {
+   "src": "How is your search going? I've written the first clue into your book. I've heard that the others are engraved on blocks of black stone; maybe you should look for those.",
+   "dst": "探索はどうだ？最初の手がかりはお前の本に書いておいた。残りは黒い石のブロックに刻まれているらしい。それを探してみるといい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#004": {
+   "src": "A message is carved into the pedestal: In a place of identity, above the leaves and between the glass",
+   "dst": "台座に言葉が刻まれている:「身元の場所、葉の上、ガラスの間に」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#005": {
+   "src": "Oh sorry, am I blocking the shelf? I'm doing some research concerning Siegfried. He plays quite an astounding role in the current history of Gavel.",
+   "dst": "あら、ごめんなさい、棚の前をふさいでた？Siegfried について調べているの。彼は Gavel の近代史でとても大きな役割を果たしているのよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#006": {
+   "src": "I used to not believe in the stories of his heroic quests, however I can't deny the fact that he and his life are well documented.",
+   "dst": "昔は彼の英雄的な冒険の話なんて信じていなかったけど、彼とその生涯がしっかり記録されているのは否定できないわ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#007": {
+   "src": "After all, he is still alive and writing new books about his adventures, such as this one about his journey to slay an entire pack of werewolves threatening the town of {p}.",
+   "dst": "だって彼はまだ生きていて、自分の冒険の新しい本を書き続けているのよ。これなんて、{p} の町を脅かす人狼の群れを丸ごと討伐しに行った旅の話。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#008": {
+   "src": "Oh would you look at that, that actually happened a week ago. He seems so selfless and brave, I can see why we tell our children about him.",
+   "dst": "あら見て、これって実は一週間前の出来事なのね。とても無私で勇敢な人みたい。子どもたちに彼の話を聞かせるのも分かるわ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#009": {
+   "src": "A message is carved into the obsidian: In an emerald fountain, surrounded by the wealth of the villagers",
+   "dst": "黒曜石に言葉が刻まれている:「エメラルドの泉の中、村人たちの富に囲まれて」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#010": {
+   "src": "A message is carved into the obsidian: Beneath the cowl of an eastern titan, keeping watch over our heads",
+   "dst": "黒曜石に言葉が刻まれている:「東の巨人の頭巾の下、我らの頭上を見守る」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Pirate's Trove",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Pirate's Trove#011": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
    "dst": "{p} の外、[-{~}, {~}, -{~}] で Damiral と話す",
    "role": "desc",
@@ -16,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#001": {
+  "Pirate's Trove#012": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
    "dst": "おお、冒険者よ！偉大なる Gavel 地方へようこそ。村人族の故郷であり、この俺の故郷だ。もうすぐ壮大な城塞都市 {p} に入るぞ！",
    "role": "desc",
@@ -26,7 +136,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#002": {
+  "Pirate's Trove#013": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
    "dst": "だが挨拶はこのへんにしよう。なあ…大海賊 Hastor 船長の話を聞いたことはあるか？遥か昔に海を渡った男だ。",
    "role": "desc",
@@ -36,7 +146,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#003": {
+  "Pirate's Trove#014": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
    "dst": "伝説によれば、昔 {p} が再建されたとき、奴は城壁のどこかに財宝を隠したそうだ！",
    "role": "desc",
@@ -46,7 +156,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#004": {
+  "Pirate's Trove#015": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
    "dst": "俺はもう引退した船乗りだが、その財宝から少しエメラルドをいただけるならありがたい。どうだ、やる気があるなら…取引といかないか？",
    "role": "desc",
@@ -56,7 +166,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#005": {
+  "Pirate's Trove#016": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
    "dst": "謎かけを一つ持っている。Hastor の隠し場所へ導く手がかりの最初の一つなんだが、どうしても解けんのだ。",
    "role": "desc",
@@ -66,7 +176,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#006": {
+  "Pirate's Trove#017": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
    "dst": "お前なら解けるかもしれん。解けたら、財宝は必ず山分けにしよう！",
    "role": "desc",
@@ -76,7 +186,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#007": {
+  "Pirate's Trove#018": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
    "dst": "最初の謎はこうだ。「日の沈む方、石英に陰る北の花々の間に」。",
    "role": "desc",
@@ -86,7 +196,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#008": {
+  "Pirate's Trove#019": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
    "dst": "幸運を祈るぞ、冒険者！いいか、手がかりを解くのに必要なものは、すべて {p} の中のどこかにあるはずだ。",
    "role": "desc",
@@ -96,7 +206,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#009": {
+  "Pirate's Trove#020": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
    "dst": "手がかり I: 日の沈む方、石英に陰る北の花々の間に",
    "role": "desc",
@@ -106,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#010": {
+  "Pirate's Trove#021": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
    "dst": "手がかり II: 身元の場所にて、葉の上、ガラスの間に",
    "role": "desc",
@@ -116,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#011": {
+  "Pirate's Trove#022": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
    "dst": "手がかり III: エメラルドの泉にて、村人の富に囲まれて",
    "role": "desc",
@@ -126,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#012": {
+  "Pirate's Trove#023": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
    "dst": "手がかり IV: 東の巨人の頭巾の下、我らの頭上を見守る",
    "role": "desc",
@@ -136,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Pirate's Trove#013": {
+  "Pirate's Trove#024": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
    "dst": "おお！様子を聞きに来たら、お前がこっちへ跳んでくるのが見えたぞ！",
    "role": "desc",
@@ -146,7 +256,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#014": {
+  "Pirate's Trove#025": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
    "dst": "見事な働きだ、相棒よ。ところで、約束は覚えているな？",
    "role": "desc",
@@ -156,7 +266,7 @@
    "speaker": "Damiral",
    "source": "wiki"
   },
-  "Pirate's Trove#015": {
+  "Pirate's Trove#026": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
    "dst": "財宝を見つけたら分け前をやる。俺は自分の分をもらって行くとしよう！",
    "role": "desc",
