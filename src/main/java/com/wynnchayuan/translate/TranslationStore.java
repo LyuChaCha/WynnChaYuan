@@ -185,7 +185,7 @@ public final class TranslationStore {
      */
     public void loadAll(List<Path> dirs) {
         entries.clear();
-        labelOnly.clear();
+        scopedOnly.clear();
         seenSources.clear();
         flat.clear();
         unwrapped.clear();
@@ -327,28 +327,37 @@ public final class TranslationStore {
         }
     }
 
-    /** 只給漂浮字用的譯法，見 {@link FileIndex#SCOPED}。後面的層蓋前面的。 */
-    private final Map<String, String> labelOnly = new java.util.HashMap<>();
+    /**
+     * 只在特定位置用的譯法，見 {@link FileIndex#SCOPED}。鍵是範圍（檔名去掉
+     * {@code .json}：{@code label}、{@code bossbar}），後面的層蓋前面的。
+     */
+    private final Map<String, Map<String, String>> scopedOnly = new java.util.HashMap<>();
 
     private void loadScoped(Path dir) {
-        Path file = dir.resolve(FileIndex.SCOPED.get(0));
-        if (!Files.isRegularFile(file)) {
-            return;
-        }
-        try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
-            JsonElement root = JsonParser.parseReader(r);
-            if (!root.isJsonObject()) {
-                return;
+        for (String name : FileIndex.SCOPED) {
+            Path file = dir.resolve(name);
+            if (!Files.isRegularFile(file)) {
+                continue;
             }
-            JsonObject obj = root.getAsJsonObject();
-            for (String key : obj.keySet()) {
-                JsonElement v = obj.get(key);
-                if (!key.startsWith("_") && v.isJsonPrimitive() && !v.getAsString().isBlank()) {
-                    labelOnly.put(key.strip(), v.getAsString().strip());
+            String scope = file.getFileName().toString().replaceFirst("\\.json$", "");
+            try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+                JsonElement root = JsonParser.parseReader(r);
+                if (!root.isJsonObject()) {
+                    continue;
                 }
+                JsonObject obj = root.getAsJsonObject();
+                Map<String, String> into =
+                        scopedOnly.computeIfAbsent(scope, k -> new java.util.HashMap<>());
+                for (String key : obj.keySet()) {
+                    JsonElement v = obj.get(key);
+                    if (!key.startsWith("_") && v.isJsonPrimitive()
+                            && !v.getAsString().isBlank()) {
+                        into.put(key.strip(), v.getAsString().strip());
+                    }
+                }
+            } catch (Exception e) {
+                System.err.println("[WynnChaYuan] 讀不到 " + file + "：" + e.getMessage());
             }
-        } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 讀不到 " + file + "：" + e.getMessage());
         }
     }
 
@@ -359,7 +368,13 @@ public final class TranslationStore {
      * 一般語料裡的 Back 是介面上的「返回」，於是地板上冒出一塊「返回」。
      */
     public String labelLookup(String template) {
-        return template == null ? null : labelOnly.get(template.strip());
+        return scopedLookup("label", template);
+    }
+
+    /** 某個範圍專用的譯法；沒有就回 {@code null}。 */
+    public String scopedLookup(String scope, String template) {
+        Map<String, String> m = scopedOnly.get(scope);
+        return m == null || template == null ? null : m.get(template.strip());
     }
 
     /** 全部載完之後給人看的一句話。 */

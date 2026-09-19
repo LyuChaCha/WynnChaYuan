@@ -54,6 +54,17 @@ public final class BossBarNameTest {
         check("Grume → 凝块（實際 " + (g == null ? "(沒翻)" : g.getString()) + "）",
               g != null && g.getString().startsWith("凝块 - "));
 
+        // 右邊的屬性克制：Weak／Dam／Def 只在 boss bar 換，前面的圖示與顏色不動
+        MutableComponent status = Component.empty();
+        status.append(Component.literal("Grume - 37.7k❤ - ").withStyle(red));
+        status.append(Component.literal("Weak ").withStyle(aqua));
+        status.append(Component.literal("Dam Def").withStyle(red));
+        Component w = WynntilsText.bossBarWords(status, store);
+        String ws = w == null ? "(沒翻)" : w.getString();
+        check("★ 屬性克制換成易伤／增伤／防护（實際 " + ws + "）",
+              ws.equals("Grume - 37.7k❤ - 易伤 增伤 防护"));
+        check("一般語料不受影響：Def 不會在別處變成防护",
+              !"防护".equals(store.lookup("Def")));
         check("查不到的名字回 null",
               WynntilsText.bossBarName(Component.literal("Zzqxv - 5❤"), store) == null);
         check("沒有「 - 」的標題不動",

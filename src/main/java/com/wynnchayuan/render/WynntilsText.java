@@ -322,6 +322,10 @@ public final class WynntilsText {
             if (named != null) {
                 hit = named;
             }
+            net.minecraft.network.chat.Component worded = bossBarWords(hit, store);
+            if (worded != null) {
+                hit = worded;
+            }
             BARS.put(name, hit);
             // 畫面上是英文時，先分清楚是「根本沒走到這裡」還是「走到了但查不到」：
             // captured.json 的 events 裡有沒有 bossbar.* 就知道。查不到的收進 capture。
@@ -389,6 +393,43 @@ public final class WynntilsText {
         }, net.minecraft.network.chat.Style.EMPTY);
         return done[0] ? out : null;
     }
+
+    /**
+     * boss bar 右邊的屬性克制：{@code Weak}（易傷）、{@code Dam}（增傷）、{@code Def}（防護）。
+     *
+     * <p>這幾個字放進一般語料會換到別的地方去（Def、Dam 在介面上另有意思），
+     * 所以譯法放在 {@code scoped/bossbar.json}，只在 boss bar 用。
+     * 逐個英文單字查，前後的圖示、空白與顏色都不動。
+     *
+     * @return 換好的標題；一個字都沒換到回傳 {@code null}
+     */
+    static net.minecraft.network.chat.Component bossBarWords(
+            net.minecraft.network.chat.Component bar, TranslationStore store) {
+        net.minecraft.network.chat.MutableComponent out =
+                net.minecraft.network.chat.Component.empty();
+        boolean[] changed = {false};
+        bar.visit((style, text) -> {
+            if (text.isEmpty()) {
+                return java.util.Optional.empty();
+            }
+            java.util.regex.Matcher m = WORD.matcher(text);
+            StringBuilder sb = new StringBuilder();
+            while (m.find()) {
+                String dst = store.scopedLookup("bossbar", m.group());
+                m.appendReplacement(sb, java.util.regex.Matcher.quoteReplacement(
+                        dst != null ? dst : m.group()));
+                changed[0] |= dst != null;
+            }
+            m.appendTail(sb);
+            out.append(net.minecraft.network.chat.Component.literal(sb.toString())
+                    .withStyle(style));
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return changed[0] ? out : null;
+    }
+
+    private static final java.util.regex.Pattern WORD =
+            java.util.regex.Pattern.compile("[A-Za-z]+");
 
     private static final java.util.Map<net.minecraft.network.chat.Component,
             net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
