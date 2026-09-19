@@ -972,7 +972,10 @@ def check_index(base: Path) -> list[Problem]:
     on_disk = set()
     for f in sorted(base.rglob("*.json")):
         rel = f.relative_to(base).as_posix()
-        if f.name.startswith("_") or rel.startswith(("quest/", "secret/")):
+        # scoped/ 刻意不列進索引：舊版照索引把每個檔當一般語料載入，
+        # 只給漂浮字用的譯法（Back＝後）會蓋掉介面上的「返回」。
+        # 新版另外讀它，見 FileIndex#SCOPED。
+        if f.name.startswith("_") or rel.startswith(("quest/", "secret/", "scoped/")):
             continue
         on_disk.add(rel)
     for rel in sorted(on_disk - set(listed)):
