@@ -3811,12 +3811,48 @@ public final class LineTranslator {
         LineParts parts = LineParts.of(label);
         String scoped = store.labelLookup(parts.template());
         if (scoped != null && !scoped.isBlank()) {
-            Component rebuilt = rebuild(scoped, parts, store);
+            Component rebuilt = rebuildLabel(label, scoped, parts, store);
             if (rebuilt != null) {
                 return unslant(rebuilt);
             }
         }
+        // 整塊查得到的漂浮字照 translateWholeLine 同一套走，只多一步把原文的分段顏色
+        // 帶進譯文（見 #labelColours）。查不到才交給一般那條路，行為跟先前一樣。
+        Component whole = floatingWhole(label, parts, store);
+        if (whole != null) {
+            return unslant(dropIconSpaces(whole));
+        }
         return translate(label, store);
+    }
+
+    /** 見 {@link #translateFloating}：跟 {@link #translateWholeLine} 一樣，只是重建時帶著分段顏色。 */
+    private static Component floatingWhole(StyledText label, LineParts parts,
+                                           TranslationStore store) {
+        if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
+            return null;
+        }
+        String translated = lookup(parts.template(), store);
+        if (translated == null || translated.isBlank()) {
+            return null;
+        }
+        Component rebuilt = rebuildLabel(label, translated, parts, store);
+        if (rebuilt == null) {
+            return null;
+        }
+        Component result = realign(label, rebuilt, true, false);
+        LineDebug.record(label, result);
+        return result;
+    }
+
+    /** 漂浮字的重建：先照原文的分段插上顏色，插了反而重建不出來就退回沒插的。 */
+    private static Component rebuildLabel(StyledText label, String translated,
+                                          LineParts parts, TranslationStore store) {
+        String coloured = labelColours(label, parts, translated, store);
+        Component rebuilt = rebuild(coloured, parts, store);
+        if (rebuilt == null && !coloured.equals(translated)) {
+            rebuilt = rebuild(translated, parts, store);
+        }
+        return rebuilt;
     }
 
     public static Component translateLabel(StyledText label, TranslationStore store) {
@@ -3835,8 +3871,362 @@ public final class LineTranslator {
         if (translated == null || translated.isBlank()) {
             return null;
         }
-        Component rebuilt = rebuild(translated, parts, store);
+        Component rebuilt = rebuildLabel(label, translated, parts, store);
         return rebuilt == null ? null : unslant(rebuilt);
+    }
+
+    /**
+     * 漂浮字的譯文，照原文<b>每一段的顏色</b>插上 {@code {cN}}。
+     *
+     * <h2>實機回報</h2>
+     * 寶箱上的字「loot chest 上的飄浮字 格式與顏色與原文不同」：
+     *
+     * <pre>
+     *   §dLocked §5Loot Chest [§d✫✫✫§8✫§5]
+     *   §c§lSLAY! §7Defeat a §fGrume
+     * </pre>
+     *
+     * 譯出來「上鎖的」是寶箱名的深紫、第二行「擊殺！擊敗 凝塊」整行一個灰。
+     *
+     * <h2>為什麼一般的上色補不回來</h2>
+     * 一般的上色（{@link #rebuildAll} 的重點段）是拿原文的<b>字面</b>或它的
+     * <b>單獨譯名</b>到譯文裡找。這塊牌子上的每一段都找不到：
+     * <ul>
+     *   <li>「Locked」「Defeat a」在語料裡沒有單獨的條目；</li>
+     *   <li>「SLAY!」有，但譯文是「{@code {c2}}擊殺！」——帶著色碼，字面對不上；</li>
+     *   <li>怪物名只以名牌的形狀存在（「Grume {#}{#}」），單獨查不到。</li>
+     * </ul>
+     * 沒有佔位符可以切段（見 {@link #segmentAccents}），整行只剩多數色。
+     * 而語料裡寫死 {@code {cN}} 也不行：星星的分段隨寶箱等級變（一級 1+3、三級 3+1、
+     * 四級 4+0），{@code {cN}} 的編號跟著變。
+     *
+     * <h2>做法</h2>
+     * 漂浮字是遊戲整塊排好的，<b>一行對一行</b>。行數相同時，每一行把原文的顏色段
+     * 對到譯文上，錨點由可靠到不可靠：
+     * <ol>
+     *   <li>原文某一段<b>連同後面（或前面）幾段</b>整串查得到，而且那串的譯文剛好是
+     *       譯文這一行的結尾（或開頭）——「Loot Chest [✫✫✫✫]」就是一條現成的條目，
+     *       於是「上鎖的」一定是「Locked」。</li>
+     *   <li>某一段的字面原樣出現在譯文裡（星星、括號、留英文的名字），
+     *       或它自己的譯名出現在譯文裡。</li>
+     *   <li>剩下夾在錨點之間、而且只有一段原文的那截譯文，就是那一段的。</li>
+     *   <li>夾著好幾段時，譯文用空白分成<b>同樣多塊</b>才照順序配（「擊敗 凝塊」），
+     *       否則不猜。</li>
+     * </ol>
+     * 對上的地方插 {@code {cN}}，對不上的地方插 {@code {/}} 交回一般的上色。
+     * 數值、符號這些佔位符本來就帶著自己的樣式填回去，不受 {@code {cN}} 影響。
+     *
+     * <h2>何時不做</h2>
+     * 譯者自己寫了色碼（尊重譯者）、行數對不上、這一行原文只有一個顏色、
+     * 顏色超過九種（{@code {cN}} 只有一位數）。
+     *
+     * @return 插好顏色的譯文；不適用時原樣回傳
+     */
+    static String labelColours(StyledText label, LineParts parts, String translated,
+                               TranslationStore store) {
+        if (label == null || translated == null || store == null
+                || LABEL_COLOUR_TOKEN.matcher(translated).find()) {
+            return translated;
+        }
+        List<List<LabelRun>> rows = labelRows(label);
+        String[] dst = translated.split(NL, -1);
+        if (rows.size() != dst.length) {
+            return translated;
+        }
+        List<Style> palette = palette(parts.runs());
+        StringBuilder out = new StringBuilder(translated.length() + 16);
+        boolean any = false;
+        for (int i = 0; i < dst.length; i++) {
+            if (i > 0) {
+                out.append(NL);
+            }
+            List<LabelRun> row = rows.get(i);
+            if (distinctStyles(row) < 2) {
+                out.append(dst[i]);
+                continue;
+            }
+            List<int[]> regions = new ArrayList<>();
+            List<Style> styles = new ArrayList<>();
+            alignLabel(row, 0, row.size(), dst[i], 0, dst[i].length(), regions, styles, store);
+            String coloured = paint(dst[i], regions, styles, palette);
+            any |= !coloured.equals(dst[i]);
+            out.append(coloured);
+        }
+        return any ? out.toString() : translated;
+    }
+
+    /** 譯者已經寫了的色碼：{@code {c1}}、{@code {c:#hex}}、{@code {w1}}、{@code {/}}。 */
+    private static final java.util.regex.Pattern LABEL_COLOUR_TOKEN =
+            java.util.regex.Pattern.compile("\\{(?:c[^}]*|w\\d|/)}");
+
+    /** 原文一行裡的一段：文字（含它後面的空白）與它的樣式。 */
+    private record LabelRun(String text, Style style) {}
+
+    /**
+     * 原文照換行切成一行一行，每一行是依顏色切開的幾段。
+     *
+     * <p>直接走 StyledText 的片段、用跟 {@link LineParts#of} 同一個樣式物件——
+     * {@code {cN}} 指的是 {@link #palette} 裡的第幾個，樣式物件不同就對不上編號。
+     * {@code LineParts} 的 runs 不能用：純換行的片段被它丟掉了，看不出行在哪裡斷。
+     * 圖示片段不算（譯文裡是 {@code {#}}，連同自己的樣式填回去）。
+     */
+    private static List<List<LabelRun>> labelRows(StyledText label) {
+        List<List<LabelRun>> rows = new ArrayList<>();
+        List<LabelRun> row = new ArrayList<>();
+        for (StyledTextPart part : label) {
+            if (GlyphSplitter.isGlyphPart(part)) {
+                continue;
+            }
+            String raw = part.getString(null, StyleType.NONE);
+            PartStyle ps = part.getPartStyle();
+            Style style = ps == null ? Style.EMPTY : ps.getStyle();
+            String[] pieces = raw.split(NL, -1);
+            for (int p = 0; p < pieces.length; p++) {
+                if (p > 0) {
+                    rows.add(row);
+                    row = new ArrayList<>();
+                }
+                String text = GlyphSplitter.stripGlyphChars(pieces[p]);
+                if (text.isEmpty()) {
+                    continue;
+                }
+                LabelRun last = row.isEmpty() ? null : row.get(row.size() - 1);
+                if (last != null && (!hasContent(text)
+                        || java.util.Objects.equals(last.style(), style))) {
+                    // 純空白黏到前一段；同色的相鄰片段併成一段
+                    row.set(row.size() - 1, new LabelRun(last.text() + text, last.style()));
+                } else if (hasContent(text)) {
+                    row.add(new LabelRun(text, style));
+                }
+            }
+        }
+        rows.add(row);
+        return rows;
+    }
+
+    private static int distinctStyles(List<LabelRun> row) {
+        java.util.Set<Style> seen = new java.util.HashSet<>();
+        for (LabelRun run : row) {
+            seen.add(run.style());
+        }
+        return seen.size();
+    }
+
+    /**
+     * 把原文 {@code runs[lo, hi)} 對到譯文 {@code dst[x, y)}，對上的區間記進 {@code regions}。
+     * 錨點的先後見 {@link #labelColours}。
+     */
+    private static void alignLabel(List<LabelRun> runs, int lo, int hi, String dst, int x, int y,
+                                   List<int[]> regions, List<Style> styles,
+                                   TranslationStore store) {
+        while (x < y && Character.isWhitespace(dst.charAt(x))) {
+            x++;
+        }
+        while (y > x && Character.isWhitespace(dst.charAt(y - 1))) {
+            y--;
+        }
+        if (lo >= hi || x >= y) {
+            return;
+        }
+        if (hi - lo == 1) {
+            regions.add(new int[] {x, y});
+            styles.add(runs.get(lo).style());
+            return;
+        }
+        String window = dst.substring(x, y);
+        // 1. 後面幾段（或前面幾段）整串查得到，而且剛好是這一截的結尾（或開頭）
+        for (int k = lo + 1; k < hi; k++) {
+            String hit = labelLookup(joined(runs, k, hi), store);
+            if (hit != null && hit.length() < window.length() && window.endsWith(hit)) {
+                int cut = y - hit.length();
+                alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
+                alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
+                return;
+            }
+        }
+        for (int k = hi - 1; k > lo; k--) {
+            String hit = labelLookup(joined(runs, lo, k), store);
+            if (hit != null && hit.length() < window.length() && window.startsWith(hit)) {
+                int cut = x + hit.length();
+                alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
+                alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
+                return;
+            }
+        }
+        // 2. 單獨一段：字面原樣出現，或它的譯名出現——照順序往後找，不回頭
+        List<int[]> anchors = new ArrayList<>();       // {第幾段, 起, 訖}
+        int cursor = x;
+        for (int j = lo; j < hi; j++) {
+            int[] at = findRun(runs.get(j).text().strip(), dst, cursor, y, store);
+            if (at != null) {
+                anchors.add(new int[] {j, at[0], at[1]});
+                cursor = at[1];
+            }
+        }
+        if (anchors.isEmpty()) {
+            // 4. 沒有錨點：空白切出來的塊數跟段數一樣才照順序配
+            List<int[]> chunks = new ArrayList<>();
+            int i = x;
+            while (i < y) {
+                while (i < y && Character.isWhitespace(dst.charAt(i))) {
+                    i++;
+                }
+                int start = i;
+                while (i < y && !Character.isWhitespace(dst.charAt(i))) {
+                    i++;
+                }
+                if (i > start) {
+                    chunks.add(new int[] {start, i});
+                }
+            }
+            if (chunks.size() == hi - lo) {
+                for (int k = 0; k < chunks.size(); k++) {
+                    regions.add(chunks.get(k));
+                    styles.add(runs.get(lo + k).style());
+                }
+            }
+            return;
+        }
+        // 3. 錨點之間的空檔遞迴下去：只夾一段原文的，整截就是那一段
+        int prevRun = lo;
+        int prevEnd = x;
+        for (int[] anchor : anchors) {
+            alignLabel(runs, prevRun, anchor[0], dst, prevEnd, anchor[1], regions, styles, store);
+            regions.add(new int[] {anchor[1], anchor[2]});
+            styles.add(runs.get(anchor[0]).style());
+            prevRun = anchor[0] + 1;
+            prevEnd = anchor[2];
+        }
+        alignLabel(runs, prevRun, hi, dst, prevEnd, y, regions, styles, store);
+    }
+
+    private static String joined(List<LabelRun> runs, int from, int to) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = from; i < to; i++) {
+            sb.append(runs.get(i).text());
+        }
+        return sb.toString().strip();
+    }
+
+    /**
+     * 原文一段在譯文 {@code dst[from, to)} 裡的位置：先找字面，再找它的譯名。
+     *
+     * <p>有字母的字面要<b>自成一個詞</b>才算——「a」不能算在「Grook」裡面。
+     *
+     * @return {@code {起, 訖}}；找不到回傳 {@code null}
+     */
+    private static int[] findRun(String core, String dst, int from, int to,
+                                 TranslationStore store) {
+        if (!hasContent(core)) {
+            return null;
+        }
+        int at = dst.indexOf(core, from);
+        while (at >= 0 && at + core.length() <= to) {
+            boolean letters = core.codePoints().anyMatch(Character::isLetter);
+            int after = at + core.length();
+            boolean whole = !letters
+                    || ((at == 0 || !isWordChar(dst.charAt(at - 1)))
+                        && (after >= dst.length() || !isWordChar(dst.charAt(after))));
+            if (whole) {
+                return new int[] {at, after};
+            }
+            at = dst.indexOf(core, at + 1);
+        }
+        String hit = labelLookup(core, store);
+        if (hit != null) {
+            int found = dst.indexOf(hit, from);
+            if (found >= 0 && found + hit.length() <= to) {
+                return new int[] {found, found + hit.length()};
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 一段原文（或幾段接起來）的譯名，整理成可以在譯文裡找字面的樣子。
+     *
+     * <p>先照一般的鍵查，再查詞表、剝掉頭尾符號查；都查不到再用<b>名牌的形狀</b>查
+     * （「Grume {#}{#}」——怪物名在語料裡只以名牌存在，後面兩個是等級膠囊的圖示，
+     * boss bar 也是這樣查的，見 {@code WynntilsText#bossBarName}）。
+     * 譯文裡的色碼拿掉（「{@code {c2}}擊殺！」只留「擊殺！」），名牌尾巴的圖示也拿掉。
+     *
+     * @return 整理好的譯名；查不到或沒有實字時回傳 {@code null}
+     */
+    private static String labelLookup(String text, TranslationStore store) {
+        if (!GlyphSplitter.hasLetter(text)) {
+            return null;
+        }
+        String template = GlyphSplitter.toTemplate(StyledText.fromString(text));
+        String hit = lookup(template, store);
+        if (hit == null || hit.isBlank()) {
+            hit = store.lookupTerm(template);
+        }
+        if (hit == null || hit.isBlank()) {
+            hit = lookupWordCore(template, store);
+        }
+        if (hit == null || hit.isBlank()) {
+            String plate = store.lookup(template + " " + GlyphSplitter.GLYPH_PLACEHOLDER
+                                        + GlyphSplitter.GLYPH_PLACEHOLDER);
+            String tail = GlyphSplitter.GLYPH_PLACEHOLDER + GlyphSplitter.GLYPH_PLACEHOLDER;
+            if (plate != null && plate.strip().endsWith(tail)) {
+                hit = plate.strip();
+                hit = hit.substring(0, hit.length() - tail.length());
+            }
+        }
+        if (hit == null) {
+            return null;
+        }
+        hit = LABEL_COLOUR_TOKEN.matcher(hit).replaceAll("").strip();
+        return hasContent(hit) ? hit : null;
+    }
+
+    /**
+     * 照對好的區間在譯文這一行插上 {@code {cN}}；區間之外插 {@code {/}}，
+     * 那一截交回一般的上色。行尾一定收掉，色碼不會染到下一行。
+     */
+    private static String paint(String row, List<int[]> regions, List<Style> styles,
+                                List<Style> palette) {
+        Integer[] order = new Integer[regions.size()];
+        for (int i = 0; i < order.length; i++) {
+            order[i] = i;
+        }
+        java.util.Arrays.sort(order, java.util.Comparator.comparingInt(i -> regions.get(i)[0]));
+        StringBuilder out = new StringBuilder(row.length() + 16);
+        int at = 0;
+        int current = 0;                               // 0 表示沒有強制顏色
+        for (int i : order) {
+            int[] region = regions.get(i);
+            int slot = palette.indexOf(styles.get(i)) + 1;
+            if (region[0] < at || slot < 1 || slot > 9) {
+                continue;                              // 重疊或編號寫不出來，不貼
+            }
+            if (region[0] > at) {
+                String gap = row.substring(at, region[0]);
+                if (current != 0 && hasContent(gap)) {
+                    out.append(COLOR_END);
+                    current = 0;
+                }
+                out.append(gap);
+            }
+            if (slot != current) {
+                out.append("{c").append(slot).append('}');
+                current = slot;
+            }
+            out.append(row, region[0], region[1]);
+            at = region[1];
+        }
+        if (at < row.length()) {
+            String rest = row.substring(at);
+            if (current != 0 && hasContent(rest)) {
+                out.append(COLOR_END);
+                current = 0;
+            }
+            out.append(rest);
+        }
+        if (current != 0) {
+            out.append(COLOR_END);
+        }
+        return out.toString();
     }
 
     /**

@@ -877,6 +877,14 @@ tasks.register('runLabelColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLabelColourChecks' }
 
+tasks.register('runLootChestColourChecks', JavaExec) {
+    group = 'verification'
+    description = '寶箱漂浮字：每一段、每一顆星的顏色都要跟原文一樣'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LootChestColourTest'
+}
+tasks.named('check') { dependsOn 'runLootChestColourChecks' }
+
 tasks.register('runBlockedByChecks', JavaExec) {
     group = 'verification'
     description = '技能面板的「被以下技能阻擋」清單每一列都要翻得出來'

@@ -500,12 +500,14 @@ public final class WynntilsText {
         net.minecraft.network.chat.Component hit = NAMES.get(name);
         if (hit == null) {
             StyledText text = StyledText.fromComponent(name);
-            // 漂浮字專用的譯法優先，見 TranslationStore#labelLookup
-            String scoped = store.labelLookup(
-                    com.wynnchayuan.capture.LineParts.of(text).template());
-            StyledText shown = scoped != null
-                    ? StyledText.fromComponent(LineTranslator.translateFloating(text, store))
-                    : line(text, store);
+            // 漂浮字那一支：專用譯法優先（見 TranslationStore#labelLookup），整塊查得到時
+            // 照原文的分段上色（見 LineTranslator#labelColours）。先前只有查到專用譯法才走它，
+            // 其餘的走一般那條路，寶箱上的字就整行一個顏色。都查不到才照舊逐段查。
+            net.minecraft.network.chat.Component floating =
+                    LineTranslator.translateFloating(text, store);
+            StyledText shown = floating != null
+                    ? StyledText.fromComponent(floating)
+                    : byPart(text, store);
             hit = shown == text ? name : shown.getComponent();
             NAMES.put(name, hit);
             if (hit == name && config.collect()) {
