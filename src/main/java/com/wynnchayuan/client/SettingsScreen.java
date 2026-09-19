@@ -423,10 +423,14 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().cycleTooltipMode(-1);
                     b.setMessage(tooltipModeLabel());
                 });
-        cycle("items.names",
+        back(cycle("items.names",
                 this::itemNameLabel, b -> {
-                    boolean on = WynnChaYuan.config().toggleItemNames();
-                    WynnChaYuan.translations().setTranslateNames(on);
+                    WynnChaYuan.translations().setNameMode(
+                            WynnChaYuan.config().cycleItemNames(1));
+                    b.setMessage(itemNameLabel());
+                }), b -> {
+                    WynnChaYuan.translations().setNameMode(
+                            WynnChaYuan.config().cycleItemNames(-1));
                     b.setMessage(itemNameLabel());
                 });
         cycle("items.market",
@@ -900,8 +904,13 @@ public final class SettingsScreen extends Screen {
         return ctrl(onOff(WynnChaYuan.config().marketSearch()));
     }
 
+    /** 譯名／譯名加原文／關閉。見 {@link com.wynnchayuan.CollectorConfig.ItemNames}。 */
     private Component itemNameLabel() {
-        return ctrl(onOff(WynnChaYuan.config().translateItemNames()));
+        return ctrl(switch (WynnChaYuan.config().itemNames()) {
+            case ON -> T.s("mode.on");
+            case BOTH -> T.s("items.names.both");
+            case OFF -> T.s("mode.off");
+        });
     }
 
     /**

@@ -250,12 +250,18 @@ public final class CollectorConfig {
     public enum PanelSide { AUTO, RIGHT, LEFT }
 
     /**
-     * 是否翻譯物品名稱。
+     * 物品名稱怎麼顯示。
      *
-     * <p>裝備名稱多半是專有名詞，翻了反而對不上社群討論與 wiki，
-     * 所以獨立一個開關，預設不翻。
+     * <ul>
+     *   <li>{@code ON}：只顯示譯名</li>
+     *   <li>{@code BOTH}：譯名後面括號附原文，對得上 wiki、交易市場與社群討論</li>
+     *   <li>{@code OFF}：保留英文</li>
+     * </ul>
+     * 預設 {@code BOTH}：看得懂，又不會跟別人講的名字對不起來。
      */
-    private boolean translateItemNames = false;
+    public enum ItemNames { ON, BOTH, OFF }
+
+    private ItemNames itemNames = ItemNames.BOTH;
 
     /**
      * 要用哪一種語言的譯文。
@@ -537,8 +543,8 @@ public final class CollectorConfig {
         return translateNametags;
     }
 
-    public boolean translateItemNames() {
-        return translateItemNames;
+    public ItemNames itemNames() {
+        return itemNames;
     }
 
     /** 設定檔裡寫的語言；空字串表示跟著遊戲走。 */
@@ -571,10 +577,12 @@ public final class CollectorConfig {
         save();
     }
 
-    public boolean toggleItemNames() {
-        translateItemNames = !translateItemNames;
+    /** 在 譯名 → 譯名加原文 → 關閉 之間輪替；{@code step = -1} 往回。 */
+    public ItemNames cycleItemNames(int step) {
+        ItemNames[] all = ItemNames.values();
+        itemNames = all[Math.floorMod(itemNames.ordinal() + step, all.length)];
         save();
-        return translateItemNames;
+        return itemNames;
     }
 
     public int panelGap() {
@@ -1073,7 +1081,13 @@ public final class CollectorConfig {
         translateNametags = bool(o, "translateNametags", translateNametags);
         nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
-        translateItemNames = bool(o, "translateItemNames", translateItemNames);
+        // 舊版只有開／關，而且那時候裝備名稱根本還沒有譯文，開關形同虛設。
+        // 舊設定檔一律從新的預設（譯名加原文）開始；只有明確開過的人給「譯名」。
+        if (o.has("itemNames")) {
+            itemNames = enumOr(o, "itemNames", ItemNames.class, itemNames);
+        } else if (bool(o, "translateItemNames", false)) {
+            itemNames = ItemNames.ON;
+        }
         // 數字一律夾回設定畫面允許的範圍。手改或別的版本寫出的極端值會讓小框
         // 跑到畫面外、或一出現就消失，看起來就像翻譯壞了。
         panelGap = clamp(integer(o, "panelGap", panelGap), 0, 200);
@@ -1246,7 +1260,7 @@ public final class CollectorConfig {
             o.addProperty("translateNametags", translateNametags);
             o.addProperty("nametagMode", nametagMode.name());
             o.addProperty("panelSide", panelSide.name());
-            o.addProperty("translateItemNames", translateItemNames);
+            o.addProperty("itemNames", itemNames.name());
             o.addProperty("panelGap", panelGap);
             o.addProperty("accentColor", accentColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);

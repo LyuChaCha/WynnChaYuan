@@ -955,6 +955,18 @@ public final class DialogueRewriter {
                                        com.wynnchayuan.capture.CurrentQuest.get());
             hit = source == null ? null : store.lookup(source);
         }
+        boolean near = false;
+        if (hit == null) {
+            // wiki 抄來的台詞跟實機差一兩個字（「searching for a」vs「searching a」），
+            // 見 TranslationStore#nearQuestLine
+            String close = store.nearQuestLine(typed,
+                                               com.wynnchayuan.capture.CurrentQuest.get());
+            if (close != null) {
+                source = close;
+                hit = store.lookup(close);
+                near = hit != null;
+            }
+        }
         if (hit != null && source != null) {
             said = raw;                // 記住這一幀畫面上打到哪
             spoken = source;           // 以及它是語料裡的哪一條
@@ -1038,7 +1050,13 @@ public final class DialogueRewriter {
         // 單字不從中間切，一行的尾巴常常空著一截。先前兩邊用的是不同的標準——這裡用
         // 總寬度判定塞得下，呼叫端接著 wrap 卻攤不進去、回 null，整段就掉回英文。
         // 俄文的單字長，玩家看到的「打字打到一半變回英文」就是這個。
-        if (source.equals(typed)) {
+        // 差一兩個字對上的那句：字數跟語料不一樣，照「打到第幾個字」去切譯文
+        // 會把句尾切掉。畫面上已經是講完的一句，就當成整句顯示。
+        boolean done = source.equals(typed)
+                || (near && (steady || sentenceEnd(typed))
+                    && Math.abs(source.length() - typed.length())
+                       <= Math.max(12, source.length() / 8));
+        if (done) {
             // 講完了。塞不進框裡就不換——真的塞不下時，
             // 讓玩家看見完整的英文，比看見被切掉一半的譯文好。
             // 這一條是<b>刻意</b>不沿用上一幀的：那會讓畫面停在半句中文，

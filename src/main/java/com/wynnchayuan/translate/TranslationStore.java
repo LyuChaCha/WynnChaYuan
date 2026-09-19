@@ -1092,6 +1092,18 @@ public final class TranslationStore {
         this.translateNames = value;
     }
 
+    /**
+     * 物品名稱照 F6 設定顯示。{@code OFF} 保留英文、{@code ON} 只給譯名、
+     * {@code BOTH} 給「譯名 (原文)」。
+     */
+    public void setNameMode(com.wynnchayuan.CollectorConfig.ItemNames mode) {
+        this.translateNames = mode != com.wynnchayuan.CollectorConfig.ItemNames.OFF;
+        this.namesWithOriginal = mode == com.wynnchayuan.CollectorConfig.ItemNames.BOTH;
+    }
+
+    /** 見 {@link #setNameMode}：譯名後面要不要括號附原文。 */
+    private volatile boolean namesWithOriginal = false;
+
     /** @return 譯文；沒有對應條目時回傳 {@code null} */
     /**
      * 這句話是誰講的。
@@ -1203,6 +1215,107 @@ public final class TranslationStore {
             return null;
         }
         return unique(prefixIndex, key);
+    }
+
+    /**
+     * 同一個任務裡、只差一兩個字的那一句。
+     *
+     * <h2>實機回報</h2>
+     * 語料裡兩萬多句台詞是從 wiki 抄的，措辭常跟實機差一點：
+     * <pre>
+     *   語料  You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard…
+     *   實機  You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard…
+     * </pre>
+     * 少一個 for，整句查不到，前綴比對也在 searching 之後斷掉，整句留在英文。
+     * 玩家看到的「有特別顏色的句子都變英文」多半是這種——帶物品名的句子
+     * 最常被 wiki 改寫。
+     *
+     * <h2>為什麼不怕貼錯</h2>
+     * 錯的中文比沒翻更糟（見 {@code matchPrefix} 的撞句問題），所以條件很緊：
+     * <ul>
+     *   <li>只在<b>目前追蹤的任務</b>裡找，不碰全庫</li>
+     *   <li>畫面上至少八個字</li>
+     *   <li>逐字比對，差的字數不超過總字數的八分之一（至少容許一個）</li>
+     *   <li>第二像的那句要差得明顯更多，分不出是哪一句就不給</li>
+     * </ul>
+     * 畫面上還在逐字打字時拿候選的<b>開頭同樣字數</b>來比，
+     * 所以打到一半也認得出來。
+     *
+     * @return 語料裡那一句的原文；找不到或不夠確定時回傳 {@code null}
+     */
+    public String nearQuestLine(String typed, String quest) {
+        if (typed == null || quest == null || quest.isBlank()) {
+            return null;
+        }
+        java.util.TreeMap<String, String> scoped = byQuest.get(
+                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+        if (scoped == null) {
+            return null;
+        }
+        String[] said = nearWords(typed);
+        if (said.length < NEAR_MIN_WORDS) {
+            return null;
+        }
+        int allowed = Math.max(1, said.length / 8);
+        String best = null;
+        int bestCost = Integer.MAX_VALUE;
+        int second = Integer.MAX_VALUE;
+        for (String src : scoped.keySet()) {
+            String[] words = nearWords(src);
+            int cost = Integer.MAX_VALUE;
+            // 還在打字時只看得到開頭，拿候選前面差不多長的一截來比
+            for (int take = Math.max(1, said.length - allowed);
+                 take <= Math.min(words.length, said.length + allowed); take++) {
+                cost = Math.min(cost, wordDistance(said, words, take));
+            }
+            if (cost < bestCost) {
+                second = bestCost;
+                bestCost = cost;
+                best = src;
+            } else if (cost < second) {
+                second = cost;
+            }
+        }
+        if (best == null || bestCost > allowed || second - bestCost < 2) {
+            return null;
+        }
+        return best;
+    }
+
+    private static final int NEAR_MIN_WORDS = 8;
+
+    /** 拆成比對用的字：小寫、去掉頭尾標點。 */
+    private static String[] nearWords(String text) {
+        String[] raw = text.strip().split("\\s+");
+        List<String> out = new java.util.ArrayList<>(raw.length);
+        for (String w : raw) {
+            String t = w.toLowerCase(java.util.Locale.ROOT)
+                        .replaceAll("^[\\p{Punct}…“”‘’]+|[\\p{Punct}…“”‘’]+$", "");
+            if (!t.isEmpty()) {
+                out.add(t);
+            }
+        }
+        return out.toArray(new String[0]);
+    }
+
+    /** {@code a} 對 {@code b} 前 {@code take} 個字的編輯距離（以字為單位）。 */
+    private static int wordDistance(String[] a, String[] b, int take) {
+        int[] prev = new int[take + 1];
+        int[] cur = new int[take + 1];
+        for (int j = 0; j <= take; j++) {
+            prev[j] = j;
+        }
+        for (int i = 1; i <= a.length; i++) {
+            cur[0] = i;
+            for (int j = 1; j <= take; j++) {
+                int sub = prev[j - 1] + (a[i - 1].equals(b[j - 1]) ? 0 : 1);
+                cur[j] = Math.min(sub, Math.min(prev[j] + 1, cur[j - 1] + 1));
+            }
+            int[] t = prev;
+            prev = cur;
+            cur = t;
+        }
+        return prev[take];
     }
 
     /**
@@ -1469,6 +1582,15 @@ public final class TranslationStore {
     }
 
     public String lookup(String template) {
+        String hit = lookupBase(template);
+        if (hit != null && namesWithOriginal && nameKeys.contains(template.strip())) {
+            // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
+            return hit + " (" + template.strip() + ")";
+        }
+        return hit;
+    }
+
+    private String lookupBase(String template) {
         if (template == null) {
             return null;
         }

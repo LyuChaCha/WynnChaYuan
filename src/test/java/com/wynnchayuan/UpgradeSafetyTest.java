@@ -185,7 +185,8 @@ public final class UpgradeSafetyTest {
         Files.writeString(file, PLAYER_CONFIG);
         CollectorConfig c = new CollectorConfig(file);
         check("玩家那份設定照樣讀得懂", c.tooltipMode() == CollectorConfig.TooltipMode.REPLACE
-                && c.debugDumps() && c.collectGuiText() && c.translateItemNames()
+                && c.debugDumps() && c.collectGuiText()
+                && c.itemNames() == CollectorConfig.ItemNames.ON
                 && c.source() == CollectorConfig.Source.GITHUB);
         JsonObject expected = JsonParser.parseString(PLAYER_CONFIG).getAsJsonObject();
         expected.remove("shareCaptures");
@@ -198,6 +199,9 @@ public final class UpgradeSafetyTest {
         expected.addProperty("trackerMode", "REPLACE");
         expected.addProperty("translateObjectives", true);
         expected.addProperty("translateHeldItem", true);
+        // 0.2.2：物品名稱從開／關改成三段。舊的 true 換成「只顯示譯名」。
+        expected.remove("translateItemNames");
+        expected.addProperty("itemNames", "ON");
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));
