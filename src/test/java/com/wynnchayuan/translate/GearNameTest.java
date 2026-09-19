@@ -82,10 +82,57 @@ public final class GearNameTest {
         check("不是裝備名的照常翻（實際 " + store.lookup("Fissure") + "）",
               "地裂".equals(store.lookup("Fissure")));
 
+        nameModes();
         decorations();
         twoLineName();
         abilityNodeTitles();
         report();
+    }
+
+    /**
+     * F6 三種模式對「翻好的裝備名」的行為，分成只屬於裝備的與跟技能撞名的兩種。
+     *
+     * <p>關掉時：只屬於裝備的查不到（照原文）；撞名的查表照常給技能譯名，
+     * 名稱那一行交給守門擋。先前是查表層一律不翻，技能樹一起變回英文。
+     */
+    private static void nameModes() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-gear-modes");
+        Files.writeString(dir.resolve("gear-accessory.json"), """
+                {"_meta": {"gearNames": true},
+                 "entries": {
+                   "a1": {"src": "Diffraction", "dst": "晶化蔓延", "role": "name"},
+                   "a2": {"src": "Smithy", "dst": "鐵匠鋪", "role": "name"}
+                 }}
+                """, StandardCharsets.UTF_8);
+        Files.createDirectories(dir.resolve("ability"));
+        // 照真實的技能檔：workspace 格式、role 也是 name、只標 itemNames:false。
+        // 用扁平檔測會過，真實語料卻不會——第二版就是這樣漏的。
+        Files.writeString(dir.resolve("ability/mage.json"), """
+                {"_meta": {"itemNames": false},
+                 "entries": {"m1": {"src": "Diffraction", "dst": "晶化蔓延", "role": "name"}}}
+                """, StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
+        check("關：只屬於裝備的名字不翻（實際 " + store.lookup("Smithy") + "）",
+              store.lookup("Smithy") == null);
+        check("★ 關：撞名的技能譯名照常查得到（實際 " + store.lookup("Diffraction") + "）",
+              "晶化蔓延".equals(store.lookup("Diffraction")));
+        check("★ 關：名稱那一行的守門認得翻好的裝備名", store.isBareGearName("Diffraction")
+              && store.isBareGearName("Smithy"));
+
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        check("開：裝備名照翻（實際 " + store.lookup("Smithy") + "）",
+              "鐵匠鋪".equals(store.lookup("Smithy")));
+        check("開：守門不擋翻好的裝備名", !store.isBareGearName("Diffraction")
+              && !store.isBareGearName("Smithy"));
+
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        check("譯名加原文（實際 " + store.lookup("Smithy") + "）",
+              "鐵匠鋪 (Smithy)".equals(store.lookup("Smithy")));
+        check("撞名的技能標題不加原文（實際 " + store.lookup("Diffraction") + "）",
+              "晶化蔓延".equals(store.lookup("Diffraction")));
     }
 
     /**
@@ -111,9 +158,12 @@ public final class GearNameTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
+        // 出貨預設：F6「翻譯物品名稱」關。裝備名翻開之後（#783），撞名的那些
+        // 在這個模式下仍然要被守門擋住，而同名的技能、使命標題<b>不能</b>被連坐——
+        // 第一版是查表層一律不翻 nameKeys，技能樹的 Diffraction 就變回英文了。
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
 
-        // 前提：這幾個字確實同時是「還沒翻的裝備名」與「翻好的技能名」。
-        // 哪天翻譯團隊把那幾件裝備翻了，這裡會變成假通過，所以一起釘住。
+        // 前提：這幾個字確實同時是「名稱那一行要留原文的裝備名」與「翻好的技能名」。
         for (String[] pair : new String[][] {
                 {"Diffraction", "晶化蔓延"}, {"Gleam", "耀光"}, {"Paradox", "悖論"},
                 {"Sunshower", "太陽雨"}, {"Harmony", "調和"}, {"Echo", "複演"}}) {

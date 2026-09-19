@@ -121,6 +121,16 @@ public final class TranslationStore {
 
     private final java.util.Set<String> nameKeys =
             java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    /**
+     * 除了裝備名稱以外，<b>別的檔案</b>也有條目的原文（技能名、使命、Major ID⋯）。
+     *
+     * <p>F6 關掉物品名稱時，{@link #lookupBase} 會把 {@link #nameKeys} 一律當成
+     * 沒翻。裝備名翻開之後，撞名的那些（飾品 Diffraction＝技能「晶化蔓延」）
+     * 就被連坐，技能樹與使命的標題一起變回英文。撞名的交給名稱那一行的守門
+     * 處理（見 {@link #isBareGearName}），查表層不擋。
+     */
+    private final java.util.Set<String> otherOwners = new java.util.HashSet<>();
     private volatile int loadedFiles = 0;
 
     /**
@@ -187,6 +197,7 @@ public final class TranslationStore {
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
+        otherOwners.clear();
         gearNameKeys.clear();
         market.clear();
         ordered.clear();
@@ -525,6 +536,11 @@ public final class TranslationStore {
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
+                // 跟下面收 nameKeys 同一個判準；gearNames 沒標時預設是 true，
+                // 技能檔也沒標，只看它會漏掉技能名。
+                if (!(itemNames && gearNames && "name".equals(optString(e, "role")))) {
+                    otherOwners.add(srcKey);
+                }
                 layerOf.put(srcKey, layer);
                 ordered.add(srcKey);
                 if (srcKey.length() >= MIN_PREFIX_LENGTH) {
@@ -584,6 +600,7 @@ public final class TranslationStore {
             seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
+                otherOwners.add(key.strip());   // 扁平檔一律不是裝備名稱
                 layerOf.put(key.strip(), layer);
                 market.addListed(key.strip(), v.getAsString().strip());
                 ordered.add(key.strip());
@@ -1615,12 +1632,22 @@ public final class TranslationStore {
      * 見 {@code TooltipPanel#translateLines}。
      */
     public boolean isBareGearName(String key) {
-        return key != null && gearNameKeys.contains(key.strip());
+        if (key == null) {
+            return false;
+        }
+        String k = key.strip();
+        // F6 關掉物品名稱時，翻好的裝備名在名稱那一行也要留原文
+        return gearNameKeys.contains(k) || (!translateNames && nameKeys.contains(k));
+    }
+
+    /** 只有裝備名稱用到這個原文，別的檔案沒有同名條目。見 {@link #otherOwners}。 */
+    private boolean gearOnly(String key) {
+        return nameKeys.contains(key) && !otherOwners.contains(key);
     }
 
     public String lookup(String template) {
         String hit = lookupBase(template);
-        if (hit != null && namesWithOriginal && nameKeys.contains(template.strip())) {
+        if (hit != null && namesWithOriginal && gearOnly(template.strip())) {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return hit + " (" + template.strip() + ")";
         }
@@ -1632,7 +1659,7 @@ public final class TranslationStore {
             return null;
         }
         String key = template.strip();
-        if (!translateNames && nameKeys.contains(key)) {
+        if (!translateNames && gearOnly(key)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
 
@@ -1822,7 +1849,7 @@ public final class TranslationStore {
         if (src == null) {
             return null;
         }
-        if (!translateNames && nameKeys.contains(src)) {
+        if (!translateNames && gearOnly(src)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
         return entries.get(src);
