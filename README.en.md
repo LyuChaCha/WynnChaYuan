@@ -172,14 +172,13 @@ The same list is in game under **F6 → About / Credits**. To add someone, edit
 | Name | Minecraft ID |
 |---|---|
 | LyuChaCha | `Green_teaTW` |
-| 芋圓YuYuan | `s103064` |
 
 ### Sponsors
 
 | Name | Minecraft ID |
 |---|---|
-| LyuChaCha | `Green_teaTW` |
 | ㄉ綠 | `MlyuL` |
+| 蛇蛇 | `snakiesnake` |
 
 ### Contributors
 
