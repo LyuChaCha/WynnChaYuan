@@ -1662,11 +1662,65 @@ public final class TranslationStore {
 
     public String lookup(String template) {
         String hit = lookupBase(template);
-        if (hit != null && namesWithOriginal && gearOnly(template.strip())) {
+        if (hit == null) {
+            return shiny(template);
+        }
+        if (namesWithOriginal && gearOnly(template.strip())) {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return hit + " (" + template.strip() + ")";
         }
         return hit;
+    }
+
+    /** Shiny 裝備名稱的前綴。 */
+    private static final String SHINY = "Shiny ";
+
+    /**
+     * 「Shiny Sunstar」「Shiny Masterwork Divzer」：前綴照 {@code scoped/name.json}
+     * 的 {@code Shiny} 翻，後面的裝備名照裝備自己的譯名。
+     *
+     * <p>語料裡不會有「Shiny X」這種鍵——那是遊戲替追蹤數據的 Mythic 加上的前綴，
+     * 每一件都收一條只會翻倍。後面的名字沒有自己的譯文時（繁中的 Mythic）
+     * 保留英文，而且<b>不能</b>去借別的檔案的同名譯文：Shiny Guardian 不是
+     * Major ID 的「守護者」，見 {@link #gearNameKeys}。
+     *
+     * <p>F6 關掉物品名稱時整個留英文；真的叫「Shiny Mask」的物品先被精確查表
+     * 接走，走不到這裡。
+     *
+     * @return 翻好的名稱；不是 Shiny 裝備、這個語言沒有前綴譯法時回傳 {@code null}
+     */
+    private String shiny(String template) {
+        if (template == null || !translateNames) {
+            return null;
+        }
+        String key = template.strip();
+        if (!key.startsWith(SHINY)) {
+            return null;
+        }
+        String rest = key.substring(SHINY.length()).strip();
+        boolean bare = gearNameKeys.contains(rest);
+        if (!bare && !nameKeys.contains(rest)) {
+            return null;                       // 後面不是裝備名
+        }
+        String pattern = scopedLookup("name", "Shiny");
+        if (pattern == null || !pattern.contains("{name}")) {
+            return null;
+        }
+        String name = bare ? null : lookupBase(rest);
+        if (name == null) {
+            name = rest;
+        }
+        String out = pattern.replace("{name}", name);
+        // 前綴是中日文、名字是英文時中間要空一格：「耀光的 Sunstar」
+        int at = pattern.indexOf("{name}");
+        if (at > 0 && name.equals(rest) && !Character.isWhitespace(pattern.charAt(at - 1))
+                && pattern.charAt(at - 1) > 0x2E80) {
+            out = pattern.substring(0, at) + " " + name + pattern.substring(at + "{name}".length());
+        }
+        if (namesWithOriginal) {
+            out = out + " (" + key + ")";
+        }
+        return out;
     }
 
     private String lookupBase(String template) {
