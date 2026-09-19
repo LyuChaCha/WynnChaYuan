@@ -3932,6 +3932,20 @@ public final class LineTranslator {
         // 呼叫端說了算優先：信標面板是一行一則訊息送來的，這裡看到的
         // origRows 只有那一行，自己判斷永遠是 false。見 #chatPanel。
         boolean panel = inPanel || columnPanel(origRows);
+        // 中文、日文：照英文的斷行位置斷會斷在句子中間，整段接起來重新斷。見 #reflowCjk。
+        boolean anyCentre = Boolean.TRUE.equals(centred);
+        if (centre != null) {
+            for (boolean c : centre) {
+                anyCentre |= c;
+            }
+        }
+        if (!panel && !anyCentre) {
+            Component flowed = reflowCjk(origRows, madeRows);
+            if (flowed != null) {
+                FlowedDebug.chatRows(original.getString(), "  中日文重新斷行", null);
+                return flowed;
+            }
+        }
         StringBuilder log = new StringBuilder();
         MutableComponent out = Component.empty();
         for (int i = 0; i < madeRows.size(); i++) {
@@ -3949,6 +3963,264 @@ public final class LineTranslator {
         }
         FlowedDebug.chatRows(original.getString(), log.toString(), null);
         return out;
+    }
+
+    /**
+     * 中文、日文的多行聊天訊息：整段接起來，照英文最寬那一行的寬度重新斷行。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *   傳送門湧出充滿憎恨的回音。Wynn 正面臨
+     *   湮滅。
+     * </pre>
+     * 譯文照英文的換行位置斷（{@code Wynn faces\nAnnihilation.}），中文短得多，
+     * 第一行沒滿就斷，「正面臨／湮滅」被拆在兩行。這種譯文在語料裡成千上萬條，
+     * 一條一條改不完，所以在畫的時候重新斷。
+     *
+     * <h2>怎麼斷</h2>
+     * <ul>
+     *   <li>每行的行首符號（訊息圖示、續行縮排）照留：第一行用第一行的，
+     *       其餘用第二行的</li>
+     *   <li>寬度上限是英文內容最寬那一行</li>
+     *   <li>優先斷在「，。！？」之後；找不到就斷在兩個漢字、假名之間；
+     *       英文單字、數字、韓文單字中間不斷；標點不放在行首</li>
+     * </ul>
+     *
+     * <h2>什麼時候不動</h2>
+     * 只有英文本來就是「一段話折成幾行」時才做：除了最後一行，每一行都要接近
+     * 最寬那一行（清單式的短行不算），而且譯文裡要有漢字或假名。行中間有排版
+     * 空白（分欄）、首尾有空行的都不碰。
+     *
+     * @return 重新斷好的整段；不該動時回傳 {@code null}
+     */
+    static Component reflowCjk(List<List<Run>> origRows, List<List<Run>> madeRows) {
+        int n = madeRows.size();
+        if (n < 2 || origRows.size() != n) {
+            return null;
+        }
+        int[] origBody = new int[n];
+        int max = 0;
+        for (int i = 0; i < n; i++) {
+            List<Run> row = origRows.get(i);
+            int lead = prefixEnd(row);
+            if (lead < 0) {
+                return null;
+            }
+            origBody[i] = runsWidth(row.subList(lead, row.size()));
+            max = Math.max(max, origBody[i]);
+        }
+        if (max <= 0) {
+            return null;
+        }
+        for (int i = 0; i < n - 1; i++) {
+            if (origBody[i] * 10 < max * 6) {
+                return null;                   // 短行：清單或刻意分行，不是折行
+            }
+        }
+        List<List<Run>> prefixes = new ArrayList<>(n);
+        List<Run> body = new ArrayList<>();
+        boolean cjk = false;
+        for (int i = 0; i < n; i++) {
+            List<Run> row = madeRows.get(i);
+            int lead = prefixEnd(row);
+            if (lead < 0) {
+                return null;
+            }
+            prefixes.add(row.subList(0, lead));
+            List<Run> content = row.subList(lead, row.size());
+            for (Run r : content) {
+                if (r.space()) {
+                    return null;               // 行中間有排版空白：分欄，不碰
+                }
+                cjk |= r.text().codePoints().anyMatch(LineTranslator::isCjkBreakable);
+            }
+            appendJoined(body, content);
+        }
+        if (!cjk || body.isEmpty()) {
+            return null;
+        }
+        List<List<Run>> lines = wrapRuns(body, max);
+        MutableComponent out = Component.empty();
+        for (int i = 0; i < lines.size(); i++) {
+            if (i > 0) {
+                out.append(Component.literal(NL));
+            }
+            List<Run> prefix = prefixes.get(Math.min(i, 1));
+            for (Run r : prefix) {
+                out.append(literal(r.space() ? SpaceOffset.encode(r.px()) : r.text(), r.style()));
+            }
+            for (Run r : lines.get(i)) {
+                out.append(literal(r.text(), r.style()));
+            }
+        }
+        return out;
+    }
+
+    /** 行首符號（圖示、縮排、空白）到哪裡為止；整行都是符號時回傳 {@code -1}。 */
+    private static int prefixEnd(List<Run> row) {
+        for (int i = 0; i < row.size(); i++) {
+            Run r = row.get(i);
+            if (r.space()) {
+                continue;
+            }
+            if (r.text().codePoints().anyMatch(cp -> Character.isLetterOrDigit(cp)
+                    && !GlyphSplitter.isGlyphCodePoint(cp))) {
+                // 同一段裡前面的空白一起算進行首
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private static int runsWidth(List<Run> runs) {
+        int w = 0;
+        for (Run r : runs) {
+            w += r.space() ? r.px() : widthOf(literal(r.text(), r.style()));
+        }
+        return w;
+    }
+
+    /** 把一行內容接到整段後面：去掉接縫的空白，兩邊都是英數時留一個空格。 */
+    private static void appendJoined(List<Run> body, List<Run> content) {
+        List<Run> trimmed = new ArrayList<>(content);
+        while (!trimmed.isEmpty()) {
+            Run first = trimmed.get(0);
+            String t = first.text().stripLeading();
+            if (!t.isEmpty()) {
+                trimmed.set(0, new Run(false, 0, first.style(), t));
+                break;
+            }
+            trimmed.remove(0);
+        }
+        if (trimmed.isEmpty()) {
+            return;
+        }
+        if (!body.isEmpty()) {
+            Run last = body.get(body.size() - 1);
+            String t = last.text().stripTrailing();
+            body.set(body.size() - 1, new Run(false, 0, last.style(), t));
+            int a = t.isEmpty() ? ' ' : t.codePointBefore(t.length());
+            int b = trimmed.get(0).text().codePointAt(0);
+            if (isWordChar(a) && isWordChar(b)) {
+                body.add(new Run(false, 0, last.style(), " "));
+            }
+        }
+        body.addAll(trimmed);
+    }
+
+    /** 英數、韓文：單字中間不能斷，接縫要補空格。 */
+    private static boolean isWordChar(int cp) {
+        return (Character.isLetterOrDigit(cp) && !isCjkBreakable(cp))
+                || "%+-/.,".indexOf(cp) >= 0 && cp != ',';
+    }
+
+    /** 漢字與假名：任兩個之間都可以斷。韓文不算（韓文以空白分詞）。 */
+    static boolean isCjkBreakable(int cp) {
+        Character.UnicodeScript s = Character.UnicodeScript.of(cp);
+        return s == Character.UnicodeScript.HAN || s == Character.UnicodeScript.HIRAGANA
+                || s == Character.UnicodeScript.KATAKANA;
+    }
+
+    private static final String BREAK_AFTER = "，。！？；：、）」』…,.!?;:";
+    private static final String NO_LINE_START = "，。！？；：、）」』…ー,.!?;:%）)";
+
+    /** 照寬度上限斷行，回傳每一行的段落。 */
+    private static List<List<Run>> wrapRuns(List<Run> body, int max) {
+        // 攤成一個字一格
+        List<int[]> cps = new ArrayList<>();          // {codepoint, run index}
+        for (int k = 0; k < body.size(); k++) {
+            int kk = k;
+            body.get(k).text().codePoints().forEach(cp -> cps.add(new int[] {cp, kk}));
+        }
+        int[] w = new int[cps.size()];
+        for (int i = 0; i < cps.size(); i++) {
+            w[i] = widthOf(literal(new String(Character.toChars(cps.get(i)[0])),
+                    body.get(cps.get(i)[1]).style()));
+        }
+        List<int[]> ranges = new ArrayList<>();       // [from, to)
+        int start = 0;
+        while (start < cps.size()) {
+            int x = 0;
+            int end = start;
+            while (end < cps.size() && x + w[end] <= max) {
+                x += w[end];
+                end++;
+            }
+            if (end >= cps.size()) {
+                ranges.add(new int[] {start, cps.size()});
+                break;
+            }
+            // 往回找斷點：先找標點之後（不短於一半），再找可斷的字間
+            int cut = -1;
+            int acc = x;
+            for (int i = end; i > start; i--) {
+                if (canBreakBefore(cps, i) && BREAK_AFTER.indexOf(cps.get(i - 1)[0]) >= 0
+                        && acc * 2 >= max) {
+                    cut = i;
+                    break;
+                }
+                acc -= w[i - 1];
+            }
+            if (cut < 0) {
+                for (int i = end; i > start; i--) {
+                    if (canBreakBefore(cps, i)) {
+                        cut = i;
+                        break;
+                    }
+                }
+            }
+            if (cut <= start) {
+                cut = Math.max(end, start + 1);        // 斷不了就硬斷
+            }
+            ranges.add(new int[] {start, cut});
+            start = cut;
+            while (start < cps.size() && cps.get(start)[0] == ' ') {
+                start++;                               // 行首的空格吃掉
+            }
+        }
+        List<List<Run>> out = new ArrayList<>();
+        for (int[] r : ranges) {
+            List<Run> line = new ArrayList<>();
+            StringBuilder sb = new StringBuilder();
+            int run = -1;
+            for (int i = r[0]; i < r[1]; i++) {
+                int ri = cps.get(i)[1];
+                if (ri != run && sb.length() > 0) {
+                    line.add(new Run(false, 0, body.get(run).style(), sb.toString()));
+                    sb.setLength(0);
+                }
+                run = ri;
+                sb.appendCodePoint(cps.get(i)[0]);
+            }
+            if (sb.length() > 0) {
+                String t = sb.toString().stripTrailing();
+                if (!t.isEmpty()) {
+                    line.add(new Run(false, 0, body.get(run).style(), t));
+                }
+            }
+            out.add(line);
+        }
+        return out;
+    }
+
+    /** 第 {@code i} 個字前面可以斷嗎。 */
+    private static boolean canBreakBefore(List<int[]> cps, int i) {
+        int a = cps.get(i - 1)[0];
+        int b = cps.get(i)[0];
+        if (NO_LINE_START.indexOf(b) >= 0) {
+            return false;
+        }
+        if (a == ' ' || b == ' ') {
+            return true;
+        }
+        if (BREAK_AFTER.indexOf(a) >= 0 && !isWordChar(b)) {
+            return true;
+        }
+        if (BREAK_AFTER.indexOf(a) >= 0 && (a > 0x2FFF)) {
+            return true;                               // 全形標點之後什麼都能接
+        }
+        return isCjkBreakable(a) || isCjkBreakable(b)
+                ? !(isWordChar(a) && isWordChar(b)) : false;
     }
 
     /** 拆好的原文各行，交給 {@link BlockLayout} 判斷置中。 */

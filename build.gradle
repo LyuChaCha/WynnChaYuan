@@ -339,6 +339,13 @@ tasks.register('runChatAlignChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.ChatAlignTest'
 }
 tasks.named('check') { dependsOn 'runChatAlignChecks' }
+tasks.register('runChatReflowChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證中日文的多行聊天訊息重新斷行，不照英文的換行位置斷'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ChatReflowTest'
+}
+tasks.named('check') { dependsOn 'runChatReflowChecks' }
 
 // 多行名牌逐行回退：一個名字翻一次就該覆蓋所有變體，不必為每個變體各建一個鍵。
 tasks.register('runNameplateChecks', JavaExec) {
