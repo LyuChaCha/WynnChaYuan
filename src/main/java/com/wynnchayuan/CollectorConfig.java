@@ -257,11 +257,11 @@ public final class CollectorConfig {
      *   <li>{@code BOTH}：譯名後面括號附原文，對得上 wiki、交易市場與社群討論</li>
      *   <li>{@code OFF}：保留英文</li>
      * </ul>
-     * 預設 {@code BOTH}：看得懂，又不會跟別人講的名字對不起來。
+     * 預設 {@code OFF}：名稱保留英文，要看譯名的人自己到 F6 打開。
      */
     public enum ItemNames { ON, BOTH, OFF }
 
-    private ItemNames itemNames = ItemNames.BOTH;
+    private ItemNames itemNames = ItemNames.OFF;
 
     /**
      * 要用哪一種語言的譯文。
@@ -1081,8 +1081,7 @@ public final class CollectorConfig {
         translateNametags = bool(o, "translateNametags", translateNametags);
         nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
-        // 舊版只有開／關，而且那時候裝備名稱根本還沒有譯文，開關形同虛設。
-        // 舊設定檔一律從新的預設（譯名加原文）開始；只有明確開過的人給「譯名」。
+        // 舊版只有開／關：開過的人給「譯名」，其餘照預設（關閉）。
         if (o.has("itemNames")) {
             itemNames = enumOr(o, "itemNames", ItemNames.class, itemNames);
         } else if (bool(o, "translateItemNames", false)) {
