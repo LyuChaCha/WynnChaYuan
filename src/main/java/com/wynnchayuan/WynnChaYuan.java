@@ -589,6 +589,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.render.PanelShot.bind(screenshotKey);
         com.wynnchayuan.render.PanelShot.listen();
 
+        // 警語等載入畫面收掉才跳，見 NoticeScreen#clientTick
+        ClientTickEvents.END_CLIENT_TICK.register(
+                client -> com.wynnchayuan.client.NoticeScreen.clientTick());
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());

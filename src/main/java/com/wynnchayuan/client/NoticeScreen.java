@@ -38,17 +38,34 @@ public final class NoticeScreen extends Screen {
         this.parent = parent;
     }
 
+    /** 進了 Wynncraft，等畫面空下來就跳。見 {@link #clientTick}。 */
+    private static volatile boolean pending = false;
+
     /**
-     * 進到角色選擇時呼叫：沒勾過「不再顯示」、這次開遊戲也還沒跳過，就跳出來。
-     * 畫面上已經有別的介面時不搶，等下一次。
+     * 進到角色選擇（或直接進世界）時呼叫：沒勾過「不再顯示」、這次開遊戲也還沒
+     * 跳過，就記下「待顯示」。
+     *
+     * <p>不能當場跳：那一刻畫面上幾乎一定是<b>載入中的畫面</b>。第一版是「有別的
+     * 介面就不搶」，結果角色選擇與進世界兩次都剛好卡在載入畫面，實機一次都沒跳出來。
      */
     public static void maybeShowOnJoin() {
-        var mc = net.minecraft.client.Minecraft.getInstance();
         var config = WynnChaYuan.config();
-        if (mc == null || config == null || shownThisSession || config.noticeDismissed()
-                || mc.screen != null) {
+        if (config == null || shownThisSession || config.noticeDismissed()) {
             return;
         }
+        pending = true;
+    }
+
+    /** 每個 client tick 看一次：待顯示、玩家已在世界裡、畫面上沒有別的介面，才跳。 */
+    public static void clientTick() {
+        if (!pending) {
+            return;
+        }
+        var mc = net.minecraft.client.Minecraft.getInstance();
+        if (mc == null || mc.player == null || mc.level == null || mc.screen != null) {
+            return;
+        }
+        pending = false;
         shownThisSession = true;
         mc.setScreen(new NoticeScreen(null));
     }

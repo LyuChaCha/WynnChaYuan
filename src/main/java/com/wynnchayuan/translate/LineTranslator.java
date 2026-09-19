@@ -7129,7 +7129,7 @@ public final class LineTranslator {
                             return null;
                         }
                         LineParts.Piece piece = numbers.get(at);
-                        line.append(literal(piece.text(), forDisplay(piece.style())));
+                        line.append(literal(piece.text(), numberDisplay(piece.style())));
                         justFilled = piece.style();
                         afterNumber = true;
                     }
@@ -7766,6 +7766,21 @@ public final class LineTranslator {
     /** 保留顏色與粗斜體，但把字型換成預設，中文才畫得出來。 */
     private static Style forDisplay(Style style) {
         return (style == null ? Style.EMPTY : style).withFont(FontDescription.DEFAULT);
+    }
+
+    /**
+     * 填回數值用的樣式：原本是 {@code offset/…} 這類<b>顯示字型</b>時保留原字型。
+     *
+     * <p>武器的「370 DPS」，數字用的是 {@code offset/wynncraft_quad/12}——放大的字。
+     * 一律換成預設字型的話數字就縮回一般大小（實機回報「上方 dps 文字很大」那行
+     * 翻完變小）。那種字型本來就只拿來畫數字，照原樣畫就是原文的樣子。
+     */
+    private static Style numberDisplay(Style style) {
+        if (style != null && style.getFont() instanceof FontDescription.Resource r
+                && r.id() != null && r.id().getPath().startsWith("offset/")) {
+            return style;
+        }
+        return forDisplay(style);
     }
 
     private static Style greyed() {
