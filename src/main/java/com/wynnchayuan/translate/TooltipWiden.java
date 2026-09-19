@@ -77,9 +77,15 @@ public final class TooltipWiden {
             return translated;
         }
         int n = translated.size();
-        // 行數對不上就不知道哪一行對哪一行，寧可不動。
+        // 行數對不上就不知道哪一行對哪一行，寧可不動——只有置中排的欄例外：
+        // 那一步只配對「有多欄的行」，說明文字併段重排過也對得上。
         if (original.size() != n || centered.length != n) {
-            return translated;
+            boolean measurable = false;
+            for (Component line : original) {
+                measurable |= width.applyAsInt(line) > 0;
+            }
+            return leftAligned || !measurable
+                    ? translated : centreColumns(original, translated, width);
         }
         int[] origW = new int[n];
         int[] madeW = new int[n];
@@ -92,6 +98,15 @@ public final class TooltipWiden {
         // 量不到寬度（沒有字型，例如 headless 測試）就什麼都判斷不了。
         if (frame <= 0) {
             return translated;
+        }
+        if (!leftAligned) {
+            List<Component> recentred = centreColumns(original, translated, width);
+            if (recentred != translated) {
+                translated = recentred;
+                for (int i = 0; i < n; i++) {
+                    madeW[i] = width.applyAsInt(translated.get(i));
+                }
+            }
         }
 
         List<List<Seg>> rows = new ArrayList<>(n);
@@ -230,6 +245,185 @@ public final class TooltipWiden {
         }
         LineDebug.pieces("撐寬 " + translated.get(0).getString(), log.toString());
         return out;
+    }
+
+    /**
+     * 置中排的欄：每一欄的內容照<b>原文的中心</b>重新擺。
+     *
+     * <h2>實機回報</h2>
+     * 技能點的提示框是三欄：
+     *
+     * <pre>
+     *      Current     >>>>>>      Next
+     *       48.8%                  49.2%
+     *     60 points              61 points
+     * </pre>
+     *
+     * 每一欄的三行對著同一個中心。逐行那一步只保<b>起點</b>，「60 點」比
+     * 「60 points」短，整欄就往左偏——每個語言都一樣。
+     *
+     * <h2>怎麼認出來</h2>
+     * 一行裡被偏移隔開的幾段文字，拿去跟別行比：中心落在同一個 x、起點卻不同，
+     * 就是置中排的欄。靠左的清單起點相同、靠右的數值右緣相同，都不會被認成這種。
+     * 有負偏移（圖示疊字）的行不碰。
+     *
+     * @return 沒有要動的就是 {@code translated} 本身
+     */
+    static List<Component> centreColumns(List<Component> original, List<Component> translated,
+                                         ToIntFunction<Component> width) {
+        int n = translated.size();
+        List<List<Seg>> madeSegs = new ArrayList<>(n);
+        List<List<int[]>> madeChunks = new ArrayList<>(n);
+        List<Integer> madeRows = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            List<Seg> m = segments(translated.get(i), width);
+            List<int[]> mc = chunks(m, width);
+            madeSegs.add(m);
+            madeChunks.add(mc);
+            if (mc != null && mc.size() >= 2) {
+                madeRows.add(i);
+            }
+        }
+        List<List<int[]>> origMulti = new ArrayList<>();
+        for (Component line : original) {
+            List<int[]> oc = chunks(segments(line, width), width);
+            if (oc != null && oc.size() >= 2) {
+                origMulti.add(oc);
+            }
+        }
+        // 有多欄的行照順序一對一。說明文字併段重排過的話兩邊總行數會不同，
+        // 但多欄的那幾行不會被併，順序也不會變；數量或欄數對不上就不動。
+        if (origMulti.size() != madeRows.size()) {
+            return translated;
+        }
+        List<List<int[]>> origChunks = new ArrayList<>(n);
+        for (int i = 0; i < n; i++) {
+            origChunks.add(null);
+        }
+        for (int k = 0; k < madeRows.size(); k++) {
+            int row = madeRows.get(k);
+            if (origMulti.get(k).size() != madeChunks.get(row).size()) {
+                return translated;
+            }
+            origChunks.set(row, origMulti.get(k));
+        }
+        List<Component> out = null;
+        for (int i = 0; i < n; i++) {
+            List<int[]> oc = origChunks.get(i);
+            if (oc == null) {
+                continue;
+            }
+            List<int[]> mc = madeChunks.get(i);
+            int[] target = new int[oc.size()];
+            boolean moved = false;
+            boolean any = false;
+            for (int k = 0; k < oc.size(); k++) {
+                int[] c = oc.get(k);
+                boolean centred = sharesCentre(c, i, origChunks);
+                any |= centred;
+                target[k] = centred ? c[0] + (c[1] - mc.get(k)[1]) / 2 : c[0];
+                moved |= target[k] != mc.get(k)[0];
+            }
+            if (!any || !moved) {
+                continue;
+            }
+            Component rebuilt = placeChunks(madeSegs.get(i), mc, target, width);
+            if (rebuilt == null) {
+                continue;
+            }
+            if (out == null) {
+                out = new ArrayList<>(translated);
+            }
+            out.set(i, rebuilt);
+        }
+        return out == null ? translated : out;
+    }
+
+    /** 別行有沒有一段跟它中心相同、起點不同。中心用兩倍座標比，免得除二掉半像素。 */
+    private static boolean sharesCentre(int[] c, int row, List<List<int[]>> all) {
+        int centre2 = 2 * c[0] + c[1];
+        for (int j = 0; j < all.size(); j++) {
+            if (j == row || all.get(j) == null) {
+                continue;
+            }
+            for (int[] d : all.get(j)) {
+                // 中心差 1px 以內、起點差 5px 以上。靠右的數值寬度差 d 時，
+                // 中心差（兩倍座標）與起點差都是 d，兩個條件不可能同時成立。
+                if (Math.abs(centre2 - (2 * d[0] + d[1])) <= 2
+                        && Math.abs(c[0] - d[0]) > 2 * EDGE_TOLERANCE) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 被偏移隔開的每一段內容：{@code {起點 x, 寬度, 第一個段的索引, 最後一個段的索引}}。
+     *
+     * @return 有負偏移或看不到字的時候回傳 {@code null}
+     */
+    private static List<int[]> chunks(List<Seg> segs, ToIntFunction<Component> width) {
+        List<int[]> out = new ArrayList<>();
+        int x = 0;
+        int i = 0;
+        boolean letters = false;
+        while (i < segs.size()) {
+            Seg s = segs.get(i);
+            if (s.gap()) {
+                if (s.px() < 0) {
+                    return null;
+                }
+                x += s.px();
+                i++;
+                continue;
+            }
+            int start = x;
+            int from = i;
+            while (i < segs.size() && !segs.get(i).gap()) {
+                Seg t = segs.get(i);
+                x += width.applyAsInt(Component.literal(t.text()).withStyle(t.style()));
+                letters |= t.text().codePoints().anyMatch(Character::isLetterOrDigit);
+                i++;
+            }
+            out.add(new int[] {start, x - start, from, i - 1});
+        }
+        return letters ? out : null;
+    }
+
+    /** 照每一段的目標起點重排；前一段後面至少留 1px。 */
+    private static Component placeChunks(List<Seg> segs, List<int[]> chunks, int[] target,
+                                         ToIntFunction<Component> width) {
+        MutableComponent out = Component.empty();
+        int x = 0;
+        int next = 0;
+        Style gapStyle = null;
+        for (int i = 0; i < segs.size(); i++) {
+            Seg s = segs.get(i);
+            if (s.gap()) {
+                gapStyle = gapStyle == null ? s.style() : gapStyle;
+                if (next >= chunks.size()) {
+                    append(out, s.text(), s.style());   // 行尾的偏移照留
+                }
+                continue;
+            }
+            if (next < chunks.size() && i == chunks.get(next)[2]) {
+                int want = target[next];
+                int px = next == 0 ? Math.max(0, want - x) : Math.max(1, want - x);
+                Style st = gapStyle == null ? s.style() : gapStyle;
+                append(out, SpaceOffset.encode(px), SpaceOffset.styleFor(st));
+                x += px;
+                gapStyle = null;
+                int[] c = chunks.get(next);
+                for (int k = c[2]; k <= c[3]; k++) {
+                    append(out, segs.get(k).text(), segs.get(k).style());
+                }
+                x += c[1];
+                i = c[3];
+                next++;
+            }
+        }
+        return next == chunks.size() ? out : null;
     }
 
     /**

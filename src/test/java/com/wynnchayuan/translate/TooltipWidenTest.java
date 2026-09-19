@@ -54,6 +54,7 @@ public final class TooltipWidenTest {
         centredBlock();
         shorterLanguage();
         shrunkBox();
+        skillPoints();
         noFont();
 
         System.out.println(failures == 0
@@ -255,6 +256,139 @@ public final class TooltipWidenTest {
                         + leadOf(made.get(0)) + " -> " + leadOf(out.get(0)) + "，應為 " + want + "）",
                 leadOf(out.get(0)) == want);
         report("靠左的行沒動", out.get(1) == made.get(1));
+    }
+
+    /**
+     * 技能點的提示框：三欄各自置中，「目前」「48.8%」「60 點」對著同一個中心。
+     *
+     * <p>逐行那一步只保起點，譯文變短後整欄往左偏。撐寬那一步要照原文的中心擺回去；
+     * 沒翻的百分比那一行不能動。
+     */
+    private static void skillPoints() {
+        int left = 40;                 // 左欄中心
+        int right = 160;               // 右欄中心
+        int arrows = 90;               // 箭頭起點
+        List<Component> orig = new ArrayList<>();
+        List<Component> made = new ArrayList<>();
+        orig.add(centredRow(new String[] {"Current", ">>>>>>", "Next"},
+                            new int[] {left, arrows + 18, right}, false));
+        made.add(startRow(new String[] {"目前", ">>>>>>", "下一級"},
+                          starts(orig.get(0))));
+        orig.add(centredRow(new String[] {"48.8%", "49.2%"}, new int[] {left, right}, false));
+        made.add(orig.get(1));
+        orig.add(centredRow(new String[] {"60 points", "61 points"},
+                            new int[] {left, right}, false));
+        made.add(startRow(new String[] {"60 點", "61 點"}, starts(orig.get(2))));
+        boolean[] centred = new boolean[orig.size()];
+
+        List<Component> out = TooltipWiden.fit(orig, made, centred, false, WIDTH);
+
+        int[] head = centres(out.get(0), 3);
+        int[] pts = centres(out.get(2), 2);
+        report("★ 「目前」與「60 點」照原文的中心 " + left + " 擺（實際 "
+                        + head[0] + "、" + pts[0] + "）",
+                Math.abs(head[0] - left) <= 1 && Math.abs(pts[0] - left) <= 1);
+        report("★ 「下一級」與「61 點」照原文的中心 " + right + " 擺（實際 "
+                        + head[2] + "、" + pts[1] + "）",
+                Math.abs(head[2] - right) <= 1 && Math.abs(pts[1] - right) <= 1);
+        report("沒翻的百分比那一行沒動", out.get(1) == made.get(1));
+
+        // 下面的說明併段重排過，譯文比原文少一行：多欄的那幾行照樣要擺回中心。
+        List<Component> origLong = new ArrayList<>(orig);
+        origLong.add(line("Each point in this skill will"));
+        origLong.add(line("increase all damage you deal"));
+        origLong.add(line("and your Earth damage"));
+        List<Component> madeShort = new ArrayList<>(made);
+        madeShort.add(line("這項屬性每加一點，都會提高"));
+        madeShort.add(line("你造成的所有傷害與地屬性傷害"));
+        List<Component> out2 = TooltipWiden.fit(origLong, madeShort,
+                new boolean[origLong.size()], false, WIDTH);
+        int[] pts2 = centres(out2.get(2), 2);
+        report("★ 說明少一行時，「60 點」「61 點」照樣擺回中心（實際 "
+                        + pts2[0] + "、" + pts2[1] + "）",
+                Math.abs(pts2[0] - left) <= 1 && Math.abs(pts2[1] - right) <= 1);
+        report("說明那兩行沒動", out2.get(3) == madeShort.get(3) && out2.get(4) == madeShort.get(4));
+    }
+
+    /** 每一段以 {@code centre[k]} 為中心排開（原文的樣子）。 */
+    private static Component centredRow(String[] texts, int[] centre, boolean unused) {
+        int[] start = new int[texts.length];
+        for (int k = 0; k < texts.length; k++) {
+            start[k] = centre[k] - CHAR * texts[k].length() / 2;
+        }
+        return startRow(texts, start);
+    }
+
+    /** 每一段從 {@code start[k]} 開始（逐行那一步只保起點的樣子）。 */
+    private static Component startRow(String[] texts, int[] start) {
+        MutableComponent out = Component.empty();
+        int x = 0;
+        for (int k = 0; k < texts.length; k++) {
+            out.append(offset(start[k] - x));
+            out.append(Component.literal(texts[k]));
+            x = start[k] + CHAR * texts[k].length();
+        }
+        return out;
+    }
+
+    private static int[] starts(Component row) {
+        List<Integer> s = new ArrayList<>();
+        int[] x = {0};
+        boolean[] inText = {false};
+        row.visit((style, text) -> {
+            if (text.isEmpty()) {
+                return java.util.Optional.empty();
+            }
+            if (SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text)) {
+                x[0] += SpaceOffset.decode(text);
+                inText[0] = false;
+            } else {
+                if (!inText[0]) {
+                    s.add(x[0]);
+                }
+                inText[0] = true;
+                x[0] += text.codePointCount(0, text.length()) * CHAR;
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return s.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    /** 每一段文字的中心。 */
+    private static int[] centres(Component row, int count) {
+        int[] out = new int[count];
+        int[] x = {0};
+        int[] k = {-1};
+        int[] w = new int[count];
+        int[] st = new int[count];
+        boolean[] inText = {false};
+        row.visit((style, text) -> {
+            if (text.isEmpty()) {
+                return java.util.Optional.empty();
+            }
+            if (SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text)) {
+                x[0] += SpaceOffset.decode(text);
+                inText[0] = false;
+            } else {
+                int tw = text.codePointCount(0, text.length()) * CHAR;
+                if (!inText[0]) {
+                    k[0]++;
+                    if (k[0] < count) {
+                        st[k[0]] = x[0];
+                    }
+                }
+                if (k[0] < count) {
+                    w[k[0]] += tw;
+                }
+                inText[0] = true;
+                x[0] += tw;
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        for (int i = 0; i < count; i++) {
+            out[i] = st[i] + w[i] / 2;
+        }
+        return out;
     }
 
     /** 沒有字型時量不到寬度，什麼都判斷不了，也就什麼都不做。 */
