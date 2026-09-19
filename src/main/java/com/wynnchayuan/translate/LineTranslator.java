@@ -3927,6 +3927,9 @@ public final class LineTranslator {
             return rebuilt;                    // 行數對不上就什麼都別動
         }
         boolean[] centre = centred == null ? centredRows(origRows) : null;
+        if (centre != null) {
+            sharedCentre(origRows, centre);
+        }
         // 這一塊是不是「兩欄併排的面板」。見 #columnPanel。
         //
         // 呼叫端說了算優先：信標面板是一行一則訊息送來的，這裡看到的
@@ -4221,6 +4224,59 @@ public final class LineTranslator {
         }
         return isCjkBreakable(a) || isCjkBreakable(b)
                 ? !(isWordChar(a) && isWordChar(b)) : false;
+    }
+
+    /**
+     * 聊天裡用空白墊出來的置中：幾行都有縮排、縮排長短不一，中心卻落在差不多的位置。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *            Enjoying Wynncraft?
+     *    Recruit a friend and both of you will get rewards!
+     *           Click here to recruit
+     *            (or type /recruit)
+     * </pre>
+     * 伺服器用空白把每一行墊到聊天視窗中間，但寬度是它自己估的，四行的中心
+     * 落在 130～151px 之間，不是同一條線。{@link BlockLayout#centered} 拿最寬那行
+     * 當基準，那一行自己也有縮排，於是整塊被判成靠左，中文變短後就往左偏。
+     *
+     * <p>這裡另外看：有縮排的行至少兩行、縮排差了一截（不是清單那種同一個縮排），
+     * 而且每一行的中心都在中位數 ±16px 以內，就把那幾行當成置中。
+     */
+    private static void sharedCentre(List<List<Run>> rows, boolean[] centre) {
+        List<Integer> idx = new ArrayList<>();
+        List<Integer> mids = new ArrayList<>();
+        int minLead = Integer.MAX_VALUE;
+        int maxLead = 0;
+        for (int i = 0; i < rows.size(); i++) {
+            List<Run> row = rows.get(i);
+            int lead = leadWidth(row);
+            int body = rowWidth(row) - lead;
+            if (lead <= 0 || body <= 0) {
+                continue;
+            }
+            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+                return;                                // 分欄的面板另有規則
+            }
+            idx.add(i);
+            mids.add(lead + body / 2);
+            minLead = Math.min(minLead, lead);
+            maxLead = Math.max(maxLead, lead);
+        }
+        if (idx.size() < 2 || maxLead - minLead <= 8) {
+            return;
+        }
+        List<Integer> sorted = new ArrayList<>(mids);
+        java.util.Collections.sort(sorted);
+        int median = sorted.get(sorted.size() / 2);
+        for (int m : mids) {
+            if (Math.abs(m - median) > 16) {
+                return;
+            }
+        }
+        for (int i : idx) {
+            centre[i] = true;
+        }
     }
 
     /** 拆好的原文各行，交給 {@link BlockLayout} 判斷置中。 */

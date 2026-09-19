@@ -104,7 +104,81 @@ public final class ChatReflowTest {
         check("沒有一行是標點開頭", clean);
         check("第一行斷在標點後面", sd.split("\n")[0].endsWith("，"));
 
+        recruit();
         report();
+    }
+
+    /** 用縮排墊到中間的招募訊息：四行的中心差幾像素，但都是置中的。 */
+    private static void recruit() throws Exception {
+        String[] en = {"Enjoying Wynncraft?", "Recruit a friend and both of you will get rewards!",
+                       "", "Click here to recruit", "(or type /recruit)"};
+        int[] lead = {100, 10, 0, 95, 104};
+        com.google.gson.JsonObject root = new com.google.gson.JsonObject();
+        root.addProperty("{#}Enjoying Wynncraft?\n{#}Recruit a friend and both of you will get rewards!\n\n"
+                        + "{#}Click here to recruit\n{#}(or type /recruit)",
+                "{#}喜歡 Wynncraft 嗎？\n{#}邀請朋友一起玩，雙方都能拿到獎勵！\n\n{#}點這裡邀請\n{#}(或輸入 /recruit)");
+        Path dir = Files.createTempDirectory("wynnchayuan-chat-recruit");
+        Files.writeString(dir.resolve("misc.json"), root.toString(), StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        MutableComponent all = Component.empty();
+        for (int i = 0; i < en.length; i++) {
+            if (i > 0) {
+                all.append(Component.literal("\n"));
+            }
+            if (!en[i].isEmpty()) {
+                all.append(offset(lead[i])).append(Component.literal(en[i]));
+            }
+        }
+        Component out = LineTranslator.translateChat(StyledText.fromComponent(all), store);
+        check("招募訊息翻得出來", out != null);
+        if (out == null) {
+            return;
+        }
+        String[] made = out.getString().split("\n", -1);
+        StringBuilder seen = new StringBuilder();
+        boolean ok = made.length == en.length;
+        for (int i = 0; ok && i < en.length; i++) {
+            if (en[i].isEmpty()) {
+                continue;
+            }
+            int want = lead[i] + LineTranslator.measureForTest.applyAsInt(Component.literal(en[i])) / 2;
+            int[] lw = leadAndBody(out, i);
+            int got = lw[0] + lw[1] / 2;
+            seen.append(want).append("→").append(got).append(' ');
+            ok &= Math.abs(want - got) <= 2;
+        }
+        check("★ 每一行照原文的中心置中（原文→譯文 " + seen.toString().strip() + "）", ok);
+    }
+
+    /** 第 {@code row} 行的縮排與內容寬度。 */
+    private static int[] leadAndBody(Component c, int row) {
+        int[] r = {0};
+        int[] lead = {0};
+        int[] body = {0};
+        boolean[] started = {false};
+        c.visit((style, text) -> {
+            String[] parts = text.split("\n", -1);
+            for (int p = 0; p < parts.length; p++) {
+                String part = parts[p];
+                if (p > 0) {
+                    r[0]++;
+                    started[0] = false;
+                }
+                if (r[0] != row || part.isEmpty()) {
+                    continue;
+                }
+                if (SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(part) && !started[0]) {
+                    lead[0] += SpaceOffset.decode(part);
+                } else {
+                    started[0] = true;
+                    body[0] += LineTranslator.measureForTest.applyAsInt(
+                            Component.literal(part).withStyle(style));
+                }
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return new int[] {lead[0], body[0]};
     }
 
     private static StyledText two(String first, String second) {
