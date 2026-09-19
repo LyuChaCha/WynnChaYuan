@@ -363,6 +363,24 @@ tasks.register('runScopedLabelChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runScopedLabelChecks' }
 
+// 簡中是兩層疊起來載入的；裝備名稱在這條路上也要翻得出來。
+tasks.register('runLayeredGearNameChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LayeredGearNameTest'
+}
+tasks.named('check') { dependsOn 'runLayeredGearNameChecks' }
+
+// 屬性列的標籤要靠左，不能被當成置中列補寬度差。
+tasks.register('runStatLabelIndentChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.StatLabelIndentTest'
+}
+tasks.named('check') { dependsOn 'runStatLabelIndentChecks' }
+
 // 多行名牌逐行回退：一個名字翻一次就該覆蓋所有變體，不必為每個變體各建一個鍵。
 tasks.register('runNameplateChecks', JavaExec) {
     group = 'verification'
