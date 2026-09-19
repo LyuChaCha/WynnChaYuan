@@ -45,6 +45,7 @@ public final class StatLabelIndentTest {
         } finally {
             LineTranslator.measureForTest = null;
         }
+        iconSpace();
         System.out.println(failures == 0 ? "屬性列靠左：全部通過" : "屬性列靠左：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
     }
@@ -62,11 +63,26 @@ public final class StatLabelIndentTest {
         lines.add(row(0, "Water Damage", "-715% to -385%"));
         lines.add(row(0, "Spell Damage", "+76 to +329"));
         lines.add(row(0, "Main Attack Damage", "+161 to +697"));
+        // 實機記下的偏移（layout-debug）：標籤也是裝備名的兩列
+        lines.add(rowAt(2, "Agility", -37, 144, "+25 to +25"));
+        lines.add(iconRow("Agility", -37, 144, "+25 to +25"));
+        lines.add(wynnRow("", "Agility ", 151, "+35"));
+        lines.add(wynnRow(null, "Reflection ", 101, "+12%"));
+        lines.add(spriteOffsetRow("Agility ", 151, "+35"));
+        lines.add(rowAt(0, "Reflection", -44, 129, "+27% to +117%"));
+        lines.add(rowAt(0, "Exploding", -44, 150, "+15% to +65%"));
         List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(lines, store);
         System.out.println("== " + lang + "（" + out.size() + " 行）");
         for (int i = 2; i < lines.size() && i < out.size(); i++) {
             int orig = firstTextX(lines.get(i));
             int made = firstTextX(out.get(i));
+            StringBuilder fonts = new StringBuilder();
+            out.get(i).visit((st, tx) -> {
+                fonts.append("[").append(tx.replaceAll("[\\x{D0000}-\\x{DFFFF}\\x{CF000}-\\x{CFFFF}]", "·"))
+                     .append("@").append(st.getFont()).append("]");
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+            System.out.println("    片段 " + fonts);
             System.out.println("  " + out.get(i).getString().replaceAll("[\\x{D0000}-\\x{DFFFF}\\x{CF000}-\\x{CFFFF}]", "·")
                     + "  標籤起點 原文=" + orig + " 譯文=" + made);
             check(lang + "「" + lines.get(i).getString().replaceAll("[^A-Za-z ]", "").strip()
@@ -89,6 +105,97 @@ public final class StatLabelIndentTest {
         return c;
     }
 
+    private static Component rowAt(int lead, String label, int back, int jump, String value) {
+        MutableComponent c = Component.empty();
+        if (lead != 0) {
+            c.append(off(lead));
+        }
+        c.append(Component.literal(label).withStyle(WHITE));
+        c.append(off(back));
+        c.append(off(jump));
+        c.append(Component.literal(value).withStyle(GREEN));
+        c.append(off(-9));
+        return c;
+    }
+
+    /** 實機的屬性列：屬性圖示（另一個字型）、+2、標籤、往回退、跳到數值欄。 */
+    private static Component iconRow(String label, int back, int jump, String value) {
+        MutableComponent c = Component.empty();
+        c.append(Component.literal("").withStyle(Style.EMPTY.withFont(
+                new net.minecraft.network.chat.FontDescription.Resource(
+                        net.minecraft.resources.Identifier.withDefaultNamespace(
+                                "tooltip/attribute/sprite")))));
+        c.append(off(2));
+        c.append(Component.literal(label).withStyle(WHITE));
+        c.append(off(back));
+        c.append(off(jump));
+        c.append(Component.literal(value).withStyle(GREEN));
+        c.append(off(-9));
+        return c;
+    }
+
+    private static final Style WYNN = WHITE.withFont(
+            new net.minecraft.network.chat.FontDescription.Resource(
+                    net.minecraft.resources.Identifier.withDefaultNamespace("language/wynncraft")));
+
+    /**
+     * 照 tooltip-partial 記下的實機結構：偏移字元與文字都是 language/wynncraft 字型，
+     * 標籤後面帶一個空白——{@code <圖示> [+2] 'Agility ' [+151] '+35'}。
+     */
+    private static Component wynnRow(String icon, String label, int jump, String value) {
+        MutableComponent c = Component.empty();
+        if (icon != null) {
+            c.append(Component.literal(icon).withStyle(Style.EMPTY.withFont(
+                    new net.minecraft.network.chat.FontDescription.Resource(
+                            net.minecraft.resources.Identifier.withDefaultNamespace(
+                                    "tooltip/attribute/sprite")))));
+            c.append(Component.literal(SpaceOffset.encode(2)).withStyle(WYNN));
+        }
+        c.append(Component.literal(label).withStyle(WYNN));
+        c.append(Component.literal(SpaceOffset.encode(jump)).withStyle(WYNN));
+        c.append(Component.literal(value).withStyle(WYNN.withColor(0xACFAC6)));
+        return c;
+    }
+
+    /** 同上，但 +2 那個偏移跟圖示同一個字型。 */
+    private static Component spriteOffsetRow(String label, int jump, String value) {
+        Style sprite = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace("tooltip/attribute/sprite")));
+        MutableComponent c = Component.empty();
+        c.append(Component.literal("" + SpaceOffset.encode(2)).withStyle(sprite));
+        c.append(Component.literal(label).withStyle(WYNN));
+        c.append(Component.literal(SpaceOffset.encode(jump)).withStyle(WYNN));
+        c.append(Component.literal(value).withStyle(WYNN.withColor(0xACFAC6)));
+        return c;
+    }
+
+    /**
+     * 實機畫出去的那一列（tooltip-partial）：圖示、+2、<b>圖示字型的空白</b>、敏捷。
+     * 那個空白把標籤推開十幾像素，要拿掉；圖示與偏移留著。
+     */
+    private static void iconSpace() {
+        Style sprite = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace("tooltip/attribute/sprite")));
+        MutableComponent drawn = Component.empty();
+        drawn.append(Component.literal(String.valueOf((char) 0xE014)).withStyle(sprite));
+        drawn.append(Component.literal(SpaceOffset.encode(2)).withStyle(WYNN));
+        drawn.append(Component.literal(" ").withStyle(sprite));
+        drawn.append(Component.literal("敏捷").withStyle(WHITE));
+        drawn.append(Component.literal(SpaceOffset.encode(166)).withStyle(WYNN));
+        drawn.append(Component.literal("+35").withStyle(GREEN));
+        Component fixed = LineTranslator.dropIconSpaces(drawn);
+        String plain = fixed.getString();
+        check("★ 圖示字型的空白拿掉了", !plain.contains(" 敏捷"));
+        check("圖示、偏移與數值都還在",
+              plain.startsWith(String.valueOf((char) 0xE014) + SpaceOffset.encode(2) + "敏捷")
+                      && plain.endsWith("+35"));
+        // 一般字型的空白是真的排版，不動
+        MutableComponent normal = Component.empty();
+        normal.append(Component.literal(" 职业类型").withStyle(WHITE));
+        check("預設字型的前導空白不動",
+              LineTranslator.dropIconSpaces(normal).getString().equals(" 职业类型"));
+    }
+
     private static Component off(int px) {
         return Component.literal(SpaceOffset.encode(px)).withStyle(SpaceOffset.styleFor(WHITE));
     }
@@ -103,6 +210,9 @@ public final class StatLabelIndentTest {
             }
             if (SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text)) {
                 x[0] += SpaceOffset.decode(text);
+            } else if (!text.isBlank() && text.codePoints().allMatch(
+                    cp -> cp >= 0xE000 && cp <= 0xF8FF)) {
+                x[0] += measure(Component.literal(text));   // 圖示
             } else if (!text.isBlank()) {
                 int lead = 0;
                 while (lead < text.length() && text.charAt(lead) == ' ') {

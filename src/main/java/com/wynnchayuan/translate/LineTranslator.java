@@ -1873,12 +1873,60 @@ public final class LineTranslator {
                                       boolean centered, boolean leftAligned) {
         Component whole = translateWholeLine(line, store, centered, leftAligned);
         if (whole != null) {
-            return unslant(whole);
+            return unslant(dropIconSpaces(whole));
         }
         // 多行標籤（怪物名牌）整塊查不到時，逐行查——見 translatePerLine。
         Component perLine = translatePerLine(line, store, centered);
-        return unslant(perLine != null ? perLine
-                                       : translateSegments(line, store, centered, leftAligned));
+        return unslant(dropIconSpaces(perLine != null ? perLine
+                                       : translateSegments(line, store, centered, leftAligned)));
+    }
+
+    /**
+     * 拿掉第一個實字之前、<b>只有空白而且套著圖示字型</b>的片段。
+     *
+     * <h2>實機</h2>
+     * 屬性列原文是 {@code <圖示>[+2]'Agility '[+151]'+35'}——空白在標籤<b>後面</b>。
+     * 翻出來畫的卻是 {@code <圖示>[+2]' '(tooltip/attribute/sprite)'敏捷'…}：那個空白
+     * 跑到標籤前面，還沾上圖示的字型，「敏捷」「远程反伤」就被推開十幾像素
+     * （tooltip-partial 記得很清楚）。原文在那個位置沒有任何東西，拿掉只會對回原文。
+     *
+     * <p>只動空白字元，排版偏移（私人使用區的字元）不是空白，不受影響；
+     * 預設字型與 Wynncraft 文字字型裡的空白也照留——那是真的排版。
+     */
+    static Component dropIconSpaces(Component line) {
+        if (line == null) {
+            return null;
+        }
+        boolean[] dropped = {false};
+        boolean[] seenText = {false};
+        MutableComponent out = Component.empty();
+        line.visit((style, text) -> {
+            if (text.isEmpty()) {
+                return java.util.Optional.empty();
+            }
+            if (!seenText[0] && text.isBlank() && iconFont(style)) {
+                dropped[0] = true;
+                return java.util.Optional.empty();
+            }
+            if (text.codePoints().anyMatch(Character::isLetterOrDigit)
+                    && !SpaceOffset.isSpaceFont(style) && !iconFont(style)) {
+                seenText[0] = true;
+            }
+            out.append(Component.literal(text).withStyle(style));
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return dropped[0] ? out : line;
+    }
+
+    /** 圖示用的字型：不是預設、不是 Wynncraft 的文字字型，也不是排版偏移字型。 */
+    private static boolean iconFont(Style style) {
+        if (!(style.getFont() instanceof net.minecraft.network.chat.FontDescription.Resource r)
+                || r.id() == null) {
+            return false;
+        }
+        String path = r.id().getPath();
+        return !path.equals("default") && !path.equals("uniform") && !path.equals("space")
+                && !path.equals("language/wynncraft");
     }
 
     /**
