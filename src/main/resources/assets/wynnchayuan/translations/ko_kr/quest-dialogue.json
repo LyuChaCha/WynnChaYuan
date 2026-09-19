@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23377,
-  "translated": 23377,
+  "count": 23403,
+  "translated": 23403,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -14964,6 +14964,26 @@
    "stage": "Stage 19",
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
+  },
+  "A Sandy Scandal#098": {
+   "src": "I then realized that they had no innocent itinerary, they were heading straight for my wealthy neighbor's house!",
+   "dst": "그제야 깨달았죠. 그들은 그냥 지나가던 게 아니라, 부자인 우리 이웃집으로 곧장 향하고 있었어요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#099": {
+   "src": "The bandits came sprinting out of my wealthy neighbor's house with some of his most prized possessions: two weapons from his collection.",
+   "dst": "강도들이 부자 이웃집에서 그의 가장 귀한 소장품, 수집품 중 무기 두 자루를 들고 뛰쳐나왔어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Acquiring Credentials#000": {
    "src": "Get a Gavellian Passport at [-{~}, {~}, -{~}]",
@@ -38525,6 +38545,46 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
+  "Blazing Retribution#042": {
+   "src": "However, there's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
+   "dst": "그런데 오크와 맺은 휴전 협정에 허점이 있어. 절도는 공격 행위로 안 치거든...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#043": {
+   "src": "Searching the camps one by one will be far too slow, gah!! How am I going to fix this?!",
+   "dst": "야영지를 하나하나 뒤지는 건 너무 느려, 으악!! 이걸 대체 어떻게 수습하지?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#044": {
+   "src": "Jackson is twiddling his thumbs off to the southeast. Just continue past my farm!",
+   "dst": "Jackson은 남동쪽에서 손 놓고 빈둥거리고 있어요. 우리 농장을 지나 쭉 가세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#045": {
+   "src": "Poxper? That...hm. This could be bad. I've heard that name, and he's a fairly prolific Orc chief. You killed him, right?",
+   "dst": "Poxper? 그건... 흠. 안 좋을 수도 있겠군. 들어 본 이름이야. 꽤 이름난 오크 족장이지. 죽였지, 그렇지?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Bob's Lost Soul#000": {
    "src": "Talk to Tarod in {p}'s Forest at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]의 {p} 숲에서 Tarod와 대화하세요",
@@ -39274,6 +39334,126 @@
    "stage": "Stage 10",
    "speaker": "Tarod",
    "source": "wiki"
+  },
+  "Bob's Lost Soul#075": {
+   "src": "Sometimes, fighting the corruption takes its toll on people.",
+   "dst": "때로는 타락과 싸우는 일이 사람을 지치게 만듭니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#076": {
+   "src": "A dear friend of mine and the province was lost because he couldn't see a way out.",
+   "dst": "저와 이 지방의 소중한 친구가 빠져나갈 길을 찾지 못해 우리 곁을 떠났습니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#077": {
+   "src": "This memorial was erected for all those who suffer similarly.",
+   "dst": "이 기념비는 같은 고통을 겪는 모든 이를 위해 세워졌습니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#078": {
+   "src": "If you are ever confronted by the demons within, please seek help.",
+   "dst": "혹시 마음속 악마와 마주하게 된다면, 부디 도움을 청하세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#079": {
+   "src": "Out past the other side of {p}, near {p}, there are some arches in the mountains. An old florist lives in a house close by. She has a rose that Bob had once cut himself on.",
+   "dst": "{p} 반대편 너머, {p} 근처 산에 아치 몇 개가 있어요. 그 근처 집에 늙은 꽃집 주인이 사는데, Bob이 베였던 장미를 갖고 있죠.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#080": {
+   "src": "Anyway, my apprentice over there has traveled around a lot, they might know where you can find the items for yourself, but I warn you, they are a little bit quirky.",
+   "dst": "아무튼, 저기 내 견습생이 여기저기 많이 돌아다녀서 네가 직접 물건을 구할 곳을 알지도 몰라. 근데 좀 괴짜니까 각오해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#081": {
+   "src": "Hi! My name is Batelu, I've been studying those strange symbols on the walls for quite a while now.",
+   "dst": "안녕! 내 이름은 Batelu야. 벽에 있는 저 이상한 기호들을 꽤 오랫동안 연구하고 있어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#082": {
+   "src": "I've learned a lot about Bob. Unfortunately, I do not think I am the person you are looking for.",
+   "dst": "Bob에 대해 많은 걸 알게 됐어. 아쉽지만 난 네가 찾는 사람이 아닌 것 같아.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#083": {
+   "src": "If you are looking for Bob's corpse, it's under the stairs in the icy chamber. Talk to me when you are level {~}, I've got some work for you.",
+   "dst": "Bob의 시신을 찾는다면, 얼음 방 계단 밑에 있어. {~}레벨이 되면 다시 말 걸어 줘. 맡길 일이 좀 있거든.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#084": {
+   "src": "Thank you for your help. I'm sure Bob thanks you too... wherever he is.",
+   "dst": "도와줘서 고마워. Bob도 분명 고마워하고 있을 거야... 그가 어디에 있든.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#085": {
+   "src": "The famous {p} lies to the south, in the area where the snow has melted.",
+   "dst": "그 유명한 {p}은(는) 남쪽, 눈이 녹은 지역에 있어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#086": {
+   "src": "The mansion has a deep history with this land. The Twains used to fight the corruption before the likes of Bob were around, although people seem to forget about them.",
+   "dst": "그 저택은 이 땅과 깊은 역사를 함께해 왔어. Bob 같은 이들이 나타나기 전부터 Twain 가문이 타락과 싸웠지. 사람들은 그들을 잊어버린 것 같지만.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Brothers Return#000": {
    "src": "Hey! Don't put that down there—",
@@ -151663,6 +151843,16 @@
    "speaker": "Agent",
    "source": "wiki"
   },
+  "Star Thief#022": {
+   "src": "I can't... control... my mind... end me.",
+   "dst": "통제가... 안 돼... 내 정신이... 날 죽여 줘.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Supply and Delivery#000": {
    "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
    "dst": "뭐? 그런 눈으로 보지 마! 서로 이득 본 공정한 거래였잖아. 난 약초를 얻고, 넌... 음. 경험을 얻었잖아?",
@@ -229292,6 +229482,76 @@
    "stage": "Stage 8",
    "speaker": "Fredris",
    "source": "wiki"
+  },
+  "Underice#056": {
+   "src": "Have you found the issue yet? I'm still waiting!",
+   "dst": "문제는 찾았나요? 아직도 기다리고 있다고요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#057": {
+   "src": "Have you seen that weird structure near the lake? I heard quite a lot of stories about it, but nobody is sure about what you can find there.",
+   "dst": "호수 근처에 있는 그 이상한 건물 봤어요? 그에 관한 이야기를 꽤 많이 들었는데, 거기서 뭘 찾을 수 있는지는 아무도 확실히 몰라요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#058": {
+   "src": "However we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
+   "dst": "하지만 호수의 물고기를 두고 싸울 필요는 없어요. [Mythic Everlasting Pufferfish] 한 마리면 충분해요, 다른 건 필요 없어요. 우리도 훔치고 싶지 않았어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#059": {
+   "src": "You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
+   "dst": "[Mythic Everlasting Pufferfish]을 찾는다고요? 음, 그 이름 들어 봤어요. 오래전에 친구 Strato가 얘기해 줬죠. 제 기억이 맞다면 그건 끝이 없어요. 그 한 마리로 모든 지방 사람을 전부 먹일 수 있대요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#060": {
+   "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in the water, maybe that will attract the pufferfish.",
+   "dst": "거기서 미끼를 구할 수 있을지도 몰라요. 그 친구는 제가 본 것 중 최고의 미끼를 갖고 있었죠. 좀 구해서 물에 던져 보세요. 복어가 끌려올지도 모르죠.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#061": {
+   "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift please, promise me to never change.",
+   "dst": "물고기를 저에게 주시는 건가요? Strato가 살아 있었다면 정말 놀랐을 텐데. 이게 얼마나 큰 의미인지 다 보여 줄 순 없지만, 이 작은 선물을 받아 주세요. 지금 그대로여 달라고 약속해 줘요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#062": {
+   "src": "I wish we could have avoided this whole scenario.",
+   "dst": "이 모든 상황을 피할 수 있었으면 좋았을 텐데요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Undersupply#000": {
    "src": "Investigate the river settlement's water troubles at [-{~}, {~}, -{~}].",
