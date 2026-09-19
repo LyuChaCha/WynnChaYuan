@@ -318,6 +318,15 @@ public final class WynntilsText {
             StyledText shown = line(text, store);
             hit = shown == text ? name : shown.getComponent();
             BARS.put(name, hit);
+            // 畫面上是英文時，先分清楚是「根本沒走到這裡」還是「走到了但查不到」：
+            // captured.json 的 events 裡有沒有 bossbar.* 就知道。查不到的收進 capture。
+            var captured = WynnChaYuan.store();
+            if (captured != null) {
+                captured.noteEvent(hit == name ? "bossbar.noMatch" : "bossbar.shown");
+            }
+            if (hit == name && config.collect()) {
+                collectName(text, "label/bossbar");
+            }
         }
         return hit;
     }
@@ -395,14 +404,14 @@ public final class WynntilsText {
             hit = shown == text ? name : shown.getComponent();
             NAMES.put(name, hit);
             if (hit == name && config.collect()) {
-                collectName(text);
+                collectName(text, "label/floating");
             }
         }
         return hit;
     }
 
     /** 沒譯文的浮空字收進 capture，濾網跟 TextDisplay 那條路一樣。 */
-    private static void collectName(StyledText text) {
+    private static void collectName(StyledText text, String ctx) {
         if (text.isEmpty() || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
                 || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
             return;
@@ -415,7 +424,7 @@ public final class WynntilsText {
         }
         var captured = WynnChaYuan.store();
         if (captured != null) {
-            captured.record(template, "name", "label", "label/floating");
+            captured.record(template, "name", "label", ctx);
         }
     }
 

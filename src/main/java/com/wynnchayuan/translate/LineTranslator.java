@@ -3856,7 +3856,21 @@ public final class LineTranslator {
         for (StyledText row : rows) {
             lines.add(row.getComponent());
         }
-        return BlockLayout.centered(lines);
+        boolean[] centred = BlockLayout.centered(lines);
+        // 一行一則送來的（「[Objective Completed]」那三行）也要看空白墊出來的置中，
+        // 跟整則送來時走 realignChat 的判斷一致。見 #spacePadded。
+        List<List<Run>> runRows = new ArrayList<>(rows.size());
+        for (StyledText row : rows) {
+            List<List<Run>> split = splitRows(runs(row.getComponent()));
+            if (split.size() != 1) {
+                return centred;                // 一則裡有好幾行，對不上逐行的索引
+            }
+            runRows.add(split.get(0));
+        }
+        sharedCentre(runRows, centred);
+        spacePadded(runRows, centred);
+        sameLeadList(runRows, centred);
+        return centred;
     }
 
     /**
@@ -3929,6 +3943,8 @@ public final class LineTranslator {
         boolean[] centre = centred == null ? centredRows(origRows) : null;
         if (centre != null) {
             sharedCentre(origRows, centre);
+            spacePadded(origRows, centre);
+            sameLeadList(origRows, centre);
         }
         // 這一塊是不是「兩欄併排的面板」。見 #columnPanel。
         //
@@ -4279,6 +4295,97 @@ public final class LineTranslator {
         }
     }
 
+    /**
+     * 用一長串半形空白墊出來的行，是伺服器在置中。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *            [Objective Completed]
+     *              Loot Chests T3+
+     *        Click here to claim your rewards!
+     * </pre>
+     * 三行的中心差了將近 40px（伺服器估的寬度不準，底線那一行尤其歪），
+     * {@link #sharedCentre} 的 ±16px 收不進來，{@link BlockLayout#centered} 也拿最寬
+     * 那行當基準判成靠左——中文變短之後，每行都貼著英文的左緣。
+     *
+     * <p>Wynncraft 的清單縮排用的是偏移字元（任務獎勵的「- +35 經驗值」），
+     * 不是空白；前面墊了五個以上的半形空白，就只會是置中。每一行守住自己的中心，
+     * 不去管它們彼此對不對齊——原文本來就沒對齊。
+     */
+    static void spacePadded(List<List<Run>> rows, boolean[] centre) {
+        for (int i = 0; i < rows.size(); i++) {
+            List<Run> row = rows.get(i);
+            if (plainSpaceLead(row) >= 5
+                    && columns(chatSegmentWidths(row, LineTranslator::runWidth)) < 2) {
+                centre[i] = true;
+            }
+        }
+    }
+
+    /**
+     * 縮排一樣、內容寬度卻不一樣的幾行，是靠左的清單，不可能是置中。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *   Rewards:
+     *   - +Access to the Province of Wynn
+     *   - +1 Ragni Teleportation Scroll      ← 只有這行被判成置中
+     *   - +35 Experience Points
+     * </pre>
+     * 任務獎勵一行一則，五行同一個縮排。{@link BlockLayout#centered} 拿整塊最寬的
+     * 一行比，Ragni 那一行的寬度剛好湊得上「置中該有的縮排」，就被判成置中；
+     * 譯文多了「張」、寬了 13px，整行往左挪了一半，跟上下幾行錯開。
+     *
+     * <p>置中的行縮排由內容寬度決定：縮排一樣，內容就該一樣寬。兩行縮排相同、
+     * 寬度差了一截，那個縮排就是清單的縮排，同一組全部改回靠左。
+     */
+    static void sameLeadList(List<List<Run>> rows, boolean[] centre) {
+        int n = rows.size();
+        int[] lead = new int[n];
+        int[] body = new int[n];
+        for (int i = 0; i < n; i++) {
+            lead[i] = leadWidth(rows.get(i));
+            body[i] = rowWidth(rows.get(i)) - lead[i];
+        }
+        boolean[] list = new boolean[n];
+        for (int i = 0; i < n; i++) {
+            if (lead[i] <= 0 || body[i] <= 0) {
+                continue;
+            }
+            for (int j = i + 1; j < n; j++) {
+                if (body[j] > 0 && Math.abs(lead[i] - lead[j]) <= 1
+                        && Math.abs(body[i] - body[j]) > 6) {
+                    list[i] = true;
+                    list[j] = true;
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (list[i]) {
+                centre[i] = false;
+            }
+        }
+    }
+
+    /** 行首有幾個半形空白；碰到偏移字元或實字就停，偏移字元開頭的算 0。 */
+    private static int plainSpaceLead(List<Run> row) {
+        int n = 0;
+        for (Run run : row) {
+            if (run.space()) {
+                return n == 0 ? 0 : n;
+            }
+            String text = run.text();
+            for (int k = 0; k < text.length(); k++) {
+                char c = text.charAt(k);
+                if (c != ' ') {
+                    return n;
+                }
+                n++;
+            }
+        }
+        return 0;                                // 整行都是空白
+    }
+
     /** 拆好的原文各行，交給 {@link BlockLayout} 判斷置中。 */
     private static boolean[] centredRows(List<List<Run>> rows) {
         List<Component> lines = new ArrayList<>(rows.size());
@@ -4425,7 +4532,31 @@ public final class LineTranslator {
      * @return 收過之後的行首補正
      */
     private static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns) {
-        int over = rowWidth(made) + pad - rowWidth(orig);
+        return fitWidth(orig, made, pad, columns, chatWidth());
+    }
+
+    /**
+     * 見上。單欄的行另外放寬到聊天視窗的寬度。
+     *
+     * <h2>實機回報</h2>
+     * 任務完成的獎勵清單一行一則訊息送來，每行用同一個縮排排成一列。
+     * 「+1 Ragni Teleportation Scroll」譯成「+1 張 Ragni Teleportation Scroll」
+     * 多了 13px，照「不能比原文寬」的規則把縮排收掉 13px，那一行就比上下
+     * 幾行往左凸出去。
+     *
+     * <p>「不能比原文寬」是為了兩欄的 Lootrun 結算不被折行（issue #719）。
+     * 單欄的行只有一段字，真正的上限是聊天視窗；比原文寬一點、視窗還放得下，
+     * 就該守住原文的縮排。
+     *
+     * @param window 聊天視窗的寬度；0 表示不知道，照原文的寬度收
+     */
+    static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns, int window) {
+        int limit = rowWidth(orig);
+        if (window > limit
+                && columns(chatSegmentWidths(orig, LineTranslator::runWidth)) < 2) {
+            limit = window;
+        }
+        int over = rowWidth(made) + pad - limit;
         for (int px : columns) {
             over += px;
         }
@@ -4455,6 +4586,16 @@ public final class LineTranslator {
             pad -= Math.min(pad, over);
         }
         return pad;
+    }
+
+    /** 聊天視窗現在多寬；拿不到（測試、還沒進遊戲）就回 0。 */
+    private static int chatWidth() {
+        try {
+            return net.minecraft.client.gui.components.ChatComponent.getWidth(
+                    net.minecraft.client.Minecraft.getInstance().options.chatWidth().get());
+        } catch (Throwable t) {
+            return 0;
+        }
     }
 
     /** 見 {@link #fitWidth}：收欄距時兩欄之間至少留這麼寬，大約一個半形空白。 */
