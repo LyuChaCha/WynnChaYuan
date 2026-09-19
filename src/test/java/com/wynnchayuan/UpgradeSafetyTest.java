@@ -202,6 +202,8 @@ public final class UpgradeSafetyTest {
         // 0.2.2：物品名稱從開／關改成三段。舊的 true 換成「只顯示譯名」。
         expected.remove("translateItemNames");
         expected.addProperty("itemNames", "ON");
+        // 0.2.2：「跟別人講話請用原文」的警語。升級上來的人還沒看過，所以是 false。
+        expected.addProperty("noticeDismissed", false);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));

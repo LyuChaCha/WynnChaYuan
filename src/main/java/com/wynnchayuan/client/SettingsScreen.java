@@ -234,6 +234,16 @@ public final class SettingsScreen extends Screen {
         // 「更新說明」擺在這裡而不是藏進某一個分類：它講的是<b>整個模組</b>，
         // 不屬於物品、面板或對話任何一類；而有新版時那個提示要從 F6 一打開
         // 就看得到，不能要人先點對分類。
+        // ---- 右上角：警語 ----
+        //
+        // 「跟別的玩家講話請用原文」。第一次進 Wynncraft 會自動跳出，勾了不再顯示之後
+        // 只能從這裡打開，所以放在每一頁都看得到的標題列，不藏進分類。
+        addRenderableWidget(Button.builder(Component.literal("!"),
+                        b -> this.minecraft.setScreen(new NoticeScreen(this)))
+                .bounds(this.width - 28, 8, 20, 20)
+                .tooltip(net.minecraft.client.gui.components.Tooltip.create(T.c("notice.button")))
+                .build());
+
         int mid = this.width / 2;
         int left = mid - 148;
         addRenderableWidget(Button.builder(updateLabel(),

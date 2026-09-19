@@ -264,6 +264,22 @@ public final class CollectorConfig {
     private ItemNames itemNames = ItemNames.OFF;
 
     /**
+     * 「與其他玩家交流請用原文」的警語，玩家勾過「不再顯示」了沒。
+     *
+     * <p>第一次進到 Wynncraft 的角色選擇時自動跳出；之後只能從 F6 打開。
+     */
+    private boolean noticeDismissed = false;
+
+    public boolean noticeDismissed() {
+        return noticeDismissed;
+    }
+
+    public void setNoticeDismissed(boolean value) {
+        noticeDismissed = value;
+        save();
+    }
+
+    /**
      * 要用哪一種語言的譯文。
      *
      * <p>空字串表示「跟著遊戲語言走」——日文玩家裝好就是日文，不必先來翻設定。
@@ -1081,6 +1097,7 @@ public final class CollectorConfig {
         translateNametags = bool(o, "translateNametags", translateNametags);
         nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
+        noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
         // 舊版只有開／關：開過的人給「譯名」，其餘照預設（關閉）。
         if (o.has("itemNames")) {
             itemNames = enumOr(o, "itemNames", ItemNames.class, itemNames);
@@ -1260,6 +1277,7 @@ public final class CollectorConfig {
             o.addProperty("nametagMode", nametagMode.name());
             o.addProperty("panelSide", panelSide.name());
             o.addProperty("itemNames", itemNames.name());
+            o.addProperty("noticeDismissed", noticeDismissed);
             o.addProperty("panelGap", panelGap);
             o.addProperty("accentColor", accentColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
