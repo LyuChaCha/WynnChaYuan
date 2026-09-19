@@ -219,6 +219,12 @@ public final class TranslationStore {
             readOne(dirs.get(layer));
         }
         layer = topLayer;
+        // 墊底那層沒翻、上面那層翻了的裝備名，不再算「還沒翻」。
+        //
+        // 簡中是「繁中墊底、簡中在上」：繁中的 Mythic 刻意留空，於是全部進了
+        // gearNameKeys；簡中那層明明有譯名，名稱那一行的守門卻照樣把它擋回英文。
+        // 實機回報「簡中還是看不到 Mythic 的譯名」就是這個。
+        gearNameKeys.removeAll(nameKeys);
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
     }
 
