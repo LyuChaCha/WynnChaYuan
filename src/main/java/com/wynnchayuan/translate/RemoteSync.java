@@ -67,6 +67,7 @@ public final class RemoteSync {
         java.util.LinkedHashSet<String> names =
                 new java.util.LinkedHashSet<>(FileIndex.bundled(lang));
         names.addAll(FileIndex.inDirectory(cacheDir));
+        names.addAll(FileIndex.SCOPED);          // 不在清單裡，見 FileIndex#SCOPED
         return List.copyOf(names);
     }
 

@@ -39,6 +39,7 @@ public final class StarterFiles {
     /** 清單來自 _index.json —— 新增譯文檔不必改這裡。 */
     private static List<String> bundled(String lang) {
         List<String> names = new java.util.ArrayList<>(FileIndex.bundled(lang));
+        names.addAll(FileIndex.SCOPED);          // 不在清單裡，見 FileIndex#SCOPED
         names.add(INDEX);                      // 清單本身也要放出去，使用者才能自己加檔案；排最後，見類別說明
         return names;
     }

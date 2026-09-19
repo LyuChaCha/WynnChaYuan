@@ -175,6 +175,7 @@ public final class TranslationStore {
      */
     public void loadAll(List<Path> dirs) {
         entries.clear();
+        labelOnly.clear();
         seenSources.clear();
         flat.clear();
         unwrapped.clear();
@@ -308,10 +309,46 @@ public final class TranslationStore {
                      .forEach(wanted::add);
             }
             wanted.forEach(this::load);
+            loadScoped(dir);
         } catch (Exception e) {
             lastResult = "讀取失敗：" + e.getMessage();
             System.err.println("[WynnChaYuan] 讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
         }
+    }
+
+    /** 只給漂浮字用的譯法，見 {@link FileIndex#SCOPED}。後面的層蓋前面的。 */
+    private final Map<String, String> labelOnly = new java.util.HashMap<>();
+
+    private void loadScoped(Path dir) {
+        Path file = dir.resolve(FileIndex.SCOPED.get(0));
+        if (!Files.isRegularFile(file)) {
+            return;
+        }
+        try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+            JsonElement root = JsonParser.parseReader(r);
+            if (!root.isJsonObject()) {
+                return;
+            }
+            JsonObject obj = root.getAsJsonObject();
+            for (String key : obj.keySet()) {
+                JsonElement v = obj.get(key);
+                if (!key.startsWith("_") && v.isJsonPrimitive() && !v.getAsString().isBlank()) {
+                    labelOnly.put(key.strip(), v.getAsString().strip());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("[WynnChaYuan] 讀不到 " + file + "：" + e.getMessage());
+        }
+    }
+
+    /**
+     * 漂浮字專用的譯法；沒有就回 {@code null}，呼叫端再照一般語料查。
+     *
+     * <p>實機：挖掘遺址 B 的解謎地板寫著 Forwards／Back／Left／Right，
+     * 一般語料裡的 Back 是介面上的「返回」，於是地板上冒出一塊「返回」。
+     */
+    public String labelLookup(String template) {
+        return template == null ? null : labelOnly.get(template.strip());
     }
 
     /** 全部載完之後給人看的一句話。 */

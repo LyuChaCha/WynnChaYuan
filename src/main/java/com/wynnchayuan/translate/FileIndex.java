@@ -41,6 +41,19 @@ public final class FileIndex {
 
     private FileIndex() {}
 
+    /**
+     * 只在特定地方生效的譯文檔。<b>刻意不列進 _index.json</b>。
+     *
+     * <p>{@code scoped/label.json} 收的是只給漂浮字用的譯法：解謎地板上的
+     * 「Back」是「後」，而同一個字在介面上是「返回」。一般語料一個原文只能
+     * 有一種譯法（validate 會擋），所以另外放。
+     *
+     * <p>不進清單是為了舊版：舊版照清單把每個檔都當一般語料載入，
+     * 「Back」會被整個換成「後」，介面上的返回鍵就錯了。舊版不認得這個檔，
+     * 自然不會讀到它。
+     */
+    public static final List<String> SCOPED = List.of("scoped/label.json");
+
     /** 打包在 jar 裡的清單。 */
     public static List<String> bundled() {
         return bundled(Languages.DEFAULT);

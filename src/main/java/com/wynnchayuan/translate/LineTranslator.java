@@ -3755,12 +3755,32 @@ public final class LineTranslator {
      * 一開始就寫下的規則：寧可不翻，也不要畫出錯位的東西——何況錯位的是
      * <b>遊戲原本的畫面</b>，那比我們自己的面板嚴重得多。
      */
+    /**
+     * 漂浮字：先查漂浮字專用的譯法，查不到再走一般的 {@link #translate}。
+     * 見 {@link TranslationStore#labelLookup}。
+     */
+    public static Component translateFloating(StyledText label, TranslationStore store) {
+        LineParts parts = LineParts.of(label);
+        String scoped = store.labelLookup(parts.template());
+        if (scoped != null && !scoped.isBlank()) {
+            Component rebuilt = rebuild(scoped, parts, store);
+            if (rebuilt != null) {
+                return unslant(rebuilt);
+            }
+        }
+        return translate(label, store);
+    }
+
     public static Component translateLabel(StyledText label, TranslationStore store) {
         LineParts parts = LineParts.of(label);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
-        String translated = lookup(parts.template(), store);
+        // 漂浮字專用的譯法優先，見 TranslationStore#labelLookup
+        String translated = store.labelLookup(parts.template());
+        if (translated == null || translated.isBlank()) {
+            translated = lookup(parts.template(), store);
+        }
         if (translated == null || translated.isBlank()) {
             translated = labelByLine(parts.template(), store);
         }

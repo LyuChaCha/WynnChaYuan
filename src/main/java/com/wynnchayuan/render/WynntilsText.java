@@ -400,7 +400,12 @@ public final class WynntilsText {
         net.minecraft.network.chat.Component hit = NAMES.get(name);
         if (hit == null) {
             StyledText text = StyledText.fromComponent(name);
-            StyledText shown = line(text, store);
+            // 漂浮字專用的譯法優先，見 TranslationStore#labelLookup
+            String scoped = store.labelLookup(
+                    com.wynnchayuan.capture.LineParts.of(text).template());
+            StyledText shown = scoped != null
+                    ? StyledText.fromComponent(LineTranslator.translateFloating(text, store))
+                    : line(text, store);
             hit = shown == text ? name : shown.getComponent();
             NAMES.put(name, hit);
             if (hit == name && config.collect()) {
