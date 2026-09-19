@@ -317,6 +317,11 @@ public final class WynntilsText {
             StyledText text = StyledText.fromComponent(name);
             StyledText shown = line(text, store);
             hit = shown == text ? name : shown.getComponent();
+            // 逐段那條路可能翻了別段（狀態詞），名字仍是英文，所以不論如何都再換一次
+            net.minecraft.network.chat.Component named = bossBarName(hit, store);
+            if (named != null) {
+                hit = named;
+            }
             BARS.put(name, hit);
             // 畫面上是英文時，先分清楚是「根本沒走到這裡」還是「走到了但查不到」：
             // captured.json 的 events 裡有沒有 bossbar.* 就知道。查不到的收進 capture。
@@ -329,6 +334,60 @@ public final class WynntilsText {
             }
         }
         return hit;
+    }
+
+    /**
+     * 只換 boss bar 開頭的怪物名：「Bronchial - 113k❤ - Weak Dam Def」。
+     *
+     * <h2>為什麼逐段查不到</h2>
+     * Wynncraft 把「名字 - 血量❤ - 」放在<b>同一個</b>顏色段裡，逐段查表拿到的是
+     * 整串，永遠對不上。名牌語料又是「Bronchial {#}{#}」——後面兩個是等級膠囊
+     * 的圖示——所以只拿名字精確查也查不到。實機回報：頭上名牌是「支气管体」，
+     * boss bar 還是 Bronchial。
+     *
+     * <p>先精確查名字，查不到再查名牌的鍵、拿掉尾巴的圖示。譯文裡還留著
+     * 佔位符的不用，寧可留英文。名字跨了顏色段就放棄。
+     *
+     * @return 換好名字的標題；查不到回傳 {@code null}
+     */
+    static net.minecraft.network.chat.Component bossBarName(
+            net.minecraft.network.chat.Component bar, TranslationStore store) {
+        String plain = bar.getString();
+        int cut = plain.indexOf(" - ");
+        if (cut <= 0) {
+            return null;
+        }
+        String head = plain.substring(0, cut).strip();
+        if (head.isEmpty()) {
+            return null;
+        }
+        String dst = store.lookup(head);
+        if (dst == null) {
+            String plate = store.lookup(head + " {#}{#}");
+            if (plate != null && plate.endsWith("{#}{#}")) {
+                dst = plate.substring(0, plate.length() - "{#}{#}".length()).strip();
+            }
+        }
+        if (dst == null || dst.isEmpty() || dst.contains("{")) {
+            return null;
+        }
+        String translated = dst;
+        net.minecraft.network.chat.MutableComponent out =
+                net.minecraft.network.chat.Component.empty();
+        boolean[] done = {false};
+        bar.visit((style, text) -> {
+            int at = done[0] ? -1 : text.indexOf(head);
+            if (at >= 0) {
+                out.append(net.minecraft.network.chat.Component.literal(
+                        text.substring(0, at) + translated
+                                + text.substring(at + head.length())).withStyle(style));
+                done[0] = true;
+            } else if (!text.isEmpty()) {
+                out.append(net.minecraft.network.chat.Component.literal(text).withStyle(style));
+            }
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return done[0] ? out : null;
     }
 
     private static final java.util.Map<net.minecraft.network.chat.Component,

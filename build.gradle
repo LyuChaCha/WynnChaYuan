@@ -381,6 +381,15 @@ tasks.register('runStatLabelIndentChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runStatLabelIndentChecks' }
 
+// boss bar 開頭的怪物名跟名牌用同一條譯文。
+tasks.register('runBossBarNameChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.BossBarNameTest'
+}
+tasks.named('check') { dependsOn 'runBossBarNameChecks' }
+
 // 多行名牌逐行回退：一個名字翻一次就該覆蓋所有變體，不必為每個變體各建一個鍵。
 tasks.register('runNameplateChecks', JavaExec) {
     group = 'verification'
