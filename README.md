@@ -161,14 +161,13 @@ gradle build
 | 名稱 | Minecraft ID |
 |---|---|
 | LyuChaCha | `Green_teaTW` |
-| 芋圓YuYuan | `s103064` |
 
 ### 贊助者
 
 | 名稱 | Minecraft ID |
 |---|---|
-| LyuChaCha | `Green_teaTW` |
 | ㄉ綠 | `MlyuL` |
+| 蛇蛇 | `snakiesnake` |
 
 ### 貢獻者
 
