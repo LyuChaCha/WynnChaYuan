@@ -42,13 +42,13 @@ public final class ShinyNameTest {
         TranslationStore cn = new TranslationStore();
         cn.loadAll(List.of(root.resolve("zh_tw"), root.resolve("zh_cn")));
         cn.setNameMode(CollectorConfig.ItemNames.ON);
-        is(cn, "Shiny Sunstar", "耀光的太阳与星星");
+        is(cn, "Shiny Sunstar", "耀光的太阳与星星圣器");
         String mw = cn.lookup("Shiny Masterwork Apocalypse");
         check("簡中 Shiny Masterwork 也照裝備譯名（實際 " + mw + "）",
               mw != null && mw.startsWith("耀光的") && !mw.contains("Apocalypse"));
 
         cn.setNameMode(CollectorConfig.ItemNames.BOTH);
-        is(cn, "Shiny Sunstar", "耀光的太阳与星星 (Shiny Sunstar)");
+        is(cn, "Shiny Sunstar", "耀光的太阳与星星圣器 (Shiny Sunstar)");
         cn.setNameMode(CollectorConfig.ItemNames.OFF);
         is(cn, "Shiny Sunstar", null);
 

@@ -23,13 +23,13 @@ public final class LayeredGearNameTest {
 
         store.setNameMode(CollectorConfig.ItemNames.ON);
         check("開：簡中查得到裝備名（實際 " + store.lookup("Abhorrence") + "）",
-              "憎恶".equals(store.lookup("Abhorrence")));
+              "憎恶之矛".equals(store.lookup("Abhorrence")));
         List<net.minecraft.network.chat.Component> out =
                 com.wynnchayuan.render.TooltipPanel.translateLines(List.of(
                         net.minecraft.network.chat.Component.literal("Abhorrence"),
                         net.minecraft.network.chat.Component.literal("Abhorrence")), store);
         String shown = out.isEmpty() ? "(沒翻)" : out.get(out.size() - 1).getString();
-        check("★ 開：tooltip 名稱那一行畫成簡中（實際 " + shown + "）", "憎恶".equals(shown));
+        check("★ 開：tooltip 名稱那一行畫成簡中（實際 " + shown + "）", "憎恶之矛".equals(shown));
 
         // ★ 繁中那層的 Mythic 是空的（刻意不翻）；簡中那層的譯名不能被它擋回英文
         check("簡中的 Mythic 不算「還沒翻的裝備名」", !store.isBareGearName("Sunstar"));
@@ -39,11 +39,11 @@ public final class LayeredGearNameTest {
                         net.minecraft.network.chat.Component.literal("Sunstar")), store);
         String mythShown = myth.isEmpty() ? "(沒翻)" : myth.get(myth.size() - 1).getString();
         check("★ 簡中 Mythic 的名稱行畫成中文（實際 " + mythShown + "）",
-              "太阳与星星".equals(mythShown));
+              "太阳与星星圣器".equals(mythShown));
 
         store.setNameMode(CollectorConfig.ItemNames.BOTH);
         check("譯名加原文（實際 " + store.lookup("Abhorrence") + "）",
-              "憎恶 (Abhorrence)".equals(store.lookup("Abhorrence")));
+              "憎恶之矛 (Abhorrence)".equals(store.lookup("Abhorrence")));
 
         store.setNameMode(CollectorConfig.ItemNames.OFF);
         check("關：留原文（實際 " + store.lookup("Abhorrence") + "）",

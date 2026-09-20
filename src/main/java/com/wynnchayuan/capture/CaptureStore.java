@@ -129,6 +129,36 @@ public final class CaptureStore {
         known = lookup == null ? t -> false : lookup;
     }
 
+    /** 語料裡還有<b>更長</b>的原文以這一段開頭嗎。見 {@link #knowsLonger}。 */
+    private volatile java.util.function.Predicate<String> longer = t -> false;
+
+    /**
+     * 告訴收集端「語料裡還有更長的原文以這一段開頭」。
+     *
+     * <h2>擋的是什麼</h2>
+     * 對話是一個字一個字打出來的，長句在對話框裡還會重新換行——一有閃失，
+     * 半截的那一份就會被當成「打完了」送進 {@code captured.json}：
+     *
+     * <pre>
+     *   Go on, I don't have time for you. My brother          ← 收到的
+     *   Go on, I don't have time for you. My brother keeps    ← quest.json 早就有整句
+     *   sending me people all the time.
+     * </pre>
+     *
+     * 提示框也有同一個毛病：{@code Corkian Augments can be applied}、
+     * {@code This aspect socket is locked} 這些整段都翻好了，收到的卻是第一行。
+     * 實機一份 665 條的 {@code captured.json} 裡有 36 條是這樣來的。
+     *
+     * <p>這種東西<b>比沒收更糟</b>：它看起來像個缺口，翻了之後畫面上就會
+     * 夾出半中半英——整段那條才是該用的鍵。
+     *
+     * <p>代價是「剛好是某條開頭的短句」以後收不到了。可以接受：那種句子
+     * 語料裡幾乎一定已經有了，而且漏收一條的代價遠小於收進一條假缺口。
+     */
+    public void knowsLonger(java.util.function.Predicate<String> lookup) {
+        longer = lookup == null ? t -> false : lookup;
+    }
+
     /**
      * 語料收過、但還沒有譯文的字串，各被看到幾次。
      *
@@ -186,6 +216,11 @@ public final class CaptureStore {
                 return c;
             });
             noteEvent("counted.untranslated");
+            return false;
+        }
+        if (longer.test(template)) {
+            // 打到一半的半句、或提示框只收到第一行。見 knowsLonger。
+            noteEvent("skipped.fragment");
             return false;
         }
         String key = hash(template);
