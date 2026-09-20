@@ -560,4 +560,75 @@ public final class WynntilsText {
     private static boolean tracker(Object overlay) {
         return overlay != null && TRACKER.equals(overlay.getClass().getSimpleName());
     }
+
+    /**
+     * mixin 的入口：Wynntils 自己那幾個畫面上的<b>每一段字</b>。
+     *
+     * <h2>換的是什麼</h2>
+     * 綜合頁面左邊那一列任務／洞穴名、分頁標題、按鈕說明⋯⋯Wynntils 畫自己的
+     * 畫面時，字全部經過它的 {@code FontRenderer}。那裡面有兩種來源：
+     *
+     * <ul>
+     *   <li>Wynntils 自己的介面字串。它附了 zh_tw／zh_cn 語言檔，但四千多條只翻了
+     *       兩千多條——沒翻到的那些送到這裡時還是英文。</li>
+     *   <li><b>Wynncraft 送來的內容</b>：任務名、洞穴名、「Currently in progress」。
+     *       Wynntils 只是把伺服器給的字重畫一次，它的語言檔永遠不會有這些，
+     *       但我們的語料裡早就有了。</li>
+     * </ul>
+     *
+     * <p>查得到才換，查不到原樣回傳——所以已經是中文的字（Wynntils 自己翻好的、
+     * 或我們上一幀換過的）走到這裡一律不動。
+     *
+     * @return 換好的那一段；不該換或查不到時<b>原樣</b>回傳
+     */
+    public static StyledText screenText(StyledText text) {
+        try {
+            return screenText(text, WynnChaYuan.config(), WynnChaYuan.translations());
+        } catch (Throwable t) {
+            return text;                       // 別人的算繪流程，不能讓它炸
+        }
+    }
+
+    static StyledText screenText(StyledText text, CollectorConfig config,
+                                 TranslationStore store) {
+        if (text == null || text.isEmpty() || store == null
+                || config == null || !config.wynntilsUi()) {
+            return text;
+        }
+        net.minecraft.network.chat.Component hit = LineTranslator.translate(text, store);
+        if (hit == null) {
+            return text;
+        }
+        return StyledText.fromComponent(hit);
+    }
+
+    /**
+     * mixin 的入口：Wynntils 清單畫面右邊那張卡（滑鼠停在某一項時跳出來的）。
+     *
+     * <h2>為什麼不能跟上面共用</h2>
+     * 那張卡不走 {@code FontRenderer}——Wynntils 把它交給原版的
+     * {@code renderComponentTooltip}，一次送一整份 {@code List<Component>}。
+     * 一整份送過來反而更好：可以走跟物品 tooltip <b>完全同一套</b>的替換，
+     * 整段查得到就用整段，查不到才逐行——「Bring [20 Void Essences] to the
+     * Slaying Post」那種跨行的句子只有整段那條路查得到。
+     *
+     * @return 換好的那一份；沒有東西可換時<b>原樣</b>回傳同一個 list
+     */
+    public static java.util.List<net.minecraft.network.chat.Component> menuTooltip(
+            java.util.List<net.minecraft.network.chat.Component> lines) {
+        try {
+            CollectorConfig config = WynnChaYuan.config();
+            if (lines == null || lines.isEmpty() || config == null || !config.wynntilsUi()) {
+                return lines;
+            }
+            java.util.List<net.minecraft.network.chat.Component> out =
+                    TooltipPanel.translateInPlace(lines, WynnChaYuan.translations());
+            if (out == null || out.isEmpty()) {
+                return lines;                  // 約定：空的代表原文不動
+            }
+            return out;
+        } catch (Throwable t) {
+            return lines;
+        }
+    }
 }

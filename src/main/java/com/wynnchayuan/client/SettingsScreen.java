@@ -543,6 +543,12 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().cycleTrackerMode(-1);
                     b.setMessage(trackerModeLabel());
                 });
+        // Wynntils 自己畫的那些畫面（綜合頁面、地圖⋯⋯）。見 CollectorConfig#wynntilsUi。
+        cycle("world.wynntils",
+                this::wynntilsUiLabel, b -> {
+                    WynnChaYuan.config().toggleWynntilsUi();
+                    b.setMessage(wynntilsUiLabel());
+                });
         // 目標那幾條是進度條上的字，沒有地方再開一個框，所以只有開與關。
         cycle("world.objectives",
                 this::objectiveLabel, b -> {
@@ -907,6 +913,11 @@ public final class SettingsScreen extends Screen {
             case RIGHT -> T.s("mode.right");
             case LEFT -> T.s("mode.left");
         });
+    }
+
+    /** Wynntils 自己畫的那些畫面。見 {@link com.wynnchayuan.CollectorConfig#wynntilsUi}。 */
+    private Component wynntilsUiLabel() {
+        return ctrl(onOff(WynnChaYuan.config().wynntilsUi()));
     }
 
     /** 市集搜尋打中文自動換成英文。見 {@code MarketListener}。 */
