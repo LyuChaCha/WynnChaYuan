@@ -281,6 +281,22 @@ public final class BlockLayout {
         if (maxLead - minLead <= TOLERANCE && maxContent - minContent <= TOLERANCE) {
             return false;
         }
+        // 縮排不同、<b>右緣卻對齊</b>的是表格，不是置中。
+        //
+        // 置中的行右邊留白等於左邊，縮排多 d 像素，右緣就往內縮 d 像素。
+        // 裝備的屬性表剛好相反：數值靠右排到同一條線，只有帶圖示的那幾列
+        // 開頭多幾像素的偏移。每一列都幾乎撐滿整塊，span 落在 15% 的容差裡，
+        // 先前整塊被判成置中——簡中的 Divzer「灵巧」「法力偷取」「攻击速度」
+        // 就這樣被擺到原文標籤那一格的正中間。
+        int minRight = Integer.MAX_VALUE;
+        int maxRight = Integer.MIN_VALUE;
+        for (int i = start; i < end; i++) {
+            minRight = Math.min(minRight, lead[i] + content[i]);
+            maxRight = Math.max(maxRight, lead[i] + content[i]);
+        }
+        if (maxLead - minLead > TOLERANCE && maxRight - minRight <= TOLERANCE) {
+            return false;
+        }
         // 越長的行縮排越小——這是置中的定義，而且它<b>不受量測誤差影響</b>：
         // 就算整塊的寬度都量偏了，長短的順序還是對的。
         //

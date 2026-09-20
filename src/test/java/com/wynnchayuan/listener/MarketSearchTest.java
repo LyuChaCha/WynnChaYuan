@@ -160,7 +160,10 @@ public final class MarketSearchTest {
         }
         report("素材還在（Snow Heart）", hearts.contains("Snow Heart"));
         report("任務名不當候選", market.candidates("致命的失足").isEmpty());
-        report("NPC 名不當候選", market.candidates("鐵匠").isEmpty());
+        // 「鐵匠」會對到飾品 Smithy（鐵匠鋪），那是正當的候選；要擋的是 NPC 本身。
+        report("NPC 名不當候選（實際：" + market.candidates("鐵匠") + "）",
+               !market.candidates("鐵匠").contains("Blacksmith")
+                       && !market.candidates("鐵匠").contains("The Blacksmith"));
         report("面向不當候選", market.candidates("城垛加固之相").isEmpty());
         report("技能名不當候選", market.candidates("箭矢炸彈").isEmpty());
 

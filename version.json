@@ -1,12 +1,51 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.1_2",
+ "latest": "0.2.2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.2": {
+   "headline": "Item names, boss bar and layout fixes",
+   "items": [
+    "F6 can show item names: translated, translated with the original in brackets, or off (off by default)",
+    "Shiny gear names are translated, keeping the gear's own name",
+    "A notice about using the original terms when talking to other players, shown once on joining and from F6",
+    "The mob name and the Weak / Dam / Def matchups on the boss bar are translated",
+    "Loot chest floating labels keep the colour of every segment",
+    "Stat rows in tooltips stay left-aligned, and the large DPS and Health figures keep their font",
+    "Multi-line Chinese and Japanese chat messages are re-wrapped instead of copying the English line breaks",
+    "Dialogue lines whose in-game wording differs slightly from the corpus are matched within the tracked quest"
+   ],
+   "zh_tw": {
+    "headline": "物品名稱、boss bar 與版面修正",
+    "items": [
+     "F6 可以選物品名稱顯示方式：譯名、譯名加原文、關閉（預設關閉）",
+     "Shiny 裝備的名稱會翻譯，後面照裝備自己的譯名",
+     "新增使用須知：提醒跟其他玩家交流請用原文，第一次進遊戲會跳出，也可以從 F6 打開",
+     "boss bar 的怪物名與右邊的易傷／增傷／防護會翻譯",
+     "寶箱的漂浮字保留原文每一段的顏色",
+     "提示框的屬性列維持靠左，放大的每秒傷害與生命數字保留原本的字型",
+     "中文與日文的多行聊天訊息改成重新斷行，不再照英文的位置斷",
+     "實機措辭與語料略有出入的對話，會在追蹤中的任務裡比對"
+    ]
+   },
+   "zh_cn": {
+    "headline": "物品名称、boss bar 与排版修正",
+    "items": [
+     "F6 可以选择物品名称的显示方式：译名、译名加原文、关闭（默认关闭）",
+     "Shiny 装备的名称会翻译，后面照装备自己的译名",
+     "新增使用须知：提醒与其他玩家交流请用原文，第一次进游戏会弹出，也可以从 F6 打开",
+     "boss bar 的怪物名与右边的易伤／增伤／防护会翻译",
+     "宝箱的漂浮字保留原文每一段的颜色",
+     "提示框的属性栏保持左对齐，放大的每秒伤害与生命数字保留原本的字体",
+     "中文与日文的多行聊天消息改为重新断行，不再照英文的位置断",
+     "实机措辞与语料略有出入的对话，会在追踪中的任务里比对"
+    ]
+   }
+  },
   "0.2.1_2": {
    "headline": "Skill point tooltip alignment",
    "items": [

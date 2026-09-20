@@ -309,6 +309,11 @@ public final class DialogueOverlay {
             // 範圍從幾萬句窄到一百多句，第一個字就分得出來了。
             source = store.matchPrefix(template, template.strip().length(),
                                        com.wynnchayuan.capture.CurrentQuest.get());
+            if (source == null) {
+                // wiki 抄來的台詞跟實機差一兩個字，見 TranslationStore#nearQuestLine
+                source = store.nearQuestLine(template,
+                                             com.wynnchayuan.capture.CurrentQuest.get());
+            }
             if (source != null) {
                 // prefix 認得出完整句，不代表目前已經打出所有參數。交回翻譯器
                 // 還原地名／玩家名；參數尚未齊全就先等，不能把 raw {p}/{u}

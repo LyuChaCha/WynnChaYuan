@@ -186,7 +186,7 @@ public final class LookAtTranslator {
         Entity aimed = findAimedLabel(mc);
         StyledText target = aimed == null ? null : LABELS.get(aimed);
         if (target != null) {
-            Component translated = LineTranslator.translate(target, WynnChaYuan.translations());
+            Component translated = LineTranslator.translateFloating(target, WynnChaYuan.translations());
             if (translated == null) {
                 noteOnce("nametag.noMatch");
                 if (lastShown != null && (aimed == lastSource || sameContent(target))) {
@@ -216,7 +216,7 @@ public final class LookAtTranslator {
                 }
                 StyledText label = LABELS.get(other);
                 Component near = label == null ? null
-                        : LineTranslator.translate(label, WynnChaYuan.translations());
+                        : LineTranslator.translateFloating(label, WynnChaYuan.translations());
                 if (near != null) {
                     row.add(near);
                 }

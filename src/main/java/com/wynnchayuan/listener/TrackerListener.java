@@ -90,6 +90,14 @@ public final class TrackerListener {
     public void onWorldState(WorldStateEvent event) {
         TrackerOverlay.clear();
         com.wynnchayuan.render.DialogueOverlay.clear();
+        // 第一次進到 Wynncraft 時跳出「跟別人講話請用原文」的警語。
+        // 角色選擇是首選；直接進世界（沒經過選角）時也補一次。
+        var state = event.getNewState();
+        if (state == com.wynntils.models.worlds.type.WorldState.CHARACTER_SELECTION
+                || state == com.wynntils.models.worlds.type.WorldState.WORLD) {
+            net.minecraft.client.Minecraft.getInstance().execute(
+                    com.wynnchayuan.client.NoticeScreen::maybeShowOnJoin);
+        }
     }
 
     @SubscribeEvent

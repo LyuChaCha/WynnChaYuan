@@ -39,6 +39,7 @@ public final class StarterFiles {
     /** 清單來自 _index.json —— 新增譯文檔不必改這裡。 */
     private static List<String> bundled(String lang) {
         List<String> names = new java.util.ArrayList<>(FileIndex.bundled(lang));
+        names.addAll(FileIndex.SCOPED);          // 不在清單裡，見 FileIndex#SCOPED
         names.add(INDEX);                      // 清單本身也要放出去，使用者才能自己加檔案；排最後，見類別說明
         return names;
     }
@@ -90,6 +91,38 @@ public final class StarterFiles {
         if (written > 0) {
             System.out.println("[WynnChaYuan] " + (resume ? "補上上次沒倒完的 " : "已放入 ")
                     + written + " 個翻譯工作檔於 " + dir);
+        }
+        return written;
+    }
+
+    /**
+     * 補上<b>缺少的</b> scoped 檔（見 {@link FileIndex#SCOPED}）。
+     *
+     * <h2>為什麼不能只靠 installIfEmpty</h2>
+     * 那個方法看到資料夾裡已經有譯文就整個跳過，而升級上來的人資料夾一定不是空的。
+     * scoped 的檔刻意不列進 {@code _index.json}，同步時抓不到（遠端還沒有就是 404），
+     * 於是新加的 scoped 檔<b>永遠</b>不會出現在他們的快取裡。
+     *
+     * <p>實機回報：boss bar 右邊的 Weak／Dam／Def 沒翻，同步紀錄寫著「3 個檔案失敗」
+     * ——就是這三個 scoped 檔。
+     *
+     * <p>只補<b>不存在</b>的，已經在的一個都不蓋：那可能是使用者自己改過的。
+     *
+     * @return 補了幾個
+     */
+    public static int installMissingScoped(Path dir, String lang) {
+        int written = 0;
+        for (String name : FileIndex.SCOPED) {
+            Path out = dir.resolve(name);
+            if (Files.exists(out)) {
+                continue;
+            }
+            if (restore(dir, lang, name)) {
+                written++;
+            }
+        }
+        if (written > 0) {
+            System.out.println("[WynnChaYuan] 補上 " + written + " 個內建的 scoped 譯文檔");
         }
         return written;
     }

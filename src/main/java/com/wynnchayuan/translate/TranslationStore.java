@@ -121,6 +121,16 @@ public final class TranslationStore {
 
     private final java.util.Set<String> nameKeys =
             java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    /**
+     * 除了裝備名稱以外，<b>別的檔案</b>也有條目的原文（技能名、使命、Major ID⋯）。
+     *
+     * <p>F6 關掉物品名稱時，{@link #lookupBase} 會把 {@link #nameKeys} 一律當成
+     * 沒翻。裝備名翻開之後，撞名的那些（飾品 Diffraction＝技能「晶化蔓延」）
+     * 就被連坐，技能樹與使命的標題一起變回英文。撞名的交給名稱那一行的守門
+     * 處理（見 {@link #isBareGearName}），查表層不擋。
+     */
+    private final java.util.Set<String> otherOwners = new java.util.HashSet<>();
     private volatile int loadedFiles = 0;
 
     /**
@@ -175,6 +185,7 @@ public final class TranslationStore {
      */
     public void loadAll(List<Path> dirs) {
         entries.clear();
+        scopedOnly.clear();
         seenSources.clear();
         flat.clear();
         unwrapped.clear();
@@ -186,6 +197,7 @@ public final class TranslationStore {
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
+        otherOwners.clear();
         gearNameKeys.clear();
         market.clear();
         ordered.clear();
@@ -207,6 +219,12 @@ public final class TranslationStore {
             readOne(dirs.get(layer));
         }
         layer = topLayer;
+        // 墊底那層沒翻、上面那層翻了的裝備名，不再算「還沒翻」。
+        //
+        // 簡中是「繁中墊底、簡中在上」：繁中的 Mythic 刻意留空，於是全部進了
+        // gearNameKeys；簡中那層明明有譯名，名稱那一行的守門卻照樣把它擋回英文。
+        // 實機回報「簡中還是看不到 Mythic 的譯名」就是這個。
+        gearNameKeys.removeAll(nameKeys);
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
     }
 
@@ -308,10 +326,61 @@ public final class TranslationStore {
                      .forEach(wanted::add);
             }
             wanted.forEach(this::load);
+            loadScoped(dir);
         } catch (Exception e) {
             lastResult = "讀取失敗：" + e.getMessage();
             System.err.println("[WynnChaYuan] 讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
         }
+    }
+
+    /**
+     * 只在特定位置用的譯法，見 {@link FileIndex#SCOPED}。鍵是範圍（檔名去掉
+     * {@code .json}：{@code label}、{@code bossbar}），後面的層蓋前面的。
+     */
+    private final Map<String, Map<String, String>> scopedOnly = new java.util.HashMap<>();
+
+    private void loadScoped(Path dir) {
+        for (String name : FileIndex.SCOPED) {
+            Path file = dir.resolve(name);
+            if (!Files.isRegularFile(file)) {
+                continue;
+            }
+            String scope = file.getFileName().toString().replaceFirst("\\.json$", "");
+            try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+                JsonElement root = JsonParser.parseReader(r);
+                if (!root.isJsonObject()) {
+                    continue;
+                }
+                JsonObject obj = root.getAsJsonObject();
+                Map<String, String> into =
+                        scopedOnly.computeIfAbsent(scope, k -> new java.util.HashMap<>());
+                for (String key : obj.keySet()) {
+                    JsonElement v = obj.get(key);
+                    if (!key.startsWith("_") && v.isJsonPrimitive()
+                            && !v.getAsString().isBlank()) {
+                        into.put(key.strip(), v.getAsString().strip());
+                    }
+                }
+            } catch (Exception e) {
+                System.err.println("[WynnChaYuan] 讀不到 " + file + "：" + e.getMessage());
+            }
+        }
+    }
+
+    /**
+     * 漂浮字專用的譯法；沒有就回 {@code null}，呼叫端再照一般語料查。
+     *
+     * <p>實機：挖掘遺址 B 的解謎地板寫著 Forwards／Back／Left／Right，
+     * 一般語料裡的 Back 是介面上的「返回」，於是地板上冒出一塊「返回」。
+     */
+    public String labelLookup(String template) {
+        return scopedLookup("label", template);
+    }
+
+    /** 某個範圍專用的譯法；沒有就回 {@code null}。 */
+    public String scopedLookup(String scope, String template) {
+        Map<String, String> m = scopedOnly.get(scope);
+        return m == null || template == null ? null : m.get(template.strip());
     }
 
     /** 全部載完之後給人看的一句話。 */
@@ -488,6 +557,11 @@ public final class TranslationStore {
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
+                // 跟下面收 nameKeys 同一個判準；gearNames 沒標時預設是 true，
+                // 技能檔也沒標，只看它會漏掉技能名。
+                if (!(itemNames && gearNames && "name".equals(optString(e, "role")))) {
+                    otherOwners.add(srcKey);
+                }
                 layerOf.put(srcKey, layer);
                 ordered.add(srcKey);
                 if (srcKey.length() >= MIN_PREFIX_LENGTH) {
@@ -547,6 +621,7 @@ public final class TranslationStore {
             seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
+                otherOwners.add(key.strip());   // 扁平檔一律不是裝備名稱
                 layerOf.put(key.strip(), layer);
                 market.addListed(key.strip(), v.getAsString().strip());
                 ordered.add(key.strip());
@@ -1092,6 +1167,18 @@ public final class TranslationStore {
         this.translateNames = value;
     }
 
+    /**
+     * 物品名稱照 F6 設定顯示。{@code OFF} 保留英文、{@code ON} 只給譯名、
+     * {@code BOTH} 給「譯名 (原文)」。
+     */
+    public void setNameMode(com.wynnchayuan.CollectorConfig.ItemNames mode) {
+        this.translateNames = mode != com.wynnchayuan.CollectorConfig.ItemNames.OFF;
+        this.namesWithOriginal = mode == com.wynnchayuan.CollectorConfig.ItemNames.BOTH;
+    }
+
+    /** 見 {@link #setNameMode}：譯名後面要不要括號附原文。 */
+    private volatile boolean namesWithOriginal = false;
+
     /** @return 譯文；沒有對應條目時回傳 {@code null} */
     /**
      * 這句話是誰講的。
@@ -1203,6 +1290,107 @@ public final class TranslationStore {
             return null;
         }
         return unique(prefixIndex, key);
+    }
+
+    /**
+     * 同一個任務裡、只差一兩個字的那一句。
+     *
+     * <h2>實機回報</h2>
+     * 語料裡兩萬多句台詞是從 wiki 抄的，措辭常跟實機差一點：
+     * <pre>
+     *   語料  You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard…
+     *   實機  You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard…
+     * </pre>
+     * 少一個 for，整句查不到，前綴比對也在 searching 之後斷掉，整句留在英文。
+     * 玩家看到的「有特別顏色的句子都變英文」多半是這種——帶物品名的句子
+     * 最常被 wiki 改寫。
+     *
+     * <h2>為什麼不怕貼錯</h2>
+     * 錯的中文比沒翻更糟（見 {@code matchPrefix} 的撞句問題），所以條件很緊：
+     * <ul>
+     *   <li>只在<b>目前追蹤的任務</b>裡找，不碰全庫</li>
+     *   <li>畫面上至少八個字</li>
+     *   <li>逐字比對，差的字數不超過總字數的八分之一（至少容許一個）</li>
+     *   <li>第二像的那句要差得明顯更多，分不出是哪一句就不給</li>
+     * </ul>
+     * 畫面上還在逐字打字時拿候選的<b>開頭同樣字數</b>來比，
+     * 所以打到一半也認得出來。
+     *
+     * @return 語料裡那一句的原文；找不到或不夠確定時回傳 {@code null}
+     */
+    public String nearQuestLine(String typed, String quest) {
+        if (typed == null || quest == null || quest.isBlank()) {
+            return null;
+        }
+        java.util.TreeMap<String, String> scoped = byQuest.get(
+                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+        if (scoped == null) {
+            return null;
+        }
+        String[] said = nearWords(typed);
+        if (said.length < NEAR_MIN_WORDS) {
+            return null;
+        }
+        int allowed = Math.max(1, said.length / 8);
+        String best = null;
+        int bestCost = Integer.MAX_VALUE;
+        int second = Integer.MAX_VALUE;
+        for (String src : scoped.keySet()) {
+            String[] words = nearWords(src);
+            int cost = Integer.MAX_VALUE;
+            // 還在打字時只看得到開頭，拿候選前面差不多長的一截來比
+            for (int take = Math.max(1, said.length - allowed);
+                 take <= Math.min(words.length, said.length + allowed); take++) {
+                cost = Math.min(cost, wordDistance(said, words, take));
+            }
+            if (cost < bestCost) {
+                second = bestCost;
+                bestCost = cost;
+                best = src;
+            } else if (cost < second) {
+                second = cost;
+            }
+        }
+        if (best == null || bestCost > allowed || second - bestCost < 2) {
+            return null;
+        }
+        return best;
+    }
+
+    private static final int NEAR_MIN_WORDS = 8;
+
+    /** 拆成比對用的字：小寫、去掉頭尾標點。 */
+    private static String[] nearWords(String text) {
+        String[] raw = text.strip().split("\\s+");
+        List<String> out = new java.util.ArrayList<>(raw.length);
+        for (String w : raw) {
+            String t = w.toLowerCase(java.util.Locale.ROOT)
+                        .replaceAll("^[\\p{Punct}…“”‘’]+|[\\p{Punct}…“”‘’]+$", "");
+            if (!t.isEmpty()) {
+                out.add(t);
+            }
+        }
+        return out.toArray(new String[0]);
+    }
+
+    /** {@code a} 對 {@code b} 前 {@code take} 個字的編輯距離（以字為單位）。 */
+    private static int wordDistance(String[] a, String[] b, int take) {
+        int[] prev = new int[take + 1];
+        int[] cur = new int[take + 1];
+        for (int j = 0; j <= take; j++) {
+            prev[j] = j;
+        }
+        for (int i = 1; i <= a.length; i++) {
+            cur[0] = i;
+            for (int j = 1; j <= take; j++) {
+                int sub = prev[j - 1] + (a[i - 1].equals(b[j - 1]) ? 0 : 1);
+                cur[j] = Math.min(sub, Math.min(prev[j] + 1, cur[j - 1] + 1));
+            }
+            int[] t = prev;
+            prev = cur;
+            cur = t;
+        }
+        return prev[take];
     }
 
     /**
@@ -1465,15 +1653,88 @@ public final class TranslationStore {
      * 見 {@code TooltipPanel#translateLines}。
      */
     public boolean isBareGearName(String key) {
-        return key != null && gearNameKeys.contains(key.strip());
+        if (key == null) {
+            return false;
+        }
+        String k = key.strip();
+        // F6 關掉物品名稱時，翻好的裝備名在名稱那一行也要留原文
+        return gearNameKeys.contains(k) || (!translateNames && nameKeys.contains(k));
+    }
+
+    /** 只有裝備名稱用到這個原文，別的檔案沒有同名條目。見 {@link #otherOwners}。 */
+    private boolean gearOnly(String key) {
+        return nameKeys.contains(key) && !otherOwners.contains(key);
     }
 
     public String lookup(String template) {
+        String hit = lookupBase(template);
+        if (hit == null) {
+            return shiny(template);
+        }
+        if (namesWithOriginal && gearOnly(template.strip())) {
+            // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
+            return hit + " (" + template.strip() + ")";
+        }
+        return hit;
+    }
+
+    /** Shiny 裝備名稱的前綴。 */
+    private static final String SHINY = "Shiny ";
+
+    /**
+     * 「Shiny Sunstar」「Shiny Masterwork Divzer」：前綴照 {@code scoped/name.json}
+     * 的 {@code Shiny} 翻，後面的裝備名照裝備自己的譯名。
+     *
+     * <p>語料裡不會有「Shiny X」這種鍵——那是遊戲替追蹤數據的 Mythic 加上的前綴，
+     * 每一件都收一條只會翻倍。後面的名字沒有自己的譯文時（繁中的 Mythic）
+     * 保留英文，而且<b>不能</b>去借別的檔案的同名譯文：Shiny Guardian 不是
+     * Major ID 的「守護者」，見 {@link #gearNameKeys}。
+     *
+     * <p>F6 關掉物品名稱時整個留英文；真的叫「Shiny Mask」的物品先被精確查表
+     * 接走，走不到這裡。
+     *
+     * @return 翻好的名稱；不是 Shiny 裝備、這個語言沒有前綴譯法時回傳 {@code null}
+     */
+    private String shiny(String template) {
+        if (template == null || !translateNames) {
+            return null;
+        }
+        String key = template.strip();
+        if (!key.startsWith(SHINY)) {
+            return null;
+        }
+        String rest = key.substring(SHINY.length()).strip();
+        boolean bare = gearNameKeys.contains(rest);
+        if (!bare && !nameKeys.contains(rest)) {
+            return null;                       // 後面不是裝備名
+        }
+        String pattern = scopedLookup("name", "Shiny");
+        if (pattern == null || !pattern.contains("{name}")) {
+            return null;
+        }
+        String name = bare ? null : lookupBase(rest);
+        if (name == null) {
+            name = rest;
+        }
+        String out = pattern.replace("{name}", name);
+        // 前綴是中日文、名字是英文時中間要空一格：「耀光的 Sunstar」
+        int at = pattern.indexOf("{name}");
+        if (at > 0 && name.equals(rest) && !Character.isWhitespace(pattern.charAt(at - 1))
+                && pattern.charAt(at - 1) > 0x2E80) {
+            out = pattern.substring(0, at) + " " + name + pattern.substring(at + "{name}".length());
+        }
+        if (namesWithOriginal) {
+            out = out + " (" + key + ")";
+        }
+        return out;
+    }
+
+    private String lookupBase(String template) {
         if (template == null) {
             return null;
         }
         String key = template.strip();
-        if (!translateNames && nameKeys.contains(key)) {
+        if (!translateNames && gearOnly(key)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
 
@@ -1663,7 +1924,7 @@ public final class TranslationStore {
         if (src == null) {
             return null;
         }
-        if (!translateNames && nameKeys.contains(src)) {
+        if (!translateNames && gearOnly(src)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
         return entries.get(src);

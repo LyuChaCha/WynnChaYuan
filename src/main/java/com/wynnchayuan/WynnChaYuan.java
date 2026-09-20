@@ -140,7 +140,7 @@ public final class WynnChaYuan implements ClientModInitializer {
                     com.wynnchayuan.translate.Languages.dir(dir, underneath), underneath);
         }
         translations = new TranslationStore();
-        translations.setTranslateNames(config.translateItemNames());
+        translations.setNameMode(config.itemNames());
         // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
         // 實機那份 308 條裡有 249 條語料早就翻好了，真正的缺口全被淹掉。
         // 用述詞接而不是把 store 交過去，收集端就不必認識翻譯端。
@@ -335,7 +335,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     }
 
     private static void loadLayers() {
-        translations.setTranslateNames(config.translateItemNames());
+        translations.setNameMode(config.itemNames());
         java.util.List<Path> layers = new java.util.ArrayList<>();
         String under = fallbackLanguage();
         if (under != null) {
@@ -589,6 +589,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.render.PanelShot.bind(screenshotKey);
         com.wynnchayuan.render.PanelShot.listen();
 
+        // 警語等載入畫面收掉才跳，見 NoticeScreen#clientTick
+        ClientTickEvents.END_CLIENT_TICK.register(
+                client -> com.wynnchayuan.client.NoticeScreen.clientTick());
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());

@@ -1873,12 +1873,60 @@ public final class LineTranslator {
                                       boolean centered, boolean leftAligned) {
         Component whole = translateWholeLine(line, store, centered, leftAligned);
         if (whole != null) {
-            return unslant(whole);
+            return unslant(dropIconSpaces(whole));
         }
         // 多行標籤（怪物名牌）整塊查不到時，逐行查——見 translatePerLine。
         Component perLine = translatePerLine(line, store, centered);
-        return unslant(perLine != null ? perLine
-                                       : translateSegments(line, store, centered, leftAligned));
+        return unslant(dropIconSpaces(perLine != null ? perLine
+                                       : translateSegments(line, store, centered, leftAligned)));
+    }
+
+    /**
+     * 拿掉第一個實字之前、<b>只有空白而且套著圖示字型</b>的片段。
+     *
+     * <h2>實機</h2>
+     * 屬性列原文是 {@code <圖示>[+2]'Agility '[+151]'+35'}——空白在標籤<b>後面</b>。
+     * 翻出來畫的卻是 {@code <圖示>[+2]' '(tooltip/attribute/sprite)'敏捷'…}：那個空白
+     * 跑到標籤前面，還沾上圖示的字型，「敏捷」「远程反伤」就被推開十幾像素
+     * （tooltip-partial 記得很清楚）。原文在那個位置沒有任何東西，拿掉只會對回原文。
+     *
+     * <p>只動空白字元，排版偏移（私人使用區的字元）不是空白，不受影響；
+     * 預設字型與 Wynncraft 文字字型裡的空白也照留——那是真的排版。
+     */
+    static Component dropIconSpaces(Component line) {
+        if (line == null) {
+            return null;
+        }
+        boolean[] dropped = {false};
+        boolean[] seenText = {false};
+        MutableComponent out = Component.empty();
+        line.visit((style, text) -> {
+            if (text.isEmpty()) {
+                return java.util.Optional.empty();
+            }
+            if (!seenText[0] && text.isBlank() && iconFont(style)) {
+                dropped[0] = true;
+                return java.util.Optional.empty();
+            }
+            if (text.codePoints().anyMatch(Character::isLetterOrDigit)
+                    && !SpaceOffset.isSpaceFont(style) && !iconFont(style)) {
+                seenText[0] = true;
+            }
+            out.append(Component.literal(text).withStyle(style));
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return dropped[0] ? out : line;
+    }
+
+    /** 圖示用的字型：不是預設、不是 Wynncraft 的文字字型，也不是排版偏移字型。 */
+    private static boolean iconFont(Style style) {
+        if (!(style.getFont() instanceof net.minecraft.network.chat.FontDescription.Resource r)
+                || r.id() == null) {
+            return false;
+        }
+        String path = r.id().getPath();
+        return !path.equals("default") && !path.equals("uniform") && !path.equals("space")
+                && !path.equals("language/wynncraft");
     }
 
     /**
@@ -3755,20 +3803,430 @@ public final class LineTranslator {
      * 一開始就寫下的規則：寧可不翻，也不要畫出錯位的東西——何況錯位的是
      * <b>遊戲原本的畫面</b>，那比我們自己的面板嚴重得多。
      */
+    /**
+     * 漂浮字：先查漂浮字專用的譯法，查不到再走一般的 {@link #translate}。
+     * 見 {@link TranslationStore#labelLookup}。
+     */
+    public static Component translateFloating(StyledText label, TranslationStore store) {
+        LineParts parts = LineParts.of(label);
+        String scoped = store.labelLookup(parts.template());
+        if (scoped != null && !scoped.isBlank()) {
+            Component rebuilt = rebuildLabel(label, scoped, parts, store);
+            if (rebuilt != null) {
+                return unslant(rebuilt);
+            }
+        }
+        // 整塊查得到的漂浮字照 translateWholeLine 同一套走，只多一步把原文的分段顏色
+        // 帶進譯文（見 #labelColours）。查不到才交給一般那條路，行為跟先前一樣。
+        Component whole = floatingWhole(label, parts, store);
+        if (whole != null) {
+            return unslant(dropIconSpaces(whole));
+        }
+        return translate(label, store);
+    }
+
+    /** 見 {@link #translateFloating}：跟 {@link #translateWholeLine} 一樣，只是重建時帶著分段顏色。 */
+    private static Component floatingWhole(StyledText label, LineParts parts,
+                                           TranslationStore store) {
+        if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
+            return null;
+        }
+        String translated = lookup(parts.template(), store);
+        if (translated == null || translated.isBlank()) {
+            return null;
+        }
+        Component rebuilt = rebuildLabel(label, translated, parts, store);
+        if (rebuilt == null) {
+            return null;
+        }
+        Component result = realign(label, rebuilt, true, false);
+        LineDebug.record(label, result);
+        return result;
+    }
+
+    /** 漂浮字的重建：先照原文的分段插上顏色，插了反而重建不出來就退回沒插的。 */
+    private static Component rebuildLabel(StyledText label, String translated,
+                                          LineParts parts, TranslationStore store) {
+        String coloured = labelColours(label, parts, translated, store);
+        Component rebuilt = rebuild(coloured, parts, store);
+        if (rebuilt == null && !coloured.equals(translated)) {
+            rebuilt = rebuild(translated, parts, store);
+        }
+        return rebuilt;
+    }
+
     public static Component translateLabel(StyledText label, TranslationStore store) {
         LineParts parts = LineParts.of(label);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
-        String translated = lookup(parts.template(), store);
+        // 漂浮字專用的譯法優先，見 TranslationStore#labelLookup
+        String translated = store.labelLookup(parts.template());
+        if (translated == null || translated.isBlank()) {
+            translated = lookup(parts.template(), store);
+        }
         if (translated == null || translated.isBlank()) {
             translated = labelByLine(parts.template(), store);
         }
         if (translated == null || translated.isBlank()) {
             return null;
         }
-        Component rebuilt = rebuild(translated, parts, store);
+        Component rebuilt = rebuildLabel(label, translated, parts, store);
         return rebuilt == null ? null : unslant(rebuilt);
+    }
+
+    /**
+     * 漂浮字的譯文，照原文<b>每一段的顏色</b>插上 {@code {cN}}。
+     *
+     * <h2>實機回報</h2>
+     * 寶箱上的字「loot chest 上的飄浮字 格式與顏色與原文不同」：
+     *
+     * <pre>
+     *   §dLocked §5Loot Chest [§d✫✫✫§8✫§5]
+     *   §c§lSLAY! §7Defeat a §fGrume
+     * </pre>
+     *
+     * 譯出來「上鎖的」是寶箱名的深紫、第二行「擊殺！擊敗 凝塊」整行一個灰。
+     *
+     * <h2>為什麼一般的上色補不回來</h2>
+     * 一般的上色（{@link #rebuildAll} 的重點段）是拿原文的<b>字面</b>或它的
+     * <b>單獨譯名</b>到譯文裡找。這塊牌子上的每一段都找不到：
+     * <ul>
+     *   <li>「Locked」「Defeat a」在語料裡沒有單獨的條目；</li>
+     *   <li>「SLAY!」有，但譯文是「{@code {c2}}擊殺！」——帶著色碼，字面對不上；</li>
+     *   <li>怪物名只以名牌的形狀存在（「Grume {#}{#}」），單獨查不到。</li>
+     * </ul>
+     * 沒有佔位符可以切段（見 {@link #segmentAccents}），整行只剩多數色。
+     * 而語料裡寫死 {@code {cN}} 也不行：星星的分段隨寶箱等級變（一級 1+3、三級 3+1、
+     * 四級 4+0），{@code {cN}} 的編號跟著變。
+     *
+     * <h2>做法</h2>
+     * 漂浮字是遊戲整塊排好的，<b>一行對一行</b>。行數相同時，每一行把原文的顏色段
+     * 對到譯文上，錨點由可靠到不可靠：
+     * <ol>
+     *   <li>原文某一段<b>連同後面（或前面）幾段</b>整串查得到，而且那串的譯文剛好是
+     *       譯文這一行的結尾（或開頭）——「Loot Chest [✫✫✫✫]」就是一條現成的條目，
+     *       於是「上鎖的」一定是「Locked」。</li>
+     *   <li>某一段的字面原樣出現在譯文裡（星星、括號、留英文的名字），
+     *       或它自己的譯名出現在譯文裡。</li>
+     *   <li>剩下夾在錨點之間、而且只有一段原文的那截譯文，就是那一段的。</li>
+     *   <li>夾著好幾段時，譯文用空白分成<b>同樣多塊</b>才照順序配（「擊敗 凝塊」），
+     *       否則不猜。</li>
+     * </ol>
+     * 對上的地方插 {@code {cN}}，對不上的地方插 {@code {/}} 交回一般的上色。
+     * 數值、符號這些佔位符本來就帶著自己的樣式填回去，不受 {@code {cN}} 影響。
+     *
+     * <h2>何時不做</h2>
+     * 譯者自己寫了色碼（尊重譯者）、行數對不上、這一行原文只有一個顏色、
+     * 顏色超過九種（{@code {cN}} 只有一位數）。
+     *
+     * @return 插好顏色的譯文；不適用時原樣回傳
+     */
+    static String labelColours(StyledText label, LineParts parts, String translated,
+                               TranslationStore store) {
+        if (label == null || translated == null || store == null
+                || LABEL_COLOUR_TOKEN.matcher(translated).find()) {
+            return translated;
+        }
+        List<List<LabelRun>> rows = labelRows(label);
+        String[] dst = translated.split(NL, -1);
+        if (rows.size() != dst.length) {
+            return translated;
+        }
+        List<Style> palette = palette(parts.runs());
+        StringBuilder out = new StringBuilder(translated.length() + 16);
+        boolean any = false;
+        for (int i = 0; i < dst.length; i++) {
+            if (i > 0) {
+                out.append(NL);
+            }
+            List<LabelRun> row = rows.get(i);
+            if (distinctStyles(row) < 2) {
+                out.append(dst[i]);
+                continue;
+            }
+            List<int[]> regions = new ArrayList<>();
+            List<Style> styles = new ArrayList<>();
+            alignLabel(row, 0, row.size(), dst[i], 0, dst[i].length(), regions, styles, store);
+            String coloured = paint(dst[i], regions, styles, palette);
+            any |= !coloured.equals(dst[i]);
+            out.append(coloured);
+        }
+        return any ? out.toString() : translated;
+    }
+
+    /** 譯者已經寫了的色碼：{@code {c1}}、{@code {c:#hex}}、{@code {w1}}、{@code {/}}。 */
+    private static final java.util.regex.Pattern LABEL_COLOUR_TOKEN =
+            java.util.regex.Pattern.compile("\\{(?:c[^}]*|w\\d|/)}");
+
+    /** 原文一行裡的一段：文字（含它後面的空白）與它的樣式。 */
+    private record LabelRun(String text, Style style) {}
+
+    /**
+     * 原文照換行切成一行一行，每一行是依顏色切開的幾段。
+     *
+     * <p>直接走 StyledText 的片段、用跟 {@link LineParts#of} 同一個樣式物件——
+     * {@code {cN}} 指的是 {@link #palette} 裡的第幾個，樣式物件不同就對不上編號。
+     * {@code LineParts} 的 runs 不能用：純換行的片段被它丟掉了，看不出行在哪裡斷。
+     * 圖示片段不算（譯文裡是 {@code {#}}，連同自己的樣式填回去）。
+     */
+    private static List<List<LabelRun>> labelRows(StyledText label) {
+        List<List<LabelRun>> rows = new ArrayList<>();
+        List<LabelRun> row = new ArrayList<>();
+        for (StyledTextPart part : label) {
+            if (GlyphSplitter.isGlyphPart(part)) {
+                continue;
+            }
+            String raw = part.getString(null, StyleType.NONE);
+            PartStyle ps = part.getPartStyle();
+            Style style = ps == null ? Style.EMPTY : ps.getStyle();
+            String[] pieces = raw.split(NL, -1);
+            for (int p = 0; p < pieces.length; p++) {
+                if (p > 0) {
+                    rows.add(row);
+                    row = new ArrayList<>();
+                }
+                String text = GlyphSplitter.stripGlyphChars(pieces[p]);
+                if (text.isEmpty()) {
+                    continue;
+                }
+                LabelRun last = row.isEmpty() ? null : row.get(row.size() - 1);
+                if (last != null && (!hasContent(text)
+                        || java.util.Objects.equals(last.style(), style))) {
+                    // 純空白黏到前一段；同色的相鄰片段併成一段
+                    row.set(row.size() - 1, new LabelRun(last.text() + text, last.style()));
+                } else if (hasContent(text)) {
+                    row.add(new LabelRun(text, style));
+                }
+            }
+        }
+        rows.add(row);
+        return rows;
+    }
+
+    private static int distinctStyles(List<LabelRun> row) {
+        java.util.Set<Style> seen = new java.util.HashSet<>();
+        for (LabelRun run : row) {
+            seen.add(run.style());
+        }
+        return seen.size();
+    }
+
+    /**
+     * 把原文 {@code runs[lo, hi)} 對到譯文 {@code dst[x, y)}，對上的區間記進 {@code regions}。
+     * 錨點的先後見 {@link #labelColours}。
+     */
+    private static void alignLabel(List<LabelRun> runs, int lo, int hi, String dst, int x, int y,
+                                   List<int[]> regions, List<Style> styles,
+                                   TranslationStore store) {
+        while (x < y && Character.isWhitespace(dst.charAt(x))) {
+            x++;
+        }
+        while (y > x && Character.isWhitespace(dst.charAt(y - 1))) {
+            y--;
+        }
+        if (lo >= hi || x >= y) {
+            return;
+        }
+        if (hi - lo == 1) {
+            regions.add(new int[] {x, y});
+            styles.add(runs.get(lo).style());
+            return;
+        }
+        String window = dst.substring(x, y);
+        // 1. 後面幾段（或前面幾段）整串查得到，而且剛好是這一截的結尾（或開頭）
+        for (int k = lo + 1; k < hi; k++) {
+            String hit = labelLookup(joined(runs, k, hi), store);
+            if (hit != null && hit.length() < window.length() && window.endsWith(hit)) {
+                int cut = y - hit.length();
+                alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
+                alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
+                return;
+            }
+        }
+        for (int k = hi - 1; k > lo; k--) {
+            String hit = labelLookup(joined(runs, lo, k), store);
+            if (hit != null && hit.length() < window.length() && window.startsWith(hit)) {
+                int cut = x + hit.length();
+                alignLabel(runs, lo, k, dst, x, cut, regions, styles, store);
+                alignLabel(runs, k, hi, dst, cut, y, regions, styles, store);
+                return;
+            }
+        }
+        // 2. 單獨一段：字面原樣出現，或它的譯名出現——照順序往後找，不回頭
+        List<int[]> anchors = new ArrayList<>();       // {第幾段, 起, 訖}
+        int cursor = x;
+        for (int j = lo; j < hi; j++) {
+            int[] at = findRun(runs.get(j).text().strip(), dst, cursor, y, store);
+            if (at != null) {
+                anchors.add(new int[] {j, at[0], at[1]});
+                cursor = at[1];
+            }
+        }
+        if (anchors.isEmpty()) {
+            // 4. 沒有錨點：空白切出來的塊數跟段數一樣才照順序配
+            List<int[]> chunks = new ArrayList<>();
+            int i = x;
+            while (i < y) {
+                while (i < y && Character.isWhitespace(dst.charAt(i))) {
+                    i++;
+                }
+                int start = i;
+                while (i < y && !Character.isWhitespace(dst.charAt(i))) {
+                    i++;
+                }
+                if (i > start) {
+                    chunks.add(new int[] {start, i});
+                }
+            }
+            if (chunks.size() == hi - lo) {
+                for (int k = 0; k < chunks.size(); k++) {
+                    regions.add(chunks.get(k));
+                    styles.add(runs.get(lo + k).style());
+                }
+            }
+            return;
+        }
+        // 3. 錨點之間的空檔遞迴下去：只夾一段原文的，整截就是那一段
+        int prevRun = lo;
+        int prevEnd = x;
+        for (int[] anchor : anchors) {
+            alignLabel(runs, prevRun, anchor[0], dst, prevEnd, anchor[1], regions, styles, store);
+            regions.add(new int[] {anchor[1], anchor[2]});
+            styles.add(runs.get(anchor[0]).style());
+            prevRun = anchor[0] + 1;
+            prevEnd = anchor[2];
+        }
+        alignLabel(runs, prevRun, hi, dst, prevEnd, y, regions, styles, store);
+    }
+
+    private static String joined(List<LabelRun> runs, int from, int to) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = from; i < to; i++) {
+            sb.append(runs.get(i).text());
+        }
+        return sb.toString().strip();
+    }
+
+    /**
+     * 原文一段在譯文 {@code dst[from, to)} 裡的位置：先找字面，再找它的譯名。
+     *
+     * <p>有字母的字面要<b>自成一個詞</b>才算——「a」不能算在「Grook」裡面。
+     *
+     * @return {@code {起, 訖}}；找不到回傳 {@code null}
+     */
+    private static int[] findRun(String core, String dst, int from, int to,
+                                 TranslationStore store) {
+        if (!hasContent(core)) {
+            return null;
+        }
+        int at = dst.indexOf(core, from);
+        while (at >= 0 && at + core.length() <= to) {
+            boolean letters = core.codePoints().anyMatch(Character::isLetter);
+            int after = at + core.length();
+            boolean whole = !letters
+                    || ((at == 0 || !isWordChar(dst.charAt(at - 1)))
+                        && (after >= dst.length() || !isWordChar(dst.charAt(after))));
+            if (whole) {
+                return new int[] {at, after};
+            }
+            at = dst.indexOf(core, at + 1);
+        }
+        String hit = labelLookup(core, store);
+        if (hit != null) {
+            int found = dst.indexOf(hit, from);
+            if (found >= 0 && found + hit.length() <= to) {
+                return new int[] {found, found + hit.length()};
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 一段原文（或幾段接起來）的譯名，整理成可以在譯文裡找字面的樣子。
+     *
+     * <p>先照一般的鍵查，再查詞表、剝掉頭尾符號查；都查不到再用<b>名牌的形狀</b>查
+     * （「Grume {#}{#}」——怪物名在語料裡只以名牌存在，後面兩個是等級膠囊的圖示，
+     * boss bar 也是這樣查的，見 {@code WynntilsText#bossBarName}）。
+     * 譯文裡的色碼拿掉（「{@code {c2}}擊殺！」只留「擊殺！」），名牌尾巴的圖示也拿掉。
+     *
+     * @return 整理好的譯名；查不到或沒有實字時回傳 {@code null}
+     */
+    private static String labelLookup(String text, TranslationStore store) {
+        if (!GlyphSplitter.hasLetter(text)) {
+            return null;
+        }
+        String template = GlyphSplitter.toTemplate(StyledText.fromString(text));
+        String hit = lookup(template, store);
+        if (hit == null || hit.isBlank()) {
+            hit = store.lookupTerm(template);
+        }
+        if (hit == null || hit.isBlank()) {
+            hit = lookupWordCore(template, store);
+        }
+        if (hit == null || hit.isBlank()) {
+            String plate = store.lookup(template + " " + GlyphSplitter.GLYPH_PLACEHOLDER
+                                        + GlyphSplitter.GLYPH_PLACEHOLDER);
+            String tail = GlyphSplitter.GLYPH_PLACEHOLDER + GlyphSplitter.GLYPH_PLACEHOLDER;
+            if (plate != null && plate.strip().endsWith(tail)) {
+                hit = plate.strip();
+                hit = hit.substring(0, hit.length() - tail.length());
+            }
+        }
+        if (hit == null) {
+            return null;
+        }
+        hit = LABEL_COLOUR_TOKEN.matcher(hit).replaceAll("").strip();
+        return hasContent(hit) ? hit : null;
+    }
+
+    /**
+     * 照對好的區間在譯文這一行插上 {@code {cN}}；區間之外插 {@code {/}}，
+     * 那一截交回一般的上色。行尾一定收掉，色碼不會染到下一行。
+     */
+    private static String paint(String row, List<int[]> regions, List<Style> styles,
+                                List<Style> palette) {
+        Integer[] order = new Integer[regions.size()];
+        for (int i = 0; i < order.length; i++) {
+            order[i] = i;
+        }
+        java.util.Arrays.sort(order, java.util.Comparator.comparingInt(i -> regions.get(i)[0]));
+        StringBuilder out = new StringBuilder(row.length() + 16);
+        int at = 0;
+        int current = 0;                               // 0 表示沒有強制顏色
+        for (int i : order) {
+            int[] region = regions.get(i);
+            int slot = palette.indexOf(styles.get(i)) + 1;
+            if (region[0] < at || slot < 1 || slot > 9) {
+                continue;                              // 重疊或編號寫不出來，不貼
+            }
+            if (region[0] > at) {
+                String gap = row.substring(at, region[0]);
+                if (current != 0 && hasContent(gap)) {
+                    out.append(COLOR_END);
+                    current = 0;
+                }
+                out.append(gap);
+            }
+            if (slot != current) {
+                out.append("{c").append(slot).append('}');
+                current = slot;
+            }
+            out.append(row, region[0], region[1]);
+            at = region[1];
+        }
+        if (at < row.length()) {
+            String rest = row.substring(at);
+            if (current != 0 && hasContent(rest)) {
+                out.append(COLOR_END);
+                current = 0;
+            }
+            out.append(rest);
+        }
+        if (current != 0) {
+            out.append(COLOR_END);
+        }
+        return out.toString();
     }
 
     /**
@@ -3856,7 +4314,21 @@ public final class LineTranslator {
         for (StyledText row : rows) {
             lines.add(row.getComponent());
         }
-        return BlockLayout.centered(lines);
+        boolean[] centred = BlockLayout.centered(lines);
+        // 一行一則送來的（「[Objective Completed]」那三行）也要看空白墊出來的置中，
+        // 跟整則送來時走 realignChat 的判斷一致。見 #spacePadded。
+        List<List<Run>> runRows = new ArrayList<>(rows.size());
+        for (StyledText row : rows) {
+            List<List<Run>> split = splitRows(runs(row.getComponent()));
+            if (split.size() != 1) {
+                return centred;                // 一則裡有好幾行，對不上逐行的索引
+            }
+            runRows.add(split.get(0));
+        }
+        sharedCentre(runRows, centred);
+        spacePadded(runRows, centred);
+        sameLeadList(runRows, centred);
+        return centred;
     }
 
     /**
@@ -3927,11 +4399,30 @@ public final class LineTranslator {
             return rebuilt;                    // 行數對不上就什麼都別動
         }
         boolean[] centre = centred == null ? centredRows(origRows) : null;
+        if (centre != null) {
+            sharedCentre(origRows, centre);
+            spacePadded(origRows, centre);
+            sameLeadList(origRows, centre);
+        }
         // 這一塊是不是「兩欄併排的面板」。見 #columnPanel。
         //
         // 呼叫端說了算優先：信標面板是一行一則訊息送來的，這裡看到的
         // origRows 只有那一行，自己判斷永遠是 false。見 #chatPanel。
         boolean panel = inPanel || columnPanel(origRows);
+        // 中文、日文：照英文的斷行位置斷會斷在句子中間，整段接起來重新斷。見 #reflowCjk。
+        boolean anyCentre = Boolean.TRUE.equals(centred);
+        if (centre != null) {
+            for (boolean c : centre) {
+                anyCentre |= c;
+            }
+        }
+        if (!panel && !anyCentre) {
+            Component flowed = reflowCjk(origRows, madeRows);
+            if (flowed != null) {
+                FlowedDebug.chatRows(original.getString(), "  中日文重新斷行", null);
+                return flowed;
+            }
+        }
         StringBuilder log = new StringBuilder();
         MutableComponent out = Component.empty();
         for (int i = 0; i < madeRows.size(); i++) {
@@ -3949,6 +4440,408 @@ public final class LineTranslator {
         }
         FlowedDebug.chatRows(original.getString(), log.toString(), null);
         return out;
+    }
+
+    /**
+     * 中文、日文的多行聊天訊息：整段接起來，照英文最寬那一行的寬度重新斷行。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *   傳送門湧出充滿憎恨的回音。Wynn 正面臨
+     *   湮滅。
+     * </pre>
+     * 譯文照英文的換行位置斷（{@code Wynn faces\nAnnihilation.}），中文短得多，
+     * 第一行沒滿就斷，「正面臨／湮滅」被拆在兩行。這種譯文在語料裡成千上萬條，
+     * 一條一條改不完，所以在畫的時候重新斷。
+     *
+     * <h2>怎麼斷</h2>
+     * <ul>
+     *   <li>每行的行首符號（訊息圖示、續行縮排）照留：第一行用第一行的，
+     *       其餘用第二行的</li>
+     *   <li>寬度上限是英文內容最寬那一行</li>
+     *   <li>優先斷在「，。！？」之後；找不到就斷在兩個漢字、假名之間；
+     *       英文單字、數字、韓文單字中間不斷；標點不放在行首</li>
+     * </ul>
+     *
+     * <h2>什麼時候不動</h2>
+     * 只有英文本來就是「一段話折成幾行」時才做：除了最後一行，每一行都要接近
+     * 最寬那一行（清單式的短行不算），而且譯文裡要有漢字或假名。行中間有排版
+     * 空白（分欄）、首尾有空行的都不碰。
+     *
+     * @return 重新斷好的整段；不該動時回傳 {@code null}
+     */
+    static Component reflowCjk(List<List<Run>> origRows, List<List<Run>> madeRows) {
+        int n = madeRows.size();
+        if (n < 2 || origRows.size() != n) {
+            return null;
+        }
+        int[] origBody = new int[n];
+        int max = 0;
+        for (int i = 0; i < n; i++) {
+            List<Run> row = origRows.get(i);
+            int lead = prefixEnd(row);
+            if (lead < 0) {
+                return null;
+            }
+            origBody[i] = runsWidth(row.subList(lead, row.size()));
+            max = Math.max(max, origBody[i]);
+        }
+        if (max <= 0) {
+            return null;
+        }
+        for (int i = 0; i < n - 1; i++) {
+            if (origBody[i] * 10 < max * 6) {
+                return null;                   // 短行：清單或刻意分行，不是折行
+            }
+        }
+        List<List<Run>> prefixes = new ArrayList<>(n);
+        List<Run> body = new ArrayList<>();
+        boolean cjk = false;
+        for (int i = 0; i < n; i++) {
+            List<Run> row = madeRows.get(i);
+            int lead = prefixEnd(row);
+            if (lead < 0) {
+                return null;
+            }
+            prefixes.add(row.subList(0, lead));
+            List<Run> content = row.subList(lead, row.size());
+            for (Run r : content) {
+                if (r.space()) {
+                    return null;               // 行中間有排版空白：分欄，不碰
+                }
+                cjk |= r.text().codePoints().anyMatch(LineTranslator::isCjkBreakable);
+            }
+            appendJoined(body, content);
+        }
+        if (!cjk || body.isEmpty()) {
+            return null;
+        }
+        List<List<Run>> lines = wrapRuns(body, max);
+        MutableComponent out = Component.empty();
+        for (int i = 0; i < lines.size(); i++) {
+            if (i > 0) {
+                out.append(Component.literal(NL));
+            }
+            List<Run> prefix = prefixes.get(Math.min(i, 1));
+            for (Run r : prefix) {
+                out.append(literal(r.space() ? SpaceOffset.encode(r.px()) : r.text(), r.style()));
+            }
+            for (Run r : lines.get(i)) {
+                out.append(literal(r.text(), r.style()));
+            }
+        }
+        return out;
+    }
+
+    /** 行首符號（圖示、縮排、空白）到哪裡為止；整行都是符號時回傳 {@code -1}。 */
+    private static int prefixEnd(List<Run> row) {
+        for (int i = 0; i < row.size(); i++) {
+            Run r = row.get(i);
+            if (r.space()) {
+                continue;
+            }
+            if (r.text().codePoints().anyMatch(cp -> Character.isLetterOrDigit(cp)
+                    && !GlyphSplitter.isGlyphCodePoint(cp))) {
+                // 同一段裡前面的空白一起算進行首
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private static int runsWidth(List<Run> runs) {
+        int w = 0;
+        for (Run r : runs) {
+            w += r.space() ? r.px() : widthOf(literal(r.text(), r.style()));
+        }
+        return w;
+    }
+
+    /** 把一行內容接到整段後面：去掉接縫的空白，兩邊都是英數時留一個空格。 */
+    private static void appendJoined(List<Run> body, List<Run> content) {
+        List<Run> trimmed = new ArrayList<>(content);
+        while (!trimmed.isEmpty()) {
+            Run first = trimmed.get(0);
+            String t = first.text().stripLeading();
+            if (!t.isEmpty()) {
+                trimmed.set(0, new Run(false, 0, first.style(), t));
+                break;
+            }
+            trimmed.remove(0);
+        }
+        if (trimmed.isEmpty()) {
+            return;
+        }
+        if (!body.isEmpty()) {
+            Run last = body.get(body.size() - 1);
+            String t = last.text().stripTrailing();
+            body.set(body.size() - 1, new Run(false, 0, last.style(), t));
+            int a = t.isEmpty() ? ' ' : t.codePointBefore(t.length());
+            int b = trimmed.get(0).text().codePointAt(0);
+            if (isWordChar(a) && isWordChar(b)) {
+                body.add(new Run(false, 0, last.style(), " "));
+            }
+        }
+        body.addAll(trimmed);
+    }
+
+    /** 英數、韓文：單字中間不能斷，接縫要補空格。 */
+    private static boolean isWordChar(int cp) {
+        return (Character.isLetterOrDigit(cp) && !isCjkBreakable(cp))
+                || "%+-/.,".indexOf(cp) >= 0 && cp != ',';
+    }
+
+    /** 漢字與假名：任兩個之間都可以斷。韓文不算（韓文以空白分詞）。 */
+    static boolean isCjkBreakable(int cp) {
+        Character.UnicodeScript s = Character.UnicodeScript.of(cp);
+        return s == Character.UnicodeScript.HAN || s == Character.UnicodeScript.HIRAGANA
+                || s == Character.UnicodeScript.KATAKANA;
+    }
+
+    private static final String BREAK_AFTER = "，。！？；：、）」』…,.!?;:";
+    private static final String NO_LINE_START = "，。！？；：、）」』…ー,.!?;:%）)";
+
+    /** 照寬度上限斷行，回傳每一行的段落。 */
+    private static List<List<Run>> wrapRuns(List<Run> body, int max) {
+        // 攤成一個字一格
+        List<int[]> cps = new ArrayList<>();          // {codepoint, run index}
+        for (int k = 0; k < body.size(); k++) {
+            int kk = k;
+            body.get(k).text().codePoints().forEach(cp -> cps.add(new int[] {cp, kk}));
+        }
+        int[] w = new int[cps.size()];
+        for (int i = 0; i < cps.size(); i++) {
+            w[i] = widthOf(literal(new String(Character.toChars(cps.get(i)[0])),
+                    body.get(cps.get(i)[1]).style()));
+        }
+        List<int[]> ranges = new ArrayList<>();       // [from, to)
+        int start = 0;
+        while (start < cps.size()) {
+            int x = 0;
+            int end = start;
+            while (end < cps.size() && x + w[end] <= max) {
+                x += w[end];
+                end++;
+            }
+            if (end >= cps.size()) {
+                ranges.add(new int[] {start, cps.size()});
+                break;
+            }
+            // 往回找斷點：先找標點之後（不短於一半），再找可斷的字間
+            int cut = -1;
+            int acc = x;
+            for (int i = end; i > start; i--) {
+                if (canBreakBefore(cps, i) && BREAK_AFTER.indexOf(cps.get(i - 1)[0]) >= 0
+                        && acc * 2 >= max) {
+                    cut = i;
+                    break;
+                }
+                acc -= w[i - 1];
+            }
+            if (cut < 0) {
+                for (int i = end; i > start; i--) {
+                    if (canBreakBefore(cps, i)) {
+                        cut = i;
+                        break;
+                    }
+                }
+            }
+            if (cut <= start) {
+                cut = Math.max(end, start + 1);        // 斷不了就硬斷
+            }
+            ranges.add(new int[] {start, cut});
+            start = cut;
+            while (start < cps.size() && cps.get(start)[0] == ' ') {
+                start++;                               // 行首的空格吃掉
+            }
+        }
+        List<List<Run>> out = new ArrayList<>();
+        for (int[] r : ranges) {
+            List<Run> line = new ArrayList<>();
+            StringBuilder sb = new StringBuilder();
+            int run = -1;
+            for (int i = r[0]; i < r[1]; i++) {
+                int ri = cps.get(i)[1];
+                if (ri != run && sb.length() > 0) {
+                    line.add(new Run(false, 0, body.get(run).style(), sb.toString()));
+                    sb.setLength(0);
+                }
+                run = ri;
+                sb.appendCodePoint(cps.get(i)[0]);
+            }
+            if (sb.length() > 0) {
+                String t = sb.toString().stripTrailing();
+                if (!t.isEmpty()) {
+                    line.add(new Run(false, 0, body.get(run).style(), t));
+                }
+            }
+            out.add(line);
+        }
+        return out;
+    }
+
+    /** 第 {@code i} 個字前面可以斷嗎。 */
+    private static boolean canBreakBefore(List<int[]> cps, int i) {
+        int a = cps.get(i - 1)[0];
+        int b = cps.get(i)[0];
+        if (NO_LINE_START.indexOf(b) >= 0) {
+            return false;
+        }
+        if (a == ' ' || b == ' ') {
+            return true;
+        }
+        if (BREAK_AFTER.indexOf(a) >= 0 && !isWordChar(b)) {
+            return true;
+        }
+        if (BREAK_AFTER.indexOf(a) >= 0 && (a > 0x2FFF)) {
+            return true;                               // 全形標點之後什麼都能接
+        }
+        return isCjkBreakable(a) || isCjkBreakable(b)
+                ? !(isWordChar(a) && isWordChar(b)) : false;
+    }
+
+    /**
+     * 聊天裡用空白墊出來的置中：幾行都有縮排、縮排長短不一，中心卻落在差不多的位置。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *            Enjoying Wynncraft?
+     *    Recruit a friend and both of you will get rewards!
+     *           Click here to recruit
+     *            (or type /recruit)
+     * </pre>
+     * 伺服器用空白把每一行墊到聊天視窗中間，但寬度是它自己估的，四行的中心
+     * 落在 130～151px 之間，不是同一條線。{@link BlockLayout#centered} 拿最寬那行
+     * 當基準，那一行自己也有縮排，於是整塊被判成靠左，中文變短後就往左偏。
+     *
+     * <p>這裡另外看：有縮排的行至少兩行、縮排差了一截（不是清單那種同一個縮排），
+     * 而且每一行的中心都在中位數 ±16px 以內，就把那幾行當成置中。
+     */
+    private static void sharedCentre(List<List<Run>> rows, boolean[] centre) {
+        List<Integer> idx = new ArrayList<>();
+        List<Integer> mids = new ArrayList<>();
+        int minLead = Integer.MAX_VALUE;
+        int maxLead = 0;
+        for (int i = 0; i < rows.size(); i++) {
+            List<Run> row = rows.get(i);
+            int lead = leadWidth(row);
+            int body = rowWidth(row) - lead;
+            if (lead <= 0 || body <= 0) {
+                continue;
+            }
+            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+                return;                                // 分欄的面板另有規則
+            }
+            idx.add(i);
+            mids.add(lead + body / 2);
+            minLead = Math.min(minLead, lead);
+            maxLead = Math.max(maxLead, lead);
+        }
+        if (idx.size() < 2 || maxLead - minLead <= 8) {
+            return;
+        }
+        List<Integer> sorted = new ArrayList<>(mids);
+        java.util.Collections.sort(sorted);
+        int median = sorted.get(sorted.size() / 2);
+        for (int m : mids) {
+            if (Math.abs(m - median) > 16) {
+                return;
+            }
+        }
+        for (int i : idx) {
+            centre[i] = true;
+        }
+    }
+
+    /**
+     * 用一長串半形空白墊出來的行，是伺服器在置中。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *            [Objective Completed]
+     *              Loot Chests T3+
+     *        Click here to claim your rewards!
+     * </pre>
+     * 三行的中心差了將近 40px（伺服器估的寬度不準，底線那一行尤其歪），
+     * {@link #sharedCentre} 的 ±16px 收不進來，{@link BlockLayout#centered} 也拿最寬
+     * 那行當基準判成靠左——中文變短之後，每行都貼著英文的左緣。
+     *
+     * <p>Wynncraft 的清單縮排用的是偏移字元（任務獎勵的「- +35 經驗值」），
+     * 不是空白；前面墊了五個以上的半形空白，就只會是置中。每一行守住自己的中心，
+     * 不去管它們彼此對不對齊——原文本來就沒對齊。
+     */
+    static void spacePadded(List<List<Run>> rows, boolean[] centre) {
+        for (int i = 0; i < rows.size(); i++) {
+            List<Run> row = rows.get(i);
+            if (plainSpaceLead(row) >= 5
+                    && columns(chatSegmentWidths(row, LineTranslator::runWidth)) < 2) {
+                centre[i] = true;
+            }
+        }
+    }
+
+    /**
+     * 縮排一樣、內容寬度卻不一樣的幾行，是靠左的清單，不可能是置中。
+     *
+     * <h2>實機回報</h2>
+     * <pre>
+     *   Rewards:
+     *   - +Access to the Province of Wynn
+     *   - +1 Ragni Teleportation Scroll      ← 只有這行被判成置中
+     *   - +35 Experience Points
+     * </pre>
+     * 任務獎勵一行一則，五行同一個縮排。{@link BlockLayout#centered} 拿整塊最寬的
+     * 一行比，Ragni 那一行的寬度剛好湊得上「置中該有的縮排」，就被判成置中；
+     * 譯文多了「張」、寬了 13px，整行往左挪了一半，跟上下幾行錯開。
+     *
+     * <p>置中的行縮排由內容寬度決定：縮排一樣，內容就該一樣寬。兩行縮排相同、
+     * 寬度差了一截，那個縮排就是清單的縮排，同一組全部改回靠左。
+     */
+    static void sameLeadList(List<List<Run>> rows, boolean[] centre) {
+        int n = rows.size();
+        int[] lead = new int[n];
+        int[] body = new int[n];
+        for (int i = 0; i < n; i++) {
+            lead[i] = leadWidth(rows.get(i));
+            body[i] = rowWidth(rows.get(i)) - lead[i];
+        }
+        boolean[] list = new boolean[n];
+        for (int i = 0; i < n; i++) {
+            if (lead[i] <= 0 || body[i] <= 0) {
+                continue;
+            }
+            for (int j = i + 1; j < n; j++) {
+                if (body[j] > 0 && Math.abs(lead[i] - lead[j]) <= 1
+                        && Math.abs(body[i] - body[j]) > 6) {
+                    list[i] = true;
+                    list[j] = true;
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (list[i]) {
+                centre[i] = false;
+            }
+        }
+    }
+
+    /** 行首有幾個半形空白；碰到偏移字元或實字就停，偏移字元開頭的算 0。 */
+    private static int plainSpaceLead(List<Run> row) {
+        int n = 0;
+        for (Run run : row) {
+            if (run.space()) {
+                return n == 0 ? 0 : n;
+            }
+            String text = run.text();
+            for (int k = 0; k < text.length(); k++) {
+                char c = text.charAt(k);
+                if (c != ' ') {
+                    return n;
+                }
+                n++;
+            }
+        }
+        return 0;                                // 整行都是空白
     }
 
     /** 拆好的原文各行，交給 {@link BlockLayout} 判斷置中。 */
@@ -4097,7 +4990,31 @@ public final class LineTranslator {
      * @return 收過之後的行首補正
      */
     private static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns) {
-        int over = rowWidth(made) + pad - rowWidth(orig);
+        return fitWidth(orig, made, pad, columns, chatWidth());
+    }
+
+    /**
+     * 見上。單欄的行另外放寬到聊天視窗的寬度。
+     *
+     * <h2>實機回報</h2>
+     * 任務完成的獎勵清單一行一則訊息送來，每行用同一個縮排排成一列。
+     * 「+1 Ragni Teleportation Scroll」譯成「+1 張 Ragni Teleportation Scroll」
+     * 多了 13px，照「不能比原文寬」的規則把縮排收掉 13px，那一行就比上下
+     * 幾行往左凸出去。
+     *
+     * <p>「不能比原文寬」是為了兩欄的 Lootrun 結算不被折行（issue #719）。
+     * 單欄的行只有一段字，真正的上限是聊天視窗；比原文寬一點、視窗還放得下，
+     * 就該守住原文的縮排。
+     *
+     * @param window 聊天視窗的寬度；0 表示不知道，照原文的寬度收
+     */
+    static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns, int window) {
+        int limit = rowWidth(orig);
+        if (window > limit
+                && columns(chatSegmentWidths(orig, LineTranslator::runWidth)) < 2) {
+            limit = window;
+        }
+        int over = rowWidth(made) + pad - limit;
         for (int px : columns) {
             over += px;
         }
@@ -4127,6 +5044,16 @@ public final class LineTranslator {
             pad -= Math.min(pad, over);
         }
         return pad;
+    }
+
+    /** 聊天視窗現在多寬；拿不到（測試、還沒進遊戲）就回 0。 */
+    private static int chatWidth() {
+        try {
+            return net.minecraft.client.gui.components.ChatComponent.getWidth(
+                    net.minecraft.client.Minecraft.getInstance().options.chatWidth().get());
+        } catch (Throwable t) {
+            return 0;
+        }
     }
 
     /** 見 {@link #fitWidth}：收欄距時兩欄之間至少留這麼寬，大約一個半形空白。 */
@@ -6592,7 +7519,7 @@ public final class LineTranslator {
                             return null;
                         }
                         LineParts.Piece piece = numbers.get(at);
-                        line.append(literal(piece.text(), forDisplay(piece.style())));
+                        line.append(literal(piece.text(), numberDisplay(piece.style())));
                         justFilled = piece.style();
                         afterNumber = true;
                     }
@@ -6604,6 +7531,32 @@ public final class LineTranslator {
                         afterNumber = false;
                     }
                     case TEXT -> {
+                        // 正負號跟著後面那個<b>放大的</b>數值走字型。
+                        //
+                        // 原文的「+4,250 Health」整串數字（含 + 號）都在
+                        // offset/wynncraft_quad 這種放大字型裡。譯文把數值拆成
+                        // {~}，+ 號留在文字那半，於是只有它縮回一般大小——
+                        // 實機回報「+ 是小的」。
+                        String text = token.text();
+                        Style bigNext = i + 1 < tokens.size()
+                                && tokens.get(i + 1).kind() == Kind.NUMBER
+                                ? displayFont(peekStyle(tokens.get(i + 1), glyphs, places,
+                                              numbers, users, glyph, place, number, user))
+                                : null;
+                        if (bigNext != null && !text.isEmpty()
+                                && (text.endsWith("+") || text.endsWith("-"))) {
+                            String head = text.substring(0, text.length() - 1);
+                            if (!head.isEmpty()) {
+                                appendHugging(line, head, textStyle, symbolStyle,
+                                              noteStyle, inNote, accents, usedAccent,
+                                              store, i > 0 ? justFilled : null, null,
+                                              afterNumber);
+                            }
+                            line.append(literal(text.substring(text.length() - 1), bigNext));
+                            justFilled = null;
+                            afterNumber = false;
+                            break;
+                        }
                         if (forced != null) {
                             // 譯者已經講明這一段要什麼顏色，就不要再猜了——
                             // 重點段比對、括號註解、底色統計全部讓開。
@@ -7229,6 +8182,24 @@ public final class LineTranslator {
     /** 保留顏色與粗斜體，但把字型換成預設，中文才畫得出來。 */
     private static Style forDisplay(Style style) {
         return (style == null ? Style.EMPTY : style).withFont(FontDescription.DEFAULT);
+    }
+
+    /**
+     * 填回數值用的樣式：原本是 {@code offset/…} 這類<b>顯示字型</b>時保留原字型。
+     *
+     * <p>武器的「370 DPS」，數字用的是 {@code offset/wynncraft_quad/12}——放大的字。
+     * 一律換成預設字型的話數字就縮回一般大小（實機回報「上方 dps 文字很大」那行
+     * 翻完變小）。那種字型本來就只拿來畫數字，照原樣畫就是原文的樣子。
+     */
+    private static Style numberDisplay(Style style) {
+        Style big = displayFont(style);
+        return big != null ? big : forDisplay(style);
+    }
+
+    /** 放大數字用的字型（{@code offset/…}）；不是那種字型時回傳 {@code null}。 */
+    private static Style displayFont(Style style) {
+        return style != null && style.getFont() instanceof FontDescription.Resource r
+                && r.id() != null && r.id().getPath().startsWith("offset/") ? style : null;
     }
 
     private static Style greyed() {

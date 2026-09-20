@@ -317,10 +317,119 @@ public final class WynntilsText {
             StyledText text = StyledText.fromComponent(name);
             StyledText shown = line(text, store);
             hit = shown == text ? name : shown.getComponent();
+            // 逐段那條路可能翻了別段（狀態詞），名字仍是英文，所以不論如何都再換一次
+            net.minecraft.network.chat.Component named = bossBarName(hit, store);
+            if (named != null) {
+                hit = named;
+            }
+            net.minecraft.network.chat.Component worded = bossBarWords(hit, store);
+            if (worded != null) {
+                hit = worded;
+            }
             BARS.put(name, hit);
+            // 畫面上是英文時，先分清楚是「根本沒走到這裡」還是「走到了但查不到」：
+            // captured.json 的 events 裡有沒有 bossbar.* 就知道。查不到的收進 capture。
+            var captured = WynnChaYuan.store();
+            if (captured != null) {
+                captured.noteEvent(hit == name ? "bossbar.noMatch" : "bossbar.shown");
+            }
+            if (hit == name && config.collect()) {
+                collectName(text, "label/bossbar");
+            }
         }
         return hit;
     }
+
+    /**
+     * 只換 boss bar 開頭的怪物名：「Bronchial - 113k❤ - Weak Dam Def」。
+     *
+     * <h2>為什麼逐段查不到</h2>
+     * Wynncraft 把「名字 - 血量❤ - 」放在<b>同一個</b>顏色段裡，逐段查表拿到的是
+     * 整串，永遠對不上。名牌語料又是「Bronchial {#}{#}」——後面兩個是等級膠囊
+     * 的圖示——所以只拿名字精確查也查不到。實機回報：頭上名牌是「支气管体」，
+     * boss bar 還是 Bronchial。
+     *
+     * <p>先精確查名字，查不到再查名牌的鍵、拿掉尾巴的圖示。譯文裡還留著
+     * 佔位符的不用，寧可留英文。名字跨了顏色段就放棄。
+     *
+     * @return 換好名字的標題；查不到回傳 {@code null}
+     */
+    static net.minecraft.network.chat.Component bossBarName(
+            net.minecraft.network.chat.Component bar, TranslationStore store) {
+        String plain = bar.getString();
+        int cut = plain.indexOf(" - ");
+        if (cut <= 0) {
+            return null;
+        }
+        String head = plain.substring(0, cut).strip();
+        if (head.isEmpty()) {
+            return null;
+        }
+        String dst = store.lookup(head);
+        if (dst == null) {
+            String plate = store.lookup(head + " {#}{#}");
+            if (plate != null && plate.endsWith("{#}{#}")) {
+                dst = plate.substring(0, plate.length() - "{#}{#}".length()).strip();
+            }
+        }
+        if (dst == null || dst.isEmpty() || dst.contains("{")) {
+            return null;
+        }
+        String translated = dst;
+        net.minecraft.network.chat.MutableComponent out =
+                net.minecraft.network.chat.Component.empty();
+        boolean[] done = {false};
+        bar.visit((style, text) -> {
+            int at = done[0] ? -1 : text.indexOf(head);
+            if (at >= 0) {
+                out.append(net.minecraft.network.chat.Component.literal(
+                        text.substring(0, at) + translated
+                                + text.substring(at + head.length())).withStyle(style));
+                done[0] = true;
+            } else if (!text.isEmpty()) {
+                out.append(net.minecraft.network.chat.Component.literal(text).withStyle(style));
+            }
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return done[0] ? out : null;
+    }
+
+    /**
+     * boss bar 右邊的屬性克制：{@code Weak}（易傷）、{@code Dam}（增傷）、{@code Def}（防護）。
+     *
+     * <p>這幾個字放進一般語料會換到別的地方去（Def、Dam 在介面上另有意思），
+     * 所以譯法放在 {@code scoped/bossbar.json}，只在 boss bar 用。
+     * 逐個英文單字查，前後的圖示、空白與顏色都不動。
+     *
+     * @return 換好的標題；一個字都沒換到回傳 {@code null}
+     */
+    static net.minecraft.network.chat.Component bossBarWords(
+            net.minecraft.network.chat.Component bar, TranslationStore store) {
+        net.minecraft.network.chat.MutableComponent out =
+                net.minecraft.network.chat.Component.empty();
+        boolean[] changed = {false};
+        bar.visit((style, text) -> {
+            if (text.isEmpty()) {
+                return java.util.Optional.empty();
+            }
+            java.util.regex.Matcher m = WORD.matcher(text);
+            StringBuilder sb = new StringBuilder();
+            while (m.find()) {
+                String dst = store.scopedLookup("bossbar", m.group());
+                m.appendReplacement(sb, java.util.regex.Matcher.quoteReplacement(
+                        dst != null ? dst : m.group()));
+                changed[0] |= dst != null;
+            }
+            m.appendTail(sb);
+            out.append(net.minecraft.network.chat.Component.literal(sb.toString())
+                    .withStyle(style));
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return changed[0] ? out : null;
+    }
+
+    private static final java.util.regex.Pattern WORD =
+            java.util.regex.Pattern.compile("[A-Za-z]+");
 
     private static final java.util.Map<net.minecraft.network.chat.Component,
             net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
@@ -391,18 +500,25 @@ public final class WynntilsText {
         net.minecraft.network.chat.Component hit = NAMES.get(name);
         if (hit == null) {
             StyledText text = StyledText.fromComponent(name);
-            StyledText shown = line(text, store);
+            // 漂浮字那一支：專用譯法優先（見 TranslationStore#labelLookup），整塊查得到時
+            // 照原文的分段上色（見 LineTranslator#labelColours）。先前只有查到專用譯法才走它，
+            // 其餘的走一般那條路，寶箱上的字就整行一個顏色。都查不到才照舊逐段查。
+            net.minecraft.network.chat.Component floating =
+                    LineTranslator.translateFloating(text, store);
+            StyledText shown = floating != null
+                    ? StyledText.fromComponent(floating)
+                    : byPart(text, store);
             hit = shown == text ? name : shown.getComponent();
             NAMES.put(name, hit);
             if (hit == name && config.collect()) {
-                collectName(text);
+                collectName(text, "label/floating");
             }
         }
         return hit;
     }
 
     /** 沒譯文的浮空字收進 capture，濾網跟 TextDisplay 那條路一樣。 */
-    private static void collectName(StyledText text) {
+    private static void collectName(StyledText text, String ctx) {
         if (text.isEmpty() || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(text)
                 || com.wynnchayuan.capture.CombatText.isIndicator(text)) {
             return;
@@ -415,7 +531,7 @@ public final class WynntilsText {
         }
         var captured = WynnChaYuan.store();
         if (captured != null) {
-            captured.record(template, "name", "label", "label/floating");
+            captured.record(template, "name", "label", ctx);
         }
     }
 

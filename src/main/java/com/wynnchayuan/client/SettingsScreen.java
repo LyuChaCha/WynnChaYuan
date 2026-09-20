@@ -234,6 +234,16 @@ public final class SettingsScreen extends Screen {
         // 「更新說明」擺在這裡而不是藏進某一個分類：它講的是<b>整個模組</b>，
         // 不屬於物品、面板或對話任何一類；而有新版時那個提示要從 F6 一打開
         // 就看得到，不能要人先點對分類。
+        // ---- 右上角：警語 ----
+        //
+        // 「跟別的玩家講話請用原文」。第一次進 Wynncraft 會自動跳出，勾了不再顯示之後
+        // 只能從這裡打開，所以放在每一頁都看得到的標題列，不藏進分類。
+        addRenderableWidget(Button.builder(Component.literal("!"),
+                        b -> this.minecraft.setScreen(new NoticeScreen(this)))
+                .bounds(this.width - 28, 8, 20, 20)
+                .tooltip(net.minecraft.client.gui.components.Tooltip.create(T.c("notice.button")))
+                .build());
+
         int mid = this.width / 2;
         int left = mid - 148;
         addRenderableWidget(Button.builder(updateLabel(),
@@ -423,10 +433,14 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().cycleTooltipMode(-1);
                     b.setMessage(tooltipModeLabel());
                 });
-        cycle("items.names",
+        back(cycle("items.names",
                 this::itemNameLabel, b -> {
-                    boolean on = WynnChaYuan.config().toggleItemNames();
-                    WynnChaYuan.translations().setTranslateNames(on);
+                    WynnChaYuan.translations().setNameMode(
+                            WynnChaYuan.config().cycleItemNames(1));
+                    b.setMessage(itemNameLabel());
+                }), b -> {
+                    WynnChaYuan.translations().setNameMode(
+                            WynnChaYuan.config().cycleItemNames(-1));
                     b.setMessage(itemNameLabel());
                 });
         cycle("items.market",
@@ -900,8 +914,13 @@ public final class SettingsScreen extends Screen {
         return ctrl(onOff(WynnChaYuan.config().marketSearch()));
     }
 
+    /** 譯名／譯名加原文／關閉。見 {@link com.wynnchayuan.CollectorConfig.ItemNames}。 */
     private Component itemNameLabel() {
-        return ctrl(onOff(WynnChaYuan.config().translateItemNames()));
+        return ctrl(switch (WynnChaYuan.config().itemNames()) {
+            case ON -> T.s("mode.on");
+            case BOTH -> T.s("items.names.both");
+            case OFF -> T.s("mode.off");
+        });
     }
 
     /**

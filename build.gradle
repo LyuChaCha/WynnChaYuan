@@ -339,6 +339,74 @@ tasks.register('runChatAlignChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.ChatAlignTest'
 }
 tasks.named('check') { dependsOn 'runChatAlignChecks' }
+tasks.register('runChatReflowChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證中日文的多行聊天訊息重新斷行，不照英文的換行位置斷'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ChatReflowTest'
+}
+tasks.named('check') { dependsOn 'runChatReflowChecks' }
+
+// wiki 抄來的台詞跟實機差一兩個字時，同一個任務裡還認得出是哪一句。
+tasks.register('runNearQuestLineChecks', JavaExec) {
+    group = 'verification'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NearQuestLineTest'
+}
+tasks.named('check') { dependsOn 'runNearQuestLineChecks' }
+
+// 漂浮字專用的譯法（scoped/label.json）：Back 在地板上是向後、在介面上仍是返回。
+tasks.register('runScopedLabelChecks', JavaExec) {
+    group = 'verification'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ScopedLabelTest'
+}
+tasks.named('check') { dependsOn 'runScopedLabelChecks' }
+
+// 簡中是兩層疊起來載入的；裝備名稱在這條路上也要翻得出來。
+tasks.register('runLayeredGearNameChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LayeredGearNameTest'
+}
+tasks.named('check') { dependsOn 'runLayeredGearNameChecks' }
+
+// 屬性列的標籤要靠左，不能被當成置中列補寬度差。
+tasks.register('runStatLabelIndentChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.StatLabelIndentTest'
+}
+tasks.named('check') { dependsOn 'runStatLabelIndentChecks' }
+
+// boss bar 開頭的怪物名跟名牌用同一條譯文。
+tasks.register('runBossBarNameChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.BossBarNameTest'
+}
+tasks.named('check') { dependsOn 'runBossBarNameChecks' }
+
+// Shiny 裝備：前綴照 scoped/name.json，名字照裝備自己的譯名。
+tasks.register('runShinyNameChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ShinyNameTest'
+}
+tasks.named('check') { dependsOn 'runShinyNameChecks' }
+
+// 武器的 DPS 那一行：數字留大字型，「每秒傷害」拿 DPS 那段的顏色。
+tasks.register('runDpsRowChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.DpsRowTest'
+}
+tasks.named('check') { dependsOn 'runDpsRowChecks' }
 
 // 多行名牌逐行回退：一個名字翻一次就該覆蓋所有變體，不必為每個變體各建一個鍵。
 tasks.register('runNameplateChecks', JavaExec) {
@@ -808,6 +876,14 @@ tasks.register('runLabelColourChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.LabelColourTest'
 }
 tasks.named('check') { dependsOn 'runLabelColourChecks' }
+
+tasks.register('runLootChestColourChecks', JavaExec) {
+    group = 'verification'
+    description = '寶箱漂浮字：每一段、每一顆星的顏色都要跟原文一樣'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LootChestColourTest'
+}
+tasks.named('check') { dependsOn 'runLootChestColourChecks' }
 
 tasks.register('runBlockedByChecks', JavaExec) {
     group = 'verification'

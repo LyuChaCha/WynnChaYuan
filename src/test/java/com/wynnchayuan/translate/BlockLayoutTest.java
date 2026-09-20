@@ -214,6 +214,27 @@ public final class BlockLayoutTest {
         check("越縮排越長的清單不算置中",
                 !centredAt(new int[] {0, 0, 30}, new int[] {100, 90, 150}, 2));
 
+        // ★ 裝備屬性表：數值靠右、右緣對齊，只有帶圖示的幾列開頭多幾像素。
+        //   簡中 Divzer 回報「灵巧」「法力偷取」被推到中間，就是整塊被判成置中。
+        int[] statLead = {10, 10, 10, 0, 3, 3, 0, 0, 3, 0};
+        int[] statContent = new int[statLead.length];
+        for (int i = 0; i < statLead.length; i++) {
+            statContent[i] = 190 - statLead[i];      // 右緣都在 190
+        }
+        boolean anyStat = false;
+        for (int i = 0; i < statLead.length; i++) {
+            anyStat |= centredAt(statLead, statContent, i);
+        }
+        check("★ 右緣對齊的屬性表不算置中", !anyStat);
+        // 對照：同樣的縮排，右緣跟著縮排內縮（真的置中），仍判成置中
+        int[] trueLead = new int[statLead.length];
+        int[] trueContent = new int[statLead.length];
+        for (int i = 0; i < statLead.length; i++) {
+            trueLead[i] = statLead[i] + 10 * (i % 3);
+            trueContent[i] = 190 - 2 * trueLead[i];
+        }
+        check("右緣跟著縮排內縮的仍是置中", centredAt(trueLead, trueContent, 1));
+
         System.out.println(failures == 0
                 ? "BlockLayout: 全部通過" : "BlockLayout: " + failures + " 項失敗");
         if (failures > 0) {
