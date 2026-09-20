@@ -89,7 +89,11 @@ public final class ScoreboardListener {
             return false;
         }
         // 隊伍成員、公會名稱都會出現在這一欄，一律不進語料。
-        if (PlayerDataFilter.carriesPlayerData(template)) {
+        //
+        // 隊友那幾列的名字會被欄寬截斷、數字又先變成 {~}，字形判準認不出來，
+        // 所以另外問一次分頁列上的玩家名。見 PlayerDataFilter#mentionsOnlinePlayerLoose。
+        if (PlayerDataFilter.carriesPlayerData(template)
+                || PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
             WynnChaYuan.store().noteEvent("scoreboard.blocked.playerData");
         } else {
             WynnChaYuan.store().record(template, role, "quest", "scoreboard");

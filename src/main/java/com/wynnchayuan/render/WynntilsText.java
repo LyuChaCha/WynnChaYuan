@@ -526,7 +526,10 @@ public final class WynntilsText {
         String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(text);
         if (template.isBlank() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
                 || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
-                || com.wynnchayuan.capture.PlayerDataFilter.looksPlayerNamed(template)) {
+                || com.wynnchayuan.capture.PlayerDataFilter.looksPlayerNamed(template)
+                // 寵物與坐騎的名字帶著主人的 ID（「Tomzd{~}'s Bird」），
+                // 數字被抽掉之後字形判準認不出來。見 #mentionsOnlinePlayerLoose。
+                || com.wynnchayuan.capture.PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
             return;
         }
         var captured = WynnChaYuan.store();

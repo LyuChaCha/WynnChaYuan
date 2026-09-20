@@ -190,6 +190,34 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(guild));
         }
 
+        // ★ 隊伍計分板那一欄，與帶箭頭的交易／收送紀錄。
+        //
+        // 這兩類是<b>出現次數最高</b>的漏網之魚：一份實機 captured.json 裡
+        // 前十一條全是隊友的名字，光第一條就記了 2438 次。名字被欄寬截斷、
+        // 數字又先變成 {~}，字形那幾條判準整個落空。
+        for (String row : new String[] {
+                "- [||{~}||] PoorChaC [{~}]",
+                "- [||{~}{~}||] {~}tao_ [{~}]",
+                "- {~}jimmy",
+                "{~}ay_joker → PoorChaCha: {~} Emeralds",
+                "PoorChaCha → {~}yue: a Guild Tome",
+                "→ PoorChaCha {~}x {p} Teleportation Scroll [{~}/{~}] (Everyone)",
+                "→ RRRRAcher [AS{~}/Hunter]"}) {
+            check("擋得下隊伍列／交易列：" + row,
+                  com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(row));
+        }
+
+        // ★ 反方向：破折號開頭的<b>數量列</b>不能一起擋。
+        //
+        // 「- {~}x 松木板」跟隊友那一列只差在後面還接著東西。規則放寬一個字
+        // 就會掃掉一百多條正當的語料——這幾條就是當時量出來的。
+        for (String amount : new String[] {
+                "- {~}x Pine Plank", "- {~}x Corkian Amplifier III",
+                "- {~}m Guild Experience", "- {~}x {#}{#}Cumulonimbus"}) {
+            check("不誤擋數量列：" + amount,
+                  !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(amount));
+        }
+
         // ★ 反方向：長得有點像、但不是公會清單的那些。
         //
         // 這條規則只認「整行就是一個名字加標籤」。方括號裡有空白、斜線或
