@@ -67,7 +67,9 @@ public final class TranslationCache {
     public static int prepare(Path langDir, String lang) {
         check(langDir);
         int refreshed = refreshAfterUpgrade(langDir, lang);
-        return refreshed + StarterFiles.installIfEmpty(langDir, lang);
+        // scoped 的檔不在清單裡，升級上來的快取永遠等不到它們。見 StarterFiles#installMissingScoped
+        return refreshed + StarterFiles.installIfEmpty(langDir, lang)
+                + StarterFiles.installMissingScoped(langDir, lang);
     }
 
     /**

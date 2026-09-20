@@ -96,6 +96,38 @@ public final class StarterFiles {
     }
 
     /**
+     * 補上<b>缺少的</b> scoped 檔（見 {@link FileIndex#SCOPED}）。
+     *
+     * <h2>為什麼不能只靠 installIfEmpty</h2>
+     * 那個方法看到資料夾裡已經有譯文就整個跳過，而升級上來的人資料夾一定不是空的。
+     * scoped 的檔刻意不列進 {@code _index.json}，同步時抓不到（遠端還沒有就是 404），
+     * 於是新加的 scoped 檔<b>永遠</b>不會出現在他們的快取裡。
+     *
+     * <p>實機回報：boss bar 右邊的 Weak／Dam／Def 沒翻，同步紀錄寫著「3 個檔案失敗」
+     * ——就是這三個 scoped 檔。
+     *
+     * <p>只補<b>不存在</b>的，已經在的一個都不蓋：那可能是使用者自己改過的。
+     *
+     * @return 補了幾個
+     */
+    public static int installMissingScoped(Path dir, String lang) {
+        int written = 0;
+        for (String name : FileIndex.SCOPED) {
+            Path out = dir.resolve(name);
+            if (Files.exists(out)) {
+                continue;
+            }
+            if (restore(dir, lang, name)) {
+                written++;
+            }
+        }
+        if (written > 0) {
+            System.out.println("[WynnChaYuan] 補上 " + written + " 個內建的 scoped 譯文檔");
+        }
+        return written;
+    }
+
+    /**
      * 從 jar 補回一個檔，蓋掉原本那份。
      *
      * <p>給讀不懂的快取檔用（見 {@link TranslationCache#loadRepairing}）：半截的檔

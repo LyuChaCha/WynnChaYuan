@@ -70,11 +70,26 @@ public final class NoticeScreen extends Screen {
         mc.setScreen(new NoticeScreen(null));
     }
 
+    /**
+     * 內文：先是介面語言那三句，再空一行接英文。
+     *
+     * <p>英文一定要附：Wynncraft 是國際伺服器，看不懂這個語言的人也得看得懂這段
+     * 「請用原文跟別人溝通」的提醒——使用者明說「務必附上英文版本，否則看不懂」。
+     * 介面語言本來就是英文時不重複第二次。
+     */
     private List<FormattedCharSequence> body() {
         List<FormattedCharSequence> out = new ArrayList<>();
         // 鍵要寫死：runLangKeyChecks 是掃程式裡的字面鍵，拼出來的它認不得
         for (var line : List.of(T.c("notice.line1"), T.c("notice.line2"), T.c("notice.line3"))) {
             out.addAll(this.font.split(line, cardW() - PAD * 2));
+        }
+        if (T.s("notice.line1").equals(T.s("notice.en1"))) {
+            return out;                        // 介面語言就是英文
+        }
+        out.add(FormattedCharSequence.EMPTY);
+        for (var line : List.of(T.c("notice.en1"), T.c("notice.en2"), T.c("notice.en3"))) {
+            out.addAll(this.font.split(line.copy().withStyle(
+                    net.minecraft.ChatFormatting.GRAY), cardW() - PAD * 2));
         }
         return out;
     }

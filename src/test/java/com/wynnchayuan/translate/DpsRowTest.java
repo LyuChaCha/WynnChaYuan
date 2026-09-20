@@ -61,8 +61,39 @@ public final class DpsRowTest {
         check("★「每秒伤害」是 DPS 那段的白色",
               word[0] != null && LABEL.getColor().equals(word[0].getColor()));
 
+        healthRow(store);
         System.out.println(failures == 0 ? "DPS 那一行：全部通過" : "DPS 那一行：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
+    }
+
+    /**
+     * 「+4,250 Health」：原文整串數字（含 + 號）都在放大字型裡。
+     * 譯文把數值拆成 {~}，+ 號留在文字那半——實機回報「+ 是小的」。
+     */
+    private static void healthRow(TranslationStore store) {
+        MutableComponent row = Component.empty();
+        row.append(Component.literal("+4,250").withStyle(NUMBER));
+        row.append(Component.literal(" Health").withStyle(LABEL));
+        List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(
+                List.of(Component.literal("Divzer"), Component.literal("Divzer"), row), store);
+        Component shown = out.get(out.size() - 1);
+        Style[] sign = {null};
+        Style[] digits = {null};
+        shown.visit((style, text) -> {
+            if (text.contains("+")) {
+                sign[0] = style;
+            }
+            if (text.contains("4,250") || text.contains("250")) {
+                digits[0] = style;
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        check("生命那行有翻出來（實際 " + shown.getString() + "）",
+              shown.getString().contains("生命"));
+        check("數字留在放大字型", digits[0] != null && NUMBER.getFont().equals(digits[0].getFont()));
+        check("★ 正負號跟數字同一個字型（實際 "
+                      + (sign[0] == null ? "沒有 +" : sign[0].getFont()) + "）",
+              sign[0] != null && NUMBER.getFont().equals(sign[0].getFont()));
     }
 
     private static void check(String what, boolean ok) {

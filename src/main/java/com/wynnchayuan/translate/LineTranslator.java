@@ -7531,6 +7531,32 @@ public final class LineTranslator {
                         afterNumber = false;
                     }
                     case TEXT -> {
+                        // 正負號跟著後面那個<b>放大的</b>數值走字型。
+                        //
+                        // 原文的「+4,250 Health」整串數字（含 + 號）都在
+                        // offset/wynncraft_quad 這種放大字型裡。譯文把數值拆成
+                        // {~}，+ 號留在文字那半，於是只有它縮回一般大小——
+                        // 實機回報「+ 是小的」。
+                        String text = token.text();
+                        Style bigNext = i + 1 < tokens.size()
+                                && tokens.get(i + 1).kind() == Kind.NUMBER
+                                ? displayFont(peekStyle(tokens.get(i + 1), glyphs, places,
+                                              numbers, users, glyph, place, number, user))
+                                : null;
+                        if (bigNext != null && !text.isEmpty()
+                                && (text.endsWith("+") || text.endsWith("-"))) {
+                            String head = text.substring(0, text.length() - 1);
+                            if (!head.isEmpty()) {
+                                appendHugging(line, head, textStyle, symbolStyle,
+                                              noteStyle, inNote, accents, usedAccent,
+                                              store, i > 0 ? justFilled : null, null,
+                                              afterNumber);
+                            }
+                            line.append(literal(text.substring(text.length() - 1), bigNext));
+                            justFilled = null;
+                            afterNumber = false;
+                            break;
+                        }
                         if (forced != null) {
                             // 譯者已經講明這一段要什麼顏色，就不要再猜了——
                             // 重點段比對、括號註解、底色統計全部讓開。
@@ -8166,11 +8192,14 @@ public final class LineTranslator {
      * 翻完變小）。那種字型本來就只拿來畫數字，照原樣畫就是原文的樣子。
      */
     private static Style numberDisplay(Style style) {
-        if (style != null && style.getFont() instanceof FontDescription.Resource r
-                && r.id() != null && r.id().getPath().startsWith("offset/")) {
-            return style;
-        }
-        return forDisplay(style);
+        Style big = displayFont(style);
+        return big != null ? big : forDisplay(style);
+    }
+
+    /** 放大數字用的字型（{@code offset/…}）；不是那種字型時回傳 {@code null}。 */
+    private static Style displayFont(Style style) {
+        return style != null && style.getFont() instanceof FontDescription.Resource r
+                && r.id() != null && r.id().getPath().startsWith("offset/") ? style : null;
     }
 
     private static Style greyed() {
