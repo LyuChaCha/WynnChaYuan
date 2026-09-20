@@ -621,6 +621,14 @@ public final class WynntilsText {
             if (lines == null || lines.isEmpty() || config == null || !config.wynntilsUi()) {
                 return lines;
             }
+            // 收一份。這張卡上的字<b>沒有別的路進得來</b>——它不是物品 tooltip，
+            // 走的是 Wynntils 自己的畫面，所以在這裡不收就永遠不會出現在
+            // captured.json 裡，缺什麼只能靠截圖問。
+            //
+            // 交給 GuiTextCapture 而不是自己寫一份：玩家頭顱的標題、隊伍卡、
+            // 整段 vs 逐行那幾道判斷都在那邊，分兩份寫遲早會不一致。
+            // 它自己看「收集介面文字」那個開關，預設關著。
+            com.wynnchayuan.listener.GuiTextCapture.record(lines);
             java.util.List<net.minecraft.network.chat.Component> out =
                     TooltipPanel.translateInPlace(lines, WynnChaYuan.translations());
             if (out == null || out.isEmpty()) {
