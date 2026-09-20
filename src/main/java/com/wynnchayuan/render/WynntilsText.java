@@ -40,6 +40,15 @@ public final class WynntilsText {
                     WynnChaYuan.config(), WynnChaYuan.translations());
             if (out != lines) {
                 WynnChaYuan.store().noteEvent("overlay.shown");
+            } else if (tracker(overlay)) {
+                // 追蹤欄畫了、但一行都沒換掉。先前這裡不記，於是
+                // 「右上那一欄沒翻」跟「那一欄根本沒畫出來」在診斷檔裡
+                // 長得一模一樣——兩次都只能靠截圖猜。現在把原文收進來，
+                // captured.json 就直接寫著那一欄實際上有哪幾行。
+                WynnChaYuan.store().noteEvent("overlay.noMatch");
+                for (StyledText line : lines) {
+                    noteTracker(line);
+                }
             }
             return out;
         } catch (Throwable t) {
@@ -553,6 +562,31 @@ public final class WynntilsText {
             return shown == text.getComponent() ? text : StyledText.fromComponent(shown);
         } catch (Throwable t) {
             return text;
+        }
+    }
+
+    /**
+     * 追蹤欄裡查不到的那一行，收進語料缺口。
+     *
+     * <p>跟別的收集路徑一樣先過個資濾網：那一欄同時也放隊伍那一段，
+     * 隊友的 ID 會跟著出現。
+     */
+    private static void noteTracker(StyledText line) {
+        if (line == null || line.isEmpty()
+                || !WynnChaYuan.config().collect()) {
+            return;
+        }
+        String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
+        if (template.isBlank()
+                || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
+                || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
+                || com.wynnchayuan.capture.PlayerDataFilter
+                        .mentionsOnlinePlayerLoose(template)) {
+            return;
+        }
+        var captured = WynnChaYuan.store();
+        if (captured != null) {
+            captured.record(template, "desc", "quest", "tracker/line");
         }
     }
 
