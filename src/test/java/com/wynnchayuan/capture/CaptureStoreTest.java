@@ -36,7 +36,39 @@ public final class CaptureStoreTest {
         staleOnesArePruned();
         humanWorkSurvives();
         untranslatedAreCounted();
+        fragmentsAreSkipped();
         report();
+    }
+
+    /**
+     * 打到一半的半句、提示框只收到第一行：不是缺口。
+     *
+     * <h2>先前壞在哪</h2>
+     * 對話是逐字打出來的，長句在對話框裡還會重新換行——一有閃失，半截的
+     * 那一份就被當成「打完了」收進 {@code captured.json}。實機一份 665 條的
+     * 檔案裡有 36 條是這樣來的，而<b>整段早就翻好了</b>：
+     *
+     * <pre>
+     *   Go on, I don't have time for you. My brother           ← 收到的
+     *   Go on, I don't have time for you. My brother keeps …   ← quest.json 有整句
+     * </pre>
+     *
+     * <p>這種東西比沒收更糟：看起來像缺口，翻了就會夾出半中半英。
+     */
+    private static void fragmentsAreSkipped() throws Exception {
+        Path file = Files.createTempDirectory("wynnchayuan-frag").resolve("captured.json");
+        CaptureStore store = new CaptureStore(file);
+        String whole = "Go on, I don't have time for you. My brother keeps sending"
+                + " me people all the time.";
+        store.knowsLonger(t -> whole.startsWith(t) && !whole.equals(t));
+
+        check("半截的不收",
+              !store.record("Go on, I don't have time for you. My brother",
+                            "desc", "quest", "dialogue/x"));
+        check("整句照收", store.record(whole, "desc", "quest", "dialogue/x"));
+        check("不相干的句子照收",
+              store.record("Brand new line", "desc", "quest", "dialogue/x"));
+        check("缺口清單只有那兩條（實際 " + store.size() + " 條）", store.size() == 2);
     }
 
     /**
