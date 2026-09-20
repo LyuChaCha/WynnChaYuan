@@ -10,6 +10,7 @@ import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
 import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
@@ -18,6 +19,7 @@ import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.ToIntFunction;
 
 /**
@@ -1873,12 +1875,69 @@ public final class LineTranslator {
                                       boolean centered, boolean leftAligned) {
         Component whole = translateWholeLine(line, store, centered, leftAligned);
         if (whole != null) {
-            return unslant(dropIconSpaces(whole));
+            return keepClick(line, unslant(dropIconSpaces(whole)));
         }
         // 多行標籤（怪物名牌）整塊查不到時，逐行查——見 translatePerLine。
         Component perLine = translatePerLine(line, store, centered);
-        return unslant(dropIconSpaces(perLine != null ? perLine
-                                       : translateSegments(line, store, centered, leftAligned)));
+        return keepClick(line, unslant(dropIconSpaces(perLine != null ? perLine
+                                       : translateSegments(line, store, centered, leftAligned))));
+    }
+
+    /**
+     * 原文可以點，譯文卻點不動時的最後一道防線。
+     *
+     * <h2>實機回報</h2>
+     * 「{@code Your ability tree is outdated, click here to update.}」裡的
+     * {@code here} 掛著 {@code ClickEvent}，點下去才會更新。譯文整段是一塊，
+     * 底線沒了、<b>也點不動</b>。
+     *
+     * <p>正規的做法是在譯文裡把可點的那幾個字標成 {@code {c2}}——{@code {cN}}
+     * 搬的是原文那一段的<b>整個樣式物件</b>，{@code ClickEvent} 就住在裡面。
+     * 但那要一條一條標，而遊戲隨時會新增這種訊息；沒標到的那些，玩家看到的是
+     * 一句<b>沒有作用的</b>中文，比留著英文還糟。
+     *
+     * <p>所以這裡補一層：原文整行只有<b>一種</b> {@code ClickEvent}、而譯文
+     * 一個都沒有時，把它套到整行上。整行可點跟原文只有那個詞可點不完全一樣，
+     * 但點得到總比點不到好。
+     *
+     * <h2>為什麼要限定「只有一種」</h2>
+     * 一行裡有兩個不同的連結（「接受 / 拒絕」那種）時，套哪一個都是錯的——
+     * 錯的連結比沒有連結危險得多，那種情況一律不碰，交給 {@code {cN}}。
+     */
+    static Component keepClick(StyledText original, Component translated) {
+        if (original == null || translated == null) {
+            return translated;
+        }
+        ClickEvent only = soleClick(original.getComponent());
+        if (only == null || hasClick(translated)) {
+            return translated;
+        }
+        return translated.copy().withStyle(s -> s.withClickEvent(only));
+    }
+
+    /** 整行就這一種 {@link ClickEvent} 時回傳它；沒有或不只一種時回傳 {@code null}。 */
+    private static ClickEvent soleClick(Component line) {
+        java.util.List<ClickEvent> found = new java.util.ArrayList<>();
+        line.visit((style, text) -> {
+            ClickEvent click = style.getClickEvent();
+            if (click != null && !found.contains(click)) {
+                found.add(click);
+            }
+            return Optional.empty();
+        }, Style.EMPTY);
+        return found.size() == 1 ? found.get(0) : null;
+    }
+
+    private static boolean hasClick(Component line) {
+        Boolean[] any = {Boolean.FALSE};
+        line.visit((style, text) -> {
+            if (style.getClickEvent() != null) {
+                any[0] = Boolean.TRUE;
+                return Optional.of(Boolean.TRUE);
+            }
+            return Optional.empty();
+        }, Style.EMPTY);
+        return any[0];
     }
 
     /**
