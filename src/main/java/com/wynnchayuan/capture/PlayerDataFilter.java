@@ -203,6 +203,44 @@ public final class PlayerDataFilter {
     private static final Pattern ACCOUNT_LEAD =
             Pattern.compile("(?m)^(?:\\{#}\\s*)*[A-Za-z]{2,}\\{~}\\s+[a-z]");
 
+    /**
+     * 隊伍計分板上的一名隊友，例如 {@code - [||{~}||] PoorChaC [{~}]}、{@code - {~}jimmy}。
+     *
+     * <h2>為什麼要認形狀</h2>
+     * 那一欄的名字被欄寬<b>截斷</b>，名字裡的數字又先被抽成 {@code {~}}——
+     * 「駝峰」「底線」那些字形判準全部落空，一次組隊就收進 41 條隊友名字，
+     * 出現次數還排在整份 captured.json 的最前面。
+     *
+     * <p>{@link #mentionsOnlinePlayerLoose} 問伺服器要名單，那條路準，但要求
+     * 當下真的連著線。這一條認的是<b>那一列的排版</b>：破折號開頭，接一條
+     * {@code [||…||]} 的血條、或是直接接一個以佔位符起頭的半截名字。
+     * 遊戲自己的介面文字不會長這樣，離線重跑檢查時也照樣擋得住。
+     *
+     * <p>半截名字那一路要求<b>整列只有那一個詞</b>：量過整份語料，放寬成
+     * 「開頭是 {@code -} 再接 {@code {~}} 開頭的字」會連「{@code - {~}x 松木板}」
+     * 那種數量列一起擋掉，一百多條。數量列後面還接著東西，隊友那一列沒有。
+     */
+    private static final Pattern PARTY_ROW = Pattern.compile(
+            "(?m)^\\s*-\\s*(\\[\\|+|\\{~}[A-Za-z_][A-Za-z0-9_]*\\s*$)");
+
+    /**
+     * 交易、公會倉庫與隊伍收送的紀錄，那一列中間有個箭頭：
+     *
+     * <pre>
+     *   {~}ay_joker → PoorChaCha: {~} Emeralds
+     *   PoorChaCha → {~}yue: a Guild Tome
+     *   → PoorChaCha {~}x {p} Teleportation Scroll [{~}/{~}] (Everyone)
+     *   → RRRRAcher [AS{~}/Hunter]
+     * </pre>
+     *
+     * <p>箭頭的一邊（常常是兩邊）就是玩家 ID。這幾種寫法各不相同，一句一句
+     * 追不完；共通的是<b>那個箭頭</b>加上至少一個佔位符——遊戲的介面文字
+     * 不會這樣寫。量過整份語料，七萬多條有譯文的條目<b>一條都不會</b>被擋到。
+     */
+    private static final Pattern TRADE_LINE =
+            Pattern.compile("(?m)^[^\\n]*→[^\\n]*\\{[#~pu]\\d?}[^\\n]*$"
+                    + "|(?m)^[^\\n]*\\{[#~pu]\\d?}[^\\n]*→[^\\n]*$");
+
     /** 見 {@link #carriesPlayerData}：折行處連同後面補上的符號，併回一個空白。 */
     private static final Pattern UNWRAP =
             Pattern.compile("[ \\t]*\\n(?:[ \\t]*\\{#}[ \\t]*)*");
@@ -388,6 +426,8 @@ public final class PlayerDataFilter {
                 || ACCOUNT_LEAD.matcher(text).find()
                 || XP_SHARE_TARGET.matcher(text).find()
                 || GUILD_HOLOGRAM.matcher(text).find()
+                || PARTY_ROW.matcher(text).find()
+                || TRADE_LINE.matcher(text).find()
                 || THANK_SOMEONE.matcher(text).find()
                 || CJK.matcher(text).find()) {
             return true;
@@ -523,6 +563,81 @@ public final class PlayerDataFilter {
         }
         return false;
     }
+
+    /**
+     * 這一行提到了<b>線上玩家</b>的名字嗎——比 {@link #mentionsOnlinePlayer} 寬的那一版。
+     *
+     * <h2>跟上面那一支的分工</h2>
+     * 上面那支要求名字<b>原封不動</b>出現在文字裡，所以只擋得住完整的名字。
+     * 這一支連截斷的、數字被抽掉的都擋，代價是設定裡的名字剛好撞到線上玩家時
+     * 會誤擋——所以只用在<b>本來就會出現玩家名</b>的地方（計分板、漂浮名牌），
+     * 不放進 {@link #carriesPlayerData} 那條通用的路。
+     *
+     * <h2>為什麼要問伺服器而不是看字形</h2>
+     * 隊伍計分板那一欄長這樣：{@code - [||{~}||] PoorChaC [{~}]}。名字裡的數字
+     * 先被抽成 {@code {~}}，名字本身又被欄寬截斷，於是「駝峰」「底線」那些字形
+     * 判準全部落空——實機的 captured.json 裡一次收進 41 條隊友名字，出現次數
+     * 還排在最前面。寵物名（{@code Tomzd{~}'s Bird}）同理。
+     *
+     * <p>名單是現成的：分頁列上就有這個世界的玩家。把名單的名字做<b>同樣的</b>
+     * 數字遮罩再比，截斷的情況就用前綴對——{@code PoorChaC} 是
+     * {@code PoorChaCha} 的前綴。
+     *
+     * <p>四個字元以上才比：再短就會誤擋一般的字（{@code Bob}、{@code Ice}）。
+     * 拿不到名單時（測試、還沒進伺服器）回傳 {@code false}，交給其他判準。
+     */
+    public static boolean mentionsOnlinePlayerLoose(String template) {
+        if (template == null || template.isBlank()) {
+            return false;
+        }
+        java.util.List<String> names = onlineNames();
+        if (names.isEmpty()) {
+            return false;
+        }
+        java.util.regex.Matcher m = WORDS.matcher(template);
+        while (m.find()) {
+            String token = m.group();
+            if (token.length() < MIN_NAME_MATCH) {
+                continue;
+            }
+            for (String name : names) {
+                if (name.length() < MIN_NAME_MATCH) {
+                    continue;
+                }
+                // 截斷的名字是名單那個的前綴；帶後綴的（'s Bird）反過來
+                if (name.regionMatches(true, 0, token, 0, Math.min(name.length(), token.length()))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /** 分頁列上的玩家名，數字換成 {@code {~}} 之後的樣子。 */
+    private static java.util.List<String> onlineNames() {
+        try {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc == null || mc.getConnection() == null) {
+                return List.of();
+            }
+            java.util.List<String> out = new java.util.ArrayList<>();
+            for (var entry : mc.getConnection().getListedOnlinePlayers()) {
+                String name = entry.getProfile().name();
+                if (name != null && !name.isBlank()) {
+                    out.add(name.replaceAll("\\d+", ""));
+                }
+            }
+            return out;
+        } catch (Throwable t) {
+            return List.of();                      // 名單拿不到就交給其他判準
+        }
+    }
+
+    /** 見 {@link #mentionsOnlinePlayer}：名字至少要這麼長才拿去比。 */
+    private static final int MIN_NAME_MATCH = 4;
+
+    /** 一段連續的英數與底線，就是一個可能的名字。 */
+    private static final Pattern WORDS = Pattern.compile("[A-Za-z_][A-Za-z0-9_]*");
 
     public static boolean looksPlayerNamed(String template) {
         if (template == null || template.isBlank()) {
