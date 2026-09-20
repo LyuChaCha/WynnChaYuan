@@ -100,6 +100,35 @@ public final class EvenParagraphTest {
              List.of("To", "Health +120"),
              new boolean[] {true, false});
 
+
+        // 首領祭壇的敘述：第二行大寫開頭（專有名詞），第一行結尾是 think——
+        // 不是冠詞也不是介系詞。先前兩條判準都不中，第一行自成一段，
+        // 於是畫面上一句中文接三句英文（使用者 2026-09-20 的截圖）。
+        mixed("散文折行時下一行大寫也是同一段",
+              List.of("Most people don't think",
+                      "Bovemists revere cows for a",
+                      "good reason. The people around",
+                      "here know better, and leave",
+                      "offerings regularly."),
+              new boolean[] {true, false, false, false, false},
+              new boolean[] {false, false, false, false, false});
+
+        // 反方向：標題那一行結尾是 ]，下一行是另一件事。
+        same("名稱加類別之後是新的一行",
+             List.of("Slay Slimes [Mini-Quest]", "Currently in progress"),
+             new boolean[] {false, true});
+
+        // 反方向：屬性列沒有句點也沒有冠詞，但帶數字——不能被當成散文。
+        same("帶數字的欄位列不算散文",
+             List.of("Recommended Combat Lv", "Health +120"),
+             new boolean[] {true, false});
+
+        // 反方向：項目符號開頭的是清單的一項，不是句子的續行。
+        same("項目符號行不算散文的續行",
+             List.of("Converts your emeralds automatically",
+                     "- Converts up to Liquid Emeralds"),
+             new boolean[] {false, true});
+
         // 網址翻不了，不能拿它判定「翻了一半」
         same("後面接網址的那一句照樣翻",
              List.of("You can get individual boosts at", "wynncraft.com/store"),
