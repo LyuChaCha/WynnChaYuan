@@ -459,7 +459,72 @@ public final class TooltipPanel {
             return false;
         }
         char start = line.charAt(0);
-        return start >= 'a' && start <= 'z' || endsMidPhrase(prev);
+        return start >= 'a' && start <= 'z' || endsMidPhrase(prev) || prose(prev, line);
+    }
+
+    /**
+     * 兩行都是<b>散文</b>，而且上一行沒有收尾——那就是同一段被折開的。
+     *
+     * <h2>為什麼小寫與連接詞那兩條還不夠</h2>
+     * 首領祭壇的敘述是
+     *
+     * <pre>
+     *   Most people don't think
+     *   Bovemists revere cows for a
+     *   good reason. The people around
+     * </pre>
+     *
+     * 第二行大寫開頭（專有名詞），而第一行結尾是 {@code think}——不是冠詞也不是
+     * 介系詞。兩條判準都不中，於是第一行自成一段：它剛好在語料裡有譯文，
+     * 其餘幾行沒有，畫面上就成了一句中文接三句英文。使用者回報的「翻譯一半」
+     * 就是這個。
+     *
+     * <h2>怎麼跟屬性列分開</h2>
+     * 真正的風險是把<b>屬性列</b>誤當成同一段（「生命 +100」「魔力 +20」各自一行、
+     * 也都沒有句點），那樣只要一行查不到就整疊退回英文。分辨的方法是看內容：
+     * 屬性列一定帶數字或冒號，敘述不帶。另外要求上一行結尾是字母或逗號——
+     * 結尾是 {@code ]} 的是完整的標籤（「Slay Slimes [Mini-Quest]」），
+     * 下一行是另一件事。
+     */
+    private static boolean prose(String prev, String line) {
+        char end = prev.charAt(prev.length() - 1);
+        return (Character.isLetter(end) || end == ',')
+                && hasLowerWord(prev)
+                && proseLine(prev) && proseLine(line);
+    }
+
+    /**
+     * 這一行裡有<b>小寫開頭</b>的字嗎——也就是它是句子，不是一個名稱。
+     *
+     * <p>「Infested Pit Key」整行 Title Case，那是物品名；下一行「Use this item
+     * at the」是新的一句，不能跟它併成同一段（否則名稱翻好了也會被退回英文）。
+     * 「Most people don't think」裡有 people、think，一看就知道是句子的中間。
+     */
+    private static boolean hasLowerWord(String line) {
+        for (int i = 1; i < line.length(); i++) {
+            if (line.charAt(i - 1) == ' ' && Character.isLowerCase(line.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 見 {@link #prose}：像散文的一行——好幾個字、不帶數字、不帶冒號。 */
+    private static boolean proseLine(String line) {
+        // 項目符號開頭的是清單的一項，不是句子的續行——「- Converts up to
+        // Liquid Emeralds」被併進前一句之後，整疊都退回英文了。
+        if (!Character.isLetter(line.charAt(0))) {
+            return false;
+        }
+        if (line.indexOf(' ') < 0 || line.indexOf(':') >= 0) {
+            return false;
+        }
+        for (int i = 0; i < line.length(); i++) {
+            if (Character.isDigit(line.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

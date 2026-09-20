@@ -137,6 +137,26 @@ public final class CollectorConfig {
     private boolean chatCopy = true;
 
     /**
+     * Wynntils 自己畫的那些介面要不要換成中文。
+     *
+     * <h2>換的是哪些字</h2>
+     * 綜合頁面（任務／洞穴／發現點的清單與右邊那張卡）、地圖、疊層管理⋯⋯
+     * 這些畫面的字有兩種來源，兩種都在這一條底下：
+     *
+     * <ul>
+     *   <li>Wynntils 自己的介面字串。它本來就有 zh_tw／zh_cn 語言檔，但只翻了
+     *       四千多條裡的兩千多條，剩下的照樣是英文。</li>
+     *   <li><b>Wynncraft 送來的內容</b>——任務名、洞穴名、「Currently in progress」、
+     *       「Click To Track」那些。Wynntils 只是把伺服器給的字重畫一次，
+     *       所以它的語言檔永遠不會有；這些字<b>早就在我們的語料裡</b>了。</li>
+     * </ul>
+     *
+     * <p>預設<b>開啟</b>：畫面上一半中文一半英文比全英文更難讀。
+     * 不想動別人介面的人可以關掉，關掉之後那幾個 mixin 就原樣回傳。
+     */
+    private boolean wynntilsUi = true;
+
+    /**
      * 市集搜尋打中文自動換成英文。
      *
      * <p>預設<b>開啟</b>：用就地取代的人看到的是中文，照著打卻搜不到東西——
@@ -442,6 +462,16 @@ public final class CollectorConfig {
         translateHeldItem = !translateHeldItem;
         save();
         return translateHeldItem;
+    }
+
+    public boolean wynntilsUi() {
+        return wynntilsUi;
+    }
+
+    public boolean toggleWynntilsUi() {
+        wynntilsUi = !wynntilsUi;
+        save();
+        return wynntilsUi;
     }
 
     public boolean marketSearch() {
@@ -1067,6 +1097,7 @@ public final class CollectorConfig {
             choiceMode = dialogue;
         }
         chatCopy = bool(o, "chatCopy", chatCopy);
+        wynntilsUi = bool(o, "wynntilsUi", wynntilsUi);
         translateTitles = bool(o, "translateTitles", translateTitles);
         // 0.1.9_10 的 showScoreboard 是「右上那一欄要不要進面板」，0.2.0 換成
         // 三段模式。舊設定檔關掉的人維持關掉，其餘照新的預設（就地取代）。
@@ -1289,6 +1320,7 @@ public final class CollectorConfig {
             o.addProperty("translateObjectives", translateObjectives);
             o.addProperty("translateHeldItem", translateHeldItem);
             o.addProperty("chatCopy", chatCopy);
+            o.addProperty("wynntilsUi", wynntilsUi);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
