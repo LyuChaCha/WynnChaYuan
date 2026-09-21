@@ -95,6 +95,22 @@ public final class BlockLayoutTest {
         check("★ 底下縮排相同的清單三行仍然靠左",
               !flags[3] && !flags[4] && !flags[5]);
 
+        // ★ 只有一項獎勵的迷你任務：獎勵那一段只有兩行，span 差 2px「完美吻合」。
+        //
+        //   縮排 14  內容 44   Rewards:
+        //   縮排  4  內容 62   - +32400 XP
+        //
+        // 那是巧合——整塊有 158px 寬，這兩行只是靠左的清單。先前被判成置中，
+        // 中文變短之後縮排跟著加大，整段獎勵往右飄（實機圖：采集钻石 II）。
+        List<Component> oneReward = new java.util.ArrayList<>(List.of(
+                line(0, "xxxxxxxxxxxxxxxxxxxxxxxxxx"),   // 158px 的敘述行
+                Component.literal(" "),
+                line(14, "xxxxxxx"),                     // Rewards:      span 72
+                line(4, "xxxxxxxxxx")));                 // - +32400 XP   span 68
+        boolean[] rewardFlags = BlockLayout.centered(oneReward, WIDTH);
+        check("★ 兩行的獎勵欄 span 遠窄於整塊 -> 靠左，不是置中",
+              !rewardFlags[2] && !rewardFlags[3]);
+
         // 材料的配方清單：整塊靠左，縮排都是 0
         boolean[] recipes = BlockLayout.centered(List.of(
                 line(0, "Crafting Level"),

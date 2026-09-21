@@ -71,11 +71,16 @@ public final class AbilityRowTest {
         // 同一片面板上的紅字，沒有冒號也沒有符號，就是一條普通條目
         row(store, "Blocked by another ability", "已被其他技能阻擋");
 
-        // 同一條路也收 Lootrun 的洞窟清單。洞窟名是專有名詞，留原文。
-        row(store, "✔ Cave: Eyeball Gauntlet", "✔ 洞穴: Eyeball Gauntlet");
-        row(store, "✖ Cave: Spiteful Crossing", "✖ 洞穴: Spiteful Crossing");
+        // 同一條路也收 Lootrun 的洞窟清單。
+        //
+        // 洞窟名<b>會</b>跟著翻。內容書的洞窟卡標題早就是中文了（「眼球試煉
+        // [洞窟]」），同一個名字在技能樹留英文只會讓兩個畫面對不起來。
+        // 語料裡每個「X [Cave]」旁邊都有一筆<b>裸名</b>條目——那是為了
+        // Wynntils 清單那一列（它送來的就是裸名），這條路順便也吃得到。
+        row(store, "✔ Cave: Eyeball Gauntlet", "✔ 洞穴: 眼球試煉");
+        row(store, "✖ Cave: Spiteful Crossing", "✖ 洞穴: 怨恨渡口");
         row(store, "✔ Cave: The Lantern Keeper's Abode",
-                "✔ 洞穴: The Lantern Keeper's Abode");
+                "✔ 洞穴: 掌燈者的居所");
 
         newAbility(store);
         negatives(store);
