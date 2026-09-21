@@ -119,6 +119,25 @@ public final class AlignPointTest {
         check("標籤在前時不算置中",
                 !LineTranslator.isLeading(labelValue, 1));
 
+        // --- 沒有欄的 tooltip 不該吃到右緣補償 ---------------------------
+        // 右緣對齊是<b>一群行</b>一起對出來的。兩欄的行湊不滿三行時，這份
+        // tooltip 根本沒有靠右的數值欄，卻仍然會被「把譯文縮水的部分補回
+        // 最後一段間隔」處理到。洞穴卡的獎勵列就是這樣歪的：
+        // 「- +1 [2px] Theatre Cane」的那個 2px 只是圖示與名稱之間的縫，
+        // 譯名短了 38px 全部灌進去，手杖被推到行尾。
+        check("空的一份：沒有欄，不補右緣",
+                LineTranslator.columnsAreLeftAligned(List.of()));
+        check("null 不會炸", LineTranslator.columnsAreLeftAligned(null));
+        check("行數不足三行：沒有欄，不補右緣",
+                LineTranslator.columnsAreLeftAligned(List.of(
+                        com.wynntils.core.text.StyledText.fromString("Theatre Royal [Cave]"),
+                        com.wynntils.core.text.StyledText.fromString("Can be explored"))));
+        check("行數夠但沒有一行有欄距：一樣不補",
+                LineTranslator.columnsAreLeftAligned(List.of(
+                        com.wynntils.core.text.StyledText.fromString("Rewards:"),
+                        com.wynntils.core.text.StyledText.fromString("- +7500000 XP"),
+                        com.wynntils.core.text.StyledText.fromString("- +Various Items"))));
+
         // --- 交界找在哪 ---------------------------------------------------
         // 有現成對齊空白時，交界就落在那個空白上（呼叫端看到是空白就不補）
         check("有現成對齊空白時交界落在空白上",

@@ -186,7 +186,7 @@ public final class BlockLayout {
             result[start] = true;
             return;
         }
-        if (isCentredBlock(lead, content, start, end)) {
+        if (isCentredBlock(lead, content, start, end, blockWidth)) {
             java.util.Arrays.fill(result, start, end, true);
             return;
         }
@@ -194,7 +194,7 @@ public final class BlockLayout {
         int bestLen = 0;
         for (int from = start; from + MIN_RUN <= end; from++) {
             for (int to = end; to - from > bestLen && to - from >= MIN_RUN; to--) {
-                if (isCentredBlock(lead, content, from, to)) {
+                if (isCentredBlock(lead, content, from, to, blockWidth)) {
                     bestFrom = from;
                     bestLen = to - from;
                     break;              // 由長到短試，第一個吻合的就是這個起點最長的
@@ -234,7 +234,8 @@ public final class BlockLayout {
      * <p>只有一行、或每行都一樣寬時，「置中」與「靠左」畫出來沒有差別，
      * 一律當靠左——不動它最安全。
      */
-    private static boolean isCentredBlock(int[] lead, int[] content, int start, int end) {
+    private static boolean isCentredBlock(int[] lead, int[] content, int start, int end,
+                                          int blockWidth) {
         if (end - start < 2) {
             return false;
         }
@@ -313,7 +314,30 @@ public final class BlockLayout {
         // 像素上的容差用<b>比例</b>而不是固定值：量測誤差會隨字型與行長放大，
         // 固定幾像素在長行上太嚴，在短行上又太鬆。
         int allowed = Math.max(TOLERANCE * 2, maxSpan * SPAN_TOLERANCE_PERCENT / 100);
-        return maxSpan - minSpan <= allowed;
+        if (maxSpan - minSpan > allowed) {
+            return false;
+        }
+        // span 就是這一段<b>自以為</b>的容器有多寬。它比整塊<b>窄</b>的話，
+        // 這一段不可能是置中的——沒有人會在 158px 的 tooltip 裡，
+        // 對著一個 72px 的假想容器置中。
+        //
+        // <h2>迷你任務的獎勵欄</h2>
+        // 只有一項獎勵的迷你任務，獎勵那一段就只有兩行：
+        //
+        // <pre>
+        //   縮排 14  內容 44   Rewards:
+        //   縮排  4  內容 62   - +32400 XP
+        // </pre>
+        //
+        // span 是 72 與 70，差 2 像素——「吻合得不能再吻合」。但那是
+        // <b>巧合</b>：整塊有 158px 寬，這兩行只是靠左的清單，縮排差 10px
+        // 純粹因為項目符號比標題往左凸一格。先前這一段被判成置中，
+        // 中文變短之後縮排跟著加大，獎勵那兩行就整個往右飄。
+        //
+        // 反過來 span <b>大於</b>整塊是正常的：聊天的歡迎訊息是相對
+        // <b>聊天視窗</b>置中的（span 309、最長的一行只有 252），
+        // 那種一律放行。
+        return maxSpan >= blockWidth - allowed;
     }
 
     /**

@@ -2151,12 +2151,27 @@ public final class LineTranslator {
      * 第二欄卻是災難：譯得越短就被推得越右，八行各歪一個量。
      *
      * <p>判斷靠量原文：每一行第二欄的起點與整行的右緣各收一份，起點比右緣
-     * <b>更一致</b>就是靠左排。分不出來時回傳 {@code false}——物品 tooltip 的
-     * 數值是靠右的，那是絕大多數。
+     * <b>更一致</b>就是靠左排。
+     *
+     * <h2>「看不出來」就是「沒有欄」</h2>
+     * 兩欄的行湊不滿 {@value #MIN_COLUMN_ROWS} 行時，這份 tooltip 根本
+     * <b>沒有</b>靠右的數值欄——右緣對齊是一群行一起對出來的，一行自己對不出
+     * 任何東西。先前這種情況回傳 {@code false}（＝當成靠右），於是那唯一一行
+     * 也吃到「把譯文縮水的部分補回最後一段間隔」。
+     *
+     * <p>洞穴卡的獎勵列就是這樣歪的：
+     *
+     * <pre>
+     *   - +1 [2px] Theatre Cane   →   - +1 [40px] 劇場手杖
+     * </pre>
+     *
+     * 那個 2px 只是圖示與名稱之間的縫，不是欄距；譯名短了 38px，全部補進去，
+     * 手杖就被推到行尾去了。整份卡片只有這一行有間隔，沒有第二行可以印證
+     * 「右緣該在哪」——這種時候不補，比補錯好。
      */
     public static boolean columnsAreLeftAligned(List<StyledText> lines) {
         if (lines == null || lines.size() < MIN_COLUMN_ROWS) {
-            return false;
+            return true;                       // 沒有欄可言，見上
         }
         List<Integer> starts = new ArrayList<>();
         List<Integer> ends = new ArrayList<>();
@@ -2168,7 +2183,7 @@ public final class LineTranslator {
             }
         }
         if (starts.size() < MIN_COLUMN_ROWS) {
-            return false;
+            return true;                       // 同上
         }
         return spread(starts) < spread(ends);
     }
@@ -7314,6 +7329,24 @@ public final class LineTranslator {
             }
         }
 
+        /** 這幾個實字不算數；扣到零就整個拿掉。見 {@link LineTranslator#perPartStyles}。 */
+        void remove(Style style, int solid) {
+            if (style == null || solid <= 0) {
+                return;
+            }
+            Style key = undecorated(style);
+            Integer have = counts.get(key);
+            if (have == null) {
+                return;
+            }
+            if (have <= solid) {
+                counts.remove(key);
+                shown.remove(key);
+            } else {
+                counts.put(key, have - solid);
+            }
+        }
+
         /** 佔最多字的那個；平手時取先出現的（也就是行首那個）。 */
         Style top() {
             Style best = null;
@@ -7339,7 +7372,34 @@ public final class LineTranslator {
                 && !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)).count();
     }
 
-    /** tooltip 那一路：本來就一行一個 {@link LineParts}，直接看每一份自己的片段。 */
+    /**
+     * tooltip 那一路：本來就一行一個 {@link LineParts}，直接看每一份自己的片段。
+     *
+     * <h2>多數色不算佔位符</h2>
+     * 數值、地名、玩家名是<b>從原文抽出來、原樣填回去</b>的（見 {@link LineParts}），
+     * 而且各自帶著自己的樣式回來。它們在譯文裡想搬到哪一行就搬到哪一行，
+     * 所以不能讓它們決定「這一行的字是什麼顏色」。
+     *
+     * <h2>實機回報（內容書「The Missing Piece」任務卡）</h2>
+     * 原文兩行，座標是白的、說明是灰的：
+     *
+     * <pre>
+     *   §7Pick up your post in the Post
+     *   §7Office at §f[-2156, 30, -944]
+     * </pre>
+     *
+     * 中文把座標搬到句子中間（「到 [-{~}, {~}, -{~}] 的郵局領取你的郵件。」），
+     * 折回兩行之後第二行是「的郵局領取你的郵件。」——整句<b>灰色</b>的那一半。
+     *
+     * <p>原文第二行混了兩個顏色，{@link #fallback} 於是退而求其次拿多數色：
+     * 灰的「Office at」只有 9 個實字，白的「[-2156, 30, -944]」有 15 個，白贏。
+     * 畫面上就是座標後面的說明整段變白——使用者回報的正是這個。
+     *
+     * <p>那 15 個字裡有 9 個是數值本身，而數值早就另外保管、會自己帶白色回來。
+     * 扣掉之後白的只剩 {@code [-,,-]} 6 個，灰的 9 個贏——跟肉眼看到的一致。
+     * 這也讓這條路跟 {@link #uniformStyles} 一致：那邊是照模板去掉佔位符之後
+     * 的實字數在量的，本來就不含數值。
+     */
     private static List<RowStyle> perPartStyles(List<LineParts> parts) {
         List<RowStyle> out = new ArrayList<>();
         for (LineParts part : parts) {
@@ -7357,6 +7417,13 @@ public final class LineTranslator {
                     seen = true;
                 } else if (!java.util.Objects.equals(only, run.style())) {
                     mixed = true;
+                }
+            }
+            // 抽出去的佔位符不算數，見上。符號（{#}）不必扣——solidCount 本來就不數。
+            for (List<LineParts.Piece> pool
+                    : List.of(part.numbers(), part.places(), part.users())) {
+                for (LineParts.Piece piece : pool) {
+                    tally.remove(piece.style(), solidCount(piece.text()));
                 }
             }
             out.add(new RowStyle(mixed || !seen ? null : only, tally.top()));
