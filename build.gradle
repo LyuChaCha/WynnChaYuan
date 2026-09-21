@@ -956,3 +956,11 @@ tasks.register('runObjectiveTailColourChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.ObjectiveTailColourTest'
 }
 tasks.named('check') { dependsOn 'runObjectiveTailColourChecks' }
+
+tasks.register('runBracketAccentChecks', JavaExec) {
+    group = 'verification'
+    description = '原文的色段整塊被方括號包起來時，譯文的方括號要跟著上色（卡片標題的 [洞窟]）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.BracketAccentTest'
+}
+tasks.named('check') { dependsOn 'runBracketAccentChecks' }

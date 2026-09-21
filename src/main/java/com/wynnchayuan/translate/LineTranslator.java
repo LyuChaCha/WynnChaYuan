@@ -8219,10 +8219,76 @@ public final class LineTranslator {
                 zh = lookupWordCore(core, store);
             }
             if (zh != null && !zh.isBlank() && !zh.equals(core)) {
-                out.add(new LineParts.Piece(zh, accent.style()));
+                // 原文那一段整塊被方括號包起來的話，括號也是它的顏色。見 #wrapLikeSource。
+                String wrapped = wrapLikeSource(core, zh, translated);
+                out.add(new LineParts.Piece(wrapped != null ? wrapped : zh, accent.style()));
             }
         }
         return out;
+    }
+
+    /**
+     * 原文的色段<b>整塊</b>被方括號包起來，而譯文裡查到的是去掉括號的內層時，
+     * 把重點段往外擴到括號。
+     *
+     * <h2>實機回報（內容書右邊那張卡的標題）</h2>
+     * 原文那一行是兩個顏色，名稱橘、類型灰，而灰的那一段<b>含方括號</b>：
+     *
+     * <pre>
+     *   #FF8C19 「Dragonkin Nest 」
+     *   #AAAAAA 「[Cave]」
+     * </pre>
+     *
+     * 語料寫的是純文字（{@code "Dragonkin Nest [Cave]": "龍裔巢穴 [洞窟]"}），
+     * 沒有色碼，所以灰色是靠字面比對貼回去的。{@code [Cave]} 查表查不到，
+     * {@link #lookupWordCore} 剝掉標點之後查到的是 {@code Cave} → 「洞窟」，
+     * 於是只有中間兩個字變灰，兩個方括號留在名稱的橘色裡——畫出去是
+     * {@code ["龍裔巢穴 ", "[", "洞窟", "]"]} 四段。使用者回報的就是這個。
+     *
+     * <p>名稱的譯文<b>自己就含有</b>類型詞時更明顯：字面比對挑的是第一個，
+     * 「末日洞窟 [洞窟]」的灰色貼到了<b>名稱裡</b>的「洞窟」，後面真正該灰的
+     * 那一個反而留著名稱的橘色。擴到括號之後字面唯一，這種挑錯位置也跟著沒了。
+     *
+     * <h2>為什麼這條規則站得住腳</h2>
+     * 括號是<b>原文那一段自己的一部分</b>（原文的分段就是這樣切的），而譯文
+     * 照原樣寫了一對括號把同一個詞包起來——兩邊指的是同一塊東西，顏色自然一致。
+     * 語料裡 630 條這種標題（{@code Cave} 199、{@code Quest} 110、
+     * {@code Mini-Quest} 85、{@code Secret Discovery} 23、{@code Dungeon} 19、
+     * {@code Boss Altar} 14、{@code World Discovery} 12 …）的譯文全是
+     * {@code 譯名 [類型譯名]}，六個語言都一樣。
+     *
+     * <h2>何時不擴</h2>
+     * <ul>
+     *   <li>原文那一段<b>不是</b>整塊括起來的——括號左右還有別的字時，擴出去會
+     *       吃掉不屬於這個顏色的字。只認開頭是 {@code [}、結尾是 {@code ]}
+     *       而且中間沒有另一層括號的。</li>
+     *   <li>譯文本來就<b>自己帶括號</b>（查到的譯文裡已經有 {@code []}）——
+     *       再包一層會變成 {@code [[洞窟]]}，那在譯文裡根本找不到。</li>
+     *   <li>譯文裡<b>沒有</b>照原文寫這對括號（改寫成別的說法、或換成圓括號）
+     *       ——找不到就照舊，只貼內層那個詞，不會比現在更糟。</li>
+     * </ul>
+     * 只處理方括號：圓括號與大括號在這份語料裡不是這個用法，而 {@code {} }
+     * 還是佔位符的符號。
+     *
+     * @return 擴出去之後的字面；不適用時回傳 {@code null}
+     */
+    static String wrapLikeSource(String core, String zh, String translated) {
+        if (core == null || zh == null || translated == null
+                || core.length() < 3 || zh.isBlank()) {
+            return null;
+        }
+        if (core.charAt(0) != '[' || core.charAt(core.length() - 1) != ']') {
+            return null;                       // 不是整塊被括起來的
+        }
+        String inner = core.substring(1, core.length() - 1);
+        if (inner.isBlank() || inner.indexOf('[') >= 0 || inner.indexOf(']') >= 0) {
+            return null;                       // 巢狀或空的括號，看不出該擴到哪一層
+        }
+        if (zh.indexOf('[') >= 0 || zh.indexOf(']') >= 0) {
+            return null;                       // 譯文本來就自己帶括號
+        }
+        String wrapped = "[" + zh + "]";
+        return translated.contains(wrapped) ? wrapped : null;
     }
 
     /**
