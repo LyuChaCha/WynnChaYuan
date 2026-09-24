@@ -100,6 +100,13 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.translate.TranslationCache.modVersion = version();
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
+        // 滑過卡片時，把模組<b>實際查表用的整段鍵</b>另外記一份。
+        //
+        // 不跟著 debugDumps 走：這不是診斷檔，是要交出去的語料稿。它自己看
+        // 「收集介面文字」那個開關（跟 GuiTextCapture 同一個），所以這裡
+        // 無條件備妥路徑就好，關著的時候整支是空轉。見 CardDump。
+        com.wynnchayuan.capture.CardDump.init(dir.resolve(
+                com.wynnchayuan.capture.CardDump.FILE));
         com.wynnchayuan.render.ThirdPartySections.load(dir);
         com.wynnchayuan.render.ThirdPartyLiterals.load(dir);
         // 診斷檔預設不寫。
@@ -386,6 +393,14 @@ public final class WynnChaYuan implements ClientModInitializer {
             store.flush();
         } catch (Throwable t) {
             System.err.println("[WynnChaYuan] captured.json 寫入失敗: " + t);
+        }
+        // 各自一個 try：cards.json 寫不出來不該連帶讓 captured.json 也停掉，
+        // 反過來也一樣。見上面「排程丟一次例外就再也不跑」。
+        try {
+            com.wynnchayuan.capture.CardDump.flush();
+        } catch (Throwable t) {
+            System.err.println("[WynnChaYuan] "
+                    + com.wynnchayuan.capture.CardDump.FILE + " 寫入失敗: " + t);
         }
     }
 
