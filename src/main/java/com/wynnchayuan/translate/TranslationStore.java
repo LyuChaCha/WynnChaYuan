@@ -1678,6 +1678,48 @@ public final class TranslationStore {
         return hit;
     }
 
+    /**
+     * 「譯名 + 原文」附在後面的那段「{@code  (原文)}」從哪裡開始。
+     *
+     * <h2>為什麼需要</h2>
+     * 附上去的原文是<b>刻意留的英文</b>，玩家拿它去對 wiki 與交易市場，
+     * 所以它必須原封不動。但它附得早（{@link #lookup}），而畫之前還會對整句
+     * 掃一次詞表把技能名換成中文（折行前換，見 {@code LineTranslator#termsWithin}）
+     * ——那一掃連括號裡的英文一起換掉了。
+     *
+     * <p>實機回報：Legendary 頭盔 {@code Mask of Courage} 畫成
+     * 「{@code 勇氣面具 (假面 of 勇氣)}」。{@code 假面} 與 {@code 勇氣} 分別是
+     * Shaman 的 {@code Mask} 與 {@code Courage}，只有 {@code of} 沒有對應的詞
+     * 而留了下來。
+     *
+     * <p>判斷條件收得很緊：必須是<b>結尾</b>的括號，而且括號裡正好是一個
+     * 只有裝備檔用到的名字（或 {@code Shiny} + 這種名字）。敘述本來就帶的括號
+     * ——「{@code Mask (Courage)}」——括號裡不是裝備名，照樣換。
+     *
+     * @return 「{@code  (}」的索引；沒有附原文時回傳 {@code -1}
+     */
+    public int appendedOriginalAt(String text) {
+        if (!namesWithOriginal || text == null || !text.endsWith(")")) {
+            return -1;
+        }
+        int at = text.lastIndexOf(" (");
+        if (at < 0) {
+            return -1;
+        }
+        String inner = text.substring(at + 2, text.length() - 1);
+        if (gearOnly(inner)) {
+            return at;
+        }
+        // Shiny 的原文是「Shiny X」，語料裡不會有這種鍵，見 #shiny
+        if (inner.startsWith(SHINY)) {
+            String rest = inner.substring(SHINY.length()).strip();
+            if (gearNameKeys.contains(rest) || nameKeys.contains(rest)) {
+                return at;
+            }
+        }
+        return -1;
+    }
+
     /** Shiny 裝備名稱的前綴。 */
     private static final String SHINY = "Shiny ";
 

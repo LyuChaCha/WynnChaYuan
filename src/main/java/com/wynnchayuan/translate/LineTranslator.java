@@ -182,6 +182,8 @@ public final class LineTranslator {
             }
             translated = wrapToBlock(translated, run);
         }
+        translated = breakBeforeOriginal(translated, widestOf(run), store,
+                                         piece -> widthOf(Component.literal(piece)));
         String[] dst = translated.split("\n", -1);
         List<Component> built = rebuildAll(dst, parts, extra, glyphs, places, store);
         if (built == null) {
@@ -8050,6 +8052,10 @@ public final class LineTranslator {
     private static void appendText(MutableComponent out, String text, Style base,
                                    List<LineParts.Piece> accents, boolean[] used,
                                    TranslationStore store) {
+        // 「譯名 + 原文」附在後面的原文不換詞——這是逐段的那一條路，
+        // termsWithin 是折行前整句的那一條。兩條都會走到同一行名稱，
+        // 只補一邊等於只修一半。見 TranslationStore#appendedOriginalAt。
+        int keepFrom = store == null ? -1 : store.appendedOriginalAt(text);
         int from = 0;
         while (from < text.length()) {
             int at = -1;
@@ -8073,6 +8079,9 @@ public final class LineTranslator {
             }
             // 技能名稱：語料裡只翻一次，所有提到它的敘述自動跟著換
             TranslationStore.Term term = store == null ? null : store.findTerm(text, from);
+            if (term != null && keepFrom >= 0 && term.start() >= keepFrom) {
+                term = null;               // 落在附的原文裡，原樣留著
+            }
             // 同一個位置時取<b>比較長</b>的那一個——這跟重點段彼此之間本來就用的
             // 規則一致，先前只有重點段互比時套用，跟詞典比的時候卻是重點段無條件勝。
             //
@@ -8163,25 +8172,63 @@ public final class LineTranslator {
      *
      * @return 換過的文字；裡面沒有任何詞表裡的名稱時回傳 {@code null}
      */
+    /**
+     * 「譯名 + 原文」太寬時，把附的原文挪到<b>下一行</b>。
+     *
+     * <h2>為什麼</h2>
+     * 「{@code 勇氣面具 (Mask of Courage)}」一定比原文的「{@code Mask of Courage}」寬——
+     * 譯名整段是多出來的。面板的寬度是最寬那一行決定的，於是開了這個模式之後
+     * 每一件裝備的面板都被名稱那一行撐開一截。使用者回報的「版面過長」就是這個。
+     *
+     * <p>斷在「{@code  (}」這個<b>語意的接縫</b>上：上一行是看得懂的譯名，
+     * 下一行是拿去對 wiki 的英文，兩邊都完整。比讓 {@code wrapBalanced}
+     * 在句子中間貪心斷行好讀得多。
+     *
+     * <h2>什麼時候不斷</h2>
+     * 放得進原文的寬度就不斷——短名稱（{@code 神像 (Idol)}）本來就不會把面板撐寬，
+     * 硬拆成兩行只是白白多佔一行。已經有換行的也不動，那是上游折好的形狀。
+     *
+     * @param maxPx 原文那一塊最寬的行；{@code <= 0} 代表量不出來（測試環境），不動
+     */
+    static String breakBeforeOriginal(String text, int maxPx, TranslationStore store,
+                                      ToIntFunction<String> measure) {
+        if (store == null || maxPx <= 0 || text.indexOf('\n') >= 0) {
+            return text;
+        }
+        int at = store.appendedOriginalAt(text);
+        if (at < 0 || measure.applyAsInt(text) <= maxPx) {
+            return text;
+        }
+        return text.substring(0, at) + "\n" + text.substring(at + 1);
+    }
+
     static String termsWithin(String text, TranslationStore store) {
+        // 「譯名 + 原文」附在後面的原文是刻意留的英文，不能再換一次——
+        // 換了就成了「勇氣面具 (假面 of 勇氣)」。只掃前面那一段，附的原文原樣接回。
+        // 見 TranslationStore#appendedOriginalAt。
+        int cut = store == null ? -1 : store.appendedOriginalAt(text);
+        String body = cut < 0 ? text : text.substring(0, cut);
+        String kept = cut < 0 ? "" : text.substring(cut);
+
         StringBuilder out = new StringBuilder();
         int from = 0;
         boolean any = false;
         TranslationStore.Term term;
-        while (from < text.length() && (term = store.findTerm(text, from)) != null) {
-            String before = text.substring(from, term.start());
+        while (from < body.length() && (term = store.findTerm(body, from)) != null) {
+            String before = body.substring(from, term.start());
             // 跟 appendText 同一套空格規則：「層 結晶化」的半形空格是給英文用的
             if (dropsSpaceBefore(before, term.translation())) {
                 before = before.substring(0, before.length() - 1);
             }
             out.append(before).append(term.translation());
             from = term.end();
-            if (dropsSpaceAfter(term.translation(), text, from)) {
+            if (dropsSpaceAfter(term.translation(), body, from)) {
                 from++;
             }
             any = true;
         }
-        return any ? out.append(text.substring(Math.min(from, text.length()))).toString()
+        return any ? out.append(body.substring(Math.min(from, body.length())))
+                        .append(kept).toString()
                    : null;
     }
 

@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site B",
-  "count": 28,
+  "count": 29,
   "translated": 28,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site B#000": {
+   "src": "Hello there! We are working very hard here at this excavation site! We have one in {p} as well, I think you should check it out!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site B#001": {
    "src": "Bring the Yellow Crystal Shard to Excavator Lykron at [{~}, {~}, -{~}] The entrance to the cave is at [{~}, {~}, -{~}].",
    "dst": "黄色い水晶の欠片を [{~}, {~}, -{~}] の発掘者 Lykron に届ける。洞窟の入口は [{~}, {~}, -{~}]。",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#001": {
+  "WynnExcavation Site B#002": {
    "src": "Good day! You're the person that helped us out in the desert aren't you? Excellent! Just the person I need! Can you help me out with a problem I have?",
    "dst": "ごきげんよう！砂漠で私たちを助けてくれた方ですね？素晴らしい！まさに必要な人です！困りごとを手伝ってもらえますか？",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#002": {
+  "WynnExcavation Site B#003": {
    "src": "Perfect! You see, we are supposed to be searching for some of the... uhhh... long lost ruins of ancient Wynn, just like in the desert!",
    "dst": "よかった！実は、私たちは…えー…古代 Wynn の失われた遺跡を探しているんです、砂漠と同じように！",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#003": {
+  "WynnExcavation Site B#004": {
    "src": "However, it seems no progress has been made recently; my workers have stopped working!",
    "dst": "ところが最近はまったく進んでいません。作業員が働かなくなったんです！",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#004": {
+  "WynnExcavation Site B#005": {
    "src": "The problem is, there are strange creatures down at the bottom of the cave disturbing them.",
    "dst": "問題は、洞窟の底に妙な生き物がいて、彼らの邪魔をしていることです。",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#005": {
+  "WynnExcavation Site B#006": {
    "src": "I need you to go and kill them, but first you should go talk to one of my colleagues, he has more information for you.",
    "dst": "奴らを倒してほしいのですが、まず同僚の一人と話してください。詳しい情報を持っています。",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#006": {
+  "WynnExcavation Site B#007": {
    "src": "He is located directly at the bottom of this cave, go speak to him, go on now! Off you go!",
    "dst": "彼は洞窟の一番底にいます。話しに行ってください、さあ！行ってらっしゃい！",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#007": {
+  "WynnExcavation Site B#008": {
    "src": "Investigate the depths of the cave",
    "dst": "洞窟の奥を調べる",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#008": {
+  "WynnExcavation Site B#009": {
    "src": "We know what you stole from us in the desert! Take THIS! You won't be escaping this dead end any time soon!",
    "dst": "砂漠で俺たちから何を盗んだか知ってるぞ！くらえ！この行き止まりからは当分出られないぞ！",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Flendar",
    "source": "wiki"
   },
-  "WynnExcavation Site B#009": {
+  "WynnExcavation Site B#010": {
    "src": "Solve the puzzle",
    "dst": "仕掛けを解く",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#010": {
+  "WynnExcavation Site B#011": {
    "src": "Find the crystal",
    "dst": "水晶を見つける",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#011": {
+  "WynnExcavation Site B#012": {
    "src": "What are you doing here?!",
    "dst": "ここで何をしている？！",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#012": {
+  "WynnExcavation Site B#013": {
    "src": "This door is closed; the mine entrance behind it isn't open at this time.",
    "dst": "この扉は閉鎖中だ。奥の坑道入口は今は開いていない。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#013": {
+  "WynnExcavation Site B#014": {
    "src": "I'm here to make sure no one uses the passage while the archaeologist works.",
    "dst": "考古学者の作業中、誰も通路を使わないよう見張っている。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#014": {
+  "WynnExcavation Site B#015": {
    "src": "You will have to find another exit if you want to get out!",
    "dst": "出たいなら別の出口を探すことだ！",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#015": {
+  "WynnExcavation Site B#016": {
    "src": "Baffling... What a puzzling situation I am in...",
    "dst": "不可解だ…なんと難解な状況だろう…",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#016": {
+  "WynnExcavation Site B#017": {
    "src": "I cannot open this door for some reason...",
    "dst": "なぜかこの扉が開かない…",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#017": {
+  "WynnExcavation Site B#018": {
    "src": "We suspect the purple crystal is behind this door, but the descriptions in the scriptures don't match this door.",
    "dst": "紫の水晶はこの扉の奥だと睨んでいるが、経典の記述がこの扉と合わない。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#018": {
+  "WynnExcavation Site B#019": {
    "src": "They seem to describe another door, but all our evidence says otherwise.",
    "dst": "別の扉を指しているようだが、証拠はすべてここを示している。",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#019": {
+  "WynnExcavation Site B#020": {
    "src": "The scriptures also say something about hidden within the rocks... But we removed them all!",
    "dst": "経典には「岩の中に隠され」とも書いてある…だが岩は全部取り除いたぞ！",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#020": {
+  "WynnExcavation Site B#021": {
    "src": "Well, the writing isn't actually all that clear. It could mean virtually anything, I think one of these words means hippo! Guess we'll have to find out!",
    "dst": "まあ、文章自体あまり明確じゃない。何とでも読める。この単語のひとつは「カバ」だと思う！確かめるしかないな！",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#021": {
+  "WynnExcavation Site B#022": {
    "src": "Anyway, back to figuring out what needs to be done here... Wait, who are you, you're not an employee of WynnExcavation!",
    "dst": "とにかく、ここで何をすべきか考え直して…待て、君は誰だ、WynnExcavation の社員じゃないな！",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#022": {
+  "WynnExcavation Site B#023": {
    "src": "Talk to Excavator Lykron",
    "dst": "発掘者 Lykron と話す",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#023": {
+  "WynnExcavation Site B#024": {
    "src": "I have to admit, I'm impressed. I genuinely thought our plan would be successful. Who knew that dead end had a secret exit.",
    "dst": "正直、感心しましたよ。本気で計画は成功すると思っていました。あの行き止まりに隠し出口があったとは。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#024": {
+  "WynnExcavation Site B#025": {
    "src": "Not me apparently. We know what you took in the desert, you were just some kid expected to do a delivery job, who knew you'd take a shard of the crystal.",
    "dst": "私は知らなかったようです。砂漠で何を取ったか知っていますよ。ただの配達係の子供が、水晶の欠片を持ち去るとはね。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#025": {
+  "WynnExcavation Site B#026": {
    "src": "Don't pretend like you don't know what it is, you know as well as I do combining the four crystal shards is told to bring unlimited power!",
    "dst": "知らないふりはやめなさい。四つの水晶の欠片を合わせれば無限の力が得られると伝わっているのは、私同様ご存じでしょう！",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#026": {
+  "WynnExcavation Site B#027": {
    "src": "You will not interfere any longer. The location of the remaining crystals are known only to us; the fire and leaf crystals are safe.",
    "dst": "もう邪魔はさせません。残りの水晶の場所を知るのは私たちだけ。火の水晶と葉の水晶は安全です。",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#027": {
+  "WynnExcavation Site B#028": {
    "src": "I see that tricking you isn't the way to defeating you. If we ever meet again, we'll be using force and upping our security. Now I never want to see you again. Our socie- I mean company, will not tolerate your interference again.",
    "dst": "騙すのでは君を倒せないとわかりました。次に会う時は力ずくで、警備も強化します。もう二度と顔を見たくない。我らの結社―いや、会社は、これ以上の干渉を許しません。",
    "role": "desc",
