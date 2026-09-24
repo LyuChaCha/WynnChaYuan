@@ -623,10 +623,28 @@ public final class WynntilsText {
         }
     }
 
+    /**
+     * 現在畫的是不是公會戰地圖上那一格領地標籤。見 {@code TerritoryPoiMixin}。
+     *
+     * <p>只在算繪執行緒上動，所以不必同步。宣告成 {@code volatile} 是為了
+     * 萬一哪天 Wynntils 改到別的執行緒去畫，讀到的至少不是過期的值。
+     */
+    private static volatile boolean territoryLabels;
+
+    /** mixin 的入口：進了領地標籤就掛上，出來就放掉。 */
+    public static void holdTerritoryLabels(boolean on) {
+        territoryLabels = on;
+    }
+
     static StyledText screenText(StyledText text, CollectorConfig config,
                                  TranslationStore store) {
         if (text == null || text.isEmpty() || store == null
                 || config == null || !config.wynntilsUi()) {
+            return text;
+        }
+        if (territoryLabels) {
+            // 公會名是玩家自己取的，跟語料撞名只是遲早的事（實機那格叫 Fox，
+            // 被換成了「狐狸」）。而且它本來就不是遊戲的文案，不該翻。
             return text;
         }
         net.minecraft.network.chat.Component hit = LineTranslator.translate(text, store);

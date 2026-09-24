@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.LineParts;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -62,7 +63,9 @@ public final class BracketAccentTest {
         card();
         nameContainsType();
         miniQuest();
+        wrappedSpan();
         noBracketsInTranslation();
+        plurals();
         rules();
 
         report();
@@ -97,6 +100,34 @@ public final class BracketAccentTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
         return store;
+    }
+
+    /**
+     * 卡片寫複數、語料收單數。
+     *
+     * <p>迷你任務的方括號寫的是「這一次要幾個」，所以物品名是複數
+     * （{@code [15 Arcane Anomalies]}）；語料收的是物品本身，鍵永遠是單數
+     * （{@code Arcane Anomaly}）。查不到就拿不到重點色，那一塊會掉回底色。
+     *
+     * <p>拿實機那幾張卡的物品名對過，七個查不到的複數裡這一步救回六個。
+     * 見 {@code LineTranslator#asSingular}。
+     */
+    private static void plurals() throws Exception {
+        TranslationStore store = corpus(
+                "Arcane Anomaly", "奧祕異象", "Dragonling Scale", "龍崽鱗片");
+
+        check("「[{~} Arcane Anomalies]」→ 奧祕異象（-ies 換回 -y）",
+              "奧祕異象".equals(
+                      LineTranslator.lookupWordCore("[15 Arcane Anomalies]", store)));
+        check("「[{~} Dragonling Scales]」→ 龍崽鱗片（剝掉 -s）",
+              "龍崽鱗片".equals(
+                      LineTranslator.lookupWordCore("[15 Dragonling Scales]", store)));
+
+        TranslationStore ss = corpus("Glass", "玻璃", "Moss", "苔蘚");
+        check("「-ss」結尾的不剝（Glass 不會變成 Glas）",
+              "玻璃".equals(LineTranslator.lookupWordCore("[3 Glass]", ss)));
+        check("查不到的仍然回傳 null（不亂猜）",
+              LineTranslator.lookupWordCore("[3 Widgets]", ss) == null);
     }
 
     /** 使用者回報的那張卡：「[洞窟]」三個字元是同一段、而且是灰的。 */
@@ -175,6 +206,64 @@ public final class BracketAccentTest {
               is(colourOf(built, "[迷你任務]"), TYPE));
         check("［迷你任務］名稱是橘的（拿到 " + show(colourOf(built, "獵殺怨靈與幻影")) + "）",
               is(colourOf(built, "獵殺怨靈與幻影"), NAME));
+    }
+
+    private static final int BODY = 0xAAAAAA;   // 灰：散文
+    private static final int ITEM = 0x00AAAA;   // 青：括號裡的物品
+    private static final int COORD = 0xFFFFFF;  // 白：座標
+
+    private static Style colour(int rgb) {
+        return Style.EMPTY.withColor(TextColor.fromRgb(rgb));
+    }
+
+    private static LineParts.Piece piece(String text, int rgb) {
+        return new LineParts.Piece(text, colour(rgb));
+    }
+
+    /**
+     * 面板寬度把 {@code [{~} 麥芽穀粒]} 斷在數值後面。
+     *
+     * <h2>實機回報</h2>
+     * 「把 {@code [20 麥芽線]} 或 {@code [20}」換行「麥芽穀粒{@code ]} 交到採集站，」
+     * ——名字是青的，緊跟在後面的那個 {@code ]} 卻掉回灰色。
+     *
+     * <h2>怎麼壞的</h2>
+     * 斷行點就是數值後面那個空格，而空格會被<b>吃掉</b>：上一行結尾是
+     * {@code …[{~}}、下一行開頭是 {@code 麥芽穀粒]}。
+     * {@link LineTranslator#bracketAccents} 為佔位符切出來的那幾段各登記一次，
+     * 而收尾那一段是 {@code " 麥芽穀粒]"}——<b>帶著前導空格</b>，於是斷行之後
+     * 兩行都對不上。{@code keepAccentsWhole} 也搬不動它：要搬的那一半含佔位符。
+     * 剩下能貼的只有物品名查表拿到的「麥芽穀粒」四個字，{@code ]} 沒人管。
+     *
+     * <h2>為什麼測登記、不測畫面</h2>
+     * 斷行是照<b>面板寬度</b>折的，而測試環境沒有真的字型，折不出實機那一刀。
+     * 登記進去之後誰勝出是既有規則：{@code appendText} 同一個位置取<b>比較長</b>
+     * 的那一段，所以「麥芽穀粒{@code ]}」會壓過查表來的「麥芽穀粒」。
+     */
+    private static void wrappedSpan() {
+        // 實機那張卡的三行，照原樣切段
+        List<LineParts.Piece> runs = List.of(
+                piece("Bring ", BODY), piece("[20 Malt String]", ITEM), piece(" or", BODY),
+                piece("[20 Malt Grains]", ITEM), piece(" to the", BODY),
+                piece("Gathering Post at ", BODY), piece("[-1234, 50, -4321]", COORD));
+        String[] translated = {
+            "把 [{~} 麥芽線] 或 [{~} 麥芽穀粒] 交到採集站，座標 [-{~}, {~}, -{~}]"
+        };
+        List<String> texts = new ArrayList<>();
+        for (LineParts.Piece accent
+                : LineTranslator.bracketAccents(runs, translated, colour(BODY))) {
+            texts.add(accent.text());
+        }
+        System.out.println("［跨行括號］登記到的重點段：" + texts);
+
+        check("［跨行括號］整塊 [{~} 麥芽穀粒] 有登記", texts.contains("[{~} 麥芽穀粒]"));
+        check("［跨行括號］原本帶空格的那一份還在（沒斷行時靠它）",
+              texts.contains(" 麥芽穀粒]"));
+        check("★［跨行括號］去掉前導空格的「麥芽穀粒]」也登記了（斷行之後靠它）",
+              texts.contains("麥芽穀粒]"));
+        // 座標那組不可以跟著剝：「, 」「-」到處都有，貼上去會貼到別的地方
+        check("［跨行括號］座標那組沒有多登記短到會撞的片段（實際：" + texts + "）",
+              !texts.contains(", ") && !texts.contains("-"));
     }
 
     /**

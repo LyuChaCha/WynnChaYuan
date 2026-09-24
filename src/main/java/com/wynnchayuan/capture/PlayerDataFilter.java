@@ -288,9 +288,25 @@ public final class PlayerDataFilter {
      * <p>量過整份語料：53,274 條有譯文的條目裡只有兩條會被擋到
      * （{@code - Lootrunning Grandmaster [MAX]} 與 {@code - Raiding Grandmaster [MAX]}）。
      * 那兩條<b>早就翻好了</b>，而這道濾網只管收集不管翻譯，所以擋到也沒有損失。
+     *
+     * <h2>內容書的卡片類型要放行</h2>
+     * 上面那句「遊戲本身的介面文字不會長成『某某 [ABCD]』」說得太滿了：
+     * 內容書的洞窟卡標題正是 {@code The Barracks [Cave]}——名字加上四碼的
+     * 類型，跟公會清單那一列一模一樣。
+     *
+     * <p>實機跑過一輪之後，{@code cards.json} 收到 531 張卡：任務、迷你任務、
+     * 祕密發現、世界發現、首領祭壇全都在，唯獨 {@code [Cave]} 一張都沒有。
+     * 那幾張卡明明滑過（{@code tooltip-partial-1..6} 全是洞窟），是被這一條
+     * 整類擋掉的——{@code [Quest]} 五碼、{@code [Mini-Quest]} 十碼，都長到
+     * 碰不著這個上限，只有洞窟剛好落在二到四碼裡面。
+     *
+     * <p>所以把遊戲自己的類型標籤挑掉。只列<b>四碼以內</b>的那幾個，
+     * 再長的本來就不會走到這裡。公會如果剛好取了這幾個字當標籤會穿過去，
+     * 但那是一個標籤的代價，比整類洞窟卡收不到小得多。
      */
     private static final Pattern GUILD_TAG = Pattern.compile(
-            "^\\s*-?\\s*[^\\[\\]\\n]*\\S[^\\[\\]\\n]*\\[[A-Za-z0-9]{2,4}]\\s*$",
+            "^\\s*-?\\s*[^\\[\\]\\n]*\\S[^\\[\\]\\n]*"
+                    + "\\[(?!(?:Cave|Raid)])[A-Za-z0-9]{2,4}]\\s*$",
             Pattern.MULTILINE);
 
     /**

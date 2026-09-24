@@ -271,7 +271,7 @@ public final class TooltipPanel {
                 try {
                     String para = com.wynnchayuan.capture.CardDump.paragraphKey(styled, i);
                     if (para != null) {
-                        com.wynnchayuan.capture.CardDump.note(tooltip, styled, para);
+                        com.wynnchayuan.capture.CardDump.note(tooltip, styled, para, store);
                     }
                 } catch (Throwable ignored) {
                     // 收集絕不能反過來弄壞畫面

@@ -53,8 +53,53 @@ public final class BlockProseColourTest {
 
     public static void main(String[] args) throws Exception {
         realCard();
+        longName();
         tealReallyWins();
         report();
+    }
+
+    /**
+     * 名字長一點的那張卡。{@code realCard} 的灰 23 對青 22 只差一個實字——
+     * 換一張名字長的就翻盤了，而實機正是這樣：
+     *
+     * <pre>
+     *   §7Bring §3[15 Arcane Anomalies]§7 to
+     *   §7the Slaying Post §3[Combat Lv.
+     *   §375]§7 at §f[-677, 46, -4948]
+     * </pre>
+     *
+     * <p>扣掉數值之後灰 24、青 28，底色被挑成青的，整段散文在畫面上變成青色。
+     * 使用者回報的第一張截圖就是這張卡；同一份 majorid-debug.txt 裡 30 段
+     * 有 8 段中招，全是這個形狀。見 {@code LineTranslator#proseCount}。
+     */
+    private static void longName() throws Exception {
+        String flat = "Bring [{~} Arcane Anomalies] to the Slaying Post "
+                + "[Combat Lv. {~}] at [-{~}, {~}, -{~}]";
+        String dst = "把 [{~} 奧祕異象] 交到擊殺告示 [戰鬥等級 {~}]，座標 [-{~}, {~}, -{~}]";
+        List<StyledText> run = List.of(
+                line("Bring ", BODY, "[15 Arcane Anomalies]", ITEM, " to", BODY),
+                line("the Slaying Post ", BODY, "[Combat Lv.", ITEM),
+                line("75]", ITEM, " at ", BODY, "[-677, 46, -4948]", COORD));
+
+        Path debug = Files.createTempDirectory("block-prose-long");
+        FlowedDebug.init(debug);
+        List<Component> built = translate(run, flat, dst);
+        check("［長名稱］整段查得到譯文", built != null && !built.isEmpty());
+        if (built == null || built.isEmpty()) {
+            return;
+        }
+        dump("［長名稱］", built);
+
+        String colour = blockColour(debug);
+        check("★［長名稱］整段內文的底色是灰的（拿到 " + colour + "）",
+                "#AAAAAA".equals(colour));
+
+        Integer prose = colourOf(built, "交到擊殺告示");
+        check("★［長名稱］散文是灰的、不是青的（拿到 " + show(prose) + "）",
+                prose != null && prose == BODY);
+        Integer coord = colourOf(built, "677");
+        check("［長名稱］座標仍是原文的白（拿到 " + show(coord) + "）",
+                coord != null && coord == COORD);
     }
 
     /**
@@ -130,11 +175,17 @@ public final class BlockProseColourTest {
      * 語料只收<b>攤平成一行</b>的那一份——實機就是這樣（斷點是 tooltip 寬度決定的，
      * 跟語料對不上），走的也正是診斷檔在記的那條「整段命中」的路。
      */
-    private static List<Component> translate(List<StyledText> run, String src, String dst)
+    private static List<Component> translate(List<StyledText> run, String src, String dst,
+                                             String... alsoKeyThenValue)
             throws Exception {
         Path dir = Files.createTempDirectory("block-prose");
+        StringBuilder json = new StringBuilder("{\"" + src + "\": \"" + dst + "\"");
+        for (int i = 0; i < alsoKeyThenValue.length; i += 2) {
+            json.append(", \"").append(alsoKeyThenValue[i])
+                .append("\": \"").append(alsoKeyThenValue[i + 1]).append('"');
+        }
         Files.writeString(dir.resolve("quest.json"),
-                "{\"" + src + "\": \"" + dst + "\"}", StandardCharsets.UTF_8);
+                json.append('}').toString(), StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
         return LineTranslator.translateBlock(run, store, new boolean[run.size()]);

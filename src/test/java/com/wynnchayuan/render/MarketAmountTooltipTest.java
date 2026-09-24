@@ -50,11 +50,59 @@ public final class MarketAmountTooltipTest {
                    && !all.toString().contains("you plan to buy"));
         }
 
+        priceRow(store);
+
         if (failures > 0) {
             System.out.println("市場數量按鈕：" + failures + " 項失敗");
             System.exit(1);
         }
         System.out.println("市場數量按鈕：全部通過");
+    }
+
+    private static final int GOLD = 0xFFAA00;
+    private static final int AQUA = 0x00AAAA;
+
+    /**
+     * 市場那張卡的「Price」那一行是什麼顏色。
+     *
+     * <h2>實機回報</h2>
+     * 原文那一行的 {@code Price} 是金色的，譯文的「價格」卻是青的。
+     *
+     * <p>那一行在語料裡是<b>自己一條</b>（{@code "{#} Price"}），而且
+     * {@code tooltip-partial-3.json} 記著 {@code translated=true}——
+     * 也就是走的是逐行那條路。字面取自同一份診斷檔：前面是 chat/prefix
+     * 字型的位移符號（符號那一段自己也有顏色），後面才是 {@code " Price"}。
+     *
+     * <p>符號不參與底色的統計（{@code solidCount} 不數），所以這一行
+     * 只有金色有票，畫出來就該是金色。
+     */
+    private static void priceRow(TranslationStore store) {
+        System.out.println("=== 市場價格那一行 ===");
+        String glyphs = new String(Character.toChars(0xCFFFC))
+                + "" + new String(Character.toChars(0xCFFFF))
+                + "" + new String(Character.toChars(0xCFFFE));
+        Component line = lit(glyphs, AQUA).append(lit(" Price", GOLD));
+        Component built = LineTranslator.translate(
+                StyledText.fromComponent(line), store);
+        System.out.println("  譯文 " + (built == null ? "（查不到）" : describe(built)));
+        report("★ 標題那一行的字是金的，不是符號那一段的青色",
+               built != null && describe(built).contains("價格 #FFAA00"));
+    }
+
+    private static net.minecraft.network.chat.MutableComponent lit(String text, int colour) {
+        return Component.literal(text).withStyle(net.minecraft.network.chat.Style.EMPTY
+                .withColor(net.minecraft.network.chat.TextColor.fromRgb(colour)));
+    }
+
+    private static String describe(Component built) {
+        StringBuilder out = new StringBuilder();
+        built.visit((style, text) -> {
+            out.append('[').append(text).append(' ')
+               .append(style.getColor() == null ? "-" : style.getColor().toString())
+               .append(']');
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return out.toString();
     }
 
     private static void report(String name, boolean ok) {

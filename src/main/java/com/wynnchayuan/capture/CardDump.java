@@ -213,11 +213,19 @@ public final class CardDump {
      * 其實已經翻好的東西。這個檔的價值就在<b>攤平後的多行鍵</b>——那是
      * {@code captured.json} 給不了的。
      *
-     * @return 這一段的 key；不足兩行時回傳 {@code null}
+     * <h2>不收第 0 行起頭的那一段</h2>
+     * 那是卡片的<b>抬頭</b>：標題加一行狀態（{@code Slay Slimes [Mini-Quest]} ＋
+     * {@code Cannot be started}）。兩行各自都走逐行那條路、本來就翻得到，
+     * 整段收進來只是噪音——而且整段條目會跟已經存在的逐行條目打架。
+     *
+     * <p>量過實機收到的 861 條：533 條是這種抬頭。再加上 {@link #partlyPerLine}
+     * 那一道之後剩 27 條，全是真正缺的整段敘述。
+     *
+     * @return 這一段的 key；不足兩行、或從抬頭起頭時回傳 {@code null}
      */
     public static String paragraphKey(List<StyledText> styled, int at) {
-        if (styled == null || at < 0 || at >= styled.size()) {
-            return null;
+        if (styled == null || at <= 0 || at >= styled.size()) {
+            return null;                       // at == 0：抬頭，見上
         }
         int end = at;
         while (end < styled.size()
@@ -237,12 +245,70 @@ public final class CardDump {
         return key.toString();
     }
 
-    public static void note(List<Component> tooltip, List<StyledText> styled, String key) {
+    /**
+     * 這一段<b>只缺其中幾行</b>嗎——缺一部分的不收。
+     *
+     * <h2>缺一部分的：交給逐行那條路</h2>
+     * 卡片的需求段與獎勵段長這樣：
+     *
+     * <pre>
+     *   ✔À Combat Lv. Min: {~}
+     *   {#}Distance: Medium ({~} Blocks)      ← 只有這一行缺
+     *   {#}Length: Short
+     *   {#}Difficulty: Easy
+     * </pre>
+     *
+     * <p>整段查不到，是因為<b>其中一行</b>缺。缺的那一行該進 captured.json
+     * 走逐行那條路；把整段收進來當一條語料，等於用整段條目去蓋掉三條
+     * 已經翻好的逐行條目，而畫面上本來就好好的。
+     *
+     * <h2>一行都不缺的：<b>照收</b></h2>
+     * 「每一行自己都查得到」聽起來像是翻完了，其實正好相反——那是語料裡
+     * 收了一整排<b>逐行碎片</b>的樣子：
+     *
+     * <pre>
+     *   "Bring [{~} Malt String] or [{~}"   → "把 [{~} 麥芽線] 或 [{~}"
+     *   "Malt Grains] to the Gathering"     → "麥芽穀粒] 交到採集站，"
+     *   "Post at [{~}, {~}, -{~}]"          → "座標 [{~}, {~}, -{~}]"
+     * </pre>
+     *
+     * <p>斷行位置是 tooltip 寬度決定的，跟語料無關；畫面稍微一窄就散掉。
+     * 這種段落<b>最需要</b>一條整段條目來取代，所以要收。
+     *
+     * <p>一行都查不到的（洞窟敘述、還沒翻的交付說明）當然也收。
+     */
+    private static boolean partlyPerLine(String key, TranslationStore store) {
+        if (store == null) {
+            return false;                      // 拿不到語料就照收，別把東西弄丟
+        }
+        boolean any = false;
+        boolean all = true;
+        for (String line : key.split("\\R", -1)) {
+            String one = line.strip();
+            if (one.isEmpty()) {
+                continue;
+            }
+            String zh = store.lookup(one);
+            if (zh != null && !zh.isBlank()) {
+                any = true;
+            } else {
+                all = false;
+            }
+        }
+        return any && !all;
+    }
+
+    public static void note(List<Component> tooltip, List<StyledText> styled, String key,
+                            TranslationStore store) {
         try {
             if (file == null || key == null || key.isBlank()
                     || tooltip == null || tooltip.isEmpty()
                     || styled == null || styled.isEmpty()
                     || !enabled.getAsBoolean()) {
+                return;
+            }
+            if (partlyPerLine(key, store)) {
+                tally("skipped.perLine");
                 return;
             }
             // 換了 tooltip 才重算，見 #thisHover。
