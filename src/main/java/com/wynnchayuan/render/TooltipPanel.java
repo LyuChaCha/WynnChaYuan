@@ -253,6 +253,30 @@ public final class TooltipPanel {
                 }
                 LineTranslator.noteBlockMiss(key.toString(), store);
             }
+            // cards.json 另外記一份，但記的是<b>那一段</b>，不是上面那個窗格。
+            //
+            // majorid-debug.txt 記的是散文、而且有名額上限（實機常被登入時的
+            // 聊天洗光）；cards.json 沒有上限、只去重，而且寫成可以直接併進
+            // 語料的形狀。
+            //
+            // 為什麼不共用上面的 key：那個窗格長達 maxBlockLines（實測 15）行，
+            // 一張 19 行的迷你任務卡會把底下 Wynntils 自己加的中文提示一起吃
+            // 進來——含中文的鍵會被隱私那一關整段擋掉，擋掉的正是卡片敘述本身。
+            // 見 CardDump#paragraphKey。
+            //
+            // 不受上面 longest >= 2 拘束：那個條件是窗格邏輯的，跟段落無關。
+            //
+            // 算繪路徑上的東西，出事就當沒發生。
+            if (paragraphStart) {
+                try {
+                    String para = com.wynnchayuan.capture.CardDump.paragraphKey(styled, i);
+                    if (para != null) {
+                        com.wynnchayuan.capture.CardDump.note(tooltip, styled, para);
+                    }
+                } catch (Throwable ignored) {
+                    // 收集絕不能反過來弄壞畫面
+                }
+            }
             // 撞名的裝備名不是只會出現在名稱那一行。套裝的成員清單、寶箱裡的
             // 獎勵預覽、鑄造材料，都是「項目符號 + 裝備名」單獨佔一行——那些行
             // 一樣會被同名的技能／Major ID 譯文頂掉。實測 33 個裝備名撞名，
@@ -396,7 +420,7 @@ public final class TooltipPanel {
                     // 網址本來就不翻，不能拿它來判定「這段只翻了一半」。
                     // 「You can get individual boosts at / wynncraft.com/store」
                     // 就是因為第二行永遠是英文，第一行也跟著被收回英文。
-                    if (isAddress(plain.get(k))) {
+                    if (isAddress(plain.get(k)) || nothingToTranslate(plain.get(k))) {
                         continue;
                     }
                     some |= hit[k];
@@ -421,6 +445,40 @@ public final class TooltipPanel {
 
     private static final java.util.regex.Pattern ADDRESS = java.util.regex.Pattern.compile(
             "(?:https?://)?[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)+(?:/\\S*)?");
+
+    /**
+     * 這一行<b>根本沒有字</b>可以翻——整行只剩數字與符號。
+     *
+     * <h2>為什麼要放它一馬</h2>
+     * 洞窟卡與迷你任務的敘述最後一行常常只有座標：
+     *
+     * <pre>
+     *   A deep cave full of scorched
+     *   creatures and earth lies at
+     *   [1603, 155, -5069]
+     * </pre>
+     *
+     * 前兩行的譯文語料裡<b>都有</b>，第三行卻永遠不可能有——
+     * {@link com.wynnchayuan.translate.LineTranslator} 自己就先擋了：模板
+     * （{@code [{~}, {~}, -{~}]}）一個字母都沒有，查表那一步直接回 null。
+     * 於是這一段被算成「翻了一半」，整段退回英文——畫面上整張洞窟卡的敘述
+     * 是英文，可是語料明明查得到。使用者回報的就是這個。
+     *
+     * <p>沒有東西要翻的行，本來就不該在「這一段翻完了沒」裡投票。跟網址那一條
+     * 是同一個道理（見 {@link #evenOut}）。
+     *
+     * <h2>條件要窄</h2>
+     * 只認<b>整行</b>沒有字母的。座標<b>夾在句子裡</b>的那種
+     * （{@code Highlands at [-1288, 86, -1319].}）有實字，照樣要算一票——
+     * 那種行是真的沒翻到，放過去就會夾出半中半英。
+     *
+     * <p>看的是畫面上的字而不是模板：模板裡的 {@code {p}} 帶著一個 p，
+     * 拿模板判會把「整行只有一個地名」誤當成沒字可翻。
+     */
+    static boolean nothingToTranslate(String line) {
+        return line != null
+                && !com.wynnchayuan.capture.GlyphSplitter.hasLetter(line);
+    }
 
     /**
      * 畫面上看得到的字。{@code minecraft:invisible} 字型底下的東西不算。

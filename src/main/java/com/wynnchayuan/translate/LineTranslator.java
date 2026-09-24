@@ -472,9 +472,38 @@ public final class LineTranslator {
      *
      * <p>改成看整段：哪個樣式涵蓋的字最多就用哪個。名稱那半會由
      * {@link #labelAccent} 另外把自己的顏色帶回去。
+     *
+     * <h2>多數色不算佔位符</h2>
+     * 跟 {@link #perPartStyles} 是<b>同一件事</b>，只是發生在「整段命中」這條路上。
+     * 數值、地名、玩家名是從原文抽出去、填回時<b>自己帶著原樣式</b>回來的
+     * （見 {@link LineParts}），所以不能讓它們決定周圍的散文是什麼顏色。
+     *
+     * <h2>實機回報（內容書迷你任務卡）</h2>
+     * 原文三行，散文是灰的、方括號裡的物品與等級是青的、座標是白的：
+     *
+     * <pre>
+     *   §7Bring §3[24 Fluffy Fur]§7 to the
+     *   §7Slaying Post §3[Combat Lv. 88]§7 at
+     *   §f[139, 61, -4399]
+     * </pre>
+     *
+     * <p>整段一次命中，於是整段的散文都畫這裡挑出來的底色。照實字數算：
+     * 灰的 {@code Bring}、{@code to the}、{@code Slaying Post}、{@code at} 共 23 個，
+     * 青的兩個方括號共 26 個——青贏，畫面上整段散文變成青色。
+     *
+     * <p>那 26 個裡有 4 個是<b>數值本身</b>（{@code 24}、{@code 88}），而數值早就
+     * 另外保管、會自己帶青色回來。扣掉之後青的剩 22、灰的 23，灰贏——
+     * 跟肉眼看到的一致。白的座標同理：14 個實字裡 9 個是數值，扣完只剩
+     * {@code [,,-]} 5 個。
+     *
+     * <p>順帶一提，數的是<b>實字</b>（{@link #solidCount}）而不是字串長度。
+     * 先前數的是長度，空白也算一份：上面那段是灰 29 對青 30，青只贏在一個空格上。
+     * 扣佔位符的份量本來就是照實字算的，兩把尺要一樣才扣得準。
      */
     private static Style dominantStyle(List<LineParts> parts) {
-        java.util.Map<Style, Integer> weight = new java.util.LinkedHashMap<>();
+        // 跟 #perPartStyles 用同一個 Tally：併掉裝飾、平手取先出現的，
+        // 都是那邊已經談過的事，不要再長出第二套算法。
+        Tally tally = new Tally();
         for (LineParts part : parts) {
             // 逐<b>段</b>累計，不是逐行。
             //
@@ -496,18 +525,23 @@ public final class LineTranslator {
                 if (isNote(run.text())) {
                     continue;
                 }
-                weight.merge(undecorated(run.style()), run.text().length(), Integer::sum);
+                tally.add(run.style(), solidCount(run.text()));
             }
         }
-        Style best = undecorated(parts.get(0).textStyle());
-        int most = -1;
-        for (java.util.Map.Entry<Style, Integer> e : weight.entrySet()) {
-            if (e.getValue() > most) {
-                most = e.getValue();
-                best = e.getKey();
+        // 抽出去的佔位符不算數，見上。符號（{#}）不必扣——solidCount 本來就不數，
+        // 而且 LineParts.of 也不會把純符號的片段收進 runs。
+        for (LineParts part : parts) {
+            for (List<LineParts.Piece> pool
+                    : List.of(part.numbers(), part.places(), part.users())) {
+                for (LineParts.Piece piece : pool) {
+                    tally.remove(piece.style(), solidCount(piece.text()));
+                }
             }
         }
-        return best;
+        // 扣完可能一個都不剩（整段就只有一個座標那種）。那就退回第一行的樣式，
+        // 跟先前「一筆都沒累計到」的做法一樣——總得畫個顏色。
+        Style top = tally.top();
+        return undecorated(top == null ? parts.get(0).textStyle() : top);
     }
 
     /**
@@ -8288,7 +8322,67 @@ public final class LineTranslator {
             return null;                       // 譯文本來就自己帶括號
         }
         String wrapped = "[" + zh + "]";
-        return translated.contains(wrapped) ? wrapped : null;
+        if (translated.contains(wrapped)) {
+            return wrapped;
+        }
+        return countedWrap(zh, translated);
+    }
+
+    /**
+     * 括號裡除了那個詞還有一個<b>數量</b>時的版本。
+     *
+     * <h2>實機回報（迷你任務卡的敘述）</h2>
+     * 原文那一段是「青色的整塊方括號」，而括號裡是數量加物品名：
+     *
+     * <pre>
+     *   §7Bring §3[24 Fluffy Fur]§7 to the Slaying Post §3[Combat Lv. 88]§7 at
+     * </pre>
+     *
+     * 譯文是「把 {@code [{~} 蓬鬆毛皮]} 交到討伐告示 {@code [戰鬥等級 {~}]}」。
+     * 上面那一路找的是 {@code [蓬鬆毛皮]}，而譯文裡是 {@code [{~} 蓬鬆毛皮]}
+     * ——中間隔著數量，找不到。結果只有 {@code [24} 是青的，
+     * {@code 蓬鬆毛皮]} 掉回底色，一個方括號半青半灰。
+     *
+     * <h2>條件一樣要窄</h2>
+     * 只認「括號裡除了那個詞，剩下的全是數量」——數字、{@code {~}}、空白。
+     * 剩下的只要有一個實字（{@code [Combat Lv. 88]} 那種<b>整塊</b>另外查得到
+     * 譯文的，走的是上面那一路）就不擴，免得把兩個詞的括號整塊吃掉。
+     *
+     * <p>找<b>第一個</b>吻合的括號就停。同一行出現兩個「數量 + 同一個詞」的
+     * 括號在這份語料裡不存在；真出現了也只是少上一個色，不會上錯。
+     *
+     * @return 連括號與數量一起的那一整塊；找不到時回傳 {@code null}
+     */
+    private static String countedWrap(String zh, String translated) {
+        int at = 0;
+        while ((at = translated.indexOf('[', at)) >= 0) {
+            int close = translated.indexOf(']', at + 1);
+            if (close < 0) {
+                return null;
+            }
+            String inner = translated.substring(at + 1, close);
+            if (inner.endsWith(zh)
+                    && onlyCount(inner.substring(0, inner.length() - zh.length()))) {
+                return translated.substring(at, close + 1);
+            }
+            at = close + 1;
+        }
+        return null;
+    }
+
+    /** 只剩數量：數字、{@code {~}}、空白。空的不算——那是上面 exact 那一路的事。 */
+    private static boolean onlyCount(String lead) {
+        if (lead.isBlank()) {
+            return false;
+        }
+        String bare = lead.replace(com.wynnchayuan.capture.GlyphSplitter.NUMBER_PLACEHOLDER, "")
+                          .replace(" ", "");
+        for (int i = 0; i < bare.length(); i++) {
+            if (!Character.isDigit(bare.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -8325,7 +8419,36 @@ public final class LineTranslator {
             return null;
         }
         String zh = store.lookup(core);
-        return zh == null || zh.isBlank() ? store.lookupTerm(core) : zh;
+        if (zh == null || zh.isBlank()) {
+            zh = store.lookupTerm(core);
+        }
+        return zh == null || zh.isBlank() ? withoutCount(core, store) : zh;
+    }
+
+    /**
+     * 開頭那個<b>數量</b>剝掉再查一次。
+     *
+     * <p>迷你任務的色段是整塊的 {@code [24 Fluffy Fur]}，剝掉前後標點之後仍然是
+     * 「24 Fluffy Fur」——語料裡的鍵是物品名本身，數量是<b>這一次</b>的數字，
+     * 不可能進語料。不剝的話這一段完全查不到，譯文裡的物品名一個色都沒有。
+     *
+     * <p>只剝<b>開頭</b>、而且後面必須還有實字。剝完剩數字的（{@code [139]}）
+     * 不查——那是數值，本來就由佔位符自己帶樣式回來。
+     */
+    private static String withoutCount(String core, TranslationStore store) {
+        int at = 0;
+        while (at < core.length() && Character.isDigit(core.charAt(at))) {
+            at++;
+        }
+        if (at == 0 || at >= core.length() || core.charAt(at) != ' ') {
+            return null;                       // 開頭沒有數量，或整塊都是數字
+        }
+        String rest = core.substring(at + 1).strip();
+        if (rest.isEmpty() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(rest)) {
+            return null;
+        }
+        String zh = store.lookup(rest);
+        return zh == null || zh.isBlank() ? store.lookupTerm(rest) : zh;
     }
 
     /**
