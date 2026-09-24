@@ -213,11 +213,19 @@ public final class CardDump {
      * 其實已經翻好的東西。這個檔的價值就在<b>攤平後的多行鍵</b>——那是
      * {@code captured.json} 給不了的。
      *
-     * @return 這一段的 key；不足兩行時回傳 {@code null}
+     * <h2>不收第 0 行起頭的那一段</h2>
+     * 那是卡片的<b>抬頭</b>：標題加一行狀態（{@code Slay Slimes [Mini-Quest]} ＋
+     * {@code Cannot be started}）。兩行各自都走逐行那條路、本來就翻得到，
+     * 整段收進來只是噪音——而且整段條目會跟已經存在的逐行條目打架。
+     *
+     * <p>量過實機收到的 861 條：533 條是這種抬頭。再加上 {@link #alreadyPerLine}
+     * 那一道之後剩 27 條，全是真正缺的整段敘述。
+     *
+     * @return 這一段的 key；不足兩行、或從抬頭起頭時回傳 {@code null}
      */
     public static String paragraphKey(List<StyledText> styled, int at) {
-        if (styled == null || at < 0 || at >= styled.size()) {
-            return null;
+        if (styled == null || at <= 0 || at >= styled.size()) {
+            return null;                       // at == 0：抬頭，見上
         }
         int end = at;
         while (end < styled.size()
@@ -237,12 +245,53 @@ public final class CardDump {
         return key.toString();
     }
 
-    public static void note(List<Component> tooltip, List<StyledText> styled, String key) {
+    /**
+     * 這一段的某一行<b>自己</b>就查得到譯文嗎。
+     *
+     * <h2>為什麼查得到就不收</h2>
+     * 卡片的需求段與獎勵段長這樣：
+     *
+     * <pre>
+     *   ✔À Combat Lv. Min: {~}
+     *   {#}Distance: Medium ({~} Blocks)      ← 只有這一行缺
+     *   {#}Length: Short
+     *   {#}Difficulty: Easy
+     * </pre>
+     *
+     * <p>整段查不到，是因為<b>其中一行</b>缺。缺的那一行該進 captured.json
+     * 走逐行那條路；把整段收進來當一條語料，等於用整段條目去蓋掉三條
+     * 已經翻好的逐行條目——validate 的跨檔重複會擋，而且畫面上本來就好好的。
+     *
+     * <p>真正該收的整段（洞窟敘述、迷你任務的交付說明）是<b>一行都查不到</b>的。
+     */
+    private static boolean alreadyPerLine(String key, TranslationStore store) {
+        if (store == null) {
+            return false;                      // 拿不到語料就照收，別把東西弄丟
+        }
+        for (String line : key.split("\\R", -1)) {
+            String one = line.strip();
+            if (one.isEmpty()) {
+                continue;
+            }
+            String zh = store.lookup(one);
+            if (zh != null && !zh.isBlank()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void note(List<Component> tooltip, List<StyledText> styled, String key,
+                            TranslationStore store) {
         try {
             if (file == null || key == null || key.isBlank()
                     || tooltip == null || tooltip.isEmpty()
                     || styled == null || styled.isEmpty()
                     || !enabled.getAsBoolean()) {
+                return;
+            }
+            if (alreadyPerLine(key, store)) {
+                tally("skipped.perLine");
                 return;
             }
             // 換了 tooltip 才重算，見 #thisHover。

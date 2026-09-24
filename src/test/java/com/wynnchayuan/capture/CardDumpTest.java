@@ -2,6 +2,7 @@ package com.wynnchayuan.capture;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -52,6 +53,8 @@ public final class CardDumpTest {
 
         golden(dir.resolve("golden.json"));
         paragraphs(dir.resolve("paragraphs.json"));
+        caves(dir.resolve("caves.json"));
+        perLine(dir.resolve("per-line.json"));
         repeats(dir.resolve("repeats.json"));
         privacy(dir.resolve("privacy.json"));
         reload(dir.resolve("reload.json"));
@@ -71,7 +74,7 @@ public final class CardDumpTest {
         // 跟 TooltipPanel 完全一樣的接法：每一行的模板用行分隔符接起來。
         String key = joinTemplates(styled.subList(3, 6));
 
-        CardDump.note(tooltip, styled, key);
+        CardDump.note(tooltip, styled, key, null);
         CardDump.flush();
 
         JsonObject row = firstRow(file);
@@ -117,7 +120,7 @@ public final class CardDumpTest {
 
         // tooltip 是每一幀重畫的：滑鼠停兩秒就是一百多次同樣的呼叫。
         for (int frame = 0; frame < 120; frame++) {
-            CardDump.note(tooltip, styled, key);
+            CardDump.note(tooltip, styled, key, null);
         }
         CardDump.flush();
         check("★ 同一份 tooltip 重複送不會重複記", CardDump.size() == 1);
@@ -128,15 +131,15 @@ public final class CardDumpTest {
         // 同一份 tooltip 裡的<b>另一段</b>照樣要進得來——只比「是不是同一份」
         // 的話，第二段會被第一段擋掉。
         String second = joinTemplates(styled.subList(0, 2));
-        CardDump.note(tooltip, styled, second);
+        CardDump.note(tooltip, styled, second, null);
         check("★ 同一份裡的另一段照樣收得到", CardDump.size() == 2);
 
         // 滑走、再滑回來：這才算第二次。
         List<Component> other = List.of(plain("Something Else Entirely", GREY),
                                         plain("A second line here", GREY));
-        CardDump.note(other, styled(other), joinTemplates(styled(other)));
+        CardDump.note(other, styled(other), joinTemplates(styled(other)), null);
         for (int frame = 0; frame < 30; frame++) {
-            CardDump.note(tooltip, styled, key);
+            CardDump.note(tooltip, styled, key, null);
         }
         CardDump.flush();
 
@@ -163,7 +166,7 @@ public final class CardDumpTest {
                 plain("Left-Click to view this member's", GREY),
                 plain("contribution to the guild", GREY));
         CardDump.fromPlayerHead(true);
-        CardDump.note(head, styled(head), joinTemplates(styled(head).subList(1, 3)));
+        CardDump.note(head, styled(head), joinTemplates(styled(head).subList(1, 3)), null);
         check("★ 玩家頭顱那一格整份不收", CardDump.size() == 0);
         CardDump.fromPlayerHead(false);
 
@@ -174,7 +177,7 @@ public final class CardDumpTest {
                 plain("World: NA12", GREY),
                 plain("This party's world is currently", GREY),
                 plain("full and cannot be joined", GREY));
-        CardDump.note(party, styled(party), joinTemplates(styled(party).subList(2, 4)));
+        CardDump.note(party, styled(party), joinTemplates(styled(party).subList(2, 4)), null);
         check("★ 隊伍卡不收（PlayerDataFilter#isPartyCard）", CardDump.size() == 0);
 
         // 帳號名長相（底線、駝峰）落在<b>段落的第二行</b>。
@@ -187,7 +190,7 @@ public final class CardDumpTest {
                 plain("Left-Click to set rank", GREY),
                 plain("Hyedam_", GREY));
         CardDump.note(member, styled(member),
-                joinTemplates(styled(member).subList(1, 3)));
+                joinTemplates(styled(member).subList(1, 3)), null);
         check("★ 段落中間夾著帳號名的不收（逐行問，不是只問第一行）",
                 CardDump.size() == 0);
 
@@ -197,13 +200,13 @@ public final class CardDumpTest {
                 plain("Someone has joined", GREY),
                 plain("your party", GREY));
         CardDump.note(joined, styled(joined),
-                joinTemplates(styled(joined).subList(1, 3)));
+                joinTemplates(styled(joined).subList(1, 3)), null);
         check("★ 被折行切開的廣播片語也擋得到（整段一起比）",
                 CardDump.size() == 0);
 
         // 正面對照：一般的卡片照收，不能把濾網做成全部擋掉。
         List<Component> ok = card();
-        CardDump.note(ok, styled(ok), joinTemplates(styled(ok).subList(3, 6)));
+        CardDump.note(ok, styled(ok), joinTemplates(styled(ok).subList(3, 6)), null);
         check("一般的卡片照收（濾網沒有誤擋整類）", CardDump.size() == 1);
 
         CardDump.flush();
@@ -221,7 +224,7 @@ public final class CardDumpTest {
         CardDump.forTest(file);
         List<Component> tooltip = card();
         List<StyledText> styled = styled(tooltip);
-        CardDump.note(tooltip, styled, joinTemplates(styled.subList(3, 6)));
+        CardDump.note(tooltip, styled, joinTemplates(styled.subList(3, 6)), null);
         CardDump.flush();
 
         // 譯者在這個檔上填了字。重開遊戲就被蓋掉的話，沒有人敢用它。
@@ -235,7 +238,7 @@ public final class CardDumpTest {
 
         // 再滑一次，整個檔會被重寫——上次填的字要是沒讀回來，這時候就被空字串蓋掉了。
         List<Component> again = card();
-        CardDump.note(again, styled(again), joinTemplates(styled(again).subList(3, 6)));
+        CardDump.note(again, styled(again), joinTemplates(styled(again).subList(3, 6)), null);
         CardDump.flush();
         check("★ 重開並重寫之後，上次填的 dst 還在",
                 firstRow(file).get("dst").getAsString().startsWith("帶 ["));
@@ -249,7 +252,7 @@ public final class CardDumpTest {
         CardDump.forget();                     // 沒 init 過 = 開關關著
         List<Component> tooltip = card();
         List<StyledText> styled = styled(tooltip);
-        CardDump.note(tooltip, styled, joinTemplates(styled.subList(3, 6)));
+        CardDump.note(tooltip, styled, joinTemplates(styled.subList(3, 6)), null);
         CardDump.flush();
         check("★ 開關關著時整支空轉，連檔案都不會生出來",
                 CardDump.size() == 0 && !Files.exists(file));
@@ -302,12 +305,15 @@ public final class CardDumpTest {
         check("★ 一行的段落不收（交給 captured.json，這裡分不出它翻到了沒）",
               CardDump.paragraphKey(styled, 15) == null);
         check("空行本身不是段落起點", CardDump.paragraphKey(styled, 2) == null);
+        check("★ 抬頭那一段不收（標題與狀態各自走逐行那條路，"
+                      + "整段收進來只是噪音，實機 861 條裡有 533 條是這種）",
+              CardDump.paragraphKey(styled, 0) == null);
 
         // Wynntils 自己的中文提示自成一段——收不進去，但不能連累別段。
         for (int i : new int[] {3, 7, 12, 17}) {
             String key = CardDump.paragraphKey(styled, i);
             if (key != null) {
-                CardDump.note(tooltip, styled, key);
+                CardDump.note(tooltip, styled, key, null);
             }
         }
         CardDump.flush();
@@ -319,6 +325,104 @@ public final class CardDumpTest {
             String src = rows.getAsJsonObject(k).get("src").getAsString();
             check("沒有任何一條橫跨空行（" + k + "）", !src.contains("  "));
         }
+    }
+
+    /**
+     * 其中一行自己就查得到譯文的那種整段，不收。
+     *
+     * <p>需求段與獎勵段就是這樣：四行裡只有一行缺，整段卻查不到。缺的那一行
+     * 該走逐行那條路，整段收進來會跟三條已經翻好的逐行條目打架。實機 861 條
+     * 裡這種佔了一大半。
+     */
+    private static void perLine(Path file) throws Exception {
+        CardDump.forget();
+        CardDump.forTest(file);
+
+        List<Component> stats = List.of(
+                plain("✔À Combat Lv. Min: 50", GREY),
+                plain("Distance: Medium (500 Blocks)", GREY),
+                plain("Length: Short", GREY));
+        Path corpus = Files.createTempDirectory("card-dump-corpus");
+        Files.writeString(corpus.resolve("misc.json"), "{\"Length: Short\": \"長度：短\"}");
+        TranslationStore store = new TranslationStore();
+        store.loadAll(corpus);
+
+        CardDump.note(stats, styled(stats), joinTemplates(styled(stats)), store);
+        check("★ 其中一行已經翻得到的整段不收（缺的那一行走 captured.json）",
+              CardDump.size() == 0);
+
+        CardDump.note(stats, styled(stats), joinTemplates(styled(stats)), null);
+        check("拿不到語料時照收（不能因為查不了就把東西弄丟）",
+              CardDump.size() == 1);
+
+        CardDump.forget();
+        CardDump.forTest(file);
+        List<Component> desc = List.of(
+                plain("Walk across the tall bridges", GREY),
+                plain("and find the knights within", GREY));
+        CardDump.note(desc, styled(desc), joinTemplates(styled(desc)), store);
+        check("一行都查不到的整段照收（那才是這個檔要的東西）",
+              CardDump.size() == 1);
+    }
+
+    /**
+     * 洞窟卡的敘述收不收得到。
+     *
+     * <p>實機跑了一輪之後 {@code cards.json} 裡有 531 張卡——任務、迷你任務、
+     * 祕密發現、首領祭壇都在，唯獨 {@code [Cave]} 一張都沒有，而那幾張卡
+     * 明明滑過（{@code tooltip-partial-1..6} 全是洞窟）。整類消失只會是
+     * 守門擋的，所以這裡照實機那張卡重現一次，順便把擋掉的理由印出來。
+     */
+    private static void caves(Path file) throws Exception {
+        CardDump.forget();
+        CardDump.forTest(file);
+
+        List<Component> tooltip = caveCard();
+        List<StyledText> styled = styled(tooltip);
+
+        String desc = CardDump.paragraphKey(styled, 3);
+        check("洞窟敘述接得出三行的鍵",
+              desc != null && desc.split("\\R", -1).length == 3);
+        if (desc != null) {
+            CardDump.note(tooltip, styled, desc, null);
+        }
+        CardDump.flush();
+
+        check("★ 洞窟卡的敘述收得到（標題那一行是「某某 [Cave]」，"
+                      + "先前被當成公會清單整張擋掉）",
+              Files.exists(file) && read(file).getAsJsonObject("entries").size() == 1);
+
+        // 擋掉的是標題那一行，不是敘述——寫清楚，免得下次又去找錯地方。
+        check("卡片類型不再算公會標籤",
+              !PlayerDataFilter.carriesPlayerData("The Barracks [Cave]"));
+        check("真正的公會清單那一列照樣擋得住",
+              PlayerDataFilter.carriesPlayerData("- RabbitHouse [Maya]"));
+    }
+
+    /** 實機那張洞窟卡，照 tooltip-partial-1 的結構一行一行抄。 */
+    private static List<Component> caveCard() {
+        List<Component> t = new ArrayList<>();
+        t.add(parts("The Barracks ", WHITE, "[Cave]", GREY));      // 0
+        t.add(plain("Can be explored", GREY));                     // 1
+        t.add(plain(" ", GREY));                                   // 2
+        t.add(plain("Walk across the tall bridges", GREY));        // 3
+        t.add(plain("and find the knights within the", GREY));     // 4
+        t.add(plain("Barracks at [-1641, 151, -964]", GREY));      // 5
+        t.add(plain(" ", GREY));                                   // 6
+        t.add(plain("✔À Recommended Combat Lv: 119", GREY));       // 7
+        t.add(plain("Distance: Far (1000+ Blocks)", GREY));        // 8
+        t.add(plain("Length: Long (4m)", GREY));                   // 9
+        t.add(plain("Difficulty: Hard", GREY));                    // 10
+        t.add(plain(" ", GREY));                                   // 11
+        t.add(plain("Rewards:", GREY));                            // 12
+        t.add(plain("- +8000000 XP", GREY));                       // 13
+        t.add(plain("- +Various Items", GREY));                    // 14
+        t.add(plain(" ", GREY));                                   // 15
+        t.add(plain("Click To Track", GREY));                      // 16
+        t.add(plain("", GREY));                                    // 17
+        t.add(plain("中鍵點擊在地圖上查看！", GREY));                // 18
+        t.add(plain("右鍵點擊在維基上打開！", GREY));                // 19
+        return List.copyOf(t);
     }
 
     /** 實機那張 19 行的迷你任務卡，照 tooltip-partial-5 的結構。 */
