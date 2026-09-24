@@ -6843,7 +6843,7 @@ public final class LineTranslator {
      * 被 tooltip 寬度切成兩行的括號（{@code [Combat Lv.} ＋ {@code 88]}）不算
      * 歧義，只要那幾段同色就算一段。
      */
-    private static List<LineParts.Piece> bracketAccents(
+    static List<LineParts.Piece> bracketAccents(
             List<LineParts.Piece> allRuns, String[] translated, Style blockStyle) {
         List<Style> source = new ArrayList<>();
         Style open = null;
@@ -6899,6 +6899,23 @@ public final class LineTranslator {
             for (String piece : PLACEHOLDER.split(spans.get(i), -1)) {
                 if (piece.length() >= 2 && hasLetter(piece)) {
                     out.add(new LineParts.Piece(piece, style));
+                    // 收尾那一段再登記一份<b>去掉前導空白</b>的。
+                    //
+                    // 面板寬度把 `[{~} 麥芽穀粒]` 斷在數值後面時，那個空格是
+                    // 斷行點、會被吃掉：上一行留 `…[{~}`，下一行從
+                    // `麥芽穀粒]` 開始。帶空格的那一份於是兩行都對不上，
+                    // 而名字本身另有一條（物品名查表查得到）——所以畫面上是
+                    // 「麥芽穀粒」有色、後面那個 `]` 掉回底色。使用者回報的
+                    // 正是這個。
+                    //
+                    // 只對 `]` 收尾的那一段做：它是被斷行孤立出來的那一半，
+                    // 而且帶著括號夠獨特。中間那種兩頭都是空格的片段不動，
+                    // 剝掉空白之後太容易貼到散文裡的同名詞上。
+                    String bare = piece.strip();
+                    if (piece.endsWith("]") && !bare.equals(piece)
+                            && bare.length() >= 2 && hasLetter(bare)) {
+                        out.add(new LineParts.Piece(bare, style));
+                    }
                 }
             }
         }
