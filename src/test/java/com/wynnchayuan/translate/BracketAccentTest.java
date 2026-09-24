@@ -63,6 +63,7 @@ public final class BracketAccentTest {
         nameContainsType();
         miniQuest();
         noBracketsInTranslation();
+        plurals();
         rules();
 
         report();
@@ -97,6 +98,34 @@ public final class BracketAccentTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
         return store;
+    }
+
+    /**
+     * 卡片寫複數、語料收單數。
+     *
+     * <p>迷你任務的方括號寫的是「這一次要幾個」，所以物品名是複數
+     * （{@code [15 Arcane Anomalies]}）；語料收的是物品本身，鍵永遠是單數
+     * （{@code Arcane Anomaly}）。查不到就拿不到重點色，那一塊會掉回底色。
+     *
+     * <p>拿實機那幾張卡的物品名對過，七個查不到的複數裡這一步救回六個。
+     * 見 {@code LineTranslator#asSingular}。
+     */
+    private static void plurals() throws Exception {
+        TranslationStore store = corpus(
+                "Arcane Anomaly", "奧祕異象", "Dragonling Scale", "龍崽鱗片");
+
+        check("「[{~} Arcane Anomalies]」→ 奧祕異象（-ies 換回 -y）",
+              "奧祕異象".equals(
+                      LineTranslator.lookupWordCore("[15 Arcane Anomalies]", store)));
+        check("「[{~} Dragonling Scales]」→ 龍崽鱗片（剝掉 -s）",
+              "龍崽鱗片".equals(
+                      LineTranslator.lookupWordCore("[15 Dragonling Scales]", store)));
+
+        TranslationStore ss = corpus("Glass", "玻璃", "Moss", "苔蘚");
+        check("「-ss」結尾的不剝（Glass 不會變成 Glas）",
+              "玻璃".equals(LineTranslator.lookupWordCore("[3 Glass]", ss)));
+        check("查不到的仍然回傳 null（不亂猜）",
+              LineTranslator.lookupWordCore("[3 Widgets]", ss) == null);
     }
 
     /** 使用者回報的那張卡：「[洞窟]」三個字元是同一段、而且是灰的。 */

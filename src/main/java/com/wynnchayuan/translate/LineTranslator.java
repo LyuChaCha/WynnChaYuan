@@ -504,6 +504,9 @@ public final class LineTranslator {
         // 跟 #perPartStyles 用同一個 Tally：併掉裝飾、平手取先出現的，
         // 都是那邊已經談過的事，不要再長出第二套算法。
         Tally tally = new Tally();
+        // 方括號裡的字不投票，見 #proseCount。深度跨行帶著走：括號常常被
+        // tooltip 寬度切成兩行，左括號在這一行、右括號在下一行。
+        int[] depth = {0};
         for (LineParts part : parts) {
             // 逐<b>段</b>累計，不是逐行。
             //
@@ -525,7 +528,7 @@ public final class LineTranslator {
                 if (isNote(run.text())) {
                     continue;
                 }
-                tally.add(run.style(), solidCount(run.text()));
+                tally.add(run.style(), proseCount(run.text(), depth));
             }
         }
         // 抽出去的佔位符不算數，見上。符號（{#}）不必扣——solidCount 本來就不數，
@@ -542,6 +545,99 @@ public final class LineTranslator {
         // 跟先前「一筆都沒累計到」的做法一樣——總得畫個顏色。
         Style top = tally.top();
         return undecorated(top == null ? parts.get(0).textStyle() : top);
+    }
+
+    /**
+     * 方括號<b>外面</b>的實字有幾個。
+     *
+     * <h2>為什麼方括號裡的字不能投票</h2>
+     * 底色要的是「散文是什麼顏色」。而方括號在這些卡片上就是重點記號——
+     * 裡面那一段本來就<b>該</b>是另一個顏色，它出現多長跟散文無關。
+     *
+     * <p>只扣數值還不夠。實機那張 Arcane Anomalies 的迷你任務卡：
+     *
+     * <pre>
+     *   §7Bring §3[15 Arcane Anomalies]§7 to
+     *   §7the Slaying Post §3[Combat Lv.
+     *   §375]§7 at §f[-677, 46, -4948]
+     * </pre>
+     *
+     * <p>扣掉數值之後灰的還有 24 個（{@code Bring}、{@code to}、
+     * {@code the Slaying Post}、{@code at}），青的 28 個——青贏，整段散文
+     * 被畫成青色。名字長一點的卡片就會這樣，同一份診斷檔裡 30 段有 8 段中招，
+     * 全是這個形狀。
+     *
+     * <p>扣掉括號裡的之後青只剩 {@code 75]} 的那一個右括號，灰穩穩地贏。
+     *
+     * <h2>不是「那個顏色一律不投票」</h2>
+     * 扣的是<b>括號裡的字</b>，不是「跟括號同色的那一段」。青色的字只要落在
+     * 括號外面照樣算數——見 {@code BlockProseColourTest} 的「青色多數」那一組：
+     * {@code and [88 Soft Fur] right now} 整段是青的，括號外的
+     * {@code and}、{@code right now} 共 11 個實字，仍然贏過灰的 {@code Get}。
+     *
+     * @param depth 單元素陣列，當作可變的「現在在不在方括號裡」
+     */
+    /**
+     * 跳過前 {@code skip} 個實字之後，接下來 {@code take} 個實字裡有幾個在方括號外面。
+     *
+     * <p>{@link #proseCount} 的切片版：{@link #uniformStyles} 是照實字數把 run
+     * 切給每一行的，切點落在 run 中間，所以不能整個 run 一起算。
+     *
+     * <p>{@code skip}／{@code take} 數的是<b>實字</b>（跟 {@link #solidCount}
+     * 同一把尺，方括號本身也算一個），回傳的才是括號外面的那幾個。
+     */
+    private static int proseAmong(String text, int skip, int take, int[] depth) {
+        int seen = 0;
+        int kept = 0;
+        for (int i = 0; i < text.length(); ) {
+            int cp = text.codePointAt(i);
+            i += Character.charCount(cp);
+            boolean bracket = cp == '[' || cp == ']';
+            if (cp == '[') {
+                depth[0]++;
+            } else if (cp == ']' && depth[0] > 0) {
+                depth[0]--;
+            }
+            if (Character.isWhitespace(cp)
+                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)) {
+                continue;
+            }
+            seen++;
+            if (seen <= skip) {
+                continue;
+            }
+            if (seen > skip + take) {
+                break;
+            }
+            if (!bracket && depth[0] == 0) {
+                kept++;
+            }
+        }
+        return kept;
+    }
+
+    private static int proseCount(String text, int[] depth) {
+        int solid = 0;
+        for (int i = 0; i < text.length(); ) {
+            int cp = text.codePointAt(i);
+            i += Character.charCount(cp);
+            if (cp == '[') {
+                depth[0]++;
+                continue;
+            }
+            if (cp == ']') {
+                if (depth[0] > 0) {
+                    depth[0]--;
+                }
+                continue;
+            }
+            if (depth[0] > 0 || Character.isWhitespace(cp)
+                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)) {
+                continue;
+            }
+            solid++;
+        }
+        return solid;
     }
 
     /**
@@ -6719,6 +6815,136 @@ public final class LineTranslator {
      * 此時「第 i 行」兩邊指的不是同一件事，比對下去只會上錯色。
      * 一行裡混了幾種顏色的也不做，那是 {@code accents} 本來就在管的事。
      */
+    /**
+     * 方括號對方括號，照出現順序配。
+     *
+     * <h2>為什麼要有這一條</h2>
+     * 方括號在這些卡片上是重點記號，括號裡那一段有自己的顏色。要把顏色貼回
+     * 譯文，既有的路是<b>查表</b>：把括號裡的詞查出中文，再拿字面去譯文裡找。
+     * 查不到就整塊掉回底色——畫面上是「{@code [} 有色、名字沒色」的半彩。
+     *
+     * <p>查不到很常見，而且理由都不是「該翻沒翻」：
+     *
+     * <ul>
+     *   <li>{@code [Mini-Quest - Slay Spiders]}——語料收的是<b>整行</b>
+     *       （{@code + New Quest [Mini-Quest - Slay Spiders]}），括號那半
+     *       自己沒有條目。</li>
+     *   <li>{@code [Combat Lv. 88]}——等級是這一次的數字，不可能進語料。</li>
+     *   <li>{@code [-677, 46, -4948]}——座標同理。</li>
+     * </ul>
+     *
+     * <p>但這幾種<b>位置就是答案</b>：原文有幾個方括號段，譯文照樣寫了幾個，
+     * 而且順序一樣——語料的譯文本來就照著原文的括號結構寫。第 i 個對第 i 個，
+     * 不必查表。
+     *
+     * <h2>何時不做</h2>
+     * 個數對不上就不做：那表示譯文改寫了括號結構，照順序配會配到別的東西上。
+     * 某一段橫跨了兩種顏色也整組不做——那一段的顏色本來就有歧義，猜錯比不猜糟。
+     * 被 tooltip 寬度切成兩行的括號（{@code [Combat Lv.} ＋ {@code 88]}）不算
+     * 歧義，只要那幾段同色就算一段。
+     */
+    private static List<LineParts.Piece> bracketAccents(
+            List<LineParts.Piece> allRuns, String[] translated, Style blockStyle) {
+        List<Style> source = new ArrayList<>();
+        Style open = null;
+        boolean mixed = false;
+        int depth = 0;
+        for (LineParts.Piece run : allRuns) {
+            String text = run.text();
+            if (depth > 0 && !sameColour(open, run.style())) {
+                mixed = true;                  // 跨行的那一段換了顏色
+            }
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                if (c == '[') {
+                    if (depth == 0) {
+                        open = run.style();
+                        mixed = false;
+                    }
+                    depth++;
+                } else if (c == ']' && depth > 0) {
+                    depth--;
+                    if (depth == 0) {
+                        if (mixed) {
+                            return List.of();  // 見上：有歧義就整組不做
+                        }
+                        source.add(open);
+                        open = null;
+                    }
+                }
+            }
+        }
+        if (source.isEmpty() || depth != 0) {
+            return List.of();                  // 沒有括號，或有一個沒收尾
+        }
+        List<String> spans = squareSpans(String.join(NL, translated));
+        if (spans.size() != source.size()) {
+            return List.of();
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        for (int i = 0; i < spans.size(); i++) {
+            Style style = source.get(i);
+            if (style == null || sameColour(style, blockStyle) || spans.get(i).isBlank()) {
+                continue;                      // 跟底色同色的不必貼
+            }
+            out.add(new LineParts.Piece(spans.get(i), style));
+            // 括號裡夾著佔位符時，整塊貼不上去：畫的時候佔位符是自己一個
+            // 片段，整塊的字面在畫面上從來不連續（{@code [{~} 蓬鬆毛皮]} 只有
+            // 開頭那個 {@code [} 對得上）。實機那張迷你任務卡就是這樣變成
+            // 「{@code [} 青、名字灰」的。
+            //
+            // 所以把佔位符切開的那幾段<b>各自</b>登記一次。只登記<b>帶實字</b>
+            // 的那幾段：座標切出來的 {@code [-}、{@code , } 太短又到處都有，
+            // 貼上去只會貼到別的地方。
+            for (String piece : PLACEHOLDER.split(spans.get(i), -1)) {
+                if (piece.length() >= 2 && hasLetter(piece)) {
+                    out.add(new LineParts.Piece(piece, style));
+                }
+            }
+        }
+        return out;
+    }
+
+    /** 這一段裡有沒有字母或方塊字——標點與數字不算。 */
+    private static boolean hasLetter(String text) {
+        return text.codePoints().anyMatch(Character::isLetter);
+    }
+
+    /** 譯文裡最外層的那幾個 {@code [...]}，照出現順序。跨行的不算。 */
+    private static List<String> squareSpans(String text) {
+        List<String> out = new ArrayList<>();
+        int depth = 0;
+        int start = -1;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == '[') {
+                if (depth == 0) {
+                    start = i;
+                }
+                depth++;
+            } else if (c == ']' && depth > 0) {
+                depth--;
+                if (depth == 0) {
+                    String span = text.substring(start, i + 1);
+                    if (span.indexOf(NEWLINE) < 0) {
+                        out.add(span);
+                    } else {
+                        return List.of();      // 被斷行切開，位置對不準
+                    }
+                }
+            }
+        }
+        return depth == 0 ? out : List.of();
+    }
+
+    /** 兩個樣式是不是同一個顏色（不看裝飾，跟 {@link #dominantStyle} 同一把尺）。 */
+    private static boolean sameColour(Style one, Style other) {
+        if (one == null || other == null) {
+            return one == other;
+        }
+        return undecorated(one).equals(undecorated(other));
+    }
+
     private static List<LineParts.Piece> wholeLineAccents(
             List<LineParts> parts, List<LineParts.Piece> allRuns,
             String[] translated, Style blockStyle,
@@ -7298,6 +7524,11 @@ public final class LineTranslator {
         List<RowStyle> out = new ArrayList<>();
         int at = 0;                        // 走到第幾個 run
         int eaten = 0;                     // 那個 run 已經用掉幾個實字
+        // 方括號裡的字不投票，跟 #dominantStyle 同一把尺——兩邊用不同的尺
+        // 就會打架：整段的底色挑了散文那色，這裡的 dominant 卻挑了括號那色，
+        // 於是 #wholeLineAccents 拿括號那色把<b>整行</b>蓋掉。實機那條
+        // 「+ New Quest [Mini-Quest - Slay Spiders]」整行變深灰就是這樣來的。
+        int[] depth = {0};
         for (String line : template.split(NL, -1)) {
             int need = solidCount(PLACEHOLDER.matcher(line).replaceAll(""));
             Style only = null;
@@ -7319,9 +7550,12 @@ public final class LineTranslator {
                     mixed = true;
                 }
                 int take = Math.min(have, need);
-                tally.add(run.style(), take);
+                // 從這個 run 的開頭重讀，所以深度得從<b>進這個 run 時</b>算起。
+                int[] local = {depth[0]};
+                tally.add(run.style(), proseAmong(run.text(), eaten, take, local));
                 need -= take;
                 if (take == have) {
+                    depth[0] = local[0];   // 整個 run 讀完了，深度帶到下一個
                     at++;
                     eaten = 0;
                 } else {
@@ -7549,6 +7783,9 @@ public final class LineTranslator {
         }
         // 整行同色的那幾行，直接拿譯文那一行當重點段。見 #wholeLineAccents。
         accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle, accents));
+        // 方括號對方括號，照順序配。查表查不到的那幾種（等級、座標、
+        // 只收了整行的那種）靠這一條拿回顏色。見 #bracketAccents。
+        accents.addAll(bracketAccents(allRuns, translated, blockStyle));
 
         // 斷行不要把一個重點詞切成兩半，否則它的顏色會整個掉。見 keepAccentsWhole。
         String[] flowed = keepAccentsWhole(translated, accents);
@@ -8448,7 +8685,53 @@ public final class LineTranslator {
             return null;
         }
         String zh = store.lookup(rest);
-        return zh == null || zh.isBlank() ? store.lookupTerm(rest) : zh;
+        if (zh == null || zh.isBlank()) {
+            zh = store.lookupTerm(rest);
+        }
+        return zh == null || zh.isBlank() ? asSingular(rest, store) : zh;
+    }
+
+    /**
+     * 複數變回單數再查一次。
+     *
+     * <h2>為什麼需要</h2>
+     * 卡片上寫的是<b>這一次要幾個</b>，所以物品名是複數：{@code [15 Arcane
+     * Anomalies]}、{@code [20 Void Essences]}、{@code - +5 Saltpetres}。
+     * 而語料收的是物品本身，鍵永遠是單數（{@code Arcane Anomaly}）。
+     *
+     * <p>查不到的後果不是「沒翻到」而已——方括號那一段查不到譯文就拿不到
+     * 重點色，整塊掉回底色，畫面上變成「{@code [} 青、名字灰」的半青半灰。
+     * 拿實機那幾張卡對過，七個查不到的複數裡這一步救回六個，剩下那個
+     * （{@code Light Wood}）本來就是單數、語料真的沒有。
+     *
+     * <h2>只做這三條</h2>
+     * {@code -ies → -y}、{@code -es → }、{@code -s → }。英文的不規則複數不管：
+     * 猜錯了頂多查不到，跟現在一樣；猜對了才有收穫。{@code -ss} 結尾的不剝
+     * （{@code Glass}、{@code Moss}）。
+     */
+    private static String asSingular(String plural, TranslationStore store) {
+        List<String> tries = new ArrayList<>(2);
+        if (plural.endsWith("ies") && plural.length() > 3) {
+            tries.add(plural.substring(0, plural.length() - 3) + "y");
+        } else if (plural.endsWith("es") && plural.length() > 2) {
+            // 「-es」可能是 -e 加 s（Scales），也可能是整個 -es（Anomalies 已在上面）。
+            // 兩種都試，先試短的那一種。
+            tries.add(plural.substring(0, plural.length() - 2));
+            tries.add(plural.substring(0, plural.length() - 1));
+        } else if (plural.endsWith("s") && !plural.endsWith("ss")
+                && plural.length() > 1) {
+            tries.add(plural.substring(0, plural.length() - 1));
+        }
+        for (String one : tries) {
+            String zh = store.lookup(one);
+            if (zh == null || zh.isBlank()) {
+                zh = store.lookupTerm(one);
+            }
+            if (zh != null && !zh.isBlank()) {
+                return zh;
+            }
+        }
+        return null;
     }
 
     /**
