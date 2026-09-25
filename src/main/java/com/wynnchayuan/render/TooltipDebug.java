@@ -170,6 +170,11 @@ public final class TooltipDebug {
             seg.addProperty("font", ps == null || ps.getFont() == null
                     ? "(none)" : ps.getFont().toString());
             seg.addProperty("isGlyph", GlyphSplitter.isGlyphPart(part));
+            // 顏色。原文與譯文兩邊對照才看得出是哪一段上錯色——先前這裡
+            // 只記字型，顏色的回報永遠只能靠截圖猜。
+            if (ps != null && ps.getColor() != null) {
+                seg.addProperty("colour", ps.getColor().toHexString());
+            }
             // 排版用的空白偏移。這是欄距真正的載體，沒有它就只能猜。
             int px = com.wynnchayuan.translate.SpaceOffset.decode(raw);
             if (px != 0) {

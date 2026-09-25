@@ -1,12 +1,142 @@
 {
  "_meta": {
   "quest": "Reclaiming the House",
-  "count": 59,
-  "translated": 59,
+  "count": 70,
+  "translated": 70,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Reclaiming the House#000": {
+   "src": "I need more firepower if I'm going...to get...",
+   "dst": "如果我要……奪回……我需要更多火力……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#001": {
+   "src": "Anyway, it's clear that I'm going to need more firepower if I'm going to have a shot at reclaiming that outpost.",
+   "dst": "總之，很明顯，要想有機會奪回那座前哨站，我需要更多火力。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#002": {
+   "src": "Wh- I'm shocked! In the middle there- they just caged the soldiers instead of killing them? That's...kind of a relief.",
+   "dst": "什——我很意外！正中間那裡——他們把士兵關起來，沒有殺掉？這……算是鬆一口氣。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#003": {
+   "src": "There's definitely too many orcs in the plaza there for us to take down on our own...",
+   "dst": "那邊廣場上的獸人實在太多了，光靠我們兩個絕對拿不下來……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#004": {
+   "src": "Alright, now I just need to figure out how we can both get in... There's sentries on the perimeter, so going over may not be an option...",
+   "dst": "好，現在我只需要想出我們兩個要怎麼進去……外圍有哨兵，所以翻過去大概行不通……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#005": {
+   "src": "Someone outside door? Check!",
+   "dst": "門外有人？查一下！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#006": {
+   "src": "Oh, orc from mud bath. In, now!",
+   "dst": "喔，泡泥巴浴回來的獸人。快進來！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#007": {
+   "src": "No enter for humans! This place belong to orcs!",
+   "dst": "人類不准進！這地方是獸人的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#008": {
+   "src": "Someone outside door. Check!",
+   "dst": "門外有人。查一下！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#009": {
+   "src": "Ah... Took mud bath. Orc enter, quick!",
+   "dst": "啊……泡過泥巴浴。獸人進來，快！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#010": {
+   "src": "[{~}/{~}] Ropes cut.",
+   "dst": "[{~}/{~}] 繩索已割斷。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#011": {
+   "src": "The Gavellian Army's sending reinforcements to our outpost, finally. Everything was getting too much to handle on our end.",
+   "dst": "Gavel 軍隊終於要派增援到我們的前哨站了。我們這邊實在快撐不住了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#012": {
+   "src": "You Wynnic folks are way better suited than us for guard duty. Why don't you take over for me, huh?",
+   "dst": "你們 Wynn 人比我們適合站崗多了。不如你來替我，怎麼樣？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reclaiming the House",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Reclaiming the House#013": {
    "src": "Join Elphaba on a mission in the Temporary Camp at [-{~}, {~}, -{~}]",
    "dst": "到 [-{~1}, {~2}, -{~3}] 的 Temporary Camp 加入 Elphaba 的任務",
    "role": "desc",
@@ -16,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#001": {
+  "Reclaiming the House#014": {
    "src": "Oh, a Wynnic soldier out here in the boondocks? Honestly, you're just what we need- I could use your help, if you're able?",
    "dst": "喔，這種鳥不生蛋的地方居然有 Wynn 的士兵？說真的，你正是我們需要的人——如果你有空的話，能不能幫我一個忙？",
    "role": "desc",
@@ -26,7 +156,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#002": {
+  "Reclaiming the House#015": {
    "src": "Good, thank you. Let me lock down the camp before I give you the briefing, though.",
    "dst": "太好了，謝謝。不過在講簡報之前，先讓我把營地封鎖起來。",
    "role": "desc",
@@ -36,7 +166,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#003": {
+  "Reclaiming the House#016": {
    "src": "My name is Elphaba. I've been working with the Gavellian army for a good few years now.",
    "dst": "我叫 Elphaba。我在 Gavel 的軍隊裡待了好幾年了。",
    "role": "desc",
@@ -46,7 +176,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#004": {
+  "Reclaiming the House#017": {
    "src": "I'm the commander of the {p} Outpost down ahead. It's a strategic fortress, placed to monitor the Orcish capital.",
    "dst": "我是前面那座 {p} Outpost 的指揮官。那是一座戰略要塞，位置就是用來監視獸人首都的。",
    "role": "desc",
@@ -56,7 +186,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#005": {
+  "Reclaiming the House#018": {
    "src": "It was safe for a long while, but especially in the past while the Orcs have gotten far bolder, more aggressive.",
    "dst": "有很長一段時間都很安全，但最近這陣子獸人變得大膽多了，也更有攻擊性。",
    "role": "desc",
@@ -66,7 +196,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#006": {
+  "Reclaiming the House#019": {
    "src": "They overwhelmed the outpost- we had to retreat and set up this camp to watch over the place we used to watch over them with!",
    "dst": "他們把哨站攻陷了——我們只好撤退，在這裡紮營，反過來監視那個我們原本用來監視他們的地方！",
    "role": "desc",
@@ -76,17 +206,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#007": {
-   "src": "I need more firepower if I'm going... to get...",
-   "dst": "如果我要……奪回……我需要更多火力……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 1",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "Reclaiming the House#008": {
+  "Reclaiming the House#021": {
    "src": "...oh no. See, this is what I mean! The orcs are coming!",
    "dst": "……噢不。你看，我說的就是這個！獸人來了！",
    "role": "desc",
@@ -96,7 +216,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#009": {
+  "Reclaiming the House#022": {
    "src": "Brace yourself, soldier! Protect the camp!",
    "dst": "戒備，士兵！保護營地！",
    "role": "desc",
@@ -106,7 +226,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#010": {
+  "Reclaiming the House#023": {
    "src": "Kill the mobs raiding the Camp.",
    "dst": "擊殺襲擊營地的怪物。",
    "role": "desc",
@@ -116,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#011": {
+  "Reclaiming the House#024": {
    "src": "This is the third attack in three days! How many reinforcements have they got?!",
    "dst": "這是三天內第三次進攻了！他們到底有多少援軍？！",
    "role": "desc",
@@ -126,7 +246,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#012": {
+  "Reclaiming the House#025": {
    "src": "Gah! Their casters are strong, careful!",
    "dst": "咳啊！他們的施法者很強，小心！",
    "role": "desc",
@@ -136,7 +256,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#013": {
+  "Reclaiming the House#026": {
    "src": "Talk to Elphaba for information on the upcoming attack.",
    "dst": "跟 Elphaba 談談接下來的攻擊。",
    "role": "desc",
@@ -146,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#014": {
+  "Reclaiming the House#027": {
    "src": "Ugh, I think that was all of them... Come here now, I'll start up where we left off.",
    "dst": "唔，我想應該全解決了……過來吧，我們接著剛才的講。",
    "role": "desc",
@@ -156,7 +276,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#015": {
+  "Reclaiming the House#028": {
    "src": "Not sure I could have done that myself. I'm lucky you came around when you did, soldier.",
    "dst": "這場我一個人恐怕撐不下來。你來得正是時候，士兵，算我走運。",
    "role": "desc",
@@ -166,7 +286,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#016": {
+  "Reclaiming the House#029": {
    "src": "Anyway, it's clear I'm going to need more firepower if I'm going to have a shot at reclaiming that outpost.",
    "dst": "總之，很明顯，我要有機會奪回那座哨站，就需要更多火力。",
    "role": "desc",
@@ -176,7 +296,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#017": {
+  "Reclaiming the House#030": {
    "src": "You've certainly got the fighting chops, so I'd appreciate the aid, but we've got to come up with a plan, fast.",
    "dst": "你的身手沒話說，有你幫忙我很感激，但我們得盡快想出一個計畫。",
    "role": "desc",
@@ -186,7 +306,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#018": {
+  "Reclaiming the House#031": {
    "src": "There's an old tower near the outpost- some old storage silo. It was built taller than the fort, so we might be able to spy on them from there.",
    "dst": "哨站附近有一座舊塔——是個老倉庫塔。它蓋得比堡壘還高，也許我們可以從那裡偵察他們。",
    "role": "desc",
@@ -196,7 +316,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#019": {
+  "Reclaiming the House#032": {
    "src": "It's a risk though, since it's so close by, but we have no other options. Meet me at the tower southeast of here so we can survey the situation.",
    "dst": "不過這很冒險，因為離得太近了，可是我們沒有別的選擇。到這裡東南方的那座塔跟我會合，我們去看看情況。",
    "role": "desc",
@@ -206,7 +326,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#020": {
+  "Reclaiming the House#033": {
    "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "前往 [-{~1}, {~2}, -{~3}] 的瞭望塔擬定進攻計畫。",
    "role": "desc",
@@ -216,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#021": {
+  "Reclaiming the House#034": {
    "src": "Soldier! I'm right behind you. You can see our outpost- and the tower I mentioned.",
    "dst": "士兵！我就在你後面。你看得到我們的哨站——還有我剛才說的那座塔。",
    "role": "desc",
@@ -226,7 +346,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#022": {
+  "Reclaiming the House#035": {
    "src": "We need to find a way in. A lot of soldiers were caught unaware during the Orcs' assault, too.",
    "dst": "我們得找到進去的路。獸人突襲的時候，很多士兵都措手不及。",
    "role": "desc",
@@ -236,7 +356,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#023": {
+  "Reclaiming the House#036": {
    "src": "If there's any survivors in there, we should make rescuing them a priority.",
    "dst": "如果裡面還有生還者，救出他們應該是第一優先。",
    "role": "desc",
@@ -246,7 +366,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#024": {
+  "Reclaiming the House#037": {
    "src": "After all, it means more manpower for us. We can't count on that being the case, though...",
    "dst": "畢竟那代表我們多了人手。不過我們也不能指望真的有……",
    "role": "desc",
@@ -256,7 +376,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#025": {
+  "Reclaiming the House#038": {
    "src": "Come on, hurry inside before one of the orcs spots us!",
    "dst": "來吧，趁獸人發現我們之前趕快進去！",
    "role": "desc",
@@ -266,7 +386,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#026": {
+  "Reclaiming the House#039": {
    "src": "Enter to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
    "dst": "進入 [-{~1}, {~2}, -{~3}] 的瞭望塔擬定進攻計畫。",
    "role": "desc",
@@ -276,7 +396,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#027": {
+  "Reclaiming the House#040": {
    "src": "Alright, this is a pretty clear view. Let's see what's going on in there...",
    "dst": "好，這裡視野很清楚。來看看裡面是什麼情況……",
    "role": "desc",
@@ -286,17 +406,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#028": {
-   "src": "Wh- I'm shocked! In the middle there- they just caged the soldiers instead of killing them? That's... kind of a relief.",
-   "dst": "什——我很意外！正中間那裡——他們把士兵關起來，沒有殺掉？這……算是鬆一口氣。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "Reclaiming the House#029": {
+  "Reclaiming the House#042": {
    "src": "There's definitely too many orcs in the plaza for us to take down on our own...",
    "dst": "廣場上的獸人絕對多到我們兩個吃不下……",
    "role": "desc",
@@ -306,7 +416,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#030": {
+  "Reclaiming the House#043": {
    "src": "...but that cage is held up by those ropes. If we can cut them, the other soldiers should be able to help!",
    "dst": "……可是那個籠子是靠那幾條繩子吊著的。只要我們能割斷它們，其他士兵應該就能幫上忙！",
    "role": "desc",
@@ -316,7 +426,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#031": {
+  "Reclaiming the House#044": {
    "src": "Alright, now I just need to figure out how we can both get in... There's sentries on the perimeter, so going over may no be an option...",
    "dst": "好，現在我只要想出我們兩個要怎麼進去……外圍有哨兵，翻過去大概行不通……",
    "role": "desc",
@@ -326,7 +436,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#032": {
+  "Reclaiming the House#045": {
    "src": "Maybe we can keep an eye out on their sentry patterns and look for an opening-",
    "dst": "也許我們可以盯著他們的巡邏規律，找一個空檔——",
    "role": "desc",
@@ -336,7 +446,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#033": {
+  "Reclaiming the House#046": {
    "src": "Humans on old tower! Junhur will shoot! This our place now, get out!!",
    "dst": "舊塔上有人類！Junhur 要開砲了！這裡現在是我們的地盤，滾出去！！",
    "role": "desc",
@@ -346,7 +456,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#034": {
+  "Reclaiming the House#047": {
    "src": "Aw, not now! I knew this was a risk, no time to get out... Brace for impact!!",
    "dst": "唉，怎麼偏偏是現在！我就知道這很冒險，來不及出去了……準備撞擊！！",
    "role": "desc",
@@ -356,7 +466,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#035": {
+  "Reclaiming the House#048": {
    "src": "Old tower fall! Junhur is best cannon shooter!!",
    "dst": "舊塔倒了！Junhur 是最厲害的砲手！！",
    "role": "desc",
@@ -366,7 +476,7 @@
    "speaker": "Orc",
    "source": "wiki"
   },
-  "Reclaiming the House#036": {
+  "Reclaiming the House#049": {
    "src": "Agh, soldier!! Are you alright, where'd you fall?!",
    "dst": "咳啊，士兵！！你還好嗎，你摔到哪裡去了？！",
    "role": "desc",
@@ -376,7 +486,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#037": {
+  "Reclaiming the House#050": {
    "src": "Ah... Wow. You barely look scratched, you must've gotten really lucky.",
    "dst": "啊……哇。你身上幾乎連擦傷都沒有，運氣一定很好。",
    "role": "desc",
@@ -386,7 +496,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#038": {
+  "Reclaiming the House#051": {
    "src": "Not so much here... I'm pretty battered after that. At least one of us is in good condition...",
    "dst": "我這邊就沒那麼好了……剛剛那下把我摔得不輕。至少我們有一個人狀況還行……",
    "role": "desc",
@@ -396,7 +506,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#039": {
+  "Reclaiming the House#052": {
    "src": "Unfortunately, that means figuring a way in is up to you. We can't examine their sentry patterns from down here.",
    "dst": "很不巧，那代表想辦法進去這件事得靠你了。從這下面看不到他們的巡邏規律。",
    "role": "desc",
@@ -406,7 +516,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#040": {
+  "Reclaiming the House#053": {
    "src": "I'll survive, sure, but I won't be able to walk around and defend myself for a while.",
    "dst": "我死不了，這點我確定，但接下來一段時間我沒辦法走動、也沒辦法自保。",
    "role": "desc",
@@ -416,7 +526,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#041": {
+  "Reclaiming the House#054": {
    "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
    "dst": "把你一個人丟在這裡我很過意不去，不過說句安慰的話——你應該夠強，或者夠幸運，撐得過去。",
    "role": "desc",
@@ -426,7 +536,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#042": {
+  "Reclaiming the House#055": {
    "src": "Explore the perimeter of the outpost. Try to find a way in, but be careful, okay?",
    "dst": "去探查哨站的外圍。想辦法找到進去的路，但要小心，好嗎？",
    "role": "desc",
@@ -436,7 +546,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#043": {
+  "Reclaiming the House#056": {
    "src": "Explore the outpost's surroundings to find another way in.",
    "dst": "探查哨站周圍，找出另一條進去的路。",
    "role": "desc",
@@ -446,7 +556,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#044": {
+  "Reclaiming the House#057": {
    "src": "Follow the trail of mud left by the orc. It leads to the cave at [-{~}, {~}, -{~}]",
    "dst": "跟著獸人留下的泥痕走。它通往 [-{~1}, {~2}, -{~3}] 的洞穴",
    "role": "desc",
@@ -456,7 +566,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#045": {
+  "Reclaiming the House#058": {
    "src": "Enter the outpost while covered in mud.",
    "dst": "沾滿泥巴後進入哨站。",
    "role": "desc",
@@ -466,7 +576,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#046": {
+  "Reclaiming the House#059": {
    "src": "More muddy orcs? In, now!",
    "dst": "又是滿身泥的獸人？快進去！",
    "role": "desc",
@@ -476,7 +586,7 @@
    "speaker": "Orc Guard",
    "source": "wiki"
   },
-  "Reclaiming the House#047": {
+  "Reclaiming the House#060": {
    "src": "Cut the ropes to free the guards from the cage.",
    "dst": "割斷繩子，把衛兵從籠子裡放出來。",
    "role": "desc",
@@ -486,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#048": {
+  "Reclaiming the House#061": {
    "src": "Kill the Orcish Overtakers.",
    "dst": "擊殺 Orcish Overtaker。",
    "role": "desc",
@@ -496,7 +606,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#049": {
+  "Reclaiming the House#062": {
    "src": "Good thinking with the mud disguise, soldier! They never suspected a thing, now come help us out over here!",
    "dst": "用泥巴偽裝，這一招高明，士兵！他們完全沒起疑，快過來幫我們！",
    "role": "desc",
@@ -506,7 +616,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#050": {
+  "Reclaiming the House#063": {
    "src": "Kill the Orcish Overtakers, we'll help keep the other ones off you!",
    "dst": "去殺 Orcish Overtaker，其他的我們幫你擋住！",
    "role": "desc",
@@ -516,7 +626,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#051": {
+  "Reclaiming the House#064": {
    "src": "Open the gate with a spell",
    "dst": "用法術打開大門",
    "role": "desc",
@@ -526,7 +636,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#052": {
+  "Reclaiming the House#065": {
    "src": "The Overtakers are down, the other Orcs are flailing! Open the outpost's entrance with a spell now, we've got this under control!",
    "dst": "Overtaker 倒了，其他獸人亂成一團！現在用法術打開哨站的入口，這裡我們控制得住！",
    "role": "desc",
@@ -536,7 +646,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "Reclaiming the House#053": {
+  "Reclaiming the House#066": {
    "src": "Talk to Elphaba.",
    "dst": "跟 Elphaba 說話。",
    "role": "desc",
@@ -546,7 +656,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reclaiming the House#054": {
+  "Reclaiming the House#067": {
    "src": "Phew... That's some fine work there, soldier! The outpost is back under our control!",
    "dst": "呼……幹得漂亮，士兵！哨站回到我們手上了！",
    "role": "desc",
@@ -556,7 +666,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#055": {
+  "Reclaiming the House#068": {
    "src": "Glad to see some more capable Wynnic hands over here. Though, I didn't catch your name. Would you mind?",
    "dst": "很高興這裡多了一雙能幹的 Wynn 人的手。不過，我還沒請教你的名字。方便告訴我嗎？",
    "role": "desc",
@@ -566,7 +676,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#056": {
+  "Reclaiming the House#069": {
    "src": "{u}, huh? I'll remember that. You barely even needed my help, heh... Wish I hadn't been such a burden, but at least it worked out.",
    "dst": "{u}，是吧？我記住了。你根本幾乎不需要我幫忙，呵……真希望我沒變成累贅，不過至少結果是好的。",
    "role": "desc",
@@ -576,7 +686,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#057": {
+  "Reclaiming the House#070": {
    "src": "Here- it's some of my own personal spending money, as a thank-you gift.",
    "dst": "拿去——這是我自己的一點私房錢，當作謝禮。",
    "role": "desc",
@@ -586,7 +696,7 @@
    "speaker": "Elphaba",
    "source": "wiki"
   },
-  "Reclaiming the House#058": {
+  "Reclaiming the House#071": {
    "src": "Alright everyone, let's get this place ship-shape! Everything needs to be repaired in case of another attack!!",
    "dst": "好了各位，我們把這裡整頓好！所有東西都要修復，以防他們再來一次！！",
    "role": "desc",

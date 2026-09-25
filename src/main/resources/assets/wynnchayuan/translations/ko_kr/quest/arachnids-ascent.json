@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Arachnids' Ascent",
-  "count": 128,
-  "translated": 128,
+  "count": 130,
+  "translated": 127,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Arachnids' Ascent#000": {
+   "src": "Best route to the den's through that road with the burn marks. 'sends ya straight to the cap'n!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Arachnids' Ascent#002": {
+   "src": "So, you've taken out their queen! Well done, soldier. I'll have to let the nearby village know.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Arachnids' Ascent",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Arachnids' Ascent#003": {
    "src": "Hm... ah, {u}! There you are. I was just about to send someone to fetch you.",
    "dst": "흠... 아, {u}! 거기 있었군. 막 사람을 보내 자네를 데려오려던 참이었네.",
    "role": "desc",
@@ -16,9 +36,9 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#001": {
+  "Arachnids' Ascent#004": {
    "src": "Our preparations are complete, and it's time for the assault on the spider den! With you here, we'll just need to wait for-...",
-   "dst": "준비는 끝났고, 이제 거미 소굴을 칠 때일세! 자네도 왔으니 이제 기다릴 사람은-...",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -26,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#002": {
+  "Arachnids' Ascent#005": {
    "src": "If {u} is here, I take it that means today's the day we strike at the spiders?",
    "dst": "{u}도 와 있다는 건, 오늘 거미들을 치러 간다는 거죠?",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#003": {
+  "Arachnids' Ascent#006": {
    "src": "'course, the roots ain't an option. Lucky this ol' corrupted spring chose to pop up out here, eh? Scientific mystery, it is- but none o' that's our concern.",
    "dst": "물론 뿌리 쪽은 안 되지. 이 낡은 타락한 샘이 여기 솟아 준 게 다행이지, 응? 과학의 수수께끼라나- 근데 그건 우리 알 바 아니야.",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#004": {
+  "Arachnids' Ascent#007": {
    "src": "[+{~} Military Supply Crate]",
    "dst": "[+{~} 군용 보급 상자]",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#005": {
+  "Arachnids' Ascent#008": {
    "src": "Ah, good! You can see the pickle we're in, hmm? We've tried everything to get these poor souls out, but the damnned web is like glue!",
    "dst": "아, 좋아! 우리가 곤란한 처지인 거 보이지? 저 불쌍한 사람들을 꺼내려고 별짓 다 했는데, 망할 거미줄이 풀 같아!",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#006": {
+  "Arachnids' Ascent#009": {
    "src": "Cob filled you in on my reasoning, yes? We need to get through these webs somehow... and, well, this seemed simpler than the other option.",
    "dst": "Cob이 내 생각은 전해 줬겠지? 어떻게든 이 거미줄을 뚫어야 하네... 그리고, 뭐, 이게 다른 방법보다는 간단해 보였지.",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#007": {
+  "Arachnids' Ascent#010": {
    "src": "...Hm. That's not good.",
    "dst": "...흠. 이거 안 좋은데.",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#008": {
+  "Arachnids' Ascent#011": {
    "src": "So what do we do now? You mentioned another option- what was that about? What about it made it difficult?",
    "dst": "그럼 이제 어떡하죠? 다른 방법이 있다고 하셨잖아요- 그게 뭐예요? 뭐가 어려운데요?",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#009": {
+  "Arachnids' Ascent#012": {
    "src": "Then what's the catch? You would have tried this first if it were that simple.",
    "dst": "그럼 뭐가 문제죠? 그렇게 간단했으면 먼저 해 보셨을 텐데요.",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#010": {
+  "Arachnids' Ascent#013": {
    "src": "The mountain is infested with spiders, even more so than {p}. Our few attempts at scouting it out have been met with extreme hostility.",
    "dst": "그 산엔 {p}보다도 거미가 더 들끓네. 몇 번 정찰을 시도했지만 극도로 적대적인 공격을 받았지.",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#011": {
+  "Arachnids' Ascent#014": {
    "src": "You've been rocketed by the great web.",
    "dst": "거대한 거미줄에 튕겨 날아갔다.",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#012": {
+  "Arachnids' Ascent#015": {
    "src": "Well, here we are! ...The heat's gotten more intense up here. Come on, let's find what we're looking for, before I over-",
    "dst": "자, 다 왔다! ...여기 위는 더 뜨겁네. 어서 찾을 걸 찾자, 내가 쓰러지기 전에-",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#013": {
+  "Arachnids' Ascent#016": {
    "src": ".......sacred.......protection.......",
    "dst": ".......신성한.......수호.......",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#014": {
+  "Arachnids' Ascent#017": {
    "src": ".......queen's.......blessing.......protect......!",
    "dst": ".......여왕의.......축복.......지켜라......!",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#015": {
+  "Arachnids' Ascent#018": {
    "src": "[+{~} Mount Wynn's Flame]",
    "dst": "[+{~} Mount Wynn의 불꽃]",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#016": {
+  "Arachnids' Ascent#019": {
    "src": "You've returned! I trust you found something that can help us get through these webs?",
    "dst": "돌아왔군! 거미줄을 뚫는 데 도움이 될 걸 찾았겠지?",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Arachnids' Ascent#017": {
+  "Arachnids' Ascent#020": {
    "src": "Talk to Admiral Aegis in the {p} Barracks at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 {p} 병영에서 Aegis 제독과 대화하세요.",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#018": {
+  "Arachnids' Ascent#021": {
    "src": "Let's see... ah, {u}! There you are. I was just about to send someone to fetch you.",
    "dst": "어디 보자... 아, {u}! 거기 있었군. 막 사람을 보내 자네를 데려오려던 참이었네.",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Arachnids' Ascent#019": {
+  "Arachnids' Ascent#022": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
    "dst": "따라오게. 내 집무실에서 할 이야기가 있네. 병영 꼭대기 층이야.",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Arachnids' Ascent#020": {
+  "Arachnids' Ascent#023": {
    "src": "...ahem. Now that we're here, we can discuss the matter of {p}.",
    "dst": "...흠흠. 다들 모였으니 {p} 문제를 논의해 보세.",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Arachnids' Ascent#021": {
+  "Arachnids' Ascent#024": {
    "src": "Our preparations are complete, and it's time for the assault on Nivla's spider den! With you here, we'll just need to wait for-...",
    "dst": "준비는 끝났고, 이제 Nivla의 거미 소굴을 칠 때일세! 자네도 왔으니 이제 기다릴 사람은-...",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Arachnids' Ascent#022": {
+  "Arachnids' Ascent#025": {
    "src": "Admiral- we're here! Sorry we're late, we were sparring in the training room and lost track of time...",
    "dst": "제독님, 저희 왔습니다! 늦어서 죄송해요. 훈련실에서 대련하다가 시간 가는 줄 몰랐어요...",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#023": {
+  "Arachnids' Ascent#026": {
    "src": "If {u} is here, I take it that means today is the day we strike at the spiders?",
    "dst": "{u}도 와 있다는 건, 오늘 거미들을 치러 간다는 거죠?",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#024": {
+  "Arachnids' Ascent#027": {
    "src": "Indeed it is. Now, you three are to be the force which will fight through their den and clear out as many of those spiders as you can. For that, you'll need support.",
    "dst": "그렇다네. 자네들 셋이 소굴을 뚫고 들어가 거미를 최대한 쓸어버릴 부대일세. 그러려면 지원이 필요하겠지.",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Arachnids' Ascent#025": {
+  "Arachnids' Ascent#028": {
    "src": "We've sent out several soldiers ahead of time to make preparations on site. You'll want to first speak to Private Cob on the {p}, who will have supplies for you.",
    "dst": "현장 준비를 위해 병사 몇 명을 먼저 보내 두었네. 우선 {p}에 있는 Cob 이등병을 찾아가게. 보급품을 줄 걸세.",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Arachnids' Ascent#026": {
+  "Arachnids' Ascent#029": {
    "src": "I expect this mission will hold some danger, but I trust the three of you will be able to deal with anything you come across. Good luck, soldiers!",
    "dst": "위험이 따르는 임무겠지만, 자네들 셋이라면 무엇을 만나든 해낼 거라 믿네. 행운을 비네, 병사들!",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Arachnids' Ascent#027": {
+  "Arachnids' Ascent#030": {
    "src": "Yes, sir. We'll do our best.",
    "dst": "네, 제독님. 최선을 다하겠습니다.",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#028": {
+  "Arachnids' Ascent#031": {
    "src": "These spiders won't stand a chance! Let's get going.",
    "dst": "거미들은 상대도 안 될 거야! 가자.",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#029": {
+  "Arachnids' Ascent#032": {
    "src": "Speak to Private Cob in the Savannah at [{~}, {~}, -{~}] to receive supplies.",
    "dst": "[{~}, {~}, -{~}]의 Savannah에서 Cob 이등병에게 보급품을 받으세요.",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#030": {
+  "Arachnids' Ascent#033": {
    "src": "'ey there, chaps! You lot must be the spider killin' force, eh?",
    "dst": "어이, 친구들! 너희가 그 거미 잡는 부대구먼, 응?",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Private Cob",
    "source": "wiki"
   },
-  "Arachnids' Ascent#031": {
+  "Arachnids' Ascent#034": {
    "src": "That's us! The Admiral told us you had supplies to give us?",
    "dst": "맞아요! 제독님이 보급품을 주실 거라던데요?",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#032": {
+  "Arachnids' Ascent#035": {
    "src": "That I do! Now, 'fore I send ya off, there's been sum news from the Cap'n!",
    "dst": "그렇지! 근데 보내기 전에, 대장님한테서 소식이 좀 왔어!",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Private Cob",
    "source": "wiki"
   },
-  "Arachnids' Ascent#033": {
+  "Arachnids' Ascent#036": {
    "src": "Buncha terrorised citizens been found right next to the bloomin' den! Trapped in a sticky old web, they were.",
    "dst": "겁에 질린 주민들이 그 망할 소굴 바로 옆에서 발견됐다고! 끈적한 거미줄에 딱 걸려 있었대.",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "Private Cob",
    "source": "wiki"
   },
-  "Arachnids' Ascent#034": {
+  "Arachnids' Ascent#037": {
    "src": "Priority number one is gettin' them out, before takin' on the den. But nothin' can get through the web!",
    "dst": "소굴 치기 전에 그 사람들부터 꺼내는 게 최우선이야. 근데 그 거미줄을 아무것도 못 뚫어!",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Private Cob",
    "source": "wiki"
   },
-  "Arachnids' Ascent#035": {
+  "Arachnids' Ascent#038": {
    "src": "No fire, no magic... nothin' has broken through. The cap'n decided- 'ey, why not try some lava? 's hotter than fire, anyway.",
    "dst": "불도 안 되고 마법도 안 되고... 뚫린 게 없어. 그래서 대장님이 그랬지- 용암은 어때? 불보다 뜨겁잖아.",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "Private Cob",
    "source": "wiki"
   },
-  "Arachnids' Ascent#036": {
+  "Arachnids' Ascent#039": {
    "src": "Point is. Along with all your supplies 'n whatnot, ya've gotta bring along some lava for the cap'n. Magically contained, o' course!",
    "dst": "요점은. 보급품이랑 이것저것에 더해서, 대장님께 용암도 좀 가져가야 해. 물론 마법으로 담은 거지!",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "Private Cob",
    "source": "wiki"
   },
-  "Arachnids' Ascent#037": {
+  "Arachnids' Ascent#040": {
    "src": "Sure, that sounds easy enough. A bit of extra work, but we were heading in that direction anyway.",
    "dst": "좋아요, 어렵지 않겠네요. 일이 좀 늘긴 했지만 어차피 그쪽으로 가던 참이니까요.",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#038": {
+  "Arachnids' Ascent#041": {
    "src": "That's the spirit! If ya want the best route to the den, follow that road with the burn marks. It'll send ya straight to the cap'n!",
    "dst": "바로 그거야! 소굴로 가는 제일 좋은 길은 불탄 자국 난 길이야. 따라가면 대장님한테 바로 가!",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "Private Cob",
    "source": "wiki"
   },
-  "Arachnids' Ascent#039": {
+  "Arachnids' Ascent#042": {
    "src": "Bring the supplies to Captain Enduyn at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]의 Enduyn 대장에게 보급품을 전달하세요.",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#040": {
+  "Arachnids' Ascent#043": {
    "src": "At ease, soldiers! You're the three Aegis told me to look out for, aren't you? Have you spoken to Cob yet?",
    "dst": "쉬어, 병사들! Aegis가 말한 셋이 자네들이군? Cob과는 이야기했나?",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#041": {
+  "Arachnids' Ascent#044": {
    "src": "We have, and we've brought supplies. As well as... lava, I think?",
    "dst": "네, 보급품도 가져왔어요. 그리고... 용암도요, 아마?",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#042": {
+  "Arachnids' Ascent#045": {
    "src": "Ah, good! You can see the pickle we're in, hmm? We've tried everything to get those poor souls out, but the damned web is like glue!",
    "dst": "아, 좋아! 우리가 곤란한 처지인 거 보이지? 저 불쌍한 사람들을 꺼내려고 별짓 다 했는데, 망할 거미줄이 풀 같아!",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#043": {
+  "Arachnids' Ascent#046": {
    "src": "Now, let's see here... If I cast a spell on it like this, then...",
    "dst": "자, 어디 보자... 이렇게 주문을 걸면...",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#044": {
+  "Arachnids' Ascent#047": {
    "src": "Hm... That's not good.",
    "dst": "흠... 이거 안 좋은데.",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#045": {
+  "Arachnids' Ascent#048": {
    "src": "So, what do we do now? You mentioned another option- what was that about? What about it made it difficult?",
    "dst": "그럼 이제 어떡하죠? 다른 방법이 있다고 하셨잖아요- 그게 뭐예요? 뭐가 어려운데요?",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#046": {
+  "Arachnids' Ascent#049": {
    "src": "Right. You may have noticed on your way here, but the nest is at the base of {p}, a dormant volcano.",
    "dst": "그래. 오면서 봤겠지만, 둥지는 휴화산인 {p}의 기슭에 있네.",
    "role": "desc",
@@ -476,7 +496,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#047": {
+  "Arachnids' Ascent#050": {
    "src": "Legends speak of incredible magic granted by the mountain- that of protection, incinerating any who dare go against it.",
    "dst": "전설에 따르면 그 산이 놀라운 마법을 내린다지- 감히 맞서는 자를 불태우는 수호의 마법을.",
    "role": "desc",
@@ -486,7 +506,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#048": {
+  "Arachnids' Ascent#051": {
    "src": "These are only stories, of course. It's very unlikely the mountain actually could grant such magic. However... there may be some truth in the legend.",
    "dst": "물론 옛날이야기일 뿐이지. 산이 정말 그런 마법을 내릴 리는 없어. 하지만... 전설에 일말의 진실은 있을지도 모르네.",
    "role": "desc",
@@ -496,7 +516,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#049": {
+  "Arachnids' Ascent#052": {
    "src": "So what's the catch? You would have tried it first if it were that simple.",
    "dst": "그럼 뭐가 문제죠? 그렇게 간단했으면 먼저 해 보셨을 텐데요.",
    "role": "desc",
@@ -506,7 +526,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#050": {
+  "Arachnids' Ascent#053": {
    "src": "The mountain is infested with spiders, even more so than {p}. Our few attempts at scouting it out have shown they're incredibly hostile towards intruders.",
    "dst": "그 산엔 {p}보다도 거미가 더 들끓네. 몇 번 정찰을 보냈는데, 침입자에게 엄청나게 적대적이었어.",
    "role": "desc",
@@ -516,7 +536,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#051": {
+  "Arachnids' Ascent#054": {
    "src": "As though they're protecting something, I assume?",
    "dst": "뭔가를 지키고 있는 것처럼요?",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#052": {
+  "Arachnids' Ascent#055": {
    "src": "Indeed. So, here's the plan... If you enter the mountain, the spiders will quickly try to move inside to stop you. I'll need one of you to stay here with me to fight them off.",
    "dst": "바로 그거야. 계획은 이렇네... 자네들이 산에 들어가면 거미들이 막으러 안으로 몰려들 거야. 한 명은 여기 남아 나와 함께 놈들을 막아 줘야 하네.",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#053": {
+  "Arachnids' Ascent#056": {
    "src": "So two of us take on the volcano, and two stay behind. Got it! {u}, you should be part of the Mount Wynn group. But then, Tasim, which of us should go with them?",
    "dst": "그럼 둘은 화산으로, 둘은 여기 남는 거네요. 알겠어요! {u}, 넌 Mount Wynn 조로 가. 그럼 Tasim, 우리 중 누가 같이 가지?",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#054": {
+  "Arachnids' Ascent#057": {
    "src": "Why don't we let {u} decide? Which of us do you want to join you in the volcano?",
    "dst": "{u}한테 정하라고 하자. 우리 중 누구랑 화산에 가고 싶어?",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#055": {
+  "Arachnids' Ascent#058": {
    "src": "Alright! We'll handle the volcano then. Captain, Tasim, don't die out here!",
    "dst": "좋아! 화산은 우리가 맡을게. 대장님, Tasim, 여기서 죽지 마요!",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#056": {
+  "Arachnids' Ascent#059": {
    "src": "Alright. We'll fight through the spiders in the mountain, then. Captain, Aledar, good luck!",
    "dst": "좋아. 그럼 우린 산속 거미들을 뚫고 갈게. 대장님, Aledar, 행운을 빌어요!",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#057": {
+  "Arachnids' Ascent#060": {
    "src": "Then take more time. But don't take too long- we don't want the spiders to realize we're planning something.",
    "dst": "그럼 좀 더 생각하게. 하지만 너무 오래는 말고- 거미들이 우리 계획을 눈치채면 안 되니까.",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#058": {
+  "Arachnids' Ascent#061": {
    "src": "Decide who to bring with you into Mount Wynn at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]의 Mount Wynn에 누구를 데려갈지 정하세요.",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#059": {
+  "Arachnids' Ascent#062": {
    "src": "So, who do you want to join you to fight through Mount Wynn?",
    "dst": "그래서, Mount Wynn을 뚫고 갈 때 누구랑 같이 갈래?",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#060": {
+  "Arachnids' Ascent#063": {
    "src": "Alright! We'll handle the volcano then. Captain, Tasim, don't die out here!",
    "dst": "좋아! 화산은 우리가 맡을게. 대장님, Tasim, 여기서 죽지 마요!",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#061": {
+  "Arachnids' Ascent#064": {
    "src": "Alright. We'll fight through the spiders in the mountain, then. Captain, Aledar, good luck!",
    "dst": "좋아. 그럼 우린 산속 거미들을 뚫고 갈게. 대장님, Aledar, 행운을 빌어요!",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#062": {
+  "Arachnids' Ascent#065": {
    "src": "Then take more time. But don't take too long- we don't want the spiders to realize we're planning something.",
    "dst": "그럼 좀 더 생각하게. 하지만 너무 오래는 말고- 거미들이 우리 계획을 눈치채면 안 되니까.",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#063": {
+  "Arachnids' Ascent#066": {
    "src": "Enter Mount Wynn and reach the summit through the cave at [-{~}, {~}, -{~}].",
    "dst": "Mount Wynn에 들어가 [-{~}, {~}, -{~}]의 동굴을 지나 정상에 도달하세요.",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#064": {
+  "Arachnids' Ascent#067": {
    "src": "...Wow, it's hot in here! That makes sense, I guess, given what we're here for. Let's reach the top as quickly as we can.",
    "dst": "...와, 여기 안은 덥다! 우리가 뭘 찾으러 왔는지 생각하면 당연한가. 최대한 빨리 꼭대기로 가자.",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#065": {
+  "Arachnids' Ascent#068": {
    "src": "W-woah! You felt that too, right? What's going-",
    "dst": "우, 우와! 너도 느꼈지? 무슨 일이-",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#066": {
+  "Arachnids' Ascent#069": {
    "src": "We've got to run for it! Come on, jump!",
    "dst": "뛰어야 해! 어서, 점프해!",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#067": {
+  "Arachnids' Ascent#070": {
    "src": "That... that was a close one. Phew! Can't believe we made it out in one piece. I think we're near the top, too.",
    "dst": "방금... 방금 진짜 아슬아슬했다. 휴! 멀쩡히 빠져나오다니. 꼭대기도 거의 다 온 것 같아.",
    "role": "desc",
@@ -686,7 +706,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#068": {
+  "Arachnids' Ascent#071": {
    "src": "Well, here we are! ...The heat's gotten more intense up here. Come on, let's find out what we're looking for, before I over-",
    "dst": "자, 다 왔다! ...여기 위는 더 뜨겁네. 어서 찾을 걸 찾자, 내가 쓰러지기 전에-",
    "role": "desc",
@@ -696,7 +716,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#069": {
+  "Arachnids' Ascent#072": {
    "src": "...intruders....come to take....sacred protection....",
    "dst": "...침입자....빼앗으러....신성한 수호....",
    "role": "desc",
@@ -706,7 +726,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Arachnids' Ascent#070": {
+  "Arachnids' Ascent#073": {
    "src": ".....must not......allow....will kill.....for queen!....",
    "dst": ".....허락..못해......죽인다.....여왕을 위해!....",
    "role": "desc",
@@ -716,7 +736,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Arachnids' Ascent#071": {
+  "Arachnids' Ascent#074": {
    "src": "Ack! We should have known it wouldn't be that easy. Alright, let's take down this spider and get what we came for!",
    "dst": "으악! 그렇게 쉬울 리가 없었지. 좋아, 이 거미를 쓰러뜨리고 찾으러 온 걸 가져가자!",
    "role": "desc",
@@ -726,7 +746,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#072": {
+  "Arachnids' Ascent#075": {
    "src": "Well, there it is. We have what we need to burn through those webs!... I hope.",
    "dst": "자, 여기 있다. 거미줄을 태워 뚫을 게 생겼어!... 그랬으면 좋겠다.",
    "role": "desc",
@@ -736,7 +756,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#073": {
+  "Arachnids' Ascent#076": {
    "src": "The spider mentioned a queen... I guess that's what we'll be facing in their nest, then.",
    "dst": "거미가 여왕을 말했지... 둥지에서 우리가 상대할 게 그건가 봐.",
    "role": "desc",
@@ -746,7 +766,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#074": {
+  "Arachnids' Ascent#077": {
    "src": "Alright, let's get back to Tasim and the captain!",
    "dst": "좋아, Tasim이랑 대장님한테 돌아가자!",
    "role": "desc",
@@ -756,7 +776,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#075": {
+  "Arachnids' Ascent#078": {
    "src": "...I can hear the spiders already. We'll need to fight through them if we want to reach the top. Let's get going, we don't want to take too long.",
    "dst": "...벌써 거미 소리가 들려. 꼭대기에 가려면 뚫고 가야겠어. 서두르자, 너무 지체하면 안 돼.",
    "role": "desc",
@@ -766,7 +786,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#076": {
+  "Arachnids' Ascent#079": {
    "src": "H-huh? That shaking, it's almost like-",
    "dst": "뭐, 뭐지? 이 흔들림, 꼭 마치-",
    "role": "desc",
@@ -776,7 +796,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#077": {
+  "Arachnids' Ascent#080": {
    "src": "What are those spiders doing!? {u}, come on, we need to move!",
    "dst": "저 거미들 뭐 하는 거야!? {u}, 어서, 움직여야 해!",
    "role": "desc",
@@ -786,7 +806,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#078": {
+  "Arachnids' Ascent#081": {
    "src": "...That was closer than it should have been. The spiders must be real desperate to protect whatever it is they have up here, huh? Let's keep going.",
    "dst": "...생각보다 훨씬 아슬아슬했어. 여기 있는 게 뭐든 거미들이 필사적으로 지키나 봐? 계속 가자.",
    "role": "desc",
@@ -796,7 +816,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#079": {
+  "Arachnids' Ascent#082": {
    "src": "It was a tough climb, but we made it... It's, uh, very hot up here. So- what was it we were looking for-",
    "dst": "힘든 등반이었지만 해냈다... 여기, 어, 엄청 덥네. 그래서- 우리가 찾던 게 뭐였더라-",
    "role": "desc",
@@ -806,7 +826,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#080": {
+  "Arachnids' Ascent#083": {
    "src": "...intruders....come to take....sacred protection....",
    "dst": "...침입자....빼앗으러....신성한 수호....",
    "role": "desc",
@@ -816,7 +836,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Arachnids' Ascent#081": {
+  "Arachnids' Ascent#084": {
    "src": ".....must not......allow....will kill.....for queen!....",
    "dst": ".....허락..못해......죽인다.....여왕을 위해!....",
    "role": "desc",
@@ -826,7 +846,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Arachnids' Ascent#082": {
+  "Arachnids' Ascent#085": {
    "src": "Of course it wouldn't be that easy... Alright, {u}, let's do what we came here for. Let's claim that magic, and burn through the webs!",
    "dst": "역시 그렇게 쉬울 리가 없지... 좋아, {u}, 온 목적을 이루자. 그 마법을 손에 넣고 거미줄을 태워 버리자!",
    "role": "desc",
@@ -836,7 +856,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#083": {
+  "Arachnids' Ascent#086": {
    "src": "I guess that's that taken care of. We'll be able to burn through that web and save the villagers!",
    "dst": "이걸로 해결된 것 같네. 이제 거미줄을 태워 뚫고 주민들을 구할 수 있어!",
    "role": "desc",
@@ -846,7 +866,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#084": {
+  "Arachnids' Ascent#087": {
    "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in it's nest to stop the spiders, once and for all.",
    "dst": "거미가 여왕 얘기한 거 들었지? 거미들을 완전히 막으려면 둥지에서 여왕을 쓰러뜨려야 할 거야.",
    "role": "desc",
@@ -856,7 +876,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#085": {
+  "Arachnids' Ascent#088": {
    "src": "We should probably get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
    "dst": "이제 산을 내려가자. Aledar랑 대장님을 기다리게 하면 안 되지.",
    "role": "desc",
@@ -866,7 +886,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#086": {
+  "Arachnids' Ascent#089": {
    "src": "Return to Captain Enduyn with the flame at [-{~}, {~}, -{~}].",
    "dst": "불꽃을 가지고 [-{~}, {~}, -{~}]의 Enduyn 대장에게 돌아가세요.",
    "role": "desc",
@@ -876,7 +896,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#087": {
+  "Arachnids' Ascent#090": {
    "src": "You've returned! I trust you found something that can help us pass through these webs?",
    "dst": "돌아왔군! 거미줄을 뚫는 데 도움이 될 걸 찾았겠지?",
    "role": "desc",
@@ -886,7 +906,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#088": {
+  "Arachnids' Ascent#091": {
    "src": "We did! We fought off a spider at the summit, and claimed a magical flame.",
    "dst": "찾았어요! 정상에서 거미를 쓰러뜨리고 마법의 불꽃을 얻었어요.",
    "role": "desc",
@@ -896,7 +916,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#089": {
+  "Arachnids' Ascent#092": {
    "src": "Excellent! Now, give it here. Let's see if we can't get these villagers free... watch out, folks! It might get a little warm for a moment...",
    "dst": "훌륭해! 자, 이리 주게. 이 주민들을 풀어 줄 수 있나 보자... 다들 조심해! 잠깐 좀 뜨거울 수도 있네...",
    "role": "desc",
@@ -906,7 +926,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#090": {
+  "Arachnids' Ascent#093": {
    "src": "Great work, soldiers. With these villagers out we can turn our focus to the main den.",
    "dst": "잘했네, 병사들. 주민들을 구했으니 이제 본 소굴에 집중할 수 있겠어.",
    "role": "desc",
@@ -916,7 +936,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#091": {
+  "Arachnids' Ascent#094": {
    "src": "If you're prepared, I don't see any reason to hold back. Good luck in there, soldiers! Let's stop this spider blight once and for all.",
    "dst": "준비됐다면 더 미룰 이유가 없지. 안에서 행운을 비네, 병사들! 이 거미 재앙을 완전히 끝내세.",
    "role": "desc",
@@ -926,7 +946,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#092": {
+  "Arachnids' Ascent#095": {
    "src": "We'll do our best, Captain. Aledar, {u}, let's head down to the den entrance.",
    "dst": "최선을 다할게요, 대장님. Aledar, {u}, 소굴 입구로 내려가자.",
    "role": "desc",
@@ -936,7 +956,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#093": {
+  "Arachnids' Ascent#096": {
    "src": "You've returned! I trust you found something that can help us pass through these webs?",
    "dst": "돌아왔군! 거미줄을 뚫는 데 도움이 될 걸 찾았겠지?",
    "role": "desc",
@@ -946,7 +966,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#094": {
+  "Arachnids' Ascent#097": {
    "src": "We did, yes. There was a powerful spider at the peak, which was making use of this magical flame.",
    "dst": "네, 찾았어요. 정상에 강한 거미가 있었는데, 이 마법의 불꽃을 쓰고 있었어요.",
    "role": "desc",
@@ -956,7 +976,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#095": {
+  "Arachnids' Ascent#098": {
    "src": "Excellent! Now, give it here. Let's see if we can't get these villagers free... watch out, folks! It might get a little warm for a moment...",
    "dst": "훌륭해! 자, 이리 주게. 이 주민들을 풀어 줄 수 있나 보자... 다들 조심해! 잠깐 좀 뜨거울 수도 있네...",
    "role": "desc",
@@ -966,7 +986,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#096": {
+  "Arachnids' Ascent#099": {
    "src": "Great work, soldiers. With these villagers out we can turn our focus to the main den.",
    "dst": "잘했네, 병사들. 주민들을 구했으니 이제 본 소굴에 집중할 수 있겠어.",
    "role": "desc",
@@ -976,7 +996,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#097": {
+  "Arachnids' Ascent#100": {
    "src": "If you're prepared, I don't see any reason to hold back. Good luck in there, soldiers! Let's stop this spider blight once and for all.",
    "dst": "준비됐다면 더 미룰 이유가 없지. 안에서 행운을 비네, 병사들! 이 거미 재앙을 완전히 끝내세.",
    "role": "desc",
@@ -986,7 +1006,7 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#098": {
+  "Arachnids' Ascent#101": {
    "src": "We'll do our best, Captain. Aledar, {u}, let's head down to the den entrance.",
    "dst": "최선을 다할게요, 대장님. Aledar, {u}, 소굴 입구로 내려가자.",
    "role": "desc",
@@ -996,7 +1016,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#099": {
+  "Arachnids' Ascent#102": {
    "src": "H-hah! F-freedom! No m-more c-creepy crawlies... Just me a-and my... mushrooms.",
    "dst": "하, 하! 자, 자유다! 이제 기, 기어 다니는 놈들은 없어... 나랑 내... 버섯뿐이야.",
    "role": "desc",
@@ -1006,7 +1026,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Arachnids' Ascent#100": {
+  "Arachnids' Ascent#103": {
    "src": "We did it! We killed the spider queen! {p} is safe from that threat now!",
    "dst": "해냈다! 거미 여왕을 죽였어! 이제 {p}은(는) 그 위협에서 안전해!",
    "role": "desc",
@@ -1016,7 +1036,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#101": {
+  "Arachnids' Ascent#104": {
    "src": "We- we did! That was... intense. But we succeeded in the end!",
    "dst": "우, 우리가 해냈어! 방금 건... 정말 치열했어. 그래도 결국 성공했네!",
    "role": "desc",
@@ -1026,7 +1046,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#102": {
+  "Arachnids' Ascent#105": {
    "src": "...So, what now? We completed the mission, so we should report back to the Admiral, but... what's after that?",
    "dst": "...그래서, 이제 뭐 하지? 임무는 끝났으니 제독님께 보고해야겠지만... 그다음은?",
    "role": "desc",
@@ -1036,7 +1056,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#103": {
+  "Arachnids' Ascent#106": {
    "src": "I guess we'll have to figure that out. I know I still want to help defend the province, but beyond that... I don't know.",
    "dst": "그건 차차 생각해야겠지. 난 여전히 이 지방을 지키는 걸 돕고 싶어. 하지만 그 이상은... 모르겠어.",
    "role": "desc",
@@ -1046,7 +1066,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#104": {
+  "Arachnids' Ascent#107": {
    "src": "...Yeah, alright. Well, hey, let's all meet back at {p} and celebrate! We deserve it after that whole ordeal.",
    "dst": "...그래, 알았어. 저기, 다 같이 {p}에서 다시 만나서 축하하자! 그 고생을 했으니 그럴 자격 있잖아.",
    "role": "desc",
@@ -1056,7 +1076,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#105": {
+  "Arachnids' Ascent#108": {
    "src": "That sounds good, yeah. {u}, we'll rest up here a little, but we'll meet you back at the barracks soon.",
    "dst": "좋지, 그래. {u}, 우린 여기서 좀 쉬었다가 곧 병영에서 만날게.",
    "role": "desc",
@@ -1066,7 +1086,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#106": {
+  "Arachnids' Ascent#109": {
    "src": "Well, here we are! Back at the barracks, after a successful mission. It feels a little... unreal, you know?",
    "dst": "자, 왔다! 임무 성공하고 병영에 돌아왔어. 좀... 실감이 안 나, 그렇지?",
    "role": "desc",
@@ -1076,7 +1096,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#107": {
+  "Arachnids' Ascent#110": {
    "src": "I know what you mean. But, well, we did good! We managed to make the woods safer for the people living there.",
    "dst": "무슨 말인지 알아. 그래도, 뭐, 우리 잘했잖아! 숲을 거기 사는 사람들한테 더 안전하게 만들었어.",
    "role": "desc",
@@ -1086,7 +1106,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#108": {
+  "Arachnids' Ascent#111": {
    "src": "We did! And now, we celebrate! Here, let's all some {p} Whiskey for the occasion.",
    "dst": "그렇지! 이제 축하하자! 자, 이런 날엔 다 같이 {p} 위스키 한잔 하자고.",
    "role": "desc",
@@ -1096,7 +1116,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#109": {
+  "Arachnids' Ascent#112": {
    "src": "So, what are you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
    "dst": "그래서 너희 둘은 앞으로 뭐 할 거야? 난 제독님께 어디 배치해 달라고 말씀드려 볼까 해.",
    "role": "desc",
@@ -1106,7 +1126,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#110": {
+  "Arachnids' Ascent#113": {
    "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. Something about their magic sticks out to me.",
    "dst": "음. 요즘 좀 생각해 봤는데... 고급 파우더 기술을 더 파 보려고. 그 마법이 뭔가 눈에 들어오더라.",
    "role": "desc",
@@ -1116,7 +1136,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#111": {
+  "Arachnids' Ascent#114": {
    "src": "Oh, really? I thought you would be more into basic fighting, what with our journey to {p}.",
    "dst": "아, 정말? 난 {p}까지 여행했으니 기본 전투 쪽을 더 좋아할 줄 알았는데.",
    "role": "desc",
@@ -1126,7 +1146,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#112": {
+  "Arachnids' Ascent#115": {
    "src": "Yeah... well, I guess I found something a little more interesting along the way. I'll let you know how it all goes.",
    "dst": "응... 뭐, 오는 길에 좀 더 흥미로운 걸 찾은 것 같아. 어떻게 되는지 알려 줄게.",
    "role": "desc",
@@ -1136,7 +1156,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#113": {
+  "Arachnids' Ascent#116": {
    "src": "Keep us updated, Aledar. So, {u}, what are you thinking of doing next?",
    "dst": "계속 소식 전해 줘, Aledar. 그럼 {u}, 넌 앞으로 뭐 할 생각이야?",
    "role": "desc",
@@ -1146,7 +1166,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#114": {
+  "Arachnids' Ascent#117": {
    "src": "Not a bad idea! I might join you with that later, once I've decided on things more.",
    "dst": "나쁘지 않은데! 나도 생각이 좀 정리되면 나중에 같이할지도 몰라.",
    "role": "desc",
@@ -1156,7 +1176,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#115": {
+  "Arachnids' Ascent#118": {
    "src": "Helping people is a good goal. There's bound to be lots of people around who need it.",
    "dst": "사람을 돕는 건 좋은 목표야. 도움이 필요한 사람은 분명 많을 테니까.",
    "role": "desc",
@@ -1166,7 +1186,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#116": {
+  "Arachnids' Ascent#119": {
    "src": "Exploring, huh? That's a good idea. There's plenty to see around here!",
    "dst": "탐험이라고? 좋은 생각이야. 이 근처엔 볼 게 잔뜩 있어!",
    "role": "desc",
@@ -1176,7 +1196,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#117": {
+  "Arachnids' Ascent#120": {
    "src": "...And- well, we all came here for a reason. Might as well see the province while we're here, right?",
    "dst": "...그리고- 뭐, 우리 다 이유가 있어서 여기 왔잖아. 온 김에 이 지방 구경도 하면 좋지, 그렇지?",
    "role": "desc",
@@ -1186,7 +1206,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#118": {
+  "Arachnids' Ascent#121": {
    "src": "Well, if you're staying in the area, maybe we'll cross paths! I'll likely be defending {p} in the short-term.",
    "dst": "이 근처에 있을 거면 또 마주칠지도 모르겠네! 난 당분간 {p}을(를) 지키고 있을 것 같아.",
    "role": "desc",
@@ -1196,7 +1216,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#119": {
+  "Arachnids' Ascent#122": {
    "src": "And, well, I'll probably be in the area as well! There's plenty of experts in the area.",
    "dst": "그리고, 뭐, 나도 아마 이 근처에 있을 거야! 여긴 전문가가 많거든.",
    "role": "desc",
@@ -1206,7 +1226,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#120": {
+  "Arachnids' Ascent#123": {
    "src": "Well, hey, there's no shame in that. There's lots to do around here. I'm sure you'll figure it out!",
    "dst": "에이, 그게 부끄러운 건 아니지. 여긴 할 일이 많아. 넌 분명 답을 찾을 거야!",
    "role": "desc",
@@ -1216,7 +1236,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#121": {
+  "Arachnids' Ascent#124": {
    "src": "If you need a goal, the next place you might want to visit is {p} {p}, to the north. Maybe pay it a visit when you reach level {~}.",
    "dst": "목표가 필요하면, 다음엔 북쪽의 {p} {p}에 가 보는 게 좋겠어. 레벨 {~}이 되면 한번 가 봐.",
    "role": "desc",
@@ -1226,7 +1246,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#122": {
+  "Arachnids' Ascent#125": {
    "src": "...Well, I'm glad we're all able to be here together. Here's to a long and fulfilling friendship!",
    "dst": "...뭐, 우리 다 같이 여기 있을 수 있어서 기뻐. 길고 알찬 우정을 위하여!",
    "role": "desc",
@@ -1236,7 +1256,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#123": {
+  "Arachnids' Ascent#126": {
    "src": "I'll drink to that! To all our future adventures.",
    "dst": "그 말에 건배! 우리의 앞날의 모든 모험을 위하여.",
    "role": "desc",
@@ -1246,7 +1266,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#124": {
+  "Arachnids' Ascent#127": {
    "src": "...Oh, {u}! Good to see you. Anything interesting going on with you?",
    "dst": "...오, {u}! 반갑다. 너한텐 뭐 재밌는 일 있어?",
    "role": "desc",
@@ -1256,7 +1276,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#125": {
+  "Arachnids' Ascent#128": {
    "src": "Me? Well, I've been making little progress... but, nothing too big yet. I'm keeping at it, though!",
    "dst": "나? 음, 조금씩 진전은 있는데... 아직 큰 건 없어. 그래도 계속하고 있어!",
    "role": "desc",
@@ -1266,7 +1286,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Arachnids' Ascent#126": {
+  "Arachnids' Ascent#129": {
    "src": "Oh, hello {u}. I'm probably not going to be here for long- I've been assigned to help defend {p} to the south.",
    "dst": "아, 안녕 {u}. 난 여기 오래 있진 않을 거야- 남쪽 {p} 방어 지원으로 배치됐거든.",
    "role": "desc",
@@ -1276,7 +1296,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#127": {
+  "Arachnids' Ascent#130": {
    "src": "You should come visit, if you have the chance!",
    "dst": "기회 되면 한번 놀러 와!",
    "role": "desc",

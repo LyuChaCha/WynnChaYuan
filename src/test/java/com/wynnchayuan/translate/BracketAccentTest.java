@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.LineParts;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -62,7 +63,11 @@ public final class BracketAccentTest {
         card();
         nameContainsType();
         miniQuest();
+        wrappedSpan();
+        splitWord();
+        spanAcrossRows();
         noBracketsInTranslation();
+        plurals();
         rules();
 
         report();
@@ -97,6 +102,34 @@ public final class BracketAccentTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
         return store;
+    }
+
+    /**
+     * 卡片寫複數、語料收單數。
+     *
+     * <p>迷你任務的方括號寫的是「這一次要幾個」，所以物品名是複數
+     * （{@code [15 Arcane Anomalies]}）；語料收的是物品本身，鍵永遠是單數
+     * （{@code Arcane Anomaly}）。查不到就拿不到重點色，那一塊會掉回底色。
+     *
+     * <p>拿實機那幾張卡的物品名對過，七個查不到的複數裡這一步救回六個。
+     * 見 {@code LineTranslator#asSingular}。
+     */
+    private static void plurals() throws Exception {
+        TranslationStore store = corpus(
+                "Arcane Anomaly", "奧祕異象", "Dragonling Scale", "龍崽鱗片");
+
+        check("「[{~} Arcane Anomalies]」→ 奧祕異象（-ies 換回 -y）",
+              "奧祕異象".equals(
+                      LineTranslator.lookupWordCore("[15 Arcane Anomalies]", store)));
+        check("「[{~} Dragonling Scales]」→ 龍崽鱗片（剝掉 -s）",
+              "龍崽鱗片".equals(
+                      LineTranslator.lookupWordCore("[15 Dragonling Scales]", store)));
+
+        TranslationStore ss = corpus("Glass", "玻璃", "Moss", "苔蘚");
+        check("「-ss」結尾的不剝（Glass 不會變成 Glas）",
+              "玻璃".equals(LineTranslator.lookupWordCore("[3 Glass]", ss)));
+        check("查不到的仍然回傳 null（不亂猜）",
+              LineTranslator.lookupWordCore("[3 Widgets]", ss) == null);
     }
 
     /** 使用者回報的那張卡：「[洞窟]」三個字元是同一段、而且是灰的。 */
@@ -177,6 +210,160 @@ public final class BracketAccentTest {
               is(colourOf(built, "獵殺怨靈與幻影"), NAME));
     }
 
+    /** 折行用的換行字元，跟 LineTranslator 那邊同一個。 */
+    private static final char NL = '\n';
+
+    private static final int BODY = 0xAAAAAA;   // 灰：散文
+    private static final int ITEM = 0x00AAAA;   // 青：括號裡的物品
+    private static final int COORD = 0xFFFFFF;  // 白：座標
+
+    private static Style colour(int rgb) {
+        return Style.EMPTY.withColor(TextColor.fromRgb(rgb));
+    }
+
+    private static LineParts.Piece piece(String text, int rgb) {
+        return new LineParts.Piece(text, colour(rgb));
+    }
+
+    /**
+     * 面板寬度把 {@code [{~} 麥芽穀粒]} 斷在數值後面。
+     *
+     * <h2>實機回報</h2>
+     * 「把 {@code [20 麥芽線]} 或 {@code [20}」換行「麥芽穀粒{@code ]} 交到採集站，」
+     * ——名字是青的，緊跟在後面的那個 {@code ]} 卻掉回灰色。
+     *
+     * <h2>怎麼壞的</h2>
+     * 斷行點就是數值後面那個空格，而空格會被<b>吃掉</b>：上一行結尾是
+     * {@code …[{~}}、下一行開頭是 {@code 麥芽穀粒]}。
+     * {@link LineTranslator#bracketAccents} 為佔位符切出來的那幾段各登記一次，
+     * 而收尾那一段是 {@code " 麥芽穀粒]"}——<b>帶著前導空格</b>，於是斷行之後
+     * 兩行都對不上。{@code keepAccentsWhole} 也搬不動它：要搬的那一半含佔位符。
+     * 剩下能貼的只有物品名查表拿到的「麥芽穀粒」四個字，{@code ]} 沒人管。
+     *
+     * <h2>為什麼測登記、不測畫面</h2>
+     * 斷行是照<b>面板寬度</b>折的，而測試環境沒有真的字型，折不出實機那一刀。
+     * 登記進去之後誰勝出是既有規則：{@code appendText} 同一個位置取<b>比較長</b>
+     * 的那一段，所以「麥芽穀粒{@code ]}」會壓過查表來的「麥芽穀粒」。
+     */
+    private static void wrappedSpan() {
+        // 實機那張卡的三行，照原樣切段
+        List<LineParts.Piece> runs = List.of(
+                piece("Bring ", BODY), piece("[20 Malt String]", ITEM), piece(" or", BODY),
+                piece("[20 Malt Grains]", ITEM), piece(" to the", BODY),
+                piece("Gathering Post at ", BODY), piece("[-1234, 50, -4321]", COORD));
+        String[] translated = {
+            "把 [{~} 麥芽線] 或 [{~} 麥芽穀粒] 交到採集站，座標 [-{~}, {~}, -{~}]"
+        };
+        List<String> texts = new ArrayList<>();
+        for (LineParts.Piece accent
+                : LineTranslator.bracketAccents(runs, translated, colour(BODY))) {
+            texts.add(accent.text());
+        }
+        System.out.println("［跨行括號］登記到的重點段：" + texts);
+
+        check("［跨行括號］整塊 [{~} 麥芽穀粒] 有登記", texts.contains("[{~} 麥芽穀粒]"));
+        check("［跨行括號］原本帶空格的那一份還在（沒斷行時靠它）",
+              texts.contains(" 麥芽穀粒]"));
+        check("★［跨行括號］去掉前導空格的「麥芽穀粒]」也登記了（斷行之後靠它）",
+              texts.contains("麥芽穀粒]"));
+        // 座標那組不可以跟著剝：「, 」「-」到處都有，貼上去會貼到別的地方
+        check("［跨行括號］座標那組沒有多登記短到會撞的片段（實際：" + texts + "）",
+              !texts.contains(", ") && !texts.contains("-"));
+    }
+
+    /**
+     * 斷行落在<b>詞中間</b>：「…Kanderstone 寶」換行「石]」。
+     *
+     * <h2>實機回報</h2>
+     * 採集站那張卡：「把 {@code [32 Kanderstone 錠]} 或 {@code [32 Kanderstone 寶}」
+     * 換行「石{@code ]} 交到採集站 {@code [採礦等級 71]}，」——下半截掉回底色。
+     *
+     * <h2>為什麼 keepAccentsWhole 救不了</h2>
+     * 它最多搬十二個字，而這裡要搬的是「{@code  Kanderstone 寶}」十五個字；
+     * 真搬下去會把面板撐寬一大截。{@link LineTranslator#halvesAcrossBreaks}
+     * 改成認這一刀，兩半各自登記。
+     */
+    private static void splitWord() {
+        String[] flowed = {
+            "把 [{~} Kanderstone 錠] 或 [{~} Kanderstone 寶",
+            "石] 交到採集站 [採礦等級 {~}]，",
+        };
+        List<LineParts.Piece> accents = List.of(
+                piece("[{~} Kanderstone 寶石]", ITEM),
+                piece(" Kanderstone 寶石]", ITEM),
+                piece("[{~} Kanderstone 錠]", ITEM),
+                piece(" Kanderstone 錠]", ITEM));
+        List<String> texts = new ArrayList<>();
+        for (LineParts.Piece half
+                : LineTranslator.halvesAcrossBreaks(flowed, accents)) {
+            texts.add(half.text());
+        }
+        System.out.println("［詞被切開］補登記的兩半：" + texts);
+
+        check("★［詞被切開］上一行那半登記了", texts.contains(" Kanderstone 寶"));
+        check("★［詞被切開］下一行那半登記了（收尾那個 ] 靠它才有色）",
+              texts.contains("石]"));
+        // 沒被切到的那一段不該多出東西來
+        check("［詞被切開］沒被切到的重點段不補（實際：" + texts + "）",
+              !texts.contains(" Kanderstone 錠]"));
+        // 含佔位符的那一半不登記：畫的時候它在畫面上不連續
+        for (String t : texts) {
+            check("［詞被切開］補的兩半都不含佔位符（" + t + "）",
+                  t.indexOf('{') < 0 && t.indexOf('}') < 0);
+        }
+    }
+
+    /**
+     * 括號落在折行處時，整組括號著色不可以整個關掉。
+     *
+     * <h2>實機回報</h2>
+     * 採集站那張卡：「把 {@code [24 鮭魚油]} 或 {@code [}」換行「{@code 24 鮭魚肉]}
+     * 交到採集站，」——兩組括號都只剩底色，而且左中括號孤零零留在行尾。
+     *
+     * <h2>怎麼壞的</h2>
+     * {@code bracketAccents} 拿到的譯文<b>已經照面板寬度折過</b>，而
+     * {@code squareSpans} 先前碰到跨行的括號就 {@code return List.of()}——
+     * 一組跨行，整張卡的括號全部沒得貼。三、四行的卡片落在折行處是常態。
+     *
+     * <p>改成把斷行接回來再收。接回來的字面正好是 {@code keepAccentsWhole}
+     * 要的：它靠「上一行結尾 ＋ 下一行開頭」認出被切開的詞，再把前半搬下去。
+     */
+    private static void spanAcrossRows() {
+        List<LineParts.Piece> runs = List.of(
+                piece("Bring ", BODY), piece("[24 Salmon Oil]", ITEM), piece(" or ", BODY),
+                piece("[24", ITEM),
+                piece("Salmon Meat]", ITEM), piece(" to the Gathering", BODY),
+                piece("Post at ", BODY), piece("[-57, 46, -2166]", COORD));
+        // 面板寬度折出來的三行——第二組括號被切在 `[` 後面
+        String[] flowed = {
+            "把 [{~} 鮭魚油] 或 [",
+            "{~} 鮭魚肉] 交到採集站，",
+            "座標 [-{~}, {~}, -{~}]",
+        };
+        List<String> texts = new ArrayList<>();
+        for (LineParts.Piece accent
+                : LineTranslator.bracketAccents(runs, flowed, colour(BODY))) {
+            texts.add(accent.text());
+        }
+        System.out.println("［跨行的整組］登記到的重點段：" + texts);
+
+        check("★［跨行的整組］沒有整組放棄（拿到 " + texts.size() + " 段）", !texts.isEmpty());
+        check("★［跨行的整組］被切開的那組接回來了", texts.contains("[{~} 鮭魚肉]"));
+        check("［跨行的整組］沒被切到的那組照樣在", texts.contains("[{~} 鮭魚油]"));
+        for (String t : texts) {
+            check("［跨行的整組］登記的字面裡沒有換行（" + t + "）",
+                  t.indexOf(NL) < 0);
+        }
+
+        // 接回來之後 keepAccentsWhole 就搬得動行尾那個孤零零的 [
+        String[] moved = LineTranslator.keepAccentsWhole(
+                flowed, List.of(piece("[{~} 鮭魚肉]", ITEM)));
+        check("★［跨行的整組］行尾那個 [ 被搬到下一行（拿到 「" + moved[0]
+              + "」／「" + moved[1] + "」）",
+              !moved[0].stripTrailing().endsWith("[")
+              && moved[1].startsWith("[{~} 鮭魚肉]"));
+    }
+
     /**
      * 譯文<b>沒有</b>照原文寫方括號時，維持原本的行為：內層那個詞照樣上色，
      * 不可以憑空把附近的字括進來。
@@ -215,6 +402,18 @@ public final class BracketAccentTest {
         wraps("[Boss Altar]", "首領祭壇", "腐化祭壇 [首領祭壇]", "[首領祭壇]");
         // 名稱自己含有類型詞也照擴——擴出去之後字面唯一，才不會貼到名稱裡去。
         wraps("[Cave]", "洞窟", "末日洞窟 [洞窟]", "[洞窟]");
+
+        // 括號裡除了那個詞還有一個<b>數量</b>。迷你任務的敘述全長這樣；
+        // 不連數量一起擴的話方括號會半青半灰（[24 青、蓬鬆毛皮] 掉回底色）。
+        wraps("[24 Fluffy Fur]", "蓬鬆毛皮",
+              "把 [{~} 蓬鬆毛皮] 交到討伐告示", "[{~} 蓬鬆毛皮]");
+        wraps("[16 Salmon Oil]", "鮭魚油",
+              "把 [{~} 鮭魚油] 或 [{~} 鮭魚肉] 交到", "[{~} 鮭魚油]");
+        // 數量已經填回真正的數字時一樣認得
+        wraps("[24 Fluffy Fur]", "蓬鬆毛皮", "把 [24 蓬鬆毛皮] 交到", "[24 蓬鬆毛皮]");
+
+        // 數量以外還有實字的不擴——免得把兩個詞的括號整塊吃掉
+        wraps("[24 Fluffy Fur]", "蓬鬆毛皮", "把 [上等 蓬鬆毛皮] 交到", null);
 
         // 不該擴的：
         wraps("[Cave]", "[洞窟]", "龍裔巢穴 [洞窟]", null);       // 譯文本來就帶括號

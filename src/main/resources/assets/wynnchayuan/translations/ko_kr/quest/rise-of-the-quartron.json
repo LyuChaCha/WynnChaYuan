@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Rise of the Quartron",
   "count": 117,
-  "translated": 86,
+  "translated": 89,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -248,7 +248,7 @@
   },
   "Rise of the Quartron#024": {
    "src": "...so it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "",
+   "dst": "...결국 이렇게 됐군. 난 경비들 이름을 다 알았다. 목표를 위해 아무도 해치지 않았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -268,7 +268,7 @@
   },
   "Rise of the Quartron#026": {
    "src": "Aaah! Not responding?! You- You...YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "",
+   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -298,7 +298,7 @@
   },
   "Rise of the Quartron#029": {
    "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... ...I'd never believe you if you hadn't given me the proof.",
-   "dst": "",
+   "dst": "...음. 응. ... ...그래, 계속해. 어, 좋아, 믿어 줄게... 증거가 없었으면 절대 안 믿었을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -936,16 +936,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#093": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "...결국 이렇게 됐군. 난 경비들 이름을 다 알았다. 목표를 위해 아무도 해치지 않았어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
   "Rise of the Quartron#094": {
    "src": "You...I won't let their sacrifices be in vain! {p} needs to see what quartz is truly capable of! I MUST show them.",
    "dst": "너... 그들의 희생을 헛되게 두지 않겠다! {p}은(는) 석영의 진짜 힘을 봐야 해! 반드시 보여 주고 말겠어.",
@@ -994,16 +984,6 @@
    "quest": "Rise of the Quartron",
    "stage": "Stage 9",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#099": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Harnort",
    "source": "wiki"
   },
   "Rise of the Quartron#100": {
@@ -1059,16 +1039,6 @@
   "Rise of the Quartron#105": {
    "src": "So, spill it. I wanted you to figure out where my quartz was going, and you made one of my workers an addict and caused a freaking landslide!!",
    "dst": "그러니까 털어놔. 내 석영이 어디로 가는지 알아보랬더니, 일꾼 하나를 중독자로 만들고 산사태까지 일으켰잖아!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#106": {
-   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "...음. 응. ... ...그래, 계속해. 어, 좋아, 믿어 줄게... 증거가 없었으면 절대 안 믿었을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -1173,6 +1143,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "...결국 이렇게 됐군. 난 경비들 이름을 다 알았다. 목표를 위해 아무도 해치지 않았어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "...음. 응. ... ...그래, 계속해. 어, 좋아, 믿어 줄게... 증거가 없었으면 절대 안 믿었을 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   }

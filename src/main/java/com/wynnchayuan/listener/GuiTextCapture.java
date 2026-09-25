@@ -80,6 +80,11 @@ public final class GuiTextCapture {
         }
         // 隊伍名是玩家自己取的，跟帳號名一樣不進共享語料。
         skipTitle = skipTitle || PlayerDataFilter.isPartyCard(templates);
+        // 算繪那一端拿不到 ItemStack（{@code TooltipPanel#translateLines} 只有幾行
+        // 文字），但它也要擋玩家頭顱。這裡<b>先</b>跑，而且判斷已經算好了，
+        // 順手交過去——多寫一份判斷遲早會不一致。見 CardDump。
+        com.wynnchayuan.capture.CardDump.fromPlayerHead(
+                stack != null && stack.is(Items.PLAYER_HEAD));
         // 整段翻好了的，它的每一行都不是缺口。見 #covered。
         boolean[] covered = covered(templates, GuiTextCapture::whole);
 

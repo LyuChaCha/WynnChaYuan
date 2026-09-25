@@ -1,12 +1,44 @@
 {
  "_meta": {
   "quest": "Dearly Departed",
-  "count": 62,
+  "count": 64,
   "translated": 62,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dearly Departed#000": {
+   "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.955,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#001": {
+   "src": "{#} Intelligence is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.919,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#002": {
    "src": "[+{~} Muddy Shovel]",
    "dst": "[+{~} Muddy Shovel]",
    "role": "desc",
@@ -16,7 +48,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Dearly Departed#001": {
+  "Dearly Departed#003": {
    "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "Поговори с фермером Cevalus в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -26,7 +58,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#002": {
+  "Dearly Departed#004": {
    "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
    "dst": "А, похоже, новобранец! Видел моё объявление? Хорошо, хорошо.",
    "role": "desc",
@@ -36,7 +68,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#003": {
+  "Dearly Departed#005": {
    "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
    "dst": "Видишь ли, мой дорогой тесть недавно скончался, и пришлось наспех похоронить его за домом. Священника вовремя не дозвался…",
    "role": "desc",
@@ -46,7 +78,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#004": {
+  "Dearly Departed#006": {
    "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
    "dst": "К несчастью, так вышло, что моё обручальное кольцо, кажется, соскользнуло, пока я его хоронил…",
    "role": "desc",
@@ -56,7 +88,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#005": {
+  "Dearly Departed#007": {
    "src": "I need you to go back there and, well, recover the ring.",
    "dst": "Нужно сходить туда и, ну, достать кольцо.",
    "role": "desc",
@@ -66,7 +98,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#006": {
+  "Dearly Departed#008": {
    "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
    "dst": "Сам бы я, конечно, справился, но жена уже что-то подозревает, а её дорогой отец так недавно умер…",
    "role": "desc",
@@ -76,7 +108,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#007": {
+  "Dearly Departed#009": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
    "dst": "Ну, понимаешь моё положение? Выручи беднягу: возьми вон ту [Muddy Shovel] и возвращайся ко мне.",
    "role": "desc",
@@ -86,7 +118,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#008": {
+  "Dearly Departed#010": {
    "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
    "dst": "Подбери лопату в [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -96,7 +128,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#009": {
+  "Dearly Departed#011": {
    "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
    "dst": "[Muddy Shovel] вон там. Буду очень благодарен за помощь, новобранец.",
    "role": "desc",
@@ -106,7 +138,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#010": {
+  "Dearly Departed#012": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "Вернись к фермеру Cevalus в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -116,7 +148,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#011": {
+  "Dearly Departed#013": {
    "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
    "dst": "Лопата у тебя? Отлично! Крепкая броня и оружие тоже есть, я полагаю?",
    "role": "desc",
@@ -126,7 +158,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#012": {
+  "Dearly Departed#014": {
    "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
    "dst": "Хорошо, хорошо. Бережёного бог бережёт… Как я всегда говорю! Всегда, ха-ха…",
    "role": "desc",
@@ -136,7 +168,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#013": {
+  "Dearly Departed#015": {
    "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
    "dst": "О, да просто так! На всякий случай, ха-ха… Там должно быть совершенно безопасно, совершенно.",
    "role": "desc",
@@ -146,7 +178,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#014": {
+  "Dearly Departed#016": {
    "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
    "dst": "Очки навыков у тебя тоже распределены? Пригодятся, если что-то случится.",
    "role": "desc",
@@ -156,7 +188,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#015": {
+  "Dearly Departed#017": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
    "dst": "Ну, это очки навыков! Их получаешь с уровнем, а потом распределяешь ради бонусов в бою. Я не солдат, но даже я знаю, что их надо использовать…",
    "role": "desc",
@@ -166,7 +198,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#016": {
+  "Dearly Departed#018": {
    "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
    "dst": "Их пять. Сила, Ловкость, Интеллект, Защита и Проворство, у каждого свои бонусы.",
    "role": "desc",
@@ -176,7 +208,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#017": {
+  "Dearly Departed#019": {
    "src": "You get it, or do you want me to tell you what they are?",
    "dst": "Понял, или рассказать, что они дают?",
    "role": "desc",
@@ -186,7 +218,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#018": {
+  "Dearly Departed#020": {
    "src": "is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "пригодится, если трудно одолеть врагов. Твои удары бьют сильнее, вот и всё.",
    "role": "desc",
@@ -196,7 +228,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#019": {
+  "Dearly Departed#021": {
    "src": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
    "dst": "штука хитрая. Чем её больше, тем выше шанс, что удар нанесёт двойной урон. Здорово, да?",
    "role": "desc",
@@ -206,7 +238,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#020": {
+  "Dearly Departed#022": {
    "src": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
    "dst": "для заклинателей: снижает стоимость заклинаний и повышает запас маны.",
    "role": "desc",
@@ -216,7 +248,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#021": {
+  "Dearly Departed#023": {
    "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
    "dst": "выручит, если трудно выжить. Снижает получаемый урон, вот и всё.",
    "role": "desc",
@@ -226,7 +258,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#022": {
+  "Dearly Departed#024": {
    "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
    "dst": "Проворство - это для любителей риска. Чем его больше, тем чаще уклоняешься от атак, почти не получая урона.",
    "role": "desc",
@@ -236,7 +268,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#023": {
+  "Dearly Departed#025": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
    "dst": "А главное, их можно сочетать как угодно, какой бы ни был класс или стиль боя.",
    "role": "desc",
@@ -246,7 +278,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#024": {
+  "Dearly Departed#026": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
    "dst": "Открой компас, чтобы распределить очки навыков. А как будешь готов, иди туда и достань моё кольцо.",
    "role": "desc",
@@ -256,7 +288,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#025": {
+  "Dearly Departed#027": {
    "src": "Dig up the grave at [-{~}, {~}, -{~}].",
    "dst": "Раскопай могилу в [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -266,7 +298,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#026": {
+  "Dearly Departed#028": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
    "dst": "Вперёд, солдат! Покажи мощь армии {p}! То есть… достань мне кольцо!",
    "role": "desc",
@@ -276,7 +308,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#027": {
+  "Dearly Departed#029": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
    "dst": "Что там у тебя, солдат? Кольцо уже нашёл?",
    "role": "desc",
@@ -286,7 +318,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#028": {
+  "Dearly Departed#030": {
    "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
    "dst": "Тебе стоит поторопиться, пока… неважно! Просто найди кольцо и уходи оттуда!",
    "role": "desc",
@@ -296,7 +328,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#029": {
+  "Dearly Departed#031": {
    "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
    "dst": "Святая корова! Это… это… он вернулся! Убей его, скорее!",
    "role": "desc",
@@ -306,7 +338,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#030": {
+  "Dearly Departed#032": {
    "src": "Kill the Corrupted Father-in-Law!",
    "dst": "Убей осквернённого тестя!",
    "role": "desc",
@@ -316,7 +348,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#031": {
+  "Dearly Departed#033": {
    "src": "You did it! Come back here now, so I can finally get my ring back.",
    "dst": "Получилось! Возвращайся скорее, я наконец заберу своё кольцо.",
    "role": "desc",
@@ -326,7 +358,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#032": {
+  "Dearly Departed#034": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "Вернись к фермеру Cevalus в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -336,7 +368,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#033": {
+  "Dearly Departed#035": {
    "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
    "dst": "Батюшки, это было чуть волнительнее, чем я ожидал, хм. Но отличная работа! Рад, что мы избавились от этого чудища…",
    "role": "desc",
@@ -346,7 +378,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#034": {
+  "Dearly Departed#036": {
    "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
    "dst": "То есть… бедный тесть! Не знаю, как объяснить это жене…",
    "role": "desc",
@@ -356,7 +388,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#035": {
+  "Dearly Departed#037": {
    "src": "I'll take the ring now, it's rather precious to me...",
    "dst": "Кольцо я заберу, оно мне весьма дорого…",
    "role": "desc",
@@ -366,7 +398,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#036": {
+  "Dearly Departed#038": {
    "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
    "dst": "Так или иначе, прими заслуженную награду за, кхм, сегодняшние дела. Может, если так пойдёт, однажды станешь героем, как Ragnar.",
    "role": "desc",
@@ -376,7 +408,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#037": {
+  "Dearly Departed#039": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
    "dst": "Здравствуйте, путник. Вы хотели о чём-то со мной поговорить?",
    "role": "desc",
@@ -386,7 +418,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#038": {
+  "Dearly Departed#040": {
    "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
    "dst": "Мне бы разозлиться, но… удивлённой притвориться не могу. Он всегда был рассеянным увальнем.",
    "role": "desc",
@@ -396,7 +428,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#039": {
+  "Dearly Departed#041": {
    "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
    "dst": "Но это многое объясняет… Он странно себя ведёт с тех пор, как умер папа. Вот, значит, в чём дело. Спасибо, что рассказали.",
    "role": "desc",
@@ -406,7 +438,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#040": {
+  "Dearly Departed#042": {
    "src": "That's right. The one and only, ha ha...",
    "dst": "Она самая, единственная, ха-ха…",
    "role": "desc",
@@ -416,7 +448,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#041": {
+  "Dearly Departed#043": {
    "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
    "dst": "Мы простые фермеры, живём как можем. Мы ухаживали за папой, пока… ну… да…",
    "role": "desc",
@@ -426,7 +458,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#042": {
+  "Dearly Departed#044": {
    "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
    "dst": "Спасибо… Всё случилось так внезапно. В день, когда я уехала в {p}, папа был здоров как никогда, а когда вернулась, его уже похоронили. Болезнь, видно, была скоротечной…",
    "role": "desc",
@@ -436,7 +468,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#043": {
+  "Dearly Departed#045": {
    "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
    "dst": "Но в его годы я не удивлена… Жаль только, что не успели позвать священника, папа был очень набожным.",
    "role": "desc",
@@ -446,7 +478,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#044": {
+  "Dearly Departed#046": {
    "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
    "dst": "Папа… Прежде всего он был добрым и щедрым. Оставил нам всю эту ферму. И очень набожным, истинно верующим. Может, поэтому и прожил так долго…",
    "role": "desc",
@@ -456,7 +488,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#045": {
+  "Dearly Departed#047": {
    "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
    "dst": "Ох… Если не остановлюсь, опять расплачусь.",
    "role": "desc",
@@ -466,7 +498,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#046": {
+  "Dearly Departed#048": {
    "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
    "dst": "Очки навыков у тебя тоже распределены? Могут пригодиться, если что-то случится.",
    "role": "desc",
@@ -474,7 +506,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#047": {
+  "Dearly Departed#049": {
    "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
    "dst": "Их пять.  Сила,  Ловкость,  Интеллект,  Защита и  Проворство, у каждого свои бонусы.",
    "role": "desc",
@@ -482,7 +514,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#048": {
+  "Dearly Departed#050": {
    "src": "Why are you asking me that?",
    "dst": "Зачем ты это спрашиваешь?",
    "role": "desc",
@@ -490,7 +522,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#049": {
+  "Dearly Departed#051": {
    "src": "What are Skill Points?",
    "dst": "Что такое очки навыков?",
    "role": "desc",
@@ -498,7 +530,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#050": {
+  "Dearly Departed#052": {
    "src": "I got it.",
    "dst": "Понятно.",
    "role": "desc",
@@ -506,7 +538,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#051": {
+  "Dearly Departed#053": {
    "src": "About Strength.",
    "dst": "Про Силу.",
    "role": "desc",
@@ -514,7 +546,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#052": {
+  "Dearly Departed#054": {
    "src": "About Dexterity.",
    "dst": "Про Ловкость.",
    "role": "desc",
@@ -522,7 +554,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#053": {
+  "Dearly Departed#055": {
    "src": "About Intelligence.",
    "dst": "Про Интеллект.",
    "role": "desc",
@@ -530,7 +562,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#054": {
+  "Dearly Departed#056": {
    "src": "Not yet...",
    "dst": "Пока нет…",
    "role": "desc",
@@ -538,7 +570,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#055": {
+  "Dearly Departed#057": {
    "src": "Dig up the grave?",
    "dst": "Раскопать могилу?",
    "role": "desc",
@@ -546,7 +578,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#056": {
+  "Dearly Departed#058": {
    "src": "There you go...",
    "dst": "Готово…",
    "role": "desc",
@@ -554,7 +586,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#057": {
+  "Dearly Departed#059": {
    "src": "Now to see if you can find that ring Cevalus mentioned...",
    "dst": "Теперь посмотрим, найдётся ли кольцо, о котором говорил Cevalus…",
    "role": "desc",
@@ -562,7 +594,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#058": {
+  "Dearly Departed#060": {
    "src": "You manage to pry the ring off the monster's finger...",
    "dst": "Удаётся кое-как сорвать кольцо с пальца чудовища…",
    "role": "desc",
@@ -570,7 +602,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#059": {
+  "Dearly Departed#061": {
    "src": "About Defence.",
    "dst": "О защите.",
    "role": "desc",
@@ -578,7 +610,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#060": {
+  "Dearly Departed#062": {
    "src": "About Agility.",
    "dst": "О проворстве.",
    "role": "desc",
@@ -586,7 +618,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#061": {
+  "Dearly Departed#063": {
    "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "{#} Сила пригодится, если врагов трудно одолеть. С ней атаки бьют сильнее, всё просто.",
    "role": "desc",

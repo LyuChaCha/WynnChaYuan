@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Zhight Island (Quest)",
-  "count": 50,
-  "translated": 50,
+  "count": 52,
+  "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -505,6 +505,32 @@
    "stage": "Stage 5",
    "speaker": "Zhight",
    "source": "wiki"
+  },
+  "Zhight Island (Quest)#050": {
+   "src": "Terribly sorry but the Zhight Grand Exchange is under repairs right now! You can't go in yet!",
+   "dst": "非常抱歉，Zhight 大交易所目前正在整修！你還不能進去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#051": {
+   "src": "Maybe you can help me with that. The ship should still be stuck, due north of here, it has a red and white sail. I'd love to get my sea legs back.",
+   "dst": "也許你能幫我這個忙。船應該還卡在正北方，掛著紅白相間的帆。我很想再踏上甲板。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Maybe you can help me with that. The ship should still be stuck, due north of here. I'd love to get my sea legs back.",
+    "file": "quest/zhight-island-quest.json",
+    "ratio": 0.89,
+    "reason": "candidate"
+   }
   }
  }
 }

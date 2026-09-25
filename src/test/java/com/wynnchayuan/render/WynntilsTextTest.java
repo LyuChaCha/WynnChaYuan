@@ -241,6 +241,15 @@ public final class WynntilsTextTest {
         config.toggleWynntilsUi();
         check("再打開就又換得到",
               "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
+
+        // 公會戰地圖那一格領地標籤：從 TerritoryPoi 進去到它出來，一律不翻。
+        // 實機那一格的公會叫 Fox，被 npc.json 的「Fox: 狐狸」換掉了。
+        WynntilsText.holdTerritoryLabels(true);
+        check("★ 領地標籤裡的字原樣回去（公會名是玩家取的，撞名躲不完）",
+              WynntilsText.screenText(inProgress, config, store) == inProgress);
+        WynntilsText.holdTerritoryLabels(false);
+        check("★ 出了領地標籤就恢復",
+              "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
     }
 
     private static void check(String what, boolean ok) {

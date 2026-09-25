@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Frost Bite",
   "count": 92,
-  "translated": 69,
+  "translated": 71,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -217,8 +217,8 @@
    "source": "captured"
   },
   "Frost Bite#021": {
-   "src": "There must be some way to open it. Look around and see what you can find.",
-   "dst": "",
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "哇，就算以今天的标准来看，这也是一大笔钱。想想几百年前这得值多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -227,14 +227,14 @@
    "source": "captured"
   },
   "Frost Bite#022": {
-   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "",
+   "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
+   "dst": "找到 [-{~}, {~}, -{~}] 的 Eppo。他的洞窟入口在 [-{~}, {~}, -{~}]。",
    "role": "desc",
-   "kind": "dialogue",
+   "kind": "objective",
    "quest": "Frost Bite",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
-   "source": "captured"
+   "source": "wiki"
   },
   "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
@@ -876,16 +876,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#087": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "你办到了！我们能进金库了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
   "Frost Bite#088": {
    "src": "Wow, even by today's standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
    "dst": "哇，就算以今天的标准来看，这也是一大笔钱。想想几百年前这得值多少。",
@@ -909,6 +899,16 @@
   "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "等等，你看这个。好像是 Theorick 的一件护甲。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "你办到了！我们能进金库了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",

@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Frost Bite",
   "count": 92,
-  "translated": 69,
+  "translated": 71,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -217,8 +217,8 @@
    "source": "captured"
   },
   "Frost Bite#021": {
-   "src": "There must be some way to open it. Look around and see what you can find.",
-   "dst": "",
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "すごい、今の基準でも莫大な金額だ。何百年も前ならどれほどの価値だったか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -227,14 +227,14 @@
    "source": "captured"
   },
   "Frost Bite#022": {
-   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "",
+   "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] で Eppo を見つける。洞窟の入口は [-{~}, {~}, -{~}] にある。",
    "role": "desc",
-   "kind": "dialogue",
+   "kind": "objective",
    "quest": "Frost Bite",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
-   "source": "captured"
+   "source": "wiki"
   },
   "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
@@ -876,16 +876,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#087": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "やったな！金庫に入れるぞ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
   "Frost Bite#088": {
    "src": "Wow, even by today's standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
    "dst": "すごい、今の基準でも莫大な金額だ。何百年も前ならどれほどの価値だったか。",
@@ -909,6 +899,16 @@
   "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "待て、これを見てくれ。Theorick の鎧の一部らしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "やったな！金庫に入れるぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",

@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Rise of the Quartron",
   "count": 117,
-  "translated": 86,
+  "translated": 89,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -252,7 +252,7 @@
   },
   "Rise of the Quartron#024": {
    "src": "...so it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "",
+   "dst": "...así que hemos llegado a esto. Me sabía los nombres de todos esos guardias. No hice daño a nadie para lograr mi meta.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -272,7 +272,7 @@
   },
   "Rise of the Quartron#026": {
    "src": "Aaah! Not responding?! You- You...YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "",
+   "dst": "¡Aaah! ¡¿No responde?! Tú- Tú... ¡TÚ! ¡Has destruido el futuro! ¡MI futuro! ¡¡¡El futuro de GAVEL!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -302,7 +302,7 @@
   },
   "Rise of the Quartron#029": {
    "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... ...I'd never believe you if you hadn't given me the proof.",
-   "dst": "",
+   "dst": "...ajá. Mmm. ... ...sí, sigue. Eh, vale, me lo puedo creer... Nunca te creería si no me hubieras dado la prueba.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -940,16 +940,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#093": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "...así que hemos llegado a esto. Me sabía los nombres de todos esos guardias. No hice daño a nadie para lograr mi meta.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
   "Rise of the Quartron#094": {
    "src": "You...I won't let their sacrifices be in vain! {p} needs to see what quartz is truly capable of! I MUST show them.",
    "dst": "Tú... ¡No dejaré que su sacrificio sea en vano! ¡{p} tiene que ver de lo que es capaz el cuarzo! DEBO enseñárselo.",
@@ -998,16 +988,6 @@
    "quest": "Rise of the Quartron",
    "stage": "Stage 9",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#099": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "¡Aaah! ¡¿No responde?! Tú- Tú... ¡TÚ! ¡Has destruido el futuro! ¡MI futuro! ¡¡¡El futuro de GAVEL!!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Harnort",
    "source": "wiki"
   },
   "Rise of the Quartron#100": {
@@ -1063,16 +1043,6 @@
   "Rise of the Quartron#105": {
    "src": "So, spill it. I wanted you to figure out where my quartz was going, and you made one of my workers an addict and caused a freaking landslide!!",
    "dst": "Así que suéltalo. Te pedí que averiguaras adónde iba mi cuarzo, ¡¡y has vuelto adicto a uno de mis obreros y provocado un dichoso desprendimiento!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#106": {
-   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "...ajá. Mmm. ... ...sí, sigue. Eh, vale, me lo puedo creer... Nunca te creería si no me hubieras dado la prueba.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -1177,6 +1147,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "...así que hemos llegado a esto. Me sabía los nombres de todos esos guardias. No hice daño a nadie para lograr mi meta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "¡Aaah! ¡¿No responde?! Tú- Tú... ¡TÚ! ¡Has destruido el futuro! ¡MI futuro! ¡¡¡El futuro de GAVEL!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "...ajá. Mmm. ... ...sí, sigue. Eh, vale, me lo puedo creer... Nunca te creería si no me hubieras dado la prueba.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   }

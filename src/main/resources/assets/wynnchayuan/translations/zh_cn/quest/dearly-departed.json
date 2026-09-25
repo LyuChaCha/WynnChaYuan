@@ -1,12 +1,44 @@
 {
  "_meta": {
   "quest": "Dearly Departed",
-  "count": 62,
+  "count": 64,
   "translated": 62,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dearly Departed#000": {
+   "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.955,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#001": {
+   "src": "{#} Intelligence is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.919,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#002": {
    "src": "[+{~} Muddy Shovel]",
    "dst": "[+{~} 沾满泥的铲子]",
    "role": "desc",
@@ -16,7 +48,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Dearly Departed#001": {
+  "Dearly Departed#003": {
    "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "前往 [-{~}, {~}, -{~}] 与农夫 Cevalus 交谈",
    "role": "desc",
@@ -26,7 +58,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#002": {
+  "Dearly Departed#004": {
    "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
    "dst": "啊，看起来是个新兵！你看到我贴的告示了吗？很好，很好。",
    "role": "desc",
@@ -36,7 +68,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#003": {
+  "Dearly Departed#005": {
    "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
    "dst": "是这样的，我亲爱的岳父最近过世了，我只好匆匆忙忙把他埋在屋后。没来得及请牧师来好好安葬他……",
    "role": "desc",
@@ -46,7 +78,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#004": {
+  "Dearly Departed#006": {
    "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
    "dst": "不幸的是，我在让他入土为安的时候，结婚戒指可能刚好滑掉了……",
    "role": "desc",
@@ -56,7 +88,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#005": {
+  "Dearly Departed#007": {
    "src": "I need you to go back there and, well, recover the ring.",
    "dst": "我需要你去后面，嗯，把戒指找回来。",
    "role": "desc",
@@ -66,7 +98,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#006": {
+  "Dearly Departed#008": {
    "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
    "dst": "当然，这种事我自己也办得到，可是我老婆已经起疑了，而且她亲爱的父亲才刚过世……",
    "role": "desc",
@@ -76,7 +108,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#007": {
+  "Dearly Departed#009": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
    "dst": "嗯，你明白我的处境了吧？帮帮我这可怜人，去把那边那把 [沾满泥的铲子] 拿来，然后回来找我。",
    "role": "desc",
@@ -86,7 +118,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#008": {
+  "Dearly Departed#010": {
    "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 捡起铲子。",
    "role": "desc",
@@ -96,7 +128,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#009": {
+  "Dearly Departed#011": {
    "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
    "dst": "[沾满泥的铲子] 就在那边。你帮我这个忙，我会非常感激的，新兵。",
    "role": "desc",
@@ -106,7 +138,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#010": {
+  "Dearly Departed#012": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "回到 [-{~}, {~}, -{~}] 找农夫 Cevalus",
    "role": "desc",
@@ -116,7 +148,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#011": {
+  "Dearly Departed#013": {
    "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
    "dst": "铲子拿到了？太好了！我猜你也有结实的护甲和武器吧？",
    "role": "desc",
@@ -126,7 +158,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#012": {
+  "Dearly Departed#014": {
    "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
    "dst": "很好，很好。小心驶得万年船……我一向这么说！一向，哈哈……",
    "role": "desc",
@@ -136,7 +168,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#013": {
+  "Dearly Departed#015": {
    "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
    "dst": "噢，其实也没什么原因！只是确认一下，哈哈……后面应该非常安全，非常安全。",
    "role": "desc",
@@ -146,7 +178,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#014": {
+  "Dearly Departed#016": {
    "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
    "dst": "你的技能点也用了吧？万一出了什么事，它们很派得上用场。",
    "role": "desc",
@@ -156,7 +188,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#015": {
+  "Dearly Departed#017": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
    "dst": "嗯，就是技能点啊！升级的时候会获得，然后可以分配它们来获得战斗加成。听着，我不是士兵，但连我都知道你真的应该用掉它们……",
    "role": "desc",
@@ -166,7 +198,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#016": {
+  "Dearly Departed#018": {
    "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
    "dst": "一共有五项。力量、灵巧、智力、防御和敏捷，各有不同的加成。",
    "role": "desc",
@@ -176,7 +208,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#017": {
+  "Dearly Departed#019": {
    "src": "You get it, or do you want me to tell you what they are?",
    "dst": "你懂了吗，还是要我跟你说说它们是什么？",
    "role": "desc",
@@ -186,7 +218,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#018": {
+  "Dearly Departed#020": {
    "src": "is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "在你难以击倒敌人时很有用。它能让你的攻击更痛，就这么简单。",
    "role": "desc",
@@ -196,7 +228,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#019": {
+  "Dearly Departed#021": {
    "src": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
    "dst": "有点讲究。点得越多，你的攻击造成双倍伤害的几率就越高。不错吧？",
    "role": "desc",
@@ -206,7 +238,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#020": {
+  "Dearly Departed#022": {
    "src": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
    "dst": "是给施法者的，它能降低施法消耗，并提高你的法力上限。",
    "role": "desc",
@@ -216,7 +248,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#021": {
+  "Dearly Departed#023": {
    "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
    "dst": "如果你总是活不下来，它是你最好的选择。减少你受到的伤害，大概就是这样。",
    "role": "desc",
@@ -226,7 +258,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#022": {
+  "Dearly Departed#024": {
    "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
    "dst": "敏捷嘛，那是给爱冒险的人的。点得越多，你就越有可能闪避来袭的攻击，抵消掉大部分伤害。",
    "role": "desc",
@@ -236,7 +268,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#023": {
+  "Dearly Departed#025": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
    "dst": "最棒的是，不管你是什么职业、什么战斗风格，都可以随意搭配。",
    "role": "desc",
@@ -246,7 +278,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#024": {
+  "Dearly Departed#026": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
    "dst": "打开你的罗盘就能分配技能点。然后，等你准备好了，就进去把我的戒指拿来。",
    "role": "desc",
@@ -256,7 +288,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#025": {
+  "Dearly Departed#027": {
    "src": "Dig up the grave at [-{~}, {~}, -{~}].",
    "dst": "挖开 [-{~}, {~}, -{~}] 的坟墓。",
    "role": "desc",
@@ -266,7 +298,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#026": {
+  "Dearly Departed#028": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
    "dst": "去吧，士兵！让我们见识 {p} 军队的威力！呃，我是说……帮我把戒指拿来！",
    "role": "desc",
@@ -276,7 +308,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#027": {
+  "Dearly Departed#029": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
    "dst": "里面怎么样了，士兵？找到戒指了吗？",
    "role": "desc",
@@ -286,7 +318,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#028": {
+  "Dearly Departed#030": {
    "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
    "dst": "你真的得快点，免得……算了！找到戒指就赶快出来！",
    "role": "desc",
@@ -296,7 +328,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#029": {
+  "Dearly Departed#031": {
    "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
    "dst": "神圣的牛啊！那……那……他回来了！快杀了它！",
    "role": "desc",
@@ -306,7 +338,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#030": {
+  "Dearly Departed#032": {
    "src": "Kill the Corrupted Father-in-Law!",
    "dst": "杀死腐化的岳父！",
    "role": "desc",
@@ -316,7 +348,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#031": {
+  "Dearly Departed#033": {
    "src": "You did it! Come back here now, so I can finally get my ring back.",
    "dst": "你成功了！快回来，好让我终于能拿回我的戒指。",
    "role": "desc",
@@ -326,7 +358,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#032": {
+  "Dearly Departed#034": {
    "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
    "dst": "回到 [-{~}, {~}, -{~}] 找农夫 Cevalus",
    "role": "desc",
@@ -336,7 +368,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dearly Departed#033": {
+  "Dearly Departed#035": {
    "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
    "dst": "天哪，这比我预想的刺激了一点，哼。不过，干得好！我很高兴我们能除掉那个怪物……",
    "role": "desc",
@@ -346,7 +378,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#034": {
+  "Dearly Departed#036": {
    "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
    "dst": "我是说……可怜的岳父！我不知道该怎么跟老婆解释……",
    "role": "desc",
@@ -356,7 +388,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#035": {
+  "Dearly Departed#037": {
    "src": "I'll take the ring now, it's rather precious to me...",
    "dst": "戒指我现在就拿走了，它对我来说挺珍贵的……",
    "role": "desc",
@@ -366,7 +398,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#036": {
+  "Dearly Departed#038": {
    "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
    "dst": "总之，拿着这份奖励吧，是你今天，嗯，这番作为应得的。说不定你继续努力下去，有一天还能成为像 Ragnar 那样的英雄。",
    "role": "desc",
@@ -376,7 +408,7 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#037": {
+  "Dearly Departed#039": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
    "dst": "你好，陌生人。你有什么事想跟我说吗？",
    "role": "desc",
@@ -386,7 +418,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#038": {
+  "Dearly Departed#040": {
    "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
    "dst": "我应该生气的，可是……我也没法假装惊讶。他一向是个健忘的傻大个。",
    "role": "desc",
@@ -396,7 +428,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#039": {
+  "Dearly Departed#041": {
    "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
    "dst": "不过，这就说得通了……自从爸爸过世，他最近就一直怪怪的。一定就是这么回事，谢谢你告诉我。",
    "role": "desc",
@@ -406,7 +438,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#040": {
+  "Dearly Departed#042": {
    "src": "That's right. The one and only, ha ha...",
    "dst": "没错。就是他本人，哈哈……",
    "role": "desc",
@@ -416,7 +448,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#041": {
+  "Dearly Departed#043": {
    "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
    "dst": "我们只是普通的农民，努力过日子。我们一直在照顾我爸爸，直到……嗯……唉……",
    "role": "desc",
@@ -426,7 +458,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#042": {
+  "Dearly Departed#044": {
    "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
    "dst": "谢谢你……一切都发生得太突然了。我去 {p} 的那天，爸爸还跟平常一样健康，可等我回来，他已经被埋了。病一定来得很快……",
    "role": "desc",
@@ -436,7 +468,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#043": {
+  "Dearly Departed#045": {
    "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
    "dst": "不过以他的年纪，我也不意外……只是可惜我们没能及时请牧师来，爸爸是那么虔诚的人。",
    "role": "desc",
@@ -446,7 +478,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#044": {
+  "Dearly Departed#046": {
    "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
    "dst": "爸爸……最重要的是，他很善良，一向慷慨。他把整座农场都留给了我们。而且非常虔诚，是个真正的信徒。也许这就是他能活那么久的原因……",
    "role": "desc",
@@ -456,7 +488,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#045": {
+  "Dearly Departed#047": {
    "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
    "dst": "噢，天哪……再说下去，我又要哭了。",
    "role": "desc",
@@ -466,7 +498,7 @@
    "speaker": "Farmer Kelri",
    "source": "wiki"
   },
-  "Dearly Departed#046": {
+  "Dearly Departed#048": {
    "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
    "dst": "你也把技能点分配好了吧？万一出了什么事，它们会派上用场。",
    "role": "desc",
@@ -474,7 +506,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#047": {
+  "Dearly Departed#049": {
    "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
    "dst": "一共有五项。力量、灵巧、智力、防御和敏捷，各有不同的加成。",
    "role": "desc",
@@ -482,7 +514,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#048": {
+  "Dearly Departed#050": {
    "src": "Why are you asking me that?",
    "dst": "你为什么问我这个？",
    "role": "desc",
@@ -490,7 +522,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#049": {
+  "Dearly Departed#051": {
    "src": "What are Skill Points?",
    "dst": "技能点是什么？",
    "role": "desc",
@@ -498,7 +530,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#050": {
+  "Dearly Departed#052": {
    "src": "I got it.",
    "dst": "我明白了。",
    "role": "desc",
@@ -506,7 +538,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#051": {
+  "Dearly Departed#053": {
    "src": "About Strength.",
    "dst": "说说力量。",
    "role": "desc",
@@ -514,7 +546,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#052": {
+  "Dearly Departed#054": {
    "src": "About Dexterity.",
    "dst": "说说灵巧。",
    "role": "desc",
@@ -522,7 +554,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#053": {
+  "Dearly Departed#055": {
    "src": "About Intelligence.",
    "dst": "说说智力。",
    "role": "desc",
@@ -530,7 +562,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#054": {
+  "Dearly Departed#056": {
    "src": "Not yet...",
    "dst": "还没……",
    "role": "desc",
@@ -538,7 +570,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#055": {
+  "Dearly Departed#057": {
    "src": "Dig up the grave?",
    "dst": "要挖开坟墓吗？",
    "role": "desc",
@@ -546,7 +578,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#056": {
+  "Dearly Departed#058": {
    "src": "There you go...",
    "dst": "好了……",
    "role": "desc",
@@ -554,7 +586,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#057": {
+  "Dearly Departed#059": {
    "src": "Now to see if you can find that ring Cevalus mentioned...",
    "dst": "接下来看看你能不能找到 Cevalus 说的那枚戒指……",
    "role": "desc",
@@ -562,7 +594,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#058": {
+  "Dearly Departed#060": {
    "src": "You manage to pry the ring off the monster's finger...",
    "dst": "你费了点劲，把戒指从怪物的手指上撬了下来……",
    "role": "desc",
@@ -570,7 +602,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#059": {
+  "Dearly Departed#061": {
    "src": "About Defence.",
    "dst": "说说防御。",
    "role": "desc",
@@ -578,7 +610,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#060": {
+  "Dearly Departed#062": {
    "src": "About Agility.",
    "dst": "说说敏捷。",
    "role": "desc",
@@ -586,7 +618,7 @@
    "quest": "Dearly Departed",
    "source": "capture"
   },
-  "Dearly Departed#061": {
+  "Dearly Departed#063": {
    "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
    "dst": "{#} 力量在你打不动敌人的时候很有用。它能让你的攻击更痛，就这么简单。",
    "role": "desc",

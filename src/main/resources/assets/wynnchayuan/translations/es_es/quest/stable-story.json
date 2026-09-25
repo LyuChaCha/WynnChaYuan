@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Stable Story",
-  "count": 36,
+  "count": 38,
   "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Stable Story#000": {
+   "src": "I see you don't have any grain on you. Here, take these [{~} Wheat Grains] and use them to feed your new buddy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#001": {
+   "src": "I wish you luck in the horse training career, young friend! Make me and Betty proud!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Stable Story",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Stable Story#002": {
    "src": "Howdy! Lookin' to hitch a ride off to {p}? Well, lucky you! The wagon's been fixed up all nice and new!",
    "dst": "¡Buenas! ¿Buscas quien te lleve a {p}? ¡Pues estás de suerte! ¡La carreta está arreglada y como nueva!",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#001": {
+  "Stable Story#003": {
    "src": "Just hop on aboard, and I'll get you to {p} in a jiffy!",
    "dst": "¡Tú súbete y te llevo a {p} en un santiamén!",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#002": {
+  "Stable Story#004": {
    "src": "Ain't far to {p} from here! We'll be there in a jiffy, just you wait.",
    "dst": "¡{p} no queda lejos de aquí! Llegaremos en un santiamén, ya verás.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#003": {
+  "Stable Story#005": {
    "src": "Usually, I'd be charging a high price for these horses- Not to be rude, but one you couldn't afford.",
    "dst": "Normalmente pediría un buen precio por estos caballos- Sin ánimo de ofender, uno que tú no podrías pagar.",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#004": {
+  "Stable Story#006": {
    "src": "So, let's cut a deal- They stole my stable key. If you can go to my barn in {p}...",
    "dst": "Así que hagamos un trato- Me robaron la llave del establo. Si puedes acercarte a mi establo en {p}...",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#005": {
+  "Stable Story#007": {
    "src": "And return that key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
    "dst": "Y me devuelves esa llave, te concederé caritativamente uno de mis caballos. Además, el trato es mejor de lo que crees...",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#006": {
+  "Stable Story#008": {
    "src": "Hm. Cows, huh? Ah- who knows!? Life is full of mysteries, huh?",
    "dst": "Hm. ¿Vacas, eh? Ah- ¡¿quién sabe?! La vida está llena de misterios, ¿no?",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#007": {
+  "Stable Story#009": {
    "src": "Either way. As the great bovine above is my witness if I see the smallest bruise on Betty I will-",
    "dst": "En fin. Pongo por testigo al gran bovino de las alturas: si veo el menor moratón en Betty, yo-",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#008": {
+  "Stable Story#010": {
    "src": "Ah! I can't just hand you a horse without telling you how to care for that beautiful creature, can I?",
    "dst": "¡Ah! No puedo darte un caballo sin explicarte cómo cuidar de esa preciosa criatura, ¿verdad?",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#009": {
+  "Stable Story#011": {
    "src": "Those rich {p} folk have no respect for horses, let me tell you!",
    "dst": "¡Esos ricachones de {p} no respetan a los caballos, te lo digo yo!",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#010": {
+  "Stable Story#012": {
    "src": "Now! Right Click the Feeder and place your [Horse Saddle] in there.",
    "dst": "¡Bien! Haz clic derecho en el comedero y pon ahí tu [Horse Saddle].",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#011": {
+  "Stable Story#013": {
    "src": "Use the [{~} Wheat Grains] I gave you earlier to feed your new friend.",
    "dst": "Usa los [{~} Wheat Grains] que te di antes para alimentar a tu nuevo amigo.",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#012": {
+  "Stable Story#014": {
    "src": "Just Right Click the Feeder again.",
    "dst": "Haz clic derecho en el comedero otra vez.",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#013": {
+  "Stable Story#015": {
    "src": "Horses are sensitive creatures, you see. They don't grow strong over night, they require patience and a good stable diet.",
    "dst": "Los caballos son criaturas sensibles, ¿sabes? No se hacen fuertes en una noche: requieren paciencia y buena dieta.",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#014": {
+  "Stable Story#016": {
    "src": "However, you also need to take them out on walks so they get some well needed exercise, otherwise they will never reach their full potential.",
    "dst": "Pero también tienes que sacarlos a pasear para que hagan el ejercicio que necesitan; si no, nunca alcanzarán todo su potencial.",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#015": {
+  "Stable Story#017": {
    "src": "I almost forgot! If you really want to master the art of a horse trainer you can breed two horses using the Feeder.",
    "dst": "¡Casi se me olvida! Si de verdad quieres dominar el arte de adiestrar caballos, puedes criar dos con el comedero.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#016": {
+  "Stable Story#018": {
    "src": "Anyway! I wish you luck on your horse training career!",
    "dst": "¡En fin! ¡Te deseo suerte en tu carrera de adiestrador de caballos!",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Stable Story#017": {
+  "Stable Story#019": {
    "src": "Talk to Enkser outside {p} at [{~}, {~}, -{~}]",
    "dst": "Habla con Enkser fuera de {p} en [{~}, {~}, -{~}]",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Stable Story#018": {
+  "Stable Story#020": {
    "src": "Looking for able-bodied adventurers! Preferably with no friends or family, but I'm not picky!",
    "dst": "¡Busco aventureros fuertes! Preferiblemente sin amigos ni familia, ¡pero no soy exigente!",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#019": {
+  "Stable Story#021": {
    "src": "You see, I'm a horse merchant. Make my living selling these beauties to adventurers like you.",
    "dst": "Verás, soy tratante de caballos. Me gano la vida vendiendo estas preciosidades a aventureros como tú.",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#020": {
+  "Stable Story#022": {
    "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
    "dst": "Trabajo en este establo: vendo aquí los caballos que crío en {p} a los ricos de {p}.",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#021": {
+  "Stable Story#023": {
    "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
    "dst": "Hasta que esos alborotadores volaron un túnel bajo mi establo y se llevaron MIS caballos.",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#022": {
+  "Stable Story#024": {
    "src": "Usually, I'd be charging a high price for these horses Not to be rude, but one you couldn't afford.",
    "dst": "Normalmente pediría un buen precio por estos caballos. Sin ánimo de ofender, uno que tú no podrías pagar.",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#023": {
+  "Stable Story#025": {
    "src": "So, let's cut a deal They stole my stable key. If you can go to my barn in {p}...",
    "dst": "Así que hagamos un trato. Me robaron la llave del establo. Si puedes acercarte al mío en {p}...",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#024": {
+  "Stable Story#026": {
    "src": "And return the key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
    "dst": "Y me devuelves la llave, te concederé caritativamente uno de mis caballos. Además, el trato es mejor de lo que crees...",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#025": {
+  "Stable Story#027": {
    "src": "Betty'll be there to help! Strong as she is, don't you DARE let them touch her!",
    "dst": "¡Betty te ayudará! Es fuerte, ¡pero NI SE TE OCURRA dejar que la toquen!",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#026": {
+  "Stable Story#028": {
    "src": "I'll be making my way to {p} myself to ensure Betty's safety.",
    "dst": "Yo mismo iré a {p} para asegurarme de que Betty esté a salvo.",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#027": {
+  "Stable Story#029": {
    "src": "Now, best be on your way. {p} is a fair bit down the {p} from here, off to the east.",
    "dst": "Venga, ponte en marcha. {p} está bastante más abajo por {p}, hacia el este.",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#028": {
+  "Stable Story#030": {
    "src": "Bring back [{~} Stable Key] to Enkser from the tunnel at [{~}, {~}, -{~}]",
    "dst": "Lleva [{~} Stable Key] de vuelta a Enkser desde el túnel en [{~}, {~}, -{~}]",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Stable Story#029": {
+  "Stable Story#031": {
    "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
    "dst": "Oye, ¿ya has encontrado mi [{~} Stable Key]? Debería estar por {p}, al este.",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#030": {
+  "Stable Story#032": {
    "src": "Looking for able-bodied adventurers, preferably with no friends or",
    "dst": "Busco aventureros fuertes, preferiblemente sin amigos ni",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#031": {
+  "Stable Story#033": {
    "src": "Hey, it's you! Got my barn key yet?",
    "dst": "¡Eh, eres tú! ¿Ya tienes mi llave?",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#032": {
+  "Stable Story#034": {
    "src": "Ah, god bless. And I presume Betty did all the work while you just lounged around.",
    "dst": "Ah, bendito sea. Y supongo que Betty hizo todo el trabajo mientras tú holgazaneabas.",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#033": {
+  "Stable Story#035": {
    "src": "Hm. Cows, huh? Ah who knows!? Life is full of mysterious, huh?",
    "dst": "Hm. ¿Vacas, eh? ¡¿Quién sabe?! La vida está llena de misterios, ¿no?",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#034": {
+  "Stable Story#036": {
    "src": "Either way. As the great bovine above is my witness if I see the smallest bruise I will",
    "dst": "En fin. Pongo por testigo al gran bovino de las alturas: si veo el menor moratón, yo",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#035": {
+  "Stable Story#037": {
    "src": "Nevermind all that. A horse I promised, and a horse you shall have. Much thanks to you.",
    "dst": "Olvida todo eso. Un caballo te prometí y un caballo tendrás. Muchísimas gracias.",
    "role": "desc",
