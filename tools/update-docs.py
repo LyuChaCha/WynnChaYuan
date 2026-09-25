@@ -212,15 +212,48 @@ def language_totals() -> list[tuple[str, int, int]]:
     return rows
 
 
-def language_table(rows: list[tuple[str, int, int]]) -> str:
-    """各語言的進度表，翻得最多的排最前面。"""
-    lines = ["| 語言 | 進度 | 已翻 / 總數 |", "|---|---|---:|"]
-    for code, done, total in rows:
-        name = LANG_NAMES.get(code)
-        label = f"`{code}` {name}" if name else f"`{code}`"
-        lines.append(f"| {label} | {bar(done, total)} {done / total:.1%} "
-                     f"| {done:,} / {total:,} |")
-    return "\n".join(lines)
+def coverage_note(rows: list[tuple[str, int, int]], stamp: str,
+                  progress_link: str) -> str:
+    """README 最上面那一段：翻了哪些、大概翻到哪、漏的怎麼回報。
+
+    <h2>為什麼不再放各語言的進度表</h2>
+    這裡本來是一張百分比的表。問題是那個數字<b>再高也一定有漏的</b>——遊戲一直
+    在更新，而語料裡還有五千多條是沒人打算翻的專有名稱（見 {@code SKIP}）。
+    把「99.2%」擺在最上面，讀者看到一句英文就會覺得是壞了，而不是「這條還沒翻」。
+
+    <p>所以這裡只說<b>翻了哪些東西</b>與一個粗略的程度，而且明講一定有漏的、
+    請直接回報。精確到每一個檔案的數字沒有消失，留在 docs/PROGRESS.md
+    給真的要動手翻的人看。
+
+    <p>粗略的程度往下取到五的倍數：寧可講得保守一點，也不要讓人覺得被誇大了。
+    """
+    rough = int(min(done / total for _, done, total in rows) * 100) // 5 * 5
+    return "\n".join([
+        f"更新於 {stamp} / Updated {stamp}",
+        "",
+        "**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、"
+        "技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、"
+        "NPC 與地區名稱、看板與聊天公告。",
+        "",
+        f"**大概翻到哪**：{len(rows)} 種語言目前都在 **{rough}% 以上**，"
+        "繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新"
+        "——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，"
+        f"[開個 issue]({REPO}/issues) 告訴我們就好。",
+        "",
+        "**What's covered**: quest dialogue and the quest book, items (names, "
+        "stats, lore, Major IDs), the ability tree, the interface (F6, "
+        "inventory, trade market, guild, map, tracker), NPC and place names, "
+        "signs and chat announcements.",
+        "",
+        f"**Roughly how far**: every language is past **{rough}%**, Traditional "
+        "Chinese being the most complete. What is left is mostly stray names "
+        "and half-sentences, and the game keeps changing — **there will be "
+        "gaps**. Found something untranslated, wrong, or laid out badly? "
+        f"[Open an issue]({REPO}/issues).",
+        "",
+        f"每一種語言還缺哪些檔案 / Per-language breakdown: "
+        f"[PROGRESS.md]({progress_link})",
+    ])
 
 
 # 每一個檔案的英文說明，給非中文的翻譯團隊看。
@@ -390,20 +423,10 @@ def main(argv: list[str]) -> int:
     rows = language_totals()
     write_progress_doc(rows)
     if len(rows) > 1:
-        # 多語言時只列各語言的總進度。檔案明細那張是給翻譯的人看的，
-        # 一種語言就已經十幾列，四種語言擺上來沒有人會讀完——
-        # 而讀者在這裡真正想知道的只有「我的語言翻到哪了」。
-        #
-        # 明細沒有消失，跑 python tools/update-docs.py --files 就看得到。
-        body = (f"更新於 {stamp}。\n\n{language_table(rows)}\n\n"
-                f"每一種語言**還缺哪些檔案**見 "
-                f"[docs/PROGRESS.md](docs/PROGRESS.md)。<br>"
-                f"Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).")
+        body = coverage_note(rows, stamp, "docs/PROGRESS.md")
         # 商店頁（CurseForge、Modrinth）是整段貼到別的網站上的：
-        # 相對連結會斷，CurseForge 的編輯器也不吃 <br>。
-        store = (f"更新於 {stamp}。\n\n{language_table(rows)}\n\n"
-                 f"各語言還缺哪些檔案 / Per-language breakdown: "
-                 f"[PROGRESS.md]({REPO}/blob/main/docs/PROGRESS.md)")
+        # 相對連結會斷，所以連結換成絕對網址。
+        store = coverage_note(rows, stamp, f"{REPO}/blob/main/docs/PROGRESS.md")
     else:
         body = (f"**目前進度 {done:,} / {total:,}"
                 f"（{done / total:.1%}）**，更新於 {stamp}。\n\n{body}")

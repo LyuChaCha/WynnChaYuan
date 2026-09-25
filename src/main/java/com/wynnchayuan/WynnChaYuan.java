@@ -171,19 +171,28 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 而後載入的會蓋掉先載入的。於是每一條各自回退。
         loadLayers();
 
-        // 從 GitHub 同步最新譯文。放背景執行緒，不拖慢進遊戲；
-        // 抓不到就沿用剛剛載入的本機版本。
+        // 先問一句「有沒有新翻譯」，要不要抓由玩家決定。
+        //
+        // 以前這裡無條件把整個語言的三十幾個檔重抓一遍。翻譯一個月可能只動幾條，
+        // 玩家卻每天都在付那個流量與那幾十秒。改成一次請求問 commit
+        // （見 RemoteSync#remoteVersion），有新的才在聊天室說一聲。
+        //
+        // 兩個例外照抓不誤：F6 打開了自動更新，以及<b>從來沒抓過</b>——
+        // 新玩家不該先被問一次才有翻譯。
+        //
+        // 放背景執行緒，不拖慢進遊戲；問不到或抓不到都只是沿用剛剛載入的本機版本。
         if (config.source() == CollectorConfig.Source.GITHUB) {
             Thread sync = new Thread(() -> {
-                int changed = RemoteSync.fetchInto(trDir, language);
-                // 墊底那一種也要跟著更新，而且重載要<b>整疊</b>重載。
-                // 先前這裡只 loadAll(trDir)：同步一完成，墊底那層就從記憶體裡消失，
-                // 而它的快取也從來沒有在啟動時更新過。
-                String under = fallbackLanguage();
-                if (under != null) {
-                    changed += RemoteSync.fetchInto(
-                            com.wynnchayuan.translate.Languages.dir(configDir, under), under);
+                String remote = RemoteSync.remoteVersion();
+                boolean first = config.syncedTranslations().isBlank();
+                if (!first && !config.autoUpdateTranslations()) {
+                    if (remote != null && !remote.equals(config.syncedTranslations())) {
+                        com.wynnchayuan.translate.TranslationUpdate.found(remote);
+                    }
+                    return;
                 }
+                int changed = fetchCurrentLanguages();
+                com.wynnchayuan.translate.TranslationUpdate.done(remote);
                 if (changed > 0) {
                     reloadOnMainThread();
                 }
@@ -373,6 +382,26 @@ public final class WynnChaYuan implements ClientModInitializer {
      * <p>只有真的抓到新內容才會走到這裡（見 {@link RemoteSync#fetchInto}），
      * 所以大多數啟動根本不會重載。
      */
+    /**
+     * 把<b>目前這一疊</b>語言的譯文都抓下來：選定的那一種，加上墊底的那一種。
+     *
+     * <p>墊底那一種也要跟著更新，而且重載要整疊重載。先前有一版只重載了選定的
+     * 那一種：同步一完成，墊底那層就從記憶體裡消失，而它的快取也從來沒有在
+     * 啟動時更新過。
+     *
+     * @return 內容真的有變的檔案數；0 表示不必重新載入
+     */
+    private static int fetchCurrentLanguages() {
+        int changed = RemoteSync.fetchInto(
+                com.wynnchayuan.translate.Languages.dir(configDir, language), language);
+        String under = fallbackLanguage();
+        if (under != null) {
+            changed += RemoteSync.fetchInto(
+                    com.wynnchayuan.translate.Languages.dir(configDir, under), under);
+        }
+        return changed;
+    }
+
     private static void reloadOnMainThread() {
         try {
             net.minecraft.client.Minecraft.getInstance().execute(WynnChaYuan::loadLayers);
@@ -491,25 +520,18 @@ public final class WynnChaYuan implements ClientModInitializer {
         config.setLanguage(lang);
         language = com.wynnchayuan.translate.Languages.pick(
                 config.language(), gameLanguage());
+        // 切語言<b>不再下載</b>：載入手上已經有的那一份就好。
+        //
+        // 以前每切一次就把那個語言的三十幾個檔重抓一遍。在遊戲裡對照兩種語言
+        // 的人來回切一次就是兩趟完整下載，測試時尤其惱人——而絕大多數時候
+        // 那些檔跟上一次抓的一模一樣。
+        //
+        // 要最新的就按資料頁的「更新翻譯」，或在 F6 打開自動更新。
+        // progress 留著不用：呼叫端的簽章不動，將來要接回進度條也還在。
         loadLayers();
-        if (config.source() != CollectorConfig.Source.GITHUB) {
-            done.accept(com.wynnchayuan.client.T.s("data.language.done",
-                    com.wynnchayuan.translate.Languages.nativeName(language),
-                    translations.size()));
-            return;
-        }
-        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
-        Thread worker = new Thread(() -> {
-            RemoteSync.fetchInto(dir, language, progress);
-            net.minecraft.client.Minecraft.getInstance().execute(() -> {
-                loadLayers();
-                done.accept(com.wynnchayuan.client.T.s("data.language.done",
-                        com.wynnchayuan.translate.Languages.nativeName(language),
-                        translations.size()));
-            });
-        }, MOD_ID + "-switch");
-        worker.setDaemon(true);
-        worker.start();
+        done.accept(com.wynnchayuan.client.T.s("data.language.done",
+                com.wynnchayuan.translate.Languages.nativeName(language),
+                translations.size()));
     }
 
 
@@ -524,10 +546,13 @@ public final class WynnChaYuan implements ClientModInitializer {
      * @param done 完成後在主執行緒呼叫，參數是要顯示給使用者的結果
      */
     public static void resyncTranslations(java.util.function.Consumer<String> done) {
-        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
         Thread worker = new Thread(() -> {
-            RemoteSync.fetchInto(dir, language);
+            // 問版本要在抓之前：抓完才問的話，中間剛好有人合併進去，
+            // 記下的就是那一個新的，而手上其實是舊的——之後再也不會提示。
+            String remote = RemoteSync.remoteVersion();
+            fetchCurrentLanguages();
             String result = RemoteSync.lastResult();
+            com.wynnchayuan.translate.TranslationUpdate.done(remote);
             net.minecraft.client.Minecraft.getInstance().execute(() -> {
                 reloadTranslations();
                 done.accept(result + "，共 " + translations.size() + " 條");
@@ -627,6 +652,9 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.render.PanelShot.tick();
             // 有新版就在聊天室說一次，附下載連結。見 Releases#tellOnce。
             Releases.tellOnce(client);
+            // 有新翻譯也說一次，但只說「有」，抓不抓由玩家決定。
+            // 見 TranslationUpdate#tellOnce。
+            com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);
         });
     }
 

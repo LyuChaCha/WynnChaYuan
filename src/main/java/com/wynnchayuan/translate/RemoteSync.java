@@ -152,6 +152,56 @@ public final class RemoteSync {
     }
 
     /**
+     * 譯文最後一次改動是哪一個 commit。
+     *
+     * <h2>為什麼要有</h2>
+     * 以前每次進遊戲、每次切語言都把整個語言的三十幾個檔重抓一遍。翻譯一個月
+     * 可能只動幾條，而玩家每天都在付那個流量與那幾十秒；想在遊戲裡比對兩種語言
+     * 的人更慘——來回切一次就是兩趟完整下載。
+     *
+     * <p>所以改成先問一句「有沒有新的」。GitHub 的 commits API 帶上路徑就會回
+     * <b>只動到譯文的</b>最新一筆，一次請求、一點幾 KB。跟上一次下載時記下的
+     * 那一個比，一樣就什麼都不用做。
+     *
+     * <h2>失敗就當作沒有新的</h2>
+     * API 有每小時六十次的限制（沒帶權杖時），斷網、被擋、超時也都可能。
+     * 這種時候回傳 {@code null}，呼叫端一律當成「沒有新的」——
+     * 寧可少提示一次，也不要在玩家沒得選的時候自作主張下載。
+     *
+     * @return commit 的 SHA；問不到時回傳 {@code null}
+     */
+    public static String remoteVersion() {
+        String url = "https://api.github.com/repos/LyuChaCha/WynnChaYuan/commits"
+                + "?path=" + PATH + "&per_page=1";
+        try (HttpClient client = HttpClient.newBuilder()
+                .connectTimeout(TIMEOUT)
+                .followRedirects(HttpClient.Redirect.NORMAL)
+                .build()) {
+            HttpRequest request = HttpRequest.newBuilder(URI.create(url))
+                    .timeout(TIMEOUT)
+                    .header("User-Agent", "WynnChaYuan")
+                    .header("Accept", "application/vnd.github+json")
+                    .GET()
+                    .build();
+            HttpResponse<String> response =
+                    client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() != 200) {
+                return null;
+            }
+            com.google.gson.JsonElement root =
+                    com.google.gson.JsonParser.parseString(response.body());
+            if (!root.isJsonArray() || root.getAsJsonArray().isEmpty()) {
+                return null;
+            }
+            com.google.gson.JsonElement sha =
+                    root.getAsJsonArray().get(0).getAsJsonObject().get("sha");
+            return sha == null || !sha.isJsonPrimitive() ? null : sha.getAsString();
+        } catch (Exception e) {
+            return null;                       // 問不到就當作沒有新的
+        }
+    }
+
+    /**
      * 把遠端譯文抓下來放進 {@code cacheDir}。
      *
      * <p>每個檔案先寫暫存檔再原子搬移，中途失敗不會留下半截 JSON 蓋掉舊的好檔案。
