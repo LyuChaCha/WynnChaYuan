@@ -469,6 +469,14 @@ tasks.register('runDialogueChoiceChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueChoiceChecks' }
 
+tasks.register('runSearchChecks', JavaExec) {
+    group = 'verification'
+    description = '用譯文搜尋 Wynntils 的畫面'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.SearchMatchTest'
+}
+tasks.named('check') { dependsOn 'runSearchChecks' }
+
 tasks.register('runAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證欄位對齊點的選擇'
