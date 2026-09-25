@@ -81,18 +81,17 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 - **Interface language**: the language of the F6 screens themselves (English included)
 
 <!-- 進度:開始 -->
-更新於 2026-09-25。
+更新於 2026-09-25 / Updated 2026-09-25
 
-| 語言 | 進度 | 已翻 / 總數 |
-|---|---|---:|
-| `zh_tw` 繁體中文 | ██████████ 99.2% | 50,437 / 50,820 |
-| `ru_ru` Русский | ██████████ 96.2% | 48,906 / 50,820 |
-| `zh_cn` 简体中文 | ██████████ 96.2% | 48,906 / 50,820 |
-| `ko_kr` 한국어 | ██████████ 96.2% | 48,904 / 50,820 |
-| `ja_jp` 日本語 | ██████████ 96.2% | 48,896 / 50,820 |
-| `es_es` Español | ██████████ 95.8% | 48,703 / 50,820 |
+**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
-每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
+**大概翻到哪**：6 種語言目前都在 **95% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
+
+**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (F6, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
+
+**Roughly how far**: every language is past **95%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
+
+每一種語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](docs/PROGRESS.md)
 <!-- 進度:結束 -->
 
 ## Install
