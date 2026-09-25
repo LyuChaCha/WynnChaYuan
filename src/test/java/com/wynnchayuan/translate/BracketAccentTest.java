@@ -66,6 +66,7 @@ public final class BracketAccentTest {
         wrappedSpan();
         splitWord();
         spanAcrossRows();
+        coordBracketOnOwnRow();
         noBracketsInTranslation();
         plurals();
         rules();
@@ -208,6 +209,73 @@ public final class BracketAccentTest {
               is(colourOf(built, "[迷你任務]"), TYPE));
         check("［迷你任務］名稱是橘的（拿到 " + show(colourOf(built, "獵殺怨靈與幻影")) + "）",
               is(colourOf(built, "獵殺怨靈與幻影"), NAME));
+    }
+
+    /**
+     * 座標整串（連同開頭那個 {@code [}）都是白的——折行之後也要是。
+     *
+     * <h2>實機回報（採集站的迷你任務卡）</h2>
+     * 原文四行（{@code majorid-debug.txt} 的「=== 12 ===」那一段）：
+     *
+     * <pre>
+     *   §7Bring §3[40 Kanderstone Ingots]
+     *   §7or §3[40 Kanderstone Gems]§7 to the
+     *   §7Gathering Post §3[Mining Lv. 73]
+     *   §7at §f[-712, 46, -5553]
+     * </pre>
+     *
+     * 譯文被面板折成四行，座標自己占最後一行。畫面上數字是白的，
+     * 開頭那個 {@code [} 卻是散文的灰。
+     *
+     * <h2>為什麼要餵折好的行進來</h2>
+     * 斷行是照<b>面板寬度</b>折的，測試環境沒有真的字型，
+     * {@code translateBlock} 折不出實機那一刀——整段會留在同一行，
+     * 而同一行裡這個 bug 根本不會發生。所以直接把實機折好的四行餵給
+     * {@code rebuildAll}，測的就是「這一刀之後誰拿到什麼顏色」。
+     */
+    private static void coordBracketOnOwnRow() throws Exception {
+        List<StyledText> run = List.of(
+                line("Bring ", BODY, "[40 Kanderstone Ingots]", ITEM),
+                line("or ", BODY, "[40 Kanderstone Gems]", ITEM, " to the", BODY),
+                line("Gathering Post ", BODY, "[Mining Lv. 73]", ITEM),
+                line("at ", BODY, "[-712, 46, -5553]", COORD));
+        // 實機折出來的四行，照 majorid-debug 的「譯文：」原樣抄
+        String[] flowed = {
+            "把 [{~} Kanderstone 錠]",
+            "或 [{~} Kanderstone 寶",
+            "石] 交到採集站 [採礦等級 {~}]，",
+            "座標 [-{~}, {~}, -{~}]",
+        };
+
+        List<LineParts> parts = new ArrayList<>();
+        List<LineParts.Piece> allRuns = new ArrayList<>();
+        for (StyledText row : run) {
+            LineParts part = LineParts.of(row);
+            parts.add(part);
+            allRuns.addAll(part.runs());
+        }
+        List<LineParts.Piece> accents =
+                LineTranslator.bracketAccents(allRuns, flowed, colour(BODY));
+        List<Component> built = LineTranslator.rebuildAll(
+                flowed, parts, accents, null, null,
+                corpus("Kanderstone Ingot", "Kanderstone 錠",
+                       "Kanderstone Gem", "Kanderstone 寶石"));
+        dump(built);
+
+        String text = flat(built);
+        int at = text.indexOf("712");
+        check("［座標自成一列］譯文裡有這個座標", at > 0);
+        if (at <= 0) {
+            return;
+        }
+        int bracket = text.lastIndexOf('[', at);
+        check("★［座標自成一列］座標開頭的「[」是白的，不是散文的灰（拿到 "
+              + show(charColour(built, bracket))
+              + "，實際分段：" + pieces(built) + "）",
+              is(charColour(built, bracket), COORD));
+        check("★［座標自成一列］收尾那個「]」也是白的（拿到 "
+              + show(charColour(built, text.lastIndexOf(']'))) + "）",
+              is(charColour(built, text.lastIndexOf(']')), COORD));
     }
 
     /** 折行用的換行字元，跟 LineTranslator 那邊同一個。 */
@@ -448,6 +516,45 @@ public final class BracketAccentTest {
             out.append(c.getString());
         }
         return out.toString();
+    }
+
+    /** 一整行原文：交錯的「文字, 顏色」。 */
+    private static StyledText line(Object... pairs) {
+        MutableComponent out = Component.empty();
+        for (int i = 0; i < pairs.length; i += 2) {
+            out.append(Component.literal((String) pairs[i])
+                    .withStyle(colour((Integer) pairs[i + 1])));
+        }
+        return StyledText.fromComponent(out);
+    }
+
+    /** 畫出去的整串文字（所有段接起來）。 */
+    private static String flat(List<Component> built) {
+        StringBuilder out = new StringBuilder();
+        for (Component c : built) {
+            c.visit((style, t) -> {
+                out.append(t);
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        return out.toString();
+    }
+
+    /** {@link #flat} 裡第 {@code index} 個字的顏色。 */
+    private static Integer charColour(List<Component> built, int index) {
+        List<Integer> hit = new ArrayList<>();
+        int[] seen = {0};
+        for (Component c : built) {
+            c.visit((style, t) -> {
+                if (hit.isEmpty() && index < seen[0] + t.length()) {
+                    hit.add(style.getColor() == null
+                            ? null : style.getColor().getValue() & 0xFFFFFF);
+                }
+                seen[0] += t.length();
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        return hit.isEmpty() ? null : hit.get(0);
     }
 
     private static void dump(List<Component> built) {
