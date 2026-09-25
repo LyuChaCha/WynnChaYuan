@@ -165,6 +165,20 @@ public final class CollectorConfig {
     private boolean marketSearch = true;
 
     /**
+     * 按住 Shift 暫時換成另一種：看譯名的人看到原文，看原文的人看到譯名。
+     *
+     * <h2>為什麼不是再開一個模式</h2>
+     * 「譯名加原文」那一種等於永遠占掉兩倍寬度，而需要原文的時機其實很零星
+     * ——去 wiki 查、去交易市場貼名字。為了那幾次讓每一件裝備都變長不划算。
+     *
+     * <p>Wynntils 自己也是這個做法：平常畫一種，按住 Shift 看另一種。
+     * 所以這裡跟著同一個手感，玩家不必記兩套。
+     *
+     * <p>「譯名加原文」那一種本來就兩個都給了，按 Shift 不做事。
+     */
+    private boolean shiftPeekNames = true;
+
+    /**
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
@@ -482,6 +496,17 @@ public final class CollectorConfig {
         marketSearch = !marketSearch;
         save();
         return marketSearch;
+    }
+
+    /** 見 {@link #shiftPeekNames}：按住 Shift 要不要暫時換另一種。 */
+    public boolean shiftPeekNames() {
+        return shiftPeekNames;
+    }
+
+    public boolean toggleShiftPeekNames() {
+        shiftPeekNames = !shiftPeekNames;
+        save();
+        return shiftPeekNames;
     }
 
     public boolean chatCopy() {
@@ -1110,6 +1135,7 @@ public final class CollectorConfig {
         translateObjectives = bool(o, "translateObjectives", translateObjectives);
         translateHeldItem = bool(o, "translateHeldItem", translateHeldItem);
         marketSearch = bool(o, "marketSearch", marketSearch);
+        shiftPeekNames = bool(o, "shiftPeekNames", shiftPeekNames);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
         if (overlays != null) {
@@ -1322,6 +1348,7 @@ public final class CollectorConfig {
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("wynntilsUi", wynntilsUi);
             o.addProperty("marketSearch", marketSearch);
+            o.addProperty("shiftPeekNames", shiftPeekNames);
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());

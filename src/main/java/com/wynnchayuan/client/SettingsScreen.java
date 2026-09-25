@@ -443,6 +443,11 @@ public final class SettingsScreen extends Screen {
                             WynnChaYuan.config().cycleItemNames(-1));
                     b.setMessage(itemNameLabel());
                 });
+        cycle("items.shiftpeek",
+                this::shiftPeekLabel, b -> {
+                    WynnChaYuan.config().toggleShiftPeekNames();
+                    b.setMessage(shiftPeekLabel());
+                });
         cycle("items.market",
                 this::marketLabel, b -> {
                     WynnChaYuan.config().toggleMarketSearch();
@@ -918,6 +923,11 @@ public final class SettingsScreen extends Screen {
     /** Wynntils 自己畫的那些畫面。見 {@link com.wynnchayuan.CollectorConfig#wynntilsUi}。 */
     private Component wynntilsUiLabel() {
         return ctrl(onOff(WynnChaYuan.config().wynntilsUi()));
+    }
+
+    /** 按住 Shift 暫時看另一種名稱。見 {@link com.wynnchayuan.CollectorConfig#shiftPeekNames}。 */
+    private Component shiftPeekLabel() {
+        return ctrl(onOff(WynnChaYuan.config().shiftPeekNames()));
     }
 
     /** 市集搜尋打中文自動換成英文。見 {@code MarketListener}。 */

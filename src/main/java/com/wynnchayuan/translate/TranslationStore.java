@@ -1706,18 +1706,64 @@ public final class TranslationStore {
         if (at < 0) {
             return -1;
         }
-        String inner = text.substring(at + 2, text.length() - 1);
+        return isAppendedOriginal(text.substring(at + 2, text.length() - 1)) ? at : -1;
+    }
+
+    /**
+     * 「譯名 {@code  (原文)}」那一段在<b>整行</b>裡的位置。
+     *
+     * <h2>為什麼不能只看結尾</h2>
+     * {@link #appendedOriginalAt} 拿到的是<b>一段</b>（物品名稱自己一段），所以附在
+     * 結尾。但畫到面板上的是<b>一整行</b>，名稱後面還跟著 Wynncraft 的耐久度：
+     *
+     * <pre>
+     *   󏿰󏿏󐀅烬咒牧杖 (Cindercurse Crosier) [51.0%]
+     * </pre>
+     *
+     * 括號不在結尾，{@code appendedOriginalAt} 一律回傳 −1。要把原文挪到下一行
+     * 就得知道它<b>從哪到哪</b>，所以這裡回傳一對索引。
+     *
+     * <p>判斷條件跟 {@link #appendedOriginalAt} 同一套（{@link #isAppendedOriginal}）：
+     * 括號裡必須正好是一個只有裝備檔用到的名字。敘述本來就帶的括號
+     * ——「{@code 緩慢 (每秒 1.5 次)}」——括號裡不是裝備名，碰不到。
+     *
+     * @return {@code {起, 迄}}：起是「{@code  (}」的索引，迄是「{@code )}」的<b>下一個</b>
+     *         索引；沒有附原文時回傳 {@code null}
+     */
+    public int[] appendedOriginalSpan(String text) {
+        if (!namesWithOriginal || text == null) {
+            return null;
+        }
+        int at = text.indexOf(" (");
+        while (at >= 0) {
+            int close = text.indexOf(')', at + 2);
+            if (close < 0) {
+                return null;
+            }
+            if (isAppendedOriginal(text.substring(at + 2, close))) {
+                return new int[] {at, close + 1};
+            }
+            at = text.indexOf(" (", at + 2);
+        }
+        return null;
+    }
+
+    /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
+    private boolean isAppendedOriginal(String inner) {
         if (gearOnly(inner)) {
-            return at;
+            return true;
         }
         // Shiny 的原文是「Shiny X」，語料裡不會有這種鍵，見 #shiny
         if (inner.startsWith(SHINY)) {
             String rest = inner.substring(SHINY.length()).strip();
-            if (gearNameKeys.contains(rest) || nameKeys.contains(rest)) {
-                return at;
-            }
+            return gearNameKeys.contains(rest) || nameKeys.contains(rest);
         }
-        return -1;
+        return false;
+    }
+
+    /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
+    public boolean namesWithOriginal() {
+        return namesWithOriginal;
     }
 
     /** Shiny 裝備名稱的前綴。 */
