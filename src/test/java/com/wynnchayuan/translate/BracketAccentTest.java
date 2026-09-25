@@ -64,6 +64,7 @@ public final class BracketAccentTest {
         nameContainsType();
         miniQuest();
         wrappedSpan();
+        splitWord();
         noBracketsInTranslation();
         plurals();
         rules();
@@ -264,6 +265,48 @@ public final class BracketAccentTest {
         // 座標那組不可以跟著剝：「, 」「-」到處都有，貼上去會貼到別的地方
         check("［跨行括號］座標那組沒有多登記短到會撞的片段（實際：" + texts + "）",
               !texts.contains(", ") && !texts.contains("-"));
+    }
+
+    /**
+     * 斷行落在<b>詞中間</b>：「…Kanderstone 寶」換行「石]」。
+     *
+     * <h2>實機回報</h2>
+     * 採集站那張卡：「把 {@code [32 Kanderstone 錠]} 或 {@code [32 Kanderstone 寶}」
+     * 換行「石{@code ]} 交到採集站 {@code [採礦等級 71]}，」——下半截掉回底色。
+     *
+     * <h2>為什麼 keepAccentsWhole 救不了</h2>
+     * 它最多搬十二個字，而這裡要搬的是「{@code  Kanderstone 寶}」十五個字；
+     * 真搬下去會把面板撐寬一大截。{@link LineTranslator#halvesAcrossBreaks}
+     * 改成認這一刀，兩半各自登記。
+     */
+    private static void splitWord() {
+        String[] flowed = {
+            "把 [{~} Kanderstone 錠] 或 [{~} Kanderstone 寶",
+            "石] 交到採集站 [採礦等級 {~}]，",
+        };
+        List<LineParts.Piece> accents = List.of(
+                piece("[{~} Kanderstone 寶石]", ITEM),
+                piece(" Kanderstone 寶石]", ITEM),
+                piece("[{~} Kanderstone 錠]", ITEM),
+                piece(" Kanderstone 錠]", ITEM));
+        List<String> texts = new ArrayList<>();
+        for (LineParts.Piece half
+                : LineTranslator.halvesAcrossBreaks(flowed, accents)) {
+            texts.add(half.text());
+        }
+        System.out.println("［詞被切開］補登記的兩半：" + texts);
+
+        check("★［詞被切開］上一行那半登記了", texts.contains(" Kanderstone 寶"));
+        check("★［詞被切開］下一行那半登記了（收尾那個 ] 靠它才有色）",
+              texts.contains("石]"));
+        // 沒被切到的那一段不該多出東西來
+        check("［詞被切開］沒被切到的重點段不補（實際：" + texts + "）",
+              !texts.contains(" Kanderstone 錠]"));
+        // 含佔位符的那一半不登記：畫的時候它在畫面上不連續
+        for (String t : texts) {
+            check("［詞被切開］補的兩半都不含佔位符（" + t + "）",
+                  t.indexOf('{') < 0 && t.indexOf('}') < 0);
+        }
     }
 
     /**

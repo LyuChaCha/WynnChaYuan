@@ -7806,6 +7806,8 @@ public final class LineTranslator {
 
         // 斷行不要把一個重點詞切成兩半，否則它的顏色會整個掉。見 keepAccentsWhole。
         String[] flowed = keepAccentsWhole(translated, accents);
+        // 搬不動的那些，兩半各自登記一份。見 halvesAcrossBreaks。
+        accents.addAll(halvesAcrossBreaks(flowed, accents));
 
         List<List<Token>> lines = new ArrayList<>(flowed.length);
         long wantGlyphs = 0;
@@ -8098,13 +8100,15 @@ public final class LineTranslator {
                                       boolean afterNumber) {
         int lead = 0;
         if (before != null) {
-            while (lead < text.length() && hugs(text.charAt(lead))) {
+            while (lead < text.length() && hugs(text.charAt(lead))
+                    && !hasOwnColour(text, lead, accents, used, before)) {
                 lead++;
             }
         }
         int tail = text.length();
         if (after != null) {
-            while (tail > lead && hugs(text.charAt(tail - 1))) {
+            while (tail > lead && hugs(text.charAt(tail - 1))
+                    && !hasOwnColour(text, tail - 1, accents, used, after)) {
                 tail--;
             }
         }
@@ -8143,12 +8147,51 @@ public final class LineTranslator {
             mid++;
         }
         if (mid > lead) {
-            out.append(literal(text.substring(lead, mid), symbol));
+            // 這個符號在原文裡自己是一段、而且登記成重點段時，顏色用它自己的。
+            //
+            // 市集那一列：原文的兩顆綠寶石各自比前面的數字暗一階（白配灰、
+            // 亮青配暗青），而符號那一段的樣式整行只有一個，套下去兩顆會變成
+            // 同一個顏色。字型仍然沿用符號那一段的——要換的只有顏色。
+            Style paint = symbol;
+            int own = exactAccent(text.substring(lead, mid), accents, used);
+            if (own >= 0) {
+                used[own] = true;
+                Style mine = accents.get(own).style();
+                paint = mine == null || paint == null ? forDisplay(mine)
+                        : paint.withColor(mine.getColor());
+            }
+            out.append(literal(text.substring(lead, mid), paint));
             lead = mid;
         }
-        if (tail > lead) {
-            appendNoting(out, text.substring(lead, tail), base, note,
+        // 結尾那個符號跟著<b>後面</b>那個佔位符走。
+        //
+        // 市集那一列的原文是 `✮ 4,218` 一整段青色——星號跟它右邊的數字同屬一段，
+        // 中間那個空格也是那一段的。譯文寫 `✮ {~}`，數值被抽出去之後那條字面
+        // 對不上，星號就掉回底色，畫面上是「金色的星配青色的數字」。
+        //
+        // 「中間有空白就不算黏著」那條規則（見 #hugs 的說明）管的是標點；
+        // 遊戲的符號不一樣，它跟它標註的那個值之間本來就留著一格。
+        int back = tail;
+        if (after != null) {
+            int end = tail;
+            while (end > lead && text.charAt(end - 1) == ' ') {
+                end--;
+            }
+            int start = end;
+            while (start > lead && isPictograph(text.charAt(start - 1))) {
+                start--;
+            }
+            // 符號自己有一段顏色的不搬——那一段等一下會自己貼上去。
+            if (start < end && exactAccent(text.substring(start, end), accents, used) < 0) {
+                back = start;
+            }
+        }
+        if (back > lead) {
+            appendNoting(out, text.substring(lead, back), base, note,
                          depth, accents, used, store);
+        }
+        if (back < tail) {
+            out.append(literal(text.substring(back, tail), forDisplay(after)));
         }
         if (tail < text.length()) {
             out.append(literal(text.substring(tail), forDisplay(after)));
@@ -8182,6 +8225,49 @@ public final class LineTranslator {
             return isPictograph(text.charAt(0)) ? run.style() : null;
         }
         return null;
+    }
+
+    /** 字面剛好就是 {@code word} 的那個還沒用掉的重點段；沒有就是 -1。 */
+    private static int exactAccent(String word, List<LineParts.Piece> accents,
+                                   boolean[] used) {
+        for (int k = 0; k < accents.size(); k++) {
+            if (!used[k] && accents.get(k).text().equals(word)) {
+                return k;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 這個位置的標點<b>自己就有</b>顏色嗎。
+     *
+     * <h2>為什麼要問</h2>
+     * 黏著的前提是「原文裡那個標點跟佔位符同屬一個片段」。重點段的存在正好
+     * 說明相反的事：原文<b>另外</b>給了它一段自己的樣式，黏過去等於把它抹掉。
+     *
+     * <p>實機回報的是市集那一列。原文
+     * {@code 4,300² ✮ 4,218² (1¼² 1²½ 58²) each} 切成
+     * {@code 「4,300」白「²」灰「✮ 4,218」青「²」暗青「(…)」深灰}——
+     * 綠寶石那個符號比它前面的數字暗一階，兩顆都是。譯文的
+     * {@code {~}²} 讓 {@code ²} 緊貼著數值，於是它拿到數值的顏色，
+     * 診斷檔記的是「{@code ²} ★在譯文裡卻沒貼上」兩次。
+     *
+     * <p>顏色一樣的不算——那種黏不黏都畫得出同一個結果，少繞一圈。
+     */
+    private static boolean hasOwnColour(String text, int at,
+                                        List<LineParts.Piece> accents, boolean[] used,
+                                        Style side) {
+        for (int k = 0; k < accents.size(); k++) {
+            if (used[k]) {
+                continue;
+            }
+            String word = accents.get(k).text();
+            if (!word.isEmpty() && text.startsWith(word, at)
+                    && !sameColour(accents.get(k).style(), side)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** 單位用的字母：只認 ASCII 小寫。大寫與中文都不是單位。 */
@@ -8288,6 +8374,74 @@ public final class LineTranslator {
             return 0;                          // 行尾不是圖示，或整行只有圖示
         }
         return from - (at - glyph.length());
+    }
+
+    /**
+     * 搬不動的重點段，被斷行切開的<b>兩半各自</b>登記一份。
+     *
+     * <h2>為什麼還需要這一條</h2>
+     * {@link #keepAccentsWhole} 只搬得動十來個字以內的詞，
+     * 而且含佔位符的那一半一律不搬。搬不動的就留在原地被切成兩半，兩行各自都
+     * 對不上整段的字面——整塊掉回底色。
+     *
+     * <p>實機回報的是採集站那張卡：{@code [{~} Kanderstone 寶石]} 十七個字，
+     * 斷行落在「寶」「石」之間。要搬得動得把「{@code  Kanderstone 寶}」十五個
+     * 字整串挪到下一行，那會把面板撐寬一大截，不值得——但顏色不能就這樣掉。
+     *
+     * <p>所以改成認這一刀：上一行結尾是 {@code left}、下一行開頭是
+     * {@code right} 時，兩半各登記一次，畫的時候各貼各的。
+     *
+     * <h2>何時不登記</h2>
+     * 兩頭都至少要兩個字元、而且要帶實字——單一個字元到處都是，貼上去會貼到
+     * 別的地方去。含佔位符的那一半也不登記：畫的時候佔位符自成一個片段，
+     * 那一串字面在畫面上從來不連續。
+     */
+    static List<LineParts.Piece> halvesAcrossBreaks(
+            String[] flowed, List<LineParts.Piece> accents) {
+        List<LineParts.Piece> out = new ArrayList<>();
+        if (flowed.length < 2) {
+            return out;
+        }
+        for (LineParts.Piece accent : accents) {
+            String word = accent.text();
+            if (word.length() < 4) {
+                continue;                      // 切開之後兩半都太短
+            }
+            for (int i = 0; i + 1 < flowed.length; i++) {
+                int cut = cutBetween(flowed[i], flowed[i + 1], word);
+                if (cut <= 0) {
+                    continue;
+                }
+                addHalf(out, word.substring(0, cut), accent.style());
+                addHalf(out, word.substring(cut), accent.style());
+                break;
+            }
+        }
+        return out;
+    }
+
+    /**
+     * {@code word} 被這兩行切在第幾個字元；沒被切開就是 0。
+     *
+     * <p>切在第一個字元也算：{@code [{~} 鮭魚肉]} 斷在 {@code [} 後面時，
+     * 左半只有一個字元登記不了，右半照樣得救。要不要登記交給
+     * {@link #addHalf} 判斷。
+     */
+    private static int cutBetween(String head, String tail, String word) {
+        for (int cut = 1; cut < word.length(); cut++) {
+            if (head.endsWith(word.substring(0, cut))
+                    && tail.startsWith(word.substring(cut))) {
+                return cut;
+            }
+        }
+        return 0;
+    }
+
+    private static void addHalf(List<LineParts.Piece> out, String half, Style style) {
+        if (half.length() >= 2 && half.indexOf('{') < 0 && half.indexOf('}') < 0
+                && hasLetter(half)) {
+            out.add(new LineParts.Piece(half, style));
+        }
     }
 
     /** 上一行結尾有幾個字是下一行開頭那個重點詞的一部分；沒有就是 0。 */
