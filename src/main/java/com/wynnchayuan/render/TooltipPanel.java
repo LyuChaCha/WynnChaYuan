@@ -342,11 +342,14 @@ public final class TooltipPanel {
         // 照新寬度重新置中。放得下的語言（中文、日文）原封不動。見 TooltipWiden。
         //
         // 放在拉正<b>之後</b>：量的是最後真正要畫的那一份。
-        List<Component> fitted = com.wynnchayuan.translate.TooltipWiden.fit(
-                tooltip, out, centered, leftAligned, TooltipPanel::measure);
-        // 最後才拆名稱：多生一行會破壞撐寬那一步「一行對一行」的前提。見 NameWrap。
-        return com.wynnchayuan.translate.NameWrap.split(
-                tooltip, fitted, store, TooltipPanel::measure);
+        // 先拆名稱再撐寬：撐寬是照最寬那一行算的，而沒拆開的「譯名 (原文)」
+        // 就是最寬的那一行——先撐開再拆，右邊就空出一大塊。見 NameWrap。
+        com.wynnchayuan.translate.NameWrap.Split split =
+                com.wynnchayuan.translate.NameWrap.split(
+                        tooltip, out, centered, store, TooltipPanel::measure);
+        return com.wynnchayuan.translate.TooltipWiden.fit(
+                split.original(), split.translated(), split.centered(),
+                leftAligned, TooltipPanel::measure);
     }
 
     /** 量一行畫出來多寬；沒有字型（headless）時是 0，撐寬那一步就什麼都不做。 */

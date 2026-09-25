@@ -72,6 +72,7 @@ public final class NameWrapTest {
         noOriginal(store);
         noFont(store);
         lineUp(store);
+        inStep(store);
         invisibleRow(store);
 
         System.out.println(failures == 0
@@ -88,7 +89,7 @@ public final class NameWrapTest {
         List<Component> translated = List.of(
                 row("燼咒牧杖 (Cindercurse Crosier)", NAME, " [51.0%]", WEAR));
 
-        List<Component> out = NameWrap.split(original, translated, store, WIDTH);
+        List<Component> out = rows(original, translated, store, WIDTH);
 
         check("多出一行（實際 " + out.size() + " 行）", out.size() == 2);
         if (out.size() != 2) {
@@ -116,7 +117,7 @@ public final class NameWrapTest {
         List<Component> original = List.of(
                 row("Idol of the Everlasting Flame", NAME, " [98.0%]", WEAR));
         List<Component> translated = List.of(row("神像 (Idol)", NAME, " [98.0%]", WEAR));
-        List<Component> out = NameWrap.split(original, translated, store, WIDTH);
+        List<Component> out = rows(original, translated, store, WIDTH);
         check("放得下就維持一行", out == translated);
     }
 
@@ -125,7 +126,7 @@ public final class NameWrapTest {
         List<Component> original = List.of(row("Crosier", NAME, " [51.0%]", WEAR));
         List<Component> translated = List.of(row("燼咒牧杖啊啊啊", NAME, " [51.0%]", WEAR));
         check("沒有附原文就不拆",
-              NameWrap.split(original, translated, store, WIDTH) == translated);
+              rows(original, translated, store, WIDTH) == translated);
     }
 
     /** headless 量出來全是 0，寬度那條規則不該被當成「超寬」。 */
@@ -135,7 +136,7 @@ public final class NameWrapTest {
         List<Component> translated = List.of(
                 row("燼咒牧杖 (Cindercurse Crosier)", NAME, " [51.0%]", WEAR));
         check("量不出寬度就不動",
-              NameWrap.split(original, translated, store, c -> 0) == translated);
+              rows(original, translated, store, c -> 0) == translated);
     }
 
     /**
@@ -162,7 +163,7 @@ public final class NameWrapTest {
                 row(badge, NAME, "燼咒牧杖 (Cindercurse Crosier)", NAME,
                     " [51.0%]", WEAR));
 
-        List<Component> out = NameWrap.split(original, translated, store, WIDTH);
+        List<Component> out = rows(original, translated, store, WIDTH);
         check("拆成兩行（實際 " + out.size() + " 行）", out.size() == 2);
         if (out.size() != 2) {
             return;
@@ -186,13 +187,56 @@ public final class NameWrapTest {
         ToIntFunction<Component> width =
                 c -> c.getString().startsWith("󟌀") ? 0 : WIDTH.applyAsInt(c);
 
-        List<Component> out = NameWrap.split(original, translated, store, width);
+        List<Component> out = rows(original, translated, store, width);
         check("拆的是看得見的那一行（實際 " + out.size() + " 行）", out.size() == 3);
         if (out.size() == 3) {
             check("第 0 行原封不動", out.get(0) == translated.get(0));
             check("原文接在名稱下面（實際 " + out.get(2).getString() + "）",
                   out.get(2).getString().endsWith("(Cindercurse Crosier)"));
         }
+    }
+
+    /**
+     * 拆完的譯文。
+     *
+     * <p>置中旗標這裡一律給「不置中」——{@link NameWrap#split} 只是把它跟著補一格，
+     * 內容不影響判斷。行數有沒有跟著補，由 {@link #inStep} 單獨釘。
+     */
+    private static List<Component> rows(List<Component> original,
+                                        List<Component> translated,
+                                        TranslationStore store,
+                                        ToIntFunction<Component> width) {
+        return NameWrap.split(original, translated,
+                              new boolean[translated.size()], store, width).translated();
+    }
+
+    /**
+     * 拆出一行之後，原文與置中旗標要跟著補一格。
+     *
+     * <h2>為什麼</h2>
+     * 後面的 {@link TooltipWiden#fit} 三份行數對不起來就整個不做事，而那一步正是
+     * 把靠右的欄位收回同一條右緣的地方。對不起來的話，實機會看到
+     * 「職業類型停在原本的右緣、戰鬥等級被推到新的右緣」。
+     */
+    private static void inStep(TranslationStore store) {
+        List<Component> original = List.of(
+                row("Cindercurse Crosier", NAME, " [51.0%]", WEAR),
+                row("Class Type", NAME));
+        List<Component> translated = List.of(
+                row("燼咒牧杖 (Cindercurse Crosier)", NAME, " [51.0%]", WEAR),
+                row("職業類型", NAME));
+
+        NameWrap.Split split = NameWrap.split(original, translated,
+                                              new boolean[] {false, true}, store, WIDTH);
+        check("譯文多一行（實際 " + split.translated().size() + "）",
+              split.translated().size() == 3);
+        check("原文跟著補一格（實際 " + split.original().size() + "）",
+              split.original().size() == 3);
+        check("補的是名稱那一行，當作拆出來那一行的對照",
+              split.original().get(1) == original.get(0));
+        check("置中旗標也補一格，而且後面那些沒有錯位",
+              split.centered().length == 3 && !split.centered()[0]
+                      && !split.centered()[1] && split.centered()[2]);
     }
 
     /** 照遊戲送來的形狀組一行：一段一個顏色。 */

@@ -33,9 +33,22 @@ import java.util.function.ToIntFunction;
  * 原文自己一行落在框下面，看得到也複製得到。耐久度留在第一行——它跟名稱是一組，
  * 而且框上本來就替它留了位置。
  *
- * <h2>為什麼不在 {@link TooltipWiden} 裡做</h2>
- * 撐寬那一步的前提是「譯文與原文一行對一行」（見 {@link TooltipWiden#fit}），
- * 而這裡會多生一行。所以排在撐寬<b>之後</b>，整份 tooltip 的最後一步。
+ * <h2>為什麼一定要排在撐寬<b>之前</b></h2>
+ * 第一版排在 {@link TooltipWiden#fit} 後面，理由是撐寬那一步的前提是
+ * 「譯文與原文一行對一行」，而這裡會多生一行。結果實機的欄位跑掉了：
+ *
+ * <pre>
+ *   職業類型      法師/闇導士        ← 停在原本的右緣
+ *   戰鬥等級                  1     ← 被推到新的右緣
+ * </pre>
+ *
+ * <p>撐寬看到的還是<b>沒拆開</b>的「{@code 橡木法杖 (Oak Wood Wand)}」——那一行比英文
+ * 寬了六十幾像素，於是整份 tooltip 照那個寬度撐開，靠右的欄位跟著往右移。等這裡再把
+ * 名稱拆成兩行，寬度已經回不去了，右邊就空出一大塊。
+ *
+ * <p>所以改成先拆再撐寬；「一行對一行」靠 {@link Split} 同步補一行原文維持：多出來的
+ * 那一行拿原本的名稱那一行當對照，兩截都比它窄，撐寬那一步因此什麼都不會做——
+ * 正是我們要的。
  *
  * <h2>看不見的第 0 行不會被動到</h2>
  * 物品名稱其實是兩行，第 0 行寬度是 0（見 {@code TooltipPanel}）。量出來是 0，
@@ -50,15 +63,18 @@ public final class NameWrap {
      *
      * @param original   遊戲送來的原文，逐行
      * @param translated 翻好的每一行
+     * @param centered   每一行是不是置中的；拆出一行就要跟著補一格
      * @param store      查「括號裡是不是我們附上去的原文」用的
      * @param width      量寬度；正式路徑是 {@code mc.font.width}，測試注入假字型
-     * @return 不需要拆時就是 {@code translated} 本身；否則是多一行的新清單
+     * @return 不需要拆時三份都是傳進來的那一份；否則三份同步多一行
      */
-    public static List<Component> split(List<Component> original, List<Component> translated,
-                                        TranslationStore store, ToIntFunction<Component> width) {
-        if (original == null || translated == null || store == null
-                || !store.namesWithOriginal()) {
-            return translated;
+    public static Split split(List<Component> original, List<Component> translated,
+                              boolean[] centered, TranslationStore store,
+                              ToIntFunction<Component> width) {
+        Split same = new Split(original, translated, centered);
+        if (original == null || translated == null || centered == null || store == null
+                || !store.namesWithOriginal() || centered.length != translated.size()) {
+            return same;
         }
         int n = Math.min(original.size(), translated.size());
         for (int i = 0; i < n; i++) {
@@ -79,9 +95,35 @@ public final class NameWrap {
                             slice(pieces, span[1], text(pieces).length())));
             out.add(i + 1, indented(indent(pieces, width),
                                     slice(pieces, span[0] + 1, span[1])));
-            return out;
+            return new Split(insert(original, i), out, insert(centered, i));
         }
-        return translated;
+        return same;
+    }
+
+    /**
+     * 拆完的三份：原文、譯文、置中旗標，行數一致。
+     *
+     * <p>後面的 {@link TooltipWiden#fit} 要三份對得起來才肯動，見 {@link #split}。
+     */
+    public record Split(List<Component> original, List<Component> translated,
+                        boolean[] centered) {}
+
+    /** 第 {@code i} 項複製一份插在它後面，行數才跟拆開的譯文對得起來。 */
+    private static <T> List<T> insert(List<T> rows, int i) {
+        List<T> out = new ArrayList<>(rows);
+        if (i < out.size()) {
+            out.add(i + 1, out.get(i));
+        }
+        return out;
+    }
+
+    /** 見 {@link #insert(List, int)}：置中旗標也要跟著補一格。 */
+    private static boolean[] insert(boolean[] flags, int i) {
+        boolean[] out = new boolean[flags.length + 1];
+        System.arraycopy(flags, 0, out, 0, i + 1);
+        out[i + 1] = flags[i];
+        System.arraycopy(flags, i + 1, out, i + 2, flags.length - i - 1);
+        return out;
     }
 
     /** 一段字與它的樣式。整行拆成這樣才切得開。 */
