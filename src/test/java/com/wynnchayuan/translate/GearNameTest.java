@@ -83,6 +83,7 @@ public final class GearNameTest {
               "地裂".equals(store.lookup("Fissure")));
 
         nameModes();
+        badgeInDescription();
         decorations();
         twoLineName();
         abilityNodeTitles();
@@ -133,6 +134,70 @@ public final class GearNameTest {
               "鐵匠鋪 (Smithy)".equals(store.lookup("Smithy")));
         check("撞名的技能標題不加原文（實際 " + store.lookup("Diffraction") + "）",
               "晶化蔓延".equals(store.lookup("Diffraction")));
+
+        // 敘述那幾行不附原文。見 TranslationStore#holdAppendedOriginal。
+        TranslationStore.holdAppendedOriginal(true);
+        check("★ 敘述那幾行只給譯名（實際 " + store.lookup("Smithy") + "）",
+              "鐵匠鋪".equals(store.lookup("Smithy")));
+        TranslationStore.holdAppendedOriginal(false);
+        check("放開之後名稱那一行照樣附原文（實際 " + store.lookup("Smithy") + "）",
+              "鐵匠鋪 (Smithy)".equals(store.lookup("Smithy")));
+    }
+
+    /**
+     * 敘述裡提到的同名裝備不附原文。
+     *
+     * <h2>實機回報</h2>
+     * 公會徽章的 tooltip 是
+     *
+     * <pre>
+     *   Guild Badge
+     *
+     *   Unlocks the Guild Badge
+     *   Snowflake
+     * </pre>
+     *
+     * 最後那一行是徽章的名字，而 Wynncraft 剛好有一件飾品也叫 {@code Snowflake}。
+     * F6 選「譯名 + 原文」時，那一行被畫成「雪花 (Snowflake)」，還被 NameWrap
+     * 折成兩行夾在英文敘述中間——玩家看到的是「UI 裡的物品名被當成武器名」。
+     *
+     * <p>兩個方向都測：名稱那一行仍然要附原文，只測敘述的話把功能整個關掉也會過。
+     */
+    private static void badgeInDescription() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-badge");
+        Files.writeString(dir.resolve("gear-accessory.json"), """
+                {"_meta": {"gearNames": true},
+                 "entries": {"a1": {"src": "Snowflake", "dst": "雪花", "role": "name"}}}
+                """, StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("misc.json"),
+                "{\"Guild Badge\": \"公會徽章\"}", StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+
+        String body = joined(store, "Guild Badge", "",
+                             "Unlocks the Guild Badge", "Snowflake");
+        check("★ 敘述裡的徽章名只給譯名（實際 " + body.replace(System.lineSeparator(), " / ") + "）",
+              body.contains("雪花") && !body.contains("(Snowflake)"));
+
+        String name = joined(store, "Snowflake", "Snowflake", "Combat Lv. Min: 1");
+        check("名稱那一行照樣附原文（實際 " + name.replace(System.lineSeparator(), " / ") + "）",
+              name.contains("雪花 (Snowflake)"));
+    }
+
+    /** 整份 tooltip 翻完之後串成一段，方便比對。 */
+    private static String joined(TranslationStore store, String... rows) {
+        java.util.List<net.minecraft.network.chat.Component> tip =
+                new java.util.ArrayList<>();
+        for (String row : rows) {
+            tip.add(net.minecraft.network.chat.Component.literal(row));
+        }
+        StringBuilder all = new StringBuilder();
+        for (net.minecraft.network.chat.Component line
+                : com.wynnchayuan.render.TooltipPanel.translateLines(tip, store)) {
+            all.append(line.getString()).append(System.lineSeparator());
+        }
+        return all.toString();
     }
 
     /**
