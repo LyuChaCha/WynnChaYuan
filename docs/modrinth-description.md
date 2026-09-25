@@ -14,7 +14,7 @@
 
 ## English
 
-> **Beta.** The translations are mostly AI-generated and only partly proofread. Expect mistranslations and inconsistent terms.
+> **Beta.** Some translations are written by hand and then rendered by AI, a smaller part is translated by AI directly, and most of the core content has been proofread by a person. The other languages are AI-translated from the Traditional Chinese, so expect mistranslations and inconsistent terms.
 
 ### What it translates
 
@@ -109,7 +109,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 
 ## 繁體中文
 
-> **目前是 Beta。** 譯文大多由 AI 產出，只有一部分經過人工校稿，會有錯譯與用詞不一致。
+> **目前是 Beta。** 部分譯文由人工輸入再經 AI 轉出，一小部分直接由 AI 翻譯，大部分基礎內容都經過人工校稿。其他語言目前基本上都是圍繞著繁體中文再做 AI 翻譯，可能會有錯譯與用詞不一致。
 
 ### 翻譯範圍
 
