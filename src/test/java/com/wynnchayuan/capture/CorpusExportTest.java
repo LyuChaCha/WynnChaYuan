@@ -116,8 +116,11 @@ public final class CorpusExportTest {
         Pattern send = Pattern.compile(
                 "BodyPublishers|\\.POST\\(|\\.PUT\\(|HttpURLConnection|setDoOutput");
         Pattern host = Pattern.compile("\"https?://([^/\"]+)");
+        // api.github.com 是唯讀的：問「譯文最後一次改動是哪一個 commit」，
+        // 一次 GET、不帶任何本機資料。見 RemoteSync#remoteVersion。
         Set<String> allowed = Set.of(
-                "raw.githubusercontent.com", "cdn.jsdelivr.net", "github.com");
+                "raw.githubusercontent.com", "cdn.jsdelivr.net", "github.com",
+                "api.github.com");
         List<String> senders = new ArrayList<>();
         Set<String> hosts = new TreeSet<>();
         try (Stream<Path> files = Files.walk(Path.of("src/main/java"))) {

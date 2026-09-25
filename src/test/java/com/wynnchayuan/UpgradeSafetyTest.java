@@ -208,6 +208,9 @@ public final class UpgradeSafetyTest {
         expected.addProperty("wynntilsUi", true);
         // 0.2.3：按住 Shift 暫時看另一種物品名稱。舊設定檔沒有，補上預設值。
         expected.addProperty("shiftPeekNames", true);
+        // 0.2.3：翻譯改成「先問有沒有新的」。上一次抓到哪一版、要不要自己抓。
+        expected.addProperty("syncedTranslations", "");
+        expected.addProperty("autoUpdateTranslations", false);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));

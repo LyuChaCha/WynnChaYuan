@@ -227,6 +227,25 @@ public final class CollectorConfig {
     private String notifiedVersion = "";
 
     /**
+     * 上一次把譯文抓下來時，譯文停在哪一個 commit。
+     *
+     * <p>空的代表「從來沒抓過」——那一次照抓不誤，新玩家不必先被問一次才有翻譯。
+     * 之後就拿它跟 {@link com.wynnchayuan.translate.RemoteSync#remoteVersion()}
+     * 比，一樣就什麼都不做。
+     */
+    private String syncedTranslations = "";
+
+    /**
+     * 進遊戲就自己把新譯文抓下來，不問。
+     *
+     * <h2>為什麼預設是關的</h2>
+     * 抓一次是三十幾個檔。想要最新翻譯的人打開它，其他人只會在<b>真的有新東西</b>
+     * 的時候在聊天室看到一行提示，要不要更新自己決定。在遊戲裡對照兩種語言的人
+     * 尤其需要這個：切語言不該每次都重抓一遍。
+     */
+    private boolean autoUpdateTranslations = false;
+
+    /**
      * 是否寫出診斷檔。
      *
      * <p><b>預設關閉。</b>那些檔案是拿來回報問題用的——對排查很有用，
@@ -604,6 +623,27 @@ public final class CollectorConfig {
     public void notifiedVersion(String version) {
         notifiedVersion = version == null ? "" : version;
         save();
+    }
+
+    /** 見 {@link #syncedTranslations}。 */
+    public String syncedTranslations() {
+        return syncedTranslations;
+    }
+
+    public void syncedTranslations(String version) {
+        syncedTranslations = version == null ? "" : version;
+        save();
+    }
+
+    /** 見 {@link #autoUpdateTranslations}。 */
+    public boolean autoUpdateTranslations() {
+        return autoUpdateTranslations;
+    }
+
+    public boolean toggleAutoUpdateTranslations() {
+        autoUpdateTranslations = !autoUpdateTranslations;
+        save();
+        return autoUpdateTranslations;
     }
 
     public boolean debugDumps() {
@@ -1145,6 +1185,9 @@ public final class CollectorConfig {
         }
         collect = bool(o, "collect", collect);
         notifiedVersion = str(o, "notifiedVersion", notifiedVersion);
+        syncedTranslations = str(o, "syncedTranslations", syncedTranslations);
+        autoUpdateTranslations =
+                bool(o, "autoUpdateTranslations", autoUpdateTranslations);
         language = str(o, "language", language).trim();
         fallbackLanguage = str(o, "fallbackLanguage", fallbackLanguage).trim();
         uiLanguage = str(o, "uiLanguage", uiLanguage).trim();
@@ -1320,6 +1363,8 @@ public final class CollectorConfig {
             o.addProperty("showOverlays", showOverlays);
             o.addProperty("collect", collect);
             o.addProperty("notifiedVersion", notifiedVersion);
+            o.addProperty("syncedTranslations", syncedTranslations);
+            o.addProperty("autoUpdateTranslations", autoUpdateTranslations);
             o.addProperty("language", language);
             o.addProperty("fallbackLanguage", fallbackLanguage);
             // uiLanguage 與 marketSearch 先前<b>只活在記憶體裡</b>：setUiLanguage 與

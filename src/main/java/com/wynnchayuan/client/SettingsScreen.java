@@ -612,6 +612,11 @@ public final class SettingsScreen extends Screen {
                     b.setMessage(sourceLabel());
                     reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
                 });
+        cycle("data.autoupdate",
+                this::autoUpdateLabel, b -> {
+                    WynnChaYuan.config().toggleAutoUpdateTranslations();
+                    b.setMessage(autoUpdateLabel());
+                });
         reloadButton = action("data.reload",
                 T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
                         ? "data.reload.github" : "data.reload.local"),
@@ -1217,6 +1222,11 @@ public final class SettingsScreen extends Screen {
     private Component sourceLabel() {
         boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
         return pick(T.s(github ? "data.source.github" : "data.source.local"));
+    }
+
+    /** 進遊戲就自己抓新譯文。見 {@link com.wynnchayuan.CollectorConfig#autoUpdateTranslations}。 */
+    private Component autoUpdateLabel() {
+        return ctrl(onOff(WynnChaYuan.config().autoUpdateTranslations()));
     }
 
     private Component collectLabel() {
