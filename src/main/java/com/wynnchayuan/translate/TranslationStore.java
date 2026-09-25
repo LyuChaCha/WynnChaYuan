@@ -1676,7 +1676,7 @@ public final class TranslationStore {
         if (hit == null) {
             return shiny(template);
         }
-        if (namesWithOriginal && gearOnly(template.strip())) {
+        if (namesWithOriginal && !holdAppended && gearOnly(template.strip())) {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return hit + " (" + template.strip() + ")";
         }
@@ -1765,6 +1765,38 @@ public final class TranslationStore {
         }
         return false;
     }
+
+    /**
+     * 現在畫的<b>不是</b>物品名稱那一行，所以別附原文。
+     *
+     * <h2>實機回報</h2>
+     * 公會徽章的 tooltip 長這樣：
+     *
+     * <pre>
+     *   Guild Badge
+     *
+     *   Unlocks the Guild Badge
+     *   Snowflake
+     * </pre>
+     *
+     * 最後那一行是徽章的名字，而 Wynncraft 剛好有一件飾品也叫 {@code Snowflake}
+     * ——只有裝備檔用到這個原文，{@link #gearOnly} 說是，於是敘述裡的徽章名
+     * 被當成裝備名附上原文，「雪花 (Snowflake)」還被 {@code NameWrap} 折成兩行，
+     * 夾在一段英文敘述中間。
+     *
+     * <p>附原文是給玩家<b>對 wiki 與市場</b>用的，那個需求只在物品名稱那一行
+     * 成立。敘述裡提到同名的東西時，附上去只是噪音。名稱在哪一行是呼叫端才
+     * 知道的事（跟 {@link #isBareGearName} 同一個道理），所以由
+     * {@code TooltipPanel#translateLines} 在畫第三行以後時掛上這個旗標。
+     *
+     * <p>預設是關的：漏掛只會少一對括號，掛錯才會讓整份語料的名稱都不附原文。
+     */
+    public static void holdAppendedOriginal(boolean on) {
+        holdAppended = on;
+    }
+
+    /** 見 {@link #holdAppendedOriginal}。算繪只有一條執行緒，用靜態的就夠。 */
+    private static volatile boolean holdAppended = false;
 
     /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
     public boolean namesWithOriginal() {

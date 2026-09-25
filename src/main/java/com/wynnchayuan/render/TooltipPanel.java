@@ -209,96 +209,104 @@ public final class TooltipPanel {
                 i = 2;
             }
         }
-        while (i < n) {
-            int longest = Math.min(store.maxBlockLines(), n - i);
-            List<Component> block = null;
-            int used = 0;
-            for (int len = longest; len >= 2 && block == null; len--) {
-                boolean[] slice = new boolean[len];
-                System.arraycopy(centered, i, slice, 0, len);
-                block = LineTranslator.translateBlock(
-                        styled.subList(i, i + len), store, slice);
-                used = len;
-            }
-            if (block != null) {
-                spans.add(new int[] {i, i + used, out.size(), out.size() + block.size()});
-                out.addAll(block);
-                anyTranslated = true;
-                for (int k = i; k < i + used; k++) {
-                    hit[k] = true;
+        // 物品名稱最多佔前兩行（第 0 行寬度是 0，看得見的在第 1 行）。
+        // 第三行起是敘述，裡面提到的同名裝備不附原文。見
+        // TranslationStore#holdAppendedOriginal。
+        try {
+            while (i < n) {
+                TranslationStore.holdAppendedOriginal(i >= 2);
+                int longest = Math.min(store.maxBlockLines(), n - i);
+                List<Component> block = null;
+                int used = 0;
+                for (int len = longest; len >= 2 && block == null; len--) {
+                    boolean[] slice = new boolean[len];
+                    System.arraycopy(centered, i, slice, 0, len);
+                    block = LineTranslator.translateBlock(
+                            styled.subList(i, i + len), store, slice);
+                    used = len;
                 }
-                i += used;
-                continue;
-            }
-            // 從最長試到兩行都沒中，才記一筆。記在這裡而不是 translateBlock 裡面，
-            // 是因為那邊每試一個長度就會記一次——一份八行的素材清單灌十九筆進去，
-            // 真正想查的那一段就永遠排不進診斷檔。
-            //
-            // 光是移到這裡還不夠。素材清單的每一行都查不到，而每一行都是一個新的
-            // 起點——同一份清單以「整段往後挪一行」的方式被記了十幾次，
-            // 二十個名額全被它吃光，使用者真正要查的那一段照樣看不到。
-            //
-            // 會被自動斷行的段落一定<b>接在空行後面，或從第一行開始</b>，
-            // 所以起點落在段落中間的那些窗格本來就不是要查的東西，不必記。
-            // 一樣要剝色碼：帶顏色的空行 getString 是「§7」，不算 blank。
-            boolean paragraphStart =
-                    i == 0 || styled.get(i - 1).getStringWithoutFormatting().isBlank();
-            if (longest >= 2 && paragraphStart) {
-                StringBuilder key = new StringBuilder();
-                for (int k = i; k < i + longest; k++) {
-                    if (k > i) {
-                        key.append(System.lineSeparator());
+                if (block != null) {
+                    spans.add(new int[] {i, i + used, out.size(), out.size() + block.size()});
+                    out.addAll(block);
+                    anyTranslated = true;
+                    for (int k = i; k < i + used; k++) {
+                        hit[k] = true;
                     }
-                    key.append(com.wynnchayuan.capture.LineParts.of(styled.get(k)).template());
+                    i += used;
+                    continue;
                 }
-                LineTranslator.noteBlockMiss(key.toString(), store);
-            }
-            // cards.json 另外記一份，但記的是<b>那一段</b>，不是上面那個窗格。
-            //
-            // majorid-debug.txt 記的是散文、而且有名額上限（實機常被登入時的
-            // 聊天洗光）；cards.json 沒有上限、只去重，而且寫成可以直接併進
-            // 語料的形狀。
-            //
-            // 為什麼不共用上面的 key：那個窗格長達 maxBlockLines（實測 15）行，
-            // 一張 19 行的迷你任務卡會把底下 Wynntils 自己加的中文提示一起吃
-            // 進來——含中文的鍵會被隱私那一關整段擋掉，擋掉的正是卡片敘述本身。
-            // 見 CardDump#paragraphKey。
-            //
-            // 不受上面 longest >= 2 拘束：那個條件是窗格邏輯的，跟段落無關。
-            //
-            // 算繪路徑上的東西，出事就當沒發生。
-            if (paragraphStart) {
-                try {
-                    String para = com.wynnchayuan.capture.CardDump.paragraphKey(styled, i);
-                    if (para != null) {
-                        com.wynnchayuan.capture.CardDump.note(tooltip, styled, para, store);
+                // 從最長試到兩行都沒中，才記一筆。記在這裡而不是 translateBlock 裡面，
+                // 是因為那邊每試一個長度就會記一次——一份八行的素材清單灌十九筆進去，
+                // 真正想查的那一段就永遠排不進診斷檔。
+                //
+                // 光是移到這裡還不夠。素材清單的每一行都查不到，而每一行都是一個新的
+                // 起點——同一份清單以「整段往後挪一行」的方式被記了十幾次，
+                // 二十個名額全被它吃光，使用者真正要查的那一段照樣看不到。
+                //
+                // 會被自動斷行的段落一定<b>接在空行後面，或從第一行開始</b>，
+                // 所以起點落在段落中間的那些窗格本來就不是要查的東西，不必記。
+                // 一樣要剝色碼：帶顏色的空行 getString 是「§7」，不算 blank。
+                boolean paragraphStart =
+                        i == 0 || styled.get(i - 1).getStringWithoutFormatting().isBlank();
+                if (longest >= 2 && paragraphStart) {
+                    StringBuilder key = new StringBuilder();
+                    for (int k = i; k < i + longest; k++) {
+                        if (k > i) {
+                            key.append(System.lineSeparator());
+                        }
+                        key.append(com.wynnchayuan.capture.LineParts.of(styled.get(k)).template());
                     }
-                } catch (Throwable ignored) {
-                    // 收集絕不能反過來弄壞畫面
+                    LineTranslator.noteBlockMiss(key.toString(), store);
                 }
+                // cards.json 另外記一份，但記的是<b>那一段</b>，不是上面那個窗格。
+                //
+                // majorid-debug.txt 記的是散文、而且有名額上限（實機常被登入時的
+                // 聊天洗光）；cards.json 沒有上限、只去重，而且寫成可以直接併進
+                // 語料的形狀。
+                //
+                // 為什麼不共用上面的 key：那個窗格長達 maxBlockLines（實測 15）行，
+                // 一張 19 行的迷你任務卡會把底下 Wynntils 自己加的中文提示一起吃
+                // 進來——含中文的鍵會被隱私那一關整段擋掉，擋掉的正是卡片敘述本身。
+                // 見 CardDump#paragraphKey。
+                //
+                // 不受上面 longest >= 2 拘束：那個條件是窗格邏輯的，跟段落無關。
+                //
+                // 算繪路徑上的東西，出事就當沒發生。
+                if (paragraphStart) {
+                    try {
+                        String para = com.wynnchayuan.capture.CardDump.paragraphKey(styled, i);
+                        if (para != null) {
+                            com.wynnchayuan.capture.CardDump.note(tooltip, styled, para, store);
+                        }
+                    } catch (Throwable ignored) {
+                        // 收集絕不能反過來弄壞畫面
+                    }
+                }
+                // 撞名的裝備名不是只會出現在名稱那一行。套裝的成員清單、寶箱裡的
+                // 獎勵預覽、鑄造材料，都是「項目符號 + 裝備名」單獨佔一行——那些行
+                // 一樣會被同名的技能／Major ID 譯文頂掉。實測 33 個裝備名撞名，
+                // 其中 23 個不管裸的還是帶項目符號都會被換掉。
+                //
+                // 只在<b>不是</b>技能樹／使命面板時擋。技能樹的「解鎖後將封鎖:」
+                // 底下列的正是技能名，那些該翻——而它們剛好也有同名裝備，
+                // 所以分辨面板這一步不能省。見 #isAbilityNode。
+                Component translated =
+                        !abilityPanel && blockedGearName(styled.get(i), store)
+                        ? null
+                        : LineTranslator.translate(styled.get(i), store, centered[i],
+                                                   leftAligned);
+                spans.add(new int[] {i, i + 1, out.size(), out.size() + 1});
+                if (translated != null) {
+                    anyTranslated = true;
+                    hit[i] = true;
+                    out.add(translated);
+                } else {
+                    out.add(LineTranslator.untranslated(styled.get(i)));
+                }
+                i++;
             }
-            // 撞名的裝備名不是只會出現在名稱那一行。套裝的成員清單、寶箱裡的
-            // 獎勵預覽、鑄造材料，都是「項目符號 + 裝備名」單獨佔一行——那些行
-            // 一樣會被同名的技能／Major ID 譯文頂掉。實測 33 個裝備名撞名，
-            // 其中 23 個不管裸的還是帶項目符號都會被換掉。
-            //
-            // 只在<b>不是</b>技能樹／使命面板時擋。技能樹的「解鎖後將封鎖:」
-            // 底下列的正是技能名，那些該翻——而它們剛好也有同名裝備，
-            // 所以分辨面板這一步不能省。見 #isAbilityNode。
-            Component translated =
-                    !abilityPanel && blockedGearName(styled.get(i), store)
-                    ? null
-                    : LineTranslator.translate(styled.get(i), store, centered[i],
-                                               leftAligned);
-            spans.add(new int[] {i, i + 1, out.size(), out.size() + 1});
-            if (translated != null) {
-                anyTranslated = true;
-                hit[i] = true;
-                out.add(translated);
-            } else {
-                out.add(LineTranslator.untranslated(styled.get(i)));
-            }
-            i++;
+        } finally {
+            TranslationStore.holdAppendedOriginal(false);
         }
         // 同一段不能一半中文一半英文，見 evenOut。
         //

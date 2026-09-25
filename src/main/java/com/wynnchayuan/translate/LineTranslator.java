@@ -5567,10 +5567,11 @@ public final class LineTranslator {
 
     /** 第 {@code gap} 個間隔<b>後面</b>那一段有沒有實字。造字區的圖示不算。 */
     static boolean textAfterGap(List<Run> runs, int gap) {
+        boolean[] gaps = tooltipGaps(runs);
         int seen = 0;
         boolean after = false;
-        for (Run r : runs) {
-            if (isColumnGap(r)) {
+        for (int i = 0; i < runs.size(); i++) {
+            if (gaps[i]) {
                 if (after) {
                     return false;          // 走到下一個間隔了，這一段沒有實字
                 }
@@ -5582,9 +5583,9 @@ public final class LineTranslator {
             if (!after) {
                 continue;
             }
-            String text = r.text();
-            for (int i = 0; text != null && i < text.length(); i++) {
-                if (Character.isLetterOrDigit(text.charAt(i))) {
+            String text = runs.get(i).text();
+            for (int k = 0; text != null && k < text.length(); k++) {
+                if (Character.isLetterOrDigit(text.charAt(k))) {
                     return true;
                 }
             }
@@ -5594,28 +5595,30 @@ public final class LineTranslator {
 
     /** 每個間隔的偏移量，順序跟 {@link #countSpaces} 數出來的一樣。 */
     private static int[] gapPixels(List<Run> runs) {
-        int[] out = new int[countSpaces(runs)];
+        boolean[] gaps = tooltipGaps(runs);
+        int[] out = new int[count(gaps)];
         int n = 0;
-        for (Run r : runs) {
-            if (isColumnGap(r)) {
-                out[n++] = r.px();
+        for (int i = 0; i < runs.size(); i++) {
+            if (gaps[i]) {
+                out[n++] = runs.get(i).px();
             }
         }
         return out;
     }
 
     static boolean labelledRun(List<Run> runs, int gap) {
+        boolean[] gaps = tooltipGaps(runs);
         int seen = 0;
-        for (Run r : runs) {
-            if (isColumnGap(r)) {
+        for (int i = 0; i < runs.size(); i++) {
+            if (gaps[i]) {
                 if (seen++ == gap) {
                     return false;              // 走到這個間隔了，前面沒有標籤
                 }
                 continue;
             }
-            String text = r.text();
-            for (int i = 0; text != null && i < text.length(); i++) {
-                if (Character.isLetterOrDigit(text.charAt(i))) {
+            String text = runs.get(i).text();
+            for (int k = 0; text != null && k < text.length(); k++) {
+                if (Character.isLetterOrDigit(text.charAt(k))) {
                     return true;
                 }
             }
@@ -5779,7 +5782,7 @@ public final class LineTranslator {
      *
      * <p>門檻本來要擋的是圖示前的微調（{@code - +1 <2px>🔒Unidentified Helmet}）。
      * 那種偏移後面接的是圖示、不是字母，「後面緊接著有字母的文字」這一條照樣擋得住。
-     * tooltip 的 {@code realign} 也共用 {@link #isColumnGap}，所以不去動它。
+     * tooltip 那一路的欄界另外放寬，見 {@link #tooltipGaps}。
      */
     static boolean[] chatGaps(List<Run> runs) {
         boolean[] out = new boolean[runs.size()];
@@ -5820,6 +5823,71 @@ public final class LineTranslator {
             }
             String text = r.text().stripLeading();
             return !text.isEmpty() && Character.isLetter(text.codePointAt(0));
+        }
+        return false;
+    }
+
+    /**
+     * tooltip 這條路的欄界：{@link #isColumnGap} 認得的，加上「標籤後面、
+     * 緊接著文字」的小偏移。
+     *
+     * <h2>為什麼 tooltip 也要放寬</h2>
+     * 實機回報「職業類型那一行沒有靠右」。英文那一行長這樣：
+     *
+     * <pre>
+     *   {@literal <圖示>} Class Type{@literal <+4>}Mage/Dark Wizard
+     * </pre>
+     *
+     * 兩欄之間只有 4px——因為這一行本來就<b>排滿</b>整份 tooltip 的寬度，
+     * 右欄緊貼著左欄。{@link #MIN_GAP_PX} 的門檻把它當成排版微調，整行一個
+     * 欄界都數不到（{@code countSpaces} 回 0），於是原樣送出去：中文的
+     * 「職業類型」比英文短，右欄就跟著往左縮；隔壁「戰鬥等級 99」那一行的
+     * 欄距是 71px，數得到、也補償了，右緣守住——同一份 tooltip 裡兩行的
+     * 右緣差了一截，看起來就是職業那一欄沒有靠右。
+     *
+     * <p>門檻本來要擋的是圖示前的微調：
+     *
+     * <pre>
+     *   - +1 {@literal <+2>}{@literal 🔒}Unidentified Helmet
+     * </pre>
+     *
+     * 那個 2px 的偏移前面只有「- +1 」（沒有<b>字母</b>），後面接的是圖示
+     * 不是字母——兩條各自都擋得住，所以放寬不會把它放進來。
+     *
+     * <p>跟 {@link #chatGaps} 不同的是這裡<b>不放行首的縮排</b>：tooltip 的
+     * 縮排是 {@link BlockLayout} 在管的，數成欄界會讓整段重算跟著跑掉。
+     */
+    static boolean[] tooltipGaps(List<Run> runs) {
+        boolean[] out = new boolean[runs.size()];
+        for (int i = 0; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (!r.space()) {
+                continue;
+            }
+            if (isColumnGap(r)) {
+                out[i] = true;
+                continue;
+            }
+            if (r.px() <= 0) {
+                continue;                      // 疊字用的負偏移，見 #overlayGap
+            }
+            out[i] = wordBefore(runs, i) && startsWithLetter(runs, i + 1);
+        }
+        return out;
+    }
+
+    /**
+     * 往前第一段實字<b>存在</b>、而且含字母。
+     *
+     * <p>跟 {@link #textBefore} 差在行首：那邊沒有實字也算（聊天的縮排本來就
+     * 是欄界的一部分），這邊不算。
+     */
+    private static boolean wordBefore(List<Run> runs, int at) {
+        for (int i = at - 1; i >= 0; i--) {
+            Run r = runs.get(i);
+            if (!r.space()) {
+                return GlyphSplitter.hasLetter(r.text());
+            }
         }
         return false;
     }
@@ -5876,21 +5944,17 @@ public final class LineTranslator {
     }
 
     private static int countSpaces(List<Run> runs) {
-        int n = 0;
-        for (Run r : runs) {
-            if (isColumnGap(r)) {
-                n++;
-            }
-        }
-        return n;
+        return count(tooltipGaps(runs));
     }
 
     /** 以空白為界切成幾段，每段的文字寬度。長度固定是「空白數 + 1」。 */
     private static List<Integer> segmentWidths(List<Run> runs) {
+        boolean[] gaps = tooltipGaps(runs);
         List<Integer> out = new ArrayList<>();
         int width = 0;
-        for (Run r : runs) {
-            if (isColumnGap(r)) {
+        for (int i = 0; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (gaps[i]) {
                 out.add(width);
                 width = 0;
             } else {
@@ -5911,10 +5975,12 @@ public final class LineTranslator {
 
     /** 把調整量套回第 n 個空白。 */
     private static Component apply(List<Run> runs, int[] adjust) {
+        boolean[] gaps = tooltipGaps(runs);
         MutableComponent out = Component.empty();
         int index = 0;
-        for (Run r : runs) {
-            if (!isColumnGap(r)) {
+        for (int i = 0; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (!gaps[i]) {
                 out.append(literal(r.text(), r.style()));
                 continue;
             }
