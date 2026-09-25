@@ -1,12 +1,51 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.2",
+ "latest": "0.2.3",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.3": {
+   "headline": "Wynntils screens, the content book, and Shift for the other name",
+   "items": [
+    "Wynntils' own screens are translated",
+    "Hold Shift to see the other item name; a long original wraps to its own line",
+    "Translation updates ask first: you are told when new translations exist and choose whether to update",
+    "The content book's cards: centring, reward rows, colours, and the names the list left blank",
+    "Requirement rows in gear tooltips keep their values right-aligned",
+    "An item name that fits the tooltip is no longer split across two lines",
+    "Territory labels on the guild war map and Wynntils' short item names stay in English",
+    "Corpus: all 198 cave cards in the content book, 25 mini-quest descriptions, and the Realm of Light quest states"
+   ],
+   "zh_tw": {
+    "headline": "Wynntils 畫面、內容書，以及 Shift 看另一種名稱",
+    "items": [
+     "Wynntils 自己的畫面會翻譯",
+     "按住 Shift 可以看另一種物品名稱；原文太長會換到下一行",
+     "譯文更新改成先詢問：有新譯文時會通知，要不要更新由玩家決定",
+     "內容書的卡片：置中、獎勵列、顏色，以及清單裡缺的名稱",
+     "裝備提示框的需求列維持靠右對齊",
+     "收得進提示框的物品名稱不再被拆成兩行",
+     "公會戰地圖的領地標籤與 Wynntils 的物品簡稱維持原文",
+     "語料：內容書的全部 198 張洞窟卡、25 條迷你任務敘述，以及光之領域系列的任務狀態"
+    ]
+   },
+   "zh_cn": {
+    "headline": "Wynntils 界面、内容书，以及 Shift 看另一种名称",
+    "items": [
+     "Wynntils 自己的界面会翻译",
+     "按住 Shift 可以看另一种物品名称；原文太长会换到下一行",
+     "译文更新改为先询问：有新译文时会通知，要不要更新由玩家决定",
+     "内容书的卡片：居中、奖励栏、颜色，以及列表里缺的名称",
+     "装备提示框的需求栏保持右对齐",
+     "放得进提示框的物品名称不再被拆成两行",
+     "公会战地图的领地标签与 Wynntils 的物品简称保持原文",
+     "语料：内容书的全部 198 张洞窟卡、25 条迷你任务描述，以及光之领域系列的任务状态"
+    ]
+   }
+  },
   "0.2.2": {
    "headline": "Item names, boss bar and layout fixes",
    "items": [
