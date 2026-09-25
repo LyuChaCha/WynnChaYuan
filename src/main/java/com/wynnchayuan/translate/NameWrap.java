@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.GlyphSplitter;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -76,7 +77,8 @@ public final class NameWrap {
             // 開頭那一個空白屬於「接在名字後面」，跟著括號一起走
             out.set(i, join(slice(pieces, 0, span[0]),
                             slice(pieces, span[1], text(pieces).length())));
-            out.add(i + 1, join(slice(pieces, span[0] + 1, span[1])));
+            out.add(i + 1, indented(indent(pieces, width),
+                                    slice(pieces, span[0] + 1, span[1])));
             return out;
         }
         return translated;
@@ -118,6 +120,50 @@ public final class NameWrap {
             at = end;
         }
         return out;
+    }
+
+    /**
+     * 名字前面那一截<b>圖</b>有多寬。
+     *
+     * <h2>為什麼第二行需要它</h2>
+     * 名稱那一行開頭是位移字元與徽記的圖（{@code 󏿰󏿏󐀅}），名字是從那之後
+     * 才開始畫的。拆出來的第二行沒有那一截，於是貼著面板的左緣起頭，
+     * 比名字凸出去一大塊——使用者回報的「名稱跑掉」：
+     *
+     * <pre>
+     *       橡木法杖          ← 名字從徽記後面開始
+     *   (Oak Wood Wand)      ← 第二行卻從最左邊開始
+     * </pre>
+     *
+     * <p>所以量出那一截的寬度，第二行用同樣的寬度墊開，兩行就對齊了。
+     * 墊的是 {@code minecraft:space} 字型的位移字元，不是空格——空格的寬度
+     * 是固定的 4px，湊不出任意寬度。
+     */
+    private static int indent(List<Piece> pieces, ToIntFunction<Component> width) {
+        List<Piece> lead = new ArrayList<>();
+        for (Piece p : pieces) {
+            if (p.text().codePoints().anyMatch(
+                    cp -> !GlyphSplitter.isGlyphCodePoint(cp)
+                            && !Character.isWhitespace(cp))) {
+                break;                         // 開始有字了
+            }
+            lead.add(p);
+        }
+        return lead.isEmpty() ? 0 : width.applyAsInt(join(lead));
+    }
+
+    /** 前面墊 {@code px} 寬，讓這一行對齊上一行的名字。見 {@link #indent}。 */
+    private static Component indented(int px, List<Piece> body) {
+        Component line = join(body);
+        if (px <= 0) {
+            return line;
+        }
+        String offset = SpaceOffset.encode(px);
+        return offset.isEmpty() ? line
+                : Component.empty()
+                        .append(Component.literal(offset)
+                                .setStyle(SpaceOffset.styleFor(Style.EMPTY)))
+                        .append(line);
     }
 
     @SafeVarargs

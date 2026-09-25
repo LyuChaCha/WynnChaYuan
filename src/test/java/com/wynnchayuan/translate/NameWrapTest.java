@@ -71,6 +71,7 @@ public final class NameWrapTest {
         shortEnough(store);
         noOriginal(store);
         noFont(store);
+        lineUp(store);
         invisibleRow(store);
 
         System.out.println(failures == 0
@@ -137,6 +138,42 @@ public final class NameWrapTest {
               NameWrap.split(original, translated, store, c -> 0) == translated);
     }
 
+    /**
+     * 第二行要對齊上一行的名字。
+     *
+     * <h2>實機回報</h2>
+     * 第一版把開頭那截徽記留在第一行、第二行從零開始，畫出來是：
+     *
+     * <pre>
+     *       橡木法杖
+     *   (Oak Wood Wand)      ← 貼著最左邊，比名字凸出去一截
+     * </pre>
+     *
+     * <p>徽記不能複製到第二行（會畫兩次），所以墊的是 {@code minecraft:space}
+     * 的位移字元，寬度跟那一截一樣。
+     */
+    private static void lineUp(TranslationStore store) {
+        // 實機那一截：位移字元 + 徽記的圖，全都在私用區
+        String badge = new StringBuilder()
+                .appendCodePoint(0xCFFF0).appendCodePoint(0xD0005).toString();
+        List<Component> original = List.of(
+                row(badge, NAME, "Cindercurse Crosier", NAME, " [51.0%]", WEAR));
+        List<Component> translated = List.of(
+                row(badge, NAME, "燼咒牧杖 (Cindercurse Crosier)", NAME,
+                    " [51.0%]", WEAR));
+
+        List<Component> out = NameWrap.split(original, translated, store, WIDTH);
+        check("拆成兩行（實際 " + out.size() + " 行）", out.size() == 2);
+        if (out.size() != 2) {
+            return;
+        }
+        check("徽記留在第一行", out.get(0).getString().startsWith(badge));
+        check("徽記沒有被畫第二次", !out.get(1).getString().contains(badge));
+        check("第二行有墊寬（實際 " + WIDTH.applyAsInt(out.get(1)) + " px）",
+              WIDTH.applyAsInt(out.get(1))
+                      > WIDTH.applyAsInt(Component.literal("(Cindercurse Crosier)")));
+    }
+
     /** 看不見的第 0 行寬度是 0，不能被拆出一行來。 */
     private static void invisibleRow(TranslationStore store) {
         List<Component> original = List.of(
@@ -154,7 +191,7 @@ public final class NameWrapTest {
         if (out.size() == 3) {
             check("第 0 行原封不動", out.get(0) == translated.get(0));
             check("原文接在名稱下面（實際 " + out.get(2).getString() + "）",
-                  "(Cindercurse Crosier)".equals(out.get(2).getString()));
+                  out.get(2).getString().endsWith("(Cindercurse Crosier)"));
         }
     }
 
