@@ -286,6 +286,15 @@ public final class CollectorConfig {
     private boolean translateNametags = true;
 
     /**
+     * 畫面頂端 boss bar 的標題要不要翻。
+     *
+     * <p>先前它跟怪物名牌共用 {@link #translateNametags}，而那個欄位<b>沒有接到
+     * F6</b>——只有測試在切它——所以實機上永遠是開的，關不掉（issue #825）。
+     * 打怪時那一條橫在畫面正中間，不想要的人沒有任何辦法。
+     */
+    private boolean translateBossBar = true;
+
+    /**
      * 名牌翻譯的呈現方式。
      *
      * <p>預設 {@code LOOK_AT}：原文名牌不動，注視時另外跳一個小框。
@@ -652,6 +661,11 @@ public final class CollectorConfig {
 
     public boolean translateNametags() {
         return translateNametags;
+    }
+
+    /** 見 {@link #translateBossBar}。 */
+    public boolean translateBossBar() {
+        return translateBossBar;
     }
 
     public ItemNames itemNames() {
@@ -1038,6 +1052,12 @@ public final class CollectorConfig {
         return translateNametags;
     }
 
+    public boolean toggleBossBar() {
+        translateBossBar = !translateBossBar;
+        save();
+        return translateBossBar;
+    }
+
     public NametagMode nametagMode() {
         return nametagMode;
     }
@@ -1195,6 +1215,7 @@ public final class CollectorConfig {
         collectGuiText = bool(o, "collectGuiText", collectGuiText);
         source = enumOr(o, "source", Source.class, source);
         translateNametags = bool(o, "translateNametags", translateNametags);
+        translateBossBar = bool(o, "translateBossBar", translateBossBar);
         nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
         noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
@@ -1376,6 +1397,7 @@ public final class CollectorConfig {
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);
             o.addProperty("translateNametags", translateNametags);
+            o.addProperty("translateBossBar", translateBossBar);
             o.addProperty("nametagMode", nametagMode.name());
             o.addProperty("panelSide", panelSide.name());
             o.addProperty("itemNames", itemNames.name());

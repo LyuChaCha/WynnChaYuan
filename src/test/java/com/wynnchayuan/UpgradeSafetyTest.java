@@ -211,6 +211,8 @@ public final class UpgradeSafetyTest {
         // 0.2.3：翻譯改成「先問有沒有新的」。上一次抓到哪一版、要不要自己抓。
         expected.addProperty("syncedTranslations", "");
         expected.addProperty("autoUpdateTranslations", false);
+        // 0.2.3_1：boss bar 自己的開關（issue #825）。舊設定檔沒有，補上預設值。
+        expected.addProperty("translateBossBar", true);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));

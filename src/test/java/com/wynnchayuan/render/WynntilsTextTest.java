@@ -192,6 +192,15 @@ public final class WynntilsTextTest {
         config.toggleNametags();
         check("名牌翻譯關掉時 boss bar 原樣回去", WynntilsText.bossBar(bar, config, store) == bar);
         config.toggleNametags();
+
+        // issue #825：關不掉。唯一的開關是 translateNametags，而那個欄位沒有接到
+        // F6（上面那兩行是<b>測試</b>在切它），所以實機上永遠是開的。
+        config.toggleBossBar();
+        check("boss bar 自己的開關關掉時原樣回去",
+                WynntilsText.bossBar(bar, config, store) == bar);
+        config.toggleBossBar();
+        check("再打開就照常翻",
+                WynntilsText.bossBar(bar, config, store).getString().startsWith("馬"));
     }
 
     /** 盔甲座疊出來的浮空字：討伐戰祭壇上方那種。 */
