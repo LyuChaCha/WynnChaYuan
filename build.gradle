@@ -996,3 +996,11 @@ tasks.register('runCardDumpChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.capture.CardDumpTest'
 }
 tasks.named('check') { dependsOn 'runCardDumpChecks' }
+
+tasks.register('runHijackedLetterChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證被 Wynncraft 拿去當黑幕的 Á 不會被畫出去'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.HijackedLetterTest'
+}
+tasks.named('check') { dependsOn 'runHijackedLetterChecks' }

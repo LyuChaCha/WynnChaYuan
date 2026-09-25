@@ -358,7 +358,8 @@ public final class TranslationStore {
                     JsonElement v = obj.get(key);
                     if (!key.startsWith("_") && v.isJsonPrimitive()
                             && !v.getAsString().isBlank()) {
-                        into.put(key.strip(), v.getAsString().strip());
+                        into.put(key.strip(), LineTranslator.deIcon(
+                                v.getAsString().strip()));
                     }
                 }
             } catch (Exception e) {
@@ -541,7 +542,9 @@ public final class TranslationStore {
             }
             JsonObject e = el.getAsJsonObject();
             String src = optString(e, "src");
-            String dst = optString(e, "dst");
+            // 被 Wynncraft 拿去當全螢幕黑幕的字母在這裡換掉。src 不能碰，
+            // 換了就對不上原文。見 LineTranslator#deIcon。
+            String dst = LineTranslator.deIcon(optString(e, "dst"));
             // 還沒翻的裝備名也要記下來。它是專有名詞，不能讓別的檔案裡剛好同名
             // 的條目替它翻譯——實機踩到的是武器「Guardian」被 Major ID 的
             // 「守護者」蓋掉。全庫掃過去這種撞名有 50 組。見 #gearNameKeys。
@@ -620,10 +623,12 @@ public final class TranslationStore {
             // 平鋪格式的鍵就是原文，翻了沒有一律記下來——見 seenSources。
             seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
-                entries.put(key.strip(), v.getAsString().strip());
+                // 見 LineTranslator#deIcon：黑幕那個字母在進記憶體時就換掉
+                String flat = LineTranslator.deIcon(v.getAsString().strip());
+                entries.put(key.strip(), flat);
                 otherOwners.add(key.strip());   // 扁平檔一律不是裝備名稱
                 layerOf.put(key.strip(), layer);
-                market.addListed(key.strip(), v.getAsString().strip());
+                market.addListed(key.strip(), flat);
                 ordered.add(key.strip());
                 // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
                 //
@@ -632,20 +637,20 @@ public final class TranslationStore {
                 // 「英文跑完才忽然跳成中文」就是這裡漏掉的一行。
                 // 詞彙表不收：短詞進來只會讓前綴變得分不出是哪一句。
                 if (!asTerms && key.strip().length() >= MIN_PREFIX_LENGTH) {
-                    prefixIndex.put(key.strip(), v.getAsString().strip());
+                    prefixIndex.put(key.strip(), flat);
                 }
                 noteBlockSize(key.strip());
-                noteFlat(key.strip(), v.getAsString().strip());
+                noteFlat(key.strip(), flat);
                 notePlayerKey(key.strip());
                 noteWords(key.strip());
-                noteUnwrapped(key.strip(), v.getAsString().strip());
-                noteIndented(key.strip(), v.getAsString().strip());
-                noteMarked(key.strip(), v.getAsString().strip());
+                noteUnwrapped(key.strip(), flat);
+                noteIndented(key.strip(), flat);
+                noteMarked(key.strip(), flat);
                 if (!asTerms) {
-                    noteLoose(key.strip(), v.getAsString().strip());
+                    noteLoose(key.strip(), flat);
                 }
                 if (asTerms) {
-                    noteTerm(key.strip(), v.getAsString().strip(), true);
+                    noteTerm(key.strip(), flat, true);
                 }
             }
         }
