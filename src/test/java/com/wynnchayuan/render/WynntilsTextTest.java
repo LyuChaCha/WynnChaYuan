@@ -242,13 +242,16 @@ public final class WynntilsTextTest {
         check("再打開就又換得到",
               "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
 
-        // 公會戰地圖那一格領地標籤：從 TerritoryPoi 進去到它出來，一律不翻。
-        // 實機那一格的公會叫 Fox，被 npc.json 的「Fox: 狐狸」換掉了。
-        WynntilsText.holdTerritoryLabels(true);
-        check("★ 領地標籤裡的字原樣回去（公會名是玩家取的，撞名躲不完）",
+        // 不該翻的那兩處：公會戰地圖的領地標籤（TerritoryPoi），以及物品格角落
+        // Wynntils 自己算的簡稱（ItemTextOverlayFeature）。從它們進去到出來一律不翻。
+        //
+        // 實機各踩過一次：那一格的公會叫 Fox，被 npc.json 的「Fox: 狐狸」換掉；
+        // 傳送卷軸的簡稱被 ability/mage.json 的「Teleport: 傳送」換掉。
+        WynntilsText.holdRawText(true);
+        check("★ 那一段裡的字原樣回去（公會名與簡稱都不是遊戲文案，撞名躲不完）",
               WynntilsText.screenText(inProgress, config, store) == inProgress);
-        WynntilsText.holdTerritoryLabels(false);
-        check("★ 出了領地標籤就恢復",
+        WynntilsText.holdRawText(false);
+        check("★ 出了那一段就恢復",
               "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
     }
 

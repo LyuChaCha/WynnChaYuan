@@ -35,11 +35,11 @@ public abstract class TerritoryPoiMixin {
 
     @Inject(method = "renderAt", at = @At("HEAD"), remap = false, require = 0)
     private void wynnchayuan$hold(CallbackInfo ci) {
-        WynntilsText.holdTerritoryLabels(true);
+        WynntilsText.holdRawText(true);
     }
 
     @Inject(method = "renderAt", at = @At("RETURN"), remap = false, require = 0)
     private void wynnchayuan$release(CallbackInfo ci) {
-        WynntilsText.holdTerritoryLabels(false);
+        WynntilsText.holdRawText(false);
     }
 }

@@ -624,16 +624,22 @@ public final class WynntilsText {
     }
 
     /**
-     * 現在畫的是不是公會戰地圖上那一格領地標籤。見 {@code TerritoryPoiMixin}。
+     * 現在畫的是不是「<b>不該翻</b>的那種字」。
+     *
+     * <p>目前有兩處：公會戰地圖那一格一格的領地標籤（{@code TerritoryPoiMixin}），
+     * 以及物品格角落 Wynntils 自己算出來的簡稱（{@code ItemTextOverlayMixin}）。
+     * 兩者都不是遊戲的文案——一個是玩家取的公會名，一個是 Wynntils 拼的縮寫——
+     * 卻都會跟語料裡正當的條目撞名（{@code Fox} 對上 NPC 狐狸，
+     * {@code Teleport} 對上法師技能）。
      *
      * <p>只在算繪執行緒上動，所以不必同步。宣告成 {@code volatile} 是為了
      * 萬一哪天 Wynntils 改到別的執行緒去畫，讀到的至少不是過期的值。
      */
-    private static volatile boolean territoryLabels;
+    private static volatile boolean rawText;
 
-    /** mixin 的入口：進了領地標籤就掛上，出來就放掉。 */
-    public static void holdTerritoryLabels(boolean on) {
-        territoryLabels = on;
+    /** mixin 的入口：進了那一段就掛上，出來就放掉。見 {@link #rawText}。 */
+    public static void holdRawText(boolean on) {
+        rawText = on;
     }
 
     static StyledText screenText(StyledText text, CollectorConfig config,
@@ -642,9 +648,10 @@ public final class WynntilsText {
                 || config == null || !config.wynntilsUi()) {
             return text;
         }
-        if (territoryLabels) {
-            // 公會名是玩家自己取的，跟語料撞名只是遲早的事（實機那格叫 Fox，
-            // 被換成了「狐狸」）。而且它本來就不是遊戲的文案，不該翻。
+        if (rawText) {
+            // 公會名是玩家自己取的、Wynntils 的簡稱是它自己拼的，跟語料撞名
+            // 只是遲早的事（實機那格叫 Fox，被換成了「狐狸」；傳送卷軸的簡稱
+            // 被換成了法師技能的「傳送」）。兩者都不是遊戲的文案，不該翻。
             return text;
         }
         net.minecraft.network.chat.Component hit = LineTranslator.translate(text, store);
