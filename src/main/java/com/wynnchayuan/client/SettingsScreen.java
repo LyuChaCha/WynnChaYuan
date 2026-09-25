@@ -545,6 +545,13 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleBossBar();
                     b.setMessage(bossBarLabel());
                 });
+        // 盔甲座疊出來的浮空字（討伐戰祭壇那種）。上面那一列走的是 Wynntils 的
+        // 名牌事件，管不到這些；而這個開關先前一樣沒有 UI，見 #825。
+        cycle("world.entityname",
+                this::entityNameLabel, b -> {
+                    WynnChaYuan.config().toggleNametags();
+                    b.setMessage(entityNameLabel());
+                });
         // 右上那一欄：任務追蹤、每日目標、世界事件、Lootrun、團隊。
         // 三段：就地取代 Wynntils 疊層裡的字／畫在我們自己的小框／不翻。
         back(cycle("world.tracker",
@@ -904,6 +911,11 @@ public final class SettingsScreen extends Screen {
             case PANEL -> T.s("mode.panel");
             case OFF -> T.s("mode.off");
         });
+    }
+
+    private Component entityNameLabel() {
+        return ctrl(WynnChaYuan.config().translateNametags()
+                ? T.s("mode.replace") : T.s("mode.off"));
     }
 
     private Component bossBarLabel() {

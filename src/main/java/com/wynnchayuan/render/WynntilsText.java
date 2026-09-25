@@ -314,8 +314,7 @@ public final class WynntilsText {
     static net.minecraft.network.chat.Component bossBar(
             net.minecraft.network.chat.Component name, CollectorConfig config,
             TranslationStore store) {
-        if (name == null || store == null || config == null
-                || !config.translateNametags() || !config.translateBossBar()) {
+        if (name == null || store == null || config == null || !config.translateBossBar()) {
             return name;
         }
         if (store != barStore || BARS.size() > 256) {
