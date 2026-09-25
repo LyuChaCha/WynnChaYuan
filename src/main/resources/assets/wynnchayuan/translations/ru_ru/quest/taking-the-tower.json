@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 57,
+  "count": 59,
   "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Taking the Tower#000": {
+   "src": "Tasim told me all about the corrupted force you took out. I wish I could have been here to help!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#001": {
+   "src": "We did it! Let's get back to Lieutenant Van and tell him the news.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#002": {
    "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Item Upgrader!",
    "dst": "О, погоди. Сначала надо кое-куда зайти. За мной, к Мастеру улучшения предметов!",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#001": {
+  "Taking the Tower#003": {
    "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
    "dst": "Говорят, главный злодей на вершине башни уязвим к  урону Воды!",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#002": {
+  "Taking the Tower#004": {
    "src": "You can apply various elemental powders to your weapons, which lets them deal types of damage they might not have been able to before.",
    "dst": "Можно наносить на оружие разные стихийные порошки, чтобы оно било типами урона, которых раньше не было.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#003": {
+  "Taking the Tower#005": {
    "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
    "dst": "В нашем случае можно нанести  порошок Воды, и оружие станет эффективнее против осквернённых в башне!",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#004": {
+  "Taking the Tower#006": {
    "src": "...The point is- here. Take this elemental powder and Hold the powder, then Right Click on your weapon. Let me know when you're done!",
    "dst": "…В общем - вот. Возьми этот стихийный порошок в руку и нажми ПКМ по оружию. Скажи, как закончишь!",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#005": {
+  "Taking the Tower#007": {
    "src": "[+{~} Water Powder I]",
    "dst": "[+{~} Порошок воды I]",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#006": {
+  "Taking the Tower#008": {
    "src": "You see this Item Upgrader? It can be used to upgrade powders to high tiers.",
    "dst": "Видишь Мастера улучшения предметов? Он повышает уровень порошков.",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#007": {
+  "Taking the Tower#009": {
    "src": "It can also remove powders from your items, if you need to- don't worry, you'll get your powders back!",
    "dst": "А ещё он может снять порошки с предметов, если нужно - не бойся, порошки вернутся к тебе!",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#008": {
+  "Taking the Tower#010": {
    "src": "...Anyway, Lieutenant Van and the others are by that bunch of houses in the {p}- you probably saw it on your way in.",
    "dst": "…В общем, лейтенант Van и остальные у группы домов в {p} - их видно по дороге сюда.",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#009": {
+  "Taking the Tower#011": {
    "src": "It doesn't much matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
    "dst": "Неважно, кто это сделает, лишь бы дело было сделано. Увидите шанс - действуйте!",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#010": {
+  "Taking the Tower#012": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here! Understood?",
    "dst": "Если отступаете или осквернённые убиты - сбор здесь! Ясно?",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#011": {
+  "Taking the Tower#013": {
    "src": "Hey, {u}, there you are! Come on, let's climb that tower!",
    "dst": "Эй, {u}, вот ты где! Идём, заберёмся на эту башню!",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#012": {
+  "Taking the Tower#014": {
    "src": "They have, lieutenant! {u} and I reached the top and defeated the corrupted.",
    "dst": "Да, лейтенант! Мы с {u} добрались до вершины и одолели осквернённого.",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#013": {
+  "Taking the Tower#015": {
    "src": "Speak to Aledar in the {p} Barracks at [{~}, {~}, -{~}].",
    "dst": "Поговори с Aledar в казармах {p} на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#014": {
+  "Taking the Tower#016": {
    "src": "Oh, {u}! Hey! It's good to see you and Tasim again. Hope you didn't have too many adventures without me!",
    "dst": "О, {u}! Привет! Рад снова видеть тебя и Tasim. Надеюсь, без меня приключений было немного!",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#015": {
+  "Taking the Tower#017": {
    "src": "Tasim's gone off to the training room, if you were looking for him. He's really jumping straight into it, which... is good! We all need to get stronger so we can defend the province.",
    "dst": "Tasim ушёл в тренировочный зал, если ты его ищешь. Он прямо с головой ушёл в дело, и это… хорошо! Нам всем нужно стать сильнее, чтобы защитить провинцию.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#016": {
+  "Taking the Tower#018": {
    "src": "Tasim told me all about the corrupted force you took out. I wish I could have been there to help!",
    "dst": "Tasim рассказал мне об осквернённом отряде, который вы уничтожили. Жаль, меня там не было!",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#017": {
+  "Taking the Tower#019": {
    "src": "...Oh! Since you're here- I was about to head out to join Lieutenant Van's squad to take back a tower overtaken by corrupteds. You should come with us, too!",
    "dst": "…О! Раз ты здесь - я как раз иду к отряду лейтенанта Van отбивать башню, захваченную осквернёнными. Идём с нами!",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#018": {
+  "Taking the Tower#020": {
    "src": "Well? What do you think? Want to get some real combat experience? It shouldn't take long.",
    "dst": "Ну? Что скажешь? Хочешь настоящего боевого опыта? Это ненадолго.",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#019": {
+  "Taking the Tower#021": {
    "src": "Perfect. Well, no time better than the present! Let's get going.",
    "dst": "Отлично. Что ж, лучшее время - сейчас! Выдвигаемся.",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#020": {
+  "Taking the Tower#022": {
    "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Powder Master!",
    "dst": "О, погоди. Сначала надо кое-куда зайти. За мной, к Мастеру порошков!",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#021": {
+  "Taking the Tower#023": {
    "src": "Oh. Alright.",
    "dst": "О. Ладно.",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#022": {
+  "Taking the Tower#024": {
    "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
    "dst": "Я ещё побуду здесь. Передумаешь - скажи!",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#023": {
+  "Taking the Tower#025": {
    "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
    "dst": "Эй, снова ты! Мнение изменилось? Пойдёшь на штурм осквернённой башни?",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#024": {
+  "Taking the Tower#026": {
    "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
    "dst": "Следуй за Aledar к Мастеру порошков на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#025": {
+  "Taking the Tower#027": {
    "src": "Alright, so. There's something I've been told about the tower we're going to be attacking which we can prepare for!",
    "dst": "Итак. Мне кое-что рассказали о башне, которую мы штурмуем, и к этому можно подготовиться!",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#026": {
+  "Taking the Tower#028": {
    "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
    "dst": "Говорят, главный злодей на вершине башни уязвим к  урону! Вот мы и у Мастера порошков.",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#027": {
+  "Taking the Tower#029": {
    "src": "You can apply various elemental powders to your weapons here, which lets them deal types of damage they might not have been able to before.",
    "dst": "Здесь можно наносить на оружие разные стихийные порошки, чтобы оно било типами урона, которых раньше не было.",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#028": {
+  "Taking the Tower#030": {
    "src": "In this case, you can apply a powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
    "dst": "В нашем случае можно нанести  порошок, и оружие станет эффективнее против осквернённых в башне!",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#029": {
+  "Taking the Tower#031": {
    "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
    "dst": "Я, э-э… не помню всю речь про стихии наизусть. Если хочешь узнать больше, поговори с капитаном Ragon в казармах. У него целый курс об этом!",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#030": {
+  "Taking the Tower#032": {
    "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
    "dst": "…В общем - вот. Возьми этот стихийный порошок и попроси Мастера порошков нанести его. Скажи, как закончишь!",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#031": {
+  "Taking the Tower#033": {
    "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
    "dst": "Нанеси порошок воды на оружие, затем сообщи Aledar на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#032": {
+  "Taking the Tower#034": {
    "src": "Got the powder on your weapon? Good, that means we're ready.",
    "dst": "Порошок на оружии? Хорошо, значит, мы готовы.",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#033": {
+  "Taking the Tower#035": {
    "src": "Lieutenant Van and the others are by that bunch of houses in the {p} Suburbs- you probably saw it on your way in.",
    "dst": "Лейтенант Van и остальные у группы домов в пригороде {p} - их видно по дороге сюда.",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#034": {
+  "Taking the Tower#036": {
    "src": "Lead the way! I'll be right behind you.",
    "dst": "Веди! Я прямо за тобой.",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#035": {
+  "Taking the Tower#037": {
    "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
    "dst": "Встреться с отрядом лейтенанта Van у Бушующей башни на [{~}, {~}, -{~}].",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#036": {
+  "Taking the Tower#038": {
    "src": "Ah, Aledar! Good to see you here. Who's this with you?",
    "dst": "А, Aledar! Рад тебя видеть. Кто это с тобой?",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#037": {
+  "Taking the Tower#039": {
    "src": "This is {u}, sir. They're here to join our assault, if you'll allow it.",
    "dst": "Это {u}, сэр. Хочет к нам на штурм, если позволите.",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#038": {
+  "Taking the Tower#040": {
    "src": "Hm... Well, I don't see why not. The more the merrier, that's what I say.",
    "dst": "Хм… Не вижу причин отказать. Чем больше, тем веселее - вот мой девиз.",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#039": {
+  "Taking the Tower#041": {
    "src": "If everyone's here, we can begin. Here's the plan! We'll need to fight off some of the forces near the base of the tower, so that someone can climb to the top.",
    "dst": "Если все здесь, начнём. План такой! Отбиваем часть сил у подножия башни, чтобы кто-то смог подняться наверх.",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#040": {
+  "Taking the Tower#042": {
    "src": "It doesn't matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
    "dst": "Неважно, кто это сделает, лишь бы дело было сделано. Увидите шанс - действуйте!",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#041": {
+  "Taking the Tower#043": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here!| Understood?",
    "dst": "Если отступаете или осквернённые убиты - сбор здесь!| Ясно?",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#042": {
+  "Taking the Tower#044": {
    "src": "Yes, sir!",
    "dst": "Есть, капитан!",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#043": {
+  "Taking the Tower#045": {
    "src": "Yes, sir!",
    "dst": "Есть, капитан!",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "Detlas Soldier",
    "source": "wiki"
   },
-  "Taking the Tower#044": {
+  "Taking the Tower#046": {
    "src": "Good. Alright soldiers, let's take back that tower!",
    "dst": "Хорошо. Итак, солдаты, вернём эту башню!",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#045": {
+  "Taking the Tower#047": {
    "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
    "dst": "Вперёд, к башне! Если повезёт, выбьем осквернённых, что её захватили.",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#046": {
+  "Taking the Tower#048": {
    "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
    "dst": "Штурмуй Бушующую башню на [{~}, {~}, -{~}] и победи чудовище на вершине.",
    "role": "desc",
@@ -476,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#047": {
+  "Taking the Tower#049": {
    "src": "Alright. It's time to take on the tower! We've got this, {u}.",
    "dst": "Так. Пора взять башню! Мы справимся, {u}.",
    "role": "desc",
@@ -486,7 +506,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#048": {
+  "Taking the Tower#050": {
    "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
    "dst": "Доложи лейтенанту Van об успехе на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -496,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#049": {
+  "Taking the Tower#051": {
    "src": "We did it, we killed the corrupted! Come on, let's get back to Lieutenant Van with the news!",
    "dst": "Получилось, мы убили осквернённого! Идём, доложим лейтенанту Van!",
    "role": "desc",
@@ -506,7 +526,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#050": {
+  "Taking the Tower#052": {
    "src": "It seems everyone has returned. Well? Have the corrupted forces been vanquished?",
    "dst": "Похоже, все вернулись. Ну? Осквернённые силы разбиты?",
    "role": "desc",
@@ -516,7 +536,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#051": {
+  "Taking the Tower#053": {
    "src": "They have, lieutenant. {u} and I reached the top and defeated the corrupted.",
    "dst": "Да, лейтенант. Мы с {u} добрались до вершины и одолели осквернённого.",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#052": {
+  "Taking the Tower#054": {
    "src": "Fine work, soldiers! Another great victory for the {p} army. With the leader killed, it shouldn't be too difficult to clear out the rest of them.",
    "dst": "Отличная работа, солдаты! Ещё одна славная победа армии {p}. Без вожака остальных будет нетрудно зачистить.",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#053": {
+  "Taking the Tower#055": {
    "src": "I'll let the Admiral know of your victory today, soldiers. And- here, some payment for your work.",
    "dst": "Я доложу Адмиралу о вашей сегодняшней победе, солдаты. И - вот, плата за работу.",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#054": {
+  "Taking the Tower#056": {
    "src": "The two of you have a promising future. I look forward to serving with you in the future!",
    "dst": "У вас обоих большое будущее. Надеюсь ещё послужить с вами!",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#055": {
+  "Taking the Tower#057": {
    "src": "Talking Lieutenant Van",
    "dst": "Поговори с лейтенантом Van",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#056": {
+  "Taking the Tower#058": {
    "src": "We'll take care of the remaining stragglers, don't you worry. Thank you for your work today, soldier.",
    "dst": "Оставшихся мы добьём, не беспокойся. Спасибо за сегодняшнюю работу, солдат.",
    "role": "desc",

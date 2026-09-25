@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Lost in the Jungle",
-  "count": 32,
+  "count": 34,
   "translated": 32,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost in the Jungle#000": {
+   "src": "However... He also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
+   "dst": "그런데 이상한 보라색 보석도 함께 가져왔어요. 주술사는 불길한 징조라 했지만, 축제 분위기에 들떠 그냥 넘겼죠.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#001": {
+   "src": "Hm, I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
+   "dst": "음... 방금 땅에서 이상한 자국을 발견했어요... 그 보석과 같은 색이에요! 아들에게 이어질지도 몰라요, 부디 따라가 주세요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#002": {
+   "src": "You should talk to Aryn now...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#003": {
+   "src": "Oh... My father sent you? Well, I am very impressed, Wynn warrior. You fight with the ferocity of our own!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#004": {
+   "src": "But that is beside the point. You say you have destroyed the spirit, and it does not feel tainted any longer, so I will trust you.",
+   "dst": "하지만 그건 중요한 게 아니죠. 정령을 없앴고 더는 오염된 느낌이 없다고 하시니, 당신을 믿을게요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#005": {
    "src": "Speak to Gracen at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에 있는 Gracen에게 말을 거세요",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#001": {
+  "Lost in the Jungle#006": {
    "src": "Excuse me, traveller... I am dreadfully sorry to ask this of you, but I need your help.",
    "dst": "실례합니다, 여행자님... 이런 부탁을 드려 정말 죄송하지만, 도움이 필요해요.",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#002": {
+  "Lost in the Jungle#007": {
    "src": "You see, my son, Aryn. Very recently, he underwent a traditional coming-of-age ceremony from our tribe.",
    "dst": "제 아들 Aryn이 얼마 전에 우리 부족의 전통 성인식을 치렀어요.",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#003": {
+  "Lost in the Jungle#008": {
    "src": "He was tasked to enter the dangerous {p}, just south of here, and brave the wilderness for three days. He returned a true man, successful.",
    "dst": "여기 바로 남쪽의 위험한 {p}에 들어가 사흘간 야생에서 버티는 것이 과제였죠. 아이는 성공해서 진정한 남자가 되어 돌아왔어요.",
    "role": "desc",
@@ -46,17 +96,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#004": {
-   "src": "However, he also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
-   "dst": "그런데 이상한 보라색 보석도 함께 가져왔어요. 주술사는 불길한 징조라 했지만, 축제 분위기에 들떠 그냥 넘겼죠.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#005": {
+  "Lost in the Jungle#010": {
    "src": "Strange happenings began around the village. Aryn walked about at night, talking to someone, but no one else was there with him.",
    "dst": "마을 곳곳에서 이상한 일이 생기기 시작했어요. Aryn은 밤마다 돌아다니며 누군가와 이야기했지만, 곁엔 아무도 없었어요.",
    "role": "desc",
@@ -66,7 +106,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#006": {
+  "Lost in the Jungle#011": {
    "src": "Just last sunrise, he vanished entirely. We sent out a search for him, but even our hardiest warriors could not venture deep into the jungle.",
    "dst": "그리고 어제 해 뜰 무렵, 아이가 완전히 사라졌어요. 수색대를 보냈지만 가장 강인한 전사들도 정글 깊이 들어가지 못했어요.",
    "role": "desc",
@@ -76,7 +116,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#007": {
+  "Lost in the Jungle#012": {
    "src": "We returned empty-handed, having lost our newest tribesman. The village is in terrible spirits, and I feel as though I am responsible.",
    "dst": "우리는 가장 새로운 부족원을 잃고 빈손으로 돌아왔어요. 마을 분위기는 최악이고, 전부 제 책임인 것만 같아요.",
    "role": "desc",
@@ -86,7 +126,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#008": {
+  "Lost in the Jungle#013": {
    "src": "You Wynn warriors, however... great stories are told of your exploits. Surely, you will be able to brave the jungle, yes?",
    "dst": "하지만 Wynn의 전사들이라면... 당신들의 활약은 대단하다고 들었어요. 분명 정글에 들어갈 수 있겠죠?",
    "role": "desc",
@@ -96,7 +136,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#009": {
+  "Lost in the Jungle#014": {
    "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
    "dst": "제발 부탁이에요, 제 아들을 찾아 주세요. 정확히 어디 있는지는 모르지만, 분명 꽤 깊이 끌려갔을 거예요...",
    "role": "desc",
@@ -106,17 +146,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#010": {
-   "src": "Hm... I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
-   "dst": "음... 방금 땅에서 이상한 자국을 발견했어요... 그 보석과 같은 색이에요! 아들에게 이어질지도 몰라요, 부디 따라가 주세요!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#011": {
+  "Lost in the Jungle#016": {
    "src": "Search the {p} for Aryn",
    "dst": "{p}에서 Aryn을 찾으세요",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#012": {
+  "Lost in the Jungle#017": {
    "src": "P-please, I beg of you spirit, let me go free! The tribesmen must be so worried-",
    "dst": "제, 제발, 정령님, 절 놓아주세요! 부족 사람들이 무척 걱정할 거예요-",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#013": {
+  "Lost in the Jungle#018": {
    "src": "DO NOT RESIST, BOY! YOUR BODY IS MINE. I WAS TRAPPED IN THAT STONE FOR MILLENIA, AND NOW I AM FREE.",
    "dst": "저항하지 마라, 꼬마야! 네 몸은 내 것이다. 나는 수천 년 동안 저 돌에 갇혀 있었고, 이제 자유다.",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Aryn?",
    "source": "wiki"
   },
-  "Lost in the Jungle#014": {
+  "Lost in the Jungle#019": {
    "src": "Aha, I hear someone coming! Surely a tribesman here to rescue me!",
    "dst": "아, 누가 오는 소리가 들려요! 분명 저를 구하러 온 부족 사람이에요!",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#015": {
+  "Lost in the Jungle#020": {
    "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
    "dst": "오! 그렇다면 이 전사의 몸이 내게 훨씬 알맞겠군! 네 힘을 내놓아라, 꼬마야! 빙의하려면 먼저 두들겨 패야 하니까!",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Aryn?",
    "source": "wiki"
   },
-  "Lost in the Jungle#016": {
+  "Lost in the Jungle#021": {
    "src": "Defeat the spirit possessing Aryn",
    "dst": "Aryn에게 빙의한 정령을 처치하세요",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#017": {
+  "Lost in the Jungle#022": {
    "src": "Make sure Aryn is safe at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에서 Aryn이 무사한지 확인하세요",
    "role": "desc",
@@ -186,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#018": {
+  "Lost in the Jungle#023": {
    "src": "Hahah, take that, evil wraith! You'll never match the power of our tribe-",
    "dst": "하하, 이거나 먹어라, 사악한 망령아! 우리 부족의 힘은 절대 못 따라온다-",
    "role": "desc",
@@ -196,7 +226,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#019": {
+  "Lost in the Jungle#024": {
    "src": "W-wait, you aren't part of our tribe! Who are you, why did you come here?",
    "dst": "자, 잠깐, 당신은 우리 부족이 아니잖아요! 누구세요, 여긴 왜 왔어요?",
    "role": "desc",
@@ -206,7 +236,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#020": {
+  "Lost in the Jungle#025": {
    "src": "Oh... my father sent you? Well, I am very impressed, Wynn warrior. You fight with ferocity of our own!",
    "dst": "오... 아버지가 보내셨다고요? 정말 감탄했어요, Wynn의 전사님. 우리 부족 못지않게 사납게 싸우시네요!",
    "role": "desc",
@@ -216,7 +246,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#021": {
+  "Lost in the Jungle#026": {
    "src": "I...can't say the same for myself. That spirit completely overtook me, I still can't move right now...",
    "dst": "저는... 그렇다고 말할 수가 없네요. 그 정령에게 완전히 사로잡혀서, 아직도 몸을 못 움직이겠어요...",
    "role": "desc",
@@ -226,7 +256,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#022": {
+  "Lost in the Jungle#027": {
    "src": "For now, please. Take away this gemstone. It caused all this, I don't want to be near such a bad luck charm.",
    "dst": "일단 부탁드려요. 이 보석을 가져가 주세요. 이게 전부 이렇게 만든 거예요, 이런 불운의 부적 곁엔 있기 싫어요.",
    "role": "desc",
@@ -236,7 +266,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#023": {
+  "Lost in the Jungle#028": {
    "src": "Tell the tribe that I will return on my own. I made it back once, I can do it again once I am prepared.",
    "dst": "부족에게 제가 알아서 돌아가겠다고 전해 주세요. 한 번 돌아왔으니, 준비되면 또 해낼 수 있어요.",
    "role": "desc",
@@ -246,7 +276,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#024": {
+  "Lost in the Jungle#029": {
    "src": "Bring the Mysterious Gemstone to Gracen at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에 있는 Gracen에게 수상한 보석을 가져가세요",
    "role": "desc",
@@ -256,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#025": {
+  "Lost in the Jungle#030": {
    "src": "Oh my... Aryn was possessed by a spirit residing within the gemstone?",
    "dst": "세상에... Aryn이 보석 속에 깃든 정령에게 빙의됐다고요?",
    "role": "desc",
@@ -266,7 +296,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#026": {
+  "Lost in the Jungle#031": {
    "src": "How shameful... Our shaman has never been wrong before, why did I disregard his warning...",
    "dst": "부끄럽네요... 주술사는 한 번도 틀린 적이 없는데, 제가 왜 경고를 무시했을까요...",
    "role": "desc",
@@ -276,17 +306,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#027": {
-   "src": "But that is beside the point. You say you have destroyed the spirit and it does not feel tainted any longer, so I will trust you.",
-   "dst": "하지만 그건 중요한 게 아니죠. 정령을 없앴고 더는 오염된 느낌이 없다고 하시니, 당신을 믿을게요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 5",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#028": {
+  "Lost in the Jungle#033": {
    "src": "Looking at it now, this is actually quite a valuable stone. If crushed to dust, it can be used in special charms we make.",
    "dst": "지금 보니 이건 꽤 귀한 돌이네요. 가루로 빻으면 우리가 만드는 특별한 부적에 쓸 수 있어요.",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#029": {
+  "Lost in the Jungle#034": {
    "src": "Here, allow me to grind this down for you. You can keep the shards for whatever purposes you may find for them in the future.",
    "dst": "자, 제가 빻아 드릴게요. 조각은 가져가서 나중에 필요한 곳에 쓰세요.",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#030": {
+  "Lost in the Jungle#035": {
    "src": "Our tribe, and especially myself... We thank you for your service. We shall consider you one of our own, from this day forward.",
    "dst": "우리 부족, 그리고 특히 저는... 당신의 도움에 감사드려요. 오늘부터 당신을 우리 부족의 일원으로 여기겠어요.",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#031": {
+  "Lost in the Jungle#036": {
    "src": "In fact, if you'd like, you may even enter my house here whenever you'd like.",
    "dst": "그리고 원하시면 언제든 여기 제 집에 들어오셔도 돼요.",
    "role": "desc",

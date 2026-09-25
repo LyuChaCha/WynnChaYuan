@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Underice",
-  "count": 63,
+  "count": 64,
   "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underice#000": {
+   "src": "+ Mythical Everlasting Pufferfish",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#001": {
    "src": "Talk to Fredris in {p} at [{~}, {~}, -{~}]",
    "dst": "Поговори с Fredris в {p} на [{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#001": {
+  "Underice#002": {
    "src": "I'm having trouble with the fish in our lake recently and I am sure the problem lies within the lake itself.",
    "dst": "В последнее время беда с рыбой в нашем озере, и я уверен, что проблема в самом озере.",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#002": {
+  "Underice#003": {
    "src": "I would like to commission you to investigate, but since it's freezing cold in our lake you need something to protect you. I heard the people in {p} on the coast of Wynn have something that can help you.",
    "dst": "Хочу поручить тебе разобраться, но вода в озере ледяная, нужна защита. Слышал, у жителей {p} на побережье Wynn есть то, что поможет.",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#003": {
+  "Underice#004": {
    "src": "Would you mind coming back with a [Breathing Helmet I]? I think that should be everything you need.",
    "dst": "Не принесёшь [Breathing Helmet I]? Думаю, больше тебе ничего не понадобится.",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#004": {
+  "Underice#005": {
    "src": "Return to {p} and bring Fredris a [Breathing Helmet I]",
    "dst": "Вернись в {p} и принеси Fredris [Breathing Helmet I]",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#005": {
+  "Underice#006": {
    "src": "What is this thing supposed to be? You know, I would really appreciate your help, but this [Breathing Helmet I] does not look like it's going to keep you protected.",
    "dst": "Что это вообще такое? Я очень ценю твою помощь, но этот [Breathing Helmet I] явно тебя не защитит.",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#006": {
+  "Underice#007": {
    "src": "Would you mind heading to our local armour merchant and buying one of our [Breathing Helmet II]? I don't want you to drown. Just come back with the helmet and I will tell you about my problem.",
    "dst": "Сходишь к нашему торговцу бронёй за [Breathing Helmet II]? Не хочу тебя утопить. Возвращайся со шлемом, и я расскажу о своей беде.",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#007": {
+  "Underice#008": {
    "src": "Buy a [Breathing Helmet II] and find the underwater cave",
    "dst": "Купи [Breathing Helmet II] и найди подводную пещеру",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#008": {
+  "Underice#009": {
    "src": "Explore the cave underneath the frozen lake in {p}",
    "dst": "Исследуй пещеру подо льдом озера в {p}",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#009": {
+  "Underice#010": {
    "src": "Who are you? You don't look like one of those villagers we stole the fi... Wait, they didn't send you to retrieve \"their\" fish, did they?",
    "dst": "Ты кто? На селян, у которых мы украли ры... Стоп, они же не послали тебя вернуть «их» рыбу?",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#010": {
+  "Underice#011": {
    "src": "For years we let them share the lake with us, the actual inhabitants of it, we were modest and took what we needed, we let them catch the rest. But then they went too far, they caught too much.",
    "dst": "Годами мы, настоящие жители озера, делили его с ними. Мы были скромны, брали лишь нужное, остальное ловили они. Но они зарвались и ловили слишком много.",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#011": {
+  "Underice#012": {
    "src": "We didn't have enough to eat, we were forced to steal their fish, we would have starved otherwise. And now they want their fish, our fish back? We can't do that, I hope you understand.",
    "dst": "Нам нечего было есть, пришлось красть их рыбу, иначе мы бы умерли с голоду. А теперь им вернуть их рыбу, нашу рыбу? Не выйдет, надеюсь, ты поймёшь.",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#012": {
+  "Underice#013": {
    "src": "However, we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
    "dst": "Но нам незачем воевать за рыбу в озере. Нужна лишь [Mythic Everlasting Pufferfish], больше ничего. Мы никогда не хотели красть рыбу.",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#013": {
+  "Underice#014": {
    "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
    "dst": "Хочешь помочь нам и селянам - иди на юг вдоль ручья, что впадает в озеро, там лучшее место для рыбалки. Рыба-фугу тоже где-то там.",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#014": {
+  "Underice#015": {
    "src": "Follow the river south to find the fishing dock",
    "dst": "Иди на юг вдоль реки к рыбацкому причалу",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#015": {
+  "Underice#016": {
    "src": "Oh you look a bit lost, let me help you, I've lived here for a long time, I know every corner and every snowflake.",
    "dst": "О, вид у тебя потерянный, давай помогу. Живу тут давно, знаю каждый угол и снежинку.",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#016": {
+  "Underice#017": {
    "src": "You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
    "dst": "Ищешь [Mythic Everlasting Pufferfish]? Хм, я слышал это название, мой друг Strato рассказывал о ней много лет назад. Если не ошибаюсь, она бесконечна: одной рыбой можно накормить всех во всех провинциях.",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#017": {
+  "Underice#018": {
    "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
    "dst": "Увы, Strato больше нет. Он жил и работал в лагере лесорубов к северо-западу от {p}. Мы встречались здесь, ловили рыбу и травили байки. Как я скучаю...",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#018": {
+  "Underice#019": {
    "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
    "dst": "Может, найдёшь там наживку, у него была лучшая, что я видел. Раздобудь немного и брось в воду, может, это приманит фугу.",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#019": {
+  "Underice#020": {
    "src": "Can I ask you something? As you might see I'm not the richest guy, or the youngest. If you manage to catch that fish, could you hand it over? I know we just met but you seem like somebody who would help an old man.",
    "dst": "Можно попрошу кое-что? Как видишь, я не богат и не молод. Если поймаешь ту рыбу, отдашь её мне? Мы только познакомились, но ты из тех, кто поможет старику.",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#020": {
+  "Underice#021": {
    "src": "Obtain the bait at the woodcutting camp northwest of {p}, use it to catch the fish and then give it to Calamaro or Gernald",
    "dst": "Добудь наживку в лагере лесорубов к северо-западу от {p}, поймай рыбу и отдай её Calamaro или Gernald",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#021": {
+  "Underice#022": {
    "src": "Just look at those fish, I told you they love this bait.",
    "dst": "Гляди, сколько рыбы, говорил же, они обожают эту наживку.",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#022": {
+  "Underice#023": {
    "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
    "dst": "Вот она, [Mythic Everlasting Pufferfish], не верю глазам!",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#023": {
+  "Underice#024": {
    "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
    "dst": "Отдаёшь рыбу мне? Жаль, Strato не дожил, он бы изумился. Не передать, как это для меня важно. Прими этот скромный подарок и обещай никогда не меняться.",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#024": {
+  "Underice#025": {
    "src": "You found a pufferfish! Who would have thought such a small thing could solve our problem. I will start bringing back the fish immediately, but first we will have a nice hot soup. Please take this as payback for your services.",
    "dst": "Фугу нашлась! Кто бы подумал, что такая мелочь решит нашу беду. Сейчас же начну возвращать рыбу, но сперва сварим горячего супа. Прими это в награду за помощь.",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#025": {
+  "Underice#026": {
    "src": "You can trade it at the shop right over there, it's hard to miss. I will give you a last advise, you don't want to eat that slimy fish.",
    "dst": "Обменять можно в лавке вон там, её не пропустишь. И последний совет: эту склизкую рыбу лучше не ешь.",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#026": {
+  "Underice#027": {
    "src": "Meet up with Fredris in {p} and claim your reward",
    "dst": "Встреться с Fredris в {p} и получи награду",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#027": {
+  "Underice#028": {
    "src": "Oh you are done with whatever you were doing? I heard you ran around the whole place, I don't know if you were the right person to ask for help...",
    "dst": "О, дела позади? Слышал, тебя носило по всей округе, уж не знаю, стоило ли просить тебя о помощи...",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#028": {
+  "Underice#029": {
    "src": "I will just ask the next one who comes around, no need to have you run around all day. Take this, I appreciate your effort.",
    "dst": "Спрошу следующего, кто зайдёт, незачем тебе бегать весь день. Держи, спасибо за старания.",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#029": {
+  "Underice#030": {
    "src": "A real disaster! I can't believe this is happening to me!",
    "dst": "Настоящая беда! Не верю, что это случилось со мной!",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#030": {
+  "Underice#031": {
    "src": "I've been fishing for the last few days and I caught nothing! Zilch! This isn't normal!",
    "dst": "Я рыбачу уже несколько дней и ничего не поймал! Ноль! Это ненормально!",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#031": {
+  "Underice#032": {
    "src": "I spent my entire life fishing in this area! I wish I could dive under this ice to fix the problem myself...",
    "dst": "Я всю жизнь рыбачу в этих местах! Вот бы нырнуть под лёд и самому всё исправить...",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#032": {
+  "Underice#033": {
    "src": "Do you think you could help me? You might actually be exactly what I need!",
    "dst": "Поможешь мне? Возможно, именно тебя мне и не хватало!",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#033": {
+  "Underice#034": {
    "src": "Enter my shack, there you will find the entrance... Good luck!",
    "dst": "Зайди в мою хижину, там найдёшь вход... Удачи!",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#034": {
+  "Underice#035": {
    "src": "Explore under the ice to find a cause to the fish problem. You'll need the Breathing Helmet for this.",
    "dst": "Исследуй подо льдом, чтобы найти причину беды с рыбой. Для этого понадобится Breathing Helmet.",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#035": {
+  "Underice#036": {
    "src": "Talk to Squidward in the Squid Village.",
    "dst": "Поговори со Squidward в Деревне кальмаров.",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#036": {
+  "Underice#037": {
    "src": "Have I seen any fish? No, of course not! I don't even know what a fish looks like!",
    "dst": "Видел ли я рыбу? Нет, конечно! Я даже не знаю, как рыба выглядит!",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#037": {
+  "Underice#038": {
    "src": "Who could be stealing all those fish? I wonder! Actually...",
    "dst": "Кто же мог украсть всю рыбу? Ума не приложу! Вообще-то...",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#038": {
+  "Underice#039": {
    "src": "I'm sure Calamaro did it! He's just that kind of guy. He lives in that house down there.",
    "dst": "Уверен, это Calamaro! Он как раз из таких. Живёт вон в том доме внизу.",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#039": {
+  "Underice#040": {
    "src": "Find Calamaro in the Squid Village.",
    "dst": "Найди Calamaro в Деревне кальмаров.",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#040": {
+  "Underice#041": {
    "src": "Me? Stealing fish? You are out of your mind! It's obviously Kroken who is stealing them!",
    "dst": "Я? Ворую рыбу? Ты в своём уме? Ясно же, что ворует Kroken!",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#041": {
+  "Underice#042": {
    "src": "He lives right on top of that waterfall right there, if you want to go talk to him.",
    "dst": "Он живёт прямо над тем водопадом, если хочешь с ним поговорить.",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#042": {
+  "Underice#043": {
    "src": "Find Kroken in the Squid Village.",
    "dst": "Найди Kroken в Деревне кальмаров.",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#043": {
+  "Underice#044": {
    "src": "Do I look like someone who steals fish?",
    "dst": "Я похож на рыбного вора?",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Kroken",
    "source": "wiki"
   },
-  "Underice#044": {
+  "Underice#045": {
    "src": "It's obvious that Squidward did it, he has tons of crates full of fish!",
    "dst": "Ясно же, это Squidward, у него куча ящиков с рыбой!",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Kroken",
    "source": "wiki"
   },
-  "Underice#045": {
+  "Underice#046": {
    "src": "Talk back to Squidward.",
    "dst": "Вернись к Squidward.",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#046": {
+  "Underice#047": {
    "src": "Okay, okay, fine! It was me all along... I know, what a shock, right?",
    "dst": "Ладно, ладно! Это всё время был я... Знаю, какой шок, да?",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#047": {
+  "Underice#048": {
    "src": "Okay, I got a proposition for you. Bring me [{~} Raw Fish] and I will stop, deal?",
    "dst": "Есть предложение. Принеси [{~} Raw Fish], и я перестану, идёт?",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#048": {
+  "Underice#049": {
    "src": "Deal.",
    "dst": "Идёт.",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#049": {
+  "Underice#050": {
    "src": "Bring back {~} Raw Fish to Squidward.",
    "dst": "Принеси {~} Raw Fish Squidward.",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#050": {
+  "Underice#051": {
    "src": "Good, you got the fish!",
    "dst": "Отлично, рыба у тебя!",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#051": {
+  "Underice#052": {
    "src": "You can trust me, I won't touch the fish in the frozen lake anymore!",
    "dst": "Мне можно верить, рыбу в замёрзшем озере я больше не трону!",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#052": {
+  "Underice#053": {
    "src": "Talk to Fredris to collect your reward.",
    "dst": "Поговори с Fredris и получи награду.",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#053": {
+  "Underice#054": {
    "src": "Your story really doesn't make sense. Villagers living in a squid village under the lake? Pff!",
    "dst": "Твоя история бессмыслица. Селяне живут в деревне кальмаров под озером? Пфф!",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#054": {
+  "Underice#055": {
    "src": "However, if you can garantee me that my problem is gone, I'll trust you.",
    "dst": "Но если гарантируешь, что беды больше нет, я поверю.",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#055": {
+  "Underice#056": {
    "src": "Thank you for your help. Here, take these...",
    "dst": "Спасибо за помощь. Вот, держи...",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#056": {
+  "Underice#057": {
    "src": "Have you found the issue yet? I'm still waiting!",
    "dst": "Ну что, нашёл, в чём дело? Я всё ещё жду!",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#057": {
+  "Underice#058": {
    "src": "Have you seen that weird structure near the lake? I heard quite a lot of stories about it, but nobody is sure about what you can find there.",
    "dst": "Видел то странное сооружение у озера? Я слышал о нём немало историй, но никто точно не знает, что там можно найти.",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#058": {
+  "Underice#059": {
    "src": "However we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
    "dst": "Но нам незачем воевать за рыбу в озере. Нужна лишь [Mythic Everlasting Pufferfish], больше ничего. Мы никогда не хотели красть рыбу.",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#059": {
+  "Underice#060": {
    "src": "You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
    "dst": "Ищешь [Mythic Everlasting Pufferfish]? Хм, я слышал это название, мой друг Strato рассказывал о ней много лет назад. Если не ошибаюсь, она бесконечна: одной рыбой можно накормить всех во всех провинциях.",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#060": {
+  "Underice#061": {
    "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in the water, maybe that will attract the pufferfish.",
    "dst": "Может, найдёшь там наживку, у него была лучшая, что я видел. Раздобудь немного и брось в воду, может, это приманит фугу.",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#061": {
+  "Underice#062": {
    "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift please, promise me to never change.",
    "dst": "Отдаёшь рыбу мне? Жаль, Strato не дожил, он бы изумился. Не передать, как это для меня важно. Прими этот скромный подарок и обещай никогда не меняться.",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#062": {
+  "Underice#063": {
    "src": "I wish we could have avoided this whole scenario.",
    "dst": "Жаль, что всего этого нельзя было избежать.",
    "role": "desc",

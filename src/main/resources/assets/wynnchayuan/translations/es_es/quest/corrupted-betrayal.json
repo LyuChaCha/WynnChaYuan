@@ -1,12 +1,228 @@
 {
  "_meta": {
   "quest": "Corrupted Betrayal",
-  "count": 52,
+  "count": 73,
   "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#000": {
+   "src": "{u}, good to see you again! Been a while, huh?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#001": {
+   "src": "We've got a major problem with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#002": {
+   "src": "You lean in close to read the riddle inscribed on the ancient stone...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#003": {
+   "src": "[+{~} Mage's Riddle]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#004": {
+   "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
+    "file": "quest/temple-of-the-legends-quest.json",
+    "ratio": 0.843,
+    "reason": "candidate"
+   }
+  },
+  "Corrupted Betrayal#005": {
+   "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#006": {
+   "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#007": {
+   "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#008": {
+   "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#009": {
+   "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#010": {
+   "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#011": {
+   "src": "It appears the mutant contained the key for that door.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#012": {
+   "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#013": {
+   "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#014": {
+   "src": "...I know they will banish me...he is too good...too nice...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#015": {
+   "src": "...I must open a portal...make a dimension to become more powerful...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#016": {
+   "src": "...the books...I have prepared well for this...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#017": {
+   "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#018": {
+   "src": "Go have fun while you can. It's not like you have much of a life to live, anyways.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#019": {
+   "src": "You should head back to Lanu...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#020": {
+   "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of the cave.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#021": {
    "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
    "dst": "En el {~} AP, {p} estaba de rodillas. Hordas de no muertos diezmaban al ejército y al castillo.",
    "role": "desc",
@@ -16,7 +232,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Corrupted Betrayal#001": {
+  "Corrupted Betrayal#022": {
    "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
    "dst": "Habla con Lanu en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -26,7 +242,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#002": {
+  "Corrupted Betrayal#023": {
    "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
    "dst": "¡Eh, soldado! ¡Sí, tú! ¿Tienes un rato para echar una mano?",
    "role": "desc",
@@ -36,7 +252,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#003": {
+  "Corrupted Betrayal#024": {
    "src": "We've got a major issue with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
    "dst": "Tenemos un problemón con esta vieja fortaleza. No para de escupir malditos slimes, y estando tan cerca de {p} eso trae líos.",
    "role": "desc",
@@ -46,7 +262,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#004": {
+  "Corrupted Betrayal#025": {
    "src": "Soldiers are spending half their guard duty slicing the critters into sludge. Ideally we'd raid the cave, cut out the source, but...",
    "dst": "Los soldados se pasan media guardia haciendo picadillo a esos bichos. Lo ideal sería asaltar la cueva y cortar el mal de raíz, pero...",
    "role": "desc",
@@ -56,7 +272,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#005": {
+  "Corrupted Betrayal#026": {
    "src": "This place has some history. Nasty stuff. I'd prefer not to head in blind, so I've been checking for any clues to what we might find inside.",
    "dst": "Este sitio tiene su historia. Cosas feas. Prefiero no entrar a ciegas, así que he estado buscando pistas de lo que puede haber dentro.",
    "role": "desc",
@@ -66,7 +282,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#006": {
+  "Corrupted Betrayal#027": {
    "src": "Haven't found much... except this verse, 'scribed into the wall over there. Go on, check it out and let me know what you think.",
    "dst": "No he encontrado gran cosa... salvo estos versos, grabados en aquella pared. Anda, échales un vistazo y dime qué te parecen.",
    "role": "desc",
@@ -76,7 +292,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#007": {
+  "Corrupted Betrayal#028": {
    "src": "Nonsense, if you ask me. Most likely kids from {p} messing about. But we haven't found anything else, so... if you've got any time, fancy checking it out for me?",
    "dst": "Para mí que son tonterías. Seguro que son críos de {p} haciendo el tonto. Pero no hemos hallado nada más, así que... si tienes un rato, ¿te apetece ir a mirar?",
    "role": "desc",
@@ -86,7 +302,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#008": {
+  "Corrupted Betrayal#029": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "El primer verso habla claramente del Great Bridge, pero no tengo ni idea de qué significa el resto. Acércate allí, mira bien y dime si encuentras algo interesante.",
    "role": "desc",
@@ -96,7 +312,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#009": {
+  "Corrupted Betrayal#030": {
    "src": "Found anything interesting around the riddle yet? Do you need to hear it again?",
    "dst": "¿Has encontrado ya algo interesante sobre el acertijo? ¿Quieres oírlo otra vez?",
    "role": "desc",
@@ -106,7 +322,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#010": {
+  "Corrupted Betrayal#031": {
    "src": "Near a corrupted bridge, a ruin past its prime..",
    "dst": "Junto a un puente corrupto, una ruina que nadie estima..",
    "role": "desc",
@@ -116,7 +332,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#011": {
+  "Corrupted Betrayal#032": {
    "src": "Lives a cursed sheep, with the color of lime...",
    "dst": "vive una oveja maldita, con el color de la lima...",
    "role": "desc",
@@ -126,7 +342,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#012": {
+  "Corrupted Betrayal#033": {
    "src": "Lead it down the trail, headed to the slime...",
    "dst": "llévala por el sendero, hasta el limo que lastima...",
    "role": "desc",
@@ -136,7 +352,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#013": {
+  "Corrupted Betrayal#034": {
    "src": "Sacrifice its soul, in the blood and the grime.",
    "dst": "sacrifica su alma, entre la sangre y la grima.",
    "role": "desc",
@@ -146,7 +362,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#014": {
+  "Corrupted Betrayal#035": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "El primer verso habla claramente del Great Bridge, pero no tengo ni idea de qué significa el resto. Acércate allí, mira bien y dime si encuentras algo interesante.",
    "role": "desc",
@@ -156,7 +372,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#015": {
+  "Corrupted Betrayal#036": {
    "src": "Alrighty. Let me know what when you've got something then.",
    "dst": "Muy bien. Avísame cuando tengas algo, entonces.",
    "role": "desc",
@@ -166,7 +382,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#016": {
+  "Corrupted Betrayal#037": {
    "src": "Use the Mage's riddle to figure out where it leads",
    "dst": "Usa el acertijo del mago para averiguar adónde lleva",
    "role": "desc",
@@ -176,7 +392,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#017": {
+  "Corrupted Betrayal#038": {
    "src": "If you are heading towards the Great Bridge, be cautious in the plains around the jungle entrance.",
    "dst": "Si te diriges al Great Bridge, ten cuidado en las llanuras cercanas a la entrada de la jungla.",
    "role": "desc",
@@ -186,7 +402,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#018": {
+  "Corrupted Betrayal#039": {
    "src": "I have received reports of a strange cursed sheep taking refuge in one of the more fortified ruins around there.",
    "dst": "He recibido informes de una extraña oveja maldita refugiada en una de las ruinas más fortificadas de por allí.",
    "role": "desc",
@@ -196,7 +412,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#019": {
+  "Corrupted Betrayal#040": {
    "src": "As far as I know, it is trapped in the ruins by some jungle growth, though if it was cut down it might escape...",
    "dst": "Por lo que sé, la maleza de la jungla la mantiene atrapada en las ruinas, aunque si se cortara podría escapar...",
    "role": "desc",
@@ -206,7 +422,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#020": {
+  "Corrupted Betrayal#041": {
    "src": "Explore the temple for a way to break the barrier.",
    "dst": "Explora el templo en busca de una forma de romper la barrera.",
    "role": "desc",
@@ -216,7 +432,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#021": {
+  "Corrupted Betrayal#042": {
    "src": "Go to Slykaar's residence at [-{~}, {~}, -{~}] to find out what is hidden there.",
    "dst": "Ve a la residencia de Slykaar en [-{~}, {~}, -{~}] para descubrir qué se oculta allí.",
    "role": "desc",
@@ -226,7 +442,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#022": {
+  "Corrupted Betrayal#043": {
    "src": "By order of the city of {p}, I am here to keep other citizens from entering this house.",
    "dst": "Por orden de la ciudad de {p}, estoy aquí para impedir que otros ciudadanos entren en esta casa.",
    "role": "desc",
@@ -236,7 +452,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#023": {
+  "Corrupted Betrayal#044": {
    "src": "From past experiences, everyone who has entered this house has vanished from existence...",
    "dst": "Por experiencias pasadas, todo el que ha entrado en esta casa ha desaparecido de la existencia...",
    "role": "desc",
@@ -246,7 +462,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#024": {
+  "Corrupted Betrayal#045": {
    "src": "I would advise not going inside unless you know what you are doing.",
    "dst": "Yo no entraría a menos que sepas lo que haces.",
    "role": "desc",
@@ -256,7 +472,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#025": {
+  "Corrupted Betrayal#046": {
    "src": "Well, I guess you must know who I am.",
    "dst": "Bueno, supongo que sabrás quién soy.",
    "role": "desc",
@@ -266,7 +482,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#026": {
+  "Corrupted Betrayal#047": {
    "src": "Welcome to my domain. I am the hero of {p}, Slykaar.",
    "dst": "Bienvenido a mis dominios. Soy el héroe de {p}, Slykaar.",
    "role": "desc",
@@ -276,7 +492,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#027": {
+  "Corrupted Betrayal#048": {
    "src": "Well, I used to be. Banished by the very people who asked for my help. Pathetic.",
    "dst": "Bueno, lo era. Desterrado por los mismos que pidieron mi ayuda. Patético.",
    "role": "desc",
@@ -286,7 +502,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#028": {
+  "Corrupted Betrayal#049": {
    "src": "They couldn't give me a few peasants for their safety? Weak.",
    "dst": "¿No podían darme unos campesinos a cambio de su seguridad? Débiles.",
    "role": "desc",
@@ -296,7 +512,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#029": {
+  "Corrupted Betrayal#050": {
    "src": "Journey through Slykaar's dimension.",
    "dst": "Atraviesa la dimensión de Slykaar.",
    "role": "desc",
@@ -306,7 +522,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#030": {
+  "Corrupted Betrayal#051": {
    "src": "I experimented my shamanism for many years underground to create the perfect mix of monster.",
    "dst": "Experimenté con mi chamanismo durante años bajo tierra para crear la mezcla perfecta de monstruo.",
    "role": "desc",
@@ -316,7 +532,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#031": {
+  "Corrupted Betrayal#052": {
    "src": "Most ended in horrific slimes. Aggressive and powerful, but alas, just slimes.",
    "dst": "Casi todos salieron slimes horrendos. Agresivos y fuertes, pero solo slimes.",
    "role": "desc",
@@ -326,7 +542,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#032": {
+  "Corrupted Betrayal#053": {
    "src": "Then I found this place. A dark land. A dark god. A source of power.",
    "dst": "Entonces hallé este lugar. Tierra oscura. Dios oscuro. Fuente de poder.",
    "role": "desc",
@@ -336,7 +552,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#033": {
+  "Corrupted Betrayal#054": {
    "src": "You mediocre wielders of magic have no idea what this world holds.",
    "dst": "Vosotros, mediocres usuarios de la magia, no sabéis lo que guarda este mundo.",
    "role": "desc",
@@ -346,7 +562,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#034": {
+  "Corrupted Betrayal#055": {
    "src": "You all strive to be that hero of heroes, “Bob”, but here's the truth. He's lost. You're lost.",
    "dst": "Todos aspiráis a ser ese héroe de héroes, “Bob”, pero esta es la verdad. Él está perdido. Tú estás perdido.",
    "role": "desc",
@@ -356,7 +572,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#035": {
+  "Corrupted Betrayal#056": {
    "src": "No one in the Wynn province is willing to make the sacrifices I am to gain power.",
    "dst": "Nadie en la provincia de Wynn está dispuesto a hacer los sacrificios que yo hago por el poder.",
    "role": "desc",
@@ -366,7 +582,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#036": {
+  "Corrupted Betrayal#057": {
    "src": "If you want power, you have to give some. Sacrifice a few to save many.",
    "dst": "Si quieres poder, has de dar algo. Sacrifica a unos pocos y salva a muchos.",
    "role": "desc",
@@ -376,7 +592,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#037": {
+  "Corrupted Betrayal#058": {
    "src": "They were willing to give me a few peasants in {~}, when the hordes crossed the bridge.",
    "dst": "En el {~} sí estaban dispuestos a darme unos campesinos, cuando las hordas cruzaron el puente.",
    "role": "desc",
@@ -386,7 +602,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#038": {
+  "Corrupted Betrayal#059": {
    "src": "The king was happy to throw away lives to save his. But then the hero of Wynn waltzed in a few years later.",
    "dst": "Al rey le encantaba tirar vidas para salvar la suya. Pero unos años después llegó el héroe de Wynn tan campante.",
    "role": "desc",
@@ -396,7 +612,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#039": {
+  "Corrupted Betrayal#060": {
    "src": "They banished me like a rotten fruit. Their hero, their protector. So what if a few hundred nobodies died for it.",
    "dst": "Me desterraron como a fruta podrida. A su héroe, su protector. ¿Y qué, si murieron unos cientos de don nadies?",
    "role": "desc",
@@ -406,7 +622,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#040": {
+  "Corrupted Betrayal#061": {
    "src": "Looks like we have a Bob aspirer. Pale imitation.",
    "dst": "Parece que tenemos a un aspirante a Bob. Pálida imitación.",
    "role": "desc",
@@ -416,7 +632,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#041": {
+  "Corrupted Betrayal#062": {
    "src": "So. Feel free to visit me down below, bring the entire might of the {p} army upon me. It will not be enough.",
    "dst": "Así que ven a verme ahí abajo cuando quieras, trae contra mí todo el poder del ejército de {p}. No bastará.",
    "role": "desc",
@@ -426,7 +642,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#042": {
+  "Corrupted Betrayal#063": {
    "src": "I am ready. Soon, {p} will be in ruins. And I shall have my revenge.",
    "dst": "Estoy listo. Pronto {p} será ruinas. Y tendré mi venganza.",
    "role": "desc",
@@ -436,7 +652,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#043": {
+  "Corrupted Betrayal#064": {
    "src": "Go have fun in while you can. It's not like you have much of a life to live, anyways.",
    "dst": "Ve a divertirte mientras puedas. Tampoco es que te quede mucha vida por vivir.",
    "role": "desc",
@@ -446,7 +662,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#044": {
+  "Corrupted Betrayal#065": {
    "src": "Report back to Lanu about what you've learned.",
    "dst": "Informa a Lanu de lo que has averiguado.",
    "role": "desc",
@@ -456,7 +672,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#045": {
+  "Corrupted Betrayal#066": {
    "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of this cave.",
    "dst": "Ah, has vuelto. ¿Encontraste algo interesante? Yo he estado sacudiendo al slime que asomaba de vez en cuando por esta cueva.",
    "role": "desc",
@@ -466,7 +682,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#046": {
+  "Corrupted Betrayal#067": {
    "src": "You... saw Slykaar? In another dimension?!",
    "dst": "¿Que... viste a Slykaar? ¿En otra dimensión?",
    "role": "desc",
@@ -476,7 +692,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#047": {
+  "Corrupted Betrayal#068": {
    "src": "This is bad. If he can materialise outside of this cave, even psychoactively... he's getting stronger. It explains the slimes, the attacks on {p}...",
    "dst": "Esto es malo. Si puede materializarse fuera de esta cueva, aunque sea en la mente... se está haciendo más fuerte. Eso explica los slimes, los ataques a {p}...",
    "role": "desc",
@@ -486,7 +702,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#048": {
+  "Corrupted Betrayal#069": {
    "src": "He's an incredibly powerful shaman, {u}. He has to be stopped, but it would take forever for {p} to mobile a force against him.",
    "dst": "Es un chamán increíblemente poderoso, {u}. Hay que detenerlo, pero {p} tardaría una eternidad en movilizar tropas contra él.",
    "role": "desc",
@@ -496,7 +712,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#049": {
+  "Corrupted Betrayal#070": {
    "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
    "dst": "Si puedes, deberías entrar ahí y... acabar con él. Pero equípate antes, y busca amigos que te cubran.",
    "role": "desc",
@@ -506,7 +722,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#050": {
+  "Corrupted Betrayal#071": {
    "src": "{u}, how's it going? Run into another shaman hallucination at all?",
    "dst": "{u}, ¿cómo va todo? ¿Te has topado con otra alucinación del chamán?",
    "role": "desc",
@@ -516,7 +732,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#051": {
+  "Corrupted Betrayal#072": {
    "src": "Anyway, good luck in the cave. If you choose to go in, be careful.",
    "dst": "En fin, suerte en la cueva. Si decides entrar, ten cuidado.",
    "role": "desc",
