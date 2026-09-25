@@ -18,7 +18,17 @@
 譯者要調語序時，把編號跟著搬就好，不必再心算第幾個。
 
 <p>只處理「原文有兩個以上數值」的條目——只有一個的時候不會錯位，
-加編號只是噪音。譯文已經有編號的、數量對不上的，一律不動。
+加編號只是噪音。譯文已經有編號的一律不動。
+
+<h2>不能自動編號的，指名出來</h2>
+有兩種條目不動它，而且會在最後<b>逐條列出檔名與鍵</b>，讓人自己去對：
+
+    數量對不上    照順序編號會把數值接到錯的欄位上，只有人看得出來該接哪個
+    十個以上      編號只寫得到 {~9}，見 MAX_INDEX
+
+<p>以前這兩種都是靜靜跳過的，第二種還會讓整支工具掛掉：編號用的
+`iter(range(1, 10))` 取完第九個就 `StopIteration`，而且那個 traceback 裡
+<b>完全看不出是哪一條語料</b>。不帶參數直接跑就會中。
 
 用法：
     python tools/index-numbers.py
@@ -27,6 +37,7 @@
 
 from __future__ import annotations
 
+import itertools
 import json
 import pathlib
 import re
@@ -36,27 +47,52 @@ BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 NL = chr(10)
 
 BARE = re.compile(r"\{~\}")
-INDEXED = re.compile(r"\{~\d\}")
+# 認得多位數的 {~10}，這樣萬一哪天真的有，也算「已經有編號了」而不是被當成沒編號
+INDEXED = re.compile(r"\{~\d+\}")
+
+# 編號只寫得到一位數。validate.py 的 NUMBERED（`\{~[1-9]\}`）就是這樣認的，
+# 寫成 {~10} 那邊會當成完全沒有佔位符，直接報「數量不符」。
+MAX_INDEX = 9
 
 
 def index_them(dst: str) -> str:
-    counter = iter(range(1, 10))
+    """把 `{~}` 逐個換成 `{~1}`、`{~2}`……照原本的順序。
+
+    <p>計數器用不設上限的 `itertools.count` 是故意的：要不要編號是
+    {@code classify} 的事，這裡再放一個會取完的計數器，只會在別人改壞
+    上游條件時炸成一個看不出是哪條語料的 `StopIteration`。
+    """
+    counter = itertools.count(1)
     return BARE.sub(lambda _: "{~" + str(next(counter)) + "}", dst)
 
 
-def needs_indexing(src: str, dst: str) -> bool:
+def classify(src: str, dst: str) -> tuple[str, str]:
+    """這一條要編號、安靜跳過，還是指名出來給人看。
+
+    @return ("index", "")、("skip", "")，或 ("report", 要印出來的原因)
+    """
     if not src or not dst:
-        return False
+        return "skip", ""
     if INDEXED.search(dst):
-        return False                    # 已經有編號了
+        return "skip", ""                       # 已經有編號了
     total = len(BARE.findall(src))
-    # 只有一個數值不會錯位；兩邊數量對不上表示譯者刻意增刪，不能自動處理
-    return total >= 2 and len(BARE.findall(dst)) == total
+    here = len(BARE.findall(dst))
+    if total < 2:
+        return "skip", ""                       # 只有一個數值不會錯位
+    if here != total:
+        # 譯者刻意增刪，或是漏抄了一個。照順序編號會編出一組指錯欄位的號碼，
+        # 比不編還糟——只能指名出來。
+        return "report", f"譯文 {here} 個 {{~}}，原文 {total} 個，數量對不上"
+    if total > MAX_INDEX:
+        return "report", (f"譯文 {here} 個 {{~}}，原文 {total} 個，"
+                          f"超過編號上限 {{~{MAX_INDEX}}}")
+    return "index", ""
 
 
 def main(argv: list[str]) -> int:
     write = "--write" in argv
     changed = 0
+    refused: list[tuple[str, str, str]] = []
     for path in sorted(BASE.rglob("*.json")):
         if path.name.startswith("_"):
             continue
@@ -73,7 +109,11 @@ def main(argv: list[str]) -> int:
                 src, dst = entry.get("src", key), entry.get("dst", "")
             else:
                 src, dst = key, entry
-            if not needs_indexing(src, dst):
+            action, note = classify(src, dst)
+            if action == "report":
+                refused.append((str(path.relative_to(BASE)), key, note))
+                continue
+            if action != "index":
                 continue
             fixed = index_them(dst)
             touched.append((src, dst, fixed))
@@ -92,6 +132,14 @@ def main(argv: list[str]) -> int:
         if write:
             path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + NL,
                             encoding="utf-8", newline=NL)
+
+    if refused:
+        print()
+        print(f"沒有編號 {len(refused)} 條，要人工確認"
+              "——鍵印的是完整原文，可以直接拿去檔案裡搜：")
+        for where, key, note in refused:
+            print(f"  {where}  {note}")
+            print(f"      鍵 {key!r}")
 
     print()
     print(f"編號 {changed} 條"
