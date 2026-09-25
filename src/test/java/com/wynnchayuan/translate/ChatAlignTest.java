@@ -132,6 +132,7 @@ public final class ChatAlignTest {
         columns();
         panelSingles();
         vibrantColumns();
+        tooltipColumns();
         try {
             lootrunSummary();
         } finally {
@@ -361,6 +362,51 @@ public final class ChatAlignTest {
             gaps += g ? 1 : 0;
         }
         check("圖示前的 2px 微調不算欄界（實際 " + gaps + " 個）", gaps == 0);
+    }
+
+    /** 造字區的圖示碼位，{@code Character.isLetter} 認不得。 */
+    private static final String ICON = new String(Character.toChars(0xE000));
+
+    /**
+     * tooltip 的欄界：排滿整份寬度的那一行，欄距只有 4px 也要認得出來。
+     *
+     * <p>實機的職業類型那一行是
+     * {@code <圖示> Class Type<+4>Mage/Dark Wizard}——右欄緊貼著左欄，
+     * 因為這一行本來就是整份 tooltip 最寬的。先前 {@code MIN_GAP_PX}
+     * 把那 4px 當成排版微調，整行一個欄界都數不到（{@code countSpaces} 回 0），
+     * 於是原樣送出去：中文的「職業類型」比英文短，右欄就跟著往左縮，
+     * 隔壁欄距 71px 的「戰鬥等級 99」卻守住了右緣。
+     */
+    private static void tooltipColumns() {
+        List<LineTranslator.Run> classType = List.of(
+                word(ICON + " Class Type"), gap(4), word("Mage/Dark Wizard"));
+        check("職業類型那一行認得 4px 的欄界", gapCount(classType) == 1);
+
+        List<LineTranslator.Run> made = List.of(
+                word(ICON + " 職業類型"), gap(4), word("法師/闇導士"));
+        check("譯文那一行也認得（兩邊數量要一樣才會補償）", gapCount(made) == 1);
+        check("補償看得到標籤", LineTranslator.labelledRun(made, 0));
+
+        // 反例一：圖示前的微調。前面只有「- +1 」沒有字母，後面接的又是圖示。
+        List<LineTranslator.Run> helmet = List.of(word("- +1 "), gap(2),
+                                                  word(ICON + "Unidentified Helmet"));
+        check("圖示前的 2px 微調不算欄界", gapCount(helmet) == 0);
+
+        // 反例二：行首的縮排。tooltip 的縮排歸 BlockLayout 管，不能數成欄界。
+        List<LineTranslator.Run> reward = List.of(gap(4), word("Rewards:"));
+        check("行首的縮排不算欄界", gapCount(reward) == 0);
+
+        // 反例三：往回拉的負偏移（圖示疊字）。
+        List<LineTranslator.Run> overlay = List.of(word("Bonder"), gap(-4), word(ICON));
+        check("往回拉的負偏移不算欄界", gapCount(overlay) == 0);
+    }
+
+    private static int gapCount(List<LineTranslator.Run> runs) {
+        int n = 0;
+        for (boolean g : LineTranslator.tooltipGaps(runs)) {
+            n += g ? 1 : 0;
+        }
+        return n;
     }
 
     private static void centresKept(String what, List<LineTranslator.Run> orig,
