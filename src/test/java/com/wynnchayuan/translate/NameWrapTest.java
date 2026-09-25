@@ -74,6 +74,7 @@ public final class NameWrapTest {
         lineUp(store);
         inStep(store);
         invisibleRow(store);
+        fitsTheCard(store);
 
         System.out.println(failures == 0
                 ? "NameWrapTest 全部通過" : failures + " 項失敗");
@@ -247,6 +248,36 @@ public final class NameWrapTest {
                     Style.EMPTY.withColor(TextColor.fromRgb((Integer) pairs[i + 1]))));
         }
         return out;
+    }
+
+    /**
+     * ★ 實機回報「格式不對」：名字收得進整份 tooltip 就不要拆。
+     *
+     * <p>橡木弓的英文名稱只有一行的寬度，而整份 tooltip 被「職業類型」那一行撐得寬得多。
+     * 以前只跟同一行的原文比，「橡木弓 (Oak Wood Bow)」比「Oak Wood Bow」寬就被拆成
+     * 兩行，名字底下無端多出一行，把下面整排往下推。
+     */
+    private static void fitsTheCard(TranslationStore store) {
+        List<Component> original = List.of(
+                row("Idol", NAME),
+                row("Class Type    Archer/Hunter", NAME));
+        List<Component> translated = List.of(
+                row("神像 (Idol)", NAME),
+                row("職業類型  弓箭手/獵人", NAME));
+        List<Component> out = NameWrap.split(original, translated,
+                new boolean[] {false, false}, store, WIDTH).translated();
+        check("★ 名字比同一行的原文寬，但收得進整份 -> 不拆（實際 "
+                        + out.size() + " 行）",
+              out == translated);
+
+        // 反例：連整份都撐不下的還是要拆。
+        List<Component> wide = List.of(
+                row("燼咒牧杖 (Cindercurse Crosier) 還要更長一點才撐得破", NAME),
+                row("職業類型  弓箭手/獵人", NAME));
+        List<Component> split = NameWrap.split(original, wide,
+                new boolean[] {false, false}, store, WIDTH).translated();
+        check("連整份都放不下的照拆（實際 " + split.size() + " 行）",
+              split.size() == 3);
     }
 
     /** 第 {@code index} 個字畫出來是什麼顏色。 */
