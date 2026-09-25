@@ -213,6 +213,9 @@ public final class UpgradeSafetyTest {
         expected.addProperty("autoUpdateTranslations", false);
         // 0.2.3_1：boss bar 自己的開關（issue #825）。舊設定檔沒有，補上預設值。
         expected.addProperty("translateBossBar", true);
+        // 0.2.3_1：translateNametags 拿掉了。它沒有接到 F6 卻擋著算繪，正是 #825
+        // 的病根；浮空字改成跟「名牌與漂浮字」那一列走。
+        expected.remove("translateNametags");
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));

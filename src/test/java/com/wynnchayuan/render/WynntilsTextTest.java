@@ -189,12 +189,16 @@ public final class WynntilsTextTest {
               shown.startsWith("馬") && shown.endsWith("47❤"));
         check("同一條再畫一次拿到同一份", WynntilsText.bossBar(bar, config, store)
                 == WynntilsText.bossBar(bar, config, store));
-        // 兩列各自獨立：關掉浮空字不該把 boss bar 一起關掉。先前它們共用一個
-        // 沒有 UI 的舊開關，現在 F6 上是兩顆，連坐會讓人以為壞了。
-        config.toggleNametags();
-        check("關掉祭壇浮空字不會連坐 boss bar",
+        // 兩者各自獨立：把名牌關掉不該連坐 boss bar。先前它們共用一個沒有 UI 的
+        // 舊欄位，現在 F6 上是兩顆開關，連坐會讓人以為壞了。
+        while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
+            config.cycleNametagMode();
+        }
+        check("名牌關掉不會連坐 boss bar",
                 WynntilsText.bossBar(bar, config, store).getString().startsWith("馬"));
-        config.toggleNametags();
+        while (config.nametagMode() == CollectorConfig.NametagMode.OFF) {
+            config.cycleNametagMode();
+        }
 
         // issue #825：關不掉。先前唯一的開關是 translateNametags，而那個欄位
         // 沒有接到 F6（只有測試在切它），所以實機上永遠是開的。
@@ -218,12 +222,21 @@ public final class WynntilsTextTest {
         net.minecraft.network.chat.Component odd =
                 net.minecraft.network.chat.Component.literal("Qwertyuiop Zxcv");
         check("翻不出來的原樣回去", WynntilsText.entityName(odd, config, store) == odd);
-        // F6 的「祭壇那類浮空字」就是切這一個（#825 之前它沒有 UI）
-        config.toggleNametags();
-        check("開關關掉時原樣回去", WynntilsText.entityName(altar, config, store) == altar);
-        config.toggleNametags();
-        check("再打開就照常翻",
+        // 跟著 F6 的「名牌與漂浮字」走（#825 之前它掛在一個沒有 UI 的欄位上）
+        CollectorConfig.NametagMode was = config.nametagMode();
+        while (config.nametagMode() != CollectorConfig.NametagMode.OFF) {
+            config.cycleNametagMode();
+        }
+        check("名牌那一列關掉時原樣回去",
+                WynntilsText.entityName(altar, config, store) == altar);
+        // 「注視時顯示」對盔甲座做不到小框（那要 TextDisplay 才認得出位置），
+        // 所以那一段一樣就地換——不然等於完全不翻，見 WynntilsText#entityName。
+        config.cycleNametagMode();
+        check("注視時顯示也照翻（小框對盔甲座做不到）",
                 WynntilsText.entityName(altar, config, store).getString().equals("腐敗祭壇"));
+        while (config.nametagMode() != was) {
+            config.cycleNametagMode();
+        }
     }
 
     /**
