@@ -108,6 +108,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.capture.CardDump.init(dir.resolve(
                 com.wynnchayuan.capture.CardDump.FILE));
         com.wynnchayuan.render.ThirdPartySections.load(dir);
+        // 聊天裡那顆「按這裡更新」要有指令接著才按得下去，見 TranslationUpdate。
+        com.wynnchayuan.translate.TranslationUpdate.registerCommand();
         com.wynnchayuan.render.ThirdPartyLiterals.load(dir);
         // 診斷檔預設不寫。
         //

@@ -314,7 +314,7 @@ public final class WynntilsText {
     static net.minecraft.network.chat.Component bossBar(
             net.minecraft.network.chat.Component name, CollectorConfig config,
             TranslationStore store) {
-        if (name == null || store == null || config == null || !config.translateNametags()) {
+        if (name == null || store == null || config == null || !config.translateBossBar()) {
             return name;
         }
         if (store != barStore || BARS.size() > 256) {
@@ -490,7 +490,16 @@ public final class WynntilsText {
      * 與下面那行提示）。
      *
      * <p>這種字不是 TextDisplay，Wynntils 的名牌事件收不到，先前完全沒經過模組——
-     * 沒翻、也沒收進 capture。跟名牌翻譯同一個開關。
+     * 沒翻、也沒收進 capture。
+     *
+     * <h2>為什麼跟名牌同一個開關</h2>
+     * 收到的內容進的是 {@code label/floating}，跟名牌那條路<b>同一種東西</b>；
+     * 差別只在 Wynccraft 有些字還是舊式盔甲座、走不到 Wynntils 的名牌事件。
+     * 那是實作差異，玩家分不出來，所以不另外開一列（#825 的討論）。
+     *
+     * <p>只看「關／不關」，不分三段：「注視時顯示」那一段要在準心旁邊補小框，
+     * 而小框是 {@code LookAtTranslator} 靠 TextDisplay 認位置的，盔甲座沒有那個
+     * 實體可認。所以那一段對這種字只能就地換，不然等於完全不翻。
      *
      * <p>每一幀都會畫，結果照原字記下；查不到的只在第一次看到時收進 capture。
      *
@@ -499,7 +508,8 @@ public final class WynntilsText {
     static net.minecraft.network.chat.Component entityName(
             net.minecraft.network.chat.Component name, CollectorConfig config,
             TranslationStore store) {
-        if (name == null || store == null || config == null || !config.translateNametags()) {
+        if (name == null || store == null || config == null
+                || config.nametagMode() == CollectorConfig.NametagMode.OFF) {
             return name;
         }
         if (store != nameStore || NAMES.size() > 512) {

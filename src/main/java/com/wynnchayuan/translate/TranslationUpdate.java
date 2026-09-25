@@ -54,6 +54,51 @@ public final class TranslationUpdate {
         }
     }
 
+    /** 點下去會跑的那一個。前面加斜線才是聊天框認得的寫法。 */
+    public static final String COMMAND = "wynnchayuan-update";
+
+    /** 正在抓，按兩次不會抓兩次。 */
+    private static volatile boolean fetching;
+
+    /**
+     * 註冊客戶端指令，給聊天裡那顆按鈕用。
+     *
+     * <h2>為什麼要繞指令</h2>
+     * 聊天的 {@code ClickEvent} 只能開網址、開檔案、填字或<b>送出指令</b>，
+     * 沒有「呼叫這個 Java 方法」那一種。要讓一行字變成按鈕，就得有一個指令
+     * 接在後面。
+     *
+     * <p>用 Fabric 的<b>客戶端</b>指令，所以它不會送到 Wynncraft——那很重要，
+     * 伺服器收到不認得的指令會回一句錯誤，玩家每按一次就被罵一次。
+     */
+    public static void registerCommand() {
+        net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback.EVENT
+                .register((dispatcher, registry) -> dispatcher.register(
+                        net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+                                .literal(COMMAND)
+                                .executes(ctx -> {
+                                    update(Minecraft.getInstance());
+                                    return 1;
+                                })));
+    }
+
+    /** 抓一次，抓完在聊天室回報。F6 的那顆按鈕走的是同一支。 */
+    private static void update(Minecraft client) {
+        if (client == null || client.player == null || fetching) {
+            return;
+        }
+        fetching = true;
+        tell(client, com.wynnchayuan.client.T.c("status.fetching")
+                .withStyle(ChatFormatting.GRAY));
+        WynnChaYuan.resyncTranslations(result -> {
+            fetching = false;
+            if (client.player != null) {
+                tell(client, com.wynnchayuan.client.T.c("chat.translations.done", result)
+                        .withStyle(ChatFormatting.GREEN));
+            }
+        });
+    }
+
     /** 進遊戲之後叫；有新翻譯就說一次。見 {@code Releases#tellOnce} 的同一套規則。 */
     public static void tellOnce(Minecraft client) {
         String version = pending;
@@ -63,8 +108,25 @@ public final class TranslationUpdate {
         told = true;
         tell(client, com.wynnchayuan.client.T.c("chat.translations.line1")
                 .withStyle(ChatFormatting.AQUA));
+        tell(client, button());
         tell(client, com.wynnchayuan.client.T.c("chat.translations.where")
                 .withStyle(ChatFormatting.DARK_GRAY));
+    }
+
+    /**
+     * 「按這裡更新」那一行：有底線、滑過有說明、按下去就抓。
+     *
+     * <p>底線是唯一會讓人想到「這可以按」的視覺提示——聊天室裡沒有按鈕長相。
+     */
+    static Component button() {
+        return com.wynnchayuan.client.T.c("chat.translations.button")
+                .withStyle(style -> style
+                        .withColor(ChatFormatting.AQUA)
+                        .withUnderlined(true)
+                        .withClickEvent(new net.minecraft.network.chat.ClickEvent.RunCommand(
+                                "/" + COMMAND))
+                        .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
+                                com.wynnchayuan.client.T.c("chat.translations.button.hover"))));
     }
 
     /** 送一行。先記下來，收集語料時才不會把它當成遊戲原文，見 {@code OwnOutputs}。 */

@@ -538,6 +538,13 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleTitles();
                     b.setMessage(titleLabel());
                 });
+        // 打怪時橫在畫面正中間那一條。先前只跟著名牌那個沒有 UI 的舊開關走，
+        // 等於關不掉（issue #825）。
+        cycle("world.bossbar",
+                this::bossBarLabel, b -> {
+                    WynnChaYuan.config().toggleBossBar();
+                    b.setMessage(bossBarLabel());
+                });
         // 右上那一欄：任務追蹤、每日目標、世界事件、Lootrun、團隊。
         // 三段：就地取代 Wynntils 疊層裡的字／畫在我們自己的小框／不翻。
         back(cycle("world.tracker",
@@ -897,6 +904,11 @@ public final class SettingsScreen extends Screen {
             case PANEL -> T.s("mode.panel");
             case OFF -> T.s("mode.off");
         });
+    }
+
+    private Component bossBarLabel() {
+        return ctrl(WynnChaYuan.config().translateBossBar()
+                ? T.s("mode.replace") : T.s("mode.off"));
     }
 
     private Component objectiveLabel() {

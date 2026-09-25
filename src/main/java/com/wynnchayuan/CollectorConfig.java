@@ -283,7 +283,15 @@ public final class CollectorConfig {
      * <p>名牌是唯一就地替換原文的地方（浮在 3D 世界裡，沒辦法開側欄），
      * 所以獨立一個開關，不想動原文的人可以只關這項。
      */
-    private boolean translateNametags = true;
+    /**
+     * 畫面頂端 boss bar 的標題要不要翻。
+     *
+     * <p>先前它跟浮空字共用一個叫 {@code translateNametags} 的欄位，而那個欄位
+     * <b>沒有接到 F6</b>——只有測試在切它——所以實機上永遠是開的，關不掉
+     *（issue #825）。打怪時那一條橫在畫面正中間，不想要的人沒有任何辦法。
+     * 那個欄位已經拿掉：浮空字歸「名牌與漂浮字」管，boss bar 歸這一個。
+     */
+    private boolean translateBossBar = true;
 
     /**
      * 名牌翻譯的呈現方式。
@@ -650,8 +658,9 @@ public final class CollectorConfig {
         return debugDumps;
     }
 
-    public boolean translateNametags() {
-        return translateNametags;
+    /** 見 {@link #translateBossBar}。 */
+    public boolean translateBossBar() {
+        return translateBossBar;
     }
 
     public ItemNames itemNames() {
@@ -1032,10 +1041,10 @@ public final class CollectorConfig {
 
     private boolean dirty = false;
 
-    public boolean toggleNametags() {
-        translateNametags = !translateNametags;
+    public boolean toggleBossBar() {
+        translateBossBar = !translateBossBar;
         save();
-        return translateNametags;
+        return translateBossBar;
     }
 
     public NametagMode nametagMode() {
@@ -1194,7 +1203,7 @@ public final class CollectorConfig {
         debugDumps = bool(o, "debugDumps", debugDumps);
         collectGuiText = bool(o, "collectGuiText", collectGuiText);
         source = enumOr(o, "source", Source.class, source);
-        translateNametags = bool(o, "translateNametags", translateNametags);
+        translateBossBar = bool(o, "translateBossBar", translateBossBar);
         nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
         noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
@@ -1375,7 +1384,7 @@ public final class CollectorConfig {
             o.addProperty("source", source.name());
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);
-            o.addProperty("translateNametags", translateNametags);
+            o.addProperty("translateBossBar", translateBossBar);
             o.addProperty("nametagMode", nametagMode.name());
             o.addProperty("panelSide", panelSide.name());
             o.addProperty("itemNames", itemNames.name());
