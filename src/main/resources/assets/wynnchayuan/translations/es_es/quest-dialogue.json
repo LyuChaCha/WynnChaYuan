@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 23783,
-  "translated": 23434,
+  "count": 23752,
+  "translated": 23402,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -81667,6 +81667,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "Finding the Light#141": {
+   "src": "WHY WOULD I BE NEEDED TO... To...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "Stage 16",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "Lleva tu pasaporte de Gavel al encargado de la aeronave en [-{~}, {~}, -{~}].",
@@ -85648,8 +85658,8 @@
    "source": "captured"
   },
   "Frost Bite#021": {
-   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "Vaya, incluso para los estándares de hoy es muchísimo dinero. Imagina cuánto era hace siglos.",
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85658,14 +85668,14 @@
    "source": "captured"
   },
   "Frost Bite#022": {
-   "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
-   "dst": "Encuentra a Eppo en [-{~}, {~}, -{~}]. La entrada a su cueva está en [-{~}, {~}, -{~}].",
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "Vaya, incluso para los estándares de hoy es muchísimo dinero. Imagina cuánto era hace siglos.",
    "role": "desc",
-   "kind": "objective",
+   "kind": "dialogue",
    "quest": "Frost Bite",
-   "stage": "Stage 1",
+   "stage": "",
    "speaker": "",
-   "source": "wiki"
+   "source": "captured"
   },
   "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
@@ -86330,6 +86340,26 @@
   "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "Espera, mira esto. Parece una pieza de la armadura de Theorick.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "¡Lo lograste! Ya entramos a la cámara.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
+   "src": "Surprised it even managed to fit over his fat head.",
+   "dst": "Me sorprende que le entrara en esa cabezota.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -116637,19 +116667,13 @@
   },
   "Out of my Mind#004": {
    "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "Eres la primera persona normal que veo últimamente, {u}. ¡El otro día salí y unos vecinos muy groseros me soltaron unas groserías!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -116841,16 +116865,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "Eres la primera persona normal que veo últimamente, {u}. ¡El otro día salí y unos vecinos muy groseros me soltaron unas groserías!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "No hagas caso a mis amigos, siempre son así, pero Prentiss tiene razón. ¡Puede que sea nuestra única oportunidad de saber quién es de verdad ese hombre misterioso!",
@@ -116964,16 +116978,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "Estarás pensando: ¿cómo no había conocido antes a un tipo tan estupendo como yo? Sinceramente, has tenido muy mala suerte, ¡porque yo recorría el mundo entero!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "Eres la primera persona normal que veo últimamente, {PlayerName}. ¡El otro día salí y unos vecinos muy groseros me soltaron unas groserías!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -117329,6 +117333,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "¡Ayúdame a aguantar la puerta o se estropeará mi sorpresa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "Creo que oí aquello de combatir el fuego con fuego, ¡así que creo que puedo devolverte! Pesas un poco demasiado para mí, así que hay que buscar una alternativa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "Encuentra la forma de destruir al monstruo vegetal y vuelve con el grupo en {p} en [-{~},-{~}] para contar lo que has descubierto",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Overture to Despair#000": {
@@ -133745,16 +133779,6 @@
    "speaker": "Frank",
    "source": "wiki"
   },
-  "Recipe For Disaster#062": {
-   "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "Consigue [{~} {Ingredient}] en [X, Y, Z] o consulta tu libro de recetas.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Recipe For Disaster",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "¡Bienvenido a la Casa Astral de Astralus! ¿Llegas arriba invirtiendo la gravedad?",
@@ -143722,6 +143746,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "...así que hemos llegado a esto. Me sabía los nombres de todos esos guardias. No hice daño a nadie para lograr mi meta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "¡Aaah! ¡¿No responde?! Tú- Tú... ¡TÚ! ¡Has destruido el futuro! ¡MI futuro! ¡¡¡El futuro de GAVEL!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "...ajá. Mmm. ... ...sí, sigue. Eh, vale, me lo puedo creer... Nunca te creería si no me hubieras dado la prueba.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   },
@@ -163748,16 +163802,6 @@
   "The Canary Calls#163": {
    "src": "Have fun.",
    "dst": "Diviértete.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#164": {
-   "src": "Kill me now or I'll kill everyone in {Your Guild}.",
-   "dst": "Mátame ya o mataré a todos los de {Your Guild}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -237520,366 +237564,6 @@
     "ratio": 0.89,
     "reason": "candidate"
    }
-  },
-  "Arachnids' Ascent#001": {
-   "src": "Our preparations are complete, and it's time for the assault on the spider den! With you here, we'll just need to wait for-...",
-   "dst": "¡Los preparativos están listos y es hora de asaltar la guarida de arañas! Contigo aquí, solo falta esperar a...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Beneath the Depths#017": {
-   "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
-   "dst": "¡No sé leer mi propio dichoso mapa, muchacho! ¿Qué le has hecho? ¿Rascar la tinta con tus monedas?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Beneath the Depths",
-   "stage": "Stage 2",
-   "speaker": "Javier",
-   "source": "wiki"
-  },
-  "Crop Failure#042": {
-   "src": "Can't sell what little I have, so I figure you can take it, and a bit of cash too, since you basically did an exterminator's job.",
-   "dst": "No puedo vender lo poco que tengo, así que llévatelo tú, y algo de dinero también, porque prácticamente has hecho de exterminador.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "Stage 5",
-   "speaker": "Anast",
-   "source": "wiki"
-  },
-  "Crop Failure#000~1": {
-   "src": "Oi, bucko! Took my advice, eh? I figured I'd join ye, 'n see fer myself what was goin' on.",
-   "dst": "¡Eh, chaval! Seguiste mi consejo, ¿eh? Pensé en acompañarte y ver por mí mismo qué pasaba.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Death Whistle (Quest)#015": {
-   "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "¿Q-qué? ¿¡Una Pink PELULITE!? ¡Le vendí una Pink PELUTE para sus amuletos! Cómo te atre- espera... la Pelute tiene pétalos redondos... Ay, no.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#017": {
-   "src": "I must... make a difficult choice, and leave this job to you. I've other things to tend to, though it pains me to leave a life in another's hands. Remember this, villager!",
-   "dst": "Debo... tomar una decisión difícil y dejarte a ti esta tarea. Tengo otros asuntos que atender, aunque me duele dejar una vida en manos ajenas. ¡Recuerda esto, aldeano!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#023": {
-   "src": "You're back, I see... and you're shedding petals! You got the Pink Pelulite back?",
-   "dst": "Has vuelto, ya veo... ¡y vas soltando pétalos! ¿Recuperaste la Pink Pelulite?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 6",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Finding the Light#141": {
-   "src": "WHY WOULD I BE NEEDED TO... To...",
-   "dst": "¿POR QUÉ HARÍA FALTA QUE YO... Que...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Finding the Light",
-   "stage": "Stage 16",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Frost Bite#087": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "¡Lo lograste! Ya entramos a la cámara.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "Frost Bite#091": {
-   "src": "Surprised it even managed to fit over his fat head.",
-   "dst": "Me sorprende que le entrara en esa cabezota.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "King's Recruit#000": {
-   "src": "Awaken",
-   "dst": "Despierta",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#009": {
-   "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
-   "dst": "Te lo ruego, por favor, encuentra a mi hijo. No sé bien dónde está, pero sin duda lo han llevado muy adentro...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#015": {
-   "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
-   "dst": "¡Oh! ¡Entonces el cuerpo de este guerrero me servirá mucho mejor! ¡Dame tu poder, chico! ¡Debo vencerlo antes de poseerlo!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 2",
-   "speaker": "Aryn?",
-   "source": "wiki"
-  },
-  "Mushroom Man#031": {
-   "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
-   "dst": "...O-oh. ¿T-tengo que pagaros... ahora? Je. ¿O-os vale con [{~} esmeraldas]..?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Out of my Mind#033": {
-   "src": "Help me keep this door shut, or else my surprise will be ruined!",
-   "dst": "¡Ayúdame a aguantar la puerta o se estropeará mi sorpresa!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#038": {
-   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
-   "dst": "Creo que oí aquello de combatir el fuego con fuego, ¡así que creo que puedo devolverte! Pesas un poco demasiado para mí, así que hay que buscar una alternativa.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#046": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "Encuentra la forma de destruir al monstruo vegetal y vuelve con el grupo en {p} en [-{~},-{~}] para contar lo que has descubierto",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Out of my Mind",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#020": {
-   "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
-   "dst": "Ve a la torre de vigilancia en [-{~}, {~}, -{~}] para planear el ataque.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#041": {
-   "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
-   "dst": "Odio dejarte solo así, pero si te sirve de consuelo, deberías ser lo bastante duro, o lo bastante afortunado, para salir adelante.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#093": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "...así que hemos llegado a esto. Me sabía los nombres de todos esos guardias. No hice daño a nadie para lograr mi meta.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#099": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "¡Aaah! ¡¿No responde?! Tú- Tú... ¡TÚ! ¡Has destruido el futuro! ¡MI futuro! ¡¡¡El futuro de GAVEL!!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#106": {
-   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "...ajá. Mmm. ... ...sí, sigue. Eh, vale, me lo puedo creer... Nunca te creería si no me hubieras dado la prueba.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Supply and Delivery#000": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
-   "dst": "¿Qué? ¡No me mires así! Fue un trato del todo justo del que ambos salimos ganando. Yo conseguí la planta y tú... bueno. ¿Ganaste experiencia?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Taproot#061": {
-   "src": "What did you do?! The gate is opening? YOU did this?! I know your heart is in the right place, but you're a stranger to this land!",
-   "dst": "¡¿Qué has hecho?! ¿La puerta se abre? ¡¿Esto lo has hecho TÚ?! Sé que tienes buen corazón, ¡pero eres un extraño en esta tierra!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taproot",
-   "stage": "Stage 8",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "The Maiden Tower#019": {
-   "src": "...I'll return! You'll get your urn, no doubt! ... ...and a lovely fine boot up my backside. I don't fancy a massacre for a piece of pottery, Win person.",
-   "dst": "...¡Volveré! ¡Tendrás tu urna, sin duda! ... ...y yo una buena patada en el culo. No me apetece una masacre por un cacharro de barro, persona de Win.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 2",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#028": {
-   "src": "Not exactly, milady! I'm the one seeking your affections- Coming up the ladder. I know I may not be a fairytale husband, but-",
-   "dst": "¡No exactamente, mi señora! El que busca vuestro cariño soy yo; estoy subiendo por la escalera. Sé que quizá no sea un marido de cuento, pero-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#033": {
-   "src": "Cor, lady! Even for an ogre you're layin' it on a bit thick! Aah, you see, ogres, and people like you, they have layers, right? And your first one is... Eh... ...rotten.",
-   "dst": "¡Madre mía, señora! ¡Incluso para un ogro te estás pasando! Ay, mira, los ogros y la gente como tú tenemos capas, ¿no? Y tu primera capa es... Eh... ...podrida.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Order of the Grook#057": {
-   "src": "Earth is also the earth itself. Stone, metal, trees and soil. Trees sway in the wind, but do not break. And the mountains do not crumble.",
-   "dst": "La Tierra es también la tierra misma. Piedra, metal, árboles y suelo. Los árboles se mecen al viento, pero no se rompen. Y los montes no caen.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#080": {
-   "src": "Most aquatic creatures are t-tied to water, though creatures that live in icy or snowy environments are, t-too...often, they are also connected to air, but not always.",
-   "dst": "Casi todas las criaturas acuáticas están l-ligadas al agua, y las que viven en entornos de hielo o nieve t-también... a menudo se ligan al aire además, pero no siempre.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#082": {
-   "src": "Lastly, healing abilities are b-bolstered by water magic. Just knowing magic well d-doesn't help, but actually having artifacts charged w-with water magic can increase healing capabilities.",
-   "dst": "Por último, la magia de agua r-refuerza las capacidades curativas. Saber mucha magia n-no basta, pero llevar artefactos cargados c-con magia de agua sí aumenta lo que puedes curar.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#138": {
-   "src": "Alright, fledgeling grooks. Time to hit you all with the info you're really here for!",
-   "dst": "Muy bien, polluelos de grook. ¡Toca soltaros la información por la que venís de verdad!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 12",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#192": {
-   "src": "There's two main ways of usin' nature magic... Shamanism and druidism. Two sides of the same coin, man.",
-   "dst": "Hay dos formas de usarla... el chamanismo y el druidismo. Dos caras de la misma moneda, tío.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Worm Holes#053": {
-   "src": "You must be calm, I beg you. Retreat to the earth- You harm those above!",
-   "dst": "Debes calmarte, te lo ruego. Vuelve a la tierra- ¡Estás dañando a los de arriba!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Worm Holes",
-   "stage": "Stage 5",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#010": {
-   "src": "Help Miner Linton remove the debris blocking the path.",
-   "dst": "Ayuda al minero Linton a quitar los escombros que bloquean el paso.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#016": {
-   "src": "A cave-in? Really? More work for me... I'll make us a way through, just keep fighting those corrupteds!",
-   "dst": "¿Un derrumbe? ¿En serio? Más trabajo para mí... Yo abro paso, ¡tú sigue con los corruptos!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 4",
-   "speaker": "Miner Linton",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#047": {
-   "src": "Return to Miner Linton back in the abandoned cave.",
-   "dst": "Vuelve con el minero Linton a la cueva abandonada.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
   }
  }
 }

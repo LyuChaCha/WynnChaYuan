@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 23783,
-  "translated": 23434,
+  "count": 23752,
+  "translated": 23402,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -81667,6 +81667,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "Finding the Light#141": {
+   "src": "WHY WOULD I BE NEEDED TO... To...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "Stage 16",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "Отнеси паспорт Gavel служащему дирижаблей [-{~}, {~}, -{~}].",
@@ -85648,8 +85658,8 @@
    "source": "captured"
   },
   "Frost Bite#021": {
-   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "Ого, даже по нынешним меркам это огромные деньги. А представь, сколько это стоило сотни лет назад.",
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85658,14 +85668,14 @@
    "source": "captured"
   },
   "Frost Bite#022": {
-   "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
-   "dst": "Найди Eppo на [-{~}, {~}, -{~}]. Вход в его пещеру - на [-{~}, {~}, -{~}].",
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "Ого, даже по нынешним меркам это огромные деньги. А представь, сколько это стоило сотни лет назад.",
    "role": "desc",
-   "kind": "objective",
+   "kind": "dialogue",
    "quest": "Frost Bite",
-   "stage": "Stage 1",
+   "stage": "",
    "speaker": "",
-   "source": "wiki"
+   "source": "captured"
   },
   "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
@@ -86330,6 +86340,26 @@
   "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "Постой, смотри. Похоже, это часть доспеха Theorick.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "Получилось! Хранилище открыто.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
+   "src": "Surprised it even managed to fit over his fat head.",
+   "dst": "Удивительно, что он налезал на его толстую башку.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -116637,19 +116667,13 @@
   },
   "Out of my Mind#004": {
    "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "Ты первый нормальный человек за долгое время, {u}. Недавно я вышел из дома и услышал очень грубые слова от очень грубых горожан!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -116841,16 +116865,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "Ты первый нормальный человек за долгое время, {u}. Недавно я вышел из дома и услышал очень грубые слова от очень грубых горожан!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "Не обращай внимания на моих друзей, они всегда такие, но Prentiss прав. Может, это наш единственный шанс узнать, кто этот таинственный человек!",
@@ -116964,16 +116978,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "Ты, наверное, гадаешь, почему такой славный малый, как я, раньше тебе не встречался? Честно, тебе ужасно не везло, ведь я когда-то путешествовал по всему миру!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "Ты первый нормальный человек за долгое время, {PlayerName}. Недавно я вышел из дома и услышал очень грубые слова от очень грубых горожан!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -117329,6 +117333,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "Помоги удержать дверь закрытой, иначе мой сюрприз испорчен!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "Я слышал, что клин клином вышибают, так что, кажется, знаю, как тебя вернуть! Но мне тебя не поднять, так что нужно придумать обходной путь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "Найди способ уничтожить растение-монстра, затем вернись к ребятам в {p} на [-{~},-{~}] и расскажи об увиденном",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Overture to Despair#000": {
@@ -133745,16 +133779,6 @@
    "speaker": "Frank",
    "source": "wiki"
   },
-  "Recipe For Disaster#062": {
-   "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "Собери [{~} {Ingredient}] в [X, Y, Z] или сверься с книгой рецептов.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Recipe For Disaster",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "Это Астральный дом Astralus! Сможешь подняться, меняя гравитацию?",
@@ -143722,6 +143746,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "…вот, значит, до чего дошло. Я знал имена всех этих стражников. Я никому не причинил вреда ради своей цели.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "А-а-а! Не отвечает?! Ты- Ты… ТЫ! Из-за тебя нет будущего! МОЕГО будущего! Будущего GAVEL!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "…ага. Угу. … …да, дальше. Эм, ладно, в это я поверю… Без доказательств ни за что бы не поверила.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   },
@@ -163748,16 +163802,6 @@
   "The Canary Calls#163": {
    "src": "Have fun.",
    "dst": "Веселись.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#164": {
-   "src": "Kill me now or I'll kill everyone in {Your Guild}.",
-   "dst": "Убей меня, не то я убью всех в {Your Guild}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -237520,366 +237564,6 @@
     "ratio": 0.89,
     "reason": "candidate"
    }
-  },
-  "Arachnids' Ascent#001": {
-   "src": "Our preparations are complete, and it's time for the assault on the spider den! With you here, we'll just need to wait for-...",
-   "dst": "Подготовка завершена, пора штурмовать паучье логово! Раз ты здесь, осталось лишь дождаться...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Beneath the Depths#017": {
-   "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
-   "dst": "Не могу прочесть свою же треклятую карту, малец! Её что, монетами скоблили, чтоб чернила сошли?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Beneath the Depths",
-   "stage": "Stage 2",
-   "speaker": "Javier",
-   "source": "wiki"
-  },
-  "Crop Failure#042": {
-   "src": "Can't sell what little I have, so I figure you can take it, and a bit of cash too, since you basically did an exterminator's job.",
-   "dst": "Продать то немногое, что есть, не выйдет, так что забирай, и немного денег впридачу - работа у тебя, считай, была дезинсекторская.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "Stage 5",
-   "speaker": "Anast",
-   "source": "wiki"
-  },
-  "Crop Failure#000~1": {
-   "src": "Oi, bucko! Took my advice, eh? I figured I'd join ye, 'n see fer myself what was goin' on.",
-   "dst": "Эй, дружок! Совет-таки мой пригодился? Решил я к тебе присоединиться да глянуть, что тут творится.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Death Whistle (Quest)#015": {
-   "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "Стой, ч-что? Pink PELULITE!? Я продал той женщине Pink PELUTE для амулетов удачи! Да как ты… стоп… у Pink Pelute лепестки круглее… О нет.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#017": {
-   "src": "I must... make a difficult choice, and leave this job to you. I've other things to tend to, though it pains me to leave a life in another's hands. Remember this, villager!",
-   "dst": "Мне придётся… сделать трудный выбор и оставить это дело тебе. У меня другие заботы, хоть и больно отдавать жизнь в чужие руки. Запомни это, селянин!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#023": {
-   "src": "You're back, I see... and you're shedding petals! You got the Pink Pelulite back?",
-   "dst": "Снова здесь, вижу… и роняешь лепестки! Pink Pelulite у тебя?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 6",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Finding the Light#141": {
-   "src": "WHY WOULD I BE NEEDED TO... To...",
-   "dst": "ЗАЧЕМ МНЕ БЫЛО… Было…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Finding the Light",
-   "stage": "Stage 16",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Frost Bite#087": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "Получилось! Хранилище открыто.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "Frost Bite#091": {
-   "src": "Surprised it even managed to fit over his fat head.",
-   "dst": "Удивительно, что он налезал на его толстую башку.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "King's Recruit#000": {
-   "src": "Awaken",
-   "dst": "Пробудитесь",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#009": {
-   "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
-   "dst": "Умоляю, найдите моего сына. Не знаю точно, где он, но его явно увели далеко вглубь...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#015": {
-   "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
-   "dst": "О! Если так, тело этого воина подойдёт мне куда лучше! Дай мне свою силу, мальчишка! Чтобы вселиться, надо сперва их отделать!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 2",
-   "speaker": "Aryn?",
-   "source": "wiki"
-  },
-  "Mushroom Man#031": {
-   "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
-   "dst": "…О-ой. М-мне теперь… платить вам? Хе. [{~} изумрудов] в-вас устроит..?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Out of my Mind#033": {
-   "src": "Help me keep this door shut, or else my surprise will be ruined!",
-   "dst": "Помоги удержать дверь закрытой, иначе мой сюрприз испорчен!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#038": {
-   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
-   "dst": "Я слышал, что клин клином вышибают, так что, кажется, знаю, как тебя вернуть! Но мне тебя не поднять, так что нужно придумать обходной путь.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#046": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "Найди способ уничтожить растение-монстра, затем вернись к ребятам в {p} на [-{~},-{~}] и расскажи об увиденном",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Out of my Mind",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#020": {
-   "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
-   "dst": "Дойди до сторожевой башни на [-{~}, {~}, -{~}], чтобы спланировать атаку.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#041": {
-   "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
-   "dst": "Не хочется бросать тебя вот так, но утешу: силы - или везения - тебе хватит, чтобы прорваться.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#093": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "…вот, значит, до чего дошло. Я знал имена всех этих стражников. Я никому не причинил вреда ради своей цели.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#099": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "А-а-а! Не отвечает?! Ты- Ты… ТЫ! Из-за тебя нет будущего! МОЕГО будущего! Будущего GAVEL!!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#106": {
-   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "…ага. Угу. … …да, дальше. Эм, ладно, в это я поверю… Без доказательств ни за что бы не поверила.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Supply and Delivery#000": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
-   "dst": "Что? Не смотри на меня так! Сделка была честной и выгодной обоим. Мне растение, а тебе… ну. Опыт?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Taproot#061": {
-   "src": "What did you do?! The gate is opening? YOU did this?! I know your heart is in the right place, but you're a stranger to this land!",
-   "dst": "Что происходит?! Врата открываются? Это ТВОИХ рук дело?! Знаю, сердце у тебя доброе, но ты чужой этой земле!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taproot",
-   "stage": "Stage 8",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "The Maiden Tower#019": {
-   "src": "...I'll return! You'll get your urn, no doubt! ... ...and a lovely fine boot up my backside. I don't fancy a massacre for a piece of pottery, Win person.",
-   "dst": "...Я вернусь! Будет тебе урна! ... ...и хороший пинок под зад. Не хочу устраивать резню из-за горшка, человек из Win.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 2",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#028": {
-   "src": "Not exactly, milady! I'm the one seeking your affections- Coming up the ladder. I know I may not be a fairytale husband, but-",
-   "dst": "Не совсем, миледи! Добиваюсь вашей любви я - уже лезу по лестнице. Знаю, я не сказочный муж, но-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#033": {
-   "src": "Cor, lady! Even for an ogre you're layin' it on a bit thick! Aah, you see, ogres, and people like you, they have layers, right? And your first one is... Eh... ...rotten.",
-   "dst": "Ну, дамочка! Даже для огра это чересчур! А, видишь ли, огры и люди вроде тебя - они как лук, слоистые, так? И твой первый слой... э... ...гнилой.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Order of the Grook#057": {
-   "src": "Earth is also the earth itself. Stone, metal, trees and soil. Trees sway in the wind, but do not break. And the mountains do not crumble.",
-   "dst": "Земля - это и сама земля. Камень, металл, деревья, почва. Деревья гнутся на ветру, но не ломаются. А горы не рушатся.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#080": {
-   "src": "Most aquatic creatures are t-tied to water, though creatures that live in icy or snowy environments are, t-too...often, they are also connected to air, but not always.",
-   "dst": "Большинство водных созданий с-связаны с водой, как и т-те, что живут во льдах и снегах… часто они связаны и с воздухом, но не всегда.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#082": {
-   "src": "Lastly, healing abilities are b-bolstered by water magic. Just knowing magic well d-doesn't help, but actually having artifacts charged w-with water magic can increase healing capabilities.",
-   "dst": "И наконец, водная магия у-усиливает исцеление. Одно знание магии н-не поможет, но артефакты, заряженные в-водой, лечат сильнее.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#138": {
-   "src": "Alright, fledgeling grooks. Time to hit you all with the info you're really here for!",
-   "dst": "Итак, птенцы Grook. Пора огорошить вас тем, ради чего вы пришли!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 12",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#192": {
-   "src": "There's two main ways of usin' nature magic... Shamanism and druidism. Two sides of the same coin, man.",
-   "dst": "Магию природы юзают двумя путями… шаманство и друидство. Две стороны одной монеты, чувак.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Worm Holes#053": {
-   "src": "You must be calm, I beg you. Retreat to the earth- You harm those above!",
-   "dst": "Успокойся, умоляю. Уйди в землю- Ты вредишь тем, кто наверху!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Worm Holes",
-   "stage": "Stage 5",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#010": {
-   "src": "Help Miner Linton remove the debris blocking the path.",
-   "dst": "Помоги Шахтёру Linton убрать завал на пути.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#016": {
-   "src": "A cave-in? Really? More work for me... I'll make us a way through, just keep fighting those corrupteds!",
-   "dst": "Обвал? Серьёзно? Опять мне работы... Я прокопаю проход, а ты бей осквернённых!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 4",
-   "speaker": "Miner Linton",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#047": {
-   "src": "Return to Miner Linton back in the abandoned cave.",
-   "dst": "Вернись к Шахтёру Linton в заброшенную пещеру.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
   }
  }
 }

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Out of my Mind",
-  "count": 76,
-  "translated": 64,
+  "count": 74,
+  "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -48,19 +48,13 @@
   },
   "Out of my Mind#004": {
    "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "{u}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -252,16 +246,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "{u}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "저기 내 친구들은 신경 쓰지 마, 맨날 저래. 그래도 Prentiss 말이 맞아. 그 수수께끼 남자가 누군지 알아낼 유일한 기회일지도 몰라!",
@@ -375,16 +359,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "너 지금 이런 생각 하지? 어째서 나 같은 멋진 사람을 이제야 만났을까? 솔직히 넌 운이 지독히 나빴던 거야. 나 예전엔 세계를 여행했거든!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "{PlayerName}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",

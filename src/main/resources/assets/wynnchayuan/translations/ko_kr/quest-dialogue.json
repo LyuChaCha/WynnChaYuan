@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23783,
-  "translated": 23434,
+  "count": 23752,
+  "translated": 23402,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -81667,6 +81667,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "Finding the Light#141": {
+   "src": "WHY WOULD I BE NEEDED TO... To...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "Stage 16",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "Gavel 여권을 [-{~}, {~}, -{~}]의 비행선 직원에게 가져가세요.",
@@ -85648,8 +85658,8 @@
    "source": "captured"
   },
   "Frost Bite#021": {
-   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "와, 지금 기준으로 봐도 어마어마한 돈이에요. 수백 년 전엔 얼마나 큰돈이었을지 생각해 봐요.",
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85658,14 +85668,14 @@
    "source": "captured"
   },
   "Frost Bite#022": {
-   "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}]에서 Eppo를 찾으세요. 동굴 입구는 [-{~}, {~}, -{~}]에 있습니다.",
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "와, 지금 기준으로 봐도 어마어마한 돈이에요. 수백 년 전엔 얼마나 큰돈이었을지 생각해 봐요.",
    "role": "desc",
-   "kind": "objective",
+   "kind": "dialogue",
    "quest": "Frost Bite",
-   "stage": "Stage 1",
+   "stage": "",
    "speaker": "",
-   "source": "wiki"
+   "source": "captured"
   },
   "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
@@ -86330,6 +86340,26 @@
   "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "잠깐, 이것 좀 봐요. Theorick의 갑옷 한 조각 같아요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "해냈어요! 금고에 들어갈 수 있어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
+   "src": "Surprised it even managed to fit over his fat head.",
+   "dst": "이게 그 큰 머리에 들어갔다니 놀랍네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -116637,19 +116667,13 @@
   },
   "Out of my Mind#004": {
    "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "{u}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -116841,16 +116865,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "{u}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "저기 내 친구들은 신경 쓰지 마, 맨날 저래. 그래도 Prentiss 말이 맞아. 그 수수께끼 남자가 누군지 알아낼 유일한 기회일지도 몰라!",
@@ -116964,16 +116978,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "너 지금 이런 생각 하지? 어째서 나 같은 멋진 사람을 이제야 만났을까? 솔직히 넌 운이 지독히 나빴던 거야. 나 예전엔 세계를 여행했거든!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "{PlayerName}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -117329,6 +117333,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "이 문 닫는 거 좀 도와줘, 안 그러면 내 깜짝 선물이 망한다고!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "불은 불로 다스린다는 말을 들은 것 같아. 그러니 널 되돌릴 방법이 있어! 근데 넌 나한테 좀 무거우니까, 다른 방법을 생각해야 해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "식물 괴물을 처치할 방법을 찾은 뒤, [-{~},-{~}]의 {p}에 있는 아이들에게 돌아가 알아낸 것을 보고하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Overture to Despair#000": {
@@ -133745,16 +133779,6 @@
    "speaker": "Frank",
    "source": "wiki"
   },
-  "Recipe For Disaster#062": {
-   "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "[X, Y, Z]에서 [{~} {Ingredient}]을(를) 모으거나 레시피 북을 확인하세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Recipe For Disaster",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "Astralus의 별빛 저택에 온 걸 환영한다! 중력을 뒤집어 꼭대기까지 갈 수 있겠나?",
@@ -143722,6 +143746,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "...결국 이렇게 됐군. 난 경비들 이름을 다 알았다. 목표를 위해 아무도 해치지 않았어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "...음. 응. ... ...그래, 계속해. 어, 좋아, 믿어 줄게... 증거가 없었으면 절대 안 믿었을 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   },
@@ -163748,16 +163802,6 @@
   "The Canary Calls#163": {
    "src": "Have fun.",
    "dst": "즐겁게 놀아요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#164": {
-   "src": "Kill me now or I'll kill everyone in {Your Guild}.",
-   "dst": "지금 날 죽여요, 안 그럼 {Your Guild} 사람들을 다 죽일 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -237520,366 +237564,6 @@
     "ratio": 0.89,
     "reason": "candidate"
    }
-  },
-  "Arachnids' Ascent#001": {
-   "src": "Our preparations are complete, and it's time for the assault on the spider den! With you here, we'll just need to wait for-...",
-   "dst": "준비는 끝났고, 이제 거미 소굴을 칠 때일세! 자네도 왔으니 이제 기다릴 사람은-...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Beneath the Depths#017": {
-   "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
-   "dst": "내 지도를 내가 못 읽겠잖아, 젊은이! 대체 뭘 한 거야? 동전으로 잉크를 긁어냈어?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Beneath the Depths",
-   "stage": "Stage 2",
-   "speaker": "Javier",
-   "source": "wiki"
-  },
-  "Crop Failure#042": {
-   "src": "Can't sell what little I have, so I figure you can take it, and a bit of cash too, since you basically did an exterminator's job.",
-   "dst": "얼마 안 되는 것도 못 팔 테니 네가 가져가. 돈도 좀 줄게. 사실상 해충 퇴치업자 일을 했잖아.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "Stage 5",
-   "speaker": "Anast",
-   "source": "wiki"
-  },
-  "Crop Failure#000~1": {
-   "src": "Oi, bucko! Took my advice, eh? I figured I'd join ye, 'n see fer myself what was goin' on.",
-   "dst": "어이, 친구! 내 말 들었구먼? 나도 같이 가서 무슨 일인지 직접 보려고 왔지.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Death Whistle (Quest)#015": {
-   "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "잠깐, 뭐- 뭐라고요? Pink PELULITE!? 전 그 여자분께 행운 부적용 Pink PELUTE를 팔았는데! 어떻게- 잠깐... Pink Pelute가 꽃잎이 더 둥근데... 이런.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#017": {
-   "src": "I must... make a difficult choice, and leave this job to you. I've other things to tend to, though it pains me to leave a life in another's hands. Remember this, villager!",
-   "dst": "나는... 어려운 선택을 해야겠군. 이 일은 너에게 맡기겠다. 목숨을 남의 손에 맡기긴 괴롭지만, 다른 할 일이 있다. 명심해라, 주민!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#023": {
-   "src": "You're back, I see... and you're shedding petals! You got the Pink Pelulite back?",
-   "dst": "돌아오셨네요... 꽃잎도 흘리면서! Pink Pelulite는 되찾았어요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 6",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Finding the Light#141": {
-   "src": "WHY WOULD I BE NEEDED TO... To...",
-   "dst": "왜 내가 꼭... 그걸...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Finding the Light",
-   "stage": "Stage 16",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Frost Bite#087": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "해냈어요! 금고에 들어갈 수 있어요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "Frost Bite#091": {
-   "src": "Surprised it even managed to fit over his fat head.",
-   "dst": "이게 그 큰 머리에 들어갔다니 놀랍네요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "King's Recruit#000": {
-   "src": "Awaken",
-   "dst": "각성",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#009": {
-   "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
-   "dst": "제발 부탁이에요, 제 아들을 찾아 주세요. 정확히 어디 있는지는 모르지만, 분명 꽤 깊이 끌려갔을 거예요...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#015": {
-   "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
-   "dst": "오! 그렇다면 이 전사의 몸이 내게 훨씬 알맞겠군! 네 힘을 내놓아라, 꼬마야! 빙의하려면 먼저 두들겨 패야 하니까!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 2",
-   "speaker": "Aryn?",
-   "source": "wiki"
-  },
-  "Mushroom Man#031": {
-   "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
-   "dst": "...오-오. 이제 돈을 드, 드려야 하나요? 헤. [{~} 에메랄드]면 괜, 괜찮을까요..?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Out of my Mind#033": {
-   "src": "Help me keep this door shut, or else my surprise will be ruined!",
-   "dst": "이 문 닫는 거 좀 도와줘, 안 그러면 내 깜짝 선물이 망한다고!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#038": {
-   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
-   "dst": "불은 불로 다스린다는 말을 들은 것 같아. 그러니 널 되돌릴 방법이 있어! 근데 넌 나한테 좀 무거우니까, 다른 방법을 생각해야 해.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#046": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "식물 괴물을 처치할 방법을 찾은 뒤, [-{~},-{~}]의 {p}에 있는 아이들에게 돌아가 알아낸 것을 보고하세요",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Out of my Mind",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#020": {
-   "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
-   "dst": "[-{~}, {~}, -{~}]의 감시탑으로 가서 공격 계획을 세우세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#041": {
-   "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
-   "dst": "이렇게 혼자 보내긴 싫지만, 위안이 될지 모르겠네. 넌 충분히 강하거나, 충분히 운이 좋으니 해낼 거야.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#093": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "...결국 이렇게 됐군. 난 경비들 이름을 다 알았다. 목표를 위해 아무도 해치지 않았어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#099": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#106": {
-   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "...음. 응. ... ...그래, 계속해. 어, 좋아, 믿어 줄게... 증거가 없었으면 절대 안 믿었을 거야.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Supply and Delivery#000": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
-   "dst": "뭐? 그런 눈으로 보지 마! 서로 이득 본 공정한 거래였잖아. 난 약초를 얻고, 넌... 음. 경험을 얻었잖아?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Taproot#061": {
-   "src": "What did you do?! The gate is opening? YOU did this?! I know your heart is in the right place, but you're a stranger to this land!",
-   "dst": "무슨 짓을 한 거야?! 문이 열려? 네가 이런 거야?! 네 마음이 옳은 건 알지만, 넌 이 땅에선 이방인이야!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taproot",
-   "stage": "Stage 8",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "The Maiden Tower#019": {
-   "src": "...I'll return! You'll get your urn, no doubt! ... ...and a lovely fine boot up my backside. I don't fancy a massacre for a piece of pottery, Win person.",
-   "dst": "...돌아오겠소! 항아리는 꼭 가져다드리지! ... ...그리고 엉덩이엔 발길질이나 받겠지. 도자기 하나 때문에 학살은 싫어, Win 사람.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 2",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#028": {
-   "src": "Not exactly, milady! I'm the one seeking your affections- Coming up the ladder. I know I may not be a fairytale husband, but-",
-   "dst": "그건 아니오, 아가씨! 당신을 사모하는 건 나요- 사다리로 올라가는 중이오. 동화 속 남편감은 아니겠지만-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#033": {
-   "src": "Cor, lady! Even for an ogre you're layin' it on a bit thick! Aah, you see, ogres, and people like you, they have layers, right? And your first one is... Eh... ...rotten.",
-   "dst": "맙소사, 아가씨! 오우거가 봐도 너무 들이대잖아! 아, 오우거랑 당신 같은 사람은 겹겹이 층이 있잖아, 그렇지? 당신 첫 층은... 어... ...썩었어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Order of the Grook#057": {
-   "src": "Earth is also the earth itself. Stone, metal, trees and soil. Trees sway in the wind, but do not break. And the mountains do not crumble.",
-   "dst": "대지는 땅 그 자체이기도 하다. 돌, 금속, 나무와 흙. 나무는 바람에 흔들려도 꺾이지 않는다. 산은 무너지지 않는다.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#080": {
-   "src": "Most aquatic creatures are t-tied to water, though creatures that live in icy or snowy environments are, t-too...often, they are also connected to air, but not always.",
-   "dst": "수생 생물은 대부분 물과, 과, 연결돼 있지만, 얼음이나 눈 지역에 사는 생물도, 그, 그래요... 바람과도 이어진 경우가 많지만 항상은 아니에요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#082": {
-   "src": "Lastly, healing abilities are b-bolstered by water magic. Just knowing magic well d-doesn't help, but actually having artifacts charged w-with water magic can increase healing capabilities.",
-   "dst": "마, 마지막으로, 치유 능력은 물 마법으로 강화, 돼요. 마법을 잘 아는 것만으론 소, 소용없지만, 물 마법이 깃든 물건을 가지면 치유력이 올라가요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#138": {
-   "src": "Alright, fledgeling grooks. Time to hit you all with the info you're really here for!",
-   "dst": "좋아, 햇병아리 grook들. 너희가 진짜 들으러 온 정보를 퍼부어 줄 시간이다!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 12",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#192": {
-   "src": "There's two main ways of usin' nature magic... Shamanism and druidism. Two sides of the same coin, man.",
-   "dst": "자연 마법을 쓰는 길은 크게 둘이야... 샤먼술이랑 드루이드술. 동전의 양면이지, 친구.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Worm Holes#053": {
-   "src": "You must be calm, I beg you. Retreat to the earth- You harm those above!",
-   "dst": "제발 진정해. 땅속으로 돌아가- 위에 있는 이들이 다치고 있어!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Worm Holes",
-   "stage": "Stage 5",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#010": {
-   "src": "Help Miner Linton remove the debris blocking the path.",
-   "dst": "Miner Linton을 도와 길을 막은 잔해를 치우세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#016": {
-   "src": "A cave-in? Really? More work for me... I'll make us a way through, just keep fighting those corrupteds!",
-   "dst": "붕괴? 진짜? 또 일이 늘었네... 길은 내가 뚫을 테니 넌 저 타락자들이나 계속 상대해!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 4",
-   "speaker": "Miner Linton",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#047": {
-   "src": "Return to Miner Linton back in the abandoned cave.",
-   "dst": "버려진 동굴의 Miner Linton에게 돌아가세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
   }
  }
 }

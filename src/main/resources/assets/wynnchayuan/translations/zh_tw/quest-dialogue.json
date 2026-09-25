@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 23783,
-  "translated": 23783,
+  "count": 23752,
+  "translated": 23752,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -81667,6 +81667,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "Finding the Light#141": {
+   "src": "WHY WOULD I BE NEEDED TO... To...",
+   "dst": "為什麼非得要我去……去……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "Stage 16",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "帶著你的 Gavel 護照到 [-{~}, {~}, -{~}] 找飛船事務員。",
@@ -86330,6 +86340,26 @@
   "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "等等，看看這個。這好像是 Theorick 的一件護甲。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "你做到了！我們可以進金庫了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
+   "src": "Surprised it even managed to fit over his fat head.",
+   "dst": "真想不到這居然套得下他那顆肥腦袋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -116643,13 +116673,7 @@
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -116841,16 +116865,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "你是我最近見到的第一個正常人，{u}。我前陣子出門，被幾個非常沒禮貌的鎮民講了幾句非常沒禮貌的話！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "別理那邊那兩個，他們一直都這樣，不過 Prentiss 說得沒錯。這可能是我們唯一能弄清楚那個神祕男人到底是誰的機會！",
@@ -116964,16 +116978,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "所以你一定在想，怎麼到現在才認識我這麼棒的一個人？老實說，你一定是運氣太差了，我以前可是環遊過世界的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "你是我最近見到的第一個正常人，{PlayerName}。我前陣子出門，被幾個非常沒禮貌的鎮民講了幾句非常沒禮貌的話！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -117329,6 +117333,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "幫我把這扇門頂住，不然我的驚喜就毀了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "我好像聽過什麼「以毒攻毒」，所以我想我有辦法讓你恢復！你對我來說有點太重了，所以我們得想個變通的辦法。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "想辦法消滅那隻植物怪物，然後回到 [-{~1},-{~2}] 的 {p} 向大家回報你的發現",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Overture to Despair#000": {
@@ -133745,16 +133779,6 @@
    "speaker": "Frank",
    "source": "wiki"
   },
-  "Recipe For Disaster#062": {
-   "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "在 [X, Y, Z] 收集 [{~} {Ingredient}]，或查看你的食譜書。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Recipe For Disaster",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "歡迎來到 Astralus 的星辰之屋！你有辦法靠翻轉重力爬到頂端嗎？",
@@ -143722,6 +143746,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "……所以，終究還是走到這一步了。那些衛兵的名字我全都記得。為了達成目標，我從沒傷過任何人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "啊啊！沒有反應？！你——你……你！你毀了未來！「我的」未來！Gavel 的未來！！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "……嗯哼。嗯。……好，你繼續說。呃，好吧，這我可以接受……要不是你拿出了證據，我絕對不會相信你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   },
@@ -163748,16 +163802,6 @@
   "The Canary Calls#163": {
    "src": "Have fun.",
    "dst": "玩得開心。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#164": {
-   "src": "Kill me now or I'll kill everyone in {Your Guild}.",
-   "dst": "現在就殺了我，不然我就殺光 {Your Guild} 裡的每一個人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -237520,366 +237564,6 @@
     "ratio": 0.89,
     "reason": "candidate"
    }
-  },
-  "Arachnids' Ascent#001": {
-   "src": "Our preparations are complete, and it's time for the assault on the spider den! With you here, we'll just need to wait for-...",
-   "dst": "我們的準備已經完成，是時候突襲蜘蛛巢了！有你在，我們只要再等……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Beneath the Depths#017": {
-   "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
-   "dst": "俺看不懂俺自己的破地圖，小子！你對它做了什麼？拿銅板把墨刮掉了嗎？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Beneath the Depths",
-   "stage": "Stage 2",
-   "speaker": "Javier",
-   "source": "wiki"
-  },
-  "Crop Failure#042": {
-   "src": "Can't sell what little I have, so I figure you can take it, and a bit of cash too, since you basically did an exterminator's job.",
-   "dst": "我這點收成也賣不出去，所以你就拿去吧，再給你一點現金。畢竟你基本上替我幹了除蟲公司的活。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "Stage 5",
-   "speaker": "Anast",
-   "source": "wiki"
-  },
-  "Crop Failure#000~1": {
-   "src": "Oi, bucko! Took my advice, eh? I figured I'd join ye, 'n see fer myself what was goin' on.",
-   "dst": "喂，小子！聽我的話啦？我想說乾脆跟你一起來，親眼看看到底是怎麼回事。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Death Whistle (Quest)#015": {
-   "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "等等，什、什麼？Pink PELULITE！？我賣給那位女士的是 Pink PELUTE，給她做幸運符用的！你怎麼——等等……等等，Pink Pelute 的花瓣比較圓……糟了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#017": {
-   "src": "I must... make a difficult choice, and leave this job to you. I've other things to tend to, though it pains me to leave a life in another's hands. Remember this, villager!",
-   "dst": "我必須……做個艱難的決定，把這件事交給你。我還有別的事要處理，儘管把一條人命交到別人手上讓我很難受。記住這件事，村民！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Death Whistle (Quest)#023": {
-   "src": "You're back, I see... and you're shedding petals! You got the Pink Pelulite back?",
-   "dst": "你回來啦……而且你身上還一路掉花瓣！你把 Pink Pelulite 拿回來了？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Death Whistle (Quest)",
-   "stage": "Stage 6",
-   "speaker": "Voer",
-   "source": "wiki"
-  },
-  "Finding the Light#141": {
-   "src": "WHY WOULD I BE NEEDED TO... To...",
-   "dst": "為什麼非得要我去……去……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Finding the Light",
-   "stage": "Stage 16",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Frost Bite#087": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "你做到了！我們可以進金庫了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "Frost Bite#091": {
-   "src": "Surprised it even managed to fit over his fat head.",
-   "dst": "真想不到這居然套得下他那顆肥腦袋。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Frost Bite",
-   "stage": "Stage 9",
-   "speaker": "Eppo",
-   "source": "wiki"
-  },
-  "King's Recruit#000": {
-   "src": "Awaken",
-   "dst": "甦醒",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#009": {
-   "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
-   "dst": "我求你，請找到我的兒子。我不太清楚他在哪，但他肯定被帶進去很深的地方了……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#015": {
-   "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
-   "dst": "哦！那樣的話，這名戰士的身體會更符合我的需求！把你的力量給我，小子！我得先把他們打趴才能附身！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 2",
-   "speaker": "Aryn?",
-   "source": "wiki"
-  },
-  "Mushroom Man#031": {
-   "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
-   "dst": "……哦。我現在是不是得付、付你們錢了？嘿。[{~} 綠寶石] 你們可、可以接受嗎……？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Out of my Mind#033": {
-   "src": "Help me keep this door shut, or else my surprise will be ruined!",
-   "dst": "幫我把這扇門頂住，不然我的驚喜就毀了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#038": {
-   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
-   "dst": "我好像聽過什麼「以毒攻毒」，所以我想我有辦法讓你恢復！你對我來說有點太重了，所以我們得想個變通的辦法。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 5",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#046": {
-   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "想辦法消滅那隻植物怪物，然後回到 [-{~1},-{~2}] 的 {p} 向大家回報你的發現",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Out of my Mind",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#020": {
-   "src": "Go to the watch tower at [-{~}, {~}, -{~}] to plan the attack.",
-   "dst": "前往 [-{~1}, {~2}, -{~3}] 的瞭望塔擬定進攻計畫。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Reclaiming the House#041": {
-   "src": "I hate leaving you on your own like this, but if it's any consolation, you should be tough enough, or lucky enough, to get through.",
-   "dst": "把你一個人丟在這裡我很過意不去，不過說句安慰的話——你應該夠強，或者夠幸運，撐得過去。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Reclaiming the House",
-   "stage": "Stage 5",
-   "speaker": "Elphaba",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#093": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "……所以，終究還是走到這一步了。那些衛兵的名字我全都記得。為了達成目標，我從沒傷過任何人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#099": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "啊啊！沒有反應？！你——你……你！你毀了未來！「我的」未來！Gavel 的未來！！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#106": {
-   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "……嗯哼。嗯。……好，你繼續說。呃，好吧，這我可以接受……要不是你拿出了證據，我絕對不會相信你。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Supply and Delivery#000": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
-   "dst": "幹嘛？別用那種眼神看我！我們那次交易完全公平，雙方都得利。我拿到了植物，而你……嗯。你得到了經驗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Taproot#061": {
-   "src": "What did you do?! The gate is opening? YOU did this?! I know your heart is in the right place, but you're a stranger to this land!",
-   "dst": "你做了什麼？！門打開了？是「你」打開的？！我知道你的用心是好的，但你對這片土地來說是個外人！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taproot",
-   "stage": "Stage 8",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "The Maiden Tower#019": {
-   "src": "...I'll return! You'll get your urn, no doubt! ... ...and a lovely fine boot up my backside. I don't fancy a massacre for a piece of pottery, Win person.",
-   "dst": "……我會回來的！那罈子你一定拿得到！……然後我屁股上大概會挨一腳。我可不想為了一件陶器搞出一場屠殺，Win 人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 2",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#028": {
-   "src": "Not exactly, milady! I'm the one seeking your affections- Coming up the ladder. I know I may not be a fairytale husband, but-",
-   "dst": "不是我，女士！想追求你的人是我——我正爬梯子上來。我知道我大概不是童話裡那種夫婿，不過——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Maiden Tower#033": {
-   "src": "Cor, lady! Even for an ogre you're layin' it on a bit thick! Aah, you see, ogres, and people like you, they have layers, right? And your first one is... Eh... ...rotten.",
-   "dst": "我的天，女士！就算對食人妖來說，你也太過火了！啊，你看，食人妖跟你們這種人一樣，都是一層一層的，對吧？而你的第一層是……呃……爛掉的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Maiden Tower",
-   "stage": "Stage 4",
-   "speaker": "Sherk",
-   "source": "wiki"
-  },
-  "The Order of the Grook#057": {
-   "src": "Earth is also the earth itself. Stone, metal, trees and soil. Trees sway in the wind, but do not break. And the mountains do not crumble.",
-   "dst": "土也就是大地本身。石、金屬、樹木與土壤。樹在風中搖擺，卻不折斷。而群山不會崩塌。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#080": {
-   "src": "Most aquatic creatures are t-tied to water, though creatures that live in icy or snowy environments are, t-too...often, they are also connected to air, but not always.",
-   "dst": "大多數水生生物都與、與水相連，不過住在冰雪環境裡的生物也、也是……牠們往往也與空氣相連，但並非總是如此。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#082": {
-   "src": "Lastly, healing abilities are b-bolstered by water magic. Just knowing magic well d-doesn't help, but actually having artifacts charged w-with water magic can increase healing capabilities.",
-   "dst": "最、最後，治療能力會被水魔法強、強化。單單懂魔法沒、沒有用，但真正持有充滿水魔法的器物，確實能提升治療能力。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#138": {
-   "src": "Alright, fledgeling grooks. Time to hit you all with the info you're really here for!",
-   "dst": "好了，雛 grook 們。是時候把你們真正來聽的東西砸到你們身上了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 12",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#192": {
-   "src": "There's two main ways of usin' nature magic... Shamanism and druidism. Two sides of the same coin, man.",
-   "dst": "用自然魔法主要有兩條路……薩滿之道跟德魯伊之道。同一枚硬幣的兩面啦，老兄。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Worm Holes#053": {
-   "src": "You must be calm, I beg you. Retreat to the earth- You harm those above!",
-   "dst": "求求你，冷靜下來。退回地底吧——你正在傷害上方的人！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Worm Holes",
-   "stage": "Stage 5",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#010": {
-   "src": "Help Miner Linton remove the debris blocking the path.",
-   "dst": "協助 Miner Linton 清除擋路的碎石。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#016": {
-   "src": "A cave-in? Really? More work for me... I'll make us a way through, just keep fighting those corrupteds!",
-   "dst": "塌方？真的假的？我又有得忙了……我來挖出一條路，你就繼續打那些腐敗物！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 4",
-   "speaker": "Miner Linton",
-   "source": "wiki"
-  },
-  "Tunnel Trouble#047": {
-   "src": "Return to Miner Linton back in the abandoned cave.",
-   "dst": "回到洞窟裡找 Miner Linton。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
   }
  }
 }
