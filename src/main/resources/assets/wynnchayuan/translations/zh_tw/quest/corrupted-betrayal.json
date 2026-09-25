@@ -8,7 +8,7 @@
  "entries": {
   "Corrupted Betrayal#000": {
    "src": "{u}, good to see you again! Been a while, huh?",
-   "dst": "{u}，又見面了！好久不見啊，對吧？",
+   "dst": "{u}，很高興又見到你！有一陣子沒見了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -18,7 +18,7 @@
   },
   "Corrupted Betrayal#001": {
    "src": "We've got a major problem with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
-   "dst": "這座老要塞出了大問題。它不斷吐出一堆該死的史萊姆，而它離 {p} 太近，已經造成麻煩了。",
+   "dst": "我們這座老要塞出了個大問題。裡頭一直冒出一堆該死的史萊姆，而且離 {p} 太近，已經開始造成麻煩了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -28,7 +28,7 @@
   },
   "Corrupted Betrayal#002": {
    "src": "You lean in close to read the riddle inscribed on the ancient stone...",
-   "dst": "你湊近去讀刻在古老石頭上的謎題……",
+   "dst": "你湊近去讀刻在那塊古老石碑上的謎語...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -38,7 +38,7 @@
   },
   "Corrupted Betrayal#003": {
    "src": "[+{~} Mage's Riddle]",
-   "dst": "[+{~} 法師的謎題]",
+   "dst": "[+{~} 法師的謎語]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48,23 +48,17 @@
   },
   "Corrupted Betrayal#004": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
-   "dst": "不過呢，身為傳奇人物，我可是很忙的，簽名之類的事一堆，更別說我還得站崗！想證明你值得我花時間，等你到 {~} 級再回來。",
+   "dst": "不過呢，身為一名傳奇人物，我可是很忙的，簽名之類的事一堆，更別提我還有警戒任務！想證明你值得我花時間，等你到了 {~} 級再回來吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
-    "file": "quest/temple-of-the-legends-quest.json",
-    "ratio": 0.843,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "Corrupted Betrayal#005": {
    "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
-   "dst": "你似乎掉進了某種古代遺跡。也許咒文就在裡面某處……",
+   "dst": "你好像掉進了某種古代遺跡裡。那段咒文說不定就在裡面某處...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -74,7 +68,7 @@
   },
   "Corrupted Betrayal#006": {
    "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
-   "dst": "國王求助於一位薩滿，Slykaar。薩滿以獻祭的生命造成傷害。那是黑魔法。",
+   "dst": "國王向一位薩滿求助，他叫 Slykaar。薩滿以獻祭的生命來造成傷害。那是黑暗魔法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -84,7 +78,7 @@
   },
   "Corrupted Betrayal#007": {
    "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
-   "dst": "Slykaar 守住了 {p}。代價極其慘重。Slykaar 迷上了那份注目與權力。他掌控了這座城市。",
+   "dst": "Slykaar 守住了 {p}，代價極其慘重。Slykaar 迷戀那份矚目與權力，他掌控了整座城市。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -94,7 +88,7 @@
   },
   "Corrupted Betrayal#008": {
    "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
-   "dst": "{p} 多年來飽受獸潮之苦，也飽受 Slykaar 無止盡的獻祭之苦。",
+   "dst": "多年來，{p} 既受盡了獸群之苦，也受盡了 Slykaar 無止盡獻祭之苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -104,7 +98,7 @@
   },
   "Corrupted Betrayal#009": {
    "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
-   "dst": "然後……Bob 出現了。{p} 的人民立刻拋下那個可怕的薩滿，投向這位純粹的英雄。",
+   "dst": "然後... Bob 出現了。{p} 的人民立刻拋下了那個可怕的薩滿，轉而擁戴這位純粹的英雄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -114,7 +108,7 @@
   },
   "Corrupted Betrayal#010": {
    "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
-   "dst": "Slykaar 又恨又羞，沉入地底，重新展開他那些為了組建軍隊的惡魔實驗。",
+   "dst": "Slykaar 又恨又辱，潛入地下，重新展開他那些惡魔實驗，好為自己造一支軍隊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -124,7 +118,7 @@
   },
   "Corrupted Betrayal#011": {
    "src": "It appears the mutant contained the key for that door.",
-   "dst": "看來那隻變異體身上帶著那道門的鑰匙。",
+   "dst": "看來那把門的鑰匙就在那隻變異體身上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -134,7 +128,7 @@
   },
   "Corrupted Betrayal#012": {
    "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
-   "dst": "一本又舊又積灰的日誌。它似乎被翻開停在某一頁。你出於好奇讀了起來……",
+   "dst": "這是一本佈滿灰塵的舊日記，似乎被翻開停在某一頁。你出於好奇讀了起來...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -144,7 +138,7 @@
   },
   "Corrupted Betrayal#013": {
    "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
-   "dst": "……{p} 開始對我起疑了……有個叫 Robert 的傢伙來到鎮上……",
+   "dst": "...{p} 開始對我起疑了...有個叫 Robert 的傢伙來到了鎮上...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -154,7 +148,7 @@
   },
   "Corrupted Betrayal#014": {
    "src": "...I know they will banish me...he is too good...too nice...",
-   "dst": "……我知道他們會放逐我……他太好了……太善良了……",
+   "dst": "...我知道他們會把我放逐...他太好了...太善良了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -164,7 +158,7 @@
   },
   "Corrupted Betrayal#015": {
    "src": "...I must open a portal...make a dimension to become more powerful...",
-   "dst": "……我必須打開一道傳送門……造出一個維度，讓自己變得更強大……",
+   "dst": "...我必須開啟一道傳送門...造出一個界域，讓自己變得更強大...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -174,7 +168,7 @@
   },
   "Corrupted Betrayal#016": {
    "src": "...the books...I have prepared well for this...",
-   "dst": "……那些書……我為此準備得很充分了……",
+   "dst": "...那些書...為了這一刻，我已經準備得很充分了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -184,7 +178,7 @@
   },
   "Corrupted Betrayal#017": {
    "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
-   "dst": "……我要鑿出一間密室……藏在一面看得見的牆後面……打造屬於我的世界……我的復仇……",
+   "dst": "...我要鑿出一間密室...藏在一面看得見的牆後面...打造屬於我的世界...我的復仇...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -194,7 +188,7 @@
   },
   "Corrupted Betrayal#018": {
    "src": "Go have fun while you can. It's not like you have much of a life to live, anyways.",
-   "dst": "趁還能玩的時候去玩吧。反正你也沒剩多少日子可活。",
+   "dst": "趁還能玩的時候去玩吧。反正你也沒剩多少日子好過了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -204,7 +198,7 @@
   },
   "Corrupted Betrayal#019": {
    "src": "You should head back to Lanu...",
-   "dst": "你該回去找 Lanu 了……",
+   "dst": "你該回去找 Lanu 了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -214,7 +208,7 @@
   },
   "Corrupted Betrayal#020": {
    "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of the cave.",
-   "dst": "啊，你回來了。有什麼有趣的發現嗎？我這邊就只是把偶爾從洞裡冒出來的史萊姆打回去而已。",
+   "dst": "啊，你回來了。有找到什麼有意思的東西嗎？我這邊就是偶爾把從洞裡冒出來的史萊姆打回去而已。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",

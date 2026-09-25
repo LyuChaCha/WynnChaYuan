@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Out of my Mind",
-  "count": 73,
-  "translated": 73,
+  "count": 74,
+  "translated": 74,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -54,13 +54,7 @@
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -252,16 +246,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
-   "dst": "等等 Viola，這是我們的機會！這個陌生人看起來什麼都應付得來，連邪惡的寄居蟹都不怕！我們可以直接請他去看看這些傳聞是不是真的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 1",
-   "speaker": "Prentiss",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "別理那邊那兩個，他們一直都這樣，不過 Prentiss 說得沒錯。這可能是我們唯一能弄清楚那個神祕男人到底是誰的機會！",
@@ -375,16 +359,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "所以你一定在想，怎麼到現在才認識我這麼棒的一個人？老實說，你一定是運氣太差了，我以前可是環遊過世界的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "你是我最近見到的第一個正常人，{PlayerName}。我前陣子出門，被幾個非常沒禮貌的鎮民講了幾句非常沒禮貌的話！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -740,6 +714,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "幫我把這扇門頂住，不然我的驚喜就毀了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "我好像聽過什麼「以毒攻毒」，所以我想我有辦法讓你恢復！你對我來說有點太重了，所以我們得想個變通的辦法。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "想辦法消滅那隻植物怪物，然後回到 [-{~1},-{~2}] 的 {p} 向大家回報你的發現",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   }
  }

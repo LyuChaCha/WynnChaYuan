@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Rise of the Quartron",
-  "count": 114,
-  "translated": 86,
+  "count": 117,
+  "translated": 89,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -74,13 +74,7 @@
    "quest": "Rise of the Quartron",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Use the small rail here, flick the lever. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
-    "file": "quest/rise-of-the-quartron.json",
-    "ratio": 0.873,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "Rise of the Quartron#007": {
    "src": "Knock 'em down, boys!",
@@ -1149,6 +1143,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "…そうか、こうなるのか。衛兵たちの名前は全員知っていた。目的のために誰も傷つけなかったのに。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "ああっ！反応しない？！貴様― 貴様… 貴様！未来を壊した！「私の」未来を！Gavel の未来を！！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "…ふーん。うん。… …うん、続けて。え、まあ、信じられなくもない… 証拠がなかったら絶対信じないけど。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   }

@@ -4,14 +4,14 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 23747,
-  "translated": 23746,
+  "count": 23752,
+  "translated": 23752,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
   "A Grave Mistake#000": {
    "src": "Thank you again for all of your help!",
-   "dst": "再次感謝你的一切幫忙！",
+   "dst": "再次謝謝你的一切幫忙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -31,7 +31,7 @@
   },
   "A Grave Mistake#002": {
    "src": "But since you have made it thus far, I suppose I shall show you the truth...",
-   "dst": "不過既然你都走到這一步了，我想我該讓你看看真相……",
+   "dst": "不過既然你都走到這一步了，我想我該讓你看看真相...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -41,7 +41,7 @@
   },
   "A Grave Mistake#003": {
    "src": "Then leave, and forget the horrors you have witnessed here today...",
-   "dst": "那就離開吧，把你今天在這裡目睹的恐怖都忘了……",
+   "dst": "那就離開吧，忘掉你今天在這裡目睹的一切恐怖...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -51,7 +51,7 @@
   },
   "A Grave Mistake#004": {
    "src": "Keep in mind what you have learned.",
-   "dst": "記住你學到的東西。",
+   "dst": "記住你所知道的一切。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -26707,7 +26707,7 @@
   },
   "An Iron Heart Part I#000": {
    "src": "...I am... What^s my...name...? I had one...",
-   "dst": "……我是……我的……名字……是什麼……？我曾經有過……",
+   "dst": "...我是... 我的...名字...是什麼？我以前有名字的...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -26717,7 +26717,7 @@
   },
   "An Iron Heart Part I#001": {
    "src": "Re...remember!! WHAT IS MY NAME? My life?",
-   "dst": "想……想起來！！我的名字是什麼？我的人生呢？",
+   "dst": "想...想起來！！我的名字是什麼？我的人生呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -26727,23 +26727,17 @@
   },
   "An Iron Heart Part I#002": {
    "src": "REMEMBER!! No...no orders! No dREMEMBER!! No...no o irectREMEMBER!! No...no oives!",
-   "dst": "想起來！！不……不要命令！不要指想起來！！不……不要指令想起來！！不……不要指示！",
+   "dst": "想起來！！不...不要命令！不要指想起來！！不...不要命令示想起來！！不...不要命令！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "REMEMBER!! No...no orders! No dREMEMBER!! No...no o irectREMEMBER!!",
-    "file": "quest/an-iron-heart-part-i.json",
-    "ratio": 0.899,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "An Iron Heart Part I#003": {
    "src": "My name!! My life! I won't hurt them! The pain helps me reme...who's there?! LEAVE! PLEASE!",
-   "dst": "我的名字！！我的人生！我不會傷害他們！這疼痛能讓我想起……誰在那裡？！走開！拜託！",
+   "dst": "我的名字！！我的人生！我不會傷害他們！痛能讓我想起...誰在那裡？！走開！拜託！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -26753,7 +26747,7 @@
   },
   "An Iron Heart Part I#004": {
    "src": "NO MORE COLDNESS! NO MORE VOICES THAT AREN'T MINE! MY NAME IS [ERROR]!! [ERROR]!! NOOO!!",
-   "dst": "不要再有寒冷了！不要再有那些不屬於我的聲音！我的名字是 [ERROR]！！[ERROR]！！不要啊啊啊！！",
+   "dst": "別再有寒冷了！別再有不屬於我的聲音了！我的名字是 [ERROR]！！[ERROR]！！不要啊啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -26763,7 +26757,7 @@
   },
   "An Iron Heart Part I#005": {
    "src": "Falling...apart...this isn't who I I I was... My... My... My my my my my name is. Was. Is. Was. Is. IS...! [ERROR] ... Ma[ERROine... Madeleine!! I'm Madeleine... I... I-I-IIIIIIIIII-",
-   "dst": "崩……解了……這不是我我我原本的樣子……我的……我的……我我我我我的名字是。曾是。是。曾是。是。是……！[ERROR] ……Ma[ERROine……Madeleine！！我是 Madeleine……我……我-我-我我我我我我我我我——",
+   "dst": "正在...崩解...這不是我我我原本的樣子... 我的... 我的... 我我我我我的名字是。曾是。是。曾是。是。是...！[ERROR] ... Ma[ERROine... Madeleine！！我是 Madeleine... 我... 我-我-我我我我我我我我我-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -48683,7 +48677,7 @@
   },
   "Corrupted Betrayal#000": {
    "src": "{u}, good to see you again! Been a while, huh?",
-   "dst": "{u}，又見面了！好久不見啊，對吧？",
+   "dst": "{u}，很高興又見到你！有一陣子沒見了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48693,7 +48687,7 @@
   },
   "Corrupted Betrayal#001": {
    "src": "We've got a major problem with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
-   "dst": "這座老要塞出了大問題。它不斷吐出一堆該死的史萊姆，而它離 {p} 太近，已經造成麻煩了。",
+   "dst": "我們這座老要塞出了個大問題。裡頭一直冒出一堆該死的史萊姆，而且離 {p} 太近，已經開始造成麻煩了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48703,7 +48697,7 @@
   },
   "Corrupted Betrayal#002": {
    "src": "You lean in close to read the riddle inscribed on the ancient stone...",
-   "dst": "你湊近去讀刻在古老石頭上的謎題……",
+   "dst": "你湊近去讀刻在那塊古老石碑上的謎語...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48713,7 +48707,7 @@
   },
   "Corrupted Betrayal#003": {
    "src": "[+{~} Mage's Riddle]",
-   "dst": "[+{~} 法師的謎題]",
+   "dst": "[+{~} 法師的謎語]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48723,23 +48717,17 @@
   },
   "Corrupted Betrayal#004": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
-   "dst": "不過呢，身為傳奇人物，我可是很忙的，簽名之類的事一堆，更別說我還得站崗！想證明你值得我花時間，等你到 {~} 級再回來。",
+   "dst": "不過呢，身為一名傳奇人物，我可是很忙的，簽名之類的事一堆，更別提我還有警戒任務！想證明你值得我花時間，等你到了 {~} 級再回來吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
-    "file": "quest/temple-of-the-legends-quest.json",
-    "ratio": 0.843,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "Corrupted Betrayal#005": {
    "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
-   "dst": "你似乎掉進了某種古代遺跡。也許咒文就在裡面某處……",
+   "dst": "你好像掉進了某種古代遺跡裡。那段咒文說不定就在裡面某處...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48749,7 +48737,7 @@
   },
   "Corrupted Betrayal#006": {
    "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
-   "dst": "國王求助於一位薩滿，Slykaar。薩滿以獻祭的生命造成傷害。那是黑魔法。",
+   "dst": "國王向一位薩滿求助，他叫 Slykaar。薩滿以獻祭的生命來造成傷害。那是黑暗魔法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48759,7 +48747,7 @@
   },
   "Corrupted Betrayal#007": {
    "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
-   "dst": "Slykaar 守住了 {p}。代價極其慘重。Slykaar 迷上了那份注目與權力。他掌控了這座城市。",
+   "dst": "Slykaar 守住了 {p}，代價極其慘重。Slykaar 迷戀那份矚目與權力，他掌控了整座城市。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48769,7 +48757,7 @@
   },
   "Corrupted Betrayal#008": {
    "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
-   "dst": "{p} 多年來飽受獸潮之苦，也飽受 Slykaar 無止盡的獻祭之苦。",
+   "dst": "多年來，{p} 既受盡了獸群之苦，也受盡了 Slykaar 無止盡獻祭之苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48779,7 +48767,7 @@
   },
   "Corrupted Betrayal#009": {
    "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
-   "dst": "然後……Bob 出現了。{p} 的人民立刻拋下那個可怕的薩滿，投向這位純粹的英雄。",
+   "dst": "然後... Bob 出現了。{p} 的人民立刻拋下了那個可怕的薩滿，轉而擁戴這位純粹的英雄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48789,7 +48777,7 @@
   },
   "Corrupted Betrayal#010": {
    "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
-   "dst": "Slykaar 又恨又羞，沉入地底，重新展開他那些為了組建軍隊的惡魔實驗。",
+   "dst": "Slykaar 又恨又辱，潛入地下，重新展開他那些惡魔實驗，好為自己造一支軍隊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48799,7 +48787,7 @@
   },
   "Corrupted Betrayal#011": {
    "src": "It appears the mutant contained the key for that door.",
-   "dst": "看來那隻變異體身上帶著那道門的鑰匙。",
+   "dst": "看來那把門的鑰匙就在那隻變異體身上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48809,7 +48797,7 @@
   },
   "Corrupted Betrayal#012": {
    "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
-   "dst": "一本又舊又積灰的日誌。它似乎被翻開停在某一頁。你出於好奇讀了起來……",
+   "dst": "這是一本佈滿灰塵的舊日記，似乎被翻開停在某一頁。你出於好奇讀了起來...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48819,7 +48807,7 @@
   },
   "Corrupted Betrayal#013": {
    "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
-   "dst": "……{p} 開始對我起疑了……有個叫 Robert 的傢伙來到鎮上……",
+   "dst": "...{p} 開始對我起疑了...有個叫 Robert 的傢伙來到了鎮上...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48829,7 +48817,7 @@
   },
   "Corrupted Betrayal#014": {
    "src": "...I know they will banish me...he is too good...too nice...",
-   "dst": "……我知道他們會放逐我……他太好了……太善良了……",
+   "dst": "...我知道他們會把我放逐...他太好了...太善良了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48839,7 +48827,7 @@
   },
   "Corrupted Betrayal#015": {
    "src": "...I must open a portal...make a dimension to become more powerful...",
-   "dst": "……我必須打開一道傳送門……造出一個維度，讓自己變得更強大……",
+   "dst": "...我必須開啟一道傳送門...造出一個界域，讓自己變得更強大...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48849,7 +48837,7 @@
   },
   "Corrupted Betrayal#016": {
    "src": "...the books...I have prepared well for this...",
-   "dst": "……那些書……我為此準備得很充分了……",
+   "dst": "...那些書...為了這一刻，我已經準備得很充分了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48859,7 +48847,7 @@
   },
   "Corrupted Betrayal#017": {
    "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
-   "dst": "……我要鑿出一間密室……藏在一面看得見的牆後面……打造屬於我的世界……我的復仇……",
+   "dst": "...我要鑿出一間密室...藏在一面看得見的牆後面...打造屬於我的世界...我的復仇...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48869,7 +48857,7 @@
   },
   "Corrupted Betrayal#018": {
    "src": "Go have fun while you can. It's not like you have much of a life to live, anyways.",
-   "dst": "趁還能玩的時候去玩吧。反正你也沒剩多少日子可活。",
+   "dst": "趁還能玩的時候去玩吧。反正你也沒剩多少日子好過了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48879,7 +48867,7 @@
   },
   "Corrupted Betrayal#019": {
    "src": "You should head back to Lanu...",
-   "dst": "你該回去找 Lanu 了……",
+   "dst": "你該回去找 Lanu 了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48889,7 +48877,7 @@
   },
   "Corrupted Betrayal#020": {
    "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of the cave.",
-   "dst": "啊，你回來了。有什麼有趣的發現嗎？我這邊就只是把偶爾從洞裡冒出來的史萊姆打回去而已。",
+   "dst": "啊，你回來了。有找到什麼有意思的東西嗎？我這邊就是偶爾把從洞裡冒出來的史萊姆打回去而已。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -81679,6 +81667,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "Finding the Light#141": {
+   "src": "WHY WOULD I BE NEEDED TO... To...",
+   "dst": "為什麼非得要我去……去……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "Stage 16",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "帶著你的 Gavel 護照到 [-{~}, {~}, -{~}] 找飛船事務員。",
@@ -85461,7 +85459,7 @@
   },
   "Frost Bite#001": {
    "src": "Are you here to cross the Great Bridge as well?",
-   "dst": "你也是要過大橋的嗎？",
+   "dst": "你也是要過 Great Bridge 的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85471,7 +85469,7 @@
   },
   "Frost Bite#002": {
    "src": "I fear you'll have to wait, the warning wasn't without merit.",
-   "dst": "恐怕你得等等，那則警告不是空穴來風。",
+   "dst": "恐怕你得等一等了，那則警告不是空穴來風。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85481,7 +85479,7 @@
   },
   "Frost Bite#003": {
    "src": "The {p} military has issued an official warning to all travelers wishing to cross the Great Bridge.",
-   "dst": "{p} 軍方已對所有想通過大橋的旅人發出正式警告。",
+   "dst": "{p} 軍方已經對所有想過 Great Bridge 的旅人發出正式警告。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85491,7 +85489,7 @@
   },
   "Frost Bite#004": {
    "src": "No one should use the bridge until they have dealt with the... underlying issue.",
-   "dst": "在他們處理掉那個……根本問題之前，誰都不該走那座橋。",
+   "dst": "在他們處理掉那個...根本問題之前，誰都不該走這座橋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85501,7 +85499,7 @@
   },
   "Frost Bite#005": {
    "src": "I ignored the warning at first, since the bridge is the only path into the jungle...",
-   "dst": "我一開始沒理那則警告，畢竟那座橋是進叢林的唯一一條路……",
+   "dst": "我一開始沒把警告當回事，畢竟那座橋是進叢林的唯一路徑...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85511,7 +85509,7 @@
   },
   "Frost Bite#006": {
    "src": "But attempting to cross the bridge proved unbearable. Even out here, can't you feel that intense heat?",
-   "dst": "但真要過橋才發現根本受不了。就算在這裡，你不覺得那股熱氣很嚇人嗎？",
+   "dst": "但真要過橋才發現根本受不了。就算站在這裡，你難道感覺不到那股高溫嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85521,7 +85519,7 @@
   },
   "Frost Bite#007": {
    "src": "I wouldn't blame anyone for not wanting to venture further, let alone meet whatever is causing this heat!",
-   "dst": "不想再往前走，我一點都不會怪誰，更別說去會會那個熱源了！",
+   "dst": "不想再往前走的人我一點都不怪他們，更別說去會一會造成這股熱浪的東西了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85531,7 +85529,7 @@
   },
   "Frost Bite#008": {
    "src": "And so I've been waiting here with my assistant all day... We're potion makers, you see, and we were headed to the grand city of {p} to sell supplies.",
-   "dst": "所以我就跟我的助手在這裡等了一整天……我們是製藥師，本來要去 {p} 那座大城賣補給的。",
+   "dst": "所以我就和助手在這裡等了一整天... 你看，我們是做藥水的，本來要前往 {p} 那座大城賣貨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85541,7 +85539,7 @@
   },
   "Frost Bite#009": {
    "src": "If you want to ignore the military's warning, I suppose you might benefit from buying some our stock first. Our potions are stronger than any sold in {p}, after all!",
-   "dst": "如果你打算無視軍方的警告，我想你先買點我們的貨會比較有利。我們的藥水可比 {p} 賣的任何一瓶都強！",
+   "dst": "如果你打算無視軍方的警告，我想你先買點我們的存貨應該不吃虧。畢竟我們的藥水比 {p} 賣的任何一種都還要強！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85551,7 +85549,7 @@
   },
   "Frost Bite#010": {
    "src": "From the look of your equipment... I'd say you might have a better chance of making it across than us.",
-   "dst": "看你這身裝備……我想你過去的機會比我們大多了。",
+   "dst": "從你的裝備看來... 我想你能過去的機會比我們大多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85561,7 +85559,7 @@
   },
   "Frost Bite#011": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up and take a look at the drill, would you?",
-   "dst": "喂，衛兵！你懂電磁法術嗎？過來看看這台鑽機好嗎？",
+   "dst": "喂，衛兵！你懂 Electromagic 嗎？上來看看這台鑽機，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85570,8 +85568,8 @@
    "source": "captured"
   },
   "Frost Bite#012": {
-   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
-   "dst": "我們一起去那棟宅邸吧。來，我備了一輛馬車。",
+   "src": "Now you've obtained the key, you can enter Theoricks mansion",
+   "dst": "你拿到鑰匙了，現在可以進 Theorick 的宅邸了",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85580,8 +85578,8 @@
    "source": "captured"
   },
   "Frost Bite#013": {
-   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
-   "dst": "Theorick 大人，如果您，呃……如果您有空的話？您的貢品送到了……",
+   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
+   "dst": "我們一起去那座宅邸吧。來，我備了一輛馬車。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85590,8 +85588,8 @@
    "source": "captured"
   },
   "Frost Bite#014": {
-   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
-   "dst": "……很好。謝謝。看到還有人真心尊重我為你們大家所做的事，真令人欣慰。還有別人嗎？",
+   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
+   "dst": "Theorick 大人，請問您，呃...您方便一下嗎？您的貢品到了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85600,8 +85598,8 @@
    "source": "captured"
   },
   "Frost Bite#015": {
-   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
-   "dst": "啊……沒有。這次……這次沒有了。他們覺得您從他們身上拿走太多，我並不認同，可是——",
+   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
+   "dst": "...很好。謝謝。看到還有人真心敬重我為你們所做的事，我很欣慰。還有其他人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85610,8 +85608,8 @@
    "source": "captured"
   },
   "Frost Bite#016": {
-   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
-   "dst": "……那就問問他們，是要保住錢，還是保住命。我不是在保護他們嗎？要我得到一點回報，真的有那麼過分嗎？",
+   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
+   "dst": "啊...沒有。這次...這次沒有了。他們覺得您跟他們拿得太多了，我並不認同這種說法，可是-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85620,8 +85618,8 @@
    "source": "captured"
   },
   "Frost Bite#017": {
-   "src": "We...we know. We told them that, too...we're sorry.",
-   "dst": "我們……我們知道。我們也是那樣跟他們說的……很抱歉。",
+   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
+   "dst": "...去問問他們，是要錢，還是要命。難道我沒在保護他們嗎？我要求一點回報，真的過分到這種地步嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85630,8 +85628,8 @@
    "source": "captured"
   },
   "Frost Bite#018": {
-   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
-   "dst": "該道歉的不是你們！我知道那是自願的捐獻，但他們有沒有想過，要定期施展這種法術有多困難？！",
+   "src": "We...we know. We told them that, too...we're sorry.",
+   "dst": "我們...我們知道。這些話我們也跟他們說過了...很抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85640,8 +85638,8 @@
    "source": "captured"
   },
   "Frost Bite#019": {
-   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
-   "dst": "這太離譜了……他居然這麼貪——啊啊啊啊。",
+   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
+   "dst": "該道歉的不是你們！我知道那是自願捐獻，但他們有沒有概念，要定期施展這種魔法有多困難？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85650,8 +85648,8 @@
    "source": "captured"
   },
   "Frost Bite#020": {
-   "src": "There must be some way to open it. Look around and see what you can find.",
-   "dst": "一定有辦法打開它。四處找找看有什麼發現。",
+   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
+   "dst": "這太扯了.. 他根本就是個貪得無厭的- 啊啊啊啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85660,8 +85658,8 @@
    "source": "captured"
   },
   "Frost Bite#021": {
-   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "哇，就算用現在的標準看，這也是一大筆錢。想想幾百年前這值多少。",
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "一定有辦法打開它的。四處找找看有什麼發現。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -85670,6 +85668,16 @@
    "source": "captured"
   },
   "Frost Bite#022": {
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "哇，就算用今天的標準來看，這也是一大筆錢。想想看，這在幾百年前又值多少。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 找到 Eppo。他的洞穴入口在 [-{~4}, {~5}, -{~6}]。",
    "role": "desc",
@@ -85679,7 +85687,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#023": {
+  "Frost Bite#024": {
    "src": "Let's give it another try!",
    "dst": "再試一次吧！",
    "role": "desc",
@@ -85689,7 +85697,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#024": {
+  "Frost Bite#025": {
    "src": "Ready the drill, men!",
    "dst": "弟兄們，鑽頭準備！",
    "role": "desc",
@@ -85699,7 +85707,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#025": {
+  "Frost Bite#026": {
    "src": "Darn. The drill just won't start.",
    "dst": "可惡。這鑽頭就是發不動。",
    "role": "desc",
@@ -85709,7 +85717,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#026": {
+  "Frost Bite#027": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up here to the drill, maybe you can take a look?",
    "dst": "喂，衛兵！你懂 Electromagic 嗎？上來鑽頭這邊，說不定你看得出問題？",
    "role": "desc",
@@ -85719,7 +85727,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#027": {
+  "Frost Bite#028": {
    "src": "Oh! Never mind, it lit up, back up!",
    "dst": "喔！沒事了，它亮了，退後！",
    "role": "desc",
@@ -85729,7 +85737,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#028": {
+  "Frost Bite#029": {
    "src": "For the love of Bob... Why won't you just break?",
    "dst": "看在 Bob 的份上……你怎麼就是不碎？",
    "role": "desc",
@@ -85739,7 +85747,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#029": {
+  "Frost Bite#030": {
    "src": "This ice was created by Theorick, a Twain who defended this area many many years ago.",
    "dst": "這些冰是 Theorick 造的，他是很久很久以前守護這一帶的一位 Twain。",
    "role": "desc",
@@ -85749,7 +85757,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#030": {
+  "Frost Bite#031": {
    "src": "When the corruption got too much... He froze everything, including the people. Do you see them in there?",
    "dst": "當腐敗蔓延到無法收拾……他把一切都凍住了，連人也不例外。你看見裡面那些人了嗎？",
    "role": "desc",
@@ -85759,7 +85767,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#031": {
+  "Frost Bite#032": {
    "src": "We've tried desperately to get them out, but we've tried all the equipment we had, including this Corkian drill.",
    "dst": "我們拚命想把他們弄出來，手上所有的設備都試過了，包括這台 Corkus 產的鑽頭。",
    "role": "desc",
@@ -85769,7 +85777,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#032": {
+  "Frost Bite#033": {
    "src": "Maybe we should get more destructive... The demolition expert, Rhudya, is further down the cave.",
    "dst": "也許該用更暴力的方式……爆破專家 Rhudya 就在洞穴更裡面。",
    "role": "desc",
@@ -85779,7 +85787,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#033": {
+  "Frost Bite#034": {
    "src": "It's a long shot, but worth a try. Would you be able to get it while I clear this space?",
    "dst": "機會不大，但值得一試。我來清這塊地方，你能去把東西拿來嗎？",
    "role": "desc",
@@ -85789,7 +85797,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#034": {
+  "Frost Bite#035": {
    "src": "Go deeper into the cave and speak to Rhudya.",
    "dst": "深入洞穴，與 Rhudya 對話。",
    "role": "desc",
@@ -85799,7 +85807,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#035": {
+  "Frost Bite#036": {
    "src": "Whup! You're on private property, y'know! Oh, Eppo sent ya? That's fair enough.",
    "dst": "哇！你可是踩在私人地界上啊！喔，Eppo 叫你來的？那就沒問題了。",
    "role": "desc",
@@ -85809,7 +85817,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#036": {
+  "Frost Bite#037": {
    "src": "You'll be needing this TNT then, make sure not to drop it though, whup!",
    "dst": "那你會需要這些 TNT，可別給我摔了啊，哇！",
    "role": "desc",
@@ -85819,7 +85827,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#037": {
+  "Frost Bite#038": {
    "src": "Just travel through this cave and you'll be returned to Eppo easy-peasy!",
    "dst": "穿過這個洞穴，輕輕鬆鬆就回到 Eppo 那邊了！",
    "role": "desc",
@@ -85829,7 +85837,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#038": {
+  "Frost Bite#039": {
    "src": "Return to Eppo with the tnt.",
    "dst": "帶著 TNT 回到 Eppo 那裡。",
    "role": "desc",
@@ -85839,7 +85847,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#039": {
+  "Frost Bite#040": {
    "src": "Very nice, this might do the trick.",
    "dst": "很好，這說不定行得通。",
    "role": "desc",
@@ -85849,7 +85857,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#040": {
+  "Frost Bite#041": {
    "src": "Back up, I'll ignite the explosive.",
    "dst": "退後，我來點燃炸藥。",
    "role": "desc",
@@ -85859,7 +85867,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#041": {
+  "Frost Bite#042": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -85869,7 +85877,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#042": {
+  "Frost Bite#043": {
    "src": "NOTHING? Not even a scratch. I don't understand Theoricks ice.. It's not real.",
    "dst": "什麼都沒有？連一道刮痕都沒有。我搞不懂 Theorick 這冰……這根本不像真的。",
    "role": "desc",
@@ -85879,7 +85887,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#043": {
+  "Frost Bite#044": {
    "src": "I'm not sure what else we can do then...",
    "dst": "那我也不知道還能怎麼辦了……",
    "role": "desc",
@@ -85889,7 +85897,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#044": {
+  "Frost Bite#045": {
    "src": "HEY. Eppo, over here! Near the cave!",
    "dst": "喂。Eppo，這邊！洞穴附近！",
    "role": "desc",
@@ -85899,7 +85907,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#045": {
+  "Frost Bite#046": {
    "src": "Did the explosive not work? I found this old mineshaft on the way back from the cave, it leads to an old lava cavern.",
    "dst": "炸藥沒效嗎？我從洞穴回來的路上發現了一條舊礦坑道，通往一個古老的熔岩洞。",
    "role": "desc",
@@ -85909,7 +85917,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#046": {
+  "Frost Bite#047": {
    "src": "Might be a long shot, but this lava looks different. Why not give it a try?",
    "dst": "機會或許不大，但那裡的熔岩看起來不太一樣。何不試試？",
    "role": "desc",
@@ -85919,7 +85927,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#047": {
+  "Frost Bite#048": {
    "src": "Travel to the lava springs through the mineshaft.",
    "dst": "穿過礦坑道，前往熔岩泉。",
    "role": "desc",
@@ -85929,7 +85937,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#048": {
+  "Frost Bite#049": {
    "src": "Complete the puzzle and bring the lava back to Eppo.",
    "dst": "解開謎題，把熔岩帶回給 Eppo。",
    "role": "desc",
@@ -85939,7 +85947,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#049": {
+  "Frost Bite#050": {
    "src": "I don't understand how you can hold lava in a bucket.. But here we are.",
    "dst": "我不懂熔岩怎麼能裝在桶子裡……但事實就擺在眼前。",
    "role": "desc",
@@ -85949,7 +85957,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#050": {
+  "Frost Bite#051": {
    "src": "Truth is.. We're not retrieving these bodies for no reason.",
    "dst": "老實說……我們挖這些屍體不是沒有理由的。",
    "role": "desc",
@@ -85959,7 +85967,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#051": {
+  "Frost Bite#052": {
    "src": "We believe one of these people worked for Theorick, and has a key to his mansion",
    "dst": "我們認為這些人裡有一個曾替 Theorick 做事，身上有他宅邸的鑰匙",
    "role": "desc",
@@ -85969,7 +85977,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#052": {
+  "Frost Bite#053": {
    "src": "We in {p} think Theorick has a lot to answer for. We want to redistribute his wealth among those he hurt.",
    "dst": "我們 {p} 的人認為 Theorick 欠了太多交代。我們要把他的財富重新分給被他傷害過的人。",
    "role": "desc",
@@ -85979,7 +85987,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#053": {
+  "Frost Bite#054": {
    "src": "Right, I've dipped this stick in the magical lava. Just hold the rod and walk into the ice to melt it.",
    "dst": "好，我把這根棒子浸過那魔法熔岩了。你只要握著它走進冰裡，冰就會融。",
    "role": "desc",
@@ -85989,7 +85997,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#054": {
+  "Frost Bite#055": {
    "src": "Look for the corpse with a key, it might be above you. Good luck!",
    "dst": "去找身上帶鑰匙的那具屍體，可能在你上方。祝你好運！",
    "role": "desc",
@@ -85999,7 +86007,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#055": {
+  "Frost Bite#056": {
    "src": "Melt the ice and find the Servant's corpse.",
    "dst": "融開冰層，找到那名僕人的屍體。",
    "role": "desc",
@@ -86009,7 +86017,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#056": {
+  "Frost Bite#057": {
    "src": "Is that the right one? You got it? Brilliant! Now come back down.",
    "dst": "是那一具嗎？拿到了？太好了！快下來吧。",
    "role": "desc",
@@ -86019,7 +86027,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#057": {
+  "Frost Bite#058": {
    "src": "Lets travel to the mansion together. Here, lets take my horse.",
    "dst": "我們一起去那座宅邸。來，騎我的馬。",
    "role": "desc",
@@ -86029,7 +86037,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#058": {
+  "Frost Bite#059": {
    "src": "While we ride, let me explain a little more about what we're doing. Let's go.",
    "dst": "路上我再多說一點我們在做的事。走吧。",
    "role": "desc",
@@ -86039,7 +86047,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#059": {
+  "Frost Bite#060": {
    "src": "As I mentioned before, there is a reason this land is frozen, and it's not natural.",
    "dst": "我剛才說過，這片土地被凍住是有原因的，而且不是自然造成的。",
    "role": "desc",
@@ -86049,7 +86057,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#060": {
+  "Frost Bite#061": {
    "src": "Many years before Bob was around, Wynn was in ruins due to the corruption war.",
    "dst": "早在 Bob 出現的許多年前，Wynn 就因為腐敗之戰而滿目瘡痍。",
    "role": "desc",
@@ -86059,7 +86067,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#061": {
+  "Frost Bite#062": {
    "src": "In those times there used to be a group of naturally gifted individuals called the Twains. They defended us all with elemental magic.",
    "dst": "那個年代有一群天賦異稟的人，稱作 Twains。他們以元素魔法守護著我們所有人。",
    "role": "desc",
@@ -86069,7 +86077,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#062": {
+  "Frost Bite#063": {
    "src": "Theorick was one of those Twains. He harnessed unnaturally powerful ice based magic. He used it to protect the land surrounding the mansion.",
    "dst": "Theorick 就是其中一位 Twain。他駕馭著強得不自然的冰系魔法，用它守護宅邸周圍這片土地。",
    "role": "desc",
@@ -86079,7 +86087,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#063": {
+  "Frost Bite#064": {
    "src": "Theorick.. Wasn't like the other Twains. He wanted the people he protected to pay and feed him as way of thanks.",
    "dst": "Theorick……跟其他 Twains 不一樣。他要他所保護的人以錢財與糧食來答謝他。",
    "role": "desc",
@@ -86089,7 +86097,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#064": {
+  "Frost Bite#065": {
    "src": "After years, Theorick was rich while the people he protected lived in poverty and fear - not only of the monsters, but in fear of Theorick himself.",
    "dst": "多年下來，Theorick 富可敵國，而被他保護的人卻活在貧困與恐懼之中——他們怕的不只是怪物，還有 Theorick 本人。",
    "role": "desc",
@@ -86099,7 +86107,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#065": {
+  "Frost Bite#066": {
    "src": "He punished those who disobeyed his curfews and would get angry if anyone tried to move away. The people felt trapped.",
    "dst": "誰不遵守他的宵禁就會被懲罰，誰想搬走他就發怒。人們覺得自己被困住了。",
    "role": "desc",
@@ -86109,7 +86117,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#066": {
+  "Frost Bite#067": {
    "src": "Eventually, just like the other Twains - Theorick fell to the corruption. Not before he had the last word.",
    "dst": "最後，跟其他 Twains 一樣——Theorick 也墮入了腐敗。但在那之前，他還是把最後一句話說完了。",
    "role": "desc",
@@ -86119,7 +86127,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#067": {
+  "Frost Bite#068": {
    "src": "He froze the land entirely, killing almost everything and everyone left outside in it. Hundreds of lives were lost.",
    "dst": "他把整片土地徹底冰封，幾乎凍死了留在外頭的一切生靈。數百條性命就此消逝。",
    "role": "desc",
@@ -86129,7 +86137,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#068": {
+  "Frost Bite#069": {
    "src": "It turns out the ice slowed the spread of corruption across the land to almost a standstill. It's been this way ever since.",
    "dst": "結果那些冰竟把腐敗在這片土地上的蔓延拖到幾乎停滯。從那時起就一直是這樣了。",
    "role": "desc",
@@ -86139,7 +86147,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#069": {
+  "Frost Bite#070": {
    "src": "Now that we can get in his mansion we hope to uncover the secrets of his ice magic so we may undo it, and share the wealth he hoarded from the people. Ah, we're here.",
    "dst": "現在我們進得了他的宅邸，希望能揭開他冰魔法的秘密好把它解開，也把他從人民身上搜刮來的財富分還出去。啊，到了。",
    "role": "desc",
@@ -86149,7 +86157,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#070": {
+  "Frost Bite#071": {
    "src": "Enter Theorick's Mansion.",
    "dst": "進入 Theorick 的宅邸。",
    "role": "desc",
@@ -86159,7 +86167,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#071": {
+  "Frost Bite#072": {
    "src": "This place looks frozen in time.. The grandure.. Well he did just take and take from everyone around him.",
    "dst": "這地方彷彿被時間凍住了……這般氣派……唉，他確實是不斷從身邊每個人身上榨取。",
    "role": "desc",
@@ -86169,7 +86177,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#072": {
+  "Frost Bite#073": {
    "src": "So, I'm not sure where to start, but I'm guessing he has some protection in place.",
    "dst": "我不確定該從哪裡下手，不過我猜他一定設了什麼防護。",
    "role": "desc",
@@ -86179,7 +86187,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#073": {
+  "Frost Bite#074": {
    "src": "This is unbelievable.. He was such a greedy- AAAAH.",
    "dst": "真是難以置信……他根本是個貪得無厭的——啊啊啊啊。",
    "role": "desc",
@@ -86189,7 +86197,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#074": {
+  "Frost Bite#075": {
    "src": "... I don't think we should insult him..",
    "dst": "……我看我們還是別罵他好了……",
    "role": "desc",
@@ -86199,7 +86207,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#075": {
+  "Frost Bite#076": {
    "src": "Find the riches in Theorick's mansion.",
    "dst": "在 Theorick 的宅邸裡找出財寶。",
    "role": "desc",
@@ -86209,7 +86217,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#076": {
+  "Frost Bite#077": {
    "src": "Oof! Wasn't expecting that. That just proves everything I said about him. Punishing people who insult him.",
    "dst": "唔！沒料到會這樣。這正好印證了我說的那些。誰罵他他就懲罰誰。",
    "role": "desc",
@@ -86219,7 +86227,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#077": {
+  "Frost Bite#078": {
    "src": "Anyway, we should look around for some kind of secret entrance.",
    "dst": "總之，我們該四處找找有沒有什麼暗門。",
    "role": "desc",
@@ -86229,7 +86237,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#078": {
+  "Frost Bite#079": {
    "src": "Trust Theorick to booby trap his own house the paranoid frozen gro-",
    "dst": "也只有 Theorick 會在自己家裡裝陷阱，這個疑神疑鬼的冰凍老怪——",
    "role": "desc",
@@ -86239,7 +86247,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#079": {
+  "Frost Bite#080": {
    "src": "That really isn't fun at all. I can't see a thing. Where are we now, a dead end?",
    "dst": "這一點都不好玩。我什麼都看不見。我們現在在哪，死路嗎？",
    "role": "desc",
@@ -86249,7 +86257,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#080": {
+  "Frost Bite#081": {
    "src": "Well we know that insults result in punishment. Maybe a compliment will make him happy?",
    "dst": "既然知道罵他會被罰，那讚美他會不會讓他高興？",
    "role": "desc",
@@ -86259,7 +86267,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#081": {
+  "Frost Bite#082": {
    "src": "Oh Theorick, strongest of all the Twains, you really are a hero.",
    "dst": "噢，Theorick，Twains 之中最強的一位，你真是個英雄。",
    "role": "desc",
@@ -86269,7 +86277,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#082": {
+  "Frost Bite#083": {
    "src": "Maybe n-",
    "dst": "也許不——",
    "role": "desc",
@@ -86279,7 +86287,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#083": {
+  "Frost Bite#084": {
    "src": "Looks like we finally found his private quarters, look at that vault door.",
    "dst": "看來我們總算找到他的私人居所了，你看那道金庫門。",
    "role": "desc",
@@ -86289,7 +86297,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#084": {
+  "Frost Bite#085": {
    "src": "There must be a way to open it. Look around and see what you can find.",
    "dst": "一定有辦法打開。四處看看，找找有什麼線索。",
    "role": "desc",
@@ -86299,7 +86307,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#085": {
+  "Frost Bite#086": {
    "src": "Find your way into the vault.",
    "dst": "想辦法進入金庫。",
    "role": "desc",
@@ -86309,9 +86317,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#086": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "你做到了！我們可以進金庫了。",
+  "Frost Bite#088": {
+   "src": "Wow, even by today's standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "哇，就算用現在的標準看，這也是一大筆錢。想想幾百年前這值多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -86319,7 +86327,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#088": {
+  "Frost Bite#089": {
    "src": "Grab a little for yourself, too, we wouldn't have been able to get here without you.",
    "dst": "你自己也拿一點吧，沒有你我們根本走不到這一步。",
    "role": "desc",
@@ -86329,7 +86337,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#089": {
+  "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "等等，看看這個。這好像是 Theorick 的一件護甲。",
    "role": "desc",
@@ -86339,7 +86347,17 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#090": {
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "你做到了！我們可以進金庫了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
    "src": "Surprised it even managed to fit over his fat head.",
    "dst": "真想不到這居然套得下他那顆肥腦袋。",
    "role": "desc",
@@ -116655,13 +116673,7 @@
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -116853,16 +116865,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
-   "dst": "等等 Viola，這是我們的機會！這個陌生人看起來什麼都應付得來，連邪惡的寄居蟹都不怕！我們可以直接請他去看看這些傳聞是不是真的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 1",
-   "speaker": "Prentiss",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "別理那邊那兩個，他們一直都這樣，不過 Prentiss 說得沒錯。這可能是我們唯一能弄清楚那個神祕男人到底是誰的機會！",
@@ -116976,16 +116978,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "所以你一定在想，怎麼到現在才認識我這麼棒的一個人？老實說，你一定是運氣太差了，我以前可是環遊過世界的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "你是我最近見到的第一個正常人，{PlayerName}。我前陣子出門，被幾個非常沒禮貌的鎮民講了幾句非常沒禮貌的話！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -117341,6 +117333,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "幫我把這扇門頂住，不然我的驚喜就毀了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "我好像聽過什麼「以毒攻毒」，所以我想我有辦法讓你恢復！你對我來說有點太重了，所以我們得想個變通的辦法。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "想辦法消滅那隻植物怪物，然後回到 [-{~1},-{~2}] 的 {p} 向大家回報你的發現",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Overture to Despair#000": {
@@ -133757,16 +133779,6 @@
    "speaker": "Frank",
    "source": "wiki"
   },
-  "Recipe For Disaster#062": {
-   "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "在 [X, Y, Z] 收集 [{~} {Ingredient}]，或查看你的食譜書。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Recipe For Disaster",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "歡迎來到 Astralus 的星辰之屋！你有辦法靠翻轉重力爬到頂端嗎？",
@@ -142599,7 +142611,7 @@
   },
   "Rise of the Quartron#000": {
    "src": "I think I'll write an anonymous letter instead. If those rumors about the factory are true, keeping myself secret might be important...",
-   "dst": "我看還是寫封匿名信好了。要是關於那間工廠的傳聞是真的，不讓人知道我是誰可能很重要……",
+   "dst": "我想我還是寫封匿名信好了。要是關於那間工廠的傳聞屬實，不讓人知道我是誰可能很重要...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142609,7 +142621,7 @@
   },
   "Rise of the Quartron#001": {
    "src": "Agh, this is getting worse! There's never been so much loss...whoever this is, they're getting bold...",
-   "dst": "唉，情況越來越糟了！損失從來沒這麼大過……不管是誰幹的，這人越來越大膽了……",
+   "dst": "唉，情況越來越糟了！從來沒短少過這麼多...不管是誰幹的，他們越來越大膽了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142619,7 +142631,7 @@
   },
   "Rise of the Quartron#002": {
    "src": "Dado won't budge about the topic. Maybe Nasea has an idea to get him to confess.",
-   "dst": "Dado 死咬著這個話題不鬆口。也許 Nasea 有辦法讓他招出來。",
+   "dst": "Dado 在這件事上完全不鬆口。也許 Nasea 有辦法讓他招出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142629,7 +142641,7 @@
   },
   "Rise of the Quartron#003": {
    "src": "Come back when you have a solid lead on the missing quartz.",
-   "dst": "等你查到失蹤石英的確切線索再回來。",
+   "dst": "等你對失蹤的石英有確切線索了再回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142639,7 +142651,7 @@
   },
   "Rise of the Quartron#004": {
    "src": "You press the flower up against his nose while he's laughing. Dado gets a big whiff of the petals, and immediately his expression goes slack.",
-   "dst": "你趁他大笑的時候把花湊到他鼻子前。Dado 猛吸了一口花瓣的味道，表情瞬間鬆垮下來。",
+   "dst": "趁他大笑的時候，你把那朵花湊到他鼻子前。Dado 重重吸了一大口花瓣的氣味，表情瞬間鬆垮了下來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142649,7 +142661,7 @@
   },
   "Rise of the Quartron#005": {
    "src": "...uh. Okay, I have no clue why I told you all of that...um, have you got any more of those flowers though? It was actually really good...",
-   "dst": "……呃。好吧，我完全不知道自己為什麼把那些全說出來了……嗯，不過你還有那種花嗎？那味道其實真的不錯……",
+   "dst": "...呃。好吧，我完全不曉得自己為什麼把那些全說了出來...嗯，不過那種花你還有嗎？那味道其實真的很不錯...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142659,23 +142671,17 @@
   },
   "Rise of the Quartron#006": {
    "src": "Use the small rail here, push that button on the post. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
-   "dst": "用這邊的小軌道，按柱子上那個按鈕。這樣看起來就只是……在做人類會做的事，不會引人起疑。",
+   "dst": "走這邊這條小軌道，按柱子上那顆按鈕。這樣看起來就只是...在做人類會做的事，不會引人起疑。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Use the small rail here, flick the lever. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
-    "file": "quest/rise-of-the-quartron.json",
-    "ratio": 0.873,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "Rise of the Quartron#007": {
    "src": "Knock 'em down, boys!",
-   "dst": "把他們打趴，弟兄們！",
+   "dst": "弟兄們，把他們放倒！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142685,7 +142691,7 @@
   },
   "Rise of the Quartron#008": {
    "src": "Aah, they're really tough!! Don't let them take down more of my buddies!",
-   "dst": "啊啊，他們真的很硬！！別再讓他們放倒我的弟兄了！",
+   "dst": "啊，他們真的很難纏！！別再讓他們放倒我的弟兄了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142695,7 +142701,7 @@
   },
   "Rise of the Quartron#009": {
    "src": "Why are we fighting face-to-face?! They're destroying us!!",
-   "dst": "我們幹嘛跟他們正面硬碰？！我們被打爛了啊！！",
+   "dst": "我們幹嘛跟他們正面硬拚？！我們被打得潰不成軍！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142705,7 +142711,7 @@
   },
   "Rise of the Quartron#010": {
    "src": "What the hell are humans made of?! Overwhelm them!! We hardly have any guys left!",
-   "dst": "人類到底是什麼做的？！人海壓過去！！我們沒剩幾個人了！",
+   "dst": "人類到底是什麼做的？！人海壓上去！！我們沒剩幾個人了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142715,7 +142721,7 @@
   },
   "Rise of the Quartron#011": {
    "src": "The door is locked. There has to be a way to get in...",
-   "dst": "門鎖著。一定有辦法進去……",
+   "dst": "門鎖住了。一定有辦法進去的...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142725,7 +142731,7 @@
   },
   "Rise of the Quartron#012": {
    "src": "Looks like someone's notebook. You open to a page that looks interesting...",
-   "dst": "看起來是誰的筆記本。你翻到看起來有意思的一頁……",
+   "dst": "看起來是某個人的筆記本。你翻到了看起來很有意思的一頁...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142735,7 +142741,7 @@
   },
   "Rise of the Quartron#013": {
    "src": "I've finally cracked it- a functional model for my magnum opus, the Harnort Quartron! I even amaze myself, yes yes!",
-   "dst": "我終於解出來了——我畢生傑作 Harnort Quartron 的可運作模型！連我自己都佩服自己，是的是的！",
+   "dst": "我終於想通了- 我畢生鉅作 Harnort Quartron 的可用模型！連我自己都佩服自己，是的是的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142745,7 +142751,7 @@
   },
   "Rise of the Quartron#014": {
    "src": "The mech is both made of and has functions to break apart quartz. We'll be able to salvage every bit from the rubble of {p}'s committee building...",
-   "dst": "這台機兵本身是石英做的，也具備拆解石英的功能。{p} 委員會大樓的瓦礫，我們一點都不會浪費……",
+   "dst": "這台機甲既以石英打造，本身又具備拆解石英的功能。{p} 委員會大樓的瓦礫堆裡，每一塊我們都回收得了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142755,7 +142761,7 @@
   },
   "Rise of the Quartron#015": {
    "src": "The fools in the committee will see their error when their rooms get blown apart in front of them! They'll see my brilliance!",
-   "dst": "委員會那些蠢材，等自己的房間在眼前炸開時就會看清自己錯在哪！他們會見識到我的才華！",
+   "dst": "等委員會那群蠢貨眼睜睜看著自己的房間被炸個粉碎，就會明白自己錯在哪了！他們會見識到我的才華！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142765,7 +142771,7 @@
   },
   "Rise of the Quartron#016": {
    "src": "Large-scale mechs that even Corkus's machines pale in comparison to, the possibilities for them are so much more than just warfare...",
-   "dst": "連 Corkus 的機械都相形失色的大型機兵，它們的可能性遠遠不只是戰爭而已……",
+   "dst": "這種大型機甲連 Corkus 的機器都相形失色，它們的可能性遠遠不只是拿來打仗...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142775,7 +142781,7 @@
   },
   "Rise of the Quartron#017": {
    "src": "But my subordinates need to hurry with the quartz shipments. The Karoc manager may catch onto us if we don't...and I regret thieving enough already.",
-   "dst": "但我的手下得加緊石英的出貨。再拖下去 Karoc 的管理員可能會發現我們……而且我對偷竊這件事已經夠後悔了。",
+   "dst": "但我的手下得加緊把石英運來才行。再拖下去，Karoc 那個主管可能就會發現我們...而且偷竊這件事，我已經夠後悔了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142785,7 +142791,7 @@
   },
   "Rise of the Quartron#018": {
    "src": "The quartz is charged! Use this to overcharge the door and destroy it!",
-   "dst": "石英充能完成！用它把門過度充能，直接炸開！",
+   "dst": "石英充能完成！用它把門過度充能，直接毀掉它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142795,7 +142801,7 @@
   },
   "Rise of the Quartron#019": {
    "src": "There's a charging slot in the machine.",
-   "dst": "機器上有一個充能插槽。",
+   "dst": "這台機器上有個充能插槽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142805,7 +142811,7 @@
   },
   "Rise of the Quartron#020": {
    "src": "The door is locked shut, and there's no keyhole anyplace.",
-   "dst": "門鎖得死緊，哪裡都找不到鑰匙孔。",
+   "dst": "門被牢牢鎖住了，而且哪裡都找不到鑰匙孔。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142815,7 +142821,7 @@
   },
   "Rise of the Quartron#021": {
    "src": "It's made of quartz, it looks like...the sign says not to overcharge the quartz.",
-   "dst": "看起來是石英做的……告示上寫著不要讓石英過度充能。",
+   "dst": "看起來是石英做的...告示上寫著不要對石英過度充能。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142825,7 +142831,7 @@
   },
   "Rise of the Quartron#022": {
    "src": "Nasea mentioned that overcharging quartz was dangerous...maybe overcharging the door will destroy it.",
-   "dst": "Nasea 說過石英過度充能很危險……也許把門過度充能就能把它毀掉。",
+   "dst": "Nasea 提過對石英過度充能很危險...也許把門過度充能就能毀掉它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142835,7 +142841,7 @@
   },
   "Rise of the Quartron#023": {
    "src": "Is there a way to charge quartz anyplace nearby?",
-   "dst": "附近有什麼地方可以幫石英充能嗎？",
+   "dst": "附近有什麼地方可以替石英充能嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142845,7 +142851,7 @@
   },
   "Rise of the Quartron#024": {
    "src": "...so it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "……所以，終究還是走到這一步了。那些衛兵的名字我全都記得。為了達成目標，我從沒傷過任何人。",
+   "dst": "...所以終究還是走到這一步了。那些衛兵的名字我全都叫得出來。為了達成目標，我可沒傷害過任何人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142855,7 +142861,7 @@
   },
   "Rise of the Quartron#025": {
    "src": "One life for a hundred is a fair trade!!",
-   "dst": "一條命換一百條，這筆交易很划算！！",
+   "dst": "用一條命換一百條，這筆交易很公道！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142865,7 +142871,7 @@
   },
   "Rise of the Quartron#026": {
    "src": "Aaah! Not responding?! You- You...YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "啊啊！沒有反應？！你——你……你！你毀了未來！「我的」未來！Gavel 的未來！！！",
+   "dst": "啊啊啊！沒有反應？！你- 你...你這傢伙！你毀掉了未來！我的未來！GAVEL 的未來！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142875,7 +142881,7 @@
   },
   "Rise of the Quartron#027": {
    "src": "...you've got some serious explaining to do. First you disappear to go get that Tattle flower, or whatever it was.",
-   "dst": "……你得好好解釋一下。先是跑去拿那朵什麼 Tattle 花，還是什麼東西的，人就不見了。",
+   "dst": "...你得好好解釋一下了。先是跑去拿那朵 Tattle 花還是什麼的，人就不見了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142885,7 +142891,7 @@
   },
   "Rise of the Quartron#028": {
    "src": "Then Dado ran through here screaming that he was drugged or mugged, and ran off to the east ridge.",
-   "dst": "接著 Dado 就從這裡衝過去，大喊自己被下藥還是被搶了，然後往東邊的稜線跑掉了。",
+   "dst": "接著 Dado 一路衝過這裡，大喊自己被下藥還是被搶了，然後就往東邊的山脊跑掉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142895,7 +142901,7 @@
   },
   "Rise of the Quartron#029": {
    "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... ...I'd never believe you if you hadn't given me the proof.",
-   "dst": "……嗯哼。嗯。……好，你繼續說。呃，好吧，這我可以接受……要不是你拿出了證據，我絕對不會相信你。",
+   "dst": "...嗯哼。嗯。... ...好，你繼續說。呃，好吧，這我可以接受... ...要不是你拿出了證據，我是絕對不會信你的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -142905,7 +142911,7 @@
   },
   "Rise of the Quartron#030": {
    "src": "Okay, so I'll cut you a quick deal. I'll pay you now for figuring this out, and if you do just one more thing for me then you'll get something extra.",
-   "dst": "好，那我跟你談個快的。你把這件事查出來，我現在就付你錢；如果你再幫我做一件事，還能多拿一份。",
+   "dst": "好，那我跟你做個快速交易。你查出這件事，我現在就付你錢；要是你再幫我做一件事，還能多拿一份。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -143740,6 +143746,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "……所以，終究還是走到這一步了。那些衛兵的名字我全都記得。為了達成目標，我從沒傷過任何人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "啊啊！沒有反應？！你——你……你！你毀了未來！「我的」未來！Gavel 的未來！！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "……嗯哼。嗯。……好，你繼續說。呃，好吧，這我可以接受……要不是你拿出了證據，我絕對不會相信你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   },
@@ -153961,7 +153997,7 @@
   },
   "Star Thief#000": {
    "src": "[{~}/{~}] Thief: .... I can't control myself...fjfjfj This rock...",
-   "dst": "[{~}/{~}] 竊賊：……我控制不住自己……fjfjfj 這塊石頭……",
+   "dst": "[{~}/{~}] 盜賊：.... 我control不住自己...fjfjfj 這塊石頭...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -163766,16 +163802,6 @@
   "The Canary Calls#163": {
    "src": "Have fun.",
    "dst": "玩得開心。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#164": {
-   "src": "Kill me now or I'll kill everyone in {Your Guild}.",
-   "dst": "現在就殺了我，不然我就殺光 {Your Guild} 裡的每一個人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -191725,7 +191751,7 @@
   },
   "The House of Twain (Quest)#015": {
    "src": "I know uncovering the truth is never easy, but keep trying, please bring me [{~} Twain Journal].",
-   "dst": "我知道要查出真相從來都不容易，但請繼續努力，把 [{~} Twain 日誌] 帶來給我。",
+   "dst": "我知道要查明真相從來都不容易，但請繼續努力，把 [{~} Twain 日記] 帶來給我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -203373,7 +203399,7 @@
   },
   "The Passage (Quest)#026": {
    "src": "I'm sure you've noticed, but there is a tribe camp not far from here.",
-   "dst": "你應該已經注意到了，離這裡不遠有個部落營地。",
+   "dst": "你一定注意到了，離這裡不遠處有個部落營地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -203383,7 +203409,7 @@
   },
   "The Passage (Quest)#027": {
    "src": "They quickly realised that it was a bad idea, so they locked him in a tomb.",
-   "dst": "他們很快就發覺這是個壞主意，於是把他鎖進了一座墓穴。",
+   "dst": "他們很快就發現那是個壞主意，於是把他鎖進了一座墓穴裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -203393,7 +203419,7 @@
   },
   "The Passage (Quest)#028": {
    "src": "Have you found the shrine yet? I've heard that throwing something as tribute to it could do the trick... There should be clues about what it might be near the shrine.",
-   "dst": "你找到那座神龕了嗎？我聽說朝它投上一件貢品就能奏效……神龕附近應該有線索能看出該供什麼。",
+   "dst": "你找到那座神龕了嗎？我聽說丟點什麼東西當作貢品也許就行得通... 神龕附近應該會有線索，告訴你那該是什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -232233,7 +232259,7 @@
   },
   "Underice#000": {
    "src": "+ Mythical Everlasting Pufferfish",
-   "dst": "",
+   "dst": "+ 神話級 永恆河豚",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -235119,7 +235145,7 @@
   },
   "WynnExcavation Site B#000": {
    "src": "Hello there! We are working very hard here at this excavation site! We have one in {p} as well, I think you should check it out!",
-   "dst": "你好啊！我們在這個挖掘場忙得很！我們在 {p} 也有一個，我覺得你該去看看！",
+   "dst": "你好啊！我們在這個挖掘場上可是拚了命地工作！我們在 {p} 也有一個場地，我覺得你該去看看！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site B",
