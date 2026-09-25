@@ -469,6 +469,14 @@ tasks.register('runDialogueChoiceChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueChoiceChecks' }
 
+tasks.register('runUpdateButtonChecks', JavaExec) {
+    group = 'verification'
+    description = '聊天裡那顆「按這裡更新」'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.UpdateButtonTest'
+}
+tasks.named('check') { dependsOn 'runUpdateButtonChecks' }
+
 tasks.register('runSearchChecks', JavaExec) {
     group = 'verification'
     description = '用譯文搜尋 Wynntils 的畫面'
