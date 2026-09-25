@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Lost in the Jungle",
-  "count": 32,
+  "count": 34,
   "translated": 32,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost in the Jungle#000": {
+   "src": "However... He also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
+   "dst": "Но он принёс с собой странный фиолетовый самоцвет. Наш шаман счёл это дурным знаком, но я увлёкся праздником и отмахнулся.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#001": {
+   "src": "Hm, I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
+   "dst": "Хм... Только сейчас вижу странный след на земле... того же цвета, что и самоцвет! Может, он приведёт к нему, прошу, идите по нему!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#002": {
+   "src": "You should talk to Aryn now...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#003": {
+   "src": "Oh... My father sent you? Well, I am very impressed, Wynn warrior. You fight with the ferocity of our own!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#004": {
+   "src": "But that is beside the point. You say you have destroyed the spirit, and it does not feel tainted any longer, so I will trust you.",
+   "dst": "Но дело не в этом. Вы говорите, что уничтожили духа и порчи в нём больше не чувствуется, и я вам верю.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#005": {
    "src": "Speak to Gracen at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Gracen в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#001": {
+  "Lost in the Jungle#006": {
    "src": "Excuse me, traveller... I am dreadfully sorry to ask this of you, but I need your help.",
    "dst": "Простите, путник... Мне ужасно неловко просить, но мне нужна ваша помощь.",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#002": {
+  "Lost in the Jungle#007": {
    "src": "You see, my son, Aryn. Very recently, he underwent a traditional coming-of-age ceremony from our tribe.",
    "dst": "Видите ли, мой сын Aryn. Совсем недавно он прошёл обряд взросления нашего племени.",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#003": {
+  "Lost in the Jungle#008": {
    "src": "He was tasked to enter the dangerous {p}, just south of here, and brave the wilderness for three days. He returned a true man, successful.",
    "dst": "Ему велели войти в {p}, опасное место к югу отсюда, и три дня выживать в глуши. Он вернулся настоящим мужчиной.",
    "role": "desc",
@@ -46,17 +96,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#004": {
-   "src": "However, he also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
-   "dst": "Но он принёс с собой странный фиолетовый самоцвет. Наш шаман счёл это дурным знаком, но я увлёкся праздником и отмахнулся.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#005": {
+  "Lost in the Jungle#010": {
    "src": "Strange happenings began around the village. Aryn walked about at night, talking to someone, but no one else was there with him.",
    "dst": "В деревне начались странности. Aryn бродил по ночам и говорил с кем-то, но рядом никого не было.",
    "role": "desc",
@@ -66,7 +106,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#006": {
+  "Lost in the Jungle#011": {
    "src": "Just last sunrise, he vanished entirely. We sent out a search for him, but even our hardiest warriors could not venture deep into the jungle.",
    "dst": "А на последнем рассвете он совсем исчез. Мы искали его, но даже самые стойкие воины не смогли зайти вглубь джунглей.",
    "role": "desc",
@@ -76,7 +116,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#007": {
+  "Lost in the Jungle#012": {
    "src": "We returned empty-handed, having lost our newest tribesman. The village is in terrible spirits, and I feel as though I am responsible.",
    "dst": "Мы вернулись ни с чем, потеряв нашего новейшего соплеменника. Деревня в унынии, и я чувствую свою вину.",
    "role": "desc",
@@ -86,7 +126,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#008": {
+  "Lost in the Jungle#013": {
    "src": "You Wynn warriors, however... great stories are told of your exploits. Surely, you will be able to brave the jungle, yes?",
    "dst": "Но вы, воины Wynn... о ваших подвигах слагают легенды. Уж вы-то пройдёте джунгли, верно?",
    "role": "desc",
@@ -96,7 +136,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#009": {
+  "Lost in the Jungle#014": {
    "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
    "dst": "Умоляю, найдите моего сына. Не знаю точно, где он, но его явно увели далеко вглубь...",
    "role": "desc",
@@ -106,17 +146,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#010": {
-   "src": "Hm... I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
-   "dst": "Хм... Только сейчас вижу странный след на земле... того же цвета, что и самоцвет! Может, он приведёт к нему, прошу, идите по нему!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 1",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#011": {
+  "Lost in the Jungle#016": {
    "src": "Search the {p} for Aryn",
    "dst": "Найди Aryn в {p}",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#012": {
+  "Lost in the Jungle#017": {
    "src": "P-please, I beg of you spirit, let me go free! The tribesmen must be so worried-",
    "dst": "П-прошу, дух, отпусти меня! Соплеменники ведь волнуются-",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#013": {
+  "Lost in the Jungle#018": {
    "src": "DO NOT RESIST, BOY! YOUR BODY IS MINE. I WAS TRAPPED IN THAT STONE FOR MILLENIA, AND NOW I AM FREE.",
    "dst": "НЕ СОПРОТИВЛЯЙСЯ, МАЛЬЧИШКА! ТВОЁ ТЕЛО МОЁ. ТЫСЯЧЕЛЕТИЯ Я БЫЛ ЗАПЕРТ В КАМНЕ, А ТЕПЕРЬ СВОБОДЕН.",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Aryn?",
    "source": "wiki"
   },
-  "Lost in the Jungle#014": {
+  "Lost in the Jungle#019": {
    "src": "Aha, I hear someone coming! Surely a tribesman here to rescue me!",
    "dst": "Ага, кто-то идёт! Наверняка соплеменник меня спасти!",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#015": {
+  "Lost in the Jungle#020": {
    "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
    "dst": "О! Если так, тело этого воина подойдёт мне куда лучше! Дай мне свою силу, мальчишка! Чтобы вселиться, надо сперва их отделать!",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Aryn?",
    "source": "wiki"
   },
-  "Lost in the Jungle#016": {
+  "Lost in the Jungle#021": {
    "src": "Defeat the spirit possessing Aryn",
    "dst": "Победи духа, вселившегося в Aryn",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#017": {
+  "Lost in the Jungle#022": {
    "src": "Make sure Aryn is safe at [-{~}, {~}, -{~}]",
    "dst": "Убедись, что Aryn в безопасности, в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -186,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#018": {
+  "Lost in the Jungle#023": {
    "src": "Hahah, take that, evil wraith! You'll never match the power of our tribe-",
    "dst": "Ха-ха, получай, злой призрак! Тебе не сравниться с силой нашего племени-",
    "role": "desc",
@@ -196,7 +226,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#019": {
+  "Lost in the Jungle#024": {
    "src": "W-wait, you aren't part of our tribe! Who are you, why did you come here?",
    "dst": "П-постойте, вы не из нашего племени! Кто вы, зачем пришли?",
    "role": "desc",
@@ -206,7 +236,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#020": {
+  "Lost in the Jungle#025": {
    "src": "Oh... my father sent you? Well, I am very impressed, Wynn warrior. You fight with ferocity of our own!",
    "dst": "О... вас прислал мой отец? Что ж, впечатляет, воин Wynn. Вы бьётесь с яростью наших воинов!",
    "role": "desc",
@@ -216,7 +246,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#021": {
+  "Lost in the Jungle#026": {
    "src": "I...can't say the same for myself. That spirit completely overtook me, I still can't move right now...",
    "dst": "О себе я... того же не скажу. Дух полностью мной завладел, я до сих пор не могу двигаться...",
    "role": "desc",
@@ -226,7 +256,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#022": {
+  "Lost in the Jungle#027": {
    "src": "For now, please. Take away this gemstone. It caused all this, I don't want to be near such a bad luck charm.",
    "dst": "А пока прошу. Заберите этот самоцвет. Всё из-за него, не хочу быть рядом с таким злосчастным амулетом.",
    "role": "desc",
@@ -236,7 +266,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#023": {
+  "Lost in the Jungle#028": {
    "src": "Tell the tribe that I will return on my own. I made it back once, I can do it again once I am prepared.",
    "dst": "Скажите племени, что я вернусь сам. Однажды я уже вернулся, вернусь и снова, когда буду готов.",
    "role": "desc",
@@ -246,7 +276,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#024": {
+  "Lost in the Jungle#029": {
    "src": "Bring the Mysterious Gemstone to Gracen at [-{~}, {~}, -{~}]",
    "dst": "Отнеси Таинственный самоцвет Gracen в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -256,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#025": {
+  "Lost in the Jungle#030": {
    "src": "Oh my... Aryn was possessed by a spirit residing within the gemstone?",
    "dst": "Боже... В Aryn вселился дух, живший в самоцвете?",
    "role": "desc",
@@ -266,7 +296,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#026": {
+  "Lost in the Jungle#031": {
    "src": "How shameful... Our shaman has never been wrong before, why did I disregard his warning...",
    "dst": "Какой позор... Наш шаман никогда не ошибался, почему я пренебрёг его предупреждением...",
    "role": "desc",
@@ -276,17 +306,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#027": {
-   "src": "But that is beside the point. You say you have destroyed the spirit and it does not feel tainted any longer, so I will trust you.",
-   "dst": "Но дело не в этом. Вы говорите, что уничтожили духа и порчи в нём больше не чувствуется, и я вам верю.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost in the Jungle",
-   "stage": "Stage 5",
-   "speaker": "Gracen",
-   "source": "wiki"
-  },
-  "Lost in the Jungle#028": {
+  "Lost in the Jungle#033": {
    "src": "Looking at it now, this is actually quite a valuable stone. If crushed to dust, it can be used in special charms we make.",
    "dst": "Если присмотреться, камень весьма ценный. Растёртый в пыль, он годится для наших особых амулетов.",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#029": {
+  "Lost in the Jungle#034": {
    "src": "Here, allow me to grind this down for you. You can keep the shards for whatever purposes you may find for them in the future.",
    "dst": "Вот, позвольте, я его измельчу. Осколки оставьте себе, найдёте им применение в будущем.",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#030": {
+  "Lost in the Jungle#035": {
    "src": "Our tribe, and especially myself... We thank you for your service. We shall consider you one of our own, from this day forward.",
    "dst": "Наше племя, и особенно я... Благодарим вас за службу. Отныне мы считаем вас одним из нас.",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#031": {
+  "Lost in the Jungle#036": {
    "src": "In fact, if you'd like, you may even enter my house here whenever you'd like.",
    "dst": "Более того, если хотите, можете заходить в мой дом когда угодно.",
    "role": "desc",
