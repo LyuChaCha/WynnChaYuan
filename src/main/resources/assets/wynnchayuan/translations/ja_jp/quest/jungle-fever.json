@@ -1,12 +1,98 @@
 {
  "_meta": {
   "quest": "Jungle Fever",
-  "count": 32,
+  "count": 40,
   "translated": 32,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Jungle Fever#000": {
+   "src": "The only cure to this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#001": {
+   "src": "Break into *cough* the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#002": {
+   "src": "We'll have to change our strategy, we don't ask for permission. It's to help me after all.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#003": {
+   "src": "I needed to make sure you could easily break into a bank. So i came here by myself to see if you could do it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#004": {
+   "src": "You've proven your ability of stealth and strength by breaking into this storage, we can start the real thing now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#005": {
+   "src": "It is guarded with tons of well trained Guard Golems, who can kill anyone in one hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
+    "file": "quest/jungle-fever.json",
+    "ratio": 0.832,
+    "reason": "candidate"
+   }
+  },
+  "Jungle Fever#006": {
+   "src": "..I mean *cough*.. I was too sick so i came back here.. *cough*",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#007": {
+   "src": "I feel so much better now, thank you for the cure!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#008": {
    "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] のジャングルの村で Worid と話す",
    "role": "desc",
@@ -16,7 +102,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#001": {
+  "Jungle Fever#009": {
    "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
    "dst": "ああ、会えて嬉しいよ！*ゴホッ* ひどい熱にかかって、本当に助けが要るんだ！*ゴホッ*",
    "role": "desc",
@@ -26,7 +112,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#002": {
+  "Jungle Fever#010": {
    "src": "The only cure against this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
    "dst": "この熱に効くのは液体エメラルドを飲むことだけなんだ！そう、まさにそれ！*ゴホッ*",
    "role": "desc",
@@ -36,7 +122,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#003": {
+  "Jungle Fever#011": {
    "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
    "dst": "{p} の銀行員に、そうだな… [{~} 液体エメラルド] ほど譲ってくれと頼んでくれないか？",
    "role": "desc",
@@ -46,7 +132,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#004": {
+  "Jungle Fever#012": {
    "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
    "dst": "もし奴が *ゴホッ* 断りやがったら… 力ずくでいくしかない…",
    "role": "desc",
@@ -56,7 +142,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#005": {
+  "Jungle Fever#013": {
    "src": "Break into *cough* to the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
    "dst": "*ゴホッ* エメラルド倉庫に押し入れ。でも何も取るなよ… 終わったらすぐ戻ってこい。生きて出られたらな、へへ…",
    "role": "desc",
@@ -66,7 +152,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#006": {
+  "Jungle Fever#014": {
    "src": "Oh, uh... I mean *cough* *cough*",
    "dst": "あ、いや… *ゴホッ* *ゴホッ*",
    "role": "desc",
@@ -76,7 +162,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#007": {
+  "Jungle Fever#015": {
    "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] で {p} の銀行員に Worid の治療について話す",
    "role": "desc",
@@ -86,7 +172,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#008": {
+  "Jungle Fever#016": {
    "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
    "dst": "[{~} 液体エメラルド]？正気じゃない！液体エメラルドで治るのは貧乏くらいだ！",
    "role": "desc",
@@ -96,7 +182,7 @@
    "speaker": "The Banker",
    "source": "wiki"
   },
-  "Jungle Fever#009": {
+  "Jungle Fever#017": {
    "src": "I will not participate in this pathetic fraud attempt!",
    "dst": "こんな情けない詐欺の片棒は担がんぞ！",
    "role": "desc",
@@ -106,7 +192,7 @@
    "speaker": "The Banker",
    "source": "wiki"
   },
-  "Jungle Fever#010": {
+  "Jungle Fever#018": {
    "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の {p} のエメラルド貯蔵庫に入る",
    "role": "desc",
@@ -116,7 +202,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#011": {
+  "Jungle Fever#019": {
    "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
    "dst": "なんてこった！液体エメラルドなしで、どうやって病気を治せば…？ *ゴホッ*",
    "role": "desc",
@@ -126,7 +212,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#012": {
+  "Jungle Fever#020": {
    "src": "We'll have to change our strategy, we won't ask for permission. It's to help me after all.",
    "dst": "作戦変更だ、許可なんて取らない。どのみち俺を助けるためなんだしな。",
    "role": "desc",
@@ -136,7 +222,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#013": {
+  "Jungle Fever#021": {
    "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
    "dst": "まずは、お前が銀行に楽々忍び込めるか確かめたい。{p} の秘密の貯蔵庫に入ってみろ。",
    "role": "desc",
@@ -146,7 +232,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#014": {
+  "Jungle Fever#022": {
    "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
    "dst": "終わったらまた話しかけてくれ。気をつけろよ、衛兵がいるかもしれない。",
    "role": "desc",
@@ -156,7 +242,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#015": {
+  "Jungle Fever#023": {
    "src": "Return to Worid",
    "dst": "Worid の所へ戻る",
    "role": "desc",
@@ -166,7 +252,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#016": {
+  "Jungle Fever#024": {
    "src": "What? You're here already. I thought you would take too long so I just went myself.",
    "dst": "なに？もう来たのか。時間がかかりそうだったから、自分で行ってきたよ。",
    "role": "desc",
@@ -176,7 +262,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#017": {
+  "Jungle Fever#025": {
    "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
    "dst": "病気？そうそう。*ゴホッ* 病人に自分の仕事をやらせるなんて、恥を知れよ。",
    "role": "desc",
@@ -186,7 +272,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#018": {
+  "Jungle Fever#026": {
    "src": "Anyway I see you proved yourself, we can start the real thing now.",
    "dst": "とにかく実力は分かった。そろそろ本番といこう。",
    "role": "desc",
@@ -196,7 +282,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#019": {
+  "Jungle Fever#027": {
    "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
    "dst": "実はな、{p} には「エメラルドの迷宮」っていう厳重な金庫があるんだ。",
    "role": "desc",
@@ -206,7 +292,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#020": {
+  "Jungle Fever#028": {
    "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
    "dst": "よく訓練された衛兵ゴーレムが山ほどいて、冒険者なんて簡単に殺される。",
    "role": "desc",
@@ -216,7 +302,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#021": {
+  "Jungle Fever#029": {
    "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
    "dst": "秘密金庫の銀行員は退屈しきってるはずだ。見つかっても気にしないだろう。",
    "role": "desc",
@@ -226,7 +312,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#022": {
+  "Jungle Fever#030": {
    "src": "Good luck with that. Haha.. I mean, *cough*.",
    "dst": "せいぜい頑張れ。はは… いや、*ゴホッ*。",
    "role": "desc",
@@ -236,7 +322,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#023": {
+  "Jungle Fever#031": {
    "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
    "dst": "[{~}, {~}, -{~}] の地下にある {p} の秘密のエメラルドの迷宮に潜入し、エメラルドの部屋で銀行員を見つける",
    "role": "desc",
@@ -246,7 +332,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#024": {
+  "Jungle Fever#032": {
    "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
    "dst": "お、おや！人だ！人に会うのは本当に久しぶりだ！",
    "role": "desc",
@@ -256,7 +342,7 @@
    "speaker": "Almuj Banker",
    "source": "wiki"
   },
-  "Jungle Fever#025": {
+  "Jungle Fever#033": {
    "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
    "dst": "液体エメラルド？もちろん、もちろん！山ほどある！さあ、持っていって。",
    "role": "desc",
@@ -266,7 +352,7 @@
    "speaker": "Almuj Banker",
    "source": "wiki"
   },
-  "Jungle Fever#026": {
+  "Jungle Fever#034": {
    "src": "Talk to Worid at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] で Worid と話す。",
    "role": "desc",
@@ -276,7 +362,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#027": {
+  "Jungle Fever#035": {
    "src": "You are back! Wonderful!",
    "dst": "戻ったか！素晴らしい！",
    "role": "desc",
@@ -286,7 +372,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#028": {
+  "Jungle Fever#036": {
    "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
    "dst": "大金じゃないか、本当にありがとう。これでやっと… *ゴホッ* 病気が治せる！",
    "role": "desc",
@@ -296,7 +382,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#029": {
+  "Jungle Fever#037": {
    "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
    "dst": "ほら、これは分け前だ。金はほとんど *ゴホッ* 治療に使うから、代わりに鍵で払っとく。",
    "role": "desc",
@@ -306,7 +392,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#030": {
+  "Jungle Fever#038": {
    "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
    "dst": "部族の長から盗ん… *ゴホッ* いや、借りたんだ。大いなる悪を封じるのに使われたらしい。",
    "role": "desc",
@@ -316,7 +402,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#031": {
+  "Jungle Fever#039": {
    "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
    "dst": "くたば… *ゴホッ* いや… 達者でな。そう、幸運を祈るよ、冒険者！",
    "role": "desc",

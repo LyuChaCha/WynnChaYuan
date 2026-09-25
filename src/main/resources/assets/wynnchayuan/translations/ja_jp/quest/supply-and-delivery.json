@@ -1,14 +1,14 @@
 {
  "_meta": {
   "quest": "Supply and Delivery",
-  "count": 83,
-  "translated": 83,
+  "count": 87,
+  "translated": 82,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "Supply and Delivery#000": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
-   "dst": "何だよ？そんな目で見るなって！あれは公平な取引で、お互い得したろ。俺は植物をもらって、お前は…まあ。経験を積んだだろ？",
+  "Supply and Delivery#001": {
+   "src": "Hey! I- uh, I can't help but notice that. You're still here. With the crate. You need to bring it to {p}, remember?",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -16,7 +16,47 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#001": {
+  "Supply and Delivery#002": {
+   "src": "Oh, you're one of those {p} soldiers. If I can give some advice?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#003": {
+   "src": "You should pick up some items from the Accessory Merchant in town! They might really help you out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#004": {
+   "src": "Normally you can only find accessories in rare cave loot, so a merchant like ours is actually a rarity.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#005": {
+   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#006": {
    "src": "So either you run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
    "dst": "だから、お前が補給品を {p} まで運ぶか…二人で逃げて新しい人生を始めて、やらかしの責任から逃げるかだ！",
    "role": "desc",
@@ -26,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#002": {
+  "Supply and Delivery#007": {
    "src": "Howdy! Lookin' to hitch a ride off to {p}? Sorry to say, but the wagon's broken down.",
    "dst": "よう！{p} まで乗っていくかい？悪いが、馬車が壊れちまってな。",
    "role": "desc",
@@ -36,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#003": {
+  "Supply and Delivery#008": {
    "src": "I reckon it won't be long 'till it's fixed up, but you'll have to make the journey yourself for now.",
    "dst": "直るのにそう時間はかからねえと思うが、今は自分の足で行ってもらうしかねえ。",
    "role": "desc",
@@ -46,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#004": {
+  "Supply and Delivery#009": {
    "src": "This fast travel requires Supply and Delivery to use.",
    "dst": "このファストトラベルを使うには「補給と配達」のクリアが必要だ。",
    "role": "desc",
@@ -56,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#005": {
+  "Supply and Delivery#010": {
    "src": "I hope these emeralds will suffice. Additionally... we have recently fixed up one of our broken carts, which makes the trip to {p} and back.",
    "dst": "このエメラルドで足りるといいが。それと…壊れていた馬車を最近直してね、{p} との間を行き来しているんだ。",
    "role": "desc",
@@ -66,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#006": {
+  "Supply and Delivery#011": {
    "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の {p} で Ope と話す。",
    "role": "desc",
@@ -76,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#007": {
+  "Supply and Delivery#012": {
    "src": "Oh, man... What am I going to do now...",
    "dst": "ああ…これからどうすりゃいいんだ…",
    "role": "desc",
@@ -86,7 +126,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#008": {
+  "Supply and Delivery#013": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
    "dst": "お、おお！や、やあ兵士さん！偶然だなあ、今日二人とも…{p} に…いるなんて…",
    "role": "desc",
@@ -96,7 +136,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#009": {
+  "Supply and Delivery#014": {
    "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefitted from. I got the plant, and you... well. You gained experience?",
    "dst": "何だよ？そんな目で見るなって！あれは公平な取引で、お互い得したろ。俺は植物をもらって、お前は…まあ。経験を積んだだろ？",
    "role": "desc",
@@ -106,7 +146,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#010": {
+  "Supply and Delivery#015": {
    "src": "Look, alright, I get it! But I can't pay you back either way. The mayor sent me here to pick up a crate of supplies for the village.",
    "dst": "わかった、わかったよ！でもどのみち返す金はない。村長に言われて、村の補給品の箱を受け取りに来たんだ。",
    "role": "desc",
@@ -116,7 +156,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#011": {
+  "Supply and Delivery#016": {
    "src": "The issue is... I've already run out of money on- uh, unrelated purchases. And even if I had the money, I couldn't buy the supply crate anyway...",
    "dst": "問題は…もう金を使い果たしちまって、その、関係ない買い物で。それに金があっても、補給箱は買えないんだ…",
    "role": "desc",
@@ -126,7 +166,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#012": {
+  "Supply and Delivery#017": {
    "src": "Those two over there who run the market banned me from ever using it after I tried to buy out the world's supplies of magical powders.",
    "dst": "あそこで市場をやってる二人に出入り禁止にされたんだ。世界中の魔法の粉を買い占めようとしたらさ。",
    "role": "desc",
@@ -136,7 +176,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#013": {
+  "Supply and Delivery#018": {
    "src": "Look, it's not my fault I'm making big market moves. I'm just, you know- smarter than all these other folks!",
    "dst": "いや、大きく動くのは俺のせいじゃない。俺はほら、ここの連中より頭がいいだけだ！",
    "role": "desc",
@@ -146,7 +186,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#014": {
+  "Supply and Delivery#019": {
    "src": "... The point is. I could really use your help right now! I- I promise, I'll pay you back for it this time.",
    "dst": "…とにかく。今お前の助けが本当に必要なんだ！こ、今度こそちゃんと返すって約束する。",
    "role": "desc",
@@ -156,7 +196,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#015": {
+  "Supply and Delivery#020": {
    "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
    "dst": "トレードマーケットに行って、補給箱を買ってくれるだけでいい。頼むよ？",
    "role": "desc",
@@ -166,7 +206,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#016": {
+  "Supply and Delivery#021": {
    "src": "Oh, man... What am I going to do now...",
    "dst": "ああ…これからどうすりゃいいんだ…",
    "role": "desc",
@@ -176,7 +216,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#017": {
+  "Supply and Delivery#022": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
    "dst": "お、おお！や、やあ兵士さん！偶然だなあ、今日二人とも…{p} に…いるなんて…",
    "role": "desc",
@@ -186,7 +226,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#018": {
+  "Supply and Delivery#023": {
    "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefitted from. I got the plant, and you... well. You gained experience?",
    "dst": "何だよ？そんな目で見るなって！あれは公平な取引で、お互い得したろ。俺は植物をもらって、お前は…まあ。経験を積んだだろ？",
    "role": "desc",
@@ -196,7 +236,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#019": {
+  "Supply and Delivery#024": {
    "src": "Look, alright, I get it! But I can't pay you back either way. The mayor sent me here to pick up a crate of supplies for the village.",
    "dst": "わかった、わかったよ！でもどのみち返す金はない。村長に言われて、村の補給品の箱を受け取りに来たんだ。",
    "role": "desc",
@@ -206,7 +246,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#020": {
+  "Supply and Delivery#025": {
    "src": "The issue is... I've already run out of money on- uh, unrelated purchases. And even if I had the money, I couldn't buy the supply crate anyway...",
    "dst": "問題は…もう金を使い果たしちまって、その、関係ない買い物で。それに金があっても、補給箱は買えないんだ…",
    "role": "desc",
@@ -216,7 +256,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#021": {
+  "Supply and Delivery#026": {
    "src": "Those two over there who run the market banned me from ever using it after I tried to buy out the world's supplies of magical powders.",
    "dst": "あそこで市場をやってる二人に出入り禁止にされたんだ。世界中の魔法の粉を買い占めようとしたらさ。",
    "role": "desc",
@@ -226,7 +266,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#022": {
+  "Supply and Delivery#027": {
    "src": "Look, it's not my fault I'm making big market moves. I'm just, you know- smarter than all these other folks!",
    "dst": "いや、大きく動くのは俺のせいじゃない。俺はほら、ここの連中より頭がいいだけだ！",
    "role": "desc",
@@ -236,7 +276,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#023": {
+  "Supply and Delivery#028": {
    "src": "... What? They also banned you from the market?! Well, great. What are we supposed to do now?",
    "dst": "…え？お前も出禁？！そりゃ最高だ。じゃあどうすりゃいいんだよ？",
    "role": "desc",
@@ -246,7 +286,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#024": {
+  "Supply and Delivery#029": {
    "src": "Well, do you have any other friends we could get involved? There was... that other soldier guy, right? His name was... Tim. Or something.",
    "dst": "じゃあ、巻き込めそうな友達は他にいないのか？ほら…もう一人兵士がいたろ？名前は…Tim。だったかな。",
    "role": "desc",
@@ -256,7 +296,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#025": {
+  "Supply and Delivery#030": {
    "src": "Look- alright, I get it, I'm a jerk who doesn't remember peoples' names! Could you just ask him to buy the supplies for us?? He's our last hope... probably.",
    "dst": "わかった、わかったよ、人の名前も覚えられないクズだよ俺は！そいつに補給品を買ってもらえないか？最後の希望なんだ…たぶん。",
    "role": "desc",
@@ -266,7 +306,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#026": {
+  "Supply and Delivery#031": {
    "src": "Purchase the supply crate from the Trade Market at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] のトレードマーケットで補給箱を買う。",
    "role": "desc",
@@ -276,7 +316,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#027": {
+  "Supply and Delivery#032": {
    "src": "Hey, good work! Now you'll need to pick up the supply crate.",
    "dst": "おっ、よくやった！次は補給箱を受け取ってきてくれ。",
    "role": "desc",
@@ -286,7 +326,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#028": {
+  "Supply and Delivery#033": {
    "src": "Find Tasim at [{~}, {~}, -{~}] and convince him to buy the supply crate for you.",
    "dst": "[{~}, {~}, -{~}] の Tasim を見つけ、補給箱を買ってもらうよう説得する。",
    "role": "desc",
@@ -296,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#029": {
+  "Supply and Delivery#034": {
    "src": "Oh, hey {u}! Are you just here to hang out? Or- that look on your face tells me you're here for something else.",
    "dst": "やあ、{u}！遊びに来たの？いや…その顔は、別の用事で来たって顔だね。",
    "role": "desc",
@@ -306,7 +346,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#030": {
+  "Supply and Delivery#035": {
    "src": "[{~}] Can you buy something from the Trade Market for me?",
    "dst": "[{~}] トレードマーケットで買い物を頼めない？",
    "role": "desc",
@@ -316,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#031": {
+  "Supply and Delivery#036": {
    "src": "I... guess so? Is there a reason you can't do it yourself?",
    "dst": "まあ…いいけど？自分で買えない理由でもあるの？",
    "role": "desc",
@@ -326,7 +366,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#032": {
+  "Supply and Delivery#037": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
    "dst": "…市場を出禁に？どうやったらそうなるんだ？{p} に来てまだ間もないのに！",
    "role": "desc",
@@ -336,7 +376,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#033": {
+  "Supply and Delivery#038": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy... whatever it is you need.",
    "dst": "君が…何だって！？いや、やっぱり聞きたくない。さあ、案内して。必要なものは…何でも買うよ。",
    "role": "desc",
@@ -346,7 +386,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#034": {
+  "Supply and Delivery#039": {
    "src": "...Oh. Well, that explains that. Though- is there a reason you can't get it yourself?",
    "dst": "…ああ。それで納得。でも…自分で取りに行けない理由でもあるの？",
    "role": "desc",
@@ -356,7 +396,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#035": {
+  "Supply and Delivery#040": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
    "dst": "…市場を出禁に？どうやったらそうなるんだ？{p} に来てまだ間もないのに！",
    "role": "desc",
@@ -366,7 +406,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#036": {
+  "Supply and Delivery#041": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy whatever it is Ope needs.",
    "dst": "君が…何だって！？いや、やっぱり聞きたくない。さあ、案内して。Ope が要るものは何でも買うよ。",
    "role": "desc",
@@ -376,7 +416,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#037": {
+  "Supply and Delivery#042": {
    "src": "Oh, hello . Are you here for training as well? Or- that look on your face tells me you're here for something else.",
    "dst": "あ、こんにちは 。君も訓練に？いや…その顔は、別の用事で来たって顔だね。",
    "role": "desc",
@@ -386,7 +426,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#038": {
+  "Supply and Delivery#043": {
    "src": "I... guess so? Is there a reason you can't do it yourself?",
    "dst": "まあ…いいけど？自分で買えない理由でもあるの？",
    "role": "desc",
@@ -396,7 +436,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#039": {
+  "Supply and Delivery#044": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
    "dst": "…市場を出禁に？どうやったらそうなるんだ？{p} に来てまだ間もないのに！",
    "role": "desc",
@@ -406,7 +446,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#040": {
+  "Supply and Delivery#045": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy... whatever it is you need.",
    "dst": "君が…何だって！？いや、やっぱり聞きたくない。さあ、案内して。必要なものは…何でも買うよ。",
    "role": "desc",
@@ -416,7 +456,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#041": {
+  "Supply and Delivery#046": {
    "src": "...Oh. Well, that explains that. Though- is there a reason you can't get it yourself?",
    "dst": "…ああ。それで納得。でも…自分で取りに行けない理由でもあるの？",
    "role": "desc",
@@ -426,7 +466,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#042": {
+  "Supply and Delivery#047": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
    "dst": "…市場を出禁に？どうやったらそうなるんだ？{p} に来てまだ間もないのに！",
    "role": "desc",
@@ -436,7 +476,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#043": {
+  "Supply and Delivery#048": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy whatever it is Ope needs.",
    "dst": "君が…何だって！？いや、やっぱり聞きたくない。さあ、案内して。Ope が要るものは何でも買うよ。",
    "role": "desc",
@@ -446,7 +486,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#044": {
+  "Supply and Delivery#049": {
    "src": "Bring Tasim to the Trade Market at [{~}, {~}, -{~}].",
    "dst": "Tasim を [{~}, {~}, -{~}] のトレードマーケットへ連れて行く。",
    "role": "desc",
@@ -456,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#045": {
+  "Supply and Delivery#050": {
    "src": "Alright. So I'm just buying a supply crate...",
    "dst": "よし。補給箱を一つ買えばいいんだね…",
    "role": "desc",
@@ -466,7 +506,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#046": {
+  "Supply and Delivery#051": {
    "src": "Here it is. I wish you luck with... whatever it is you're up to.",
    "dst": "はい、これ。何を企んでるか知らないけど…うまくいくといいね。",
    "role": "desc",
@@ -476,7 +516,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#047": {
+  "Supply and Delivery#052": {
    "src": "Return to Ope with the supply crate at [{~}, {~}, -{~}]",
    "dst": "補給箱を持って [{~}, {~}, -{~}] の Ope のもとへ戻る",
    "role": "desc",
@@ -486,7 +526,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#048": {
+  "Supply and Delivery#053": {
    "src": "Perfect! Now, quickly, come back over here, before those two realize you're working with me!",
    "dst": "完璧だ！さあ急いでこっちに戻れ、あの二人に俺とグルだとバレる前に！",
    "role": "desc",
@@ -496,7 +536,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#049": {
+  "Supply and Delivery#054": {
    "src": "You got the item? Good. Good, good good.",
    "dst": "手に入れたか？よし。よしよし、よし。",
    "role": "desc",
@@ -506,7 +546,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#050": {
+  "Supply and Delivery#055": {
    "src": "Okay! Now, we're onto step two. So, you see, this package still needs to make it to {p}...",
    "dst": "よし！じゃあ第二段階だ。つまり、この荷物はまだ {p} まで届けなきゃならない…",
    "role": "desc",
@@ -516,7 +556,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#051": {
+  "Supply and Delivery#056": {
    "src": "And. Well. You're the one holding the crate, not me! So... you know!",
    "dst": "で。まあ。箱を持ってるのはお前で、俺じゃない！だから…な？",
    "role": "desc",
@@ -526,7 +566,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#052": {
+  "Supply and Delivery#057": {
    "src": "Great! You know the way by now, surely! No need for me to, uh, get in your way!",
    "dst": "よし！道はもう分かってるよな！俺が、その、邪魔する必要もないだろ！",
    "role": "desc",
@@ -536,7 +576,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#053": {
+  "Supply and Delivery#058": {
    "src": "Just take those supplies to {p}, and. Well. Things will work out.",
    "dst": "その補給品を {p} に届けてくれ。そしたら。まあ。なんとかなるさ。",
    "role": "desc",
@@ -546,7 +586,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#054": {
+  "Supply and Delivery#059": {
    "src": "...probably.",
    "dst": "…たぶんな。",
    "role": "desc",
@@ -556,7 +596,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#055": {
+  "Supply and Delivery#060": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
    "dst": "いや、つまりさ。本当にやりたくないんだ。だからやらない！",
    "role": "desc",
@@ -566,7 +606,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#056": {
+  "Supply and Delivery#061": {
    "src": "So you either run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
    "dst": "だから、お前が補給品を {p} まで運ぶか…二人で逃げて新しい人生を始めて、やらかしの責任から逃げるかだ！",
    "role": "desc",
@@ -576,7 +616,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#057": {
+  "Supply and Delivery#062": {
    "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",
    "dst": "…嫌？嫌か。そうか。言ってみただけだ。道はもう分かるよな！俺が、その、邪魔することもない！へへ…",
    "role": "desc",
@@ -586,7 +626,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#058": {
+  "Supply and Delivery#063": {
    "src": "He bought you the item? Good. Good, good good. Okay! That was... harder than expected.",
    "dst": "あいつが買ってくれたのか？よし。よしよし、よし。ふう！思ったより…大変だったな。",
    "role": "desc",
@@ -596,7 +636,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#059": {
+  "Supply and Delivery#064": {
    "src": "Okay! Now, we're onto step two. So, you see, this package still needs to make it to {p}...",
    "dst": "よし！じゃあ第二段階だ。つまり、この荷物はまだ {p} まで届けなきゃならない…",
    "role": "desc",
@@ -606,7 +646,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#060": {
+  "Supply and Delivery#065": {
    "src": "And. Well. You're the one holding the crate, not me! So... you know!",
    "dst": "で。まあ。箱を持ってるのはお前で、俺じゃない！だから…な？",
    "role": "desc",
@@ -616,7 +656,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#061": {
+  "Supply and Delivery#066": {
    "src": "Great! You know the way by now, surely! No need for me to, uh, get in your way!",
    "dst": "よし！道はもう分かってるよな！俺が、その、邪魔する必要もないだろ！",
    "role": "desc",
@@ -626,7 +666,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#062": {
+  "Supply and Delivery#067": {
    "src": "Just take those supplies to {p}, and. Well. Things will work out.",
    "dst": "その補給品を {p} に届けてくれ。そしたら。まあ。なんとかなるさ。",
    "role": "desc",
@@ -636,7 +676,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#063": {
+  "Supply and Delivery#068": {
    "src": "...probably.",
    "dst": "…たぶんな。",
    "role": "desc",
@@ -646,7 +686,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#064": {
+  "Supply and Delivery#069": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
    "dst": "いや、つまりさ。本当にやりたくないんだ。だからやらない！",
    "role": "desc",
@@ -656,7 +696,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#065": {
+  "Supply and Delivery#070": {
    "src": "So you either run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
    "dst": "だから、お前が補給品を {p} まで運ぶか…二人で逃げて新しい人生を始めて、やらかしの責任から逃げるかだ！",
    "role": "desc",
@@ -666,7 +706,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#066": {
+  "Supply and Delivery#071": {
    "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",
    "dst": "…嫌？嫌か。そうか。言ってみただけだ。道はもう分かるよな！俺が、その、邪魔することもない！へへ…",
    "role": "desc",
@@ -676,7 +716,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#067": {
+  "Supply and Delivery#072": {
    "src": "Bring the supply crate to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
    "dst": "補給箱を [-{~}, {~}, -{~}] の {p} にいる Alvin 村長に届ける。",
    "role": "desc",
@@ -686,7 +726,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#068": {
+  "Supply and Delivery#073": {
    "src": "Ah, hello! What can I do for you today?",
    "dst": "おや、こんにちは！何かご用かね？",
    "role": "desc",
@@ -696,7 +736,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#069": {
+  "Supply and Delivery#074": {
    "src": "Ah... So you do. I thought I had sent Ope to pick that up...",
    "dst": "ああ…そうか。Ope に取りに行かせたはずなんだが…",
    "role": "desc",
@@ -706,7 +746,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#070": {
+  "Supply and Delivery#075": {
    "src": "More of his shenanigans, I suppose. I am sorry you have had to deal with him twice.",
    "dst": "またあの子の悪ふざけだろう。二度も付き合わせてしまって、すまないね。",
    "role": "desc",
@@ -716,7 +756,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#071": {
+  "Supply and Delivery#076": {
    "src": "When he returns to the village, I'm going to need to have a word with him... Ah, but of course, I should pay you for your troubles.",
    "dst": "村に戻ってきたら、あの子とはよく話さないと…ああ、もちろん、君の苦労には報いねばね。",
    "role": "desc",
@@ -726,7 +766,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#072": {
+  "Supply and Delivery#077": {
    "src": "I hope these emeralds will suffice. Additionally... we recently fixed up one of our broken carts, which makes the trip to {p} and back.",
    "dst": "このエメラルドで足りるといいが。それと…壊れていた馬車を最近直してね、{p} との間を行き来しているんだ。",
    "role": "desc",
@@ -736,7 +776,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#073": {
+  "Supply and Delivery#078": {
    "src": "You may feel free to use it whenever you like! As thanks for all you have done for us.",
    "dst": "いつでも自由に使ってくれたまえ！ここまでしてくれたお礼だよ。",
    "role": "desc",
@@ -746,7 +786,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#074": {
+  "Supply and Delivery#079": {
    "src": "He's... difficult. He's the son of my sister, who was unfortunately killed by spiders some time ago.",
    "dst": "あの子は…難しくてね。私の姉の息子なんだが、姉は少し前に不幸にも蜘蛛に殺されてしまった。",
    "role": "desc",
@@ -756,7 +796,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#075": {
+  "Supply and Delivery#080": {
    "src": "With his father out of the picture, I had to take him in. He's a grown man now, yes, but... I fear the loss has taken a toll on us both.",
    "dst": "父親もいなくなって、私が引き取るしかなかった。もう大人だがね…あの喪失は、私たち二人にこたえたのだと思う。",
    "role": "desc",
@@ -766,7 +806,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#076": {
+  "Supply and Delivery#081": {
    "src": "I truly hope he will cease with these ridiculous ploys sometime soon... but I can't bring myself to do more than give him a stern talking to.",
    "dst": "こんな馬鹿げた企みはそろそろやめてほしいと心から思う…だが、厳しく叱る以上のことはどうしてもできなくてね。",
    "role": "desc",
@@ -776,7 +816,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#077": {
+  "Supply and Delivery#082": {
    "src": "He's a good man, truly. I believe that with my whole heart. It's alright if you don't feel the same way, though. I will not force you to interact with him if you do not wish to.",
    "dst": "根はいい子なんだ、本当に。心からそう信じている。だが君がそう思わなくても構わない。関わりたくないなら、無理にとは言わないよ。",
    "role": "desc",
@@ -786,7 +826,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#078": {
+  "Supply and Delivery#083": {
    "src": "Oh, dear... I suppose it must have been fifteen years ago that I took the position, when the old mayor stepped down.",
    "dst": "おやおや…この職に就いたのは、確か十五年ほど前だ。前の村長が退いた時にね。",
    "role": "desc",
@@ -796,7 +836,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#079": {
+  "Supply and Delivery#084": {
    "src": "He was a kind man, always looking out for the townsfolk. Though, by the time he retired, it was clear he was growing restless in our little town.",
    "dst": "親切な人で、いつも町の人々を気にかけていた。だが引退する頃には、この小さな町に落ち着かなくなっていたようだ。",
    "role": "desc",
@@ -806,7 +846,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#080": {
+  "Supply and Delivery#085": {
    "src": "Well, as soon as he passed down the position to me, he immediately traveled to {p} and enlisted in their army! I hear he's in the business of training soldiers these days.",
    "dst": "それで私に職を譲るや否や、すぐに {p} へ行って軍に入ったんだ！今は兵士の訓練をしていると聞くよ。",
    "role": "desc",
@@ -816,7 +856,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#081": {
+  "Supply and Delivery#086": {
    "src": "Ah, but I've tried lived up to his legacy. I like to think I've done well in my time as mayor!",
    "dst": "ああ、だが私も彼の跡に恥じぬよう努めてきた。村長としてよくやれていると思いたいね！",
    "role": "desc",
@@ -826,7 +866,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#082": {
+  "Supply and Delivery#087": {
    "src": "A fine day for passing through! I hope you enjoy your stay.",
    "dst": "旅にはいい日和だ！ゆっくりしていってくれ。",
    "role": "desc",

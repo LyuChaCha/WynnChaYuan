@@ -51,9 +51,16 @@ public final class DiscoveryNameTest {
 
         int checked = 0;
         int viaTemplate = 0;
+        int titles = 0;
         for (String name : root.keySet()) {
             if (name.equals("_meta") || name.indexOf('{') >= 0) {
                 continue;                      // 模板條目本身不用再跑一次
+            }
+            if (name.endsWith("]") && name.contains(" [")) {
+                // 「名稱 [類型]」的整行條目，見底下 titles 那一段——
+                // 它不是官方的裸名，不該混進這裡的名稱計數。
+                titles++;
+                continue;
             }
             checked++;
             String template = com.wynnchayuan.capture.LineParts
@@ -73,6 +80,13 @@ public final class DiscoveryNameTest {
         report("★ 檢查了 124 個名稱（實際 " + checked + "）", checked == 124);
         report("★ 其中有 17 個是靠地名／數字模板命中的（實際 " + viaTemplate + "）",
                viaTemplate == 17);
+
+        // 「名稱 [類型]」的整行條目。畫面上那一行就是這個樣子，而語料先前
+        // 只收了裸名——於是名稱翻到了、後綴留著英文（實機回報
+        // 「初代 Wicker 的火花 [Secret Discovery]」）。洞窟那類本來就有
+        // 整行條目，所以只有它正常。
+        report("★ 也收了「名稱 [類型]」的整行條目（實際 " + titles + " 條）",
+               titles >= 100);
 
         // 譯名不能留成英文原樣——那是「補了但沒翻」，畫面上看不出差別。
         //

@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Underice",
-  "count": 63,
+  "count": 64,
   "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underice#000": {
+   "src": "+ Mythical Everlasting Pufferfish",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#001": {
    "src": "Talk to Fredris in {p} at [{~}, {~}, -{~}]",
    "dst": "Habla con Fredris en {p} en [{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#001": {
+  "Underice#002": {
    "src": "I'm having trouble with the fish in our lake recently and I am sure the problem lies within the lake itself.",
    "dst": "Últimamente tengo problemas con los peces de nuestro lago y estoy seguro de que el problema está en el lago mismo.",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#002": {
+  "Underice#003": {
    "src": "I would like to commission you to investigate, but since it's freezing cold in our lake you need something to protect you. I heard the people in {p} on the coast of Wynn have something that can help you.",
    "dst": "Quisiera encargarte que lo investigues, pero nuestro lago está helado y necesitas algo que te proteja. He oído que la gente de {p}, en la costa de Wynn, tiene algo que puede ayudarte.",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#003": {
+  "Underice#004": {
    "src": "Would you mind coming back with a [Breathing Helmet I]? I think that should be everything you need.",
    "dst": "¿Te importaría volver con un [Breathing Helmet I]? Creo que con eso tendrás todo lo que necesitas.",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#004": {
+  "Underice#005": {
    "src": "Return to {p} and bring Fredris a [Breathing Helmet I]",
    "dst": "Vuelve a {p} y tráele a Fredris un [Breathing Helmet I]",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#005": {
+  "Underice#006": {
    "src": "What is this thing supposed to be? You know, I would really appreciate your help, but this [Breathing Helmet I] does not look like it's going to keep you protected.",
    "dst": "¿Y esto qué se supone que es? Mira, te agradezco mucho la ayuda, pero este [Breathing Helmet I] no parece que vaya a protegerte.",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#006": {
+  "Underice#007": {
    "src": "Would you mind heading to our local armour merchant and buying one of our [Breathing Helmet II]? I don't want you to drown. Just come back with the helmet and I will tell you about my problem.",
    "dst": "¿Te importaría ir a nuestro mercader de armaduras y comprar un [Breathing Helmet II]? No quiero que te ahogues. Vuelve con el casco y te contaré mi problema.",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#007": {
+  "Underice#008": {
    "src": "Buy a [Breathing Helmet II] and find the underwater cave",
    "dst": "Compra un [Breathing Helmet II] y encuentra la cueva submarina",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#008": {
+  "Underice#009": {
    "src": "Explore the cave underneath the frozen lake in {p}",
    "dst": "Explora la cueva que hay bajo el lago helado de {p}",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#009": {
+  "Underice#010": {
    "src": "Who are you? You don't look like one of those villagers we stole the fi... Wait, they didn't send you to retrieve \"their\" fish, did they?",
    "dst": "¿Quién eres tú? No pareces uno de esos aldeanos a los que robamos el pes... Un momento, ¿no te habrán mandado a recuperar «su» pescado?",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#010": {
+  "Underice#011": {
    "src": "For years we let them share the lake with us, the actual inhabitants of it, we were modest and took what we needed, we let them catch the rest. But then they went too far, they caught too much.",
    "dst": "Durante años les dejamos compartir el lago con nosotros, sus verdaderos habitantes. Éramos modestos, tomábamos lo justo y el resto lo pescaban ellos. Pero se pasaron: pescaban demasiado.",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#011": {
+  "Underice#012": {
    "src": "We didn't have enough to eat, we were forced to steal their fish, we would have starved otherwise. And now they want their fish, our fish back? We can't do that, I hope you understand.",
    "dst": "No teníamos qué comer, nos vimos obligados a robarles el pescado; si no, habríamos muerto de hambre. ¿Y ahora quieren su pescado, nuestro pescado? No podemos, espero que lo entiendas.",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#012": {
+  "Underice#013": {
    "src": "However, we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
    "dst": "Aun así, no hace falta pelear por los peces del lago: solo necesitamos un [Mythic Everlasting Pufferfish], con eso basta, nada más. Nunca quisimos robar el pescado.",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#013": {
+  "Underice#014": {
    "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
    "dst": "Si quieres ayudarnos a nosotros y a los aldeanos, sigue hacia el sur el arroyo que desemboca en este lago; allí está el mejor caladero. El pez globo debería andar por ahí.",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#014": {
+  "Underice#015": {
    "src": "Follow the river south to find the fishing dock",
    "dst": "Sigue el río hacia el sur para encontrar el muelle de pesca",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#015": {
+  "Underice#016": {
    "src": "Oh you look a bit lost, let me help you, I've lived here for a long time, I know every corner and every snowflake.",
    "dst": "Oh, pareces un poco perdido. Deja que te ayude: llevo mucho aquí y conozco cada rincón y cada copo de nieve.",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#016": {
+  "Underice#017": {
    "src": "You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
    "dst": "¿Buscas un [Mythic Everlasting Pufferfish]? Hmm, ese nombre ya lo había oído: mi amigo Strato me habló de él hace años. Si mal no recuerdo, es infinito, con ese solo pez podrías dar de comer a todo el mundo en todas las provincias.",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#017": {
+  "Underice#018": {
    "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
    "dst": "Por desgracia, Strato ya murió. Vivía en el campamento de leñadores al noroeste de {p}. Quedábamos aquí a pescar y contarnos historias. Cómo echo de menos esos días...",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#018": {
+  "Underice#019": {
    "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
    "dst": "Quizá encuentres allí algún cebo; él tenía el mejor cebo que he visto nunca. Deberías poder conseguir algo y echarlo al agua; puede que así atraigas al pez globo.",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#019": {
+  "Underice#020": {
    "src": "Can I ask you something? As you might see I'm not the richest guy, or the youngest. If you manage to catch that fish, could you hand it over? I know we just met but you seem like somebody who would help an old man.",
    "dst": "¿Puedo pedirte algo? Como ves, no soy el más rico, ni el más joven. Si consigues pescar ese pez, ¿me lo darías? Sé que acabamos de conocernos, pero pareces de los que ayudan a un viejo.",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#020": {
+  "Underice#021": {
    "src": "Obtain the bait at the woodcutting camp northwest of {p}, use it to catch the fish and then give it to Calamaro or Gernald",
    "dst": "Consigue el cebo en el campamento de leñadores al noroeste de {p}, úsalo para pescar el pez y luego dáselo a Calamaro o a Gernald",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#021": {
+  "Underice#022": {
    "src": "Just look at those fish, I told you they love this bait.",
    "dst": "Mira cómo vienen los peces, ya te dije que adoran este cebo.",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#022": {
+  "Underice#023": {
    "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
    "dst": "¡Ahí llega, el [Mythic Everlasting Pufferfish], no me lo puedo creer!",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#023": {
+  "Underice#024": {
    "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
    "dst": "¿Has decidido darme el pez? Ojalá Strato siguiera aquí, se quedaría de piedra. No sé cómo explicarte lo que esto significa para mí, pero acepta este regalito y prométeme que nunca cambiarás.",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#024": {
+  "Underice#025": {
    "src": "You found a pufferfish! Who would have thought such a small thing could solve our problem. I will start bringing back the fish immediately, but first we will have a nice hot soup. Please take this as payback for your services.",
    "dst": "¡Has encontrado un pez globo! Quién diría que algo tan pequeño resolvería nuestro problema. Empezaré a devolver el pescado ahora mismo, pero antes nos haremos una buena sopa caliente. Toma esto en pago por tus servicios.",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#025": {
+  "Underice#026": {
    "src": "You can trade it at the shop right over there, it's hard to miss. I will give you a last advise, you don't want to eat that slimy fish.",
    "dst": "Puedes cambiarlo en la tienda de ahí mismo, no tiene pérdida. Y un último consejo: no te comas ese pez baboso.",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#026": {
+  "Underice#027": {
    "src": "Meet up with Fredris in {p} and claim your reward",
    "dst": "Reúnete con Fredris en {p} y reclama tu recompensa",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#027": {
+  "Underice#028": {
    "src": "Oh you are done with whatever you were doing? I heard you ran around the whole place, I don't know if you were the right person to ask for help...",
    "dst": "Oh, ¿ya has terminado con lo tuyo? Dicen que has estado dando vueltas por todas partes; no sé si eras la persona indicada para esto...",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#028": {
+  "Underice#029": {
    "src": "I will just ask the next one who comes around, no need to have you run around all day. Take this, I appreciate your effort.",
    "dst": "Mejor se lo pido al siguiente que pase, no hace falta que andes corriendo todo el día. Toma esto, agradezco tu esfuerzo.",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#029": {
+  "Underice#030": {
    "src": "A real disaster! I can't believe this is happening to me!",
    "dst": "¡Un auténtico desastre! ¡No me puedo creer que me pase esto a mí!",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#030": {
+  "Underice#031": {
    "src": "I've been fishing for the last few days and I caught nothing! Zilch! This isn't normal!",
    "dst": "¡Llevo días pescando y no he pescado nada! ¡Ni uno! ¡Esto no es normal!",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#031": {
+  "Underice#032": {
    "src": "I spent my entire life fishing in this area! I wish I could dive under this ice to fix the problem myself...",
    "dst": "¡Me he pasado la vida pescando por esta zona! Ojalá pudiera bucear bajo el hielo y arreglarlo yo mismo...",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#032": {
+  "Underice#033": {
    "src": "Do you think you could help me? You might actually be exactly what I need!",
    "dst": "¿Crees que podrías ayudarme? ¡Puede que seas justo lo que necesito!",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#033": {
+  "Underice#034": {
    "src": "Enter my shack, there you will find the entrance... Good luck!",
    "dst": "Entra en mi cabaña, allí encontrarás la entrada... ¡Suerte!",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#034": {
+  "Underice#035": {
    "src": "Explore under the ice to find a cause to the fish problem. You'll need the Breathing Helmet for this.",
    "dst": "Explora bajo el hielo para hallar la causa del problema con los peces. Necesitarás el Breathing Helmet.",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#035": {
+  "Underice#036": {
    "src": "Talk to Squidward in the Squid Village.",
    "dst": "Habla con Squidward en la Aldea de los Calamares.",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#036": {
+  "Underice#037": {
    "src": "Have I seen any fish? No, of course not! I don't even know what a fish looks like!",
    "dst": "¿Que si he visto peces? ¡No, claro que no! ¡Ni siquiera sé cómo es un pez!",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#037": {
+  "Underice#038": {
    "src": "Who could be stealing all those fish? I wonder! Actually...",
    "dst": "¿Quién estará robando todos esos peces? ¡Qué misterio! Aunque...",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#038": {
+  "Underice#039": {
    "src": "I'm sure Calamaro did it! He's just that kind of guy. He lives in that house down there.",
    "dst": "¡Seguro que fue Calamaro! Es de esa clase de tipos. Vive en esa casa de ahí abajo.",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#039": {
+  "Underice#040": {
    "src": "Find Calamaro in the Squid Village.",
    "dst": "Encuentra a Calamaro en la Aldea de los Calamares.",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#040": {
+  "Underice#041": {
    "src": "Me? Stealing fish? You are out of your mind! It's obviously Kroken who is stealing them!",
    "dst": "¿Yo? ¿Robando peces? ¡Tú estás mal de la cabeza! ¡Está claro que es Kroken quien los roba!",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#041": {
+  "Underice#042": {
    "src": "He lives right on top of that waterfall right there, if you want to go talk to him.",
    "dst": "Vive justo encima de esa cascada de ahí, por si quieres ir a hablar con él.",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#042": {
+  "Underice#043": {
    "src": "Find Kroken in the Squid Village.",
    "dst": "Encuentra a Kroken en la Aldea de los Calamares.",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#043": {
+  "Underice#044": {
    "src": "Do I look like someone who steals fish?",
    "dst": "¿Tengo pinta de robar peces?",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Kroken",
    "source": "wiki"
   },
-  "Underice#044": {
+  "Underice#045": {
    "src": "It's obvious that Squidward did it, he has tons of crates full of fish!",
    "dst": "Está claro que fue Squidward, ¡tiene montones de cajas llenas de peces!",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Kroken",
    "source": "wiki"
   },
-  "Underice#045": {
+  "Underice#046": {
    "src": "Talk back to Squidward.",
    "dst": "Vuelve a hablar con Squidward.",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#046": {
+  "Underice#047": {
    "src": "Okay, okay, fine! It was me all along... I know, what a shock, right?",
    "dst": "¡Vale, vale, está bien! He sido yo todo este tiempo... Ya, menuda sorpresa, ¿no?",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#047": {
+  "Underice#048": {
    "src": "Okay, I got a proposition for you. Bring me [{~} Raw Fish] and I will stop, deal?",
    "dst": "Vale, te hago una propuesta. Tráeme [{~} Raw Fish] y lo dejo, ¿trato hecho?",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#048": {
+  "Underice#049": {
    "src": "Deal.",
    "dst": "Trato hecho.",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#049": {
+  "Underice#050": {
    "src": "Bring back {~} Raw Fish to Squidward.",
    "dst": "Llévale {~} Raw Fish a Squidward.",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#050": {
+  "Underice#051": {
    "src": "Good, you got the fish!",
    "dst": "¡Bien, tienes los peces!",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#051": {
+  "Underice#052": {
    "src": "You can trust me, I won't touch the fish in the frozen lake anymore!",
    "dst": "¡Puedes fiarte de mí, no volveré a tocar los peces del lago helado!",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#052": {
+  "Underice#053": {
    "src": "Talk to Fredris to collect your reward.",
    "dst": "Habla con Fredris para recoger tu recompensa.",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#053": {
+  "Underice#054": {
    "src": "Your story really doesn't make sense. Villagers living in a squid village under the lake? Pff!",
    "dst": "Tu historia no tiene ningún sentido. ¿Aldeanos viviendo en una aldea de calamares bajo el lago? ¡Bah!",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#054": {
+  "Underice#055": {
    "src": "However, if you can garantee me that my problem is gone, I'll trust you.",
    "dst": "Aun así, si me garantizas que mi problema se ha acabado, me fiaré de ti.",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#055": {
+  "Underice#056": {
    "src": "Thank you for your help. Here, take these...",
    "dst": "Gracias por tu ayuda. Toma, quédate con esto...",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#056": {
+  "Underice#057": {
    "src": "Have you found the issue yet? I'm still waiting!",
    "dst": "¿Ya has encontrado el problema? ¡Sigo esperando!",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#057": {
+  "Underice#058": {
    "src": "Have you seen that weird structure near the lake? I heard quite a lot of stories about it, but nobody is sure about what you can find there.",
    "dst": "¿Has visto esa extraña estructura junto al lago? He oído muchas historias sobre ella, pero nadie sabe con certeza qué se puede encontrar allí.",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#058": {
+  "Underice#059": {
    "src": "However we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
    "dst": "Aun así, no hace falta pelear por los peces del lago: solo necesitamos un [Mythic Everlasting Pufferfish], con eso basta, nada más. Nunca quisimos robar el pescado.",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#059": {
+  "Underice#060": {
    "src": "You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
    "dst": "¿Buscas un [Mythic Everlasting Pufferfish]? Hmm, ese nombre ya lo había oído: mi amigo Strato me habló de él hace años. Si mal no recuerdo, es infinito, con ese solo pez podrías dar de comer a todo el mundo en todas las provincias.",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#060": {
+  "Underice#061": {
    "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in the water, maybe that will attract the pufferfish.",
    "dst": "Quizá encuentres allí algún cebo; él tenía el mejor cebo que he visto nunca. Deberías poder conseguir algo y echarlo al agua; puede que así atraigas al pez globo.",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#061": {
+  "Underice#062": {
    "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift please, promise me to never change.",
    "dst": "¿Has decidido darme el pez? Ojalá Strato siguiera aquí, se quedaría de piedra. No sé cómo explicarte lo que esto significa para mí, pero acepta este regalito y prométeme que nunca cambiarás.",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#062": {
+  "Underice#063": {
    "src": "I wish we could have avoided this whole scenario.",
    "dst": "Ojalá hubiéramos podido evitar toda esta situación.",
    "role": "desc",

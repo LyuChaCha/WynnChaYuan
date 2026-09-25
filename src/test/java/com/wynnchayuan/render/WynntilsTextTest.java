@@ -43,6 +43,7 @@ public final class WynntilsTextTest {
         heldItem(config, store);
         bossBar(config, store);
         entityName(config, store);
+        wynntilsScreens(config, store);
 
         System.out.println(failures == 0 ? "\n就地取代：全部通過"
                 : "\n就地取代：" + failures + " 項失敗");
@@ -208,6 +209,47 @@ public final class WynntilsTextTest {
         config.toggleNametags();
         check("名牌翻譯關掉時原樣回去", WynntilsText.entityName(altar, config, store) == altar);
         config.toggleNametags();
+    }
+
+    /**
+     * Wynntils 自己那幾個畫面上的字（綜合頁面左邊那一列、分頁標題⋯⋯）。
+     *
+     * <h2>為什麼這一條值得釘</h2>
+     * 那些字有一半是 Wynncraft 送來的內容（任務名、洞穴名、
+     * 「Currently in progress」），Wynntils 的語言檔永遠不會有它們，
+     * 但我們的語料裡早就有。打在它的 {@code FontRenderer} 入口就換得到。
+     *
+     * <p>真正的風險是<b>換太多</b>：這個入口所有字都會經過，
+     * 所以「查不到就原樣回去」與「關掉就完全不動」兩邊都要測。
+     */
+    private static void wynntilsScreens(CollectorConfig config, TranslationStore store) {
+        StyledText inProgress = StyledText.fromString("Currently in progress");
+        StyledText shown = WynntilsText.screenText(inProgress, config, store);
+        check("綜合頁面的狀態翻得出來（實際 " + shown.getString() + "）",
+              "進行中".equals(shown.getString()));
+
+        StyledText already = StyledText.fromString("進行中");
+        check("已經是中文的原樣回去",
+              WynntilsText.screenText(already, config, store) == already);
+
+        StyledText odd = StyledText.fromString("Qwertyuiop Zxcv");
+        check("查不到的原樣回去", WynntilsText.screenText(odd, config, store) == odd);
+
+        config.toggleWynntilsUi();
+        check("F6 關掉時完全不動",
+              WynntilsText.screenText(inProgress, config, store) == inProgress);
+        config.toggleWynntilsUi();
+        check("再打開就又換得到",
+              "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
+
+        // 公會戰地圖那一格領地標籤：從 TerritoryPoi 進去到它出來，一律不翻。
+        // 實機那一格的公會叫 Fox，被 npc.json 的「Fox: 狐狸」換掉了。
+        WynntilsText.holdTerritoryLabels(true);
+        check("★ 領地標籤裡的字原樣回去（公會名是玩家取的，撞名躲不完）",
+              WynntilsText.screenText(inProgress, config, store) == inProgress);
+        WynntilsText.holdTerritoryLabels(false);
+        check("★ 出了領地標籤就恢復",
+              "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
     }
 
     private static void check(String what, boolean ok) {

@@ -472,9 +472,41 @@ public final class LineTranslator {
      *
      * <p>改成看整段：哪個樣式涵蓋的字最多就用哪個。名稱那半會由
      * {@link #labelAccent} 另外把自己的顏色帶回去。
+     *
+     * <h2>多數色不算佔位符</h2>
+     * 跟 {@link #perPartStyles} 是<b>同一件事</b>，只是發生在「整段命中」這條路上。
+     * 數值、地名、玩家名是從原文抽出去、填回時<b>自己帶著原樣式</b>回來的
+     * （見 {@link LineParts}），所以不能讓它們決定周圍的散文是什麼顏色。
+     *
+     * <h2>實機回報（內容書迷你任務卡）</h2>
+     * 原文三行，散文是灰的、方括號裡的物品與等級是青的、座標是白的：
+     *
+     * <pre>
+     *   §7Bring §3[24 Fluffy Fur]§7 to the
+     *   §7Slaying Post §3[Combat Lv. 88]§7 at
+     *   §f[139, 61, -4399]
+     * </pre>
+     *
+     * <p>整段一次命中，於是整段的散文都畫這裡挑出來的底色。照實字數算：
+     * 灰的 {@code Bring}、{@code to the}、{@code Slaying Post}、{@code at} 共 23 個，
+     * 青的兩個方括號共 26 個——青贏，畫面上整段散文變成青色。
+     *
+     * <p>那 26 個裡有 4 個是<b>數值本身</b>（{@code 24}、{@code 88}），而數值早就
+     * 另外保管、會自己帶青色回來。扣掉之後青的剩 22、灰的 23，灰贏——
+     * 跟肉眼看到的一致。白的座標同理：14 個實字裡 9 個是數值，扣完只剩
+     * {@code [,,-]} 5 個。
+     *
+     * <p>順帶一提，數的是<b>實字</b>（{@link #solidCount}）而不是字串長度。
+     * 先前數的是長度，空白也算一份：上面那段是灰 29 對青 30，青只贏在一個空格上。
+     * 扣佔位符的份量本來就是照實字算的，兩把尺要一樣才扣得準。
      */
     private static Style dominantStyle(List<LineParts> parts) {
-        java.util.Map<Style, Integer> weight = new java.util.LinkedHashMap<>();
+        // 跟 #perPartStyles 用同一個 Tally：併掉裝飾、平手取先出現的，
+        // 都是那邊已經談過的事，不要再長出第二套算法。
+        Tally tally = new Tally();
+        // 方括號裡的字不投票，見 #proseCount。深度跨行帶著走：括號常常被
+        // tooltip 寬度切成兩行，左括號在這一行、右括號在下一行。
+        int[] depth = {0};
         for (LineParts part : parts) {
             // 逐<b>段</b>累計，不是逐行。
             //
@@ -496,18 +528,116 @@ public final class LineTranslator {
                 if (isNote(run.text())) {
                     continue;
                 }
-                weight.merge(undecorated(run.style()), run.text().length(), Integer::sum);
+                tally.add(run.style(), proseCount(run.text(), depth));
             }
         }
-        Style best = undecorated(parts.get(0).textStyle());
-        int most = -1;
-        for (java.util.Map.Entry<Style, Integer> e : weight.entrySet()) {
-            if (e.getValue() > most) {
-                most = e.getValue();
-                best = e.getKey();
+        // 抽出去的佔位符不算數，見上。符號（{#}）不必扣——solidCount 本來就不數，
+        // 而且 LineParts.of 也不會把純符號的片段收進 runs。
+        for (LineParts part : parts) {
+            for (List<LineParts.Piece> pool
+                    : List.of(part.numbers(), part.places(), part.users())) {
+                for (LineParts.Piece piece : pool) {
+                    tally.remove(piece.style(), solidCount(piece.text()));
+                }
             }
         }
-        return best;
+        // 扣完可能一個都不剩（整段就只有一個座標那種）。那就退回第一行的樣式，
+        // 跟先前「一筆都沒累計到」的做法一樣——總得畫個顏色。
+        Style top = tally.top();
+        return undecorated(top == null ? parts.get(0).textStyle() : top);
+    }
+
+    /**
+     * 方括號<b>外面</b>的實字有幾個。
+     *
+     * <h2>為什麼方括號裡的字不能投票</h2>
+     * 底色要的是「散文是什麼顏色」。而方括號在這些卡片上就是重點記號——
+     * 裡面那一段本來就<b>該</b>是另一個顏色，它出現多長跟散文無關。
+     *
+     * <p>只扣數值還不夠。實機那張 Arcane Anomalies 的迷你任務卡：
+     *
+     * <pre>
+     *   §7Bring §3[15 Arcane Anomalies]§7 to
+     *   §7the Slaying Post §3[Combat Lv.
+     *   §375]§7 at §f[-677, 46, -4948]
+     * </pre>
+     *
+     * <p>扣掉數值之後灰的還有 24 個（{@code Bring}、{@code to}、
+     * {@code the Slaying Post}、{@code at}），青的 28 個——青贏，整段散文
+     * 被畫成青色。名字長一點的卡片就會這樣，同一份診斷檔裡 30 段有 8 段中招，
+     * 全是這個形狀。
+     *
+     * <p>扣掉括號裡的之後青只剩 {@code 75]} 的那一個右括號，灰穩穩地贏。
+     *
+     * <h2>不是「那個顏色一律不投票」</h2>
+     * 扣的是<b>括號裡的字</b>，不是「跟括號同色的那一段」。青色的字只要落在
+     * 括號外面照樣算數——見 {@code BlockProseColourTest} 的「青色多數」那一組：
+     * {@code and [88 Soft Fur] right now} 整段是青的，括號外的
+     * {@code and}、{@code right now} 共 11 個實字，仍然贏過灰的 {@code Get}。
+     *
+     * @param depth 單元素陣列，當作可變的「現在在不在方括號裡」
+     */
+    /**
+     * 跳過前 {@code skip} 個實字之後，接下來 {@code take} 個實字裡有幾個在方括號外面。
+     *
+     * <p>{@link #proseCount} 的切片版：{@link #uniformStyles} 是照實字數把 run
+     * 切給每一行的，切點落在 run 中間，所以不能整個 run 一起算。
+     *
+     * <p>{@code skip}／{@code take} 數的是<b>實字</b>（跟 {@link #solidCount}
+     * 同一把尺，方括號本身也算一個），回傳的才是括號外面的那幾個。
+     */
+    private static int proseAmong(String text, int skip, int take, int[] depth) {
+        int seen = 0;
+        int kept = 0;
+        for (int i = 0; i < text.length(); ) {
+            int cp = text.codePointAt(i);
+            i += Character.charCount(cp);
+            boolean bracket = cp == '[' || cp == ']';
+            if (cp == '[') {
+                depth[0]++;
+            } else if (cp == ']' && depth[0] > 0) {
+                depth[0]--;
+            }
+            if (Character.isWhitespace(cp)
+                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)) {
+                continue;
+            }
+            seen++;
+            if (seen <= skip) {
+                continue;
+            }
+            if (seen > skip + take) {
+                break;
+            }
+            if (!bracket && depth[0] == 0) {
+                kept++;
+            }
+        }
+        return kept;
+    }
+
+    private static int proseCount(String text, int[] depth) {
+        int solid = 0;
+        for (int i = 0; i < text.length(); ) {
+            int cp = text.codePointAt(i);
+            i += Character.charCount(cp);
+            if (cp == '[') {
+                depth[0]++;
+                continue;
+            }
+            if (cp == ']') {
+                if (depth[0] > 0) {
+                    depth[0]--;
+                }
+                continue;
+            }
+            if (depth[0] > 0 || Character.isWhitespace(cp)
+                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)) {
+                continue;
+            }
+            solid++;
+        }
+        return solid;
     }
 
     /**
@@ -2151,12 +2281,27 @@ public final class LineTranslator {
      * 第二欄卻是災難：譯得越短就被推得越右，八行各歪一個量。
      *
      * <p>判斷靠量原文：每一行第二欄的起點與整行的右緣各收一份，起點比右緣
-     * <b>更一致</b>就是靠左排。分不出來時回傳 {@code false}——物品 tooltip 的
-     * 數值是靠右的，那是絕大多數。
+     * <b>更一致</b>就是靠左排。
+     *
+     * <h2>「看不出來」就是「沒有欄」</h2>
+     * 兩欄的行湊不滿 {@value #MIN_COLUMN_ROWS} 行時，這份 tooltip 根本
+     * <b>沒有</b>靠右的數值欄——右緣對齊是一群行一起對出來的，一行自己對不出
+     * 任何東西。先前這種情況回傳 {@code false}（＝當成靠右），於是那唯一一行
+     * 也吃到「把譯文縮水的部分補回最後一段間隔」。
+     *
+     * <p>洞穴卡的獎勵列就是這樣歪的：
+     *
+     * <pre>
+     *   - +1 [2px] Theatre Cane   →   - +1 [40px] 劇場手杖
+     * </pre>
+     *
+     * 那個 2px 只是圖示與名稱之間的縫，不是欄距；譯名短了 38px，全部補進去，
+     * 手杖就被推到行尾去了。整份卡片只有這一行有間隔，沒有第二行可以印證
+     * 「右緣該在哪」——這種時候不補，比補錯好。
      */
     public static boolean columnsAreLeftAligned(List<StyledText> lines) {
         if (lines == null || lines.size() < MIN_COLUMN_ROWS) {
-            return false;
+            return true;                       // 沒有欄可言，見上
         }
         List<Integer> starts = new ArrayList<>();
         List<Integer> ends = new ArrayList<>();
@@ -2168,7 +2313,7 @@ public final class LineTranslator {
             }
         }
         if (starts.size() < MIN_COLUMN_ROWS) {
-            return false;
+            return true;                       // 同上
         }
         return spread(starts) < spread(ends);
     }
@@ -6670,6 +6815,163 @@ public final class LineTranslator {
      * 此時「第 i 行」兩邊指的不是同一件事，比對下去只會上錯色。
      * 一行裡混了幾種顏色的也不做，那是 {@code accents} 本來就在管的事。
      */
+    /**
+     * 方括號對方括號，照出現順序配。
+     *
+     * <h2>為什麼要有這一條</h2>
+     * 方括號在這些卡片上是重點記號，括號裡那一段有自己的顏色。要把顏色貼回
+     * 譯文，既有的路是<b>查表</b>：把括號裡的詞查出中文，再拿字面去譯文裡找。
+     * 查不到就整塊掉回底色——畫面上是「{@code [} 有色、名字沒色」的半彩。
+     *
+     * <p>查不到很常見，而且理由都不是「該翻沒翻」：
+     *
+     * <ul>
+     *   <li>{@code [Mini-Quest - Slay Spiders]}——語料收的是<b>整行</b>
+     *       （{@code + New Quest [Mini-Quest - Slay Spiders]}），括號那半
+     *       自己沒有條目。</li>
+     *   <li>{@code [Combat Lv. 88]}——等級是這一次的數字，不可能進語料。</li>
+     *   <li>{@code [-677, 46, -4948]}——座標同理。</li>
+     * </ul>
+     *
+     * <p>但這幾種<b>位置就是答案</b>：原文有幾個方括號段，譯文照樣寫了幾個，
+     * 而且順序一樣——語料的譯文本來就照著原文的括號結構寫。第 i 個對第 i 個，
+     * 不必查表。
+     *
+     * <h2>何時不做</h2>
+     * 個數對不上就不做：那表示譯文改寫了括號結構，照順序配會配到別的東西上。
+     * 某一段橫跨了兩種顏色也整組不做——那一段的顏色本來就有歧義，猜錯比不猜糟。
+     * 被 tooltip 寬度切成兩行的括號（{@code [Combat Lv.} ＋ {@code 88]}）不算
+     * 歧義，只要那幾段同色就算一段。
+     */
+    static List<LineParts.Piece> bracketAccents(
+            List<LineParts.Piece> allRuns, String[] translated, Style blockStyle) {
+        List<Style> source = new ArrayList<>();
+        Style open = null;
+        boolean mixed = false;
+        int depth = 0;
+        for (LineParts.Piece run : allRuns) {
+            String text = run.text();
+            if (depth > 0 && !sameColour(open, run.style())) {
+                mixed = true;                  // 跨行的那一段換了顏色
+            }
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                if (c == '[') {
+                    if (depth == 0) {
+                        open = run.style();
+                        mixed = false;
+                    }
+                    depth++;
+                } else if (c == ']' && depth > 0) {
+                    depth--;
+                    if (depth == 0) {
+                        if (mixed) {
+                            return List.of();  // 見上：有歧義就整組不做
+                        }
+                        source.add(open);
+                        open = null;
+                    }
+                }
+            }
+        }
+        if (source.isEmpty() || depth != 0) {
+            return List.of();                  // 沒有括號，或有一個沒收尾
+        }
+        List<String> spans = squareSpans(String.join(NL, translated));
+        if (spans.size() != source.size()) {
+            return List.of();
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        for (int i = 0; i < spans.size(); i++) {
+            Style style = source.get(i);
+            if (style == null || sameColour(style, blockStyle) || spans.get(i).isBlank()) {
+                continue;                      // 跟底色同色的不必貼
+            }
+            out.add(new LineParts.Piece(spans.get(i), style));
+            // 括號裡夾著佔位符時，整塊貼不上去：畫的時候佔位符是自己一個
+            // 片段，整塊的字面在畫面上從來不連續（{@code [{~} 蓬鬆毛皮]} 只有
+            // 開頭那個 {@code [} 對得上）。實機那張迷你任務卡就是這樣變成
+            // 「{@code [} 青、名字灰」的。
+            //
+            // 所以把佔位符切開的那幾段<b>各自</b>登記一次。只登記<b>帶實字</b>
+            // 的那幾段：座標切出來的 {@code [-}、{@code , } 太短又到處都有，
+            // 貼上去只會貼到別的地方。
+            for (String piece : PLACEHOLDER.split(spans.get(i), -1)) {
+                if (piece.length() >= 2 && hasLetter(piece)) {
+                    out.add(new LineParts.Piece(piece, style));
+                    // 收尾那一段再登記一份<b>去掉前導空白</b>的。
+                    //
+                    // 面板寬度把 `[{~} 麥芽穀粒]` 斷在數值後面時，那個空格是
+                    // 斷行點、會被吃掉：上一行留 `…[{~}`，下一行從
+                    // `麥芽穀粒]` 開始。帶空格的那一份於是兩行都對不上，
+                    // 而名字本身另有一條（物品名查表查得到）——所以畫面上是
+                    // 「麥芽穀粒」有色、後面那個 `]` 掉回底色。使用者回報的
+                    // 正是這個。
+                    //
+                    // 只對 `]` 收尾的那一段做：它是被斷行孤立出來的那一半，
+                    // 而且帶著括號夠獨特。中間那種兩頭都是空格的片段不動，
+                    // 剝掉空白之後太容易貼到散文裡的同名詞上。
+                    String bare = piece.strip();
+                    if (piece.endsWith("]") && !bare.equals(piece)
+                            && bare.length() >= 2 && hasLetter(bare)) {
+                        out.add(new LineParts.Piece(bare, style));
+                    }
+                }
+            }
+        }
+        return out;
+    }
+
+    /** 這一段裡有沒有字母或方塊字——標點與數字不算。 */
+    private static boolean hasLetter(String text) {
+        return text.codePoints().anyMatch(Character::isLetter);
+    }
+
+    /**
+     * 譯文裡最外層的那幾個 {@code [...]}，照出現順序。
+     *
+     * <h2>被斷行切開的也要算</h2>
+     * 先前跨行就整組放棄。但這裡拿到的譯文<b>已經照面板寬度折過</b>
+     * （見 {@code #wrapToBlock}），一張迷你任務卡三、四行，括號落在折行處是
+     * 常態而不是例外——放棄等於整張卡的括號全部沒有顏色。實機回報的採集站那張
+     * 卡就是這樣：「把 {@code [24 鮭魚油]} 或 {@code [}」換行「{@code 24 鮭魚肉]}」，
+     * 兩組括號都只剩底色。
+     *
+     * <p>改成把斷行<b>接回來</b>再收。位置本來就不是這條路在用的東西——
+     * 貼樣式是拿字面去找（見 {@code #appendText}），而接回來的字面正好是
+     * {@code keepAccentsWhole} 要的：它靠「上一行結尾 ＋ 下一行開頭」認出被切開的
+     * 詞，再把前半搬到下一行。搬不動的還有 {@code #halvesAcrossBreaks} 接著。
+     */
+    private static List<String> squareSpans(String text) {
+        List<String> out = new ArrayList<>();
+        int depth = 0;
+        int start = -1;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == '[') {
+                if (depth == 0) {
+                    start = i;
+                }
+                depth++;
+            } else if (c == ']' && depth > 0) {
+                depth--;
+                if (depth == 0) {
+                    out.add(text.substring(start, i + 1)
+                                .replace(String.valueOf(NEWLINE), ""));
+                }
+            }
+        }
+        return depth == 0 ? out : List.of();
+    }
+
+    /** 兩個樣式是不是同一個顏色（不看裝飾，跟 {@link #dominantStyle} 同一把尺）。 */
+    private static boolean sameColour(Style one, Style other) {
+        if (one == null || other == null) {
+            return one == other;
+        }
+        return undecorated(one).equals(undecorated(other));
+    }
+
     private static List<LineParts.Piece> wholeLineAccents(
             List<LineParts> parts, List<LineParts.Piece> allRuns,
             String[] translated, Style blockStyle,
@@ -7249,6 +7551,11 @@ public final class LineTranslator {
         List<RowStyle> out = new ArrayList<>();
         int at = 0;                        // 走到第幾個 run
         int eaten = 0;                     // 那個 run 已經用掉幾個實字
+        // 方括號裡的字不投票，跟 #dominantStyle 同一把尺——兩邊用不同的尺
+        // 就會打架：整段的底色挑了散文那色，這裡的 dominant 卻挑了括號那色，
+        // 於是 #wholeLineAccents 拿括號那色把<b>整行</b>蓋掉。實機那條
+        // 「+ New Quest [Mini-Quest - Slay Spiders]」整行變深灰就是這樣來的。
+        int[] depth = {0};
         for (String line : template.split(NL, -1)) {
             int need = solidCount(PLACEHOLDER.matcher(line).replaceAll(""));
             Style only = null;
@@ -7270,9 +7577,12 @@ public final class LineTranslator {
                     mixed = true;
                 }
                 int take = Math.min(have, need);
-                tally.add(run.style(), take);
+                // 從這個 run 的開頭重讀，所以深度得從<b>進這個 run 時</b>算起。
+                int[] local = {depth[0]};
+                tally.add(run.style(), proseAmong(run.text(), eaten, take, local));
                 need -= take;
                 if (take == have) {
+                    depth[0] = local[0];   // 整個 run 讀完了，深度帶到下一個
                     at++;
                     eaten = 0;
                 } else {
@@ -7314,6 +7624,24 @@ public final class LineTranslator {
             }
         }
 
+        /** 這幾個實字不算數；扣到零就整個拿掉。見 {@link LineTranslator#perPartStyles}。 */
+        void remove(Style style, int solid) {
+            if (style == null || solid <= 0) {
+                return;
+            }
+            Style key = undecorated(style);
+            Integer have = counts.get(key);
+            if (have == null) {
+                return;
+            }
+            if (have <= solid) {
+                counts.remove(key);
+                shown.remove(key);
+            } else {
+                counts.put(key, have - solid);
+            }
+        }
+
         /** 佔最多字的那個；平手時取先出現的（也就是行首那個）。 */
         Style top() {
             Style best = null;
@@ -7339,7 +7667,34 @@ public final class LineTranslator {
                 && !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)).count();
     }
 
-    /** tooltip 那一路：本來就一行一個 {@link LineParts}，直接看每一份自己的片段。 */
+    /**
+     * tooltip 那一路：本來就一行一個 {@link LineParts}，直接看每一份自己的片段。
+     *
+     * <h2>多數色不算佔位符</h2>
+     * 數值、地名、玩家名是<b>從原文抽出來、原樣填回去</b>的（見 {@link LineParts}），
+     * 而且各自帶著自己的樣式回來。它們在譯文裡想搬到哪一行就搬到哪一行，
+     * 所以不能讓它們決定「這一行的字是什麼顏色」。
+     *
+     * <h2>實機回報（內容書「The Missing Piece」任務卡）</h2>
+     * 原文兩行，座標是白的、說明是灰的：
+     *
+     * <pre>
+     *   §7Pick up your post in the Post
+     *   §7Office at §f[-2156, 30, -944]
+     * </pre>
+     *
+     * 中文把座標搬到句子中間（「到 [-{~}, {~}, -{~}] 的郵局領取你的郵件。」），
+     * 折回兩行之後第二行是「的郵局領取你的郵件。」——整句<b>灰色</b>的那一半。
+     *
+     * <p>原文第二行混了兩個顏色，{@link #fallback} 於是退而求其次拿多數色：
+     * 灰的「Office at」只有 9 個實字，白的「[-2156, 30, -944]」有 15 個，白贏。
+     * 畫面上就是座標後面的說明整段變白——使用者回報的正是這個。
+     *
+     * <p>那 15 個字裡有 9 個是數值本身，而數值早就另外保管、會自己帶白色回來。
+     * 扣掉之後白的只剩 {@code [-,,-]} 6 個，灰的 9 個贏——跟肉眼看到的一致。
+     * 這也讓這條路跟 {@link #uniformStyles} 一致：那邊是照模板去掉佔位符之後
+     * 的實字數在量的，本來就不含數值。
+     */
     private static List<RowStyle> perPartStyles(List<LineParts> parts) {
         List<RowStyle> out = new ArrayList<>();
         for (LineParts part : parts) {
@@ -7357,6 +7712,13 @@ public final class LineTranslator {
                     seen = true;
                 } else if (!java.util.Objects.equals(only, run.style())) {
                     mixed = true;
+                }
+            }
+            // 抽出去的佔位符不算數，見上。符號（{#}）不必扣——solidCount 本來就不數。
+            for (List<LineParts.Piece> pool
+                    : List.of(part.numbers(), part.places(), part.users())) {
+                for (LineParts.Piece piece : pool) {
+                    tally.remove(piece.style(), solidCount(piece.text()));
                 }
             }
             out.add(new RowStyle(mixed || !seen ? null : only, tally.top()));
@@ -7448,9 +7810,14 @@ public final class LineTranslator {
         }
         // 整行同色的那幾行，直接拿譯文那一行當重點段。見 #wholeLineAccents。
         accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle, accents));
+        // 方括號對方括號，照順序配。查表查不到的那幾種（等級、座標、
+        // 只收了整行的那種）靠這一條拿回顏色。見 #bracketAccents。
+        accents.addAll(bracketAccents(allRuns, translated, blockStyle));
 
         // 斷行不要把一個重點詞切成兩半，否則它的顏色會整個掉。見 keepAccentsWhole。
         String[] flowed = keepAccentsWhole(translated, accents);
+        // 搬不動的那些，兩半各自登記一份。見 halvesAcrossBreaks。
+        accents.addAll(halvesAcrossBreaks(flowed, accents));
 
         List<List<Token>> lines = new ArrayList<>(flowed.length);
         long wantGlyphs = 0;
@@ -7741,15 +8108,32 @@ public final class LineTranslator {
                                       List<LineParts.Piece> accents, boolean[] used,
                                       TranslationStore store, Style before, Style after,
                                       boolean afterNumber) {
+        // 兩個佔位符中間整段都是標點空白、而且兩邊同色時，整段跟著那個顏色。
+        //
+        // 座標就是這個形狀：原文 `[-1621, 50, -4664]` 整串白色，譯文寫成
+        // `[-{~}, {~}, -{~}]`，中間那兩段是「, 」。逗號會黏在前一個數值上
+        // （見 #hugs），但空白不黏——「中間有空白就不算黏著」那條規則管的是
+        // 詞距，而這裡整段都不是詞。結果是座標裡兩個空白掉回散文的灰色，
+        // 畫面上白色的座標中間夾著兩格灰。
+        //
+        // 兩邊同色才做：顏色不同的時候這一段該歸誰本來就有歧義，交給底下
+        // 逐邊黏的規則處理。
+        if (before != null && after != null && sameColour(before, after)
+                && !hasLetter(text)) {
+            out.append(literal(text, forDisplay(before)));
+            return;
+        }
         int lead = 0;
         if (before != null) {
-            while (lead < text.length() && hugs(text.charAt(lead))) {
+            while (lead < text.length() && hugs(text.charAt(lead))
+                    && !hasOwnColour(text, lead, accents, used, before)) {
                 lead++;
             }
         }
         int tail = text.length();
         if (after != null) {
-            while (tail > lead && hugs(text.charAt(tail - 1))) {
+            while (tail > lead && hugs(text.charAt(tail - 1))
+                    && !hasOwnColour(text, tail - 1, accents, used, after)) {
                 tail--;
             }
         }
@@ -7788,12 +8172,51 @@ public final class LineTranslator {
             mid++;
         }
         if (mid > lead) {
-            out.append(literal(text.substring(lead, mid), symbol));
+            // 這個符號在原文裡自己是一段、而且登記成重點段時，顏色用它自己的。
+            //
+            // 市集那一列：原文的兩顆綠寶石各自比前面的數字暗一階（白配灰、
+            // 亮青配暗青），而符號那一段的樣式整行只有一個，套下去兩顆會變成
+            // 同一個顏色。字型仍然沿用符號那一段的——要換的只有顏色。
+            Style paint = symbol;
+            int own = exactAccent(text.substring(lead, mid), accents, used);
+            if (own >= 0) {
+                used[own] = true;
+                Style mine = accents.get(own).style();
+                paint = mine == null || paint == null ? forDisplay(mine)
+                        : paint.withColor(mine.getColor());
+            }
+            out.append(literal(text.substring(lead, mid), paint));
             lead = mid;
         }
-        if (tail > lead) {
-            appendNoting(out, text.substring(lead, tail), base, note,
+        // 結尾那個符號跟著<b>後面</b>那個佔位符走。
+        //
+        // 市集那一列的原文是 `✮ 4,218` 一整段青色——星號跟它右邊的數字同屬一段，
+        // 中間那個空格也是那一段的。譯文寫 `✮ {~}`，數值被抽出去之後那條字面
+        // 對不上，星號就掉回底色，畫面上是「金色的星配青色的數字」。
+        //
+        // 「中間有空白就不算黏著」那條規則（見 #hugs 的說明）管的是標點；
+        // 遊戲的符號不一樣，它跟它標註的那個值之間本來就留著一格。
+        int back = tail;
+        if (after != null) {
+            int end = tail;
+            while (end > lead && text.charAt(end - 1) == ' ') {
+                end--;
+            }
+            int start = end;
+            while (start > lead && isPictograph(text.charAt(start - 1))) {
+                start--;
+            }
+            // 符號自己有一段顏色的不搬——那一段等一下會自己貼上去。
+            if (start < end && exactAccent(text.substring(start, end), accents, used) < 0) {
+                back = start;
+            }
+        }
+        if (back > lead) {
+            appendNoting(out, text.substring(lead, back), base, note,
                          depth, accents, used, store);
+        }
+        if (back < tail) {
+            out.append(literal(text.substring(back, tail), forDisplay(after)));
         }
         if (tail < text.length()) {
             out.append(literal(text.substring(tail), forDisplay(after)));
@@ -7827,6 +8250,49 @@ public final class LineTranslator {
             return isPictograph(text.charAt(0)) ? run.style() : null;
         }
         return null;
+    }
+
+    /** 字面剛好就是 {@code word} 的那個還沒用掉的重點段；沒有就是 -1。 */
+    private static int exactAccent(String word, List<LineParts.Piece> accents,
+                                   boolean[] used) {
+        for (int k = 0; k < accents.size(); k++) {
+            if (!used[k] && accents.get(k).text().equals(word)) {
+                return k;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 這個位置的標點<b>自己就有</b>顏色嗎。
+     *
+     * <h2>為什麼要問</h2>
+     * 黏著的前提是「原文裡那個標點跟佔位符同屬一個片段」。重點段的存在正好
+     * 說明相反的事：原文<b>另外</b>給了它一段自己的樣式，黏過去等於把它抹掉。
+     *
+     * <p>實機回報的是市集那一列。原文
+     * {@code 4,300² ✮ 4,218² (1¼² 1²½ 58²) each} 切成
+     * {@code 「4,300」白「²」灰「✮ 4,218」青「²」暗青「(…)」深灰}——
+     * 綠寶石那個符號比它前面的數字暗一階，兩顆都是。譯文的
+     * {@code {~}²} 讓 {@code ²} 緊貼著數值，於是它拿到數值的顏色，
+     * 診斷檔記的是「{@code ²} ★在譯文裡卻沒貼上」兩次。
+     *
+     * <p>顏色一樣的不算——那種黏不黏都畫得出同一個結果，少繞一圈。
+     */
+    private static boolean hasOwnColour(String text, int at,
+                                        List<LineParts.Piece> accents, boolean[] used,
+                                        Style side) {
+        for (int k = 0; k < accents.size(); k++) {
+            if (used[k]) {
+                continue;
+            }
+            String word = accents.get(k).text();
+            if (!word.isEmpty() && text.startsWith(word, at)
+                    && !sameColour(accents.get(k).style(), side)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** 單位用的字母：只認 ASCII 小寫。大寫與中文都不是單位。 */
@@ -7933,6 +8399,74 @@ public final class LineTranslator {
             return 0;                          // 行尾不是圖示，或整行只有圖示
         }
         return from - (at - glyph.length());
+    }
+
+    /**
+     * 搬不動的重點段，被斷行切開的<b>兩半各自</b>登記一份。
+     *
+     * <h2>為什麼還需要這一條</h2>
+     * {@link #keepAccentsWhole} 只搬得動十來個字以內的詞，
+     * 而且含佔位符的那一半一律不搬。搬不動的就留在原地被切成兩半，兩行各自都
+     * 對不上整段的字面——整塊掉回底色。
+     *
+     * <p>實機回報的是採集站那張卡：{@code [{~} Kanderstone 寶石]} 十七個字，
+     * 斷行落在「寶」「石」之間。要搬得動得把「{@code  Kanderstone 寶}」十五個
+     * 字整串挪到下一行，那會把面板撐寬一大截，不值得——但顏色不能就這樣掉。
+     *
+     * <p>所以改成認這一刀：上一行結尾是 {@code left}、下一行開頭是
+     * {@code right} 時，兩半各登記一次，畫的時候各貼各的。
+     *
+     * <h2>何時不登記</h2>
+     * 兩頭都至少要兩個字元、而且要帶實字——單一個字元到處都是，貼上去會貼到
+     * 別的地方去。含佔位符的那一半也不登記：畫的時候佔位符自成一個片段，
+     * 那一串字面在畫面上從來不連續。
+     */
+    static List<LineParts.Piece> halvesAcrossBreaks(
+            String[] flowed, List<LineParts.Piece> accents) {
+        List<LineParts.Piece> out = new ArrayList<>();
+        if (flowed.length < 2) {
+            return out;
+        }
+        for (LineParts.Piece accent : accents) {
+            String word = accent.text();
+            if (word.length() < 4) {
+                continue;                      // 切開之後兩半都太短
+            }
+            for (int i = 0; i + 1 < flowed.length; i++) {
+                int cut = cutBetween(flowed[i], flowed[i + 1], word);
+                if (cut <= 0) {
+                    continue;
+                }
+                addHalf(out, word.substring(0, cut), accent.style());
+                addHalf(out, word.substring(cut), accent.style());
+                break;
+            }
+        }
+        return out;
+    }
+
+    /**
+     * {@code word} 被這兩行切在第幾個字元；沒被切開就是 0。
+     *
+     * <p>切在第一個字元也算：{@code [{~} 鮭魚肉]} 斷在 {@code [} 後面時，
+     * 左半只有一個字元登記不了，右半照樣得救。要不要登記交給
+     * {@link #addHalf} 判斷。
+     */
+    private static int cutBetween(String head, String tail, String word) {
+        for (int cut = 1; cut < word.length(); cut++) {
+            if (head.endsWith(word.substring(0, cut))
+                    && tail.startsWith(word.substring(cut))) {
+                return cut;
+            }
+        }
+        return 0;
+    }
+
+    private static void addHalf(List<LineParts.Piece> out, String half, Style style) {
+        if (half.length() >= 2 && half.indexOf('{') < 0 && half.indexOf('}') < 0
+                && hasLetter(half)) {
+            out.add(new LineParts.Piece(half, style));
+        }
     }
 
     /** 上一行結尾有幾個字是下一行開頭那個重點詞的一部分；沒有就是 0。 */
@@ -8152,10 +8686,136 @@ public final class LineTranslator {
                 zh = lookupWordCore(core, store);
             }
             if (zh != null && !zh.isBlank() && !zh.equals(core)) {
-                out.add(new LineParts.Piece(zh, accent.style()));
+                // 原文那一段整塊被方括號包起來的話，括號也是它的顏色。見 #wrapLikeSource。
+                String wrapped = wrapLikeSource(core, zh, translated);
+                out.add(new LineParts.Piece(wrapped != null ? wrapped : zh, accent.style()));
             }
         }
         return out;
+    }
+
+    /**
+     * 原文的色段<b>整塊</b>被方括號包起來，而譯文裡查到的是去掉括號的內層時，
+     * 把重點段往外擴到括號。
+     *
+     * <h2>實機回報（內容書右邊那張卡的標題）</h2>
+     * 原文那一行是兩個顏色，名稱橘、類型灰，而灰的那一段<b>含方括號</b>：
+     *
+     * <pre>
+     *   #FF8C19 「Dragonkin Nest 」
+     *   #AAAAAA 「[Cave]」
+     * </pre>
+     *
+     * 語料寫的是純文字（{@code "Dragonkin Nest [Cave]": "龍裔巢穴 [洞窟]"}），
+     * 沒有色碼，所以灰色是靠字面比對貼回去的。{@code [Cave]} 查表查不到，
+     * {@link #lookupWordCore} 剝掉標點之後查到的是 {@code Cave} → 「洞窟」，
+     * 於是只有中間兩個字變灰，兩個方括號留在名稱的橘色裡——畫出去是
+     * {@code ["龍裔巢穴 ", "[", "洞窟", "]"]} 四段。使用者回報的就是這個。
+     *
+     * <p>名稱的譯文<b>自己就含有</b>類型詞時更明顯：字面比對挑的是第一個，
+     * 「末日洞窟 [洞窟]」的灰色貼到了<b>名稱裡</b>的「洞窟」，後面真正該灰的
+     * 那一個反而留著名稱的橘色。擴到括號之後字面唯一，這種挑錯位置也跟著沒了。
+     *
+     * <h2>為什麼這條規則站得住腳</h2>
+     * 括號是<b>原文那一段自己的一部分</b>（原文的分段就是這樣切的），而譯文
+     * 照原樣寫了一對括號把同一個詞包起來——兩邊指的是同一塊東西，顏色自然一致。
+     * 語料裡 630 條這種標題（{@code Cave} 199、{@code Quest} 110、
+     * {@code Mini-Quest} 85、{@code Secret Discovery} 23、{@code Dungeon} 19、
+     * {@code Boss Altar} 14、{@code World Discovery} 12 …）的譯文全是
+     * {@code 譯名 [類型譯名]}，六個語言都一樣。
+     *
+     * <h2>何時不擴</h2>
+     * <ul>
+     *   <li>原文那一段<b>不是</b>整塊括起來的——括號左右還有別的字時，擴出去會
+     *       吃掉不屬於這個顏色的字。只認開頭是 {@code [}、結尾是 {@code ]}
+     *       而且中間沒有另一層括號的。</li>
+     *   <li>譯文本來就<b>自己帶括號</b>（查到的譯文裡已經有 {@code []}）——
+     *       再包一層會變成 {@code [[洞窟]]}，那在譯文裡根本找不到。</li>
+     *   <li>譯文裡<b>沒有</b>照原文寫這對括號（改寫成別的說法、或換成圓括號）
+     *       ——找不到就照舊，只貼內層那個詞，不會比現在更糟。</li>
+     * </ul>
+     * 只處理方括號：圓括號與大括號在這份語料裡不是這個用法，而 {@code {} }
+     * 還是佔位符的符號。
+     *
+     * @return 擴出去之後的字面；不適用時回傳 {@code null}
+     */
+    static String wrapLikeSource(String core, String zh, String translated) {
+        if (core == null || zh == null || translated == null
+                || core.length() < 3 || zh.isBlank()) {
+            return null;
+        }
+        if (core.charAt(0) != '[' || core.charAt(core.length() - 1) != ']') {
+            return null;                       // 不是整塊被括起來的
+        }
+        String inner = core.substring(1, core.length() - 1);
+        if (inner.isBlank() || inner.indexOf('[') >= 0 || inner.indexOf(']') >= 0) {
+            return null;                       // 巢狀或空的括號，看不出該擴到哪一層
+        }
+        if (zh.indexOf('[') >= 0 || zh.indexOf(']') >= 0) {
+            return null;                       // 譯文本來就自己帶括號
+        }
+        String wrapped = "[" + zh + "]";
+        if (translated.contains(wrapped)) {
+            return wrapped;
+        }
+        return countedWrap(zh, translated);
+    }
+
+    /**
+     * 括號裡除了那個詞還有一個<b>數量</b>時的版本。
+     *
+     * <h2>實機回報（迷你任務卡的敘述）</h2>
+     * 原文那一段是「青色的整塊方括號」，而括號裡是數量加物品名：
+     *
+     * <pre>
+     *   §7Bring §3[24 Fluffy Fur]§7 to the Slaying Post §3[Combat Lv. 88]§7 at
+     * </pre>
+     *
+     * 譯文是「把 {@code [{~} 蓬鬆毛皮]} 交到討伐告示 {@code [戰鬥等級 {~}]}」。
+     * 上面那一路找的是 {@code [蓬鬆毛皮]}，而譯文裡是 {@code [{~} 蓬鬆毛皮]}
+     * ——中間隔著數量，找不到。結果只有 {@code [24} 是青的，
+     * {@code 蓬鬆毛皮]} 掉回底色，一個方括號半青半灰。
+     *
+     * <h2>條件一樣要窄</h2>
+     * 只認「括號裡除了那個詞，剩下的全是數量」——數字、{@code {~}}、空白。
+     * 剩下的只要有一個實字（{@code [Combat Lv. 88]} 那種<b>整塊</b>另外查得到
+     * 譯文的，走的是上面那一路）就不擴，免得把兩個詞的括號整塊吃掉。
+     *
+     * <p>找<b>第一個</b>吻合的括號就停。同一行出現兩個「數量 + 同一個詞」的
+     * 括號在這份語料裡不存在；真出現了也只是少上一個色，不會上錯。
+     *
+     * @return 連括號與數量一起的那一整塊；找不到時回傳 {@code null}
+     */
+    private static String countedWrap(String zh, String translated) {
+        int at = 0;
+        while ((at = translated.indexOf('[', at)) >= 0) {
+            int close = translated.indexOf(']', at + 1);
+            if (close < 0) {
+                return null;
+            }
+            String inner = translated.substring(at + 1, close);
+            if (inner.endsWith(zh)
+                    && onlyCount(inner.substring(0, inner.length() - zh.length()))) {
+                return translated.substring(at, close + 1);
+            }
+            at = close + 1;
+        }
+        return null;
+    }
+
+    /** 只剩數量：數字、{@code {~}}、空白。空的不算——那是上面 exact 那一路的事。 */
+    private static boolean onlyCount(String lead) {
+        if (lead.isBlank()) {
+            return false;
+        }
+        String bare = lead.replace(com.wynnchayuan.capture.GlyphSplitter.NUMBER_PLACEHOLDER, "")
+                          .replace(" ", "");
+        for (int i = 0; i < bare.length(); i++) {
+            if (!Character.isDigit(bare.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -8192,7 +8852,82 @@ public final class LineTranslator {
             return null;
         }
         String zh = store.lookup(core);
-        return zh == null || zh.isBlank() ? store.lookupTerm(core) : zh;
+        if (zh == null || zh.isBlank()) {
+            zh = store.lookupTerm(core);
+        }
+        return zh == null || zh.isBlank() ? withoutCount(core, store) : zh;
+    }
+
+    /**
+     * 開頭那個<b>數量</b>剝掉再查一次。
+     *
+     * <p>迷你任務的色段是整塊的 {@code [24 Fluffy Fur]}，剝掉前後標點之後仍然是
+     * 「24 Fluffy Fur」——語料裡的鍵是物品名本身，數量是<b>這一次</b>的數字，
+     * 不可能進語料。不剝的話這一段完全查不到，譯文裡的物品名一個色都沒有。
+     *
+     * <p>只剝<b>開頭</b>、而且後面必須還有實字。剝完剩數字的（{@code [139]}）
+     * 不查——那是數值，本來就由佔位符自己帶樣式回來。
+     */
+    private static String withoutCount(String core, TranslationStore store) {
+        int at = 0;
+        while (at < core.length() && Character.isDigit(core.charAt(at))) {
+            at++;
+        }
+        if (at == 0 || at >= core.length() || core.charAt(at) != ' ') {
+            return null;                       // 開頭沒有數量，或整塊都是數字
+        }
+        String rest = core.substring(at + 1).strip();
+        if (rest.isEmpty() || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(rest)) {
+            return null;
+        }
+        String zh = store.lookup(rest);
+        if (zh == null || zh.isBlank()) {
+            zh = store.lookupTerm(rest);
+        }
+        return zh == null || zh.isBlank() ? asSingular(rest, store) : zh;
+    }
+
+    /**
+     * 複數變回單數再查一次。
+     *
+     * <h2>為什麼需要</h2>
+     * 卡片上寫的是<b>這一次要幾個</b>，所以物品名是複數：{@code [15 Arcane
+     * Anomalies]}、{@code [20 Void Essences]}、{@code - +5 Saltpetres}。
+     * 而語料收的是物品本身，鍵永遠是單數（{@code Arcane Anomaly}）。
+     *
+     * <p>查不到的後果不是「沒翻到」而已——方括號那一段查不到譯文就拿不到
+     * 重點色，整塊掉回底色，畫面上變成「{@code [} 青、名字灰」的半青半灰。
+     * 拿實機那幾張卡對過，七個查不到的複數裡這一步救回六個，剩下那個
+     * （{@code Light Wood}）本來就是單數、語料真的沒有。
+     *
+     * <h2>只做這三條</h2>
+     * {@code -ies → -y}、{@code -es → }、{@code -s → }。英文的不規則複數不管：
+     * 猜錯了頂多查不到，跟現在一樣；猜對了才有收穫。{@code -ss} 結尾的不剝
+     * （{@code Glass}、{@code Moss}）。
+     */
+    private static String asSingular(String plural, TranslationStore store) {
+        List<String> tries = new ArrayList<>(2);
+        if (plural.endsWith("ies") && plural.length() > 3) {
+            tries.add(plural.substring(0, plural.length() - 3) + "y");
+        } else if (plural.endsWith("es") && plural.length() > 2) {
+            // 「-es」可能是 -e 加 s（Scales），也可能是整個 -es（Anomalies 已在上面）。
+            // 兩種都試，先試短的那一種。
+            tries.add(plural.substring(0, plural.length() - 2));
+            tries.add(plural.substring(0, plural.length() - 1));
+        } else if (plural.endsWith("s") && !plural.endsWith("ss")
+                && plural.length() > 1) {
+            tries.add(plural.substring(0, plural.length() - 1));
+        }
+        for (String one : tries) {
+            String zh = store.lookup(one);
+            if (zh == null || zh.isBlank()) {
+                zh = store.lookupTerm(one);
+            }
+            if (zh != null && !zh.isBlank()) {
+                return zh;
+            }
+        }
+        return null;
     }
 
     /**

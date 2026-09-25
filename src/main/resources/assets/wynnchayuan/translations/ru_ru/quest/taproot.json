@@ -1,12 +1,120 @@
 {
  "_meta": {
   "quest": "Taproot",
-  "count": 108,
+  "count": 116,
   "translated": 108,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Taproot#000": {
+   "src": "New Quest Started: Realm of Light II - Taproot",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "New Quest Started: Realm of Light V - The Realm of Light",
+    "file": "quest/the-realm-of-light-quest.json",
+    "ratio": 0.804,
+    "reason": "candidate"
+   }
+  },
+  "Taproot#001": {
+   "src": "I have to follow the trail! I...I have to know what he's telling me!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taproot#002": {
+   "src": "{u}...please, can you investigate the doorway? There must be something wrong that I don't understand.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "...please, can you investigate the doorway? There must be something wrong that I don't understand.",
+    "file": "quest/taproot.json",
+    "ratio": 0.985,
+    "reason": "placeholders"
+   }
+  },
+  "Taproot#003": {
+   "src": "To end this \"Mayor's\" life... To snuff out one whose heart aches is painful.",
+   "dst": "Оборвать жизнь мэра… Гасить страдающее сердце - больно.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taproot#004": {
+   "src": "PLEASE! Just let me in!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taproot#005": {
+   "src": "The door is being opened...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "The door has been opened...",
+    "file": "misc.json",
+    "ratio": 0.889,
+    "reason": "candidate"
+   }
+  },
+  "Taproot#006": {
+   "src": "The cog is missing a piece...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taproot#007": {
+   "src": "Maybe there is something you can use around. Might be good to backtrack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taproot#008": {
+   "src": "The piece of metal fit in the cog...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taproot",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taproot#009": {
    "src": "You should follow Lari. There has to be something you can do.",
    "dst": "Иди за Lari. Должно быть что-то, что ты можешь сделать.",
    "role": "desc",
@@ -16,7 +124,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taproot#001": {
+  "Taproot#010": {
    "src": "Find Lari in the {p} at [-{~}, {~}, -{~}]",
    "dst": "Найди Lari в {p} на [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -26,7 +134,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#002": {
+  "Taproot#011": {
    "src": "...oh. {u}, you're back. Ehm...I have to say, I'm...rather busy at the moment.",
    "dst": "…о. {u}, снова ты. Эм… должна сказать, я сейчас… довольно занята.",
    "role": "desc",
@@ -36,7 +144,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#003": {
+  "Taproot#012": {
    "src": "I have...important things to do. This accursed Decay...I have to end it. This all needs to stop.",
    "dst": "У меня… важные дела. Этот проклятый Тлен… я должна его остановить. Всё это должно прекратиться.",
    "role": "desc",
@@ -46,7 +154,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#004": {
+  "Taproot#013": {
    "src": "I am thankful for your aid with the...the Grootslang, but I do not believe you will be able to help with this- Simply a matter of scale.",
    "dst": "Я благодарна за помощь с… с Grootslang, но не думаю, что здесь ты сможешь помочь- Дело просто в масштабе.",
    "role": "desc",
@@ -56,7 +164,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#005": {
+  "Taproot#014": {
    "src": "I apologize, but I need to focus on my task here. If, perhaps, you could come back another time? And, I do mean that sincerely...",
    "dst": "Прости, но мне нужно сосредоточиться. Может, заглянешь в другой раз? И я говорю это искренне…",
    "role": "desc",
@@ -66,7 +174,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#006": {
+  "Taproot#015": {
    "src": "I can't even recall how many attempts this will make...but all my knowledge has gone into this. This must work.",
    "dst": "Я даже не помню, какая это попытка… но я вложила сюда все знания. Должно сработать.",
    "role": "desc",
@@ -76,7 +184,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#007": {
+  "Taproot#016": {
    "src": "Follow Lari to the black spot next to her camp.",
    "dst": "Следуй за Lari к чёрному пятну у её лагеря.",
    "role": "desc",
@@ -86,7 +194,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#008": {
+  "Taproot#017": {
    "src": "...I suppose I can't fault you for being curious. You may have seen a large, dark-looking patch of ground on your way here- I am trying to tend to it once more.",
    "dst": "…Полагаю, нельзя винить тебя за любопытство. По дороге сюда видна большая тёмная проплешина- я снова пытаюсь её исцелить.",
    "role": "desc",
@@ -96,7 +204,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#009": {
+  "Taproot#018": {
    "src": "It is...the most obvious stain of the decay, and very intense...if I can scrub this out, the rest should follow.",
    "dst": "Это… самое явное пятно Тлена, и очень сильное… если вычищу его, остальное последует.",
    "role": "desc",
@@ -106,7 +214,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#010": {
+  "Taproot#019": {
    "src": "This concoction of mine should...do the trick!",
    "dst": "Моё зелье должно… сработать!",
    "role": "desc",
@@ -116,7 +224,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#011": {
+  "Taproot#020": {
    "src": "It...it's working!! I can feel it, the land is reacting positively!",
    "dst": "Оно… оно действует!! Я чувствую, земля откликается!",
    "role": "desc",
@@ -126,7 +234,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#012": {
+  "Taproot#021": {
    "src": "I...I... It was...it was working, a-and... Agh, why can't I get this RIGHT?!",
    "dst": "Я… я… Оно… оно же действовало, и-и… Агх, почему у меня НЕ ВЫХОДИТ?!",
    "role": "desc",
@@ -136,7 +244,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#013": {
+  "Taproot#022": {
    "src": "How many decades have I been doing this? How much time have I wasted, just...flailing like this?!",
    "dst": "Сколько десятилетий я этим занимаюсь? Сколько времени потратила, просто… барахтаясь вот так?!",
    "role": "desc",
@@ -146,7 +254,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#014": {
+  "Taproot#023": {
    "src": "Look, {u}, I...I don't know what you expect to do against this. The Wyrm was one thing, but...this is beyond your comprehension.",
    "dst": "Слушай, {u}, я… не знаю, чего ты ждёшь против этого. Wyrm - одно дело, но… это за гранью твоего понимания.",
    "role": "desc",
@@ -156,7 +264,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#015": {
+  "Taproot#024": {
    "src": "I think you sh... Should...w-what is... Now, of all times? As I fail?!",
    "dst": "Думаю, тебе сто… Стоит… ч-что это… Сейчас? Когда я провалилась?!",
    "role": "desc",
@@ -166,7 +274,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#016": {
+  "Taproot#025": {
    "src": "The road, look! He's contacting me! A-are you finally giving me the answers I've asked for?",
    "dst": "Дорога, смотри! Он выходит на связь! Т-ты наконец дашь мне ответы, о которых я просила?",
    "role": "desc",
@@ -176,7 +284,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#017": {
+  "Taproot#026": {
    "src": "Follow the trail of magic leading from the black spot.",
    "dst": "Иди по магическому следу от чёрного пятна.",
    "role": "desc",
@@ -186,7 +294,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#018": {
+  "Taproot#027": {
    "src": "Talk to Lari outside the weird gate at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Lari у странных врат на [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -196,7 +304,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#019": {
+  "Taproot#028": {
    "src": "...I followed you seeking answers...and here, I am presented with more questions. Why did he bring us here?",
    "dst": "…Я пошла за тобой в поисках ответов… а получила новые вопросы. Зачем он привёл нас сюда?",
    "role": "desc",
@@ -206,7 +314,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#020": {
+  "Taproot#029": {
    "src": "This gate has appeared, immovable and impassable, since the moment that...that everything started.",
    "dst": "Эти врата появились, недвижимые и непроходимые, в тот миг, когда… когда всё началось.",
    "role": "desc",
@@ -216,7 +324,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#021": {
+  "Taproot#030": {
    "src": "I don't...is he trying to remind me of what's at stake? Did he want to show y- No, that's...he wouldn't know you...but then, what IS this about?!",
    "dst": "Я не… он хочет напомнить, что на кону? Хотел показать т- Нет, это… он не знает тебя… но тогда В ЧЁМ дело?!",
    "role": "desc",
@@ -226,7 +334,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#022": {
+  "Taproot#031": {
    "src": "Rrgh... ANSWER ME! PLEASE! I've begged you for so long to answer!",
    "dst": "Ррр… ОТВЕТЬ МНЕ! ПРОШУ! Я так долго умоляла тебя ответить!",
    "role": "desc",
@@ -236,7 +344,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#023": {
+  "Taproot#032": {
    "src": "You gave me my task and your light but never told me what to DO! I've tried everything I can think of!!",
    "dst": "Ты дал мне задачу и свой свет, но так и не сказал, что ДЕЛАТЬ! Я перепробовала всё, что могла!!",
    "role": "desc",
@@ -246,7 +354,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#024": {
+  "Taproot#033": {
    "src": "Tell me! Please, just t-tell me already!! I don't know how much longer I can stand this!!",
    "dst": "Скажи! Прошу, п-просто скажи уже!! Не знаю, сколько ещё я это выдержу!!",
    "role": "desc",
@@ -256,7 +364,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#025": {
+  "Taproot#034": {
    "src": "I...a-another one? Where are you leading me now?",
    "dst": "Я… е-ещё один? Куда ты ведёшь меня теперь?",
    "role": "desc",
@@ -266,7 +374,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#026": {
+  "Taproot#035": {
    "src": "It...the gateway...? Are you...I can't understand! Why this, again?",
    "dst": "Это… врата…? Ты… я не понимаю! Почему опять это?",
    "role": "desc",
@@ -276,7 +384,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#027": {
+  "Taproot#036": {
    "src": "You showed me this before... At first, when you first contacted me. I made the choice...",
    "dst": "Ты показывал мне это раньше… Вначале, когда впервые связался со мной. Я сделала выбор…",
    "role": "desc",
@@ -286,7 +394,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#028": {
+  "Taproot#037": {
    "src": "Must I make it again? Is that it, do I need to prove myself to you once more?",
    "dst": "Мне нужно сделать его снова? В этом дело, мне опять доказывать себя?",
    "role": "desc",
@@ -296,7 +404,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#029": {
+  "Taproot#038": {
    "src": "I...what? You...you present me with this, but refuse to let me do what you want?",
    "dst": "Я… что? Ты… ты показываешь мне это, но не даёшь сделать то, что хочешь?",
    "role": "desc",
@@ -306,7 +414,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#030": {
+  "Taproot#039": {
    "src": "...please, can you investigate the doorway? There must be something wrong that I don't understand.",
    "dst": "…прошу, осмотришь проход? Что-то не так, а я не понимаю что.",
    "role": "desc",
@@ -316,7 +424,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#031": {
+  "Taproot#040": {
    "src": "Enter the door.",
    "dst": "Войди в дверь.",
    "role": "desc",
@@ -326,7 +434,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#032": {
+  "Taproot#041": {
    "src": "Listen to the meeting.",
    "dst": "Послушай разговор.",
    "role": "desc",
@@ -336,7 +444,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#033": {
+  "Taproot#042": {
    "src": "My pulse... Human. I must inquire to you. I present you a test. Guide your attention to those you see.",
    "dst": "Мой пульс… Человек. Я должен вопросить тебя. Даю тебе испытание. Обрати взор на тех, кого видишь.",
    "role": "desc",
@@ -346,7 +454,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#034": {
+  "Taproot#043": {
    "src": "I must see the rhythm your heart beats. Listen well.",
    "dst": "Я должен увидеть ритм биения твоего сердца. Слушай внимательно.",
    "role": "desc",
@@ -356,7 +464,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#035": {
+  "Taproot#044": {
    "src": "This has gone far enough. I can't do this anymore! I can't give you any more and I refuse to apologize for it!",
    "dst": "Хватит. Я больше так не могу! Я не дам вам больше ничего и не стану за это извиняться!",
    "role": "desc",
@@ -366,7 +474,7 @@
    "speaker": "Mayor",
    "source": "wiki"
   },
-  "Taproot#036": {
+  "Taproot#045": {
    "src": "You know our deal. Remember what good you are doing by following the plans I've laid out for you.",
    "dst": "Вы знаете наш уговор. Помните, сколько добра вы творите, следуя моему плану.",
    "role": "desc",
@@ -376,7 +484,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "Taproot#037": {
+  "Taproot#046": {
    "src": "Are you going to let your emotions cloud your judgment? You're a smarter man than that, Mr. Mayor.",
    "dst": "Позволите чувствам затуманить рассудок? Вы умнее этого, господин мэр.",
    "role": "desc",
@@ -386,7 +494,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "Taproot#038": {
+  "Taproot#047": {
    "src": "You can't possibly believe that throwing away the lives of innocent people is right! I can't go on with this on my conscience!",
    "dst": "Не может быть, чтобы вы считали правильным губить жизни невинных! Я не могу жить с этим на совести!",
    "role": "desc",
@@ -396,7 +504,7 @@
    "speaker": "Mayor",
    "source": "wiki"
   },
-  "Taproot#039": {
+  "Taproot#048": {
    "src": "Detective Hart WILL be hearing from me, and he'll be hearing everything. We can't keep sacrificing our own like this!",
    "dst": "Детектив Hart УСЛЫШИТ от меня всё, до последнего слова. Нельзя дальше так жертвовать своими!",
    "role": "desc",
@@ -406,7 +514,7 @@
    "speaker": "Mayor",
    "source": "wiki"
   },
-  "Taproot#040": {
+  "Taproot#049": {
    "src": "Our golems have single-handedly turned the tide of the Humans' corruption war. You would save ten here and sentence a thousand to die overseas?",
    "dst": "Наши големы в одиночку переломили ход войны людей со Скверной. Спасёте здесь десяток и обречёте тысячу за морем?",
    "role": "desc",
@@ -416,7 +524,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "Taproot#041": {
+  "Taproot#050": {
    "src": "You're a sick, twisted man, Urelix. I will not abide by this a moment longer.",
    "dst": "Вы больной, извращённый человек, Urelix. Я не потерплю этого ни минуты.",
    "role": "desc",
@@ -426,7 +534,7 @@
    "speaker": "Mayor",
    "source": "wiki"
   },
-  "Taproot#042": {
+  "Taproot#051": {
    "src": "My pulse, you must decide. Three paths diverge upon your road.",
    "dst": "Мой пульс, тебе решать. На твоём пути расходятся три дороги.",
    "role": "desc",
@@ -436,7 +544,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#043": {
+  "Taproot#052": {
    "src": "You may leave. The rays of fate will see to destiny unfolding.",
    "dst": "Можешь уйти. Лучи судьбы сами проследят за её свершением.",
    "role": "desc",
@@ -446,7 +554,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#044": {
+  "Taproot#053": {
    "src": "You may end this \"Mayor's\" life. Blood upon your hands in many ways.",
    "dst": "Можешь оборвать жизнь этого «мэра». Кровь на руках - во многих смыслах.",
    "role": "desc",
@@ -456,7 +564,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#045": {
+  "Taproot#054": {
    "src": "The mechanism has been fixed...",
    "dst": "Механизм починен…",
    "role": "desc",
@@ -466,7 +574,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taproot#046": {
+  "Taproot#055": {
    "src": "You may end the life of Urelix. Heartbeats ceased by a bleeding heart.",
    "dst": "Можешь оборвать жизнь Urelix. Сердца остановлены сердобольным.",
    "role": "desc",
@@ -476,7 +584,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#047": {
+  "Taproot#056": {
    "src": "Which way does your heart beat? How will you cast your light? Can you see?",
    "dst": "Куда бьётся твоё сердце? Как ты прольёшь свой свет? Видишь ли ты?",
    "role": "desc",
@@ -486,7 +594,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#048": {
+  "Taproot#057": {
    "src": "Make your choice.",
    "dst": "Сделай выбор.",
    "role": "desc",
@@ -496,7 +604,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#049": {
+  "Taproot#058": {
    "src": "My pulse... The blood of a bleeding heart has poisoned me. Even if you believe the sun should shine elsewhere, you must direct it yourself.",
    "dst": "Мой пульс… Кровь сердобольного отравила меня. Даже если солнцу, по-твоему, светить в ином месте, направь его своей рукой.",
    "role": "desc",
@@ -506,7 +614,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#050": {
+  "Taproot#059": {
    "src": "You must realize what is needed. You must see light through my lens.",
    "dst": "Пойми, что необходимо. Узри свет сквозь мою линзу.",
    "role": "desc",
@@ -516,7 +624,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#051": {
+  "Taproot#060": {
    "src": "To leave... As destiny unfolds, the sun shall set.",
    "dst": "Уйти… Судьба свершится, и солнце зайдёт.",
    "role": "desc",
@@ -526,17 +634,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#052": {
-   "src": "To end this Mayor's life... To snuff out one whose heart aches is painful.",
-   "dst": "Оборвать жизнь мэра… Гасить страдающее сердце - больно.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taproot",
-   "stage": "Stage 7",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "Taproot#053": {
+  "Taproot#062": {
    "src": "To end the life of Urelix... The shadows of war shall engulf all.",
    "dst": "Оборвать жизнь Urelix… Тени войны поглотят всё.",
    "role": "desc",
@@ -546,7 +644,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#054": {
+  "Taproot#063": {
    "src": "My pulse, there is only one choice. You must do what is required, I beg of you.",
    "dst": "Мой пульс, выбор лишь один. Сделай то, что требуется, умоляю.",
    "role": "desc",
@@ -556,7 +654,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#055": {
+  "Taproot#064": {
    "src": "Ah, you recognize necessity. That couldn't have been pleasant...but what's needed isn't pleasant, in the end.",
    "dst": "А, вы признаёте необходимость. Приятного было мало… но нужное, в конце концов, не бывает приятным.",
    "role": "desc",
@@ -566,7 +664,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "Taproot#056": {
+  "Taproot#065": {
    "src": "My pulse, you are worthy!",
    "dst": "Мой пульс, испытание пройдено!",
    "role": "desc",
@@ -576,7 +674,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#057": {
+  "Taproot#066": {
    "src": "Enter the door.",
    "dst": "Войди в дверь.",
    "role": "desc",
@@ -586,7 +684,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#058": {
+  "Taproot#067": {
    "src": "...I didn't think you would be able to help, but I had to ask. So...was this for nothing?",
    "dst": "…Не думала, что ты сможешь помочь, но должна была спросить. Так… всё было зря?",
    "role": "desc",
@@ -596,7 +694,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#059": {
+  "Taproot#068": {
    "src": "Wait...y-you...had a choice? He gave you the choice too?! A-Already?!",
    "dst": "Постой… у т-тебя… был выбор? Он и тебе дал выбор?! У-уже?!",
    "role": "desc",
@@ -606,7 +704,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#060": {
+  "Taproot#069": {
    "src": "Wh- I don't understand! You...you just arrived to Gavel! You haven't seen its decline! Felt its pain!",
    "dst": "Ч- Я не понимаю! Ты… ты в Gavel всего ничего! Не знаешь его упадка! Его боли!",
    "role": "desc",
@@ -616,7 +714,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#061": {
+  "Taproot#070": {
    "src": "What did you do?! The gate is opening? YOU did this?! I know your heart is in the right place, but you're a stranger to this land!",
    "dst": "Что происходит?! Врата открываются? Это ТВОИХ рук дело?! Знаю, сердце у тебя доброе, но ты чужой этой земле!",
    "role": "desc",
@@ -626,7 +724,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#062": {
+  "Taproot#071": {
    "src": "I...I...rrrgh... AAAAGH!! This isn't fair!! I've worked for decades and the light just...throws me to the wayside?!",
    "dst": "Я… я… ррргх… ААААГХ!! Это нечестно!! Я трудилась десятилетиями, а свет просто… отбрасывает меня?!",
    "role": "desc",
@@ -636,7 +734,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#063": {
+  "Taproot#072": {
    "src": "Lari\nPLEASE! Just let me in!",
    "dst": "Lari\nПРОШУ! Просто впусти меня!",
    "role": "desc",
@@ -646,7 +744,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#064": {
+  "Taproot#073": {
    "src": "My pulse, you must leave her be. Her heart's emotions have overpowered her mind's judgement. She must learn to separate them as you have.",
    "dst": "Мой пульс, оставь её. Чувства её сердца одолели суждение разума. Ей нужно научиться разделять их, как умеешь ты.",
    "role": "desc",
@@ -656,7 +754,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#065": {
+  "Taproot#074": {
    "src": "Please... You can't DO this to me!!",
    "dst": "Прошу… Ты не можешь так со мной!!",
    "role": "desc",
@@ -666,7 +764,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#066": {
+  "Taproot#075": {
    "src": "Why do you want this human to enter the Taproot?! What's special about them, what's their connection? What have they done that I haven't?! Tell me, please! Let me be useful!!",
    "dst": "Зачем тебе, чтобы этот человек вошёл в Taproot?! Что в нём особенного, какая связь? Что сделано им, чего не сделала я?! Скажи, прошу! Дай мне быть полезной!!",
    "role": "desc",
@@ -676,7 +774,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#067": {
+  "Taproot#076": {
    "src": "Enter The Taproot",
    "dst": "Войди в Taproot",
    "role": "desc",
@@ -686,7 +784,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#068": {
+  "Taproot#077": {
    "src": "Explore the weird realm",
    "dst": "Исследуй странный мир",
    "role": "desc",
@@ -696,7 +794,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#069": {
+  "Taproot#078": {
    "src": "Your heartbeat beats in time with mine. Your mind is unclouded, despite the fury you have been steeped in. My pulse, you are needed.",
    "dst": "Твоё сердце бьётся в такт с моим. Разум ясен, несмотря на ярость вокруг. Мой пульс, без тебя не обойтись.",
    "role": "desc",
@@ -706,7 +804,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#070": {
+  "Taproot#079": {
    "src": "Your eyes cannot see the scope of the realms. You must allow me to shed light upon them- You must see the connections.",
    "dst": "Глазам твоим не охватить всех миров. Позволь мне пролить на них свет- Узри связи.",
    "role": "desc",
@@ -716,7 +814,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#071": {
+  "Taproot#080": {
    "src": "Light... Dark... We oppose. I am light. It is dark. Our places reflect this land...and it is plain- The sun is setting. Light is fading",
    "dst": "Свет… Тьма… Мы противостоим. Я - свет. Оно - тьма. Наши места отражают эту землю… и ясно одно- Солнце садится. Свет угасает",
    "role": "desc",
@@ -726,7 +824,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#072": {
+  "Taproot#081": {
    "src": "The land you visit warps with the slow siphoning of my light, my blood. It becomes outlandish and strange- Oppressive and alien.",
    "dst": "Земля, где ты бываешь, искажается, пока медленно вытягивают мой свет, мою кровь. Она становится диковинной- Гнетущей и чуждой.",
    "role": "desc",
@@ -736,7 +834,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#073": {
+  "Taproot#082": {
    "src": "Perhaps you should try interacting with this thing?",
    "dst": "Может, стоит попробовать взаимодействовать с этой штукой?",
    "role": "desc",
@@ -746,7 +844,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taproot#074": {
+  "Taproot#083": {
    "src": "As dusk approaches- As darkness spreads- My heart slows and stops. My pulse, you are needed. You shall be as one with me, and you shall see.",
    "dst": "Близятся сумерки- Ширится тьма- Сердце моё замедляется и замирает. Мой пульс, без тебя не обойтись. Мы станем едины, и ты узришь.",
    "role": "desc",
@@ -756,7 +854,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#075": {
+  "Taproot#084": {
    "src": "{p} needs life anew- A new pulse. It need you.",
    "dst": "{p} нуждается в новой жизни- В новом пульсе. В тебе.",
    "role": "desc",
@@ -766,7 +864,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#076": {
+  "Taproot#085": {
    "src": "Explore the {p}.",
    "dst": "Исследуй {p}.",
    "role": "desc",
@@ -776,7 +874,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#077": {
+  "Taproot#086": {
    "src": "Our light is synchronous! You may see what I must have you see...",
    "dst": "Наш свет в унисон! Ты узришь то, что я должен тебе показать…",
    "role": "desc",
@@ -786,7 +884,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#078": {
+  "Taproot#087": {
    "src": "Follow the road. You must witness the reason behind my trial.",
    "dst": "Иди по дороге. Узри причину моего испытания.",
    "role": "desc",
@@ -796,7 +894,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#079": {
+  "Taproot#088": {
    "src": "See my memories. The memories of the realm. See...and be enlightened.",
    "dst": "Узри мои воспоминания. Память этого мира. Смотри… и прозрей.",
    "role": "desc",
@@ -806,7 +904,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#080": {
+  "Taproot#089": {
    "src": "Witness it... The Equinox. Learn why you are needed, my pulse.",
    "dst": "Узри его… The Equinox. Пойми, почему без тебя не обойтись, мой пульс.",
    "role": "desc",
@@ -816,7 +914,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#081": {
+  "Taproot#090": {
    "src": "Witness it. The vile emergence...",
    "dst": "Узри. Мерзкое явление…",
    "role": "desc",
@@ -826,7 +924,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#082": {
+  "Taproot#091": {
    "src": "Witness the beginning of decay.",
    "dst": "Узри начало Тлена.",
    "role": "desc",
@@ -836,7 +934,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#083": {
+  "Taproot#092": {
    "src": "My light...I won't let you down!",
    "dst": "Мой свет… я не подведу тебя!",
    "role": "desc",
@@ -846,7 +944,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#084": {
+  "Taproot#093": {
    "src": "You! You don't belong here!",
    "dst": "Ты! Тебе здесь не место!",
    "role": "desc",
@@ -856,7 +954,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#085": {
+  "Taproot#094": {
    "src": "Wah! Back away, I don't want to hurt you!",
    "dst": "Ах! Назад, я не хочу тебе вредить!",
    "role": "desc",
@@ -866,7 +964,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#086": {
+  "Taproot#095": {
    "src": "I can do this... Orphion, lend me your voice!",
    "dst": "Я справлюсь… Orphion, одолжи мне свой голос!",
    "role": "desc",
@@ -876,7 +974,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#087": {
+  "Taproot#096": {
    "src": "Return to your realm in peace!",
    "dst": "Вернись в свой мир с миром!",
    "role": "desc",
@@ -886,7 +984,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#088": {
+  "Taproot#097": {
    "src": "Your power is blinded by light. You cannot win!",
    "dst": "Твоя сила ослеплена светом. Тебе не победить!",
    "role": "desc",
@@ -896,7 +994,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#089": {
+  "Taproot#098": {
    "src": "Peace, strange creature! You must be peaceful!",
    "dst": "Уймись, странное создание! Успокойся!",
    "role": "desc",
@@ -906,7 +1004,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#090": {
+  "Taproot#099": {
    "src": "Why isn't this working? Even Orphion's voice...",
    "dst": "Почему не работает? Даже голос Orphion…",
    "role": "desc",
@@ -916,7 +1014,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#091": {
+  "Taproot#100": {
    "src": "It's scarring the land... I need to end this, quickly...",
    "dst": "Оно калечит землю… Надо скорее покончить с этим…",
    "role": "desc",
@@ -926,7 +1024,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#092": {
+  "Taproot#101": {
    "src": "His light... This power... I can do this!",
    "dst": "Его свет… Эта сила… Я справлюсь!",
    "role": "desc",
@@ -936,7 +1034,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#093": {
+  "Taproot#102": {
    "src": "The embodiment of light supports me!",
    "dst": "Воплощение света на моей стороне!",
    "role": "desc",
@@ -946,7 +1044,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#094": {
+  "Taproot#103": {
    "src": "You cannot fight the focus of pure light!",
    "dst": "Не одолеть тебе чистый свет!",
    "role": "desc",
@@ -956,7 +1054,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#095": {
+  "Taproot#104": {
    "src": "Be done! I bind you with Orphion's light!",
    "dst": "Всё! Сковываю тебя светом Orphion!",
    "role": "desc",
@@ -966,7 +1064,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#096": {
+  "Taproot#105": {
    "src": "Wait...it...it's n-not holding?!",
    "dst": "Постой... оно... оно н-не держится?!",
    "role": "desc",
@@ -976,7 +1074,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#097": {
+  "Taproot#106": {
    "src": "Lari... A conflicted heart failed to channel my light. She refused to battle.",
    "dst": "Lari… Смятенное сердце не направило мой свет. Она не стала биться.",
    "role": "desc",
@@ -986,7 +1084,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#098": {
+  "Taproot#107": {
    "src": "The vile intruder was weak... But every opportunity to strike, exchanged for words to the deaf.",
    "dst": "Мерзкий пришелец был слаб… Но каждый шанс ударить она меняла на слова для глухих.",
    "role": "desc",
@@ -996,7 +1094,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#099": {
+  "Taproot#108": {
    "src": "My pulse... It pains me. Her light simply fails to shine where it is needed, and so we are here.",
    "dst": "Мой пульс… Мне больно. Её свет не светит там, где нужен, и потому мы здесь.",
    "role": "desc",
@@ -1006,7 +1104,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Taproot#100": {
+  "Taproot#109": {
    "src": "The Realm of Light needs life anew- A new pulse. It needs you.",
    "dst": "Realm of Light нуждается в новой жизни- В новом пульсе. В тебе.",
    "role": "desc",
@@ -1016,7 +1114,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taproot#101": {
+  "Taproot#110": {
    "src": "Talk to Lari outside the Taproot gate.",
    "dst": "Поговори с Lari у врат Taproot.",
    "role": "desc",
@@ -1026,7 +1124,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taproot#102": {
+  "Taproot#111": {
    "src": "I... I...hope you'll forgive me, {u}. My anger wasn't with you. I...j-just...",
    "dst": "Я… я… надеюсь, ты простишь меня, {u}. Злилась я не на тебя. Я… п-просто…",
    "role": "desc",
@@ -1036,7 +1134,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#103": {
+  "Taproot#112": {
    "src": "I work for untold years, trying to save this province, to save a Realm... All to so little avail. To the sound of silence from the one I'm trying to help.",
    "dst": "Я годами трудилась, пытаясь спасти провинцию, спасти целый мир… И почти без толку. А тот, кому я помогаю, молчит.",
    "role": "desc",
@@ -1046,7 +1144,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#104": {
+  "Taproot#113": {
    "src": "And then, you appear, and... I still haven't ever been in there. I'd...I'd ask what it was like, but it's...probably private, right?",
    "dst": "А потом появляешься ты, и… Я там так и не побывала. Я… я бы спросила, каково там, но это… наверное, личное, да?",
    "role": "desc",
@@ -1056,7 +1154,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#105": {
+  "Taproot#114": {
    "src": "At...at least I have an ally now, r-right? But...I'm afraid that... N-no, it's silly, you don't need to hear me fretting.",
    "dst": "Х-хотя бы у меня теперь есть союзник, п-правда? Только… боюсь, что… Н-нет, глупости, незачем тебе слушать мои тревоги.",
    "role": "desc",
@@ -1066,7 +1164,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#106": {
+  "Taproot#115": {
    "src": "I... I promise I can still be useful. I'll... I'll find a way. I promise you. I'll...get out of your way, for now.",
    "dst": "Я… я обещаю, я ещё пригожусь. Я… я найду способ. Обещаю. А пока… не буду тебе мешать.",
    "role": "desc",
@@ -1076,7 +1174,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Taproot#107": {
+  "Taproot#116": {
    "src": "Lari\nPlease... You can't DO this to me!!",
    "dst": "Lari\nПрошу… Ты не можешь так со мной!!",
    "role": "desc",

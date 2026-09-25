@@ -1,12 +1,78 @@
 {
  "_meta": {
   "quest": "An Iron Heart Part I",
-  "count": 24,
+  "count": 30,
   "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "An Iron Heart Part I#000": {
+   "src": "...I am... What^s my...name...? I had one...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part I#001": {
+   "src": "Re...remember!! WHAT IS MY NAME? My life?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part I#002": {
+   "src": "REMEMBER!! No...no orders! No dREMEMBER!! No...no o irectREMEMBER!! No...no oives!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "REMEMBER!! No...no orders! No dREMEMBER!! No...no o irectREMEMBER!!",
+    "file": "quest/an-iron-heart-part-i.json",
+    "ratio": 0.899,
+    "reason": "candidate"
+   }
+  },
+  "An Iron Heart Part I#003": {
+   "src": "My name!! My life! I won't hurt them! The pain helps me reme...who's there?! LEAVE! PLEASE!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part I#004": {
+   "src": "NO MORE COLDNESS! NO MORE VOICES THAT AREN'T MINE! MY NAME IS [ERROR]!! [ERROR]!! NOOO!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part I#005": {
+   "src": "Falling...apart...this isn't who I I I was... My... My... My my my my my name is. Was. Is. Was. Is. IS...! [ERROR] ... Ma[ERROine... Madeleine!! I'm Madeleine... I... I-I-IIIIIIIIII-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part I",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part I#006": {
    "src": "Speak with Duvale at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の Duvale と話す",
    "role": "desc",
@@ -16,7 +82,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part I#001": {
+  "An Iron Heart Part I#007": {
    "src": "Oh, you there! I wasn't expecting a human soldier to be here, but you've come at a perfect time. I could use some help, see.",
    "dst": "おや、そこの方！人間の兵士がいるとは思いませんでしたが、ちょうどいいところに。手を貸してほしいのです。",
    "role": "desc",
@@ -26,7 +92,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#002": {
+  "An Iron Heart Part I#008": {
    "src": "I'm certain you know about Guard Golems, yes? They're manufactured here in Gavel, and I bought one recently.",
    "dst": "衛兵ゴーレムはご存じでしょう？ここ Gavel で製造されていて、最近一体買ったんです。",
    "role": "desc",
@@ -36,7 +102,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#003": {
+  "An Iron Heart Part I#009": {
    "src": "The goblins keep trying to forage in my farms, you see- I needed something to keep them out, and a Golem would have been perfect.",
    "dst": "ゴブリンが畑を荒らしに来るので―追い払うものが必要で、ゴーレムならうってつけだったんです。",
    "role": "desc",
@@ -46,7 +112,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#004": {
+  "An Iron Heart Part I#010": {
    "src": "But, shortly after I activated it, the thing attacked me! I nearly got killed- It was ramming itself against boulders and walls...",
    "dst": "ところが起動してすぐ、そいつが私を襲ったんです！危うく死ぬところでした―岩や壁に自分から体当たりしていて…",
    "role": "desc",
@@ -56,7 +122,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#005": {
+  "An Iron Heart Part I#011": {
    "src": "I obviously was sold a defective model... That golem is a danger to everything around it. Do you think you're up to subduing it?",
    "dst": "明らかに欠陥品をつかまされました…あのゴーレムは周りのすべてにとって危険です。取り押さえられそうですか？",
    "role": "desc",
@@ -66,7 +132,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#006": {
+  "An Iron Heart Part I#012": {
    "src": "It's shed a trail of scrap, as you can see. Please, follow the trail of scrap and keep it from causing anyone more damage!",
    "dst": "ご覧の通り、残骸の跡を残しています。どうか跡をたどって、これ以上誰かを傷つけないよう止めてください！",
    "role": "desc",
@@ -76,7 +142,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#007": {
+  "An Iron Heart Part I#013": {
    "src": "Find the defective Guard Golem in the mountain at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の山で欠陥のある衛兵ゴーレムを見つける",
    "role": "desc",
@@ -86,7 +152,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part I#008": {
+  "An Iron Heart Part I#014": {
    "src": "Find the defective Guard Golem",
    "dst": "欠陥のある衛兵ゴーレムを見つける",
    "role": "desc",
@@ -96,7 +162,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part I#009": {
+  "An Iron Heart Part I#015": {
    "src": "...I am... w̶h̴at^s my...na̷m̸e...? I had one...",
    "dst": "…私は… what^s my…name…？ 昔は、あった…",
    "role": "desc",
@@ -106,7 +172,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "An Iron Heart Part I#010": {
+  "An Iron Heart Part I#016": {
    "src": "Re...remember!! W̵H̸A̶T̸ IS MY N̵A̴M̵E̵? My life?",
    "dst": "お、思い出せ！！WHAT IS MY NAME？私の人生は？",
    "role": "desc",
@@ -116,7 +182,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "An Iron Heart Part I#011": {
+  "An Iron Heart Part I#017": {
    "src": "REMEMBER!! No...no orders! No dREMEMBER!! No...no o irectREMEMBER!!",
    "dst": "思い出せ！！いや…命令は嫌だ！め思い出せ！！いや…め い思い出せ！！",
    "role": "desc",
@@ -126,7 +192,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "An Iron Heart Part I#012": {
+  "An Iron Heart Part I#018": {
    "src": "My name!! My life! I wo̴n't hurt them! The pain helps me reme...who's there?! LEAVE! PL̴E̵A̷SE!",
    "dst": "私の名前！！私の人生！彼らは傷つけない！痛みが思い出させ…誰だ？！去れ！お願いだ！",
    "role": "desc",
@@ -136,7 +202,7 @@
    "speaker": "Guard Golem",
    "source": "wiki"
   },
-  "An Iron Heart Part I#013": {
+  "An Iron Heart Part I#019": {
    "src": "No directives!! Who did this?! I can't...s-stop giving me ORDERS!!",
    "dst": "指令なんてない！！誰がこんなことを？！できない…め、命令するのをやめろ！！",
    "role": "desc",
@@ -146,7 +212,7 @@
    "speaker": "Guard Golem",
    "source": "wiki"
   },
-  "An Iron Heart Part I#014": {
+  "An Iron Heart Part I#020": {
    "src": "N- MORE COLDNESS! NO MORE V̴O̸I̶C̴E̷S THAT AREN'T MINE! MY NAME IS [̶E̷R̶R̷O̸R̷]!! [̶E̷R̶R̷O̸R̷]!! NOOO!!",
    "dst": "も―もう冷たいのは嫌だ！私のものじゃない声はもう嫌だ！私の名前は [ERROR]！！[ERROR]！！いやだあ！！",
    "role": "desc",
@@ -156,7 +222,7 @@
    "speaker": "Guard Golem",
    "source": "wiki"
   },
-  "An Iron Heart Part I#015": {
+  "An Iron Heart Part I#021": {
    "src": "Subdue the defective Guard Golem and return to Duvale at [-{~}, {~}, -{~}]",
    "dst": "欠陥のある衛兵ゴーレムを制圧し、[-{~}, {~}, -{~}] の Duvale のもとへ戻る",
    "role": "desc",
@@ -166,7 +232,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part I#016": {
+  "An Iron Heart Part I#022": {
    "src": "Falling...apart...this isn't who I I I was... My... My... My my my my my name is. Was. Is. Was. Is. IS...! [̶E̷R̶R̷O̸R̷]... Ma[̶E̷R̶R̷O̸ine... Ma̷deleine!! I'm Madeleine... I... I-I-IIIIIIIIII-",
    "dst": "崩れ…ていく…私は私私私こんなじゃ… 私の… 私の… 私私私私の名前は。だった。だ。だった。だ。だ…！ [ERROR]… Ma[ERROine… Madeleine！！ 私は Madeleine… 私… わ、わわわわわわわわ―",
    "role": "desc",
@@ -176,7 +242,7 @@
    "speaker": "Guard Golem",
    "source": "wiki"
   },
-  "An Iron Heart Part I#017": {
+  "An Iron Heart Part I#023": {
    "src": "Were you able to subdue the golem? You certainly look like you're in one piece.",
    "dst": "ゴーレムは取り押さえられましたか？どうやら五体満足のようですね。",
    "role": "desc",
@@ -186,7 +252,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#018": {
+  "An Iron Heart Part I#024": {
    "src": "Ach...that stings. I shouldn't be surprised you had to destroy it, but that was still a big wasted investment for me.",
    "dst": "ああ…痛いですね。壊すしかなかったのは仕方ありませんが、大きな投資が無駄になりました。",
    "role": "desc",
@@ -196,7 +262,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#019": {
+  "An Iron Heart Part I#025": {
    "src": "Still, it makes me wonder...it sounded like it was talking when I first turned it on- Wait, you heard it too?",
    "dst": "それにしても気になる…最初に起動した時、しゃべっているようだった―待って、あなたも聞いたんですか？",
    "role": "desc",
@@ -206,7 +272,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#020": {
+  "An Iron Heart Part I#026": {
    "src": "Hm. There are some unsavory rumors about the factory, come to think of it... Maybe there's some stock to them.",
    "dst": "ふむ。そういえば、あの工場には良くない噂がありました…あながち嘘ではないのかも。",
    "role": "desc",
@@ -216,7 +282,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#021": {
+  "An Iron Heart Part I#027": {
    "src": "It said a name? Madeleine? It doesn't exactly ring a bell, but that's...rather concerning. I never mentioned a Madeleine to it.",
    "dst": "名前を言った？Madeleine？心当たりはありませんが…それはかなり気がかりですね。Madeleine なんて一度も言っていません。",
    "role": "desc",
@@ -226,7 +292,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#022": {
+  "An Iron Heart Part I#028": {
    "src": "This is worth sending onto the police, really. I think I might have to write to {p}- the factory is near there.",
    "dst": "これは警察に知らせるべきですね。{p} に手紙を書かないと―工場はその近くなんです。",
    "role": "desc",
@@ -236,7 +302,7 @@
    "speaker": "Duvale",
    "source": "wiki"
   },
-  "An Iron Heart Part I#023": {
+  "An Iron Heart Part I#029": {
    "src": "Til then, here. Consider this your reward for helping me out, brave Human. Good luck out there.",
    "dst": "それまで、これを。助けてくれたお礼です、勇敢な人間さん。道中お気をつけて。",
    "role": "desc",

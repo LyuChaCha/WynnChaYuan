@@ -948,3 +948,35 @@ tasks.register('runModeColourChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.client.ModeColoursTest'
 }
 tasks.named('check') { dependsOn 'runModeColourChecks' }
+
+tasks.register('runObjectiveTailColourChecks', JavaExec) {
+    group = 'verification'
+    description = '譯文把句尾的座標搬到句中時，座標後面的字不可以繼承座標的顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ObjectiveTailColourTest'
+}
+tasks.named('check') { dependsOn 'runObjectiveTailColourChecks' }
+
+tasks.register('runBracketAccentChecks', JavaExec) {
+    group = 'verification'
+    description = '原文的色段整塊被方括號包起來時，譯文的方括號要跟著上色（卡片標題的 [洞窟]）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.BracketAccentTest'
+}
+tasks.named('check') { dependsOn 'runBracketAccentChecks' }
+
+tasks.register('runBlockProseColourChecks', JavaExec) {
+    group = 'verification'
+    description = '整段命中時，抽出去的數值不可以決定散文的底色（迷你任務卡的散文變青色）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.BlockProseColourTest'
+}
+tasks.named('check') { dependsOn 'runBlockProseColourChecks' }
+
+tasks.register('runCardDumpChecks', JavaExec) {
+    group = 'verification'
+    description = 'cards.json 收的是查表用的整段鍵（攤平、去重、隱私防線）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.CardDumpTest'
+}
+tasks.named('check') { dependsOn 'runCardDumpChecks' }

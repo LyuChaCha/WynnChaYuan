@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Elemental Exercise",
-  "count": 78,
+  "count": 83,
   "translated": 78,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Elemental Exercise#000": {
+   "src": "Hm. Come looking for more training, have you? I'm afraid the next training session isn't for some time.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Elemental Exercise#001": {
+   "src": "If you'd like some more advice for combat, though, you could always speak to the soldiers down in the training room.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Elemental Exercise#002": {
+   "src": "They're honing their skills, and they'll gladly share some tips if you ask them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Elemental Exercise#003": {
+   "src": "Did you know you can stash your items in your bank? You can even get them back at any other bank, any time!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Elemental Exercise#004": {
+   "src": "Now, I'm not sure how that works, but it's best to not ask any questions.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Elemental Exercise",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Elemental Exercise#005": {
    "src": "I do have one. If our enemies are susceptible to the elements in this way, would that also apply to us?",
    "dst": "하나 있어요. 적이 이렇게 원소에 약하다면, 저희도 마찬가지인가요?",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#001": {
+  "Elemental Exercise#006": {
    "src": "Ah, yes. A fine observation. Indeed, you are also bound to the rules of the elements. Elemental defenses and weaknesses from your equipment will affect you in the very same way.",
    "dst": "아, 그렇지. 좋은 지적이야. 자네들도 원소의 법칙에 묶여 있네. 장비의 원소 방어와 약점도 똑같이 자네들에게 영향을 주지.",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#002": {
+  "Elemental Exercise#007": {
    "src": "However, you have another tool at your disposal in the form of your spells! Different spells will deal different elemental damage, even if your weapon does not use that element by default.",
    "dst": "하지만 자네들에겐 주문이라는 또 다른 도구가 있지! 무기가 기본으로 그 원소를 쓰지 않더라도, 주문마다 다른 원소 피해를 준다네.",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#003": {
+  "Elemental Exercise#008": {
    "src": "...Oh! So my Bash spell will still deal  Earth damage even if my weapon only uses  Water , right?",
    "dst": "...아! 그럼 무기가  물 원소만 써도 Bash 주문은  대지 피해를 주는 거죠?",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#004": {
+  "Elemental Exercise#009": {
    "src": "Correct! Now, let's see... We have the two of you here. Why don't we have a friendly duel? A chance to test your battle skills in a safe environment.",
    "dst": "정답이야! 자, 보자... 여기 둘이 있으니 친선 결투를 해 보는 건 어떤가? 안전한 곳에서 실력을 시험할 기회지.",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#005": {
+  "Elemental Exercise#010": {
    "src": "The leader has been slain! Take out the stragglers, soldiers! The battle has been won!",
    "dst": "우두머리가 쓰러졌다! 남은 놈들을 처리하라, 병사들이여! 전투는 우리의 승리다!",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#006": {
+  "Elemental Exercise#011": {
    "src": "We've been seeing more attacks from {p} recently... good grief, when will that Graken do his job and sort it out?",
    "dst": "요즘 {p} 쪽에서 공격이 잦아졌어... 원 참, 그 Graken은 언제 제 할 일 해서 정리할 건가?",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#007": {
+  "Elemental Exercise#012": {
    "src": "Hmph. Well, regardless, the two of you fought well! The training seems to have paid off.",
    "dst": "흠. 뭐, 어쨌든 둘 다 잘 싸웠네! 훈련한 보람이 있군.",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#008": {
+  "Elemental Exercise#013": {
    "src": "Thank you, sir! That summoner was a tough foe, but it was nothing we couldn't handle... right, {u}?",
    "dst": "감사합니다, 대장님! 그 소환사는 까다로운 적이었지만 저희가 못 당할 정도는 아니었어요... 그렇지, {u}?",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#009": {
+  "Elemental Exercise#014": {
    "src": "Hm... Let us return to the barracks. I'll have to speak to the Admiral when he returns, and I'd like for the two of you to be present.",
    "dst": "흠... 병영으로 돌아가세. 제독님이 돌아오시면 말씀드려야 하는데, 자네 둘도 함께 있었으면 하네.",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#010": {
+  "Elemental Exercise#015": {
    "src": "He wants us to be there for a meeting with the Admiral...? Huh. What do you think that could be about?",
    "dst": "제독님과의 회의에 우리도 같이 있으래...? 흠. 무슨 일일 것 같아?",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#011": {
+  "Elemental Exercise#016": {
    "src": "... Hopefully it's not anything bad. He did seem to approve of our combat prowess, but-... Nevermind. We should get going.",
    "dst": "... 나쁜 일이 아니면 좋겠다. 우리 전투 실력은 인정하시는 것 같았는데-... 아니야. 이제 가자.",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#012": {
+  "Elemental Exercise#017": {
    "src": "Ahem. Before you return to your business, I have something for the two of you. Payment for your work today, and a special piece of equipment. Make good use of it.",
    "dst": "에헴. 둘 다 돌아가기 전에 줄 게 있네. 오늘 일의 보수와 특별한 장비 하나야. 잘 쓰게.",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Elemental Exercise#013": {
+  "Elemental Exercise#018": {
    "src": "Talk to Captain Ragon in the {p} Barracks at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 {p} 병영에서 Ragon 대장과 대화하세요.",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#014": {
+  "Elemental Exercise#019": {
    "src": "Ah! You must be one of the new recruits the Admiral told me to look out for! What was it... {u}, yes?",
    "dst": "아! 제독님이 눈여겨보라던 신병 중 하나로군! 이름이 뭐였더라... {u}, 맞나?",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#015": {
+  "Elemental Exercise#020": {
    "src": "You've done well to reach this city as quickly as you have, which must have required a great deal of fighting the undead.",
    "dst": "이렇게 빨리 이 도시에 오다니 잘했네. 오는 길에 언데드와 꽤 많이 싸웠겠지.",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#016": {
+  "Elemental Exercise#021": {
    "src": "Now, I've heard from Sergeant Van of your aid in his assault on our overtaken fort- which, good work, very well done...",
    "dst": "Van 병장에게 들었네. 점령당한 요새 탈환을 도왔다지? 아주 훌륭했어...",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#017": {
+  "Elemental Exercise#022": {
    "src": "But the fact still stands that you lack experience. You can certainly fight, yes, but can you fight well?",
    "dst": "하지만 경험이 부족한 건 사실이지. 싸울 줄은 알겠지만, 잘 싸우나?",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#018": {
+  "Elemental Exercise#023": {
    "src": "Lucky for you, that's where I come in. You're just in time for today's training session! Come here, follow me.",
    "dst": "운이 좋군, 그래서 내가 있는 거지. 마침 오늘 훈련 시간이야! 이리 오게, 따라와.",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#019": {
+  "Elemental Exercise#024": {
    "src": "Follow Captain Ragon to the Training Room at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 훈련실까지 Ragon 대장을 따라가세요.",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#020": {
+  "Elemental Exercise#025": {
    "src": "...Oh! {u}, hello. Are you here for training as well?",
    "dst": "...아! {u}, 안녕. 너도 훈련받으러 왔어?",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#021": {
+  "Elemental Exercise#026": {
    "src": "Ahem. Now, in front of you, you'll see five special training dummies. Each one finely imbued with elemental magic. You are aware of the elements, yes? There's five of them in total.",
    "dst": "에헴. 자, 앞에 특수 훈련용 허수아비 다섯 개가 보일 걸세. 각각 원소 마법이 정교하게 깃들어 있지. 원소는 알고 있겠지? 모두 다섯 가지야.",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#022": {
+  "Elemental Exercise#027": {
    "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
    "dst": "알아요! 원소는... 화염, 바람, 대지, 번개, 그리고... 물?",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#023": {
+  "Elemental Exercise#028": {
    "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
    "dst": "맞네. 대체로 그 순서대로 서로에게 강하지. 화염은 바람을, 바람은 대지를 이기는 식으로.",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#024": {
+  "Elemental Exercise#029": {
    "src": "Elemental weaknesses may vary based on the enemy, but that order holds true in most cases.",
    "dst": "원소 약점은 적마다 다를 수 있지만, 대부분은 그 순서가 통하네.",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#025": {
+  "Elemental Exercise#030": {
    "src": "Enemies will take more damage from elements they're weak to, and take less damage from elements they resist. This change to your damage is always a flat value, and it varies from enemy to enemy.",
    "dst": "적은 약한 원소에 피해를 더 받고, 저항하는 원소에는 덜 받지. 이 피해 변화는 항상 고정값이고, 적마다 다르네.",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#026": {
+  "Elemental Exercise#031": {
    "src": "Now. For training purposes, you'll be given an elemental weapon to try out on these training dummies. Take note of how each elemental defense and weakness affects your damage dealt. Speak to me once you feel you understand the concept.",
    "dst": "자. 훈련을 위해 원소 무기를 줄 테니 이 허수아비들에게 써 보게. 원소별 방어와 약점이 주는 피해에 어떤 영향을 주는지 잘 보게나. 이해했다 싶으면 내게 말하게.",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#027": {
+  "Elemental Exercise#032": {
    "src": "Test out the elemental training weapons on the dummies, then speak to Captain Ragon at [{~}, {~}, -{~}].",
    "dst": "허수아비에게 원소 훈련 무기를 시험해 본 뒤 [{~}, {~}, -{~}]의 Ragon 대장과 대화하세요.",
    "role": "desc",
@@ -286,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#028": {
+  "Elemental Exercise#033": {
    "src": "Well? Have you noted the effect of elemental defenses and weaknesses on your damage?",
    "dst": "어떤가? 원소 방어와 약점이 피해에 주는 영향을 확인했나?",
    "role": "desc",
@@ -296,7 +346,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#029": {
+  "Elemental Exercise#034": {
    "src": "Excellent. I'll take those training weapons back from the two of you. Any questions?",
    "dst": "훌륭하군. 두 사람의 훈련 무기는 회수하겠네. 질문 있나?",
    "role": "desc",
@@ -306,7 +356,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#030": {
+  "Elemental Exercise#035": {
    "src": "I do have one. If our enemies are susceptible to elements in this way, would that also apply to us?",
    "dst": "하나 있어요. 적이 이렇게 원소에 약하다면, 저희도 마찬가지인가요?",
    "role": "desc",
@@ -316,7 +366,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#031": {
+  "Elemental Exercise#036": {
    "src": "Ah, yes. A fine observation. Indeed, you are also bound by the rules of the elements. Elemental defenses and weaknesses from your equipment will affect you in the very same way.",
    "dst": "아, 그렇지. 좋은 지적이야. 자네들도 원소의 법칙에 묶여 있네. 장비의 원소 방어와 약점도 똑같이 자네들에게 영향을 주지.",
    "role": "desc",
@@ -326,7 +376,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#032": {
+  "Elemental Exercise#037": {
    "src": "One final note before we move on from the elements- your weapon may not always be as effective against an enemy as you would like.",
    "dst": "원소 이야기를 마치기 전에 마지막으로, 무기가 늘 원하는 만큼 적에게 효과적이진 않을 걸세.",
    "role": "desc",
@@ -336,7 +386,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#033": {
+  "Elemental Exercise#038": {
    "src": "However, you have another tool at your disposal in the form of your spells! Different spells will deal different elemental damage, even if your weapon does use that element by default.",
    "dst": "하지만 자네들에겐 주문이라는 또 다른 도구가 있지! 무기가 기본으로 그 원소를 쓰지 않더라도, 주문마다 다른 원소 피해를 준다네.",
    "role": "desc",
@@ -346,7 +396,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#034": {
+  "Elemental Exercise#039": {
    "src": "...Oh! So my Bash spell will still deal Earth damage even if my weapon only uses Water, right?",
    "dst": "...아! 그럼 무기가 물 원소만 써도 Bash 주문은 대지 피해를 주는 거죠?",
    "role": "desc",
@@ -356,7 +406,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#035": {
+  "Elemental Exercise#040": {
    "src": "Correct! Now, let's see... We have the two of you here. Why don't we have a friendly duel? A chance to test your battle skills in a save environment.",
    "dst": "정답이야! 자, 보자... 여기 둘이 있으니 친선 결투를 해 보는 건 어떤가? 안전한 곳에서 실력을 시험할 기회지.",
    "role": "desc",
@@ -366,7 +416,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#036": {
+  "Elemental Exercise#041": {
    "src": "That sounds good to me! {u}, we've been traveling together for some time now... I can't say I haven't been curious to see how you fight. Let's see who comes out on top, shall we?",
    "dst": "좋아요! {u}, 우리 같이 여행한 지도 꽤 됐잖아... 네가 어떻게 싸우는지 솔직히 궁금했어. 누가 이기나 볼까?",
    "role": "desc",
@@ -376,7 +426,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#037": {
+  "Elemental Exercise#042": {
    "src": "Alright! Let's do this!",
    "dst": "좋아! 해 보자!",
    "role": "desc",
@@ -386,7 +436,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#038": {
+  "Elemental Exercise#043": {
    "src": "Alright. I'll be waiting here when you're ready!",
    "dst": "알았어. 준비되면 여기서 기다릴게!",
    "role": "desc",
@@ -396,7 +446,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#039": {
+  "Elemental Exercise#044": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
    "dst": "그럼 가 보게. 다음으로 넘어갈 준비가 되면 말하게.",
    "role": "desc",
@@ -406,7 +456,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#040": {
+  "Elemental Exercise#045": {
    "src": "Return to Tasim at [{~}, {~}, -{~}] for a duel.",
    "dst": "[{~}, {~}, -{~}]의 Tasim에게 돌아가 결투하세요.",
    "role": "desc",
@@ -416,7 +466,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#041": {
+  "Elemental Exercise#046": {
    "src": "There you are! Are you ready for our duel?",
    "dst": "왔구나! 결투할 준비됐어?",
    "role": "desc",
@@ -426,7 +476,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#042": {
+  "Elemental Exercise#047": {
    "src": "Alright! Let's see which of us is the better fighter!",
    "dst": "좋아! 누가 더 잘 싸우는지 보자!",
    "role": "desc",
@@ -436,7 +486,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#043": {
+  "Elemental Exercise#048": {
    "src": "Alright. I'll be waiting!",
    "dst": "알았어. 기다릴게!",
    "role": "desc",
@@ -446,7 +496,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#044": {
+  "Elemental Exercise#049": {
    "src": "Fight Tasim in a friendly duel.",
    "dst": "Tasim과 친선 결투를 하세요.",
    "role": "desc",
@@ -456,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#045": {
+  "Elemental Exercise#050": {
    "src": "Speak to Captain Ragon at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 Ragon 대장과 대화하세요.",
    "role": "desc",
@@ -466,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#046": {
+  "Elemental Exercise#051": {
    "src": "Phew! That was a good fight. You did well, {u}. We'll have to do this again- and maybe we can get Aledar to join!",
    "dst": "휴! 좋은 승부였어. 잘했어, {u}. 또 하자. Aledar도 끼워 줄 수 있을지 몰라!",
    "role": "desc",
@@ -476,7 +526,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#047": {
+  "Elemental Exercise#052": {
    "src": "Woo! You fought well, {u}, but it looks like I'm still better! Wait until Aledar hears about this...",
    "dst": "와! 잘 싸웠어, {u}. 그래도 내가 아직 한 수 위인가 봐! Aledar가 들으면...",
    "role": "desc",
@@ -486,7 +536,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#048": {
+  "Elemental Exercise#053": {
    "src": "Yes, yes, fine work, the two of you. Now-",
    "dst": "그래, 그래, 둘 다 잘했네. 자, 이제...",
    "role": "desc",
@@ -496,7 +546,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#049": {
+  "Elemental Exercise#054": {
    "src": "Captain! Captain Ragon! There's- there's corrupted forces! Advancing from {p}!",
    "dst": "대장님! Ragon 대장님! 타, 타락한 병력이! {p} 쪽에서 진격해 옵니다!",
    "role": "desc",
@@ -506,7 +556,7 @@
    "speaker": "Scout Evelyn",
    "source": "wiki"
   },
-  "Elemental Exercise#050": {
+  "Elemental Exercise#055": {
    "src": "Hm. And the Admiral is away... Very well. Mobilize the troops! We meet the forces at the north gate!",
    "dst": "흠. 제독님도 안 계신데... 좋아. 병력을 소집하라! 북문에서 맞선다!",
    "role": "desc",
@@ -516,7 +566,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#051": {
+  "Elemental Exercise#056": {
    "src": "Yes sir!",
    "dst": "예, 알겠습니다!",
    "role": "desc",
@@ -526,7 +576,7 @@
    "speaker": "Scout Evelyn",
    "source": "wiki"
   },
-  "Elemental Exercise#052": {
+  "Elemental Exercise#057": {
    "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
    "dst": "대장님, 저희도 싸울 수 있어요. 같이 가서 언데드를 물리치게 해 주세요!",
    "role": "desc",
@@ -536,7 +586,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#053": {
+  "Elemental Exercise#058": {
    "src": "Hm... As I see it, this is a fine opportunity for you to gain some firsthand experience! Very well. Prepare yourselves, and come to {p}' north gate when you're ready.",
    "dst": "흠... 내가 보기엔 직접 경험을 쌓을 좋은 기회로군! 좋아. 준비하고, 다 되면 {p} 북문으로 오게.",
    "role": "desc",
@@ -546,7 +596,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#054": {
+  "Elemental Exercise#059": {
    "src": "This is exciting! But... I'm a little bit nervous, still.",
    "dst": "신난다! 그래도... 아직 좀 긴장돼.",
    "role": "desc",
@@ -556,7 +606,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#055": {
+  "Elemental Exercise#060": {
    "src": "... We'll be alright. Come on, let's go follow the captain.",
    "dst": "...괜찮을 거야. 가자, 대장님을 따라가자.",
    "role": "desc",
@@ -566,7 +616,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#056": {
+  "Elemental Exercise#061": {
    "src": "Follow Captain Ragon to {p}' north gate at [{~}, {~}, -{~}] to face the undead forces.",
    "dst": "Ragon 대장을 따라 [{~}, {~}, -{~}]의 {p} 북문으로 가서 언데드 병력에 맞서세요.",
    "role": "desc",
@@ -576,7 +626,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#057": {
+  "Elemental Exercise#062": {
    "src": "There you are! Ready for battle?",
    "dst": "왔군! 싸울 준비는 됐나?",
    "role": "desc",
@@ -586,7 +636,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#058": {
+  "Elemental Exercise#063": {
    "src": "I'm prepared as well. These corrupted won't stand a chance against us!",
    "dst": "저도 준비됐어요. 이 타락자들은 저희를 못 당해요!",
    "role": "desc",
@@ -596,7 +646,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#059": {
+  "Elemental Exercise#064": {
    "src": "Yes, yes, very good. Now, it shouldn't be long until-",
    "dst": "그래, 그래, 좋아. 자, 머지않아...",
    "role": "desc",
@@ -606,7 +656,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#060": {
+  "Elemental Exercise#065": {
    "src": "Captain! They're here!",
    "dst": "대장님! 놈들이 왔습니다!",
    "role": "desc",
@@ -616,7 +666,7 @@
    "speaker": "Scout Evelyn",
    "source": "wiki"
   },
-  "Elemental Exercise#061": {
+  "Elemental Exercise#066": {
    "src": "Hm... Take note of the leader. I expect if we can defeat it, the rest of the forces will disperse.",
    "dst": "흠... 우두머리를 잘 보게. 저놈만 쓰러뜨리면 나머지 병력은 흩어질 걸세.",
    "role": "desc",
@@ -626,7 +676,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#062": {
+  "Elemental Exercise#067": {
    "src": "Stronger foes such as this one will cast spells one after the other, in a specific order. These spell combos can be dangerous, so make sure to take note of them.",
    "dst": "이런 강한 적은 정해진 순서대로 주문을 연달아 쓰지. 이런 주문 연계는 위험할 수 있으니 꼭 잘 봐 두게.",
    "role": "desc",
@@ -636,7 +686,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#063": {
+  "Elemental Exercise#068": {
    "src": "We'll be fighting all around you, so shout if you're in need of aid. Alright, soldiers, let's defend our city!",
    "dst": "우리가 사방에서 싸울 테니 도움이 필요하면 외치게. 좋아, 병사들이여, 도시를 지켜라!",
    "role": "desc",
@@ -646,7 +696,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#064": {
+  "Elemental Exercise#069": {
    "src": "Alright {u}, let's do this!",
    "dst": "좋아 {u}, 해 보자!",
    "role": "desc",
@@ -656,7 +706,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#065": {
+  "Elemental Exercise#070": {
    "src": "I understand. We have time until the corrupted forces arrive, so go prepare. Don't take too long, though.",
    "dst": "알겠네. 타락한 병력이 오기까지 시간이 있으니 준비하게. 너무 오래 걸리진 말고.",
    "role": "desc",
@@ -666,7 +716,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#066": {
+  "Elemental Exercise#071": {
    "src": "Defeat the Corrupted Captain and the force threatening {p}.",
    "dst": "타락한 대장과 {p}을(를) 위협하는 병력을 물리치세요.",
    "role": "desc",
@@ -676,7 +726,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#067": {
+  "Elemental Exercise#072": {
    "src": "Return to the {p} Barracks and talk to Captain Ragon at [{~}, {~}, -{~}].",
    "dst": "{p} 병영으로 돌아가 [{~}, {~}, -{~}]의 Ragon 대장과 대화하세요.",
    "role": "desc",
@@ -686,7 +736,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Elemental Exercise#068": {
+  "Elemental Exercise#073": {
    "src": "Ah, there you two are. Come here.",
    "dst": "아, 둘 다 왔군. 이리 오게.",
    "role": "desc",
@@ -696,7 +746,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#069": {
+  "Elemental Exercise#074": {
    "src": "Oh, Admiral! You're back already?",
    "dst": "아, 제독님! 벌써 돌아오셨어요?",
    "role": "desc",
@@ -706,7 +756,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#070": {
+  "Elemental Exercise#075": {
    "src": "Yes, my absence was never meant to take long. I was paying a visit to the desert city of {p}, for a meeting with an Admiral Amerigo...",
    "dst": "그래, 오래 자리를 비울 생각은 없었지. 사막 도시 {p}에 가서 Amerigo 제독과 회담을 했네...",
    "role": "desc",
@@ -716,7 +766,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Elemental Exercise#071": {
+  "Elemental Exercise#076": {
    "src": "But I digress. I've been told the two of you were essential in the defense of our city! Excellent work.",
    "dst": "얘기가 샜군. 도시 방어에 자네 둘이 큰 몫을 했다고 들었네! 훌륭해.",
    "role": "desc",
@@ -726,7 +776,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Elemental Exercise#072": {
+  "Elemental Exercise#077": {
    "src": "Our preparations for the assault on {p}' spider den are nearing completion. I'd like the two of you to join that mission.",
    "dst": "{p}의 거미 소굴 공격 준비가 거의 끝나 가네. 자네 둘도 그 임무에 합류했으면 하네.",
    "role": "desc",
@@ -736,7 +786,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Elemental Exercise#073": {
+  "Elemental Exercise#078": {
    "src": "Sir- are you certain? I mean, we'd be happy to join, but surely there are many others more worthy of such a task.",
    "dst": "제독님, 정말이세요? 기꺼이 가겠지만, 그 임무엔 더 적합한 분들이 많을 텐데요.",
    "role": "desc",
@@ -746,7 +796,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#074": {
+  "Elemental Exercise#079": {
    "src": "Nonsense! Captain Ragon has assessed your skills, and has deemed them sufficient. And I trust the Captain's judgement.",
    "dst": "무슨 소리! Ragon 대장이 자네들 실력을 평가해 충분하다고 판단했네. 난 대장의 판단을 믿지.",
    "role": "desc",
@@ -756,7 +806,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Elemental Exercise#075": {
+  "Elemental Exercise#080": {
    "src": "Now, I must be off. I'll see the two of you when it's time for the mission.",
    "dst": "자, 난 가 봐야겠네. 임무 때가 되면 다시 보세.",
    "role": "desc",
@@ -766,7 +816,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Elemental Exercise#076": {
+  "Elemental Exercise#081": {
    "src": "A big mission to take out the spiders, huh... You know, even though I'm a little worried, I think I'm excited.",
    "dst": "거미 소탕 대작전이라... 있잖아, 좀 걱정되긴 하지만 설레는 것 같아.",
    "role": "desc",
@@ -776,7 +826,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Elemental Exercise#077": {
+  "Elemental Exercise#082": {
    "src": "Ahem. Before the two of you return on your business, I have something for the two of you. Payment for your work today, and a special piece of equipment. Make good use of it.",
    "dst": "에헴. 둘 다 돌아가기 전에 줄 게 있네. 오늘 일의 보수와 특별한 장비 하나야. 잘 쓰게.",
    "role": "desc",

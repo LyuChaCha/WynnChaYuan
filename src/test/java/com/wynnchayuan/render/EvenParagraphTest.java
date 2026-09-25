@@ -100,6 +100,35 @@ public final class EvenParagraphTest {
              List.of("To", "Health +120"),
              new boolean[] {true, false});
 
+
+        // 首領祭壇的敘述：第二行大寫開頭（專有名詞），第一行結尾是 think——
+        // 不是冠詞也不是介系詞。先前兩條判準都不中，第一行自成一段，
+        // 於是畫面上一句中文接三句英文（使用者 2026-09-20 的截圖）。
+        mixed("散文折行時下一行大寫也是同一段",
+              List.of("Most people don't think",
+                      "Bovemists revere cows for a",
+                      "good reason. The people around",
+                      "here know better, and leave",
+                      "offerings regularly."),
+              new boolean[] {true, false, false, false, false},
+              new boolean[] {false, false, false, false, false});
+
+        // 反方向：標題那一行結尾是 ]，下一行是另一件事。
+        same("名稱加類別之後是新的一行",
+             List.of("Slay Slimes [Mini-Quest]", "Currently in progress"),
+             new boolean[] {false, true});
+
+        // 反方向：屬性列沒有句點也沒有冠詞，但帶數字——不能被當成散文。
+        same("帶數字的欄位列不算散文",
+             List.of("Recommended Combat Lv", "Health +120"),
+             new boolean[] {true, false});
+
+        // 反方向：項目符號開頭的是清單的一項，不是句子的續行。
+        same("項目符號行不算散文的續行",
+             List.of("Converts your emeralds automatically",
+                     "- Converts up to Liquid Emeralds"),
+             new boolean[] {false, true});
+
         // 網址翻不了，不能拿它判定「翻了一半」
         same("後面接網址的那一句照樣翻",
              List.of("You can get individual boosts at", "wynncraft.com/store"),
@@ -108,6 +137,60 @@ public final class EvenParagraphTest {
         check("wynn.gg/rules 是網址", TooltipPanel.isAddress("wynn.gg/rules"));
         check("一般句子不是網址", !TooltipPanel.isAddress("Guild Bank"));
         check("句點結尾的句子不是網址", !TooltipPanel.isAddress("This item has been sealed."));
+
+        // --- 整行只有座標的那一行 -----------------------------------------
+        // 洞窟卡的敘述：前兩行語料裡<b>都有</b>，第三行整行只有座標。
+        // 座標那一行的模板（{@code [{~}, {~}, -{~}]}）一個字母都沒有，
+        // LineTranslator 自己就先擋了，永遠不可能「翻到」。先前它照樣算一票，
+        // 整段於是被判成翻了一半 → 整張洞窟卡的敘述退回英文。
+        // 使用者回報的「明明語料查得到、畫面還是英文」就是這個。
+        same("整行只有座標的那一行不算一票",
+             List.of("A deep cave full of scorched",
+                     "creatures and earth lies at",
+                     "[1603, 155, -5069]"),
+             new boolean[] {true, true, false});
+
+        // 迷你任務是同一個形狀，座標帶負號
+        same("迷你任務的座標行一樣不算一票",
+             List.of("Bring [22 Viscous Slime] to the",
+                     "Slaying Post [Combat Lv. 50] at",
+                     "[-480, 72, -707]"),
+             new boolean[] {true, true, false});
+
+        // 反方向（守門不能被放壞）：座標夾在句子裡，那一行有實字——
+        // 它是真的沒翻到，整段照樣要退回英文。
+        mixed("含實字的座標行仍然算一票",
+              List.of("More than just miners and",
+                      "pyrotechnics lurk within the",
+                      "old saltpetre mine below the",
+                      "Highlands at [-1288, 86, -1319]."),
+              new boolean[] {true, true, true, false},
+              new boolean[] {false, false, false, false});
+
+        // 反方向：放過座標行不代表其餘幾行不用一致
+        mixed("放過座標行不影響其餘幾行的判定",
+              List.of("A deep cave full of scorched",
+                      "creatures and earth lies at",
+                      "[1603, 155, -5069]"),
+              new boolean[] {true, false, false},
+              new boolean[] {false, false, false});
+
+        // 整段都沒翻（語料真的沒收）時照舊不動
+        same("整段都沒翻就不要動（含座標行）",
+             List.of("A deep cave full of scorched",
+                     "creatures and earth lies at",
+                     "[1603, 155, -5069]"),
+             new boolean[] {false, false, false});
+
+        check("整行座標沒有字可翻", TooltipPanel.nothingToTranslate("[1603, 155, -5069]"));
+        check("帶負號的座標沒有字可翻", TooltipPanel.nothingToTranslate("[-480, 72, -707]"));
+        check("句子裡夾著座標算有字",
+              !TooltipPanel.nothingToTranslate("Highlands at [-1288, 86, -1319]."));
+        check("停在介系詞上的行算有字",
+              !TooltipPanel.nothingToTranslate("creatures and earth lies at"));
+        check("單位那一個字母也算有字（放寬只認整行沒字母）",
+              !TooltipPanel.nothingToTranslate("2m30s"));
+        check("中文也算有字", !TooltipPanel.nothingToTranslate("坐標"));
 
         keyTooltip();
         skillPointTooltip();

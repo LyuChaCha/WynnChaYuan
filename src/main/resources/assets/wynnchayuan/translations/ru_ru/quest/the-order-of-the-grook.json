@@ -1,12 +1,548 @@
 {
  "_meta": {
   "quest": "The Order of the Grook",
-  "count": 217,
-  "translated": 217,
+  "count": 260,
+  "translated": 216,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Order of the Grook#000": {
+   "src": "Do you...not have any manners at all?! Just running into my parents' house like that! Jeez!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#001": {
+   "src": "I oughta... Hm. Well...maybe...",
+   "dst": "Да я тебя… Хм. Хотя… может…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#002": {
+   "src": "Oh, I know! Here, go into my room real fast, and grab the letter in there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#003": {
+   "src": "Bring it to me when you do, I wanna make sure it's the right one.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#004": {
+   "src": "Go look for my letter in my bedroom, pretty please.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#005": {
+   "src": "My parents were super excited when that letter flew into my room, but magical school sounds so boring...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#006": {
+   "src": "The letter says to meet a boat captain on the broken docks next to the Seaskipper, and to \"have faith\". What does that mean?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#007": {
+   "src": "This weird looking place is actually a magical transportation hub.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#008": {
+   "src": "Each tunnel leads someplace else in the world, but the transportation portals aren't always, ehm...accurate? Let's leave it at that.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#009": {
+   "src": "There are also some secret passages around, supposedly...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#010": {
+   "src": "Psst. Are you a student at Grookwarts?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#011": {
+   "src": "This is the way in. Do you see that weird looking dirt wall?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#012": {
+   "src": "Just run straight through. Don't tell any non-wizard folks, though.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#013": {
+   "src": "Hello, new students! Over here!",
+   "dst": "Привет, новички! Сюда!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#014": {
+   "src": "So all of you will be getting two vouchers each, and with them you will need to buy one wand, and a book or tome.",
+   "dst": "Каждый получит по два талона: на них нужно купить одну палочку и книгу или том.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#015": {
+   "src": "Students, please gather your school material and start your day! One wand and one tome.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#016": {
+   "src": "Gosh, so many things, so little time!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#017": {
+   "src": "Have you picked out your wand and book yet? I chose an Avo Pheonix Wand.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#018": {
+   "src": "Wait a minute, are you new here? You look really tall!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#019": {
+   "src": "You look at the papers...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#020": {
+   "src": "Just fill in what subject you want to take and our guides will lead you to your classes.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#021": {
+   "src": "A true wizard after my own heart, seeking wisdom! Good choice. Now, choose a Practical Magic lesson.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#022": {
+   "src": "Effects and materials are intertwined in function, but each has applications independent of one another. Now, choose a Magical Creatures class.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#023": {
+   "src": "Ah, yes... As well-liked as that class is, those Wybels are more trouble than they're worth to keep sometimes. Lastly, you must choose a Magical Type class.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#024": {
+   "src": "What you take from the earth, you must give back.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#025": {
+   "src": "P-please sit down, fledgeling!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#026": {
+   "src": "It also is the element o-of knowledge, and pure magicality. Water i-is a sort of magical default, if you w-will. If it isn't focused on o-one element or another, magic ends up being water-based.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#027": {
+   "src": "Good w-work there! I h-hope I wasn't too boring with all my talking... You can go now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#028": {
+   "src": "N-now, who's n-next? And...i-is it really cold in here for all of you, too? Or, is it j-just me...?",
+   "dst": "Т-так, кто с-следующий? И… в-вам тоже тут очень холодно? Или т-только мне?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#029": {
+   "src": "If you've read my books, you know about Quartz, and how dangerous it can be if overcharged. So, of course, we have an overcharged sample here so you can feel the signs of it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#030": {
+   "src": "Depending on the formation, they can have natural effects as well. These crystals were found in Gavel's floating islands, and...well, let's say it's difficult to keep it in its case.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#031": {
+   "src": "Wybels! Pronounced like \"nibble,\" they're a rather popular pet nowadays. But you all knew that, you want to know where they came from.",
+   "dst": "Wybel! Рифмуется с «nibble», сейчас это весьма популярные питомцы. Но это вы знаете, вам интересно, откуда они взялись.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#032": {
+   "src": "The explanation that we got was that they lived in the Ahms region, and when it split open, they eventually burrowed onto the surface of the {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#033": {
+   "src": "Oh, speaking of fluff. They wooly fur never actually stops growing, ever, and neither do their hooves, their horns, or their teeth. They shed often.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#034": {
+   "src": "Wybel fluff is also able to be boiled, and it turns into a sticky molasses-like substance. It's used for candy, and it's very popular...but it's all POISON!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#035": {
+   "src": "It's POISON, I tell you! Wybel meat is horrendously inedible! It'll give you the worst stomachache of your life! The candymakers are feeding us DEATH!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#036": {
+   "src": "It's almost like they miss it, somehow. It's almost like they might be FROM outer space! It's ALMOST like they bring insanity-inducing things into our houses ON PURPOSE!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#037": {
+   "src": "Everyone says there's only nine, but WE know the truth! There's a tenth out there, an ultimately powerful one that wants us all gone. Pray you never see it, kids.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#038": {
+   "src": "Anyways, my lesson's safe from all that. All you have to do is re-order these plush Wybel toys on the stand. You'll figure it out once you're up here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#039": {
+   "src": "Welcome in, guys and gals...we're learnin' about nature magic today!",
+   "dst": "Заходите, ребята и девчата… сегодня у нас магия природы!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#040": {
+   "src": "Druidic practices tend to deal with healing more, and nurturing. When life's created, it gives off energy...and Druids use that energy for their magic.",
+   "dst": "Друиды больше про исцеление и заботу. Когда рождается жизнь, она выделяет энергию… и друиды колдуют на ней.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#041": {
+   "src": "Shamanic skills are a lot more direct, man. They take the life from other things and use that to do their stuff. It's way more varied than Druidic magic.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#042": {
+   "src": "Each has its ups and downs, man. Druidism is chill and helpful...but you can really expand your mind with Shamanism, buddies.",
+   "dst": "У каждого свои плюсы и минусы, чувак. Друидство - расслабон и польза… но шаманство реально расширяет сознание, друзья.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#043": {
+   "src": "But, it's not picky about what life you take, man! A good shaman takes from plants and animals, not people!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#044": {
+   "src": "Don't be a Slykaar, kiddos. He asked for human sacrifices, but he lived in a jungle, man! Like, what the hey! He coulda done anything else!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#045": {
+   "src": "Anyways. Our test today, little buds, is to practice some shamanic skills. We got a sick cow in the back, and you're gonna nurse it back to health.",
+   "dst": "Короче, наш тест сегодня, мои ростки, - попрактиковать шаманство. Сзади больная корова, и вы её выходите.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#046": {
+   "src": "When you think you have the right amount, activate the altar and see your results, man!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#047": {
+   "src": "You may now leave.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#048": {
+   "src": "You are about to enter the graduation room, there is no coming back after that. Are you sure?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#049": {
+   "src": "Let us start with {u}. Please come up to the stage!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Let us start with . Please come up to the stage!",
+    "file": "quest/the-order-of-the-grook.json",
+    "ratio": 0.97,
+    "reason": "placeholders"
+   }
+  },
+  "The Order of the Grook#050": {
+   "src": "Oh, hey. You're that student from earlier.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#051": {
+   "src": "Now that you've graduated you probably don't need to use the secret wall anymore.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#052": {
+   "src": "Do you think we should make it something other than dirt? My robe gets dirty easily...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Order of the Grook",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Order of the Grook#053": {
    "src": "Talk to Seasum in a tower on {p}.",
    "dst": "Поговори с Seasum в башне на {p}.",
    "role": "desc",
@@ -16,7 +552,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#001": {
+  "The Order of the Grook#054": {
    "src": "Ugh... I really, really, reeeeally don't want to go...",
    "dst": "Ох… Не хочу я туда, ну совсе-е-ем не хочу…",
    "role": "desc",
@@ -26,7 +562,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#002": {
+  "The Order of the Grook#055": {
    "src": "Hey, who are you?",
    "dst": "Эй, ты кто?",
    "role": "desc",
@@ -36,7 +572,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#003": {
+  "The Order of the Grook#056": {
    "src": "Do you... not have manners at all?! Just running into my parents' house like that! Jeez!",
    "dst": "Ты что… вообще без манер?! Вот так ворваться в дом моих родителей! Ну и ну!",
    "role": "desc",
@@ -46,17 +582,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#004": {
-   "src": "I oughta... Hm. Well... maybe...",
-   "dst": "Да я тебя… Хм. Хотя… может…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 1",
-   "speaker": "Seasum",
-   "source": "wiki"
-  },
-  "The Order of the Grook#005": {
+  "The Order of the Grook#058": {
    "src": "Oh, I know! Here, go to my room real fast, and grab the letter in there",
    "dst": "О, идея! Сбегай-ка в мою комнату и забери оттуда письмо",
    "role": "desc",
@@ -66,7 +592,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#006": {
+  "The Order of the Grook#059": {
    "src": "Bring it back to me when you do, I wanna make sure it's the right one.",
    "dst": "Потом принеси мне, хочу убедиться, что оно то самое.",
    "role": "desc",
@@ -76,7 +602,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#007": {
+  "The Order of the Grook#060": {
    "src": "Get the school invitation from Seasum room and bring it to Seasum.",
    "dst": "Возьми приглашение в школу в комнате Seasum и отнеси его Seasum.",
    "role": "desc",
@@ -86,7 +612,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#008": {
+  "The Order of the Grook#061": {
    "src": "Yep, that's the right letter. I hope you like school!",
    "dst": "Ага, то самое письмо. Надеюсь, в школе тебе понравится!",
    "role": "desc",
@@ -96,7 +622,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#009": {
+  "The Order of the Grook#062": {
    "src": "My parents were super exited when that letter flew into my room, but magical school sounds so boring...",
    "dst": "Родители были в восторге, когда письмо влетело в мою комнату, но школа магии - это же скука…",
    "role": "desc",
@@ -106,7 +632,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#010": {
+  "The Order of the Grook#063": {
    "src": "I don't even want to learn magic! I just want to write my stories and play games. You can go instead.",
    "dst": "Я даже не хочу учить магию! Хочу писать истории и играть. Иди лучше ты вместо меня.",
    "role": "desc",
@@ -116,7 +642,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#011": {
+  "The Order of the Grook#064": {
    "src": "I know the picture on the letter is of me, but you can, um...",
    "dst": "Знаю, на письме мой портрет, но ты можешь, эм…",
    "role": "desc",
@@ -126,7 +652,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#012": {
+  "The Order of the Grook#065": {
    "src": "You can say you had a growth spurt! Uh, that should work, i think!",
    "dst": "Скажешь, мол, рост скакнул! Э-э, должно прокатить, наверное!",
    "role": "desc",
@@ -136,7 +662,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#013": {
+  "The Order of the Grook#066": {
    "src": "Now go on, you should get out before my parents see you. I don't want them to find out I gave that letter away...",
    "dst": "Ну всё, уходи, пока родители тебя не заметили. Не хочу, чтоб узнали, что письмо теперь у тебя…",
    "role": "desc",
@@ -146,7 +672,7 @@
    "speaker": "Seasum",
    "source": "wiki"
   },
-  "The Order of the Grook#014": {
+  "The Order of the Grook#067": {
    "src": "Talk to the School Ship Captain on the pier next to the Seaskipper Captain.",
    "dst": "Поговори с капитаном школьного корабля на пристани рядом с капитаном парома.",
    "role": "desc",
@@ -156,7 +682,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#015": {
+  "The Order of the Grook#068": {
    "src": "Hey! What are you doing all the way over here? This dock's broken.",
    "dst": "Эй! Что ты тут делаешь, в такой дали? Причал сломан.",
    "role": "desc",
@@ -166,7 +692,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#016": {
+  "The Order of the Grook#069": {
    "src": "Oh, a student, you say. Aren't you a little old to be learning fundamental magical knowledge?",
    "dst": "А, говоришь, на учёбу? Не поздновато ли в твои годы учить основы магии?",
    "role": "desc",
@@ -176,7 +702,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#017": {
+  "The Order of the Grook#070": {
    "src": "Well, if I could see your invitation letter, then?",
    "dst": "Что ж, тогда покажешь приглашение?",
    "role": "desc",
@@ -186,7 +712,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#018": {
+  "The Order of the Grook#071": {
    "src": "...Hm. This...wow, you really look quite different than the picture. Did you get a new haircut?",
    "dst": "…Хм. Ого, на портрете тебя и не узнать. Новая стрижка, что ли?",
    "role": "desc",
@@ -196,7 +722,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#019": {
+  "The Order of the Grook#072": {
    "src": "Well, no judging from me! Keep walking to the end of the dock. Have faith!",
    "dst": "Ладно, не мне судить! Иди до конца причала. Верь в себя!",
    "role": "desc",
@@ -206,7 +732,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#020": {
+  "The Order of the Grook#073": {
    "src": "Climb aboard the ship.",
    "dst": "Поднимись на борт корабля.",
    "role": "desc",
@@ -216,7 +742,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#021": {
+  "The Order of the Grook#074": {
    "src": "Alright everyone. Ready for a magical experience?",
    "dst": "Итак, все. Готовы к волшебному путешествию?",
    "role": "desc",
@@ -226,7 +752,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#022": {
+  "The Order of the Grook#075": {
    "src": "We're headed to the Nexus. You've been told where to go. If you've forgotten, ask your fellow students!",
    "dst": "Мы плывём в Nexus. Куда идти, вам говорили. Если забыли, спросите однокашников!",
    "role": "desc",
@@ -236,7 +762,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#023": {
+  "The Order of the Grook#076": {
    "src": "If you ever need to come back here, just walk out onto the dock again. Good luck, now!",
    "dst": "Если захотите вернуться, просто снова выйдите на причал. Удачи!",
    "role": "desc",
@@ -246,7 +772,7 @@
    "speaker": "Boat Captain",
    "source": "wiki"
   },
-  "The Order of the Grook#024": {
+  "The Order of the Grook#077": {
    "src": "Follow the children to the school.",
    "dst": "Следуй за детьми в школу.",
    "role": "desc",
@@ -256,7 +782,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#025": {
+  "The Order of the Grook#078": {
    "src": "Through the wall, right? I hope my uniform doesn't get dirty.",
    "dst": "Сквозь стену, да? Лишь бы форма не испачкалась.",
    "role": "desc",
@@ -266,7 +792,7 @@
    "speaker": "Student",
    "source": "wiki"
   },
-  "The Order of the Grook#026": {
+  "The Order of the Grook#079": {
    "src": "Talk to Cidre on the school island.",
    "dst": "Поговори с Cidre на школьном острове.",
    "role": "desc",
@@ -276,17 +802,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#027": {
-   "src": "Hello new students! Over here!",
-   "dst": "Привет, новички! Сюда!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 6",
-   "speaker": "Cidre",
-   "source": "wiki"
-  },
-  "The Order of the Grook#028": {
+  "The Order of the Grook#081": {
    "src": "Welcome to the island of Grookwarts! I will be guiding and helping all the new students.",
    "dst": "Добро пожаловать на остров Grookwarts! Я буду направлять и помогать всем новичкам.",
    "role": "desc",
@@ -296,17 +812,7 @@
    "speaker": "Cidre",
    "source": "wiki"
   },
-  "The Order of the Grook#029": {
-   "src": "So all of you will be getting two vouchers each, and with them you will need to buy one wand and a book or tome.",
-   "dst": "Каждый получит по два талона: на них нужно купить одну палочку и книгу или том.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 6",
-   "speaker": "Cidre",
-   "source": "wiki"
-  },
-  "The Order of the Grook#030": {
+  "The Order of the Grook#083": {
    "src": "You can find everything here around the docks. Choosing your materials is very important, so buy the ones that speak to you!",
    "dst": "Всё найдёте здесь, у причала. Выбор снаряжения очень важен, так что берите то, что вам откликается!",
    "role": "desc",
@@ -316,7 +822,7 @@
    "speaker": "Cidre",
    "source": "wiki"
   },
-  "The Order of the Grook#031": {
+  "The Order of the Grook#084": {
    "src": "When you're done, meet with Miss Una at the front gates!",
    "dst": "Как закончите, найдите мисс Una у главных ворот!",
    "role": "desc",
@@ -326,7 +832,7 @@
    "speaker": "Cidre",
    "source": "wiki"
   },
-  "The Order of the Grook#032": {
+  "The Order of the Grook#085": {
    "src": "Purchase a wand from the Wand Merchant and a book from the Magical Book Merchant, then talk to Una.",
    "dst": "Купи палочку у торговца палочками и книгу у торговца магическими книгами, затем поговори с Una.",
    "role": "desc",
@@ -336,7 +842,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#033": {
+  "The Order of the Grook#086": {
    "src": "Alrighty, fledgeling Grooks!",
    "dst": "Итак, птенцы Grook!",
    "role": "desc",
@@ -346,7 +852,7 @@
    "speaker": "Una",
    "source": "wiki"
   },
-  "The Order of the Grook#034": {
+  "The Order of the Grook#087": {
    "src": "Seems like you all have your materials in order. You are now free to enter Grookwarts and begin your lessons.",
    "dst": "Похоже, снаряжение у всех в порядке. Можете входить в Grookwarts и начинать занятия.",
    "role": "desc",
@@ -356,7 +862,7 @@
    "speaker": "Una",
    "source": "wiki"
   },
-  "The Order of the Grook#035": {
+  "The Order of the Grook#088": {
    "src": "The door is just behind me. Walk on in!",
    "dst": "Дверь прямо за мной. Входите!",
    "role": "desc",
@@ -366,7 +872,7 @@
    "speaker": "Una",
    "source": "wiki"
   },
-  "The Order of the Grook#036": {
+  "The Order of the Grook#089": {
    "src": "Attend the welcoming dinner at Grookwarts.",
    "dst": "Посети приветственный ужин в Grookwarts.",
    "role": "desc",
@@ -376,7 +882,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#037": {
+  "The Order of the Grook#090": {
    "src": "Hush, hush! The speech will be soon!",
    "dst": "Тсс, тише! Скоро речь!",
    "role": "desc",
@@ -386,7 +892,7 @@
    "speaker": "Student",
    "source": "wiki"
   },
-  "The Order of the Grook#038": {
+  "The Order of the Grook#091": {
    "src": "Hurry, take a seat! The banquet will be starting any second now!",
    "dst": "Скорее, садись! Пир вот-вот начнётся!",
    "role": "desc",
@@ -396,7 +902,7 @@
    "speaker": "Student",
    "source": "wiki"
   },
-  "The Order of the Grook#039": {
+  "The Order of the Grook#092": {
    "src": "Magical children of Wynn and Gavel alike... We welcome you here, to our fair academy.",
    "dst": "Волшебные дети Wynn и Gavel… Добро пожаловать в нашу славную академию.",
    "role": "desc",
@@ -406,7 +912,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Order of the Grook#040": {
+  "The Order of the Grook#093": {
    "src": "Oh lordy, the headmaster! I didn't even see him come in!",
    "dst": "Батюшки, директор! Когда он успел войти?!",
    "role": "desc",
@@ -416,7 +922,7 @@
    "speaker": "Student",
    "source": "wiki"
   },
-  "The Order of the Grook#041": {
+  "The Order of the Grook#094": {
    "src": "Uhm... I don't see him at all, actually...",
    "dst": "Эм… А я его вообще не вижу…",
    "role": "desc",
@@ -426,7 +932,7 @@
    "speaker": "Student",
    "source": "wiki"
   },
-  "The Order of the Grook#042": {
+  "The Order of the Grook#095": {
    "src": "Well, I should hope you can see me now, all of you. Oh, what a splendid turnout this year!",
    "dst": "Что ж, надеюсь, теперь меня видят все. О, какое славное пополнение в этом году!",
    "role": "desc",
@@ -436,7 +942,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#043": {
+  "The Order of the Grook#096": {
    "src": "Apologies, I simply can't resist a bit of theatrics. But now, it is time to listen and learn, fledgeling Grooks.",
    "dst": "Простите, не могу удержаться от театральности. Но теперь время слушать и учиться, птенцы Grook.",
    "role": "desc",
@@ -446,7 +952,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#044": {
+  "The Order of the Grook#097": {
    "src": "We knowledged mages and scholars, the Order of the Grook, are pleased to see each of you here. Whether you be a young mind aching with curiosity...",
    "dst": "Мы, учёные маги и мудрецы Ордена Grook, рады видеть здесь каждого из вас. Будь вы юный ум, изнывающий от любопытства…",
    "role": "desc",
@@ -456,7 +962,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#045": {
+  "The Order of the Grook#098": {
    "src": "...or an old hat looking to refine their knowledge, all seeking to learn magic are welcomed here. We expect great things of you.",
    "dst": "…или бывалый мастер, желающий отточить знания, - здесь рады всем, кто жаждет учиться магии. Мы ждём от вас великого.",
    "role": "desc",
@@ -466,7 +972,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#046": {
+  "The Order of the Grook#099": {
    "src": "Now, to business. You will write your schedules for the semester. Look down on your paper and write in what classes you wish to participate in.",
    "dst": "А теперь к делу. Составьте расписание на семестр. Взгляните на лист и впишите занятия, которые хотите посещать.",
    "role": "desc",
@@ -476,7 +982,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#047": {
+  "The Order of the Grook#100": {
    "src": "You will need to choose four classes, one from each category. The categories are: Elemental Magic, Practical Magic, Magical Creatures, and Types of magic.",
    "dst": "Выберите четыре предмета, по одному из каждой категории: Магия стихий, Практическая магия, Магические существа и Виды магии.",
    "role": "desc",
@@ -486,7 +992,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#048": {
+  "The Order of the Grook#101": {
    "src": "The schedule book is at the end of the table. Worry not, there is no limit on class size. If you wish to take it, you may take it.",
    "dst": "Книга расписания в конце стола. Не волнуйтесь, мест в классах сколько угодно. Хотите предмет - берите.",
    "role": "desc",
@@ -496,7 +1002,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#049": {
+  "The Order of the Grook#102": {
    "src": "Choose your classes.",
    "dst": "Выбери занятия.",
    "role": "desc",
@@ -506,7 +1012,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#050": {
+  "The Order of the Grook#103": {
    "src": "Talk to the Ghost Guide and attend your chosen classes (The Ghost Guide will lead you to each class):",
    "dst": "Поговори с Призрачным проводником и посети выбранные занятия (он проводит на каждое):",
    "role": "desc",
@@ -516,7 +1022,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#051": {
+  "The Order of the Grook#104": {
    "src": "I'll be leading you to your classes, everyone! Talk to me when you're ready to go.",
    "dst": "Я провожу вас на занятия! Как будете готовы, скажите мне.",
    "role": "desc",
@@ -526,7 +1032,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#052": {
+  "The Order of the Grook#105": {
    "src": "Alright, fledgeling Grooks! Your first class is starting in just a minute. Follow me!",
    "dst": "Итак, птенцы Grook! Первое занятие вот-вот начнётся. За мной!",
    "role": "desc",
@@ -536,7 +1042,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#053": {
+  "The Order of the Grook#106": {
    "src": "Here are the elemental classes. Step on in. Your magical journey truly begins here!",
    "dst": "Вот классы стихий. Заходите. Здесь по-настоящему начинается ваш путь в магии!",
    "role": "desc",
@@ -546,7 +1052,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#054": {
+  "The Order of the Grook#107": {
    "src": "Now, all of you. Sit. Listen.",
    "dst": "Итак, все. Сядьте. Слушайте.",
    "role": "desc",
@@ -556,7 +1062,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#055": {
+  "The Order of the Grook#108": {
    "src": "Earth is an element of great power. Versatile and everpresent, nearly as the air.",
    "dst": "Земля - стихия великой силы. Гибкая и вездесущая, почти как воздух.",
    "role": "desc",
@@ -566,7 +1072,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#056": {
+  "The Order of the Grook#109": {
    "src": "Thunder provides force... Earth provides sheer power. The difference... Force choose its own path. Power is force, directed.",
    "dst": "Гром даёт напор… Земля - чистую мощь. Разница… Напор сам выбирает путь. Мощь - это направленный напор.",
    "role": "desc",
@@ -576,7 +1082,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#057": {
+  "The Order of the Grook#110": {
    "src": "Earth is also the earth itself. Stone, metal, trees and soil. Trees sway in the wind, but do not break. And the mountains do not crumble.",
    "dst": "Земля - это и сама земля. Камень, металл, деревья, почва. Деревья гнутся на ветру, но не ломаются. А горы не рушатся.",
    "role": "desc",
@@ -586,7 +1092,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#058": {
+  "The Order of the Grook#111": {
    "src": "The Touroto, stepped in earthly magic, are nearly invincible to all but themselves. It is proof of the earth's strength.",
    "dst": "Touroto, пропитанных магией земли, почти ничто не ранит, кроме них самих. Вот доказательство силы земли.",
    "role": "desc",
@@ -596,7 +1102,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#059": {
+  "The Order of the Grook#112": {
    "src": "The Doguns... They were masters of the earth, and fire alike, shaping caverns to their will... And now, nearly extinct. A terrible crime...",
    "dst": "Dogun… Они владели землёй и огнём, творя пещеры по своей воле… А теперь почти вымерли. Страшное преступление…",
    "role": "desc",
@@ -606,7 +1112,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#060": {
+  "The Order of the Grook#113": {
    "src": "But we shall honor them, and move forwards. We shall strike the earth and claim it to be our own.",
    "dst": "Но мы почтим их и пойдём дальше. Мы ударим по земле и назовём её своей.",
    "role": "desc",
@@ -616,7 +1122,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#061": {
+  "The Order of the Grook#114": {
    "src": "The tome directs the earth's force. Take it and utilize it to shatter the stones I summon.",
    "dst": "Том направляет силу земли. Возьмите его и разбейте камни, что я призову.",
    "role": "desc",
@@ -626,7 +1132,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#062": {
+  "The Order of the Grook#115": {
    "src": "The darkest parts of the stones are weak points. Find them, and learn the power of the earth.",
    "dst": "Самые тёмные места камней - слабые точки. Найдите их и познайте силу земли.",
    "role": "desc",
@@ -636,7 +1142,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#063": {
+  "The Order of the Grook#116": {
    "src": "You know the earth's power, fledgeling. There is nothing more for you here. Go.",
    "dst": "Сила земли тебе ведома, птенец. Больше тебе здесь нечему учиться. Иди.",
    "role": "desc",
@@ -646,7 +1152,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#064": {
+  "The Order of the Grook#117": {
    "src": "Hee hee, take your seats, take your seats, TAKE. YOUR. SEATS. A marvelous batch of eager students today!!",
    "dst": "Хи-хи, садитесь, садитесь, СА. ДИ. ТЕСЬ. Какая чудная партия пылких учеников сегодня!!",
    "role": "desc",
@@ -656,7 +1162,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#065": {
+  "The Order of the Grook#118": {
    "src": "Almost as marvelous as the powers of Thunder! Energy! Pure, unfocused energy! Devastation, desolation, industrialization all alike!",
    "dst": "Почти такая же чудная, как сила Грома! Энергия! Чистая, несфокусированная энергия! Разрушение, опустошение, индустриализация - всё едино!",
    "role": "desc",
@@ -666,7 +1172,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#066": {
+  "The Order of the Grook#119": {
    "src": "Yes, yes! Thunder is technical and versatile! Unreliable to all those who don't know how to rely on it, to those dexterous of hand and mind!",
    "dst": "Да, да! Гром техничен и гибок! Ненадёжен для тех, кто не умеет на него полагаться, но не для ловких рукой и умом!",
    "role": "desc",
@@ -676,7 +1182,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#067": {
+  "The Order of the Grook#120": {
    "src": "But woe, woe, Thunder is reviled, reviled! Pure energy has no morality! If used for good, yes yes, ho hum, but if used for evil, oh, burn the witch! Burn, burn! Evil, they say! Pah!!",
    "dst": "Но горе, горе, Гром презирают, презирают! У чистой энергии нет морали! Для добра - да-да, ну-ну, а для зла - о, сжечь ведьму! Жги, жги! Зло, говорят! Тьфу!!",
    "role": "desc",
@@ -686,7 +1192,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#068": {
+  "The Order of the Grook#121": {
    "src": "All magicks are unaligned with silly concepts such as morality. They are pure chaos! But Thunder, the element of energy and force, it seems ever so EASY to use for evil...",
    "dst": "Любой магии чужды глупые понятия вроде морали. Она - чистый хаос! Но Гром, стихию энергии и напора, так ЛЕГКО обратить во зло…",
    "role": "desc",
@@ -696,7 +1202,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#069": {
+  "The Order of the Grook#122": {
    "src": "And evil has found it, found it! CORRUPTION!! DEMONS!! Forces anathema to us, but knowleged in the ways of force and thus, thunder! So terrible, terrible, and thunder mages feared, feared...",
    "dst": "И зло нашло его, нашло! СКВЕРНА!! ДЕМОНЫ!! Силы, нам враждебные, но сведущие в напоре, а значит, и в громе! Ужас, ужас, и магов грома боялись, боялись…",
    "role": "desc",
@@ -706,7 +1212,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#070": {
+  "The Order of the Grook#123": {
    "src": "And then, then! Joyous day, the Corkians arrived with their marvelous machines, and their electromagic! Thunder controlled, thunder tamed! The wonder of it all!",
    "dst": "А потом, потом! Радостный день: пришли жители Corkus с чудесными машинами и электромагией! Гром обуздан, гром приручён! Вот чудо-то!",
    "role": "desc",
@@ -716,7 +1222,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#071": {
+  "The Order of the Grook#124": {
    "src": "Electromagic makes handles crank, gears spin, metal move, gives sheer stones the power to THINK, and to PLAN! A Corkian original, and a splendid, splendid development reintroduced!",
    "dst": "Электромагия крутит рукояти, вертит шестерни, двигает металл, даёт голым камням силу ДУМАТЬ и ПЛАНИРОВАТЬ! Изобретение Corkus, чудесное, чудесное, вновь с нами!",
    "role": "desc",
@@ -726,7 +1232,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#072": {
+  "The Order of the Grook#125": {
    "src": "And so, you shall see for yourselves! Electromagic at work! You will control thunder and electricity, and make the machines bend to your world today, today, this shocking day!",
    "dst": "И вы сами увидите! Электромагия в деле! Сегодня вы обуздаете гром и молнию, заставите машины покориться вам - в этот искромётный день!",
    "role": "desc",
@@ -736,7 +1242,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#073": {
+  "The Order of the Grook#126": {
    "src": "The mechanism is behind me now! Come up, come up! See the power of thunder, shackled by our whims, won't you, {u}?",
    "dst": "Механизм прямо за мной! Сюда, сюда! Узрите силу грома, скованную нашей волей, а, {u}?",
    "role": "desc",
@@ -746,7 +1252,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#074": {
+  "The Order of the Grook#127": {
    "src": "Whee hee hee! Thunder tamed, thunder shackled, and your magical wings unbound by such petty concepts, {u}! What a show!",
    "dst": "Ухи-хи-хи! Гром приручён, гром скован, а твои магические крылья свободны от мелких понятий, {u}! Вот это шоу!",
    "role": "desc",
@@ -756,7 +1262,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#075": {
+  "The Order of the Grook#128": {
    "src": "Expand your knowledge ever further, further! Your task is complete, complete, and your next awaits!",
    "dst": "Расширяй знания всё дальше, дальше! Задание выполнено, выполнено, и тебя ждёт следующее!",
    "role": "desc",
@@ -766,7 +1272,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#076": {
+  "The Order of the Grook#129": {
    "src": "Aah, wow! Everyone s-sure got here quick...",
    "dst": "Ах, ого! Все т-так быстро пришли…",
    "role": "desc",
@@ -776,7 +1282,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#077": {
+  "The Order of the Grook#130": {
    "src": "Welcome, w-welcome. The Water element class is...certainly an interesting one, I-I'd hope... Because water doesn't j-just pertain to, well, w-water...",
    "dst": "Добро п-пожаловать. Урок стихии Воды… надеюсь, в-вам будет интересно… Ведь вода к-касается не только, ну, в-воды…",
    "role": "desc",
@@ -786,7 +1292,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#078": {
+  "The Order of the Grook#131": {
    "src": "It also the element o-of knowledge, and pure magicality. Water i-is sort of magical default, If you w-will. If it isn't focused on on o-one element or another, magic ends up being water-based",
    "dst": "Это ещё и стихия з-знаний и чистой магии. Вода - это как бы магия по у-умолчанию. Если магия не сосредоточена на к-какой-то стихии, она выходит водной",
    "role": "desc",
@@ -796,7 +1302,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#079": {
+  "The Order of the Grook#132": {
    "src": "Learning a-about the water element and e-expanding your horizons can allow you to cast spells easier... C-control the flow of magic better, you see.",
    "dst": "Изучение в-воды и широкий к-кругозор помогают легче колдовать… Л-лучше управлять потоком магии, понимаете.",
    "role": "desc",
@@ -806,7 +1312,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#080": {
+  "The Order of the Grook#133": {
    "src": "Most aquatic creatures are t-tied to water, though creatures that live in icy or snowy environments are, t-too...often, they are also connected to air, but not always.",
    "dst": "Большинство водных созданий с-связаны с водой, как и т-те, что живут во льдах и снегах… часто они связаны и с воздухом, но не всегда.",
    "role": "desc",
@@ -816,7 +1322,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#081": {
+  "The Order of the Grook#134": {
    "src": "In a-addition, many holy artifacts are enchanted with water magic... S-something about how it's a pure type of energy, I believe.",
    "dst": "К-кроме того, многие святыни зачарованы водной магией… В-вроде бы потому, что это чистая энергия.",
    "role": "desc",
@@ -826,7 +1332,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#082": {
+  "The Order of the Grook#135": {
    "src": "Lastly, healing abilities are b-bolstered by water magic. Just knowing magic well d-doesn't help, but actually having artifacts charged w-with water magic can increase healing capabilities.",
    "dst": "И наконец, водная магия у-усиливает исцеление. Одно знание магии н-не поможет, но артефакты, заряженные в-водой, лечат сильнее.",
    "role": "desc",
@@ -836,7 +1342,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#083": {
+  "The Order of the Grook#136": {
    "src": "N-now, for your test, I have...um, a...a test. Anyone who wants to try it f-first, just go up and start.",
    "dst": "Т-теперь ваш тест… у меня… эм, т-тест. Кто хочет п-первым, просто подходите и начинайте.",
    "role": "desc",
@@ -846,7 +1352,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#084": {
+  "The Order of the Grook#137": {
    "src": "Good w-work there! I h-hope it wasn't too boring with my talking... You can go now.",
    "dst": "Х-хорошая работа! Н-надеюсь, мои речи не слишком утомили… Можешь идти.",
    "role": "desc",
@@ -856,17 +1362,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#085": {
-   "src": "N-now, who's n-next? And... i-is it really cold in here for all of you, too? Or, is it j-just me?",
-   "dst": "Т-так, кто с-следующий? И… в-вам тоже тут очень холодно? Или т-только мне?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#086": {
+  "The Order of the Grook#139": {
    "src": "Good to see a decent turnout this year for my class. Too dangerous, pah! You can take this just fine.",
    "dst": "Приятно, что в этом году на мой урок пришло немало. «Слишком опасно», тьфу! Вы справитесь.",
    "role": "desc",
@@ -876,7 +1372,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#087": {
+  "The Order of the Grook#140": {
    "src": "Anyways. The fire element class. Many misunderstand just what fire stands for... but after today, you will leave with courage in your hearts.",
    "dst": "Итак. Урок стихии огня. Многие не понимают, что значит огонь… но сегодня вы уйдёте с отвагой в сердце.",
    "role": "desc",
@@ -886,7 +1382,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#088": {
+  "The Order of the Grook#141": {
    "src": "Fire is, of course, related to physical fire, magma, etcetera. A burning torch is a source of fire magic, but that is not the only source of it.",
    "dst": "Огонь, конечно, связан с настоящим пламенем, магмой и так далее. Горящий факел - источник огненной магии, но не единственный.",
    "role": "desc",
@@ -896,7 +1392,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#089": {
+  "The Order of the Grook#142": {
    "src": "Courage, bravery, and defensiveness are also tied to the fire element. Those stalwart and selfless, willing to sacrifice themselves for others.",
    "dst": "С огнём связаны и храбрость, отвага, стойкость в защите. Те, кто твёрд и бескорыстен, готов пожертвовать собой ради других.",
    "role": "desc",
@@ -906,7 +1402,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#090": {
+  "The Order of the Grook#143": {
    "src": "In addition, water is tied to healing magic, fire is tied to self-healing. Regenerative capacity if you will. Many fire-based artifacts heal the user passively.",
    "dst": "Кроме того, вода связана с исцелением, а огонь - с самоисцелением. С регенерацией, если угодно. Многие огненные артефакты пассивно лечат владельца.",
    "role": "desc",
@@ -916,7 +1412,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#091": {
+  "The Order of the Grook#144": {
    "src": "And while they are on the verge of extinction after the war in the {p}, the Dogun species used to embody fire and earth magic alike. It is a shame what happened to them.",
    "dst": "И хотя после войны в {p} они на грани вымирания, Dogun некогда воплощали магию огня и земли. Жаль, что с ними так вышло.",
    "role": "desc",
@@ -926,7 +1422,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#092": {
+  "The Order of the Grook#145": {
    "src": "Unfortunately, it is also notable that corrupted creatures are often connected to fire, by nature of the corruption seeming to bring heat wherever it goes...",
    "dst": "Увы, стоит отметить: осквернённые существа часто связаны с огнём, ведь Скверна, похоже, несёт жар всюду, куда приходит…",
    "role": "desc",
@@ -936,7 +1432,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#093": {
+  "The Order of the Grook#146": {
    "src": "But aside from that, onto our practical test. You will all come up to me, starting with {u}, and hone courage. I will be casting balls of fire at you.",
    "dst": "Но оставим это, перейдём к практике. Подходите ко мне по очереди, начиная с {u}, и закаляйте храбрость. Я буду метать в вас огненные шары.",
    "role": "desc",
@@ -946,7 +1442,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#094": {
+  "The Order of the Grook#147": {
    "src": "You will need to dodge these fire charges. If you are hit, it counts as a failure. Now. Let's get started, {u}.",
    "dst": "Уклоняйтесь от огненных зарядов. Попадание - провал. Итак. Начнём, {u}.",
    "role": "desc",
@@ -956,7 +1452,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#095": {
+  "The Order of the Grook#148": {
    "src": "Are you ready? Summon your bravery.",
    "dst": "Ну что, начнём? Призови храбрость.",
    "role": "desc",
@@ -966,7 +1462,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#096": {
+  "The Order of the Grook#149": {
    "src": "Well done {u}, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
    "dst": "Молодец, {u}, птенец Grook! Оттачивай чутьё и дальше. Однажды тебя ждёт слава героя, уверен.",
    "role": "desc",
@@ -976,7 +1472,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#097": {
+  "The Order of the Grook#150": {
    "src": "Dismissed, {u}. You may leave. Now do I have any volunteers for the next round...?",
    "dst": "Всё, {u}. Можешь идти. Итак, есть добровольцы на следующий раунд…?",
    "role": "desc",
@@ -986,7 +1482,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#098": {
+  "The Order of the Grook#151": {
    "src": "Arright class, the sooner we start, the sooner we finish, so everyone, take your seats! You'll be getting up soon enough anyways!",
    "dst": "Так, класс, раньше начнём - раньше кончим, так что все по местам! Всё равно скоро вставать!",
    "role": "desc",
@@ -996,7 +1492,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#099": {
+  "The Order of the Grook#152": {
    "src": "Movin' right along. Air! You're breathing it, we're surrounded by it, but ain'tcha know what it's all about yet, so pay attention.",
    "dst": "Едем дальше. Воздух! Вы им дышите, он повсюду, но вы ж ещё не знаете, в чём его суть, так что слушайте.",
    "role": "desc",
@@ -1006,7 +1502,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#100": {
+  "The Order of the Grook#153": {
    "src": "Air is an element of freedom! speed, wind and agility. if you're trained well with agility, attacks'll seem like they just phase through ya!",
    "dst": "Воздух - стихия свободы! Скорость, ветер и проворство. Натренируешь проворство - и атаки будто пройдут сквозь тебя!",
    "role": "desc",
@@ -1016,7 +1512,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#101": {
+  "The Order of the Grook#154": {
    "src": "But over and above that, 'cause of air's ever-presence, it's one of the most versatile kinda magic in existence. People use it in all sorts of ways.",
    "dst": "Но главное, раз воздух везде, это один из самых гибких видов магии на свете. Его применяют как угодно.",
    "role": "desc",
@@ -1026,7 +1522,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#102": {
+  "The Order of the Grook#155": {
    "src": "Over in Gavel, the Bantisu Air Monks have managed to extend their sight by the wind! They use it to help guide folks who get lost in that canyon over there.",
    "dst": "В Gavel воздушные монахи Bantisu научились видеть дальше при помощи ветра! Так они выводят тех, кто заплутал в тамошнем каньоне.",
    "role": "desc",
@@ -1036,7 +1532,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#103": {
+  "The Order of the Grook#156": {
    "src": "Many winged sorts a'creatures are tied to air, but not all of them. Some magic users just straight-out float! Now wouldn't that be nice, eh?",
    "dst": "Многие крылатые твари связаны с воздухом, но не все. А некоторые маги просто парят! Вот было бы здорово, а?",
    "role": "desc",
@@ -1046,7 +1542,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#104": {
+  "The Order of the Grook#157": {
    "src": "Due to their tenuous physicality, souls and spirits are also often related to air magic. Make ya wonder if you could just blow ghost out of the window!",
    "dst": "Души и духи, из-за своей зыбкой плоти, тоже часто связаны с магией воздуха. Интересно, можно ли просто выдуть призрака в окно!",
    "role": "desc",
@@ -1056,7 +1552,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#105": {
+  "The Order of the Grook#158": {
    "src": "And finally, some old, old tales tell of a woman who crossed the sea before it was calmed using air magic to fly. 's just an old legend, but an interesting one.",
    "dst": "И напоследок: старые-престарые байки говорят о женщине, что перелетела море на магии воздуха, ещё до того как оно утихло. Легенда, но занятная.",
    "role": "desc",
@@ -1066,7 +1562,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#106": {
+  "The Order of the Grook#159": {
    "src": "Now onto the practical test! It's time to get those bones a-shakin'! You'll be running an obstacle course I have set up, but with a twist.",
    "dst": "А теперь практика! Пора растрясти косточки! Пробежите полосу препятствий, что я построил, но с подвохом.",
    "role": "desc",
@@ -1076,7 +1572,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#107": {
+  "The Order of the Grook#160": {
    "src": "Everyone up to the table! You'll need this feather with ya to get through.It'll help you jump higher!",
    "dst": "Все к столу! Без этого пера не пройдёте. Оно поможет прыгать выше!",
    "role": "desc",
@@ -1086,7 +1582,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#108": {
+  "The Order of the Grook#161": {
    "src": "The goal is to grab three crystal balls I put in the obstacle course. once you found 'em, bring 'em back to me.",
    "dst": "Цель - собрать три хрустальных шара, что я спрятал на полосе. Как найдёте, несите мне.",
    "role": "desc",
@@ -1096,7 +1592,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#109": {
+  "The Order of the Grook#162": {
    "src": "The course is behind me. Shake a leg now!",
    "dst": "Полоса за мной. Живее!",
    "role": "desc",
@@ -1106,7 +1602,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#110": {
+  "The Order of the Grook#163": {
    "src": "Lessee here, one, two, three, yes indeedy! You got through that pretty quick!",
    "dst": "Так-с, один, два, три, точно! Ну и скорость у тебя!",
    "role": "desc",
@@ -1116,7 +1612,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#111": {
+  "The Order of the Grook#164": {
    "src": "Now, if you'll just hand me back that feather ya got there...",
    "dst": "А теперь верни-ка мне то перо…",
    "role": "desc",
@@ -1126,7 +1622,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#112": {
+  "The Order of the Grook#165": {
    "src": "...then you'll be all done! Congrats, little fledge, you've finished this class! Now get on along to your next one!",
    "dst": "…и всё готово! Поздравляю, птенчик, этот урок пройден! Беги на следующий!",
    "role": "desc",
@@ -1136,7 +1632,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#113": {
+  "The Order of the Grook#166": {
    "src": "Moving swiftly on, the next class is just across the way. Follow me!",
    "dst": "Не мешкаем, следующий урок прямо напротив. За мной!",
    "role": "desc",
@@ -1146,7 +1642,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#114": {
+  "The Order of the Grook#167": {
    "src": "Alright everyone. Take a seat but don't get comfy. You'll be getting up soon. Hope you brought your reading glasses",
    "dst": "Итак, все. Садитесь, но не устраивайтесь. Скоро вставать. Надеюсь, очки для чтения с собой",
    "role": "desc",
@@ -1156,7 +1652,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#115": {
+  "The Order of the Grook#168": {
    "src": "See, I'll just be giving you short primer, then sending you out for the practical exercise, Since I have all this written down already.",
    "dst": "Я лишь дам краткое введение и отправлю вас на практику, ведь у меня уже всё записано.",
    "role": "desc",
@@ -1166,7 +1662,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#116": {
+  "The Order of the Grook#169": {
    "src": "The basis of this class is that many materials, whether you know it or not, are inherently magical in some way or another. If you want to be artificer, you need to know how each one works.",
    "dst": "Суть урока: многие материалы, знаете вы это или нет, так или иначе магические по природе. Хотите быть артефактором - знайте, как работает каждый.",
    "role": "desc",
@@ -1176,7 +1672,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#117": {
+  "The Order of the Grook#170": {
    "src": "Thankfully, the field of artifice is very popular one, so there's a wealth of knowledge out there on magical materials and how to use them efficiently.",
    "dst": "К счастью, артефакторика очень популярна, так что о магических материалах и их применении знаний полно.",
    "role": "desc",
@@ -1186,7 +1682,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#118": {
+  "The Order of the Grook#171": {
    "src": "Heck, Wynn soldiers are cobbling together rings out of copper and old spider silk, so you know this sort of thing is easy to get to. Tough to master, though!",
    "dst": "Да что там, солдаты Wynn мастерят кольца из меди и старой паутины, так что порог входа низкий. А вот освоить трудно!",
    "role": "desc",
@@ -1196,7 +1692,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#119": {
+  "The Order of the Grook#172": {
    "src": "For those intimidated, you don't need much crafting knowledge for this class; you'll be reading up on everything you need to know in the back.",
    "dst": "Не пугайтесь: особых знаний ремесла на уроке не нужно; всё необходимое прочтёте в глубине класса.",
    "role": "desc",
@@ -1206,7 +1702,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#120": {
+  "The Order of the Grook#173": {
    "src": "You all be crafting a magical amulet using different items. I've stockpiled in the back; everyone will be crafting a different kind of necklace.",
    "dst": "Вы сделаете магический амулет из разных предметов. Я сложил их в глубине; у каждого будет своё ожерелье.",
    "role": "desc",
@@ -1216,7 +1712,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#121": {
+  "The Order of the Grook#174": {
    "src": "Here's a note on what you should craft. Once you have the materials you think you need, come to the crafting table. It's enchanted, and will craft the item for you if you have what you need.",
    "dst": "Вот записка, что нужно сделать. Как соберёте нужное, идите к верстаку. Он зачарован и сам изготовит предмет, если всего хватает.",
    "role": "desc",
@@ -1226,7 +1722,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#122": {
+  "The Order of the Grook#175": {
    "src": "Mhm, that's the ticket, {u}. If you're interested in learning more, you can probably find my books in most of the libraries.",
    "dst": "Угу, вот так, {u}. Если хочешь узнать больше, мои книги найдутся почти в любой библиотеке.",
    "role": "desc",
@@ -1236,7 +1732,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#123": {
+  "The Order of the Grook#176": {
    "src": "Your feathers are coming out just nicely, fledgeling. You can scoot off to your next class now",
    "dst": "Перышки у тебя растут что надо, птенец. Можешь бежать на следующий урок",
    "role": "desc",
@@ -1246,7 +1742,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#124": {
+  "The Order of the Grook#177": {
    "src": "Okay class, everyone take your seats, and listen up. This class is going to be interesting.",
    "dst": "Так, класс, все садитесь и слушайте. Урок будет интересный.",
    "role": "desc",
@@ -1256,7 +1752,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#125": {
+  "The Order of the Grook#178": {
    "src": "As you know, this class is all about magical effects, specifically those tied to various materials, and how they'll affect you!",
    "dst": "Как вы знаете, этот урок о магических эффектах, особенно тех, что связаны с разными материалами, и о том, как они на вас действуют!",
    "role": "desc",
@@ -1266,7 +1762,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#126": {
+  "The Order of the Grook#179": {
    "src": "This is going to be a hands-on learning experience, so those of you with weak constitutions may request to skip the demonstration if you're concerned for your health.",
    "dst": "Урок будет практическим, так что те, у кого слабое здоровье, могут попросить пропустить демонстрацию, если беспокоятся.",
    "role": "desc",
@@ -1276,7 +1772,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#127": {
+  "The Order of the Grook#180": {
    "src": "If you've read my books, you know about Quartz, and how dangerous it can be if overcharged. So, of course, we have overcharged sample so you can feel the signs of it.",
    "dst": "Кто читал мои книги, знает о кварце и о том, как он опасен при перезарядке. Так что у нас, конечно, есть перезаряженный образец, чтобы вы ощутили признаки.",
    "role": "desc",
@@ -1286,7 +1782,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#128": {
+  "The Order of the Grook#181": {
    "src": "It may be explosive, but it will be in a controlled manner. The worst that'll happen to you is your face will get a bit dusty, or your glasses will fall off.",
    "dst": "Он может взорваться, но под контролем. Худшее, что вас ждёт, - пыль на лице или упавшие очки.",
    "role": "desc",
@@ -1296,7 +1792,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#129": {
+  "The Order of the Grook#182": {
    "src": "Magical crystals, as we have to my left here, can be charged with all kinds of different effects. This is an incredibly valuable aspect for artificers.",
    "dst": "Магические кристаллы, как те, что слева от меня, можно зарядить самыми разными эффектами. Для артефакторов это бесценно.",
    "role": "desc",
@@ -1306,7 +1802,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#130": {
+  "The Order of the Grook#183": {
    "src": "Depending on the formation, they can have natural effects as well. These crystals were found in Gavel's flouting islands, and...well, let's say it's difficult to keep it in its case.",
    "dst": "В зависимости от строения у них бывают и природные эффекты. Эти нашли на парящих островах Gavel, и… скажем так, в футляре их удержать непросто.",
    "role": "desc",
@@ -1316,7 +1812,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#131": {
+  "The Order of the Grook#184": {
    "src": "Our last sample is of cosmic material, and if you're sickened easily, then don't examine it. Its effects are mostly unknown, but one thing's certain...",
    "dst": "Последний образец - космическая материя; если вас легко мутит, не разглядывайте его. Его эффекты почти неизвестны, но одно ясно…",
    "role": "desc",
@@ -1326,7 +1822,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#132": {
+  "The Order of the Grook#185": {
    "src": "...it's dangerous to be exposed for long periods. Now, each of you will go back behind me, and examine and interact with each of the three samples provided.",
    "dst": "…долго находиться рядом опасно. А теперь каждый пройдите за меня, осмотрите и потрогайте все три образца.",
    "role": "desc",
@@ -1336,7 +1832,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#133": {
+  "The Order of the Grook#186": {
    "src": "Once you've done so, then you can leave. Hands-on training is the best way to learn, after all.",
    "dst": "После этого можете идти. В конце концов, практика - лучший способ учиться.",
    "role": "desc",
@@ -1346,7 +1842,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#134": {
+  "The Order of the Grook#187": {
    "src": "Well done. How did that feel?",
    "dst": "Отлично. Ну, каково?",
    "role": "desc",
@@ -1356,7 +1852,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#135": {
+  "The Order of the Grook#188": {
    "src": "Personally, the void sample is the most interesting to me. You may now leave the classroom.",
    "dst": "Лично мне интереснее всего образец Пустоты. Теперь можешь покинуть класс.",
    "role": "desc",
@@ -1366,7 +1862,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#136": {
+  "The Order of the Grook#189": {
    "src": "There's a bit of a walk to your next class. Follow me.",
    "dst": "До следующего урока придётся пройтись. За мной.",
    "role": "desc",
@@ -1376,7 +1872,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#137": {
+  "The Order of the Grook#190": {
    "src": "These staircases were supposed to move, but... That was too much work to put together, apparently. They're a pain to navigate, aren't they?",
    "dst": "Эти лестницы должны были двигаться, но… видимо, собрать такое оказалось слишком хлопотно. Ходить по ним мучение, да?",
    "role": "desc",
@@ -1386,7 +1882,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#138": {
+  "The Order of the Grook#191": {
    "src": "Alright, fledgeling grooks. Time to hit you all with the info you're really here for!",
    "dst": "Итак, птенцы Grook. Пора огорошить вас тем, ради чего вы пришли!",
    "role": "desc",
@@ -1396,17 +1892,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#139": {
-   "src": "Wybels! Pronounced like nibble, they're a rather popular pet nowadays. But you all knew that, you want to know where they came from.",
-   "dst": "Wybel! Рифмуется с «nibble», сейчас это весьма популярные питомцы. Но это вы знаете, вам интересно, откуда они взялись.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 12",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#140": {
+  "The Order of the Grook#193": {
    "src": "The explanation we got was that they lived in the Ahms region, and when it split open, they eventually burrowed into the surface of the {p}.",
    "dst": "Нам объяснили, что они жили в регионе Ahms, а когда он раскололся, в итоге прорыли путь на поверхность {p}.",
    "role": "desc",
@@ -1416,7 +1902,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#141": {
+  "The Order of the Grook#194": {
    "src": "But no one actually KNOWS for sure. That means they. Could. Be. ANYTHING! What could lie beneath that veneer of fluff and playful demeanor?!",
    "dst": "Но никто толком НЕ ЗНАЕТ. Значит, они. Могут. Быть. ЧЕМ УГОДНО! Что скрывается под пухом и игривым видом?!",
    "role": "desc",
@@ -1426,7 +1912,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#142": {
+  "The Order of the Grook#195": {
    "src": "Oh, speaking of fluff. The wooly fur never actually stops growing, ever, and neither do their hooves, their horns, or their teeth. They shed often.",
    "dst": "О, кстати о пухе. Их шерсть никогда не перестаёт расти, как и копыта, рога и зубы. Линяют они часто.",
    "role": "desc",
@@ -1436,7 +1922,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#143": {
+  "The Order of the Grook#196": {
    "src": "These materials have innate magical energy to them. Stable like lodestone and reliable like quartz, but not as powerful as either. Interesting, that a fluffball has that potential!!",
    "dst": "В этих материалах есть врождённая магическая энергия. Стабильная, как магнетит, надёжная, как кварц, но слабее обоих. Надо же, какой потенциал у комка пуха!!",
    "role": "desc",
@@ -1446,7 +1932,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#144": {
+  "The Order of the Grook#197": {
    "src": "Wybel fluff is also able to be boiled, and it turns into sticky molasses-like substance. It's used for candy, and its very popular...but it's all POISON!!",
    "dst": "Пух Wybel ещё можно варить, и он становится липкой патокой. Из неё делают конфеты, они очень популярны… но это ЯД!!",
    "role": "desc",
@@ -1456,7 +1942,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#145": {
+  "The Order of the Grook#198": {
    "src": "It's POISON, I tell you! Wyble meat is horrendously inedible! It'll give you the worst stomachache of your life! The candymakers are feeding us DEATH!",
    "dst": "Это ЯД, говорю вам! Мясо Wybel совершенно несъедобно! Живот будет болеть как никогда в жизни! Кондитеры кормят нас СМЕРТЬЮ!",
    "role": "desc",
@@ -1466,7 +1952,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#146": {
+  "The Order of the Grook#199": {
    "src": "And the worst part is, if too much fluff gathers up in one spot, ANOTHER WYBEL APPEARS! They reproduce by budding!! Growing out of lint and dust! It's a no-win game they're makin' us play!",
    "dst": "А хуже всего: если пух скопится в одном месте, ПОЯВИТСЯ ЕЩЁ ОДИН WYBEL! Они размножаются почкованием!! Растут из пыли и ворса! Это игра, в которой нам не выиграть!",
    "role": "desc",
@@ -1476,7 +1962,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#147": {
+  "The Order of the Grook#200": {
    "src": "Wybels do have some good use though...they can sniff out sources of cosmic magic, like a pig sniffs out truffles. Sometimes they even try to take it home.",
    "dst": "Хотя кое-какая польза от Wybel есть… они чуют источники космической магии, как свинья трюфели. Иногда даже тащат их домой.",
    "role": "desc",
@@ -1486,7 +1972,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#148": {
+  "The Order of the Grook#201": {
    "src": "It's almost like they miss it, somehow. It's almost like they might be FROM outer space! It's ALMOST like they bringing insanity-inducing things into our houses ON PURPOSE!",
    "dst": "Будто скучают по ней. Будто они сами ИЗ открытого космоса! Будто они НАРОЧНО тащат в наши дома то, от чего сходят с ума!",
    "role": "desc",
@@ -1496,7 +1982,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#149": {
+  "The Order of the Grook#202": {
    "src": "They're here to kill us all, I swear it! How else would you explain a wybel VAPORIZING a group of poachers? Ten colors of wybel, every one of them rotten evil!",
    "dst": "Они здесь, чтобы всех нас убить, клянусь! Как ещё объяснить, что Wybel ИСПАРИЛ целую банду браконьеров? Десять окрасов Wybel, и все до одного - зло!",
    "role": "desc",
@@ -1506,7 +1992,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#150": {
+  "The Order of the Grook#203": {
    "src": "Everyone says there's only nine, but WE know the truth! There's a tenth out there, an ultimately powerful one that want us all gone. Pray you never see it, kids.",
    "dst": "Все говорят, что их девять, но МЫ знаем правду! Есть и десятый, всемогущий, и он хочет нас извести. Молитесь, чтобы вам его не встретить, дети.",
    "role": "desc",
@@ -1516,7 +2002,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#151": {
+  "The Order of the Grook#204": {
    "src": "Anyways, my lesson's safe from all that. All you have to do is to re-order these plush Wybel toys on the stand. You'll figure out once you're up here.",
    "dst": "В общем, мой урок от всего этого далёк. Нужно лишь переставить плюшевых Wybel на полке. Подниметесь - разберётесь.",
    "role": "desc",
@@ -1526,7 +2012,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#152": {
+  "The Order of the Grook#205": {
    "src": "Alrighty, fledgeling, good job. You're armed with the REAL truth now! Go on to your next class.",
    "dst": "Итак, птенец, молодец. Теперь у тебя в руках НАСТОЯЩАЯ правда! Иди на следующий урок.",
    "role": "desc",
@@ -1536,7 +2022,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#153": {
+  "The Order of the Grook#206": {
    "src": "Hello, students. This is the magical creatures class, and I will be your instructor.",
    "dst": "Здравствуйте, ученики. Это урок магических существ, я ваш преподаватель.",
    "role": "desc",
@@ -1546,7 +2032,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#154": {
+  "The Order of the Grook#207": {
    "src": "Different species have different levels of innate magicality. This is often an invisible aspect of the species. You must never assume.",
    "dst": "У разных видов разный уровень врождённой магии. Часто это незаметная сторона вида. Никогда не судите наугад.",
    "role": "desc",
@@ -1556,7 +2042,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#155": {
+  "The Order of the Grook#208": {
    "src": "To begin with, Doguns. They are ancient creatures, artificial-seeming at first. Despite this, they are highly adept at earth and fire-based magic.",
    "dst": "Для начала - Dogun. Древние существа, на первый взгляд будто рукотворные. И всё же они искусны в магии земли и огня.",
    "role": "desc",
@@ -1566,7 +2052,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#156": {
+  "The Order of the Grook#209": {
    "src": "Able to quite literally move mountains, it is theorized that they were the one who carve out the inside of the {p} into the caves we know today.",
    "dst": "Они в буквальном смысле двигали горы, и есть теория, что это они выдолбили недра {p} в нынешние пещеры.",
    "role": "desc",
@@ -1576,7 +2062,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#157": {
+  "The Order of the Grook#210": {
    "src": "Tales also tell of their utilizing demonic energy for various purposes. However, we are only able to assume their magical energy from Dwarven tales, as they are nigh-extinct",
    "dst": "Легенды говорят, что они по-разному использовали демоническую энергию. Но они почти вымерли, и об их магии мы судим лишь по сказаниям дворфов",
    "role": "desc",
@@ -1586,7 +2072,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#158": {
+  "The Order of the Grook#211": {
    "src": "Moving on. The term \"Greenskins\" is a catch-all for Trolls, Goblins, Orcs, Ogres and Hobgoblins. Some include Gerts into this definition, though by technicality they are separate.",
    "dst": "Далее. «Зеленокожие» - общее название для троллей, гоблинов, орков, огров и хобгоблинов. Некоторые относят сюда и Gerts, хотя формально это разные.",
    "role": "desc",
@@ -1596,7 +2082,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#159": {
+  "The Order of the Grook#212": {
    "src": "Though many Greenskins societies with mystical particles, the only known way for them to utilize magic is through magical artifacts. They've little magic potential.",
    "dst": "Хотя у многих обществ зеленокожих есть мистические частицы, магию они умеют использовать только через артефакты. Магический потенциал у них мал.",
    "role": "desc",
@@ -1606,7 +2092,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#160": {
+  "The Order of the Grook#213": {
    "src": "Meanwhile, Villagers are the opposite persuasion. High magical potential, often unrealized out of laziness.",
    "dst": "Селяне же - полная противоположность. Высокий магический потенциал, часто нераскрытый из-за лени.",
    "role": "desc",
@@ -1616,7 +2102,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#161": {
+  "The Order of the Grook#214": {
    "src": "Humans are often thought of as magical then Villagers, due to Fruman soldiers seeming to know some magic innate, but this is untrue.",
    "dst": "Людей часто считают магичнее селян, ведь солдаты Fruma будто знают магию от рождения, но это не так.",
    "role": "desc",
@@ -1626,7 +2112,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#162": {
+  "The Order of the Grook#215": {
    "src": "Dwarves have a similar level of magicality to Humans, but like the Villagers, it often go unrealized. Their culture values physical strength more.",
    "dst": "У дворфов магии примерно столько же, сколько у людей, но, как и у селян, она часто не раскрыта. Их культура больше ценит силу тела.",
    "role": "desc",
@@ -1636,7 +2122,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#163": {
+  "The Order of the Grook#216": {
    "src": "It is theorized that the reason for this is due to their distance for demonic energies of the Doguns. They reject their magic potential often, such that it is lessening over time.",
    "dst": "Есть теория, что причина в их отдалённости от демонической энергии Dogun. Они часто отвергают свой магический потенциал, и тот со временем слабеет.",
    "role": "desc",
@@ -1646,7 +2132,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#164": {
+  "The Order of the Grook#217": {
    "src": "Inversely, Elves have a deep connection to their magicality. Despite their reclusiveness, they are known for their open share of magicality energy within their own society.",
    "dst": "Эльфы же, напротив, глубоко связаны со своей магией. Несмотря на замкнутость, они славятся тем, что открыто делятся магической энергией внутри общества.",
    "role": "desc",
@@ -1656,7 +2142,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#165": {
+  "The Order of the Grook#218": {
    "src": "The outcast Elves of {p} have shared their connection to what we refers to as \"The Light\". This connection is supposedly unfathomable, but guides them and protects them.",
    "dst": "Изгнанные эльфы {p} поделились своей связью с тем, что мы зовём «Свет». Эта связь, говорят, непостижима, но ведёт и хранит их.",
    "role": "desc",
@@ -1666,7 +2152,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#166": {
+  "The Order of the Grook#219": {
    "src": "Now, we see if you were paying attention. You will come here and order the societies I have referred to in the class from least magical, to the most.",
    "dst": "А теперь проверим, слушали ли вы. Подойдите и расставьте народы, о которых я говорил, от наименее магических к самым магическим.",
    "role": "desc",
@@ -1676,7 +2162,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#167": {
+  "The Order of the Grook#220": {
    "src": "Well done, you got it right!",
    "dst": "Отлично, всё верно!",
    "role": "desc",
@@ -1686,7 +2172,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#168": {
+  "The Order of the Grook#221": {
    "src": "Correct. {u}, thank you for paying attention. No one ever seems to in this class. You may go.",
    "dst": "Верно. {u}, спасибо, что слушаешь. На этом уроке никто никогда не слушает. Можешь идти.",
    "role": "desc",
@@ -1696,7 +2182,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#169": {
+  "The Order of the Grook#222": {
    "src": "Next class is actually rather close!",
    "dst": "Следующий урок совсем рядом!",
    "role": "desc",
@@ -1706,7 +2192,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#170": {
+  "The Order of the Grook#223": {
    "src": "Just follow me.",
    "dst": "Просто идите за мной.",
    "role": "desc",
@@ -1716,7 +2202,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#171": {
+  "The Order of the Grook#224": {
    "src": "...I was hoping for a smaller class size.",
    "dst": "…Надеялся, класс будет поменьше.",
    "role": "desc",
@@ -1726,7 +2212,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#172": {
+  "The Order of the Grook#225": {
    "src": "Corruption is incredibly dangerous...it'll be tough to keep so many students safe. If anyone wishes to leave, you may.",
    "dst": "Скверна невероятно опасна… уберечь столько учеников будет трудно. Кто хочет уйти - можете уйти.",
    "role": "desc",
@@ -1736,7 +2222,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#173": {
+  "The Order of the Grook#226": {
    "src": "Now... Corruption is a force of nature of...some description. Yes, you heard me right. We don't actually know much about it.",
    "dst": "Итак… Скверна - это сила природы… в некотором роде. Да, вы не ослышались. Мы о ней толком ничего не знаем.",
    "role": "desc",
@@ -1746,7 +2232,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#174": {
+  "The Order of the Grook#227": {
    "src": "Even though it's plagued the Wynn province for a thousand years, the way it behaves is so incredibly alien in nature that it's nigh-impossible to study.",
    "dst": "Хотя она терзает провинцию Wynn уже тысячу лет, ведёт она себя настолько чуждо, что изучить её почти невозможно.",
    "role": "desc",
@@ -1756,7 +2242,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#175": {
+  "The Order of the Grook#228": {
    "src": "We know it raises undead bodies... The working theory is that the more heavily injured a target is, the more susceptible they are to being corrupted.",
    "dst": "Мы знаем, что она поднимает мертвецов… Рабочая гипотеза: чем сильнее ранена цель, тем легче её осквернить.",
    "role": "desc",
@@ -1766,7 +2252,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#176": {
+  "The Order of the Grook#229": {
    "src": "And...well, you can't exactly get more injured than \"dead\". Hence, the growth of zombies and skeletons and all, over in Wynn.",
    "dst": "А… ну, сильнее, чем «мёртв», ранен не будешь. Отсюда и толпы зомби со скелетами в Wynn.",
    "role": "desc",
@@ -1776,7 +2262,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#177": {
+  "The Order of the Grook#230": {
    "src": "It appears to spread by a complex \"root\" system. A scientist from {p}, Orikal, has studied this. The corruption spikes appear to spread it in greater concentration.",
    "dst": "Похоже, она расползается сложной системой «корней». Это изучал учёный из {p}, Orikal. Шипы Скверны, видимо, распространяют её гуще.",
    "role": "desc",
@@ -1786,7 +2272,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#178": {
+  "The Order of the Grook#231": {
    "src": "As for the effects on your person, most often paranoia and anger are seen. And that's about the only consistent thing with it; it affect everyone slightly differently.",
    "dst": "Что до влияния на человека, чаще всего это паранойя и гнев. И это, пожалуй, единственное постоянное: на всех она действует чуть по-разному.",
    "role": "desc",
@@ -1796,7 +2282,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#179": {
+  "The Order of the Grook#232": {
    "src": "The worst part is that practically everything single thing we've touched on here is conjecture and theorycrafting! The force of corruption is terrifying.",
    "dst": "Хуже всего, что почти всё, что мы тут обсудили, - догадки и домыслы! Сила Скверны ужасает.",
    "role": "desc",
@@ -1806,7 +2292,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#180": {
+  "The Order of the Grook#233": {
    "src": "The only thing we know for certain is that powerful ice-based magic can halt corruption, as seen in the {p} region.",
    "dst": "Точно мы знаем лишь одно: сильная ледяная магия может остановить Скверну, как видно в регионе {p}.",
    "role": "desc",
@@ -1816,7 +2302,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#181": {
+  "The Order of the Grook#234": {
    "src": "Now, the dangerous part. Everyone, come up past my desk here. We'll examine a corrupted creature in a controlled environment.",
    "dst": "А теперь опасная часть. Все, проходите за мой стол. Мы изучим осквернённое существо в контролируемых условиях.",
    "role": "desc",
@@ -1826,7 +2312,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#182": {
+  "The Order of the Grook#235": {
    "src": "We have one in captivity, and its cage is reinforced with the strongest metals we have...so dear god let it be enough.",
    "dst": "Одно у нас в неволе, клетка укреплена прочнейшими металлами… так что, боже, пусть этого хватит.",
    "role": "desc",
@@ -1836,7 +2322,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#183": {
+  "The Order of the Grook#236": {
    "src": "Bringing it out now...be sure to back up. We don't want anyone caught in the crossfire here.",
    "dst": "Вывожу его… обязательно отойдите. Не хочу, чтобы кто-то попал под удар.",
    "role": "desc",
@@ -1846,7 +2332,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#184": {
+  "The Order of the Grook#237": {
    "src": "One thing to note about undead corrupteds...they can't be cured. You can weaken them, but that's about it. ...wait...",
    "dst": "Об осквернённой нежити важно знать одно… её нельзя исцелить. Ослабить можно, но не более. …погодите…",
    "role": "desc",
@@ -1856,7 +2342,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#185": {
+  "The Order of the Grook#238": {
    "src": "Wait, why's it spreading here? It's never done this before! E-everyone, back up, now!",
    "dst": "Стойте, почему оно расползается? Такого ещё не было! В-все, назад, живо!",
    "role": "desc",
@@ -1866,7 +2352,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#186": {
+  "The Order of the Grook#239": {
    "src": "A-as you can see, corruption is very powerful, eheheh, c-can someone go get another teacher or something?!",
    "dst": "К-как видите, Скверна очень сильна, хе-хе, м-может, кто-нибудь сбегает за другим учителем?!",
    "role": "desc",
@@ -1876,7 +2362,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#187": {
+  "The Order of the Grook#240": {
    "src": "Wait, no! It's corroding the bars! Everyone, RUN! NOW! GET OUT OF HERE, CLASS DISMISSED!!!",
    "dst": "Нет, нет! Оно разъедает прутья! Все, БЕГИТЕ! ЖИВО! ВОН ОТСЮДА, УРОК ОКОНЧЕН!!!",
    "role": "desc",
@@ -1886,7 +2372,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#188": {
+  "The Order of the Grook#241": {
    "src": "GAACK! No, {u}, I said RUN! Don't fight that thing, get OUT!",
    "dst": "ГХА! Нет, {u}, я сказал БЕГИ! Не дерись с ним, ВОН!",
    "role": "desc",
@@ -1896,7 +2382,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#189": {
+  "The Order of the Grook#242": {
    "src": "Dear lord...that was awful. {u}, I can't believe you were able to kill that thing!",
    "dst": "Боже… какой кошмар. {u}, не верится, что тебе удалось убить эту тварь!",
    "role": "desc",
@@ -1906,7 +2392,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#190": {
+  "The Order of the Grook#243": {
    "src": "Class absolutely dismissed. We've got to cancel this class...it's far too dangerous for the students...",
    "dst": "Урок окончен окончательно. Этот предмет надо отменять… для учеников он слишком опасен…",
    "role": "desc",
@@ -1916,17 +2402,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#191": {
-   "src": "Welcome in, guys and gals... we're learnin' about nature magic today!",
-   "dst": "Заходите, ребята и девчата… сегодня у нас магия природы!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#192": {
+  "The Order of the Grook#245": {
    "src": "There's two main ways of usin' nature magic... Shamanism and druidism. Two sides of the same coin, man.",
    "dst": "Магию природы юзают двумя путями… шаманство и друидство. Две стороны одной монеты, чувак.",
    "role": "desc",
@@ -1936,17 +2412,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#193": {
-   "src": "Druidic Practices tend to deal with healing more, and nurturing. When life's created, it gives off energy... and Druids use that energy for their magic.",
-   "dst": "Друиды больше про исцеление и заботу. Когда рождается жизнь, она выделяет энергию… и друиды колдуют на ней.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#194": {
+  "The Order of the Grook#247": {
    "src": "Shamanic skills are a lot more direct, man. They take the life from other things and use that to do their stuffs. It's way more varied than Druidic magic.",
    "dst": "Шаманы куда прямолинейнее, чувак. Они забирают жизнь у других и пускают на свои дела. Это куда разнообразнее друидской магии.",
    "role": "desc",
@@ -1956,17 +2422,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#195": {
-   "src": "Each has its ups and downs, man. Druidism is chill and helpful... but you can really expand your mind with Shamanism, buddies.",
-   "dst": "У каждого свои плюсы и минусы, чувак. Друидство - расслабон и польза… но шаманство реально расширяет сознание, друзья.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#196": {
+  "The Order of the Grook#249": {
    "src": "Either way, it's all about equivalent exchange, y'see? You can't get somethin' from nothin', man. Either make life or take life.",
    "dst": "Так или иначе, всё дело в равноценном обмене, усекли? Из ничего ничего не будет, чувак. Либо дай жизнь, либо возьми.",
    "role": "desc",
@@ -1976,7 +2432,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#197": {
+  "The Order of the Grook#250": {
    "src": "But! It's not peaky about what life you take, man! A good shaman takes from plants and animals, not people!",
    "dst": "Но! Ей всё равно, чью жизнь берёшь, чувак! Хороший шаман берёт у растений и зверей, а не у людей!",
    "role": "desc",
@@ -1986,7 +2442,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#198": {
+  "The Order of the Grook#251": {
    "src": "Don't be a Slykaar, kiddos. He asked for human sacrifices, but he lived in a jungle, man! Like, what the hey! He coulda done anything alse!",
    "dst": "Не будьте как Slykaar, детишки. Он требовал человеческих жертв, а жил-то в джунглях, чувак! Ну вот что за дела! Мог бы что угодно другое!",
    "role": "desc",
@@ -1996,17 +2452,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#199": {
-   "src": "Anyways, our test today, little buds, is to practice some shamanic skills. We got a sick cow in the back, and you're gonna nurse it back to health.",
-   "dst": "Короче, наш тест сегодня, мои ростки, - попрактиковать шаманство. Сзади больная корова, и вы её выходите.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#200": {
+  "The Order of the Grook#253": {
    "src": "You'll need to sacrifice some old grooks, but it has to be just the right amount, man! The practice is through the door behind me.",
    "dst": "Придётся пожертвовать парой старых grook, но ровно столько, сколько надо, чувак! Практика за дверью позади меня.",
    "role": "desc",
@@ -2016,7 +2462,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#201": {
+  "The Order of the Grook#254": {
    "src": "Groovy work, man! You're at one with nature!",
    "dst": "Клёво, чувак! Ты един с природой!",
    "role": "desc",
@@ -2026,7 +2472,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#202": {
+  "The Order of the Grook#255": {
    "src": "Your feathers are all grown out, man! Time to head out!",
    "dst": "Перышки отросли, чувак! Пора в путь!",
    "role": "desc",
@@ -2036,7 +2482,7 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#203": {
+  "The Order of the Grook#256": {
    "src": "Finish school for the day.",
    "dst": "Закончи учебный день.",
    "role": "desc",
@@ -2046,7 +2492,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#204": {
+  "The Order of the Grook#257": {
    "src": "That's all four classes! I hope you found them magically enriching! Now, off to the graduation hall!",
    "dst": "Все четыре урока пройдены! Надеюсь, они вас волшебно обогатили! А теперь - в выпускной зал!",
    "role": "desc",
@@ -2056,7 +2502,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#205": {
+  "The Order of the Grook#258": {
    "src": "It's the room all the way at the bottom of the stairs. Hurry, don't hold up the ceremony! It won't start until everyone's there.",
    "dst": "Это комната в самом низу лестницы. Скорее, не задерживайте церемонию! Она начнётся, только когда все соберутся.",
    "role": "desc",
@@ -2066,7 +2512,7 @@
    "speaker": "Ghost Guide",
    "source": "wiki"
   },
-  "The Order of the Grook#206": {
+  "The Order of the Grook#259": {
    "src": "Go to the ceremony room for the Headmaster's closing speech.",
    "dst": "Пройди в зал церемоний на заключительную речь директора.",
    "role": "desc",
@@ -2076,7 +2522,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Order of the Grook#207": {
+  "The Order of the Grook#260": {
    "src": "Take a seat. The ceremony is starting.",
    "dst": "Садитесь. Церемония начинается.",
    "role": "desc",
@@ -2086,7 +2532,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#208": {
+  "The Order of the Grook#261": {
    "src": "And so, your teachings, or at least their basics, have ended. Your magical feathers have started to grow!",
    "dst": "Итак, ваше обучение - по крайней мере его основы - окончено. Ваши магические перья начали расти!",
    "role": "desc",
@@ -2096,7 +2542,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#209": {
+  "The Order of the Grook#262": {
    "src": "You have all been performing very well during your classes today. I've heard quite a bit of praise from the teachers being passed around.",
    "dst": "Сегодня на занятиях все вы показали себя прекрасно. Я слышал немало похвал от учителей.",
    "role": "desc",
@@ -2106,7 +2552,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#210": {
+  "The Order of the Grook#263": {
    "src": "But now, for your efforts, you shall not go unrewarded. You will leave here with more than simply knowledge.",
    "dst": "И за ваши старания вы не останетесь без награды. Вы уйдёте отсюда не только со знаниями.",
    "role": "desc",
@@ -2116,7 +2562,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#211": {
+  "The Order of the Grook#264": {
    "src": "Your tools have shaped your minds, subtly but inexorably. And so with that, what you leave with today, both in mind and in treasure, shall be different for each of you.",
    "dst": "Ваше снаряжение незаметно, но неотвратимо сформировало ваш разум. Поэтому то, с чем вы уйдёте сегодня, - в уме и в сокровищах, - у каждого будет своим.",
    "role": "desc",
@@ -2126,17 +2572,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#212": {
-   "src": "Let us start with . Please come up to the stage!",
-   "dst": "Начнём с . Прошу на сцену!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 15",
-   "speaker": "Headmaster",
-   "source": "wiki"
-  },
-  "The Order of the Grook#213": {
+  "The Order of the Grook#266": {
    "src": "There is a reason I've called you up first, you know. Recall what I said about old hats earlier? Don't think we didn't notice the armor, or the weapon, or the grim countenance.",
    "dst": "Знаешь, я неспроста начал с тебя. Помнишь, что я говорил о бывалых мастерах? Не думай, что мы не заметили доспехи, оружие и суровый взгляд.",
    "role": "desc",
@@ -2146,7 +2582,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#214": {
+  "The Order of the Grook#267": {
    "src": "But no need to worry. Those who truly have the drive to become learned in the ways of magic, no matter who they are, will always find their way here, and be accepted.",
    "dst": "Но не тревожься. Тот, кто по-настоящему стремится постичь пути магии, кем бы он ни был, всегда найдёт дорогу сюда и будет принят.",
    "role": "desc",
@@ -2156,7 +2592,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#215": {
+  "The Order of the Grook#268": {
    "src": "A shame about Seasum, but not to worry. Now, hand over your materials, and you'll receive your rewards.",
    "dst": "Жаль, что с Seasum так вышло, но ничего. А теперь сдай снаряжение и получишь награду.",
    "role": "desc",
@@ -2166,7 +2602,7 @@
    "speaker": "Headmaster",
    "source": "wiki"
   },
-  "The Order of the Grook#216": {
+  "The Order of the Grook#269": {
    "src": "And there you have it. Your feathers are grown, and you can spread your magical wings! Good luck on your adventures, Wynn soldier.",
    "dst": "Вот и всё. Перья отросли, и ты можешь расправить магические крылья! Удачи в приключениях, солдат Wynn.",
    "role": "desc",

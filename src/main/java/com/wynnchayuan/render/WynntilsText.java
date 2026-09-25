@@ -40,6 +40,15 @@ public final class WynntilsText {
                     WynnChaYuan.config(), WynnChaYuan.translations());
             if (out != lines) {
                 WynnChaYuan.store().noteEvent("overlay.shown");
+            } else if (tracker(overlay)) {
+                // 追蹤欄畫了、但一行都沒換掉。先前這裡不記，於是
+                // 「右上那一欄沒翻」跟「那一欄根本沒畫出來」在診斷檔裡
+                // 長得一模一樣——兩次都只能靠截圖猜。現在把原文收進來，
+                // captured.json 就直接寫著那一欄實際上有哪幾行。
+                WynnChaYuan.store().noteEvent("overlay.noMatch");
+                for (StyledText line : lines) {
+                    noteTracker(line);
+                }
             }
             return out;
         } catch (Throwable t) {
@@ -556,8 +565,130 @@ public final class WynntilsText {
         }
     }
 
+    /**
+     * 追蹤欄裡查不到的那一行，收進語料缺口。
+     *
+     * <p>跟別的收集路徑一樣先過個資濾網：那一欄同時也放隊伍那一段，
+     * 隊友的 ID 會跟著出現。
+     */
+    private static void noteTracker(StyledText line) {
+        if (line == null || line.isEmpty()
+                || !WynnChaYuan.config().collect()) {
+            return;
+        }
+        String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
+        if (template.isBlank()
+                || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
+                || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
+                || com.wynnchayuan.capture.PlayerDataFilter
+                        .mentionsOnlinePlayerLoose(template)) {
+            return;
+        }
+        var captured = WynnChaYuan.store();
+        if (captured != null) {
+            captured.record(template, "desc", "quest", "tracker/line");
+        }
+    }
+
     /** 這一塊是追蹤欄嗎。用類別名比對，不必把 Wynntils 的型別帶進來。 */
     private static boolean tracker(Object overlay) {
         return overlay != null && TRACKER.equals(overlay.getClass().getSimpleName());
+    }
+
+    /**
+     * mixin 的入口：Wynntils 自己那幾個畫面上的<b>每一段字</b>。
+     *
+     * <h2>換的是什麼</h2>
+     * 綜合頁面左邊那一列任務／洞穴名、分頁標題、按鈕說明⋯⋯Wynntils 畫自己的
+     * 畫面時，字全部經過它的 {@code FontRenderer}。那裡面有兩種來源：
+     *
+     * <ul>
+     *   <li>Wynntils 自己的介面字串。它附了 zh_tw／zh_cn 語言檔，但四千多條只翻了
+     *       兩千多條——沒翻到的那些送到這裡時還是英文。</li>
+     *   <li><b>Wynncraft 送來的內容</b>：任務名、洞穴名、「Currently in progress」。
+     *       Wynntils 只是把伺服器給的字重畫一次，它的語言檔永遠不會有這些，
+     *       但我們的語料裡早就有了。</li>
+     * </ul>
+     *
+     * <p>查得到才換，查不到原樣回傳——所以已經是中文的字（Wynntils 自己翻好的、
+     * 或我們上一幀換過的）走到這裡一律不動。
+     *
+     * @return 換好的那一段；不該換或查不到時<b>原樣</b>回傳
+     */
+    public static StyledText screenText(StyledText text) {
+        try {
+            return screenText(text, WynnChaYuan.config(), WynnChaYuan.translations());
+        } catch (Throwable t) {
+            return text;                       // 別人的算繪流程，不能讓它炸
+        }
+    }
+
+    /**
+     * 現在畫的是不是公會戰地圖上那一格領地標籤。見 {@code TerritoryPoiMixin}。
+     *
+     * <p>只在算繪執行緒上動，所以不必同步。宣告成 {@code volatile} 是為了
+     * 萬一哪天 Wynntils 改到別的執行緒去畫，讀到的至少不是過期的值。
+     */
+    private static volatile boolean territoryLabels;
+
+    /** mixin 的入口：進了領地標籤就掛上，出來就放掉。 */
+    public static void holdTerritoryLabels(boolean on) {
+        territoryLabels = on;
+    }
+
+    static StyledText screenText(StyledText text, CollectorConfig config,
+                                 TranslationStore store) {
+        if (text == null || text.isEmpty() || store == null
+                || config == null || !config.wynntilsUi()) {
+            return text;
+        }
+        if (territoryLabels) {
+            // 公會名是玩家自己取的，跟語料撞名只是遲早的事（實機那格叫 Fox，
+            // 被換成了「狐狸」）。而且它本來就不是遊戲的文案，不該翻。
+            return text;
+        }
+        net.minecraft.network.chat.Component hit = LineTranslator.translate(text, store);
+        if (hit == null) {
+            return text;
+        }
+        return StyledText.fromComponent(hit);
+    }
+
+    /**
+     * mixin 的入口：Wynntils 清單畫面右邊那張卡（滑鼠停在某一項時跳出來的）。
+     *
+     * <h2>為什麼不能跟上面共用</h2>
+     * 那張卡不走 {@code FontRenderer}——Wynntils 把它交給原版的
+     * {@code renderComponentTooltip}，一次送一整份 {@code List<Component>}。
+     * 一整份送過來反而更好：可以走跟物品 tooltip <b>完全同一套</b>的替換，
+     * 整段查得到就用整段，查不到才逐行——「Bring [20 Void Essences] to the
+     * Slaying Post」那種跨行的句子只有整段那條路查得到。
+     *
+     * @return 換好的那一份；沒有東西可換時<b>原樣</b>回傳同一個 list
+     */
+    public static java.util.List<net.minecraft.network.chat.Component> menuTooltip(
+            java.util.List<net.minecraft.network.chat.Component> lines) {
+        try {
+            CollectorConfig config = WynnChaYuan.config();
+            if (lines == null || lines.isEmpty() || config == null || !config.wynntilsUi()) {
+                return lines;
+            }
+            // 收一份。這張卡上的字<b>沒有別的路進得來</b>——它不是物品 tooltip，
+            // 走的是 Wynntils 自己的畫面，所以在這裡不收就永遠不會出現在
+            // captured.json 裡，缺什麼只能靠截圖問。
+            //
+            // 交給 GuiTextCapture 而不是自己寫一份：玩家頭顱的標題、隊伍卡、
+            // 整段 vs 逐行那幾道判斷都在那邊，分兩份寫遲早會不一致。
+            // 它自己看「收集介面文字」那個開關，預設關著。
+            com.wynnchayuan.listener.GuiTextCapture.record(lines);
+            java.util.List<net.minecraft.network.chat.Component> out =
+                    TooltipPanel.translateInPlace(lines, WynnChaYuan.translations());
+            if (out == null || out.isEmpty()) {
+                return lines;                  // 約定：空的代表原文不動
+            }
+            return out;
+        } catch (Throwable t) {
+            return lines;
+        }
     }
 }

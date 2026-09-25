@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site B",
-  "count": 28,
+  "count": 29,
   "translated": 28,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site B#000": {
+   "src": "Hello there! We are working very hard here at this excavation site! We have one in {p} as well, I think you should check it out!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site B#001": {
    "src": "Bring the Yellow Crystal Shard to Excavator Lykron at [{~}, {~}, -{~}] The entrance to the cave is at [{~}, {~}, -{~}].",
    "dst": "把黄色水晶碎片带给 [{~}, {~}, -{~}] 的挖掘员 Lykron。洞窟入口在 [{~}, {~}, -{~}]。",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#001": {
+  "WynnExcavation Site B#002": {
    "src": "Good day! You're the person that helped us out in the desert aren't you? Excellent! Just the person I need! Can you help me out with a problem I have?",
    "dst": "你好！你就是在沙漠里帮过我们的那个人吧？太好了！正是我需要的人！能帮我解决一个问题吗？",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#002": {
+  "WynnExcavation Site B#003": {
    "src": "Perfect! You see, we are supposed to be searching for some of the... uhhh... long lost ruins of ancient Wynn, just like in the desert!",
    "dst": "太好了！是这样的，我们本来应该在找……呃……古代 Wynn 失落已久的遗迹，就跟在沙漠里一样！",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#003": {
+  "WynnExcavation Site B#004": {
    "src": "However, it seems no progress has been made recently; my workers have stopped working!",
    "dst": "可是最近好像一点进展都没有；我的工人都不干活了！",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#004": {
+  "WynnExcavation Site B#005": {
    "src": "The problem is, there are strange creatures down at the bottom of the cave disturbing them.",
    "dst": "问题是，洞窟底部有些奇怪的生物在骚扰他们。",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#005": {
+  "WynnExcavation Site B#006": {
    "src": "I need you to go and kill them, but first you should go talk to one of my colleagues, he has more information for you.",
    "dst": "我需要你去把它们杀掉，不过你最好先去找我的一位同事谈谈，他有更多情报给你。",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#006": {
+  "WynnExcavation Site B#007": {
    "src": "He is located directly at the bottom of this cave, go speak to him, go on now! Off you go!",
    "dst": "他就在洞窟正下方的底部，去跟他谈谈吧，快去！走吧！",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#007": {
+  "WynnExcavation Site B#008": {
    "src": "Investigate the depths of the cave",
    "dst": "调查洞窟深处",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#008": {
+  "WynnExcavation Site B#009": {
    "src": "We know what you stole from us in the desert! Take THIS! You won't be escaping this dead end any time soon!",
    "dst": "我们知道你在沙漠里偷了我们什么！吃我这招！你一时半会儿别想逃出这条死路！",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Flendar",
    "source": "wiki"
   },
-  "WynnExcavation Site B#009": {
+  "WynnExcavation Site B#010": {
    "src": "Solve the puzzle",
    "dst": "解开谜题",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#010": {
+  "WynnExcavation Site B#011": {
    "src": "Find the crystal",
    "dst": "找到水晶",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#011": {
+  "WynnExcavation Site B#012": {
    "src": "What are you doing here?!",
    "dst": "你在这里干什么？！",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#012": {
+  "WynnExcavation Site B#013": {
    "src": "This door is closed; the mine entrance behind it isn't open at this time.",
    "dst": "这扇门是关着的；后面的矿坑入口目前没有开放。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#013": {
+  "WynnExcavation Site B#014": {
    "src": "I'm here to make sure no one uses the passage while the archaeologist works.",
    "dst": "我在这里是为了确保考古学家工作时没人使用这条通道。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#014": {
+  "WynnExcavation Site B#015": {
    "src": "You will have to find another exit if you want to get out!",
    "dst": "你想出去的话，得另找出口！",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "WynnExcavation Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site B#015": {
+  "WynnExcavation Site B#016": {
    "src": "Baffling... What a puzzling situation I am in...",
    "dst": "莫名其妙……我这处境真让人摸不着头脑……",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#016": {
+  "WynnExcavation Site B#017": {
    "src": "I cannot open this door for some reason...",
    "dst": "不知道为什么，这扇门我打不开……",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#017": {
+  "WynnExcavation Site B#018": {
    "src": "We suspect the purple crystal is behind this door, but the descriptions in the scriptures don't match this door.",
    "dst": "我们怀疑紫色水晶就在这扇门后面，可是经文里的描述跟这扇门对不上。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#018": {
+  "WynnExcavation Site B#019": {
    "src": "They seem to describe another door, but all our evidence says otherwise.",
    "dst": "经文好像描述的是另一扇门，可我们所有的证据都不是这么说的。",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#019": {
+  "WynnExcavation Site B#020": {
    "src": "The scriptures also say something about hidden within the rocks... But we removed them all!",
    "dst": "经文还提到了什么藏在岩石里……可我们已经把岩石全都清掉了！",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#020": {
+  "WynnExcavation Site B#021": {
    "src": "Well, the writing isn't actually all that clear. It could mean virtually anything, I think one of these words means hippo! Guess we'll have to find out!",
    "dst": "嗯，其实文字也没那么清楚。它几乎可以是任何意思，我觉得其中一个词是“河马”！看来只能自己去弄明白了！",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#021": {
+  "WynnExcavation Site B#022": {
    "src": "Anyway, back to figuring out what needs to be done here... Wait, who are you, you're not an employee of WynnExcavation!",
    "dst": "总之，回来想想这里该怎么办……等等，你是谁，你不是 WynnExcavation 的员工！",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "WynnExcavation Archaeologist",
    "source": "wiki"
   },
-  "WynnExcavation Site B#022": {
+  "WynnExcavation Site B#023": {
    "src": "Talk to Excavator Lykron",
    "dst": "与挖掘员 Lykron 对话",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site B#023": {
+  "WynnExcavation Site B#024": {
    "src": "I have to admit, I'm impressed. I genuinely thought our plan would be successful. Who knew that dead end had a secret exit.",
    "dst": "我得承认，我很佩服。我真心以为我们的计划会成功。谁知道那条死路还有秘密出口。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#024": {
+  "WynnExcavation Site B#025": {
    "src": "Not me apparently. We know what you took in the desert, you were just some kid expected to do a delivery job, who knew you'd take a shard of the crystal.",
    "dst": "显然我不知道。我们知道你在沙漠里拿了什么，你本来只是个被派去送货的小家伙，谁知道你会拿走一块水晶碎片。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#025": {
+  "WynnExcavation Site B#026": {
    "src": "Don't pretend like you don't know what it is, you know as well as I do combining the four crystal shards is told to bring unlimited power!",
    "dst": "别装作不知道那是什么，你跟我一样清楚，据说把四块水晶碎片合在一起就能得到无穷的力量！",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#026": {
+  "WynnExcavation Site B#027": {
    "src": "You will not interfere any longer. The location of the remaining crystals are known only to us; the fire and leaf crystals are safe.",
    "dst": "你不会再有机会插手了。剩下几块水晶的位置只有我们知道；火之水晶和叶之水晶都很安全。",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Excavator Lykron",
    "source": "wiki"
   },
-  "WynnExcavation Site B#027": {
+  "WynnExcavation Site B#028": {
    "src": "I see that tricking you isn't the way to defeating you. If we ever meet again, we'll be using force and upping our security. Now I never want to see you again. Our socie- I mean company, will not tolerate your interference again.",
    "dst": "看来靠骗是打不倒你的。要是我们再见面，我们会动用武力，还会加强戒备。现在我再也不想看到你了。我们的组——我是说公司，不会再容忍你的干涉。",
    "role": "desc",

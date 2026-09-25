@@ -1,12 +1,98 @@
 {
  "_meta": {
   "quest": "Jungle Fever",
-  "count": 32,
-  "translated": 32,
+  "count": 40,
+  "translated": 40,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Jungle Fever#000": {
+   "src": "The only cure to this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
+   "dst": "治這熱病的唯一辦法就是喝下液態綠寶石！沒錯，就是這樣！*咳*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#001": {
+   "src": "Break into *cough* the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
+   "dst": "闖進 *咳* 綠寶石倉庫，但什麼都別拿……之後馬上回來找我，如果你活著出得來的話，嘿嘿……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#002": {
+   "src": "We'll have to change our strategy, we don't ask for permission. It's to help me after all.",
+   "dst": "我們得換個做法，不去徵求許可。反正這都是為了救我。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#003": {
+   "src": "I needed to make sure you could easily break into a bank. So i came here by myself to see if you could do it.",
+   "dst": "我得先確認你能輕鬆闖進銀行。所以我自己先來這裡，看看你辦不辦得到。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#004": {
+   "src": "You've proven your ability of stealth and strength by breaking into this storage, we can start the real thing now.",
+   "dst": "你闖進這座倉庫，已經證明了自己的潛行本事和實力，我們可以開始來真的了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#005": {
+   "src": "It is guarded with tons of well trained Guard Golems, who can kill anyone in one hit.",
+   "dst": "那裡由一大堆訓練有素的守衛魔像看守，牠們一擊就能要人命。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
+    "file": "quest/jungle-fever.json",
+    "ratio": 0.832,
+    "reason": "candidate"
+   }
+  },
+  "Jungle Fever#006": {
+   "src": "..I mean *cough*.. I was too sick so i came back here.. *cough*",
+   "dst": "……我是說 *咳*……我病得太重了所以就回來這裡……*咳*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#007": {
+   "src": "I feel so much better now, thank you for the cure!",
+   "dst": "我現在舒服多了，謝謝你的解藥！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#008": {
    "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
    "dst": "前往叢林村落與 Worid 對話，座標 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
@@ -16,7 +102,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#001": {
+  "Jungle Fever#009": {
    "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
    "dst": "哦，看到你真是太好了！*咳*，我得了很嚴重的熱病，真的需要幫忙！*咳*",
    "role": "desc",
@@ -26,7 +112,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#002": {
+  "Jungle Fever#010": {
    "src": "The only cure against this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
    "dst": "治這種熱病唯一的解藥就是喝液態綠寶石！沒錯，就是這樣！*咳*",
    "role": "desc",
@@ -36,7 +122,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#003": {
+  "Jungle Fever#011": {
    "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
    "dst": "你能不能去問問 {p} 的銀行行員，看他願不願意給我，我也不知道，[{~} 液態綠寶石]？",
    "role": "desc",
@@ -46,7 +132,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#004": {
+  "Jungle Fever#012": {
    "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
    "dst": "如果他膽敢 *咳* 說不……那你就只好動點粗了……",
    "role": "desc",
@@ -56,7 +142,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#005": {
+  "Jungle Fever#013": {
    "src": "Break into *cough* to the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
    "dst": "闖進 *咳* 綠寶石倉庫，但什麼都別拿……之後馬上回來找我，如果你活著出得來的話，嘿嘿……",
    "role": "desc",
@@ -66,7 +152,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#006": {
+  "Jungle Fever#014": {
    "src": "Oh, uh... I mean *cough* *cough*",
    "dst": "哦，呃……我是說 *咳* *咳*",
    "role": "desc",
@@ -76,7 +162,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#007": {
+  "Jungle Fever#015": {
    "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
    "dst": "前往 [{~1}, {~2}, -{~3}] 與 {p} 的銀行行員談 Worid 的解藥",
    "role": "desc",
@@ -86,7 +172,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#008": {
+  "Jungle Fever#016": {
    "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
    "dst": "[{~} 液態綠寶石]？他瘋了！液態綠寶石治不了任何病，除了窮病！",
    "role": "desc",
@@ -96,7 +182,7 @@
    "speaker": "The Banker",
    "source": "wiki"
   },
-  "Jungle Fever#009": {
+  "Jungle Fever#017": {
    "src": "I will not participate in this pathetic fraud attempt!",
    "dst": "我才不要參與這種可笑的詐騙！",
    "role": "desc",
@@ -106,7 +192,7 @@
    "speaker": "The Banker",
    "source": "wiki"
   },
-  "Jungle Fever#010": {
+  "Jungle Fever#018": {
    "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
    "dst": "進入 [{~1}, {~2}, -{~3}] 的 {p} 綠寶石倉庫",
    "role": "desc",
@@ -116,7 +202,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#011": {
+  "Jungle Fever#019": {
    "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
    "dst": "哦不！沒有液態綠寶石，我的病要怎麼治啊？……*咳*",
    "role": "desc",
@@ -126,7 +212,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#012": {
+  "Jungle Fever#020": {
    "src": "We'll have to change our strategy, we won't ask for permission. It's to help me after all.",
    "dst": "我們得換個策略，不問許可了。反正是為了救我嘛。",
    "role": "desc",
@@ -136,7 +222,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#013": {
+  "Jungle Fever#021": {
    "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
    "dst": "首先，我得確認你有辦法輕鬆闖進銀行。試著進 {p} 的祕密倉庫看看。",
    "role": "desc",
@@ -146,7 +232,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#014": {
+  "Jungle Fever#022": {
    "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
    "dst": "搞定之後再來找我。也小心一點，他們可能有守衛。",
    "role": "desc",
@@ -156,7 +242,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#015": {
+  "Jungle Fever#023": {
    "src": "Return to Worid",
    "dst": "回去找 Worid",
    "role": "desc",
@@ -166,7 +252,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#016": {
+  "Jungle Fever#024": {
    "src": "What? You're here already. I thought you would take too long so I just went myself.",
    "dst": "什麼？你已經到了。我以為你會弄很久，所以我就自己去了。",
    "role": "desc",
@@ -176,7 +262,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#017": {
+  "Jungle Fever#025": {
    "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
    "dst": "我的病？對啦。*咳* 你逼一個病人幫你做事，應該覺得慚愧才對。",
    "role": "desc",
@@ -186,7 +272,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#018": {
+  "Jungle Fever#026": {
    "src": "Anyway I see you proved yourself, we can start the real thing now.",
    "dst": "總之我看你證明了自己，我們可以開始來真的了。",
    "role": "desc",
@@ -196,7 +282,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#019": {
+  "Jungle Fever#027": {
    "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
    "dst": "你知道嗎，{p} 有一座守衛森嚴的綠寶石金庫，叫做「綠寶石迷宮」。",
    "role": "desc",
@@ -206,7 +292,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#020": {
+  "Jungle Fever#028": {
    "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
    "dst": "那裡有一大堆訓練有素的守衛魔像看守，隨便一台都能輕鬆殺死冒險者。",
    "role": "desc",
@@ -216,7 +302,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#021": {
+  "Jungle Fever#029": {
    "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
    "dst": "祕密金庫裡的那個行員一定無聊到快發瘋了，你去找他，他應該不會介意。",
    "role": "desc",
@@ -226,7 +312,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#022": {
+  "Jungle Fever#030": {
    "src": "Good luck with that. Haha.. I mean, *cough*.",
    "dst": "祝你好運囉。哈哈……我是說，*咳*。",
    "role": "desc",
@@ -236,7 +322,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#023": {
+  "Jungle Fever#031": {
    "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
    "dst": "潛入 [{~1}, {~2}, -{~3}] 地下的 {p} 祕密綠寶石迷宮，在綠寶石室找到那名行員",
    "role": "desc",
@@ -246,7 +332,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#024": {
+  "Jungle Fever#032": {
    "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
    "dst": "哦，呃！有人！我好久好久沒見過人了！",
    "role": "desc",
@@ -256,7 +342,7 @@
    "speaker": "Almuj Banker",
    "source": "wiki"
   },
-  "Jungle Fever#025": {
+  "Jungle Fever#033": {
    "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
    "dst": "液態綠寶石？當然、當然！我這裡多的是！來，拿去吧。",
    "role": "desc",
@@ -266,7 +352,7 @@
    "speaker": "Almuj Banker",
    "source": "wiki"
   },
-  "Jungle Fever#026": {
+  "Jungle Fever#034": {
    "src": "Talk to Worid at [{~}, {~}, -{~}].",
    "dst": "前往 [{~1}, {~2}, -{~3}] 與 Worid 對話。",
    "role": "desc",
@@ -276,7 +362,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#027": {
+  "Jungle Fever#035": {
    "src": "You are back! Wonderful!",
    "dst": "你回來了！太好了！",
    "role": "desc",
@@ -286,7 +372,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#028": {
+  "Jungle Fever#036": {
    "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
    "dst": "這可是一大筆錢，真的很謝謝你，我終於可以……*咳* 把自己治好了！",
    "role": "desc",
@@ -296,7 +382,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#029": {
+  "Jungle Fever#037": {
    "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
    "dst": "來，這份拿去，你應得的。錢我大部分得拿去 *咳* 治病，所以改用一把鑰匙付你。",
    "role": "desc",
@@ -306,7 +392,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#030": {
+  "Jungle Fever#038": {
    "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
    "dst": "那是我從我們部落首領那裡偷——*咳* 我是說借來的。聽說那是用來封印某個大邪惡的東西。",
    "role": "desc",
@@ -316,7 +402,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#031": {
+  "Jungle Fever#039": {
    "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
    "dst": "祝你早死——*咳* 呃……早日順利。對，祝你好運，冒險者！",
    "role": "desc",
