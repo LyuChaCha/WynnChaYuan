@@ -54,8 +54,60 @@ public final class BlockProseColourTest {
     public static void main(String[] args) throws Exception {
         realCard();
         longName();
+        coordOnItsOwnRow();
         tealReallyWins();
         report();
+    }
+
+    /**
+     * 座標整串（連同開頭那個 {@code [}）都是白的。
+     *
+     * <h2>實機回報（採集站的迷你任務卡）</h2>
+     * <pre>
+     *   石] 交到采集站 [采矿等级 73]，
+     *   坐标 [-712, 46, -5553]
+     * </pre>
+     * 座標的數字是白的，開頭那個 {@code [} 卻是散文的灰。
+     *
+     * <p>這一列的字面是「坐标 [-」接數值，前面沒有別的數值可以黏——
+     * {@code appendHugging} 得從尾巴往回把 {@code [-} 黏到後面那個數值上。
+     * 中間隔著一格空白，而「中間有空白就不算黏著」那條規則管的是詞距，
+     * 不是座標開頭的這一格。
+     */
+    private static void coordOnItsOwnRow() throws Exception {
+        String flat = "Bring [{~} Kanderstone Ingots] or [{~} Kanderstone Gems] "
+                + "to the Gathering Post [Mining Lv. {~}] at [-{~}, {~}, -{~}]";
+        String dst = "把 [{~} Kanderstone 錠] 或 [{~} Kanderstone 寶石] "
+                + "交到採集站 [採礦等級 {~}]，座標 [-{~}, {~}, -{~}]";
+        List<StyledText> run = List.of(
+                line("Bring ", BODY, "[40 Kanderstone Ingots]", ITEM, " or", BODY),
+                line("[40 Kanderstone Gems]", ITEM, " to the", BODY),
+                line("Gathering Post ", BODY, "[Mining Lv. 73]", ITEM, " at", BODY),
+                line("[-712, 46, -5553]", COORD));
+
+        Path debug = Files.createTempDirectory("block-prose-coord");
+        FlowedDebug.init(debug);
+        List<Component> built = translate(run, flat, dst);
+        check("［座標自成一列］整段查得到譯文", built != null && !built.isEmpty());
+        if (built == null || built.isEmpty()) {
+            return;
+        }
+        dump("［座標自成一列］", built);
+
+        String text = flatText(built);
+        int at = text.indexOf("712");
+        check("［座標自成一列］譯文裡有這個座標", at > 0);
+        if (at <= 0) {
+            return;
+        }
+        int bracket = text.lastIndexOf('[', at);
+        Integer open = charColour(built, bracket);
+        check("★［座標自成一列］座標開頭的「[」是白的，不是散文的灰（拿到 "
+                + show(open) + "，實際分段：" + pieces(built) + "）",
+                open != null && open == COORD);
+        Integer minus = charColour(built, bracket + 1);
+        check("★［座標自成一列］「[」後面那個負號也是白的（拿到 " + show(minus) + "）",
+                minus != null && minus == COORD);
     }
 
     /**
@@ -233,6 +285,34 @@ public final class BlockProseColourTest {
             }, Style.EMPTY);
         }
         return out;
+    }
+
+    /** 畫出去的整串文字（所有段接起來）。 */
+    private static String flatText(List<Component> built) {
+        StringBuilder out = new StringBuilder();
+        for (Component c : built) {
+            c.visit((style, t) -> {
+                out.append(t);
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        return out.toString();
+    }
+
+    /** {@link #flatText} 裡第 {@code index} 個字的顏色。 */
+    private static Integer charColour(List<Component> built, int index) {
+        List<Integer> hit = new ArrayList<>();
+        int[] seen = {0};
+        for (Component c : built) {
+            c.visit((style, t) -> {
+                if (hit.isEmpty() && index < seen[0] + t.length()) {
+                    hit.add(style.getColor() == null ? null : style.getColor().getValue() & 0xFFFFFF);
+                }
+                seen[0] += t.length();
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        return hit.isEmpty() ? null : hit.get(0);
     }
 
     private static String show(Integer c) {
