@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Frost Bite",
-  "count": 90,
-  "translated": 69,
+  "count": 92,
+  "translated": 70,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -127,7 +127,7 @@
    "source": "captured"
   },
   "Frost Bite#012": {
-   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
+   "src": "Now you've obtained the key, you can enter Theoricks mansion",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -137,7 +137,7 @@
    "source": "captured"
   },
   "Frost Bite#013": {
-   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
+   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -147,7 +147,7 @@
    "source": "captured"
   },
   "Frost Bite#014": {
-   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
+   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -157,7 +157,7 @@
    "source": "captured"
   },
   "Frost Bite#015": {
-   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
+   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -167,7 +167,7 @@
    "source": "captured"
   },
   "Frost Bite#016": {
-   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
+   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -177,7 +177,7 @@
    "source": "captured"
   },
   "Frost Bite#017": {
-   "src": "We...we know. We told them that, too...we're sorry.",
+   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -187,7 +187,7 @@
    "source": "captured"
   },
   "Frost Bite#018": {
-   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
+   "src": "We...we know. We told them that, too...we're sorry.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -197,7 +197,7 @@
    "source": "captured"
   },
   "Frost Bite#019": {
-   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
+   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -207,7 +207,7 @@
    "source": "captured"
   },
   "Frost Bite#020": {
-   "src": "There must be some way to open it. Look around and see what you can find.",
+   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -217,6 +217,16 @@
    "source": "captured"
   },
   "Frost Bite#021": {
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#022": {
    "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
    "dst": "Vaya, incluso para los estándares de hoy es muchísimo dinero. Imagina cuánto era hace siglos.",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Frost Bite#022": {
+  "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
    "dst": "Encuentra a Eppo en [-{~}, {~}, -{~}]. La entrada a su cueva está en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#023": {
+  "Frost Bite#024": {
    "src": "Let's give it another try!",
    "dst": "¡Probemos otra vez!",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#024": {
+  "Frost Bite#025": {
    "src": "Ready the drill, men!",
    "dst": "¡Preparad el taladro, chicos!",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#025": {
+  "Frost Bite#026": {
    "src": "Darn. The drill just won't start.",
    "dst": "Vaya. El taladro no arranca.",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#026": {
+  "Frost Bite#027": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up here to the drill, maybe you can take a look?",
    "dst": "¡Eh, guardia! ¿Sabes algo de electromagia? Sube aquí al taladro, ¿le echas un vistazo?",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#027": {
+  "Frost Bite#028": {
    "src": "Oh! Never mind, it lit up, back up!",
    "dst": "¡Ah! Nada, se encendió. ¡Atrás!",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#028": {
+  "Frost Bite#029": {
    "src": "For the love of Bob... Why won't you just break?",
    "dst": "Por el amor de Bob... ¿Por qué no te rompes de una vez?",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#029": {
+  "Frost Bite#030": {
    "src": "This ice was created by Theorick, a Twain who defended this area many many years ago.",
    "dst": "Este hielo lo creó Theorick, un Twain que defendió esta zona hace muchísimos años.",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#030": {
+  "Frost Bite#031": {
    "src": "When the corruption got too much... He froze everything, including the people. Do you see them in there?",
    "dst": "Cuando la corrupción fue demasiada... lo congeló todo, hasta a la gente. ¿Los ves ahí dentro?",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#031": {
+  "Frost Bite#032": {
    "src": "We've tried desperately to get them out, but we've tried all the equipment we had, including this Corkian drill.",
    "dst": "Hemos probado de todo para sacarlos, con todo el equipo que teníamos, incluido este taladro corkiano.",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#032": {
+  "Frost Bite#033": {
    "src": "Maybe we should get more destructive... The demolition expert, Rhudya, is further down the cave.",
    "dst": "Quizá haya que ser más destructivos... El experto en demoliciones, Rhudya, está al fondo de la cueva.",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#033": {
+  "Frost Bite#034": {
    "src": "It's a long shot, but worth a try. Would you be able to get it while I clear this space?",
    "dst": "Hay pocas opciones, pero vale la pena. ¿Puedes ir a por ella mientras despejo esto?",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#034": {
+  "Frost Bite#035": {
    "src": "Go deeper into the cave and speak to Rhudya.",
    "dst": "Adéntrate en la cueva y habla con Rhudya.",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#035": {
+  "Frost Bite#036": {
    "src": "Whup! You're on private property, y'know! Oh, Eppo sent ya? That's fair enough.",
    "dst": "¡Uy! ¡Esto es propiedad privada! Ah, ¿te manda Eppo? Pues vale.",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#036": {
+  "Frost Bite#037": {
    "src": "You'll be needing this TNT then, make sure not to drop it though, whup!",
    "dst": "Entonces necesitarás este TNT, pero que no se te caiga, ¡uy!",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#037": {
+  "Frost Bite#038": {
    "src": "Just travel through this cave and you'll be returned to Eppo easy-peasy!",
    "dst": "¡Cruza esta cueva y volverás con Eppo en un periquete!",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#038": {
+  "Frost Bite#039": {
    "src": "Return to Eppo with the tnt.",
    "dst": "Vuelve con Eppo con el TNT.",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#039": {
+  "Frost Bite#040": {
    "src": "Very nice, this might do the trick.",
    "dst": "Muy bien, esto quizá funcione.",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#040": {
+  "Frost Bite#041": {
    "src": "Back up, I'll ignite the explosive.",
    "dst": "Atrás, enciendo el explosivo.",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#041": {
+  "Frost Bite#042": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#042": {
+  "Frost Bite#043": {
    "src": "NOTHING? Not even a scratch. I don't understand Theoricks ice.. It's not real.",
    "dst": "¿NADA? Ni un rasguño. No entiendo el hielo de Theorick... No es real.",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#043": {
+  "Frost Bite#044": {
    "src": "I'm not sure what else we can do then...",
    "dst": "No sé qué más podemos hacer...",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#044": {
+  "Frost Bite#045": {
    "src": "HEY. Eppo, over here! Near the cave!",
    "dst": "EH. ¡Eppo, por aquí! ¡En la cueva!",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#045": {
+  "Frost Bite#046": {
    "src": "Did the explosive not work? I found this old mineshaft on the way back from the cave, it leads to an old lava cavern.",
    "dst": "¿No funcionó el explosivo? Volviendo de la cueva vi una vieja mina que lleva a una caverna de lava antigua.",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#046": {
+  "Frost Bite#047": {
    "src": "Might be a long shot, but this lava looks different. Why not give it a try?",
    "dst": "Hay poca esperanza, pero esa lava parece distinta. ¿Por qué no probar?",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#047": {
+  "Frost Bite#048": {
    "src": "Travel to the lava springs through the mineshaft.",
    "dst": "Llega a los manantiales de lava a través de la mina.",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#048": {
+  "Frost Bite#049": {
    "src": "Complete the puzzle and bring the lava back to Eppo.",
    "dst": "Resuelve el puzle y lleva la lava a Eppo.",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#049": {
+  "Frost Bite#050": {
    "src": "I don't understand how you can hold lava in a bucket.. But here we are.",
    "dst": "No entiendo cómo puedes llevar lava en un cubo... Pero ahí está.",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#050": {
+  "Frost Bite#051": {
    "src": "Truth is.. We're not retrieving these bodies for no reason.",
    "dst": "La verdad... no sacamos estos cuerpos porque sí.",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#051": {
+  "Frost Bite#052": {
    "src": "We believe one of these people worked for Theorick, and has a key to his mansion",
    "dst": "Creemos que uno de ellos trabajaba para Theorick y tiene una llave de su mansión",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#052": {
+  "Frost Bite#053": {
    "src": "We in {p} think Theorick has a lot to answer for. We want to redistribute his wealth among those he hurt.",
    "dst": "En {p} creemos que Theorick tiene mucho que explicar. Queremos repartir su riqueza entre los que dañó.",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#053": {
+  "Frost Bite#054": {
    "src": "Right, I've dipped this stick in the magical lava. Just hold the rod and walk into the ice to melt it.",
    "dst": "Listo, he mojado este palo en la lava mágica. Solo tienes que sostenerlo y entrar en el hielo para fundirlo.",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#054": {
+  "Frost Bite#055": {
    "src": "Look for the corpse with a key, it might be above you. Good luck!",
    "dst": "Busca el cadáver con una llave, quizá esté sobre ti. ¡Suerte!",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#055": {
+  "Frost Bite#056": {
    "src": "Melt the ice and find the Servant's corpse.",
    "dst": "Funde el hielo y encuentra el cadáver del sirviente.",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#056": {
+  "Frost Bite#057": {
    "src": "Is that the right one? You got it? Brilliant! Now come back down.",
    "dst": "¿Es ese? ¿La tienes? ¡Genial! Ahora baja.",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#057": {
+  "Frost Bite#058": {
    "src": "Lets travel to the mansion together. Here, lets take my horse.",
    "dst": "Vayamos juntos a la mansión. Toma, montemos mi caballo.",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#058": {
+  "Frost Bite#059": {
    "src": "While we ride, let me explain a little more about what we're doing. Let's go.",
    "dst": "Por el camino te explico un poco más lo que hacemos. Vamos.",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#059": {
+  "Frost Bite#060": {
    "src": "As I mentioned before, there is a reason this land is frozen, and it's not natural.",
    "dst": "Como ya dije, esta tierra está helada por algo, y no es natural.",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#060": {
+  "Frost Bite#061": {
    "src": "Many years before Bob was around, Wynn was in ruins due to the corruption war.",
    "dst": "Mucho antes de Bob, Wynn quedó en ruinas por la guerra de la corrupción.",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#061": {
+  "Frost Bite#062": {
    "src": "In those times there used to be a group of naturally gifted individuals called the Twains. They defended us all with elemental magic.",
    "dst": "En aquellos tiempos había un grupo de personas con un don natural, los Twains. Nos defendían a todos con magia elemental.",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#062": {
+  "Frost Bite#063": {
    "src": "Theorick was one of those Twains. He harnessed unnaturally powerful ice based magic. He used it to protect the land surrounding the mansion.",
    "dst": "Theorick era uno de esos Twains. Dominaba una magia de hielo antinaturalmente poderosa. La usaba para proteger la tierra que rodea la mansión.",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#063": {
+  "Frost Bite#064": {
    "src": "Theorick.. Wasn't like the other Twains. He wanted the people he protected to pay and feed him as way of thanks.",
    "dst": "Theorick... no era como los demás Twains. Exigía pago y comida de los que protegía, en agradecimiento.",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#064": {
+  "Frost Bite#065": {
    "src": "After years, Theorick was rich while the people he protected lived in poverty and fear - not only of the monsters, but in fear of Theorick himself.",
    "dst": "Con los años, Theorick se hizo rico mientras los que protegía vivían en la pobreza y el miedo, no solo a los monstruos, sino al propio Theorick.",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#065": {
+  "Frost Bite#066": {
    "src": "He punished those who disobeyed his curfews and would get angry if anyone tried to move away. The people felt trapped.",
    "dst": "Castigaba a quienes incumplían su toque de queda y se enfurecía si alguien quería marcharse. La gente se sentía atrapada.",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#066": {
+  "Frost Bite#067": {
    "src": "Eventually, just like the other Twains - Theorick fell to the corruption. Not before he had the last word.",
    "dst": "Al final, como los demás Twains, Theorick cayó ante la corrupción. Pero no sin tener la última palabra.",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#067": {
+  "Frost Bite#068": {
    "src": "He froze the land entirely, killing almost everything and everyone left outside in it. Hundreds of lives were lost.",
    "dst": "Congeló la tierra por completo, matando a casi todo y a casi todos los que quedaron fuera. Se perdieron cientos de vidas.",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#068": {
+  "Frost Bite#069": {
    "src": "It turns out the ice slowed the spread of corruption across the land to almost a standstill. It's been this way ever since.",
    "dst": "Resultó que el hielo frenó casi por completo la expansión de la corrupción por estas tierras. Y así sigue desde entonces.",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#069": {
+  "Frost Bite#070": {
    "src": "Now that we can get in his mansion we hope to uncover the secrets of his ice magic so we may undo it, and share the wealth he hoarded from the people. Ah, we're here.",
    "dst": "Ahora que podemos entrar en su mansión, esperamos descubrir los secretos de su magia de hielo para deshacerla y repartir la riqueza que acaparó del pueblo. Ah, ya llegamos.",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#070": {
+  "Frost Bite#071": {
    "src": "Enter Theorick's Mansion.",
    "dst": "Entra en la mansión de Theorick.",
    "role": "desc",
@@ -716,7 +726,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#071": {
+  "Frost Bite#072": {
    "src": "This place looks frozen in time.. The grandure.. Well he did just take and take from everyone around him.",
    "dst": "Este sitio parece congelado en el tiempo... Qué grandeza... En fin, no hizo más que quitar y quitar a todos.",
    "role": "desc",
@@ -726,7 +736,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#072": {
+  "Frost Bite#073": {
    "src": "So, I'm not sure where to start, but I'm guessing he has some protection in place.",
    "dst": "No sé por dónde empezar, pero supongo que tendrá alguna protección.",
    "role": "desc",
@@ -736,7 +746,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#073": {
+  "Frost Bite#074": {
    "src": "This is unbelievable.. He was such a greedy- AAAAH.",
    "dst": "Es increíble... Era un avaro de lo más- AAAAH.",
    "role": "desc",
@@ -746,7 +756,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#074": {
+  "Frost Bite#075": {
    "src": "... I don't think we should insult him..",
    "dst": "... Mejor no lo insultemos...",
    "role": "desc",
@@ -756,7 +766,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#075": {
+  "Frost Bite#076": {
    "src": "Find the riches in Theorick's mansion.",
    "dst": "Encuentra las riquezas en la mansión de Theorick.",
    "role": "desc",
@@ -766,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#076": {
+  "Frost Bite#077": {
    "src": "Oof! Wasn't expecting that. That just proves everything I said about him. Punishing people who insult him.",
    "dst": "¡Uf! No me lo esperaba. Eso confirma todo lo que dije de él. Castiga a quien lo insulta.",
    "role": "desc",
@@ -776,7 +786,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#077": {
+  "Frost Bite#078": {
    "src": "Anyway, we should look around for some kind of secret entrance.",
    "dst": "En fin, deberíamos buscar algún tipo de entrada secreta.",
    "role": "desc",
@@ -786,7 +796,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#078": {
+  "Frost Bite#079": {
    "src": "Trust Theorick to booby trap his own house the paranoid frozen gro-",
    "dst": "Típico de Theorick, poner trampas en su casa, el viejo paranoico conge-",
    "role": "desc",
@@ -796,7 +806,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#079": {
+  "Frost Bite#080": {
    "src": "That really isn't fun at all. I can't see a thing. Where are we now, a dead end?",
    "dst": "No tiene ninguna gracia. No veo nada. ¿Dónde estamos, sin salida?",
    "role": "desc",
@@ -806,7 +816,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#080": {
+  "Frost Bite#081": {
    "src": "Well we know that insults result in punishment. Maybe a compliment will make him happy?",
    "dst": "Sabemos que los insultos traen castigo. ¿Y si un halago lo pone contento?",
    "role": "desc",
@@ -816,7 +826,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#081": {
+  "Frost Bite#082": {
    "src": "Oh Theorick, strongest of all the Twains, you really are a hero.",
    "dst": "Oh Theorick, el más fuerte de los Twains, eres todo un héroe.",
    "role": "desc",
@@ -826,7 +836,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#082": {
+  "Frost Bite#083": {
    "src": "Maybe n-",
    "dst": "Quizá n-",
    "role": "desc",
@@ -836,7 +846,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#083": {
+  "Frost Bite#084": {
    "src": "Looks like we finally found his private quarters, look at that vault door.",
    "dst": "Parece que al fin dimos con sus aposentos. Mira esa puerta blindada.",
    "role": "desc",
@@ -846,7 +856,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#084": {
+  "Frost Bite#085": {
    "src": "There must be a way to open it. Look around and see what you can find.",
    "dst": "Tiene que haber forma de abrirla. Echa un vistazo por ahí.",
    "role": "desc",
@@ -856,7 +866,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#085": {
+  "Frost Bite#086": {
    "src": "Find your way into the vault.",
    "dst": "Encuentra la forma de entrar en la cámara.",
    "role": "desc",
@@ -866,9 +876,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#086": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "¡Lo lograste! Ya entramos a la cámara.",
+  "Frost Bite#088": {
+   "src": "Wow, even by today's standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "Vaya, incluso para los estándares de hoy es muchísimo dinero. Imagina cuánto era hace siglos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -876,7 +886,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#088": {
+  "Frost Bite#089": {
    "src": "Grab a little for yourself, too, we wouldn't have been able to get here without you.",
    "dst": "Coge un poco para ti también, sin ti no habríamos llegado hasta aquí.",
    "role": "desc",
@@ -886,7 +896,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#089": {
+  "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "Espera, mira esto. Parece una pieza de la armadura de Theorick.",
    "role": "desc",
@@ -896,7 +906,17 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#090": {
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "¡Lo lograste! Ya entramos a la cámara.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
    "src": "Surprised it even managed to fit over his fat head.",
    "dst": "Me sorprende que le entrara en esa cabezota.",
    "role": "desc",

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Out of my Mind",
-  "count": 73,
-  "translated": 61,
+  "count": 74,
+  "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -48,19 +48,13 @@
   },
   "Out of my Mind#004": {
    "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "{u}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -252,16 +246,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
-   "dst": "잠깐 Viola, 이건 기회야! 이 사람은 뭐든 해치울 것 같잖아, 사악한 소라게라도! 이 사람한테 소문이 진짜인지 알아봐 달라고 하면 돼!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 1",
-   "speaker": "Prentiss",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "저기 내 친구들은 신경 쓰지 마, 맨날 저래. 그래도 Prentiss 말이 맞아. 그 수수께끼 남자가 누군지 알아낼 유일한 기회일지도 몰라!",
@@ -375,16 +359,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "너 지금 이런 생각 하지? 어째서 나 같은 멋진 사람을 이제야 만났을까? 솔직히 넌 운이 지독히 나빴던 거야. 나 예전엔 세계를 여행했거든!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "{PlayerName}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -740,6 +714,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "이 문 닫는 거 좀 도와줘, 안 그러면 내 깜짝 선물이 망한다고!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "불은 불로 다스린다는 말을 들은 것 같아. 그러니 널 되돌릴 방법이 있어! 근데 넌 나한테 좀 무거우니까, 다른 방법을 생각해야 해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "식물 괴물을 처치할 방법을 찾은 뒤, [-{~},-{~}]의 {p}에 있는 아이들에게 돌아가 알아낸 것을 보고하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   }
  }

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Out of my Mind",
-  "count": 73,
-  "translated": 61,
+  "count": 74,
+  "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -48,19 +48,13 @@
   },
   "Out of my Mind#004": {
    "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "Eres la primera persona normal que veo últimamente, {u}. ¡El otro día salí y unos vecinos muy groseros me soltaron unas groserías!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -252,16 +246,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
-   "dst": "¡Espera, Viola, es nuestra oportunidad! Parece que puede con todo, ¡hasta con cangrejos ermitaños malvados! ¡Podemos pedirle que compruebe si los rumores son ciertos!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 1",
-   "speaker": "Prentiss",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "No hagas caso a mis amigos, siempre son así, pero Prentiss tiene razón. ¡Puede que sea nuestra única oportunidad de saber quién es de verdad ese hombre misterioso!",
@@ -375,16 +359,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "Estarás pensando: ¿cómo no había conocido antes a un tipo tan estupendo como yo? Sinceramente, has tenido muy mala suerte, ¡porque yo recorría el mundo entero!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "Eres la primera persona normal que veo últimamente, {PlayerName}. ¡El otro día salí y unos vecinos muy groseros me soltaron unas groserías!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -740,6 +714,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "¡Ayúdame a aguantar la puerta o se estropeará mi sorpresa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "Creo que oí aquello de combatir el fuego con fuego, ¡así que creo que puedo devolverte! Pesas un poco demasiado para mí, así que hay que buscar una alternativa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "Encuentra la forma de destruir al monstruo vegetal y vuelve con el grupo en {p} en [-{~},-{~}] para contar lo que has descubierto",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   }
  }

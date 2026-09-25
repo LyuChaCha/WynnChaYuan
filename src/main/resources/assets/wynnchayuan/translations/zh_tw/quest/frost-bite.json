@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Frost Bite",
-  "count": 90,
-  "translated": 90,
+  "count": 92,
+  "translated": 92,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -18,7 +18,7 @@
   },
   "Frost Bite#001": {
    "src": "Are you here to cross the Great Bridge as well?",
-   "dst": "你也是要過大橋的嗎？",
+   "dst": "你也是要過 Great Bridge 的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -28,7 +28,7 @@
   },
   "Frost Bite#002": {
    "src": "I fear you'll have to wait, the warning wasn't without merit.",
-   "dst": "恐怕你得等等，那則警告不是空穴來風。",
+   "dst": "恐怕你得等一等了，那則警告不是空穴來風。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -38,7 +38,7 @@
   },
   "Frost Bite#003": {
    "src": "The {p} military has issued an official warning to all travelers wishing to cross the Great Bridge.",
-   "dst": "{p} 軍方已對所有想通過大橋的旅人發出正式警告。",
+   "dst": "{p} 軍方已經對所有想過 Great Bridge 的旅人發出正式警告。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -48,7 +48,7 @@
   },
   "Frost Bite#004": {
    "src": "No one should use the bridge until they have dealt with the... underlying issue.",
-   "dst": "在他們處理掉那個……根本問題之前，誰都不該走那座橋。",
+   "dst": "在他們處理掉那個...根本問題之前，誰都不該走這座橋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -58,7 +58,7 @@
   },
   "Frost Bite#005": {
    "src": "I ignored the warning at first, since the bridge is the only path into the jungle...",
-   "dst": "我一開始沒理那則警告，畢竟那座橋是進叢林的唯一一條路……",
+   "dst": "我一開始沒把警告當回事，畢竟那座橋是進叢林的唯一路徑...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -68,7 +68,7 @@
   },
   "Frost Bite#006": {
    "src": "But attempting to cross the bridge proved unbearable. Even out here, can't you feel that intense heat?",
-   "dst": "但真要過橋才發現根本受不了。就算在這裡，你不覺得那股熱氣很嚇人嗎？",
+   "dst": "但真要過橋才發現根本受不了。就算站在這裡，你難道感覺不到那股高溫嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -78,7 +78,7 @@
   },
   "Frost Bite#007": {
    "src": "I wouldn't blame anyone for not wanting to venture further, let alone meet whatever is causing this heat!",
-   "dst": "不想再往前走，我一點都不會怪誰，更別說去會會那個熱源了！",
+   "dst": "不想再往前走的人我一點都不怪他們，更別說去會一會造成這股熱浪的東西了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -88,7 +88,7 @@
   },
   "Frost Bite#008": {
    "src": "And so I've been waiting here with my assistant all day... We're potion makers, you see, and we were headed to the grand city of {p} to sell supplies.",
-   "dst": "所以我就跟我的助手在這裡等了一整天……我們是製藥師，本來要去 {p} 那座大城賣補給的。",
+   "dst": "所以我就和助手在這裡等了一整天... 你看，我們是做藥水的，本來要前往 {p} 那座大城賣貨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -98,7 +98,7 @@
   },
   "Frost Bite#009": {
    "src": "If you want to ignore the military's warning, I suppose you might benefit from buying some our stock first. Our potions are stronger than any sold in {p}, after all!",
-   "dst": "如果你打算無視軍方的警告，我想你先買點我們的貨會比較有利。我們的藥水可比 {p} 賣的任何一瓶都強！",
+   "dst": "如果你打算無視軍方的警告，我想你先買點我們的存貨應該不吃虧。畢竟我們的藥水比 {p} 賣的任何一種都還要強！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -108,7 +108,7 @@
   },
   "Frost Bite#010": {
    "src": "From the look of your equipment... I'd say you might have a better chance of making it across than us.",
-   "dst": "看你這身裝備……我想你過去的機會比我們大多了。",
+   "dst": "從你的裝備看來... 我想你能過去的機會比我們大多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -118,7 +118,7 @@
   },
   "Frost Bite#011": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up and take a look at the drill, would you?",
-   "dst": "喂，衛兵！你懂電磁法術嗎？過來看看這台鑽機好嗎？",
+   "dst": "喂，衛兵！你懂 Electromagic 嗎？上來看看這台鑽機，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -127,8 +127,8 @@
    "source": "captured"
   },
   "Frost Bite#012": {
-   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
-   "dst": "我們一起去那棟宅邸吧。來，我備了一輛馬車。",
+   "src": "Now you've obtained the key, you can enter Theoricks mansion",
+   "dst": "你拿到鑰匙了，現在可以進 Theorick 的宅邸了",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -137,8 +137,8 @@
    "source": "captured"
   },
   "Frost Bite#013": {
-   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
-   "dst": "Theorick 大人，如果您，呃……如果您有空的話？您的貢品送到了……",
+   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
+   "dst": "我們一起去那座宅邸吧。來，我備了一輛馬車。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -147,8 +147,8 @@
    "source": "captured"
   },
   "Frost Bite#014": {
-   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
-   "dst": "……很好。謝謝。看到還有人真心尊重我為你們大家所做的事，真令人欣慰。還有別人嗎？",
+   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
+   "dst": "Theorick 大人，請問您，呃...您方便一下嗎？您的貢品到了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -157,8 +157,8 @@
    "source": "captured"
   },
   "Frost Bite#015": {
-   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
-   "dst": "啊……沒有。這次……這次沒有了。他們覺得您從他們身上拿走太多，我並不認同，可是——",
+   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
+   "dst": "...很好。謝謝。看到還有人真心敬重我為你們所做的事，我很欣慰。還有其他人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -167,8 +167,8 @@
    "source": "captured"
   },
   "Frost Bite#016": {
-   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
-   "dst": "……那就問問他們，是要保住錢，還是保住命。我不是在保護他們嗎？要我得到一點回報，真的有那麼過分嗎？",
+   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
+   "dst": "啊...沒有。這次...這次沒有了。他們覺得您跟他們拿得太多了，我並不認同這種說法，可是-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -177,8 +177,8 @@
    "source": "captured"
   },
   "Frost Bite#017": {
-   "src": "We...we know. We told them that, too...we're sorry.",
-   "dst": "我們……我們知道。我們也是那樣跟他們說的……很抱歉。",
+   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
+   "dst": "...去問問他們，是要錢，還是要命。難道我沒在保護他們嗎？我要求一點回報，真的過分到這種地步嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -187,8 +187,8 @@
    "source": "captured"
   },
   "Frost Bite#018": {
-   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
-   "dst": "該道歉的不是你們！我知道那是自願的捐獻，但他們有沒有想過，要定期施展這種法術有多困難？！",
+   "src": "We...we know. We told them that, too...we're sorry.",
+   "dst": "我們...我們知道。這些話我們也跟他們說過了...很抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -197,8 +197,8 @@
    "source": "captured"
   },
   "Frost Bite#019": {
-   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
-   "dst": "這太離譜了……他居然這麼貪——啊啊啊啊。",
+   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
+   "dst": "該道歉的不是你們！我知道那是自願捐獻，但他們有沒有概念，要定期施展這種魔法有多困難？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -207,8 +207,8 @@
    "source": "captured"
   },
   "Frost Bite#020": {
-   "src": "There must be some way to open it. Look around and see what you can find.",
-   "dst": "一定有辦法打開它。四處找找看有什麼發現。",
+   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
+   "dst": "這太扯了.. 他根本就是個貪得無厭的- 啊啊啊啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -217,8 +217,8 @@
    "source": "captured"
   },
   "Frost Bite#021": {
-   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "哇，就算用現在的標準看，這也是一大筆錢。想想幾百年前這值多少。",
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "一定有辦法打開它的。四處找找看有什麼發現。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -227,6 +227,16 @@
    "source": "captured"
   },
   "Frost Bite#022": {
+   "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "哇，就算用今天的標準來看，這也是一大筆錢。想想看，這在幾百年前又值多少。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 找到 Eppo。他的洞穴入口在 [-{~4}, {~5}, -{~6}]。",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#023": {
+  "Frost Bite#024": {
    "src": "Let's give it another try!",
    "dst": "再試一次吧！",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#024": {
+  "Frost Bite#025": {
    "src": "Ready the drill, men!",
    "dst": "弟兄們，鑽頭準備！",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#025": {
+  "Frost Bite#026": {
    "src": "Darn. The drill just won't start.",
    "dst": "可惡。這鑽頭就是發不動。",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#026": {
+  "Frost Bite#027": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up here to the drill, maybe you can take a look?",
    "dst": "喂，衛兵！你懂 Electromagic 嗎？上來鑽頭這邊，說不定你看得出問題？",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#027": {
+  "Frost Bite#028": {
    "src": "Oh! Never mind, it lit up, back up!",
    "dst": "喔！沒事了，它亮了，退後！",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#028": {
+  "Frost Bite#029": {
    "src": "For the love of Bob... Why won't you just break?",
    "dst": "看在 Bob 的份上……你怎麼就是不碎？",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#029": {
+  "Frost Bite#030": {
    "src": "This ice was created by Theorick, a Twain who defended this area many many years ago.",
    "dst": "這些冰是 Theorick 造的，他是很久很久以前守護這一帶的一位 Twain。",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#030": {
+  "Frost Bite#031": {
    "src": "When the corruption got too much... He froze everything, including the people. Do you see them in there?",
    "dst": "當腐敗蔓延到無法收拾……他把一切都凍住了，連人也不例外。你看見裡面那些人了嗎？",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#031": {
+  "Frost Bite#032": {
    "src": "We've tried desperately to get them out, but we've tried all the equipment we had, including this Corkian drill.",
    "dst": "我們拚命想把他們弄出來，手上所有的設備都試過了，包括這台 Corkus 產的鑽頭。",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#032": {
+  "Frost Bite#033": {
    "src": "Maybe we should get more destructive... The demolition expert, Rhudya, is further down the cave.",
    "dst": "也許該用更暴力的方式……爆破專家 Rhudya 就在洞穴更裡面。",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#033": {
+  "Frost Bite#034": {
    "src": "It's a long shot, but worth a try. Would you be able to get it while I clear this space?",
    "dst": "機會不大，但值得一試。我來清這塊地方，你能去把東西拿來嗎？",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#034": {
+  "Frost Bite#035": {
    "src": "Go deeper into the cave and speak to Rhudya.",
    "dst": "深入洞穴，與 Rhudya 對話。",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#035": {
+  "Frost Bite#036": {
    "src": "Whup! You're on private property, y'know! Oh, Eppo sent ya? That's fair enough.",
    "dst": "哇！你可是踩在私人地界上啊！喔，Eppo 叫你來的？那就沒問題了。",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#036": {
+  "Frost Bite#037": {
    "src": "You'll be needing this TNT then, make sure not to drop it though, whup!",
    "dst": "那你會需要這些 TNT，可別給我摔了啊，哇！",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#037": {
+  "Frost Bite#038": {
    "src": "Just travel through this cave and you'll be returned to Eppo easy-peasy!",
    "dst": "穿過這個洞穴，輕輕鬆鬆就回到 Eppo 那邊了！",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#038": {
+  "Frost Bite#039": {
    "src": "Return to Eppo with the tnt.",
    "dst": "帶著 TNT 回到 Eppo 那裡。",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#039": {
+  "Frost Bite#040": {
    "src": "Very nice, this might do the trick.",
    "dst": "很好，這說不定行得通。",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#040": {
+  "Frost Bite#041": {
    "src": "Back up, I'll ignite the explosive.",
    "dst": "退後，我來點燃炸藥。",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#041": {
+  "Frost Bite#042": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#042": {
+  "Frost Bite#043": {
    "src": "NOTHING? Not even a scratch. I don't understand Theoricks ice.. It's not real.",
    "dst": "什麼都沒有？連一道刮痕都沒有。我搞不懂 Theorick 這冰……這根本不像真的。",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#043": {
+  "Frost Bite#044": {
    "src": "I'm not sure what else we can do then...",
    "dst": "那我也不知道還能怎麼辦了……",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#044": {
+  "Frost Bite#045": {
    "src": "HEY. Eppo, over here! Near the cave!",
    "dst": "喂。Eppo，這邊！洞穴附近！",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#045": {
+  "Frost Bite#046": {
    "src": "Did the explosive not work? I found this old mineshaft on the way back from the cave, it leads to an old lava cavern.",
    "dst": "炸藥沒效嗎？我從洞穴回來的路上發現了一條舊礦坑道，通往一個古老的熔岩洞。",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#046": {
+  "Frost Bite#047": {
    "src": "Might be a long shot, but this lava looks different. Why not give it a try?",
    "dst": "機會或許不大，但那裡的熔岩看起來不太一樣。何不試試？",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#047": {
+  "Frost Bite#048": {
    "src": "Travel to the lava springs through the mineshaft.",
    "dst": "穿過礦坑道，前往熔岩泉。",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#048": {
+  "Frost Bite#049": {
    "src": "Complete the puzzle and bring the lava back to Eppo.",
    "dst": "解開謎題，把熔岩帶回給 Eppo。",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#049": {
+  "Frost Bite#050": {
    "src": "I don't understand how you can hold lava in a bucket.. But here we are.",
    "dst": "我不懂熔岩怎麼能裝在桶子裡……但事實就擺在眼前。",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#050": {
+  "Frost Bite#051": {
    "src": "Truth is.. We're not retrieving these bodies for no reason.",
    "dst": "老實說……我們挖這些屍體不是沒有理由的。",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#051": {
+  "Frost Bite#052": {
    "src": "We believe one of these people worked for Theorick, and has a key to his mansion",
    "dst": "我們認為這些人裡有一個曾替 Theorick 做事，身上有他宅邸的鑰匙",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#052": {
+  "Frost Bite#053": {
    "src": "We in {p} think Theorick has a lot to answer for. We want to redistribute his wealth among those he hurt.",
    "dst": "我們 {p} 的人認為 Theorick 欠了太多交代。我們要把他的財富重新分給被他傷害過的人。",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#053": {
+  "Frost Bite#054": {
    "src": "Right, I've dipped this stick in the magical lava. Just hold the rod and walk into the ice to melt it.",
    "dst": "好，我把這根棒子浸過那魔法熔岩了。你只要握著它走進冰裡，冰就會融。",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#054": {
+  "Frost Bite#055": {
    "src": "Look for the corpse with a key, it might be above you. Good luck!",
    "dst": "去找身上帶鑰匙的那具屍體，可能在你上方。祝你好運！",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#055": {
+  "Frost Bite#056": {
    "src": "Melt the ice and find the Servant's corpse.",
    "dst": "融開冰層，找到那名僕人的屍體。",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#056": {
+  "Frost Bite#057": {
    "src": "Is that the right one? You got it? Brilliant! Now come back down.",
    "dst": "是那一具嗎？拿到了？太好了！快下來吧。",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#057": {
+  "Frost Bite#058": {
    "src": "Lets travel to the mansion together. Here, lets take my horse.",
    "dst": "我們一起去那座宅邸。來，騎我的馬。",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#058": {
+  "Frost Bite#059": {
    "src": "While we ride, let me explain a little more about what we're doing. Let's go.",
    "dst": "路上我再多說一點我們在做的事。走吧。",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#059": {
+  "Frost Bite#060": {
    "src": "As I mentioned before, there is a reason this land is frozen, and it's not natural.",
    "dst": "我剛才說過，這片土地被凍住是有原因的，而且不是自然造成的。",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#060": {
+  "Frost Bite#061": {
    "src": "Many years before Bob was around, Wynn was in ruins due to the corruption war.",
    "dst": "早在 Bob 出現的許多年前，Wynn 就因為腐敗之戰而滿目瘡痍。",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#061": {
+  "Frost Bite#062": {
    "src": "In those times there used to be a group of naturally gifted individuals called the Twains. They defended us all with elemental magic.",
    "dst": "那個年代有一群天賦異稟的人，稱作 Twains。他們以元素魔法守護著我們所有人。",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#062": {
+  "Frost Bite#063": {
    "src": "Theorick was one of those Twains. He harnessed unnaturally powerful ice based magic. He used it to protect the land surrounding the mansion.",
    "dst": "Theorick 就是其中一位 Twain。他駕馭著強得不自然的冰系魔法，用它守護宅邸周圍這片土地。",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#063": {
+  "Frost Bite#064": {
    "src": "Theorick.. Wasn't like the other Twains. He wanted the people he protected to pay and feed him as way of thanks.",
    "dst": "Theorick……跟其他 Twains 不一樣。他要他所保護的人以錢財與糧食來答謝他。",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#064": {
+  "Frost Bite#065": {
    "src": "After years, Theorick was rich while the people he protected lived in poverty and fear - not only of the monsters, but in fear of Theorick himself.",
    "dst": "多年下來，Theorick 富可敵國，而被他保護的人卻活在貧困與恐懼之中——他們怕的不只是怪物，還有 Theorick 本人。",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#065": {
+  "Frost Bite#066": {
    "src": "He punished those who disobeyed his curfews and would get angry if anyone tried to move away. The people felt trapped.",
    "dst": "誰不遵守他的宵禁就會被懲罰，誰想搬走他就發怒。人們覺得自己被困住了。",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#066": {
+  "Frost Bite#067": {
    "src": "Eventually, just like the other Twains - Theorick fell to the corruption. Not before he had the last word.",
    "dst": "最後，跟其他 Twains 一樣——Theorick 也墮入了腐敗。但在那之前，他還是把最後一句話說完了。",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#067": {
+  "Frost Bite#068": {
    "src": "He froze the land entirely, killing almost everything and everyone left outside in it. Hundreds of lives were lost.",
    "dst": "他把整片土地徹底冰封，幾乎凍死了留在外頭的一切生靈。數百條性命就此消逝。",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#068": {
+  "Frost Bite#069": {
    "src": "It turns out the ice slowed the spread of corruption across the land to almost a standstill. It's been this way ever since.",
    "dst": "結果那些冰竟把腐敗在這片土地上的蔓延拖到幾乎停滯。從那時起就一直是這樣了。",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#069": {
+  "Frost Bite#070": {
    "src": "Now that we can get in his mansion we hope to uncover the secrets of his ice magic so we may undo it, and share the wealth he hoarded from the people. Ah, we're here.",
    "dst": "現在我們進得了他的宅邸，希望能揭開他冰魔法的秘密好把它解開，也把他從人民身上搜刮來的財富分還出去。啊，到了。",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#070": {
+  "Frost Bite#071": {
    "src": "Enter Theorick's Mansion.",
    "dst": "進入 Theorick 的宅邸。",
    "role": "desc",
@@ -716,7 +726,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#071": {
+  "Frost Bite#072": {
    "src": "This place looks frozen in time.. The grandure.. Well he did just take and take from everyone around him.",
    "dst": "這地方彷彿被時間凍住了……這般氣派……唉，他確實是不斷從身邊每個人身上榨取。",
    "role": "desc",
@@ -726,7 +736,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#072": {
+  "Frost Bite#073": {
    "src": "So, I'm not sure where to start, but I'm guessing he has some protection in place.",
    "dst": "我不確定該從哪裡下手，不過我猜他一定設了什麼防護。",
    "role": "desc",
@@ -736,7 +746,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#073": {
+  "Frost Bite#074": {
    "src": "This is unbelievable.. He was such a greedy- AAAAH.",
    "dst": "真是難以置信……他根本是個貪得無厭的——啊啊啊啊。",
    "role": "desc",
@@ -746,7 +756,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#074": {
+  "Frost Bite#075": {
    "src": "... I don't think we should insult him..",
    "dst": "……我看我們還是別罵他好了……",
    "role": "desc",
@@ -756,7 +766,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#075": {
+  "Frost Bite#076": {
    "src": "Find the riches in Theorick's mansion.",
    "dst": "在 Theorick 的宅邸裡找出財寶。",
    "role": "desc",
@@ -766,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#076": {
+  "Frost Bite#077": {
    "src": "Oof! Wasn't expecting that. That just proves everything I said about him. Punishing people who insult him.",
    "dst": "唔！沒料到會這樣。這正好印證了我說的那些。誰罵他他就懲罰誰。",
    "role": "desc",
@@ -776,7 +786,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#077": {
+  "Frost Bite#078": {
    "src": "Anyway, we should look around for some kind of secret entrance.",
    "dst": "總之，我們該四處找找有沒有什麼暗門。",
    "role": "desc",
@@ -786,7 +796,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#078": {
+  "Frost Bite#079": {
    "src": "Trust Theorick to booby trap his own house the paranoid frozen gro-",
    "dst": "也只有 Theorick 會在自己家裡裝陷阱，這個疑神疑鬼的冰凍老怪——",
    "role": "desc",
@@ -796,7 +806,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#079": {
+  "Frost Bite#080": {
    "src": "That really isn't fun at all. I can't see a thing. Where are we now, a dead end?",
    "dst": "這一點都不好玩。我什麼都看不見。我們現在在哪，死路嗎？",
    "role": "desc",
@@ -806,7 +816,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#080": {
+  "Frost Bite#081": {
    "src": "Well we know that insults result in punishment. Maybe a compliment will make him happy?",
    "dst": "既然知道罵他會被罰，那讚美他會不會讓他高興？",
    "role": "desc",
@@ -816,7 +826,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#081": {
+  "Frost Bite#082": {
    "src": "Oh Theorick, strongest of all the Twains, you really are a hero.",
    "dst": "噢，Theorick，Twains 之中最強的一位，你真是個英雄。",
    "role": "desc",
@@ -826,7 +836,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#082": {
+  "Frost Bite#083": {
    "src": "Maybe n-",
    "dst": "也許不——",
    "role": "desc",
@@ -836,7 +846,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#083": {
+  "Frost Bite#084": {
    "src": "Looks like we finally found his private quarters, look at that vault door.",
    "dst": "看來我們總算找到他的私人居所了，你看那道金庫門。",
    "role": "desc",
@@ -846,7 +856,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#084": {
+  "Frost Bite#085": {
    "src": "There must be a way to open it. Look around and see what you can find.",
    "dst": "一定有辦法打開。四處看看，找找有什麼線索。",
    "role": "desc",
@@ -856,7 +866,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#085": {
+  "Frost Bite#086": {
    "src": "Find your way into the vault.",
    "dst": "想辦法進入金庫。",
    "role": "desc",
@@ -866,9 +876,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#086": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "你做到了！我們可以進金庫了。",
+  "Frost Bite#088": {
+   "src": "Wow, even by today's standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "哇，就算用現在的標準看，這也是一大筆錢。想想幾百年前這值多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -876,7 +886,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#088": {
+  "Frost Bite#089": {
    "src": "Grab a little for yourself, too, we wouldn't have been able to get here without you.",
    "dst": "你自己也拿一點吧，沒有你我們根本走不到這一步。",
    "role": "desc",
@@ -886,7 +896,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#089": {
+  "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "等等，看看這個。這好像是 Theorick 的一件護甲。",
    "role": "desc",
@@ -896,7 +906,17 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#090": {
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "你做到了！我們可以進金庫了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
    "src": "Surprised it even managed to fit over his fat head.",
    "dst": "真想不到這居然套得下他那顆肥腦袋。",
    "role": "desc",

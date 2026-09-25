@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23747,
-  "translated": 23398,
+  "count": 23752,
+  "translated": 23402,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -26733,13 +26733,7 @@
    "quest": "An Iron Heart Part I",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "REMEMBER!! No...no orders! No dREMEMBER!! No...no o irectREMEMBER!!",
-    "file": "quest/an-iron-heart-part-i.json",
-    "ratio": 0.899,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "An Iron Heart Part I#003": {
    "src": "My name!! My life! I won't hurt them! The pain helps me reme...who's there?! LEAVE! PLEASE!",
@@ -48729,13 +48723,7 @@
    "quest": "Corrupted Betrayal",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
-    "file": "quest/temple-of-the-legends-quest.json",
-    "ratio": 0.843,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "Corrupted Betrayal#005": {
    "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
@@ -81679,6 +81667,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "Finding the Light#141": {
+   "src": "WHY WOULD I BE NEEDED TO... To...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Finding the Light",
+   "stage": "Stage 16",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "Gavel 여권을 [-{~}, {~}, -{~}]의 비행선 직원에게 가져가세요.",
@@ -85570,7 +85568,7 @@
    "source": "captured"
   },
   "Frost Bite#012": {
-   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
+   "src": "Now you've obtained the key, you can enter Theoricks mansion",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85580,7 +85578,7 @@
    "source": "captured"
   },
   "Frost Bite#013": {
-   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
+   "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85590,7 +85588,7 @@
    "source": "captured"
   },
   "Frost Bite#014": {
-   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
+   "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85600,7 +85598,7 @@
    "source": "captured"
   },
   "Frost Bite#015": {
-   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
+   "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85610,7 +85608,7 @@
    "source": "captured"
   },
   "Frost Bite#016": {
-   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
+   "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85620,7 +85618,7 @@
    "source": "captured"
   },
   "Frost Bite#017": {
-   "src": "We...we know. We told them that, too...we're sorry.",
+   "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85630,7 +85628,7 @@
    "source": "captured"
   },
   "Frost Bite#018": {
-   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
+   "src": "We...we know. We told them that, too...we're sorry.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85640,7 +85638,7 @@
    "source": "captured"
   },
   "Frost Bite#019": {
-   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
+   "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85650,7 +85648,7 @@
    "source": "captured"
   },
   "Frost Bite#020": {
-   "src": "There must be some way to open it. Look around and see what you can find.",
+   "src": "This is unbeliveable.. He was such a greedy- AAAAH.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -85660,6 +85658,16 @@
    "source": "captured"
   },
   "Frost Bite#021": {
+   "src": "There must be some way to open it. Look around and see what you can find.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Frost Bite#022": {
    "src": "Wow, even by todays standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
    "dst": "와, 지금 기준으로 봐도 어마어마한 돈이에요. 수백 년 전엔 얼마나 큰돈이었을지 생각해 봐요.",
    "role": "desc",
@@ -85669,7 +85677,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Frost Bite#022": {
+  "Frost Bite#023": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]에서 Eppo를 찾으세요. 동굴 입구는 [-{~}, {~}, -{~}]에 있습니다.",
    "role": "desc",
@@ -85679,7 +85687,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#023": {
+  "Frost Bite#024": {
    "src": "Let's give it another try!",
    "dst": "한 번 더 해 봅시다!",
    "role": "desc",
@@ -85689,7 +85697,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#024": {
+  "Frost Bite#025": {
    "src": "Ready the drill, men!",
    "dst": "여러분, 드릴 준비!",
    "role": "desc",
@@ -85699,7 +85707,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#025": {
+  "Frost Bite#026": {
    "src": "Darn. The drill just won't start.",
    "dst": "이런. 드릴이 도무지 안 켜지네요.",
    "role": "desc",
@@ -85709,7 +85717,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#026": {
+  "Frost Bite#027": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up here to the drill, maybe you can take a look?",
    "dst": "이봐요, 경비병! Electromagic에 대해 좀 알아요? 드릴 있는 데로 올라와서 한번 봐 줄래요?",
    "role": "desc",
@@ -85719,7 +85727,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#027": {
+  "Frost Bite#028": {
    "src": "Oh! Never mind, it lit up, back up!",
    "dst": "오! 됐어요, 켜졌어요, 물러서요!",
    "role": "desc",
@@ -85729,7 +85737,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#028": {
+  "Frost Bite#029": {
    "src": "For the love of Bob... Why won't you just break?",
    "dst": "Bob을 봐서라도... 왜 안 깨지는 거야?",
    "role": "desc",
@@ -85739,7 +85747,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#029": {
+  "Frost Bite#030": {
    "src": "This ice was created by Theorick, a Twain who defended this area many many years ago.",
    "dst": "이 얼음은 아주 오래전 이 지역을 지키던 Twain, Theorick이 만든 거예요.",
    "role": "desc",
@@ -85749,7 +85757,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#030": {
+  "Frost Bite#031": {
    "src": "When the corruption got too much... He froze everything, including the people. Do you see them in there?",
    "dst": "타락이 걷잡을 수 없게 되자... 그는 모든 걸 얼려 버렸어요. 사람까지요. 저 안에 사람들 보이죠?",
    "role": "desc",
@@ -85759,7 +85767,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#031": {
+  "Frost Bite#032": {
    "src": "We've tried desperately to get them out, but we've tried all the equipment we had, including this Corkian drill.",
    "dst": "어떻게든 꺼내려고 이 Corkus 드릴까지 가진 장비는 전부 써 봤어요.",
    "role": "desc",
@@ -85769,7 +85777,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#032": {
+  "Frost Bite#033": {
    "src": "Maybe we should get more destructive... The demolition expert, Rhudya, is further down the cave.",
    "dst": "좀 더 과격하게 가야 할지도... 폭파 전문가 Rhudya가 동굴 더 안쪽에 있어요.",
    "role": "desc",
@@ -85779,7 +85787,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#033": {
+  "Frost Bite#034": {
    "src": "It's a long shot, but worth a try. Would you be able to get it while I clear this space?",
    "dst": "가능성은 낮지만 해 볼 만해요. 제가 여길 치우는 동안 가져다줄 수 있어요?",
    "role": "desc",
@@ -85789,7 +85797,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#034": {
+  "Frost Bite#035": {
    "src": "Go deeper into the cave and speak to Rhudya.",
    "dst": "동굴 더 깊이 들어가 Rhudya와 대화하세요.",
    "role": "desc",
@@ -85799,7 +85807,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#035": {
+  "Frost Bite#036": {
    "src": "Whup! You're on private property, y'know! Oh, Eppo sent ya? That's fair enough.",
    "dst": "워! 여긴 사유지라고! 아, Eppo가 보냈어? 그럼 됐지.",
    "role": "desc",
@@ -85809,7 +85817,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#036": {
+  "Frost Bite#037": {
    "src": "You'll be needing this TNT then, make sure not to drop it though, whup!",
    "dst": "그럼 이 TNT가 필요하겠네. 떨어뜨리진 마, 워!",
    "role": "desc",
@@ -85819,7 +85827,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#037": {
+  "Frost Bite#038": {
    "src": "Just travel through this cave and you'll be returned to Eppo easy-peasy!",
    "dst": "이 동굴만 지나면 Eppo한테 금방 돌아갈 수 있어!",
    "role": "desc",
@@ -85829,7 +85837,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#038": {
+  "Frost Bite#039": {
    "src": "Return to Eppo with the tnt.",
    "dst": "TNT를 들고 Eppo에게 돌아가세요.",
    "role": "desc",
@@ -85839,7 +85847,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#039": {
+  "Frost Bite#040": {
    "src": "Very nice, this might do the trick.",
    "dst": "좋아요, 이거면 될지도 몰라요.",
    "role": "desc",
@@ -85849,7 +85857,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#040": {
+  "Frost Bite#041": {
    "src": "Back up, I'll ignite the explosive.",
    "dst": "물러서요, 폭탄에 불붙일게요.",
    "role": "desc",
@@ -85859,7 +85867,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#041": {
+  "Frost Bite#042": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -85869,7 +85877,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#042": {
+  "Frost Bite#043": {
    "src": "NOTHING? Not even a scratch. I don't understand Theoricks ice.. It's not real.",
    "dst": "아무것도? 흠집 하나 없잖아. Theorick의 얼음은 이해가 안 가요.. 진짜가 아니에요.",
    "role": "desc",
@@ -85879,7 +85887,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#043": {
+  "Frost Bite#044": {
    "src": "I'm not sure what else we can do then...",
    "dst": "그럼 더 뭘 할 수 있을지 모르겠네요...",
    "role": "desc",
@@ -85889,7 +85897,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#044": {
+  "Frost Bite#045": {
    "src": "HEY. Eppo, over here! Near the cave!",
    "dst": "어이. Eppo, 여기야! 동굴 근처!",
    "role": "desc",
@@ -85899,7 +85907,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#045": {
+  "Frost Bite#046": {
    "src": "Did the explosive not work? I found this old mineshaft on the way back from the cave, it leads to an old lava cavern.",
    "dst": "폭탄 안 먹혔어? 동굴에서 돌아오다가 옛 갱도를 찾았는데, 오래된 용암 동굴로 이어져.",
    "role": "desc",
@@ -85909,7 +85917,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#046": {
+  "Frost Bite#047": {
    "src": "Might be a long shot, but this lava looks different. Why not give it a try?",
    "dst": "가능성은 낮을지 몰라도, 거기 용암은 좀 달라 보여. 한번 해 보는 게 어때?",
    "role": "desc",
@@ -85919,7 +85927,7 @@
    "speaker": "Rhudya",
    "source": "wiki"
   },
-  "Frost Bite#047": {
+  "Frost Bite#048": {
    "src": "Travel to the lava springs through the mineshaft.",
    "dst": "갱도를 지나 용암 샘으로 가세요.",
    "role": "desc",
@@ -85929,7 +85937,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#048": {
+  "Frost Bite#049": {
    "src": "Complete the puzzle and bring the lava back to Eppo.",
    "dst": "퍼즐을 풀고 용암을 Eppo에게 가져가세요.",
    "role": "desc",
@@ -85939,7 +85947,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#049": {
+  "Frost Bite#050": {
    "src": "I don't understand how you can hold lava in a bucket.. But here we are.",
    "dst": "용암을 양동이에 어떻게 담는지 모르겠지만.. 어쨌든 이렇게 됐네요.",
    "role": "desc",
@@ -85949,7 +85957,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#050": {
+  "Frost Bite#051": {
    "src": "Truth is.. We're not retrieving these bodies for no reason.",
    "dst": "사실은.. 이유 없이 시신을 꺼내려는 게 아니에요.",
    "role": "desc",
@@ -85959,7 +85967,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#051": {
+  "Frost Bite#052": {
    "src": "We believe one of these people worked for Theorick, and has a key to his mansion",
    "dst": "이 사람들 중 하나가 Theorick 밑에서 일했고, 그의 저택 열쇠를 갖고 있다고 봐요",
    "role": "desc",
@@ -85969,7 +85977,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#052": {
+  "Frost Bite#053": {
    "src": "We in {p} think Theorick has a lot to answer for. We want to redistribute his wealth among those he hurt.",
    "dst": "{p} 사람들은 Theorick이 책임질 게 많다고 생각해요. 그가 해친 사람들에게 그의 재산을 나눠 주고 싶어요.",
    "role": "desc",
@@ -85979,7 +85987,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#053": {
+  "Frost Bite#054": {
    "src": "Right, I've dipped this stick in the magical lava. Just hold the rod and walk into the ice to melt it.",
    "dst": "자, 이 막대를 마법 용암에 담갔어요. 막대를 들고 얼음 속으로 걸어가면 녹을 거예요.",
    "role": "desc",
@@ -85989,7 +85997,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#054": {
+  "Frost Bite#055": {
    "src": "Look for the corpse with a key, it might be above you. Good luck!",
    "dst": "열쇠를 가진 시신을 찾아요. 위쪽에 있을지도 몰라요. 행운을 빌어요!",
    "role": "desc",
@@ -85999,7 +86007,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#055": {
+  "Frost Bite#056": {
    "src": "Melt the ice and find the Servant's corpse.",
    "dst": "얼음을 녹이고 하인의 시신을 찾으세요.",
    "role": "desc",
@@ -86009,7 +86017,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#056": {
+  "Frost Bite#057": {
    "src": "Is that the right one? You got it? Brilliant! Now come back down.",
    "dst": "그게 맞아요? 찾았어요? 훌륭해요! 이제 내려와요.",
    "role": "desc",
@@ -86019,7 +86027,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#057": {
+  "Frost Bite#058": {
    "src": "Lets travel to the mansion together. Here, lets take my horse.",
    "dst": "같이 저택으로 가요. 자, 제 말을 타고 가죠.",
    "role": "desc",
@@ -86029,7 +86037,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#058": {
+  "Frost Bite#059": {
    "src": "While we ride, let me explain a little more about what we're doing. Let's go.",
    "dst": "가는 동안 우리가 뭘 하는지 좀 더 설명할게요. 가죠.",
    "role": "desc",
@@ -86039,7 +86047,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#059": {
+  "Frost Bite#060": {
    "src": "As I mentioned before, there is a reason this land is frozen, and it's not natural.",
    "dst": "아까 말했듯이 이 땅이 얼어붙은 데는 이유가 있고, 자연적인 게 아니에요.",
    "role": "desc",
@@ -86049,7 +86057,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#060": {
+  "Frost Bite#061": {
    "src": "Many years before Bob was around, Wynn was in ruins due to the corruption war.",
    "dst": "Bob이 있기 훨씬 전, Wynn은 타락 전쟁으로 폐허가 됐어요.",
    "role": "desc",
@@ -86059,7 +86067,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#061": {
+  "Frost Bite#062": {
    "src": "In those times there used to be a group of naturally gifted individuals called the Twains. They defended us all with elemental magic.",
    "dst": "그 시절엔 Twain이라 불리는 타고난 재능을 가진 사람들이 있었어요. 원소 마법으로 우리 모두를 지켰죠.",
    "role": "desc",
@@ -86069,7 +86077,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#062": {
+  "Frost Bite#063": {
    "src": "Theorick was one of those Twains. He harnessed unnaturally powerful ice based magic. He used it to protect the land surrounding the mansion.",
    "dst": "Theorick도 그 Twain 중 하나였어요. 비정상적으로 강한 얼음 마법을 다뤘고, 그 힘으로 저택 주변 땅을 지켰죠.",
    "role": "desc",
@@ -86079,7 +86087,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#063": {
+  "Frost Bite#064": {
    "src": "Theorick.. Wasn't like the other Twains. He wanted the people he protected to pay and feed him as way of thanks.",
    "dst": "Theorick은.. 다른 Twain들과 달랐어요. 자기가 지켜 준 사람들에게 감사의 뜻으로 돈과 음식을 바치게 했죠.",
    "role": "desc",
@@ -86089,7 +86097,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#064": {
+  "Frost Bite#065": {
    "src": "After years, Theorick was rich while the people he protected lived in poverty and fear - not only of the monsters, but in fear of Theorick himself.",
    "dst": "몇 년 뒤 Theorick은 부자가 됐지만, 그가 지킨 사람들은 가난과 공포 속에 살았어요 - 괴물뿐 아니라 Theorick 자신도 두려워하면서요.",
    "role": "desc",
@@ -86099,7 +86107,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#065": {
+  "Frost Bite#066": {
    "src": "He punished those who disobeyed his curfews and would get angry if anyone tried to move away. The people felt trapped.",
    "dst": "통금을 어긴 사람은 벌을 받았고, 누가 떠나려 하면 화를 냈어요. 사람들은 갇힌 기분이었죠.",
    "role": "desc",
@@ -86109,7 +86117,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#066": {
+  "Frost Bite#067": {
    "src": "Eventually, just like the other Twains - Theorick fell to the corruption. Not before he had the last word.",
    "dst": "결국 다른 Twain들처럼 - Theorick도 타락에 굴복했어요. 하지만 마지막 한 수는 남겼죠.",
    "role": "desc",
@@ -86119,7 +86127,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#067": {
+  "Frost Bite#068": {
    "src": "He froze the land entirely, killing almost everything and everyone left outside in it. Hundreds of lives were lost.",
    "dst": "그는 이 땅을 통째로 얼려서, 밖에 남아 있던 거의 모든 것을 죽였어요. 수백 명이 목숨을 잃었죠.",
    "role": "desc",
@@ -86129,7 +86137,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#068": {
+  "Frost Bite#069": {
    "src": "It turns out the ice slowed the spread of corruption across the land to almost a standstill. It's been this way ever since.",
    "dst": "그런데 그 얼음 덕에 이 땅에서 타락이 퍼지는 게 거의 멈췄어요. 그 뒤로 쭉 이 상태예요.",
    "role": "desc",
@@ -86139,7 +86147,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#069": {
+  "Frost Bite#070": {
    "src": "Now that we can get in his mansion we hope to uncover the secrets of his ice magic so we may undo it, and share the wealth he hoarded from the people. Ah, we're here.",
    "dst": "이제 저택에 들어갈 수 있으니, 그의 얼음 마법의 비밀을 밝혀 되돌리고, 사람들에게서 긁어모은 재산도 나누고 싶어요. 아, 다 왔네요.",
    "role": "desc",
@@ -86149,7 +86157,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#070": {
+  "Frost Bite#071": {
    "src": "Enter Theorick's Mansion.",
    "dst": "Theorick의 저택에 들어가세요.",
    "role": "desc",
@@ -86159,7 +86167,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#071": {
+  "Frost Bite#072": {
    "src": "This place looks frozen in time.. The grandure.. Well he did just take and take from everyone around him.",
    "dst": "시간이 얼어붙은 것 같네요.. 이 호화로움.. 뭐, 주변 모두에게서 빼앗고 또 빼앗았으니까요.",
    "role": "desc",
@@ -86169,7 +86177,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#072": {
+  "Frost Bite#073": {
    "src": "So, I'm not sure where to start, but I'm guessing he has some protection in place.",
    "dst": "어디서부터 시작할지 모르겠지만, 뭔가 방어 장치를 해 뒀을 것 같아요.",
    "role": "desc",
@@ -86179,7 +86187,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#073": {
+  "Frost Bite#074": {
    "src": "This is unbelievable.. He was such a greedy- AAAAH.",
    "dst": "믿을 수가 없네요.. 정말 탐욕스러운- 으아아악.",
    "role": "desc",
@@ -86189,7 +86197,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#074": {
+  "Frost Bite#075": {
    "src": "... I don't think we should insult him..",
    "dst": "... 그를 모욕하면 안 될 것 같네요..",
    "role": "desc",
@@ -86199,7 +86207,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#075": {
+  "Frost Bite#076": {
    "src": "Find the riches in Theorick's mansion.",
    "dst": "Theorick의 저택에서 재물을 찾으세요.",
    "role": "desc",
@@ -86209,7 +86217,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#076": {
+  "Frost Bite#077": {
    "src": "Oof! Wasn't expecting that. That just proves everything I said about him. Punishing people who insult him.",
    "dst": "윽! 이건 예상 못 했어요. 제 말이 다 맞았다는 증거죠. 자길 모욕하면 벌을 내리는 거예요.",
    "role": "desc",
@@ -86219,7 +86227,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#077": {
+  "Frost Bite#078": {
    "src": "Anyway, we should look around for some kind of secret entrance.",
    "dst": "아무튼, 비밀 입구 같은 게 있는지 둘러봐야겠어요.",
    "role": "desc",
@@ -86229,7 +86237,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#078": {
+  "Frost Bite#079": {
    "src": "Trust Theorick to booby trap his own house the paranoid frozen gro-",
    "dst": "역시 Theorick답게 자기 집에 함정을 깔았네, 이 의심 많은 얼어붙은 늙은-",
    "role": "desc",
@@ -86239,7 +86247,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#079": {
+  "Frost Bite#080": {
    "src": "That really isn't fun at all. I can't see a thing. Where are we now, a dead end?",
    "dst": "이건 전혀 재미없네요. 아무것도 안 보여요. 여긴 어디죠, 막다른 길?",
    "role": "desc",
@@ -86249,7 +86257,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#080": {
+  "Frost Bite#081": {
    "src": "Well we know that insults result in punishment. Maybe a compliment will make him happy?",
    "dst": "모욕하면 벌을 받는다는 건 알았으니, 칭찬하면 기뻐하지 않을까요?",
    "role": "desc",
@@ -86259,7 +86267,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#081": {
+  "Frost Bite#082": {
    "src": "Oh Theorick, strongest of all the Twains, you really are a hero.",
    "dst": "오 Theorick, Twain 중 가장 강한 분, 당신은 정말 영웅이에요.",
    "role": "desc",
@@ -86269,7 +86277,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#082": {
+  "Frost Bite#083": {
    "src": "Maybe n-",
    "dst": "아닌가-",
    "role": "desc",
@@ -86279,7 +86287,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#083": {
+  "Frost Bite#084": {
    "src": "Looks like we finally found his private quarters, look at that vault door.",
    "dst": "드디어 그의 개인 거처를 찾은 것 같아요. 저 금고 문 좀 봐요.",
    "role": "desc",
@@ -86289,7 +86297,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#084": {
+  "Frost Bite#085": {
    "src": "There must be a way to open it. Look around and see what you can find.",
    "dst": "열 방법이 있을 거예요. 주위를 둘러보고 뭘 찾을 수 있나 봐요.",
    "role": "desc",
@@ -86299,7 +86307,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#085": {
+  "Frost Bite#086": {
    "src": "Find your way into the vault.",
    "dst": "금고 안으로 들어갈 방법을 찾으세요.",
    "role": "desc",
@@ -86309,9 +86317,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Frost Bite#086": {
-   "src": "You did it! We have access to the vault.",
-   "dst": "해냈어요! 금고에 들어갈 수 있어요.",
+  "Frost Bite#088": {
+   "src": "Wow, even by today's standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
+   "dst": "와, 지금 기준으로 봐도 어마어마한 돈이에요. 수백 년 전엔 얼마나 큰돈이었을지 생각해 봐요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -86319,7 +86327,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#088": {
+  "Frost Bite#089": {
    "src": "Grab a little for yourself, too, we wouldn't have been able to get here without you.",
    "dst": "당신도 좀 챙겨요. 당신 없이는 여기까지 못 왔을 거예요.",
    "role": "desc",
@@ -86329,7 +86337,7 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#089": {
+  "Frost Bite#090": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
    "dst": "잠깐, 이것 좀 봐요. Theorick의 갑옷 한 조각 같아요.",
    "role": "desc",
@@ -86339,7 +86347,17 @@
    "speaker": "Eppo",
    "source": "wiki"
   },
-  "Frost Bite#090": {
+  "Frost Bite#087": {
+   "src": "You did it! We have access to the vault.",
+   "dst": "해냈어요! 금고에 들어갈 수 있어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Frost Bite",
+   "stage": "Stage 9",
+   "speaker": "Eppo",
+   "source": "wiki"
+  },
+  "Frost Bite#091": {
    "src": "Surprised it even managed to fit over his fat head.",
    "dst": "이게 그 큰 머리에 들어갔다니 놀랍네요.",
    "role": "desc",
@@ -116649,19 +116667,13 @@
   },
   "Out of my Mind#004": {
    "src": "You are the first normal person I've seen recently, {u}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "{u}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-    "file": "quest/out-of-my-mind.json",
-    "ratio": 0.963,
-    "reason": "placeholders"
-   }
+   "source": "captured"
   },
   "Out of my Mind#005": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even there to hide from! Strange people.",
@@ -116853,16 +116865,6 @@
    "speaker": "Viola",
    "source": "wiki"
   },
-  "Out of my Mind#024": {
-   "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
-   "dst": "잠깐 Viola, 이건 기회야! 이 사람은 뭐든 해치울 것 같잖아, 사악한 소라게라도! 이 사람한테 소문이 진짜인지 알아봐 달라고 하면 돼!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 1",
-   "speaker": "Prentiss",
-   "source": "wiki"
-  },
   "Out of my Mind#025": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
    "dst": "저기 내 친구들은 신경 쓰지 마, 맨날 저래. 그래도 Prentiss 말이 맞아. 그 수수께끼 남자가 누군지 알아낼 유일한 기회일지도 몰라!",
@@ -116976,16 +116978,6 @@
   "Out of my Mind#037": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
    "dst": "너 지금 이런 생각 하지? 어째서 나 같은 멋진 사람을 이제야 만났을까? 솔직히 넌 운이 지독히 나빴던 거야. 나 예전엔 세계를 여행했거든!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Out of my Mind",
-   "stage": "Stage 4",
-   "speaker": "Ariodo",
-   "source": "wiki"
-  },
-  "Out of my Mind#039": {
-   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "{PlayerName}, 넌 요즘 내가 본 첫 번째 정상인이야. 최근에 나갔더니 아주 무례한 마을 사람들한테 아주 무례한 말을 들었지 뭐야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -117341,6 +117333,36 @@
    "quest": "Out of my Mind",
    "stage": "Stage 6",
    "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "이 문 닫는 거 좀 도와줘, 안 그러면 내 깜짝 선물이 망한다고!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "불은 불로 다스린다는 말을 들은 것 같아. 그러니 널 되돌릴 방법이 있어! 근데 넌 나한테 좀 무거우니까, 다른 방법을 생각해야 해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "식물 괴물을 처치할 방법을 찾은 뒤, [-{~},-{~}]의 {p}에 있는 아이들에게 돌아가 알아낸 것을 보고하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Overture to Despair#000": {
@@ -133757,16 +133779,6 @@
    "speaker": "Frank",
    "source": "wiki"
   },
-  "Recipe For Disaster#062": {
-   "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "[X, Y, Z]에서 [{~} {Ingredient}]을(를) 모으거나 레시피 북을 확인하세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Recipe For Disaster",
-   "stage": "Stage 6",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
    "dst": "Astralus의 별빛 저택에 온 걸 환영한다! 중력을 뒤집어 꼭대기까지 갈 수 있겠나?",
@@ -142665,13 +142677,7 @@
    "quest": "Rise of the Quartron",
    "stage": "",
    "speaker": "",
-   "source": "captured",
-   "similar": {
-    "text": "Use the small rail here, flick the lever. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
-    "file": "quest/rise-of-the-quartron.json",
-    "ratio": 0.873,
-    "reason": "candidate"
-   }
+   "source": "captured"
   },
   "Rise of the Quartron#007": {
    "src": "Knock 'em down, boys!",
@@ -143740,6 +143746,36 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
+   "speaker": "Nasea",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#093": {
+   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "...결국 이렇게 됐군. 난 경비들 이름을 다 알았다. 목표를 위해 아무도 해치지 않았어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#099": {
+   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
+   "source": "wiki"
+  },
+  "Rise of the Quartron#106": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
+   "dst": "...음. 응. ... ...그래, 계속해. 어, 좋아, 믿어 줄게... 증거가 없었으면 절대 안 믿었을 거야.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "Stage 9",
    "speaker": "Nasea",
    "source": "wiki"
   },
@@ -163766,16 +163802,6 @@
   "The Canary Calls#163": {
    "src": "Have fun.",
    "dst": "즐겁게 놀아요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#164": {
-   "src": "Kill me now or I'll kill everyone in {Your Guild}.",
-   "dst": "지금 날 죽여요, 안 그럼 {Your Guild} 사람들을 다 죽일 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",

@@ -501,6 +501,22 @@ tasks.register('runPlayerNameChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runPlayerNameChecks' }
 
+tasks.register('runNameOriginalTermChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證「譯名 + 原文」附的原文不會再被詞表換一次'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameOriginalTermTest'
+}
+tasks.named('check') { dependsOn 'runNameOriginalTermChecks' }
+
+tasks.register('runNameWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證「譯名 + 原文」太長時原文會挪到下一行'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameWrapTest'
+}
+tasks.named('check') { dependsOn 'runNameWrapChecks' }
+
 tasks.register('runGearNameChecks', JavaExec) {
     group = 'verification'
     description = '驗證裝備名不會被別的領域的同名條目頂替'

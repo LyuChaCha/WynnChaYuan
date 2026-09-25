@@ -1683,6 +1683,94 @@ public final class TranslationStore {
         return hit;
     }
 
+    /**
+     * 「譯名 + 原文」附在後面的那段「{@code  (原文)}」從哪裡開始。
+     *
+     * <h2>為什麼需要</h2>
+     * 附上去的原文是<b>刻意留的英文</b>，玩家拿它去對 wiki 與交易市場，
+     * 所以它必須原封不動。但它附得早（{@link #lookup}），而畫之前還會對整句
+     * 掃一次詞表把技能名換成中文（折行前換，見 {@code LineTranslator#termsWithin}）
+     * ——那一掃連括號裡的英文一起換掉了。
+     *
+     * <p>實機回報：Legendary 頭盔 {@code Mask of Courage} 畫成
+     * 「{@code 勇氣面具 (假面 of 勇氣)}」。{@code 假面} 與 {@code 勇氣} 分別是
+     * Shaman 的 {@code Mask} 與 {@code Courage}，只有 {@code of} 沒有對應的詞
+     * 而留了下來。
+     *
+     * <p>判斷條件收得很緊：必須是<b>結尾</b>的括號，而且括號裡正好是一個
+     * 只有裝備檔用到的名字（或 {@code Shiny} + 這種名字）。敘述本來就帶的括號
+     * ——「{@code Mask (Courage)}」——括號裡不是裝備名，照樣換。
+     *
+     * @return 「{@code  (}」的索引；沒有附原文時回傳 {@code -1}
+     */
+    public int appendedOriginalAt(String text) {
+        if (!namesWithOriginal || text == null || !text.endsWith(")")) {
+            return -1;
+        }
+        int at = text.lastIndexOf(" (");
+        if (at < 0) {
+            return -1;
+        }
+        return isAppendedOriginal(text.substring(at + 2, text.length() - 1)) ? at : -1;
+    }
+
+    /**
+     * 「譯名 {@code  (原文)}」那一段在<b>整行</b>裡的位置。
+     *
+     * <h2>為什麼不能只看結尾</h2>
+     * {@link #appendedOriginalAt} 拿到的是<b>一段</b>（物品名稱自己一段），所以附在
+     * 結尾。但畫到面板上的是<b>一整行</b>，名稱後面還跟著 Wynncraft 的耐久度：
+     *
+     * <pre>
+     *   󏿰󏿏󐀅烬咒牧杖 (Cindercurse Crosier) [51.0%]
+     * </pre>
+     *
+     * 括號不在結尾，{@code appendedOriginalAt} 一律回傳 −1。要把原文挪到下一行
+     * 就得知道它<b>從哪到哪</b>，所以這裡回傳一對索引。
+     *
+     * <p>判斷條件跟 {@link #appendedOriginalAt} 同一套（{@link #isAppendedOriginal}）：
+     * 括號裡必須正好是一個只有裝備檔用到的名字。敘述本來就帶的括號
+     * ——「{@code 緩慢 (每秒 1.5 次)}」——括號裡不是裝備名，碰不到。
+     *
+     * @return {@code {起, 迄}}：起是「{@code  (}」的索引，迄是「{@code )}」的<b>下一個</b>
+     *         索引；沒有附原文時回傳 {@code null}
+     */
+    public int[] appendedOriginalSpan(String text) {
+        if (!namesWithOriginal || text == null) {
+            return null;
+        }
+        int at = text.indexOf(" (");
+        while (at >= 0) {
+            int close = text.indexOf(')', at + 2);
+            if (close < 0) {
+                return null;
+            }
+            if (isAppendedOriginal(text.substring(at + 2, close))) {
+                return new int[] {at, close + 1};
+            }
+            at = text.indexOf(" (", at + 2);
+        }
+        return null;
+    }
+
+    /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
+    private boolean isAppendedOriginal(String inner) {
+        if (gearOnly(inner)) {
+            return true;
+        }
+        // Shiny 的原文是「Shiny X」，語料裡不會有這種鍵，見 #shiny
+        if (inner.startsWith(SHINY)) {
+            String rest = inner.substring(SHINY.length()).strip();
+            return gearNameKeys.contains(rest) || nameKeys.contains(rest);
+        }
+        return false;
+    }
+
+    /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
+    public boolean namesWithOriginal() {
+        return namesWithOriginal;
+    }
+
     /** Shiny 裝備名稱的前綴。 */
     private static final String SHINY = "Shiny ";
 
