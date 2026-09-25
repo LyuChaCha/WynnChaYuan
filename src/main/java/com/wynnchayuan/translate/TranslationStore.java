@@ -358,7 +358,8 @@ public final class TranslationStore {
                     JsonElement v = obj.get(key);
                     if (!key.startsWith("_") && v.isJsonPrimitive()
                             && !v.getAsString().isBlank()) {
-                        into.put(key.strip(), v.getAsString().strip());
+                        into.put(key.strip(), LineTranslator.deIcon(
+                                v.getAsString().strip()));
                     }
                 }
             } catch (Exception e) {
@@ -541,7 +542,9 @@ public final class TranslationStore {
             }
             JsonObject e = el.getAsJsonObject();
             String src = optString(e, "src");
-            String dst = optString(e, "dst");
+            // 被 Wynncraft 拿去當全螢幕黑幕的字母在這裡換掉。src 不能碰，
+            // 換了就對不上原文。見 LineTranslator#deIcon。
+            String dst = LineTranslator.deIcon(optString(e, "dst"));
             // 還沒翻的裝備名也要記下來。它是專有名詞，不能讓別的檔案裡剛好同名
             // 的條目替它翻譯——實機踩到的是武器「Guardian」被 Major ID 的
             // 「守護者」蓋掉。全庫掃過去這種撞名有 50 組。見 #gearNameKeys。
@@ -620,10 +623,12 @@ public final class TranslationStore {
             // 平鋪格式的鍵就是原文，翻了沒有一律記下來——見 seenSources。
             seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
-                entries.put(key.strip(), v.getAsString().strip());
+                // 見 LineTranslator#deIcon：黑幕那個字母在進記憶體時就換掉
+                String flat = LineTranslator.deIcon(v.getAsString().strip());
+                entries.put(key.strip(), flat);
                 otherOwners.add(key.strip());   // 扁平檔一律不是裝備名稱
                 layerOf.put(key.strip(), layer);
-                market.addListed(key.strip(), v.getAsString().strip());
+                market.addListed(key.strip(), flat);
                 ordered.add(key.strip());
                 // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
                 //
@@ -632,20 +637,20 @@ public final class TranslationStore {
                 // 「英文跑完才忽然跳成中文」就是這裡漏掉的一行。
                 // 詞彙表不收：短詞進來只會讓前綴變得分不出是哪一句。
                 if (!asTerms && key.strip().length() >= MIN_PREFIX_LENGTH) {
-                    prefixIndex.put(key.strip(), v.getAsString().strip());
+                    prefixIndex.put(key.strip(), flat);
                 }
                 noteBlockSize(key.strip());
-                noteFlat(key.strip(), v.getAsString().strip());
+                noteFlat(key.strip(), flat);
                 notePlayerKey(key.strip());
                 noteWords(key.strip());
-                noteUnwrapped(key.strip(), v.getAsString().strip());
-                noteIndented(key.strip(), v.getAsString().strip());
-                noteMarked(key.strip(), v.getAsString().strip());
+                noteUnwrapped(key.strip(), flat);
+                noteIndented(key.strip(), flat);
+                noteMarked(key.strip(), flat);
                 if (!asTerms) {
-                    noteLoose(key.strip(), v.getAsString().strip());
+                    noteLoose(key.strip(), flat);
                 }
                 if (asTerms) {
-                    noteTerm(key.strip(), v.getAsString().strip(), true);
+                    noteTerm(key.strip(), flat, true);
                 }
             }
         }
@@ -1706,18 +1711,64 @@ public final class TranslationStore {
         if (at < 0) {
             return -1;
         }
-        String inner = text.substring(at + 2, text.length() - 1);
+        return isAppendedOriginal(text.substring(at + 2, text.length() - 1)) ? at : -1;
+    }
+
+    /**
+     * 「譯名 {@code  (原文)}」那一段在<b>整行</b>裡的位置。
+     *
+     * <h2>為什麼不能只看結尾</h2>
+     * {@link #appendedOriginalAt} 拿到的是<b>一段</b>（物品名稱自己一段），所以附在
+     * 結尾。但畫到面板上的是<b>一整行</b>，名稱後面還跟著 Wynncraft 的耐久度：
+     *
+     * <pre>
+     *   󏿰󏿏󐀅烬咒牧杖 (Cindercurse Crosier) [51.0%]
+     * </pre>
+     *
+     * 括號不在結尾，{@code appendedOriginalAt} 一律回傳 −1。要把原文挪到下一行
+     * 就得知道它<b>從哪到哪</b>，所以這裡回傳一對索引。
+     *
+     * <p>判斷條件跟 {@link #appendedOriginalAt} 同一套（{@link #isAppendedOriginal}）：
+     * 括號裡必須正好是一個只有裝備檔用到的名字。敘述本來就帶的括號
+     * ——「{@code 緩慢 (每秒 1.5 次)}」——括號裡不是裝備名，碰不到。
+     *
+     * @return {@code {起, 迄}}：起是「{@code  (}」的索引，迄是「{@code )}」的<b>下一個</b>
+     *         索引；沒有附原文時回傳 {@code null}
+     */
+    public int[] appendedOriginalSpan(String text) {
+        if (!namesWithOriginal || text == null) {
+            return null;
+        }
+        int at = text.indexOf(" (");
+        while (at >= 0) {
+            int close = text.indexOf(')', at + 2);
+            if (close < 0) {
+                return null;
+            }
+            if (isAppendedOriginal(text.substring(at + 2, close))) {
+                return new int[] {at, close + 1};
+            }
+            at = text.indexOf(" (", at + 2);
+        }
+        return null;
+    }
+
+    /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
+    private boolean isAppendedOriginal(String inner) {
         if (gearOnly(inner)) {
-            return at;
+            return true;
         }
         // Shiny 的原文是「Shiny X」，語料裡不會有這種鍵，見 #shiny
         if (inner.startsWith(SHINY)) {
             String rest = inner.substring(SHINY.length()).strip();
-            if (gearNameKeys.contains(rest) || nameKeys.contains(rest)) {
-                return at;
-            }
+            return gearNameKeys.contains(rest) || nameKeys.contains(rest);
         }
-        return -1;
+        return false;
+    }
+
+    /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
+    public boolean namesWithOriginal() {
+        return namesWithOriginal;
     }
 
     /** Shiny 裝備名稱的前綴。 */

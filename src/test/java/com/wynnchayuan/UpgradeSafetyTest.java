@@ -206,6 +206,8 @@ public final class UpgradeSafetyTest {
         expected.addProperty("noticeDismissed", false);
         // 0.2.3：Wynntils 自己那幾個畫面要不要換成中文。舊設定檔沒有，補上預設值。
         expected.addProperty("wynntilsUi", true);
+        // 0.2.3：按住 Shift 暫時看另一種物品名稱。舊設定檔沒有，補上預設值。
+        expected.addProperty("shiftPeekNames", true);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));
