@@ -89,6 +89,25 @@ public final class BlockLayoutTest {
                 line(44, "xxxxxxxxx"),               // - Rewards:
                 line(44, "xxxxxxxxxxxxxxxxxxx"),     // - +5 Experience Points
                 line(44, "xxxxxxxxxxxxxxxxxxxxx"))); // - +1 Unidentified Helmet
+        // ★ 釣魚迷你任務那張卡：窄到「距離／長度／難度」被誤判成置中。
+        //
+        // 數字取自實機診斷檔「27 · Gather Koi I [Mini-Quest]」：
+        // span 是 101／108／96／103，差 12 像素，容差是 16——每一道
+        // 檢查都過了，四行全被判成置中。三行的縮排是一模一樣的 14px，
+        // 長短卻差 12px——置中的行不可能這樣。
+        List<Component> koi = new java.util.ArrayList<>(List.of(
+                line(0, "x".repeat(20)),      // Gather Koi I [Mini-Quest]  122px
+                line(0, "x".repeat(15)),      // Cannot be started           92px
+                Component.literal(" "),
+                line(0, "x".repeat(17)),      // ✖ Fishing Lv. Min: 61      101px
+                line(14, "x".repeat(13)),     // {#}Distance: Medium         80px
+                line(14, "x".repeat(11)),     // {#}Length: Short            68px
+                line(14, "x".repeat(12))));   // {#}Difficulty: Easy         75px
+        boolean[] koiFlags = BlockLayout.centered(koi, WIDTH);
+        check("★ 縮排一樣、長短不同的幾行不是置中（實際 "
+                        + java.util.Arrays.toString(koiFlags) + "）",
+              !koiFlags[3] && !koiFlags[4] && !koiFlags[5] && !koiFlags[6]);
+
         boolean[] flags = BlockLayout.centered(cave, WIDTH);
         check("★ 置中的標題兩行：縮排差只有內容差的一半也要認得出來",
               flags[0] && flags[1]);
