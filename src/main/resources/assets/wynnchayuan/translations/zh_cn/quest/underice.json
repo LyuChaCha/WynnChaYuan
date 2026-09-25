@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Underice",
-  "count": 63,
+  "count": 64,
   "translated": 63,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underice#000": {
+   "src": "+ Mythical Everlasting Pufferfish",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underice#001": {
    "src": "Talk to Fredris in {p} at [{~}, {~}, -{~}]",
    "dst": "与 {p} [{~}, {~}, -{~}] 的 Fredris 对话",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#001": {
+  "Underice#002": {
    "src": "I'm having trouble with the fish in our lake recently and I am sure the problem lies within the lake itself.",
    "dst": "我们湖里的鱼最近出了问题，我敢肯定问题就出在湖里。",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#002": {
+  "Underice#003": {
    "src": "I would like to commission you to investigate, but since it's freezing cold in our lake you need something to protect you. I heard the people in {p} on the coast of Wynn have something that can help you.",
    "dst": "我想委托你去调查，不过我们的湖冷得要命，你需要东西保护自己。我听说 Wynn 海岸边 {p} 的人有能帮上你的东西。",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#003": {
+  "Underice#004": {
    "src": "Would you mind coming back with a [Breathing Helmet I]? I think that should be everything you need.",
    "dst": "你能不能带一顶 [呼吸头盔 I] 回来？我想那样就够了。",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#004": {
+  "Underice#005": {
    "src": "Return to {p} and bring Fredris a [Breathing Helmet I]",
    "dst": "回到 {p}，给 Fredris 带一顶 [呼吸头盔 I]",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#005": {
+  "Underice#006": {
    "src": "What is this thing supposed to be? You know, I would really appreciate your help, but this [Breathing Helmet I] does not look like it's going to keep you protected.",
    "dst": "这东西是干嘛的？你知道吗，我很感激你的帮忙，可这顶 [呼吸头盔 I] 看起来根本保护不了你。",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#006": {
+  "Underice#007": {
    "src": "Would you mind heading to our local armour merchant and buying one of our [Breathing Helmet II]? I don't want you to drown. Just come back with the helmet and I will tell you about my problem.",
    "dst": "你能不能去我们本地的护甲商人那里买一顶 [呼吸头盔 II]？我不想你淹死。把头盔带回来，我再跟你讲我的问题。",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#007": {
+  "Underice#008": {
    "src": "Buy a [Breathing Helmet II] and find the underwater cave",
    "dst": "购买 [呼吸头盔 II]，找到水下洞窟",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#008": {
+  "Underice#009": {
    "src": "Explore the cave underneath the frozen lake in {p}",
    "dst": "探索 {p} 冰湖下方的洞窟",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#009": {
+  "Underice#010": {
    "src": "Who are you? You don't look like one of those villagers we stole the fi... Wait, they didn't send you to retrieve \"their\" fish, did they?",
    "dst": "你是谁？你看起来不像被我们偷了鱼的那些村——等等，他们该不会是派你来拿回“他们的”鱼吧？",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#010": {
+  "Underice#011": {
    "src": "For years we let them share the lake with us, the actual inhabitants of it, we were modest and took what we needed, we let them catch the rest. But then they went too far, they caught too much.",
    "dst": "这么多年来，我们这些湖真正的居民一直让他们跟我们共享这片湖，我们很克制，只取需要的，剩下的都让他们钓。可是后来他们太过分了，钓得太多。",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#011": {
+  "Underice#012": {
    "src": "We didn't have enough to eat, we were forced to steal their fish, we would have starved otherwise. And now they want their fish, our fish back? We can't do that, I hope you understand.",
    "dst": "我们不够吃，只好偷他们的鱼，不然就会饿死。现在他们想要回他们的鱼，我们的鱼？我们办不到，希望你能理解。",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#012": {
+  "Underice#013": {
    "src": "However, we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
    "dst": "不过，我们不必为了湖里的鱼争吵，我们只需要一条 [神话永恒河豚]，这样就够了，别的都不要。我们从来就不想偷鱼。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#013": {
+  "Underice#014": {
    "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
    "dst": "如果你想帮我们和村民，就沿着流进这片湖的溪流往南走，你会在那里找到最好的钓鱼点。河豚应该也在那附近。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#014": {
+  "Underice#015": {
    "src": "Follow the river south to find the fishing dock",
    "dst": "沿着河往南走，找到钓鱼码头",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#015": {
+  "Underice#016": {
    "src": "Oh you look a bit lost, let me help you, I've lived here for a long time, I know every corner and every snowflake.",
    "dst": "噢，你看起来有点迷路，我来帮你吧，我在这里住了很久，每个角落、每片雪花我都知道。",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#016": {
+  "Underice#017": {
    "src": "You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
    "dst": "你在找 [神话永恒河豚]？嗯，我听过这个名字，是我朋友 Strato 几年前告诉我的。如果我没记错，它是无穷无尽的，光这一条鱼就能喂饱所有行省的每一个人。",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#017": {
+  "Underice#018": {
    "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
    "dst": "可惜 Strato 已经不在了。他以前在 {p} 西北边的伐木营地工作、生活。我们总是在这里见面，一起钓鱼、讲故事。我真怀念那段日子……",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#018": {
+  "Underice#019": {
    "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
    "dst": "也许你能在那里找到某种鱼饵，他有我见过最好的鱼饵。你应该能弄到一些，扔进水里，也许就能把河豚引来。",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#019": {
+  "Underice#020": {
    "src": "Can I ask you something? As you might see I'm not the richest guy, or the youngest. If you manage to catch that fish, could you hand it over? I know we just met but you seem like somebody who would help an old man.",
    "dst": "我能问你一件事吗？你也看得出来，我不是什么有钱人，也不年轻了。如果你钓到那条鱼，能不能交给我？我知道我们才刚认识，但你看起来是会帮老人家的人。",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#020": {
+  "Underice#021": {
    "src": "Obtain the bait at the woodcutting camp northwest of {p}, use it to catch the fish and then give it to Calamaro or Gernald",
    "dst": "在 {p} 西北边的伐木营地取得鱼饵，用它钓到那条鱼，然后交给 Calamaro 或 Gernald",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#021": {
+  "Underice#022": {
    "src": "Just look at those fish, I told you they love this bait.",
    "dst": "你看那些鱼，我就说它们爱这种鱼饵。",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#022": {
+  "Underice#023": {
    "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
    "dst": "来了，[神话永恒河豚]，真不敢相信！",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#023": {
+  "Underice#024": {
    "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
    "dst": "你决定把鱼给我？真希望 Strato 还在，他一定会很惊讶。我没办法表达这对我有多重要，不过请收下这份小礼物，答应我，永远别改变。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#024": {
+  "Underice#025": {
    "src": "You found a pufferfish! Who would have thought such a small thing could solve our problem. I will start bringing back the fish immediately, but first we will have a nice hot soup. Please take this as payback for your services.",
    "dst": "你找到河豚了！谁想得到这么小的东西就能解决我们的问题。我马上就开始把鱼还回去，不过我们先喝碗热汤。请收下这个，当作你帮忙的回报。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#025": {
+  "Underice#026": {
    "src": "You can trade it at the shop right over there, it's hard to miss. I will give you a last advise, you don't want to eat that slimy fish.",
    "dst": "你可以在那边的商店交易它，很好找。最后给你个忠告，你可不会想吃那条黏糊糊的鱼。",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#026": {
+  "Underice#027": {
    "src": "Meet up with Fredris in {p} and claim your reward",
    "dst": "到 {p} 与 Fredris 会合，领取奖励",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#027": {
+  "Underice#028": {
    "src": "Oh you are done with whatever you were doing? I heard you ran around the whole place, I don't know if you were the right person to ask for help...",
    "dst": "噢，你忙完你那些事了？听说你把整个地方跑了个遍，我都不知道找你帮忙是不是找对人了……",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#028": {
+  "Underice#029": {
    "src": "I will just ask the next one who comes around, no need to have you run around all day. Take this, I appreciate your effort.",
    "dst": "我还是问下一个路过的人吧，没必要让你跑一整天。拿着这个，谢谢你的努力。",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#029": {
+  "Underice#030": {
    "src": "A real disaster! I can't believe this is happening to me!",
    "dst": "真是场灾难！真不敢相信这种事会落到我头上！",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#030": {
+  "Underice#031": {
    "src": "I've been fishing for the last few days and I caught nothing! Zilch! This isn't normal!",
    "dst": "我这几天一直在钓鱼，结果什么都没钓到！一条都没有！这不正常！",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#031": {
+  "Underice#032": {
    "src": "I spent my entire life fishing in this area! I wish I could dive under this ice to fix the problem myself...",
    "dst": "我这辈子都在这一带钓鱼！真希望我能潜到冰下面自己去解决问题……",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#032": {
+  "Underice#033": {
    "src": "Do you think you could help me? You might actually be exactly what I need!",
    "dst": "你觉得你能帮我吗？你说不定正是我需要的人！",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#033": {
+  "Underice#034": {
    "src": "Enter my shack, there you will find the entrance... Good luck!",
    "dst": "进我的小屋，你会在那里找到入口……祝你好运！",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#034": {
+  "Underice#035": {
    "src": "Explore under the ice to find a cause to the fish problem. You'll need the Breathing Helmet for this.",
    "dst": "探索冰下，找出鱼出问题的原因。你需要戴上呼吸头盔。",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#035": {
+  "Underice#036": {
    "src": "Talk to Squidward in the Squid Village.",
    "dst": "与乌贼村的 Squidward 对话。",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#036": {
+  "Underice#037": {
    "src": "Have I seen any fish? No, of course not! I don't even know what a fish looks like!",
    "dst": "我有没有见过鱼？没有，当然没有！我连鱼长什么样都不知道！",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#037": {
+  "Underice#038": {
    "src": "Who could be stealing all those fish? I wonder! Actually...",
    "dst": "到底会是谁在偷那些鱼呢？我也好奇！其实……",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#038": {
+  "Underice#039": {
    "src": "I'm sure Calamaro did it! He's just that kind of guy. He lives in that house down there.",
    "dst": "我敢肯定是 Calamaro 干的！他就是那种人。他住在下面那栋房子里。",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#039": {
+  "Underice#040": {
    "src": "Find Calamaro in the Squid Village.",
    "dst": "在乌贼村找到 Calamaro。",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#040": {
+  "Underice#041": {
    "src": "Me? Stealing fish? You are out of your mind! It's obviously Kroken who is stealing them!",
    "dst": "我？偷鱼？你疯了吧！明明是 Kroken 在偷！",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#041": {
+  "Underice#042": {
    "src": "He lives right on top of that waterfall right there, if you want to go talk to him.",
    "dst": "他就住在那边瀑布的顶上，你想的话可以去跟他谈谈。",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#042": {
+  "Underice#043": {
    "src": "Find Kroken in the Squid Village.",
    "dst": "在乌贼村找到 Kroken。",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#043": {
+  "Underice#044": {
    "src": "Do I look like someone who steals fish?",
    "dst": "我看起来像会偷鱼的人吗？",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Kroken",
    "source": "wiki"
   },
-  "Underice#044": {
+  "Underice#045": {
    "src": "It's obvious that Squidward did it, he has tons of crates full of fish!",
    "dst": "明显是 Squidward 干的，他有好几箱满满的鱼！",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "Kroken",
    "source": "wiki"
   },
-  "Underice#045": {
+  "Underice#046": {
    "src": "Talk back to Squidward.",
    "dst": "回去跟 Squidward 谈谈。",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#046": {
+  "Underice#047": {
    "src": "Okay, okay, fine! It was me all along... I know, what a shock, right?",
    "dst": "好啦，好啦，行！从头到尾都是我……我知道，很震惊吧？",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#047": {
+  "Underice#048": {
    "src": "Okay, I got a proposition for you. Bring me [{~} Raw Fish] and I will stop, deal?",
    "dst": "好，我给你个提议。给我带来 [{~} 生鱼]，我就收手，成交？",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#048": {
+  "Underice#049": {
    "src": "Deal.",
    "dst": "成交。",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#049": {
+  "Underice#050": {
    "src": "Bring back {~} Raw Fish to Squidward.",
    "dst": "把 {~} 条生鱼带回给 Squidward。",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#050": {
+  "Underice#051": {
    "src": "Good, you got the fish!",
    "dst": "很好，你拿到鱼了！",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#051": {
+  "Underice#052": {
    "src": "You can trust me, I won't touch the fish in the frozen lake anymore!",
    "dst": "你可以相信我，我不会再碰冰湖里的鱼了！",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Squidward",
    "source": "wiki"
   },
-  "Underice#052": {
+  "Underice#053": {
    "src": "Talk to Fredris to collect your reward.",
    "dst": "与 Fredris 对话，领取奖励。",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underice#053": {
+  "Underice#054": {
    "src": "Your story really doesn't make sense. Villagers living in a squid village under the lake? Pff!",
    "dst": "你的故事根本说不通。村民住在湖底下的乌贼村里？呸！",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#054": {
+  "Underice#055": {
    "src": "However, if you can garantee me that my problem is gone, I'll trust you.",
    "dst": "不过，如果你能保证我的问题解决了，我就相信你。",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#055": {
+  "Underice#056": {
    "src": "Thank you for your help. Here, take these...",
    "dst": "谢谢你的帮忙。给，拿着这些……",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Fredris",
    "source": "wiki"
   },
-  "Underice#056": {
+  "Underice#057": {
    "src": "Have you found the issue yet? I'm still waiting!",
    "dst": "你找到问题出在哪了吗？我还在等着呢！",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#057": {
+  "Underice#058": {
    "src": "Have you seen that weird structure near the lake? I heard quite a lot of stories about it, but nobody is sure about what you can find there.",
    "dst": "你见过湖边那座奇怪的建筑吗？我听过不少关于它的传闻，但没人说得准那里到底有什么。",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#058": {
+  "Underice#059": {
    "src": "However we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
    "dst": "不过，我们不必为了湖里的鱼争吵，我们只需要一条 [神话永恒河豚]，这样就够了，别的都不要。我们从来就不想偷鱼。",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#059": {
+  "Underice#060": {
    "src": "You're searching a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
    "dst": "你在找 [神话永恒河豚]？嗯，我听过这个名字，是我朋友 Strato 几年前告诉我的。如果我没记错，它是无穷无尽的，光这一条鱼就能喂饱所有行省的每一个人。",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#060": {
+  "Underice#061": {
    "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in the water, maybe that will attract the pufferfish.",
    "dst": "也许你能在那里找到某种鱼饵，他有我见过最好的鱼饵。你应该能弄到一些，扔进水里，也许就能把河豚引来。",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#061": {
+  "Underice#062": {
    "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift please, promise me to never change.",
    "dst": "你决定把鱼给我？真希望 Strato 还在，他一定会很惊讶。我没办法表达这对我有多重要，不过请收下这份小礼物，答应我，永远别改变。",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#062": {
+  "Underice#063": {
    "src": "I wish we could have avoided this whole scenario.",
    "dst": "真希望我们当初能避免这一切。",
    "role": "desc",

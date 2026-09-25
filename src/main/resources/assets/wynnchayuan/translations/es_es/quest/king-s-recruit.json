@@ -1,14 +1,50 @@
 {
  "_meta": {
   "quest": "King's Recruit",
-  "count": 128,
-  "translated": 128,
+  "count": 131,
+  "translated": 127,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "King's Recruit#000": {
+  "King's Recruit#001": {
+   "src": "{#}Cast your Arrow Bomb Spell by clicking  LEFT -  RIGHT -  RIGHT  while holding your Bow",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "{#}Cast your Arrow Storm Spell by clicking  RIGHT -  LEFT -  RIGHT  while holding your Bow",
+    "file": "quest.json",
+    "ratio": 0.894,
+    "reason": "candidate"
+   }
+  },
+  "King's Recruit#002": {
+   "src": "You three are going to make fine soldiers. Now, go on to {p}, the King is awaiting your arrival.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "King's Recruit#003": {
+   "src": "Well, what are we waiting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "King's Recruit#004": {
    "src": "Awaken",
-   "dst": "Despierta",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -16,7 +52,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#001": {
+  "King's Recruit#005": {
    "src": "Agh!",
    "dst": "¡Agh!",
    "role": "desc",
@@ -26,7 +62,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "King's Recruit#002": {
+  "King's Recruit#006": {
    "src": "Hey, {u}! You alright in there? Looks like we hit something.",
    "dst": "¡Eh, {u}! ¿Estás bien ahí dentro? Parece que hemos chocado con algo.",
    "role": "desc",
@@ -36,7 +72,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "King's Recruit#003": {
+  "King's Recruit#007": {
    "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
    "dst": "Sal de la caravana y habla con el conductor de la caravana en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -46,7 +82,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#004": {
+  "King's Recruit#008": {
    "src": "Hm... I swear I hit this same darn boulder every time I make this trip. Sorry folks.",
    "dst": "Mmm... Juro que choco con este maldito pedrusco cada vez que hago este viaje. Lo siento, gente.",
    "role": "desc",
@@ -56,7 +92,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "King's Recruit#005": {
+  "King's Recruit#009": {
    "src": "Ah. Does this mean we have to walk all the way to {p} from here?",
    "dst": "Ah. ¿Eso significa que tenemos que ir andando desde aquí hasta {p}?",
    "role": "desc",
@@ -66,7 +102,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#006": {
+  "King's Recruit#010": {
    "src": "Unfortunately so. Luckily, it's not that far from here. Just a straight path forward.",
    "dst": "Me temo que sí. Por suerte no queda lejos. Todo recto por el camino.",
    "role": "desc",
@@ -76,7 +112,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "King's Recruit#007": {
+  "King's Recruit#011": {
    "src": "Well, nothing to do but keep moving! Tasim, {u}, I'll race you to the gate!",
    "dst": "¡Bueno, no queda otra que seguir! Tasim, {u}, ¡os echo una carrera hasta la puerta!",
    "role": "desc",
@@ -86,7 +122,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#008": {
+  "King's Recruit#012": {
    "src": "Wait, don't!",
    "dst": "¡Espera, no!",
    "role": "desc",
@@ -96,7 +132,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#009": {
+  "King's Recruit#013": {
    "src": "... He's already gone. We'll have to catch up to him. {u}, lead the way.",
    "dst": "... Ya se ha ido. Tendremos que alcanzarlo. {u}, abre camino.",
    "role": "desc",
@@ -106,7 +142,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#010": {
+  "King's Recruit#014": {
    "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
    "dst": "Recorre el camino hacia la puerta de la Provincia de Wynn en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -116,7 +152,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#011": {
+  "King's Recruit#015": {
    "src": "I don't suppose you know much about Wynn either, do you?",
    "dst": "Supongo que tú tampoco sabes mucho sobre Wynn, ¿verdad?",
    "role": "desc",
@@ -126,7 +162,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#012": {
+  "King's Recruit#016": {
    "src": "Of course, the King of {p}'s been recruiting Fruma soldiers, but...",
    "dst": "Claro, el Rey de {p} lleva tiempo reclutando soldados de Fruma, pero...",
    "role": "desc",
@@ -136,7 +172,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#013": {
+  "King's Recruit#017": {
    "src": "That war of theirs must be getting pretty bad if they need this much support.",
    "dst": "Esa guerra suya debe de ir bastante mal si necesitan tanto apoyo.",
    "role": "desc",
@@ -146,7 +182,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#014": {
+  "King's Recruit#018": {
    "src": "Oh, there's Aledar! And the gate, by the looks of it.",
    "dst": "¡Ah, ahí está Aledar! Y la puerta, por lo que parece.",
    "role": "desc",
@@ -156,7 +192,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#015": {
+  "King's Recruit#019": {
    "src": "There you two are! You'll have to be faster than that if you want to stand a chance against the undead.",
    "dst": "¡Por fin llegáis! Tendréis que ser más rápidos si queréis plantar cara a los no muertos.",
    "role": "desc",
@@ -166,7 +202,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#016": {
+  "King's Recruit#020": {
    "src": "Yes, yes, we'll be faster next time. So, is this the gate marking the border between Wynn and Fruma?",
    "dst": "Sí, sí, la próxima vez iremos más rápido. Entonces, ¿esta es la puerta que marca la frontera entre Wynn y Fruma?",
    "role": "desc",
@@ -176,7 +212,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#017": {
+  "King's Recruit#021": {
    "src": "It looks like it, yep! Are you two ready for the start of our new lives?",
    "dst": "¡Eso parece, sí! ¿Listos para empezar nuestra nueva vida?",
    "role": "desc",
@@ -186,7 +222,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#018": {
+  "King's Recruit#022": {
    "src": "{u}, why don't you do the honours? Go ahead and open that gate.",
    "dst": "{u}, ¿por qué no haces tú los honores? Anda, abre esa puerta.",
    "role": "desc",
@@ -196,7 +232,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#019": {
+  "King's Recruit#023": {
    "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
    "dst": "Entra en la Provincia de Wynn en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -206,7 +242,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#020": {
+  "King's Recruit#024": {
    "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
    "dst": "Bueno, ¿a qué esperamos? Vamos a explorar esta provincia.",
    "role": "desc",
@@ -216,7 +252,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#021": {
+  "King's Recruit#025": {
    "src": "Continue through the Wynn Province to the castle",
    "dst": "Continúa por la Provincia de Wynn hasta el castillo",
    "role": "desc",
@@ -226,7 +262,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#022": {
+  "King's Recruit#026": {
    "src": "So this is Wynn we've all been hearing about... It's beautiful.",
    "dst": "Así que este es el Wynn del que tanto hemos oído hablar... Es precioso.",
    "role": "desc",
@@ -236,7 +272,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#023": {
+  "King's Recruit#027": {
    "src": "I guess the war hasn't made it this far. This is what we'll be fighting to protect.",
    "dst": "Supongo que la guerra no ha llegado hasta aquí. Esto es lo que vamos a luchar por proteger.",
    "role": "desc",
@@ -246,7 +282,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#024": {
+  "King's Recruit#028": {
    "src": "Hey, recruits! Come over here, I have something to tell you.",
    "dst": "¡Eh, reclutas! Venid aquí, tengo algo que deciros.",
    "role": "desc",
@@ -256,7 +292,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#025": {
+  "King's Recruit#029": {
    "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
    "dst": "Habla con el soldado en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -266,7 +302,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#026": {
+  "King's Recruit#030": {
    "src": "A soldier? What are you doing all the way out here?",
    "dst": "¿Un soldado? ¿Qué hace usted tan lejos de todo?",
    "role": "desc",
@@ -276,7 +312,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#027": {
+  "King's Recruit#031": {
    "src": "There's a bit of trouble up ahead. They sent me out here to intercept new recruits.",
    "dst": "Hay algo de jaleo más adelante. Me han enviado aquí a interceptar a los nuevos reclutas.",
    "role": "desc",
@@ -286,7 +322,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#028": {
+  "King's Recruit#032": {
    "src": "If you want to survive out here, you're going to need this.",
    "dst": "Si queréis sobrevivir aquí fuera, vais a necesitar esto.",
    "role": "desc",
@@ -296,7 +332,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#029": {
+  "King's Recruit#033": {
    "src": "And for you two.",
    "dst": "Y para vosotros dos.",
    "role": "desc",
@@ -306,7 +342,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#030": {
+  "King's Recruit#034": {
    "src": "Woah, awesome!",
    "dst": "¡Hala, genial!",
    "role": "desc",
@@ -316,7 +352,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#031": {
+  "King's Recruit#035": {
    "src": "Hopefully we won't have to use these just yet.",
    "dst": "Espero que aún no tengamos que usarlas.",
    "role": "desc",
@@ -326,7 +362,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#032": {
+  "King's Recruit#036": {
    "src": "Good luck out there, recruits! Just follow this path, and there will be a bridge up ahead.",
    "dst": "¡Suerte ahí fuera, reclutas! Seguid este camino y más adelante habrá un puente.",
    "role": "desc",
@@ -336,7 +372,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#033": {
+  "King's Recruit#037": {
    "src": "Cross the bridge at [-{~}, {~}, -{~}].",
    "dst": "Cruza el puente en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -346,7 +382,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#034": {
+  "King's Recruit#038": {
    "src": "Ah, this must be the bridge the soldier was talking about. But it certainly looks very...",
    "dst": "Ah, este debe de ser el puente del que hablaba el soldado. Aunque desde luego tiene una pinta muy...",
    "role": "desc",
@@ -356,7 +392,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#035": {
+  "King's Recruit#039": {
    "src": "Well, let's not keep the King of {p} waiting!",
    "dst": "¡Bueno, no hagamos esperar al Rey de {p}!",
    "role": "desc",
@@ -366,7 +402,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#036": {
+  "King's Recruit#040": {
    "src": "No, wait!",
    "dst": "¡No, espera!",
    "role": "desc",
@@ -376,7 +412,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#037": {
+  "King's Recruit#041": {
    "src": "Aledar!",
    "dst": "¡Aledar!",
    "role": "desc",
@@ -386,7 +422,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#038": {
+  "King's Recruit#042": {
    "src": "That sure was close!",
    "dst": "¡Eso ha estado cerca!",
    "role": "desc",
@@ -396,7 +432,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#039": {
+  "King's Recruit#043": {
    "src": "That's what I was trying to warn you about! Let's just get off this bridge before the rest of it collapses...",
    "dst": "¡De eso intentaba avisarte! Salgamos de este puente antes de que se derrumbe el resto...",
    "role": "desc",
@@ -406,7 +442,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#040": {
+  "King's Recruit#044": {
    "src": "Well, how are we meant to get to the other side of this ravine now? Ugh. Another thing gone wrong, just like-...",
    "dst": "¿Y cómo se supone que cruzamos ahora este barranco? Uf. Otra cosa que sale mal, igual que-...",
    "role": "desc",
@@ -416,7 +452,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#041": {
+  "King's Recruit#045": {
    "src": "... Aledar? What's wrong?",
    "dst": "... ¿Aledar? ¿Qué pasa?",
    "role": "desc",
@@ -426,7 +462,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#042": {
+  "King's Recruit#046": {
    "src": "That's... weird. I was just thinking about something from before Wynn, but... it's gone. I can't remember.",
    "dst": "Qué... raro. Estaba pensando en algo de antes de Wynn, pero... ha desaparecido. No lo recuerdo.",
    "role": "desc",
@@ -436,7 +472,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#043": {
+  "King's Recruit#047": {
    "src": "Hm. I can't remember anything from Fruma either... {u}, how about you?",
    "dst": "Hm. Yo tampoco recuerdo nada de Fruma... {u}, ¿y tú?",
    "role": "desc",
@@ -446,7 +482,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#044": {
+  "King's Recruit#048": {
    "src": "Nothing. It can't be a coincidence we all lost our memories at the same time, right?",
    "dst": "Nada. No puede ser casualidad que los tres hayamos perdido la memoria a la vez, ¿no?",
    "role": "desc",
@@ -456,7 +492,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#045": {
+  "King's Recruit#049": {
    "src": "No, but... We can worry about that later. For now, we need to find a way past this ravine. Aledar, {u}, you should look around for a way across. I'll keep looking here.",
    "dst": "No, pero... Ya nos preocuparemos de eso luego. Ahora hay que encontrar la forma de cruzar el barranco. Aledar, {u}, buscad un paso por ahí. Yo seguiré mirando aquí.",
    "role": "desc",
@@ -466,7 +502,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#046": {
+  "King's Recruit#050": {
    "src": "Alright! Let's go, {u}.",
    "dst": "¡Muy bien! Vamos, {u}.",
    "role": "desc",
@@ -476,7 +512,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#047": {
+  "King's Recruit#051": {
    "src": "Search for another way across the ravine at [-{~}, {~}, -{~}].",
    "dst": "Busca otra forma de cruzar el barranco en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -486,7 +522,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#048": {
+  "King's Recruit#052": {
    "src": "Woah! That sure did the trick, {u}. Good thinking!",
    "dst": "¡Hala! Eso ha funcionado de maravilla, {u}. ¡Bien pensado!",
    "role": "desc",
@@ -496,7 +532,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#049": {
+  "King's Recruit#053": {
    "src": "Hey, Tasim! Come over here, {u} found a way over!",
    "dst": "¡Eh, Tasim! ¡Ven aquí, {u} ha encontrado un paso!",
    "role": "desc",
@@ -506,7 +542,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#050": {
+  "King's Recruit#054": {
    "src": "Continue onwards to [-{~}, {~}, -{~}].",
    "dst": "Continúa hasta [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -516,7 +552,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#051": {
+  "King's Recruit#055": {
    "src": "Phew! We made it over safely this time at least.",
    "dst": "¡Uf! Al menos esta vez hemos cruzado sanos y salvos.",
    "role": "desc",
@@ -526,7 +562,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#052": {
+  "King's Recruit#056": {
    "src": "If we just continue forward, we should make it to {p} in no time!",
    "dst": "¡Si seguimos recto, llegaremos a {p} en un momento!",
    "role": "desc",
@@ -536,7 +572,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#053": {
+  "King's Recruit#057": {
    "src": "Hmm? What's that guard doing here? We should probably talk to them if we want to pass through.",
    "dst": "¿Mmm? ¿Qué hace ahí ese guardia? Si queremos pasar, será mejor que hablemos con él.",
    "role": "desc",
@@ -546,7 +582,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#054": {
+  "King's Recruit#058": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
    "dst": "Habla con el guardia en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -556,7 +592,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#055": {
+  "King's Recruit#059": {
    "src": "Halt, recruits!",
    "dst": "¡Alto, reclutas!",
    "role": "desc",
@@ -566,7 +602,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#056": {
+  "King's Recruit#060": {
    "src": "What? What's going on?",
    "dst": "¿Qué? ¿Qué ocurre?",
    "role": "desc",
@@ -576,7 +612,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#057": {
+  "King's Recruit#061": {
    "src": "A group of corrupted have sieged this underpass. I can't let you enter without any armour.",
    "dst": "Un grupo de corruptos ha tomado este paso subterráneo. No puedo dejaros entrar sin armadura.",
    "role": "desc",
@@ -586,7 +622,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#058": {
+  "King's Recruit#062": {
    "src": "Then what do we do? We have to get to {p}!",
    "dst": "¿Y entonces qué hacemos? ¡Tenemos que llegar a {p}!",
    "role": "desc",
@@ -596,7 +632,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#059": {
+  "King's Recruit#063": {
    "src": "Do you see that cave over there? Caves such as those often contain useful loot that can help keep you alive.",
    "dst": "¿Veis esa cueva de ahí? En cuevas así suele haber botín útil que os ayudará a seguir con vida.",
    "role": "desc",
@@ -606,7 +642,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#060": {
+  "King's Recruit#064": {
    "src": "If you enter the cave, you should be able to find some armour to protect you. After that return to me.",
    "dst": "Si entráis en la cueva, deberíais encontrar alguna armadura que os proteja. Después, volved a verme.",
    "role": "desc",
@@ -616,7 +652,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#061": {
+  "King's Recruit#065": {
    "src": "What do you say {u}? Let's go see what's in that cave.",
    "dst": "¿Qué me dices, {u}? Vamos a ver qué hay en esa cueva.",
    "role": "desc",
@@ -626,7 +662,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#062": {
+  "King's Recruit#066": {
    "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
    "dst": "Entra en la cueva y encuentra una armadura en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -636,7 +672,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#063": {
+  "King's Recruit#067": {
    "src": "We should return to the guard to see if he'll let us through now!",
    "dst": "¡Deberíamos volver con el guardia a ver si ahora nos deja pasar!",
    "role": "desc",
@@ -646,7 +682,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#064": {
+  "King's Recruit#068": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
    "dst": "Habla con el guardia en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -656,7 +692,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#065": {
+  "King's Recruit#069": {
    "src": "So you found some armor, huh?",
    "dst": "¿Así que habéis encontrado armadura?",
    "role": "desc",
@@ -666,7 +702,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#066": {
+  "King's Recruit#070": {
    "src": "Yes, a helmet! Will you let us pass now?",
    "dst": "¡Sí, un casco! ¿Nos deja pasar ya?",
    "role": "desc",
@@ -676,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#067": {
+  "King's Recruit#071": {
    "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
    "dst": "No tan deprisa, recluta. Antes de equiparte una pieza de armadura tienes que identificarla.",
    "role": "desc",
@@ -686,7 +722,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#068": {
+  "King's Recruit#072": {
    "src": "And how do we do that?",
    "dst": "¿Y cómo se hace eso?",
    "role": "desc",
@@ -696,7 +732,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#069": {
+  "King's Recruit#073": {
    "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
    "dst": "Los objetos se identifican en los Identificadores de objetos. Los hay en todas las ciudades del mundo, y aquí tenemos uno por comodidad.",
    "role": "desc",
@@ -706,7 +742,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#070": {
+  "King's Recruit#074": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
    "dst": "Identifica tu casco en el Identificador de objetos y vuelve a verme con él equipado. Cuando lo hayas hecho, te dejaré pasar.",
    "role": "desc",
@@ -716,7 +752,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#071": {
+  "King's Recruit#075": {
    "src": "Alright! Let's go, {u}.",
    "dst": "¡Muy bien! Vamos, {u}.",
    "role": "desc",
@@ -726,7 +762,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#072": {
+  "King's Recruit#076": {
    "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
    "dst": "Veo que llevas el casco puesto. Fantástico, ya podéis pasar. Os abro la puerta.",
    "role": "desc",
@@ -736,7 +772,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#073": {
+  "King's Recruit#077": {
    "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
    "dst": "¡Suerte ahí dentro, reclutas! ¡Ni con armadura será fácil!",
    "role": "desc",
@@ -746,7 +782,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#074": {
+  "King's Recruit#078": {
    "src": "Enter the underpass at [-{~}, {~}, -{~}].",
    "dst": "Entra en el paso subterráneo en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -756,7 +792,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#075": {
+  "King's Recruit#079": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
    "dst": "Sigue por el paso subterráneo hasta [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -766,7 +802,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#076": {
+  "King's Recruit#080": {
    "src": "Wow, that guard wasn't joking. This place is crawling with the corrupt.",
    "dst": "Vaya, el guardia no bromeaba. Esto está plagado de corruptos.",
    "role": "desc",
@@ -776,7 +812,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#077": {
+  "King's Recruit#081": {
    "src": "Well, we've got no choice but to make it through! Finally time for us to use these weapons we got. Let's go, {u}.",
    "dst": "¡Pues no queda otra que abrirse paso! Por fin toca usar estas armas que nos han dado. Vamos, {u}.",
    "role": "desc",
@@ -786,7 +822,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#078": {
+  "King's Recruit#082": {
    "src": "{u}, you take the skeleton in the front. We'll handle the two zombies in the back!",
    "dst": "{u}, encárgate del Skeleton de delante. ¡Nosotros nos ocupamos de los dos zombis de atrás!",
    "role": "desc",
@@ -796,7 +832,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#079": {
+  "King's Recruit#083": {
    "src": "Defeat the Skeleton!",
    "dst": "¡Derrota al Skeleton!",
    "role": "desc",
@@ -806,7 +842,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#080": {
+  "King's Recruit#084": {
    "src": "We did it!",
    "dst": "¡Lo hemos conseguido!",
    "role": "desc",
@@ -816,7 +852,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#081": {
+  "King's Recruit#085": {
    "src": "This path opened up, let's continue through the underpass.",
    "dst": "Se ha abierto este camino, sigamos por el paso subterráneo.",
    "role": "desc",
@@ -826,7 +862,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#082": {
+  "King's Recruit#086": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
    "dst": "Sigue por el paso subterráneo hasta [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -836,7 +872,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#083": {
+  "King's Recruit#087": {
    "src": "Over here! You're just what I needed!",
    "dst": "¡Por aquí! ¡Justo lo que necesitaba!",
    "role": "desc",
@@ -846,7 +882,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#084": {
+  "King's Recruit#088": {
    "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
    "dst": "Habla con el teniente en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -856,7 +892,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#085": {
+  "King's Recruit#089": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
    "dst": "¡Por fin, refuerzos! Un momento... venís directos de Fruma, ¿verdad?",
    "role": "desc",
@@ -866,7 +902,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#086": {
+  "King's Recruit#090": {
    "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
    "dst": "En fin, esta zona ya debería estar despejada. {p} está justo ahí delante.",
    "role": "desc",
@@ -876,7 +912,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#087": {
+  "King's Recruit#091": {
    "src": "Lieutenant, watch out behind you!",
    "dst": "¡Teniente, cuidado detrás!",
    "role": "desc",
@@ -886,7 +922,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#088": {
+  "King's Recruit#092": {
    "src": "Quick, you have to use an ability!",
    "dst": "¡Rápido, usa una habilidad!",
    "role": "desc",
@@ -896,7 +932,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#089": {
+  "King's Recruit#093": {
    "src": "Great job, {u}!",
    "dst": "¡Buen trabajo, {u}!",
    "role": "desc",
@@ -906,7 +942,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#090": {
+  "King's Recruit#094": {
    "src": "Wait, it's running away! We have to save the Lieutenant!",
    "dst": "¡Esperad, se escapa! ¡Tenemos que salvar al teniente!",
    "role": "desc",
@@ -916,7 +952,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#091": {
+  "King's Recruit#095": {
    "src": "Chase the Goliath to [-{~}, {~}, -{~}]!",
    "dst": "¡Persigue al Goliath hasta [-{~}, {~}, -{~}]!",
    "role": "desc",
@@ -926,7 +962,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#092": {
+  "King's Recruit#096": {
    "src": "Defeat the Goliath and free the Lieutenant.",
    "dst": "Derrota al Goliath y libera al teniente.",
    "role": "desc",
@@ -936,7 +972,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#093": {
+  "King's Recruit#097": {
    "src": "That sure was close... Thanks for the save, {u}!",
    "dst": "Eso ha estado cerca... ¡Gracias por salvarme, {u}!",
    "role": "desc",
@@ -946,7 +982,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#094": {
+  "King's Recruit#098": {
    "src": "I think you three are going to make good soldiers - not many can handle themselves like you just did.",
    "dst": "Creo que los tres vais a ser buenos soldados; no muchos se defienden como acabáis de hacer.",
    "role": "desc",
@@ -956,7 +992,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#095": {
+  "King's Recruit#099": {
    "src": "It seems that beast dropped something, you should check it out before heading to {p}.",
    "dst": "Parece que esa bestia ha soltado algo; deberíais echarle un vistazo antes de ir a {p}.",
    "role": "desc",
@@ -966,7 +1002,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#096": {
+  "King's Recruit#100": {
    "src": "Pick up the loot dropped by the Goliath.",
    "dst": "Recoge el botín que ha soltado el Goliath.",
    "role": "desc",
@@ -976,7 +1012,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#097": {
+  "King's Recruit#101": {
    "src": "That item looks rare! Maybe there's an identifier around here.",
    "dst": "¡Ese objeto parece raro! Quizá haya un identificador por aquí.",
    "role": "desc",
@@ -986,7 +1022,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#098": {
+  "King's Recruit#102": {
    "src": "Onward to {p}! We're almost there.",
    "dst": "¡Rumbo a {p}! Ya casi estamos.",
    "role": "desc",
@@ -996,7 +1032,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#099": {
+  "King's Recruit#103": {
    "src": "Enter the castle at [-{~}, {~}, -{~}].",
    "dst": "Entra en el castillo en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -1006,7 +1042,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#100": {
+  "King's Recruit#104": {
    "src": "We... we made it! We really made it! Sure was a close call at the end.",
    "dst": "¡Lo... lo hemos conseguido! ¡De verdad! Al final ha estado muy justo.",
    "role": "desc",
@@ -1016,7 +1052,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#101": {
+  "King's Recruit#105": {
    "src": "... Still think those corrupted don't stand a chance against you?",
    "dst": "... ¿Sigues pensando que esos corruptos no tienen nada que hacer contra ti?",
    "role": "desc",
@@ -1026,7 +1062,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#102": {
+  "King's Recruit#106": {
    "src": "Ha ha. Very funny. Ah, {u}, there seems to be an identifier here for you to identify that rare helmet.",
    "dst": "Ja, ja. Muy gracioso. Ah, {u}, parece que aquí hay un identificador para ese casco raro tuyo.",
    "role": "desc",
@@ -1036,7 +1072,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#103": {
+  "King's Recruit#107": {
    "src": "And a blacksmith too, you can sell your old helmet there for some emeralds.",
    "dst": "Y también un herrero; ahí puedes vender tu casco viejo por unas esmeraldas.",
    "role": "desc",
@@ -1046,7 +1082,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#104": {
+  "King's Recruit#108": {
    "src": "Here it is, the end of our journey.",
    "dst": "Aquí está, el final de nuestro viaje.",
    "role": "desc",
@@ -1056,7 +1092,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#105": {
+  "King's Recruit#109": {
    "src": "The end of one adventure, but the beginning of another! Let's go inside and talk to the King!",
    "dst": "¡El final de una aventura y el principio de otra! ¡Entremos a hablar con el Rey!",
    "role": "desc",
@@ -1066,7 +1102,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#106": {
+  "King's Recruit#110": {
    "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
    "dst": "Habla con el Rey de {p} en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -1076,7 +1112,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#107": {
+  "King's Recruit#111": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
    "dst": "¡Bienvenidos a la Provincia de Wynn! Por vuestro aspecto andrajoso, deduzco que el viaje hasta aquí ha sido toda una aventura.",
    "role": "desc",
@@ -1086,7 +1122,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#108": {
+  "King's Recruit#112": {
    "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
    "dst": "Este, reclutas, es el noble fuerte de {p}, ¡una de las grandes ciudades de nuestra provincia!",
    "role": "desc",
@@ -1096,7 +1132,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#109": {
+  "King's Recruit#113": {
    "src": "As soldiers of Wynn, it is your duty to stem the tide of corrupted monsters ravaging this land.",
    "dst": "Como soldados de Wynn, vuestro deber es frenar la marea de monstruos corruptos que asola esta tierra.",
    "role": "desc",
@@ -1106,7 +1142,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#110": {
+  "King's Recruit#114": {
    "src": "Although, you may want to gain some experience beforehand. Many lives are tragically lost every day...",
    "dst": "Aunque quizá convenga que antes ganéis algo de experiencia. Cada día se pierden muchas vidas...",
    "role": "desc",
@@ -1116,7 +1152,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#111": {
+  "King's Recruit#115": {
    "src": "Take this [{p} Teleportation Scroll] to aid you in your journey. Upon use, it will instantly bring you back to this city, wherever you may be.",
    "dst": "Llévate este [{p} Teleportation Scroll] para ayudarte en tu viaje. Al usarlo, te traerá al instante de vuelta a esta ciudad, estés donde estés.",
    "role": "desc",
@@ -1126,7 +1162,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#112": {
+  "King's Recruit#116": {
    "src": "With that, I must bid you farewell, more recruits may arrive at any time. Good luck out there, soldiers of Wynn!",
    "dst": "Dicho esto, debo despedirme; pueden llegar más reclutas en cualquier momento. ¡Suerte ahí fuera, soldados de Wynn!",
    "role": "desc",
@@ -1136,7 +1172,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#113": {
+  "King's Recruit#117": {
    "src": "So! Wynn, huh? It's pretty exciting to finally be here.",
    "dst": "¡Bueno! Wynn, ¿eh? Es emocionante estar por fin aquí.",
    "role": "desc",
@@ -1146,7 +1182,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#114": {
+  "King's Recruit#118": {
    "src": "I can't wait to discover what it looks like for myself!",
    "dst": "¡Estoy deseando descubrir cómo es con mis propios ojos!",
    "role": "desc",
@@ -1156,7 +1192,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#115": {
+  "King's Recruit#119": {
    "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
    "dst": "Ja, bueno, creo que pronto pondré rumbo a {p}, aunque parece que por el camino hay algo llamado {p}...",
    "role": "desc",
@@ -1166,7 +1202,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#116": {
+  "King's Recruit#120": {
    "src": "Enough talking already! Let's get out there and help some people!",
    "dst": "¡Basta de charla! ¡Salgamos ahí fuera a ayudar a la gente!",
    "role": "desc",
@@ -1176,7 +1212,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#117": {
+  "King's Recruit#121": {
    "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
    "dst": "Y se ha vuelto a ir... En fin, seguro que lo vemos pronto. Por ahora, veamos cómo es Wynn de verdad.",
    "role": "desc",
@@ -1186,7 +1222,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#118": {
+  "King's Recruit#122": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
    "dst": "Es precioso... ¡Ah! Casi se me olvida contarte algo, {u}.",
    "role": "desc",
@@ -1196,7 +1232,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#119": {
+  "King's Recruit#123": {
    "src": "There's this handy item we were all given on our way here, the Content Book. It displays most things you can do in this world; Quests, Caves, and much, much more.",
    "dst": "Nos dieron a todos un objeto muy útil de camino aquí: el libro de contenido. Muestra casi todo lo que puedes hacer en este mundo: misiones, cuevas y mucho, mucho más.",
    "role": "desc",
@@ -1206,7 +1242,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#120": {
+  "King's Recruit#124": {
    "src": "It also lets you track any content you want, which will create beacons for you to follow.",
    "dst": "También te permite seguir el contenido que quieras, y te crea balizas que puedes seguir.",
    "role": "desc",
@@ -1216,7 +1252,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#121": {
+  "King's Recruit#125": {
    "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
    "dst": "Anda, ¿por qué no lo pruebas? Usa tu libro de contenido y haz clic en la misión resaltada.",
    "role": "desc",
@@ -1226,7 +1262,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#122": {
+  "King's Recruit#126": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
    "dst": "¡Eso es! Yo me voy hacia {p}, al final del {p}.",
    "role": "desc",
@@ -1236,7 +1272,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#123": {
+  "King's Recruit#127": {
    "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u}.",
    "dst": "Ven a verme allí cuando te hayas hecho un poco más fuerte. Bueno, ¡hasta pronto, {u}!",
    "role": "desc",
@@ -1246,7 +1282,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#124": {
+  "King's Recruit#128": {
    "src": "What are you waiting for recruits? Go identify your helmet at the  Item Identifier and then equip it in your helmet slot!",
    "dst": "¿A qué esperáis, reclutas? ¡Id a identificar el casco al Identificador de objetos y equipadlo en la ranura del casco!",
    "role": "desc",
@@ -1254,7 +1290,7 @@
    "quest": "King's Recruit",
    "source": "capture"
   },
-  "King's Recruit#125": {
+  "King's Recruit#129": {
    "src": "Unless you'd rather stand around here all day, that's fine by me too.",
    "dst": "A menos que prefiráis quedaros aquí plantados todo el día; por mí, bien.",
    "role": "desc",
@@ -1262,7 +1298,7 @@
    "quest": "King's Recruit",
    "source": "capture"
   },
-  "King's Recruit#126": {
+  "King's Recruit#130": {
    "src": "Well, what are you waiting for?",
    "dst": "Bueno, ¿a qué esperas?",
    "role": "desc",
@@ -1270,7 +1306,7 @@
    "quest": "King's Recruit",
    "source": "capture"
   },
-  "King's Recruit#127": {
+  "King's Recruit#131": {
    "src": "Good luck in there, recruits! You're gonna need it...",
    "dst": "¡Suerte ahí dentro, reclutas! La vais a necesitar...",
    "role": "desc",

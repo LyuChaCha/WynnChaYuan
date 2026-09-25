@@ -3,8 +3,8 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 364,
-  "translated": 364,
+  "count": 363,
+  "translated": 363,
   "note": "薩滿的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -2010,21 +2010,6 @@
    "ctx": [
     "shaman/技能名稱"
    ],
-   "tree": "04/shaman/02/004/001",
-   "ability": "Totem Shove",
-   "code": "SHAMAN-P2-R04-C01"
-  },
-  "ability-shaman#0022": {
-   "src": "Casting Totem while looking\nat an existing Totem will shove it forwards \nfor half the mana cost, dealing damage\nto any enemy it crashes into.\n(Sneak to reverse its direction)",
-   "dst": "置いてあるトーテムを見ながら\nTotem を使うと、半分のマナコストで前へ押し出し、\nぶつかった敵に\nダメージを与える。\n(スニークすると向きが逆になる)",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Totem Shove"
-   ],
-   "lines": 5,
-   "flat": "Casting Totem while looking at an existing Totem will instead shove it forwards, dealing damage to any enemy it crashes into. (Sneak to reverse its direction)",
-   "_raw": "Casting Totem while looking\nat an existing Totem will instead\nshove it forwards, dealing damage\nto any enemy it crashes into.\n(Sneak to reverse its direction)",
    "tree": "04/shaman/02/004/001",
    "ability": "Totem Shove",
    "code": "SHAMAN-P2-R04-C01"

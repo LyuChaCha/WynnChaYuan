@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 57,
+  "count": 59,
   "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Taking the Tower#000": {
+   "src": "Tasim told me all about the corrupted force you took out. I wish I could have been here to help!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#001": {
+   "src": "We did it! Let's get back to Lieutenant Van and tell him the news.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#002": {
    "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Item Upgrader!",
    "dst": "아, 잠깐. 먼저 들를 데가 있어. 아이템 강화사한테 따라와!",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#001": {
+  "Taking the Tower#003": {
    "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
    "dst": "듣자 하니 탑 꼭대기 두목이  물 피해에 약하대!",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#002": {
+  "Taking the Tower#004": {
    "src": "You can apply various elemental powders to your weapons, which lets them deal types of damage they might not have been able to before.",
    "dst": "무기에 여러 원소 파우더를 넣을 수 있어. 그러면 원래 못 주던 속성의 피해를 줄 수 있지.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#003": {
+  "Taking the Tower#005": {
    "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
    "dst": "이번엔  물 파우더를 넣으면 돼. 그럼 탑에 있는 타락한 적들에게 무기가 더 잘 먹힐 거야!",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#004": {
+  "Taking the Tower#006": {
    "src": "...The point is- here. Take this elemental powder and Hold the powder, then Right Click on your weapon. Let me know when you're done!",
    "dst": "...요점은- 자. 이 원소 파우더를 받아서 손에 든 채로 무기를 우클릭해. 끝나면 알려 줘!",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#005": {
+  "Taking the Tower#007": {
    "src": "[+{~} Water Powder I]",
    "dst": "[+{~} 물 파우더 I]",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#006": {
+  "Taking the Tower#008": {
    "src": "You see this Item Upgrader? It can be used to upgrade powders to high tiers.",
    "dst": "이 아이템 강화사 보여? 파우더를 더 높은 등급으로 강화할 수 있어.",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#007": {
+  "Taking the Tower#009": {
    "src": "It can also remove powders from your items, if you need to- don't worry, you'll get your powders back!",
    "dst": "필요하면 아이템에서 파우더를 빼낼 수도 있어- 걱정 마, 파우더는 돌려받으니까!",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#008": {
+  "Taking the Tower#010": {
    "src": "...Anyway, Lieutenant Van and the others are by that bunch of houses in the {p}- you probably saw it on your way in.",
    "dst": "...어쨌든, Van 중위님이랑 다른 사람들은 {p}의 집들 옆에 있어- 오는 길에 봤을 거야.",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#009": {
+  "Taking the Tower#011": {
    "src": "It doesn't much matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
    "dst": "누가 하든 별 상관없다, 해내기만 하면. 기회가 보이면- 가라!",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#010": {
+  "Taking the Tower#012": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here! Understood?",
    "dst": "후퇴해야 하거나 타락자들을 처치하면 여기로 다시 모여라! 알겠나?",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#011": {
+  "Taking the Tower#013": {
    "src": "Hey, {u}, there you are! Come on, let's climb that tower!",
    "dst": "야, {u}, 여기 있었구나! 가자, 저 탑에 올라가자!",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#012": {
+  "Taking the Tower#014": {
    "src": "They have, lieutenant! {u} and I reached the top and defeated the corrupted.",
    "dst": "네, 중위님! {u}와(과) 제가 꼭대기에 올라가 타락자를 쓰러뜨렸습니다.",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Taking the Tower#013": {
+  "Taking the Tower#015": {
    "src": "Speak to Aledar in the {p} Barracks at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 {p} 병영에 있는 Aledar에게 말을 거세요.",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#014": {
+  "Taking the Tower#016": {
    "src": "Oh, {u}! Hey! It's good to see you and Tasim again. Hope you didn't have too many adventures without me!",
    "dst": "오, {u}! 안녕! 너랑 Tasim을 다시 보니 반갑다. 나 빼고 모험 너무 많이 한 건 아니지?",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#015": {
+  "Taking the Tower#017": {
    "src": "Tasim's gone off to the training room, if you were looking for him. He's really jumping straight into it, which... is good! We all need to get stronger so we can defend the province.",
    "dst": "Tasim 찾는 거면 훈련실에 갔어. 아주 제대로 뛰어들었더라, 그건... 좋은 거지! 이 지방을 지키려면 우리 모두 더 강해져야 하니까.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#016": {
+  "Taking the Tower#018": {
    "src": "Tasim told me all about the corrupted force you took out. I wish I could have been there to help!",
    "dst": "네가 타락한 병력을 해치웠다고 Tasim이 다 얘기해 줬어. 나도 거기서 도왔으면 좋았을 텐데!",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#017": {
+  "Taking the Tower#019": {
    "src": "...Oh! Since you're here- I was about to head out to join Lieutenant Van's squad to take back a tower overtaken by corrupteds. You should come with us, too!",
    "dst": "...아! 마침 잘 왔다- 타락자들에게 점령된 탑을 되찾으러 Van 중위님 분대에 합류하려던 참이었어. 너도 같이 가자!",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#018": {
+  "Taking the Tower#020": {
    "src": "Well? What do you think? Want to get some real combat experience? It shouldn't take long.",
    "dst": "어때? 진짜 전투 경험 좀 쌓아 볼래? 오래 안 걸릴 거야.",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#019": {
+  "Taking the Tower#021": {
    "src": "Perfect. Well, no time better than the present! Let's get going.",
    "dst": "좋아. 그럼 지금이 딱이지! 출발하자.",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#020": {
+  "Taking the Tower#022": {
    "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Powder Master!",
    "dst": "아, 잠깐. 먼저 들를 데가 있어. 파우더 장인한테 따라와!",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#021": {
+  "Taking the Tower#023": {
    "src": "Oh. Alright.",
    "dst": "아. 그래.",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#022": {
+  "Taking the Tower#024": {
    "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
    "dst": "난 한동안 여기 있을 거야. 마음 바뀌면 말해 줘!",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#023": {
+  "Taking the Tower#025": {
    "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
    "dst": "어, 돌아왔네! 마음 바뀌었어? 타락한 탑 공격에 같이 갈래?",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#024": {
+  "Taking the Tower#026": {
    "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
    "dst": "Aledar를 따라 [{~}, {~}, -{~}]의 파우더 장인에게 가세요.",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#025": {
+  "Taking the Tower#027": {
    "src": "Alright, so. There's something I've been told about the tower we're going to be attacking which we can prepare for!",
    "dst": "좋아, 그러니까. 우리가 공격할 탑에 대해 들은 게 있는데, 미리 대비할 수 있어!",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#026": {
+  "Taking the Tower#028": {
    "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
    "dst": "듣자 하니 탑 꼭대기 두목이  피해에 약하대! 그래서 파우더 장인한테 온 거야.",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#027": {
+  "Taking the Tower#029": {
    "src": "You can apply various elemental powders to your weapons here, which lets them deal types of damage they might not have been able to before.",
    "dst": "여기선 무기에 여러 원소 파우더를 넣을 수 있어. 그러면 원래 못 주던 속성의 피해를 줄 수 있지.",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#028": {
+  "Taking the Tower#030": {
    "src": "In this case, you can apply a powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
    "dst": "이번엔  파우더를 넣으면 돼. 그럼 탑에 있는 타락한 적들에게 무기가 더 잘 먹힐 거야!",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#029": {
+  "Taking the Tower#031": {
    "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
    "dst": "나, 어... 원소 설명을 전부 외우진 못했어. 더 알고 싶으면 병영에 있는 Ragon 대장님께 가 봐. 그걸로 강의를 통째로 하시거든!",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#030": {
+  "Taking the Tower#032": {
    "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
    "dst": "...요점은- 자. 이 원소 파우더를 받아서 파우더 장인한테 넣어 달라고 해. 끝나면 알려 줘!",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#031": {
+  "Taking the Tower#033": {
    "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
    "dst": "무기에 물 파우더를 넣은 뒤 [{~}, {~}, -{~}]의 Aledar에게 알리세요.",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#032": {
+  "Taking the Tower#034": {
    "src": "Got the powder on your weapon? Good, that means we're ready.",
    "dst": "무기에 파우더 넣었어? 좋아, 그럼 준비 끝이야.",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#033": {
+  "Taking the Tower#035": {
    "src": "Lieutenant Van and the others are by that bunch of houses in the {p} Suburbs- you probably saw it on your way in.",
    "dst": "Van 중위님이랑 다른 사람들은 {p} 교외의 집들 옆에 있어. 오는 길에 봤을 거야.",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#034": {
+  "Taking the Tower#036": {
    "src": "Lead the way! I'll be right behind you.",
    "dst": "앞장서! 바로 뒤따라갈게.",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#035": {
+  "Taking the Tower#037": {
    "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 분노의 탑 근처에서 Van 중위의 분대와 합류하세요.",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#036": {
+  "Taking the Tower#038": {
    "src": "Ah, Aledar! Good to see you here. Who's this with you?",
    "dst": "아, Aledar! 여기서 보니 반갑군. 같이 온 사람은 누군가?",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#037": {
+  "Taking the Tower#039": {
    "src": "This is {u}, sir. They're here to join our assault, if you'll allow it.",
    "dst": "{u}입니다, 중위님. 허락해 주시면 공격에 합류하려 합니다.",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#038": {
+  "Taking the Tower#040": {
    "src": "Hm... Well, I don't see why not. The more the merrier, that's what I say.",
    "dst": "흠... 뭐, 안 될 것도 없지. 많을수록 좋다는 게 내 지론일세.",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#039": {
+  "Taking the Tower#041": {
    "src": "If everyone's here, we can begin. Here's the plan! We'll need to fight off some of the forces near the base of the tower, so that someone can climb to the top.",
    "dst": "다 모였으면 시작하지. 작전은 이렇다! 탑 아래쪽 적들을 물리쳐서 누군가 꼭대기까지 올라갈 수 있게 해야 한다.",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#040": {
+  "Taking the Tower#042": {
    "src": "It doesn't matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
    "dst": "누가 하든 상관없다, 해내기만 하면. 기회가 보이면- 가라!",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#041": {
+  "Taking the Tower#043": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here!| Understood?",
    "dst": "후퇴해야 하거나 타락자들을 처치하면 여기로 다시 모여라!| 알겠나?",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#042": {
+  "Taking the Tower#044": {
    "src": "Yes, sir!",
    "dst": "네, 선장님!",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#043": {
+  "Taking the Tower#045": {
    "src": "Yes, sir!",
    "dst": "네, 선장님!",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "Detlas Soldier",
    "source": "wiki"
   },
-  "Taking the Tower#044": {
+  "Taking the Tower#046": {
    "src": "Good. Alright soldiers, let's take back that tower!",
    "dst": "좋다. 자, 병사들이여, 저 탑을 되찾자!",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#045": {
+  "Taking the Tower#047": {
    "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
    "dst": "가라, 탑으로 향해라! 운이 좋으면 탑을 차지한 타락자들을 쓸어버릴 수 있을 거다.",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#046": {
+  "Taking the Tower#048": {
    "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
    "dst": "[{~}, {~}, -{~}]의 분노의 탑을 공격하고 꼭대기의 괴물을 처치하세요.",
    "role": "desc",
@@ -476,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#047": {
+  "Taking the Tower#049": {
    "src": "Alright. It's time to take on the tower! We've got this, {u}.",
    "dst": "좋아. 탑을 칠 시간이야! 우린 할 수 있어, {u}.",
    "role": "desc",
@@ -486,7 +506,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#048": {
+  "Taking the Tower#050": {
    "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]의 Van 중위에게 성공을 보고하세요",
    "role": "desc",
@@ -496,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#049": {
+  "Taking the Tower#051": {
    "src": "We did it, we killed the corrupted! Come on, let's get back to Lieutenant Van with the news!",
    "dst": "해냈어, 타락자를 쓰러뜨렸어! 가자, Van 중위님께 소식 전하러!",
    "role": "desc",
@@ -506,7 +526,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#050": {
+  "Taking the Tower#052": {
    "src": "It seems everyone has returned. Well? Have the corrupted forces been vanquished?",
    "dst": "다들 돌아온 것 같군. 어떤가? 타락한 병력은 물리쳤나?",
    "role": "desc",
@@ -516,7 +536,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#051": {
+  "Taking the Tower#053": {
    "src": "They have, lieutenant. {u} and I reached the top and defeated the corrupted.",
    "dst": "네, 중위님. {u}와(과) 제가 꼭대기에 올라가 타락자를 쓰러뜨렸습니다.",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#052": {
+  "Taking the Tower#054": {
    "src": "Fine work, soldiers! Another great victory for the {p} army. With the leader killed, it shouldn't be too difficult to clear out the rest of them.",
    "dst": "훌륭하다, 병사들! {p} 군의 또 하나의 대승이군. 우두머리가 죽었으니 나머지를 쓸어내는 건 어렵지 않을 거다.",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#053": {
+  "Taking the Tower#055": {
    "src": "I'll let the Admiral know of your victory today, soldiers. And- here, some payment for your work.",
    "dst": "오늘의 승리는 제독님께 보고하겠네, 병사들. 그리고- 자, 수고의 대가일세.",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#054": {
+  "Taking the Tower#056": {
    "src": "The two of you have a promising future. I look forward to serving with you in the future!",
    "dst": "자네 둘은 장래가 촉망되는군. 앞으로 함께 복무하길 기대하겠네!",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#055": {
+  "Taking the Tower#057": {
    "src": "Talking Lieutenant Van",
    "dst": "Van 중위와 대화하기",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Taking the Tower#056": {
+  "Taking the Tower#058": {
    "src": "We'll take care of the remaining stragglers, don't you worry. Thank you for your work today, soldier.",
    "dst": "남은 잔당은 우리가 처리할 테니 걱정 말게. 오늘 수고 많았네, 병사.",
    "role": "desc",

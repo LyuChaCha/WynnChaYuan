@@ -1,12 +1,98 @@
 {
  "_meta": {
   "quest": "Jungle Fever",
-  "count": 32,
+  "count": 40,
   "translated": 32,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Jungle Fever#000": {
+   "src": "The only cure to this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#001": {
+   "src": "Break into *cough* the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#002": {
+   "src": "We'll have to change our strategy, we don't ask for permission. It's to help me after all.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#003": {
+   "src": "I needed to make sure you could easily break into a bank. So i came here by myself to see if you could do it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#004": {
+   "src": "You've proven your ability of stealth and strength by breaking into this storage, we can start the real thing now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#005": {
+   "src": "It is guarded with tons of well trained Guard Golems, who can kill anyone in one hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
+    "file": "quest/jungle-fever.json",
+    "ratio": 0.832,
+    "reason": "candidate"
+   }
+  },
+  "Jungle Fever#006": {
+   "src": "..I mean *cough*.. I was too sick so i came back here.. *cough*",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#007": {
+   "src": "I feel so much better now, thank you for the cure!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Jungle Fever",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Jungle Fever#008": {
    "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
    "dst": "Habla con Worid en la aldea de la jungla en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +102,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#001": {
+  "Jungle Fever#009": {
    "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
    "dst": "¡Oh, cuánto me alegro de verte! *tos*, he pillado una fiebre horrible y necesito ayuda de verdad. *tos*",
    "role": "desc",
@@ -26,7 +112,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#002": {
+  "Jungle Fever#010": {
    "src": "The only cure against this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
    "dst": "¡El único remedio contra esta fiebre es beber esmeraldas líquidas! ¡Sí, exacto! *tos*",
    "role": "desc",
@@ -36,7 +122,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#003": {
+  "Jungle Fever#011": {
    "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
    "dst": "¿Podrías preguntarle al Banquero de {p} si me puede dar, yo qué sé, [{~} esmeraldas líquidas]?",
    "role": "desc",
@@ -46,7 +132,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#004": {
+  "Jungle Fever#012": {
    "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
    "dst": "Si tiene el descaro de *tos* negarse... tendrás que usar la fuerza...",
    "role": "desc",
@@ -56,7 +142,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#005": {
+  "Jungle Fever#013": {
    "src": "Break into *cough* to the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
    "dst": "Cuélate *tos* en el almacén de esmeraldas, pero no te lleves nada... y vuelve enseguida conmigo, si sales con vida, je je...",
    "role": "desc",
@@ -66,7 +152,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#006": {
+  "Jungle Fever#014": {
    "src": "Oh, uh... I mean *cough* *cough*",
    "dst": "Oh, eh... Quiero decir *tos* *tos*",
    "role": "desc",
@@ -76,7 +162,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#007": {
+  "Jungle Fever#015": {
    "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
    "dst": "Habla con el Banquero de {p} sobre el remedio para Worid en [{~}, {~}, -{~}]",
    "role": "desc",
@@ -86,7 +172,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#008": {
+  "Jungle Fever#016": {
    "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
    "dst": "¿[{~} esmeraldas líquidas]? ¡Está loco! ¡Las esmeraldas líquidas no curan nada, salvo la pobreza!",
    "role": "desc",
@@ -96,7 +182,7 @@
    "speaker": "The Banker",
    "source": "wiki"
   },
-  "Jungle Fever#009": {
+  "Jungle Fever#017": {
    "src": "I will not participate in this pathetic fraud attempt!",
    "dst": "¡No pienso participar en este patético intento de estafa!",
    "role": "desc",
@@ -106,7 +192,7 @@
    "speaker": "The Banker",
    "source": "wiki"
   },
-  "Jungle Fever#010": {
+  "Jungle Fever#018": {
    "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
    "dst": "Entra en el almacén de esmeraldas de {p} en [{~}, {~}, -{~}]",
    "role": "desc",
@@ -116,7 +202,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#011": {
+  "Jungle Fever#019": {
    "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
    "dst": "¡Oh, no! ¿Cómo voy a curar mi enfermedad sin esmeraldas líquidas?... *tos*",
    "role": "desc",
@@ -126,7 +212,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#012": {
+  "Jungle Fever#020": {
    "src": "We'll have to change our strategy, we won't ask for permission. It's to help me after all.",
    "dst": "Tendremos que cambiar de estrategia: no pediremos permiso. Total, es para ayudarme a mí.",
    "role": "desc",
@@ -136,7 +222,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#013": {
+  "Jungle Fever#021": {
    "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
    "dst": "Primero necesito asegurarme de que puedes colarte en un banco. Intenta entrar en el Almacén Secreto de {p}.",
    "role": "desc",
@@ -146,7 +232,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#014": {
+  "Jungle Fever#022": {
    "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
    "dst": "Cuando termines, habla conmigo otra vez. Y ten cuidado, puede que tengan guardias.",
    "role": "desc",
@@ -156,7 +242,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#015": {
+  "Jungle Fever#023": {
    "src": "Return to Worid",
    "dst": "Vuelve con Worid",
    "role": "desc",
@@ -166,7 +252,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#016": {
+  "Jungle Fever#024": {
    "src": "What? You're here already. I thought you would take too long so I just went myself.",
    "dst": "¿Qué? Ya estás aquí. Pensé que tardarías demasiado, así que fui yo mismo.",
    "role": "desc",
@@ -176,7 +262,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#017": {
+  "Jungle Fever#025": {
    "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
    "dst": "¿Mi enfermedad? CLARO. *tos* Deberías avergonzarte por obligar a un enfermo a hacer tu trabajo.",
    "role": "desc",
@@ -186,7 +272,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#018": {
+  "Jungle Fever#026": {
    "src": "Anyway I see you proved yourself, we can start the real thing now.",
    "dst": "En fin, ya has demostrado lo que vales; podemos empezar con lo de verdad.",
    "role": "desc",
@@ -196,7 +282,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#019": {
+  "Jungle Fever#027": {
    "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
    "dst": "Verás, {p} tiene una cámara de esmeraldas muy bien vigilada llamada \"El Laberinto de Esmeraldas\".",
    "role": "desc",
@@ -206,7 +292,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#020": {
+  "Jungle Fever#028": {
    "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
    "dst": "La custodian montones de Gólems guardianes bien entrenados, capaces de matar a cualquier aventurero.",
    "role": "desc",
@@ -216,7 +302,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#021": {
+  "Jungle Fever#029": {
    "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
    "dst": "El Banquero de la cámara secreta debe de estar muerto de aburrimiento, no le importará que lo encuentres.",
    "role": "desc",
@@ -226,7 +312,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#022": {
+  "Jungle Fever#030": {
    "src": "Good luck with that. Haha.. I mean, *cough*.",
    "dst": "Buena suerte con eso. Jaja... quiero decir, *tos*.",
    "role": "desc",
@@ -236,7 +322,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#023": {
+  "Jungle Fever#031": {
    "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
    "dst": "Infíltrate en el Laberinto Secreto de Esmeraldas de {p}, bajo tierra, en [{~}, {~}, -{~}] y encuentra al Banquero en la Sala de las Esmeraldas",
    "role": "desc",
@@ -246,7 +332,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#024": {
+  "Jungle Fever#032": {
    "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
    "dst": "¡Oh, vaya! ¡Alguien! ¡Hacía tantísimo que no veía a nadie!",
    "role": "desc",
@@ -256,7 +342,7 @@
    "speaker": "Almuj Banker",
    "source": "wiki"
   },
-  "Jungle Fever#025": {
+  "Jungle Fever#033": {
    "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
    "dst": "¿Esmeraldas líquidas? ¡Claro, claro! ¡Tengo un montón! Toma, llévatelas.",
    "role": "desc",
@@ -266,7 +352,7 @@
    "speaker": "Almuj Banker",
    "source": "wiki"
   },
-  "Jungle Fever#026": {
+  "Jungle Fever#034": {
    "src": "Talk to Worid at [{~}, {~}, -{~}].",
    "dst": "Habla con Worid en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -276,7 +362,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Jungle Fever#027": {
+  "Jungle Fever#035": {
    "src": "You are back! Wonderful!",
    "dst": "¡Has vuelto! ¡Maravilloso!",
    "role": "desc",
@@ -286,7 +372,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#028": {
+  "Jungle Fever#036": {
    "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
    "dst": "Es mucho dinero, muchísimas gracias, por fin podré... *tos* ¡curarme!",
    "role": "desc",
@@ -296,7 +382,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#029": {
+  "Jungle Fever#037": {
    "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
    "dst": "Toma, esta parte es tuya, te la mereces. Casi todo el... *tos* dinero se me irá en la cura, así que te pago con una llave.",
    "role": "desc",
@@ -306,7 +392,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#030": {
+  "Jungle Fever#038": {
    "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
    "dst": "La robé- *tos* quiero decir, se la pedí prestada al jefe de nuestra tribu. Por lo visto sirvió para encerrar un gran mal.",
    "role": "desc",
@@ -316,7 +402,7 @@
    "speaker": "Worid",
    "source": "wiki"
   },
-  "Jungle Fever#031": {
+  "Jungle Fever#039": {
    "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
    "dst": "Hasta nunc- *tos* Eh... suerte. Sí, ¡buena suerte, aventurero!",
    "role": "desc",

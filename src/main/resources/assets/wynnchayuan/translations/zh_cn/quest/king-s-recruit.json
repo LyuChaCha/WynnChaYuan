@@ -1,14 +1,50 @@
 {
  "_meta": {
   "quest": "King's Recruit",
-  "count": 128,
-  "translated": 128,
+  "count": 131,
+  "translated": 127,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "King's Recruit#000": {
+  "King's Recruit#001": {
+   "src": "{#}Cast your Arrow Bomb Spell by clicking  LEFT -  RIGHT -  RIGHT  while holding your Bow",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "{#}Cast your Arrow Storm Spell by clicking  RIGHT -  LEFT -  RIGHT  while holding your Bow",
+    "file": "quest.json",
+    "ratio": 0.894,
+    "reason": "candidate"
+   }
+  },
+  "King's Recruit#002": {
+   "src": "You three are going to make fine soldiers. Now, go on to {p}, the King is awaiting your arrival.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "King's Recruit#003": {
+   "src": "Well, what are we waiting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "King's Recruit#004": {
    "src": "Awaken",
-   "dst": "苏醒",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -16,7 +52,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#001": {
+  "King's Recruit#005": {
    "src": "Agh!",
    "dst": "啊！",
    "role": "desc",
@@ -26,7 +62,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "King's Recruit#002": {
+  "King's Recruit#006": {
    "src": "Hey, {u}! You alright in there? Looks like we hit something.",
    "dst": "嘿，{u}！你在里面没事吧？看来我们撞到什么东西了。",
    "role": "desc",
@@ -36,7 +72,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "King's Recruit#003": {
+  "King's Recruit#007": {
    "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
    "dst": "离开商队马车，与 [-{~}, {~}, -{~}] 的商队车夫交谈。",
    "role": "desc",
@@ -46,7 +82,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#004": {
+  "King's Recruit#008": {
    "src": "Hm... I swear I hit this same darn boulder every time I make this trip. Sorry folks.",
    "dst": "嗯……我发誓每次走这趟路都会撞上这块该死的大石头。抱歉了，各位。",
    "role": "desc",
@@ -56,7 +92,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "King's Recruit#005": {
+  "King's Recruit#009": {
    "src": "Ah. Does this mean we have to walk all the way to {p} from here?",
    "dst": "啊。这是说我们得从这里一路走到 {p} 吗？",
    "role": "desc",
@@ -66,7 +102,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#006": {
+  "King's Recruit#010": {
    "src": "Unfortunately so. Luckily, it's not that far from here. Just a straight path forward.",
    "dst": "很遗憾，是的。幸好离这里不算远。一直往前走就到了。",
    "role": "desc",
@@ -76,7 +112,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "King's Recruit#007": {
+  "King's Recruit#011": {
    "src": "Well, nothing to do but keep moving! Tasim, {u}, I'll race you to the gate!",
    "dst": "好吧，只能继续前进了！Tasim、{u}，比比看谁先跑到大门！",
    "role": "desc",
@@ -86,7 +122,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#008": {
+  "King's Recruit#012": {
    "src": "Wait, don't!",
    "dst": "等等，别跑！",
    "role": "desc",
@@ -96,7 +132,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#009": {
+  "King's Recruit#013": {
    "src": "... He's already gone. We'll have to catch up to him. {u}, lead the way.",
    "dst": "……他已经跑了。我们得追上他。{u}，你带路。",
    "role": "desc",
@@ -106,7 +142,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#010": {
+  "King's Recruit#014": {
    "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
    "dst": "沿着小路走向 [-{~}, {~}, -{~}] 的 Wynn 行省大门。",
    "role": "desc",
@@ -116,7 +152,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#011": {
+  "King's Recruit#015": {
    "src": "I don't suppose you know much about Wynn either, do you?",
    "dst": "我想你对 Wynn 也不太了解吧？",
    "role": "desc",
@@ -126,7 +162,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#012": {
+  "King's Recruit#016": {
    "src": "Of course, the King of {p}'s been recruiting Fruma soldiers, but...",
    "dst": "当然，{p} 的国王一直在招募 Fruma 的士兵，可是……",
    "role": "desc",
@@ -136,7 +172,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#013": {
+  "King's Recruit#017": {
    "src": "That war of theirs must be getting pretty bad if they need this much support.",
    "dst": "他们需要这么多支援，那场战争一定已经很糟了。",
    "role": "desc",
@@ -146,7 +182,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#014": {
+  "King's Recruit#018": {
    "src": "Oh, there's Aledar! And the gate, by the looks of it.",
    "dst": "噢，Aledar 在那里！看样子，那就是大门了。",
    "role": "desc",
@@ -156,7 +192,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#015": {
+  "King's Recruit#019": {
    "src": "There you two are! You'll have to be faster than that if you want to stand a chance against the undead.",
    "dst": "你们两个总算来了！要是想跟不死生物有一拼之力，你们得比这快才行。",
    "role": "desc",
@@ -166,7 +202,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#016": {
+  "King's Recruit#020": {
    "src": "Yes, yes, we'll be faster next time. So, is this the gate marking the border between Wynn and Fruma?",
    "dst": "好好好，下次我们会快一点。那么，这就是 Wynn 与 Fruma 之间的边界大门？",
    "role": "desc",
@@ -176,7 +212,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#017": {
+  "King's Recruit#021": {
    "src": "It looks like it, yep! Are you two ready for the start of our new lives?",
    "dst": "看起来是，没错！你们两个准备好开始我们的新生活了吗？",
    "role": "desc",
@@ -186,7 +222,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#018": {
+  "King's Recruit#022": {
    "src": "{u}, why don't you do the honours? Go ahead and open that gate.",
    "dst": "{u}，不如由你来吧？去把那扇大门打开。",
    "role": "desc",
@@ -196,7 +232,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#019": {
+  "King's Recruit#023": {
    "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 进入 Wynn 行省。",
    "role": "desc",
@@ -206,7 +242,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#020": {
+  "King's Recruit#024": {
    "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
    "dst": "好了，还等什么？我们去探索这个行省吧。",
    "role": "desc",
@@ -216,7 +252,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#021": {
+  "King's Recruit#025": {
    "src": "Continue through the Wynn Province to the castle",
    "dst": "穿过 Wynn 行省，继续前往城堡",
    "role": "desc",
@@ -226,7 +262,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#022": {
+  "King's Recruit#026": {
    "src": "So this is Wynn we've all been hearing about... It's beautiful.",
    "dst": "原来这就是我们一直听说的 Wynn……真美。",
    "role": "desc",
@@ -236,7 +272,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#023": {
+  "King's Recruit#027": {
    "src": "I guess the war hasn't made it this far. This is what we'll be fighting to protect.",
    "dst": "看来战争还没打到这里。这就是我们要奋战守护的地方。",
    "role": "desc",
@@ -246,7 +282,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#024": {
+  "King's Recruit#028": {
    "src": "Hey, recruits! Come over here, I have something to tell you.",
    "dst": "嘿，新兵们！过来这边，我有话要跟你们说。",
    "role": "desc",
@@ -256,7 +292,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#025": {
+  "King's Recruit#029": {
    "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的士兵交谈。",
    "role": "desc",
@@ -266,7 +302,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#026": {
+  "King's Recruit#030": {
    "src": "A soldier? What are you doing all the way out here?",
    "dst": "士兵？你怎么跑到这么远的地方来？",
    "role": "desc",
@@ -276,7 +312,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#027": {
+  "King's Recruit#031": {
    "src": "There's a bit of trouble up ahead. They sent me out here to intercept new recruits.",
    "dst": "前面出了点麻烦。他们派我来这里拦下新兵。",
    "role": "desc",
@@ -286,7 +322,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#028": {
+  "King's Recruit#032": {
    "src": "If you want to survive out here, you're going to need this.",
    "dst": "如果你想在外面活下来，你会需要这个。",
    "role": "desc",
@@ -296,7 +332,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#029": {
+  "King's Recruit#033": {
    "src": "And for you two.",
    "dst": "还有你们两个的。",
    "role": "desc",
@@ -306,7 +342,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#030": {
+  "King's Recruit#034": {
    "src": "Woah, awesome!",
    "dst": "哇，太棒了！",
    "role": "desc",
@@ -316,7 +352,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#031": {
+  "King's Recruit#035": {
    "src": "Hopefully we won't have to use these just yet.",
    "dst": "希望我们暂时还用不到这些。",
    "role": "desc",
@@ -326,7 +362,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#032": {
+  "King's Recruit#036": {
    "src": "Good luck out there, recruits! Just follow this path, and there will be a bridge up ahead.",
    "dst": "祝你们好运，新兵们！沿着这条路走，前面会有一座桥。",
    "role": "desc",
@@ -336,7 +372,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "King's Recruit#033": {
+  "King's Recruit#037": {
    "src": "Cross the bridge at [-{~}, {~}, -{~}].",
    "dst": "走过 [-{~}, {~}, -{~}] 的桥。",
    "role": "desc",
@@ -346,7 +382,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#034": {
+  "King's Recruit#038": {
    "src": "Ah, this must be the bridge the soldier was talking about. But it certainly looks very...",
    "dst": "啊，这一定就是那个士兵说的桥。不过它看起来实在很……",
    "role": "desc",
@@ -356,7 +392,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#035": {
+  "King's Recruit#039": {
    "src": "Well, let's not keep the King of {p} waiting!",
    "dst": "好了，别让 {p} 的国王等太久！",
    "role": "desc",
@@ -366,7 +402,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#036": {
+  "King's Recruit#040": {
    "src": "No, wait!",
    "dst": "不，等等！",
    "role": "desc",
@@ -376,7 +412,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#037": {
+  "King's Recruit#041": {
    "src": "Aledar!",
    "dst": "Aledar！",
    "role": "desc",
@@ -386,7 +422,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#038": {
+  "King's Recruit#042": {
    "src": "That sure was close!",
    "dst": "刚才真是好险！",
    "role": "desc",
@@ -396,7 +432,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#039": {
+  "King's Recruit#043": {
    "src": "That's what I was trying to warn you about! Let's just get off this bridge before the rest of it collapses...",
    "dst": "我刚才就是想警告你这个！我们快离开这座桥吧，免得剩下的部分也塌了……",
    "role": "desc",
@@ -406,7 +442,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#040": {
+  "King's Recruit#044": {
    "src": "Well, how are we meant to get to the other side of this ravine now? Ugh. Another thing gone wrong, just like-...",
    "dst": "那现在我们要怎么到这道峡谷的另一边？呃。又一件事出了差错，就像——……",
    "role": "desc",
@@ -416,7 +452,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#041": {
+  "King's Recruit#045": {
    "src": "... Aledar? What's wrong?",
    "dst": "……Aledar？怎么了？",
    "role": "desc",
@@ -426,7 +462,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#042": {
+  "King's Recruit#046": {
    "src": "That's... weird. I was just thinking about something from before Wynn, but... it's gone. I can't remember.",
    "dst": "这……真奇怪。我刚才正在想来 Wynn 之前的一件事，可是……它不见了。我想不起来。",
    "role": "desc",
@@ -436,7 +472,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#043": {
+  "King's Recruit#047": {
    "src": "Hm. I can't remember anything from Fruma either... {u}, how about you?",
    "dst": "嗯。我也想不起在 Fruma 的任何事……{u}，你呢？",
    "role": "desc",
@@ -446,7 +482,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#044": {
+  "King's Recruit#048": {
    "src": "Nothing. It can't be a coincidence we all lost our memories at the same time, right?",
    "dst": "什么都想不起来。我们所有人同时失去记忆，不可能是巧合，对吧？",
    "role": "desc",
@@ -456,7 +492,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#045": {
+  "King's Recruit#049": {
    "src": "No, but... We can worry about that later. For now, we need to find a way past this ravine. Aledar, {u}, you should look around for a way across. I'll keep looking here.",
    "dst": "不是，但是……这个晚点再担心。现在我们得想办法过这道峡谷。Aledar、{u}，你们去找过去的路。我继续在这里找。",
    "role": "desc",
@@ -466,7 +502,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#046": {
+  "King's Recruit#050": {
    "src": "Alright! Let's go, {u}.",
    "dst": "好！走吧，{u}。",
    "role": "desc",
@@ -476,7 +512,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#047": {
+  "King's Recruit#051": {
    "src": "Search for another way across the ravine at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 寻找另一条越过峡谷的路。",
    "role": "desc",
@@ -486,7 +522,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#048": {
+  "King's Recruit#052": {
    "src": "Woah! That sure did the trick, {u}. Good thinking!",
    "dst": "哇！这招真管用，{u}。好主意！",
    "role": "desc",
@@ -496,7 +532,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#049": {
+  "King's Recruit#053": {
    "src": "Hey, Tasim! Come over here, {u} found a way over!",
    "dst": "嘿，Tasim！过来这边，{u} 找到过去的路了！",
    "role": "desc",
@@ -506,7 +542,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#050": {
+  "King's Recruit#054": {
    "src": "Continue onwards to [-{~}, {~}, -{~}].",
    "dst": "继续前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
@@ -516,7 +552,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#051": {
+  "King's Recruit#055": {
    "src": "Phew! We made it over safely this time at least.",
    "dst": "呼！至少这次我们平安过来了。",
    "role": "desc",
@@ -526,7 +562,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#052": {
+  "King's Recruit#056": {
    "src": "If we just continue forward, we should make it to {p} in no time!",
    "dst": "只要一直往前走，我们很快就能到 {p}！",
    "role": "desc",
@@ -536,7 +572,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#053": {
+  "King's Recruit#057": {
    "src": "Hmm? What's that guard doing here? We should probably talk to them if we want to pass through.",
    "dst": "嗯？那个守卫在这里做什么？想过去的话，我们大概得跟他谈谈。",
    "role": "desc",
@@ -546,7 +582,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#054": {
+  "King's Recruit#058": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的守卫交谈。",
    "role": "desc",
@@ -556,7 +592,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#055": {
+  "King's Recruit#059": {
    "src": "Halt, recruits!",
    "dst": "站住，新兵们！",
    "role": "desc",
@@ -566,7 +602,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#056": {
+  "King's Recruit#060": {
    "src": "What? What's going on?",
    "dst": "什么？怎么了？",
    "role": "desc",
@@ -576,7 +612,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#057": {
+  "King's Recruit#061": {
    "src": "A group of corrupted have sieged this underpass. I can't let you enter without any armour.",
    "dst": "一群腐化者占领了这条地下通道。你们没有盔甲，我不能让你们进去。",
    "role": "desc",
@@ -586,7 +622,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#058": {
+  "King's Recruit#062": {
    "src": "Then what do we do? We have to get to {p}!",
    "dst": "那我们该怎么办？我们得去 {p}！",
    "role": "desc",
@@ -596,7 +632,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#059": {
+  "King's Recruit#063": {
    "src": "Do you see that cave over there? Caves such as those often contain useful loot that can help keep you alive.",
    "dst": "看到那边那个洞穴了吗？像那样的洞穴里常常有能帮你们活下去的战利品。",
    "role": "desc",
@@ -606,7 +642,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#060": {
+  "King's Recruit#064": {
    "src": "If you enter the cave, you should be able to find some armour to protect you. After that return to me.",
    "dst": "进洞穴的话，你们应该能找到保护自己的盔甲。然后回来找我。",
    "role": "desc",
@@ -616,7 +652,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#061": {
+  "King's Recruit#065": {
    "src": "What do you say {u}? Let's go see what's in that cave.",
    "dst": "你觉得呢，{u}？我们去看看洞穴里有什么。",
    "role": "desc",
@@ -626,7 +662,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#062": {
+  "King's Recruit#066": {
    "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
    "dst": "进入 [-{~}, {~}, -{~}] 的洞穴，找到盔甲。",
    "role": "desc",
@@ -636,7 +672,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#063": {
+  "King's Recruit#067": {
    "src": "We should return to the guard to see if he'll let us through now!",
    "dst": "我们该回去找守卫，看看他现在肯不肯让我们过去！",
    "role": "desc",
@@ -646,7 +682,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#064": {
+  "King's Recruit#068": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的守卫交谈。",
    "role": "desc",
@@ -656,7 +692,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#065": {
+  "King's Recruit#069": {
    "src": "So you found some armor, huh?",
    "dst": "所以你们找到盔甲了，是吗？",
    "role": "desc",
@@ -666,7 +702,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#066": {
+  "King's Recruit#070": {
    "src": "Yes, a helmet! Will you let us pass now?",
    "dst": "对，一顶头盔！现在可以让我们过去了吗？",
    "role": "desc",
@@ -676,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#067": {
+  "King's Recruit#071": {
    "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
    "dst": "等一下，新兵。装备盔甲之前，你得先鉴定它。",
    "role": "desc",
@@ -686,7 +722,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#068": {
+  "King's Recruit#072": {
    "src": "And how do we do that?",
    "dst": "那要怎么鉴定？",
    "role": "desc",
@@ -696,7 +732,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#069": {
+  "King's Recruit#073": {
    "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
    "dst": "你可以到物品鉴定师那里鉴定物品。世界上每座城市都有，为了方便，我们这里也放了一位。",
    "role": "desc",
@@ -706,7 +742,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#070": {
+  "King's Recruit#074": {
    "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
    "dst": "去物品鉴定师那里鉴定你的头盔，戴上之后再来找我。做完这些我就让你们过去。",
    "role": "desc",
@@ -716,7 +752,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#071": {
+  "King's Recruit#075": {
    "src": "Alright! Let's go, {u}.",
    "dst": "好！走吧，{u}。",
    "role": "desc",
@@ -726,7 +762,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#072": {
+  "King's Recruit#076": {
    "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
    "dst": "我看到你戴上头盔了。太好了，你们可以过去了。我来帮你们开门。",
    "role": "desc",
@@ -736,7 +772,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#073": {
+  "King's Recruit#077": {
    "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
    "dst": "进去之后祝你们好运，新兵们！就算穿了盔甲也不会那么容易！",
    "role": "desc",
@@ -746,7 +782,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "King's Recruit#074": {
+  "King's Recruit#078": {
    "src": "Enter the underpass at [-{~}, {~}, -{~}].",
    "dst": "进入 [-{~}, {~}, -{~}] 的地下通道。",
    "role": "desc",
@@ -756,7 +792,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#075": {
+  "King's Recruit#079": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
    "dst": "穿过地下通道，继续前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
@@ -766,7 +802,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#076": {
+  "King's Recruit#080": {
    "src": "Wow, that guard wasn't joking. This place is crawling with the corrupt.",
    "dst": "哇，那个守卫可不是在开玩笑。这地方到处都是腐化者。",
    "role": "desc",
@@ -776,7 +812,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#077": {
+  "King's Recruit#081": {
    "src": "Well, we've got no choice but to make it through! Finally time for us to use these weapons we got. Let's go, {u}.",
    "dst": "好吧，我们别无选择，只能杀过去！终于轮到我们用上这些武器了。走吧，{u}。",
    "role": "desc",
@@ -786,7 +822,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#078": {
+  "King's Recruit#082": {
    "src": "{u}, you take the skeleton in the front. We'll handle the two zombies in the back!",
    "dst": "{u}，前面那具骷髅交给你。后面那两只僵尸我们来对付！",
    "role": "desc",
@@ -796,7 +832,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#079": {
+  "King's Recruit#083": {
    "src": "Defeat the Skeleton!",
    "dst": "击败骷髅！",
    "role": "desc",
@@ -806,7 +842,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#080": {
+  "King's Recruit#084": {
    "src": "We did it!",
    "dst": "我们做到了！",
    "role": "desc",
@@ -816,7 +852,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#081": {
+  "King's Recruit#085": {
    "src": "This path opened up, let's continue through the underpass.",
    "dst": "这条路打开了，我们继续穿过地下通道吧。",
    "role": "desc",
@@ -826,7 +862,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#082": {
+  "King's Recruit#086": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
    "dst": "穿过地下通道，继续前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
@@ -836,7 +872,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#083": {
+  "King's Recruit#087": {
    "src": "Over here! You're just what I needed!",
    "dst": "这边！你们来得正好！",
    "role": "desc",
@@ -846,7 +882,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#084": {
+  "King's Recruit#088": {
    "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的中尉交谈。",
    "role": "desc",
@@ -856,7 +892,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#085": {
+  "King's Recruit#089": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
    "dst": "总算来援兵了！等一下……你们是刚从 Fruma 来的，对吧？",
    "role": "desc",
@@ -866,7 +902,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#086": {
+  "King's Recruit#090": {
    "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
    "dst": "嗯，算了，这一带现在应该已经清干净了。毕竟 {p} 就在前面。",
    "role": "desc",
@@ -876,7 +912,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#087": {
+  "King's Recruit#091": {
    "src": "Lieutenant, watch out behind you!",
    "dst": "中尉，小心你后面！",
    "role": "desc",
@@ -886,7 +922,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#088": {
+  "King's Recruit#092": {
    "src": "Quick, you have to use an ability!",
    "dst": "快，你得用技能！",
    "role": "desc",
@@ -896,7 +932,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#089": {
+  "King's Recruit#093": {
    "src": "Great job, {u}!",
    "dst": "干得好，{u}！",
    "role": "desc",
@@ -906,7 +942,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#090": {
+  "King's Recruit#094": {
    "src": "Wait, it's running away! We have to save the Lieutenant!",
    "dst": "等等，它要逃了！我们得救中尉！",
    "role": "desc",
@@ -916,7 +952,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#091": {
+  "King's Recruit#095": {
    "src": "Chase the Goliath to [-{~}, {~}, -{~}]!",
    "dst": "追着巨人到 [-{~}, {~}, -{~}]！",
    "role": "desc",
@@ -926,7 +962,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#092": {
+  "King's Recruit#096": {
    "src": "Defeat the Goliath and free the Lieutenant.",
    "dst": "击败巨人，救出中尉。",
    "role": "desc",
@@ -936,7 +972,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#093": {
+  "King's Recruit#097": {
    "src": "That sure was close... Thanks for the save, {u}!",
    "dst": "真是好险……谢谢你救了我，{u}！",
    "role": "desc",
@@ -946,7 +982,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#094": {
+  "King's Recruit#098": {
    "src": "I think you three are going to make good soldiers - not many can handle themselves like you just did.",
    "dst": "我想你们三个会成为好士兵——没多少人能像你们刚才那样应付得来。",
    "role": "desc",
@@ -956,7 +992,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#095": {
+  "King's Recruit#099": {
    "src": "It seems that beast dropped something, you should check it out before heading to {p}.",
    "dst": "那头野兽好像掉了什么东西，去 {p} 之前你们该去看看。",
    "role": "desc",
@@ -966,7 +1002,7 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
-  "King's Recruit#096": {
+  "King's Recruit#100": {
    "src": "Pick up the loot dropped by the Goliath.",
    "dst": "捡起巨人掉落的战利品。",
    "role": "desc",
@@ -976,7 +1012,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#097": {
+  "King's Recruit#101": {
    "src": "That item looks rare! Maybe there's an identifier around here.",
    "dst": "那件物品看起来很稀有！也许这附近有鉴定师。",
    "role": "desc",
@@ -986,7 +1022,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#098": {
+  "King's Recruit#102": {
    "src": "Onward to {p}! We're almost there.",
    "dst": "向 {p} 前进！我们快到了。",
    "role": "desc",
@@ -996,7 +1032,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#099": {
+  "King's Recruit#103": {
    "src": "Enter the castle at [-{~}, {~}, -{~}].",
    "dst": "进入 [-{~}, {~}, -{~}] 的城堡。",
    "role": "desc",
@@ -1006,7 +1042,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#100": {
+  "King's Recruit#104": {
    "src": "We... we made it! We really made it! Sure was a close call at the end.",
    "dst": "我们……我们到了！我们真的到了！最后那一下可真是千钧一发。",
    "role": "desc",
@@ -1016,7 +1052,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#101": {
+  "King's Recruit#105": {
    "src": "... Still think those corrupted don't stand a chance against you?",
    "dst": "……还觉得那些腐化者在你面前毫无胜算吗？",
    "role": "desc",
@@ -1026,7 +1062,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#102": {
+  "King's Recruit#106": {
    "src": "Ha ha. Very funny. Ah, {u}, there seems to be an identifier here for you to identify that rare helmet.",
    "dst": "哈哈。真好笑。啊，{u}，这里好像有位鉴定师，可以帮你鉴定那顶稀有头盔。",
    "role": "desc",
@@ -1036,7 +1072,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#103": {
+  "King's Recruit#107": {
    "src": "And a blacksmith too, you can sell your old helmet there for some emeralds.",
    "dst": "还有铁匠，你可以把旧头盔卖给他换些绿宝石。",
    "role": "desc",
@@ -1046,7 +1082,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#104": {
+  "King's Recruit#108": {
    "src": "Here it is, the end of our journey.",
    "dst": "到了，我们旅程的终点。",
    "role": "desc",
@@ -1056,7 +1092,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#105": {
+  "King's Recruit#109": {
    "src": "The end of one adventure, but the beginning of another! Let's go inside and talk to the King!",
    "dst": "一段冒险的结束，也是另一段冒险的开始！我们进去跟国王谈谈吧！",
    "role": "desc",
@@ -1066,7 +1102,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#106": {
+  "King's Recruit#110": {
    "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的 {p} 国王交谈。",
    "role": "desc",
@@ -1076,7 +1112,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#107": {
+  "King's Recruit#111": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
    "dst": "欢迎来到 Wynn 行省！看你们这一身狼狈，我想你们来这里的路上一定经历了不少冒险。",
    "role": "desc",
@@ -1086,7 +1122,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#108": {
+  "King's Recruit#112": {
    "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
    "dst": "新兵们，这里就是崇高的 {p} 要塞，我们行省的伟大城市之一！",
    "role": "desc",
@@ -1096,7 +1132,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#109": {
+  "King's Recruit#113": {
    "src": "As soldiers of Wynn, it is your duty to stem the tide of corrupted monsters ravaging this land.",
    "dst": "身为 Wynn 的士兵，你们的职责是阻挡蹂躏这片土地的腐化怪物浪潮。",
    "role": "desc",
@@ -1106,7 +1142,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#110": {
+  "King's Recruit#114": {
    "src": "Although, you may want to gain some experience beforehand. Many lives are tragically lost every day...",
    "dst": "不过，你们最好先累积一些经验。每天都有许多人不幸丧命……",
    "role": "desc",
@@ -1116,7 +1152,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#111": {
+  "King's Recruit#115": {
    "src": "Take this [{p} Teleportation Scroll] to aid you in your journey. Upon use, it will instantly bring you back to this city, wherever you may be.",
    "dst": "带上这个 [{p} Teleportation Scroll] 助你一路顺风。使用后，无论你身在何处都会立刻回到这座城市。",
    "role": "desc",
@@ -1126,7 +1162,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#112": {
+  "King's Recruit#116": {
    "src": "With that, I must bid you farewell, more recruits may arrive at any time. Good luck out there, soldiers of Wynn!",
    "dst": "就这样，我得跟你们道别了，随时可能有更多新兵抵达。祝你们好运，Wynn 的士兵们！",
    "role": "desc",
@@ -1136,7 +1172,7 @@
    "speaker": "King of Ragni",
    "source": "wiki"
   },
-  "King's Recruit#113": {
+  "King's Recruit#117": {
    "src": "So! Wynn, huh? It's pretty exciting to finally be here.",
    "dst": "所以！这就是 Wynn，是吧？终于来到这里，真让人兴奋。",
    "role": "desc",
@@ -1146,7 +1182,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#114": {
+  "King's Recruit#118": {
    "src": "I can't wait to discover what it looks like for myself!",
    "dst": "我等不及要亲眼看看它是什么样子了！",
    "role": "desc",
@@ -1156,7 +1192,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#115": {
+  "King's Recruit#119": {
    "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
    "dst": "哈，嗯，我想我很快就会往 {p} 的方向去，不过路上好像有个叫 {p} 的地方……",
    "role": "desc",
@@ -1166,7 +1202,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#116": {
+  "King's Recruit#120": {
    "src": "Enough talking already! Let's get out there and help some people!",
    "dst": "别再聊了！我们出去帮助大家吧！",
    "role": "desc",
@@ -1176,7 +1212,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#117": {
+  "King's Recruit#121": {
    "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
    "dst": "他又跑了……嗯，我相信很快就会再见到他。现在，我们就去看看 Wynn 到底是什么样子吧。",
    "role": "desc",
@@ -1186,7 +1222,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#118": {
+  "King's Recruit#122": {
    "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
    "dst": "真美……噢！我差点忘了告诉你，{u}。",
    "role": "desc",
@@ -1196,7 +1232,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#119": {
+  "King's Recruit#123": {
    "src": "There's this handy item we were all given on our way here, the Content Book. It displays most things you can do in this world; Quests, Caves, and much, much more.",
    "dst": "我们来这里的路上都拿到了一件很方便的物品，内容手册。它会显示你在这个世界里能做的大部分事情：任务、洞穴，还有很多很多。",
    "role": "desc",
@@ -1206,7 +1242,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#120": {
+  "King's Recruit#124": {
    "src": "It also lets you track any content you want, which will create beacons for you to follow.",
    "dst": "它还能让你追踪任何你想要的内容，会产生信标让你跟着走。",
    "role": "desc",
@@ -1216,7 +1252,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#121": {
+  "King's Recruit#125": {
    "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
    "dst": "来，你何不试试看？打开你的内容手册，点击高亮的任务。",
    "role": "desc",
@@ -1226,7 +1262,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#122": {
+  "King's Recruit#126": {
    "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
    "dst": "就是这样！我要往 {p} 去，就在 {p} 的尽头。",
    "role": "desc",
@@ -1236,7 +1272,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#123": {
+  "King's Recruit#127": {
    "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u}.",
    "dst": "等你变强一点就来那里找我。好了，回头见，{u}。",
    "role": "desc",
@@ -1246,7 +1282,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#124": {
+  "King's Recruit#128": {
    "src": "What are you waiting for recruits? Go identify your helmet at the  Item Identifier and then equip it in your helmet slot!",
    "dst": "新兵们还在等什么？快去物品鉴定师那里鉴定你的头盔，然后把它装备到头盔槽位上！",
    "role": "desc",
@@ -1254,7 +1290,7 @@
    "quest": "King's Recruit",
    "source": "capture"
   },
-  "King's Recruit#125": {
+  "King's Recruit#129": {
    "src": "Unless you'd rather stand around here all day, that's fine by me too.",
    "dst": "除非你想在这里站一整天，那我也无所谓。",
    "role": "desc",
@@ -1262,7 +1298,7 @@
    "quest": "King's Recruit",
    "source": "capture"
   },
-  "King's Recruit#126": {
+  "King's Recruit#130": {
    "src": "Well, what are you waiting for?",
    "dst": "那你还在等什么？",
    "role": "desc",
@@ -1270,7 +1306,7 @@
    "quest": "King's Recruit",
    "source": "capture"
   },
-  "King's Recruit#127": {
+  "King's Recruit#131": {
    "src": "Good luck in there, recruits! You're gonna need it...",
    "dst": "祝你们好运，新兵们！你们会需要的……",
    "role": "desc",

@@ -1,12 +1,328 @@
 {
  "_meta": {
   "quest": "Rise of the Quartron",
-  "count": 86,
+  "count": 114,
   "translated": 86,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Rise of the Quartron#000": {
+   "src": "I think I'll write an anonymous letter instead. If those rumors about the factory are true, keeping myself secret might be important...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#001": {
+   "src": "Agh, this is getting worse! There's never been so much loss...whoever this is, they're getting bold...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#002": {
+   "src": "Dado won't budge about the topic. Maybe Nasea has an idea to get him to confess.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#003": {
+   "src": "Come back when you have a solid lead on the missing quartz.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#004": {
+   "src": "You press the flower up against his nose while he's laughing. Dado gets a big whiff of the petals, and immediately his expression goes slack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#005": {
+   "src": "...uh. Okay, I have no clue why I told you all of that...um, have you got any more of those flowers though? It was actually really good...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#006": {
+   "src": "Use the small rail here, push that button on the post. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Use the small rail here, flick the lever. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
+    "file": "quest/rise-of-the-quartron.json",
+    "ratio": 0.873,
+    "reason": "candidate"
+   }
+  },
+  "Rise of the Quartron#007": {
+   "src": "Knock 'em down, boys!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#008": {
+   "src": "Aah, they're really tough!! Don't let them take down more of my buddies!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#009": {
+   "src": "Why are we fighting face-to-face?! They're destroying us!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#010": {
+   "src": "What the hell are humans made of?! Overwhelm them!! We hardly have any guys left!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#011": {
+   "src": "The door is locked. There has to be a way to get in...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#012": {
+   "src": "Looks like someone's notebook. You open to a page that looks interesting...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#013": {
+   "src": "I've finally cracked it- a functional model for my magnum opus, the Harnort Quartron! I even amaze myself, yes yes!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#014": {
+   "src": "The mech is both made of and has functions to break apart quartz. We'll be able to salvage every bit from the rubble of {p}'s committee building...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#015": {
+   "src": "The fools in the committee will see their error when their rooms get blown apart in front of them! They'll see my brilliance!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#016": {
+   "src": "Large-scale mechs that even Corkus's machines pale in comparison to, the possibilities for them are so much more than just warfare...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#017": {
+   "src": "But my subordinates need to hurry with the quartz shipments. The Karoc manager may catch onto us if we don't...and I regret thieving enough already.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#018": {
+   "src": "The quartz is charged! Use this to overcharge the door and destroy it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#019": {
+   "src": "There's a charging slot in the machine.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#020": {
+   "src": "The door is locked shut, and there's no keyhole anyplace.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#021": {
+   "src": "It's made of quartz, it looks like...the sign says not to overcharge the quartz.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#022": {
+   "src": "Nasea mentioned that overcharging quartz was dangerous...maybe overcharging the door will destroy it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#023": {
+   "src": "Is there a way to charge quartz anyplace nearby?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#024": {
+   "src": "...so it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
+   "dst": "……所以，终究还是走到这一步了。那些守卫每个人的名字我都知道。我从没为了达成目标伤害任何人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#025": {
+   "src": "One life for a hundred is a fair trade!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#026": {
+   "src": "Aaah! Not responding?! You- You...YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
+   "dst": "啊啊！没反应了？！你——你……你！你毁了未来！我的未来！Gavel 的未来！！！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#027": {
+   "src": "...you've got some serious explaining to do. First you disappear to go get that Tattle flower, or whatever it was.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#028": {
+   "src": "Then Dado ran through here screaming that he was drugged or mugged, and ran off to the east ridge.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#029": {
+   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... ...I'd never believe you if you hadn't given me the proof.",
+   "dst": "……嗯哼。嗯。……嗯，继续说。呃，好吧，这我能接受……要不是你给我看了证据，我绝对不会信你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#030": {
+   "src": "Okay, so I'll cut you a quick deal. I'll pay you now for figuring this out, and if you do just one more thing for me then you'll get something extra.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rise of the Quartron",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Rise of the Quartron#031": {
    "src": "Talk to Nasea in the {p}.",
    "dst": "与 {p} 的 Nasea 交谈。",
    "role": "desc",
@@ -16,7 +332,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#001": {
+  "Rise of the Quartron#032": {
    "src": "Shipment {~}A and {~}B, fully accounted for... shipments {~}C and {~}A...missing {~} of quartz content?!",
    "dst": "{~}A 和 {~}B 批货，全部清点无误……{~}C 和 {~}A 批货……石英少了 {~}？！",
    "role": "desc",
@@ -26,7 +342,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#002": {
+  "Rise of the Quartron#033": {
    "src": "Agh, this is getting worse! There's never been so much loss...whoever this is, thy're getting bold...",
    "dst": "啊，越来越糟了！从来没丢过这么多……不管是谁干的，胆子越来越大了……",
    "role": "desc",
@@ -36,7 +352,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#003": {
+  "Rise of the Quartron#034": {
    "src": "Ugh, go AWAY! Quit hovering over my shoulder like that- wait, a Human? Since when did you get here?",
    "dst": "呃，走开！别再那样在我肩膀后面晃来晃去——等等，人类？你什么时候来的？",
    "role": "desc",
@@ -46,7 +362,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#004": {
+  "Rise of the Quartron#035": {
    "src": "What, you like listening to the melodious sound of my voice or something? Or do you intend to help out?",
    "dst": "怎么，你喜欢听我悦耳的声音还是怎样？还是你打算帮忙？",
    "role": "desc",
@@ -56,7 +372,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#005": {
+  "Rise of the Quartron#036": {
    "src": "Well, I'm flattered either way, and I could certainly use the help. Quartz is going missing from my shipments.",
    "dst": "嗯，不管是哪个我都很荣幸，而且我确实需要帮手。我的货里的石英一直在不见。",
    "role": "desc",
@@ -66,7 +382,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#006": {
+  "Rise of the Quartron#037": {
    "src": "Obviously one of the laborers is siphoning it to someplace, and I can't have that happening. So, be a private eye, humie.",
    "dst": "显然是有哪个工人把它偷偷运到了某个地方，我可不能放任这种事。所以，去当个私家侦探吧，人类小家伙。",
    "role": "desc",
@@ -76,7 +392,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#007": {
+  "Rise of the Quartron#038": {
    "src": "This is actually pretty dire- quartz has some magicality to it, see. It likes to soak up magic power, which means it can be weaponized.",
    "dst": "这其实挺严重的——你看，石英带有一些魔法特性。它喜欢吸收魔法能量，这就代表它可以被做成武器。",
    "role": "desc",
@@ -86,7 +402,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#008": {
+  "Rise of the Quartron#039": {
    "src": "We tend not to use it for weapons since it can overcharge, but that's neither here nor there, is it?",
    "dst": "我们一般不拿它做武器，因为它可能会过载，不过这不是重点，对吧？",
    "role": "desc",
@@ -96,7 +412,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#009": {
+  "Rise of the Quartron#040": {
    "src": "Every siphoned shipment has gone through Dado. Interrogate him! He hangs out past the big red tent, near the house with red flags.",
    "dst": "每一批被偷的货都经过 Dado 的手。去审问他！他常在大红帐篷后面，挂着红旗的房子附近。",
    "role": "desc",
@@ -106,7 +422,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#010": {
+  "Rise of the Quartron#041": {
    "src": "Talk to Dado and see if he is the culprit.",
    "dst": "与 Dado 交谈，看看他是不是犯人。",
    "role": "desc",
@@ -116,7 +432,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#011": {
+  "Rise of the Quartron#042": {
    "src": "Okay, these go to division P, and...look, I'm busy allocating these deliveries to {p}. Go pester someone else, okay?",
    "dst": "好，这些送去 P 区，还有……听着，我正忙着分配这些要送去 {p} 的货。去烦别人吧，好吗？",
    "role": "desc",
@@ -126,7 +442,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#012": {
+  "Rise of the Quartron#043": {
    "src": "...what. You...think I... Pfff... Pffhahaaaah! Ohhh, that's RICH coming from a human of all things!",
    "dst": "……什么。你……以为我……噗……噗哈哈哈！噢，这话从人类嘴里说出来可真好笑！",
    "role": "desc",
@@ -136,7 +452,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#013": {
+  "Rise of the Quartron#044": {
    "src": "\"Oh, me, the hired gun species that kills for money, will accuse you, a storied worker of seven years, of illegal activity!\" Wow, you HYPOCRITE!",
    "dst": "“噢，我，一个拿钱杀人的雇佣兵种族，要指控你，一个干了七年的老员工，从事非法活动！”哇，你这个伪君子！",
    "role": "desc",
@@ -146,7 +462,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#014": {
+  "Rise of the Quartron#045": {
    "src": "I'm hardly even angry about this! But, yeah, you freak. You got the wrong guy, surprise! Your brain workin' right in there?",
    "dst": "我根本懒得生气！不过，是啊，你这个怪胎。你找错人了，惊喜吧！你脑子没问题吧？",
    "role": "desc",
@@ -156,7 +472,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#015": {
+  "Rise of the Quartron#046": {
    "src": "I bet you got some wires crossed in there, huh? Go scuttle on back to town and kill someone's Wybel for pocket change or something.",
    "dst": "我打赌你脑子里有线接错了吧？滚回镇上去，随便杀几只别人家的 Wybel 赚点零花钱吧。",
    "role": "desc",
@@ -166,7 +482,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#016": {
+  "Rise of the Quartron#047": {
    "src": "Go back to Nasea and tell her about Dado’s response.",
    "dst": "回去找 Nasea，告诉她 Dado 的反应。",
    "role": "desc",
@@ -176,7 +492,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#017": {
+  "Rise of the Quartron#048": {
    "src": "I'm just going to take a wild guess and say that asking him nicely whether he committed theft didn't bring up any answers.",
    "dst": "我就大胆猜一下：好声好气地问他有没有偷东西，什么答案都没问出来吧。",
    "role": "desc",
@@ -186,7 +502,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#018": {
+  "Rise of the Quartron#049": {
    "src": "What, he brushed you off like THAT? Jeez, I knew he was a jerk, but really? That's just uncalled for.",
    "dst": "什么，他就这样把你打发走了？天啊，我知道他是个混蛋，但真的这样？这也太过分了。",
    "role": "desc",
@@ -196,7 +512,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#019": {
+  "Rise of the Quartron#050": {
    "src": "We have to make him talk...if shipments keep going missing, my contractors are going to look elsewhere!",
    "dst": "我们得让他开口……如果货再不见，我的客户就要去找别家了！",
    "role": "desc",
@@ -206,7 +522,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#020": {
+  "Rise of the Quartron#051": {
    "src": "We need to prove that he's guilty...wait, you came to ME for ideas? This is why I asked you for help! Am I really back to square one?",
    "dst": "我们得证明他有罪……等等，你是来找我出主意的？我就是为了这个才找你帮忙的！我真的又回到原点了？",
    "role": "desc",
@@ -216,7 +532,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#021": {
+  "Rise of the Quartron#052": {
    "src": "Aah, Nasea!",
    "dst": "啊，Nasea！",
    "role": "desc",
@@ -226,7 +542,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Rise of the Quartron#022": {
+  "Rise of the Quartron#053": {
    "src": "I...what are you doing here, uh...Larry? Were you missing quartz too??",
    "dst": "我……你来这里干嘛，呃……Larry？你也丢了石英吗？？",
    "role": "desc",
@@ -236,7 +552,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#023": {
+  "Rise of the Quartron#054": {
    "src": "Ah, it's...Lari. No, the quartz shipment found its way fine...",
    "dst": "啊，是……Lari。不，石英那批货顺利送到了……",
    "role": "desc",
@@ -246,7 +562,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#024": {
+  "Rise of the Quartron#055": {
    "src": "But, there was hardly an effect. Your idea was, unfortunately, a dead end.",
    "dst": "可是，几乎没有效果。很遗憾，你的主意行不通。",
    "role": "desc",
@@ -256,7 +572,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#025": {
+  "Rise of the Quartron#056": {
    "src": "Well, I did warn you that it was only an idea. I manage the mine, I don't practice purification magic. Don't pin anything on me for that.",
    "dst": "嗯，我早就提醒过你，那只是个主意。我是管矿场的，又不会净化魔法。这事可别算到我头上。",
    "role": "desc",
@@ -266,7 +582,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#026": {
+  "Rise of the Quartron#057": {
    "src": "I did not intend to imply that. Your help was appreciated, fate simply had opposing plans...",
    "dst": "我并没有这个意思。很感谢你的帮忙，只是命运另有安排……",
    "role": "desc",
@@ -276,7 +592,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#027": {
+  "Rise of the Quartron#058": {
    "src": "...is this human a part of your operations, miss?",
    "dst": "……这个人类是你们工作的一分子吗，小姐？",
    "role": "desc",
@@ -286,7 +602,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#028": {
+  "Rise of the Quartron#059": {
    "src": "Well, in a sense. Someone's siphoning quartz, but our suspect wasn't intimidated by the ten tons of armor, so we're at a loss. Any ideas?",
    "dst": "嗯，算是吧。有人在偷运石英，可是我们的嫌犯被这十吨重的盔甲吓唬也不为所动，我们没辙了。你有什么主意吗？",
    "role": "desc",
@@ -296,7 +612,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#029": {
+  "Rise of the Quartron#060": {
    "src": "...as a matter of fact, I do have a solution. Elven botany describes a flower that grows decently close by, the \"Tattytale\" flower.",
    "dst": "……说实在的，我确实有个办法。精灵植物学里记载了一种就长在这附近的花，叫“告密花”。",
    "role": "desc",
@@ -306,7 +622,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#030": {
+  "Rise of the Quartron#061": {
    "src": "It weakens the will of those who catch a whiff of its petals, making them pliable to questions. It's...unpleasant, but if it is needed, I suppose.",
    "dst": "闻到它花瓣气味的人意志会变弱，问什么都会乖乖回答。这……不太光彩，不过既然有需要，我想也只能这样。",
    "role": "desc",
@@ -316,7 +632,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#031": {
+  "Rise of the Quartron#062": {
    "src": "There is a cave infested with spiders, and covered with webs in the western mountain. It is the only place it grows outside of {p}, unfortunately.",
    "dst": "西边山里有个到处是蜘蛛、布满蛛网的洞穴。很遗憾，除了 {p} 以外，那是唯一长着这种花的地方。",
    "role": "desc",
@@ -326,7 +642,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#032": {
+  "Rise of the Quartron#063": {
    "src": "Nasea, since it didn't help, I've returned the quartz. I thank you for your help...and I shall bid you both adieu.",
    "dst": "Nasea，既然没有帮助，我把石英还回来了。谢谢你的帮忙……那我就向两位告辞了。",
    "role": "desc",
@@ -336,7 +652,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Rise of the Quartron#033": {
+  "Rise of the Quartron#064": {
    "src": "Find the Tattytale Flower.",
    "dst": "找到告密花。",
    "role": "desc",
@@ -346,7 +662,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#034": {
+  "Rise of the Quartron#065": {
    "src": "Make Dado confess by using the Tattytale Flower.",
    "dst": "用告密花让 Dado 招供。",
    "role": "desc",
@@ -356,7 +672,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#035": {
+  "Rise of the Quartron#066": {
    "src": "Hey, everyone's least-favorite attack dog! Here boy! You want the emerald? Go kill all the flies in my house! Come on boy!",
    "dst": "嘿，这不是大家最讨厌的走狗嘛！过来，乖狗狗！想要绿宝石吗？去把我家里的苍蝇全杀光！来啊，乖狗狗！",
    "role": "desc",
@@ -366,7 +682,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#036": {
+  "Rise of the Quartron#067": {
    "src": "Aw, flowers. How sweet of you! Sorry, but I don't cave to psychopaths or flattery, hehehee!",
    "dst": "哇，花耶。你真贴心！可惜啊，我不吃疯子那一套，也不吃奉承，嘿嘿嘿！",
    "role": "desc",
@@ -376,7 +692,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#037": {
+  "Rise of the Quartron#068": {
    "src": "I...huff... What was THAT for?! Are you offended that I don't like your flo- What? What am I doing with the quartz?",
    "dst": "我……呼……那是干嘛？！你是因为我不喜欢你的花所以生气了——什么？我拿石英干什么？",
    "role": "desc",
@@ -386,7 +702,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#038": {
+  "Rise of the Quartron#069": {
    "src": "Uh, isn't it obvious? I'm working overtime and sending it up to Popo, duh. Where else would I be sending it?",
    "dst": "呃，这不是很明显吗？我加班把它送上去给 Popo 啊。不然我还能送去哪？",
    "role": "desc",
@@ -396,7 +712,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#039": {
+  "Rise of the Quartron#070": {
    "src": "What- Where's Popo sending it? Um...no clue. Whoever it is, they're super rich though. They pay me more than my house is worth every shipment!",
    "dst": "什么——Popo 把它送去哪？嗯……不知道。不管是谁，那人超有钱就对了。每批货他们付我的钱都比我的房子还值钱！",
    "role": "desc",
@@ -406,7 +722,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#040": {
+  "Rise of the Quartron#071": {
    "src": "Not sure why you need to- What? Where's Popo? Uh, he said he'd meet me at the cart track overpass, near the teal flags.",
    "dst": "不知道你为什么要——什么？Popo 在哪？呃，他说会在矿车轨道的高架桥那里等我，靠近青绿色旗子的地方。",
    "role": "desc",
@@ -416,7 +732,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#041": {
+  "Rise of the Quartron#072": {
    "src": "This was going to be our first meeting, so I don't know what he looks like, and likewise he's never seen me.",
    "dst": "这本来是我们第一次见面，所以我不知道他长什么样，他也从没见过我。",
    "role": "desc",
@@ -426,7 +742,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#042": {
+  "Rise of the Quartron#073": {
    "src": "...uh. Okay, I haave no clue why I told you all of that...um, have you got any more of those flowers though? It was actually really good...",
    "dst": "……呃。好吧，我完全不知道为什么要把这些全告诉你……嗯，不过你还有那种花吗？其实感觉挺棒的……",
    "role": "desc",
@@ -436,7 +752,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#043": {
+  "Rise of the Quartron#074": {
    "src": "Go up the minecart hill and find Popo.",
    "dst": "登上矿车山坡，找到 Popo。",
    "role": "desc",
@@ -446,7 +762,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#044": {
+  "Rise of the Quartron#075": {
    "src": "Ah, you must- Wait, never mind. I was expecting a visit from someone else.",
    "dst": "啊，你一定就是——等等，算了。我在等别人。",
    "role": "desc",
@@ -456,7 +772,7 @@
    "speaker": "Popo",
    "source": "wiki"
   },
-  "Rise of the Quartron#045": {
+  "Rise of the Quartron#076": {
    "src": "Wait, you're Dado? I guess humans have more brain capacity than orcs after all, hehah!",
    "dst": "等等，你就是 Dado？看来人类的脑容量终究比兽人大嘛，嘿哈！",
    "role": "desc",
@@ -466,7 +782,7 @@
    "speaker": "Popo",
    "source": "wiki"
   },
-  "Rise of the Quartron#046": {
+  "Rise of the Quartron#077": {
    "src": "Okay, down to business. I'm gonna look busy to cover for you while you get to the base for briefing. You'll get the details there.",
    "dst": "好，说正事。我会装作很忙帮你打掩护，你先去基地听简报。细节到那里就知道了。",
    "role": "desc",
@@ -476,7 +792,7 @@
    "speaker": "Popo",
    "source": "wiki"
   },
-  "Rise of the Quartron#047": {
+  "Rise of the Quartron#078": {
    "src": "You stick out like a sore thumb, but thankfully humans like to get into lots of weird spots, so it won't look too out of place.",
    "dst": "你太显眼了，不过幸好人类就爱钻进各种奇怪的地方，所以看起来不会太突兀。",
    "role": "desc",
@@ -486,7 +802,7 @@
    "speaker": "Popo",
    "source": "wiki"
   },
-  "Rise of the Quartron#048": {
+  "Rise of the Quartron#079": {
    "src": "Use the small rail here, flick the lever. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
    "dst": "用这里的小轨道，扳一下拉杆。这样看起来你就只是……在做人类会做的事，不会惹人怀疑。",
    "role": "desc",
@@ -496,7 +812,7 @@
    "speaker": "Popo",
    "source": "wiki"
   },
-  "Rise of the Quartron#049": {
+  "Rise of the Quartron#080": {
    "src": "Ride the minecart to the bandit mansion.",
    "dst": "搭乘矿车前往强盗豪宅。",
    "role": "desc",
@@ -506,7 +822,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#050": {
+  "Rise of the Quartron#081": {
    "src": "Hop on the minecart, it's leaving! But act natural!",
    "dst": "快上矿车，要开了！但要表现得自然点！",
    "role": "desc",
@@ -516,7 +832,7 @@
    "speaker": "Popo",
    "source": "wiki"
   },
-  "Rise of the Quartron#051": {
+  "Rise of the Quartron#082": {
    "src": "Interesting, a human's been swept up in our plans. Hadn't expected the work force to diversify so fast.",
    "dst": "有意思，一个人类被卷进了我们的计划。没想到劳动力这么快就多元化了。",
    "role": "desc",
@@ -526,7 +842,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#052": {
+  "Rise of the Quartron#083": {
    "src": "Time for the rundown, oh I love explaining this! I think you'll find what I have to say quite interesting, yes yes!",
    "dst": "该来说明一下了，噢，我最爱解释这个了！我想你会觉得我要说的相当有趣，没错没错！",
    "role": "desc",
@@ -536,7 +852,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#053": {
+  "Rise of the Quartron#084": {
    "src": "You see, quartz is a powerful magical material- moreso than many know! It can absorb and harness magical energy, but what more? I had to find out!",
    "dst": "你看，石英是一种强大的魔法材料——比很多人以为的更强！它能吸收并驾驭魔法能量，但还能做到什么？我非弄清楚不可！",
    "role": "desc",
@@ -546,7 +862,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#054": {
+  "Rise of the Quartron#085": {
    "src": "The rubes in my research department got me kicked out for suggesting we further our research. What kind of scientist is scared to make advancements?!",
    "dst": "我研究部门里那些乡巴佬，因为我提议进一步研究就把我踢了出去。哪有科学家会害怕进步的？！",
    "role": "desc",
@@ -556,7 +872,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#055": {
+  "Rise of the Quartron#086": {
    "src": "But without a board of directors breathing down my neck, my research has led me exactly where I'd hoped, and even more, yes yes!",
    "dst": "不过少了董事会在我背后盯着，我的研究正好走到了我期望的地方，甚至更远，没错没错！",
    "role": "desc",
@@ -566,7 +882,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#056": {
+  "Rise of the Quartron#087": {
    "src": "Oi. Got a guest taking the secret passage.",
    "dst": "喂。有客人走了秘密通道。",
    "role": "desc",
@@ -576,7 +892,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "Rise of the Quartron#057": {
+  "Rise of the Quartron#088": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -586,7 +902,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#058": {
+  "Rise of the Quartron#089": {
    "src": "Harnort! I'M Dado! This sicko mugged me for info! They're gonna ruin us both!",
    "dst": "Harnort！我才是 Dado！这个变态抢了我的情报！他们会把我们俩都毁了！",
    "role": "desc",
@@ -596,7 +912,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#059": {
+  "Rise of the Quartron#090": {
    "src": "Guards!! GUARDS!! Capture them! Stop them! Tie them up, do something!! Our research can't go to waste, not at this vital point!!",
    "dst": "守卫！！守卫！！抓住他们！拦住他们！把他们绑起来，想想办法！！我们的研究不能白费，尤其是在这个关键时刻！！",
    "role": "desc",
@@ -606,7 +922,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#060": {
+  "Rise of the Quartron#091": {
    "src": "HA! That's what you get for showing me that amazi- HORRIBLE flower! Outta here!",
    "dst": "哈！谁叫你给我看那朵超棒——超可怕的花！我走啦！",
    "role": "desc",
@@ -616,7 +932,7 @@
    "speaker": "Dado",
    "source": "wiki"
   },
-  "Rise of the Quartron#061": {
+  "Rise of the Quartron#092": {
    "src": "Break into the laboratory and stop Harnort.",
    "dst": "闯进实验室，阻止 Harnort。",
    "role": "desc",
@@ -626,17 +942,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#062": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "……所以，终究还是走到这一步了。那些守卫每个人的名字我都知道。我从没为了达成目标伤害任何人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#063": {
+  "Rise of the Quartron#094": {
    "src": "You...I won't let their sacrifices be in vain! {p} needs to see what quartz is truly capable of! I MUST show them.",
    "dst": "你……我不会让他们的牺牲白费！{p} 必须见识石英真正的能耐！我必须让他们看到。",
    "role": "desc",
@@ -646,7 +952,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#064": {
+  "Rise of the Quartron#095": {
    "src": "My Quartrons are the future! They need to see it! It will have been worth the scheming, and the thieving, and the burnt bridges!",
    "dst": "我的 Quartron 就是未来！他们必须见识到！到时候，那些算计、那些偷窃、那些断掉的后路，全都会值得！",
    "role": "desc",
@@ -656,7 +962,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#065": {
+  "Rise of the Quartron#096": {
    "src": "But you- you couldn't leave well enough alone. You stepped in, and callously threw away a hundred lives to stop the inevitable!",
    "dst": "但你——你就是不肯罢手。你插了手，冷酷地牺牲了一百条性命，只为了阻止无法避免的未来！",
    "role": "desc",
@@ -666,7 +972,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#066": {
+  "Rise of the Quartron#097": {
    "src": "One live for a hundred is a fair trade!!",
    "dst": "一条命换一百条命，是公平的交易！！",
    "role": "desc",
@@ -676,7 +982,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#067": {
+  "Rise of the Quartron#098": {
    "src": "Take down the Quartron and return to nasea with the news.",
    "dst": "打倒 Quartron，把消息带回给 Nasea。",
    "role": "desc",
@@ -686,17 +992,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#068": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "啊啊！没反应了？！你——你……你！你毁了未来！我的未来！Gavel 的未来！！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#069": {
+  "Rise of the Quartron#100": {
    "src": "The futures of a hundred men or more!! You humans deserve to burn in hell for your careless destruction!",
    "dst": "一百个人甚至更多人的未来！！你们人类就该为你们草率的破坏在地狱里被烧死！",
    "role": "desc",
@@ -706,7 +1002,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#070": {
+  "Rise of the Quartron#101": {
    "src": "The energy output by the detonations is overcharging the quartz in the walls... This entire lab is a deathtrap now! Do us all a favor- SIT STILL AND DIE ALREADY!!",
    "dst": "爆炸释放的能量正让墙里的石英过载……整个实验室现在就是个死亡陷阱！帮大家一个忙——乖乖站着去死吧！！",
    "role": "desc",
@@ -716,7 +1012,7 @@
    "speaker": "Harnort",
    "source": "wiki"
   },
-  "Rise of the Quartron#071": {
+  "Rise of the Quartron#102": {
    "src": "...you've got some serious explaining to do. First you disappear to get that Tattle flower, or whatever it was.",
    "dst": "……你可得好好解释一下了。先是你跑去找那个告状花还是什么的，就不见了。",
    "role": "desc",
@@ -726,7 +1022,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#072": {
+  "Rise of the Quartron#103": {
    "src": "Then Dado ran through here screaming that he was drugged or nugged, and ran off to the east ridge.",
    "dst": "然后 Dado 尖叫着跑过这里，说他被下药还是下什么的，接着就往东边山脊跑了。",
    "role": "desc",
@@ -736,7 +1032,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#073": {
+  "Rise of the Quartron#104": {
    "src": "Then, he came back, asking me if I'd found any more of those flowers, and while he was blabbering the ENTIRE MOUNTAIN SHOOK.",
    "dst": "然后，他又跑回来问我有没有找到更多那种花，结果他在那里唠叨的时候，整座山都在晃。",
    "role": "desc",
@@ -746,7 +1042,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#074": {
+  "Rise of the Quartron#105": {
    "src": "So, spill it. I wanted you to figure out where my quartz was going, and you made one of my workers an addict and caused a freaking landslide!!",
    "dst": "所以，说吧。我是要你查出我的石英去了哪里，结果你让我一个工人上了瘾，还引发了该死的山崩！！",
    "role": "desc",
@@ -756,17 +1052,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#075": {
-   "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "……嗯哼。嗯。……嗯，继续说。呃，好吧，这我能接受……要不是你给我看了证据，我绝对不会信你。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
-   "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#076": {
+  "Rise of the Quartron#107": {
    "src": "A militarized quartz mech...yeesh. That guy sounds like a piece of work. Guess that wasn't really your fault after all.",
    "dst": "军事化的石英机甲……天啊。那家伙听起来真不是个好东西。看来这终究不是你的错。",
    "role": "desc",
@@ -776,7 +1062,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#077": {
+  "Rise of the Quartron#108": {
    "src": "I'll round up the police to get all those guards and them. ...what's with that look? Almost looks like you don't think anyone'll be there. Anyways...",
    "dst": "我会叫警察去把那些守卫和他们都抓起来。……那是什么表情？看起来好像你觉得那里一个人都不剩了。总之……",
    "role": "desc",
@@ -786,7 +1072,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#078": {
+  "Rise of the Quartron#109": {
    "src": "Okay, so I'll out you a quick deal. I'll pay you now for figuring this out, and if you do justt one more thing for me then you'll get something extra.",
    "dst": "好，那我跟你做个简单的交易。你查出了这件事，我现在就付你钱，如果你再帮我做一件事，就会有额外的好处。",
    "role": "desc",
@@ -796,7 +1082,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#079": {
+  "Rise of the Quartron#110": {
    "src": "Take the elevator past the yellow flags and go into the private site, you have my permission. I'll meet you up there.",
    "dst": "搭升降梯经过黄旗，进入私人区域，我准许你进去。我们在上面见。",
    "role": "desc",
@@ -806,7 +1092,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#080": {
+  "Rise of the Quartron#111": {
    "src": "Join Nasea at the end of the minecart track.",
    "dst": "在矿车轨道尽头与 Nasea 会合。",
    "role": "desc",
@@ -816,7 +1102,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Rise of the Quartron#081": {
+  "Rise of the Quartron#112": {
    "src": "Coming up behind you.",
    "dst": "我跟在你后面上来了。",
    "role": "desc",
@@ -826,7 +1112,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#082": {
+  "Rise of the Quartron#113": {
    "src": "This is the newest mining annex, but we've hit a bit of a brick wall. Well...a gravel wall.",
    "dst": "这是最新的采矿区，不过我们碰壁了。嗯……应该说是碰上砾石墙了。",
    "role": "desc",
@@ -836,7 +1122,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#083": {
+  "Rise of the Quartron#114": {
    "src": "So, if you can open up this area, you'll get access to the mine and whatever you find in it.",
    "dst": "所以，如果你能打通这一区，你就能进入矿坑，里面找到的东西也都归你。",
    "role": "desc",
@@ -846,7 +1132,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#084": {
+  "Rise of the Quartron#115": {
    "src": "I have to be off though, lots of work to get to. Hm. It looks like the core you showed me folded up into a ring. Really high-tech stuff, but I can't use it, so you can take it.",
    "dst": "不过我得走了，还有很多工作要做。嗯。你给我看的那个核心好像折成了一枚戒指。真是高科技的玩意，但我用不上，所以你拿去吧。",
    "role": "desc",
@@ -856,7 +1142,7 @@
    "speaker": "Nasea",
    "source": "wiki"
   },
-  "Rise of the Quartron#085": {
+  "Rise of the Quartron#116": {
    "src": "Suppose that's all, then! Here's your payment. I'll see you around.",
    "dst": "那就这样吧！这是你的报酬。回头见。",
    "role": "desc",

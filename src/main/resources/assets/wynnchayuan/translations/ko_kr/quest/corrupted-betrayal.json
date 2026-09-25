@@ -1,12 +1,228 @@
 {
  "_meta": {
   "quest": "Corrupted Betrayal",
-  "count": 52,
+  "count": 73,
   "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#000": {
+   "src": "{u}, good to see you again! Been a while, huh?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#001": {
+   "src": "We've got a major problem with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#002": {
+   "src": "You lean in close to read the riddle inscribed on the ancient stone...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#003": {
+   "src": "[+{~} Mage's Riddle]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#004": {
+   "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
+    "file": "quest/temple-of-the-legends-quest.json",
+    "ratio": 0.843,
+    "reason": "candidate"
+   }
+  },
+  "Corrupted Betrayal#005": {
+   "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#006": {
+   "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#007": {
+   "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#008": {
+   "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#009": {
+   "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#010": {
+   "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#011": {
+   "src": "It appears the mutant contained the key for that door.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#012": {
+   "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#013": {
+   "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#014": {
+   "src": "...I know they will banish me...he is too good...too nice...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#015": {
+   "src": "...I must open a portal...make a dimension to become more powerful...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#016": {
+   "src": "...the books...I have prepared well for this...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#017": {
+   "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#018": {
+   "src": "Go have fun while you can. It's not like you have much of a life to live, anyways.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#019": {
+   "src": "You should head back to Lanu...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#020": {
+   "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of the cave.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#021": {
    "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
    "dst": "AP {~}년, {p}은(는) 무릎을 꿇기 직전이었다. 언데드 무리가 군대와 성을 무력화하고 있었다.",
    "role": "desc",
@@ -16,7 +232,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Corrupted Betrayal#001": {
+  "Corrupted Betrayal#022": {
    "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]에 있는 Lanu에게 말을 거세요.",
    "role": "desc",
@@ -26,7 +242,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#002": {
+  "Corrupted Betrayal#023": {
    "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
    "dst": "어이, 병사! 그래, 너! 잠깐 시간 있으면 좀 도와줄래?",
    "role": "desc",
@@ -36,7 +252,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#003": {
+  "Corrupted Betrayal#024": {
    "src": "We've got a major issue with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
    "dst": "이 낡은 요새에 큰 문제가 생겼어. 빌어먹을 슬라임이 계속 쏟아져 나오는데, {p}에 너무 가까워서 골치야.",
    "role": "desc",
@@ -46,7 +262,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#004": {
+  "Corrupted Betrayal#025": {
    "src": "Soldiers are spending half their guard duty slicing the critters into sludge. Ideally we'd raid the cave, cut out the source, but...",
    "dst": "병사들이 경계 근무의 절반을 놈들을 잘게 써는 데 쓰고 있어. 동굴을 쳐서 근원을 끊는 게 제일이지만...",
    "role": "desc",
@@ -56,7 +272,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#005": {
+  "Corrupted Betrayal#026": {
    "src": "This place has some history. Nasty stuff. I'd prefer not to head in blind, so I've been checking for any clues to what we might find inside.",
    "dst": "여긴 역사가 좀 있어. 끔찍한 역사. 무작정 들어가긴 싫어서, 안에 뭐가 있을지 단서를 찾던 중이었어.",
    "role": "desc",
@@ -66,7 +282,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#006": {
+  "Corrupted Betrayal#027": {
    "src": "Haven't found much... except this verse, 'scribed into the wall over there. Go on, check it out and let me know what you think.",
    "dst": "별건 못 찾았어... 저기 벽에 새겨진 시 한 구절 말고는. 가서 보고 어떻게 생각하는지 말해 줘.",
    "role": "desc",
@@ -76,7 +292,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#007": {
+  "Corrupted Betrayal#028": {
    "src": "Nonsense, if you ask me. Most likely kids from {p} messing about. But we haven't found anything else, so... if you've got any time, fancy checking it out for me?",
    "dst": "내가 보기엔 헛소리야. 아마 {p} 애들 장난이겠지. 그래도 다른 단서가 없으니... 시간 되면 좀 알아봐 줄래?",
    "role": "desc",
@@ -86,7 +302,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#008": {
+  "Corrupted Betrayal#029": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "첫 줄은 분명 대교 얘기인데, 나머지는 무슨 뜻인지 모르겠어. 거기 가서 둘러보고, 흥미로운 게 있으면 알려 줘.",
    "role": "desc",
@@ -96,7 +312,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#009": {
+  "Corrupted Betrayal#030": {
    "src": "Found anything interesting around the riddle yet? Do you need to hear it again?",
    "dst": "수수께끼 쪽에서 뭐 찾았어? 다시 들려줄까?",
    "role": "desc",
@@ -106,7 +322,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#010": {
+  "Corrupted Betrayal#031": {
    "src": "Near a corrupted bridge, a ruin past its prime..",
    "dst": "타락한 다리 곁, 한물간 폐허에..",
    "role": "desc",
@@ -116,7 +332,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#011": {
+  "Corrupted Betrayal#032": {
    "src": "Lives a cursed sheep, with the color of lime...",
    "dst": "라임빛 털을 한 저주받은 양이 사네...",
    "role": "desc",
@@ -126,7 +342,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#012": {
+  "Corrupted Betrayal#033": {
    "src": "Lead it down the trail, headed to the slime...",
    "dst": "오솔길 따라 슬라임에게로 이끌어...",
    "role": "desc",
@@ -136,7 +352,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#013": {
+  "Corrupted Betrayal#034": {
    "src": "Sacrifice its soul, in the blood and the grime.",
    "dst": "피와 오물 속에 그 영혼을 바쳐라.",
    "role": "desc",
@@ -146,7 +362,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#014": {
+  "Corrupted Betrayal#035": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
    "dst": "첫 줄은 분명 대교 얘기인데, 나머지는 무슨 뜻인지 모르겠어. 거기 가서 둘러보고, 흥미로운 게 있으면 알려 줘.",
    "role": "desc",
@@ -156,7 +372,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#015": {
+  "Corrupted Betrayal#036": {
    "src": "Alrighty. Let me know what when you've got something then.",
    "dst": "좋아. 뭔가 알아내면 알려 줘.",
    "role": "desc",
@@ -166,7 +382,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#016": {
+  "Corrupted Betrayal#037": {
    "src": "Use the Mage's riddle to figure out where it leads",
    "dst": "메이지의 수수께끼가 가리키는 곳을 알아내세요",
    "role": "desc",
@@ -176,7 +392,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#017": {
+  "Corrupted Betrayal#038": {
    "src": "If you are heading towards the Great Bridge, be cautious in the plains around the jungle entrance.",
    "dst": "대교로 간다면, 정글 입구 근처 평원에서 조심하세요.",
    "role": "desc",
@@ -186,7 +402,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#018": {
+  "Corrupted Betrayal#039": {
    "src": "I have received reports of a strange cursed sheep taking refuge in one of the more fortified ruins around there.",
    "dst": "그 근처 요새화된 폐허에 이상한 저주받은 양이 숨어 있다는 보고가 들어왔어요.",
    "role": "desc",
@@ -196,7 +412,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#019": {
+  "Corrupted Betrayal#040": {
    "src": "As far as I know, it is trapped in the ruins by some jungle growth, though if it was cut down it might escape...",
    "dst": "제가 알기로는 정글 덩굴에 막혀 폐허에 갇혀 있는데, 덩굴을 베면 도망칠지도...",
    "role": "desc",
@@ -206,7 +422,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#020": {
+  "Corrupted Betrayal#041": {
    "src": "Explore the temple for a way to break the barrier.",
    "dst": "신전을 탐색해 방벽을 깰 방법을 찾으세요.",
    "role": "desc",
@@ -216,7 +432,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#021": {
+  "Corrupted Betrayal#042": {
    "src": "Go to Slykaar's residence at [-{~}, {~}, -{~}] to find out what is hidden there.",
    "dst": "[-{~}, {~}, -{~}]의 Slykaar 저택으로 가서 무엇이 숨겨져 있는지 알아내세요.",
    "role": "desc",
@@ -226,7 +442,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#022": {
+  "Corrupted Betrayal#043": {
    "src": "By order of the city of {p}, I am here to keep other citizens from entering this house.",
    "dst": "{p} 시의 명령으로, 시민들이 이 집에 들어가지 못하게 지키고 있어요.",
    "role": "desc",
@@ -236,7 +452,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#023": {
+  "Corrupted Betrayal#044": {
    "src": "From past experiences, everyone who has entered this house has vanished from existence...",
    "dst": "지금까지 이 집에 들어간 사람은 모두 흔적도 없이 사라졌어요...",
    "role": "desc",
@@ -246,7 +462,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#024": {
+  "Corrupted Betrayal#045": {
    "src": "I would advise not going inside unless you know what you are doing.",
    "dst": "뭘 하는지 잘 아는 게 아니라면 들어가지 마세요.",
    "role": "desc",
@@ -256,7 +472,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "Corrupted Betrayal#025": {
+  "Corrupted Betrayal#046": {
    "src": "Well, I guess you must know who I am.",
    "dst": "흠, 내가 누군지는 알겠지.",
    "role": "desc",
@@ -266,7 +482,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#026": {
+  "Corrupted Betrayal#047": {
    "src": "Welcome to my domain. I am the hero of {p}, Slykaar.",
    "dst": "내 영역에 온 걸 환영한다. 나는 {p}의 영웅, Slykaar다.",
    "role": "desc",
@@ -276,7 +492,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Corrupted Betrayal#027": {
+  "Corrupted Betrayal#048": {
    "src": "Well, I used to be. Banished by the very people who asked for my help. Pathetic.",
    "dst": "뭐, 예전엔 그랬지. 도움을 청한 자들에게 쫓겨났다. 한심하군.",
    "role": "desc",
@@ -286,7 +502,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#028": {
+  "Corrupted Betrayal#049": {
    "src": "They couldn't give me a few peasants for their safety? Weak.",
    "dst": "제 안전을 위해 농민 몇 명도 못 내준다고? 나약하군.",
    "role": "desc",
@@ -296,7 +512,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#029": {
+  "Corrupted Betrayal#050": {
    "src": "Journey through Slykaar's dimension.",
    "dst": "Slykaar의 차원을 통과하세요.",
    "role": "desc",
@@ -306,7 +522,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#030": {
+  "Corrupted Betrayal#051": {
    "src": "I experimented my shamanism for many years underground to create the perfect mix of monster.",
    "dst": "완벽한 괴물을 만들려고 지하에서 오랜 세월 샤먼술을 실험했다.",
    "role": "desc",
@@ -316,7 +532,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#031": {
+  "Corrupted Betrayal#052": {
    "src": "Most ended in horrific slimes. Aggressive and powerful, but alas, just slimes.",
    "dst": "대부분 끔찍한 슬라임이 됐지. 사납고 강하지만, 결국 슬라임일 뿐.",
    "role": "desc",
@@ -326,7 +542,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#032": {
+  "Corrupted Betrayal#053": {
    "src": "Then I found this place. A dark land. A dark god. A source of power.",
    "dst": "그러다 이곳을 찾았다. 어둠의 땅. 어둠의 신. 힘의 원천.",
    "role": "desc",
@@ -336,7 +552,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#033": {
+  "Corrupted Betrayal#054": {
    "src": "You mediocre wielders of magic have no idea what this world holds.",
    "dst": "어중간한 마법사 놈들은 이 세계에 뭐가 있는지 모른다.",
    "role": "desc",
@@ -346,7 +562,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#034": {
+  "Corrupted Betrayal#055": {
    "src": "You all strive to be that hero of heroes, “Bob”, but here's the truth. He's lost. You're lost.",
    "dst": "다들 영웅 중의 영웅 “Bob”이 되려 하지만, 진실을 알려 주지. 그는 길을 잃었다. 너희도.",
    "role": "desc",
@@ -356,7 +572,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#035": {
+  "Corrupted Betrayal#056": {
    "src": "No one in the Wynn province is willing to make the sacrifices I am to gain power.",
    "dst": "Wynn 지방에서 힘을 얻으려 나만큼 희생할 자는 아무도 없다.",
    "role": "desc",
@@ -366,7 +582,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#036": {
+  "Corrupted Betrayal#057": {
    "src": "If you want power, you have to give some. Sacrifice a few to save many.",
    "dst": "힘을 원하면 대가를 치러야지. 다수를 위해 소수를 희생하는 거다.",
    "role": "desc",
@@ -376,7 +592,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#037": {
+  "Corrupted Betrayal#058": {
    "src": "They were willing to give me a few peasants in {~}, when the hordes crossed the bridge.",
    "dst": "{~}년, 무리가 다리를 건너왔을 땐 농민 몇 명쯤 기꺼이 내줬지.",
    "role": "desc",
@@ -386,7 +602,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#038": {
+  "Corrupted Betrayal#059": {
    "src": "The king was happy to throw away lives to save his. But then the hero of Wynn waltzed in a few years later.",
    "dst": "왕은 제 목숨을 위해 남의 목숨을 기꺼이 버렸다. 그런데 몇 년 뒤 Wynn의 영웅이 나타났지.",
    "role": "desc",
@@ -396,7 +612,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#039": {
+  "Corrupted Betrayal#060": {
    "src": "They banished me like a rotten fruit. Their hero, their protector. So what if a few hundred nobodies died for it.",
    "dst": "놈들은 날 썩은 과일처럼 내쫓았다. 자기들의 영웅, 수호자를. 무명인 몇백 명 죽은 게 대수라고.",
    "role": "desc",
@@ -406,7 +622,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#040": {
+  "Corrupted Betrayal#061": {
    "src": "Looks like we have a Bob aspirer. Pale imitation.",
    "dst": "Bob 지망생이 왔군. 초라한 모조품이야.",
    "role": "desc",
@@ -416,7 +632,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#041": {
+  "Corrupted Betrayal#062": {
    "src": "So. Feel free to visit me down below, bring the entire might of the {p} army upon me. It will not be enough.",
    "dst": "그럼 얼마든지 아래로 찾아와라. {p} 군대를 전부 끌고 와도 좋다. 어림도 없을 테니.",
    "role": "desc",
@@ -426,7 +642,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#042": {
+  "Corrupted Betrayal#063": {
    "src": "I am ready. Soon, {p} will be in ruins. And I shall have my revenge.",
    "dst": "준비는 끝났다. 곧 {p}은(는) 폐허가 되고, 나는 복수하리라.",
    "role": "desc",
@@ -436,7 +652,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#043": {
+  "Corrupted Betrayal#064": {
    "src": "Go have fun in while you can. It's not like you have much of a life to live, anyways.",
    "dst": "놀 수 있을 때 실컷 놀아라. 어차피 살날도 얼마 안 남았으니.",
    "role": "desc",
@@ -446,7 +662,7 @@
    "speaker": "Slykaar",
    "source": "wiki"
   },
-  "Corrupted Betrayal#044": {
+  "Corrupted Betrayal#065": {
    "src": "Report back to Lanu about what you've learned.",
    "dst": "알아낸 것을 Lanu에게 보고하세요.",
    "role": "desc",
@@ -456,7 +672,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Corrupted Betrayal#045": {
+  "Corrupted Betrayal#066": {
    "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of this cave.",
    "dst": "아, 돌아왔네. 뭐 좀 찾았어? 난 이 동굴에서 가끔 튀어나오는 슬라임이나 때려잡고 있었어.",
    "role": "desc",
@@ -466,7 +682,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#046": {
+  "Corrupted Betrayal#067": {
    "src": "You... saw Slykaar? In another dimension?!",
    "dst": "너... Slykaar를 봤다고? 다른 차원에서?!",
    "role": "desc",
@@ -476,7 +692,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#047": {
+  "Corrupted Betrayal#068": {
    "src": "This is bad. If he can materialise outside of this cave, even psychoactively... he's getting stronger. It explains the slimes, the attacks on {p}...",
    "dst": "큰일이네. 이 동굴 밖에 나타날 수 있다면, 정신체라도... 점점 강해지고 있는 거야. 슬라임도, {p} 습격도 설명이 돼...",
    "role": "desc",
@@ -486,7 +702,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#048": {
+  "Corrupted Betrayal#069": {
    "src": "He's an incredibly powerful shaman, {u}. He has to be stopped, but it would take forever for {p} to mobile a force against him.",
    "dst": "{u}, 그는 엄청나게 강한 샤먼이야. 막아야 하지만, {p}이(가) 부대를 모으려면 한참 걸릴 거야.",
    "role": "desc",
@@ -496,7 +712,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#049": {
+  "Corrupted Betrayal#070": {
    "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
    "dst": "할 수 있으면 들어가서... 끝장내 줘. 그래도 먼저 장비를 갖추고, 등 맡길 친구도 구해.",
    "role": "desc",
@@ -506,7 +722,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#050": {
+  "Corrupted Betrayal#071": {
    "src": "{u}, how's it going? Run into another shaman hallucination at all?",
    "dst": "{u}, 어때? 또 샤먼 환영이라도 봤어?",
    "role": "desc",
@@ -516,7 +732,7 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "Corrupted Betrayal#051": {
+  "Corrupted Betrayal#072": {
    "src": "Anyway, good luck in the cave. If you choose to go in, be careful.",
    "dst": "아무튼 동굴에서 행운을 빌어. 들어가기로 했다면 조심해.",
    "role": "desc",

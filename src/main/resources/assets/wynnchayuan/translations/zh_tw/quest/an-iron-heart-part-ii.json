@@ -1,12 +1,72 @@
 {
  "_meta": {
   "quest": "An Iron Heart Part II",
-  "count": 61,
-  "translated": 61,
+  "count": 67,
+  "translated": 67,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "An Iron Heart Part II#000": {
+   "src": "Have you found any leads since I sent you to my contact, Daxe?",
+   "dst": "自從我讓你去找我的聯絡人 Daxe 之後，有查到什麼線索嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#001": {
+   "src": "Duvale mentioned rumors about an illegal factory in the swamp... If Daxe's criminal past had to do with this, maybe the [Mechanical Reactor] will cause him to react. Duvale mentioned he had spares, should they be needed.",
+   "dst": "Duvale 提過沼澤裡有座非法工廠的傳聞……如果 Daxe 的犯罪過往跟這件事有關，也許 [機械反應爐] 能讓他有所反應。Duvale 說他還留著備品，需要的話可以拿。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#002": {
+   "src": "The guard golem left...but the reactor has stopped working.",
+   "dst": "守衛魔像離開了……但反應爐停止運轉了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#003": {
+   "src": "Go on, search my house. Or are you just here to waste my time?",
+   "dst": "去吧，搜我的屋子。還是說你來只是為了浪費我的時間？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#004": {
+   "src": "A door has been opened...",
+   "dst": "一扇門開了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#005": {
+   "src": "So what is it? Have you made your decision?",
+   "dst": "所以呢？你決定好了嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "An Iron Heart Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "An Iron Heart Part II#006": {
    "src": "Speak to Detective Hart at [-{~}, {~}, -{~}]",
    "dst": "跟 [-{~1}, {~2}, -{~3}] 的 Detective Hart 說話",
    "role": "desc",
@@ -16,7 +76,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#001": {
+  "An Iron Heart Part II#007": {
    "src": "Hotor, Athomo, Arperi, Etyir, Taiyroth, On'omi, Danin, Nesys, Onton. All missing...",
    "dst": "Hotor、Athomo、Arperi、Etyir、Taiyroth、On'omi、Danin、Nesys、Onton。全都失蹤了……",
    "role": "desc",
@@ -26,7 +86,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#002": {
+  "An Iron Heart Part II#008": {
    "src": "Etan is the latest. You don't happen to know anything about these people, soldier?",
    "dst": "Etan 是最新的一個。士兵，你該不會剛好知道這些人的下落吧？",
    "role": "desc",
@@ -36,7 +96,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#003": {
+  "An Iron Heart Part II#009": {
    "src": "Citizens are going missing at an alarming rate. We have lost {~} people in just {~} weeks. There hasn't been a trace of them anywhere.",
    "dst": "市民失蹤的速度快得嚇人。短短 {~2} 週我們就少了 {~1} 個人。哪裡都找不到一絲線索。",
    "role": "desc",
@@ -46,7 +106,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#004": {
+  "An Iron Heart Part II#010": {
    "src": "You wouldn't have expected it, with all the guard golems we've been donated recently! {p} should be safer than ever.",
    "dst": "照理說不該這樣的，我們最近才收到那麼多守衛魔像的捐贈！{p} 應該比以往都安全才對。",
    "role": "desc",
@@ -56,7 +116,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#005": {
+  "An Iron Heart Part II#011": {
    "src": "Of course I have my suspicions, there are rumors floating around about...shady business going on.",
    "dst": "我當然有我的懷疑，外面一直有些傳聞……說有什麼見不得光的勾當。",
    "role": "desc",
@@ -66,7 +126,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#006": {
+  "An Iron Heart Part II#012": {
    "src": "I don't know who to trust in these circumstances, so if you would be willing to aid in this investigation, I'd be rather thankful.",
    "dst": "這種情況下我不知道還能信誰，所以如果你願意幫忙查這件事，我會非常感激。",
    "role": "desc",
@@ -76,7 +136,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#007": {
+  "An Iron Heart Part II#013": {
    "src": "The “Great” Daxe is a man with a criminal past. He knows things the police don't, but he won't talk with me, given my status.",
    "dst": "那位「偉大的」Daxe 有前科。他知道一些警方不知道的事，但礙於我的身分，他不會跟我開口。",
    "role": "desc",
@@ -86,7 +146,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#008": {
+  "An Iron Heart Part II#014": {
    "src": "Can you try to get some information from him? You can find his hut west from here. Next to that Elven girl's camp.",
    "dst": "你能不能想辦法從他那裡問出點東西？他的小屋在這裡往西。就在那個精靈女孩的營地旁邊。",
    "role": "desc",
@@ -96,7 +156,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#009": {
+  "An Iron Heart Part II#015": {
    "src": "Follow the west road and speak with Daxe in his home at [-{~}, {~}, -{~}]",
    "dst": "沿著西邊的路走，到 [-{~1}, {~2}, -{~3}] 的家裡跟 Daxe 說話",
    "role": "desc",
@@ -106,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#010": {
+  "An Iron Heart Part II#016": {
    "src": "Oh, so a human wishes to wander into the home of the great Daxe?",
    "dst": "喔，居然有人類想闖進偉大的 Daxe 家裡？",
    "role": "desc",
@@ -116,7 +176,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#011": {
+  "An Iron Heart Part II#017": {
    "src": "Unfortunately for you, I'm not fond of visitors. I've left my criminal past behind.",
    "dst": "很遺憾，我不喜歡訪客。我早就把犯罪的過去拋在腦後了。",
    "role": "desc",
@@ -126,7 +186,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#012": {
+  "An Iron Heart Part II#018": {
    "src": "So go on. I don't have anything to tell you.",
    "dst": "所以你走吧。我沒什麼好跟你說的。",
    "role": "desc",
@@ -136,7 +196,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#013": {
+  "An Iron Heart Part II#019": {
    "src": "Oh, so a human wishes to wander into the home of the great Daxe?",
    "dst": "喔，居然有人類想闖進偉大的 Daxe 家裡？",
    "role": "desc",
@@ -146,7 +206,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#014": {
+  "An Iron Heart Part II#020": {
    "src": "Unfortunately for you, I'm not fond of visitors. I've left my criminal past behind...mh?",
    "dst": "很遺憾，我不喜歡訪客。我早就把犯罪的過去拋在腦後了……嗯？",
    "role": "desc",
@@ -156,7 +216,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#015": {
+  "An Iron Heart Part II#021": {
    "src": "What's that device you have there? So you already know about this, then...?",
    "dst": "你手上那個裝置是什麼？所以你已經知道這件事了……？",
    "role": "desc",
@@ -166,7 +226,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#016": {
+  "An Iron Heart Part II#022": {
    "src": "Hm! If you already know, what do you need the information for?",
    "dst": "哼！你既然都知道了，還要那些情報做什麼？",
    "role": "desc",
@@ -176,7 +236,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#017": {
+  "An Iron Heart Part II#023": {
    "src": "BZZT. [ERROR]...? Madeleine...?",
    "dst": "嗶滋。［錯誤］……？Madeleine……？",
    "role": "desc",
@@ -186,7 +246,7 @@
    "speaker": "Guard Golem",
    "source": "wiki"
   },
-  "An Iron Heart Part II#018": {
+  "An Iron Heart Part II#024": {
    "src": "MADELEINE! Where's...wait! What's happening, where am I? WHO'S VOICE IS THIS?!",
    "dst": "MADELEINE！她在哪……等等！怎麼回事，我在哪裡？這是誰的聲音？！",
    "role": "desc",
@@ -196,7 +256,7 @@
    "speaker": "Guard Golem",
    "source": "wiki"
   },
-  "An Iron Heart Part II#019": {
+  "An Iron Heart Part II#025": {
    "src": "Wait, what in the world is going on?! What did you do to my golem?!",
    "dst": "等等，這到底是怎麼回事？！你對我的魔像做了什麼？！",
    "role": "desc",
@@ -206,7 +266,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#020": {
+  "An Iron Heart Part II#026": {
    "src": "They... my daughter... SHUT UP! QUIET! Who's giving me orders- NO ORDERS! Cold! COLD!",
    "dst": "他們……我女兒……閉嘴！安靜！誰在對我下令——不准下令！好冷！好冷！",
    "role": "desc",
@@ -216,7 +276,7 @@
    "speaker": "Guard Golem?",
    "source": "wiki"
   },
-  "An Iron Heart Part II#021": {
+  "An Iron Heart Part II#027": {
    "src": "Wait, your daughter?! M-Madeleine...? I...h-how...what...?",
    "dst": "等等，你女兒？！M-Madeleine……？我……怎、怎麼會……什麼……？",
    "role": "desc",
@@ -226,7 +286,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#022": {
+  "An Iron Heart Part II#028": {
    "src": "You...you aren't...dead steel? You remember your name...?!",
    "dst": "你……你不是……死鐵？你還記得自己的名字……？！",
    "role": "desc",
@@ -236,7 +296,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#023": {
+  "An Iron Heart Part II#029": {
    "src": "STOP GIVING ME ORDERS!! I'M...I'M THEODORE! I'M NOT A SERVANT! I...where has my life gone...? Where is...",
    "dst": "別再對我下令了！！我是……我是 THEODORE！我不是僕人！我……我的人生跑到哪去了……？哪裡才是……",
    "role": "desc",
@@ -246,7 +306,7 @@
    "speaker": "Guard Golem?",
    "source": "wiki"
   },
-  "An Iron Heart Part II#024": {
+  "An Iron Heart Part II#030": {
    "src": "Madeleine... Where are you- RE-AFFIRMING DIRECTIVES. BZZT. ... ... ...",
    "dst": "Madeleine……你在哪——重新確認指令。嗶滋。……………",
    "role": "desc",
@@ -256,7 +316,7 @@
    "speaker": "Guard Golem?",
    "source": "wiki"
   },
-  "An Iron Heart Part II#025": {
+  "An Iron Heart Part II#031": {
    "src": "I... I can't believe it. They didn't...they're still...",
    "dst": "我……我不敢相信。他們沒有……他們還……",
    "role": "desc",
@@ -266,7 +326,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#026": {
+  "An Iron Heart Part II#032": {
    "src": "Dear god, that...that must...I'll talk. I will tell you what I know.",
    "dst": "老天，那……那一定是……我說。我把我知道的都告訴你。",
    "role": "desc",
@@ -276,7 +336,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#027": {
+  "An Iron Heart Part II#033": {
    "src": "I broke into the golem factory for petty thievery...and found them. They gave me this Golem... Theodore...later to keep me quiet.",
    "dst": "我為了偷點小東西闖進魔像工廠……然後發現了他們。他們後來給了我這具魔像……Theodore……是為了讓我閉嘴。",
    "role": "desc",
@@ -286,7 +346,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#028": {
+  "An Iron Heart Part II#034": {
    "src": "They assured me that they were gone, that every last bit of them was erased. They...those monsters lied to me...",
    "dst": "他們向我保證那些人已經走了，說他們的每一分每一寸都被抹除乾淨了。他們……那些怪物騙了我……",
    "role": "desc",
@@ -296,7 +356,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#029": {
+  "An Iron Heart Part II#035": {
    "src": "Follow this road west and turn right. Look for Urelix. The factory is hidden in a cabin, it won't look like a factory.",
    "dst": "沿著這條路往西走，然後右轉。找 Urelix。工廠藏在一間小木屋裡，外表看不出是工廠。",
    "role": "desc",
@@ -306,7 +366,7 @@
    "speaker": "Daxe",
    "source": "wiki"
   },
-  "An Iron Heart Part II#030": {
+  "An Iron Heart Part II#036": {
    "src": "Head to the Golem Factory at [-{~}, {~}, -{~}]",
    "dst": "前往 [-{~1}, {~2}, -{~3}] 的魔像工廠",
    "role": "desc",
@@ -316,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#031": {
+  "An Iron Heart Part II#037": {
    "src": "Find a way to deactivate the Guard Golem",
    "dst": "想辦法讓 Guard Golem 停機",
    "role": "desc",
@@ -326,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#032": {
+  "An Iron Heart Part II#038": {
    "src": "And what do you think you are doing, barging into my humble home like this? Do they not teach humans manners in Wynn?",
    "dst": "你以為你在做什麼，就這樣闖進我這間陋室？人類在 Wynn 都沒學過禮貌嗎？",
    "role": "desc",
@@ -336,7 +396,7 @@
    "speaker": "Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#033": {
+  "An Iron Heart Part II#039": {
    "src": "Ah, yes. You are correct- I oversee the creation of Guard Golems. What of it?",
    "dst": "啊，沒錯——Guard Golem 的製造是我在督導的。那又如何？",
    "role": "desc",
@@ -346,7 +406,7 @@
    "speaker": "Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#034": {
+  "An Iron Heart Part II#040": {
    "src": "Oh, you believe that our company is illicit somehow? You insult me so!",
    "dst": "喔，你認為我們公司不乾淨？你這樣說可真傷人！",
    "role": "desc",
@@ -356,7 +416,7 @@
    "speaker": "Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#035": {
+  "An Iron Heart Part II#041": {
    "src": "My golems have protected countless people for years. So if you think my company is corrupt, why don't you take a look around?",
    "dst": "我的魔像保護過無數人，年復一年。你既然覺得我的公司腐敗，那不如自己四處看看？",
    "role": "desc",
@@ -366,7 +426,7 @@
    "speaker": "Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#036": {
+  "An Iron Heart Part II#042": {
    "src": "Go on, search through my house. See if you can find anything.",
    "dst": "去吧，把我家搜一遍。看你能找到什麼。",
    "role": "desc",
@@ -376,7 +436,7 @@
    "speaker": "Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#037": {
+  "An Iron Heart Part II#043": {
    "src": "Find a way into the factory in Urelix's house",
    "dst": "找出進入 Urelix 家中工廠的方法",
    "role": "desc",
@@ -386,7 +446,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#038": {
+  "An Iron Heart Part II#044": {
    "src": "Escape the Golem Factory and find Urelix.",
    "dst": "逃出魔像工廠並找到 Urelix。",
    "role": "desc",
@@ -396,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#039": {
+  "An Iron Heart Part II#045": {
    "src": "Initiating Chip Insertion Machine - All personell in machine be advised, avoid the spikes.",
    "dst": "啟動晶片植入機——機內所有人員請注意，避開尖刺。",
    "role": "desc",
@@ -406,7 +466,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "An Iron Heart Part II#040": {
+  "An Iron Heart Part II#046": {
    "src": "Intruder Detected - Emergency meltdown initiated. Please evacuate immediately via the emergency exit.",
    "dst": "偵測到入侵者——已啟動緊急熔毀程序。請立即由緊急出口撤離。",
    "role": "desc",
@@ -416,7 +476,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "An Iron Heart Part II#041": {
+  "An Iron Heart Part II#047": {
    "src": "Talk to Dr. Urelix in his office",
    "dst": "到辦公室跟 Dr. Urelix 說話",
    "role": "desc",
@@ -426,7 +486,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#042": {
+  "An Iron Heart Part II#048": {
    "src": "Well well, look at you, here at the end of my factory. I wasn't expecting you to survive the production line. I thought you'd be one of ours by now.",
    "dst": "哎呀哎呀，看看你，居然一路走到我工廠的盡頭。我沒想到你能從生產線活下來。我還以為你這時候已經是我們的一員了。",
    "role": "desc",
@@ -436,7 +496,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#043": {
+  "An Iron Heart Part II#049": {
    "src": "That's that, I suppose. Yes, this is indeed where all the iron golems you've ever encountered were made, and if you've gotten here, you know how we make them.",
    "dst": "那就這樣吧。是的，你見過的每一具鐵魔像都是在這裡造出來的，而你既然走到了這裡，也就知道我們是怎麼造的了。",
    "role": "desc",
@@ -446,7 +506,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#044": {
+  "An Iron Heart Part II#050": {
    "src": "Yes, metal forged with flesh...an unbeatable combination. Emotions and memories must be repressed in order to maintain obedience, of course...",
    "dst": "沒錯，金屬與血肉鍛在一起……無可匹敵的組合。當然，情緒與記憶必須壓制下去，才能維持順從……",
    "role": "desc",
@@ -456,7 +516,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#045": {
+  "An Iron Heart Part II#051": {
    "src": "Have you ever looked at a golem's eyes? Sometimes they look back, yes. The person they once were is still in there. I almost feel a connection when I make eye contact with them...",
    "dst": "你有沒有看過魔像的眼睛？有時候它們會回望你。他們曾經是誰，那個部分還在裡面。跟他們對上眼的時候，我幾乎感覺得到一種連結……",
    "role": "desc",
@@ -466,7 +526,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#046": {
+  "An Iron Heart Part II#052": {
    "src": "It's odd, honestly. I'm sure they don't feel much except cold, supposing our safeguards stay in place, of course. I have to assume malfunctions happened to have had you find us out...",
    "dst": "老實說很奇怪。只要我們的安全措施還在，我相信他們除了冷之外感覺不到什麼。我只能假設是出了什麼故障，你才會查到我們頭上……",
    "role": "desc",
@@ -476,7 +536,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#047": {
+  "An Iron Heart Part II#053": {
    "src": "Oh, look at me now, rambling! I must say I have been alone for a while...well, lacking any company that converses! So, I shall make you a deal, human.",
    "dst": "噢，看看我，喋喋不休！我得說我一個人待了好一陣子了……嗯，是指沒有能對話的伴。所以，人類，我跟你做個交易。",
    "role": "desc",
@@ -486,7 +546,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#048": {
+  "An Iron Heart Part II#054": {
    "src": "I will give you a substantial amount of emeralds and a piece of quality iron armor in return for your silence on my little operation here.",
    "dst": "我給你一大筆綠寶石，外加一件上等的鐵製護甲，換你對我這門小生意閉口不談。",
    "role": "desc",
@@ -496,7 +556,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#049": {
+  "An Iron Heart Part II#055": {
    "src": "I'll advise you to take my deal. Imagine what will happen if you should report my operation to the police. Yes, you'll save a few folk here, but how will the golems be made?",
    "dst": "我勸你接受。想想看，你要是把我的事報給警方會怎麼樣。是的，你救得了這裡幾個人，但魔像要怎麼造？",
    "role": "desc",
@@ -506,7 +566,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#050": {
+  "An Iron Heart Part II#056": {
    "src": "Without them, both Gavel and Wynn would struggle under the weight of our wars. Is this operation so immoral, then? Sacrifices must be made in order to survive.",
    "dst": "沒有魔像，Gavel 和 Wynn 都會被戰爭的重擔壓垮。那麼，這門生意真有那麼不道德嗎？要活下去，總得有所犧牲。",
    "role": "desc",
@@ -516,7 +576,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#051": {
+  "An Iron Heart Part II#057": {
    "src": "I'll give you some time to consider my proposition. Take from my chest if you wish to take up my offer, otherwise get out of here and do not return.",
    "dst": "我給你一點時間考慮我的提議。想接受的話就從我的箱子裡拿，不然就滾出去，別再回來。",
    "role": "desc",
@@ -526,7 +586,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#052": {
+  "An Iron Heart Part II#058": {
    "src": "Either take the bribe or return to Detective Hart",
    "dst": "接受賄賂，或回去找 Detective Hart",
    "role": "desc",
@@ -536,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part II#053": {
+  "An Iron Heart Part II#059": {
    "src": "Ahh, a wise choice. Production will continue then...and you've earned yourself a pocket full of emeralds at the same time.",
    "dst": "啊，明智的選擇。那麼生產就會繼續下去……而你也順便替自己賺了滿口袋的綠寶石。",
    "role": "desc",
@@ -546,7 +606,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#054": {
+  "An Iron Heart Part II#060": {
    "src": "Whether you truly see things my way or simply understand that my work is necessary, I couldn't care less. What matters is not your morality, but your choice.",
    "dst": "你是真的認同我的看法，還是只是明白我的工作有其必要，我一點都不在乎。重要的不是你的道德，而是你的選擇。",
    "role": "desc",
@@ -556,7 +616,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#055": {
+  "An Iron Heart Part II#061": {
    "src": "Enjoy your armor and money, and please escort yourself to the exit.",
    "dst": "好好享受你的護甲和錢，請自行走向出口。",
    "role": "desc",
@@ -566,7 +626,7 @@
    "speaker": "Dr. Urelix",
    "source": "wiki"
   },
-  "An Iron Heart Part II#056": {
+  "An Iron Heart Part II#062": {
    "src": "You've returned, I see. Any news on the situation?",
    "dst": "你回來了。情況有什麼進展嗎？",
    "role": "desc",
@@ -576,7 +636,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#057": {
+  "An Iron Heart Part II#063": {
    "src": "Yes, we're aware of the Golem factory. Were the criminals using it as a base?",
    "dst": "是的，那座魔像工廠我們知道。那些罪犯是把它當基地嗎？",
    "role": "desc",
@@ -586,7 +646,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#058": {
+  "An Iron Heart Part II#064": {
    "src": "Wha...fleshcrafting?! Golems are powered by suspended villagers?! Is this true, soldier?",
    "dst": "什麼……血肉改造？！魔像是靠活生生的村民驅動的？！士兵，這是真的嗎？",
    "role": "desc",
@@ -596,7 +656,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#059": {
+  "An Iron Heart Part II#065": {
    "src": "We'll need to round up reinforcements immediately, and storm this factory! This cannot go on a moment longer!",
    "dst": "我們得立刻集結增援，強攻那座工廠！這件事一刻都不能再拖了！",
    "role": "desc",
@@ -606,7 +666,7 @@
    "speaker": "Detective Hart",
    "source": "wiki"
   },
-  "An Iron Heart Part II#060": {
+  "An Iron Heart Part II#066": {
    "src": "Don't think you'll go unrewarded, soldier. There will be justice for this grave defilement of our people.",
    "dst": "士兵，你的功勞不會被埋沒。我們的人民遭到如此糟蹋，一定要討回公道。",
    "role": "desc",

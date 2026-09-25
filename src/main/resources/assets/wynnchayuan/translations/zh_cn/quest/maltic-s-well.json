@@ -1,12 +1,84 @@
 {
  "_meta": {
   "quest": "Maltic's Well",
-  "count": 23,
+  "count": 29,
   "translated": 23,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Maltic's Well#000": {
+   "src": "Please do something! I know {p} isn't of much importance to you humans, being a villager settlement, but...my son!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#001": {
+   "src": "New Quest Started: {p}'s Well",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "New Quest Started: {p} Trouble",
+    "file": "quest/tempo-town-trouble.json",
+    "ratio": 0.814,
+    "reason": "candidate"
+   }
+  },
+  "Maltic's Well#002": {
+   "src": "I don't know why they call me a witch. This one's father made fun of my looks, so I'll turn his son into a Grook!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
+    "file": "quest/maltic-s-well.json",
+    "ratio": 0.879,
+    "reason": "candidate"
+   }
+  },
+  "Maltic's Well#003": {
+   "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The... the Beast-That-Eats-{p}-Guards-For-Brunch!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#004": {
+   "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing this cowl, and have warts.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#005": {
+   "src": "I cannot thank you enough for your help!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#006": {
    "src": "Talk to Rynend located in {p} at [-{~}, {~}, -{~}]",
    "dst": "与 {p} [-{~}, {~}, -{~}] 的 Rynend 对话",
    "role": "desc",
@@ -16,7 +88,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Maltic's Well#001": {
+  "Maltic's Well#007": {
    "src": "Please help us! We called for a {p} guard days ago, but Humans tend to forget this little village.",
    "dst": "请帮帮我们！我们几天前就请求 {p} 派守卫来了，可人类总是会忘了这个小村子。",
    "role": "desc",
@@ -26,7 +98,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#002": {
+  "Maltic's Well#008": {
    "src": "Last week, an evil witch found refuge in our old well. Normally this wouldn't be a problem...",
    "dst": "上个星期，一个邪恶的女巫躲进了我们的老井。平常这倒不是什么问题……",
    "role": "desc",
@@ -36,7 +108,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#003": {
+  "Maltic's Well#009": {
    "src": "But she's lured my child into the well! My only child! He was born in Wynn, that makes him a Wynn citizen!",
    "dst": "可她把我的孩子引进了井里！我唯一的孩子！他是在 Wynn 出生的，他可是 Wynn 的公民！",
    "role": "desc",
@@ -46,7 +118,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#004": {
+  "Maltic's Well#010": {
    "src": "Please do something! I know {p} isn't of importance to you humans, being a Villager settlement, but...my son!",
    "dst": "求你想想办法！我知道 {p} 是村民的聚落，对你们人类来说不重要，可是……我的儿子啊！",
    "role": "desc",
@@ -56,7 +128,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#005": {
+  "Maltic's Well#011": {
    "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",
    "dst": "调查 [-{~}, {~}, -{~}] 的 {p} 老井，把 [{~} 女巫的空瓶子] 带给 Rynend",
    "role": "desc",
@@ -66,7 +138,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Maltic's Well#006": {
+  "Maltic's Well#012": {
    "src": "Help me! Someone! The witch is being mean!!",
    "dst": "救命！谁来救救我！女巫好坏！！",
    "role": "desc",
@@ -76,7 +148,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Maltic's Well#007": {
+  "Maltic's Well#013": {
    "src": "I wondered when they'd send the famous {p} guards. You'll never get me!",
    "dst": "我还在想他们什么时候会派出大名鼎鼎的 {p} 守卫呢。你永远抓不到我！",
    "role": "desc",
@@ -86,7 +158,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#008": {
+  "Maltic's Well#014": {
    "src": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
    "dst": "我不知道他们为什么叫我女巫。魔法到处都有，你知道吧。这孩子的爸爸嘲笑我的长相，所以我要把他儿子变成 Grook！",
    "role": "desc",
@@ -96,7 +168,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#009": {
+  "Maltic's Well#015": {
    "src": "Treat me like a witch, I'll act like one, darn it! You'll have to pass through my dastardly magical defenses to find me!",
    "dst": "把我当女巫，我就做个女巫给你们看，可恶！你得先闯过我阴险的魔法防御才能找到我！",
    "role": "desc",
@@ -106,7 +178,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#010": {
+  "Maltic's Well#016": {
    "src": "Oh...drat. I never could get that spell right. Well, now you'll have to guess the way, um, you fool! Turn back now, for, uh...",
    "dst": "噢……糟了。那个法术我从来就没施对过。好吧，那你只能自己猜路了，呃，你这笨蛋！现在回头还来得及，因为，呃……",
    "role": "desc",
@@ -116,7 +188,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#011": {
+  "Maltic's Well#017": {
    "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The, um...the Beast-What-Eats-{p}-Guards-For-Brunch!! Totally!",
    "dst": "……因为如果你选错了门，就会被送到一头野兽面前，一头最邪恶的野兽！那个，呃……那个早午餐专吃 {p} 守卫的野兽！！绝对是！",
    "role": "desc",
@@ -126,7 +198,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#012": {
+  "Maltic's Well#018": {
    "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing pointy hats, and have warts.",
    "dst": "噢……我就知道骗不了你。其实啊，我的魔法真的没那么厉害。我只是喜欢戴尖帽子，还长了疣。",
    "role": "desc",
@@ -136,7 +208,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#013": {
+  "Maltic's Well#019": {
    "src": "Maybe if the people of this village weren't so mean to me, I wouldn't have been forced to live here.",
    "dst": "要是这个村子的人对我没那么坏，我也不会被逼得住在这里。",
    "role": "desc",
@@ -146,7 +218,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#014": {
+  "Maltic's Well#020": {
    "src": "I know it's a crime, but his father and the rest of the villagers here hunt me like I'm a rabid dog!",
    "dst": "我知道这是犯罪，可他爸爸和这里其他村民像追疯狗一样追着我！",
    "role": "desc",
@@ -156,7 +228,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#015": {
+  "Maltic's Well#021": {
    "src": "I wasn't really going to turn this boy into a Grook. I doubt I could even make him grow one feather. I mean, watch...",
    "dst": "我本来就没打算真把这孩子变成 Grook。我连让他长出一根羽毛都做不到。你看好了……",
    "role": "desc",
@@ -166,7 +238,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#016": {
+  "Maltic's Well#022": {
    "src": "Aiyeeee! What's happening to meeee?!",
    "dst": "啊啊啊！我怎么了啊啊啊？！",
    "role": "desc",
@@ -176,7 +248,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Maltic's Well#017": {
+  "Maltic's Well#023": {
    "src": "...oh my gosh it worked???? It worked, I did a spell for once in my miserable life!!",
    "dst": "……天哪居然成功了？？？？成功了，我这悲惨的一生总算施成了一次法术！！",
    "role": "desc",
@@ -186,7 +258,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#018": {
+  "Maltic's Well#024": {
    "src": "W-Wait, that's not good at all, you're gonna... No! You won't take me out of here alive!",
    "dst": "等、等等，这一点都不好，你会……不！你别想活着把我带出去！",
    "role": "desc",
@@ -196,7 +268,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#019": {
+  "Maltic's Well#025": {
    "src": "Thank you for saving me from the witch... She was nice at first and made me cookies, but I want to go home now.",
    "dst": "谢谢你把我从女巫手里救出来……她一开始对我很好，还给我做饼干，可是我现在想回家了。",
    "role": "desc",
@@ -206,7 +278,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Maltic's Well#020": {
+  "Maltic's Well#026": {
    "src": "Oh my son! What happened down there? Erh, not a witch, you say?",
    "dst": "噢，我的儿子！下面发生了什么？呃，你说她不是女巫？",
    "role": "desc",
@@ -216,7 +288,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#021": {
+  "Maltic's Well#027": {
    "src": "Preposterous! She wore a hat and had warts! I guess it's too late now... Thank you so much for your help.",
    "dst": "荒唐！她戴着帽子还长着疣！我想现在说什么也晚了……非常感谢你的帮忙。",
    "role": "desc",
@@ -226,7 +298,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#022": {
+  "Maltic's Well#028": {
    "src": "I have very little to offer you as reward... I hope my appreciation will be more than enough!",
    "dst": "我没什么能给你当报酬的……希望我的感激就足够了！",
    "role": "desc",

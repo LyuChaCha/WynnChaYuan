@@ -64,6 +64,8 @@ public final class BracketAccentTest {
         nameContainsType();
         miniQuest();
         wrappedSpan();
+        splitWord();
+        spanAcrossRows();
         noBracketsInTranslation();
         plurals();
         rules();
@@ -208,6 +210,9 @@ public final class BracketAccentTest {
               is(colourOf(built, "獵殺怨靈與幻影"), NAME));
     }
 
+    /** 折行用的換行字元，跟 LineTranslator 那邊同一個。 */
+    private static final char NL = '\n';
+
     private static final int BODY = 0xAAAAAA;   // 灰：散文
     private static final int ITEM = 0x00AAAA;   // 青：括號裡的物品
     private static final int COORD = 0xFFFFFF;  // 白：座標
@@ -264,6 +269,99 @@ public final class BracketAccentTest {
         // 座標那組不可以跟著剝：「, 」「-」到處都有，貼上去會貼到別的地方
         check("［跨行括號］座標那組沒有多登記短到會撞的片段（實際：" + texts + "）",
               !texts.contains(", ") && !texts.contains("-"));
+    }
+
+    /**
+     * 斷行落在<b>詞中間</b>：「…Kanderstone 寶」換行「石]」。
+     *
+     * <h2>實機回報</h2>
+     * 採集站那張卡：「把 {@code [32 Kanderstone 錠]} 或 {@code [32 Kanderstone 寶}」
+     * 換行「石{@code ]} 交到採集站 {@code [採礦等級 71]}，」——下半截掉回底色。
+     *
+     * <h2>為什麼 keepAccentsWhole 救不了</h2>
+     * 它最多搬十二個字，而這裡要搬的是「{@code  Kanderstone 寶}」十五個字；
+     * 真搬下去會把面板撐寬一大截。{@link LineTranslator#halvesAcrossBreaks}
+     * 改成認這一刀，兩半各自登記。
+     */
+    private static void splitWord() {
+        String[] flowed = {
+            "把 [{~} Kanderstone 錠] 或 [{~} Kanderstone 寶",
+            "石] 交到採集站 [採礦等級 {~}]，",
+        };
+        List<LineParts.Piece> accents = List.of(
+                piece("[{~} Kanderstone 寶石]", ITEM),
+                piece(" Kanderstone 寶石]", ITEM),
+                piece("[{~} Kanderstone 錠]", ITEM),
+                piece(" Kanderstone 錠]", ITEM));
+        List<String> texts = new ArrayList<>();
+        for (LineParts.Piece half
+                : LineTranslator.halvesAcrossBreaks(flowed, accents)) {
+            texts.add(half.text());
+        }
+        System.out.println("［詞被切開］補登記的兩半：" + texts);
+
+        check("★［詞被切開］上一行那半登記了", texts.contains(" Kanderstone 寶"));
+        check("★［詞被切開］下一行那半登記了（收尾那個 ] 靠它才有色）",
+              texts.contains("石]"));
+        // 沒被切到的那一段不該多出東西來
+        check("［詞被切開］沒被切到的重點段不補（實際：" + texts + "）",
+              !texts.contains(" Kanderstone 錠]"));
+        // 含佔位符的那一半不登記：畫的時候它在畫面上不連續
+        for (String t : texts) {
+            check("［詞被切開］補的兩半都不含佔位符（" + t + "）",
+                  t.indexOf('{') < 0 && t.indexOf('}') < 0);
+        }
+    }
+
+    /**
+     * 括號落在折行處時，整組括號著色不可以整個關掉。
+     *
+     * <h2>實機回報</h2>
+     * 採集站那張卡：「把 {@code [24 鮭魚油]} 或 {@code [}」換行「{@code 24 鮭魚肉]}
+     * 交到採集站，」——兩組括號都只剩底色，而且左中括號孤零零留在行尾。
+     *
+     * <h2>怎麼壞的</h2>
+     * {@code bracketAccents} 拿到的譯文<b>已經照面板寬度折過</b>，而
+     * {@code squareSpans} 先前碰到跨行的括號就 {@code return List.of()}——
+     * 一組跨行，整張卡的括號全部沒得貼。三、四行的卡片落在折行處是常態。
+     *
+     * <p>改成把斷行接回來再收。接回來的字面正好是 {@code keepAccentsWhole}
+     * 要的：它靠「上一行結尾 ＋ 下一行開頭」認出被切開的詞，再把前半搬下去。
+     */
+    private static void spanAcrossRows() {
+        List<LineParts.Piece> runs = List.of(
+                piece("Bring ", BODY), piece("[24 Salmon Oil]", ITEM), piece(" or ", BODY),
+                piece("[24", ITEM),
+                piece("Salmon Meat]", ITEM), piece(" to the Gathering", BODY),
+                piece("Post at ", BODY), piece("[-57, 46, -2166]", COORD));
+        // 面板寬度折出來的三行——第二組括號被切在 `[` 後面
+        String[] flowed = {
+            "把 [{~} 鮭魚油] 或 [",
+            "{~} 鮭魚肉] 交到採集站，",
+            "座標 [-{~}, {~}, -{~}]",
+        };
+        List<String> texts = new ArrayList<>();
+        for (LineParts.Piece accent
+                : LineTranslator.bracketAccents(runs, flowed, colour(BODY))) {
+            texts.add(accent.text());
+        }
+        System.out.println("［跨行的整組］登記到的重點段：" + texts);
+
+        check("★［跨行的整組］沒有整組放棄（拿到 " + texts.size() + " 段）", !texts.isEmpty());
+        check("★［跨行的整組］被切開的那組接回來了", texts.contains("[{~} 鮭魚肉]"));
+        check("［跨行的整組］沒被切到的那組照樣在", texts.contains("[{~} 鮭魚油]"));
+        for (String t : texts) {
+            check("［跨行的整組］登記的字面裡沒有換行（" + t + "）",
+                  t.indexOf(NL) < 0);
+        }
+
+        // 接回來之後 keepAccentsWhole 就搬得動行尾那個孤零零的 [
+        String[] moved = LineTranslator.keepAccentsWhole(
+                flowed, List.of(piece("[{~} 鮭魚肉]", ITEM)));
+        check("★［跨行的整組］行尾那個 [ 被搬到下一行（拿到 「" + moved[0]
+              + "」／「" + moved[1] + "」）",
+              !moved[0].stripTrailing().endsWith("[")
+              && moved[1].startsWith("[{~} 鮭魚肉]"));
     }
 
     /**

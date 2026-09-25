@@ -1,12 +1,62 @@
 {
  "_meta": {
   "quest": "Redbeard's Booty",
-  "count": 42,
+  "count": 47,
   "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Redbeard's Booty#000": {
+   "src": "Aye! Let's find the booty and bring back some doubloons! Here be that map I snagged. Swim or whatever ye landlubbers do to get to Pirate Cove. It'll be the first house to the right when ye arrive.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#001": {
+   "src": "Do ye remember where to go?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#002": {
+   "src": "No? The crew be loiterin' at Pirate Cove. I'll be along soon, don't ye worry!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#003": {
+   "src": "You are not able to move but you still hear the ongoing conversation.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#004": {
+   "src": "What? Another clue! This be just a wild grook hunt, where be the real booty?! No one ever got rich off a heap o' keys!! Maybe this 'ere jewel attached will sell...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#005": {
    "src": "Talk with Marston in the ocean at [-{~} {~} -{~}]",
    "dst": "[-{~} {~} -{~}]의 바다에서 Marston과 대화하세요",
    "role": "desc",
@@ -16,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Redbeard's Booty#001": {
+  "Redbeard's Booty#006": {
    "src": "Ah, ahoy matey! Are ye here to get a glimpse of ol' Redbeard's sunken galleon as well?",
    "dst": "아, 어이 친구! 너도 늙은 Redbeard의 가라앉은 갤리온을 구경하러 왔냐?",
    "role": "desc",
@@ -26,7 +76,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#002": {
+  "Redbeard's Booty#007": {
    "src": "A fine ship it once was, aye? Accordin' to the stories, it sank in one o' the greatest sea battles in history! The cap'n sank beneath the waves, ne'er to be seen again!",
    "dst": "한때는 멋진 배였지, 응? 이야기로는 역사상 가장 큰 해전에서 가라앉았다더군! 선장은 파도 아래로 가라앉아 다신 보이지 않았지!",
    "role": "desc",
@@ -36,7 +86,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#003": {
+  "Redbeard's Booty#008": {
    "src": "...Say. Have ye ever wanted to go on a real treasure hunt? Ye look like someone with an eye for treasure, aye?",
    "dst": "...그런데 말이야. 진짜 보물찾기 해 보고 싶은 적 없냐? 보물 볼 줄 아는 눈을 가진 것 같은데, 응?",
    "role": "desc",
@@ -46,7 +96,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#004": {
+  "Redbeard's Booty#009": {
    "src": "Good for ye then! I bought meself a real treasure map on Pirate Cove, a fine deal if ye ask me. And, if the jack wasn't fibbing, it leads to the feared Redbeard's real treasure!",
    "dst": "그거 잘됐군! Pirate Cove에서 진짜 보물 지도를 샀거든, 내가 보기엔 헐값이야. 그놈이 거짓말 안 했다면, 이게 그 무시무시한 Redbeard의 진짜 보물로 이어진다고!",
    "role": "desc",
@@ -56,7 +106,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#005": {
+  "Redbeard's Booty#010": {
    "src": "I ventured 'round, spied some fine jacks at the island, and I collected a crew to join me on me grand, fantastic voyage!",
    "dst": "여기저기 돌다가 섬에서 쓸 만한 놈들을 봐 두고, 이 몸의 거창하고 끝내주는 항해에 함께할 선원을 모았지!",
    "role": "desc",
@@ -66,7 +116,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#006": {
+  "Redbeard's Booty#011": {
    "src": "O' course, there always be room for another! Ye joinin'? We could use another hand.",
    "dst": "물론 자리는 늘 하나 더 있지! 합류할래? 일손이 하나 더 있으면 좋겠는데.",
    "role": "desc",
@@ -76,7 +126,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#007": {
+  "Redbeard's Booty#012": {
    "src": "Aye! Let's find the booty and bring back some doubloons! Here be that map I snagged. Swim or whatever you landlubbers do to get to Pirate Cove. It'll be the first house to the right when ye arrive.",
    "dst": "좋아! 보물 찾아서 금화 좀 챙겨 오자고! 이게 내가 구한 지도다. 헤엄을 치든 뭍사람 방식대로 하든 Pirate Cove로 가. 도착하면 오른쪽 첫 번째 집이야.",
    "role": "desc",
@@ -86,7 +136,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#008": {
+  "Redbeard's Booty#013": {
    "src": "Find Marston's crew on Pirate Cove at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]의 Pirate Cove에서 Marston의 선원들을 찾으세요",
    "role": "desc",
@@ -96,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Redbeard's Booty#009": {
+  "Redbeard's Booty#014": {
    "src": "And that be when ye will...",
    "dst": "그리고 그때 네가...",
    "role": "desc",
@@ -106,7 +156,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#010": {
+  "Redbeard's Booty#015": {
    "src": "Cor lad...ye don' look like a pirate ta me, and I be but a young lass!",
    "dst": "이런 꼬마야... 해적으론 안 보이는데. 난 그냥 젊은 아가씨고!",
    "role": "desc",
@@ -116,7 +166,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#011": {
+  "Redbeard's Booty#016": {
    "src": "'s right, bucko. Who be ye, bargin' into our home in yer fancy armour 'n whatnot?",
    "dst": "그렇지, 친구. 번쩍이는 갑옷 따위 입고 우리 집에 쳐들어온 넌 누구냐?",
    "role": "desc",
@@ -126,7 +176,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#012": {
+  "Redbeard's Booty#017": {
    "src": "Ah, ye be accompanyin' Marston, eh? Well if ye insist on that, where be the man 'himself?",
    "dst": "아, Marston이랑 같이 왔다고? 그렇게 우긴다면, 그 양반은 어디 있는데?",
    "role": "desc",
@@ -136,7 +186,7 @@
    "speaker": "Argus",
    "source": "wiki"
   },
-  "Redbeard's Booty#013": {
+  "Redbeard's Booty#018": {
    "src": "Comin' later? Hm. Well, more hands always be helpful. Let us go down to me ship, the Black Ring.",
    "dst": "나중에 온다고? 흠. 뭐, 일손은 많을수록 좋지. 내 배 Black Ring으로 내려가자.",
    "role": "desc",
@@ -146,7 +196,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#014": {
+  "Redbeard's Booty#019": {
    "src": "So he told ye about the plan? We'll bathe in doubloons when we get back! Ah, me fair lass will be so happy.",
    "dst": "그 녀석이 계획 얘기했어? 돌아가면 금화로 목욕하게 될 거야! 아, 내 애인이 얼마나 좋아할까.",
    "role": "desc",
@@ -156,7 +206,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#015": {
+  "Redbeard's Booty#020": {
    "src": "Hop aboard the Black Ring down at the dock of Pirate Cove.",
    "dst": "Pirate Cove 부두에서 Black Ring에 올라타세요.",
    "role": "desc",
@@ -166,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Redbeard's Booty#016": {
+  "Redbeard's Booty#021": {
    "src": "Find the treasure.",
    "dst": "보물을 찾으세요.",
    "role": "desc",
@@ -176,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Redbeard's Booty#017": {
+  "Redbeard's Booty#022": {
    "src": "Aha, quick on yer feet, lad! Ye got 'ere before us!",
    "dst": "하, 발 빠른데, 꼬마! 우리보다 먼저 왔네!",
    "role": "desc",
@@ -186,7 +236,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#018": {
+  "Redbeard's Booty#023": {
    "src": "No trace o' Marston yet?",
    "dst": "Marston은 아직 흔적도 없어?",
    "role": "desc",
@@ -196,7 +246,7 @@
    "speaker": "Argus",
    "source": "wiki"
   },
-  "Redbeard's Booty#019": {
+  "Redbeard's Booty#024": {
    "src": "How's about we wait up fer him? He's the one who's givin us the opportunity fer this hunt, anyways.",
    "dst": "좀 기다려 주는 게 어때? 어차피 이번 보물찾기 기회를 준 게 그 녀석이잖아.",
    "role": "desc",
@@ -206,7 +256,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#020": {
+  "Redbeard's Booty#025": {
    "src": "I be getting impatient... The whole crew is 'ere, 'cept fer him!",
    "dst": "슬슬 참을성이 바닥나... 선원이 다 모였는데, 그 녀석만 없어!",
    "role": "desc",
@@ -216,7 +266,7 @@
    "speaker": "Argus",
    "source": "wiki"
   },
-  "Redbeard's Booty#021": {
+  "Redbeard's Booty#026": {
    "src": "Argh! Where be our mate? It be getting dark out! We will have to leave Marston at land.",
    "dst": "으악! 우리 친구는 어디 간 거야? 날이 저문다고! Marston은 뭍에 두고 가야겠어.",
    "role": "desc",
@@ -226,7 +276,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#022": {
+  "Redbeard's Booty#027": {
    "src": "Do ya have the map Marston bought?",
    "dst": "Marston이 산 지도 갖고 있냐?",
    "role": "desc",
@@ -236,7 +286,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#023": {
+  "Redbeard's Booty#028": {
    "src": "Let us take a looksie at the map and see where to go.",
    "dst": "지도 좀 보고 어디로 갈지 정하자.",
    "role": "desc",
@@ -246,7 +296,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#024": {
+  "Redbeard's Booty#029": {
    "src": "It seems like one of these islands have the treasure... A'ight, yer in charge, landlubber! Set us on a course fer an island!",
    "dst": "이 섬들 중 하나에 보물이 있는 것 같은데... 좋아, 네가 대장이다, 뭍사람! 섬으로 항로를 잡아!",
    "role": "desc",
@@ -256,7 +306,7 @@
    "speaker": "Argus",
    "source": "wiki"
   },
-  "Redbeard's Booty#025": {
+  "Redbeard's Booty#030": {
    "src": "Ahoy, this must be the booty. Fret not, Argus is keepin' the ship prepared so we can leave.",
    "dst": "어이, 이게 그 보물이겠군. 걱정 마, Argus가 배를 준비해 둬서 바로 뜰 수 있어.",
    "role": "desc",
@@ -266,7 +316,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#026": {
+  "Redbeard's Booty#031": {
    "src": "A'ight, let's us dig it up, jacks!",
    "dst": "좋아, 파내자고, 친구들!",
    "role": "desc",
@@ -276,7 +326,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#027": {
+  "Redbeard's Booty#032": {
    "src": "Aha, I see somethin' gleaming in there! Methinks we hit gold, lads.",
    "dst": "하, 안에서 뭔가 번쩍인다! 금을 캔 것 같다, 얘들아.",
    "role": "desc",
@@ -286,7 +336,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#028": {
+  "Redbeard's Booty#033": {
    "src": "Now Martim, knock the lubber out.",
    "dst": "자, Martim, 이 뭍사람을 기절시켜.",
    "role": "desc",
@@ -296,7 +346,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#029": {
+  "Redbeard's Booty#034": {
    "src": "What? Another clue! The be just a wild grook hunt, where be the real booty?! No one ever got rich off a heap o' keys!! Maybe this 'ere jewel attached will sell...",
    "dst": "뭐? 또 단서야! 순 헛수고잖아, 진짜 보물은 어디 있어?! 열쇠 무더기로 부자 된 놈은 없다고!! 여기 붙은 보석은 팔릴지도...",
    "role": "desc",
@@ -306,7 +356,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#030": {
+  "Redbeard's Booty#035": {
    "src": "Wait, there be a clue on the key! Presented to the ruined Galleon, a true path forward will arise.",
    "dst": "잠깐, 열쇠에 단서가 있어! 부서진 갤리온에 바치면, 참된 길이 열리리라.",
    "role": "desc",
@@ -316,7 +366,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#031": {
+  "Redbeard's Booty#036": {
    "src": "Garh...I be losin' my patience. Argus arrived, let's ditch the lubber before they awake, hm? This island be hidden by magic, ain't no way they're gettin' found.",
    "dst": "으... 참을성이 바닥난다. Argus가 왔으니, 깨기 전에 이 뭍사람은 버리고 가자, 응? 이 섬은 마법으로 숨겨져 있어서 절대 못 찾을 거야.",
    "role": "desc",
@@ -326,7 +376,7 @@
    "speaker": "Martim",
    "source": "wiki"
   },
-  "Redbeard's Booty#032": {
+  "Redbeard's Booty#037": {
    "src": "Arright! This key... We might be able to bring Redbeard 'imself back to life... He'll strike terror in the seas again, and we will be 'is crew!",
    "dst": "좋아! 이 열쇠로... Redbeard 본인을 되살릴 수 있을지도 몰라... 그가 다시 바다를 공포에 떨게 하고, 우린 그의 선원이 되는 거야!",
    "role": "desc",
@@ -336,7 +386,7 @@
    "speaker": "Karkun",
    "source": "wiki"
   },
-  "Redbeard's Booty#033": {
+  "Redbeard's Booty#038": {
    "src": "Leave the hidden island and stop the pirates from stealing Redbeard's Booty.",
    "dst": "숨겨진 섬을 떠나 해적들이 Redbeard의 보물을 훔치지 못하게 막으세요.",
    "role": "desc",
@@ -346,7 +396,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Redbeard's Booty#034": {
+  "Redbeard's Booty#039": {
    "src": "Talk to Marston about his crew at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]에서 Marston과 그의 선원들에 대해 이야기하세요.",
    "role": "desc",
@@ -356,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Redbeard's Booty#035": {
+  "Redbeard's Booty#040": {
    "src": "Can't say I expected all that... Those dogs are quick, eh?",
    "dst": "이렇게 될 줄은 몰랐는데... 그 개놈들 손이 빠르군, 응?",
    "role": "desc",
@@ -366,7 +416,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#036": {
+  "Redbeard's Booty#041": {
    "src": "Fer a landlubber, ye sure are quick. When I got ta Pirate Cove, ye were already but a speck on the horizon.",
    "dst": "뭍사람치고는 정말 빠르구먼. 내가 Pirate Cove에 갔을 땐 넌 벌써 수평선 위 점 하나였어.",
    "role": "desc",
@@ -376,7 +426,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#037": {
+  "Redbeard's Booty#042": {
    "src": "Speakin' of, what'n the name o' Davy Jones' Locket happened out there?!",
    "dst": "그건 그렇고, 대체 거기서 무슨 난리가 난 거야?!",
    "role": "desc",
@@ -386,7 +436,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#038": {
+  "Redbeard's Booty#043": {
    "src": "Ye look a bit bruised! Reckon ye ran aground o' trouble with 'em too, eh?",
    "dst": "좀 멍들었네! 너도 그놈들이랑 한바탕한 모양이지, 응?",
    "role": "desc",
@@ -396,7 +446,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#039": {
+  "Redbeard's Booty#044": {
    "src": "Well, lad! Methinks ye oughta go in after 'em! We may be a rowdy lot, but a mutiny's somethin' ye don't tolerate.",
    "dst": "자, 친구! 네가 쫓아가야겠다! 우리가 거친 무리긴 해도, 반란만큼은 용납 못 하지.",
    "role": "desc",
@@ -406,7 +456,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#040": {
+  "Redbeard's Booty#045": {
    "src": "They don't deserve that treasure, lad! It ain't be mine either, since I missed ye. That gold be yours fer the takin...so take it!",
    "dst": "그 보물은 그놈들 몫이 아니야, 친구! 널 놓쳤으니 내 것도 아니고. 그 금은 네가 가져갈 몫이야... 그러니 가져가!",
    "role": "desc",
@@ -416,7 +466,7 @@
    "speaker": "Marston",
    "source": "wiki"
   },
-  "Redbeard's Booty#041": {
+  "Redbeard's Booty#046": {
    "src": "Speakin' of...I ain't got much a penny ta my name, but I found this fish while ye were gone. I hear it sells for a decent haul, so here.",
    "dst": "그건 그렇고... 가진 돈은 거의 없지만, 네가 없는 동안 이 물고기를 낚았어. 꽤 값이 나간다니까, 자.",
    "role": "desc",

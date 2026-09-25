@@ -1,12 +1,128 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 81,
+  "count": 91,
   "translated": 81,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
+  "Mushroom Man#000": {
+   "src": "I'm sorry, recruit, but that passage is blocked. We used to use it, but not anymore...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
   "Mushroom Man#001": {
+   "src": "Halt! You cannot go down this cave, it is blocked.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#002": {
+   "src": "He's... difficult. He's the son of my sister, who we lost to spiders some time ago.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "He's... difficult. He's the son of my sister, who was unfortunately killed by spiders some time ago.",
+    "file": "quest/supply-and-delivery.json",
+    "ratio": 0.852,
+    "reason": "candidate"
+   }
+  },
+  "Mushroom Man#003": {
+   "src": "With his father out of the picture, I had to take him in. He's a grown man now, yes, but... I fear the loss has taken its toll on us both.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#004": {
+   "src": "I truly hope he will cease with these ridiculous ploys soon... but I can't bring myself to do more than give him a stern talking to.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#005": {
+   "src": "He's a good man, truly. I believe that with my whole heart. I only wish he would show that side of himself to others.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#006": {
+   "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#007": {
+   "src": "You need to be Woodcutting Lv. {~} to start this Mini-Quest.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#008": {
+   "src": "We can kill spiders! Right, {u}? Come on, this is what we're here to do! We became soldiers to help the people of Wynn, didn't we? We'll help you get your mushrooms back, sir.",
+   "dst": "蜘蛛なら倒せます！ね、{u}？ほら、こういうことをしに来たんだろ！Wynn の人々を助けるために兵士になったんだから。キノコは取り戻しますよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#009": {
+   "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#010": {
+   "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#011": {
    "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushrooms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-why wouldn't it b-be?",
    "dst": "お、おお！い、いや、何もないよ。な、何も。お、俺のキ、キ、キノコは…だ、大丈夫だ。な、なんで聞くんだ？ぜ、全部…順調だよ。じゅ、順調じゃないわけないだろ？",
    "role": "desc",
@@ -16,7 +132,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#002": {
+  "Mushroom Man#012": {
    "src": "Soon... s-soon I will have my m-mushrooms again...",
    "dst": "もうすぐ…も、もうすぐまた俺のキ、キノコが…",
    "role": "desc",
@@ -26,7 +142,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#003": {
+  "Mushroom Man#013": {
    "src": "G-gah! D-don't you know it's rude to-... to e-eavesdrop?",
    "dst": "ひ、ひいっ！ぬ、盗み聞きは失礼だって…し、知らないのか？",
    "role": "desc",
@@ -36,7 +152,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#004": {
+  "Mushroom Man#014": {
    "src": "I-... this is bad. This is really bad. We need to tell the Mayor, now.",
    "dst": "ま…まずい。本当にまずい。すぐ村長に知らせないと。",
    "role": "desc",
@@ -46,7 +162,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#005": {
+  "Mushroom Man#015": {
    "src": "Right! Right. We've arrived from {p}, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
    "dst": "そう！そうです。{p} から来ました。悪い知らせと援助のお願いです。森の蜘蛛が凶暴になり、村を脅かしています。",
    "role": "desc",
@@ -56,7 +172,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#006": {
+  "Mushroom Man#016": {
    "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with him.",
    "dst": "それに Van 中尉が腐敗した拠点の襲撃を計画しています！人手が増えれば喜ぶはずです。",
    "role": "desc",
@@ -66,7 +182,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#007": {
+  "Mushroom Man#017": {
    "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] の {p} で Tasim と話す。",
    "role": "desc",
@@ -76,7 +192,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#008": {
+  "Mushroom Man#018": {
    "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
    "dst": "{u}、やあ！ここ、すごくいい所だよね？{p} に向かう前にもう少しいたいけど、すぐ準備できるよ。",
    "role": "desc",
@@ -86,7 +202,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#009": {
+  "Mushroom Man#019": {
    "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
    "dst": "その間、この場所のために何かできないか考えてたんだ…ひとつ思いついたかも。",
    "role": "desc",
@@ -96,7 +212,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#010": {
+  "Mushroom Man#020": {
    "src": "Take a look at that villager over there. He's acting a little off, like he's got something going on. I wonder...",
    "dst": "あそこの村人を見て。様子がちょっと変だよね、何かありそうだ。もしかして…",
    "role": "desc",
@@ -106,7 +222,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#011": {
+  "Mushroom Man#021": {
    "src": "Alright, I've decided. I'm feeling a little restless, so let's go over there and see if there's anything we can help with!",
    "dst": "よし、決めた。なんだか落ち着かないし、あっちに行って何か手伝えないか見てみよう！",
    "role": "desc",
@@ -116,7 +232,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#012": {
+  "Mushroom Man#022": {
    "src": "Maybe we can leave this place better off than it was when we got here!",
    "dst": "来た時よりもいい場所にして、ここを去れるかもね！",
    "role": "desc",
@@ -126,7 +242,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#013": {
+  "Mushroom Man#023": {
    "src": "Speak to the strange man at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] にいる奇妙な男と話す。",
    "role": "desc",
@@ -136,7 +252,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#014": {
+  "Mushroom Man#024": {
    "src": "G-... Hi! H-how can I help you on this... this p-perfectly fine and n-n-normal day!",
    "dst": "や…やあ！こ、この…この完ぺきにふ、ふ、普通の日に、な、何かご用で！",
    "role": "desc",
@@ -146,7 +262,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#015": {
+  "Mushroom Man#025": {
    "src": "Sorry to interrupt- we're soldiers traveling through this town, and you looked like the sort of person who might need the kind of help soldiers can provide. Anything we can help with?",
    "dst": "お邪魔してすみません。僕たちはこの町を通りかかった兵士で、あなたが兵士の助けを必要としていそうに見えたので。何かお手伝いできることは？",
    "role": "desc",
@@ -156,7 +272,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#016": {
+  "Mushroom Man#026": {
    "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushroms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-Why wouldn't it b-be?",
    "dst": "お、おお！い、いや、何もないよ。な、何も。お、俺のキ、キ、キノコは…だ、大丈夫だ。な、なんで聞くんだ？ぜ、全部…順調だよ。じゅ、順調じゃないわけないだろ？",
    "role": "desc",
@@ -166,7 +282,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#017": {
+  "Mushroom Man#027": {
    "src": "...O-okay, fine, y-you caught me! My mushrooms... my m-mushrooms aren't fine! T-they're bad, even! A-are you hap-... happy now?",
    "dst": "…わ、わかったよ、バレた！俺のキノコは…キ、キノコは大丈夫じゃない！ひ、ひどいくらいだ！こ、これで満、満足か？",
    "role": "desc",
@@ -176,7 +292,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#018": {
+  "Mushroom Man#028": {
    "src": "Ehm- no, but that's why we're here! Is there anything we can do to help your... uh. Your mushrooms?",
    "dst": "え、いや、でもだからこそ来たんです！何かお手伝いできることは…えっと。キノコのことで？",
    "role": "desc",
@@ -186,7 +302,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#019": {
+  "Mushroom Man#029": {
    "src": "Hm. One soldier, two s-soldier... Y-you look weak. I've s-seen str-... stronger. B-But- eheh, the- the s-stronger soldiers are... not here. Y-you'll be good enough. Maybe.",
    "dst": "ふむ。兵士が一人、ふ、二人…よ、弱そうだな。もっと強いのを見、見たことある。で、でも、へへ、つ、強い兵士は…ここにいない。お、お前らで足りるだろ。たぶん。",
    "role": "desc",
@@ -196,7 +312,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#020": {
+  "Mushroom Man#030": {
    "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
    "dst": "お、俺のお気に入りのキノコ場。も、もう使えない。蜘蛛だ。た、たくさんの蜘蛛。の、の、乗っ取られた…キノコが…採れない。く、く、蜘蛛を倒してくれるか？キノコ。",
    "role": "desc",
@@ -206,17 +322,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#021": {
-   "src": "We can kill spiders! Right, {u}? Come on, this is what we're here to do! We became soldiers to help the people of Wynn, didn't we? We'll help you get your mushrooms back sir.",
-   "dst": "蜘蛛なら倒せます！ね、{u}？ほら、こういうことをしに来たんだろ！Wynn の人々を助けるために兵士になったんだから。キノコは取り戻しますよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Mushroom Man#022": {
+  "Mushroom Man#032": {
    "src": "H-hm. Good. I can't m-make soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
    "dst": "う、うむ。いいぞ。キノコがないと…スープが作れない。つ、ついて来い、く、蜘蛛のとこへ案内する。わ、悪い蜘蛛だ。",
    "role": "desc",
@@ -226,7 +332,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#023": {
+  "Mushroom Man#033": {
    "src": "Follow Yahya to his infested mushroom patch at [-{~}, {~}, -{~}].",
    "dst": "Yahya について [-{~}, {~}, -{~}] の荒らされたキノコ畑へ行く。",
    "role": "desc",
@@ -236,7 +342,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#024": {
+  "Mushroom Man#034": {
    "src": "H-here we are. I- I can f-feel the m-m-mushrooms... from here. And the s-spiders! No-... no good.",
    "dst": "つ、着いたぞ。こ、ここからでもキ、キ、キノコを…感じる。く、蜘蛛もだ！よ、よくない。",
    "role": "desc",
@@ -246,7 +352,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#025": {
+  "Mushroom Man#035": {
    "src": "S-so! Mushrooms. Those-... those bad c-creepy c-crawly s-s-spiders... Kill them. P-please?",
    "dst": "そ、それで！キノコ。あの…あの気持ち悪い、う、うじゃうじゃした、く、く、蜘蛛…倒してくれ。た、頼む？",
    "role": "desc",
@@ -256,7 +362,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#026": {
+  "Mushroom Man#036": {
    "src": "We wouldn't have come here if we weren't planning to. Alright, {u}, let's clear out some spiders!",
    "dst": "そのつもりがなきゃ来てないですよ。よし、{u}、蜘蛛を片付けよう！",
    "role": "desc",
@@ -266,7 +372,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#027": {
+  "Mushroom Man#037": {
    "src": "Clear out the spiders from Yahya's favorite mushroom patch at [-{~}, {~}, -{~}], then return and talk to Yahya.",
    "dst": "[-{~}, {~}, -{~}] にある Yahya のお気に入りのキノコ畑から蜘蛛を一掃し、戻って Yahya と話す。",
    "role": "desc",
@@ -276,7 +382,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#028": {
+  "Mushroom Man#038": {
    "src": "I-is it done? S-s-spiders... No m-more spiders? Is my m-m-mushroom patch cl-... cleared?",
    "dst": "お、終わったか？く、く、蜘蛛…もういないか？俺のキ、キ、キノコ畑は…か、片付いた？",
    "role": "desc",
@@ -286,7 +392,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#029": {
+  "Mushroom Man#039": {
    "src": "Looks cleared to me. These are... uh... some fine mushrooms!",
    "dst": "片付いたみたいです。これは…えっと…立派なキノコですね！",
    "role": "desc",
@@ -296,7 +402,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#030": {
+  "Mushroom Man#040": {
    "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
    "dst": "あ、ありがとう兵士たち！す、すごく…いや。ま、まあまあだったかな、たぶん。",
    "role": "desc",
@@ -306,7 +412,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#031": {
+  "Mushroom Man#041": {
    "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
    "dst": "…あ、そうか。今、お、お金を払わなきゃ…だめか？へへ。[{~} エメラルド] で、い、いいか…？",
    "role": "desc",
@@ -316,7 +422,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#032": {
+  "Mushroom Man#042": {
    "src": "...Come on.",
    "dst": "…ちょっと。",
    "role": "desc",
@@ -326,7 +432,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#033": {
+  "Mushroom Man#043": {
    "src": "Oho okay, ok-... okay! It was a joke, don't get all ex-... ex-... excited. Here, just take-",
    "dst": "おっと、わか…わかったよ！冗談だって、そんなに…こ、こ、興奮するなよ。ほら、これを…",
    "role": "desc",
@@ -336,7 +442,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#034": {
+  "Mushroom Man#044": {
    "src": "G-gah! C-creepy! C-c-crawly! S-s-s-spiders!!!",
    "dst": "ひ、ひいっ！き、気持ち悪い！う、う、うじゃうじゃ！く、く、く、蜘蛛！！！",
    "role": "desc",
@@ -346,7 +452,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#035": {
+  "Mushroom Man#045": {
    "src": "Yahya! No!",
    "dst": "Yahya！だめだ！",
    "role": "desc",
@@ -356,7 +462,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#036": {
+  "Mushroom Man#046": {
    "src": "...",
    "dst": "…",
    "role": "desc",
@@ -366,7 +472,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#037": {
+  "Mushroom Man#047": {
    "src": "I-... This is bad. This is really bad. We need to tell the Mayor, now.",
    "dst": "ま…まずい。本当にまずい。すぐ村長に知らせないと。",
    "role": "desc",
@@ -376,7 +482,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#038": {
+  "Mushroom Man#048": {
    "src": "Return to Mayor Alvin at [-{~}, {~}, -{~}] with news about the spiders.",
    "dst": "蜘蛛の知らせを持って [-{~}, {~}, -{~}] の Alvin 村長のもとへ戻る。",
    "role": "desc",
@@ -386,7 +492,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#039": {
+  "Mushroom Man#049": {
    "src": "Ah, hello travelers. You seem to be in a rush- has something happened?",
    "dst": "おや、旅の方。お急ぎのようだが、何かあったのかね？",
    "role": "desc",
@@ -396,7 +502,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#040": {
+  "Mushroom Man#050": {
    "src": "Yes! Yes, something- something has happened. We went with Yahya to help him with a problem he was having with spiders-",
    "dst": "はい！はい、大変なことが。Yahya と一緒に、彼の蜘蛛の問題を手伝いに行ったら…",
    "role": "desc",
@@ -406,7 +512,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#041": {
+  "Mushroom Man#051": {
    "src": "Yes, yes, I know of Yahya's antics... He doesn't seem to be with you. Has he ran off on you, just as Ope did?",
    "dst": "ああ、Yahya の奇行なら知っているよ…一緒ではないようだね。Ope のように君たちを置いて逃げたのかね？",
    "role": "desc",
@@ -416,7 +522,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#042": {
+  "Mushroom Man#052": {
    "src": "No- no. When we finished clearing out the spiders, we were swarmed- and they took him!",
    "dst": "い、いえ。蜘蛛を片付けたら大群に囲まれて、彼がさらわれたんです！",
    "role": "desc",
@@ -426,7 +532,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#043": {
+  "Mushroom Man#053": {
    "src": "...Oh. Oh, dear. That isn't good at all. If they're making moves such as this, unprovoked...",
    "dst": "…なんと。それはまずい。何の挑発もなくこんな動きに出るとは…",
    "role": "desc",
@@ -436,7 +542,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#044": {
+  "Mushroom Man#054": {
    "src": "You two are soldiers, yes? I would ask you to continue your travels to {p}. Find an Admiral Aegis- tell him our little village needs aid.",
    "dst": "君たちは兵士だね？{p} への旅を続けてくれないか。Aegis 提督を探して、この小さな村に援助が必要だと伝えてほしい。",
    "role": "desc",
@@ -446,7 +552,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#045": {
+  "Mushroom Man#055": {
    "src": "I-... of course. We'll set out immediately. Come on, {u}.",
    "dst": "は…はい、もちろん。すぐ出発します。行こう、{u}。",
    "role": "desc",
@@ -456,7 +562,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#046": {
+  "Mushroom Man#056": {
    "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の {p} へ行き、軍の援助を求める。",
    "role": "desc",
@@ -466,7 +572,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#047": {
+  "Mushroom Man#057": {
    "src": "Wait. Did you hear that?",
    "dst": "待って。今の聞こえた？",
    "role": "desc",
@@ -476,7 +582,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#048": {
+  "Mushroom Man#058": {
    "src": "Gah! {u}, look out!",
    "dst": "うわっ！{u}、危ない！",
    "role": "desc",
@@ -486,7 +592,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#049": {
+  "Mushroom Man#059": {
    "src": "Another one of these? We've fought one of them before, we can do it again!",
    "dst": "またこいつか？前にも倒したんだ、今度もいける！",
    "role": "desc",
@@ -496,7 +602,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#050": {
+  "Mushroom Man#060": {
    "src": "Phew. I think that went about as well as it could have!",
    "dst": "ふう。これ以上ない結果だったと思うよ！",
    "role": "desc",
@@ -506,7 +612,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#051": {
+  "Mushroom Man#061": {
    "src": "We're both in one piece, the corrupted is dead... Good. That's good!",
    "dst": "二人とも無事だし、腐敗した奴も倒した…よし。よかった！",
    "role": "desc",
@@ -516,7 +622,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#052": {
+  "Mushroom Man#062": {
    "src": "Let's keep moving towards {p}. I don't think it's too much further, if we keep heading east from here.",
    "dst": "{p} へ進もう。ここから東へ行けば、そう遠くないはずだ。",
    "role": "desc",
@@ -526,7 +632,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#053": {
+  "Mushroom Man#063": {
    "src": "Wait up!",
    "dst": "待ってくれ！",
    "role": "desc",
@@ -536,7 +642,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#054": {
+  "Mushroom Man#064": {
    "src": "Why'd you just leave me there? If we couldn't fight that thing off together, what made you think I could do it alone?",
    "dst": "なんで僕を置いていったんだ？二人でも倒せなかったのに、僕一人でできると思ったの？",
    "role": "desc",
@@ -546,7 +652,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#055": {
+  "Mushroom Man#065": {
    "src": "I managed to get away, but... still. What if I couldn't? Would you have just left me for dead?",
    "dst": "なんとか逃げられたけど…それでも。もし逃げられなかったら？見殺しにするつもりだった？",
    "role": "desc",
@@ -556,7 +662,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#056": {
+  "Mushroom Man#066": {
    "src": "...Whatever. I'm alive, you're alive... that's probably good enough. Let's go find Admiral Aegis",
    "dst": "…もういいよ。僕も君も生きてる…それで十分かな。Aegis 提督を探しに行こう。",
    "role": "desc",
@@ -566,7 +672,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#057": {
+  "Mushroom Man#067": {
    "src": "...Oh, {u}, you're awake! I was really worried there for a bit...",
    "dst": "…あ、{u}、目が覚めた！本当に心配したんだよ…",
    "role": "desc",
@@ -576,7 +682,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#058": {
+  "Mushroom Man#068": {
    "src": "After you went down, I managed to hold my own long enough for some nearby soldiers to arrive and help. I can't thank Lieutenant Van enough.",
    "dst": "君が倒れた後、近くの兵士が助けに来るまで何とか持ちこたえたんだ。Van 中尉にはいくら感謝しても足りないよ。",
    "role": "desc",
@@ -586,7 +692,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#059": {
+  "Mushroom Man#069": {
    "src": "We, uh... brought you back here to rest up. Aledar's around here somewhere, I think.",
    "dst": "僕たち、その…君をここに運んで休ませたんだ。Aledar もこの辺にいると思う。",
    "role": "desc",
@@ -596,7 +702,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#060": {
+  "Mushroom Man#070": {
    "src": "Oh, I spoke to Admiral Aegis about the spider problem already. He said he wants to speak to you about it, too. He should be downstairs",
    "dst": "あ、蜘蛛の件はもう Aegis 提督に話したよ。君とも話したいって。下の階にいるはずだよ。",
    "role": "desc",
@@ -606,7 +712,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#061": {
+  "Mushroom Man#071": {
    "src": "...and that's how we managed to defeat that undead swarm, sir!",
    "dst": "…こうして不死者の群れを倒したのです、閣下！",
    "role": "desc",
@@ -616,7 +722,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Mushroom Man#062": {
+  "Mushroom Man#072": {
    "src": "That's good to hear. Thank you for your work, Aledar. I'll speak to Lieutenant Van and see if he'd be willing to take you into his squad.",
    "dst": "それは何よりだ。ご苦労だった、Aledar。Van 中尉に、君を部隊に迎えてもらえるか話してみよう。",
    "role": "desc",
@@ -626,7 +732,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#063": {
+  "Mushroom Man#073": {
    "src": "Thank you for the opportunity, sir. I won't let you down-... Wait, is that- Tasim and {u}?",
    "dst": "機会をいただき感謝します、閣下。期待を裏切りは…待って、あれは…Tasim と {u}？",
    "role": "desc",
@@ -636,7 +742,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Mushroom Man#064": {
+  "Mushroom Man#074": {
    "src": "Aledar! We've finally made it to {p}. We've had... something of an adventure, getting here.",
    "dst": "Aledar！やっと {p} に着いたよ。ここまで…ちょっとした冒険だったんだ。",
    "role": "desc",
@@ -646,7 +752,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#065": {
+  "Mushroom Man#075": {
    "src": "Ah, you two must be the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
    "dst": "ああ、君たちが Aledar から話を聞いていた新兵だな。ようやく会えて嬉しいが、ずいぶん急いで来たようだね。",
    "role": "desc",
@@ -656,7 +762,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#066": {
+  "Mushroom Man#076": {
    "src": "Right! Right. We've arrived from Nivla Town, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
    "dst": "そうです！そうです。Nivla の村から来ました。悪い知らせと援助のお願いです。森の蜘蛛が凶暴になり、村を脅かしています。",
    "role": "desc",
@@ -666,7 +772,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#067": {
+  "Mushroom Man#077": {
    "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
    "dst": "村人が一人、目の前でさらわれました。Alvin 村長の命で、{p} 軍の援助をお願いしに来ました。",
    "role": "desc",
@@ -676,7 +782,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#068": {
+  "Mushroom Man#078": {
    "src": "Bad news, indeed. Very well, we will make preparations. For the time being, the two of you should rest and hone your skills. Captain Ragon here in the barracks would gladly offer some training.",
    "dst": "確かに悪い知らせだ。よろしい、準備を進めよう。それまで二人は休んで腕を磨きなさい。兵舎の Ragon 隊長が喜んで訓練してくれるだろう。",
    "role": "desc",
@@ -686,7 +792,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#069": {
+  "Mushroom Man#079": {
    "src": "Thank you, sir. But is there anything we could do to actually help?",
    "dst": "ありがとうございます、閣下。でも、僕たちが実際に役立てることは？",
    "role": "desc",
@@ -696,7 +802,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#070": {
+  "Mushroom Man#080": {
    "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I'd suggest you speak with him.",
    "dst": "やる気があるな！そうだな…西門の外の Fenor 隊長が助けを求めていたはずだ。よければ彼と話してみるといい。",
    "role": "desc",
@@ -706,7 +812,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#071": {
+  "Mushroom Man#081": {
    "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with them.",
    "dst": "それに Van 中尉が腐敗した拠点の襲撃を計画しています！人手が増えれば喜ぶはずです。",
    "role": "desc",
@@ -716,7 +822,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Mushroom Man#072": {
+  "Mushroom Man#082": {
    "src": "Yes, yes. Well, I must be off. If the threat of Nivla's spiders is growing... we must prepare accordingly. I hope to hear of your future endeavors, all three of you.",
    "dst": "うむ。さて、私は失礼する。Nivla の蜘蛛の脅威が増しているなら…備えねばならん。三人の今後の活躍を期待しているぞ。",
    "role": "desc",
@@ -726,7 +832,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#073": {
+  "Mushroom Man#083": {
    "src": "...so, Captain, what do you think? We'll need to start training soldiers more quickly, but I hope that won't be a problem.",
    "dst": "…というわけだ、隊長。どう思う？兵士の訓練を急がねばならんが、問題はないだろうね。",
    "role": "desc",
@@ -736,7 +842,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#074": {
+  "Mushroom Man#084": {
    "src": "Of course, Admiral, I'll see what I can do.",
    "dst": "もちろんです、提督。何とかしましょう。",
    "role": "desc",
@@ -746,7 +852,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Mushroom Man#075": {
+  "Mushroom Man#085": {
    "src": "Excellent. Now- ah, {u}. Good to see you're up and about again. You gave us quite a shock!",
    "dst": "結構。さて…おお、{u}。また動けるようになって何よりだ。ずいぶん心配させられたぞ！",
    "role": "desc",
@@ -756,7 +862,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#076": {
+  "Mushroom Man#086": {
    "src": "Van tells me that goliath the two of you faced was a dangerous foe. He was impressed you managed to damage it as much as you did, even if you ended up needing rescue.",
    "dst": "Van によれば、二人が戦った巨人は危険な敵だったそうだ。結局救助が必要だったとはいえ、あれほど傷を負わせたことに感心していたよ。",
    "role": "desc",
@@ -766,7 +872,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#077": {
+  "Mushroom Man#087": {
    "src": "Now, to business. We've already begun planning for our assault on the spiders, but we'll need more well-trained soldiers. Captain Ragon here should be able to help you hone your skills.",
    "dst": "では本題だ。蜘蛛への攻撃の計画はもう始めているが、よく訓練された兵士がもっと要る。この Ragon 隊長が腕を磨く手助けをしてくれるだろう。",
    "role": "desc",
@@ -776,7 +882,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#078": {
+  "Mushroom Man#088": {
    "src": "And if we wanted to help out, sir? I'm getting a little stir-crazy in here.",
    "dst": "僕たちが手伝いたい場合は、閣下？ここにいると、じっとしていられなくて。",
    "role": "desc",
@@ -786,7 +892,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#079": {
+  "Mushroom Man#089": {
    "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I suggest you speak with him.",
    "dst": "やる気があるな！そうだな…西門の外の Fenor 隊長が助けを求めていたはずだ。よければ彼と話してみるといい。",
    "role": "desc",
@@ -796,7 +902,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#080": {
+  "Mushroom Man#090": {
    "src": "In addition, Lieutenant Van was highly impressed by your fight with the goliath! He told me to pass on that he'd appreciate your help in a raid he's planning on a nearby corrupted stronghold. I believe your friend Aledar was involved.",
    "dst": "それと、Van 中尉は君と巨人の戦いにいたく感心していた！近くの腐敗した拠点への襲撃を計画中で、ぜひ手を貸してほしいと伝言を頼まれた。君の友人の Aledar も参加しているはずだ。",
    "role": "desc",
@@ -806,7 +912,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#081": {
+  "Mushroom Man#091": {
    "src": "With that, I must be off. We have many preparations to make, and the enemy never rests. I hope to hear of your future endeavors, both of you.",
    "dst": "では、私は失礼する。準備は山ほどあるし、敵は休まない。二人の今後の活躍を期待しているぞ。",
    "role": "desc",

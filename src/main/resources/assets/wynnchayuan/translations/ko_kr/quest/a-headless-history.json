@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "A Headless History",
-  "count": 208,
+  "count": 210,
   "translated": 208,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Headless History#000": {
+   "src": "You should check your content book to see what to do next.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Headless History",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Headless History#001": {
+   "src": "I left {p} behind, to aid in her \"battle\" against the darkness. What a fool I was.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Headless History",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Headless History#002": {
    "src": "Six hundred years of searching finally brought us to what we so foolishly sought... And we were unprepared.",
    "dst": "육백 년에 걸친 탐색 끝에 마침내 우리가 어리석게도 찾아 헤매던 것에 닿았다... 그리고 우리는 준비되어 있지 않았다.",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#001": {
+  "A Headless History#003": {
    "src": "That sparkle of light seems to lead down the side path. It feels somehow desperate...?",
    "dst": "저 빛의 반짝임이 옆길로 이끄는 것 같다. 어딘가 절박해 보이는데...?",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#002": {
+  "A Headless History#004": {
    "src": "It almost seems like he wants to say something, even though his expression is blank.",
    "dst": "표정은 텅 비었는데도, 뭔가 말하고 싶어 하는 것 같다.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#003": {
+  "A Headless History#005": {
    "src": "Despite this, he isn't responding to you. He looks almost soulless...",
    "dst": "그런데도 아무 반응이 없다. 마치 영혼이 없는 것 같다...",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#004": {
+  "A Headless History#006": {
    "src": "[+{~} Referick's Soul]",
    "dst": "[+{~} Referick의 영혼]",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#005": {
+  "A Headless History#007": {
    "src": "Is that Referick down there..?",
    "dst": "저 아래 있는 게 Referick인가..?",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#006": {
+  "A Headless History#008": {
    "src": "[-{~} Referick's Soul]",
    "dst": "[-{~} Referick의 영혼]",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#007": {
+  "A Headless History#009": {
    "src": "You are NOT dying on me! I won't allow it! You will LIVE, you hear me? !",
    "dst": "내 앞에서 죽으면 안 돼! 절대 못 보내! 넌 살 거야, 알겠어? !",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#008": {
+  "A Headless History#010": {
    "src": "At this moment...I believed that I could protect her. I believed that I could aid her.",
    "dst": "그 순간... 나는 그녀를 지킬 수 있다고 믿었다. 그녀를 도울 수 있다고 믿었다.",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#009": {
+  "A Headless History#011": {
    "src": "You've been trying to find \"another way\" for two centuries. Don't you think it's high-time we took my route, before things get worse?",
    "dst": "넌 2백 년 동안 \"다른 방법\"을 찾아 왔어. 일이 더 나빠지기 전에, 이제 내 방식대로 할 때 아니야?",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#010": {
+  "A Headless History#012": {
    "src": "As the darkness slowly seeped into the land, her stubbornness halted any progress we might have made.",
    "dst": "어둠이 서서히 땅에 스며드는 동안, 그녀의 고집이 우리가 이룰 수 있었던 진전을 막았다.",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#011": {
+  "A Headless History#013": {
    "src": "Years of searching to no avail- A strong enough attack would have ended it, but her foolish pacifism doomed us.",
    "dst": "수년을 찾아도 헛수고였다- 강한 일격이면 끝났을 것을, 그녀의 어리석은 평화주의가 우리를 파멸시켰다.",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#012": {
+  "A Headless History#014": {
    "src": "The creature was found hibernating underground... It had been storing power, and we found ourselves utterly outmatched.",
    "dst": "그 존재는 땅속에서 동면 중이었다... 힘을 모아 두고 있었고, 우리는 완전히 역부족이었다.",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#013": {
+  "A Headless History#015": {
    "src": "The sacrifices I made for her can never be measured. Despite that... once I had outlived my usefulness, I was tossed away like old clothing and left to collect dust.",
    "dst": "그녀를 위해 치른 희생은 헤아릴 수 없다. 그런데도... 쓸모가 다하자, 나는 헌 옷처럼 버려져 먼지만 쌓였다.",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#014": {
+  "A Headless History#016": {
    "src": "Instead, it will free you from your very life. I have had enough of your meddling.",
    "dst": "오히려 너를 네 목숨에서 해방시켜 줄 것이다. 네 참견은 이제 지긋지긋하다.",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#015": {
+  "A Headless History#017": {
    "src": "She had the power and the opportunity to kill it ten times over, but clung to her morals. She could not recognize necessity, and refused to heed my offers and warnings.",
    "dst": "그녀에겐 그것을 열 번은 죽일 힘과 기회가 있었지만, 도덕에 매달렸다. 필요를 깨닫지 못하고, 내 제안과 경고를 듣지 않았다.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#016": {
+  "A Headless History#018": {
    "src": "And so, my dark agony began. The light began to siphon away from me. I found myself paranoid and addled, fearful that my disfigurement would be seen.",
    "dst": "그렇게 나의 어두운 고통이 시작되었다. 빛이 내게서 빠져나갔다. 나는 의심과 혼란에 빠졌고, 흉해진 모습을 들킬까 두려웠다.",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#017": {
+  "A Headless History#019": {
    "src": "Even still I held some misplaced faith in her. With that dark seed in my mind... It grew to an obsession, almost- I had to hide it. I had to hide my curse. But it was found...",
    "dst": "그래도 나는 그녀를 헛되이 믿었다. 그 어두운 씨앗을 품은 채... 그것은 집착이 되었다- 숨겨야 했다. 내 저주를 숨겨야 했다. 하지만 들켰다...",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#018": {
+  "A Headless History#020": {
    "src": "All of you, welcome! Today will be the day we save our fair land. Today's the day of light!",
    "dst": "여러분, 환영합니다! 오늘은 우리의 아름다운 땅을 구하는 날입니다. 오늘은 빛의 날입니다!",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#019": {
+  "A Headless History#021": {
    "src": "The people of {p} saw my cursed visage... They saw me near the dark scars. They assumed without thought, and turned me into a perfect scapegoat.",
    "dst": "{p} 사람들이 저주받은 내 얼굴을 보았다... 어두운 상흔 근처에 있는 나를 보았다. 그들은 생각 없이 단정하고, 나를 완벽한 희생양으로 삼았다.",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#020": {
+  "A Headless History#022": {
    "src": "Not even death saw the end of my misfortunes. Not even a final release such as this could save me from Lari's stubbornness and endless mistakes.",
    "dst": "죽음조차 내 불행을 끝내지 못했다. 그런 마지막 안식조차 Lari의 고집과 끝없는 실수에서 나를 구하지 못했다.",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#021": {
+  "A Headless History#023": {
    "src": "She brought me back...but the dark infection had eroded away my mind, my soul, my magic, and it continued to ravage my body. Every part of me, the dark touched.",
    "dst": "그녀는 나를 되살렸다...하지만 어둠의 감염은 이미 내 정신과 영혼, 마법을 갉아먹었고, 몸까지 계속 파먹었다. 내 모든 곳에 어둠이 닿았다.",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#022": {
+  "A Headless History#024": {
    "src": "Her soft light burned in me, as the darkness quashed it and filled in the emptiness that it had created. I was there...but you could not say I was the same person.",
    "dst": "그녀의 부드러운 빛이 내 안에서 타올랐으나, 어둠이 그것을 짓누르고 빈자리를 채웠다. 나는 그곳에 있었다...하지만 같은 사람이라 할 순 없었다.",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#023": {
+  "A Headless History#025": {
    "src": "I could feel nothing. She still made me feel...but only annoyance. Rage. Sorrow. I could not bear to be with her a moment longer.",
    "dst": "아무것도 느낄 수 없었다. 그녀만은 감정을 일으켰다...짜증뿐이었지만. 분노. 슬픔. 그녀 곁에 한순간도 더 있을 수 없었다.",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#024": {
+  "A Headless History#026": {
    "src": "There is no fixing this. Her actions are doomed to failure, just as I saw. She has not returned since this time... And so she did not realize that her actions have done little.",
    "dst": "이건 고칠 수 없다. 내가 본 대로, 그녀의 행동은 실패할 운명이다. 그 뒤로 그녀는 돌아오지 않았다... 그러니 자기 행동이 소용없었다는 걸 모른다.",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#025": {
+  "A Headless History#027": {
    "src": "The very powers she bestowed me with, knowingly or not...allow me to command spirits as I wish. To have those who doomed me to this purgatory feel the same aches as I have.",
    "dst": "그녀가 알든 모르든 내게 준 바로 그 힘으로...나는 영혼을 마음대로 부린다. 나를 이 연옥에 가둔 자들이 내가 겪은 고통을 똑같이 느끼도록.",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#026": {
+  "A Headless History#028": {
    "src": "To have their minds, bodies, and souls wracked. To have their magic outlawed and wither in disuse.",
    "dst": "그들의 정신과 몸, 영혼이 망가지도록. 그들의 마법이 금지되어 쓰이지 못하고 시들도록.",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#027": {
+  "A Headless History#029": {
    "src": "Each soul I consume fills me with new strength. And none can reach me- Lari herself saw to that. Would she have taken action, had she known?",
    "dst": "영혼을 삼킬 때마다 새로운 힘이 차오른다. 누구도 내게 닿을 수 없다- Lari가 직접 그리 만들었지. 알았더라면 그녀가 움직였을까?",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#028": {
+  "A Headless History#030": {
    "src": "There is truly, finally, nothing more for you here. The spell can not be broken, as of now. You have seen my life laid bare in front of you. There is nothing more for you to see.",
    "dst": "이제 정말로, 여기엔 네게 남은 것이 없다. 이 주문은 지금으로선 풀 수 없다. 내 삶은 네 앞에 전부 드러났다. 더 볼 것은 없다.",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#029": {
+  "A Headless History#031": {
    "src": "Leave. And do not return.",
    "dst": "떠나라. 그리고 돌아오지 마라.",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Headless History#030": {
+  "A Headless History#032": {
    "src": "Talk to Hans in the {p} outskirts at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]의 {p} 외곽에 있는 Hans에게 말을 거세요",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#031": {
+  "A Headless History#033": {
    "src": "Oi, you there! With the small nose and whatnot! I got somethin' to ask you. Got a minute?",
    "dst": "어이, 거기! 코 작은 양반! 뭐 좀 물어보자. 시간 있어?",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#032": {
+  "A Headless History#034": {
    "src": "Good, you're good people. It's about our neighbor, Referick. He's a bit of a conspiracy nut. You know the type, villager illuminati, Wybels are evil, all that?",
    "dst": "좋아, 좋은 사람이구먼. 이웃인 Referick 얘긴데. 좀 음모론 광이야. 그런 부류 알지? 주민 비밀결사, Wybel은 악당, 뭐 그런 거.",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#033": {
+  "A Headless History#035": {
    "src": "He's acting proper strange though, the past few days. Thinkin' a lord of time's draggin' creatures from other dimensions doesn't make ya stop eatin' or drinkin'.",
    "dst": "근데 요 며칠 진짜 이상해. 시간의 군주가 다른 차원에서 괴물을 끌고 온다고 믿는다고 밥이랑 물을 끊진 않잖아.",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#034": {
+  "A Headless History#036": {
    "src": "He'll talk your ear off about it if you give him half a chance, but he ain't sayin' a word to me, even when I tried askin' about his theories.",
    "dst": "틈만 주면 그 얘기로 귀에 딱지가 앉게 떠드는 녀석인데, 내가 그 이론을 물어봐도 한 마디도 안 해.",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#035": {
+  "A Headless History#037": {
    "src": "Somethin's definitely wrong about him, that much's for sure. Could ya take a look for me, see whatcha can figure out and all?",
    "dst": "뭔가 확실히 잘못됐어, 그건 분명해. 나 대신 좀 가 볼래? 뭐라도 알아낼 수 있는지 말이야.",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#036": {
+  "A Headless History#038": {
    "src": "He lives in the house next to the pile of rocks. He's got screws loose but I don't want 'im dyin' on me, yeah?",
    "dst": "바위 더미 옆 집에 살아. 나사 좀 빠진 놈이지만 그렇다고 죽게 둘 순 없잖아?",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#037": {
+  "A Headless History#039": {
    "src": "Talk to Referick in his house and head upstairs at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에 있는 Referick의 집에서 그와 대화하고 위층으로 올라가세요",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#038": {
+  "A Headless History#040": {
    "src": ". . .",
    "dst": ". . .",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#039": {
+  "A Headless History#041": {
    "src": "Oi! Any luck with ol' Rick there?",
    "dst": "어이! 우리 Rick은 좀 어때?",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#040": {
+  "A Headless History#042": {
    "src": "...hm. Dang it...y'know, maybe there's somethin' here that'll tell us what in heck happened.",
    "dst": "...흠. 젠장...있잖아, 여기 뭔가 무슨 일이 있었는지 알려 줄 게 있을지도 몰라.",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#041": {
+  "A Headless History#043": {
    "src": "Let's look around the house for anythin' he mighta been workin' on. Maybe he finally fiddled with somethin' he shouldn'ta fiddled with?",
    "dst": "집 안을 뒤져서 그 녀석이 뭘 하고 있었는지 찾아보자. 결국 건드리면 안 될 걸 건드린 건지도 몰라.",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#042": {
+  "A Headless History#044": {
    "src": "Investigate his house for clues as to what could have happened.",
    "dst": "무슨 일이 있었는지 단서를 찾아 집을 조사하세요.",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#043": {
+  "A Headless History#045": {
    "src": "Whassat you're lookin' at there? The castle? Don't see why he'd be pointin' this ol' telescope that way.",
    "dst": "뭘 보고 있어? 성? 왜 이 낡은 망원경을 그쪽으로 돌려놨는지 모르겠네.",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#044": {
+  "A Headless History#046": {
    "src": "You're human, so you wouldn't know, but somethin' like two hundred years ago, an elf of all people lived in that castle. Called 'imself Dullahan, wore a helmet a lot, I think.",
    "dst": "넌 인간이라 모르겠지만, 한 2백 년 전에 저 성에 하필 엘프가 살았어. 자기를 Dullahan이라 불렀고, 투구를 자주 썼던 것 같아.",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#045": {
+  "A Headless History#047": {
    "src": "People thought he was the reason for the Decay- can't imagine why, personally, and obviously they weren't right.",
    "dst": "사람들은 그 녀석 때문에 쇠락이 왔다고 생각했지- 난 왜 그런지 모르겠고, 당연히 틀렸고.",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#046": {
+  "A Headless History#048": {
    "src": "...hm. Y'know, there's some ghost stories about Dullahan still livin' in that castle... Come to think of it, I think Referick mentioned a theory about it.",
    "dst": "...흠. 있잖아, Dullahan이 아직 저 성에 산다는 괴담이 좀 있어... 생각해 보니 Referick이 그걸로 무슨 이론을 말했던 것 같아.",
    "role": "desc",
@@ -476,7 +496,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#047": {
+  "A Headless History#049": {
    "src": "Barely remember what it was about cause of how many crackpots he's stuck his head into, but it's somethin' about a ghost. 's the only lead I can think of, anyways...",
    "dst": "하도 별 헛소리에 다 빠져 있어서 뭐였는지 기억도 잘 안 나는데, 유령 얘기였어. 떠오르는 단서는 그것뿐이야...",
    "role": "desc",
@@ -486,7 +506,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#048": {
+  "A Headless History#050": {
    "src": "The castle door's locked, but you can access the basement. Think you could try lookin' over there? That's all I got.",
    "dst": "성문은 잠겼지만 지하실엔 들어갈 수 있어. 거기 좀 둘러봐 줄래? 내가 아는 건 그게 다야.",
    "role": "desc",
@@ -496,7 +516,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#049": {
+  "A Headless History#051": {
    "src": "Travel to the castle in the north at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에 있는 북쪽 성으로 가세요",
    "role": "desc",
@@ -506,7 +526,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#050": {
+  "A Headless History#052": {
    "src": "Enter the underground prison.",
    "dst": "지하 감옥에 들어가세요.",
    "role": "desc",
@@ -516,7 +536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#051": {
+  "A Headless History#053": {
    "src": "...an unfamiliar soul? Strange. I have not brought you here. I do not know of you.",
    "dst": "...낯선 영혼? 기이하군. 내가 너를 데려오지 않았다. 너를 알지 못한다.",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#052": {
+  "A Headless History#054": {
    "src": "What an odd feeling... I haven't felt confusion in a long time. How refreshing...still, I shall ask you to leave.",
    "dst": "묘한 감각이군... 혼란을 느낀 건 참으로 오랜만이다. 신선하구나...그래도 떠나 달라고 해야겠다.",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#053": {
+  "A Headless History#055": {
    "src": "Excuse you. I asked you to leave, strange person. You would ignore my request?",
    "dst": "무례하구나. 떠나라 했거늘, 낯선 자여. 내 청을 무시하겠다는 것이냐?",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#054": {
+  "A Headless History#056": {
    "src": "Such an action is rather insolent, not to mention...interesting. Still, interfering with my business is inexcusable.",
    "dst": "그런 행동은 꽤나 오만하구나. 게다가...흥미롭다. 허나 내 일을 방해하는 건 용서할 수 없다.",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#055": {
+  "A Headless History#057": {
    "src": "Demons of the Prison Guard, I compel you to execute this interloper. Trap their soul for my perusal later.",
    "dst": "감옥 수호자의 악마들이여, 이 침입자를 처단하라. 그 영혼을 가둬 두어라. 나중에 살펴보겠다.",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#056": {
+  "A Headless History#058": {
    "src": "Return to Referick with his soul at [-{~}, {~}, -{~}]",
    "dst": "영혼을 가지고 [-{~}, {~}, -{~}]의 Referick에게 돌아가세요",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#057": {
+  "A Headless History#059": {
    "src": "OI! Referick!! Wait for me! Ain'tcha need some food and drink first?!",
    "dst": "어이! Referick!! 기다려! 먼저 뭐라도 좀 먹고 마셔야지?!",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#058": {
+  "A Headless History#060": {
    "src": "The heck did you do?! Referick just bolted out the door like he forgot his wallet or somethin'!",
    "dst": "대체 뭘 한 거야?! Referick이 지갑이라도 두고 온 것처럼 문밖으로 뛰쳐나갔다고!",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#059": {
+  "A Headless History#061": {
    "src": ". . .",
    "dst": ". . .",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#060": {
+  "A Headless History#062": {
    "src": "C'mon mate, you got up and moved for the first time in days and now you're clammin' up again? Speak to me!",
    "dst": "이봐 친구, 며칠 만에 겨우 일어나 움직이더니 또 입 다무는 거야? 말 좀 해!",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#061": {
+  "A Headless History#063": {
    "src": "WROOOOOAAAAAARRR!!! I'M ALIIIIIVE!!",
    "dst": "크아아아아아아!!! 살았다아아아!!",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#062": {
+  "A Headless History#064": {
    "src": "YIPE! Never heard 'im scream like that before! Never heard anyone scream like that before! I'd like to never hear anyone scream like that again!",
    "dst": "으악! 저 녀석이 저렇게 소리 지르는 건 처음 들어! 누가 저렇게 소리 지르는 것도 처음이야! 다신 안 듣고 싶어!",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#063": {
+  "A Headless History#065": {
    "src": "Oh, shut UP Hans! I nearly had my soul devoured, don't DARE give me any chaff when I was RIGHT all along!!",
    "dst": "아, 좀 닥쳐 Hans! 영혼이 먹힐 뻔했다고! 내가 처음부터 옳았는데 감히 토 달지 마!!",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#064": {
+  "A Headless History#066": {
    "src": "Agh, alright, alright! Quiet, my ears are ringin'! I'll listen, I'll listen, just quiet!",
    "dst": "아이고, 알았어, 알았어! 조용히 해, 귀가 울리잖아! 들을게, 들을게, 조용히만 해!",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#065": {
+  "A Headless History#067": {
    "src": "I knew the disappearances in {p} weren't just because of the risen bodies. People were being left catatonic!! That doesn't happen randomly!",
    "dst": "{p}의 실종 사건이 되살아난 시체들 때문만은 아닐 줄 알았어. 사람들이 멍하니 넋이 나가 있었다고!! 그건 우연이 아니야!",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#066": {
+  "A Headless History#068": {
    "src": "It's Dullahan, I swear on my life! I figured him out and he came after me! He's devouring peoples' souls and siphoning their energy for himself!",
    "dst": "Dullahan이야, 목숨 걸고 맹세해! 내가 정체를 알아내니까 날 노렸어! 사람들 영혼을 삼키고 그 힘을 빨아들이고 있다고!",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#067": {
+  "A Headless History#069": {
    "src": "He's acting from within the castle somehow- Ghostly hands and servants, I'll bet! And that means there's a chance to stop him, if he has to act indirectly!",
    "dst": "어떻게든 성 안에서 움직이는 거야- 유령 손이나 하인들을 부리는 게 분명해! 직접 못 나선다면, 막을 기회가 있다는 거지!",
    "role": "desc",
@@ -686,7 +706,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#068": {
+  "A Headless History#070": {
    "src": "We need to round up the townsfolk, the guards, the military, EVERYONE! We have to storm the castle and stop him before he's able to escape!",
    "dst": "마을 사람, 경비대, 군대, 전부 다 모아야 해! 성을 급습해서 그 녀석이 도망치기 전에 막아야 한다고!",
    "role": "desc",
@@ -696,7 +716,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#069": {
+  "A Headless History#071": {
    "src": "...criminy, you really bit the big one, didn'tcha...look, if he's tryin' to eat people's souls, wouldn't it be smarter to NOT have a huge mob?",
    "dst": "...이런, 제대로 당했구먼...잘 들어, 그 녀석이 영혼을 먹으려는 거면, 떼로 몰려가지 않는 게 현명하지 않겠어?",
    "role": "desc",
@@ -706,7 +726,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#070": {
+  "A Headless History#072": {
    "src": "Wait, wh-what do you mean?! Shouldn't everyone be on high alert? Won't we have a better chance of swarming him all at once?",
    "dst": "자, 잠깐, 무슨 소리야?! 다들 경계해야 하는 거 아냐? 한꺼번에 덮치는 게 더 승산 있잖아?",
    "role": "desc",
@@ -716,7 +736,7 @@
    "speaker": "Referick",
    "source": "wiki"
   },
-  "A Headless History#071": {
+  "A Headless History#073": {
    "src": "He'd have a whole mob of people ready to take from in that case. Sending in one, heavily-armed person, or a small group'd be better.",
    "dst": "그러면 그 녀석 앞에 먹잇감을 한가득 갖다 바치는 꼴이지. 무장한 한 사람이나 소수를 보내는 게 나아.",
    "role": "desc",
@@ -726,7 +746,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#072": {
+  "A Headless History#074": {
    "src": "And, well...a heavily-armed human just rescued ya, Ricky. I think we leave this to 'em. How about it, human? Head up to the castle and look into this for us?",
    "dst": "그리고 뭐...방금 널 구한 게 중무장한 인간이잖아, Ricky. 이건 그쪽한테 맡기자. 어때, 인간? 성에 가서 좀 알아봐 줄래?",
    "role": "desc",
@@ -736,7 +756,7 @@
    "speaker": "Hans",
    "source": "wiki"
   },
-  "A Headless History#073": {
+  "A Headless History#075": {
    "src": "Enter Dullahan's castle.",
    "dst": "Dullahan의 성에 들어가세요.",
    "role": "desc",
@@ -746,7 +766,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#074": {
+  "A Headless History#076": {
    "src": "The interesting soul arrives once more. Why is it you valued the life of that villager? You risked yourself for his soul.",
    "dst": "흥미로운 영혼이 다시 왔구나. 어째서 그 주민의 목숨을 소중히 여겼느냐? 그 영혼을 위해 너 자신을 걸었지.",
    "role": "desc",
@@ -756,7 +776,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#075": {
+  "A Headless History#077": {
    "src": "It will not make a difference one way or the other, and so I am doubly confused. The feeling has already grown tiresome.",
    "dst": "어느 쪽이든 달라질 건 없으니, 곱절로 혼란스럽구나. 이 감정도 벌써 지겨워졌다.",
    "role": "desc",
@@ -766,7 +786,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#076": {
+  "A Headless History#078": {
    "src": "What purpose have you in this place? Turn over your soul so I may examine it and find out. I am genuinely curious to know...",
    "dst": "이곳에 온 목적이 무엇이냐? 네 영혼을 내놓아라, 살펴보고 알아내겠다. 진심으로 궁금하구나...",
    "role": "desc",
@@ -776,7 +796,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A Headless History#077": {
+  "A Headless History#079": {
    "src": "Investigate the painting at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]에 있는 그림을 조사하세요",
    "role": "desc",
@@ -786,7 +806,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#078": {
+  "A Headless History#080": {
    "src": "Be done! I bind you with Orphion's light!",
    "dst": "끝이야! Orphion의 빛으로 널 묶겠어!",
    "role": "desc",
@@ -796,7 +816,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#079": {
+  "A Headless History#081": {
    "src": "Wait...it...it's n-not holding?!",
    "dst": "잠깐...안...안 묶여?!",
    "role": "desc",
@@ -806,7 +826,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#080": {
+  "A Headless History#082": {
    "src": "LARIII! Where are you?! I can help!!",
    "dst": "Lari이이! 어디 있어?! 내가 도울게!!",
    "role": "desc",
@@ -816,7 +836,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#081": {
+  "A Headless History#083": {
    "src": "Ugh, I saw her with that...THING, but...",
    "dst": "윽, 그...괴물이랑 있는 걸 봤는데...",
    "role": "desc",
@@ -826,7 +846,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#082": {
+  "A Headless History#084": {
    "src": "My visions didn't show an exact enough spot... LARIII?",
    "dst": "환영에 정확한 위치가 안 보였어... Lari이이?",
    "role": "desc",
@@ -836,7 +856,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#083": {
+  "A Headless History#085": {
    "src": "I...what is... What left the land scarred like this?!",
    "dst": "이...이게 뭐야... 뭐가 땅을 이렇게 할퀴어 놓은 거지?!",
    "role": "desc",
@@ -846,7 +866,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#084": {
+  "A Headless History#086": {
    "src": "Was...was this their clash...? L-LARI! LARIIII! WHERE ARE YOU?!",
    "dst": "이게...이게 그 싸움의 흔적인가...? L-Lari! Lari이이! 어디 있는 거야?!",
    "role": "desc",
@@ -856,7 +876,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#085": {
+  "A Headless History#087": {
    "src": "...hh...D-Du...lla...?",
    "dst": "...흐...D-Du...lla...?",
    "role": "desc",
@@ -866,7 +886,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#086": {
+  "A Headless History#088": {
    "src": "You are NOT dying on me! I won't allow it! You will LIVE, you hear me?!",
    "dst": "내 앞에서 죽으면 안 돼! 절대 못 보내! 넌 살 거야, 알겠어?!",
    "role": "desc",
@@ -876,7 +896,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#087": {
+  "A Headless History#089": {
    "src": "Sit as still as you can, I have healing spells prepared.",
    "dst": "최대한 가만히 있어. 치유 주문을 준비해 뒀어.",
    "role": "desc",
@@ -886,7 +906,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#088": {
+  "A Headless History#090": {
    "src": "I ask the land for its life to save another. Grant me this!",
    "dst": "다른 이를 구하고자 대지에 생명을 청한다. 허락하라!",
    "role": "desc",
@@ -896,7 +916,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#089": {
+  "A Headless History#091": {
    "src": "Dullahan!",
    "dst": "Dullahan!",
    "role": "desc",
@@ -906,7 +926,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#090": {
+  "A Headless History#092": {
    "src": "Oh, what am I going to do with you...",
    "dst": "아이고, 너를 어쩌면 좋니...",
    "role": "desc",
@@ -916,7 +936,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#091": {
+  "A Headless History#093": {
    "src": "Continue exploring the castle.",
    "dst": "성을 계속 탐색하세요.",
    "role": "desc",
@@ -926,7 +946,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#092": {
+  "A Headless History#094": {
    "src": "Once again you ignore my demands...? And not only that, you invade the memories I have locked away?",
    "dst": "또다시 내 요구를 무시하는가...? 그뿐 아니라 내가 봉인한 기억까지 침범하느냐?",
    "role": "desc",
@@ -936,7 +956,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#093": {
+  "A Headless History#095": {
    "src": "I must ask again, what is your goal? Why have you come here, and why do you seek my most private thoughts, that not even I wish to think?",
    "dst": "다시 묻겠다, 목적이 무엇이냐? 왜 이곳에 왔고, 나조차 떠올리기 싫은 가장 은밀한 생각을 왜 파헤치느냐?",
    "role": "desc",
@@ -946,7 +966,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#094": {
+  "A Headless History#096": {
    "src": "Look, Dulla, I really do appreciate your help, but you know I can't do what you're asking of me! There's another way, I just need to find it!",
    "dst": "있잖아, Dulla, 도와줘서 정말 고마워. 하지만 네 부탁은 내가 못 들어주는 거 알잖아! 다른 방법이 있어, 찾기만 하면 돼!",
    "role": "desc",
@@ -956,7 +976,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#095": {
+  "A Headless History#097": {
    "src": "Lari, you remember that I have my visions, right? I've seen what will happen if you don't step up- and I can help stop it!",
    "dst": "Lari, 내가 환영을 본다는 거 기억하지? 네가 나서지 않으면 무슨 일이 생기는지 봤어- 그리고 난 그걸 막는 걸 도울 수 있어!",
    "role": "desc",
@@ -966,7 +986,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#096": {
+  "A Headless History#098": {
    "src": "You've been trying to find \"anotherway\" for two centuries. Don't you think it's high-time we took my route, before things get worse?",
    "dst": "넌 2백 년 동안 \"다른 방법\"을 찾아 왔어. 일이 더 나빠지기 전에, 이제 내 방식대로 할 때 아니야?",
    "role": "desc",
@@ -976,7 +996,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#097": {
+  "A Headless History#099": {
    "src": "NO! I am not going to kill it! YOU are not going to kill it! I'll find a way! I will, I have these powers for a reason!",
    "dst": "안 돼! 난 그걸 죽이지 않을 거야! 너도 죽이면 안 돼! 방법을 찾을 거야! 꼭! 이 힘엔 이유가 있으니까!",
    "role": "desc",
@@ -986,7 +1006,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#098": {
+  "A Headless History#100": {
    "src": "You talk a big game, and you show one too, but the creature wasn't fazed. I'm not fazed. Drop the intimidating act, please.",
    "dst": "말도 거창하고 기세도 거창하지만, 그 괴물은 꿈쩍도 안 했어. 나도 마찬가지고. 겁주는 척은 그만해, 제발.",
    "role": "desc",
@@ -996,7 +1016,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#099": {
+  "A Headless History#101": {
    "src": "I...there...there has to be a way. I...I-I'm terrified that I've...already ruined everything, just by following my heart, like I was told...",
    "dst": "나...분명...분명 방법이 있을 거야. 나...나, 난 무서워...시키는 대로 마음을 따랐을 뿐인데, 벌써 다 망쳐 버린 것 같아서...",
    "role": "desc",
@@ -1006,7 +1026,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#100": {
+  "A Headless History#102": {
    "src": "I know you're frustrated, but I am too. I left a lot behind to try and help you. I hate to say these things, I wish it could be your way.",
    "dst": "답답한 거 알아, 나도 그래. 널 도우려고 많은 걸 두고 왔어. 이런 말 하기 싫어, 네 방식대로 되면 좋겠어.",
    "role": "desc",
@@ -1016,7 +1036,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#101": {
+  "A Headless History#103": {
    "src": "I'm terrified too, that if we don't take more drastic action, things will get worse. Can't you see that, too?",
    "dst": "나도 무서워. 더 과감하게 움직이지 않으면 일이 더 나빠질 거야. 너도 그게 보이지 않아?",
    "role": "desc",
@@ -1026,7 +1046,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#102": {
+  "A Headless History#104": {
    "src": "I...I just... I don't know what to do!",
    "dst": "나...난... 어떡해야 할지 모르겠어!",
    "role": "desc",
@@ -1036,7 +1056,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#103": {
+  "A Headless History#105": {
    "src": "He showed me all these things and gave me all these choices and asked how my heart beat!",
    "dst": "그분은 나한테 온갖 걸 보여 주고 온갖 선택지를 주고는 내 심장이 어떻게 뛰냐고 물었어!",
    "role": "desc",
@@ -1046,7 +1066,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#104": {
+  "A Headless History#106": {
    "src": "He gave me these powers but they don't work or I don't know HOW they work!",
    "dst": "이 힘을 주셨는데 안 먹히거나 어떻게 쓰는지를 모르겠어!",
    "role": "desc",
@@ -1056,7 +1076,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#105": {
+  "A Headless History#107": {
    "src": "I want to do the right thing but I don't know what it is and I don't know how to ask what it is and...a-and...",
    "dst": "옳은 일을 하고 싶은데 그게 뭔지 모르겠고 뭔지 어떻게 물어야 할지도 모르겠고...그, 그리고...",
    "role": "desc",
@@ -1066,7 +1086,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#106": {
+  "A Headless History#108": {
    "src": "You have become infuriating instead of interesting. Why do you violate my memories? Why do you force me to relive them?",
    "dst": "흥미롭던 네가 이젠 분노를 자아내는구나. 어째서 내 기억을 더럽히느냐? 어째서 그것을 다시 겪게 하느냐?",
    "role": "desc",
@@ -1076,7 +1096,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#107": {
+  "A Headless History#109": {
    "src": "Spirit of the Keeper of Keys, rid me of this thing that befouls my place. It incites a rage akin to HER.",
    "dst": "열쇠지기의 영혼이여, 내 거처를 더럽히는 이것을 없애라. 그 여자처럼 분노를 일으키는구나.",
    "role": "desc",
@@ -1086,7 +1106,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#108": {
+  "A Headless History#110": {
    "src": "You...are a fool. More than I was. You knowingly walk to your death.",
    "dst": "너는...어리석구나. 나보다 더. 죽음인 줄 알면서 걸어 들어오다니.",
    "role": "desc",
@@ -1096,7 +1116,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#109": {
+  "A Headless History#111": {
    "src": "It is convenient for me, certainly, but I admit that it is equal parts enraging and bewildering.",
    "dst": "내겐 분명 편리한 일이다. 허나 분노스럽고 당혹스러운 것도 사실이다.",
    "role": "desc",
@@ -1106,7 +1126,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#110": {
+  "A Headless History#112": {
    "src": "Leave the room and continue exploring the castle.",
    "dst": "방을 나가서 성을 계속 탐색하세요.",
    "role": "desc",
@@ -1116,7 +1136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#111": {
+  "A Headless History#113": {
    "src": "I told you, Lari! I saw it in my visions, this is our last chance! Hurry!",
    "dst": "내가 말했잖아, Lari! 환영에서 봤어, 이게 마지막 기회야! 서둘러!",
    "role": "desc",
@@ -1126,7 +1146,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#112": {
+  "A Headless History#114": {
    "src": "Look at this spot, Lari. It has to be here. The land is being scarred, just like after your fight. The light is being drained!",
    "dst": "이 자리를 봐, Lari. 여기가 틀림없어. 네가 싸운 뒤처럼 땅에 상흔이 생기고 있어. 빛이 빠져나가고 있다고!",
    "role": "desc",
@@ -1136,7 +1156,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#113": {
+  "A Headless History#115": {
    "src": "This must be where the parasite burrowed down... You're... You're right. We have to...to do something.",
    "dst": "여기가 그 기생체가 파고든 곳이야... 네...네 말이 맞아. 우리가...뭔가 해야 해.",
    "role": "desc",
@@ -1146,7 +1166,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#114": {
+  "A Headless History#116": {
    "src": "I... I'm not sure if I'm ready, but you're right. We need to do this...",
    "dst": "나... 준비됐는지 모르겠지만, 네 말이 맞아. 해야만 해...",
    "role": "desc",
@@ -1156,7 +1176,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#115": {
+  "A Headless History#117": {
    "src": "...Remember what I said. You HAVE to take action. There's only two outcomes here.",
    "dst": "...내가 한 말 기억해. 넌 반드시 움직여야 해. 결말은 둘뿐이야.",
    "role": "desc",
@@ -1166,7 +1186,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#116": {
+  "A Headless History#118": {
    "src": "Right...",
    "dst": "그래...",
    "role": "desc",
@@ -1176,7 +1196,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#117": {
+  "A Headless History#119": {
    "src": "We'll need to dig... Do you think you could help with that, Dulla?",
    "dst": "파야겠어... 좀 도와줄 수 있어, Dulla?",
    "role": "desc",
@@ -1186,7 +1206,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#118": {
+  "A Headless History#120": {
    "src": "Of course, Lari. We'll need everything we can get if we're going to kill that horrendous thing.",
    "dst": "물론이지, Lari. 그 끔찍한 걸 죽이려면 쓸 수 있는 건 다 써야 해.",
    "role": "desc",
@@ -1196,7 +1216,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#119": {
+  "A Headless History#121": {
    "src": "...let's get this over with.",
    "dst": "...빨리 끝내자.",
    "role": "desc",
@@ -1206,7 +1226,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#120": {
+  "A Headless History#122": {
    "src": "I see it! Lari, it's time!",
    "dst": "보인다! Lari, 지금이야!",
    "role": "desc",
@@ -1216,7 +1236,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#121": {
+  "A Headless History#123": {
    "src": "...I will show you an exit, interloper. It would be...wise of you to take it.",
    "dst": "...출구를 보여 주마, 침입자여. 그리로 가는 것이...현명할 것이다.",
    "role": "desc",
@@ -1226,7 +1246,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#122": {
+  "A Headless History#124": {
    "src": "You are a damned fool, interloper. Dredging my memories as you have... I have never felt such rage, not in a long time.",
    "dst": "지독히 어리석구나, 침입자여. 그렇게 내 기억을 들쑤시다니... 이토록 분노한 건 참으로 오랜만이다.",
    "role": "desc",
@@ -1236,7 +1256,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#123": {
+  "A Headless History#125": {
    "src": "As such, it shall end now. The exit I spoke of will not free you from the castle, as you can see.",
    "dst": "그러니 이제 끝이다. 보다시피, 내가 말한 출구는 너를 이 성에서 풀어 주지 않는다.",
    "role": "desc",
@@ -1246,7 +1266,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#124": {
+  "A Headless History#126": {
    "src": "Warden of Wisdom! I compel you- Rid me of this miscreant! Erase every trace of it from this existence...",
    "dst": "지혜의 감시자여! 명하노니- 이 불한당을 없애라! 이 세상에서 그 흔적을 모두 지워라...",
    "role": "desc",
@@ -1256,7 +1276,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#125": {
+  "A Headless History#127": {
    "src": "...save for a corpse, for me to toss at Lari's feet.",
    "dst": "...시체 하나만 남겨라. Lari의 발치에 던져 줄 테니.",
    "role": "desc",
@@ -1266,7 +1286,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#126": {
+  "A Headless History#128": {
    "src": "GAH! It was never able to do this before...! W-What happened to it?!",
    "dst": "으악! 전엔 이런 거 못 했는데...! 무, 무슨 일이 생긴 거야?!",
    "role": "desc",
@@ -1276,7 +1296,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#127": {
+  "A Headless History#129": {
    "src": "AWAY! You keep away from us!!",
    "dst": "물러서! 우리한테서 떨어져!!",
    "role": "desc",
@@ -1286,7 +1306,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#128": {
+  "A Headless History#130": {
    "src": "Lari, you need to get up, now! We can't waste this chance!",
    "dst": "Lari, 일어나, 당장! 이 기회를 놓치면 안 돼!",
    "role": "desc",
@@ -1296,7 +1316,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#129": {
+  "A Headless History#131": {
    "src": "It...it threw me aside like nothing! How is it overpowering Orphion's light...?",
    "dst": "나를...아무렇지 않게 내던졌어! 어떻게 Orphion의 빛을 이기는 거지...?",
    "role": "desc",
@@ -1306,7 +1326,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#130": {
+  "A Headless History#132": {
    "src": "It's overpowering you because you're not attacking! Remember what I said? You have to-",
    "dst": "네가 공격을 안 하니까 이기는 거야! 내 말 기억해? 넌 반드시-",
    "role": "desc",
@@ -1316,7 +1336,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#131": {
+  "A Headless History#133": {
    "src": "...wait, where did it...did we lose it already?!",
    "dst": "...잠깐, 어디로...벌써 놓친 거야?!",
    "role": "desc",
@@ -1326,7 +1346,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#132": {
+  "A Headless History#134": {
    "src": "It's under you! MOVE!!",
    "dst": "네 밑에 있어! 피해!!",
    "role": "desc",
@@ -1336,7 +1356,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#133": {
+  "A Headless History#135": {
    "src": "It's shrugging my attacks off, Lari! Come on, do SOMETHING!",
    "dst": "내 공격이 안 통해, Lari! 제발, 뭐라도 해!",
    "role": "desc",
@@ -1346,7 +1366,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#134": {
+  "A Headless History#136": {
    "src": "[Gavellian Spell]!!",
    "dst": "[Gavellian Spell]!!",
    "role": "desc",
@@ -1356,7 +1376,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#135": {
+  "A Headless History#137": {
    "src": "I...No! It's happening just like I saw! She's...",
    "dst": "나...안 돼! 내가 본 그대로 되고 있어! 그녀가...",
    "role": "desc",
@@ -1366,7 +1386,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#136": {
+  "A Headless History#138": {
    "src": "I need to get to her, push her to the killing blow...",
    "dst": "그녀에게 가서, 결정타를 날리게 해야 해...",
    "role": "desc",
@@ -1376,7 +1396,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#137": {
+  "A Headless History#139": {
    "src": "Be still, creature! I compel you with Orphion's light!",
    "dst": "움직이지 마! Orphion의 빛으로 명한다!",
    "role": "desc",
@@ -1386,7 +1406,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#138": {
+  "A Headless History#140": {
    "src": "LARIIII! THIS IS THE LAST CHANCE YOU HAVE! DON'T TRAP IT, KILL IT!",
    "dst": "Lari이이! 이게 마지막 기회야! 가두지 말고 죽여!",
    "role": "desc",
@@ -1396,7 +1416,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#139": {
+  "A Headless History#141": {
    "src": "I-I'm...Dulla, I'm- I can't! I know I can keep it held this time!!",
    "dst": "나-난...Dulla, 난- 못 해! 이번엔 붙잡아 둘 수 있어!!",
    "role": "desc",
@@ -1406,7 +1426,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#140": {
+  "A Headless History#142": {
    "src": "I...wha...N-no!",
    "dst": "나...뭐...아, 안 돼!",
    "role": "desc",
@@ -1416,7 +1436,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#141": {
+  "A Headless History#143": {
    "src": "I...I-I...th-the light is...I c-can't hold onto it...i-is it...it's t-taking...g-guh...",
    "dst": "나...나-나...비, 빛이...부, 붙잡을 수가...이, 이건...빼, 빼앗아...으, 윽...",
    "role": "desc",
@@ -1426,7 +1446,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#142": {
+  "A Headless History#144": {
    "src": "Lari! You can't reason with it! You can't hold it! You have to put Gavel first! US first!!",
    "dst": "Lari! 저건 말이 안 통해! 붙잡을 수도 없어! Gavel을 먼저 생각해! 우리를 먼저!!",
    "role": "desc",
@@ -1436,7 +1456,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#143": {
+  "A Headless History#145": {
    "src": "I won't let what you predicted happen! I know I can change fate!!",
    "dst": "네가 예언한 일은 일어나지 않게 할 거야! 난 운명을 바꿀 수 있어!!",
    "role": "desc",
@@ -1446,7 +1466,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#144": {
+  "A Headless History#146": {
    "src": "Please work, please work! D-Don't break, I can't-",
    "dst": "제발, 제발 돼라! 깨, 깨지지 마, 난 못-",
    "role": "desc",
@@ -1456,7 +1476,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#145": {
+  "A Headless History#147": {
    "src": "Lari, no! If it bites you we're doomed! GET UP!",
    "dst": "Lari, 안 돼! 물리면 끝장이야! 일어나!",
    "role": "desc",
@@ -1466,7 +1486,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#146": {
+  "A Headless History#148": {
    "src": "AAAH, GET AWAY FROM HER!",
    "dst": "으아아, 그녀한테서 떨어져!",
    "role": "desc",
@@ -1476,7 +1496,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#147": {
+  "A Headless History#149": {
    "src": "D-Dulla!",
    "dst": "D-Dulla!",
    "role": "desc",
@@ -1486,7 +1506,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#148": {
+  "A Headless History#150": {
    "src": "L-Lari...we...e-everything happened like I s-said...you...you didn't...l-listen...",
    "dst": "L-Lari...우리...모, 모든 게 내 말대로...됐잖아...넌...넌 끝내...아, 안 들었어...",
    "role": "desc",
@@ -1496,7 +1516,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#149": {
+  "A Headless History#151": {
    "src": "No! No it didn't happen like you said! I-I can fix this! Y-You'll be alright! You'll be alright, you hear me?! I'll make sure of it!",
    "dst": "아니! 네 말대로 된 거 아니야! 내, 내가 고칠 수 있어! 괘, 괜찮을 거야! 괜찮을 거야, 알겠어?! 내가 꼭 그렇게 할게!",
    "role": "desc",
@@ -1506,7 +1526,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#150": {
+  "A Headless History#152": {
    "src": "...so I am cursed to bear witness to my most painful memories due to your idiocy. It is almost a fitting penance... Almost, but not quite.",
    "dst": "...네 어리석음 탓에 가장 고통스러운 기억을 다시 봐야 하는 저주라니. 어울리는 속죄라 할 만하구나... 거의. 완전히는 아니지만.",
    "role": "desc",
@@ -1516,7 +1536,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#151": {
+  "A Headless History#153": {
    "src": "Continue exploring the castle.",
    "dst": "성을 계속 탐색하세요.",
    "role": "desc",
@@ -1526,7 +1546,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#152": {
+  "A Headless History#154": {
    "src": "My rage... My memories... Your presence stirs them in kind. You must disappear, I no longer care to see your soul.",
    "dst": "나의 분노... 나의 기억... 네가 있으니 함께 들끓는구나. 사라져라, 이제 네 영혼 따위 보고 싶지 않다.",
    "role": "desc",
@@ -1536,7 +1556,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#153": {
+  "A Headless History#155": {
    "src": "Sit still and allow yourself to be engulfed. It will save me further pain.",
    "dst": "가만히 앉아 삼켜져라. 그러면 내 고통도 덜하겠지.",
    "role": "desc",
@@ -1546,7 +1566,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#154": {
+  "A Headless History#156": {
    "src": "Lari...? Where are you? I...I need you... Why are you gone? Why do you ignore me?",
    "dst": "Lari...? 어디 있어? 나...네가 필요해... 왜 없어? 왜 날 외면해?",
    "role": "desc",
@@ -1556,7 +1576,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#155": {
+  "A Headless History#157": {
    "src": "My magic is fading, I can't see my visions... They're clearer around you... Please, come back...",
    "dst": "마법이 사라져 가, 환영이 안 보여... 네 곁에선 더 선명했는데... 제발, 돌아와...",
    "role": "desc",
@@ -1566,7 +1586,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#156": {
+  "A Headless History#158": {
    "src": "That elf girl's off in the forest. Don't know what she's doing but this is our shot!",
    "dst": "그 엘프 여자애가 숲에 가 있어. 뭘 하는지는 몰라도 지금이 기회야!",
    "role": "desc",
@@ -1576,7 +1596,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#157": {
+  "A Headless History#159": {
    "src": "We can finally execute the person causing the decay in the forest! {p} will be saved!",
    "dst": "숲에 쇠락을 퍼뜨린 놈을 드디어 처형할 수 있어! {p}은(는) 구원받을 거야!",
    "role": "desc",
@@ -1586,7 +1606,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#158": {
+  "A Headless History#160": {
    "src": "You prepared the sleeping spell, right? Who knows if we'll get a chance like this again.",
    "dst": "수면 주문은 준비했지? 이런 기회가 또 올지 누가 알아.",
    "role": "desc",
@@ -1596,7 +1616,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#159": {
+  "A Headless History#161": {
    "src": "Shhh... Quiet. He's in there.",
    "dst": "쉬잇... 조용. 안에 있어.",
    "role": "desc",
@@ -1606,7 +1626,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#160": {
+  "A Headless History#162": {
    "src": "Okay, go! Knock him out.",
    "dst": "좋아, 가! 기절시켜.",
    "role": "desc",
@@ -1616,7 +1636,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#161": {
+  "A Headless History#163": {
    "src": "L-Lari? Is...is that you? Did you finally come back...?",
    "dst": "L-Lari? 너...너야? 드디어 돌아온 거야...?",
    "role": "desc",
@@ -1626,7 +1646,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#162": {
+  "A Headless History#164": {
    "src": "Nah, not quite. Say, why don't you go to sleep 'til she comes back? Dream sweet dreams...",
    "dst": "아니, 그건 아니지. 그 여자가 돌아올 때까지 푹 자는 게 어때? 좋은 꿈 꿔...",
    "role": "desc",
@@ -1636,7 +1656,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#163": {
+  "A Headless History#165": {
    "src": "...they'll be the last ones you ever have, grimy demon. To the guillotine with you... Everyone! I got him!",
    "dst": "...네 인생 마지막 꿈이 될 거다, 더러운 악마야. 단두대로 가자... 다들! 잡았다!",
    "role": "desc",
@@ -1646,7 +1666,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#164": {
+  "A Headless History#166": {
    "src": "Everyone, welcome! Today will be the day we save our fair land. Today's the day of light!",
    "dst": "여러분, 환영합니다! 오늘은 우리의 아름다운 땅을 구하는 날입니다. 오늘은 빛의 날입니다!",
    "role": "desc",
@@ -1656,7 +1676,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#165": {
+  "A Headless History#167": {
    "src": "Dullahan has been captured! We have the cursed progenitor of the decay in our grip- to be executed, once and for all!",
    "dst": "Dullahan이 붙잡혔습니다! 쇠락을 부른 저주받은 원흉이 우리 손에 있습니다- 이제 영원히 처형합니다!",
    "role": "desc",
@@ -1666,7 +1686,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#166": {
+  "A Headless History#168": {
    "src": "Haha, yeah! Shoulda thought twice before cursing OUR homes! Three cheers for our wizards!!",
    "dst": "하하, 그래! 우리 집에 저주 걸기 전에 한 번 더 생각했어야지! 마법사들 만세!!",
    "role": "desc",
@@ -1676,7 +1696,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#167": {
+  "A Headless History#169": {
    "src": "The decay will clear up- We'll spill his blood, chop off his head, and the curse will be lifted!!",
    "dst": "쇠락은 걷힐 거야- 놈의 피를 흘리고 목을 치면 저주가 풀린다!!",
    "role": "desc",
@@ -1686,7 +1706,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#168": {
+  "A Headless History#170": {
    "src": "Ladies and gentlemen, folks of all shapes and sizes, it's time to take our lives back!",
    "dst": "신사 숙녀 여러분, 온갖 모습의 이웃 여러분, 이제 우리 삶을 되찾을 때입니다!",
    "role": "desc",
@@ -1694,26 +1714,6 @@
    "quest": "A Headless History",
    "stage": "Stage 11",
    "speaker": "Gelibord Citizen",
-   "source": "wiki"
-  },
-  "A Headless History#169": {
-   "src": "{~}!",
-   "dst": "{~}!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Headless History",
-   "stage": "Stage 11",
-   "speaker": "Gelibord Citizens",
-   "source": "wiki"
-  },
-  "A Headless History#170": {
-   "src": "{~}!",
-   "dst": "{~}!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Headless History",
-   "stage": "Stage 11",
-   "speaker": "Gelibord Citizens",
    "source": "wiki"
   },
   "A Headless History#171": {
@@ -1727,6 +1727,26 @@
    "source": "wiki"
   },
   "A Headless History#172": {
+   "src": "{~}!",
+   "dst": "{~}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Headless History",
+   "stage": "Stage 11",
+   "speaker": "Gelibord Citizens",
+   "source": "wiki"
+  },
+  "A Headless History#173": {
+   "src": "{~}!",
+   "dst": "{~}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Headless History",
+   "stage": "Stage 11",
+   "speaker": "Gelibord Citizens",
+   "source": "wiki"
+  },
+  "A Headless History#174": {
    "src": "Dullahan? I'm...I'm back. I didn't leave you for long, I just was trying to find the cu-",
    "dst": "Dullahan? 나...나 왔어. 오래 비운 건 아니야, 그냥 치료법을 찾-",
    "role": "desc",
@@ -1736,7 +1756,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#173": {
+  "A Headless History#175": {
    "src": "...uh? Dullahan? He's...he's been right here to greet me almost every day for the past twenty years...",
    "dst": "...어? Dullahan? 지난 20년 동안 거의 매일 여기서 날 맞아 줬는데...",
    "role": "desc",
@@ -1746,7 +1766,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#174": {
+  "A Headless History#176": {
    "src": "Footprints...? Dullaaaa? Where'd you go? Is everything alright, did something happen?",
    "dst": "발자국...? Dullaaaa? 어디 갔어? 괜찮은 거야? 무슨 일 있었어?",
    "role": "desc",
@@ -1756,7 +1776,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#175": {
+  "A Headless History#177": {
    "src": "D-Dulla...ha...I... Wh...",
    "dst": "D-Dulla...하...나... 어...",
    "role": "desc",
@@ -1766,7 +1786,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#176": {
+  "A Headless History#178": {
    "src": "I... H-how could they...d-do this...?",
    "dst": "나... 어, 어떻게...이, 이런 짓을...?",
    "role": "desc",
@@ -1776,7 +1796,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#177": {
+  "A Headless History#179": {
    "src": "I...I l-left for...an hour, a-and...and they... Why?",
    "dst": "나...나 겨, 겨우...한 시간, 자, 잠깐...그런데 그들이... 왜?",
    "role": "desc",
@@ -1786,7 +1806,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#178": {
+  "A Headless History#180": {
    "src": "Why did they do this to you...? I...h-how can I possibly fix this?!",
    "dst": "왜 너한테 이런 짓을...? 나...어, 어떻게 이걸 되돌려?!",
    "role": "desc",
@@ -1796,7 +1816,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#179": {
+  "A Headless History#181": {
    "src": "I cannot understand why you continue to defile me with these horrid memories. What do you hope to find?",
    "dst": "어째서 이 끔찍한 기억으로 계속 나를 더럽히는지 모르겠구나. 무엇을 찾길 바라느냐?",
    "role": "desc",
@@ -1806,7 +1826,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#180": {
+  "A Headless History#182": {
    "src": "I am once more curious. If only to know what I could possibly do or say to cease this horrid quest you've given yourself.",
    "dst": "다시금 궁금하구나. 무엇을 하거나 말해야 네가 자처한 이 끔찍한 탐색을 멈추게 할 수 있는지.",
    "role": "desc",
@@ -1816,7 +1836,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#181": {
+  "A Headless History#183": {
    "src": "Th-this has to work. It WILL work! I know it will! I...I d-don't know if it will... I have to fix this, I have to...",
    "dst": "이, 이건 꼭 돼야 해. 될 거야! 될 거라는 거 알아! 나...나, 모르겠어... 되돌려야 해, 꼭...",
    "role": "desc",
@@ -1826,7 +1846,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#182": {
+  "A Headless History#184": {
    "src": "The waters from the Lazarus Pit are fabled for bringing back the dead... If this doesn't work, I...",
    "dst": "Lazarus 구덩이의 물은 죽은 자를 되살린다는 전설이 있어... 이것마저 안 되면, 난...",
    "role": "desc",
@@ -1836,7 +1856,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#183": {
+  "A Headless History#185": {
    "src": "I can't think about that. This...this WILL work. I promise. I found a way to fix it... It has to.",
    "dst": "그건 생각하면 안 돼. 이건...이건 반드시 될 거야. 약속해. 되돌릴 방법을 찾았어... 돼야만 해.",
    "role": "desc",
@@ -1846,7 +1866,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#184": {
+  "A Headless History#186": {
    "src": "P-Please...w-whatever gods are out there, whoever is listening, hear me...bring Dullahan back to me, I'm begging you...",
    "dst": "제, 제발...어, 어떤 신이든, 누구든 듣고 있다면 들어 줘...Dullahan을 돌려줘, 제발 부탁이야...",
    "role": "desc",
@@ -1856,7 +1876,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#185": {
+  "A Headless History#187": {
    "src": "It's... I-Is it reacting? It... It looks like it is, but...h-he's not mending...",
    "dst": "이거... 바, 반응하는 건가? 그런... 것 같은데...사, 상처가 안 아물어...",
    "role": "desc",
@@ -1866,7 +1886,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#186": {
+  "A Headless History#188": {
    "src": "N-No, this...i-it isn't...NO! It... It HAS to work! I...I can m-make this work!",
    "dst": "아, 아니, 이건...아, 안...안 돼! 이건... 꼭 돼야 해! 내...내가 되, 되게 할 거야!",
    "role": "desc",
@@ -1876,7 +1896,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#187": {
+  "A Headless History#189": {
    "src": "[Gavellian Spell]!!",
    "dst": "[Gavellian Spell]!!",
    "role": "desc",
@@ -1886,7 +1906,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#188": {
+  "A Headless History#190": {
    "src": "D-Dullahan! It...it worked! You're back!",
    "dst": "D-Dullahan! 됐...됐어! 돌아왔구나!",
    "role": "desc",
@@ -1896,7 +1916,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#189": {
+  "A Headless History#191": {
    "src": "I...I t-told you... I knew I could change fate... I'm so glad you're here...",
    "dst": "내...내가 말, 말했지... 운명을 바꿀 수 있다고... 네가 있어서 정말 다행이야...",
    "role": "desc",
@@ -1906,7 +1926,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#190": {
+  "A Headless History#192": {
    "src": "It's odd. If it were not for her, I would not be here. I would not have my power. Yet even thinking her name enrages me.",
    "dst": "기이하군. 그 여자가 아니었다면 나는 여기 없었을 것이다. 이 힘도 없었겠지. 헌데 그 이름만 떠올려도 분노가 치민다.",
    "role": "desc",
@@ -1916,7 +1936,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#191": {
+  "A Headless History#193": {
    "src": "Enter the last door in the dining hall.",
    "dst": "연회장의 마지막 문으로 들어가세요.",
    "role": "desc",
@@ -1926,7 +1946,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Headless History#192": {
+  "A Headless History#194": {
    "src": "Dullahan? I...",
    "dst": "Dullahan? 나...",
    "role": "desc",
@@ -1936,7 +1956,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#193": {
+  "A Headless History#195": {
    "src": "H...h-hrk...g-gah, what is...wh-what... You...you didn't really...?",
    "dst": "흐...흐-흡...으, 윽, 이게...뭐, 뭐야... 너...설마 정말로...?",
    "role": "desc",
@@ -1946,7 +1966,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#194": {
+  "A Headless History#196": {
    "src": "Th-there's so much death... The...the air smells like b-blood...",
    "dst": "주, 죽음이 가득해... 고, 공기에서 피, 피 냄새가 나...",
    "role": "desc",
@@ -1956,7 +1976,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#195": {
+  "A Headless History#197": {
    "src": "This isn't... There has to be s-some other reason, I... I can't have b-brought back a...a...",
    "dst": "이건... 분명 다, 다른 이유가 있을 거야, 나... 내가 되, 되살린 게...그...그...",
    "role": "desc",
@@ -1966,7 +1986,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#196": {
+  "A Headless History#198": {
    "src": "P-Please, we can't afford to lose more people! There's hardly any farmers in the fields anymore, I-I'm needed elsewhere!",
    "dst": "제, 제발, 사람을 더 잃을 순 없어요! 밭엔 이제 농부도 거의 없다고요, 저, 저는 할 일이 있어요!",
    "role": "desc",
@@ -1976,7 +1996,7 @@
    "speaker": "Gelibord Citizen",
    "source": "wiki"
   },
-  "A Headless History#197": {
+  "A Headless History#199": {
    "src": "The last few said similar things. Someone else I knew said similar things. Frankly, I do not care. Present your soul to me, now.",
    "dst": "앞선 몇 놈도 비슷한 말을 했다. 내가 알던 누군가도 비슷한 말을 했지. 솔직히 상관없다. 네 영혼을 바쳐라, 지금.",
    "role": "desc",
@@ -1986,7 +2006,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#198": {
+  "A Headless History#200": {
    "src": "DULLAHAN! What...w-what are you doing?! I... I can't believe my eyes...",
    "dst": "Dullahan! 무...무슨 짓이야?! 나... 내 눈을 믿을 수가 없어...",
    "role": "desc",
@@ -1996,7 +2016,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#199": {
+  "A Headless History#201": {
    "src": "I... I tried to help you! I t-tried so hard at everything we did together... How could you do this to them?! To...to me?",
    "dst": "나... 난 널 도우려 했어! 함께한 모든 일에 정, 정말 열심이었는데... 어떻게 저들에게 이럴 수 있어?! 나...나한테?",
    "role": "desc",
@@ -2006,7 +2026,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#200": {
+  "A Headless History#202": {
    "src": "Odd. I recall you explicitly denying the only option that would have prevented this. I warned you quite thoroughly.",
    "dst": "기이하군. 이 일을 막을 유일한 방법을 네가 분명히 거부했던 걸로 기억한다. 충분히 경고했을 텐데.",
    "role": "desc",
@@ -2016,7 +2036,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#201": {
+  "A Headless History#203": {
    "src": "You have had many chances to end this, Lari. Do you expect me to feel sympathy, when your own actions have made me feel nothing?",
    "dst": "끝낼 기회는 수없이 있었다, Lari. 네 행동 때문에 아무것도 느낄 수 없게 된 내게, 동정이라도 바라느냐?",
    "role": "desc",
@@ -2026,7 +2046,7 @@
    "speaker": "Dullahan",
    "source": "wiki"
   },
-  "A Headless History#202": {
+  "A Headless History#204": {
    "src": "This...this isn't like you... You would never have done this before! You dedicated your life to trying to help...so w-why are you...m...m-m... I-I'm leaving!!",
    "dst": "이건...이건 너답지 않아... 예전의 넌 절대 안 그랬어! 평생 남을 도우려고 살았잖아...그런데 왜...어...어-어... 나, 난 갈래!!",
    "role": "desc",
@@ -2036,7 +2056,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#203": {
+  "A Headless History#205": {
    "src": "What have I done...? This...he's... He's not th-the same anymore... What changed? Is this my fault...? I c-can't understand it...",
    "dst": "내가 무슨 짓을 한 거지...? 이건...그는... 더는 예, 예전의 그가 아니야... 뭐가 달라진 거지? 내 잘못인가...? 모, 모르겠어...",
    "role": "desc",
@@ -2046,7 +2066,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#204": {
+  "A Headless History#206": {
    "src": "...but...I'll... I'll protect them. I'll protect him... I...there has to be a way. But...until I find it...",
    "dst": "...그래도...난... 저들을 지킬 거야. 그도 지킬 거야... 난...방법이 있을 거야. 하지만...찾을 때까지는...",
    "role": "desc",
@@ -2056,7 +2076,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#205": {
+  "A Headless History#207": {
    "src": "...goodbye. Goodbye until the day comes when I can fill you with light once more. Goodbye until you learn... Goodbye, until I can fix you...",
    "dst": "...안녕. 다시 너를 빛으로 채울 수 있는 날까지 안녕. 네가 깨달을 때까지 안녕... 너를 고칠 수 있을 때까지, 안녕...",
    "role": "desc",
@@ -2066,7 +2086,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#206": {
+  "A Headless History#208": {
    "src": "Goodbye, Dullahan... I'll miss you.",
    "dst": "안녕, Dullahan... 보고 싶을 거야.",
    "role": "desc",
@@ -2076,7 +2096,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "A Headless History#207": {
+  "A Headless History#209": {
    "src": "Investigate the dark door at the end of the castle.",
    "dst": "성 끝에 있는 어두운 문을 조사하세요.",
    "role": "desc",

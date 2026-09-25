@@ -1,12 +1,28 @@
 {
  "_meta": {
   "quest": "Underwater",
-  "count": 25,
-  "translated": 25,
+  "count": 26,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underwater#000": {
+   "src": "Glad to see you again!",
+   "dst": "很高興再見到你！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I'm glad to see you again.",
+    "file": "quest/bob-s-lost-soul.json",
+    "ratio": 0.833,
+    "reason": "candidate"
+   }
+  },
+  "Underwater#001": {
    "src": "But recently, a small hole has opened in the shipwreck here. It is believed that our fortune is hidden within it.",
    "dst": "不過最近這艘沉船上裂開了一個小洞。有人相信我們的財寶就藏在裡面。",
    "role": "desc",
@@ -16,7 +32,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underwater#001": {
+  "Underwater#002": {
    "src": "Talk to Omango located at the North of {p} at [-{~}, {~}, -{~}]",
    "dst": "到 {p} 北邊 [-{~1}, {~2}, -{~3}] 找 Omango 談話",
    "role": "desc",
@@ -26,7 +42,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#002": {
+  "Underwater#003": {
    "src": "Hi, my name is Omango. I am a resident of the {p} village, on top of the hill.",
    "dst": "嗨，我叫 Omango。我住在山丘上的 {p} 村。",
    "role": "desc",
@@ -36,7 +52,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#003": {
+  "Underwater#004": {
    "src": "As you may know, our people came to your land years ago, and this is the ship they used.",
    "dst": "你大概知道，我們的族人多年前來到你們這片土地，而這就是他們當年搭的船。",
    "role": "desc",
@@ -46,7 +62,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#004": {
+  "Underwater#005": {
    "src": "They brought lots of luxurious goods with them. Most of them got lost in the wreck.",
    "dst": "他們帶了大量的奢侈品過來。大部分都隨著船難沉沒了。",
    "role": "desc",
@@ -56,7 +72,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#005": {
+  "Underwater#006": {
    "src": "But recently, a small hole has opened in the shipwreck here. It is believed that fortune is hidden within it.",
    "dst": "不過最近這艘沉船上裂開了一個小洞。有人相信裡面藏著財寶。",
    "role": "desc",
@@ -66,7 +82,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#006": {
+  "Underwater#007": {
    "src": "Unfortunately, nobody has been able to explore it. It is too deep, no creature can survive underwater that long!",
    "dst": "可惜一直沒人能進去探。那裡太深了，沒有生物能在水下待那麼久！",
    "role": "desc",
@@ -76,7 +92,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#007": {
+  "Underwater#008": {
    "src": "However, my old friend Sayrr is a fisherman, and I know that he has a very special helmet...",
    "dst": "不過我的老朋友 Sayrr 是個漁夫，我知道他有一頂很特別的頭盔……",
    "role": "desc",
@@ -86,7 +102,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#008": {
+  "Underwater#009": {
    "src": "If you convince him to give you this helmet, and find the treasure, I'll give you a part of it!",
    "dst": "如果你能說服他把那頂頭盔給你，再把寶藏找出來，我分你一份！",
    "role": "desc",
@@ -96,7 +112,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#009": {
+  "Underwater#010": {
    "src": "Sayrr is out on his boat, but the cave next to me is a quick way over to where he does his fishing. Be careful on the way, though.",
    "dst": "Sayrr 出海在他的船上，不過我旁邊這個洞窟是通往他釣魚那一帶的捷徑。路上小心點。",
    "role": "desc",
@@ -106,7 +122,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#010": {
+  "Underwater#011": {
    "src": "When you finally have the helmet, explore the ship and bring me back [{~} Ancient Treasure]. Good luck.",
    "dst": "等你拿到頭盔，就去探那艘船，幫我帶回 [{~} Ancient Treasure]。祝你好運。",
    "role": "desc",
@@ -116,7 +132,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#011": {
+  "Underwater#012": {
    "src": "Go through the cave at [-{~}, {~}, -{~}] to find Sayrr on his boat on the other side",
    "dst": "穿過 [-{~1}, {~2}, -{~3}] 的洞窟，到另一頭找船上的 Sayrr",
    "role": "desc",
@@ -126,7 +142,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#012": {
+  "Underwater#013": {
    "src": "Why ya looking at me like that? Is it cause I'm small, eh? I'll have you know that I caught fish that were twice your size!",
    "dst": "你幹嘛那樣看我？是因為我矮嗎，嗯？我告訴你，我釣過的魚有你兩倍大！",
    "role": "desc",
@@ -136,7 +152,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#013": {
+  "Underwater#014": {
    "src": "...or, well, I used to be able to. Nothing's biting recently- wait a sec, why'd you hop on my boat anyways, stranger?",
    "dst": "……好啦，是以前釣得到。最近什麼都不上鉤——等等，話說回來，陌生人，你幹嘛跳上我的船？",
    "role": "desc",
@@ -146,7 +162,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#014": {
+  "Underwater#015": {
    "src": "Ahah! Yes, I still have that old breathing helmet. You want it? You'll have to do something for me first.",
    "dst": "啊哈！沒錯，那頂舊的呼吸頭盔我還留著。你想要？那你得先幫我做件事。",
    "role": "desc",
@@ -156,7 +172,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#015": {
+  "Underwater#016": {
    "src": "I'm sure you heard me, but the fish just aren't biting around here anymore! I need to make a living somehow! There's some fish in that cave, but...",
    "dst": "我剛才說了你也聽到了，這一帶的魚就是不上鉤了嘛！我總得討生活啊！那個洞窟裡是有些魚，可是……",
    "role": "desc",
@@ -166,7 +182,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#016": {
+  "Underwater#017": {
    "src": "...it's a bit dangerous. Tell ya what, I'll give you my fishing rod, and you can go catch me, say, [{~} Gudgeon Meat] down there.",
    "dst": "……那裡有點危險。這樣吧，我把釣竿借你，你下去幫我釣個，嗯，[{~} Gudgeon Meat] 上來。",
    "role": "desc",
@@ -176,7 +192,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#017": {
+  "Underwater#018": {
    "src": "The helmet will be all yours after that.",
    "dst": "弄好之後，頭盔就是你的了。",
    "role": "desc",
@@ -186,7 +202,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#018": {
+  "Underwater#019": {
    "src": "Bring back [{~} Gudgeon Meat] found in the cave at [-{~}, {~}, -{~}] to Sayrr",
    "dst": "到 [-{~2}, {~3}, -{~4}] 的洞窟釣到 [{~1} Gudgeon Meat] 帶回去給 Sayrr",
    "role": "desc",
@@ -196,7 +212,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#019": {
+  "Underwater#020": {
    "src": "Ah! Welcome back! Any luck with the fish?",
    "dst": "啊！歡迎回來！魚釣得還順利嗎？",
    "role": "desc",
@@ -206,7 +222,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#020": {
+  "Underwater#021": {
    "src": "Great, and I'll thank you kindly. Here's your helmet, have fun with that.",
    "dst": "太好了，那真是謝謝你。頭盔給你，好好玩吧。",
    "role": "desc",
@@ -216,7 +232,7 @@
    "speaker": "Sayrr",
    "source": "wiki"
   },
-  "Underwater#021": {
+  "Underwater#022": {
    "src": "Explore the crashed ship for a lost treasure at [-{~}, {~}, -{~}]",
    "dst": "到 [-{~1}, {~2}, -{~3}] 探索那艘失事的船，找出失落的寶藏",
    "role": "desc",
@@ -226,7 +242,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#022": {
+  "Underwater#023": {
    "src": "Break the crate and bring [{~} Old Treasure] to Omango at [-{~}, {~}, -{~}]",
    "dst": "打破木箱，把 [{~1} Old Treasure] 帶去 [-{~2}, {~3}, -{~4}] 給 Omango",
    "role": "desc",
@@ -236,7 +252,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#023": {
+  "Underwater#024": {
    "src": "You got it! You found the treasure!",
    "dst": "你拿到了！你找到寶藏了！",
    "role": "desc",
@@ -246,7 +262,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#024": {
+  "Underwater#025": {
    "src": "As promised, here's your part of the loot.",
    "dst": "照約定，這是分你的那一份。",
    "role": "desc",
