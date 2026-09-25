@@ -26,8 +26,17 @@ import java.util.function.ToIntFunction;
  * </pre>
  *
  * <h2>怎麼判斷「太長」</h2>
- * 拿<b>同一行的原文</b>量。那一行的寬度正是伺服器畫框時用的寬度，超過就是凸出去，
- * 不必猜框有多寬。中文比英文短，所以真正會超過的就是附在後面的那段原文。
+ * 跟<b>整份 tooltip 最寬的那一行</b>比。中文比英文短，所以真正會超過的就是附在
+ * 後面的那段原文。
+ *
+ * <p>先前是跟<b>同一行的原文</b>比，理由是那一行的寬度正是伺服器畫框時用的寬度。
+ * 但那個門檻太低：橡木弓的英文名稱只有 68px，而整份 tooltip 被
+ * 「{@code ✔ Class Type  Archer/Hunter}」撐到 160px——「{@code 橡木弓 (Oak Wood Bow)}」
+ * 才 127px，整份看起來綽綽有餘，卻因為比 68px 寬而被拆成兩行。實機回報的
+ * 「格式不對」就是這個：名字底下無端多出一行，把下面整排往下推。
+ *
+ * <p>收得進整份的寬度就留在一行；真正長到連整份都撐不下的（「{@code 烬咒牧杖
+ * (Cindercurse Crosier) [51.0%]}」）才拆。
  *
  * <p>拆完第一行變成「{@code 烬咒牧杖 [51.0%]}」，比英文還窄，一定收得進框裡；
  * 原文自己一行落在框下面，看得到也複製得到。耐久度留在第一行——它跟名稱是一組，
@@ -76,12 +85,19 @@ public final class NameWrap {
                 || !store.namesWithOriginal() || centered.length != translated.size()) {
             return same;
         }
+        // 整份 tooltip 有多寬。名字只要收得進這個寬度就不必拆——拆了反而多一行。
+        int frame = 0;
+        for (Component row : original) {
+            frame = Math.max(frame, width.applyAsInt(row));
+        }
         int n = Math.min(original.size(), translated.size());
         for (int i = 0; i < n; i++) {
             Component line = translated.get(i);
-            int budget = width.applyAsInt(original.get(i));
+            // 放得下整份 tooltip 就不算太長，見 #split 的「怎麼判斷太長」。
+            int budget = Math.max(width.applyAsInt(original.get(i)), frame);
             // headless（測試、沒有字型）量出來是 0，跟第 0 行一樣不動
-            if (budget <= 0 || width.applyAsInt(line) <= budget) {
+            if (width.applyAsInt(original.get(i)) <= 0
+                    || width.applyAsInt(line) <= budget) {
                 continue;
             }
             List<Piece> pieces = pieces(line);
