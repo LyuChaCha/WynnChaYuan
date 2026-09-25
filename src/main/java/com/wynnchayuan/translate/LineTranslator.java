@@ -2320,11 +2320,60 @@ public final class LineTranslator {
         return spread(starts) < spread(ends);
     }
 
-    /** 要有這麼多「兩欄的行」才判斷得出來。兩行是巧合，三行才是排版。 */
-    private static final int MIN_COLUMN_ROWS = 3;
+    /**
+     * 要有這麼多「兩欄的行」才判斷得出來。
+     *
+     * <p>先前是三，註解寫著「兩行是巧合，三行才是排版」。<b>兩行不是巧合</b>：
+     * 判斷看的是兩組座標<b>哪一組比較一致</b>，而一行自己跟自己永遠一致，
+     * 所以一行確實推不出任何東西——兩行就推得出來了。橡木弓只有職業類型與
+     * 戰鬥等級兩列有欄距，而它們的起點差了快六十像素、右緣卻落在同一點；
+     * 要「巧合」成這樣，得兩列的標籤一樣寬、數值也一樣寬才行。
+     *
+     * <p>門檻是三的時候，所有只有兩列需求的武器（也就是大部分武器）通通被
+     * 當成靠左，右緣補償跳過不做。
+     */
+    private static final int MIN_COLUMN_ROWS = 2;
 
     /**
      * 這一行第二欄的起點與整行的右緣（像素）。
+     *
+     * <h2>欄距藏在文字片段裡面</h2>
+     * Wynncraft 的物品 tooltip <b>不會</b>把欄距獨立成一個片段。實機錄到的
+     * 職業類型那一行只有三個片段（診斷檔 line-debug「=== 9 ===」）：
+     *
+     * <pre>
+     *   [requirement/sprite]  U+E006 U+CFFFF
+     *   [language/wynncraft]  " Class Type" U+CFFC4 U+D0044   ← 欄距在這裡面
+     *   [language/wynncraft]  "Archer/Hunter"
+     * </pre>
+     *
+     * 那兩個偏移（-60、+68）接在標籤<b>同一個片段</b>的尾巴：先退回標籤起點，
+     * 再跳到數值欄。先前這裡是逐 {@code StyledTextPart} 走的，而
+     * {@code " Class Type…"} 整段拿去問 {@link #isAdjustableSpace} 必定是
+     * {@code false}（裡面有字母），於是<b>一個欄界都認不出來</b>——
+     * {@link #columnsAreLeftAligned} 對每一份物品 tooltip 都回傳「靠左」，
+     * {@link #realign} 的右緣補償從來沒跑過。
+     *
+     * <p>畫面上就是回報過好幾次的那一個：數值翻短之後停在原本的起點，右邊空
+     * 一大塊，看起來像置中。{@link #realign} 早就會算，只是走不到；它用
+     * {@link #splitGaps} 拆片段，這裡沒有。現在兩邊用同一套。
+     *
+     * <h2>欄界跟 {@link #realign} 用同一套</h2>
+     * 先前這裡自己有一個「間隔要滿 8px 才算欄界」的門檻。那對 Wynncraft 的
+     * 退回式欄距是錯的：{@code [-標籤寬][+欄位起點]} 兩個偏移相鄰，
+     * {@link #splitOffsets} 會把它們併成<b>一個</b>偏移，數值是
+     * {@code 欄位起點 - 標籤寬}——那是兩個無關的數字相減，落在幾 px 純屬巧合。
+     * 標籤長一點就低於門檻，整行的欄界就消失了。
+     *
+     * <p>{@link #tooltipGaps} 早就處理過同一件事（見 {@code #wordBefore}）：
+     * 前面是一個詞、後面接著字母，就算窄也是欄界。補償那一端認的是它，
+     * 判斷這一端也要認它，不然「偵測得到」與「補得了」會各說各話。
+     *
+     * <h2>「前面有字」要是真的字</h2>
+     * 分隔線那幾列是圖示碼位加偏移（{@code 󐀦󏿿…}），拆完之後也是「內容、
+     * 間隔、內容」的形狀。用 {@code !isBlank()} 判斷的話它們會被當成兩欄的行，
+     * 量出一堆跟排版無關的座標，把靠左／靠右的判斷洗掉。
+     * {@link GlyphSplitter#hasLetter} 會跳過圖示碼位，只認真正的字母。
      *
      * @return {@code {起點, 右緣}}；不是兩欄的行回傳 {@code null}
      */
@@ -2336,35 +2385,32 @@ public final class LineTranslator {
         // （10px + 12px），第二個的 x 已經大於 0，會被誤認成欄界，
         // 第一欄就被當成第二欄量了。
         boolean sawText = false;
-        for (StyledTextPart part : line) {
-            String raw = part.getString(null, StyleType.NONE);
-            if (raw.isEmpty()) {
-                continue;
-            }
-            PartStyle ps = part.getPartStyle();
-            Style style = ps == null ? Style.EMPTY : ps.getStyle();
-            if (isAdjustableSpace(style, raw)) {
-                int px = SpaceOffset.decode(raw);
-                // 夠寬的間隔才是欄位交界；一兩像素只是字距
-                if (px >= COLUMN_GAP_PX && start < 0 && sawText) {
+        // splitGaps 不能省，見上面「欄距藏在文字片段裡面」。
+        List<Run> rs = splitGaps(runs(line.getComponent()));
+        boolean[] gaps = tooltipGaps(rs);
+        for (int i = 0; i < rs.size(); i++) {
+            Run r = rs.get(i);
+            if (r.space()) {
+                if (gaps[i] && start < 0 && sawText) {
                     sawGap = true;
                 }
-                x += px;
+                x += r.px();
+                continue;
+            }
+            String raw = r.text();
+            if (raw == null || raw.isEmpty()) {
                 continue;
             }
             if (sawGap && start < 0 && !raw.isBlank()) {
                 start = x;
             }
-            if (!raw.isBlank()) {
+            if (GlyphSplitter.hasLetter(raw)) {
                 sawText = true;
             }
-            x += widthOf(literal(raw, style));
+            x += widthOf(literal(raw, r.style()));
         }
         return start < 0 ? null : new int[] {start, x};
     }
-
-    /** 一段間隔要這麼寬才算欄位交界，而不只是字距。 */
-    private static final int COLUMN_GAP_PX = 8;
 
     /** 最大減最小。越小代表這些位置越一致。 */
     static int spread(List<Integer> values) {

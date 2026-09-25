@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynntils.core.text.StyledText;
 import net.minecraft.SharedConstants;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.Bootstrap;
@@ -227,6 +228,8 @@ public final class AlignPointTest {
         check("一句話不是 ID", !LineTranslator.isName("the legendary ice mage"));
         check("空的不是 ID", !LineTranslator.isName(""));
 
+        gearRequirements();
+
         System.out.println(failures == 0
                 ? "AlignPoint: 全部通過"
                 : "AlignPoint: " + failures + " 項失敗");
@@ -240,5 +243,118 @@ public final class AlignPointTest {
         if (!ok) {
             failures++;
         }
+    }
+
+    /**
+     * 武器的需求欄：數值的<b>右緣</b>要留在原處。
+     *
+     * <h2>回報了四次的那一個</h2>
+     * 橡木弓的「職業類型」翻成中文之後停在原本的起點，右邊空一大塊，看起來像
+     * 置中；同一份 tooltip 的「戰鬥等級 1」卻是對的——因為那個 1 沒有被翻譯，
+     * 寬度沒變。
+     *
+     * <p>{@link LineTranslator#realign} 本來就會補右緣，可是它要
+     * {@code leftAligned == false} 才做，而 {@link LineTranslator#columnsAreLeftAligned}
+     * 對<b>每一份物品 tooltip</b> 都回答「靠左」：
+     *
+     * <ul>
+     *   <li>{@code secondColumn} 先前逐 {@code StyledTextPart} 走，而 Wynncraft 把
+     *       欄距的兩個偏移接在標籤<b>同一個片段</b>的尾巴，所以一個欄界都沒認出來；</li>
+     *   <li>就算認出來了，門檻是「三行才算排版」，而武器只有職業類型與戰鬥等級
+     *       兩行有欄距。</li>
+     * </ul>
+     *
+     * <h2>這裡怎麼量</h2>
+     * 照 line-debug「=== 9 ===」的片段結構重建那兩行，偏移值改用本檔的量尺算
+     * （半形 6、全形 9、圖示 0），讓「退回標籤起點、再跳到數值欄」的關係跟實機
+     * 一致。兩行的右緣都落在 149px：
+     *
+     * <pre>
+     *   sprite[-1]  " Class Type"[66]   [-66 +72]  "Archer/Hunter"[78]   → 149
+     *   sprite[-1]  " Combat Level"[78] [-78 +144] "1"[6]                → 149
+     * </pre>
+     *
+     * 整行的總寬就是右緣（數值後面沒有東西了），所以「譯文總寬 == 原文總寬」
+     * 就是「右緣沒跑掉」。沒修之前職業類型那一行量到 113——短了 36px，正是
+     * 截圖上那一塊空白。
+     */
+    private static void gearRequirements() {
+        LineTranslator.measureForTest = AlignPointTest::gearWidth;
+        try {
+            StyledText classType = requirementRow(" Class Type", -66, 72, "Archer/Hunter");
+            StyledText combatLevel = requirementRow(" Combat Level", -78, 144, "1");
+            List<StyledText> rows = List.of(classType, combatLevel);
+
+            check("原文兩行的右緣本來就對齊（量尺沒歪）",
+                    gearWidth(classType.getComponent()) == 149
+                            && gearWidth(combatLevel.getComponent()) == 149);
+            check("兩行有欄距的需求列＝靠右，不是靠左",
+                    !LineTranslator.columnsAreLeftAligned(rows));
+
+            TranslationStore store = new TranslationStore();
+            store.loadAll(java.nio.file.Path.of(
+                    "src/main/resources/assets/wynnchayuan/translations", "zh_tw"));
+            boolean left = LineTranslator.columnsAreLeftAligned(rows);
+            for (StyledText row : rows) {
+                net.minecraft.network.chat.Component out =
+                        LineTranslator.translate(row, store, false, left);
+                String plain = out == null ? "(沒翻到)" : out.getString();
+                int was = gearWidth(row.getComponent());
+                int now = out == null ? -1 : gearWidth(out);
+                check("需求列的右緣對回原文：" + plain.replace(" ", "␠")
+                                + "  " + was + " -> " + now,
+                        now == was);
+            }
+        } finally {
+            LineTranslator.measureForTest = null;
+        }
+    }
+
+    /** line-debug「=== 9 ===」的片段結構：圖示、標籤＋兩個偏移、數值。 */
+    private static StyledText requirementRow(String label, int rewind, int column,
+                                             String value) {
+        Style sprite = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace(
+                        "tooltip/requirement/sprite")));
+        Style wynn = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace("language/wynncraft")));
+        net.minecraft.network.chat.MutableComponent row =
+                net.minecraft.network.chat.Component.empty()
+                .append(net.minecraft.network.chat.Component.literal(
+                        new String(Character.toChars(0xE006)) + SpaceOffset.encode(-1))
+                        .withStyle(sprite))
+                .append(net.minecraft.network.chat.Component.literal(
+                        label + SpaceOffset.encode(rewind) + SpaceOffset.encode(column))
+                        .withStyle(wynn))
+                .append(net.minecraft.network.chat.Component.literal(value).withStyle(wynn));
+        return StyledText.fromComponent(row);
+    }
+
+    /**
+     * 量尺：半形 6、全形 9、圖示 0、偏移碼位照面值。
+     *
+     * <p>偏移要<b>逐碼位</b>認，不能像 {@code ChatAlignTest} 那樣只認整段都是
+     * 偏移的片段——這裡要量的正是「標籤後面接著偏移」的混合片段。
+     */
+    private static int gearWidth(net.minecraft.network.chat.Component component) {
+        int[] w = {0};
+        component.visit((style, text) -> {
+            int i = 0;
+            while (i < text.length()) {
+                int cp = text.codePointAt(i);
+                i += Character.charCount(cp);
+                if (SpaceOffset.isOffset(cp)) {
+                    w[0] += SpaceOffset.decode(new String(Character.toChars(cp)));
+                } else if (cp >= 0xE000 && cp <= 0xF8FF) {
+                    w[0] += 0;                 // 圖示本身不佔位，位置靠前後的偏移
+                } else if (cp >= 0x2E80) {
+                    w[0] += 9;                 // 全形
+                } else {
+                    w[0] += 6;
+                }
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return w[0];
     }
 }
