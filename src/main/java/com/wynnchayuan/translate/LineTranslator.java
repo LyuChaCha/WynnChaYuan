@@ -9079,6 +9079,7 @@ public final class LineTranslator {
 
     private static Component literal(String text, Style style) {
         text = stripColourTokens(text);
+        text = deIcon(text);
         Style base = upright(text, style);
         // 我們把字型換掉了，斜體就跟著丟。
         //
@@ -9097,6 +9098,57 @@ public final class LineTranslator {
                 ? Component.literal(text).withStyle(base)
                 : coloured(text, base);
     }
+
+    /**
+     * Wynncraft 拿去當圖示的字母，換成畫得出來的。
+     *
+     * <h2>實機回報</h2>
+     * 西班牙文玩家發現「發現新區域」時<b>整個畫面變全黑</b>，而聊天那一行的
+     * 第一個字不見了：
+     *
+     * <pre>
+     *   應該是  Área descubierta: Farmers Settlement (+25 XP)
+     *   畫出來  rea descubierta: Farmers Settlement (+25 XP)   ← 而且世界全黑
+     * </pre>
+     *
+     * <p>{@code Á}（U+00C1）在 Wynncraft 的資源包裡<b>不是字母</b>。
+     * {@code minecraft:default} 引用的 {@code deprecated} 字型把它指到
+     * {@code font/screen/static/fade.png}——那是他們的<b>全螢幕淡出黑幕</b>。
+     * 玩家看到的不是缺字，是我們請遊戲畫了一張蓋住整個畫面的黑圖。
+     *
+     * <p>不是只有這一個字：同一份 {@code deprecated} 還把 {@code ² ¼ ½}
+     * 指到貨幣圖、{@code Ⓐ–Ⓛ} 指到採集職業、{@code ⓐ–ⓩ} 與 {@code ⑴–⑿}
+     * 指到遊戲裡的古語、{@code ０１２} 指到 Wynnic 數字、{@code ❤ ✔ ⚔ ☀ …}
+     * 指到各種符號。那些是<b>圖示</b>，譯文本來就不該用，交給
+     * {@code tools/check-glyphs.py} 在 CI 擋下來。{@code Á} 不一樣——
+     * 西班牙文真的需要它，所以留在語料裡，畫不出來的地方才換掉。
+     *
+     * <h2>對話框為什麼不受影響</h2>
+     * 對話走的是 {@code DialogueRewriter}，不經過這裡。那邊的規則是
+     * 「譯文<b>畫得出來</b>就完全不碰字型」，而 Wynncraft 的對話字型
+     * （{@code hud/dialogue/text/…}）自己帶了一張 {@code wynncraft_latin.png}、
+     * 而且沒有引用 {@code deprecated}——{@code Á} 在那裡是正常的字母。
+     * 所以西班牙文的「ÁBRETE」在對話框裡照樣有重音。
+     *
+     * <p>這裡一律換，不看字型：走到這一步的字型早就被
+     * {@link #forDisplay} 換成預設了（中文才畫得出來），
+     * 判斷字型只會得到一個永遠成立的答案。
+     */
+    private static String deIcon(String text) {
+        return text == null || text.indexOf(HIJACKED_LETTER) < 0
+                ? text : text.replace(HIJACKED_LETTER, SAFE_LETTER);
+    }
+
+    /** 見 {@link #deIcon}：被指到全螢幕黑幕的那個字母。 */
+    private static final char HIJACKED_LETTER = 'Á';
+
+    /**
+     * {@link #HIJACKED_LETTER} 的替身。
+     *
+     * <p>不用 {@code À}——它畫得出來，但「ÀREA」是錯的西班牙文，比沒有重音更糟。
+     * 大寫省略重音是西班牙文常見的排版慣例，讀得懂。
+     */
+    private static final char SAFE_LETTER = 'A';
 
     /** Minecraft 的格式碼前綴。 */
     private static final char SECTION = '§';
