@@ -7763,7 +7763,10 @@ public final class LineTranslator {
      *                       （見 {@link #rejoin}：整段重組過的話，兩個池子都得跟著換，
      *                       否則譯文裡的佔位符數量對不上，整段會被放棄）
      */
-    private static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
+    // 包內可見是為了測得到：折行之後「哪一段拿到哪個顏色」只有畫出來才看得到，
+    // 而測試環境沒有真的字型、折不出實機那一刀——所以測試直接把實機折好的那幾行
+    // 餵進來。見 BracketAccentTest#coordBracketOnOwnRow。
+    static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
                                               List<LineParts.Piece> extraAccents,
                                               List<LineParts.Piece> overrideGlyphs,
                                               List<LineParts.Piece> overridePlaces,
@@ -8285,7 +8288,7 @@ public final class LineTranslator {
                                         List<LineParts.Piece> accents, boolean[] used,
                                         Style side) {
         for (int k = 0; k < accents.size(); k++) {
-            if (used[k]) {
+            if (used[k] || isLoneBracket(accents.get(k).text())) {
                 continue;
             }
             String word = accents.get(k).text();
@@ -8295,6 +8298,39 @@ public final class LineTranslator {
             }
         }
         return false;
+    }
+
+    /**
+     * 孤零零一個方括號<b>不是一個詞</b>。
+     *
+     * <h2>實機回報（採集站的迷你任務卡）</h2>
+     * 譯文被面板折成四行，座標自己占最後一行：
+     *
+     * <pre>
+     *   石] 交到采集站 [采矿等级 73]，
+     *   坐标 [-712, 46, -5553]
+     * </pre>
+     *
+     * 座標的數字是白的，開頭那個 {@code [} 卻是<b>青</b>的——物品那一段的顏色。
+     *
+     * <h2>怎麼壞的</h2>
+     * 同一張卡上有兩組青色的方括號（物品名與採礦等級），拆出來的重點段裡混進了
+     * 一個字面就是 {@code [} 的青色段。到了座標那一行，{@link #hasOwnColour}
+     * 看到「這個字自己有顏色」就讓尾端的黏著迴圈停住，{@link #appendText} 再把
+     * 它塗成青色——夾在灰色散文與白色座標中間，一眼就看得出來。
+     *
+     * <p>但方括號不帶語意：它的顏色永遠<b>跟著隔壁</b>走，而那正是黏著規則在做
+     * 的事。所以比對重點段時直接跳過只有一個括號的那種。
+     *
+     * <p>只排除<b>單獨一個</b>括號。{@code [洞窟]}、{@code [採礦等級 } 這些帶字的
+     * 照樣算數——那才是真的有語意的一段。
+     */
+    private static boolean isLoneBracket(String word) {
+        if (word.length() != 1) {
+            return false;
+        }
+        char c = word.charAt(0);
+        return c == '[' || c == ']' || c == '【' || c == '】';
     }
 
     /** 單位用的字母：只認 ASCII 小寫。大寫與中文都不是單位。 */
@@ -8528,7 +8564,8 @@ public final class LineTranslator {
             int at = -1;
             int which = -1;
             for (int k = 0; k < accents.size(); k++) {
-                if (used[k]) {
+                // 孤零零一個方括號的顏色跟著隔壁走，不是自己一段。見 #isLoneBracket。
+                if (used[k] || isLoneBracket(accents.get(k).text())) {
                     continue;
                 }
                 int found = text.indexOf(accents.get(k).text(), from);
