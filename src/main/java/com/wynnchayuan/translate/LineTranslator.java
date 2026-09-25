@@ -6927,7 +6927,21 @@ public final class LineTranslator {
         return text.codePoints().anyMatch(Character::isLetter);
     }
 
-    /** 譯文裡最外層的那幾個 {@code [...]}，照出現順序。跨行的不算。 */
+    /**
+     * 譯文裡最外層的那幾個 {@code [...]}，照出現順序。
+     *
+     * <h2>被斷行切開的也要算</h2>
+     * 先前跨行就整組放棄。但這裡拿到的譯文<b>已經照面板寬度折過</b>
+     * （見 {@code #wrapToBlock}），一張迷你任務卡三、四行，括號落在折行處是
+     * 常態而不是例外——放棄等於整張卡的括號全部沒有顏色。實機回報的採集站那張
+     * 卡就是這樣：「把 {@code [24 鮭魚油]} 或 {@code [}」換行「{@code 24 鮭魚肉]}」，
+     * 兩組括號都只剩底色。
+     *
+     * <p>改成把斷行<b>接回來</b>再收。位置本來就不是這條路在用的東西——
+     * 貼樣式是拿字面去找（見 {@code #appendText}），而接回來的字面正好是
+     * {@code keepAccentsWhole} 要的：它靠「上一行結尾 ＋ 下一行開頭」認出被切開的
+     * 詞，再把前半搬到下一行。搬不動的還有 {@code #halvesAcrossBreaks} 接著。
+     */
     private static List<String> squareSpans(String text) {
         List<String> out = new ArrayList<>();
         int depth = 0;
@@ -6942,12 +6956,8 @@ public final class LineTranslator {
             } else if (c == ']' && depth > 0) {
                 depth--;
                 if (depth == 0) {
-                    String span = text.substring(start, i + 1);
-                    if (span.indexOf(NEWLINE) < 0) {
-                        out.add(span);
-                    } else {
-                        return List.of();      // 被斷行切開，位置對不準
-                    }
+                    out.add(text.substring(start, i + 1)
+                                .replace(String.valueOf(NEWLINE), ""));
                 }
             }
         }
@@ -8098,6 +8108,21 @@ public final class LineTranslator {
                                       List<LineParts.Piece> accents, boolean[] used,
                                       TranslationStore store, Style before, Style after,
                                       boolean afterNumber) {
+        // 兩個佔位符中間整段都是標點空白、而且兩邊同色時，整段跟著那個顏色。
+        //
+        // 座標就是這個形狀：原文 `[-1621, 50, -4664]` 整串白色，譯文寫成
+        // `[-{~}, {~}, -{~}]`，中間那兩段是「, 」。逗號會黏在前一個數值上
+        // （見 #hugs），但空白不黏——「中間有空白就不算黏著」那條規則管的是
+        // 詞距，而這裡整段都不是詞。結果是座標裡兩個空白掉回散文的灰色，
+        // 畫面上白色的座標中間夾著兩格灰。
+        //
+        // 兩邊同色才做：顏色不同的時候這一段該歸誰本來就有歧義，交給底下
+        // 逐邊黏的規則處理。
+        if (before != null && after != null && sameColour(before, after)
+                && !hasLetter(text)) {
+            out.append(literal(text, forDisplay(before)));
+            return;
+        }
         int lead = 0;
         if (before != null) {
             while (lead < text.length() && hugs(text.charAt(lead))

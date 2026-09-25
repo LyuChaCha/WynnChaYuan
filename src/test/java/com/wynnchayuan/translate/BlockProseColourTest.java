@@ -100,6 +100,13 @@ public final class BlockProseColourTest {
         Integer coord = colourOf(built, "677");
         check("［長名稱］座標仍是原文的白（拿到 " + show(coord) + "）",
                 coord != null && coord == COORD);
+        // 原文 `[-677, 46, -4948]` 整串白色，中間那兩個「, 」也是。
+        // 逗號會黏在前一個數值上，空白不黏——先前這兩格掉回散文的灰。
+        // 見 {@code LineTranslator#appendHugging} 開頭那一段。
+        Integer gap = colourOf(built, ", ");
+        check("★［長名稱］座標裡的「, 」也是白的，不是散文的灰（拿到 "
+                + show(gap) + "，實際分段：" + pieces(built) + "）",
+                gap != null && gap == COORD);
     }
 
     /**
@@ -214,6 +221,18 @@ public final class BlockProseColourTest {
                     Style.EMPTY.withColor(TextColor.fromRgb((Integer) pairs[i + 1]))));
         }
         return StyledText.fromComponent(out);
+    }
+
+    /** 畫出去的每一段文字，照順序。 */
+    private static List<String> pieces(List<Component> built) {
+        List<String> out = new ArrayList<>();
+        for (Component c : built) {
+            c.visit((style, t) -> {
+                out.add(t);
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        return out;
     }
 
     private static String show(Integer c) {
