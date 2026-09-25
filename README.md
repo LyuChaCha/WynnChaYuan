@@ -14,7 +14,9 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 [Ko-fi](https://ko-fi.com/lyuchacha)
 
 > [!IMPORTANT]
-> **目前是 Beta。** 譯文大多由 AI 產出，只有一部分經過人工校稿，會有錯譯與用詞不一致。
+> **目前是 Beta。** 部分譯文由人工輸入再經 AI 轉出，一小部分直接由 AI 翻譯，
+> 大部分基礎內容都經過人工校稿。其他語言目前基本上都是圍繞著繁體中文再做 AI 翻譯，
+> 所以可能會有錯譯與用詞不一致的問題。
 > 遇到問題請到 Discord 找 **LyuChaCha**，或到 [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues) 回報。
 
 ## 功能
