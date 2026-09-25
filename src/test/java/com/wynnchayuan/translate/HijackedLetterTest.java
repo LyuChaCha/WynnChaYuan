@@ -39,6 +39,8 @@ public final class HijackedLetterTest {
 
     private static int failures = 0;
 
+    private static TranslationStore STORE;
+
     /** 聊天那一行的字型：引用了 deprecated，Á 在這裡是黑幕。 */
     private static final Style CHAT = Style.EMPTY.withFont(
             new FontDescription.Resource(
@@ -54,9 +56,10 @@ public final class HijackedLetterTest {
                 """, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
+        STORE = store;
 
         chatLine(store);
-        dialogueLine(store);
+        corpusKeepsAccent(dir);
         originalKept(store);
 
         System.out.println(failures == 0
@@ -83,9 +86,12 @@ public final class HijackedLetterTest {
      * 在那裡是正常的字母。所以西班牙文的「ÁBRETE」在對話框裡照樣有重音——
      * 前提是<b>語料裡還留著它</b>，這一條就是釘住這件事。
      */
-    private static void dialogueLine(TranslationStore store) {
-        check("語料本身留著重音（實際 " + store.lookup("Open the door") + "）",
-              "ÁBRETE".equals(store.lookup("Open the door")));
+    private static void corpusKeepsAccent(Path dir) throws Exception {
+        String raw = Files.readString(dir.resolve("discovery.json"),
+                                      StandardCharsets.UTF_8);
+        check("語料檔本身留著重音", raw.contains("ÁBRETE"));
+        check("查出來的已經是安全的（實際 " + STORE.lookup("Open the door") + "）",
+              "ABRETE".equals(STORE.lookup("Open the door")));
     }
 
     /**

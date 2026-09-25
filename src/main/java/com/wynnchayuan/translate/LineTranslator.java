@@ -9123,18 +9123,23 @@ public final class LineTranslator {
      * {@code tools/check-glyphs.py} 在 CI 擋下來。{@code Á} 不一樣——
      * 西班牙文真的需要它，所以留在語料裡，畫不出來的地方才換掉。
      *
-     * <h2>對話框為什麼不受影響</h2>
-     * 對話走的是 {@code DialogueRewriter}，不經過這裡。那邊的規則是
-     * 「譯文<b>畫得出來</b>就完全不碰字型」，而 Wynncraft 的對話字型
-     * （{@code hud/dialogue/text/…}）自己帶了一張 {@code wynncraft_latin.png}、
-     * 而且沒有引用 {@code deprecated}——{@code Á} 在那裡是正常的字母。
-     * 所以西班牙文的「ÁBRETE」在對話框裡照樣有重音。
+     * <h2>為什麼在<b>載入語料</b>的時候換，不是畫的時候</h2>
+     * 第一版只擋在 {@link #literal}——所有文字變成 {@code Component} 的共同出口。
+     * 聊天那條路確實擋住了，但使用者換上新的 jar 之後回報<b>畫面照樣全黑</b>：
+     * 譯文送出去的地方不只那一個。{@code DialogueRewriter}、{@code WynntilsText}、
+     * {@code MarketListener}、名牌、追蹤欄各自拿 {@link TranslationStore#lookup}
+     * 的字自己組 {@code Component}，一條都不會經過 {@code literal}。
      *
-     * <p>這裡一律換，不看字型：走到這一步的字型早就被
-     * {@link #forDisplay} 換成預設了（中文才畫得出來），
-     * 判斷字型只會得到一個永遠成立的答案。
+     * <p>逐條去補等於要記得每一條現在與<b>以後</b>的路徑，而漏掉一條的代價是
+     * 整個畫面變黑。所以改成在語料<b>進記憶體</b>的時候就換掉：檔案裡照樣留著
+     * 重音（譯者看到的是正確的西班牙文），查出來的每一個字串都已經是安全的。
+     *
+     * <p>代價是對話框也跟著少一個重音——Wynncraft 的對話字型本來畫得出來。
+     * 換來的是「不必證明每一條路徑」，值得。
+     *
+     * <p>{@code src} 不能碰：Wynncraft 自己就用這個字元畫黑幕，原文改了就對不上。
      */
-    private static String deIcon(String text) {
+    static String deIcon(String text) {
         return text == null || text.indexOf(HIJACKED_LETTER) < 0
                 ? text : text.replace(HIJACKED_LETTER, SAFE_LETTER);
     }
