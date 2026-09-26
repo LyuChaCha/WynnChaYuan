@@ -55,6 +55,14 @@ public final class DialogueTint {
      */
     private static final int KEEP = 2048;
 
+    /**
+     * 短於這個長度就不做前綴比對。
+     *
+     * <p>打字的頭幾幀只有兩三個字，語料裡一大堆句子都是那樣開頭的，
+     * 比出來的多半是別句話。反正那幾幀名字根本還沒出現，晚幾幀不吃虧。
+     */
+    private static final int PREFIX_FLOOR = 4;
+
     /** 最久沒用到的先丟。鍵是整句譯文。 */
     private static final Map<String, List<LineParts.Piece>> SEEN =
             new LinkedHashMap<>(64, 0.75f, true) {
@@ -145,10 +153,21 @@ public final class DialogueTint {
             if (exact != null) {
                 return exact;
             }
-            for (Map.Entry<String, List<LineParts.Piece>> each : SEEN.entrySet()) {
-                if (each.getKey().startsWith(line)) {
-                    return each.getValue();
+            if (line.length() < PREFIX_FLOOR) {
+                return List.of();          // 太短，誰都對得上；見下面
+            }
+            // 對得上的可能不只一條（同一個 NPC 的幾句話開頭常常一樣），
+            // 取<b>最接近</b>目前這幾個字的那一條——差最多的那條很可能
+            // 根本是別句話，貼上去就是錯的顏色配錯的位置。
+            String best = null;
+            for (String each : SEEN.keySet()) {
+                if (each.startsWith(line)
+                        && (best == null || each.length() < best.length())) {
+                    best = each;
                 }
+            }
+            if (best != null) {
+                return SEEN.get(best);
             }
         }
         return List.of();
@@ -172,9 +191,20 @@ public final class DialogueTint {
             // 打字途中每一幀都是同一句的<b>前綴</b>。不清掉的話，一句話會在
             // 檔案裡留下三十筆「多年前…」「多年前…你」「多年前…你要」，
             // 名額幾句話就被吃光。留最完整的那一筆就好。
+            // 只清掉<b>比較短</b>的那幾筆。
+            //
+            // 反過來清不得：打字途中每一幀都比整句短，而先前這裡連
+            // 「比自己長的」一起清，於是一句話的第一幀就把整句那一筆
+            //（包含 jar 附的那一份）換成半句，後面每一幀再也查不到，
+            // 只能等遊戲自己把顏色送過來——玩家看到的「打完之後才又
+            // 白一次再上色」就是這個。
             SEEN.keySet().removeIf(each ->
-                    !each.equals(line)
-                            && (each.startsWith(line) || line.startsWith(each)));
+                    !each.equals(line) && line.startsWith(each));
+            for (String each : SEEN.keySet()) {
+                if (!each.equals(line) && each.startsWith(line)) {
+                    return;                // 已經有更完整的一條，別用半句蓋掉
+                }
+            }
             SEEN.put(line, List.copyOf(pieces));
         }
         dirty.set(true);

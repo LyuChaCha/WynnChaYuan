@@ -52,6 +52,7 @@ public final class DialogueColourTest {
         runaway();
         remembered();
         bundled();
+        keepsWhole();
 
         System.out.println(failures == 0 ? "\n對話顏色：全部通過"
                 : "\n對話顏色：" + failures + " 項失敗");
@@ -341,6 +342,35 @@ public final class DialogueColourTest {
         check("附的那一截有顏色",
                 TextColor.parseColor("dark_aqua").result().orElse(null),
                 got.get(0).style().getColor());
+    }
+
+    /**
+     * 打字途中學到的半句，不可以蓋掉整句那一筆。
+     *
+     * <h2>玩家看到的</h2>
+     * 一句話的第一幀就是最短的前綴。先前 {@code learn} 連「比自己長的」一起
+     * 清，於是整句那一筆（包含 jar 附的那一份）在第一幀就被半句換掉，後面
+     * 每一幀都查不到，只能等遊戲自己把顏色送過來——「打完之後才又白一次
+     * 再上色」就是這個。
+     */
+    private static void keepsWhole() throws Exception {
+        DialogueTint.forTest();
+        DialogueTint.init(Files.createTempDirectory("tint-whole")
+                .resolve(DialogueTint.FILE), "zh_tw");
+        String full = "多年前被一個海盜從我們這裡偷走了！你要是能把 "
+                + "[Abysso Galoshes] 帶來幫我們，我可以給你報酬！";
+        // 打字途中每一幀都會學一次，學的是當下那個前綴
+        for (int n = 4; n < full.length(); n += 7) {
+            DialogueTint.learn(full.substring(0, n), List.of(
+                    new LineParts.Piece("半截", Style.EMPTY.withColor(BODY))));
+        }
+        List<LineParts.Piece> got = DialogueTint.of(full.substring(0, 24));
+        check("打字途中還查得到整句那一筆", "[Abysso Galoshes]",
+                got.isEmpty() ? "（被蓋掉了）" : got.get(0).text());
+        check("整句本身也還在", "[Abysso Galoshes]",
+                DialogueTint.of(full).isEmpty()
+                        ? "（被蓋掉了）" : DialogueTint.of(full).get(0).text());
+        check("開頭兩三個字不做前綴比對", 0, DialogueTint.of("多年").size());
     }
 
     // ------------------------------------------------------------------
