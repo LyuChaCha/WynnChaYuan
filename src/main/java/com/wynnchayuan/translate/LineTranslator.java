@@ -2007,12 +2007,48 @@ public final class LineTranslator {
                                       boolean centered, boolean leftAligned) {
         Component whole = translateWholeLine(line, store, centered, leftAligned);
         if (whole != null) {
-            return keepClick(line, unslant(dropIconSpaces(whole)));
+            return sameTextKeepsStyle(line, keepClick(line, unslant(dropIconSpaces(whole))));
         }
         // 多行標籤（怪物名牌）整塊查不到時，逐行查——見 translatePerLine。
         Component perLine = translatePerLine(line, store, centered);
-        return keepClick(line, unslant(dropIconSpaces(perLine != null ? perLine
-                                       : translateSegments(line, store, centered, leftAligned))));
+        return sameTextKeepsStyle(line, keepClick(line, unslant(dropIconSpaces(
+                perLine != null ? perLine
+                        : translateSegments(line, store, centered, leftAligned)))));
+    }
+
+    /**
+     * 翻完跟原文<b>一字不差</b>就把原文原樣交回去。
+     *
+     * <h2>為什麼</h2>
+     * 語料裡有一批條目的譯文<b>等於</b>原文——那是「這一句刻意留原樣」的寫法
+     *（{@code validate} 也會這樣提醒）。綠寶石袋的數量那一行就是：
+     * {@code 472,667² (1stx 51.40¼²)} 裡面只有數字與圖示，沒有字要翻。
+     *
+     * <p>可是翻譯這條路會把整行拆成片段再接回去，而顏色是<b>猜</b>的
+     *（見 {@link #colourToken}）。文字沒變、顏色卻被重新分配：實機回報那個貨幣
+     * 圖示與它前面的空白從灰色變成跟數字一樣的橘色。
+     *
+     * <p>文字既然完全相同，重建能改變的<b>只有樣式</b>——而在這裡改樣式一律是
+     * 壞事。所以直接把原文交回去。
+     *
+     * <h2>為什麼放在最外面</h2>
+     * 整行查表與逐片段是兩條路，兩條都會重建、都會猜顏色。放在出口一處涵蓋，
+     * 不必兩邊各寫一次（也就不會哪天只修了一邊）。
+     *
+     * <p>只在<b>翻到了</b>的情況下才會被問到，所以「這一行算不算翻好了」的判斷
+     * 不受影響——那件事會連累 {@code TooltipPanel#evenOut}，見 {@code #translateFragment}
+     * 裡 À 縮排那一段的說明。
+     *
+     * <p>比的是算繪出來的字而不是模板：模板一樣不代表填回去的數值一樣。
+     */
+    private static Component sameTextKeepsStyle(StyledText line, Component out) {
+        if (out == null) {
+            return null;
+        }
+        // 兩邊都要是<b>純文字</b>。StyledText#getString 會帶著格式碼與片段標記，
+        // 拿它跟 Component#getString 比永遠不相等——這一道就等於沒寫。
+        Component before = line.getComponent();
+        return out.getString().equals(before.getString()) ? before : out;
     }
 
     /**
