@@ -135,6 +135,12 @@ public final class DialogueTint {
             if (had != null && had.equals(pieces)) {
                 return;                    // 一模一樣，不必再寫一次檔
             }
+            // 打字途中每一幀都是同一句的<b>前綴</b>。不清掉的話，一句話會在
+            // 檔案裡留下三十筆「多年前…」「多年前…你」「多年前…你要」，
+            // 名額幾句話就被吃光。留最完整的那一筆就好。
+            SEEN.keySet().removeIf(each ->
+                    !each.equals(line)
+                            && (each.startsWith(line) || line.startsWith(each)));
             SEEN.put(line, List.copyOf(pieces));
         }
         dirty.set(true);

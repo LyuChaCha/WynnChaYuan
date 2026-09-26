@@ -337,10 +337,14 @@ public final class DialogueRewriter {
             // 一開始就有顏色。見 DialogueTint。
             if (tint.isEmpty()) {
                 tint = DialogueTint.of(hit);
-            } else {
-                DialogueTint.learn(hit, tint);
             }
             boolean[] inked = new boolean[tint.size()];
+            // 要記下來的是<b>譯文</b>那一截，不是原文。
+            //
+            // 先前記的是原文的片段，於是檔案裡出現 {@code bring me the}、
+            // {@code and help us!} 這種東西——那是英文散文，翻成中文之後字面
+            // 完全不一樣，下次拿去比對一個都對不上，純粹是垃圾。
+            List<LineParts.Piece> learned = new ArrayList<>();
             for (int n = 0; n < body.size(); n++) {
                 int at = body.get(n);
                 // 只把偏移「補上長度差」，不要自己算一個新的。
@@ -370,8 +374,15 @@ public final class DialogueRewriter {
                 if (back == null) {
                     continue;                      // 補不回去就別動這一行，見 offset
                 }
-                painted.put(at, paint(rows.get(n),
-                        styles.get(at).withColor(colour), tint, inked));
+                List<LineParts.Piece> pieces = paint(rows.get(n),
+                        styles.get(at).withColor(colour), tint, inked);
+                painted.put(at, pieces);
+                for (LineParts.Piece piece : pieces) {
+                    if (!java.util.Objects.equals(piece.style().getColor(), colour)) {
+                        learned.add(new LineParts.Piece(piece.text(),
+                                Style.EMPTY.withColor(piece.style().getColor())));
+                    }
+                }
                 texts.set(at, rows.get(n));
                 for (int i = at + 1; i <= end; i++) {
                     texts.set(i, "");              // 整行併到第一段，其餘清空
@@ -380,6 +391,7 @@ public final class DialogueRewriter {
                 texts.set(end + 1, back);
                 swapped[at] = true;
             }
+            DialogueTint.learn(hit, learned);
         }
         if (!changed) {
             return null;
