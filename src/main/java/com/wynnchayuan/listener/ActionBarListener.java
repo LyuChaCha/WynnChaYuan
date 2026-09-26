@@ -180,6 +180,8 @@ public final class ActionBarListener {
                 DialogueProbe.after(swapped);
             } else {
                 DialogueProbe.miss(event.getMessage());
+                // 不是對話的那些（大廳的滑鼠提示之類）miss 收不到，見 plain
+                DialogueProbe.plain(event.getMessage());
             }
         } catch (Throwable t) {
             // action bar 每 tick 都會走這裡，出錯絕不能讓遊戲停下來

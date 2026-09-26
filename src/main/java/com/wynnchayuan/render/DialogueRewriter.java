@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.resources.Identifier;
 
@@ -142,8 +143,8 @@ public final class DialogueRewriter {
         // 整行對改寫器來說等於不存在，永遠留在英文（玩家回報的「只翻了第一行」）。
         //
         // 改成收「兩個位移之間、連續的文字段」當作一行，頭尾各記一份。
-        // 代價是整行只剩一個顏色（取第一段的）——句中的強調色會沒了，
-        // 但看得懂的中文比有顏色的英文重要。
+        // 整行是併成一段送出去的，所以句中的強調色不會自己回來——
+        // 那些顏色是另外<b>貼</b>回譯文上的，見 {@link #paint}。
         List<Integer> body = new ArrayList<>();     // 每一行的第一段
         List<Integer> ends = new ArrayList<>();     // 每一行的最後一段
         for (int i = 1; i + 1 < texts.size(); i++) {
@@ -205,6 +206,9 @@ public final class DialogueRewriter {
         boolean[] swapped = new boolean[texts.size()];
         // 換掉之後仍要留在原字型的前綴（目前只有 SHIFT 的按鈕圖示）
         Map<Integer, String> keep = new java.util.HashMap<>();
+        // 貼過顏色的那幾行：一行併成一段之後，句中的強調色要自己重新分段。
+        // 鍵是那一行的第一段，值是要照順序畫出去的幾截。見 paint。
+        Map<Integer, List<LineParts.Piece>> painted = new java.util.HashMap<>();
         // SHIFT 提示自己就是一句話，跟內文分開查。它跟內文一樣是
         // [偏移][文字][偏移]，換完一樣要重算尾隨的偏移。
         for (int i = 1; doBody && i + 1 < texts.size(); i++) {
@@ -307,6 +311,12 @@ public final class DialogueRewriter {
                 i = end;
                 continue;                       // 補不回去就別動這一列，見 offset
             }
+            // 顏色要在清空之前收：下面那個迴圈一跑，原文就沒了。
+            TextColor colour = tone(texts, styles, List.of(i), List.of(end));
+            List<LineParts.Piece> tint =
+                    accents(texts, styles, List.of(i), List.of(end), colour);
+            painted.put(i, paint(pick, styles.get(i).withColor(colour),
+                    tint, new boolean[tint.size()]));
             texts.set(i, pick);
             for (int k = i + 1; k <= end; k++) {
                 texts.set(k, "");               // 整列併到第一段，其餘清空
@@ -318,6 +328,44 @@ public final class DialogueRewriter {
             i = end;
         }
         if (rows != null) {
+            // 強調色整段一起收，不是逐行收：中文重排之後，原文在第二行的
+            // 那個詞很可能落到第一行去。逐行收的話它就再也貼不回去了。
+            TextColor colour = tone(texts, styles, body, ends);
+            List<LineParts.Piece> tint = accents(texts, styles, body, ends, colour);
+            // 打字打到哪，顏色才送到哪——而中文比英文短，物品名早就出現在
+            // 畫面上了，那幾幀當然是白的。同一句讀第二次就沿用上次記下來的，
+            // 一開始就有顏色。見 DialogueTint。
+            //
+            // 是「補上去」不是「沒量到才用」：正在打的那幾幀，量到的往往只有
+            // 半個名字，有量到不代表量到的是對的。兩邊都放進去，paint 會挑
+            // 位置靠前、長度比較長的那一個。
+            for (LineParts.Piece each : DialogueTint.of(hit)) {
+                if (!seen(tint, each.text())) {
+                    tint.add(each);
+                }
+            }
+            // 貼色是<b>整段一起</b>貼的，不是逐行貼。
+            //
+            // 中文的斷行位置跟原文不一樣，名字很可能剛好跨在兩行之間——第一行
+            // 結尾只有一個 {@code [}，名字整個落在第二行。逐行貼的話兩行都對
+            // 不上整個名字，畫面上就是半白半青。
+            int[] starts = new int[body.size()];
+            List<LineParts.Piece> inked = paint(flatten(rows, starts),
+                    Style.EMPTY.withColor(colour), tint, new boolean[tint.size()]);
+            // 要記下來的是<b>譯文</b>那一截，不是原文。
+            //
+            // 先前記的是原文的片段，於是檔案裡出現 {@code bring me the}、
+            // {@code and help us!} 這種東西——那是英文散文，翻成中文之後字面
+            // 完全不一樣，下次拿去比對一個都對不上，純粹是垃圾。
+            List<LineParts.Piece> learned = new ArrayList<>();
+            for (int n = 0; n < inked.size() - 1; n++) {
+                // 最後一截不收：句子還在打，那一截很可能是被切斷的半個名字。
+                LineParts.Piece piece = inked.get(n);
+                if (!java.util.Objects.equals(piece.style().getColor(), colour)) {
+                    learned.add(new LineParts.Piece(piece.text(),
+                            Style.EMPTY.withColor(piece.style().getColor())));
+                }
+            }
             for (int n = 0; n < body.size(); n++) {
                 int at = body.get(n);
                 // 只把偏移「補上長度差」，不要自己算一個新的。
@@ -347,6 +395,15 @@ public final class DialogueRewriter {
                 if (back == null) {
                     continue;                      // 補不回去就別動這一行，見 offset
                 }
+                // 樣式要換回<b>這一行自己的</b>：每一行的字型不一樣（body_0、
+                // body_1……高度差 12px），拿整段那個共用的去畫會全部疊在一列。
+                List<LineParts.Piece> pieces = new ArrayList<>();
+                for (LineParts.Piece part : cut(inked, starts[n],
+                        starts[n] + rows.get(n).length())) {
+                    pieces.add(new LineParts.Piece(part.text(),
+                            styles.get(at).withColor(part.style().getColor())));
+                }
+                painted.put(at, pieces);
                 texts.set(at, rows.get(n));
                 for (int i = at + 1; i <= end; i++) {
                     texts.set(i, "");              // 整行併到第一段，其餘清空
@@ -355,12 +412,15 @@ public final class DialogueRewriter {
                 texts.set(end + 1, back);
                 swapped[at] = true;
             }
+            DialogueTint.learn(hit, learned);
         }
         if (!changed) {
             return null;
         }
 
         MutableComponent out = Component.empty();
+        // 換上去的字，用我們挑的字型畫得出來嗎。見 unpaintable。
+        String tofu = null;
         for (int i = 0; i < texts.size(); i++) {
             // 換過的那一段用<b>預設字型</b>畫，中文才出得來；沒換的原樣抄，
             // 包含它原本的字型——框、頭像、按鈕都是靠那些字型畫出來的。
@@ -375,16 +435,64 @@ public final class DialogueRewriter {
             // 是 22、control 是 -38，預設字型是 7），換成預設就等於丟掉高度。
             // 譯文如果本來就畫得出來——西班牙文、法文、德文那些只用到拉丁字母
             // 的語言——就<b>不要碰字型</b>，位置跟原文一模一樣。
+            // 貼過顏色的行是好幾截，每一截自己決定要不要換字型：
+            // 留英文的那一截（物品名、NPC 名）本來就畫得出來，換了反而掉高度。
+            List<LineParts.Piece> pieces = painted.get(i);
+            if (pieces != null) {
+                for (LineParts.Piece piece : pieces) {
+                    Style worn = fitted(piece.text(), piece.style(), styles.get(i));
+                    if (tofu == null) {
+                        tofu = unpaintable(piece.text(), worn);
+                    }
+                    out.append(Component.literal(piece.text()).withStyle(worn));
+                }
+                continue;
+            }
             Style style = styles.get(i);
             if (swapped[i] && !drawable(texts.get(i))) {
-                FontDescription pair = paired(fontOf(styles.get(i)));
-                // 配不到就退回預設字型：位置會掉，但至少看得到字
-                style = style.withFont(
-                        pair == null ? FontDescription.DEFAULT : pair);
+                style = fitted(texts.get(i), style, styles.get(i));
+            }
+            if (swapped[i] && tofu == null) {
+                tofu = unpaintable(texts.get(i), style);
             }
             out.append(Component.literal(texts.get(i)).withStyle(style));
         }
+        if (tofu != null) {
+            // 一句話裡插幾個方框，比整句留著英文糟糕得多——而且方框的寬度
+            // 跟原本那個字元不一樣，後面的名牌與外框會整個被推出去。
+            com.wynnchayuan.capture.DialogueProbe.tofu(message, out, tofu);
+            return null;
+        }
         return out;
+    }
+
+    /**
+     * 這一段字，用這個字型畫得出來嗎。
+     *
+     * <h2>只檢我們自己換上去的</h2>
+     * Wynncraft 原本的片段裡到處都是私用區字元——位移、圖示、外框、頭像，
+     * 而且它們帶的是<b>旁邊那段文字的字型</b>而不是符號字型（名牌那一列的
+     * 位移字元就掛在 {@code text/nameplate} 底下）。拿同一把尺去量原本的片段，
+     * 每一條對話都會誤判。
+     *
+     * @return 畫不出來的那幾個碼位，全畫得出來時回 {@code null}
+     */
+    private static String unpaintable(String text, Style style) {
+        String font = fontOf(style);
+        boolean ours = font.startsWith(WynnChaYuan.MOD_ID + ":");
+        if (!ours && !font.startsWith("minecraft:hud/dialogue/text/")) {
+            return null;                       // 預設字型什麼都畫得出來
+        }
+        String lang = WynnChaYuan.language();
+        StringBuilder bad = new StringBuilder();
+        text.codePoints().forEach(cp -> {
+            String one = new String(Character.toChars(cp));
+            if (!(ours ? covered(one, lang) : drawable(one))) {
+                bad.append(String.format("U+%04X ", cp));
+            }
+        });
+        return bad.length() == 0 ? null
+                : bad.toString().strip() + "  字型=" + font + "  文字=" + text;
     }
 
     /**
@@ -1039,11 +1147,15 @@ public final class DialogueRewriter {
             said = raw;
             spoken = typed;
         }
+        hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
         // 有字畫不出來就整段不換——一句話裡插幾個方框，比整句留著英文糟糕得多。
+        //
+        // 要在 fill <b>之後</b>檢查。先前檢的是<b>模板</b>，而真名、地名是
+        // 填回去的時候才進來的——玩家 ID 或地名裡只要有一個字不在字型的
+        // 覆蓋範圍，守門就放它過去，畫面上是一排方框。
         if (!renderable(hit)) {
             return drop();
         }
-        hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
         // 塞不塞得下要問 wrap 本身，不能只量總寬度。
         //
         // 總寬度量得到「字加起來有多寬」，量不到「斷行浪費掉的空間」：英文與俄文的
@@ -1194,6 +1306,315 @@ public final class DialogueRewriter {
             return null;
         }
         return new String(Character.toChars(cp));
+    }
+
+    /**
+     * 一行（或一整段）的<b>底色</b>：照字數算，最多字的那個顏色。
+     *
+     * <h2>為什麼不取第一段</h2>
+     * 句子開頭就是強調詞的行不少——「[Abysso Galoshes] 在哪？」。取第一段的話，
+     * 整行會被染成強調色，剩下的散文反而變成例外，等於把顏色<b>接反</b>。
+     *
+     * @return 可能是 {@code null}，代表那一段沒設顏色、跟著外面繼承
+     */
+    static TextColor tone(List<String> texts, List<Style> styles,
+                          List<Integer> body, List<Integer> ends) {
+        Map<TextColor, Integer> chars = new java.util.LinkedHashMap<>();
+        for (int n = 0; n < body.size(); n++) {
+            for (int i = body.get(n); i <= ends.get(n); i++) {
+                chars.merge(styles.get(i).getColor(), texts.get(i).length(),
+                        Integer::sum);
+            }
+        }
+        TextColor best = null;
+        int most = -1;
+        for (Map.Entry<TextColor, Integer> seen : chars.entrySet()) {
+            if (seen.getValue() > most) {     // 平手取先遇到的，所以用 Linked
+                most = seen.getValue();
+                best = seen.getKey();
+            }
+        }
+        return best;
+    }
+
+    /**
+     * 跟底色不一樣的那幾段——物品名、NPC 名、地名，Wynncraft 都是靠顏色標的。
+     *
+     * <p>純符號與單個字元不收：它們在譯文裡到處都對得上（一個
+     * {@code [} 會中在任何一個方括號上），貼回去只會染錯地方。
+     *
+     * <h2>跨行的要併成一段</h2>
+     * 原文換行的時候，同一個名字會被拆成兩段送過來——{@code [Abysso} 在第一行
+     * 結尾，{@code Galoshes]} 在第二行開頭。兩段分開收的話，中文因為斷在別的
+     * 地方（第一行結尾只剩一個 {@code [}），就只有後半截對得上，畫面上是
+     * 「Abysso 白、Galoshes] 青」。所以同色又相鄰的段要先併回一個名字，
+     * 斷行吃掉的那個空白也要補回來。
+     */
+    static List<LineParts.Piece> accents(
+            List<String> texts, List<Style> styles,
+            List<Integer> body, List<Integer> ends, TextColor tone) {
+        List<LineParts.Piece> out = new ArrayList<>();
+        StringBuilder run = new StringBuilder();
+        List<String> parts = new ArrayList<>();
+        Style paint = null;
+        boolean wrapped = false;
+        for (int n = 0; n < body.size(); n++) {
+            for (int i = body.get(n); i <= ends.get(n); i++) {
+                Style style = styles.get(i);
+                if (java.util.Objects.equals(style.getColor(), tone)) {
+                    paint = flush(out, run, parts, paint);
+                    continue;
+                }
+                if (paint == null || !java.util.Objects.equals(
+                        style.getColor(), paint.getColor())) {
+                    flush(out, run, parts, paint);
+                    paint = style;
+                } else if (wrapped && run.length() > 0
+                        && run.charAt(run.length() - 1) != ' '
+                        && !texts.get(i).startsWith(" ")) {
+                    run.append(' ');           // 斷行吃掉的那個空白要補回來
+                }
+                wrapped = false;
+                run.append(texts.get(i));
+                parts.add(texts.get(i).strip());
+            }
+            wrapped = true;
+        }
+        flush(out, run, parts, paint);
+        return out;
+    }
+
+    /**
+     * 收掉手上這一串同色的段：<b>整串</b>先進去，拆開的幾段當備胎跟在後面。
+     *
+     * <p>備胎是給「整串找不到」的情況用的。paint 是位置靠前的優先、同一個位置
+     * 取比較長的，所以整串對得上的時候一定輪不到備胎。
+     */
+    private static Style flush(List<LineParts.Piece> out, StringBuilder run,
+                               List<String> parts, Style paint) {
+        if (paint != null) {
+            String whole = run.toString().strip();
+            if (worthPainting(whole)) {
+                out.add(new LineParts.Piece(whole, paint));
+            }
+            if (parts.size() > 1) {
+                for (String part : parts) {
+                    if (worthPainting(part) && !part.equals(whole)) {
+                        out.add(new LineParts.Piece(part, paint));
+                    }
+                }
+            }
+        }
+        run.setLength(0);
+        parts.clear();
+        return null;
+    }
+
+    /** 見 {@link #accents}：短到會亂中的、沒有半個字母數字的，都不收。 */
+    private static boolean worthPainting(String core) {
+        if (core.length() < 2) {
+            return false;
+        }
+        for (int i = 0; i < core.length(); i++) {
+            if (Character.isLetterOrDigit(core.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 這一段已經在候選裡了嗎。見呼叫處：記下來的跟量到的會有重複。 */
+    private static boolean seen(List<LineParts.Piece> tint, String text) {
+        for (LineParts.Piece each : tint) {
+            if (each.text().equals(text)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 把幾行併回一整句來貼色，順便記下每一行在裡面的起點。
+     *
+     * <p>斷行是<b>會吃掉空白</b>的（見 {@link #wrap} 的 stripTrailing），所以
+     * 兩邊都是拉丁字的時候要把那個空白補回來，跨行的名字才連得起來。中日韓
+     * 之間本來就沒有空白，補了反而多一格。
+     */
+    static String flatten(List<String> rows, int[] starts) {
+        StringBuilder out = new StringBuilder();
+        for (int n = 0; n < rows.size(); n++) {
+            if (out.length() > 0 && !rows.get(n).isEmpty()
+                    && isWord(out.charAt(out.length() - 1))
+                    && isWord(rows.get(n).charAt(0))) {
+                out.append(' ');
+            }
+            starts[n] = out.length();
+            out.append(rows.get(n));
+        }
+        return out.toString();
+    }
+
+    /**
+     * 從整句貼好的結果裡取出 {@code [from, to)} 這一段，跨界的那一截切開。
+     *
+     * <p>補回去的那個空白落在兩行<b>中間</b>，兩邊都取不到它，所以不會被畫出來。
+     */
+    static List<LineParts.Piece> cut(
+            List<LineParts.Piece> pieces, int from, int to) {
+        List<LineParts.Piece> out = new ArrayList<>();
+        int at = 0;
+        for (LineParts.Piece piece : pieces) {
+            int end = at + piece.text().length();
+            int a = Math.max(at, from);
+            int b = Math.min(end, to);
+            if (a < b) {
+                out.add(new LineParts.Piece(
+                        piece.text().substring(a - at, b - at), piece.style()));
+            }
+            at = end;
+        }
+        return out;
+    }
+
+    /**
+     * 把強調色貼回譯文：照字面在譯文裡找原文那幾段，找到就自成一截。
+     *
+     * <h2>只換顏色，不碰別的</h2>
+     * 粗體會讓每個字寬 +1px，而這一行要補回去的尾隨偏移是<b>先算好的</b>
+     * （見呼叫處的 shrink）。帶著粗體貼回去，框跟頭像就會被推走。
+     * 顏色不影響字寬，所以只帶顏色是唯一不會動到版面的做法。
+     *
+     * <h2>一個詞只貼一次</h2>
+     * {@code used} 是跨行共用的：同一個物品名在原文出現兩次就有兩段，
+     * 譯文裡也該是兩處。少了這個標記，第二段會再貼回第一處。
+     *
+     * @param base 這一行的底色樣式，沒中強調色的部分都用它
+     * @return 照順序畫出去的幾截；沒有一段對得上時就只有一截
+     */
+    static List<LineParts.Piece> paint(String row, Style base,
+                                       List<LineParts.Piece> accents,
+                                       boolean[] used) {
+        List<LineParts.Piece> out = new ArrayList<>();
+        int from = 0;
+        while (from < row.length()) {
+            int at = -1;
+            int which = -1;
+            int take = 0;
+            for (int k = 0; k < accents.size(); k++) {
+                if (used[k]) {
+                    continue;
+                }
+                int[] found = reach(row, from, accents.get(k).text());
+                if (found == null) {
+                    continue;
+                }
+                // 位置靠前的優先；同一個位置取<b>對到比較多字</b>的那一個。
+                //
+                // 比的是對到幾個字，不是名字本身有多長：正在打字的時候，
+                // 完整的那個名字只對得到前半截，而當下量到的那一小段是整個
+                // 對上的。照長度挑就會挑到短的那個，已經上色的後半截退回
+                // 白色，等打完才又染一次——實機看到的「顏色又跑一次」。
+                boolean better = at < 0 || found[0] < at
+                        || (found[0] == at && found[1] > take);
+                if (better) {
+                    at = found[0];
+                    take = found[1];
+                    which = k;
+                }
+            }
+            if (at < 0) {
+                break;
+            }
+            if (at > from) {
+                out.add(new LineParts.Piece(row.substring(from, at), base));
+            }
+            int stop = bracket(row, at, at + take);
+            out.add(new LineParts.Piece(row.substring(at, stop),
+                    base.withColor(accents.get(which).style().getColor())));
+            used[which] = true;
+            from = stop;
+        }
+        if (from < row.length()) {
+            out.add(new LineParts.Piece(row.substring(from), base));
+        }
+        return out;
+    }
+
+    /**
+     * 這個名字在譯文裡第一次出現在哪裡、對到幾個字。
+     *
+     * <h2>打到一半也算對上</h2>
+     * 名字在譯文裡留英文，所以它跟原文一樣是一個字母一個字母冒出來。只認
+     * 完整字面的話，那十幾幀全是白的，等最後一個 {@code ]} 打完才一次變色。
+     * 所以「句尾那一截剛好是這個名字的開頭」也算對上——正在打的就是它。
+     *
+     * <p>只有<b>句尾</b>那一截算。句子中間對到一半的，那就是別的字。
+     * 名字太短的也不算：兩三個字母的東西在句尾撞上的機會太大，
+     * 貼錯比晚一點上色糟。
+     *
+     * @return {@code {位置, 對到幾個字}}，對不上時回傳 {@code null}
+     */
+    static int[] reach(String row, int from, String want) {
+        int at = row.indexOf(want, from);
+        if (at >= 0) {
+            return new int[] {at, want.length()};
+        }
+        if (want.length() < NAME_FLOOR) {
+            return null;
+        }
+        int most = Math.min(want.length() - 1, row.length() - from);
+        for (int n = most; n >= 1; n--) {
+            if (row.regionMatches(row.length() - n, want, 0, n)) {
+                return new int[] {row.length() - n, n};
+            }
+        }
+        return null;
+    }
+
+    /** 短到會在句尾亂中的名字不做開頭比對。見 {@link #reach}。 */
+    private static final int NAME_FLOOR = 3;
+
+    /**
+     * 物品名是<b>整組</b> {@code [ ... ]}，不是打到哪算到哪。
+     *
+     * <h2>為什麼要補這一段</h2>
+     * 對話是一個字母一個字母送過來的，顏色也跟著長：先是 {@code [A}，
+     * 再來 {@code [Ab}……而中文比英文短，整個名字早就出現在畫面上了。
+     * 只照字面貼的話，玩家會看到「{@code [Abysso} 有色、{@code Galoshes]} 沒色」
+     * 一路補到打完為止——比整句沒顏色還亂。
+     *
+     * <p>所以只要這一段是從 {@code [} 開始的，就一路吃到對應的 {@code ]}：
+     * 名字一出現就整組上色。
+     *
+     * @param stop 照字面比對到的結尾
+     * @return 延伸過的結尾；不是方括號開頭、或這一行沒有收尾就原樣回傳
+     */
+    private static int bracket(String row, int at, int stop) {
+        if (row.charAt(at) != '[') {
+            return stop;
+        }
+        int close = row.indexOf(']', Math.max(at, stop - 1));
+        // 名字不會長到哪去。沒有上限的話，少一個 ] 就會把整行後面全部染色
+        return close < 0 || close - at > NAME_LIMIT ? stop : close + 1;
+    }
+
+    /** 見 {@link #bracket}：物品名最長就這麼長，超過的不當成一組。 */
+    private static final int NAME_LIMIT = 64;
+
+    /**
+     * 這一截該用哪一份字型。
+     *
+     * <p>Wynncraft 的對話字型把行號烘進了 ascent（body_0 是 34、body_1 是 22），
+     * 換成預設就等於丟掉高度。所以只有<b>畫不出來</b>的那幾截才換——
+     * 留英文的物品名原樣用原字型，位置跟原文一模一樣。
+     */
+    private static Style fitted(String text, Style style, Style original) {
+        if (drawable(text)) {
+            return style;
+        }
+        FontDescription pair = paired(fontOf(original));
+        // 配不到就退回預設字型：位置會掉，但至少看得到字
+        return style.withFont(pair == null ? FontDescription.DEFAULT : pair);
     }
 
     /**
