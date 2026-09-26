@@ -1524,11 +1524,57 @@ public final class DialogueRewriter {
             used[which] = true;
             from = stop;
         }
+        // 句尾那一截剛好是某個名字的<b>開頭</b>：正在打的就是它。
+        //
+        // 名字在譯文裡留英文，所以它一樣是一個字母一個字母冒出來。只認完整
+        // 字面的話，那十幾幀全是白的，等最後一個 {@code ]} 打完才一次變色——
+        // 玩家看到的「字先出來、顏色慢半拍才追上」就是這個。
+        int[] tail = opening(row, from, accents, used);
+        if (tail != null) {
+            int at = row.length() - tail[1];
+            if (at > from) {
+                out.add(new LineParts.Piece(row.substring(from, at), base));
+            }
+            out.add(new LineParts.Piece(row.substring(at),
+                    base.withColor(accents.get(tail[0]).style().getColor())));
+            used[tail[0]] = true;
+            from = row.length();
+        }
         if (from < row.length()) {
             out.add(new LineParts.Piece(row.substring(from), base));
         }
         return out;
     }
+
+    /**
+     * 句尾那一截是某個還沒貼上的名字的開頭嗎；是的話有多長。
+     *
+     * <p>只看<b>真前綴</b>：整個名字對得上是上面那個迴圈的事。名字太短的不看
+     * ——兩三個字母的東西在句尾撞上的機會太大，貼錯比晚一點上色糟。
+     */
+    static int[] opening(String row, int from,
+                         List<LineParts.Piece> accents, boolean[] used) {
+        int take = 0;
+        int which = -1;
+        for (int k = 0; k < accents.size(); k++) {
+            if (used[k] || accents.get(k).text().length() < NAME_FLOOR) {
+                continue;
+            }
+            String want = accents.get(k).text();
+            int most = Math.min(want.length() - 1, row.length() - from);
+            for (int n = most; n > take; n--) {
+                if (row.regionMatches(row.length() - n, want, 0, n)) {
+                    take = n;
+                    which = k;
+                    break;                     // 這一個能對到的最長就是 n
+                }
+            }
+        }
+        return which < 0 ? null : new int[] {which, take};
+    }
+
+    /** 短到會在句尾亂中的名字不做開頭比對。見 {@link #opening}。 */
+    private static final int NAME_FLOOR = 3;
 
     /**
      * 物品名是<b>整組</b> {@code [ ... ]}，不是打到哪算到哪。

@@ -46,6 +46,7 @@ public final class DialogueColourTest {
         onlyColour();
         symbols();
         splitName();
+        growing();
         twice();
         typing();
         runaway();
@@ -106,6 +107,46 @@ public final class DialogueColourTest {
         List<LineParts.Piece> second = row.paint("嗎？", used);
         check("第二行沒有強調詞就只有一截", 1, second.size());
         check("第二行是底色", BODY, second.get(0).style().getColor());
+    }
+
+    /**
+     * 名字自己也在逐字打出來——每一幀都要有顏色。
+     *
+     * <h2>玩家看到的</h2>
+     * 物品名在譯文裡留英文，所以它跟原文一樣是一個字母一個字母冒出來。
+     * 只認完整字面的話，{@code [Abysso Galoshes]} 那十七幀全是白的，
+     * 等最後一個 {@code ]} 打完才一次變色：「字先出來、顏色慢半拍才追上」。
+     *
+     * <p>所以句尾那一截只要是某個已知名字的<b>開頭</b>，就從第一個字母起上色。
+     */
+    private static void growing() {
+        List<LineParts.Piece> tint = List.of(new LineParts.Piece(
+                "[Abysso Galoshes]", Style.EMPTY.withColor(ITEM)));
+        String full = "你聽說過 [Abysso Galoshes] 嗎？";
+        int start = full.indexOf('[');
+        int stop = full.indexOf(']') + 1;
+        String white = null;
+        String wrong = null;
+        for (int n = start + 1; n <= stop; n++) {
+            String typed = full.substring(0, n);
+            List<LineParts.Piece> out = DialogueRewriter.paint(typed,
+                    Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()]);
+            LineParts.Piece last = out.get(out.size() - 1);
+            if (!ITEM.equals(last.style().getColor()) && white == null) {
+                white = typed;
+            }
+            if (!full.substring(start, n).equals(last.text()) && wrong == null) {
+                wrong = typed + " → 「" + last.text() + "」";
+            }
+        }
+        check("打到名字的第一個字母就有顏色", null, white);
+        check("上色的正好是名字打出來的那一截", null, wrong);
+
+        // 還沒打到名字的那幾幀不能亂上色
+        List<LineParts.Piece> before = DialogueRewriter.paint("你聽說過 ",
+                Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()]);
+        check("名字還沒開始就整句都是底色", 1, before.size());
+        check("而且是底色", BODY, before.get(0).style().getColor());
     }
 
     /** 只換顏色：字型、粗體、底線都照底色那一段走。見類別說明。 */
