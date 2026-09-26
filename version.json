@@ -1,12 +1,45 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.3",
+ "latest": "0.2.3_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.3_1": {
+   "headline": "Search in Chinese, a boss bar switch, and a one-click update",
+   "items": [
+    "Wynntils' own search boxes now match the translated text, so you can type Chinese in the content book and settings",
+    "F6 has a Boss bar switch, so the bar at the top can stay in English",
+    "The chat notice about new translations has a clickable Click here to update; the F6 row is now called Update translations to match",
+    "Altar-style floating text follows the Nameplates and floating text row, so it can be turned off",
+    "Corpus: card names for 60 world events, and the Event starting in Xh Ym line",
+    "Mini-quest descriptions read level, then what to hand in to whom, then the coordinates"
+   ],
+   "zh_tw": {
+    "headline": "用中文搜尋、Boss 血條開關、一鍵更新譯文",
+    "items": [
+     "Wynntils 自己的搜尋框吃得下譯文：內容書、設定那些畫面直接打中文就搜得到",
+     "F6 新增「Boss 血條」開關，打怪時頂端那一條可以留英文",
+     "有新譯文時，聊天室那則提示多一顆「按這裡更新」可以直接按；F6 那一列跟著改名叫「更新翻譯」",
+     "討伐戰祭壇那類浮空字改成跟「名牌與漂浮字」同一個開關，關得掉了",
+     "語料：補齊 60 個世界事件的卡片名稱，以及「還有幾小時幾分」那一行",
+     "迷你任務的敘述改成「等級 → 交什麼給誰 → 座標」"
+    ]
+   },
+   "zh_cn": {
+    "headline": "用中文搜索、Boss 血条开关、一键更新译文",
+    "items": [
+     "Wynntils 自己的搜索框吃得下译文：内容书、设置那些界面直接打中文就搜得到",
+     "F6 新增「Boss 血条」开关，打怪时顶端那一条可以留英文",
+     "有新译文时，聊天室那条提示多一颗「点这里更新」可以直接按；F6 那一列跟着改名叫「更新翻译」",
+     "讨伐战祭坛那类浮空字改成跟「名牌与漂浮字」同一个开关，关得掉了",
+     "语料：补齐 60 个世界事件的卡片名称，以及「还有几小时几分」那一行",
+     "迷你任务的描述改成「等级 → 交什么给谁 → 坐标」"
+    ]
+   }
+  },
   "0.2.3": {
    "headline": "Spanish black screen, Wynntils screens, and the content book",
    "items": [
@@ -26,7 +59,7 @@
    "zh_tw": {
     "headline": "西班牙文黑螢幕、Wynntils 畫面與內容書",
     "items": [
-     "發現新區域時不再整個畫面變黑（西班牙文譯文裡的 Á 在 Wynncraft 是全螢幕黑幕，不是字母）",
+     "發現新區域時不再整個畫面變黑（西班牙文譯文裡那個帶重音的大寫 A，在 Wynncraft 是全螢幕黑幕，不是字母）",
      "Wynntils 自己的畫面（選單、設定、內容書）會翻譯",
      "按住 Shift 可以看另一種物品名稱；原文太長會換到下一行",
      "譯文更新改成先詢問：有新譯文時會通知，要不要更新由玩家決定",
@@ -43,7 +76,7 @@
    "zh_cn": {
     "headline": "西班牙文黑屏、Wynntils 界面与内容书",
     "items": [
-     "发现新区域时不再整个画面变黑（西班牙文译文里的 Á 在 Wynncraft 是全屏黑幕，不是字母）",
+     "发现新区域时不再整个画面变黑（西班牙文译文里那个带重音的大写 A，在 Wynncraft 是全屏黑幕，不是字母）",
      "Wynntils 自己的界面（菜单、设置、内容书）会翻译",
      "按住 Shift 可以看另一种物品名称；原文太长会换到下一行",
      "译文更新改为先询问：有新译文时会通知，要不要更新由玩家决定",
