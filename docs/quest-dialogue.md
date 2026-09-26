@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**23,752 / 23,752 句已翻（100.0%），共 159 個任務，還沒有人動的有 0 個。**
+**23,754 / 23,754 句已翻（100.0%），共 159 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -105,7 +105,7 @@
 | Lazarus Pit (Quest) | [`lazarus-pit-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lazarus-pit-quest.json) | 78 | 59 | 7 | ✅ |
 | Lexdale Witch Trials | [`lexdale-witch-trials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lexdale-witch-trials.json) | 34 | 26 | 3 | ✅ |
 | Lost Royalty | [`lost-royalty.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-royalty.json) | 26 | 20 | 2 | ✅ |
-| Lost Soles | [`lost-soles.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-soles.json) | 61 | 51 | 7 | ✅ |
+| Lost Soles | [`lost-soles.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-soles.json) | 63 | 53 | 7 | ✅ |
 | Lost Tower | [`lost-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-tower.json) | 12 | 8 | 1 | ✅ |
 | Lost in the Jungle | [`lost-in-the-jungle.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-in-the-jungle.json) | 34 | 29 | 3 | ✅ |
 | Maltic's Well | [`maltic-s-well.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/maltic-s-well.json) | 29 | 27 | 3 | ✅ |

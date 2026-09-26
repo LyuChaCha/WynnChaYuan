@@ -84,7 +84,7 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 - **Interface language**: the language of the F6 screens themselves (English included)
 
 <!-- 進度:開始 -->
-更新於 2026-09-25 / Updated 2026-09-25
+更新於 2026-09-26 / Updated 2026-09-26
 
 **翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
