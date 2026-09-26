@@ -1495,20 +1495,26 @@ public final class DialogueRewriter {
         while (from < row.length()) {
             int at = -1;
             int which = -1;
+            int take = 0;
             for (int k = 0; k < accents.size(); k++) {
                 if (used[k]) {
                     continue;
                 }
-                int found = row.indexOf(accents.get(k).text(), from);
-                if (found < 0) {
+                int[] found = reach(row, from, accents.get(k).text());
+                if (found == null) {
                     continue;
                 }
-                // 位置靠前的優先；同一個位置取比較長的，短詞才不會卡在長詞裡面
-                boolean better = at < 0 || found < at
-                        || (found == at && accents.get(k).text().length()
-                                         > accents.get(which).text().length());
+                // 位置靠前的優先；同一個位置取<b>對到比較多字</b>的那一個。
+                //
+                // 比的是對到幾個字，不是名字本身有多長：正在打字的時候，
+                // 完整的那個名字只對得到前半截，而當下量到的那一小段是整個
+                // 對上的。照長度挑就會挑到短的那個，已經上色的後半截退回
+                // 白色，等打完才又染一次——實機看到的「顏色又跑一次」。
+                boolean better = at < 0 || found[0] < at
+                        || (found[0] == at && found[1] > take);
                 if (better) {
-                    at = found;
+                    at = found[0];
+                    take = found[1];
                     which = k;
                 }
             }
@@ -1518,27 +1524,11 @@ public final class DialogueRewriter {
             if (at > from) {
                 out.add(new LineParts.Piece(row.substring(from, at), base));
             }
-            int stop = bracket(row, at, at + accents.get(which).text().length());
+            int stop = bracket(row, at, at + take);
             out.add(new LineParts.Piece(row.substring(at, stop),
                     base.withColor(accents.get(which).style().getColor())));
             used[which] = true;
             from = stop;
-        }
-        // 句尾那一截剛好是某個名字的<b>開頭</b>：正在打的就是它。
-        //
-        // 名字在譯文裡留英文，所以它一樣是一個字母一個字母冒出來。只認完整
-        // 字面的話，那十幾幀全是白的，等最後一個 {@code ]} 打完才一次變色——
-        // 玩家看到的「字先出來、顏色慢半拍才追上」就是這個。
-        int[] tail = opening(row, from, accents, used);
-        if (tail != null) {
-            int at = row.length() - tail[1];
-            if (at > from) {
-                out.add(new LineParts.Piece(row.substring(from, at), base));
-            }
-            out.add(new LineParts.Piece(row.substring(at),
-                    base.withColor(accents.get(tail[0]).style().getColor())));
-            used[tail[0]] = true;
-            from = row.length();
         }
         if (from < row.length()) {
             out.add(new LineParts.Piece(row.substring(from), base));
@@ -1547,33 +1537,37 @@ public final class DialogueRewriter {
     }
 
     /**
-     * 句尾那一截是某個還沒貼上的名字的開頭嗎；是的話有多長。
+     * 這個名字在譯文裡第一次出現在哪裡、對到幾個字。
      *
-     * <p>只看<b>真前綴</b>：整個名字對得上是上面那個迴圈的事。名字太短的不看
-     * ——兩三個字母的東西在句尾撞上的機會太大，貼錯比晚一點上色糟。
+     * <h2>打到一半也算對上</h2>
+     * 名字在譯文裡留英文，所以它跟原文一樣是一個字母一個字母冒出來。只認
+     * 完整字面的話，那十幾幀全是白的，等最後一個 {@code ]} 打完才一次變色。
+     * 所以「句尾那一截剛好是這個名字的開頭」也算對上——正在打的就是它。
+     *
+     * <p>只有<b>句尾</b>那一截算。句子中間對到一半的，那就是別的字。
+     * 名字太短的也不算：兩三個字母的東西在句尾撞上的機會太大，
+     * 貼錯比晚一點上色糟。
+     *
+     * @return {@code {位置, 對到幾個字}}，對不上時回傳 {@code null}
      */
-    static int[] opening(String row, int from,
-                         List<LineParts.Piece> accents, boolean[] used) {
-        int take = 0;
-        int which = -1;
-        for (int k = 0; k < accents.size(); k++) {
-            if (used[k] || accents.get(k).text().length() < NAME_FLOOR) {
-                continue;
-            }
-            String want = accents.get(k).text();
-            int most = Math.min(want.length() - 1, row.length() - from);
-            for (int n = most; n > take; n--) {
-                if (row.regionMatches(row.length() - n, want, 0, n)) {
-                    take = n;
-                    which = k;
-                    break;                     // 這一個能對到的最長就是 n
-                }
+    static int[] reach(String row, int from, String want) {
+        int at = row.indexOf(want, from);
+        if (at >= 0) {
+            return new int[] {at, want.length()};
+        }
+        if (want.length() < NAME_FLOOR) {
+            return null;
+        }
+        int most = Math.min(want.length() - 1, row.length() - from);
+        for (int n = most; n >= 1; n--) {
+            if (row.regionMatches(row.length() - n, want, 0, n)) {
+                return new int[] {row.length() - n, n};
             }
         }
-        return which < 0 ? null : new int[] {which, take};
+        return null;
     }
 
-    /** 短到會在句尾亂中的名字不做開頭比對。見 {@link #opening}。 */
+    /** 短到會在句尾亂中的名字不做開頭比對。見 {@link #reach}。 */
     private static final int NAME_FLOOR = 3;
 
     /**

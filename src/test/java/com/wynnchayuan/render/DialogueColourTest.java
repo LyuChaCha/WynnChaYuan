@@ -47,6 +47,7 @@ public final class DialogueColourTest {
         symbols();
         splitName();
         growing();
+        noRetreat();
         twice();
         typing();
         runaway();
@@ -148,6 +149,62 @@ public final class DialogueColourTest {
                 Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()]);
         check("名字還沒開始就整句都是底色", 1, before.size());
         check("而且是底色", BODY, before.get(0).style().getColor());
+    }
+
+    /**
+     * 上色的長度只能往前，不能縮回去。
+     *
+     * <h2>實機錄到的現場</h2>
+     * {@code dialogue-probe-2} 裡，同一個名字被切成兩截：
+     *
+     * <pre>
+     *   [38] color=dark_aqua  text=[Abysso G
+     *   [39] color=-          text=aloshes
+     * </pre>
+     *
+     * 同一個位置有兩個候選：遊戲當下量到的 {@code [Abysso G}（跨行併起來的，
+     * 整個對得上）與記下來的 {@code [Abysso Galoshes]}（完整，但 {@code ]}
+     * 還沒打出來所以只對得到前半截）。照「名字本身多長」挑就會挑到短的那個，
+     * 已經上色的 {@code aloshes} 退回白色，等打完才又染一次——玩家回報的
+     * 「顏色顯示完畢會再顯示一次」。
+     *
+     * <p>所以比的是<b>對到幾個字</b>，不是名字有多長。
+     */
+    private static void noRetreat() {
+        String full = "多年前被一個海盜從我們這裡偷走了！你要是能把 [Abysso Galoshes] 帶來幫我們";
+        String name = "[Abysso Galoshes]";
+        int start = full.indexOf('[');
+        int last = 0;
+        String shrank = null;
+        String gap = null;
+        for (int n = start + 1; n <= start + name.length(); n++) {
+            String typed = full.substring(0, n);
+            // 遊戲的顏色慢半拍：當下量到的只有名字的前幾個字母
+            List<LineParts.Piece> tint = new ArrayList<>();
+            int lag = n - start - 6;
+            if (lag >= 2) {
+                tint.add(new LineParts.Piece(name.substring(0, lag),
+                        Style.EMPTY.withColor(ITEM)));
+            }
+            tint.add(new LineParts.Piece(name, Style.EMPTY.withColor(ITEM)));
+
+            int inked = 0;
+            for (LineParts.Piece piece : DialogueRewriter.paint(typed,
+                    Style.EMPTY.withColor(BODY), tint, new boolean[tint.size()])) {
+                if (ITEM.equals(piece.style().getColor())) {
+                    inked += piece.text().length();
+                }
+            }
+            if (inked < last && shrank == null) {
+                shrank = typed + "：這一幀 " + inked + " 個字，上一幀 " + last;
+            }
+            if (inked != n - start && gap == null) {
+                gap = typed + "：上色 " + inked + " 個字，打出來的是 " + (n - start);
+            }
+            last = inked;
+        }
+        check("上色的長度不會縮回去", null, shrank);
+        check("打到哪就上色到哪", null, gap);
     }
 
     /** 只換顏色：字型、粗體、底線都照底色那一段走。見類別說明。 */
