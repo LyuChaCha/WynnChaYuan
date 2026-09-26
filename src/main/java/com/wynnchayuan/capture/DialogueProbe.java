@@ -266,6 +266,93 @@ public final class DialogueProbe {
         }
     }
 
+    /**
+     * <b>不是</b>對話的 action bar，長什麼樣。
+     *
+     * <h2>為什麼要另外記</h2>
+     * {@link #miss} 只收有對話字型的訊息——那是刻意的，不然 HUD 每 tick
+     * 都會把名額吃光。可是玩家回報的「大廳那一列 {@code Left-Click to play}
+     * 沒翻」正好落在這個盲區：它不是 NPC 對話，所以既沒被收集、也沒被改寫，
+     * 連一份現場都留不下來。
+     *
+     * <p>要翻它得先知道兩件事：Wynncraft 送過來的<b>確切字串</b>，
+     * 以及它用哪一份字型（字型沒有中文的話，換了就是一排方框——
+     * 見 {@code DialogueRewriter#fontMissing}）。這支就是去拿這兩件事。
+     *
+     * <p>帶數字的一律不收：血量、魔力、{@code Teleport Cast! -11} 那些
+     * 每 tick 都在變，收進來只會把名額佔滿。
+     */
+    public static void plain(Component message) {
+        if (dir == null || message == null
+                || !WynnChaYuan.config().debugDumps() || hasBodyText(message)) {
+            return;
+        }
+        String body = words(message);
+        if (body.isEmpty() || body.equals(plainKey)) {
+            return;
+        }
+        if (plains >= PLAIN_LIMIT) {
+            return;
+        }
+        plainKey = body;
+        plains++;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 不是對話的 action bar（getString） ===")
+          .append(System.lineSeparator())
+          .append(message.getString()).append(System.lineSeparator())
+          .append(System.lineSeparator())
+          .append("=== 逐片段 ===").append(System.lineSeparator());
+        int[] index = {0};
+        message.visit((style, text) -> {
+            sb.append(String.format("  [%02d] font=%-38s color=%-9s text=%s%n",
+                    index[0]++, fontOf(style),
+                    style.getColor() == null ? "-" : style.getColor().serialize(),
+                    describe(text)));
+            return Optional.empty();
+        }, Style.EMPTY);
+
+        try {
+            Files.writeString(dir.resolve("actionbar-probe-" + plains + ".txt"),
+                    sb.toString(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 寫不出來就算了，不要影響遊戲
+        }
+    }
+
+    /** 見 {@link #plain}：帶數字的不算，那些每 tick 都在變。 */
+    private static String words(Component message) {
+        StringBuilder sb = new StringBuilder();
+        message.visit(text -> {
+            if (readable(text)) {
+                sb.append(text);
+            }
+            return Optional.empty();
+        });
+        String core = sb.toString().strip();
+        int letters = 0;
+        for (int i = 0; i < core.length(); i++) {
+            char c = core.charAt(i);
+            if (Character.isDigit(c)) {
+                return "";
+            }
+            if (Character.isLetter(c)) {
+                letters++;
+            }
+        }
+        return letters >= MIN_WORDS ? core : "";
+    }
+
+    /** 見 {@link #plain}：短到這樣的多半是 HUD 的碎片，不是給人讀的句子。 */
+    private static final int MIN_WORDS = 8;
+
+    /** 見 {@link #plain}。 */
+    private static final int PLAIN_LIMIT = 6;
+
+    private static int plains = 0;
+
+    private static String plainKey = "";
+
     /** 改寫失敗的訊息最多留幾則。 */
     private static final int MISS_LIMIT = 6;
 

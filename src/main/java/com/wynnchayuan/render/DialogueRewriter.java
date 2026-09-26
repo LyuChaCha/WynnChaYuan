@@ -334,11 +334,11 @@ public final class DialogueRewriter {
             List<LineParts.Piece> tint = accents(texts, styles, body, ends, colour);
             // 打字打到哪，顏色才送到哪——而中文比英文短，物品名早就出現在
             // 畫面上了，那幾幀當然是白的。同一句讀第二次就沿用上次記下來的，
-            // 一開始就有顏色。見 SEEN。
+            // 一開始就有顏色。見 DialogueTint。
             if (tint.isEmpty()) {
-                tint = seen(hit);
+                tint = DialogueTint.of(hit);
             } else {
-                SEEN.put(hit, tint);
+                DialogueTint.learn(hit, tint);
             }
             boolean[] inked = new boolean[tint.size()];
             for (int n = 0; n < body.size(); n++) {
@@ -1351,44 +1351,6 @@ public final class DialogueRewriter {
             out.add(new LineParts.Piece(row.substring(from), base));
         }
         return out;
-    }
-
-    /**
-     * 這一輪看過的強調色，鍵是整句譯文。
-     *
-     * <h2>為什麼記得住有差</h2>
-     * Wynncraft 的顏色是<b>跟著打字長出來的</b>：打到 {@code [A} 才送
-     * {@code [A} 的顏色。而中文比英文短，整個物品名早在英文打到它之前
-     * 就已經在畫面上了——那幾幀我們手上根本沒有顏色可以貼，只能是白的。
-     *
-     * <p>記著上一次同一句看到的那幾段，下次再讀就從第一幀開始有顏色。
-     * 第一次讀還是會白一下——那是 Wynncraft 還沒告訴我們，不是我們漏了。
-     */
-    private static final Map<String, List<LineParts.Piece>> SEEN =
-            new java.util.LinkedHashMap<>(16, 0.75f, true) {
-                @Override
-                protected boolean removeEldestEntry(
-                        Map.Entry<String, List<LineParts.Piece>> eldest) {
-                    return size() > 256;
-                }
-            };
-
-    /**
-     * 上次同一句記下來的強調色。
-     *
-     * <p>打字中拿到的是<b>前綴</b>，記下來的是整句，所以不能只比相等。
-     */
-    private static List<LineParts.Piece> seen(String hit) {
-        List<LineParts.Piece> exact = SEEN.get(hit);
-        if (exact != null) {
-            return exact;
-        }
-        for (Map.Entry<String, List<LineParts.Piece>> each : SEEN.entrySet()) {
-            if (each.getKey().startsWith(hit)) {
-                return each.getValue();
-            }
-        }
-        return List.of();
     }
 
     /**

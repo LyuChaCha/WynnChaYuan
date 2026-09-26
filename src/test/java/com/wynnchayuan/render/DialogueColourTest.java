@@ -5,6 +5,7 @@ import com.wynnchayuan.capture.LineParts;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public final class DialogueColourTest {
     /** 物品名的青色。 */
     private static final TextColor ITEM = TextColor.fromRgb(0x55ffff);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
         net.minecraft.server.Bootstrap.bootStrap();
 
@@ -47,6 +48,7 @@ public final class DialogueColourTest {
         twice();
         typing();
         runaway();
+        remembered();
 
         System.out.println(failures == 0 ? "\n對話顏色：全部通過"
                 : "\n對話顏色：" + failures + " 項失敗");
@@ -190,6 +192,39 @@ public final class DialogueColourTest {
         List<LineParts.Piece> out = row.paint("把 [Abysso 拿來給我");
         check("找不到收尾就只貼比對到的那一截", ITEM, colourAt(out, "[Abysso"));
         check("後面不受影響", BODY, colourAt(out, " 拿來給我"));
+    }
+
+    /**
+     * 記住的顏色要能撐過重開遊戲。
+     *
+     * <h2>為什麼一定要落地</h2>
+     * 顏色是跟著打字長出來的，中文又比英文早幾百毫秒出現那個詞——第一次讀
+     * 一定會白一下。只記在記憶體裡的話，每次重開遊戲又要重白一次，
+     * 等於沒修。存成檔案之後，一句話這輩子只白那一次。
+     *
+     * <p>還要釘住「拿前綴查得到整句」：打字中手上只有譯文的前半段。
+     */
+    private static void remembered() throws Exception {
+        java.nio.file.Path save = Files.createTempDirectory("wcy-tint")
+                .resolve("dialogue-colours.json");
+        DialogueTint.forTest();
+        DialogueTint.init(save);
+
+        String whole = "你聽說過 [Abysso Galoshes] 嗎？";
+        DialogueTint.learn(whole, List.of(
+                new LineParts.Piece("[Abysso Galoshes]",
+                        Style.EMPTY.withColor(ITEM))));
+        DialogueTint.flush();
+
+        // 重開遊戲：整個清掉，只從檔案讀回來
+        DialogueTint.forTest();
+        DialogueTint.init(save);
+
+        check("重開之後還記得", ITEM,
+                colourAt(DialogueTint.of(whole), "[Abysso Galoshes]"));
+        check("打字中拿前綴也查得到", ITEM,
+                colourAt(DialogueTint.of("你聽說過 [Aby"), "[Abysso Galoshes]"));
+        check("沒看過的句子就是空的", 0, DialogueTint.of("從來沒講過這句").size());
     }
 
     // ------------------------------------------------------------------
