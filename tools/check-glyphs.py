@@ -92,6 +92,57 @@ for _cp in range(0xff10, 0xff13):               # ０１２
     ICONS[chr(_cp)] = 'font/language/wynnic.png'
 
 
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# 我們自己那幾份文字：version.json 的更新說明、lang/*.json 的 F6 介面字。
+#
+# 這些<b>不經過</b> LineTranslator#deIcon —— 那一支只跑譯文。這裡寫什麼就原樣
+# 送去畫，而畫它們的是 minecraft:default，也就是引用 deprecated 的那一份。
+#
+# 2026-09-25 踩到：0.2.3 的更新說明裡為了解釋「那個字母是全螢幕黑幕」而真的
+# 寫了那個字母，於是 F6 的更新說明整片黑——說明自己示範了它在講的那個 bug。
+#
+# 只擋會蓋住整個畫面的那一個。其餘圖示字元（✔ 之類）在 F6 的提示裡本來就用著，
+# 畫出來是圖也剛好是想要的。
+FATAL = {chr(0xC1)}
+
+
+def our_files():
+    import glob
+    yield os.path.join(REPO, 'version.json')
+    for path in sorted(glob.glob(os.path.join(
+            REPO, 'src', 'main', 'resources', 'assets', 'wynnchayuan',
+            'lang', '*.json'))):
+        yield path
+
+
+def walk_strings(node, where=''):
+    if isinstance(node, dict):
+        for k, v in node.items():
+            yield from walk_strings(v, where + '/' + str(k))
+    elif isinstance(node, list):
+        for i, v in enumerate(node):
+            yield from walk_strings(v, where + '[%d]' % i)
+    elif isinstance(node, str):
+        yield where, node
+
+
+def ours_problems():
+    """我們自己的字串裡有沒有會蓋掉畫面的字元。"""
+    out = []
+    for path in our_files():
+        if not os.path.isfile(path):
+            continue
+        try:
+            doc = json.loads(io.open(path, encoding='utf-8').read())
+        except (ValueError, OSError):
+            continue
+        for where, text in walk_strings(doc):
+            for ch in sorted(set(text) & FATAL):
+                out.append((os.path.basename(path), where, ch, text))
+    return out
+
+
 def entries(path):
     """逐條吐出 (鍵, 原文, 譯文)。扁平檔與有 entries 的都吃得下。"""
     try:
@@ -127,10 +178,20 @@ def main():
                         continue          # 原文本來就有，那是遊戲的圖示
                     found.append((rel, key, ch, ICONS[ch], dst))
 
-    if not found:
+    ours = ours_problems()
+    for name, where, ch, text in ours:
+        print('我們自己的字串裡有會蓋掉整個畫面的字元：')
+        print('  [%s] %s' % (name, where))
+        print('      U+%04X -> font/screen/static/fade.png（全螢幕黑幕）' % ord(ch))
+        print('      %s' % text[:110])
+        print('  要提到它就用文字描述，不要把字元本身寫進去。')
+
+    if not found and not ours:
         if not quiet:
             print('譯文沒有用到被挪用成圖示的字元。')
         return 0
+    if not found:
+        return 1
 
     print('這些譯文用到了 Wynncraft 拿去當圖示的字元，畫出來會是圖不是字：')
     print()
