@@ -228,6 +228,14 @@ tasks.register('runDialogueChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueChecks' }
 
+tasks.register('runDialogueColourChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話句中的強調色有沒有貼回譯文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueColourTest'
+}
+tasks.named('check') { dependsOn 'runDialogueColourChecks' }
+
 tasks.register('runBlockChecks', JavaExec) {
     group = 'verification'
     description = '驗證置中／靠左的整塊判斷'
