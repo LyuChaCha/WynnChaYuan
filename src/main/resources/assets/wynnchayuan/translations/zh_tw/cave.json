@@ -2,10 +2,10 @@
  "_meta": {
   "domain": "cave",
   "lang": "zh_tw",
-  "count": 205,
+  "count": 209,
   "source": "https://cdn.wynntils.com/static/Reference/caves.json",
   "note": "洞窟卡的<b>整段</b>敘述。鍵是模組把畫面上那幾行攤平成一句的樣子（見 LineTranslator#rejoin，行與行之間接一個半形空白），所以這裡<b>只能</b>放整段，不可以放逐行的碎片——碎片的斷點取決於畫面寬度，跟實機對不上就永遠查不到，而且會在別處夾出半中半英。座標一律寫成 [-{~}, {~}, -{~}]（負號留在模板裡），地名一律用 {p}。資料來源：https://cdn.wynntils.com/static/Reference/caves.json",
-  "translated": 205
+  "translated": 209
  },
  "The forgotten factory at [-{~}, {~}, -{~}] may not be so empty after all.": "那座被遺忘的工廠，座標 [-{~}, {~}, -{~}]，也許並沒有那麼空蕩。",
  "In a cave dark as the depths of the ocean, shining stalks grow and attract glowing moths at [{~}, {~}, -{~}], and...?": "在一座漆黑如深海的洞窟裡，發光的莖幹生長著，引來了發亮的飛蛾，座標 [{~}, {~}, -{~}]，然後呢……？",
@@ -211,5 +211,9 @@
  "{#}Rewards: {#}- +{~} XP {#}- +{~} {#} Earth Powder II {#}- +Various Items": "{#}獎勵: {#}- +{~} 經驗 {#}- +{~} {#} 地元素粉末 II {#}- +各種物品",
  "{#}Rewards: {#}- +{~} XP {#}- +{~} Emeralds {#}- +{~} {#}{#}Hex-Master Anchor {#}- +Various Items": "{#}獎勵: {#}- +{~} 經驗 {#}{c:#FF55FF}- {c:#AAAAAA}+{~} 綠寶石 {#}- +{~} {#}{#}Hex-Master Anchor {#}- +各種物品",
  "{#}Rewards: {#}- +{~} XP {#}- +{~} {#} Water Powder I {#}- +{~} {#} Fire Powder I {#}- +Various Items": "{#}獎勵: {#}- +{~} 經驗 {#}- +{~} {#} 水元素粉末 I {#}- +{~} {#} 火元素粉末 I {#}- +各種物品",
- "Enter The Sanctum at [{~}, {~}, -{~}], if you dare": "有膽的話，就進入 [{~}, {~}, -{~}]，夠膽的話"
+ "Enter The Sanctum at [{~}, {~}, -{~}], if you dare": "有膽的話，就進入 [{~}, {~}, -{~}]，夠膽的話",
+ "At [-{~}, {~}, -{~}], a tall Redwood standing boldly at the boundary of the {p} has become a dwelling place for eagles.": "座標 [-{~}, {~}, -{~}]，一棵高聳的紅木昂然立在 {p} 的邊界上，成了鷹群的棲所。",
+ "Old ruins carved into the side of the tableland Aelumia Citadel rests upon at [-{~}, {~}, -{~}] have become the spawning ground for various unsavory creatures and foliage.": "鑿在 Aelumia Citadel 所倚台地側面的古老遺跡，座標 [-{~}, {~}, -{~}]，如今成了各種不懷好意的生物與枝葉的孳生地。",
+ "Giant worms thrive on the rotting roots of an old redwood stump at [-{~}, {~}, -{~}].": "巨蟲靠著一截老紅木殘樁的腐根過活，座標 [-{~}, {~}, -{~}]。",
+ "The Canyons flora is more diverse than most realize, with sanctuaries of all sorts spread all throughout, such as at [{~}, {~}, -{~}].": "峽谷的植被比多數人想像的更多樣，各式各樣的聖所散布其間，例如座標 [{~}, {~}, -{~}] 這一處。"
 }

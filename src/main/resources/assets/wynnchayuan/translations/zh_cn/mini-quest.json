@@ -2,8 +2,8 @@
  "_meta": {
   "domain": "mini-quest",
   "note": "Wynntils 内容书里迷你任务卡片的「说明」。实机会断成三行显示，但这里放的必须是并成一句的整段——逐行的碎片条目只会夹出半中半英的画面（模组摊平整段时是用一个半角空格把各行接起来的，见 LineTranslator 的 rejoin）。坐标的正负号是句型的一部分：[-{~}, {~}, -{~}] 与 [{~}, {~}, -{~}] 是两条不同的键，不能互相代用；同一个击杀告示换地点就是另一条。迷你任务的「名称」在 misc.json，不放这里。",
-  "count": 233,
-  "translated": 233
+  "count": 236,
+  "translated": 236
  },
  "Bring [{~} Forest Webs] to the Slaying Post [Combat Lv. {~}] at [-{~}, {~}, -{~}]": "到 [战斗等级 {~2}] 的击杀告示上交 [{~1} 森林蛛网]，坐标 [-{~3}, {~4}, -{~5}]",
  "Bring [{~} Brown Mushrooms] to the Slaying Post [Combat Lv. {~}] at [{~}, {~}, -{~}]": "到 [战斗等级 {~2}] 的击杀告示上交 [{~1} 棕色蘑菇]，坐标 [{~3}, {~4}, -{~5}]",
@@ -237,5 +237,8 @@
  "Gather Copper [Mini-Quest] Already completed": "采集铜 [迷你任务] 已完成",
  "Slay Scarabs [Mini-Quest] Already completed": "猎杀圣甲虫 [迷你任务] 已完成",
  "Slay Mooshrooms [Mini-Quest] Already completed": "猎杀哞菇 [迷你任务] 已完成",
- "Slay Spiders [Mini-Quest] Already completed": "猎杀蜘蛛 [迷你任务] 已完成"
+ "Slay Spiders [Mini-Quest] Already completed": "猎杀蜘蛛 [迷你任务] 已完成",
+ "{#}Rewards: {#}- +{~} Woodcutting XP {#}- +{~} Combat XP {#}- +{~} Flerisi Bark {#}- +{~} Charcoal Lump": "{#}奖励: {#}- +{~} 伐木经验 {#}- +{~} 战斗经验 {#}- +{~} Flerisi 树皮 {#}- +{~} 木炭块",
+ "{#}Rewards: {#}- +{~} Mining XP {#}- +{~} Combat XP {#}- +{~} Gloomy Rose": "{#}奖励: {#}- +{~} 采矿经验 {#}- +{~} 战斗经验 {#}- +{~} 阴郁玫瑰",
+ "{#}Rewards: {#}- +{~} Fishing XP {#}- +{~} Combat XP {#}- +{~} Depthseeker Boon {#}- +{~} Fathomflooded Flesh": "{#}奖励: {#}- +{~} 钓鱼经验 {#}- +{~} 战斗经验 {#}- +{~} Depthseeker 的赐福 {#}- +{~} 深海浸泡的血肉"
 }
