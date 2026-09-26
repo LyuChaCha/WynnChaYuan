@@ -332,6 +332,14 @@ public final class DialogueRewriter {
             // 那個詞很可能落到第一行去。逐行收的話它就再也貼不回去了。
             TextColor colour = tone(texts, styles, body, ends);
             List<LineParts.Piece> tint = accents(texts, styles, body, ends, colour);
+            // 打字打到哪，顏色才送到哪——而中文比英文短，物品名早就出現在
+            // 畫面上了，那幾幀當然是白的。同一句讀第二次就沿用上次記下來的，
+            // 一開始就有顏色。見 SEEN。
+            if (tint.isEmpty()) {
+                tint = seen(hit);
+            } else {
+                SEEN.put(hit, tint);
+            }
             boolean[] inked = new boolean[tint.size()];
             for (int n = 0; n < body.size(); n++) {
                 int at = body.get(n);
@@ -1333,17 +1341,82 @@ public final class DialogueRewriter {
             if (at > from) {
                 out.add(new LineParts.Piece(row.substring(from, at), base));
             }
-            String core = accents.get(which).text();
-            out.add(new LineParts.Piece(core,
+            int stop = bracket(row, at, at + accents.get(which).text().length());
+            out.add(new LineParts.Piece(row.substring(at, stop),
                     base.withColor(accents.get(which).style().getColor())));
             used[which] = true;
-            from = at + core.length();
+            from = stop;
         }
         if (from < row.length()) {
             out.add(new LineParts.Piece(row.substring(from), base));
         }
         return out;
     }
+
+    /**
+     * 這一輪看過的強調色，鍵是整句譯文。
+     *
+     * <h2>為什麼記得住有差</h2>
+     * Wynncraft 的顏色是<b>跟著打字長出來的</b>：打到 {@code [A} 才送
+     * {@code [A} 的顏色。而中文比英文短，整個物品名早在英文打到它之前
+     * 就已經在畫面上了——那幾幀我們手上根本沒有顏色可以貼，只能是白的。
+     *
+     * <p>記著上一次同一句看到的那幾段，下次再讀就從第一幀開始有顏色。
+     * 第一次讀還是會白一下——那是 Wynncraft 還沒告訴我們，不是我們漏了。
+     */
+    private static final Map<String, List<LineParts.Piece>> SEEN =
+            new java.util.LinkedHashMap<>(16, 0.75f, true) {
+                @Override
+                protected boolean removeEldestEntry(
+                        Map.Entry<String, List<LineParts.Piece>> eldest) {
+                    return size() > 256;
+                }
+            };
+
+    /**
+     * 上次同一句記下來的強調色。
+     *
+     * <p>打字中拿到的是<b>前綴</b>，記下來的是整句，所以不能只比相等。
+     */
+    private static List<LineParts.Piece> seen(String hit) {
+        List<LineParts.Piece> exact = SEEN.get(hit);
+        if (exact != null) {
+            return exact;
+        }
+        for (Map.Entry<String, List<LineParts.Piece>> each : SEEN.entrySet()) {
+            if (each.getKey().startsWith(hit)) {
+                return each.getValue();
+            }
+        }
+        return List.of();
+    }
+
+    /**
+     * 物品名是<b>整組</b> {@code [ ... ]}，不是打到哪算到哪。
+     *
+     * <h2>為什麼要補這一段</h2>
+     * 對話是一個字母一個字母送過來的，顏色也跟著長：先是 {@code [A}，
+     * 再來 {@code [Ab}……而中文比英文短，整個名字早就出現在畫面上了。
+     * 只照字面貼的話，玩家會看到「{@code [Abysso} 有色、{@code Galoshes]} 沒色」
+     * 一路補到打完為止——比整句沒顏色還亂。
+     *
+     * <p>所以只要這一段是從 {@code [} 開始的，就一路吃到對應的 {@code ]}：
+     * 名字一出現就整組上色。
+     *
+     * @param stop 照字面比對到的結尾
+     * @return 延伸過的結尾；不是方括號開頭、或這一行沒有收尾就原樣回傳
+     */
+    private static int bracket(String row, int at, int stop) {
+        if (row.charAt(at) != '[') {
+            return stop;
+        }
+        int close = row.indexOf(']', Math.max(at, stop - 1));
+        // 名字不會長到哪去。沒有上限的話，少一個 ] 就會把整行後面全部染色
+        return close < 0 || close - at > NAME_LIMIT ? stop : close + 1;
+    }
+
+    /** 見 {@link #bracket}：物品名最長就這麼長，超過的不當成一組。 */
+    private static final int NAME_LIMIT = 64;
 
     /**
      * 這一截該用哪一份字型。

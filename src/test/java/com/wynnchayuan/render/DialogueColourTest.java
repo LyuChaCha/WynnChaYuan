@@ -45,6 +45,8 @@ public final class DialogueColourTest {
         onlyColour();
         symbols();
         twice();
+        typing();
+        runaway();
 
         System.out.println(failures == 0 ? "\n對話顏色：全部通過"
                 : "\n對話顏色：" + failures + " 項失敗");
@@ -156,6 +158,38 @@ public final class DialogueColourTest {
             }
         }
         check("兩處都上了色", 2, painted);
+    }
+
+    /**
+     * 打字打到一半的物品名。
+     *
+     * <p>Wynncraft 的顏色跟著打字長出來：先送 {@code [Abysso} 的顏色，
+     * 再送整組的。中文比英文短，整個名字早就在畫面上了——只照字面貼的話
+     * 玩家會看到「{@code [Abysso} 有色、{@code Galoshes]} 沒色」。
+     */
+    private static void typing() {
+        Row row = new Row()
+                .add("Do you know about the ", BODY)
+                .add("[Abysso", ITEM);          // 還在打，只送到這裡
+
+        List<LineParts.Piece> out = row.paint("你聽說過 [Abysso Galoshes] 嗎？");
+        check("整組方括號一起上色", ITEM, colourAt(out, "[Abysso Galoshes]"));
+        check("後面的散文還是底色", BODY, colourAt(out, " 嗎？"));
+    }
+
+    /**
+     * 少一個右括號時不准把整行吃掉。
+     *
+     * <p>沒有上限的話，一個沒收尾的 {@code [} 會讓後面整句都變成物品的顏色。
+     */
+    private static void runaway() {
+        Row row = new Row()
+                .add("Bring me ", BODY)
+                .add("[Abysso", ITEM);
+
+        List<LineParts.Piece> out = row.paint("把 [Abysso 拿來給我");
+        check("找不到收尾就只貼比對到的那一截", ITEM, colourAt(out, "[Abysso"));
+        check("後面不受影響", BODY, colourAt(out, " 拿來給我"));
     }
 
     // ------------------------------------------------------------------
