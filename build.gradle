@@ -469,6 +469,14 @@ tasks.register('runDialogueChoiceChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueChoiceChecks' }
 
+tasks.register('runSameTextChecks', JavaExec) {
+    group = 'verification'
+    description = '譯文等於原文時不可以動到顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.SameTextKeepsColourTest'
+}
+tasks.named('check') { dependsOn 'runSameTextChecks' }
+
 tasks.register('runUpdateButtonChecks', JavaExec) {
     group = 'verification'
     description = '聊天裡那顆「按這裡更新」'
