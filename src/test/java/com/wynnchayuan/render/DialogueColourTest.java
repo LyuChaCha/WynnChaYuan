@@ -1,0 +1,233 @@
+package com.wynnchayuan.render;
+
+import com.wynnchayuan.capture.LineParts;
+
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 句中的強調色有沒有貼回譯文。
+ *
+ * <h2>為什麼要有</h2>
+ * Wynncraft 靠顏色標物品名、NPC 名、地名——{@code [Abysso Galoshes]} 是青色，
+ * 周圍的散文是米色。那幾個詞是<b>另外一段</b>送過來的，而就地取代會把一行
+ * 併成一段（不併的話中文攤不回原本的行數）。併完只剩一個顏色，玩家看到的是
+ * 整句同色的中文——名字混在句子裡認不出來，正是實機回報的毛病。
+ *
+ * <p>所以顏色是事後貼回去的（{@link DialogueRewriter#paint}）。這支測試釘住
+ * 那個貼法：貼對位置、貼對顏色、<b>而且只貼顏色</b>。
+ *
+ * <h2>為什麼「只貼顏色」是條紅線</h2>
+ * 這一行要補回去的尾隨偏移是<b>先算好的</b>——照整行譯文的寬度算。粗體會讓
+ * 每個字寬 +1px，貼回去就對不上，框與頭像會被往右推。顏色不影響字寬，
+ * 所以帶顏色是唯一不會動到版面的做法。
+ */
+public final class DialogueColourTest {
+
+    private static int failures = 0;
+
+    /** 散文的米色。 */
+    private static final TextColor BODY = TextColor.fromRgb(0xe0d4c0);
+
+    /** 物品名的青色。 */
+    private static final TextColor ITEM = TextColor.fromRgb(0x55ffff);
+
+    public static void main(String[] args) {
+        net.minecraft.SharedConstants.tryDetectVersion();
+        net.minecraft.server.Bootstrap.bootStrap();
+
+        dominant();
+        leadingAccent();
+        acrossRows();
+        onlyColour();
+        symbols();
+        twice();
+
+        System.out.println(failures == 0 ? "\n對話顏色：全部通過"
+                : "\n對話顏色：" + failures + " 項失敗");
+        System.exit(failures == 0 ? 0 : 1);
+    }
+
+    // ------------------------------------------------------------------
+
+    /** 底色是照字數選的，不是取第一段。 */
+    private static void dominant() {
+        Row row = new Row()
+                .add("Do you know about the ", BODY)
+                .add("[Abysso Galoshes]", ITEM)
+                .add("?", BODY);
+        check("底色取字數最多的", BODY, row.tone());
+    }
+
+    /**
+     * 開頭就是強調詞的行。
+     *
+     * <p>取第一段當底色的話，整行會被染成青色、散文反而變成例外——顏色接反。
+     */
+    private static void leadingAccent() {
+        Row row = new Row()
+                .add("[Abysso Galoshes]", ITEM)
+                .add(" are what I have been looking for all this time.", BODY);
+        check("開頭是強調詞時底色仍取散文", BODY, row.tone());
+
+        List<LineParts.Piece> out = row.paint("[Abysso Galoshes] 正是我找了這麼久的東西。");
+        check("強調詞在開頭也貼得到", ITEM, colourAt(out, "[Abysso Galoshes]"));
+        check("後面的散文是底色", BODY, colourAt(out, " 正是我找了這麼久的東西。"));
+    }
+
+    /**
+     * 原文在第二行的詞，譯文重排之後落到第一行。
+     *
+     * <p>中文比英文短，斷行位置本來就不會一樣。逐行收強調色的話，這個詞
+     * 在第一行找不到對應，顏色就掉了——所以強調色是整段一起收的。
+     */
+    private static void acrossRows() {
+        Row row = new Row()
+                .add("I wonder where those boots have gone... It's been", BODY)
+                .add("such a long time. Do you know about the ", BODY)
+                .add("[Abysso Galoshes]", ITEM)
+                .add("?", BODY);
+
+        // 譯文短，那個詞被排到了第一行
+        boolean[] used = new boolean[row.accents().size()];
+        List<LineParts.Piece> first = row.paint(
+                "不知道那雙靴子跑到哪去了……都過了這麼久。你聽說過 [Abysso Galoshes]", used);
+        check("跨行也貼得到", ITEM, colourAt(first, "[Abysso Galoshes]"));
+
+        List<LineParts.Piece> second = row.paint("嗎？", used);
+        check("第二行沒有強調詞就只有一截", 1, second.size());
+        check("第二行是底色", BODY, second.get(0).style().getColor());
+    }
+
+    /** 只換顏色：字型、粗體、底線都照底色那一段走。見類別說明。 */
+    private static void onlyColour() {
+        Style base = Style.EMPTY.withColor(BODY);
+        Row row = new Row()
+                .add("Talk to ", BODY)
+                .add("Ferndor", Style.EMPTY.withColor(ITEM).withBold(true));
+
+        for (LineParts.Piece piece : row.paint("去找 Ferndor 談談", base)) {
+            if (piece.style().isBold()) {
+                fail("粗體被一起貼回去了：" + piece.text());
+            }
+            if (!piece.style().equals(base.withColor(piece.style().getColor()))) {
+                fail("除了顏色以外還改了別的：" + piece.text());
+            }
+        }
+        check("強調詞仍然上了色", ITEM,
+                colourAt(row.paint("去找 Ferndor 談談", base), "Ferndor"));
+    }
+
+    /**
+     * 純符號不收。
+     *
+     * <p>一個 {@code [} 在譯文裡到處都對得上，貼回去只會把別的地方染色。
+     */
+    private static void symbols() {
+        Row row = new Row()
+                .add("Bring me the ", BODY)
+                .add("[", ITEM)
+                .add("Mummy's Rag", ITEM)
+                .add("]", ITEM);
+        List<String> got = new ArrayList<>();
+        for (LineParts.Piece piece : row.accents()) {
+            got.add(piece.text());
+        }
+        check("只收得出意思的那一段", List.of("Mummy's Rag"), got);
+    }
+
+    /** 同一個詞出現兩次就是兩處，不會第二段又貼回第一處。 */
+    private static void twice() {
+        Row row = new Row()
+                .add("", BODY)
+                .add("Ferndor", ITEM)
+                .add(" told me to find ", BODY)
+                .add("Ferndor", ITEM)
+                .add(".", BODY);
+        List<LineParts.Piece> out = row.paint("Ferndor 叫我去找 Ferndor。");
+        int painted = 0;
+        for (LineParts.Piece piece : out) {
+            if ("Ferndor".equals(piece.text())
+                    && ITEM.equals(piece.style().getColor())) {
+                painted++;
+            }
+        }
+        check("兩處都上了色", 2, painted);
+    }
+
+    // ------------------------------------------------------------------
+
+    /** 一行對話：幾段文字，各自帶自己的樣式。 */
+    private static final class Row {
+        private final List<String> texts = new ArrayList<>();
+        private final List<Style> styles = new ArrayList<>();
+
+        Row add(String text, TextColor colour) {
+            return add(text, Style.EMPTY.withColor(colour));
+        }
+
+        Row add(String text, Style style) {
+            texts.add(text);
+            styles.add(style);
+            return this;
+        }
+
+        private List<Integer> from() {
+            return List.of(0);
+        }
+
+        private List<Integer> to() {
+            return List.of(texts.size() - 1);
+        }
+
+        TextColor tone() {
+            return DialogueRewriter.tone(texts, styles, from(), to());
+        }
+
+        List<LineParts.Piece> accents() {
+            return DialogueRewriter.accents(texts, styles, from(), to(), tone());
+        }
+
+        List<LineParts.Piece> paint(String translated) {
+            List<LineParts.Piece> tint = accents();
+            return paint(translated, new boolean[tint.size()]);
+        }
+
+        List<LineParts.Piece> paint(String translated, boolean[] used) {
+            return DialogueRewriter.paint(translated,
+                    Style.EMPTY.withColor(tone()), accents(), used);
+        }
+
+        List<LineParts.Piece> paint(String translated, Style base) {
+            List<LineParts.Piece> tint = accents();
+            return DialogueRewriter.paint(translated, base, tint,
+                    new boolean[tint.size()]);
+        }
+    }
+
+    private static TextColor colourAt(List<LineParts.Piece> pieces, String text) {
+        for (LineParts.Piece piece : pieces) {
+            if (piece.text().equals(text)) {
+                return piece.style().getColor();
+            }
+        }
+        fail("譯文裡沒有這一截：" + text + "（收到 " + pieces + "）");
+        return null;
+    }
+
+    private static void check(String what, Object want, Object got) {
+        if (want == null ? got == null : want.equals(got)) {
+            System.out.println("  通過  " + what);
+            return;
+        }
+        fail(what + "：預期 " + want + "，實際 " + got);
+    }
+
+    private static void fail(String why) {
+        System.out.println("  失敗  " + why);
+        failures++;
+    }
+}
