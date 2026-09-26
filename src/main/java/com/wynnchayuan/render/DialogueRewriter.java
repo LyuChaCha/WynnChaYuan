@@ -419,6 +419,8 @@ public final class DialogueRewriter {
         }
 
         MutableComponent out = Component.empty();
+        // 換上去的字，用我們挑的字型畫得出來嗎。見 unpaintable。
+        String tofu = null;
         for (int i = 0; i < texts.size(); i++) {
             // 換過的那一段用<b>預設字型</b>畫，中文才出得來；沒換的原樣抄，
             // 包含它原本的字型——框、頭像、按鈕都是靠那些字型畫出來的。
@@ -438,9 +440,11 @@ public final class DialogueRewriter {
             List<LineParts.Piece> pieces = painted.get(i);
             if (pieces != null) {
                 for (LineParts.Piece piece : pieces) {
-                    out.append(Component.literal(piece.text())
-                            .withStyle(fitted(piece.text(), piece.style(),
-                                    styles.get(i))));
+                    Style worn = fitted(piece.text(), piece.style(), styles.get(i));
+                    if (tofu == null) {
+                        tofu = unpaintable(piece.text(), worn);
+                    }
+                    out.append(Component.literal(piece.text()).withStyle(worn));
                 }
                 continue;
             }
@@ -448,9 +452,47 @@ public final class DialogueRewriter {
             if (swapped[i] && !drawable(texts.get(i))) {
                 style = fitted(texts.get(i), style, styles.get(i));
             }
+            if (swapped[i] && tofu == null) {
+                tofu = unpaintable(texts.get(i), style);
+            }
             out.append(Component.literal(texts.get(i)).withStyle(style));
         }
+        if (tofu != null) {
+            // 一句話裡插幾個方框，比整句留著英文糟糕得多——而且方框的寬度
+            // 跟原本那個字元不一樣，後面的名牌與外框會整個被推出去。
+            com.wynnchayuan.capture.DialogueProbe.tofu(message, out, tofu);
+            return null;
+        }
         return out;
+    }
+
+    /**
+     * 這一段字，用這個字型畫得出來嗎。
+     *
+     * <h2>只檢我們自己換上去的</h2>
+     * Wynncraft 原本的片段裡到處都是私用區字元——位移、圖示、外框、頭像，
+     * 而且它們帶的是<b>旁邊那段文字的字型</b>而不是符號字型（名牌那一列的
+     * 位移字元就掛在 {@code text/nameplate} 底下）。拿同一把尺去量原本的片段，
+     * 每一條對話都會誤判。
+     *
+     * @return 畫不出來的那幾個碼位，全畫得出來時回 {@code null}
+     */
+    private static String unpaintable(String text, Style style) {
+        String font = fontOf(style);
+        boolean ours = font.startsWith(WynnChaYuan.MOD_ID + ":");
+        if (!ours && !font.startsWith("minecraft:hud/dialogue/text/")) {
+            return null;                       // 預設字型什麼都畫得出來
+        }
+        String lang = WynnChaYuan.language();
+        StringBuilder bad = new StringBuilder();
+        text.codePoints().forEach(cp -> {
+            String one = new String(Character.toChars(cp));
+            if (!(ours ? covered(one, lang) : drawable(one))) {
+                bad.append(String.format("U+%04X ", cp));
+            }
+        });
+        return bad.length() == 0 ? null
+                : bad.toString().strip() + "  字型=" + font + "  文字=" + text;
     }
 
     /**
