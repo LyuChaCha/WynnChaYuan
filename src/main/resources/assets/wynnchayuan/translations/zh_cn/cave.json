@@ -2,9 +2,10 @@
  "_meta": {
   "domain": "cave",
   "lang": "zh_cn",
-  "count": 198,
+  "count": 205,
   "source": "https://cdn.wynntils.com/static/Reference/caves.json",
-  "note": "洞窟卡的<b>整段</b>描述。键是模组把画面上那几行摊平成一句的样子（见 LineTranslator#rejoin，行与行之间接一个半角空格），所以这里<b>只能</b>放整段，不能放逐行的碎片——碎片的断点取决于画面宽度，跟实机对不上就永远查不到，还会在别处夹出半中半英。坐标一律写成 [-{~}, {~}, -{~}]（负号留在模板里），地名一律用 {p}。数据来源：https://cdn.wynntils.com/static/Reference/caves.json"
+  "note": "洞窟卡的<b>整段</b>描述。键是模组把画面上那几行摊平成一句的样子（见 LineTranslator#rejoin，行与行之间接一个半角空格），所以这里<b>只能</b>放整段，不能放逐行的碎片——碎片的断点取决于画面宽度，跟实机对不上就永远查不到，还会在别处夹出半中半英。坐标一律写成 [-{~}, {~}, -{~}]（负号留在模板里），地名一律用 {p}。数据来源：https://cdn.wynntils.com/static/Reference/caves.json",
+  "translated": 205
  },
  "The forgotten factory at [-{~}, {~}, -{~}] may not be so empty after all.": "被遗忘的工厂，坐标 [-{~}, {~}, -{~}] 也许并不像看上去那么空荡。",
  "In a cave dark as the depths of the ocean, shining stalks grow and attract glowing moths at [{~}, {~}, -{~}], and...?": "在一座漆黑如海底深渊的洞穴里，发光的茎秆生长着，引来了闪着微光的飞蛾，坐标 [{~}, {~}, -{~}]，然后呢……？",
@@ -203,5 +204,12 @@
  "An ancient Crypt with hidden dangers can be found at [{~}, {~}, -{~}]": "一座古老的墓穴，藏着危险，坐标 [{~}, {~}, -{~}]",
  "A large tree has grown out of the hillside at [{~}, {~}, -{~}]": "一棵大树从山坡上长了出来，坐标 [{~}, {~}, -{~}]",
  "An old wine cellar infested with the corrupt at [{~}, {~}, -{~}]": "一座老旧的酒窖，里面盘踞着腐化生物，坐标 [{~}, {~}, -{~}]",
- "The home of the wolves all around the frozen area of {p}, found around [{~}, {~}, -{~}]": "狼群的家园，遍布整片冰封的 {p} 一带，位于 [{~}, {~}, -{~}] 附近"
+ "The home of the wolves all around the frozen area of {p}, found around [{~}, {~}, -{~}]": "狼群的家园，遍布整片冰封的 {p} 一带，位于 [{~}, {~}, -{~}] 附近",
+ "{#}Rewards: {#}- +{~} XP {#}- +Various Items": "{#}奖励: {#}- +{~} 经验 {#}- +各种物品",
+ "{#}Rewards: {#}- +{~} XP {#}- +{~} Az Runes {#}- +Various Items": "{#}奖励: {#}- +{~} 经验 {#}- +{~} 个 Az Rune {#}- +各种物品",
+ "{#}Rewards: {#}- +{~} XP {#}- +{~} Emeralds {#}- +Various Items": "{#}奖励: {#}- +{~} 经验 {#}{c:#FF55FF}- {c:#AAAAAA}+{~} 绿宝石 {#}- +各种物品",
+ "{#}Rewards: {#}- +{~} XP {#}- +{~} {#} Earth Powder II {#}- +Various Items": "{#}奖励: {#}- +{~} 经验 {#}- +{~} {#} 地元素粉末 II {#}- +各种物品",
+ "{#}Rewards: {#}- +{~} XP {#}- +{~} Emeralds {#}- +{~} {#}{#}Hex-Master Anchor {#}- +Various Items": "{#}奖励: {#}- +{~} 经验 {#}{c:#FF55FF}- {c:#AAAAAA}+{~} 绿宝石 {#}- +{~} {#}{#}Hex-Master Anchor {#}- +各种物品",
+ "{#}Rewards: {#}- +{~} XP {#}- +{~} {#} Water Powder I {#}- +{~} {#} Fire Powder I {#}- +Various Items": "{#}奖励: {#}- +{~} 经验 {#}- +{~} {#} 水元素粉末 I {#}- +{~} {#} 火元素粉末 I {#}- +各种物品",
+ "Enter The Sanctum at [{~}, {~}, -{~}], if you dare": "进入 [{~}, {~}, -{~}]，如果你敢的话"
 }
