@@ -1,12 +1,36 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.3_1",
+ "latest": "0.2.3_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.3_2": {
+   "headline": "Two black screens and the emerald pouch colours",
+   "items": [
+    "The F6 changelog screen no longer goes black",
+    "The Spanish F6 nameplate settings screen no longer goes black either",
+    "Emerald pouch amounts keep their original colours: the currency icon stays grey instead of turning orange with the number"
+   ],
+   "zh_tw": {
+    "headline": "兩處黑屏與錢袋的顏色",
+    "items": [
+     "F6 的「更新說明」不再整片黑",
+     "西班牙文的 F6「NPC 名牌設定」也不再整片黑",
+     "綠寶石袋的數量保留原本的顏色：貨幣圖示維持灰色，不再跟著數字變橘"
+    ]
+   },
+   "zh_cn": {
+    "headline": "两处黑屏与钱袋的颜色",
+    "items": [
+     "F6 的「更新说明」不再整片黑",
+     "西班牙文的 F6「NPC 名牌设置」也不再整片黑",
+     "绿宝石袋的数量保留原本的颜色：货币图标保持灰色，不再跟着数字变橙"
+    ]
+   }
+  },
   "0.2.3_1": {
    "headline": "Search in Chinese, a boss bar switch, and a one-click update",
    "items": [
