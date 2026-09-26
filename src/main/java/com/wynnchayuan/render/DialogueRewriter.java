@@ -335,16 +335,37 @@ public final class DialogueRewriter {
             // 打字打到哪，顏色才送到哪——而中文比英文短，物品名早就出現在
             // 畫面上了，那幾幀當然是白的。同一句讀第二次就沿用上次記下來的，
             // 一開始就有顏色。見 DialogueTint。
-            if (tint.isEmpty()) {
-                tint = DialogueTint.of(hit);
+            //
+            // 是「補上去」不是「沒量到才用」：正在打的那幾幀，量到的往往只有
+            // 半個名字，有量到不代表量到的是對的。兩邊都放進去，paint 會挑
+            // 位置靠前、長度比較長的那一個。
+            for (LineParts.Piece each : DialogueTint.of(hit)) {
+                if (!seen(tint, each.text())) {
+                    tint.add(each);
+                }
             }
-            boolean[] inked = new boolean[tint.size()];
+            // 貼色是<b>整段一起</b>貼的，不是逐行貼。
+            //
+            // 中文的斷行位置跟原文不一樣，名字很可能剛好跨在兩行之間——第一行
+            // 結尾只有一個 {@code [}，名字整個落在第二行。逐行貼的話兩行都對
+            // 不上整個名字，畫面上就是半白半青。
+            int[] starts = new int[body.size()];
+            List<LineParts.Piece> inked = paint(flatten(rows, starts),
+                    Style.EMPTY.withColor(colour), tint, new boolean[tint.size()]);
             // 要記下來的是<b>譯文</b>那一截，不是原文。
             //
             // 先前記的是原文的片段，於是檔案裡出現 {@code bring me the}、
             // {@code and help us!} 這種東西——那是英文散文，翻成中文之後字面
             // 完全不一樣，下次拿去比對一個都對不上，純粹是垃圾。
             List<LineParts.Piece> learned = new ArrayList<>();
+            for (int n = 0; n < inked.size() - 1; n++) {
+                // 最後一截不收：句子還在打，那一截很可能是被切斷的半個名字。
+                LineParts.Piece piece = inked.get(n);
+                if (!java.util.Objects.equals(piece.style().getColor(), colour)) {
+                    learned.add(new LineParts.Piece(piece.text(),
+                            Style.EMPTY.withColor(piece.style().getColor())));
+                }
+            }
             for (int n = 0; n < body.size(); n++) {
                 int at = body.get(n);
                 // 只把偏移「補上長度差」，不要自己算一個新的。
@@ -374,15 +395,15 @@ public final class DialogueRewriter {
                 if (back == null) {
                     continue;                      // 補不回去就別動這一行，見 offset
                 }
-                List<LineParts.Piece> pieces = paint(rows.get(n),
-                        styles.get(at).withColor(colour), tint, inked);
-                painted.put(at, pieces);
-                for (LineParts.Piece piece : pieces) {
-                    if (!java.util.Objects.equals(piece.style().getColor(), colour)) {
-                        learned.add(new LineParts.Piece(piece.text(),
-                                Style.EMPTY.withColor(piece.style().getColor())));
-                    }
+                // 樣式要換回<b>這一行自己的</b>：每一行的字型不一樣（body_0、
+                // body_1……高度差 12px），拿整段那個共用的去畫會全部疊在一列。
+                List<LineParts.Piece> pieces = new ArrayList<>();
+                for (LineParts.Piece part : cut(inked, starts[n],
+                        starts[n] + rows.get(n).length())) {
+                    pieces.add(new LineParts.Piece(part.text(),
+                            styles.get(at).withColor(part.style().getColor())));
                 }
+                painted.put(at, pieces);
                 texts.set(at, rows.get(n));
                 for (int i = at + 1; i <= end; i++) {
                     texts.set(i, "");              // 整行併到第一段，其餘清空
@@ -1275,23 +1296,72 @@ public final class DialogueRewriter {
      *
      * <p>純符號與單個字元不收：它們在譯文裡到處都對得上（一個
      * {@code [} 會中在任何一個方括號上），貼回去只會染錯地方。
+     *
+     * <h2>跨行的要併成一段</h2>
+     * 原文換行的時候，同一個名字會被拆成兩段送過來——{@code [Abysso} 在第一行
+     * 結尾，{@code Galoshes]} 在第二行開頭。兩段分開收的話，中文因為斷在別的
+     * 地方（第一行結尾只剩一個 {@code [}），就只有後半截對得上，畫面上是
+     * 「Abysso 白、Galoshes] 青」。所以同色又相鄰的段要先併回一個名字，
+     * 斷行吃掉的那個空白也要補回來。
      */
     static List<LineParts.Piece> accents(
             List<String> texts, List<Style> styles,
             List<Integer> body, List<Integer> ends, TextColor tone) {
         List<LineParts.Piece> out = new ArrayList<>();
+        StringBuilder run = new StringBuilder();
+        List<String> parts = new ArrayList<>();
+        Style paint = null;
+        boolean wrapped = false;
         for (int n = 0; n < body.size(); n++) {
             for (int i = body.get(n); i <= ends.get(n); i++) {
-                if (java.util.Objects.equals(styles.get(i).getColor(), tone)) {
+                Style style = styles.get(i);
+                if (java.util.Objects.equals(style.getColor(), tone)) {
+                    paint = flush(out, run, parts, paint);
                     continue;
                 }
-                String core = texts.get(i).strip();
-                if (worthPainting(core)) {
-                    out.add(new LineParts.Piece(core, styles.get(i)));
+                if (paint == null || !java.util.Objects.equals(
+                        style.getColor(), paint.getColor())) {
+                    flush(out, run, parts, paint);
+                    paint = style;
+                } else if (wrapped && run.length() > 0
+                        && run.charAt(run.length() - 1) != ' '
+                        && !texts.get(i).startsWith(" ")) {
+                    run.append(' ');           // 斷行吃掉的那個空白要補回來
+                }
+                wrapped = false;
+                run.append(texts.get(i));
+                parts.add(texts.get(i).strip());
+            }
+            wrapped = true;
+        }
+        flush(out, run, parts, paint);
+        return out;
+    }
+
+    /**
+     * 收掉手上這一串同色的段：<b>整串</b>先進去，拆開的幾段當備胎跟在後面。
+     *
+     * <p>備胎是給「整串找不到」的情況用的。paint 是位置靠前的優先、同一個位置
+     * 取比較長的，所以整串對得上的時候一定輪不到備胎。
+     */
+    private static Style flush(List<LineParts.Piece> out, StringBuilder run,
+                               List<String> parts, Style paint) {
+        if (paint != null) {
+            String whole = run.toString().strip();
+            if (worthPainting(whole)) {
+                out.add(new LineParts.Piece(whole, paint));
+            }
+            if (parts.size() > 1) {
+                for (String part : parts) {
+                    if (worthPainting(part) && !part.equals(whole)) {
+                        out.add(new LineParts.Piece(part, paint));
+                    }
                 }
             }
         }
-        return out;
+        run.setLength(0);
+        parts.clear();
+        return null;
     }
 
     /** 見 {@link #accents}：短到會亂中的、沒有半個字母數字的，都不收。 */
@@ -1305,6 +1375,59 @@ public final class DialogueRewriter {
             }
         }
         return false;
+    }
+
+    /** 這一段已經在候選裡了嗎。見呼叫處：記下來的跟量到的會有重複。 */
+    private static boolean seen(List<LineParts.Piece> tint, String text) {
+        for (LineParts.Piece each : tint) {
+            if (each.text().equals(text)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 把幾行併回一整句來貼色，順便記下每一行在裡面的起點。
+     *
+     * <p>斷行是<b>會吃掉空白</b>的（見 {@link #wrap} 的 stripTrailing），所以
+     * 兩邊都是拉丁字的時候要把那個空白補回來，跨行的名字才連得起來。中日韓
+     * 之間本來就沒有空白，補了反而多一格。
+     */
+    static String flatten(List<String> rows, int[] starts) {
+        StringBuilder out = new StringBuilder();
+        for (int n = 0; n < rows.size(); n++) {
+            if (out.length() > 0 && !rows.get(n).isEmpty()
+                    && isWord(out.charAt(out.length() - 1))
+                    && isWord(rows.get(n).charAt(0))) {
+                out.append(' ');
+            }
+            starts[n] = out.length();
+            out.append(rows.get(n));
+        }
+        return out.toString();
+    }
+
+    /**
+     * 從整句貼好的結果裡取出 {@code [from, to)} 這一段，跨界的那一截切開。
+     *
+     * <p>補回去的那個空白落在兩行<b>中間</b>，兩邊都取不到它，所以不會被畫出來。
+     */
+    static List<LineParts.Piece> cut(
+            List<LineParts.Piece> pieces, int from, int to) {
+        List<LineParts.Piece> out = new ArrayList<>();
+        int at = 0;
+        for (LineParts.Piece piece : pieces) {
+            int end = at + piece.text().length();
+            int a = Math.max(at, from);
+            int b = Math.min(end, to);
+            if (a < b) {
+                out.add(new LineParts.Piece(
+                        piece.text().substring(a - at, b - at), piece.style()));
+            }
+            at = end;
+        }
+        return out;
     }
 
     /**

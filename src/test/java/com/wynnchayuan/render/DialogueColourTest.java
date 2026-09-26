@@ -45,10 +45,12 @@ public final class DialogueColourTest {
         acrossRows();
         onlyColour();
         symbols();
+        splitName();
         twice();
         typing();
         runaway();
         remembered();
+        bundled();
 
         System.out.println(failures == 0 ? "\n對話顏色：全部通過"
                 : "\n對話顏色：" + failures + " 項失敗");
@@ -126,9 +128,11 @@ public final class DialogueColourTest {
     }
 
     /**
-     * 純符號不收。
+     * 純符號不會自己成為一段。
      *
-     * <p>一個 {@code [} 在譯文裡到處都對得上，貼回去只會把別的地方染色。
+     * <p>一個 {@code [} 在譯文裡到處都對得上，單獨拿去貼只會把別的地方染色。
+     * 但它跟後面同色的段是連著的，併起來就是完整的名字——併完的那個才是
+     * 要貼的東西，拆開的幾段只是備胎。
      */
     private static void symbols() {
         Row row = new Row()
@@ -140,7 +144,59 @@ public final class DialogueColourTest {
         for (LineParts.Piece piece : row.accents()) {
             got.add(piece.text());
         }
-        check("只收得出意思的那一段", List.of("Mummy's Rag"), got);
+        check("同色的連在一起併成整個名字",
+                List.of("[Mummy's Rag]", "Mummy's Rag"), got);
+    }
+
+    /**
+     * 名字剛好跨在原文的兩行之間——實機回報「Abysso 白、Galoshes] 青」。
+     *
+     * <h2>現場長什麼樣</h2>
+     * 原文斷在名字中間，所以遊戲送的是兩段青色：{@code [Abysso} 在第一行結尾、
+     * {@code Galoshes]} 在第二行開頭。中文斷在別的地方——第一行結尾只剩一個
+     * {@code [}，名字整個落在第二行。
+     *
+     * <p>於是逐行貼的時候，第一行找不到 {@code [Abysso}（只有一個中括號），
+     * 第二行找得到 {@code Galoshes]}，畫面上就是半白半青。兩件事要一起做：
+     * 同色相鄰的段先併回一個名字，而且整段一起貼、不逐行貼。
+     */
+    private static void splitName() {
+        List<String> texts = new ArrayList<>(List.of(
+                "A pirate stole them from us years ago! I could reward you if you could bring me the ",
+                "[Abysso",
+                "Galoshes]",
+                " and help us!"));
+        List<Style> styles = new ArrayList<>(List.of(
+                Style.EMPTY.withColor(BODY), Style.EMPTY.withColor(ITEM),
+                Style.EMPTY.withColor(ITEM), Style.EMPTY.withColor(BODY)));
+        List<Integer> body = List.of(0, 2);      // 兩行：各自的第一段
+        List<Integer> ends = List.of(1, 3);      // 兩行：各自的最後一段
+
+        TextColor tone = DialogueRewriter.tone(texts, styles, body, ends);
+        List<LineParts.Piece> tint =
+                DialogueRewriter.accents(texts, styles, body, ends, tone);
+        check("斷行吃掉的空白補回來了", "[Abysso Galoshes]", tint.get(0).text());
+
+        // 中文的斷行位置不一樣：第一行結尾只有一個中括號
+        List<String> rows = List.of(
+                "多年前被一個海盜從我們這裡偷走了！你要是能把 [",
+                "Abysso Galoshes] 帶來幫我們，我可以給你報酬！");
+        int[] starts = new int[rows.size()];
+        List<LineParts.Piece> whole = DialogueRewriter.paint(
+                DialogueRewriter.flatten(rows, starts),
+                Style.EMPTY.withColor(tone), tint, new boolean[tint.size()]);
+
+        List<LineParts.Piece> second = DialogueRewriter.cut(
+                whole, starts[1], starts[1] + rows.get(1).length());
+        check("名字的後半沒有自己變成一截", ITEM, colourAt(second, "Abysso Galoshes]"));
+        check("後面的散文是底色", BODY, colourAt(second, " 帶來幫我們，我可以給你報酬！"));
+
+        List<LineParts.Piece> first = DialogueRewriter.cut(
+                whole, starts[0], starts[0] + rows.get(0).length());
+        check("第一行的中括號跟著名字上色", ITEM,
+                first.get(first.size() - 1).style().getColor());
+        check("兩行加起來還是原本的字",
+                rows.get(0) + rows.get(1), text(first) + text(second));
     }
 
     /** 同一個詞出現兩次就是兩處，不會第二段又貼回第一處。 */
@@ -227,6 +283,25 @@ public final class DialogueColourTest {
         check("沒看過的句子就是空的", 0, DialogueTint.of("從來沒講過這句").size());
     }
 
+    /**
+     * 隨 jar 附的那一份要真的讀得到。
+     *
+     * <p>這是產生物：路徑打錯、JSON 壞掉，模組都照常跑，只是每一句第一次讀
+     * 又變回「先白再染」——完全沒有訊號。所以要自己驗。
+     */
+    private static void bundled() throws Exception {
+        DialogueTint.forTest();
+        DialogueTint.init(Files.createTempDirectory("tint-bundled")
+                .resolve(DialogueTint.FILE), "zh_tw");
+        List<LineParts.Piece> got = DialogueTint.of(
+                "多年前被一個海盜從我們這裡偷走了！你要是能把 [Abysso Galoshes] 帶來幫我們，我可以給你報酬！");
+        check("jar 裡附的顏色讀得到", 1, got.size());
+        check("附的是整個名字，不是半截", "[Abysso Galoshes]", got.get(0).text());
+        check("附的那一截有顏色",
+                TextColor.parseColor("dark_aqua").result().orElse(null),
+                got.get(0).style().getColor());
+    }
+
     // ------------------------------------------------------------------
 
     /** 一行對話：幾段文字，各自帶自己的樣式。 */
@@ -275,6 +350,15 @@ public final class DialogueColourTest {
             return DialogueRewriter.paint(translated, base, tint,
                     new boolean[tint.size()]);
         }
+    }
+
+    /** 把幾截接回一整條字串：切開之後不能多一個字也不能少一個字。 */
+    private static String text(List<LineParts.Piece> pieces) {
+        StringBuilder out = new StringBuilder();
+        for (LineParts.Piece piece : pieces) {
+            out.append(piece.text());
+        }
+        return out.toString();
     }
 
     private static TextColor colourAt(List<LineParts.Piece> pieces, String text) {
