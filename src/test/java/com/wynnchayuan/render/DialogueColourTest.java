@@ -208,7 +208,7 @@ public final class DialogueColourTest {
         java.nio.file.Path save = Files.createTempDirectory("wcy-tint")
                 .resolve("dialogue-colours.json");
         DialogueTint.forTest();
-        DialogueTint.init(save);
+        DialogueTint.init(save, "zh_tw");
 
         String whole = "你聽說過 [Abysso Galoshes] 嗎？";
         DialogueTint.learn(whole, List.of(
@@ -218,7 +218,7 @@ public final class DialogueColourTest {
 
         // 重開遊戲：整個清掉，只從檔案讀回來
         DialogueTint.forTest();
-        DialogueTint.init(save);
+        DialogueTint.init(save, "zh_tw");
 
         check("重開之後還記得", ITEM,
                 colourAt(DialogueTint.of(whole), "[Abysso Galoshes]"));

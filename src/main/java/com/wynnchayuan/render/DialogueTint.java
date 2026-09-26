@@ -5,12 +5,16 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.wynnchayuan.SafeFiles;
 import com.wynnchayuan.capture.LineParts;
 
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -67,10 +71,26 @@ public final class DialogueTint {
 
     private DialogueTint() {}
 
-    /** 讀進來。檔案不在、讀不懂都只是從空的開始。 */
-    public static void init(Path target) {
+    /**
+     * 讀進來：先吃 jar 裡附的那份，再讓玩家自己那份蓋上去。
+     *
+     * <h2>為什麼要附一份</h2>
+     * 自己學的只能救「第二次讀」——一句話第一次讀到的時候，Wynncraft
+     * 還沒把顏色送出來，我們手上真的什麼都沒有。附一份跑過的結果進 jar，
+     * 玩家<b>第一次</b>讀就已經有顏色了，這是唯一能讓顏色跟著逐字一起出來
+     * 的辦法。
+     *
+     * <p>附的那份是產生物：玩過一輪把 {@code dialogue-colours.json} 收回來，
+     * 放進 {@code assets/wynnchayuan/colours/<lang>.json} 就是了。沒有也不會怎樣，
+     * 只是退回「第一次會白一下」。
+     */
+    public static void init(Path target, String lang) {
         file = target;
-        JsonObject root = SafeFiles.readObject(target, 4L * 1024 * 1024);
+        merge(bundled(lang));
+        merge(SafeFiles.readObject(target, 4L * 1024 * 1024));
+    }
+
+    private static void merge(JsonObject root) {
         if (root == null || !root.has("lines")
                 || !root.get("lines").isJsonObject()) {
             return;
@@ -83,6 +103,20 @@ public final class DialogueTint {
                     SEEN.put(each.getKey(), pieces);
                 }
             }
+        }
+    }
+
+    /** jar 裡附的那份，沒有就回 {@code null}。 */
+    private static JsonObject bundled(String lang) {
+        try (InputStream in = DialogueTint.class.getResourceAsStream(
+                "/assets/wynnchayuan/colours/" + lang + ".json")) {
+            if (in == null) {
+                return null;
+            }
+            return JsonParser.parseReader(
+                    new InputStreamReader(in, StandardCharsets.UTF_8)).getAsJsonObject();
+        } catch (Exception e) {
+            return null;               // 附的那份壞了不該害遊戲開不起來
         }
     }
 
