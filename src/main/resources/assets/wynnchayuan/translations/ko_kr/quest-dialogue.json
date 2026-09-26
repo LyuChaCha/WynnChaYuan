@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 23752,
-  "translated": 23402,
+  "count": 23754,
+  "translated": 23404,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -100166,6 +100166,26 @@
    "stage": "Stage 10",
    "speaker": "Ferndor",
    "source": "wiki"
+  },
+  "Lost Soles#061": {
+   "src": "I wonder where those boots have gone... It's been such a long time. Do you know about the [Abysso Galoshes]?",
+   "dst": "그 부츠가 어디로 갔을까요… 벌써 한참 됐네요. [Abysso Galoshes]에 대해 아시는 게 있나요?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#062": {
+   "src": "A pirate stole them from us years ago! I could reward you if you could bring me the [Abysso Galoshes] and help us!",
+   "dst": "몇 년 전 해적이 우리에게서 훔쳐 갔어요! [Abysso Galoshes]를 가져와 도와주시면 보답할게요!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "captured"
   },
   "Lost Tower#000": {
    "src": "Hey, adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
