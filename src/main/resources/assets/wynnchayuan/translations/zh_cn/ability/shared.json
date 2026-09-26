@@ -11,21 +11,21 @@
  "entries": {
   "ability-shared#0068": {
    "src": "ÀÀÀÀ({#} Air: +{~})",
-   "dst": "ÀÀÀÀ({#} 风属性伤害: +{~})",
+   "dst": "ÀÀÀÀ({#} 气属性伤害: +{~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0069": {
    "src": "ÀÀÀÀ({#} Air: -{~})",
-   "dst": "ÀÀÀÀ({#} 风属性伤害: -{~})",
+   "dst": "ÀÀÀÀ({#} 气属性伤害: -{~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0070": {
    "src": "ÀÀÀÀ({#} Air: {~})",
-   "dst": "ÀÀÀÀ({#} 风属性伤害: {~})",
+   "dst": "ÀÀÀÀ({#} 气属性伤害: {~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
@@ -53,21 +53,21 @@
   },
   "ability-shared#0056": {
    "src": "ÀÀÀÀ({#} Earth: +{~})",
-   "dst": "ÀÀÀÀ({#} 土属性伤害: +{~})",
+   "dst": "ÀÀÀÀ({#} 地属性伤害: +{~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0057": {
    "src": "ÀÀÀÀ({#} Earth: -{~})",
-   "dst": "ÀÀÀÀ({#} 土属性伤害: -{~})",
+   "dst": "ÀÀÀÀ({#} 地属性伤害: -{~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0058": {
    "src": "ÀÀÀÀ({#} Earth: {~})",
-   "dst": "ÀÀÀÀ({#} 土属性伤害: {~})",
+   "dst": "ÀÀÀÀ({#} 地属性伤害: {~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
@@ -95,21 +95,21 @@
   },
   "ability-shared#0053": {
    "src": "ÀÀÀÀ({#} Neutral: +{~})",
-   "dst": "ÀÀÀÀ({#} 无属性伤害: +{~})",
+   "dst": "ÀÀÀÀ({#} 中性伤害: +{~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0054": {
    "src": "ÀÀÀÀ({#} Neutral: -{~})",
-   "dst": "ÀÀÀÀ({#} 无属性伤害: -{~})",
+   "dst": "ÀÀÀÀ({#} 中性伤害: -{~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0055": {
    "src": "ÀÀÀÀ({#} Neutral: {~})",
-   "dst": "ÀÀÀÀ({#} 无属性伤害: {~})",
+   "dst": "ÀÀÀÀ({#} 中性伤害: {~})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
@@ -283,7 +283,7 @@
   },
   "ability-shared#0006": {
    "src": "Earth Mastery",
-   "dst": "土元素精通",
+   "dst": "地元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -298,7 +298,7 @@
   },
   "ability-shared#0007": {
    "src": "Increase your base damage\nfrom all Earth attacks.",
-   "dst": "提高你所有土属性攻击的\n基础伤害。",
+   "dst": "提高你所有地属性攻击的\n基础伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -316,7 +316,7 @@
   },
   "ability-shared#0008": {
    "src": "{#} Earth Damage: +{~}",
-   "dst": "{#} 土属性伤害: +{~}",
+   "dst": "{#} 地属性伤害: +{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -332,7 +332,7 @@
   },
   "ability-shared#0009": {
    "src": "{#} Earth Damage: +{~}-{~}",
-   "dst": "{#} 土属性伤害: +{~1}-{~2}",
+   "dst": "{#} 地属性伤害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -413,7 +413,7 @@
   },
   "ability-shared#0014": {
    "src": "Air Mastery",
-   "dst": "风元素精通",
+   "dst": "气元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -428,7 +428,7 @@
   },
   "ability-shared#0015": {
    "src": "Increase your base damage\nfrom all Air attacks.",
-   "dst": "提高你所有风属性攻击的\n基础伤害。",
+   "dst": "提高你所有气属性攻击的\n基础伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -446,7 +446,7 @@
   },
   "ability-shared#0016": {
    "src": "{#} Air Damage: +{~}",
-   "dst": "{#} 风属性伤害: +{~}",
+   "dst": "{#} 气属性伤害: +{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -462,7 +462,7 @@
   },
   "ability-shared#0017": {
    "src": "{#} Air Damage: +{~}-{~}",
-   "dst": "{#} 风属性伤害: +{~1}-{~2}",
+   "dst": "{#} 气属性伤害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
