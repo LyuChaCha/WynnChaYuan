@@ -1147,11 +1147,15 @@ public final class DialogueRewriter {
             said = raw;
             spoken = typed;
         }
+        hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
         // 有字畫不出來就整段不換——一句話裡插幾個方框，比整句留著英文糟糕得多。
+        //
+        // 要在 fill <b>之後</b>檢查。先前檢的是<b>模板</b>，而真名、地名是
+        // 填回去的時候才進來的——玩家 ID 或地名裡只要有一個字不在字型的
+        // 覆蓋範圍，守門就放它過去，畫面上是一排方框。
         if (!renderable(hit)) {
             return drop();
         }
-        hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
         // 塞不塞得下要問 wrap 本身，不能只量總寬度。
         //
         // 總寬度量得到「字加起來有多寬」，量不到「斷行浪費掉的空間」：英文與俄文的

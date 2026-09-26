@@ -60,6 +60,7 @@ public final class DialogueTypingTest {
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                 Languages.DEFAULT));
         corpus(store);
+        placeholders(store);
         panel(store);
 
         System.out.println(failures == 0 ? "\n逐字模擬：全部通過"
@@ -525,6 +526,84 @@ public final class DialogueTypingTest {
     }
 
     /** 語料裡的台詞。只取不含佔位符的：模擬不出玩家名，帶了反而測到別的東西。 */
+    /**
+     * 帶佔位符的台詞。
+     *
+     * <h2>為什麼要另外跑一輪</h2>
+     * {@link #dialogueLines} 把 src 裡含 <code>{</code> 的整批跳過，而那不是少數：
+     * 任務台詞只要提到數字、玩家名或地名就落在這一類。實機回報「句子中間一排
+     * 方框」的那一條正是其中之一（{@code The other &#123;~&#125; digits should all be…}），
+     * 從來沒被模擬過。
+     *
+     * <p>模擬的時候把佔位符換回具體的值——畫面上送來的本來就是具體的值，
+     * 參數化是查表時才做的事。這樣才測得到 {@code fill} 之後那一段。
+     */
+    private static void placeholders(TranslationStore store) throws Exception {
+        List<String[]> lines = filledLines();
+        System.out.println("=== 逐字模擬 " + lines.size() + " 句帶佔位符的台詞 ===");
+
+        int boxes = 0;
+        int never = 0;
+        List<String> bad = new ArrayList<>();
+        for (String[] row : lines) {
+            CurrentQuest.set(QUEST_SCOPE ? row[2] : null);
+            List<String> frames = typeOut(row[0], store, row[0].length());
+            for (String frame : frames) {
+                if (frame != null && !DialogueRewriter.renderable(frame)) {
+                    boxes++;
+                    if (bad.size() < 6) {
+                        bad.add(row[0] + " → " + frame);
+                    }
+                    break;
+                }
+            }
+            if (frames.stream().allMatch(f -> f == null)) {
+                never++;
+            }
+        }
+        System.out.println("  從頭到尾沒翻出來：" + never);
+        for (String s : bad) {
+            System.out.println("   [框] " + s);
+        }
+        // 畫不出來的字就是一排方框，而方框的寬度跟原本的字元不一樣，
+        // 後面的名牌與外框會整個被推出去。見 DialogueRewriter#unpaintable。
+        check("填回佔位符之後不會出現畫不出來的字（實際 " + boxes + " 句）", boxes == 0);
+    }
+
+    /** 見 {@link #placeholders}：只收帶佔位符的，並把它們換回具體的值。 */
+    private static List<String[]> filledLines() throws Exception {
+        List<String[]> out = new ArrayList<>();
+        Path file = Path.of("src/main/resources/assets/wynnchayuan/translations",
+                Languages.DEFAULT, "quest-dialogue.json");
+        com.google.gson.JsonObject root = com.google.gson.JsonParser
+                .parseString(Files.readString(file, StandardCharsets.UTF_8))
+                .getAsJsonObject();
+        com.google.gson.JsonObject entries = root.getAsJsonObject("entries");
+        for (String key : entries.keySet()) {
+            com.google.gson.JsonObject e = entries.getAsJsonObject(key);
+            if (!e.has("src") || !e.has("dst")) {
+                continue;
+            }
+            String src = e.get("src").getAsString().strip();
+            // 圖示的佔位符沒有還原得回去（fill 是把它丟掉的），換了也不像現場
+            if (src.isEmpty() || !src.contains("{") || src.contains("{#}")) {
+                continue;
+            }
+            String shown = src.replaceAll("\\{~\\d*\\}", "3")
+                    .replace("{u}", "Steve")
+                    .replace("{p}", "Ragni");
+            if (shown.contains("{") || shown.length() < 8) {
+                continue;                      // 還有沒認得的佔位符，別亂猜
+            }
+            out.add(new String[] {shown, e.get("dst").getAsString().strip(),
+                    e.has("quest") ? e.get("quest").getAsString() : null});
+            if (out.size() >= SAMPLE) {
+                break;
+            }
+        }
+        return out;
+    }
+
     private static List<String[]> dialogueLines() throws Exception {
         List<String[]> out = new ArrayList<>();
         Path file = Path.of("src/main/resources/assets/wynnchayuan/translations",
