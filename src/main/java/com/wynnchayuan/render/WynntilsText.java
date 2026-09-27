@@ -248,9 +248,9 @@ public final class WynntilsText {
             return text;
         }
         synchronized (MARKERS) {
-            if (markerStore != store) {
+            if (markerAge != store.generation()) {
                 MARKERS.clear();
-                markerStore = store;
+                markerAge = store.generation();
             }
             String hit = MARKERS.get(text);
             if (hit == null) {
@@ -266,7 +266,8 @@ public final class WynntilsText {
     }
 
     private static final java.util.Map<String, String> MARKERS = new java.util.HashMap<>();
-    private static TranslationStore markerStore;
+    /** 見 {@link TranslationStore#generation}。 */
+    private static int markerAge = -1;
 
     /** mixin 的入口：快捷列上方那行手持物品名稱。見 {@code HeldItemNameMixin}。 */
     public static net.minecraft.network.chat.Component heldItemName(
@@ -317,9 +318,9 @@ public final class WynntilsText {
         if (name == null || store == null || config == null || !config.translateBossBar()) {
             return name;
         }
-        if (store != barStore || BARS.size() > 256) {
+        if (barAge != store.generation() || BARS.size() > 256) {
             BARS.clear();
-            barStore = store;
+            barAge = store.generation();
         }
         net.minecraft.network.chat.Component hit = BARS.get(name);
         if (hit == null) {
@@ -442,7 +443,8 @@ public final class WynntilsText {
 
     private static final java.util.Map<net.minecraft.network.chat.Component,
             net.minecraft.network.chat.Component> BARS = new java.util.HashMap<>();
-    private static TranslationStore barStore;
+    /** 見 {@link TranslationStore#generation}：換語言不換 store，只能比這個。 */
+    private static int barAge = -1;
 
     /**
      * mixin 的入口：Wynntils 通知框（畫面中下方帶暗底的那一行）。
@@ -512,9 +514,9 @@ public final class WynntilsText {
                 || config.nametagMode() == CollectorConfig.NametagMode.OFF) {
             return name;
         }
-        if (store != nameStore || NAMES.size() > 512) {
+        if (nameAge != store.generation() || NAMES.size() > 512) {
             NAMES.clear();
-            nameStore = store;
+            nameAge = store.generation();
         }
         net.minecraft.network.chat.Component hit = NAMES.get(name);
         if (hit == null) {
@@ -559,7 +561,8 @@ public final class WynntilsText {
 
     private static final java.util.Map<net.minecraft.network.chat.Component,
             net.minecraft.network.chat.Component> NAMES = new java.util.HashMap<>();
-    private static TranslationStore nameStore;
+    /** 見 {@link TranslationStore#generation}。 */
+    private static int nameAge = -1;
 
     /** mixin 的入口：Wynntils「手持物品名稱」疊層記下的那份字。見 {@code HeldItemOverlayMixin}。 */
     public static StyledText heldItemText(StyledText text) {
