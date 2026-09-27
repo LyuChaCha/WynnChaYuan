@@ -5896,6 +5896,63 @@ public final class LineTranslator {
         return true;
     }
 
+    /**
+     * 往後第一段實字是<b>讀得出來的內容</b>——字母、數字，或帶正負號的數值。
+     *
+     * <h2>為什麼 tooltip 不能只認字母</h2>
+     * {@link #tooltipGaps} 放寬小欄距時原本問的是「後面是不是字母」。
+     * 「Class Type{@literal <+4>}Mage/Dark Wizard」過得了，數值欄卻一律以
+     * 正負號開頭：
+     *
+     * <pre>
+     *   Mana Regen{@literal <+4>}+15/5s [91.6%]
+     * </pre>
+     *
+     * 那一行的欄距只有 4px——英文標籤長，右欄緊貼著它。只認字母的話這個欄界
+     * 數不到，中文標籤短了 22px，整段數值就跟著往左縮。同一份 tooltip 裡
+     * 「Walk Speed」那幾行的欄距有二十幾 px，數得到、也補償了，於是只有標籤
+     * 最長的那一行對不齊——實機回報的「數值沒有靠左對齊」就是這個。
+     *
+     * <p>門檻本來要擋的是圖示前的微調（{@code - +1 }{@literal <+2>}{@code 🔒Unidentified Helmet}）：
+     * 造字區的圖示既不是字母也不是數字，照樣擋得住。
+     */
+    private static boolean startsWithValue(List<Run> runs, int from) {
+        String head = headAfter(runs, from);
+        if (head.isEmpty()) {
+            return false;
+        }
+        int first = head.codePointAt(0);
+        if (Character.isLetterOrDigit(first)) {
+            return true;
+        }
+        if (first != '+' && first != '-') {
+            return false;                      // 圖示、括號、破折號都不是欄位內容
+        }
+        return head.length() > 1 && Character.isDigit(head.charAt(1));
+    }
+
+    /**
+     * 間隔後面那一欄的頭兩個字。
+     *
+     * <p>要跨片段收：重建過的數值是一段一段的（{@code "+" "15" "/" "5" "s"}），
+     * 只看第一段的話正負號後面什麼都沒有，整個欄界就被判掉了。
+     */
+    private static String headAfter(List<Run> runs, int from) {
+        StringBuilder head = new StringBuilder(2);
+        for (int i = from; i < runs.size() && head.length() < 2; i++) {
+            Run r = runs.get(i);
+            if (r.space()) {
+                continue;
+            }
+            String text = head.isEmpty() ? r.text().stripLeading() : r.text();
+            if (text.isEmpty()) {
+                continue;
+            }
+            head.append(text, 0, Math.min(text.length(), 2 - head.length()));
+        }
+        return head.toString();
+    }
+
     /** 往後第一段實字是以字母開頭的。 */
     private static boolean startsWithLetter(List<Run> runs, int from) {
         for (int i = from; i < runs.size(); i++) {
@@ -5953,7 +6010,7 @@ public final class LineTranslator {
             if (r.px() <= 0) {
                 continue;                      // 疊字用的負偏移，見 #overlayGap
             }
-            out[i] = wordBefore(runs, i) && startsWithLetter(runs, i + 1);
+            out[i] = wordBefore(runs, i) && startsWithValue(runs, i + 1);
         }
         return out;
     }
