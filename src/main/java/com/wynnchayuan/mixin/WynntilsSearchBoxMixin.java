@@ -1,5 +1,6 @@
 package com.wynnchayuan.mixin;
 
+import com.wynnchayuan.render.TypedText;
 import com.wynnchayuan.render.WynntilsText;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
