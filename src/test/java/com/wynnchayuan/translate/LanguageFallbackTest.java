@@ -54,7 +54,11 @@ public final class LanguageFallbackTest {
      * 一條<b>夠長</b>、兩種語言都翻好而且翻得不一樣的條目。
      *
      * <p>要夠長才會進 flat 索引（{@code MIN_FLAT_LENGTH} 是 24）。
-     * 「地」與「土」的差別剛好一眼看得出是哪一層勝出。
+     *
+     * <p>期望值<b>不寫死</b>，當場跟兩個單層 store 問。先前寫死的是
+     * 「土属性普攻伤害:」，語料後來把用詞統一成「地」，測試就紅了——
+     * 而壞掉的是措辭，不是疊層。同一個坑 {@link #pickOnlyTw} 上面那段
+     * 註解也記過一次。
      */
     private static final String LONG = "Earth Main Attack Damage:";
 
@@ -78,7 +82,17 @@ public final class LanguageFallbackTest {
         String twLine = onlyTw == null ? null : tw.lookup(onlyTw);
         check("繁體本來就有那一句（" + alone + " 條）", twLine != null);
         check("簡體還沒翻那一句", onlyTw != null && cn.lookup(onlyTw) == null);
-        check("簡體翻好了介面標籤", "战斗等级".equals(cn.lookup(BOTH)));
+        // 期望值跟語料當場問，不寫死措辭。兩種語言必須<b>翻得不一樣</b>，
+        // 否則下面那幾條「誰蓋過誰」的斷言等於沒在守。
+        String twLabel = tw.lookup(BOTH);
+        String cnLabel = cn.lookup(BOTH);
+        String twLong = tw.lookupFlat(LONG);
+        String cnLong = cn.lookupFlat(LONG);
+        check("簡體翻好了介面標籤（" + cnLabel + "）", cnLabel != null);
+        check("兩種語言的介面標籤翻得不一樣（" + twLabel + " / " + cnLabel + "）",
+                twLabel != null && !twLabel.equals(cnLabel));
+        check("兩種語言的長句翻得不一樣（" + twLong + " / " + cnLong + "）",
+                twLong != null && cnLong != null && !twLong.equals(cnLong));
 
         // ---- 疊起來 ----
         TranslationStore both = new TranslationStore();
@@ -88,7 +102,7 @@ public final class LanguageFallbackTest {
                 twLine != null && twLine.equals(both.lookup(onlyTw)));
         check("★ 簡體蓋過繁體，不是反過來（拿到 "
                         + both.lookup(BOTH) + "）",
-                "战斗等级".equals(both.lookup(BOTH)));
+                cnLabel != null && cnLabel.equals(both.lookup(BOTH)));
         check("疊完的條目數應該接近繁體那一層（疊完 " + both.size()
                         + "、繁體 " + alone + "）",
                 both.size() >= alone);
@@ -97,7 +111,7 @@ public final class LanguageFallbackTest {
         TranslationStore flipped = new TranslationStore();
         flipped.loadAll(List.of(cnDir, ROOT.resolve("zh_tw")));
         check("順序反過來就換繁體勝出（拿到 " + flipped.lookup(BOTH) + "）",
-                "戰鬥等級".equals(flipped.lookup(BOTH)));
+                twLabel != null && twLabel.equals(flipped.lookup(BOTH)));
 
         // ---- 輔助索引也要照同一個順序 ----
         //
@@ -114,12 +128,11 @@ public final class LanguageFallbackTest {
         // 要改的是<b>跨層</b>：後面那一層必須蓋得掉前面那一層。
         check("★ 長句也要簡體勝出（flat 索引，拿到 "
                         + both.lookupFlat(LONG) + "）",
-                "土属性普攻伤害:".equals(both.lookupFlat(LONG)));
+                cnLong != null && cnLong.equals(both.lookupFlat(LONG)));
         check("順序反過來時長句換繁體勝出（拿到 "
                         + flipped.lookupFlat(LONG) + "）",
-                "地屬性普攻傷害:".equals(flipped.lookupFlat(LONG)));
-        check("長句在單層時本來就查得到",
-                "土属性普攻伤害:".equals(cn.lookupFlat(LONG)));
+                twLong != null && twLong.equals(flipped.lookupFlat(LONG)));
+        check("長句在單層時本來就查得到（" + cnLong + "）", cnLong != null);
 
         // 只有一層時行為不變
         TranslationStore one = new TranslationStore();
