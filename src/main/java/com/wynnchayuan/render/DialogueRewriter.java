@@ -551,10 +551,72 @@ public final class DialogueRewriter {
                     cut = last;                // 整行就是一個長字，只好斷在空白
                 }
             }
+            cut = kinsoku(text, at, cut);
             out.add(text.substring(at, cut).stripTrailing());
             at = cut < text.length() && text.charAt(cut) == ' ' ? cut + 1 : cut;
         }
         return at >= text.length() ? out : null;
+    }
+
+    /** 不能留在行尾的字元：開括號與開引號，後面接的東西要跟著它一起下去。 */
+    private static final String OPENING = "([{<「『【《〈（〔［｛“‘";
+
+    /** 不能出現在行首的字元：閉括號與標點，要把前一個字一起帶下去。 */
+    private static final String CLOSING = ")]}>」』】》〉）〕］｝”’，。、；：！？%％・…‥";
+
+    /** 避頭尾最多往前挪幾個字元。見 {@link #kinsoku}。 */
+    private static final int KINSOKU_MAX = 3;
+
+    /**
+     * 避頭尾：把斷點往前挪，讓成對的東西不要被拆在兩行。
+     *
+     * <h2>實機回報</h2>
+     * Ferndor 那句「你要是能把 [Abysso Galoshes] 帶來幫我們」——上一行結尾停在
+     * {@code [}，物品名整個跑到下一行去，讀起來像是句子斷在一個孤零零的括號上：
+     *
+     * <pre>
+     *   多年前被一個海盜從我們這裡偷走了！你要是能把 [
+     *   Abysso Galoshes] 帶來幫我們，我可以給你報酬！
+     * </pre>
+     *
+     * 上面那一段斷字邏輯只管「英文單字不要從中間切」，所以它退到了 {@code A}，
+     * 而 {@code [} 不是字母，就被留在原地。物品名前面的方括號在 Wynncraft 裡
+     * 是「這是一件東西」的記號，跟名字是一組的。
+     *
+     * <h2>兩條規則</h2>
+     * <ul>
+     *   <li><b>行尾禁則</b>：{@link #OPENING} 那些字元不能是一行的最後一個，
+     *       斷點往前挪，它們跟著下一行走。</li>
+     *   <li><b>行首禁則</b>：{@link #CLOSING} 那些字元不能是一行的第一個，
+     *       斷點往前挪，把前一個字一起帶下去。中文的逗號句號也算——
+     *       一行開頭一個「，」比什麼都醒目。</li>
+     * </ul>
+     *
+     * <h2>只往前挪，不往後</h2>
+     * 往後挪（把閉括號拉上來）會讓那一行比框還寬，畫出來就溢出框外。
+     * 往前挪只會讓行變短，一定畫得下。
+     *
+     * <p>代價是這一行少了幾個字，整段有可能因此攤不進原本的行數而回傳
+     * {@code null}——那時整段留英文。所以最多只往前挪
+     * {@value #KINSOKU_MAX} 個字元，並且絕不挪到整行變空的地步：
+     * 寧可讓一個括號留在行尾，也不要整段掉回英文。
+     */
+    static int kinsoku(String text, int at, int cut) {
+        int moved = cut;
+        for (int step = 0; step < KINSOKU_MAX; step++) {
+            if (moved <= at + 1) {
+                break;                         // 再挪下去這一行就空了
+            }
+            char head = moved < text.length() ? text.charAt(moved) : '\0';
+            char tail = text.charAt(moved - 1);
+            if (OPENING.indexOf(tail) >= 0 || CLOSING.indexOf(head) >= 0) {
+                moved--;
+                continue;
+            }
+            break;
+        }
+        // 挪完只剩空白的話等於白挪，還會生出一行空行。退回原本的斷點。
+        return text.substring(at, moved).isBlank() ? cut : moved;
     }
 
     private static boolean isLatin(char c) {
