@@ -532,6 +532,10 @@ public final class WynnChaYuan implements ClientModInitializer {
         config.setLanguage(lang);
         language = com.wynnchayuan.translate.Languages.pick(
                 config.language(), gameLanguage());
+        // 對話強調色附在 jar 裡的那一份是<b>按語言</b>分的，換語言也要再吃一次，
+        // 不然新語言那幾句第一次讀還是先白一下才上色。見 DialogueTint。
+        com.wynnchayuan.render.DialogueTint.init(configDir.resolve(
+                com.wynnchayuan.render.DialogueTint.FILE), language);
         // 切語言<b>不再下載</b>：載入手上已經有的那一份就好。
         //
         // 以前每切一次就把那個語言的三十幾個檔重抓一遍。在遊戲裡對照兩種語言
