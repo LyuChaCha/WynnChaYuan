@@ -173,6 +173,17 @@ public final class LookAtTranslator {
 
     /** 每幀呼叫。沒有對著任何名牌時什麼都不畫。 */
     public static void render(GuiGraphics graphics) {
+        // 模式要自己問，不能靠「LABELS 是空的」當作沒開。
+        //
+        // 先前只有 LOOK_AT 模式才會有人呼叫 remember，所以其他模式下 LABELS
+        // 永遠是空的，這一支等於自動關著。現在 CaptureListener 不管哪個模式
+        // 都記（不然切過來之後畫面上現有的 NPC 一個都不在裡面），
+        // 那個隱性的開關就沒了——就地取代模式會冒出多餘的小框。
+        if (WynnChaYuan.config() == null
+                || WynnChaYuan.config().nametagMode()
+                        != CollectorConfig.NametagMode.LOOK_AT) {
+            return;
+        }
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.player == null || LABELS.isEmpty()) {
             return;

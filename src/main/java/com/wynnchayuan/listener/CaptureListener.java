@@ -305,9 +305,6 @@ public final class CaptureListener {
      */
     private void translateNametag(TextDisplayChangedEvent.Text event) {
         CollectorConfig.NametagMode mode = WynnChaYuan.config().nametagMode();
-        if (!WynnChaYuan.config().showOverlays() || mode == CollectorConfig.NametagMode.OFF) {
-            return;
-        }
         try {
             StyledText original = event.getText();
             if (original == null || GlyphSplitter.isGlyphOnly(original)) {
@@ -318,10 +315,27 @@ public final class CaptureListener {
             if (CombatText.isIndicator(original)) {
                 return;
             }
-            if (mode == CollectorConfig.NametagMode.LOOK_AT) {
-                // 原文完全不動，只記下來等玩家看向它時才顯示譯文
-                LookAtTranslator.remember(event.getTextDisplay(), original);
+            // 不管現在是哪個模式，都先把原文記下來。
+            //
+            // 小框是從 {@code LookAtTranslator} 的 LABELS 畫出來的，而 LABELS
+            // 只有在名牌事件發生時才填得到東西——那個事件是<b>伺服器送實體資料
+            // 封包</b>時才來的，NPC 站在那裡不動就一次都不會再來。
+            //
+            // 先前只有 LOOK_AT 模式才記。於是玩家在 F6 把「名牌與漂浮字」切到
+            // 「注視時小框」之後，畫面上已經站著的 NPC 一個都不在 LABELS 裡，
+            // 怎麼盯都不會跳框——要走遠到它們卸載、再走回來重新送一次資料才行。
+            // 實機回報就是「切過去之後完全沒反應，以為功能壞了」。
+            //
+            // 記下來的是<b>原文</b>，而且在替換之前。REPLACE 模式下面那一段會
+            // 把封包裡的文字換掉，先記才拿得到原文；小框每一幀都從原文重新翻，
+            // 所以換語言也會立刻跟著變。
+            LookAtTranslator.remember(event.getTextDisplay(), original);
+            if (!WynnChaYuan.config().showOverlays()
+                    || mode == CollectorConfig.NametagMode.OFF) {
                 return;
+            }
+            if (mode == CollectorConfig.NametagMode.LOOK_AT) {
+                return;                        // 原文完全不動，等玩家看向它
             }
             // 名牌走專用那一支：只認整塊的鍵，而且不碰排版。
             // 一般那條路查不到整行時會退到逐片段替換再跑 tooltip 的欄位對齊，
