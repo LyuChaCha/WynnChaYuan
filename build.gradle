@@ -1062,3 +1062,37 @@ tasks.register('runDialogueKinsokuChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.DialogueKinsokuTest'
 }
 tasks.named('check') { dependsOn 'runDialogueKinsokuChecks' }
+
+// mixin 套件底下只能放 mixin 本身與設定外掛。
+//
+// 放過一個純 helper 進去（TypedText），編譯與 build 都沒話說，實機一開背包就炸：
+// 「is in a defined mixin package ... and cannot be referenced directly」。
+// mixins.json 宣告的那個套件是 Mixin 的地盤，裡面的類別只能由它自己載入。
+tasks.register('checkMixinPackage') {
+    group = 'verification'
+    description = 'mixin 套件底下不能放被直接引用的一般類別'
+    doLast {
+        def cfg = new groovy.json.JsonSlurper()
+                .parse(file('src/main/resources/wynnchayuan.mixins.json'))
+        def allowed = [] as Set
+        ['client', 'server', 'mixins'].each { key ->
+            (cfg[key] ?: []).each { allowed << it.toString().tokenize('.').last() }
+        }
+        if (cfg.plugin) {
+            allowed << cfg.plugin.toString().tokenize('.').last()
+        }
+        def stray = file('src/main/java/com/wynnchayuan/mixin').listFiles()
+                .findAll { it.name.endsWith('.java') }
+                .collect { it.name - '.java' }
+                .findAll { !allowed.contains(it) }
+                .sort()
+        if (stray) {
+            throw new GradleException(
+                    "這幾個類別在 mixin 套件底下，但不是 mixins.json 列的 mixin：\n  "
+                    + stray.join('\n  ')
+                    + "\n被 mixin 注入的程式碼引用到它們的話，實機載入時會丟"
+                    + " IllegalClassLoadError。搬到別的套件（例如 render）。")
+        }
+    }
+}
+tasks.named('check') { dependsOn 'checkMixinPackage' }

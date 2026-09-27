@@ -42,6 +42,7 @@ public final class SearchMatchTest {
         subsequenceRule();
         realCorpus(config, store);
         guards(config, store);
+        itemNames(store);
 
         System.out.println(failures == 0 ? "\n譯文搜尋：全部通過"
                 : "\n譯文搜尋：" + failures + " 項失敗");
@@ -101,6 +102,47 @@ public final class SearchMatchTest {
                                 config, store)
                         && !SearchMatch.alsoMatches("Prelude to Annihilation", "毀滅",
                                 config, null));
+    }
+
+    /**
+     * 銀行與背包的搜尋框：打畫面上看得到的中文名，要找得到那件裝備。
+     *
+     * <p>實機回報：倉庫裡那雙靴子寫著「深淵雨靴」，打「深淵」一格都不亮——
+     * Wynntils 拿去比的是它解析出來的 {@code Abysso Galoshes}。
+     *
+     * <p>這一支的規則跟上面那些畫面<b>不一樣</b>：Wynntils 的
+     * {@code itemNameMatches} 用「整串包含」而不是子序列，我們照它的來，
+     * 免得玩家覺得「中文跟英文的搜尋方式不一樣」。
+     */
+    private static void itemNames(TranslationStore store) {
+        check("語料查得到 Abysso Galoshes → " + store.lookup("Abysso Galoshes"),
+                "深淵雨靴".equals(store.lookup("Abysso Galoshes")));
+        check("★ 打「深淵」找得到 Abysso Galoshes",
+                SearchMatch.nameAlsoMatches("Abysso Galoshes",
+                        java.util.List.of("深淵"), store));
+        check("★ 打全名也找得到",
+                SearchMatch.nameAlsoMatches("Abysso Galoshes",
+                        java.util.List.of("深淵雨靴"), store));
+        check("★ 打後半段也找得到",
+                SearchMatch.nameAlsoMatches("Abysso Galoshes",
+                        java.util.List.of("雨靴"), store));
+        check("是「包含」不是子序列：打「深靴」不中",
+                !SearchMatch.nameAlsoMatches("Abysso Galoshes",
+                        java.util.List.of("深靴"), store));
+        check("語料查不到的物品不中",
+                !SearchMatch.nameAlsoMatches("Zzzq Nonexistent Item",
+                        java.util.List.of("深淵"), store));
+        check("沒有純文字片段時不中（那時 Wynntils 自己回傳全中）",
+                !SearchMatch.nameAlsoMatches("Abysso Galoshes",
+                        java.util.List.of(), store));
+        check("片段只有空白時不中",
+                !SearchMatch.nameAlsoMatches("Abysso Galoshes",
+                        java.util.List.of(" "), store));
+        check("null 不會炸",
+                !SearchMatch.nameAlsoMatches(null, java.util.List.of("深淵"), store)
+                        && !SearchMatch.nameAlsoMatches("Abysso Galoshes", null, store)
+                        && !SearchMatch.nameAlsoMatches("Abysso Galoshes",
+                                java.util.List.of("深淵"), null));
     }
 
     private static void check(String name, boolean ok) {

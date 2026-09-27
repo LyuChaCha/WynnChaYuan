@@ -125,4 +125,51 @@ public final class SearchMatch {
         }
         return true;
     }
+
+    /**
+     * mixin 的入口：銀行／背包搜尋框，拿物品的<b>譯名</b>再比一次。
+     *
+     * @param itemName Wynntils 解析出來的原文名稱（{@code Abysso Galoshes}）
+     * @param tokens   玩家打的字被它切成的純文字片段
+     */
+    public static boolean nameAlsoMatches(String itemName, java.util.List<String> tokens) {
+        try {
+            noteHook();
+            return nameAlsoMatches(itemName, tokens, WynnChaYuan.translations());
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
+    /**
+     * 物品名稱的比對規則跟上面那一支<b>不一樣</b>，是照 Wynntils 自己的來。
+     *
+     * <p>它的 {@code itemNameMatches} 用的是「整串包含」而不是子序列——
+     * 片段之間用半形空格接起來，再看名稱裡有沒有這一整串。打「深淵」中得了
+     * 「深淵雨靴」，打「深靴」中不了，跟英文那邊的行為一致。
+     *
+     * <h2>為什麼不看 F6 的開關</h2>
+     * 上面那一支（內容書、設定那些）跟著「翻譯 Wynntils 介面」走，因為那些畫面
+     * 關掉開關之後顯示的就是英文，這時候讓中文也中得了只會讓人困惑。
+     * 物品名稱不一樣——背包裡的物品<b>本來就</b>顯示譯名，沒有開關可以關掉它。
+     * 畫面上寫什麼，搜尋就該吃得下什麼。
+     *
+     * @return 譯名中得了就 {@code true}；查不到譯名、或片段是空的時回傳 {@code false}
+     */
+    static boolean nameAlsoMatches(String itemName, java.util.List<String> tokens,
+                                   TranslationStore store) {
+        if (itemName == null || tokens == null || tokens.isEmpty() || store == null) {
+            return false;
+        }
+        String needle = String.join(" ", tokens).strip();
+        if (needle.isEmpty()) {
+            return false;
+        }
+        String translated = store.lookup(itemName.strip());
+        if (translated == null || translated.isBlank() || translated.equals(itemName)) {
+            return false;
+        }
+        return translated.toLowerCase(java.util.Locale.ROOT)
+                .contains(needle.toLowerCase(java.util.Locale.ROOT));
+    }
 }
