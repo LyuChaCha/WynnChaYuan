@@ -1045,3 +1045,12 @@ tasks.register('runStatValueColumnChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.StatValueColumnTest'
 }
 tasks.named('check') { dependsOn 'runStatValueColumnChecks' }
+
+// 一排名牌：框各用自己的高度，矮的置中，不整排拉成一樣高。
+tasks.register('runNametagRowChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.NametagRowTest'
+}
+tasks.named('check') { dependsOn 'runNametagRowChecks' }
