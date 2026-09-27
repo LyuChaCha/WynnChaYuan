@@ -183,7 +183,23 @@ public final class TranslationStore {
      * <p>改成一次把所有層交進來：清空只做一次，然後照順序讀。
      * 「疊」這件事現在是這個方法的職責，呼叫端想弄錯也弄不錯。
      */
+    /**
+     * 載入的<b>第幾版</b>；每重載一次就往前一格。
+     *
+     * <h2>為什麼不能拿 store 物件本身當識別</h2>
+     * 換語言走的是 {@code WynnChaYuan#loadLayers}，它把新語言的譯文<b>載進同一個
+     * store</b>，不換物件。繪製端那幾張快取先前用「store 是不是換人了」判斷該不該
+     * 清，於是切完語言，NPC 名牌與浮空字還是舊語言的——要 {@code /class} 讓實體
+     * 重新生成一次才會變。
+     */
+    public int generation() {
+        return generation;
+    }
+
+    private volatile int generation;
+
     public void loadAll(List<Path> dirs) {
+        generation++;
         entries.clear();
         scopedOnly.clear();
         seenSources.clear();

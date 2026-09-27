@@ -1,12 +1,30 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.2.3_3",
+  "latest": "0.2.3_4",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
     "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
   },
   "notes": {
+    "0.2.3_4": {
+      "headline": "Language switching takes effect right away",
+      "items": [
+        "Switching language in-game now updates NPC names, floating text, boss bars and tracker markers right away, without needing /class."
+      ],
+      "zh_tw": {
+        "headline": "換語言立刻生效",
+        "items": [
+          "在遊戲裡換語言之後，NPC 名稱、浮空字、Boss 血條與追蹤欄的標記會立刻跟著換，不用再 /class 一次。"
+        ]
+      },
+      "zh_cn": {
+        "headline": "换语言立刻生效",
+        "items": [
+          "在游戏里切换语言之后，NPC 名称、浮空字、Boss 血条与追踪栏的标记会立刻跟着换，不用再 /class 一次。"
+        ]
+      }
+    },
     "0.2.3_3": {
       "headline": "Colour that keeps up with the typing",
       "items": [

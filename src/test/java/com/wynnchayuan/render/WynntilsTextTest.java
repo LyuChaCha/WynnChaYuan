@@ -43,6 +43,7 @@ public final class WynntilsTextTest {
         heldItem(config, store);
         bossBar(config, store);
         entityName(config, store);
+        switched(config);
         wynntilsScreens(config, store);
 
         System.out.println(failures == 0 ? "\n就地取代：全部通過"
@@ -208,6 +209,36 @@ public final class WynntilsTextTest {
         config.toggleBossBar();
         check("再打開就照常翻",
                 WynntilsText.bossBar(bar, config, store).getString().startsWith("馬"));
+    }
+
+    /**
+     * 在遊戲裡換語言，名牌要<b>立刻</b>跟著換。
+     *
+     * <h2>實機的樣子</h2>
+     * 換完語言，NPC 名牌與浮空字還是舊語言的——要 {@code /class} 讓實體重新
+     * 生成一次才會變。原因是換語言走的 {@code loadLayers} 把新語言的譯文
+     * <b>載進同一個 store</b>，不換物件，而這裡那張快取先前是用「store 是不是
+     * 換人了」判斷該不該清的，於是永遠不清。
+     *
+     * <p>這支釘住的就是「同一個 store、換一層譯文」這件事。
+     */
+    private static void switched(CollectorConfig config) {
+        String corpus = "src/main/resources/assets/wynnchayuan/translations";
+        TranslationStore store = new TranslationStore();
+        net.minecraft.network.chat.Component altar =
+                net.minecraft.network.chat.Component.literal("Corrupted Altar");
+
+        store.loadAll(Path.of(corpus, "zh_tw"));
+        check("先是繁中（實際 "
+                        + WynntilsText.entityName(altar, config, store).getString() + "）",
+                "腐敗祭壇".equals(
+                        WynntilsText.entityName(altar, config, store).getString()));
+
+        store.loadAll(Path.of(corpus, "zh_cn"));     // 同一個 store，換一層譯文
+        check("換語言之後立刻跟著換（實際 "
+                        + WynntilsText.entityName(altar, config, store).getString() + "）",
+                "腐化祭坛".equals(
+                        WynntilsText.entityName(altar, config, store).getString()));
     }
 
     /** 盔甲座疊出來的浮空字：討伐戰祭壇上方那種。 */
