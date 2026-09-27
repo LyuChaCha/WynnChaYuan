@@ -107,6 +107,10 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 無條件備妥路徑就好，關著的時候整支是空轉。見 CardDump。
         com.wynnchayuan.capture.CardDump.init(dir.resolve(
                 com.wynnchayuan.capture.CardDump.FILE));
+        // 對話裡的強調色是打字打到哪才送到哪，中文又比英文早出現那個詞——
+        // 記著上次量到的，同一句才不會每次都先白一下。見 DialogueTint。
+        com.wynnchayuan.render.DialogueTint.init(dir.resolve(
+                com.wynnchayuan.render.DialogueTint.FILE), language);
         com.wynnchayuan.render.ThirdPartySections.load(dir);
         // 聊天裡那顆「按這裡更新」要有指令接著才按得下去，見 TranslationUpdate。
         com.wynnchayuan.translate.TranslationUpdate.registerCommand();
@@ -432,6 +436,12 @@ public final class WynnChaYuan implements ClientModInitializer {
         } catch (Throwable t) {
             System.err.println("[WynnChaYuan] "
                     + com.wynnchayuan.capture.CardDump.FILE + " 寫入失敗: " + t);
+        }
+        try {
+            com.wynnchayuan.render.DialogueTint.flush();
+        } catch (Throwable t) {
+            System.err.println("[WynnChaYuan] "
+                    + com.wynnchayuan.render.DialogueTint.FILE + " 寫入失敗: " + t);
         }
     }
 

@@ -266,6 +266,152 @@ public final class DialogueProbe {
         }
     }
 
+    /**
+     * <b>不是</b>對話的 action bar，長什麼樣。
+     *
+     * <h2>為什麼要另外記</h2>
+     * {@link #miss} 只收有對話字型的訊息——那是刻意的，不然 HUD 每 tick
+     * 都會把名額吃光。可是玩家回報的「大廳那一列 {@code Left-Click to play}
+     * 沒翻」正好落在這個盲區：它不是 NPC 對話，所以既沒被收集、也沒被改寫，
+     * 連一份現場都留不下來。
+     *
+     * <p>要翻它得先知道兩件事：Wynncraft 送過來的<b>確切字串</b>，
+     * 以及它用哪一份字型（字型沒有中文的話，換了就是一排方框——
+     * 見 {@code DialogueRewriter#fontMissing}）。這支就是去拿這兩件事。
+     *
+     * <p>帶數字的一律不收：血量、魔力、{@code Teleport Cast! -11} 那些
+     * 每 tick 都在變，收進來只會把名額佔滿。
+     */
+    public static void plain(Component message) {
+        if (dir == null || message == null
+                || !WynnChaYuan.config().debugDumps() || hasBodyText(message)) {
+            return;
+        }
+        String body = words(message);
+        if (body.isEmpty() || body.equals(plainKey)) {
+            return;
+        }
+        if (plains >= PLAIN_LIMIT) {
+            return;
+        }
+        plainKey = body;
+        plains++;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 不是對話的 action bar（getString） ===")
+          .append(System.lineSeparator())
+          .append(message.getString()).append(System.lineSeparator())
+          .append(System.lineSeparator())
+          .append("=== 逐片段 ===").append(System.lineSeparator());
+        int[] index = {0};
+        message.visit((style, text) -> {
+            sb.append(String.format("  [%02d] font=%-38s color=%-9s text=%s%n",
+                    index[0]++, fontOf(style),
+                    style.getColor() == null ? "-" : style.getColor().serialize(),
+                    describe(text)));
+            return Optional.empty();
+        }, Style.EMPTY);
+
+        try {
+            Files.writeString(dir.resolve("actionbar-probe-" + plains + ".txt"),
+                    sb.toString(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 寫不出來就算了，不要影響遊戲
+        }
+    }
+
+    /**
+     * 我們自己換上去的字，用我們自己挑的字型<b>畫不出來</b>。
+     *
+     * <h2>為什麼要整段收手</h2>
+     * 畫不出來的下場是一排方框，而方框的寬度跟原本那個字元不一樣——對話框裡
+     * 的位置全靠位移字元一格一格算出來，寬度一變，後面的名牌、頭像、外框
+     * 就整個被推出去（實機回報的「莫名突出」）。與其那樣，不如整句留英文。
+     *
+     * <p>這支負責留下現場：哪幾個碼位畫不出來、換之前與換之後各長什麼樣。
+     */
+    public static void tofu(Component before, Component after, String why) {
+        if (dir == null || before == null || !WynnChaYuan.config().debugDumps()
+                || tofus >= TOFU_LIMIT) {
+            return;
+        }
+        tofus++;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 畫不出來的碼位 ===").append(System.lineSeparator())
+          .append("  ").append(why).append(System.lineSeparator())
+          .append(System.lineSeparator())
+          .append("=== 換之前 ===").append(System.lineSeparator());
+        segments(sb, before);
+        sb.append(System.lineSeparator())
+          .append("=== 差一點就送出去的那一份 ===").append(System.lineSeparator());
+        segments(sb, after);
+
+        try {
+            Files.writeString(dir.resolve("dialogue-tofu-" + tofus + ".txt"),
+                    sb.toString(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 診斷寫不出來就算了，不要影響遊戲
+        }
+    }
+
+    /** 逐片段倒出來：字型、顏色、文字。 */
+    private static void segments(StringBuilder sb, Component message) {
+        if (message == null) {
+            sb.append("  （沒有）").append(System.lineSeparator());
+            return;
+        }
+        int[] index = {0};
+        message.visit((style, text) -> {
+            sb.append(String.format("  [%02d] font=%-38s color=%-9s text=%s%n",
+                    index[0]++, fontOf(style),
+                    style.getColor() == null ? "-" : style.getColor().serialize(),
+                    describe(text)));
+            return Optional.empty();
+        }, Style.EMPTY);
+    }
+
+    /** 見 {@link #plain}：帶數字的不算，那些每 tick 都在變。 */
+    private static String words(Component message) {
+        StringBuilder sb = new StringBuilder();
+        message.visit(text -> {
+            if (readable(text)) {
+                sb.append(text);
+            }
+            return Optional.empty();
+        });
+        String core = sb.toString().strip();
+        int letters = 0;
+        for (int i = 0; i < core.length(); i++) {
+            char c = core.charAt(i);
+            if (Character.isDigit(c)) {
+                return "";
+            }
+            if (Character.isLetter(c)) {
+                letters++;
+            }
+        }
+        return letters >= MIN_WORDS ? core : "";
+    }
+
+    /** 見 {@link #plain}：短到這樣的多半是 HUD 的碎片，不是給人讀的句子。 */
+    private static final int MIN_WORDS = 8;
+
+    /** 見 {@link #plain}。 */
+    /** 字型只倒一次；見 {@link #record} 改成繞圈之後 written 不再單調遞增。 */
+    private static int fonts0 = 0;
+
+    /** 畫不出來的那幾段最多記幾份。見 {@link #tofu}。 */
+    private static final int TOFU_LIMIT = 3;
+
+    private static int tofus = 0;
+
+    private static final int PLAIN_LIMIT = 6;
+
+    private static int plains = 0;
+
+    private static String plainKey = "";
+
     /** 改寫失敗的訊息最多留幾則。 */
     private static final int MISS_LIMIT = 6;
 
@@ -320,7 +466,7 @@ public final class DialogueProbe {
 
     public static void record(Component message) {
         justWrote = false;
-        if (dir == null || written >= LIMIT || message == null
+        if (dir == null || message == null
                 || !WynnChaYuan.config().debugDumps() || !hasBodyText(message)) {
             return;
         }
@@ -337,8 +483,14 @@ public final class DialogueProbe {
         }
         lastPlain = body;
         lastRows = rows;
-        written++;
-        if (written == 1) {
+        // 錄<b>最近</b>的幾句，不是最前面的幾句。
+        //
+        // 先前錄滿八格就停，而那八格一定是進伺服器之後遇到的第一個 NPC——
+        // 玩家回報畫面有問題的那一句幾乎永遠在後面，檔案裡一次都沒有它。
+        // 改成繞回去蓋掉最舊的：看到問題就離開遊戲，檔案裡就是現場。
+        written = written % LIMIT + 1;
+        if (fonts0 == 0) {
+            fonts0 = 1;
             dumpFonts();
         }
 
