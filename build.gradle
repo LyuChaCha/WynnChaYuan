@@ -1037,6 +1037,15 @@ tasks.register('runHijackedLetterChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runHijackedLetterChecks' }
 
+// 詞條列的數值欄：欄距只有幾像素時也要補償。
+tasks.register('runStatValueColumnChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.StatValueColumnTest'
+}
+tasks.named('check') { dependsOn 'runStatValueColumnChecks' }
+
 // 一排名牌：框各用自己的高度，矮的置中，不整排拉成一樣高。
 tasks.register('runNametagRowChecks', JavaExec) {
     group = 'verification'
