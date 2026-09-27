@@ -1036,3 +1036,12 @@ tasks.register('runHijackedLetterChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.HijackedLetterTest'
 }
 tasks.named('check') { dependsOn 'runHijackedLetterChecks' }
+
+// 詞條列的數值欄：欄距只有幾像素時也要補償。
+tasks.register('runStatValueColumnChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.StatValueColumnTest'
+}
+tasks.named('check') { dependsOn 'runStatValueColumnChecks' }
