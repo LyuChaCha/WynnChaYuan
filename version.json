@@ -1,12 +1,45 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.2.3_4",
+  "latest": "0.2.4",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
     "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
   },
   "notes": {
+    "0.2.4": {
+      "headline": "Search takes Chinese, and text lines up better",
+      "items": [
+        "The bank and inventory search box now accepts translated item names; the original English still works.",
+        "What you type into a Wynntils search box is no longer translated while you type it.",
+        "Dialogue line breaks no longer strand an opening bracket at the end of a line, or push a closing bracket or punctuation mark to the start of the next one.",
+        "A row of nameplates no longer stretches every box to the tallest one; shorter boxes keep their height and sit centred.",
+        "Switching the nameplate setting to the look-at box now works on NPCs already in front of you, instead of only on ones that reload.",
+        "Stat values whose column starts with + or - line up with the original again."
+      ],
+      "zh_tw": {
+        "headline": "搜尋吃得下中文，文字也排得比較整齊",
+        "items": [
+          "銀行與背包的搜尋框吃得下物品的中文名稱，原文照樣搜得到。",
+          "在 Wynntils 的搜尋框打字時，打進去的字不再被翻成中文。",
+          "對話框斷行不再把「[」留在行尾，也不會把「]」或中文標點丟到下一行的開頭。",
+          "一排名牌不再整排拉成最高的那個；矮的框維持原本的高度並且置中。",
+          "把「名牌與漂浮字」切到「注視時小框」之後，眼前已經站著的 NPC 立刻就有小框，不用再讓它們重新載入。",
+          "詞條裡以「+」或「-」開頭的那一欄，數值回到跟原文一樣的位置。"
+        ]
+      },
+      "zh_cn": {
+        "headline": "搜索吃得下中文，文字也排得更整齐",
+        "items": [
+          "银行与背包的搜索框吃得下物品的中文名称，原文照样搜得到。",
+          "在 Wynntils 的搜索框打字时，打进去的字不再被翻成中文。",
+          "对话框断行不再把「[」留在行尾，也不会把「]」或中文标点丢到下一行的开头。",
+          "一排名牌不再整排拉成最高的那个；矮的框维持原本的高度并且居中。",
+          "把「名牌与浮空字」切到「注视时小窗」之后，眼前已经站着的 NPC 立刻就有小窗，不用再让它们重新加载。",
+          "词条里以「+」或「-」开头的那一列，数值回到跟原文一样的位置。"
+        ]
+      }
+    },
     "0.2.3_4": {
       "headline": "Language switching takes effect right away",
       "items": [
