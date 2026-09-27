@@ -1045,3 +1045,11 @@ tasks.register('runStatValueColumnChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.StatValueColumnTest'
 }
 tasks.named('check') { dependsOn 'runStatValueColumnChecks' }
+
+tasks.register('runDialogueKinsokuChecks', JavaExec) {
+    group = 'verification'
+    description = '對話避頭尾：開括號不留行尾、閉括號與標點不落行首'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueKinsokuTest'
+}
+tasks.named('check') { dependsOn 'runDialogueKinsokuChecks' }
