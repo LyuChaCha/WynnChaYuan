@@ -1055,6 +1055,14 @@ tasks.register('runNametagRowChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runNametagRowChecks' }
 
+tasks.register('runDialogueKinsokuChecks', JavaExec) {
+    group = 'verification'
+    description = '對話避頭尾：開括號不留行尾、閉括號與標點不落行首'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueKinsokuTest'
+}
+tasks.named('check') { dependsOn 'runDialogueKinsokuChecks' }
+
 // mixin 套件底下只能放 mixin 本身與設定外掛。
 //
 // 放過一個純 helper 進去（TypedText），編譯與 build 都沒話說，實機一開背包就炸：
