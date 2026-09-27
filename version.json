@@ -1,1307 +1,1334 @@
 {
- "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.3_2",
- "download": {
-  "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
-  "modrinth": "https://modrinth.com/mod/wynnchayuan",
-  "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
- },
- "notes": {
-  "0.2.3_2": {
-   "headline": "Two black screens and the emerald pouch colours",
-   "items": [
-    "The F6 changelog screen no longer goes black",
-    "The Spanish F6 nameplate settings screen no longer goes black either",
-    "Emerald pouch amounts keep their original colours: the currency icon stays grey instead of turning orange with the number"
-   ],
-   "zh_tw": {
-    "headline": "兩處黑屏與錢袋的顏色",
-    "items": [
-     "F6 的「更新說明」不再整片黑",
-     "西班牙文的 F6「NPC 名牌設定」也不再整片黑",
-     "綠寶石袋的數量保留原本的顏色：貨幣圖示維持灰色，不再跟著數字變橘"
-    ]
-   },
-   "zh_cn": {
-    "headline": "两处黑屏与钱袋的颜色",
-    "items": [
-     "F6 的「更新说明」不再整片黑",
-     "西班牙文的 F6「NPC 名牌设置」也不再整片黑",
-     "绿宝石袋的数量保留原本的颜色：货币图标保持灰色，不再跟着数字变橙"
-    ]
-   }
+  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
+  "latest": "0.2.3_3",
+  "download": {
+    "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
+    "modrinth": "https://modrinth.com/mod/wynnchayuan",
+    "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
   },
-  "0.2.3_1": {
-   "headline": "Search in Chinese, a boss bar switch, and a one-click update",
-   "items": [
-    "Wynntils' own search boxes now match the translated text, so you can type Chinese in the content book and settings",
-    "F6 has a Boss bar switch, so the bar at the top can stay in English",
-    "The chat notice about new translations has a clickable Click here to update; the F6 row is now called Update translations to match",
-    "Altar-style floating text follows the Nameplates and floating text row, so it can be turned off",
-    "Corpus: card names for 60 world events, and the Event starting in Xh Ym line",
-    "Mini-quest descriptions read level, then what to hand in to whom, then the coordinates"
-   ],
-   "zh_tw": {
-    "headline": "用中文搜尋、Boss 血條開關、一鍵更新譯文",
-    "items": [
-     "Wynntils 自己的搜尋框吃得下譯文：內容書、設定那些畫面直接打中文就搜得到",
-     "F6 新增「Boss 血條」開關，打怪時頂端那一條可以留英文",
-     "有新譯文時，聊天室那則提示多一顆「按這裡更新」可以直接按；F6 那一列跟著改名叫「更新翻譯」",
-     "討伐戰祭壇那類浮空字改成跟「名牌與漂浮字」同一個開關，關得掉了",
-     "語料：補齊 60 個世界事件的卡片名稱，以及「還有幾小時幾分」那一行",
-     "迷你任務的敘述改成「等級 → 交什麼給誰 → 座標」"
-    ]
-   },
-   "zh_cn": {
-    "headline": "用中文搜索、Boss 血条开关、一键更新译文",
-    "items": [
-     "Wynntils 自己的搜索框吃得下译文：内容书、设置那些界面直接打中文就搜得到",
-     "F6 新增「Boss 血条」开关，打怪时顶端那一条可以留英文",
-     "有新译文时，聊天室那条提示多一颗「点这里更新」可以直接按；F6 那一列跟着改名叫「更新翻译」",
-     "讨伐战祭坛那类浮空字改成跟「名牌与漂浮字」同一个开关，关得掉了",
-     "语料：补齐 60 个世界事件的卡片名称，以及「还有几小时几分」那一行",
-     "迷你任务的描述改成「等级 → 交什么给谁 → 坐标」"
-    ]
-   }
-  },
-  "0.2.3": {
-   "headline": "Spanish black screen, Wynntils screens, and the content book",
-   "items": [
-    "Discovering an area no longer turns the whole screen black (the Spanish translations' A-acute is a full-screen fade in Wynncraft, not a letter)",
-    "Wynntils' own screens (menu, settings, content book) are translated",
-    "Hold Shift to see the other item name; a long original wraps to its own line",
-    "Translation updates ask first: you are told when new translations exist and choose whether to update",
-    "Requirement rows in gear tooltips keep their values right-aligned",
-    "An item name that fits the tooltip is no longer split across two lines",
-    "The content book's cards: centring, reward rows, colours, the [Cave] suffix, and the names the list left blank",
-    "Territory labels on the guild war map and Wynntils' short item names stay in English",
-    "Trade market listings no longer show translated crafted-gear names; territory card storage rows fit the frame",
-    "Clickable words stay clickable after translation",
-    "Collecting no longer records party members' names or half sentences",
-    "Corpus: all 198 cave cards in the content book, 25 mini-quest descriptions, and the Realm of Light quest states"
-   ],
-   "zh_tw": {
-    "headline": "西班牙文黑螢幕、Wynntils 畫面與內容書",
-    "items": [
-     "發現新區域時不再整個畫面變黑（西班牙文譯文裡那個帶重音的大寫 A，在 Wynncraft 是全螢幕黑幕，不是字母）",
-     "Wynntils 自己的畫面（選單、設定、內容書）會翻譯",
-     "按住 Shift 可以看另一種物品名稱；原文太長會換到下一行",
-     "譯文更新改成先詢問：有新譯文時會通知，要不要更新由玩家決定",
-     "裝備提示框的需求列（職業類型、戰鬥等級）數值維持靠右對齊",
-     "收得進提示框的物品名稱不再被拆成兩行",
-     "內容書的卡片：置中、獎勵列、顏色、[Cave] 之類的後綴，以及清單裡缺的名稱",
-     "公會戰地圖的領地標籤與 Wynntils 的物品簡稱維持原文",
-     "掛單卡不再顯示自製裝備的譯名；領地卡的庫存那幾行收得進框裡",
-     "可點擊的字在翻譯後保持可點",
-     "收集語料時不再收進隊友的名字與半句",
-     "語料：內容書的全部 198 張洞窟卡、25 條迷你任務敘述，以及光之領域系列的任務狀態"
-    ]
-   },
-   "zh_cn": {
-    "headline": "西班牙文黑屏、Wynntils 界面与内容书",
-    "items": [
-     "发现新区域时不再整个画面变黑（西班牙文译文里那个带重音的大写 A，在 Wynncraft 是全屏黑幕，不是字母）",
-     "Wynntils 自己的界面（菜单、设置、内容书）会翻译",
-     "按住 Shift 可以看另一种物品名称；原文太长会换到下一行",
-     "译文更新改为先询问：有新译文时会通知，要不要更新由玩家决定",
-     "装备提示框的需求栏（职业类型、战斗等级）数值保持右对齐",
-     "放得进提示框的物品名称不再被拆成两行",
-     "内容书的卡片：居中、奖励栏、颜色、[Cave] 之类的后缀，以及列表里缺的名称",
-     "公会战地图的领地标签与 Wynntils 的物品简称保持原文",
-     "挂单卡不再显示自制装备的译名；领地卡的库存那几行放得进框里",
-     "可点击的字在翻译后保持可点",
-     "收集语料时不再收进队友的名字与半句",
-     "语料：内容书的全部 198 张洞窟卡、25 条迷你任务描述，以及光之领域系列的任务状态"
-    ]
-   }
-  },
-  "0.2.2": {
-   "headline": "Item names, boss bar and layout fixes",
-   "items": [
-    "F6 can show item names: translated, translated with the original in brackets, or off (off by default)",
-    "Shiny gear names are translated, keeping the gear's own name",
-    "A notice about using the original terms when talking to other players, shown once on joining and from F6",
-    "The mob name and the Weak / Dam / Def matchups on the boss bar are translated",
-    "Loot chest floating labels keep the colour of every segment",
-    "Stat rows in tooltips stay left-aligned, and the large DPS and Health figures keep their font",
-    "Multi-line Chinese and Japanese chat messages are re-wrapped instead of copying the English line breaks",
-    "Dialogue lines whose in-game wording differs slightly from the corpus are matched within the tracked quest"
-   ],
-   "zh_tw": {
-    "headline": "物品名稱、boss bar 與版面修正",
-    "items": [
-     "F6 可以選物品名稱顯示方式：譯名、譯名加原文、關閉（預設關閉）",
-     "Shiny 裝備的名稱會翻譯，後面照裝備自己的譯名",
-     "新增使用須知：提醒跟其他玩家交流請用原文，第一次進遊戲會跳出，也可以從 F6 打開",
-     "boss bar 的怪物名與右邊的易傷／增傷／防護會翻譯",
-     "寶箱的漂浮字保留原文每一段的顏色",
-     "提示框的屬性列維持靠左，放大的每秒傷害與生命數字保留原本的字型",
-     "中文與日文的多行聊天訊息改成重新斷行，不再照英文的位置斷",
-     "實機措辭與語料略有出入的對話，會在追蹤中的任務裡比對"
-    ]
-   },
-   "zh_cn": {
-    "headline": "物品名称、boss bar 与排版修正",
-    "items": [
-     "F6 可以选择物品名称的显示方式：译名、译名加原文、关闭（默认关闭）",
-     "Shiny 装备的名称会翻译，后面照装备自己的译名",
-     "新增使用须知：提醒与其他玩家交流请用原文，第一次进游戏会弹出，也可以从 F6 打开",
-     "boss bar 的怪物名与右边的易伤／增伤／防护会翻译",
-     "宝箱的漂浮字保留原文每一段的颜色",
-     "提示框的属性栏保持左对齐，放大的每秒伤害与生命数字保留原本的字体",
-     "中文与日文的多行聊天消息改为重新断行，不再照英文的位置断",
-     "实机措辞与语料略有出入的对话，会在追踪中的任务里比对"
-    ]
-   }
-  },
-  "0.2.1_2": {
-   "headline": "Skill point tooltip alignment",
-   "items": [
-    "The Current / Next columns in the skill point tooltip stay centred after translation"
-   ],
-   "zh_tw": {
-    "headline": "技能點提示框對齊",
-    "items": [
-     "技能點提示框的「目前／下一級」兩欄翻譯後保持置中"
-    ]
-   },
-   "zh_cn": {
-    "headline": "技能点提示框对齐",
-    "items": [
-     "技能点提示框的「目前／下一级」两栏翻译后保持居中"
-    ]
-   }
-  },
-  "0.2.1_1": {
-   "headline": "Raid text and tooltip fixes",
-   "items": [
-    "Floating hologram text (such as the Void Altar in raids) is now translated",
-    "Messages shown in the Wynntils notification box are now translated",
-    "Centred lines in tooltips without stat rows (such as aspects) stay centred after translation"
-   ],
-   "zh_tw": {
-    "headline": "討伐戰文字與提示框修正",
-    "items": [
-     "浮空字（例如討伐戰的虛空祭壇）現在會翻譯",
-     "Wynntils 通知框裡的訊息現在會翻譯",
-     "沒有屬性列的提示框（例如 aspect）翻譯後置中的行不再偏移"
-    ]
-   },
-   "zh_cn": {
-    "headline": "团本文字与提示框修正",
-    "items": [
-     "浮空字（例如团本的虚空祭坛）现在会翻译",
-     "Wynntils 通知框里的消息现在会翻译",
-     "没有属性行的提示框（例如 aspect）翻译后居中的行不再偏移"
-    ]
-   }
-  },
-  "0.2.1": {
-   "headline": "A tidier F6",
-   "items": [
-    "F6 shows each display mode in its own colour (separate panel, replace in place, original + translation, off), all derived from your theme colour",
-    "Every mode button cycles in the same order, with Off always last",
-    "The Data tab keeps the one-off tools (source, reload, export, submit) together at the bottom",
-    "Button text that is too long now scrolls sideways instead of being cut off",
-    "Release notes in F6 can be switched between English, Traditional Chinese and Simplified Chinese",
-    "The credits screen follows the F6 interface language"
-   ],
-   "zh_tw": {
-    "headline": "F6 介面整理",
-    "items": [
-     "F6 的每種顯示方式各有一個顏色（另開面板、就地取代、原文加譯文、關閉），都從主題色推出來",
-     "所有模式按鈕都照同一個順序切換，關閉永遠在最後",
-     "〈資料〉分頁把譯文來源、重新載入、匯出、提交這些工具集中到最下面",
-     "按鈕上太長的字會左右捲動顯示完整，不再被截斷",
-     "F6 的更新說明可以在英文、繁中、簡中之間切換",
-     "貢獻者頁跟著 F6 介面語言顯示"
-    ]
-   },
-   "zh_cn": {
-    "headline": "F6 界面整理",
-    "items": [
-     "F6 的每种显示方式各有一个颜色（另开面板、就地替换、原文加译文、关闭），都从主题色推出来",
-     "所有模式按钮都按同一个顺序切换，关闭永远在最后",
-     "〈数据〉分页把译文来源、重新载入、导出、提交这些工具集中到最下面",
-     "按钮上太长的字会左右滚动显示完整，不再被截断",
-     "F6 的更新说明可以在英文、繁中、简中之间切换",
-     "贡献者页跟随 F6 界面语言显示"
-    ]
-   }
-  },
-  "0.2.0_11": {
-   "headline": "Store rank perks line up again",
-   "items": [
-    "The two columns of rank perks in the store (CHAMPION, HERO+, HERO) line up again",
-    "Some tooltip text no longer falls back to English because of a hidden ID or a web address underneath it"
-   ],
-   "zh_tw": {
-    "headline": "商城階級特權重新對齊",
-    "items": [
-     "商城 CHAMPION、HERO+、HERO 階級說明的兩欄特權重新對齊",
-     "部分說明不會再因為下方的隱藏識別碼或網址而退回英文"
-    ]
-   },
-   "zh_cn": {
-    "headline": "商城阶级特权重新对齐",
-    "items": [
-     "商城 CHAMPION、HERO+、HERO 阶级说明的两栏特权重新对齐",
-     "部分说明不会再因为下方的隐藏识别码或网址而退回英文"
-    ]
-   }
-  },
-  "0.2.0_10": {
-   "headline": "Long scrolling dialogue choices stay translated",
-   "items": [
-    "Dialogue choices too long to fit scroll sideways; in in-place mode they now keep their translation while scrolling instead of flickering back to English"
-   ],
-   "zh_tw": {
-    "headline": "會捲動的長選項維持翻譯",
-    "items": [
-     "太長而左右捲動的對話選項，在就地取代模式下捲動時會維持中文，不再閃回英文"
-    ]
-   },
-   "zh_cn": {
-    "headline": "会滚动的长选项保持翻译",
-    "items": [
-     "太长而左右滚动的对话选项，在就地替换模式下滚动时会保持中文，不再闪回英文"
-    ]
-   }
-  },
-  "0.2.0_9": {
-   "headline": "Collecting untranslated text no longer picks up our own translations",
-   "items": [
-    "Switching languages no longer makes the collector save our own translations (or the mod's update notice) as untranslated game text"
-   ],
-   "zh_tw": {
-    "headline": "收集語料時不會再收到自己的譯文",
-    "items": [
-     "切換語言之後，收集語料不會再把模組自己的譯文或更新通知當成未翻譯的遊戲文字收進去"
-    ]
-   },
-   "zh_cn": {
-    "headline": "收集语料时不会再收到自己的译文",
-    "items": [
-     "切换语言之后，收集语料不会再把模组自己的译文或更新通知当成未翻译的游戏文字收进去"
-    ]
-   }
-  },
-  "0.2.0_8": {
-   "headline": "Fixes lootrun beacon markers staying behind with WynnMod",
-   "items": [
-    "With WynnMod installed, its lootrun beacon markers now clear when a lootrun ends (lootrun start, end and challenge titles stay in English for WynnMod)",
-    "License changed: code is now GNU AGPLv3, translations and data are CC BY-NC-SA 4.0"
-   ],
-   "zh_tw": {
-    "headline": "修正與 WynnMod 同時使用時 lootrun 信標殘留",
-    "items": [
-     "裝了 WynnMod 時，結束 lootrun 後 WynnMod 的信標標記會正常清除（lootrun 開始、結束與挑戰的標題為了讓 WynnMod 辨識，保留英文）",
-     "授權改為：程式碼 GNU AGPLv3，翻譯與資料 CC BY-NC-SA 4.0"
-    ]
-   },
-   "zh_cn": {
-    "headline": "修复与 WynnMod 同时使用时 lootrun 信标残留",
-    "items": [
-     "安装 WynnMod 时，结束 lootrun 后 WynnMod 的信标标记会正常清除（lootrun 开始、结束与挑战的标题为了让 WynnMod 识别，保留英文）",
-     "许可证改为：代码 GNU AGPLv3，翻译与数据 CC BY-NC-SA 4.0"
-    ]
-   }
-  },
-  "0.2.0_7": {
-   "headline": "Dialogue lines that call you by your nickname are translated again",
-   "items": [
-    "The dialogue side panel now recognises your nickname, so lines that call you by name are translated",
-    "Your nickname is also recognised when a place name follows it in the same line"
-   ],
-   "zh_tw": {
-    "headline": "叫到你暱稱的台詞又能翻譯了",
-    "items": [
-     "對話小框也認得玩家暱稱，叫到你名字的台詞會正常翻譯",
-     "暱稱後面接著地名的台詞也認得出名字"
-    ]
-   },
-   "zh_cn": {
-    "headline": "叫到你昵称的台词又能翻译了",
-    "items": [
-     "对话小框也能识别玩家昵称，叫到你名字的台词会正常翻译",
-     "昵称后面接着地名的台词也能识别出名字"
-    ]
-   }
-  },
-  "0.2.0_6": {
-   "headline": "Boss bar names are translated, and Korean passes 50%",
-   "items": [
-    "The boss bar shown when you attack a mob now shows the translated name (follows the F6 nametag switch)",
-    "Korean translation now covers over half of the game: menus, items, abilities, NPCs, lootruns, raids and the first quests",
-    "Simplified Chinese, Japanese, Russian and Korean now include every entry added to Traditional Chinese recently",
-    "More translations: bank buttons, trade market prices, rank perks, consumable effects and quest lines"
-   ],
-   "zh_tw": {
-    "headline": "boss bar 名稱也會翻譯，韓文翻譯過半",
-    "items": [
-     "攻擊生物時畫面上方的 boss bar 顯示翻譯後的名稱（跟 F6 名牌翻譯開關）",
-     "韓文翻譯過半：介面、物品、技能、NPC、Lootrun、Raid 與前期任務",
-     "簡中、日文、俄文、韓文補上繁中近期新增的所有條目",
-     "補上語料：銀行按鈕、交易市場價格、階級福利、消耗品效果與任務訊息"
-    ]
-   },
-   "zh_cn": {
-    "headline": "boss bar 名称也会翻译，韩语翻译过半",
-    "items": [
-     "攻击生物时画面上方的 boss bar 显示翻译后的名称（跟随 F6 名牌翻译开关）",
-     "韩语翻译过半：界面、物品、技能、NPC、Lootrun、Raid 与前期任务",
-     "简中、日语、俄语、韩语补上繁中近期新增的所有条目",
-     "补充语料：银行按钮、交易市场价格、会员福利、消耗品效果与任务消息"
-    ]
-   }
-  },
-  "0.2.0_5": {
-   "headline": "Spanish is here, and held item names are translated again",
-   "items": [
-    "New language: Spanish (Español), including the F6 menu",
-    "Held item names are translated again when Wynntils shows them; the F6 switch is now on by default",
-    "After updating the mod, the translations bundled with the new version show up right away"
-   ],
-   "zh_tw": {
-    "headline": "新增西班牙文，手持物品名稱恢復翻譯",
-    "items": [
-     "新增語言：西班牙文（Español），F6 介面一併翻譯",
-     "Wynntils 顯示的手持物品名稱也會翻譯；F6 開關改為預設開啟",
-     "更新模組後，新版內建的譯文立即生效"
-    ]
-   },
-   "zh_cn": {
-    "headline": "新增西班牙语，手持物品名称恢复翻译",
-    "items": [
-     "新增语言：西班牙语（Español），F6 界面一并翻译",
-     "Wynntils 显示的手持物品名称也会翻译；F6 开关改为默认开启",
-     "更新模组后，新版内置的译文立即生效"
-    ]
-   }
-  },
-  "0.2.0_4": {
-   "headline": "Quest guide names, held item names and aspect sockets are translated",
-   "items": [
-    "Wynntils quest guide markers show the translated quest name",
-    "New F6 switch: translate the item name shown when you switch held items (off by default)",
-    "\"+ New Quest\" in level-up messages keeps its light grey colour",
-    "More translations: new Cook Assistant dialogue, locked and empty aspect sockets, class requirements on aspects, objective and quest item lines"
-   ],
-   "zh_tw": {
-    "headline": "任務指引、手持物品名稱與意象插槽也會翻譯",
-    "items": [
-     "Wynntils 任務指引的標記顯示翻譯後的任務名",
-     "F6 新增開關：切換手持物品時跳出的名稱也翻譯（預設關閉）",
-     "升級訊息裡的「+ 新任務」維持原本的淺灰色",
-     "補上語料：Cook Assistant 新對話、鎖定與空的意象插槽、意象的職業需求、目標與任務物品訊息"
-    ]
-   },
-   "zh_cn": {
-    "headline": "任务指引、手持物品名称与特质插槽也会翻译",
-    "items": [
-     "Wynntils 任务指引的标记显示翻译后的任务名",
-     "F6 新增开关：切换手持物品时弹出的名称也翻译（默认关闭）",
-     "升级消息里的「+ 新任务」保持原本的浅灰色",
-     "补充语料：Cook Assistant 新对话、锁定与空的特质插槽、特质的职业需求、目标与任务物品消息"
-    ]
-   }
-  },
-  "0.2.0_3": {
-   "headline": "Dialogue no longer freezes halfway",
-   "items": [
-    "Dialogue that starts like another line no longer stops on a half-translated or half-typed sentence"
-   ],
-   "zh_tw": {
-    "headline": "對話不再翻到一半卡住",
-    "items": [
-     "開頭跟其他台詞相同的對話，不再停在半句譯文或半句英文上"
-    ]
-   },
-   "zh_cn": {
-    "headline": "对话不再翻到一半卡住",
-    "items": [
-     "开头与其他台词相同的对话，不再停在半句译文或半句英文上"
-    ]
-   }
-  },
-  "0.2.0_2": {
-   "headline": "Tracker title and welcome message colours fixed",
-   "items": [
-    "The translated quest tracker title no longer shows as boxes",
-    "Multi-line chat messages keep each line's own colour (such as the Trade Market lines in the welcome message)"
-   ],
-   "zh_tw": {
-    "headline": "修正追蹤欄標題與歡迎訊息的顏色",
-    "items": [
-     "右上任務追蹤的標題翻譯後不再顯示成方格",
-     "多行的聊天訊息每一行保留原本的顏色（例如歡迎訊息底下的交易市場那兩行）"
-    ]
-   },
-   "zh_cn": {
-    "headline": "修正追踪栏标题与欢迎消息的颜色",
-    "items": [
-     "右上任务追踪的标题翻译后不再显示成方格",
-     "多行的聊天消息每一行保留原本的颜色（例如欢迎消息下方的交易市场那两行）"
-    ]
-   }
-  },
-  "0.2.0_1": {
-   "headline": "Quest tracker titles and dialogue choices are translated",
-   "items": [
-    "The first line of the top-right quest tracker (Quest – quest name) is translated too",
-    "Coloured dialogue choices such as \"About Strength.\" are translated in place",
-    "Dialogue no longer shows a literal \"{#}\" in some lines",
-    "More translations: ability unlock titles, unused skill point reminder, world event announcements"
-   ],
-   "zh_tw": {
-    "headline": "任務追蹤標題與對話選項也會翻譯",
-    "items": [
-     "右上任務追蹤的第一行（任務 – 任務名稱）也會翻譯",
-     "帶顏色的對話選項（例如「About Strength.」）可以就地翻譯",
-     "部分對話不再印出「{#}」",
-     "補上語料：技能解鎖標題、未使用屬性點提示、世界事件公告"
-    ]
-   },
-   "zh_cn": {
-    "headline": "任务追踪标题与对话选项也会翻译",
-    "items": [
-     "右上任务追踪的第一行（任务 – 任务名称）也会翻译",
-     "带颜色的对话选项（例如「About Strength.」）可以就地翻译",
-     "部分对话不再显示「{#}」",
-     "补充语料：技能解锁标题、未使用属性点提示、世界事件公告"
-    ]
-   }
-  },
-  "0.2.0": {
-   "headline": "The top-right tracker and objective bars can be translated in place",
-   "items": [
-    "New F6 setting for the quest tracker: replace in place, separate panel, or off",
-    "New F6 switch for the objective bars (Finish Quests, Gather Fish and so on)",
-    "Ability tree: names under \"Blocked by:\" are translated on unlocked nodes too",
-    "Russian item descriptions no longer show an empty box where a dash should be",
-    "More translations: quest dialogue, objective rows, dash and arrow bomb cost rows"
-   ],
-   "zh_tw": {
-    "headline": "右上的任務追蹤與目標進度條可以就地換成中文",
-    "items": [
-     "F6 新增任務追蹤三段設定：就地取代、另開面板、不翻譯",
-     "F6 新增目標進度條開關（完成任務、採集魚類那幾條）",
-     "技能樹：已解鎖節點底下「被以下技能阻擋」的技能名也會翻譯",
-     "俄文物品說明不再出現一個空方框",
-     "補上語料：任務對話、目標列、Dash 與箭矢炸彈的消耗"
-    ]
-   },
-   "zh_cn": {
-    "headline": "右上的任务追踪与目标进度条可以就地换成中文",
-    "items": [
-     "F6 新增任务追踪三段设置：就地替换、另开面板、不翻译",
-     "F6 新增目标进度条开关（完成任务、采集鱼类那几条）",
-     "技能树：已解锁节点底下「被以下技能阻挡」的技能名也会翻译",
-     "俄文物品说明不再出现一个空方框",
-     "补上语料：任务对话、目标列、Dash 与箭矢炸弹的消耗"
-    ]
-   }
-  },
-  "0.1.9_10": {
-   "headline": "The right-hand objectives can be translated too",
-   "items": [
-    "New F6 switch: daily objectives, world events, lootrun and party lines from the top-right column appear translated under the quest tracker",
-    "Ability tree: names under \"Blocked by:\" are translated on unlocked nodes too",
-    "Russian tooltips no longer show an empty box where a dash should be",
-    "More translations: dash and arrow bomb cost rows, spell cost rows"
-   ],
-   "zh_tw": {
-    "headline": "右上那一欄也翻得出來了",
-    "items": [
-     "F6 新增開關：每日目標、世界事件、Lootrun 與隊伍那幾行，譯文接在任務追蹤小框底下",
-     "技能樹：已解鎖節點底下「被以下技能阻擋」的技能名也會翻譯",
-     "俄文物品說明不再出現一個空方框",
-     "補上語料：Dash 與箭矢炸彈的消耗、法術消耗那幾列"
-    ]
-   },
-   "zh_cn": {
-    "headline": "右上那一栏也翻得出来了",
-    "items": [
-     "F6 新增开关：每日目标、世界事件、Lootrun 与队伍那几行，译文接在任务追踪小框底下",
-     "技能树：已解锁节点底下「被以下技能阻挡」的技能名也会翻译",
-     "俄文物品说明不再出现一个空方框",
-     "补上语料：Dash 与箭矢炸弹的消耗、法术消耗那几列"
-    ]
-   }
-  },
-  "0.1.9_9": {
-   "headline": "Dialogue settles as soon as a line ends",
-   "items": [
-    "A finished line no longer waits in English before switching to the translation",
-    "The translation panel no longer flickers while an NPC is typing",
-    "The answer list now appears and clears with the game's own, and holds still while you pick",
-    "Gathering-spot nameplates keep the original colours on every row",
-    "More translations: level-up and bank messages, two missing answers in Dearly Departed, cosmetic and mount-coat names"
-   ],
-   "zh_tw": {
-    "headline": "句子講完就馬上定案",
-    "items": [
-     "講完的句子不會再停在英文一下才跳成中文",
-     "小框模式在 NPC 打字途中不再閃爍",
-     "選項框跟著遊戲自己的選單出現與收起，挑選時不會抖動",
-     "採集點名牌每一行都保留原本的顏色",
-     "補上語料：升級與銀行訊息、音容宛在少收的兩個選項、外觀特效與坐騎毛色"
-    ]
-   },
-   "zh_cn": {
-    "headline": "句子讲完就马上定案",
-    "items": [
-     "讲完的句子不会再停在英文一下才跳成中文",
-     "小窗模式在 NPC 打字途中不再闪烁",
-     "选项框跟着游戏自己的菜单出现与收起，挑选时不会抖动",
-     "采集点名牌每一行都保留原本的颜色",
-     "补上语料：升级与银行消息、音容宛在少收的两个选项、外观特效与坐骑毛色"
-    ]
-   }
-  },
-  "0.1.9_8": {
-   "headline": "Dialogue no longer flickers between languages",
-   "items": [
-    "NPC dialogue no longer flashes another line's translation in the first few characters",
-    "A line stays translated once recognised instead of falling back to English",
-    "Dialogue cut short mid-sentence keeps the part already translated"
-   ],
-   "zh_tw": {
-    "headline": "對話不再中英閃爍",
-    "items": [
-     "NPC 對話開頭不會再閃出別句話的譯文",
-     "認出是哪一句之後就維持中文，不會中途掉回英文",
-     "對話講到一半被打斷時，已顯示的部分維持中文"
-    ]
-   },
-   "zh_cn": {
-    "headline": "对话不再中英闪烁",
-    "items": [
-     "NPC 对话开头不会再闪出别句话的译文",
-     "认出是哪一句之后就保持中文，不会中途掉回英文",
-     "对话讲到一半被打断时，已显示的部分保持中文"
-    ]
-   }
-  },
-  "0.1.9_7": {
-   "headline": "Upgrading over an old config folder is safe now",
-   "items": [
-    "Upgrading over an existing wynnchayuan folder no longer needs the folder deleted",
-    "Settings, captured strings and the translation cache are written atomically",
-    "Damaged files are set aside and rebuilt instead of being overwritten or lost",
-    "Downloaded translations are loaded on the main thread, avoiding hitches",
-    "Ability names are no longer split across rows or half-translated",
-    "Fixed an error that could happen while re-wrapping item descriptions",
-    "F6 settings such as the interface language now survive a restart"
-   ],
-   "zh_tw": {
-    "headline": "保留舊資料夾也能直接升級",
-    "items": [
-     "保留舊的 wynnchayuan 資料夾也能直接升級，不必刪除",
-     "設定檔、語料檔與譯文快取改為原子寫入",
-     "檔案損壞時改為另存備份並自動重建，不再覆蓋或遺失",
-     "同步譯文改為在主執行緒載入，避免卡頓",
-     "技能名稱不再因換行被拆開或只翻一半",
-     "修正物品說明重新排版時可能發生的錯誤",
-     "F6 的介面語言等設定重開遊戲後會保留"
-    ]
-   },
-   "zh_cn": {
-    "headline": "保留旧文件夹也能直接升级",
-    "items": [
-     "保留旧的 wynnchayuan 文件夹也能直接升级，不必删除",
-     "设置文件、语料文件与译文缓存改为原子写入",
-     "文件损坏时改为另存备份并自动重建，不再覆盖或丢失",
-     "同步译文改为在主线程载入，避免卡顿",
-     "技能名称不再因换行被拆开或只翻一半",
-     "修正物品说明重新排版时可能发生的错误",
-     "F6 的界面语言等设置重开游戏后会保留"
-    ]
-   }
-  },
-  "0.1.9_6": {
-   "headline": "No more automatic uploads; manual export in F6",
-   "items": [
-    "Removed automatic corpus sharing; the mod no longer uploads anything",
-    "New Export untranslated strings button and submission form link in the F6 Data tab",
-    "Exported files are filtered for player names and other personal data",
-    "Fixed Major ID descriptions staying untranslated on items",
-    "The update notice's download link now always points to GitHub Releases"
-   ],
-   "zh_tw": {
-    "headline": "移除自動上傳，改由 F6 手動匯出",
-    "items": [
-     "移除自動分享語料功能，模組不再上傳任何資料",
-     "F6「資料」分頁新增「匯出未翻譯字串」按鈕與回報表單連結",
-     "匯出的檔案會先過濾玩家名稱等個人資料",
-     "修正 Major ID 說明在物品上沒有翻譯的問題",
-     "更新提示的下載連結固定指向 GitHub Releases"
-    ]
-   },
-   "zh_cn": {
-    "headline": "移除自动上传，改为 F6 手动导出",
-    "items": [
-     "移除自动分享语料功能，模组不再上传任何数据",
-     "F6「数据」页新增「导出未翻译字符串」按钮与反馈表单链接",
-     "导出的文件会先过滤玩家名称等个人资料",
-     "修正 Major ID 说明在物品上没有翻译的问题",
-     "更新提示的下载链接固定指向 GitHub Releases"
-    ]
-   }
-  },
-  "0.1.9_5": {
-   "headline": "Lootrun boon layout and ability text formatting",
-   "items": [
-    "Better line breaks in Lootrun boon descriptions: values stay with their stat name",
-    "Underlines in ability descriptions no longer run into the following text",
-    "Only the translated name keeps the highlight colour in ability descriptions",
-    "Boon names that are also gear names are now translated in the boon menu"
-   ],
-   "zh_tw": {
-    "headline": "Lootrun 賜福排版與技能說明格式修正",
-    "items": [
-     "Lootrun 賜福說明換行優化，數值與屬性名保持在同一行",
-     "技能說明中的底線不再延伸到後面的敘述",
-     "帶顏色的技能名稱翻譯後，只有名稱本身上色",
-     "與裝備同名的賜福名稱在賜福選單中會翻譯"
-    ]
-   },
-   "zh_cn": {
-    "headline": "Lootrun 赐福排版与技能说明格式修正",
-    "items": [
-     "Lootrun 赐福说明换行优化，数值与属性名保持在同一行",
-     "技能说明中的下划线不再延伸到后面的叙述",
-     "带颜色的技能名称翻译后，只有名称本身上色",
-     "与装备同名的赐福名称在赐福菜单中会翻译"
-    ]
-   }
-  },
-  "0.1.9_4": {
-   "headline": "Tooltip and chat layout fixes",
-   "items": [
-    "Gear names in Item Guess lists are no longer translated",
-    "Wrapped descriptions that only partly have a translation stay in English as a whole",
-    "Coloured names inside ability descriptions are now translated",
-    "Lootrun summary columns line up and no longer wrap",
-    "Stat rows with the value first can now be translated",
-    "Attribute icons stay on the same line as their value",
-    "Column alignment fixed for Vibrant Beacon and other chat messages",
-    "\"to\" and \"tier\" between stat range values are now translated",
-    "Brackets keep the right colour when they share the label's colour"
-   ],
-   "zh_tw": {
-    "headline": "tooltip 與聊天欄排版修正",
-    "items": [
-     "物品猜測清單裡的裝備名稱不再被翻譯",
-     "跨行說明只有部分句子有譯文時整句維持原文，不再半中半英",
-     "技能說明中帶顏色的名稱會照詞表翻譯",
-     "Lootrun 結算面板兩欄對齊，不再換行",
-     "數值在前的屬性列可以翻譯",
-     "翻譯後屬性圖示與數值保持在同一行",
-     "璀璨信標等聊天訊息的欄位對齊修正",
-     "數值範圍中的「to」「tier」改為翻譯",
-     "括號與標籤同色時，翻譯後顏色保持正確"
-    ]
-   },
-   "zh_cn": {
-    "headline": "tooltip 与聊天栏排版修正",
-    "items": [
-     "物品猜测列表里的装备名称不再被翻译",
-     "跨行说明只有部分句子有译文时整句保持原文，不再中英混杂",
-     "技能说明中带颜色的名称会按词表翻译",
-     "Lootrun 结算面板两栏对齐，不再换行",
-     "数值在前的属性行可以翻译",
-     "翻译后属性图标与数值保持在同一行",
-     "璀璨信标等聊天消息的栏位对齐修正",
-     "数值范围中的“to”“tier”改为翻译",
-     "括号与标签同色时，翻译后颜色保持正确"
-    ]
-   }
-  },
-  "0.1.9_3": {
-   "headline": "Translated dialogue no longer switches back to English",
-   "items": [
-    "Translated dialogue no longer switches back to English halfway through",
-    "Russian: some King's Recruit lines adjusted so they fit the dialogue box"
-   ],
-   "zh_tw": {
-    "headline": "對話譯文不會再打到一半變回英文",
-    "items": [
-     "對話框的譯文不會再打到一半變回英文",
-     "俄文：King's Recruit 部分台詞調整，能完整顯示在對話框內"
-    ]
-   },
-   "zh_cn": {
-    "headline": "对话译文不会再打到一半变回英文",
-    "items": [
-     "对话框的译文不会再打到一半变回英文",
-     "俄文：King's Recruit 部分台词调整，能完整显示在对话框内"
-    ]
-   }
-  },
-  "0.1.9_2": {
-   "headline": "Translated text keeps the original colours; Russian added",
-   "items": [
-    "Translated text keeps the colour of each original segment: notes in parentheses, leading words, guild reward lists, Trade Market listing status and more",
-    "Russian: F6 menu, interface and ability tree",
-    "Russian quest dialogue uses the pixel font at the original position",
-    "Fixed numbers landing in the wrong place on some nameplates and chests",
-    "Added shared untranslated strings with Traditional Chinese translations",
-    "Updated the Archer Arrow Wall and Escape descriptions"
-   ],
-   "zh_tw": {
-    "headline": "譯文保留原文的顏色，新增俄文",
-    "items": [
-     "翻譯後的文字保留原文各段的顏色：括號註解、句首換色的詞、公會獎勵清單、交易市場掛單狀態等",
-     "新增俄文：F6 選單、介面、技能樹",
-     "俄文任務對話使用像素字型，位置與原文一致",
-     "修正部分 NPC 名牌與寶箱的數字接錯位置",
-     "收錄玩家分享回來的待譯字串，並補上繁體中文翻譯",
-     "弓手 Arrow Wall、Escape 的說明更新"
-    ]
-   },
-   "zh_cn": {
-    "headline": "译文保留原文的颜色，新增俄文",
-    "items": [
-     "翻译后的文字保留原文各段的颜色：括号注释、句首换色的词、公会奖励列表、交易市场挂单状态等",
-     "新增俄文：F6 菜单、界面、技能树",
-     "俄文任务对话使用像素字体，位置与原文一致",
-     "修正部分 NPC 名牌与宝箱的数字接错位置",
-     "收录玩家分享回来的待译字符串，并补上繁体中文翻译",
-     "弓手 Arrow Wall、Escape 的说明更新"
-    ]
-   }
-  },
-  "0.1.9_1": {
-   "headline": "The quest tracker panel can now be resized",
-   "items": [
-    "The quest tracker panel can be resized in the panel layout screen, like the dialogue and choice panels",
-    "Major ID descriptions now match the current in-game wording",
-    "Dungeon names and dungeon keys are translated",
-    "The Trade Market filter menu is translated",
-    "Japanese: ability trees, menus, store, lootruns, raids, quests, NPC nametags and more"
-   ],
-   "zh_tw": {
-    "headline": "任務追蹤面板可以調整大小",
-    "items": [
-     "面板位置調整畫面裡，任務追蹤跟 NPC 對話、對話選項一樣可以拉右下角改大小",
-     "Major ID 的說明更新成遊戲裡目前的寫法",
-     "地城名稱與地城鑰匙改為翻譯",
-     "交易市場的篩選選單已翻譯",
-     "日文：技能樹、選單、商店、Lootrun、討伐戰、任務、NPC 名牌等"
-    ]
-   },
-   "zh_cn": {
-    "headline": "任务追踪面板可以调整大小",
-    "items": [
-     "面板位置调整画面里，任务追踪跟 NPC 对话、对话选项一样可以拉右下角改大小",
-     "Major ID 的描述更新为游戏里目前的写法",
-     "地牢名称与地牢钥匙改为翻译",
-     "交易市场的筛选菜单已翻译",
-     "日文：技能树、菜单、商店、Lootrun、副本、任务、NPC 名牌等"
-    ]
-   }
-  },
-  "0.1.9": {
-   "headline": "Simplified Chinese no longer mixes in Traditional Chinese",
-   "items": [
-    "Lines that already have a Simplified Chinese translation no longer show the Traditional Chinese one",
-    "The fallback language is now updated together with your language when the game starts",
-    "Major ID descriptions that end in an icon and a number are now translated",
-    "Raid gambit descriptions are no longer split mid-sentence",
-    "Powder tooltips: the level line is now translated",
-    "The market's Name Contains filter keeps what you typed",
-    "More death, crate and bomb broadcasts are kept out of shared captures",
-    "German, Spanish and French are removed for now",
-    "Simplified Chinese: nameplates, NPC lines, gathering nodes, guilds, dungeons, raids, menus, discoveries, lootruns and the remaining quest dialogue",
-    "Traditional Chinese: lines from the latest shared captures"
-   ],
-   "zh_tw": {
-    "headline": "簡體中文不再混進繁體中文",
-    "items": [
-     "已有簡體中文譯文的句子，不再顯示繁體中文",
-     "進遊戲時，輔助語言的譯文也會跟著更新",
-     "結尾是圖示加數值的 Major ID 敘述，現在翻得出來",
-     "討伐戰賭注的敘述不再從句子中間斷開",
-     "粉末說明的等級那一行現在會翻譯",
-     "市集搜尋的「名稱包含」會保留你輸入的字",
-     "更多死亡、寶箱與炸彈的廣播不會被收進分享的字串",
-     "暫時移除德文、西班牙文與法文",
-     "簡體中文：名牌、NPC 台詞、採集點、公會、地城、討伐戰、選單、秘密發現、Lootrun 與其餘任務對話",
-     "繁體中文：補上最近分享的待譯字串"
-    ]
-   },
-   "zh_cn": {
-    "headline": "简体中文不再混进繁体中文",
-    "items": [
-     "已有简体中文译文的句子，不再显示繁体中文",
-     "进游戏时，辅助语言的译文也会跟着更新",
-     "结尾是图标加数值的 Major ID 描述，现在能翻译出来",
-     "副本赌注的描述不再从句子中间断开",
-     "粉末说明的等级那一行现在会翻译",
-     "市场搜索的「名称包含」会保留你输入的文字",
-     "更多死亡、宝箱与炸弹的广播不会被收进分享的字符串",
-     "暂时移除德语、西班牙语与法语",
-     "简体中文：名牌、NPC 台词、采集点、公会、地牢、副本、菜单、秘密发现、Lootrun 与其余任务对话",
-     "繁体中文：补上最近分享的待译字符串"
-    ]
-   }
-  },
-  "0.1.8": {
-   "headline": "Fewer lines falling back to English mid-conversation",
-   "items": [
-    "Lines that differ from the corpus only by quotes, ellipses, ending punctuation or letter case are now translated",
-    "captured.json now lists lines that are in the corpus but not yet translated, with how many times you saw each",
-    "The market search candidate list uses your theme colour",
-    "Market search no longer suggests quest names, places, NPCs or untradable items",
-    "Simplified Chinese: all quest dialogue is translated, plus the remaining weapon lore",
-    "Traditional Chinese: over a hundred more NPC nameplates, store offers and gathering nodes"
-   ],
-   "zh_tw": {
-    "headline": "對話翻到一半冒出英文的情況變少了",
-    "items": [
-     "原文只差引號、省略號、句尾標點或大小寫的句子，現在也翻得出來",
-     "captured.json 多了一段：語料裡有、但還沒翻的句子，以及各被看到幾次",
-     "市集搜尋的候選清單改用設定裡的主題色",
-     "市集搜尋不再列出任務、地點、NPC 名稱與不可交易的物品",
-     "簡體中文：任務對話全部翻完，另補齊武器敘述",
-     "繁體中文：補上一百多條 NPC 名牌、商城優惠與採集點"
-    ]
-   },
-   "zh_cn": {
-    "headline": "对话翻到一半冒出英文的情况变少了",
-    "items": [
-     "原文只差引号、省略号、句尾标点或大小写的句子，现在也翻得出来",
-     "captured.json 多了一段：语料里有、但还没翻的句子，以及各被看到几次",
-     "市场搜索的候选列表改用设置里的主题色",
-     "市场搜索不再列出任务、地点、NPC 名称与不可交易的物品",
-     "简体中文：任务对话全部翻完，另补齐武器描述",
-     "繁体中文：补上一百多条 NPC 名牌、商城优惠与采集点"
-    ]
-   }
-  },
-  "0.1.7": {
-   "headline": "Pick the item you mean in market search",
-   "items": [
-    "Trade market search: matching items are listed above the chat box as you type — pick one with ↑↓ and Tab, or click it",
-    "Simplified Chinese: many more quests' dialogue translated"
-   ],
-   "zh_tw": {
-    "headline": "市集搜尋可以自己挑是哪一個",
-    "items": [
-     "市集搜尋：打字時聊天框上方會列出符合的物品，用 ↑↓ 選、Tab 或點一下填入",
-     "簡體中文：再翻譯了大量任務對話"
-    ]
-   },
-   "zh_cn": {
-    "headline": "市场搜索可以自己挑是哪一个",
-    "items": [
-     "市场搜索：打字时聊天框上方会列出符合的物品，用 ↑↓ 选、Tab 或点一下填入",
-     "简体中文：又翻译了大量任务对话"
-    ]
-   }
-  },
-  "0.1.6_1": {
-   "headline": "Trade market search in every language",
-   "items": [
-    "Fixed trade market search not converting Simplified Chinese names",
-    "Names shown in ingredient pouches can now be searched in the trade market",
-    "Trade market search messages now follow the interface language",
-    "F9 no longer takes a screenshot when nothing on screen is translated",
-    "Fixed the layout of the three trade slot lines",
-    "Simplified Chinese: ingredient pouch names now match the item tooltips",
-    "Simplified Chinese: many more quests' dialogue translated"
-   ],
-   "zh_tw": {
-    "headline": "每種語言都能用市集搜尋了",
-    "items": [
-     "修正簡體中文在市集搜尋時沒有轉成英文",
-     "素材袋裡顯示的名字也能拿去市集搜尋",
-     "市集搜尋的提示訊息改成跟著介面語言",
-     "F9 在畫面上沒有譯文時不再截圖",
-     "修正交易槽位三行文字的排版",
-     "簡體中文：素材袋裡的名字與物品說明一致",
-     "簡體中文：再翻譯了大量任務對話"
-    ]
-   },
-   "zh_cn": {
-    "headline": "每种语言都能用市场搜索了",
-    "items": [
-     "修正简体中文在市场搜索时没有转成英文",
-     "素材袋里显示的名字也能拿去市场搜索",
-     "市场搜索的提示消息改成跟着界面语言",
-     "F9 在画面上没有译文时不再截图",
-     "修正交易槽位三行文字的排版",
-     "简体中文：素材袋里的名字与物品说明一致",
-     "简体中文：又翻译了大量任务对话"
-    ]
-   }
-  },
-  "0.1.6": {
-   "headline": "Resize the dialogue box yourself",
-   "items": [
-    "F6 → Adjust panel positions: drag the bottom-right corner of the dialogue and choice boxes to resize them",
-    "Death notices, level-up broadcasts and guild hall signs are no longer collected",
-    "Half-typed lines from the typewriter animation are no longer collected",
-    "Removed corpus entries that carried other players' names",
-    "Traditional Chinese: quest dialogue is complete, plus NPC nameplates, area discoveries and shop messages",
-    "Simplified Chinese: aspect descriptions, The Legend of Bob, 969 ingredient names, accessory and armour lore",
-    "Simplified Chinese: the item roll weighting is now called 词缀"
-   ],
-   "zh_tw": {
-    "headline": "對話框大小可以自己拉了",
-    "items": [
-     "F6 →「調整面板位置」：拉對話框與選項框的右下角就能改大小",
-     "死亡快訊、升等廣播與公會大廳招牌不再被收集",
-     "打字機動畫打到一半的半句不再被收集",
-     "移除語料裡夾帶別人名字的條目",
-     "繁體中文：任務對話全部翻完，另有 NPC 名牌、地區發現與商店訊息",
-     "簡體中文：意象敘述、Bob 的傳說、969 個材料名、飾品與護甲的敘述",
-     "簡體中文：詞條權重改稱「词缀」"
-    ]
-   },
-   "zh_cn": {
-    "headline": "对话框大小可以自己拉了",
-    "items": [
-     "F6 →「调整面板位置」：拉对话框与选项框的右下角就能改大小",
-     "死亡快讯、升级广播与公会大厅招牌不再被收集",
-     "打字机动画打到一半的半句不再被收集",
-     "移除语料里夹带他人名字的条目",
-     "繁体中文：任务对话全部翻完，另有 NPC 名牌、地区发现与商店消息",
-     "简体中文：特质说明、Bob 的传说、969 个材料名、饰品与护甲的说明",
-     "简体中文：词条权重改称「词缀」"
-    ]
-   }
-  },
-  "0.1.5_3": {
-   "headline": "Fewer repeat uploads, and the element colour on skill points",
-   "items": [
-    "The corpus collector no longer re-sends lines it has already collected",
-    "Island visitor notices and eight kinds of death broadcast are no longer collected",
-    "Fixed the skill point tooltip colouring the whole \"Earth damage\" instead of just the element",
-    "Fixed quest lines that were translated but still showed in English",
-    "Traditional Chinese: trade market filters, system messages, dungeon narration, lootrun trials and guild territory upgrades",
-    "Traditional Chinese: the Shaman ability tree, from the translation team",
-    "Simplified Chinese: Major IDs, crafting materials, tomes, charms and aspects"
-   ],
-   "zh_tw": {
-    "headline": "語料收集不再重複送，技能點的元素色也修好了",
-    "items": [
-     "語料收集不再重複送出已經收過的句子",
-     "住宅島的訪客通知與八種死亡廣播不再被收集",
-     "修正技能點說明把整串「地屬性傷害」染成元素色，原文只有元素名是有顏色的",
-     "修正部分任務對話明明翻好了卻顯示英文",
-     "繁體中文：交易所篩選器、系統訊息、地城旁白、掠奪的試煉、公會領地升級",
-     "繁體中文：薩滿技能樹，來自翻譯團隊",
-     "簡體中文：Major ID、加工材料、書卷、護符、意象"
-    ]
-   },
-   "zh_cn": {
-    "headline": "语料收集不再重复送，技能点的元素色也修好了",
-    "items": [
-     "语料收集不再重复送出已经收过的句子",
-     "住宅岛的访客通知与八种死亡广播不再被收集",
-     "修正技能点说明把整串「土属性伤害」染成元素色，原文只有元素名是有颜色的",
-     "修正部分任务对话明明翻好了却显示英文",
-     "繁体中文：交易所筛选器、系统消息、副本旁白、掠夺的试炼、公会领地升级",
-     "繁体中文：萨满技能树，来自翻译团队",
-     "简体中文：Major ID、加工材料、书卷、护符、意象"
-    ]
-   }
-  },
-  "0.1.5_2": {
-   "headline": "Japanese and Korean item labels, and Simplified Chinese Major IDs",
-   "items": [
-    "Japanese and Korean: item tooltip labels and Major IDs",
-    "Simplified Chinese: Major IDs",
-    "Traditional Chinese: gathering nodes, cave boards, loot chests, store offers and raid buff panels",
-    "Added Japanese and Korean dialogue fonts",
-    "Fixed a quest line showing a stray bold tag in the dialogue box",
-    "The mob totem expiry broadcast is no longer collected"
-   ],
-   "zh_tw": {
-    "headline": "日文與韓文的物品欄位，簡體中文的 Major ID",
-    "items": [
-     "日文與韓文：物品說明的欄位標籤與 Major ID",
-     "簡體中文：Major ID",
-     "繁體中文：採集點、洞窟看板、戰利品寶箱、商城優惠與討伐戰的增益面板",
-     "新增日文與韓文的對話字型",
-     "修正任務對話裡多出來的粗體標籤",
-     "怪物圖騰到期的廣播不再被收集"
-    ]
-   },
-   "zh_cn": {
-    "headline": "日文与韩文的物品栏位，简体中文的 Major ID",
-    "items": [
-     "日文与韩文：物品说明的栏位标签与 Major ID",
-     "简体中文：Major ID",
-     "繁体中文：采集点、洞窟看板、战利品宝箱、商城优惠与副本的增益面板",
-     "新增日文与韩文的对话字体",
-     "修正任务对话里多出来的粗体标签",
-     "怪物图腾到期的广播不再被收集"
-    ]
-   }
-  },
-  "0.1.5_1": {
-   "headline": "Update notices now point at GitHub",
-   "items": [
-    "The update notice and the download button link to GitHub instead of CurseForge",
-    "Traditional Chinese: NPC nameplates, cave signs, loot chests and the trade market — about 2,600 lines",
-    "Removed corpus entries that carried other players' names: guild-hall signs, guild territory owners, trade-market search text and raid death broadcasts"
-   ],
-   "zh_tw": {
-    "headline": "版本更新改以 GitHub 為主",
-    "items": [
-     "更新提示與下載按鈕改連到 GitHub，不再是 CurseForge",
-     "繁體中文：NPC 名牌、洞窟立牌、戰利品寶箱與交易市場，約 2,600 條",
-     "移除語料裡夾帶別人名字的條目：公會大廳立牌、公會領地、交易所搜尋字、討伐戰死亡廣播"
-    ]
-   },
-   "zh_cn": {
-    "headline": "版本更新改以 GitHub 为主",
-    "items": [
-     "更新提示与下载按钮改为链接到 GitHub，不再是 CurseForge",
-     "繁体中文：NPC 名牌、洞窟立牌、战利品宝箱与交易市场，约 2,600 条",
-     "移除语料里夹带他人名字的条目：公会大厅立牌、公会领地、交易所搜索字、副本死亡广播"
-    ]
-   }
-  },
-  "0.1.5": {
-   "headline": "Japanese and Korean settings screens, and the Shift prompt is back",
-   "items": [
-    "The settings screen has its own language setting — Japanese and Korean are selectable now",
-    "Fixed the \"press SHIFT\" prompt vanishing in Simplified Chinese",
-    "Collection now measures gaps against Traditional Chinese, not your display language",
-    "Simplified Chinese: the Warrior ability tree — all five trees are done",
-    "Fixed the damage breakdown row showing the wrong label"
-   ],
-   "zh_tw": {
-    "headline": "日文與韓文的設定畫面；SHIFT 提示回來了",
-    "items": [
-     "設定畫面多了自己的語言設定，日文與韓文現在選得到",
-     "修正簡體中文的「按 SHIFT 繼續」提示消失",
-     "收集缺口改以繁體中文為準，不再跟著你的顯示語言跑",
-     "簡體中文：戰士技能樹，五棵樹全部翻完",
-     "修正傷害細項那一列顯示錯誤的標籤"
-    ]
-   },
-   "zh_cn": {
-    "headline": "日文与韩文的设置界面；SHIFT 提示回来了",
-    "items": [
-     "设置界面多了自己的语言设置，日文与韩文现在选得到",
-     "修正简体中文的「按 SHIFT 继续」提示消失",
-     "收集缺口改以繁体中文为准，不再跟着你的显示语言跑",
-     "简体中文：战士技能树，五棵树全部翻完",
-     "修正伤害细项那一行显示错误的标签"
-    ]
-   }
-  },
-  "0.1.4_1": {
-   "headline": "Simplified Chinese was showing Traditional on long lines",
-   "items": [
-    "Fixed long sentences falling back to Traditional even where Simplified had a translation",
-    "Done now applies a language you picked but had not applied yet",
-    "Right-click a setting to go back to the previous option"
-   ],
-   "zh_tw": {
-    "headline": "簡體的長句會顯示繁體",
-    "items": [
-     "修正簡體已經翻好的長句卻顯示繁體",
-     "選了語言還沒按套用時，按「完成」會順手套用",
-     "設定項目按右鍵可以回到上一個選項"
-    ]
-   },
-   "zh_cn": {
-    "headline": "简体的长句会显示繁体",
-    "items": [
-     "修正简体已经翻好的长句却显示繁体",
-     "选了语言还没按应用时，按「完成」会顺手应用",
-     "设置项按右键可以回到上一个选项"
-    ]
-   }
-  },
-  "0.1.4": {
-   "headline": "Pick a language, then apply it",
-   "items": [
-    "Switching translation language now waits for Apply, and shows how many files are left",
-    "The Items tab showed a raw key instead of \"Panel screenshot\"",
-    "The changelog screen no longer draws its scroll hint on top of the buttons",
-    "Added Japanese and Korean for the mod's own settings screen",
-    "Simplified Chinese: the Archer ability tree, and mainland wording for professions",
-    "The README now estimates how many lines there are in total, not just how many we have"
-   ],
-   "zh_tw": {
-    "headline": "語言選好再按套用",
-    "items": [
-     "切換譯文語言改成按過套用才換，過程中會顯示還剩幾個檔",
-     "物品分頁那一列顯示的是鍵名，不是「譯文截圖」",
-     "更新說明底下的捲動提示不再壓在按鈕上",
-     "新增日文與韓文的設定畫面",
-     "簡體中文：弓手技能樹，以及生活技能等用詞的在地化",
-     "README 多了一張表，寫出全部大概有多少句，不只是已經收到多少"
-    ]
-   },
-   "zh_cn": {
-    "headline": "语言选好再按应用",
-    "items": [
-     "切换译文语言改成按过应用才换，过程中会显示还剩几个文件",
-     "物品页那一行显示的是键名，而不是「译文截图」",
-     "更新说明底下的滚动提示不再压在按钮上",
-     "新增日文与韩文的设置界面",
-     "简体中文：弓手技能树，以及生活技能等用词的本地化",
-     "README 多了一张表，写出全部大概有多少句，不只是已经收到多少"
-    ]
-   }
-  },
-  "0.1.3_1": {
-   "headline": "World event names in the tracker, and a tighter privacy filter",
-   "items": [
-    "World event names in the tracker are translated — all 70 events, in every countdown format",
-    "Added the chat lines and shop-booth screens collected this week",
-    "The privacy filter now catches four kinds of message that were slipping player names through",
-    "Simplified Chinese: the Archer ability tree"
-   ],
-   "zh_tw": {
-    "headline": "世界事件在追蹤框裡有中文名了，個資濾網補了四類",
-    "items": [
-     "追蹤框裡的世界事件名稱翻好了——七十個活動、三種倒數格式全部補齊",
-     "補上這週收到的聊天訊息與市集攤位視窗",
-     "個資濾網補上四類先前會漏掉玩家名字的訊息",
-     "簡體中文：弓手技能樹"
-    ]
-   },
-   "zh_cn": {
-    "headline": "世界事件在追踪框里有中文名了，隐私过滤补了四类",
-    "items": [
-     "追踪框里的世界事件名称翻好了——七十个活动、三种倒计时格式全部补齐",
-     "补上这周收到的聊天消息与集市摊位界面",
-     "隐私过滤补上四类此前会漏掉玩家名字的消息",
-     "简体中文：弓手技能树"
-    ]
-   }
-  },
-  "0.1.0": {
-   "headline": "第一個對外的 Beta 版本",
-   "items": [
-    "版本號重新從 0.1.0 起算，之前的 1.x 是開發期的內部編號",
-    "新增「分享給翻譯團隊」：你玩到而模組還沒翻到的句子會送回來，整理進語料之後所有人都看得到（預設開啟，F6 可關）",
-    "分享的只有遊戲自己的英文字；不含帳號、座標，也不含公會／隊伍／喊話",
-    "修正任務完成橫幅的左中括號變成白色"
-   ]
-  },
-  "0.1.1": {
-   "headline": "Simplified Chinese, and the settings screen now speaks your language",
-   "items": [
-    "The F6 settings, credits and changelog screens are translated — English, 繁體中文 and 简体中文, following your Minecraft language",
-    "Simplified Chinese: 974 interface strings translated (tooltips, menus, ability tree, aspects, guild, trade market)",
-    "F6 → Data → Translation language switches the translations without restarting the game",
-    "Fixed: a language with partial translations fell back to English instead of Traditional Chinese",
-    "Fixed: pressing Reload dropped the fallback layer"
-   ],
-   "zh_tw": {
-    "headline": "簡體中文，以及設定畫面會說你的語言了",
-    "items": [
-     "F6 設定、貢獻者、更新說明三個畫面都翻了——英文、繁體中文、簡體中文，跟著你的 Minecraft 語言走",
-     "簡體中文：介面字串翻好 974 條（物品說明、選單、技能樹、意象、公會、交易市場）",
-     "F6 →「資料」→「譯文語言」可以直接換譯文，不用重開遊戲",
-     "修正：某個語言只翻了一部分時，沒翻到的地方會掉成英文而不是繁體中文",
-     "修正：按「重新載入」之後墊底那一層會不見"
-    ]
-   },
-   "zh_cn": {
-    "headline": "简体中文，以及设置界面会说你的语言了",
-    "items": [
-     "F6 设置、贡献者、更新说明三个界面都翻了——英文、繁体中文、简体中文，跟着你的 Minecraft 语言走",
-     "简体中文：界面字符串翻好 974 条(物品说明、菜单、技能树、意象、公会、交易市场)",
-     "F6 →「数据」→「译文语言」可以直接换译文，不用重开游戏",
-     "修正：某个语言只翻了一部分时，没翻到的地方会掉成英文而不是繁体中文",
-     "修正：按「重新加载」之后垫底那一层会不见"
-    ]
-   }
-  },
-  "0.1.2": {
-   "headline": "Pick what to fall back to, and a cleaner Simplified Chinese",
-   "items": [
-    "F6 → Data → Fallback language: choose what to show where a language has nothing yet — auto, the original English, or any other language",
-    "Simplified Chinese: another 704 interface strings (ability tree labels, NPC nameplates, item lore, powders)",
-    "Simplified Chinese wording cleaned of Traditional-Chinese habits; a check now guards against them",
-    "The mods list entry is bilingual"
-   ],
-   "zh_tw": {
-    "headline": "沒翻到的地方看什麼由你決定，簡中也清乾淨了",
-    "items": [
-     "F6 →「資料」→「輔助語言」：某一種語言還沒翻到的地方要顯示什麼——自動、英文原文，或任何一種其他語言",
-     "簡體中文再翻 704 條（技能樹標籤、NPC 名牌、物品說明、粉末）",
-     "簡中用詞清掉繁中直譯的痕跡，並加了檢查擋在 CI 上",
-     "模組列表裡的介紹改成雙語"
-    ]
-   },
-   "zh_cn": {
-    "headline": "没翻到的地方看什么由你决定，简中也清干净了",
-    "items": [
-     "F6 →「数据」→「辅助语言」：某种语言还没翻到的地方要显示什么——自动、英文原文，或任何一种其他语言",
-     "简体中文再翻 704 条(技能树标签、NPC 名牌、物品说明、粉末)",
-     "简中用词清掉繁中直译的痕迹，并加了检查挡在 CI 上",
-     "模组列表里的介绍改成双语"
-    ]
-   }
-  },
-  "0.1.2_1": {
-   "headline": "Simplified Chinese ability trees, clearer corpus collection",
-   "items": [
-    "Simplified Chinese: mage ability tree and the shared ability entries",
-    "captured.json now writes the quest, the speaker and the line number as their own fields",
-    "Lines we cannot place go under their own heading instead of being filed under a guess",
-    "Strings other mods read are no longer collected",
-    "The mods list entry is in English"
-   ],
-   "zh_tw": {
-    "headline": "簡中的技能樹，語料收集的分類",
-    "items": [
-     "簡體中文：法師技能樹與共用的技能條目",
-     "captured.json 多了 quest／speaker／line 三欄",
-     "認不出歸屬的句子單獨一堆，不再塞進某一類",
-     "別的模組會讀的字串不再收集",
-     "模組列表的介紹改成英文"
-    ]
-   },
-   "zh_cn": {
-    "headline": "简中的技能树，语料收集的分类",
-    "items": [
-     "简体中文：法师技能树与共用的技能条目",
-     "captured.json 多了 quest／speaker／line 三栏",
-     "认不出归属的句子单独一堆，不再塞进某一类",
-     "别的模组会读的字符串不再收集",
-     "模组列表的介绍改成英文"
-    ]
-   }
-  },
-  "0.1.3": {
-   "headline": "The tracker says what it is tracking",
-   "items": [
-    "The tracker heading now matches what is being tracked — World Event, Cave, Raid and so on, instead of always saying Quest",
-    "Long tracker text wraps instead of running off the screen",
-    "The changelog screen shows one box per version",
-    "The settings screen follows the translation language you pick in F6"
-   ],
-   "zh_tw": {
-    "headline": "追蹤框會說清楚它在追什麼",
-    "items": [
-     "追蹤框的抬頭照實際追蹤的東西顯示——世界事件、洞窟、討伐戰等等，不再一律寫「進行中的任務」",
-     "追蹤框的長句子會自動換行，不再畫出螢幕外",
-     "更新說明改成一版一個方框",
-     "設定畫面會跟著 F6 選的譯文語言走"
-    ]
-   },
-   "zh_cn": {
-    "headline": "追踪框会说清楚它在追什么",
-    "items": [
-     "追踪框的标题按实际追踪的东西显示——世界事件、洞窟、副本等等，不再一律写「进行中的任务」",
-     "追踪框的长句子会自动换行，不再画出屏幕外",
-     "更新说明改成一版一个方框",
-     "设置界面会跟着 F6 选的译文语言走"
-    ]
-   }
+  "notes": {
+    "0.2.3_3": {
+      "headline": "Colour that keeps up with the typing",
+      "items": [
+        "Item and NPC names in dialogue colour in as the line types out, instead of appearing white first",
+        "A name split across two lines is no longer half-coloured",
+        "The coloured part no longer shrinks back before re-appearing",
+        "A line whose translation has characters the font cannot draw stays in English instead of showing boxes"
+      ],
+      "zh_tw": {
+        "headline": "對話的強調色跟得上打字",
+        "items": [
+          "對話框裡的物品名與 NPC 名，顏色跟著字一個一個出來，不再是整句先白再上色",
+          "名字剛好斷在兩行之間時，不再只有一半上色",
+          "上色的範圍不會先縮回去再重新出現",
+          "譯文有畫不出來的字時整句留英文，不會冒出一排方框"
+        ]
+      },
+      "zh_cn": {
+        "headline": "对话的强调色跟得上打字",
+        "items": [
+          "对话框里的物品名与 NPC 名，颜色跟着字一个一个出现，不再是整句先白再上色",
+          "名字刚好断在两行之间时，不再只有一半上色",
+          "上色的范围不会先缩回去再重新出现",
+          "译文有画不出来的字时整句保留英文，不会冒出一排方框"
+        ]
+      }
+    },
+    "0.2.3_2": {
+      "headline": "Two black screens and the emerald pouch colours",
+      "items": [
+        "The F6 changelog screen no longer goes black",
+        "The Spanish F6 nameplate settings screen no longer goes black either",
+        "Emerald pouch amounts keep their original colours: the currency icon stays grey instead of turning orange with the number"
+      ],
+      "zh_tw": {
+        "headline": "兩處黑屏與錢袋的顏色",
+        "items": [
+          "F6 的「更新說明」不再整片黑",
+          "西班牙文的 F6「NPC 名牌設定」也不再整片黑",
+          "綠寶石袋的數量保留原本的顏色：貨幣圖示維持灰色，不再跟著數字變橘"
+        ]
+      },
+      "zh_cn": {
+        "headline": "两处黑屏与钱袋的颜色",
+        "items": [
+          "F6 的「更新说明」不再整片黑",
+          "西班牙文的 F6「NPC 名牌设置」也不再整片黑",
+          "绿宝石袋的数量保留原本的颜色：货币图标保持灰色，不再跟着数字变橙"
+        ]
+      }
+    },
+    "0.2.3_1": {
+      "headline": "Search in Chinese, a boss bar switch, and a one-click update",
+      "items": [
+        "Wynntils' own search boxes now match the translated text, so you can type Chinese in the content book and settings",
+        "F6 has a Boss bar switch, so the bar at the top can stay in English",
+        "The chat notice about new translations has a clickable Click here to update; the F6 row is now called Update translations to match",
+        "Altar-style floating text follows the Nameplates and floating text row, so it can be turned off",
+        "Corpus: card names for 60 world events, and the Event starting in Xh Ym line",
+        "Mini-quest descriptions read level, then what to hand in to whom, then the coordinates"
+      ],
+      "zh_tw": {
+        "headline": "用中文搜尋、Boss 血條開關、一鍵更新譯文",
+        "items": [
+          "Wynntils 自己的搜尋框吃得下譯文：內容書、設定那些畫面直接打中文就搜得到",
+          "F6 新增「Boss 血條」開關，打怪時頂端那一條可以留英文",
+          "有新譯文時，聊天室那則提示多一顆「按這裡更新」可以直接按；F6 那一列跟著改名叫「更新翻譯」",
+          "討伐戰祭壇那類浮空字改成跟「名牌與漂浮字」同一個開關，關得掉了",
+          "語料：補齊 60 個世界事件的卡片名稱，以及「還有幾小時幾分」那一行",
+          "迷你任務的敘述改成「等級 → 交什麼給誰 → 座標」"
+        ]
+      },
+      "zh_cn": {
+        "headline": "用中文搜索、Boss 血条开关、一键更新译文",
+        "items": [
+          "Wynntils 自己的搜索框吃得下译文：内容书、设置那些界面直接打中文就搜得到",
+          "F6 新增「Boss 血条」开关，打怪时顶端那一条可以留英文",
+          "有新译文时，聊天室那条提示多一颗「点这里更新」可以直接按；F6 那一列跟着改名叫「更新翻译」",
+          "讨伐战祭坛那类浮空字改成跟「名牌与漂浮字」同一个开关，关得掉了",
+          "语料：补齐 60 个世界事件的卡片名称，以及「还有几小时几分」那一行",
+          "迷你任务的描述改成「等级 → 交什么给谁 → 坐标」"
+        ]
+      }
+    },
+    "0.2.3": {
+      "headline": "Spanish black screen, Wynntils screens, and the content book",
+      "items": [
+        "Discovering an area no longer turns the whole screen black (the Spanish translations' A-acute is a full-screen fade in Wynncraft, not a letter)",
+        "Wynntils' own screens (menu, settings, content book) are translated",
+        "Hold Shift to see the other item name; a long original wraps to its own line",
+        "Translation updates ask first: you are told when new translations exist and choose whether to update",
+        "Requirement rows in gear tooltips keep their values right-aligned",
+        "An item name that fits the tooltip is no longer split across two lines",
+        "The content book's cards: centring, reward rows, colours, the [Cave] suffix, and the names the list left blank",
+        "Territory labels on the guild war map and Wynntils' short item names stay in English",
+        "Trade market listings no longer show translated crafted-gear names; territory card storage rows fit the frame",
+        "Clickable words stay clickable after translation",
+        "Collecting no longer records party members' names or half sentences",
+        "Corpus: all 198 cave cards in the content book, 25 mini-quest descriptions, and the Realm of Light quest states"
+      ],
+      "zh_tw": {
+        "headline": "西班牙文黑螢幕、Wynntils 畫面與內容書",
+        "items": [
+          "發現新區域時不再整個畫面變黑（西班牙文譯文裡那個帶重音的大寫 A，在 Wynncraft 是全螢幕黑幕，不是字母）",
+          "Wynntils 自己的畫面（選單、設定、內容書）會翻譯",
+          "按住 Shift 可以看另一種物品名稱；原文太長會換到下一行",
+          "譯文更新改成先詢問：有新譯文時會通知，要不要更新由玩家決定",
+          "裝備提示框的需求列（職業類型、戰鬥等級）數值維持靠右對齊",
+          "收得進提示框的物品名稱不再被拆成兩行",
+          "內容書的卡片：置中、獎勵列、顏色、[Cave] 之類的後綴，以及清單裡缺的名稱",
+          "公會戰地圖的領地標籤與 Wynntils 的物品簡稱維持原文",
+          "掛單卡不再顯示自製裝備的譯名；領地卡的庫存那幾行收得進框裡",
+          "可點擊的字在翻譯後保持可點",
+          "收集語料時不再收進隊友的名字與半句",
+          "語料：內容書的全部 198 張洞窟卡、25 條迷你任務敘述，以及光之領域系列的任務狀態"
+        ]
+      },
+      "zh_cn": {
+        "headline": "西班牙文黑屏、Wynntils 界面与内容书",
+        "items": [
+          "发现新区域时不再整个画面变黑（西班牙文译文里那个带重音的大写 A，在 Wynncraft 是全屏黑幕，不是字母）",
+          "Wynntils 自己的界面（菜单、设置、内容书）会翻译",
+          "按住 Shift 可以看另一种物品名称；原文太长会换到下一行",
+          "译文更新改为先询问：有新译文时会通知，要不要更新由玩家决定",
+          "装备提示框的需求栏（职业类型、战斗等级）数值保持右对齐",
+          "放得进提示框的物品名称不再被拆成两行",
+          "内容书的卡片：居中、奖励栏、颜色、[Cave] 之类的后缀，以及列表里缺的名称",
+          "公会战地图的领地标签与 Wynntils 的物品简称保持原文",
+          "挂单卡不再显示自制装备的译名；领地卡的库存那几行放得进框里",
+          "可点击的字在翻译后保持可点",
+          "收集语料时不再收进队友的名字与半句",
+          "语料：内容书的全部 198 张洞窟卡、25 条迷你任务描述，以及光之领域系列的任务状态"
+        ]
+      }
+    },
+    "0.2.2": {
+      "headline": "Item names, boss bar and layout fixes",
+      "items": [
+        "F6 can show item names: translated, translated with the original in brackets, or off (off by default)",
+        "Shiny gear names are translated, keeping the gear's own name",
+        "A notice about using the original terms when talking to other players, shown once on joining and from F6",
+        "The mob name and the Weak / Dam / Def matchups on the boss bar are translated",
+        "Loot chest floating labels keep the colour of every segment",
+        "Stat rows in tooltips stay left-aligned, and the large DPS and Health figures keep their font",
+        "Multi-line Chinese and Japanese chat messages are re-wrapped instead of copying the English line breaks",
+        "Dialogue lines whose in-game wording differs slightly from the corpus are matched within the tracked quest"
+      ],
+      "zh_tw": {
+        "headline": "物品名稱、boss bar 與版面修正",
+        "items": [
+          "F6 可以選物品名稱顯示方式：譯名、譯名加原文、關閉（預設關閉）",
+          "Shiny 裝備的名稱會翻譯，後面照裝備自己的譯名",
+          "新增使用須知：提醒跟其他玩家交流請用原文，第一次進遊戲會跳出，也可以從 F6 打開",
+          "boss bar 的怪物名與右邊的易傷／增傷／防護會翻譯",
+          "寶箱的漂浮字保留原文每一段的顏色",
+          "提示框的屬性列維持靠左，放大的每秒傷害與生命數字保留原本的字型",
+          "中文與日文的多行聊天訊息改成重新斷行，不再照英文的位置斷",
+          "實機措辭與語料略有出入的對話，會在追蹤中的任務裡比對"
+        ]
+      },
+      "zh_cn": {
+        "headline": "物品名称、boss bar 与排版修正",
+        "items": [
+          "F6 可以选择物品名称的显示方式：译名、译名加原文、关闭（默认关闭）",
+          "Shiny 装备的名称会翻译，后面照装备自己的译名",
+          "新增使用须知：提醒与其他玩家交流请用原文，第一次进游戏会弹出，也可以从 F6 打开",
+          "boss bar 的怪物名与右边的易伤／增伤／防护会翻译",
+          "宝箱的漂浮字保留原文每一段的颜色",
+          "提示框的属性栏保持左对齐，放大的每秒伤害与生命数字保留原本的字体",
+          "中文与日文的多行聊天消息改为重新断行，不再照英文的位置断",
+          "实机措辞与语料略有出入的对话，会在追踪中的任务里比对"
+        ]
+      }
+    },
+    "0.2.1_2": {
+      "headline": "Skill point tooltip alignment",
+      "items": [
+        "The Current / Next columns in the skill point tooltip stay centred after translation"
+      ],
+      "zh_tw": {
+        "headline": "技能點提示框對齊",
+        "items": [
+          "技能點提示框的「目前／下一級」兩欄翻譯後保持置中"
+        ]
+      },
+      "zh_cn": {
+        "headline": "技能点提示框对齐",
+        "items": [
+          "技能点提示框的「目前／下一级」两栏翻译后保持居中"
+        ]
+      }
+    },
+    "0.2.1_1": {
+      "headline": "Raid text and tooltip fixes",
+      "items": [
+        "Floating hologram text (such as the Void Altar in raids) is now translated",
+        "Messages shown in the Wynntils notification box are now translated",
+        "Centred lines in tooltips without stat rows (such as aspects) stay centred after translation"
+      ],
+      "zh_tw": {
+        "headline": "討伐戰文字與提示框修正",
+        "items": [
+          "浮空字（例如討伐戰的虛空祭壇）現在會翻譯",
+          "Wynntils 通知框裡的訊息現在會翻譯",
+          "沒有屬性列的提示框（例如 aspect）翻譯後置中的行不再偏移"
+        ]
+      },
+      "zh_cn": {
+        "headline": "团本文字与提示框修正",
+        "items": [
+          "浮空字（例如团本的虚空祭坛）现在会翻译",
+          "Wynntils 通知框里的消息现在会翻译",
+          "没有属性行的提示框（例如 aspect）翻译后居中的行不再偏移"
+        ]
+      }
+    },
+    "0.2.1": {
+      "headline": "A tidier F6",
+      "items": [
+        "F6 shows each display mode in its own colour (separate panel, replace in place, original + translation, off), all derived from your theme colour",
+        "Every mode button cycles in the same order, with Off always last",
+        "The Data tab keeps the one-off tools (source, reload, export, submit) together at the bottom",
+        "Button text that is too long now scrolls sideways instead of being cut off",
+        "Release notes in F6 can be switched between English, Traditional Chinese and Simplified Chinese",
+        "The credits screen follows the F6 interface language"
+      ],
+      "zh_tw": {
+        "headline": "F6 介面整理",
+        "items": [
+          "F6 的每種顯示方式各有一個顏色（另開面板、就地取代、原文加譯文、關閉），都從主題色推出來",
+          "所有模式按鈕都照同一個順序切換，關閉永遠在最後",
+          "〈資料〉分頁把譯文來源、重新載入、匯出、提交這些工具集中到最下面",
+          "按鈕上太長的字會左右捲動顯示完整，不再被截斷",
+          "F6 的更新說明可以在英文、繁中、簡中之間切換",
+          "貢獻者頁跟著 F6 介面語言顯示"
+        ]
+      },
+      "zh_cn": {
+        "headline": "F6 界面整理",
+        "items": [
+          "F6 的每种显示方式各有一个颜色（另开面板、就地替换、原文加译文、关闭），都从主题色推出来",
+          "所有模式按钮都按同一个顺序切换，关闭永远在最后",
+          "〈数据〉分页把译文来源、重新载入、导出、提交这些工具集中到最下面",
+          "按钮上太长的字会左右滚动显示完整，不再被截断",
+          "F6 的更新说明可以在英文、繁中、简中之间切换",
+          "贡献者页跟随 F6 界面语言显示"
+        ]
+      }
+    },
+    "0.2.0_11": {
+      "headline": "Store rank perks line up again",
+      "items": [
+        "The two columns of rank perks in the store (CHAMPION, HERO+, HERO) line up again",
+        "Some tooltip text no longer falls back to English because of a hidden ID or a web address underneath it"
+      ],
+      "zh_tw": {
+        "headline": "商城階級特權重新對齊",
+        "items": [
+          "商城 CHAMPION、HERO+、HERO 階級說明的兩欄特權重新對齊",
+          "部分說明不會再因為下方的隱藏識別碼或網址而退回英文"
+        ]
+      },
+      "zh_cn": {
+        "headline": "商城阶级特权重新对齐",
+        "items": [
+          "商城 CHAMPION、HERO+、HERO 阶级说明的两栏特权重新对齐",
+          "部分说明不会再因为下方的隐藏识别码或网址而退回英文"
+        ]
+      }
+    },
+    "0.2.0_10": {
+      "headline": "Long scrolling dialogue choices stay translated",
+      "items": [
+        "Dialogue choices too long to fit scroll sideways; in in-place mode they now keep their translation while scrolling instead of flickering back to English"
+      ],
+      "zh_tw": {
+        "headline": "會捲動的長選項維持翻譯",
+        "items": [
+          "太長而左右捲動的對話選項，在就地取代模式下捲動時會維持中文，不再閃回英文"
+        ]
+      },
+      "zh_cn": {
+        "headline": "会滚动的长选项保持翻译",
+        "items": [
+          "太长而左右滚动的对话选项，在就地替换模式下滚动时会保持中文，不再闪回英文"
+        ]
+      }
+    },
+    "0.2.0_9": {
+      "headline": "Collecting untranslated text no longer picks up our own translations",
+      "items": [
+        "Switching languages no longer makes the collector save our own translations (or the mod's update notice) as untranslated game text"
+      ],
+      "zh_tw": {
+        "headline": "收集語料時不會再收到自己的譯文",
+        "items": [
+          "切換語言之後，收集語料不會再把模組自己的譯文或更新通知當成未翻譯的遊戲文字收進去"
+        ]
+      },
+      "zh_cn": {
+        "headline": "收集语料时不会再收到自己的译文",
+        "items": [
+          "切换语言之后，收集语料不会再把模组自己的译文或更新通知当成未翻译的游戏文字收进去"
+        ]
+      }
+    },
+    "0.2.0_8": {
+      "headline": "Fixes lootrun beacon markers staying behind with WynnMod",
+      "items": [
+        "With WynnMod installed, its lootrun beacon markers now clear when a lootrun ends (lootrun start, end and challenge titles stay in English for WynnMod)",
+        "License changed: code is now GNU AGPLv3, translations and data are CC BY-NC-SA 4.0"
+      ],
+      "zh_tw": {
+        "headline": "修正與 WynnMod 同時使用時 lootrun 信標殘留",
+        "items": [
+          "裝了 WynnMod 時，結束 lootrun 後 WynnMod 的信標標記會正常清除（lootrun 開始、結束與挑戰的標題為了讓 WynnMod 辨識，保留英文）",
+          "授權改為：程式碼 GNU AGPLv3，翻譯與資料 CC BY-NC-SA 4.0"
+        ]
+      },
+      "zh_cn": {
+        "headline": "修复与 WynnMod 同时使用时 lootrun 信标残留",
+        "items": [
+          "安装 WynnMod 时，结束 lootrun 后 WynnMod 的信标标记会正常清除（lootrun 开始、结束与挑战的标题为了让 WynnMod 识别，保留英文）",
+          "许可证改为：代码 GNU AGPLv3，翻译与数据 CC BY-NC-SA 4.0"
+        ]
+      }
+    },
+    "0.2.0_7": {
+      "headline": "Dialogue lines that call you by your nickname are translated again",
+      "items": [
+        "The dialogue side panel now recognises your nickname, so lines that call you by name are translated",
+        "Your nickname is also recognised when a place name follows it in the same line"
+      ],
+      "zh_tw": {
+        "headline": "叫到你暱稱的台詞又能翻譯了",
+        "items": [
+          "對話小框也認得玩家暱稱，叫到你名字的台詞會正常翻譯",
+          "暱稱後面接著地名的台詞也認得出名字"
+        ]
+      },
+      "zh_cn": {
+        "headline": "叫到你昵称的台词又能翻译了",
+        "items": [
+          "对话小框也能识别玩家昵称，叫到你名字的台词会正常翻译",
+          "昵称后面接着地名的台词也能识别出名字"
+        ]
+      }
+    },
+    "0.2.0_6": {
+      "headline": "Boss bar names are translated, and Korean passes 50%",
+      "items": [
+        "The boss bar shown when you attack a mob now shows the translated name (follows the F6 nametag switch)",
+        "Korean translation now covers over half of the game: menus, items, abilities, NPCs, lootruns, raids and the first quests",
+        "Simplified Chinese, Japanese, Russian and Korean now include every entry added to Traditional Chinese recently",
+        "More translations: bank buttons, trade market prices, rank perks, consumable effects and quest lines"
+      ],
+      "zh_tw": {
+        "headline": "boss bar 名稱也會翻譯，韓文翻譯過半",
+        "items": [
+          "攻擊生物時畫面上方的 boss bar 顯示翻譯後的名稱（跟 F6 名牌翻譯開關）",
+          "韓文翻譯過半：介面、物品、技能、NPC、Lootrun、Raid 與前期任務",
+          "簡中、日文、俄文、韓文補上繁中近期新增的所有條目",
+          "補上語料：銀行按鈕、交易市場價格、階級福利、消耗品效果與任務訊息"
+        ]
+      },
+      "zh_cn": {
+        "headline": "boss bar 名称也会翻译，韩语翻译过半",
+        "items": [
+          "攻击生物时画面上方的 boss bar 显示翻译后的名称（跟随 F6 名牌翻译开关）",
+          "韩语翻译过半：界面、物品、技能、NPC、Lootrun、Raid 与前期任务",
+          "简中、日语、俄语、韩语补上繁中近期新增的所有条目",
+          "补充语料：银行按钮、交易市场价格、会员福利、消耗品效果与任务消息"
+        ]
+      }
+    },
+    "0.2.0_5": {
+      "headline": "Spanish is here, and held item names are translated again",
+      "items": [
+        "New language: Spanish (Español), including the F6 menu",
+        "Held item names are translated again when Wynntils shows them; the F6 switch is now on by default",
+        "After updating the mod, the translations bundled with the new version show up right away"
+      ],
+      "zh_tw": {
+        "headline": "新增西班牙文，手持物品名稱恢復翻譯",
+        "items": [
+          "新增語言：西班牙文（Español），F6 介面一併翻譯",
+          "Wynntils 顯示的手持物品名稱也會翻譯；F6 開關改為預設開啟",
+          "更新模組後，新版內建的譯文立即生效"
+        ]
+      },
+      "zh_cn": {
+        "headline": "新增西班牙语，手持物品名称恢复翻译",
+        "items": [
+          "新增语言：西班牙语（Español），F6 界面一并翻译",
+          "Wynntils 显示的手持物品名称也会翻译；F6 开关改为默认开启",
+          "更新模组后，新版内置的译文立即生效"
+        ]
+      }
+    },
+    "0.2.0_4": {
+      "headline": "Quest guide names, held item names and aspect sockets are translated",
+      "items": [
+        "Wynntils quest guide markers show the translated quest name",
+        "New F6 switch: translate the item name shown when you switch held items (off by default)",
+        "\"+ New Quest\" in level-up messages keeps its light grey colour",
+        "More translations: new Cook Assistant dialogue, locked and empty aspect sockets, class requirements on aspects, objective and quest item lines"
+      ],
+      "zh_tw": {
+        "headline": "任務指引、手持物品名稱與意象插槽也會翻譯",
+        "items": [
+          "Wynntils 任務指引的標記顯示翻譯後的任務名",
+          "F6 新增開關：切換手持物品時跳出的名稱也翻譯（預設關閉）",
+          "升級訊息裡的「+ 新任務」維持原本的淺灰色",
+          "補上語料：Cook Assistant 新對話、鎖定與空的意象插槽、意象的職業需求、目標與任務物品訊息"
+        ]
+      },
+      "zh_cn": {
+        "headline": "任务指引、手持物品名称与特质插槽也会翻译",
+        "items": [
+          "Wynntils 任务指引的标记显示翻译后的任务名",
+          "F6 新增开关：切换手持物品时弹出的名称也翻译（默认关闭）",
+          "升级消息里的「+ 新任务」保持原本的浅灰色",
+          "补充语料：Cook Assistant 新对话、锁定与空的特质插槽、特质的职业需求、目标与任务物品消息"
+        ]
+      }
+    },
+    "0.2.0_3": {
+      "headline": "Dialogue no longer freezes halfway",
+      "items": [
+        "Dialogue that starts like another line no longer stops on a half-translated or half-typed sentence"
+      ],
+      "zh_tw": {
+        "headline": "對話不再翻到一半卡住",
+        "items": [
+          "開頭跟其他台詞相同的對話，不再停在半句譯文或半句英文上"
+        ]
+      },
+      "zh_cn": {
+        "headline": "对话不再翻到一半卡住",
+        "items": [
+          "开头与其他台词相同的对话，不再停在半句译文或半句英文上"
+        ]
+      }
+    },
+    "0.2.0_2": {
+      "headline": "Tracker title and welcome message colours fixed",
+      "items": [
+        "The translated quest tracker title no longer shows as boxes",
+        "Multi-line chat messages keep each line's own colour (such as the Trade Market lines in the welcome message)"
+      ],
+      "zh_tw": {
+        "headline": "修正追蹤欄標題與歡迎訊息的顏色",
+        "items": [
+          "右上任務追蹤的標題翻譯後不再顯示成方格",
+          "多行的聊天訊息每一行保留原本的顏色（例如歡迎訊息底下的交易市場那兩行）"
+        ]
+      },
+      "zh_cn": {
+        "headline": "修正追踪栏标题与欢迎消息的颜色",
+        "items": [
+          "右上任务追踪的标题翻译后不再显示成方格",
+          "多行的聊天消息每一行保留原本的颜色（例如欢迎消息下方的交易市场那两行）"
+        ]
+      }
+    },
+    "0.2.0_1": {
+      "headline": "Quest tracker titles and dialogue choices are translated",
+      "items": [
+        "The first line of the top-right quest tracker (Quest – quest name) is translated too",
+        "Coloured dialogue choices such as \"About Strength.\" are translated in place",
+        "Dialogue no longer shows a literal \"{#}\" in some lines",
+        "More translations: ability unlock titles, unused skill point reminder, world event announcements"
+      ],
+      "zh_tw": {
+        "headline": "任務追蹤標題與對話選項也會翻譯",
+        "items": [
+          "右上任務追蹤的第一行（任務 – 任務名稱）也會翻譯",
+          "帶顏色的對話選項（例如「About Strength.」）可以就地翻譯",
+          "部分對話不再印出「{#}」",
+          "補上語料：技能解鎖標題、未使用屬性點提示、世界事件公告"
+        ]
+      },
+      "zh_cn": {
+        "headline": "任务追踪标题与对话选项也会翻译",
+        "items": [
+          "右上任务追踪的第一行（任务 – 任务名称）也会翻译",
+          "带颜色的对话选项（例如「About Strength.」）可以就地翻译",
+          "部分对话不再显示「{#}」",
+          "补充语料：技能解锁标题、未使用属性点提示、世界事件公告"
+        ]
+      }
+    },
+    "0.2.0": {
+      "headline": "The top-right tracker and objective bars can be translated in place",
+      "items": [
+        "New F6 setting for the quest tracker: replace in place, separate panel, or off",
+        "New F6 switch for the objective bars (Finish Quests, Gather Fish and so on)",
+        "Ability tree: names under \"Blocked by:\" are translated on unlocked nodes too",
+        "Russian item descriptions no longer show an empty box where a dash should be",
+        "More translations: quest dialogue, objective rows, dash and arrow bomb cost rows"
+      ],
+      "zh_tw": {
+        "headline": "右上的任務追蹤與目標進度條可以就地換成中文",
+        "items": [
+          "F6 新增任務追蹤三段設定：就地取代、另開面板、不翻譯",
+          "F6 新增目標進度條開關（完成任務、採集魚類那幾條）",
+          "技能樹：已解鎖節點底下「被以下技能阻擋」的技能名也會翻譯",
+          "俄文物品說明不再出現一個空方框",
+          "補上語料：任務對話、目標列、Dash 與箭矢炸彈的消耗"
+        ]
+      },
+      "zh_cn": {
+        "headline": "右上的任务追踪与目标进度条可以就地换成中文",
+        "items": [
+          "F6 新增任务追踪三段设置：就地替换、另开面板、不翻译",
+          "F6 新增目标进度条开关（完成任务、采集鱼类那几条）",
+          "技能树：已解锁节点底下「被以下技能阻挡」的技能名也会翻译",
+          "俄文物品说明不再出现一个空方框",
+          "补上语料：任务对话、目标列、Dash 与箭矢炸弹的消耗"
+        ]
+      }
+    },
+    "0.1.9_10": {
+      "headline": "The right-hand objectives can be translated too",
+      "items": [
+        "New F6 switch: daily objectives, world events, lootrun and party lines from the top-right column appear translated under the quest tracker",
+        "Ability tree: names under \"Blocked by:\" are translated on unlocked nodes too",
+        "Russian tooltips no longer show an empty box where a dash should be",
+        "More translations: dash and arrow bomb cost rows, spell cost rows"
+      ],
+      "zh_tw": {
+        "headline": "右上那一欄也翻得出來了",
+        "items": [
+          "F6 新增開關：每日目標、世界事件、Lootrun 與隊伍那幾行，譯文接在任務追蹤小框底下",
+          "技能樹：已解鎖節點底下「被以下技能阻擋」的技能名也會翻譯",
+          "俄文物品說明不再出現一個空方框",
+          "補上語料：Dash 與箭矢炸彈的消耗、法術消耗那幾列"
+        ]
+      },
+      "zh_cn": {
+        "headline": "右上那一栏也翻得出来了",
+        "items": [
+          "F6 新增开关：每日目标、世界事件、Lootrun 与队伍那几行，译文接在任务追踪小框底下",
+          "技能树：已解锁节点底下「被以下技能阻挡」的技能名也会翻译",
+          "俄文物品说明不再出现一个空方框",
+          "补上语料：Dash 与箭矢炸弹的消耗、法术消耗那几列"
+        ]
+      }
+    },
+    "0.1.9_9": {
+      "headline": "Dialogue settles as soon as a line ends",
+      "items": [
+        "A finished line no longer waits in English before switching to the translation",
+        "The translation panel no longer flickers while an NPC is typing",
+        "The answer list now appears and clears with the game's own, and holds still while you pick",
+        "Gathering-spot nameplates keep the original colours on every row",
+        "More translations: level-up and bank messages, two missing answers in Dearly Departed, cosmetic and mount-coat names"
+      ],
+      "zh_tw": {
+        "headline": "句子講完就馬上定案",
+        "items": [
+          "講完的句子不會再停在英文一下才跳成中文",
+          "小框模式在 NPC 打字途中不再閃爍",
+          "選項框跟著遊戲自己的選單出現與收起，挑選時不會抖動",
+          "採集點名牌每一行都保留原本的顏色",
+          "補上語料：升級與銀行訊息、音容宛在少收的兩個選項、外觀特效與坐騎毛色"
+        ]
+      },
+      "zh_cn": {
+        "headline": "句子讲完就马上定案",
+        "items": [
+          "讲完的句子不会再停在英文一下才跳成中文",
+          "小窗模式在 NPC 打字途中不再闪烁",
+          "选项框跟着游戏自己的菜单出现与收起，挑选时不会抖动",
+          "采集点名牌每一行都保留原本的颜色",
+          "补上语料：升级与银行消息、音容宛在少收的两个选项、外观特效与坐骑毛色"
+        ]
+      }
+    },
+    "0.1.9_8": {
+      "headline": "Dialogue no longer flickers between languages",
+      "items": [
+        "NPC dialogue no longer flashes another line's translation in the first few characters",
+        "A line stays translated once recognised instead of falling back to English",
+        "Dialogue cut short mid-sentence keeps the part already translated"
+      ],
+      "zh_tw": {
+        "headline": "對話不再中英閃爍",
+        "items": [
+          "NPC 對話開頭不會再閃出別句話的譯文",
+          "認出是哪一句之後就維持中文，不會中途掉回英文",
+          "對話講到一半被打斷時，已顯示的部分維持中文"
+        ]
+      },
+      "zh_cn": {
+        "headline": "对话不再中英闪烁",
+        "items": [
+          "NPC 对话开头不会再闪出别句话的译文",
+          "认出是哪一句之后就保持中文，不会中途掉回英文",
+          "对话讲到一半被打断时，已显示的部分保持中文"
+        ]
+      }
+    },
+    "0.1.9_7": {
+      "headline": "Upgrading over an old config folder is safe now",
+      "items": [
+        "Upgrading over an existing wynnchayuan folder no longer needs the folder deleted",
+        "Settings, captured strings and the translation cache are written atomically",
+        "Damaged files are set aside and rebuilt instead of being overwritten or lost",
+        "Downloaded translations are loaded on the main thread, avoiding hitches",
+        "Ability names are no longer split across rows or half-translated",
+        "Fixed an error that could happen while re-wrapping item descriptions",
+        "F6 settings such as the interface language now survive a restart"
+      ],
+      "zh_tw": {
+        "headline": "保留舊資料夾也能直接升級",
+        "items": [
+          "保留舊的 wynnchayuan 資料夾也能直接升級，不必刪除",
+          "設定檔、語料檔與譯文快取改為原子寫入",
+          "檔案損壞時改為另存備份並自動重建，不再覆蓋或遺失",
+          "同步譯文改為在主執行緒載入，避免卡頓",
+          "技能名稱不再因換行被拆開或只翻一半",
+          "修正物品說明重新排版時可能發生的錯誤",
+          "F6 的介面語言等設定重開遊戲後會保留"
+        ]
+      },
+      "zh_cn": {
+        "headline": "保留旧文件夹也能直接升级",
+        "items": [
+          "保留旧的 wynnchayuan 文件夹也能直接升级，不必删除",
+          "设置文件、语料文件与译文缓存改为原子写入",
+          "文件损坏时改为另存备份并自动重建，不再覆盖或丢失",
+          "同步译文改为在主线程载入，避免卡顿",
+          "技能名称不再因换行被拆开或只翻一半",
+          "修正物品说明重新排版时可能发生的错误",
+          "F6 的界面语言等设置重开游戏后会保留"
+        ]
+      }
+    },
+    "0.1.9_6": {
+      "headline": "No more automatic uploads; manual export in F6",
+      "items": [
+        "Removed automatic corpus sharing; the mod no longer uploads anything",
+        "New Export untranslated strings button and submission form link in the F6 Data tab",
+        "Exported files are filtered for player names and other personal data",
+        "Fixed Major ID descriptions staying untranslated on items",
+        "The update notice's download link now always points to GitHub Releases"
+      ],
+      "zh_tw": {
+        "headline": "移除自動上傳，改由 F6 手動匯出",
+        "items": [
+          "移除自動分享語料功能，模組不再上傳任何資料",
+          "F6「資料」分頁新增「匯出未翻譯字串」按鈕與回報表單連結",
+          "匯出的檔案會先過濾玩家名稱等個人資料",
+          "修正 Major ID 說明在物品上沒有翻譯的問題",
+          "更新提示的下載連結固定指向 GitHub Releases"
+        ]
+      },
+      "zh_cn": {
+        "headline": "移除自动上传，改为 F6 手动导出",
+        "items": [
+          "移除自动分享语料功能，模组不再上传任何数据",
+          "F6「数据」页新增「导出未翻译字符串」按钮与反馈表单链接",
+          "导出的文件会先过滤玩家名称等个人资料",
+          "修正 Major ID 说明在物品上没有翻译的问题",
+          "更新提示的下载链接固定指向 GitHub Releases"
+        ]
+      }
+    },
+    "0.1.9_5": {
+      "headline": "Lootrun boon layout and ability text formatting",
+      "items": [
+        "Better line breaks in Lootrun boon descriptions: values stay with their stat name",
+        "Underlines in ability descriptions no longer run into the following text",
+        "Only the translated name keeps the highlight colour in ability descriptions",
+        "Boon names that are also gear names are now translated in the boon menu"
+      ],
+      "zh_tw": {
+        "headline": "Lootrun 賜福排版與技能說明格式修正",
+        "items": [
+          "Lootrun 賜福說明換行優化，數值與屬性名保持在同一行",
+          "技能說明中的底線不再延伸到後面的敘述",
+          "帶顏色的技能名稱翻譯後，只有名稱本身上色",
+          "與裝備同名的賜福名稱在賜福選單中會翻譯"
+        ]
+      },
+      "zh_cn": {
+        "headline": "Lootrun 赐福排版与技能说明格式修正",
+        "items": [
+          "Lootrun 赐福说明换行优化，数值与属性名保持在同一行",
+          "技能说明中的下划线不再延伸到后面的叙述",
+          "带颜色的技能名称翻译后，只有名称本身上色",
+          "与装备同名的赐福名称在赐福菜单中会翻译"
+        ]
+      }
+    },
+    "0.1.9_4": {
+      "headline": "Tooltip and chat layout fixes",
+      "items": [
+        "Gear names in Item Guess lists are no longer translated",
+        "Wrapped descriptions that only partly have a translation stay in English as a whole",
+        "Coloured names inside ability descriptions are now translated",
+        "Lootrun summary columns line up and no longer wrap",
+        "Stat rows with the value first can now be translated",
+        "Attribute icons stay on the same line as their value",
+        "Column alignment fixed for Vibrant Beacon and other chat messages",
+        "\"to\" and \"tier\" between stat range values are now translated",
+        "Brackets keep the right colour when they share the label's colour"
+      ],
+      "zh_tw": {
+        "headline": "tooltip 與聊天欄排版修正",
+        "items": [
+          "物品猜測清單裡的裝備名稱不再被翻譯",
+          "跨行說明只有部分句子有譯文時整句維持原文，不再半中半英",
+          "技能說明中帶顏色的名稱會照詞表翻譯",
+          "Lootrun 結算面板兩欄對齊，不再換行",
+          "數值在前的屬性列可以翻譯",
+          "翻譯後屬性圖示與數值保持在同一行",
+          "璀璨信標等聊天訊息的欄位對齊修正",
+          "數值範圍中的「to」「tier」改為翻譯",
+          "括號與標籤同色時，翻譯後顏色保持正確"
+        ]
+      },
+      "zh_cn": {
+        "headline": "tooltip 与聊天栏排版修正",
+        "items": [
+          "物品猜测列表里的装备名称不再被翻译",
+          "跨行说明只有部分句子有译文时整句保持原文，不再中英混杂",
+          "技能说明中带颜色的名称会按词表翻译",
+          "Lootrun 结算面板两栏对齐，不再换行",
+          "数值在前的属性行可以翻译",
+          "翻译后属性图标与数值保持在同一行",
+          "璀璨信标等聊天消息的栏位对齐修正",
+          "数值范围中的“to”“tier”改为翻译",
+          "括号与标签同色时，翻译后颜色保持正确"
+        ]
+      }
+    },
+    "0.1.9_3": {
+      "headline": "Translated dialogue no longer switches back to English",
+      "items": [
+        "Translated dialogue no longer switches back to English halfway through",
+        "Russian: some King's Recruit lines adjusted so they fit the dialogue box"
+      ],
+      "zh_tw": {
+        "headline": "對話譯文不會再打到一半變回英文",
+        "items": [
+          "對話框的譯文不會再打到一半變回英文",
+          "俄文：King's Recruit 部分台詞調整，能完整顯示在對話框內"
+        ]
+      },
+      "zh_cn": {
+        "headline": "对话译文不会再打到一半变回英文",
+        "items": [
+          "对话框的译文不会再打到一半变回英文",
+          "俄文：King's Recruit 部分台词调整，能完整显示在对话框内"
+        ]
+      }
+    },
+    "0.1.9_2": {
+      "headline": "Translated text keeps the original colours; Russian added",
+      "items": [
+        "Translated text keeps the colour of each original segment: notes in parentheses, leading words, guild reward lists, Trade Market listing status and more",
+        "Russian: F6 menu, interface and ability tree",
+        "Russian quest dialogue uses the pixel font at the original position",
+        "Fixed numbers landing in the wrong place on some nameplates and chests",
+        "Added shared untranslated strings with Traditional Chinese translations",
+        "Updated the Archer Arrow Wall and Escape descriptions"
+      ],
+      "zh_tw": {
+        "headline": "譯文保留原文的顏色，新增俄文",
+        "items": [
+          "翻譯後的文字保留原文各段的顏色：括號註解、句首換色的詞、公會獎勵清單、交易市場掛單狀態等",
+          "新增俄文：F6 選單、介面、技能樹",
+          "俄文任務對話使用像素字型，位置與原文一致",
+          "修正部分 NPC 名牌與寶箱的數字接錯位置",
+          "收錄玩家分享回來的待譯字串，並補上繁體中文翻譯",
+          "弓手 Arrow Wall、Escape 的說明更新"
+        ]
+      },
+      "zh_cn": {
+        "headline": "译文保留原文的颜色，新增俄文",
+        "items": [
+          "翻译后的文字保留原文各段的颜色：括号注释、句首换色的词、公会奖励列表、交易市场挂单状态等",
+          "新增俄文：F6 菜单、界面、技能树",
+          "俄文任务对话使用像素字体，位置与原文一致",
+          "修正部分 NPC 名牌与宝箱的数字接错位置",
+          "收录玩家分享回来的待译字符串，并补上繁体中文翻译",
+          "弓手 Arrow Wall、Escape 的说明更新"
+        ]
+      }
+    },
+    "0.1.9_1": {
+      "headline": "The quest tracker panel can now be resized",
+      "items": [
+        "The quest tracker panel can be resized in the panel layout screen, like the dialogue and choice panels",
+        "Major ID descriptions now match the current in-game wording",
+        "Dungeon names and dungeon keys are translated",
+        "The Trade Market filter menu is translated",
+        "Japanese: ability trees, menus, store, lootruns, raids, quests, NPC nametags and more"
+      ],
+      "zh_tw": {
+        "headline": "任務追蹤面板可以調整大小",
+        "items": [
+          "面板位置調整畫面裡，任務追蹤跟 NPC 對話、對話選項一樣可以拉右下角改大小",
+          "Major ID 的說明更新成遊戲裡目前的寫法",
+          "地城名稱與地城鑰匙改為翻譯",
+          "交易市場的篩選選單已翻譯",
+          "日文：技能樹、選單、商店、Lootrun、討伐戰、任務、NPC 名牌等"
+        ]
+      },
+      "zh_cn": {
+        "headline": "任务追踪面板可以调整大小",
+        "items": [
+          "面板位置调整画面里，任务追踪跟 NPC 对话、对话选项一样可以拉右下角改大小",
+          "Major ID 的描述更新为游戏里目前的写法",
+          "地牢名称与地牢钥匙改为翻译",
+          "交易市场的筛选菜单已翻译",
+          "日文：技能树、菜单、商店、Lootrun、副本、任务、NPC 名牌等"
+        ]
+      }
+    },
+    "0.1.9": {
+      "headline": "Simplified Chinese no longer mixes in Traditional Chinese",
+      "items": [
+        "Lines that already have a Simplified Chinese translation no longer show the Traditional Chinese one",
+        "The fallback language is now updated together with your language when the game starts",
+        "Major ID descriptions that end in an icon and a number are now translated",
+        "Raid gambit descriptions are no longer split mid-sentence",
+        "Powder tooltips: the level line is now translated",
+        "The market's Name Contains filter keeps what you typed",
+        "More death, crate and bomb broadcasts are kept out of shared captures",
+        "German, Spanish and French are removed for now",
+        "Simplified Chinese: nameplates, NPC lines, gathering nodes, guilds, dungeons, raids, menus, discoveries, lootruns and the remaining quest dialogue",
+        "Traditional Chinese: lines from the latest shared captures"
+      ],
+      "zh_tw": {
+        "headline": "簡體中文不再混進繁體中文",
+        "items": [
+          "已有簡體中文譯文的句子，不再顯示繁體中文",
+          "進遊戲時，輔助語言的譯文也會跟著更新",
+          "結尾是圖示加數值的 Major ID 敘述，現在翻得出來",
+          "討伐戰賭注的敘述不再從句子中間斷開",
+          "粉末說明的等級那一行現在會翻譯",
+          "市集搜尋的「名稱包含」會保留你輸入的字",
+          "更多死亡、寶箱與炸彈的廣播不會被收進分享的字串",
+          "暫時移除德文、西班牙文與法文",
+          "簡體中文：名牌、NPC 台詞、採集點、公會、地城、討伐戰、選單、秘密發現、Lootrun 與其餘任務對話",
+          "繁體中文：補上最近分享的待譯字串"
+        ]
+      },
+      "zh_cn": {
+        "headline": "简体中文不再混进繁体中文",
+        "items": [
+          "已有简体中文译文的句子，不再显示繁体中文",
+          "进游戏时，辅助语言的译文也会跟着更新",
+          "结尾是图标加数值的 Major ID 描述，现在能翻译出来",
+          "副本赌注的描述不再从句子中间断开",
+          "粉末说明的等级那一行现在会翻译",
+          "市场搜索的「名称包含」会保留你输入的文字",
+          "更多死亡、宝箱与炸弹的广播不会被收进分享的字符串",
+          "暂时移除德语、西班牙语与法语",
+          "简体中文：名牌、NPC 台词、采集点、公会、地牢、副本、菜单、秘密发现、Lootrun 与其余任务对话",
+          "繁体中文：补上最近分享的待译字符串"
+        ]
+      }
+    },
+    "0.1.8": {
+      "headline": "Fewer lines falling back to English mid-conversation",
+      "items": [
+        "Lines that differ from the corpus only by quotes, ellipses, ending punctuation or letter case are now translated",
+        "captured.json now lists lines that are in the corpus but not yet translated, with how many times you saw each",
+        "The market search candidate list uses your theme colour",
+        "Market search no longer suggests quest names, places, NPCs or untradable items",
+        "Simplified Chinese: all quest dialogue is translated, plus the remaining weapon lore",
+        "Traditional Chinese: over a hundred more NPC nameplates, store offers and gathering nodes"
+      ],
+      "zh_tw": {
+        "headline": "對話翻到一半冒出英文的情況變少了",
+        "items": [
+          "原文只差引號、省略號、句尾標點或大小寫的句子，現在也翻得出來",
+          "captured.json 多了一段：語料裡有、但還沒翻的句子，以及各被看到幾次",
+          "市集搜尋的候選清單改用設定裡的主題色",
+          "市集搜尋不再列出任務、地點、NPC 名稱與不可交易的物品",
+          "簡體中文：任務對話全部翻完，另補齊武器敘述",
+          "繁體中文：補上一百多條 NPC 名牌、商城優惠與採集點"
+        ]
+      },
+      "zh_cn": {
+        "headline": "对话翻到一半冒出英文的情况变少了",
+        "items": [
+          "原文只差引号、省略号、句尾标点或大小写的句子，现在也翻得出来",
+          "captured.json 多了一段：语料里有、但还没翻的句子，以及各被看到几次",
+          "市场搜索的候选列表改用设置里的主题色",
+          "市场搜索不再列出任务、地点、NPC 名称与不可交易的物品",
+          "简体中文：任务对话全部翻完，另补齐武器描述",
+          "繁体中文：补上一百多条 NPC 名牌、商城优惠与采集点"
+        ]
+      }
+    },
+    "0.1.7": {
+      "headline": "Pick the item you mean in market search",
+      "items": [
+        "Trade market search: matching items are listed above the chat box as you type — pick one with ↑↓ and Tab, or click it",
+        "Simplified Chinese: many more quests' dialogue translated"
+      ],
+      "zh_tw": {
+        "headline": "市集搜尋可以自己挑是哪一個",
+        "items": [
+          "市集搜尋：打字時聊天框上方會列出符合的物品，用 ↑↓ 選、Tab 或點一下填入",
+          "簡體中文：再翻譯了大量任務對話"
+        ]
+      },
+      "zh_cn": {
+        "headline": "市场搜索可以自己挑是哪一个",
+        "items": [
+          "市场搜索：打字时聊天框上方会列出符合的物品，用 ↑↓ 选、Tab 或点一下填入",
+          "简体中文：又翻译了大量任务对话"
+        ]
+      }
+    },
+    "0.1.6_1": {
+      "headline": "Trade market search in every language",
+      "items": [
+        "Fixed trade market search not converting Simplified Chinese names",
+        "Names shown in ingredient pouches can now be searched in the trade market",
+        "Trade market search messages now follow the interface language",
+        "F9 no longer takes a screenshot when nothing on screen is translated",
+        "Fixed the layout of the three trade slot lines",
+        "Simplified Chinese: ingredient pouch names now match the item tooltips",
+        "Simplified Chinese: many more quests' dialogue translated"
+      ],
+      "zh_tw": {
+        "headline": "每種語言都能用市集搜尋了",
+        "items": [
+          "修正簡體中文在市集搜尋時沒有轉成英文",
+          "素材袋裡顯示的名字也能拿去市集搜尋",
+          "市集搜尋的提示訊息改成跟著介面語言",
+          "F9 在畫面上沒有譯文時不再截圖",
+          "修正交易槽位三行文字的排版",
+          "簡體中文：素材袋裡的名字與物品說明一致",
+          "簡體中文：再翻譯了大量任務對話"
+        ]
+      },
+      "zh_cn": {
+        "headline": "每种语言都能用市场搜索了",
+        "items": [
+          "修正简体中文在市场搜索时没有转成英文",
+          "素材袋里显示的名字也能拿去市场搜索",
+          "市场搜索的提示消息改成跟着界面语言",
+          "F9 在画面上没有译文时不再截图",
+          "修正交易槽位三行文字的排版",
+          "简体中文：素材袋里的名字与物品说明一致",
+          "简体中文：又翻译了大量任务对话"
+        ]
+      }
+    },
+    "0.1.6": {
+      "headline": "Resize the dialogue box yourself",
+      "items": [
+        "F6 → Adjust panel positions: drag the bottom-right corner of the dialogue and choice boxes to resize them",
+        "Death notices, level-up broadcasts and guild hall signs are no longer collected",
+        "Half-typed lines from the typewriter animation are no longer collected",
+        "Removed corpus entries that carried other players' names",
+        "Traditional Chinese: quest dialogue is complete, plus NPC nameplates, area discoveries and shop messages",
+        "Simplified Chinese: aspect descriptions, The Legend of Bob, 969 ingredient names, accessory and armour lore",
+        "Simplified Chinese: the item roll weighting is now called 词缀"
+      ],
+      "zh_tw": {
+        "headline": "對話框大小可以自己拉了",
+        "items": [
+          "F6 →「調整面板位置」：拉對話框與選項框的右下角就能改大小",
+          "死亡快訊、升等廣播與公會大廳招牌不再被收集",
+          "打字機動畫打到一半的半句不再被收集",
+          "移除語料裡夾帶別人名字的條目",
+          "繁體中文：任務對話全部翻完，另有 NPC 名牌、地區發現與商店訊息",
+          "簡體中文：意象敘述、Bob 的傳說、969 個材料名、飾品與護甲的敘述",
+          "簡體中文：詞條權重改稱「词缀」"
+        ]
+      },
+      "zh_cn": {
+        "headline": "对话框大小可以自己拉了",
+        "items": [
+          "F6 →「调整面板位置」：拉对话框与选项框的右下角就能改大小",
+          "死亡快讯、升级广播与公会大厅招牌不再被收集",
+          "打字机动画打到一半的半句不再被收集",
+          "移除语料里夹带他人名字的条目",
+          "繁体中文：任务对话全部翻完，另有 NPC 名牌、地区发现与商店消息",
+          "简体中文：特质说明、Bob 的传说、969 个材料名、饰品与护甲的说明",
+          "简体中文：词条权重改称「词缀」"
+        ]
+      }
+    },
+    "0.1.5_3": {
+      "headline": "Fewer repeat uploads, and the element colour on skill points",
+      "items": [
+        "The corpus collector no longer re-sends lines it has already collected",
+        "Island visitor notices and eight kinds of death broadcast are no longer collected",
+        "Fixed the skill point tooltip colouring the whole \"Earth damage\" instead of just the element",
+        "Fixed quest lines that were translated but still showed in English",
+        "Traditional Chinese: trade market filters, system messages, dungeon narration, lootrun trials and guild territory upgrades",
+        "Traditional Chinese: the Shaman ability tree, from the translation team",
+        "Simplified Chinese: Major IDs, crafting materials, tomes, charms and aspects"
+      ],
+      "zh_tw": {
+        "headline": "語料收集不再重複送，技能點的元素色也修好了",
+        "items": [
+          "語料收集不再重複送出已經收過的句子",
+          "住宅島的訪客通知與八種死亡廣播不再被收集",
+          "修正技能點說明把整串「地屬性傷害」染成元素色，原文只有元素名是有顏色的",
+          "修正部分任務對話明明翻好了卻顯示英文",
+          "繁體中文：交易所篩選器、系統訊息、地城旁白、掠奪的試煉、公會領地升級",
+          "繁體中文：薩滿技能樹，來自翻譯團隊",
+          "簡體中文：Major ID、加工材料、書卷、護符、意象"
+        ]
+      },
+      "zh_cn": {
+        "headline": "语料收集不再重复送，技能点的元素色也修好了",
+        "items": [
+          "语料收集不再重复送出已经收过的句子",
+          "住宅岛的访客通知与八种死亡广播不再被收集",
+          "修正技能点说明把整串「土属性伤害」染成元素色，原文只有元素名是有颜色的",
+          "修正部分任务对话明明翻好了却显示英文",
+          "繁体中文：交易所筛选器、系统消息、副本旁白、掠夺的试炼、公会领地升级",
+          "繁体中文：萨满技能树，来自翻译团队",
+          "简体中文：Major ID、加工材料、书卷、护符、意象"
+        ]
+      }
+    },
+    "0.1.5_2": {
+      "headline": "Japanese and Korean item labels, and Simplified Chinese Major IDs",
+      "items": [
+        "Japanese and Korean: item tooltip labels and Major IDs",
+        "Simplified Chinese: Major IDs",
+        "Traditional Chinese: gathering nodes, cave boards, loot chests, store offers and raid buff panels",
+        "Added Japanese and Korean dialogue fonts",
+        "Fixed a quest line showing a stray bold tag in the dialogue box",
+        "The mob totem expiry broadcast is no longer collected"
+      ],
+      "zh_tw": {
+        "headline": "日文與韓文的物品欄位，簡體中文的 Major ID",
+        "items": [
+          "日文與韓文：物品說明的欄位標籤與 Major ID",
+          "簡體中文：Major ID",
+          "繁體中文：採集點、洞窟看板、戰利品寶箱、商城優惠與討伐戰的增益面板",
+          "新增日文與韓文的對話字型",
+          "修正任務對話裡多出來的粗體標籤",
+          "怪物圖騰到期的廣播不再被收集"
+        ]
+      },
+      "zh_cn": {
+        "headline": "日文与韩文的物品栏位，简体中文的 Major ID",
+        "items": [
+          "日文与韩文：物品说明的栏位标签与 Major ID",
+          "简体中文：Major ID",
+          "繁体中文：采集点、洞窟看板、战利品宝箱、商城优惠与副本的增益面板",
+          "新增日文与韩文的对话字体",
+          "修正任务对话里多出来的粗体标签",
+          "怪物图腾到期的广播不再被收集"
+        ]
+      }
+    },
+    "0.1.5_1": {
+      "headline": "Update notices now point at GitHub",
+      "items": [
+        "The update notice and the download button link to GitHub instead of CurseForge",
+        "Traditional Chinese: NPC nameplates, cave signs, loot chests and the trade market — about 2,600 lines",
+        "Removed corpus entries that carried other players' names: guild-hall signs, guild territory owners, trade-market search text and raid death broadcasts"
+      ],
+      "zh_tw": {
+        "headline": "版本更新改以 GitHub 為主",
+        "items": [
+          "更新提示與下載按鈕改連到 GitHub，不再是 CurseForge",
+          "繁體中文：NPC 名牌、洞窟立牌、戰利品寶箱與交易市場，約 2,600 條",
+          "移除語料裡夾帶別人名字的條目：公會大廳立牌、公會領地、交易所搜尋字、討伐戰死亡廣播"
+        ]
+      },
+      "zh_cn": {
+        "headline": "版本更新改以 GitHub 为主",
+        "items": [
+          "更新提示与下载按钮改为链接到 GitHub，不再是 CurseForge",
+          "繁体中文：NPC 名牌、洞窟立牌、战利品宝箱与交易市场，约 2,600 条",
+          "移除语料里夹带他人名字的条目：公会大厅立牌、公会领地、交易所搜索字、副本死亡广播"
+        ]
+      }
+    },
+    "0.1.5": {
+      "headline": "Japanese and Korean settings screens, and the Shift prompt is back",
+      "items": [
+        "The settings screen has its own language setting — Japanese and Korean are selectable now",
+        "Fixed the \"press SHIFT\" prompt vanishing in Simplified Chinese",
+        "Collection now measures gaps against Traditional Chinese, not your display language",
+        "Simplified Chinese: the Warrior ability tree — all five trees are done",
+        "Fixed the damage breakdown row showing the wrong label"
+      ],
+      "zh_tw": {
+        "headline": "日文與韓文的設定畫面；SHIFT 提示回來了",
+        "items": [
+          "設定畫面多了自己的語言設定，日文與韓文現在選得到",
+          "修正簡體中文的「按 SHIFT 繼續」提示消失",
+          "收集缺口改以繁體中文為準，不再跟著你的顯示語言跑",
+          "簡體中文：戰士技能樹，五棵樹全部翻完",
+          "修正傷害細項那一列顯示錯誤的標籤"
+        ]
+      },
+      "zh_cn": {
+        "headline": "日文与韩文的设置界面；SHIFT 提示回来了",
+        "items": [
+          "设置界面多了自己的语言设置，日文与韩文现在选得到",
+          "修正简体中文的「按 SHIFT 继续」提示消失",
+          "收集缺口改以繁体中文为准，不再跟着你的显示语言跑",
+          "简体中文：战士技能树，五棵树全部翻完",
+          "修正伤害细项那一行显示错误的标签"
+        ]
+      }
+    },
+    "0.1.4_1": {
+      "headline": "Simplified Chinese was showing Traditional on long lines",
+      "items": [
+        "Fixed long sentences falling back to Traditional even where Simplified had a translation",
+        "Done now applies a language you picked but had not applied yet",
+        "Right-click a setting to go back to the previous option"
+      ],
+      "zh_tw": {
+        "headline": "簡體的長句會顯示繁體",
+        "items": [
+          "修正簡體已經翻好的長句卻顯示繁體",
+          "選了語言還沒按套用時，按「完成」會順手套用",
+          "設定項目按右鍵可以回到上一個選項"
+        ]
+      },
+      "zh_cn": {
+        "headline": "简体的长句会显示繁体",
+        "items": [
+          "修正简体已经翻好的长句却显示繁体",
+          "选了语言还没按应用时，按「完成」会顺手应用",
+          "设置项按右键可以回到上一个选项"
+        ]
+      }
+    },
+    "0.1.4": {
+      "headline": "Pick a language, then apply it",
+      "items": [
+        "Switching translation language now waits for Apply, and shows how many files are left",
+        "The Items tab showed a raw key instead of \"Panel screenshot\"",
+        "The changelog screen no longer draws its scroll hint on top of the buttons",
+        "Added Japanese and Korean for the mod's own settings screen",
+        "Simplified Chinese: the Archer ability tree, and mainland wording for professions",
+        "The README now estimates how many lines there are in total, not just how many we have"
+      ],
+      "zh_tw": {
+        "headline": "語言選好再按套用",
+        "items": [
+          "切換譯文語言改成按過套用才換，過程中會顯示還剩幾個檔",
+          "物品分頁那一列顯示的是鍵名，不是「譯文截圖」",
+          "更新說明底下的捲動提示不再壓在按鈕上",
+          "新增日文與韓文的設定畫面",
+          "簡體中文：弓手技能樹，以及生活技能等用詞的在地化",
+          "README 多了一張表，寫出全部大概有多少句，不只是已經收到多少"
+        ]
+      },
+      "zh_cn": {
+        "headline": "语言选好再按应用",
+        "items": [
+          "切换译文语言改成按过应用才换，过程中会显示还剩几个文件",
+          "物品页那一行显示的是键名，而不是「译文截图」",
+          "更新说明底下的滚动提示不再压在按钮上",
+          "新增日文与韩文的设置界面",
+          "简体中文：弓手技能树，以及生活技能等用词的本地化",
+          "README 多了一张表，写出全部大概有多少句，不只是已经收到多少"
+        ]
+      }
+    },
+    "0.1.3_1": {
+      "headline": "World event names in the tracker, and a tighter privacy filter",
+      "items": [
+        "World event names in the tracker are translated — all 70 events, in every countdown format",
+        "Added the chat lines and shop-booth screens collected this week",
+        "The privacy filter now catches four kinds of message that were slipping player names through",
+        "Simplified Chinese: the Archer ability tree"
+      ],
+      "zh_tw": {
+        "headline": "世界事件在追蹤框裡有中文名了，個資濾網補了四類",
+        "items": [
+          "追蹤框裡的世界事件名稱翻好了——七十個活動、三種倒數格式全部補齊",
+          "補上這週收到的聊天訊息與市集攤位視窗",
+          "個資濾網補上四類先前會漏掉玩家名字的訊息",
+          "簡體中文：弓手技能樹"
+        ]
+      },
+      "zh_cn": {
+        "headline": "世界事件在追踪框里有中文名了，隐私过滤补了四类",
+        "items": [
+          "追踪框里的世界事件名称翻好了——七十个活动、三种倒计时格式全部补齐",
+          "补上这周收到的聊天消息与集市摊位界面",
+          "隐私过滤补上四类此前会漏掉玩家名字的消息",
+          "简体中文：弓手技能树"
+        ]
+      }
+    },
+    "0.1.0": {
+      "headline": "第一個對外的 Beta 版本",
+      "items": [
+        "版本號重新從 0.1.0 起算，之前的 1.x 是開發期的內部編號",
+        "新增「分享給翻譯團隊」：你玩到而模組還沒翻到的句子會送回來，整理進語料之後所有人都看得到（預設開啟，F6 可關）",
+        "分享的只有遊戲自己的英文字；不含帳號、座標，也不含公會／隊伍／喊話",
+        "修正任務完成橫幅的左中括號變成白色"
+      ]
+    },
+    "0.1.1": {
+      "headline": "Simplified Chinese, and the settings screen now speaks your language",
+      "items": [
+        "The F6 settings, credits and changelog screens are translated — English, 繁體中文 and 简体中文, following your Minecraft language",
+        "Simplified Chinese: 974 interface strings translated (tooltips, menus, ability tree, aspects, guild, trade market)",
+        "F6 → Data → Translation language switches the translations without restarting the game",
+        "Fixed: a language with partial translations fell back to English instead of Traditional Chinese",
+        "Fixed: pressing Reload dropped the fallback layer"
+      ],
+      "zh_tw": {
+        "headline": "簡體中文，以及設定畫面會說你的語言了",
+        "items": [
+          "F6 設定、貢獻者、更新說明三個畫面都翻了——英文、繁體中文、簡體中文，跟著你的 Minecraft 語言走",
+          "簡體中文：介面字串翻好 974 條（物品說明、選單、技能樹、意象、公會、交易市場）",
+          "F6 →「資料」→「譯文語言」可以直接換譯文，不用重開遊戲",
+          "修正：某個語言只翻了一部分時，沒翻到的地方會掉成英文而不是繁體中文",
+          "修正：按「重新載入」之後墊底那一層會不見"
+        ]
+      },
+      "zh_cn": {
+        "headline": "简体中文，以及设置界面会说你的语言了",
+        "items": [
+          "F6 设置、贡献者、更新说明三个界面都翻了——英文、繁体中文、简体中文，跟着你的 Minecraft 语言走",
+          "简体中文：界面字符串翻好 974 条(物品说明、菜单、技能树、意象、公会、交易市场)",
+          "F6 →「数据」→「译文语言」可以直接换译文，不用重开游戏",
+          "修正：某个语言只翻了一部分时，没翻到的地方会掉成英文而不是繁体中文",
+          "修正：按「重新加载」之后垫底那一层会不见"
+        ]
+      }
+    },
+    "0.1.2": {
+      "headline": "Pick what to fall back to, and a cleaner Simplified Chinese",
+      "items": [
+        "F6 → Data → Fallback language: choose what to show where a language has nothing yet — auto, the original English, or any other language",
+        "Simplified Chinese: another 704 interface strings (ability tree labels, NPC nameplates, item lore, powders)",
+        "Simplified Chinese wording cleaned of Traditional-Chinese habits; a check now guards against them",
+        "The mods list entry is bilingual"
+      ],
+      "zh_tw": {
+        "headline": "沒翻到的地方看什麼由你決定，簡中也清乾淨了",
+        "items": [
+          "F6 →「資料」→「輔助語言」：某一種語言還沒翻到的地方要顯示什麼——自動、英文原文，或任何一種其他語言",
+          "簡體中文再翻 704 條（技能樹標籤、NPC 名牌、物品說明、粉末）",
+          "簡中用詞清掉繁中直譯的痕跡，並加了檢查擋在 CI 上",
+          "模組列表裡的介紹改成雙語"
+        ]
+      },
+      "zh_cn": {
+        "headline": "没翻到的地方看什么由你决定，简中也清干净了",
+        "items": [
+          "F6 →「数据」→「辅助语言」：某种语言还没翻到的地方要显示什么——自动、英文原文，或任何一种其他语言",
+          "简体中文再翻 704 条(技能树标签、NPC 名牌、物品说明、粉末)",
+          "简中用词清掉繁中直译的痕迹，并加了检查挡在 CI 上",
+          "模组列表里的介绍改成双语"
+        ]
+      }
+    },
+    "0.1.2_1": {
+      "headline": "Simplified Chinese ability trees, clearer corpus collection",
+      "items": [
+        "Simplified Chinese: mage ability tree and the shared ability entries",
+        "captured.json now writes the quest, the speaker and the line number as their own fields",
+        "Lines we cannot place go under their own heading instead of being filed under a guess",
+        "Strings other mods read are no longer collected",
+        "The mods list entry is in English"
+      ],
+      "zh_tw": {
+        "headline": "簡中的技能樹，語料收集的分類",
+        "items": [
+          "簡體中文：法師技能樹與共用的技能條目",
+          "captured.json 多了 quest／speaker／line 三欄",
+          "認不出歸屬的句子單獨一堆，不再塞進某一類",
+          "別的模組會讀的字串不再收集",
+          "模組列表的介紹改成英文"
+        ]
+      },
+      "zh_cn": {
+        "headline": "简中的技能树，语料收集的分类",
+        "items": [
+          "简体中文：法师技能树与共用的技能条目",
+          "captured.json 多了 quest／speaker／line 三栏",
+          "认不出归属的句子单独一堆，不再塞进某一类",
+          "别的模组会读的字符串不再收集",
+          "模组列表的介绍改成英文"
+        ]
+      }
+    },
+    "0.1.3": {
+      "headline": "The tracker says what it is tracking",
+      "items": [
+        "The tracker heading now matches what is being tracked — World Event, Cave, Raid and so on, instead of always saying Quest",
+        "Long tracker text wraps instead of running off the screen",
+        "The changelog screen shows one box per version",
+        "The settings screen follows the translation language you pick in F6"
+      ],
+      "zh_tw": {
+        "headline": "追蹤框會說清楚它在追什麼",
+        "items": [
+          "追蹤框的抬頭照實際追蹤的東西顯示——世界事件、洞窟、討伐戰等等，不再一律寫「進行中的任務」",
+          "追蹤框的長句子會自動換行，不再畫出螢幕外",
+          "更新說明改成一版一個方框",
+          "設定畫面會跟著 F6 選的譯文語言走"
+        ]
+      },
+      "zh_cn": {
+        "headline": "追踪框会说清楚它在追什么",
+        "items": [
+          "追踪框的标题按实际追踪的东西显示——世界事件、洞窟、副本等等，不再一律写「进行中的任务」",
+          "追踪框的长句子会自动换行，不再画出屏幕外",
+          "更新说明改成一版一个方框",
+          "设置界面会跟着 F6 选的译文语言走"
+        ]
+      }
+    }
   }
- }
 }
