@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23947,
-  "translated": 23597,
+  "count": 23954,
+  "translated": 23604,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -166791,7 +166791,7 @@
   },
   "The Canyon Guides#057": {
    "src": "...He did not really guide himself here. Did he.",
-   "dst": "…彼は自力でここまで来たのではありませんね。そうでしょう。",
+   "dst": "…彼は自力で来たのではありませんね。恐らく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -166848,6 +166848,76 @@
    "stage": "Stage 7",
    "speaker": "Gana",
    "source": "wiki"
+  },
+  "The Canyon Guides#063": {
+   "src": "Maybe you think anything's possible for you since you're a soldier, but I'm just a guy from {p}! I hardly know anything about the canyon outside of what the brochures say!",
+   "dst": "「兵士だから何でもできる」なんて思っているかもしれないけど、俺はただの{p}出身の男に過ぎないんだ！パンフレットに書いてあること以外、その峡谷についてはほとんど何も知らないんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured.json"
+  },
+  "The Canyon Guides#064": {
+   "src": "Seluc hides in a camp northeast of here, atop the cliffs.",
+   "dst": "Selucは、ここから北東にあるキャンプの、崖の上で身を潜めている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Gana",
+   "source": "captured.json"
+  },
+  "The Canyon Guides#065": {
+   "src": "We ask you to guide Seluc to us. If you wish to help, you will be rewarded for your time.",
+   "dst": "Selucを私たちのところへ案内して貰えれば、対価をお支払いします。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Gana",
+   "source": "captured.json"
+  },
+  "The Canyon Guides#066": {
+   "src": "Now that you have the coat, you should return to Seluc",
+   "dst": "Selucを手に入れたから、Selucのもとへ戻ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Canyon Guides#067": {
+   "src": "Seluc doesn't seem to be here any more. Maybe he's moved further.",
+   "dst": "Selucはもうここにはいないようだ。どこか遠い所に行ったのかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Canyon Guides#068": {
+   "src": "Should you tell Gana the truth?",
+   "dst": "Ganaに真実を伝えるべき？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Canyon Guides#069": {
+   "src": "As thanks, we will also grant you access to the Bantisu Air Boosters found around the canyon. I hope they are of assistance to you.",
+   "dst": "感謝のしるしとして、峡谷のあちこちに設置されているBantisu Air Boosterもご利用いただけるようにいたします。お役に立てれば幸いです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "captured.json"
   },
   "The Corrupted Village#000": {
    "src": "Did you do what I asked? No? Check your content book.",
