@@ -260,8 +260,10 @@ public final class ChatColourTest {
         check("結算抽數列翻得出來", stat != null);
         if (stat != null) {
             String zh = stat.getString();
+            // 問「英文還在不在」，不要釘中文措辭：Pull 的譯名 2026-09-28 從
+            // 「獎勵抽數」改成「結算獎勵」，原本釘措辭的斷言就整支紅了。
             check("兩欄都換成中文（實際 " + zh + "）",
-                    zh.contains("次獎勵抽數") && zh.contains("經過時間"));
+                    !zh.contains("Reward Pulls") && !zh.contains("Time Elapsed"));
             Integer number = colourOf(List.of(stat), "31");
             check("數字自己保住水藍（拿到 " + hex(number) + "）",
                     number != null && number == CYAN);

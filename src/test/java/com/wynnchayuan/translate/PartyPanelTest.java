@@ -119,10 +119,12 @@ public final class PartyPanelTest {
                 "Once you reach 10 Challenges",
                 "completed during your",
                 "Lootrun, gain +500 Health"}, "挑戰");
+        // 探針別挑正在動的術語：Pull 的譯名 2026-09-28 從「抽數」改成「結算獎勵」，
+        // 原本釘「抽數」的兩條就整支紅了。挑句子裡不會被術語 PR 動到的那個動詞。
         block(store, "獻祭儀式", new String[] {
                 "After finishing a Challenge,",
                 "consume 1 Pull to gain +2",
-                "Challenges."}, "抽數");
+                "Challenges."}, "消耗");
         block(store, "開始條件", new String[] {
                 "In order to start a",
                 "Lootrun you need to",
@@ -181,7 +183,7 @@ public final class PartyPanelTest {
         block(store, "獻祭越多保留越多", new String[] {
                 "A higher amount of sacrifices",
                 "increases the amount of pulls",
-                "saved for your next run"}, "抽數");
+                "saved for your next run"}, "保留");
         block(store, "關閉寶箱", new String[] {
                 "By closing your chest",
                 "inside of it will be lost"}, "寶箱");

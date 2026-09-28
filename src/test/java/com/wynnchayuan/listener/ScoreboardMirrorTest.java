@@ -41,10 +41,46 @@ public final class ScoreboardMirrorTest {
         check("認不出來的類別名照抄", ScoreboardListener.mirrors("SomethingNewPart"));
         check("拿不到類別名時照抄", ScoreboardListener.mirrors(null));
 
+        extras();
+
         System.out.println(failures == 0
                 ? "記分板分段：全部通過" : "記分板分段：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
+        }
+    }
+
+    /**
+     * 收進來的那幾段<b>畫不畫</b>，看的是 F6 的「Wynntils 介面」。
+     *
+     * <h2>實機回報（2026-09-28，第二次）</h2>
+     * 擋掉 Lootrun 之後，換成隊伍那一段：同一份「队伍：[Lv. 715]」連同六個成員，
+     * 一份在我們的面板裡、一份在右邊的記分板。開著 Wynntils 介面時，那一欄早就
+     * 被 {@code WynntilsFontMixin} 換成中文了（那條路只看 wynntilsUi，不看
+     * trackerMode），所以面板再畫一份一定是重複——不分是哪一段。
+     *
+     * <p>關掉的時候沒有別人會翻那一欄，那才是這個面板存在的理由，照舊要畫。
+     */
+    private static void extras() {
+        try {
+            java.nio.file.Path dir = java.nio.file.Files.createTempDirectory("wcy-extras");
+            com.wynnchayuan.CollectorConfig on =
+                    new com.wynnchayuan.CollectorConfig(dir.resolve("on.json"));
+            check("預設就是開著 Wynntils 介面", on.wynntilsUi());
+            check("★ 開著時不補那幾段（不然隊伍清單會出現兩次）",
+                  !com.wynnchayuan.render.TrackerOverlay.showsExtras(on));
+
+            java.nio.file.Path off = dir.resolve("off.json");
+            java.nio.file.Files.writeString(off, "{\"wynntilsUi\": false}");
+            com.wynnchayuan.CollectorConfig closed =
+                    new com.wynnchayuan.CollectorConfig(off);
+            check("關掉之後讀得到 false", !closed.wynntilsUi());
+            check("★ 關掉時照補（沒有別人會翻那一欄）",
+                  com.wynnchayuan.render.TrackerOverlay.showsExtras(closed));
+
+            check("拿不到設定時不補", !com.wynnchayuan.render.TrackerOverlay.showsExtras(null));
+        } catch (Exception e) {
+            check("測試自己跑得起來（" + e + "）", false);
         }
     }
 
