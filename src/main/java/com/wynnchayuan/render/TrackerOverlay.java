@@ -107,10 +107,14 @@ public final class TrackerOverlay {
     }
 
     /**
-     * 右上那一欄的其他段落（每日目標、世界事件、Lootrun、團隊）。
+     * 右上那一欄的其他段落（每日目標、公會目標、團隊、公會戰）。
      *
      * <p>由 {@link com.wynnchayuan.listener.ScoreboardListener} 餵進來，
      * 接在追蹤中的任務底下畫成同一個框——那一欄在遊戲裡本來就是同一塊。
+     *
+     * <p>Lootrun 那一段<b>不在這裡</b>：它有自己的記分板與疊層，抄過來只是
+     * 同一件事出現兩次，而且它夠長，會把上半部的任務擠掉。
+     * 見 {@link com.wynnchayuan.listener.ScoreboardListener#mirrors}。
      */
     private static volatile List<Component> extras = List.of();
 
