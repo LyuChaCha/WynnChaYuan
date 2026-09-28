@@ -513,6 +513,27 @@ public final class DialogueRewriter {
      *              （9 像素）去量會少算一成，於是每一行都塞得比框還寬，畫出來就溢出。
      */
     static List<String> wrap(String text, int rows, Style style, int limit) {
+        List<String> out = wrap(text, rows, style, limit, true);
+        if (out != null) {
+            return out;
+        }
+        // 避頭尾（見 {@link #kinsoku}）把斷點往前挪，每一行因此少放幾個字。
+        // 原本剛好攤得進去的句子可能就攤不進去了——而攤不進去的代價不是
+        // 排版難看，是<b>整句掉回英文</b>（呼叫端那一關直接 drop）。
+        //
+        // 玩家看到的是「中文打到最後一幀忽然變回英文」：打字打到一半時譯文
+        // 只出來前面一截，那一截塞得下；最後一幀才輪到完整譯文，於是就在
+        // 講完的那一刻整句跳掉。issue #864。
+        //
+        // 排版好看是加分，整句變英文是減分。塞不下的時候就不做避頭尾。
+        return wrap(text, rows, style, limit, false);
+    }
+
+    /**
+     * @param kinsoku 要不要做避頭尾。塞不下時上面那一支會關掉它再試一次。
+     */
+    static List<String> wrap(String text, int rows, Style style, int limit,
+                             boolean kinsoku) {
         List<String> out = new ArrayList<>(rows);
         int at = 0;
         for (int row = 0; row < rows; row++) {
@@ -551,7 +572,9 @@ public final class DialogueRewriter {
                     cut = last;                // 整行就是一個長字，只好斷在空白
                 }
             }
-            cut = kinsoku(text, at, cut);
+            if (kinsoku) {
+                cut = kinsoku(text, at, cut);
+            }
             out.add(text.substring(at, cut).stripTrailing());
             at = cut < text.length() && text.charAt(cut) == ' ' ? cut + 1 : cut;
         }
@@ -1701,9 +1724,25 @@ public final class DialogueRewriter {
                         : original.withFont(pair)));
     }
 
+    /**
+     * 測試用的量寬度替身。
+     *
+     * <p>測試裡沒有 Minecraft，下面那一支只好退回「一個字元 6px」——對英文
+     * 差不多，但中日韓實機是<b>一個字 10px</b>，中英混排的句子會被量歪四成：
+     * 譯文裡留著的英文名字（{@code Corrupter of World Cave}）會被當成中文那樣寬，
+     * 於是量出一堆根本不存在的「塞不下」。
+     *
+     * <p>要量「譯文塞不塞得進原文佔的行數」就非得有真的字寬不可，
+     * 所以留一個替身給 {@code DialogueFitAudit}。實機永遠不會走到這一行。
+     */
+    static java.util.function.ToIntFunction<String> widthForTest;
+
     private static int width(String text) {
         Minecraft mc = Minecraft.getInstance();
-        return mc == null ? text.length() * 6 : mc.font.width(text);
+        if (mc != null) {
+            return mc.font.width(text);
+        }
+        return widthForTest != null ? widthForTest.applyAsInt(text) : text.length() * 6;
     }
 
     /** 帶樣式量寬度——圖示的寬度要照它<b>原本的字型</b>算，不是預設字型。 */
