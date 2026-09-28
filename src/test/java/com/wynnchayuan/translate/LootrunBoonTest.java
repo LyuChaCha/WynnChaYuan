@@ -40,6 +40,7 @@ public final class LootrunBoonTest {
         heavensent(store);
         rewrapColour(store);
         heavensentElemental(store);
+        missionReward(store);
         corpusBoons();
 
         System.out.println(failures == 0
@@ -349,6 +350,111 @@ public final class LootrunBoonTest {
                       mc(out.get(r)) <= widest);
             }
         }
+    }
+
+    /**
+     * 使命卡的獎勵敘述：原文白灰混排，譯文自己標了 {@code {cN}}，兩個顏色都要貼對。
+     *
+     * <h2>實機回報（2026-09-28，靛藍路線的獎勵那段）</h2>
+     * <pre>
+     *   白 「Purple and Blue Beacons 」  灰 「are」
+     *   灰 「obscured, but will always be」
+     *   白 「Greatly Empowered.」
+     * </pre>
+     *
+     * 白的 42 個字、灰的 31 個字，底色由 {@code dominantStyle} 按字數投票——白贏，
+     * 於是該灰的敘述整段變白。中文比英文短，三行折成兩行，{@code wholeLineAccents}
+     * 行數對不上就讓開，救不了；只剩譯文自己寫 {@code {cN}} 這條路。
+     *
+     * <h2>不寫死措辭</h2>
+     * 期望的字直接從語料的 {@code {cN}} 分段切出來：翻譯團隊改譯法時這條不該跟著紅，
+     * 它要盯的是「c1 那幾段是白的、c2 那幾段是灰的」。
+     */
+    private static void missionReward(TranslationStore store) {
+        System.out.println("=== 使命獎勵（白灰混排）===");
+        String key = "Purple and Blue Beacons are\nobscured, but will always be"
+                + "\nGreatly Empowered.";
+        String dst = store.lookup(key);
+        check("語料收著這一段（實際 " + dst + "）", dst != null);
+        if (dst == null) {
+            return;
+        }
+        List<StyledText> run = List.of(
+                st(join(part(WHITE, "Purple and Blue Beacons "), part(GREY, "are"))),
+                st(line(GREY, "obscured, but will always be")),
+                st(line(WHITE, "Greatly Empowered.")));
+        List<Component> out = block(run, store);
+        check("整段查得到", out != null);
+        if (out == null) {
+            return;
+        }
+        dump(out);
+        // 逐<b>字</b>比對，不整段找。
+        //
+        // 折行會把一段切成兩半（實機這一段就斷在「會被遮／蔽」），拿整段去
+        // contains 永遠落空——那是測試寫錯，不是顏色錯。所以把畫出來的每個字
+        // 連同它的顏色攤平，再跟語料切出來的期望值一個字一個字對。
+        StringBuilder shown = new StringBuilder();
+        List<Integer> painted = new ArrayList<>();
+        for (Component row : out) {
+            for (StyledTextPart p : StyledText.fromComponent(row)) {
+                String raw = p.getString(null, StyleType.NONE);
+                TextColor col = p.getPartStyle().getStyle().getColor();
+                for (int i = 0; i < raw.length(); i++) {
+                    shown.append(raw.charAt(i));
+                    painted.add(col == null ? -1 : col.getValue());
+                }
+            }
+        }
+        // 語料裡 {c1} 是原文第一個顏色（白）、{c2} 是第二個（灰），{/} 收尾。
+        StringBuilder want = new StringBuilder();
+        List<Integer> expect = new ArrayList<>();
+        int slot = 0;
+        for (int i = 0; i < dst.length(); i++) {
+            if (dst.charAt(i) == '{') {
+                int close = dst.indexOf('}', i);
+                if (close < 0) {
+                    break;
+                }
+                String body = dst.substring(i + 1, close);
+                slot = body.equals("c1") ? 1 : body.equals("c2") ? 2 : 0;
+                i = close;
+                continue;
+            }
+            want.append(dst.charAt(i));
+            expect.add(slot == 1 ? 0xFFFFFF : slot == 2 ? 0xAAAAAA : -1);
+        }
+        check("字沒有變少（實際 " + shown + "，語料 " + want + "）",
+              shown.toString().equals(want.toString()));
+        if (!shown.toString().equals(want.toString())) {
+            return;
+        }
+        // ★ 這兩條才是真正在守的。
+        //
+        // 上面那圈逐字比對只問「語料說 c1/c2 的地方畫對了沒」——把 {cN} 從語料
+        // 拿掉，expect 全變 -1，每個字都跳過，測試照樣綠，而畫面正是壞掉的樣子
+        //（整段變白）。所以另外釘兩件跟標記無關的事：語料必須標了兩個顏色，
+        // 而且畫出來不可以只有一個顏色。
+        check("語料這一條有標 {c1} 與 {c2}（少了底色投票會把敘述染白）",
+              dst.contains("{c1}") && dst.contains("{c2}"));
+        java.util.Set<Integer> seen = new java.util.LinkedHashSet<>(painted);
+        check("★ 畫出來不只一個顏色（實際 " + seen.size() + " 種："
+                        + seen.stream().map(c -> String.format("#%06X", c)).toList() + "）",
+              seen.size() >= 2);
+        for (int i = 0; i < expect.size(); i++) {
+            if (expect.get(i) < 0) {
+                continue;                      // 語料沒指定的字不管
+            }
+            if (painted.get(i).equals(expect.get(i))) {
+                continue;
+            }
+            check("★「" + want.charAt(i) + "」（第 " + i + " 個字）該是 #"
+                            + String.format("%06X", expect.get(i)) + "（實際 #"
+                            + String.format("%06X", painted.get(i)) + "）", false);
+            return;                            // 一個字錯就夠了，不要洗版
+        }
+        check("★ 白的信標名與「大幅強化」、灰的敘述都貼對了（" + expect.size() + " 個字）",
+              true);
     }
 
     private static List<Component> block(List<StyledText> run, TranslationStore store) {
