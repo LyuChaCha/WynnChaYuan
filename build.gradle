@@ -1096,3 +1096,11 @@ tasks.register('checkMixinPackage') {
     }
 }
 tasks.named('check') { dependsOn 'checkMixinPackage' }
+
+tasks.register('runDialogueFitChecks', JavaExec) {
+    group = 'verification'
+    description = '避頭尾不可以害整句掉回英文（issue #864）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueFitTest'
+}
+tasks.named('check') { dependsOn 'runDialogueFitChecks' }
