@@ -32,12 +32,41 @@ import java.util.List;
  * 原文那一欄原封不動，兩邊並存。
  *
  * <p>追蹤中的任務那一段<b>跳過</b>：{@link TrackerListener} 已經把它畫在
- * 同一個框的上半部了，再收一次會變成同一件事寫兩遍。
+ * 同一個框的上半部了，再收一次會變成同一件事寫兩遍。Lootrun 那一段也跳過，
+ * 理由見 {@link #LOOTRUN_PART}。
  */
 public final class ScoreboardListener {
 
     /** 追蹤任務那一段的類別名，見上面說明：它由 TrackerListener 負責。 */
     private static final String ACTIVITY_PART = "ActivityTrackerScoreboardPart";
+
+    /**
+     * Lootrun 那一段的類別名。
+     *
+     * <h2>為什麼不收</h2>
+     * 那一段本來就有自己的位置——遊戲右邊的記分板，還有 Wynntils 自己的
+     * Lootrun 疊層。我們的追蹤欄面板再抄一份，畫面上就是同一組
+     * 「Lootrun: ／選擇一個信標！／剩餘時間／挑戰」出現兩次，而且它有四、五行，
+     * 一進 Lootrun 就把面板上半部的任務擠掉。使用者回報的正是這個
+     *（2026-09-28，「Lootrun 應該只待在旁邊記分板，但追蹤欄也出現了一份」）。
+     *
+     * <p>其他幾段（每日目標、公會目標、團隊、公會戰）照收：那幾段短，
+     * 而且原文那一欄沒有第二個地方看得到譯文。
+     */
+    private static final String LOOTRUN_PART = "LootrunScoreboardPart";
+
+    /**
+     * 這一段要不要抄進我們的追蹤欄面板。
+     *
+     * @param part 那一段的 {@code ScoreboardPart} 類別簡名；認不出來時傳
+     *             {@code null}（照收，寧可多一段也不要整欄憑空少東西）
+     */
+    static boolean mirrors(String part) {
+        if (part == null) {
+            return true;
+        }
+        return !part.contains(ACTIVITY_PART) && !part.contains(LOOTRUN_PART);
+    }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onScoreboardUpdated(ScoreboardUpdatedEvent event) {
@@ -58,9 +87,11 @@ public final class ScoreboardListener {
             if (segment == null || !segment.isVisible()) {
                 continue;
             }
+            // 追蹤中的任務（上半部已經有了）與 Lootrun（記分板本來就在）不收。
+            // 見 #mirrors。
             if (pair.a() != null
-                    && pair.a().getClass().getSimpleName().contains(ACTIVITY_PART)) {
-                continue;                      // 追蹤中的任務，上半部已經有了
+                    && !mirrors(pair.a().getClass().getSimpleName())) {
+                continue;
             }
             any |= add(lines, segment.getHeader(), store, "name");
             for (StyledText row : segment.getContent()) {

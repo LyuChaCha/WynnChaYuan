@@ -1104,3 +1104,11 @@ tasks.register('runDialogueFitChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.DialogueFitTest'
 }
 tasks.named('check') { dependsOn 'runDialogueFitChecks' }
+
+tasks.register('runScoreboardMirrorChecks', JavaExec) {
+    group = 'verification'
+    description = '右上那一欄哪幾段該抄進追蹤欄面板'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.ScoreboardMirrorTest'
+}
+tasks.named('check') { dependsOn 'runScoreboardMirrorChecks' }
