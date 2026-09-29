@@ -7,17 +7,17 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 99.3%（51,343 / 51,713）
+## `zh_tw` 繁體中文 — 99.3%（51,384 / 51,753）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 293 / 293 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████████ 97% | 10,842 / 11,179 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████████ 97% | 10,844 / 11,180 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 321 / 321 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | ██████████ 100% | 6,041 / 6,053 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 100% | 1,108 / 1,108 | 選單與介面<br>Menus and interface text |
+| `npc.json` | ██████████ 100% | 6,043 / 6,055 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 100% | 1,110 / 1,110 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 454 / 454 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ██████████ 98% | 654 / 667 | 任務介面<br>The quest interface |
+| `quest.json` | ██████████ 98% | 659 / 672 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -28,7 +28,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 721 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 295 / 295 | 探索點的名稱<br>Discovery names |
-| `lootrun.json` | ██████████ 100% | 1,047 / 1,047 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `lootrun.json` | ██████████ 100% | 1,077 / 1,077 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ██████████ 98% | 422 / 430 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 108 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
@@ -44,7 +44,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 96.3%（49,771 / 51,661）
+## `zh_cn` 简体中文 — 96.3%（49,781 / 51,669）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -54,7 +54,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | █████████░ 92% | 5,584 / 6,052 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,108 / 1,108 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 463 / 463 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | █████████░ 90% | 599 / 667 | 任務介面<br>The quest interface |
+| `quest.json` | █████████░ 90% | 602 / 668 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -65,7 +65,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 721 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 294 / 295 | 探索點的名稱<br>Discovery names |
-| `lootrun.json` | ██████████ 100% | 1,047 / 1,047 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `lootrun.json` | ██████████ 100% | 1,054 / 1,054 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ██████████ 98% | 401 / 409 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 108 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
