@@ -312,6 +312,47 @@ public final class WynntilsTextTest {
         WynntilsText.holdRawText(false);
         check("★ 出了那一段就恢復",
               "進行中".equals(WynntilsText.screenText(inProgress, config, store).getString()));
+
+        screenCache(config, store);
+    }
+
+    /**
+     * 這個入口有一份按內容記住的快取（Wynntils 畫的每一個字串、每一幀都會走一次）。
+     *
+     * <h2>快取壞掉的樣子</h2>
+     * 不是當掉，是<b>畫面上出現上一次的答案</b>：切了語言還是舊語言，
+     * 或者該原樣留著的公會名被翻掉。那種錯看起來像翻譯出問題、
+     * 不像快取出問題，會查很久。
+     */
+    private static void screenCache(CollectorConfig config, TranslationStore store) {
+        StyledText inProgress = StyledText.fromString("Currently in progress");
+
+        String once = WynntilsText.screenText(inProgress, config, store).getString();
+        String twice = WynntilsText.screenText(inProgress, config, store).getString();
+        check("快取：同一個字串兩次結果一樣（實際 " + twice + "）", once.equals(twice));
+
+        // ★ rawText 那一段必須擋在快取前面。這個字串剛剛已經翻過、也進快取了，
+        //   現在進了那一段就不可以再吐出翻譯——公會名叫 Fox 的那一格
+        //   就是這樣被換成「狐狸」的。
+        WynntilsText.holdRawText(true);
+        check("★ 快取不可以繞過「這一段不翻」",
+              WynntilsText.screenText(inProgress, config, store) == inProgress);
+        WynntilsText.holdRawText(false);
+        check("出了那一段又拿得到翻譯",
+              once.equals(WynntilsText.screenText(inProgress, config, store).getString()));
+
+        // ★ 語料重載（換語言走的就是這條）之後不可以還是舊語言
+        int before = store.generation();
+        store.loadAll(java.util.List.of(
+                java.nio.file.Path.of(
+                        "src/main/resources/assets/wynnchayuan/translations/zh_tw"),
+                java.nio.file.Path.of(
+                        "src/main/resources/assets/wynnchayuan/translations/zh_cn")));
+        check("快取：重載之後 generation 有往前（" + before + " -> "
+              + store.generation() + "）", store.generation() != before);
+        String after = WynntilsText.screenText(inProgress, config, store).getString();
+        check("★ 快取：重載之後拿到的是新語料的答案（實際 " + after + "）",
+              "进行中".equals(after));
     }
 
     private static void check(String what, boolean ok) {
