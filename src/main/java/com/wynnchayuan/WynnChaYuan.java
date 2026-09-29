@@ -187,29 +187,11 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 新玩家不該先被問一次才有翻譯。
         //
         // 放背景執行緒，不拖慢進遊戲；問不到或抓不到都只是沿用剛剛載入的本機版本。
-        if (config.source() == CollectorConfig.Source.GITHUB) {
-            Thread sync = new Thread(() -> {
-                String remote = RemoteSync.remoteVersion();
-                // 問到什麼就記什麼。F6 的「譯文版本」那一列要分得出「已經是最新」
-                // 與「根本沒問到」，而 found 只有前者會被呼叫。
-                com.wynnchayuan.translate.TranslationUpdate.checked(remote);
-                boolean first = config.syncedTranslations().isBlank();
-                if (!first && !config.autoUpdateTranslations()) {
-                    if (remote != null && !remote.equals(config.syncedTranslations())) {
-                        com.wynnchayuan.translate.TranslationUpdate.found(remote);
-                    }
-                    return;
-                }
-                int changed = fetchCurrentLanguages();
-                com.wynnchayuan.translate.TranslationUpdate.done(remote);
-                if (changed > 0) {
-                    reloadOnMainThread();
-                }
-                System.out.println("[WynnChaYuan] " + RemoteSync.lastResult());
-            }, MOD_ID + "-sync");
-            sync.setDaemon(true);
-            sync.start();
-        }
+        //
+        // 開始的時機在 CLIENT_STARTED，不在這裡——它抓的是<b>目前這個語言</b>的檔
+        // （見 #fetchCurrentLanguages），而「跟隨遊戲語言」的玩家在這個時間點
+        // 語言還是錯的（見 #settleAutoLanguage）。在這裡抓，韓文玩家會年復一年
+        // 下載繁體中文，自己那一份永遠停在 jar 內建的版本。
 
         // 註冊必須等到 CLIENT_STARTED，不能在這裡直接做。
         //
@@ -218,6 +200,13 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 會直接吃到 NullPointerException 並讓遊戲開不起來。
         // WynnScribe 也是這樣處理的（見其 WynnscribeFabric）。
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> registerWithWynntils());
+
+        // 遊戲語言也要等到這裡才問得到（見 #settleAutoLanguage），
+        // 而同步要抓哪一個語言的檔得先知道語言是哪一個，所以接在它後面。
+        ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
+            settleAutoLanguage();
+            startBackgroundSync();
+        });
 
         // 按鍵綁定壞掉不該把整個遊戲擋在門外。1.99.2 就是在這裡丟了一個
         // NullPointerException，玩家連主畫面都進不去——而少的只是一個截圖鍵。
@@ -613,6 +602,103 @@ public final class WynnChaYuan implements ClientModInitializer {
     /** 「跟著遊戲」會挑到哪一種。設定畫面要先算得出來才能顯示。 */
     public static String autoLanguage() {
         return com.wynnchayuan.translate.Languages.pick("", gameLanguage());
+    }
+
+    /**
+     * 開機時問一句「有沒有新翻譯」，要不要抓由玩家決定。
+     *
+     * <h2>為什麼不無條件重抓</h2>
+     * 以前每次進遊戲都把整個語言的三十幾個檔重抓一遍。翻譯一個月可能只動幾條，
+     * 玩家卻每天都在付那個流量與那幾十秒。改成一次請求問 commit
+     * （見 {@code RemoteSync#remoteVersion}），有新的才在聊天室說一聲。
+     *
+     * <p>兩個例外照抓不誤：F6 打開了自動更新，以及<b>從來沒抓過</b>——
+     * 新玩家不該先被問一次才有翻譯。
+     *
+     * <h2>為什麼在 CLIENT_STARTED 才開始</h2>
+     * 它抓的是{@link #fetchCurrentLanguages() 目前這個語言}的檔，而「跟隨遊戲
+     * 語言」的玩家要等到 {@link #settleAutoLanguage()} 跑完語言才是對的。
+     * 在 client entrypoint 裡就開始抓的話，韓文玩家會年復一年下載繁體中文。
+     */
+    private static void startBackgroundSync() {
+        if (config.source() != CollectorConfig.Source.GITHUB) {
+            return;
+        }
+        Thread sync = new Thread(() -> {
+            String remote = RemoteSync.remoteVersion();
+            // 問到什麼就記什麼。F6 的「譯文版本」那一列要分得出「已經是最新」
+            // 與「根本沒問到」，而 found 只有前者會被呼叫。
+            com.wynnchayuan.translate.TranslationUpdate.checked(remote);
+            boolean first = config.syncedTranslations().isBlank();
+            if (!first && !config.autoUpdateTranslations()) {
+                if (remote != null && !remote.equals(config.syncedTranslations())) {
+                    com.wynnchayuan.translate.TranslationUpdate.found(remote);
+                }
+                return;
+            }
+            int changed = fetchCurrentLanguages();
+            com.wynnchayuan.translate.TranslationUpdate.done(remote);
+            if (changed > 0) {
+                reloadOnMainThread();
+            }
+            System.out.println("[WynnChaYuan] " + RemoteSync.lastResult());
+        }, MOD_ID + "-sync");
+        sync.setDaemon(true);
+        sync.start();
+    }
+
+    /**
+     * 遊戲起來之後再問一次語言，跟錯的那一次對不上就改過來。
+     *
+     * <h2>實機回報</h2>
+     * 第一次安裝、遊戲語言是韓文、模組維持預設的「跟隨遊戲語言」，出來卻是中文；
+     * 要在 F6 手動選一次韓文才正常。
+     *
+     * <h2>為什麼</h2>
+     * 語言是在 {@link #onInitializeClient} 裡決定的，而 client entrypoint 跑在
+     * {@code Minecraft} 的建構式裡——那時候 {@code getLanguageManager()} 還是
+     * {@code null}。{@link #gameLanguage()} 取不到就回傳空字串，而空字串走進
+     * {@code Languages#pick} 會被 {@code normalise} 當成預設值，於是
+     * 「問不到」被靜靜地講成「遊戲語言是繁體中文」。見 {@code Languages#known}。
+     *
+     * <p>手動選過一次之後 config 裡就有明確的值，所以<b>只有第一次會中</b>——
+     * 也因此這個 bug 很難從重現步驟看出來。
+     *
+     * <h2>只在「跟隨遊戲語言」時動</h2>
+     * 使用者自己選過語言就不能蓋掉他的選擇，哪怕遊戲語言是別的：
+     * 有人就是要一邊玩英文介面一邊看中文翻譯。
+     *
+     * <p>也<b>不</b>寫回 config：寫回去就從「跟隨」變成「釘死在韓文」，
+     * 之後玩家把遊戲換成日文，模組不會再跟著動。
+     */
+    private static void settleAutoLanguage() {
+        if (!config.language().isBlank()) {
+            return;                            // 使用者自己選過了
+        }
+        String game = gameLanguage();
+        if (!com.wynnchayuan.translate.Languages.known(game)) {
+            return;                            // 還是問不到，維持現狀比亂猜好
+        }
+        String want = com.wynnchayuan.translate.Languages.pick("", game);
+        if (want.equals(language)) {
+            return;                            // 開機那次剛好猜對
+        }
+        language = want;
+        // 換語言要做的三件事跟 switchLanguage 一樣：備好快取、吃對應的強調色、重載。
+        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
+        com.wynnchayuan.translate.TranslationCache.prepare(dir, language);
+        String underneath = fallbackLanguage();
+        if (underneath != null) {
+            com.wynnchayuan.translate.TranslationCache.prepare(
+                    com.wynnchayuan.translate.Languages.dir(configDir, underneath),
+                    underneath);
+        }
+        com.wynnchayuan.render.DialogueTint.init(
+                configDir.resolve(com.wynnchayuan.render.DialogueTint.FILE), language);
+        loadLayers();
+        System.out.println("[" + MOD_NAME + "] 跟隨遊戲語言：改用 " + language
+                + "（開機時問不到，先用了 " + com.wynnchayuan.translate.Languages.DEFAULT
+                + "）");
     }
 
     private static String gameLanguage() {
