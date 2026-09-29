@@ -38,8 +38,16 @@ public final class LayeredGearNameTest {
                         net.minecraft.network.chat.Component.literal("Sunstar"),
                         net.minecraft.network.chat.Component.literal("Sunstar")), store);
         String mythShown = myth.isEmpty() ? "(沒翻)" : myth.get(myth.size() - 1).getString();
+        // 不寫死措辭：這一條要守的是「繁中那層是空的，不可以把簡中的譯名擋回英文」，
+        // 不是「Sunstar 一定要叫某四個字」。寫死的話，每次統一術語或改譯名都會
+        // 弄紅一支跟那件事無關的測試——2026-09-29 把 Mythic 名稱改成照背景敘述
+        // 取的那一套時就中了一次。拿語料自己的答案來比，才是在守那條規則。
+        String mythName = store.lookup("Sunstar");
+        check("簡中的 Mythic 有譯名（實際 " + mythName + "）",
+              mythName != null && !mythName.equals("Sunstar")
+                      && mythName.codePoints().anyMatch(c -> c >= 0x4E00 && c <= 0x9FFF));
         check("★ 簡中 Mythic 的名稱行畫成中文（實際 " + mythShown + "）",
-              "太阳与星星圣器".equals(mythShown));
+              mythName != null && mythName.equals(mythShown));
 
         store.setNameMode(CollectorConfig.ItemNames.BOTH);
         check("譯名加原文（實際 " + store.lookup("Abhorrence") + "）",
