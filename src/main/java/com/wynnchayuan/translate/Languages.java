@@ -206,6 +206,29 @@ public final class Languages {
     }
 
     /**
+     * 這個遊戲語言<b>問到了嗎</b>，而且是我們打包過的。
+     *
+     * <h2>為什麼要跟 {@link #pick} 分開</h2>
+     * {@code pick} 是純函式，手上沒資料就只能給 {@link #DEFAULT}——那沒有錯。
+     * 錯的是呼叫端把「還沒問到」當成「問到了，答案是繁體中文」。
+     *
+     * <p>實機回報：第一次安裝、遊戲語言是韓文、模組維持預設的「跟隨遊戲語言」，
+     * 出來卻是中文。語言是在 client entrypoint 裡決定的，而那跑在
+     * {@code Minecraft} 的建構式裡，那時候 {@code getLanguageManager()} 還是
+     * {@code null}，取不到就回傳空字串——然後 {@code normalise("")} 把空字串
+     * 變成 {@code zh_tw}，{@code bundled()} 當然有繁中，於是韓文玩家拿到中文。
+     *
+     * <p>三個步驟各自都合理，合起來就把「不知道」講成了一個明確的答案。
+     * 呼叫端要分得出這兩件事，才知道該不該等遊戲起來以後再問一次。
+     */
+    public static boolean known(String gameLanguage) {
+        if (gameLanguage == null || gameLanguage.isBlank()) {
+            return false;
+        }
+        return bundled().contains(normalise(gameLanguage));
+    }
+
+    /**
      * 這一種語言還沒翻到的地方，要不要拿另一種語言頂上；要的話拿哪一種。
      *
      * <h2>只在同一個語族之內回退</h2>

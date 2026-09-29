@@ -1120,3 +1120,11 @@ tasks.register('runCorpusVersionChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.CorpusVersionTest'
 }
 tasks.named('check') { dependsOn 'runCorpusVersionChecks' }
+
+tasks.register('runAutoLanguageChecks', JavaExec) {
+    group = 'verification'
+    description = '「跟隨遊戲語言」問不到的時候不可以裝作問到了'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.AutoLanguageTest'
+}
+tasks.named('check') { dependsOn 'runAutoLanguageChecks' }
