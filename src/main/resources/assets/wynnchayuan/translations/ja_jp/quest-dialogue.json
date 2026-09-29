@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23984,
-  "translated": 23634,
+  "count": 23997,
+  "translated": 23647,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -194171,7 +194171,7 @@
   },
   "The Lost#019": {
    "src": "A-ah, hello. I'm g-guessing Dejol sent you?",
-   "dst": "あ、あの、どうも。Dejol に言われて、き、来たの？",
+   "dst": "あ、あの、どうもDejolに言われて、き、来たの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -194458,6 +194458,136 @@
    "stage": "Stage 3",
    "speaker": "Dejol",
    "source": "wiki"
+  },
+  "The Lost#048": {
+   "src": "...AAAAAAAAAAAAAAAAAAAAHHHHHHHH!!!!!!! HEEEEEEEEEEEEELLLLLLLLPPPPPP!!!!! THERE ARE BIIIIIIIIIIIRDS!!!!!",
+   "dst": "うわあああああああ!!!助けてえええええええ!!!!鳥だああああああああ!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Fetu",
+   "source": "wiki"
+  },
+  "The Lost#049": {
+   "src": "You should probably get down to check if she's okay.",
+   "dst": "彼女が大丈夫かどうか確認するために、一度下へ降りたほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Lost#050": {
+   "src": "...Ugh! I-I'm gonna head back to Dejol now. I hope I NEVER see you again!",
+   "dst": "…うっ！ もうDejolの所に戻るわ。二度とあなたには会いたくないわ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Lost#051": {
+   "src": "Looks like you need [{~} Plank of Wood], [{~} Piece of Rope] and [{~} Chunk of Rock] to craft something useful.",
+   "dst": "何か役に立つものを作るには、[{~} Plank of Wood], [{~} Piece of Rope]そして[{~} Chunk of Rock]が必要のようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Lost#052": {
+   "src": "Well, that's certainly one way out of here. You should talk to Gordon.",
+   "dst": "まあ、確かにここを抜け出す方法の一つではある。Gordonに相談したほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Lost#053": {
+   "src": "So we're just gonna launch ourselves out of this pit? You got it!",
+   "dst": "じゃあ、この穴から飛び出すってこと？　その通り！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#054": {
+   "src": "Who should be launched out of the pit first?",
+   "dst": "どっちを先に助ける?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Lost#055": {
+   "src": "Hey, come over here!",
+   "dst": "おい!こっちだ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#056": {
+   "src": "Looks like you've found all three of Dejol's crew members! You should head back to Dejol.",
+   "dst": "Dejolの仲間3人全員を見つけた！ Dejolのところへ戻ったほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#057": {
+   "src": "Oh, hey there! It's good to see you again. Thanks again for helping me get away from that house— though, I feel kind of bad for the owner...",
+   "dst": "おっ、やあ！また会えてうれしいよ。脱出するのを手伝ってくれて、本当にありがとう――とはいえ家の持ち主のことがちょっと気の毒に思えるけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#058": {
+   "src": "Hey, human! Thanks for helping me with the birds. I managed to sneak down once you gave me the eggs, so... All said and done, now!",
+   "dst": "ねえ、人間！鳥の件、助けてくれてありがとう。卵をもらった後、なんとかこっそり下に降りることができたから……これで、すべて終わったよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Fetu",
+   "source": "captured.json"
+  },
+  "The Lost#059": {
+   "src": "EEK! A-Are you back to throw me off another cliff, human?? Keep your distance, p-please!",
+   "dst": "うわっ！ま、また私を崖から突き落とそうとして戻ってきたの、人間？？近づかないで、お、お願い！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Yuge",
+   "source": "captured.json"
+  },
+  "The Lost#060": {
+   "src": "Ho, adventurer! Thanks for your help again!",
+   "dst": "おや、冒険者さん！改めてお礼を言おう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Yuge",
+   "source": "captured.json"
   },
   "The Maiden Tower#000": {
    "src": "Fine then. Consider yourself lucky that I'm in a...mood. I'll talk with you instead of crackin' yer bones for my bread.",
