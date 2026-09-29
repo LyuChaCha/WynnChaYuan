@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 23984,
-  "translated": 23634,
+  "count": 24008,
+  "translated": 23658,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -10347,7 +10347,7 @@
   },
   "A Marauder's Dues#061": {
    "src": "H-how did you survive? How did you get OUT?! That pocket dimension has a one-way entrance!! I- You- I'LL DRAIN AWAY NORSTEN BEFORE YOUR VERY EYES!!",
-   "dst": "ど、どうやって生き延びた？ どうやって「出た」？！ あのポケット次元は一方通行だぞ！！ 私は―お前は―目の前で Norsten を吸い尽くしてやる！！",
+   "dst": "ど、どうやって生き延びた？どうやって出た？！あのポケット次元は一方通行だぞ！！私は―お前は―目の前でNorstenを吸い尽くしてやる！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -10464,6 +10464,16 @@
    "stage": "",
    "speaker": "Norsten",
    "source": "wiki"
+  },
+  "A Marauder's Dues#073": {
+   "src": "[Right Click] with the shard to change what is real and what is fake.",
+   "dst": "shardを[右クリック]して、本物と偽物を変えよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Marauder's Dues",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
   },
   "A New Beginning#000": {
    "src": "[+{~} Lotus Seedpods]",
@@ -39104,6 +39114,106 @@
    "stage": "Stage 6",
    "speaker": "Death",
    "source": "wiki"
+  },
+  "Beyond the Grave#186": {
+   "src": "...something's gone wrong.",
+   "dst": "…何かがおかしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#187": {
+   "src": "I SHOULD THINK IT IS QUITE RUDE TO PLAY A HOST'S GAME WITHOUT HAVING SPOKEN TO THEM FIRST. PLEASE COME TO MY OFFICE.",
+   "dst": "ホストと一言も話もせずに、その人のゲームに参加するのは、かなり失礼なことだと思います。私のオフィスまでお越しください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#188": {
+   "src": "OH, THE REMOTE CAN BE FIDDLY. YOU NEED TO BE SITTING ON THE COUCH FOR IT TO WORK.",
+   "dst": "ああ、リモコンはちょっと扱いにくいですね。うまく操作するにはソファに座っている必要があります。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 3",
+   "speaker": "Death",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#189": {
+   "src": "YOU HAVE YOUR TASK, AND FOR THE MOMENT, YOU BEAR MY PITH. SLAY THE CANYON HORROR KROLTON, AND THEN I MAY BREAK THE RULES FOR YOU, JUST THIS ONCE.",
+   "dst": "お前にはお前の任務がある。そして今のところお前は私の意志を背負っているのだ。峡谷の恐怖、KROLTONを倒せ。そうすれば今回に限っては、お前のためにルールを破ってやるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "Death",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#190": {
+   "src": "You feel... alive again. Everything feels just as it did before you died.",
+   "dst": "あなたは……再び生きているような気分になる。すべてが、死ぬ前とまったく同じように感じられる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#191": {
+   "src": "...did all of that actually just happen?",
+   "dst": "……あれは本当に今、全部起きたことなの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#192": {
+   "src": "Well, the job is done. You should tell Irlok the good news...",
+   "dst": "さて、仕事は終わった。Irlokに良い知らせを伝えにいこう……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#193": {
+   "src": "...though, maybe you'll avoid mentioning your death. That would be weird.",
+   "dst": "……とはいえ、自分の死については触れないほうがいいかもしれない。それだとちょっと変だし。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#194": {
+   "src": "...though, maybe you'll avoid mentioning your death. That would be weird.",
+   "dst": "……とはいえ、自分の死については触れないほうがいいかもしれない。それだとちょっと変だし。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Beyond the Grave#195": {
+   "src": "You are truly an amazing warrior. Thank you for putting an end to Krolton.",
+   "dst": "あなたは本当に素晴らしい戦士です。Kroltonを倒してくれて、ありがとう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beyond the Grave",
+   "stage": "",
+   "speaker": "Irlok",
+   "source": "captured.json"
   },
   "Blazing Retribution#000": {
    "src": "Speak to Piere in the {p} Plains at [-{~}, {~}, -{~}]",
@@ -194171,7 +194281,7 @@
   },
   "The Lost#019": {
    "src": "A-ah, hello. I'm g-guessing Dejol sent you?",
-   "dst": "あ、あの、どうも。Dejol に言われて、き、来たの？",
+   "dst": "あ、あの、どうもDejolに言われて、き、来たの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -194458,6 +194568,136 @@
    "stage": "Stage 3",
    "speaker": "Dejol",
    "source": "wiki"
+  },
+  "The Lost#048": {
+   "src": "...AAAAAAAAAAAAAAAAAAAAHHHHHHHH!!!!!!! HEEEEEEEEEEEEELLLLLLLLPPPPPP!!!!! THERE ARE BIIIIIIIIIIIRDS!!!!!",
+   "dst": "うわあああああああ!!!助けてえええええええ!!!!鳥だああああああああ!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Fetu",
+   "source": "wiki"
+  },
+  "The Lost#049": {
+   "src": "You should probably get down to check if she's okay.",
+   "dst": "彼女が大丈夫かどうか確認するために、一度下へ降りたほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Lost#050": {
+   "src": "...Ugh! I-I'm gonna head back to Dejol now. I hope I NEVER see you again!",
+   "dst": "…うっ！ もうDejolの所に戻るわ。二度とあなたには会いたくないわ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Lost#051": {
+   "src": "Looks like you need [{~} Plank of Wood], [{~} Piece of Rope] and [{~} Chunk of Rock] to craft something useful.",
+   "dst": "何か役に立つものを作るには、[{~} Plank of Wood], [{~} Piece of Rope]そして[{~} Chunk of Rock]が必要のようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Lost#052": {
+   "src": "Well, that's certainly one way out of here. You should talk to Gordon.",
+   "dst": "まあ、確かにここを抜け出す方法の一つではある。Gordonに相談したほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Lost#053": {
+   "src": "So we're just gonna launch ourselves out of this pit? You got it!",
+   "dst": "じゃあ、この穴から飛び出すってこと？　その通り！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#054": {
+   "src": "Who should be launched out of the pit first?",
+   "dst": "どっちを先に助ける?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Lost#055": {
+   "src": "Hey, come over here!",
+   "dst": "おい!こっちだ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#056": {
+   "src": "Looks like you've found all three of Dejol's crew members! You should head back to Dejol.",
+   "dst": "Dejolの仲間3人全員を見つけた！ Dejolのところへ戻ったほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#057": {
+   "src": "Oh, hey there! It's good to see you again. Thanks again for helping me get away from that house— though, I feel kind of bad for the owner...",
+   "dst": "おっ、やあ！また会えてうれしいよ。脱出するのを手伝ってくれて、本当にありがとう――とはいえ家の持ち主のことがちょっと気の毒に思えるけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Gordon",
+   "source": "captured.json"
+  },
+  "The Lost#058": {
+   "src": "Hey, human! Thanks for helping me with the birds. I managed to sneak down once you gave me the eggs, so... All said and done, now!",
+   "dst": "ねえ、人間！鳥の件、助けてくれてありがとう。卵をもらった後、なんとかこっそり下に降りることができたから……これで、すべて終わったよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Fetu",
+   "source": "captured.json"
+  },
+  "The Lost#059": {
+   "src": "EEK! A-Are you back to throw me off another cliff, human?? Keep your distance, p-please!",
+   "dst": "うわっ！ま、また私を崖から突き落とそうとして戻ってきたの、人間？？近づかないで、お、お願い！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Yuge",
+   "source": "captured.json"
+  },
+  "The Lost#060": {
+   "src": "Ho, adventurer! Thanks for your help again!",
+   "dst": "おや、冒険者さん！改めてお礼を言おう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Lost",
+   "stage": "Stage 3",
+   "speaker": "Yuge",
+   "source": "captured.json"
   },
   "The Maiden Tower#000": {
    "src": "Fine then. Consider yourself lucky that I'm in a...mood. I'll talk with you instead of crackin' yer bones for my bread.",

@@ -665,14 +665,70 @@ public final class WynntilsText {
             // 公會名是玩家自己取的、Wynntils 的簡稱是它自己拼的，跟語料撞名
             // 只是遲早的事（實機那格叫 Fox，被換成了「狐狸」；傳送卷軸的簡稱
             // 被換成了法師技能的「傳送」）。兩者都不是遊戲的文案，不該翻。
+            //
+            // 這一段<b>刻意擋在快取前面</b>：同一個字串在這一段裡不翻、
+            // 出了這一段要翻，進了快取就分不出來了。
             return text;
+        }
+        Cached seen;
+        synchronized (SCREEN_CACHE) {
+            seen = SCREEN_CACHE.get(text);
+        }
+        if (seen != null && seen.fresh(store)) {
+            // 查不到的那一種回傳<b>呼叫端那一個</b>，不是快取裡的——
+            // 「沒翻到就原樣回去」在這個入口是用 == 比的（見 WynntilsTextTest）。
+            return seen.out() == null ? text : seen.out();
         }
         net.minecraft.network.chat.Component hit = LineTranslator.translate(text, store);
-        if (hit == null) {
-            return text;
+        StyledText out = hit == null ? null : StyledText.fromComponent(hit);
+        synchronized (SCREEN_CACHE) {
+            SCREEN_CACHE.put(text, new Cached(store.generation(),
+                    store.namesWithOriginal(), store.translatesNames(), out));
         }
-        return StyledText.fromComponent(hit);
+        return out == null ? text : out;
     }
+
+    /**
+     * 同一個字串的翻譯結果，按內容記住。
+     *
+     * <h2>為什麼要有</h2>
+     * 這個入口是 Wynntils 畫的<b>每一個字串、每一幀</b>都會走一次的地方，
+     * 比物品 tooltip 還熱（見 {@code TooltipPanel#translateLinesCached}，
+     * 同一套做法）。而 {@link LineTranslator#translate} 一次要跑整行查表、
+     * 多行標籤查表、再逐段查表——記分板那一欄、物品格角落的簡稱、
+     * 畫面上每一個 Wynntils 標籤，滑鼠停著不動也在每幀重算一次。
+     *
+     * <p>同一份內容的答案不會變，記住就好。
+     *
+     * <h2>什麼時候作廢</h2>
+     * 跟 tooltip 那一份同樣三件事：語料重載（換語言、背景同步）、
+     * 物品名稱顯示模式的兩個旗標。{@code rawText} 不進鍵，它擋在快取前面。
+     *
+     * <p>上限 {@value #SCREEN_CACHE_LIMIT}：畫面上的字有一大半帶數字
+     * （座標、倒數、血量），那些每幀都是新的一筆，靠 LRU 自然淘汰；
+     * 真正省下來的是那些固定不動的標籤。
+     */
+    private static final int SCREEN_CACHE_LIMIT = 512;
+
+    /** 一次翻譯的結果；{@code out} 是 {@code null} 代表「查不到，原樣就是答案」。 */
+    private record Cached(int generation, boolean namesWithOriginal,
+                          boolean translateNames, StyledText out) {
+
+        boolean fresh(TranslationStore store) {
+            return generation == store.generation()
+                    && namesWithOriginal == store.namesWithOriginal()
+                    && translateNames == store.translatesNames();
+        }
+    }
+
+    private static final java.util.Map<StyledText, Cached> SCREEN_CACHE =
+            new java.util.LinkedHashMap<>(128, 0.75f, true) {
+                @Override
+                protected boolean removeEldestEntry(
+                        java.util.Map.Entry<StyledText, Cached> eldest) {
+                    return size() > SCREEN_CACHE_LIMIT;
+                }
+            };
 
     /**
      * mixin 的入口：Wynntils 清單畫面右邊那張卡（滑鼠停在某一項時跳出來的）。
