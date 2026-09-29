@@ -42,13 +42,19 @@ public final class ShinyNameTest {
         TranslationStore cn = new TranslationStore();
         cn.loadAll(List.of(root.resolve("zh_tw"), root.resolve("zh_cn")));
         cn.setNameMode(CollectorConfig.ItemNames.ON);
-        is(cn, "Shiny Sunstar", "耀光的太阳与星星圣器");
+        // 「Sunstar 叫什麼」是語料的事，不是這支測試的事——這裡守的是
+        // 「Shiny 這個前綴要接上裝備自己的譯名」。先前寫死「太阳与星星圣器」，
+        // 2026-09-29 改譯名的時候就整支紅了，而它跟前綴一點關係都沒有。
+        String sunstar = cn.lookup("Sunstar");
+        check("簡中的 Sunstar 有譯名（實際 " + sunstar + "）",
+              sunstar != null && !sunstar.equals("Sunstar"));
+        is(cn, "Shiny Sunstar", "耀光的" + sunstar);
         String mw = cn.lookup("Shiny Masterwork Apocalypse");
         check("簡中 Shiny Masterwork 也照裝備譯名（實際 " + mw + "）",
               mw != null && mw.startsWith("耀光的") && !mw.contains("Apocalypse"));
 
         cn.setNameMode(CollectorConfig.ItemNames.BOTH);
-        is(cn, "Shiny Sunstar", "耀光的太阳与星星圣器 (Shiny Sunstar)");
+        is(cn, "Shiny Sunstar", "耀光的" + sunstar + " (Shiny Sunstar)");
         cn.setNameMode(CollectorConfig.ItemNames.OFF);
         is(cn, "Shiny Sunstar", null);
 
