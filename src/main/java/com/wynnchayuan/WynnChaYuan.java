@@ -190,6 +190,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         if (config.source() == CollectorConfig.Source.GITHUB) {
             Thread sync = new Thread(() -> {
                 String remote = RemoteSync.remoteVersion();
+                // 問到什麼就記什麼。F6 的「譯文版本」那一列要分得出「已經是最新」
+                // 與「根本沒問到」，而 found 只有前者會被呼叫。
+                com.wynnchayuan.translate.TranslationUpdate.checked(remote);
                 boolean first = config.syncedTranslations().isBlank();
                 if (!first && !config.autoUpdateTranslations()) {
                     if (remote != null && !remote.equals(config.syncedTranslations())) {
@@ -574,6 +577,29 @@ public final class WynnChaYuan implements ClientModInitializer {
                 done.accept(result + "，共 " + translations.size() + " 條");
             });
         }, MOD_ID + "-resync");
+        worker.setDaemon(true);
+        worker.start();
+    }
+
+    /**
+     * 只問一句「GitHub 上最新是哪一個 commit」，<b>不</b>抓檔案。
+     *
+     * <h2>為什麼要跟 {@link #resyncTranslations} 分開</h2>
+     * 「我這份是不是最新的」跟「幫我更新」是兩個問題。問版本是一次請求、
+     * 一點幾 KB；抓檔案是三十幾個檔。想確認一下的人不該被迫付後者的代價，
+     * 尤其是答案很可能是「你已經是最新的了」。
+     *
+     * @param done 問完後在主執行緒呼叫
+     */
+    public static void recheckTranslationVersion(Runnable done) {
+        Thread worker = new Thread(() -> {
+            String remote = RemoteSync.remoteVersion();
+            com.wynnchayuan.translate.TranslationUpdate.checked(remote);
+            if (remote != null && !remote.equals(config.syncedTranslations())) {
+                com.wynnchayuan.translate.TranslationUpdate.found(remote);
+            }
+            net.minecraft.client.Minecraft.getInstance().execute(done);
+        }, MOD_ID + "-version");
         worker.setDaemon(true);
         worker.start();
     }

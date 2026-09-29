@@ -5,6 +5,7 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.CorpusExport;
 import com.wynnchayuan.render.Colors;
+import com.wynnchayuan.translate.TranslationUpdate;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -628,6 +629,8 @@ public final class SettingsScreen extends Screen {
                 T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
                         ? "data.reload.github" : "data.reload.local"),
                 reloadLabel(), this::reload);
+        // 擺在「更新譯文」正下面：看到「有新版」，要按的那一顆就在上面一列。
+        versionRow();
         // 先前這裡是「分享給翻譯團隊」的開關。模組現在不送任何東西出去，
         // 改成兩顆按鈕：匯出成本機檔案、打開 Issue 表單——看不看、交不交由玩家決定。
         action("data.export", T.s("data.export.hint"),
@@ -642,6 +645,14 @@ public final class SettingsScreen extends Screen {
 
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
+        // 開機那一次的版本詢問在背景跑，可能在 F6 開著的時候才回來。
+        // 每一幀比一次字串，不一樣才換——不比的話那一列會一直停在「不確定」。
+        if (versionButton != null) {
+            Component now = versionLabel();
+            if (!now.getString().equals(versionButton.getMessage().getString())) {
+                versionButton.setMessage(now);
+            }
+        }
         SettingsLayout box = box();
         int x0 = originX();
         int pane = paneW();
@@ -1305,6 +1316,102 @@ public final class SettingsScreen extends Screen {
     private Component reloadLabel() {
         return pick(T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
                 ? "data.reload.fetch" : "data.reload.reread"));
+    }
+
+    /** 譯文是不是最新的。見 {@link #versionRow}。 */
+    private TranslationUpdate.State versionState() {
+        return TranslationUpdate.verdict(
+                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB,
+                checkingVersion,
+                TranslationUpdate.asked(),
+                WynnChaYuan.config().syncedTranslations(),
+                TranslationUpdate.seen());
+    }
+
+    private static final java.util.Map<TranslationUpdate.State, String> VERSION_KEY =
+            java.util.Map.of(
+                    TranslationUpdate.State.LOCAL, "data.version.local",
+                    TranslationUpdate.State.CHECKING, "data.version.checking",
+                    TranslationUpdate.State.LATEST, "data.version.latest",
+                    TranslationUpdate.State.BEHIND, "data.version.behind",
+                    TranslationUpdate.State.UNKNOWN, "data.version.unknown");
+
+    private Component versionLabel() {
+        TranslationUpdate.State state = versionState();
+        Component text = Component.literal(T.s(VERSION_KEY.get(state)));
+        return switch (state) {
+            case LATEST -> text.copy().withStyle(ChatFormatting.GREEN);
+            case BEHIND -> text.copy().withStyle(ChatFormatting.YELLOW);
+            case UNKNOWN -> text.copy().withStyle(ChatFormatting.RED);
+            default -> text;
+        };
+    }
+
+    /**
+     * 本機那一份的 commit 短碼，講給人看。
+     *
+     * <p>沒同步過就說「內建」——那是 jar 裡打包的那一份，沒有 commit 可以報。
+     */
+    private static String shortVersion(String sha) {
+        if (sha == null || sha.isBlank()) {
+            return T.s("data.version.bundled");
+        }
+        return sha.length() > 7 ? sha.substring(0, 7) : sha;
+    }
+
+    /** 正在問版本。 */
+    private boolean checkingVersion;
+
+    /**
+     * 「譯文版本」那一列。
+     *
+     * <h2>為什麼要有</h2>
+     * 「我明明更新到最新版了，怎麼還有沒翻的」這個問題，玩家在遊戲裡<b>無從判斷</b>：
+     * 模組版本看得到，譯文版本看不到。而譯文是從 GitHub 同步的，跟模組版本無關——
+     * 手上的 jar 是最新的，譯文卻可能是兩週前那一份（斷網、API 額度用完、
+     * 關掉自動更新之後沒再按過）。
+     *
+     * <p>所以這一列直接把三件事分開講：本機這份是哪一個 commit、GitHub 上最新是
+     * 哪一個、兩者一不一樣。<b>問不到的時候說問不到</b>，不假裝是最新——
+     * 見 {@link TranslationUpdate#checked}。
+     *
+     * <p>按鈕按下去只問版本，不抓檔案（{@link WynnChaYuan#recheckTranslationVersion}）。
+     * 要真的更新是上面那一顆。
+     */
+    private void versionRow() {
+        versionButton = action("data.version", versionHint(), versionLabel(), () -> {
+            if (checkingVersion) {
+                return;
+            }
+            if (WynnChaYuan.config().source() != CollectorConfig.Source.GITHUB) {
+                say(T.c("data.version.local.hint").withStyle(ChatFormatting.GRAY));
+                return;
+            }
+            checkingVersion = true;
+            versionButton.setMessage(versionLabel());
+            WynnChaYuan.recheckTranslationVersion(() -> {
+                checkingVersion = false;
+                versionButton.setMessage(versionLabel());
+                say(Component.literal(versionHint()).withStyle(
+                        versionState() == TranslationUpdate.State.LATEST
+                                ? ChatFormatting.GREEN : ChatFormatting.YELLOW));
+            });
+        });
+    }
+
+    private Button versionButton;
+
+    /** 那一列的說明：把兩個 commit 攤開來，看得出到底差在哪。 */
+    private String versionHint() {
+        String local = shortVersion(WynnChaYuan.config().syncedTranslations());
+        return switch (versionState()) {
+            case LOCAL -> T.s("data.version.local.hint");
+            case CHECKING -> T.s("data.version.checking");
+            case LATEST -> T.s("data.version.latest.hint", local);
+            case BEHIND -> T.s("data.version.behind.hint",
+                    local, shortVersion(TranslationUpdate.seen()));
+            case UNKNOWN -> T.s("data.version.unknown.hint", local);
+        };
     }
 
     private static String onOff(boolean on) {

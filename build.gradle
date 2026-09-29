@@ -1112,3 +1112,11 @@ tasks.register('runScoreboardMirrorChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.listener.ScoreboardMirrorTest'
 }
 tasks.named('check') { dependsOn 'runScoreboardMirrorChecks' }
+
+tasks.register('runCorpusVersionChecks', JavaExec) {
+    group = 'verification'
+    description = 'F6 的「譯文版本」那一列不可以把「問不到」說成「最新」'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.CorpusVersionTest'
+}
+tasks.named('check') { dependsOn 'runCorpusVersionChecks' }
