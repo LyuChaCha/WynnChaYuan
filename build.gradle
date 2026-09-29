@@ -1128,3 +1128,11 @@ tasks.register('runAutoLanguageChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.AutoLanguageTest'
 }
 tasks.named('check') { dependsOn 'runAutoLanguageChecks' }
+
+tasks.register('runTooltipCacheChecks', JavaExec) {
+    group = 'verification'
+    description = 'tooltip 翻譯快取：換語言、換名稱模式要重算，交出去的必須是複本'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.TooltipCacheTest'
+}
+tasks.named('check') { dependsOn 'runTooltipCacheChecks' }
