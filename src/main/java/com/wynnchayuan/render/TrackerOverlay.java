@@ -123,6 +123,16 @@ public final class TrackerOverlay {
         extras = lines == null ? List.of() : List.copyOf(lines);
     }
 
+    /**
+     * 右上那一欄的其他段落要不要補進面板。見 {@link #render} 裡的說明。
+     *
+     * <p>抽成獨立一支是為了測得到：{@code render} 要有 {@code Minecraft} 才跑得起來，
+     * 而這個判斷錯掉的後果（同一份隊伍清單出現兩次）測試看不到，只有玩家看得到。
+     */
+    public static boolean showsExtras(CollectorConfig config) {
+        return config != null && !config.wynntilsUi();
+    }
+
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
         // 就地取代模式下，右上那一欄本身已經是中文了（見 WynntilsText），
@@ -132,7 +142,16 @@ public final class TrackerOverlay {
         if (!panel) {
             return;
         }
-        List<Component> more = extras;
+        // 右上那一欄的其他段落（隊伍、每日目標、公會目標⋯⋯）只在
+        // <b>F6 的「Wynntils 介面」關掉</b>時才補。
+        //
+        // 開著的時候，Wynntils 自己畫的那一欄早就經過 WynntilsFontMixin 換成中文了
+        //（那條路只看 wynntilsUi，不看 trackerMode），我們再畫一份，畫面上就是
+        // 同一份隊伍清單出現兩次——一份在面板裡、一份在右邊的記分板。使用者
+        // 回報過兩次：2026-09-28 先是 Lootrun 那一段，後來是隊伍那一段。
+        //
+        // 關掉的時候沒有別人會翻那一欄，那才是這個面板存在的理由，照舊補。
+        List<Component> more = showsExtras(WynnChaYuan.config()) ? extras : List.of();
         if (lines.isEmpty() && more.isEmpty()) {
             return;
         }
