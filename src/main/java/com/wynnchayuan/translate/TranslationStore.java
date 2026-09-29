@@ -1188,6 +1188,11 @@ public final class TranslationStore {
         this.translateNames = value;
     }
 
+    /** 見 {@link #setTranslateNames}：給算繪端的快取做有效性判斷用。 */
+    public boolean translatesNames() {
+        return translateNames;
+    }
+
     /**
      * 物品名稱照 F6 設定顯示。{@code OFF} 保留英文、{@code ON} 只給譯名、
      * {@code BOTH} 給「譯名 (原文)」。
