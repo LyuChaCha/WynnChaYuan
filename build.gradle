@@ -1144,3 +1144,19 @@ tasks.register('runChoiceScrollChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.capture.ChoiceScrollTest'
 }
 tasks.named('check') { dependsOn 'runChoiceScrollChecks' }
+
+tasks.register('runDialogueFitLangChecks', JavaExec) {
+    group = 'verification'
+    description = '每一種語言各有多少台詞塞不進對話框（只印比例，不當門檻）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueFitLangTest'
+}
+tasks.named('check') { dependsOn 'runDialogueFitLangChecks' }
+
+tasks.register('runDialogueTooLongChecks', JavaExec) {
+    group = 'verification'
+    description = '譯文塞不進對話框時改讓小框接手，不是整句退回英文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueTooLongTest'
+}
+tasks.named('check') { dependsOn 'runDialogueTooLongChecks' }
