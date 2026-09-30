@@ -8741,6 +8741,54 @@ public final class LineTranslator {
     private static final int MAX_REFLOW = 12;
 
     /**
+     * 從 {@code from} 起找 {@code word}，但<b>跳過會切斷英文詞的位置</b>。
+     *
+     * <h2>為什麼不能用 indexOf</h2>
+     * 重點段是照文字比對貼回去的，而原文裡常常有<b>很短的</b>詞自成一段。
+     * 使用者回報的那一條：原文是
+     * {@code Once you reach 20 Challenges completed during your Lootrun, gain +20% Loot}，
+     * 其中 {@code Loot}（寶物加成那個詞）自己一段、自己一個顏色。譯文是
+     * 「本次 Lootrun 完成 20 場挑戰之後，寶物加成 +20%」——{@code Lootrun}
+     * 照慣例留著英文，於是 {@code indexOf("Loot")} 配到它的前四個字母，
+     * 只有那四個字母被塗上顏色，{@code run} 留在主樣式。畫面上就是一個詞
+     * <b>從中間斷成兩種顏色</b>。
+     *
+     * <p>詞表那一路（{@link TranslationStore#findTerm}）本來就用
+     * {@link TranslationStore#wordChar} 判詞界，只有重點段這一路沒判。
+     * 兩邊用同一條界線，答案才會一致。
+     *
+     * <h2>中日韓不受影響</h2>
+     * {@code wordChar} 把 {@code 0x2E80} 以上的字元排除在外，所以
+     * 「寶物加成」貼進「…，寶物加成 +20%」照樣配得到——中文本來就不用空格
+     * 分詞，拿英文的詞界去卡它只會讓重點段整批失效。
+     *
+     * <p>詞界只在<b>那一端本身是英數字</b>時才要求。{@code +20%} 開頭是
+     * {@code +}、結尾是 {@code %}，兩端都不是詞的一部分，照舊隨便貼。
+     */
+    private static int indexOfWhole(String text, String word, int from) {
+        if (word.isEmpty()) {
+            return -1;
+        }
+        for (int at = text.indexOf(word, from); at >= 0;
+                at = text.indexOf(word, at + 1)) {
+            if (!splitsWord(text, at, word)) {
+                return at;
+            }
+        }
+        return -1;
+    }
+
+    /** 這個位置貼下去會不會把一個英文詞切成兩半。見 {@link #indexOfWhole}。 */
+    private static boolean splitsWord(String text, int at, String word) {
+        int end = at + word.length();
+        boolean headCuts = TranslationStore.wordChar(word.charAt(0))
+                && at > 0 && TranslationStore.wordChar(text.charAt(at - 1));
+        boolean tailCuts = TranslationStore.wordChar(word.charAt(word.length() - 1))
+                && end < text.length() && TranslationStore.wordChar(text.charAt(end));
+        return headCuts || tailCuts;
+    }
+
+    /**
      * 接上一段譯文，並把原文裡帶特殊樣式的詞的樣式貼回去。
      *
      * <h2>為什麼做得到</h2>
@@ -8773,7 +8821,7 @@ public final class LineTranslator {
                 if (used[k] || isLoneBracket(accents.get(k).text())) {
                     continue;
                 }
-                int found = text.indexOf(accents.get(k).text(), from);
+                int found = indexOfWhole(text, accents.get(k).text(), from);
                 if (found < 0) {
                     continue;
                 }

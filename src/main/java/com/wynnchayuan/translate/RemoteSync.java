@@ -193,13 +193,50 @@ public final class RemoteSync {
             if (!root.isJsonArray() || root.getAsJsonArray().isEmpty()) {
                 return null;
             }
-            com.google.gson.JsonElement sha =
-                    root.getAsJsonArray().get(0).getAsJsonObject().get("sha");
-            return sha == null || !sha.isJsonPrimitive() ? null : sha.getAsString();
+            com.google.gson.JsonObject commit =
+                    root.getAsJsonArray().get(0).getAsJsonObject();
+            com.google.gson.JsonElement sha = commit.get("sha");
+            if (sha == null || !sha.isJsonPrimitive()) {
+                return null;
+            }
+            lastDate = dateOf(commit);         // 同一份回應裡就有，不必多問一次
+            return sha.getAsString();
         } catch (Exception e) {
             return null;                       // 問不到就當作沒有新的
         }
     }
+
+    /**
+     * 那一筆 commit 的日期，{@code 2026-09-30} 這種寫法。
+     *
+     * <p>GitHub 回的是 ISO 8601（{@code 2026-09-30T09:50:02Z}），取到 {@code T}
+     * 為止就好——時分秒對玩家沒有意義，而且那是 UTC，印出來只會跟本地時間對不上
+     * 惹人疑惑。挑 committer 而不是 author：squash 合併時 author 是提交者原本
+     * 寫 patch 的日子，可能是好幾天前，而玩家要知道的是「這份譯文什麼時候進 main」。
+     */
+    private static String dateOf(com.google.gson.JsonObject commit) {
+        try {
+            String date = commit.getAsJsonObject("commit")
+                    .getAsJsonObject("committer").get("date").getAsString();
+            int t = date.indexOf('T');
+            return t > 0 ? date.substring(0, t) : date;
+        } catch (Exception e) {
+            return null;                       // 沒有日期就不顯示日期，不是錯誤
+        }
+    }
+
+    /**
+     * 最後一次 {@link #remoteVersion()} 問到的那一筆的日期；問不到是 {@code null}。
+     *
+     * <p>做成旁路而不是改 {@code remoteVersion} 的回傳型別，是因為 SHA 是
+     * <b>身分</b>：比對新舊、存進設定檔的都是它，換成複合型別等於要動每一個
+     * 呼叫處，而日期純粹是講給人看的。
+     */
+    public static String lastRemoteDate() {
+        return lastDate;
+    }
+
+    private static volatile String lastDate;
 
     /**
      * 把遠端譯文抓下來放進 {@code cacheDir}。

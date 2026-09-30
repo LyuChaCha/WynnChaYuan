@@ -1013,6 +1013,14 @@ tasks.register('runBracketAccentChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runBracketAccentChecks' }
 
+tasks.register('runAccentWordChecks', JavaExec) {
+    group = 'verification'
+    description = '重點段的樣式不可以貼到英文詞中間（Lootrun 的 run 掉色）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.AccentWordBoundaryTest'
+}
+tasks.named('check') { dependsOn 'runAccentWordChecks' }
+
 tasks.register('runBlockProseColourChecks', JavaExec) {
     group = 'verification'
     description = '整段命中時，抽出去的數值不可以決定散文的底色（迷你任務卡的散文變青色）'

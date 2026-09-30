@@ -5,6 +5,7 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.CorpusExport;
 import com.wynnchayuan.render.Colors;
+import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.TranslationUpdate;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -1348,15 +1349,24 @@ public final class SettingsScreen extends Screen {
     }
 
     /**
-     * 本機那一份的 commit 短碼，講給人看。
+     * 那一份譯文的版本，講給人看的寫法。
      *
-     * <p>沒同步過就說「內建」——那是 jar 裡打包的那一份，沒有 commit 可以報。
+     * <h2>為什麼不印 SHA</h2>
+     * 先前印的是 commit 的前七碼（{@code a1b2c3d}）。使用者回報那看起來像亂碼
+     * ——確實是：那串字對玩家不表達任何東西，兩個版本擺在一起也看不出哪個新。
+     * 版本號要回答的是「我手上這份是<b>什麼時候</b>的」，所以改印日期。
+     *
+     * <p>新舊的判斷完全沒有跟著改：那一列是綠是黃，比的還是 SHA
+     * （{@link TranslationUpdate#verdict}）。日期只負責顯示——同一天合兩次的話
+     * 兩份的日期會一樣，但狀態那一列照樣分得出來。
+     *
+     * <h2>沒有日期的時候</h2>
+     * 沒同步過就說「內建」——那是 jar 裡打包的那一份，沒有 commit 可以報。
+     * 從舊版升上來的人 SHA 有而日期沒有，暫時退回短碼；下一次問版本就會補上
+     * （見 {@code TranslationUpdate#adoptDate}），不必等到真的有新譯文。
      */
-    private static String shortVersion(String sha) {
-        if (sha == null || sha.isBlank()) {
-            return T.s("data.version.bundled");
-        }
-        return sha.length() > 7 ? sha.substring(0, 7) : sha;
+    private static String shortVersion(String sha, String date) {
+        return TranslationUpdate.label(sha, date, T.s("data.version.bundled"));
     }
 
     /** 正在問版本。 */
@@ -1401,15 +1411,17 @@ public final class SettingsScreen extends Screen {
 
     private Button versionButton;
 
-    /** 那一列的說明：把兩個 commit 攤開來，看得出到底差在哪。 */
+    /** 那一列的說明：把手上這份與遠端那份的日期攤開來，看得出到底差在哪。 */
     private String versionHint() {
-        String local = shortVersion(WynnChaYuan.config().syncedTranslations());
+        String local = shortVersion(WynnChaYuan.config().syncedTranslations(),
+                                    WynnChaYuan.config().syncedTranslationsDate());
         return switch (versionState()) {
             case LOCAL -> T.s("data.version.local.hint");
             case CHECKING -> T.s("data.version.checking");
             case LATEST -> T.s("data.version.latest.hint", local);
-            case BEHIND -> T.s("data.version.behind.hint",
-                    local, shortVersion(TranslationUpdate.seen()));
+            // 遠端那一份的日期是這一次剛問到的，不是設定檔裡那個
+            case BEHIND -> T.s("data.version.behind.hint", local,
+                    shortVersion(TranslationUpdate.seen(), RemoteSync.lastRemoteDate()));
             case UNKNOWN -> T.s("data.version.unknown.hint", local);
         };
     }

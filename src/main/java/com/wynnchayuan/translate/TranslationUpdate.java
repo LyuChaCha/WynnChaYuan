@@ -57,6 +57,62 @@ public final class TranslationUpdate {
     public static void checked(String remote) {
         seen = remote;
         asked = remote != null;
+        adoptDate(remote);
+    }
+
+    /**
+     * 問到的那一筆剛好就是手上這一份時，把它的日期補進設定檔。
+     *
+     * <p>{@code syncedTranslationsDate} 是後來才加的欄位，所以從舊版升上來的人
+     * SHA 有而日期沒有，F6 那一列沒東西可顯示。等下一次真的有新譯文才補太久了
+     * ——這裡在<b>每一次問版本</b>時順手補：SHA 一樣就表示手上這份正是那一筆，
+     * 日期直接拿來用，不必重抓任何檔案。
+     *
+     * <p>只在日期空的時候寫，不然每問一次版本就重寫一遍設定檔。
+     */
+    private static void adoptDate(String remote) {
+        if (remote == null || remote.isBlank()) {
+            return;
+        }
+        com.wynnchayuan.CollectorConfig config = WynnChaYuan.config();
+        if (!config.syncedTranslationsDate().isBlank()
+                || !remote.equals(config.syncedTranslations())) {
+            return;
+        }
+        String date = RemoteSync.lastRemoteDate();
+        if (date != null && !date.isBlank()) {
+            config.syncedTranslationsDate(date);
+        }
+    }
+
+    /**
+     * 一份譯文的版本，講給人看的寫法。
+     *
+     * <h2>為什麼不印 SHA</h2>
+     * 先前印的是 commit 的前七碼（{@code a1b2c3d}）。使用者回報那看起來像亂碼
+     * ——確實是：那串字對玩家不表達任何東西，兩個版本擺在一起也看不出哪個新。
+     * 版本號要回答的是「我手上這份是<b>什麼時候</b>的」，所以改印日期。
+     *
+     * <p>新舊的判斷沒有跟著改：那一列是綠是黃，比的還是 SHA（{@link #verdict}）。
+     * 日期只負責顯示，同一天合兩次的話兩份日期一樣，但狀態那一列照樣分得出來。
+     *
+     * <p>寫成不碰全域狀態的純函式，跟 {@code verdict} 同一個理由：
+     * 這幾個分支說錯話都只表現成「畫面看起來沒事」。
+     *
+     * @param sha     那一份的 commit；空的代表從來沒同步過
+     * @param date    那一筆 commit 的日期；舊版升上來的人會是空的
+     * @param bundled 沒同步過時要說的話（{@code data.version.bundled}）
+     */
+    public static String label(String sha, String date, String bundled) {
+        if (sha == null || sha.isBlank()) {
+            return bundled;                    // jar 內建那一份，沒有 commit 可報
+        }
+        if (date != null && !date.isBlank()) {
+            return date;
+        }
+        // 舊版升上來：SHA 有而日期沒有。暫時退回短碼，下一次問版本就會補上
+        // （見 #adoptDate），不必等到真的有新譯文。
+        return sha.length() > 7 ? sha.substring(0, 7) : sha;
     }
 
     /** 這一場問到過遠端版本嗎（離網、被擋、API 額度用完都是 false）。 */
@@ -125,6 +181,11 @@ public final class TranslationUpdate {
         told = true;
         if (version != null && !version.isBlank()) {
             WynnChaYuan.config().syncedTranslations(version);
+            // 日期要<b>跟著換</b>，不能沿用。舊日期屬於上一筆 commit，留著就是
+            // 把新譯文標成舊日期——比沒有日期更糟。問不到日期就清空，
+            // 下一次問版本時 adoptDate 會補回來。
+            String date = RemoteSync.lastRemoteDate();
+            WynnChaYuan.config().syncedTranslationsDate(date == null ? "" : date);
             // 抓完了，本機就是這一個 commit：F6 那一列可以說「最新」。
             // version 是 null 的時候刻意<b>不</b>記——那代表檔案抓下來了，
             // 但問版本那一步失敗，所以手上這份對應哪個 commit 並不知道。
