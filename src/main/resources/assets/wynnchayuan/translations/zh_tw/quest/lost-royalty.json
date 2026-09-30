@@ -1,12 +1,72 @@
 {
  "_meta": {
   "quest": "Lost Royalty",
-  "count": 26,
+  "count": 32,
   "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Royalty#000": {
+   "src": "Have you gotten the king's son freed yet? The jungle mercenaries most likely have him held near that run-down old farm.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#001": {
+   "src": "Uh... Hi? Err, why did you free me? I'm trying to run away, I hate being the son of the king.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#002": {
+   "src": "He expects too much of me! I hate politics, and I want to be a great mercenary like Tisaun, to help protect people that can't protect themselves!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#003": {
+   "src": "It's not like my father ever listened to me when I told him. He wouldn't even let me out of the castle.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#004": {
+   "src": "Could you please tell Yavlis that I want to be free? I would be grateful if you could.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#005": {
+   "src": "I need my father to know that I want to leave.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#006": {
    "src": "Talk to Yavlis in {p} at [-{~}, {~}, -{~}]",
    "dst": "前往 {p} 與 Yavlis 對話，座標 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
@@ -16,7 +76,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#001": {
+  "Lost Royalty#007": {
    "src": "Oh, hello there! I had hoped not to bother you, adventurer, but this is urgent.",
    "dst": "喔，你好啊！我本來不想打擾你的，冒險者，但這件事很緊急。",
    "role": "desc",
@@ -26,7 +86,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#002": {
+  "Lost Royalty#008": {
    "src": "You see, the king is very... erm, distracted, and you are just the kind of willing, able-bodied person I need.",
    "dst": "你看，國王最近非常……呃，心不在焉，而你正是我需要的那種有意願、又有本事的人。",
    "role": "desc",
@@ -36,7 +96,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#003": {
+  "Lost Royalty#009": {
    "src": "You see, the king's son has gone missing, and with him worrying so much, the problems of the city have festered unsolved.",
    "dst": "事情是這樣的，國王的兒子失蹤了。他憂心成那樣，城裡的問題就一件件擱著爛掉。",
    "role": "desc",
@@ -46,7 +106,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#004": {
+  "Lost Royalty#010": {
    "src": "We believe he was kidnapped by the splinter cell mercenaries in the jungle... Unfortunate, too. They used to be quite honourable.",
    "dst": "我們認為他是被叢林裡那群分裂出去的傭兵綁走的……說來也可惜，他們以前是很有原則的一群人。",
    "role": "desc",
@@ -56,7 +116,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#005": {
+  "Lost Royalty#011": {
    "src": "Well, anyway, they're usually spotted outside the run-down farm outside of town. Go there and see what they want in return for the young prince.",
    "dst": "總之，他們通常會在鎮外那座荒廢的農場附近出沒。去那裡問問，看他們要拿什麼來換小王子。",
    "role": "desc",
@@ -66,7 +126,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#006": {
+  "Lost Royalty#012": {
    "src": "Talk to the Mercenary Leader in their hideout outside {p}",
    "dst": "前往 {p} 城外的藏身處，與傭兵首領對話",
    "role": "desc",
@@ -76,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#007": {
+  "Lost Royalty#013": {
    "src": "Excuse me?! What are you doing here, how did you find our secret hideout?",
    "dst": "什麼？！你在這裡做什麼，你怎麼會找到我們的祕密藏身處？",
    "role": "desc",
@@ -86,7 +146,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#008": {
+  "Lost Royalty#014": {
    "src": "Oh, you're here for the boy? A mighty fine steal, that one! The boy won't be leaving this establishment for free. I'll need some nice loot for him.",
    "dst": "哦，你是為了那個小子來的？那可是一票漂亮的買賣！那小子不會白白離開這裡的。我得拿到一些像樣的東西才行。",
    "role": "desc",
@@ -96,7 +156,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#009": {
+  "Lost Royalty#015": {
    "src": "Ah, but what to have you fetch...oh, haha! This would be a perfect opportunity to obtain that... Alright, ears open!",
    "dst": "啊，不過該讓你去拿什麼呢……哦，哈哈！這正是個弄到那東西的好機會……好，耳朵豎起來！",
    "role": "desc",
@@ -106,7 +166,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#010": {
+  "Lost Royalty#016": {
    "src": "There's a certain talisman that we aren't able to get to in the temple not far from here. It has special abilities that allow my men to be strengthened, see.",
    "dst": "離這裡不遠的神廟裡有一件護符，我們拿不到。它有特殊的力量，能強化我的手下，懂吧。",
    "role": "desc",
@@ -116,7 +176,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#011": {
+  "Lost Royalty#017": {
    "src": "The guardians there pack quite the punch, and there's some nasty mechanism in the way that we just can't crack.",
    "dst": "那裡的守衛拳頭很硬，而且路上還有個難搞的機關，我們就是破解不了。",
    "role": "desc",
@@ -126,7 +186,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#012": {
+  "Lost Royalty#018": {
    "src": "The temple is found just across the waterway, in a crevice in the mountain. It used to be blocked until those WynnExcavation fellows tried digging there.",
    "dst": "那座神廟就在水道對面，山壁的一道裂縫裡。本來是封死的，直到 WynnExcavation 那幫人跑去那邊挖。",
    "role": "desc",
@@ -136,7 +196,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#013": {
+  "Lost Royalty#019": {
    "src": "You get that talisman in my hands, and the king's boy is yours. Now off you pip! I'm a very busy man.",
    "dst": "把那件護符交到我手上，國王的兒子就是你的了。好了快去吧！我可是很忙的。",
    "role": "desc",
@@ -146,7 +206,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#014": {
+  "Lost Royalty#020": {
    "src": "Go to the jungle temple and retrieve the talisman at [-{~}, {~}, -{~}]",
    "dst": "前往叢林神廟，在 [-{~1}, {~2}, -{~3}] 取得護符",
    "role": "desc",
@@ -156,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#015": {
+  "Lost Royalty#021": {
    "src": "Bring the talisman back to the Mercenary Leader.",
    "dst": "把護符帶回給傭兵首領。",
    "role": "desc",
@@ -166,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#016": {
+  "Lost Royalty#022": {
    "src": "You've gotten the talisman! I can't believe you actually got through that puzzle!",
    "dst": "你把護符拿到手了！我真不敢相信你居然破得了那個機關！",
    "role": "desc",
@@ -176,7 +236,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#017": {
+  "Lost Royalty#023": {
    "src": "At this point I would usually keep the kid and throw you out of here, but since you've done what I've asked in such a timely fashion, he's all yours.",
    "dst": "換作平常，我大概會把小子留下，再把你丟出去；不過你這麼乾脆就把事情辦好了，他歸你了。",
    "role": "desc",
@@ -186,7 +246,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#018": {
+  "Lost Royalty#024": {
    "src": "When you get back to whoever asked you to do this, tell him to leave my men and I alone! We guildsmen lay down our lives every day, we don't need any more hostile onlookers!",
    "dst": "你回去見那個叫你來的人時，跟他說別再來煩我和我的弟兄！我們這行的人天天把命押在刀口上，不需要再多幾雙不懷好意的眼睛盯著！",
    "role": "desc",
@@ -196,7 +256,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#019": {
+  "Lost Royalty#025": {
    "src": "Talk to the Prince of {p} in the jail cell",
    "dst": "在牢房裡與 {p} 的王子對話",
    "role": "desc",
@@ -206,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#020": {
+  "Lost Royalty#026": {
    "src": "Report back to Yavlis with the news",
    "dst": "回去向 Yavlis 回報",
    "role": "desc",
@@ -216,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#021": {
+  "Lost Royalty#027": {
    "src": "Ah, finally! You're back. Did they let you bring him back? Those mercenaries have an awful habit of failing to honour their deals.",
    "dst": "啊，總算！你回來了。他們讓你把他帶回來了嗎？那些傭兵有個很糟糕的習慣，就是不守約定。",
    "role": "desc",
@@ -226,7 +286,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#022": {
+  "Lost Royalty#028": {
    "src": "Wait, the prince said what? He truly wants to be a mercenary? Oh my... then he must have escaped on his own.",
    "dst": "等等，王子說什麼？他是真心想當傭兵？我的天……那他一定是自己跑出來的。",
    "role": "desc",
@@ -236,7 +296,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#023": {
+  "Lost Royalty#029": {
    "src": "Alright then, if that's the path the king's son chooses to walk, then there's nothing we can do.",
    "dst": "好吧，既然這是國王的兒子自己選的路，那我們也無能為力。",
    "role": "desc",
@@ -246,7 +306,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#024": {
+  "Lost Royalty#030": {
    "src": "I can only hope that he chose to join them out of a will to protect the people, rather than simply brutishness or money.",
    "dst": "我只能希望他加入他們是出於保護人民的意志，而不是單純的粗野或為了錢。",
    "role": "desc",
@@ -256,7 +316,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#025": {
+  "Lost Royalty#031": {
    "src": "Such a shame that old guild has stooped to such a level. Well, we must thank you for your help. You can have the emerald ransom we had intended to pay.",
    "dst": "那個老牌公會淪落到這種地步，實在可惜。總之，我們得謝謝你的幫忙。我們本來要拿去付贖金的綠寶石，就給你吧。",
    "role": "desc",
