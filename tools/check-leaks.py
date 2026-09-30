@@ -22,8 +22,9 @@
 所以這一道看的是<b>已經在倉庫裡</b>的東西。濾網管入口，這裡管存量。
 
 用法：
-    python tools/check-leaks.py           # 掃過就好
-    python tools/check-leaks.py --write   # 直接刪掉掃到的
+    python tools/check-leaks.py             # 掃過就好
+    python tools/check-leaks.py --write     # 直接刪掉掃到的
+    python tools/check-leaks.py --selftest  # 規則的正例與反例，改規則之後跑
 """
 
 from __future__ import annotations
@@ -199,6 +200,46 @@ SIGN_SHAPES = [
 TEMPLATE_MARKS = ("{#}", "✔", "✖", "✫", "[|")
 
 
+# 帳號名黏著 {~}，而且<b>不在行首</b>
+# ----------------------------------
+# 上面 SHAPES 裡已經有兩條認這種名字：一條要求它在行首、後面接小寫動詞，
+# 一條要求它後面接 `'s`。實際掃過一次，夾在句子中間的一路漏過去：
+#
+#     - air{~} (Pending...)
+#     {#} Key Collector: air{~} has already opened the entrance
+#     ♦ … ⭐ {~}yue 🕒{~}h …
+#     Hydroxi{~} {#}{#}
+#     {~}yue was an easy meal for the Grootslang.
+#
+# 十條，譯文幾乎都是空的。`Hydroxi{~} {#}{#}` 六個語言都「翻」過了，
+# 但譯文就是原文本身——那只是把名字抄了一遍，照樣是別人的名字。
+#
+# 所以這一條<b>不看位置</b>：三個以上字母直接黏著 {~}、中間沒有空白就算。
+# 帳號名尾巴或開頭的數字收集時會變成 {~}，所以兩個方向都要認。
+# 兩個字母以內不收——`{~}s`、`{~}k`、`{~}th` 那些是單位與序數。
+GLUED = re.compile(r"(?<![A-Za-z])[A-Za-z]{3,}\{~\}|\{~\}[A-Za-z]{3,}(?![A-Za-z])")
+
+# 這幾個不是名字，是真的黏在數字上的字：
+#   {~}stx       交易市場的「{~} 組」（stacks）
+#   {~}min       分鐘。其他時間單位都在兩個字母以內，GLUED 本來就不會中
+#   {~}xpcombat  經驗卷軸的名字
+#   LOBBY{~}     大廳伺服器的編號
+GLUED_OK = ("{~}stx", "{~}min", "{~}xpcombat", "LOBBY{~}")
+
+
+def glued_name(src: str) -> str | None:
+    """帳號名黏著 {~} —— 上面那兩條因為限定位置而漏掉的那一種。"""
+    for match in GLUED.finditer(src):
+        token = match.group(0)
+        if token in GLUED_OK:
+            continue
+        # 兩邊都被 {~} 夾著的不是名字，是被切碎的代號（`{~}cbd{~}f`）
+        if token.startswith("{~}") and src[match.end():match.end() + 3] == "{~}":
+            continue
+        return "帳號名黏著 {~}"
+    return None
+
+
 def player_sign(src: str, items: set) -> str | None:
     """第一行是遊戲的物品名、其餘是玩家自己打的字 —— 回傳說明，否則 None。"""
     if "\n" not in src:
@@ -274,7 +315,62 @@ def drop(path: Path, keys: set[str]) -> int:
     return gone
 
 
+# --------------------------------------------------------------------------
+# 自我檢查
+
+def selftest() -> int:
+    """`python tools/check-leaks.py --selftest`
+
+    這條新規則是「放寬」而不是「收緊」——上面兩條都限定位置，這一條不看位置。
+    放寬的規則出錯的方式是誤殺：把 `{~}stx`、`{~}min` 之類真的黏在數字上的字
+    當成人名，`--write` 一跑就把譯文刪掉，而且 git 不會報衝突，譯文就永久
+    消失了。所以正例與反例都要留下來能重跑。
+
+    正例是 #901 實際清掉的那幾條原文。
+    """
+    bad = 0
+
+    def check(src: str, want: bool) -> None:
+        nonlocal bad
+        got = glued_name(src) is not None
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ")
+              + ("該抓到" if want else "不該抓到") + "：" + src[:64]
+              + ("" if ok else "（實際%s抓到）" % ("" if got else "沒")))
+        bad += 0 if ok else 1
+
+    # 要抓到 —— 名字夾在句子中間，上面兩條限定位置的規則都漏過去
+    for src in (
+            "- air{~} (Pending...)",
+            "{#} Key Collector: air{~} has already opened the entrance",
+            "♦ Guild Raid ⭐ {~}yue 🕒{~}h ago",
+            "Hydroxi{~} {#}{#}",
+            "{~}yue was an easy meal for the Grootslang.",
+            "Tomzd{~} has joined your party",
+    ):
+        check(src, True)
+
+    # 不該抓到 —— 真的黏在數字上的字
+    for src in (
+            "{~}stx",                      # 交易市場的「{~} 組」
+            "Sell for {~}stx to the market",
+            "{~}min",                      # 分鐘
+            "{~}xpcombat",                 # 經驗卷軸的名字
+            "LOBBY{~}",                    # 大廳伺服器編號
+            "+{~}s to your Timer",         # 秒，兩個字母以內
+            "{~}nd attempt",               # 序數
+            "{~}cbd{~}f",                  # 被切碎的代號，兩邊都被 {~} 夾著
+            "Talk to Ormrod in the {p}",   # 完全沒有 {~}
+    ):
+        check(src, False)
+
+    print("\n" + ("自我檢查全過。" if not bad else f"有 {bad} 項不對。"))
+    return 1 if bad else 0
+
+
 def main(argv: list[str]) -> int:
+    if "--selftest" in argv:
+        return selftest()
     write = "--write" in argv
     compiled = [(re.compile(p), why) for p, why in SHAPES + SIGN_SHAPES]
     items = known_items()
@@ -290,6 +386,8 @@ def main(argv: list[str]) -> int:
             why = next((w for p, w in compiled if p.search(src)), None)
             if why is None:
                 why = player_sign(src, items)
+            if why is None:
+                why = glued_name(src)
             if why:
                 rel = path.relative_to(TRANSLATIONS).as_posix()
                 print(f"  [{rel}] {why}")
