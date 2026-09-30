@@ -141,11 +141,37 @@ public final class WynntilsTextTest {
         check("翻不出來的原樣回去",
               WynntilsText.objective(odd, config, store).equals(odd));
 
+        // ★ 這一句在上面已經翻過、也進了快取。關掉開關之後還是要拿到原文——
+        // 也就是快取不可以繞過開關。
         config.toggleObjectives();
-        check("關掉時原樣回去",
+        check("★ 關掉時原樣回去（快取不可以繞過開關）",
               WynntilsText.objective("Slay Mobs: 12/100", config, store)
                       .equals("Slay Mobs: 12/100"));
         config.toggleObjectives();
+
+        // 快取本身。Wynntils 每一幀對每條目標都會問一次，所以這個入口記住上一次
+        // 的答案（見 WynntilsText#objective）。
+        //
+        // 快取壞掉的樣子是「換了語言還是舊語言」——畫面上不像快取出問題，會查很久，
+        // 所以這裡把「重載語料之後要拿到新語料的答案」釘住。
+        String twice = WynntilsText.objective("Slay Mobs: 12/100", config, store);
+        check("快取：同一條問兩次結果一樣（實際 " + twice + "）", done.equals(twice));
+
+        int before = store.generation();
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                "zh_cn"));
+        check("快取：重載之後 generation 有往前（" + before + " -> "
+              + store.generation() + "）", store.generation() != before);
+        String cn = WynntilsText.objective("Slay Mobs: 12/100", config, store);
+        // 不比對措辭——術語統一的 PR 會把寫死的字串弄紅（見 tests-dont-hardcode-wording）。
+        // 只要求「換了語料就換了答案」，而繁中與簡中這一條永遠不會一樣：
+        // 一邊是「擊殺」，一邊是「击杀」。
+        check("★ 快取：重載成簡中之後拿到的是新語料的答案（實際 " + cn + "）",
+              !cn.equals(done) && cn.contains("12") && cn.contains("100"));
+
+        // 還原成繁中，後面那幾項測試都吃這個 store。
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                Languages.DEFAULT));
     }
 
     private static void markers(CollectorConfig config, TranslationStore store) {
