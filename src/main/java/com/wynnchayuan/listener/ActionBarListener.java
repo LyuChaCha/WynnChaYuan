@@ -66,6 +66,18 @@ public final class ActionBarListener {
                 com.wynnchayuan.capture.DialogueChoices.of(event.getMessage());
         DialogueOverlay.noteChoices(picks,
                 com.wynnchayuan.capture.DialogueChoices.selected(event.getMessage()));
+        // 每一幀都餵：太長的選項是一格一格捲過來的，整句只能這樣接回來。
+        // 見 ChoiceScroll。
+        if (picks.isEmpty()) {
+            com.wynnchayuan.capture.ChoiceScroll.reset();
+        } else {
+            for (int i = 0; i < picks.size(); i++) {
+                String stitched = com.wynnchayuan.capture.ChoiceScroll.feed(i, picks.get(i));
+                if (stitched != null) {
+                    noteFull(i, stitched);
+                }
+            }
+        }
         collect(picks);
     }
 
@@ -104,8 +116,11 @@ public final class ActionBarListener {
         // 實機回報：四個選項的對話收出了 56 條，而且每一條都是切一半的視窗
         //（「mber anything from before yo」「ber anything from before you」）。
         //
-        // 跑馬燈永遠不會停，所以永遠不會被收——這是對的：那句話從來沒有
-        // 完整出現在畫面上，收進來的每一格都是殘句，翻了也對不上。
+        // 跑馬燈捲動中的那幾格永遠不會停，所以永遠不會從這裡被收——這是對的：
+        // 那幾格都是從單字中間切開的殘句，翻了也對不上。
+        //
+        // 但<b>第一格</b>不一樣：它會在開始捲之前停著，而它就是算繪端查表用的鍵。
+        // 所以第一格照收，整句由 noteFull 另外補上。見 ChoiceScroll。
         if (!picks.equals(settling)) {
             settling = picks;
             settlingSince = System.currentTimeMillis();
@@ -116,7 +131,8 @@ public final class ActionBarListener {
             return;
         }
         lastPicks = picks;
-        for (String pick : picks) {
+        for (int i = 0; i < picks.size(); i++) {
+            String pick = picks.get(i);
             if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(pick)) {
                 WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
                 continue;
@@ -127,13 +143,71 @@ public final class ActionBarListener {
                 WynnChaYuan.store().noteEvent("dialogue.blocked.clipped");
                 continue;
             }
-            com.wynntils.core.text.StyledText line =
-                    com.wynntils.core.text.StyledText.fromString(pick);
-            WynnChaYuan.store().record(
-                    com.wynnchayuan.capture.GlyphSplitter.toTemplate(line),
-                    "desc", "quest",
-                    com.wynnchayuan.capture.CurrentQuest.tag("dialogue/choice", null));
+            // 第三道：跑馬燈捲到<b>中間</b>停下來的那一格。
+            //
+            // 捲動中的視窗多半是小寫開頭，上面那一道就擋掉了；但停在字首剛好是
+            // 大寫的那一格（「Peloros work hard…」）就會漏過來。
+            //
+            // 判準不用長度也不用標點——{@link com.wynnchayuan.capture.ChoiceScroll}
+            // 手上有這一列的實際狀態：接得上前面累積的那幾格，就表示這一格是
+            // 捲到一半的；沒在捲的選項（含剛好 27、28 個字元又沒有句尾標點的那種）
+            // 自己就是第一格，不會被誤擋。
+            if (!pick.equals(com.wynnchayuan.capture.ChoiceScroll.first(i))) {
+                WynnChaYuan.store().noteEvent("dialogue.blocked.midScroll");
+                continue;
+            }
+            record(pick, com.wynnchayuan.capture.ChoiceScroll.full(i));
         }
+    }
+
+    /**
+     * 這一列的整句拼好了：把它補到<b>第一格</b>那一條上面去。
+     *
+     * <p>收的時候（第一格停著不動那 700 毫秒）還沒開始捲，整句當然還沒有。
+     * 所以要等拼完再回來補一次——{@code CaptureStore#record} 認得這件事。
+     *
+     * <p>這裡刻意<b>不看</b>{@link #collect} 那個「停穩 700 毫秒」的判斷：整句都
+     * 接回來了就表示這一列確實是一個捲動中的選項，不是雜訊。有些跑馬燈在第一格
+     * 停不到 700 毫秒，先前就是這樣整條漏掉的。
+     */
+    private void noteFull(int row, String stitched) {
+        if (!WynnChaYuan.config().collect()) {
+            return;
+        }
+        String firstWindow = com.wynnchayuan.capture.ChoiceScroll.first(row);
+        if (firstWindow == null || looksClipped(firstWindow)) {
+            return;
+        }
+        record(firstWindow, stitched);
+    }
+
+    /**
+     * 把一條選項收進語料。
+     *
+     * @param pick 語料的鍵：畫面上那一格（跑馬燈的話是第一格）
+     * @param full 接回來的整句，沒有就傳 {@code null}。見 {@code ChoiceScroll}
+     */
+    private void record(String pick, String full) {
+        if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(pick)) {
+            WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
+            return;
+        }
+        // 整句也要過一次守門：它是好幾格接起來的，任何一格夾帶玩家資料都不能進去。
+        if (full != null
+                && com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(full)) {
+            WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
+            full = null;
+        }
+        com.wynntils.core.text.StyledText line =
+                com.wynntils.core.text.StyledText.fromString(pick);
+        String template = full == null ? null
+                : com.wynnchayuan.capture.GlyphSplitter.toTemplate(
+                        com.wynntils.core.text.StyledText.fromString(full));
+        WynnChaYuan.store().record(
+                com.wynnchayuan.capture.GlyphSplitter.toTemplate(line),
+                "desc", "quest",
+                com.wynnchayuan.capture.CurrentQuest.tag("dialogue/choice", null),
+                template);
     }
 
     /**
@@ -151,7 +225,13 @@ public final class ActionBarListener {
             return false;
         }
         char first = pick.charAt(0);
-        return first >= 'a' && first <= 'z';
+        if (first >= 'a' && first <= 'z') {
+            return true;
+        }
+        // 切在單字<b>中間</b>的視窗也可能是符號開頭：「'm not going to help you」
+        // 就是從 I'm 的撇號切開的。沒有任何選項是這樣開頭的。
+        return first == '\'' || first == ',' || first == '.' || first == ';'
+                || first == ':' || first == '!' || first == '?';
     }
 
     /**

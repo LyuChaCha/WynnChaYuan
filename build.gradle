@@ -1136,3 +1136,11 @@ tasks.register('runTooltipCacheChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.TooltipCacheTest'
 }
 tasks.named('check') { dependsOn 'runTooltipCacheChecks' }
+
+tasks.register('runChoiceScrollChecks', JavaExec) {
+    group = 'verification'
+    description = '跑馬燈選項要能從一格一格的視窗接回整句'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.ChoiceScrollTest'
+}
+tasks.named('check') { dependsOn 'runChoiceScrollChecks' }

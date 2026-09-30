@@ -12,15 +12,22 @@ package com.wynnchayuan.listener;
  * {@code ber anything from before you}、{@code er anything from before you}。
  * 那句話從來沒有完整出現在畫面上，收進來的每一格都是殘句，翻了也對不上。
  *
- * <h2>兩道防線</h2>
+ * <h2>三道防線</h2>
  * <ol>
  *   <li><b>穩定判斷</b>（{@code ActionBarListener#collect}）：選項要連續穩定
- *       700 毫秒才收。跑馬燈永遠不會停，所以永遠不會被收——這是對的。</li>
+ *       700 毫秒才收。捲動中的那幾格永遠不會停，所以不會從那裡被收。</li>
  *   <li><b>殘句判斷</b>（這裡測的）：漏網的殘句幾乎都是從單字中間切開的。
  *       Wynncraft 的選項都寫成句子，一律大寫或符號開頭。</li>
+ *   <li><b>捲動狀態</b>（{@code com.wynnchayuan.capture.ChoiceScroll}）：接得上
+ *       前面累積的視窗就是捲到一半的那一格。</li>
  * </ol>
  *
  * <p>第二道刻意做得簡單：它只是保險，判準複雜了反而會自己出錯。
+ *
+ * <h2>第一格要留</h2>
+ * 2026-09-30 改過一次：<b>第一格不丟</b>。算繪端手上也只有視窗，查表用的鍵就是
+ * 第一格（見 {@code render.Marquee}）——丟掉就等於讓長選項永遠不可能被翻。
+ * 整句由 {@code ChoiceScroll} 接回來，放進條目的 {@code full} 欄位給譯者看。
  */
 public final class DialogueChoiceTest {
 
@@ -47,6 +54,21 @@ public final class DialogueChoiceTest {
                 "so optimistic about being a"}) {
             check("擋得下殘句：" + clipped,
                   ActionBarListener.looksClipped(clipped));
+        }
+
+        // 切在撇號、逗號上的視窗：不是小寫開頭，先前一路過關
+        for (String clipped : new String[] {
+                "'m not going to help you wit",
+                ", but I never saw him again.",
+                ". Nobody told me about that."}) {
+            check("符號開頭的殘句也擋得下：" + clipped,
+                  ActionBarListener.looksClipped(clipped));
+        }
+
+        // 這幾個是真的選項，符號開頭但不是切出來的
+        for (String real : new String[] {"…nothing.", "[Leave]", "(Say nothing)"}) {
+            check("不誤擋符號開頭的真選項：" + real,
+                  !ActionBarListener.looksClipped(real));
         }
 
         check("空字串不當成殘句", !ActionBarListener.looksClipped(""));
