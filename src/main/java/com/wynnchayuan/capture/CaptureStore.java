@@ -68,6 +68,20 @@ public final class CaptureStore {
         public int seen = 1;    // 遇到次數，用來排優先度
 
         /**
+         * 跑馬燈選項接回來的<b>整句</b>。只有那一種條目才有，其餘是 {@code null}
+         * ——Gson 預設不輸出 null，所以不會弄髒別的條目。
+         *
+         * <h2>為什麼 src 不直接放整句</h2>
+         * 算繪端手上永遠只有<b>一格</b>：那句話從來不會完整出現在畫面上
+         * （見 {@link ChoiceScroll}）。查表用的鍵必須是它看得到的那一格，
+         * 也就是第一格；換成整句就永遠查不到，選項一個字都不會被翻。
+         *
+         * <p>但只給譯者看一格（「Don't underestimate our stre」）等於要他猜
+         * 後面是什麼。所以鍵照舊是第一格，整句放在這裡給人看。
+         */
+        public String full;
+
+        /**
          * 第幾個被收集到。
          *
          * <h2>為什麼要記順序</h2>
@@ -183,6 +197,15 @@ public final class CaptureStore {
      * @return 是否為新字串
      */
     public boolean record(String template, String role, String domain, String ctx) {
+        return record(template, role, domain, ctx, null);
+    }
+
+    /**
+     * @param full 跑馬燈選項接回來的整句；其餘情況傳 {@code null}。
+     *             見 {@link Captured#full}。
+     */
+    public boolean record(String template, String role, String domain, String ctx,
+                          String full) {
         if (template == null || template.isBlank() || !GlyphSplitter.hasLetter(template)) {
             return false;   // 沒有字母 = 純符號或純數字，不值得記錄
         }
@@ -227,10 +250,22 @@ public final class CaptureStore {
         Captured existing = entries.get(key);
         if (existing != null) {
             existing.seen++;
+            // 同一條先前只收到第一格、這次才拼出整句的話，補上去。
+            // 已經有整句的話，只有「更長、而且開頭一模一樣」才換掉：那是同一句
+            // 拼得更完整（ChoiceScroll 提早判定過的會這樣再回報一次）。
+            // 開頭不同就是別的句子，不能蓋掉。
+            if (full != null && (existing.full == null
+                    || (full.length() > existing.full.length()
+                            && full.startsWith(existing.full)))) {
+                existing.full = full;
+                dirty.set(true);
+            }
             return false;
         }
-        entries.put(key, new Captured(template.strip(), role, classify(domain, ctx),
-                ctx, nextSeq.getAndIncrement()));
+        Captured row = new Captured(template.strip(), role, classify(domain, ctx),
+                ctx, nextSeq.getAndIncrement());
+        row.full = full;
+        entries.put(key, row);
         dirty.set(true);
         return true;
     }
