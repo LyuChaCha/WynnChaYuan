@@ -397,6 +397,15 @@ tasks.register('runStatLabelIndentChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runStatLabelIndentChecks' }
 
+// 素材 tooltip 的需求列：整行查得到譯文的那一列也要靠左。
+tasks.register('runIngredientTooltipChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.IngredientTooltipTest'
+}
+tasks.named('check') { dependsOn 'runIngredientTooltipChecks' }
+
 // boss bar 開頭的怪物名跟名牌用同一條譯文。
 tasks.register('runBossBarNameChecks', JavaExec) {
     group = 'verification'
