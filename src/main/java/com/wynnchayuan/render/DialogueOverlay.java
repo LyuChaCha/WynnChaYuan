@@ -485,7 +485,14 @@ public final class DialogueOverlay {
             return;
         }
         Minecraft mc = Minecraft.getInstance();
-        if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE) {
+        // 就地取代<b>放不下</b>那一句的時候要接手。
+        //
+        // 中文需要比原文多一行時，就地取代沒有地方可以放——框的高度是照原文的
+        // 行數畫出來的。先前整句退回英文，玩家看到的是「講到最後忽然變回英文」。
+        // 這種時候改由小框畫：原文留在遊戲自己的框裡，譯文出現在小框上，
+        // 也就是「面板」模式本來的樣子。見 {@link DialogueRewriter#bodyTooLong}。
+        if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE
+                && !DialogueRewriter.bodyTooLong()) {
             // 就地取代已經把譯文寫進遊戲自己的對話框了（見 DialogueRewriter），
             // 這裡再畫一塊就是同一句話出現兩次。
             //

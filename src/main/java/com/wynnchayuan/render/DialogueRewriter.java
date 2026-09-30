@@ -114,11 +114,41 @@ public final class DialogueRewriter {
     private DialogueRewriter() {}
 
     /**
+     * 整句翻得出來，但攤不進對話框的行數。
+     *
+     * <h2>為什麼沒辦法就地放下</h2>
+     * 就地取代只能寫進 Wynncraft <b>已經送來</b>的 {@code body_N} 那幾行，而框的
+     * 高度也是照那個行數畫出來的。中文需要比原文多一行的時候，沒有地方可以放
+     * ——憑空多畫一行會直接穿出框外。
+     *
+     * <p>先前的做法是整句留英文。玩家看到的是「講到最後一刻忽然變回英文」
+     * （yool141 在 #902 回報：「部分译文过长，导致部分内容会切换回英文」，
+     * 並且指出「如果將任務翻譯設置在另一個框中，就能正確翻譯」）。
+     *
+     * <h2>改成讓小框接手</h2>
+     * 塞不下的那一句改由 {@link DialogueOverlay} 畫在小框上：原文留在遊戲自己的
+     * 框裡，譯文出現在小框。那正是「面板」模式本來的樣子，也正好是這個專案
+     * 「不取代原文」的原則——看得到中文，總比整句退回英文好。
+     *
+     * <p>只在<b>整句已經講完</b>時才會成立。打字途中走的是「照進度截一段」
+     * 那條路，本來就不會因為塞不下而放棄。
+     */
+    private static boolean tooLong;
+
+    /** 見 {@link #tooLong}。{@link DialogueOverlay} 靠這個決定要不要接手。 */
+    public static boolean bodyTooLong() {
+        return tooLong;
+    }
+
+    /**
      * 換掉對話裡的文字；不是對話、或沒有一段換得掉時回傳 {@code null}。
      *
      * @return 改寫過的訊息，或 {@code null} 表示原樣不動
      */
     public static Component rewrite(Component message, TranslationStore store) {
+        // 每一幀重算。留著上一幀的值，會讓小框在下一句（塞得下的那一句）
+        // 上面繼續畫，變成同一句話出現兩次。
+        tooLong = false;
         if (message == null || store == null) {
             return null;
         }
@@ -1076,6 +1106,12 @@ public final class DialogueRewriter {
 
     static String line(String text, TranslationStore store, int rows,
             Style style, int width) {
+        // 「翻得出來但放不下」的旗標在這裡也歸零，不只在 rewrite() 開頭。
+        //
+        // rewrite() 有好幾條路會在還沒叫到這裡之前就 return（沒有內文行、
+        // 內文的開關關著）。只在那邊清的話，這裡設過的值會留到下一幀，
+        // 小框就會在一句根本不需要它接手的台詞上面繼續畫。
+        tooLong = false;
         // 先參數化再查表。
         //
         // 語料裡的鍵是「Hey, {u}! Are you alright…」，而畫面上是玩家的真名。
@@ -1258,7 +1294,12 @@ public final class DialogueRewriter {
             // 讓玩家看見完整的英文，比看見被切掉一半的譯文好。
             // 這一條是<b>刻意</b>不沿用上一幀的：那會讓畫面停在半句中文，
             // 正是這裡要避免的東西。
-            return wrap(hit, rows, style, width) != null ? show(raw, hit, null) : drop();
+            if (wrap(hit, rows, style, width) != null) {
+                return show(raw, hit, null);
+            }
+            // 翻得出來、只是放不下。記一筆讓小框接手，見 {@link #tooLong}。
+            tooLong = true;
+            return drop();
         }
         // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。
         //
