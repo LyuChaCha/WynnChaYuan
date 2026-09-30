@@ -7,12 +7,12 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 98.5%（52,929 / 53,713）
+## `zh_tw` 繁體中文 — 98.6%（53,628 / 54,412）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 293 / 293 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | █████████░ 94% | 11,058 / 11,747 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | █████████░ 94% | 11,060 / 11,749 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 321 / 321 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
 | `npc.json` | ██████████ 99% | 6,223 / 6,293 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,110 / 1,110 | 選單與介面<br>Menus and interface text |
@@ -28,7 +28,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 721 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 295 / 295 | 探索點的名稱<br>Discovery names |
+| `cave.json` | ██████████ 100% | 209 / 209 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,077 / 1,077 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `mini-quest.json` | ██████████ 100% | 488 / 488 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 98% | 422 / 430 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 108 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
@@ -44,7 +46,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 95.0%（51,033 / 53,713）
+## `zh_cn` 简体中文 — 95.1%（51,730 / 54,410）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -65,7 +67,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 721 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 295 / 295 | 探索點的名稱<br>Discovery names |
+| `cave.json` | ██████████ 100% | 209 / 209 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 100% | 1,077 / 1,077 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `mini-quest.json` | ██████████ 100% | 488 / 488 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | ██████████ 98% | 422 / 430 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 108 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
@@ -81,7 +85,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 91.9%（49,389 / 53,713）
+## `ja_jp` 日本語 — 91.2%（49,649 / 54,410）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -102,7 +106,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ███████░░░ 71% | 511 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | █████████░ 85% | 252 / 295 | 探索點的名稱<br>Discovery names |
+| `cave.json` | █████████░ 95% | 198 / 209 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 96% | 1,037 / 1,077 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `mini-quest.json` | █░░░░░░░░░ 13% | 62 / 488 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | █████████░ 93% | 401 / 430 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████░░░░ 64% | 69 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
@@ -118,7 +124,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 91.2%（48,975 / 53,713）
+## `ru_ru` Русский — 90.5%（49,235 / 54,410）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -139,7 +145,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ███████░░░ 71% | 511 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | █████████░ 85% | 252 / 295 | 探索點的名稱<br>Discovery names |
+| `cave.json` | █████████░ 95% | 198 / 209 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 96% | 1,037 / 1,077 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `mini-quest.json` | █░░░░░░░░░ 13% | 62 / 488 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | █████████░ 93% | 401 / 430 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████░░░░ 64% | 69 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
@@ -155,7 +163,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 91.2%（48,973 / 53,713）
+## `ko_kr` 한국어 — 90.5%（49,233 / 54,410）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -176,7 +184,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ███████░░░ 71% | 511 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | █████████░ 85% | 252 / 295 | 探索點的名稱<br>Discovery names |
+| `cave.json` | █████████░ 95% | 198 / 209 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 96% | 1,037 / 1,077 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `mini-quest.json` | █░░░░░░░░░ 13% | 62 / 488 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | █████████░ 93% | 401 / 430 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████░░░░ 64% | 69 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
@@ -192,7 +202,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 90.8%（48,771 / 53,713）
+## `es_es` Español — 90.1%（49,031 / 54,410）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -213,7 +223,9 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ███████░░░ 71% | 511 / 721 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ████████░░ 83% | 246 / 295 | 探索點的名稱<br>Discovery names |
+| `cave.json` | █████████░ 95% | 198 / 209 | 洞穴探索點的說明<br>Cave discovery descriptions |
 | `lootrun.json` | ██████████ 96% | 1,037 / 1,077 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `mini-quest.json` | █░░░░░░░░░ 13% | 62 / 488 | 野外的迷你任務（屠殺點、採集點）<br>Mini-quests in the wild (slaying/gathering posts) |
 | `raid.json` | █████████░ 93% | 401 / 430 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████░░░░ 64% | 69 / 108 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |

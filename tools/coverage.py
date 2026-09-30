@@ -201,7 +201,7 @@ GROUPS = [
       "discovery-name.json", "lootrun.json", "raid.json", "dungeon.json",
       "guild.json", "major-id.json", "major-id-terms.json",
       "profession-terms.json", "chat-terms.json", "dialogue-choice.json",
-      "wynntils.json", "unsorted.json"]),
+      "wynntils.json", "unsorted.json", "cave.json", "mini-quest.json"]),
 ]
 
 
@@ -304,6 +304,10 @@ def leftover() -> list[str]:
     # 兩邊都算會重複計算一次。
     for folder in ("quest", "secret"):
         everything -= {p.name for p in (TRANSLATIONS / folder).glob("*.json")}
+    # scoped/ 是「只在特定地方生效」的覆寫檔（見 FileIndex.SCOPED 的說明），
+    # 刻意不進 _index.json，自然也不該進分母——同一個原文在一般語料裡
+    # 已經算過一次了。
+    everything -= {p.name for p in (TRANSLATIONS / "scoped").glob("*.json")}
     return sorted(everything - counted)
 
 
