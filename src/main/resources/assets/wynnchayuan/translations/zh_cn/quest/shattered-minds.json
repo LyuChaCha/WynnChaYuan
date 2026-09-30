@@ -1,12 +1,162 @@
 {
  "_meta": {
   "quest": "Shattered Minds",
-  "count": 51,
+  "count": 66,
   "translated": 51,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Shattered Minds#000": {
+   "src": "The Bluecap Mushrooms grow in a cave out the gate northwest of here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Efilim Elf 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
+   "source": "captured"
+  },
+  "Shattered Minds#001": {
+   "src": "You find and take the mushroom Likeru asked for.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#002": {
+   "src": "[+{~} Bluecap Mushroom]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#003": {
+   "src": "You begin to feel an odd sensation...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#004": {
+   "src": "...Now that you... have the mushrooms... you should return to... Likeru...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#005": {
+   "src": "Swish and sproont! Or is it the other way around? The moon shoes will help too!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#006": {
+   "src": "Sorry! The stairs broke! Try again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "[+487 Combat XP]\n[ZLGX]",
+   "source": "captured"
+  },
+  "Shattered Minds#007": {
+   "src": "There we go.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#008": {
+   "src": "Is a refreshment needed? For I shall provide- the colors, green, blue, red, yellow, floating above the pillars- reveals where you will arrive",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Professor Eih\n󏿿󏿿󏿿󏿿󏿬󐀂\n.",
+   "source": "captured"
+  },
+  "Shattered Minds#009": {
+   "src": "They send the same way! Such direction waters my crops and tops my hat- fly well!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#010": {
+   "src": "A fresh-water fellow finds a fresh start for the fish out of water, frying in the fuzzies' fireplace!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Professor Eih\n󏿿󏿿󏿿󏿿󏿬󐀂\n.",
+   "source": "captured"
+  },
+  "Shattered Minds#011": {
+   "src": "Green means go- and going green means you get going! Glance the green in the air by the gates, greengills!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Professor Eih\n󏿿󏿿󏿿󏿿󏿬󐀂\n.",
+   "source": "captured"
+  },
+  "Shattered Minds#012": {
+   "src": "The Bluecaps are fickle things, inasmuch as inanimate objects can be. We cannot control their influence but in passing. We shall need to take care with them...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Strange Coin 󏿿󏿿󏿿󏿿󏿿󏿪 󐀂",
+   "source": "captured"
+  },
+  "Shattered Minds#013": {
+   "src": "Yeah...the more I think on it, the more that the corruption portal messing with the visions makes sense.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#014": {
+   "src": "Well, if you ever want to try again and see if I'm wrong go ahead, but please don't dive into the pond again?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Grook 󏿿󏿿󏿿󏿿󏿿󏿿󏿿󏿞 󐀂\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Shattered Minds#015": {
    "src": "Speak to Likeru in {p} at [-{~}, {~}, -{~}].",
    "dst": "与 {p} [-{~}, {~}, -{~}] 的 Likeru 交谈。",
    "role": "desc",
@@ -16,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#001": {
+  "Shattered Minds#016": {
    "src": "Aha, perfect! You'll be perfect! Lucky a human decided to come here!",
    "dst": "啊哈，太好了！你正合适！真走运，居然有人类来这里！",
    "role": "desc",
@@ -26,7 +176,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#002": {
+  "Shattered Minds#017": {
    "src": "I'll get to the point- I want you to go get something for me, and then bring it back here. Simple, right?",
    "dst": "我直说吧——我想请你帮我去拿个东西，然后带回来。很简单，对吧？",
    "role": "desc",
@@ -36,7 +186,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#003": {
+  "Shattered Minds#018": {
    "src": "When you do that, I'm going to fix it up and try something out on you. Something magically enlightening!",
    "dst": "等你拿回来，我会处理一下，然后在你身上试点东西。一种能让人魔法开悟的东西！",
    "role": "desc",
@@ -46,7 +196,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#004": {
+  "Shattered Minds#019": {
    "src": "Oh, don't give me that look, it should be perfectly safe! Unless you've been mired in darkness for the past however many years...",
    "dst": "噢，别那样看我，应该绝对安全的！除非你过去不知道多少年一直陷在黑暗里……",
    "role": "desc",
@@ -56,7 +206,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#005": {
+  "Shattered Minds#020": {
    "src": "Anyway, what I need is a specific kind of mushroom that grows close by, the Bluecap Mushroom.",
    "dst": "总之，我需要的是附近长的一种特别的蘑菇，蓝帽蘑菇。",
    "role": "desc",
@@ -66,7 +216,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#006": {
+  "Shattered Minds#021": {
    "src": "They grow underground- in a cave out the gate northwest of here. I'll even pay you if you bring it back, so what have you got to lose?",
    "dst": "它们长在地下——在这里西北边城门外的一个洞窟里。你带回来我还会付钱，你有什么好损失的？",
    "role": "desc",
@@ -76,7 +226,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#007": {
+  "Shattered Minds#022": {
    "src": "Bring Likeru the mushrooms from the cave at [-{~}, {~}, -{~}].",
    "dst": "从 [-{~}, {~}, -{~}] 的洞窟里把蘑菇带给 Likeru。",
    "role": "desc",
@@ -86,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#008": {
+  "Shattered Minds#023": {
    "src": "Figure out how to get out of the cave, and return to Likeru.",
    "dst": "想办法离开洞窟，回到 Likeru 那里。",
    "role": "desc",
@@ -96,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#009": {
+  "Shattered Minds#024": {
    "src": "Looks like someone rolled about the air fuzz too much, so indeed hello! A light hello to yourself, {u}, and a greetings to Professor Eih, which is me!",
    "dst": "看来有人在空气绒毛里滚得太久啦，所以说，你好！轻轻地向你问好，{u}，也向 Eih 教授问好，也就是我！",
    "role": "desc",
@@ -106,7 +256,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#010": {
+  "Shattered Minds#025": {
    "src": "I don't rhyme all the instances, I feel the need to say. But what do you say? Very little! But I bet you're wondering where you are.",
    "dst": "我觉得有必要说一句，我可不是每句都押韵。那你说呢？说得很少！不过我敢打赌你在想自己在哪里。",
    "role": "desc",
@@ -116,7 +266,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#011": {
+  "Shattered Minds#026": {
    "src": "I am no gambling man, but the chips are down and it is time to play {~}-Pickup with the puzzle pieces, and I'll eat my bowtie if you aren't ready.",
    "dst": "我不是赌徒，可筹码已经下了，是时候拿拼图碎片玩 {~} 张捡牌游戏了，你要是还没准备好，我就把我的领结吃掉。",
    "role": "desc",
@@ -126,7 +276,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#012": {
+  "Shattered Minds#027": {
    "src": "The betting pool says the way to go is the opposite of in front, so that leaves someplace we can't talk about in front of the kids as your path!",
    "dst": "赌池说该走的路是前面的反方向，所以你的路就是那个不能当着小孩的面说的地方！",
    "role": "desc",
@@ -136,7 +286,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#013": {
+  "Shattered Minds#028": {
    "src": "I will be around! Or asquare, as it were. Technically amultiplesquares, replete with alines! And abevels! And other some such things like-",
    "dst": "我会在附近！或者说附方，严格来说是附好多方，还带附线！附斜角！还有别的诸如此类——",
    "role": "desc",
@@ -146,7 +296,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#014": {
+  "Shattered Minds#029": {
    "src": "The punks scramble like eggs, and your skillet is sizzling! Certainly the heat in the kitchen is too much- so where is the fire extinguisher?",
    "dst": "小混混像鸡蛋一样被打散，你的平底锅正滋滋作响！厨房里肯定太热了——灭火器在哪？",
    "role": "desc",
@@ -156,7 +306,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#015": {
+  "Shattered Minds#030": {
    "src": "It won't rocket you! The hole in the shape of a door looms out of your transparent grasp- frogs can't skip leg day, so be froggy! Bounce and jump!",
    "dst": "它不会把你当火箭发射！门形状的洞在你透明的掌握之外隐隐浮现——青蛙可不能不练腿，所以当只青蛙吧！弹跳吧！",
    "role": "desc",
@@ -166,7 +316,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#016": {
+  "Shattered Minds#031": {
    "src": "Swoosh and sprint! Speed and non-slip shoes! With a CLICK upon me I give you all but one, as much as you need!",
    "dst": "咻咻冲刺！速度和防滑鞋！在我身上咔哒一下，我就给你除了一个以外的全部，要多少有多少！",
    "role": "desc",
@@ -176,7 +326,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#017": {
+  "Shattered Minds#032": {
    "src": "The colors! Shimmering as a prism- oh, no one likes those things. The writing is on the wall, but the window mugs it for pocket change! The inhumanity!",
    "dst": "颜色！像棱镜一样闪闪发光——噢，没人喜欢那种东西。字就写在墙上，可窗户为了零钱把它抢了！太没人性了！",
    "role": "desc",
@@ -186,7 +336,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#018": {
+  "Shattered Minds#033": {
    "src": "Use your eyes as ears and hear what I shall write! The cockpit is missing ground control and the cornfields all look the same in endless rows!",
    "dst": "用你的眼睛当耳朵，听我要写的东西！驾驶舱没了地面指挥，玉米田一排排无穷无尽，看起来全都一样！",
    "role": "desc",
@@ -196,7 +346,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#019": {
+  "Shattered Minds#034": {
    "src": "So Eih, esquire professor PhD, will provide the coordinates in helpfully non-literal fashion, and one's joystick shall lead the holder to bliss!",
    "dst": "所以，Eih，尊贵的教授博士，将以非常不字面的方式提供坐标，而握着操纵杆的人就会被引向极乐！",
    "role": "desc",
@@ -206,7 +356,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#020": {
+  "Shattered Minds#035": {
    "src": "At one's boots, the colors paint themselves towards an orientation. Above one's head, the lights match and fling you the same!",
    "dst": "在人的靴子下，颜色自己朝着某个方向画过去。在人的头顶上，灯光对上了，也会把你照样甩出去！",
    "role": "desc",
@@ -216,7 +366,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#021": {
+  "Shattered Minds#036": {
    "src": "I'm all out of airplane food, but the goal is more than peanuts- it's progress, just opposite our position. Fly well!",
    "dst": "我的飞机餐吃完了，但目标可不只是花生——那是进展，就在我们位置的反方向。飞得好点！",
    "role": "desc",
@@ -226,7 +376,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#022": {
+  "Shattered Minds#037": {
    "src": "WOW. Just, WOW! Your brain being frazzled doesn't excuse this failure! Time is money and we're swimming in a river called DEBT!",
    "dst": "哇。真的，哇！脑子被搅糊了也不能为这种失败开脱！时间就是金钱，而我们正泡在一条叫负债的河里！",
    "role": "desc",
@@ -236,7 +386,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#023": {
+  "Shattered Minds#038": {
    "src": "I'm just going to stand here and you're gonna go into the teleporters I'm NOT in, and you're gonna like it!",
    "dst": "我就站在这里，而你要走进我不在的那些传送门，而且你会喜欢的！",
    "role": "desc",
@@ -246,7 +396,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#024": {
+  "Shattered Minds#039": {
    "src": "Explore the strange forest to find Likeru.",
    "dst": "探索这片奇怪的森林，找到 Likeru。",
    "role": "desc",
@@ -256,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#025": {
+  "Shattered Minds#040": {
    "src": "Hey, look to your left for a moment.",
    "dst": "嘿，往你左边看一下。",
    "role": "desc",
@@ -266,7 +416,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#026": {
+  "Shattered Minds#041": {
    "src": "I hope you've got a note pad with you, if you want me to teach you the ways of a master you'll need to write a lot down!",
    "dst": "希望你带了笔记本，如果你想让我教你大师之道，就得记很多东西！",
    "role": "desc",
@@ -276,7 +426,7 @@
    "speaker": "Steve",
    "source": "wiki"
   },
-  "Shattered Minds#027": {
+  "Shattered Minds#042": {
    "src": "It doesn't matter that we're on a {~}-match losing streak, we'll never give up!",
    "dst": "就算我们已经连输 {~} 场也无所谓，我们永不放弃！",
    "role": "desc",
@@ -286,7 +436,7 @@
    "speaker": "Erd",
    "source": "wiki"
   },
-  "Shattered Minds#028": {
+  "Shattered Minds#043": {
    "src": "C'mon Beakmeister, we've ventured together for years now! Why won't you listen to me?",
    "dst": "拜托，Beakmeister，我们一起冒险好多年了！你为什么不听我的？",
    "role": "desc",
@@ -296,7 +446,7 @@
    "speaker": "Flamingo Rider",
    "source": "wiki"
   },
-  "Shattered Minds#029": {
+  "Shattered Minds#044": {
    "src": "I don't think she's even listening to me anymore. She's a free spirit!",
    "dst": "我觉得她根本已经不听我说话了。她是个自由的灵魂！",
    "role": "desc",
@@ -306,7 +456,7 @@
    "speaker": "Flamingo Rider",
    "source": "wiki"
   },
-  "Shattered Minds#030": {
+  "Shattered Minds#045": {
    "src": "Familiar to the nursing home, with no IV in sight! Phenomenal, and now my gambling metaphors will be apropos!",
    "dst": "像养老院一样熟悉，却看不到点滴！太妙了，现在我的赌博比喻终于恰到好处了！",
    "role": "desc",
@@ -316,7 +466,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#031": {
+  "Shattered Minds#046": {
    "src": "A solid, {~} pure, statue-made-out-of-tons-of-things what looks like me! I call it, “Ill Of The Ooze, Young!” And it begets your path amongst the lilypads.",
    "dst": "一座实心的、{~} 纯度的、由好多好多东西做成的雕像，长得像我！我叫它“年轻人，淤泥之病！”它为你在荷叶之间开出一条路。",
    "role": "desc",
@@ -326,7 +476,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#032": {
+  "Shattered Minds#047": {
    "src": "Likeru? No, no, she can’t find you here- her eyes deceive her. But I won't! Not any more than the film reel degrades, and the theater is ahead!",
    "dst": "Likeru？不不，她在这里找不到你——她的眼睛骗了她。但我不会！只要胶片不老化就不会，而剧院就在前面！",
    "role": "desc",
@@ -336,7 +486,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#033": {
+  "Shattered Minds#048": {
    "src": "Now, don't tell the kids about this one either! The way forward is through my masterpiece- but I can't imagine a gullet glorious!",
    "dst": "好了，这件事也别跟小孩说！前进的路要穿过我的杰作——可我想象不出比这更辉煌的喉咙了！",
    "role": "desc",
@@ -346,7 +496,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#034": {
+  "Shattered Minds#049": {
    "src": "Enter the giant frog and escape.",
    "dst": "进入巨大的青蛙体内，逃出去。",
    "role": "desc",
@@ -356,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#035": {
+  "Shattered Minds#050": {
    "src": "Don't come any closer... I don't want to have to fight...",
    "dst": "别再靠近了……我不想打……",
    "role": "desc",
@@ -366,7 +516,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#036": {
+  "Shattered Minds#051": {
    "src": "I-I'm warning you. You'll stand no match against me...",
    "dst": "我、我警告你。你不是我的对手……",
    "role": "desc",
@@ -376,7 +526,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#037": {
+  "Shattered Minds#052": {
    "src": "That's it...",
    "dst": "够了……",
    "role": "desc",
@@ -386,7 +536,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#038": {
+  "Shattered Minds#053": {
    "src": "There we are! Snapped out of it! Though perhaps writing in the mud was better- Soon it will dry.",
    "dst": "这就对了！清醒过来了！不过也许写在泥巴里比较好——它很快就会干。",
    "role": "desc",
@@ -396,7 +546,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#039": {
+  "Shattered Minds#054": {
    "src": "Without the static of the fungal caps, the radio station will be off-air- and the device unplugged!",
    "dst": "没有了菌盖的杂音，电台就会停播——而且装置会被拔掉插头！",
    "role": "desc",
@@ -406,7 +556,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#040": {
+  "Shattered Minds#055": {
    "src": "Scratch it in your eyelids- the lightbulb screwed between the arches, and the feather-duster's sunset shades will reveal my deepest compatriot. Quick now, wake!",
    "dst": "把它刻在你的眼皮上——拱门之间拧着的灯泡，和羽毛掸子的日落色调，会揭示我最深的同伴。快，醒来！",
    "role": "desc",
@@ -416,7 +566,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#041": {
+  "Shattered Minds#056": {
    "src": "Ugh. Rats chewing the roots. They've their place, it simply isn't here. Neither is your place in the koi pond, stranger.",
    "dst": "唉。老鼠在啃树根。它们有它们该待的地方，只是不在这里。你该待的地方也不是锦鲤池，陌生人。",
    "role": "desc",
@@ -426,7 +576,7 @@
    "speaker": "Elder Berusia",
    "source": "wiki"
   },
-  "Shattered Minds#042": {
+  "Shattered Minds#057": {
    "src": "I believe Likeru tossed you into the deep end without meaning, so to speak. I understand your being overwhelmed, but still...",
    "dst": "我相信 Likeru 是一不小心就把你扔进了深水区，可以这么说。我理解你一下子应付不过来，但即便如此……",
    "role": "desc",
@@ -436,7 +586,7 @@
    "speaker": "Elder Berusia",
    "source": "wiki"
   },
-  "Shattered Minds#043": {
+  "Shattered Minds#058": {
    "src": "Speaking of which, it might behoove you to let her know you've recovered. Though, should you need rest, you may take it here.",
    "dst": "说到这个，你最好让她知道你已经恢复了。不过，如果你需要休息，可以在这里歇一会儿。",
    "role": "desc",
@@ -446,7 +596,7 @@
    "speaker": "Elder Berusia",
    "source": "wiki"
   },
-  "Shattered Minds#044": {
+  "Shattered Minds#059": {
    "src": "Return to Likeru in {p} at [-{~}, {~}, -{~}].",
    "dst": "回到 {p} [-{~}, {~}, -{~}] 的 Likeru 那里。",
    "role": "desc",
@@ -456,7 +606,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#045": {
+  "Shattered Minds#060": {
    "src": "Ehm. Okay, that was...a bad idea. Should NOT have done that with a human. Uh, noted for the futu- oh, you're actually alright?!",
    "dst": "呃。好吧，那真是……个坏主意。不该拿人类做那个实验的。呃，下次记住——噢，你真的没事？！",
    "role": "desc",
@@ -466,7 +616,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#046": {
+  "Shattered Minds#061": {
    "src": "You came back and just leapt into the koi pond! I thought you'd drowned down there!",
    "dst": "你回来之后直接就跳进了锦鲤池！我还以为你淹死在下面了！",
    "role": "desc",
@@ -476,7 +626,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#047": {
+  "Shattered Minds#062": {
    "src": "I guess the spores from the Bluecaps got to you before you could bring them back. I wonder what you saw?",
    "dst": "我猜是蓝帽蘑菇的孢子在你带回来之前就影响到你了。真好奇你看到了什么？",
    "role": "desc",
@@ -486,7 +636,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#048": {
+  "Shattered Minds#063": {
    "src": "You reacted like you were crazy when I tried to talk with you... You were supposed to get visions of the light! A deep connection!",
    "dst": "我想跟你说话的时候，你的反应就像疯了一样……你本来应该看到光的幻象的！一种深刻的连结！",
    "role": "desc",
@@ -496,7 +646,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#049": {
+  "Shattered Minds#064": {
    "src": "Wait, maybe it's cause of that portal...the signals got mixed? I'll have to look into this more...but hey, I got the Bluecap, anyways, so...",
    "dst": "等等，也许是因为那个传送门……信号混在一起了？我得再研究研究……不过嘿，反正我拿到蓝帽蘑菇了，所以……",
    "role": "desc",
@@ -506,7 +656,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#050": {
+  "Shattered Minds#065": {
    "src": "Here, your payment- and a little extra I whipped up too. Um, really sorry about all that!",
    "dst": "给，你的报酬——还有我顺手做的一点额外的东西。呃，真的很抱歉搞成那样！",
    "role": "desc",

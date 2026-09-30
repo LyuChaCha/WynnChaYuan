@@ -1,12 +1,72 @@
 {
  "_meta": {
   "quest": "Lost Royalty",
-  "count": 26,
+  "count": 32,
   "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Royalty#000": {
+   "src": "Have you gotten the king's son freed yet? The jungle mercenaries most likely have him held near that run-down old farm.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#001": {
+   "src": "Uh... Hi? Err, why did you free me? I'm trying to run away, I hate being the son of the king.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#002": {
+   "src": "He expects too much of me! I hate politics, and I want to be a great mercenary like Tisaun, to help protect people that can't protect themselves!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#003": {
+   "src": "It's not like my father ever listened to me when I told him. He wouldn't even let me out of the castle.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#004": {
+   "src": "Could you please tell Yavlis that I want to be free? I would be grateful if you could.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#005": {
+   "src": "I need my father to know that I want to leave.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Royalty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Royalty#006": {
    "src": "Talk to Yavlis in {p} at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Yavlis в {p} в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +76,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#001": {
+  "Lost Royalty#007": {
    "src": "Oh, hello there! I had hoped not to bother you, adventurer, but this is urgent.",
    "dst": "О, здравствуйте! Не хотелось вас беспокоить, искатель приключений, но дело срочное.",
    "role": "desc",
@@ -26,7 +86,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#002": {
+  "Lost Royalty#008": {
    "src": "You see, the king is very... erm, distracted, and you are just the kind of willing, able-bodied person I need.",
    "dst": "Видите ли, король очень... э-э, рассеян, а вы как раз такой человек, какой мне нужен: готовый и способный.",
    "role": "desc",
@@ -36,7 +96,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#003": {
+  "Lost Royalty#009": {
    "src": "You see, the king's son has gone missing, and with him worrying so much, the problems of the city have festered unsolved.",
    "dst": "Видите ли, пропал сын короля, и пока он так тревожится, проблемы города гниют нерешёнными.",
    "role": "desc",
@@ -46,7 +106,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#004": {
+  "Lost Royalty#010": {
    "src": "We believe he was kidnapped by the splinter cell mercenaries in the jungle... Unfortunate, too. They used to be quite honourable.",
    "dst": "Мы думаем, его похитили отколовшиеся наёмники из джунглей... Жаль. Когда-то они были весьма благородны.",
    "role": "desc",
@@ -56,7 +116,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#005": {
+  "Lost Royalty#011": {
    "src": "Well, anyway, they're usually spotted outside the run-down farm outside of town. Go there and see what they want in return for the young prince.",
    "dst": "В общем, их обычно видят у заброшенной фермы за городом. Сходите туда и узнайте, чего они хотят за юного принца.",
    "role": "desc",
@@ -66,7 +126,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#006": {
+  "Lost Royalty#012": {
    "src": "Talk to the Mercenary Leader in their hideout outside {p}",
    "dst": "Поговори с главарём наёмников в их логове за пределами {p}",
    "role": "desc",
@@ -76,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#007": {
+  "Lost Royalty#013": {
    "src": "Excuse me?! What are you doing here, how did you find our secret hideout?",
    "dst": "Это ещё что?! Что тебе тут надо? Откуда ты знаешь про наше логово?",
    "role": "desc",
@@ -86,7 +146,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#008": {
+  "Lost Royalty#014": {
    "src": "Oh, you're here for the boy? A mighty fine steal, that one! The boy won't be leaving this establishment for free. I'll need some nice loot for him.",
    "dst": "О, ты за мальчишкой? Славная добыча! Даром он отсюда не уйдёт. Мне нужен за него хороший куш.",
    "role": "desc",
@@ -96,7 +156,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#009": {
+  "Lost Royalty#015": {
    "src": "Ah, but what to have you fetch...oh, haha! This would be a perfect opportunity to obtain that... Alright, ears open!",
    "dst": "А, но за чем тебя послать... о, ха-ха! Отличный шанс заполучить ту... Так, слушай внимательно!",
    "role": "desc",
@@ -106,7 +166,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#010": {
+  "Lost Royalty#016": {
    "src": "There's a certain talisman that we aren't able to get to in the temple not far from here. It has special abilities that allow my men to be strengthened, see.",
    "dst": "В храме неподалёку есть один талисман, до которого нам не добраться. У него особые силы, он усиливает моих людей, понимаешь.",
    "role": "desc",
@@ -116,7 +176,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#011": {
+  "Lost Royalty#017": {
    "src": "The guardians there pack quite the punch, and there's some nasty mechanism in the way that we just can't crack.",
    "dst": "Стражи там бьют крепко, а на пути какой-то мерзкий механизм, который нам не взломать.",
    "role": "desc",
@@ -126,7 +186,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#012": {
+  "Lost Royalty#018": {
    "src": "The temple is found just across the waterway, in a crevice in the mountain. It used to be blocked until those WynnExcavation fellows tried digging there.",
    "dst": "Храм прямо за протокой, в расщелине в горе. Раньше вход был завален, пока ребята из WynnExcavation не начали там копать.",
    "role": "desc",
@@ -136,7 +196,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#013": {
+  "Lost Royalty#019": {
    "src": "You get that talisman in my hands, and the king's boy is yours. Now off you pip! I'm a very busy man.",
    "dst": "Отдашь мне талисман - и королевский сын твой. А теперь кыш! Я очень занятой человек.",
    "role": "desc",
@@ -146,7 +206,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#014": {
+  "Lost Royalty#020": {
    "src": "Go to the jungle temple and retrieve the talisman at [-{~}, {~}, -{~}]",
    "dst": "Отправляйся в храм в джунглях и забери талисман в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -156,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#015": {
+  "Lost Royalty#021": {
    "src": "Bring the talisman back to the Mercenary Leader.",
    "dst": "Отнеси талисман главарю наёмников.",
    "role": "desc",
@@ -166,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#016": {
+  "Lost Royalty#022": {
    "src": "You've gotten the talisman! I can't believe you actually got through that puzzle!",
    "dst": "Талисман у тебя! Не верится, что ту головоломку всё-таки кто-то решил!",
    "role": "desc",
@@ -176,7 +236,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#017": {
+  "Lost Royalty#023": {
    "src": "At this point I would usually keep the kid and throw you out of here, but since you've done what I've asked in such a timely fashion, he's all yours.",
    "dst": "Обычно я бы оставил мальца, а тебя вышвырнул, но раз с моей просьбой справились так быстро, он твой.",
    "role": "desc",
@@ -186,7 +246,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#018": {
+  "Lost Royalty#024": {
    "src": "When you get back to whoever asked you to do this, tell him to leave my men and I alone! We guildsmen lay down our lives every day, we don't need any more hostile onlookers!",
    "dst": "Когда вернёшься к тому, кто тебя послал, скажи, чтоб оставил меня и моих людей в покое! Мы, гильдейцы, каждый день рискуем жизнью, нам не нужны лишние враждебные зеваки!",
    "role": "desc",
@@ -196,7 +256,7 @@
    "speaker": "Mercenary Leader",
    "source": "wiki"
   },
-  "Lost Royalty#019": {
+  "Lost Royalty#025": {
    "src": "Talk to the Prince of {p} in the jail cell",
    "dst": "Поговори с принцем {p} в тюремной камере",
    "role": "desc",
@@ -206,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#020": {
+  "Lost Royalty#026": {
    "src": "Report back to Yavlis with the news",
    "dst": "Сообщи новости Yavlis",
    "role": "desc",
@@ -216,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost Royalty#021": {
+  "Lost Royalty#027": {
    "src": "Ah, finally! You're back. Did they let you bring him back? Those mercenaries have an awful habit of failing to honour their deals.",
    "dst": "А, наконец-то! Вы вернулись. Вам позволили забрать его? У этих наёмников дурная привычка не выполнять уговоры.",
    "role": "desc",
@@ -226,7 +286,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#022": {
+  "Lost Royalty#028": {
    "src": "Wait, the prince said what? He truly wants to be a mercenary? Oh my... then he must have escaped on his own.",
    "dst": "Постойте, принц сказал что? Он правда хочет стать наёмником? Боже... значит, он сбежал сам.",
    "role": "desc",
@@ -236,7 +296,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#023": {
+  "Lost Royalty#029": {
    "src": "Alright then, if that's the path the king's son chooses to walk, then there's nothing we can do.",
    "dst": "Что ж, если сын короля выбрал этот путь, мы ничего не можем поделать.",
    "role": "desc",
@@ -246,7 +306,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#024": {
+  "Lost Royalty#030": {
    "src": "I can only hope that he chose to join them out of a will to protect the people, rather than simply brutishness or money.",
    "dst": "Остаётся надеяться, что он примкнул к ним из желания защищать людей, а не из грубости или ради денег.",
    "role": "desc",
@@ -256,7 +316,7 @@
    "speaker": "Yavlis",
    "source": "wiki"
   },
-  "Lost Royalty#025": {
+  "Lost Royalty#031": {
    "src": "Such a shame that old guild has stooped to such a level. Well, we must thank you for your help. You can have the emerald ransom we had intended to pay.",
    "dst": "Как жаль, что старая гильдия так низко пала. Что ж, спасибо вам за помощь. Возьмите изумруды, что мы собирались отдать в выкуп.",
    "role": "desc",
