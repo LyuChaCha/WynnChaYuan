@@ -1,6 +1,6 @@
 # 校稿清單
 
-**待校稿 44 個檔、16,035 句。** 已校稿 0 個。
+**待校稿 44 個檔、16,049 句。** 已校稿 0 個。
 
 > 這份清單是**產生物**，跑 `python tools/proofread.py` 重產。不要手改。
 
@@ -69,8 +69,8 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | WynnExcavation Site D | 138 | [`wynnexcavation-site-d.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-d.json) |
 | The Scarred Springs | 137 | [`the-scarred-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-scarred-springs.json) |
 | Undersupply | 125 | [`undersupply.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/undersupply.json) |
+| dungeon.json | 119 | [`dungeon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/dungeon.json) |
 | Rise of the Quartron | 117 | [`rise-of-the-quartron.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/rise-of-the-quartron.json) |
-| dungeon.json | 105 | [`dungeon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/dungeon.json) |
 | The Worm Holes | 97 | [`the-worm-holes.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-worm-holes.json) |
 | From the Bottom | 91 | [`from-the-bottom.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/from-the-bottom.json) |
 | Bob's Lost Soul | 87 | [`bob-s-lost-soul.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/bob-s-lost-soul.json) |
@@ -93,7 +93,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
-| misc.json | 11,773 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
+| misc.json | 11,768 | [`misc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/misc.json) |
 | npc.json | 6,293 | [`npc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/npc.json) |
 | gear-weapon.json | 2,772 | [`gear-weapon.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-weapon.json) |
 | gear-armour.json | 2,466 | [`gear-armour.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/gear-armour.json) |
@@ -102,9 +102,9 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | lootrun.json | 1,084 | [`lootrun.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/lootrun.json) |
 | ingredient.json | 969 | [`ingredient.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ingredient.json) |
 | quest.json | 761 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
-| discovery.json | 721 | [`discovery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery.json) |
+| discovery.json | 715 | [`discovery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery.json) |
 | Queen's Recruit | 695 | [`queen-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/queen-s-recruit.json) |
-| quest-ui.json | 395 | [`quest-ui.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-ui.json) |
+| quest-ui.json | 368 | [`quest-ui.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-ui.json) |
 | shaman.json | 363 | [`shaman.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/shaman.json) |
 | A New Beginning | 359 | [`a-new-beginning.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-new-beginning.json) |
 | Recover the Past | 348 | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) |
@@ -118,9 +118,9 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | assassin.json | 268 | [`assassin.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/assassin.json) |
 | ability-labels.json | 249 | [`ability-labels.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability-labels.json) |
 | A Journey Beyond | 248 | [`a-journey-beyond.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-journey-beyond.json) |
-| mini-quest.json | 216 | [`mini-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/mini-quest.json) |
+| mini-quest.json | 212 | [`mini-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/mini-quest.json) |
 | aspect-desc.json | 209 | [`aspect-desc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/aspect-desc.json) |
-| cave.json | 209 | [`cave.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/cave.json) |
+| cave.json | 203 | [`cave.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/cave.json) |
 | Misadventure on the Sea | 194 | [`misadventure-on-the-sea.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/misadventure-on-the-sea.json) |
 | Finding the Light | 162 | [`finding-the-light.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/finding-the-light.json) |
 | tome.json | 156 | [`tome.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/tome.json) |
