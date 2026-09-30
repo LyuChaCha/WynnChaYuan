@@ -126,7 +126,7 @@ public final class LayoutDebug {
     }
 
     /** 左緣對照最多記幾份<b>有問題的</b>。 */
-    private static final int DRAWN_LIMIT = 20;
+    private static final int DRAWN_LIMIT = 60;
 
     /** 足跡最多記幾行。足跡是一份一行，不會像詳細那樣長。 */
     private static final int DRAWN_SEEN_LIMIT = 80;
@@ -161,9 +161,12 @@ public final class LayoutDebug {
             // 見 [[wynnchayuan-palette-log-on-success]]。
             String key = stage + "/" + original.get(0).getString() + "/" + original.size();
             boolean fresh = drawnSeen.size() < DRAWN_SEEN_LIMIT && drawnSeen.add(key);
+            if (!fresh) {
+                return;                        // 同一份滑過幾十次，別把名額吃光
+            }
             String text = compareLeads(stage, original, made, width);
             if (text == null) {
-                if (fresh) {
+                {
                     Files.writeString(file,
                             "· 左緣對照（" + stage + "）" + oneLine(original.get(0).getString())
                             + "：" + Math.min(original.size(), made.size())
@@ -193,11 +196,20 @@ public final class LayoutDebug {
         StringBuilder sb = new StringBuilder();
         boolean any = false;
         int n = Math.min(original.size(), made.size());
+        // 說明段併成一句時譯文會少幾行，後面的行整段往前移。照索引硬配就會
+        // 把「第 8 行對到第 7 行」報成歪掉——實機第一份 dump 裡兩張卡都是這樣的
+        // 假警報。所以同一個索引與位移過的索引<b>兩邊都對不上</b>才算數。
+        int shift = original.size() - made.size();
         for (int i = 0; i < n; i++) {
             int a = leadOf(original.get(i), width);
             int b = leadOf(made.get(i), width);
             if (a == Integer.MIN_VALUE || b == Integer.MIN_VALUE || a == b) {
                 continue;
+            }
+            int j = i - shift;
+            if (shift != 0 && j >= 0 && j < made.size()
+                    && leadOf(made.get(j), width) == a) {
+                continue;                      // 位移之後對得上，不是歪掉
             }
             any = true;
             sb.append(String.format("  [%2d] 原文左緣 %4d  譯文左緣 %4d  差 %+d  %s%n",
