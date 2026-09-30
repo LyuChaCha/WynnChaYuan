@@ -3091,6 +3091,19 @@ public final class LineTranslator {
         return c == ':' || c == '：';
     }
 
+    /**
+     * 整段文字畫出來有多寬——給 {@code render} 那邊共用。
+     *
+     * <h2>為什麼要開出來</h2>
+     * {@link com.wynnchayuan.translate.TooltipWiden} 的量法本來是自己問
+     * {@code Minecraft.getInstance()}，headless 一律回 0，於是<b>整個撐寬與置中欄
+     * 那一步在測試裡從來沒有跑過</b>——素材 tooltip 的標籤被推歪了幾次都測不出來。
+     * 走同一個入口就吃得到 {@link #measureForTest}。
+     */
+    public static int width(Component component) {
+        return widthOf(component);
+    }
+
     /** 整段文字畫出來有多寬（像素）。 */
     private static int widthOf(Component component) {
         if (measureForTest != null) {

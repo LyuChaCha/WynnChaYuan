@@ -71,6 +71,12 @@ public final class StatLabelIndentTest {
         lines.add(spriteOffsetRow("Agility ", 151, "+35"));
         lines.add(rowAt(0, "Reflection", -44, 129, "+27% to +117%"));
         lines.add(rowAt(0, "Exploding", -44, 150, "+15% to +65%"));
+        // 殞命之爪（素材）的需求列。Min. Defence 整行在語料裡查得到，
+        // 其餘幾列只換得到標籤——兩條路畫出來的標籤要落在同一個左緣。
+        lines.add(statRow("Durability", -41, 141, "-165"));
+        lines.add(statRow("Min. Defence", -54, 144, "+35"));
+        lines.add(statRow("Fire Damage", -52, 99, "+23% to +26%"));
+        lines.add(statRow("Health Regen", -56, 102, "-15% to -20%"));
         List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(lines, store);
         System.out.println("== " + lang + "（" + out.size() + " 行）");
         for (int i = 2; i < lines.size() && i < out.size(); i++) {
@@ -102,6 +108,16 @@ public final class StatLabelIndentTest {
         c.append(off(150));
         c.append(Component.literal(value).withStyle(GREEN));
         c.append(off(-9));
+        return c;
+    }
+
+    /** 實機的需求列（layout-debug 記的殞命之爪）：行尾沒有多餘的偏移。 */
+    private static Component statRow(String label, int back, int jump, String value) {
+        MutableComponent c = Component.empty();
+        c.append(Component.literal(label).withStyle(WHITE));
+        c.append(off(back));
+        c.append(off(jump));
+        c.append(Component.literal(value).withStyle(GREEN));
         return c;
     }
 
