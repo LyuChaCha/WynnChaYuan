@@ -2,8 +2,8 @@
  "_meta": {
   "domain": "lootrun",
   "note": "Lootrun 的界面文字：信标菜单、祝福与诅咒、起跑面板、每日奖励。原本混在 misc.json 里，拆出来是为了让人能单独认领这一块。",
-  "count": 1047,
-  "translated": 1047
+  "count": 1087,
+  "translated": 1087
  },
  "Curse": "诅咒",
  "Curse enemies within {~} blocks, increasing all damage they take by {~} for {~} seconds.": "诅咒 {~1} 格内的敌人，让它们受到的所有伤害提高 {~2}，持续 {~3} 秒。",
@@ -1081,5 +1081,15 @@
  "{#}Defeating a Radiant Challenge": "{#}在光辉挑战中击败",
  "{#}Items from Flying Chests,": "{#}飞行宝箱提供的物品，",
  "{#}randomly get +{~}-{~} Pulls, +{~}-{~}": "{#}就随机获得 +{~}-{~} 结算奖励、+{~}-{~}",
- "{#}remove one of your Curses.": "{#}移除你的一个诅咒。"
+ "{#}remove one of your Curses.": "{#}移除你的一个诅咒。",
+ "For the rest of your Lootrun,\ngain +{~} Elemental Damage\n(Max x{~}) everytime you\ncomplete a Challenge": "本次 Lootrun 剩余期间，每完成一场挑战就 +{~1} 元素伤害 (上限 x{~2})",
+ "For the rest of your Lootrun,\ngain +{~} Health (Max x{~})\neverytime you get offered a\nYellow Beacon": "本次 Lootrun 剩余期间，每出现一个黄色信标就 +{~1} 生命 (上限 x{~2})",
+ "For the rest of your Lootrun,\ngain +{~} Health (Max x{~})\nfor each Beacon offered": "本次 Lootrun 剩余期间，每出现一个信标就 +{~1} 生命 (上限 x{~2})",
+ "For the rest of this Lootrun,\ngain +{~} Spell Damage (Max\nx{~}) everytime you get a Curse": "本次 Lootrun 剩余期间，每获得一个诅咒就 +{~1} 法术伤害 (上限 x{~2})",
+ "For the rest of this Lootrun,\ngain +{~} Loot (Max x{~})\neverytime you get a Curse": "本次 Lootrun 剩余期间，每获得一个诅咒就 +{~1} 掉落加成 (上限 x{~2})",
+ "This time only, immediately\ngain +{~} Critical Damage (Max\nx{~}) for every {~} items\noffered to you from any\nChests this Lootrun": "仅此一次：本次 Lootrun 任何宝箱每提供 {~3} 件物品，立即获得 +{~1} 暴击伤害 (上限 x{~2})",
+ "Once you reach {~} Challenges\ncompleted during your\nLootrun, gain +{~} {#}Strength": "本次 Lootrun 完成 {~1} 场挑战后，获得 +{~2} {#}力量",
+ "Once you reach {~} Challenges\ncompleted during your\nLootrun, gain +{~} Walk Speed": "本次 Lootrun 完成 {~1} 场挑战后，获得 +{~2} 移动速度",
+ "Once you have been offered a\nBlue or Purple Beacon more\nthan {~} times this Lootrun,\ngain +{~} Spell Damage": "本次 Lootrun 出现蓝色或紫色信标超过 {~1} 次之后，获得 +{~2} 法术伤害",
+ "Getting offered a Purple\nBeacon gives +{~} Curse. Purple\nBeacons now give twice as\nmany Pulls.": "每当出现紫色信标就 +{~} 诅咒。紫色信标的结算奖励变为两倍。"
 }
