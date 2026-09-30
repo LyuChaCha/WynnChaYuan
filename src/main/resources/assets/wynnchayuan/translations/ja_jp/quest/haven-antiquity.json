@@ -1,12 +1,92 @@
 {
  "_meta": {
   "quest": "Haven Antiquity",
-  "count": 54,
+  "count": 62,
   "translated": 54,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Haven Antiquity#000": {
+   "src": "Did you talk with the old creepy man in the mansion yet? I'm sure he knows something.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#001": {
+   "src": "I'd sit and tell you, but I feel you might get a better experience first hand....",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "Old Siwel\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Haven Antiquity#002": {
+   "src": "I can not cast the spell without the [{~} Umbral Essences] I asked for.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "Old Siwel\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Haven Antiquity#003": {
+   "src": "Mumbles a strange, dead language...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#004": {
+   "src": "Mumbles a strange, dead language....",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#005": {
+   "src": "If you die in the memory, you die in reality too.... Best of luck....",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#006": {
+   "src": "Please go check out that egg. I am very worried about its behavior. Don't forget the [{~} Monster Hides] as evidence.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#007": {
+   "src": "Thank you for your work! I will be returning home. Perhaps we will meet again!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Haven Antiquity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Haven Antiquity#008": {
    "src": "Talk to {p} on the docks at {p} at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の {p} の桟橋で {p} と話す",
    "role": "desc",
@@ -16,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#001": {
+  "Haven Antiquity#009": {
    "src": "Hey there adventurer, can I speak with you for a second? I need you to do a spot of detective work for me.",
    "dst": "やあ冒険者、少しいいかな？ちょっと探偵の真似事をお願いしたいんだ。",
    "role": "desc",
@@ -26,7 +106,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#002": {
+  "Haven Antiquity#010": {
    "src": "My grandfather once told me how beautiful this place was, and how to visit here if I wanted to relax.",
    "dst": "祖父がこの場所がどれほど美しかったか、くつろぎたいならここへ来いと話してくれたんだ。",
    "role": "desc",
@@ -36,7 +116,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#003": {
+  "Haven Antiquity#011": {
    "src": "But as you can see, this island is the least bit relaxing. It is a sorrowful place, corrupted and dark.",
    "dst": "でも見ての通り、この島はまるでくつろげない。腐敗して暗い、悲しみに満ちた場所だ。",
    "role": "desc",
@@ -46,7 +126,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#004": {
+  "Haven Antiquity#012": {
    "src": "This can't be right. My grandfather was an honest man, he wouldn't have lied.",
    "dst": "そんなはずはない。祖父は正直な人だった、嘘をつくはずがない。",
    "role": "desc",
@@ -56,7 +136,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#005": {
+  "Haven Antiquity#013": {
    "src": "I figure something must have happened. I really want to know how it got like this.",
    "dst": "何かあったに違いない。どうしてこうなったのか、ぜひ知りたいんだ。",
    "role": "desc",
@@ -66,7 +146,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#006": {
+  "Haven Antiquity#014": {
    "src": "There's an old creepy man living up on that hill in a big mansion who seems just old enough to know what happened. It might be a good place to start.",
    "dst": "あの丘の大きな屋敷に、何があったか知っていそうな年頃の不気味な老人が住んでいる。そこから当たるといいかもしれない。",
    "role": "desc",
@@ -76,7 +156,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#007": {
+  "Haven Antiquity#015": {
    "src": "Investigate Old Siwel in the dead Mansion at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の死の屋敷で老 Siwel を調べる",
    "role": "desc",
@@ -86,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#008": {
+  "Haven Antiquity#016": {
    "src": "What do you want? I'm busy. Brewing potions takes focus, you know....",
    "dst": "何の用じゃ？わしは忙しい。薬の調合には集中が要るのじゃ…",
    "role": "desc",
@@ -96,7 +176,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#009": {
+  "Haven Antiquity#017": {
    "src": "Oh, you want to know about the island's history? Well you certainly came to the right man. I've lived here for a very long time.",
    "dst": "ほう、島の歴史が知りたいと？ならば相手を間違えてはおらん。わしはここにとても長く住んでおる。",
    "role": "desc",
@@ -106,7 +186,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#010": {
+  "Haven Antiquity#018": {
    "src": "There is a way for you to see for yourself what happened here. It's quite... an interesting tale, too.",
    "dst": "ここで何があったか、自分の目で確かめる方法がある。なかなか…面白い話でもある。",
    "role": "desc",
@@ -116,7 +196,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#011": {
+  "Haven Antiquity#019": {
    "src": "I'd sit and tell you, but I think you might get a better experience first hand....",
    "dst": "座って話してもよいが、身をもって体験した方がよかろう…",
    "role": "desc",
@@ -126,7 +206,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#012": {
+  "Haven Antiquity#020": {
    "src": "Using some of the more... frowned upon methods in the alchemists library I am able to send you into the 'memory' of a dead person that lived here at the time.",
    "dst": "錬金術書にある、あまり…褒められぬ方法を使えば、当時ここに住んでいた死者の「記憶」へお主を送り込める。",
    "role": "desc",
@@ -136,7 +216,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#013": {
+  "Haven Antiquity#021": {
    "src": "It will require a little work from you though, if you wish to proceed....",
    "dst": "ただ、先へ進みたいなら、少し働いてもらわねばならん…",
    "role": "desc",
@@ -146,7 +226,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#014": {
+  "Haven Antiquity#022": {
    "src": "Bring me [{~} Umbral Essences] and I will be able to cast a spell on you which will allow you to pass into the 'memory' of the deceased.",
    "dst": "[{~} Umbral Essence] を持ってくれば、死者の「記憶」へ入れる呪文をお主にかけてやろう。",
    "role": "desc",
@@ -156,7 +236,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#015": {
+  "Haven Antiquity#023": {
    "src": "Acquire [{~} Umbral Essences] for Old Siwel",
    "dst": "老 Siwel のために [{~} Umbral Essence] を集める",
    "role": "desc",
@@ -166,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#016": {
+  "Haven Antiquity#024": {
    "src": "Excellent. You acquired the ingredients. Just give me a second and I'll prepare you for your journey into the mind of the dead.",
    "dst": "見事じゃ。材料を揃えたな。少し待て、死者の心への旅の支度をしてやろう。",
    "role": "desc",
@@ -176,7 +256,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#017": {
+  "Haven Antiquity#025": {
    "src": "M̛͢ú̴͏ḿ̷̧͠b̸̸̸̧́l̶e͜͏͏͠҉s̶̡̕͜͟ ̧̕͘҉a̶̡̛͟ ̸̀͠͡s̨̨͏͘ţ̡r̛͘͜͢a̶̛ņ̷g͞e̸̷͟҉̀,͝͡ ̴͢͏̧d̷̨̨̛͝é̕͠a̡͟d̶̨͝ ͟͏̨l̶̡̨͢͟a̛͡҉n̢҉̷̧g҉͢ų̵̵̢a҉̴̨͟g͡͏ȩ̧̢̧͞.̷̧͜.̢̢̢̕.̶̵̧",
    "dst": "(聞き慣れぬ死者の言葉をつぶやいている…)",
    "role": "desc",
@@ -186,7 +266,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#018": {
+  "Haven Antiquity#026": {
    "src": "Ḿ̶̶̛͡u͢͠͝m̛͜͏͜b̕͘͜͜͝l҉̸̢̢͢e̵s̶̴̡҉̵ ̷̡͡a̸̵͠͞ ҉͟s̶̛͢͠t̷̕͝r̡͏̶̵a̷̢̨͘n͏̶̸͘͝g̢ȩ̛̀͟͡,́͏̶҉͘ ̀͢d̨͝͠͞e̶͜a̴̛҉ḑ ̶̷̨l̢a̡ņ̴̸̨g̸̛u͏҉̡͞a̷̶̸̧g͝e͜.̶̢͜͝.̕͘",
    "dst": "(なおも聞き慣れぬ死者の言葉をつぶやく…)",
    "role": "desc",
@@ -196,7 +276,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#019": {
+  "Haven Antiquity#027": {
    "src": "There, look into my eyes. Yes, you're ready. Ah, there is a drawback though....",
    "dst": "さあ、わしの目を見よ。うむ、支度はできた。ああ、ただし欠点がある…",
    "role": "desc",
@@ -206,7 +286,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#020": {
+  "Haven Antiquity#028": {
    "src": "Once you are inside the memory, it will feel like you are actually there. You won't be able to return until you have succeeded in your task.",
    "dst": "記憶の中に入れば、本当にその場にいるように感じる。務めを果たすまでは戻ってこられん。",
    "role": "desc",
@@ -216,7 +296,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#021": {
+  "Haven Antiquity#029": {
    "src": "To enter the memory, you need to find the dead man at the end of the crypt in the graveyard.",
    "dst": "記憶に入るには、墓地の地下墓所の奥にいる死者を見つけよ。",
    "role": "desc",
@@ -226,7 +306,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#022": {
+  "Haven Antiquity#030": {
    "src": "The dead roam those caves in heavy numbers, so watch your step.",
    "dst": "あの洞窟には死者がうようよしておる、足元に気をつけるのじゃ。",
    "role": "desc",
@@ -236,7 +316,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#023": {
+  "Haven Antiquity#031": {
    "src": "Oh and one more thing, If you die in the memory, you die in reality too....",
    "dst": "それともう一つ、記憶の中で死ねば、現実でも死ぬ…",
    "role": "desc",
@@ -246,7 +326,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#024": {
+  "Haven Antiquity#032": {
    "src": "Best of luck....",
    "dst": "幸運を祈る…",
    "role": "desc",
@@ -256,7 +336,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#025": {
+  "Haven Antiquity#033": {
    "src": "Locate the Crypt under the church at [{~}, {~}, -{~}] and pass through a dead man's memory",
    "dst": "[{~}, {~}, -{~}] の教会の下にある地下墓所を見つけ、死者の記憶を通り抜ける",
    "role": "desc",
@@ -266,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#026": {
+  "Haven Antiquity#034": {
    "src": "Investigate Siwel at [-{~}, {~}, -{~}] on Alive Island",
    "dst": "生者の島の [-{~}, {~}, -{~}] で Siwel を調べる",
    "role": "desc",
@@ -276,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#027": {
+  "Haven Antiquity#035": {
    "src": "Oh, hello there. Would you mind helping me with something for a second?",
    "dst": "ああ、こんにちは。少し手を貸してもらえないかな？",
    "role": "desc",
@@ -286,7 +366,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#028": {
+  "Haven Antiquity#036": {
    "src": "Recently, some strange things have been happening to the miners around here. New diseases, unexplained disappearances, and things like that.",
    "dst": "最近、この辺りの鉱夫に妙なことが起きていてね。新しい病、原因不明の失踪、そういったことだ。",
    "role": "desc",
@@ -296,7 +376,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#029": {
+  "Haven Antiquity#037": {
    "src": "The villagers have been getting very worried. So, in an attempt to protect the island, I bought a strange egg and placed it in a cave close to town.",
    "dst": "村人たちはひどく不安がっている。そこで島を守ろうと、奇妙な卵を買って町の近くの洞窟に置いたんだ。",
    "role": "desc",
@@ -306,7 +386,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#030": {
+  "Haven Antiquity#038": {
    "src": "The egg, however, isn't what I thought it was. It is producing monsters and giving off some sort of dark aura.",
    "dst": "ところが、その卵は思っていた物じゃなかった。怪物を生み出し、何やら暗い気配を放っている。",
    "role": "desc",
@@ -316,7 +396,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#031": {
+  "Haven Antiquity#039": {
    "src": "I want you to go check out that egg. See if you can get rid of whatever it is producing. Bring me [{~} Monster Hides] as evidence.",
    "dst": "あの卵を調べてきてほしい。生み出されている物を始末できないか見てくれ。証拠に [{~} Monster Hide] を持ち帰ってほしい。",
    "role": "desc",
@@ -326,7 +406,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#032": {
+  "Haven Antiquity#040": {
    "src": "Confront the cave under the mansion at [-{~}, {~}, -{~}] and retrieve [{~} Monster Hides] for Siwel from the monsters within",
    "dst": "[-{~}, {~}, -{~}] の屋敷の下の洞窟に挑み、中の怪物から Siwel のために [{~} Monster Hide] を手に入れる",
    "role": "desc",
@@ -336,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#033": {
+  "Haven Antiquity#041": {
    "src": "You're back! Were you able to stop that egg?",
    "dst": "戻ったね！あの卵は止められたかい？",
    "role": "desc",
@@ -346,7 +426,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#034": {
+  "Haven Antiquity#042": {
    "src": "No? Well, I guess we'll have to wait and see what it hatches into.",
    "dst": "駄目だった？まあ、何が孵るか待つしかなさそうだ。",
    "role": "desc",
@@ -356,7 +436,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#035": {
+  "Haven Antiquity#043": {
    "src": "I see you got some rather rare dark monster hide. Maybe I could use those in a potion for something, maybe to prolong life.",
    "dst": "珍しい闇の怪物の皮を手に入れたようだね。何かの薬に使えるかもしれない、延命の薬とかね。",
    "role": "desc",
@@ -366,7 +446,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#036": {
+  "Haven Antiquity#044": {
    "src": "Some of the villagers believe that it is unwise for myself to dabble in the dark arts, dealing with mysterious eggs and brewing potions of death.",
    "dst": "村人の中には、謎の卵に手を出したり死の薬を調合したり、闇の術に手を染めるのは愚かだと言う者もいる。",
    "role": "desc",
@@ -376,7 +456,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#037": {
+  "Haven Antiquity#045": {
    "src": "I'll outlive them all, you'll see!",
    "dst": "私は奴ら全員より長生きしてみせる！",
    "role": "desc",
@@ -386,7 +466,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#038": {
+  "Haven Antiquity#046": {
    "src": "As for you, you have done what I asked. You may return to your personal affairs now.",
    "dst": "君は頼んだことをやってくれた。もう自分の用事に戻ってくれて構わない。",
    "role": "desc",
@@ -396,7 +476,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#039": {
+  "Haven Antiquity#047": {
    "src": "Thank you for your work, though. Only time will tell what that egg will hatch into.",
    "dst": "とはいえ、働いてくれてありがとう。あの卵から何が孵るかは、時が経てば分かるだろう。",
    "role": "desc",
@@ -406,7 +486,7 @@
    "speaker": "Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#040": {
+  "Haven Antiquity#048": {
    "src": "Return to Old Siwel in the dead Mansion at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}] の死の屋敷の老 Siwel のもとへ戻る",
    "role": "desc",
@@ -416,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#041": {
+  "Haven Antiquity#049": {
    "src": "What? You... you made it back? Oh... Very well. Alchemy can be a... dangerous practice.",
    "dst": "何？お主…戻ってきたのか？おお…よかろう。錬金術とは…危険な業にもなりうる。",
    "role": "desc",
@@ -426,7 +506,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#042": {
+  "Haven Antiquity#050": {
    "src": "Anyone who tried to find out the island's history came to me at some point, and I sent them on a one way street to a memory. But not you....",
    "dst": "島の歴史を探ろうとした者は皆いずれわしを訪ね、わしは彼らを戻れぬ記憶への片道へ送った。だがお主は違う…",
    "role": "desc",
@@ -436,7 +516,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#043": {
+  "Haven Antiquity#051": {
    "src": "So now you know my dreadful secret, I am racked with guilt and cursed with eternal life.",
    "dst": "これでわしの恐ろしい秘密を知ったな。わしは罪悪感に苛まれ、永遠の命に呪われておる。",
    "role": "desc",
@@ -446,7 +526,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#044": {
+  "Haven Antiquity#052": {
    "src": "There is no need to fight me, I am suffering enough for what I... wrought on this island.",
    "dst": "わしと戦う必要はない。この島に…もたらした所業の報いは、もう十分に受けておる。",
    "role": "desc",
@@ -456,7 +536,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#045": {
+  "Haven Antiquity#053": {
    "src": "I could not destroy the egg. It hatched into a... monstrous beast that cursed this island until this very day.",
    "dst": "わしは卵を壊せなんだ。それは…恐ろしい獣へと孵り、今日までこの島を呪い続けておる。",
    "role": "desc",
@@ -466,7 +546,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#046": {
+  "Haven Antiquity#054": {
    "src": "A powerful warrior from... {p} slew the beast, yet the island did not rejuvenate....",
    "dst": "…{p} から来た強き戦士が獣を倒したが、島は蘇らなんだ…",
    "role": "desc",
@@ -476,7 +556,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#047": {
+  "Haven Antiquity#055": {
    "src": "I leave the bones of the beast as a reminder of my failure, the destruction it brought still... lingers in the monsters it left behind.",
    "dst": "獣の骨はわしの失敗の戒めとして残しておる。それがもたらした破壊は今も…残された怪物どもに息づいておる。",
    "role": "desc",
@@ -486,7 +566,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#048": {
+  "Haven Antiquity#056": {
    "src": "So adventurer, now you have the knowledge of what I have done. You may tell the others down in the village, as it is no longer a secret.",
    "dst": "さて冒険者よ、これでわしのしたことを知ったな。村の者たちに話すがよい、もはや秘密ではない。",
    "role": "desc",
@@ -496,7 +576,7 @@
    "speaker": "Old Siwel",
    "source": "wiki"
   },
-  "Haven Antiquity#049": {
+  "Haven Antiquity#057": {
    "src": "Talk to {p} on the docks at [{~}, {~}, -{~}] about the mystery",
    "dst": "[{~}, {~}, -{~}] の桟橋で {p} に謎について話す",
    "role": "desc",
@@ -506,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Haven Antiquity#050": {
+  "Haven Antiquity#058": {
    "src": "So, did you find out what happened?",
    "dst": "それで、何があったか分かったかい？",
    "role": "desc",
@@ -516,7 +596,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#051": {
+  "Haven Antiquity#059": {
    "src": "Siwel was the one who caused this sorrow? He does have a very dark presence about him, doesn't he?",
    "dst": "この悲しみを招いたのは Siwel だったのか？確かに、とても暗い雰囲気の人だったよね？",
    "role": "desc",
@@ -526,7 +606,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#052": {
+  "Haven Antiquity#060": {
    "src": "Thank you for your work! I know it must have been tough getting that out of him.",
    "dst": "調べてくれてありがとう！聞き出すのはきっと大変だったろうね。",
    "role": "desc",
@@ -536,7 +616,7 @@
    "speaker": "Cinfras",
    "source": "wiki"
   },
-  "Haven Antiquity#053": {
+  "Haven Antiquity#061": {
    "src": "Now that this mystery is solved I will be returning home. I hope we will meet again!",
    "dst": "謎も解けたし、私は家に帰るよ。また会えるといいな！",
    "role": "desc",
