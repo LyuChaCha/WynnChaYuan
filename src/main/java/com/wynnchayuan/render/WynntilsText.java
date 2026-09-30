@@ -221,9 +221,30 @@ public final class WynntilsText {
                 || !config.translateObjectives()) {
             return text;
         }
-        var translated = LineTranslator.translate(StyledText.fromString(text), store);
-        return translated == null ? text : translated.getString();
+        // 每一幀每條目標都會問一次（「Finish Quests: 2/3」），進度沒變時原文相同，
+        // 所以跟 marker 一樣記住上一次的答案——語料換了就整份清掉。
+        // spark 採樣顯示這裡未快取時約佔渲染執行緒 3~4%。
+        synchronized (OBJECTIVES) {
+            if (objectiveAge != store.generation()) {
+                OBJECTIVES.clear();
+                objectiveAge = store.generation();
+            }
+            String hit = OBJECTIVES.get(text);
+            if (hit == null) {
+                var translated = LineTranslator.translate(StyledText.fromString(text), store);
+                hit = translated == null ? text : translated.getString();
+                if (OBJECTIVES.size() > 256) {
+                    OBJECTIVES.clear();
+                }
+                OBJECTIVES.put(text, hit);
+            }
+            return hit;
+        }
     }
+
+    private static final java.util.Map<String, String> OBJECTIVES = new java.util.HashMap<>();
+    /** 見 {@link TranslationStore#generation}。 */
+    private static int objectiveAge = -1;
 
     /** mixin 的入口：Wynntils 任務指引標記底下那行字。見 {@code WaypointTextMixin}。 */
     public static String marker(String text) {
