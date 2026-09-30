@@ -151,7 +151,46 @@ public final class ActionBarListener {
             return false;
         }
         char first = pick.charAt(0);
-        return first >= 'a' && first <= 'z';
+        if (first >= 'a' && first <= 'z') {
+            return true;
+        }
+        return clippedAtEnd(pick);
+    }
+
+    /** 選項框裝得下的字元數。見 {@link #clippedAtEnd}。 */
+    private static final int CLIP_MIN = 27;
+
+    private static final int CLIP_MAX = 28;
+
+    /**
+     * 跑馬燈的<b>第一格</b>：開頭是好的，尾巴被框寬切掉。
+     *
+     * <h2>為什麼前面那兩道擋不住</h2>
+     * 「停穩才收」擋的是捲動中的視窗，但跑馬燈<b>開始捲之前會停在第一格</b>，
+     * 停的時間比 {@value #SETTLE_MS} 毫秒長，所以第一格穩穩地通過。而
+     * {@link #looksClipped} 原本只看開頭——第一格是大寫開頭，也一路過關。
+     *
+     * <p>結果是語料收到「Don't underestimate our stre」這種切一半的句子。
+     * 使用者 2026-09-30 回報的那一份 captured.json 裡，120 條選項有 40 條是這樣來的。
+     *
+     * <h2>判準</h2>
+     * 量過那 120 條：被切斷的 40 條長度<b>全部</b>落在 27 或 28（框寬固定 28 個
+     * 字元，第 28 個剛好是空白時就剩 27），而且結尾都是字母。真正的長選項
+     * （31、83、106、126、150 字元）結尾一律是標點——選項是寫成句子的。
+     *
+     * <p>所以：長度卡在框寬、又從單字中間切開，就是視窗。
+     *
+     * <p>代價是「剛好 27～28 個字元、又剛好沒有標點結尾」的正當選項會被丟掉。
+     * 那種在實機那 120 條裡一條都沒有，而放它進來的代價是語料多一句
+     * <b>翻了也對不上</b>的殘句——殘句比少一條糟。
+     */
+    private static boolean clippedAtEnd(String pick) {
+        String s = pick.stripTrailing();
+        int n = s.length();
+        if (n < CLIP_MIN || n > CLIP_MAX) {
+            return false;
+        }
+        return Character.isLetterOrDigit(s.charAt(n - 1));
     }
 
     /**
