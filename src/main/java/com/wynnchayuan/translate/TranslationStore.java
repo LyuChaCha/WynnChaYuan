@@ -1155,8 +1155,13 @@ public final class TranslationStore {
      *
      * <p>中文本來就不用空格分詞，緊貼著寫是<b>正常的中文</b>，不該被當成同一個
      * 詞。界線用 {@code 0x2E80}，跟 {@code LineTranslator#isLatin} 同一條。
+     *
+     * <p>{@link LineTranslator} 把重點段的樣式貼回譯文時用<b>同一條</b>界線。
+     * 「算不算同一個詞」在一份語料裡只能有一種答案，兩邊各自判會在
+     * {@code Lootrun} 那種詞上分岔：詞表不把 {@code Loot} 當詞首，
+     * 重點段卻照樣貼上去，於是 {@code run} 三個字母掉色。
      */
-    private static boolean wordChar(char c) {
+    static boolean wordChar(char c) {
         return c < 0x2E80 && Character.isLetterOrDigit(c);
     }
 
