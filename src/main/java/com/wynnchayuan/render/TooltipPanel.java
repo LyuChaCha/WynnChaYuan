@@ -439,10 +439,9 @@ public final class TooltipPanel {
                 leftAligned, TooltipPanel::measure);
     }
 
-    /** 量一行畫出來多寬；沒有字型（headless）時是 0，撐寬那一步就什麼都不做。 */
+    /** 量一行畫出來多寬。跟翻譯那邊走同一個入口，測試才量得到。 */
     private static int measure(Component line) {
-        Minecraft mc = Minecraft.getInstance();
-        return mc == null || mc.font == null ? 0 : mc.font.width(line);
+        return com.wynnchayuan.translate.LineTranslator.width(line);
     }
 
     /**
