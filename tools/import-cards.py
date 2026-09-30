@@ -33,8 +33,12 @@
     python tools/import-cards.py <cards.json 的路徑>            # 只看會加什麼
     python tools/import-cards.py <cards.json 的路徑> --write    # 寫回語料
     python tools/import-cards.py <cards.json 的路徑> --todo x.txt  # 導出待翻清單
+    python tools/import-cards.py --selftest                    # 組合與歸屬的規則
 
 已經有譯文的一律不動，只補新的。
+
+哪一塊進哪一個檔看 `where()`。**認不出歸屬的也會列進 `--todo`**——先前是
+直接 continue，於是「沒有卡片符合」與「每一張都補好了」印出來一模一樣。
 """
 from __future__ import annotations
 
@@ -230,6 +234,29 @@ def kind_of(card: str) -> str | None:
     return m.group(1) if m else None
 
 
+def where(card: str, src: str) -> str | None:
+    """這一塊該進哪一個譯文檔；認不出來回傳 {@code None}。
+
+    <h2>方括號認不出賜福卡</h2>
+    內容書那些卡的標題結尾帶著類型（{@code Theatre Royal [Cave]}），所以
+    {@link kind_of} 認得出來。但 Lootrun 的**賜福卡與使命卡**標題是純名字
+    ——{@code Bad Omen}、{@code Patient Champion}、{@code Porphyrophobia}
+    ——沒有方括號可認，整批都掉出去了。
+
+    實測使用者那一份 143 張卡的 cards.json：**一張都沒被認出來**，而工具
+    回報的是「組出 0 條，還缺 0 條」，看起來像是沒東西可補。
+
+    <p>「Lootrun」這個詞只出現在 Lootrun 的內容裡，拿它當訊號不會誤判別的卡。
+    認不出來的那些現在會列進 {@code --todo}，不再默默消失。
+    """
+    kind = kind_of(card)
+    if kind in ROUTE:
+        return ROUTE[kind]
+    if "Lootrun" in src:
+        return "lootrun.json"
+    return None
+
+
 def run(cards_path: Path, lang: str, write: bool,
         use_dst: bool = False) -> list[tuple[str, str]]:
     corpus = load_corpus(lang)
@@ -240,20 +267,27 @@ def run(cards_path: Path, lang: str, write: bool,
     made: dict[str, dict[str, str]] = collections.defaultdict(
         collections.OrderedDict)
     todo: list[tuple[str, str]] = []
+    seen = 0
+    lost = 0
     for key, val in entries.items():
         if key.startswith("_") or not isinstance(val, dict):
             continue
-        kind = kind_of(str(val.get("card") or ""))
-        if kind not in ROUTE:
-            continue
+        seen += 1
         src = val.get("src", "")
         if not src or src in corpus:
+            continue
+        name = where(str(val.get("card") or ""), src)
+        if name is None:
+            # 認不出歸屬的也要報。先前是 continue，於是「沒有卡片符合」與
+            # 「每一張都補好了」印出來一模一樣，而前者才是常態。
+            lost += 1
+            todo.append(("(認不出歸屬) " + str(val.get("card") or ""), src))
             continue
         # cards.json 的 dst 是收集者自己填的，沒有記是哪一個語言，
         # 所以只有在指定單一 --lang 時才敢用。
         dst = (val.get("dst") if use_dst else None) or builder.block(src)
         if dst:
-            made[ROUTE[kind]][src] = dst
+            made[name][src] = dst
         else:
             todo.append((str(val.get("card") or ""), src))
 
@@ -286,7 +320,11 @@ def run(cards_path: Path, lang: str, write: bool,
                 fh.write(json.dumps(loaded, ensure_ascii=False, indent=1) + "\n")
         print("  %-20s +%d" % (name, added))
         total += added
-    print("[%s] 組出 %d 條，還缺 %d 條" % (lang, total, len(todo)))
+    print("[%s] 看過 %d 塊：組出 %d 條，還缺 %d 條（其中 %d 條認不出歸屬）"
+          % (lang, seen, total, len(todo), lost))
+    if lost:
+        print("      認不出歸屬的多半是還沒寫進 ROUTE 的卡種。"
+              "加 --todo 看是哪些，值得收的就補一條規則進 where()。")
     return todo
 
 
@@ -362,6 +400,30 @@ def selftest() -> int:
     print(("  [PASS] " if ok else "  [FAIL] ") + "簡中的「可进入」"
           + ("" if ok else "（實際 %r）" % (got,)))
     bad += 0 if ok else 1
+
+    # ---- 歸屬。認錯了會把整批卡寫進不該去的檔，認不出來則是<b>默默</b>漏掉 ----
+    for what, card, src, want in (
+            ("內容書的卡照方括號", "Theatre Royal [Cave]", "Anything", "cave.json"),
+            ("任務卡", "The Steel Feather [Quest]", "Anything", "quest-ui.json"),
+            ("★ 賜福卡沒有方括號，靠 src 裡的 Lootrun 認",
+             "Bad Omen",
+             "For the rest of this Lootrun, gain +{~} Loot (Max x{~})"
+             " everytime you get a Curse", "lootrun.json"),
+            ("★ 使命卡同理", "Patient Champion",
+             "Once you reach {~} Challenges completed during your"
+             " Lootrun, gain +{~} {#}Strength", "lootrun.json"),
+            # 認不出來是<b>對的</b>——裝備 tooltip 的名稱歸 gear-*.json，
+            # 不該由這支工具去猜。重點是它現在會列進 --todo，不再無聲消失。
+            ("裝備 tooltip 不歸這裡管", "{#}Bonder{#}",
+             "Health Regen {#}+{~} [{~}]", None),
+            ("方括號裡不是卡種也不硬猜", "Emerald Pouch [Tier {~}]",
+             "- {~} Rows", None),
+    ):
+        got = where(card, src)
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ") + what
+              + ("" if ok else "（要 %r，實際 %r）" % (want, got)))
+        bad += 0 if ok else 1
 
     print("全過。" if not bad else "%d 項沒過。" % bad)
     return 1 if bad else 0
