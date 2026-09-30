@@ -1,51 +1,12 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.2.5",
+  "latest": "0.2.4",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
     "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
   },
   "notes": {
-    "0.2.5": {
-      "headline": "Follows your game language on a fresh install, and F6 tells you if your translations are current",
-      "items": [
-        "A fresh install now follows the game language properly. Korean, Japanese, Russian and Spanish players no longer get Chinese until they change the setting by hand.",
-        "The same fix stops the background sync from downloading the wrong language every launch.",
-        "F6's data page has a new Translation version row: it says whether your translations match the latest ones on GitHub, and says so plainly when it cannot reach GitHub instead of claiming you are up to date.",
-        "The tracker panel no longer repeats the Lootrun section that the scoreboard already shows.",
-        "Dialogue that only just fits no longer snaps back to English the moment the English finishes typing.",
-        "Three quest objectives that named the wrong place are fixed.",
-        "Lootrun: the block descriptions that were missing are in, and mission card rewards keep the colours the original uses.",
-        "Simplified Chinese: 1,507 strings that only existed in Traditional are translated, Mythic weapon and armour names now use the lore names, and Aspect is now 意象."
-      ],
-      "zh_tw": {
-        "headline": "第一次安裝會跟著遊戲語言，F6 看得出譯文是不是最新的",
-        "items": [
-          "第一次安裝時「跟隨遊戲語言」終於是對的。韓文、日文、俄文、西文的玩家不會再拿到中文，也不必先去設定裡手動選一次。",
-          "同一個修正順帶治好背景同步：以前它每次啟動都在下載錯的那個語言。",
-          "F6 的資料頁多一列「譯文版本」，會講手上這份跟 GitHub 上最新的是不是同一個；連不上的時候就說連不上，不會假裝是最新的。",
-          "追蹤欄不再重複記分板已經顯示過的 Lootrun 那一段。",
-          "對話框裡剛好塞得下的譯文，不會在英文打完的那一刻整句變回英文。",
-          "三條指錯地方的任務目標修好了。",
-          "Lootrun：缺的整段敘述補上了，使命卡的獎勵照原文分色。",
-          "簡體中文：補上 1,507 條只有繁中有的譯文，Mythic 武器與防具改用背景敘述取的名字，Aspect 改譯「意象」。"
-        ]
-      },
-      "zh_cn": {
-        "headline": "第一次安装会跟着游戏语言，F6 看得出译文是不是最新的",
-        "items": [
-          "第一次安装时「跟随游戏语言」终于是对的。韩语、日语、俄语、西语的玩家不会再拿到中文，也不必先去设置里手动选一次。",
-          "同一个修正顺带治好后台同步：以前它每次启动都在下载错的那个语言。",
-          "F6 的数据页多一列「译文版本」，会讲手上这份跟 GitHub 上最新的是不是同一个；连不上的时候就说连不上，不会假装是最新的。",
-          "追踪栏不再重复记分板已经显示过的 Lootrun 那一段。",
-          "对话框里刚好塞得下的译文，不会在英文打完的那一刻整句变回英文。",
-          "三条指错地方的任务目标修好了。",
-          "Lootrun：缺的整段描述补上了，使命卡的奖励按原文分色。",
-          "简体中文：补上 1,507 条只有繁中有的译文，Mythic 武器与防具改用背景描述取的名字，Aspect 改译「意象」。"
-        ]
-      }
-    },
     "0.2.4": {
       "headline": "Search takes Chinese, and text lines up better",
       "items": [
