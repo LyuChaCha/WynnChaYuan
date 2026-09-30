@@ -1,12 +1,162 @@
 {
  "_meta": {
   "quest": "Shattered Minds",
-  "count": 51,
+  "count": 66,
   "translated": 51,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Shattered Minds#000": {
+   "src": "The Bluecap Mushrooms grow in a cave out the gate northwest of here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Efilim Elf 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
+   "source": "captured"
+  },
+  "Shattered Minds#001": {
+   "src": "You find and take the mushroom Likeru asked for.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#002": {
+   "src": "[+{~} Bluecap Mushroom]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#003": {
+   "src": "You begin to feel an odd sensation...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#004": {
+   "src": "...Now that you... have the mushrooms... you should return to... Likeru...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#005": {
+   "src": "Swish and sproont! Or is it the other way around? The moon shoes will help too!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#006": {
+   "src": "Sorry! The stairs broke! Try again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "[+487 Combat XP]\n[ZLGX]",
+   "source": "captured"
+  },
+  "Shattered Minds#007": {
+   "src": "There we go.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#008": {
+   "src": "Is a refreshment needed? For I shall provide- the colors, green, blue, red, yellow, floating above the pillars- reveals where you will arrive",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Professor Eih\n󏿿󏿿󏿿󏿿󏿬󐀂\n.",
+   "source": "captured"
+  },
+  "Shattered Minds#009": {
+   "src": "They send the same way! Such direction waters my crops and tops my hat- fly well!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#010": {
+   "src": "A fresh-water fellow finds a fresh start for the fish out of water, frying in the fuzzies' fireplace!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Professor Eih\n󏿿󏿿󏿿󏿿󏿬󐀂\n.",
+   "source": "captured"
+  },
+  "Shattered Minds#011": {
+   "src": "Green means go- and going green means you get going! Glance the green in the air by the gates, greengills!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Professor Eih\n󏿿󏿿󏿿󏿿󏿬󐀂\n.",
+   "source": "captured"
+  },
+  "Shattered Minds#012": {
+   "src": "The Bluecaps are fickle things, inasmuch as inanimate objects can be. We cannot control their influence but in passing. We shall need to take care with them...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Strange Coin 󏿿󏿿󏿿󏿿󏿿󏿪 󐀂",
+   "source": "captured"
+  },
+  "Shattered Minds#013": {
+   "src": "Yeah...the more I think on it, the more that the corruption portal messing with the visions makes sense.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Shattered Minds#014": {
+   "src": "Well, if you ever want to try again and see if I'm wrong go ahead, but please don't dive into the pond again?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Shattered Minds",
+   "stage": "",
+   "speaker": "Grook 󏿿󏿿󏿿󏿿󏿿󏿿󏿿󏿞 󐀂\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Shattered Minds#015": {
    "src": "Speak to Likeru in {p} at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]의 {p}에서 Likeru에게 말을 거세요",
    "role": "desc",
@@ -16,7 +166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#001": {
+  "Shattered Minds#016": {
    "src": "Aha, perfect! You'll be perfect! Lucky a human decided to come here!",
    "dst": "아하, 완벽해! 딱 좋아! 마침 인간이 여기 와 주다니 운이 좋네!",
    "role": "desc",
@@ -26,7 +176,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#002": {
+  "Shattered Minds#017": {
    "src": "I'll get to the point- I want you to go get something for me, and then bring it back here. Simple, right?",
    "dst": "본론만 말할게. 뭘 좀 가져다줬으면 해. 그리고 여기로 가져오는 거지. 간단하지?",
    "role": "desc",
@@ -36,7 +186,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#003": {
+  "Shattered Minds#018": {
    "src": "When you do that, I'm going to fix it up and try something out on you. Something magically enlightening!",
    "dst": "그러면 내가 그걸 손질해서 너한테 뭘 좀 시험해 볼 거야. 마법으로 깨달음을 주는 거!",
    "role": "desc",
@@ -46,7 +196,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#004": {
+  "Shattered Minds#019": {
    "src": "Oh, don't give me that look, it should be perfectly safe! Unless you've been mired in darkness for the past however many years...",
    "dst": "아, 그런 눈으로 보지 마. 완전히 안전할 거야! 지난 몇 년 동안 어둠에 푹 빠져 살았던 게 아니라면...",
    "role": "desc",
@@ -56,7 +206,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#005": {
+  "Shattered Minds#020": {
    "src": "Anyway, what I need is a specific kind of mushroom that grows close by, the Bluecap Mushroom.",
    "dst": "아무튼, 필요한 건 근처에 자라는 특별한 버섯, 파란갓 버섯이야.",
    "role": "desc",
@@ -66,7 +216,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#006": {
+  "Shattered Minds#021": {
    "src": "They grow underground- in a cave out the gate northwest of here. I'll even pay you if you bring it back, so what have you got to lose?",
    "dst": "땅속에서 자라. 여기 북서쪽 문을 나가면 있는 동굴에. 가져오면 돈도 줄게. 손해 볼 거 없잖아?",
    "role": "desc",
@@ -76,7 +226,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#007": {
+  "Shattered Minds#022": {
    "src": "Bring Likeru the mushrooms from the cave at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]의 동굴에서 버섯을 가져와 Likeru에게 주세요",
    "role": "desc",
@@ -86,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#008": {
+  "Shattered Minds#023": {
    "src": "Figure out how to get out of the cave, and return to Likeru.",
    "dst": "동굴에서 빠져나갈 방법을 찾아 Likeru에게 돌아가세요",
    "role": "desc",
@@ -96,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#009": {
+  "Shattered Minds#024": {
    "src": "Looks like someone rolled about the air fuzz too much, so indeed hello! A light hello to yourself, {u}, and a greetings to Professor Eih, which is me!",
    "dst": "누가 공중 솜털에 너무 굴렀나 보군, 그러니 정말로 안녕! {u}에게 가벼운 인사를, 그리고 Eih 교수, 즉 나에게도 인사를!",
    "role": "desc",
@@ -106,7 +256,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#010": {
+  "Shattered Minds#025": {
    "src": "I don't rhyme all the instances, I feel the need to say. But what do you say? Very little! But I bet you're wondering where you are.",
    "dst": "매번 운을 맞추진 않는다고 말해 둬야겠군. 그런데 넌 뭐라고 할 텐가? 거의 아무 말도! 하지만 여기가 어딘지 궁금하겠지.",
    "role": "desc",
@@ -116,7 +266,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#011": {
+  "Shattered Minds#026": {
    "src": "I am no gambling man, but the chips are down and it is time to play {~}-Pickup with the puzzle pieces, and I'll eat my bowtie if you aren't ready.",
    "dst": "난 도박꾼은 아니지만 판돈은 걸렸고, 이제 퍼즐 조각으로 {~}조각 줍기 놀이를 할 때다. 준비 안 됐다면 내 나비넥타이를 먹지.",
    "role": "desc",
@@ -126,7 +276,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#012": {
+  "Shattered Minds#027": {
    "src": "The betting pool says the way to go is the opposite of in front, so that leaves someplace we can't talk about in front of the kids as your path!",
    "dst": "판돈 풀이 말하길 갈 길은 앞의 반대라니, 네 길은 애들 앞에선 말 못 할 그곳이다!",
    "role": "desc",
@@ -136,7 +286,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#013": {
+  "Shattered Minds#028": {
    "src": "I will be around! Or asquare, as it were. Technically amultiplesquares, replete with alines! And abevels! And other some such things like-",
    "dst": "난 근처에 있을 거다! 아니, 근처 사각형인가. 엄밀히는 근처 여러 사각형, 근처 선분 가득! 근처 경사면도! 그리고 기타 등등-",
    "role": "desc",
@@ -146,7 +296,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#014": {
+  "Shattered Minds#029": {
    "src": "The punks scramble like eggs, and your skillet is sizzling! Certainly the heat in the kitchen is too much- so where is the fire extinguisher?",
    "dst": "불량배들은 달걀처럼 휘저어지고, 네 프라이팬은 지글지글! 부엌은 확실히 너무 뜨겁다- 그럼 소화기는 어디 있지?",
    "role": "desc",
@@ -156,7 +306,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#015": {
+  "Shattered Minds#030": {
    "src": "It won't rocket you! The hole in the shape of a door looms out of your transparent grasp- frogs can't skip leg day, so be froggy! Bounce and jump!",
    "dst": "날려 보내진 않는다! 문 모양 구멍이 투명한 손아귀 너머로 어른거린다- 개구리는 하체 운동을 못 빼먹지, 개구리가 되어라! 튀고 뛰어라!",
    "role": "desc",
@@ -166,7 +316,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#016": {
+  "Shattered Minds#031": {
    "src": "Swoosh and sprint! Speed and non-slip shoes! With a CLICK upon me I give you all but one, as much as you need!",
    "dst": "휙휙, 질주! 속도와 미끄럼 방지 신발! 날 딸깍 누르면 하나 빼고 다 주지, 필요한 만큼!",
    "role": "desc",
@@ -176,7 +326,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#017": {
+  "Shattered Minds#032": {
    "src": "The colors! Shimmering as a prism- oh, no one likes those things. The writing is on the wall, but the window mugs it for pocket change! The inhumanity!",
    "dst": "색깔들! 프리즘처럼 반짝- 아, 아무도 그런 건 안 좋아하지. 벽에 글씨가 써 있는데, 창문이 푼돈 때문에 털어 가는군! 이 무슨 비인간적인!",
    "role": "desc",
@@ -186,7 +336,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#018": {
+  "Shattered Minds#033": {
    "src": "Use your eyes as ears and hear what I shall write! The cockpit is missing ground control and the cornfields all look the same in endless rows!",
    "dst": "눈을 귀 삼아 내가 쓸 말을 들어라! 조종실엔 관제탑이 없고, 옥수수밭은 끝없는 줄이 다 똑같구나!",
    "role": "desc",
@@ -196,7 +346,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#019": {
+  "Shattered Minds#034": {
    "src": "So Eih, esquire professor PhD, will provide the coordinates in helpfully non-literal fashion, and one's joystick shall lead the holder to bliss!",
    "dst": "그러니 Eih, 교수 나리 박사께서 친절히 비유적으로 좌표를 주실 테니, 조종간이 쥔 자를 극락으로 이끌리라!",
    "role": "desc",
@@ -206,7 +356,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#020": {
+  "Shattered Minds#035": {
    "src": "At one's boots, the colors paint themselves towards an orientation. Above one's head, the lights match and fling you the same!",
    "dst": "발치에서 색깔들이 방향을 향해 스스로 칠해진다. 머리 위에선 불빛이 짝을 맞춰 널 같은 쪽으로 던진다!",
    "role": "desc",
@@ -216,7 +366,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#021": {
+  "Shattered Minds#036": {
    "src": "I'm all out of airplane food, but the goal is more than peanuts- it's progress, just opposite our position. Fly well!",
    "dst": "기내식이 다 떨어졌지만 목표는 땅콩 몇 알 이상이다- 진전이지, 우리 위치 정반대에. 잘 날아라!",
    "role": "desc",
@@ -226,7 +376,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#022": {
+  "Shattered Minds#037": {
    "src": "WOW. Just, WOW! Your brain being frazzled doesn't excuse this failure! Time is money and we're swimming in a river called DEBT!",
    "dst": "와. 그냥, 와! 뇌가 지쳤다고 이 실패가 용서되진 않아! 시간은 돈이고 우린 빚이라는 강에서 헤엄치는 중이라고!",
    "role": "desc",
@@ -236,7 +386,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#023": {
+  "Shattered Minds#038": {
    "src": "I'm just going to stand here and you're gonna go into the teleporters I'm NOT in, and you're gonna like it!",
    "dst": "난 여기 서 있을 테니 넌 내가 없는 순간이동기로 들어가라, 그리고 좋아하게 될 거다!",
    "role": "desc",
@@ -246,7 +396,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#024": {
+  "Shattered Minds#039": {
    "src": "Explore the strange forest to find Likeru.",
    "dst": "이상한 숲을 탐험해 Likeru를 찾으세요",
    "role": "desc",
@@ -256,7 +406,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#025": {
+  "Shattered Minds#040": {
    "src": "Hey, look to your left for a moment.",
    "dst": "이봐, 잠깐 왼쪽 좀 봐.",
    "role": "desc",
@@ -266,7 +416,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#026": {
+  "Shattered Minds#041": {
    "src": "I hope you've got a note pad with you, if you want me to teach you the ways of a master you'll need to write a lot down!",
    "dst": "공책 챙겨 왔길 바란다. 대가의 길을 배우고 싶다면 받아 적을 게 많거든!",
    "role": "desc",
@@ -276,7 +426,7 @@
    "speaker": "Steve",
    "source": "wiki"
   },
-  "Shattered Minds#027": {
+  "Shattered Minds#042": {
    "src": "It doesn't matter that we're on a {~}-match losing streak, we'll never give up!",
    "dst": "{~}연패 중이면 어때, 우린 절대 포기 안 해!",
    "role": "desc",
@@ -286,7 +436,7 @@
    "speaker": "Erd",
    "source": "wiki"
   },
-  "Shattered Minds#028": {
+  "Shattered Minds#043": {
    "src": "C'mon Beakmeister, we've ventured together for years now! Why won't you listen to me?",
    "dst": "제발, Beakmeister, 우리 몇 년을 같이 모험했잖아! 왜 내 말을 안 들어?",
    "role": "desc",
@@ -296,7 +446,7 @@
    "speaker": "Flamingo Rider",
    "source": "wiki"
   },
-  "Shattered Minds#029": {
+  "Shattered Minds#044": {
    "src": "I don't think she's even listening to me anymore. She's a free spirit!",
    "dst": "이제 내 말은 아예 안 듣는 것 같아. 자유로운 영혼이거든!",
    "role": "desc",
@@ -306,7 +456,7 @@
    "speaker": "Flamingo Rider",
    "source": "wiki"
   },
-  "Shattered Minds#030": {
+  "Shattered Minds#045": {
    "src": "Familiar to the nursing home, with no IV in sight! Phenomenal, and now my gambling metaphors will be apropos!",
    "dst": "요양원엔 익숙한데 링거는 하나도 안 보이는군! 경이롭다, 이제야 내 도박 비유가 딱 맞겠어!",
    "role": "desc",
@@ -316,7 +466,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#031": {
+  "Shattered Minds#046": {
    "src": "A solid, {~} pure, statue-made-out-of-tons-of-things what looks like me! I call it, “Ill Of The Ooze, Young!” And it begets your path amongst the lilypads.",
    "dst": "튼튼하고 {~} 순수한, 온갖 걸 수 톤 쌓아 만든 나를 닮은 조각상! 이름하여 '진흙의 병, 젊은이!' 그게 연잎 사이로 네 길을 낳는다.",
    "role": "desc",
@@ -326,7 +476,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#032": {
+  "Shattered Minds#047": {
    "src": "Likeru? No, no, she can’t find you here- her eyes deceive her. But I won't! Not any more than the film reel degrades, and the theater is ahead!",
    "dst": "Likeru? 아니, 그녀는 여기서 널 못 찾아- 눈이 그녀를 속이거든. 하지만 난 안 속이지! 필름이 닳는 것 이상으론, 그리고 극장은 바로 앞이다!",
    "role": "desc",
@@ -336,7 +486,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#033": {
+  "Shattered Minds#048": {
    "src": "Now, don't tell the kids about this one either! The way forward is through my masterpiece- but I can't imagine a gullet glorious!",
    "dst": "자, 이것도 애들한텐 비밀이다! 앞길은 내 걸작을 지나야 해- 하지만 영광스러운 목구멍이라니 상상이 안 되는군!",
    "role": "desc",
@@ -346,7 +496,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#034": {
+  "Shattered Minds#049": {
    "src": "Enter the giant frog and escape.",
    "dst": "거대한 개구리 안으로 들어가 탈출하세요",
    "role": "desc",
@@ -356,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#035": {
+  "Shattered Minds#050": {
    "src": "Don't come any closer... I don't want to have to fight...",
    "dst": "가까이 오지 마... 싸우고 싶지 않아...",
    "role": "desc",
@@ -366,7 +516,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#036": {
+  "Shattered Minds#051": {
    "src": "I-I'm warning you. You'll stand no match against me...",
    "dst": "겨, 경고했어. 넌 내 상대가 안 돼...",
    "role": "desc",
@@ -376,7 +526,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#037": {
+  "Shattered Minds#052": {
    "src": "That's it...",
    "dst": "그만...",
    "role": "desc",
@@ -386,7 +536,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Shattered Minds#038": {
+  "Shattered Minds#053": {
    "src": "There we are! Snapped out of it! Though perhaps writing in the mud was better- Soon it will dry.",
    "dst": "자, 됐다! 정신이 돌아왔군! 진흙에 쓰는 편이 나았을지도- 곧 마를 테니.",
    "role": "desc",
@@ -396,7 +546,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#039": {
+  "Shattered Minds#054": {
    "src": "Without the static of the fungal caps, the radio station will be off-air- and the device unplugged!",
    "dst": "버섯갓의 잡음이 없으면 라디오 방송은 끊기고- 장치는 플러그가 뽑힌다!",
    "role": "desc",
@@ -406,7 +556,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#040": {
+  "Shattered Minds#055": {
    "src": "Scratch it in your eyelids- the lightbulb screwed between the arches, and the feather-duster's sunset shades will reveal my deepest compatriot. Quick now, wake!",
    "dst": "눈꺼풀에 새겨라- 아치 사이에 끼운 전구, 먼지떨이의 노을빛이 나의 가장 깊은 동포를 드러내리라. 어서, 깨어나라!",
    "role": "desc",
@@ -416,7 +566,7 @@
    "speaker": "Professor Eih",
    "source": "wiki"
   },
-  "Shattered Minds#041": {
+  "Shattered Minds#056": {
    "src": "Ugh. Rats chewing the roots. They've their place, it simply isn't here. Neither is your place in the koi pond, stranger.",
    "dst": "으. 쥐들이 뿌리를 갉아. 녀석들도 있을 곳이 있지만 여긴 아니야. 네가 있을 곳도 이 잉어 연못은 아니고, 이방인.",
    "role": "desc",
@@ -426,7 +576,7 @@
    "speaker": "Elder Berusia",
    "source": "wiki"
   },
-  "Shattered Minds#042": {
+  "Shattered Minds#057": {
    "src": "I believe Likeru tossed you into the deep end without meaning, so to speak. I understand your being overwhelmed, but still...",
    "dst": "Likeru가 뜻 없이 널 깊은 물에 던진 모양이군, 말하자면. 당황한 건 이해하지만, 그래도...",
    "role": "desc",
@@ -436,7 +586,7 @@
    "speaker": "Elder Berusia",
    "source": "wiki"
   },
-  "Shattered Minds#043": {
+  "Shattered Minds#058": {
    "src": "Speaking of which, it might behoove you to let her know you've recovered. Though, should you need rest, you may take it here.",
    "dst": "그러고 보니, 네가 회복했다고 그녀에게 알리는 게 좋겠어. 쉬어야 한다면 여기서 쉬어도 되고.",
    "role": "desc",
@@ -446,7 +596,7 @@
    "speaker": "Elder Berusia",
    "source": "wiki"
   },
-  "Shattered Minds#044": {
+  "Shattered Minds#059": {
    "src": "Return to Likeru in {p} at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]의 {p}에 있는 Likeru에게 돌아가세요",
    "role": "desc",
@@ -456,7 +606,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shattered Minds#045": {
+  "Shattered Minds#060": {
    "src": "Ehm. Okay, that was...a bad idea. Should NOT have done that with a human. Uh, noted for the futu- oh, you're actually alright?!",
    "dst": "음. 그래, 그건... 나쁜 생각이었어. 인간한테 하면 절대 안 됐어. 어, 다음을 위해 기록- 어, 너 멀쩡해?!",
    "role": "desc",
@@ -466,7 +616,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#046": {
+  "Shattered Minds#061": {
    "src": "You came back and just leapt into the koi pond! I thought you'd drowned down there!",
    "dst": "돌아오자마자 잉어 연못에 뛰어들었잖아! 거기서 빠져 죽은 줄 알았어!",
    "role": "desc",
@@ -476,7 +626,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#047": {
+  "Shattered Minds#062": {
    "src": "I guess the spores from the Bluecaps got to you before you could bring them back. I wonder what you saw?",
    "dst": "가져오기 전에 파란갓 버섯 포자에 당했나 봐. 뭘 봤는지 궁금하네?",
    "role": "desc",
@@ -486,7 +636,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#048": {
+  "Shattered Minds#063": {
    "src": "You reacted like you were crazy when I tried to talk with you... You were supposed to get visions of the light! A deep connection!",
    "dst": "말을 걸었더니 미친 사람처럼 굴더라... 원래는 빛의 환영을 봐야 했어! 깊은 교감!",
    "role": "desc",
@@ -496,7 +646,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#049": {
+  "Shattered Minds#064": {
    "src": "Wait, maybe it's cause of that portal...the signals got mixed? I'll have to look into this more...but hey, I got the Bluecap, anyways, so...",
    "dst": "잠깐, 그 차원문 때문일지도... 신호가 섞였나? 더 조사해 봐야겠어... 그래도 파란갓 버섯은 얻었으니...",
    "role": "desc",
@@ -506,7 +656,7 @@
    "speaker": "Likeru",
    "source": "wiki"
   },
-  "Shattered Minds#050": {
+  "Shattered Minds#065": {
    "src": "Here, your payment- and a little extra I whipped up too. Um, really sorry about all that!",
    "dst": "자, 네 보수야. 그리고 내가 만든 덤도 좀. 음, 그 일은 정말 미안해!",
    "role": "desc",

@@ -1,12 +1,128 @@
 {
  "_meta": {
   "quest": "The Shadow of the Beast",
-  "count": 87,
+  "count": 98,
   "translated": 87,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Shadow of the Beast#000": {
+   "src": "See the blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#001": {
+   "src": "The blood trail ought to lead you to wherever the beast went. Hunt that thing down for us all!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#002": {
+   "src": "CANNOT EXIT OPERATION AREA. RETURNING TO POST.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#003": {
+   "src": "[+{~} Emerald Blocks]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "[+{~} Emeralds]",
+    "file": "gui.json",
+    "ratio": 0.833,
+    "reason": "candidate"
+   }
+  },
+  "The Shadow of the Beast#004": {
+   "src": "If you are done fixing my house, it looks like there're tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#005": {
+   "src": "Looks like there's tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#006": {
+   "src": "Aah, there's so many people hurt already, don't make it worse, please!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#007": {
+   "src": "Ugh, think Rileen! You have the herbs, what else goes into those poultices...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#008": {
+   "src": "She just keeps worrying over what she can do. Seems like getting the oil might help her calm down.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#009": {
+   "src": "She's still freaking out. She mentioned needing [{~} Salmon Oil] for medicine, and a pond out back full of fish...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#010": {
+   "src": "I think the giant went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#011": {
    "src": "Talk to Dereg in his house at [-{~}, {~}, -{~}].",
    "dst": "Habla con Dereg en su casa en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +132,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#001": {
+  "The Shadow of the Beast#012": {
    "src": "Oh, you look tough. You must be one of those humans I keep hearing about, right? People talk about your kind all the time.",
    "dst": "Vaya, qué duro pareces. Debes de ser uno de esos humanos de los que tanto oigo. Siempre se habla de los tuyos.",
    "role": "desc",
@@ -26,7 +142,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#002": {
+  "The Shadow of the Beast#013": {
    "src": "You know, that you're all scrappers. Tough as nails, and willing to kill all sorts of beasts, you know?",
    "dst": "Ya sabes, que sois todos unos peleones. Duros como el acero y dispuestos a matar a cualquier bestia, ¿sabes?",
    "role": "desc",
@@ -36,7 +152,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#003": {
+  "The Shadow of the Beast#014": {
    "src": "I think you know what I'm getting at. I saw some massive thing lumbering around the swamp one night! Tall as the trees, it was.",
    "dst": "Creo que ya sabes por dónde voy. ¡Una noche vi algo enorme moverse pesadamente por el pantano! Era alto como los árboles.",
    "role": "desc",
@@ -46,7 +162,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#004": {
+  "The Shadow of the Beast#015": {
    "src": "I couldn't make out the details, but if its size was any indication, it could just step over the {p} walls and wreck the whole town!",
    "dst": "No pude ver los detalles, pero con ese tamaño ¡podría pasar por encima de las murallas de {p} y destrozar el pueblo entero!",
    "role": "desc",
@@ -56,7 +172,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#005": {
+  "The Shadow of the Beast#016": {
    "src": "Of course, there's so many scam artists around here trying to sell anti-monster underwear or whatever that no one believes me.",
    "dst": "Claro que por aquí hay tantos estafadores vendiendo ropa interior antimonstruos y demás que nadie me cree.",
    "role": "desc",
@@ -66,7 +182,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#006": {
+  "The Shadow of the Beast#017": {
    "src": "So, that means it's up to you! Ehm, supposing that you're willing to help out, at least... The one thing I know for sure is that it was eating something.",
    "dst": "¡Así que depende de ti! Ejem, suponiendo que quieras ayudar, claro... Lo único que sé seguro es que estaba comiendo algo.",
    "role": "desc",
@@ -76,7 +192,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#007": {
+  "The Shadow of the Beast#018": {
    "src": "See that blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
    "dst": "¿Ves esa sangre en el suelo? Está fresca. ¡Síguela, mira adónde lleva y caza a esa bestia antes de que haga algo terrible!",
    "role": "desc",
@@ -86,7 +202,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#008": {
+  "The Shadow of the Beast#019": {
    "src": "That blood trail ought to lead you to wherever the beast went. Hunt that thing down for us all!",
    "dst": "Ese rastro de sangre debería llevarte adonde fue la bestia. ¡Cázala por el bien de todos!",
    "role": "desc",
@@ -96,7 +212,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#009": {
+  "The Shadow of the Beast#020": {
    "src": "Follow the trail of blood left by the beast.",
    "dst": "Sigue el rastro de sangre que dejó la bestia.",
    "role": "desc",
@@ -106,7 +222,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#010": {
+  "The Shadow of the Beast#021": {
    "src": "Oh, this is such a mess! And my axe is busted, too...how am I going to get this fixed?!",
    "dst": "¡Ay, menudo desastre! Y encima mi hacha está rota... ¡¿cómo voy a arreglar esto?!",
    "role": "desc",
@@ -116,7 +232,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#011": {
+  "The Shadow of the Beast#022": {
    "src": "I can't pay for- AAAH! H-Human! What do you want?! Not a good time!",
    "dst": "No puedo pagar- ¡AAAH! ¡H-humano! ¡¿Qué quieres?! ¡No es buen momento!",
    "role": "desc",
@@ -126,7 +242,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#012": {
+  "The Shadow of the Beast#023": {
    "src": "Something destroyed my cow pen and wrecked up my entire farm!",
    "dst": "¡Algo destrozó mi corral y arrasó toda la granja!",
    "role": "desc",
@@ -136,7 +252,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#013": {
+  "The Shadow of the Beast#024": {
    "src": "And they were solid, good-quality Willow, too...uff...",
    "dst": "Y encima era Willow maciza, de buena calidad... uf...",
    "role": "desc",
@@ -146,7 +262,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#014": {
+  "The Shadow of the Beast#025": {
    "src": "Wait, what? You're hunting the thing? Well, that's fine and dandy, but do you think you could help here first?",
    "dst": "Espera, ¿qué? ¿Estás cazando a esa cosa? Pues muy bien, pero ¿podrías ayudarme aquí primero?",
    "role": "desc",
@@ -156,7 +272,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#015": {
+  "The Shadow of the Beast#026": {
    "src": "I have an idea of where it went, so...you scratch my back, I scratch yours?",
    "dst": "Sé más o menos adónde fue, así que... ¿hoy por ti y mañana por mí?",
    "role": "desc",
@@ -166,7 +282,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#016": {
+  "The Shadow of the Beast#027": {
    "src": "Okay, this can work, this can work! I have to figure out how to fix this, and some of my cows ran off in a panic.",
    "dst": "¡Vale, puede funcionar, puede funcionar! Tengo que ver cómo arreglo esto, y unas vacas huyeron del susto.",
    "role": "desc",
@@ -176,7 +292,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#017": {
+  "The Shadow of the Beast#028": {
    "src": "So, you can take care of them while I re-plan my fencing. Simple enough, right?",
    "dst": "Así que ocúpate de ellas mientras replanteo la valla. Fácil, ¿no?",
    "role": "desc",
@@ -186,7 +302,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#018": {
+  "The Shadow of the Beast#029": {
    "src": "Three of my cows ran off. Look around the farm for them. They were eating, so look for fallen wheat on the ground!",
    "dst": "Tres vacas se me escaparon. Búscalas por la granja. Estaban comiendo, ¡así que busca trigo caído en el suelo!",
    "role": "desc",
@@ -196,7 +312,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#019": {
+  "The Shadow of the Beast#030": {
    "src": "Go on, hop to it! I'm waiting for you right here!",
    "dst": "¡Venga, a ello! ¡Te espero aquí mismo!",
    "role": "desc",
@@ -206,7 +322,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#020": {
+  "The Shadow of the Beast#031": {
    "src": "Deal with the three escaped cows near the house and in the cave under the farm.",
    "dst": "Ocúpate de las tres vacas escapadas cerca de la casa y en la cueva bajo la granja.",
    "role": "desc",
@@ -216,7 +332,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#021": {
+  "The Shadow of the Beast#032": {
    "src": "Oh, back aleady? I haven't even finished my stuff, where are the cows?",
    "dst": "¿Ya de vuelta? Si ni he terminado lo mío, ¿y las vacas?",
    "role": "desc",
@@ -226,7 +342,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#022": {
+  "The Shadow of the Beast#033": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -236,7 +352,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#023": {
+  "The Shadow of the Beast#034": {
    "src": "...eheh. You. You're. This is a joke, right? We're having a chuckle?!",
    "dst": "...je je. Tú. Tú has. Esto es broma, ¿no? ¡¿Nos estamos riendo?!",
    "role": "desc",
@@ -246,7 +362,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#024": {
+  "The Shadow of the Beast#035": {
    "src": "WE'RE JOKING, RIGHT?! FOR THE LOVE OF ALL THAT'S HOLY TELL ME THIS IS A JOKE!",
    "dst": "¡¿ESTAMOS DE BROMA, VERDAD?! ¡POR TODO LO SAGRADO, DIME QUE ES UNA BROMA!",
    "role": "desc",
@@ -256,7 +372,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#025": {
+  "The Shadow of the Beast#036": {
    "src": "WHAT IS THIS?! ARE YOU BRAINDEAD?!",
    "dst": "¡¿QUÉ ES ESTO?! ¡¿ERES IDIOTA?!",
    "role": "desc",
@@ -266,7 +382,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#026": {
+  "The Shadow of the Beast#037": {
    "src": "NO, WAIT, YOU'RE HUMAN, THAT'S THE PROBLEM! IDIOT THUGS, ALL OF YOU!",
    "dst": "¡NO, ESPERA, ERES HUMANO, ESE ES EL PROBLEMA! ¡SOIS MATONES IDIOTAS!",
    "role": "desc",
@@ -276,7 +392,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#027": {
+  "The Shadow of the Beast#038": {
    "src": "DID I NEED TO SPECIFY THAT I WANTED THEM BACK ALIVE? WAS THAT NOT OBVIOUS TO YOU?!",
    "dst": "¿TENÍA QUE ESPECIFICAR QUE LAS QUERÍA VIVAS? ¡¿NO TE PARECÍA OBVIO?!",
    "role": "desc",
@@ -286,7 +402,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#028": {
+  "The Shadow of the Beast#039": {
    "src": "Hff...haah...hrrgh...I...I can't bellevue...bellevue? Believe! I can't believe this!",
    "dst": "Hff... haah... No me lo puedo crear... ¿crear? ¡Creer! ¡No me lo creo!",
    "role": "desc",
@@ -296,7 +412,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#029": {
+  "The Shadow of the Beast#040": {
    "src": "Uff, settle down, Tolem, settle down...you can still salvage this...",
    "dst": "Uf, cálmate, Tolem, cálmate... aún puedes salvar esto...",
    "role": "desc",
@@ -306,7 +422,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#030": {
+  "The Shadow of the Beast#041": {
    "src": "Alright, two things. Your new name is Idiot, and I'm changing our deal. You owe me [{~} Willow Planks].",
    "dst": "Vale, dos cosas. Tu nuevo nombre es Idiota, y cambio el trato. Me debes [{~} Willow Planks].",
    "role": "desc",
@@ -316,7 +432,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#031": {
+  "The Shadow of the Beast#042": {
    "src": "You're going to help me get at least one thing around here working. You get the wood, I'll keep looking over the fencing.",
    "dst": "Vas a ayudarme a que al menos una cosa funcione por aquí. Tú trae la madera, yo sigo con la valla.",
    "role": "desc",
@@ -326,7 +442,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#032": {
+  "The Shadow of the Beast#043": {
    "src": "Gather [{~} Willow Planks] for Tolem.",
    "dst": "Reúne [{~} Willow Planks] para Tolem.",
    "role": "desc",
@@ -336,7 +452,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#033": {
+  "The Shadow of the Beast#044": {
    "src": "Oh lovely. Idiot's back! Joy of joys. Willow planks, please.",
    "dst": "Ay, qué bien. ¡Ha vuelto Idiota! Qué alegría. Tablones de Willow, por favor.",
    "role": "desc",
@@ -346,7 +462,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#034": {
+  "The Shadow of the Beast#045": {
    "src": "Good. Even if you've got murder on the mind constantly, you have decent woodcutting arms.",
    "dst": "Bien. Aunque siempre tengas la matanza en la cabeza, tienes buenos brazos para talar.",
    "role": "desc",
@@ -356,7 +472,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#035": {
+  "The Shadow of the Beast#046": {
    "src": "I'll sell the remainder of these planks to try and recoup the money for my cows you mulched.",
    "dst": "Venderé el resto de los tablones para intentar recuperar el dinero de las vacas que trituraste.",
    "role": "desc",
@@ -366,7 +482,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#036": {
+  "The Shadow of the Beast#047": {
    "src": "So go on, get out of here now. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
    "dst": "Venga, lárgate ya. Hazte útil y sigue las huellas gigantes del suelo. ¡Caza algo que NECESITE ser cazado, en vez de ganado!",
    "role": "desc",
@@ -376,7 +492,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#037": {
+  "The Shadow of the Beast#048": {
    "src": "Go on, get out of here. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
    "dst": "Venga, lárgate de aquí. Hazte útil y sigue las huellas gigantes del suelo. ¡Caza algo que NECESITE ser cazado, en vez de ganado!",
    "role": "desc",
@@ -386,7 +502,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#038": {
+  "The Shadow of the Beast#049": {
    "src": "Follow the footprints from Tolem's house at [-{~}, {~}, -{~}].",
    "dst": "Sigue las huellas desde la casa de Tolem en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -396,7 +512,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#039": {
+  "The Shadow of the Beast#050": {
    "src": "Oh, I'll never be able to fix this with my back in this state...",
    "dst": "Ay, con la espalda así nunca podré arreglar esto...",
    "role": "desc",
@@ -406,7 +522,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#040": {
+  "The Shadow of the Beast#051": {
    "src": "Talk to Kroac at [-{~}, {~}, -{~}].",
    "dst": "Habla con Kroac en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -416,7 +532,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#041": {
+  "The Shadow of the Beast#052": {
    "src": "Oh, look at this...all my years of carpentry and my bad back does my poor house in.",
    "dst": "Ay, mire esto... toda una vida de carpintería y mi mala espalda acaba con mi pobre casa.",
    "role": "desc",
@@ -426,7 +542,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#042": {
+  "The Shadow of the Beast#053": {
    "src": "What on earth could have done this?! It must be the biggest beast in the swamp!",
    "dst": "¡¿Qué diablos ha hecho esto?! ¡Será la bestia más grande del pantano!",
    "role": "desc",
@@ -436,7 +552,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#043": {
+  "The Shadow of the Beast#054": {
    "src": "I was just sitting inside having some dinner, I hear some rumbling, and suddenly my house is falling apart!",
    "dst": "Estaba dentro cenando, oigo un estruendo ¡y de pronto la casa se me viene abajo!",
    "role": "desc",
@@ -446,7 +562,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#044": {
+  "The Shadow of the Beast#055": {
    "src": "You human folk are good with physical labor, I hear? Do you think you could help me out here?",
    "dst": "He oído que los humanos valen para el trabajo físico, ¿no? ¿Cree que podría echarme una mano aquí?",
    "role": "desc",
@@ -456,7 +572,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#045": {
+  "The Shadow of the Beast#056": {
    "src": "There's a mine just over there. Think you can get [{~} Cobblestone] out of it?",
    "dst": "Hay una mina ahí mismo. ¿Cree que puede sacar [{~} Cobblestone] de ahí?",
    "role": "desc",
@@ -466,7 +582,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#046": {
+  "The Shadow of the Beast#057": {
    "src": "I'll go find someone who's selling any spare wood for the roof...",
    "dst": "Yo iré a buscar a alguien que venda madera de sobra para el tejado...",
    "role": "desc",
@@ -476,7 +592,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#047": {
+  "The Shadow of the Beast#058": {
    "src": "Think you could help fix my house? You'll need [{~} Cobblestone] to do it.",
    "dst": "¿Podría ayudarme a arreglar la casa? Necesitará [{~} Cobblestone].",
    "role": "desc",
@@ -486,7 +602,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#048": {
+  "The Shadow of the Beast#059": {
    "src": "Enter Kroac's mine and gather [{~} Cobblestone].",
    "dst": "Entra en la mina de Kroac y reúne [{~} Cobblestone].",
    "role": "desc",
@@ -496,7 +612,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#049": {
+  "The Shadow of the Beast#060": {
    "src": "Did you get enough cobblestone? I found a guy down the street selling this top-quality Willow...",
    "dst": "¿Consiguió suficiente roca? Encontré a un tipo calle abajo que vende esta Willow de primera...",
    "role": "desc",
@@ -506,7 +622,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#050": {
+  "The Shadow of the Beast#061": {
    "src": "Good, perfect. That should be enough. Though, I do have one other thing to ask you, soldier.",
    "dst": "Bien, perfecto. Con eso bastará. Aunque tengo otra cosa que pedirle, soldado.",
    "role": "desc",
@@ -516,7 +632,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#051": {
+  "The Shadow of the Beast#062": {
    "src": "My back's already screaming at me just from lugging the wood over here, there's no way I can climb up there and fix the roof like this.",
    "dst": "La espalda ya me grita solo de acarrear la madera hasta aquí; así no hay manera de que suba a arreglar el tejado.",
    "role": "desc",
@@ -526,7 +642,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#052": {
+  "The Shadow of the Beast#063": {
    "src": "I can compensate you for the trouble, but d'you think you could do some patchwork for me with that cobble?",
    "dst": "Puedo compensarle las molestias, pero ¿cree que podría parchearme algo con esa roca?",
    "role": "desc",
@@ -536,7 +652,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#053": {
+  "The Shadow of the Beast#064": {
    "src": "Oh, you're a saint. Can't imagine why the guy was grumbling about humans... Just climb right on up the ladder!",
    "dst": "Ay, es usted un santo. No sé por qué aquel tipo refunfuñaba sobre los humanos... ¡Suba por la escalera!",
    "role": "desc",
@@ -546,7 +662,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#054": {
+  "The Shadow of the Beast#065": {
    "src": "Repair Kroac's house using the cobblestone from the mine.",
    "dst": "Repara la casa de Kroac con la roca de la mina.",
    "role": "desc",
@@ -556,7 +672,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#055": {
+  "The Shadow of the Beast#066": {
    "src": "I'm sorry, but your patchjob fell apart. You'll need something like {~} cobblestone to help fix this.",
    "dst": "Lo siento, pero su parche se ha caído. Necesitará unas {~} rocas para arreglar esto.",
    "role": "desc",
@@ -566,7 +682,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#056": {
+  "The Shadow of the Beast#067": {
    "src": "That'll do just fine, kind soldier! You're a lifesaver, really, you are.",
    "dst": "¡Con eso vale de sobra, amable soldado! Es usted un salvavidas, de verdad.",
    "role": "desc",
@@ -576,7 +692,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#057": {
+  "The Shadow of the Beast#068": {
    "src": "Wait, you're going after the thing that did this? Really?! Fantastic! That's a load off my mind.",
    "dst": "Espere, ¿va tras lo que hizo esto? ¡¿En serio?! ¡Fantástico! Me quita un peso de encima.",
    "role": "desc",
@@ -586,7 +702,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#058": {
+  "The Shadow of the Beast#069": {
    "src": "Look's like there's tracks off to the east...big tracks. Good luck following it, stay safe!",
    "dst": "Parece que hay huellas hacia el este... huellas grandes. ¡Suerte siguiéndolas, y cuídese!",
    "role": "desc",
@@ -596,7 +712,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#059": {
+  "The Shadow of the Beast#070": {
    "src": "If you are done fixing my house, it looks like there're tacks off to the east...big tracks. Good luck following it, stay safe!",
    "dst": "Si ya ha terminado con mi casa, parece que hay huellas hacia el este... huellas grandes. ¡Suerte siguiéndolas, y cuídese!",
    "role": "desc",
@@ -606,7 +722,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#060": {
+  "The Shadow of the Beast#071": {
    "src": "Keep following the tracks of the beast.",
    "dst": "Sigue las huellas de la bestia.",
    "role": "desc",
@@ -616,7 +732,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#061": {
+  "The Shadow of the Beast#072": {
    "src": "EVERYONE, MOVE! THE BEAST IS ON A RAMPAGE!",
    "dst": "¡TODOS, FUERA! ¡LA BESTIA ESTÁ DESATADA!",
    "role": "desc",
@@ -626,7 +742,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#062": {
+  "The Shadow of the Beast#073": {
    "src": "Aah, no! There were people in that house!",
    "dst": "¡Ay, no! ¡Había gente en esa casa!",
    "role": "desc",
@@ -636,7 +752,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#063": {
+  "The Shadow of the Beast#074": {
    "src": "Wah! H-Human! Get away, there's nothing you can help with here!",
    "dst": "¡Uah! ¡H-humano! ¡Aléjate, aquí no hay nada en lo que puedas ayudar!",
    "role": "desc",
@@ -646,7 +762,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#064": {
+  "The Shadow of the Beast#075": {
    "src": "All your type does is break and hurt! You have more in common with the giant there than any of us!",
    "dst": "¡Los tuyos solo rompen y hacen daño! ¡Te pareces más a ese gigante que a cualquiera de nosotros!",
    "role": "desc",
@@ -656,7 +772,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#065": {
+  "The Shadow of the Beast#076": {
    "src": "Aah, there's so many people hurt already, don't make it worse please!",
    "dst": "¡Ay, ya hay muchísimos heridos, no lo empeores, por favor!",
    "role": "desc",
@@ -666,7 +782,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#066": {
+  "The Shadow of the Beast#077": {
    "src": "We don't even have any medicine...",
    "dst": "Ni siquiera tenemos medicinas...",
    "role": "desc",
@@ -676,7 +792,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#067": {
+  "The Shadow of the Beast#078": {
    "src": "Ugh, think Rileen! You have the herbs, what else goes into the poultices...",
    "dst": "Uf, ¡piensa, Rileen! Tienes las hierbas, ¿qué más lleva el emplasto...?",
    "role": "desc",
@@ -686,7 +802,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#068": {
+  "The Shadow of the Beast#079": {
    "src": "Oh, right! Fish oil...but I don't have a rod, gah!",
    "dst": "¡Ah, claro! Aceite de pescado... pero no tengo caña, ¡agh!",
    "role": "desc",
@@ -696,7 +812,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#069": {
+  "The Shadow of the Beast#080": {
    "src": "There's no way I can get [{~} Salmon Oil], even if that pond out back is teeming with fish...",
    "dst": "No hay forma de que consiga [{~} Salmon Oil], aunque el estanque de atrás esté lleno de peces...",
    "role": "desc",
@@ -706,7 +822,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#070": {
+  "The Shadow of the Beast#081": {
    "src": "Gather [{~} Salmon Oil] for Rileen.",
    "dst": "Reúne [{~} Salmon Oil] para Rileen.",
    "role": "desc",
@@ -716,7 +832,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#071": {
+  "The Shadow of the Beast#082": {
    "src": "No, there's no time to make a fishing spear- AAH! You're still here? What do you WANT?!",
    "dst": "No, no hay tiempo de hacer un arpón- ¡AAH! ¿Sigues aquí? ¡¿Qué QUIERES?!",
    "role": "desc",
@@ -726,7 +842,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#072": {
+  "The Shadow of the Beast#083": {
    "src": "W-wait, what's...is this... This is salmon oil! Ten bottles of it! You...you heard me talking?",
    "dst": "E-espera, qué... ¿esto es...? ¡Es aceite de salmón! ¡Diez frascos! ¿Me... me has oído hablar?",
    "role": "desc",
@@ -736,7 +852,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#073": {
+  "The Shadow of the Beast#084": {
    "src": "And you went out of your way to... What kind of a human are you? I've only ever heard horror stories about your kind.",
    "dst": "Y te has tomado la molestia de... ¿Qué clase de humano eres? De los tuyos solo he oído historias de terror.",
    "role": "desc",
@@ -746,7 +862,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#074": {
+  "The Shadow of the Beast#085": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -756,7 +872,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#075": {
+  "The Shadow of the Beast#086": {
    "src": "...maybe you're not so bad. I don't have anything that I can give you in return, but thank you, still.",
    "dst": "...puede que no seas tan malo. No tengo nada que darte a cambio, pero gracias igualmente.",
    "role": "desc",
@@ -766,7 +882,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#076": {
+  "The Shadow of the Beast#087": {
    "src": "Wait, you were chasing the giant? That's why you were here? That...that's amazing news!",
    "dst": "Espera, ¿estabas persiguiendo al gigante? ¿Por eso estabas aquí? Eso... ¡eso es una noticia increíble!",
    "role": "desc",
@@ -776,7 +892,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#077": {
+  "The Shadow of the Beast#088": {
    "src": "I think it went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
    "dst": "Creo que se metió en la cueva al este de aquí. ¡Ve! ¡Detén a esa cosa antes de que cause más daño!",
    "role": "desc",
@@ -786,7 +902,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#078": {
+  "The Shadow of the Beast#089": {
    "src": "Find the cave of the beast by following the footprints behind Rileen's house.",
    "dst": "Encuentra la cueva de la bestia siguiendo las huellas detrás de la casa de Rileen.",
    "role": "desc",
@@ -796,7 +912,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#079": {
+  "The Shadow of the Beast#090": {
    "src": "Kill the beast and return to Dereg with proof of its death at [-{~}, {~}, -{~}].",
    "dst": "Mata a la bestia y llévale a Dereg la prueba de su muerte a [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -806,7 +922,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#080": {
+  "The Shadow of the Beast#091": {
    "src": "You're back! Any luck hunting the thing down?",
    "dst": "¡Has vuelto! ¿Hubo suerte con la caza?",
    "role": "desc",
@@ -816,7 +932,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#081": {
+  "The Shadow of the Beast#092": {
    "src": "What? You actually found the beast?! Heck of a hunting job, human!",
    "dst": "¿Qué? ¡¿De verdad encontraste a la bestia?! ¡Menuda cacería, humano!",
    "role": "desc",
@@ -826,7 +942,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#082": {
+  "The Shadow of the Beast#093": {
    "src": "You wouldn't be back here if you didn't manage to kill it...which means our problems are solved, right?",
    "dst": "No estarías aquí si no hubieras logrado matarla... o sea que nuestros problemas se acabaron, ¿no?",
    "role": "desc",
@@ -836,7 +952,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#083": {
+  "The Shadow of the Beast#094": {
    "src": "Heheh! That bone powder looks giant enough to me! Great job, bucko!",
    "dst": "¡Je je! ¡Ese polvo de hueso me parece bien gigante! ¡Buen trabajo, colega!",
    "role": "desc",
@@ -846,7 +962,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#084": {
+  "The Shadow of the Beast#095": {
    "src": "Y'know, come to think of it, I remember something that might be interesting to your sort.",
    "dst": "¿Sabes? Ahora que lo pienso, recuerdo algo que podría interesar a los de tu clase.",
    "role": "desc",
@@ -856,7 +972,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#085": {
+  "The Shadow of the Beast#096": {
    "src": "The weapon merchant in {p} researches cryptids as a hobby, and that beast seemed one-of-a-kind to me.",
    "dst": "El mercader de armas de {p} investiga críptidos por afición, y esa bestia me pareció única.",
    "role": "desc",
@@ -866,7 +982,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#086": {
+  "The Shadow of the Beast#097": {
    "src": "You should show him that bone powder! He might have some good gear for you.",
    "dst": "¡Deberías enseñarle ese polvo de hueso! Quizá tenga buen equipo para ti.",
    "role": "desc",

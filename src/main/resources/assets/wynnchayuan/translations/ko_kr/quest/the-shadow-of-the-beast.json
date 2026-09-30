@@ -1,12 +1,128 @@
 {
  "_meta": {
   "quest": "The Shadow of the Beast",
-  "count": 87,
+  "count": 98,
   "translated": 87,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Shadow of the Beast#000": {
+   "src": "See the blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#001": {
+   "src": "The blood trail ought to lead you to wherever the beast went. Hunt that thing down for us all!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#002": {
+   "src": "CANNOT EXIT OPERATION AREA. RETURNING TO POST.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#003": {
+   "src": "[+{~} Emerald Blocks]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "[+{~} Emeralds]",
+    "file": "gui.json",
+    "ratio": 0.833,
+    "reason": "candidate"
+   }
+  },
+  "The Shadow of the Beast#004": {
+   "src": "If you are done fixing my house, it looks like there're tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#005": {
+   "src": "Looks like there's tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#006": {
+   "src": "Aah, there's so many people hurt already, don't make it worse, please!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#007": {
+   "src": "Ugh, think Rileen! You have the herbs, what else goes into those poultices...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#008": {
+   "src": "She just keeps worrying over what she can do. Seems like getting the oil might help her calm down.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#009": {
+   "src": "She's still freaking out. She mentioned needing [{~} Salmon Oil] for medicine, and a pond out back full of fish...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#010": {
+   "src": "I think the giant went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#011": {
    "src": "Talk to Dereg in his house at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]에 있는 Dereg의 집에서 그와 대화하세요.",
    "role": "desc",
@@ -16,7 +132,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#001": {
+  "The Shadow of the Beast#012": {
    "src": "Oh, you look tough. You must be one of those humans I keep hearing about, right? People talk about your kind all the time.",
    "dst": "오, 꽤 세 보이네. 소문으로만 듣던 인간 중 하나지? 다들 너희 얘기를 입에 달고 살거든.",
    "role": "desc",
@@ -26,7 +142,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#002": {
+  "The Shadow of the Beast#013": {
    "src": "You know, that you're all scrappers. Tough as nails, and willing to kill all sorts of beasts, you know?",
    "dst": "그러니까, 너희는 다 싸움꾼이라며. 강철처럼 단단하고, 온갖 짐승을 서슴없이 잡는다고, 그치?",
    "role": "desc",
@@ -36,7 +152,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#003": {
+  "The Shadow of the Beast#014": {
    "src": "I think you know what I'm getting at. I saw some massive thing lumbering around the swamp one night! Tall as the trees, it was.",
    "dst": "내가 무슨 말 하려는지 알겠지. 어느 밤에 늪에서 거대한 뭔가가 쿵쿵대며 돌아다니는 걸 봤어! 키가 나무만 하더라고.",
    "role": "desc",
@@ -46,7 +162,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#004": {
+  "The Shadow of the Beast#015": {
    "src": "I couldn't make out the details, but if its size was any indication, it could just step over the {p} walls and wreck the whole town!",
    "dst": "자세히는 못 봤지만, 그 덩치면 {p} 성벽쯤은 그냥 넘어와서 마을 전체를 박살 낼 수도 있어!",
    "role": "desc",
@@ -56,7 +172,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#005": {
+  "The Shadow of the Beast#016": {
    "src": "Of course, there's so many scam artists around here trying to sell anti-monster underwear or whatever that no one believes me.",
    "dst": "물론 이 동네엔 괴물 방지 속옷 같은 걸 팔려는 사기꾼이 워낙 많아서 아무도 내 말을 안 믿어.",
    "role": "desc",
@@ -66,7 +182,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#006": {
+  "The Shadow of the Beast#017": {
    "src": "So, that means it's up to you! Ehm, supposing that you're willing to help out, at least... The one thing I know for sure is that it was eating something.",
    "dst": "그러니까 네가 나서 줘야 해! 음, 도와줄 마음이 있다면 말이지... 확실한 건 하나, 그놈이 뭔가를 먹고 있었다는 거야.",
    "role": "desc",
@@ -76,7 +192,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#007": {
+  "The Shadow of the Beast#018": {
    "src": "See that blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
    "dst": "바닥에 피 보이지? 아직 신선해. 그걸 따라가서 어디로 이어지는지 보고, 끔찍한 일을 벌이기 전에 그 짐승을 잡아!",
    "role": "desc",
@@ -86,7 +202,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#008": {
+  "The Shadow of the Beast#019": {
    "src": "That blood trail ought to lead you to wherever the beast went. Hunt that thing down for us all!",
    "dst": "그 핏자국을 따라가면 짐승이 간 곳이 나올 거야. 우리 모두를 위해 그놈을 사냥해 줘!",
    "role": "desc",
@@ -96,7 +212,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#009": {
+  "The Shadow of the Beast#020": {
    "src": "Follow the trail of blood left by the beast.",
    "dst": "짐승이 남긴 핏자국을 따라가세요.",
    "role": "desc",
@@ -106,7 +222,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#010": {
+  "The Shadow of the Beast#021": {
    "src": "Oh, this is such a mess! And my axe is busted, too...how am I going to get this fixed?!",
    "dst": "아, 이게 무슨 난장판이야! 게다가 도끼까지 망가졌고... 이걸 어떻게 고치라고?!",
    "role": "desc",
@@ -116,7 +232,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#011": {
+  "The Shadow of the Beast#022": {
    "src": "I can't pay for- AAAH! H-Human! What do you want?! Not a good time!",
    "dst": "돈도 없는데- 으아악! 이, 인간! 뭘 원해?! 지금 바빠!",
    "role": "desc",
@@ -126,7 +242,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#012": {
+  "The Shadow of the Beast#023": {
    "src": "Something destroyed my cow pen and wrecked up my entire farm!",
    "dst": "뭔가가 소 우리를 부수고 농장 전체를 박살 냈어!",
    "role": "desc",
@@ -136,7 +252,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#013": {
+  "The Shadow of the Beast#024": {
    "src": "And they were solid, good-quality Willow, too...uff...",
    "dst": "게다가 튼튼하고 질 좋은 Willow였다고... 에휴...",
    "role": "desc",
@@ -146,7 +262,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#014": {
+  "The Shadow of the Beast#025": {
    "src": "Wait, what? You're hunting the thing? Well, that's fine and dandy, but do you think you could help here first?",
    "dst": "잠깐, 뭐? 그놈을 사냥하는 중이라고? 그거 참 좋네. 근데 여기부터 좀 도와줄 수 있어?",
    "role": "desc",
@@ -156,7 +272,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#015": {
+  "The Shadow of the Beast#026": {
    "src": "I have an idea of where it went, so...you scratch my back, I scratch yours?",
    "dst": "그놈이 어디로 갔는지 대충 알거든... 그러니까 서로 돕고 사는 거지?",
    "role": "desc",
@@ -166,7 +282,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#016": {
+  "The Shadow of the Beast#027": {
    "src": "Okay, this can work, this can work! I have to figure out how to fix this, and some of my cows ran off in a panic.",
    "dst": "좋아, 이거 되겠다, 되겠어! 난 이걸 고칠 방법을 찾아야 하고, 소 몇 마리가 놀라서 도망갔거든.",
    "role": "desc",
@@ -176,7 +292,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#017": {
+  "The Shadow of the Beast#028": {
    "src": "So, you can take care of them while I re-plan my fencing. Simple enough, right?",
    "dst": "그러니까 내가 울타리 다시 짜는 동안 네가 그놈들을 처리해 줘. 간단하지?",
    "role": "desc",
@@ -186,7 +302,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#018": {
+  "The Shadow of the Beast#029": {
    "src": "Three of my cows ran off. Look around the farm for them. They were eating, so look for fallen wheat on the ground!",
    "dst": "소 세 마리가 도망갔어. 농장 주변을 찾아봐. 뭘 먹던 중이었으니 바닥에 떨어진 밀을 찾아봐!",
    "role": "desc",
@@ -196,7 +312,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#019": {
+  "The Shadow of the Beast#030": {
    "src": "Go on, hop to it! I'm waiting for you right here!",
    "dst": "자, 어서 움직여! 난 여기서 기다릴게!",
    "role": "desc",
@@ -206,7 +322,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#020": {
+  "The Shadow of the Beast#031": {
    "src": "Deal with the three escaped cows near the house and in the cave under the farm.",
    "dst": "집 근처와 농장 아래 동굴로 도망친 소 세 마리를 처리하세요.",
    "role": "desc",
@@ -216,7 +332,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#021": {
+  "The Shadow of the Beast#032": {
    "src": "Oh, back aleady? I haven't even finished my stuff, where are the cows?",
    "dst": "오, 벌써 왔어? 난 아직 일도 못 끝냈는데, 소들은 어딨어?",
    "role": "desc",
@@ -226,7 +342,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#022": {
+  "The Shadow of the Beast#033": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -236,7 +352,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#023": {
+  "The Shadow of the Beast#034": {
    "src": "...eheh. You. You're. This is a joke, right? We're having a chuckle?!",
    "dst": "...에헤. 너. 너 지금. 농담이지? 웃자고 하는 거지?!",
    "role": "desc",
@@ -246,7 +362,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#024": {
+  "The Shadow of the Beast#035": {
    "src": "WE'RE JOKING, RIGHT?! FOR THE LOVE OF ALL THAT'S HOLY TELL ME THIS IS A JOKE!",
    "dst": "농담하는 거 맞지?! 제발 신성한 모든 것에 걸고 농담이라고 말해!",
    "role": "desc",
@@ -256,7 +372,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#025": {
+  "The Shadow of the Beast#036": {
    "src": "WHAT IS THIS?! ARE YOU BRAINDEAD?!",
    "dst": "이게 뭐야?! 머리가 텅 비었어?!",
    "role": "desc",
@@ -266,7 +382,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#026": {
+  "The Shadow of the Beast#037": {
    "src": "NO, WAIT, YOU'RE HUMAN, THAT'S THE PROBLEM! IDIOT THUGS, ALL OF YOU!",
    "dst": "아니, 잠깐, 넌 인간이지, 그게 문제야! 다 멍청한 깡패들이라고!",
    "role": "desc",
@@ -276,7 +392,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#027": {
+  "The Shadow of the Beast#038": {
    "src": "DID I NEED TO SPECIFY THAT I WANTED THEM BACK ALIVE? WAS THAT NOT OBVIOUS TO YOU?!",
    "dst": "살려서 데려오라고 꼭 말해야 했어? 그게 그렇게 안 당연했냐고?!",
    "role": "desc",
@@ -286,7 +402,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#028": {
+  "The Shadow of the Beast#039": {
    "src": "Hff...haah...hrrgh...I...I can't bellevue...bellevue? Believe! I can't believe this!",
    "dst": "허억... 하아... 끄응... 나... 난 믿을 수가... 믿을 수가? 그래! 믿을 수가 없어!",
    "role": "desc",
@@ -296,7 +412,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#029": {
+  "The Shadow of the Beast#040": {
    "src": "Uff, settle down, Tolem, settle down...you can still salvage this...",
    "dst": "휴, 진정해, Tolem, 진정해... 아직 수습할 수 있어...",
    "role": "desc",
@@ -306,7 +422,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#030": {
+  "The Shadow of the Beast#041": {
    "src": "Alright, two things. Your new name is Idiot, and I'm changing our deal. You owe me [{~} Willow Planks].",
    "dst": "좋아, 두 가지. 넌 이제부터 이름이 멍청이야. 그리고 거래 조건을 바꾼다. [{~} Willow Planks] 내놔.",
    "role": "desc",
@@ -316,7 +432,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#031": {
+  "The Shadow of the Beast#042": {
    "src": "You're going to help me get at least one thing around here working. You get the wood, I'll keep looking over the fencing.",
    "dst": "여기서 하나라도 제대로 돌아가게 도와줘야겠어. 넌 나무를 구해 와. 난 울타리를 계속 볼게.",
    "role": "desc",
@@ -326,7 +442,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#032": {
+  "The Shadow of the Beast#043": {
    "src": "Gather [{~} Willow Planks] for Tolem.",
    "dst": "Tolem에게 [{~} Willow Planks]을(를) 가져다주세요.",
    "role": "desc",
@@ -336,7 +452,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#033": {
+  "The Shadow of the Beast#044": {
    "src": "Oh lovely. Idiot's back! Joy of joys. Willow planks, please.",
    "dst": "오, 좋기도 해라. 멍청이가 왔네! 기쁘기 그지없군. Willow 판자 줘.",
    "role": "desc",
@@ -346,7 +462,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#034": {
+  "The Shadow of the Beast#045": {
    "src": "Good. Even if you've got murder on the mind constantly, you have decent woodcutting arms.",
    "dst": "좋아. 머릿속엔 늘 살육뿐이어도, 나무 베는 팔 힘은 쓸 만하네.",
    "role": "desc",
@@ -356,7 +472,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#035": {
+  "The Shadow of the Beast#046": {
    "src": "I'll sell the remainder of these planks to try and recoup the money for my cows you mulched.",
    "dst": "남은 판자는 팔아서, 네가 다져 버린 소들 값이라도 벌충해 봐야겠다.",
    "role": "desc",
@@ -366,7 +482,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#036": {
+  "The Shadow of the Beast#047": {
    "src": "So go on, get out of here now. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
    "dst": "자, 이제 가 봐. 쓸모 있는 일 좀 하게 땅에 난 거대한 발자국을 따라가. 소 말고, 사냥이 필요한 걸 사냥하라고!",
    "role": "desc",
@@ -376,7 +492,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#037": {
+  "The Shadow of the Beast#048": {
    "src": "Go on, get out of here. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
    "dst": "자, 가 봐. 쓸모 있는 일 좀 하게 땅에 난 거대한 발자국을 따라가. 소 말고, 사냥이 필요한 걸 사냥하라고!",
    "role": "desc",
@@ -386,7 +502,7 @@
    "speaker": "Tolem",
    "source": "wiki"
   },
-  "The Shadow of the Beast#038": {
+  "The Shadow of the Beast#049": {
    "src": "Follow the footprints from Tolem's house at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]에 있는 Tolem의 집에서 발자국을 따라가세요.",
    "role": "desc",
@@ -396,7 +512,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#039": {
+  "The Shadow of the Beast#050": {
    "src": "Oh, I'll never be able to fix this with my back in this state...",
    "dst": "아이고, 허리가 이 모양이니 이걸 고칠 수가 없겠네...",
    "role": "desc",
@@ -406,7 +522,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#040": {
+  "The Shadow of the Beast#051": {
    "src": "Talk to Kroac at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}]에 있는 Kroac에게 말을 거세요.",
    "role": "desc",
@@ -416,7 +532,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#041": {
+  "The Shadow of the Beast#052": {
    "src": "Oh, look at this...all my years of carpentry and my bad back does my poor house in.",
    "dst": "아이고, 이것 좀 봐요... 평생 목수 일을 했는데 허리 때문에 내 집을 망쳤네요.",
    "role": "desc",
@@ -426,7 +542,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#042": {
+  "The Shadow of the Beast#053": {
    "src": "What on earth could have done this?! It must be the biggest beast in the swamp!",
    "dst": "대체 뭐가 이런 짓을 한 거죠?! 늪에서 제일 큰 짐승인 게 분명해요!",
    "role": "desc",
@@ -436,7 +552,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#043": {
+  "The Shadow of the Beast#054": {
    "src": "I was just sitting inside having some dinner, I hear some rumbling, and suddenly my house is falling apart!",
    "dst": "안에서 저녁을 먹고 있는데 우르릉 소리가 나더니, 갑자기 집이 무너지더라고요!",
    "role": "desc",
@@ -446,7 +562,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#044": {
+  "The Shadow of the Beast#055": {
    "src": "You human folk are good with physical labor, I hear? Do you think you could help me out here?",
    "dst": "인간들은 몸 쓰는 일을 잘한다고 들었는데요? 여기 좀 도와줄 수 있겠어요?",
    "role": "desc",
@@ -456,7 +572,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#045": {
+  "The Shadow of the Beast#056": {
    "src": "There's a mine just over there. Think you can get [{~} Cobblestone] out of it?",
    "dst": "바로 저기에 광산이 있어요. 거기서 [{~} Cobblestone]을(를) 구해 올 수 있겠어요?",
    "role": "desc",
@@ -466,7 +582,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#046": {
+  "The Shadow of the Beast#057": {
    "src": "I'll go find someone who's selling any spare wood for the roof...",
    "dst": "지붕에 쓸 남는 나무를 파는 사람이 있는지 찾아볼게요...",
    "role": "desc",
@@ -476,7 +592,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#047": {
+  "The Shadow of the Beast#058": {
    "src": "Think you could help fix my house? You'll need [{~} Cobblestone] to do it.",
    "dst": "집 고치는 것 좀 도와줄래요? [{~} Cobblestone]이(가) 필요할 거예요.",
    "role": "desc",
@@ -486,7 +602,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#048": {
+  "The Shadow of the Beast#059": {
    "src": "Enter Kroac's mine and gather [{~} Cobblestone].",
    "dst": "Kroac의 광산에 들어가 [{~} Cobblestone]을(를) 모으세요.",
    "role": "desc",
@@ -496,7 +612,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#049": {
+  "The Shadow of the Beast#060": {
    "src": "Did you get enough cobblestone? I found a guy down the street selling this top-quality Willow...",
    "dst": "조약돌은 충분히 구했어요? 길 아래쪽에서 최고급 Willow를 파는 사람을 찾았거든요...",
    "role": "desc",
@@ -506,7 +622,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#050": {
+  "The Shadow of the Beast#061": {
    "src": "Good, perfect. That should be enough. Though, I do have one other thing to ask you, soldier.",
    "dst": "좋아요, 완벽해요. 이만하면 충분해요. 그런데 부탁이 하나 더 있어요, 용사 양반.",
    "role": "desc",
@@ -516,7 +632,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#051": {
+  "The Shadow of the Beast#062": {
    "src": "My back's already screaming at me just from lugging the wood over here, there's no way I can climb up there and fix the roof like this.",
    "dst": "나무 옮기는 것만으로도 허리가 비명을 질러서, 이 몸으론 저기 올라가 지붕을 고칠 수가 없어요.",
    "role": "desc",
@@ -526,7 +642,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#052": {
+  "The Shadow of the Beast#063": {
    "src": "I can compensate you for the trouble, but d'you think you could do some patchwork for me with that cobble?",
    "dst": "수고비는 드릴 테니, 그 조약돌로 좀 때워 줄 수 있겠어요?",
    "role": "desc",
@@ -536,7 +652,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#053": {
+  "The Shadow of the Beast#064": {
    "src": "Oh, you're a saint. Can't imagine why the guy was grumbling about humans... Just climb right on up the ladder!",
    "dst": "오, 정말 천사네요. 그 사람은 왜 인간 욕을 했는지 모르겠어요... 그냥 사다리 타고 올라가요!",
    "role": "desc",
@@ -546,7 +662,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#054": {
+  "The Shadow of the Beast#065": {
    "src": "Repair Kroac's house using the cobblestone from the mine.",
    "dst": "광산에서 가져온 조약돌로 Kroac의 집을 수리하세요.",
    "role": "desc",
@@ -556,7 +672,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#055": {
+  "The Shadow of the Beast#066": {
    "src": "I'm sorry, but your patchjob fell apart. You'll need something like {~} cobblestone to help fix this.",
    "dst": "미안하지만 때운 데가 무너졌어요. 고치려면 조약돌이 {~}개쯤 필요할 거예요.",
    "role": "desc",
@@ -566,7 +682,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#056": {
+  "The Shadow of the Beast#067": {
    "src": "That'll do just fine, kind soldier! You're a lifesaver, really, you are.",
    "dst": "이 정도면 충분해요, 친절한 용사 양반! 정말 생명의 은인이에요.",
    "role": "desc",
@@ -576,7 +692,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#057": {
+  "The Shadow of the Beast#068": {
    "src": "Wait, you're going after the thing that did this? Really?! Fantastic! That's a load off my mind.",
    "dst": "잠깐, 이걸 저지른 놈을 쫓는다고요? 정말요?! 잘됐네요! 마음이 한결 놓여요.",
    "role": "desc",
@@ -586,7 +702,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#058": {
+  "The Shadow of the Beast#069": {
    "src": "Look's like there's tracks off to the east...big tracks. Good luck following it, stay safe!",
    "dst": "동쪽으로 발자국이 나 있는 것 같아요... 커다란 발자국이요. 잘 따라가고, 조심해요!",
    "role": "desc",
@@ -596,7 +712,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#059": {
+  "The Shadow of the Beast#070": {
    "src": "If you are done fixing my house, it looks like there're tacks off to the east...big tracks. Good luck following it, stay safe!",
    "dst": "집 수리를 다 끝냈다면, 동쪽으로 발자국이 나 있는 것 같아요... 커다란 발자국이요. 잘 따라가고, 조심해요!",
    "role": "desc",
@@ -606,7 +722,7 @@
    "speaker": "Kroac",
    "source": "wiki"
   },
-  "The Shadow of the Beast#060": {
+  "The Shadow of the Beast#071": {
    "src": "Keep following the tracks of the beast.",
    "dst": "계속 짐승의 발자국을 따라가세요.",
    "role": "desc",
@@ -616,7 +732,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#061": {
+  "The Shadow of the Beast#072": {
    "src": "EVERYONE, MOVE! THE BEAST IS ON A RAMPAGE!",
    "dst": "모두 피해! 짐승이 날뛰고 있어!",
    "role": "desc",
@@ -626,7 +742,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#062": {
+  "The Shadow of the Beast#073": {
    "src": "Aah, no! There were people in that house!",
    "dst": "아, 안 돼! 저 집에 사람들이 있었어!",
    "role": "desc",
@@ -636,7 +752,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#063": {
+  "The Shadow of the Beast#074": {
    "src": "Wah! H-Human! Get away, there's nothing you can help with here!",
    "dst": "와악! 이, 인간! 저리 가, 여기서 네가 도울 건 없어!",
    "role": "desc",
@@ -646,7 +762,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#064": {
+  "The Shadow of the Beast#075": {
    "src": "All your type does is break and hurt! You have more in common with the giant there than any of us!",
    "dst": "너희 같은 것들은 부수고 다치게 하는 것밖에 몰라! 우리보다 저 거인이랑 더 닮았다고!",
    "role": "desc",
@@ -656,7 +772,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#065": {
+  "The Shadow of the Beast#076": {
    "src": "Aah, there's so many people hurt already, don't make it worse please!",
    "dst": "아, 벌써 다친 사람이 이렇게 많은데, 제발 더 나쁘게 만들지 마!",
    "role": "desc",
@@ -666,7 +782,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#066": {
+  "The Shadow of the Beast#077": {
    "src": "We don't even have any medicine...",
    "dst": "약도 하나도 없는데...",
    "role": "desc",
@@ -676,7 +792,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#067": {
+  "The Shadow of the Beast#078": {
    "src": "Ugh, think Rileen! You have the herbs, what else goes into the poultices...",
    "dst": "으, 생각해, Rileen! 약초는 있고, 찜질약에 또 뭐가 들어가더라...",
    "role": "desc",
@@ -686,7 +802,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#068": {
+  "The Shadow of the Beast#079": {
    "src": "Oh, right! Fish oil...but I don't have a rod, gah!",
    "dst": "아, 맞다! 생선 기름... 근데 낚싯대가 없잖아, 으아!",
    "role": "desc",
@@ -696,7 +812,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#069": {
+  "The Shadow of the Beast#080": {
    "src": "There's no way I can get [{~} Salmon Oil], even if that pond out back is teeming with fish...",
    "dst": "뒤쪽 연못에 물고기가 가득해도, [{~} Salmon Oil]을(를) 구할 방법이 없어...",
    "role": "desc",
@@ -706,7 +822,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#070": {
+  "The Shadow of the Beast#081": {
    "src": "Gather [{~} Salmon Oil] for Rileen.",
    "dst": "Rileen에게 [{~} Salmon Oil]을(를) 가져다주세요.",
    "role": "desc",
@@ -716,7 +832,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#071": {
+  "The Shadow of the Beast#082": {
    "src": "No, there's no time to make a fishing spear- AAH! You're still here? What do you WANT?!",
    "dst": "안 돼, 작살 만들 시간이 없- 으악! 아직도 있었어? 대체 뭘 원하는데?!",
    "role": "desc",
@@ -726,7 +842,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#072": {
+  "The Shadow of the Beast#083": {
    "src": "W-wait, what's...is this... This is salmon oil! Ten bottles of it! You...you heard me talking?",
    "dst": "자, 잠깐, 이거... 설마... 연어 기름이잖아! 열 병이나! 너... 내 말을 들었던 거야?",
    "role": "desc",
@@ -736,7 +852,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#073": {
+  "The Shadow of the Beast#084": {
    "src": "And you went out of your way to... What kind of a human are you? I've only ever heard horror stories about your kind.",
    "dst": "그래서 일부러 가서... 너 대체 어떤 인간이야? 너희에 대해선 무서운 얘기밖에 못 들었는데.",
    "role": "desc",
@@ -746,7 +862,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#074": {
+  "The Shadow of the Beast#085": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -756,7 +872,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#075": {
+  "The Shadow of the Beast#086": {
    "src": "...maybe you're not so bad. I don't have anything that I can give you in return, but thank you, still.",
    "dst": "...생각보다 나쁜 애는 아닌가 봐. 보답으로 줄 건 없지만, 그래도 고마워.",
    "role": "desc",
@@ -766,7 +882,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#076": {
+  "The Shadow of the Beast#087": {
    "src": "Wait, you were chasing the giant? That's why you were here? That...that's amazing news!",
    "dst": "잠깐, 그 거인을 쫓고 있었어? 그래서 여기 온 거야? 그거... 그거 굉장한 소식이야!",
    "role": "desc",
@@ -776,7 +892,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#077": {
+  "The Shadow of the Beast#088": {
    "src": "I think it went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
    "dst": "여기서 동쪽 동굴로 들어간 것 같아. 가 봐! 더 큰 피해를 입히기 전에 그놈을 막아 줘!",
    "role": "desc",
@@ -786,7 +902,7 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#078": {
+  "The Shadow of the Beast#089": {
    "src": "Find the cave of the beast by following the footprints behind Rileen's house.",
    "dst": "Rileen의 집 뒤에 난 발자국을 따라가 짐승의 동굴을 찾으세요.",
    "role": "desc",
@@ -796,7 +912,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#079": {
+  "The Shadow of the Beast#090": {
    "src": "Kill the beast and return to Dereg with proof of its death at [-{~}, {~}, -{~}].",
    "dst": "짐승을 처치하고, 죽였다는 증거를 가지고 [-{~}, {~}, -{~}]의 Dereg에게 돌아가세요.",
    "role": "desc",
@@ -806,7 +922,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Shadow of the Beast#080": {
+  "The Shadow of the Beast#091": {
    "src": "You're back! Any luck hunting the thing down?",
    "dst": "돌아왔구나! 그놈 사냥은 잘됐어?",
    "role": "desc",
@@ -816,7 +932,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#081": {
+  "The Shadow of the Beast#092": {
    "src": "What? You actually found the beast?! Heck of a hunting job, human!",
    "dst": "뭐? 진짜로 그 짐승을 찾았다고?! 대단한 사냥 솜씨네, 인간!",
    "role": "desc",
@@ -826,7 +942,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#082": {
+  "The Shadow of the Beast#093": {
    "src": "You wouldn't be back here if you didn't manage to kill it...which means our problems are solved, right?",
    "dst": "못 죽였으면 여기 돌아오지도 않았겠지... 그럼 우리 문제는 해결된 거지, 그치?",
    "role": "desc",
@@ -836,7 +952,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#083": {
+  "The Shadow of the Beast#094": {
    "src": "Heheh! That bone powder looks giant enough to me! Great job, bucko!",
    "dst": "헤헤! 그 뼛가루 보니 거인 맞는 것 같네! 잘했어, 친구!",
    "role": "desc",
@@ -846,7 +962,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#084": {
+  "The Shadow of the Beast#095": {
    "src": "Y'know, come to think of it, I remember something that might be interesting to your sort.",
    "dst": "그러고 보니, 너 같은 사람이 흥미로워할 만한 게 하나 생각났어.",
    "role": "desc",
@@ -856,7 +972,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#085": {
+  "The Shadow of the Beast#096": {
    "src": "The weapon merchant in {p} researches cryptids as a hobby, and that beast seemed one-of-a-kind to me.",
    "dst": "{p}의 무기 상인이 취미로 미확인 생물을 연구하는데, 그 짐승은 딱 하나뿐인 놈 같았거든.",
    "role": "desc",
@@ -866,7 +982,7 @@
    "speaker": "Dereg",
    "source": "wiki"
   },
-  "The Shadow of the Beast#086": {
+  "The Shadow of the Beast#097": {
    "src": "You should show him that bone powder! He might have some good gear for you.",
    "dst": "그 뼛가루를 보여 줘 봐! 좋은 장비를 줄지도 몰라.",
    "role": "desc",

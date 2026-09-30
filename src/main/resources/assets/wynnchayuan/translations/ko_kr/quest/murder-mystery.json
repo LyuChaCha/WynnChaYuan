@@ -1,12 +1,232 @@
 {
  "_meta": {
   "quest": "Murder Mystery",
-  "count": 58,
+  "count": 80,
   "translated": 58,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Murder Mystery#000": {
+   "src": "Have you made any progress? There was a smashed window in there, it might be a good place to start.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#001": {
+   "src": "It looks like the victim's head was somehow detatched from his body...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#002": {
+   "src": "The victim's book collection seems to be exclusively made up of dimestore romance novels.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#003": {
+   "src": "This painting doesn't seem to have anything to do with the murder, but its a nice landscape of {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#004": {
+   "src": "This half-finished letter seems to be asking for a loan to pay off some kind of debt...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#005": {
+   "src": "It looks like the attacker managed to break in through the window.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#006": {
+   "src": "It's a letter addressed to someone called Rohem in House No. {~} in {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Tattered Letter 󏿿󏿿󏿿󏿿󏿿󏿪 󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#007": {
+   "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#008": {
+   "src": "Some of those gamblers had a symbol built into their homes, shaped like a snake. If you find it, it'll show you the way into the sewers. Good luck, officer.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Cinfras Citizen 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#009": {
+   "src": "The barkeeper takes the snake symbol and examines it for a moment before nodding and giving it back to you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Barkeeper\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#010": {
+   "src": "The barkeeper gestures down to the open trapdoor.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#011": {
+   "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, til neither of em had anythin' left.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#012": {
+   "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back 'n we'll be happy to serve ya!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#013": {
+   "src": "What are ya lingerin' around 'ere for? I've told ya all I know. Now either take a seat or get out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#014": {
+   "src": "Ya can then hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#015": {
+   "src": "It seems like you better go have a chat with Rohem...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#016": {
+   "src": "You should look around for clues that tie Rohem to the murder.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#017": {
+   "src": "Get out of my house, officer, and don't you dare go rooting around in my property!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Grook 󏿿󏿿󏿿󏿿󏿿󏿿󏿿󏿞 󐀂\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#018": {
+   "src": "It's a dirty shovel - it must've been used recently to dig something up.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#019": {
+   "src": "There's a trail of muddy footprints leading back into the house.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#020": {
+   "src": "Whatever, you pale-faced walking cowlick. You're headed to {p} with a charge of first-class murder. Guards, take him away.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#021": {
+   "src": "Thank you for your help in catching the perpetrator!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "Detective Lorias\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Murder Mystery#022": {
    "src": "Looks like the symbol has something carved in on the back...",
    "dst": "문양 뒷면에 뭔가 새겨져 있는 것 같다...",
    "role": "desc",
@@ -16,7 +236,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#001": {
+  "Murder Mystery#023": {
    "src": "Talk to Detective Lorias at [-{~}, -{~}].",
    "dst": "[-{~}, -{~}]에서 Lorias 형사와 대화하세요.",
    "role": "desc",
@@ -26,7 +246,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#002": {
+  "Murder Mystery#024": {
    "src": "Stand back, human! This is a crime scene, under my authority. I cannot let you inside.",
    "dst": "물러서게, 인간! 여긴 내 관할의 범죄 현장이네. 들여보낼 수 없어.",
    "role": "desc",
@@ -36,7 +256,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#003": {
+  "Murder Mystery#025": {
    "src": "Although we are in need of some... assistance... and you are fairly experienced, are you not?",
    "dst": "그래도 우리에겐... 도움이... 좀 필요하고, 자넨 경험이 꽤 많지 않나?",
    "role": "desc",
@@ -46,7 +266,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#004": {
+  "Murder Mystery#026": {
    "src": "Well, straight to the point... do you think I might be able to hire you as a private investigator?",
    "dst": "그럼 본론으로... 자네를 사설 탐정으로 고용할 수 있겠나?",
    "role": "desc",
@@ -56,7 +276,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#005": {
+  "Murder Mystery#027": {
    "src": "To put it bluntly, the owner of this house, Eminar, was murdered a few days ago, and what few leads we had have all gone cold.",
    "dst": "솔직히 말하면, 이 집 주인 Eminar가 며칠 전 살해됐는데, 몇 안 되던 단서도 다 끊겼네.",
    "role": "desc",
@@ -66,7 +286,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#006": {
+  "Murder Mystery#028": {
    "src": "This is acting outside protocol, of course... but if you manage to catch the killer, I'm sure I could pull some strings and pay you for your work!",
    "dst": "물론 규정 밖의 일이지... 하지만 범인을 잡아 준다면, 내가 손을 써서 보수를 꼭 챙겨 주지!",
    "role": "desc",
@@ -76,7 +296,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#007": {
+  "Murder Mystery#029": {
    "src": "I'll make sure no one stops you inside the crime scene. Head inside the house and see if you can find anything helpful.",
    "dst": "현장 안에서 아무도 자넬 막지 않게 하겠네. 집 안에 들어가 쓸 만한 게 있는지 찾아보게.",
    "role": "desc",
@@ -86,7 +306,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#008": {
+  "Murder Mystery#030": {
    "src": "My soldiers and I will keep watch outside the house, and make sure you're not disturbed. Be careful in there!",
    "dst": "나와 병사들이 집 밖을 지키며 방해받지 않게 하겠네. 안에서 조심하게!",
    "role": "desc",
@@ -96,7 +316,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#009": {
+  "Murder Mystery#031": {
    "src": "Investigate the crime scene at [-{~}, {~}, -{~}] for clues.",
    "dst": "[-{~}, {~}, -{~}]의 범죄 현장에서 단서를 조사하세요.",
    "role": "desc",
@@ -106,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#010": {
+  "Murder Mystery#032": {
    "src": "Ah, a human! A refreshing sight these days. You've come to see me, I presume? What brings you here?",
    "dst": "아, 인간이군! 요즘 보기 드문 반가운 얼굴이오. 날 보러 온 거겠지? 무슨 일이오?",
    "role": "desc",
@@ -116,7 +336,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#011": {
+  "Murder Mystery#033": {
    "src": "An investigation!? Eminar? That's... that's absurd. I've done nothing wrong.",
    "dst": "수사라고!? Eminar? 그건... 말도 안 되오. 난 잘못한 게 없소.",
    "role": "desc",
@@ -126,7 +346,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#012": {
+  "Murder Mystery#034": {
    "src": "Still, the poor man. Eminar and I were good friends, you know. If it could help find his killer, I may have some information for you... strictly off-record, of course...",
    "dst": "그래도 불쌍한 친구. Eminar와 난 좋은 친구였소. 범인을 찾는 데 도움이 된다면 알려 줄 게 있을지도... 물론 철저히 비공식으로...",
    "role": "desc",
@@ -136,7 +356,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#013": {
+  "Murder Mystery#035": {
    "src": "Well. You see, there's an underground gambling den hidden in the city's sewers. Only the elite can get in, and Eminar happened to be a frequent visitor.",
    "dst": "그러니까. 도시 하수도에 숨겨진 지하 도박장이 있소. 상류층만 들어갈 수 있는데, Eminar가 단골이었지.",
    "role": "desc",
@@ -146,7 +366,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#014": {
+  "Murder Mystery#036": {
    "src": "Once, he even brought me along with him.",
    "dst": "한 번은 날 데려가기도 했소.",
    "role": "desc",
@@ -156,7 +376,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#015": {
+  "Murder Mystery#037": {
    "src": "Eminar, though, he often tried to cheat the other gamblers. I suppose it was only a matter of time before they had enough; most do not take cheating lightly.",
    "dst": "그런데 Eminar는 다른 도박꾼들을 자주 속이려 했소. 결국 참다못할 날이 올 수밖에. 속임수를 가볍게 넘기는 자는 드무니까.",
    "role": "desc",
@@ -166,7 +386,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#016": {
+  "Murder Mystery#038": {
    "src": "Back to the point, many of them, including poor Eminar, had a symbol built into the sides of their homes, shaped like a snake. A proof of membership, you could say.",
    "dst": "본론으로 돌아가서, 불쌍한 Eminar를 포함해 많은 회원이 집 벽에 뱀 모양 문양을 박아 두었소. 회원 증표라 할 수 있지.",
    "role": "desc",
@@ -176,7 +396,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#017": {
+  "Murder Mystery#039": {
    "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation, sir.",
    "dst": "그걸 찾으면 하수도로 가는 길이 보일 거요. 미안하오, 아는 게 더 있으면 말해 줄 텐데. 수사에 행운을 빌겠소.",
    "role": "desc",
@@ -186,7 +406,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#018": {
+  "Murder Mystery#040": {
    "src": "Return to the victim's house at [-{~}, {~}, -{~}] to find a snake symbol.",
    "dst": "[-{~}, {~}, -{~}]의 피해자 집으로 돌아가 뱀 문양을 찾으세요.",
    "role": "desc",
@@ -196,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#019": {
+  "Murder Mystery#041": {
    "src": "Find the gamblers in the {p} sewers.",
    "dst": "{p} 하수도에서 도박꾼들을 찾으세요.",
    "role": "desc",
@@ -206,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#020": {
+  "Murder Mystery#042": {
    "src": "How did ya find us down 'ere? I don't remember you... you're with the police, aren't ya? Here after Eminar, I suppose?",
    "dst": "여기까진 어떻게 찾아왔냐? 처음 보는 얼굴인데... 경찰 쪽이지? Eminar 일로 왔나 보군?",
    "role": "desc",
@@ -216,7 +436,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#021": {
+  "Murder Mystery#043": {
    "src": "Yeah, we've 'eard about what happened to him. Murders don't happen every day up there, ya know. And as it happened, I saw Eminar down here, not too long ago...",
    "dst": "그래, 그 녀석 일은 들었지. 위에선 살인이 매일 나는 게 아니거든. 마침 얼마 전에 여기서 Eminar를 봤지...",
    "role": "desc",
@@ -226,7 +446,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#022": {
+  "Murder Mystery#044": {
    "src": "Well... as long as I get a guarantee I won't be shut down, I'll help ya. This is a very profitable place, as I'm sure ya might've guessed.",
    "dst": "뭐... 여길 안 닫겠다고 보장만 해 주면 도와주지. 짐작했겠지만, 여긴 돈이 아주 잘 벌리는 곳이거든.",
    "role": "desc",
@@ -236,7 +456,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#023": {
+  "Murder Mystery#045": {
    "src": "He was brought down here by his friend one day. Rohem, it was. A fine customer, you understand. Never failed to pay his dues...",
    "dst": "어느 날 친구가 그 녀석을 데려왔어. Rohem이었지. 좋은 손님이야, 알지? 빚 한 번 안 밀렸고...",
    "role": "desc",
@@ -246,7 +466,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#024": {
+  "Murder Mystery#046": {
    "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, till neither of em had anythin' left.",
    "dst": "근데 Eminar를 데려온 날은 금방 험악해졌지. Rohem의 에메랄드를 계속 빌려 잃다가 둘 다 빈털터리가 됐어.",
    "role": "desc",
@@ -256,7 +476,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#025": {
+  "Murder Mystery#047": {
    "src": "It was a good day for me, for obvious reasons, don'cha see! But Rohem was furious. Dead drunk, too, but what else is new!",
    "dst": "뻔한 이유로 나한텐 좋은 날이었지! 근데 Rohem은 길길이 날뛰었어. 곤드레만드레 취했고, 뭐 늘 그랬지만!",
    "role": "desc",
@@ -266,7 +486,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#026": {
+  "Murder Mystery#048": {
    "src": "Neither of 'em has been back since, though in Eminar's case, I can see why! And I hope that's enough for ya, 'cause that's all I got.",
    "dst": "그 뒤로 둘 다 안 왔어. Eminar야 이유가 뻔하지만! 이 정도면 됐길 바란다, 아는 건 이게 다니까.",
    "role": "desc",
@@ -276,7 +496,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#027": {
+  "Murder Mystery#049": {
    "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back'n we'll be happy to serve ya!",
    "dst": "이제 나가; 저쪽 벽에 뒷문이 있어. 그래도 블랙잭 한 판 생각나면 다시 와, 기꺼이 모셔 주지!",
    "role": "desc",
@@ -286,7 +506,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#028": {
+  "Murder Mystery#050": {
    "src": "Confront Rohem about the murder at house #{~} in {p}.",
    "dst": "{p}의 {~}번 집에서 살인에 대해 Rohem을 추궁하세요.",
    "role": "desc",
@@ -296,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#029": {
+  "Murder Mystery#051": {
    "src": "Ah... you again! You're back. I see that. I must admit, I did not expect you to return... so soon...",
    "dst": "아... 또 당신이군! 돌아왔소. 보이오. 솔직히 이렇게... 빨리... 돌아올 줄은 몰랐소...",
    "role": "desc",
@@ -306,7 +526,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#030": {
+  "Murder Mystery#052": {
    "src": "You really did find your way down there? Oh, that's... excellent... I hope the investigation is going well. Now if you'll just leave me be-",
    "dst": "정말 거기까지 내려갔단 말이오? 오, 그거... 훌륭하군... 수사가 잘되길 바라오. 그럼 이제 날 좀 내버려-",
    "role": "desc",
@@ -316,7 +536,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#031": {
+  "Murder Mystery#053": {
    "src": "Valimare? Bah! Why would you trust anything he says? He's a criminal! A scam artist! I mean, I did direct you to him, but...",
    "dst": "Valimare? 흥! 그놈 말을 왜 믿소? 범죄자요! 사기꾼이라고! 뭐, 그놈한테 보낸 건 나지만...",
    "role": "desc",
@@ -326,7 +546,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#032": {
+  "Murder Mystery#054": {
    "src": "He- He's the one you should be arresting. Eminar was a danger to society, got what he deserved, the fool-",
    "dst": "그- 체포할 건 그놈이오. Eminar는 사회에 위험한 자였으니 자업자득이지, 그 멍청이-",
    "role": "desc",
@@ -336,7 +556,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#033": {
+  "Murder Mystery#055": {
    "src": "Wait! No! Don't turn me in! Can't you let me finish my drink in peace? Get out, get out, you can't prove anything!",
    "dst": "잠깐! 안 돼! 넘기지 마시오! 술이나 편히 마시게 해 주면 안 되오? 나가, 나가, 증명 못 할 거요!",
    "role": "desc",
@@ -346,7 +566,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#034": {
+  "Murder Mystery#056": {
    "src": "Besides, have you ever heard of a little thing called evidence? You don't have any proof!",
    "dst": "게다가, 증거라는 걸 들어 보긴 했소? 증거가 하나도 없잖소!",
    "role": "desc",
@@ -356,7 +576,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#035": {
+  "Murder Mystery#057": {
    "src": "Now, officer, if you don't have a proper warrant, I expect you to vacate my property immediately!",
    "dst": "자, 경관 나리, 정식 영장이 없다면 당장 내 집에서 나가 주시오!",
    "role": "desc",
@@ -366,7 +586,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#036": {
+  "Murder Mystery#058": {
    "src": "Find the murder weapon around Rohem's house at house #{~} in {p}.",
    "dst": "{p}의 {~}번 집, Rohem의 집 주변에서 흉기를 찾으세요.",
    "role": "desc",
@@ -376,7 +596,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#037": {
+  "Murder Mystery#059": {
    "src": "Hi! I'm digging a hole in my garden, just like Mr. Rohem did last night!",
    "dst": "안녕! 난 마당에 구멍 파고 있어, 어젯밤 Rohem 아저씨처럼!",
    "role": "desc",
@@ -386,7 +606,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Murder Mystery#038": {
+  "Murder Mystery#060": {
    "src": "For the last time officer, would you either show me a warrant or get out of my- what are you doing in my garden?!",
    "dst": "마지막으로 말하는데, 영장을 보이든가 내 집에서- 내 마당에서 뭘 하는 거요?!",
    "role": "desc",
@@ -396,7 +616,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#039": {
+  "Murder Mystery#061": {
    "src": "A... a hatchet? I don't know what you mean, I- I've never seen that before in my life!",
    "dst": "소... 손도끼? 무슨 소린지 모르겠소, 난- 난 그런 건 난생처음 보오!",
    "role": "desc",
@@ -406,7 +626,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#040": {
+  "Murder Mystery#062": {
    "src": "Gah! Curse you, human! I might be headed to jail, but I can send you straight to hell!",
    "dst": "크윽! 저주받을 인간! 감옥에 갈지언정, 널 곧장 지옥으로 보내 주마!",
    "role": "desc",
@@ -416,7 +636,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#041": {
+  "Murder Mystery#063": {
    "src": "That's enough, Rohem! Stand down, or the guards will attack.",
    "dst": "그만해, Rohem! 물러서, 안 그러면 경비병이 공격한다.",
    "role": "desc",
@@ -426,7 +646,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#042": {
+  "Murder Mystery#064": {
    "src": "Augh! Fine, you've got me. But mark my words, this won't be the last you hear of me, human!",
    "dst": "으윽! 좋아, 잡혔다. 하지만 명심해라, 인간. 내 이름을 듣는 게 이게 끝은 아닐 거다!",
    "role": "desc",
@@ -436,7 +656,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#043": {
+  "Murder Mystery#065": {
    "src": "Whatever you pale-faced walking cowlick. You're headed to {p} Penitentiary with a charge of first-class murder. Guards, take him away.",
    "dst": "그러시든가, 이 창백한 뻗친 머리야. 1급 살인죄로 {p} 교도소행이다. 경비병, 끌고 가라.",
    "role": "desc",
@@ -446,7 +666,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#044": {
+  "Murder Mystery#066": {
    "src": "As for you, human, please accept my immense gratitude. We probably wouldn't have caught that rat without you.",
    "dst": "그리고 인간, 깊은 감사를 받아 주게. 자네 없이는 그 쥐새끼를 못 잡았을 걸세.",
    "role": "desc",
@@ -456,7 +676,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#045": {
+  "Murder Mystery#067": {
    "src": "On behalf of the city of {p}, please accept these emeralds as compensation for your services. You were a fine detective today!",
    "dst": "{p} 시를 대표해, 수고의 대가로 이 에메랄드를 받아 주게. 오늘 자넨 훌륭한 탐정이었네!",
    "role": "desc",
@@ -466,7 +686,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#046": {
+  "Murder Mystery#068": {
    "src": "Heya there! Fancy a quick game of blackjack?",
    "dst": "어이 안녕! 블랙잭 한 판 어때?",
    "role": "desc",
@@ -476,7 +696,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#047": {
+  "Murder Mystery#069": {
    "src": "Alrighty, let's play some blackjack!",
    "dst": "좋아, 블랙잭 한번 해 보자고!",
    "role": "desc",
@@ -486,7 +706,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#048": {
+  "Murder Mystery#070": {
    "src": "Good stuff! Put ya money in the pot and I'll start the deal.",
    "dst": "좋지! 판돈을 걸면 카드를 돌릴게.",
    "role": "desc",
@@ -496,7 +716,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#049": {
+  "Murder Mystery#071": {
    "src": "Not feelin' up to playin' right now? No worries, just drop by later!",
    "dst": "지금은 할 기분 아냐? 괜찮아, 나중에 들러!",
    "role": "desc",
@@ -506,7 +726,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#050": {
+  "Murder Mystery#072": {
    "src": "Not right now? No worries - come back another time!",
    "dst": "지금은 말고? 괜찮아 - 다음에 또 와!",
    "role": "desc",
@@ -516,7 +736,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#051": {
+  "Murder Mystery#073": {
    "src": "Ah, new to the game huh? No worries, lemme tell ya all about it!",
    "dst": "아, 처음이구나? 괜찮아, 내가 다 알려 줄게!",
    "role": "desc",
@@ -526,7 +746,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#052": {
+  "Murder Mystery#074": {
    "src": "The rules are simple! I deal two cards face up to ya both face down, and two cards to me, one face up and one face down.",
    "dst": "규칙은 간단해! 너한텐 두 장을 뒷면으로 주고, 나는 두 장을 받아서 한 장은 앞면, 한 장은 뒷면으로 둬.",
    "role": "desc",
@@ -536,7 +756,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#053": {
+  "Murder Mystery#075": {
    "src": "Ya can hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
    "dst": "히트하면 원하는 만큼 카드를 더 받고, 스탠드하면 턴이 끝나. 목표는 손패 합을 최대한 {~}에 가깝게 만드는 거야!",
    "role": "desc",
@@ -546,7 +766,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#054": {
+  "Murder Mystery#076": {
    "src": "Number cards are worth what they say, all picture cards are worth {~}, and an ace can be worth either {~} or {~}, whichever works best for ya hand.",
    "dst": "숫자 카드는 적힌 숫자대로, 그림 카드는 전부 {~}, 에이스는 {~}이나 {~} 중 손패에 유리한 쪽으로 쳐.",
    "role": "desc",
@@ -556,7 +776,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#055": {
+  "Murder Mystery#077": {
    "src": "Go over {~} and that's it - you're bust! Stand with your current hand and it's my turn to hit or stand to try and beat your hand.",
    "dst": "{~}을 넘기면 끝 - 버스트야! 지금 손패로 스탠드하면, 내 차례에 히트나 스탠드로 네 손패를 이기려 하지.",
    "role": "desc",
@@ -566,7 +786,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#056": {
+  "Murder Mystery#078": {
    "src": "And if ya get a blackjack - that's an ace and a picture card or a ten - ya automatically get double ya money back!",
    "dst": "그리고 블랙잭 - 에이스에 그림 카드나 10 - 이 나오면 자동으로 판돈의 두 배를 돌려받아!",
    "role": "desc",
@@ -576,7 +796,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#057": {
+  "Murder Mystery#079": {
    "src": "Sound fair enough? Alrighty, just right-click me again to play!",
    "dst": "공평하지? 좋아, 하려면 나를 다시 우클릭해!",
    "role": "desc",
