@@ -216,8 +216,13 @@ public final class UpgradeSafetyTest {
         // 0.2.3_1：translateNametags 拿掉了。它沒有接到 F6 卻擋著算繪，正是 #825
         // 的病根；浮空字改成跟「名牌與漂浮字」那一列走。
         expected.remove("translateNametags");
+        // 0.2.6：F6 的譯文版本改印日期，不再印 commit 短碼（使用者說那看起來像
+        // 亂碼）。日期跟 SHA 一起記在設定檔裡，舊設定檔沒有這一欄，補上空字串
+        // ——空的代表不知道日期，下一次問版本時會補回來，
+        // 見 TranslationUpdate#adoptDate。
+        expected.addProperty("syncedTranslationsDate", "");
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
-        check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
+        check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));
     }
 
