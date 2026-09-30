@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 98.6%（53,633 / 54,417）
+## `zh_tw` 繁體中文 — 98.6%（53,635 / 54,417）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -17,7 +17,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | ██████████ 99% | 6,223 / 6,293 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,110 / 1,110 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 454 / 454 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ██████████ 98% | 744 / 761 | 任務介面<br>The quest interface |
+| `quest.json` | ██████████ 98% | 746 / 761 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -85,7 +85,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 91.3%（49,656 / 54,417）
+## `ja_jp` 日本語 — 91.3%（49,659 / 54,417）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -95,7 +95,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | █████████░ 89% | 5,583 / 6,293 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,108 / 1,110 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██░░░░░░░░ 21% | 95 / 454 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ████████░░ 84% | 639 / 761 | 任務介面<br>The quest interface |
+| `quest.json` | ████████░░ 84% | 642 / 761 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -124,7 +124,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 90.5%（49,243 / 54,417）
+## `ru_ru` Русский — 90.5%（49,246 / 54,417）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -134,7 +134,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | █████████░ 89% | 5,583 / 6,293 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,108 / 1,110 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██░░░░░░░░ 21% | 95 / 454 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ████████░░ 79% | 599 / 761 | 任務介面<br>The quest interface |
+| `quest.json` | ████████░░ 79% | 602 / 761 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -163,7 +163,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 90.5%（49,241 / 54,417）
+## `ko_kr` 한국어 — 90.5%（49,244 / 54,417）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -173,7 +173,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | █████████░ 89% | 5,583 / 6,293 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,108 / 1,110 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██░░░░░░░░ 21% | 95 / 454 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ████████░░ 79% | 599 / 761 | 任務介面<br>The quest interface |
+| `quest.json` | ████████░░ 79% | 602 / 761 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -202,7 +202,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 90.1%（49,039 / 54,417）
+## `es_es` Español — 90.1%（49,042 / 54,417）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -212,7 +212,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | █████████░ 89% | 5,583 / 6,293 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,108 / 1,110 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██░░░░░░░░ 21% | 95 / 454 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ████████░░ 79% | 599 / 761 | 任務介面<br>The quest interface |
+| `quest.json` | ████████░░ 79% | 602 / 761 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
