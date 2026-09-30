@@ -58,11 +58,56 @@ public final class CorpusVersionTest {
         eq("沒同步過，而且遠端剛好跟空字串比不出來", State.UNKNOWN,
                 TranslationUpdate.verdict(true, false, true, "  ", NEWER));
 
+        labels();
+
         System.out.println(failures == 0
                 ? "譯文版本狀態：全部通過"
                 : "譯文版本狀態：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
+        }
+    }
+
+    /**
+     * 那一列印出來的版本號。
+     *
+     * <h2>使用者回報</h2>
+     * 「譯文版本希望不要用亂碼，最好是日期＋版本這種感覺。」先前印的是 commit
+     * 前七碼，那串字對玩家不表達任何東西——兩個版本擺在一起也看不出哪個新。
+     *
+     * <p>所以這裡釘的是<b>印出來的東西看得懂</b>：有日期就印日期，而且
+     * 一定<b>不是</b>那串十六進位。退回短碼只在「舊版升上來、日期還沒補」
+     * 那一種情形，別的情形退回去就是回到使用者抱怨的樣子。
+     */
+    private static void labels() {
+        String date = "2026-09-30";
+        same("有日期就印日期", date,
+                TranslationUpdate.label(LOCAL, date, "內建"));
+        same("沒同步過說內建，日期有沒有都一樣", "內建",
+                TranslationUpdate.label("", date, "內建"));
+        same("沒同步過（null）也說內建", "內建",
+                TranslationUpdate.label(null, null, "內建"));
+        same("空白的日期不算有日期，退回短碼", "1e72450",
+                TranslationUpdate.label(LOCAL, "   ", "內建"));
+        same("舊版升上來（日期是 null）退回短碼", "1e72450",
+                TranslationUpdate.label(LOCAL, null, "內建"));
+
+        // ★ 正常情形下畫面上不可以出現那串十六進位
+        String shown = TranslationUpdate.label(LOCAL, date, "內建");
+        boolean clean = !shown.startsWith(LOCAL.substring(0, 7));
+        System.out.println("  [" + (clean ? "PASS" : "FAIL")
+                + "] ★ 有日期時畫面上沒有 SHA（實際：" + shown + "）");
+        if (!clean) {
+            failures++;
+        }
+    }
+
+    private static void same(String what, String want, String got) {
+        boolean ok = want.equals(got);
+        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what
+                + "（要 " + want + "，實際 " + got + "）");
+        if (!ok) {
+            failures++;
         }
     }
 

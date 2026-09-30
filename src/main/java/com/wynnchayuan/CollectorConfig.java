@@ -236,6 +236,19 @@ public final class CollectorConfig {
     private String syncedTranslations = "";
 
     /**
+     * {@link #syncedTranslations} 那一筆 commit 的日期，{@code 2026-09-30}。
+     *
+     * <p>純粹是<b>講給人看的</b>：判斷新舊一律用 SHA，日期只是拿來顯示。
+     * F6 先前印的是 SHA 前七碼，使用者回報那看起來像亂碼——版本號要看得懂，
+     * 玩家才分得出「我手上這份是哪時候的」。
+     *
+     * <p>空的有兩種情形：從來沒同步過（那一列本來就說「內建」），或是從舊版
+     * 升上來、SHA 有而日期沒有。後者在下一次問版本時就會補上，
+     * 見 {@code TranslationUpdate#checked}。
+     */
+    private String syncedTranslationsDate = "";
+
+    /**
      * 進遊戲就自己把新譯文抓下來，不問。
      *
      * <h2>為什麼預設是關的</h2>
@@ -640,6 +653,16 @@ public final class CollectorConfig {
 
     public void syncedTranslations(String version) {
         syncedTranslations = version == null ? "" : version;
+        save();
+    }
+
+    /** 見 {@link #syncedTranslationsDate}。 */
+    public String syncedTranslationsDate() {
+        return syncedTranslationsDate;
+    }
+
+    public void syncedTranslationsDate(String date) {
+        syncedTranslationsDate = date == null ? "" : date;
         save();
     }
 
@@ -1195,6 +1218,7 @@ public final class CollectorConfig {
         collect = bool(o, "collect", collect);
         notifiedVersion = str(o, "notifiedVersion", notifiedVersion);
         syncedTranslations = str(o, "syncedTranslations", syncedTranslations);
+        syncedTranslationsDate = str(o, "syncedTranslationsDate", syncedTranslationsDate);
         autoUpdateTranslations =
                 bool(o, "autoUpdateTranslations", autoUpdateTranslations);
         language = str(o, "language", language).trim();
@@ -1373,6 +1397,7 @@ public final class CollectorConfig {
             o.addProperty("collect", collect);
             o.addProperty("notifiedVersion", notifiedVersion);
             o.addProperty("syncedTranslations", syncedTranslations);
+            o.addProperty("syncedTranslationsDate", syncedTranslationsDate);
             o.addProperty("autoUpdateTranslations", autoUpdateTranslations);
             o.addProperty("language", language);
             o.addProperty("fallbackLanguage", fallbackLanguage);
