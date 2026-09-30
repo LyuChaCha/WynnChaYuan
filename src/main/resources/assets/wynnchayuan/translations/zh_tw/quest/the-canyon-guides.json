@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Canyon Guides",
   "count": 84,
-  "translated": 63,
+  "translated": 84,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Canyon Guides#000": {
    "src": "Welcome to Bantisu Temple, wandering human. We aid travelers such as yourself in navigating the capricious canyon walls.",
-   "dst": "",
+   "dst": "歡迎來到 Bantisu 神殿，流浪的人類。我們協助像你這樣的旅人在這變幻莫測的峽谷壁間找路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -18,7 +18,7 @@
   },
   "The Canyon Guides#001": {
    "src": "You appear quite strong, and well-kept by your wits. Might we ask you to aid us, then?",
-   "dst": "",
+   "dst": "你看起來相當強壯，心智也很清明。那麼，我們能否請你幫個忙？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -28,7 +28,7 @@
   },
   "The Canyon Guides#002": {
    "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but be unable to reach him.",
-   "dst": "",
+   "dst": "是這樣的，有個迷路的人在附近的崖壁上紮營。看得到他卻到不了他那裡，讓我們很難受。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -38,7 +38,7 @@
   },
   "The Canyon Guides#003": {
    "src": "So we ask you to guide Seluc to us. We shall send you to him, and you shall bring him here. If you wish to help, you will be rewarded for your time.",
-   "dst": "",
+   "dst": "所以我們請你把 Seluc 引導到我們這裡。我們會把你送到他那邊，你再把他帶回來。你若願意幫忙，我們會報答你付出的時間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -48,7 +48,7 @@
   },
   "The Canyon Guides#004": {
    "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day of cliff diving?",
-   "dst": "",
+   "dst": "等等，一個人類！唉，我不該抱期望的。你做了什麼，去玩了一整天跳崖嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -58,7 +58,7 @@
   },
   "The Canyon Guides#005": {
    "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at doing that, right? Fetching things and people?",
-   "dst": "",
+   "dst": "你要是真想派上點用場，就去弄一個 Bantisu 僧侶過來！你很會做這種事吧？跑腿找東西找人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -68,7 +68,7 @@
   },
   "The Canyon Guides#006": {
    "src": "Kill them! Kill them now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
-   "dst": "",
+   "dst": "殺了他們！現在就殺了他們！然後把我弄出去！是你把我拖進這團亂的，現在把我弄出去！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -78,7 +78,7 @@
   },
   "The Canyon Guides#007": {
    "src": "Are you blind?! You knocked my shoes off in that lake! Follow the path, and don't take any off routes! I don't want to risk cutting up my feet!",
-   "dst": "",
+   "dst": "你瞎了嗎？！你把我的鞋子撞進那座湖裡了！沿著路走，不要亂走岔路！我不想冒著割傷腳的風險！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -88,7 +88,7 @@
   },
   "The Canyon Guides#008": {
    "src": "Trying to ditch on me while I'm talking my coat off? You have an obligation to help me you know!",
-   "dst": "",
+   "dst": "我正在脫外衣的時候你想把我丟下？你可是有義務幫我的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -98,7 +98,7 @@
   },
   "The Canyon Guides#009": {
    "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair!. Besides that...",
-   "dst": "",
+   "dst": "走這麼多路……我要在這裡休息一下。你逼我跳下懸崖，我就有權逼你慢下來。這才公平！除此之外……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -108,7 +108,7 @@
   },
   "The Canyon Guides#010": {
    "src": "I only even came out here to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
-   "dst": "",
+   "dst": "我來這裡本來只是為了看風景。至少那個毀不了。不過，這假期還真是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -118,7 +118,7 @@
   },
   "The Canyon Guides#011": {
    "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into a lake and made me lose my shoes!",
-   "dst": "",
+   "dst": "唉，我的腳痛死了。要不是某人把我撞進湖裡、害我丟了鞋子，這趟健行也許就不會這麼糟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -128,7 +128,7 @@
   },
   "The Canyon Guides#012": {
    "src": "Find me a way up, and fast! I've had enough of this stupid canyon.",
-   "dst": "",
+   "dst": "幫我找條上去的路，快點！這座蠢峽谷我受夠了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -138,7 +138,7 @@
   },
   "The Canyon Guides#013": {
    "src": "Huff...puff... Well...huff... Wait, there's...there's no way down the other side! Huff...what a waste!!",
-   "dst": "",
+   "dst": "呼……喘……嗯……呼……等等，另一邊……另一邊沒有路下去！呼……白費工夫！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -148,7 +148,7 @@
   },
   "The Canyon Guides#014": {
    "src": "You...had better count yourself lucky I haven't broken any bones from this. Agh...but that doesn't mean I'm not aching all over!!",
-   "dst": "",
+   "dst": "你……最好覺得自己運氣好，我這樣沒斷骨頭。唉……但這不代表我不是全身都在痛！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -158,7 +158,7 @@
   },
   "The Canyon Guides#015": {
    "src": "I paid two weeks' wages for that coat you soaked. I'm not leaving here without it, and I'm way too tired to walk back down.",
-   "dst": "",
+   "dst": "你泡濕的那件外套花了我兩週的工資。沒拿到我不走，而我累得根本沒力氣再走下去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -168,7 +168,7 @@
   },
   "The Canyon Guides#016": {
    "src": "[+{~} Ornamental Coat]",
-   "dst": "",
+   "dst": "[+{~} 華飾外衣]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -178,7 +178,7 @@
   },
   "The Canyon Guides#017": {
    "src": "Now that you have the coat, you should return to Seluc",
-   "dst": "",
+   "dst": "拿到外衣了，你該回去找 Seluc",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -188,7 +188,7 @@
   },
   "The Canyon Guides#018": {
    "src": "Seluc doesn't seem to be here any more. Maybe he's moved further.",
-   "dst": "",
+   "dst": "Seluc 好像已經不在這裡了。也許他又往前走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -198,7 +198,7 @@
   },
   "The Canyon Guides#019": {
    "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude to this kind human.",
-   "dst": "",
+   "dst": "這就給你一個教訓，Seluc。你騙不了那些以風視物的人。現在向這位善心的人類表示謝意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -208,7 +208,7 @@
   },
   "The Canyon Guides#020": {
    "src": "As thanks, we will also grant you access to the Bantisu Air Boosters found around the canyon. I hope they are of assistance to you.",
-   "dst": "",
+   "dst": "為了答謝，我們也會讓你使用峽谷各處的 Bantisu Air Booster。希望它們對你有幫助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
