@@ -1,12 +1,380 @@
 {
  "_meta": {
   "quest": "Memory Paranoia",
-  "count": 105,
+  "count": 140,
   "translated": 105,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Memory Paranoia#000": {
+   "src": "Oh, a human? If I could beg your pardon a moment... could I talk to you about the mansion here?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#001": {
+   "src": "But... Eventually... Erm, we're not entirely sure what happened, only rumours have surfaced over the years, but... things took a turn, shall we say.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#002": {
+   "src": "Because, aah... How shall I put this... One day they were all... discovered dead. Murdered. By each other.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#003": {
+   "src": "Since, erm... Since there was no one alive to report the incident, it wasn't discovered until days later when a traveller passing by took notice of the mansion.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#004": {
+   "src": "Yet, I am... scared of this place. It is the ruins of the life I should have had. The spirits of the dead are still there... Cursed. I need someone else to uncover my heritage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#005": {
+   "src": "It's so kind of the Caritats to donate these supplies to the struggling people in the forest.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It's so nice that the Caritats are donating all of these supplies to the struggling people in the forest.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.859,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#006": {
+   "src": "Mr. Caritat is always writing so intensely in that book... I do wonder what he could be saying.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#007": {
+   "src": "I'll bet he's writing insults about us or something. He can't be as nice as he appears, no one is!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I'll bet he's writing insults about us. He can't be as nice as he appears.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.849,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#008": {
+   "src": "Come on, Timmy. Mr. Caritat is crazily sweet. I doubt he'd be upset, even if you'd thrown it down there on purpose.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#009": {
+   "src": "G-g-ghosts?!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#010": {
+   "src": "Mr. Caritat looks very engrossed in his writing... you best not disturb him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#011": {
+   "src": "I've forgotten, where should I look for my Library Key?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#012": {
+   "src": "The drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, you should check there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well, the drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, that's most likely where it is.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.829,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#013": {
+   "src": "Page {~}: The Caritats are as nice as people say. They're some of the kindest people I've ever met, let alone work for.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#014": {
+   "src": "Page {~}: That Timmy boy has been acting rather unusual lately... Uncharacteristically hostile. I wonder what's come over him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#015": {
+   "src": "Page {~}: I've been hearing strange noises at night. Scratching, and sometimes yelling... I do hope nothing bad is going on.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#016": {
+   "src": "Page {~}: I don't even know how this happened, but Timmy performed dark magic. He shot a fireball! The north wall of the library was wrecked!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#017": {
+   "src": "It appears that all of the pages have been torn out...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#018": {
+   "src": "Aw man, I can't believe I'm not allowed to sit with the adults. I'm nearly twelve!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#019": {
+   "src": "They appear to be chatting about local politics.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#020": {
+   "src": "You hold up the spoon...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#021": {
+   "src": "It's been depleted of its magic. How disappointing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#022": {
+   "src": "Thank you very much, Father, and everyone here. Here's to more years of health-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#023": {
+   "src": "My god... What is wrong with this place? No matter what I do, what I try...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#024": {
+   "src": "...Timothy, I'm going to ask you something, and I need you to answer me honestly. Were you... Were you responsible for this?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#025": {
+   "src": "Never, never!! That study is off-limits to everyone, even your mother! If I had known back then, I'd... I'd have... urgh...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#026": {
+   "src": "Page {~}: DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#027": {
+   "src": "Page {~}: There is a dark power beyond our control within this mansion. There is no use trying to fight it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#028": {
+   "src": "Page {~}: I felt like all of the skulls were watching me. I have had to turn them all towards the fireplace.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#029": {
+   "src": "THAT WHICH STARTED THIS WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#030": {
+   "src": "FOREVER TRAPPED, FROM WHENCE IT CAME. THROUGH THE WEAK POINT BETWEEN REALMS IT. SHALL. RISE. AGAIN!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#031": {
+   "src": "Dear Anton, the chandelier fell in the main hall. Please fix it as soon as possible.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#032": {
+   "src": "FROM SOILS OF DOOM THE SERVANT LAID",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#033": {
+   "src": "All you have to do, is go in there and find answers. I'm sure the past won't haunt us both. Something happened here all those years ago... I want to know what.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#034": {
+   "src": "I don't think it's wise you enter the mansion ever again...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#035": {
    "src": "Speak to Atisun.",
    "dst": "Atisun에게 말을 거세요.",
    "role": "desc",
@@ -16,7 +384,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#001": {
+  "Memory Paranoia#036": {
    "src": "Oh, a human? If I could beg your pardon a moment...could I talk to you about the mansion here?",
    "dst": "오, 인간이군요? 잠시 실례해도 될까요... 여기 저택에 대해 이야기를 좀 나눌 수 있을까요?",
    "role": "desc",
@@ -26,7 +394,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#002": {
+  "Memory Paranoia#037": {
    "src": "It was not always so dilapidated. It once stood tall, a monument to the family of Caritat, who constructed it from the ground up.",
    "dst": "늘 이렇게 낡았던 건 아닙니다. 한때는 우뚝 서 있었죠. 바닥부터 이 집을 지은 Caritat 가문의 기념비로서요.",
    "role": "desc",
@@ -36,7 +404,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#003": {
+  "Memory Paranoia#038": {
    "src": "The Caritats were unlike any other. Uncharacteristically selfless and helpful. Their wealth was everyone’s wealth as far as they were concerned.",
    "dst": "Caritat 가문은 남달랐습니다. 드물게도 이타적이고 남을 잘 도왔죠. 그들에겐 자신의 부가 곧 모두의 부였습니다.",
    "role": "desc",
@@ -46,7 +414,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#004": {
+  "Memory Paranoia#039": {
    "src": "But... Eventually... Erm, we’re not entirely sure what happened, only rumours have surfaced over the years, but...things took a turn, shall we say.",
    "dst": "하지만... 결국... 음, 무슨 일이 있었는지 정확히는 모릅니다. 수년간 소문만 돌았죠. 그러니까... 일이 틀어졌다고 해 두죠.",
    "role": "desc",
@@ -56,7 +424,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#005": {
+  "Memory Paranoia#040": {
    "src": "Because, aah...how shall I put this... One day they were all...discovered dead. Murdered. By each other.",
    "dst": "왜냐하면, 아... 어떻게 말해야 할지... 어느 날 모두... 죽은 채 발견됐습니다. 살해당했죠. 서로에게.",
    "role": "desc",
@@ -66,7 +434,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#006": {
+  "Memory Paranoia#041": {
    "src": "I am the last remaining descendant, Atisun Caritat. I was the only survivor of the... incident. I was only an infant when I was found by a passerby.",
    "dst": "저는 마지막 남은 후손, Atisun Caritat입니다. 그... 사건의 유일한 생존자죠. 지나가던 사람이 발견했을 때 전 갓난아기였습니다.",
    "role": "desc",
@@ -76,7 +444,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#007": {
+  "Memory Paranoia#042": {
    "src": "Since, erm...since there was no one alive to report the incident, it wasn't discovered until days later when a traveller passing by took notice of the mansion.",
    "dst": "음... 사건을 알릴 산 사람이 없었기에, 며칠 뒤 지나가던 여행자가 저택을 눈여겨보고 나서야 발견됐습니다.",
    "role": "desc",
@@ -86,7 +454,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#008": {
+  "Memory Paranoia#043": {
    "src": "I do not believe that my family simply went mad, but I do not know what happened. I want to know the truth. I think this mansion still holds the answers I'm looking for.",
    "dst": "가족이 그냥 미쳐 버렸다고는 믿지 않지만, 무슨 일이 있었는지는 모릅니다. 진실을 알고 싶어요. 이 저택에 제가 찾는 답이 아직 있을 겁니다.",
    "role": "desc",
@@ -96,7 +464,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#009": {
+  "Memory Paranoia#044": {
    "src": "Yet, I am...scared of this place. It is the ruins of the life I should have had. The spirits of the dead are still there...cursed. I need someone else to uncover my heritage.",
    "dst": "하지만 저는... 이곳이 두렵습니다. 제가 누렸어야 할 삶의 폐허니까요. 죽은 자들의 영혼이 아직... 저주받은 채 있습니다. 제 가문의 내력을 밝혀 줄 사람이 필요합니다.",
    "role": "desc",
@@ -106,7 +474,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#010": {
+  "Memory Paranoia#045": {
    "src": "Don't you worry, like my ancestors, I'm a generous man. If you help me, I will reward you handsomely. All you have to do, is go in there and find answers. I'm sure the past won't haunt us both.",
    "dst": "걱정 마세요, 저도 조상들처럼 너그러운 사람입니다. 도와주시면 후하게 보답하죠. 그저 들어가서 답을 찾아 주시면 됩니다. 과거가 우리를 괴롭히진 않을 겁니다.",
    "role": "desc",
@@ -116,7 +484,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#011": {
+  "Memory Paranoia#046": {
    "src": "Enter the {p}.",
    "dst": "{p}에 들어가세요.",
    "role": "desc",
@@ -126,7 +494,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#012": {
+  "Memory Paranoia#047": {
    "src": "Learn the story of the Caritat Family.",
    "dst": "Caritat 가문의 이야기를 알아내세요.",
    "role": "desc",
@@ -136,7 +504,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#013": {
+  "Memory Paranoia#048": {
    "src": "This check is made out to a charity for a lot of emeralds.",
    "dst": "자선 단체 앞으로 발행된 거액의 에메랄드 수표다.",
    "role": "desc",
@@ -146,7 +514,7 @@
    "speaker": "Check",
    "source": "wiki"
   },
-  "Memory Paranoia#014": {
+  "Memory Paranoia#049": {
    "src": "It's so nice that the Caritats are donating all of these supplies to the struggling people in the forest.",
    "dst": "Caritat 가문이 이 물자를 전부 숲에서 힘겹게 사는 사람들에게 기부하다니 정말 멋져요.",
    "role": "desc",
@@ -156,7 +524,7 @@
    "speaker": "Maid",
    "source": "wiki"
   },
-  "Memory Paranoia#015": {
+  "Memory Paranoia#050": {
    "src": "He seems to be very engrossed in his writing.",
    "dst": "글쓰기에 아주 몰두한 것 같다.",
    "role": "desc",
@@ -166,7 +534,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#016": {
+  "Memory Paranoia#051": {
    "src": "I've heard about weird things happening around the house. People are saying the mansion might be haunted!",
    "dst": "집 주변에서 이상한 일이 생긴다고 들었어요. 저택에 귀신이 들렸을지도 모른대요!",
    "role": "desc",
@@ -176,7 +544,7 @@
    "speaker": "Maid",
    "source": "wiki"
   },
-  "Memory Paranoia#017": {
+  "Memory Paranoia#052": {
    "src": "Ghosts? Preposterous! This mansion isn't haunted, don't believe those silly rumors!",
    "dst": "귀신? 말도 안 돼요! 이 저택에 귀신 같은 건 없어요, 그런 바보 같은 소문 믿지 마세요!",
    "role": "desc",
@@ -186,7 +554,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#018": {
+  "Memory Paranoia#053": {
    "src": "G-g-ghosts?",
    "dst": "귀, 귀, 귀신?",
    "role": "desc",
@@ -196,7 +564,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#019": {
+  "Memory Paranoia#054": {
    "src": "Mister Caritat is always writing in that book, always so intensely. I wonder what he is writing.",
    "dst": "Caritat 나리는 늘 그 책에 뭔가를 쓰세요, 늘 엄청 열중해서요. 뭘 쓰시는 걸까요.",
    "role": "desc",
@@ -206,7 +574,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#020": {
+  "Memory Paranoia#055": {
    "src": "He won't even tell me what he's writing.",
    "dst": "나한테도 뭘 쓰는지 안 알려 줘.",
    "role": "desc",
@@ -216,7 +584,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#021": {
+  "Memory Paranoia#056": {
    "src": "I'll bet he's writing insults about us. He can't be as nice as he appears.",
    "dst": "분명 우리 험담을 쓰고 있을 거예요. 보이는 것만큼 착할 리가 없어요.",
    "role": "desc",
@@ -226,7 +594,7 @@
    "speaker": "Maid",
    "source": "wiki"
   },
-  "Memory Paranoia#022": {
+  "Memory Paranoia#057": {
    "src": "I accidentally dropped my Library Key down the drain, do you think my dad will be angry?",
    "dst": "실수로 Library Key를 배수구에 떨어뜨렸어. 아빠가 화내실까?",
    "role": "desc",
@@ -236,7 +604,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#023": {
+  "Memory Paranoia#058": {
    "src": "No, Mister Caritat is very forgiving. I doubt he'd be upset, especially if it was an accident.",
    "dst": "아니요, Caritat 나리는 무척 너그러우세요. 실수였다면 더더욱 화내지 않으실 거예요.",
    "role": "desc",
@@ -246,7 +614,7 @@
    "speaker": "Maid",
    "source": "wiki"
   },
-  "Memory Paranoia#024": {
+  "Memory Paranoia#059": {
    "src": "I still want to find the key though, do you know where I should look?",
    "dst": "그래도 열쇠를 찾고 싶어. 어디를 찾아봐야 할까?",
    "role": "desc",
@@ -256,7 +624,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#025": {
+  "Memory Paranoia#060": {
    "src": "Well, the drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, that's most likely where it is.",
    "dst": "음, 지금쯤이면 배수관을 타고 저택 동남쪽 구석의 지하실까지 흘러갔을 거예요. 아마 거기 있을 겁니다.",
    "role": "desc",
@@ -266,7 +634,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#026": {
+  "Memory Paranoia#061": {
    "src": "Enter the basement and recover the Library Key.",
    "dst": "지하실에 들어가 Library Key를 되찾으세요.",
    "role": "desc",
@@ -276,7 +644,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#027": {
+  "Memory Paranoia#062": {
    "src": "Enter the library of {p}.",
    "dst": "{p}의 서재에 들어가세요.",
    "role": "desc",
@@ -286,7 +654,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#028": {
+  "Memory Paranoia#063": {
    "src": "Enter the hole in the wall.",
    "dst": "벽에 난 구멍으로 들어가세요.",
    "role": "desc",
@@ -296,7 +664,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#029": {
+  "Memory Paranoia#064": {
    "src": "Timmy, is something bothering you? You have been acting so weird lately.",
    "dst": "Timmy, 무슨 고민 있니? 요즘 행동이 너무 이상하구나.",
    "role": "desc",
@@ -306,7 +674,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#030": {
+  "Memory Paranoia#065": {
    "src": "You cannot command me, mortal! You and all of your inferior species will bow to the darkness!",
    "dst": "내게 명령할 수 없다, 필멸자여! 너와 너의 열등한 종족은 모두 어둠 앞에 무릎 꿇으리라!",
    "role": "desc",
@@ -316,7 +684,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#031": {
+  "Memory Paranoia#066": {
    "src": "I don't know what game you are playing, Timmy. But I will not stand for it any longer, snap out of it!",
    "dst": "무슨 장난인지 모르겠구나, Timmy. 하지만 더는 못 참는다, 정신 차려라!",
    "role": "desc",
@@ -326,7 +694,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#032": {
+  "Memory Paranoia#067": {
    "src": "You shall pay for your insolence, mortal!",
    "dst": "무례의 대가를 치르리라, 필멸자여!",
    "role": "desc",
@@ -336,7 +704,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#033": {
+  "Memory Paranoia#068": {
    "src": "Dark magic? What foul books have you been reading? And what's that in your hand?",
    "dst": "어둠의 마법? 대체 무슨 불경한 책을 읽은 거냐? 그리고 손에 든 건 뭐지?",
    "role": "desc",
@@ -346,7 +714,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#034": {
+  "Memory Paranoia#069": {
    "src": "Casting spells with a black spoon? I'm going to get rid of this foul thing!",
    "dst": "검은 숟가락으로 주문을 건다고? 이 불경한 물건은 치워 버려야겠다!",
    "role": "desc",
@@ -356,7 +724,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#035": {
+  "Memory Paranoia#070": {
    "src": "That is an item beyond you, mortal. Give it back to me this instant!",
    "dst": "그건 네가 감당할 수 없는 물건이다, 필멸자여. 당장 돌려내라!",
    "role": "desc",
@@ -366,7 +734,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#036": {
+  "Memory Paranoia#071": {
    "src": "Return the spoon to the Kitchen.",
    "dst": "숟가락을 주방에 돌려놓으세요.",
    "role": "desc",
@@ -376,7 +744,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#037": {
+  "Memory Paranoia#072": {
    "src": "Listen to Mr. Caritat's announcement.",
    "dst": "Caritat 씨의 발표를 들으세요.",
    "role": "desc",
@@ -386,7 +754,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#038": {
+  "Memory Paranoia#073": {
    "src": "Attention, attention everyone! I have an announcement I'd like to make!",
    "dst": "주목, 모두 주목해 주세요! 발표할 것이 있습니다!",
    "role": "desc",
@@ -396,7 +764,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#039": {
+  "Memory Paranoia#074": {
    "src": "My son, Timothy, has just turned eighteen today.",
    "dst": "제 아들 Timothy가 오늘 열여덟 살이 되었습니다.",
    "role": "desc",
@@ -406,7 +774,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#040": {
+  "Memory Paranoia#075": {
    "src": "Now, there have been a few slight hiccups over the years, but we've made it through mostly in one piece.",
    "dst": "그간 자잘한 문제가 몇 번 있었지만, 대체로 무사히 이겨 냈습니다.",
    "role": "desc",
@@ -416,7 +784,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#041": {
+  "Memory Paranoia#076": {
    "src": "And I'd like to say, I'm very proud of him. To Timothy, a new man!",
    "dst": "아들이 무척 자랑스럽습니다. 어른이 된 Timothy를 위하여!",
    "role": "desc",
@@ -426,7 +794,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#042": {
+  "Memory Paranoia#077": {
    "src": "Thank you very much, Dad, and everyone here. Here's to more years of health-",
    "dst": "정말 고마워요, 아빠, 그리고 여러분. 앞으로도 건강한 날들을 위하여-",
    "role": "desc",
@@ -436,7 +804,7 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#043": {
+  "Memory Paranoia#078": {
    "src": "Please, everyone stay calm. I'm sure it's just the cooks spilling something...",
    "dst": "모두 진정해 주세요. 분명 요리사들이 뭘 쏟았을 뿐일 겁니다...",
    "role": "desc",
@@ -446,7 +814,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#044": {
+  "Memory Paranoia#079": {
    "src": "Enter the Kitchen.",
    "dst": "주방에 들어가세요.",
    "role": "desc",
@@ -456,7 +824,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#045": {
+  "Memory Paranoia#080": {
    "src": "Oh my god... what is that thing?!",
    "dst": "세상에... 저게 뭐야?!",
    "role": "desc",
@@ -466,7 +834,7 @@
    "speaker": "Baker",
    "source": "wiki"
   },
-  "Memory Paranoia#046": {
+  "Memory Paranoia#081": {
    "src": "Everyone out, now! We can't fight these things!",
    "dst": "다들 당장 나가! 우린 저것들이랑 못 싸워!",
    "role": "desc",
@@ -476,7 +844,7 @@
    "speaker": "Chef",
    "source": "wiki"
   },
-  "Memory Paranoia#047": {
+  "Memory Paranoia#082": {
    "src": "Exit the Kitchen.",
    "dst": "주방에서 나가세요.",
    "role": "desc",
@@ -486,7 +854,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#048": {
+  "Memory Paranoia#083": {
    "src": "Speak to people who haven't fled from the disaster.",
    "dst": "재앙에서 도망치지 않은 사람들과 이야기하세요.",
    "role": "desc",
@@ -496,7 +864,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#049": {
+  "Memory Paranoia#084": {
    "src": "My god...what is wrong with this place? No matter what I do, what I try...",
    "dst": "맙소사... 이곳은 대체 뭐가 잘못된 거지? 무엇을 해도, 무엇을 시도해도...",
    "role": "desc",
@@ -506,7 +874,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#050": {
+  "Memory Paranoia#085": {
    "src": "How was any of that even possible? What are we going to tell their families?",
    "dst": "어떻게 그런 일이 가능했죠? 그 사람들 가족에게 뭐라고 말하죠?",
    "role": "desc",
@@ -516,7 +884,7 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#051": {
+  "Memory Paranoia#086": {
    "src": "...Timothy, I'm going to ask you something, and I need you to answer me honestly. Were you...were you responsible for this?",
    "dst": "...Timothy, 하나 물어볼 테니 솔직하게 대답해라. 네가... 네가 이 일을 벌인 거냐?",
    "role": "desc",
@@ -526,7 +894,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#052": {
+  "Memory Paranoia#087": {
    "src": "No, of course not! I overcame that years ago, you know that, I can't believe you still suspect me of-",
    "dst": "아뇨, 당연히 아니죠! 그건 몇 년 전에 극복했어요, 아시잖아요. 아직도 절 의심하시다니-",
    "role": "desc",
@@ -536,7 +904,7 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#053": {
+  "Memory Paranoia#088": {
    "src": "Ah, sir, we did find something rather unusual in the kitchen that might interest you? Maybe?",
    "dst": "아, 나리, 주방에서 꽤 특이한 걸 발견했는데 관심 있으실지도요? 아마도요?",
    "role": "desc",
@@ -546,7 +914,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#054": {
+  "Memory Paranoia#089": {
    "src": "What- Out with it! What did you find?! Please, please tell me I'm wrong!!",
    "dst": "뭐- 어서 말해! 뭘 찾았지?! 제발, 제발 내가 틀렸다고 해 줘!!",
    "role": "desc",
@@ -556,7 +924,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#055": {
+  "Memory Paranoia#090": {
    "src": "We found this charred-looking black spoon. I've worked here for years, and I've never seen any spoons of this style in the mansion.",
    "dst": "이 그을린 듯한 검은 숟가락을 찾았습니다. 여기서 수년간 일했지만 저택에서 이런 모양의 숟가락은 본 적이 없어요.",
    "role": "desc",
@@ -566,7 +934,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#056": {
+  "Memory Paranoia#091": {
    "src": "Wait, that spoon? I remember sneaking into your study that one time to get it, but how did it survive the fire?",
    "dst": "잠깐, 그 숟가락요? 예전에 서재에 몰래 들어가서 가져왔던 건데, 그게 어떻게 불에 안 탔지?",
    "role": "desc",
@@ -576,7 +944,7 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#057": {
+  "Memory Paranoia#092": {
    "src": "Wait, you got it from my STUDY?! You...you idiot! Do you have any idea what you stupidly, yet inadvertently have done?! You must NEVER go in my study!!",
    "dst": "잠깐, 그걸 내 서재에서 가져왔다고?! 너... 이 멍청한 녀석! 멍청하게, 그것도 모르고 무슨 짓을 한 줄 알아?! 절대 내 서재에 들어가지 마라!!",
    "role": "desc",
@@ -586,7 +954,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#058": {
+  "Memory Paranoia#093": {
    "src": "Unlock the Study.",
    "dst": "서재의 잠금을 푸세요.",
    "role": "desc",
@@ -596,7 +964,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#059": {
+  "Memory Paranoia#094": {
    "src": "Enter the Study",
    "dst": "서재에 들어가세요",
    "role": "desc",
@@ -606,7 +974,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#060": {
+  "Memory Paranoia#095": {
    "src": "Leave the Study.",
    "dst": "서재에서 나가세요.",
    "role": "desc",
@@ -616,7 +984,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#061": {
+  "Memory Paranoia#096": {
    "src": "Speak with the Possessed Mr. Caritat.",
    "dst": "빙의된 Caritat 씨와 이야기하세요.",
    "role": "desc",
@@ -626,7 +994,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#062": {
+  "Memory Paranoia#097": {
    "src": "IT WHICH STARTED THE WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
    "dst": "전쟁을 일으킨 그것이 다시 일어나리라. 그림자와 기만과 고통의 영역으로부터.",
    "role": "desc",
@@ -636,7 +1004,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#063": {
+  "Memory Paranoia#098": {
    "src": "FOREVER TRAPPED, FROM WHENCE IT CAME. THROUGH THE WEAK POINT BETWEEN REALMS IT. WILL. RISE. AGAIN!",
    "dst": "그것이 온 곳에 영원히 갇혀 있었으나. 영역 사이의 약한 틈을 지나 그것은. 다시. 일어나리라!",
    "role": "desc",
@@ -646,7 +1014,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#064": {
+  "Memory Paranoia#099": {
    "src": "Leave the Study.",
    "dst": "서재에서 나가세요.",
    "role": "desc",
@@ -656,7 +1024,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#065": {
+  "Memory Paranoia#100": {
    "src": "Bring the key to Timmy's bedroom.",
    "dst": "열쇠를 Timmy의 침실로 가져가세요.",
    "role": "desc",
@@ -666,7 +1034,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#066": {
+  "Memory Paranoia#101": {
    "src": "Enter Timmy’s bedroom.",
    "dst": "Timmy의 침실에 들어가세요.",
    "role": "desc",
@@ -676,7 +1044,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#067": {
+  "Memory Paranoia#102": {
    "src": "Search Timmy's bedroom.",
    "dst": "Timmy의 침실을 수색하세요.",
    "role": "desc",
@@ -686,7 +1054,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#068": {
+  "Memory Paranoia#103": {
    "src": "Bring the key to the Master Bedroom.",
    "dst": "열쇠를 안방으로 가져가세요.",
    "role": "desc",
@@ -696,7 +1064,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#069": {
+  "Memory Paranoia#104": {
    "src": "Enter the Master Bedroom.",
    "dst": "안방에 들어가세요.",
    "role": "desc",
@@ -706,7 +1074,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#070": {
+  "Memory Paranoia#105": {
    "src": "Harold, please...",
    "dst": "Harold, 제발...",
    "role": "desc",
@@ -716,7 +1084,7 @@
    "speaker": "Mrs. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#071": {
+  "Memory Paranoia#106": {
    "src": "Stop this madness...",
    "dst": "이 광기를 멈춰요...",
    "role": "desc",
@@ -726,7 +1094,7 @@
    "speaker": "Mrs. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#072": {
+  "Memory Paranoia#107": {
    "src": "Harold...?",
    "dst": "Harold...?",
    "role": "desc",
@@ -736,7 +1104,7 @@
    "speaker": "Mrs. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#073": {
+  "Memory Paranoia#108": {
    "src": "FROM THE SOILS OF DOOM THE SERVANT LAID",
    "dst": "하인이 깔아 둔 파멸의 흙으로부터",
    "role": "desc",
@@ -746,7 +1114,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#074": {
+  "Memory Paranoia#109": {
    "src": "BREAK THROUGH THE REALMS TO THE LAND OF TRADE.",
    "dst": "영역을 뚫고 교역의 땅으로.",
    "role": "desc",
@@ -756,7 +1124,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#075": {
+  "Memory Paranoia#110": {
    "src": "CORRUPT THE WORLD WITH SEEDS OF PAIN",
    "dst": "고통의 씨앗으로 세상을 타락시켜라",
    "role": "desc",
@@ -766,7 +1134,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#076": {
+  "Memory Paranoia#111": {
    "src": "SO THAT HE...",
    "dst": "그리하여 그가...",
    "role": "desc",
@@ -776,7 +1144,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#077": {
+  "Memory Paranoia#112": {
    "src": "...MAY RISE AGAIN!",
    "dst": "...다시 일어나도록!",
    "role": "desc",
@@ -786,7 +1154,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#078": {
+  "Memory Paranoia#113": {
    "src": "Escape the flaming mansion through the back door.",
    "dst": "뒷문으로 불타는 저택을 탈출하세요.",
    "role": "desc",
@@ -796,7 +1164,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#079": {
+  "Memory Paranoia#114": {
    "src": "Navigate the Caritat's basement.",
    "dst": "Caritat 가문의 지하실을 지나가세요.",
    "role": "desc",
@@ -806,7 +1174,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#080": {
+  "Memory Paranoia#115": {
    "src": "Escape through the mysterious rift.",
    "dst": "수상한 틈새로 탈출하세요.",
    "role": "desc",
@@ -816,7 +1184,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#081": {
+  "Memory Paranoia#116": {
    "src": "No, no! I said three feet left, you absolute...",
    "dst": "아니, 아니! 왼쪽으로 3피트라고 했잖아, 이 완전...",
    "role": "desc",
@@ -826,7 +1194,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#082": {
+  "Memory Paranoia#117": {
    "src": "Mr. Caritat! What are you doing?!",
    "dst": "Caritat 씨! 뭐 하시는 거예요?!",
    "role": "desc",
@@ -836,7 +1204,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#083": {
+  "Memory Paranoia#118": {
    "src": "What are you doing here, Elf? You need proper equipment to be on this site-",
    "dst": "여기서 뭐 하나, 엘프? 이 현장에 들어오려면 제대로 된 장비가 필요해-",
    "role": "desc",
@@ -846,7 +1214,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#084": {
+  "Memory Paranoia#119": {
    "src": "Mr Caritat, you can't build a house here!",
    "dst": "Caritat 씨, 여기에 집을 지으면 안 돼요!",
    "role": "desc",
@@ -856,7 +1224,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#085": {
+  "Memory Paranoia#120": {
    "src": "I can do whatever I like here, I bought the land.",
    "dst": "여긴 내 마음대로 할 수 있어, 내가 산 땅이니까.",
    "role": "desc",
@@ -866,7 +1234,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#086": {
+  "Memory Paranoia#121": {
    "src": "You don't understand! This is where it came... this is where the darkness invaded!",
    "dst": "이해 못 하시는군요! 여기가 그게 온 곳... 어둠이 침입한 곳이라고요!",
    "role": "desc",
@@ -876,7 +1244,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#087": {
+  "Memory Paranoia#122": {
    "src": "Don't be preposterous. I'm building here to show the people that there's simply nothing to worry about!",
    "dst": "터무니없는 소리. 걱정할 건 전혀 없다는 걸 사람들에게 보여 주려고 여기 짓는 거야!",
    "role": "desc",
@@ -886,7 +1254,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#088": {
+  "Memory Paranoia#123": {
    "src": "Besides, even if there was something, now that Dullahan's gone, it'll go too.",
    "dst": "게다가 뭔가 있었다 해도, Dullahan이 사라졌으니 그것도 사라질 거야.",
    "role": "desc",
@@ -896,7 +1264,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#089": {
+  "Memory Paranoia#124": {
    "src": "What?! He wasn't the one causing all this, it was-",
    "dst": "뭐라고요?! 이 모든 걸 일으킨 건 그가 아니라-",
    "role": "desc",
@@ -906,7 +1274,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#090": {
+  "Memory Paranoia#125": {
    "src": "Well of course you would think that. You and him had some... history, didn't you?",
    "dst": "자네야 당연히 그렇게 생각하겠지. 자네와 그자는... 사연이 좀 있었잖나?",
    "role": "desc",
@@ -916,7 +1284,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#091": {
+  "Memory Paranoia#126": {
    "src": "I... Please, Mr Caritat. You don't understand what you're doing...",
    "dst": "저는... 제발요, Caritat 씨. 무슨 짓을 하시는지 모르세요...",
    "role": "desc",
@@ -926,7 +1294,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#092": {
+  "Memory Paranoia#127": {
    "src": "I am securing some prime real-estate right here. Oh... Perhaps that is why you're here?",
    "dst": "나는 여기 최고급 부동산을 확보하는 중이야. 오... 혹시 그래서 온 건가?",
    "role": "desc",
@@ -936,7 +1304,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#093": {
+  "Memory Paranoia#128": {
    "src": "What? No, I-",
    "dst": "네? 아뇨, 저는-",
    "role": "desc",
@@ -946,7 +1314,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#094": {
+  "Memory Paranoia#129": {
    "src": "Trying to expand elven territories, are you?! Well, I'll be having none of that! Leave, before I have my men escort you!",
    "dst": "엘프 영토를 넓히려는 거로군?! 어림없지! 내 부하들이 끌어내기 전에 나가!",
    "role": "desc",
@@ -956,7 +1324,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#095": {
+  "Memory Paranoia#130": {
    "src": "Hey! Human! Are you alright?! Please, calm down, quit flailing around, you're safe!",
    "dst": "이봐요! 인간! 괜찮습니까?! 제발 진정하세요, 그만 버둥거리세요, 이제 안전합니다!",
    "role": "desc",
@@ -966,7 +1334,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#096": {
+  "Memory Paranoia#131": {
    "src": "Speak to Atisun.",
    "dst": "Atisun에게 말을 거세요.",
    "role": "desc",
@@ -976,7 +1344,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#097": {
+  "Memory Paranoia#132": {
    "src": "Oh thank goodness, you're back to us. I was so worried... er, you might not recall. Let me explain...",
    "dst": "오, 다행이다, 정신이 돌아왔군요. 정말 걱정했습니다... 어, 기억 안 나실 수도 있겠네요. 설명드리죠...",
    "role": "desc",
@@ -986,7 +1354,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#098": {
+  "Memory Paranoia#133": {
    "src": "It... it seemed like you were possessed. You stood in the hall for... I don't know how long. I couldn't snap you out of it, no matter what I tried.",
    "dst": "마치... 빙의된 것 같았습니다. 홀에 서서... 얼마나 오래였는지 모르겠어요. 무슨 짓을 해도 깨울 수가 없었습니다.",
    "role": "desc",
@@ -996,7 +1364,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#099": {
+  "Memory Paranoia#134": {
    "src": "Voices that weren't yours, you spoke out their moments and thoughts. The maids, my father... everyone. I... you said what I needed to hear.",
    "dst": "당신 것이 아닌 목소리로 그들의 순간과 생각을 말했어요. 하녀들, 제 아버지... 모두요. 저는... 제가 들어야 할 말을 해 주셨습니다.",
    "role": "desc",
@@ -1006,7 +1374,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#100": {
+  "Memory Paranoia#135": {
    "src": "My great grandfather, wanting to prove to everyone that the forest was still good, built his mansion atop the very spot that was acclaimed to be the cause of the Decay.",
    "dst": "제 증조할아버지는 숲이 아직 괜찮다는 걸 모두에게 증명하려고, 쇠락의 원인이라 지목된 바로 그 자리에 저택을 지으셨습니다.",
    "role": "desc",
@@ -1016,7 +1384,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#101": {
+  "Memory Paranoia#136": {
    "src": "My father tried to continue the traditions... but all of it was burned to ashes. I must consider myself lucky that I did not fall with them.",
    "dst": "아버지는 전통을 이으려 했지만... 모두 잿더미가 됐죠. 그들과 함께 쓰러지지 않은 걸 다행으로 여겨야겠지요.",
    "role": "desc",
@@ -1026,7 +1394,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#102": {
+  "Memory Paranoia#137": {
    "src": "And what emerged from that spot? Who knows... but, whatever it was... the darkness must have lingered, and drove them all to madness.",
    "dst": "그럼 그 자리에서 나온 건 무엇이었을까요? 누가 알겠습니까... 하지만 그게 무엇이든... 어둠이 남아 모두를 광기로 몰았을 겁니다.",
    "role": "desc",
@@ -1036,7 +1404,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#103": {
+  "Memory Paranoia#138": {
    "src": "I'm sorry you went through that ordeal... I would suggest seeing a healer as soon as possible.",
    "dst": "그런 고초를 겪게 해서 죄송합니다... 되도록 빨리 치유사를 찾아가 보세요.",
    "role": "desc",
@@ -1046,7 +1414,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#104": {
+  "Memory Paranoia#139": {
    "src": "I will make sure no one enters this house again. It is cursed. Thank you for helping me.",
    "dst": "다시는 아무도 이 집에 들어오지 못하게 하겠습니다. 저주받은 곳이에요. 도와주셔서 감사합니다.",
    "role": "desc",
