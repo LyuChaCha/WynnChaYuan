@@ -46,7 +46,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 95.1%（51,730 / 54,410）
+## `zh_cn` 简体中文 — 95.3%（51,832 / 54,410）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -56,7 +56,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `npc.json` | ██████████ 96% | 6,042 / 6,293 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,110 / 1,110 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 100% | 454 / 454 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | █████████░ 87% | 659 / 761 | 任務介面<br>The quest interface |
+| `quest.json` | ██████████ 98% | 749 / 761 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,573 / 1,573 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -81,7 +81,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 152 / 152 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
-| `dialogue-choice.json` | ████░░░░░░ 40% | 8 / 20 | 對話選項的介面<br>The dialogue choice interface |
+| `dialogue-choice.json` | ██████████ 100% | 20 / 20 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 38 / 38 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 990 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
