@@ -45,6 +45,7 @@ public final class LayoutDebug {
     public static void init(Path path) {
         file = path;
         flowedSeen = 0;
+        drawnWritten = 0;
         written = 0;
         failures = 0;
         seen.clear();
@@ -121,6 +122,99 @@ public final class LayoutDebug {
         } catch (Throwable t) {
             failures++;
         }
+    }
+
+    /** 左緣對照最多記幾份。 */
+    private static final int DRAWN_LIMIT = 20;
+
+    private static int drawnWritten = 0;
+
+    /**
+     * 一份 tooltip 畫出去之前，每一行的<b>左緣</b>有沒有跟原文對上。
+     *
+     * <h2>為什麼需要這個</h2>
+     * 實機回報素材的需求列「防禦需求」比「耐久度」往右縮了十幾像素，而照
+     * {@code layout-debug} 重建出來的那一份，四列標籤全部落在 0——
+     * 我們這條路算出來是對的，那十幾像素是後面某一步加上去的。
+     * 「翻完」與「撐寬後」各記一次，就知道是哪一步。
+     *
+     * <p>只記<b>有行對不上</b>的那幾份：全部對得上的沒什麼好看，
+     * 記下來只會把檔案塞滿、把真正有問題的那份擠掉。
+     *
+     * @param stage 這是哪一步之後量的
+     */
+    public static void drawn(String stage, List<Component> original, List<Component> made,
+                             java.util.function.ToIntFunction<Component> width) {
+        if (file == null || original == null || made == null || width == null
+                || drawnWritten >= DRAWN_LIMIT) {
+            return;
+        }
+        try {
+            String text = compareLeads(stage, original, made, width);
+            if (text == null) {
+                return;
+            }
+            drawnWritten++;
+            Files.writeString(file, text, StandardCharsets.UTF_8,
+                    java.nio.file.StandardOpenOption.CREATE,
+                    java.nio.file.StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            failures++;                        // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    /** @return 有行對不上時的報告；全部對得上回傳 {@code null} */
+    private static String compareLeads(String stage, List<Component> original,
+                                       List<Component> made,
+                                       java.util.function.ToIntFunction<Component> width) {
+        StringBuilder sb = new StringBuilder();
+        boolean any = false;
+        int n = Math.min(original.size(), made.size());
+        for (int i = 0; i < n; i++) {
+            int a = leadOf(original.get(i), width);
+            int b = leadOf(made.get(i), width);
+            if (a == Integer.MIN_VALUE || b == Integer.MIN_VALUE || a == b) {
+                continue;
+            }
+            any = true;
+            sb.append(String.format("  [%2d] 原文左緣 %4d  譯文左緣 %4d  差 %+d  %s%n",
+                    i, a, b, b - a, oneLine(made.get(i).getString())));
+        }
+        if (!any) {
+            return null;
+        }
+        return "=== 左緣對照（" + stage + "）· " + oneLine(original.get(0).getString())
+                + "\u3000原文 " + original.size() + " 行、譯文 " + made.size() + " 行 ==="
+                + System.lineSeparator() + sb + System.lineSeparator();
+    }
+
+    /**
+     * 第一個實字畫在第幾個像素。
+     *
+     * <p>偏移字元與圖示都只佔寬度、不算「字」——欄位對齊就是靠它們排出來的，
+     * 把圖示當成字的話每一行的左緣都會量成 0，什麼都看不出來。
+     *
+     * @return 整行都沒有字時回傳 {@link Integer#MIN_VALUE}
+     */
+    private static int leadOf(Component line,
+                              java.util.function.ToIntFunction<Component> width) {
+        int[] x = {0};
+        int[] found = {Integer.MIN_VALUE};
+        line.visit((style, text) -> {
+            if (found[0] != Integer.MIN_VALUE) {
+                return java.util.Optional.empty();
+            }
+            boolean glyphOnly = !text.isBlank() && text.codePoints().allMatch(
+                    cp -> com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp));
+            if (text.isBlank() || glyphOnly) {
+                x[0] += width.applyAsInt(
+                        net.minecraft.network.chat.Component.literal(text).setStyle(style));
+                return java.util.Optional.empty();
+            }
+            found[0] = x[0];
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return found[0];
     }
 
     /** 診斷失敗過幾次。寫在檔頭，才知道「內容很少」是不是因為一直寫失敗。 */
