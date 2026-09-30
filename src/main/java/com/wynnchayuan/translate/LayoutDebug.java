@@ -46,6 +46,7 @@ public final class LayoutDebug {
         file = path;
         flowedSeen = 0;
         drawnWritten = 0;
+        drawnSeen.clear();
         written = 0;
         failures = 0;
         seen.clear();
@@ -124,10 +125,15 @@ public final class LayoutDebug {
         }
     }
 
-    /** 左緣對照最多記幾份。 */
+    /** 左緣對照最多記幾份<b>有問題的</b>。 */
     private static final int DRAWN_LIMIT = 20;
 
+    /** 足跡最多記幾行。足跡是一份一行，不會像詳細那樣長。 */
+    private static final int DRAWN_SEEN_LIMIT = 80;
+
     private static int drawnWritten = 0;
+
+    private static final Set<String> drawnSeen = new HashSet<>();
 
     /**
      * 一份 tooltip 畫出去之前，每一行的<b>左緣</b>有沒有跟原文對上。
@@ -146,12 +152,29 @@ public final class LayoutDebug {
     public static void drawn(String stage, List<Component> original, List<Component> made,
                              java.util.function.ToIntFunction<Component> width) {
         if (file == null || original == null || made == null || width == null
-                || drawnWritten >= DRAWN_LIMIT) {
+                || original.isEmpty()) {
             return;
         }
         try {
+            // 對得上的也要留一行足跡。沒有足跡的話「量過、每一行都對」與
+            // 「根本沒量到」在檔案裡長得一模一樣——而這兩件事的下一步完全相反。
+            // 見 [[wynnchayuan-palette-log-on-success]]。
+            String key = stage + "/" + original.get(0).getString() + "/" + original.size();
+            boolean fresh = drawnSeen.size() < DRAWN_SEEN_LIMIT && drawnSeen.add(key);
             String text = compareLeads(stage, original, made, width);
             if (text == null) {
+                if (fresh) {
+                    Files.writeString(file,
+                            "· 左緣對照（" + stage + "）" + oneLine(original.get(0).getString())
+                            + "：" + Math.min(original.size(), made.size())
+                            + " 行都跟原文對得上" + System.lineSeparator(),
+                            StandardCharsets.UTF_8,
+                            java.nio.file.StandardOpenOption.CREATE,
+                            java.nio.file.StandardOpenOption.APPEND);
+                }
+                return;
+            }
+            if (drawnWritten >= DRAWN_LIMIT) {
                 return;
             }
             drawnWritten++;
