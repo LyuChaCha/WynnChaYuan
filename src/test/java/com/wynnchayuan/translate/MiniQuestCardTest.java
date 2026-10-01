@@ -62,6 +62,12 @@ public final class MiniQuestCardTest {
     }
 
     private static void run(TranslationStore store) {
+        carp(store);
+        oakLogs(store);
+    }
+
+    /** 採集鯉魚 II：說明折成三列，每一列開頭都是說明本文。 */
+    private static void carp(TranslationStore store) {
         List<Component> lines = new ArrayList<>();
         lines.add(Component.literal("Gather Carp II ").withStyle(of(0xB38FAD))
                 .append(Component.literal("[Mini-Quest]").withStyle(of(GREY))));
@@ -70,39 +76,56 @@ public final class MiniQuestCardTest {
         lines.add(row("Bring ", GREY, "[30 Carp Oil]", AQUA, " or ", GREY, "[30 Carp", AQUA));
         lines.add(row("Meat]", AQUA, " to the Gathering Post at", GREY));
         lines.add(row("[1094, 43, -1356]", WHITE));
-
-        List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(lines, store);
-        System.out.println("== 採集鯉魚 II（原文 " + lines.size() + " 行，譯文 " + out.size() + " 行）");
-        for (Component line : out) {
-            System.out.println("  " + describe(line));
-        }
-
-        // 說明段是輸出的最後三列（前面是標題、狀態、分隔）。
-        List<Component> body = out.subList(Math.max(0, out.size() - 3), out.size());
-        for (Component line : body) {
-            Integer lead = leadColour(line);
-            check("★「" + plain(line) + "」開頭是灰的（實際 "
-                          + (lead == null ? "空的" : String.format("#%06X", lead)) + "）",
-                  lead != null && lead == GREY);
-        }
+        check3("採集鯉魚 II", store, lines);
     }
 
     /**
-     * 這一列<b>開頭</b>那段字的顏色。
+     * 採集橡木原木：折行的位置不一樣，<b>第一列只剩說明本文、一個方括號都沒有</b>。
      *
-     * <p>使用者回報的是「第一排的顏色不對」——折行之後每一列的開頭都是說明本文，
-     * 底色該是灰的。方括號裡的道具與座標有自己的顏色，不看。
+     * <h2>實機回報</h2>
+     * 「到採集站繳交」那一列是青色的，應該跟後面兩列一樣是灰的。鯉魚那張卡
+     * 第一列折進了「[30 鯉魚油]」所以看不出來——同一段文字，只因為折在別的地方
+     * 就變色，那是色段貼回去的時候錯位了。
      */
-    private static Integer leadColour(Component line) {
+    private static void oakLogs(TranslationStore store) {
+        List<Component> lines = new ArrayList<>();
+        lines.add(Component.literal("Gather Oak Logs ").withStyle(of(0xB38FAD))
+                .append(Component.literal("[Mini-Quest]").withStyle(of(GREY))));
+        lines.add(Component.literal("Currently in progress").withStyle(of(0x55FF55)));
+        lines.add(Component.literal(" ").withStyle(of(GREY)));
+        lines.add(row("Bring ", GREY, "[12 Oak Wood]", AQUA, " or ", GREY, "[12 Oak", AQUA));
+        lines.add(row("Paper]", AQUA, " to the Gathering Post at", GREY));
+        lines.add(row("[-169, 71, -1572]", WHITE));
+        check3("採集橡木原木", store, lines);
+    }
+
+    private static void check3(String what, TranslationStore store, List<Component> lines) {
+        List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(lines, store);
+        System.out.println("== " + what + "（原文 " + lines.size() + " 行，譯文 " + out.size() + " 行）");
+        for (Component line : out) {
+            System.out.println("  " + describe(line));
+        }
+        // 方括號裡的道具與座標有自己的顏色，說明本文該是灰的。折在哪裡都一樣。
+        for (String prose : new String[] {"到採集站繳交", "座標"}) {
+            Integer colour = colourOf(out, prose);
+            check("★ " + what + "「" + prose + "」是灰的（實際 "
+                          + (colour == null ? "找不到" : String.format("#%06X", colour)) + "）",
+                  colour != null && colour == GREY);
+        }
+    }
+
+    /** 含有這段文字的那個片段是什麼顏色。 */
+    private static Integer colourOf(List<Component> lines, String needle) {
         Integer[] found = {null};
-        line.visit((style, text) -> {
-            if (found[0] != null || text.isBlank()) {
+        for (Component line : lines) {
+            line.visit((style, text) -> {
+                if (found[0] == null && text.contains(needle)) {
+                    TextColor colour = style.getColor();
+                    found[0] = colour == null ? -1 : (colour.getValue() & 0xFFFFFF);
+                }
                 return java.util.Optional.empty();
-            }
-            TextColor colour = style.getColor();
-            found[0] = colour == null ? -1 : (colour.getValue() & 0xFFFFFF);
-            return java.util.Optional.empty();
-        }, Style.EMPTY);
+            }, Style.EMPTY);
+        }
         return found[0];
     }
 
