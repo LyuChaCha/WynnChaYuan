@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Envoy Part II",
-  "count": 117,
-  "translated": 117,
+  "count": 121,
+  "translated": 121,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -418,7 +418,7 @@
   },
   "The Envoy Part II#042": {
    "src": "To get in we need two keys. One from the Avos and one from Corkians.",
-   "dst": "入るには鍵が二つ要る。Avos のと Corkus 人のだ。",
+   "dst": "入るには鍵が二つ要る。AvosとCorkusの人たちが持ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -448,7 +448,7 @@
   },
   "The Envoy Part II#045": {
    "src": "The corkians won't give up their key very easily, so we should start with the Avos.",
-   "dst": "Corkus 人は簡単に鍵を渡さないから、まず Avos から当たろう。",
+   "dst": "Corkusの人たちは簡単に鍵を渡さないから、まず Avos から当たろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -798,7 +798,7 @@
   },
   "The Envoy Part II#080": {
    "src": "Excellent. I will hold onto that for now. Let's focus on getting the Corkian's Key.",
-   "dst": "すごい。それは僕が預かっておく。次は Corkus 人の鍵に集中しよう。",
+   "dst": "すごい。それは僕が預かっておく。次は Corkus人の鍵に集中しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -1175,6 +1175,46 @@
    "stage": "Stage 13",
    "speaker": "Maxie",
    "source": "wiki"
+  },
+  "The Envoy Part II#118": {
+   "src": "Enter Maxie's house at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]にあるMaxieの家の中に入る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#119": {
+   "src": "Mo'in, {u}! I've been researching everything I can about the factory.",
+   "dst": "Mo'in, {u}!工場について、できる限りのことを調べています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "Maxie",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#120": {
+   "src": "ARE YOU INCAPABLE OF READING THE SIGN ON THE DOOR? THE FACTORY IS CLOSED. WE ARE NOT ACCEPTING VISITORS FOR TOURS RIGHT NOW.",
+   "dst": "ドアに貼ってある看板が読めないのか?工場は閉まってる。現在、見学の受付は行っていない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#121": {
+   "src": "I have learned so much on our adventure. One day, if you ever need me, I will be there. You have an ally in this Corkian.",
+   "dst": "この冒険を通して、私は本当に多くのことを学びました。いつか、もしあなたが私を必要とする日が来たら、私は必ず駆けつけます。このCorkus人は、あなたの味方です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
