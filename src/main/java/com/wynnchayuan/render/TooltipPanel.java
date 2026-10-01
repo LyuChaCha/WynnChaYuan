@@ -434,9 +434,16 @@ public final class TooltipPanel {
         com.wynnchayuan.translate.NameWrap.Split split =
                 com.wynnchayuan.translate.NameWrap.split(
                         tooltip, out, centered, store, TooltipPanel::measure);
-        return com.wynnchayuan.translate.TooltipWiden.fit(
+        // 撐寬之前先量一次左緣。實機回報的「標籤被推歪」，照診斷檔重建出來卻是對的
+        // ——量完這兩次就知道是翻譯那一步加的，還是撐寬那一步加的。
+        com.wynnchayuan.translate.LayoutDebug.drawn(
+                "\u7ffb\u5b8c", tooltip, out, TooltipPanel::measure);
+        List<Component> fitted = com.wynnchayuan.translate.TooltipWiden.fit(
                 split.original(), split.translated(), split.centered(),
                 leftAligned, TooltipPanel::measure);
+        com.wynnchayuan.translate.LayoutDebug.drawn(
+                "\u6490\u5bec\u5f8c", split.original(), fitted, TooltipPanel::measure);
+        return fitted;
     }
 
     /** 量一行畫出來多寬。跟翻譯那邊走同一個入口，測試才量得到。 */
