@@ -1,12 +1,40 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.2.5",
+  "latest": "0.2.6",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
     "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
   },
   "notes": {
+    "0.2.6": {
+      "headline": "Wynntils content book cards keep their layout, and ingredient tooltips line up again",
+      "items": [
+        "Wynntils content book cards keep their layout: distance / length / difficulty, the reward list and the card status (Currently in progress, Can be started) are each on their own line again.",
+        "Mini-quest descriptions keep the grey the original uses on every line, wherever the text wraps.",
+        "Ingredient tooltips: stat labels start at the left edge again instead of drifting right.",
+        "Lootrun: the word \"Lootrun\" is one colour again - \"run\" no longer differs from \"Loot\".",
+        "Dialogue that does not fit the box moves to the small panel instead of falling back to English.",
+        "F6's Translation version row shows a date instead of a commit hash.",
+        "Tracker panel text is cached by content instead of being re-translated every frame.",
+        "Japanese: dialogue choices and a batch of quest dialogue are in.",
+        "Simplified Chinese: 395 more strings. Also 212 strings collected in-game, Lootrun boon and mission card descriptions across six languages, and The Canary Calls."
+      ],
+      "zh_tw": {
+        "headline": "Wynntils 內容書的卡片不再擠成一團，素材提示框的欄位也對回去了",
+        "items": [
+          "Wynntils 內容書的卡片不再擠成一團：距離／長度／難度、獎勵清單、以及卡片狀態（「進行中」「可以開始」）都回到各自一行。",
+          "迷你任務說明的每一列都照原文的灰色，不會再因為折行的位置不同就變色。",
+          "素材的提示框：屬性標籤回到左緣，不再往右縮一截。",
+          "Lootrun 的「Lootrun」整個字同一個顏色，「run」不再跟「Loot」分成兩色。",
+          "對話塞不進對話框時改用小框顯示，不會整句退回英文。",
+          "F6 的「譯文版本」顯示日期，不再是一串看不懂的編號。",
+          "追蹤欄的譯文改成按內容記住，不再每一幀重算。",
+          "日文：對話選項與一批任務對話補上。",
+          "簡體中文補了 395 條；另外收進玩家實機帶回來的 212 條、Lootrun 賜福與使命卡的整段敘述（六個語言），以及 The Canary Calls 的 131 條。"
+        ]
+      }
+    },
     "0.2.5": {
       "headline": "Follows your game language on a fresh install, and F6 tells you if your translations are current",
       "items": [
