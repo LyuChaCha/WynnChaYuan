@@ -165,7 +165,12 @@ SIGN_SHAPES = [
     # 自製物品的名字是遊戲產的，一定是 Title Case
     # （`Nimble Food of Quick Roasting [3/3]`）。開頭是小寫就是玩家改的
     # （`anni mr mana regen [1/3]`、`gxp cxp gathering combat xp [2/3]`）。
-    (r"\A(?:\{#\})*[a-z][^{}\[\]\n]*\[\{~\}/\{~\}\]", "改過名字的自製物品"),
+    #
+    # 「句號加空格」收尾的不是名字，是被折行切碎的句子碎片——討伐戰計分板
+    # 的目標列會碎成 `tower. [{~}/{~}]`、`area. [{~}/{~}]` 這種形狀，跟玩家
+    # 改的名字一字不差地撞上這條（2026-10-01 的收件匣實際踩到）。自製物品
+    # 的名字是專有名詞，永遠不會帶句號，所以拿它當分界。
+    (r"\A(?:\{#\})*[a-z][^{}\[\]\n]*(?<!\.) \[\{~\}/\{~\}\]", "改過名字的自製物品"),
     # 掛單卡上的自製裝備名。`[~數值]` 是自製品的擲骰標記，官方掉落品不會有；
     # 前面那五個圖示是名字列的排版。名字有兩種來源，兩種都不該收：遊戲按材料
     # 自動組出來的（`Menacing Blade of Rage`，組合是無限多的），以及掛單的人
@@ -363,6 +368,33 @@ def selftest() -> int:
             "Talk to Ormrod in the {p}",   # 完全沒有 {~}
     ):
         check(src, False)
+
+    # 「改過名字的自製物品」那一條：句號收尾的是折行碎片，不是名字
+    crafted = next(p for p, why in SIGN_SHAPES if why == "改過名字的自製物品")
+    crafted_re = re.compile(crafted)
+
+    def check_crafted(src: str, want: bool) -> None:
+        nonlocal bad
+        got = crafted_re.search(src) is not None
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ")
+              + ("該抓到" if want else "不該抓到") + "：" + src[:64]
+              + ("" if ok else "（實際%s抓到）" % ("" if got else "沒")))
+        bad += 0 if ok else 1
+
+    # 要抓到 —— 玩家改的小寫開頭名字
+    for src in (
+            "anni mr mana regen [{~}/{~}]",
+            "gxp cxp gathering combat xp [{~}/{~}]",
+    ):
+        check_crafted(src, True)
+
+    # 不該抓到 —— 討伐戰計分板目標的折行碎片（句號收尾）
+    for src in (
+            "tower. [{~}/{~}]",
+            "area. [{~}/{~}]",
+    ):
+        check_crafted(src, False)
 
     print("\n" + ("自我檢查全過。" if not bad else f"有 {bad} 項不對。"))
     return 1 if bad else 0
