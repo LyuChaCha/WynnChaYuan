@@ -6,7 +6,7 @@
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "Enter the Dojo#000": {
+    "Enter the Dojo#000": {
    "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
    "dst": "死霊術の流行は {~} AP、術の禁止をもって終わった。死者を冒涜し、魂の旅立ちを妨げる行為…",
    "role": "desc",
@@ -18,7 +18,7 @@
   },
   "Enter the Dojo#001": {
    "src": "It is best to not add too much to the tea, for too many conflicting tastes will leave it muddled and foul-tasting. Three ingredients is a fine benchmark.",
-   "dst": "茶には多くを入れすぎぬのが肝要。相反する味が多すぎれば、濁ってまずくなる。材料は三つが良い目安だ。",
+   "dst": "お茶にはあまり多くのものを加えないほうがよいでしょう。相反する味が多すぎると、味がごちゃごちゃして不味くなってしまいます。材料は3種類程度が目安です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -347,7 +347,7 @@
    "source": "wiki"
   },
   "Enter the Dojo#034": {
-   "src": "Nevertheless, you have completed the challenges of this humble Sensei, as such, I will provide you what was promised.",
+   "src": "Nevertheless, you have completed the challenges of this humble Sensei, and as such, I will provide you what was promised.",
    "dst": "ともあれ、この老師の試練を成し遂げた。約束の品を授けよう。",
    "role": "desc",
    "kind": "dialogue",
@@ -365,6 +365,846 @@
    "stage": "Stage 8",
    "speaker": "Sensei Miyagi",
    "source": "wiki"
+  },
+  "Enter the Dojo#036": {
+   "src": "I hear many things about human combat skill, so I believe I shall watch this challenge myself. Enter now, challenger!",
+   "dst": "人間の戦闘技術については様々な話を耳にするので、この挑戦を自分の目で確かめてみようと思う。さあ来い、挑戦者!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#037": {
+   "src": "Fight your way through the combat challenge",
+   "dst": "戦闘の試練を乗り越えよう",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#038": {
+   "src": "And I am to recognize your combat skill, and proclaim your passage of the fiata Room. Well done!",
+   "dst": "そして、私はお主の戦闘スキルを認め、fiata Roomを突破したことを宣言する。よくやった！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#039": {
+   "src": "In founding this dojo, I was inspired by many a tale. I was many a time scoffed at by others, for taking stock in the legends of old...",
+   "dst": "この道場を設立するにあたり、私は数々の物語からインスピレーションを得ました。古の伝説を信じているという理由で、何度も周囲から嘲笑されたこともありました……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#040": {
+   "src": "And yet the results speak for themselves. As of the time of writing this, being {~} AP, I am {~} years old.",
+   "dst": "とはいえ、結果はそれ自体が物語っています。この記事を書いている{~} AP時点で、私は{~}歳です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#041": {
+   "src": "Many forget the power one's body can rise to, thanks to the prevalence of magic practices. Although magical knowledge is itself important, and I am guilty of neglecting it myself.",
+   "dst": "魔法の実践が広く普及しているせいで、多くの人が、自分の体が発揮しうる力を忘れてしまっています。もちろん、魔法の知識そのものも重要ですが、私自身もそれを軽視してしまっている点では、同罪です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#042": {
+   "src": "But the tales and practices of ancient warriors and kings, such as Remikas, or even modern soldiers such as Tisaun Sodeta, have great value.",
+   "dst": "しかし、Remikasのような古代の戦士や王たちの物語や慣習、さらにはTisaun Sodetaのような現代の兵士たちのそれさえも、大きな価値を持っている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#043": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "ここではどのような物語が私に知恵と力、そして健康をもたらしたのかをお話して、その知識を親愛なる読者の皆様にお伝えしたいと思います。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#044": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "ここではどのような物語が私に知恵と力、そして健康をもたらしたのかをお話して、その知識を親愛なる読者の皆様にお伝えしたいと思います。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#045": {
+   "src": "...though this is a fascinating read, you're already going through a lot of what is described in the book, and it hasn't brought you tranquility.",
+   "dst": "…この本は実に興味深い読み物ですが、あなたはすでに本書で述べられているようなことを数多く経験しており、それによって心の安らぎを得られているわけではありません。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#046": {
+   "src": "Become at one with nature in the room and cavern",
+   "dst": "部屋や洞窟の中で、自然と一体になる",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#047": {
+   "src": "To meditate is to remove all distractions, and to peacefully introspect- to be at one with yourself and anchor yourself to the moment, or merely to relax.",
+   "dst": "瞑想とは、あらゆる雑念を取り除き、穏やかに内省すること――自分自身と一体となり、その瞬間に意識を集中させること、あるいは単にリラックスすることである。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#048": {
+   "src": "It is highly recommended for anyone experiencing stress or a clouded mind. Here will be detailed the basic steps for practicing meditation.",
+   "dst": "ストレスを感じている方や、心が乱れている方には、ぜひお勧めします。ここでは、瞑想を実践するための基本的な手順について詳しく説明します。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#049": {
+   "src": "First, find a quiet, comfortable place. Someplace that you feel safe in, and where you will not be interrupted by outside influences.",
+   "dst": "まず、静かで居心地の良い場所を見つけましょう。安心感があり、外部からの邪魔が入らない場所です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#050": {
+   "src": "If you are first beginning, set an hourglass or clock alarm for a short time. Ten or fifteen minutes will do. Even short sessions can help.",
+   "dst": "初めて始める場合は、砂時計や時計のアラームを短い時間に設定しましょう。10分か15分程度で十分です。短い時間でも効果はあります。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#051": {
+   "src": "Next, sit down. The traditional position is to sit cross-legged with hands in the lap, but so long as you are comfortable, any position works.",
+   "dst": "次に、座ってください。伝統的な姿勢はあぐらをかいて両手を膝の上に置くものですが、楽な姿勢であれば、どのような姿勢でも構いません。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#052": {
+   "src": "Once you have found a comfortable spot, close your eyes and breathe deeply. Breathe in deeply, hold for a few seconds, breathe out, and hold for the same amount.",
+   "dst": "居心地の良い場所を見つけたら、目を閉じて深く呼吸しましょう。深く息を吸い込み、数秒間息を止め、息を吐き出し、同じくらいの時間息を止めます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#053": {
+   "src": "Focus on the sensation of your breathing, and on only the sensation of your breathing. If your mind wanders, do not fret- simply return your attention to your breath.",
+   "dst": "呼吸の感覚に集中してください。そして、呼吸の感覚だけに集中してください。もし心が他のことに漂ってしまったとしても、気にする必要はありません。ただ、再び呼吸に意識を戻してください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#054": {
+   "src": "When you feel ready to rise, or when your time ends, slowly open your eyes and notice your environment- the sights and sounds, and the feeling of your body.",
+   "dst": "起き上がる準備ができたと感じたとき、あるいは時間が来たときは、ゆっくりと目を開けて、周囲の環境――目に入る光景や聞こえる音、そして自分の体の感覚に――意識を向けてみてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Guide to Meditation",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#055": {
+   "src": "Although there are more complex and involved methods of meditation, they are not necessary- Now that you have read this, try it yourself whenever you have a spare moment.",
+   "dst": "もっと複雑で手間のかかる瞑想法もありますが、必ずしもそれらを行う必要はありません。この記事を読んだ今、暇な時間ができたらぜひ自分で試してみてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#056": {
+   "src": "...this seems promising. Carefully, you settle down and close your eyes.",
+   "dst": "…これは期待できそうだ。慎重に、落ち着いて目を閉じる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#057": {
+   "src": "...breathe in...",
+   "dst": "…息を吸い込んで…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#058": {
+   "src": "...breathe out...",
+   "dst": "…息を吐く…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#059": {
+   "src": "...you can't focus. Your mind is wandering too many directions at once. Unfortunate, but it's worth remembering anyways.",
+   "dst": "…集中できない。頭の中がふわふわしている。残念なことだが、それでも覚えておく価値はある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#060": {
+   "src": "When fighting unarmed or with weapons such as knuckles, katars, or gauntlets, one's stance is paramount in fighting an opponent.",
+   "dst": "素手や、ナックルダスター、カタル、ガントレットなどの武器を使って戦う場合、相手と対峙する際には構えが最も重要となる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#061": {
+   "src": "The way one is positioned can ground the body, allowing for blows to be taken with less consequence, or allow one to be light enough to evade attack.",
+   "dst": "体の構え方次第で、体をしっかりと地面に定着させ、打撃を受けてもダメージを軽減したり、あるいは体を軽くして攻撃をかわしたりすることが可能になります。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#062": {
+   "src": "All combat must of course be learned through rigorous training- One cannot expect to become an expert simply by reading. Here are a handful of basic stances to practice.",
+   "dst": "もちろん、あらゆる戦闘技術は厳しい訓練を通じて習得しなければなりません。本を読むだけで達人になれる訳ではありません。ここでは、練習すべき基本的な構えをいくつか紹介します。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#063": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "フォワードスタンスは、両足を大きく開き、後ろ足を完全に伸ばし、体をまっすぐに保つ姿勢です。これは、体を安定させるためのしっかりとした姿勢です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#064": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "フォワードスタンスは、両足を大きく開き、後ろ足を完全に伸ばし、体をまっすぐに保つ姿勢です。これは、体を安定させるためのしっかりとした姿勢です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#065": {
+   "src": "The Back Stance has one foot in front of the other, with the back foot facing to the side and one's weight on the back leg. For evading attacks to the top of the body.",
+   "dst": "バックスタンスは、片足をもう一方の前方に置き、後ろの足を横に向け、体重を後ろの足にかける姿勢です。上半身への攻撃をかわすために用いられます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#066": {
+   "src": "The Cat Stance also has weight on the back foot, with legs bent and held close together and the front foot resting on the heel. This allows easy preparation for strong front kicks.",
+   "dst": "キャットスタンスも、後ろ足に体重を乗せ、膝を曲げて両足をくっつけた状態で、前足のかかとを地面につけます。これにより、力強い前蹴りの構えを容易に取ることができます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#067": {
+   "src": "The Crane Stance has one leg raised, the foot level with the other knee. Also used in preparation for kicking, as well as dodging a sweeping attack by the enemy.",
+   "dst": "鶴の構えは、片足を上げ、その足の裏をもう一方の膝の高さに合わせる構えです。蹴りの準備として使われるほか、敵の払い攻撃をかわす際にも用いられます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#068": {
+   "src": "Many a venerable mage has made their mark on history. There is a reason their names are repeated- we can learn much from what they have demonstrated.",
+   "dst": "数多くの偉大な魔術師たちが、歴史にその名を刻んできました。彼らの名前が繰り返し語られるのには理由があります。彼らが示してくれたことから、私たちは多くのことを学ぶことができるからです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#069": {
+   "src": "This, unfortunately, applies both for positive and negative reasons. For instance, a lesson that has become law involves the use of soul-binding magic.",
+   "dst": "残念ながら、これは良い面でも悪い面でも当てはまります。例えば、すでに法律となったある教訓には、魂を縛る魔法(ソウルバインディング)の使用が関わっています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#070": {
+   "src": "...was considered a monstrous and immoral practice. Keeping the spirit trapped, forced to obey orders, in a decaying body wracked with pain, is something that could not be abided by.",
+   "dst": "…それは、凶悪かつ不道徳な行為と見なされていた。魂を閉じ込め、痛みに苛まれ朽ち果てゆく肉体の中で命令に従うことを強いるなど、到底容認できることではなかった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#071": {
+   "src": "Since then, soul-binding is the most strictly punished brand of magic in all of Gavel, above demonic rites and even the necromancy that soul-binding was endemic within.",
+   "dst": "それ以来、ソウルバインディングは、Gavel全土において、悪魔の儀式や、かつてソウルバインディングが蔓延していたネクロマンシーさえも上回る、最も厳しく罰せられる魔法となっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#072": {
+   "src": "...this is a very heavy read. Certainly not suitable for finding tranquility.",
+   "dst": "…これは非常に読み応えのある本だ。安らぎを求める人には、間違いなく向いてない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#073": {
+   "src": "To brew tea is a simple, meditative process that in itself has deep intricacies. We shall draw upon its heritage now.",
+   "dst": "お茶を淹れることは、シンプルでありながら瞑想的なプロセスであり、その過程自体に深い奥深さがあります。それでは、その伝統に思いを馳せてみましょう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#074": {
+   "src": "Fresh, clean water is required. Bring it to a soft boil in a pot or cauldron, and then mix in herbs and ingredients to taste..",
+   "dst": "新鮮できれいな水が必要です。鍋や大釜で弱火で軽く沸騰させ、その後お好みでハーブや材料を加えて混ぜ合わせてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#075": {
+   "src": "Harvesting ingredients freshly can add extra depth to the tea, although you can make fine tea from any ingredients, so long as they are not rotten.",
+   "dst": "新鮮な材料を収穫することで、お茶にさらなる深みを加えることができます。腐っていなければ、どのような材料でも美味しいお茶を淹れることは可能です。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#076": {
+   "src": "Common ingredients include sugar, lemongrass, ginger root, chamomile, and lavender. Each has their own purpose for tea.",
+   "dst": "よく使われる材料には、砂糖、レモングラス、生姜、カモミール、ラベンダーなどがあります。それぞれがお茶として独自の役割を果たしています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#077": {
+   "src": "Sugar helps sweeten the bitterness of some brews, and balances the flavors to be mild. However, too much will leave the brew sickly and tacky.",
+   "dst": "砂糖は、一部のお茶の苦味を和らげ、風味のバランスを整えてまろやかにする役割を果たします。しかし入れすぎると、お茶は甘ったるく、ベタついた味わいになってしまいます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#078": {
+   "src": "The unique tang of lemongrass is lauded as signature for green tea. The mild, lightly-minty flavor is a perfect base for which to create a relaxing brew.",
+   "dst": "レモングラスの独特な爽やかな香りは、緑茶の象徴として高く評価されています。まろやかでほのかにミントのような風味は、リラックスできる一杯を淹れるのに最適なベースとなります。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#079": {
+   "src": "Although Ginger Root is bitingly bitter and inevitably overpowers other ingredients, it has potent medicinal effects which may help invigorate the sick.",
+   "dst": "ショウガの根は鋭い苦味があり、他の食材の風味を圧倒するほどの主張があるが、病人の元気を回復させるのに役立つかもしれない強力な薬効を持っています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#080": {
+   "src": "Lavender is similarly relaxing, but must be the focus of the brew. It must be steeped for a long while, and is severely bitter, which causes it to drown out other ingredients.",
+   "dst": "ラベンダーも同様にリラックス効果がありますが、お茶の主役でなければなりません。長時間浸出させる必要があり、非常に苦いため、他の材料の風味を打ち消してしまいます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#081": {
+   "src": "...come to think of it, a cup of tea sounds like it would be quite nice, after all the hard training. Perhaps you should make a cup.",
+   "dst": "…そういえば、ハードなトレーニングの後は、お茶を一杯飲むのもなかなか良さそう。一杯淹れてみては?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#082": {
+   "src": "While many people think that relaxation is out of reach with their busy schedules, the truth is there are many things you can do daily to wind down that take little time.",
+   "dst": "忙しい毎日を送っている人の中には、リラックスなど到底無理だと考えている人も多いようですが、実際には、ほんの少しの時間でできる、毎日実践できるリラックス法がたくさんあります。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#083": {
+   "src": "For instance, caring for houseplants is a simple task. You can grow them from seeds or get them pre-bought, and caring for gardens is an easy way to relax, while also giving you a place to relax.",
+   "dst": "例えば、観葉植物のお手入れは簡単な作業です。種から育ててもいいですし、すでに育てられたものを購入してもいいですし、庭の手入れはリラックスできる簡単な方法であると同時に、くつろげる場所も与えてくれます。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#084": {
+   "src": "You can turn any room into a garden simply by getting planter pots, but for those who can't devote enough time to that, you could try caring for a bonsai tree instead.",
+   "dst": "植木鉢を用意するだけで、どんな部屋でも庭に変えることができますが、それに十分な時間を割けないという方には、代わりに盆栽の世話をするのもおすすめです。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#085": {
+   "src": "They just need water, sunlight, and care by using garden shears to carefully cut the limbs of the tree. Shaping it like this is artful in itself, and has spiritual significance as well.",
+   "dst": "必要なのは水と日光、そして園芸用ハサミを使って木の枝を丁寧に剪定する手入れだけです。このように形を整えること自体が芸術的であり、精神的な意味も持っています。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#086": {
+   "src": "It requires focus in the moment, but not much time at all, meaning that you can simply set aside short time and be done. It also helps clean the air in the house as well!",
+   "dst": "その瞬間に集中する必要がありますが、時間はほとんどかかりません。つまり、ほんの少しの時間を確保するだけで済みます。さらに、家の中の空気をきれいにするのにも役立ちます!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#087": {
+   "src": "Another easy way to relax is to set up a stone garden. You don't need a large amount of space to have one- even a small box will do. Fill it with gravel and smooth stones.",
+   "dst": "リラックスするためのもう一つの簡単な方法は、石庭を作ることです。石庭を作るのに広いスペースは必要ありません。小さな箱でも十分です。その中に砂利や滑らかな石を敷き詰めてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#088": {
+   "src": "Use a small handheld rake to draw lines in the gravel in different patterns, each day. It's as simple as that- don't focus on making specific ones though, just draw whatever your hand draws.",
+   "dst": "小さな手持ちの熊手を使って、毎日砂利の上にさまざまな模様を描いてみましょう。やり方はとても簡単です。ただし、特定の模様を描こうとこだわらず、手が描くままに自由に描いてみてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#089": {
+   "src": "Doing this can help draw focus away from stressful thoughts, and bring you back to the moment, while also being a fun conversation piece that's easy and cheap to set up.",
+   "dst": "こうすることで、ストレスの原因となる考えから気をそらし、今この瞬間に意識を戻すのに役立ちます。また、手軽に安く準備できる楽しい会話のきっかけにもなります。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#090": {
+   "src": "...those are nice thoughts, but unfortunately there isn't a zen garden set up here, and you don't have a bonsai tree or garden shears handy.",
+   "dst": "…素敵な考えだが、残念ながらここには禅庭園などなく、手元に盆栽や剪定ばさみもない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#091": {
+   "src": "The sheep raises its head to look at you, then returns to its business.",
+   "dst": "羊は顔を上げてこちらを見つめた後、また元の作業に戻った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#092": {
+   "src": "The cow raises its head to look at you, then returns to its business.",
+   "dst": "牛は顔を上げてこちらを見つめた後、また元の作業に戻った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#093": {
+   "src": "The pig raises its head to look at you, then returns to its business.",
+   "dst": "豚は顔を上げてこちらを見つめた後、また元の作業に戻った。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#094": {
+   "src": "With the tea brewed and the scent of it filling the room, you gently take a few sips.",
+   "dst": "お茶が淹れ上がり、その香りが部屋中に広がると、あなたはそっと数口すする。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#095": {
+   "src": "The heat of the tea and the gently sweet, floral taste warms your throat and body. You feel more relaxed, but...not at peace with nature yet.",
+   "dst": "お茶の温かさと、ほのかに甘くフローラルな味わいが、喉と体を温めてくれます。気分はよりリラックスしてきますが……まだ自然との調和は得られていません。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#096": {
+   "src": "...there were some animals wandering the cave. Making a small offering seems like the right way to go, and there's plenty of tea left...",
+   "dst": "…洞窟の中には、いくつかの動物がうろついていた。ささやかな供え物を捧げるのが妥当だろう。お茶もまだたっぷり残っているし……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#097": {
+   "src": "...hm? This isn't actually a book, it's a dossier. Did Miyagi leave this out by accident?",
+   "dst": "…あれ?これ、実は本じゃなくて、資料ファイルだ。Miyagiがうっかり置き忘れたのかな?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#098": {
+   "src": "Seems to contain a number of trade agreements, between the Sakura Dojo and the {p}.",
+   "dst": "Sakura Dojoと{p}の間で結ばれた、いくつかの貿易協定が含まれているようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#099": {
+   "src": "It appears that recently, a large shipment of Hive silk has been received. There's no record of emerald payment.",
+   "dst": "最近、Hive silkが大量に届いたようです。エメラルドによる支払いの記録はない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#100": {
+   "src": "A shipment of cherries and rice has been sent out at the same time- they must trade products directly.",
+   "dst": "サクランボと米の荷物が同時に発送された――両者は直接取引を行っているに違いない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#101": {
+   "src": "Previous records show trades of metal salvage for cherry wood, and gifted shipments of tea leaves and ingredients.",
+   "dst": "過去の記録によると、金属のスクラップと桜材の交換取引や、茶葉や食材の寄贈が行われていたことが示されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#102": {
+   "src": "...there's a letter here, too. The script is very ornate...this is addressed from the Mistress of the Hive herself, only a few months ago.",
+   "dst": "…ここにも手紙がある。筆跡はとても華やかだ……これは、ほんの数ヶ月前に、Hiveの女主人本人から送られてきたものだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#103": {
+   "src": "\"I hope this letter finds you well. I once again thank you for the trade. The caravans from {p} have been scarce recently, and your donations have kept the servants from going hungry.\"",
+   "dst": "「この手紙が届く頃には、お元気でいらっしゃいますように。今回の取引について、改めてお礼申し上げます。最近、{p}からのキャラバンが少なくなっており、皆様からのご寄付のおかげで、使用人たちが飢えることなく済んでいます。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#104": {
+   "src": "\"Although I would under most circumstances send a small party of my creations to run for supplies, it is a logistical and political nightmare that I would just as soon avoid.\"",
+   "dst": "「通常であれば、私の創造物たちからなる小隊を物資の調達に派遣するところだが、それは物流面でも政治面でも悪夢のような事態であり、できれば避けたいところだ。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#105": {
+   "src": "\"I will provide remuneration for this in due time- certainly, I may spare a sum of emeralds if you wish it. You are trusted enough to write a blank check on this for, so you may name your price.\"",
+   "dst": "「これに対する報酬は、適宜お支払いします。もちろん、ご希望であればエメラルドをいくらか差し上げても構いません。あなたには白紙の小切手を書いても大丈夫なほど信頼していますから、お好きな金額を提示してください。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#106": {
+   "src": "\"Equally I am willing to offer extra salvage metal of top quality, or perhaps further silk or animant stones for your training dummies. Please write back quickly with your request.\"",
+   "dst": "「同様に、最高品質の余剰スクラップ金属、あるいは訓練用ダミー用にさらに絹やアニマント石を提供することも可能です。ご希望の内容を早急にお知らせください。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#107": {
+   "src": "\"I plan to accompany the next caravan which will bring our recompensation, and I look forward to the visit. We may finally finish our set of Go yet.\"",
+   "dst": "「補償金を持ってくる次のキャラバンに同行するつもりです。その訪問を心待ちにしています。そうすれば、ようやく囲碁の対局を最後までやり遂げられるかもしれません。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#108": {
+   "src": "\"Regards, Mistress Qira\"",
+   "dst": "「敬具 Mistress Qira」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#109": {
+   "src": "The cow raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "牛は頭を上げてあなたの方を見た。緑茶を目にした途端、その目がぱっと輝いた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#110": {
+   "src": "You gesture the tea generously towards the cow, and place it on the ground for it to drink. The cow nods respectfully to you.",
+   "dst": "あなたは牛に向かって気前よくお茶を差し出し、牛が飲めるように地面に置く。すると、牛はあなたに敬意を表して頷く。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#111": {
+   "src": "...watching it drink from the cup as you did, there's a certain kinship you feel, and with that realization comes a feeling of peace.",
+   "dst": "…かつて自分がそうしていたように、それがカップからお茶を飲むのを見ていると、ある種の親近感を抱くもので、そのことに気づくと心の安らぎが訪れる。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#112": {
+   "src": "You can't recall the last time you've felt this relaxed. You know for certain that you have mastered the challenge of tranquility. Time to leave.",
+   "dst": "これほどリラックスした気分になったのがいつだったか、思い出せない。あなたは、心の安らぎという課題を確実に克服したと確信している。そろそろ行く時間だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#113": {
+   "src": "The pig raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "豚は頭を上げてあなたを見つめ、敬意を表すように頷く。あなたは自然との平和と友情を築くことに成功した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#114": {
+   "src": "The sheep raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "羊は頭を上げてあなたを見つめ、敬意を表すように頷く。あなたは自然との平和と友情を築くことに成功した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#115": {
+   "src": "The cow raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "牛は頭を上げてあなたを見つめ、敬意を表すように頷く。あなたは自然との平和と友情を築くことに成功した。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#116": {
+   "src": "You gesture the tea generously towards the sheep, and place it on the ground for it to drink. The sheep nods respectfully to you.",
+   "dst": "あなたは羊に向かって気前よくお茶を差し出し、羊が飲めるように地面に置く。すると、羊はあなたに敬意を表して頷く。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "You gesture the tea generously towards the pig, and place it on the ground for it to drink. The pig nods respectfully to you.",
+   "dst": "あなたは豚に向かって気前よくお茶を差し出し、豚が飲めるように地面に置く。すると、豚はあなたに敬意を表して頷く。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#118": {
+   "src": "Exit the cave through the tunnel near the temple",
+   "dst": "寺の近くにあるトンネルを通って洞窟から出る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#119": {
+   "src": "Hoho... Yes, this old man still has plenty of life left in him. Do not waste the gifts you have, young master.",
+   "dst": "ほっほ……そうじゃな、この老いぼれにはまだ生き甲斐がたくさん残っとる。若人、持ち前の才能を無駄にするでない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": ""
   }
  }
 }
