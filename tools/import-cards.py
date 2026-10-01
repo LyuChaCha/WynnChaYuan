@@ -85,6 +85,48 @@ ACCESS = re.compile(r"^Access to (?:the )?(.+)$")
 HAN_A = "一"
 HAN_Z = "鿿"
 
+# ---- 這一筆 src 是「一段被寬度折斷的句子」，還是「各自獨立的幾列」----
+#
+# `src` 永遠是攤平的一句，但攤平之前是什麼，兩種情況完全不同：
+#
+#   折斷的句子  Bring [{~} Fluffy Fur] to the / Slaying Post at / [{~}, {~}, -{~}]
+#   獨立的幾列  ✔À Mining Lv. Min: {~} / {#}Distance: … / {#}Length: …
+#
+# 前者照 src 收是對的（算繪端查的就是整段）；後者照 src 收等於把 #915／#922／
+# #924 拆掉的東西原封不動做回去——整段那條路假設它是被寬度折斷的同一句話，
+# 命中之後照面板寬度重新折行，四列被擠成兩列，<b>每一列的顏色也跟著貼錯位置</b>。
+#
+# 判準分兩半。結構上認得出來的「新的一列」——縮排圖示、條列、勾叉、
+# 「標籤: 值」、屬性列、純圖示墊行——是 #915／#922／#924 三種樣式的共同特徵。
+# 認不出結構的（`Left Click to view contents` / `Shift Right-Click to sell …`）
+# 再看<b>斷點的位置</b>：真的是寬度折斷的話，下一列的第一個詞一定塞不進這一列；
+# 塞得進去還斷了，就是遊戲自己斷的。見 hard_break。
+PAD = re.compile(r"^(?:\{#\})+$")
+BULLETROW = re.compile(r"^(?:\{#\})* ?- ")
+STATUSROW = re.compile(r"^[✔✖✘ÀÁ✦]")
+FIELDROW = re.compile(r"^(?:\{#\})* ?[A-Z][A-Za-z0-9 .'/()-]{0,28}:(?= |$)")
+STATROW = re.compile(r"^(?:\{#\})* ?[A-Z][A-Za-z ]{0,28}\{#\}\s*[-+]\s*\{~\}")
+# 圖示後面接一個半形空白，就是遊戲在起一列時放的縮排／項目圖示——市集面板
+# 的 `{#} Left-Click to quick stash`、素材的 `{#}{#} Scribing{#}`、價格列的
+# `{#} {~}² ✮ {~}²` 都是這樣。接著沒有空白的話才要求大寫，為的是把 Wynntils
+# 疊層那種句子中段（`{#}this Lootrun. Gain`）擋在外面。
+INDENTROW = re.compile(r"^(?:\{#\})+(?: |(?=[A-Z]))")
+KINDROW = re.compile(r"\[[^\]]+\]$")
+LETTER = re.compile(r"[A-Za-z]")
+
+# 句子折到這些詞就斷，等於下一列是續行。只收虛詞：動詞收進來就開始誤判
+# （`Shift Right-Click to sell` 這種獨立的一列也會被當成續行的前半）。
+CONNECTORS = frozenset("""
+a an the and or but to of in on at for with from by as into onto over under
+than that this these those your their its his her our my if when while
+which who whom whose is are was were be been being am will would shall
+should can could may might must do does did than then so
+""".split())
+
+# 佔位符在畫面上的實際寬度跟字面長度差很多，量斷點的時候要換算。
+# `{~}` 剛好是三個字元、數值也多半三位數，所以不必動。
+WIDTH = {"{#}": 1, "{p}": 8, "{u}": 8}
+
 
 def han(ch: str) -> bool:
     return bool(ch) and HAN_A <= ch <= HAN_Z
@@ -117,6 +159,99 @@ def weld(parts: list[str]) -> str:
             continue
         out += ("" if (han(out[-1:]) and han(p[:1])) else " ") + p
     return out
+
+
+def vis(text: str) -> int:
+    """這一列在畫面上大概多寬（以字元計）。只用來比斷點，不求精確。"""
+    out = len(text)
+    for token, width in WIDTH.items():
+        out += text.count(token) * (width - len(token))
+    return out
+
+
+def rowstart(row: str) -> str | None:
+    """這一列的開頭是不是「一列的開頭」。認不出來回傳 {@code None}。
+
+    這五種樣式都是遊戲自己起新列時加的記號，續行不會有：
+
+      pad     `{#}{#}{#}…`       純圖示的墊行
+      bullet  `{#}- +{~} XP`     獎勵條列（#922）
+      status  `✔À …` `✦ …`      需求的勾叉與項目符號
+      field   `{#}Length: Short` 標籤: 值（#915）
+      stat    `Health {#}-{~} …` 屬性列
+      indent  `{#}Something`     縮排圖示後面接大寫
+
+    `indent` 刻意要求後面是**大寫**：Wynntils 疊層那些片段
+    （`{#}this Lootrun. Gain`）也以 `{#}` 開頭，但它是句子的中段。
+    """
+    if PAD.match(row):
+        return "pad"
+    if BULLETROW.match(row):
+        return "bullet"
+    if STATUSROW.match(row):
+        return "status"
+    if FIELDROW.match(row):
+        return "field"
+    if STATROW.match(row):
+        return "stat"
+    if INDENTROW.match(row):
+        return "indent"
+    return None
+
+
+def hard_break(above: str, below: str, first: bool, width: int) -> bool:
+    """這兩列之間是「各自獨立」的斷點（True），還是寬度折出來的（False）。
+
+    順序有講究，每一條都是踩出來的：
+
+    1. 墊行（`{#}{#}{#}…`）兩邊一定是斷點——它根本沒有文字可以折。
+    2. 下一列認得出是新的一列（見 {@link rowstart}）就是斷點。條列以 `-`
+       開頭、續行也可能以 `-` 開頭（`-{~} to -{~}`），所以**先問結構再問字元**。
+    3. 下一列不是大寫開頭（小寫、`+`、`(`、數字、`{~}`）——續行的樣子。
+    4. 上一列以句點／逗號收尾：那是散文，不是欄位。欄位收在值或 `:` 上。
+    5. 上一列以虛詞收尾，或括號還沒收——`… to the` / `Shift Right-Click (`。
+    6. 上一列是卡片標題（類型方括號收尾）而且是第一列：標題與狀態之間
+       沒有任何記號可認，切點就在方括號之後（#924）。
+    7. 都不是的話量斷點：下一列的第一個詞<b>塞得進</b>上一列的話，
+       這個斷行不是寬度造成的。寬度拿這一段最寬的那一列當估計值——
+       估得偏窄，所以這一條偏向判成「折斷的句子」，也就是偏向原本的行為。
+    """
+    if PAD.match(above) or PAD.match(below):
+        return True
+    if rowstart(below):
+        return True
+    if not re.match(r"^[A-Z]", below):
+        return False
+    tail = above.rstrip()
+    if tail[-1:] in ".!?…,;":
+        return False
+    if tail.count("(") != tail.count(")") or tail.count("[") != tail.count("]"):
+        return False
+    if re.sub(r"[^A-Za-z]", "", tail.rsplit(" ", 1)[-1]).lower() in CONNECTORS:
+        return False
+    if first and KINDROW.search(tail):
+        return True
+    return vis(tail) + 1 + vis(below.split(" ")[0]) <= width
+
+
+def shape_of(src: str, lines: list[str]) -> str:
+    """這一筆要照整段收（`block`）還是照 lines 逐列收（`lines`）。
+
+    兩種斷點混在同一段裡回傳 `mixed`：那種整段收會重新折行、逐列收又會夾出
+    半中半英，兩邊都錯，所以不猜，列進 `--todo` 給人看。
+
+    **`lines` 接不回 `src` 就一律照整段收。** 收集端換了攤平規則、或是手改過
+    的 cards.json，都會對不上；對不上的時候逐列收是在拿不確定的資料下手。
+    """
+    rows = [r for r in (lines or []) if r]
+    if len(rows) < 2 or " ".join(rows) != src:
+        return "block"
+    width = max(vis(r) for r in rows)
+    calls = [hard_break(rows[i], rows[i + 1], i == 0, width)
+             for i in range(len(rows) - 1)]
+    if all(calls):
+        return "lines"
+    return "mixed" if any(calls) else "block"
 
 
 def load_corpus(lang: str) -> dict[str, str]:
@@ -215,6 +350,11 @@ class Builder:
 
         return None
 
+    def row(self, text: str) -> str | None:
+        """單獨一列。**不照 `{#}` 拆**——列裡面的 `{#}` 是圖示或縮排，
+        不是欄界（`Health {#}-{~} [{~}]` 拆開就什麼都查不到了）。"""
+        return self.c.get(text) or self.line(text)
+
     def block(self, src: str) -> str | None:
         """一整塊。照 `{#}` 拆開逐段拼；拆不出欄位就整句試一次。"""
         segments = [s.strip() for s in SPLIT.split(src) if s.strip()]
@@ -269,27 +409,76 @@ def run(cards_path: Path, lang: str, write: bool,
     todo: list[tuple[str, str]] = []
     seen = 0
     lost = 0
+    shapes: collections.Counter[str] = collections.Counter()
+    covered = 0
+    dropped_dst = 0
+    haystack: list[str] = []
+
+    def under_block(row: str) -> bool:
+        """這一列已經被某個<b>更長的、已翻好的</b>原文蓋著。
+
+        逐列條目會讓算繪端先命中它、把整段那條路蓋掉——raid.json 那 13 條空的
+        逐行片段就是這樣，填回去 GambitBlockTest 直接紅。所以這種列不寫，
+        列進 `--todo` 讓人決定要不要反過來把那個整段拆開。
+
+        整段是用單一半形空白接起來的，所以兩邊補一個空白再找就不會把
+        `Health` 配到 `Healing Efficiency` 身上。用一整串字串一次找完：
+        語料二十幾萬條，逐條比對會慢到沒人想跑。
+        """
+        if not haystack:
+            haystack.append("\x00".join(" %s " % s for s in corpus))
+        return (" %s " % row) in haystack[0]
+
     for key, val in entries.items():
         if key.startswith("_") or not isinstance(val, dict):
             continue
         seen += 1
         src = val.get("src", "")
-        if not src or src in corpus:
+        if not src:
             continue
-        name = where(str(val.get("card") or ""), src)
-        if name is None:
-            # 認不出歸屬的也要報。先前是 continue，於是「沒有卡片符合」與
-            # 「每一張都補好了」印出來一模一樣，而前者才是常態。
-            lost += 1
-            todo.append(("(認不出歸屬) " + str(val.get("card") or ""), src))
+        card = str(val.get("card") or "")
+        # 攤平的那一句該不該當成一條語料，先問清楚。照 src 無條件收就是把
+        # #915／#922／#924 拆掉的東西做回去，見 shape_of。
+        shape = shape_of(src, val.get("lines") or [])
+        shapes[shape] += 1
+        if shape == "mixed":
+            todo.append(("(整段與逐列混在一段裡) " + card, src))
             continue
-        # cards.json 的 dst 是收集者自己填的，沒有記是哪一個語言，
-        # 所以只有在指定單一 --lang 時才敢用。
-        dst = (val.get("dst") if use_dst else None) or builder.block(src)
-        if dst:
-            made[name][src] = dst
-        else:
-            todo.append((str(val.get("card") or ""), src))
+        if src in corpus:
+            # 整段早就有譯文。逐列的那種其實正是該拆開的條目，但這支工具
+            # 只負責匯入，不動既有語料——重複的列寫進去只會互相蓋。
+            if shape == "lines":
+                covered += 1
+            continue
+        if shape == "lines" and use_dst and str(val.get("dst") or "").strip():
+            # 收集者填的 dst 是<b>整段</b>的譯文，沒有斷行資訊，切不開。
+            dropped_dst += 1
+        units = [src] if shape == "block" else [
+            r for r in val.get("lines") or [] if r]
+        name = where(card, src)
+        for unit in units:
+            if not LETTER.search(unit):
+                continue        # 純圖示的墊行（`{#}{#}{#}…`），沒有字要翻
+            if unit in corpus:
+                continue        # 這一列本來就有譯文（拆過的欄位多半如此）
+            if name is None:
+                # 認不出歸屬的也要報。先前是 continue，於是「沒有卡片符合」與
+                # 「每一張都補好了」印出來一模一樣，而前者才是常態。
+                lost += 1
+                todo.append(("(認不出歸屬) " + card, unit))
+                continue
+            if shape == "lines" and under_block(unit):
+                todo.append(("(被更長的整段蓋著，先拆那一段) " + card, unit))
+                continue
+            # cards.json 的 dst 是收集者自己填的，沒有記是哪一個語言，
+            # 所以只有在指定單一 --lang 時才敢用；而且它是整段的，逐列不採用。
+            dst = ((val.get("dst") if use_dst and shape == "block" else None)
+                   or (builder.block(unit) if shape == "block"
+                       else builder.row(unit)))
+            if dst:
+                made[name][unit] = dst
+            else:
+                todo.append((card, unit))
 
     total = 0
     for name, table in sorted(made.items()):
@@ -322,6 +511,18 @@ def run(cards_path: Path, lang: str, write: bool,
         total += added
     print("[%s] 看過 %d 塊：組出 %d 條，還缺 %d 條（其中 %d 條認不出歸屬）"
           % (lang, seen, total, len(todo), lost))
+    print("      其中 %d 塊是各自獨立的幾列（照 lines 逐列收）、"
+          "%d 塊是折斷的一句（照 src 整段收）、%d 塊兩種混在一起（不收）"
+          % (shapes["lines"], shapes["block"], shapes["mixed"]))
+    if shapes["mixed"]:
+        print("      混在一起的那些要人看一眼：整段收會重新折行，"
+              "逐列收會夾出半中半英，兩邊都錯。加 --todo 看是哪些。")
+    if covered:
+        print("      另有 %d 塊的整段已經有譯文，而它其實是獨立的幾列"
+              "——那正是 #915／#922／#924 要拆的那種，值得回頭拆掉。" % covered)
+    if dropped_dst:
+        print("      %d 塊的 dst 是收集者照整段填的，逐列收切不開，沒有採用。"
+              % dropped_dst)
     if lost:
         print("      認不出歸屬的多半是還沒寫進 ROUTE 的卡種。"
               "加 --todo 看是哪些，值得收的就補一條規則進 where()。")
@@ -420,6 +621,108 @@ def selftest() -> int:
              "- {~} Rows", None),
     ):
         got = where(card, src)
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ") + what
+              + ("" if ok else "（要 %r，實際 %r）" % (want, got)))
+        bad += 0 if ok else 1
+
+    # ---- 整段還是逐列。判錯的兩個方向都不會報錯，只會安靜地弄壞畫面：
+    #      把獨立的幾列當成一句 → 重新折行，欄位黏在一起、顏色貼錯位置；
+    #      把折斷的一句當成幾列 → 逐列條目蓋掉整段那條路，夾出半中半英。
+    #      正反例都要，而且反例用的是<b>實機真的收到過</b>的那幾種段落。 ----
+    for what, src, lines, want in (
+            # 正例：各自獨立的幾列（照 lines 逐列收）
+            ("需求欄位（#915）",
+             "✔À Mining Lv. Min: {~} {#}Distance: Medium ({~} Blocks)"
+             " {#}Length: Short {#}Difficulty: Easy",
+             ["✔À Mining Lv. Min: {~}", "{#}Distance: Medium ({~} Blocks)",
+              "{#}Length: Short", "{#}Difficulty: Easy"], "lines"),
+            ("需求裡的前置任務也是自己一列",
+             "✔À Combat Lv. Min: {~} ✔À Quest: The Price of Ingenuity"
+             " {#}Length: Long",
+             ["✔À Combat Lv. Min: {~}", "✔À Quest: The Price of Ingenuity",
+              "{#}Length: Long"], "lines"),
+            ("獎勵條列（#922）",
+             "{#}Rewards: {#}- +{~} XP {#}- +{~} Emeralds",
+             ["{#}Rewards:", "{#}- +{~} XP", "{#}- +{~} Emeralds"], "lines"),
+            ("標題＋狀態（#924），切點在類型方括號之後",
+             "Gather Carp II [Mini-Quest] Currently in progress",
+             ["Gather Carp II [Mini-Quest]", "Currently in progress"], "lines"),
+            ("屬性列：每一列都是一個詞條",
+             "Health {#}-{~} [{~}] Healing Efficiency {#}+{~} [{~}]"
+             " Reflection {#}+{~} [{~}]",
+             ["Health {#}-{~} [{~}]", "Healing Efficiency {#}+{~} [{~}]",
+              "Reflection {#}+{~} [{~}]"], "lines"),
+            ("素材的詞條沒有空白也算一列",
+             "Spell Damage{#}+{~} to +{~} Health Regen{#}+{~} to +{~}",
+             ["Spell Damage{#}+{~} to +{~}", "Health Regen{#}+{~} to +{~}"],
+             "lines"),
+            ("純圖示的墊行兩邊一定是斷點",
+             "Damage {#}-{~} [{~}] {#}{#}{#}{#}",
+             ["Damage {#}-{~} [{~}]", "{#}{#}{#}{#}"], "lines"),
+            ("「標籤: 值」底下接條列",
+             "Discoveries: - Territorial: {~}/{~} [{~}] - World: {~}/{~} [{~}]",
+             ["Discoveries:", "- Territorial: {~}/{~} [{~}]",
+              "- World: {~}/{~} [{~}]"], "lines"),
+            ("✦ 也是項目符號",
+             "Unassigned Skill Points: {~} ✦ Unused Ability Points: {~}",
+             ["Unassigned Skill Points: {~}", "✦ Unused Ability Points: {~}"],
+             "lines"),
+            # ★ 認不出結構的兩列，靠斷點位置判：「Shift」塞得進上一列還斷了
+            ("★ 兩句操作說明，結構認不出來但斷點塞得進去",
+             "Left Click to view contents Shift Right-Click to sell"
+             " ({~}-{~}²)",
+             ["Left Click to view contents",
+              "Shift Right-Click to sell ({~}-{~}²)"], "lines"),
+            # 反例：一句被寬度折斷（照 src 整段收，也就是原本的行為）
+            ("★ 續行以小寫開頭",
+             "For the rest of this Lootrun, gain +{~} Loot (Max x{~})"
+             " everytime you get a Curse",
+             ["For the rest of this Lootrun, gain",
+              "+{~} Loot (Max x{~}) everytime you", "get a Curse"], "block"),
+            ("★ 上一列以虛詞收尾，下一列照樣是大寫開頭",
+             "Bring [{~} Fluffy Fur] to the Slaying Post"
+             " [Combat Lv. {~}] at [{~}, {~}, -{~}]",
+             ["Bring [{~} Fluffy Fur] to the",
+              "Slaying Post [Combat Lv. {~}] at", "[{~}, {~}, -{~}]"], "block"),
+            ("★ 兩個完整句子，但最後一列短得塞得回去 → 是折斷的散文",
+             "You have discovered a new area! Explore it to find secrets.",
+             ["You have discovered a new area!",
+              "Explore it to find secrets."], "block"),
+            ("★ 縮排圖示後面接小寫是句子中段，不是新的一列",
+             "{#}Effects{#}this Lootrun. Gain {#}{~}% Potency",
+             ["{#}Effects{#}this Lootrun. Gain", "{#}{~}% Potency"], "block"),
+            ("括號還沒收就斷，是折斷的",
+             "Gain +{~} Loot (Max x{~} per Chest)",
+             ["Gain +{~} Loot (Max", "x{~} per Chest)"], "block"),
+            ("只有一列就沒有斷點可談", "Static Boon", ["Static Boon"], "block"),
+            ("lines 接不回 src 就不猜，照整段收",
+             "Health {#}-{~} [{~}] Reflection {#}+{~} [{~}]",
+             ["Health {#}-{~} [{~}]"], "block"),
+            ("沒有 lines 欄位也照整段收",
+             "Health {#}-{~} [{~}] Reflection {#}+{~} [{~}]", [], "block"),
+            # 混在一起：兩種斷點都有，兩邊都會錯，所以不收
+            ("★ 標題＋狀態底下接一段折斷的敘述 → 混在一起，不收",
+             "Scorched Earth [Cave] Fight through the burning wastes"
+             " to reach the heart",
+             ["Scorched Earth [Cave]", "Fight through the burning wastes",
+              "to reach the heart"], "mixed"),
+    ):
+        got = shape_of(src, lines)
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ") + what
+              + ("" if ok else "（要 %r，實際 %r）" % (want, got)))
+        bad += 0 if ok else 1
+
+    # 逐列拼的時候不可以照 `{#}` 再拆一次：列裡面的 `{#}` 是圖示或縮排。
+    rb = Builder({"Health {#}-{~} [{~}]": "生命 {#}-{~} [{~}]",
+                  "{#}Length: Short": "{#}長度: 短"}, "zh_tw")
+    for what, row, want in (
+            ("屬性列整列查表", "Health {#}-{~} [{~}]", "生命 {#}-{~} [{~}]"),
+            ("欄位整列查表", "{#}Length: Short", "{#}長度: 短"),
+            ("查不到就不要硬湊", "Reflection {#}+{~} [{~}]", None),
+    ):
+        got = rb.row(row)
         ok = got == want
         print(("  [PASS] " if ok else "  [FAIL] ") + what
               + ("" if ok else "（要 %r，實際 %r）" % (want, got)))
