@@ -56,6 +56,7 @@ public final class IngredientTooltipTest {
         } finally {
             LineTranslator.measureForTest = null;
         }
+        centreFalseMatch();
         System.out.println(failures == 0
                 ? "素材 tooltip 需求列：全部通過"
                 : "素材 tooltip 需求列：" + failures + " 項失敗");
@@ -266,6 +267,89 @@ public final class IngredientTooltipTest {
             return java.util.Optional.empty();
         }, Style.EMPTY);
         return found[0];
+    }
+
+    /**
+     * 靠左的需求列不可以被當成「置中排的欄」。
+     *
+     * <h2>實機回報</h2>
+     * 「殞命之爪」的「防禦需求」被往右推了 12px，數值卻留在原位。
+     * {@code layout-debug} 的左緣對照指到 {@code TooltipWiden}：
+     *
+     * <pre>
+     *   === 左緣對照（翻完）===      （沒有這幾列）
+     *   === 左緣對照（撐寬後）===
+     *     [ 9] 原文左緣 0  譯文左緣 12  差 +12   防禦需求
+     *     [11] 原文左緣 11 譯文左緣 22  差 +11   &lt;圖示&gt;防禦
+     * </pre>
+     *
+     * <h2>為什麼會中</h2>
+     * 第一欄的左緣／寬度是 {@code [0, 61]}（Min. Defence）與 {@code [11, 41]}
+     * （帶圖示的 Defence）。中心分別是 30.5 與 31.5——差一個像素就被
+     * {@code sharesCentre} 當成同一個置中欄，於是補了半個寬度差
+     * {@code (61-36)/2 = 12}。
+     *
+     * <p>但它們是<b>靠左</b>的：別的需求列第一欄起點也是 0。
+     */
+    private static void centreFalseMatch() {
+        List<Component> orig = new ArrayList<>();
+        List<Component> made = new ArrayList<>();
+        // Durability / Min. Defence / Fire Damage：標籤靠左，起點都是 0
+        orig.add(twoCol(0, 47, 100, 24));
+        orig.add(twoCol(0, 61, 90, 18));
+        orig.add(twoCol(11, 41, 77, 49));      // 前面有屬性圖示的那一列
+        orig.add(twoCol(0, 54, 47, 72));
+        // 譯文：標籤短了，欄距自己補回去，起點都沒變
+        made.add(twoCol(0, 27, 120, 24));
+        made.add(twoCol(0, 36, 115, 18));
+        made.add(twoCol(11, 18, 100, 49));
+        made.add(twoCol(0, 72, 29, 72));
+
+        List<Component> out = com.wynnchayuan.translate.TooltipWiden.centreColumns(
+                orig, made, IngredientTooltipTest::measure);
+        for (int i = 0; i < out.size(); i++) {
+            int want = firstTextX(made.get(i));
+            int got = firstTextX(out.get(i));
+            check("★ 靠左的需求列第 " + i + " 列沒有被當成置中欄推開"
+                          + "（補償前 " + want + "、補償後 " + got + "）",
+                  want == got);
+        }
+    }
+
+    /** {@code [縮排]標籤[欄距]數值}，寬度照給的像素湊出來。 */
+    private static Component twoCol(int lead, int label, int gap, int value) {
+        MutableComponent c = Component.empty();
+        if (lead != 0) {
+            c.append(off(lead));
+        }
+        c.append(Component.literal(fill(label)).withStyle(WHITE));
+        c.append(off(gap));
+        c.append(Component.literal(fill(value)).withStyle(RED));
+        return c;
+    }
+
+    /** 湊出剛好這麼寬的一串字。a=6、f=5、t=4、l=3、i=2。 */
+    private static String fill(int px) {
+        StringBuilder sb = new StringBuilder();
+        int wide = px / 6;
+        int left = px - wide * 6;
+        if (left == 1 && wide > 0) {
+            wide--;                            // 餘 1 湊不出來，拆一個 6 變成 7＝5+2
+            left = 7;
+        }
+        for (int i = 0; i < wide; i++) {
+            sb.append('a');
+        }
+        for (int[] pair : new int[][] {{5, 'f'}, {4, 't'}, {3, 'l'}, {2, 'i'}}) {
+            while (left >= pair[0]) {
+                sb.append((char) pair[1]);
+                left -= pair[0];
+            }
+        }
+        if (left != 0) {
+            throw new IllegalArgumentException("湊不出 " + px + " px");
+        }
+        return sb.toString();
     }
 
     /**

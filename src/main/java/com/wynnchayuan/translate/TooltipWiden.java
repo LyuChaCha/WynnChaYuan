@@ -319,7 +319,7 @@ public final class TooltipWiden {
             boolean any = false;
             for (int k = 0; k < oc.size(); k++) {
                 int[] c = oc.get(k);
-                boolean centred = sharesCentre(c, i, origChunks);
+                boolean centred = sharesCentre(c, k, i, origChunks);
                 any |= centred;
                 target[k] = centred ? c[0] + (c[1] - mc.get(k)[1]) / 2 : c[0];
                 moved |= target[k] != mc.get(k)[0];
@@ -339,8 +339,35 @@ public final class TooltipWiden {
         return out == null ? translated : out;
     }
 
-    /** 別行有沒有一段跟它中心相同、起點不同。中心用兩倍座標比，免得除二掉半像素。 */
-    private static boolean sharesCentre(int[] c, int row, List<List<int[]>> all) {
+    /**
+     * 這一欄是不是置中排的：別行的<b>同一欄</b>跟它中心相同、起點不同。
+     *
+     * <h2>為什麼「起點相同」要先判掉</h2>
+     * 實機回報素材 tooltip 的「防禦需求」被往右推了 12px，而數值留在原位。
+     * 那一份的需求列第一欄是這樣的（左緣／寬度）：
+     *
+     * <pre>
+     *   Durability     [ 0, 47]      Min. Defence  [ 0, 61]
+     *   &lt;圖示&gt;Defence  [11, 41]      Fire Damage   [ 0, 54]
+     * </pre>
+     *
+     * {@code Min. Defence} 的中心是 30.5、帶圖示的 {@code Defence} 是 31.5
+     * ——差一個像素就被當成「同一個置中欄」，於是中文變短之後補了半個差額
+     * （{@code (61-36)/2 = 12}）。三列都中：+12、+11、+1，跟畫面上量到的一模一樣。
+     *
+     * <p>但這四列明明是<b>靠左</b>的：有三列的起點都是 0。
+     * 「起點相同」是靠左的鐵證，而「中心相同」很容易是巧合——兩個長度不同的標籤，
+     * 其中一個前面有圖示縮排，就撞得上。所以靠左的證據優先，先判掉。
+     *
+     * <p>比的是<b>同一欄</b>（同一個索引）。跨欄比會把第二欄的座標拿來否定第一欄，
+     * 技能點那種每一欄各自置中的面板就又不動了。
+     *
+     * @param k 這是第幾欄
+     */
+    private static boolean sharesCentre(int[] c, int k, int row, List<List<int[]>> all) {
+        if (leftAlignedColumn(k, all)) {
+            return false;
+        }
         int centre2 = 2 * c[0] + c[1];
         for (int j = 0; j < all.size(); j++) {
             if (j == row || all.get(j) == null) {
@@ -351,6 +378,32 @@ public final class TooltipWiden {
                 // 中心差（兩倍座標）與起點差都是 d，兩個條件不可能同時成立。
                 if (Math.abs(centre2 - (2 * d[0] + d[1])) <= 2
                         && Math.abs(c[0] - d[0]) > 2 * EDGE_TOLERANCE) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 這一欄是靠左的嗎——<b>有兩列的起點相同</b>就是。
+     *
+     * <h2>為什麼要整欄一起判</h2>
+     * 一列一列問「別人有沒有跟我起點相同」不夠：帶圖示的那一列自己縮排 11px，
+     * 跟誰都不同，於是它逃過檢查，照樣被中心相同的鄰居拖去置中。
+     * 靠左是<b>整欄</b>的性質，欄裡只要有兩列對齊同一個左緣，這一欄就是靠左的，
+     * 縮排不同的那一列也不例外（那是圖示佔的位置，不是置中）。
+     */
+    private static boolean leftAlignedColumn(int k, List<List<int[]>> all) {
+        List<Integer> starts = new ArrayList<>();
+        for (List<int[]> row : all) {
+            if (row != null && k < row.size()) {
+                starts.add(row.get(k)[0]);
+            }
+        }
+        for (int i = 0; i < starts.size(); i++) {
+            for (int j = i + 1; j < starts.size(); j++) {
+                if (Math.abs(starts.get(i) - starts.get(j)) <= EDGE_TOLERANCE) {
                     return true;
                 }
             }
