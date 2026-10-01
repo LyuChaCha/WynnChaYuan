@@ -406,6 +406,15 @@ tasks.register('runIngredientTooltipChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runIngredientTooltipChecks' }
 
+// 迷你任務卡片的說明段：底色是灰的，貼不上的色段不能拿別段的顏色去補。
+tasks.register('runMiniQuestCardChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MiniQuestCardTest'
+}
+tasks.named('check') { dependsOn 'runMiniQuestCardChecks' }
+
 // boss bar 開頭的怪物名跟名牌用同一條譯文。
 tasks.register('runBossBarNameChecks', JavaExec) {
     group = 'verification'
