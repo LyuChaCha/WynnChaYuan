@@ -11,7 +11,7 @@
  "entries": {
   "ability-warrior#0239": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "發動技能或受到傷害，將終極技能量表 {#}{#}充能至 {~}",
+   "dst": "使用技能或受到傷害以將你的 大招 {#}{#} 充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -42,7 +42,7 @@
   },
   "ability-warrior#0233": {
    "src": "Casting Main Attack or Uppercut{#}on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "對尖刺使用普通攻擊或 Uppercut{#}會將它引爆，\n造成傷害並給予 {~1} 吸收 ❤，腐敗期間同樣有效。\n額外生命會在 {~2} 秒內衰減。",
+   "dst": "對尖刺使用普攻或 Uppercut{#}會將它引爆，\n造成傷害並給予 {~1} 吸收 ❤，腐敗期間同樣有效。\n額外生命會在 {~2} 秒內衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -70,7 +70,7 @@
   },
   "ability-warrior#0243": {
    "src": "Gain +{~} Damage per {~}{#}Harmony.",
-   "dst": "每 {~2}{#}層和諧獲得 +{~1} 傷害。",
+   "dst": "每 {~2}{#}層調和獲得 +{~1} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -154,7 +154,7 @@
   },
   "ability-warrior#0237": {
    "src": "While you have {~}{#}Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "持有 {~1}{#}神聖能量 ✧ 時，\n你的普通攻擊獲得強化，\n並為你提供 {~2} 點神聖能量。",
+   "dst": "持有 {~1}{#}神聖能量 ✧ 時，\n你的普攻獲得強化，\n並為你提供 {~2} 點神聖能量。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-warrior#0266": {
    "src": "{#}{#}Cooldown: {~}s (for Holy Power)",
-   "dst": "{#}{#}冷卻時間: {~} 秒 (神聖之力)",
+   "dst": "{#}{#}冷卻時間: {~} 秒 (神聖能量)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2041,7 +2041,7 @@
   },
   "ability-warrior#0102": {
    "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
-   "dst": "處於 Corrupted {#} 狀態時，\n普通攻擊命中敵人會依攻擊速度以每秒 +{~} \n的比例提升 Corrupted {#}。\n(Powder Specials 總是提升 +{~} )",
+   "dst": "處於 Corrupted {#} 狀態時，\n普攻命中敵人會依攻擊速度以每秒 +{~} \n的比例提升 Corrupted {#}。\n(Powder Specials 總是提升 +{~} )",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2394,7 +2394,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "當擁有 {~1} Holy Power ✧ 時，\n你的普通攻擊將獲得強化，\n且每次命中獲得 {~2} Holy Power。",
+   "dst": "當擁有 {~1} Holy Power ✧ 時，\n你的普攻將獲得強化，\n且每次命中獲得 {~2} Holy Power。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2409,7 +2409,7 @@
   },
   "ability-warrior#0129": {
    "src": "{#} Cooldown: {~}s (for Holy Power)",
-   "dst": "{#} 冷卻時間: {~} 秒 (神聖之力)",
+   "dst": "{#} 冷卻時間: {~} 秒 (神聖能量)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2583,7 +2583,7 @@
   },
   "ability-warrior#0142": {
    "src": "While Corrupted, your Main Attack and\nPowder Specials now cost {~} health to\nuse, activating Blood Pact.",
-   "dst": "處於 Corrupted 狀態時，\n普通攻擊與 Powder Specials 將消耗 {~} 生命，\n並觸發 Blood Pact。",
+   "dst": "處於 Corrupted 狀態時，\n普攻與 Powder Specials 將消耗 {~} 生命，\n並觸發 Blood Pact。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3332,7 +3332,7 @@
   },
   "ability-warrior#0197": {
    "src": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max {~})\n(Damage is dealt as Main Attack Damage)",
-   "dst": "每當 Blood Pact 觸發時，\n下一次普通攻擊將附加鮮血橫掃。{c1}(最高 {~})\n{/}(此傷害視為普攻傷害)",
+   "dst": "每當 Blood Pact 觸發時，\n下一次普攻將附加鮮血橫掃。{c1}(最高 {~})\n{/}(此傷害視為普攻傷害)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3632,7 +3632,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "對尖刺施放普通攻擊或 Uppercut 時會將其引爆，\n造成傷害並獲得 +{~} Overhealth ❤(在 Corrupted 狀態下也能生效)。\n此效果會在 {~} 秒內慢慢降低。",
+   "dst": "對尖刺施放普攻或 Uppercut 時會將其引爆，\n造成傷害並獲得 +{~} Overhealth ❤(在 Corrupted 狀態下也能生效)。\n此效果會在 {~} 秒內慢慢降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3647,7 +3647,7 @@
   },
   "ability-warrior#0220": {
    "src": "Summons {~} Corrupted Spikes that rise from\nthe earth around you, dealing damage.",
-   "dst": "在你周圍地面召喚 {~} 個 Corrupted 尖刺，\n造成大量傷害。",
+   "dst": "在你周圍地面召喚 {~} 個 Corrupted 尖刺，\n造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
