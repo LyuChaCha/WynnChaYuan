@@ -602,19 +602,26 @@ def check_substitutable_names(files: list[Path]) -> list[Problem]:
     return out
 
 
+BUILD_PART_FILES = {"tome.json", "charm.json", "aspect.json"}
+"""配裝零件：書卷、護符、面向。見 `check_gear_name_switch`。"""
+
+
 def check_gear_name_switch(files: list[Path]) -> list[Problem]:
     """有名稱條目的檔案要表態：受不受 F6「翻譯物品名稱」開關管。
 
     <h2>那個開關是為誰設的</h2>
-    只為<b>裝備</b>——裝備名稱保持英文才對得上 wiki、交易市場與社群討論。
-    素材、材料、典籍、面向、護符跟交易市場無關，被它關掉沒有道理。
+    為了<b>對得上社群</b>——名稱保持英文才查得到 wiki、貼得進交易市場與討論。
+    裝備是最明顯的一類；書卷、護符、面向也一樣會被貼進配裝網站，
+    而 WynnBuilder 只認英文名（issue #936）。素材與材料不會出現在配裝裡，
+    被這個開關關掉沒有道理。
 
     <h2>為什麼要擋</h2>
     開關<b>預設是關的</b>，所以標錯的後果是「譯文靜靜地不見」：
     玩家打開素材袋，標題與說明都是中文，九個素材名稱全是英文，
     看起來就像翻譯憑空消失，沒有任何錯誤訊息可循。v1.99.73 就是這樣。
 
-    <p>所以規則寫死成兩邊都要明說：`gear-*.json` 不可以標 false，
+    <p>所以規則寫死成三類：`gear-*.json` 不可以標 false；
+    `BUILD_PART_FILES` 這三個配裝零件檔<b>必須</b>標 true（issue #936）；
     其餘有名稱的道具檔<b>必須</b>標 false。新增一個道具檔忘了標，
     會在這裡得到一則講清楚的錯誤，而不是在遊戲裡少一半譯文。
     """
@@ -640,12 +647,19 @@ def check_gear_name_switch(files: list[Path]) -> list[Problem]:
             continue                       # 沒有名稱條目，這個旗標不影響任何事
 
         gear = path.name.startswith("gear-")
+        part = path.name in BUILD_PART_FILES
         flag = meta.get("gearNames")
         if gear and flag is False:
             out.append(Problem("error", path.name, "_meta.gearNames",
                                "裝備檔不可以標成 false —— 那會讓「翻譯物品名稱」"
                                "開關對它失效，裝備名稱是刻意保留英文的"))
-        elif not gear and flag is not False:
+        elif part and flag is not True:
+            out.append(Problem("error", path.name, "_meta.gearNames",
+                               "配裝零件檔要標成 true（issue #936）——書卷、護符、"
+                               "面向會被貼進 WynnBuilder，那邊只認英文名，所以它們"
+                               "跟裝備一起受「翻譯物品名稱」開關管、按 Shift 看得到"
+                               "英文原名"))
+        elif not gear and not part and flag is not False:
             out.append(Problem("error", path.name, "_meta.gearNames",
                                f"這個檔有 {names} 個名稱，但沒有標 gearNames: false，"
                                f"於是它們會跟裝備一起被「翻譯物品名稱」開關關掉——"
