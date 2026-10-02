@@ -477,8 +477,8 @@
    "source": "wiki"
   },
   "Mixed Feelings#047": {
-   "src": "During the night I saw something moving across the cliffs.. Looked like a personal balloon.",
-   "dst": "夜中に崖を何かが動いてた…一人用の気球みたいだった。",
+   "src": "During the night I saw something moving across the cliffs.. Looked like a personal balloon. It wouldn't have been out of the ordinary except there are occasional blood trails coming from the balloon...",
+   "dst": "夜中、崖の向こう側で何かが動くのを見かけた……。まるで人の形をした風船のようだった。それ自体は別に珍しいことではないのだが、その風船から時折、血の跡が流れているのが気になった……。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mixed Feelings",
@@ -765,6 +765,216 @@
    "stage": "Stage 9",
    "speaker": "Javen",
    "source": "wiki"
+  },
+  "Mixed Feelings#076": {
+   "src": "Go for a drink at the Corkus Docks Inn, [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]にあるCorkus Docks Innで一杯呑みに行く",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#077": {
+   "src": "Talk to Javen to find out more about what happened.",
+   "dst": "Javenと話して何が起きたか詳しく知る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#078": {
+   "src": "You should ask Javen about what happened.",
+   "dst": "何が起こったかJavenに尋ねるべきだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#079": {
+   "src": "Talk to citizens around the docks to find out more about what happened.",
+   "dst": "埠頭周辺の市民と話をして、何が起こったのかさらに詳しく調べる",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#080": {
+   "src": "You ran outta here and wrecked all sorts! You better go find the people you affected and apologise!",
+   "dst": "お前はさっさと逃げ出して、あちこちで大暴れしたな!迷惑をかけた人たちを探して、ちゃんと謝ってこい!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Javen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#081": {
+   "src": "Hurry, please! Just head into the big trapdoor by the bushes, the controls are in there.",
+   "dst": "早くしてくれ!茂みのそばにある大きな落とし戸の中に入ってくれ。制御装置はその中にある。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#082": {
+   "src": "> Thank you for choosingsing CorkTech! Your company for a safe and trustworthy service.",
+   "dst": "> CorkTechをお選びいただき誠にありがとうございます。安全で信頼できるサービスをご提供いたします。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#083": {
+   "src": "Powering up elevator...",
+   "dst": "エレベーターを起動中…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#084": {
+   "src": "You can push the button beside the crates to pick them up, and stand on the pressure plate to place them.",
+   "dst": "木箱の横にあるボタンを押すと木箱を持ち上げて、感圧板の上に立つと木箱を置ける。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#085": {
+   "src": "It seems like all crates are balanced now.",
+   "dst": "すべての木箱のバランスが取れたようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#086": {
+   "src": "I learned about some rumours involving separatists. I should continue helping locals to find out more.",
+   "dst": "分離主義者が関与しているという噂について知った。地元の人々をさらに支援して、もっと情報を集める必要がある",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#087": {
+   "src": "Someone told you more about the patriots of Corkus. You should continue to find the missing clue.",
+   "dst": "誰かがあなたにCorkusの愛国者たちについてさらに詳しく教えてくれたはず。失われた手がかりを探し続けるべきだ",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#088": {
+   "src": "You manage to reach the chest safely, getting ready to jump through a hole the fire burned.",
+   "dst": "なんとか無事にチェストまでたどり着き、炎によって焼け穴が開いた場所を飛び越えようとした。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#089": {
+   "src": "Follow the trail of blood close to the castle, [-{~}, {~}, -{~}]",
+   "dst": "城の近くにある血痕を辿る[-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#090": {
+   "src": "You really don't see a reason to go in there at the moment.",
+   "dst": "今のところ、そこに入る理由がまったく見当たらない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#091": {
+   "src": "Use the balloon to enter the suspicious hideout.",
+   "dst": "飛行船を使い不審な隠れ家に入る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#092": {
+   "src": "Survive the fight against the drugged corkian",
+   "dst": "薬物を投与されたcorkianとの戦いを生き延びる",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#093": {
+   "src": "After witnessing your crash into the cliff, Corkian citizens informed the government.",
+   "dst": "あなたが崖に激突するのを目撃したCorkus市民たちが、政府に通報しました。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#094": {
+   "src": "Shortly after your victory security forces found the hideout and arrested the remaining separatists.",
+   "dst": "あなたの勝利から間もなく、治安部隊が潜伏先を発見し、残りの分離主義者たちを逮捕した。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#095": {
+   "src": "Their leader was nowhere to be found.",
+   "dst": "彼らのリーダーはどこにも見当たらなかった。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#096": {
+   "src": "Always nice to see my favourite customer pay a visit!",
+   "dst": "お気に入りのお客様が遊びに来てくれるのは、いつだって嬉しい!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "captured.json"
   }
  }
 }
