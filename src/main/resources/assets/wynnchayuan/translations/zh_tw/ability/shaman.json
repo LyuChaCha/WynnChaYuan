@@ -515,7 +515,7 @@
   },
   "ability-shaman#0267": {
    "src": "Hitting enemies with your Main Attack\nwill consume {~}{#}Static per beam to\ncause a small explosion.",
-   "dst": "普通攻擊命中敵人時，每道光束會消耗 {~}{#}Static 造成一次小型爆炸。",
+   "dst": "普攻命中敵人時，每道光束會消耗 {~}{#}Static 造成一次小型爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -895,7 +895,7 @@
   },
   "ability-shaman#0284": {
    "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#}{#}for +{~}s.",
-   "dst": "你的普通攻擊會為敵人附加 {~} 秒的 失血 {#}{#}。",
+   "dst": "你的普攻會為敵人附加 {~} 秒的 失血 {#}{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1077,7 +1077,7 @@
   },
   "ability-shaman#0293": {
    "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
-   "dst": "⚔ 總傷害：{~} (你的每秒傷害，視為普通攻擊傷害)",
+   "dst": "⚔ 總傷害：{~} (你的每秒傷害，視為普攻傷害)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1176,7 +1176,7 @@
   },
   "ability-shaman#0340": {
    "src": "{#} Fanatic: -{~} {#}{#}Totem Cost",
-   "dst": "{#} 金虔：{~} {#}{#} 圖騰消耗",
+   "dst": "{#} 金虔：-{~} {#}{#} 圖騰消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1218,7 +1218,7 @@
   },
   "ability-shaman#0342": {
    "src": "{#} Heretic: -{~} {#}{#}Haul Cost",
-   "dst": "{#} 蒼逆：{~} {#}{#} 拖拽消耗",
+   "dst": "{#} 蒼逆：-{~} {#}{#} 拖拽消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1260,7 +1260,7 @@
   },
   "ability-shaman#0341": {
    "src": "{#} Lunatic: +{~} Main Attack Beam",
-   "dst": "{#} 赤狂：增加 {~} 條普通攻擊光束",
+   "dst": "{#} 赤狂：增加 {~} 條普攻光束",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1274,7 +1274,7 @@
   },
   "ability-shaman#0344": {
    "src": "{#} Lunatic: -{~} {#}{#}Aura Cost",
-   "dst": "{#} 赤狂：{~} {#}{#} 氣場消耗",
+   "dst": "{#} 赤狂：-{~} {#}{#} 氣場消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1288,7 +1288,7 @@
   },
   "ability-shaman#0314": {
    "src": "{#} Lunatic: Hitting enemies with {~} Main Attack beams will",
-   "dst": "{#} 赤狂：利用 {~} 條主要攻擊光束命中敵人將會使",
+   "dst": "{#} 赤狂：利用 {~} 條普攻光束命中敵人將會使",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1476,7 +1476,7 @@
   },
   "ability-shaman#0330": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "{#}{#} 效果: {~} 友軍傷害加成 (⚔)",
+   "dst": "{#}{#} 效果: +{~} 友軍傷害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1491,7 +1491,7 @@
   },
   "ability-shaman#0328": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "{#}{#} 效果: {~} 人偶傷害加成 (⚔)",
+   "dst": "{#}{#} 效果: +{~} 人偶傷害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1519,7 +1519,7 @@
   },
   "ability-shaman#0339": {
    "src": "{#}{#}Effect: +{~} Walk Speed to Self",
-   "dst": "{#}{#} 效果: {~} 自身移速",
+   "dst": "{#}{#} 效果: +{~} 自身移速",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1533,7 +1533,7 @@
   },
   "ability-shaman#0320": {
    "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "{#}{#} 效果: {~} Eldritch Call 傷害(每層)",
+   "dst": "{#}{#} 效果: +{~} Eldritch Call 傷害(每層)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1633,7 +1633,7 @@
   },
   "ability-shaman#0318": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}{#} 總傷害: {~} (你的每秒傷害，對於 Uproot 的每次命中)",
+   "dst": "{#}{#} 總傷害: -{~} (你的每秒傷害，對於 Uproot 的每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1675,7 +1675,7 @@
   },
   "ability-shaman#0323": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#}{#} 總傷害: {~} (你的每秒傷害，流血)",
+   "dst": "{#}{#} 總傷害: {~} (你的每秒傷害，失血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1758,7 +1758,7 @@
   },
   "ability-shaman#0003": {
    "src": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
-   "dst": "使用法器時，普通攻擊的彈道速度加倍、普攻傷害增加。",
+   "dst": "使用法器時，普攻的彈道速度加倍、普攻傷害增加。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1853,7 +1853,7 @@
   },
   "ability-shaman#0010": {
    "src": "Reduce your Main Attack's spread,\nand increase its beam speed by +{~}.",
-   "dst": "使你的普通攻擊擴散幅度降低，並且彈道速度提升 {~}。",
+   "dst": "使你的普攻擴散幅度降低，並且彈道速度提升 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1880,7 +1880,7 @@
   },
   "ability-shaman#0012": {
    "src": "Leap towards your Totem.",
-   "dst": "將你拉至至圖騰的位置",
+   "dst": "躍向你的圖騰",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1907,7 +1907,7 @@
   },
   "ability-shaman#0014": {
    "src": "Your Main Attack will emit +{~} extra beams.\n(Increases your overall damage by +{~})",
-   "dst": "你的普通攻擊會增加 {~} 條光束。(總傷害增加 {~})",
+   "dst": "你的普攻會增加 {~} 條光束。(總傷害增加 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2192,7 +2192,7 @@
   },
   "ability-shaman#0037": {
    "src": "{#} Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#} 總傷害: {~} (你的每秒傷害，對於 Uproot 的每次命中)",
+   "dst": "{#} 總傷害: -{~} (你的每秒傷害，對於 Uproot 的每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2205,7 +2205,7 @@
   },
   "ability-shaman#0036": {
    "src": "{#}({#}{#}Earth: -{~})",
-   "dst": "{#}({#}{#}地: {~})",
+   "dst": "{#}({#}{#}地: -{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -2987,7 +2987,7 @@
   },
   "ability-shaman#0094": {
    "src": "{#} Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#} 總傷害: {~} (你的每秒傷害，流血)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，失血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3040,7 +3040,7 @@
   },
   "ability-shaman#0098": {
    "src": "{#} Fanatic: -{~} {#} Totem Cost",
-   "dst": "{#} 金虔：{~} {#} 圖騰消耗",
+   "dst": "{#} 金虔：-{~} {#} 圖騰消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3053,7 +3053,7 @@
   },
   "ability-shaman#0099": {
    "src": "{#} Heretic: -{~} {#} Haul Cost",
-   "dst": "{#} 蒼逆：{~} {#} 拖拽消耗",
+   "dst": "{#} 蒼逆：-{~} {#} 拖拽消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3066,7 +3066,7 @@
   },
   "ability-shaman#0100": {
    "src": "{#} Lunatic: -{~} {#} Aura Cost",
-   "dst": "{#} 赤狂：{~} {#} 氣場消耗",
+   "dst": "{#} 赤狂：-{~} {#} 氣場消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3683,7 +3683,7 @@
   },
   "ability-shaman#0145": {
    "src": "Your Main Attack deals {~} more\ndamage for each rallied Puppet.",
-   "dst": "每存在一個被召集的人偶，你的普通攻擊傷害提升 {~}",
+   "dst": "每存在一個被召集的人偶，你的普攻傷害提升 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3723,7 +3723,7 @@
   },
   "ability-shaman#0148": {
    "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
-   "dst": "每發普通攻擊的光束命中人偶會使其持續時間減少 {~} 秒，並為其提供傷害加成。",
+   "dst": "每發普攻的光束命中人偶會使其持續時間減少 {~} 秒，並為其提供傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3738,7 +3738,7 @@
   },
   "ability-shaman#0149": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "{#} 效果: {~} 人偶傷害加成 (⚔)",
+   "dst": "{#} 效果: +{~} 人偶傷害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3763,7 +3763,7 @@
   },
   "ability-shaman#0151": {
    "src": "Masquerade will trigger after -{~}\nless Mask switch. Reduces mana\nbonus by -{~}.",
-   "dst": "Masquerade 觸發所需次數減少 {~} 次。但獲得的魔力減少 {~}。",
+   "dst": "Masquerade 觸發所需的換 Mask 次數減少 {~} 次，但獲得的魔力減少 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3940,7 +3940,7 @@
   },
   "ability-shaman#0164": {
    "src": "While they are attacking, your Hummingbirds\nwill not apply their passive effects to you.",
-   "dst": "當它們在攻擊時，被動加成失效。",
+   "dst": "Hummingbirds 在攻擊時，不會把被動效果加在你身上。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3955,7 +3955,7 @@
   },
   "ability-shaman#0165": {
    "src": "{#} Effect: +{~} Walk Speed to Self",
-   "dst": "{#} 效果: {~} 自身移速",
+   "dst": "{#} 效果: +{~} 自身移速",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -4116,7 +4116,7 @@
   },
   "ability-shaman#0177": {
    "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#} for +{~}s.",
-   "dst": "你的普通攻擊會為敵人附加 {~} 秒的 失血 {#}。",
+   "dst": "你的普攻會為敵人附加 {~} 秒的 失血 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -4390,7 +4390,7 @@
   },
   "ability-shaman#0197": {
    "src": "{#} Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "{#} 效果: {~} Eldritch Call 傷害(每層)",
+   "dst": "{#} 效果: +{~} Eldritch Call 傷害(每層)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

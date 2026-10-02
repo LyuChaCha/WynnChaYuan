@@ -12,7 +12,7 @@
  "entries": {
   "ability-mage#0242": {
    "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "发动技能或进行治疗，将终极技能槽 {#}{#}充能至 {~}",
+   "dst": "发动技能或进行治疗，将大招槽 {#}{#}充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -26,7 +26,7 @@
   },
   "ability-mage#0246": {
    "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "发动技能，将终极技能槽 {#}{#}充能至 {~}",
+   "dst": "发动技能，将大招槽 {#}{#}充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -99,7 +99,7 @@
   },
   "ability-mage#0245": {
    "src": "Lightweaver{#}applies +{~} Crystallized {#}\nto enemies it hits.",
-   "dst": "织光者{#}对命中的敌人附加 {~} 层结晶 {#}。",
+   "dst": "织光者{#}对命中的敌人附加 {~} 层结晶化 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -127,7 +127,7 @@
   },
   "ability-mage#0240": {
    "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#}{#}to deal +{~} damage.",
-   "dst": "陨石、普通攻击与粉末特效会消耗\n不稳定 {#}{#}，多造成 {~} 伤害。",
+   "dst": "陨石、普攻与粉末特效会消耗\n不稳定 {#}{#}，多造成 {~} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -774,7 +774,7 @@
   },
   "ability-mage#0252": {
    "src": "{#}{#}Main Attack Damage: +{~}{#}(per {~} Walk Speed)",
-   "dst": "{#}{#}普通攻击伤害: +{~1}{#}(每 {~2} 移动速度)",
+   "dst": "{#}{#}普攻伤害: +{~1}{#}(每 {~2} 移动速度)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1417,7 +1417,7 @@
   },
   "ability-mage#0007": {
    "src": "Improve your Main Attack's damage\nand range when using a wand.",
-   "dst": "使用魔杖时，提高你普通攻击的\n伤害与攻击距离。",
+   "dst": "使用魔杖时，提高你普攻的\n伤害与攻击距离。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1867,7 +1867,7 @@
   },
   "ability-mage#0039": {
    "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
-   "dst": "施放 Meteor 时改为召唤 {~} 颗\n拥有 {~} 点生命的光球；当你使用普通攻击时，\n它们会跟着攻击。",
+   "dst": "施放 Meteor 时改为召唤 {~} 颗\n拥有 {~} 点生命的光球；当你使用普攻时，\n它们会跟着攻击。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2368,7 +2368,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用普通攻击命中敌人时，每 {~2} 秒\n最多获得 +{~1} 层 Distortion {#}。",
+   "dst": "用普攻命中敌人时，每 {~2} 秒\n最多获得 +{~1} 层 Distortion {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2504,7 +2504,7 @@
   },
   "ability-mage#0085": {
    "src": "When your Mana Bank ✺ reaches {~},\nyour Main Attack will explode\nupon impact with enemies.",
-   "dst": "当你的 Mana Bank ✺ 达到 {~} 时，\n你的普通攻击会在命中敌人时\n引发爆炸。",
+   "dst": "当你的 Mana Bank ✺ 达到 {~} 时，\n你的普攻会在命中敌人时\n引发爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2588,7 +2588,7 @@
   },
   "ability-mage#0091": {
    "src": "Your Main Attack is imbued with vacuum,\ndealing additional damage.",
-   "dst": "你的普通攻击被灌注了真空之力，\n造成额外伤害。",
+   "dst": "你的普攻被灌注了真空之力，\n造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3317,7 +3317,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "用普通攻击命中敌人后，Time Dilation\n在 {~} 秒内不会衰减。",
+   "dst": "用普攻命中敌人后，Time Dilation\n在 {~} 秒内不会衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [

@@ -95,7 +95,7 @@
   },
   "ability-assassin#0236": {
    "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab{#}will deal +{~} damage, or your next\nPowder Special{#}will deal +{~} damage.",
-   "dst": "敵人身上有 {~1}+ 層標記 {#} 時，你的下一次\nBackstab{#}多造成 {~2} 傷害，或下一次\n粉末特效{#}多造成 {~3} 傷害。",
+   "dst": "敵人身上有 {~1}+ 層標記 {#} 時，你的下一次\nBackstab{#}多造成 {~2} 傷害，或下一次\n粉末技能{#}多造成 {~3} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -109,7 +109,7 @@
   },
   "ability-assassin#0234": {
    "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#}{#}from nearby enemies.\nFor every {~} Marks {#}{#}consumed,\nsummon a Knife. (Max {~} Knives)",
-   "dst": "在 Vanish 期間施放時，\nSpin Attack 會吸走附近敵人身上\n所有的標記 {#}{#}。\n每消耗 {~1} 層標記 {#}{#}就召出一把飛刀。\n(最多 {~2} 把)",
+   "dst": "在 Vanish 期間施放時，\nSpin Attack 會吸走附近敵人身上\n所有的標記 {#}{#}。\n每消耗 {~1} 層標記 {#}{#}就召出一把飛刃。\n(最多 {~2} 把)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -555,7 +555,7 @@
   },
   "ability-assassin#0005": {
    "src": "Increases your Walk Speed and\nMain Attack's damage by +{~}.",
-   "dst": "提升你的移動速度與普通攻擊傷害 {~}。",
+   "dst": "提升你的移動速度與普攻傷害 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -609,7 +609,7 @@
   },
   "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
-   "dst": "每擁有來自道具的 {~} 或 {~} 點原始普通攻擊傷害，就獲得 +{~}/{~} 秒的毒素傷害。(上限 {~}/{~} 秒)",
+   "dst": "每擁有來自道具的 {~} 或 {~} 點原始普攻傷害，就獲得 +{~}/{~} 秒的毒素傷害。(上限 {~}/{~} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -624,7 +624,7 @@
   },
   "ability-assassin#0010": {
    "src": "Your Main Attack gains additional range.",
-   "dst": "你的普通攻擊獲得額外攻擊距離。",
+   "dst": "你的普攻獲得額外攻擊距離。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -678,7 +678,7 @@
   },
   "ability-assassin#0014": {
    "src": "Your Main Attack will hit twice,\nbut deal -{~} damage per hit.",
-   "dst": "你的普通攻擊會命中兩次，但每次命中的傷害降低 -{~}。",
+   "dst": "你的普攻會命中兩次，但每次命中的傷害降低 -{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1940,7 +1940,7 @@
   },
   "ability-assassin#0106": {
    "src": "Your next Main Attack will throw all\nyour prepared shurikens.",
-   "dst": "你的下一次普通攻擊會投擲所有準備好的手裏劍。",
+   "dst": "你的下一次普攻會投擲所有準備好的手裏劍。",
    "role": "desc",
    "kind": "block",
    "ctx": [

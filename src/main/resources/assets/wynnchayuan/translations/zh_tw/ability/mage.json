@@ -12,7 +12,7 @@
  "entries": {
   "ability-mage#0242": {
    "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "發動技能或治療，將終極技能量表 {#}{#}充能至 {~}",
+   "dst": "使用技能或治療以將你的 大招 {#}{#} 充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -26,7 +26,7 @@
   },
   "ability-mage#0246": {
    "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "發動技能，將終極技能量表 {#}{#}充能至 {~}",
+   "dst": "使用技能以將你的 大招 {#}{#} 充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -127,7 +127,7 @@
   },
   "ability-mage#0240": {
    "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#}{#}to deal +{~} damage.",
-   "dst": "Meteor、普通攻擊與粉末特效會消耗\n失衡 {#}{#}，多造成 {~} 傷害。",
+   "dst": "Meteor、普攻與粉末技能會消耗\n失衡 {#}{#}，多造成 {~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0259": {
    "src": "{#}{#}Area of Effect: +{~} Blocks (Circle-Shaped)",
-   "dst": "{#}{#}作用範圍: {~} 格 (圓形)",
+   "dst": "{#}{#}作用範圍: +{~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1037,7 +1037,7 @@
   },
   "ability-mage#0249": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Frozen Tornado)",
-   "dst": "{#}{#}冰凍龍捲風總傷害: {~} (你的每秒傷害)",
+   "dst": "{#}{#}冰凍龍捲風總傷害: +{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1417,7 +1417,7 @@
   },
   "ability-mage#0007": {
    "src": "Improve your Main Attack's damage\nand range when using a wand.",
-   "dst": "使用魔杖時，提升你普通攻擊的\n傷害與攻擊距離。",
+   "dst": "使用魔杖時，提升你普攻的\n傷害與攻擊距離。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1867,7 +1867,7 @@
   },
   "ability-mage#0039": {
    "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
-   "dst": "施放 Meteor 時改為召喚 {~1} 顆\n擁有 {~2} 點生命的光球;當你使用普通攻擊時，\n它們會跟著攻擊。",
+   "dst": "施放 Meteor 時改為召喚 {~1} 顆\n擁有 {~2} 點生命的光球；當你使用普攻時，\n它們會跟著攻擊。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2298,7 +2298,7 @@
   },
   "ability-mage#0070": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Frozen Tornado)",
-   "dst": "{#} 冰凍龍捲風總傷害: {~} (你的每秒傷害)",
+   "dst": "{#} 冰凍龍捲風總傷害: +{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2368,7 +2368,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用普通攻擊命中敵人會給予自身 Distortion {#}，其層數取決於與上次命中時的間隔，最高在 {~2} 秒時一次獲得 {~1} 層。",
+   "dst": "用普攻命中敵人會給予自身 Distortion {#}，其層數取決於與上次命中時的間隔，最高在 {~2} 秒時一次獲得 {~1} 層。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2504,7 +2504,7 @@
   },
   "ability-mage#0085": {
    "src": "When your Mana Bank ✺ reaches {~},\nyour Main Attack will explode\nupon impact with enemies.",
-   "dst": "當你的 Mana Bank ✺ 達到 {~} 時，\n你的普通攻擊會在命中敵人時\n引發爆炸。",
+   "dst": "當你的 Mana Bank ✺ 達到 {~} 時，\n你的普攻會在命中敵人時\n引發爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2588,7 +2588,7 @@
   },
   "ability-mage#0091": {
    "src": "Your Main Attack is imbued with vacuum,\ndealing additional damage.",
-   "dst": "你的普通攻擊被灌注了真空之力，\n造成額外傷害。",
+   "dst": "你的普攻被灌注了真空之力，\n造成額外傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2615,7 +2615,7 @@
   },
   "ability-mage#0093": {
    "src": "Frozen Tornado will summon {~} tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
-   "dst": "冰凍龍捲風會召喚 {~} 個龍捲風。",
+   "dst": "冰凍龍捲風會召喚 {~} 個龍捲風。\n(敵人無法同時被多個龍捲風\n或蛇造成傷害)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3317,7 +3317,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "使用普通攻擊命中敵人能使移動速度不因停止衝刺而降低，持續 {~} 秒。",
+   "dst": "用普攻命中敵人後，Time Dilation 在 {~} 秒內不會衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
