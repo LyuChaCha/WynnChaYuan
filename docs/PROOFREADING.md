@@ -104,7 +104,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | quest.json | 822 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
 | Queen's Recruit | 695 | [`queen-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/queen-s-recruit.json) |
 | discovery.json | 528 | [`discovery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery.json) |
-| label.json | 469 | [`label.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/label.json) |
+| label.json | 449 | [`label.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/label.json) |
 | shaman.json | 363 | [`shaman.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/shaman.json) |
 | A New Beginning | 359 | [`a-new-beginning.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-new-beginning.json) |
 | Recover the Past | 348 | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) |
