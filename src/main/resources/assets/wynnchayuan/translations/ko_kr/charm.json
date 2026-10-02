@@ -5,9 +5,9 @@
   "generated": "2026-08-19T12:14:19+00:00",
   "count": 5,
   "translated": 5,
-  "note": "只需填 dst。src 內的材質包圖示與數字已在抽取階段排除。 名稱不受「翻譯物品名稱」開關影響——那個開關是為了讓裝備名稱保持英文，跟這裡的道具無關。",
+  "note": "只需填 dst。src 內的材質包圖示與數字已在抽取階段排除。 名稱受「翻譯物品名稱」開關管（`gearNames: true`）——配裝網站 WynnBuilder 只認英文名，玩家需要按 Shift 看得到原文。見 issue #936。",
   "itemNames": true,
-  "gearNames": false
+  "gearNames": true
  },
  "entries": {
   "charm#0000": {

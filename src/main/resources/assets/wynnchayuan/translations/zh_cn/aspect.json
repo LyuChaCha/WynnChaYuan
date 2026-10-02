@@ -5,9 +5,9 @@
   "generated": "2026-08-19T12:14:19+00:00",
   "count": 128,
   "translated": 128,
-  "note": "只需填 dst。src 里的材质包图标与数字在抽取阶段就已经排除了。 名称不受「翻译物品名称」开关影响——那个开关是为了让装备名保持英文，跟制作材料无关。",
+  "note": "只需填 dst。src 里的材质包图标与数字在抽取阶段就已经排除了。 名称受「翻译物品名称」开关管（`gearNames: true`）——配装网站 WynnBuilder 只认英文名，玩家需要按 Shift 才看得到原文。见 issue #936。",
   "itemNames": true,
-  "gearNames": false
+  "gearNames": true
  },
  "entries": {
   "aspect#0000": {

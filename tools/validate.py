@@ -620,12 +620,10 @@ def check_gear_name_switch(files: list[Path]) -> list[Problem]:
     玩家打開素材袋，標題與說明都是中文，九個素材名稱全是英文，
     看起來就像翻譯憑空消失，沒有任何錯誤訊息可循。v1.99.73 就是這樣。
 
-    <p>所以規則寫死成三類都要明說：`gear-*.json` 不可以標 false；
-    `BUILD_PART_FILES` 這三個配裝零件檔<b>不可以漏掉這個旗標</b>
-    （issue #936 的語料 PR 會把它們從 false 改成 true，所以這一關這時候
-    兩個值都收——那個 PR 會把這裡收緊成只收 true）；其餘有名稱的道具檔
-    <b>必須</b>標 false。新增一個道具檔忘了標，會在這裡得到一則講清楚的錯誤，
-    而不是在遊戲裡少一半譯文。
+    <p>所以規則寫死成三類：`gear-*.json` 不可以標 false；
+    `BUILD_PART_FILES` 這三個配裝零件檔<b>必須</b>標 true（issue #936）；
+    其餘有名稱的道具檔<b>必須</b>標 false。新增一個道具檔忘了標，
+    會在這裡得到一則講清楚的錯誤，而不是在遊戲裡少一半譯文。
     """
     out: list[Problem] = []
     for path in files:
@@ -655,11 +653,12 @@ def check_gear_name_switch(files: list[Path]) -> list[Problem]:
             out.append(Problem("error", path.name, "_meta.gearNames",
                                "裝備檔不可以標成 false —— 那會讓「翻譯物品名稱」"
                                "開關對它失效，裝備名稱是刻意保留英文的"))
-        elif part and flag is None:
+        elif part and flag is not True:
             out.append(Problem("error", path.name, "_meta.gearNames",
-                               "配裝零件檔一定要明說 gearNames（issue #936）——"
-                               "true 代表跟裝備一起受「翻譯物品名稱」開關管、"
-                               "按 Shift 看得到英文原名；false 代表永遠照翻"))
+                               "配裝零件檔要標成 true（issue #936）——書卷、護符、"
+                               "面向會被貼進 WynnBuilder，那邊只認英文名，所以它們"
+                               "跟裝備一起受「翻譯物品名稱」開關管、按 Shift 看得到"
+                               "英文原名"))
         elif not gear and not part and flag is not False:
             out.append(Problem("error", path.name, "_meta.gearNames",
                                f"這個檔有 {names} 個名稱，但沒有標 gearNames: false，"
