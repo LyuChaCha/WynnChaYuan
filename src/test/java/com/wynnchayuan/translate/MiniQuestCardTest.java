@@ -83,7 +83,7 @@ public final class MiniQuestCardTest {
      * 採集橡木原木：折行的位置不一樣，<b>第一列只剩說明本文、一個方括號都沒有</b>。
      *
      * <h2>實機回報</h2>
-     * 「到採集站繳交」那一列是青色的，應該跟後面兩列一樣是灰的。鯉魚那張卡
+     * 「到採集告示繳交」那一列是青色的，應該跟後面兩列一樣是灰的。鯉魚那張卡
      * 第一列折進了「[30 鯉魚油]」所以看不出來——同一段文字，只因為折在別的地方
      * 就變色，那是色段貼回去的時候錯位了。
      */
@@ -106,7 +106,12 @@ public final class MiniQuestCardTest {
             System.out.println("  " + describe(line));
         }
         // 方括號裡的道具與座標有自己的顏色，說明本文該是灰的。折在哪裡都一樣。
-        for (String prose : new String[] {"到採集站繳交", "座標"}) {
+        //
+        // 找的字<b>不要帶術語</b>。這裡本來寫「到採集站繳交」，Gathering Post 的
+        // 譯名統一成「採集告示」之後整句就找不到，測試會紅在「找不到」而不是
+        // 顏色不對——那是測試自己壞了，不是程式壞了。「繳交」「座標」是句子的
+        // 骨架，換譯名也還在。
+        for (String prose : new String[] {"繳交", "座標"}) {
             Integer colour = colourOf(out, prose);
             check("★ " + what + "「" + prose + "」是灰的（實際 "
                           + (colour == null ? "找不到" : String.format("#%06X", colour)) + "）",
