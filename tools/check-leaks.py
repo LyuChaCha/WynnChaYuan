@@ -21,9 +21,16 @@
 
 所以這一道看的是<b>已經在倉庫裡</b>的東西。濾網管入口，這裡管存量。
 
+名字沒有形狀，所以還有一條不看形狀的
+------------------------------------
+上面那些認的都是「遊戲寫死的模板 + 別人的名字」。玩家自己取的寵物、坐騎與飾品名
+沒有模板可以靠——`Woopie` 跟 `Grume` 在結構上分不出來。那一條改看三個特徵同時
+成立：鍵是「一個名字 + ` {#}{#}`」、譯文空白、而且<b>只有一個語言有</b>。
+見 {@link LONE_PLATE}。它只報不刪——官方內容跟玩家寵物的差別只有人查得出來。
+
 用法：
     python tools/check-leaks.py             # 掃過就好
-    python tools/check-leaks.py --write     # 直接刪掉掃到的
+    python tools/check-leaks.py --write     # 直接刪掉掃到的（單名名牌那條不動）
     python tools/check-leaks.py --selftest  # 規則的正例與反例，改規則之後跑
 """
 
@@ -245,6 +252,97 @@ def glued_name(src: str) -> str | None:
     return None
 
 
+# 只有一個語言有、譯文空白的單名名牌
+# ----------------------------------
+# 上面每一條認的都是<b>一句話的形狀</b>。玩家自己取的寵物、坐騎與飾品名沒有
+# 形狀可以認——`Woopie` 跟 `Grume` 在結構上分不出來：都是一個詞、標題大小寫、
+# 後面跟著等級膠囊那兩個圖示。模組端的 {@code looksPlayerNamed} 就是這樣漏掉
+# 它們的，那一條靠「不符合標題大小寫」判斷，剛好取成標題大小寫的自訂名一路穿過去。
+#
+# 2026-10-01 那批 capture 帶進來 21 條這種名牌。#926 的作者當時就寫了「約 20 條
+# 單詞人名／寵物名無法確認是 NPC 還是玩家寵物，刻意留空待翻」——然後它們就留在
+# 倉庫裡了，而且譯文是空的，沒有人會去翻，也就永遠不會有人再想起這件事。
+# 拿去官方 wiki 對過：二十條一條都查不到，只有 `Liff` 是真的怪物（Auburn Forest
+# 的 105 級）。
+#
+# 一條一條看字形沒有出路。但這些條目有三個<b>互相獨立</b>的特徵同時成立：
+#
+#   1. 鍵的形狀就是「一個名字 + ` {#}{#}`」——只有一行、沒有別的詞、沒有佔位符
+#   2. 譯文是空的
+#   3. 只出現在<b>一個</b>語言的同名檔案裡
+#
+# 第三條是關鍵。官方的怪物名牌每個語言的 capture 都收得到——`Cursed Shrieker
+# {#}{#}` 六個語言都有、六個都還沒翻，這一條不會報它；而某個玩家的寵物只會出現在
+# 剛好跟他同隊的那一個人的 capture 裡。第一條單獨看會中一大片官方怪物
+# （`Drowsy Wybel {#}{#}`），要三條一起才收斂。
+#
+# <b>這一條不進 --write。</b>官方內容跟玩家寵物的差別只有人查得出來，照形狀刪會
+# 把 `Liff` 一起刪掉。報出來有兩條出路，都該由人決定：查到是官方內容就補上譯文
+# （補了就不符合第 2 條，不會再報），查不到就刪掉那一條。
+LONE_PLATE = re.compile(r"\A[A-Za-z][A-Za-z.'’ -]*[A-Za-z.] \{#\}\{#\}\Z")
+
+
+def lone_plate_keys(
+        corpus: dict[str, dict[str, dict[str, str]]]) -> set[tuple[str, str, str]]:
+    """哪些條目同時符合上面那三個條件。
+
+    :param corpus: 語言 → 檔名 → 鍵 → 譯文
+    :return: {(語言, 檔名, 鍵)}
+    """
+    owners: dict[tuple[str, str], int] = {}        # (檔名, 鍵) → 幾個語言有
+    for files in corpus.values():
+        for rel, pairs in files.items():
+            for key in pairs:
+                owners[(rel, key)] = owners.get((rel, key), 0) + 1
+
+    out: set[tuple[str, str, str]] = set()
+    for lang, files in corpus.items():
+        for rel, pairs in files.items():
+            for key, dst in pairs.items():
+                if dst or not LONE_PLATE.match(key):
+                    continue
+                if owners[(rel, key)] == 1:
+                    out.add((lang, rel, key))
+    return out
+
+
+def dst_rows(path: Path):
+    """檔案裡的 (鍵, 譯文)。{@link rows} 給的是原文，這一條規則看的是譯文。"""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    entries = data.get("entries") if isinstance(data, dict) else None
+    if isinstance(entries, dict):
+        for key, value in entries.items():
+            if isinstance(value, dict):
+                yield key, value.get("dst") or ""
+        return
+    if not isinstance(data, dict):
+        return
+    for key, value in data.items():
+        if not key.startswith("_") and isinstance(value, str):
+            yield key, value
+
+
+def lone_plates() -> dict[Path, set[str]]:
+    """掃過整份語料，回傳 檔案 → 要報出來的鍵。"""
+    corpus: dict[str, dict[str, dict[str, str]]] = {}
+    paths: dict[tuple[str, str], Path] = {}
+    for lang_dir in sorted(p for p in TRANSLATIONS.iterdir() if p.is_dir()):
+        for path in sorted(lang_dir.rglob("*.json")):
+            if path.name.startswith("_"):
+                continue
+            rel = path.relative_to(lang_dir).as_posix()
+            paths[(lang_dir.name, rel)] = path
+            corpus.setdefault(lang_dir.name, {})[rel] = dict(dst_rows(path))
+
+    out: dict[Path, set[str]] = {}
+    for lang, rel, key in lone_plate_keys(corpus):
+        out.setdefault(paths[(lang, rel)], set()).add(key)
+    return out
+
+
 def player_sign(src: str, items: set) -> str | None:
     """第一行是遊戲的物品名、其餘是玩家自己打的字 —— 回傳說明，否則 None。"""
     if "\n" not in src:
@@ -396,6 +494,73 @@ def selftest() -> int:
     ):
         check_crafted(src, False)
 
+    # 單名名牌那一條。形狀（LONE_PLATE）單獨看會中一大片官方怪物，所以要連
+    # 「譯文空白」與「只有一個語言有」一起測——收斂全靠那兩條。
+    def check_plate(src: str, want: bool) -> None:
+        nonlocal bad
+        got = LONE_PLATE.match(src) is not None
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ")
+              + ("是名牌的形狀" if want else "不是名牌的形狀") + "："
+              + json.dumps(src, ensure_ascii=False)[:66]
+              + ("" if ok else "（實際%s中）" % ("" if got else "沒")))
+        bad += 0 if ok else 1
+
+    # 是這個形狀 —— 包含官方怪物，形狀本身不區分
+    for src in ("Woopie {#}{#}", "K. Rool {#}{#}", "Wee Woo {#}{#}",
+                "BBANG {#}{#}", "Liff {#}{#}", "Drowsy Wybel {#}{#}"):
+        check_plate(src, True)
+
+    # 不是這個形狀
+    for src in (
+            "{p} {#}{#}",                              # 地名佔位符，不是名字
+            "{#} Blinders {#}{#}",                     # 名字前面還有圖示
+            "{#}{#}",                                  # 只有圖示
+            "Smidgen {#}{#}\n{#}\n{#} Distorted {~}s",  # 多行
+            "Toxic Puddle - {~}❤",                     # 不是名牌模板
+            "News Vendor",                             # NPC 名牌，沒有等級膠囊
+            "Hydroxi{~} {#}{#}",                       # 帳號名黏著 {~}，GLUED 那條管
+    ):
+        check_plate(src, False)
+
+    def check_lone(why: str, corpus: dict, want: set) -> None:
+        nonlocal bad
+        got = {(lang, rel, key) for lang, rel, key in lone_plate_keys(corpus)}
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ") + why
+              + ("" if ok else f"（實際 {sorted(got)}，預期 {sorted(want)}）"))
+        bad += 0 if ok else 1
+
+    # 玩家的寵物：只有一個語言有，譯文空白 —— 要報
+    check_lone(
+        "只有一個語言有、譯文空白 → 報",
+        {"zh_tw": {"label.json": {"Woopie {#}{#}": ""}},
+         "zh_cn": {"label.json": {}}},
+        {("zh_tw", "label.json", "Woopie {#}{#}")})
+
+    # 官方怪物：好幾個語言的 capture 都收到，都還沒翻 —— 不報
+    check_lone(
+        "多個語言都有（都還沒翻）→ 不報",
+        {"zh_tw": {"npc.json": {"Cursed Shrieker {#}{#}": ""}},
+         "ja_jp": {"npc.json": {"Cursed Shrieker {#}{#}": ""}}},
+        set())
+
+    # 補上譯文就不再報 —— 這是「查到是官方內容」那條出路
+    check_lone(
+        "有譯文 → 不報",
+        {"zh_tw": {"label.json": {"Liff {#}{#}": "Liff {#}{#}"}},
+         "zh_cn": {"label.json": {}}},
+        set())
+
+    # 同一個鍵在不同檔案分開算：npc.json 的那一條兩個語言都有，不報；
+    # label.json 的那一條只有 zh_tw 有，要報
+    check_lone(
+        "不同檔案分開算",
+        {"zh_tw": {"label.json": {"Grume {#}{#}": ""},
+                   "npc.json": {"Grume {#}{#}": ""}},
+         "ja_jp": {"npc.json": {"Grume {#}{#}": ""}}},
+        {("zh_tw", "label.json", "Grume {#}{#}")})
+
     print("\n" + ("自我檢查全過。" if not bad else f"有 {bad} 項不對。"))
     return 1 if bad else 0
 
@@ -427,20 +592,39 @@ def main(argv: list[str]) -> int:
                 found.setdefault(path, set()).add(key)
                 total += 1
 
-    if not total:
+    # 「只有一個語言有、譯文空白的單名名牌」。刻意不併進 found——這一條要人
+    # 查過才能決定是補譯文還是刪掉，--write 幫不上忙。
+    lone = lone_plates()
+    lonely = sum(len(keys) for keys in lone.values())
+    for path, keys in sorted(lone.items()):
+        rel = path.relative_to(TRANSLATIONS).as_posix()
+        for key in sorted(keys):
+            print(f"  [{rel}] 只有這個語言有、譯文空白的單名名牌")
+            print(f"      {json.dumps(key, ensure_ascii=False)[:100]}")
+
+    if not total and not lonely:
         print("語料裡沒有夾帶別人的名字。")
         return 0
 
-    if not write:
+    if total:
         print(f"\n掃到 {total} 條夾帶玩家名的條目。")
-        print("跑 python tools/check-leaks.py --write 刪掉它們。")
+        if not write:
+            print("跑 python tools/check-leaks.py --write 刪掉它們。")
+
+    if lonely:
+        print(f"\n掃到 {lonely} 條只有一個語言有、譯文空白的單名名牌。")
+        print("拿去官方 wiki 查：查得到就把譯文補上，查不到（是玩家自己取的寵物、")
+        print("坐騎或飾品名）就把那一條刪掉。這一條不能用 --write 代勞——官方內容")
+        print("跟玩家寵物的差別只有人查得出來。")
+
+    if not write:
         return 1
 
     gone = 0
     for path, keys in found.items():
         gone += drop(path, keys)
     print(f"\n刪掉 {gone} 條。")
-    return 0
+    return 1 if lonely else 0
 
 
 if __name__ == "__main__":
