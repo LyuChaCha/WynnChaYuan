@@ -445,6 +445,50 @@ public final class TranslationStoreTest {
 
         itemNamesAreNotSubstitutableTerms(real);
         ingredientNamesIgnoreTheGearSwitch(real);
+        buildPartNamesFollowTheGearSwitch(real);
+    }
+
+    /**
+     * 書卷、護符、面向的名稱<b>受</b> F6「翻譯物品名稱」開關管。
+     *
+     * <h2>為什麼</h2>
+     * issue #936：配裝網站 WynnBuilder 只認英文名。玩家看著背包裡的
+     * 「潮湧戰鬥精通書卷 II」想去網站複刻 build，拿不到原文名就只能開 wiki 對照。
+     * 交易市場確實用不到書卷原文，但配裝網站用得到。
+     *
+     * <p>使用者 2026-10-02 裁示：套用<b>現有</b>那套系統（ON 按 Shift 看原文、
+     * BOTH 兩個都顯示、OFF 按 Shift 看譯文），也就是 {@code _meta.gearNames: true}。
+     *
+     * <h2>代價，寫在這裡免得以後有人當成 bug 修掉</h2>
+     * 那個開關<b>預設是關的</b>，所以預設狀態下這三類名稱會顯示原文。
+     * {@link #ingredientNamesIgnoreTheGearSwitch} 記的 v1.99.71 災情就是同一回事
+     * ——素材落進這個開關底下，玩家回報「翻譯憑空消失」。這次是<b>刻意</b>的，
+     * 跟那次不同：那次是旗標一個答兩個問題答錯了，這次是為了配裝網站換來的。
+     *
+     * <p>所以這條測試釘兩個方向：開關關著時不翻、打開時照翻。只測一邊的話，
+     * 把旗標改回 false 也會過。
+     */
+    private static void buildPartNamesFollowTheGearSwitch(TranslationStore real) {
+        String[][] parts = {
+            {"Abyssal Tome of Combat Mastery II", "潮湧戰鬥精通書卷 II"},
+            {"Charm of the Corruption", "腐敗護符"},
+            {"Aspect of Battlement Fortification", "城垛加固之相"},
+        };
+        real.setTranslateNames(false);
+        for (String[] row : parts) {
+            check("實際語料：關著開關時「" + row[0] + "」留原文",
+                    real.lookup(row[0]) == null);
+        }
+        real.setTranslateNames(true);
+        for (String[] row : parts) {
+            String got = real.lookup(row[0]);
+            check("實際語料：打開開關時「" + row[0] + "」照翻（拿到 " + got + "）",
+                    row[1].equals(got));
+        }
+        // 對照組：素材<b>不</b>受這個開關管，這次改動不能把它們一起拖進來。
+        real.setTranslateNames(false);
+        check("實際語料：素材「厄運之石」仍然不受開關影響",
+                "厄運之石".equals(real.lookup("Doom Stone")));
     }
 
     /**
