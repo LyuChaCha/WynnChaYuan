@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Lost Soles",
-  "count": 75,
+  "count": 71,
   "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -28,42 +28,42 @@
   },
   "Lost Soles#002": {
    "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get to them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "",
+   "dst": "Сапоги спрятали в особняке вместе с футляром. Автор дневника оставил подсказки, как их достать - может, вы поймёте, что они значат. Вот, попробуйте эту:",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#003": {
    "src": "Whoever placed down that sign might have meant a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "",
+   "dst": "Кто поставил табличку, мог знать тайный ход на второй этаж. Туда давно не попасть - с тех пор как рухнула лестница. Разве что Leacen, но она слегка чокнутая...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#004": {
    "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a hidden passage, can you believe it?",
-   "dst": "",
+   "dst": "Ага, я тоже давно ищу. Пару раз думала, что вот-вот найду! Как здесь. Ни одна из этих книг не открывает тайный ход, представляешь?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#005": {
    "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow in the master bedroom for two seconds, and then it disappeared!",
-   "dst": "",
+   "dst": "А ещё я потеряла блокнот, даже записать ничего не могу. Положила его на подушку на две секунды - и он исчез!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#006": {
@@ -316,16 +316,6 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#031": {
-   "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "Сапоги спрятали в особняке вместе с футляром. Автор дневника оставил подсказки, как их достать - может, вы поймёте, что они значат. Вот, попробуйте эту:",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 3",
-   "speaker": "Grandon",
-   "source": "wiki"
-  },
   "Lost Soles#032": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
    "dst": "«Лицо над залом владеет носом, который нужно утяжелить, чтобы открыть путь».",
@@ -379,16 +369,6 @@
   "Lost Soles#037": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
    "dst": "Так там была табличка: ищи камень в углу? Хм... любопытно!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 5",
-   "speaker": "Grandon",
-   "source": "wiki"
-  },
-  "Lost Soles#038": {
-   "src": "Whoever placed down that sign might have a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "Кто поставил табличку, мог знать тайный ход на второй этаж. Туда давно не попасть - с тех пор как рухнула лестница. Разве что Leacen, но она слегка чокнутая...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -609,26 +589,6 @@
   "Lost Soles#060": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
    "dst": "Ого, тайный ход! Не так круто, как карабкаться, но всё равно молодец! Ищешь подсказки к коду, да?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 10",
-   "speaker": "Leacen",
-   "source": "wiki"
-  },
-  "Lost Soles#061": {
-   "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a secret passage, can you believe it?",
-   "dst": "Ага, я тоже давно ищу. Пару раз думала, что вот-вот найду! Как здесь. Ни одна из этих книг не открывает тайный ход, представляешь?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 10",
-   "speaker": "Leacen",
-   "source": "wiki"
-  },
-  "Lost Soles#062": {
-   "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow for two seconds, and then it disappeared!",
-   "dst": "А ещё я потеряла блокнот, даже записать ничего не могу. Положила его на подушку на две секунды - и он исчез!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",

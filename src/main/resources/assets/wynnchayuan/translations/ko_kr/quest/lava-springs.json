@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 50,
-  "translated": 50,
+  "count": 47,
+  "translated": 47,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -62,7 +62,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -72,7 +72,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -95,16 +95,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Lava Springs#009": {
-   "src": "Talk to Colonel Gailard at [{~}, {~}, -{~}]",
-   "dst": "[{~}, {~}, -{~}]의 Gailard 대령과 대화하세요",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Lava Springs",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Lava Springs#010": {
    "src": "Oh, good, good! I bet'cha you're a {p} soldier, aren't ya? Listen up, soldier! I've got a task here that 'ye can help out with.",
@@ -346,16 +336,6 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#034": {
-   "src": "...Corrupted... lava springs...? You realize how ridiculous that sounds, yeah? Well, I completely believe you.",
-   "dst": "...타락한... 용암 온천...? 그게 얼마나 황당하게 들리는지 알지? 뭐, 난 완전히 믿어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 5",
-   "speaker": "Nami The Healer",
-   "source": "wiki"
-  },
   "Lava Springs#035": {
    "src": "Right, you said lava, sooo... You need a heat resistance potion, yes?",
    "dst": "그래, 용암이라고 했으니까... 열 저항 물약이 필요한 거지?",
@@ -389,16 +369,6 @@
   "Lava Springs#038": {
    "src": "Anyways, if you ever need any more special brews, my assistant will be happy to sell some at a very affordable price.",
    "dst": "아무튼 특별한 물약이 더 필요하면, 내 조수가 아주 저렴한 가격에 기꺼이 팔 거야.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 5",
-   "speaker": "Nami The Healer",
-   "source": "wiki"
-  },
-  "Lava Springs#039": {
-   "src": "Now, you have somewhere to be, right? Right. Go and report to the Colonel, soldier. Tell him I said hi, by the way.",
-   "dst": "자, 갈 데가 있지? 그렇지. 가서 대령한테 보고해, 병사. 참, 내가 안부 전하더라고 해 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",

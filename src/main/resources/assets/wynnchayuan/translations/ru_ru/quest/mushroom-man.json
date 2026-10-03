@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 91,
-  "translated": 81,
+  "count": 83,
+  "translated": 76,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -74,11 +74,11 @@
   },
   "Mushroom Man#006": {
    "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "",
+   "dst": "{u}, привет! Славное местечко, да? Хочу побыть тут ещё немного, прежде чем идти в {p}, но скоро буду готов.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -104,21 +104,21 @@
   },
   "Mushroom Man#009": {
    "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "",
+   "dst": "Х-хм. Хорошо. Без… грибов с-суп не сварить. З-за мной, отведу к… к паукам. П-плохим паукам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
   "Mushroom Man#010": {
    "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "",
+   "dst": "А, вы, должно быть, те новобранцы, о которых столько рассказывал Aledar. Рад знакомству, хотя, вижу, вы явно спешили.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -128,7 +128,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -168,7 +168,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -178,29 +178,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
-  },
-  "Mushroom Man#017": {
-   "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}].",
-   "dst": "Поговори с Tasim в {p} на [-{~}, {~}, -{~}].",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Mushroom Man#018": {
-   "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "{u}, привет! Славное местечко, да? Хочу побыть тут ещё немного, прежде чем идти в {p}, но скоро буду готов.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "Tasim",
-   "source": "wiki"
   },
   "Mushroom Man#019": {
    "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
@@ -272,16 +252,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#026": {
-   "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushroms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-Why wouldn't it b-be?",
-   "dst": "О-ой! Нет, н-ничего не случилось. Н-ничегошеньки. Мои г-г-грибы… с ними всё хорошо. З-зачем спрашиваете? В-… всё от-тлично. А п-почему нет?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
   "Mushroom Man#027": {
    "src": "...O-okay, fine, y-you caught me! My mushrooms... my m-mushrooms aren't fine! T-they're bad, even! A-are you hap-... happy now?",
    "dst": "…Л-ладно, в-ваша взяла! Мои грибы… с м-моими грибами не всё хорошо! Д-даже плохо! Д-довольны… теперь?",
@@ -315,16 +285,6 @@
   "Mushroom Man#030": {
    "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
    "dst": "Я… моё любимое грибное место. Т-туда больше н-… нельзя. Пауки. М-много пауков. Они з-з-захватили его… Не добыть… грибов. У-убьёте п-п-пауков? Грибы.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Mushroom Man#032": {
-   "src": "H-hm. Good. I can't m-make soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "Х-хм. Хорошо. Без… грибов с-суп не сварить. З-за мной, отведу к… к паукам. П-плохим паукам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -380,16 +340,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Mushroom Man#038": {
-   "src": "I-is it done? S-s-spiders... No m-more spiders? Is my m-m-mushroom patch cl-... cleared?",
-   "dst": "Г-готово? П-п-пауки… Больше н-нет пауков? Моя г-г-грибная поляна ч-… чиста?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
    "source": "wiki"
   },
   "Mushroom Man#039": {
@@ -752,26 +702,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#075": {
-   "src": "Ah, you two must be the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "А, вы, должно быть, те новобранцы, о которых столько рассказывал Aledar. Рад знакомству, хотя, вижу, вы явно спешили.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#076": {
-   "src": "Right! Right. We've arrived from Nivla Town, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
-   "dst": "Да! Да. Мы прибыли из Nivla с дурными вестями и просьбой о помощи. Лесные пауки озлобились и угрожают городку.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Mushroom Man#077": {
    "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
    "dst": "Одного из жителей схватили и утащили у нас на глазах. Мэр Alvin прислал нас просить помощи у армии {p}.",
@@ -810,16 +740,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#081": {
-   "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with them.",
-   "dst": "А лейтенант Van готовит налёт на осквернённую крепость! Лишние бойцы ему точно пригодятся.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Mushroom Man#082": {

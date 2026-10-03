@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 86,
-  "translated": 76,
+  "count": 81,
+  "translated": 74,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -74,12 +74,12 @@
   },
   "Mushroom Man#006": {
    "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "",
+   "dst": "{u}、やあ！ここ、すごくいい所だよね？{p} に向かう前にもう少しいたいけど、すぐ準備できるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#007": {
@@ -104,22 +104,22 @@
   },
   "Mushroom Man#009": {
    "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "",
+   "dst": "う、うむ。いいぞ。キノコがないと…スープが作れない。つ、ついて来い、く、蜘蛛のとこへ案内する。わ、悪い蜘蛛だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#010": {
    "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "",
+   "dst": "ああ、君たちが Aledar から話を聞いていた新兵だな。ようやく会えて嬉しいが、ずいぶん急いで来たようだね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#011": {
@@ -128,8 +128,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#012": {
@@ -178,19 +178,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
-   "source": "captured"
-  },
-  "Mushroom Man#018": {
-   "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "{u}、やあ！ここ、すごくいい所だよね？{p} に向かう前にもう少しいたいけど、すぐ準備できるよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
    "stage": "Stage 1",
    "speaker": "Tasim",
-   "source": "wiki"
+   "source": "captured"
   },
   "Mushroom Man#019": {
    "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
@@ -262,16 +252,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#026": {
-   "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushroms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-Why wouldn't it b-be?",
-   "dst": "お、おお！い、いや、何もないよ。な、何も。お、俺のキ、キ、キノコは…だ、大丈夫だ。な、なんで聞くんだ？ぜ、全部…順調だよ。じゅ、順調じゃないわけないだろ？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
   "Mushroom Man#027": {
    "src": "...O-okay, fine, y-you caught me! My mushrooms... my m-mushrooms aren't fine! T-they're bad, even! A-are you hap-... happy now?",
    "dst": "…わ、わかったよ、バレた！俺のキノコは…キ、キノコは大丈夫じゃない！ひ、ひどいくらいだ！こ、これで満、満足か？",
@@ -305,16 +285,6 @@
   "Mushroom Man#030": {
    "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
    "dst": "お、俺のお気に入りのキノコ場。も、もう使えない。蜘蛛だ。た、たくさんの蜘蛛。の、の、乗っ取られた…キノコが…採れない。く、く、蜘蛛を倒してくれるか？キノコ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Mushroom Man#032": {
-   "src": "H-hm. Good. I can't m-make soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "う、うむ。いいぞ。キノコがないと…スープが作れない。つ、ついて来い、く、蜘蛛のとこへ案内する。わ、悪い蜘蛛だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -712,16 +682,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#075": {
-   "src": "Ah, you two must be the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "ああ、君たちが Aledar から話を聞いていた新兵だな。ようやく会えて嬉しいが、ずいぶん急いで来たようだね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
   "Mushroom Man#077": {
    "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
    "dst": "村人が一人、目の前でさらわれました。Alvin 村長の命で、{p} 軍の援助をお願いしに来ました。",
@@ -760,16 +720,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#081": {
-   "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with them.",
-   "dst": "それに Van 中尉が腐敗した拠点の襲撃を計画しています！人手が増えれば喜ぶはずです。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Mushroom Man#082": {

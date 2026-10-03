@@ -1,29 +1,29 @@
 {
  "_meta": {
   "quest": "Grand Youth",
-  "count": 42,
+  "count": 40,
   "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Grand Youth#000": {
    "src": "There's this group of mages out in Dernel who know how to get the stuff. They're a bunch of tightwads and wouldn't give me any real healing water to sell.",
-   "dst": "",
+   "dst": "Dernel에 그걸 구하는 법을 아는 마법사 무리가 있어요. 구두쇠들이라 팔 만한 진짜 치유의 물은 하나도 안 주더라고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Salesman\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
   "Grand Youth#001": {
    "src": "Aha, perfect! If this will not work, then...no, I must have faith.",
-   "dst": "",
+   "dst": "아하, 완벽해요! 이게 안 통하면... 아니, 믿어야 해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Salesman",
    "source": "captured"
   },
   "Grand Youth#002": {
@@ -149,16 +149,6 @@
   "Grand Youth#014": {
    "src": "Agh, agh! Put away the weapon! Put it away! Jeez, buddy! Alright, I admit it, I'm a fraudster! But, I do know where you get the real stuff, I ain't lying about that much.",
    "dst": "으악, 으악! 무기 치워요! 치우라고요! 맙소사, 친구! 좋아요, 인정해요, 사기꾼이에요! 그래도 진짜를 어디서 구하는지는 알아요, 그건 거짓말 아니에요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Grand Youth",
-   "stage": "Stage 2",
-   "speaker": "Salesman",
-   "source": "wiki"
-  },
-  "Grand Youth#015": {
-   "src": "There's this group of mages out in Dernel who know how to get the stuff. They're a bunch of tightwads and wouldn't get give me any real healing water to sell.",
-   "dst": "Dernel에 그걸 구하는 법을 아는 마법사 무리가 있어요. 구두쇠들이라 팔 만한 진짜 치유의 물은 하나도 안 주더라고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -389,16 +379,6 @@
   "Grand Youth#038": {
    "src": "You have returned, I see. Have you the healing water?",
    "dst": "돌아오셨군요. 치유의 물은 구하셨어요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Grand Youth",
-   "stage": "Stage 6",
-   "speaker": "Monte",
-   "source": "wiki"
-  },
-  "Grand Youth#039": {
-   "src": "Aha, perfect! If this not work, then...no, I must have faith.",
-   "dst": "아하, 완벽해요! 이게 안 통하면... 아니, 믿어야 해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",

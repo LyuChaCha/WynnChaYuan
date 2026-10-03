@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Lost Soles",
-  "count": 75,
+  "count": 71,
   "translated": 63,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
@@ -28,42 +28,42 @@
   },
   "Lost Soles#002": {
    "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get to them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "",
+   "dst": "他们把靴子和盒子一起藏在宅邸里。这本日记的作者写下了一些拿到它们的提示，也许你能弄明白是什么意思。来，试试这一条：",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#003": {
    "src": "Whoever placed down that sign might have meant a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "",
+   "dst": "放那块告示的人可能有一条通往二楼的秘密通道。楼梯塌了以后，二楼已经很久没人能上去了。除了 Leacen，不过她有点疯疯的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#004": {
    "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a hidden passage, can you believe it?",
-   "dst": "",
+   "dst": "对啊，我也找了好一阵子。有好几次我还以为找到头绪了！比如这里。这些书没有一本能打开秘密通道，你敢相信吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#005": {
    "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow in the master bedroom for two seconds, and then it disappeared!",
-   "dst": "",
+   "dst": "而且我的笔记本也弄丢了，连笔记都没法记。我就把它放在枕头上两秒钟，然后它就不见了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#006": {
@@ -316,16 +316,6 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#031": {
-   "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "他们把靴子和盒子一起藏在宅邸里。这本日记的作者写下了一些拿到它们的提示，也许你能弄明白是什么意思。来，试试这一条：",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 3",
-   "speaker": "Grandon",
-   "source": "wiki"
-  },
   "Lost Soles#032": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
    "dst": "“大厅上方那张脸，它的鼻子得更重才能打开道路”。",
@@ -379,16 +369,6 @@
   "Lost Soles#037": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
    "dst": "所以，有块告示叫你去角落找石头？嗯……有意思！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 5",
-   "speaker": "Grandon",
-   "source": "wiki"
-  },
-  "Lost Soles#038": {
-   "src": "Whoever placed down that sign might have a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "放那块告示的人可能有一条通往二楼的秘密通道。楼梯塌了以后，二楼已经很久没人能上去了。除了 Leacen，不过她有点疯疯的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -609,26 +589,6 @@
   "Lost Soles#060": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
    "dst": "哇，秘密通道！没有爬上来那么厉害，不过还是干得好！我猜你在找密码的提示？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 10",
-   "speaker": "Leacen",
-   "source": "wiki"
-  },
-  "Lost Soles#061": {
-   "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a secret passage, can you believe it?",
-   "dst": "对啊，我也找了好一阵子。有好几次我还以为找到头绪了！比如这里。这些书没有一本能打开秘密通道，你敢相信吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 10",
-   "speaker": "Leacen",
-   "source": "wiki"
-  },
-  "Lost Soles#062": {
-   "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow for two seconds, and then it disappeared!",
-   "dst": "而且我的笔记本也弄丢了，连笔记都没法记。我就把它放在枕头上两秒钟，然后它就不见了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
