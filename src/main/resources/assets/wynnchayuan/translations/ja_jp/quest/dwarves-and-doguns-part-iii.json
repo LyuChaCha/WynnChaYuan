@@ -247,7 +247,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#024": {
-   "src": "But, erm...more importantly, who's the buck in the fancy armour there?",
+   "src": "But, erm...more importantly, who's the bucko in the fancy armour there?",
    "dst": "それより…もっと大事なのは、そこの派手な鎧の奴は誰だ？",
    "role": "desc",
    "kind": "dialogue",
@@ -287,7 +287,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#028": {
-   "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
+   "src": "You will need [{~} Fire Webs] . The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
    "dst": "[{~} Fire Webs] が必要だ。町の下の Heatscar Spiders が作る。入口のアーチのすぐ横に洞窟がある。",
    "role": "desc",
    "kind": "dialogue",
@@ -317,8 +317,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#031": {
-   "src": "Bring back [{~} Fire Webs], [{~} Magmatic Crystals], and [{~} Crystallized lava].",
-   "dst": "[{~} Fire Webs]、[{~} Magmatic Crystals]、[{~} Crystallized lava] を持ち帰る。",
+   "src": "Bring back [{~} Fire Webs] from [{~}, {~}, -{~}] and [{~} Magmatic Crystals] from the {p} mines and [{~} Crystallized lava] from [{~}, {~}, -{~}]",
+   "dst": "[{~2}, {~3}, -{~4}]から[{~1} Fire Web]を、{p}鉱山から[{~5} Magmatic Crystal]を、そして[{~7}, {~8}, -{~8}]から[{~6} Crystallized lava]を持ってくる",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -407,8 +407,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#040": {
-   "src": "Craft the amulet in the crafting table.",
-   "dst": "作業台で護符を作る。",
+   "src": "Craft the amulet in the crafting table at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]にある作業台で護符を作る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -447,7 +447,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#044": {
-   "src": "Wait, that amulet...oh no, really? Okay, I know what^s going on.",
+   "src": "Wait, that amulet...oh no, really? Okay, I know what's going on.",
    "dst": "待って、その護符…まさか、本当に？わかった、事情は察したわ。",
    "role": "desc",
    "kind": "dialogue",
@@ -607,8 +607,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#060": {
-   "src": "Travel to the frozen heights and find {~} True Ice.",
-   "dst": "凍てついた高地へ行き、True Ice を {~} 個見つける。",
+   "src": "Travel to the frozen heights and get [{~} True Ice] at [{~}, {~}, -{~}].",
+   "dst": "[{~2}, {~3}, -{~4}]にある凍てついた高地へ行き、True Ice を {~1} 個見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -637,7 +637,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#063": {
-   "src": "It... froze my town... as it died. I was there... {~} years ago.",
+   "src": "It...froze my town...as it died. I was there...{~} years ago.",
    "dst": "死に際に…私の町を…凍らせた。私はそこにいた…{~} 年前に。",
    "role": "desc",
    "kind": "dialogue",
@@ -717,8 +717,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#071": {
-   "src": "This is it... The thing that... Killed my families... [{~} True Ice].",
-   "dst": "これだ…我が一族を…殺したもの…[{~} True Ice]。",
+   "src": "This is it... The thing that... Killed my friends... My family... The True Ice.",
+   "dst": "これだ…我が友人…一族を…殺したもの…True Ice。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -727,8 +727,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#072": {
-   "src": "Return to the enchanter with the True Ice.",
-   "dst": "True Ice を持って付呪師のもとへ戻る。",
+   "src": "Return to the enchanter with [{~} True Ice].",
+   "dst": "[{~} True Ice]を持って付呪師のもとへ戻る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -805,6 +805,86 @@
    "stage": "Stage 10",
    "speaker": "Sanba",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#080": {
+   "src": "Return to the Dogun village with the letter and speak to Korzim at [{~}, {~}, -{~}].",
+   "dst": "手紙を持ってDogunの村に戻り、[{~}, {~}, -{~}]にいるKorzimに話しかける",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#081": {
+   "src": "Korzim reads the message on the tablet silently. His expression is inscrutable.",
+   "dst": "Korzimはタブレットに表示されたメッセージを黙って読み込んだ。彼の表情からは、何とも読み取れない。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#082": {
+   "src": "Travel to {p} and meet Korzim at the entrance at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] へ向かい、{p}の入り口でKorzimに会う",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#083": {
+   "src": "Talk to the blacksmith in {p} [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]にいる{p}の鍛冶屋と話す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#084": {
+   "src": "Good job collecting the tools needed to destroy the demon.",
+   "dst": "悪魔を倒すために必要な道具をすべて集めることができた。よくやった。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 6",
+   "speaker": "Edula",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#085": {
+   "src": "Go to the enchanter and enchant the amulet at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]にあるエンチャンターのところへ行き、お守りにエンチャントをかける",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#086": {
+   "src": "Travel through the Freezing Heights and get [{~} True Ice].",
+   "dst": "凍てつく高地を旅して、[{~} True Ice]を手に入れよう",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#087": {
+   "src": "The ice has trapped you. Try again.",
+   "dst": "氷に閉じ込められてしまった。もう一度やってみよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
