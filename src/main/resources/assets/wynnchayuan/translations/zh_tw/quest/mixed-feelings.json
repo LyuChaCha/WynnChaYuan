@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Mixed Feelings",
-  "count": 76,
-  "translated": 76,
+  "count": 97,
+  "translated": 97,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -769,6 +769,216 @@
    "stage": "Stage 9",
    "speaker": "Javen",
    "source": "wiki"
+  },
+  "Mixed Feelings#076": {
+   "src": "Go for a drink at the Corkus Docks Inn, [-{~}, {~}, -{~}]",
+   "dst": "到 [-{~}, {~}, -{~}] 的 Corkus 碼頭旅店喝一杯",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#077": {
+   "src": "Talk to Javen to find out more about what happened.",
+   "dst": "找 Javen 問清楚發生了什麼事。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#078": {
+   "src": "You should ask Javen about what happened.",
+   "dst": "你該問問 Javen 發生了什麼事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#079": {
+   "src": "Talk to citizens around the docks to find out more about what happened.",
+   "dst": "找碼頭一帶的居民談談，問清楚發生了什麼事。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#080": {
+   "src": "You ran outta here and wrecked all sorts! You better go find the people you affected and apologise!",
+   "dst": "你從這裡衝出去，砸壞了一堆東西！你最好去找那些被你害到的人，好好道歉！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Javen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#081": {
+   "src": "Hurry, please! Just head into the big trapdoor by the bushes, the controls are in there.",
+   "dst": "拜託快一點！直接進灌木叢旁那道大活板門，控制裝置就在裡面。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#082": {
+   "src": "> Thank you for choosingsing CorkTech! Your company for a safe and trustworthy service.",
+   "dst": "> 感謝您選擇 CorkTech！為您提供安全可靠服務的夥伴。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#083": {
+   "src": "Powering up elevator...",
+   "dst": "電梯啟動中……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#084": {
+   "src": "You can push the button beside the crates to pick them up, and stand on the pressure plate to place them.",
+   "dst": "按木箱旁邊的按鈕可以把它們舉起來，站到壓力板上就能放下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#085": {
+   "src": "It seems like all crates are balanced now.",
+   "dst": "看來所有木箱都平衡好了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#086": {
+   "src": "I learned about some rumours involving separatists. I should continue helping locals to find out more.",
+   "dst": "我聽到一些牽涉到分離主義者的傳聞。我該繼續幫助當地人，問出更多東西。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#087": {
+   "src": "Someone told you more about the patriots of Corkus. You should continue to find the missing clue.",
+   "dst": "有人告訴了你更多關於 Corkus 愛國者的事。你該繼續去找那條遺失的線索。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#088": {
+   "src": "You manage to reach the chest safely, getting ready to jump through a hole the fire burned.",
+   "dst": "你順利地抵達了箱子，準備跳過火燒出來的那個洞。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#089": {
+   "src": "Follow the trail of blood close to the castle, [-{~}, {~}, -{~}]",
+   "dst": "沿著城堡附近的血跡追查，[-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#090": {
+   "src": "You really don't see a reason to go in there at the moment.",
+   "dst": "你現在實在找不到進去那裡的理由。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#091": {
+   "src": "Use the balloon to enter the suspicious hideout.",
+   "dst": "搭熱氣球進入那個可疑的藏身處。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#092": {
+   "src": "Survive the fight against the drugged corkian",
+   "dst": "在與被下藥的 Corkus 人一戰中存活下來",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#093": {
+   "src": "After witnessing your crash into the cliff, Corkian citizens informed the government.",
+   "dst": "目睹你撞上崖壁之後，Corkus 的居民通報了政府。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#094": {
+   "src": "Shortly after your victory security forces found the hideout and arrested the remaining separatists.",
+   "dst": "你獲勝後不久，保安部隊便找到了藏身處，逮捕了剩下的分離主義者。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#095": {
+   "src": "Their leader was nowhere to be found.",
+   "dst": "他們的首領遍尋不著。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#096": {
+   "src": "Always nice to see my favourite customer pay a visit!",
+   "dst": "最愛的客人上門總是令人開心！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "captured.json"
   }
  }
 }
