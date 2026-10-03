@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 84,
+  "count": 81,
   "translated": 74,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
@@ -74,12 +74,12 @@
   },
   "Mushroom Man#006": {
    "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "",
+   "dst": "{u}，你好！这地方真不错，对吧？我想在这里多待一会儿再往 {p} 走，不过我很快就准备好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#007": {
@@ -104,22 +104,22 @@
   },
   "Mushroom Man#009": {
    "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "",
+   "dst": "嗯、嗯。很好。没有……蘑菇，我、我就煮不了汤。跟、跟我来，我带你们去……去找那些蜘蛛。坏、坏蜘蛛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#010": {
    "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "",
+   "dst": "啊，你们俩一定就是 Aledar 一直跟我们提起的新兵。很高兴终于见到你们，不过我注意到你们似乎来得很匆忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#011": {
@@ -181,16 +181,6 @@
    "stage": "Stage 6",
    "speaker": "Aledar",
    "source": "captured"
-  },
-  "Mushroom Man#018": {
-   "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "{u}，你好！这地方真不错，对吧？我想在这里多待一会儿再往 {p} 走，不过我很快就准备好了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "Tasim",
-   "source": "wiki"
   },
   "Mushroom Man#019": {
    "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
@@ -295,16 +285,6 @@
   "Mushroom Man#030": {
    "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
    "dst": "我——我最喜欢的采蘑菇的地方。我、我没法再、……再用了。蜘蛛。好、好多蜘蛛。它们占、占、占领了那里……我拿不到……蘑菇。你、你们能杀掉那些蜘、蜘、蜘蛛吗？蘑菇。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Mushroom Man#032": {
-   "src": "H-hm. Good. I can't m-make soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "嗯、嗯。很好。没有……蘑菇，我、我就煮不了汤。跟、跟我来，我带你们去……去找那些蜘蛛。坏、坏蜘蛛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -700,16 +680,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Mushroom Man#075": {
-   "src": "Ah, you two must be the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "啊，你们俩一定就是 Aledar 一直跟我们提起的新兵。很高兴终于见到你们，不过我注意到你们似乎来得很匆忙。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Admiral Aegis",
    "source": "wiki"
   },
   "Mushroom Man#077": {

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lazarus Pit (Quest)",
-  "count": 97,
-  "translated": 77,
+  "count": 94,
+  "translated": 79,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -86,16 +86,6 @@
    "speaker": "Gelibord Guard",
    "source": "wiki"
   },
-  "Lazarus Pit (Quest)#008": {
-   "src": "Hey! Over here, you alright? Come talk to me, I can explain what just happened.",
-   "dst": "Эй! Сюда, всё в порядке? Подойди, я объясню, что сейчас было.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
   "Lazarus Pit (Quest)#009": {
    "src": "Check in with Burtur about the attack at [-{~}, {~}, -{~}]",
    "dst": "Расспроси Burtur о нападении в [-{~}, {~}, -{~}]",
@@ -129,16 +119,6 @@
   "Lazarus Pit (Quest)#012": {
    "src": "It's a bit sacrilegious, but necessary to do right now- otherwise they just keep coming back, like they do across the ridge in Kander.",
    "dst": "Это немного кощунственно, но сейчас необходимо - иначе они просто возвращаются, как за хребтом в Kander.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#013": {
-   "src": "The ones around here all come up from the river, though, and since it runs right through the town, well... You can see the problem.",
-   "dst": "А местные все выходят из реки, и раз она течёт прямо через город, ну... Проблему ты видишь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -429,16 +409,6 @@
   "Lazarus Pit (Quest)#043": {
    "src": "Oh, you found it! Wonderful! Just pop it on that fingerbone right there... Ah, it fits even better on the other hand!",
    "dst": "О, нашлось! Чудесно! Надень его вон на ту кость пальца... Ах, на другой руке сидит даже лучше!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 6",
-   "speaker": "Sir Pigglesworth the Thirty-Fifth",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#044": {
-   "src": "The crypt, you say? I can offer my blessing to enter, but you'll need to check with the other tombs as well. Farewell!",
-   "dst": "Склеп, говоришь? Благословение на вход дам, но загляни и к другим гробницам. Прощай!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -778,22 +748,22 @@
   },
   "Lazarus Pit (Quest)#078": {
    "src": "Hey! Over there, you alright? Come talk to me, I can explain what just happened.",
-   "dst": "",
+   "dst": "Эй! Сюда, всё в порядке? Подойди, я объясню, что сейчас было.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Burtur",
    "source": "captured"
   },
   "Lazarus Pit (Quest)#079": {
    "src": "The ones around here all come up from the river, though, and since it runs right through town, well... You can see the problem.",
-   "dst": "",
+   "dst": "А местные все выходят из реки, и раз она течёт прямо через город, ну... Проблему ты видишь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Burtur",
    "source": "captured"
   },
   "Lazarus Pit (Quest)#080": {
@@ -818,7 +788,7 @@
   },
   "Lazarus Pit (Quest)#082": {
    "src": "Oh, you found something? Well, color me shocked that there was any stock to Referick's ranting...",
-   "dst": "",
+   "dst": "О, что-то нашлось? Вот уж не думал, что в бреднях Referick есть хоть доля правды...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -828,7 +798,7 @@
   },
   "Lazarus Pit (Quest)#083": {
    "src": "'Chapel of an ancient order'? There's a chapel just northwest of here. I'd say investigate that! I have to stick around here in case of another attack, but...",
-   "dst": "",
+   "dst": "Часовня древнего ордена? К северо-западу отсюда есть часовня. Я бы проверил её! Мне надо остаться здесь на случай атаки, но...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -888,11 +858,11 @@
   },
   "Lazarus Pit (Quest)#089": {
    "src": "The crypt, you say? I can offer my blessing to enter, but you'll need to check with the other tombs around as well. Farewell!",
-   "dst": "",
+   "dst": "Склеп, говоришь? Благословение на вход дам, но загляни и к другим гробницам. Прощай!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "Sir Pigglesworth the Thirty-Fifth\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 50,
-  "translated": 50,
+  "count": 47,
+  "translated": 47,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -62,7 +62,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -72,7 +72,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -95,16 +95,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Lava Springs#009": {
-   "src": "Talk to Colonel Gailard at [{~}, {~}, -{~}]",
-   "dst": "Habla con el coronel Gailard en [{~}, {~}, -{~}]",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Lava Springs",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Lava Springs#010": {
    "src": "Oh, good, good! I bet'cha you're a {p} soldier, aren't ya? Listen up, soldier! I've got a task here that 'ye can help out with.",
@@ -346,16 +336,6 @@
    "speaker": "Nami The Healer",
    "source": "wiki"
   },
-  "Lava Springs#034": {
-   "src": "...Corrupted... lava springs...? You realize how ridiculous that sounds, yeah? Well, I completely believe you.",
-   "dst": "...¿Manantiales... de lava... corruptos...? Sabes lo ridículo que suena, ¿no? Pues te creo del todo.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 5",
-   "speaker": "Nami The Healer",
-   "source": "wiki"
-  },
   "Lava Springs#035": {
    "src": "Right, you said lava, sooo... You need a heat resistance potion, yes?",
    "dst": "Vale, has dicho lava, así queee... ¿necesitas una poción contra el calor?",
@@ -389,16 +369,6 @@
   "Lava Springs#038": {
    "src": "Anyways, if you ever need any more special brews, my assistant will be happy to sell some at a very affordable price.",
    "dst": "Por cierto, si alguna vez necesitas más brebajes especiales, mi ayudante estará encantado de vendértelos a muy buen precio.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 5",
-   "speaker": "Nami The Healer",
-   "source": "wiki"
-  },
-  "Lava Springs#039": {
-   "src": "Now, you have somewhere to be, right? Right. Go and report to the Colonel, soldier. Tell him I said hi, by the way.",
-   "dst": "Bueno, tienes sitios a los que ir, ¿no? Eso. Ve a informar al coronel, soldado. Y dale recuerdos de mi parte.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",

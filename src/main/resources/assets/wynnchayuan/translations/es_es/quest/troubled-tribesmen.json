@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Troubled Tribesmen",
-  "count": 43,
-  "translated": 26,
+  "count": 38,
+  "translated": 28,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -28,11 +28,11 @@
   },
   "Troubled Tribesmen#002": {
    "src": "But despite my efforts, he just sat in silence with his eyes closed. He must've known I wasn't a threat because he was totally exposed. He had no interest in speaking with me, though.",
-   "dst": "",
+   "dst": "Pero por mucho que lo intenté, se quedó sentado en silencio con los ojos cerrados. Sabría que yo no era una amenaza, porque estaba totalmente expuesto. Pero no quiso hablar conmigo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Krattson\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -42,7 +42,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Shaman Inrekei\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -148,31 +148,31 @@
   },
   "Troubled Tribesmen#014": {
    "src": "Hello again. I am grateful you have returned safely. You don't need to say anything, though. I no longer can sense Entamis. I know she has died...",
-   "dst": "",
+   "dst": "Hola de nuevo. Te agradezco que hayas vuelto. Pero no hace falta que digas nada. Ya no siento a Entamis. Sé que ha muerto...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Shaman Inrekei\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
   "Troubled Tribesmen#015": {
    "src": "You still managed to prevent her corrupted magic to spread any further. And for that, my people are forever in your debt.",
-   "dst": "",
+   "dst": "Aun así, has logrado impedir que su magia corrupta se siga extendiendo. Por eso, mi pueblo estará siempre en deuda contigo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Krattson",
    "source": "captured"
   },
   "Troubled Tribesmen#016": {
    "src": "Please take this. It is but a small gift. Your currency is meaningless to us. In times of peril, few step forward and risk their lives to save those they do not know.",
-   "dst": "",
+   "dst": "Toma esto, por favor. Es solo un pequeño regalo. Tu dinero no significa nada para nosotros. En tiempos de peligro, pocos arriesgan su vida por salvar a desconocidos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Shaman Inrekei\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -226,16 +226,6 @@
    "speaker": "Krattson",
    "source": "wiki"
   },
-  "Troubled Tribesmen#022": {
-   "src": "But despite my efforts, he just sat in silence with his eyes closed. He must of known I wasn't a threat because he was totally exposed. He had no interest in speaking with me, though.",
-   "dst": "Pero por mucho que lo intenté, se quedó sentado en silencio con los ojos cerrados. Sabría que yo no era una amenaza, porque estaba totalmente expuesto. Pero no quiso hablar conmigo.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Troubled Tribesmen",
-   "stage": "Stage 2",
-   "speaker": "Krattson",
-   "source": "wiki"
-  },
   "Troubled Tribesmen#023": {
    "src": "Say, who knows, maybe the Shaman will talk to you. It would greatly assist my research if you could help me talk to them. So why don't you give it a shot?",
    "dst": "Oye, quién sabe, igual el chamán sí te habla a ti. Si me ayudas a hablar con ellos, sería de gran ayuda para mi investigación. ¿Por qué no lo intentas?",
@@ -264,16 +254,6 @@
    "quest": "Troubled Tribesmen",
    "stage": "Stage 3",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Troubled Tribesmen#026": {
-   "src": "Oui ryja y bufanvim vaam ypuid oui, cdnyhkan. So baubma yna eh tyhkan. Bmayca, dyga drec yht ramb bas.",
-   "dst": "Oui ryja y bufanvim vaam ypuid oui, cdnyhkan. So baubma yna eh tyhkan. Bmayca, dyga drec yht ramb bas.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Troubled Tribesmen",
-   "stage": "Stage 3",
-   "speaker": "Inrekei",
    "source": "wiki"
   },
   "Troubled Tribesmen#027": {
@@ -396,39 +376,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Troubled Tribesmen#039": {
-   "src": "Hello again. I am grateful you returned. You don't need to say anything, though. I can no longer sense Entamis. I know she has died..",
-   "dst": "Hola de nuevo. Te agradezco que hayas vuelto. Pero no hace falta que digas nada. Ya no siento a Entamis. Sé que ha muerto...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Troubled Tribesmen",
-   "stage": "Stage 6",
-   "speaker": "Inrekei",
-   "source": "wiki"
-  },
-  "Troubled Tribesmen#040": {
-   "src": "You still have managed to prevent her corrupted magic to spread any further. And for that, my people are forever in your debt.",
-   "dst": "Aun así, has logrado impedir que su magia corrupta se siga extendiendo. Por eso, mi pueblo estará siempre en deuda contigo.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Troubled Tribesmen",
-   "stage": "Stage 6",
-   "speaker": "Inrekei",
-   "source": "wiki"
-  },
   "Troubled Tribesmen#041": {
    "src": "This insect appears to be the queen. I'll need to perform a ritual to kill it permanently. But never mind that, I can do that in my own time.",
    "dst": "Este insecto parece ser la reina. Tendré que hacer un ritual para matarla para siempre. Pero no te preocupes, ya lo haré a su debido tiempo.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Troubled Tribesmen",
-   "stage": "Stage 6",
-   "speaker": "Inrekei",
-   "source": "wiki"
-  },
-  "Troubled Tribesmen#042": {
-   "src": "Please take this. It is but a small gift. Your currency means nothing to us. In times of peril, few step forward and risk their lives to save those they do not know.",
-   "dst": "Toma esto, por favor. Es solo un pequeño regalo. Tu dinero no significa nada para nosotros. En tiempos de peligro, pocos arriesgan su vida por salvar a desconocidos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",

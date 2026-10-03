@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Murder Mystery",
-  "count": 80,
-  "translated": 58,
+  "count": 76,
+  "translated": 59,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -78,11 +78,11 @@
   },
   "Murder Mystery#007": {
    "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation.",
-   "dst": "",
+   "dst": "如果你能找到它，它就会告诉你怎么进下水道。抱歉，如果我知道更多一定会告诉你。祝你调查顺利，先生。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -118,17 +118,17 @@
   },
   "Murder Mystery#011": {
    "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, til neither of em had anythin' left.",
-   "dst": "",
+   "dst": "可他带 Eminar 来的那天，局面很快就变得难看了。一直借 Rohem 的绿宝石，一直输，最后两个人都输光了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
    "source": "captured"
   },
   "Murder Mystery#012": {
    "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back 'n we'll be happy to serve ya!",
-   "dst": "",
+   "dst": "好了，出去吧；那边墙上有个后门出口。不过，如果你哪天想玩把 21 点，回来吧，我们乐意奉陪！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -148,12 +148,12 @@
   },
   "Murder Mystery#014": {
    "src": "Ya can then hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
-   "dst": "",
+   "dst": "你可以要牌，想要几次都行，也可以停牌结束你的回合。目标是让你手上的点数尽量接近 {~}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
    "source": "captured"
   },
   "Murder Mystery#015": {
@@ -208,11 +208,11 @@
   },
   "Murder Mystery#020": {
    "src": "Whatever, you pale-faced walking cowlick. You're headed to {p} with a charge of first-class murder. Guards, take him away.",
-   "dst": "",
+   "dst": "随便你怎么说，你这个脸色惨白、走路的呆毛。你要以一级谋杀罪被送进 {p} 监狱了。守卫，把他带走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -396,16 +396,6 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#039": {
-   "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation, sir.",
-   "dst": "如果你能找到它，它就会告诉你怎么进下水道。抱歉，如果我知道更多一定会告诉你。祝你调查顺利，先生。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 2",
-   "speaker": "Rohem",
-   "source": "wiki"
-  },
   "Murder Mystery#040": {
    "src": "Return to the victim's house at [-{~}, {~}, -{~}] to find a snake symbol.",
    "dst": "回到 [-{~}, {~}, -{~}] 的受害者家里，寻找蛇形标志。",
@@ -459,16 +449,6 @@
   "Murder Mystery#045": {
    "src": "He was brought down here by his friend one day. Rohem, it was. A fine customer, you understand. Never failed to pay his dues...",
    "dst": "有一天他被他朋友带下来。是 Rohem。一位好客人，你懂的。从来没欠过账……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 4",
-   "speaker": "Valimare",
-   "source": "wiki"
-  },
-  "Murder Mystery#046": {
-   "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, till neither of em had anythin' left.",
-   "dst": "可他带 Eminar 来的那天，局面很快就变得难看了。一直借 Rohem 的绿宝石，一直输，最后两个人都输光了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -656,16 +636,6 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#065": {
-   "src": "Whatever you pale-faced walking cowlick. You're headed to {p} Penitentiary with a charge of first-class murder. Guards, take him away.",
-   "dst": "随便你怎么说，你这个脸色惨白、走路的呆毛。你要以一级谋杀罪被送进 {p} 监狱了。守卫，把他带走。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 6",
-   "speaker": "Detective Lorias",
-   "source": "wiki"
-  },
   "Murder Mystery#066": {
    "src": "As for you, human, please accept my immense gratitude. We probably wouldn't have caught that rat without you.",
    "dst": "至于你，人类，请接受我无比的感激。没有你，我们大概抓不到那只老鼠。",
@@ -749,16 +719,6 @@
   "Murder Mystery#074": {
    "src": "The rules are simple! I deal two cards face up to ya both face down, and two cards to me, one face up and one face down.",
    "dst": "规则很简单！我给你发两张牌，给我自己也发两张，一张明牌一张暗牌。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 6",
-   "speaker": "Blackjack Dealer",
-   "source": "wiki"
-  },
-  "Murder Mystery#075": {
-   "src": "Ya can hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
-   "dst": "你可以要牌，想要几次都行，也可以停牌结束你的回合。目标是让你手上的点数尽量接近 {~}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",

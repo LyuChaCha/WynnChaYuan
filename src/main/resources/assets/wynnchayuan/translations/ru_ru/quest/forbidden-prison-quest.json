@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Forbidden Prison (Quest)",
-  "count": 215,
-  "translated": 120,
+  "count": 213,
+  "translated": 121,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -79,16 +79,6 @@
   "Forbidden Prison (Quest)#007": {
    "src": "We found ya outside of {p}, passed out near some dead body, and... Well, we had to arrest someone for that merchant's death!",
    "dst": "Мы нашли тебя у {p} без сознания, рядом с трупом, и… Ну, за смерть того торговца надо было кого-то арестовать!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Prison Guard",
-   "source": "wiki"
-  },
-  "Forbidden Prison (Quest)#008": {
-   "src": "So, welcome to the {p} Federal Prison. You're in here for the rest of your life, short-nose, so no use complaining about it.",
-   "dst": "Так что добро пожаловать в федеральную тюрьму {p}. Сидеть тебе тут до конца жизни, коротконосый, так что не ной.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -956,16 +946,6 @@
    "speaker": "The Warden",
    "source": "wiki"
   },
-  "Forbidden Prison (Quest)#095": {
-   "src": "Alright, now, the rest of you, get to work! Rollcall is over for you all!",
-   "dst": "Так, остальные - за работу! Перекличка для вас окончена!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 10",
-   "speaker": "The Warden",
-   "source": "wiki"
-  },
   "Forbidden Prison (Quest)#096": {
    "src": "Steal the key from the warden's office, and head to the control room",
    "dst": "Укради ключ из кабинета надзирательницы и пройди в диспетчерскую",
@@ -1208,7 +1188,7 @@
   },
   "Forbidden Prison (Quest)#120": {
    "src": "Hey, hey, humie! Yeah, I'm talkin to ya here..",
-   "dst": "",
+   "dst": "Эй, эй, человечек! Да, я к тебе обращаюсь…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1218,11 +1198,11 @@
   },
   "Forbidden Prison (Quest)#121": {
    "src": "So, welcome to the {p}. You're in here for the rest of your life, short-nose, so no use complaining about it.",
-   "dst": "",
+   "dst": "Так что добро пожаловать в федеральную тюрьму {p}. Сидеть тебе тут до конца жизни, коротконосый, так что не ной.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "Prison Guard\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -1730,12 +1710,12 @@
   },
   "Forbidden Prison (Quest)#171": {
    "src": "Alright, now, the rest of you, get to work! Rollcall is over fo-",
-   "dst": "",
+   "dst": "Так, остальные - за работу! Перекличка для вас окончена!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Prison Guard",
    "source": "captured"
   },
   "Forbidden Prison (Quest)#172": {
