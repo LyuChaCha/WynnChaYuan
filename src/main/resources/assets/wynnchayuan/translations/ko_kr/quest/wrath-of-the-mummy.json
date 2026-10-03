@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Wrath of the Mummy",
-  "count": 40,
-  "translated": 40,
+  "count": 38,
+  "translated": 38,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -22,7 +22,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -75,16 +75,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Wrath of the Mummy#007": {
-   "src": "Talk to Ormrod in the desert of {p} at [{~}, {~}, -{~}].",
-   "dst": "{p} 사막 [{~}, {~}, -{~}]에 있는 Ormrod에게 말을 거세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Wrath of the Mummy#008": {
    "src": "Stay away, friend!",
@@ -199,16 +189,6 @@
   "Wrath of the Mummy#019": {
    "src": "The tomb lies in the North of the desert, but be very careful!",
    "dst": "무덤은 사막 북쪽에 있어요, 하지만 아주 조심하세요!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 2",
-   "speaker": "Achper",
-   "source": "wiki"
-  },
-  "Wrath of the Mummy#020": {
-   "src": "Mummies aren't known to be weak... especially that one. It's demonic... pure evil, It's easily one of the most powerful specimens I've encountered.",
-   "dst": "미라는 결코 약한 존재가 아니에요... 특히 그놈은요. 악마 같고... 순수한 악이죠. 제가 마주친 것 중 가장 강한 개체에 쉽게 듭니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",

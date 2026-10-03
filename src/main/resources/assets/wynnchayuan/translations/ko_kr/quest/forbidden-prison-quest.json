@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Forbidden Prison (Quest)",
-  "count": 215,
-  "translated": 120,
+  "count": 213,
+  "translated": 121,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -79,16 +79,6 @@
   "Forbidden Prison (Quest)#007": {
    "src": "We found ya outside of {p}, passed out near some dead body, and... Well, we had to arrest someone for that merchant's death!",
    "dst": "{p} 밖에서 시체 옆에 뻗어 있는 널 찾았지... 뭐, 그 상인 죽음에 누구든 잡아넣어야 했거든!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Prison Guard",
-   "source": "wiki"
-  },
-  "Forbidden Prison (Quest)#008": {
-   "src": "So, welcome to the {p} Federal Prison. You're in here for the rest of your life, short-nose, so no use complaining about it.",
-   "dst": "그러니 {p} 연방 교도소에 온 걸 환영한다. 평생 여기서 썩을 테니 불평해 봤자 소용없다, 짧은코.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -956,16 +946,6 @@
    "speaker": "The Warden",
    "source": "wiki"
   },
-  "Forbidden Prison (Quest)#095": {
-   "src": "Alright, now, the rest of you, get to work! Rollcall is over for you all!",
-   "dst": "좋아, 나머지는 일하러 가! 점호는 끝났다!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 10",
-   "speaker": "The Warden",
-   "source": "wiki"
-  },
   "Forbidden Prison (Quest)#096": {
    "src": "Steal the key from the warden's office, and head to the control room",
    "dst": "교도소장 사무실에서 열쇠를 훔쳐 통제실로 가세요",
@@ -1208,7 +1188,7 @@
   },
   "Forbidden Prison (Quest)#120": {
    "src": "Hey, hey, humie! Yeah, I'm talkin to ya here..",
-   "dst": "",
+   "dst": "어이, 어이, 인간! 그래, 너한테 말하는 거야..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1218,11 +1198,11 @@
   },
   "Forbidden Prison (Quest)#121": {
    "src": "So, welcome to the {p}. You're in here for the rest of your life, short-nose, so no use complaining about it.",
-   "dst": "",
+   "dst": "그러니 {p} 연방 교도소에 온 걸 환영한다. 평생 여기서 썩을 테니 불평해 봤자 소용없다, 짧은코.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "Prison Guard\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -1730,12 +1710,12 @@
   },
   "Forbidden Prison (Quest)#171": {
    "src": "Alright, now, the rest of you, get to work! Rollcall is over fo-",
-   "dst": "",
+   "dst": "좋아, 나머지는 일하러 가! 점호는 끝났다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Prison Guard",
    "source": "captured"
   },
   "Forbidden Prison (Quest)#172": {

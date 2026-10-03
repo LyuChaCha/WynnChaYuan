@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 59,
-  "translated": 57,
+  "count": 53,
+  "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Taking the Tower#000": {
    "src": "Tasim told me all about the corrupted force you took out. I wish I could have been here to help!",
-   "dst": "",
+   "dst": "Tasim me lo contó todo sobre la fuerza corrupta que eliminasteis. ¡Ojalá hubiera estado allí para ayudar!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#001": {
@@ -32,8 +32,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#003": {
@@ -52,8 +52,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#005": {
@@ -62,8 +62,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#006": {
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#012": {
@@ -152,8 +152,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#015": {
@@ -186,16 +186,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#018": {
-   "src": "Tasim told me all about the corrupted force you took out. I wish I could have been there to help!",
-   "dst": "Tasim me lo contó todo sobre la fuerza corrupta que eliminasteis. ¡Ojalá hubiera estado allí para ayudar!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 1",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "Taking the Tower#019": {
    "src": "...Oh! Since you're here- I was about to head out to join Lieutenant Van's squad to take back a tower overtaken by corrupteds. You should come with us, too!",
    "dst": "...¡Ah! Ya que estás aquí, iba a salir a unirme al escuadrón del teniente Van para recuperar una torre tomada por corruptos. ¡Deberías venir con nosotros!",
@@ -219,16 +209,6 @@
   "Taking the Tower#021": {
    "src": "Perfect. Well, no time better than the present! Let's get going.",
    "dst": "Perfecto. ¡No hay mejor momento que ahora! En marcha.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 1",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#022": {
-   "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Powder Master!",
-   "dst": "Ah, espera. Antes tenemos que parar en un sitio. ¡Sígueme hasta el Maestro de Polvos!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -289,26 +269,6 @@
   "Taking the Tower#028": {
    "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
    "dst": "Por lo visto, el jefazo de lo alto de la torre es débil al daño. Por eso estamos aquí, con el Maestro de Polvos.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#029": {
-   "src": "You can apply various elemental powders to your weapons here, which lets them deal types of damage they might not have been able to before.",
-   "dst": "Aquí puedes aplicar distintos polvos elementales a tus armas, lo que les permite infligir tipos de daño que antes no podían.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#030": {
-   "src": "In this case, you can apply a powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "¡En este caso, puedes aplicar un polvo para que tu arma sea más eficaz contra los enemigos corruptos de la torre!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -426,16 +386,6 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#042": {
-   "src": "It doesn't matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
-   "dst": "Da igual quién lo haga, mientras se haga. Si veis una oportunidad, ¡aprovechadla!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 4",
-   "speaker": "Lieutenant Van",
-   "source": "wiki"
-  },
   "Taking the Tower#043": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here!| Understood?",
    "dst": "Si tenéis que retiraros, o los corruptos caen, ¡reagrupaos aquí!| ¿Entendido?",
@@ -534,16 +484,6 @@
    "quest": "Taking the Tower",
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
-   "source": "wiki"
-  },
-  "Taking the Tower#053": {
-   "src": "They have, lieutenant. {u} and I reached the top and defeated the corrupted.",
-   "dst": "Así es, teniente. {u} y yo llegamos a lo alto y derrotamos al corrupto.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Taking the Tower#054": {

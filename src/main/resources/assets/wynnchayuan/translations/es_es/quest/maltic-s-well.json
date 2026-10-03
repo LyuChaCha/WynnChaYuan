@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "Maltic's Well",
-  "count": 29,
-  "translated": 23,
+  "count": 25,
+  "translated": 22,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Maltic's Well#000": {
    "src": "Please do something! I know {p} isn't of much importance to you humans, being a villager settlement, but...my son!",
-   "dst": "",
+   "dst": "¡Haz algo, por favor! Sé que {p} no os importa a los humanos por ser un pueblo de aldeanos, pero... ¡mi hijo!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured"
   },
   "Maltic's Well#001": {
@@ -38,8 +38,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured",
    "similar": {
     "text": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
@@ -50,22 +50,22 @@
   },
   "Maltic's Well#003": {
    "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The... the Beast-That-Eats-{p}-Guards-For-Brunch!!",
-   "dst": "",
+   "dst": "...porque si eliges mal la puerta, ¡irás a dar con una bestia vilísima! La, eh... ¡¡la Bestia-Que-Almuerza-Guardias-de-{p}!! ¡En serio!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured"
   },
   "Maltic's Well#004": {
    "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing this cowl, and have warts.",
-   "dst": "",
+   "dst": "Oh... ya imaginaba que no colaría. ¿Sabes? La magia no se me da nada bien. Solo me gustan los sombreros puntiagudos, y tengo verrugas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured"
   },
   "Maltic's Well#005": {
@@ -118,16 +118,6 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#010": {
-   "src": "Please do something! I know {p} isn't of importance to you humans, being a Villager settlement, but...my son!",
-   "dst": "¡Haz algo, por favor! Sé que {p} no os importa a los humanos por ser un pueblo de aldeanos, pero... ¡mi hijo!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 1",
-   "speaker": "Rynend",
-   "source": "wiki"
-  },
   "Maltic's Well#011": {
    "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",
    "dst": "Investiga el viejo pozo de {p} en [-{~}, {~}, -{~}] y lleva [{~} Witch's Empty Bottle] a Rynend",
@@ -158,16 +148,6 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#014": {
-   "src": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
-   "dst": "No sé por qué me llaman bruja. La magia está por todas partes. Su padre se burló de mi aspecto, ¡así que convertiré a su hijo en un Grook!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
   "Maltic's Well#015": {
    "src": "Treat me like a witch, I'll act like one, darn it! You'll have to pass through my dastardly magical defenses to find me!",
    "dst": "¡Me tratan como a una bruja, pues bruja seré, caramba! ¡Supera mis pérfidas defensas mágicas si quieres hallarme!",
@@ -181,26 +161,6 @@
   "Maltic's Well#016": {
    "src": "Oh...drat. I never could get that spell right. Well, now you'll have to guess the way, um, you fool! Turn back now, for, uh...",
    "dst": "Oh... rayos. Nunca me salió bien ese hechizo. Bueno, pues adivina el camino, eh, ¡insensato! Da media vuelta, porque, eh...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
-  "Maltic's Well#017": {
-   "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The, um...the Beast-What-Eats-{p}-Guards-For-Brunch!! Totally!",
-   "dst": "...porque si eliges mal la puerta, ¡irás a dar con una bestia vilísima! La, eh... ¡¡la Bestia-Que-Almuerza-Guardias-de-{p}!! ¡En serio!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
-  "Maltic's Well#018": {
-   "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing pointy hats, and have warts.",
-   "dst": "Oh... ya imaginaba que no colaría. ¿Sabes? La magia no se me da nada bien. Solo me gustan los sombreros puntiagudos, y tengo verrugas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
