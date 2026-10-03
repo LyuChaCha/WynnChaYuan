@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Corrupted Betrayal",
   "count": 71,
-  "translated": 53,
+  "translated": 71,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#003": {
    "src": "{u}, good to see you again! Been a while, huh?",
-   "dst": "",
+   "dst": "{u}, 또 만나서 반갑군! 오랜만이지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -28,7 +28,7 @@
   },
   "Corrupted Betrayal#005": {
    "src": "You lean in close to read the riddle inscribed on the ancient stone...",
-   "dst": "",
+   "dst": "너는 몸을 기울여 오래된 비석에 새겨진 수수께끼를 읽는다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -38,7 +38,7 @@
   },
   "Corrupted Betrayal#006": {
    "src": "[+{~} Mage's Riddle]",
-   "dst": "",
+   "dst": "[+{~} 마법사의 수수께끼]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48,7 +48,7 @@
   },
   "Corrupted Betrayal#007": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
-   "dst": "",
+   "dst": "하지만 말이야, 전설인 나는 아주 바쁘다네. 사인이니 뭐니, 거기에 경비 임무까지 있으니! 내 시간을 들일 만한 자임을 증명하고 싶다면 레벨 {~}이 되어서 돌아오게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -58,7 +58,7 @@
   },
   "Corrupted Betrayal#008": {
    "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
-   "dst": "",
+   "dst": "어떤 고대 폐허 같은 곳에 떨어진 듯하다. 그 주문은 이 안 어딘가에 있을지도 모른다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -68,7 +68,7 @@
   },
   "Corrupted Betrayal#009": {
    "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
-   "dst": "",
+   "dst": "왕은 Slykaar라는 주술사에게 도움을 청했다. 주술사는 희생된 목숨을 써서 상처를 입힌다. 어둠의 마법이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -78,7 +78,7 @@
   },
   "Corrupted Betrayal#010": {
    "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
-   "dst": "",
+   "dst": "Slykaar는 {p}를 지켜냈다. 엄청난 대가를 치르고. Slykaar는 그 주목과 힘에 취해 도시를 장악했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -88,7 +88,7 @@
   },
   "Corrupted Betrayal#011": {
    "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
-   "dst": "",
+   "dst": "{p}는 여러 해 동안 무리의 습격과 Slykaar의 끝없는 희생 제의, 양쪽 모두에 시달렸다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -98,7 +98,7 @@
   },
   "Corrupted Betrayal#012": {
    "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
-   "dst": "",
+   "dst": "그러다…… Bob이 나타났다. {p}의 사람들은 곧바로 그 끔찍한 주술사를 버리고 이 순수한 영웅에게로 돌아섰다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -108,7 +108,7 @@
   },
   "Corrupted Betrayal#013": {
    "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
-   "dst": "",
+   "dst": "원한과 굴욕에 사로잡힌 Slykaar는 땅속으로 가라앉아, 군대를 만들기 위한 악마 실험을 다시 시작했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -118,7 +118,7 @@
   },
   "Corrupted Betrayal#014": {
    "src": "It appears the mutant contained the key for that door.",
-   "dst": "",
+   "dst": "저 문의 열쇠는 그 돌연변이가 가지고 있었던 듯하다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -128,7 +128,7 @@
   },
   "Corrupted Betrayal#015": {
    "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
-   "dst": "",
+   "dst": "먼지 쌓인 낡은 일지다. 어느 쪽에 펼쳐진 채로 놓여 있는 듯하다. 너는 호기심에 읽기 시작한다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -138,7 +138,7 @@
   },
   "Corrupted Betrayal#016": {
    "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
-   "dst": "",
+   "dst": "...{p}가 나를 의심하기 시작했다……Robert라는 자가 마을에 왔다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -148,7 +148,7 @@
   },
   "Corrupted Betrayal#017": {
    "src": "...I know they will banish me...he is too good...too nice...",
-   "dst": "",
+   "dst": "……그들은 나를 추방할 것이다……그자는 너무 좋은 사람이다……너무 착하다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -158,7 +158,7 @@
   },
   "Corrupted Betrayal#018": {
    "src": "...I must open a portal...make a dimension to become more powerful...",
-   "dst": "",
+   "dst": "……포털을 열어야 한다……더 강해지기 위해 차원을 만들어야 한다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -168,7 +168,7 @@
   },
   "Corrupted Betrayal#019": {
    "src": "...the books...I have prepared well for this...",
-   "dst": "",
+   "dst": "……그 책들……이를 위해 충분히 준비해 두었다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -178,7 +178,7 @@
   },
   "Corrupted Betrayal#020": {
    "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
-   "dst": "",
+   "dst": "……숨은 방을 파내겠다……보이는 벽 뒤에……내 세계를 만들기 위해……내 복수를 위해……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -198,7 +198,7 @@
   },
   "Corrupted Betrayal#022": {
    "src": "You should head back to Lanu...",
-   "dst": "",
+   "dst": "Lanu에게 돌아가야 한다……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
