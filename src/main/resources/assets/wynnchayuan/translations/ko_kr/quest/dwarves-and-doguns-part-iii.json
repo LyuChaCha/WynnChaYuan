@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part III",
-  "count": 80,
-  "translated": 80,
+  "count": 88,
+  "translated": 88,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -805,6 +805,86 @@
    "stage": "Stage 10",
    "speaker": "Sanba",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#080": {
+   "src": "Return to the Dogun village with the letter and speak to Korzim at [{~}, {~}, -{~}].",
+   "dst": "편지를 들고 Dogun 마을로 돌아가 [{~}, {~}, -{~}]의 Korzim에게 말을 거세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#081": {
+   "src": "Korzim reads the message on the tablet silently. His expression is inscrutable.",
+   "dst": "Korzim이 석판에 적힌 전언을 묵묵히 읽는다. 표정에서는 아무것도 읽어 낼 수 없다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#082": {
+   "src": "Travel to {p} and meet Korzim at the entrance at [{~}, {~}, -{~}].",
+   "dst": "{p}로 가서 [{~}, {~}, -{~}]의 입구에서 Korzim을 만나세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#083": {
+   "src": "Talk to the blacksmith in {p} [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]의 {p} 대장장이와 대화하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#084": {
+   "src": "Good job collecting the tools needed to destroy the demon.",
+   "dst": "악마를 처치하는 데 필요한 도구를 다 모았구나. 잘했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 6",
+   "speaker": "Edula",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#085": {
+   "src": "Go to the enchanter and enchant the amulet at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]의 인챈터에게 가서 부적에 인챈트를 걸으세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#086": {
+   "src": "Travel through the Freezing Heights and get [{~} True Ice].",
+   "dst": "Freezing Heights를 가로질러 [{~} True Ice]를 얻으세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#087": {
+   "src": "The ice has trapped you. Try again.",
+   "dst": "얼음에 갇혀 버렸다. 다시 시도해 보자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

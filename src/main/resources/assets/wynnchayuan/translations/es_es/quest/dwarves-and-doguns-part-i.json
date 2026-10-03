@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part I",
-  "count": 146,
-  "translated": 146,
+  "count": 184,
+  "translated": 184,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -1469,6 +1469,386 @@
    "stage": "Stage 15",
    "speaker": "Plario",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part I#148": {
+   "src": "Ugh, that was horrible.. Like I said before, this war was a genocide. Don't believe any of the lies they try and feed you.",
+   "dst": "Puf, eso fue horrible.. Como ya te dije, esta guerra fue un genocidio. No te creas ninguna de las mentiras que intentan colarte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#149": {
+   "src": "Make your way to the Dogun festival at [{~}, {~}, -{~}] by following the red banners outside {p}.",
+   "dst": "Sigue los estandartes rojos de fuera de {p} hasta la fiesta dogun en [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#150": {
+   "src": "Looks like Axelus dropped a note...? Doesn't seem like anyone else noticed.",
+   "dst": "Parece que a Axelus se le ha caído una nota...? Nadie más se ha dado cuenta.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#151": {
+   "src": "Seems like Axelus had more to say. Since no one else picked up the note, you may as well seek him out.",
+   "dst": "Parece que Axelus tenía más que decir. Como nadie más ha recogido la nota, bien puedes ir a buscarlo.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#152": {
+   "src": "Find out more about the hysterical dwarf in {p}'s prison at [{~}, {~}, -{~}]",
+   "dst": "Averigua más sobre el enano histérico en la prisión de {p}, en [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#153": {
+   "src": "You came at the right time, {u}. It's good to see you're still interested in what's really going on here..",
+   "dst": "Llegas en buen momento, {u}. Me alegra ver que aún te interesa lo que de verdad pasa aquí..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#154": {
+   "src": "I've told you this already, but you have to know that it really is true. The Dwarves have been lied to for so long about the war.",
+   "dst": "Ya te lo he dicho, pero tienes que saber que es cierto de verdad. A los enanos les han mentido durante demasiado tiempo sobre la guerra.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#155": {
+   "src": "..But I think it's best if you see it for yourself. Relying on my word alone won't be enough to grasp the full extent of this dilemma.",
+   "dst": "..Pero creo que lo mejor es que lo veas tú mismo. Fiarte solo de mi palabra no basta para entender la magnitud de este dilema.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#156": {
+   "src": "It seems like Axelus slipped another note into your pocket.",
+   "dst": "Parece que Axelus te ha colado otra nota en el bolsillo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#157": {
+   "src": "That gate must be the entrance to the Library that Axelus mentioned, but it looks locked tight. Could anything in the area open it up?",
+   "dst": "Esa verja tiene que ser la entrada a la Biblioteca que mencionó Axelus, pero parece bien cerrada. ¿Habrá algo por la zona que la abra?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#158": {
+   "src": "It's an extremely old book. The pages are torn, yellowed, and dusty.",
+   "dst": "Es un libro extremadamente antiguo. Las páginas están rotas, amarillentas y polvorientas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#159": {
+   "src": "\"Top Secret\"? The words are faded and hard to make out.",
+   "dst": "¿\"Alto secreto\"? Las letras están desvaídas y cuesta distinguirlas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#160": {
+   "src": "It seems to be a report written at the start of the Dogun war.",
+   "dst": "Parece ser un informe redactado al comienzo de la guerra dogun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#161": {
+   "src": "\"The natives occupy {~} of the habitable land in the heights...\"",
+   "dst": "\"Los nativos ocupan {~} de la tierra habitable de las alturas...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#162": {
+   "src": "Several pages are dedicated to the Doguns personalities, traits and powers.",
+   "dst": "Varias páginas se dedican al carácter, los rasgos y los poderes de los Doguns.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#163": {
+   "src": "\"...Magical powerhouses of the fire element...\"",
+   "dst": "\"...potencias mágicas del elemento fuego...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#164": {
+   "src": "\"Near Dwarven intelligence...\"",
+   "dst": "\"Inteligencia casi enana...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#165": {
+   "src": "\"Clearance is needed if Dwarves are going to form a colony...\"",
+   "dst": "\"Hará falta despejar la zona si los enanos van a formar una colonia...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#166": {
+   "src": "According to the report, the land was once rich with minerals and materials.",
+   "dst": "Según el informe, la tierra fue rica en minerales y materiales.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#167": {
+   "src": "This page appears to have been ripped out and crudely reattached.",
+   "dst": "Esta página parece haber sido arrancada y pegada de nuevo con torpeza.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#168": {
+   "src": "\"A program of public profiling of the natives is recommended...\"",
+   "dst": "\"Se recomienda un programa de perfilado público de los nativos...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#169": {
+   "src": "There are detailed instructions on producing propaganda against the Doguns.",
+   "dst": "Hay instrucciones detalladas para producir propaganda contra los Doguns.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#170": {
+   "src": "\"...recommend they are referred to as demons, as inherent fear will take hold...\"",
+   "dst": "\"...se recomienda llamarlos demonios, pues el miedo que ya anida hará su trabajo...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#171": {
+   "src": "The report details propaganda at all levels of society, particularly at educational centers.",
+   "dst": "El informe detalla la propaganda en todos los niveles de la sociedad, en especial en los centros educativos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#172": {
+   "src": "\"Once public opinion is sufficiently hostile, establishment of colonies will be achievable...\"",
+   "dst": "\"Cuando la opinión pública sea lo bastante hostil, establecer colonias será alcanzable...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#173": {
+   "src": "The report goes on to detail the total dominance of {p} and the importance of propaganda continuation.",
+   "dst": "El informe sigue detallando el dominio total de {p} y la importancia de mantener la propaganda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#174": {
+   "src": "Now do you see? Everything that I told you about when we rescued those flerisi was indeed true...",
+   "dst": "¿Lo ves ahora? Todo lo que te conté cuando rescatamos a esos Flerisi era verdad...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#175": {
+   "src": "Search for house number {~} in {p} like Axelus said.",
+   "dst": "Busca la casa número {~} en {p}, como dijo Axelus.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#176": {
+   "src": "Talk with the coalition.",
+   "dst": "Habla con la coalición.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#177": {
+   "src": "Meet the group at [{~}, {~}, -{~}]",
+   "dst": "Reúnete con el grupo en [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#178": {
+   "src": "I'll let...you in.",
+   "dst": "Te... dejaré pasar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#179": {
+   "src": "To repair the mechanical core, select a colour and connect the clay with the same coloured glass block by clicking the iron blocks with the Rewiring Tool.",
+   "dst": "Para reparar el núcleo mecánico, elige un color y une la arcilla con el bloque de cristal del mismo color haciendo clic en los bloques de hierro con el Rewiring Tool.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#180": {
+   "src": "Head back to the coalition through the tunnel at [{~}, {~}, -{~}].",
+   "dst": "Vuelve a la coalición por el túnel de [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#181": {
+   "src": "The king has sent for you personally.",
+   "dst": "El rey ha mandado a buscarte en persona.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#182": {
+   "src": "If you don't come with us we wi-",
+   "dst": "Si no vienes con nosotros, vamos a-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#183": {
+   "src": "Entomb these Doguns, and slay their Dwarven thralls!",
+   "dst": "¡Sepultad a estos Doguns y matad a sus siervos enanos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#184": {
+   "src": "But...bring them...the dragon bone...as a gift. If they accept it...they might accept us.",
+   "dst": "Pero... llevémosles... el hueso de dragón... como regalo. Si lo aceptan... puede que nos acepten.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 14",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#185": {
+   "src": "We need to solve...this conflict somehow. Please...help us.",
+   "dst": "Tenemos que resolver... este conflicto de algún modo. Por favor... ayúdanos.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "",
+   "speaker": "Korzim",
+   "source": "captured.json"
   }
  }
 }

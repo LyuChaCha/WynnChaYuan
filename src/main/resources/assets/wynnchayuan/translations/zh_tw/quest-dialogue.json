@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 24306,
-  "translated": 24306,
+  "count": 24478,
+  "translated": 24478,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -56597,6 +56597,116 @@
    "speaker": "Phinas",
    "source": "wiki"
   },
+  "Desperate Metal#037": {
+   "src": "Evasive maneuver inefficient.",
+   "dst": "迴避動作效率不足。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#038": {
+   "src": "Request additional orders from L.H. Defend.",
+   "dst": "向 L.H. Defend 請求追加指令。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#039": {
+   "src": "Tools acquired, delivered to L.H. Additional orders received.",
+   "dst": "工具已取得，已送交 L.H.。已收到追加指令。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#040": {
+   "src": "Intruder detected. Camouflage ineffective. Defend.",
+   "dst": "偵測到入侵者。偽裝失效。進入防禦。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#041": {
+   "src": "Strategic mission accomplished. Mechanical parts: procured.",
+   "dst": "戰略任務完成。機械零件：已取得。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Intelligence Mech-DM3",
+   "source": "captured.json"
+  },
+  "Desperate Metal#042": {
+   "src": "Look in the content book if you forgot what to do.",
+   "dst": "忘記要做什麼的話，翻翻內容書。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#043": {
+   "src": "I wrote down your task there.",
+   "dst": "我把你的任務寫在那裡了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#044": {
+   "src": "What in the world are you doing here!? Get out immediately.",
+   "dst": "你到底在這裡做什麼！？立刻出去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#045": {
+   "src": "I mean, welcome! Nothing suspicious here at all.",
+   "dst": "我是說，歡迎！這裡完全沒有什麼可疑的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#046": {
+   "src": "Security drop-chute engaging. {~}... {~}...",
+   "dst": "保安投放滑道啟動。{~}…… {~}……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "???",
+   "source": "captured.json"
+  },
+  "Desperate Metal#047": {
+   "src": "Report back to Phinas after destroying the mech",
+   "dst": "摧毀機械後回去向 Phinas 報告",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part I#000": {
    "src": "[+{~} Ancient Dogun Tablet]",
    "dst": "[+{~} 古老的 Dogun 石板]",
@@ -58057,6 +58167,386 @@
    "speaker": "Plario",
    "source": "wiki"
   },
+  "Dwarves and Doguns Part I#148": {
+   "src": "Ugh, that was horrible.. Like I said before, this war was a genocide. Don't believe any of the lies they try and feed you.",
+   "dst": "唔，那真是糟透了……我之前就說過，這場戰爭是一場屠殺。他們想灌給你的那些謊話，一句都別信。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#149": {
+   "src": "Make your way to the Dogun festival at [{~}, {~}, -{~}] by following the red banners outside {p}.",
+   "dst": "循著 {p} 外頭的紅色旗幟，前往 [{~}, {~}, -{~}] 的 Dogun 慶典。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#150": {
+   "src": "Looks like Axelus dropped a note...? Doesn't seem like anyone else noticed.",
+   "dst": "Axelus 好像掉了一張字條……？看來沒有別人注意到。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#151": {
+   "src": "Seems like Axelus had more to say. Since no one else picked up the note, you may as well seek him out.",
+   "dst": "Axelus 似乎還有話要說。既然沒有別人撿起那張字條，不如去找他吧。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#152": {
+   "src": "Find out more about the hysterical dwarf in {p}'s prison at [{~}, {~}, -{~}]",
+   "dst": "到 [{~}, {~}, -{~}] 的 {p} 監獄，進一步了解那個歇斯底里的矮人",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#153": {
+   "src": "You came at the right time, {u}. It's good to see you're still interested in what's really going on here..",
+   "dst": "你來得正好，{u}。很高興看到你還在意這裡真正發生的事……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#154": {
+   "src": "I've told you this already, but you have to know that it really is true. The Dwarves have been lied to for so long about the war.",
+   "dst": "這話我已經說過了，但你得知道那真的是事實。關於這場戰爭，矮人被騙了太久。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#155": {
+   "src": "..But I think it's best if you see it for yourself. Relying on my word alone won't be enough to grasp the full extent of this dilemma.",
+   "dst": "……不過我想你最好親眼看一次。光聽我說，是沒辦法明白這場困局有多深的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#156": {
+   "src": "It seems like Axelus slipped another note into your pocket.",
+   "dst": "Axelus 好像又往你口袋裡塞了一張字條。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#157": {
+   "src": "That gate must be the entrance to the Library that Axelus mentioned, but it looks locked tight. Could anything in the area open it up?",
+   "dst": "那道門一定就是 Axelus 說的圖書館入口，但看起來鎖得死緊。這附近會不會有什麼能打開它？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#158": {
+   "src": "It's an extremely old book. The pages are torn, yellowed, and dusty.",
+   "dst": "這是一本極為古老的書。書頁破損、泛黃，蒙著灰。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#159": {
+   "src": "\"Top Secret\"? The words are faded and hard to make out.",
+   "dst": "「最高機密」？字跡已經褪色，很難辨認。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#160": {
+   "src": "It seems to be a report written at the start of the Dogun war.",
+   "dst": "看起來是一份在 Dogun 戰爭初期寫下的報告。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#161": {
+   "src": "\"The natives occupy {~} of the habitable land in the heights...\"",
+   "dst": "「原住民佔據了高地上可居住土地的 {~}……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#162": {
+   "src": "Several pages are dedicated to the Doguns personalities, traits and powers.",
+   "dst": "有好幾頁專門寫 Dogun 的性情、特徵與能力。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#163": {
+   "src": "\"...Magical powerhouses of the fire element...\"",
+   "dst": "「……火元素的魔法強權……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#164": {
+   "src": "\"Near Dwarven intelligence...\"",
+   "dst": "「智力近乎矮人……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#165": {
+   "src": "\"Clearance is needed if Dwarves are going to form a colony...\"",
+   "dst": "「若矮人要在此建立殖民地，必須先清場……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#166": {
+   "src": "According to the report, the land was once rich with minerals and materials.",
+   "dst": "報告裡寫著，這片土地曾經礦產與資源豐饒。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#167": {
+   "src": "This page appears to have been ripped out and crudely reattached.",
+   "dst": "這一頁似乎被撕下過，又粗暴地黏了回去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#168": {
+   "src": "\"A program of public profiling of the natives is recommended...\"",
+   "dst": "「建議對原住民實施公開側寫計畫……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#169": {
+   "src": "There are detailed instructions on producing propaganda against the Doguns.",
+   "dst": "裡頭詳述了如何製作針對 Dogun 的宣傳。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#170": {
+   "src": "\"...recommend they are referred to as demons, as inherent fear will take hold...\"",
+   "dst": "「……建議稱他們為惡魔，人心固有的恐懼便會生根……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#171": {
+   "src": "The report details propaganda at all levels of society, particularly at educational centers.",
+   "dst": "這份報告詳述了社會各個層級的宣傳手法，尤其是教育機構。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#172": {
+   "src": "\"Once public opinion is sufficiently hostile, establishment of colonies will be achievable...\"",
+   "dst": "「一旦民意足夠敵視，建立殖民地便指日可待……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#173": {
+   "src": "The report goes on to detail the total dominance of {p} and the importance of propaganda continuation.",
+   "dst": "報告接著詳述 {p} 的全面支配，以及持續宣傳的重要性。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#174": {
+   "src": "Now do you see? Everything that I told you about when we rescued those flerisi was indeed true...",
+   "dst": "現在你明白了吧？我們救出那些 Flerisi 時我跟你說的一切，確實都是真的……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#175": {
+   "src": "Search for house number {~} in {p} like Axelus said.",
+   "dst": "照 Axelus 說的，在 {p} 裡找出 {~} 號房子。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#176": {
+   "src": "Talk with the coalition.",
+   "dst": "和聯盟談談。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#177": {
+   "src": "Meet the group at [{~}, {~}, -{~}]",
+   "dst": "到 [{~}, {~}, -{~}] 與隊伍會合",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#178": {
+   "src": "I'll let...you in.",
+   "dst": "我……放你進來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#179": {
+   "src": "To repair the mechanical core, select a colour and connect the clay with the same coloured glass block by clicking the iron blocks with the Rewiring Tool.",
+   "dst": "要修復機械核心，先選一個顏色，再用重新接線工具點擊鐵磚，把黏土和同色的玻璃磚接起來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#180": {
+   "src": "Head back to the coalition through the tunnel at [{~}, {~}, -{~}].",
+   "dst": "穿過 [{~}, {~}, -{~}] 的隧道回到聯盟那裡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#181": {
+   "src": "The king has sent for you personally.",
+   "dst": "國王親自派人來找你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#182": {
+   "src": "If you don't come with us we wi-",
+   "dst": "你要是不跟我們走，我們就——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#183": {
+   "src": "Entomb these Doguns, and slay their Dwarven thralls!",
+   "dst": "把這些 Dogun 活埋，再把他們的矮人奴僕一併斬了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#184": {
+   "src": "But...bring them...the dragon bone...as a gift. If they accept it...they might accept us.",
+   "dst": "不過……帶著……那根龍骨……當作禮物。要是他們願意收下……或許也願意接納我們。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 14",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#185": {
+   "src": "We need to solve...this conflict somehow. Please...help us.",
+   "dst": "我們得想辦法……解決這場衝突。拜託……幫幫我們。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part II#000": {
    "src": "The Royal Guards escort you and Axelus out of the palace.",
    "dst": "皇家衛兵把你和 Axelus 押出了宮殿。",
@@ -58923,6 +59413,56 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
+  "Dwarves and Doguns Part II#087": {
+   "src": "You shouldn't enter this place yet!",
+   "dst": "你現在還不該進這個地方！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#088": {
+   "src": "The {p} Power Core has been disrupted!",
+   "dst": "{p} 的動力核心被破壞了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Follow Axelus deeper into {p} and destroy the power source of the city.",
+   "dst": "跟著 Axelus 深入 {p}，摧毀這座城市的動力來源。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "Explore the slums of {p}.",
+   "dst": "探索 {p} 的貧民區。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#091": {
+   "src": "Leave the Royal Palace at the end of the palace.",
+   "dst": "從宮殿盡頭離開皇宮。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part III#000": {
    "src": "{u}...I take back my statement. They have already begun... There cannot be reasoning.",
    "dst": "{u}……我收回我的話。他們已經開始了……沒有講道理的餘地了。",
@@ -59723,6 +60263,86 @@
    "speaker": "Sanba",
    "source": "wiki"
   },
+  "Dwarves and Doguns Part III#080": {
+   "src": "Return to the Dogun village with the letter and speak to Korzim at [{~}, {~}, -{~}].",
+   "dst": "帶著那封信回到 Dogun 村，到 [{~}, {~}, -{~}] 找 Korzim 說話。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#081": {
+   "src": "Korzim reads the message on the tablet silently. His expression is inscrutable.",
+   "dst": "Korzim 默默讀完石板上的訊息。他的表情讓人看不出端倪。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#082": {
+   "src": "Travel to {p} and meet Korzim at the entrance at [{~}, {~}, -{~}].",
+   "dst": "前往 {p}，到 [{~}, {~}, -{~}] 的入口與 Korzim 會面。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#083": {
+   "src": "Talk to the blacksmith in {p} [{~}, {~}, -{~}].",
+   "dst": "找 [{~}, {~}, -{~}] 的 {p} 鐵匠說話。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#084": {
+   "src": "Good job collecting the tools needed to destroy the demon.",
+   "dst": "幹得好，摧毀惡魔所需的工具都湊齊了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 6",
+   "speaker": "Edula",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#085": {
+   "src": "Go to the enchanter and enchant the amulet at [{~}, {~}, -{~}].",
+   "dst": "到 [{~}, {~}, -{~}] 找附魔師，把護符附魔。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#086": {
+   "src": "Travel through the Freezing Heights and get [{~} True Ice].",
+   "dst": "穿越 Freezing Heights，取得 [{~} True Ice]。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#087": {
+   "src": "The ice has trapped you. Try again.",
+   "dst": "你被冰困住了。再試一次。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part IV#000": {
    "src": "Quiet. Dwarven whelp...you have failed... We will not go quietly. AWAKEN.",
    "dst": "閉嘴。Dwarves 的乳臭小子……你失敗了……我們不會默默地走。醒來吧。",
@@ -60382,6 +61002,56 @@
    "stage": "Stage 8",
    "speaker": "King of Rodoroc",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#068": {
+   "src": "Return to Korzim at [{~}, {~}, -{~}] on the second floor of the enchanter in {p} with the Amulet of Fire and the Staff of Ice.",
+   "dst": "帶著 Amulet of Fire 與 Staff of Ice，回到 {p} 附魔師二樓 [{~}, {~}, -{~}] 找 Korzim",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#069": {
+   "src": "Reach the ritual colosseum and prevent Garaheth from being summoned",
+   "dst": "抵達儀式競技場，阻止 Garaheth 被召喚",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#070": {
+   "src": "Freeze any vital point of Garaheth you can find!",
+   "dst": "找到 Garaheth 身上任何要害就凍住它！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#071": {
+   "src": "Get out of Garaheth!",
+   "dst": "從 Garaheth 體內脫身！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#072": {
+   "src": "We...we have nothing left... We could have...taken them with us... Now they will...will... You...!",
+   "dst": "我們……我們什麼都不剩了……我們本來可以……把他們一起帶走的……現在他們會……會……你……！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "captured.json"
   },
   "Dwelling Walls#000": {
    "src": "I left a very precious journal inside of this mansion, a hell within walls. It was my great grandfather's!",
@@ -76802,6 +77472,806 @@
    "stage": "Stage 8",
    "speaker": "Sensei Miyagi",
    "source": "wiki"
+  },
+  "Enter the Dojo#036": {
+   "src": "I hear many things about human combat skill, so I believe I shall watch this challenge myself. Enter now, challenger!",
+   "dst": "人類的戰技我聽過不少說法，所以這場挑戰我要親自看著。進來吧，挑戰者！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#037": {
+   "src": "Fight your way through the combat challenge",
+   "dst": "一路打過戰鬥挑戰",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#038": {
+   "src": "And I am to recognize your combat skill, and proclaim your passage of the fiata Room. Well done!",
+   "dst": "那麼，我認可你的戰技，宣布你通過了 fiata Room。幹得好！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#039": {
+   "src": "In founding this dojo, I was inspired by many a tale. I was many a time scoffed at by others, for taking stock in the legends of old...",
+   "dst": "創立這間道場時，我從許多傳說中得到啟發。曾有許多人嘲笑我，說我居然相信那些古老的傳說……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#040": {
+   "src": "And yet the results speak for themselves. As of the time of writing this, being {~} AP, I am {~} years old.",
+   "dst": "然而成果不言自明。寫下這段文字時是 {~} AP，我 {~} 歲。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#041": {
+   "src": "Many forget the power one's body can rise to, thanks to the prevalence of magic practices. Although magical knowledge is itself important, and I am guilty of neglecting it myself.",
+   "dst": "魔法盛行，使許多人忘了肉體能達到的力量。當然，魔法知識本身也很重要——這一點我自己也疏忽了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#042": {
+   "src": "But the tales and practices of ancient warriors and kings, such as Remikas, or even modern soldiers such as Tisaun Sodeta, have great value.",
+   "dst": "但古代戰士與君王的故事與修行，像 Remikas 那樣的，甚至近代軍人如 Tisaun Sodeta 的，都極有價值。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#043": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "在此，我要講述哪些故事帶給我智慧、力量與健康，並把那份知識傳給你，親愛的讀者。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#044": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "在此，我要講述哪些故事帶給我智慧、力量與健康，並把那份知識傳給你，親愛的讀者。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#045": {
+   "src": "...though this is a fascinating read, you're already going through a lot of what is described in the book, and it hasn't brought you tranquility.",
+   "dst": "……雖然讀起來很有意思，但書裡寫的那些你大半都已經在經歷了，而它並沒有帶給你平靜。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#046": {
+   "src": "Become at one with nature in the room and cavern",
+   "dst": "在房間與洞窟裡與自然合而為一",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#047": {
+   "src": "To meditate is to remove all distractions, and to peacefully introspect- to be at one with yourself and anchor yourself to the moment, or merely to relax.",
+   "dst": "冥想就是排除一切雜念，平靜地內省——與自己合一、把自己繫在當下，或者只是單純放鬆。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#048": {
+   "src": "It is highly recommended for anyone experiencing stress or a clouded mind. Here will be detailed the basic steps for practicing meditation.",
+   "dst": "感到壓力或心緒混亂的人，都非常推薦一試。以下詳述冥想的基本步驟。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#049": {
+   "src": "First, find a quiet, comfortable place. Someplace that you feel safe in, and where you will not be interrupted by outside influences.",
+   "dst": "首先，找一個安靜舒適的地方。讓你覺得安全、不會被外界打擾的地方。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#050": {
+   "src": "If you are first beginning, set an hourglass or clock alarm for a short time. Ten or fifteen minutes will do. Even short sessions can help.",
+   "dst": "若是初學，把沙漏或時鐘的鬧鈴設短一點。十到十五分鐘就夠了。短短一次也有幫助。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#051": {
+   "src": "Next, sit down. The traditional position is to sit cross-legged with hands in the lap, but so long as you are comfortable, any position works.",
+   "dst": "接著坐下。傳統坐姿是盤腿而坐、雙手置於腿上，但只要你覺得舒服，任何姿勢都可以。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#052": {
+   "src": "Once you have found a comfortable spot, close your eyes and breathe deeply. Breathe in deeply, hold for a few seconds, breathe out, and hold for the same amount.",
+   "dst": "找到舒適的位置後，閉上眼深呼吸。深深吸氣、屏住幾秒、吐氣，再屏住同樣長的時間。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#053": {
+   "src": "Focus on the sensation of your breathing, and on only the sensation of your breathing. If your mind wanders, do not fret- simply return your attention to your breath.",
+   "dst": "專注在呼吸的感覺上，而且只專注在呼吸的感覺上。思緒飄走也別急——把注意力帶回呼吸就好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#054": {
+   "src": "When you feel ready to rise, or when your time ends, slowly open your eyes and notice your environment- the sights and sounds, and the feeling of your body.",
+   "dst": "當你覺得可以起身，或時間到了，慢慢張開眼，留意周圍——看見的、聽見的，還有身體的感覺。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Guide to Meditation",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#055": {
+   "src": "Although there are more complex and involved methods of meditation, they are not necessary- Now that you have read this, try it yourself whenever you have a spare moment.",
+   "dst": "雖然還有更複雜繁瑣的冥想法，但那些並非必要——讀完這段之後，只要有空閒就自己試試看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#056": {
+   "src": "...this seems promising. Carefully, you settle down and close your eyes.",
+   "dst": "……這看起來有希望。你小心地坐定，閉上眼睛。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#057": {
+   "src": "...breathe in...",
+   "dst": "……吸氣……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#058": {
+   "src": "...breathe out...",
+   "dst": "……吐氣……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#059": {
+   "src": "...you can't focus. Your mind is wandering too many directions at once. Unfortunate, but it's worth remembering anyways.",
+   "dst": "……你沒辦法專心。思緒同時往太多方向飄去。可惜了，不過還是值得記下來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#060": {
+   "src": "When fighting unarmed or with weapons such as knuckles, katars, or gauntlets, one's stance is paramount in fighting an opponent.",
+   "dst": "空手搏擊，或使用指虎、卡塔短刃、鐵護手這類武器時，架式是對敵的首要關鍵。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#061": {
+   "src": "The way one is positioned can ground the body, allowing for blows to be taken with less consequence, or allow one to be light enough to evade attack.",
+   "dst": "身體擺放的方式可以讓人沉穩扎地，挨打時傷害更輕；也可以讓人輕盈到足以閃開攻擊。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#062": {
+   "src": "All combat must of course be learned through rigorous training- One cannot expect to become an expert simply by reading. Here are a handful of basic stances to practice.",
+   "dst": "所有的戰鬥技藝當然都得靠嚴苛的訓練才能學成——光靠閱讀是當不了高手的。以下是幾個值得練的基本架式。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#063": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "前屈架式是雙腿大幅張開，後腿完全伸直、身體挺立。這是穩住自己的紮實架式。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#064": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "前屈架式是雙腿大幅張開，後腿完全伸直、身體挺立。這是穩住自己的紮實架式。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#065": {
+   "src": "The Back Stance has one foot in front of the other, with the back foot facing to the side and one's weight on the back leg. For evading attacks to the top of the body.",
+   "dst": "後屈架式是一腳在前一腳在後，後腳朝側、重心落在後腿。用來閃避上半身的攻擊。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#066": {
+   "src": "The Cat Stance also has weight on the back foot, with legs bent and held close together and the front foot resting on the heel. This allows easy preparation for strong front kicks.",
+   "dst": "貓足架式同樣把重心放在後腳，雙膝彎曲、雙腿併攏，前腳以腳跟著地。這讓人很容易備好一記強力前踢。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#067": {
+   "src": "The Crane Stance has one leg raised, the foot level with the other knee. Also used in preparation for kicking, as well as dodging a sweeping attack by the enemy.",
+   "dst": "鶴立架式是抬起一腿，腳掌與另一側膝蓋齊高。同樣用於備踢，也用來躲開敵人的掃擊。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#068": {
+   "src": "Many a venerable mage has made their mark on history. There is a reason their names are repeated- we can learn much from what they have demonstrated.",
+   "dst": "許多德高望重的法師都在歷史上留下了印記。他們的名字被反覆提起是有原因的——他們所示範的，我們能學到很多。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#069": {
+   "src": "This, unfortunately, applies both for positive and negative reasons. For instance, a lesson that has become law involves the use of soul-binding magic.",
+   "dst": "可惜這一點好壞兩面都適用。舉例來說，有一條已經寫成法律的教訓，與束魂魔法的使用有關。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#070": {
+   "src": "...was considered a monstrous and immoral practice. Keeping the spirit trapped, forced to obey orders, in a decaying body wracked with pain, is something that could not be abided by.",
+   "dst": "……那被視為一種殘暴而不道德的行徑。把靈魂困住、強迫它服從命令，還鎖在一具腐朽而痛苦不堪的軀體裡，這是不可容忍的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#071": {
+   "src": "Since then, soul-binding is the most strictly punished brand of magic in all of Gavel, above demonic rites and even the necromancy that soul-binding was endemic within.",
+   "dst": "自那時起，束魂便成了整個 Gavel 懲處最嚴厲的一類魔法，比惡魔儀式、甚至比束魂原本盛行其中的死靈術都重。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#072": {
+   "src": "...this is a very heavy read. Certainly not suitable for finding tranquility.",
+   "dst": "……這讀起來真沉重。要找平靜，肯定不適合。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#073": {
+   "src": "To brew tea is a simple, meditative process that in itself has deep intricacies. We shall draw upon its heritage now.",
+   "dst": "泡茶是一件簡單而近乎冥想的事，本身卻有極深的講究。現在就來談談它的傳承。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#074": {
+   "src": "Fresh, clean water is required. Bring it to a soft boil in a pot or cauldron, and then mix in herbs and ingredients to taste..",
+   "dst": "需要新鮮乾淨的水。在鍋或釜中煮到微滾，再依口味拌入草藥與材料……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#075": {
+   "src": "Harvesting ingredients freshly can add extra depth to the tea, although you can make fine tea from any ingredients, so long as they are not rotten.",
+   "dst": "現採的材料能給茶更多層次，不過只要材料沒壞，什麼材料都能泡出好茶。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#076": {
+   "src": "Common ingredients include sugar, lemongrass, ginger root, chamomile, and lavender. Each has their own purpose for tea.",
+   "dst": "常見的材料有糖、香茅、薑根、洋甘菊和薰衣草。每一樣在茶裡都有自己的用處。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#077": {
+   "src": "Sugar helps sweeten the bitterness of some brews, and balances the flavors to be mild. However, too much will leave the brew sickly and tacky.",
+   "dst": "糖能柔化某些茶的苦味，把風味調得平和。但放太多，茶就會甜得發膩又黏口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#078": {
+   "src": "The unique tang of lemongrass is lauded as signature for green tea. The mild, lightly-minty flavor is a perfect base for which to create a relaxing brew.",
+   "dst": "香茅那股獨特的清香被譽為綠茶的招牌。那種溫和、帶一點薄荷感的風味，是泡一杯放鬆好茶的完美基底。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#079": {
+   "src": "Although Ginger Root is bitingly bitter and inevitably overpowers other ingredients, it has potent medicinal effects which may help invigorate the sick.",
+   "dst": "薑根雖然辛苦刺口，難免壓過其他材料，但它藥效強勁，或許有助於讓病人恢復活力。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#080": {
+   "src": "Lavender is similarly relaxing, but must be the focus of the brew. It must be steeped for a long while, and is severely bitter, which causes it to drown out other ingredients.",
+   "dst": "薰衣草同樣能放鬆，但必須當主角。它得浸泡很久，而且極苦，會把其他材料的味道都蓋掉。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#081": {
+   "src": "...come to think of it, a cup of tea sounds like it would be quite nice, after all the hard training. Perhaps you should make a cup.",
+   "dst": "……這麼一想，苦練之後來杯茶好像挺不錯的。或許你該泡一杯。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#082": {
+   "src": "While many people think that relaxation is out of reach with their busy schedules, the truth is there are many things you can do daily to wind down that take little time.",
+   "dst": "很多人以為行程一忙就別想放鬆了，其實每天有不少花不了多少時間就能緩下來的事可以做。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#083": {
+   "src": "For instance, caring for houseplants is a simple task. You can grow them from seeds or get them pre-bought, and caring for gardens is an easy way to relax, while also giving you a place to relax.",
+   "dst": "舉例來說，照顧室內盆栽就很簡單。可以從種子種起，也可以買現成的；整理庭園是輕鬆的放鬆方式，同時也給了你一處能放鬆的地方。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#084": {
+   "src": "You can turn any room into a garden simply by getting planter pots, but for those who can't devote enough time to that, you could try caring for a bonsai tree instead.",
+   "dst": "只要備好花盆，任何房間都能變成庭園；至於撥不出那麼多時間的人，也可以改養一盆盆景。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#085": {
+   "src": "They just need water, sunlight, and care by using garden shears to carefully cut the limbs of the tree. Shaping it like this is artful in itself, and has spiritual significance as well.",
+   "dst": "它只需要水、陽光，以及用園藝剪細心修去枝條的照料。像這樣修出形狀本身就是一門藝術，也帶有精神上的意義。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#086": {
+   "src": "It requires focus in the moment, but not much time at all, meaning that you can simply set aside short time and be done. It also helps clean the air in the house as well!",
+   "dst": "它需要當下的專注，但其實花不了多少時間——也就是撥一小段空檔就能做完。而且還能幫家裡淨化空氣！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#087": {
+   "src": "Another easy way to relax is to set up a stone garden. You don't need a large amount of space to have one- even a small box will do. Fill it with gravel and smooth stones.",
+   "dst": "另一個輕鬆的放鬆方式是弄一座石庭。不需要大片空間——一個小箱子就行。裡頭鋪上礫石和光滑的石頭。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#088": {
+   "src": "Use a small handheld rake to draw lines in the gravel in different patterns, each day. It's as simple as that- don't focus on making specific ones though, just draw whatever your hand draws.",
+   "dst": "每天用小耙子在礫石上畫出不同的紋路。就這麼簡單——不過別執著於畫出特定的樣子，手畫到哪就畫到哪。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#089": {
+   "src": "Doing this can help draw focus away from stressful thoughts, and bring you back to the moment, while also being a fun conversation piece that's easy and cheap to set up.",
+   "dst": "這麼做能把注意力從令人焦慮的念頭上移開，把你帶回當下；同時也是個有趣的話題，既好弄又便宜。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#090": {
+   "src": "...those are nice thoughts, but unfortunately there isn't a zen garden set up here, and you don't have a bonsai tree or garden shears handy.",
+   "dst": "……想得挺好，可惜這裡沒有擺禪庭，你手邊也沒有盆景或園藝剪。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#091": {
+   "src": "The sheep raises its head to look at you, then returns to its business.",
+   "dst": "綿羊抬起頭看了你一眼，又回去忙自己的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#092": {
+   "src": "The cow raises its head to look at you, then returns to its business.",
+   "dst": "牛抬起頭看了你一眼，又回去忙自己的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#093": {
+   "src": "The pig raises its head to look at you, then returns to its business.",
+   "dst": "豬抬起頭看了你一眼，又回去忙自己的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#094": {
+   "src": "With the tea brewed and the scent of it filling the room, you gently take a few sips.",
+   "dst": "茶泡好了，香氣充滿整個房間，你輕輕啜了幾口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#095": {
+   "src": "The heat of the tea and the gently sweet, floral taste warms your throat and body. You feel more relaxed, but...not at peace with nature yet.",
+   "dst": "茶的熱度和那股淡淡的甜香暖了你的喉嚨與身體。你覺得放鬆了些，但……還沒與自然相安。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#096": {
+   "src": "...there were some animals wandering the cave. Making a small offering seems like the right way to go, and there's plenty of tea left...",
+   "dst": "……洞窟裡有幾隻動物晃著。供上一份小小的禮看來是對的做法，而茶也還剩不少……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#097": {
+   "src": "...hm? This isn't actually a book, it's a dossier. Did Miyagi leave this out by accident?",
+   "dst": "……嗯？這其實不是書，是一份卷宗。Miyagi 是不小心放在外面的嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#098": {
+   "src": "Seems to contain a number of trade agreements, between the Sakura Dojo and the {p}.",
+   "dst": "裡頭似乎有好幾份 Sakura Dojo 與 {p} 之間的貿易協定。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#099": {
+   "src": "It appears that recently, a large shipment of Hive silk has been received. There's no record of emerald payment.",
+   "dst": "看來最近收到了一大批 Hive 的絲綢。沒有任何綠寶石付款的紀錄。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#100": {
+   "src": "A shipment of cherries and rice has been sent out at the same time- they must trade products directly.",
+   "dst": "同一時間送出了一批櫻桃和米——他們一定是直接以物易物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#101": {
+   "src": "Previous records show trades of metal salvage for cherry wood, and gifted shipments of tea leaves and ingredients.",
+   "dst": "先前的紀錄顯示，曾以廢金屬換櫻木，也曾收到茶葉與食材的餽贈。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#102": {
+   "src": "...there's a letter here, too. The script is very ornate...this is addressed from the Mistress of the Hive herself, only a few months ago.",
+   "dst": "……這裡還有一封信。字跡非常華麗……寄件人正是 Hive 的女主人本人，就在幾個月前。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#103": {
+   "src": "\"I hope this letter finds you well. I once again thank you for the trade. The caravans from {p} have been scarce recently, and your donations have kept the servants from going hungry.\"",
+   "dst": "「願此信抵達時您一切安好。我要再次為這次的交易向您致謝。近來從 {p} 來的商隊愈發稀少，是您的餽贈讓僕從們不致飢餓。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#104": {
+   "src": "\"Although I would under most circumstances send a small party of my creations to run for supplies, it is a logistical and political nightmare that I would just as soon avoid.\"",
+   "dst": "「雖然多數情況下我會派一小隊我的造物去取補給，但那在後勤與政治上都是一場惡夢，我寧可避開。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#105": {
+   "src": "\"I will provide remuneration for this in due time- certainly, I may spare a sum of emeralds if you wish it. You are trusted enough to write a blank check on this for, so you may name your price.\"",
+   "dst": "「我會在適當的時候給予報酬——當然，若您希望，我也可以撥出一筆綠寶石。您獲得的信任足以讓我在這件事上開一張空白支票，所以價錢由您開。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#106": {
+   "src": "\"Equally I am willing to offer extra salvage metal of top quality, or perhaps further silk or animant stones for your training dummies. Please write back quickly with your request.\"",
+   "dst": "「同樣地，我也願意提供更多頂級的回收金屬，或是再給一些絲綢、活化體石，供您的訓練假人之用。請盡快回信告知您的需求。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#107": {
+   "src": "\"I plan to accompany the next caravan which will bring our recompensation, and I look forward to the visit. We may finally finish our set of Go yet.\"",
+   "dst": "「我打算隨下一支送上補償的商隊同行，很期待這趟拜訪。我們那盤圍棋，說不定終於能下完了。」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#108": {
+   "src": "\"Regards, Mistress Qira\"",
+   "dst": "「謹此，Mistress Qira」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#109": {
+   "src": "The cow raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "牛抬起頭看向你。一見到那杯綠茶，牠的眼睛亮了起來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#110": {
+   "src": "You gesture the tea generously towards the cow, and place it on the ground for it to drink. The cow nods respectfully to you.",
+   "dst": "你大方地把茶遞向牛，放在地上讓牠喝。牛恭敬地向你點了點頭。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#111": {
+   "src": "...watching it drink from the cup as you did, there's a certain kinship you feel, and with that realization comes a feeling of peace.",
+   "dst": "……看著牠像你一樣就著杯子喝，你感到某種同類之情；而隨這份體悟而來的，是一份平靜。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#112": {
+   "src": "You can't recall the last time you've felt this relaxed. You know for certain that you have mastered the challenge of tranquility. Time to leave.",
+   "dst": "你想不起上一次這麼放鬆是什麼時候了。你很確定自己已經通過了平靜這道考驗。該走了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#113": {
+   "src": "The pig raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "豬抬起頭看向你，恭敬地點了點頭。你成功與自然取得了平靜與友誼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#114": {
+   "src": "The sheep raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "綿羊抬起頭看向你，恭敬地點了點頭。你成功與自然取得了平靜與友誼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#115": {
+   "src": "The cow raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "牛抬起頭看向你，恭敬地點了點頭。你成功與自然取得了平靜與友誼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Enzan's Brother#000": {
    "src": "Well, I'd best get back to my business. It was nice talking to you, traveler. Come around anytime.",
@@ -111066,6 +112536,216 @@
    "stage": "Stage 9",
    "speaker": "Javen",
    "source": "wiki"
+  },
+  "Mixed Feelings#076": {
+   "src": "Go for a drink at the Corkus Docks Inn, [-{~}, {~}, -{~}]",
+   "dst": "到 [-{~}, {~}, -{~}] 的 Corkus 碼頭旅店喝一杯",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#077": {
+   "src": "Talk to Javen to find out more about what happened.",
+   "dst": "找 Javen 問清楚發生了什麼事。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#078": {
+   "src": "You should ask Javen about what happened.",
+   "dst": "你該問問 Javen 發生了什麼事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#079": {
+   "src": "Talk to citizens around the docks to find out more about what happened.",
+   "dst": "找碼頭一帶的居民談談，問清楚發生了什麼事。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#080": {
+   "src": "You ran outta here and wrecked all sorts! You better go find the people you affected and apologise!",
+   "dst": "你從這裡衝出去，砸壞了一堆東西！你最好去找那些被你害到的人，好好道歉！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Javen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#081": {
+   "src": "Hurry, please! Just head into the big trapdoor by the bushes, the controls are in there.",
+   "dst": "拜託快一點！直接進灌木叢旁那道大活板門，控制裝置就在裡面。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#082": {
+   "src": "> Thank you for choosingsing CorkTech! Your company for a safe and trustworthy service.",
+   "dst": "> 感謝您選擇 CorkTech！為您提供安全可靠服務的夥伴。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#083": {
+   "src": "Powering up elevator...",
+   "dst": "電梯啟動中……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#084": {
+   "src": "You can push the button beside the crates to pick them up, and stand on the pressure plate to place them.",
+   "dst": "按木箱旁邊的按鈕可以把它們舉起來，站到壓力板上就能放下。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#085": {
+   "src": "It seems like all crates are balanced now.",
+   "dst": "看來所有木箱都平衡好了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#086": {
+   "src": "I learned about some rumours involving separatists. I should continue helping locals to find out more.",
+   "dst": "我聽到一些牽涉到分離主義者的傳聞。我該繼續幫助當地人，問出更多東西。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#087": {
+   "src": "Someone told you more about the patriots of Corkus. You should continue to find the missing clue.",
+   "dst": "有人告訴了你更多關於 Corkus 愛國者的事。你該繼續去找那條遺失的線索。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#088": {
+   "src": "You manage to reach the chest safely, getting ready to jump through a hole the fire burned.",
+   "dst": "你順利地抵達了箱子，準備跳過火燒出來的那個洞。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#089": {
+   "src": "Follow the trail of blood close to the castle, [-{~}, {~}, -{~}]",
+   "dst": "沿著城堡附近的血跡追查，[-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#090": {
+   "src": "You really don't see a reason to go in there at the moment.",
+   "dst": "你現在實在找不到進去那裡的理由。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#091": {
+   "src": "Use the balloon to enter the suspicious hideout.",
+   "dst": "搭熱氣球進入那個可疑的藏身處。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#092": {
+   "src": "Survive the fight against the drugged corkian",
+   "dst": "在與被下藥的 Corkus 人一戰中存活下來",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#093": {
+   "src": "After witnessing your crash into the cliff, Corkian citizens informed the government.",
+   "dst": "目睹你撞上崖壁之後，Corkus 的居民通報了政府。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#094": {
+   "src": "Shortly after your victory security forces found the hideout and arrested the remaining separatists.",
+   "dst": "你獲勝後不久，保安部隊便找到了藏身處，逮捕了剩下的分離主義者。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#095": {
+   "src": "Their leader was nowhere to be found.",
+   "dst": "他們的首領遍尋不著。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#096": {
+   "src": "Always nice to see my favourite customer pay a visit!",
+   "dst": "最愛的客人上門總是令人開心！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "captured.json"
   },
   "Murder Mystery#000": {
    "src": "Have you made any progress? There was a smashed window in there, it might be a good place to start.",
@@ -179440,6 +181120,46 @@
    "stage": "Stage 13",
    "speaker": "Maxie",
    "source": "wiki"
+  },
+  "The Envoy Part II#118": {
+   "src": "Enter Maxie's house at [-{~}, {~}, -{~}]",
+   "dst": "進入 [-{~}, {~}, -{~}] 的 Maxie 家",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#119": {
+   "src": "Mo'in, {u}! I've been researching everything I can about the factory.",
+   "dst": "早啊，{u}！我一直在查工廠的所有資料。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "Maxie",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#120": {
+   "src": "ARE YOU INCAPABLE OF READING THE SIGN ON THE DOOR? THE FACTORY IS CLOSED. WE ARE NOT ACCEPTING VISITORS FOR TOURS RIGHT NOW.",
+   "dst": "你是看不懂門上的牌子嗎？工廠關了。我們現在不接受參觀。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#121": {
+   "src": "I have learned so much on our adventure. One day, if you ever need me, I will be there. You have an ally in this Corkian.",
+   "dst": "這趟冒險讓我學到太多了。哪天你要是需要我，我一定到。這個 Corkus 人是你的盟友。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
   },
   "The Feathers Fly Part I#000": {
    "src": "Visit the workshop at [-{~}, {~}, -{~}] (Requires completion of The Envoy Part II)",
