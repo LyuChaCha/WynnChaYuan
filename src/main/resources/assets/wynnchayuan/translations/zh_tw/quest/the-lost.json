@@ -1,21 +1,11 @@
 {
  "_meta": {
   "quest": "The Lost",
-  "count": 59,
-  "translated": 59,
+  "count": 57,
+  "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "The Lost#000": {
-   "src": "Find Dejol at [{~}, {~}, {~}]",
-   "dst": "在 [{~}, {~}, {~}] 找到 Dejol",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Lost",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Lost#001": {
    "src": "Ho, traveler! I need the help of a true explorer, I can see it in your eyes, you are an adventurer like me!",
    "dst": "嗬，旅人！我需要一位真正的探險家幫忙，我從你眼裡看得出來，你跟我一樣是冒險者！",
@@ -346,16 +336,6 @@
    "speaker": "Gordon",
    "source": "wiki"
   },
-  "The Lost#034": {
-   "src": "So we're just going to launch ourselves out of this pit? You got it!",
-   "dst": "所以我們是要把自己從這個坑裡射出去？就這麼辦！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Lost",
-   "stage": "Stage 2",
-   "speaker": "Gordon",
-   "source": "wiki"
-  },
   "The Lost#035": {
    "src": "Alrighty, I'll be right behind you!",
    "dst": "好啦，我跟在你後面！",
@@ -522,8 +502,8 @@
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
    "source": "ja_jp"
   },
   "The Lost#052": {

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Envoy Part II",
-  "count": 121,
-  "translated": 121,
+  "count": 113,
+  "translated": 113,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -42,8 +42,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Security Bot N4T17",
    "source": "captured"
   },
   "The Envoy Part II#004": {
@@ -102,8 +102,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#010": {
@@ -192,8 +192,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#020": {
@@ -202,8 +202,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#021": {
@@ -376,16 +376,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Envoy Part II#038": {
-   "src": "No access without a key.",
-   "dst": "鍵のない方は入場できません。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 1",
-   "speaker": "Security Bot N4T17",
-   "source": "wiki"
-  },
   "The Envoy Part II#039": {
    "src": "Key valid. Welcome.",
    "dst": "鍵を確認。ようこそ。",
@@ -463,26 +453,6 @@
    "kind": "dialogue",
    "quest": "The Envoy Part II",
    "stage": "Stage 2",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#047": {
-   "src": "Find the catapult.",
-   "dst": "投石機を見つける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "The Envoy Part II#048": {
-   "src": "I knew it! There was something here we could use.",
-   "dst": "やっぱり！使えるものがあった。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 3",
    "speaker": "Maxie",
    "source": "wiki"
   },
@@ -796,26 +766,6 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Envoy Part II#080": {
-   "src": "Excellent. I will hold onto that for now. Let's focus on getting the Corkian's Key.",
-   "dst": "すごい。それは僕が預かっておく。次は Corkus人の鍵に集中しよう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 8",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#081": {
-   "src": "They keep it in a vault inside the castle. I honestly don't know how to get in there.",
-   "dst": "城の中の金庫にしまってある。正直、どうやって入るか分からない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 8",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
   "The Envoy Part II#082": {
    "src": "I think first we should just go and scout out the vault itself and work it out.",
    "dst": "まずは金庫を偵察して、それから策を練ろう。",
@@ -824,16 +774,6 @@
    "quest": "The Envoy Part II",
    "stage": "Stage 8",
    "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#083": {
-   "src": "Find the vault in {p} at [-{~}, {~}, -{~}]",
-   "dst": "[-{~}, {~}, -{~}] にある {p} の金庫を見つける",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 9",
-   "speaker": "",
    "source": "wiki"
   },
   "The Envoy Part II#084": {
@@ -1076,16 +1016,6 @@
    "speaker": "Mech X",
    "source": "wiki"
   },
-  "The Envoy Part II#108": {
-   "src": "Find Maxie and give him the key.",
-   "dst": "Maxie を見つけて鍵を渡す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 12",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Envoy Part II#109": {
    "src": "Mo'in. Did you get the key?",
    "dst": "Mo'in。鍵は手に入った？",
@@ -1104,16 +1034,6 @@
    "quest": "The Envoy Part II",
    "stage": "Stage 12",
    "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#111": {
-   "src": "Find Maxie outside the factory at [-{~}, {~}, -{~}]",
-   "dst": "[-{~}, {~}, -{~}] の工場の外で Maxie を見つける",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 13",
-   "speaker": "",
    "source": "wiki"
   },
   "The Envoy Part II#112": {

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Mercenary",
-  "count": 155,
-  "translated": 155,
+  "count": 149,
+  "translated": 149,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -102,8 +102,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "The Mercenary#010": {
@@ -112,8 +112,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "The Mercenary#011": {
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Admiral Amerigo",
    "source": "captured"
   },
   "The Mercenary#012": {
@@ -366,16 +366,6 @@
    "speaker": "Military Scout",
    "source": "wiki"
   },
-  "The Mercenary#036": {
-   "src": "Talk to Amerigo in {p} at [{~}, {~}, -{~}].",
-   "dst": "与 {p} [{~}, {~}, -{~}] 的 Amerigo 交谈。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Mercenary#037": {
    "src": "Ugh, for crying out loud- I'm busy, can't you see that? I don't have time to...",
    "dst": "呃，拜托——我很忙，你看不出来吗？我没时间……",
@@ -546,16 +536,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "The Mercenary#054": {
-   "src": "Not a bad idea.",
-   "dst": "主意不错。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "Lanu",
-   "source": "wiki"
-  },
   "The Mercenary#055": {
    "src": "Fine by me!",
    "dst": "我没意见！",
@@ -564,16 +544,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 2",
    "speaker": "Linton",
-   "source": "wiki"
-  },
-  "The Mercenary#056": {
-   "src": "Suppose that works.",
-   "dst": "我想行得通。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "Mel",
    "source": "wiki"
   },
   "The Mercenary#057": {
@@ -1226,16 +1196,6 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#122": {
-   "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a dangerous man.",
-   "dst": "我很高兴我们最后还是解决了他。他说的那些话……他看起来是个危险的人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 9",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "The Mercenary#123": {
    "src": "Oh, not this again. You're still on that?",
    "dst": "噢，又来了。你还在想那件事？",
@@ -1359,26 +1319,6 @@
   "The Mercenary#135": {
    "src": "I see... satisfactory work, soldiers. You two, and the others, have {p}'s gratitude.",
    "dst": "我明白了……干得还算可以，士兵们。你们两个，还有其他人，{p} 都感谢你们。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Admiral Amerigo",
-   "source": "wiki"
-  },
-  "The Mercenary#136": {
-   "src": "Admiral, sir. Some of what Takan is saying, it was-",
-   "dst": "上将，长官。Takan 说的一些话，那是——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "The Mercenary#137": {
-   "src": "I wouldn't put too much stock in those traitor's words. People like him, who spit vitriol with no merit, riling up the masses against the order we hold.",
-   "dst": "我不会太把那个叛徒的话当回事。像他那种人，满口毫无根据的恶言，煽动群众反抗我们维持的秩序。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
