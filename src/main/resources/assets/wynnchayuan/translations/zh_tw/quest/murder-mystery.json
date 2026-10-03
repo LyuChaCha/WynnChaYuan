@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Murder Mystery",
-  "count": 80,
-  "translated": 80,
+  "count": 76,
+  "translated": 76,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -82,7 +82,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
    "source": "captured"
   },
   "Murder Mystery#012": {
@@ -152,8 +152,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
    "source": "captured"
   },
   "Murder Mystery#015": {
@@ -212,7 +212,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
+   "stage": "Stage 6",
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -396,16 +396,6 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#039": {
-   "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation, sir.",
-   "dst": "你要是找得到那個記號，它會指引你進下水道的路。抱歉，我知道的就這麼多。祝你調查順利，先生。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 2",
-   "speaker": "Rohem",
-   "source": "wiki"
-  },
   "Murder Mystery#040": {
    "src": "Return to the victim's house at [-{~}, {~}, -{~}] to find a snake symbol.",
    "dst": "回到 [-{~1}, {~2}, -{~3}] 死者的房子，找出蛇形記號。",
@@ -459,16 +449,6 @@
   "Murder Mystery#045": {
    "src": "He was brought down here by his friend one day. Rohem, it was. A fine customer, you understand. Never failed to pay his dues...",
    "dst": "有一天他被他朋友帶下來。是 Rohem。一個好客人，你懂的。從來不欠帳……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 4",
-   "speaker": "Valimare",
-   "source": "wiki"
-  },
-  "Murder Mystery#046": {
-   "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, till neither of em had anythin' left.",
-   "dst": "可是他帶 Eminar 來的那天，場面很快就難看了。他一直跟 Rohem 借綠寶石，一直輸，輸到兩個人身上都不剩什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -656,16 +636,6 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#065": {
-   "src": "Whatever you pale-faced walking cowlick. You're headed to {p} Penitentiary with a charge of first-class murder. Guards, take him away.",
-   "dst": "隨便你怎麼說，你這蒼白的呆毛。你要去 {p} 監獄了，罪名是一級謀殺。衛兵，把他帶走。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 6",
-   "speaker": "Detective Lorias",
-   "source": "wiki"
-  },
   "Murder Mystery#066": {
    "src": "As for you, human, please accept my immense gratitude. We probably wouldn't have caught that rat without you.",
    "dst": "至於你，人類，請接受我由衷的感謝。沒有你，我們大概抓不到那隻老鼠。",
@@ -749,16 +719,6 @@
   "Murder Mystery#074": {
    "src": "The rules are simple! I deal two cards face up to ya both face down, and two cards to me, one face up and one face down.",
    "dst": "規則很簡單！我發兩張牌給你，兩張都蓋著；我自己也拿兩張，一張翻開、一張蓋著。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 6",
-   "speaker": "Blackjack Dealer",
-   "source": "wiki"
-  },
-  "Murder Mystery#075": {
-   "src": "Ya can hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
-   "dst": "你可以要牌，想要幾張就要幾張，也可以停牌結束你的回合。目標是讓手牌點數盡量接近 {~} 點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Canyon Guides",
-  "count": 87,
-  "translated": 87,
+  "count": 76,
+  "translated": 76,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -32,8 +32,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#003": {
@@ -52,8 +52,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#005": {
@@ -62,8 +62,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#006": {
@@ -72,8 +72,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#007": {
@@ -112,8 +112,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#011": {
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#012": {
@@ -142,8 +142,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#014": {
@@ -152,8 +152,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#015": {
@@ -202,8 +202,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#020": {
@@ -212,8 +212,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Gana",
    "source": "captured",
    "similar": {
     "text": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
@@ -262,29 +262,9 @@
    "speaker": "Gana",
    "source": "wiki"
   },
-  "The Canyon Guides#025": {
-   "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but we are unable to reach him.",
-   "dst": "是這樣的，有個迷路的人被困在附近崖壁上的一處營地。我們看了於心不忍，卻無法到他那裡去。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 1",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
   "The Canyon Guides#026": {
    "src": "The canyon creatures there are ruthless, and we are not suited to physical combat. We would be able to reach him, but we would be stranded ourselves.",
    "dst": "那邊的峽谷生物很兇殘，而我們不擅長近身戰。我們到得了，但自己也會被困住。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 1",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
-  "The Canyon Guides#027": {
-   "src": "We ask you to guide Seluc to us. We shall send you to him, and you will bring him here. If you wish to help, you will be rewarded for your time.",
-   "dst": "我們想請你把 Seluc 領來這裡。我們會送你過去，你把他帶回來。你若願意幫忙，這份時間不會白費。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -312,29 +292,9 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#030": {
-   "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day off cliff diving?",
-   "dst": "等等，是人類！唉，我不該抱希望的。你在幹嘛，跳崖跳到今天放假嗎？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 2",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
   "The Canyon Guides#031": {
    "src": "If you really did intend to rescue me, you've assuredly wasted both our time.",
    "dst": "你要是真打算來救我，那你肯定是在浪費我們兩個的時間。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 2",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#032": {
-   "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at that, right? Fetching things and people?",
-   "dst": "你真想派上用場的話，去給我叫一個 Bantisu 僧侶過來！你們很擅長這個吧？跑腿拿東西、找人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -365,16 +325,6 @@
   "The Canyon Guides#035": {
    "src": "These Jinko are going to pounce any second now!! I haven't got a weapon, were you expecting me to rush off and get into a rumble?!",
    "dst": "這些 Jinko 隨時都會撲上來！！我手上連武器都沒有，你以為我會衝出去跟牠們廝殺嗎？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 2",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#036": {
-   "src": "Kill them! Kill then now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
-   "dst": "殺了牠們！立刻殺了牠們！然後帶我離開這裡！是你把我害成這樣的，現在給我弄出去！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -415,16 +365,6 @@
   "The Canyon Guides#040": {
    "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair! Besides that...",
    "dst": "走這麼多路……我要在這裡休息一下。你逼我跳下懸崖，我就有權逼你慢下來。這才公平！除此之外……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 3",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#041": {
-   "src": "I only even came here just to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
-   "dst": "我來這裡本來只是想看風景。至少那個毀不了。不過話說回來，這假期還真是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -522,16 +462,6 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#051": {
-   "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into the lake and made me lose my shoes!",
-   "dst": "唉，我的腳快廢了。要不是「某人」把我撞進湖裡、害我鞋子都丟了，這趟山路說不定還沒那麼糟！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 3",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
   "The Canyon Guides#052": {
    "src": "More earthquakes...? Wait-",
    "dst": "又地震……？等等——",
@@ -612,16 +542,6 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#060": {
-   "src": "Huff...puff... Well...huff... Wait, there's...there's no way down to the other side! Huff...what a waste!!",
-   "dst": "呼……喘……嗯……呼……等等，那邊……那邊根本沒有路可以下去！呼……白爬了！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 4",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
   "The Canyon Guides#061": {
    "src": "Can you do ANYTHING right?! There's no way I'm jumping down there, you maniac!",
    "dst": "你到底有沒有一件事做得對的？！我死也不會跳下去的，你這個瘋子！",
@@ -635,16 +555,6 @@
   "The Canyon Guides#062": {
    "src": "YOU-!",
    "dst": "你這——！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 4",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#063": {
-   "src": "You...had better count yourself lucky I haven't broken any bones over this. Agh...but that doesn't mean I'm not aching all over!!",
-   "dst": "你……最好慶幸我沒有因此摔斷骨頭。啊……可是那不代表我不是全身痠痛！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -812,16 +722,6 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#080": {
-   "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude towards this kind human.",
-   "dst": "Seluc，這件事就當個教訓吧。你騙不了以風視物的人。現在，向這位善良的人類表達你的感謝。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 7",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
   "The Canyon Guides#081": {
    "src": "That's right! See, Gana? After all that, at least the human isn't a liar.",
    "dst": "說得對！你看，Gana？經過這一切，至少這個人類不是騙子。",
@@ -835,16 +735,6 @@
   "The Canyon Guides#082": {
    "src": "...Well, 'coat fetcher', getting this man his coat is still a fine deed. And for that, you shall be rewarded.",
    "dst": "……好吧，「拿外套的」，替這個人把外套取回來仍然是一件好事。為此，你應當得到回報。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 7",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
-  "The Canyon Guides#083": {
-   "src": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
-   "dst": "作為謝禮，我們也會開放 Bantisu Air Booster 給你使用。那是峽谷各處都找得到的魔法氣流雲。希望它們對你有所幫助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -878,8 +768,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "ja_jp"
   }
  }

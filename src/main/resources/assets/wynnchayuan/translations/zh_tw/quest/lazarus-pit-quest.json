@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lazarus Pit (Quest)",
-  "count": 98,
-  "translated": 98,
+  "count": 95,
+  "translated": 95,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -86,16 +86,6 @@
    "speaker": "Gelibord Guard",
    "source": "wiki"
   },
-  "Lazarus Pit (Quest)#008": {
-   "src": "Hey! Over here, you alright? Come talk to me, I can explain what just happened.",
-   "dst": "喂！這邊！你還好嗎？過來跟我說話，我可以解釋剛剛發生了什麼事。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
   "Lazarus Pit (Quest)#009": {
    "src": "Check in with Burtur about the attack at [-{~}, {~}, -{~}]",
    "dst": "到 [-{~}, {~}, -{~}] 找 Burtur 了解這次襲擊",
@@ -129,16 +119,6 @@
   "Lazarus Pit (Quest)#012": {
    "src": "It's a bit sacrilegious, but necessary to do right now- otherwise they just keep coming back, like they do across the ridge in Kander.",
    "dst": "這麼做是有點褻瀆，但現在非做不可——否則牠們只會一再爬起來，就像山脊那頭的 Kander 一樣。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#013": {
-   "src": "The ones around here all come up from the river, though, and since it runs right through the town, well... You can see the problem.",
-   "dst": "不過這一帶的都是從河裡冒上來的，而那條河剛好穿過鎮子，這下……你就明白問題在哪了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -439,16 +419,6 @@
   "Lazarus Pit (Quest)#043": {
    "src": "Oh, you found it! Wonderful! Just pop it on that fingerbone right there... Ah, it fits even better on the other hand!",
    "dst": "喔，你找到了！太好了！就套在那根指骨上……啊，戴另一隻手上還更合適呢！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 6",
-   "speaker": "Sir Pigglesworth the Thirty-Fifth",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#044": {
-   "src": "The crypt, you say? I can offer my blessing to enter, but you'll need to check with the other tombs as well. Farewell!",
-   "dst": "你說地穴啊？我可以給你進入的祝福，但你還得去問問其他幾座墓才行。再會！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -792,8 +762,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Burtur",
    "source": "captured"
   },
   "Lazarus Pit (Quest)#079": {
@@ -802,8 +772,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Burtur",
    "source": "captured"
   },
   "Lazarus Pit (Quest)#080": {
@@ -902,7 +872,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
+   "stage": "Stage 6",
    "speaker": "Sir Pigglesworth the Thirty-Fifth\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },

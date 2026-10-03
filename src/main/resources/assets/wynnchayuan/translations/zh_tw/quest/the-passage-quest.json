@@ -1,21 +1,11 @@
 {
  "_meta": {
   "quest": "The Passage (Quest)",
-  "count": 29,
-  "translated": 29,
+  "count": 26,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "The Passage (Quest)#000": {
-   "src": "Talk to Wirt in {p} at [-{~}, {~}, -{~}]",
-   "dst": "前往 {p} 與 Wirt 對話，座標 [-{~1}, {~2}, -{~3}]",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Passage (Quest)",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Passage (Quest)#001": {
    "src": "Not so fast, you!",
    "dst": "站住，別走那麼快！",
@@ -76,16 +66,6 @@
    "speaker": "Ildan",
    "source": "wiki"
   },
-  "The Passage (Quest)#007": {
-   "src": "I'm sure you've noticed, but there is a tribe camp not too far from here.",
-   "dst": "你應該注意到了，離這裡不遠有個部落營地。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Passage (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Ildan",
-   "source": "wiki"
-  },
   "The Passage (Quest)#008": {
    "src": "They used to have a powerful chief, but he eventually died in battle.",
    "dst": "他們以前有位很強的酋長，後來戰死了。",
@@ -99,16 +79,6 @@
   "The Passage (Quest)#009": {
    "src": "The tribe couldn't bear the fact that he was dead. They performed some unethical necromancy spell on him.",
    "dst": "部落無法接受他的死，於是對他施了某種不該碰的死靈術。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Passage (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Ildan",
-   "source": "wiki"
-  },
-  "The Passage (Quest)#010": {
-   "src": "They quickly realized that is was a bad idea, so they locked him in a tomb.",
-   "dst": "他們很快就發現這是個爛主意，所以把他鎖進了一座墓穴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -272,8 +242,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
    "source": "captured"
   },
   "The Passage (Quest)#027": {
@@ -282,8 +252,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
    "source": "captured"
   },
   "The Passage (Quest)#028": {
