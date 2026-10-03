@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24760,
-  "translated": 23728,
+  "count": 24766,
+  "translated": 23734,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -61369,8 +61369,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
-   "stage": "Stage 4",
-   "speaker": "Dogun Chieftain",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "Dwarves and Doguns Part IV#001": {
@@ -61621,6 +61621,16 @@
    "quest": "Dwarves and Doguns Part IV",
    "stage": "Stage 4",
    "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#027": {
+   "src": "Quiet. Dwarven whelp...we will not go quietly. AWAKEN.",
+   "dst": "黙れ。ドワーフの小僧…我らは黙って消えはせぬ。目覚めよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Dogun Chieftain",
    "source": "wiki"
   },
   "Dwarves and Doguns Part IV#028": {
@@ -62022,6 +62032,56 @@
    "stage": "Stage 8",
    "speaker": "King of Rodoroc",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#068": {
+   "src": "Return to Korzim at [{~}, {~}, -{~}] on the second floor of the enchanter in {p} with the Amulet of Fire and the Staff of Ice.",
+   "dst": "Amulet of FireとStaff of Iceを持って、{p}にあるエンチャンターの2階 [{~}, {~}, -{~}] にいるKorzimのもとへ戻る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#069": {
+   "src": "Reach the ritual colosseum and prevent Garaheth from being summoned",
+   "dst": "儀式のコロッセウムにたどり着き、Garahethの召喚を阻止する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#070": {
+   "src": "Freeze any vital point of Garaheth you can find!",
+   "dst": "Garahethの体で、見つけられる重要な箇所はすべて凍らせよう!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#071": {
+   "src": "Get out of Garaheth!",
+   "dst": "Garahethの体から脱出しよう!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#072": {
+   "src": "We...we have nothing left... We could have...taken them with us... Now they will...will... You...!",
+   "dst": "我らは…もう何も残っていない… あの時…あの子たちを連れて行けばよかった… これであの子たちは…きっと… お前…！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "captured.json"
   },
   "Dwelling Walls#000": {
    "src": "I left a very precious journal inside of this mansion, a hell within walls. It was my great grandfather's!",
