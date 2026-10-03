@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24306,
-  "translated": 23204,
+  "count": 24478,
+  "translated": 23376,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -56597,6 +56597,116 @@
    "speaker": "Phinas",
    "source": "wiki"
   },
+  "Desperate Metal#037": {
+   "src": "Evasive maneuver inefficient.",
+   "dst": "회피 기동 비효율적.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#038": {
+   "src": "Request additional orders from L.H. Defend.",
+   "dst": "L.H. Defend에 추가 명령 요청.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#039": {
+   "src": "Tools acquired, delivered to L.H. Additional orders received.",
+   "dst": "공구 확보, L.H.로 인도 완료. 추가 명령 수신.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#040": {
+   "src": "Intruder detected. Camouflage ineffective. Defend.",
+   "dst": "침입자 감지. 위장 무효. 방어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#041": {
+   "src": "Strategic mission accomplished. Mechanical parts: procured.",
+   "dst": "전략 임무 완수. 기계 부품: 확보.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Intelligence Mech-DM3",
+   "source": "captured.json"
+  },
+  "Desperate Metal#042": {
+   "src": "Look in the content book if you forgot what to do.",
+   "dst": "뭘 해야 할지 잊었으면 콘텐츠 북을 봐.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#043": {
+   "src": "I wrote down your task there.",
+   "dst": "네 할 일을 거기에 적어 뒀어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#044": {
+   "src": "What in the world are you doing here!? Get out immediately.",
+   "dst": "대체 여기서 뭘 하는 거야!? 당장 나가.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#045": {
+   "src": "I mean, welcome! Nothing suspicious here at all.",
+   "dst": "아니 그게, 환영해요! 여기 수상한 건 하나도 없어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#046": {
+   "src": "Security drop-chute engaging. {~}... {~}...",
+   "dst": "보안 투하 슈트 작동. {~}... {~}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "???",
+   "source": "captured.json"
+  },
+  "Desperate Metal#047": {
+   "src": "Report back to Phinas after destroying the mech",
+   "dst": "기계를 파괴한 뒤 Phinas에게 돌아가 보고하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part I#000": {
    "src": "[+{~} Ancient Dogun Tablet]",
    "dst": "[+{~} 고대 Dogun 석판]",
@@ -58057,6 +58167,386 @@
    "speaker": "Plario",
    "source": "wiki"
   },
+  "Dwarves and Doguns Part I#148": {
+   "src": "Ugh, that was horrible.. Like I said before, this war was a genocide. Don't believe any of the lies they try and feed you.",
+   "dst": "으, 끔찍했어.. 전에도 말했지만, 이 전쟁은 학살이었어. 저들이 네게 먹이려는 거짓말은 하나도 믿지 마.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#149": {
+   "src": "Make your way to the Dogun festival at [{~}, {~}, -{~}] by following the red banners outside {p}.",
+   "dst": "{p} 밖의 붉은 현수막을 따라 [{~}, {~}, -{~}]의 Dogun 축제로 향하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#150": {
+   "src": "Looks like Axelus dropped a note...? Doesn't seem like anyone else noticed.",
+   "dst": "Axelus가 쪽지를 떨어뜨린 것 같다...? 다른 사람은 눈치채지 못한 모양이다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#151": {
+   "src": "Seems like Axelus had more to say. Since no one else picked up the note, you may as well seek him out.",
+   "dst": "Axelus는 아직 할 말이 남아 있던 모양이다. 쪽지를 주운 사람이 달리 없으니, 그를 찾아가 보는 게 좋겠다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#152": {
+   "src": "Find out more about the hysterical dwarf in {p}'s prison at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]의 {p} 감옥에 갇힌 발작적인 드워프에 대해 더 알아보세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#153": {
+   "src": "You came at the right time, {u}. It's good to see you're still interested in what's really going on here..",
+   "dst": "딱 좋은 때에 왔네, {u}. 여기서 실제로 무슨 일이 벌어지는지 아직 관심이 있다니 반가워..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#154": {
+   "src": "I've told you this already, but you have to know that it really is true. The Dwarves have been lied to for so long about the war.",
+   "dst": "이미 말한 거지만, 이게 정말 사실이라는 걸 알아 둬야 해. 드워프들은 이 전쟁에 대해 너무 오래 속아 왔어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#155": {
+   "src": "..But I think it's best if you see it for yourself. Relying on my word alone won't be enough to grasp the full extent of this dilemma.",
+   "dst": "..하지만 네가 직접 보는 게 가장 좋을 것 같아. 내 말만으로는 이 딜레마가 얼마나 깊은지 다 알 수 없을 테니까.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#156": {
+   "src": "It seems like Axelus slipped another note into your pocket.",
+   "dst": "Axelus가 또 주머니에 쪽지를 찔러 넣은 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#157": {
+   "src": "That gate must be the entrance to the Library that Axelus mentioned, but it looks locked tight. Could anything in the area open it up?",
+   "dst": "저 문이 Axelus가 말한 도서관 입구인 게 분명하지만, 단단히 잠겨 있는 듯하다. 이 근처에 저걸 열 만한 게 있을까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#158": {
+   "src": "It's an extremely old book. The pages are torn, yellowed, and dusty.",
+   "dst": "지독하게 오래된 책이다. 페이지는 찢기고 누렇게 변했으며 먼지가 앉아 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#159": {
+   "src": "\"Top Secret\"? The words are faded and hard to make out.",
+   "dst": "\"극비\"? 글씨가 바래 알아보기 어렵다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#160": {
+   "src": "It seems to be a report written at the start of the Dogun war.",
+   "dst": "Dogun 전쟁 초기에 쓰인 보고서인 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#161": {
+   "src": "\"The natives occupy {~} of the habitable land in the heights...\"",
+   "dst": "\"원주민들은 고지대의 거주 가능한 토지 중 {~}을 차지하고 있다...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#162": {
+   "src": "Several pages are dedicated to the Doguns personalities, traits and powers.",
+   "dst": "여러 페이지가 Dogun의 성향과 특징, 능력을 다루고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#163": {
+   "src": "\"...Magical powerhouses of the fire element...\"",
+   "dst": "\"...불 원소의 마법적 강자들...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#164": {
+   "src": "\"Near Dwarven intelligence...\"",
+   "dst": "\"지능은 드워프에 준함...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#165": {
+   "src": "\"Clearance is needed if Dwarves are going to form a colony...\"",
+   "dst": "\"드워프가 식민지를 세우려면 정리 작업이 필요하다...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#166": {
+   "src": "According to the report, the land was once rich with minerals and materials.",
+   "dst": "보고서에 따르면 그 땅은 한때 광물과 자원이 풍부했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#167": {
+   "src": "This page appears to have been ripped out and crudely reattached.",
+   "dst": "이 페이지는 뜯겨 나갔다가 거칠게 다시 붙여진 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#168": {
+   "src": "\"A program of public profiling of the natives is recommended...\"",
+   "dst": "\"원주민에 대한 공개 신원 조사 계획을 권고한다...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#169": {
+   "src": "There are detailed instructions on producing propaganda against the Doguns.",
+   "dst": "Dogun을 겨냥한 선전물을 제작하는 방법이 상세히 적혀 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#170": {
+   "src": "\"...recommend they are referred to as demons, as inherent fear will take hold...\"",
+   "dst": "\"...그들을 악마라 부를 것을 권고한다. 그러면 사람들에게 뿌리박힌 공포가 작동할 것이다...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#171": {
+   "src": "The report details propaganda at all levels of society, particularly at educational centers.",
+   "dst": "보고서는 사회 전 계층, 특히 교육 기관에서의 선전 활동을 상세히 다룬다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#172": {
+   "src": "\"Once public opinion is sufficiently hostile, establishment of colonies will be achievable...\"",
+   "dst": "\"여론이 충분히 적대적으로 돌아서면 식민지 건설은 머지않아 가능해질 것이다...\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#173": {
+   "src": "The report goes on to detail the total dominance of {p} and the importance of propaganda continuation.",
+   "dst": "보고서는 이어 {p}의 전면적 지배와 선전 유지의 중요성을 상세히 다룬다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#174": {
+   "src": "Now do you see? Everything that I told you about when we rescued those flerisi was indeed true...",
+   "dst": "이제 알겠어? 그 Flerisi들을 구했을 때 내가 한 말은 전부 정말 사실이었어...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#175": {
+   "src": "Search for house number {~} in {p} like Axelus said.",
+   "dst": "Axelus가 말한 대로 {p}에서 {~}번 집을 찾으세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#176": {
+   "src": "Talk with the coalition.",
+   "dst": "연합과 대화하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#177": {
+   "src": "Meet the group at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]에서 일행과 합류하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#178": {
+   "src": "I'll let...you in.",
+   "dst": "내가... 들여보내 주지.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#179": {
+   "src": "To repair the mechanical core, select a colour and connect the clay with the same coloured glass block by clicking the iron blocks with the Rewiring Tool.",
+   "dst": "기계 코어를 수리하려면 색을 하나 고른 뒤, 재배선 공구로 철 블록을 클릭해 점토와 같은 색 유리 블록을 이어 주세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#180": {
+   "src": "Head back to the coalition through the tunnel at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]의 터널을 지나 연합으로 돌아가세요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#181": {
+   "src": "The king has sent for you personally.",
+   "dst": "왕께서 직접 너를 불러오라 하셨다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#182": {
+   "src": "If you don't come with us we wi-",
+   "dst": "순순히 따라오지 않으면 우리는-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#183": {
+   "src": "Entomb these Doguns, and slay their Dwarven thralls!",
+   "dst": "이 Dogun들을 묻어 버리고, 그들의 드워프 노예들도 베어라!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#184": {
+   "src": "But...bring them...the dragon bone...as a gift. If they accept it...they might accept us.",
+   "dst": "하지만... 저들에게... 용의 뼈를... 선물로 가져가자. 저들이 받아 준다면... 우리도 받아들여질지 모른다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 14",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#185": {
+   "src": "We need to solve...this conflict somehow. Please...help us.",
+   "dst": "이 갈등을... 어떻게든 풀어야 한다. 부디... 우리를 도와다오.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part II#000": {
    "src": "The Royal Guards escort you and Axelus out of the palace.",
    "dst": "왕실 근위병들이 당신과 Axelus를 궁전 밖으로 호송한다.",
@@ -58923,6 +59413,56 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
+  "Dwarves and Doguns Part II#087": {
+   "src": "You shouldn't enter this place yet!",
+   "dst": "아직 이곳에 들어오면 안 됩니다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#088": {
+   "src": "The {p} Power Core has been disrupted!",
+   "dst": "{p}의 동력 코어가 파괴되었습니다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Follow Axelus deeper into {p} and destroy the power source of the city.",
+   "dst": "Axelus를 따라 {p} 깊숙이 들어가 도시의 동력원을 파괴하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "Explore the slums of {p}.",
+   "dst": "{p}의 빈민가를 탐색하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#091": {
+   "src": "Leave the Royal Palace at the end of the palace.",
+   "dst": "궁전 끝에서 왕궁을 떠나세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part III#000": {
    "src": "{u}...I take back my statement. They have already begun... There cannot be reasoning.",
    "dst": "{u}... 내 말을 취소하마. 그들은 이미 시작했다... 설득할 여지는 없다.",
@@ -59723,6 +60263,86 @@
    "speaker": "Sanba",
    "source": "wiki"
   },
+  "Dwarves and Doguns Part III#080": {
+   "src": "Return to the Dogun village with the letter and speak to Korzim at [{~}, {~}, -{~}].",
+   "dst": "편지를 들고 Dogun 마을로 돌아가 [{~}, {~}, -{~}]의 Korzim에게 말을 거세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#081": {
+   "src": "Korzim reads the message on the tablet silently. His expression is inscrutable.",
+   "dst": "Korzim이 석판에 적힌 전언을 묵묵히 읽는다. 표정에서는 아무것도 읽어 낼 수 없다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#082": {
+   "src": "Travel to {p} and meet Korzim at the entrance at [{~}, {~}, -{~}].",
+   "dst": "{p}로 가서 [{~}, {~}, -{~}]의 입구에서 Korzim을 만나세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#083": {
+   "src": "Talk to the blacksmith in {p} [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]의 {p} 대장장이와 대화하세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#084": {
+   "src": "Good job collecting the tools needed to destroy the demon.",
+   "dst": "악마를 처치하는 데 필요한 도구를 다 모았구나. 잘했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 6",
+   "speaker": "Edula",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#085": {
+   "src": "Go to the enchanter and enchant the amulet at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]의 인챈터에게 가서 부적에 인챈트를 걸으세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#086": {
+   "src": "Travel through the Freezing Heights and get [{~} True Ice].",
+   "dst": "Freezing Heights를 가로질러 [{~} True Ice]를 얻으세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#087": {
+   "src": "The ice has trapped you. Try again.",
+   "dst": "얼음에 갇혀 버렸다. 다시 시도해 보자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
   "Dwarves and Doguns Part IV#000": {
    "src": "Quiet. Dwarven whelp...you have failed... We will not go quietly. AWAKEN.",
    "dst": "조용. 드워프 애송이... 너는 실패했다... 우리는 조용히 사라지지 않는다. 깨어나라.",
@@ -60382,6 +61002,56 @@
    "stage": "Stage 8",
    "speaker": "King of Rodoroc",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#068": {
+   "src": "Return to Korzim at [{~}, {~}, -{~}] on the second floor of the enchanter in {p} with the Amulet of Fire and the Staff of Ice.",
+   "dst": "Amulet of Fire와 Staff of Ice를 들고 {p} 인챈터 2층 [{~}, {~}, -{~}]의 Korzim에게 돌아가세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#069": {
+   "src": "Reach the ritual colosseum and prevent Garaheth from being summoned",
+   "dst": "의식의 콜로세움에 도달해 Garaheth의 소환을 막으세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#070": {
+   "src": "Freeze any vital point of Garaheth you can find!",
+   "dst": "찾을 수 있는 Garaheth의 급소를 모두 얼리세요!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#071": {
+   "src": "Get out of Garaheth!",
+   "dst": "Garaheth의 몸에서 빠져나오세요!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#072": {
+   "src": "We...we have nothing left... We could have...taken them with us... Now they will...will... You...!",
+   "dst": "우리는... 아무것도 남지 않았다... 그 아이들을... 데려갈 수도 있었는데... 이제 그들은... 그들은... 네놈...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "captured.json"
   },
   "Dwelling Walls#000": {
    "src": "I left a very precious journal inside of this mansion, a hell within walls. It was my great grandfather's!",
@@ -76802,6 +77472,806 @@
    "stage": "Stage 8",
    "speaker": "Sensei Miyagi",
    "source": "wiki"
+  },
+  "Enter the Dojo#036": {
+   "src": "I hear many things about human combat skill, so I believe I shall watch this challenge myself. Enter now, challenger!",
+   "dst": "인간의 전투 기량에 대해서는 이런저런 말을 많이 들었으니, 이 시험은 내가 직접 보겠네. 들어오게, 도전자여!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#037": {
+   "src": "Fight your way through the combat challenge",
+   "dst": "전투 시험을 끝까지 돌파하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#038": {
+   "src": "And I am to recognize your combat skill, and proclaim your passage of the fiata Room. Well done!",
+   "dst": "그러니 나는 그대의 전투 기량을 인정하고, fiata Room을 통과했음을 선언하네. 잘했네!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#039": {
+   "src": "In founding this dojo, I was inspired by many a tale. I was many a time scoffed at by others, for taking stock in the legends of old...",
+   "dst": "이 도장을 세울 때 나는 수많은 이야기에서 영감을 얻었다. 옛 전설을 믿는다는 이유로 여러 번 비웃음을 사기도 했다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#040": {
+   "src": "And yet the results speak for themselves. As of the time of writing this, being {~} AP, I am {~} years old.",
+   "dst": "그럼에도 결과가 스스로를 말해 준다. 이 글을 쓰는 {~} AP 현재, 나는 {~}세다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#041": {
+   "src": "Many forget the power one's body can rise to, thanks to the prevalence of magic practices. Although magical knowledge is itself important, and I am guilty of neglecting it myself.",
+   "dst": "마법이 널리 퍼진 덕에, 많은 이가 몸이 끌어올릴 수 있는 힘을 잊는다. 물론 마법 지식 자체도 중요하며, 나 역시 그것을 소홀히 한 죄가 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#042": {
+   "src": "But the tales and practices of ancient warriors and kings, such as Remikas, or even modern soldiers such as Tisaun Sodeta, have great value.",
+   "dst": "그러나 Remikas 같은 고대의 전사와 왕, 나아가 Tisaun Sodeta 같은 근대의 군인이 남긴 이야기와 수련법은 큰 가치를 지닌다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#043": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "여기서 나는 어떤 이야기들이 내게 지혜와 힘, 건강을 가져다주었는지 이야기하고, 그 지식을 그대에게 전하려 한다, 사랑하는 독자여.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#044": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "여기서 나는 어떤 이야기들이 내게 지혜와 힘, 건강을 가져다주었는지 이야기하고, 그 지식을 그대에게 전하려 한다, 사랑하는 독자여.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#045": {
+   "src": "...though this is a fascinating read, you're already going through a lot of what is described in the book, and it hasn't brought you tranquility.",
+   "dst": "...흥미로운 읽을거리이긴 하지만, 책에 적힌 내용 대부분은 이미 겪고 있는 일이고, 그것이 평온을 가져다주지는 않았다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#046": {
+   "src": "Become at one with nature in the room and cavern",
+   "dst": "방과 동굴에서 자연과 하나가 되세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#047": {
+   "src": "To meditate is to remove all distractions, and to peacefully introspect- to be at one with yourself and anchor yourself to the moment, or merely to relax.",
+   "dst": "명상이란 모든 잡념을 걷어내고 고요히 자신을 들여다보는 일이다. 자신과 하나가 되어 지금 이 순간에 닻을 내리는 것, 혹은 그저 쉬는 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#048": {
+   "src": "It is highly recommended for anyone experiencing stress or a clouded mind. Here will be detailed the basic steps for practicing meditation.",
+   "dst": "스트레스를 느끼거나 마음이 흐린 이에게 특히 권한다. 여기서는 명상을 실천하는 기본 단계를 설명한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#049": {
+   "src": "First, find a quiet, comfortable place. Someplace that you feel safe in, and where you will not be interrupted by outside influences.",
+   "dst": "먼저 조용하고 편안한 곳을 찾으라. 안전하다고 느껴지고, 외부의 방해를 받지 않을 곳이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#050": {
+   "src": "If you are first beginning, set an hourglass or clock alarm for a short time. Ten or fifteen minutes will do. Even short sessions can help.",
+   "dst": "처음이라면 모래시계나 시계 알람을 짧게 맞추라. 십 분이나 십오 분이면 충분하다. 짧은 시간이라도 도움이 된다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#051": {
+   "src": "Next, sit down. The traditional position is to sit cross-legged with hands in the lap, but so long as you are comfortable, any position works.",
+   "dst": "다음으로 앉으라. 전통적인 자세는 다리를 포개고 손을 무릎에 올리는 것이지만, 편하다면 어떤 자세든 괜찮다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#052": {
+   "src": "Once you have found a comfortable spot, close your eyes and breathe deeply. Breathe in deeply, hold for a few seconds, breathe out, and hold for the same amount.",
+   "dst": "편안한 자리를 찾았으면 눈을 감고 깊이 숨을 쉬라. 깊이 들이쉬고, 몇 초 멈추고, 내쉬고, 같은 만큼 멈추라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#053": {
+   "src": "Focus on the sensation of your breathing, and on only the sensation of your breathing. If your mind wanders, do not fret- simply return your attention to your breath.",
+   "dst": "호흡의 감각에, 오직 호흡의 감각에만 집중하라. 마음이 떠돌아도 애태우지 말고, 그저 주의를 호흡으로 되돌리라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#054": {
+   "src": "When you feel ready to rise, or when your time ends, slowly open your eyes and notice your environment- the sights and sounds, and the feeling of your body.",
+   "dst": "일어날 준비가 되었다고 느껴지거나 시간이 다하면, 천천히 눈을 열고 주위를 살피라. 보이는 것과 들리는 것, 그리고 몸의 느낌을.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Guide to Meditation",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#055": {
+   "src": "Although there are more complex and involved methods of meditation, they are not necessary- Now that you have read this, try it yourself whenever you have a spare moment.",
+   "dst": "더 복잡하고 공들인 명상법도 있으나 반드시 필요한 것은 아니다. 이 글을 읽었으니, 틈이 날 때마다 직접 해 보라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#056": {
+   "src": "...this seems promising. Carefully, you settle down and close your eyes.",
+   "dst": "...해 볼 만해 보인다. 조심스럽게 자리를 잡고 눈을 감는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#057": {
+   "src": "...breathe in...",
+   "dst": "...들이쉬고...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#058": {
+   "src": "...breathe out...",
+   "dst": "...내쉬고...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#059": {
+   "src": "...you can't focus. Your mind is wandering too many directions at once. Unfortunate, but it's worth remembering anyways.",
+   "dst": "...집중이 되지 않는다. 마음이 한꺼번에 너무 많은 방향으로 흩어진다. 아쉽지만, 그래도 기억해 둘 만하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#060": {
+   "src": "When fighting unarmed or with weapons such as knuckles, katars, or gauntlets, one's stance is paramount in fighting an opponent.",
+   "dst": "맨손으로, 혹은 너클이나 카타르, 건틀릿 같은 무기로 싸울 때는 상대와 맞서는 자세가 가장 중요하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#061": {
+   "src": "The way one is positioned can ground the body, allowing for blows to be taken with less consequence, or allow one to be light enough to evade attack.",
+   "dst": "몸을 어떻게 두느냐에 따라 몸을 땅에 단단히 붙여 타격을 덜 입을 수도 있고, 몸을 가볍게 하여 공격을 피할 수도 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#062": {
+   "src": "All combat must of course be learned through rigorous training- One cannot expect to become an expert simply by reading. Here are a handful of basic stances to practice.",
+   "dst": "모든 무예는 당연히 혹독한 수련을 통해 익혀야 한다. 읽기만으로 달인이 될 수는 없다. 여기 연습할 만한 기본 자세 몇 가지를 싣는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#063": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "전굴 자세는 두 다리를 넓게 벌리고 뒷다리를 완전히 뻗으며 몸을 곧게 세운다. 자신을 안정시키는 굳건한 자세다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#064": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "전굴 자세는 두 다리를 넓게 벌리고 뒷다리를 완전히 뻗으며 몸을 곧게 세운다. 자신을 안정시키는 굳건한 자세다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#065": {
+   "src": "The Back Stance has one foot in front of the other, with the back foot facing to the side and one's weight on the back leg. For evading attacks to the top of the body.",
+   "dst": "후굴 자세는 한 발을 다른 발 앞에 두고 뒷발을 옆으로 돌리며 체중을 뒷다리에 싣는다. 상체로 오는 공격을 피하는 데 쓴다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#066": {
+   "src": "The Cat Stance also has weight on the back foot, with legs bent and held close together and the front foot resting on the heel. This allows easy preparation for strong front kicks.",
+   "dst": "고양이 자세도 체중을 뒷발에 싣는데, 무릎을 굽혀 두 다리를 붙이고 앞발은 발꿈치만 댄다. 덕분에 강한 앞차기를 쉽게 준비할 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#067": {
+   "src": "The Crane Stance has one leg raised, the foot level with the other knee. Also used in preparation for kicking, as well as dodging a sweeping attack by the enemy.",
+   "dst": "학 자세는 한 다리를 들어 발을 다른 쪽 무릎 높이에 맞춘다. 차기를 준비할 때도 쓰고, 적의 휩쓸기 공격을 피할 때도 쓴다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#068": {
+   "src": "Many a venerable mage has made their mark on history. There is a reason their names are repeated- we can learn much from what they have demonstrated.",
+   "dst": "수많은 존경받는 마법사가 역사에 이름을 새겼다. 그 이름들이 되풀이되는 데는 이유가 있다. 그들이 보여 준 것에서 우리는 많은 것을 배울 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#069": {
+   "src": "This, unfortunately, applies both for positive and negative reasons. For instance, a lesson that has become law involves the use of soul-binding magic.",
+   "dst": "안타깝게도 이는 좋은 쪽으로도, 나쁜 쪽으로도 들어맞는다. 예컨대 이미 법으로 굳어진 한 교훈은 영혼 결박 마법의 사용과 관련이 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#070": {
+   "src": "...was considered a monstrous and immoral practice. Keeping the spirit trapped, forced to obey orders, in a decaying body wracked with pain, is something that could not be abided by.",
+   "dst": "...그것은 흉악하고 부도덕한 행위로 여겨졌다. 영혼을 가둬 두고 명령에 따르도록 강요하며, 고통에 시달리는 썩어 가는 몸에 붙들어 두는 짓은 결코 용납될 수 없었다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#071": {
+   "src": "Since then, soul-binding is the most strictly punished brand of magic in all of Gavel, above demonic rites and even the necromancy that soul-binding was endemic within.",
+   "dst": "그때부터 영혼 결박은 Gavel 전역에서 가장 엄히 처벌되는 마법이 되었다. 악마 의식보다도, 영혼 결박이 본래 만연했던 강령술보다도 무겁게.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#072": {
+   "src": "...this is a very heavy read. Certainly not suitable for finding tranquility.",
+   "dst": "...무척 무거운 읽을거리다. 평온을 찾기에는 분명 맞지 않는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#073": {
+   "src": "To brew tea is a simple, meditative process that in itself has deep intricacies. We shall draw upon its heritage now.",
+   "dst": "차를 우리는 일은 단순하면서도 명상적인 과정이며, 그 자체에 깊은 묘미가 있다. 이제 그 전통을 돌아보자.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#074": {
+   "src": "Fresh, clean water is required. Bring it to a soft boil in a pot or cauldron, and then mix in herbs and ingredients to taste..",
+   "dst": "신선하고 깨끗한 물이 필요하다. 냄비나 가마솥에서 살짝 끓인 뒤, 기호에 맞게 허브와 재료를 섞으라..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#075": {
+   "src": "Harvesting ingredients freshly can add extra depth to the tea, although you can make fine tea from any ingredients, so long as they are not rotten.",
+   "dst": "재료를 갓 따면 차에 깊이를 더할 수 있으나, 썩지 않았다면 어떤 재료로도 훌륭한 차를 낼 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#076": {
+   "src": "Common ingredients include sugar, lemongrass, ginger root, chamomile, and lavender. Each has their own purpose for tea.",
+   "dst": "흔히 쓰는 재료로는 설탕, 레몬그라스, 생강 뿌리, 캐모마일, 라벤더가 있다. 각각 차에서 저마다의 몫을 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#077": {
+   "src": "Sugar helps sweeten the bitterness of some brews, and balances the flavors to be mild. However, too much will leave the brew sickly and tacky.",
+   "dst": "설탕은 일부 차의 쓴맛을 달래고 풍미를 부드럽게 다잡아 준다. 그러나 너무 넣으면 차가 들척지근하고 끈적해진다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#078": {
+   "src": "The unique tang of lemongrass is lauded as signature for green tea. The mild, lightly-minty flavor is a perfect base for which to create a relaxing brew.",
+   "dst": "레몬그라스의 독특한 상큼함은 녹차의 상징으로 높이 평가된다. 부드럽고 은은히 민트 같은 풍미는 편안한 한 잔을 내기에 완벽한 바탕이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#079": {
+   "src": "Although Ginger Root is bitingly bitter and inevitably overpowers other ingredients, it has potent medicinal effects which may help invigorate the sick.",
+   "dst": "생강 뿌리는 쏘는 듯 쓰고 다른 재료를 압도하기 마련이나, 강한 약효가 있어 병든 이의 기운을 돋우는 데 도움이 될 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#080": {
+   "src": "Lavender is similarly relaxing, but must be the focus of the brew. It must be steeped for a long while, and is severely bitter, which causes it to drown out other ingredients.",
+   "dst": "라벤더도 마찬가지로 몸을 풀어 주지만, 차의 주역이어야 한다. 오래 우려야 하고 몹시 써서 다른 재료의 맛을 덮어 버린다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#081": {
+   "src": "...come to think of it, a cup of tea sounds like it would be quite nice, after all the hard training. Perhaps you should make a cup.",
+   "dst": "...생각해 보니 고된 수련 뒤에 차 한 잔이면 꽤 좋을 것 같다. 한 잔 내려 보는 게 어떨까.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#082": {
+   "src": "While many people think that relaxation is out of reach with their busy schedules, the truth is there are many things you can do daily to wind down that take little time.",
+   "dst": "바쁜 일정 탓에 쉴 틈 따위 없다고 여기는 이가 많지만, 실은 시간이 거의 들지 않는, 매일 할 수 있는 이완법이 많다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#083": {
+   "src": "For instance, caring for houseplants is a simple task. You can grow them from seeds or get them pre-bought, and caring for gardens is an easy way to relax, while also giving you a place to relax.",
+   "dst": "예컨대 화분 돌보기는 간단한 일이다. 씨앗부터 길러도 되고 이미 자란 것을 사도 되며, 정원 손질은 손쉬운 이완법이면서 동시에 쉴 자리를 마련해 준다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#084": {
+   "src": "You can turn any room into a garden simply by getting planter pots, but for those who can't devote enough time to that, you could try caring for a bonsai tree instead.",
+   "dst": "화분만 갖추면 어떤 방이든 정원으로 바꿀 수 있지만, 그만큼 시간을 들이기 어려운 이에게는 분재를 돌보는 쪽을 권한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#085": {
+   "src": "They just need water, sunlight, and care by using garden shears to carefully cut the limbs of the tree. Shaping it like this is artful in itself, and has spiritual significance as well.",
+   "dst": "필요한 것은 물과 햇빛, 그리고 원예 가위로 가지를 정성껏 다듬어 주는 손길뿐이다. 이렇게 모양을 잡는 일 자체가 예술이며, 정신적인 뜻도 지닌다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#086": {
+   "src": "It requires focus in the moment, but not much time at all, meaning that you can simply set aside short time and be done. It also helps clean the air in the house as well!",
+   "dst": "그 순간의 집중은 필요하나 시간은 거의 들지 않는다. 즉 짧게 틈만 내면 끝난다. 게다가 집 안 공기를 맑게 하는 데도 도움이 된다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#087": {
+   "src": "Another easy way to relax is to set up a stone garden. You don't need a large amount of space to have one- even a small box will do. Fill it with gravel and smooth stones.",
+   "dst": "또 하나 손쉬운 이완법은 석정을 꾸미는 것이다. 넓은 자리는 필요 없다. 작은 상자 하나로도 된다. 그 안에 자갈과 매끄러운 돌을 채우라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#088": {
+   "src": "Use a small handheld rake to draw lines in the gravel in different patterns, each day. It's as simple as that- don't focus on making specific ones though, just draw whatever your hand draws.",
+   "dst": "작은 손갈퀴로 날마다 자갈 위에 서로 다른 무늬를 그리라. 그만큼 간단하다. 다만 특정한 무늬를 그리려 애쓰지 말고, 손이 가는 대로 그리라.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#089": {
+   "src": "Doing this can help draw focus away from stressful thoughts, and bring you back to the moment, while also being a fun conversation piece that's easy and cheap to set up.",
+   "dst": "이렇게 하면 괴로운 생각에서 주의를 떼어 지금으로 돌아오는 데 도움이 되고, 손쉽고 값싸게 꾸밀 수 있는 즐거운 이야깃거리도 된다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#090": {
+   "src": "...those are nice thoughts, but unfortunately there isn't a zen garden set up here, and you don't have a bonsai tree or garden shears handy.",
+   "dst": "...좋은 생각이지만, 아쉽게도 여기에는 석정이 꾸며져 있지 않고, 분재나 원예 가위도 손에 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#091": {
+   "src": "The sheep raises its head to look at you, then returns to its business.",
+   "dst": "양이 고개를 들어 너를 보더니 다시 자기 일로 돌아간다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#092": {
+   "src": "The cow raises its head to look at you, then returns to its business.",
+   "dst": "소가 고개를 들어 너를 보더니 다시 자기 일로 돌아간다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#093": {
+   "src": "The pig raises its head to look at you, then returns to its business.",
+   "dst": "돼지가 고개를 들어 너를 보더니 다시 자기 일로 돌아간다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#094": {
+   "src": "With the tea brewed and the scent of it filling the room, you gently take a few sips.",
+   "dst": "차가 다 우러나고 그 향이 방을 채우자, 너는 가만히 몇 모금을 넘긴다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#095": {
+   "src": "The heat of the tea and the gently sweet, floral taste warms your throat and body. You feel more relaxed, but...not at peace with nature yet.",
+   "dst": "차의 온기와 은은히 달고 꽃 같은 맛이 목과 몸을 데운다. 한결 편안해지지만... 아직 자연과 하나가 되지는 못했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#096": {
+   "src": "...there were some animals wandering the cave. Making a small offering seems like the right way to go, and there's plenty of tea left...",
+   "dst": "...동굴에는 짐승 몇 마리가 어슬렁대고 있었다. 작은 공물을 바치는 것이 옳은 길인 듯하고, 차도 넉넉히 남았으니...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#097": {
+   "src": "...hm? This isn't actually a book, it's a dossier. Did Miyagi leave this out by accident?",
+   "dst": "...응? 이건 사실 책이 아니라 서류철이다. Miyagi가 실수로 꺼내 둔 걸까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#098": {
+   "src": "Seems to contain a number of trade agreements, between the Sakura Dojo and the {p}.",
+   "dst": "Sakura Dojo와 {p} 사이에 맺은 교역 협정이 여러 건 들어 있는 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#099": {
+   "src": "It appears that recently, a large shipment of Hive silk has been received. There's no record of emerald payment.",
+   "dst": "최근 Hive의 비단이 대량으로 들어온 모양이다. 에메랄드로 지불한 기록은 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#100": {
+   "src": "A shipment of cherries and rice has been sent out at the same time- they must trade products directly.",
+   "dst": "같은 시기에 체리와 쌀이 실려 나갔다. 둘은 물건을 직접 주고받는 것이 분명하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#101": {
+   "src": "Previous records show trades of metal salvage for cherry wood, and gifted shipments of tea leaves and ingredients.",
+   "dst": "이전 기록을 보면 폐금속을 벚나무 목재와 바꾼 거래, 그리고 찻잎과 식재료를 선물로 보낸 일이 적혀 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#102": {
+   "src": "...there's a letter here, too. The script is very ornate...this is addressed from the Mistress of the Hive herself, only a few months ago.",
+   "dst": "...여기 편지도 한 통 있다. 필체가 아주 화려하다... 바로 몇 달 전, Hive의 여주인 본인이 보낸 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#103": {
+   "src": "\"I hope this letter finds you well. I once again thank you for the trade. The caravans from {p} have been scarce recently, and your donations have kept the servants from going hungry.\"",
+   "dst": "\"이 편지가 닿을 때 평안하시기를 바랍니다. 이번 거래에 다시 한번 감사드립니다. 요즘 {p}에서 오는 상단이 드물어졌는데, 보내 주신 것들 덕에 하인들이 굶지 않았습니다.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#104": {
+   "src": "\"Although I would under most circumstances send a small party of my creations to run for supplies, it is a logistical and political nightmare that I would just as soon avoid.\"",
+   "dst": "\"보통이라면 제 피조물 몇을 보내 물자를 구해 오게 했겠지만, 그것은 물류로도 정치로도 악몽 같은 일이라 되도록 피하고 싶습니다.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#105": {
+   "src": "\"I will provide remuneration for this in due time- certainly, I may spare a sum of emeralds if you wish it. You are trusted enough to write a blank check on this for, so you may name your price.\"",
+   "dst": "\"이에 대한 보수는 때가 되면 치르겠습니다. 물론 원하신다면 에메랄드를 얼마간 떼어 드릴 수도 있습니다. 이 일에 백지수표를 써 드릴 만큼 신뢰하니, 값은 그쪽에서 부르십시오.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#106": {
+   "src": "\"Equally I am willing to offer extra salvage metal of top quality, or perhaps further silk or animant stones for your training dummies. Please write back quickly with your request.\"",
+   "dst": "\"마찬가지로 최상급 재생 금속을 더 드릴 수도 있고, 훈련용 허수아비에 쓸 비단이나 활성체 석을 더 보낼 수도 있습니다. 원하시는 바를 서둘러 회신해 주십시오.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#107": {
+   "src": "\"I plan to accompany the next caravan which will bring our recompensation, and I look forward to the visit. We may finally finish our set of Go yet.\"",
+   "dst": "\"보상을 실어 올 다음 상단에 저도 함께 갈 작정이니, 그 방문이 기다려집니다. 그러면 미뤄 둔 바둑 한 판도 드디어 끝낼 수 있겠지요.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#108": {
+   "src": "\"Regards, Mistress Qira\"",
+   "dst": "\"그럼 이만, Mistress Qira\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#109": {
+   "src": "The cow raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "소가 고개를 들어 너를 본다. 녹차를 보자 눈이 번쩍 빛난다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#110": {
+   "src": "You gesture the tea generously towards the cow, and place it on the ground for it to drink. The cow nods respectfully to you.",
+   "dst": "너는 선선히 차를 소에게 내밀고, 마실 수 있도록 바닥에 내려놓는다. 소가 정중히 고개를 끄덕인다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#111": {
+   "src": "...watching it drink from the cup as you did, there's a certain kinship you feel, and with that realization comes a feeling of peace.",
+   "dst": "...너처럼 잔에 입을 대고 마시는 모습을 보고 있으니 어떤 동류의 정이 느껴지고, 그 깨달음과 함께 평온이 찾아온다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#112": {
+   "src": "You can't recall the last time you've felt this relaxed. You know for certain that you have mastered the challenge of tranquility. Time to leave.",
+   "dst": "이렇게 편안했던 게 언제였는지 떠오르지 않는다. 평온이라는 시험을 확실히 통과했다는 것을 안다. 떠날 때다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#113": {
+   "src": "The pig raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "돼지가 고개를 들어 너를 보며 정중히 고개를 끄덕인다. 너는 자연과의 평화와 우정을 얻어 냈다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#114": {
+   "src": "The sheep raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "양이 고개를 들어 너를 보며 정중히 고개를 끄덕인다. 너는 자연과의 평화와 우정을 얻어 냈다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#115": {
+   "src": "The cow raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "소가 고개를 들어 너를 보며 정중히 고개를 끄덕인다. 너는 자연과의 평화와 우정을 얻어 냈다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Enzan's Brother#000": {
    "src": "Well, I'd best get back to my business. It was nice talking to you, traveler. Come around anytime.",
@@ -111066,6 +112536,216 @@
    "stage": "Stage 9",
    "speaker": "Javen",
    "source": "wiki"
+  },
+  "Mixed Feelings#076": {
+   "src": "Go for a drink at the Corkus Docks Inn, [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]의 Corkus 부두 여관에서 한잔하세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#077": {
+   "src": "Talk to Javen to find out more about what happened.",
+   "dst": "Javen과 대화해 무슨 일이 있었는지 알아보세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#078": {
+   "src": "You should ask Javen about what happened.",
+   "dst": "무슨 일이 있었는지 Javen에게 물어보는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#079": {
+   "src": "Talk to citizens around the docks to find out more about what happened.",
+   "dst": "부두 주변 주민들과 대화해 무슨 일이 있었는지 더 알아보세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#080": {
+   "src": "You ran outta here and wrecked all sorts! You better go find the people you affected and apologise!",
+   "dst": "자네가 여기서 뛰쳐나가 온갖 걸 다 망가뜨렸잖나! 피해 입은 사람들을 찾아가서 제대로 사과하게!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Javen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#081": {
+   "src": "Hurry, please! Just head into the big trapdoor by the bushes, the controls are in there.",
+   "dst": "제발 서둘러 주세요! 수풀 옆에 있는 큰 여닫이문으로 들어가면 조작 장치가 그 안에 있어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#082": {
+   "src": "> Thank you for choosingsing CorkTech! Your company for a safe and trustworthy service.",
+   "dst": "> CorkTech를 선택해 주셔서 감사합니다! 안전하고 믿을 수 있는 서비스를 위한 동반자입니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#083": {
+   "src": "Powering up elevator...",
+   "dst": "엘리베이터 기동 중...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#084": {
+   "src": "You can push the button beside the crates to pick them up, and stand on the pressure plate to place them.",
+   "dst": "상자 옆 버튼을 누르면 상자를 들어 올릴 수 있고, 압력판 위에 서면 내려놓을 수 있어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "Corkus City Citizen",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#085": {
+   "src": "It seems like all crates are balanced now.",
+   "dst": "이제 모든 상자의 균형이 맞은 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#086": {
+   "src": "I learned about some rumours involving separatists. I should continue helping locals to find out more.",
+   "dst": "분리주의자가 얽혀 있다는 소문을 들었다. 주민들을 계속 도우며 더 알아내야겠다",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#087": {
+   "src": "Someone told you more about the patriots of Corkus. You should continue to find the missing clue.",
+   "dst": "누군가 Corkus의 애국자들에 대해 더 알려 주었다. 사라진 단서를 계속 찾아야 한다",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#088": {
+   "src": "You manage to reach the chest safely, getting ready to jump through a hole the fire burned.",
+   "dst": "너는 무사히 상자까지 다다라, 불에 타 뚫린 구멍으로 뛰어들 준비를 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#089": {
+   "src": "Follow the trail of blood close to the castle, [-{~}, {~}, -{~}]",
+   "dst": "성 근처의 핏자국을 따라가세요, [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#090": {
+   "src": "You really don't see a reason to go in there at the moment.",
+   "dst": "지금은 저기에 들어갈 이유가 전혀 보이지 않는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#091": {
+   "src": "Use the balloon to enter the suspicious hideout.",
+   "dst": "열기구를 타고 수상한 은신처로 들어가세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#092": {
+   "src": "Survive the fight against the drugged corkian",
+   "dst": "약에 취한 Corkian과의 싸움에서 살아남으세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#093": {
+   "src": "After witnessing your crash into the cliff, Corkian citizens informed the government.",
+   "dst": "네가 절벽에 처박히는 것을 목격한 Corkus 주민들이 정부에 신고했다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#094": {
+   "src": "Shortly after your victory security forces found the hideout and arrested the remaining separatists.",
+   "dst": "네가 승리한 직후 치안대가 은신처를 찾아내 남은 분리주의자들을 체포했다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#095": {
+   "src": "Their leader was nowhere to be found.",
+   "dst": "그들의 수장은 어디에서도 찾을 수 없었다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Mixed Feelings#096": {
+   "src": "Always nice to see my favourite customer pay a visit!",
+   "dst": "내 단골손님이 찾아와 주니 언제나 반갑군!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mixed Feelings",
+   "stage": "Stage 9",
+   "speaker": "Javen",
+   "source": "captured.json"
   },
   "Murder Mystery#000": {
    "src": "Have you made any progress? There was a smashed window in there, it might be a good place to start.",
@@ -179440,6 +181120,46 @@
    "stage": "Stage 13",
    "speaker": "Maxie",
    "source": "wiki"
+  },
+  "The Envoy Part II#118": {
+   "src": "Enter Maxie's house at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]의 Maxie 집으로 들어가세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#119": {
+   "src": "Mo'in, {u}! I've been researching everything I can about the factory.",
+   "dst": "안녕하세요, {u}! 공장에 대해 알아낼 수 있는 건 다 조사하고 있었어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "Maxie",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#120": {
+   "src": "ARE YOU INCAPABLE OF READING THE SIGN ON THE DOOR? THE FACTORY IS CLOSED. WE ARE NOT ACCEPTING VISITORS FOR TOURS RIGHT NOW.",
+   "dst": "문에 붙은 안내판을 읽을 줄 모르나? 공장은 닫혔다. 지금은 견학 방문을 받지 않는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#121": {
+   "src": "I have learned so much on our adventure. One day, if you ever need me, I will be there. You have an ally in this Corkian.",
+   "dst": "이번 모험에서 정말 많은 걸 배웠어요. 언젠가 제가 필요해지면, 꼭 달려갈게요. 이 Corkian은 당신의 아군이에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
   },
   "The Feathers Fly Part I#000": {
    "src": "Visit the workshop at [-{~}, {~}, -{~}] (Requires completion of The Envoy Part II)",

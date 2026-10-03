@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part IV",
-  "count": 66,
-  "translated": 66,
+  "count": 71,
+  "translated": 71,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -665,6 +665,56 @@
    "stage": "Stage 8",
    "speaker": "King of Rodoroc",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#068": {
+   "src": "Return to Korzim at [{~}, {~}, -{~}] on the second floor of the enchanter in {p} with the Amulet of Fire and the Staff of Ice.",
+   "dst": "带着 Amulet of Fire 和 Staff of Ice，回到 {p} 附魔师二楼 [{~}, {~}, -{~}] 找 Korzim",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#069": {
+   "src": "Reach the ritual colosseum and prevent Garaheth from being summoned",
+   "dst": "抵达仪式竞技场，阻止 Garaheth 被召唤",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#070": {
+   "src": "Freeze any vital point of Garaheth you can find!",
+   "dst": "找到 Garaheth 身上任何要害就冻住它！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#071": {
+   "src": "Get out of Garaheth!",
+   "dst": "从 Garaheth 体内脱身！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#072": {
+   "src": "We...we have nothing left... We could have...taken them with us... Now they will...will... You...!",
+   "dst": "我们……我们什么都不剩了……我们本来可以……把他们一起带走的……现在他们会……会……你……！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "captured.json"
   }
  }
 }

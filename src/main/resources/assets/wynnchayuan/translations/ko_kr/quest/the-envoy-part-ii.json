@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Envoy Part II",
-  "count": 102,
-  "translated": 102,
+  "count": 106,
+  "translated": 106,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -1025,6 +1025,46 @@
    "stage": "Stage 13",
    "speaker": "Maxie",
    "source": "wiki"
+  },
+  "The Envoy Part II#118": {
+   "src": "Enter Maxie's house at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}]의 Maxie 집으로 들어가세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#119": {
+   "src": "Mo'in, {u}! I've been researching everything I can about the factory.",
+   "dst": "안녕하세요, {u}! 공장에 대해 알아낼 수 있는 건 다 조사하고 있었어요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 1",
+   "speaker": "Maxie",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#120": {
+   "src": "ARE YOU INCAPABLE OF READING THE SIGN ON THE DOOR? THE FACTORY IS CLOSED. WE ARE NOT ACCEPTING VISITORS FOR TOURS RIGHT NOW.",
+   "dst": "문에 붙은 안내판을 읽을 줄 모르나? 공장은 닫혔다. 지금은 견학 방문을 받지 않는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Envoy Part II#121": {
+   "src": "I have learned so much on our adventure. One day, if you ever need me, I will be there. You have an ally in this Corkian.",
+   "dst": "이번 모험에서 정말 많은 걸 배웠어요. 언젠가 제가 필요해지면, 꼭 달려갈게요. 이 Corkian은 당신의 아군이에요.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Envoy Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

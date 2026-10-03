@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part III",
-  "count": 80,
-  "translated": 80,
+  "count": 88,
+  "translated": 88,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -805,6 +805,86 @@
    "stage": "Stage 10",
    "speaker": "Sanba",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part III#080": {
+   "src": "Return to the Dogun village with the letter and speak to Korzim at [{~}, {~}, -{~}].",
+   "dst": "Вернись с письмом в деревню Dogun и поговори с Korzim на [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#081": {
+   "src": "Korzim reads the message on the tablet silently. His expression is inscrutable.",
+   "dst": "Korzim молча читает послание на скрижали. По его лицу ничего не прочесть.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#082": {
+   "src": "Travel to {p} and meet Korzim at the entrance at [{~}, {~}, -{~}].",
+   "dst": "Отправляйся в {p} и встреться с Korzim у входа на [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#083": {
+   "src": "Talk to the blacksmith in {p} [{~}, {~}, -{~}].",
+   "dst": "Поговори с кузнецом в {p} на [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#084": {
+   "src": "Good job collecting the tools needed to destroy the demon.",
+   "dst": "Молодец, все орудия для уничтожения демона собраны.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 6",
+   "speaker": "Edula",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#085": {
+   "src": "Go to the enchanter and enchant the amulet at [{~}, {~}, -{~}].",
+   "dst": "Иди к зачарователю и зачаруй амулет на [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#086": {
+   "src": "Travel through the Freezing Heights and get [{~} True Ice].",
+   "dst": "Пройди через Freezing Heights и добудь [{~} True Ice].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part III#087": {
+   "src": "The ice has trapped you. Try again.",
+   "dst": "Лёд поймал тебя в ловушку. Попробуй снова.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part III",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

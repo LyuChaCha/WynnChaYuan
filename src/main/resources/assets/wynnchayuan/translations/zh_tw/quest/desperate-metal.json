@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Desperate Metal",
-  "count": 37,
-  "translated": 37,
+  "count": 48,
+  "translated": 48,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -375,6 +375,116 @@
    "stage": "Stage 6",
    "speaker": "Phinas",
    "source": "wiki"
+  },
+  "Desperate Metal#037": {
+   "src": "Evasive maneuver inefficient.",
+   "dst": "迴避動作效率不足。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#038": {
+   "src": "Request additional orders from L.H. Defend.",
+   "dst": "向 L.H. Defend 請求追加指令。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Steam Mech-DM1",
+   "source": "captured.json"
+  },
+  "Desperate Metal#039": {
+   "src": "Tools acquired, delivered to L.H. Additional orders received.",
+   "dst": "工具已取得，已送交 L.H.。已收到追加指令。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#040": {
+   "src": "Intruder detected. Camouflage ineffective. Defend.",
+   "dst": "偵測到入侵者。偽裝失效。進入防禦。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Fiery Mech-DM2",
+   "source": "captured.json"
+  },
+  "Desperate Metal#041": {
+   "src": "Strategic mission accomplished. Mechanical parts: procured.",
+   "dst": "戰略任務完成。機械零件：已取得。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Intelligence Mech-DM3",
+   "source": "captured.json"
+  },
+  "Desperate Metal#042": {
+   "src": "Look in the content book if you forgot what to do.",
+   "dst": "忘記要做什麼的話，翻翻內容書。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#043": {
+   "src": "I wrote down your task there.",
+   "dst": "我把你的任務寫在那裡了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 2",
+   "speaker": "Phinas",
+   "source": "captured.json"
+  },
+  "Desperate Metal#044": {
+   "src": "What in the world are you doing here!? Get out immediately.",
+   "dst": "你到底在這裡做什麼！？立刻出去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#045": {
+   "src": "I mean, welcome! Nothing suspicious here at all.",
+   "dst": "我是說，歡迎！這裡完全沒有什麼可疑的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "Nettik",
+   "source": "captured.json"
+  },
+  "Desperate Metal#046": {
+   "src": "Security drop-chute engaging. {~}... {~}...",
+   "dst": "保安投放滑道啟動。{~}…… {~}……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Desperate Metal",
+   "stage": "Stage 3",
+   "speaker": "???",
+   "source": "captured.json"
+  },
+  "Desperate Metal#047": {
+   "src": "Report back to Phinas after destroying the mech",
+   "dst": "摧毀機械後回去向 Phinas 報告",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Desperate Metal",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
