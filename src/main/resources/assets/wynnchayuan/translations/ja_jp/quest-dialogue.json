@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24738,
-  "translated": 23701,
+  "count": 24776,
+  "translated": 23739,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -58558,7 +58558,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part I#079": {
-   "src": "Welcome.. Human. I... am Korzim.",
+   "src": "Welcome...Human. I...am Korzim.",
    "dst": "ようこそ…人間。私は…Korzim だ。",
    "role": "desc",
    "kind": "dialogue",
@@ -59208,7 +59208,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part I#145": {
-   "src": "Wait... What are... you holding? Dragon bone...? Just what we need...",
+   "src": "Wait... What are...you holding? Dragon bone...? Just what we need...",
    "dst": "待て…手に持っているのは…何だ？竜の骨…？まさに必要なものだ…",
    "role": "desc",
    "kind": "dialogue",
@@ -59218,7 +59218,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part I#146": {
-   "src": "Human... if you promise to help us... I will grant you access to... our secret elevators... You can get up and... down the heights with those.",
+   "src": "Human...if you promise to help us...I will grant you access to...our secret elevators... You can get up and...down the heights with those.",
    "dst": "人間…我々を助けると誓うなら…秘密の昇降機を…使わせてやろう…それで高地を…上り下りできる。",
    "role": "desc",
    "kind": "dialogue",
@@ -59228,7 +59228,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part I#147": {
-   "src": "Please return to... us when you reach level {~}. Take this... badge so the... others recognize you... as an ally. One of the elevators is... to the south.",
+   "src": "Please return to...us when you reach level {~}. Take this...badge so the...others recognize you...as an ally. One of the elevators is...to the south.",
    "dst": "レベル {~} に達したら…戻ってきてくれ。この…徽章を持っていけ…皆が味方だと…わかるように。昇降機の一つは…南にある。",
    "role": "desc",
    "kind": "dialogue",
@@ -59236,6 +59236,386 @@
    "stage": "Stage 15",
    "speaker": "Plario",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part I#148": {
+   "src": "Ugh, that was horrible.. Like I said before, this war was a genocide. Don't believe any of the lies they try and feed you.",
+   "dst": "うわっ、最悪だった……。前にも言ったけど、この戦争はジェノサイドだった。奴らが吹き込もうとする嘘なんて、一切信じてはいけない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#149": {
+   "src": "Make your way to the Dogun festival at [{~}, {~}, -{~}] by following the red banners outside {p}.",
+   "dst": "{p}の外にある赤い横断幕を目印に、[{~}, {~}, -{~}]で開催されるDogun祭へと向かう。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#150": {
+   "src": "Looks like Axelus dropped a note...? Doesn't seem like anyone else noticed.",
+   "dst": "Axelusがメモを落とした…?　他に気づいた人はいないみたいだ。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#151": {
+   "src": "Seems like Axelus had more to say. Since no one else picked up the note, you may as well seek him out.",
+   "dst": "Axelusにはまだ言いたいことがあったようだ。他にそのメモを拾った者がいないのだから、彼を探しに行くのがいいだろう。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#152": {
+   "src": "Find out more about the hysterical dwarf in {p}'s prison at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]にある{p}の牢獄に囚われている、とんでもなく滑稽なドワーフを詳しく見る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#153": {
+   "src": "You came at the right time, {u}. It's good to see you're still interested in what's really going on here..",
+   "dst": "{u}、ちょうどいいタイミングで来てくれたね。ここでの本当の事情に、まだ興味を持ってくれているようで嬉しいよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#154": {
+   "src": "I've told you this already, but you have to know that it really is true. The Dwarves have been lied to for so long about the war.",
+   "dst": "もう言ったことだけど、これは本当に事実だってことを知っておいてほしい。ドワーフたちは、この戦争について長い間、嘘をつかれてきたんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#155": {
+   "src": "..But I think it's best if you see it for yourself. Relying on my word alone won't be enough to grasp the full extent of this dilemma.",
+   "dst": "…でも、実際に自分の目で確かめてみるのが一番だと思う。私の言葉だけを頼りにしても、このジレンマの全容を把握するには不十分だろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#156": {
+   "src": "It seems like Axelus slipped another note into your pocket.",
+   "dst": "Axelusがまたあなたのポケットにメモを忍ばせたようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#157": {
+   "src": "That gate must be the entrance to the Library that Axelus mentioned, but it looks locked tight. Could anything in the area open it up?",
+   "dst": "あの門は、Axelusが言っていた図書館への入り口に違いないが、しっかりと鍵がかかっているようだ。この辺りに、それを開けることができるものはあるだろうか?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#158": {
+   "src": "It's an extremely old book. The pages are torn, yellowed, and dusty.",
+   "dst": "それはとてつもなく古い本だ。ページは破れていて、黄ばんでおり、ほこりをかぶっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#159": {
+   "src": "\"Top Secret\"? The words are faded and hard to make out.",
+   "dst": "「極秘」?　文字は色あせていて、判読しにくい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#160": {
+   "src": "It seems to be a report written at the start of the Dogun war.",
+   "dst": "これは、Dogun戦争の初期に書かれた報告書のようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#161": {
+   "src": "\"The natives occupy {~} of the habitable land in the heights...\"",
+   "dst": "「先住民たちは、高地にある居住可能な土地の{~}を占めている………」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#162": {
+   "src": "Several pages are dedicated to the Doguns personalities, traits and powers.",
+   "dst": "数ページにわたり、Dogunの登場人物たちの人物像、特徴、能力について詳しく解説されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#163": {
+   "src": "\"...Magical powerhouses of the fire element...\"",
+   "dst": "「……火の属性の魔法の巨匠たち……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#164": {
+   "src": "\"Near Dwarven intelligence...\"",
+   "dst": "「ドワーフ並みの知性……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#165": {
+   "src": "\"Clearance is needed if Dwarves are going to form a colony...\"",
+   "dst": "「ドワーフたちが入植地を築くには、立ち退きが必要だ……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#166": {
+   "src": "According to the report, the land was once rich with minerals and materials.",
+   "dst": "報告書によると、その土地はかつて鉱物や資源が豊富だったという。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#167": {
+   "src": "This page appears to have been ripped out and crudely reattached.",
+   "dst": "このページは、切り取られてから雑に貼り直されたようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#168": {
+   "src": "\"A program of public profiling of the natives is recommended...\"",
+   "dst": "「先住民に対する公的なプロファイリングの実施が推奨される……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#169": {
+   "src": "There are detailed instructions on producing propaganda against the Doguns.",
+   "dst": "Dogunに対するプロパガンダを作成する方法について、詳細な手順が記載されている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#170": {
+   "src": "\"...recommend they are referred to as demons, as inherent fear will take hold...\"",
+   "dst": "「……『悪魔』と呼ぶことを推奨する。そうすれば、人々に根付いている恐怖心が働き始めるだろう……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#171": {
+   "src": "The report details propaganda at all levels of society, particularly at educational centers.",
+   "dst": "この報告書は、社会のあらゆるレベル、とりわけ教育機関におけるプロパガンダについて詳述している。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#172": {
+   "src": "\"Once public opinion is sufficiently hostile, establishment of colonies will be achievable...\"",
+   "dst": "「世論が十分に敵対的になれば、植民地の建設は実現可能になるだろう……」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#173": {
+   "src": "The report goes on to detail the total dominance of {p} and the importance of propaganda continuation.",
+   "dst": "報告書はさらに、{p}の圧倒的な支配力と、プロパガンダの継続の重要性について詳述している。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#174": {
+   "src": "Now do you see? Everything that I told you about when we rescued those flerisi was indeed true...",
+   "dst": "これでわかったか？あのFlerisiたちを救出した時に、私が話したことはすべて、確かに本当だったんだ……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#175": {
+   "src": "Search for house number {~} in {p} like Axelus said.",
+   "dst": "Axelusが言ったように、{p}内の家番号{~}を捜索する。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#176": {
+   "src": "Talk with the coalition.",
+   "dst": "連合と話す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#177": {
+   "src": "Meet the group at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]でグループと合流する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#178": {
+   "src": "I'll let...you in.",
+   "dst": "…君を中に入れてあげるよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#179": {
+   "src": "To repair the mechanical core, select a colour and connect the clay with the same coloured glass block by clicking the iron blocks with the Rewiring Tool.",
+   "dst": "メカニカルコアを修復するには、色を選択し、Rewiring Toolを使って鉄のブロックをクリックして、その色の粘土と同じ色のガラスブロックをつなぎ合わせてください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#180": {
+   "src": "Head back to the coalition through the tunnel at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}]にあるトンネルを通って、連合のもとへ戻る。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#181": {
+   "src": "The king has sent for you personally.",
+   "dst": "王様が、お前を直接お呼びになっている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#182": {
+   "src": "If you don't come with us we wi-",
+   "dst": "もし私たちと一緒に来なければ、私たちは……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#183": {
+   "src": "Entomb these Doguns, and slay their Dwarven thralls!",
+   "dst": "これらのDogunを葬り去り、ドワーフの奴隷どもを討ち取れ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 11",
+   "speaker": "Pens'r",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#184": {
+   "src": "But...bring them...the dragon bone...as a gift. If they accept it...they might accept us.",
+   "dst": "でも……彼らに……竜の骨を……贈り物として持っていこう。もしそれを受け入れてくれたら……私たちも受け入れてくれるかもしれない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "Stage 14",
+   "speaker": "Korzim",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part I#185": {
+   "src": "We need to solve...this conflict somehow. Please...help us.",
+   "dst": "この対立を……何とか解決しなければない。どうか……私たちを助けてほしい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part I",
+   "stage": "",
+   "speaker": "Korzim",
+   "source": "captured.json"
   },
   "Dwarves and Doguns Part II#000": {
    "src": "The Royal Guards escort you and Axelus out of the palace.",
