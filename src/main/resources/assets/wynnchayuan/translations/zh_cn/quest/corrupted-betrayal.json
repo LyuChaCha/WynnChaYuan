@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Corrupted Betrayal",
   "count": 71,
-  "translated": 53,
+  "translated": 71,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#003": {
    "src": "{u}, good to see you again! Been a while, huh?",
-   "dst": "",
+   "dst": "{u}，很高兴又见到你！有一阵子没见了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -28,7 +28,7 @@
   },
   "Corrupted Betrayal#005": {
    "src": "You lean in close to read the riddle inscribed on the ancient stone...",
-   "dst": "",
+   "dst": "你凑近去读刻在那块古老石碑上的谜语……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -38,7 +38,7 @@
   },
   "Corrupted Betrayal#006": {
    "src": "[+{~} Mage's Riddle]",
-   "dst": "",
+   "dst": "[+{~} 法师的谜语]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48,7 +48,7 @@
   },
   "Corrupted Betrayal#007": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
-   "dst": "",
+   "dst": "不过呢，身为一名传奇人物，我可是很忙的，签名之类的事一堆，更别提我还有警戒任务！想证明你值得我花时间，等你到了 {~} 级再回来吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -58,7 +58,7 @@
   },
   "Corrupted Betrayal#008": {
    "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
-   "dst": "",
+   "dst": "你好像掉进了某种古代遗迹里。那段咒文说不定就在里面某处……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -68,7 +68,7 @@
   },
   "Corrupted Betrayal#009": {
    "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
-   "dst": "",
+   "dst": "国王向一位萨满求助，他叫 Slykaar。萨满以献祭的生命来造成伤害。那是黑暗魔法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -78,7 +78,7 @@
   },
   "Corrupted Betrayal#010": {
    "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
-   "dst": "",
+   "dst": "Slykaar 守住了 {p}，代价极其惨重。Slykaar 迷恋那份瞩目与权力，他掌控了整座城市。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -88,7 +88,7 @@
   },
   "Corrupted Betrayal#011": {
    "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
-   "dst": "",
+   "dst": "多年来，{p} 既受尽了兽群之苦，也受尽了 Slykaar 无止尽献祭之苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -98,7 +98,7 @@
   },
   "Corrupted Betrayal#012": {
    "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
-   "dst": "",
+   "dst": "然后…… Bob 出现了。{p} 的人民立刻抛下了那个可怕的萨满，转而拥戴这位纯粹的英雄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -108,7 +108,7 @@
   },
   "Corrupted Betrayal#013": {
    "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
-   "dst": "",
+   "dst": "Slykaar 又恨又辱，潜入地下，重新展开他那些恶魔实验，好为自己造一支军队。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -118,7 +118,7 @@
   },
   "Corrupted Betrayal#014": {
    "src": "It appears the mutant contained the key for that door.",
-   "dst": "",
+   "dst": "看来那把门的钥匙就在那只变异体身上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -128,7 +128,7 @@
   },
   "Corrupted Betrayal#015": {
    "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
-   "dst": "",
+   "dst": "这是一本布满灰尘的旧日记，似乎被翻开停在某一页。你出于好奇读了起来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -138,7 +138,7 @@
   },
   "Corrupted Betrayal#016": {
    "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
-   "dst": "",
+   "dst": "...{p} 开始对我起疑了……有个叫 Robert 的家伙来到了镇上……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -148,7 +148,7 @@
   },
   "Corrupted Betrayal#017": {
    "src": "...I know they will banish me...he is too good...too nice...",
-   "dst": "",
+   "dst": "……我知道他们会把我放逐……他太好了……太善良了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -158,7 +158,7 @@
   },
   "Corrupted Betrayal#018": {
    "src": "...I must open a portal...make a dimension to become more powerful...",
-   "dst": "",
+   "dst": "……我必须开启一道传送门……造出一个界域，让自己变得更强大……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -168,7 +168,7 @@
   },
   "Corrupted Betrayal#019": {
    "src": "...the books...I have prepared well for this...",
-   "dst": "",
+   "dst": "……那些书……为了这一刻，我已经准备得很充分了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -178,7 +178,7 @@
   },
   "Corrupted Betrayal#020": {
    "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
-   "dst": "",
+   "dst": "……我要凿出一间密室……藏在一面看得见的墙后面……打造属于我的世界……我的复仇……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -198,7 +198,7 @@
   },
   "Corrupted Betrayal#022": {
    "src": "You should head back to Lanu...",
-   "dst": "",
+   "dst": "你该回去找 Lanu 了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",

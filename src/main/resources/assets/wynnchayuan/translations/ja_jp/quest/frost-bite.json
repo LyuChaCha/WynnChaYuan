@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Frost Bite",
   "count": 88,
-  "translated": 68,
+  "translated": 88,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Frost Bite#000": {
    "src": "Greetings, soldier!",
-   "dst": "",
+   "dst": "やあ、兵士さん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -18,7 +18,7 @@
   },
   "Frost Bite#001": {
    "src": "Are you here to cross the Great Bridge as well?",
-   "dst": "",
+   "dst": "あなたも Great Bridge を渡るつもりですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -28,7 +28,7 @@
   },
   "Frost Bite#002": {
    "src": "I fear you'll have to wait, the warning wasn't without merit.",
-   "dst": "",
+   "dst": "残念ながら待つしかないでしょう。あの警告は根拠のないものではなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -38,7 +38,7 @@
   },
   "Frost Bite#003": {
    "src": "The {p} military has issued an official warning to all travelers wishing to cross the Great Bridge.",
-   "dst": "",
+   "dst": "{p} の軍は、Great Bridge を渡ろうとするすべての旅人に正式な警告を出しています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -48,7 +48,7 @@
   },
   "Frost Bite#004": {
    "src": "No one should use the bridge until they have dealt with the... underlying issue.",
-   "dst": "",
+   "dst": "あの……根本の問題が片付くまで、誰もこの橋を使うべきではありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -58,7 +58,7 @@
   },
   "Frost Bite#005": {
    "src": "I ignored the warning at first, since the bridge is the only path into the jungle...",
-   "dst": "",
+   "dst": "最初は警告を無視しました。あの橋はジャングルへの唯一の道ですから……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -68,7 +68,7 @@
   },
   "Frost Bite#006": {
    "src": "But attempting to cross the bridge proved unbearable. Even out here, can't you feel that intense heat?",
-   "dst": "",
+   "dst": "ですが渡ろうとしてみて、とても耐えられないと分かりました。ここにいても、あの強烈な熱を感じませんか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -78,7 +78,7 @@
   },
   "Frost Bite#007": {
    "src": "I wouldn't blame anyone for not wanting to venture further, let alone meet whatever is causing this heat!",
-   "dst": "",
+   "dst": "これ以上先へ行きたがらない人を責める気にはなれません。この熱の元になっているものに会いに行くなんて、なおさらです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -88,7 +88,7 @@
   },
   "Frost Bite#008": {
    "src": "And so I've been waiting here with my assistant all day... We're potion makers, you see, and we were headed to the grand city of {p} to sell supplies.",
-   "dst": "",
+   "dst": "それで助手と一日ここで待っているのです…… 見てのとおり私たちは薬師で、大都市 {p} へ品を売りに行く途中でした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -98,7 +98,7 @@
   },
   "Frost Bite#009": {
    "src": "If you want to ignore the military's warning, I suppose you might benefit from buying some our stock first. Our potions are stronger than any sold in {p}, after all!",
-   "dst": "",
+   "dst": "軍の警告を無視するおつもりなら、まずは私たちの在庫を買っておくと得をするかもしれません。何しろ私たちの薬は {p} で売られているどれよりも強いのですから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -108,7 +108,7 @@
   },
   "Frost Bite#010": {
    "src": "From the look of your equipment... I'd say you might have a better chance of making it across than us.",
-   "dst": "",
+   "dst": "その装備を見るに…… あなたなら私たちより渡りきれる見込みがありそうです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -118,7 +118,7 @@
   },
   "Frost Bite#011": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up and take a look at the drill, would you?",
-   "dst": "",
+   "dst": "よお、衛兵！Electromagic について何か知ってるか？上がってきてドリルを見てくれないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -128,7 +128,7 @@
   },
   "Frost Bite#012": {
    "src": "Now you've obtained the key, you can enter Theoricks mansion",
-   "dst": "",
+   "dst": "鍵を手に入れたので、Theorick の館に入れるようになった",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -138,7 +138,7 @@
   },
   "Frost Bite#013": {
    "src": "Lets travel to the mansion together. Here, I have a carriage for it.",
-   "dst": "",
+   "dst": "一緒に館へ向かおう。ほら、そのための馬車を用意してある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -148,7 +148,7 @@
   },
   "Frost Bite#014": {
    "src": "Sir Theorick, if you, um...if you have a moment? Your tribute is here...",
-   "dst": "",
+   "dst": "Theorick 様、その、あの……少しお時間をいただけますか？貢ぎ物が届きました……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -158,7 +158,7 @@
   },
   "Frost Bite#015": {
    "src": "...good. Thank you. Good to see some who honestly respect what I'm trying to do for all of you. Was there anyone else?",
-   "dst": "",
+   "dst": "……よろしい。礼を言う。私が皆のためにしていることを、心から敬ってくれる者がまだいるのを見るのは嬉しい。他に誰かいたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -168,7 +168,7 @@
   },
   "Frost Bite#016": {
    "src": "Ah...no. There...there wasn't. Not this time. They feel like you're taking too much from them, which I don't agree with, but-",
-   "dst": "",
+   "dst": "ああ……いえ。今回は……おりませんでした。皆、あなたが取りすぎているように感じているのです。私は賛同しませんが、しかし-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -178,7 +178,7 @@
   },
   "Frost Bite#017": {
    "src": "...ask them, if they would prefer their money, or their lives. Am I not protecting them? Is it really so much to ask that I get something in return?",
-   "dst": "",
+   "dst": "……では聞いてみよ、金を取るか、命を取るかと。私は皆を守っていないのか？見返りを少し求めることが、そこまで過分な願いだろうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -188,7 +188,7 @@
   },
   "Frost Bite#018": {
    "src": "We...we know. We told them that, too...we're sorry.",
-   "dst": "",
+   "dst": "わ……分かっております。私たちもそう伝えました……申し訳ありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -198,7 +198,7 @@
   },
   "Frost Bite#019": {
    "src": "You aren't the ones who need to apologize! I'm aware it's a voluntary contribution, but do they have any idea how difficult it is to cast magic like this regularly?!",
-   "dst": "",
+   "dst": "謝るべきは君たちではない！自発的な寄進であることは分かっている。だが、このような魔法を定期的に行うのがどれほど難しいか、皆は少しでも分かっているのか！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",

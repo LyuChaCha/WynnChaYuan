@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Murder Mystery",
   "count": 76,
-  "translated": 59,
+  "translated": 76,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Murder Mystery#000": {
    "src": "Have you made any progress? There was a smashed window in there, it might be a good place to start.",
-   "dst": "",
+   "dst": "進展はあったか？あそこに割れた窓があった。そこから始めるのがよいかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -18,7 +18,7 @@
   },
   "Murder Mystery#001": {
    "src": "It looks like the victim's head was somehow detatched from his body...",
-   "dst": "",
+   "dst": "被害者の頭は、どうやってか胴体から切り離されたようだ……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -28,7 +28,7 @@
   },
   "Murder Mystery#002": {
    "src": "The victim's book collection seems to be exclusively made up of dimestore romance novels.",
-   "dst": "",
+   "dst": "被害者の蔵書は、どうやら安物の恋愛小説ばかりのようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -38,7 +38,7 @@
   },
   "Murder Mystery#003": {
    "src": "This painting doesn't seem to have anything to do with the murder, but its a nice landscape of {p}.",
-   "dst": "",
+   "dst": "この絵は殺人とは関係がなさそうだが、なかなかよい {p} の風景画だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -48,7 +48,7 @@
   },
   "Murder Mystery#004": {
    "src": "This half-finished letter seems to be asking for a loan to pay off some kind of debt...",
-   "dst": "",
+   "dst": "この書きかけの手紙は、何かの借金を返すために金を貸してほしいと頼んでいるようだ……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -58,7 +58,7 @@
   },
   "Murder Mystery#005": {
    "src": "It looks like the attacker managed to break in through the window.",
-   "dst": "",
+   "dst": "襲った者は窓から押し入ったようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -68,7 +68,7 @@
   },
   "Murder Mystery#006": {
    "src": "It's a letter addressed to someone called Rohem in House No. {~} in {p}.",
-   "dst": "",
+   "dst": "{p} の {~} 番の家に住む Rohem という者に宛てた手紙だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -88,7 +88,7 @@
   },
   "Murder Mystery#008": {
    "src": "Some of those gamblers had a symbol built into their homes, shaped like a snake. If you find it, it'll show you the way into the sewers. Good luck, officer.",
-   "dst": "",
+   "dst": "あの博徒たちの一部は、家に蛇のかたちをした印を仕込んでいた。それを見つければ、下水道への道を示してくれる。幸運を祈る、警官殿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -98,7 +98,7 @@
   },
   "Murder Mystery#009": {
    "src": "The barkeeper takes the snake symbol and examines it for a moment before nodding and giving it back to you.",
-   "dst": "",
+   "dst": "酒場の主人は蛇の印を受け取り、しばらく眺めてからうなずいて、あなたに返した。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -108,7 +108,7 @@
   },
   "Murder Mystery#010": {
    "src": "The barkeeper gestures down to the open trapdoor.",
-   "dst": "",
+   "dst": "酒場の主人は、開いた跳ね上げ戸のほうを身ぶりで示した。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -138,7 +138,7 @@
   },
   "Murder Mystery#013": {
    "src": "What are ya lingerin' around 'ere for? I've told ya all I know. Now either take a seat or get out.",
-   "dst": "",
+   "dst": "何をうろついてるんだ？知ってることは全部話した。さあ、席に着くか、出て行くかだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -158,7 +158,7 @@
   },
   "Murder Mystery#015": {
    "src": "It seems like you better go have a chat with Rohem...",
-   "dst": "",
+   "dst": "どうやら Rohem と話をしたほうがよさそうだ……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -168,7 +168,7 @@
   },
   "Murder Mystery#016": {
    "src": "You should look around for clues that tie Rohem to the murder.",
-   "dst": "",
+   "dst": "Rohem を殺人に結びつける手がかりを探し回るべきだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -178,7 +178,7 @@
   },
   "Murder Mystery#017": {
    "src": "Get out of my house, officer, and don't you dare go rooting around in my property!",
-   "dst": "",
+   "dst": "私の家から出て行け、警官。それに、私の持ち物を勝手に探るなど絶対に許さんぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -188,7 +188,7 @@
   },
   "Murder Mystery#018": {
    "src": "It's a dirty shovel - it must've been used recently to dig something up.",
-   "dst": "",
+   "dst": "泥だらけのシャベルだ――最近、何かを掘り起こすのに使われたに違いない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -198,7 +198,7 @@
   },
   "Murder Mystery#019": {
    "src": "There's a trail of muddy footprints leading back into the house.",
-   "dst": "",
+   "dst": "泥の足跡が家の中へ続いている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -218,7 +218,7 @@
   },
   "Murder Mystery#021": {
    "src": "Thank you for your help in catching the perpetrator!",
-   "dst": "",
+   "dst": "犯人を捕まえるのに力を貸してくれて、ありがとう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
