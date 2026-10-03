@@ -1,21 +1,11 @@
 {
  "_meta": {
   "quest": "The Passage (Quest)",
-  "count": 29,
-  "translated": 26,
+  "count": 26,
+  "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "The Passage (Quest)#000": {
-   "src": "Talk to Wirt in {p} at [-{~}, {~}, -{~}]",
-   "dst": "[-{~}, {~}, -{~}]의 {p}에 있는 Wirt에게 말을 거세요",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Passage (Quest)",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Passage (Quest)#001": {
    "src": "Not so fast, you!",
    "dst": "거기 서, 너!",
@@ -76,16 +66,6 @@
    "speaker": "Ildan",
    "source": "wiki"
   },
-  "The Passage (Quest)#007": {
-   "src": "I'm sure you've noticed, but there is a tribe camp not too far from here.",
-   "dst": "눈치챘겠지만, 여기서 멀지 않은 곳에 부족 야영지가 있어요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Passage (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Ildan",
-   "source": "wiki"
-  },
   "The Passage (Quest)#008": {
    "src": "They used to have a powerful chief, but he eventually died in battle.",
    "dst": "예전엔 강한 족장이 있었는데, 결국 전투에서 죽었어요.",
@@ -99,16 +79,6 @@
   "The Passage (Quest)#009": {
    "src": "The tribe couldn't bear the fact that he was dead. They performed some unethical necromancy spell on him.",
    "dst": "부족은 그의 죽음을 받아들이지 못했죠. 그래서 그에게 비윤리적인 강령술을 썼어요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Passage (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Ildan",
-   "source": "wiki"
-  },
-  "The Passage (Quest)#010": {
-   "src": "They quickly realized that is was a bad idea, so they locked him in a tomb.",
-   "dst": "곧 나쁜 생각이었다는 걸 깨닫고, 그를 무덤에 가뒀어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -268,21 +238,21 @@
   },
   "The Passage (Quest)#026": {
    "src": "I'm sure you've noticed, but there is a tribe camp not far from here.",
-   "dst": "",
+   "dst": "눈치챘겠지만, 여기서 멀지 않은 곳에 부족 야영지가 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
   "The Passage (Quest)#027": {
    "src": "They quickly realised that it was a bad idea, so they locked him in a tomb.",
-   "dst": "",
+   "dst": "곧 나쁜 생각이었다는 걸 깨닫고, 그를 무덤에 가뒀어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },

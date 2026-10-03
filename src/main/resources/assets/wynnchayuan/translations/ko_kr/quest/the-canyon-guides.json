@@ -1,14 +1,14 @@
 {
  "_meta": {
   "quest": "The Canyon Guides",
-  "count": 87,
-  "translated": 63,
+  "count": 76,
+  "translated": 65,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Canyon Guides#000": {
    "src": "Welcome to Bantisu Temple, wandering human. We aid travelers such as yourself in navigating the capricious canyon walls.",
-   "dst": "",
+   "dst": "Bantisu 사원에 오신 것을 환영합니다, 방랑하는 인간이여. 저희는 변덕스러운 협곡에서 길을 찾도록 여행자를 돕습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -18,7 +18,7 @@
   },
   "The Canyon Guides#001": {
    "src": "You appear quite strong, and well-kept by your wits. Might we ask you to aid us, then?",
-   "dst": "",
+   "dst": "꽤 강하고 지혜로워 보이시는군요. 그렇다면 저희를 도와주시겠습니까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -28,12 +28,12 @@
   },
   "The Canyon Guides#002": {
    "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but be unable to reach him.",
-   "dst": "",
+   "dst": "실은 길 잃은 사람 하나가 근처 절벽의 야영지에 틀어박혀 있습니다. 안타깝지만 저희는 그에게 갈 수 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#003": {
@@ -48,32 +48,32 @@
   },
   "The Canyon Guides#004": {
    "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day of cliff diving?",
-   "dst": "",
+   "dst": "잠깐, 인간이잖아! 으, 괜히 기대했네. 뭐야, 오늘은 절벽 다이빙 쉬는 날이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#005": {
    "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at doing that, right? Fetching things and people?",
-   "dst": "",
+   "dst": "진짜 쓸모 있고 싶으면 Bantisu 수도승 하나 데려와! 그런 거 잘하잖아? 물건이랑 사람 가져오는 거?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#006": {
    "src": "Kill them! Kill them now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
-   "dst": "",
+   "dst": "죽여! 당장 죽여! 그리고 날 여기서 꺼내! 네가 이렇게 만들었으니 꺼내 줘!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#007": {
@@ -98,7 +98,7 @@
   },
   "The Canyon Guides#009": {
    "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair!. Besides that...",
-   "dst": "",
+   "dst": "걷기만 하고... 여기서 좀 쉴래. 날 절벽에서 뛰어내리게 했으니 난 널 늦추게 할 거야. 공평하지! 게다가...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -108,22 +108,22 @@
   },
   "The Canyon Guides#010": {
    "src": "I only even came out here to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
-   "dst": "",
+   "dst": "경치나 보러 온 거였어. 적어도 그건 못 망치겠지. 그래도 참 대단한 휴가가 됐네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#011": {
    "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into a lake and made me lose my shoes!",
-   "dst": "",
+   "dst": "으, 발 아파 죽겠어. 누가 날 호수에 빠뜨려서 신발 잃게만 안 했어도 이 길이 이렇게 나쁘진 않았을걸!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#012": {
@@ -138,27 +138,27 @@
   },
   "The Canyon Guides#013": {
    "src": "Huff...puff... Well...huff... Wait, there's...there's no way down the other side! Huff...what a waste!!",
-   "dst": "",
+   "dst": "헉...헉... 음...헉... 잠깐, 반대편으로... 내려갈 길이 없잖아! 헉...헛고생했네!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#014": {
    "src": "You...had better count yourself lucky I haven't broken any bones from this. Agh...but that doesn't mean I'm not aching all over!!",
-   "dst": "",
+   "dst": "너... 뼈 하나 안 부러진 걸 다행으로 알아. 아으... 그렇다고 온몸이 안 쑤신다는 건 아니야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#015": {
    "src": "I paid two weeks' wages for that coat you soaked. I'm not leaving here without it, and I'm way too tired to walk back down.",
-   "dst": "",
+   "dst": "네가 적신 그 코트, 2주치 품삯이야. 그거 없인 안 가, 그리고 도로 내려가기엔 너무 지쳤어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -198,12 +198,12 @@
   },
   "The Canyon Guides#019": {
    "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude to this kind human.",
-   "dst": "",
+   "dst": "교훈으로 삼으십시오, Seluc. 바람으로 보는 자에게 거짓말은 통하지 않습니다. 이 친절한 분께 감사하십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#020": {
@@ -212,8 +212,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured",
    "similar": {
     "text": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
@@ -262,29 +262,9 @@
    "speaker": "Gana",
    "source": "wiki"
   },
-  "The Canyon Guides#025": {
-   "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but we are unable to reach him.",
-   "dst": "실은 길 잃은 사람 하나가 근처 절벽의 야영지에 틀어박혀 있습니다. 안타깝지만 저희는 그에게 갈 수 없습니다.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 1",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
   "The Canyon Guides#026": {
    "src": "The canyon creatures there are ruthless, and we are not suited to physical combat. We would be able to reach him, but we would be stranded ourselves.",
    "dst": "그곳 협곡 생물들은 무자비하고, 저희는 싸움에 맞지 않습니다. 가는 건 가능하나 저희마저 발이 묶일 겁니다.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 1",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
-  "The Canyon Guides#027": {
-   "src": "We ask you to guide Seluc to us. We shall send you to him, and you will bring him here. If you wish to help, you will be rewarded for your time.",
-   "dst": "Seluc을 이리로 인도해 주십시오. 그에게 보내 드릴 테니 데려와 주십시오. 도와주신다면 보답하겠습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -312,29 +292,9 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#030": {
-   "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day off cliff diving?",
-   "dst": "잠깐, 인간이잖아! 으, 괜히 기대했네. 뭐야, 오늘은 절벽 다이빙 쉬는 날이야?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 2",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
   "The Canyon Guides#031": {
    "src": "If you really did intend to rescue me, you've assuredly wasted both our time.",
    "dst": "진짜 날 구하러 왔다면 우리 둘 다 시간 낭비한 거야.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 2",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#032": {
-   "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at that, right? Fetching things and people?",
-   "dst": "진짜 쓸모 있고 싶으면 Bantisu 수도승 하나 데려와! 그런 거 잘하잖아? 물건이랑 사람 가져오는 거?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -365,16 +325,6 @@
   "The Canyon Guides#035": {
    "src": "These Jinko are going to pounce any second now!! I haven't got a weapon, were you expecting me to rush off and get into a rumble?!",
    "dst": "Jinko들이 당장이라도 덮치겠어!! 무기도 없는데 내가 뛰쳐나가 싸우길 바랐어?!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 2",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#036": {
-   "src": "Kill them! Kill then now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
-   "dst": "죽여! 당장 죽여! 그리고 날 여기서 꺼내! 네가 이렇게 만들었으니 꺼내 줘!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -415,16 +365,6 @@
   "The Canyon Guides#040": {
    "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair! Besides that...",
    "dst": "걷기만 하고... 여기서 좀 쉴래. 날 절벽에서 뛰어내리게 했으니 난 널 늦추게 할 거야. 공평하지! 게다가...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 3",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#041": {
-   "src": "I only even came here just to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
-   "dst": "경치나 보러 온 거였어. 적어도 그건 못 망치겠지. 그래도 참 대단한 휴가가 됐네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -522,16 +462,6 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#051": {
-   "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into the lake and made me lose my shoes!",
-   "dst": "으, 발 아파 죽겠어. 누가 날 호수에 빠뜨려서 신발 잃게만 안 했어도 이 길이 이렇게 나쁘진 않았을걸!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 3",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
   "The Canyon Guides#052": {
    "src": "More earthquakes...? Wait-",
    "dst": "또 지진...? 잠깐-",
@@ -612,16 +542,6 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#060": {
-   "src": "Huff...puff... Well...huff... Wait, there's...there's no way down to the other side! Huff...what a waste!!",
-   "dst": "헉...헉... 음...헉... 잠깐, 반대편으로... 내려갈 길이 없잖아! 헉...헛고생했네!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 4",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
   "The Canyon Guides#061": {
    "src": "Can you do ANYTHING right?! There's no way I'm jumping down there, you maniac!",
    "dst": "하나라도 제대로 하는 게 있어?! 저기로 뛰어내릴 리가 없잖아, 이 미친놈아!",
@@ -635,16 +555,6 @@
   "The Canyon Guides#062": {
    "src": "YOU-!",
    "dst": "너 이-!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 4",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#063": {
-   "src": "You...had better count yourself lucky I haven't broken any bones over this. Agh...but that doesn't mean I'm not aching all over!!",
-   "dst": "너... 뼈 하나 안 부러진 걸 다행으로 알아. 아으... 그렇다고 온몸이 안 쑤신다는 건 아니야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -812,16 +722,6 @@
    "speaker": "Seluc",
    "source": "wiki"
   },
-  "The Canyon Guides#080": {
-   "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude towards this kind human.",
-   "dst": "교훈으로 삼으십시오, Seluc. 바람으로 보는 자에게 거짓말은 통하지 않습니다. 이 친절한 분께 감사하십시오.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 7",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
   "The Canyon Guides#081": {
    "src": "That's right! See, Gana? After all that, at least the human isn't a liar.",
    "dst": "맞아! 봤지, Gana? 그래도 이 인간은 거짓말쟁이는 아니라고.",
@@ -835,16 +735,6 @@
   "The Canyon Guides#082": {
    "src": "...Well, 'coat fetcher', getting this man his coat is still a fine deed. And for that, you shall be rewarded.",
    "dst": "...그럼, '코트 셔틀'님, 이분께 코트를 찾아 드린 건 훌륭한 일입니다. 그에 대한 보상을 드리지요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 7",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
-  "The Canyon Guides#083": {
-   "src": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
-   "dst": "감사의 뜻으로 Bantisu Air Booster도 쓰실 수 있게 해 드리겠습니다. 협곡 곳곳에 있는 마법 공기 구름입니다. 도움이 되길 바랍니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -878,8 +768,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "ja_jp"
   }
  }

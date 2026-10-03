@@ -1,21 +1,11 @@
 {
  "_meta": {
   "quest": "The Lost",
-  "count": 59,
-  "translated": 48,
+  "count": 57,
+  "translated": 47,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "The Lost#000": {
-   "src": "Find Dejol at [{~}, {~}, {~}]",
-   "dst": "[{~}, {~}, {~}]에서 Dejol을 찾으세요",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Lost",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Lost#001": {
    "src": "Ho, traveler! I need the help of a true explorer, I can see it in your eyes, you are an adventurer like me!",
    "dst": "여어, 여행자! 진짜 탐험가의 도움이 필요해. 눈을 보니 알겠군, 너도 나 같은 모험가야!",
@@ -346,16 +336,6 @@
    "speaker": "Gordon",
    "source": "wiki"
   },
-  "The Lost#034": {
-   "src": "So we're just going to launch ourselves out of this pit? You got it!",
-   "dst": "그러니까 이 구덩이에서 우리 몸을 날리자는 거지? 좋아!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Lost",
-   "stage": "Stage 2",
-   "speaker": "Gordon",
-   "source": "wiki"
-  },
   "The Lost#035": {
    "src": "Alrighty, I'll be right behind you!",
    "dst": "좋아, 바로 뒤따라갈게!",
@@ -518,11 +498,11 @@
   },
   "The Lost#051": {
    "src": "So we're just gonna launch ourselves out of this pit? You got it!",
-   "dst": "",
+   "dst": "그러니까 이 구덩이에서 우리 몸을 날리자는 거지? 좋아!",
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "ja_jp"
   },

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 91,
-  "translated": 81,
+  "count": 83,
+  "translated": 76,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -74,11 +74,11 @@
   },
   "Mushroom Man#006": {
    "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "",
+   "dst": "{u}, 안녕! 여기 정말 좋지 않아? {p}로 가기 전에 좀 더 머물고 싶은데, 곧 준비될 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -104,21 +104,21 @@
   },
   "Mushroom Man#009": {
    "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "",
+   "dst": "흐-흠. 좋아요. 버섯 없인... 수, 수프를 못 끓여요. 따, 따라와요, 거-... 거미한테 데려갈게요. 나, 나쁜 거미.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
   "Mushroom Man#010": {
    "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "",
+   "dst": "아, 자네들이 Aledar가 줄곧 얘기하던 신병들이군. 드디어 만나 반갑네. 그런데 꽤 급히 온 것 같군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -128,7 +128,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -168,7 +168,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },
@@ -178,29 +178,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
-  },
-  "Mushroom Man#017": {
-   "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}]의 {p}에서 Tasim과 대화하세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Mushroom Man#018": {
-   "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "{u}, 안녕! 여기 정말 좋지 않아? {p}로 가기 전에 좀 더 머물고 싶은데, 곧 준비될 거야.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "Tasim",
-   "source": "wiki"
   },
   "Mushroom Man#019": {
    "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
@@ -272,16 +252,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#026": {
-   "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushroms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-Why wouldn't it b-be?",
-   "dst": "오-오! 아뇨, 아, 아무 일도 없어요. 저, 전혀요. 제 버-버-버섯은... 괜찮아요. 왜 무, 묻는 거죠? 다-... 다 조, 좋아요. 아, 안 좋을 이유가 있나요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
   "Mushroom Man#027": {
    "src": "...O-okay, fine, y-you caught me! My mushrooms... my m-mushrooms aren't fine! T-they're bad, even! A-are you hap-... happy now?",
    "dst": "...조-좋아요, 그래요, 드, 들켰네요! 제 버섯... 제 버-버섯이 안 괜찮아요! 오, 오히려 나빠요! 이, 이제 만-... 만족해요?",
@@ -315,16 +285,6 @@
   "Mushroom Man#030": {
    "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
    "dst": "제- 제일 좋아하는 버섯 자리. 이제 쓸 수가-... 없어요. 거미. 거, 거미가 잔뜩. 거길 차, 차, 차지했어요... 버섯을... 못 따요. 거-거-거미 좀 죽여 줄래요? 버섯.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Mushroom Man#032": {
-   "src": "H-hm. Good. I can't m-make soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "흐-흠. 좋아요. 버섯 없인... 수, 수프를 못 끓여요. 따, 따라와요, 거-... 거미한테 데려갈게요. 나, 나쁜 거미.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -380,16 +340,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Mushroom Man#038": {
-   "src": "I-is it done? S-s-spiders... No m-more spiders? Is my m-m-mushroom patch cl-... cleared?",
-   "dst": "끄, 끝났어요? 거-거-거미... 이제 거미 없어요? 제 버-버-버섯밭 치, 치웠-... 치웠어요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
    "source": "wiki"
   },
   "Mushroom Man#039": {
@@ -752,26 +702,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#075": {
-   "src": "Ah, you two must be the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "아, 자네들이 Aledar가 줄곧 얘기하던 신병들이군. 드디어 만나 반갑네. 그런데 꽤 급히 온 것 같군.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#076": {
-   "src": "Right! Right. We've arrived from Nivla Town, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
-   "dst": "네! 네. Nivla 마을에서 왔습니다. 나쁜 소식과 지원 요청을 갖고요. 숲의 거미들이 적대적으로 변해 마을을 위협하고 있습니다.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Mushroom Man#077": {
    "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
    "dst": "주민 한 명이 저희 눈앞에서 붙잡혀 끌려갔습니다. Alvin 촌장님이 {p} 군의 지원을 요청하러 저희를 보냈어요.",
@@ -810,16 +740,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#081": {
-   "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with them.",
-   "dst": "그리고 Van 중위님이 타락한 요새 급습을 계획 중이에요! 병력이 늘면 분명 반기실 거예요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Mushroom Man#082": {

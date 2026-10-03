@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Memory Paranoia",
-  "count": 139,
-  "translated": 104,
+  "count": 133,
+  "translated": 109,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -22,17 +22,17 @@
   },
   "Memory Paranoia#001": {
    "src": "But... Eventually... Erm, we're not entirely sure what happened, only rumours have surfaced over the years, but... things took a turn, shall we say.",
-   "dst": "",
+   "dst": "Pero... con el tiempo... Ejem, no sabemos bien qué pasó, con los años solo han corrido rumores, pero... la cosa cambió, por decirlo así.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#002": {
    "src": "Because, aah... How shall I put this... One day they were all... discovered dead. Murdered. By each other.",
-   "dst": "",
+   "dst": "Porque, aah... cómo lo diría... Un día aparecieron todos... muertos. Asesinados. Entre ellos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -42,7 +42,7 @@
   },
   "Memory Paranoia#003": {
    "src": "Since, erm... Since there was no one alive to report the incident, it wasn't discovered until days later when a traveller passing by took notice of the mansion.",
-   "dst": "",
+   "dst": "Como, ejem... como no quedaba nadie vivo para dar aviso, no se descubrió hasta días después, cuando un viajero de paso se fijó en la mansión.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -52,7 +52,7 @@
   },
   "Memory Paranoia#004": {
    "src": "Yet, I am... scared of this place. It is the ruins of the life I should have had. The spirits of the dead are still there... Cursed. I need someone else to uncover my heritage.",
-   "dst": "",
+   "dst": "Y aun así... este lugar me da miedo. Son las ruinas de la vida que debí tener. Los espíritus de los muertos siguen ahí... malditos. Necesito que otro descubra mi origen.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -92,8 +92,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured",
    "similar": {
     "text": "I'll bet he's writing insults about us. He can't be as nice as he appears.",
@@ -114,7 +114,7 @@
   },
   "Memory Paranoia#009": {
    "src": "G-g-ghosts?!",
-   "dst": "",
+   "dst": "¿F-f-fantasmas?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -250,17 +250,17 @@
   },
   "Memory Paranoia#022": {
    "src": "Thank you very much, Father, and everyone here. Here's to more years of health-",
-   "dst": "",
+   "dst": "Gracias, papá, y a todos. Brindo por muchos años de salud-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#023": {
    "src": "My god... What is wrong with this place? No matter what I do, what I try...",
-   "dst": "",
+   "dst": "Dios mío... ¿qué pasa aquí? Haga lo que haga, pruebe lo que pruebe...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -270,7 +270,7 @@
   },
   "Memory Paranoia#024": {
    "src": "...Timothy, I'm going to ask you something, and I need you to answer me honestly. Were you... Were you responsible for this?",
-   "dst": "",
+   "dst": "...Timothy, voy a preguntarte algo y necesito que me respondas con sinceridad. ¿Fuiste tú...? ¿Fuiste tú el responsable de esto?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -320,7 +320,7 @@
   },
   "Memory Paranoia#029": {
    "src": "THAT WHICH STARTED THIS WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
-   "dst": "",
+   "dst": "LO QUE INICIÓ LA GUERRA SE ALZARÁ DE NUEVO. DESDE EL REINO DE SOMBRAS, ENGAÑO Y DOLOR.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -330,12 +330,12 @@
   },
   "Memory Paranoia#030": {
    "src": "FOREVER TRAPPED, FROM WHENCE IT CAME. THROUGH THE WEAK POINT BETWEEN REALMS IT. SHALL. RISE. AGAIN!",
-   "dst": "",
+   "dst": "ATRAPADO PARA SIEMPRE ALLÍ DE DONDE VINO. POR EL PUNTO DÉBIL ENTRE REINOS ¡SE. ALZARÁ. DE. NUEVO!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#031": {
@@ -350,12 +350,12 @@
   },
   "Memory Paranoia#032": {
    "src": "FROM SOILS OF DOOM THE SERVANT LAID",
-   "dst": "",
+   "dst": "DE LAS TIERRAS DE PERDICIÓN QUE EL SIERVO SEMBRÓ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#033": {
@@ -401,16 +401,6 @@
   "Memory Paranoia#038": {
    "src": "The Caritats were unlike any other. Uncharacteristically selfless and helpful. Their wealth was everyone’s wealth as far as they were concerned.",
    "dst": "Los Caritat no eran como los demás. Generosos y serviciales, algo insólito en su clase. Para ellos, su riqueza era la riqueza de todos.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
-   "source": "wiki"
-  },
-  "Memory Paranoia#039": {
-   "src": "But... Eventually... Erm, we’re not entirely sure what happened, only rumours have surfaced over the years, but...things took a turn, shall we say.",
-   "dst": "Pero... con el tiempo... Ejem, no sabemos bien qué pasó, con los años solo han corrido rumores, pero... la cosa cambió, por decirlo así.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -576,16 +566,6 @@
    "quest": "Memory Paranoia",
    "stage": "Stage 3",
    "speaker": "Timmy",
-   "source": "wiki"
-  },
-  "Memory Paranoia#056": {
-   "src": "I'll bet he's writing insults about us. He can't be as nice as he appears.",
-   "dst": "Seguro que escribe pestes de nosotros. No será tan bueno como parece.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 3",
-   "speaker": "Maid",
    "source": "wiki"
   },
   "Memory Paranoia#057": {
@@ -788,16 +768,6 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#077": {
-   "src": "Thank you very much, Dad, and everyone here. Here's to more years of health-",
-   "dst": "Gracias, papá, y a todos. Brindo por muchos años de salud-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 8",
-   "speaker": "Timothy",
-   "source": "wiki"
-  },
   "Memory Paranoia#078": {
    "src": "Please, everyone stay calm. I'm sure it's just the cooks spilling something...",
    "dst": "Calma todos, por favor. Seguro que los cocineros han tirado algo...",
@@ -938,16 +908,6 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#092": {
-   "src": "Wait, you got it from my STUDY?! You...you idiot! Do you have any idea what you stupidly, yet inadvertently have done?! You must NEVER go in my study!!",
-   "dst": "Espera, ¿¡la sacaste de mi DESPACHO!? ¡Serás idiota! ¿¡Tienes idea de la estupidez que has cometido sin querer!? ¡¡JAMÁS entres en mi despacho!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 11",
-   "speaker": "Mr. Caritat",
-   "source": "wiki"
-  },
   "Memory Paranoia#093": {
    "src": "Unlock the Study.",
    "dst": "Abre el despacho.",
@@ -991,16 +951,6 @@
   "Memory Paranoia#097": {
    "src": "IT WHICH STARTED THE WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
    "dst": "LO QUE INICIÓ LA GUERRA SE ALZARÁ DE NUEVO. DESDE EL REINO DE SOMBRAS, ENGAÑO Y DOLOR.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 15",
-   "speaker": "Mr. Caritat",
-   "source": "wiki"
-  },
-  "Memory Paranoia#098": {
-   "src": "FOREVER TRAPPED, FROM WHENCE IT CAME. THROUGH THE WEAK POINT BETWEEN REALMS IT. WILL. RISE. AGAIN!",
-   "dst": "ATRAPADO PARA SIEMPRE ALLÍ DE DONDE VINO. POR EL PUNTO DÉBIL ENTRE REINOS ¡SE. ALZARÁ. DE. NUEVO!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -1096,16 +1046,6 @@
    "quest": "Memory Paranoia",
    "stage": "Stage 21",
    "speaker": "Mrs. Caritat",
-   "source": "wiki"
-  },
-  "Memory Paranoia#108": {
-   "src": "FROM THE SOILS OF DOOM THE SERVANT LAID",
-   "dst": "DE LAS TIERRAS DE PERDICIÓN QUE EL SIERVO SEMBRÓ",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 21",
-   "speaker": "Mr. Caritat",
    "source": "wiki"
   },
   "Memory Paranoia#109": {

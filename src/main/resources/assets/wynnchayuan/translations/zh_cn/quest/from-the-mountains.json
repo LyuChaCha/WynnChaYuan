@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "From the Mountains",
-  "count": 81,
-  "translated": 60,
+  "count": 74,
+  "translated": 61,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "From the Mountains#000": {
    "src": "Mmph! Humnym! Mah houfhs fhs om fifhre! Gft hfrelp, tiff brafze womd strfp!",
-   "dst": "",
+   "dst": "唔唔！人唔类！我唔房子唔着火唔了！快唔找唔人唔，快唔去唔灭火！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#001": {
@@ -128,7 +128,7 @@
   },
   "From the Mountains#012": {
    "src": "Eh, I'll see when we get there... Oh, what am I doing over here? Yeah, I suppose I do look different from the fare you'd have seen. Well, I'm a dwarf.",
-   "dst": "",
+   "dst": "呃，到了再看吧。噢，我在这边干什么？是啊，我想我看起来跟你平常见到的家伙不太一样。嗯，我是矮人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -148,12 +148,12 @@
   },
   "From the Mountains#014": {
    "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-lighting, then maybe...",
-   "dst": "",
+   "dst": "那就是那栋房子，嗯？好吧，我看看能做些什么。也许灭不了火，但如果它一直重新烧起来，那也许……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#015": {
@@ -168,52 +168,52 @@
   },
   "From the Mountains#016": {
    "src": "There's a black market issue in the {p}. Things that you can't find anywhere else are harvested in the Heights for their high value.",
-   "dst": "",
+   "dst": "{p} 有黑市问题。那些在别处找不到的东西，因为价值高而在高地被大肆捕采。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#017": {
    "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. We still have work to do.",
-   "dst": "",
+   "dst": "货车我修好了，你把火灵都抓到了吗？那到货车这边来吧。还有活要干。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#018": {
    "src": "...oh. Well, didn't notice that the fires went THAT far earlier. That's a problem, isn't it?",
-   "dst": "",
+   "dst": "……噢。嗯，刚才没注意到火烧到那么远了。这是个问题，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#019": {
    "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed off cinders and fire... And for this much damage to be caused, well...",
-   "dst": "",
+   "dst": "解释一下，火灵不是全都像我们在这里找到的这么小。它们靠余烬和火为食……而要造成这么大的破坏，嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#020": {
    "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well...I got a free cart for the ride home. There's a thing for me to attend to there.",
-   "dst": "",
+   "dst": "我会去问问本地警方有没有抓到那些走私贩。如果他们跑了，嗯……我就白得一辆回家的货车。我在老家还有事要处理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#021": {
@@ -224,16 +224,6 @@
    "quest": "From the Mountains",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "From the Mountains#022": {
-   "src": "Mmph! Humnym! Mah houfhs fhs on fifhre! Gft hfrelp, tiff brafze womd strfp!",
-   "dst": "唔唔！人唔类！我唔房子唔着火唔了！快唔找唔人唔，快唔去唔灭火！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 1",
-   "speaker": "Arnod",
    "source": "wiki"
   },
   "From the Mountains#023": {
@@ -386,16 +376,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "From the Mountains#040": {
-   "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-igniting, then maybe...",
-   "dst": "那就是那栋房子，嗯？好吧，我看看能做些什么。也许灭不了火，但如果它一直重新烧起来，那也许……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 3",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#042": {
    "src": "Aha! Here's the problem. It's just a little Fleris. Ehm, to explain, they normally live in the Heights.",
    "dst": "啊哈！问题就在这。只是一只小火灵。呃，解释一下，它们平常住在高地。",
@@ -516,16 +496,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "From the Mountains#054": {
-   "src": "There's a black market issue in the {p}. Things that you can't find anywhere else is harvested in the Heights for their high value.",
-   "dst": "{p} 有黑市问题。那些在别处找不到的东西，因为价值高而在高地被大肆捕采。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 4",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#055": {
    "src": "Flerisi are one of them. In the Heights, they're kept as pets. They're relatively friendly, keep your house warm, and don't need much care...",
    "dst": "火灵就是其中之一。在高地，人们把它们当宠物养。它们相对友善，能让屋子保暖，也不需要怎么照顾……",
@@ -566,16 +536,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "From the Mountains#059": {
-   "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. There's still have work to do.",
-   "dst": "货车我修好了，你把火灵都抓到了吗？那到货车这边来吧。还有活要干。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#060": {
    "src": "I'll keep the Flerisi in a smaller fire to keep them calm, see if I can't get them back to the Heights when this is done.",
    "dst": "我会把火灵放在小一点的火里让它们保持冷静，看看等这件事结束后能不能把它们送回高地。",
@@ -589,26 +549,6 @@
   "From the Mountains#061": {
    "src": "For now, I want to see if I can find anything on who these traffickers were. Let's see if they left anything in the front of the cart.",
    "dst": "现在，我想看看能不能找到关于这些走私贩的线索。看看他们有没有在货车前面留下什么。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#062": {
-   "src": "...oh. Well, didn't notice that the fire went THAT far earlier. That's a problem, isn't it?",
-   "dst": "……噢。嗯，刚才没注意到火烧到那么远了。这是个问题，对吧？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#063": {
-   "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed of cinders and fire... And for this much damage to be caused, well...",
-   "dst": "解释一下，火灵不是全都像我们在这里找到的这么小。它们靠余烬和火为食……而要造成这么大的破坏，嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -779,16 +719,6 @@
   "From the Mountains#080": {
    "src": "Well, I say the work is thankless, but that won't stop me, anyways. Thank you for the help, human- This would've been overwhelming alone.",
    "dst": "嗯，我是说这活没人感谢，不过那也拦不住我。谢谢你的帮忙，人类——要是我一个人，肯定应付不过来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 9",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#081": {
-   "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well... I got a free cart for the ride home. There's thing for me to attend to there.",
-   "dst": "我会去问问本地警方有没有抓到那些走私贩。如果他们跑了，嗯……我就白得一辆回家的货车。我在老家还有事要处理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",

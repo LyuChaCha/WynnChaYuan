@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lazarus Pit (Quest)",
-  "count": 97,
-  "translated": 77,
+  "count": 94,
+  "translated": 79,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -86,16 +86,6 @@
    "speaker": "Gelibord Guard",
    "source": "wiki"
   },
-  "Lazarus Pit (Quest)#008": {
-   "src": "Hey! Over here, you alright? Come talk to me, I can explain what just happened.",
-   "dst": "이봐! 이쪽이야, 괜찮아? 이리 와, 방금 무슨 일인지 설명해 줄게.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
   "Lazarus Pit (Quest)#009": {
    "src": "Check in with Burtur about the attack at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}]의 Burtur에게 습격에 대해 물어보세요",
@@ -129,16 +119,6 @@
   "Lazarus Pit (Quest)#012": {
    "src": "It's a bit sacrilegious, but necessary to do right now- otherwise they just keep coming back, like they do across the ridge in Kander.",
    "dst": "좀 불경하긴 해도 지금은 꼭 해야 해- 안 그러면 능선 너머 Kander처럼 자꾸 되살아나거든.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#013": {
-   "src": "The ones around here all come up from the river, though, and since it runs right through the town, well... You can see the problem.",
-   "dst": "그런데 이 근처 것들은 다 강에서 올라와. 그 강이 마을을 관통하니까, 뭐... 문제가 뭔지 알겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -429,16 +409,6 @@
   "Lazarus Pit (Quest)#043": {
    "src": "Oh, you found it! Wonderful! Just pop it on that fingerbone right there... Ah, it fits even better on the other hand!",
    "dst": "오, 찾았군요! 멋져요! 거기 손가락뼈에 끼워 주세요... 아, 다른 손에 더 잘 맞네요!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 6",
-   "speaker": "Sir Pigglesworth the Thirty-Fifth",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#044": {
-   "src": "The crypt, you say? I can offer my blessing to enter, but you'll need to check with the other tombs as well. Farewell!",
-   "dst": "지하 묘실이요? 들어가도록 축복해 드릴 순 있지만, 다른 무덤들에게도 확인해야 해요. 잘 가요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -778,22 +748,22 @@
   },
   "Lazarus Pit (Quest)#078": {
    "src": "Hey! Over there, you alright? Come talk to me, I can explain what just happened.",
-   "dst": "",
+   "dst": "이봐! 이쪽이야, 괜찮아? 이리 와, 방금 무슨 일인지 설명해 줄게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Burtur",
    "source": "captured"
   },
   "Lazarus Pit (Quest)#079": {
    "src": "The ones around here all come up from the river, though, and since it runs right through town, well... You can see the problem.",
-   "dst": "",
+   "dst": "그런데 이 근처 것들은 다 강에서 올라와. 그 강이 마을을 관통하니까, 뭐... 문제가 뭔지 알겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Burtur",
    "source": "captured"
   },
   "Lazarus Pit (Quest)#080": {
@@ -818,7 +788,7 @@
   },
   "Lazarus Pit (Quest)#082": {
    "src": "Oh, you found something? Well, color me shocked that there was any stock to Referick's ranting...",
-   "dst": "",
+   "dst": "오, 뭔가 찾았어? 허, Referick의 헛소리에 조금이라도 근거가 있었다니 놀랍네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -828,7 +798,7 @@
   },
   "Lazarus Pit (Quest)#083": {
    "src": "'Chapel of an ancient order'? There's a chapel just northwest of here. I'd say investigate that! I have to stick around here in case of another attack, but...",
-   "dst": "",
+   "dst": "옛 교단의 예배당? 바로 북서쪽에 예배당이 하나 있어. 거길 조사해 봐! 난 또 습격이 있을까 봐 여기 있어야 하지만...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
@@ -888,11 +858,11 @@
   },
   "Lazarus Pit (Quest)#089": {
    "src": "The crypt, you say? I can offer my blessing to enter, but you'll need to check with the other tombs around as well. Farewell!",
-   "dst": "",
+   "dst": "지하 묘실이요? 들어가도록 축복해 드릴 순 있지만, 다른 무덤들에게도 확인해야 해요. 잘 가요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "Sir Pigglesworth the Thirty-Fifth\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
