@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Memory Paranoia",
   "count": 133,
-  "translated": 109,
+  "translated": 133,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Memory Paranoia#000": {
    "src": "Oh, a human? If I could beg your pardon a moment... could I talk to you about the mansion here?",
-   "dst": "",
+   "dst": "おや、人間か？少しだけ時間をもらえないだろうか……この屋敷について話をさせてもらえないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -58,7 +58,7 @@
   },
   "Memory Paranoia#005": {
    "src": "It's so kind of the Caritats to donate these supplies to the struggling people in the forest.",
-   "dst": "",
+   "dst": "Caritat 家がこの物資を森で困っている人たちに寄付してくれるなんて、本当にやさしいわね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -74,7 +74,7 @@
   },
   "Memory Paranoia#006": {
    "src": "Mr. Caritat is always writing so intensely in that book... I do wonder what he could be saying.",
-   "dst": "",
+   "dst": "Caritat さまはいつもあの本に熱心に書き込んでいる……いったい何を書いているのだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -84,7 +84,7 @@
   },
   "Memory Paranoia#007": {
    "src": "I'll bet he's writing insults about us or something. He can't be as nice as he appears, no one is!",
-   "dst": "",
+   "dst": "きっと僕らの悪口か何かを書いてるんだ。見た目どおりにいい人なわけがない、誰だってそうだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -100,7 +100,7 @@
   },
   "Memory Paranoia#008": {
    "src": "Come on, Timmy. Mr. Caritat is crazily sweet. I doubt he'd be upset, even if you'd thrown it down there on purpose.",
-   "dst": "",
+   "dst": "やめなさい、Timmy。Caritat さまはとてもやさしい方よ。わざと落としたのだとしても、お怒りにはならないと思うわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -120,7 +120,7 @@
   },
   "Memory Paranoia#010": {
    "src": "Mr. Caritat looks very engrossed in his writing... you best not disturb him.",
-   "dst": "",
+   "dst": "Caritat さまは書き物にすっかり没頭しているようだ……邪魔しないほうがいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -130,7 +130,7 @@
   },
   "Memory Paranoia#011": {
    "src": "I've forgotten, where should I look for my Library Key?",
-   "dst": "",
+   "dst": "忘れてしまった。Library Key はどこを探せばいいんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -140,7 +140,7 @@
   },
   "Memory Paranoia#012": {
    "src": "The drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, you should check there.",
-   "dst": "",
+   "dst": "排水管が今ごろ鍵を屋敷の南東の隅の地下室まで運んでいるだろうから、そこを調べるといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -156,7 +156,7 @@
   },
   "Memory Paranoia#013": {
    "src": "Page {~}: The Caritats are as nice as people say. They're some of the kindest people I've ever met, let alone work for.",
-   "dst": "",
+   "dst": "{~}ページ：Caritat 家は噂どおりに善良だ。働かせてもらっている身を差し引いても、出会った中で最も心やさしい人たちだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -166,7 +166,7 @@
   },
   "Memory Paranoia#014": {
    "src": "Page {~}: That Timmy boy has been acting rather unusual lately... Uncharacteristically hostile. I wonder what's come over him.",
-   "dst": "",
+   "dst": "{~}ページ：あの Timmy という子は、最近かなり様子がおかしい……らしくもなく敵意をむき出しにしている。何があったのだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -176,7 +176,7 @@
   },
   "Memory Paranoia#015": {
    "src": "Page {~}: I've been hearing strange noises at night. Scratching, and sometimes yelling... I do hope nothing bad is going on.",
-   "dst": "",
+   "dst": "{~}ページ：夜になると奇妙な音が聞こえる。引っかくような音、ときには叫び声も……悪いことが起きていなければいいのだが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -186,7 +186,7 @@
   },
   "Memory Paranoia#016": {
    "src": "Page {~}: I don't even know how this happened, but Timmy performed dark magic. He shot a fireball! The north wall of the library was wrecked!",
-   "dst": "",
+   "dst": "{~}ページ：どうしてこうなったのかすら分からないが、Timmy が闇の魔法を使った。火の玉を放ったのだ！図書室の北の壁が壊されてしまった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -196,7 +196,7 @@
   },
   "Memory Paranoia#017": {
    "src": "It appears that all of the pages have been torn out...",
-   "dst": "",
+   "dst": "ページがすべて引きちぎられているようだ……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -206,7 +206,7 @@
   },
   "Memory Paranoia#018": {
    "src": "Aw man, I can't believe I'm not allowed to sit with the adults. I'm nearly twelve!",
-   "dst": "",
+   "dst": "ああもう、大人と一緒に座らせてもらえないなんて信じられない。もうすぐ十二歳なのに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -216,7 +216,7 @@
   },
   "Memory Paranoia#019": {
    "src": "They appear to be chatting about local politics.",
-   "dst": "",
+   "dst": "どうやら地元の政治について話しているようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -226,7 +226,7 @@
   },
   "Memory Paranoia#020": {
    "src": "You hold up the spoon...",
-   "dst": "",
+   "dst": "あなたはスプーンを掲げる……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -236,7 +236,7 @@
   },
   "Memory Paranoia#021": {
    "src": "It's been depleted of its magic. How disappointing.",
-   "dst": "",
+   "dst": "魔力はすっかり抜けてしまっている。がっかりだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -276,7 +276,7 @@
   },
   "Memory Paranoia#025": {
    "src": "Never, never!! That study is off-limits to everyone, even your mother! If I had known back then, I'd... I'd have... urgh...",
-   "dst": "",
+   "dst": "絶対にだめだ、絶対に！！あの書斎は誰も立ち入ってはならん、お前の母親でさえもだ！あのとき知っていれば、私は……私は……うぅ……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -286,7 +286,7 @@
   },
   "Memory Paranoia#026": {
    "src": "Page {~}: DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH.",
-   "dst": "",
+   "dst": "{~}ページ：死 死 死 死 死 死 死 死 死 死 死。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -296,7 +296,7 @@
   },
   "Memory Paranoia#027": {
    "src": "Page {~}: There is a dark power beyond our control within this mansion. There is no use trying to fight it.",
-   "dst": "",
+   "dst": "{~}ページ：この屋敷の中には、我々の手に負えない闇の力がある。抗おうとしても無駄だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -306,7 +306,7 @@
   },
   "Memory Paranoia#028": {
    "src": "Page {~}: I felt like all of the skulls were watching me. I have had to turn them all towards the fireplace.",
-   "dst": "",
+   "dst": "{~}ページ：頭骨すべてに見られているような気がした。仕方なく、全部を暖炉のほうへ向けておいた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -336,7 +336,7 @@
   },
   "Memory Paranoia#031": {
    "src": "Dear Anton, the chandelier fell in the main hall. Please fix it as soon as possible.",
-   "dst": "",
+   "dst": "Anton へ、大広間のシャンデリアが落ちた。できるだけ早く直してほしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -356,7 +356,7 @@
   },
   "Memory Paranoia#033": {
    "src": "All you have to do, is go in there and find answers. I'm sure the past won't haunt us both. Something happened here all those years ago... I want to know what.",
-   "dst": "",
+   "dst": "お前はただ中に入って答えを見つけてくればいい。過去が我々二人をともに苛むことはないだろう。あれだけ昔、ここで何かが起きた……それが何なのかを知りたいのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -366,7 +366,7 @@
   },
   "Memory Paranoia#034": {
    "src": "I don't think it's wise you enter the mansion ever again...",
-   "dst": "",
+   "dst": "お前が二度とあの屋敷に入るのは賢明だとは思えん……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
