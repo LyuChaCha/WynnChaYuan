@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ko_kr",
-  "count": 24808,
-  "translated": 23407,
+  "count": 24778,
+  "translated": 23377,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -9752,7 +9752,7 @@
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
    "stage": "",
-   "speaker": "",
+   "speaker": "???",
    "source": "captured"
   },
   "A Marauder's Dues#002": {
@@ -10088,16 +10088,6 @@
   "A Marauder's Dues#035": {
    "src": "At least the last ones to face me had some coordination, and the sense to hide themselves. Come further and you'll share their fate!!",
    "dst": "적어도 전에 온 놈들은 손발도 좀 맞고, 숨을 줄도 알았지. 더 다가오면 그놈들과 같은 꼴이 될 거다!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Marauder's Dues",
-   "stage": "",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "A Marauder's Dues#036": {
-   "src": "..rrgh! The tunnels! Once again, humans try so hard to spoil my fun... But do you really think you've evaded me?",
-   "dst": "..크윽! 터널이라니! 인간들은 또 내 재미를 망치려고 애를 쓰는군... 하지만 정말 날 따돌렸다고 생각하나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -17323,7 +17313,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mané\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -18922,16 +18912,6 @@
   "Aldorei's Secret Part II#198": {
    "src": "So why did you wake me up?",
    "dst": "그래서 왜 깨웠어?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mané",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#199": {
-   "src": "...Because I'm tired?",
-   "dst": "...피곤하니까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -24819,16 +24799,6 @@
    "speaker": "Guard Bitteliso",
    "source": "wiki"
   },
-  "All Roads to Peace#057": {
-   "src": "Hm...HM!! Human, uh, human good healer! Heal own injury with medicine! Human will help!",
-   "dst": "흠...흠!! 인간, 어, 인간 좋은 치유사! 자기 상처 약으로 고침! 인간이 도울 것!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 5",
-   "speaker": "Zuett",
-   "source": "wiki"
-  },
   "All Roads to Peace#058": {
    "src": "Gwuh?! Zuett! Lying bad! Human idiot no hea-",
    "dst": "크윽?! Zuett! 거짓말 나쁨! 바보 인간 못 고-",
@@ -26929,16 +26899,6 @@
    "speaker": "Nunexetor",
    "source": "wiki"
   },
-  "All Roads to Peace#268": {
-   "src": "... Your shoe's unlaced, human.",
-   "dst": "... 신발 끈 풀렸어, 인간.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Blueberry",
-   "source": "wiki"
-  },
   "All Roads to Peace#269": {
    "src": "What? You aren't even wearing those kinds of shoes.",
    "dst": "뭐? 넌 그런 신발도 안 신었잖아.",
@@ -28441,8 +28401,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Zuett",
    "source": "captured"
   },
   "All Roads to Peace#419": {
@@ -29327,8 +29287,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Blueberry",
    "source": "captured"
   },
   "All Roads to Peace#507": {
@@ -51033,8 +50993,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Kymer",
    "source": "captured"
   },
   "Clearing the Camps#009": {
@@ -51150,16 +51110,6 @@
   "Clearing the Camps#020": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
    "dst": "이런 정밀 타격이면 오크와의 전면전은 막을 수 있겠지. 지방마다 전면전을 치르고 싶진 않으니까, 하!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Clearing the Camps",
-   "stage": "Stage 3",
-   "speaker": "Captain Kymer",
-   "source": "wiki"
-  },
-  "Clearing the Camps#021": {
-   "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
-   "dst": "밖에서 봤겠지만, Gavel의 생물들은 Wynn 것들과 차원이 다르지? 좀, 어... 유난히 팔팔하다네. 익숙해지는 게 좋을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -56020,16 +55970,6 @@
   "Dearly Departed#017": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
    "dst": "스킬 포인트잖아! 레벨이 오르면 얻는데, 배분하면 전투에서 보너스를 받아. 난 군인은 아니지만 그건 꼭 써야 한다는 건 알아...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dearly Departed",
-   "stage": "Stage 3",
-   "speaker": "Farmer Cevalus",
-   "source": "wiki"
-  },
-  "Dearly Departed#018": {
-   "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
-   "dst": "다섯 가지야. 힘, 민첩, 지능, 방어, 재빠름. 각각 보너스가 달라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -88901,8 +88841,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#012": {
@@ -88921,8 +88861,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#014": {
@@ -88941,8 +88881,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#016": {
@@ -89075,16 +89015,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "From the Mountains#029": {
-   "src": "Hm... where am I going to get help now- Mh? You're one of those human types, right? Do you have-",
-   "dst": "흠... 이제 어디서 도움을 구하지- 응? 너 인간 부류지? 혹시-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 3",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#030": {
    "src": "Huh? Someone's house is on fire? Guess that's a little more pressing than what I was going to ask. Where is it?",
    "dst": "응? 누구 집에 불이 났다고? 내가 물어보려던 것보다 급하겠네. 어디야?",
@@ -89165,16 +89095,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "From the Mountains#038": {
-   "src": "...and where there's smoke, there's fire. This is, uh... that's looking a little more like home, and I'm fairly certain that it isn't supposed to be.",
-   "dst": "...아니 땐 굴뚝에 연기 나랴. 이건, 어... 점점 고향처럼 보이는데, 그러면 안 되는 게 확실하거든.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 3",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#039": {
    "src": "Yep, this fire isn't natural at all... Hell, this almost looks like arson to me!",
    "dst": "그래, 이 불은 전혀 자연스럽지 않아... 젠장, 거의 방화 같은데!",
@@ -89188,16 +89108,6 @@
   "From the Mountains#040": {
    "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-igniting, then maybe...",
    "dst": "그래서 저게 그 집이라고? 좋아, 뭘 할 수 있나 보자. 끄진 못해도 다시 붙는 거라면, 어쩌면...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 3",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#041": {
-   "src": "Hm... didn't think they'd be this far out, but it'd make sense if...",
-   "dst": "흠... 이렇게 멀리까지 나왔을 줄은 몰랐는데, 만약... 이라면 말이 되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -95217,7 +95127,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 14",
    "speaker": "Garvan\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95227,7 +95137,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 14",
    "speaker": "Katarin\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95267,8 +95177,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Katarin",
    "source": "captured"
   },
   "Hollow Serenity#148": {
@@ -95297,8 +95207,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Garvan",
    "source": "captured"
   },
   "Hollow Serenity#151": {
@@ -95317,8 +95227,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Garvan",
    "source": "captured"
   },
   "Hollow Serenity#153": {
@@ -97841,16 +97751,6 @@
    "speaker": "Garvan",
    "source": "wiki"
   },
-  "Hollow Serenity#405": {
-   "src": "...Good. This had better not be a lie. You; tell the others that we are heading there now. Kill everyone at the manor and any witnesses; leave the heir alive.",
-   "dst": "...좋다. 거짓말이 아니어야 할 거다. 너, 다른 자들에게 지금 그리로 간다고 전해. 저택 사람과 목격자는 전부 죽이고, 후계자는 살려 둬라.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Mysterious Leader",
-   "source": "wiki"
-  },
   "Hollow Serenity#406": {
    "src": "W-WHAT?",
    "dst": "뭐, 뭐라고?",
@@ -97869,16 +97769,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 14",
    "speaker": "Garvan",
-   "source": "wiki"
-  },
-  "Hollow Serenity#408": {
-   "src": "...M-Mother... why d-do I have to stay here?",
-   "dst": "...어, 엄마... 왜 여, 여기 있어야 해요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Eileen",
    "source": "wiki"
   },
   "Hollow Serenity#409": {
@@ -97919,16 +97809,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 14",
    "speaker": "Servant",
-   "source": "wiki"
-  },
-  "Hollow Serenity#413": {
-   "src": "...Who the hell are you all?",
-   "dst": "...너희는 대체 누구지?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Katarin",
    "source": "wiki"
   },
   "Hollow Serenity#414": {
@@ -98031,29 +97911,9 @@
    "speaker": "Mysterious Leader",
    "source": "wiki"
   },
-  "Hollow Serenity#424": {
-   "src": "...I should have known. I-I... my love... y-you're gone.",
-   "dst": "...알았어야 했는데. 내, 내... 사랑... 다, 당신이 떠났군요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Garvan",
-   "source": "wiki"
-  },
   "Hollow Serenity#425": {
    "src": "DAMN IT! DAMN IT DAMN IT DAMN IT AAAAALLLL!!!!",
    "dst": "젠장! 젠장 젠장 젠장 다 젠자아아앙!!!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Garvan",
-   "source": "wiki"
-  },
-  "Hollow Serenity#426": {
-   "src": "This is... W-why did this have to happen? ...I-I can't... this can't end like this...",
-   "dst": "이건... 왜, 왜 이렇게 돼야 했지? ...나, 난 못... 이렇게 끝날 순 없어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -100617,8 +100477,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
    "source": "captured"
   },
   "Ice Nations#001": {
@@ -100784,16 +100644,6 @@
   "Ice Nations#017": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
    "dst": "보물이 우리에게 없다는 걸 이해시키려 했지만 소용없었네.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Ice Nations",
-   "stage": "Stage 3",
-   "speaker": "Adigard",
-   "source": "wiki"
-  },
-  "Ice Nations#018": {
-   "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
-   "dst": "... 사실 우리가 난파한 건 자연재해 때문이 아니었네. 습격을 받았지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -104601,16 +104451,6 @@
    "speaker": "Burtur",
    "source": "wiki"
   },
-  "Lazarus Pit (Quest)#019": {
-   "src": "It's... probably just Referick having made the rounds to any drunk who would listen a while back, but it's also our only shot. If you could give it a search, and a yay or nay?",
-   "dst": "아마... Referick이 예전에 들어 줄 술꾼마다 붙잡고 떠든 얘기겠지만, 우리한텐 유일한 기회야. 한번 찾아보고 맞는지 아닌지 알려 줄래?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 2",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
   "Lazarus Pit (Quest)#020": {
    "src": "I'll stay back at the town square, in case the undead attack again. Give me a shout if you find something you aren't sure about.",
    "dst": "난 언데드가 또 올지 모르니 마을 광장에 남을게. 확신이 안 서는 걸 찾으면 불러.",
@@ -105217,8 +105057,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Burtur",
    "source": "captured"
   },
   "Lazarus Pit (Quest)#081": {
@@ -105523,8 +105363,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Amira",
    "source": "captured"
   },
   "Lexdale Witch Trials#013": {
@@ -105533,8 +105373,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
    "source": "captured"
   },
   "Lexdale Witch Trials#014": {
@@ -105847,29 +105687,9 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#045": {
-   "src": "Gah, finally! You're seeing sense! It's almost like something just... took you over one day and never left 'til now!",
-   "dst": "아, 드디어! 이제야 정신을 차렸네! 마치 뭔가가 어느 날 당신을... 사로잡았다가 지금까지 안 떠난 것 같더라!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 8",
-   "speaker": "Amira",
-   "source": "wiki"
-  },
   "Lexdale Witch Trials#046": {
    "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
    "dst": "...흠. 그건... 음. 어쨌든. 인간이여, 당신은 믿을 만하다는 걸 증명했소. 우리의 문은 늘 열려 있을 것이오.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 8",
-   "speaker": "The Mayor",
-   "source": "wiki"
-  },
-  "Lexdale Witch Trials#047": {
-   "src": "As for the... THING... Well... I'll be sure to inform the Gavel government.",
-   "dst": "그... 그것에 대해서는... 뭐... Gavel 정부에 꼭 알리겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -109545,8 +109365,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#001": {
@@ -109915,16 +109735,6 @@
    "quest": "Memory Paranoia",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Memory Paranoia#036": {
-   "src": "Oh, a human? If I could beg your pardon a moment...could I talk to you about the mansion here?",
-   "dst": "오, 인간이군요? 잠시 실례해도 될까요... 여기 저택에 대해 이야기를 좀 나눌 수 있을까요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
    "source": "wiki"
   },
   "Memory Paranoia#037": {
@@ -132717,8 +132527,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
    "source": "captured"
   },
   "Potion Making#001": {
@@ -132727,8 +132537,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "The Assistant",
    "source": "captured"
   },
   "Potion Making#002": {
@@ -132791,16 +132601,6 @@
    "speaker": "The Assistant",
    "source": "wiki"
   },
-  "Potion Making#008": {
-   "src": "I was...in support of this... but then, he accrued essence of...the corruption. I had to run away...",
-   "dst": "저도... 찬성했었죠... 그런데 그가... 타락의 정수를 손에 넣었어요. 도망칠 수밖에...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Potion Making",
-   "stage": "Stage 1",
-   "speaker": "The Assistant",
-   "source": "wiki"
-  },
   "Potion Making#009": {
    "src": "I fear...that he may be going...too far. I need your help...",
    "dst": "그가... 너무 멀리 가는 것 같아서... 도움이 필요해요...",
@@ -132814,16 +132614,6 @@
   "Potion Making#010": {
    "src": "I want...to stop him...but I need you to...get me the necessary ingredients... to neutralize the potion...",
    "dst": "그를... 막고 싶어요... 그러니... 물약을 중화할... 재료를 구해 주세요...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Potion Making",
-   "stage": "Stage 1",
-   "speaker": "The Assistant",
-   "source": "wiki"
-  },
-  "Potion Making#011": {
-   "src": "Get me...[{~} Red Mushroom], they can be found outside the east gate behind me.",
-   "dst": "구해 주세요... [{~} 빨간 버섯]을요. 제 뒤 동문 밖에 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -134907,8 +134697,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Representative",
    "source": "captured"
   },
   "Queen's Recruit#100": {
@@ -136650,16 +136440,6 @@
   "Queen's Recruit#273": {
    "src": "Let's see...",
    "dst": "어디 보자...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 7",
-   "speaker": "Representative",
-   "source": "wiki"
-  },
-  "Queen's Recruit#274": {
-   "src": "...hm.",
-   "dst": "...흠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -143493,8 +143273,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#055": {
@@ -145887,16 +145667,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Recover the Past#294": {
-   "src": "...It was the right thing to do. I couldn't just stand by when there was something I could do to help.",
-   "dst": "...옳은 일이었어. 내가 도울 수 있는데 가만히 보고만 있을 순 없었어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Recover the Past#295": {
    "src": "Well, a lot of good that's done us. You know no one gets out of here, right? When they take you, you're never heard from again! So, that's where we're at.",
    "dst": "그래, 참 많이도 도움이 됐다. 여기서 나가는 사람 없는 거 알지? 끌려가면 다시는 소식을 못 들어! 그러니, 우린 이 꼴이야.",
@@ -147243,8 +147013,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Revelations in Fall",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Rex",
    "source": "captured"
   },
   "Revelations in Fall#002": {
@@ -149027,16 +148797,6 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "Revelations in Fall#180": {
-   "src": "...Fine.",
-   "dst": "...좋아.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Revelations in Fall",
-   "stage": "Stage 10",
-   "speaker": "Rex",
-   "source": "wiki"
-  },
   "Revelations in Fall#181": {
    "src": "Oh, don't look at me like that.",
    "dst": "아, 그런 눈으로 보지 마.",
@@ -150583,8 +150343,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Harnort",
    "source": "captured"
   },
   "Rise of the Quartron#037": {
@@ -151464,16 +151224,6 @@
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
    "stage": "Stage 8",
-   "speaker": "Harnort",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#125": {
-   "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 9",
    "speaker": "Harnort",
    "source": "wiki"
   },
@@ -166595,8 +166345,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Homeless Mayor",
    "source": "captured"
   },
   "Tempo Town Trouble#005": {
@@ -167072,16 +166822,6 @@
   "Tempo Town Trouble#052": {
    "src": "Oh, he actually showed his face after you took care of that thing? What, did you beat him to the punch or something?",
    "dst": "아, 괴물을 처리하고 나서야 그 사람이 나타났다고요? 뭐예요, 선수를 치신 거예요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tempo Town Trouble",
-   "stage": "Stage 5",
-   "speaker": "Homeless Mayor",
-   "source": "wiki"
-  },
-  "Tempo Town Trouble#053": {
-   "src": "Wait... What? He was... trying to seal the thing away, instead of killing it, and... you destroying it broke the seal?",
-   "dst": "잠깐... 뭐라고요? 그 사람은... 죽이는 대신 봉인하려 했는데, 그걸 부수니까 봉인이 깨졌다고요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -180617,8 +180357,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Scout",
    "source": "captured"
   },
   "The Dark Descent#004": {
@@ -180697,8 +180437,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#012": {
@@ -181121,16 +180861,6 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "The Dark Descent#054": {
-   "src": "I...there...too many...th-thousands, at...at least...",
-   "dst": "저... 저기... 너무 많습니다... 수, 수천... 적어도...",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 4",
-   "speaker": "Scout",
-   "source": "wiki"
-  },
   "The Dark Descent#055": {
    "src": "Thousands...? This is far worse than I expected. Men! Prepare for-",
    "dst": "수천...? 예상보다 훨씬 심각하군. 전원! 전투 준비-",
@@ -181214,16 +180944,6 @@
   "The Dark Descent#063": {
    "src": "Aha, naive girl. How cute, you believe you have a choice in the matter. What you want, is not what I need.",
    "dst": "아하, 순진한 아가씨. 선택권이 있다고 믿다니 귀엽구나. 네가 원하는 건 내게 필요한 게 아니다.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 4",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "The Dark Descent#064": {
-   "src": "Heheh...do you see now?",
-   "dst": "헤헤... 이제 알겠느냐?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -181517,8 +181237,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part I#011": {
@@ -182104,16 +181824,6 @@
   "The Envoy Part I#069": {
    "src": "Mo'in, Wynnian. Thank goodness I stopped you.",
    "dst": "Mo'in, Wynn 사람. 붙잡아서 다행이에요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part I",
-   "stage": "Stage 5",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part I#070": {
-   "src": "The diner is being raided by mechs..",
-   "dst": "기계병들이 식당을 털고 있어요..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -182737,8 +182447,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#013": {
@@ -183144,16 +182854,6 @@
   "The Envoy Part II#053": {
    "src": "Off you go!",
    "dst": "출발!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 3",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#054": {
-   "src": "Grook feathers! Not again..",
-   "dst": "Grook 깃털이여! 또야..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
