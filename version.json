@@ -1,12 +1,66 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.2.6",
+  "latest": "0.2.7",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
     "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
   },
   "notes": {
+  "0.2.7": {
+    "headline": "Dialogue no longer switches wording halfway through typing, and the other four languages gained over two thousand entries each",
+    "items": [
+      "Dialogue no longer changes its wording halfway through typing: the same line had been collected twice and translated twice (879 entries removed, plus 2029 that Korean, Russian and Spanish had been missed on - and before deleting, 1464 already-written translations were moved onto the entries the game actually sends).",
+      "Simplified Chinese: eleven dialogue lines fell back to English because the translation contained characters the dialogue font cannot draw.",
+      "Traditional Chinese: four mistranslations - two lines had their translations swapped, one Shaman ability description was wrong, a doubled character, and a missing speaker prefix.",
+      "The \"Area Discovered:\" line now uses the same name as the discovery list - the same place no longer has two names.",
+      "91 places where one term had two different wordings in the same language, including nine Japanese world event names that differed between the map marker and the chat announcement.",
+      "24 places where two different English terms shared one translation: Dwarf colliding with Gnome, Korean using one name for Dash, Charge and Lunge, Russian using one for Dash, Charge and Haul, and Lootrun's \"Missions\" reading the same as \"Quest\".",
+      "83 monsters whose name differed depending on which nameplate style was showing.",
+      "Raid names that were left in English mid-sentence are translated.",
+      "Tome, charm and aspect names follow F6's \"translate item names\" switch - hold Shift to see the English name.",
+      "172 in-game strings a community contributor had collected are now in all seven languages (they were Japanese-only).",
+      "Japanese, Korean, Russian and Spanish each gained over two thousand entries: NPC dialogue and dialogue choices outside quests, quest book and dungeon reward rows, NPC titles and interaction prompts, monster nameplates, discovery names, Lootrun and Raid cards, and cave descriptions.",
+      "Quest dialogue: Hollow Serenity and Forbidden Prison are now complete in Simplified Chinese, Japanese, Korean, Russian and Spanish.",
+      "Japanese: quest dialogue for all four Dwarves and Doguns chapters (community contribution)."
+    ],
+    "zh_tw": {
+      "headline": "對話不再打字打到一半改口，另外四個語言各補了兩千多條",
+      "items": [
+        "對話不再打字打到一半改口：同一句台詞被收成兩條、各翻了一次（刪掉 879 條；韓文、俄文、西文另外補刪了當初漏掉的 2029 條，刪之前把 1464 條已經寫好卻用不到的譯文搬到實機條目）。",
+        "簡體中文十一句對話因為譯文裡有對話字型畫不出來的字，整句退回英文。",
+        "繁體中文四條錯譯：兩句台詞的譯文對調、薩滿一條技能敘述整句翻錯、一處疊字、一句掉了說話者前綴。",
+        "「發現地區：」那一行的地名改成跟探索點清單一致，同一個地點不再有兩個名字。",
+        "各語言同一個詞兩種說法共 91 處，包括日文九個世界事件名在地圖標記與聊天訊息上不一樣。",
+        "兩個不同的英文詞共用一個譯名共 24 處：Dwarf 與 Gnome 撞名、韓文的 Dash／Charge／Lunge 三個技能同名、俄文的 Dash／Charge／Haul 同名、Lootrun 的 Missions 跟 Quest 都叫「任務」。",
+        "同一隻怪因為名牌樣式不同被翻成兩個名字，83 處統一。",
+        "Raid 名夾在句子中間沒翻到的幾處。",
+        "書卷、護符、面向的名稱納入 F6 的「翻譯物品名稱」開關，按住 Shift 看得到英文原名。",
+        "社群貢獻帶進來的 172 條實機條目補到全部七個語言並翻完（原本只有日文有）。",
+        "日文、韓文、俄文、西文各補兩千多條：任務外的 NPC 對話與對話選項、任務書與地城的獎勵列、NPC 稱號與互動提示、怪物名牌、探索點名稱、Lootrun 與 Raid 的卡片，以及洞窟說明。",
+        "任務對話：Hollow Serenity 與 Forbidden Prison 兩個任務補完，簡體中文、日文、韓文、俄文、西文都到 100%。",
+        "日文：Dwarves and Doguns 四個章節的任務對話（社群貢獻）。"
+      ]
+    },
+    "zh_cn": {
+      "headline": "对话不再打字打到一半改口，另外四个语言各补了两千多条",
+      "items": [
+        "对话不再打字打到一半改口：同一句台词被收成两条、各翻了一次（删掉 879 条；韩文、俄文、西文另外补删了当初漏掉的 2029 条，删之前把 1464 条已经写好却用不到的译文搬到实机条目）。",
+        "简体中文十一句对话因为译文里有对话字体画不出来的字，整句退回英文。",
+        "繁体中文四条错译：两句台词的译文对调、萨满一条技能描述整句翻错、一处叠字、一句掉了说话者前缀。",
+        "「发现区域：」那一行的地名改成跟探索点列表一致，同一个地点不再有两个名字。",
+        "各语言同一个词两种说法共 91 处，包括日文九个世界事件名在地图标记与聊天消息上不一样。",
+        "两个不同的英文词共用一个译名共 24 处：Dwarf 与 Gnome 撞名、韩文的 Dash／Charge／Lunge 三个技能同名、俄文的 Dash／Charge／Haul 同名、Lootrun 的 Missions 跟 Quest 都叫「任务」。",
+        "同一只怪因为名牌样式不同被翻成两个名字，83 处统一。",
+        "Raid 名夹在句子中间没翻到的几处。",
+        "书卷、护符、面向的名称纳入 F6 的「翻译物品名称」开关，按住 Shift 看得到英文原名。",
+        "社群贡献带进来的 172 条实机条目补到全部七个语言并翻完（原本只有日文有）。",
+        "日文、韩文、俄文、西文各补两千多条：任务外的 NPC 对话与对话选项、任务书与地牢的奖励行、NPC 称号与互动提示、怪物名牌、探索点名称、Lootrun 与 Raid 的卡片，以及洞穴说明。",
+        "任务对话：Hollow Serenity 与 Forbidden Prison 两个任务补完，简体中文、日文、韩文、俄文、西文都到 100%。",
+        "日文：Dwarves and Doguns 四个章节的任务对话（社群贡献）。"
+      ]
+    }
+  },
     "0.2.6": {
       "headline": "Wynntils content book cards keep their layout, and ingredient tooltips line up again",
       "items": [
