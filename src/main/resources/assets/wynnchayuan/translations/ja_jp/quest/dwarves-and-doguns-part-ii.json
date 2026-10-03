@@ -68,8 +68,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
-   "stage": "Stage 2",
-   "speaker": "???",
+   "stage": "",
+   "speaker": "",
    "source": "captured"
   },
   "Dwarves and Doguns Part II#006": {
@@ -93,7 +93,7 @@
    "source": "captured"
   },
   "Dwarves and Doguns Part II#008": {
-   "src": "We have... few options. We need to discuss... the few we have... available.",
+   "src": "We have...few options. We need to discuss...the few we have...available.",
    "dst": "我らには…選択肢が少ない。残された…わずかな道を…話し合わねば。",
    "role": "desc",
    "kind": "dialogue",
@@ -123,7 +123,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part II#011": {
-   "src": "We thought... we could hide in safety... But there is... no place left to hide.",
+   "src": "We thought...we could hide in safety... But there is...no place left to hide.",
    "dst": "隠れていれば…安全だと思っていた…だが…もう隠れる場所はない。",
    "role": "desc",
    "kind": "dialogue",
@@ -175,6 +175,16 @@
   "Dwarves and Doguns Part II#016": {
    "src": "Ouch, I'm sorry... Excuse us.",
    "dst": "いてっ、すみません…通してください。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#017": {
+   "src": "We heard what happened .",
+   "dst": "何があったか聞いた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -243,7 +253,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part II#024": {
-   "src": "Treason... against your own kind...? How will you... manage this?",
+   "src": "Treason...against your own kind...? How will you...manage this?",
    "dst": "同族への…裏切りか…？どうやって…成し遂げる？",
    "role": "desc",
    "kind": "dialogue",
@@ -263,7 +273,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part II#026": {
-   "src": "I am... yet wary of you... but we will... follow your plan... Dwarf. Korzim... lead us... to safety.",
+   "src": "I am...yet wary of you...but we will...follow your plan...Dwarf. Korzim...lead us...to safety.",
    "dst": "私はまだ…お前を疑っている…だが…お前の策に…従おう…ドワーフよ。Korzim…我らを…安全な所へ。",
    "role": "desc",
    "kind": "dialogue",
@@ -343,8 +353,8 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part II#034": {
-   "src": "Defeat the {p} Guards outside the armory.",
-   "dst": "兵器庫の外にいる{p}の衛兵を倒す。",
+   "src": "Defeat the guards outside the armory.",
+   "dst": "兵器庫の外にいる衛兵を倒す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -871,6 +881,56 @@
    "stage": "Stage 12",
    "speaker": "Axelus",
    "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#087": {
+   "src": "You shouldn't enter this place yet!",
+   "dst": "まだここに入ってはいけない!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#088": {
+   "src": "The {p} Power Core has been disrupted!",
+   "dst": "{p}の動力核が機能停止した!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#089": {
+   "src": "Follow Axelus deeper into {p} and destroy the power source of the city.",
+   "dst": "Axelusについていき{p}の奥深くへと進み、この都市の動力源を破壊する。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#090": {
+   "src": "Explore the slums of {p}.",
+   "dst": "{p}のスラム街を探索する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part II#091": {
+   "src": "Leave the Royal Palace at the end of the palace.",
+   "dst": "王宮の端から王宮を出る",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
