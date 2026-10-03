@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Mercenary",
-  "count": 155,
-  "translated": 155,
+  "count": 148,
+  "translated": 148,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -42,7 +42,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -102,7 +102,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -112,7 +112,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -122,7 +122,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -142,7 +142,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -366,16 +366,6 @@
    "speaker": "Military Scout",
    "source": "wiki"
   },
-  "The Mercenary#036": {
-   "src": "Talk to Amerigo in {p} at [{~}, {~}, -{~}].",
-   "dst": "Поговори с Amerigo в {p} на [{~}, {~}, -{~}].",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Mercenary#037": {
    "src": "Ugh, for crying out loud- I'm busy, can't you see that? I don't have time to...",
    "dst": "Ох, ради всего святого... Я занят, не видишь? У меня нет времени на...",
@@ -564,16 +554,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 2",
    "speaker": "Linton",
-   "source": "wiki"
-  },
-  "The Mercenary#056": {
-   "src": "Suppose that works.",
-   "dst": "Пожалуй, годится.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "Mel",
    "source": "wiki"
   },
   "The Mercenary#057": {
@@ -966,16 +946,6 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#096": {
-   "src": "I suppose I'll start with you. What are two more compared to dozens?",
-   "dst": "Начну, пожалуй, с вас. Что такое ещё двое после десятков?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 5",
-   "speaker": "Takan",
-   "source": "wiki"
-  },
   "The Mercenary#097": {
    "src": "Step aside, Shadow Spears. I'd like to deal with these dogs myself.",
    "dst": "В сторону, Shadow Spears. С этими псами я разберусь сам.",
@@ -1226,16 +1196,6 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#122": {
-   "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a dangerous man.",
-   "dst": "Рад, что мы всё-таки его одолели. Что он говорил... он казался опасным человеком.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 9",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "The Mercenary#123": {
    "src": "Oh, not this again. You're still on that?",
    "dst": "Ох, опять ты за своё?",
@@ -1366,26 +1326,6 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#136": {
-   "src": "Admiral, sir. Some of what Takan is saying, it was-",
-   "dst": "Адмирал, сэр. Кое-что из того, что говорил Takan, было-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "The Mercenary#137": {
-   "src": "I wouldn't put too much stock in those traitor's words. People like him, who spit vitriol with no merit, riling up the masses against the order we hold.",
-   "dst": "Я бы не придавал значения словам этого предателя. Такие, как он, изрыгают пустой яд и настраивают толпу против нашего порядка.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Admiral Amerigo",
-   "source": "wiki"
-  },
   "The Mercenary#138": {
    "src": "He is an angry man holding a grudge for an imagined wrongdoing. There is nothing more to it than that. I would suggest putting it out of your mind.",
    "dst": "Он злобный человек, затаивший обиду за выдуманную несправедливость. Больше тут ничего нет. Советую выбросить это из головы.",
@@ -1479,16 +1419,6 @@
   "The Mercenary#147": {
    "src": "...I guess it must have slipped his mind. That's alright. We're all busy around here, right?",
    "dst": "...Наверное, из головы вылетело. Ничего страшного. Мы тут все заняты, так?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "The Mercenary#148": {
-   "src": "A general location is useful, though. I'll see if I can get any letters to him. Thanks for telling me.",
-   "dst": "Но хоть примерное место - уже что-то. Попробую отправить ему письмо. Спасибо за весть.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",

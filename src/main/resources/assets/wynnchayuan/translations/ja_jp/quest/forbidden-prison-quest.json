@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Forbidden Prison (Quest)",
-  "count": 215,
-  "translated": 120,
+  "count": 213,
+  "translated": 121,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -79,16 +79,6 @@
   "Forbidden Prison (Quest)#007": {
    "src": "We found ya outside of {p}, passed out near some dead body, and... Well, we had to arrest someone for that merchant's death!",
    "dst": "{p} の外で、死体のそばでぶっ倒れてるお前を見つけてな…まあ、あの商人殺しで誰かを捕まえなきゃならなかったんだよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Prison Guard",
-   "source": "wiki"
-  },
-  "Forbidden Prison (Quest)#008": {
-   "src": "So, welcome to the {p} Federal Prison. You're in here for the rest of your life, short-nose, so no use complaining about it.",
-   "dst": "というわけで、{p} 連邦刑務所へようこそ。お前は一生ここだ、短っ鼻。文句を言っても無駄だぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -956,16 +946,6 @@
    "speaker": "The Warden",
    "source": "wiki"
   },
-  "Forbidden Prison (Quest)#095": {
-   "src": "Alright, now, the rest of you, get to work! Rollcall is over for you all!",
-   "dst": "よし、残りの者は仕事に行け！点呼は終わりだよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 10",
-   "speaker": "The Warden",
-   "source": "wiki"
-  },
   "Forbidden Prison (Quest)#096": {
    "src": "Steal the key from the warden's office, and head to the control room",
    "dst": "所長室から鍵を盗み、制御室へ向かう",
@@ -1208,7 +1188,7 @@
   },
   "Forbidden Prison (Quest)#120": {
    "src": "Hey, hey, humie! Yeah, I'm talkin to ya here..",
-   "dst": "",
+   "dst": "おい、おい、人間ちゃん！そう、あんたに話してんだよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
@@ -1218,11 +1198,11 @@
   },
   "Forbidden Prison (Quest)#121": {
    "src": "So, welcome to the {p}. You're in here for the rest of your life, short-nose, so no use complaining about it.",
-   "dst": "",
+   "dst": "というわけで、{p} 連邦刑務所へようこそ。お前は一生ここだ、短っ鼻。文句を言っても無駄だぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "Prison Guard\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -1730,12 +1710,12 @@
   },
   "Forbidden Prison (Quest)#171": {
    "src": "Alright, now, the rest of you, get to work! Rollcall is over fo-",
-   "dst": "",
+   "dst": "よし、残りの者は仕事に行け！点呼は終わりだよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Prison Guard",
    "source": "captured"
   },
   "Forbidden Prison (Quest)#172": {

@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "From the Mountains",
-  "count": 81,
-  "translated": 60,
+  "count": 74,
+  "translated": 61,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "From the Mountains#000": {
    "src": "Mmph! Humnym! Mah houfhs fhs om fifhre! Gft hfrelp, tiff brafze womd strfp!",
-   "dst": "",
+   "dst": "んむっ！ヒュウミン！おでのうち、もえでる！たすけよんで、ひがぎえねえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#001": {
@@ -128,7 +128,7 @@
   },
   "From the Mountains#012": {
    "src": "Eh, I'll see when we get there... Oh, what am I doing over here? Yeah, I suppose I do look different from the fare you'd have seen. Well, I'm a dwarf.",
-   "dst": "",
+   "dst": "まあ、着けば分かる。ん、俺がここで何してるかって？ああ、見慣れた連中とは見た目が違うよな。俺はドワーフだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -148,12 +148,12 @@
   },
   "From the Mountains#014": {
    "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-lighting, then maybe...",
-   "dst": "",
+   "dst": "あれがその家か？よし、やれるだけやってみる。消せないかもしれんが、燃え直してるってことは、もしかすると…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#015": {
@@ -168,52 +168,52 @@
   },
   "From the Mountains#016": {
    "src": "There's a black market issue in the {p}. Things that you can't find anywhere else are harvested in the Heights for their high value.",
-   "dst": "",
+   "dst": "{p} には闇市の問題があってな。他では手に入らない物が、高値目当てに Heights で狩られてるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#017": {
    "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. We still have work to do.",
-   "dst": "",
+   "dst": "荷車は直して準備万端だ。Flerisi は全部捕まえたか？なら荷車の方へ来てくれ。まだやることがある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#018": {
    "src": "...oh. Well, didn't notice that the fires went THAT far earlier. That's a problem, isn't it?",
-   "dst": "",
+   "dst": "…おっと。さっきは火が「そこまで」広がってるとは気づかなかった。まずいな、こりゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#019": {
    "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed off cinders and fire... And for this much damage to be caused, well...",
-   "dst": "",
+   "dst": "説明すると、Flerisi はみんなここのやつほど小さいわけじゃない。燃えさしや火を食うんだ…これだけの被害となると…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#020": {
    "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well...I got a free cart for the ride home. There's a thing for me to attend to there.",
-   "dst": "",
+   "dst": "地元の警備隊に密売人が見つかったか聞いてみる。逃げられたなら…まあ、帰りの荷車がタダで手に入った。向こうでやることがあるんでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#021": {
@@ -224,16 +224,6 @@
    "quest": "From the Mountains",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "From the Mountains#022": {
-   "src": "Mmph! Humnym! Mah houfhs fhs on fifhre! Gft hfrelp, tiff brafze womd strfp!",
-   "dst": "んむっ！ヒュウミン！おでのうち、もえでる！たすけよんで、ひがぎえねえ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 1",
-   "speaker": "Arnod",
    "source": "wiki"
   },
   "From the Mountains#023": {
@@ -386,16 +376,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "From the Mountains#040": {
-   "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-igniting, then maybe...",
-   "dst": "あれがその家か？よし、やれるだけやってみる。消せないかもしれんが、燃え直してるってことは、もしかすると…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 3",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#042": {
    "src": "Aha! Here's the problem. It's just a little Fleris. Ehm, to explain, they normally live in the Heights.",
    "dst": "あった！原因はこれだ。小さな Fleris だよ。説明すると、こいつらは普段 Heights に住んでる。",
@@ -516,16 +496,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "From the Mountains#054": {
-   "src": "There's a black market issue in the {p}. Things that you can't find anywhere else is harvested in the Heights for their high value.",
-   "dst": "{p} には闇市の問題があってな。他では手に入らない物が、高値目当てに Heights で狩られてるんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 4",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#055": {
    "src": "Flerisi are one of them. In the Heights, they're kept as pets. They're relatively friendly, keep your house warm, and don't need much care...",
    "dst": "Flerisi もその一つだ。Heights ではペットとして飼われてる。わりと人懐っこいし、家を暖めてくれるし、手もかからん…",
@@ -566,16 +536,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "From the Mountains#059": {
-   "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. There's still have work to do.",
-   "dst": "荷車は直して準備万端だ。Flerisi は全部捕まえたか？なら荷車の方へ来てくれ。まだやることがある。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#060": {
    "src": "I'll keep the Flerisi in a smaller fire to keep them calm, see if I can't get them back to the Heights when this is done.",
    "dst": "Flerisi は小さな火で落ち着かせておく。片付いたら Heights に帰せないか考えてみよう。",
@@ -589,26 +549,6 @@
   "From the Mountains#061": {
    "src": "For now, I want to see if I can find anything on who these traffickers were. Let's see if they left anything in the front of the cart.",
    "dst": "今はこの密売人どもの手がかりを探したい。荷車の前に何か残してないか見てみよう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#062": {
-   "src": "...oh. Well, didn't notice that the fire went THAT far earlier. That's a problem, isn't it?",
-   "dst": "…おっと。さっきは火が「そこまで」広がってるとは気づかなかった。まずいな、こりゃ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#063": {
-   "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed of cinders and fire... And for this much damage to be caused, well...",
-   "dst": "説明すると、Flerisi はみんなここのやつほど小さいわけじゃない。燃えさしや火を食うんだ…これだけの被害となると…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -779,16 +719,6 @@
   "From the Mountains#080": {
    "src": "Well, I say the work is thankless, but that won't stop me, anyways. Thank you for the help, human- This would've been overwhelming alone.",
    "dst": "報われない仕事とは言ったが、それでやめる俺じゃない。手伝ってくれてありがとう、人間――一人じゃ手に負えなかった。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 9",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#081": {
-   "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well... I got a free cart for the ride home. There's thing for me to attend to there.",
-   "dst": "地元の警備隊に密売人が見つかったか聞いてみる。逃げられたなら…まあ、帰りの荷車がタダで手に入った。向こうでやることがあるんでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",

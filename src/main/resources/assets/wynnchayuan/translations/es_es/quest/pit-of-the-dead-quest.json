@@ -1,21 +1,11 @@
 {
  "_meta": {
   "quest": "Pit of the Dead (Quest)",
-  "count": 14,
-  "translated": 14,
+  "count": 12,
+  "translated": 12,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "Pit of the Dead (Quest)#000": {
-   "src": "Talk to Merloni in {p} at [{~}, {~}, -{~}]",
-   "dst": "Habla con Merloni en {p}, en [{~}, {~}, -{~}]",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Pit of the Dead (Quest)",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Pit of the Dead (Quest)#001": {
    "src": "Would you like to hear the tale of the pit of the dead?",
    "dst": "¿Quieres oír la historia del pozo de los muertos?",
@@ -76,16 +66,6 @@
    "speaker": "Merloni",
    "source": "wiki"
   },
-  "Pit of the Dead (Quest)#007": {
-   "src": "Soldier, the pit is located south east of {p}, across the bridge behind us. I will write down the coordinates inside your quest book.",
-   "dst": "Soldado, el pozo está al sureste de {p}, cruzando el puente que tenemos detrás. Te anotaré las coordenadas en tu libro de misiones.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pit of the Dead (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Merloni",
-   "source": "wiki"
-  },
   "Pit of the Dead (Quest)#008": {
    "src": "Enter the pit. Learn it's mysteries, then come back to me.",
    "dst": "Entra en el pozo. Descubre sus misterios y vuelve a verme.",
@@ -132,7 +112,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "",
    "source": "captured"
   },

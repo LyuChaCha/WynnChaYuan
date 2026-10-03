@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lexdale Witch Trials",
-  "count": 46,
-  "translated": 32,
+  "count": 42,
+  "translated": 34,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -24,27 +24,27 @@
   },
   "Lexdale Witch Trials#001": {
    "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of dark magic threatens us!",
-   "dst": "",
+   "dst": "¡Tenemos un enemigo entre los nuestros en {p}! ¡La magia ilegal de esta bruja nos amenaza!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
    "source": "captured"
   },
   "Lexdale Witch Trials#002": {
    "src": "Ms. Amira's home was found to be plagued with spreading Decay! We must kill the witch to protect our sanctity!",
-   "dst": "",
+   "dst": "¡La casa de la señora Amira está plagada de Decadencia! ¡Hay que matar a la bruja para proteger nuestra santidad!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "The Mayor\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
   "Lexdale Witch Trials#003": {
    "src": "Further...intruders...? You are not of the worms...the parasites?",
-   "dst": "",
+   "dst": "...¿Más... intrusos...? ¿No eres de los gusanos... los parásitos?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -54,17 +54,17 @@
   },
   "Lexdale Witch Trials#004": {
    "src": "We cannot escape, for the sun scorches us. There is no place to go, no place we can burrow that they do not wait.",
-   "dst": "",
+   "dst": "No podemos huir, el sol nos abrasa. No hay lugar al que ir, ni galería que cavar donde no aguarden.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
    "source": "captured"
   },
   "Lexdale Witch Trials#005": {
    "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive til this torture ends...",
-   "dst": "",
+   "dst": "Tú... Tú... Tú tienes vida. Corazón, y músculo, y carne... Para aguantar hasta que acabe este tormento...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -124,12 +124,12 @@
   },
   "Lexdale Witch Trials#011": {
    "src": "...Fine then. This...creature...bug...leech? This whatever-it-is... I'll accept your explanation.",
-   "dst": "",
+   "dst": "...Está bien. Esta... criatura... bicho... ¿sanguijuela? Esta cosa- sea- lo que sea... Acepto su explicación.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
    "source": "captured"
   },
   "Lexdale Witch Trials#012": {
@@ -170,26 +170,6 @@
    "quest": "Lexdale Witch Trials",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Lexdale Witch Trials#016": {
-   "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of magic threatens us!",
-   "dst": "¡Tenemos un enemigo entre los nuestros en {p}! ¡La magia ilegal de esta bruja nos amenaza!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 1",
-   "speaker": "The Mayor",
-   "source": "wiki"
-  },
-  "Lexdale Witch Trials#017": {
-   "src": "Ms. Amira's home was found to be plagued by spreading Decay! We must kill the witch to protect our sanctity!",
-   "dst": "¡La casa de la señora Amira está plagada de Decadencia! ¡Hay que matar a la bruja para proteger nuestra santidad!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 1",
-   "speaker": "The Mayor",
    "source": "wiki"
   },
   "Lexdale Witch Trials#018": {
@@ -342,16 +322,6 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#033": {
-   "src": "We cannot escape, for the sun scourges us. There is no place to go, no place to burrow that they do not wait.",
-   "dst": "No podemos huir, el sol nos abrasa. No hay lugar al que ir, ni galería que cavar donde no aguarden.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 5",
-   "speaker": "Tunnel Dweller Chieftain",
-   "source": "wiki"
-  },
   "Lexdale Witch Trials#034": {
    "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive till this torture ends...",
    "dst": "Tú... Tú... Tú tienes vida. Corazón, y músculo, y carne... Para aguantar hasta que acabe este tormento...",
@@ -440,16 +410,6 @@
    "quest": "Lexdale Witch Trials",
    "stage": "Stage 8",
    "speaker": "Amira",
-   "source": "wiki"
-  },
-  "Lexdale Witch Trials#043": {
-   "src": "...Fine then. This... creature... bug... leach? This whatever- it- is... I'll accept your explanation.",
-   "dst": "...Está bien. Esta... criatura... bicho... ¿sanguijuela? Esta cosa- sea- lo que sea... Acepto su explicación.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 8",
-   "speaker": "The Mayor",
    "source": "wiki"
   },
   "Lexdale Witch Trials#044": {

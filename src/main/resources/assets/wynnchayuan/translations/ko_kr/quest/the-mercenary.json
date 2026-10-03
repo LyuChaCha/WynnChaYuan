@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Mercenary",
-  "count": 155,
-  "translated": 155,
+  "count": 148,
+  "translated": 148,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -42,7 +42,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -102,7 +102,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -112,7 +112,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -122,7 +122,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -142,7 +142,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "",
    "source": "captured"
   },
@@ -366,16 +366,6 @@
    "speaker": "Military Scout",
    "source": "wiki"
   },
-  "The Mercenary#036": {
-   "src": "Talk to Amerigo in {p} at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}]의 {p}에서 Amerigo에게 말을 거세요.",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Mercenary#037": {
    "src": "Ugh, for crying out loud- I'm busy, can't you see that? I don't have time to...",
    "dst": "으, 맙소사- 바쁜 거 안 보이나? 지금 그럴 시간이...",
@@ -564,16 +554,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 2",
    "speaker": "Linton",
-   "source": "wiki"
-  },
-  "The Mercenary#056": {
-   "src": "Suppose that works.",
-   "dst": "그러면 되겠네.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "Mel",
    "source": "wiki"
   },
   "The Mercenary#057": {
@@ -966,16 +946,6 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#096": {
-   "src": "I suppose I'll start with you. What are two more compared to dozens?",
-   "dst": "너희부터 시작하지. 수십 명에 비하면 둘쯤이야?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 5",
-   "speaker": "Takan",
-   "source": "wiki"
-  },
   "The Mercenary#097": {
    "src": "Step aside, Shadow Spears. I'd like to deal with these dogs myself.",
    "dst": "물러서라, Shadow Spears. 이 개들은 내가 직접 처리하겠다.",
@@ -1226,16 +1196,6 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#122": {
-   "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a dangerous man.",
-   "dst": "결국 처치해서 다행이야. 그가 한 말들... 위험한 사람 같았어.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 9",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "The Mercenary#123": {
    "src": "Oh, not this again. You're still on that?",
    "dst": "아, 또 그 얘기야? 아직도 그 생각 중이야?",
@@ -1366,26 +1326,6 @@
    "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
-  "The Mercenary#136": {
-   "src": "Admiral, sir. Some of what Takan is saying, it was-",
-   "dst": "제독님. Takan이 한 말 중에 일부는-",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "The Mercenary#137": {
-   "src": "I wouldn't put too much stock in those traitor's words. People like him, who spit vitriol with no merit, riling up the masses against the order we hold.",
-   "dst": "반역자의 말은 너무 믿지 마라. 저런 놈들은 근거 없는 독설을 퍼부으며, 우리가 지키는 질서에 맞서 대중을 선동하지.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Admiral Amerigo",
-   "source": "wiki"
-  },
   "The Mercenary#138": {
    "src": "He is an angry man holding a grudge for an imagined wrongdoing. There is nothing more to it than that. I would suggest putting it out of your mind.",
    "dst": "그는 상상 속 부당함에 원한을 품은 분노한 자일 뿐이다. 그 이상은 없어. 잊어버리는 게 좋을 거다.",
@@ -1479,16 +1419,6 @@
   "The Mercenary#147": {
    "src": "...I guess it must have slipped his mind. That's alright. We're all busy around here, right?",
    "dst": "...깜빡했나 보지. 괜찮아. 다들 여기서 바쁘잖아, 그치?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "The Mercenary#148": {
-   "src": "A general location is useful, though. I'll see if I can get any letters to him. Thanks for telling me.",
-   "dst": "그래도 대략적인 위치를 알면 도움이 돼. 편지를 보낼 수 있나 알아볼게. 알려 줘서 고마워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",

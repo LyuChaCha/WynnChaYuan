@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Lost Soles",
-  "count": 75,
+  "count": 71,
   "translated": 63,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -28,42 +28,42 @@
   },
   "Lost Soles#002": {
    "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get to them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "",
+   "dst": "先祖は長靴を入れ物ごと屋敷に隠しました。日記の書き手は手に入れるためのヒントを残しています。意味が分かるかもしれません。さあ、これをどうぞ：",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#003": {
    "src": "Whoever placed down that sign might have meant a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "",
+   "dst": "その看板を置いた人は、二階への秘密の道を持っていたのかも。階段が崩れて以来、ずいぶん長いこと上がれていないんです。Leacen は別ですが、彼女はちょっと変わってて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#004": {
    "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a hidden passage, can you believe it?",
-   "dst": "",
+   "dst": "うん、あたしもしばらく頑張ってるんだ。何度か、いい線いってると思ったんだけどね！ここもそう。この本、一冊も隠し通路を開かないの、信じられる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#005": {
    "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow in the master bedroom for two seconds, and then it disappeared!",
-   "dst": "",
+   "dst": "しかもノートをなくしちゃって、メモも取れないの。枕の上に二秒置いただけなのに、消えちゃったんだよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
    "source": "captured"
   },
   "Lost Soles#006": {
@@ -316,16 +316,6 @@
    "speaker": "Grandon",
    "source": "wiki"
   },
-  "Lost Soles#031": {
-   "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "先祖は長靴を入れ物ごと屋敷に隠しました。日記の書き手は手に入れるためのヒントを残しています。意味が分かるかもしれません。さあ、これをどうぞ：",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 3",
-   "speaker": "Grandon",
-   "source": "wiki"
-  },
   "Lost Soles#032": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
    "dst": "「広間の上の顔は、道を開くために重くすべき鼻を持つ」。",
@@ -379,16 +369,6 @@
   "Lost Soles#037": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
    "dst": "つまり、隅で石を探せという看板があったと？ふむ… 興味深い！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 5",
-   "speaker": "Grandon",
-   "source": "wiki"
-  },
-  "Lost Soles#038": {
-   "src": "Whoever placed down that sign might have a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "その看板を置いた人は、二階への秘密の道を持っていたのかも。階段が崩れて以来、ずいぶん長いこと上がれていないんです。Leacen は別ですが、彼女はちょっと変わってて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -609,26 +589,6 @@
   "Lost Soles#060": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
    "dst": "わあ、隠し通路！登ってくるほどカッコよくはないけど、よくやったじゃん！暗号のヒントを探してるんでしょ？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 10",
-   "speaker": "Leacen",
-   "source": "wiki"
-  },
-  "Lost Soles#061": {
-   "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a secret passage, can you believe it?",
-   "dst": "うん、あたしもしばらく頑張ってるんだ。何度か、いい線いってると思ったんだけどね！ここもそう。この本、一冊も隠し通路を開かないの、信じられる？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Soles",
-   "stage": "Stage 10",
-   "speaker": "Leacen",
-   "source": "wiki"
-  },
-  "Lost Soles#062": {
-   "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow for two seconds, and then it disappeared!",
-   "dst": "しかもノートをなくしちゃって、メモも取れないの。枕の上に二秒置いただけなのに、消えちゃったんだよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",

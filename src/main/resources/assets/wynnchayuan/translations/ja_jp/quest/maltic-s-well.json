@@ -1,19 +1,19 @@
 {
  "_meta": {
   "quest": "Maltic's Well",
-  "count": 29,
-  "translated": 23,
+  "count": 25,
+  "translated": 22,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Maltic's Well#000": {
    "src": "Please do something! I know {p} isn't of much importance to you humans, being a villager settlement, but...my son!",
-   "dst": "",
+   "dst": "どうにかしてください！村人の集落の {p} など人間には大事じゃないでしょうが…息子が！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured"
   },
   "Maltic's Well#001": {
@@ -38,8 +38,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured",
    "similar": {
     "text": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
@@ -50,22 +50,22 @@
   },
   "Maltic's Well#003": {
    "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The... the Beast-That-Eats-{p}-Guards-For-Brunch!!",
-   "dst": "",
+   "dst": "…だって扉を間違えたら獣のもとに送られるのよ、世にも恐ろしい獣に！その、えー…{p} の衛兵をブランチに食べる獣！！ほんとよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured"
   },
   "Maltic's Well#004": {
    "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing this cowl, and have warts.",
-   "dst": "",
+   "dst": "あら…これで騙せるとは思ってなかったけど。実はね、魔法は全然得意じゃないの。とんがり帽子が好きで、イボがあるだけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured"
   },
   "Maltic's Well#005": {
@@ -118,16 +118,6 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#010": {
-   "src": "Please do something! I know {p} isn't of importance to you humans, being a Villager settlement, but...my son!",
-   "dst": "どうにかしてください！村人の集落の {p} など人間には大事じゃないでしょうが…息子が！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 1",
-   "speaker": "Rynend",
-   "source": "wiki"
-  },
   "Maltic's Well#011": {
    "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",
    "dst": "[-{~}, {~}, -{~}] にある {p} の古井戸を調べ、[{~} Witch's Empty Bottle] を Rynend に届ける",
@@ -158,16 +148,6 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#014": {
-   "src": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
-   "dst": "なんで魔女呼ばわりされるのかしら。魔法なんてどこにでもあるのに。この子の父親が私の見た目を笑ったから、息子を Grook に変えてやるの！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
   "Maltic's Well#015": {
    "src": "Treat me like a witch, I'll act like one, darn it! You'll have to pass through my dastardly magical defenses to find me!",
    "dst": "魔女扱いするなら魔女らしくしてやるわよ、もう！私の極悪な魔法の守りを突破しなきゃ会えないわよ！",
@@ -181,26 +161,6 @@
   "Maltic's Well#016": {
    "src": "Oh...drat. I never could get that spell right. Well, now you'll have to guess the way, um, you fool! Turn back now, for, uh...",
    "dst": "あら…しまった。あの呪文、いつも上手くいかないのよね。じゃあ道は自分で当てなさい、えっと、このおバカ！今すぐ引き返しなさい、だって、その…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
-  "Maltic's Well#017": {
-   "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The, um...the Beast-What-Eats-{p}-Guards-For-Brunch!! Totally!",
-   "dst": "…だって扉を間違えたら獣のもとに送られるのよ、世にも恐ろしい獣に！その、えー…{p} の衛兵をブランチに食べる獣！！ほんとよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
-  "Maltic's Well#018": {
-   "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing pointy hats, and have warts.",
-   "dst": "あら…これで騙せるとは思ってなかったけど。実はね、魔法は全然得意じゃないの。とんがり帽子が好きで、イボがあるだけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",

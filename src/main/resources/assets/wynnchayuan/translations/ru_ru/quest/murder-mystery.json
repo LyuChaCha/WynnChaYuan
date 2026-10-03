@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Murder Mystery",
-  "count": 80,
-  "translated": 58,
+  "count": 76,
+  "translated": 59,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -78,11 +78,11 @@
   },
   "Murder Mystery#007": {
    "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation.",
-   "dst": "",
+   "dst": "Найдёте его - он укажет путь в канализацию. Простите, больше я не знаю. Удачи вам в расследовании.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -118,17 +118,17 @@
   },
   "Murder Mystery#011": {
    "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, til neither of em had anythin' left.",
-   "dst": "",
+   "dst": "Но в тот день, как он привёл Eminar, быстро запахло жареным. Тот всё занимал изумруды у Rohem и проигрывал, пока у обоих ничего не осталось.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
    "source": "captured"
   },
   "Murder Mystery#012": {
    "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back 'n we'll be happy to serve ya!",
-   "dst": "",
+   "dst": "А теперь проваливай: вон в стене чёрный ход. Но если захочешь сыграть в очко, заходи - обслужим с радостью!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -148,12 +148,12 @@
   },
   "Murder Mystery#014": {
    "src": "Ya can then hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
-   "dst": "",
+   "dst": "Можно брать ещё карту сколько угодно раз или остановиться и закончить ход. Цель - набрать очков как можно ближе к {~}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
    "source": "captured"
   },
   "Murder Mystery#015": {
@@ -208,11 +208,11 @@
   },
   "Murder Mystery#020": {
    "src": "Whatever, you pale-faced walking cowlick. You're headed to {p} with a charge of first-class murder. Guards, take him away.",
-   "dst": "",
+   "dst": "Как скажешь, бледный ходячий вихор. Отправишься в тюрьму {p} за убийство первой степени. Стража, увести.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -396,16 +396,6 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#039": {
-   "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation, sir.",
-   "dst": "Найдёте его - он укажет путь в канализацию. Простите, больше я не знаю. Удачи вам в расследовании.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 2",
-   "speaker": "Rohem",
-   "source": "wiki"
-  },
   "Murder Mystery#040": {
    "src": "Return to the victim's house at [-{~}, {~}, -{~}] to find a snake symbol.",
    "dst": "Вернись в дом жертвы на [-{~}, {~}, -{~}] и найди знак змеи.",
@@ -459,16 +449,6 @@
   "Murder Mystery#045": {
    "src": "He was brought down here by his friend one day. Rohem, it was. A fine customer, you understand. Never failed to pay his dues...",
    "dst": "Как-то раз его привёл сюда приятель. Rohem это был. Клиент что надо, понимаешь. Всегда платил по счетам…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 4",
-   "speaker": "Valimare",
-   "source": "wiki"
-  },
-  "Murder Mystery#046": {
-   "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, till neither of em had anythin' left.",
-   "dst": "Но в тот день, как он привёл Eminar, быстро запахло жареным. Тот всё занимал изумруды у Rohem и проигрывал, пока у обоих ничего не осталось.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -656,16 +636,6 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#065": {
-   "src": "Whatever you pale-faced walking cowlick. You're headed to {p} Penitentiary with a charge of first-class murder. Guards, take him away.",
-   "dst": "Как скажешь, бледный ходячий вихор. Отправишься в тюрьму {p} за убийство первой степени. Стража, увести.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 6",
-   "speaker": "Detective Lorias",
-   "source": "wiki"
-  },
   "Murder Mystery#066": {
    "src": "As for you, human, please accept my immense gratitude. We probably wouldn't have caught that rat without you.",
    "dst": "А вам, человек, моя огромная благодарность. Без вас мы бы эту крысу вряд ли поймали.",
@@ -749,16 +719,6 @@
   "Murder Mystery#074": {
    "src": "The rules are simple! I deal two cards face up to ya both face down, and two cards to me, one face up and one face down.",
    "dst": "Правила простые! Тебе я сдаю две карты рубашкой вверх, а себе две: одну открытую и одну закрытую.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 6",
-   "speaker": "Blackjack Dealer",
-   "source": "wiki"
-  },
-  "Murder Mystery#075": {
-   "src": "Ya can hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
-   "dst": "Можно брать ещё карту сколько угодно раз или остановиться и закончить ход. Цель - набрать очков как можно ближе к {~}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
