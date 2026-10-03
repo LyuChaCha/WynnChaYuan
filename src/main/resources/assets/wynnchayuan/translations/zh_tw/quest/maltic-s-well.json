@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Maltic's Well",
-  "count": 29,
-  "translated": 29,
+  "count": 25,
+  "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -12,8 +12,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
    "source": "captured"
   },
   "Maltic's Well#001": {
@@ -38,8 +38,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Witch",
    "source": "captured",
    "similar": {
     "text": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
@@ -54,8 +54,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Witch",
    "source": "captured"
   },
   "Maltic's Well#004": {
@@ -64,8 +64,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Witch",
    "source": "captured"
   },
   "Maltic's Well#005": {
@@ -118,16 +118,6 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#010": {
-   "src": "Please do something! I know {p} isn't of importance to you humans, being a Villager settlement, but...my son!",
-   "dst": "拜託想想辦法！我知道 {p} 只是個村民聚落，對你們人類來說無足輕重，可是……我兒子啊！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 1",
-   "speaker": "Rynend",
-   "source": "wiki"
-  },
   "Maltic's Well#011": {
    "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",
    "dst": "調查 [-{~1}, {~2}, -{~3}] 的 {p} 老井，並把 [{~4} Witch's Empty Bottle] 帶回給 Rynend",
@@ -158,16 +148,6 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#014": {
-   "src": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
-   "dst": "真不知道他們為什麼叫我女巫。魔法到處都是好嗎。這孩子的爸爸嘲笑我的長相，所以我要把他兒子變成 Grook！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
   "Maltic's Well#015": {
    "src": "Treat me like a witch, I'll act like one, darn it! You'll have to pass through my dastardly magical defenses to find me!",
    "dst": "把我當女巫看，那我就演給你看，可惡！你得先過我這道厲害的魔法防線才找得到我！",
@@ -181,26 +161,6 @@
   "Maltic's Well#016": {
    "src": "Oh...drat. I never could get that spell right. Well, now you'll have to guess the way, um, you fool! Turn back now, for, uh...",
    "dst": "哦……糟糕。那個咒語我一直都念不好。好、好吧，那你就自己猜路吧，你、你這個笨蛋！現在回頭還來得及，因為，呃……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
-  "Maltic's Well#017": {
-   "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The, um...the Beast-What-Eats-{p}-Guards-For-Brunch!! Totally!",
-   "dst": "……因為你要是選錯門，就會被送去餵一頭野獸，一頭超級可怕的野獸！那個，嗯……專吃 {p} 衛兵當早午餐的野獸！！絕對是真的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Maltic's Well",
-   "stage": "Stage 2",
-   "speaker": "Witch",
-   "source": "wiki"
-  },
-  "Maltic's Well#018": {
-   "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing pointy hats, and have warts.",
-   "dst": "哦……沒想到這樣也騙不了你。跟你說，我魔法其實真的不太行。我只是喜歡戴尖帽子，而且長了疣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",

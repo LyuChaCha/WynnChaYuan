@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 91,
-  "translated": 91,
+  "count": 83,
+  "translated": 83,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -78,8 +78,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#007": {
@@ -108,8 +108,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
    "source": "captured"
   },
   "Mushroom Man#010": {
@@ -118,8 +118,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
    "source": "captured"
   },
   "Mushroom Man#011": {
@@ -128,8 +128,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
    "source": "captured"
   },
   "Mushroom Man#012": {
@@ -168,8 +168,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#016": {
@@ -178,29 +178,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
    "source": "captured"
-  },
-  "Mushroom Man#017": {
-   "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 跟 Tasim 談話。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Mushroom Man#018": {
-   "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
-   "dst": "{u}，你好！這地方真不錯，對吧？我想在這裡多待一陣子再往 {p} 走，不過我很快就會準備好了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "Tasim",
-   "source": "wiki"
   },
   "Mushroom Man#019": {
    "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
@@ -272,16 +252,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#026": {
-   "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushroms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-Why wouldn't it b-be?",
-   "dst": "哦、哦！沒有，沒、沒事。什麼事都沒有。我的蘑、蘑菇……牠們很好。你問這個做什麼？一、一切都很好。怎、怎麼可能不好？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
   "Mushroom Man#027": {
    "src": "...O-okay, fine, y-you caught me! My mushrooms... my m-mushrooms aren't fine! T-they're bad, even! A-are you hap-... happy now?",
    "dst": "……好、好啦，被你抓到了！我的蘑菇……我的蘑、蘑菇不好！牠們很糟，非常糟！這、這下你滿意了？",
@@ -315,16 +285,6 @@
   "Mushroom Man#030": {
    "src": "I- my favorite mushroom spot. I c-can't use it any-... anymore. Spiders. L-lots of spiders. They've t-t-taken over it... I can't get... mushrooms. Can y-you kill the s-s-spiders? Mushrooms.",
    "dst": "我——我最愛的採菇點。我不、不能再用了。蜘蛛。好、好多蜘蛛。牠們佔、佔據了那裡……我採不到……蘑菇。你能不能殺、殺掉那些蜘、蜘蛛？蘑菇。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 2",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
-  "Mushroom Man#032": {
-   "src": "H-hm. Good. I can't m-make soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
-   "dst": "嗯、嗯。很好。沒有蘑菇……我煮不出湯。跟、跟我來，我帶你們去找那些……那些蜘蛛。壞、壞蜘蛛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -380,16 +340,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Mushroom Man#038": {
-   "src": "I-is it done? S-s-spiders... No m-more spiders? Is my m-m-mushroom patch cl-... cleared?",
-   "dst": "清、清完了嗎？蜘、蜘蛛……沒有蜘蛛了？我的蘑、蘑菇田清、清乾淨了嗎？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
    "source": "wiki"
   },
   "Mushroom Man#039": {
@@ -752,26 +702,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#075": {
-   "src": "Ah, you two must be the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
-   "dst": "啊，兩位一定就是 Aledar 一直跟我們說的那兩位新兵。總算見到面了，不過我不得不注意到，兩位似乎是趕著來的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#076": {
-   "src": "Right! Right. We've arrived from Nivla Town, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
-   "dst": "是的！沒錯。我們從 Nivla 鎮趕來，帶著壞消息和一份求援。森林裡的蜘蛛變得有攻擊性，正在威脅那座鎮。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Mushroom Man#077": {
    "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
    "dst": "鎮上有一位居民在我們眼前被抓走了。Alvin 鎮長派我們來請求 {p} 軍的援助。",
@@ -810,16 +740,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#081": {
-   "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with them.",
-   "dst": "還有 Van 中尉正在籌畫突襲一座腐敗據點！我相信他一定樂意多幾個人手。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Mushroom Man#082": {

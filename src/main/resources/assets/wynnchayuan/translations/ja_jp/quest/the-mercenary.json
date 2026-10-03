@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Mercenary",
-  "count": 155,
-  "translated": 155,
+  "count": 151,
+  "translated": 151,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -102,8 +102,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "The Mercenary#010": {
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Admiral Amerigo",
    "source": "captured"
   },
   "The Mercenary#012": {
@@ -366,16 +366,6 @@
    "speaker": "Military Scout",
    "source": "wiki"
   },
-  "The Mercenary#036": {
-   "src": "Talk to Amerigo in {p} at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] の {p} にいる Amerigo と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Mercenary#037": {
    "src": "Ugh, for crying out loud- I'm busy, can't you see that? I don't have time to...",
    "dst": "ええい、まったく――忙しいのが見てわからんか？暇などない…",
@@ -564,16 +554,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 2",
    "speaker": "Linton",
-   "source": "wiki"
-  },
-  "The Mercenary#056": {
-   "src": "Suppose that works.",
-   "dst": "それでいいんじゃないかね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "Mel",
    "source": "wiki"
   },
   "The Mercenary#057": {
@@ -1226,16 +1206,6 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#122": {
-   "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a dangerous man.",
-   "dst": "結局、彼を倒せてよかったよ。あの言い分…危険な男に思えた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 9",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "The Mercenary#123": {
    "src": "Oh, not this again. You're still on that?",
    "dst": "またその話かい？まだ気にしてんの？",
@@ -1374,16 +1344,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 10",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "The Mercenary#137": {
-   "src": "I wouldn't put too much stock in those traitor's words. People like him, who spit vitriol with no merit, riling up the masses against the order we hold.",
-   "dst": "裏切り者の言葉を真に受けるな。ああいう輩は根拠のない毒を吐き、我々の保つ秩序に民衆を刃向かわせるのだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
   "The Mercenary#138": {

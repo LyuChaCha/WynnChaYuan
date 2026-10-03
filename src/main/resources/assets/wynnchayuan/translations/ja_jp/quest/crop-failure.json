@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Crop Failure",
-  "count": 67,
-  "translated": 45,
+  "count": 65,
+  "translated": 43,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -265,16 +265,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Crop Failure#026": {
-   "src": "Talk to Anast in {p}, at [-{~}, {~}, -{~}]",
-   "dst": "{p} の [-{~}, {~}, -{~}] で Anast と話す",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Crop Failure",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Crop Failure#027": {
    "src": "Grr...that no-good, lying, cheating, thieving...graaah!",
@@ -546,16 +536,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Crop Failure#056": {
-   "src": "Oi, bucko! Took my advice, eh? I'd figured I'd join ye, 'n see for myself what was goin' on.",
-   "dst": "よう、兄弟！おいらの助言を聞いたか？おいらも一緒に行って、何が起きてるか確かめようと思ってな。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "Stage 4",
-   "speaker": "Doubiss",
-   "source": "wiki"
-  },
   "Crop Failure#057": {
    "src": "And boy am I glad I bring me water in bottles. This stuff's rancid, full a' swamp slimes. No idea why they're here, though.",
    "dst": "いやあ、水を瓶で持ってきてて良かったぜ。こいつは腐ってる、沼スライムだらけだ。なんでここにいるかは知らねえが。",
@@ -672,8 +652,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Doubiss",
    "source": "captured"
   }
  }

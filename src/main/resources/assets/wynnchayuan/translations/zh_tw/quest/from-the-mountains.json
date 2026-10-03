@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "From the Mountains",
-  "count": 84,
-  "translated": 84,
+  "count": 77,
+  "translated": 77,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -12,8 +12,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Arnod",
    "source": "captured"
   },
   "From the Mountains#001": {
@@ -152,8 +152,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#015": {
@@ -172,8 +172,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#017": {
@@ -182,8 +182,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#018": {
@@ -192,8 +192,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#019": {
@@ -202,8 +202,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#020": {
@@ -212,8 +212,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#021": {
@@ -224,16 +224,6 @@
    "quest": "From the Mountains",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "From the Mountains#022": {
-   "src": "Mmph! Humnym! Mah houfhs fhs on fifhre! Gft hfrelp, tiff brafze womd strfp!",
-   "dst": "唔嗯！人類！偶家失灰惹！快叫人來，這火燒不聽！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 1",
-   "speaker": "Arnod",
    "source": "wiki"
   },
   "From the Mountains#023": {
@@ -406,16 +396,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "From the Mountains#040": {
-   "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-igniting, then maybe...",
-   "dst": "所以那就是那間屋子？好，我看看能做什麼。也許滅不了，不過既然它會復燃，那說不定……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 3",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#041": {
    "src": "Hm... didn't think they'd be this far out, but it'd make sense if...",
    "dst": "唔……沒想到牠們會跑這麼遠，不過如果……那就說得通了……",
@@ -546,16 +526,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "From the Mountains#054": {
-   "src": "There's a black market issue in the {p}. Things that you can't find anywhere else is harvested in the Heights for their high value.",
-   "dst": "{p} 有黑市的問題。別的地方找不到的東西，就在 Heights 被採來賣高價。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 4",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#055": {
    "src": "Flerisi are one of them. In the Heights, they're kept as pets. They're relatively friendly, keep your house warm, and don't need much care...",
    "dst": "Flerisi 就是其中之一。在 Heights，牠們是被當寵物養的。相對親人、能讓家裡暖和、也不太需要照顧……",
@@ -596,16 +566,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "From the Mountains#059": {
-   "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. There's still have work to do.",
-   "dst": "車我修好也準備好了，Flerisi 你都抓齊了嗎？那過來車這邊。還有事要辦。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
   "From the Mountains#060": {
    "src": "I'll keep the Flerisi in a smaller fire to keep them calm, see if I can't get them back to the Heights when this is done.",
    "dst": "我會用比較小的火把 Flerisi 安撫住，看這件事結束之後能不能把牠們送回 Heights。",
@@ -619,26 +579,6 @@
   "From the Mountains#061": {
    "src": "For now, I want to see if I can find anything on who these traffickers were. Let's see if they left anything in the front of the cart.",
    "dst": "現在我想查查這些走私販是什麼來頭。看看他們有沒有在車頭留下什麼。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#062": {
-   "src": "...oh. Well, didn't notice that the fire went THAT far earlier. That's a problem, isn't it?",
-   "dst": "……喔。嗯，剛才沒注意到火燒得「那麼」遠。這下麻煩了，對吧？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 5",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#063": {
-   "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed of cinders and fire... And for this much damage to be caused, well...",
-   "dst": "解釋一下，Flerisi 並不是全都像我們在這裡找到的那麼小。牠們以餘燼和火為食……而要造成這種程度的破壞，嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -809,16 +749,6 @@
   "From the Mountains#080": {
    "src": "Well, I say the work is thankless, but that won't stop me, anyways. Thank you for the help, human- This would've been overwhelming alone.",
    "dst": "我說這是吃力不討好的活，不過那也攔不住我。謝謝你幫忙，人類——我一個人絕對應付不來。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 9",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#081": {
-   "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well... I got a free cart for the ride home. There's thing for me to attend to there.",
-   "dst": "我去問問當地警方有沒有找到那些走私販。要是他們跑了，嗯……至少我有一台免費的車可以載我回家。那邊還有事等著我處理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",

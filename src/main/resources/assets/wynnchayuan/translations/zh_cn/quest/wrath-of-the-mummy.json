@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Wrath of the Mummy",
-  "count": 40,
-  "translated": 40,
+  "count": 38,
+  "translated": 38,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -22,8 +22,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Achper",
    "source": "captured"
   },
   "Wrath of the Mummy#002": {
@@ -75,16 +75,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Wrath of the Mummy#007": {
-   "src": "Talk to Ormrod in the desert of {p} at [{~}, {~}, -{~}].",
-   "dst": "与 {p} 沙漠中 [{~}, {~}, -{~}] 的 Ormrod 对话。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Wrath of the Mummy#008": {
    "src": "Stay away, friend!",
@@ -199,16 +189,6 @@
   "Wrath of the Mummy#019": {
    "src": "The tomb lies in the North of the desert, but be very careful!",
    "dst": "墓穴在沙漠北边，不过千万要小心！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 2",
-   "speaker": "Achper",
-   "source": "wiki"
-  },
-  "Wrath of the Mummy#020": {
-   "src": "Mummies aren't known to be weak... especially that one. It's demonic... pure evil, It's easily one of the most powerful specimens I've encountered.",
-   "dst": "木乃伊可没有弱的……尤其是那一具。它是恶魔般的……纯粹的邪恶，绝对是我见过最强大的个体之一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",

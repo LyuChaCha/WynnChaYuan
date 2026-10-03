@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 91,
-  "translated": 81,
+  "count": 86,
+  "translated": 76,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -168,8 +168,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#016": {
@@ -181,16 +181,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Mushroom Man#017": {
-   "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の {p} で Tasim と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Mushroom Man#018": {
    "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
@@ -382,16 +372,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#038": {
-   "src": "I-is it done? S-s-spiders... No m-more spiders? Is my m-m-mushroom patch cl-... cleared?",
-   "dst": "お、終わったか？く、く、蜘蛛…もういないか？俺のキ、キ、キノコ畑は…か、片付いた？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
   "Mushroom Man#039": {
    "src": "Looks cleared to me. These are... uh... some fine mushrooms!",
    "dst": "片付いたみたいです。これは…えっと…立派なキノコですね！",
@@ -400,16 +380,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 4",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Mushroom Man#040": {
-   "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
-   "dst": "あ、ありがとう兵士たち！す、すごく…いや。ま、まあまあだったかな、たぶん。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
    "source": "wiki"
   },
   "Mushroom Man#041": {
@@ -560,16 +530,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 5",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Mushroom Man#056": {
-   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] の {p} へ行き、軍の援助を求める。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "",
    "source": "wiki"
   },
   "Mushroom Man#057": {
@@ -760,16 +720,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#076": {
-   "src": "Right! Right. We've arrived from Nivla Town, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
-   "dst": "そうです！そうです。Nivla の村から来ました。悪い知らせと援助のお願いです。森の蜘蛛が凶暴になり、村を脅かしています。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "Mushroom Man#077": {

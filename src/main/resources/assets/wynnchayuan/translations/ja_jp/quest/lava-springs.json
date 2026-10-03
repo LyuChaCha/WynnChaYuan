@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lava Springs",
-  "count": 50,
-  "translated": 50,
+  "count": 48,
+  "translated": 48,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -62,8 +62,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
    "source": "captured"
   },
   "Lava Springs#006": {
@@ -95,16 +95,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Lava Springs#009": {
-   "src": "Talk to Colonel Gailard at [{~}, {~}, -{~}]",
-   "dst": "[{~}, {~}, -{~}] で Gailard 大佐と話す",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Lava Springs",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Lava Springs#010": {
    "src": "Oh, good, good! I bet'cha you're a {p} soldier, aren't ya? Listen up, soldier! I've got a task here that 'ye can help out with.",
@@ -339,16 +329,6 @@
   "Lava Springs#033": {
    "src": "Hm? The Colonel sent you? what for?",
    "dst": "ん？大佐に言われて来たの？何のために？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 5",
-   "speaker": "Nami The Healer",
-   "source": "wiki"
-  },
-  "Lava Springs#034": {
-   "src": "...Corrupted... lava springs...? You realize how ridiculous that sounds, yeah? Well, I completely believe you.",
-   "dst": "…腐敗した… 溶岩泉…？どれだけ馬鹿げて聞こえるか分かってる？まあ、私は信じるけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",

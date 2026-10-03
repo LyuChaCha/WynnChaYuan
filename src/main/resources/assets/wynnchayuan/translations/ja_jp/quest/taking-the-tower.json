@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Taking the Tower",
-  "count": 59,
-  "translated": 57,
+  "count": 54,
+  "translated": 52,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -32,8 +32,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#003": {
@@ -52,8 +52,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#005": {
@@ -62,8 +62,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#006": {
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
    "source": "captured"
   },
   "Taking the Tower#012": {
@@ -152,8 +152,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#015": {
@@ -226,16 +226,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#022": {
-   "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Powder Master!",
-   "dst": "あ、待って。先に寄る所があるんだ。パウダーマスターの所までついてきて！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 1",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "Taking the Tower#023": {
    "src": "Oh. Alright.",
    "dst": "そっか。わかった。",
@@ -289,26 +279,6 @@
   "Taking the Tower#028": {
    "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
    "dst": "どうやら塔の頂上の親玉は ダメージに弱いらしい！だからパウダーマスターの所に来たってわけ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#029": {
-   "src": "You can apply various elemental powders to your weapons here, which lets them deal types of damage they might not have been able to before.",
-   "dst": "ここでは色々な属性のパウダーを武器に付けられる。そうすると今まで出せなかった種類のダメージを与えられるんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#030": {
-   "src": "In this case, you can apply a powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "今回は パウダーを付ければ、塔の腐敗した敵にもっと効くようになるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -426,16 +396,6 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#042": {
-   "src": "It doesn't matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
-   "dst": "誰がやるかは問わん、成し遂げればいい。好機を見たら、行け！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 4",
-   "speaker": "Lieutenant Van",
-   "source": "wiki"
-  },
   "Taking the Tower#043": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here!| Understood?",
    "dst": "撤退が必要な時や腐敗者を倒した時は、ここに集合！分かったか？",
@@ -534,16 +494,6 @@
    "quest": "Taking the Tower",
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
-   "source": "wiki"
-  },
-  "Taking the Tower#053": {
-   "src": "They have, lieutenant. {u} and I reached the top and defeated the corrupted.",
-   "dst": "はい、中尉。{u} と僕で頂上に辿り着き、腐敗者を倒しました。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Taking the Tower#054": {

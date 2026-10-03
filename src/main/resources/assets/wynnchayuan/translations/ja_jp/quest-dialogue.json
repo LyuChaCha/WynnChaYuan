@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24928,
-  "translated": 23888,
+  "count": 24738,
+  "translated": 23698,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -607,16 +607,6 @@
    "quest": "A Headless History",
    "stage": "Stage 1",
    "speaker": "Hans",
-   "source": "wiki"
-  },
-  "A Headless History#039": {
-   "src": "Talk to Referick in his house and head upstairs at [-{~}, {~}, -{~}]",
-   "dst": "[-{~}, {~}, -{~}] の Referick の家で彼と話し、2階へ上がる",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Headless History",
-   "stage": "Stage 2",
-   "speaker": "",
    "source": "wiki"
   },
   "A Headless History#040": {
@@ -5035,8 +5025,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Elphaba",
    "source": "captured",
    "similar": {
     "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
@@ -5093,16 +5083,6 @@
    "quest": "A Journey Beyond",
    "stage": "Stage 1",
    "speaker": "Lucio",
-   "source": "wiki"
-  },
-  "A Journey Beyond#006": {
-   "src": "And we both keep telling you why you're wrong. This is... sorry. I didn't catch your name. {u}? .",
-   "dst": "なぜ間違ってるか、二人で言い続けてるでしょ。こちらは…ごめん、名前を聞いてなかった。{u}？。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 1",
-   "speaker": "Elphaba",
    "source": "wiki"
   },
   "A Journey Beyond#007": {
@@ -5213,16 +5193,6 @@
    "quest": "A Journey Beyond",
    "stage": "Stage 1",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "A Journey Beyond#018": {
-   "src": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-   "dst": "ええ…そうだけど、先に詳しく説明したいの。危険な任務だから…全部伝えておくべきだと思う。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 1",
-   "speaker": "Elphaba",
    "source": "wiki"
   },
   "A Journey Beyond#019": {
@@ -5415,16 +5385,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "A Journey Beyond#038": {
-   "src": "No more running for us, huh ? Ah, we're here.",
-   "dst": "もう逃げなくていいんだね？ ああ、着いたよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "A Journey Beyond#039": {
    "src": "This is actually our second attempt. The first time, it didn't go too well.",
    "dst": "実はこれが二度目の挑戦なの。一度目はうまくいかなかった。",
@@ -5513,16 +5473,6 @@
    "quest": "A Journey Beyond",
    "stage": "Stage 2",
    "speaker": "Lucio",
-   "source": "wiki"
-  },
-  "A Journey Beyond#048": {
-   "src": "We need a PLAN.",
-   "dst": "必要なのは「作戦」だ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Journey Beyond",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "A Journey Beyond#049": {
@@ -5881,8 +5831,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Elphaba",
    "source": "captured"
   },
   "A Journey Beyond#085": {
@@ -7211,8 +7161,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "A Journey Beyond#218": {
@@ -7544,16 +7494,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "A Journey Further#005": {
-   "src": "Talk to Aledar in {p} at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] の {p} で Aledar と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Further",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "A Journey Further#006": {
    "src": "Alright, let's go. I'll tell you more about our journey on the way.",
@@ -8835,16 +8775,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#043": {
-   "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の衛兵と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Journey Home",
-   "stage": "Stage 8",
-   "speaker": "",
-   "source": "wiki"
-  },
   "A Journey Home#044": {
    "src": "Halt! Where did you come from? There was a cave-in past here, wasn't there?",
    "dst": "止まれ！ どこから来た？ この先で落盤があったはずだろう？",
@@ -9782,7 +9712,7 @@
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
    "stage": "",
-   "speaker": "",
+   "speaker": "Dramele",
    "source": "captured"
   },
   "A Marauder's Dues#005": {
@@ -9872,7 +9802,7 @@
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
    "stage": "",
-   "speaker": "",
+   "speaker": "Peli",
    "source": "captured"
   },
   "A Marauder's Dues#014": {
@@ -10215,16 +10145,6 @@
    "speaker": "Dramele",
    "source": "wiki"
   },
-  "A Marauder's Dues#048": {
-   "src": "...fine. The defenses of my tower were absolute enough that I never needed to defend myself inside. I should have taken you more seriously from the start.",
-   "dst": "…いいだろう。塔の守りは完璧で、中で自ら戦う必要などなかった。最初からもっと真剣に相手にすべきだった。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Marauder's Dues",
-   "stage": "",
-   "speaker": "Dramele",
-   "source": "wiki"
-  },
   "A Marauder's Dues#049": {
    "src": "It's been so long since I've faced a threat, and now that you're here- RRGH! How could a HUMAN get the best of me?",
    "dst": "脅威に向き合うのは久しぶりだ、それなのにお前が―ぐぬう！ なぜ「人間」ごときに後れを取る？",
@@ -10403,16 +10323,6 @@
    "quest": "A Marauder's Dues",
    "stage": "",
    "speaker": "Norsten",
-   "source": "wiki"
-  },
-  "A Marauder's Dues#067": {
-   "src": "That terrible wizard captured you in his spell when you did. It was terrible, it was- Such a hard look you had in your eyes...",
-   "dst": "その時、あの恐ろしい魔法使いが呪文でお前を捕らえたんじゃ。恐ろしかった、本当に―お前のあの険しい目つき…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Marauder's Dues",
-   "stage": "",
-   "speaker": "Peli",
    "source": "wiki"
   },
   "A Marauder's Dues#068": {
@@ -10641,8 +10551,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Espren Border Guard",
    "source": "captured"
   },
   "A New Beginning#017": {
@@ -10661,8 +10571,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "???",
    "source": "captured"
   },
   "A New Beginning#019": {
@@ -10721,8 +10631,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Nixeph Watchman",
    "source": "captured"
   },
   "A New Beginning#025": {
@@ -10741,8 +10651,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Espren Guard Captain",
    "source": "captured"
   },
   "A New Beginning#027": {
@@ -10751,8 +10661,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Sovereign Zhiraok",
    "source": "captured"
   },
   "A New Beginning#028": {
@@ -10901,8 +10811,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Rex",
    "source": "captured"
   },
   "A New Beginning#043": {
@@ -10931,8 +10841,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "???",
    "source": "captured"
   },
   "A New Beginning#046": {
@@ -10951,8 +10861,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
    "source": "captured"
   },
   "A New Beginning#048": {
@@ -10971,8 +10881,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Syndra",
    "source": "captured"
   },
   "A New Beginning#050": {
@@ -11021,8 +10931,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Sui",
    "source": "captured"
   },
   "A New Beginning#055": {
@@ -11091,8 +11001,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Rex",
    "source": "captured"
   },
   "A New Beginning#062": {
@@ -11101,8 +11011,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Rex",
    "source": "captured"
   },
   "A New Beginning#063": {
@@ -11131,8 +11041,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 13",
+   "speaker": "Sovereign Zhiraok",
    "source": "captured"
   },
   "A New Beginning#066": {
@@ -11415,16 +11325,6 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#094": {
-   "src": "Understood. Now, back to where did they go?!",
-   "dst": "了解しました。では話を戻し… どこへ行った？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 1",
-   "speaker": "Espren Border Guard",
-   "source": "wiki"
-  },
   "A New Beginning#095": {
    "src": "Talk to the man at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] にいる男と話す。",
@@ -11458,16 +11358,6 @@
   "A New Beginning#098": {
    "src": "You're n-new around here, right? Transferred in f-from elsewhere. Y-you're interesting, though.",
    "dst": "こ、この辺は初めてだよね？よそから配属されてきた。で、でも、君って面白いね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 2",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "A New Beginning#099": {
-   "src": "Um. The thing at T-Torann... you w-wouldn't happen to... n-n-nevermind. I don't need to know!",
-   "dst": "えっと。T-Torann の件… ま、まさか君が… な、なんでもない。知らなくていい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11535,16 +11425,6 @@
    "speaker": "Nixeph Watchman",
    "source": "wiki"
   },
-  "A New Beginning#106": {
-   "src": "Wait, a suspicious person in the region is this the cursed one?! Get them!!",
-   "dst": "待て、この地域に不審者… 例の呪われし者か？！捕らえろ！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 3",
-   "speaker": "Nixeph Watchman",
-   "source": "wiki"
-  },
   "A New Beginning#107": {
    "src": "They're after... Sovereign Zhiraok... D-don't...y...you...",
    "dst": "奴らの狙いは… 君主 Zhiraok… や、やめ… お前…",
@@ -11563,16 +11443,6 @@
    "quest": "A New Beginning",
    "stage": "Stage 3",
    "speaker": "Sovereign Zhiraok",
-   "source": "wiki"
-  },
-  "A New Beginning#109": {
-   "src": "Sovereign, sir. It seems {p} was not directly prepared to face a cursed one. Dozens of soldiers are dead.",
-   "dst": "君主閣下。{p} は呪われし者に正面から対処する備えがなかった模様。兵士数十名が死亡。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 3",
-   "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
   "A New Beginning#110": {
@@ -11663,16 +11533,6 @@
    "quest": "A New Beginning",
    "stage": "Stage 3",
    "speaker": "Espren Guard Captain",
-   "source": "wiki"
-  },
-  "A New Beginning#119": {
-   "src": "I have a dozen and a half other problems to solve that need to be pushed back oh, would you put away the key already?",
-   "dst": "後回しにすべき問題が十八件もあるのだ… ああ、いい加減その鍵をしまってくれないか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 3",
-   "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
   "A New Beginning#120": {
@@ -11965,16 +11825,6 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#149": {
-   "src": "Ugh, whatever! I don’t have time for this. Zeph, I have work to do. Just… stay on your guard. I don’t trust whatever’s going on with this stranger.",
-   "dst": "ああ、もういい！付き合ってる暇はない。Zeph、あたしは仕事があるの。とにかく… 気をつけて。このよそ者の件、信用してないから。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 6",
-   "speaker": "Rex",
-   "source": "wiki"
-  },
   "A New Beginning#150": {
    "src": "...",
    "dst": "…",
@@ -12145,16 +11995,6 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#167": {
-   "src": "So let's get to the business at hand. I'll start with this you're from the Wynn Province, aren't you?",
-   "dst": "では本題に入りましょう。まずはこれ… あなた、Wynn 地方から来たのでしょう？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 8",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "A New Beginning#168": {
    "src": "I thought so... You're certainly not from around here. Though, I would recommend you keep that information close to your chest.",
    "dst": "やっぱり… 明らかにこの辺りの人じゃない。でも、そのことは胸にしまっておくことを勧めるわ。",
@@ -12188,16 +12028,6 @@
   "A New Beginning#171": {
    "src": "Call it something of a gamble. Given your... shall we say, explosive entrance into the province, I find it unlikely you're with the crown.",
    "dst": "一種の賭けね。あなたの… そう、派手な入国の仕方を見れば、王家の側の人間とは思えない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 8",
-   "speaker": "Syndra",
-   "source": "wiki"
-  },
-  "A New Beginning#172": {
-   "src": "Even if you chose to reveal my secrets and if anyone even believed you you'd have no guarantee of your own safety.",
-   "dst": "たとえ私の秘密を明かしても、信じる者がいたとしても、あなた自身の身の安全は保証されない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12278,16 +12108,6 @@
   "A New Beginning#180": {
    "src": "Then, I would ask of you one more thing. A test, in a way...",
    "dst": "では、もう一つお願いがあるの。ある意味、試験ね…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 8",
-   "speaker": "Syndra",
-   "source": "wiki"
-  },
-  "A New Beginning#181": {
-   "src": "The power you carry the curse you bear. I have seen such things before, yet always at a distance. Never up close.",
-   "dst": "あなたの持つ力、背負う呪い。こうしたものは前にも見たけれど、いつも遠くからだった。間近では一度も。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12675,16 +12495,6 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#220": {
-   "src": "Introduce yourself to the Resistance Members are .",
-   "dst": " にいるレジスタンスのメンバーに自己紹介する。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A New Beginning",
-   "stage": "Stage 11",
-   "speaker": "",
-   "source": "wiki"
-  },
   "A New Beginning#221": {
    "src": "...What do you want? Do you need something?",
    "dst": "…何の用？何か要るの？",
@@ -12698,16 +12508,6 @@
   "A New Beginning#222": {
    "src": "I... shoot things? With my bow?",
    "dst": "あたしは… 撃つ？弓で？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 11",
-   "speaker": "Rex",
-   "source": "wiki"
-  },
-  "A New Beginning#223": {
-   "src": "I'm a tactician, otherwise. Not the tactician that'd be Syndra but... y'know.",
-   "dst": "普段は戦術担当。「あの」戦術家じゃない、それは Syndra… 分かるでしょ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12738,16 +12538,6 @@
   "A New Beginning#226": {
    "src": "Well, you're not going to get any out of me.",
    "dst": "言っとくけど、あたしからは何も聞き出せないから。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 11",
-   "speaker": "Rex",
-   "source": "wiki"
-  },
-  "A New Beginning#227": {
-   "src": "No, you didn't ugh! It's not you personally, it's just...",
-   "dst": "違う、あんたが… ああもう！あんた個人のせいじゃなくて、ただ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12948,16 +12738,6 @@
   "A New Beginning#247": {
    "src": "Yeah.",
    "dst": "うん。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 11",
-   "speaker": "Sui",
-   "source": "wiki"
-  },
-  "A New Beginning#248": {
-   "src": "Um... wait, can I ask actually... nevermind.",
-   "dst": "えっと… 待って、聞いてもいい… やっぱり… なんでもない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -13353,16 +13133,6 @@
    "quest": "A New Beginning",
    "stage": "Stage 13",
    "speaker": "Syndra",
-   "source": "wiki"
-  },
-  "A New Beginning#288": {
-   "src": "Yes... A toddler could calculate that by watching you. I'll solve that problem for you. Keep them out of trouble, and we won't have any issues as usual.",
-   "dst": "ああ… 君を見ていれば幼児でも計算できる。その問題は私が解いてやろう。彼らが面倒を起こさなければ、何の問題もない… いつも通りだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 13",
-   "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
   "A New Beginning#289": {
@@ -14732,16 +14502,6 @@
    "kind": "objective",
    "quest": "A Sandy Scandal",
    "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "A Sandy Scandal#067": {
-   "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] にいる {p} の銀行警備員と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "A Sandy Scandal",
-   "stage": "Stage 11",
    "speaker": "",
    "source": "wiki"
   },
@@ -16873,7 +16633,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Olon\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -16929,7 +16689,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mona\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -16945,7 +16705,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mona\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -16991,7 +16751,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mona\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -17667,7 +17427,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 6",
    "speaker": "Olon\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -17687,8 +17447,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Olon",
    "source": "captured"
   },
   "Aldorei's Secret Part II#075": {
@@ -17969,16 +17729,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#103": {
-   "src": "More and more people around {p} have died! But none in {p}. I think something sketchy is going on in here.",
-   "dst": "{p} の周りじゃ死ぬ奴がどんどん増えてる！でも {p} では一人もいない。ここで何か怪しいことが起きてる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 2",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#104": {
    "src": "Please, {u}. I really need your help. Us {p} elves aren't exactly welcomed with open arms in {p}. It's a surprise they even let us in at all.",
    "dst": "頼む、{u}。本当に助けが要るんだ。{p} のエルフは {p} じゃ歓迎されてない。中に入れてもらえたのが驚きなくらいだ。",
@@ -18042,26 +17792,6 @@
   "Aldorei's Secret Part II#110": {
    "src": "I've heard of you and what happened in the valley.",
    "dst": "あなたのことも、谷で何があったかも聞いているわ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mona",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#111": {
-   "src": "Oh... Yeah. Good job.",
-   "dst": "あら…そう。よくやったわね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mona",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#112": {
-   "src": "Enjoy {p} Town now.",
-   "dst": "{p} の町を楽しんでちょうだい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18222,16 +17952,6 @@
   "Aldorei's Secret Part II#128": {
    "src": "Actually. There is an old tale for children about a dying elf.",
    "dst": "そういえば。死にゆくエルフの、子ども向けの古いお話があるわ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mona",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#129": {
-   "src": "I never thought much about it since I have never seen anyone in here die before.",
-   "dst": "ここで誰かが死ぬのを見たことがないから、深く考えたことはなかったけれど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18852,16 +18572,6 @@
   "Aldorei's Secret Part II#191": {
    "src": "I will tell you this, Elves used to die from old age around {~} years ago.",
    "dst": "これだけは教えてやろう。{~} 年ほど前まで、エルフは老いで死んでいた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#192": {
-   "src": "Farewell. Make sure to let everyone know I'm the smartest!",
-   "dst": "さらばだ。僕が一番賢いと皆に伝えておくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -19819,16 +19529,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#288": {
-   "src": "Get close to the boulders and cast a spell. I will follow yours.",
-   "dst": "岩に近づいて呪文を唱えてくれ。俺も続く。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 6",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#289": {
    "src": "Cast a spell on the boulders with Olon.",
    "dst": "Olon と一緒に岩へ呪文を唱える。",
@@ -19859,16 +19559,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#292": {
-   "src": "Good job! Teamwork makes a dream work, or whatever the saying is.",
-   "dst": "よくやった！チームワークで夢は叶う、だっけ？そんな感じの言葉。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 7",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#293": {
    "src": "Explore the abandoned tomb.",
    "dst": "打ち捨てられた墓所を探索する。",
@@ -19877,16 +19567,6 @@
    "quest": "Aldorei's Secret Part II",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#294": {
-   "src": "Let's take a look around.",
-   "dst": "周りを見てみよう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 8",
-   "speaker": "Olon",
    "source": "wiki"
   },
   "Aldorei's Secret Part II#295": {
@@ -19939,16 +19619,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#300": {
-   "src": "Let's take a look around!",
-   "dst": "周りを見てみよう！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#301": {
    "src": "{~}BP - {~}BP (before portal)He will welcome you with open arms, your devotion to knowledge was unmatched.",
    "dst": "{~}BP - {~}BP (ポータル以前)彼は両手を広げて汝を迎えるだろう。汝の知への献身は比類なきものだった。",
@@ -19992,16 +19662,6 @@
   "Aldorei's Secret Part II#305": {
    "src": "So what changed?",
    "dst": "で、何が変わったんだ？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#306": {
-   "src": "What do you think about all of this?",
-   "dst": "これ全部、どう思う？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -20242,16 +19902,6 @@
   "Aldorei's Secret Part II#330": {
    "src": "I'll make sure {p} NEVER becomes like this.",
    "dst": "{p} は絶対にこうはさせない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#331": {
-   "src": "What do you think about all of this?",
-   "dst": "これ全部、どう思う？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -21787,16 +21437,6 @@
    "quest": "Aldorei's Secret Part II",
    "stage": "Stage 17",
    "speaker": "Elder Alder",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#485": {
-   "src": "Venture into the {p} and find the entrance to the sealed away Elder at [{~}, {~}, -{~}].",
-   "dst": "{p} に踏み入り、[{~}, {~}, -{~}] で封印された長老のもとへの入口を見つける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 18",
-   "speaker": "",
    "source": "wiki"
   },
   "Aldorei's Secret Part II#486": {
@@ -23955,8 +23595,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Sol",
    "source": "ja_jp"
   },
   "Aldorei's Secret Part II#702": {
@@ -24075,7 +23715,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 18",
    "speaker": "",
    "source": "ja_jp"
   },
@@ -37847,8 +37487,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Arachnids' Ascent#016": {
@@ -38394,16 +38034,6 @@
   "Arachnids' Ascent#070": {
    "src": "That... that was a close one. Phew! Can't believe we made it out in one piece. I think we're near the top, too.",
    "dst": "い… 今のは危なかった。ふう！無事に抜けられたなんて信じられない。頂上も近いと思う。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 4",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#071": {
-   "src": "Well, here we are! ...The heat's gotten more intense up here. Come on, let's find out what we're looking for, before I over-",
-   "dst": "さあ、着いた！…上はさらに暑いな。ほら、探し物を見つけよう。俺がのぼせる前に——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -41531,16 +41161,6 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#012": {
-   "src": "However, that's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
-   "dst": "だが、それはオークと結んだ停戦協定の抜け穴でな。盗みは侵略行為とみなされないんだ…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Blazing Retribution",
-   "stage": "Stage 2",
-   "speaker": "Detective Jackson",
-   "source": "wiki"
-  },
   "Blazing Retribution#013": {
    "src": "And that means my hands are tied. Humans, however, were not mentioned in the notes, so you'll need to retrieve it.",
    "dst": "つまり私は手出しできない。だが条文に人間の記載はない。だから君に取り返してもらいたい。",
@@ -41837,8 +41457,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Detective Jackson",
    "source": "captured"
   },
   "Blazing Retribution#043": {
@@ -42797,8 +42417,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
    "source": "captured"
   },
   "Brothers Return#006": {
@@ -43324,16 +42944,6 @@
   "Brothers Return#058": {
    "src": "Oh, it's you. For your information, the proper term of address is your excellency.",
    "dst": "おや、君か。言っておくが、正しい呼び方は「閣下」だ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "Stage 4",
-   "speaker": "Bishop Kaideus",
-   "source": "wiki"
-  },
-  "Brothers Return#059": {
-   "src": "You may have forgotten already, but I must inform you that your brother is indeed dead.",
-   "dst": "もう忘れたのかもしれないが、君の兄上は確かに亡くなったと伝えねばならん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
@@ -44897,8 +44507,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Jankan",
    "source": "captured"
   },
   "Canyon Condor#003": {
@@ -45074,16 +44684,6 @@
   "Canyon Condor#020": {
    "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
    "dst": "実はな、あの洞窟から稼ぎを運ぼうとして腰をやってしもうて、一番奥に置きっぱなしなんじゃ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Canyon Condor",
-   "stage": "Stage 2",
-   "speaker": "Jankan",
-   "source": "wiki"
-  },
-  "Canyon Condor#021": {
-   "src": "Go fetch me Gold Chunk and I'll tell ye where ye need to go next.",
-   "dst": "金塊を取ってきてくれたら、次に行く場所を教えてやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -50953,8 +50553,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
    "source": "captured"
   },
   "Clearing the Camps#001": {
@@ -51050,16 +50650,6 @@
   "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "おお、また {p} の兵か？心から歓迎するよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Clearing the Camps",
-   "stage": "Stage 1",
-   "speaker": "Captain Kymer",
-   "source": "wiki"
-  },
-  "Clearing the Camps#011": {
-   "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
-   "dst": "村人からの要請は聞いたか？「Orc」と「Goblin」とやらが、彼らの町を脅かしているそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -54661,16 +54251,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "Creeper Infiltration#001": {
-   "src": "Talk to Thomas in {p} at [-{~}, {~}, -{~}].",
-   "dst": "{p} の [-{~}, {~}, -{~}] で Thomas と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Creeper Infiltration#002": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
    "dst": "誰か！誰か…ああ、こんにちは。あなたなら頼りになりそうですね。",
@@ -55425,16 +55005,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "Crop Failure#026": {
-   "src": "Talk to Anast in {p}, at [-{~}, {~}, -{~}]",
-   "dst": "{p} の [-{~}, {~}, -{~}] で Anast と話す",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Crop Failure",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Crop Failure#027": {
    "src": "Grr...that no-good, lying, cheating, thieving...graaah!",
    "dst": "ぐぬぬ…あのろくでなしの、嘘つきの、いかさま師の、泥棒の…があああ！",
@@ -55705,16 +55275,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Crop Failure#056": {
-   "src": "Oi, bucko! Took my advice, eh? I'd figured I'd join ye, 'n see for myself what was goin' on.",
-   "dst": "よう、兄弟！おいらの助言を聞いたか？おいらも一緒に行って、何が起きてるか確かめようと思ってな。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "Stage 4",
-   "speaker": "Doubiss",
-   "source": "wiki"
-  },
   "Crop Failure#057": {
    "src": "And boy am I glad I bring me water in bottles. This stuff's rancid, full a' swamp slimes. No idea why they're here, though.",
    "dst": "いやあ、水を瓶で持ってきてて良かったぜ。こいつは腐ってる、沼スライムだらけだ。なんでここにいるかは知らねえが。",
@@ -55831,8 +55391,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Doubiss",
    "source": "captured"
   },
   "Dearly Departed#000": {
@@ -56007,16 +55567,6 @@
    "speaker": "Farmer Cevalus",
    "source": "wiki"
   },
-  "Dearly Departed#016": {
-   "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
-   "dst": "スキルポイントも振ってあるよね？何かあった時に役立つからね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dearly Departed",
-   "stage": "Stage 3",
-   "speaker": "Farmer Cevalus",
-   "source": "wiki"
-  },
   "Dearly Departed#017": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
    "dst": "スキルポイントだよ！レベルが上がるともらえて、振り分ければ戦闘でボーナスが得られる。私は兵士じゃないが、それでも使うべきだと分かるよ…",
@@ -56115,16 +55665,6 @@
    "quest": "Dearly Departed",
    "stage": "Stage 3",
    "speaker": "Farmer Cevalus",
-   "source": "wiki"
-  },
-  "Dearly Departed#027": {
-   "src": "Dig up the grave at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の墓を掘り返す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dearly Departed",
-   "stage": "Stage 4",
-   "speaker": "",
    "source": "wiki"
   },
   "Dearly Departed#028": {
@@ -59759,8 +59299,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "???",
    "source": "captured"
   },
   "Dwarves and Doguns Part II#006": {
@@ -59866,16 +59406,6 @@
   "Dwarves and Doguns Part II#016": {
    "src": "Ouch, I'm sorry... Excuse us.",
    "dst": "いてっ、すみません…通してください。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part II",
-   "stage": "Stage 2",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part II#017": {
-   "src": "We heard what happened .",
-   "dst": "何があったか聞いた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -61379,8 +60909,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Dogun Chieftain",
    "source": "captured"
   },
   "Dwarves and Doguns Part IV#001": {
@@ -61631,16 +61161,6 @@
    "quest": "Dwarves and Doguns Part IV",
    "stage": "Stage 4",
    "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part IV#027": {
-   "src": "Quiet. Dwarven whelp...we will not go quietly. AWAKEN.",
-   "dst": "黙れ。ドワーフの小僧…我らは黙って消えはせぬ。目覚めよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part IV",
-   "stage": "Stage 4",
-   "speaker": "Dogun Chieftain",
    "source": "wiki"
   },
   "Dwarves and Doguns Part IV#028": {
@@ -78233,16 +77753,6 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#013": {
-   "src": "Fight your way through the Fiata Room in the combat challenge.",
-   "dst": "戦闘の試練で Fiata の間を戦い抜く。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Enter the Dojo#014": {
    "src": "I recognize your skill, and you have passed the challenge of the Lufar Room! Hoho, but the next challenge has defeated many an apprentice.",
    "dst": "お主の腕を認めよう。Lufar の間の試練は合格じゃ！ほほ、だが次の試練は多くの弟子を打ち負かしてきた。",
@@ -78263,16 +77773,6 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#016": {
-   "src": "I hear many things about human combat skill, so I believe I shall watch this challenger myself. Enter now, challenger!",
-   "dst": "人間の戦技はいろいろと聞く。ゆえにこの挑戦はわし自ら見届けよう。さあ入れ、挑戦者よ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 4",
-   "speaker": "Sensei Miyagi",
-   "source": "wiki"
-  },
   "Enter the Dojo#017": {
    "src": "Solve the puzzle of sight in the Cliste Room in the sight challenge.",
    "dst": "視覚の試練で、Cliste の間の視覚の謎を解く。",
@@ -78281,16 +77781,6 @@
    "quest": "Enter the Dojo",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Enter the Dojo#018": {
-   "src": "And I am to recognize your combat skill, and to proclaim your passage of the Fiata Room. Well done!",
-   "dst": "お主の戦技を認め、Fiata の間の合格を告げよう。見事じゃ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 5",
-   "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
   "Enter the Dojo#019": {
@@ -78321,16 +77811,6 @@
    "quest": "Enter the Dojo",
    "stage": "Stage 5",
    "speaker": "Sensei Miyagi",
-   "source": "wiki"
-  },
-  "Enter the Dojo#022": {
-   "src": "Become at one with nature in the Sitheach Room and Cavern.",
-   "dst": "Sitheach の間と洞窟で自然と一体になる。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 6",
-   "speaker": "",
    "source": "wiki"
   },
   "Enter the Dojo#023": {
@@ -78371,16 +77851,6 @@
    "quest": "Enter the Dojo",
    "stage": "Stage 6",
    "speaker": "Sensei Miyagi",
-   "source": "wiki"
-  },
-  "Enter the Dojo#027": {
-   "src": "Exit the Sitheach cave through the tunnel near the temple.",
-   "dst": "神殿近くのトンネルから Sitheach の洞窟を出る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 7",
-   "speaker": "",
    "source": "wiki"
   },
   "Enter the Dojo#028": {
@@ -79521,26 +78991,6 @@
    "quest": "Enzan's Brother",
    "stage": "Stage 3",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Enzan's Brother#022": {
-   "src": "Ah, you're back! Do you have the mushroom?",
-   "dst": "おお、戻ったか！キノコはあるか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 3",
-   "speaker": "Therck",
-   "source": "wiki"
-  },
-  "Enzan's Brother#023": {
-   "src": "Take this ring. It's an accessory item! You can identify it at the nearby Item Identifier.",
-   "dst": "この指輪を持っていけ。アクセサリーだ！近くのアイテム鑑定士で鑑定できる。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enzan's Brother",
-   "stage": "Stage 3",
-   "speaker": "Therck",
    "source": "wiki"
   },
   "Enzan's Brother#024": {
@@ -83089,8 +82539,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Telvu",
    "source": "captured"
   },
   "Fate of the Fallen#006": {
@@ -83209,8 +82659,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Telvu",
    "source": "captured"
   },
   "Fate of the Fallen#018": {
@@ -83321,16 +82771,6 @@
    "quest": "Fate of the Fallen",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Fate of the Fallen#029": {
-   "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
-   "dst": "おや、{p} 軍の者か。この凍てついた墳墓に入ろうとしているところだ。力を貸してほしい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Fate of the Fallen",
-   "stage": "Stage 1",
-   "speaker": "Telvu",
    "source": "wiki"
   },
   "Fate of the Fallen#030": {
@@ -83983,16 +83423,6 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#095": {
-   "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
-   "dst": "なんということだ…ずっと勘違いしていた…これは皆を守るためだった…だが正気なら、誰かに意図を伝えたはずだ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Fate of the Fallen",
-   "stage": "Stage 9",
-   "speaker": "Telvu",
-   "source": "wiki"
-  },
   "Fate of the Fallen#096": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
    "dst": "これほど長く、生き埋めのまま腐敗と戦ってきたとは。その顔を見るに、君もぞっとしているようだな。彼を殺すことは慈悲になるだろう。",
@@ -84239,8 +83669,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Lari",
    "source": "captured"
   },
   "Finding the Light#023": {
@@ -84763,16 +84193,6 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Finding the Light#075": {
-   "src": "Find the Church Library in the city of {p} at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] にある {p} の街で教会の図書館を見つける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Finding the Light",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Finding the Light#076": {
    "src": "Find a way up to the church bell at the top of the church.",
    "dst": "教会の頂上にある鐘まで登る方法を探す。",
@@ -84856,16 +84276,6 @@
   "Finding the Light#084": {
    "src": "I suppose that means you need to place it by the inscription. So yet another task that you must finish...",
    "dst": "つまり、碑文のそばに置けってことね。またあなたがやらなきゃいけない仕事か…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Finding the Light",
-   "stage": "Stage 6",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Finding the Light#085": {
-   "src": "...go on, then, do it. I'm just needed here to be a translator for you thusfar, it seems.",
-   "dst": "…どうぞ、やって。今のところ私はただの通訳みたいだし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -85310,16 +84720,6 @@
    "kind": "objective",
    "quest": "Finding the Light",
    "stage": "Stage 13",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "Finding the Light#130": {
-   "src": "Return to the Tree at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の大樹へ戻る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Finding the Light",
-   "stage": "Stage 14",
    "speaker": "",
    "source": "wiki"
   },
@@ -94331,8 +93731,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Zenam",
    "source": "captured"
   },
   "Heart of Llevigar#001": {
@@ -94341,8 +93741,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Zenam",
    "source": "captured"
   },
   "Heart of Llevigar#002": {
@@ -94421,8 +93821,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Zenam",
    "source": "captured"
   },
   "Heart of Llevigar#010": {
@@ -94445,29 +93845,9 @@
    "speaker": "Zenam",
    "source": "wiki"
   },
-  "Heart of Llevigar#012": {
-   "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
-   "dst": "うえっ、客？出ていってくれ！工場は保守で停止中――待って、あなたが雇った電磁魔法の専門家？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Heart of Llevigar",
-   "stage": "Stage 1",
-   "speaker": "Zenam",
-   "source": "wiki"
-  },
   "Heart of Llevigar#013": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
    "dst": "そうだよね？そうだよね！？もう待てないんだ！このシステムは絶対に壊れない、完璧な設計のはずだったのに！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Heart of Llevigar",
-   "stage": "Stage 1",
-   "speaker": "Zenam",
-   "source": "wiki"
-  },
-  "Heart of Llevigar#014": {
-   "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
-   "dst": "Corkus の助言すら要らなかった、全部自分たちで作り上げたんだ、なのに今は何もかもおかしい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -94678,16 +94058,6 @@
   "Heart of Llevigar#035": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
    "dst": "ふう…おかえり。電力が戻った――すべてまたフル稼働だ。システムは今、余剰分を流しているだけだと思う。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Heart of Llevigar",
-   "stage": "Stage 9",
-   "speaker": "Zenam",
-   "source": "wiki"
-  },
-  "Heart of Llevigar#036": {
-   "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
-   "dst": "でも間に合ってよかった――専門家を名乗る偽者が来たんだ。明らかにあなたの報酬を横取りしに来ただけだよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -97651,16 +97021,6 @@
    "speaker": "Villager",
    "source": "wiki"
   },
-  "Hollow Serenity#291": {
-   "src": "How can I help you?",
-   "dst": "何か用？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 4",
-   "speaker": "Villager",
-   "source": "wiki"
-  },
   "Hollow Serenity#292": {
    "src": "I'm nobody. No, I'm serious, I literally don't have a name. Parents just didn't bother to name me.",
    "dst": "私は名無し。いや本当に名前がないの。親が名前をつける手間を惜しんだんだ。",
@@ -97834,16 +97194,6 @@
   "Hollow Serenity#309": {
    "src": "You're new... we don't see a lot of youngsters around these days... especially humans.",
    "dst": "見ない顔じゃな…近頃は若いのは滅多に来ん…特に人間はな。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 4",
-   "speaker": "Old Man",
-   "source": "wiki"
-  },
-  "Hollow Serenity#310": {
-   "src": "How can I help you?",
-   "dst": "何か用？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -102011,26 +101361,6 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#023": {
-   "src": "Oh. I seem to be out of emeralds. Well- I can, uh, offer some advice! There's lots to find in this forest. Plenty of caves with valuables to explore! Might be worth your time.",
-   "dst": "あ。エメラルドが切れてるみたいだ。えっと――代わりに、その、助言をやるよ！この森には見つけるものがたくさんある。お宝のある洞窟もいっぱいだ！行く価値あるかもな。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Infested Plants",
-   "stage": "Stage 4",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
-  "Infested Plants#025": {
-   "src": "It has been a time, soldiers, but I truly must be going! We're near {p}, you should stop on by! Just keep going east down the main road! Go and speak to the mayor! He can cover my expenses!",
-   "dst": "楽しかったよ兵士さんたち、でも本当にもう行かなきゃ！{p} が近いから寄ってけよ！大通りを東へ進むだけだ！町長と話してくれ！俺の分は払ってくれるから！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Infested Plants",
-   "stage": "Stage 4",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
   "Infested Plants#026": {
    "src": "Well. Goodbye!",
    "dst": "じゃ。さよなら！",
@@ -102089,16 +101419,6 @@
    "quest": "Infested Plants",
    "stage": "Stage 5",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Infested Plants#032": {
-   "src": "Oh, Ope... I take it your meeting with him went poorly? I must apologize for him, he is... a tough man to deal with.",
-   "dst": "ああ、Ope ですか…うまくいかなかったようですね？代わってお詫びします、彼は…扱いにくい男でして。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Infested Plants",
-   "stage": "Stage 5",
-   "speaker": "Mayor Alvin",
    "source": "wiki"
   },
   "Infested Plants#033": {
@@ -102937,16 +102257,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#014": {
-   "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
-   "dst": "道を進み、[-{~}, {~}, -{~}] にある Wynn 地方への門を目指す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#015": {
    "src": "I don't suppose you know much about Wynn either, do you?",
    "dst": "君も Wynn のことはあまり知らないよね？",
@@ -103027,16 +102337,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#023": {
-   "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] で Wynn 地方に入る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#024": {
    "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
    "dst": "さて、何を待ってるんだ？この地方を探検しに行こう。",
@@ -103055,16 +102355,6 @@
    "quest": "King's Recruit",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "King's Recruit#026": {
-   "src": "So this is Wynn we've all been hearing about... It's beautiful.",
-   "dst": "これが噂に聞いてた Wynn か… きれいだね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 5",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#027": {
@@ -103337,16 +102627,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#054": {
-   "src": "Continue onwards to [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] へ進み続ける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 9",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#055": {
    "src": "Phew! We made it over safely this time at least.",
    "dst": "ふう！今度は無事に渡れたね。",
@@ -103457,16 +102737,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#066": {
-   "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の洞窟に入り、防具を見つける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 11",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#067": {
    "src": "We should return to the guard to see if he'll let us through now!",
    "dst": "衛兵の所に戻って、今度は通してくれるか確かめよう！",
@@ -103487,16 +102757,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#069": {
-   "src": "So you found some armor, huh?",
-   "dst": "防具を見つけたようだな？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 12",
-   "speaker": "Guard",
-   "source": "wiki"
-  },
   "King's Recruit#070": {
    "src": "Yes, a helmet! Will you let us pass now?",
    "dst": "ああ、ヘルメットだ！通してくれるか？",
@@ -103505,16 +102765,6 @@
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "King's Recruit#071": {
-   "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
-   "dst": "待て、新兵。防具を装備する前に、まず鑑定しなければならん。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 12",
-   "speaker": "Guard",
    "source": "wiki"
   },
   "King's Recruit#072": {
@@ -103557,16 +102807,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#076": {
-   "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
-   "dst": "ヘルメットを着けたな。上出来だ、通ってよし。扉を開けてやろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 12",
-   "speaker": "Guard",
-   "source": "wiki"
-  },
   "King's Recruit#077": {
    "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
    "dst": "中では気をつけろ、新兵ども！防具があっても楽じゃないぞ！",
@@ -103584,16 +102824,6 @@
    "kind": "objective",
    "quest": "King's Recruit",
    "stage": "Stage 13",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "King's Recruit#079": {
-   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "地下道を進み、[-{~}, {~}, -{~}] へ向かう。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 14",
    "speaker": "",
    "source": "wiki"
   },
@@ -103657,16 +102887,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#086": {
-   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "地下道を進み、[-{~}, {~}, -{~}] へ向かう。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 16",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#087": {
    "src": "Over here! You're just what I needed!",
    "dst": "こっちだ！ちょうどいい所に！",
@@ -103690,16 +102910,6 @@
   "King's Recruit#089": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
    "dst": "やっと援軍か！待てよ… お前たち、Fruma から来たばかりだな？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 17",
-   "speaker": "Lieutenant",
-   "source": "wiki"
-  },
-  "King's Recruit#090": {
-   "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
-   "dst": "まあいい、この辺りはもう片付いたはずだ。{p} はすぐそこだしな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -103897,29 +103107,9 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#110": {
-   "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] で {p} の王と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 22",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#111": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
    "dst": "Wynn 地方へようこそ！そのボロボロの姿を見るに、ここまでの旅はさぞ波乱に満ちていたのだろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 22",
-   "speaker": "King of Ragni",
-   "source": "wiki"
-  },
-  "King's Recruit#112": {
-   "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
-   "dst": "新兵たちよ、ここが気高き {p} の砦、この地方の大都市の一つだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -103985,16 +103175,6 @@
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "King's Recruit#119": {
-   "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
-   "dst": "はは、僕はそろそろ {p} の方へ向かうつもり。途中に {p} ってのがあるみたいだけど…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 22",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#120": {
@@ -104237,8 +103417,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Junes",
    "source": "captured"
   },
   "Kingdom of Sand#013": {
@@ -104821,16 +104001,6 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#071": {
-   "src": "I should get to {p} right away. Thank you, {u}. You have my eternal gratitude.",
-   "dst": "すぐに {p} へ向かわなきゃ。ありがとう、{u}。このご恩は一生忘れないわ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Kingdom of Sand",
-   "stage": "Stage 9",
-   "speaker": "Junes",
-   "source": "wiki"
-  },
   "Kingdom of Sand#072": {
    "src": "Are you thinking of exploring the tomb? I'm sure you can learn so much about the Empire... but you best be careful.",
    "dst": "墓を探索するつもり？帝国について多くを学べるはずよ… でも気をつけてね。",
@@ -104917,8 +104087,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Nami The Healer",
    "source": "captured"
   },
   "Lava Springs#006": {
@@ -104950,16 +104120,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Lava Springs#009": {
-   "src": "Talk to Colonel Gailard at [{~}, {~}, -{~}]",
-   "dst": "[{~}, {~}, -{~}] で Gailard 大佐と話す",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Lava Springs",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Lava Springs#010": {
    "src": "Oh, good, good! I bet'cha you're a {p} soldier, aren't ya? Listen up, soldier! I've got a task here that 'ye can help out with.",
@@ -105194,16 +104354,6 @@
   "Lava Springs#033": {
    "src": "Hm? The Colonel sent you? what for?",
    "dst": "ん？大佐に言われて来たの？何のために？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 5",
-   "speaker": "Nami The Healer",
-   "source": "wiki"
-  },
-  "Lava Springs#034": {
-   "src": "...Corrupted... lava springs...? You realize how ridiculous that sounds, yeah? Well, I completely believe you.",
-   "dst": "…腐敗した… 溶岩泉…？どれだけ馬鹿げて聞こえるか分かってる？まあ、私は信じるけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -108257,16 +107407,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "Lost Tower#002": {
-   "src": "Talk to Laen in {p} at [{~}, {~}, -{~}].",
-   "dst": "{p} の [{~}, {~}, -{~}] にいる Laen と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Lost Tower",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Lost Tower#003": {
    "src": "Hey adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
    "dst": "やあ、冒険者さん！少し手を貸してもらえませんか？ちょっと困っていまして。",
@@ -109275,8 +108415,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#003": {
@@ -109345,8 +108485,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Elvura",
    "source": "captured"
   },
   "Meaningful Holiday#010": {
@@ -109395,8 +108535,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 13",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#015": {
@@ -109572,16 +108712,6 @@
   "Meaningful Holiday#032": {
    "src": "A food donation fer the 'omless?",
    "dst": "ホームレスに食いもんの寄付だって？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 3",
-   "speaker": "Flodur",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#033": {
-   "src": "I'm sorry but everyfin is sold out, everyone is preparing for Craftmas lad.",
-   "dst": "悪いがなんもかんも売り切れだ、みんな Craftmas の支度でな、若いの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -109867,16 +108997,6 @@
    "quest": "Meaningful Holiday",
    "stage": "Stage 7",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#062": {
-   "src": "Heya! I just finished decorating this christmas tree!",
-   "dst": "やっほー！このクリスマスツリーの飾りつけが終わったとこ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 7",
-   "speaker": "Elvura",
    "source": "wiki"
   },
   "Meaningful Holiday#063": {
@@ -110172,16 +109292,6 @@
   "Meaningful Holiday#092": {
    "src": "Oh...",
    "dst": "おお…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 13",
-   "speaker": "Nick",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#093": {
-   "src": "Stealing is not in the christmas spirit... But I think I can make this work.",
-   "dst": "盗みはクリスマスの精神に反する…だが、これは生かせそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -111427,16 +110537,6 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#092": {
-   "src": "Wait, you got it from my STUDY?! You...you idiot! Do you have any idea what you stupidly, yet inadvertently have done?! You must NEVER go in my study!!",
-   "dst": "待て、私の「書斎」から持ち出しただと？！この…この馬鹿者！愚かにも、うっかり何をしでかしたか分かっているのか？！書斎には「決して」入るな！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 11",
-   "speaker": "Mr. Caritat",
-   "source": "wiki"
-  },
   "Memory Paranoia#093": {
    "src": "Unlock the Study.",
    "dst": "書斎の鍵を開ける。",
@@ -112003,8 +111103,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#012": {
@@ -112013,8 +111113,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#013": {
@@ -112830,26 +111930,6 @@
   "Misadventure on the Sea#094": {
    "src": "Alright, that's enough!",
    "dst": "よし、そこまでだ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "Stage 2",
-   "speaker": "Honip",
-   "source": "wiki"
-  },
-  "Misadventure on the Sea#095": {
-   "src": "So, there's quite a few skeletons in there, and we never bothered throwin' them out!",
-   "dst": "中には骸骨がけっこうあってな、わざわざ捨てたこともねえんだ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "Stage 2",
-   "speaker": "Honip",
-   "source": "wiki"
-  },
-  "Misadventure on the Sea#096": {
-   "src": "Go ahead, here's a sponge for the dried blood as well. Just wack the skeletons with it!",
-   "dst": "さあ行け、乾いた血用のスポンジもやる。骸骨はそれでぶっ叩きゃいい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -115779,8 +114859,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#016": {
@@ -115792,16 +114872,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Mushroom Man#017": {
-   "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の {p} で Tasim と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Mushroom Man#018": {
    "src": "{u}, hello! This place is really nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
@@ -115993,16 +115063,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#038": {
-   "src": "I-is it done? S-s-spiders... No m-more spiders? Is my m-m-mushroom patch cl-... cleared?",
-   "dst": "お、終わったか？く、く、蜘蛛…もういないか？俺のキ、キ、キノコ畑は…か、片付いた？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
-   "source": "wiki"
-  },
   "Mushroom Man#039": {
    "src": "Looks cleared to me. These are... uh... some fine mushrooms!",
    "dst": "片付いたみたいです。これは…えっと…立派なキノコですね！",
@@ -116011,16 +115071,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 4",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Mushroom Man#040": {
-   "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
-   "dst": "あ、ありがとう兵士たち！す、すごく…いや。ま、まあまあだったかな、たぶん。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Yahya",
    "source": "wiki"
   },
   "Mushroom Man#041": {
@@ -116171,16 +115221,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 5",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Mushroom Man#056": {
-   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] の {p} へ行き、軍の援助を求める。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "",
    "source": "wiki"
   },
   "Mushroom Man#057": {
@@ -116371,16 +115411,6 @@
    "quest": "Mushroom Man",
    "stage": "Stage 6",
    "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
-  "Mushroom Man#076": {
-   "src": "Right! Right. We've arrived from Nivla Town, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
-   "dst": "そうです！そうです。Nivla の村から来ました。悪い知らせと援助のお願いです。森の蜘蛛が凶暴になり、村を脅かしています。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 6",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "Mushroom Man#077": {
@@ -125143,16 +124173,6 @@
    "speaker": "Manny",
    "source": "wiki"
   },
-  "One Thousand Meters Under#071": {
-   "src": "Find a way out of the void.",
-   "dst": "虚無から脱出する方法を探す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "One Thousand Meters Under",
-   "stage": "Stage 16",
-   "speaker": "",
-   "source": "wiki"
-  },
   "One Thousand Meters Under#072": {
    "src": "Whoooooooo are you!?",
    "dst": "おまえは だーーれーー！？",
@@ -126289,8 +125309,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Newspaper Merchant",
    "source": "captured",
    "similar": {
     "text": "May we unearth the truth long buried and bring forth change. Never forget that.",
@@ -128445,16 +127465,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Overture to Despair#220": {
-   "src": "May we unearth the truth long buried and bring forth change. Never forget that.",
-   "dst": "久しく埋もれし真実を掘り起こし、変革をもたらさん。決して忘れずに。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Overture to Despair",
-   "stage": "Stage 10",
-   "speaker": "Newspaper Merchant",
-   "source": "wiki"
-  },
   "Overture to Despair#221": {
    "src": "Finally! Finally, finally, something good is happening!",
    "dst": "やっと！やっと、やっと、いいことが起きた！",
@@ -128688,16 +127698,6 @@
   "Overture to Despair#244": {
    "src": "I'm... ugh. I'm still so angry. At... everything! The crown, the sovereigns, the... the people of {p}, too!! For... for still living their lives, even, even when it feels like the world's ended.",
    "dst": "私… もう。まだすごく腹が立つ。何もかもに！王家にも、君主にも… {p} の人たちにも！！世界が終わったみたいなのに、ふ、普通に暮らしてるから。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Overture to Despair",
-   "stage": "Stage 11",
-   "speaker": "Sui",
-   "source": "wiki"
-  },
-  "Overture to Despair#245": {
-   "src": "...but we have some hope. F-finally. Rex and Zeph... there's still a chance we'll get to see them again.",
-   "dst": "…でも、少し希望が見えた。や、やっと。Rex と Zeph に… また会えるかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
@@ -132681,8 +131681,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Overture to Despair",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Sui",
    "source": "captured"
   },
   "Overture to Despair#644": {
@@ -133165,16 +132165,6 @@
    "speaker": "Merloni",
    "source": "wiki"
   },
-  "Pit of the Dead (Quest)#007": {
-   "src": "Soldier, the pit is located south east of {p}, across the bridge behind us. I will write down the coordinates inside your quest book.",
-   "dst": "兵士よ、穴は {p} の南東、背後の橋を渡った先だ。座標はクエストブックに書いておこう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pit of the Dead (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Merloni",
-   "source": "wiki"
-  },
   "Pit of the Dead (Quest)#008": {
    "src": "Enter the pit. Learn it's mysteries, then come back to me.",
    "dst": "穴に入り、その謎を解き明かしてから戻ってこい。",
@@ -133221,8 +132211,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Merloni",
    "source": "captured"
   },
   "Pit of the Dead (Quest)#013": {
@@ -133907,8 +132897,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Dr. Essren",
    "source": "captured"
   },
   "Potion Making#004": {
@@ -134164,16 +133154,6 @@
   "Potion Making#029": {
    "src": "Aaaaargh!!!!!",
    "dst": "ぐあああああ！！！！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Potion Making",
-   "stage": "Stage 3",
-   "speaker": "Dr. Essren",
-   "source": "wiki"
-  },
-  "Potion Making#030": {
-   "src": "What have you done to this potion, human?! You will pay for it!",
-   "dst": "薬に何をした、人間？！この報いは受けてもらうぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -135077,8 +134057,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Representative",
    "source": "captured"
   },
   "Queen's Recruit#001": {
@@ -136937,8 +135917,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Representative",
    "source": "captured",
    "similar": {
     "text": "Linton and Kymer are in W2.",
@@ -137413,8 +136393,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Representative",
    "source": "captured"
   },
   "Queen's Recruit#234": {
@@ -137423,8 +136403,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Linton",
    "source": "captured"
   },
   "Queen's Recruit#235": {
@@ -137787,16 +136767,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#271": {
-   "src": "Ah, there we are. Tasim and {u}, you'll be in room W3... in the western wing.",
-   "dst": "ああ、ありました。Tasim と {u}、西棟の W3 号室です。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 7",
-   "speaker": "Representative",
-   "source": "wiki"
-  },
   "Queen's Recruit#272": {
    "src": "How 'bout us? I'm Mel, and this is Linton.",
    "dst": "あたしたちは？あたしは Mel、こっちは Linton。",
@@ -137827,16 +136797,6 @@
    "speaker": "Representative",
    "source": "wiki"
   },
-  "Queen's Recruit#275": {
-   "src": "Mel and Lanu, you'll be in E2.",
-   "dst": "Mel と Lanu は E2 です。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 7",
-   "speaker": "Representative",
-   "source": "wiki"
-  },
   "Queen's Recruit#276": {
    "src": "Uh hey, I think you forgot someone! Where am I staying?",
    "dst": "あの、おい、誰か忘れてないか！俺はどこに泊まるんだ？",
@@ -137860,16 +136820,6 @@
   "Queen's Recruit#278": {
    "src": "Ehm..... Hm........ Oh....",
    "dst": "えー…… ふむ…… おや……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 7",
-   "speaker": "Representative",
-   "source": "wiki"
-  },
-  "Queen's Recruit#279": {
-   "src": "Linton and Kymer are in W2.",
-   "dst": "Linton と Kymer は W2 です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -138285,16 +137235,6 @@
    "quest": "Queen's Recruit",
    "stage": "Stage 8",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Queen's Recruit#321": {
-   "src": "'Cause I'm fast and stealthy. Gotta run now, I don't want to draw the guards' attention. Remember, room W1!",
-   "dst": "俺は速くて隠密だからな。もう行く、衛兵の目を引きたくない。いいか、W1 だぞ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 8",
-   "speaker": "Linton",
    "source": "wiki"
   },
   "Queen's Recruit#322": {
@@ -141887,16 +140827,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#682": {
-   "src": "Choices, choices, choices, choices...",
-   "dst": "選択、選択、選択、選択…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 26",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "Queen's Recruit#683": {
    "src": "You've already failed, you know. You did not meet her criteria for selection.",
    "dst": "あなたはもう失敗したのよ。彼女の選考基準を満たさなかった。",
@@ -144123,8 +143053,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#002": {
@@ -144133,8 +143063,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#003": {
@@ -144163,8 +143093,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#006": {
@@ -144173,8 +143103,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#007": {
@@ -144243,8 +143173,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Edwin",
    "source": "captured"
   },
   "Recover the Past#014": {
@@ -144253,8 +143183,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Edwin",
    "source": "captured"
   },
   "Recover the Past#015": {
@@ -144273,8 +143203,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#017": {
@@ -144293,8 +143223,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#019": {
@@ -144343,8 +143273,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#024": {
@@ -144513,8 +143443,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 12",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#041": {
@@ -144523,8 +143453,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 12",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#042": {
@@ -144533,8 +143463,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 12",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#043": {
@@ -144543,8 +143473,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 12",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#044": {
@@ -144553,8 +143483,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 12",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#045": {
@@ -144633,8 +143563,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Recover the Past#053": {
@@ -144683,8 +143613,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#058": {
@@ -144693,8 +143623,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Inquisitor",
    "source": "captured"
   },
   "Recover the Past#059": {
@@ -144703,8 +143633,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Inquisitor",
    "source": "captured"
   },
   "Recover the Past#060": {
@@ -144713,8 +143643,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#061": {
@@ -144723,8 +143653,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#062": {
@@ -144733,8 +143663,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#063": {
@@ -144743,8 +143673,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#064": {
@@ -144753,8 +143683,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#065": {
@@ -144763,8 +143693,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#066": {
@@ -144897,26 +143827,6 @@
    "speaker": "Dr. Picard",
    "source": "wiki"
   },
-  "Recover the Past#079": {
-   "src": "But with this device... we can change that! Restore what has been lost! Recover the you get the point.",
-   "dst": "だがこの装置があれば…それを変えられる！失ったものを取り戻す！過去を取り…まあ、わかるだろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 1",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
-  "Recover the Past#080": {
-   "src": "Now, I'm in great need of test subjects... You would do well as one, yes, but I need to be more certain this thing works.",
-   "dst": "さて、被験者がどうしても必要でね…君でも務まるが、この装置が確かに動くともっと確信したい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 1",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
   "Recover the Past#081": {
    "src": "Listen here! I have a proposition to make. You'd like your memories back, yes? Bring me enough test subjects, and I can show you what you've lost!",
    "dst": "聞きたまえ！提案がある。記憶を取り戻したいだろう？被験者を十分連れてくれば、君が失ったものを見せてあげよう！",
@@ -144980,26 +143890,6 @@
   "Recover the Past#087": {
    "src": "Huh? Oh! I ah, nothing to see here! Just... just taking a look at my good old ship!",
    "dst": "え？おっと！いや、何でもない！ただ…ただ自慢の船を眺めてただけさ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 2",
-   "speaker": "Caid",
-   "source": "wiki"
-  },
-  "Recover the Past#088": {
-   "src": "Picard sent you? The guy cooped up in the tower? Huh. Good to know he's finally finished his work. But what could he want me for?",
-   "dst": "Picard が？塔にこもってるあいつか？へえ。やっと研究が終わったんだな。でも俺に何の用だ？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 2",
-   "speaker": "Caid",
-   "source": "wiki"
-  },
-  "Recover the Past#089": {
-   "src": "... Look at my memories from Fruma, huh? I'm not so sure 'bout that. If they're missing, they must be missing for a reason. I'm-I'm happy here! Don't need to know nothin' about...",
-   "dst": "…Fruma の記憶を見る、ねえ？そいつはどうかな。消えてるなら、消えてる理由があるんだろ。お、俺はここで満足してる！何も知る必要なんて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -145287,16 +144177,6 @@
    "speaker": "Caid",
    "source": "wiki"
   },
-  "Recover the Past#118": {
-   "src": "Sure thing. Say Caid. How do you keep getting ahold of these things? There's expensive parts in these, and that seems a bit out of your price range.",
-   "dst": "いいよ。ねえ Caid。どうやってこういう物を手に入れ続けてるの？高い部品が入ってるし、君に買える値段じゃなさそうだけど。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 6",
-   "speaker": "Edwin",
-   "source": "wiki"
-  },
   "Recover the Past#119": {
    "src": "Well... Let's just say the latest resupply package for the guards is slightly lighter than it might otherwise be.",
    "dst": "まあ…衛兵向けの最新の補給品が、本来よりちょっと軽くなってる、とだけ言っとくよ。",
@@ -145305,16 +144185,6 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Caid",
-   "source": "wiki"
-  },
-  "Recover the Past#120": {
-   "src": "Wait what? Caid, please tell me you haven't been stealing from the guards. You know they won't",
-   "dst": "え、何だって？Caid、まさか衛兵から盗んでないよね。わかってるだろ、あいつらは",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 6",
-   "speaker": "Edwin",
    "source": "wiki"
   },
   "Recover the Past#121": {
@@ -145457,16 +144327,6 @@
    "speaker": "Dr. Picard",
    "source": "wiki"
   },
-  "Recover the Past#135": {
-   "src": "Hm. Hm hm hm. The memory cut off there...I wonder what we'd see if we could",
-   "dst": "ふむ。ふむふむ。記憶はそこで途切れた…もしもっと見られたら何が",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 6",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
   "Recover the Past#136": {
    "src": "So, that's it, huh...",
    "dst": "そうか、それだけか…",
@@ -145520,16 +144380,6 @@
   "Recover the Past#141": {
    "src": "Ah! Bystander-turned-assis you know what, I'll just call you my assistant. Finally out of your trance, I see.",
    "dst": "ああ！通行人改め助—もういい、助手と呼ぶことにしよう。やっと我に返ったようだね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 6",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
-  "Recover the Past#142": {
-   "src": "But that's of no importance now! What, however, is important is what we've just seen! Memories relived in vivid detail! Truly, this device will change the world!",
-   "dst": "だが、今それはどうでもいい！重要なのは今見たものだ！記憶が鮮明に再体験された！この装置は本当に世界を変えるぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -145990,16 +144840,6 @@
   "Recover the Past#188": {
    "src": "Fine. It's up and over here.",
    "dst": "わかったよ。こっちの上だ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 10",
-   "speaker": "Caid",
-   "source": "wiki"
-  },
-  "Recover the Past#189": {
-   "src": "I salvaged some parts from... uh, one of the nearby factories. I hope it's... it's probably what you need.",
-   "dst": "近くの…ええと、工場の一つから部品を拾ってきた。これが…たぶん必要な物だと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -146537,26 +145377,6 @@
    "speaker": "Reynauld",
    "source": "wiki"
   },
-  "Recover the Past#243": {
-   "src": "Reynauld, it's not working! They just keep coming we... have to do something... else, or we won't last!",
-   "dst": "Reynauld、効いてない！次々来る…何か別の手を…打たないと、もたないよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 12",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Recover the Past#244": {
-   "src": "You're right. We'll have to retreat, call for aid from {p}. Three men alone can't defeat this!",
-   "dst": "そうですね。撤退して {p} に援軍を頼むしかない。三人だけでは倒せません！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 12",
-   "speaker": "Reynauld",
-   "source": "wiki"
-  },
   "Recover the Past#245": {
    "src": "But, you're not alone!",
    "dst": "でも、三人だけじゃないぜ！",
@@ -146687,26 +145507,6 @@
    "speaker": "Reynauld",
    "source": "wiki"
   },
-  "Recover the Past#258": {
-   "src": "Caid! You made it! You're a hero!",
-   "dst": "Caid！生きてた！君は英雄だ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 12",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Recover the Past#259": {
-   "src": "That's all well and good but, what about your boat?",
-   "dst": "それは何よりですが、あなたの船はどうするんです？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 12",
-   "speaker": "Reynauld",
-   "source": "wiki"
-  },
   "Recover the Past#260": {
    "src": "I can always build another one, can't I?",
    "dst": "また造ればいいだろ？",
@@ -146720,16 +145520,6 @@
   "Recover the Past#261": {
    "src": "Ha. But not using my belongings this time.",
    "dst": "はは。ですが今度は私の物を使わないでくださいよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 12",
-   "speaker": "Reynauld",
-   "source": "wiki"
-  },
-  "Recover the Past#262": {
-   "src": "Well, Caid seems to be fine enough, considering the circumstances. I'll take him to get checked out, just in case. Thank you for your help, Tasim and {u}. And Caid too...",
-   "dst": "さて、状況を考えれば Caid はまずまず無事なようです。念のため診てもらいに連れていきます。助けてくれてありがとう、Tasim と {u}。それに Caid も…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -146997,16 +145787,6 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Recover the Past#289": {
-   "src": "Oh. You're you're cursed.",
-   "dst": "ああ。お前…お前、呪われし者か。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "Recover the Past#290": {
    "src": "He's in here! And he has an accomplice! Arrest them both!",
    "dst": "ここにいるぞ！共犯者もいる！二人とも逮捕しろ！",
@@ -147117,16 +145897,6 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "Recover the Past#301": {
-   "src": "The- the what? What are you going to do to",
-   "dst": "な—何だって？僕に何をするつも",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Recover the Past#302": {
    "src": "Silence. Before we begin, I want to make one thing clear. We do not need your ilk in Fruma. We do not want your ilk in Fruma.",
    "dst": "黙れ。始める前に一つ明言しておく。Fruma にお前のような輩は必要ない。Fruma はお前のような輩を望まない。",
@@ -147150,16 +145920,6 @@
   "Recover the Past#304": {
    "src": "Now. Let us begin.",
    "dst": "さあ。始めましょう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Inquisitor",
-   "source": "wiki"
-  },
-  "Recover the Past#305": {
-   "src": "You are a new recruit, being sent to the Wynn Province to fight in their war. You enlisted because you thought your unique... talents would be useful.",
-   "dst": "お前は新兵であり、戦争に加わるため Wynn 地方へ送られる。自分の特異な…才能が役立つと考え、志願したのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -147237,16 +145997,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Recover the Past#313": {
-   "src": "Wonderful. Take this one to the caravan. It looks like we'll be able to fit in two more for today's batch.",
-   "dst": "結構。こいつを馬車隊へ連れていけ。今日の分にはあと二人入りそうだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Inquisitor",
-   "source": "wiki"
-  },
   "Recover the Past#314": {
    "src": "...",
    "dst": "…",
@@ -147310,26 +146060,6 @@
   "Recover the Past#320": {
    "src": "What do you think happens to me if one of my assistants gets trapped in their memories forever! Nothing good!",
    "dst": "助手が記憶に永遠に閉じ込められたら、私がどうなると思う！ろくなことにならん！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
-  "Recover the Past#321": {
-   "src": "... Fine, fine. It did give us more information. Don't do it again, though! Come on, come over here, we have much to discuss.",
-   "dst": "…まあ、いい。おかげで情報は増えた。だが二度とやるなよ！さあ、こっちへ来たまえ、話すことが山ほどある。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
-  "Recover the Past#322": {
-   "src": "... Hmph. I'll admit, I'm... I'm not sure what to do with this information.",
-   "dst": "…ふん。正直、私は…この情報をどう扱えばいいかわからん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -147497,29 +146227,9 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Recover the Past#339": {
-   "src": "And the Inquisitor... I don't know what to think. All of us what we thought we knew when we arrived in Wynn... None of it was true.",
-   "dst": "それにあの異端審問官…どう考えればいいかわからない。僕たち全員が Wynn に着いた時に知ってると思ってたこと…どれも本当じゃなかった。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 15",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Recover the Past#340": {
    "src": "... Did the two of us really meet through sheer random luck? He was running from something, and... fell straight into my life.",
    "dst": "…僕たち二人は本当にただの偶然で出会ったのか？あいつは何かから逃げてて…僕の人生に転がり込んできた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 15",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Recover the Past#341": {
-   "src": "I- I need some space to think. To... reflect. Can you... please don't tell Aledar about any of this.",
-   "dst": "僕—少し一人で考えたい。見つめ直したいんだ。お願いだから…このことは Aledar に言わないで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -147540,26 +146250,6 @@
   "Recover the Past#343": {
    "src": "... I'm going to head for the Gavel Province, I think. It's across the ocean, far enough from... From all of this.",
    "dst": "…Gavel 地方へ向かおうと思う。海の向こうで、ここから…このすべてから十分遠いから。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 15",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Recover the Past#344": {
-   "src": "When you get stronger, you should go there too. Maybe we'll run into each other, eventually.",
-   "dst": "強くなったら、君も行くといい。いつかまた会えるかもしれない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 15",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Recover the Past#345": {
-   "src": "I guess this is goodbye for now, then. Not forever but for now. I'll see you around, {u}.",
-   "dst": "じゃあ、ひとまずお別れだね。永遠じゃない、ひとまずだ。またね、{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -147680,16 +146370,6 @@
   "Redbeard's Booty#009": {
    "src": "Good for ye then! I bought meself a real treasure map on Pirate Cove, a fine deal if ye ask me. And, if the jack wasn't fibbing, it leads to the feared Redbeard's real treasure!",
    "dst": "そいつはいい！俺は海賊の入り江で本物の宝の地図を買ったんだ、いい買い物だったぜ。あの野郎が嘘をついてなきゃ、恐るべき Redbeard の本物の財宝につながってる！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Redbeard's Booty",
-   "stage": "Stage 1",
-   "speaker": "Marston",
-   "source": "wiki"
-  },
-  "Redbeard's Booty#010": {
-   "src": "I ventured 'round, spied some fine jacks at the island, and I collected a crew to join me on me grand, fantastic voyage!",
-   "dst": "あちこち回って、島で腕の立つ連中を見つけて、俺の壮大で素晴らしい航海の仲間を集めたのさ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Redbeard's Booty",
@@ -154467,16 +153147,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Shrouded in Mist#030": {
-   "src": "Talk to the stranger at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] で見知らぬ人物と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Shrouded in Mist",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Shrouded in Mist#031": {
    "src": "Woah woah woah woah woah! Alright, let's all take a step back, shall we?",
    "dst": "おっとっとっと！はいはい、みんな一歩下がろうか？",
@@ -157389,8 +156059,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Quill",
    "source": "captured"
   },
   "Solidarity of Steel#001": {
@@ -158983,16 +157653,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Solidarity of Steel#160": {
-   "src": "Give me a moment, {u}.",
-   "dst": "少し待って、{u}。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Solidarity of Steel",
-   "stage": "Stage 9",
-   "speaker": "Syndra",
-   "source": "wiki"
-  },
   "Solidarity of Steel#161": {
    "src": "...Oh! You're back.",
    "dst": "…あ！おかえり。",
@@ -159336,16 +157996,6 @@
   "Solidarity of Steel#195": {
    "src": "Ah, {u}! I see you have all returned. Welcome to our home.",
    "dst": "おお、{u}！皆戻ったようだね。我らが家へようこそ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Solidarity of Steel",
-   "stage": "Stage 10",
-   "speaker": "Quill",
-   "source": "wiki"
-  },
-  "Solidarity of Steel#196": {
-   "src": "I hope the brothers weren't too much of a nuisance. Yuman, especially... he's a good lad, but he tends towards",
-   "dst": "兄弟たちが迷惑をかけていなければいいが。特に Yuman は…いい子なんだが、どうも",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Solidarity of Steel",
@@ -162689,8 +161339,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
    "source": "captured"
   },
   "Stable Story#006": {
@@ -162699,8 +161349,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Enkser",
    "source": "captured"
   },
   "Stable Story#007": {
@@ -162719,8 +161369,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
    "source": "captured"
   },
   "Stable Story#009": {
@@ -162729,8 +161379,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Enkser",
    "source": "captured"
   },
   "Stable Story#010": {
@@ -162873,26 +161523,6 @@
    "speaker": "Enkser",
    "source": "wiki"
   },
-  "Stable Story#024": {
-   "src": "Usually, I'd be charging a high price for these horses Not to be rude, but one you couldn't afford.",
-   "dst": "普段ならこの馬には高値をつけるところだ。失礼ながら、君には払えない額でね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Stable Story",
-   "stage": "Stage 1",
-   "speaker": "Enkser",
-   "source": "wiki"
-  },
-  "Stable Story#025": {
-   "src": "So, let's cut a deal They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "そこで取引だ。奴らに厩舎の鍵を盗まれた。{p} の私の納屋に行って…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Stable Story",
-   "stage": "Stage 1",
-   "speaker": "Enkser",
-   "source": "wiki"
-  },
   "Stable Story#026": {
    "src": "And return the key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
    "dst": "…鍵を取り戻してくれたら、なんと寛大にも馬を一頭進呈しよう。この取引、君が思うよりずっとお得だよ…",
@@ -162976,26 +161606,6 @@
   "Stable Story#034": {
    "src": "Ah, god bless. And I presume Betty did all the work while you just lounged around.",
    "dst": "おお、ありがたい。どうせ Betty が全部働いて、君はのんびりしてたんだろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Stable Story",
-   "stage": "Stage 2",
-   "speaker": "Enkser",
-   "source": "wiki"
-  },
-  "Stable Story#035": {
-   "src": "Hm. Cows, huh? Ah who knows!? Life is full of mysterious, huh?",
-   "dst": "ふむ。牛、だって？まあ誰にわかる！？人生は謎だらけだね？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Stable Story",
-   "stage": "Stage 2",
-   "speaker": "Enkser",
-   "source": "wiki"
-  },
-  "Stable Story#036": {
-   "src": "Either way. As the great bovine above is my witness if I see the smallest bruise I will",
-   "dst": "ともかく。天の偉大なる牛に誓って、少しでも痣を見つけたら私は",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -163352,16 +161962,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Supply and Delivery#011": {
-   "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] の {p} で Ope と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Supply and Delivery#012": {
    "src": "Oh, man... What am I going to do now...",
@@ -164149,8 +162749,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#003": {
@@ -164169,8 +162769,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#005": {
@@ -164179,8 +162779,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#006": {
@@ -164239,8 +162839,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
    "source": "captured"
   },
   "Taking the Tower#012": {
@@ -164269,8 +162869,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#015": {
@@ -164343,16 +162943,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Taking the Tower#022": {
-   "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Powder Master!",
-   "dst": "あ、待って。先に寄る所があるんだ。パウダーマスターの所までついてきて！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 1",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "Taking the Tower#023": {
    "src": "Oh. Alright.",
    "dst": "そっか。わかった。",
@@ -164406,26 +162996,6 @@
   "Taking the Tower#028": {
    "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
    "dst": "どうやら塔の頂上の親玉は ダメージに弱いらしい！だからパウダーマスターの所に来たってわけ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#029": {
-   "src": "You can apply various elemental powders to your weapons here, which lets them deal types of damage they might not have been able to before.",
-   "dst": "ここでは色々な属性のパウダーを武器に付けられる。そうすると今まで出せなかった種類のダメージを与えられるんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 2",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#030": {
-   "src": "In this case, you can apply a powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "今回は パウダーを付ければ、塔の腐敗した敵にもっと効くようになるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -164543,16 +163113,6 @@
    "speaker": "Lieutenant Van",
    "source": "wiki"
   },
-  "Taking the Tower#042": {
-   "src": "It doesn't matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
-   "dst": "誰がやるかは問わん、成し遂げればいい。好機を見たら、行け！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 4",
-   "speaker": "Lieutenant Van",
-   "source": "wiki"
-  },
   "Taking the Tower#043": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here!| Understood?",
    "dst": "撤退が必要な時や腐敗者を倒した時は、ここに集合！分かったか？",
@@ -164651,16 +163211,6 @@
    "quest": "Taking the Tower",
    "stage": "Stage 6",
    "speaker": "Lieutenant Van",
-   "source": "wiki"
-  },
-  "Taking the Tower#053": {
-   "src": "They have, lieutenant. {u} and I reached the top and defeated the corrupted.",
-   "dst": "はい、中尉。{u} と僕で頂上に辿り着き、腐敗者を倒しました。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 6",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Taking the Tower#054": {
@@ -167735,8 +166285,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Old Man Martyn",
    "source": "captured"
   },
   "Tempo Town Trouble#003": {
@@ -168112,16 +166662,6 @@
   "Tempo Town Trouble#040": {
    "src": "I assume the mayor of that place called {p} sent you here. You are going to have to tell that lad that his problems just got worse.",
    "dst": "{p} とかいう所の長に頼まれて来たのじゃろう。あの若造に、厄介事がさらに増えたと伝えねばならんぞ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tempo Town Trouble",
-   "stage": "Stage 4",
-   "speaker": "Old Man Martyn",
-   "source": "wiki"
-  },
-  "Tempo Town Trouble#041": {
-   "src": "The monster you killed was known as a Time Trouble. They're odd creatures that were forced into a day-long temporal loop by some fools long ago.",
-   "dst": "お前が倒した化け物はタイムトラブルと呼ばれる。遥か昔、愚か者どもに一日の時の輪へ押し込められた奇妙な生き物じゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -168605,8 +167145,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Rhay",
    "source": "captured"
   },
   "The Breaking Point#002": {
@@ -168615,8 +167155,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
    "source": "captured",
    "similar": {
     "text": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
@@ -169563,16 +168103,6 @@
    "quest": "The Breaking Point",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Breaking Point#097": {
-   "src": "Amazing work! I'll get us back to {p} with that capacitor as quick as possible.",
-   "dst": "お手柄！そのコンデンサーを持って、大急ぎで {p} に戻るよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 6",
-   "speaker": "Rhay",
    "source": "wiki"
   },
   "The Breaking Point#098": {
@@ -170985,16 +169515,6 @@
    "speaker": "Ozoth",
    "source": "wiki"
   },
-  "The Breaking Point#239": {
-   "src": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
-   "dst": "なるほど…Ozoth いわく…永炎が…長老を解き放つと。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 15",
-   "speaker": "Ineos",
-   "source": "wiki"
-  },
   "The Breaking Point#240": {
    "src": "... well...",
    "dst": "…その…",
@@ -171858,16 +170378,6 @@
   "The Canary Calls#022": {
    "src": "Right then. I guess that leaves you, young lad. What do you say? Want a job?",
    "dst": "そうかい。じゃあ残るはお前だな、若いの。どうだ？仕事が欲しくないか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 2",
-   "speaker": "Chief Clight",
-   "source": "wiki"
-  },
-  "The Canary Calls#023": {
-   "src": "Very good! Come on then, let me introduce you to our little feathered mascot.",
-   "dst": "いいぞ！じゃあ来い、うちの羽の生えた小さなマスコットを紹介してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -172915,16 +171425,6 @@
    "speaker": "Canary",
    "source": "wiki"
   },
-  "The Canary Calls#128": {
-   "src": "Hands off those, if you would be so kind.",
-   "dst": "それには触らないでいただけますか。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
   "The Canary Calls#129": {
    "src": "Amazing... That really hit different.",
    "dst": "すごい…今のは効きました。",
@@ -173535,16 +172035,6 @@
    "speaker": "Chief Clight",
    "source": "wiki"
   },
-  "The Canary Calls#191": {
-   "src": "...No, it's nothing. Until that thing is dealt with, deeper parts of this mine must be closed down. The supply of coal will decrease, but it must be done.",
-   "dst": "…いや、何でもない。あれが片付くまで、鉱山の深部は閉鎖するしかない。石炭の供給は減るが、やむを得ん。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 9",
-   "speaker": "Chief Clight",
-   "source": "wiki"
-  },
   "The Canary Calls#192": {
    "src": "Tell you what, lad! I'll give you, and only you, permission to access parts of the mine, right where we mine our world-famous {p} coal.",
    "dst": "こうしよう、若いの！お前に、お前だけに、鉱山の一部に入る許可をやる。世界に名高い {p} 石炭を掘ってる場所だ。",
@@ -173851,8 +172341,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
    "source": "ja_jp"
   },
   "The Canary Calls#223": {
@@ -174111,8 +172601,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#249": {
@@ -175351,8 +173841,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Gana",
    "source": "captured",
    "similar": {
     "text": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
@@ -175414,16 +173904,6 @@
   "The Canyon Guides#026": {
    "src": "The canyon creatures there are ruthless, and we are not suited to physical combat. We would be able to reach him, but we would be stranded ourselves.",
    "dst": "そこの峡谷の生き物は凶暴で、私たちは戦いに向いていません。辿り着けても、私たち自身が取り残されてしまうでしょう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 1",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
-  "The Canyon Guides#027": {
-   "src": "We ask you to guide Seluc to us. We shall send you to him, and you will bring him here. If you wish to help, you will be rewarded for your time.",
-   "dst": "Seluc をここへ導いてほしいのです。あなたを彼の所へ送りますので、連れて来てください。手伝ってくださるなら、お礼をいたします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -175981,16 +174461,6 @@
    "speaker": "Gana",
    "source": "wiki"
   },
-  "The Canyon Guides#083": {
-   "src": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
-   "dst": "感謝のしるしに、Bantisu Air Booster の使用も許可します。峡谷各地にある魔法の気流の雲です。お役に立てば幸いです。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 7",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
   "The Canyon Guides#084": {
    "src": "Maybe you think anything's possible for you since you're a soldier, but I'm just a guy from {p}! I hardly know anything about the canyon outside of what the brochures say!",
    "dst": "「兵士だから何でもできる」なんて思っているかもしれないけど、俺はただの{p}出身の男に過ぎないんだ！パンフレットに書いてあること以外、その峡谷についてはほとんど何も知らないんだ！",
@@ -176017,8 +174487,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "ja_jp"
   },
   "The Corrupted Village#000": {
@@ -180711,16 +179181,6 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#398": {
-   "src": "The Amaretto is made from Autumn Fruit kernels! We have aaaalso mixed in some Liff Leaves which *hic* gives it its warm colour and slightly bitter and metallic taste.",
-   "dst": "アマレットは秋の果実の種から作るんだ！それにぃ Liff の葉も混ぜてあってね、*ヒック* それがあったかい色と、ちょっぴり苦くて金属っぽい味になるのさ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Cursed One",
-   "stage": "Stage 17",
-   "speaker": "Alcohol Stand Merchant",
-   "source": "wiki"
-  },
   "The Cursed One#399": {
    "src": "Isn't alcohol making interesssting *hic*!",
    "dst": "酒造りってきょーみ深いだろ *ヒック*！",
@@ -181797,8 +180257,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#006": {
@@ -181877,8 +180337,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#014": {
@@ -181887,8 +180347,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "???",
    "source": "captured"
   },
   "The Dark Descent#015": {
@@ -181917,8 +180377,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "General Graken",
    "source": "captured"
   },
   "The Dark Descent#018": {
@@ -181927,8 +180387,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "General Graken",
    "source": "captured"
   },
   "The Dark Descent#019": {
@@ -182321,16 +180781,6 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "The Dark Descent#058": {
-   "src": "Please, stop this! Whoever you are, leave me and my family in peace! What did we ever do to deserve this?!",
-   "dst": "お願い、やめて！誰だか知らないけど、私と家族を放っておいて！私たちが何をしたっていうの？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 4",
-   "speaker": "Lost Soul",
-   "source": "wiki"
-  },
   "The Dark Descent#059": {
    "src": "Ah, but if you had only said so sooner! They have already left this mortal coil...oh, what a shame.",
    "dst": "ああ、もっと早く言ってくれれば！彼らはもうこの世を去ったよ…いや、実に残念だ。",
@@ -182411,29 +180861,9 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#067": {
-   "src": "You can barely keep them at bay on the surface, and yet you think you can enter my own domain, to challenge me in the Underworld?",
-   "dst": "地上ですら辛うじて食い止めているのに、私の領域に踏み込み、冥界で私に挑めると思っているのか？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 4",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "The Dark Descent#068": {
    "src": "You will fail, and I will be free to string your body up like a puppet and make you dance for me.",
    "dst": "お前は敗れ、私はその体を操り人形のように吊るし、私のために踊らせてやろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 4",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "The Dark Descent#069": {
-   "src": "So enter the mouth of the skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
-   "dst": "ならば髑髏の口に入れ、兵士よ。地の底へ進むがいい。次に会うのを楽しみにしているぞ、ケヘヘヘ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -182521,16 +180951,6 @@
    "speaker": "General Graken",
    "source": "wiki"
   },
-  "The Dark Descent#078": {
-   "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a jolly good success!",
-   "dst": "君を連れ回したのはそいつか？まあ、死んではいないのだから、この作戦は大成功と言っていいだろう！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 6",
-   "speaker": "General Graken",
-   "source": "wiki"
-  },
   "The Dark Descent#079": {
    "src": "Your discoveries fit in jolly-well with what we already know - and I'm convinced. To stop all these bleedin' zombos, we're going to have to go down under.",
    "dst": "君の発見は我々の情報とぴたりと合う――確信したよ。この忌々しいゾンビどもを止めるには、地下へ行くしかない。",
@@ -182554,16 +180974,6 @@
   "The Dark Descent#081": {
    "src": "Take some with you, remind you what we're up against. But keep your eyes on the prize!",
    "dst": "いくつか持っていけ。我々の敵を忘れぬようにな。だが目的は見失うなよ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 6",
-   "speaker": "General Graken",
-   "source": "wiki"
-  },
-  "The Dark Descent#082": {
-   "src": "When you're ready, I'd be chuffed to have you along again in the expedition down into the depths, old bean!",
-   "dst": "準備ができたら、また地の底への遠征に加わってもらえると嬉しいぞ、友よ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -182627,8 +181037,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Corkus Delegate",
    "source": "captured"
   },
   "The Envoy Part I#006": {
@@ -182637,8 +181047,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Corkus Delegate",
    "source": "captured"
   },
   "The Envoy Part I#007": {
@@ -182797,8 +181207,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part I#023": {
@@ -182924,16 +181334,6 @@
   "The Envoy Part I#035": {
    "src": "Welcome welcome to C.S.S Wavebreaker!",
    "dst": "ようこそ C.S.S Wavebreaker へ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part I",
-   "stage": "Stage 2",
-   "speaker": "C.S.S Wavebreaker Captain",
-   "source": "wiki"
-  },
-  "The Envoy Part I#036": {
-   "src": "The only boat that'll take ye directly to {p}.",
-   "dst": "{p} へ直行する唯一の船だぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -183134,26 +181534,6 @@
   "The Envoy Part I#056": {
    "src": "Let me point out where the shops are.",
    "dst": "店の場所をお教えしましょう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part I",
-   "stage": "Stage 4",
-   "speaker": "Corkus Delegate",
-   "source": "wiki"
-  },
-  "The Envoy Part I#057": {
-   "src": "North, you can buy weapons and potions. If you will continue through the gate you will find the native Avos.",
-   "dst": "北では武器と薬が買えます。門を抜けると先住の Avos に会えますよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part I",
-   "stage": "Stage 4",
-   "speaker": "Corkus Delegate",
-   "source": "wiki"
-  },
-  "The Envoy Part I#058": {
-   "src": "West, you can buy armor, and another entrance to the potion shop.",
-   "dst": "西では防具が買え、薬屋へのもう一つの入口もあります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -183661,16 +182041,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Envoy Part I#110": {
-   "src": "Don't worry about the guards, they are disabled for now. Follow me.",
-   "dst": "衛兵は気にしないで、今は止まってる。ついて来て。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part I",
-   "stage": "Stage 10",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
   "The Envoy Part I#111": {
    "src": "I know a shortcut, we'll be in {p} in no time.",
    "dst": "近道を知ってる。すぐ {p} に着くよ。",
@@ -183817,8 +182187,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Security Bot N4T17",
    "source": "captured"
   },
   "The Envoy Part II#004": {
@@ -183877,8 +182247,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#010": {
@@ -183967,8 +182337,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#020": {
@@ -183977,8 +182347,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#021": {
@@ -184151,16 +182521,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Envoy Part II#038": {
-   "src": "No access without a key.",
-   "dst": "鍵のない方は入場できません。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 1",
-   "speaker": "Security Bot N4T17",
-   "source": "wiki"
-  },
   "The Envoy Part II#039": {
    "src": "Key valid. Welcome.",
    "dst": "鍵を確認。ようこそ。",
@@ -184238,26 +182598,6 @@
    "kind": "dialogue",
    "quest": "The Envoy Part II",
    "stage": "Stage 2",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#047": {
-   "src": "Find the catapult.",
-   "dst": "投石機を見つける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "The Envoy Part II#048": {
-   "src": "I knew it! There was something here we could use.",
-   "dst": "やっぱり！使えるものがあった。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 3",
    "speaker": "Maxie",
    "source": "wiki"
   },
@@ -184571,26 +182911,6 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Envoy Part II#080": {
-   "src": "Excellent. I will hold onto that for now. Let's focus on getting the Corkian's Key.",
-   "dst": "すごい。それは僕が預かっておく。次は Corkus人の鍵に集中しよう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 8",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#081": {
-   "src": "They keep it in a vault inside the castle. I honestly don't know how to get in there.",
-   "dst": "城の中の金庫にしまってある。正直、どうやって入るか分からない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 8",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
   "The Envoy Part II#082": {
    "src": "I think first we should just go and scout out the vault itself and work it out.",
    "dst": "まずは金庫を偵察して、それから策を練ろう。",
@@ -184599,16 +182919,6 @@
    "quest": "The Envoy Part II",
    "stage": "Stage 8",
    "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#083": {
-   "src": "Find the vault in {p} at [-{~}, {~}, -{~}]",
-   "dst": "[-{~}, {~}, -{~}] にある {p} の金庫を見つける",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 9",
-   "speaker": "",
    "source": "wiki"
   },
   "The Envoy Part II#084": {
@@ -184851,16 +183161,6 @@
    "speaker": "Mech X",
    "source": "wiki"
   },
-  "The Envoy Part II#108": {
-   "src": "Find Maxie and give him the key.",
-   "dst": "Maxie を見つけて鍵を渡す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 12",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Envoy Part II#109": {
    "src": "Mo'in. Did you get the key?",
    "dst": "Mo'in。鍵は手に入った？",
@@ -184879,16 +183179,6 @@
    "quest": "The Envoy Part II",
    "stage": "Stage 12",
    "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#111": {
-   "src": "Find Maxie outside the factory at [-{~}, {~}, -{~}]",
-   "dst": "[-{~}, {~}, -{~}] の工場の外で Maxie を見つける",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 13",
-   "speaker": "",
    "source": "wiki"
   },
   "The Envoy Part II#112": {
@@ -196901,16 +195191,6 @@
    "speaker": "Efena",
    "source": "wiki"
   },
-  "The Feathers Fly Part II#981": {
-   "src": "Talk to Maxie at [-{~}, {~}, -{~}]",
-   "dst": "[-{~}, {~}, -{~}] の Maxie と話す",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Feathers Fly Part II",
-   "stage": "Stage 10",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Feathers Fly Part II#982": {
    "src": "Well... Mo'in, {u}. I was thinking about catching up with you and all after the audience, but...",
    "dst": "えっと…おっす、{u}。謁見の後でゆっくり話そうと思ってたんだけど…",
@@ -200191,16 +198471,6 @@
    "speaker": "Scavenger Hunt Collector",
    "source": "wiki"
   },
-  "The Hero of Gavel#024": {
-   "src": "Give me a moment here…",
-   "dst": "少々お待ちを…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Hero of Gavel",
-   "stage": "Stage 3",
-   "speaker": "Scavenger Hunt Collector",
-   "source": "wiki"
-  },
   "The Hero of Gavel#025": {
    "src": "Okay, I’ve entered you into the draw. The event’s taking place at the Golden Eagle Theatre.",
    "dst": "はい、抽選に登録しました。イベントは Golden Eagle Theatre で行われます。",
@@ -203161,16 +201431,6 @@
    "speaker": "Gordon",
    "source": "wiki"
   },
-  "The Lost#034": {
-   "src": "So we're just going to launch ourselves out of this pit? You got it!",
-   "dst": "つまり自分たちをこの穴から撃ち出すってわけか？任せとけ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Lost",
-   "stage": "Stage 2",
-   "speaker": "Gordon",
-   "source": "wiki"
-  },
   "The Lost#035": {
    "src": "Alrighty, I'll be right behind you!",
    "dst": "よーし、すぐ後に続くぜ！",
@@ -203337,8 +201597,8 @@
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Gordon",
    "source": "ja_jp"
   },
   "The Lost#052": {
@@ -203937,8 +202197,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "The Mercenary#010": {
@@ -203957,8 +202217,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Admiral Amerigo",
    "source": "captured"
   },
   "The Mercenary#012": {
@@ -204201,16 +202461,6 @@
    "speaker": "Military Scout",
    "source": "wiki"
   },
-  "The Mercenary#036": {
-   "src": "Talk to Amerigo in {p} at [{~}, {~}, -{~}].",
-   "dst": "[{~}, {~}, -{~}] の {p} にいる Amerigo と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Mercenary#037": {
    "src": "Ugh, for crying out loud- I'm busy, can't you see that? I don't have time to...",
    "dst": "ええい、まったく――忙しいのが見てわからんか？暇などない…",
@@ -204399,16 +202649,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 2",
    "speaker": "Linton",
-   "source": "wiki"
-  },
-  "The Mercenary#056": {
-   "src": "Suppose that works.",
-   "dst": "それでいいんじゃないかね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 2",
-   "speaker": "Mel",
    "source": "wiki"
   },
   "The Mercenary#057": {
@@ -205061,16 +203301,6 @@
    "speaker": "Lanu",
    "source": "wiki"
   },
-  "The Mercenary#122": {
-   "src": "I'm glad we managed to take him out after all. The things he was saying... he seemed like a dangerous man.",
-   "dst": "結局、彼を倒せてよかったよ。あの言い分…危険な男に思えた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 9",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "The Mercenary#123": {
    "src": "Oh, not this again. You're still on that?",
    "dst": "またその話かい？まだ気にしてんの？",
@@ -205209,16 +203439,6 @@
    "quest": "The Mercenary",
    "stage": "Stage 10",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "The Mercenary#137": {
-   "src": "I wouldn't put too much stock in those traitor's words. People like him, who spit vitriol with no merit, riling up the masses against the order we hold.",
-   "dst": "裏切り者の言葉を真に受けるな。ああいう輩は根拠のない毒を吐き、我々の保つ秩序に民衆を刃向かわせるのだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Admiral Amerigo",
    "source": "wiki"
   },
   "The Mercenary#138": {
@@ -205507,7 +203727,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
-   "stage": "",
+   "stage": "Stage 51",
    "speaker": "",
    "source": "captured"
   },
@@ -206194,16 +204414,6 @@
   "The Missing Piece#080": {
    "src": "Are you trying to slack off? You still have the letter on you, go deliver it!",
    "dst": "サボる気か？まだ手紙を持っているだろう、届けてこい！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Missing Piece",
-   "stage": "Stage 7",
-   "speaker": "Postmaster",
-   "source": "wiki"
-  },
-  "The Missing Piece#081": {
-   "src": "Can't you see I'm busy!?",
-   "dst": "忙しいのが見て分からんのか！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -209781,16 +207991,6 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#439": {
-   "src": "Enter the cave at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の洞窟に入る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Missing Piece",
-   "stage": "Stage 42",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Missing Piece#440": {
    "src": "It's a little more... well, deserted, than I remember. But that's fine.",
    "dst": "記憶より少し…そうね、寂れてるわ。でも構わない。",
@@ -211453,16 +209653,6 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#605": {
-   "src": "Pick up Elise at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] で Elise を抱き上げる。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Missing Piece",
-   "stage": "Stage 51",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Missing Piece#606": {
    "src": "Bring Elise home to [-{~}, {~}, -{~}].",
    "dst": "Elise を [-{~}, {~}, -{~}] の家へ連れて帰る。",
@@ -211633,16 +209823,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Olmic Rune#009": {
-   "src": "Explore the abandoned drill at [{~},-{~}]",
-   "dst": "[{~},-{~}] の放棄されたドリルを調べる",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Olmic Rune",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "The Olmic Rune#010": {
    "src": "Find some sort of fuel in the Ruined City.",
    "dst": "Ruined City で燃料になりそうなものを探す。",
@@ -211670,16 +209850,6 @@
    "kind": "objective",
    "quest": "The Olmic Rune",
    "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "The Olmic Rune#013": {
-   "src": "Head back to the machine at [{~},-{~}]",
-   "dst": "[{~},-{~}] の機械に戻る",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Olmic Rune",
-   "stage": "Stage 5",
    "speaker": "",
    "source": "wiki"
   },
@@ -214307,16 +212477,6 @@
    "quest": "The Order of the Grook",
    "stage": "Stage 15",
    "speaker": "Headmaster",
-   "source": "wiki"
-  },
-  "The Passage (Quest)#000": {
-   "src": "Talk to Wirt in {p} at [-{~}, {~}, -{~}]",
-   "dst": "{p} の [-{~}, {~}, -{~}] で Wirt と話す",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "The Passage (Quest)",
-   "stage": "Stage 1",
-   "speaker": "",
    "source": "wiki"
   },
   "The Passage (Quest)#001": {
@@ -218687,16 +216847,6 @@
    "quest": "The Price of Ingenuity",
    "stage": "Stage 15",
    "speaker": "Yusanu",
-   "source": "wiki"
-  },
-  "The Price of Ingenuity#410": {
-   "src": "How do you know?",
-   "dst": "なんで分かるの？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Price of Ingenuity",
-   "stage": "Stage 15",
-   "speaker": "Rex",
    "source": "wiki"
   },
   "The Price of Ingenuity#411": {
@@ -223765,8 +221915,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#002": {
@@ -223895,8 +222045,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#015": {
@@ -223992,16 +222142,6 @@
   "The Sewers of Ragni#024": {
    "src": "Soldier! Good timing. We've been requesting help for ages.",
    "dst": "兵士！いいところに来た。ずっと援軍を要請していたんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 1",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#025": {
-   "src": "With the corrupted hordes terrorising the Wynn Plains, more and more people are moving to {p}.",
-   "dst": "腐敗した群れが Wynn 平原を荒らしているせいで、{p} に移る者が増えている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -224147,16 +222287,6 @@
    "quest": "The Sewers of Ragni",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#040": {
-   "src": "Ah, you're alive. Looks like we underestimated the amount of sewage.",
-   "dst": "ああ、生きていたか。汚水の量を甘く見ていたようだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 5",
-   "speaker": "Jenprest",
    "source": "wiki"
   },
   "The Sewers of Ragni#041": {
@@ -243825,16 +241955,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "Underice#001": {
-   "src": "Talk to Fredris in {p} at [{~}, {~}, -{~}]",
-   "dst": "[{~}, {~}, -{~}] の {p} にいる Fredris と話す",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Underice",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Underice#002": {
    "src": "I'm having trouble with the fish in our lake recently and I am sure the problem lies within the lake itself.",
    "dst": "最近湖の魚のことで困っていて、原因は湖そのものにあると確信しているんだ。",
@@ -245727,8 +243847,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Omango",
    "source": "captured"
   },
   "Underwater#002": {
@@ -245764,16 +243884,6 @@
   "Underwater#005": {
    "src": "They brought lots of luxurious goods with them. Most of them got lost in the wreck.",
    "dst": "彼らは贅沢品を大量に持ってきたが、ほとんどは難破で失われた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underwater",
-   "stage": "Stage 1",
-   "speaker": "Omango",
-   "source": "wiki"
-  },
-  "Underwater#006": {
-   "src": "But recently, a small hole has opened in the shipwreck here. It is believed that fortune is hidden within it.",
-   "dst": "だが最近、この難破船に小さな穴が開いた。中に財宝が眠っていると言われている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -246040,16 +244150,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Wrath of the Mummy#007": {
-   "src": "Talk to Ormrod in the desert of {p} at [{~}, {~}, -{~}].",
-   "dst": "{p} の砂漠 [{~}, {~}, -{~}] にいる Ormrod と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
   },
   "Wrath of the Mummy#008": {
    "src": "Stay away, friend!",

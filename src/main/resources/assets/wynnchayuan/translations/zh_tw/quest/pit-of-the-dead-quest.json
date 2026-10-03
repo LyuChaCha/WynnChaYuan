@@ -1,21 +1,11 @@
 {
  "_meta": {
   "quest": "Pit of the Dead (Quest)",
-  "count": 14,
-  "translated": 14,
+  "count": 12,
+  "translated": 12,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
-  "Pit of the Dead (Quest)#000": {
-   "src": "Talk to Merloni in {p} at [{~}, {~}, -{~}]",
-   "dst": "前往 {p} 找 Merloni，座標 [{~1}, {~2}, -{~3}]",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Pit of the Dead (Quest)",
-   "stage": "Stage 1",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Pit of the Dead (Quest)#001": {
    "src": "Would you like to hear the tale of the pit of the dead?",
    "dst": "想聽聽亡者之坑的故事嗎？",
@@ -76,16 +66,6 @@
    "speaker": "Merloni",
    "source": "wiki"
   },
-  "Pit of the Dead (Quest)#007": {
-   "src": "Soldier, the pit is located south east of {p}, across the bridge behind us. I will write down the coordinates inside your quest book.",
-   "dst": "士兵，那個坑在 {p} 的東南方，過了我們身後那座橋就是。我會把座標寫進你的任務書裡。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pit of the Dead (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Merloni",
-   "source": "wiki"
-  },
   "Pit of the Dead (Quest)#008": {
    "src": "Enter the pit. Learn it's mysteries, then come back to me.",
    "dst": "進去吧。弄清楚它的秘密，再回來找我。",
@@ -132,8 +112,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Merloni",
    "source": "captured"
   },
   "Pit of the Dead (Quest)#013": {

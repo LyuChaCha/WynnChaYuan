@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "King's Recruit",
-  "count": 131,
-  "translated": 127,
+  "count": 117,
+  "translated": 113,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -142,16 +142,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#014": {
-   "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
-   "dst": "道を進み、[-{~}, {~}, -{~}] にある Wynn 地方への門を目指す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#015": {
    "src": "I don't suppose you know much about Wynn either, do you?",
    "dst": "君も Wynn のことはあまり知らないよね？",
@@ -232,16 +222,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#023": {
-   "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] で Wynn 地方に入る。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 4",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#024": {
    "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
    "dst": "さて、何を待ってるんだ？この地方を探検しに行こう。",
@@ -260,16 +240,6 @@
    "quest": "King's Recruit",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "King's Recruit#026": {
-   "src": "So this is Wynn we've all been hearing about... It's beautiful.",
-   "dst": "これが噂に聞いてた Wynn か… きれいだね。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 5",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#027": {
@@ -542,16 +512,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#054": {
-   "src": "Continue onwards to [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] へ進み続ける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 9",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#055": {
    "src": "Phew! We made it over safely this time at least.",
    "dst": "ふう！今度は無事に渡れたね。",
@@ -662,16 +622,6 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#066": {
-   "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] の洞窟に入り、防具を見つける。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 11",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#067": {
    "src": "We should return to the guard to see if he'll let us through now!",
    "dst": "衛兵の所に戻って、今度は通してくれるか確かめよう！",
@@ -692,16 +642,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "King's Recruit#069": {
-   "src": "So you found some armor, huh?",
-   "dst": "防具を見つけたようだな？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 12",
-   "speaker": "Guard",
-   "source": "wiki"
-  },
   "King's Recruit#070": {
    "src": "Yes, a helmet! Will you let us pass now?",
    "dst": "ああ、ヘルメットだ！通してくれるか？",
@@ -710,16 +650,6 @@
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "King's Recruit#071": {
-   "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
-   "dst": "待て、新兵。防具を装備する前に、まず鑑定しなければならん。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 12",
-   "speaker": "Guard",
    "source": "wiki"
   },
   "King's Recruit#072": {
@@ -762,16 +692,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#076": {
-   "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
-   "dst": "ヘルメットを着けたな。上出来だ、通ってよし。扉を開けてやろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 12",
-   "speaker": "Guard",
-   "source": "wiki"
-  },
   "King's Recruit#077": {
    "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
    "dst": "中では気をつけろ、新兵ども！防具があっても楽じゃないぞ！",
@@ -789,16 +709,6 @@
    "kind": "objective",
    "quest": "King's Recruit",
    "stage": "Stage 13",
-   "speaker": "",
-   "source": "wiki"
-  },
-  "King's Recruit#079": {
-   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "地下道を進み、[-{~}, {~}, -{~}] へ向かう。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 14",
    "speaker": "",
    "source": "wiki"
   },
@@ -862,16 +772,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "King's Recruit#086": {
-   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "地下道を進み、[-{~}, {~}, -{~}] へ向かう。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 16",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#087": {
    "src": "Over here! You're just what I needed!",
    "dst": "こっちだ！ちょうどいい所に！",
@@ -895,16 +795,6 @@
   "King's Recruit#089": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
    "dst": "やっと援軍か！待てよ… お前たち、Fruma から来たばかりだな？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 17",
-   "speaker": "Lieutenant",
-   "source": "wiki"
-  },
-  "King's Recruit#090": {
-   "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
-   "dst": "まあいい、この辺りはもう片付いたはずだ。{p} はすぐそこだしな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1102,29 +992,9 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "King's Recruit#110": {
-   "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
-   "dst": "[-{~}, {~}, -{~}] で {p} の王と話す。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "King's Recruit",
-   "stage": "Stage 22",
-   "speaker": "",
-   "source": "wiki"
-  },
   "King's Recruit#111": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
    "dst": "Wynn 地方へようこそ！そのボロボロの姿を見るに、ここまでの旅はさぞ波乱に満ちていたのだろう。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 22",
-   "speaker": "King of Ragni",
-   "source": "wiki"
-  },
-  "King's Recruit#112": {
-   "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
-   "dst": "新兵たちよ、ここが気高き {p} の砦、この地方の大都市の一つだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1190,16 +1060,6 @@
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "King's Recruit#119": {
-   "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
-   "dst": "はは、僕はそろそろ {p} の方へ向かうつもり。途中に {p} ってのがあるみたいだけど…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "King's Recruit",
-   "stage": "Stage 22",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#120": {
