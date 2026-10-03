@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Corrupted Betrayal",
   "count": 71,
-  "translated": 53,
+  "translated": 71,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#003": {
    "src": "{u}, good to see you again! Been a while, huh?",
-   "dst": "",
+   "dst": "{u}, рад снова тебя видеть! Давненько не виделись, а?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -28,7 +28,7 @@
   },
   "Corrupted Betrayal#005": {
    "src": "You lean in close to read the riddle inscribed on the ancient stone...",
-   "dst": "",
+   "dst": "Ты наклоняешься поближе, чтобы прочесть загадку, вырезанную на древнем камне…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -38,7 +38,7 @@
   },
   "Corrupted Betrayal#006": {
    "src": "[+{~} Mage's Riddle]",
-   "dst": "",
+   "dst": "[+{~} Загадка мага]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48,7 +48,7 @@
   },
   "Corrupted Betrayal#007": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
-   "dst": "",
+   "dst": "Однако же, будучи Легендой, я очень занят: автографы и всё такое, не говоря уже о моей караульной службе! Чтобы доказать, что ты вообще стоишь моего времени, возвращайся, когда достигнешь уровня {~}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -58,7 +58,7 @@
   },
   "Corrupted Betrayal#008": {
    "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
-   "dst": "",
+   "dst": "Похоже, ты провалился в какие-то древние руины. Возможно, заклинание где-то внутри…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -68,7 +68,7 @@
   },
   "Corrupted Betrayal#009": {
    "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
-   "dst": "",
+   "dst": "Король обратился за помощью к шаману по имени Slykaar. Шаманы наносят урон, используя жизнь жертв. Тёмная магия.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -78,7 +78,7 @@
   },
   "Corrupted Betrayal#010": {
    "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
-   "dst": "",
+   "dst": "Slykaar защитил {p}. Чудовищной ценой. Slykaar упивался вниманием и властью. Он подчинил себе город.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -88,7 +88,7 @@
   },
   "Corrupted Betrayal#011": {
    "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
-   "dst": "",
+   "dst": "Годами {p} страдал и от полчищ, и от бесконечных жертвоприношений Slykaar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -98,7 +98,7 @@
   },
   "Corrupted Betrayal#012": {
    "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
-   "dst": "",
+   "dst": "А затем… появился Bob. Жители {p} мгновенно бросили своего ужасного шамана ради чистого героя.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -108,7 +108,7 @@
   },
   "Corrupted Betrayal#013": {
    "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
-   "dst": "",
+   "dst": "Озлобленный и униженный Slykaar ушёл под землю и заново начал свои демонические опыты, чтобы создать войско.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -118,7 +118,7 @@
   },
   "Corrupted Betrayal#014": {
    "src": "It appears the mutant contained the key for that door.",
-   "dst": "",
+   "dst": "Похоже, ключ от той двери был у мутанта.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -128,7 +128,7 @@
   },
   "Corrupted Betrayal#015": {
    "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
-   "dst": "",
+   "dst": "Это старый пыльный дневник. Похоже, его оставили открытым на одной странице. Из любопытства ты начинаешь читать…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -138,7 +138,7 @@
   },
   "Corrupted Betrayal#016": {
    "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
-   "dst": "",
+   "dst": "...{p} начинает меня подозревать…в город пришёл какой-то человек по имени Robert…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -148,7 +148,7 @@
   },
   "Corrupted Betrayal#017": {
    "src": "...I know they will banish me...he is too good...too nice...",
-   "dst": "",
+   "dst": "…я знаю, они меня изгонят…он слишком хорош…слишком добр…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -158,7 +158,7 @@
   },
   "Corrupted Betrayal#018": {
    "src": "...I must open a portal...make a dimension to become more powerful...",
-   "dst": "",
+   "dst": "…я должен открыть портал…создать измерение, чтобы стать сильнее…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -168,7 +168,7 @@
   },
   "Corrupted Betrayal#019": {
    "src": "...the books...I have prepared well for this...",
-   "dst": "",
+   "dst": "…эти книги…я хорошо к этому подготовился…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -178,7 +178,7 @@
   },
   "Corrupted Betrayal#020": {
    "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
-   "dst": "",
+   "dst": "…я вырублю тайную комнату…за видимой стеной…чтобы создать свой мир…свою месть…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -198,7 +198,7 @@
   },
   "Corrupted Betrayal#022": {
    "src": "You should head back to Lanu...",
-   "dst": "",
+   "dst": "Тебе стоит вернуться к Lanu…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",

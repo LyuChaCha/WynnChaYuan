@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Murder Mystery",
   "count": 76,
-  "translated": 59,
+  "translated": 76,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Murder Mystery#000": {
    "src": "Have you made any progress? There was a smashed window in there, it might be a good place to start.",
-   "dst": "",
+   "dst": "你有进展了吗？那里有一扇被打破的窗户，也许可以从那里开始。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -18,7 +18,7 @@
   },
   "Murder Mystery#001": {
    "src": "It looks like the victim's head was somehow detatched from his body...",
-   "dst": "",
+   "dst": "看起来受害者的头不知道怎么从身体上被卸了下来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -28,7 +28,7 @@
   },
   "Murder Mystery#002": {
    "src": "The victim's book collection seems to be exclusively made up of dimestore romance novels.",
-   "dst": "",
+   "dst": "受害者的藏书看起来全部都是廉价的爱情小说。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -38,7 +38,7 @@
   },
   "Murder Mystery#003": {
    "src": "This painting doesn't seem to have anything to do with the murder, but its a nice landscape of {p}.",
-   "dst": "",
+   "dst": "这幅画看起来跟凶杀没什么关系，但它是一幅很不错的 {p} 风景画。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -48,7 +48,7 @@
   },
   "Murder Mystery#004": {
    "src": "This half-finished letter seems to be asking for a loan to pay off some kind of debt...",
-   "dst": "",
+   "dst": "这封写到一半的信看起来是在请求借钱来还某种债务……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -58,7 +58,7 @@
   },
   "Murder Mystery#005": {
    "src": "It looks like the attacker managed to break in through the window.",
-   "dst": "",
+   "dst": "看起来攻击者是从窗户闯进来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -68,7 +68,7 @@
   },
   "Murder Mystery#006": {
    "src": "It's a letter addressed to someone called Rohem in House No. {~} in {p}.",
-   "dst": "",
+   "dst": "这是一封寄给 {p} 第 {~} 号屋一个叫 Rohem 的人的信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -88,7 +88,7 @@
   },
   "Murder Mystery#008": {
    "src": "Some of those gamblers had a symbol built into their homes, shaped like a snake. If you find it, it'll show you the way into the sewers. Good luck, officer.",
-   "dst": "",
+   "dst": "那些赌徒有些人在家里嵌了一个记号，形状像条蛇。你要是找到它，它就会指给你进下水道的路。祝你好运，警官。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -98,7 +98,7 @@
   },
   "Murder Mystery#009": {
    "src": "The barkeeper takes the snake symbol and examines it for a moment before nodding and giving it back to you.",
-   "dst": "",
+   "dst": "酒保接过那个蛇形记号，看了一会儿，点了点头就还给你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -108,7 +108,7 @@
   },
   "Murder Mystery#010": {
    "src": "The barkeeper gestures down to the open trapdoor.",
-   "dst": "",
+   "dst": "酒保朝打开的地板门比了比。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -138,7 +138,7 @@
   },
   "Murder Mystery#013": {
    "src": "What are ya lingerin' around 'ere for? I've told ya all I know. Now either take a seat or get out.",
-   "dst": "",
+   "dst": "你在这里晃来晃去干什么？我知道的都跟你说了。现在要么坐下，要么出去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -158,7 +158,7 @@
   },
   "Murder Mystery#015": {
    "src": "It seems like you better go have a chat with Rohem...",
-   "dst": "",
+   "dst": "看来你最好去跟 Rohem 谈一谈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -168,7 +168,7 @@
   },
   "Murder Mystery#016": {
    "src": "You should look around for clues that tie Rohem to the murder.",
-   "dst": "",
+   "dst": "你该四处找找能把 Rohem 跟这场凶杀连起来的线索。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -178,7 +178,7 @@
   },
   "Murder Mystery#017": {
    "src": "Get out of my house, officer, and don't you dare go rooting around in my property!",
-   "dst": "",
+   "dst": "滚出我家，警官，还有你敢在我的地方到处乱翻试试看！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -188,7 +188,7 @@
   },
   "Murder Mystery#018": {
    "src": "It's a dirty shovel - it must've been used recently to dig something up.",
-   "dst": "",
+   "dst": "这是一把沾满泥的铁铲——一定是最近才用来挖过什么东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -198,7 +198,7 @@
   },
   "Murder Mystery#019": {
    "src": "There's a trail of muddy footprints leading back into the house.",
-   "dst": "",
+   "dst": "有一串泥脚印通回屋里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -218,7 +218,7 @@
   },
   "Murder Mystery#021": {
    "src": "Thank you for your help in catching the perpetrator!",
-   "dst": "",
+   "dst": "谢谢你帮忙抓到犯人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
