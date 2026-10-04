@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 24500,
-  "translated": 24500,
+  "count": 24536,
+  "translated": 24536,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -140108,8 +140108,8 @@
    "source": "wiki"
   },
   "Recipe For Disaster#021": {
-   "src": "You need to talk to the other chefs before deciding what to make, though!",
-   "dst": "でも何を作るか決める前に、ほかの料理人とも話してきてね！",
+   "src": "You need to talk to the other chefs before deciding who to work with though!",
+   "dst": "でも誰と一緒作るか決める前に、ほかの料理人とも話してきてね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -140168,7 +140168,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#027": {
-   "src": "Thinkin' a pie, maybe? Not too much effort there, can't go far wrong, right?",
+   "src": "Thinkin' a pie, maybe? Not too much effort there, can't go too far wrong, right?",
    "dst": "パイとかどう？手間かかんねえし、大失敗もしねえだろ？",
    "role": "desc",
    "kind": "dialogue",
@@ -140238,7 +140238,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#034": {
-   "src": "Talk to your chosen chef about the dish.",
+   "src": "Talk to your chosen chef about your dish",
    "dst": "選んだ料理人と料理について話す。",
    "role": "desc",
    "kind": "objective",
@@ -140848,7 +140848,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#096": {
-   "src": "Hello there! I can see you knead you some sunrise flour, don't you?",
+   "src": "Hello there! I can see you knead some sunrise flour, don't you?",
    "dst": "やあ！その顔は Sunrise Flour を「こね」がってるね？",
    "role": "desc",
    "kind": "dialogue",
@@ -140878,7 +140878,7 @@
    "source": "wiki"
   },
   "Recipe For Disaster#099": {
-   "src": "I'm sorry if I see to just be loafing around, but at yeast I know how to make some more.",
+   "src": "I'm sorry if I seem to be just loafing around, but at yeast I know how to make some more.",
    "dst": "ぼんやり「発酵」してるように見えたらごめん。でも追加の作り方なら知ってるよ。",
    "role": "desc",
    "kind": "dialogue",
@@ -140889,7 +140889,7 @@
   },
   "Recipe For Disaster#100": {
    "src": "Can you see that wheat field over there, next to the bakery? You can farm up some wheat and pop it on the mill.",
-   "dst": "パン屋の隣の小麦畑、見えるかい？小麦を刈って、粉ひき機に入れればいい。",
+   "dst": "パン屋の隣の小麦畑、見えるかい？小麦を刈って、製粉機に入れればいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -140899,7 +140899,7 @@
   },
   "Recipe For Disaster#101": {
    "src": "Grab a scythe from the tool merchant next dough and get to work!",
-   "dst": "隣の「パン」…じゃない、隣の道具屋で鎌をもらって作業開始だ！",
+   "dst": "隣の「パン」…じゃない、tool merchantで鎌をもらって作業開始だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -141276,6 +141276,366 @@
    "stage": "Stage 9",
    "speaker": "Chef Hamsey",
    "source": "wiki"
+  },
+  "Recipe For Disaster#139": {
+   "src": "S'il te plaît! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
+   "dst": "S'il te plaît!私のシェフたち一人ひとりに自己紹介をしてきて、誰と一緒に働くか決めたら戻ってきて!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Chef Hamsey",
+   "source": "captured"
+  },
+  "Recipe For Disaster#140": {
+   "src": "It may be on fire, but... que serait la Cuisine sans une touche de danger, eh?!",
+   "dst": "火事かもしれないけど……料理にちょっとした危険がなければ、何の意味があるっていうの?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Chef Hamsey",
+   "source": "captured"
+  },
+  "Recipe For Disaster#141": {
+   "src": "Adventurer! You haven't talked to Brie, Kale, or Frank yet, make sure to talk to them before choosing who to work with.",
+   "dst": "冒険者よ！まだBrie、Kale、Frankと話をしていないなら、誰と組むか決める前に、必ず彼らと話をして。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Chef Hamsey",
+   "source": "captured"
+  },
+  "Recipe For Disaster#142": {
+   "src": "Yo, dawg. Name's Frank. Pleasure to meet'cha.",
+   "dst": "よう、兄弟。オレは Frank。会えてうれしいよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Frank",
+   "source": "captured"
+  },
+  "Recipe For Disaster#143": {
+   "src": "Speak to all three chefs inside Hamsey's kitchen",
+   "dst": "Hamsey's kitchenにいる3人のシェフ全員とと話す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Recipe For Disaster#144": {
+   "src": "Are you still here? Just... go chitchat to someone else, Are you still here? Just... go chitchat to someoneplease.",
+   "dst": "まだいたのか…?他の奴とおしゃべりしてこい。まだいたのか…他の奴とおしゃべりしてこい。頼むから。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Kale",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#145": {
+   "src": "You've talked to all three chefs, you should check back with Hamsey.",
+   "dst": "3人のシェフ全員と話したんだから、Hamseyにもう一度確認しよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#146": {
+   "src": "Which chef you would like to cook with?",
+   "dst": "どのシェフと一緒に料理をしてみたい？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#147": {
+   "src": "Maintenant, mon ami, head over to your chef and start cooking!",
+   "dst": "Maintenant, mon ami、君の料理人のところへ行って調理開始だ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#148": {
+   "src": "Not feeling a vibe with me? No worries! I'm sure you'll do great whoever you work with.",
+   "dst": "私とは波長が合わない？　大丈夫！　誰と組んでも、きっとうまくいくと思うよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Brie",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#149": {
+   "src": "Thank grook you didn't choose me. Goodness knows I don't need another ameteur weighing me down.",
+   "dst": "grook、私を選ばなくてよかったよ。もう一人の素人が足手まといになるなんて、絶対にごめんだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 3",
+   "speaker": "Kale",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#150": {
+   "src": "Collect [{~} Blue-Ringed Grook Egg] at [{~}, {~}, -{~}] or check your recipe book.",
+   "dst": "[{~2}, {~3}, -{~4}]で[{~1} Blue-Ringed Grook Egg]を入手するか、recipe bookを確認する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#151": {
+   "src": "Collect [{~} Voidroot] at [{~}, {~}, -{~}] or check your recipe book.",
+   "dst": "[{~2}, {~3}, -{~4}]で[{~1} Voidroot]を入手するか、recipe bookを確認する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#152": {
+   "src": "Collect [{~} Moonsalt] at [{~}, {~}, -{~}] or check your recipe book.",
+   "dst": "[{~2}, {~3}, -{~4}]で[{~1} Moonsalt]を入手するか、recipe bookを確認する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#153": {
+   "src": "Collect [{~} Snail Slime] at [{~}, {~}, -{~}] or check your recipe book.",
+   "dst": "[{~2}, {~3}, -{~4}]で[{~1} Snail Slime]を入手するか、recipe bookを確認する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#154": {
+   "src": "Collect [{~} Talking Mushroom] at [{~}, {~}, -{~}] or check your recipe book.",
+   "dst": "[{~2}, {~3}, -{~4}]で[{~1} Talking Mushroom]を入手するか、recipe bookを確認する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#155": {
+   "src": "Collect [{~} Sunrise Flour] at [{~}, {~}, -{~}] or check your recipe book.",
+   "dst": "[{~2}, {~3}, -{~4}]で[{~1} Sunrise Flour]を入手するか、recipe bookを確認する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#156": {
+   "src": "Collect [{~} Skyhigh Raspberry] at [{~}, {~}, -{~}] or check your recipe book.",
+   "dst": "[{~2}, {~3}, -{~4}]で[{~1} Skyhigh Raspberry]を入手するか、recipe bookを確認する",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#157": {
+   "src": "You shouldn't go entering private rooms uninvited!",
+   "dst": "招かれもせずに個室に入っちゃダメ！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#158": {
+   "src": "How is the cooking going?! If you have lost your recipe book, just ask your chef for another copy!",
+   "dst": "料理の調子はいかがですかな？！もしレシピ本をなくしちゃったら、シェフに新しいものを頼んでみてね！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#159": {
+   "src": "Follow me into the kitchen, mon ami.",
+   "dst": "さあ、キッチンへついてきて、mon ami。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 1",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#160": {
+   "src": "You need [{~} Sunrise Wheat] to refine using the mill!",
+   "dst": "製粉機を使って精製するには、[{~} Sunrise Wheat] が必要だ！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#161": {
+   "src": "You've managed to farm up some Sunrise Wheat - you should go refine it at the Bakers mill.",
+   "dst": "なんとかSunrise Wheatをいくつか手に入れたね。パン屋の製粉所で精製してもらおう。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#162": {
+   "src": "Looks like you managed to escape with the egg... that was a close one!",
+   "dst": "どうやら卵を持って逃げ切れたようだ……危なかった！",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#163": {
+   "src": "Would you like to collect some Skyhigh Raspberries?",
+   "dst": "Skyhigh Raspberryを少し集めてみませんか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#164": {
+   "src": "Alrighty! Just head over to that island beside me and jump in the cannon - it's perfectly safe, I promise!",
+   "dst": "よし！僕の隣にあるあの島に行って、大砲の中に飛び込んでみて。絶対に安全だから、約束するよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "Raspberry Vendor",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#165": {
+   "src": "Find your way up to the island and grab as many raspberries as you want! When you're done just jump in the big cannon to come back to shore!",
+   "dst": "島まで登って、ラズベリーを好きなだけ摘んでください！摘み終わったら、大きな大砲に飛び乗って岸に戻りましょう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "Raspberry Vendor",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#166": {
+   "src": "You're all paid up for a trip to the island already, just jump in the cannon on the island right beside me!",
+   "dst": "島への旅の代金はもう全額支払済みだから、私のすぐ横にある島の大砲に飛び乗ってくれ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "Raspberry Vendor",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#167": {
+   "src": "You've gathered all the ingredients, you should head back to Frank.",
+   "dst": "材料はすべて揃ったから、フランクのところに戻ろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#168": {
+   "src": "You shouldn't jump onto the islands without talking to the Raspberry Vendor!",
+   "dst": "Raspberry Vendorに話しかけずに、島に飛び乗らないで！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#169": {
+   "src": "You watch Hamsey start to taste your dish... will it be up to his standards?",
+   "dst": "Hamseyがあなたの料理を口にしようとする様子を見守る……果たして彼の基準を満たせるだろうか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#170": {
+   "src": "Though I will not truly call you a master chef quite yet, you are très bien! Have this reward as congratulations!",
+   "dst": "まだ真の料理人とは呼べんが、très bien だ！祝いにこの褒美を受け取りたまえ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 8",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#171": {
+   "src": "Welcome back to my restaurant, adventurer!",
+   "dst": "冒険者さん、私のレストランへようこそ、またお越しいただきありがとうございます！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 8",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#172": {
+   "src": "Good to see you again, dude!",
+   "dst": "また会えて嬉しいよ、相棒！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 8",
+   "speaker": "Frank",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#173": {
+   "src": "Ah. You're back. Just stay out of my way, I'm trying to do actual cooking.",
+   "dst": "ああ、戻ってきたのか。邪魔しないでくれよ、今本気で料理してるから。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 8",
+   "speaker": "Kale",
+   "source": "captured.json"
+  },
+  "Recipe For Disaster#174": {
+   "src": "Hey! Nice to see you again.",
+   "dst": "やあ！また会えてうれしいよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "Stage 8",
+   "speaker": "Brie",
+   "source": "captured.json"
   },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
