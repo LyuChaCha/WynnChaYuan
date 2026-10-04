@@ -1114,6 +1114,8 @@ public final class CollectorConfig {
 
     public Source toggleSource() {
         source = source == Source.GITHUB ? Source.LOCAL : Source.GITHUB;
+        // 升版時要不要動快取資料夾跟著這個開關走，當場就要生效（#979）
+        com.wynnchayuan.translate.TranslationCache.syncsFromGitHub = source == Source.GITHUB;
         save();
         return source;
     }
