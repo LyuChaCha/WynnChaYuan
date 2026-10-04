@@ -5,7 +5,7 @@
   "count": 203,
   "source": "https://cdn.wynntils.com/static/Reference/caves.json",
   "note": "洞窟卡的<b>整段</b>敘述。鍵是模組把畫面上那幾行攤平成一句的樣子（見 LineTranslator#rejoin，行與行之間接一個半形空白），所以這裡<b>只能</b>放整段，不可以放逐行的碎片——碎片的斷點取決於畫面寬度，跟實機對不上就永遠查不到，而且會在別處夾出半中半英。座標一律寫成 [-{~}, {~}, -{~}]（負號留在模板裡），地名一律用 {p}。資料來源：https://cdn.wynntils.com/static/Reference/caves.json",
-  "translated": 209
+  "translated": 203
  },
  "The forgotten factory at [-{~}, {~}, -{~}] may not be so empty after all.": "那座被遺忘的工廠，座標 [-{~}, {~}, -{~}]，也許並沒有那麼空蕩。",
  "In a cave dark as the depths of the ocean, shining stalks grow and attract glowing moths at [{~}, {~}, -{~}], and...?": "在一座漆黑如深海的洞窟裡，發光的莖幹生長著，引來了發亮的飛蛾，座標 [{~}, {~}, -{~}]，然後呢……？",
