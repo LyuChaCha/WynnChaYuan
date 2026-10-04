@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Creeper Infiltration",
-  "count": 52,
-  "translated": 52,
+  "count": 50,
+  "translated": 50,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -15,16 +15,6 @@
    "stage": "",
    "speaker": "",
    "source": "captured"
-  },
-  "Creeper Infiltration#002": {
-   "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
-   "dst": "有人嗎！有沒有人可以——哦，你好。你看起來夠強壯，應該幫得上我。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 1",
-   "speaker": "Thomas",
-   "source": "wiki"
   },
   "Creeper Infiltration#003": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
@@ -326,16 +316,6 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#033": {
-   "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
-   "dst": "要去苦力怕的洞窟，沿著西邊那條路走，到豬人營地那裡左轉。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 4",
-   "speaker": "Thomas",
-   "source": "wiki"
-  },
   "Creeper Infiltration#034": {
    "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
    "dst": "還有，萬一你把面具弄丟了，只要再帶一塊皮和一塊獸皮給那位商人，他可以再幫你做一副。",
@@ -468,7 +448,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#048": {
    "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
@@ -484,7 +466,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 4",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#050": {
    "src": "Oh, a visitor? Interesting. I thought I only knew about this cave, considering I was called crazy by my master.",

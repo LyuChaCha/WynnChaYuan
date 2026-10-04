@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Arachnids' Ascent",
-  "count": 128,
-  "translated": 128,
+  "count": 122,
+  "translated": 122,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -32,8 +32,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Admiral Aegis",
    "source": "captured"
   },
   "Arachnids' Ascent#004": {
@@ -52,8 +52,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Arachnids' Ascent#006": {
@@ -82,8 +82,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#009": {
@@ -102,8 +102,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#011": {
@@ -112,8 +112,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Arachnids' Ascent#012": {
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Arachnids' Ascent#013": {
@@ -206,16 +206,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#021": {
-   "src": "Let's see... ah, {u}! There you are. I was just about to send someone to fetch you.",
-   "dst": "Так... а, {u}! Вот ты где. Я как раз собирался послать за тобой.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 1",
-   "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
   "Arachnids' Ascent#022": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
    "dst": "За мной - поговорим у меня в кабинете. Он на верхнем этаже казармы.",
@@ -244,16 +234,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 1",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#026": {
-   "src": "If {u} is here, I take it that means today is the day we strike at the spiders?",
-   "dst": "Раз {u} здесь, значит, сегодня мы ударим по паукам?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 1",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "Arachnids' Ascent#027": {
@@ -436,16 +416,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#045": {
-   "src": "Ah, good! You can see the pickle we're in, hmm? We've tried everything to get those poor souls out, but the damned web is like glue!",
-   "dst": "А, отлично! Видите, в какую передрягу мы попали? Чего только не пробовали, чтобы вытащить бедняг, но проклятая паутина - как клей!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
   "Arachnids' Ascent#046": {
    "src": "Now, let's see here... If I cast a spell on it like this, then...",
    "dst": "Так, посмотрим... Если наложить на неё заклинание вот так...",
@@ -454,26 +424,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 3",
    "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#047": {
-   "src": "Hm... That's not good.",
-   "dst": "Хм... Плохо дело.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#048": {
-   "src": "So, what do we do now? You mentioned another option- what was that about? What about it made it difficult?",
-   "dst": "И что теперь? Вы говорили о другом варианте - что за вариант? И в чём сложность?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Arachnids' Ascent#049": {
@@ -504,16 +454,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 3",
    "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#052": {
-   "src": "So what's the catch? You would have tried it first if it were that simple.",
-   "dst": "Так в чём подвох? Будь всё так просто, вы бы уже попробовали.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Arachnids' Ascent#053": {

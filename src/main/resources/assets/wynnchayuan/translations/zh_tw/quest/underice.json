@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Underice",
-  "count": 63,
-  "translated": 63,
+  "count": 59,
+  "translated": 59,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -126,16 +126,6 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#013": {
-   "src": "However, we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
-   "dst": "不過，我們不必為了湖裡的魚起衝突，我們只需要一條 [Mythic Everlasting Pufferfish]，那就夠了，別的都不用。我們從來就不想偷魚。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 4",
-   "speaker": "Calamaro",
-   "source": "wiki"
-  },
   "Underice#014": {
    "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
    "dst": "如果你想幫我們也幫村民，就順著流進這座湖的溪流往南走，那裡有最好的漁場。河豚應該也在那一帶。",
@@ -166,29 +156,9 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#017": {
-   "src": "You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
-   "dst": "你在找 [Mythic Everlasting Pufferfish]？嗯，這名字我以前聽過，我朋友 Strato 幾年前跟我提過。如果我沒記錯，牠是取之不盡的，光靠這一條魚就能餵飽所有行省的每一個人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
   "Underice#018": {
    "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
    "dst": "可惜 Strato 已經不在了。他以前在 {p} 西北邊的伐木營地工作和生活。我們總是在這裡碰面，一起釣魚、講故事給對方聽。我真的很懷念那段日子……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
-  "Underice#019": {
-   "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
-   "dst": "也許你能在那裡找到某種餌，他有我見過最好的餌。你應該弄得到一些，把它丟進水裡，也許能引來那條河豚。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -229,16 +199,6 @@
   "Underice#023": {
    "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
    "dst": "牠來了，[Mythic Everlasting Pufferfish]，我簡直不敢相信！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
-  "Underice#024": {
-   "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
-   "dst": "你決定把魚給我了？真希望 Strato 還在，他一定會驚訝得不得了。我沒辦法讓你明白這對我有多重要，但請收下這份小禮物，答應我，永遠別變。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -592,8 +552,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
    "source": "captured"
   },
   "Underice#060": {
@@ -602,8 +562,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#061": {
@@ -612,8 +572,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#062": {
@@ -622,8 +582,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#063": {

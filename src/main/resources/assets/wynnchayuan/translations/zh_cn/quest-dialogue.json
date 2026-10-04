@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 24534,
-  "translated": 24534,
+  "count": 24287,
+  "translated": 24287,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -45,8 +45,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Mael",
    "source": "captured"
   },
   "A Grave Mistake#004": {
@@ -142,16 +142,6 @@
   "A Grave Mistake#014": {
    "src": "Do you understand now?",
    "dst": "现在你明白了吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Grave Mistake",
-   "stage": "Stage 1",
-   "speaker": "Mael",
-   "source": "wiki"
-  },
-  "A Grave Mistake#015": {
-   "src": "Now leave, and forget the horrors you have witnessed here today...",
-   "dst": "现在离开吧，忘掉你今天在这里目睹的恐怖……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -405,8 +395,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Gelibord Citizen",
    "source": "captured"
   },
   "A Headless History#021": {
@@ -1822,16 +1812,6 @@
   "A Headless History#165": {
    "src": "...they'll be the last ones you ever have, grimy demon. To the guillotine with you... Everyone! I got him!",
    "dst": "……那会是你最后的梦，肮脏的恶魔。送你上断头台……大家！我抓到他了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Headless History",
-   "stage": "Stage 11",
-   "speaker": "Gelibord Citizen",
-   "source": "wiki"
-  },
-  "A Headless History#166": {
-   "src": "Everyone, welcome! Today will be the day we save our fair land. Today's the day of light!",
-   "dst": "欢迎各位！今天就是我们拯救这片美丽土地的日子。今天就是光明之日！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -3985,8 +3965,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Hunter's Calling",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 26",
+   "speaker": "Corkus Guard",
    "source": "captured"
   },
   "A Hunter's Calling#172": {
@@ -4387,16 +4367,6 @@
    "quest": "A Hunter's Calling",
    "stage": "Stage 26",
    "speaker": "Teleportation Mech",
-   "source": "wiki"
-  },
-  "A Hunter's Calling#212": {
-   "src": "Bzzt... Ḣ̸̺ë̴̩́l̷̼͕̄l̵̹̐ó̸̦̠ ̸̡̠͆ẇ̴̟̮o̵͙͗͂ṟ̵̢́̚l̴̤͕̈d̶̹̍ͅ.̷̛̤͋NEW ENEMY REGISTERED: AVOS. Proceed with attack protocol- click.",
-   "dst": "滋滋……你好，世界。登记新敌人：AVOS。执行攻击协议——喀嚓。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Hunter's Calling",
-   "stage": "Stage 26",
-   "speaker": "Corkus Guard",
    "source": "wiki"
   },
   "A Hunter's Calling#213": {
@@ -10631,8 +10601,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "\"Unknown Cursed One\"",
    "source": "captured"
   },
   "A New Beginning#033": {
@@ -10691,8 +10661,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Zeph",
    "source": "captured"
   },
   "A New Beginning#039": {
@@ -10871,8 +10841,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Mora",
    "source": "captured"
   },
   "A New Beginning#057": {
@@ -10891,8 +10861,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Mora",
    "source": "captured"
   },
   "A New Beginning#059": {
@@ -10931,8 +10901,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Rex",
    "source": "captured"
   },
   "A New Beginning#063": {
@@ -10981,8 +10951,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 13",
+   "speaker": "Syndra",
    "source": "captured"
   },
   "A New Beginning#068": {
@@ -11465,16 +11435,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#122": {
-   "src": "* Subject brought to {p} by the Driver. (Note: Interrogate Driver for reasoning.)",
-   "dst": "* 该对象由车夫带到 {p}。(注：审问车夫的动机。)",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 4",
-   "speaker": "\"Unknown Cursed One\"",
-   "source": "wiki"
-  },
   "A New Beginning#123": {
    "src": "Guards! Return to your stations!",
    "dst": "守卫！回到你们的岗位！",
@@ -11673,16 +11633,6 @@
    "quest": "A New Beginning",
    "stage": "Stage 6",
    "speaker": "Rex",
-   "source": "wiki"
-  },
-  "A New Beginning#144": {
-   "src": "…I th-thought you were m-making things up again.",
-   "dst": "……我还、还以为你又在编故事了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 6",
-   "speaker": "Zeph",
    "source": "wiki"
   },
   "A New Beginning#147": {
@@ -12395,16 +12345,6 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#227": {
-   "src": "No, you didn't ugh! It's not you personally, it's just...",
-   "dst": "不，你没有——唉！不是针对你，只是……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 11",
-   "speaker": "Rex",
-   "source": "wiki"
-  },
   "A New Beginning#228": {
    "src": "Nevermind. Doesn't matter.",
    "dst": "算了。无所谓。",
@@ -12445,29 +12385,9 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#233": {
-   "src": "It’s always nice to have some fresh blood under our canopy! No matter how abnormal. We may wait for Syndra’s return before getting you properly settled in.",
-   "dst": "树冠下多了新鲜血液总是好事！不管有多不寻常。等 Syndra 回来，再好好帮你安顿下来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 11",
-   "speaker": "Mora",
-   "source": "wiki"
-  },
   "A New Beginning#235": {
    "src": "Now, what could I do for you?",
    "dst": "那么，我能为你做些什么？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 11",
-   "speaker": "Mora",
-   "source": "wiki"
-  },
-  "A New Beginning#236": {
-   "src": "I am Syndra’s right hand! I deal with many of the tasks involving our family here, to lighten the workload she places upon herself.",
-   "dst": "我是 Syndra 的左右手！这个大家庭里的许多事务都由我处理，好减轻她给自己揽下的担子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -13085,16 +13005,6 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#302": {
-   "src": "Simple I don't. You don't need to worry about him. As I said, we have an agreement. He doesn't know about anything we do.",
-   "dst": "很简单——我不信任他。你不用担心他。我说过，我们有协议。我们做的任何事他都不知道。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A New Beginning",
-   "stage": "Stage 13",
-   "speaker": "Syndra",
-   "source": "wiki"
-  },
   "A New Beginning#303": {
    "src": "I had hoped to keep this a secret for a reason... but what's done is done. Just... don't do anything rash, would you?",
    "dst": "我本来有理由想瞒着这件事的……但事已至此。只是……别做什么冲动的事，好吗？",
@@ -13661,8 +13571,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Almuj Bank Guard",
    "source": "captured"
   },
   "A Sandy Scandal#001": {
@@ -13671,8 +13581,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Almuj Bank Guard",
    "source": "captured"
   },
   "A Sandy Scandal#002": {
@@ -13931,8 +13841,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Bandit Leader",
    "source": "captured"
   },
   "A Sandy Scandal#028": {
@@ -13951,8 +13861,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 16",
+   "speaker": "Bandit Leader",
    "source": "captured"
   },
   "A Sandy Scandal#030": {
@@ -13961,8 +13871,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 19",
+   "speaker": "Almuj Bank Guard",
    "source": "captured"
   },
   "A Sandy Scandal#031": {
@@ -13985,29 +13895,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#033": {
-   "src": "You look like a hardy one! {p} army is it? Would you be willing to help {p} a bit?",
-   "dst": "你看起来挺能扛的！{p} 军队的是吧？愿不愿意帮 {p} 一点忙？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Sandy Scandal",
-   "stage": "Stage 1",
-   "speaker": "Almuj Bank Guard",
-   "source": "wiki"
-  },
   "A Sandy Scandal#034": {
    "src": "{p} bank tends to be a prime target for bandits, and there's been a string of incidents that have made us suspicious.",
    "dst": "{p} 银行一向是强盗的头号目标，最近又接连出了几件事，让我们起了疑心。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Sandy Scandal",
-   "stage": "Stage 1",
-   "speaker": "Almuj Bank Guard",
-   "source": "wiki"
-  },
-  "A Sandy Scandal#035": {
-   "src": "We're looking into some witness reports to try and gain information on the bandits' plan.",
-   "dst": "我们正在调查一些目击报告，想弄清楚强盗的计划。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -14485,16 +14375,6 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#084": {
-   "src": "This whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
-   "dst": "几秒钟后这整个地方就会炸上天，所有证据都会埋进沙子里。祝你能逃出去！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Sandy Scandal",
-   "stage": "Stage 14",
-   "speaker": "Bandit Leader",
-   "source": "wiki"
-  },
   "A Sandy Scandal#085": {
    "src": "Escape the hideout!",
    "dst": "逃出藏身处！",
@@ -14513,16 +14393,6 @@
    "quest": "A Sandy Scandal",
    "stage": "Stage 16",
    "speaker": "",
-   "source": "wiki"
-  },
-  "A Sandy Scandal#087": {
-   "src": "It’s too late to stop us now! We’re already about to bust out of here with the grand prize - the contents of the emerald vault!",
-   "dst": "现在想阻止我们已经太迟了！我们正准备带着头奖——绿宝石金库里的东西——冲出去！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Sandy Scandal",
-   "stage": "Stage 16",
-   "speaker": "Bandit Leader",
    "source": "wiki"
   },
   "A Sandy Scandal#088": {
@@ -14588,16 +14458,6 @@
   "A Sandy Scandal#094": {
    "src": "Soldier! Where did you disappear to? Did you hear those explosions, below the bank?",
    "dst": "士兵！你跑哪去了？你听到银行底下的爆炸声了吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "A Sandy Scandal",
-   "stage": "Stage 19",
-   "speaker": "Almuj Bank Guard",
-   "source": "wiki"
-  },
-  "A Sandy Scandal#095": {
-   "src": "We think those bandits might have made their first move in the heist, we're mobilising a troop to-",
-   "dst": "我们认为那些强盗可能已经开始动手了，正在调派一支部队去——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -16449,7 +16309,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 2",
    "speaker": "Olon\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16489,7 +16349,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mona\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -16521,7 +16381,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mona\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16531,7 +16391,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mona\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16541,7 +16401,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mona\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16637,7 +16497,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16657,7 +16517,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16717,7 +16577,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Amber\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16753,7 +16613,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Amber\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16763,7 +16623,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Amber\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16783,7 +16643,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Amber\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16853,7 +16713,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mané\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16909,7 +16769,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mané\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -17047,8 +16907,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Olon",
    "source": "captured"
   },
   "Aldorei's Secret Part II#058": {
@@ -17175,8 +17035,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Olon",
    "source": "captured",
    "similar": {
     "text": "Erm. Thank you.",
@@ -17409,8 +17269,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Elder Oak",
    "source": "captured",
    "similar": {
     "text": "Alright. This meeting is now over. Glad we got to an agreement.",
@@ -17425,8 +17285,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Olon",
    "source": "captured"
   },
   "Aldorei's Secret Part II#093": {
@@ -17519,16 +17379,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#104": {
-   "src": "Please, {u}. I really need your help. Us {p} elves aren't exactly welcomed with open arms in {p}. It's a surprise they even let us in at all.",
-   "dst": "拜托，{u}。我真的需要你帮忙。我们 {p} 的精灵在 {p} 可不怎么受欢迎。他们居然肯让我们进来都算意外了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 2",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#105": {
    "src": "Could you try asking around, see if anyone knows about this.",
    "dst": "你能不能去四处打听一下，看看有没有人知道这件事。",
@@ -17582,16 +17432,6 @@
   "Aldorei's Secret Part II#110": {
    "src": "I've heard of you and what happened in the valley.",
    "dst": "我听说过你，还有山谷里发生的事。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mona",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#111": {
-   "src": "Oh... Yeah. Good job.",
-   "dst": "噢……是啊。干得好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -17719,39 +17559,9 @@
    "speaker": "Mona",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#125": {
-   "src": "Sure, I'll answer some questions!",
-   "dst": "好啊，我来回答几个问题！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mona",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#126": {
    "src": "How come you are so curious?",
    "dst": "你怎么这么好奇？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mona",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#127": {
-   "src": "Well... when I think about it. No.",
-   "dst": "嗯……仔细想想。没有。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mona",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#128": {
-   "src": "Actually. There is an old tale for children about a dying elf.",
-   "dst": "其实。有个讲给小孩听的古老故事，说的是一个快死的精灵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -17839,16 +17649,6 @@
    "speaker": "Amber",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#139": {
-   "src": "Are you lost little adventurer?",
-   "dst": "你迷路了吗，小冒险者？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Amber",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#140": {
    "src": "Worry not, the great Amber is here to help you find your way!",
    "dst": "别担心，伟大的 Amber 会帮你找到路的！",
@@ -17892,16 +17692,6 @@
   "Aldorei's Secret Part II#144": {
    "src": "You AREN'T A THIEF ARE YOU? OR A ROBBER? OR MURDERER!? ARSONIST!?",
    "dst": "你不是小偷吧？还是强盗？还是杀人犯！？纵火犯！？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Amber",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#145": {
-   "src": "Sorry! Sorry! Sorry!",
-   "dst": "抱歉！抱歉！抱歉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18069,26 +17859,6 @@
    "speaker": "Amber",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#167": {
-   "src": "Every day I get to catch bad guys, I'm living the dream.",
-   "dst": "每天都能抓坏人，我正在实现梦想。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Amber",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#168": {
-   "src": "Well, more like every month or so, or... even one every year. There aren't many bad guys here.",
-   "dst": "嗯，比较像是每个月左右，或者……一年抓一个。这里没什么坏人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Amber",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#169": {
    "src": "What.",
    "dst": "什么。",
@@ -18189,16 +17959,6 @@
    "speaker": "Sol",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#179": {
-   "src": "That's me! Sol the Smart, Sol the Clever, Sol the Best. I go by many names.",
-   "dst": "就是我！聪明的 Sol、机智的 Sol、最棒的 Sol。我有很多名号。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#180": {
    "src": "So what is it you need?",
    "dst": "那你需要什么？",
@@ -18252,16 +18012,6 @@
   "Aldorei's Secret Part II#186": {
    "src": "If you don't mind me asking... Is your friend from {p}?",
    "dst": "如果你不介意我问的话……你的朋友是从 {p} 来的吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#187": {
-   "src": "It seems like my theory is true. {p} elves are dying.",
-   "dst": "看来我的推论是对的。{p} 的精灵正在死去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18329,29 +18079,9 @@
    "speaker": "Mané",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#197": {
-   "src": "I was just taking a... little nap. No need to be so loud.",
-   "dst": "我只是在……小睡一下。不用那么大声。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mané",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#200": {
    "src": "What a dumb question.",
    "dst": "真是个蠢问题。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mané",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#201": {
-   "src": "You see, I'm a moon elf. I draw power from the moon.",
-   "dst": "你看，我是月精灵。我从月亮汲取力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18557,16 +18287,6 @@
    "quest": "Aldorei's Secret Part II",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#229": {
-   "src": "Hmm... That is all very interesting, and the more I hear the more right I feel like I am.",
-   "dst": "嗯……这些都很有意思，而且听得越多，我越觉得自己是对的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 4",
-   "speaker": "Olon",
    "source": "wiki"
   },
   "Aldorei's Secret Part II#232": {
@@ -19002,16 +18722,6 @@
   "Aldorei's Secret Part II#282": {
    "src": "AAHHH! I SLIPPED.",
    "dst": "啊啊啊！我滑倒了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 6",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#283": {
-   "src": "Erm. Thank you.",
-   "dst": "呃。谢谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -19649,16 +19359,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#357": {
-   "src": "Alright. This meeting is now over. Glad we got to an agreement.",
-   "dst": "好了。这次会议到此结束。很高兴我们达成了共识。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 10",
-   "speaker": "Elder Oak",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#358": {
    "src": "Pardon me!",
    "dst": "打扰一下！",
@@ -19672,16 +19372,6 @@
   "Aldorei's Secret Part II#359": {
    "src": "Ahm- excuse me!",
    "dst": "呃——不好意思！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 10",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#360": {
-   "src": "Ehm- I know this is impolite of me which is exactly why I'm doing it!",
-   "dst": "嗯——我知道这样很失礼，所以我才这么做！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -23419,16 +23109,6 @@
    "speaker": "Captain Goruca",
    "source": "wiki"
   },
-  "All Roads to Peace#004": {
-   "src": "...A CATAPULT! Since when did the orcs have knowhow to make a CATAPULT?!",
-   "dst": "……投石机！兽人什么时候学会造投石机了？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 1",
-   "speaker": "Soldier",
-   "source": "wiki"
-  },
   "All Roads to Peace#005": {
    "src": "I don't know, but they just decimated our golems with it. How are we supposed to deal with that chieftain without our protection?",
    "dst": "我不知道，但他们用那东西把我们的魔像全砸烂了。没有保护，我们要怎么对付那个酋长？",
@@ -23449,29 +23129,9 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "All Roads to Peace#007": {
-   "src": "Nonono, you don't understand- a CATAPULT?! Seriously, I cannot get over this! Orc catapult! What's the world coming to?!",
-   "dst": "不不不，你不懂——投石机？！说真的，我实在想不通！兽人投石机！这世界是怎么了？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 1",
-   "speaker": "Soldier",
-   "source": "wiki"
-  },
   "All Roads to Peace#008": {
    "src": "...why do you always have to embarrass me in front of the humans, you idiots...",
    "dst": "……你们这群笨蛋，为什么老是要在人类面前让我丢脸……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 1",
-   "speaker": "Captain Goruca",
-   "source": "wiki"
-  },
-  "All Roads to Peace#009": {
-   "src": "Obviously, it seems we need some backup, soldier. Would you mind coming along to the medical tent with me?",
-   "dst": "显然，我们需要一些支援，士兵。你介意跟我去医疗帐篷一趟吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -23499,29 +23159,9 @@
    "speaker": "Captain Goruca",
    "source": "wiki"
   },
-  "All Roads to Peace#013": {
-   "src": "He's right, captain. After the golems were crushed, the orcs spilled out from the fortress. If we didn't retreat, we would've been killed, with just the four of us.",
-   "dst": "他说得对，上尉。魔像被砸烂之后，兽人就从堡垒里涌了出来。我们就四个人，要是不撤退，早就被杀了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 2",
-   "speaker": "Soldier",
-   "source": "wiki"
-  },
   "All Roads to Peace#014": {
    "src": "...fine. I suppose you have a point. And that means it's a good thing we have a human here to pick up all your slack.",
    "dst": "……好吧。我想你们说得也有道理。那也就是说，还好这里有个人类能替你们收拾烂摊子。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 2",
-   "speaker": "Captain Goruca",
-   "source": "wiki"
-  },
-  "All Roads to Peace#015": {
-   "src": "Human! Let me give you the lowdown. Since you've helped us reclaim the outpost up north, the orcs have gotten much more aggressive.",
-   "dst": "人类！我跟你说说情况。自从你帮我们夺回北边的前哨站，兽人就变得凶狠多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -23552,16 +23192,6 @@
   "All Roads to Peace#018": {
    "src": "...we haven't been able to get the orc chieftain to listen to reason and sign a new ceasefire yet. If this keeps up, we'll be overwhelmed. The brutes only seem to listen to force...",
    "dst": "……我们还没能让兽人酋长讲道理，签下新的停火协议。再这样下去，我们会被淹没的。那帮野蛮人好像只听得懂武力……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 2",
-   "speaker": "Captain Goruca",
-   "source": "wiki"
-  },
-  "All Roads to Peace#019": {
-   "src": "And that's where you come in, soldier. We need you to go to the orc fortress and break through their line of defenses. Maybe, if we show them we can equal their force, they'll listen, right?",
-   "dst": "这就是你出场的时候了，士兵。我们需要你去兽人堡垒，突破他们的防线。也许，如果让他们看到我们的武力不输他们，他们就会听了，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -23609,16 +23239,6 @@
    "speaker": "Guard Serepe",
    "source": "wiki"
   },
-  "All Roads to Peace#024": {
-   "src": "One against four... Human not even beat one. Ismikku! Hulve!",
-   "dst": "一对四……人类连一个都打不赢。Ismikku！Hulve！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 3",
-   "speaker": "Guard Serepe",
-   "source": "wiki"
-  },
   "All Roads to Peace#025": {
    "src": "KNOCK HUMAN DOWN!!",
    "dst": "打倒人类！！",
@@ -23652,16 +23272,6 @@
   "All Roads to Peace#028": {
    "src": "Need medicine for...urgh. Blood... Where yarrow root...",
    "dst": "需要药……呃。血……蓍草根在哪……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 3",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "All Roads to Peace#029": {
-   "src": "Hmh. Get up. Human! Get up! See human breathing, you awake!",
-   "dst": "哼。起来。人类！起来！看到人类在喘气，你醒了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -23859,16 +23469,6 @@
    "speaker": "Zuett",
    "source": "wiki"
   },
-  "All Roads to Peace#050": {
-   "src": "...hm ... ... ...can respect human strength. Can hunt spineback, mean strong.",
-   "dst": "……嗯……………可以尊重人类的力量。能猎刺背，代表强。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 5",
-   "speaker": "Guard Serepe",
-   "source": "wiki"
-  },
   "All Roads to Peace#051": {
    "src": "But strong not mean trust! Strength of body only one thing.",
    "dst": "但强不代表信任！身体的力量只是一种。",
@@ -23897,16 +23497,6 @@
    "quest": "All Roads to Peace",
    "stage": "Stage 5",
    "speaker": "Zuett",
-   "source": "wiki"
-  },
-  "All Roads to Peace#054": {
-   "src": "{u}!! Ressinter only healer! Zuett want be healer, Creinu want be healer, but not!",
-   "dst": "{u}！！Ressinter 是唯一医者！Zuett 想当医者，Creinu 想当医者，但都不是！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 5",
-   "speaker": "Guard Serepe",
    "source": "wiki"
   },
   "All Roads to Peace#055": {
@@ -24157,16 +23747,6 @@
    "quest": "All Roads to Peace",
    "stage": "Stage 6",
    "speaker": "Onluk",
-   "source": "wiki"
-  },
-  "All Roads to Peace#081": {
-   "src": "Agreed. We should get back to our tasks though.",
-   "dst": "同意。不过我们该回去做自己的事了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 6",
-   "speaker": "Nunexetor",
    "source": "wiki"
   },
   "All Roads to Peace#082": {
@@ -24889,16 +24469,6 @@
    "speaker": "Alraune",
    "source": "wiki"
   },
-  "All Roads to Peace#158": {
-   "src": "One so brazen as yourself could never share in the bounties of nature! Now begone! And leave me be!",
-   "dst": "像你这样厚颜无耻的家伙永远不配分享大自然的恩赐！快滚！别来烦我！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Alraune",
-   "source": "wiki"
-  },
   "All Roads to Peace#159": {
    "src": "...hm? And who might you be? What brings a human to this disused place?",
    "dst": "……嗯？你又是谁？什么风把一个人类吹到这个荒废的地方？",
@@ -25022,16 +24592,6 @@
   "All Roads to Peace#171": {
    "src": "Say name! Look at spell, say name! Try!! TRY!!!",
    "dst": "念名字！看拼法，念名字！试试看！！试试看！！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Xoeinbor",
-   "source": "wiki"
-  },
-  "All Roads to Peace#172": {
-   "src": "NO! Say wrong, all wrong! Sound even stupider than normal!",
-   "dst": "不对！念错了，全错！听起来比平常还蠢！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -25329,29 +24889,9 @@
    "speaker": "Lomoster",
    "source": "wiki"
   },
-  "All Roads to Peace#203": {
-   "src": "Grrmb. Dumb Kreimu. Stupid Wynn language...Gavel language, pfeh. Whatever language, not orc language.",
-   "dst": "嘟囔。笨 Kreimu。蠢 Wynn 语言……Gavel 语言，呸。什么语言都好，反正不是兽人语。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Creinu",
-   "source": "wiki"
-  },
   "All Roads to Peace#204": {
    "src": "Her name, my name, sound same. Don't sound same in Orcish! But in YOUR language, sound same!",
    "dst": "她的名字，我的名字，听起来一样。在兽人语里不一样！但在你们的语言里，听起来一样！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Creinu",
-   "source": "wiki"
-  },
-  "All Roads to Peace#205": {
-   "src": "Not just that-learning to be medicine orc. She medicine orc too! Healer, brewer, herbalist, whatever. Too much same!",
-   "dst": "不只那样——在学当药师兽人。她也是药师兽人！医者、酿药师、草药师，随便。太多一样了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -25537,16 +25077,6 @@
    "quest": "All Roads to Peace",
    "stage": "Stage 7",
    "speaker": "?????",
-   "source": "wiki"
-  },
-  "All Roads to Peace#226": {
-   "src": "What in the... HEY! Why's one of the big, scary humans in here?! Nunny, I thought you said we were gonna play a game!",
-   "dst": "搞什么……喂！为什么这里有个又大又可怕的人类？！Nunny，你不是说我们要玩游戏吗！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "?????????",
    "source": "wiki"
   },
   "All Roads to Peace#228": {
@@ -25762,16 +25292,6 @@
   "All Roads to Peace#249": {
    "src": "Well, anyway...you really went and tried to heal Ressinter? That's pretty admirable!",
    "dst": "嗯，总之……你真的跑去试着治疗 Ressinter？那真是令人佩服！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Grapes",
-   "source": "wiki"
-  },
-  "All Roads to Peace#250": {
-   "src": "I hear most humans are bullies. It's why Veltu back at the Trunkstump camp was training us to be tougher.",
-   "dst": "我听说大部分人类都是恶霸。所以 Trunkstump 营地的 Veltu 才会训练我们变得更强悍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -26022,16 +25542,6 @@
   "All Roads to Peace#279": {
    "src": "Little more, too. But, again- why you looking to be helpful? Don't understand. Humans kill orcs a lot.",
    "dst": "再多给一点。不过，还是那句——你为什么想帮忙？不明白。人类杀了很多兽人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Miliyus",
-   "source": "wiki"
-  },
-  "All Roads to Peace#280": {
-   "src": "You unlearn villager stupidity maybe? In the middle of unlearning? Perhaps a sign from the earth things will heal. Perhaps not. We will see.",
-   "dst": "也许你忘掉了村民的愚蠢？还是正在忘？也许是大地给的征兆，事情会好转。也许不是。走着瞧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -26389,16 +25899,6 @@
    "speaker": "Onluk",
    "source": "wiki"
   },
-  "All Roads to Peace#318": {
-   "src": "[{~} Willow Planks] enough to make tower better, maybe. Willow strong wood! Can get?",
-   "dst": "[{~} 柳木木板] 大概够把塔修好。柳木是结实的木头！拿得到吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 7",
-   "speaker": "Onluk",
-   "source": "wiki"
-  },
   "All Roads to Peace#319": {
    "src": "Aha! Human have willow wood! Onluk fix tower now!",
    "dst": "啊哈！人类有柳木！Onluk 现在修塔！",
@@ -26639,26 +26139,6 @@
    "speaker": "Zuett",
    "source": "wiki"
   },
-  "All Roads to Peace#344": {
-   "src": "THAT. IS. THE. POINT!! Villager get human to fight for them! Cease-fire say Villager not attack orc. Then human come over ocean. Try make peace- get attack!",
-   "dst": "这。就。是。重点！！村民让人类替他们打仗！停火协议说村民不攻击兽人。然后人类渡海而来。想谈和——却遭到攻击！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 9",
-   "speaker": "Arrai-Veretel",
-   "source": "wiki"
-  },
-  "All Roads to Peace#345": {
-   "src": "See human attack. Villager get human to attack, say lies to trick humans. Orcs defend self. Then, three Rai-orc die at Earthpit, Cliffhearth, and Trunkstump goblin camp.",
-   "dst": "看到人类攻击。村民让人类攻击，说谎骗人类。兽人自卫。然后，三个 Rai 兽人死在 Earthpit、Cliffhearth 和 Trunkstump 哥布林营地。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 9",
-   "speaker": "Arrai-Veretel",
-   "source": "wiki"
-  },
   "All Roads to Peace#346": {
    "src": "Human attack! Rai-Poxper take rightful toll for break cease-fire, but not war yet. Take magic axe from Villager city while magic power gone bad.",
    "dst": "人类攻击！Rai-Poxper 因为停火被破坏而讨回应得的代价，但还不算战争。趁魔法力量失控时，从村民城市拿走魔法斧头。",
@@ -26769,16 +26249,6 @@
    "speaker": "Arrai-Veretel",
    "source": "wiki"
   },
-  "All Roads to Peace#359": {
-   "src": "Listen, Zuett. I want war stop too. But you must understand the risk here. Cannot make decision lightly. Villager go back on word- see writing, find way around writing.",
-   "dst": "听着，Zuett。我也想要战争停止。但你必须明白这里的风险。不能轻易做决定。村民说话不算话——看了条文，就找办法绕过条文。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 9",
-   "speaker": "Arrai-Veretel",
-   "source": "wiki"
-  },
   "All Roads to Peace#360": {
    "src": "Try threaten us with iron corpse machine! So, battle will happen. Will prepare ritual and gather crowd. Prepare, human.",
    "dst": "还想用钢铁尸体机器威胁我们！所以，决斗会进行。会准备仪式、召集观众。准备好，人类。",
@@ -26787,16 +26257,6 @@
    "quest": "All Roads to Peace",
    "stage": "Stage 9",
    "speaker": "Arrai-Veretel",
-   "source": "wiki"
-  },
-  "All Roads to Peace#361": {
-   "src": "Prepare, human. Arrai-Veretel strongest orc. Strong in everything. Mind, body, power, spirit.",
-   "dst": "……没错。准备好，人类。Arrai-Veretel 是最强的兽人。什么都强。心智、身体、力量、灵魂。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "All Roads to Peace",
-   "stage": "Stage 9",
-   "speaker": "Zuett",
    "source": "wiki"
   },
   "All Roads to Peace#363": {
@@ -27145,8 +26605,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Soldier",
    "source": "captured"
   },
   "All Roads to Peace#403": {
@@ -27155,8 +26615,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Soldier",
    "source": "captured"
   },
   "All Roads to Peace#404": {
@@ -27165,8 +26625,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Captain Goruca",
    "source": "captured"
   },
   "All Roads to Peace#405": {
@@ -27185,8 +26645,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Soldier",
    "source": "captured"
   },
   "All Roads to Peace#407": {
@@ -27195,8 +26655,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Captain Goruca",
    "source": "captured"
   },
   "All Roads to Peace#408": {
@@ -27205,8 +26665,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Captain Goruca",
    "source": "captured"
   },
   "All Roads to Peace#409": {
@@ -27215,8 +26675,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Guard Serepe",
    "source": "captured"
   },
   "All Roads to Peace#410": {
@@ -27225,8 +26685,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "???",
    "source": "captured"
   },
   "All Roads to Peace#411": {
@@ -27285,8 +26745,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Guard Serepe",
    "source": "captured"
   },
   "All Roads to Peace#417": {
@@ -27295,8 +26755,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Guard Serepe",
    "source": "captured",
    "similar": {
     "text": "{u}!! Ressinter only healer! Zuett want be healer, Creinu want be healer, but not!",
@@ -27651,8 +27111,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Nunexetor",
    "source": "captured"
   },
   "All Roads to Peace#453": {
@@ -27731,8 +27191,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Xoeinbor",
    "source": "captured"
   },
   "All Roads to Peace#461": {
@@ -27921,8 +27381,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Creinu",
    "source": "captured"
   },
   "All Roads to Peace#480": {
@@ -27931,8 +27391,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Creinu",
    "source": "captured"
   },
   "All Roads to Peace#481": {
@@ -27961,8 +27421,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Onluk",
    "source": "captured",
    "similar": {
     "text": "[{~} Willow Planks] enough to make tower better, maybe. Willow strong wood! Can get?",
@@ -28057,8 +27517,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Miliyus",
    "source": "captured"
   },
   "All Roads to Peace#493": {
@@ -28087,8 +27547,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "?????????",
    "source": "captured"
   },
   "All Roads to Peace#496": {
@@ -28137,8 +27597,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Grapes",
    "source": "captured"
   },
   "All Roads to Peace#501": {
@@ -28267,8 +27727,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Alraune",
    "source": "captured"
   },
   "All Roads to Peace#514": {
@@ -28347,8 +27807,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Arrai-Veretel",
    "source": "captured"
   },
   "All Roads to Peace#522": {
@@ -28357,8 +27817,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Arrai-Veretel",
    "source": "captured"
   },
   "All Roads to Peace#523": {
@@ -28387,8 +27847,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Arrai-Veretel",
    "source": "captured"
   },
   "All Roads to Peace#526": {
@@ -28397,8 +27857,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Zuett",
    "source": "captured"
   },
   "All Roads to Peace#527": {
@@ -28527,8 +27987,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "???",
    "source": "captured"
   },
   "An Iron Heart Part I#001": {
@@ -28537,8 +27997,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "???",
    "source": "captured"
   },
   "An Iron Heart Part I#002": {
@@ -28567,8 +28027,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Guard Golem",
    "source": "captured"
   },
   "An Iron Heart Part I#005": {
@@ -28671,39 +28131,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "An Iron Heart Part I#015": {
-   "src": "...I am... w̶h̴at^s my...na̷m̸e...? I had one...",
-   "dst": "……我是……我叫什^么……名字……？我本来有一个的……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "An Iron Heart Part I",
-   "stage": "Stage 3",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "An Iron Heart Part I#016": {
-   "src": "Re...remember!! W̵H̸A̶T̸ IS MY N̵A̴M̵E̵? My life?",
-   "dst": "记……记住！！我叫什么名字？我的人生呢？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "An Iron Heart Part I",
-   "stage": "Stage 3",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "An Iron Heart Part I#019": {
    "src": "No directives!! Who did this?! I can't...s-stop giving me ORDERS!!",
    "dst": "不要指令！！是谁干的？！我没办法……别、别再给我下命令了！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "An Iron Heart Part I",
-   "stage": "Stage 3",
-   "speaker": "Guard Golem",
-   "source": "wiki"
-  },
-  "An Iron Heart Part I#020": {
-   "src": "N- MORE COLDNESS! NO MORE V̴O̸I̶C̴E̷S THAT AREN'T MINE! MY NAME IS [̶E̷R̶R̷O̸R̷]!! [̶E̷R̶R̷O̸R̷]!! NOOO!!",
-   "dst": "不——不要再冷冰冰的了！不要再有不属于我的声音！我的名字是 [ERROR]！！[ERROR]！！不——！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -36567,8 +35997,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Admiral Aegis",
    "source": "captured"
   },
   "Arachnids' Ascent#004": {
@@ -36587,8 +36017,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Arachnids' Ascent#006": {
@@ -36637,8 +36067,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#011": {
@@ -36647,8 +36077,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Arachnids' Ascent#012": {
@@ -36657,8 +36087,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Arachnids' Ascent#013": {
@@ -36741,16 +36171,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#021": {
-   "src": "Let's see... ah, {u}! There you are. I was just about to send someone to fetch you.",
-   "dst": "我看看……啊，{u}！你在这里。我正要派人去找你。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 1",
-   "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
   "Arachnids' Ascent#022": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
    "dst": "跟我来——我们到我的办公室谈。在兵营的顶楼。",
@@ -36779,16 +36199,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 1",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#026": {
-   "src": "If {u} is here, I take it that means today is the day we strike at the spiders?",
-   "dst": "既然 {u} 在这里，我想今天就是我们对蜘蛛出手的日子了？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 1",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "Arachnids' Ascent#027": {
@@ -36981,26 +36391,6 @@
    "speaker": "Captain Enduyn",
    "source": "wiki"
   },
-  "Arachnids' Ascent#047": {
-   "src": "Hm... That's not good.",
-   "dst": "嗯……这可不妙。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#048": {
-   "src": "So, what do we do now? You mentioned another option- what was that about? What about it made it difficult?",
-   "dst": "那现在怎么办？你提过还有别的办法——那是什么？它哪里难办？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
   "Arachnids' Ascent#049": {
    "src": "Right. You may have noticed on your way here, but the nest is at the base of {p}, a dormant volcano.",
    "dst": "对。你们来的路上可能注意到了，巢穴就在 {p} 的山脚下，那是一座休眠火山。",
@@ -37029,16 +36419,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 3",
    "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#052": {
-   "src": "So what's the catch? You would have tried it first if it were that simple.",
-   "dst": "那问题出在哪？要是那么简单，你早就先去试了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Arachnids' Ascent#053": {
@@ -40451,16 +39831,6 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#026": {
-   "src": "Searching all the camps one by one will be far too slow, gah!! How am I going to fix this?!",
-   "dst": "一个个营地去搜太慢了，啊！！我到底要怎么解决这件事？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Blazing Retribution",
-   "stage": "Stage 4",
-   "speaker": "Detective Jackson",
-   "source": "wiki"
-  },
   "Blazing Retribution#027": {
    "src": "There's Earthpit, and Cliffhearth, Shineridge and Stonecave, Sunspark, Mudspring, Holehold, I-",
    "dst": "有 Earthpit、Cliffhearth、Shineridge 和 Stonecave、Sunspark、Mudspring、Holehold，我——",
@@ -40581,16 +39951,6 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#039": {
-   "src": "Poxper? That...hm. This could be bad. I've head that name, and he's a fairly prolific Orc chief. You killed him, right?",
-   "dst": "Poxper？那……嗯。这可能不太妙。我听过这个名字，他是个相当有名的兽人酋长。你把他杀了，对吧？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Blazing Retribution",
-   "stage": "Stage 7",
-   "speaker": "Detective Jackson",
-   "source": "wiki"
-  },
   "Blazing Retribution#040": {
    "src": "Mmm... Hopefully that Veretel won't catch wind of it. Regardless, you've done a great service for Villager-kind!",
    "dst": "嗯……希望那个 Veretel 不会听到风声。不管怎样，你为村民一族立下了大功！",
@@ -40627,8 +39987,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Detective Jackson",
    "source": "captured"
   },
   "Blazing Retribution#044": {
@@ -40647,8 +40007,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Detective Jackson",
    "source": "captured"
   },
   "Bob's Lost Soul#000": {
@@ -41537,8 +40897,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
    "source": "captured"
   },
   "Brothers Return#002": {
@@ -41547,8 +40907,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
    "source": "captured"
   },
   "Brothers Return#003": {
@@ -41557,8 +40917,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Drucksh",
    "source": "captured"
   },
   "Brothers Return#004": {
@@ -41587,8 +40947,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
    "source": "captured"
   },
   "Brothers Return#007": {
@@ -41691,16 +41051,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Brothers Return#017": {
-   "src": "Hey! Don't put that down there",
-   "dst": "嘿！别把那个放在那里",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "Stage 1",
-   "speaker": "Sayleros",
-   "source": "wiki"
-  },
   "Brothers Return#018": {
    "src": "Oh, hello there, adventurer! I was just looking for someone like you! My name is Sayleros. I lived in {p} my whole life, but recently decided to move to {p}.",
    "dst": "噢，你好啊，冒险者！我正在找像你这样的人！我叫 Sayleros。我一辈子都住在 {p}，不过最近决定搬去 {p}。",
@@ -41734,16 +41084,6 @@
   "Brothers Return#021": {
    "src": "My older brother had amassed quite some wealth before he passed. He should have left us part of it in his will, only I don't exactly trust Drucksh to handle it...",
    "dst": "我哥哥过世前攒了不少钱。他应该在遗嘱里给我们留了一部分，只是我不太放心让 Drucksh 来处理……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "Stage 1",
-   "speaker": "Sayleros",
-   "source": "wiki"
-  },
-  "Brothers Return#022": {
-   "src": "If you could go to {p} and see if Drucksh has the will, I would forever be in your debt, pal.",
-   "dst": "如果你能去 {p} 看看 Drucksh 手上有没有遗嘱，我会永远欠你一份人情，伙计。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Brothers Return",
@@ -41789,16 +41129,6 @@
    "quest": "Brothers Return",
    "stage": "Stage 2",
    "speaker": "Barkeep",
-   "source": "wiki"
-  },
-  "Brothers Return#027": {
-   "src": "Mmmmmgghh... aaauuugh... need... mmgh... more...",
-   "dst": "嗯嗯呃……啊呜……还要……呃……更多……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "Stage 2",
-   "speaker": "Drucksh",
    "source": "wiki"
   },
   "Brothers Return#028": {
@@ -42149,16 +41479,6 @@
    "quest": "Brothers Return",
    "stage": "Stage 4",
    "speaker": "Drucksh",
-   "source": "wiki"
-  },
-  "Brothers Return#064": {
-   "src": "As I already told you, your brother is dead and buried. It's not like",
-   "dst": "我已经说过了，你哥哥已经死了，也下葬了。又不是说",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Brothers Return",
-   "stage": "Stage 4",
-   "speaker": "Bishop Kaideus",
    "source": "wiki"
   },
   "Brothers Return#065": {
@@ -49703,8 +49023,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Captain Kymer",
    "source": "captured"
   },
   "Clearing the Camps#001": {
@@ -49773,8 +49093,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Kymer",
    "source": "captured"
   },
   "Clearing the Camps#008": {
@@ -49800,16 +49120,6 @@
   "Clearing the Camps#010": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
    "dst": "啊哈，又一个 {p} 的士兵，是吧？好啊，热烈欢迎。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Clearing the Camps",
-   "stage": "Stage 1",
-   "speaker": "Captain Kymer",
-   "source": "wiki"
-  },
-  "Clearing the Camps#011": {
-   "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
-   "dst": "你听说我们收到的村民请求了吗？他们说那些“兽人”和“哥布林”正在威胁他们的城镇。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -49850,16 +49160,6 @@
   "Clearing the Camps#018": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
    "dst": "啊，刚才那个士兵！看来你回来了。打败那些家伙的事顺利——……哎哟。那是它们的头？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Clearing the Camps",
-   "stage": "Stage 3",
-   "speaker": "Captain Kymer",
-   "source": "wiki"
-  },
-  "Clearing the Camps#019": {
-   "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
-   "dst": "这……比我预想的狠了点，不过也行……反正村民也不在乎它们是死是活，只要解决了就好。你那份奖励在我这儿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -50397,8 +49697,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
    "source": "captured"
   },
   "Corrupted Betrayal#005": {
@@ -50614,16 +49914,6 @@
   "Corrupted Betrayal#026": {
    "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
    "dst": "嘿，士兵！对，就是你！有空搭把手吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Corrupted Betrayal",
-   "stage": "Stage 1",
-   "speaker": "Lanu",
-   "source": "wiki"
-  },
-  "Corrupted Betrayal#027": {
-   "src": "We've got a major issue with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
-   "dst": "这座老要塞出了个大问题。它不停地冒出一堆该死的史莱姆，而且离 {p} 太近，惹了不少麻烦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -51242,7 +50532,7 @@
    "source": "wiki"
   },
   "Cowfusion#015": {
-   "src": "Ẁ̷͚h̷̳͆̕a̷̡̅̚ṫ̷̨̢̿'̶̛̮̯͊ś̸̭ ̵̹͌̄t̸̛̫̤̅h̷̼́̒ï̵̡͆ś̴̯͎̈́ ̴̨̞͑̚'̶͈͛̔e̶̲͋r̴̙̰̊̊e̷̹͌̀?̸̜̓͜ ̸̙̀I̴͎͌̏b̶̯͐̀é̸̥l̸̼͓̈͗e̸̠̦͂,̷͔̉̃ ̸͕̤̅t̶͇̒h̵̛͈̠͑ä̵̡͚ţ̴̇̾ ̵͇̈ỷ̷͕͘ö̵̳̯ú̶̗͝?̸͔͊͊ ̴͉͈̀͠M̸̖̆ý̸̙͜ ̸̛ͅͅg̵̣̀ḭ̸̳͑͒r̶̺̿l̸͚͆,̸̦̇̕ ̸͔̿Ḯ̴̼̬͝ ̴̰͛k̴̰̅n̷̥͐e̴͓̅w̵̥̔̊ ̶̱͕͒̅y̸̨͇͆̋ȯ̷͍͇̎ṷ̸̻̓͂'̶̢͕̌́d̸̜̎̍ ̶͎͙́͝c̵̼̞̿͛ǫ̴̀́m̵̲̈́ë̵͎́ ̵̺͗͌b̴͕̍ḁ̸̽́c̵̺̽k̶̻̀ ̴̩͘͝t̸̮̮̉ȍ̴͜ ̶̩͉̒m̶̝̰̅e̶͈̮̾͘!̵͈͂́",
+   "src": "What's this 'ere? Ibele, that you? My girl, I knew you'd come back to me!",
    "dst": "这是啥？我不信，是你吗？我的乖女儿，我就知道你会回到我身边！",
    "role": "desc",
    "kind": "dialogue",
@@ -51252,7 +50542,7 @@
    "source": "wiki"
   },
   "Cowfusion#016": {
-   "src": "A̸̜̋ń̵͉̞d̴͖͙̂̕ ̴̡̥͘t̵̛̙͈o̵͖͑ ̶̨̗̆͠t̴̝͇͑ḧ̷̛͇̞́ḯ̴̯͚n̴̠̏͌ḵ̷̍ ̵̝̐̇I̷̛͖̮͊ ̷͚́ẃ̸̩͑ä̶̰̯s̸̥̯̎ ̷̘̓̉g̴̲͒ó̴̲̦̚ì̷͚̗̇ṋ̸̢̛͂g̴͉͒ ̶̭͙̌̾t̴̞͎̉ô̶̩̜ ̶̣̄͘h̶̖͕̎î̷̟̀r̷̙̒̓ȩ̴̽ ̴̖̉ͅs̴̲͊̿o̴͇̟̾̕m̴̨̞͌̍ë̷̹́ ̶̟̄c̶̛̩̻i̸̠͘͜t̷̢̂ẙ̷̹̣-̶̫̍d̶̬̓w̷̗̱̐ê̶͚͠ḹ̸͚̇l̵͕͎̽̂i̸̥͠ṅ̴̞̾'̶͖̈́ ̶͍̀'̶̥̦͆u̸͇̐̏m̵̬̽̆a̸͈͎͠n̸̩̖̎͐ ̵̢͔͑ṱ̷͑͜õ̶̻ͅ ̷̪͒ĝ̵͍ë̴̟͇̚ṯ̸̅ ̶̧̩̀y̴͇͖͋̽ö̷̘͉́̾u̴̖͝ ̶̳̠̕f̴̱͖̓͘o̷̗̔̓r̵̢͝ ̴̱̂̽m̴̨̛̛e̸̺̝͋?̵̬͊͝ ̴̲͒͛Ȟ̸͙̉ä̵̼́!̷͇́",
+   "src": "And to think I was going to hire some city-dwellin' 'uman to get you for me? Ha!",
    "dst": "亏我还想雇个城里来的人类去把你找回来？哈！",
    "role": "desc",
    "kind": "dialogue",
@@ -51262,7 +50552,7 @@
    "source": "wiki"
   },
   "Cowfusion#017": {
-   "src": "R̸̛̼̬͑i̷̟̓̊g̷͇̎ḧ̸̳́ṫ̶̮ ̵̪̑͐t̵̜̘͐ȟ̸̟̠̋e̷̙͂n̷͙̍̚,̷̛̮̚ ̸̜̑ͅb̴̗̄͝ã̴̳̌c̷͚͘k̴̨͗ ̶͉͈̾i̷̧͕͌̈́n̸̨̺̒ț̵̬͛́o̵̯̊͊ ̵̬̋̋t̸̹̆̀ḩ̸̰͗e̵̤̓ ̵͇̽̆p̷̦̙̀̚ē̸͇͆ń̶̻̺͠ ̷͇̆͝ý̶̰̆o̶͖͝u̶͔̿ͅ ̷͍̂̇g̶̪̎̽o̷̹͝.̷̬͍̈́̔ ̶̦̚H̴̚ͅụ̷̠͗ṗ̶͇̦!̶͖̹̔̇",
+   "src": "Right then, back into the pen you go. Hup!",
    "dst": "好了，回围栏里去吧。嘿咻！",
    "role": "desc",
    "kind": "dialogue",
@@ -53341,16 +52631,6 @@
    "speaker": "",
    "source": "captured"
   },
-  "Creeper Infiltration#002": {
-   "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
-   "dst": "有人吗！有没有人——噢，你好。你看起来够强，能帮我。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 1",
-   "speaker": "Thomas",
-   "source": "wiki"
-  },
   "Creeper Infiltration#003": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
    "dst": "我叫 Thomas，负责帮猪人峡谷里的一个村子管理物资。不过，我遇到了点麻烦……",
@@ -53651,16 +52931,6 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#033": {
-   "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
-   "dst": "要去苦力怕洞窟，就沿着西边的小路走，在猪人营地那里左转。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 4",
-   "speaker": "Thomas",
-   "source": "wiki"
-  },
   "Creeper Infiltration#034": {
    "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
    "dst": "还有，如果你不小心弄丢了面具，只要再带一块皮和一块皮革给商人，他就能再给你做一个。",
@@ -53793,7 +53063,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#048": {
    "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
@@ -53809,7 +53081,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 4",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#050": {
    "src": "Oh, a visitor? Interesting. I thought I only knew about this cave, considering I was called crazy by my master.",
@@ -54001,8 +53275,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Anast",
    "source": "captured"
   },
   "Crop Failure#017": {
@@ -54315,16 +53589,6 @@
    "speaker": "Anast",
    "source": "wiki"
   },
-  "Crop Failure#066": {
-   "src": "So... that means I've been... oh dear lord I'm an idiot.",
-   "dst": "所以……这代表我一直……噢天哪，我真是个白痴。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Crop Failure",
-   "stage": "Stage 5",
-   "speaker": "Anast",
-   "source": "wiki"
-  },
   "Crop Failure#067": {
    "src": "I guess I owe you some thanks anyway for trying to clear the sludge out. Suppose this year's harvest is just a bust.",
    "dst": "不管怎样，你想帮忙清掉那些烂泥，我还是欠你一声谢谢。我想今年的收成就这样泡汤了。",
@@ -54361,8 +53625,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
    "source": "captured",
    "similar": {
     "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
@@ -54377,8 +53641,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
    "source": "captured",
    "similar": {
     "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
@@ -54540,36 +53804,6 @@
   "Dearly Departed#019": {
    "src": "You get it, or do you want me to tell you what they are?",
    "dst": "你懂了吗，还是要我跟你说说它们是什么？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dearly Departed",
-   "stage": "Stage 3",
-   "speaker": "Farmer Cevalus",
-   "source": "wiki"
-  },
-  "Dearly Departed#020": {
-   "src": "is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
-   "dst": "在你难以击倒敌人时很有用。它能让你的攻击更痛，就这么简单。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dearly Departed",
-   "stage": "Stage 3",
-   "speaker": "Farmer Cevalus",
-   "source": "wiki"
-  },
-  "Dearly Departed#021": {
-   "src": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
-   "dst": "有点讲究。点得越多，你的攻击造成双倍伤害的几率就越高。不错吧？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dearly Departed",
-   "stage": "Stage 3",
-   "speaker": "Farmer Cevalus",
-   "source": "wiki"
-  },
-  "Dearly Departed#022": {
-   "src": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
-   "dst": "是给施法者的，它能降低施法消耗，并提高你的法力上限。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -57017,16 +56251,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part I#037": {
-   "src": "Make your way to the Dogun Festival by following the red banners outside {p}.",
-   "dst": "沿着 {p} 外面的红色旗帜前往 Dogun 节。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part I",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Dwarves and Doguns Part I#038": {
    "src": "Welcome one and all! Dwarven brothers and sisters, guests and visitors!",
    "dst": "欢迎各位！矮人兄弟姐妹们，宾客与访客们！",
@@ -57407,16 +56631,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part I#076": {
-   "src": "Search for house {~} in {p} like Axelus said.",
-   "dst": "照 Axelus 说的，在 {p} 寻找 {~} 号房子。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part I",
-   "stage": "Stage 8",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Dwarves and Doguns Part I#077": {
    "src": "Talk to Axelus in the Coalition Base.",
    "dst": "在联盟基地与 Axelus 交谈。",
@@ -57717,16 +56931,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part I#107": {
-   "src": "I'll let... you in.",
-   "dst": "我让……你进来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part I",
-   "stage": "Stage 12",
-   "speaker": "Korzim",
-   "source": "wiki"
-  },
   "Dwarves and Doguns Part I#108": {
    "src": "Great, you got back alright.",
    "dst": "太好了，你平安回来了。",
@@ -57895,16 +57099,6 @@
    "quest": "Dwarves and Doguns Part I",
    "stage": "Stage 14",
    "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part I#125": {
-   "src": "But... bring them... the dragon bone as a gift... If they accept it... they might accept us.",
-   "dst": "不过……把龙骨……当作礼物带给他们……如果他们收下……也许就会接纳我们。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part I",
-   "stage": "Stage 14",
-   "speaker": "Korzim",
    "source": "wiki"
   },
   "Dwarves and Doguns Part I#126": {
@@ -59093,16 +58287,6 @@
    "speaker": "Axelus",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part II#060": {
-   "src": "Explore the Slum of {p}.",
-   "dst": "探索 {p} 的贫民窟。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part II",
-   "stage": "Stage 8",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Dwarves and Doguns Part II#061": {
    "src": "Dwarvern society isn't as great as they make it out to be. The poorest are hidden away.",
    "dst": "矮人社会没有他们说的那么美好。最穷的人都被藏起来了。",
@@ -59583,16 +58767,6 @@
    "speaker": "Korzim",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part III#017": {
-   "src": "Travel to {p} and meet Korzim at the entrance. [{~},-{~}]",
-   "dst": "前往 {p}，在入口与 Korzim 会合。[{~},-{~}]",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 3",
-   "speaker": "",
-   "source": "wiki"
-  },
   "Dwarves and Doguns Part III#018": {
    "src": "Hoho...! Over here...fine traveler! Join me at the gates!",
    "dst": "呵呵……！这边……尊贵的旅人！到城门这里来找我！",
@@ -59621,16 +58795,6 @@
    "quest": "Dwarves and Doguns Part III",
    "stage": "Stage 3",
    "speaker": "Korzim",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part III#021": {
-   "src": "Talk to the blacksmith in {p} at {~} {~} -{~}",
-   "dst": "与 {p} {~} {~} -{~} 的铁匠交谈",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Dwarves and Doguns Part III",
-   "stage": "Stage 4",
-   "speaker": "",
    "source": "wiki"
   },
   "Dwarves and Doguns Part III#022": {
@@ -60309,8 +59473,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
    "source": "captured"
   },
   "Dwarves and Doguns Part IV#003": {
@@ -60321,16 +59485,6 @@
    "quest": "Dwarves and Doguns Part IV",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Dwarves and Doguns Part IV#004": {
-   "src": "...Do you have...the staff? And the amulet...?",
-   "dst": "……你带着……法杖吗？还有护符……？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwarves and Doguns Part IV",
-   "stage": "Stage 1",
-   "speaker": "Korzim",
    "source": "wiki"
   },
   "Dwarves and Doguns Part IV#005": {
@@ -61009,8 +60163,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
    "source": "captured"
   },
   "Dwelling Walls#001": {
@@ -61076,16 +60230,6 @@
   "Dwelling Walls#007": {
    "src": "You there! Would you mind doing me a deed?",
    "dst": "那边的你！能帮我个忙吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Dwelling Walls",
-   "stage": "Stage 1",
-   "speaker": "Leucsaa",
-   "source": "wiki"
-  },
-  "Dwelling Walls#008": {
-   "src": "I left a very precious journal inside this mansion, a hell within walls. It was my great grandfather's!",
-   "dst": "我把一本非常珍贵的日志忘在这座宅邸里了，这里简直是四面墙围起来的地狱。那是我曾祖父的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -68639,8 +67783,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#006": {
@@ -68649,8 +67793,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#007": {
@@ -68659,8 +67803,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#008": {
@@ -68669,8 +67813,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Elemental Exercise#009": {
@@ -68759,8 +67903,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Captain Ragon",
    "source": "captured"
   },
   "Elemental Exercise#018": {
@@ -68933,26 +68077,6 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Elemental Exercise#035": {
-   "src": "I do have one. If our enemies are susceptible to elements in this way, would that also apply to us?",
-   "dst": "我有一个。如果我们的敌人会这样受元素影响，那对我们也一样吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Elemental Exercise#036": {
-   "src": "Ah, yes. A fine observation. Indeed, you are also bound by the rules of the elements. Elemental defenses and weaknesses from your equipment will affect you in the very same way.",
-   "dst": "啊，是的。观察得很好。确实，你们也受元素规则的约束。你们装备上的元素防御和弱点会以完全一样的方式影响你们。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "Captain Ragon",
-   "source": "wiki"
-  },
   "Elemental Exercise#037": {
    "src": "One final note before we move on from the elements- your weapon may not always be as effective against an enemy as you would like.",
    "dst": "在结束元素这个话题之前，最后一点——你的武器对敌人未必总是如你所愿那么有效。",
@@ -68961,26 +68085,6 @@
    "quest": "Elemental Exercise",
    "stage": "Stage 3",
    "speaker": "Captain Ragon",
-   "source": "wiki"
-  },
-  "Elemental Exercise#038": {
-   "src": "However, you have another tool at your disposal in the form of your spells! Different spells will deal different elemental damage, even if your weapon does use that element by default.",
-   "dst": "不过，你还有另一个工具可以用，那就是你的法术！不同的法术会造成不同的元素伤害，即使你的武器默认不是那种元素。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "Captain Ragon",
-   "source": "wiki"
-  },
-  "Elemental Exercise#039": {
-   "src": "...Oh! So my Bash spell will still deal Earth damage even if my weapon only uses Water, right?",
-   "dst": "……哦！所以就算我的武器只有水属性，我的 Bash 法术还是会造成地属性伤害，对吧？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 3",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "Elemental Exercise#041": {
@@ -69391,16 +68495,6 @@
    "quest": "Elemental Exercise",
    "stage": "Stage 8",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Elemental Exercise#082": {
-   "src": "Ahem. Before the two of you return on your business, I have something for the two of you. Payment for your work today, and a special piece of equipment. Make good use of it.",
-   "dst": "咳。在你们俩回去忙之前，我有东西给你们。这是你们今天工作的报酬，还有一件特别的装备。好好利用它。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Elemental Exercise",
-   "stage": "Stage 8",
-   "speaker": "Captain Ragon",
    "source": "wiki"
   },
   "Ensemble of Hope#000": {
@@ -77213,16 +76307,6 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#016": {
-   "src": "I hear many things about human combat skill, so I believe I shall watch this challenger myself. Enter now, challenger!",
-   "dst": "我听说过很多关于人类战斗技巧的事，所以我想亲自看看这位挑战者。进来吧，挑战者！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 4",
-   "speaker": "Sensei Miyagi",
-   "source": "wiki"
-  },
   "Enter the Dojo#017": {
    "src": "Solve the puzzle of sight in the Cliste Room in the sight challenge.",
    "dst": "在视觉挑战中解开 Cliste 室的视觉谜题。",
@@ -77231,16 +76315,6 @@
    "quest": "Enter the Dojo",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Enter the Dojo#018": {
-   "src": "And I am to recognize your combat skill, and to proclaim your passage of the Fiata Room. Well done!",
-   "dst": "那么我认可你的战斗技巧，宣布你通过了 Fiata 室。干得好！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 5",
-   "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
   "Enter the Dojo#019": {
@@ -77271,16 +76345,6 @@
    "quest": "Enter the Dojo",
    "stage": "Stage 5",
    "speaker": "Sensei Miyagi",
-   "source": "wiki"
-  },
-  "Enter the Dojo#022": {
-   "src": "Become at one with nature in the Sitheach Room and Cavern.",
-   "dst": "在 Sitheach 室与洞窟中与自然合而为一。",
-   "role": "desc",
-   "kind": "objective",
-   "quest": "Enter the Dojo",
-   "stage": "Stage 6",
-   "speaker": "",
    "source": "wiki"
   },
   "Enter the Dojo#023": {
@@ -82649,8 +81713,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Theorick",
    "source": "captured"
   },
   "Fate of the Fallen#015": {
@@ -82669,8 +81733,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Telvu",
    "source": "captured"
   },
   "Fate of the Fallen#017": {
@@ -82679,8 +81743,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Telvu",
    "source": "captured"
   },
   "Fate of the Fallen#018": {
@@ -83343,16 +82407,6 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#085": {
-   "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
-   "dst": "啊啊……告诉……所有人。我要冻住这个地方。我……已、已经陷得太深。这里需要时间痊愈……而我的力量必、必须被压制……冻结……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Fate of the Fallen",
-   "stage": "Stage 8",
-   "speaker": "Theorick",
-   "source": "wiki"
-  },
   "Fate of the Fallen#086": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
    "dst": "全都没用……呃，不……他们仍然配活下去……而这个法术……一定会夺走一些人的命。拜托，让他们知道为什么……",
@@ -83416,26 +82470,6 @@
   "Fate of the Fallen#093": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
    "dst": "至少，你弄清楚他为什么要冻住这个地方了吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Fate of the Fallen",
-   "stage": "Stage 9",
-   "speaker": "Telvu",
-   "source": "wiki"
-  },
-  "Fate of the Fallen#094": {
-   "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
-   "dst": "什么……这么多真相……冰魔法能抵挡腐化……？这里遭受的腐化威胁确实比行省其他地方少……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Fate of the Fallen",
-   "stage": "Stage 9",
-   "speaker": "Telvu",
-   "source": "wiki"
-  },
-  "Fate of the Fallen#095": {
-   "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
-   "dst": "天哪……我们一直都搞错了……这是为了保护所有人……可如果他神志清醒到那个地步，肯定会把自己的用意告诉谁吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -84789,23 +83823,13 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Lari",
    "source": "captured"
   },
   "Finding the Light#134": {
    "src": "Is- Is this not dire enough? Is poring over you and putting aside my role and pride to someone else not EXTREME enough?!",
    "dst": "难、难道这还不够非常吗？我埋头钻研你，把我的职责和尊严让给别人，这样还不够极端吗？！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Finding the Light",
-   "stage": "Stage 14",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Finding the Light#135": {
-   "src": ".... I. I have to know. What did Orphion tell you, exactly? I can't stand not knowing any longer. Did he really replace me?",
-   "dst": "……我。我必须知道。Orphion 到底跟你说了什么？我再也受不了什么都不知道了。他真的把我换掉了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -86103,16 +85127,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Forbidden Prison (Quest)#001": {
-   "src": "Hey, hey, humie! Yeah, I'm talkin' to ya here..",
-   "dst": "嘿，嘿，人类小家伙！对，我就是在跟你说话……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Merchant",
-   "source": "wiki"
-  },
   "Forbidden Prison (Quest)#002": {
    "src": "Y'see, I got a few things here... look around for a bit, they're all very rare...",
    "dst": "你瞧，我这里有几样东西……随便看看，全都很稀有……",
@@ -87279,7 +86293,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
+   "stage": "Stage 1",
    "speaker": "Merchant\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -89261,8 +88275,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
    "source": "captured"
   },
   "From the Mountains#013": {
@@ -89438,16 +88452,6 @@
   "From the Mountains#032": {
    "src": "Ah, so you're like a mercenary then, and you found this man's house on fire. He said... what? It re-ignited itself? Well, that doesn't make any sense.",
    "dst": "啊，所以你算是个佣兵，然后发现这个人的房子着火了。他说……什么？火自己重新烧起来了？嗯，这说不通啊。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "From the Mountains",
-   "stage": "Stage 3",
-   "speaker": "Axelus",
-   "source": "wiki"
-  },
-  "From the Mountains#033": {
-   "src": "Eh, I'll see when we get there. Oh, what am I doing over here? Yeah, I suppose I do look different from the fare you'd have seen. Well, I'm a dwarf.",
-   "dst": "呃，到了再看吧。噢，我在这边干什么？是啊，我想我看起来跟你平常见到的家伙不太一样。嗯，我是矮人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -92591,8 +91595,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Eluzterp",
    "source": "captured"
   },
   "Green Gloop#001": {
@@ -92601,8 +91605,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Eluzterp",
    "source": "captured"
   },
   "Green Gloop#002": {
@@ -92665,16 +91669,6 @@
    "speaker": "Eluzterp",
    "source": "wiki"
   },
-  "Green Gloop#008": {
-   "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
-   "dst": "可是大约一个月前，那些史莱姆变强了。我再也拿不到了，还差点被打死好几次！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Green Gloop",
-   "stage": "Stage 1",
-   "speaker": "Eluzterp",
-   "source": "wiki"
-  },
   "Green Gloop#009": {
    "src": "You, however, seem much better equipped than I. Hopefully you can do it.",
    "dst": "不过，你的装备看起来比我好多了。希望你能办到。",
@@ -92698,16 +91692,6 @@
   "Green Gloop#011": {
    "src": "A...less fickle glassblower, Yodbon, can make it for you. He should be living in a house in front of the {p} bank.",
    "dst": "一位……没那么难搞的玻璃匠 Yodbon 能帮你做。他应该住在 {p} 银行前面的一栋房子里。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Green Gloop",
-   "stage": "Stage 1",
-   "speaker": "Eluzterp",
-   "source": "wiki"
-  },
-  "Green Gloop#012": {
-   "src": "I'll need [{~} Slimey Goo] since we'll need a big batch of drinks. If you help, I'll be sure to tell my friend, and he'll probably let you into his shop.",
-   "dst": "我需要 [{~} 史莱姆黏液]，因为我们要酿一大批饮料。如果你帮忙，我一定会跟我朋友说，他多半会让你进他的店。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -92971,8 +91955,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Haven Antiquity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Old Siwel",
    "source": "captured"
   },
   "Haven Antiquity#004": {
@@ -93168,26 +92152,6 @@
   "Haven Antiquity#024": {
    "src": "Excellent. You acquired the ingredients. Just give me a second and I'll prepare you for your journey into the mind of the dead.",
    "dst": "很好。你拿到材料了。稍等一下，我来为你进入死者心智的旅程做准备。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Haven Antiquity",
-   "stage": "Stage 3",
-   "speaker": "Old Siwel",
-   "source": "wiki"
-  },
-  "Haven Antiquity#025": {
-   "src": "M̛͢ú̴͏ḿ̷̧͠b̸̸̸̧́l̶e͜͏͏͠҉s̶̡̕͜͟ ̧̕͘҉a̶̡̛͟ ̸̀͠͡s̨̨͏͘ţ̡r̛͘͜͢a̶̛ņ̷g͞e̸̷͟҉̀,͝͡ ̴͢͏̧d̷̨̨̛͝é̕͠a̡͟d̶̨͝ ͟͏̨l̶̡̨͢͟a̛͡҉n̢҉̷̧g҉͢ų̵̵̢a҉̴̨͟g͡͏ȩ̧̢̧͞.̷̧͜.̢̢̢̕.̶̵̧",
-   "dst": "喃喃念着一种古怪的、死去的语言……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Haven Antiquity",
-   "stage": "Stage 3",
-   "speaker": "Old Siwel",
-   "source": "wiki"
-  },
-  "Haven Antiquity#026": {
-   "src": "Ḿ̶̶̛͡u͢͠͝m̛͜͏͜b̕͘͜͜͝l҉̸̢̢͢e̵s̶̴̡҉̵ ̷̡͡a̸̵͠͞ ҉͟s̶̛͢͠t̷̕͝r̡͏̶̵a̷̢̨͘n͏̶̸͘͝g̢ȩ̛̀͟͡,́͏̶҉͘ ̀͢d̨͝͠͞e̶͜a̴̛҉ḑ ̶̷̨l̢a̡ņ̴̸̨g̸̛u͏҉̡͞a̷̶̸̧g͝e͜.̶̢͜͝.̕͘",
-   "dst": "喃喃念着一种古怪的、死去的语言..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Haven Antiquity",
@@ -94401,8 +93365,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Bip",
    "source": "captured"
   },
   "Hollow Serenity#049": {
@@ -94421,7 +93385,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 4",
    "speaker": "Ann\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -94431,7 +93395,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 4",
    "speaker": "Ann\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -94487,8 +93451,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Villager",
    "source": "captured"
   },
   "Hollow Serenity#057": {
@@ -95077,7 +94041,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 10",
    "speaker": "Katarin Faltach\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95097,7 +94061,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 10",
    "speaker": "Katarin Faltach\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95137,7 +94101,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 10",
    "speaker": "Katarin Faltach\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95237,7 +94201,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 13",
    "speaker": "Strange Parasite\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95247,7 +94211,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 13",
    "speaker": "Strange Parasite\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95277,7 +94241,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 13",
    "speaker": "Katarin\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95317,8 +94281,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "???",
    "source": "captured"
   },
   "Hollow Serenity#140": {
@@ -95327,8 +94291,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "???",
    "source": "captured"
   },
   "Hollow Serenity#141": {
@@ -95337,8 +94301,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Garvan",
    "source": "captured"
   },
   "Hollow Serenity#142": {
@@ -95367,7 +94331,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 14",
    "speaker": "Eileen\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95377,7 +94341,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 14",
    "speaker": "Eileen\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95387,7 +94351,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
+   "stage": "Stage 14",
    "speaker": "Katarin\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -95437,8 +94401,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Garvan",
    "source": "captured"
   },
   "Hollow Serenity#152": {
@@ -95517,8 +94481,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Garvan",
    "source": "captured"
   },
   "Hollow Serenity#160": {
@@ -95527,8 +94491,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Garvan",
    "source": "captured"
   },
   "Hollow Serenity#161": {
@@ -95577,8 +94541,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 16",
+   "speaker": "Katarin",
    "source": "captured"
   },
   "Hollow Serenity#166": {
@@ -95587,8 +94551,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 16",
+   "speaker": "Katarin",
    "source": "captured"
   },
   "Hollow Serenity#167": {
@@ -95707,8 +94671,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 18",
+   "speaker": "Katarin",
    "source": "captured"
   },
   "Hollow Serenity#179": {
@@ -95889,26 +94853,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Hollow Serenity#197": {
-   "src": "Hello soldier! Welcome to this... hick village. I presume the neighbor's kid has been stealing apples again, hmm?",
-   "dst": "你好啊士兵！欢迎来到这个……乡下村子。我猜邻居家的小孩又在偷苹果了，嗯？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 4",
-   "speaker": "Ann",
-   "source": "wiki"
-  },
-  "Hollow Serenity#198": {
-   "src": "Oh, Ann... Your voice is so delicate, so soothing that- Ah, soldier! Are you here for something... or someone?",
-   "dst": "噢，Ann……你的声音如此柔美，如此抚慰人心——啊，士兵！你来这里是为了什么事……还是为了什么人？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 4",
-   "speaker": "Qunit",
    "source": "wiki"
   },
   "Hollow Serenity#199": {
@@ -96264,16 +95208,6 @@
   "Hollow Serenity#236": {
    "src": "Whatcha need?",
    "dst": "你要干嘛？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 4",
-   "speaker": "Bip",
-   "source": "wiki"
-  },
-  "Hollow Serenity#238": {
-   "src": "Oh... I was... Man, I miss my glory days! I used to be a big time man, you know? I was living it up in {p}, but now I have to live in this dump!",
-   "dst": "噢……我以前……唉，真怀念我的辉煌岁月！我以前可是个大人物，你知道吗？我在 {p} 风光得很，现在却得住在这个破烂窝！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -96801,16 +95735,6 @@
    "speaker": "Villager",
    "source": "wiki"
   },
-  "Hollow Serenity#294": {
-   "src": "What do the others call me? Uhh... Big-nosed girl. Yeah, I know, a bit on the nose–",
-   "dst": "其他人叫我什么？呃……大鼻子姑娘。对，我知道，有点一针见血——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 4",
-   "speaker": "Villager",
-   "source": "wiki"
-  },
   "Hollow Serenity#295": {
    "src": "...That sailed right over my head. But it's true, though! I have the biggest nose in the village.",
    "dst": "……那句我完全没听懂。不过这是真的！我的鼻子是全村最大的。",
@@ -97151,16 +96075,6 @@
    "speaker": "Katarin",
    "source": "wiki"
   },
-  "Hollow Serenity#333": {
-   "src": "Woman, have you SEEN the state that cretin is in?? Even if it does take long, he's in no damn shape to deal with it! Now, stop arguing with me, and help me get rid of him-",
-   "dst": "女人，你看过那个蠢货现在是什么样子吗？？就算真的要花很久，他那副样子也根本应付不了！好了，别跟我争了，帮我把他处理掉——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 10",
-   "speaker": "Yorman",
-   "source": "wiki"
-  },
   "Hollow Serenity#334": {
    "src": "NO!",
    "dst": "不！",
@@ -97219,16 +96133,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 10",
    "speaker": "Katarin",
-   "source": "wiki"
-  },
-  "Hollow Serenity#341": {
-   "src": "I-I am here, Katarin. You wished to s- speak with me...?",
-   "dst": "我、我来了，Katarin。你想跟我谈、谈谈……？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 10",
-   "speaker": "Garvan",
    "source": "wiki"
   },
   "Hollow Serenity#343": {
@@ -97352,7 +96256,7 @@
    "source": "wiki"
   },
   "Hollow Serenity#355": {
-   "src": "P̸̳̼̕͠Ḷ̵̭̌É̴͔̣̉A̸͍͗S̶̰̆̃E̸̠̐ ̷̧̝̊̑Ḩ̷͝E̵̼͛̋L̶̠̒̌P̶̠̘̈́̚ ̷̟̀͌M̶̨̰̉E̵̚͜",
+   "src": "PLEASE HELP ME",
    "dst": "请……救救我",
    "role": "desc",
    "kind": "dialogue",
@@ -97409,16 +96313,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 10",
    "speaker": "Garvan",
-   "source": "wiki"
-  },
-  "Hollow Serenity#363": {
-   "src": "We... I will not risk her life for our love. She has a future in {p}, Garvan! She isn't a part of this, and I don't think she-",
-   "dst": "我们……我不会为了我们的爱拿她的性命冒险。她在 {p} 有大好前程，Garvan！她跟这件事无关，我不认为她——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 10",
-   "speaker": "Katarin",
    "source": "wiki"
   },
   "Hollow Serenity#364": {
@@ -97481,26 +96375,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Hollow Serenity#371": {
-   "src": "Ah... N-now you're finally here. I... need you, my darling. We- no... I can cure this Decay with you.",
-   "dst": "啊……你、你终于来了。我……需要你，我亲爱的。我们——不……我能用你治好这衰败。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 13",
-   "speaker": "Garvan",
-   "source": "wiki"
-  },
-  "Hollow Serenity#372": {
-   "src": "W-What do you mean...? I-I don't like this... I-I w-wanna go home. It's getting late and mother-",
-   "dst": "你、你是什么意思……？我、我不喜欢这样……我、我想回家。天快黑了，妈妈她——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 13",
-   "speaker": "Eileen",
-   "source": "wiki"
-  },
   "Hollow Serenity#373": {
    "src": "Ssshhh... This will only take a moment.",
    "dst": "嘘……一下子就好。",
@@ -97559,16 +96433,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 13",
    "speaker": "Garvan",
-   "source": "wiki"
-  },
-  "Hollow Serenity#381": {
-   "src": "Y-you... Bound her soul?? Garvan, no, I told you she wasn't part of this!! WHY??",
-   "dst": "你、你……把她的灵魂绑定了？？Garvan，不，我跟你说过她跟这件事无关！！为什么？？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 13",
-   "speaker": "Katarin",
    "source": "wiki"
   },
   "Hollow Serenity#382": {
@@ -97721,26 +96585,6 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Hollow Serenity#399": {
-   "src": "My sins... You do not need to see them... all the things I've done wrong. H-How I destroyed the bonds tying me and my love together.",
-   "dst": "我的罪孽……你不需要看见……我做错的所有事。我、我是如何毁掉了我与爱人之间的羁绊。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "???",
-   "source": "wiki"
-  },
-  "Hollow Serenity#400": {
-   "src": "...Y-Yes... I mean her. Katarin. She's watching us as we speak, no? A-and with that, I suppose it's obvious what lies under this veil.",
-   "dst": "……是、是的……我说的是她。Katarin。我们说话的时候，她正看着我们，不是吗？那、那么，我想这面纱底下是什么已经很明显了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "Hollow Serenity#401": {
    "src": "Greetings... I-I'm s-sure you're well acquainted with me, by now. I-It was me all along. Quite the- well, it was a predictable twist, I suppose...",
    "dst": "你好……我、我相信你现、现在已经很了解我了。一、一直都是我。真是个——嗯，我想这转折挺好猜的……",
@@ -97754,16 +96598,6 @@
   "Hollow Serenity#402": {
    "src": "...B-But... I take it you don't have the full story. So... so so so so so so... Let me explain to you, human... The bitter end to our shared tale.",
    "dst": "……但、但是……我猜你还不知道完整的故事。那么……那么那么那么那么那么……让我告诉你吧，人类……我们共同故事的苦涩结局。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Garvan",
-   "source": "wiki"
-  },
-  "Hollow Serenity#403": {
-   "src": "AAAAAAAGGGHHH!!!! F-FINE! I-I'll tell you... I-I'll tell y-you where Eileen is...",
-   "dst": "啊啊啊啊啊啊啊！！！！好、好！我、我告诉你……我、我告诉你 Eileen 在哪……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -97801,16 +96635,6 @@
    "speaker": "Garvan",
    "source": "wiki"
   },
-  "Hollow Serenity#409": {
-   "src": "It's for your own good dear. Now, remember to stay put. Garvan won't be able to use you if you're kept inside of here...",
-   "dst": "这是为你好，亲爱的。记住，乖乖待着别动。只要你待在这里面，Garvan 就没办法利用你……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Katarin",
-   "source": "wiki"
-  },
   "Hollow Serenity#410": {
    "src": "I-I miss Dad...",
    "dst": "我、我想爸爸……",
@@ -97819,26 +96643,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 14",
    "speaker": "Eileen",
-   "source": "wiki"
-  },
-  "Hollow Serenity#411": {
-   "src": "Yorman won't be bothering us anymore, sweetheart. He wouldn't understand, so... J- just don't worry about what happened to him. It's irrelevant-",
-   "dst": "Yorman 不会再来烦我们了，宝贝。他不会明白的，所以……别、别去想他怎么了。那不重要——",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Katarin",
-   "source": "wiki"
-  },
-  "Hollow Serenity#412": {
-   "src": "L-LADY KATARIN! T-THERE ARE INTRUDERS- AAAAAAHHHHHH!!!",
-   "dst": "K-Katarin 夫人！有、有入侵者——啊啊啊啊啊啊！！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Servant",
    "source": "wiki"
   },
   "Hollow Serenity#415": {
@@ -97919,16 +96723,6 @@
    "quest": "Hollow Serenity",
    "stage": "Stage 14",
    "speaker": "Mysterious Leader",
-   "source": "wiki"
-  },
-  "Hollow Serenity#425": {
-   "src": "DAMN IT! DAMN IT DAMN IT DAMN IT AAAAALLLL!!!!",
-   "dst": "该死！该死该死该死全都该死！！！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 14",
-   "speaker": "Garvan",
    "source": "wiki"
   },
   "Hollow Serenity#427": {
@@ -98191,29 +96985,9 @@
    "speaker": "Garvan",
    "source": "wiki"
   },
-  "Hollow Serenity#455": {
-   "src": "I-I placed it in the catacombs, right next to where-",
-   "dst": "我、我把它放在地下墓穴里，就在——旁边",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 15",
-   "speaker": "Garvan",
-   "source": "wiki"
-  },
   "Hollow Serenity#456": {
    "src": "W-What... W-WHAT I-IS THISS?? I-I C-CAN'T B-BREATHE! P-PLEASE!!",
    "dst": "这、这……这、这是什么？？我、我没、没法呼吸！求、求你！！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 15",
-   "speaker": "Garvan",
-   "source": "wiki"
-  },
-  "Hollow Serenity#457": {
-   "src": "NO!! NO, NO NO NO NO. HUMAN, H-HELP ME!! KATARIN... K-KATARIIIIINNNNN!!!!",
-   "dst": "不！！不，不不不不不。人类，救、救我！！KATARIN……K-KATARIIIIINNNNN！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -98281,16 +97055,6 @@
    "speaker": "Katarin",
    "source": "wiki"
   },
-  "Hollow Serenity#464": {
-   "src": "You knew where it was- Hmm... what did Garvan call you things...?",
-   "dst": "你知道它在哪——嗯……Garvan 管你们这种东西叫什么来着……？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 16",
-   "speaker": "Katarin",
-   "source": "wiki"
-  },
   "Hollow Serenity#465": {
    "src": "Right, a human. You knew... that it was just beneath this rubble?",
    "dst": "对，人类。你早就知道……它就在这堆瓦砾底下？",
@@ -98304,16 +97068,6 @@
   "Hollow Serenity#466": {
    "src": "There it is... Thank you... Now this eternal hell will finally end. After so long...",
    "dst": "在那里……谢谢你……这永恒的地狱终于要结束了。过了这么久……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 16",
-   "speaker": "Katarin",
-   "source": "wiki"
-  },
-  "Hollow Serenity#467": {
-   "src": "Do you hear that? It's the ocean waves... The heavens... They're calling for me-",
-   "dst": "你听到了吗？是海浪声……天堂……在呼唤我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -98364,16 +97118,6 @@
   "Hollow Serenity#472": {
    "src": "Thank you, stranger. Thank you for... everything.",
    "dst": "谢谢你，陌生人。谢谢你做的……一切。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Hollow Serenity",
-   "stage": "Stage 18",
-   "speaker": "Katarin",
-   "source": "wiki"
-  },
-  "Hollow Serenity#473": {
-   "src": "Now I'm... finally free. But... I suppose I still have unfinished business. Before I leave, I must know something.",
-   "dst": "现在我……终于自由了。但是……我想我还有未了的心愿。离开之前，我必须知道一件事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hollow Serenity",
@@ -101251,8 +99995,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Worid",
    "source": "captured"
   },
   "Jungle Fever#002": {
@@ -101354,16 +100098,6 @@
   "Jungle Fever#012": {
    "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
    "dst": "如果他胆敢 *咳咳* 拒绝……你就只好用蛮力了……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Jungle Fever",
-   "stage": "Stage 1",
-   "speaker": "Worid",
-   "source": "wiki"
-  },
-  "Jungle Fever#013": {
-   "src": "Break into *cough* to the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
-   "dst": "闯进 *咳咳* 绿宝石仓库，但什么都别拿……如果你能活着出来，马上回来找我，嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -102797,8 +101531,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Junes",
    "source": "captured"
   },
   "Kingdom of Sand#001": {
@@ -102867,8 +101601,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Desert Raider",
    "source": "captured"
   },
   "Kingdom of Sand#008": {
@@ -102927,8 +101661,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Junes",
    "source": "captured"
   },
   "Kingdom of Sand#014": {
@@ -102994,16 +101728,6 @@
   "Kingdom of Sand#020": {
    "src": "When the Emperor was slain by his son, Hashr, it is said that the sceptre was lost amongst the raging sandstorm that followed.",
    "dst": "据说皇帝被他的儿子 Hashr 杀死之后，权杖就在随之而来的狂暴沙暴中失落了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Kingdom of Sand",
-   "stage": "Stage 1",
-   "speaker": "Junes",
-   "source": "wiki"
-  },
-  "Kingdom of Sand#021": {
-   "src": "... Until now. I believe I have been able to trace its possession to a nearby group of bandits. They probably have no idea what they're sitting on.",
-   "dst": "……直到现在。我相信我已经查到它落在附近一伙强盗手里。他们大概根本不知道自己手上有什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -103421,16 +102145,6 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#063": {
-   "src": "Get ‘em!",
-   "dst": "抓住他们！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Kingdom of Sand",
-   "stage": "Stage 7",
-   "speaker": "Desert Raider",
-   "source": "wiki"
-  },
   "Kingdom of Sand#064": {
    "src": "Search the abandoned house at [{~}, {~}, -{~}].",
    "dst": "搜查 [{~}, {~}, -{~}] 的废弃房屋。",
@@ -103501,16 +102215,6 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#072": {
-   "src": "Are you thinking of exploring the tomb? I'm sure you can learn so much about the Empire... but you best be careful.",
-   "dst": "你打算去探索古墓吗？我相信你能了解很多关于帝国的事……不过最好小心点。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Kingdom of Sand",
-   "stage": "Stage 9",
-   "speaker": "Junes",
-   "source": "wiki"
-  },
   "Kingdom of Sand#073": {
    "src": "There are nasty legends of what it holds. Silverfish, skeletons... even Prince Hashr himself. Make sure to gear up!",
    "dst": "关于里面有什么，有很多可怕的传说。蠹虫、骷髅……甚至是 Hashr 王子本人。一定要把装备准备好！",
@@ -103567,8 +102271,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
    "source": "captured"
   },
   "Lava Springs#004": {
@@ -103577,8 +102281,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Colonel Gailard",
    "source": "captured"
   },
   "Lava Springs#005": {
@@ -103734,26 +102438,6 @@
   "Lava Springs#021": {
    "src": "If ya could get underneath the spring, 'ye could probably sever whatever damn root is causing this, but... the heat would be sure to fry your skin off...",
    "dst": "如果你能到泉水底下，大概就能把惹出这事的那条该死的根砍断，可是……那热度肯定会把你的皮烤掉……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 3",
-   "speaker": "Colonel Gailard",
-   "source": "wiki"
-  },
-  "Lava Springs#022": {
-   "src": "Wait... I've got an idea... Alright, listen up soldier! There's a lil' town North of here called {p}, yeah? There's a healer person there that can help us out.",
-   "dst": "等等……我有个主意……好，听好了，士兵！这里北边有个叫 {p} 的小镇，对吧？那里有个医者能帮我们。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lava Springs",
-   "stage": "Stage 3",
-   "speaker": "Colonel Gailard",
-   "source": "wiki"
-  },
-  "Lava Springs#023": {
-   "src": "They're holed up inside of some important well in the center of town. There's a password ya need to hop into that place, though...",
-   "dst": "他们窝在镇中心一口重要的井里。不过要进那地方得有暗号……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lava Springs",
@@ -104209,26 +102893,6 @@
    "quest": "Lazarus Pit (Quest)",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#024": {
-   "src": "Oh, you found something? Well color me shocked that there was any stock to Referick's ranting...",
-   "dst": "噢，你找到东西了？好吧，没想到 Referick 那些胡言乱语竟然有几分真，真让我吃惊……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Burtur",
-   "source": "wiki"
-  },
-  "Lazarus Pit (Quest)#025": {
-   "src": "Chapel of an ancient order? There's a chapel just northwest of here. I'd say investigate that! I have to stick around here in case of another attack, but...",
-   "dst": "古老教团的礼拜堂？这里西北边就有一座礼拜堂。我建议你去调查那里！我得留在这里以防再有袭击，不过……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lazarus Pit (Quest)",
-   "stage": "Stage 4",
-   "speaker": "Burtur",
    "source": "wiki"
   },
   "Lazarus Pit (Quest)#026": {
@@ -104787,7 +103451,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
+   "stage": "Stage 4",
    "speaker": "Burtur\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -104797,7 +103461,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lazarus Pit (Quest)",
-   "stage": "",
+   "stage": "Stage 4",
    "speaker": "Burtur\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -104983,8 +103647,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
    "source": "captured"
   },
   "Lexdale Witch Trials#004": {
@@ -105003,8 +103667,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
    "source": "captured"
   },
   "Lexdale Witch Trials#006": {
@@ -105217,16 +103881,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#029": {
-   "src": "...Further... intruders...? You are not of the worms... the parasites?",
-   "dst": "……又有……入侵者……？你不是那些虫子……那些寄生虫？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 5",
-   "speaker": "Tunnel Dweller Chieftain",
-   "source": "wiki"
-  },
   "Lexdale Witch Trials#030": {
    "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
    "dst": "又一个陌生人……你一定见过那些隧道了。它们让岩石枯朽，让树根凋萎，让大地失去生机……",
@@ -105250,16 +103904,6 @@
   "Lexdale Witch Trials#032": {
    "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
    "dst": "水又死又灰。除了那些可怕的魔法祸害和那些虫子本身，我们没有任何东西可以果腹。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lexdale Witch Trials",
-   "stage": "Stage 5",
-   "speaker": "Tunnel Dweller Chieftain",
-   "source": "wiki"
-  },
-  "Lexdale Witch Trials#034": {
-   "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive till this torture ends...",
-   "dst": "你……你……你有生命。你有心脏，有肌肉，有肉……足以撑到这场折磨结束……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -106733,8 +105377,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Laen",
    "source": "captured"
   },
   "Lost Tower#001": {
@@ -106743,29 +105387,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Laen",
    "source": "captured"
-  },
-  "Lost Tower#003": {
-   "src": "Hey adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
-   "dst": "嘿，冒险者！能帮我一下吗？我手上有点麻烦。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Tower",
-   "stage": "Stage 1",
-   "speaker": "Laen",
-   "source": "wiki"
-  },
-  "Lost Tower#004": {
-   "src": "A while ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
-   "dst": "很久以前，在 {p} 被摧毁之前，我家曾经有一本相当有意思的书，里面记载着强大力量之地与强大存在的知识。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Tower",
-   "stage": "Stage 1",
-   "speaker": "Laen",
-   "source": "wiki"
   },
   "Lost Tower#005": {
    "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",
@@ -107685,8 +106309,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Haily",
    "source": "captured"
   },
   "Meaningful Holiday#001": {
@@ -107715,8 +106339,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#004": {
@@ -107735,8 +106359,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#006": {
@@ -107745,8 +106369,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#007": {
@@ -107765,8 +106389,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Margaret",
    "source": "captured"
   },
   "Meaningful Holiday#009": {
@@ -107835,8 +106459,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#016": {
@@ -107862,16 +106486,6 @@
   "Meaningful Holiday#018": {
    "src": "This is the {p} Charity center. We're looking for volunteers to help the homeless this year.",
    "dst": "这里是 {p} 慈善中心。我们今年在招募志愿者帮助无家可归的人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 1",
-   "speaker": "Haily",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#019": {
-   "src": "If you want to help someone else this year, our boss Nick is already in the thick of it.",
-   "dst": "如果你今年想帮助别人，我们的负责人 Nick 已经在第一线忙着了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -108009,16 +106623,6 @@
    "speaker": "Flodur",
    "source": "wiki"
   },
-  "Meaningful Holiday#034": {
-   "src": "I might have something in the attic, if you find anyfin, you can 'ave it. I know how difficult it gets.",
-   "dst": "阁楼上可能还有点东西，你要是找到啥，就拿去吧。我知道日子有多难熬。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 3",
-   "speaker": "Flodur",
-   "source": "wiki"
-  },
   "Meaningful Holiday#035": {
    "src": "Look for food on the second floor.",
    "dst": "在二楼寻找食物。",
@@ -108032,16 +106636,6 @@
   "Meaningful Holiday#036": {
    "src": "Hm... This apple has seen betta days...",
    "dst": "嗯……这颗苹果已经不太新鲜了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 4",
-   "speaker": "Flodur",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#037": {
-   "src": "Looks like i'm fresh outta food. Barely got enough to feed myself.",
-   "dst": "看来我这里的吃的全没了。连我自己都快不够吃了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -108139,16 +106733,6 @@
    "speaker": "Nick",
    "source": "wiki"
   },
-  "Meaningful Holiday#047": {
-   "src": "Oh, also, could you give this blanket to Margaret while you're down in the tunnel? Just follow the road behind me.",
-   "dst": "噢，还有，你下到隧道的时候，能不能把这条毯子交给 Margaret？沿着我身后的路走就行。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 5",
-   "speaker": "Nick",
-   "source": "wiki"
-  },
   "Meaningful Holiday#048": {
    "src": "Bring the blanket to the woman in the tunnel south of Nick.",
    "dst": "把毯子交给 Nick 南边隧道里的那位妇人。",
@@ -108157,16 +106741,6 @@
    "quest": "Meaningful Holiday",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#049": {
-   "src": "Oh, please don't move me along. I have nowhere else to go!",
-   "dst": "噢，拜托别赶我走。我没有别的地方可去了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 6",
-   "speaker": "Margaret",
    "source": "wiki"
   },
   "Meaningful Holiday#050": {
@@ -108869,16 +107443,6 @@
    "speaker": "Nick",
    "source": "wiki"
   },
-  "Meaningful Holiday#122": {
-   "src": "Me and my siblings take care of people at Craftmas. My area is the {p} desert. I guess you could call me Sanda Claus, heh.",
-   "dst": "我和我的兄弟姐妹们在 Craftmas 照顾大家。我负责的地区是 {p} 沙漠。我想你可以叫我沙诞老人，嘿。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 15",
-   "speaker": "Nick",
-   "source": "wiki"
-  },
   "Meaningful Holiday#123": {
    "src": "It's people like you that keep the real meaning of this holiday alive. It gets harder every year as the meaning is distorted. Here is a personal gift from me. Thank you.",
    "dst": "正是像你这样的人，让这个节日真正的意义延续下去。随着它的意义被扭曲，一年比一年难。这是我个人送你的礼物。谢谢你。",
@@ -108915,8 +107479,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#003": {
@@ -108925,8 +107489,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#004": {
@@ -108935,8 +107499,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
    "source": "captured"
   },
   "Memory Paranoia#005": {
@@ -108997,8 +107561,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
    "source": "captured"
   },
   "Memory Paranoia#010": {
@@ -109143,8 +107707,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
    "source": "captured"
   },
   "Memory Paranoia#024": {
@@ -109153,8 +107717,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
    "source": "captured"
   },
   "Memory Paranoia#025": {
@@ -109203,8 +107767,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Mr. Caritat",
    "source": "captured"
   },
   "Memory Paranoia#030": {
@@ -109287,16 +107851,6 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#040": {
-   "src": "Because, aah...how shall I put this... One day they were all...discovered dead. Murdered. By each other.",
-   "dst": "因为，啊……该怎么说呢……有一天，人们发现他们全都……死了。被谋杀。凶手是彼此。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
-   "source": "wiki"
-  },
   "Memory Paranoia#041": {
    "src": "I am the last remaining descendant, Atisun Caritat. I was the only survivor of the... incident. I was only an infant when I was found by a passerby.",
    "dst": "我是仅存的后裔，Atisun Caritat。我是那场……事件唯一的幸存者。一个路人发现我的时候，我还只是个婴儿。",
@@ -109307,29 +107861,9 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#042": {
-   "src": "Since, erm...since there was no one alive to report the incident, it wasn't discovered until days later when a traveller passing by took notice of the mansion.",
-   "dst": "因为，呃……没有活着的人能报告这件事，所以直到几天后，一个路过的旅人注意到这座宅邸，事情才被发现。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
-   "source": "wiki"
-  },
   "Memory Paranoia#043": {
    "src": "I do not believe that my family simply went mad, but I do not know what happened. I want to know the truth. I think this mansion still holds the answers I'm looking for.",
    "dst": "我不相信我的家人就这样疯了，但我也不知道发生了什么。我想知道真相。我觉得这座宅邸仍然藏着我在寻找的答案。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
-   "source": "wiki"
-  },
-  "Memory Paranoia#044": {
-   "src": "Yet, I am...scared of this place. It is the ruins of the life I should have had. The spirits of the dead are still there...cursed. I need someone else to uncover my heritage.",
-   "dst": "可是，我……害怕这个地方。这里是我本该拥有的人生的废墟。死者的灵魂还在那里……受着诅咒。我需要别人帮我揭开我的身世。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
@@ -109415,16 +107949,6 @@
    "quest": "Memory Paranoia",
    "stage": "Stage 3",
    "speaker": "Servant",
-   "source": "wiki"
-  },
-  "Memory Paranoia#053": {
-   "src": "G-g-ghosts?",
-   "dst": "鬼、鬼、鬼？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 3",
-   "speaker": "Timmy",
    "source": "wiki"
   },
   "Memory Paranoia#054": {
@@ -109707,16 +108231,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#084": {
-   "src": "My god...what is wrong with this place? No matter what I do, what I try...",
-   "dst": "我的天……这地方到底怎么了？不管我怎么做、怎么试……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 11",
-   "speaker": "Mr. Caritat",
-   "source": "wiki"
-  },
   "Memory Paranoia#085": {
    "src": "How was any of that even possible? What are we going to tell their families?",
    "dst": "那种事怎么可能发生？我们要怎么跟他们的家人交代？",
@@ -109725,16 +108239,6 @@
    "quest": "Memory Paranoia",
    "stage": "Stage 11",
    "speaker": "Timothy",
-   "source": "wiki"
-  },
-  "Memory Paranoia#086": {
-   "src": "...Timothy, I'm going to ask you something, and I need you to answer me honestly. Were you...were you responsible for this?",
-   "dst": "……Timothy，我要问你一件事，你必须老实回答我。是……是你造成的吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 11",
-   "speaker": "Mr. Caritat",
    "source": "wiki"
   },
   "Memory Paranoia#087": {
@@ -109825,16 +108329,6 @@
    "quest": "Memory Paranoia",
    "stage": "Stage 15",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Memory Paranoia#097": {
-   "src": "IT WHICH STARTED THE WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
-   "dst": "引发那场战争之物将再度崛起。自那暗影、欺瞒与痛苦的领域而来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Memory Paranoia",
-   "stage": "Stage 15",
-   "speaker": "Mr. Caritat",
    "source": "wiki"
   },
   "Memory Paranoia#099": {
@@ -110273,8 +108767,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#006": {
@@ -110283,8 +108777,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#007": {
@@ -110293,8 +108787,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Honip",
    "source": "captured"
   },
   "Misadventure on the Sea#008": {
@@ -110927,16 +109421,6 @@
    "speaker": "Honip",
    "source": "wiki"
   },
-  "Misadventure on the Sea#072": {
-   "src": "I'll wait for ya on the docks. Don't worry, ya can't miss the boat!",
-   "dst": "我在码头等你。别担心，那艘船你不可能错过！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "Stage 1",
-   "speaker": "Honip",
-   "source": "wiki"
-  },
   "Misadventure on the Sea#073": {
    "src": "Meet Honip at [{~}, {~}, -{~}]",
    "dst": "在 [{~}, {~}, -{~}] 与 Honip 会合",
@@ -111020,26 +109504,6 @@
   "Misadventure on the Sea#081": {
    "src": "Hmm, looks like we're not the only ones out on the water today.",
    "dst": "嗯，看来今天出海的不只我们。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "Stage 2",
-   "speaker": "Honip",
-   "source": "wiki"
-  },
-  "Misadventure on the Sea#082": {
-   "src": "They are a bit too head on, don't you think?",
-   "dst": "他们冲得有点太正面了，你不觉得吗？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Misadventure on the Sea",
-   "stage": "Stage 2",
-   "speaker": "Honip",
-   "source": "wiki"
-  },
-  "Misadventure on the Sea#083": {
-   "src": "I'm trying to steer the ship but it's not budging...",
-   "dst": "我在试着转舵，可是船一动也不动……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Misadventure on the Sea",
@@ -113233,8 +111697,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
    "source": "captured"
   },
   "Murder Mystery#013": {
@@ -113570,16 +112034,6 @@
   "Murder Mystery#048": {
    "src": "Neither of 'em has been back since, though in Eminar's case, I can see why! And I hope that's enough for ya, 'cause that's all I got.",
    "dst": "从那以后他们俩都没再来过，不过 Eminar 的话，我懂为什么！希望这些对你够用了，因为我知道的就这么多。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Murder Mystery",
-   "stage": "Stage 4",
-   "speaker": "Valimare",
-   "source": "wiki"
-  },
-  "Murder Mystery#049": {
-   "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back'n we'll be happy to serve ya!",
-   "dst": "好了，出去吧；那边墙上有个后门出口。不过，如果你哪天想玩把 21 点，回来吧，我们乐意奉陪！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Murder Mystery",
@@ -114019,8 +112473,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Mushroom Man#015": {
@@ -114266,16 +112720,6 @@
   "Mushroom Man#046": {
    "src": "...",
    "dst": "……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Mushroom Man",
-   "stage": "Stage 4",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Mushroom Man#047": {
-   "src": "I-... This is bad. This is really bad. We need to tell the Mayor, now.",
-   "dst": "我——……这下糟了。真的糟了。我们得马上告诉镇长。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
@@ -130841,8 +129285,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Damiral",
    "source": "captured"
   },
   "Pirate's Trove#001": {
@@ -130851,8 +129295,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Damiral",
    "source": "captured"
   },
   "Pirate's Trove#002": {
@@ -130958,26 +129402,6 @@
   "Pirate's Trove#012": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
    "dst": "嘿，冒险者！欢迎来到伟大的 Gavel 行省，村民一族与在下的家乡。你很快就要进入宏伟的 {p} 城堡了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pirate's Trove",
-   "stage": "Stage 1",
-   "speaker": "Damiral",
-   "source": "wiki"
-  },
-  "Pirate's Trove#013": {
-   "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
-   "dst": "客套话就说到这里。告诉我……你听说过大海盗 Hastor 船长的故事吗？很久以前在海上航行的人物。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pirate's Trove",
-   "stage": "Stage 1",
-   "speaker": "Damiral",
-   "source": "wiki"
-  },
-  "Pirate's Trove#014": {
-   "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
-   "dst": "传说多年前重建 {p} 的时候，他把自己的财宝藏在了城墙里的某个地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -131155,16 +129579,6 @@
    "speaker": "Merloni",
    "source": "wiki"
   },
-  "Pit of the Dead (Quest)#008": {
-   "src": "Enter the pit. Learn it's mysteries, then come back to me.",
-   "dst": "进入那个坑。弄清它的秘密，再回来找我。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pit of the Dead (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Merloni",
-   "source": "wiki"
-  },
   "Pit of the Dead (Quest)#009": {
    "src": "Explore the pit at [{~}, {~}, -{~}] and find the shrine",
    "dst": "探索 [{~}, {~}, -{~}] 的坑，找到神龛",
@@ -131211,8 +129625,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Merloni",
    "source": "captured"
   },
   "Point of No Return#000": {
@@ -133017,8 +131431,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Representative",
    "source": "captured"
   },
   "Queen's Recruit#001": {
@@ -133027,8 +131441,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Representative",
    "source": "captured"
   },
   "Queen's Recruit#002": {
@@ -135747,16 +134161,6 @@
    "speaker": "Representative",
    "source": "wiki"
   },
-  "Queen's Recruit#275": {
-   "src": "Mel and Lanu, you'll be in E2.",
-   "dst": "Mel 和 Lanu，你们住 E2。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 7",
-   "speaker": "Representative",
-   "source": "wiki"
-  },
   "Queen's Recruit#276": {
    "src": "Uh hey, I think you forgot someone! Where am I staying?",
    "dst": "呃，嘿，我觉得你漏了一个人！我住哪？",
@@ -135815,16 +134219,6 @@
    "quest": "Queen's Recruit",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Queen's Recruit#283": {
-   "src": "Room W3... Now get going. I have a lot of rooms to assign...",
-   "dst": "W3 号房……好了快走吧。我还有很多房间要分配……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 8",
-   "speaker": "Representative",
    "source": "wiki"
   },
   "Queen's Recruit#284": {
@@ -142276,8 +140670,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#004": {
@@ -142386,8 +140780,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Edwin",
    "source": "captured"
   },
   "Recover the Past#015": {
@@ -142476,8 +140870,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#024": {
@@ -142496,8 +140890,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Caid",
    "source": "captured"
   },
   "Recover the Past#026": {
@@ -142506,8 +140900,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#027": {
@@ -142516,8 +140910,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Royal Captain",
    "source": "captured"
   },
   "Recover the Past#028": {
@@ -142576,8 +140970,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#034": {
@@ -142586,8 +140980,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Reynauld",
    "source": "captured"
   },
   "Recover the Past#035": {
@@ -142696,8 +141090,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 12",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#046": {
@@ -142746,8 +141140,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#051": {
@@ -142756,8 +141150,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Recover the Past#052": {
@@ -142776,8 +141170,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#054": {
@@ -142856,8 +141250,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 14",
+   "speaker": "Dr. Picard",
    "source": "captured"
   },
   "Recover the Past#062": {
@@ -143053,16 +141447,6 @@
   "Recover the Past#083": {
    "src": "You can start with the would-be sailor, Caid. You'll find him just past {p}- follow the path until you reach the river.",
    "dst": "你可以先从那个想当水手的 Caid 开始。他就在 {p} 过去一点，顺着小路一直走到河边就是。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 1",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
-  "Recover the Past#084": {
-   "src": "In the meantime, I'll be making adjustments here... It's not perfect just yet. I'm still missing large portions of my memory... Hm? You're still in here? Get going!",
-   "dst": "这段时间我会在这里做些调整……它还不够完美。我还缺了一大块记忆……嗯？你怎么还在这？快去啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -143378,16 +141762,6 @@
    "quest": "Recover the Past",
    "stage": "Stage 6",
    "speaker": "Caid",
-   "source": "wiki"
-  },
-  "Recover the Past#120": {
-   "src": "Wait what? Caid, please tell me you haven't been stealing from the guards. You know they won't",
-   "dst": "等等，什么？Caid，拜托告诉我你没有偷卫兵的东西。你知道他们不会",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 6",
-   "speaker": "Edwin",
    "source": "wiki"
   },
   "Recover the Past#121": {
@@ -144030,16 +142404,6 @@
    "speaker": "Caid",
    "source": "wiki"
   },
-  "Recover the Past#189": {
-   "src": "I salvaged some parts from... uh, one of the nearby factories. I hope it's... it's probably what you need.",
-   "dst": "我从……呃，附近其中一间工厂弄了些零件。希望这……应该是你要的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 10",
-   "speaker": "Caid",
-   "source": "wiki"
-  },
   "Recover the Past#190": {
    "src": "... Hm. One of the factories, you say? And you're sure you weren't spotted doing it? If I were caught speaking to a known criminal, you know the consequences for both of us.",
    "dst": "……嗯。你说，其中一间工厂？你确定你干的时候没被人看到？要是我被抓到跟一个出了名的罪犯说话，你知道我们俩会有什么下场。",
@@ -144080,29 +142444,9 @@
    "speaker": "Reynauld",
    "source": "wiki"
   },
-  "Recover the Past#195": {
-   "src": "I hmph. Okay, okay, fine, I'll- I'll add in some emeralds. To sweeten the deal.",
-   "dst": "我哼。好吧，好吧，行，我、我再加点绿宝石。算是添点甜头。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 10",
-   "speaker": "Caid",
-   "source": "wiki"
-  },
   "Recover the Past#196": {
    "src": "Excellent. A pleasure doing business, as always. I'll be back in a few weeks.",
    "dst": "很好。一如往常，合作愉快。我过几个星期再来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 10",
-   "speaker": "Reynauld",
-   "source": "wiki"
-  },
-  "Recover the Past#197": {
-   "src": "Sir you requested my presence?",
-   "dst": "长官您找我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -144190,16 +142534,6 @@
    "speaker": "Royal Captain",
    "source": "wiki"
   },
-  "Recover the Past#206": {
-   "src": "Your accomplice, the supplier, was caught the other day. I'm told he spent very little time grappling with the thought before choosing to spill your own secrets.",
-   "dst": "你的同伙，那个供货的，前几天被抓了。我听说他没怎么挣扎就决定把你的秘密全抖了出来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 10",
-   "speaker": "Royal Captain",
-   "source": "wiki"
-  },
   "Recover the Past#207": {
    "src": "There is no place for your sort in our ranks, Reynauld. A shame it had to come to this.",
    "dst": "我们的队伍里容不下你这种人，Reynauld。走到这一步真是可惜。",
@@ -144280,16 +142614,6 @@
    "speaker": "Reynauld",
    "source": "wiki"
   },
-  "Recover the Past#215": {
-   "src": "The Admiral sent me to bolster {p}'s defenses. I was expecting to meet you at the bridge, but all I found was Caid.",
-   "dst": "上将派我来加强 {p} 的防御。我本来以为会在桥上碰到你，结果只找到 Caid。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 10",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Recover the Past#216": {
    "src": "He said there was an assault on {p} gathering and that you were here, then he ran away.",
    "dst": "他说有一波攻势正在 {p} 集结，而你在这里，然后他就跑掉了。",
@@ -144298,16 +142622,6 @@
    "quest": "Recover the Past",
    "stage": "Stage 10",
    "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Recover the Past#217": {
-   "src": "That damned thief! I knew I shouldn't have left... This was all a mistake... Damn.",
-   "dst": "那个该死的小偷！我就知道不该离开的……这全都是个错误……该死。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 10",
-   "speaker": "Reynauld",
    "source": "wiki"
   },
   "Recover the Past#219": {
@@ -144720,16 +143034,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Recover the Past#266": {
-   "src": "You were there, remember? We'd just barely entered Wynn and... Aledar was with us, and he almost went and died on his first day! I hope he's being more careful, out there...",
-   "dst": "你当时也在，记得吗？我们才刚进入 Wynn，然后……Aledar 也跟我们在一起，他第一天就差点死掉！希望他现在在外面有小心一点……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 12",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Recover the Past#267": {
    "src": "Well, anyway. Please, lead the way to the doctor. I'm intrigued to see what it's all about.",
    "dst": "啊，总之。请带路去找博士吧。我很好奇这到底是怎么回事。",
@@ -144800,16 +143104,6 @@
    "speaker": "Dr. Picard",
    "source": "wiki"
   },
-  "Recover the Past#274": {
-   "src": "Hold on. You want to put more magic into this, when it's already unstable?",
-   "dst": "等一下。它已经不稳定了，你还想往里面灌更多魔法？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
   "Recover the Past#275": {
    "src": "Don't you want to know what your life was like before? Even if it's not what you want to see, isn't it better to know?",
    "dst": "你难道不想知道自己以前过着什么样的生活吗？就算那不是你想看到的，知道总比不知道好吧？",
@@ -144818,16 +143112,6 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
-  "Recover the Past#276": {
-   "src": "Fine. We can look at my memories. I don't know that I necessarily agree... but I'll do it.",
-   "dst": "好吧。我们可以看看我的记忆。我不见得认同……但我愿意做。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "Recover the Past#277": {
@@ -144958,16 +143242,6 @@
    "quest": "Recover the Past",
    "stage": "Stage 14",
    "speaker": "Royal Captain",
-   "source": "wiki"
-  },
-  "Recover the Past#291": {
-   "src": "My magic is struggling to keep hold... but it's clear there's more to see! Increasing power...",
-   "dst": "我的魔法快撑不住了……但显然还有更多东西可看！加大功率……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Dr. Picard",
    "source": "wiki"
   },
   "Recover the Past#292": {
@@ -145213,16 +143487,6 @@
   "Recover the Past#320": {
    "src": "What do you think happens to me if one of my assistants gets trapped in their memories forever! Nothing good!",
    "dst": "要是我的助手永远困在自己的记忆里，你觉得我会有什么下场！绝对不会是好事！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Recover the Past",
-   "stage": "Stage 14",
-   "speaker": "Dr. Picard",
-   "source": "wiki"
-  },
-  "Recover the Past#322": {
-   "src": "... Hmph. I'll admit, I'm... I'm not sure what to do with this information.",
-   "dst": "……哼。我承认，我……我不知道该拿这个情报怎么办。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -149536,8 +147800,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Harnort",
    "source": "captured"
   },
   "Rise of the Quartron#035": {
@@ -150358,16 +148622,6 @@
    "quest": "Rise of the Quartron",
    "stage": "Stage 10",
    "speaker": "Nasea",
-   "source": "wiki"
-  },
-  "Rise of the Quartron#124": {
-   "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "……所以，终究还是走到这一步了。那些守卫每个人的名字我都知道。我从没为了达成目标伤害任何人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Rise of the Quartron",
-   "stage": "Stage 8",
-   "speaker": "Harnort",
    "source": "wiki"
   },
   "Rogue Wyrmling#000": {
@@ -160787,7 +159041,7 @@
    "source": "wiki"
   },
   "Star Thief#013": {
-   "src": ".̸.̴.̵.̴ I can't control myself...f̸j̷f̴j̵f̵j̴ This rock...",
+   "src": ".... I can't control myself...fjfjfj This rock...",
    "dst": ".... 我控制不住自己……fjfjfj 这块石头……",
    "role": "desc",
    "kind": "dialogue",
@@ -160799,16 +159053,6 @@
   "Star Thief#014": {
    "src": "What is... this feeling... No I won't listen..",
    "dst": "这是……什么感觉……不，我不会听的..",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Star Thief",
-   "stage": "Stage 6",
-   "speaker": "Thief",
-   "source": "wiki"
-  },
-  "Star Thief#015": {
-   "src": "I can't... control... my mind... e̴n̴d̴ ̷m̶e̷.̷",
-   "dst": "我控制不了……我的……脑子…… 了结 我.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -160892,8 +159136,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Thief",
    "source": "captured"
   },
   "Supply and Delivery#001": {
@@ -160992,8 +159236,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Mayor Alvin",
    "source": "captured"
   },
   "Supply and Delivery#012": {
@@ -161646,16 +159890,6 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#077": {
-   "src": "I hope these emeralds will suffice. Additionally... we recently fixed up one of our broken carts, which makes the trip to {p} and back.",
-   "dst": "希望这些绿宝石够了。另外……我们最近修好了一辆坏掉的马车，它可以往返 {p}。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 4",
-   "speaker": "Mayor Alvin",
-   "source": "wiki"
-  },
   "Supply and Delivery#078": {
    "src": "You may feel free to use it whenever you like! As thanks for all you have done for us.",
    "dst": "你随时都可以使用！作为你为我们所做的一切的谢礼。",
@@ -161832,8 +160066,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Taking the Tower#011": {
@@ -162029,16 +160263,6 @@
   "Taking the Tower#034": {
    "src": "Got the powder on your weapon? Good, that means we're ready.",
    "dst": "武器附上粉末了吗？很好，那我们准备好了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taking the Tower",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Taking the Tower#035": {
-   "src": "Lieutenant Van and the others are by that bunch of houses in the {p} Suburbs- you probably saw it on your way in.",
-   "dst": "Van 中尉和其他人在 {p} 郊区那一片房子旁边——你来的路上应该看到过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -162278,8 +160502,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taproot",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Lari",
    "source": "captured",
    "similar": {
     "text": "...please, can you investigate the doorway? There must be something wrong that I don't understand.",
@@ -162647,16 +160871,6 @@
   "Taproot#045": {
    "src": "I...what? You...you present me with this, but refuse to let me do what you want?",
    "dst": "我……什么？你……你把这个摆在我面前，却不让我做你想要的事？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Taproot",
-   "stage": "Stage 4",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
-  "Taproot#046": {
-   "src": "...please, can you investigate the doorway? There must be something wrong that I don't understand.",
-   "dst": "……拜托，你能调查一下那道门吗？一定有什么不对劲，是我不明白的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taproot",
@@ -164214,26 +162428,6 @@
    "speaker": "Rayshyroth",
    "source": "wiki"
   },
-  "Temple of the Legends (Quest)#095": {
-   "src": "The poor man was never heard from again...well, that is until the corrupted hordes began to pour from the Nether, with him leading the pack. A bit ironic, isn't it? Led the miners in life, the corrupteds in death.",
-   "dst": "那个可怜人从此音讯全无……嗯，直到腐化大军开始从下界涌出，而领头的就是他。有点讽刺，不是吗？生前带领矿工，死后带领腐化者。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Temple of the Legends (Quest)",
-   "stage": "Stage 7",
-   "speaker": "Rayshyroth",
-   "source": "wiki"
-  },
-  "Temple of the Legends (Quest)#096": {
-   "src": "His mining crew there lasted hardly minutes. He personally slaughtered every single one of his original crew, and thousands more. The energies of the Nether have made him monstrously powerful.",
-   "dst": "他的采矿队在那里撑不过几分钟。他亲手屠杀了他原本队伍里的每一个人，还有成千上万的其他人。下界的能量让他变得强大得可怕。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Temple of the Legends (Quest)",
-   "stage": "Stage 7",
-   "speaker": "Rayshyroth",
-   "source": "wiki"
-  },
   "Temple of the Legends (Quest)#097": {
    "src": "...although, the stories differ. Some say that Bak'al was the first to enter the portal, and the Corrupter of Worlds was simply a beast from the Nether. But the unclear truth doesn't change his strength.",
    "dst": "……不过，说法各有不同。有人说第一个进入传送门的是 Bak'al，而世界腐化者只是一头来自下界的野兽。但真相不明，也改变不了他有多强。",
@@ -164262,16 +162456,6 @@
    "quest": "Temple of the Legends (Quest)",
    "stage": "Stage 8",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Temple of the Legends (Quest)#100": {
-   "src": "Hah. Took you long enough. This is the light dust, I presume?",
-   "dst": "哈。你可真慢。我猜这就是光尘吧？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Temple of the Legends (Quest)",
-   "stage": "Stage 8",
-   "speaker": "Kelight",
    "source": "wiki"
   },
   "Temple of the Legends (Quest)#102": {
@@ -164307,16 +162491,6 @@
   "Temple of the Legends (Quest)#105": {
    "src": "He was always ranting and raving about Creepers... he really thought they were real, can you imagine? What complete and utter nonsense.",
    "dst": "他老是在那里胡言乱语说什么苦力怕……他真的以为那种东西存在，你能想象吗？简直是彻头彻尾的胡说八道。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Temple of the Legends (Quest)",
-   "stage": "Stage 8",
-   "speaker": "Kelight",
-   "source": "wiki"
-  },
-  "Temple of the Legends (Quest)#107": {
-   "src": "As it stands, I have no idea where you could find him. He spoke of wanting to research the Pigman Ravines several times, though none of our rank had ever seen him there.",
-   "dst": "照现在这样，我完全不知道你能在哪里找到他。他好几次说想去研究猪人峡谷，不过我们传奇里没有人在那里见过他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -164932,8 +163106,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Rayshyroth",
    "source": "captured",
    "similar": {
     "text": "The poor man was never heard from again...well, that is until the corrupted hordes began to pour from the Nether, with him leading the pack. A bit ironic, isn't it? Led the miners in life, the corrupteds in death.",
@@ -164948,8 +163122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Rayshyroth",
    "source": "captured"
   },
   "Temple of the Legends (Quest)#171": {
@@ -164958,8 +163132,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Kelight",
    "source": "captured"
   },
   "Temple of the Legends (Quest)#172": {
@@ -164988,8 +163162,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Kelight",
    "source": "captured"
   },
   "Temple of the Legends (Quest)#175": {
@@ -165058,8 +163232,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Scout",
    "source": "captured"
   },
   "Tempo Town Trouble#002": {
@@ -165098,8 +163272,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Homeless Mayor",
    "source": "captured"
   },
   "Tempo Town Trouble#006": {
@@ -165362,16 +163536,6 @@
    "speaker": "Scout",
    "source": "wiki"
   },
-  "Tempo Town Trouble#032": {
-   "src": "There's probably some kind of wacky magic keeping it shut, since I can't get it open at all!",
-   "dst": "大概是有某种古怪的魔法把它封住了，我怎么都打不开！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tempo Town Trouble",
-   "stage": "Stage 3",
-   "speaker": "Scout",
-   "source": "wiki"
-  },
   "Tempo Town Trouble#033": {
    "src": "Hey, you're able to use magic, right? Maybe using one of your fancy spells on the disk will get it open?",
    "dst": "嘿，你会用魔法，对吧？也许对圆盘施个花哨的法术就能打开它？",
@@ -165595,16 +163759,6 @@
   "Tempo Town Trouble#058": {
    "src": "...also, while you were away, that strange magic stone up on the hill started glowing. We're not sure what to do with it, really! Might be worth your attention.",
    "dst": "……还有，你不在的时候，山坡上那块奇怪的魔法石开始发光了。我们真的不知道该拿它怎么办！也许值得你去看看。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tempo Town Trouble",
-   "stage": "Stage 5",
-   "speaker": "Homeless Mayor",
-   "source": "wiki"
-  },
-  "Tempo Town Trouble#059": {
-   "src": "...though, this is a bit awkward- I don't have a reward ready for you. Making this place took a lot of money... Hopefully gratitude is enough- thank you, sincerely!",
-   "dst": "……不过，这有点尴尬——我没准备好给你的奖励。建这个地方花了很多钱……希望感激就够了——真心谢谢你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -165918,8 +164072,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
    "source": "captured",
    "similar": {
     "text": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
@@ -168278,16 +166432,6 @@
    "speaker": "Ozoth",
    "source": "wiki"
   },
-  "The Breaking Point#239": {
-   "src": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
-   "dst": "我……明白了。……Ozoth 告诉我……一团不熄之焰……就能解放长老们。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Breaking Point",
-   "stage": "Stage 15",
-   "speaker": "Ineos",
-   "source": "wiki"
-  },
   "The Breaking Point#240": {
    "src": "... well...",
    "dst": "……嗯……",
@@ -170079,7 +168223,7 @@
    "source": "wiki"
   },
   "The Canary Calls#116": {
-   "src": "Ḯ̸̫̦͘t bears a̴̝̚ll thin̶̹͒̄ͅgs.",
+   "src": "It bears all things.",
    "dst": "凡事……包容。",
    "role": "desc",
    "kind": "dialogue",
@@ -170089,7 +168233,7 @@
    "source": "wiki"
   },
   "The Canary Calls#117": {
-   "src": "I̷͚͈̋̑t̵̏͂ͅ hopes a̸̯̔l̸̛̠͉l thin̶̹͒̄ͅg̶̙̣͂s̷̲͎͐.̵̫̿̆",
+   "src": "It hopes all things.",
    "dst": "凡事……盼、望。",
    "role": "desc",
    "kind": "dialogue",
@@ -170099,7 +168243,7 @@
    "source": "wiki"
   },
   "The Canary Calls#118": {
-   "src": "I̷͚͈̋̑t̵̏͂ͅ endures a̶̗̍l̷̡̢̚l̴̤͉̓ th̸͓͓́̓ì̸̠́n̸̡̖̽gs.",
+   "src": "It endures all things.",
    "dst": "凡事……忍、耐。",
    "role": "desc",
    "kind": "dialogue",
@@ -170109,7 +168253,7 @@
    "source": "wiki"
   },
   "The Canary Calls#119": {
-   "src": "I̸͚̎̆t̶̳̼͌ ̷͕̀́í̷̙͂s̷͉̹͂ everlasting.",
+   "src": "It is everlasting.",
    "dst": "永……不……止息。",
    "role": "desc",
    "kind": "dialogue",
@@ -170211,46 +168355,6 @@
   "The Canary Calls#129": {
    "src": "Amazing... That really hit different.",
    "dst": "太棒了……这感觉真不一样。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#130": {
-   "src": "It fẽ̵̻̗̤̠̦͋ͯlt nice the fi̶̘͇͓̮̙̲̯ͮͅrst time, but no̠̪͓̙͚̻ͮ̕w it's...diffẽ̵̻̗̤̠̦͋ͯrent.",
-   "dst": "第一次感觉……还不错，但现、在……不一样了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#131": {
-   "src": "Serǐ̱̟͓̲͈͇̱ͦͤͭ̀o̡͈̭̙͍̭̎̊ͅusly... Enou̅̏̒̏͏̬̘̞͈̹gh is enȍ̝̺̥̮̝̇ͪ͂͘u͇̱̭̘̣̺ͣ͘gh.",
-   "dst": "说……真的……够、了……就是够、了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#132": {
-   "src": "Okay, w̵̥̟͎̖̤̺͚̞̿ͩͧͩh̼̟̥̤̺͑ͪ̀o̶͖͇̝̦͉ͯͅ e̲̖̘̹̰͉̦̓̏̚͜v͉͙̤͈̝̏͝en put thḛ͉ͤ̓͝sͨ̋ͨ͏̟̝ͅe there in the fi͛҉̬̬͕͙r̬̖̦̬̞͈̜̠ͤ̇̽͝s̭̞͎ͯ̓́ͅt place?",
-   "dst": "好吧，到、底是……谁……一开始把这、些……放在那里的？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
-  "The Canary Calls#133": {
-   "src": "I'm alr̡̺̬̯̺̄̒̋ͦe͊͏͕̫̲̬̘̼̙ady dead, hò̬̯̺̄͡w͉̲̙̮̭̆̿̆͠ ̧͔͍̃̿̾ͯi̮̻͙̝̼ͧ̐̆̀s̡̼̰̱̓̚ ̔̿̏̃͏̗̗̙͇͖̹̗t͎̤̯̣͓̋̋͡ĥ̷̰͉̍̿̋is even pos̢̺̥̝̞̘̥̭ͦ̋ͦş̬̩̣̜̀̑ͪͯible?",
-   "dst": "我已经……死了，这怎……怎么……可能？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -171344,8 +169448,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#245": {
@@ -171354,8 +169458,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#246": {
@@ -171364,8 +169468,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#247": {
@@ -171374,8 +169478,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#248": {
@@ -172424,8 +170528,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#001": {
@@ -172434,8 +170538,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Gana",
    "source": "captured"
   },
   "The Canyon Guides#002": {
@@ -172514,8 +170618,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#010": {
@@ -172574,8 +170678,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
    "source": "captured"
   },
   "The Canyon Guides#016": {
@@ -172644,29 +170748,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Canyon Guides#022": {
-   "src": "Welcome to the Bantisu Temple, wandering human. We aid travelers such as yourself in navigating the capricious canyon walls.",
-   "dst": "欢迎来到 Bantisu 神殿，流浪的人类。我们帮助像你这样的旅人穿越变幻莫测的峡谷岩壁。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 1",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
   "The Canyon Guides#023": {
    "src": "We commune with the wind, and she gives us her sight. Wherever the breeze blows, we may see.",
    "dst": "我们与风交流，而她赐予我们她的视野。风吹到哪里，我们就看得到哪里。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 1",
-   "speaker": "Gana",
-   "source": "wiki"
-  },
-  "The Canyon Guides#024": {
-   "src": "You appear to be quite strong, and well-kept by your wits. Might we ask you to aid us, then?",
-   "dst": "你看起来相当强壮，头脑也清醒。那么，我们能请你帮忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -172767,16 +170851,6 @@
   "The Canyon Guides#039": {
    "src": "...set that aside. Congratulations, human! I'm probably never getting that coat back, and it cost me a pretty sum. Thanks for nothing.",
    "dst": "……把它放一边。恭喜你，人类！那件外套我大概再也拿不回来了，它可花了我不少钱。谢谢你什么都没帮上。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 3",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#040": {
-   "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair! Besides that...",
-   "dst": "走了这么久……我要在这里休息一下。你逼我跳崖，我就逼你放慢脚步。这很公平！再说……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -173007,16 +171081,6 @@
   "The Canyon Guides#067": {
    "src": "Okay, you know what? No. You've put me through QUITE a lot here, human, so you're going to do me a favor and I'm not going to move another step til it's done.",
    "dst": "好，你知道吗？不行。你让我吃了这么多苦头，人类，所以你得帮我个忙，不办好我一步都不走。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canyon Guides",
-   "stage": "Stage 5",
-   "speaker": "Seluc",
-   "source": "wiki"
-  },
-  "The Canyon Guides#068": {
-   "src": "I paid two weeks wages for that coat you soaked. I'm not leaving here without it, and I'm way too tired to walk back down.",
-   "dst": "你弄湿的那件外套花了我两个星期的工钱。不拿回来我不走，而我累得根本走不回去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canyon Guides",
@@ -178870,8 +176934,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "General Graken",
    "source": "captured"
   },
   "The Dark Descent#003": {
@@ -178920,8 +176984,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Lost Soul",
    "source": "captured"
   },
   "The Dark Descent#008": {
@@ -179010,8 +177074,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "General Graken",
    "source": "captured"
   },
   "The Dark Descent#017": {
@@ -179192,16 +177256,6 @@
    "quest": "The Dark Descent",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Dark Descent#035": {
-   "src": "Ah, hello there chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
-   "dst": "啊，你好啊老兄！我得说，真没想到会在这边见到老 {p} 部队的人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 1",
-   "speaker": "General Graken",
    "source": "wiki"
   },
   "The Dark Descent#036": {
@@ -179434,16 +177488,6 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Dark Descent#060": {
-   "src": "Y-you...I thought they...oh, god, no...",
-   "dst": "你、你……我还以为他们……噢，天哪，不……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 4",
-   "speaker": "Lost Soul",
-   "source": "wiki"
-  },
   "The Dark Descent#061": {
    "src": "Hush now. I will ensure that you and your family are reunited. You will even be able to partake in...keheh...family outings, under my watchful eye...",
    "dst": "嘘。我会让你和你的家人团聚的。你们甚至还能在我的注视下……嘿嘿……来一场家庭出游……",
@@ -179567,16 +177611,6 @@
   "The Dark Descent#076": {
    "src": "Capital! You had me quite worried for a spot, there. Do bubble about just what went on down there, mm?",
    "dst": "太好了！你刚才可让我担心了一阵子。快说说下面到底发生了什么，嗯？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Dark Descent",
-   "stage": "Stage 6",
-   "speaker": "General Graken",
-   "source": "wiki"
-  },
-  "The Dark Descent#077": {
-   "src": "But, you were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
-   "dst": "可是你刚才跌跌撞撞的像个老糊涂，眼神空得跟奶油一样，嘴里还一直念叨着什么 Charon。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -179740,8 +177774,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part I#013": {
@@ -180264,16 +178298,6 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Envoy Part I#072": {
-   "src": "My name is Maxie by the way. Nice to meet you.",
-   "dst": "对了，我叫 Maxie。很高兴认识你。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part I",
-   "stage": "Stage 5",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
   "The Envoy Part I#074": {
    "src": "But Corkus has a secret...",
    "dst": "但 Corkus 有一个秘密……",
@@ -180730,8 +178754,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#007": {
@@ -180800,8 +178824,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Avos Shaman",
    "source": "captured"
   },
   "The Envoy Part II#015": {
@@ -180920,8 +178944,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#027": {
@@ -180950,8 +178974,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Maxie",
    "source": "captured"
   },
   "The Envoy Part II#030": {
@@ -181054,29 +179078,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Envoy Part II#041": {
-   "src": "Mo'in. I've been researching everything I can about the factory.",
-   "dst": "早啊。我一直在尽可能研究关于工厂的一切。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 2",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
   "The Envoy Part II#042": {
    "src": "To get in we need two keys. One from the Avos and one from Corkians.",
    "dst": "要进去需要两把钥匙。一把来自 Avos，一把来自 Corkus 人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 2",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#045": {
-   "src": "The corkians won't give up their key very easily, so we should start with the Avos.",
-   "dst": "Corkus 人不会轻易交出他们的钥匙，所以我们应该先从 Avos 开始。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -181142,16 +179146,6 @@
    "quest": "The Envoy Part II",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Envoy Part II#056": {
-   "src": "Hmm no gears or goggles.. You are no Corkian Human.",
-   "dst": "嗯，没有齿轮也没有护目镜..你不是 Corkus 人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 4",
-   "speaker": "Avos Shaman",
    "source": "wiki"
   },
   "The Envoy Part II#057": {
@@ -181444,16 +179438,6 @@
    "speaker": "Maxie",
    "source": "wiki"
   },
-  "The Envoy Part II#092": {
-   "src": "I don't think he's actually a farmer. Follow me.",
-   "dst": "我觉得他其实不是农夫。跟我来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 10",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
   "The Envoy Part II#093": {
    "src": "HELLO... I AM A... HUMAN... FARMER.",
    "dst": "你好……我是一个……人类……农夫。",
@@ -181517,16 +179501,6 @@
   "The Envoy Part II#099": {
    "src": "That model was a S-{~}, meaning it has warned the others. Follow me.",
    "dst": "那个型号是 S-{~}，也就是说它已经通知其他机甲了。跟我来。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Envoy Part II",
-   "stage": "Stage 10",
-   "speaker": "Maxie",
-   "source": "wiki"
-  },
-  "The Envoy Part II#100": {
-   "src": "See. We're locked out now.",
-   "dst": "看吧。我们现在被锁在外面了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -200500,8 +198474,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Takan",
    "source": "captured"
   },
   "The Mercenary#003": {
@@ -200520,8 +198494,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "Shadow Spears Leader",
    "source": "captured"
   },
   "The Mercenary#005": {
@@ -200600,8 +198574,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Admiral Amerigo",
    "source": "captured"
   },
   "The Mercenary#013": {
@@ -201364,16 +199338,6 @@
    "speaker": "Takan",
    "source": "wiki"
   },
-  "The Mercenary#092": {
-   "src": "I've seen soldiers fall and fall and fall, then rise back up again. I've lived through the chaos and death of battle more times than I could count.",
-   "dst": "我看过士兵倒下、倒下、再倒下，然后又重新站起来。我经历过的战场混乱与死亡，多到我数都数不清。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 5",
-   "speaker": "Takan",
-   "source": "wiki"
-  },
   "The Mercenary#093": {
    "src": "And these IDIOTS think they deserve their power? Their authority?!",
    "dst": "而这些白痴觉得他们配得上他们的权力？他们的权威？！",
@@ -201507,16 +199471,6 @@
   "The Mercenary#107": {
    "src": "Look, it's obvious we've lost here. Even if that idiot escapes, you military folk will find him.",
    "dst": "听着，很明显我们在这里输了。就算那个白痴逃了，你们军队的人也会找到他。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 7",
-   "speaker": "Shadow Spears Leader",
-   "source": "wiki"
-  },
-  "The Mercenary#108": {
-   "src": "So, I surrender! Don't see the point in fightin' a pointless battle. Not like we're gonna be paid after this mess, anyhow.",
-   "dst": "所以，我投降！没必要打一场毫无意义的仗。反正经过这场乱子，我们也拿不到钱了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
@@ -201777,16 +199731,6 @@
   "The Mercenary#135": {
    "src": "I see... satisfactory work, soldiers. You two, and the others, have {p}'s gratitude.",
    "dst": "我明白了……干得还算可以，士兵们。你们两个，还有其他人，{p} 都感谢你们。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Mercenary",
-   "stage": "Stage 10",
-   "speaker": "Admiral Amerigo",
-   "source": "wiki"
-  },
-  "The Mercenary#138": {
-   "src": "He is an angry man holding a grudge for an imagined wrongdoing. There is nothing more to it than that. I would suggest putting it out of your mind.",
-   "dst": "他只是个为想象出来的冤屈怀恨在心的愤怒之人。仅此而已。我建议你们别再想了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Mercenary",
@@ -208212,8 +206156,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Seasum",
    "source": "captured"
   },
   "The Order of the Grook#003": {
@@ -208242,8 +206186,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Seasum",
    "source": "captured"
   },
   "The Order of the Grook#006": {
@@ -208472,8 +206416,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Teacher",
    "source": "captured"
   },
   "The Order of the Grook#029": {
@@ -208642,8 +206586,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 13",
+   "speaker": "Teacher",
    "source": "captured"
   },
   "The Order of the Grook#046": {
@@ -208765,26 +206709,6 @@
   "The Order of the Grook#057": {
    "src": "Hey, who are you?",
    "dst": "嘿，你是谁？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 1",
-   "speaker": "Seasum",
-   "source": "wiki"
-  },
-  "The Order of the Grook#058": {
-   "src": "Do you... not have manners at all?! Just running into my parents' house like that! Jeez!",
-   "dst": "你……到底有没有礼貌啊？！就这样闯进我爸妈家！天啊！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 1",
-   "speaker": "Seasum",
-   "source": "wiki"
-  },
-  "The Order of the Grook#060": {
-   "src": "Bring it back to me when you do, I wanna make sure it's the right one.",
-   "dst": "拿到了就带回来给我，我想确认是不是那封。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -209465,16 +207389,6 @@
   "The Order of the Grook#129": {
    "src": "Welcome, w-welcome. The Water element class is...certainly an interesting one, I-I'd hope... Because water doesn't j-just pertain to, well, w-water...",
    "dst": "欢迎，欢、欢迎。水元素课……应、应该算是很有意思的一门课吧，我、我希望是……因为水不只、只是跟，嗯，水、水有关……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 10",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
-  "The Order of the Grook#130": {
-   "src": "It also the element o-of knowledge, and pure magicality. Water i-is sort of magical default, If you w-will. If it isn't focused on on o-one element or another, magic ends up being water-based",
-   "dst": "它也是知识与纯粹魔法的元素。水就像是、是魔法的默认值，可以这么说。如果魔法没有聚焦在某一种元、元素上，最后就会变成以水为基础",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Order of the Grook",
@@ -210502,16 +208416,6 @@
    "speaker": "Teacher",
    "source": "wiki"
   },
-  "The Order of the Grook#244": {
-   "src": "But! It's not peaky about what life you take, man! A good shaman takes from plants and animals, not people!",
-   "dst": "但是！它可不挑你夺取的是什么生命，老兄！好的萨满从植物和动物身上取，不是从人身上！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Order of the Grook",
-   "stage": "Stage 13",
-   "speaker": "Teacher",
-   "source": "wiki"
-  },
   "The Order of the Grook#246": {
    "src": "You'll need to sacrifice some old grooks, but it has to be just the right amount, man! The practice is through the door behind me.",
    "dst": "你们得献祭一些老 Grook，但分量必须刚刚好，老兄！练习场就在我后面的门里。",
@@ -211280,16 +209184,6 @@
    "quest": "The Price of Ingenuity",
    "stage": "Stage 2",
    "speaker": "Rex",
-   "source": "wiki"
-  },
-  "The Price of Ingenuity#036": {
-   "src": "yaaaawn*",
-   "dst": "哈——欠*",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Price of Ingenuity",
-   "stage": "Stage 2",
-   "speaker": "Mora",
    "source": "wiki"
   },
   "The Price of Ingenuity#037": {
@@ -214818,8 +212712,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Price of Ingenuity",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Mora",
    "source": "captured"
   },
   "The Price of Ingenuity#390": {
@@ -217572,16 +215466,6 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Realm of Light (Quest)#002": {
-   "src": "... Achara... I do not believe I can ever atone for what I have done to you. An apology simply isn't enough.",
-   "dst": "……achara……我不认为我能弥补我对你做过的事。光是道歉根本不够。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Realm of Light (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
   "The Realm of Light (Quest)#003": {
    "src": "As infuriating as what you did was, you were following orders... I had every right to be angry, but to try and take your life was ten steps too far.",
    "dst": "你做的事再怎么令人愤怒，你也只是在奉命行事……我有权生气，但想要夺走你的性命，实在是太过分了。",
@@ -218412,16 +216296,6 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "The Realm of Light (Quest)#086": {
-   "src": "Lari:\n{u}. I think. I found someone.\nWho deserves to be killed. Help me out?",
-   "dst": "{u}。我想。我找到了一个。该杀的家伙。帮我一把？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Realm of Light (Quest)",
-   "stage": "Stage 12",
-   "speaker": "Lari",
-   "source": "wiki"
-  },
   "The Realm of Light (Quest)#087": {
    "src": "Continue up the road towards Orphion's Nexus of Light.",
    "dst": "沿着道路继续前往 Orphion 的光之枢纽。",
@@ -218648,8 +216522,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Realm of Light (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Lari",
    "source": "captured"
   },
   "The Realm of Light (Quest)#110": {
@@ -218688,8 +216562,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Realm of Light (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 12",
+   "speaker": "Lari",
    "source": "captured"
   },
   "The Realm of Light (Quest)#114": {
@@ -220088,8 +217962,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#001": {
@@ -220118,8 +217992,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#004": {
@@ -220138,8 +218012,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#006": {
@@ -220148,8 +218022,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#007": {
@@ -220168,8 +218042,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#009": {
@@ -220178,8 +218052,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#010": {
@@ -220188,8 +218062,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#011": {
@@ -220238,8 +218112,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#016": {
@@ -220248,8 +218122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#017": {
@@ -220258,8 +218132,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#018": {
@@ -220278,8 +218152,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#020": {
@@ -220288,8 +218162,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#021": {
@@ -220298,8 +218172,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#022": {
@@ -220308,8 +218182,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
    "source": "captured"
   },
   "The Sewers of Ragni#023": {
@@ -220320,46 +218194,6 @@
    "quest": "The Sewers of Ragni",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#024": {
-   "src": "Soldier! Good timing. We've been requesting help for ages.",
-   "dst": "士兵！来得正好。我们请求支援好久了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 1",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#027": {
-   "src": "I'm going to need you to get your hands dirty. I'll need some assistance with the blockage.",
-   "dst": "我需要你弄脏双手。疏通堵塞需要人帮忙。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 1",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#029": {
-   "src": "We're using the side pipe. The larger one down the hill, well... you don't want to stray too far into that one.",
-   "dst": "我们走旁边的管道。山坡下那条大的嘛……你最好别往里面走太深。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 1",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#030": {
-   "src": "Keep your wits about you in there. All sorts of things could be lurking. Ready? Let's go!",
-   "dst": "在里面保持警惕。什么东西都可能潜伏着。准备好了吗？出发！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 1",
-   "speaker": "Jenprest",
    "source": "wiki"
   },
   "The Sewers of Ragni#031": {
@@ -220380,36 +218214,6 @@
    "quest": "The Sewers of Ragni",
    "stage": "Stage 3",
    "speaker": "",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#033": {
-   "src": "Good, you caught up. Watch your step around this place, soldier.",
-   "dst": "很好，你跟上了。在这地方走路小心点，士兵。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 3",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#034": {
-   "src": "Our scouts have confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
-   "dst": "我们的斥候确认过这一带是安全的，不过拐错一个弯，你就可能走进旧监狱区。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 3",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#035": {
-   "src": "I... we really don't want to end up there.",
-   "dst": "我……我们真的不想落到那里去。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 3",
-   "speaker": "Jenprest",
    "source": "wiki"
   },
   "The Sewers of Ragni#036": {
@@ -220442,29 +218246,9 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#042": {
-   "src": "... ah. This sewer has some history, you know. Back during the {p} Raids, they used to hide civilians here, in the old prison.",
-   "dst": "……啊。你知道吗，这条下水道是有些历史的。当年 {p} 遭到袭击的时候，他们会把平民藏在这里，藏在旧监狱里。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 5",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
   "The Sewers of Ragni#043": {
    "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
    "dst": "有时候……有时候那样也不够。有人说那里至今还有……东西在游荡。是那些屠杀留下来的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 5",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#044": {
-   "src": "Let's get out of here. Do you still have the explosive I gave you?",
-   "dst": "我们离开这里吧。我给你的炸药还在吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -220492,16 +218276,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#047": {
-   "src": "Phew! Looks like that first explosion cleared the pipe, and the {p} citizens are going to be happy.",
-   "dst": "呼！看来第一次爆炸就把管道炸通了，{p} 的居民会很高兴的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
   "The Sewers of Ragni#048": {
    "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
    "dst": "而且算你走运，我们在里面没碰上太可怕的东西。有些传说……",
@@ -220522,54 +218296,14 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#050": {
-   "src": "I can't stop you from exploring the dungeon, but I recommend you gear up first.",
-   "dst": "我拦不住你去探索地牢，不过我建议你先把装备准备好。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#051": {
-   "src": "Legend has it that Bob, the legendary warrior, was born in them during a raid on {p}.",
-   "dst": "传说那位传奇战士 Bob，就是在 {p} 遭到袭击时出生在那里的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#052": {
-   "src": "His mother died in childbirth, but some people said she lay down there for years. Rotting. Waiting.",
-   "dst": "他的母亲死于难产，不过有人说她在下面躺了好多年。腐烂着。等待着。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
-  "The Sewers of Ragni#053": {
-   "src": "But that's just a story! Thanks for your help, soldier, and good luck.",
-   "dst": "不过那只是个故事！谢谢你的帮忙，士兵，祝你好运。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Sewers of Ragni",
-   "stage": "Stage 6",
-   "speaker": "Jenprest",
-   "source": "wiki"
-  },
   "The Shadow of the Beast#000": {
    "src": "See the blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
    "dst": "看到地上的血了吗？那还是新鲜的。跟着它，看看通到哪里，在那头野兽干出什么可怕的事之前把它猎杀掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
    "source": "captured"
   },
   "The Shadow of the Beast#001": {
@@ -220578,8 +218312,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
    "source": "captured"
   },
   "The Shadow of the Beast#002": {
@@ -220634,8 +218368,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
    "source": "captured"
   },
   "The Shadow of the Beast#007": {
@@ -220644,8 +218378,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
    "source": "captured"
   },
   "The Shadow of the Beast#008": {
@@ -220674,8 +218408,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
    "source": "captured"
   },
   "The Shadow of the Beast#011": {
@@ -220741,26 +218475,6 @@
   "The Shadow of the Beast#017": {
    "src": "So, that means it's up to you! Ehm, supposing that you're willing to help out, at least... The one thing I know for sure is that it was eating something.",
    "dst": "所以，就靠你了！呃，至少假设你愿意帮忙的话……我唯一能确定的是，它当时在吃东西。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Shadow of the Beast",
-   "stage": "Stage 1",
-   "speaker": "Dereg",
-   "source": "wiki"
-  },
-  "The Shadow of the Beast#018": {
-   "src": "See that blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
-   "dst": "看到地上的血了吗？那还是新鲜的。跟着它，看看通到哪里，在那头野兽干出什么可怕的事之前把它猎杀掉！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Shadow of the Beast",
-   "stage": "Stage 1",
-   "speaker": "Dereg",
-   "source": "wiki"
-  },
-  "The Shadow of the Beast#019": {
-   "src": "That blood trail ought to lead you to wherever the beast went. Hunt that thing down for us all!",
-   "dst": "那道血迹应该能带你找到野兽去的地方。为了我们大家，把那东西猎杀掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
@@ -221308,29 +219022,9 @@
    "speaker": "Rileen",
    "source": "wiki"
   },
-  "The Shadow of the Beast#076": {
-   "src": "Aah, there's so many people hurt already, don't make it worse please!",
-   "dst": "啊，已经有这么多人受伤了，求你别再让情况更糟了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Shadow of the Beast",
-   "stage": "Stage 9",
-   "speaker": "Rileen",
-   "source": "wiki"
-  },
   "The Shadow of the Beast#077": {
    "src": "We don't even have any medicine...",
    "dst": "我们连药都没有……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Shadow of the Beast",
-   "stage": "Stage 9",
-   "speaker": "Rileen",
-   "source": "wiki"
-  },
-  "The Shadow of the Beast#078": {
-   "src": "Ugh, think Rileen! You have the herbs, what else goes into the poultices...",
-   "dst": "呃，快想，Rileen！草药你有了，敷药还需要什么……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
@@ -221421,16 +219115,6 @@
   "The Shadow of the Beast#087": {
    "src": "Wait, you were chasing the giant? That's why you were here? That...that's amazing news!",
    "dst": "等等，你在追那个巨人？所以你才会来这里？那……那真是个好消息！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Shadow of the Beast",
-   "stage": "Stage 10",
-   "speaker": "Rileen",
-   "source": "wiki"
-  },
-  "The Shadow of the Beast#088": {
-   "src": "I think it went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
-   "dst": "我想它进了这里东边的洞穴。去吧！在它造成更多破坏之前阻止它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Shadow of the Beast",
@@ -232908,8 +230592,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Caras",
    "source": "captured"
   },
   "Tribal Aggression#001": {
@@ -232918,8 +230602,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Favian",
    "source": "captured"
   },
   "Tribal Aggression#002": {
@@ -232928,8 +230612,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Favian",
    "source": "captured"
   },
   "Tribal Aggression#003": {
@@ -232938,8 +230622,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tribal Aggression",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Caras",
    "source": "captured"
   },
   "Tribal Aggression#004": {
@@ -232960,16 +230644,6 @@
    "quest": "Tribal Aggression",
    "stage": "Stage 1",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Tribal Aggression#006": {
-   "src": "My tribes worries our own business, stranger.",
-   "dst": "我们部落的事，我们自己操心，陌生人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tribal Aggression",
-   "stage": "Stage 1",
-   "speaker": "Caras",
    "source": "wiki"
   },
   "Tribal Aggression#007": {
@@ -233082,16 +230756,6 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#018": {
-   "src": "I'm sure they hid the totem, but if you are able to find, I await your return!",
-   "dst": "我敢肯定他们把图腾藏起来了，不过如果你找得到，我等你回来！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tribal Aggression",
-   "stage": "Stage 2",
-   "speaker": "Favian",
-   "source": "wiki"
-  },
   "Tribal Aggression#019": {
    "src": "Bring back the Eagle Totem from the Owl Camp",
    "dst": "从猫头鹰营地取回雄鹰图腾",
@@ -233132,16 +230796,6 @@
    "speaker": "Favian",
    "source": "wiki"
   },
-  "Tribal Aggression#023": {
-   "src": "Hopefully, we two camps will never set foot on another's land in an attempt steal back the totems, and live in peace.",
-   "dst": "希望我们两个营地再也不会为了把图腾偷回来而踏上对方的土地，从此和平共处。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tribal Aggression",
-   "stage": "Stage 3",
-   "speaker": "Favian",
-   "source": "wiki"
-  },
   "Tribal Aggression#024": {
    "src": "Anyways, hurry up, even the thought of the two totems sharing the same space makes me sick.",
    "dst": "总之，快点吧，一想到两个图腾放在同一个地方我就恶心。",
@@ -233160,16 +230814,6 @@
    "quest": "Tribal Aggression",
    "stage": "Stage 4",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Tribal Aggression#026": {
-   "src": "I-Is that, the totem? My, it has been a long time since the owl has been with me. Though I wonder if the Eagle and the Owl totem possess the same mystic powers.",
-   "dst": "那、那是图腾吗？天哪，猫头鹰已经很久没在我身边了。不过我在想，雄鹰图腾和猫头鹰图腾是不是拥有同样的神秘力量。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tribal Aggression",
-   "stage": "Stage 4",
-   "speaker": "Caras",
    "source": "wiki"
   },
   "Tribal Aggression#027": {
@@ -239324,8 +236968,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tunnel Trouble",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Drale",
    "source": "captured"
   },
   "Tunnel Trouble#005": {
@@ -239698,16 +237342,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Tunnel Trouble#045": {
-   "src": "Go free the cows from the farmers before they're taken to the slaughterhouse! Oh man, the slaughterhouse...",
-   "dst": "趁那些牛被送去屠宰场之前，把它们从农夫手里解救出来！噢天哪，屠宰场……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Tunnel Trouble",
-   "stage": "Stage 6",
-   "speaker": "Drale",
-   "source": "wiki"
-  },
   "Tunnel Trouble#046": {
    "src": "Ah, good to see my cows are all in tip-top shape! Welp, time to- gah!",
    "dst": "啊，很高兴看到我的牛都状态好极了！好了，该——啊！",
@@ -240078,16 +237712,6 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#013": {
-   "src": "However, we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
-   "dst": "不过，我们不必为了湖里的鱼争吵，我们只需要一条 [神话永恒河豚]，这样就够了，别的都不要。我们从来就不想偷鱼。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 4",
-   "speaker": "Calamaro",
-   "source": "wiki"
-  },
   "Underice#014": {
    "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
    "dst": "如果你想帮我们和村民，就沿着流进这片湖的溪流往南走，你会在那里找到最好的钓鱼点。河豚应该也在那附近。",
@@ -240118,29 +237742,9 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#017": {
-   "src": "You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
-   "dst": "你在找 [神话永恒河豚]？嗯，我听过这个名字，是我朋友 Strato 几年前告诉我的。如果我没记错，它是无穷无尽的，光这一条鱼就能喂饱所有行省的每一个人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
   "Underice#018": {
    "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
    "dst": "可惜 Strato 已经不在了。他以前在 {p} 西北边的伐木营地工作、生活。我们总是在这里见面，一起钓鱼、讲故事。我真怀念那段日子……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
-  "Underice#019": {
-   "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
-   "dst": "也许你能在那里找到某种鱼饵，他有我见过最好的鱼饵。你应该能弄到一些，扔进水里，也许就能把河豚引来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -240181,16 +237785,6 @@
   "Underice#023": {
    "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
    "dst": "来了，[神话永恒河豚]，真不敢相信！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
-  "Underice#024": {
-   "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
-   "dst": "你决定把鱼给我？真希望 Strato 还在，他一定会很惊讶。我没办法表达这对我有多重要，不过请收下这份小礼物，答应我，永远别改变。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -240544,8 +238138,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
    "source": "captured"
   },
   "Underice#060": {
@@ -240554,8 +238148,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#061": {
@@ -240564,8 +238158,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#062": {
@@ -240574,8 +238168,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#063": {
@@ -242100,8 +239694,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Achper",
    "source": "captured"
   },
   "Wrath of the Mummy#001": {
@@ -242120,8 +239714,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#003": {
@@ -242140,8 +239734,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#005": {
@@ -242244,16 +239838,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#016": {
-   "src": "If I know about mummies? Of course! I've spent my entire life studying them!",
-   "dst": "问我懂不懂木乃伊？当然懂！我这辈子都在研究它们！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 2",
-   "speaker": "Achper",
-   "source": "wiki"
-  },
   "Wrath of the Mummy#017": {
    "src": "They usually are very hard to reach, hidden in their tomb... and they don't like being disturbed.",
    "dst": "它们通常很难接近，藏在墓穴里……而且它们不喜欢被打扰。",
@@ -242324,29 +239908,9 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#025": {
-   "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just been restocked.",
-   "dst": "除非……听着。我一直想弄到一些粉色羊毛，而唯一卖这东西的店刚补了货。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 3",
-   "speaker": "Bandit",
-   "source": "wiki"
-  },
   "Wrath of the Mummy#026": {
    "src": "Trouble is, the shop's over in {p} and I'm stuck guarding this tomb. If you go and grab me some before it sells out, I can look the other way.",
    "dst": "问题是，那家店在 {p}，而我得守着这座墓走不开。如果你趁卖光之前去帮我买点来，我就当没看见。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 3",
-   "speaker": "Bandit",
-   "source": "wiki"
-  },
-  "Wrath of the Mummy#027": {
-   "src": "You can take my wagon over there, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
-   "dst": "你可以坐我的马车过去，不过回来得自己想办法。给我 [{~} 粉色羊毛]，我就放你过去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -242490,8 +240054,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Tesha",
    "source": "captured"
   },
   "WynnExcavation Site A#002": {
@@ -242587,16 +240151,6 @@
   "WynnExcavation Site A#011": {
    "src": "Hello, welcome to WynnExcavation Labs!",
    "dst": "你好，欢迎来到 WynnExcavation 实验室！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "WynnExcavation Site A",
-   "stage": "Stage 2",
-   "speaker": "Tesha",
-   "source": "wiki"
-  },
-  "WynnExcavation Site A#012": {
-   "src": "Oh Vade sent you?",
-   "dst": "噢，是 Vade 叫你来的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site A",
@@ -243706,8 +241260,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Royal Advisor Carlos",
    "source": "captured"
   },
   "WynnExcavation Site D#002": {
@@ -243736,8 +241290,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Royal Advisor Carlos",
    "source": "captured"
   },
   "WynnExcavation Site D#006": {
@@ -244120,16 +241674,6 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#044": {
-   "src": "He recieved a message and made his way frantically down to the panic room, which is somewhere inside of this throne room.",
-   "dst": "他收到一封信，就慌慌张张地跑下去躲进了避难室，那间避难室就在这座王座厅的某个地方。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "WynnExcavation Site D",
-   "stage": "Stage 1",
-   "speaker": "Royal Advisor Carlos",
-   "source": "wiki"
-  },
   "WynnExcavation Site D#045": {
    "src": "He hasn't been seen since. Only the King knows how to get into the panic room, but I've had my suspicions about it for a while now.",
    "dst": "从那以后就没人见过他。只有国王知道怎么进避难室，不过我对这件事起疑已经有一阵子了。",
@@ -244163,16 +241707,6 @@
   "WynnExcavation Site D#048": {
    "src": "He mentioned something about a fourth crystal... a green one.",
    "dst": "他提到了第四块水晶……一块绿色的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "WynnExcavation Site D",
-   "stage": "Stage 1",
-   "speaker": "Royal Advisor Carlos",
-   "source": "wiki"
-  },
-  "WynnExcavation Site D#049": {
-   "src": "And then he said \"The order of the crystals will open the way\".Maybe it's a clue as to how to find him?",
-   "dst": "然后他说“水晶的顺序会开启道路”。也许这是找到他的线索？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -245011,7 +242545,7 @@
    "source": "wiki"
   },
   "WynnExcavation Site D#135": {
-   "src": "I- I- I feel... unstoppable.. this power... will not aļ͢͠͠͡l̶̀͜͏͏ów me to lớ̀͠͝se..!!!",
+   "src": "I- I- I feel... unstoppable.. this power... will not allow me to lose..!!!",
    "dst": "我——我——我感觉……无人能挡……这股力量……不会……让……我……输……！！！",
    "role": "desc",
    "kind": "dialogue",

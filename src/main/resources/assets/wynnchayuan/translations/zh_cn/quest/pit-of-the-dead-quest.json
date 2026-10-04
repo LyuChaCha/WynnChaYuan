@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Pit of the Dead (Quest)",
-  "count": 12,
-  "translated": 12,
+  "count": 11,
+  "translated": 11,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -66,16 +66,6 @@
    "speaker": "Merloni",
    "source": "wiki"
   },
-  "Pit of the Dead (Quest)#008": {
-   "src": "Enter the pit. Learn it's mysteries, then come back to me.",
-   "dst": "进入那个坑。弄清它的秘密，再回来找我。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Pit of the Dead (Quest)",
-   "stage": "Stage 1",
-   "speaker": "Merloni",
-   "source": "wiki"
-  },
   "Pit of the Dead (Quest)#009": {
    "src": "Explore the pit at [{~}, {~}, -{~}] and find the shrine",
    "dst": "探索 [{~}, {~}, -{~}] 的坑，找到神龛",
@@ -122,8 +112,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Merloni",
    "source": "captured"
   }
  }
