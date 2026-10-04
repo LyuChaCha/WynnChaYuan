@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Meaningful Holiday",
-  "count": 121,
-  "translated": 121,
+  "count": 115,
+  "translated": 115,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -12,8 +12,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Haily",
    "source": "captured"
   },
   "Meaningful Holiday#001": {
@@ -42,8 +42,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#004": {
@@ -62,8 +62,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#006": {
@@ -72,8 +72,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#007": {
@@ -92,8 +92,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Margaret",
    "source": "captured"
   },
   "Meaningful Holiday#009": {
@@ -162,8 +162,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#016": {
@@ -189,16 +189,6 @@
   "Meaningful Holiday#018": {
    "src": "This is the {p} Charity center. We're looking for volunteers to help the homeless this year.",
    "dst": "这里是 {p} 慈善中心。我们今年在招募志愿者帮助无家可归的人。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 1",
-   "speaker": "Haily",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#019": {
-   "src": "If you want to help someone else this year, our boss Nick is already in the thick of it.",
-   "dst": "如果你今年想帮助别人，我们的负责人 Nick 已经在第一线忙着了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -336,16 +326,6 @@
    "speaker": "Flodur",
    "source": "wiki"
   },
-  "Meaningful Holiday#034": {
-   "src": "I might have something in the attic, if you find anyfin, you can 'ave it. I know how difficult it gets.",
-   "dst": "阁楼上可能还有点东西，你要是找到啥，就拿去吧。我知道日子有多难熬。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 3",
-   "speaker": "Flodur",
-   "source": "wiki"
-  },
   "Meaningful Holiday#035": {
    "src": "Look for food on the second floor.",
    "dst": "在二楼寻找食物。",
@@ -359,16 +339,6 @@
   "Meaningful Holiday#036": {
    "src": "Hm... This apple has seen betta days...",
    "dst": "嗯……这颗苹果已经不太新鲜了。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 4",
-   "speaker": "Flodur",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#037": {
-   "src": "Looks like i'm fresh outta food. Barely got enough to feed myself.",
-   "dst": "看来我这里的吃的全没了。连我自己都快不够吃了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -466,16 +436,6 @@
    "speaker": "Nick",
    "source": "wiki"
   },
-  "Meaningful Holiday#047": {
-   "src": "Oh, also, could you give this blanket to Margaret while you're down in the tunnel? Just follow the road behind me.",
-   "dst": "噢，还有，你下到隧道的时候，能不能把这条毯子交给 Margaret？沿着我身后的路走就行。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 5",
-   "speaker": "Nick",
-   "source": "wiki"
-  },
   "Meaningful Holiday#048": {
    "src": "Bring the blanket to the woman in the tunnel south of Nick.",
    "dst": "把毯子交给 Nick 南边隧道里的那位妇人。",
@@ -484,16 +444,6 @@
    "quest": "Meaningful Holiday",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#049": {
-   "src": "Oh, please don't move me along. I have nowhere else to go!",
-   "dst": "噢，拜托别赶我走。我没有别的地方可去了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 6",
-   "speaker": "Margaret",
    "source": "wiki"
   },
   "Meaningful Holiday#050": {
@@ -1189,16 +1139,6 @@
   "Meaningful Holiday#121": {
    "src": "You might be wondering why I know Santa. Well, he's my brother.",
    "dst": "你可能在想我为什么认识圣诞老人。嗯，他是我哥哥。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 15",
-   "speaker": "Nick",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#122": {
-   "src": "Me and my siblings take care of people at Craftmas. My area is the {p} desert. I guess you could call me Sanda Claus, heh.",
-   "dst": "我和我的兄弟姐妹们在 Craftmas 照顾大家。我负责的地区是 {p} 沙漠。我想你可以叫我沙诞老人，嘿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",

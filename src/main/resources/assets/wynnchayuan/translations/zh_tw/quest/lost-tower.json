@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Lost Tower",
-  "count": 11,
-  "translated": 11,
+  "count": 9,
+  "translated": 9,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -12,8 +12,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Laen",
    "source": "captured"
   },
   "Lost Tower#001": {
@@ -22,29 +22,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Laen",
    "source": "captured"
-  },
-  "Lost Tower#003": {
-   "src": "Hey adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
-   "dst": "嘿，冒險者！可以耽誤你一下嗎？我遇上了一點麻煩。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Tower",
-   "stage": "Stage 1",
-   "speaker": "Laen",
-   "source": "wiki"
-  },
-  "Lost Tower#004": {
-   "src": "A while ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
-   "dst": "很久以前，在 {p} 被毀之前，我家收藏過一本相當有意思的書，裡面記載著各種地點與強大存在的知識。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Lost Tower",
-   "stage": "Stage 1",
-   "speaker": "Laen",
-   "source": "wiki"
   },
   "Lost Tower#005": {
    "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",

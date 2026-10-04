@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Wrath of the Mummy",
-  "count": 38,
-  "translated": 38,
+  "count": 35,
+  "translated": 35,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -12,8 +12,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Achper",
    "source": "captured"
   },
   "Wrath of the Mummy#001": {
@@ -32,8 +32,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#003": {
@@ -52,8 +52,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Bandit",
    "source": "captured"
   },
   "Wrath of the Mummy#005": {
@@ -156,16 +156,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#016": {
-   "src": "If I know about mummies? Of course! I've spent my entire life studying them!",
-   "dst": "問我懂不懂木乃伊？那當然！我這輩子都在研究牠們！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 2",
-   "speaker": "Achper",
-   "source": "wiki"
-  },
   "Wrath of the Mummy#017": {
    "src": "They usually are very hard to reach, hidden in their tomb... and they don't like being disturbed.",
    "dst": "牠們通常很難接近，都藏在自己的墓裡……而且牠們很不喜歡被打擾。",
@@ -236,29 +226,9 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#025": {
-   "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just been restocked.",
-   "dst": "除非……這樣吧。我一直想弄到一些粉紅色羊毛，而唯一有賣的那家店剛好剛補完貨。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 3",
-   "speaker": "Bandit",
-   "source": "wiki"
-  },
   "Wrath of the Mummy#026": {
    "src": "Trouble is, the shop's over in {p} and I'm stuck guarding this tomb. If you go and grab me some before it sells out, I can look the other way.",
    "dst": "問題是那家店在 {p}，而我被綁在這裡守墓。你要是能趕在賣完之前幫我弄一些回來，我就睜一隻眼閉一隻眼。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Wrath of the Mummy",
-   "stage": "Stage 3",
-   "speaker": "Bandit",
-   "source": "wiki"
-  },
-  "Wrath of the Mummy#027": {
-   "src": "You can take my wagon over there, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
-   "dst": "你可以搭我那邊的推車過去，不過回來得自己想辦法。把 [{~} 粉紅羊毛] 給我，我就放你過去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",

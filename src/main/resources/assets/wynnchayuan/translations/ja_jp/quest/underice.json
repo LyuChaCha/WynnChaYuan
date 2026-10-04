@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Underice",
-  "count": 63,
-  "translated": 63,
+  "count": 59,
+  "translated": 59,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -126,16 +126,6 @@
    "speaker": "Calamaro",
    "source": "wiki"
   },
-  "Underice#013": {
-   "src": "However, we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
-   "dst": "だが湖の魚を奪い合う必要はない。[Mythic Everlasting Pufferfish] が一匹あればそれで十分だ。魚を盗みたかったわけじゃない。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 4",
-   "speaker": "Calamaro",
-   "source": "wiki"
-  },
   "Underice#014": {
    "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
    "dst": "俺たちと村人を助けたいなら、この湖に流れ込む川を南へたどれ。最高の釣り場がある。フグもその辺りにいるはずだ。",
@@ -166,29 +156,9 @@
    "speaker": "Gernald",
    "source": "wiki"
   },
-  "Underice#017": {
-   "src": "You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
-   "dst": "[Mythic Everlasting Pufferfish] を探しとるのか？ふむ、聞いたことがある。友の Strato が昔話してくれた。確か尽きることのない魚で、その一匹で全地方の人々を養えるそうじゃ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
   "Underice#018": {
    "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
    "dst": "残念ながら Strato はもうおらん。{p} の北西にある伐採キャンプで働き、暮らしておった。わしらはいつもここで会い、魚を釣って話をしたものじゃ。あの頃が懐かしい…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
-  "Underice#019": {
-   "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
-   "dst": "そこで何か餌が見つかるかもしれん。あやつの餌は見たこともないほど上等じゃった。手に入れて水に投げれば、フグが寄ってくるかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -229,16 +199,6 @@
   "Underice#023": {
    "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
    "dst": "来たぞ、[Mythic Everlasting Pufferfish] じゃ、信じられん！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Underice",
-   "stage": "Stage 5",
-   "speaker": "Gernald",
-   "source": "wiki"
-  },
-  "Underice#024": {
-   "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
-   "dst": "魚をわしにくれるのか？Strato がまだおったら、さぞ驚いたじゃろう。どれほど嬉しいか言い表せんが、このささやかな礼を受け取ってくれ。どうか変わらずにいておくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -592,8 +552,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
    "source": "captured"
   },
   "Underice#060": {
@@ -602,8 +562,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#061": {
@@ -612,8 +572,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#062": {
@@ -622,8 +582,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
    "source": "captured"
   },
   "Underice#063": {

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Meaningful Holiday",
-  "count": 121,
-  "translated": 121,
+  "count": 115,
+  "translated": 115,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -12,8 +12,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Haily",
    "source": "captured"
   },
   "Meaningful Holiday#001": {
@@ -42,8 +42,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#004": {
@@ -62,8 +62,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 4",
+   "speaker": "Flodur",
    "source": "captured"
   },
   "Meaningful Holiday#006": {
@@ -72,8 +72,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#007": {
@@ -92,8 +92,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Margaret",
    "source": "captured"
   },
   "Meaningful Holiday#009": {
@@ -162,8 +162,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 15",
+   "speaker": "Nick",
    "source": "captured"
   },
   "Meaningful Holiday#016": {
@@ -189,16 +189,6 @@
   "Meaningful Holiday#018": {
    "src": "This is the {p} Charity center. We're looking for volunteers to help the homeless this year.",
    "dst": "ここは {p} 慈善センターよ。今年はホームレスの人たちを助けるボランティアを探しているの。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 1",
-   "speaker": "Haily",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#019": {
-   "src": "If you want to help someone else this year, our boss Nick is already in the thick of it.",
-   "dst": "今年誰かの役に立ちたいなら、うちの責任者 Nick がもう現場で奮闘中よ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -336,16 +326,6 @@
    "speaker": "Flodur",
    "source": "wiki"
   },
-  "Meaningful Holiday#034": {
-   "src": "I might have something in the attic, if you find anyfin, you can 'ave it. I know how difficult it gets.",
-   "dst": "屋根裏に何かあるかもしれねえ、見つけたら持ってっていい。つらいのはよく分かるからよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 3",
-   "speaker": "Flodur",
-   "source": "wiki"
-  },
   "Meaningful Holiday#035": {
    "src": "Look for food on the second floor.",
    "dst": "二階で食べ物を探す。",
@@ -359,16 +339,6 @@
   "Meaningful Holiday#036": {
    "src": "Hm... This apple has seen betta days...",
    "dst": "むう…このリンゴは盛りを過ぎてんな…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 4",
-   "speaker": "Flodur",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#037": {
-   "src": "Looks like i'm fresh outta food. Barely got enough to feed myself.",
-   "dst": "どうやら食いもんは空っぽだ。自分が食う分もギリギリでよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -466,16 +436,6 @@
    "speaker": "Nick",
    "source": "wiki"
   },
-  "Meaningful Holiday#047": {
-   "src": "Oh, also, could you give this blanket to Margaret while you're down in the tunnel? Just follow the road behind me.",
-   "dst": "ああそれと、トンネルを通るついでにこの毛布を Margaret に渡してくれないか？私の後ろの道をたどればいい。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 5",
-   "speaker": "Nick",
-   "source": "wiki"
-  },
   "Meaningful Holiday#048": {
    "src": "Bring the blanket to the woman in the tunnel south of Nick.",
    "dst": "Nick の南にあるトンネルにいる女性に毛布を届ける。",
@@ -484,16 +444,6 @@
    "quest": "Meaningful Holiday",
    "stage": "Stage 6",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#049": {
-   "src": "Oh, please don't move me along. I have nowhere else to go!",
-   "dst": "ああ、どうか追い出さないで。ほかに行く所がないの！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 6",
-   "speaker": "Margaret",
    "source": "wiki"
   },
   "Meaningful Holiday#050": {
@@ -1189,16 +1139,6 @@
   "Meaningful Holiday#121": {
    "src": "You might be wondering why I know Santa. Well, he's my brother.",
    "dst": "なぜ私が Santa を知っているのか気になるだろう。実は、兄なんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Meaningful Holiday",
-   "stage": "Stage 15",
-   "speaker": "Nick",
-   "source": "wiki"
-  },
-  "Meaningful Holiday#122": {
-   "src": "Me and my siblings take care of people at Craftmas. My area is the {p} desert. I guess you could call me Sanda Claus, heh.",
-   "dst": "私と兄弟姉妹は Craftmas に人々の世話をしている。私の担当は {p} 砂漠。砂ンタクロースとでも呼んでくれ、へへ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",

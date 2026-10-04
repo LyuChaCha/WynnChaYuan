@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Arachnids' Ascent",
-  "count": 128,
-  "translated": 128,
+  "count": 122,
+  "translated": 122,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -32,8 +32,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Admiral Aegis",
    "source": "captured"
   },
   "Arachnids' Ascent#004": {
@@ -52,8 +52,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
    "source": "captured"
   },
   "Arachnids' Ascent#006": {
@@ -82,8 +82,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#009": {
@@ -102,8 +102,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#011": {
@@ -112,8 +112,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Arachnids' Ascent#012": {
@@ -122,8 +122,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
    "source": "captured"
   },
   "Arachnids' Ascent#013": {
@@ -206,16 +206,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Arachnids' Ascent#021": {
-   "src": "Let's see... ah, {u}! There you are. I was just about to send someone to fetch you.",
-   "dst": "어디 보자... 아, {u}! 거기 있었군. 막 사람을 보내 자네를 데려오려던 참이었네.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 1",
-   "speaker": "Admiral Aegis",
-   "source": "wiki"
-  },
   "Arachnids' Ascent#022": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
    "dst": "따라오게. 내 집무실에서 할 이야기가 있네. 병영 꼭대기 층이야.",
@@ -244,16 +234,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 1",
    "speaker": "Aledar",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#026": {
-   "src": "If {u} is here, I take it that means today is the day we strike at the spiders?",
-   "dst": "{u}도 와 있다는 건, 오늘 거미들을 치러 간다는 거죠?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 1",
-   "speaker": "Tasim",
    "source": "wiki"
   },
   "Arachnids' Ascent#027": {
@@ -436,16 +416,6 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Arachnids' Ascent#045": {
-   "src": "Ah, good! You can see the pickle we're in, hmm? We've tried everything to get those poor souls out, but the damned web is like glue!",
-   "dst": "아, 좋아! 우리가 곤란한 처지인 거 보이지? 저 불쌍한 사람들을 꺼내려고 별짓 다 했는데, 망할 거미줄이 풀 같아!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
   "Arachnids' Ascent#046": {
    "src": "Now, let's see here... If I cast a spell on it like this, then...",
    "dst": "자, 어디 보자... 이렇게 주문을 걸면...",
@@ -454,26 +424,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 3",
    "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#047": {
-   "src": "Hm... That's not good.",
-   "dst": "흠... 이거 안 좋은데.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#048": {
-   "src": "So, what do we do now? You mentioned another option- what was that about? What about it made it difficult?",
-   "dst": "그럼 이제 어떡하죠? 다른 방법이 있다고 하셨잖아요- 그게 뭐예요? 뭐가 어려운데요?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Arachnids' Ascent#049": {
@@ -504,16 +454,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 3",
    "speaker": "Captain Enduyn",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#052": {
-   "src": "So what's the catch? You would have tried it first if it were that simple.",
-   "dst": "그럼 뭐가 문제죠? 그렇게 간단했으면 먼저 해 보셨을 텐데요.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 3",
-   "speaker": "Aledar",
    "source": "wiki"
   },
   "Arachnids' Ascent#053": {
