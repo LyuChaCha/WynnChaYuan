@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 22539,
-  "translated": 22539,
+  "count": 22529,
+  "translated": 22529,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -16187,7 +16187,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16207,7 +16207,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16507,7 +16507,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mané\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16837,7 +16837,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 9",
    "speaker": "Olon\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -16883,8 +16883,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Olon",
    "source": "captured",
    "similar": {
     "text": "Let's go . They meet up above the bank.",
@@ -17549,26 +17549,6 @@
    "speaker": "Sol",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#182": {
-   "src": "Hmm. I'm sorry but I can't talk about that too much.",
-   "dst": "ふむ。悪いけど、その話はあまりできないんだ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#184": {
-   "src": "I will tell you this, Elves used to die from old age around {~} years ago.",
-   "dst": "これだけは教えてやろう。{~} 年ほど前まで、エルフは老いで死んでいた。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#185": {
    "src": "Oh. Yeah that is peculiar.",
    "dst": "ほう。確かにそれは妙だね。",
@@ -17692,16 +17672,6 @@
   "Aldorei's Secret Part II#214": {
    "src": "I can't really say... You really don't want to break the rules here.",
    "dst": "なんとも言えないな…ここで規則は破らないほうがいいよ。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mané",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#215": {
-   "src": "I would keep a low profile if I were you.",
-   "dst": "僕なら目立たないようにするね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18339,16 +18309,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#309": {
-   "src": "Sounds unlikely. How come they gained immortality?",
-   "dst": "考えにくいな。どうやって不死を手に入れたんだ？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#310": {
    "src": "Did the elves of {p} actually grasp the light?",
    "dst": "{p} のエルフは本当に光を掴んだのか？",
@@ -18392,16 +18352,6 @@
   "Aldorei's Secret Part II#317": {
    "src": "They have some explaining to do.",
    "dst": "説明してもらわないとな。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#318": {
-   "src": "Let's go . They meet up above the bank.",
-   "dst": "行こう。銀行の上で集まってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -34087,8 +34037,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#020": {
@@ -34659,16 +34609,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#090": {
-   "src": "You've returned! I trust you found something that can help us pass through these webs?",
-   "dst": "戻ったか！この巣を通り抜ける手立ては見つかったのだろうな？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 5",
-   "speaker": "Captain Enduyn",
    "source": "wiki"
   },
   "Arachnids' Ascent#091": {
@@ -49461,16 +49401,6 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#005": {
-   "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "普段は自分たちで採るのですが、最近怒った豚人の群れが、麦の育つ渓谷の頂上へ続くトンネルを占拠してしまって。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 1",
-   "speaker": "Thomas",
-   "source": "wiki"
-  },
   "Creeper Infiltration#006": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
    "dst": "前回入った時、上から爆発音が聞こえました。豚人たちが TNT で麦を吹き飛ばしているのではと…",
@@ -49853,7 +49783,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#049": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
@@ -81837,16 +81769,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Forbidden Prison (Quest)#066": {
-   "src": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
-   "dst": "よし！全員起きろ！今すぐ牢から出ろ！点呼の時間だ！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 7",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "Forbidden Prison (Quest)#067": {
    "src": "Alright, look straight, scum! Morning rollcall is about to start.",
    "dst": "よし、前を向け、クズども！朝の点呼を始めるよ。",
@@ -82673,8 +82595,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "???",
    "source": "captured",
    "similar": {
     "text": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
@@ -152553,8 +152475,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Ope",
    "source": "captured"
   },
   "Supply and Delivery#006": {
@@ -152563,8 +152485,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Ope",
    "source": "captured"
   },
   "Supply and Delivery#007": {
@@ -152620,16 +152542,6 @@
   "Supply and Delivery#013": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
    "dst": "お、おお！や、やあ兵士さん！偶然だなあ、今日二人とも…{p} に…いるなんて…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 1",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
-  "Supply and Delivery#014": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefitted from. I got the plant, and you... well. You gained experience?",
-   "dst": "何だよ？そんな目で見るなって！あれは公平な取引で、お互い得したろ。俺は植物をもらって、お前は…まあ。経験を積んだだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -152950,16 +152862,6 @@
   "Supply and Delivery#060": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
    "dst": "いや、つまりさ。本当にやりたくないんだ。だからやらない！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 3",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
-  "Supply and Delivery#061": {
-   "src": "So you either run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
-   "dst": "だから、お前が補給品を {p} まで運ぶか…二人で逃げて新しい人生を始めて、やらかしの責任から逃げるかだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
