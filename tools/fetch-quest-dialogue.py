@@ -182,11 +182,21 @@ def main(argv: list[str]) -> int:
             print(f"  ! {page}：{e}")
             continue
         rows = parse(page, wikitext)
+        # wiki 把分支對話全部列出來，所以同一句話會出現在好幾個分支裡
+        # （`the-feathers-fly-part-ii` 的 `...` 出現 12 次）。查表是照原文找的，
+        # 所以第二份之後完全沒用，只會讓進度表多算、jar 變大。留第一次出現的。
+        seen: set[str] = set()
+        kept = 0
         for order, row in enumerate(rows):
+            if row["src"] in seen:
+                continue
+            seen.add(row["src"])
             key = f"{page}#{order:03d}"
             row["dst"] = existing.get(key, "")      # 已經翻好的留著
             entries[key] = row
-        print(f"  [{i}/{len(pages)}] {page}：{len(rows)} 句")
+            kept += 1
+        print(f"  [{i}/{len(pages)}] {page}：{kept} 句"
+              + (f"（去掉重複 {len(rows) - kept} 句）" if kept != len(rows) else ""))
         time.sleep(args.delay)
 
     payload = {
