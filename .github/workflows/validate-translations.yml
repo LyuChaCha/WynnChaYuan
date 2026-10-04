@@ -95,6 +95,13 @@ jobs:
       - name: 對話的譯文畫不畫得出來
         run: python tools/check-coverage.py
 
+      # 賭注敘述是「整段收一條、逐行的留空」。逐行的被填回去就會把中文釘死在
+      # 英文的斷點上——句子中間硬斷開，還留一個懸空的逗號。GambitBlockTest 在守
+      # 這件事，但那是 Java 測試，而語料 PR 不跑 gradle build：#1009 就是這樣
+      # 七關全綠地把八條填了回去。
+      - name: 賭注敘述的逐行條目有沒有被填回去
+        run: python tools/check-blocks.py
+
       # 簡體不是繁體的字元轉換。字轉了、詞沒轉的句子完全合法——JSON 沒錯、
       # 佔位符沒錯、字也都是簡體，沒有任何既有的檢查會抱怨。
       - name: 簡中有沒有繁中直譯的痕跡
