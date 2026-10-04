@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 22561,
-  "translated": 22561,
+  "count": 22551,
+  "translated": 22551,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -16197,7 +16197,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16217,7 +16217,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16517,7 +16517,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mané\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16847,7 +16847,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 9",
    "speaker": "Olon\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -16893,8 +16893,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Olon",
    "source": "captured",
    "similar": {
     "text": "Let's go . They meet up above the bank.",
@@ -17559,26 +17559,6 @@
    "speaker": "Sol",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#182": {
-   "src": "Hmm. I'm sorry but I can't talk about that too much.",
-   "dst": "Хмм. Прости, но об этом я много говорить не могу.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#184": {
-   "src": "I will tell you this, Elves used to die from old age around {~} years ago.",
-   "dst": "Скажу лишь: около {~} лет назад эльфы ещё умирали от старости.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#185": {
    "src": "Oh. Yeah that is peculiar.",
    "dst": "О. Да, это странно.",
@@ -17712,16 +17692,6 @@
   "Aldorei's Secret Part II#214": {
    "src": "I can't really say... You really don't want to break the rules here.",
    "dst": "Не могу сказать… Правила здесь лучше не нарушать.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mané",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#215": {
-   "src": "I would keep a low profile if I were you.",
-   "dst": "Советую не высовываться.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18359,16 +18329,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#309": {
-   "src": "Sounds unlikely. How come they gained immortality?",
-   "dst": "Вряд ли. Как они обрели бессмертие?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#310": {
    "src": "Did the elves of {p} actually grasp the light?",
    "dst": "Неужели эльфы {p} и правда постигли Свет?",
@@ -18412,16 +18372,6 @@
   "Aldorei's Secret Part II#317": {
    "src": "They have some explaining to do.",
    "dst": "Им придётся кое-что объяснить.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#318": {
-   "src": "Let's go . They meet up above the bank.",
-   "dst": "Идём. Они собираются над банком.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -34107,8 +34057,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#020": {
@@ -34679,16 +34629,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#090": {
-   "src": "You've returned! I trust you found something that can help us pass through these webs?",
-   "dst": "Вы вернулись! Надеюсь, нашли что-то, что поможет пройти сквозь паутину?",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 5",
-   "speaker": "Captain Enduyn",
    "source": "wiki"
   },
   "Arachnids' Ascent#091": {
@@ -49481,16 +49421,6 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#005": {
-   "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "Обычно мы собираем его сами, но недавно злая шайка свинолюдов захватила туннель к вершине ущелья, где растёт зерно.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 1",
-   "speaker": "Thomas",
-   "source": "wiki"
-  },
   "Creeper Infiltration#006": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
    "dst": "В последний раз, когда мы вошли, сверху грохнул взрыв. Боюсь, свинолюды взрывают наше зерно динамитом…",
@@ -49873,7 +49803,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#049": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
@@ -81857,16 +81789,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Forbidden Prison (Quest)#066": {
-   "src": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
-   "dst": "Так! Все подъём! Из камер, ЖИВО! Перекличка!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 7",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "Forbidden Prison (Quest)#067": {
    "src": "Alright, look straight, scum! Morning rollcall is about to start.",
    "dst": "Так, смотреть прямо, подонки! Утренняя перекличка начинается.",
@@ -82693,8 +82615,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "???",
    "source": "captured",
    "similar": {
     "text": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
@@ -152706,8 +152628,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Ope",
    "source": "captured"
   },
   "Supply and Delivery#006": {
@@ -152716,8 +152638,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Ope",
    "source": "captured"
   },
   "Supply and Delivery#007": {
@@ -152783,16 +152705,6 @@
   "Supply and Delivery#013": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
    "dst": "О-ой! З-здравствуй, солдат! Надо же, какое совпадение, что мы оба здесь… в {p}… сегодня…",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 1",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
-  "Supply and Delivery#014": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefitted from. I got the plant, and you... well. You gained experience?",
-   "dst": "Что? Не смотри на меня так! Сделка была честной и выгодной обоим. Мне растение, а тебе… ну. Опыт?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -153113,16 +153025,6 @@
   "Supply and Delivery#060": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
    "dst": "Видишь ли. Мне правда не хочется это делать. И я не буду!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 3",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
-  "Supply and Delivery#061": {
-   "src": "So you either run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
-   "dst": "Так что либо ты везёшь припасы в {p}… либо мы оба сбегаем, начинаем новую жизнь и уходим от последствий!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",

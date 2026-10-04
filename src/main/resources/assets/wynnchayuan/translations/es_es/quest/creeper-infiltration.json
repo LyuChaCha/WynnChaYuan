@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Creeper Infiltration",
-  "count": 47,
-  "translated": 47,
+  "count": 46,
+  "translated": 46,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -29,16 +29,6 @@
   "Creeper Infiltration#004": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
    "dst": "Se nos acaba el grano del barranco, que es nuestro alimento básico.",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 1",
-   "speaker": "Thomas",
-   "source": "wiki"
-  },
-  "Creeper Infiltration#005": {
-   "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "Solemos recogerlo nosotros, pero hace poco un grupo de hombres cerdo furiosos tomó el túnel que sube a lo alto del barranco, donde crece el grano.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -428,7 +418,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#049": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",

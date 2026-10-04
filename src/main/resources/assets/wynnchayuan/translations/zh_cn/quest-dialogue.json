@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 22538,
-  "translated": 22538,
+  "count": 22528,
+  "translated": 22528,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -16167,7 +16167,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16187,7 +16187,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Sol\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16487,7 +16487,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 3",
    "speaker": "Mané\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
@@ -16817,7 +16817,7 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
+   "stage": "Stage 9",
    "speaker": "Olon\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured",
    "similar": {
@@ -16863,8 +16863,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 9",
+   "speaker": "Olon",
    "source": "captured",
    "similar": {
     "text": "Let's go . They meet up above the bank.",
@@ -17529,26 +17529,6 @@
    "speaker": "Sol",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#182": {
-   "src": "Hmm. I'm sorry but I can't talk about that too much.",
-   "dst": "嗯。抱歉，这件事我不能说太多。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#184": {
-   "src": "I will tell you this, Elves used to die from old age around {~} years ago.",
-   "dst": "我可以告诉你，大约 {~} 年前，精灵还是会老死的。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Sol",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#185": {
    "src": "Oh. Yeah that is peculiar.",
    "dst": "噢。是啊，那确实很奇怪。",
@@ -17682,16 +17662,6 @@
   "Aldorei's Secret Part II#214": {
    "src": "I can't really say... You really don't want to break the rules here.",
    "dst": "我不太好说……在这里你真的不会想违反规矩。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 3",
-   "speaker": "Mané",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#215": {
-   "src": "I would keep a low profile if I were you.",
-   "dst": "换作是我，就会保持低调。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -18329,16 +18299,6 @@
    "speaker": "Olon",
    "source": "wiki"
   },
-  "Aldorei's Secret Part II#309": {
-   "src": "Sounds unlikely. How come they gained immortality?",
-   "dst": "听起来不太可能。他们是怎么获得永生的？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
   "Aldorei's Secret Part II#310": {
    "src": "Did the elves of {p} actually grasp the light?",
    "dst": "{p} 的精灵真的触及到光了吗？",
@@ -18382,16 +18342,6 @@
   "Aldorei's Secret Part II#317": {
    "src": "They have some explaining to do.",
    "dst": "他们有些事得解释清楚。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Aldorei's Secret Part II",
-   "stage": "Stage 9",
-   "speaker": "Olon",
-   "source": "wiki"
-  },
-  "Aldorei's Secret Part II#318": {
-   "src": "Let's go . They meet up above the bank.",
-   "dst": "我们走吧。他们在银行楼上开会。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -34077,8 +34027,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 5",
+   "speaker": "Captain Enduyn",
    "source": "captured"
   },
   "Arachnids' Ascent#020": {
@@ -34649,16 +34599,6 @@
    "quest": "Arachnids' Ascent",
    "stage": "Stage 5",
    "speaker": "",
-   "source": "wiki"
-  },
-  "Arachnids' Ascent#090": {
-   "src": "You've returned! I trust you found something that can help us pass through these webs?",
-   "dst": "你们回来了！我相信你们找到了能帮我们穿过这些网的东西？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Arachnids' Ascent",
-   "stage": "Stage 5",
-   "speaker": "Captain Enduyn",
    "source": "wiki"
   },
   "Arachnids' Ascent#091": {
@@ -49451,16 +49391,6 @@
    "speaker": "Thomas",
    "source": "wiki"
   },
-  "Creeper Infiltration#005": {
-   "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "平常我们都自己去采，可是最近有一群愤怒的猪人占领了通往峡谷顶端的隧道，谷物就长在那上面。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Creeper Infiltration",
-   "stage": "Stage 1",
-   "speaker": "Thomas",
-   "source": "wiki"
-  },
   "Creeper Infiltration#006": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
    "dst": "上一次我们进去的时候，我听到上面传来爆炸声。我担心那些猪人在用 TNT 炸我们的谷物……",
@@ -49843,7 +49773,9 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
-   "source": "captured"
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
   },
   "Creeper Infiltration#049": {
    "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
@@ -81827,16 +81759,6 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Forbidden Prison (Quest)#066": {
-   "src": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
-   "dst": "好了！所有人，起来！马上出牢房！点名时间到了！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Forbidden Prison (Quest)",
-   "stage": "Stage 7",
-   "speaker": "???",
-   "source": "wiki"
-  },
   "Forbidden Prison (Quest)#067": {
    "src": "Alright, look straight, scum! Morning rollcall is about to start.",
    "dst": "好，站直了，人渣！早上点名马上开始。",
@@ -82663,8 +82585,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Forbidden Prison (Quest)",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 7",
+   "speaker": "???",
    "source": "captured",
    "similar": {
     "text": "Alright! Everyone, get up! Out of your cells, NOW! It's time for rollcall!",
@@ -152506,8 +152428,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 1",
+   "speaker": "Ope",
    "source": "captured"
   },
   "Supply and Delivery#006": {
@@ -152516,8 +152438,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 3",
+   "speaker": "Ope",
    "source": "captured"
   },
   "Supply and Delivery#007": {
@@ -152573,16 +152495,6 @@
   "Supply and Delivery#013": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
    "dst": "噢、噢！你、你好，士兵！哇，真巧，我们今天……都在……{p}……",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 1",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
-  "Supply and Delivery#014": {
-   "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefitted from. I got the plant, and you... well. You gained experience?",
-   "dst": "什么？别那样看我！我们那是一次完全公平、双方都有好处的交流。我拿到了植物，而你……嗯。你获得了经验？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -152903,16 +152815,6 @@
   "Supply and Delivery#060": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
    "dst": "嗯，你看。我真的不想做这件事。而且我不打算做！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Supply and Delivery",
-   "stage": "Stage 3",
-   "speaker": "Ope",
-   "source": "wiki"
-  },
-  "Supply and Delivery#061": {
-   "src": "So you either run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
-   "dst": "所以要么你把补给送到 {p}……要么我们俩一起跑路重新开始人生，逃避我们行为的后果！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
