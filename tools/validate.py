@@ -863,21 +863,68 @@ def check_number_mixing(files: list[Path]) -> list[Problem]:
     return out
 
 
-# 兩邊都認得出來的單位。譯文常見的量詞跟原文的名詞配成一對；
-# 「個」「點」這種在中文裡到處都是，配了只會誤報，所以不收。
-UNIT_PAIRS = [
-    ("格", r"\s*blocks?\b", r"\s*格"),
-    ("秒", r"\s*(?:seconds?|s)\b", r"\s*秒"),
-    ("次", r"\s*times\b", r"\s*次"),
-    ("場", r"\s*[Cc]hallenges?\b", r"\s*場"),
-    ("隻", r"\s*[Mm]obs?\b", r"\s*隻"),
-    ("件", r"\s*items?\b", r"\s*件"),
-    ("朵", r"\s*clouds?\b", r"\s*朵"),
-    ("顆", r"\s*[Hh]earts?\b", r"\s*顆"),
+# 原文那一側的名詞。每個語言的量詞都對到這裡的某一個。
+UNIT_SRC = {
+    "blocks": r"\s*blocks?\b",
+    "seconds": r"\s*(?:seconds?|s)\b",
+    "times": r"\s*times\b",
+    "challenges": r"\s*[Cc]hallenges?\b",
+    "mobs": r"\s*[Mm]obs?\b",
+    "items": r"\s*items?\b",
+    "clouds": r"\s*clouds?\b",
+    "hearts": r"\s*[Hh]earts?\b",
+}
+
+# 譯文那一側的量詞，<b>每個語言一份</b>。
+#
+# 原本只有中文那一份，而日文是撿到的——秒、格、回 剛好共用漢字，所以中文的
+# 樣式誤打誤撞也認得出日文的一部分（實際撈到過四處）。韓文、俄文、西文的量詞
+# 跟中文沒有一個字重疊，所以<b>整批沒在看</b>：ko 的 raid.json 有一句把「每
+# {~} 秒」接到了傷害值那一槽，畫面上的秒數是個傷害數字，一直沒有人報。
+#
+# 「個」「點」這種在中文裡到處都是，配了只會誤報，所以不收；其他語言同理
+# （韓文的「개」、西文的「puntos」、俄文的「ед.」都不收）。
+_UNIT_ZH = [
+    ("格", "blocks", r"\s*格"),
+    ("秒", "seconds", r"\s*秒"),
+    ("次", "times", r"\s*次"),
+    ("場", "challenges", r"\s*場"),
+    ("隻", "mobs", r"\s*隻"),
+    ("件", "items", r"\s*件"),
+    ("朵", "clouds", r"\s*朵"),
+    ("顆", "hearts", r"\s*顆"),
 ]
+UNIT_DST: dict[str, list[tuple[str, str, str]]] = {
+    "zh_tw": _UNIT_ZH,
+    "zh_cn": _UNIT_ZH,
+    "ja_jp": [
+        ("ブロック", "blocks", r"\s*(?:ブロック|マス)"),
+        ("秒", "seconds", r"\s*秒"),
+        ("回", "times", r"\s*回"),
+        ("体", "mobs", r"\s*体"),
+    ],
+    "ko_kr": [
+        ("블록", "blocks", r"\s*(?:블록|칸)"),
+        ("초", "seconds", r"\s*초"),
+        ("번", "times", r"\s*(?:번|회)"),
+        ("마리", "mobs", r"\s*마리"),
+    ],
+    "ru_ru": [
+        ("бл.", "blocks", r"\s*(?:бл\b|бл\.|блок)"),
+        ("с", "seconds", r"\s*(?:с\b|сек)"),
+        ("раз", "times", r"\s*раз"),
+        ("моб", "mobs", r"\s*моб"),
+    ],
+    "es_es": [
+        ("bloques", "blocks", r"\s*bloques?"),
+        ("s", "seconds", r"\s*(?:s\b|segundos?)"),
+        ("veces", "times", r"\s*(?:veces|vez)"),
+        ("monstruos", "mobs", r"\s*(?:monstruos?|mobs?)"),
+    ],
+}
 
 
-def _unit_slots(text: str, side: int) -> dict[str, set[int]] | None:
+def _unit_slots(text: str, pairs, side: int) -> dict[str, set[int]] | None:
     """每個單位落在<b>第幾個來源槽</b>。混用編號的回 None，那有另一支在管。"""
     out: dict[str, set[int]] = {}
     plain = 0
@@ -890,8 +937,8 @@ def _unit_slots(text: str, side: int) -> dict[str, set[int]] | None:
             slot = plain
             plain += 1
         after = text[m.end():m.end() + 24]
-        for name, *pats in UNIT_PAIRS:
-            if re.match(pats[side], after):
+        for name, src_key, dst_pat in pairs:
+            if re.match(UNIT_SRC[src_key] if side == 0 else dst_pat, after):
                 out.setdefault(name, set()).add(slot)
                 break
     if numbered and plain:
@@ -899,7 +946,7 @@ def _unit_slots(text: str, side: int) -> dict[str, set[int]] | None:
     return out
 
 
-def check_number_slots(files: list[Path]) -> list[Problem]:
+def check_number_slots(files: list[Path], lang: str | None) -> list[Problem]:
     """數值接到<b>錯的來源槽</b>。
 
     <p>{~} 是照原文出現順序填的。中文幾乎一定要重排句子，一重排就會對調，
@@ -928,8 +975,22 @@ def check_number_slots(files: list[Path]) -> list[Problem]:
 
     <p>只比<b>兩邊都出現過</b>的單位：譯文把單位省略掉很常見，那不算錯。
     報成警告是因為單位詞偶爾會出現在別的位置。
+
+    <p>而且只在「完全沒有交集」時才報。譯文常常把同一個量詞加到原文沒寫
+    量詞的那個數值上——
+
+    <pre>
+    原文  hit {~} times at {~} hits per second
+    譯文  초당 {~2}회의 속도로 {~1}회 타격하지만
+    </pre>
+
+    原文只有第 1 個數值寫了 times，譯文兩個都寫了「회」，但兩個都接對了。
+    要求兩邊的槽位集合<b>一模一樣</b>會把這種也報出來。
     """
     out: list[Problem] = []
+    pairs = UNIT_DST.get(lang or "", [])
+    if not pairs:
+        return out
     for file in files:
         try:
             data = json.loads(file.read_text(encoding="utf-8"))
@@ -945,12 +1006,12 @@ def check_number_slots(files: list[Path]) -> list[Problem]:
                 continue
             if len(NUMBER_SLOT.findall(src)) < 2:
                 continue
-            want = _unit_slots(src, 0)
-            got = _unit_slots(dst, 1)
+            want = _unit_slots(src, pairs, 0)
+            got = _unit_slots(dst, pairs, 1)
             if want is None or got is None:
                 continue
             for unit, slots in got.items():
-                if unit in want and want[unit] != slots:
+                if unit in want and not (want[unit] & slots):
                     out.append(Problem(
                         "warning", file.name, key,
                         "「%s」在原文是第 %s 個數值，譯文卻接到第 %s 個"
@@ -1137,7 +1198,7 @@ def main(argv: list[str]) -> int:
                 print(p)
                 warnings += 1
 
-        crossed = check_number_slots(group)
+        crossed = check_number_slots(group, lang)
         if crossed:
             print()
             print("數值接到錯的來源槽")

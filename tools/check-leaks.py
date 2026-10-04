@@ -70,7 +70,11 @@ SHAPES = [
     (r"would like to trade", "誰要跟你交易"),
     (r"\sshouts:", "誰在喊話"),
     (r"has logged into server", "誰上線了"),
-    (r"\sis now (?:online|offline)", "誰上下線了"),
+    # 好友上下線的廣播，主詞永遠是別人的帳號名：`[!] Bob is now online.`。
+    # 整行到「is now」之間不會有冒號——有冒號就是誰在說話，而遊戲真的有
+    # 這種台詞（討伐戰頭目的開場白「The Mummyboard: OS Version M-37 is now
+    # online.」），那是正當的譯文，不能當成夾帶玩家名。
+    (r"(?m)^[^:\n]*?\sis now (?:online|offline)", "誰上下線了"),
     (r"(?m)^(?:\{#\})*\S+ has died", "誰死了"),
     (r"['’]s Totem of Tales", "誰的石碑"),
     # 「某某的怪物圖騰到期了」。這一句有兩種版本：`{u}'s mob totem` 是
