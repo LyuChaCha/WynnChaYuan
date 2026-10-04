@@ -121,7 +121,46 @@ public final class ActionBarColumnTest {
             check("行尾縮排原樣保留", t.endsWith("    "));
         }
 
+        fonts();
         report();
+    }
+
+    /**
+     * 六個語言都要有那一份字型，而且位移要對。
+     *
+     * <h2>為什麼位移錯了看不出來</h2>
+     * 字還在、顏色也對，只是畫到別的高度——使用者回報的原話是「字太高了、
+     * 沒有對齊」。測試跑在 headless，畫不出畫面，所以只能釘住<b>數字</b>：
+     *
+     * <p>Wynncraft 把「畫在畫面的哪個高度」烘進字型的 {@code ascent}。
+     * {@code hud/selector/default/bottom_middle} 的拉丁字是 {@code -48}，
+     * 而我們十一份對話字型量出來的關係是 {@code shift_y = 7 - ascent}
+     * （{@code body_0} 34→-27、{@code control} -38→45、{@code nameplate}
+     * 50→-43，全部吻合）。所以這裡只能是 {@code 7 - (-48) = 55}。
+     *
+     * <p>少一份字型比位移錯更糟：{@code FontManager} 對查不到的 id 是拿
+     * {@code AllMissingGlyphProvider} 頂上，整列變方框。
+     */
+    private static void fonts() throws Exception {
+        for (String lang : new String[] {"zh_tw", "zh_cn", "ja_jp", "ko_kr",
+                                         "ru_ru", "es_es"}) {
+            String path = "/assets/wynnchayuan/font/actionbar/" + lang
+                    + "/selector_bottom.json";
+            try (java.io.InputStream in =
+                         ActionBarColumnTest.class.getResourceAsStream(path)) {
+                if (in == null) {
+                    check(lang + " 有 selector_bottom.json", false);
+                    continue;
+                }
+                String text = new String(in.readAllBytes(), StandardCharsets.UTF_8);
+                check(lang + " 參照遊戲自己那一份（ASCII 外觀不變）",
+                      text.contains("minecraft:hud/selector/default/bottom_middle"));
+                check(lang + " 位移是 55（= 7 - (-48)）",
+                      text.replaceAll("\\s+", "").contains("\"shift\":[0,55]"));
+                check(lang + " 指到自己的 ttf",
+                      text.contains("wynnchayuan:fusion"));
+            }
+        }
     }
 
     private static void check(String what, boolean ok) {

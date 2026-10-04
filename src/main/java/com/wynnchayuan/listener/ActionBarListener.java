@@ -358,19 +358,24 @@ public final class ActionBarListener {
         if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)) {
             return null;
         }
+        net.minecraft.network.chat.Component hit =
+                com.wynnchayuan.translate.LineTranslator.translate(
+                        line, WynnChaYuan.translations());
+        if (hit == null) {
+            // 整行與逐片段都落空：再試一次「照空白切欄」，見 columnSwap
+            hit = columnSwap(line, WynnChaYuan.translations());
+        }
+        if (hit != null) {
+            return hit;
+        }
+        // 真的查不到才收。先收再翻的話，<b>已經翻好</b>的這一行每一幀都會被
+        // 記成缺口——實機第一份 captured.json 的 seen 就衝到 1700。
+        DialogueProbe.plainColumns(original);
         if (WynnChaYuan.config().collect()) {
             // 這一行以前沒有任何地方收，語料才補得起來
             WynnChaYuan.store().record(template, "name", "actionbar", "actionbar");
         }
-        net.minecraft.network.chat.Component hit =
-                com.wynnchayuan.translate.LineTranslator.translate(
-                        line, WynnChaYuan.translations());
-        if (hit != null) {
-            return hit;
-        }
-        // 整行與逐片段都落空：再試一次「照空白切欄」，見 columnSwap
-        DialogueProbe.plainColumns(original);
-        return columnSwap(line, WynnChaYuan.translations());
+        return null;
     }
 
     /**
@@ -457,8 +462,91 @@ public final class ActionBarListener {
         net.minecraft.network.chat.Component done =
                 com.wynnchayuan.translate.LineTranslator.translateChunk(
                         chunk, style, store);
-        out.append(done == null ? literal(chunk, style) : done);
-        return done != null;
+        if (done == null) {
+            out.append(literal(chunk, style));
+            return false;
+        }
+        // 畫不出來就別換——方框比英文糟。跟對話那條路同一個守門。
+        if (!com.wynnchayuan.render.DialogueRewriter.renderable(done.getString())) {
+            out.append(literal(chunk, style));
+            return false;
+        }
+        out.append(refont(done, style));
+        return true;
+    }
+
+    /**
+     * 把換好的那一欄改用我們自己的字型。
+     *
+     * <h2>為什麼不能用預設字型</h2>
+     * Wynncraft 把「畫在畫面的哪個高度」烘進了字型的 {@code ascent}：
+     * {@code hud/selector/default/bottom_middle} 的拉丁字是 <b>-48</b>，而
+     * {@code minecraft:default} 是 <b>7</b>。整行是<b>一個</b> action bar 字串，
+     * 位移字元只能左右移不能上下移，所以換成預設字型就等於把高度丟掉——
+     * 實機看到的正是「字跑到滑鼠圖示上面一大截」。
+     *
+     * <p>做法跟對話框那十一份字型一模一樣：ASCII 直接
+     * {@code reference} Wynncraft 自己那一份（外觀與高度完全不變），
+     * 中日韓走 Fusion Pixel 並用 {@code shift} 補回高度差。量過的關係是
+     * {@code shift_y = 7 - ascent}（對話框那十一份全部吻合），所以這裡是
+     * {@code 7 - (-48) = 55}。
+     *
+     * <p>配不到或沒附那一份就原樣回傳：位置會掉，但字看得見——
+     * 那是上一版的行為，不會更糟。
+     */
+    private static net.minecraft.network.chat.Component refont(
+            net.minecraft.network.chat.Component translated,
+            net.minecraft.network.chat.Style original) {
+        String name = pairedFont(fontOf(original));
+        if (name == null) {
+            return translated;
+        }
+        String lang = WynnChaYuan.language();
+        if (!fontShipped(lang, name)) {
+            return translated;
+        }
+        net.minecraft.network.chat.FontDescription ours =
+                new net.minecraft.network.chat.FontDescription.Resource(
+                        net.minecraft.resources.Identifier.fromNamespaceAndPath(
+                                WynnChaYuan.MOD_ID, "actionbar/" + lang + "/" + name));
+        net.minecraft.network.chat.MutableComponent out =
+                net.minecraft.network.chat.Component.empty();
+        translated.visit((style, text) -> {
+            // 只動「重建時改成預設字型」的那些；圖示片段的字型不能碰
+            net.minecraft.network.chat.Style use =
+                    com.wynnchayuan.capture.GlyphSplitter.isCustomFont(style.getFont())
+                            ? style : style.withFont(ours);
+            out.append(net.minecraft.network.chat.Component.literal(text).setStyle(use));
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return out;
+    }
+
+    /** 這一段原本的字型對應到我們哪一份；只有檔名，沒有命名空間。 */
+    private static String pairedFont(String font) {
+        return font.contains("hud/selector/default/bottom_middle")
+                ? "selector_bottom" : null;
+    }
+
+    /** 那一份字型檔真的在 jar 裡嗎。問一次就記起來，action bar 每幀都走。 */
+    private static final java.util.Map<String, Boolean> FONTS =
+            new java.util.concurrent.ConcurrentHashMap<>();
+
+    private static boolean fontShipped(String lang, String name) {
+        return FONTS.computeIfAbsent(lang + "/" + name, key -> {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            if (mc == null) {
+                return false;             // 測試環境沒有資源管理員，維持原樣
+            }
+            var id = net.minecraft.resources.Identifier.fromNamespaceAndPath(
+                    WynnChaYuan.MOD_ID, "font/actionbar/" + key + ".json");
+            return mc.getResourceManager().getResource(id).isPresent();
+        });
+    }
+
+    private static String fontOf(net.minecraft.network.chat.Style style) {
+        return style == null || style.getFont() == null
+                ? "" : String.valueOf(style.getFont());
     }
 
     private static net.minecraft.network.chat.Component literal(
