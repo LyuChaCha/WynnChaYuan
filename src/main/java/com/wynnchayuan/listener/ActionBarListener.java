@@ -47,6 +47,14 @@ public final class ActionBarListener {
     private int missing = 0;
 
     /**
+     * 上一次繪製時 action bar 裡有沒有對話段落。
+     *
+     * <p>{@link #onPlainActionBar} 拿它分流：有對話的那條路歸
+     * {@link #onGameInfoRewrite}，沒有的才是大廳與職業選擇畫面的滑鼠提示。
+     */
+    private volatile boolean inDialogue = false;
+
+    /**
      * action bar 的原始訊息，還沒被任何人動過。
      *
      * <p>{@link ActionBarRenderEvent} 拿到的是已經拆成段落的結果，而
@@ -279,6 +287,7 @@ public final class ActionBarListener {
             }
         }
 
+        inDialogue = present;
         if (!present) {
             if (++missing >= GRACE && DialogueOverlay.hasContent()) {
                 DialogueOverlay.clear();
@@ -290,5 +299,70 @@ public final class ActionBarListener {
         // 這裡不再藏原文。就地取代改成<b>改寫</b>那條訊息的內容
         // （見 onGameInfoRewrite）——藏掉的話，框、名牌、頭像會一起不見，
         // 那正是先前怎麼調都不像的原因。
+    }
+
+    /**
+     * 不是對話的那幾行 action bar——大廳與 {@code /class} 畫面下方的滑鼠提示。
+     *
+     * <h2>為什麼要另外一條路</h2>
+     * {@link #onGameInfoRewrite} 只處理對話，而且整支被「對話就地取代」那兩個
+     * 開關擋著。職業選擇畫面下方那行
+     * （<em>Left-Click to play　Right-Click to switch</em>）同樣塞在 action bar 裡，
+     * 但它不是 {@code DialogueSegment}，所以以前既不會被收進語料、也不會被翻。
+     *
+     * <h2>怎麼擋住血量魔力那條</h2>
+     * 正常遊玩時 action bar 裝的是血量、魔力、座標——那一條<b>一個拉丁字母都沒有</b>
+     * （數字加上自訂字型的符號），所以 {@link GlyphSplitter#isGlyphOnly} 就擋掉了。
+     * 再加上 {@link com.wynnchayuan.render.ThirdPartyLiterals#reserved}（別的模組
+     * 靠英文判斷狀態的那些）與 {@link PlayerDataFilter}（夾帶玩家名的）兩道。
+     *
+     * <p>查不到譯文就什麼都不做，原文照舊——跟 title 那條路一樣。
+     */
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void onPlainActionBar(SystemMessageEvent.GameInfoReceivedEvent event) {
+        if (inDialogue) {
+            return;                       // 對話那條路在 onGameInfoRewrite
+        }
+        try {
+            net.minecraft.network.chat.Component swapped =
+                    plainSwap(event.getMessage());
+            if (swapped != null) {
+                event.setMessage(swapped);
+            }
+        } catch (Throwable t) {
+            // 每 tick 都會走這裡，出錯絕不能讓遊戲停下來
+            WynnChaYuan.store().noteEvent("actionbar.plainError");
+        }
+    }
+
+    /**
+     * @return 譯好的那一行；不該動或查不到時回傳 {@code null}（原文照舊）
+     */
+    private static net.minecraft.network.chat.Component plainSwap(
+            net.minecraft.network.chat.Component original) {
+        if (original == null) {
+            return null;
+        }
+        com.wynntils.core.text.StyledText line =
+                com.wynntils.core.text.StyledText.fromComponent(original);
+        if (line.isEmpty()
+                || com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(line)) {
+            return null;                  // 血量魔力那條沒有字母，不碰
+        }
+        if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(
+                line.getStringWithoutFormatting())) {
+            return null;
+        }
+        String template =
+                com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
+        if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)) {
+            return null;
+        }
+        if (WynnChaYuan.config().collect()) {
+            // 這一行以前沒有任何地方收，語料才補得起來
+            WynnChaYuan.store().record(template, "name", "actionbar", "actionbar");
+        }
+        return com.wynnchayuan.translate.LineTranslator.translate(
+                line, WynnChaYuan.translations());
     }
 }
