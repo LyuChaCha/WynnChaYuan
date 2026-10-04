@@ -2,8 +2,8 @@
  "_meta": {
   "domain": "misc",
   "note": "尚未分類的介面字串——製作與職業介面、道具 tooltip 的碎片、商店與市場 UI 等。這是暫存區不是目的地：邊界清楚的一整塊請拆成自己的檔案（見 lootrun.json），並記得加進 _index.json。",
-  "count": 11799,
-  "translated": 10999
+  "count": 11815,
+  "translated": 11015
  },
  "Effect on Weapons:": "Эффект на оружии:",
  "Effect on Armour:": "Эффект на броне:",
@@ -2196,7 +2196,7 @@
  "You're revealing:": "Вы опознаёте:",
  "- {#}{#}Unidentified Boots": "- {#}{#}Неопознанные сапоги",
  "Click to Confirm": "Нажмите, чтобы подтвердить",
- "You've revealed: {#}{#}Battleground Dancer, {#}{#}Updraft and {#}{#}Fermion for a total of {~} emeralds.\nIt was a pleasure doing business with you.": "Вы опознали: {#}{#}Battleground Dancer, {#}{#}Updraft и {#}{#}Fermion - всего за {~} изумрудов.\nПриятно иметь с вами дело.",
+ "You've revealed: {#}{#}Battleground Dancer, {#}{#}Updraft and {#}{#}Fermion for a total of {~} emeralds.\nIt was a pleasure doing business with you.": "Вы открыли: {#}{#}Battleground Dancer, {#}{#}Updraft и {#}{#}Fermion - всего на {~} изумрудов.\nПриятно иметь с вами дело.",
  "Add items to reveal them": "Положите предметы, чтобы раскрыть их",
  "Confirm Selling": "Подтвердить продажу",
  "You are about to sell": "Вы собираетесь продать",
@@ -2330,7 +2330,7 @@
  "{#}next Beacon Effects{#}{~} Potency": "{#}эффекты следующего маяка{#}{~} силы эффекта",
  "Broken IceÀÀÀBarrows Key": "Сломанный ключ Ледяных курганов",
  "- {#}{#}Unidentified Spear": "- {#}{#}Неопознанное копьё",
- "You've revealed: {#}{#}Curador Boots, {#}{#}Battleground Dancer, {#}{#}Charging Flame, {#}{#}Charging Flame, {#}{#}Charging Flame and {#}{#}Charging Flame for a total of {~} emeralds.\nIt was a pleasure doing business with you.": "Вы опознали: {#}{#}Curador Boots, {#}{#}Battleground Dancer, {#}{#}Charging Flame, {#}{#}Charging Flame, {#}{#}Charging Flame и {#}{#}Charging Flame - всего за {~} изумрудов.\nПриятно иметь с вами дело.",
+ "You've revealed: {#}{#}Curador Boots, {#}{#}Battleground Dancer, {#}{#}Charging Flame, {#}{#}Charging Flame, {#}{#}Charging Flame and {#}{#}Charging Flame for a total of {~} emeralds.\nIt was a pleasure doing business with you.": "Вы открыли: {#}{#}Curador Boots, {#}{#}Battleground Dancer, {#}{#}Charging Flame, {#}{#}Charging Flame, {#}{#}Charging Flame и {#}{#}Charging Flame - всего на {~} изумрудов.\nПриятно иметь с вами дело.",
  "{#} Blacksmith: You have sold {~} items for {~}²": "{#} Кузнец: продано предметов: {~} за {~}²",
  "Pending - Bought {~}/{~} items": "В ожидании - куплено предметов: {~}/{~}",
  "{#} {~}² ({~}¼² {~}²½ {~}²) each": "{#} {~}² ({~}¼² {~}²½ {~}²) {c:#FFAA00}за штуку{/}",
@@ -11803,5 +11803,21 @@
  "{#} {~}x Corkian Amplifier III has been Sold.": "{#} {~}x Усилитель Corkian III продан.",
  "{#} {~}x Lucky Spider Egg has been Bought.": "{#} {~}x Счастливое паучье яйцо куплен.",
  "{#} {~}x Roots of Eternity has been Bought.": "{#} {~}x Корни вечности куплен.",
- "{#} {~}x Sturgeon Meat has been Bought.": "{#} {~}x Мясо осетра куплен."
+ "{#} {~}x Sturgeon Meat has been Bought.": "{#} {~}x Мясо осетра куплен.",
+ "- Food [Lv. {~} to {~}]": "- Еда [ур. {~}–{~}]",
+ "Decrease Food Level [Lv. {~} to {~}]": "Понизить уровень еды [ур. {~}–{~}]",
+ "Increase Food Level [Lv. {~} to {~}]": "Повысить уровень еды [ур. {~}–{~}]",
+ "Decrease the amount of this item you plan to buy": "Уменьшить количество этого предмета к покупке",
+ "Increase the amount of this item you plan to buy": "Увеличить количество этого предмета к покупке",
+ "Find the Guild Master in {p} to create a guild": "Найдите главу гильдии в {p}, чтобы создать гильдию",
+ "Invalid Ingredients": "Неподходящие ингредиенты",
+ "Reveal an unidentified item's name allowing it to be sold on the market without identifying": "Раскрывает название неопознанного предмета, чтобы продать его на рынке без опознания",
+ "The contents of a market trade will be available on this slot once an order is placed": "Содержимое сделки на рынке появится в этой ячейке после оформления заказа",
+ "Wait a bit before offering a trade again!": "Подождите немного, прежде чем предлагать обмен снова!",
+ "You will be able to boost guilds once {~} days have passed.": "Усиливать гильдии вы сможете через {~} дней.",
+ "[+{~} Ⓐ Cooking XP] [{~}]": "[+{~} Ⓐ опыта кулинарии] [{~}]",
+ "{#}- +Exclusive Ingredients": "{#}- +Особые ингредиенты",
+ "{#}- +Various Runes": "{#}- +Разные руны",
+ "{#}- +{~} Saltpetres": "{#}- +{~} селитры",
+ "Ⓐ Craft Ⓐ": "Ⓐ Изготовить Ⓐ"
 }
