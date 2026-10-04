@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 22551,
-  "translated": 22551,
+  "count": 22579,
+  "translated": 22579,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -73378,6 +73378,46 @@
    "stage": "Stage 6",
    "speaker": "",
    "source": "captured.json"
+  },
+  "Enter the Dojo#116": {
+   "src": "You gesture the tea generously towards the sheep, and place it on the ground for it to drink. The sheep nods respectfully to you.",
+   "dst": "Le ofreces el té a la oveja con generosidad y lo dejas en el suelo para que beba. La oveja te asiente con respeto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "You gesture the tea generously towards the pig, and place it on the ground for it to drink. The pig nods respectfully to you.",
+   "dst": "Le ofreces el té al cerdo con generosidad y lo dejas en el suelo para que beba. El cerdo te asiente con respeto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#118": {
+   "src": "Exit the cave through the tunnel near the temple",
+   "dst": "Sal de la cueva por el túnel cercano al templo",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#119": {
+   "src": "Hoho... Yes, this old man still has plenty of life left in him. Do not waste the gifts you have, young master.",
+   "dst": "Jojo... Sí, a estos viejos huesos aún les queda mucha vida. No desperdicies los dones que tienes, joven maestro.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": ""
   },
   "Enzan's Brother#000": {
    "src": "Well, I'd best get back to my business. It was nice talking to you, traveler. Come around anytime.",
@@ -161264,16 +161304,6 @@
    "speaker": "Canary",
    "source": "wiki"
   },
-  "The Canary Calls#134": {
-   "src": "I'm no͈̬̞̜̗̯̻̥ͨ̎̇ͣ͡t ḛ͉̳̖̝̪̫̫̏̐͞v̵̮͇̘͗̉ͪ̉ë̷̥̹̲̞ñͮ̍ͯ͏̘͙̖̗̺ REAL!",
-   "dst": "¡Si ni siquiera soy R-REAL!",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
   "The Canary Calls#135": {
    "src": "Indeed, you are the one who can destroy the Colossus. (In High Gavellian)",
    "dst": "Cierto, tú eres quien puede destruir al Colossus. (En alto gavelliano)",
@@ -162140,8 +162170,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#244": {
@@ -172880,6 +172910,46 @@
    "speaker": "Ava",
    "source": "wiki"
   },
+  "The Feathers Fly Part I#057": {
+   "src": "This is the shop! I think we can buy an Enhanced Potential Microchip here.",
+   "dst": "¡Es esta tienda! Creo que aquí venden el Microchip de Potencial Mejorado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#058": {
+   "src": "I need you to accompany me.",
+   "dst": "Necesito que me acompañes.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#059": {
+   "src": "If I'm with a human, surely they'll sell one, right?",
+   "dst": "Si voy con un humano, seguro que me venden uno, ¿no?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#060": {
+   "src": "You go first, I'll follow you.",
+   "dst": "Tú primero, yo te sigo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
   "The Feathers Fly Part I#061": {
    "src": "Hmpf. What are you doing in here, Avo?!",
    "dst": "Hmpf. ¡¿Qué haces aquí, Avo?!",
@@ -173270,6 +173340,26 @@
    "speaker": "Ava",
    "source": "wiki"
   },
+  "The Feathers Fly Part I#100": {
+   "src": "Center... I guess the most important stuff could be here. In theory. I wouldn't count on it.",
+   "dst": "El del centro... Supongo que lo más importante podría estar aquí. En teoría. Yo no contaría con ello.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#101": {
+   "src": "Huh! This wasn't that bad. And... I see something poking out, hold on...",
+   "dst": "¡Anda! No ha ido tan mal. Y... veo algo asomando, espera...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
   "The Feathers Fly Part I#102": {
    "src": "Haha! I think that's what we're looking for!",
    "dst": "¡Ja, ja! ¡Creo que es lo que buscábamos!",
@@ -173393,6 +173483,26 @@
   "The Feathers Fly Part I#114": {
    "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
    "dst": "...Vale. Hora de irse. Supongo que esperaré a {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 8",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#115": {
+   "src": "Ouch!",
+   "dst": "¡Ay!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 8",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#116": {
+   "src": "Sorry about all the trouble I caused... I hope this makes it up to you.",
+   "dst": "Siento todos los líos que he causado... Espero que esto lo compense.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -173553,6 +173663,16 @@
   "The Feathers Fly Part I#132": {
    "src": "Here we go!",
    "dst": "¡Allá vamos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#133": {
+   "src": "Or I guess you could just leave, that's cool too...",
+   "dst": "O supongo que puedes irte, también me vale...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -174319,6 +174439,166 @@
    "stage": "Stage 11",
    "speaker": "Avos Chieftain",
    "source": "wiki"
+  },
+  "The Feathers Fly Part I#210": {
+   "src": "Ah, our wisteria tree! Yes...",
+   "dst": "¡Ah, nuestra glicinia! Sí...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 3",
+   "speaker": "Avos Chieftain",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#211": {
+   "src": "Looks like Ava left. She probably went back to the Workshop.",
+   "dst": "Parece que Ava se ha ido. Probablemente haya vuelto al taller.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#212": {
+   "src": "Wait, let's figure something out!",
+   "dst": "¡Espera, vamos a pensar en algo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#213": {
+   "src": "Hang tight! He's gone crazy!",
+   "dst": "¡Agárrate fuerte! ¡Se ha vuelto loco!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#214": {
+   "src": "[!] ERROR! Defense protocols shutdown...",
+   "dst": "[!] ERROR! Protocolos de defensa desactivados...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#215": {
+   "src": "Looks like Ava is waiting for you in the square south from here. Maybe she'll give you a lift?",
+   "dst": "Parece que Ava te espera en la plaza al sur de aquí. ¿Quizá te lleve?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#216": {
+   "src": "(!) Don't aim directly at a block when Left-Clicking!",
+   "dst": "(!) ¡No apuntes directamente a un bloque al hacer clic izquierdo!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#217": {
+   "src": "Oh no, time's up! It was supposed to be easy... Hold on, I'm booting it up again.",
+   "dst": "¡Ay, no, se acabó el tiempo! Se suponía que era fácil... Espera, lo arranco otra vez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#218": {
+   "src": "Oh, you're back! Talk to me so we can get started!",
+   "dst": "¡Ah, ya estás de vuelta! ¡Háblame y empezamos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#219": {
+   "src": "Hey, it happens to the best of us!",
+   "dst": "¡Oye, le pasa a cualquiera!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#220": {
+   "src": "It's fine, the machine isn't at full power, it won't explode or anything.",
+   "dst": "No pasa nada, la máquina no está a plena potencia, no va a explotar ni nada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#221": {
+   "src": "Just tell me when you're ready!",
+   "dst": "¡Avísame cuando podamos empezar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#222": {
+   "src": "Gah! If I can't get myself to do it now, I'll never do it!",
+   "dst": "¡Agh! ¡Si no me obligo a hacerlo ahora, no lo haré nunca!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#223": {
+   "src": "Tch. How horrible...",
+   "dst": "Tsk. Qué horror...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#224": {
+   "src": "Alright, ya got this!",
+   "dst": "¡Venga, que tú puedes!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#225": {
+   "src": "To hell with this! I'll show everyone! I'll show how great we could be! You'll see, chief!",
+   "dst": "¡A la porra! ¡Se lo voy a demostrar a todos! ¡Voy a demostrar lo grandes que podríamos ser! ¡Ya lo verá, Jefe!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
   },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",

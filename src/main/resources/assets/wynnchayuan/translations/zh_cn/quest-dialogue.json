@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 22528,
-  "translated": 22528,
+  "count": 22579,
+  "translated": 22579,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -8465,6 +8465,16 @@
    "speaker": "",
    "source": "wiki"
   },
+  "A Journey Home#043": {
+   "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 的守卫交谈。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Home",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
   "A Journey Home#044": {
    "src": "Halt! Where did you come from? There was a cave-in past here, wasn't there?",
    "dst": "站住！你从哪里来的？这里过去不是坍方了吗？",
@@ -8523,6 +8533,16 @@
    "quest": "A Journey Home",
    "stage": "Stage 8",
    "speaker": "Guard",
+   "source": "wiki"
+  },
+  "A Journey Home#050": {
+   "src": "Cross the repaired bridge at [-{~}, {~}, -{~}].",
+   "dst": "通过 [-{~}, {~}, -{~}] 修好的桥。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Home",
+   "stage": "Stage 9",
+   "speaker": "",
    "source": "wiki"
   },
   "A Journey Home#051": {
@@ -10778,6 +10798,16 @@
   "A New Beginning#077": {
    "src": "Enough stalling. Where are your papers?",
    "dst": "别拖时间了。你的文件呢？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "Stage 1",
+   "speaker": "Espren Border Guard",
+   "source": "wiki"
+  },
+  "A New Beginning#078": {
+   "src": "If you don’t present identification, I’m going to need to take you in for questioning.",
+   "dst": "你要是拿不出身份证明，我就得把你带回去问话了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -73349,6 +73379,46 @@
    "speaker": "",
    "source": "captured.json"
   },
+  "Enter the Dojo#116": {
+   "src": "You gesture the tea generously towards the sheep, and place it on the ground for it to drink. The sheep nods respectfully to you.",
+   "dst": "你大方地把茶递向羊，放在地上让它喝。羊恭敬地向你点了点头。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "You gesture the tea generously towards the pig, and place it on the ground for it to drink. The pig nods respectfully to you.",
+   "dst": "你大方地把茶递向猪，放在地上让它喝。猪恭敬地向你点了点头。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#118": {
+   "src": "Exit the cave through the tunnel near the temple",
+   "dst": "从神殿附近的隧道离开洞窟",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#119": {
+   "src": "Hoho... Yes, this old man still has plenty of life left in him. Do not waste the gifts you have, young master.",
+   "dst": "呵呵……是啊，我这把老骨头还有不少日子可活。别浪费你拥有的天赋，年轻的大师。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": ""
+  },
   "Enzan's Brother#000": {
    "src": "Well, I'd best get back to my business. It was nice talking to you, traveler. Come around anytime.",
    "dst": "好了，我得回去忙我的生意了。跟你聊得很愉快，旅人。随时再来。",
@@ -95437,6 +95507,16 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
+  "Infested Plants#034": {
+   "src": "Oh... Thank you. That's very kind of you. We'll probably stay for a while, before we continue towards {p}.",
+   "dst": "哦……谢谢您。您真是太客气了。我们大概会待上一阵子，再继续往 {p} 去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
   "Infested Plants#036": {
    "src": "Oh, {u}! There you are. It's good to see you. I'd say we should keep heading towards {p}, but...",
    "dst": "哦，{u}！你在这儿。见到你真好。按理说我们应该继续往 {p} 走，但是……",
@@ -96143,6 +96223,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "King's Recruit#007": {
+   "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
+   "dst": "下大篷车，与 [-{~}, {~}, -{~}] 的大篷车司机对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#008": {
    "src": "Hm... I swear I hit this same darn boulder every time I make this trip. Sorry folks.",
    "dst": "嗯……我发誓每次走这趟路都会撞上这块该死的大石头。抱歉了，各位。",
@@ -96201,6 +96291,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 2",
    "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#014": {
+   "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
+   "dst": "沿着小路走向 [-{~}, {~}, -{~}] 通往 Wynn 行省的大门。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
    "source": "wiki"
   },
   "King's Recruit#015": {
@@ -96343,6 +96443,16 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
+  "King's Recruit#029": {
+   "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 的士兵对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#030": {
    "src": "A soldier? What are you doing all the way out here?",
    "dst": "士兵？你怎么跑到这么远的地方来？",
@@ -96411,6 +96521,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 6",
    "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#037": {
+   "src": "Cross the bridge at [-{~}, {~}, -{~}].",
+   "dst": "在 [-{~}, {~}, -{~}] 过桥。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "",
    "source": "wiki"
   },
   "King's Recruit#038": {
@@ -96693,6 +96813,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#066": {
+   "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
+   "dst": "进入 [-{~}, {~}, -{~}] 的洞窟，找些护甲。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#067": {
    "src": "We should return to the guard to see if he'll let us through now!",
    "dst": "我们该回去找守卫，看看他现在肯不肯让我们过去！",
@@ -96703,6 +96833,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#069": {
+   "src": "So you found some armor, huh?",
+   "dst": "所以你们找到盔甲了？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
   "King's Recruit#070": {
    "src": "Yes, a helmet! Will you let us pass now?",
    "dst": "对，一顶头盔！现在可以让我们过去了吗？",
@@ -96711,6 +96851,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#071": {
+   "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
+   "dst": "慢着，新兵。装备盔甲之前，你得先把它鉴定过。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
    "source": "wiki"
   },
   "King's Recruit#072": {
@@ -96726,6 +96876,26 @@
   "King's Recruit#073": {
    "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
    "dst": "你可以到物品鉴定师那里鉴定物品。世界上每座城市都有，为了方便，我们这里也放了一位。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#074": {
+   "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "到物品鉴定师那里把头盔鉴定好，戴上之后再回来找我。做完我就放你们过去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#076": {
+   "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
+   "dst": "我看到你戴上头盔了。很好，现在可以过去了。我来帮你们开门。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -96833,9 +97003,29 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
+  "King's Recruit#088": {
+   "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 的中尉对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#089": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
    "dst": "总算来援兵了！等一下……你们是刚从 Fruma 来的，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#090": {
+   "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
+   "dst": "算了，这一带现在应该清干净了。毕竟 {p} 就在前面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -97033,9 +97223,29 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#110": {
+   "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 的 {p} 国王对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#111": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
    "dst": "欢迎来到 Wynn 行省！看你们这一身狼狈，我想你们来这里的路上一定经历了不少冒险。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#112": {
+   "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
+   "dst": "新兵们，这就是高贵的 {p} 堡垒，我们辽阔行省的伟大城市之一！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -97101,6 +97311,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#119": {
+   "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
+   "dst": "哈，我打算不久后往 {p} 的方向去，不过路上好像会经过一个叫 {p} 的地方……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#120": {
@@ -108219,6 +108439,16 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
+  "Mushroom Man#040": {
+   "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
+   "dst": "谢、谢谢你们，士兵！那真是——我是说。还、还可以啦，我、我想。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
   "Mushroom Man#041": {
    "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
    "dst": "……噢、噢。我现在……得付你们钱吗？嘿。[{~} 绿宝石] 你、你们觉得可以吗……？",
@@ -108357,6 +108587,16 @@
    "quest": "Mushroom Man",
    "stage": "Stage 5",
    "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#056": {
+   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
+   "dst": "前往 {p}，到 [{~}, {~}, -{~}] 请求他们的军队援助。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Mushroom Man#057": {
@@ -152482,6 +152722,16 @@
    "speaker": "Mayor Alvin",
    "source": "captured"
   },
+  "Supply and Delivery#011": {
+   "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
+   "dst": "到 [{~}, {~}, -{~}] 的 {p} 跟 Ope 谈话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
   "Supply and Delivery#012": {
    "src": "Oh, man... What am I going to do now...",
    "dst": "噢，天哪……我现在该怎么办……",
@@ -161054,16 +161304,6 @@
    "speaker": "Canary",
    "source": "wiki"
   },
-  "The Canary Calls#134": {
-   "src": "I'm no͈̬̞̜̗̯̻̥ͨ̎̇ͣ͡t ḛ͉̳̖̝̪̫̫̏̐͞v̵̮͇̘͗̉ͪ̉ë̷̥̹̲̞ñͮ̍ͯ͏̘͙̖̗̺ REAL!",
-   "dst": "我根……本就……不、是、真、的！",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Canary Calls",
-   "stage": "Stage 8",
-   "speaker": "Canary",
-   "source": "wiki"
-  },
   "The Canary Calls#135": {
    "src": "Indeed, you are the one who can destroy the Colossus. (In High Gavellian)",
    "dst": "没错，你就是能摧毁巨像的人。(高等 Gavel 语)",
@@ -161930,8 +162170,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#244": {
@@ -172670,6 +172910,46 @@
    "speaker": "Ava",
    "source": "wiki"
   },
+  "The Feathers Fly Part I#057": {
+   "src": "This is the shop! I think we can buy an Enhanced Potential Microchip here.",
+   "dst": "就是这家店！我想我们可以在这里买到强化潜能微芯片。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#058": {
+   "src": "I need you to accompany me.",
+   "dst": "我需要你陪我进去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#059": {
+   "src": "If I'm with a human, surely they'll sell one, right?",
+   "dst": "如果我跟人类一起，他们总该会卖一个给我吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#060": {
+   "src": "You go first, I'll follow you.",
+   "dst": "你先走，我跟着你。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 5",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
   "The Feathers Fly Part I#061": {
    "src": "Hmpf. What are you doing in here, Avo?!",
    "dst": "哼。你来这里干什么，Avos 人？！",
@@ -173060,6 +173340,26 @@
    "speaker": "Ava",
    "source": "wiki"
   },
+  "The Feathers Fly Part I#100": {
+   "src": "Center... I guess the most important stuff could be here. In theory. I wouldn't count on it.",
+   "dst": "中间……我猜最重要的东西可能在这里。理论上。我可不敢指望。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#101": {
+   "src": "Huh! This wasn't that bad. And... I see something poking out, hold on...",
+   "dst": "嗯！还不算太糟。而且……我看到有东西露出来了，等一下……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
   "The Feathers Fly Part I#102": {
    "src": "Haha! I think that's what we're looking for!",
    "dst": "哈哈！我想这就是我们要找的东西！",
@@ -173183,6 +173483,26 @@
   "The Feathers Fly Part I#114": {
    "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
    "dst": "……好吧。该走了。我想我就等等 {u} 吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 8",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#115": {
+   "src": "Ouch!",
+   "dst": "哎哟！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 8",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#116": {
+   "src": "Sorry about all the trouble I caused... I hope this makes it up to you.",
+   "dst": "抱歉给你惹了这么多麻烦……希望这个能弥补你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -173343,6 +173663,16 @@
   "The Feathers Fly Part I#132": {
    "src": "Here we go!",
    "dst": "出发！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "wiki"
+  },
+  "The Feathers Fly Part I#133": {
+   "src": "Or I guess you could just leave, that's cool too...",
+   "dst": "或者你也可以直接走人，那也没关系……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -174109,6 +174439,166 @@
    "stage": "Stage 11",
    "speaker": "Avos Chieftain",
    "source": "wiki"
+  },
+  "The Feathers Fly Part I#210": {
+   "src": "Ah, our wisteria tree! Yes...",
+   "dst": "啊，我们的紫藤树！是的……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 3",
+   "speaker": "Avos Chieftain",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#211": {
+   "src": "Looks like Ava left. She probably went back to the Workshop.",
+   "dst": "看来 Ava 走了。她大概是回工坊去了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#212": {
+   "src": "Wait, let's figure something out!",
+   "dst": "等等，我们想想办法！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#213": {
+   "src": "Hang tight! He's gone crazy!",
+   "dst": "抓紧了！他疯了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#214": {
+   "src": "[!] ERROR! Defense protocols shutdown...",
+   "dst": "[!] ERROR！防御协议已停止……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#215": {
+   "src": "Looks like Ava is waiting for you in the square south from here. Maybe she'll give you a lift?",
+   "dst": "看来 Ava 正在南边的广场等你。说不定她会载你一程？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#216": {
+   "src": "(!) Don't aim directly at a block when Left-Clicking!",
+   "dst": "(!) 左键点击时不要直接对着方块！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#217": {
+   "src": "Oh no, time's up! It was supposed to be easy... Hold on, I'm booting it up again.",
+   "dst": "糟糕，时间到了！这本来应该很简单的……等等，我再重启一次。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#218": {
+   "src": "Oh, you're back! Talk to me so we can get started!",
+   "dst": "哦，你回来了！跟我说一声，我们就开始！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#219": {
+   "src": "Hey, it happens to the best of us!",
+   "dst": "嘿，这种事谁都会遇到！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#220": {
+   "src": "It's fine, the machine isn't at full power, it won't explode or anything.",
+   "dst": "没事的，机器没有满功率运转，不会爆炸之类的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#221": {
+   "src": "Just tell me when you're ready!",
+   "dst": "准备好就跟我说一声！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#222": {
+   "src": "Gah! If I can't get myself to do it now, I'll never do it!",
+   "dst": "唔！要是现在不敢动手，我就永远做不到了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#223": {
+   "src": "Tch. How horrible...",
+   "dst": "啧。真是可怕……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#224": {
+   "src": "Alright, ya got this!",
+   "dst": "好了，你一定行的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Feathers Fly Part I#225": {
+   "src": "To hell with this! I'll show everyone! I'll show how great we could be! You'll see, chief!",
+   "dst": "去他的！我要让所有人看看！我要让大家看看我们能有多了不起！你等着看吧，族长！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Feathers Fly Part I",
+   "stage": "Stage 9",
+   "speaker": "Ava",
+   "source": "captured.json"
   },
   "The Feathers Fly Part II#000": {
    "src": "Meet Ava near {p} at [-{~}, {~}, -{~}]",
@@ -183278,6 +183768,16 @@
    "quest": "The Mercenary",
    "stage": "Stage 2",
    "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "The Mercenary#054": {
+   "src": "Not a bad idea.",
+   "dst": "这主意不坏。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Mercenary",
+   "stage": "Stage 2",
+   "speaker": "Lanu",
    "source": "wiki"
   },
   "The Mercenary#055": {
@@ -201726,6 +202226,16 @@
    "quest": "The Sewers of Ragni",
    "stage": "Stage 5",
    "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#041": {
+   "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
+   "dst": "刚才有一阵子跟你走散了。老实说，能再碰上算是运气好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
    "source": "wiki"
   },
   "The Sewers of Ragni#043": {

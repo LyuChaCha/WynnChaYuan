@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Supply and Delivery",
-  "count": 58,
-  "translated": 58,
+  "count": 59,
+  "translated": 59,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -105,6 +105,16 @@
    "stage": "Stage 4",
    "speaker": "Mayor Alvin",
    "source": "captured"
+  },
+  "Supply and Delivery#011": {
+   "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
+   "dst": "到 [{~}, {~}, -{~}] 的 {p} 跟 Ope 谈话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
   },
   "Supply and Delivery#012": {
    "src": "Oh, man... What am I going to do now...",

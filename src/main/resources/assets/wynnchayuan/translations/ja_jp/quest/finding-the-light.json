@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Finding the Light",
-  "count": 154,
-  "translated": 154,
+  "count": 156,
+  "translated": 156,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -756,6 +756,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "Finding the Light#075": {
+   "src": "Find the Church Library in the city of {p} at [-{~}, {~}, -{~}].",
+   "dst": "{p} の街の [-{~1}, {~2}, -{~3}] にある教会図書館を探す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Finding the Light",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
   "Finding the Light#076": {
    "src": "Find a way up to the church bell at the top of the church.",
    "dst": "教会の頂上にある鐘まで登る方法を探す。",
@@ -1283,6 +1293,16 @@
    "kind": "objective",
    "quest": "Finding the Light",
    "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Finding the Light#130": {
+   "src": "Return to the Tree at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] の木へ戻る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Finding the Light",
+   "stage": "Stage 14",
    "speaker": "",
    "source": "wiki"
   },

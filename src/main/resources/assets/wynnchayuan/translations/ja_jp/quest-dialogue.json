@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 22554,
-  "translated": 22554,
+  "count": 22579,
+  "translated": 22579,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -8462,6 +8462,16 @@
    "kind": "objective",
    "quest": "A Journey Home",
    "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "A Journey Home#043": {
+   "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] の衛兵と話す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "A Journey Home",
+   "stage": "Stage 8",
    "speaker": "",
    "source": "wiki"
   },
@@ -17572,6 +17582,16 @@
   "Aldorei's Secret Part II#188": {
    "src": "Anything else?",
    "dst": "他に何か？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Aldorei's Secret Part II",
+   "stage": "Stage 3",
+   "speaker": "Sol",
+   "source": "wiki"
+  },
+  "Aldorei's Secret Part II#192": {
+   "src": "Farewell. Make sure to let everyone know I'm the smartest!",
+   "dst": "さらばだ。僕が一番賢いって、みんなにちゃんと伝えておいてくれよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part II",
@@ -72379,6 +72399,16 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
+  "Enter the Dojo#013": {
+   "src": "Fight your way through the Fiata Room in the combat challenge.",
+   "dst": "戦闘の試練で Fiata の間を戦い抜く。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
   "Enter the Dojo#014": {
    "src": "I recognize your skill, and you have passed the challenge of the Lufar Room! Hoho, but the next challenge has defeated many an apprentice.",
    "dst": "お主の腕を認めよう。Lufar の間の試練は合格じゃ！ほほ、だが次の試練は多くの弟子を打ち負かしてきた。",
@@ -72477,6 +72507,16 @@
    "quest": "Enter the Dojo",
    "stage": "Stage 6",
    "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#027": {
+   "src": "Exit the Sitheach cave through the tunnel near the temple.",
+   "dst": "寺の近くにあるトンネルを通って Sitheach の洞窟から出る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
    "source": "wiki"
   },
   "Enter the Dojo#028": {
@@ -79309,6 +79349,16 @@
    "speaker": "Lari",
    "source": "wiki"
   },
+  "Finding the Light#075": {
+   "src": "Find the Church Library in the city of {p} at [-{~}, {~}, -{~}].",
+   "dst": "{p} の街の [-{~1}, {~2}, -{~3}] にある教会図書館を探す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Finding the Light",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
   "Finding the Light#076": {
    "src": "Find a way up to the church bell at the top of the church.",
    "dst": "教会の頂上にある鐘まで登る方法を探す。",
@@ -79836,6 +79886,16 @@
    "kind": "objective",
    "quest": "Finding the Light",
    "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Finding the Light#130": {
+   "src": "Return to the Tree at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] の木へ戻る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Finding the Light",
+   "stage": "Stage 14",
    "speaker": "",
    "source": "wiki"
   },
@@ -96233,6 +96293,16 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
+  "King's Recruit#014": {
+   "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
+   "dst": "道を進み、[-{~}, {~}, -{~}] にある Wynn 地方への門へ向かう。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#015": {
    "src": "I don't suppose you know much about Wynn either, do you?",
    "dst": "君も Wynn のことはあまり知らないよね？",
@@ -96313,6 +96383,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#023": {
+   "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] から Wynn 地方に入る。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#024": {
    "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
    "dst": "さて、何を待ってるんだ？この地方を探検しに行こう。",
@@ -96331,6 +96411,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 5",
    "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#026": {
+   "src": "So this is Wynn we've all been hearing about... It's beautiful.",
+   "dst": "これがみんなが噂してた Wynn か……きれいだね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#027": {
@@ -96603,6 +96693,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#054": {
+   "src": "Continue onwards to [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] へ進む。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#055": {
    "src": "Phew! We made it over safely this time at least.",
    "dst": "ふう！今度は無事に渡れたね。",
@@ -96713,6 +96813,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#066": {
+   "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] の洞窟に入って防具を探す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#067": {
    "src": "We should return to the guard to see if he'll let us through now!",
    "dst": "衛兵の所に戻って、今度は通してくれるか確かめよう！",
@@ -96723,6 +96833,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#069": {
+   "src": "So you found some armor, huh?",
+   "dst": "防具を見つけたか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
   "King's Recruit#070": {
    "src": "Yes, a helmet! Will you let us pass now?",
    "dst": "ああ、ヘルメットだ！通してくれるか？",
@@ -96731,6 +96851,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#071": {
+   "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
+   "dst": "待て、新兵。防具を装備する前に、まず鑑定せねばならん。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
    "source": "wiki"
   },
   "King's Recruit#072": {
@@ -96763,6 +96893,16 @@
    "speaker": "Guard",
    "source": "wiki"
   },
+  "King's Recruit#076": {
+   "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
+   "dst": "ヘルメットを着けているな。見事だ、通ってよい。この扉を開けてやろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
   "King's Recruit#077": {
    "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
    "dst": "中では気をつけろ、新兵ども！防具があっても楽じゃないぞ！",
@@ -96780,6 +96920,16 @@
    "kind": "objective",
    "quest": "King's Recruit",
    "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#079": {
+   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
+   "dst": "地下道を抜けて [-{~}, {~}, -{~}] へ進む。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
    "speaker": "",
    "source": "wiki"
   },
@@ -96866,6 +97016,16 @@
   "King's Recruit#089": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
    "dst": "やっと援軍か！待てよ… お前たち、Fruma から来たばかりだな？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#090": {
+   "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
+   "dst": "まあ、このあたりはもう片付いたはずだ。{p} はすぐそこだしな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -97063,9 +97223,29 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#110": {
+   "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
+   "dst": "[-{~1}, {~2}, -{~3}] にいる {p} の王と話す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#111": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
    "dst": "Wynn 地方へようこそ！そのボロボロの姿を見るに、ここまでの旅はさぞ波乱に満ちていたのだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#112": {
+   "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
+   "dst": "新兵諸君、ここが気高き砦 {p}、我らが広大な地方の大都市のひとつだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -97131,6 +97311,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#119": {
+   "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
+   "dst": "はは、まあ、そろそろ {p} の方へ行こうと思ってる。途中に {p} とかいう場所があるみたいだけど……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#120": {
@@ -108249,6 +108439,16 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
+  "Mushroom Man#040": {
+   "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
+   "dst": "あ、ありがとな、兵士さんたち！あ、あれは――い、いや、その。だ、大丈夫、だったと、思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
   "Mushroom Man#041": {
    "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
    "dst": "…あ、そうか。今、お、お金を払わなきゃ…だめか？へへ。[{~} エメラルド] で、い、いいか…？",
@@ -108387,6 +108587,16 @@
    "quest": "Mushroom Man",
    "stage": "Stage 5",
    "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#056": {
+   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
+   "dst": "{p} へ行き、[{~1}, {~2}, -{~3}] で軍の助けを求める。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Mushroom Man#057": {
@@ -152529,6 +152739,16 @@
    "speaker": "Mayor Alvin",
    "source": "captured"
   },
+  "Supply and Delivery#011": {
+   "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
+   "dst": "{p} の [{~}, {~}, -{~}] にいる Ope と話す。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
   "Supply and Delivery#012": {
    "src": "Oh, man... What am I going to do now...",
    "dst": "ああ…これからどうすりゃいいんだ…",
@@ -161081,9 +161301,9 @@
    "speaker": "Canary",
    "source": "wiki"
   },
-  "The Canary Calls#129": {
-   "src": "Amazing... That really hit different.",
-   "dst": "すごい…今のは効きました。",
+  "The Canary Calls#128": {
+   "src": "Hands off those, if you would be so kind.",
+   "dst": "それには手を触れないでいただけますか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -161091,9 +161311,9 @@
    "speaker": "Canary",
    "source": "wiki"
   },
-  "The Canary Calls#134": {
-   "src": "I'm no͈̬̞̜̗̯̻̥ͨ̎̇ͣ͡t ḛ͉̳̖̝̪̫̫̏̐͞v̵̮͇̘͗̉ͪ̉ë̷̥̹̲̞ñͮ̍ͯ͏̘͙̖̗̺ REAL!",
-   "dst": "私は現実ですらないのに！",
+  "The Canary Calls#129": {
+   "src": "Amazing... That really hit different.",
+   "dst": "すごい…今のは効きました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -161967,8 +162187,8 @@
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
-   "stage": "",
-   "speaker": "",
+   "stage": "Stage 8",
+   "speaker": "Canary",
    "source": "ja_jp"
   },
   "The Canary Calls#244": {
@@ -169907,6 +170127,16 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
+  "The Dark Descent#058": {
+   "src": "Please, stop this! Whoever you are, leave me and my family in peace! What did we ever do to deserve this?!",
+   "dst": "お願い、やめて！あなたが誰でも、私と家族をそっとしておいて！私たちが何をしたっていうの？！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Dark Descent",
+   "stage": "Stage 4",
+   "speaker": "Lost Soul",
+   "source": "wiki"
+  },
   "The Dark Descent#059": {
    "src": "Ah, but if you had only said so sooner! They have already left this mortal coil...oh, what a shame.",
    "dst": "ああ、もっと早く言ってくれれば！彼らはもうこの世を去ったよ…いや、実に残念だ。",
@@ -171795,6 +172025,16 @@
    "quest": "The Envoy Part II",
    "stage": "Stage 8",
    "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Envoy Part II#083": {
+   "src": "Find the vault in {p} at [-{~}, {~}, -{~}]",
+   "dst": "{p} の [-{~1}, {~2}, -{~3}] にある金庫室を探す",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Envoy Part II",
+   "stage": "Stage 9",
+   "speaker": "",
    "source": "wiki"
   },
   "The Envoy Part II#084": {
@@ -174369,7 +174609,7 @@
   },
   "The Feathers Fly Part I#225": {
    "src": "To hell with this! I'll show everyone! I'll show how great we could be! You'll see, chief!",
-   "dst": "もう、こんなのクソ食らえだ！みんなに見せてやる！私がどれほどすごいのか、思い知らせてやる！見てろよ、首長！",
+   "dst": "もう、こんなのクソ食らえだ！みんなに見せてやる！私がどれほどすごいのか、思い知らせてやる！見てろよ、族長！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -196773,6 +197013,16 @@
    "quest": "The Price of Ingenuity",
    "stage": "Stage 15",
    "speaker": "Yusanu",
+   "source": "wiki"
+  },
+  "The Price of Ingenuity#410": {
+   "src": "How do you know?",
+   "dst": "どうして分かるの？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "Stage 15",
+   "speaker": "Rex",
    "source": "wiki"
   },
   "The Price of Ingenuity#411": {
