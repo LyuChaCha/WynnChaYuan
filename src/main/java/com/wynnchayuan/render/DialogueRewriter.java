@@ -1841,7 +1841,7 @@ public final class DialogueRewriter {
      * 從字型檔本身抽出來，跟著字型一起放進 jar，換字型時一起重產。
      */
     /** 這一串在對話框裡畫不畫得出來——Wynncraft 自己那份或我們補的那套，有一個能畫就算。 */
-    static boolean renderable(String text) {
+    public static boolean renderable(String text) {
         return drawable(text) || covered(text, WynnChaYuan.language());
     }
 

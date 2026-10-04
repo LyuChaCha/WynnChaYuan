@@ -283,8 +283,32 @@ public final class DialogueProbe {
      * 每 tick 都在變，收進來只會把名額佔滿。
      */
     public static void plain(Component message) {
-        if (dir == null || message == null
-                || !WynnChaYuan.config().debugDumps() || hasBodyText(message)) {
+        if (message == null || hasBodyText(message)) {
+            return;
+        }
+        dumpPlain(message, "actionbar-probe-");
+    }
+
+    /**
+     * 有字的那幾行 action bar——大廳與 {@code /class} 畫面下方的滑鼠提示。
+     *
+     * <h2>為什麼 {@link #plain} 看不到它</h2>
+     * 那一支要求 {@code !hasBodyText}，所以<b>只有沒有字的</b>才錄得到。
+     * 偏偏會翻不出來的正是有字的那些——{@code /class} 下方那行實機就是這樣：
+     * 整行進了 {@code captured.json}，卻沒有任何線索說明它被切成幾個片段。
+     *
+     * <p>切成幾段是決定性的：語料裡
+     * {@code Left-Click to play} 與 {@code Right-Click to switch} 兩句都翻好了，
+     * 兩句各自是一個片段的話逐片段那條路就會中；查不到就表示整串（含中間那
+     * 一長串空白）是<b>同一個片段</b>，而那一串當然查不到。這支留下的就是
+     * 那個答案：每個片段的字型、顏色與逐字碼位。
+     */
+    public static void plainColumns(Component message) {
+        dumpPlain(message, "actionbar-columns-");
+    }
+
+    private static void dumpPlain(Component message, String prefix) {
+        if (dir == null || message == null || !WynnChaYuan.config().debugDumps()) {
             return;
         }
         String body = words(message);
@@ -313,7 +337,7 @@ public final class DialogueProbe {
         }, Style.EMPTY);
 
         try {
-            Files.writeString(dir.resolve("actionbar-probe-" + plains + ".txt"),
+            Files.writeString(dir.resolve(prefix + plains + ".txt"),
                     sb.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {
             // 寫不出來就算了，不要影響遊戲

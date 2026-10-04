@@ -3220,6 +3220,24 @@ public final class LineTranslator {
      * @param percent 這一行的數值是百分比。會先找「標籤 + {@code %}」的鍵，
      *                找不到才退回一般的鍵——所以沒有特地區分的標籤不受影響。
      */
+    /**
+     * 單獨查一小段文字，查到就連同前後空白一起重建。
+     *
+     * <h2>為什麼要開給外面用</h2>
+     * 逐片段那條路是照<b>元件的片段</b>切的，而 HUD 有一種行是「兩欄用一長串
+     * 空白隔開，整串卻是同一個片段」——{@code /class} 畫面下方那行
+     * （{@code Left-Click to play} ＋ 22 個空白 ＋ {@code Right-Click to switch}）
+     * 就是這樣。整串拿去查一定落空，兩句各自查卻都在語料裡。
+     * {@link com.wynnchayuan.listener.ActionBarListener} 自己照空白切欄之後
+     * 一欄一欄餵進來。
+     *
+     * @return 譯好的那一段；查不到時回傳 {@code null}（呼叫端自己保留原文）
+     */
+    public static Component translateChunk(String raw, Style style,
+                                           TranslationStore store) {
+        return translateOneSegment(raw, style, store, false);
+    }
+
     private static Component translateOneSegment(String raw, Style style,
                                                  TranslationStore store,
                                                  boolean percent) {
