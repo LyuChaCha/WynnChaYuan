@@ -316,6 +316,14 @@ tasks.register('runAbilityTermChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runAbilityTermChecks' }
 
+tasks.register('runActionBarColumnChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 /class 下方那一行的兩欄各自查得到譯文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.ActionBarColumnTest'
+}
+tasks.named('check') { dependsOn 'runActionBarColumnChecks' }
+
 tasks.register('runGuiBlockGapChecks', JavaExec) {
     group = 'verification'
     description = '驗證整段翻好的 tooltip 不會被逐行列成缺口'

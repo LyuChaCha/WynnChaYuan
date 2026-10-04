@@ -362,7 +362,107 @@ public final class ActionBarListener {
             // 這一行以前沒有任何地方收，語料才補得起來
             WynnChaYuan.store().record(template, "name", "actionbar", "actionbar");
         }
-        return com.wynnchayuan.translate.LineTranslator.translate(
-                line, WynnChaYuan.translations());
+        net.minecraft.network.chat.Component hit =
+                com.wynnchayuan.translate.LineTranslator.translate(
+                        line, WynnChaYuan.translations());
+        if (hit != null) {
+            return hit;
+        }
+        // 整行與逐片段都落空：再試一次「照空白切欄」，見 columnSwap
+        DialogueProbe.plainColumns(original);
+        return columnSwap(line, WynnChaYuan.translations());
+    }
+
+    /**
+     * 欄與欄之間那一長串空白，兩邊都要有字才算。
+     *
+     * <p>{@code (?<=\S)} 與 {@code (?=\S)} 擋掉行首行尾的縮排——那種不是欄距，
+     * 切下去只會多出一個空片段。
+     */
+    private static final java.util.regex.Pattern COLUMN_GAP =
+            java.util.regex.Pattern.compile("(?<=\\S) {2,}(?=\\S)");
+
+    /**
+     * 同一個片段裡的兩欄，各自查表。
+     *
+     * <h2>為什麼逐片段那條路不夠</h2>
+     * {@code LineTranslator} 是照<b>元件的片段</b>切的，而 {@code /class} 畫面
+     * 下方那一行實機送來是<b>一個片段</b>：
+     *
+     * <pre>{@code  Left-Click to play                      Right-Click to switch}</pre>
+     *
+     * 中間那 22 個是普通的 U+0020，不是排版用的空白字型，所以片段不會在那裡斷。
+     * 整串拿去查表當然落空，可是兩句各自早就翻好了。
+     *
+     * <h2>做法</h2>
+     * 只在整行與逐片段都落空之後才走這裡，而且只動「含欄距的文字片段」：圖示、
+     * 純空白、沒有欄距的片段原封不動抄過去，連字型與負寬度空白都不碰。欄距本身
+     * 也照原樣留著——它用的是原片段的樣式，換成預設字型就沒有寬度了。
+     *
+     * <p>有一欄查到就算數，其餘保持原文：混著翻比整行英文好，而且兩欄之間本來
+     * 就是各自獨立的提示。
+     *
+     * <p><b>已知的不完美</b>：中文比英文短，欄距照抄的話右邊那一欄會往左移幾像素。
+     * action bar 是整行置中的，所以看起來仍然是置中的一行；真要補償得先知道那行
+     * 的圖示是不是用絕對位移擺的，而那要等實機的 {@code actionbar-columns-*.txt}
+     * （上面那支探針）。
+     *
+     * @return 換好的那一行；沒有任何一欄查得到時回傳 {@code null}
+     */
+    static net.minecraft.network.chat.Component columnSwap(
+            com.wynntils.core.text.StyledText line,
+            com.wynnchayuan.translate.TranslationStore store) {
+        net.minecraft.network.chat.MutableComponent out =
+                net.minecraft.network.chat.Component.empty();
+        boolean any = false;
+        for (com.wynntils.core.text.StyledTextPart part : line) {
+            String raw = part.getString(null, com.wynntils.core.text.type.StyleType.NONE);
+            if (raw.isEmpty()) {
+                continue;
+            }
+            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
+            net.minecraft.network.chat.Style style =
+                    ps == null ? net.minecraft.network.chat.Style.EMPTY : ps.getStyle();
+            if (com.wynnchayuan.capture.GlyphSplitter.isGlyphPart(part)
+                    || raw.isBlank() || !COLUMN_GAP.matcher(raw).find()) {
+                out.append(literal(raw, style));
+                continue;
+            }
+            net.minecraft.network.chat.MutableComponent rebuilt =
+                    net.minecraft.network.chat.Component.empty();
+            java.util.regex.Matcher m = COLUMN_GAP.matcher(raw);
+            boolean swapped = false;
+            int at = 0;
+            while (m.find()) {
+                swapped |= column(rebuilt, raw.substring(at, m.start()), style, store);
+                rebuilt.append(literal(m.group(), style));   // 欄距照原樣
+                at = m.end();
+            }
+            swapped |= column(rebuilt, raw.substring(at), style, store);
+            if (!swapped) {
+                out.append(literal(raw, style));
+                continue;
+            }
+            any = true;
+            out.append(rebuilt);
+        }
+        return any ? out : null;
+    }
+
+    /** @return 這一欄有沒有換成譯文 */
+    private static boolean column(net.minecraft.network.chat.MutableComponent out,
+                                  String chunk,
+                                  net.minecraft.network.chat.Style style,
+                                  com.wynnchayuan.translate.TranslationStore store) {
+        net.minecraft.network.chat.Component done =
+                com.wynnchayuan.translate.LineTranslator.translateChunk(
+                        chunk, style, store);
+        out.append(done == null ? literal(chunk, style) : done);
+        return done != null;
+    }
+
+    private static net.minecraft.network.chat.Component literal(
+            String text, net.minecraft.network.chat.Style style) {
+        return net.minecraft.network.chat.Component.literal(text).setStyle(style);
     }
 }
