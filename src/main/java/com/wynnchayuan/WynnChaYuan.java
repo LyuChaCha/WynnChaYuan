@@ -146,6 +146,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.translate.Languages.migrateFlat(dir, language);
         Path trDir = com.wynnchayuan.translate.Languages.dir(dir, language);
         // 別的版本寫的快取整包移開、上次沒倒完的補齊。墊底那一層也一樣——見 TranslationCache。
+        // 切成「只用本機檔案」的人，升版時那個資料夾一個檔都不碰（#979）。
+        com.wynnchayuan.translate.TranslationCache.syncsFromGitHub =
+                config.source() == CollectorConfig.Source.GITHUB;
         com.wynnchayuan.translate.TranslationCache.prepare(trDir, language);
         String underneath = fallbackLanguage();
         if (underneath != null) {
