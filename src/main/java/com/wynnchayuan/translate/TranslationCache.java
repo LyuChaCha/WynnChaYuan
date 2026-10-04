@@ -8,10 +8,12 @@ import com.wynnchayuan.SafeFiles;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HexFormat;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -35,6 +37,9 @@ import java.util.stream.Stream;
  *       載入端會把「清單沒提到的檔」排在最後讀（那是給使用者自己丟檔用的），
  *       於是舊譯文<b>蓋掉</b>新的。戳記記得哪些是同步抓下來的，清單不再列就刪，
  *       見 {@link #record}。使用者自己放的檔從來不在戳記裡，不會被刪。</li>
+ *   <li><b>譯者自己改過的檔</b>——同步來的檔之後被人改了字。只看檔名分不出來，
+ *       升一次版就整份蓋掉。戳記連同步那一刻的內容雜湊一起記，對不上就不碰，
+ *       見 {@link #refreshAfterUpgrade}。</li>
  * </ol>
  */
 public final class TranslationCache {
@@ -54,6 +59,14 @@ public final class TranslationCache {
 
     /** 寫進戳記的模組版本，純粹給回報時看是哪一版寫的。由 {@code WynnChaYuan} 啟動時填入。 */
     public static volatile String modVersion = "?";
+
+    /**
+     * 譯文是不是從 GitHub 同步來的（設定的 {@code source}）。由 {@code WynnChaYuan} 啟動時填入。
+     *
+     * <p>切成「只用本機檔案」的人，那個資料夾就是他自己的工作區，升版不該去動它——
+     * {@link #refreshAfterUpgrade} 整支會跳過。見 #979。
+     */
+    public static volatile boolean syncsFromGitHub = true;
 
     private static final DateTimeFormatter WHEN = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
 
@@ -84,11 +97,31 @@ public final class TranslationCache {
      * 不會被蓋掉。換完把戳記的版本改成這一版，下次啟動就不再重做。
      * 背景同步照常跑，GitHub 上若比 jar 更新，隨後會再換上去。
      *
+     * <h2>自己改過的檔不能換（#979）</h2>
+     * 「同步來的檔」裡也包含譯者<b>後來自己改過</b>的那幾個——快取資料夾正是他們改檔
+     * 的地方。只看檔名的話這兩種分不出來，於是升一次版就把人家改的字整份蓋掉，
+     * 而且 F6 的「自動更新翻譯」關著也一樣會發生（那個開關管的是要不要去 GitHub 抓，
+     * 這裡換的是 jar 內建的那一份，走的是另一條路，連聊天室都不會說一聲）。
+     *
+     * <p>兩道防線：
+     * <ol>
+     *   <li>設定切到「只用本機檔案」的人整支跳過（{@link #syncsFromGitHub}）。
+     *       他沒有在同步，戳記裡的 {@code files} 只是以前留下的，拿它來蓋等於無故刪人家的稿。</li>
+     *   <li>還在同步的人，戳記除了檔名也記每個檔的雜湊（{@code hashes}）：
+     *       跟上次同步下來的那一份一模一樣才換，不一樣就是有人動過，留著不碰。</li>
+     * </ol>
+     *
+     * <p>0.2.7 以前的戳記沒有雜湊，那一次分不出來，照舊行為換掉——否則上面那個
+     * 0.2.0_4 的回報會原封不動地回來。換完就有雜湊了，之後都判得出來。
+     *
      * @return 換了幾個檔
      */
     static int refreshAfterUpgrade(Path langDir, String lang) {
         if (modVersion == null || modVersion.isBlank() || "?".equals(modVersion)) {
             return 0;
+        }
+        if (!syncsFromGitHub) {
+            return 0;                          // 只用本機檔案的人，資料夾是他的，不碰。見 #979
         }
         Path stampFile = langDir.resolve(STAMP);
         JsonObject stamp = SafeFiles.readObject(stampFile, 1L << 20);
@@ -100,19 +133,42 @@ public final class TranslationCache {
         if (modVersion.equals(mod)) {
             return 0;
         }
+        JsonObject hashes = stamp.has("hashes") && stamp.get("hashes").isJsonObject()
+                ? stamp.getAsJsonObject("hashes") : null;
+        JsonObject fresh = new JsonObject();
         int refreshed = 0;
+        int kept = 0;
         for (JsonElement el : stamp.getAsJsonArray("files")) {
             if (!el.isJsonPrimitive()) {
                 continue;
             }
             String name = el.getAsString();
-            if (name.endsWith(".json") && FileIndex.safeName(name)
-                    && StarterFiles.restore(langDir, lang, name)) {
+            if (!name.endsWith(".json") || !FileIndex.safeName(name)) {
+                continue;
+            }
+            Path file = langDir.resolve(name);
+            String now = hashOf(file);
+            String was = hashes != null && hashes.has(name) && hashes.get(name).isJsonPrimitive()
+                    ? hashes.get(name).getAsString() : null;
+            // 檔不在了（now 為 null）就補一份回來；在的話要跟上次寫下的對得上才換。
+            // was 為 null 是 0.2.7 以前的戳記，分不出來，照舊行為換掉（見 #979 的備註）
+            if (now != null && was != null && !now.equals(was)) {
+                // 記著的仍然是「上次同步下來的那一份」，不是他改成的樣子——
+                // 寫成現在這樣的話，下一次升級就會把它判成「沒動過」而蓋掉
+                remember(fresh, name, was);
+                kept++;
+                continue;
+            }
+            if (StarterFiles.restore(langDir, lang, name)) {
                 refreshed++;
+                remember(fresh, name, hashOf(file));
+            } else {
+                remember(fresh, name, now);
             }
         }
         StarterFiles.restore(langDir, lang, "_index.json");
         stamp.addProperty("mod", modVersion);
+        stamp.add("hashes", fresh);
         try {
             SafeFiles.writeAtomically(stampFile,
                     new GsonBuilder().setPrettyPrinting().create().toJson(stamp));
@@ -123,7 +179,34 @@ public final class TranslationCache {
             System.out.println("[WynnChaYuan] 模組換了版本（" + mod + " → " + modVersion
                     + "），譯文快取 " + langDir.getFileName() + " 換回內建的 " + refreshed + " 個檔");
         }
+        if (kept > 0) {
+            System.out.println("[WynnChaYuan] 譯文快取 " + langDir.getFileName() + " 有 " + kept
+                    + " 個檔跟上次同步下來的不一樣（有人改過），沒有動它們");
+        }
         return refreshed;
+    }
+
+    private static void remember(JsonObject hashes, String name, String hash) {
+        if (hash != null) {
+            hashes.addProperty(name, hash);
+        }
+    }
+
+    /**
+     * 檔案內容的雜湊，用來判斷「這個檔還是我們上次寫下的那一份嗎」。
+     *
+     * <p>讀不到、或根本不是個檔，回 {@code null}——呼叫端把那當成「不在了」，該補一份回來。
+     */
+    private static String hashOf(Path file) {
+        try {
+            if (!Files.isRegularFile(file)) {
+                return null;
+            }
+            return HexFormat.of().formatHex(
+                    MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(file)));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
@@ -234,12 +317,18 @@ public final class TranslationCache {
         }
         JsonObject stamp = new JsonObject();
         stamp.addProperty("_note", "WynnChaYuan 的譯文快取記錄。format 對不上時整包會移到 "
-                + OLD + "/；files 是從 GitHub 同步來的檔，不在這裡的檔（自己放的）不會被自動刪掉。");
+                + OLD + "/；files 是從 GitHub 同步來的檔，不在這裡的檔（自己放的）不會被自動刪掉；"
+                + "hashes 是同步下來那一刻的內容，之後對不上就表示有人自己改過，升版時不會被蓋掉。");
         stamp.addProperty("format", FORMAT);
         stamp.addProperty("mod", modVersion);
         JsonArray files = new JsonArray();
         tracked.forEach(files::add);
         stamp.add("files", files);
+        JsonObject hashes = new JsonObject();
+        for (String name : tracked) {
+            remember(hashes, name, hashOf(langDir.resolve(name)));
+        }
+        stamp.add("hashes", hashes);
         try {
             SafeFiles.writeAtomically(langDir.resolve(STAMP),
                     new GsonBuilder().setPrettyPrinting().create().toJson(stamp));

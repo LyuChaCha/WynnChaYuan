@@ -91,6 +91,8 @@ public final class UpgradeSafetyTest {
         obsoleteSyncedFilesAreRemoved();
         newerCacheFormatIsSetAside();
         staleCacheRefreshedOnUpgrade();
+        editedCacheSurvivesUpgrade();
+        localOnlyCacheUntouchedOnUpgrade();
         brokenCacheFileIsRestored();
         oldVersionFolder();
         playerFolder();
@@ -466,6 +468,76 @@ public final class UpgradeSafetyTest {
                     Files.readString(dir.resolve("misc.json")).contains("同步來的新譯文"));
         } finally {
             TranslationCache.modVersion = before;
+            deleteTree(config);
+        }
+    }
+
+    /**
+     * #979 實機回報：自己改過的譯文檔，升一次版就被 jar 內建的那份整份蓋掉。
+     *
+     * <p>戳記記著同步那一刻的雜湊，所以「原封不動」與「有人改過」分得出來：
+     * 前者該換成新版 jar 的（那是 0.2.0_4 那個回報），後者不能碰。
+     */
+    private static void editedCacheSurvivesUpgrade() throws Exception {
+        Path config = Files.createTempDirectory("wcy-up-edited");
+        String before = TranslationCache.modVersion;
+        try {
+            Path dir = Languages.dir(config, "zh_tw");
+            StarterFiles.installIfEmpty(dir, "zh_tw");
+            // 同步下來的兩個檔，戳記連雜湊一起記
+            Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"同步來的\"}");
+            Files.writeString(dir.resolve("npc.json"), "{\"Aledar\": \"同步來的\"}");
+            List<String> synced = List.of("misc.json", "npc.json");
+            TranslationCache.record(dir, synced, synced, true);
+            JsonObject stamp = JsonParser.parseString(
+                    Files.readString(dir.resolve("_cache.json"))).getAsJsonObject();
+            check("戳記記下了同步那一刻的雜湊",
+                    stamp.has("hashes") && stamp.getAsJsonObject("hashes").has("misc.json"));
+            // 之後譯者自己改了其中一個
+            Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"我自己改的\"}");
+
+            TranslationCache.modVersion = "9.9.9";
+            TranslationCache.prepare(dir, "zh_tw");
+            check("自己改過的檔升版後還在",
+                    Files.readString(dir.resolve("misc.json")).contains("我自己改的"));
+            String npc = Files.readString(dir.resolve("npc.json"));
+            check("沒動過的檔照舊換回內建的",
+                    !npc.contains("同步來的") && npc.length() > 1000);
+
+            // 改過的那個檔，新的戳記要記著它現在的內容，不然下一次升版又被判成「沒動過」
+            Files.writeString(dir.resolve("npc.json"), "{\"Aledar\": \"又是同步來的\"}");
+            TranslationCache.modVersion = "9.9.10";
+            TranslationCache.prepare(dir, "zh_tw");
+            check("再升一版，自己改的還是沒被碰",
+                    Files.readString(dir.resolve("misc.json")).contains("我自己改的"));
+        } finally {
+            TranslationCache.modVersion = before;
+            deleteTree(config);
+        }
+    }
+
+    /** #979：切到「只用本機檔案」的人，升版時整個快取資料夾不該被動。 */
+    private static void localOnlyCacheUntouchedOnUpgrade() throws Exception {
+        Path config = Files.createTempDirectory("wcy-up-local");
+        String before = TranslationCache.modVersion;
+        boolean syncing = TranslationCache.syncsFromGitHub;
+        try {
+            Path dir = Languages.dir(config, "zh_tw");
+            StarterFiles.installIfEmpty(dir, "zh_tw");
+            Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"我自己翻的\"}");
+            // 以前同步過，所以戳記裡有這個檔名（0.2.7 以前的戳記，沒有雜湊）
+            Files.writeString(dir.resolve("_cache.json"),
+                    "{\"format\": 1, \"mod\": \"0.0.1\", \"files\": [\"misc.json\"]}");
+            TranslationCache.modVersion = "9.9.9";
+            TranslationCache.syncsFromGitHub = false;
+            TranslationCache.prepare(dir, "zh_tw");
+            check("只用本機檔案時，升版不換任何同步來的檔",
+                    Files.readString(dir.resolve("misc.json")).contains("我自己翻的"));
+            check("戳記也不動（切回 GitHub 時還認得出來）",
+                    Files.readString(dir.resolve("_cache.json")).contains("0.0.1"));
+        } finally {
+            TranslationCache.modVersion = before;
+            TranslationCache.syncsFromGitHub = syncing;
             deleteTree(config);
         }
     }
