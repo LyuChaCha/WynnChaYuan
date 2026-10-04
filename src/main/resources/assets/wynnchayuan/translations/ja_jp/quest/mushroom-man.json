@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 80,
-  "translated": 80,
+  "count": 82,
+  "translated": 82,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -352,6 +352,16 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
+  "Mushroom Man#040": {
+   "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
+   "dst": "あ、ありがとな、兵士さんたち！あ、あれは――い、いや、その。だ、大丈夫、だったと、思う。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "Stage 4",
+   "speaker": "Yahya",
+   "source": "wiki"
+  },
   "Mushroom Man#041": {
    "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
    "dst": "…あ、そうか。今、お、お金を払わなきゃ…だめか？へへ。[{~} エメラルド] で、い、いいか…？",
@@ -490,6 +500,16 @@
    "quest": "Mushroom Man",
    "stage": "Stage 5",
    "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Mushroom Man#056": {
+   "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
+   "dst": "{p} へ行き、[{~1}, {~2}, -{~3}] で軍の助けを求める。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Mushroom Man",
+   "stage": "Stage 6",
+   "speaker": "",
    "source": "wiki"
   },
   "Mushroom Man#057": {

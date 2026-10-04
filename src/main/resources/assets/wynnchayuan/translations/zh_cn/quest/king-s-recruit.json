@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "King's Recruit",
-  "count": 114,
-  "translated": 114,
+  "count": 128,
+  "translated": 128,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -72,6 +72,16 @@
    "speaker": "???",
    "source": "wiki"
   },
+  "King's Recruit#007": {
+   "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
+   "dst": "下大篷车，与 [-{~}, {~}, -{~}] 的大篷车司机对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#008": {
    "src": "Hm... I swear I hit this same darn boulder every time I make this trip. Sorry folks.",
    "dst": "嗯……我发誓每次走这趟路都会撞上这块该死的大石头。抱歉了，各位。",
@@ -130,6 +140,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 2",
    "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#014": {
+   "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
+   "dst": "沿着小路走向 [-{~}, {~}, -{~}] 通往 Wynn 行省的大门。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
    "source": "wiki"
   },
   "King's Recruit#015": {
@@ -272,6 +292,16 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
+  "King's Recruit#029": {
+   "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 的士兵对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#030": {
    "src": "A soldier? What are you doing all the way out here?",
    "dst": "士兵？你怎么跑到这么远的地方来？",
@@ -340,6 +370,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 6",
    "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#037": {
+   "src": "Cross the bridge at [-{~}, {~}, -{~}].",
+   "dst": "在 [-{~}, {~}, -{~}] 过桥。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "",
    "source": "wiki"
   },
   "King's Recruit#038": {
@@ -622,6 +662,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#066": {
+   "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
+   "dst": "进入 [-{~}, {~}, -{~}] 的洞窟，找些护甲。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#067": {
    "src": "We should return to the guard to see if he'll let us through now!",
    "dst": "我们该回去找守卫，看看他现在肯不肯让我们过去！",
@@ -632,6 +682,16 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#069": {
+   "src": "So you found some armor, huh?",
+   "dst": "所以你们找到盔甲了？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
   "King's Recruit#070": {
    "src": "Yes, a helmet! Will you let us pass now?",
    "dst": "对，一顶头盔！现在可以让我们过去了吗？",
@@ -640,6 +700,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#071": {
+   "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
+   "dst": "慢着，新兵。装备盔甲之前，你得先把它鉴定过。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
    "source": "wiki"
   },
   "King's Recruit#072": {
@@ -655,6 +725,26 @@
   "King's Recruit#073": {
    "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
    "dst": "你可以到物品鉴定师那里鉴定物品。世界上每座城市都有，为了方便，我们这里也放了一位。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#074": {
+   "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "到物品鉴定师那里把头盔鉴定好，戴上之后再回来找我。做完我就放你们过去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#076": {
+   "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
+   "dst": "我看到你戴上头盔了。很好，现在可以过去了。我来帮你们开门。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -762,9 +852,29 @@
    "speaker": "Lieutenant",
    "source": "wiki"
   },
+  "King's Recruit#088": {
+   "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 的中尉对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#089": {
    "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
    "dst": "总算来援兵了！等一下……你们是刚从 Fruma 来的，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#090": {
+   "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
+   "dst": "算了，这一带现在应该清干净了。毕竟 {p} 就在前面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -962,9 +1072,29 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
+  "King's Recruit#110": {
+   "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
+   "dst": "与 [-{~}, {~}, -{~}] 的 {p} 国王对话。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
   "King's Recruit#111": {
    "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
    "dst": "欢迎来到 Wynn 行省！看你们这一身狼狈，我想你们来这里的路上一定经历了不少冒险。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#112": {
+   "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
+   "dst": "新兵们，这就是高贵的 {p} 堡垒，我们辽阔行省的伟大城市之一！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "King's Recruit",
@@ -1030,6 +1160,16 @@
    "quest": "King's Recruit",
    "stage": "Stage 22",
    "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#119": {
+   "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
+   "dst": "哈，我打算不久后往 {p} 的方向去，不过路上好像会经过一个叫 {p} 的地方……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
    "source": "wiki"
   },
   "King's Recruit#120": {
