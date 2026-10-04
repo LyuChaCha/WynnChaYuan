@@ -1,12 +1,30 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.2.7",
+  "latest": "0.2.7_1",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
     "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
   },
   "notes": {
+  "0.2.7_1": {
+    "headline": "Translation files you edited yourself are no longer overwritten when the mod updates",
+    "items": [
+      "Translation files you had edited yourself were replaced with the built-in ones the first time you launched a new version of the mod, even with \"auto-update translations\" turned off. Folders set to \"local files only\" are now left alone entirely, and for everyone else only files that still match what was last downloaded are replaced."
+    ],
+    "zh_tw": {
+      "headline": "升級模組之後，自己改過的譯文檔不再被蓋掉",
+      "items": [
+        "自己改過的譯文檔，在裝上新版後第一次啟動時會被換成內建的那一份，就算 F6 的「自動更新翻譯」是關著的也一樣。現在設定成「只用本機檔案」的資料夾完全不會被動，其餘的也只換內容還跟上次下載時一樣的檔。"
+      ]
+    },
+    "zh_cn": {
+      "headline": "升级模组之后，自己改过的译文文件不再被覆盖",
+      "items": [
+        "自己改过的译文文件，在装上新版后第一次启动时会被换成内置的那一份，就算 F6 的「自动更新翻译」是关着的也一样。现在设置成「只用本机文件」的文件夹完全不会被动，其余的也只换内容还跟上次下载时一样的文件。"
+      ]
+    }
+  },
   "0.2.7": {
     "headline": "Dialogue no longer switches wording halfway through typing, and the other four languages gained over two thousand entries each",
     "items": [
