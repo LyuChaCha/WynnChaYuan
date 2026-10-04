@@ -158,21 +158,21 @@
   },
   "ability-shared#0072": {
    "src": "ÀÀÀÀ{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "ÀÀÀÀ{#} 金虔: {~} 敵人抗性降低 ({#})",
+   "dst": "ÀÀÀÀ{#} 金虔：{~} 敵人抗性降低 ({#})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0071": {
    "src": "ÀÀÀÀ{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "ÀÀÀÀ{#} 蒼逆: {~} 敵人速度降低 ({#})",
+   "dst": "ÀÀÀÀ{#} 蒼逆：{~} 敵人移速降低 ({#})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
   },
   "ability-shared#0073": {
    "src": "ÀÀÀÀ{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "ÀÀÀÀ{#} 赤狂: {~} 敵人傷害降低 ({#})",
+   "dst": "ÀÀÀÀ{#} 赤狂：{~} 敵人傷害降低 ({#})",
    "domain": "ability",
    "ability": "",
    "code": "SHARED"
@@ -332,7 +332,7 @@
   },
   "ability-shared#0009": {
    "src": "{#} Earth Damage: +{~}-{~}",
-   "dst": "{#} 地屬性傷害值增加: {~1}-{~2}",
+   "dst": "{#} 地屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -397,7 +397,7 @@
   },
   "ability-shared#0013": {
    "src": "{#} Thunder Damage: +{~}-{~}",
-   "dst": "{#} 雷屬性傷害值增加: {~1}-{~2}",
+   "dst": "{#} 雷屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -462,7 +462,7 @@
   },
   "ability-shared#0017": {
    "src": "{#} Air Damage: +{~}-{~}",
-   "dst": "{#} 風屬性傷害值增加: {~1}-{~2}",
+   "dst": "{#} 風屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -527,7 +527,7 @@
   },
   "ability-shared#0021": {
    "src": "{#} Fire Damage: +{~}-{~}",
-   "dst": "{#} 火屬性傷害值增加: {~1}-{~2}",
+   "dst": "{#} 火屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -592,7 +592,7 @@
   },
   "ability-shared#0025": {
    "src": "{#} Water Damage: +{~}-{~}",
-   "dst": "{#} 水屬性傷害值增加: {~1}-{~2}",
+   "dst": "{#} 水屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -653,7 +653,7 @@
   },
   "ability-shared#0029": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "{#} 效果: {~} 友軍傷害增加 (⚔)",
+   "dst": "{#} 效果: +{~} 友軍傷害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -791,7 +791,7 @@
   },
   "ability-shared#0038": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-   "dst": "{#} 效果: 每次命中 {~1} 敵人速度降低 ({#}) (上限 {~2})",
+   "dst": "{#} 效果: 每次命中給予敵人 {~1} 緩速 ({#})，最多 {~2} 層",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -944,7 +944,7 @@
   },
   "ability-shared#0048": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Self",
-   "dst": "{#} 效果: {~} 自身抗性增加 (❁)",
+   "dst": "{#} 效果: {~} 自身抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -959,7 +959,7 @@
   },
   "ability-shared#0049": {
    "src": "{#} Total Damage: {~} (of your DPS, per strike)",
-   "dst": "{#} 每次打擊傷害: {~} (你的每秒傷害)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，每次打擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

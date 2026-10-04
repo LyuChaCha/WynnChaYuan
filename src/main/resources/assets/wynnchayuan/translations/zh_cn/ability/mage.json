@@ -127,7 +127,7 @@
   },
   "ability-mage#0240": {
    "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#}{#}to deal +{~} damage.",
-   "dst": "陨石、普攻与粉末特效会消耗\n不稳定 {#}{#}，多造成 {~} 伤害。",
+   "dst": "陨石、普攻与粉末技能会消耗\n不稳定 {#}{#}，多造成 {~} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -663,7 +663,7 @@
   },
   "ability-mage#0270": {
    "src": "{#}{#}Effect: {~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#}效果: 对敌人 {~} 缓速({#})",
+   "dst": "{#}{#}效果: 对敌人 {~} 缓速 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -694,7 +694,7 @@
   },
   "ability-mage#0247": {
    "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-   "dst": "{#}{#}效果: 每次命中给予敌人 {~1} 减速 ({#})，最多 {~2} 层",
+   "dst": "{#}{#}效果: 每次命中给予敌人 {~1} 缓速 ({#})，最多 {~2} 层",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3238,7 +3238,7 @@
   },
   "ability-mage#0139": {
    "src": "{#} Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
-   "dst": "{#} 效果: 对友军 +{~1} 移动速度 (每 {~2} 秒，上限 +{~3})",
+   "dst": "{#} 效果: 友军移动速度 +{~1} (每 {~2} 秒，最多 +{~3})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
