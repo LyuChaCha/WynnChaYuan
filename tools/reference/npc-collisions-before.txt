@@ -1,0 +1,825 @@
+# npc.json：79 對碰撞
+
+[5/6 分得開] 要修   alcohol merchant / alcohol stand merchant
+   zh_tw   酒類商人                           | 酒攤商人
+   zh_cn   酒类商人                           | 酒摊商人
+   ja_jp   酒商人                            | 酒の屋台商人
+   ko_kr   주류 상인                          | 술 노점 상인
+   ru_ru   Торговец алкоголем             | Торговец алкоголем  <<
+   es_es   Mercader de licores            | Mercader del puesto de bebidas
+
+[5/6 分得開] 要修   angler / fisher
+   zh_tw   {p} 釣客 {#}{#}                  | {p} 漁夫 {#}{#}
+   zh_cn   {p} 钓客 {#}{#}                  | {p} 渔夫 {#}{#}
+   ja_jp   {p}の釣り人 {#}{#}                 | {p}の漁師 {#}{#}
+   ko_kr   {p} 낚시꾼 {#}{#}                 | {p} 어부 {#}{#}
+   ru_ru   Рыболов {p} {#}{#}             | Рыбак {p} {#}{#}
+   es_es   Pescador de {p} {#}{#}         | Pescador de {p} {#}{#}  <<
+
+[5/6 分得開] 要修   apprentice / student
+   zh_tw   學徒                             | 學生
+   zh_cn   学徒                             | 学生
+   ja_jp   見習い                            | 生徒
+   ko_kr   견습생                            | 학생
+   ru_ru   Ученик                         | Ученик  <<
+   es_es   Aprendiz                       | Estudiante
+
+[5/6 分得開] 要修   barkeep / bartender
+   zh_tw   酒保                             | 調酒師
+   zh_cn   酒保                             | 调酒师
+   ja_jp   酒場の主人                          | バーテンダー
+   ko_kr   바텐더                            | 바텐더  <<
+   ru_ru   Трактирщик                     | Бармен
+   es_es   Tabernero                      | Camarero
+
+[5/6 分得開] 要修   barkeep / innkeeper
+   zh_tw   酒保                             | 旅店老闆 {#}{#}
+   zh_cn   酒保                             | 旅店老板 {#}{#}
+   ja_jp   酒場の主人                          | 宿屋の主人 {#}{#}
+   ko_kr   바텐더                            | 여관 주인 {#}{#}
+   ru_ru   Трактирщик                     | Трактирщик {#}{#}  <<
+   es_es   Tabernero                      | Posadero {#}{#}
+
+[5/6 分得開] 要修   barkeeper / bartender
+   zh_tw   酒保                             | 調酒師
+   zh_cn   酒馆老板                           | 调酒师
+   ja_jp   酒場の主人                          | バーテンダー
+   ko_kr   바텐더                            | 바텐더  <<
+   ru_ru   Трактирщик                     | Бармен
+   es_es   Tabernero                      | Camarero
+
+[5/6 分得開] 要修   barkeeper / innkeeper
+   zh_tw   酒保                             | 旅店老闆 {#}{#}
+   zh_cn   酒馆老板                           | 旅店老板 {#}{#}
+   ja_jp   酒場の主人                          | 宿屋の主人 {#}{#}
+   ko_kr   바텐더                            | 여관 주인 {#}{#}
+   ru_ru   Трактирщик                     | Трактирщик {#}{#}  <<
+   es_es   Tabernero                      | Posadero {#}{#}
+
+[5/6 分得開] 要修   bartender / server
+   zh_tw   調酒師                            | 服務生
+   zh_cn   调酒师                            | 服务员
+   ja_jp   バーテンダー                         | 給仕
+   ko_kr   바텐더                            | 종업원
+   ru_ru   Бармен                         | Официант
+   es_es   Camarero                       | Camarero  <<
+
+[5/6 分得開] 要修   bartender / waiter
+   zh_tw   調酒師                            | 服務生
+   zh_cn   调酒师                            | 服务生
+   ja_jp   バーテンダー                         | ウェイター
+   ko_kr   바텐더                            | 웨이터
+   ru_ru   Бармен                         | Официант
+   es_es   Camarero                       | Camarero  <<
+
+[5/6 分得開] 要修   broodmother / spider mother
+   zh_tw   育巢母蛛 {#}{#}                    | 蜘蛛母體
+   zh_cn   育巢母蛛 {#}{#}                    | 蜘蛛母后
+   ja_jp   巣の母 {#}{#}                     | 母グモ
+   ko_kr   어미 거미 {#}{#}                   | 어미 거미  <<
+   ru_ru   Праматерь выводка {#}{#}       | Паучья мать
+   es_es   Madre de la nidada {#}{#}      | Madre araña
+
+[5/6 分得開] 要修   brute / thug
+   zh_tw   蠻兵 {#}{#}                      | 惡棍 {#}{#}
+   zh_cn   蛮兵 {#}{#}                      | 恶棍 {#}{#}
+   ja_jp   荒くれ {#}{#}                     | ならず者 {#}{#}
+   ko_kr   난폭자 {#}{#}                     | 불량배 {#}{#}
+   ru_ru   Громила {#}{#}                 | Громила {#}{#}  <<
+   es_es   Bruto {#}{#}                   | Matón {#}{#}
+
+[5/6 分得開] 要修   bushpig / river hog
+   zh_tw   叢林豬 {#}{#}                     | 河豬 {#}{#}
+{#} {#}
+   zh_cn   丛林猪 {#}{#}                     | 河猪 {#}{#}
+{#} {#}
+   ja_jp   カワイノシシ {#}{#}                  | カワイノシシ {#}{#}
+{#} {#}  <<
+   ko_kr   덤불멧돼지 {#}{#}                   | 강 멧돼지 {#}{#}
+{#} {#}
+   ru_ru   Кистеухая свинья {#}{#}        | Речная свинья {#}{#}
+{#} {#}
+   es_es   Potamoquero {#}{#}             | Cerdo de río {#}{#}
+{#} {#}
+
+[5/6 分得開] 要修   carp ✖ ⓚ fishing lv min ✖ equipped tool fishing rod / koi ✖ ⓚ fishing lv min ✖ equipped tool fishing rod
+   zh_tw   鯉魚
+✖ Ⓚ 釣魚等級下限: {~}
+✖ 裝備工具: 釣竿  | 錦鯉
+✖ Ⓚ 釣魚等級下限: {~}
+✖ 裝備工具: 釣竿
+   zh_cn   鲤鱼
+✖ Ⓚ 需要钓鱼等级: {~}
+✖ 装备的工具: 钓竿 | 锦鲤
+✖ Ⓚ 需要钓鱼等级: {~}
+✖ 装备的工具: 钓竿
+   ja_jp   コイ
+✖ Ⓚ 釣り 最低Lv: {~}
+✖ 装備ツール: 釣 | 鯉
+✖ Ⓚ 釣り 最低Lv: {~}
+✖ 装備ツール: 釣り竿
+   ko_kr   잉어
+✖ Ⓚ 필요 낚시 레벨: {~}
+✖ 장착 도구:  | 잉어
+✖ Ⓚ 필요 낚시 레벨: {~}
+✖ 장착 도구: 낚싯대  <<
+   ru_ru   Карп
+✖ Ⓚ Мин. ур. рыбалки: {~} | Кои
+✖ Ⓚ Мин. ур. рыбалки: {~}
+✖ Экипированный инструмент: Удочка
+   es_es   Carpa
+✖ Ⓚ Nv. mín. de pesca: { | Koi
+✖ Ⓚ Nv. mín. de pesca: {~}
+✖ Herramienta equipada: Caña de pescar
+
+[5/6 分得開] 要修   charred zombie / scorched zombie
+   zh_tw   焦黑殭屍                           | 焦灼的殭屍 {#}{#}
+   zh_cn   焦黑僵尸                           | 焦灼的僵尸 {#}{#}
+   ja_jp   黒焦げのゾンビ                        | 焦げたゾンビ {#}{#}
+   ko_kr   그을린 좀비                         | 그을린 좀비 {#}{#}  <<
+   ru_ru   Обугленный зомби               | Опалённый зомби {#}{#}
+   es_es   Zombi calcinado                | Zombi chamuscado {#}{#}
+
+[5/6 分得開] 要修   citizen / resident
+   zh_tw   {p} 市民                         | {p} 居民 {#}{#}
+   zh_cn   {p} 市民                         | {p} 居民 {#}{#}
+   ja_jp   {p}の市民                         | {p}の住人 {#}{#}
+   ko_kr   {p} 시민                         | {p} 주민 {#}{#}
+   ru_ru   Житель {p}                     | Житель {p} {#}{#}  <<
+   es_es   Ciudadano de {p}               | Residente de {p} {#}{#}
+
+[5/6 分得開] 要修   corkian security executive / corkian security overseer
+   zh_tw   Corkian 保全主管                   | Corkian 保全監督
+   zh_cn   Corkian 安保主管                   | Corkian 安保主管  <<
+   ja_jp   Corkus の警備責任者                  | Corkus の警備監督
+   ko_kr   Corkus 보안 책임자                  | Corkus 보안 감독관
+   ru_ru   Начальник охраны Corkian       | Надзиратель охраны Corkian
+   es_es   Jefe de seguridad corkiano     | Supervisor de seguridad corkiano
+
+[5/6 分得開] 要修   corrupted mineral / corrupted ore
+   zh_tw   腐敗礦物 {#}{#}                    | 腐敗礦石 {#}{#}
+   zh_cn   腐化矿物 {#}{#}                    | 腐化矿石 {#}{#}
+   ja_jp   腐敗した鉱物 {#}{#}                  | 腐敗した鉱石 {#}{#}
+   ko_kr   타락한 광물 {#}{#}                  | 타락한 광석 {#}{#}
+   ru_ru   Осквернённый минерал {#}{#}    | Осквернённая руда {#}{#}
+   es_es   Mineral corrupto {#}{#}        | Mineral corrupto {#}{#}  <<
+
+[5/6 分得開] 要修   corrupted slinger / corruption slinger
+   zh_tw   腐敗投石手 {#}{#}                   | 腐敗投石手 {#}{#}  <<
+   zh_cn   腐化投石手 {#}{#}                   | 腐化抛石手 {#}{#}
+   ja_jp   腐敗した投石兵 {#}{#}                 | 腐敗を投げるもの {#}{#}
+   ko_kr   타락한 투석병 {#}{#}                 | 타락의 투척병 {#}{#}
+   ru_ru   Осквернённый пращник {#}{#}    | Пращник скверны {#}{#}
+   es_es   Hondero corrupto {#}{#}        | Hondero de la Corrupción {#}{#}
+
+[5/6 分得開] 要修   drenched zombie / waterlogged zombie
+   zh_tw   濕透的殭屍 {#}{#}                   | 浸水殭屍
+   zh_cn   浑身湿透的僵尸 {#}{#}                 | 浸水僵尸
+   ja_jp   びしょ濡れのゾンビ {#}{#}               | 水浸しのゾンビ
+   ko_kr   흠뻑 젖은 좀비 {#}{#}                | 물먹은 좀비
+   ru_ru   Промокший зомби {#}{#}         | Разбухший от воды зомби
+   es_es   Zombi empapado {#}{#}          | Zombi empapado  <<
+
+[5/6 分得開] 要修   drunken crewman / drunken mate
+   zh_tw   醉酒船員 {#}{#}                    | 醉酒水手 {#}{#}
+   zh_cn   醉酒船员 {#}{#}                    | 醉酒水手 {#}{#}
+   ja_jp   酔っ払いの船員 {#}{#}                 | 酔っ払い航海士 {#}{#}
+   ko_kr   술 취한 선원 {#}{#}                 | 술 취한 항해사 {#}{#}
+   ru_ru   Пьяный матрос {#}{#}           | Пьяный матрос {#}{#}  <<
+   es_es   Tripulante borracho {#}{#}     | Marinero borracho {#}{#}
+
+[5/6 分得開] 要修   elderly man / old man
+   zh_tw   年長男子                           | 老人
+   zh_cn   老年男子                           | 老人
+   ja_jp   年配の男性                          | 老人
+   ko_kr   노인                             | 노인  <<
+   ru_ru   Пожилой мужчина                | Старик
+   es_es   Anciano                        | Viejo
+
+[5/6 分得開] 要修   explorer / ranger
+   zh_tw   探險家                            | 遊俠 {#}{#}
+{#} {#} {#}
+   zh_cn   探险家                            | 游侠 {#}{#}
+{#} {#} {#}
+   ja_jp   探検家                            | レンジャー {#}{#}
+{#} {#} {#}
+   ko_kr   탐험가                            | 레인저 {#}{#}
+{#} {#} {#}
+   ru_ru   Исследователь                  | Следопыт {#}{#}
+{#} {#} {#}
+   es_es   Explorador                     | Explorador {#}{#}
+{#} {#} {#}  <<
+
+[5/6 分得開] 要修   explorer / scout
+   zh_tw   探險家                            | 斥候
+   zh_cn   探险家                            | 斥候
+   ja_jp   探検家                            | 斥候
+   ko_kr   탐험가                            | 정찰병
+   ru_ru   Исследователь                  | Разведчик
+   es_es   Explorador                     | Explorador  <<
+
+[5/6 分得開] 要修   firebrand / propagandist
+   zh_tw   縱火者 {#}{#}                     | 宣傳員 {#}{#}
+   zh_cn   煽火者 {#}{#}                     | 宣传员 {#}{#}
+   ja_jp   扇動者 {#}{#}                     | 扇動者 {#}{#}  <<
+   ko_kr   방화범 {#}{#}                     | 선전원 {#}{#}
+   ru_ru   Поджигатель {#}{#}             | Пропагандист {#}{#}
+   es_es   Incendiario {#}{#}             | Propagandista {#}{#}
+
+[5/6 分得開] 要修   food merchant / food stand merchant
+   zh_tw   食物商人                           | 小吃攤商人
+   zh_cn   食物商人                           | 小吃摊商人
+   ja_jp   食料商人                           | 食べ物の屋台商人
+   ko_kr   음식 상인                          | 음식 노점 상인
+   ru_ru   Торговец едой                  | Торговец едой  <<
+   es_es   Mercader de comida             | Mercader del puesto de comida
+
+[5/6 分得開] 要修   grume / the congelation
+   zh_tw   凝塊 {#}{#}                      | 凝固體 {#}{#}
+   zh_cn   凝块 {#}{#}                      | 凝固体 {#}{#}
+   ja_jp   凝血 {#}{#}                      | 凝結 {#}{#}
+   ko_kr   응혈 {#}{#}                      | 응고체 {#}{#}
+   ru_ru   Сгусток {#}{#}                 | Сгусток {#}{#}  <<
+   es_es   Grumo {#}{#}                   | La Congelación {#}{#}
+
+[5/6 分得開] 要修   guard / watch
+   zh_tw   {p} 守衛                         | {p} 守望隊 {#}{#}
+   zh_cn   {p} 守卫                         | {p} 守望队 {#}{#}
+   ja_jp   {p}の衛兵                         | {p}の見張り {#}{#}
+   ko_kr   {p} 경비병                        | {p} 경비대 {#}{#}
+   ru_ru   Стражник {p}                   | Стража {p} {#}{#}
+   es_es   Guardia de {p}                 | Guardia de {p} {#}{#}  <<
+
+[5/6 分得開] 要修   hellhound / infernal hound
+   zh_tw   地獄犬 {#}{#}                     | 地獄獵犬 {#}{#}
+   zh_cn   地狱犬 {#}{#}                     | 地狱猎犬 {#}{#}
+   ja_jp   ヘルハウンド {#}{#}                  | 業火の猟犬 {#}{#}
+   ko_kr   헬하운드 {#}{#}                    | 지옥 사냥개 {#}{#}
+   ru_ru   Адская гончая {#}{#}           | Адская гончая {#}{#}  <<
+   es_es   Perro infernal {#}{#}          | Sabueso infernal {#}{#}
+
+[5/6 分得開] 要修   i wonder what thi doe fichu / wonder what s thi for fichu
+   zh_tw   不知道這是做什麼用的……
+Fichu             | 不知道這是做什麼用的……
+Fichu  <<
+   zh_cn   不知道这是做什么的……
+Fichu              | 不知道这是干什么用的……
+Fichu
+   ja_jp   これ、どうなるんだろう……
+Fichu            | これ、何に使うんだろう……
+Fichu
+   ko_kr   이건 뭘 하는 걸까...
+Fichu            | 이건 어디에 쓰는 걸까...
+Fichu
+   ru_ru   Интересно, что это делает...
+F | Интересно, для чего это...
+Fichu
+   es_es   Me pregunto qué hará esto...
+F | ¿Para qué servirá esto...?
+Fichu
+
+[5/6 分得開] 要修   jailkeeper / warden
+   zh_tw   獄卒 {#}{#}                      | 看守 {#}{#}
+   zh_cn   狱卒 {#}{#}                      | 看守 {#}{#}
+   ja_jp   看守 {#}{#}                      | 看守 {#}{#}  <<
+   ko_kr   교도관 {#}{#}                     | 감시관 {#}{#}
+   ru_ru   Тюремщик {#}{#}                | Надзиратель {#}{#}
+   es_es   Carcelero {#}{#}               | Celador {#}{#}
+
+[5/6 分得開] 要修   lava monster / molten monster
+   zh_tw   熔岩怪 {#}{#}                     | 熔融怪物 {#}{#}
+   zh_cn   熔岩怪 {#}{#}                     | 熔融怪物 {#}{#}
+   ja_jp   溶岩の怪物 {#}{#}                   | 溶岩の怪物 {#}{#}  <<
+   ko_kr   용암 괴물 {#}{#}                   | 용융 괴물 {#}{#}
+   ru_ru   Лавовый монстр {#}{#}          | Расплавленное чудовище {#}{#}
+   es_es   Monstruo de lava {#}{#}        | Monstruo fundido {#}{#}
+
+[5/6 分得開] 要修   ledant droneling / ledant grub
+   zh_tw   Ledant 幼蟲 {#}{#}               | Ledant 幼蟲 {#}{#}  <<
+   zh_cn   Ledant 幼工虫 {#}{#}              | Ledant 幼虫 {#}{#}
+   ja_jp   Ledant の小型ドローン {#}{#}          | Ledant の幼虫 {#}{#}
+   ko_kr   Ledant 새끼 일벌 {#}{#}            | Ledant 애벌레 {#}{#}
+   ru_ru   Трутень Ledant {#}{#}          | Личинка Ledant {#}{#}
+   es_es   Zanganillo ledant {#}{#}       | Larva ledant {#}{#}
+
+[5/6 分得開] 要修   midge / skeeter
+   zh_tw   蚋 {#}{#}                       | 小蚊 {#}{#}
+   zh_cn   蠓虫 {#}{#}                      | 小蚊 {#}{#}
+   ja_jp   ユスリカ {#}{#}                    | 蚊 {#}{#}
+   ko_kr   각다귀 {#}{#}                     | 모기 {#}{#}
+   ru_ru   Мошка {#}{#}                   | Комар {#}{#}
+   es_es   Mosquito {#}{#}                | Mosquito {#}{#}  <<
+
+[5/6 分得開] 要修   miner zombie / zombie miner
+   zh_tw   礦工殭屍 {#}{#}                    | 殭屍礦工 {#}{#}
+   zh_cn   矿工僵尸 {#}{#}                    | 僵尸矿工 {#}{#}
+   ja_jp   鉱夫ゾンビ {#}{#}                   | ゾンビの鉱夫 {#}{#}
+   ko_kr   광부 좀비 {#}{#}                   | 좀비 광부 {#}{#}
+   ru_ru   Зомби-шахтёр {#}{#}            | Зомби-шахтёр {#}{#}  <<
+   es_es   Zombi minero {#}{#}            | Minero zombi {#}{#}
+
+[5/6 分得開] 要修   mini quest gather carp i required level / mini quest gather koi i required level
+   zh_tw   {#}{#}
+迷你任務 - 採集鯉魚 I
+
+需求等級：{#} | {#}{#}
+迷你任務 - 採集錦鯉 I
+
+需求等級：{#}{~}
+   zh_cn   {#}{#}
+迷你任务 - 采集 鲤鱼 I
+
+需求等级：{# | {#}{#}
+迷你任务 - 采集 锦鲤 I
+
+需求等级：{#}{~}
+   ja_jp   {#}{#}
+ミニクエスト - コイ集め I
+
+必要レベル: | {#}{#}
+ミニクエスト - コイ集め I
+
+必要レベル: {#} {~}  <<
+   ko_kr   {#}{#}
+미니 퀘스트 - 잉어 채집 I
+
+필요 레벨 | {#}{#}
+미니 퀘스트 - 비단잉어 채집 I
+
+필요 레벨: {#}{~}
+   ru_ru   {#}{#}
+Мини-задание - Добыча к | {#}{#}
+Мини-задание - Ловля кои I
+
+Требуемый уровень: {#} {~}
+   es_es   {#}{#}
+Minimisión - Recolectar | {#}{#}
+Minimisión - Recolectar koi I
+
+Nivel requerido: {#}{~}
+
+[5/6 分得開] 要修   mud lurker / quagmire lurker
+   zh_tw   泥沼潛伏者 {#}{#}                   | 泥沼潛伏者 {#}{#}
+{#}  <<
+   zh_cn   泥浆潜伏者 {#}{#}                   | 泥沼潜伏者 {#}{#}
+{#}
+   ja_jp   泥に潜むもの {#}{#}                  | 泥沼に潜むもの {#}{#}
+{#}
+   ko_kr   진흙 잠복자 {#}{#}                  | 수렁 잠복자 {#}{#}
+{#}
+   ru_ru   Грязевой скрытень {#}{#}       | Трясинный скрытень {#}{#}
+{#}
+   es_es   Acechador del fango {#}{#}     | Acechador del lodazal {#}{#}
+{#}
+
+[5/6 分得開] 要修   oak / orc
+   zh_tw   橡木                             | 獸人
+   zh_cn   橡木                             | 兽人
+   ja_jp   オーク                            | オーク  <<
+   ko_kr   참나무                            | 오크
+   ru_ru   Дуб                            | Орк
+   es_es   Roble                          | Orco
+
+[5/6 分得開] 要修   prison guard / warden
+   zh_tw   獄警                             | 看守 {#}{#}
+   zh_cn   监狱守卫                           | 看守 {#}{#}
+   ja_jp   看守                             | 看守 {#}{#}  <<
+   ko_kr   교도관                            | 감시관 {#}{#}
+   ru_ru   Тюремный стражник              | Надзиратель {#}{#}
+   es_es   Guardia de la prisión          | Celador {#}{#}
+
+[5/6 分得開] 要修   ranger / scout
+   zh_tw   遊俠 {#}{#}
+{#} {#} {#}          | 斥候
+   zh_cn   游侠 {#}{#}
+{#} {#} {#}          | 斥候
+   ja_jp   レンジャー {#}{#}
+{#} {#} {#}       | 斥候
+   ko_kr   레인저 {#}{#}
+{#} {#} {#}         | 정찰병
+   ru_ru   Следопыт {#}{#}
+{#} {#} {#}    | Разведчик
+   es_es   Explorador {#}{#}
+{#} {#} {#}  | Explorador  <<
+
+[5/6 分得開] 要修   resident / villager
+   zh_tw   {p} 居民 {#}{#}                  | {p} 村民 {#}{#}
+   zh_cn   {p} 居民 {#}{#}                  | {p} 村民 {#}{#}
+   ja_jp   {p}の住人 {#}{#}                  | {p}の村人 {#}{#}
+   ko_kr   {p} 주민 {#}{#}                  | {p} 주민 {#}{#}  <<
+   ru_ru   Житель {p} {#}{#}              | Селянин {p} {#}{#}
+   es_es   Residente de {p} {#}{#}        | Aldeano de {p} {#}{#}
+
+[5/6 分得開] 要修   soaked zombie / waterlogged zombie
+   zh_tw   濕透的殭屍 {#}{#}
+{#} {#} {#}       | 浸水殭屍
+   zh_cn   湿透的僵尸 {#}{#}
+{#} {#} {#}       | 浸水僵尸
+   ja_jp   ずぶ濡れのゾンビ {#}{#}
+{#} {#} {#}    | 水浸しのゾンビ
+   ko_kr   흠뻑 젖은 좀비 {#}{#}
+{#} {#} {#}    | 물먹은 좀비
+   ru_ru   Промокший зомби {#}{#}
+{#} {#} | Разбухший от воды зомби
+   es_es   Zombi empapado {#}{#}
+{#} {#}  | Zombi empapado  <<
+
+[5/6 分得開] 要修   tea merchant / tea stand merchant
+   zh_tw   茶葉商人                           | 茶攤商人
+   zh_cn   茶叶商人                           | 茶摊商人
+   ja_jp   茶商人                            | 茶の屋台商人
+   ko_kr   차 상인                           | 차 노점 상인
+   ru_ru   Торговец чаем                  | Торговец чаем  <<
+   es_es   Mercader de té                 | Mercader del puesto de té
+
+[5/6 分得開] 要修   troll bonecrusher / troll splinterbone
+   zh_tw   巨魔碎骨者 {#}{#}                   | 巨魔裂骨者 {#}{#}
+   zh_cn   巨魔碾骨者 {#}{#}                   | 巨魔裂骨者 {#}{#}
+   ja_jp   トロールの骨砕き屋 {#}{#}               | トロールの骨砕き {#}{#}
+   ko_kr   트롤 뼈 분쇄자 {#}{#}                | 트롤 뼈 부수기 {#}{#}
+   ru_ru   Тролль-костолом {#}{#}         | Тролль-костолом {#}{#}  <<
+   es_es   Trol triturahuesos {#}{#}      | Trol rompehuesos {#}{#}
+
+[5/6 分得開] 要修   use your remote to / use your remote to ch
+   zh_tw   用你的遙控器                         | 用你的遙控器切
+   zh_cn   用你的遥控器                         | 用你的遥控器切
+   ja_jp   リモコンで                          | リモコンで切り
+   ko_kr   리모컨을 사용하여                      | 리모컨을 사용하여  <<
+   ru_ru   Используйте пульт, чтобы       | Используйте пульт, чтобы пе
+   es_es   Usa tu mando para              | Usa tu mando para cam
+
+[4/6 分得開] 要修   bar keeper / bartender
+   zh_tw   酒保 {#}{#}                      | 調酒師
+   zh_cn   酒保 {#}{#}                      | 调酒师
+   ja_jp   酒場の主人 {#}{#}                   | バーテンダー
+   ko_kr   바텐더 {#}{#}                     | 바텐더  <<
+   ru_ru   Бармен {#}{#}                  | Бармен  <<
+   es_es   Tabernero {#}{#}               | Camarero
+
+[4/6 分得開] 要修   bombycid / silk moth
+   zh_tw   蠶蛾 {#}{#}                      | 絲蛾 {#}{#}
+   zh_cn   蚕蛾 {#}{#}                      | 丝蛾 {#}{#}
+   ja_jp   カイコガ {#}{#}                    | カイコガ {#}{#}  <<
+   ko_kr   누에나방 {#}{#}                    | 누에나방 {#}{#}  <<
+   ru_ru   Шелкопряд {#}{#}               | Шёлковая моль {#}{#}
+   es_es   Bombícido {#}{#}               | Polilla de la seda {#}{#}
+
+[4/6 分得開] 要修   candy merchant / confectionery merchant
+   zh_tw   糖果商人                           | 甜點商人
+   zh_cn   糖果商人                           | 甜点商人
+   ja_jp   お菓子の商人                         | 菓子商人
+   ko_kr   사탕 상인                          | 과자 상인
+   ru_ru   Торговец сладостями            | Торговец сладостями  <<
+   es_es   Mercader de dulces             | Mercader de dulces  <<
+
+[4/6 分得開] 要修   conscript / recruit
+   zh_tw   {p} 徵召兵 {#}{#}                 | {p} 新兵 {#}{#}
+   zh_cn   {p} 征召兵 {#}{#}                 | {p} 新兵 {#}{#}
+   ja_jp   {p}の徴集兵 {#}{#}                 | {p}の新兵 {#}{#}
+   ko_kr   {p} 징집병 {#}{#}                 | {p} 신병 {#}{#}
+   ru_ru   Новобранец {p} {#}{#}          | Новобранец {p} {#}{#}  <<
+   es_es   Recluta de {p} {#}{#}          | Recluta de {p} {#}{#}  <<
+
+[4/6 分得開] 要修   dr urelix / scientist urelix
+   zh_tw   Urelix 博士                      | Urelix 科學家
+   zh_cn   Urelix 博士                      | Urelix 博士  <<
+   ja_jp   Urelix 博士                      | Urelix 博士  <<
+   ko_kr   Urelix 박사                      | 과학자 Urelix
+   ru_ru   Доктор Urelix                  | Учёный Urelix
+   es_es   Dr. Urelix                     | Científico Urelix
+
+[4/6 分得開] 要修   immolationer / immolatist
+   zh_tw   焚身者 {#}{#}                     | 獻火者 {#}{#}
+   zh_cn   焚身者 {#}{#}                     | 献火者 {#}{#}
+   ja_jp   焼身者 {#}{#}                     | 焼身教徒 {#}{#}
+   ko_kr   분신자 {#}{#}                     | 분신자 {#}{#}  <<
+   ru_ru   Самосожженец {#}{#}            | Самосожженец {#}{#}  <<
+   es_es   Inmolador {#}{#}               | Inmolatista {#}{#}
+
+[4/6 分得開] 要修   jailkeeper / prison guard
+   zh_tw   獄卒 {#}{#}                      | 獄警
+   zh_cn   狱卒 {#}{#}                      | 监狱守卫
+   ja_jp   看守 {#}{#}                      | 看守  <<
+   ko_kr   교도관 {#}{#}                     | 교도관  <<
+   ru_ru   Тюремщик {#}{#}                | Тюремный стражник
+   es_es   Carcelero {#}{#}               | Guardia de la prisión
+
+[4/6 分得開] 要修   parasite slime / parasitic slime
+   zh_tw   寄生史萊姆 {#}{#}                   | 寄生史萊姆 {#}{#}  <<
+   zh_cn   寄生史莱姆 {#}{#}                   | 寄生性史莱姆 {#}{#}
+   ja_jp   寄生スライム {#}{#}                  | 寄生性スライム {#}{#}
+   ko_kr   기생 슬라임 {#}{#}                  | 기생성 슬라임 {#}{#}
+   ru_ru   Паразитическая слизь {#}{#}    | Паразитическая слизь {#}{#}  <<
+   es_es   Slime parásito {#}{#}          | Slime parasitario {#}{#}
+
+[4/6 分得開] 要修   soldier ye sir / soldier yessir
+   zh_tw   {p} 士兵
+是，長官！                   | {p} 士兵
+是，長官！  <<
+   zh_cn   {p} 士兵
+是，长官！                   | {p} 士兵
+是，长官！  <<
+   ja_jp   {p} 兵士
+はっ、了解です！                | {p} 兵士
+イエッサー！
+   ko_kr   {p} 병사
+예, 알겠습니다!               | {p} 병사
+넵!
+   ru_ru   Солдат {p}
+Есть, сэр!          | Солдат {p}
+Так точно!
+   es_es   Soldado de {p}
+¡Sí, señor!     | Soldado de {p}
+¡A la orden!
+
+[4/6 分得開] 要修   streetcleaner / streetsweeper
+   zh_tw   街道清潔工 {#}{#}                   | 掃街工 {#}{#}
+   zh_cn   街道清洁工 {#}{#}                   | 扫街工 {#}{#}
+   ja_jp   道路清掃機 {#}{#}                   | 道路清掃人 {#}{#}
+   ko_kr   거리 청소부 {#}{#}                  | 거리 청소부 {#}{#}  <<
+   ru_ru   Уборщик улиц {#}{#}            | Дворник {#}{#}
+   es_es   Barrendero {#}{#}              | Barrendero {#}{#}  <<
+
+[3/6 分得開] 待判   azer foot soldier / azer infantry
+   zh_tw   Azer 步兵 {#}{#}                 | Azer 步兵 {#}{#}  <<
+   zh_cn   Azer 步兵 {#}{#}                 | Azer 步卒 {#}{#}
+   ja_jp   Azer の歩兵 {#}{#}                | Azer の歩兵隊 {#}{#}
+   ko_kr   Azer 보병 {#}{#}                 | Azer 보병 {#}{#}  <<
+   ru_ru   Пехотинец Azer {#}{#}          | Пехотинец Azer {#}{#}  <<
+   es_es   Soldado de a pie Azer {#}{#}   | Infante de Azer {#}{#}
+
+[3/6 分得開] 待判   fire starter / firebrand
+   zh_tw   縱火者 {#}{#}                     | 縱火者 {#}{#}  <<
+   zh_cn   纵火者 {#}{#}                     | 煽火者 {#}{#}
+   ja_jp   火付け役 {#}{#}                    | 扇動者 {#}{#}
+   ko_kr   방화범 {#}{#}                     | 방화범 {#}{#}  <<
+   ru_ru   Поджигатель {#}{#}             | Поджигатель {#}{#}  <<
+   es_es   Pirómano {#}{#}                | Incendiario {#}{#}
+
+[3/6 分得開] 待判   killing intent / murderou intent
+   zh_tw   殺意 {#}{#}                      | 殺戮之意 {#}{#}
+   zh_cn   杀气 {#}{#}                      | 杀戮之意 {#}{#}
+   ja_jp   殺気 {#}{#}                      | 殺意 {#}{#}
+   ko_kr   살의 {#}{#}                      | 살의 {#}{#}  <<
+   ru_ru   Жажда убийства {#}{#}          | Жажда убийства {#}{#}  <<
+   es_es   Intención asesina {#}{#}       | Intención asesina {#}{#}  <<
+
+[3/6 分得開] 待判   molten chevalier / molten knight
+   zh_tw   熔融騎士 {#}{#}                    | 熔融騎士 {#}{#}  <<
+   zh_cn   熔融骑兵 {#}{#}                    | 熔融骑士 {#}{#}
+   ja_jp   溶岩の騎士 {#}{#}                   | 溶岩の騎士 {#}{#}  <<
+   ko_kr   녹아내린 기사 {#}{#}                 | 용융 기사 {#}{#}
+   ru_ru   Расплавленный шевалье {#}{#}   | Расплавленный рыцарь {#}{#}
+   es_es   Caballero fundido {#}{#}       | Caballero fundido {#}{#}  <<
+
+[3/6 分得開] 待判   server / waiter
+   zh_tw   服務生                            | 服務生  <<
+   zh_cn   服务员                            | 服务生
+   ja_jp   給仕                             | ウェイター
+   ko_kr   종업원                            | 웨이터
+   ru_ru   Официант                       | Официант  <<
+   es_es   Camarero                       | Camarero  <<
+
+[3/6 分得開] 待判   sky shroom / skyshroom
+   zh_tw   {#}{#}
+天空菇                     | 天空菇 {#}{#}
+{#}  <<
+   zh_cn   {#}{#}
+天空菇                     | 天空菇 {#}{#}
+{#}  <<
+   ja_jp   {#}{#}
+空のキノコ                   | Skyshroom {#}{#}
+{#}
+   ko_kr   {#}{#}
+하늘 버섯                   | 스카이슈룸 {#}{#}
+{#}
+   ru_ru   {#}{#}
+Небесный гриб           | Небесный гриб {#}{#}
+{#}  <<
+   es_es   {#}{#}
+Seta celeste            | Skyshroom {#}{#}
+{#}
+
+[2/6 分得開] 待判   accessory merchant / trinket merchant
+   zh_tw   飾品商人                           | 飾品商人  <<
+   zh_cn   饰品商人                           | 饰品商人  <<
+   ja_jp   アクセサリー商人                       | アクセサリー商人  <<
+   ko_kr   장신구 상인                         | 장신구 상인  <<
+   ru_ru   Торговец аксессуарами          | Торговец безделушками
+   es_es   Mercader de accesorios         | Mercader de abalorios
+
+[2/6 分得開] 待判   bar keeper / barkeeper
+   zh_tw   酒保 {#}{#}                      | 酒保  <<
+   zh_cn   酒保 {#}{#}                      | 酒馆老板
+   ja_jp   酒場の主人 {#}{#}                   | 酒場の主人  <<
+   ko_kr   바텐더 {#}{#}                     | 바텐더  <<
+   ru_ru   Бармен {#}{#}                  | Трактирщик
+   es_es   Tabernero {#}{#}               | Tabernero  <<
+
+[2/6 分得開] 待判   boar / wild boar
+   zh_tw   野豬 {#}{#}                      | 野豬 {#}{#}  <<
+   zh_cn   野猪 {#}{#}                      | 野猪 {#}{#}  <<
+   ja_jp   イノシシ {#}{#}                    | イノシシ {#}{#}  <<
+   ko_kr   멧돼지 {#}{#}                     | 멧돼지 {#}{#}  <<
+   ru_ru   Кабан {#}{#}                   | Дикий кабан {#}{#}
+   es_es   Jabalí {#}{#}                  | Jabalí salvaje {#}{#}
+
+[2/6 分得開] 待判   boar ❤ / wild boar ❤
+   zh_tw   野豬 - {~}❤                      | 野豬 - {~}❤  <<
+   zh_cn   野猪 - {~}❤                      | 野猪 - {~}❤  <<
+   ja_jp   イノシシ - {~}❤                    | イノシシ - {~}❤  <<
+   ko_kr   멧돼지 - {~}❤                     | 멧돼지 - {~}❤  <<
+   ru_ru   Кабан - {~}❤                   | Дикий кабан - {~}❤
+   es_es   Jabalí - {~}❤                  | Jabalí salvaje - {~}❤
+
+[2/6 分得開] 待判   corrupt stone / corrupted stone
+   zh_tw   腐敗之石 {#}{#}                    | 腐敗之石 {#}{#}  <<
+   zh_cn   腐化之石 {#}{#}                    | 腐化的石头 {#}{#}
+   ja_jp   腐敗の石 {#}{#}                    | 腐敗した石 {#}{#}
+   ko_kr   타락한 돌 {#}{#}                   | 타락한 돌 {#}{#}  <<
+   ru_ru   Осквернённый камень {#}{#}     | Осквернённый камень {#}{#}  <<
+   es_es   Piedra corrupta {#}{#}         | Piedra corrupta {#}{#}  <<
+
+[2/6 分得開] 待判   drenched zombie / soaked zombie
+   zh_tw   濕透的殭屍 {#}{#}                   | 濕透的殭屍 {#}{#}
+{#} {#} {#}  <<
+   zh_cn   浑身湿透的僵尸 {#}{#}                 | 湿透的僵尸 {#}{#}
+{#} {#} {#}
+   ja_jp   びしょ濡れのゾンビ {#}{#}               | ずぶ濡れのゾンビ {#}{#}
+{#} {#} {#}
+   ko_kr   흠뻑 젖은 좀비 {#}{#}                | 흠뻑 젖은 좀비 {#}{#}
+{#} {#} {#}  <<
+   ru_ru   Промокший зомби {#}{#}         | Промокший зомби {#}{#}
+{#} {#} {#}  <<
+   es_es   Zombi empapado {#}{#}          | Zombi empapado {#}{#}
+{#} {#} {#}  <<
+
+[2/6 分得開] 待判   king of / s king
+   zh_tw   {p} 之王                         | {p} 的國王
+{#}{#}
+   zh_cn   {p} 之王                         | {p} 的国王
+{#}{#}
+   ja_jp   {p}の王                          | {p}の王
+{#}{#}  <<
+   ko_kr   {p}의 왕                         | {p}의 왕
+{#}{#}  <<
+   ru_ru   Король {p}                     | Король {p}
+{#}{#}  <<
+   es_es   Rey de {p}                     | Rey de {p}
+{#}{#}  <<
+
+[2/6 分得開] 待判   mayor of / s mayor
+   zh_tw   {p} 市長                         | {p} 的市長
+   zh_cn   {p} 市长                         | {p} 的市长
+   ja_jp   {p}の町長                         | {p}の町長  <<
+   ko_kr   {p} 시장                         | {p} 시장  <<
+   ru_ru   Мэр {p}                        | Мэр {p}  <<
+   es_es   Alcalde de {p}                 | Alcalde de {p}  <<
+
+[2/6 分得開] 待判   notice board / noticeboard
+   zh_tw   佈告欄
+{#}{#}                     | 公告欄
+   zh_cn   布告栏
+{#}{#}                     | 公告栏
+   ja_jp   掲示板
+{#}{#}                     | 掲示板  <<
+   ko_kr   게시판
+{#}{#}                     | 게시판  <<
+   ru_ru   Доска объявлений
+{#}{#}        | Доска объявлений  <<
+   es_es   Tablón de anuncios
+{#}{#}      | Tablón de anuncios  <<
+
+[2/6 分得開] 待判   roaming skeleton / wandering skeleton
+   zh_tw   遊蕩骷髏 {#}{#}                    | 流浪的骷髏 {#}{#}
+   zh_cn   游荡骷髅 {#}{#}                    | 流浪的骷髅 {#}{#}
+   ja_jp   さまよう骸骨 {#}{#}                  | さまよう骸骨 {#}{#}  <<
+   ko_kr   떠도는 스켈레톤 {#}{#}                | 떠도는 스켈레톤 {#}{#}  <<
+   ru_ru   Бродячий скелет {#}{#}         | Бродячий скелет {#}{#}  <<
+   es_es   Esqueleto errante {#}{#}       | Esqueleto errante {#}{#}  <<
+
+[2/6 分得開] 待判   roaming skeleton ❤ / wandering skeleton ❤
+   zh_tw   遊蕩骷髏 - {~}❤                    | 流浪的骷髏 - {~}❤
+   zh_cn   游荡骷髅 - {~}❤                    | 流浪的骷髅 - {~}❤
+   ja_jp   さまよう骸骨 - {~}❤                  | さまよう骸骨 - {~}❤  <<
+   ko_kr   떠도는 스켈레톤 - {~}❤                | 떠도는 스켈레톤 - {~}❤  <<
+   ru_ru   Бродячий скелет - {~}❤         | Бродячий скелет - {~}❤  <<
+   es_es   Esqueleto errante - {~}❤       | Esqueleto errante - {~}❤  <<
+
+[1/6 分得開] 同一個東西   bar keeper / barkeep
+   zh_tw   酒保 {#}{#}                      | 酒保  <<
+   zh_cn   酒保 {#}{#}                      | 酒保  <<
+   ja_jp   酒場の主人 {#}{#}                   | 酒場の主人  <<
+   ko_kr   바텐더 {#}{#}                     | 바텐더  <<
+   ru_ru   Бармен {#}{#}                  | Трактирщик
+   es_es   Tabernero {#}{#}               | Tabernero  <<
+
+[1/6 分得開] 同一個東西   barkeep / barkeeper
+   zh_tw   酒保                             | 酒保  <<
+   zh_cn   酒保                             | 酒馆老板
+   ja_jp   酒場の主人                          | 酒場の主人  <<
+   ko_kr   바텐더                            | 바텐더  <<
+   ru_ru   Трактирщик                     | Трактирщик  <<
+   es_es   Tabernero                      | Tabernero  <<
+
+[1/6 分得開] 同一個東西   blacksmith / the blacksmith
+   zh_tw   鐵匠                             | 鐵匠  <<
+   zh_cn   铁匠                             | 铁匠  <<
+   ja_jp   鍛冶屋                            | 鍛冶屋  <<
+   ko_kr   대장장이                           | 대장장이  <<
+   ru_ru   Кузнец                         | Кузнец  <<
+   es_es   Herrero                        | El Herrero
+
+[1/6 分得開] 同一個東西   elevator to / elevator to the
+   zh_tw   {#}{#}
+{p} 升降梯
+
+{#} 前往 {p} {#} | {#}{#}
+{p} 升降梯
+
+{#} 前往 {p} {#}  <<
+   zh_cn   {#}{#}
+{p} 升降梯
+
+{#} 前往 {p} {#} | {#}{#}
+{p} 升降梯
+
+{#} 前往 {p} {#}  <<
+   ja_jp   {#}{#}
+{p}のエレベーター
+
+{#} {p}行き { | {#}{#}
+{p}のエレベーター
+
+{#} {p}行き {#}  <<
+   ko_kr   {#}{#}
+{p} 승강기
+
+{#} {p}(으)로 {# | {#}{#}
+{p} 승강기
+
+{#} {p}(으)로 {#}  <<
+   ru_ru   {#}{#}
+Лифт {p}
+
+{#} В {p} {#} | {#}{#}
+Лифт {p}
+
+{#} К {p} {#}
+   es_es   {#}{#}
+Ascensor de {p}
+
+{#} A  | {#}{#}
+Ascensor de {p}
+
+{#} A {p} {#}  <<
+
+[1/6 分得開] 同一個東西   thunder cloud / thundercloud
+   zh_tw   雷雲 {#}{#}                      | 雷雲 {#}{#}
+{#}
+{#}  <<
+   zh_cn   雷云 {#}{#}                      | 雷云 {#}{#}
+{#}
+{#}  <<
+   ja_jp   雷雲 {#}{#}                      | 雷雲 {#}{#}
+{#}
+{#}  <<
+   ko_kr   뇌운 {#}{#}                      | 뇌운 {#}{#}
+{#}
+{#}  <<
+   ru_ru   Грозовая туча {#}{#}           | Грозовая туча {#}{#}
+{#}
+{#}  <<
+   es_es   Nube de tormenta {#}{#}        | Nubarrón {#}{#}
+{#}
+{#}
+
+[0/6 分得開] 同一個東西   captain s quarter / captain s room
+   zh_tw   {#}{#}
+船長室                     | 船長室  <<
+   zh_cn   {#}{#}
+船长室                     | 船长室  <<
+   ja_jp   {#}{#}
+船長室                     | 船長室  <<
+   ko_kr   {#}{#}
+선장실                     | 선장실  <<
+   ru_ru   {#}{#}
+Каюта капитана          | Каюта капитана  <<
+   es_es   {#}{#}
+Camarote del capitán    | Camarote del capitán  <<
+
+[0/6 分得開] 同一個東西   chief paku / chieftain paku
+   zh_tw   酋長 Paku                        | 酋長 Paku  <<
+   zh_cn   Paku 酋长                        | Paku 酋长  <<
+   ja_jp   Paku 族長                        | Paku 族長  <<
+   ko_kr   Paku 족장                        | Paku 족장  <<
+   ru_ru   Вождь Paku                     | Вождь Paku  <<
+   es_es   Jefe Paku                      | Jefe Paku  <<
+
+[0/6 分得開] 同一個東西   custom clerk / custom officer
+   zh_tw   海關人員                           | 海關人員  <<
+   zh_cn   海关人员                           | 海关人员  <<
+   ja_jp   税関職員                           | 税関職員  <<
+   ko_kr   세관 직원                          | 세관 직원  <<
+   ru_ru   Таможенник                     | Таможенник  <<
+   es_es   Agente de aduanas              | Agente de aduanas  <<
