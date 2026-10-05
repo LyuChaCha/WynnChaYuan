@@ -89,8 +89,11 @@ def chars_for(lang):
             for item in node:
                 walk(item)
 
-    for path in sorted((CORPUS / lang).rglob("*.json")):
-        if path.name.startswith("_"):
+    # 只看這兩個檔：敘述在 misc.json，原型名在 scoped/archetype.json。
+    # 整個資料夾掃的話會把 gear-weapon.json 那把叫 Sharpshooter 的弓也收進來。
+    for rel in ("misc.json", "scoped/archetype.json"):
+        path = CORPUS / lang / rel
+        if not path.is_file():
             continue
         try:
             walk(json.loads(path.read_text(encoding="utf-8")))

@@ -495,6 +495,37 @@ public final class ActionBarListener {
         return any ? out : null;
     }
 
+    /**
+     * 原型名那一格專用的譯名（{@code scoped/archetype.json}）。
+     *
+     * <h2>為什麼不能走一般語料</h2>
+     * {@code Sharpshooter} 與 {@code Acrobat} 的裸名在 {@code gear-weapon.json} 是
+     * <b>武器名</b>（{@code ctx: weapon/weapon}）。zh_tw 碰巧兩邊同字看不出來，
+     * zh_cn 是「神射弓」「杂技弓」——弓的名字跑到職業選單上。一般語料一個原文只能
+     * 有一種譯法（validate 的 {@code check_duplicates} 會擋），所以另外放，
+     * 跟 {@code scoped/label.json} 的 {@code Back} 同一個道理。
+     *
+     * <p>回傳的片段刻意用<b>預設字型</b>：{@link #refont} 只換非自訂字型的那些，
+     * 保留原本的 selector 字型會讓它整段跳過，中日韓字就畫不出來。
+     *
+     * @return 這一格不是原型名、或查不到時回 {@code null}
+     */
+    private static net.minecraft.network.chat.Component archetypeName(
+            String chunk,
+            net.minecraft.network.chat.Style style,
+            com.wynnchayuan.translate.TranslationStore store) {
+        String slot = com.wynnchayuan.render.PairedFont.slot(fontOf(style));
+        if (slot == null || !slot.startsWith("selector_name_")) {
+            return null;
+        }
+        String dst = store.scopedLookup("archetype", chunk);
+        if (dst == null || dst.isBlank()) {
+            return null;
+        }
+        return literal(dst, style.withFont(
+                net.minecraft.network.chat.FontDescription.DEFAULT));
+    }
+
     /** 這一行是不是 {@code /class}／角色選擇那個 HUD（見 {@link PairedFont#isSelector}）。 */
     private static boolean hasSelectorSlot(com.wynntils.core.text.StyledText line) {
         for (com.wynntils.core.text.StyledTextPart part : line) {
@@ -511,9 +542,11 @@ public final class ActionBarListener {
                                   String chunk,
                                   net.minecraft.network.chat.Style style,
                                   com.wynnchayuan.translate.TranslationStore store) {
-        net.minecraft.network.chat.Component done =
-                com.wynnchayuan.translate.LineTranslator.translateChunk(
-                        chunk, style, store);
+        net.minecraft.network.chat.Component done = archetypeName(chunk, style, store);
+        if (done == null) {
+            done = com.wynnchayuan.translate.LineTranslator.translateChunk(
+                    chunk, style, store);
+        }
         if (done == null) {
             out.append(literal(chunk, style));
             collect(chunk);
