@@ -1,0 +1,29 @@
+{
+  "providers": [
+    {
+      "type": "reference",
+      "id": "minecraft:hud/selector/default/center_left/0/description"
+    },
+    {
+      "type": "bitmap",
+      "file": "wynnchayuan:font/selector/ru_ru.png",
+      "height": 11,
+      "ascent": -36,
+      "chars": [
+        "АБВДИКЛМНПРСТШЯа",
+        "бвгдежзийклмнопр",
+        "стухцчшщыьюяё\u0000\u0000\u0000"
+      ]
+    },
+    {
+      "type": "ttf",
+      "file": "wynnchayuan:fusion_pixel_10px_zh_hant.ttf",
+      "size": 10,
+      "oversample": 1,
+      "shift": [
+        0,
+        33
+      ]
+    }
+  ]
+}
