@@ -667,6 +667,22 @@ public final class PlayerDataFilter {
         if (name.length() < MIN_PLATE_NAME) {
             return false;
         }
+        // 「有數字」這一條只在<b>看起來像名牌</b>的時候算數。
+        //
+        // 底線與「小寫接大寫」是帳號名的強訊號，出現在句子中間也照擋
+        // （{@code 你正在 PoorChaCha 的圖騰範圍內}）。數字不是：它在一般台詞裡
+        // 到處都是，連坐的後果是整句永遠不會翻——
+        //
+        // <pre>{@code [{~}/{~}] The Mummyboard: OS Version M-37 is now online.
+        // Systems estimate a 96.286573628% chance of success.}</pre>
+        //
+        // 這一條在實機是任務 NPC 的聊天列，卻因為 {@code M-37} 與
+        // {@code 96.28…%} 被判成玩家名牌（#1016 把它補進語料之後才暴露出來）。
+        // 名牌本來就短，所以數字只在「字數不超過上限、結尾不是句讀」時才採信。
+        String bare = name.replaceAll("\\[[^\\]]*\\]?", " ").trim();
+        char last = name.charAt(name.length() - 1);
+        boolean plateShaped = bare.split("\\s+").length <= MAX_PLATE_WORDS_HARD
+                && last != '.' && last != '!' && last != '?';
         for (String word : name.split("\\s+")) {
             if (word.isEmpty()) {
                 continue;
@@ -676,7 +692,7 @@ public final class PlayerDataFilter {
             }
             for (int i = 0; i < word.length(); i++) {
                 char c = word.charAt(i);
-                if (Character.isDigit(c)) {
+                if (plateShaped && Character.isDigit(c)) {
                     return true;
                 }
                 // 小寫後面緊跟著大寫：NexusRolly、HellRevenger、OwO
@@ -722,6 +738,15 @@ public final class PlayerDataFilter {
 
     /** 開頭小寫又超過這麼多個字的，比較像被折出來的句子而不是名字。 */
     private static final int MAX_PLATE_WORDS = 3;
+
+    /**
+     * 不管開頭大小寫，超過這麼多個字就一律不是名字。
+     *
+     * <p>放寬到 6 是為了留住帶等級標籤的名牌（{@code heal kitty [Lv 106]}
+     * 剝掉標籤還有兩個字）與三個字的寵物名；真正的台詞動輒十幾個字，
+     * 離這個門檻很遠。
+     */
+    private static final int MAX_PLATE_WORDS_HARD = 6;
 
     /**
      * 本機玩家名稱。取不到就回傳 null——這只是額外的一層防護，

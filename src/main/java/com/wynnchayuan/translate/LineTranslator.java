@@ -2248,7 +2248,11 @@ public final class LineTranslator {
             any = true;
             // rebuild 已經把文字改成預設字型、圖示與偏移保留原字型，
             // 這裡不能再整段重新上色/換字型，否則偏移會失去寬度
-            pieces.add(Piece.translated(replaced, literal(body, style)));
+            Component orig = literal(body, style);
+            pieces.add(Piece.translated(
+                    com.wynnchayuan.render.PairedFont.absolutelyPositioned(style)
+                            ? padSlot(replaced, orig, style) : replaced,
+                    orig));
             if (!tail.isEmpty()) {
                 // 用 space 字型重新編碼：那是保證認得偏移碼位的字型
                 pieces.add(Piece.space(SpaceOffset.decode(tail),
@@ -2951,13 +2955,37 @@ public final class LineTranslator {
             } else {
                 // 顏色也要印。顏色掉了在畫面上很明顯，但先前的診斷完全看不到，
                 // 只能靠截圖猜——猜了好幾輪都沒猜中。
-                sb.append(String.format("  [%d] 文字 「%s」 <- 「%s」 寬 %d -> %d  色 %s -> %s%n",
+                // 字型也要印。這個畫面的高度是烘進字型 ascent 的，配錯了就是
+                // 整段跑到別的位置——而先前的診斷只有寬度與顏色，查了好幾輪
+                // 都只能靠截圖猜（使用者 2026-10-05「全部都跑掉了」）。
+                sb.append(String.format(
+                        "  [%d] 文字 「%s」 <- 「%s」 寬 %d -> %d  色 %s -> %s  字型 %s -> %s%n",
                         i, a.text(), a.orig().getString(),
                         widthOf(a.orig()), widthOf(a.rendered()),
-                        colourOf(a.orig()), colourOf(a.rendered())));
+                        colourOf(a.orig()), colourOf(a.rendered()),
+                        fontOf(a.orig()), fontOf(a.rendered())));
             }
         }
         return sb.toString();
+    }
+
+    /** 這一段的字型，只留最後一段路徑；沒有指定就是預設。 */
+    private static String fontOf(Component component) {
+        if (component == null) {
+            return "-";
+        }
+        String[] found = {"-"};
+        component.visit((style, text) -> {
+            if (!text.isEmpty()) {
+                String name = com.wynnchayuan.render.PairedFont.nameOf(style);
+                int open = name.indexOf('=');
+                found[0] = open < 0 ? (name.isEmpty() ? "預設" : name)
+                        : name.substring(open + 1).replace("]", "");
+                return java.util.Optional.of(true);
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return found[0];
     }
 
     /** 這一段的顏色，寫成 {@code #RRGGBB}；沒有指定就是「繼承」。 */
@@ -6645,6 +6673,42 @@ public final class LineTranslator {
         }
     }
 
+    /**
+     * 絕對定位的 HUD 欄位：譯文補白到跟原文一樣寬。
+     *
+     * <h2>為什麼</h2>
+     * {@code /class} 的每一格長成 {@code [跳 +36] 文字 [退回 -68]}，淨寬是
+     * Wynncraft 照<b>英文</b>的寬度烘好的固定值。文字一變短，這一格的淨寬就
+     * 變了，後面每一個元件跟著位移——實機看到的是圖示壓在名字上、整行被推出
+     * 畫面（使用者 2026-10-05 的一連串截圖）。
+     *
+     * <p>補白補在<b>文字後面、退回前面</b>，這一格的淨寬完全不變：後面的元件
+     * 一個都不動，整行總寬不變，置中也不變。中文比英文短，那一格右邊會留白，
+     * 這是唯一的視覺差異——比起整個版面跑掉，這個代價是划算的。
+     *
+     * <p>補完之後 {@code 譯文寬 == 原文寬}，{@link #alignColumns} 算出來的
+     * drift 自然是 0，不會再有任何空白被調整。先前試過改退回的大小、把差額
+     * 推給下一格的跳、累計到行尾補，三種都失敗；差別在那些做法都讓這一格的
+     * 淨寬變了，只是把帳挪到別的地方。
+     */
+    private static Component padSlot(Component translated, Component original, Style style) {
+        try {
+            int want = widthOf(original);
+            int got = widthOf(translated);
+            if (want <= 0 || got <= 0 || want == got) {
+                return translated;
+            }
+            String fill = SpaceOffset.encode(want - got);
+            if (fill.isEmpty()) {
+                return translated;
+            }
+            return Component.empty().append(translated).append(
+                    Component.literal(fill).setStyle(SpaceOffset.styleFor(style)));
+        } catch (Throwable t) {
+            return translated;      // 量不到就不補，絕不能讓 action bar 掛掉
+        }
+    }
+
     /** 見 {@link #lookup}：先剝首尾再查，這是原本那條路。 */
     private static String lookupTrimmed(String template, TranslationStore store,
                                         boolean percent) {
@@ -9341,10 +9405,31 @@ public final class LineTranslator {
                 || (c >= '　' && c <= '〿');
     }
 
-    /** 保留顏色與粗斜體，但把字型換成預設，中文才畫得出來。 */
+    /**
+     * 保留顏色與粗斜體，但把字型換成畫得出中文的那一份。
+     *
+     * <p>預設是 {@code default}。可是 {@code /class} 畫面的高度是烘進字型
+     * {@code ascent} 的——換成預設就連高度一起換掉，整段跑到別的位置去。
+     * 那幾個位置我們自己備了同 ascent 的字型，先問
+     * {@link com.wynnchayuan.render.PairedFont}，問不到才退回預設。
+     * 為什麼要這樣做見 {@code PairedFont} 的說明。
+     */
     private static Style forDisplay(Style style) {
-        return (style == null ? Style.EMPTY : style).withFont(FontDescription.DEFAULT);
+        Style base = style == null ? Style.EMPTY : style;
+        FontDescription paired = com.wynnchayuan.render.PairedFont.forStyle(base);
+        return base.withFont(paired == null ? FontDescription.DEFAULT : paired);
     }
+
+    /**
+     * 需要我們自己備的字型才畫得出來的字：中日韓、西里爾、諺文。
+     *
+     * <p>Wynncraft 那組點陣字只有拉丁字母與自家的字形。這個比對命中，才該
+     * 把片段換到配對字型去；見 {@link #literal(String, Style)}。
+     */
+    private static final java.util.regex.Pattern WIDE_SCRIPT =
+            java.util.regex.Pattern.compile(
+                    "[\\u0400-\\u04ff\\u3040-\\u30ff\\u3400-\\u4dbf"
+                            + "\\u4e00-\\u9fff\\uac00-\\ud7af\\uff00-\\uffef]");
 
     /**
      * 填回數值用的樣式：原本是 {@code offset/…} 這類<b>顯示字型</b>時保留原字型。
@@ -9411,6 +9496,18 @@ public final class LineTranslator {
     private static Component literal(String text, Style style) {
         text = stripColourTokens(text);
         text = deIcon(text);
+        // 配對字型只給<b>真的需要它</b>的字。
+        //
+        // {@link #forDisplay} 是看<b>樣式</b>決定的，它看不到文字，於是同一個
+        // 區塊裡的英文、數字、Wynncraft 自己的字形也一起被換過去——那些本來
+        // 該留在原字型或預設字型裡。實機的結果是 /class 整個畫面散掉
+        //（使用者 2026-10-05 的截圖）。這裡是所有片段的共同出口，補在這裡
+        // 一次收齊：沒有中日韓／西里爾／諺文的片段，退回預設字型，也就是
+        // 這個改動之前的行為。
+        if (style != null && com.wynnchayuan.render.PairedFont.isOurs(style)
+                && !WIDE_SCRIPT.matcher(text).find()) {
+            style = style.withFont(FontDescription.DEFAULT);
+        }
         Style base = upright(text, style);
         // 我們把字型換掉了，斜體就跟著丟。
         //

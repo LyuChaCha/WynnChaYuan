@@ -358,24 +358,42 @@ public final class ActionBarListener {
         if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)) {
             return null;
         }
-        net.minecraft.network.chat.Component hit =
-                com.wynnchayuan.translate.LineTranslator.translate(
-                        line, WynnChaYuan.translations());
-        if (hit == null) {
-            // 整行與逐片段都落空：再試一次「照空白切欄」，見 columnSwap
+        net.minecraft.network.chat.Component hit;
+        if (hasSelectorSlot(line)) {
+            // /class 整個畫面是一行 action bar，十幾個定位格的跳／退回位移全在
+            // 裡面。LineTranslator 會把那些位移當成可調的欄距重排，整行 39 px
+            // 變 1714 px、全部畫到畫面外（見 PairedFont#isSelector）。這種行
+            // 只走 columnSwap：翻到的格子換字型補白，其餘逐片段原樣抄。
             hit = columnSwap(line, WynnChaYuan.translations());
+        } else {
+            hit = com.wynnchayuan.translate.LineTranslator.translate(
+                    line, WynnChaYuan.translations());
+            if (hit == null) {
+                // 整行與逐片段都落空：再試一次「照空白切欄」，見 columnSwap
+                hit = columnSwap(line, WynnChaYuan.translations());
+            }
         }
+        // Wynncraft 自己的定位 bug 也在這裡修：/class 第一個原型圖示站錯錨點
+        // （見 SelectorRealign）。翻不翻都要修，所以不能縮在 hit != null 底下。
+        com.wynnchayuan.render.SelectorRealign.Result fixed =
+                com.wynnchayuan.render.SelectorRealign.apply(hit != null ? hit : original);
+        net.minecraft.network.chat.Component out =
+                hit != null || fixed.changed() ? fixed.out() : null;
+        // 換成功的也要錄。action bar 是整行置中的，換完變窄就整行左移，
+        // 而這條路以前只在<b>失敗</b>時才留診斷，於是永遠拿不到資料。
+        // 矯正的結果一起寫進去：原文側與譯文側的 x 一比就知道有沒有拉回來。
+        DialogueProbe.columns(original, out, fixed.report());
         if (hit != null) {
-            return hit;
+            leftovers(line, hit);
+            return out;
         }
         // 真的查不到才收。先收再翻的話，<b>已經翻好</b>的這一行每一幀都會被
         // 記成缺口——實機第一份 captured.json 的 seen 就衝到 1700。
-        DialogueProbe.plainColumns(original);
         if (WynnChaYuan.config().collect()) {
             // 這一行以前沒有任何地方收，語料才補得起來
             WynnChaYuan.store().record(template, "name", "actionbar", "actionbar");
         }
-        return null;
+        return out;
     }
 
     /**
@@ -428,9 +446,32 @@ public final class ActionBarListener {
             com.wynntils.core.text.PartStyle ps = part.getPartStyle();
             net.minecraft.network.chat.Style style =
                     ps == null ? net.minecraft.network.chat.Style.EMPTY : ps.getStyle();
+            net.minecraft.network.chat.FontDescription ours =
+                    com.wynnchayuan.render.PairedFont.forStyle(style);
+            if (ours != null) {
+                com.wynnchayuan.render.PairedFont.warm(ours);
+            }
+            if (ours != null && com.wynnchayuan.render.PairedFont.MARKER.equals(raw)) {
+                // 名字前面單獨那個 U+0001 是定位標記，要用<b>我們的</b>字型畫，
+                // 後面的譯文才會被 shader 搬到該去的位置；見 PairedFont 的說明。
+                // 要排在 isGlyphPart 前面：控制字元會被當成符號原樣抄走。
+                out.append(literal(raw, style.withFont(ours)));
+                continue;
+            }
             if (com.wynnchayuan.capture.GlyphSplitter.isGlyphPart(part)
-                    || raw.isBlank() || !COLUMN_GAP.matcher(raw).find()) {
+                    || raw.isBlank()) {
                 out.append(literal(raw, style));
+                continue;
+            }
+            if (!COLUMN_GAP.matcher(raw).find()) {
+                // /class 的定位格：一格一句，沒有欄距。有我們配對字型的才翻
+                // （原型名、簡介）；沒有的（Create a Character 在 top_middle）
+                // 留英文——換成預設字型會把烘在 ascent 裡的高度丟掉。
+                if (ours != null && com.wynnchayuan.capture.GlyphSplitter.hasLetter(raw)) {
+                    any |= column(out, raw, style, store);
+                } else {
+                    out.append(literal(raw, style));
+                }
                 continue;
             }
             net.minecraft.network.chat.MutableComponent rebuilt =
@@ -454,16 +495,61 @@ public final class ActionBarListener {
         return any ? out : null;
     }
 
+    /**
+     * 原型名那一格專用的譯名（{@code scoped/archetype.json}）。
+     *
+     * <h2>為什麼不能走一般語料</h2>
+     * {@code Sharpshooter} 與 {@code Acrobat} 的裸名在 {@code gear-weapon.json} 是
+     * <b>武器名</b>（{@code ctx: weapon/weapon}）。zh_tw 碰巧兩邊同字看不出來，
+     * zh_cn 是「神射弓」「杂技弓」——弓的名字跑到職業選單上。一般語料一個原文只能
+     * 有一種譯法（validate 的 {@code check_duplicates} 會擋），所以另外放，
+     * 跟 {@code scoped/label.json} 的 {@code Back} 同一個道理。
+     *
+     * <p>回傳的片段刻意用<b>預設字型</b>：{@link #refont} 只換非自訂字型的那些，
+     * 保留原本的 selector 字型會讓它整段跳過，中日韓字就畫不出來。
+     *
+     * @return 這一格不是原型名、或查不到時回 {@code null}
+     */
+    private static net.minecraft.network.chat.Component archetypeName(
+            String chunk,
+            net.minecraft.network.chat.Style style,
+            com.wynnchayuan.translate.TranslationStore store) {
+        String slot = com.wynnchayuan.render.PairedFont.slot(fontOf(style));
+        if (slot == null || !slot.startsWith("selector_name_")) {
+            return null;
+        }
+        String dst = store.scopedLookup("archetype", chunk);
+        if (dst == null || dst.isBlank()) {
+            return null;
+        }
+        return literal(dst, style.withFont(
+                net.minecraft.network.chat.FontDescription.DEFAULT));
+    }
+
+    /** 這一行是不是 {@code /class}／角色選擇那個 HUD（見 {@link PairedFont#isSelector}）。 */
+    private static boolean hasSelectorSlot(com.wynntils.core.text.StyledText line) {
+        for (com.wynntils.core.text.StyledTextPart part : line) {
+            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
+            if (ps != null && com.wynnchayuan.render.PairedFont.isSelector(ps.getStyle())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** @return 這一欄有沒有換成譯文 */
     private static boolean column(net.minecraft.network.chat.MutableComponent out,
                                   String chunk,
                                   net.minecraft.network.chat.Style style,
                                   com.wynnchayuan.translate.TranslationStore store) {
-        net.minecraft.network.chat.Component done =
-                com.wynnchayuan.translate.LineTranslator.translateChunk(
-                        chunk, style, store);
+        net.minecraft.network.chat.Component done = archetypeName(chunk, style, store);
+        if (done == null) {
+            done = com.wynnchayuan.translate.LineTranslator.translateChunk(
+                    chunk, style, store);
+        }
         if (done == null) {
             out.append(literal(chunk, style));
+            collect(chunk);
             return false;
         }
         // 畫不出來就別換——方框比英文糟。跟對話那條路同一個守門。
@@ -471,8 +557,171 @@ public final class ActionBarListener {
             out.append(literal(chunk, style));
             return false;
         }
-        out.append(refont(done, style));
+        net.minecraft.network.chat.Component swapped = refont(done, style);
+        // 簡介的鍵帶著 U+0001，譯文沒有——語料把它當成原文的一部分丟掉了。
+        // 它是定位標記不是內容，而且必須是這一份字型<b>第一個</b>畫的字
+        // （見 PairedFont 的說明），所以用我們的字型補回譯文最前面。
+        if (chunk.startsWith(com.wynnchayuan.render.PairedFont.MARKER)
+                && !swapped.getString().startsWith(com.wynnchayuan.render.PairedFont.MARKER)) {
+            net.minecraft.network.chat.FontDescription ours =
+                    com.wynnchayuan.render.PairedFont.forStyle(style);
+            if (ours != null) {
+                swapped = net.minecraft.network.chat.Component.empty()
+                        .append(literal(com.wynnchayuan.render.PairedFont.MARKER,
+                                        style.withFont(ours)))
+                        .append(swapped);
+            }
+        }
+        out.append(swapped);
+        // 這一欄變窄多少就補回多少。
+        //
+        // action bar 是<b>整行置中</b>的，所以任何寬度變化都會讓整行左右跑掉
+        // ——差的一半就是位移。/class 的下方提示列三欄一起翻完，整行少了
+        // 152px，畫面往旁邊移了 76px，左邊的字被切掉、右邊的角色卡被推出
+        // 畫面（使用者 2026-10-05 的截圖）。
+        //
+        // 這段先前被關掉過一次，當時的症狀其實是別的原因（Create a Character
+        // 在 top_middle 被翻掉）造成的，關它並沒有解決問題，只是把真正的
+        // 補償也一起拿走了。
+        // 補在<b>這一欄自己後面</b>，下一個元件才會落回原位。
+        //
+        // 堆到行尾只修好整行總寬：排在這一欄<b>後面</b>的元件前面少了那幾十
+        // 像素，會整批往左移（實機 152px，使用者 2026-10-05 的「整體靠左偏移」）。
+        // 補在這裡則游標在離開這一欄時就已經回到原文的位置。
+        int gap = owed(chunk, style, swapped);
+        if (gap != 0) {
+            String fill = com.wynnchayuan.translate.SpaceOffset.encode(gap);
+            if (!fill.isEmpty()) {
+                out.append(net.minecraft.network.chat.Component.literal(fill)
+                        .setStyle(com.wynnchayuan.translate.SpaceOffset.styleFor(style)));
+            }
+        }
         return true;
+    }
+
+    /**
+     * 整行只翻到一部分時，把<b>還是原文</b>的那幾段也收起來。
+     *
+     * <h2>為什麼</h2>
+     * {@code /class} 整個畫面是<b>一條</b> action bar 字串，十幾個 HUD 元件都在
+     * 裡面。只要其中一段查得到（實機是下方那行的
+     * {@code Left-Click to Select}），整行就被當成「翻好了」，於是另外十幾段
+     * ——職業原型的名字與簡介——既沒翻、也<b>永遠不會進 captured.json</b>。
+     * 2026-10-05 要補那幾句時，六份診斷檔加 capture 裡一個字都找不到，就是
+     * 卡在這裡。
+     *
+     * <h2>怎麼判斷「這一段沒翻到」</h2>
+     * 譯文裡還<b>原封不動</b>出現同一串文字就算沒翻。這招不必知道翻譯那條路
+     * 內部怎麼切片段，也就不會因為切法改了而默默失效。
+     */
+    private static void leftovers(com.wynntils.core.text.StyledText line,
+                                  net.minecraft.network.chat.Component hit) {
+        try {
+            if (!WynnChaYuan.config().collect() || hit == null) {
+                return;
+            }
+            String after = hit.getString();
+            for (com.wynntils.core.text.StyledTextPart part : line) {
+                if (com.wynnchayuan.capture.GlyphSplitter.isGlyphPart(part)) {
+                    continue;
+                }
+                String raw = part.getString(
+                        null, com.wynntils.core.text.type.StyleType.NONE);
+                if (raw == null || raw.strip().length() < MIN_LEFTOVER
+                        || !after.contains(raw)) {
+                    continue;        // 不見了就是翻掉了
+                }
+                collect(raw);
+            }
+        } catch (Throwable t) {
+            // 收集絕不能讓 action bar 掛掉
+        }
+    }
+
+    /** 比這短的片段收進來只是雜訊：版本號、世界編號、單一個字母。 */
+    private static final int MIN_LEFTOVER = 6;
+
+    /**
+     * 收下查不到的那一欄。
+     *
+     * <h2>為什麼不能只靠整行那一次</h2>
+     * {@code plainSwap} 只在<b>整行都查不到</b>時才 record。{@code /class} 下方
+     * 那一行三欄裡第一欄（{@code Left-Click to Select}）語料裡早就有，
+     * {@code columnSwap} 因此回傳非 null，於是整行被當成「翻好了」——
+     * 另外兩欄（{@code Scroll up/down to browse}、{@code Right-Click to return}）
+     * 既沒翻、也<b>永遠不會出現在 captured.json</b>，補語料的人根本不知道它存在。
+     * 使用者 2026-10-05 回報「class 頁面要翻一些語料」時，那幾句在六份診斷檔裡
+     * 一個字都找不到，就是卡在這裡。
+     *
+     * <p>收的是模板（數字換成 {@code {~}}），跟其他收集點同一個形狀；
+     * 玩家資料照樣先濾一遍。
+     */
+    private static void collect(String chunk) {
+        try {
+            if (!WynnChaYuan.config().collect() || chunk == null || chunk.isBlank()) {
+                return;
+            }
+            String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(
+                    com.wynntils.core.text.StyledText.fromString(chunk.strip()));
+            if (template.isBlank()
+                    || !com.wynnchayuan.capture.GlyphSplitter.hasLetter(template)
+                    || com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(template)
+                    || com.wynnchayuan.capture.PlayerDataFilter.looksPlayerNamed(template)) {
+                return;
+            }
+            WynnChaYuan.store().record(template, "name", "actionbar", "actionbar/column");
+        } catch (Throwable t) {
+            // 收集絕不能讓 action bar 掛掉
+        }
+    }
+
+    /**
+     * 補回這一欄被換掉之後少掉（或多出來）的像素。
+     *
+     * <h2>目前沒有接上，為什麼</h2>
+     * 數據上它是對的：{@code actionbar-columns-2.txt} 量到整行淨寬原文 39 px、
+     * 譯文 39 px，第二三欄確實回到原本的位置。可是實機看起來更糟
+     * （使用者 2026-10-05 回報）。在拿到「補與不補」的對照截圖之前不要接回來
+     * ——版面這種事 headless 驗不了（[[wynnchayuan-tooltip-widen-untested]]）。
+     *
+     * <p>診斷檔也顯示這條路比原本想的複雜：{@code /class} 整個畫面是<b>一條</b>
+     * action bar 字串，十幾個 HUD 元件各自用
+     * {@code [負位移] 文字 [負位移]} 夾著，而且每個元件有自己的字型
+     * （{@code center_left/0/display_name}、{@code .../description}、
+     * {@code bottom_middle}…）。在元件中間插東西只會動到<b>同一個元件裡</b>
+     * 後面那幾欄，不會動到別的元件——這點已經由淨寬相同證實。
+     *
+     * <h2>為什麼非補不可</h2>
+     * action bar 是<b>整行置中</b>的：Minecraft 量完整行寬度才決定左邊界。
+     * {@code /class} 下方那行有三欄，只有查得到的那幾欄會換成中文，中文又比
+     * 英文窄，於是整行變窄、左邊界往右跑，後面每一欄跟著位移——嚴重時整行
+     * 被推出畫面（使用者 2026-10-05 回報的「class 的內容會跑掉」）。
+     *
+     * <p>欄與欄之間的空白是<b>原片段的樣式</b>照抄的（見 {@link #columnSwap}），
+     * 所以補償不能靠改空白：那會連帶改到字型。改成在換好的那一欄後面補一個
+     * {@code minecraft:space} 的寬度偏移字元——它只佔寬度、不畫任何東西，
+     * 也不影響前後片段的字型與高度。
+     *
+     * <p>量不到寬度（headless 測試、畫面還沒開）就什麼都不做：位置會跑，
+     * 但那是這一版之前的行為，不會更糟。
+     */
+    private static int owed(String chunk,
+                            net.minecraft.network.chat.Style style,
+                            net.minecraft.network.chat.Component swapped) {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            if (mc == null || mc.font == null) {
+                return 0;
+            }
+            int was = mc.font.width(literal(chunk, style));
+            int now = mc.font.width(swapped);
+            if (was <= 0 || now <= 0) {
+                return 0;
+            }
+            return was - now;
+        } catch (Throwable t) {
+            return 0;        // 量不到就不補，絕不能讓 action bar 掛掉
+        }
     }
 
     /**
@@ -522,26 +771,13 @@ public final class ActionBarListener {
         return out;
     }
 
-    /** 這一段原本的字型對應到我們哪一份；只有檔名，沒有命名空間。 */
+    /** 這一段原本的字型對應到我們哪一份；邏輯與說明都在 {@link PairedFont}。 */
     private static String pairedFont(String font) {
-        return font.contains("hud/selector/default/bottom_middle")
-                ? "selector_bottom" : null;
+        return com.wynnchayuan.render.PairedFont.slot(font);
     }
 
-    /** 那一份字型檔真的在 jar 裡嗎。問一次就記起來，action bar 每幀都走。 */
-    private static final java.util.Map<String, Boolean> FONTS =
-            new java.util.concurrent.ConcurrentHashMap<>();
-
     private static boolean fontShipped(String lang, String name) {
-        return FONTS.computeIfAbsent(lang + "/" + name, key -> {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
-            if (mc == null) {
-                return false;             // 測試環境沒有資源管理員，維持原樣
-            }
-            var id = net.minecraft.resources.Identifier.fromNamespaceAndPath(
-                    WynnChaYuan.MOD_ID, "font/actionbar/" + key + ".json");
-            return mc.getResourceManager().getResource(id).isPresent();
-        });
+        return com.wynnchayuan.render.PairedFont.shipped(lang, name);
     }
 
     private static String fontOf(net.minecraft.network.chat.Style style) {

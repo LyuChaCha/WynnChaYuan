@@ -304,7 +304,162 @@ public final class DialogueProbe {
      * 那個答案：每個片段的字型、顏色與逐字碼位。
      */
     public static void plainColumns(Component message) {
-        dumpPlain(message, "actionbar-columns-");
+        columns(message, null, null);
+    }
+
+    /**
+     * 同一行的<b>原文與譯文並排</b>——換成功的那些也要錄。
+     *
+     * <h2>為什麼不能只錄失敗的</h2>
+     * {@link #plainColumns} 掛在「整行與逐片段都落空」之後，所以
+     * {@code columnSwap} 一旦成功就永遠不會寫檔。偏偏畫面會跑掉的正是
+     * <b>換成功</b>的那一行：{@code /class} 下方三欄換掉第一欄之後整行變窄，
+     * action bar 是照整行寬度置中的，於是後面兩欄跟著左移，
+     * 嚴重時整行被推出畫面外（使用者 2026-10-05 的截圖）。
+     *
+     * <p>要補償就得知道「原本多寬、換完多寬」，而那隻能從實機量。
+     * 這一支就是去拿它：逐片段的字型、顏色、空白字型的偏移像素，
+     * 外加整行與每一欄在<b>目前字型</b>下的量測寬度。
+     */
+    public static void columnsHit(Component before, Component after) {
+        columns(before, after, null);
+    }
+
+    /**
+     * @param after 實際送去畫的那一行；跟原文一樣就傳 {@code null}
+     * @param note  附在檔尾的說明（定位格矯正的結果）；沒有就 {@code null}
+     */
+    public static void columns(Component before, Component after, String note) {
+        if (dir == null || before == null || !WynnChaYuan.config().debugDumps()) {
+            return;
+        }
+        // 這裡<b>不能</b>用 words()：它遇到任何數字就回傳空字串（那是給
+        // plain() 擋血量魔力用的），而 action bar 這幾行偏偏都帶數字——
+        // 大廳那行有世界編號、/class 那行有物品數量。先前診斷檔一直是空的
+        // 就是被這一條擋掉的。
+        String body = letters(before);
+        if (body.isEmpty() || body.equals(columnsKey)) {
+            return;
+        }
+        if (columnsWritten >= COLUMNS_LIMIT) {
+            return;
+        }
+        columnsKey = body;
+        columnsWritten++;
+
+        StringBuilder sb = new StringBuilder();
+        dumpSide(sb, "原文", before);
+        if (after != null) {
+            sb.append(System.lineSeparator());
+            dumpSide(sb, "譯文", after);
+            sb.append(System.lineSeparator())
+              .append("整行寬度：原文 ").append(widthOf(before))
+              .append(" px、譯文 ").append(widthOf(after))
+              .append(" px（差 ").append(widthOf(after) - widthOf(before))
+              .append(" px）").append(System.lineSeparator())
+              .append("action bar 是整行置中的，所以這個差的一半就是左右位移。")
+              .append(System.lineSeparator());
+        }
+        if (note != null && !note.isEmpty()) {
+            sb.append(System.lineSeparator()).append(note).append(System.lineSeparator());
+        }
+
+        try {
+            Files.writeString(dir.resolve("actionbar-columns-" + columnsWritten + ".txt"),
+                    sb.toString(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 寫不出來就算了，不要影響遊戲
+        }
+    }
+
+    private static void dumpSide(StringBuilder sb, String label, Component message) {
+        // action bar 是整行置中的：起點 = (畫面寬 - 整行寬) / 2，之後每個片段
+        // 的推進量累加就是它實際落在哪。x < 0 代表那一段畫到畫面外面去了。
+        int screen = guiWidth();
+        int start = screen < 0 ? Integer.MIN_VALUE : (screen - widthOf(message)) / 2;
+        sb.append("=== ").append(label).append("（getString） ===")
+          .append(System.lineSeparator())
+          .append(message.getString()).append(System.lineSeparator())
+          .append(System.lineSeparator())
+          .append("畫面寬 ").append(screen)
+          .append(" px、整行寬 ").append(widthOf(message))
+          .append(" px、起點 x=").append(start)
+          .append(System.lineSeparator())
+          .append(System.lineSeparator())
+          .append("=== ").append(label).append(" 逐片段 ===")
+          .append(System.lineSeparator());
+        int[] index = {0};
+        int[] cursor = {start};
+        java.util.List<String> offscreen = new java.util.ArrayList<>();
+        message.visit((style, text) -> {
+            int at = cursor[0];
+            // 退回的片段<b>寬度本來就是負的</b>（Wynncraft 就是靠它把游標拉回去），
+            // 所以不能拿 w < 0 當「量不到」——量不到是 MIN_VALUE。先前那樣寫的
+            // 結果是游標只進不退，x 一路加到畫面寬的一倍半。
+            int w = advance(Component.literal(text).setStyle(style));
+            sb.append(String.format(
+                    "  [%02d] x=%-6s 寬=%-5s font=%-38s color=%-9s px=%-6s text=%s%n",
+                    index[0], at == Integer.MIN_VALUE ? "?" : String.valueOf(at),
+                    w == Integer.MIN_VALUE ? "?" : String.valueOf(w), fontOf(style),
+                    style.getColor() == null ? "-" : style.getColor().serialize(),
+                    com.wynnchayuan.translate.SpaceOffset.isSpaceFont(style)
+                            ? String.valueOf(
+                                    com.wynnchayuan.translate.SpaceOffset.decode(text))
+                            : "-",
+                    describe(text)));
+            if (at != Integer.MIN_VALUE && at < 0 && !text.isBlank()) {
+                offscreen.add(String.format("  [%02d] x=%d  %s  %s",
+                        index[0], at, fontOf(style), describe(text)));
+            }
+            index[0]++;
+            if (at != Integer.MIN_VALUE && w != Integer.MIN_VALUE) {
+                cursor[0] = at + w;
+            }
+            return Optional.empty();
+        }, Style.EMPTY);
+        sb.append(System.lineSeparator())
+          .append("--- ").append(label).append(" 畫到畫面外面的片段 ---")
+          .append(System.lineSeparator());
+        if (offscreen.isEmpty()) {
+            sb.append("  （沒有）").append(System.lineSeparator());
+        } else {
+            for (String line : offscreen) {
+                sb.append(line).append(System.lineSeparator());
+            }
+        }
+        sb.append(System.lineSeparator());
+    }
+
+    /** 推進量，<b>可以是負的</b>；量不到回 {@code Integer.MIN_VALUE}。 */
+    private static int advance(Component message) {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            return mc == null || mc.font == null
+                    ? Integer.MIN_VALUE : mc.font.width(message);
+        } catch (Throwable t) {
+            return Integer.MIN_VALUE;
+        }
+    }
+
+    /** 目前的畫面寬（GUI 縮放後）；量不到回 -1。 */
+    private static int guiWidth() {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            return mc == null || mc.getWindow() == null
+                    ? -1 : mc.getWindow().getGuiScaledWidth();
+        } catch (Throwable t) {
+            return -1;
+        }
+    }
+
+    /** 量不到就回 -1——headless 測試與還沒開畫面的時候都量不到。 */
+    private static int widthOf(Component message) {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            return mc == null || mc.font == null ? -1 : mc.font.width(message);
+        } catch (Throwable t) {
+            return -1;
+        }
     }
 
     private static void dumpPlain(Component message, String prefix) {
@@ -418,6 +573,36 @@ public final class DialogueProbe {
         return letters >= MIN_WORDS ? core : "";
     }
 
+    /**
+     * 跟 {@link #words} 一樣，但<b>不排斥數字</b>。
+     *
+     * <p>{@code words} 的「帶數字一律不收」是給血量魔力那條用的——那種每個
+     * tick 都在變，收進來只會把名額佔滿。可是 action bar 的欄位那幾行偏偏
+     * 都帶數字（大廳那行有世界編號 {@code AS1}、{@code /class} 那行有物品
+     * 數量），用同一個過濾等於把要查的東西全擋掉：先前
+     * {@code actionbar-columns-*.txt} 一直沒產出就是這個原因。
+     *
+     * <p>重複的那一行靠 {@link #columnsKey} 擋，額度靠
+     * {@link #COLUMNS_LIMIT} 擋，不需要再靠數字判斷。
+     */
+    private static String letters(Component message) {
+        StringBuilder sb = new StringBuilder();
+        message.visit(text -> {
+            if (readable(text)) {
+                sb.append(text);
+            }
+            return Optional.empty();
+        });
+        String core = sb.toString().strip();
+        int letters = 0;
+        for (int i = 0; i < core.length(); i++) {
+            if (Character.isLetter(core.charAt(i))) {
+                letters++;
+            }
+        }
+        return letters >= MIN_WORDS ? core : "";
+    }
+
     /** 見 {@link #plain}：短到這樣的多半是 HUD 的碎片，不是給人讀的句子。 */
     private static final int MIN_WORDS = 8;
 
@@ -435,6 +620,19 @@ public final class DialogueProbe {
     private static int plains = 0;
 
     private static String plainKey = "";
+
+    /**
+     * 欄位探針自己的額度。
+     *
+     * <p>不能跟 {@link #plains} 共用：那一支每個 tick 都在看血量魔力那條，
+     * 六個名額一下就被吃光，真正要查的 {@code /class} 那行就永遠輪不到
+     * （[[wynnchayuan-palette-log-on-success]] 同一種坑）。
+     */
+    private static final int COLUMNS_LIMIT = 4;
+
+    private static int columnsWritten = 0;
+
+    private static String columnsKey = "";
 
     /** 改寫失敗的訊息最多留幾則。 */
     private static final int MISS_LIMIT = 6;

@@ -260,6 +260,14 @@ tasks.register('runFadeChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runFadeChecks' }
 
+tasks.register('runSelectorChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 /class 定位格的錨點矯正'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.SelectorRealignTest'
+}
+tasks.named('check') { dependsOn 'runSelectorChecks' }
+
 tasks.register('runCombatChecks', JavaExec) {
     group = 'verification'
     description = '驗證戰鬥浮動提示的判斷'
