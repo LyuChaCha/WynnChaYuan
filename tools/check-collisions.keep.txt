@@ -1,0 +1,27 @@
+# check-collisions.py 的「刻意同譯」清單。
+#
+# 格式：標題A|標題B # 為什麼刻意同譯
+# 標題之間用 | 隔開，原因用「 # 」隔開（標題本身可能含空格，所以不能用
+# 空格當分隔）。標題用報表上看到的正規化形（小寫、去占位符與標點、去詞尾 s），
+# 照著報表抄下來即可；寫原始鍵也行，載入時會再過一次正規化。
+# 一行一對，空行與 # 開頭的行忽略。
+#
+# 這裡的每一對在報表裡歸到「整套」段：不要單列去改，要動是整族一起動。
+# 背景見 issue #1019。
+
+# zh_tw 的 Corrupt／Corrupted／Corruption 整族都譯「腐敗」
+# （腐敗孢子、腐敗礦坑、腐敗碎晶……），只改這一列會跟整族脫節。
+corrupted slinger|corruption slinger # zh_tw 的 Corrupt 整族都譯「腐敗」，要改整族一起改
+
+# ja 的 Oak／Orc 都作「オーク」，跟 Minecraft 日版用詞一致
+# （オークの原木），ja 的三十幾列（オーク材、オークの板材……）全都這樣。
+oak|orc # ja 與日版 Minecraft 用詞一致（オークの原木），整族如此
+
+# 同一句台詞的錯字變體（原文自己寫錯：thi doe／s thi for），譯成同一句是對的。
+i wonder what thi doe fichu|wonder what s thi for fichu # 原文是同一句話的錯字變體
+
+# 同一句台詞被截成不同長度的兩次抓取，譯文本來就該共用。
+use your remote to|use your remote to ch # 同一句話的截斷長度不同
+
+# Yes, sir／Yessir 是同一種應答的措辭變體。
+soldier ye sir|soldier yessir # 同一種應答的措辭變體
