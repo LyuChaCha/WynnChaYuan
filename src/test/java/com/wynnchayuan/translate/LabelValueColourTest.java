@@ -52,7 +52,10 @@ public final class LabelValueColourTest {
         // 兩半的字數一長一短，先前的錯法剛好相反，所以兩行都要測。
         row(store, "數值比標籤長", new String[] {"Type: ", "Grinding Mobs"},
                 new int[] {LABEL, VALUE},
-                new String[] {"類型：", "刷怪"}, new int[] {LABEL, VALUE});
+                // 冒號統一成半形之後切成三段：標籤／冒號／數值。冒號還是標籤色，
+                // 多出來的那個空白在數值那一段裡——空白沒有字形，畫面上一樣。
+                new String[] {"類型", ":", " 刷怪"},
+                new int[] {LABEL, LABEL, VALUE});
 
         row(store, "標籤比數值長", new String[] {"World: ", "NA12"},
                 new int[] {LABEL, VALUE},
@@ -62,7 +65,7 @@ public final class LabelValueColourTest {
         row(store, "數值是佔位符的照舊",
                 new String[] {"- ", "Elapsed Time: ", "00:02"},
                 new int[] {LABEL, LABEL, WHITE},
-                new String[] {"- 已等待：", "00", ":", "02"},
+                new String[] {"- 已等待: ", "00", ":", "02"},
                 new int[] {LABEL, WHITE, WHITE, WHITE});
 
         // ★ 反面：整行同色的不能被切開。冒號兩邊一樣的顏色本來就沒得分，
