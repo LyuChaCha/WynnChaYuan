@@ -404,6 +404,15 @@ tasks.register('runLayeredGearNameChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLayeredGearNameChecks' }
 
+// 小框要瞄「字畫在哪」不是「實體站在哪」——多行浮空字往上長。
+tasks.register('runLabelAimChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.LabelAimTest'
+}
+tasks.named('check') { dependsOn 'runLabelAimChecks' }
+
 // 屬性列的標籤要靠左，不能被當成置中列補寬度差。
 tasks.register('runStatLabelIndentChecks', JavaExec) {
     group = 'verification'
