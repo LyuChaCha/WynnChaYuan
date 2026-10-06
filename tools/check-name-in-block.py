@@ -109,7 +109,8 @@ def scan(lang: str):
     names = plate_names(lang)
     # 複數與所有格算同一個名字：「The Royal Guards escort you」、
     # 「the Scroll Merchant's residence」
-    bound = {n: re.compile(r"(?<![\w'])" + re.escape(n) + r"(?:'s|s)?(?![\w])")
+    bound = {n: re.compile(r"(?<![A-Za-z0-9_'])" + re.escape(n)
+             + r"(?:'s|s)?(?![A-Za-z0-9_])")
              for n in names}
 
     hits = []
