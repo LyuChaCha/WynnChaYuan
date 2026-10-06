@@ -28,7 +28,9 @@ public abstract class EntityNameMixin {
         if (name == null || entity instanceof Player) {
             return;
         }
-        Component shown = WynntilsText.entityName(name);
+        // 實體要一起往下傳：「注視時顯示」的小框是靠實體認位置的，先前只傳了
+        // 文字，所以盔甲座的浮空字那條路只能就地換（見 WynntilsText#entityName）。
+        Component shown = WynntilsText.entityName(name, entity);
         if (shown != name) {
             cir.setReturnValue(shown);
         }
