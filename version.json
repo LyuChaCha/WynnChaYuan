@@ -1,12 +1,24 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.8",
+ "latest": "0.2.8_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.8_1": {
+   "headline": "\"Show on look\" now applies to floating text built from armour stands",
+   "items": [
+    "When **Nametags and floating text** was set to \"Show on look\", floating text built from invisible armour stands - such as the raid altar hints - was still replaced in place. All three settings now apply to both code paths."
+   ],
+   "zh_tw": {
+    "headline": "「注視時顯示」現在對盔甲座疊出來的浮空字也生效",
+    "items": [
+     "「名牌與漂浮字」切到「注視時顯示」時，盔甲座疊出來的浮空字（討伐戰祭壇上方那種提示）還是被就地換成中文。三段設定現在對兩條路都生效了。"
+    ]
+   }
+  },
   "0.2.8": {
    "headline": "The /class character selection screen is now translated",
    "items": [
