@@ -500,12 +500,20 @@ public final class WynntilsText {
 
     /** mixin 的入口：實體頭上的自訂名稱。見 {@code EntityNameMixin}。 */
     public static net.minecraft.network.chat.Component entityName(
-            net.minecraft.network.chat.Component name) {
+            net.minecraft.network.chat.Component name,
+            net.minecraft.world.entity.Entity entity) {
         try {
-            return entityName(name, WynnChaYuan.config(), WynnChaYuan.translations());
+            return entityName(name, entity, WynnChaYuan.config(), WynnChaYuan.translations());
         } catch (Throwable t) {
             return name;
         }
+    }
+
+    /** 沒有實體可用時的入口（測試用）。 */
+    static net.minecraft.network.chat.Component entityName(
+            net.minecraft.network.chat.Component name, CollectorConfig config,
+            TranslationStore store) {
+        return entityName(name, null, config, store);
     }
 
     /**
@@ -520,16 +528,26 @@ public final class WynntilsText {
      * 差別只在 Wynccraft 有些字還是舊式盔甲座、走不到 Wynntils 的名牌事件。
      * 那是實作差異，玩家分不出來，所以不另外開一列（#825 的討論）。
      *
-     * <p>只看「關／不關」，不分三段：「注視時顯示」那一段要在準心旁邊補小框，
-     * 而小框是 {@code LookAtTranslator} 靠 TextDisplay 認位置的，盔甲座沒有那個
-     * 實體可認。所以那一段對這種字只能就地換，不然等於完全不翻。
+     * <h2>三段都照做（issue #1047）</h2>
+     * 先前這條路只看「關／不關」：玩家在 F6 把「名牌與漂浮字」切到「注視時小框」，
+     * 盔甲座疊出來的浮空字還是被就地換掉——討伐戰的目標提示整段變中文，而設定上
+     * 寫的是「原文保留著」。
+     *
+     * <p>當時的理由是「小框靠 TextDisplay 認位置，盔甲座沒有那個實體」。那是誤判：
+     * {@code LookAtTranslator} 的 LABELS 是<b>以 Entity 為鍵</b>的，射線也只用
+     * {@code position()} 與 {@code getBoundingBox()}，盔甲座一樣有。真正缺的只是
+     * 把實體從 mixin 傳下來——{@code EntityNameMixin} 本來就拿得到。
+     *
+     * <p>所以現在：不管哪個模式都先把<b>原文</b>登記給小框（跟名牌那條路一樣，
+     * 見 {@code CaptureListener#translateNametag}），LOOK_AT 就原樣回傳。
      *
      * <p>每一幀都會畫，結果照原字記下；查不到的只在第一次看到時收進 capture。
      *
-     * @return 翻好的名稱；關掉或翻不出來時原樣回傳
+     * @return 翻好的名稱；關掉、翻不出來、或在「注視時顯示」模式下原樣回傳
      */
     static net.minecraft.network.chat.Component entityName(
-            net.minecraft.network.chat.Component name, CollectorConfig config,
+            net.minecraft.network.chat.Component name,
+            net.minecraft.world.entity.Entity entity, CollectorConfig config,
             TranslationStore store) {
         if (name == null || store == null || config == null
                 || config.nametagMode() == CollectorConfig.NametagMode.OFF) {
@@ -555,6 +573,18 @@ public final class WynntilsText {
             if (hit == name && config.collect()) {
                 collectName(text, "label/floating");
             }
+        }
+        // 小框要的是<b>原文</b>——它每一幀自己重新翻，所以換語言會立刻跟著變。
+        // 戰鬥數字與純圖示不登記：前者每次都不一樣，後者沒有字可翻。
+        if (entity != null && !name.getString().isBlank()) {
+            StyledText original = StyledText.fromComponent(name);
+            if (!com.wynnchayuan.capture.GlyphSplitter.isGlyphOnly(original)
+                    && !com.wynnchayuan.capture.CombatText.isIndicator(original)) {
+                LookAtTranslator.remember(entity, original);
+            }
+        }
+        if (config.nametagMode() == CollectorConfig.NametagMode.LOOK_AT) {
+            return name;                       // 原文不動，等玩家看向它
         }
         return hit;
     }
