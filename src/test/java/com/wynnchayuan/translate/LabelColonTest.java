@@ -52,7 +52,7 @@ public final class LabelColonTest {
         // --- 品質前綴 ---
         check("滿滾的物品名稱查得到（實際拿到："
                         + store.lookup("Perfect Ephemeral Tome of Mysticism II") + "）",
-                "完美流光秘法書卷 II".equals(
+                "完美流光祕法書卷 II".equals(
                         look("Perfect Ephemeral Tome of Mysticism II", store, false)));
         check("最低滾的也查得到",
                 look("Defective Ephemeral Tome of Mysticism II", store, false) != null);
