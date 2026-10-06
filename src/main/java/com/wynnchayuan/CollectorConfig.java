@@ -309,8 +309,13 @@ public final class CollectorConfig {
     /**
      * 名牌翻譯的呈現方式。
      *
-     * <p>預設 {@code LOOK_AT}：原文名牌不動，注視時另外跳一個小框。
-     * 就地取代會讓畫面上再也看不到原文，跟只認得英文名的老玩家就對不上話。
+     * <p>{@code LOOK_AT} 是原文名牌不動、注視時另外跳一個小框——就地取代會讓畫面上
+     * 再也看不到原文，跟只認得英文名的老玩家就對不上話。但預設是 {@code REPLACE}：
+     * 多數人裝這個模組就是要看中文，小框要多一個動作才看得到。
+     *
+     * <p>三段對<b>兩條路</b>都生效：TextDisplay 的名牌走
+     * {@code CaptureListener#translateNametag}，盔甲座疊出來的浮空字走
+     * {@code WynntilsText#entityName}。後者先前只認「關／不關」（issue #1047）。
      */
     private NametagMode nametagMode = NametagMode.REPLACE;
 

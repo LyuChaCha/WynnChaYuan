@@ -533,7 +533,9 @@ public final class FlowedBlockTest {
                 {"POWDER SOCKETS", "粉末插槽"},
                 {"Empty", "空"},
                 {"SET", "套裝"},
-                {"Average DPS", "平均每秒傷害"},
+                // #1036：名牌本來是「平均每秒傷害」，但 label.json 與 npc.json
+                // 那三行都寫「平均 DPS」，而且日文的名牌也是，所以統一到較短的那個。
+                {"Average DPS", "平均 DPS"},
                 {"Earth", "地屬性"},
                 {"Thunder", "雷屬性"},
                 {"Neutral", "無屬性"},

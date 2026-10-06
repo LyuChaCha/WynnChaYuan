@@ -249,6 +249,10 @@ public final class WynntilsTextTest {
      * <p>這支釘住的就是「同一個 store、換一層譯文」這件事。
      */
     private static void switched(CollectorConfig config) {
+        // 這一段量的是「換語言立刻跟著換」，要看得到譯文才量得到，所以切就地取代。
+        while (config.nametagMode() != CollectorConfig.NametagMode.REPLACE) {
+            config.cycleNametagMode();
+        }
         String corpus = "src/main/resources/assets/wynnchayuan/translations";
         TranslationStore store = new TranslationStore();
         net.minecraft.network.chat.Component altar =
@@ -269,6 +273,11 @@ public final class WynntilsTextTest {
 
     /** 盔甲座疊出來的浮空字：討伐戰祭壇上方那種。 */
     private static void entityName(CollectorConfig config, TranslationStore store) {
+        // 前面的測試會把模式留在別的段上，而這一段的前半要的是「就地取代」。
+        // 自己切到 REPLACE——別靠上一個測試收尾收得乾不乾淨。
+        while (config.nametagMode() != CollectorConfig.NametagMode.REPLACE) {
+            config.cycleNametagMode();
+        }
         net.minecraft.network.chat.Component altar = net.minecraft.network.chat.Component
                 .literal("Corrupted Altar").withStyle(net.minecraft.ChatFormatting.LIGHT_PURPLE);
         net.minecraft.network.chat.Component shown = WynntilsText.entityName(altar, config, store);
@@ -286,11 +295,18 @@ public final class WynntilsTextTest {
         }
         check("名牌那一列關掉時原樣回去",
                 WynntilsText.entityName(altar, config, store) == altar);
-        // 「注視時顯示」對盔甲座做不到小框（那要 TextDisplay 才認得出位置），
-        // 所以那一段一樣就地換——不然等於完全不翻，見 WynntilsText#entityName。
+        // 「注視時顯示」要把原文留著（issue #1047）。先前這條路只認「關／不關」，
+        // 於是討伐戰的目標提示在那個模式下照樣整段變中文，而設定上寫的是
+        // 「原文保留著」。小框靠的是 LookAtTranslator 的 LABELS，那是以 Entity 為鍵的，
+        // 盔甲座一樣認得出來——缺的只是把實體從 EntityNameMixin 傳下來。
         config.cycleNametagMode();
-        check("注視時顯示也照翻（小框對盔甲座做不到）",
-                WynntilsText.entityName(altar, config, store).getString().equals("腐敗祭壇"));
+        check("注視時顯示：原文不動（實際 "
+                        + WynntilsText.entityName(altar, config, store).getString() + "）",
+                WynntilsText.entityName(altar, config, store) == altar);
+        // 沒有實體可登記時（測試就是這種情況）也不可以退回就地換——
+        // 退回去的話，實機上任何一個拿不到實體的呼叫點都會偷偷變成 REPLACE。
+        check("注視時顯示：翻不出來的也原樣回去",
+                WynntilsText.entityName(odd, config, store) == odd);
         while (config.nametagMode() != was) {
             config.cycleNametagMode();
         }
