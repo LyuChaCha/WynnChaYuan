@@ -38,13 +38,20 @@
 | Assassin/Ninja | 刺客/忍者 | |
 | Shaman/Skyseer | 萨满/观星者 | |
 
-职业基础技能：zh_cn 技能树目前**大半保留英文**（Meteor、Bash、Charge、Uppercut、Multihit、
-Teleport、Vanish、Totem 等），已翻译的如下。**要统一翻译或统一保留，先在这里定，再整族改**。
+职业基础技能：zh_cn 技能树这二十个**全部都翻**，照下表。
+
+注意别跟装备提示那一列搞混：`ability-labels.json` 里的「X Cost:」是刻意保留英文名的
+（`Bash 消耗:`），zh_tw／ja／ko／es 都一样——那一列换成中文名反而跟技能树以外的
+画面对不起来。要翻的是技能树（`ability/*.json`）与词条名（`ui-labels.json`）这两处，
+而且两处要一致。
 
 | 原文 | 译文 | 备注 |
 |---|---|---|
+| Teleport | 传送 | |
+| Heal | 治疗 | |
+| Meteor | 陨石 | |
 | Ice Snake | 冰蛇 | 技能树前置提示已有此译 |
-| Arrow Storm | 箭矢风暴 | |
+| Arrow Storm | 箭矢风暴 | 不用「箭雨」——其余五个语言都是「箭矢＋风暴」 |
 | Arrow Bomb | 箭矢炸弹 | |
 | Arrow Shield | 箭盾 | |
 | Escape | 脱身 | |
@@ -53,6 +60,13 @@ Teleport、Vanish、Totem 等），已翻译的如下。**要统一翻译或统�
 | Smoke Bomb | 烟雾弹 | |
 | Haul | 牵引 | |
 | Uproot | 连根拔起 | |
+| Bash | 重击 | |
+| Charge | 冲锋 | |
+| Uppercut | 上挑 | 不用「上勾拳」——那是拳击的勾拳，这招是武器上撩 |
+| Multihit | 连击 | |
+| Vanish | 隐身 | 不用「消失」——语料里当普通动词的「消失」有四十几处 |
+| Totem | 图腾 | |
+| Aura | 光环 | |
 
 ## 攻击速度
 
