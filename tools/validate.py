@@ -31,10 +31,17 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-GLOSSARY_FILE = ROOT / "GLOSSARY.md"
 
-# 對照表是哪一種語言的。見 check_one 裡那段說明。
-GLOSSARY_LANG = "zh_tw"
+# 每一種語言的術語對照表：語言 → 檔案。
+#
+# 沒有表的語言<b>直接跳過</b>對照表檢查，不要退回讀 GLOSSARY.md——那是
+# zh_tw 的表，而 zh_cn 不是 zh_tw 的繁簡轉換（Corruption：zh_tw「腐敗」、
+# zh_cn「腐化」），套過去會把整套正確的譯法判成錯的（issue #1019）。
+# 別的語言要有自己的對照表時，在這裡加一行。
+GLOSSARY_FILES = {
+    "zh_tw": ROOT / "GLOSSARY.md",
+    "zh_cn": ROOT / "GLOSSARY.zh-cn.md",
+}
 TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 # 所有語言的根。譯文按語言分層之後，檢查要<b>每一種語言各跑一輪</b>——
 # 尤其是「同一個原文兩種譯法」那條：zh_tw 與 ja_jp 的同一句話本來就會
@@ -89,8 +96,8 @@ COLOUR_END = "{/}"
 HEX_COLOUR = re.compile(r"#[0-9A-Fa-f]{6}$")
 
 
-def load_glossary() -> dict[str, str]:
-    """讀 GLOSSARY.md 裡的對照表。
+def load_glossary(path: Path) -> dict[str, str]:
+    """讀對照表檔案（GLOSSARY.md、GLOSSARY.zh-cn.md……）裡的對照表。
 
     直接解析 markdown 而不是另外開一份 json，是為了<b>只有一份</b>：
     兩個檔案的話，改了一邊忘了另一邊，表就會開始說謊——而說謊的對照表
@@ -100,20 +107,21 @@ def load_glossary() -> dict[str, str]:
     含斜線的複合欄位（風／土／雷）跳過，那是說明不是對照。
     """
     terms: dict[str, str] = {}
-    if not GLOSSARY_FILE.is_file():
+    if not path.is_file():
         return terms
 
     # 只認表頭是「原文 | 譯文」的表。GLOSSARY 裡還有別種表——
     # 角色語氣、雙關說明——那些第二欄不是譯文，讀進來會變成假的對照，
     # 於是 npc.json 的「The Cook」被指控沒照對照表翻。
+    # 表頭的「譯文」繁簡都認：zh_cn 的表整份是簡體，表頭自然也是「译文」。
     in_terms = False
-    for line in GLOSSARY_FILE.read_text(encoding="utf-8").splitlines():
+    for line in path.read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if not line.startswith("|"):
             in_terms = False
             continue
         cells = [c.strip() for c in line.strip("|").split("|")]
-        if len(cells) >= 2 and cells[0] == "原文" and cells[1] == "譯文":
+        if len(cells) >= 2 and cells[0] == "原文" and cells[1] in ("譯文", "译文"):
             in_terms = True
             continue
         if not in_terms or line.startswith("|---"):
@@ -407,18 +415,19 @@ def check_pair(path: str, key: str, src: str, dst: str,
 
     # 整條就是對照表裡的詞，卻翻成別的說法 —— 同一個詞兩種譯法，
     # 玩家會以為是兩個不同的東西
-    # GLOSSARY.md 是<b>繁體中文</b>的對照表。拿它去比別的語言，每一條都會被
-    # 指控「與對照表不一致」——那不是提醒，那是把檢查變成雜訊。
     #
-    # 簡體中文也不行，而且原因跟西班牙文一樣實在：簡體不是繁體的字元轉換，
-    # 用詞本來就不同（資訊／信息、回復／恢复、滑鼠／鼠标）。拿繁體的對照表
-    # 去比，等於要求簡體寫成繁體的說法——那正好是這份翻譯要避免的事。
-    # 其他語言要有自己的對照表時再說。
-    agreed = glossary.get(src.strip()) if lang == GLOSSARY_LANG else None
+    # 對照表是<b>按語言分</b>的（GLOSSARY_FILES）：zh_tw 讀 GLOSSARY.md，
+    # zh_cn 讀 GLOSSARY.zh-cn.md。zh_cn 不是 zh_tw 的字元轉換，用詞本來
+    # 就不同（資訊／信息、回復／恢复、滑鼠／鼠标），拿繁體的表去比簡體，
+    # 等於要求簡體寫成繁體的說法——那正好是翻譯要避免的事。
+    # 沒有表的語言直接跳過（glossary 是空的，get 自然落空）。
+    agreed = glossary.get(src.strip())
     if agreed and agreed != dst.strip():
+        table = GLOSSARY_FILES.get(lang)
+        name = table.name if table else "對照表"
         out.append(Problem("warn", path, key,
-                           f"與對照表不一致：GLOSSARY.md 寫「{agreed}」。"
-                           f"要改譯法請先改 GLOSSARY.md，讓所有人一起跟著改"))
+                           f"與對照表不一致：{name} 寫「{agreed}」。"
+                           f"要改譯法請先改 {name}，讓所有人一起跟著改"))
 
     # 括號一律用半形。
     #
@@ -1141,7 +1150,9 @@ def collect(base: Path) -> list[Path]:
 
 def main(argv: list[str]) -> int:
     places = load_places()
-    glossary = load_glossary()
+    # 每種語言各讀各的表；沒有表的語言拿空 dict，對照表檢查自然跳過
+    glossaries = {lang: load_glossary(path)
+                  for lang, path in GLOSSARY_FILES.items()}
 
     if argv:
         files = [TRANSLATIONS / a for a in argv]
@@ -1223,7 +1234,7 @@ def main(argv: list[str]) -> int:
                 warnings += 1
 
     for lang, file in files:
-        problems = check_file(file, places, glossary, lang)
+        problems = check_file(file, places, glossaries.get(lang, {}), lang)
         if not problems:
             continue
         print(f"\n{file.name}")
@@ -1235,8 +1246,9 @@ def main(argv: list[str]) -> int:
                 warnings += 1
 
     print()
+    tables = "、".join(f"{lang} {len(g)} 個詞" for lang, g in glossaries.items())
     print(f"檢查了 {len(files)} 個檔案：{errors} 個錯誤，{warnings} 個警告"
-          f"（對照表 {len(glossary)} 個詞）")
+          f"（對照表：{tables}）")
     if errors:
         print("錯誤必須修掉才能合併；警告請自己判斷是不是刻意的。")
     return 1 if errors else 0
