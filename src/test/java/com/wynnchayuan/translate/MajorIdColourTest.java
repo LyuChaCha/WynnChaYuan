@@ -542,7 +542,7 @@ public final class MajorIdColourTest {
                                        StyledText.fromComponent(second));
         List<Component> out = LineTranslator.translateBlock(
                 run, store, new boolean[run.size()]);
-        check("秘術師那段查得到", out != null && !out.isEmpty());
+        check("祕術師那段查得到", out != null && !out.isEmpty());
         if (out == null || out.isEmpty()) {
             return;
         }
