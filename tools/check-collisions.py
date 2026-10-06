@@ -140,10 +140,23 @@ def run(translations: Path, keep_file: Path, names: list[str]) -> None:
                 raw = json.loads(path.read_text(encoding="utf-8"))
             except Exception:
                 continue
-            data[lang][name] = {
-                k: v for k, v in raw.items()
-                if not k.startswith("_") and isinstance(v, str)
-            }
+            # 兩種檔案結構都要讀。扁平檔是「鍵就是原文」，但 ingredient、
+            # material 與三個 gear-* 是 entries 結構（{"_meta":…, "entries":
+            # {"gear-weapon#0000": {"src":…, "dst":…}}}）——那五個檔的值是 dict
+            # 不是 str，照扁平檔的讀法會被 isinstance 濾光，**一筆都讀不到**，
+            # 而報表上只會顯示「要修 0 對」，看起來像是沒有撞名。
+            # 合計 7512 筆，而且素材名的正本正是 ingredient.json。
+            entries = raw.get("entries")
+            if isinstance(entries, dict):
+                data[lang][name] = {
+                    e["src"]: e["dst"] for e in entries.values()
+                    if isinstance(e, dict) and e.get("src") and e.get("dst")
+                }
+            else:
+                data[lang][name] = {
+                    k: v for k, v in raw.items()
+                    if not k.startswith("_") and isinstance(v, str)
+                }
 
     grand = Counter()
     for name in names:
