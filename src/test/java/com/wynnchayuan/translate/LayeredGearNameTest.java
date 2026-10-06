@@ -21,15 +21,27 @@ public final class LayeredGearNameTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(List.of(root.resolve("zh_tw"), root.resolve("zh_cn")));
 
+        // 不寫死措辭：這幾條要守的是「疊層之後拿到的是<b>簡中那層</b>的譯名」，
+        // 不是「Abhorrence 一定要叫某三個字」。所以答案去問一份只載簡中的 store
+        // ——譯名改了它會跟著改，而「被繁中那層壓過去」還是會被抓出來。
+        // （2026-10-06 簡中裝備名拿掉類別字時，寫死的「憎恶之矛」弄紅了這一支。）
+        TranslationStore cnOnly = new TranslationStore();
+        cnOnly.loadAll(List.of(root.resolve("zh_cn")));
+        cnOnly.setNameMode(CollectorConfig.ItemNames.ON);
+        String want = cnOnly.lookup("Abhorrence");
+
         store.setNameMode(CollectorConfig.ItemNames.ON);
+        check("簡中那層本來就有 Abhorrence 的譯名（實際 " + want + "）",
+              want != null && !want.equals("Abhorrence"));
         check("開：簡中查得到裝備名（實際 " + store.lookup("Abhorrence") + "）",
-              "憎恶之矛".equals(store.lookup("Abhorrence")));
+              want != null && want.equals(store.lookup("Abhorrence")));
         List<net.minecraft.network.chat.Component> out =
                 com.wynnchayuan.render.TooltipPanel.translateLines(List.of(
                         net.minecraft.network.chat.Component.literal("Abhorrence"),
                         net.minecraft.network.chat.Component.literal("Abhorrence")), store);
         String shown = out.isEmpty() ? "(沒翻)" : out.get(out.size() - 1).getString();
-        check("★ 開：tooltip 名稱那一行畫成簡中（實際 " + shown + "）", "憎恶之矛".equals(shown));
+        check("★ 開：tooltip 名稱那一行畫成簡中（實際 " + shown + "）",
+              want != null && want.equals(shown));
 
         // ★ 繁中那層的 Mythic 是空的（刻意不翻）；簡中那層的譯名不能被它擋回英文
         check("簡中的 Mythic 不算「還沒翻的裝備名」", !store.isBareGearName("Sunstar"));
@@ -51,7 +63,7 @@ public final class LayeredGearNameTest {
 
         store.setNameMode(CollectorConfig.ItemNames.BOTH);
         check("譯名加原文（實際 " + store.lookup("Abhorrence") + "）",
-              "憎恶之矛 (Abhorrence)".equals(store.lookup("Abhorrence")));
+              want != null && (want + " (Abhorrence)").equals(store.lookup("Abhorrence")));
 
         store.setNameMode(CollectorConfig.ItemNames.OFF);
         check("關：留原文（實際 " + store.lookup("Abhorrence") + "）",
