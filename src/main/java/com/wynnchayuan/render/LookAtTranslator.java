@@ -52,6 +52,26 @@ public final class LookAtTranslator {
     private static final double MIN_AIM_RADIUS = 1.4;
 
     /**
+     * 名牌從實體頂端往上抬多少格。
+     *
+     * <p>Minecraft 畫名牌的位置是 {@code getNameTagOffsetY()}，也就是碰撞箱頂端
+     * 再往上 0.5 格。瞄準要瞄<b>字畫在哪</b>，不是實體站在哪。
+     */
+    private static final double LABEL_LIFT = 0.5;
+
+    /**
+     * 名牌一行在世界座標裡大約多高。
+     *
+     * <p>多行的名牌是<b>往上長</b>的：第一行在最下面，後面幾行疊在它上頭。
+     * 所以一塊四行的浮空字，最上面那一行離實體有一格多。
+     *
+     * <p>issue #1047 就是這件事——討伐戰的「PUZZLE! / Destabilize the Research
+     * Lab!」是一個實體上的多行名牌，對著字看打不中，要低頭看到字<b>下方</b>
+     * 才跳得出小框；而最上面那一行怎麼看都跳不出來。
+     */
+    private static final double LINE_HEIGHT = 0.28;
+
+    /**
      * 記錄看過的名牌。
      *
      * <p>用 {@link WeakHashMap} 是刻意的：實體離開視野後 Minecraft 會回收它，
@@ -285,13 +305,13 @@ public final class LookAtTranslator {
      * 打到方塊就代表視線被擋住了。
      *
      * <p>瞄的是名牌的高度（實體頭頂）而不是腳下——蹲在櫃台後面的商人，
-     * 身體被擋住但名字看得見，那還是該顯示。
+     * 身體被擋住但名字看得見，那還是該顯示。呼叫端把那個點算好傳進來，
+     * 見 {@link #labelBox}。
      */
-    private static boolean blocked(Minecraft mc, Vec3 eye, Entity entity) {
+    private static boolean blocked(Minecraft mc, Vec3 eye, Vec3 head) {
         if (mc.level == null) {
             return false;
         }
-        Vec3 head = entity.position().add(0, entity.getBbHeight() + 0.4, 0);
         net.minecraft.world.level.ClipContext context =
                 new net.minecraft.world.level.ClipContext(
                         eye, head,
@@ -320,7 +340,8 @@ public final class LookAtTranslator {
             if (entity == null || !entity.isAlive() || entity == aimed) {
                 continue;
             }
-            Vec3 delta = entity.position().subtract(eye);
+            Vec3 centre = labelCentre(entity, e.getValue());
+            Vec3 delta = centre.subtract(eye);
             double distance = delta.length();
             if (distance > range || distance < 0.1) {
                 continue;
@@ -333,7 +354,7 @@ public final class LookAtTranslator {
             if (Math.toDegrees(Math.acos(along / distance)) > VIEW_CONE) {
                 continue;
             }
-            if (blocked(mc, eye, entity)) {
+            if (blocked(mc, eye, centre)) {
                 continue;
             }
             found.add(entity);
@@ -357,6 +378,65 @@ public final class LookAtTranslator {
      */
     private static final double VIEW_CONE = 35.0;
 
+    /**
+     * 這個名牌實際畫在哪一塊空間。
+     *
+     * <p>不是實體的碰撞箱：浮空字用的是<b>隱形盔甲座</b>，碰撞箱幾乎是個點，
+     * 而字畫在它上方，多行的話還會一路往上長。拿碰撞箱去瞄，玩家對著字看
+     * 永遠打不中（issue #1047）。
+     *
+     * <p>回傳的是「實體本身」與「字那一塊」的聯集，所以會說話的 NPC
+     * （身體看得到）跟純粹的浮空字都瞄得到。
+     */
+    private static AABB labelBox(Entity entity, StyledText label) {
+        return labelBox(entity.getBoundingBox(), entity.position(),
+                        lineCount(label));
+    }
+
+    /**
+     * 幾何的部分單獨抽出來——headless 的測試造不出 {@code Entity}，
+     * 但這幾行正是 issue #1047 的核心，不測等於沒修。
+     */
+    static AABB labelBox(AABB body, Vec3 at, int lines) {
+        AABB around = body.inflate(LABEL_BOX);
+        double bottom = body.maxY + LABEL_LIFT;
+        double top = bottom + lines * LINE_HEIGHT;
+        return new AABB(
+                Math.min(around.minX, at.x - LABEL_BOX),
+                Math.min(around.minY, bottom),
+                Math.min(around.minZ, at.z - LABEL_BOX),
+                Math.max(around.maxX, at.x + LABEL_BOX),
+                Math.max(around.maxY, top),
+                Math.max(around.maxZ, at.z + LABEL_BOX));
+    }
+
+    /** 名牌那一塊的中心。算「離視線多遠」與「有沒有被牆擋住」都用這個點。 */
+    private static Vec3 labelCentre(Entity entity, StyledText label) {
+        return labelCentre(entity.getBoundingBox(), entity.position(),
+                           lineCount(label));
+    }
+
+    static Vec3 labelCentre(AABB body, Vec3 at, int lines) {
+        double bottom = body.maxY + LABEL_LIFT;
+        double top = bottom + lines * LINE_HEIGHT;
+        return new Vec3(at.x, (bottom + top) / 2, at.z);
+    }
+
+    /** 名牌有幾行。多行的名牌是一個實體、名字裡夾著換行。 */
+    static int lineCount(StyledText label) {
+        if (label == null) {
+            return 1;
+        }
+        String text = label.getString();
+        int lines = 1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '\n') {
+                lines++;
+            }
+        }
+        return lines;
+    }
+
     private static Entity findAimedLabel(Minecraft mc) {
         double range = WynnChaYuan.config().nametagRange();
         double minDot = Math.cos(Math.toRadians(WynnChaYuan.config().nametagAngle()));
@@ -375,14 +455,16 @@ public final class LookAtTranslator {
             if (entity == null || !entity.isAlive()) {
                 continue;
             }
-            double distance = entity.position().distanceTo(eye);
+            // 距離、瞄準、擋住與否都從<b>字畫在哪</b>算，不是實體站在哪。
+            Vec3 centre = labelCentre(entity, e.getValue());
+            double distance = centre.distanceTo(eye);
             if (distance > range || distance < 0.1) {
                 continue;
             }
-            if (blocked(mc, eye, entity)) {
+            if (blocked(mc, eye, centre)) {
                 continue;                      // 牆後面的不算，見 blocked
             }
-            AABB box = entity.getBoundingBox().inflate(LABEL_BOX);
+            AABB box = labelBox(entity, e.getValue());
             if (box.clip(eye, end).isPresent()) {
                 if (distance < hitDistance) {
                     hitDistance = distance;
@@ -394,7 +476,7 @@ public final class LookAtTranslator {
                 continue;                      // 已經有直接命中的，其他都不用看了
             }
             // 這個名牌離視線那條直線多遠（垂直距離，世界座標）
-            Vec3 delta = entity.position().subtract(eye);
+            Vec3 delta = centre.subtract(eye);
             double along = delta.dot(look);
             if (along <= 0) {
                 continue;                      // 在身後

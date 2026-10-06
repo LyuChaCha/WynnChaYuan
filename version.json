@@ -1,12 +1,24 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.8_1",
+ "latest": "0.2.8_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.8_2": {
+   "headline": "The \"Show on look\" box now aims at the text, not at the entity",
+   "items": [
+    "The \"Show on look\" box aimed at the entity's position, but floating text is drawn above it and grows upward when it has several lines. You had to look well below the text to get the box, and the top line never worked at all. It now aims at the block of text itself."
+   ],
+   "zh_tw": {
+    "headline": "「注視時顯示」的小框改成瞄字，不是瞄實體",
+    "items": [
+     "小框原本瞄的是實體的位置，但浮空字是畫在實體<b>上方</b>的，多行還會一路往上長。於是要低頭看到字下方才跳得出小框，而最上面那一行怎麼看都跳不出來。現在瞄的是字實際畫出來的那一塊。"
+    ]
+   }
+  },
   "0.2.8_1": {
    "headline": "\"Show on look\" now applies to floating text built from armour stands",
    "items": [
