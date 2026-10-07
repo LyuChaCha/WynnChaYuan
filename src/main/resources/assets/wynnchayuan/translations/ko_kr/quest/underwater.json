@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Underwater",
-  "count": 25,
+  "count": 26,
   "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underwater#000": {
+   "src": "I will need those [{~} Gudgeon Meat] from the cave if you want that helmet!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underwater",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Underwater#001": {
    "src": "Glad to see you again!",
    "dst": "다시 만나서 반갑네!",
    "role": "desc",
@@ -22,7 +32,7 @@
     "reason": "candidate"
    }
   },
-  "Underwater#001": {
+  "Underwater#002": {
    "src": "But recently, a small hole has opened in the shipwreck here. It is believed that our fortune is hidden within it.",
    "dst": "그런데 최근 이 난파선에 작은 구멍이 뚫렸어요. 그 안에 우리 재물이 숨겨져 있다고들 하죠.",
    "role": "desc",
@@ -32,7 +42,7 @@
    "speaker": "Omango",
    "source": "captured"
   },
-  "Underwater#002": {
+  "Underwater#003": {
    "src": "Talk to Omango located at the North of {p} at [-{~}, {~}, -{~}]",
    "dst": "{p} 북쪽 [-{~}, {~}, -{~}]에 있는 Omango에게 말을 거세요",
    "role": "desc",
@@ -42,7 +52,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Underwater#003": {
+  "Underwater#004": {
    "src": "Hi, my name is Omango. I am a resident of the {p} village, on top of the hill.",
    "dst": "안녕하세요, 저는 Omango예요. 언덕 위 {p} 마을 주민이죠.",
    "role": "desc",
@@ -52,7 +62,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#004": {
+  "Underwater#005": {
    "src": "As you may know, our people came to your land years ago, and this is the ship they used.",
    "dst": "아시다시피 우리 민족은 오래전 당신들의 땅으로 왔고, 이게 그때 탄 배예요.",
    "role": "desc",
@@ -62,7 +72,7 @@
    "speaker": "Omango",
    "source": "wiki"
   },
-  "Underwater#005": {
+  "Underwater#006": {
    "src": "They brought lots of luxurious goods with them. Most of them got lost in the wreck.",
    "dst": "그들은 값비싼 물건을 잔뜩 가져왔어요. 대부분은 난파와 함께 사라졌지만요.",
    "role": "desc",

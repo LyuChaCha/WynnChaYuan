@@ -1,12 +1,92 @@
 {
  "_meta": {
   "quest": "Blazing Retribution",
-  "count": 43,
+  "count": 51,
   "translated": 43,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Blazing Retribution#000": {
+   "src": "That orc ran towards the lake!! Get it, get it before it runs someplace else!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#001": {
+   "src": "Hmm.. I wonder if there's any tier {~} items here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#002": {
+   "src": "AHA! HIS MUG!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#003": {
+   "src": "...It's expensive though. Oh well, it's worth it for a chance to adventure with Siegfried!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#004": {
+   "src": "What's a little wimp like you doing here? Eh? Snoopin' for rumors?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "Rymek Citizen\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Blazing Retribution#005": {
+   "src": "Ah, see. I never had the best memory of all...maybe a few shiny things could jog it, hm?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "Rymek Citizen 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
+   "source": "captured"
+  },
+  "Blazing Retribution#006": {
+   "src": "Feh, figures. Get outta here, wimpo! I bet a chicken could slay ya!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "Rymek Citizen 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
+   "source": "captured"
+  },
+  "Blazing Retribution#007": {
+   "src": "Nothing for ye to see here youngster. Move along!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Blazing Retribution",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Blazing Retribution#008": {
    "src": "Speak to Piere in the {p} Plains at [-{~}, {~}, -{~}]",
    "dst": "与 [-{~}, {~}, -{~}] 的 {p} 平原上的 Piere 交谈",
    "role": "desc",
@@ -16,7 +96,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Blazing Retribution#001": {
+  "Blazing Retribution#009": {
    "src": "Oh sweet baby bovine, my house, what am I going to do? Wait, who are you?",
    "dst": "噢我的小牛宝宝啊，我的房子，我该怎么办？等等，你是谁？",
    "role": "desc",
@@ -26,7 +106,7 @@
    "speaker": "Piere",
    "source": "wiki"
   },
-  "Blazing Retribution#002": {
+  "Blazing Retribution#010": {
    "src": "Oh, a Human. Did the {p} authorities send you?",
    "dst": "噢，是个人类。是 {p} 当局派你来的吗？",
    "role": "desc",
@@ -36,7 +116,7 @@
    "speaker": "Piere",
    "source": "wiki"
   },
-  "Blazing Retribution#003": {
+  "Blazing Retribution#011": {
    "src": "Detective Jackson has already been here. Not that he's doing anything useful.",
    "dst": "Jackson 侦探已经来过了。虽然他什么正事也没干。",
    "role": "desc",
@@ -46,7 +126,7 @@
    "speaker": "Piere",
    "source": "wiki"
   },
-  "Blazing Retribution#004": {
+  "Blazing Retribution#012": {
    "src": "An Orc managed to find some fire-imbued magical axe and burned down my house! Jackson didn't even call a firefighter!!",
    "dst": "有个兽人不知道从哪弄到一把附着火焰的魔法斧头，把我的房子烧了！Jackson 连消防员都没叫！！",
    "role": "desc",
@@ -56,7 +136,7 @@
    "speaker": "Piere",
    "source": "wiki"
   },
-  "Blazing Retribution#005": {
+  "Blazing Retribution#013": {
    "src": "I don't know what to do, but maybe if you find Detective Jackson, you can kick his sorry rear into gear...",
    "dst": "我不知道该怎么办，不过也许你找到 Jackson 侦探之后，能踹他那没用的屁股一脚，让他动起来……",
    "role": "desc",
@@ -66,7 +146,7 @@
    "speaker": "Piere",
    "source": "wiki"
   },
-  "Blazing Retribution#006": {
+  "Blazing Retribution#014": {
    "src": "The Orcs are already savage brutes. If they really have their hands on magical weapons, we're all in trouble!",
    "dst": "兽人本来就是野蛮的畜生。如果他们真的拿到了魔法武器，我们全都要遭殃了！",
    "role": "desc",
@@ -76,7 +156,7 @@
    "speaker": "Piere",
    "source": "wiki"
   },
-  "Blazing Retribution#007": {
+  "Blazing Retribution#015": {
    "src": "I believe Detective Jackson is by his cart \"planning his next move.\" He's not far from here. Just continue past my farm!",
    "dst": "我想 Jackson 侦探正在他的马车旁边“筹划下一步”。离这里不远。过了我的农场继续走就是！",
    "role": "desc",
@@ -86,7 +166,7 @@
    "speaker": "Piere",
    "source": "wiki"
   },
-  "Blazing Retribution#008": {
+  "Blazing Retribution#016": {
    "src": "Report the attack to Detective Jackson at [-{~}, {~}, -{~}]",
    "dst": "向 [-{~}, {~}, -{~}] 的 Jackson 侦探报告这次袭击",
    "role": "desc",
@@ -96,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Blazing Retribution#009": {
+  "Blazing Retribution#017": {
    "src": "How can I go about this...? I can't get involved myself, and they won't let me near... Wait, a human?",
    "dst": "这件事该怎么处理……？我不能亲自插手，他们也不让我靠近……等等，是人类？",
    "role": "desc",
@@ -106,7 +186,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#010": {
+  "Blazing Retribution#018": {
    "src": "...what do you MEAN \"what am I doing?\" This is a delicate situation! I need to- wait...actually, you might just be the help I need.",
    "dst": "……什么叫“我在干什么”？这是个很微妙的情况！我得——等等……其实，你也许正是我需要的帮手。",
    "role": "desc",
@@ -116,7 +196,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#011": {
+  "Blazing Retribution#019": {
    "src": "I'll give you the lowdown- we believe the orcs stole magical weaponry from within {p}, particularly a flaming axe.",
    "dst": "我跟你讲讲情况——我们认为兽人从 {p} 偷走了魔法武器，特别是一把燃烧的斧头。",
    "role": "desc",
@@ -126,7 +206,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#013": {
+  "Blazing Retribution#020": {
    "src": "And that means my hands are tied. Humans, however, were not mentioned in the notes, so you'll need to retrieve it.",
    "dst": "这就代表我无能为力。不过条文里没提到人类，所以得由你去把它拿回来。",
    "role": "desc",
@@ -136,7 +216,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#014": {
+  "Blazing Retribution#021": {
    "src": "Our only saving grace is that it'll be impossible for them to replicate its power- Orcs are hilariously inept at magic.",
    "dst": "我们唯一的庆幸是，他们不可能复制出它的力量——兽人对魔法简直是一窍不通，笨得好笑。",
    "role": "desc",
@@ -146,7 +226,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#015": {
+  "Blazing Retribution#022": {
    "src": "But, to the primary problem- You've probably seen how many orc camps are around here. Searching will take a long while...",
    "dst": "不过，说回主要问题——你大概也看到这一带有多少兽人营地了。一个个搜要花很久……",
    "role": "desc",
@@ -156,7 +236,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#016": {
+  "Blazing Retribution#023": {
    "src": "My only leads are that the \"Sablestone\" and \"Loamsprout\" camps seem to be celebrating recently. Best to start there, yes?",
    "dst": "我唯一的线索是，“Sablestone”和“Loamsprout”两个营地最近好像在庆祝什么。最好先从那里开始，对吧？",
    "role": "desc",
@@ -166,7 +246,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#017": {
+  "Blazing Retribution#024": {
    "src": "Just to review- You need to search those two camps for the Axe of {p}, and then return it to me if you find it.",
    "dst": "再确认一遍——你得去那两个营地搜 {p} 之斧，如果找到了就拿回来给我。",
    "role": "desc",
@@ -176,7 +256,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#018": {
+  "Blazing Retribution#025": {
    "src": "Sablestone is to the north, and Loamsprout to the south. They will be guarded, so don't be afraid to knock some heads.",
    "dst": "Sablestone 在北边，Loamsprout 在南边。那里会有守卫，所以别怕动手揍几个。",
    "role": "desc",
@@ -186,7 +266,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#019": {
+  "Blazing Retribution#026": {
    "src": "Look for the stolen weapon at the Sablestone and Loamsprout Orc camps",
    "dst": "在 Sablestone 和 Loamsprout 兽人营地寻找被偷走的武器",
    "role": "desc",
@@ -196,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Blazing Retribution#020": {
+  "Blazing Retribution#027": {
    "src": "Return to Detective Jackson with the news",
    "dst": "带着消息回到 Jackson 侦探那里",
    "role": "desc",
@@ -206,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Blazing Retribution#021": {
+  "Blazing Retribution#028": {
    "src": "I see no axe in your hands, so I should assume neither Sablestone or Loamsprout had it.",
    "dst": "我没看到你手里有斧头，所以我应该认为 Sablestone 和 Loamsprout 都没有它。",
    "role": "desc",
@@ -216,7 +296,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#022": {
+  "Blazing Retribution#029": {
    "src": "Wait, really? A stick was the most powerful weapon they had? And Loamsprout...threw their dinner at you...?",
    "dst": "等等，真的吗？他们最厉害的武器是一根棍子？而 Loamsprout……拿他们的晚饭砸你……？",
    "role": "desc",
@@ -226,7 +306,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#023": {
+  "Blazing Retribution#030": {
    "src": "I can't believe this! How are those...those THINGS outsmarting us?! Are they shuffling the axe between camps?",
    "dst": "真不敢相信！那些……那些东西怎么会比我们聪明？！他们在营地之间轮流藏斧头吗？",
    "role": "desc",
@@ -236,7 +316,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#024": {
+  "Blazing Retribution#031": {
    "src": "There are over a dozen camps between the Orcs and Goblins that they could be swapping it between!",
    "dst": "兽人和哥布林加起来有十几个营地，他们可以在里面换来换去！",
    "role": "desc",
@@ -246,7 +326,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#025": {
+  "Blazing Retribution#032": {
    "src": "What if the GOBLINS get a hold of it?! They're the cleverest by half of all of them, so that could actually be a threat!",
    "dst": "要是哥布林拿到了怎么办？！他们是那些家伙里最聪明的一半，那可就真成威胁了！",
    "role": "desc",
@@ -256,7 +336,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#027": {
+  "Blazing Retribution#033": {
    "src": "There's Earthpit, and Cliffhearth, Shineridge and Stonecave, Sunspark, Mudspring, Holehold, I-",
    "dst": "有 Earthpit、Cliffhearth、Shineridge 和 Stonecave、Sunspark、Mudspring、Holehold，我——",
    "role": "desc",
@@ -266,7 +346,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#028": {
+  "Blazing Retribution#034": {
    "src": "Fire! Stop!! I hold magic cutter! LISTEN TO POXPER!!",
    "dst": "火！停下！！我拿魔法砍刀！听 POXPER 的！！",
    "role": "desc",
@@ -276,7 +356,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Blazing Retribution#029": {
+  "Blazing Retribution#035": {
    "src": "I- I can't believe it, that has to be the one! AFTER THAT ORC, NOW!!",
    "dst": "我——我不敢相信，一定就是他！快追那个兽人！！",
    "role": "desc",
@@ -286,7 +366,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#030": {
+  "Blazing Retribution#036": {
    "src": "Find the hidden camp in the water near Piere's house at [-{~}, {~}, -{~}]",
    "dst": "在 [-{~}, {~}, -{~}] 的 Piere 家附近水里找到隐藏营地",
    "role": "desc",
@@ -296,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Blazing Retribution#031": {
+  "Blazing Retribution#037": {
    "src": "GRRRH!! What 'Uthniiazek' mean?!",
    "dst": "呃啊！！“Uthniiazek”到底什么意思？！",
    "role": "desc",
@@ -306,7 +386,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Blazing Retribution#032": {
+  "Blazing Retribution#038": {
    "src": "Kill Orc Leader Poxper",
    "dst": "杀死兽人首领 Poxper",
    "role": "desc",
@@ -316,7 +396,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Blazing Retribution#033": {
+  "Blazing Retribution#039": {
    "src": "Uthniiazek! Uthniiazek!! WHY NO LISTEN TO Poxper?",
    "dst": "Uthniiazek！Uthniiazek！！为什么不听 Poxper 的？",
    "role": "desc",
@@ -326,7 +406,7 @@
    "speaker": "Poxper",
    "source": "wiki"
   },
-  "Blazing Retribution#034": {
+  "Blazing Retribution#040": {
    "src": "Stupid Villager magic thing! Why fire no listen?",
    "dst": "蠢村民魔法东西！为什么火不听话？",
    "role": "desc",
@@ -336,7 +416,7 @@
    "speaker": "Poxper",
    "source": "wiki"
   },
-  "Blazing Retribution#035": {
+  "Blazing Retribution#041": {
    "src": "Poxper say thing and make fire...what else axe say? 'Azektoluth?'",
    "dst": "Poxper 说东西就出火……斧头还说了什么？“Azektoluth？”",
    "role": "desc",
@@ -346,7 +426,7 @@
    "speaker": "Poxper",
    "source": "wiki"
   },
-  "Blazing Retribution#036": {
+  "Blazing Retribution#042": {
    "src": "Hraahah! Poxper control fire! Fire- kill human with Poxper! Uthniiazek! Azektoluth!",
    "dst": "哈啊哈！Poxper 控制火了！火——跟 Poxper 一起杀人类！Uthniiazek！Azektoluth！",
    "role": "desc",
@@ -356,7 +436,7 @@
    "speaker": "Poxper",
    "source": "wiki"
   },
-  "Blazing Retribution#037": {
+  "Blazing Retribution#043": {
    "src": "Return the Magic Axe to the Detective",
    "dst": "把魔法斧头还给侦探",
    "role": "desc",
@@ -366,7 +446,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Blazing Retribution#038": {
+  "Blazing Retribution#044": {
    "src": "That looks like the axe of {p} to me! Blue finish, hot to the touch- well done! What Orc boss had stolen it?",
    "dst": "在我看来这就是 {p} 之斧！蓝色的表面，摸起来烫手——干得好！偷走它的是哪个兽人头目？",
    "role": "desc",
@@ -376,7 +456,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#040": {
+  "Blazing Retribution#045": {
    "src": "Mmm... Hopefully that Veretel won't catch wind of it. Regardless, you've done a great service for Villager-kind!",
    "dst": "嗯……希望那个 Veretel 不会听到风声。不管怎样，你为村民一族立下了大功！",
    "role": "desc",
@@ -386,7 +466,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#041": {
+  "Blazing Retribution#046": {
    "src": "Here's your compensation for that. Thank you for the aid!",
    "dst": "这是给你的报酬。谢谢你的帮助！",
    "role": "desc",
@@ -396,7 +476,7 @@
    "speaker": "Detective Jackson",
    "source": "wiki"
   },
-  "Blazing Retribution#042": {
+  "Blazing Retribution#047": {
    "src": "However, there's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
    "dst": "可是，我们跟兽人签的停火协议里有个漏洞。偷窃不算是侵略行为……",
    "role": "desc",
@@ -406,7 +486,7 @@
    "speaker": "Detective Jackson",
    "source": "captured"
   },
-  "Blazing Retribution#043": {
+  "Blazing Retribution#048": {
    "src": "Searching the camps one by one will be far too slow, gah!! How am I going to fix this?!",
    "dst": "一个个营地去搜太慢了，啊！！我到底要怎么解决这件事？！",
    "role": "desc",
@@ -416,7 +496,7 @@
    "speaker": "Detective Jackson",
    "source": "captured"
   },
-  "Blazing Retribution#044": {
+  "Blazing Retribution#049": {
    "src": "Jackson is twiddling his thumbs off to the southeast. Just continue past my farm!",
    "dst": "Jackson 正在东南边闲得发慌呢。过了我的农场继续走就是！",
    "role": "desc",
@@ -426,7 +506,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Blazing Retribution#045": {
+  "Blazing Retribution#050": {
    "src": "Poxper? That...hm. This could be bad. I've heard that name, and he's a fairly prolific Orc chief. You killed him, right?",
    "dst": "Poxper？那……嗯。这可能不太妙。我听过这个名字，他是个相当有名的兽人酋长。你把他杀了，对吧？",
    "role": "desc",

@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Bob's Lost Soul",
-  "count": 87,
+  "count": 89,
   "translated": 87,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Bob's Lost Soul#000": {
+   "src": "Brr... It's a little bit cold out there, don't you think?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "Tarod\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#001": {
+   "src": "Welcome back to our humble little town!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#002": {
    "src": "Talk to Tarod in {p}'s Forest at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Tarod в лесу {p} в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#001": {
+  "Bob's Lost Soul#003": {
    "src": "You're one of those soldier types, right? My name is Tarod, and I could really use your assistance here.",
    "dst": "Ты ведь из солдат, верно? Меня зовут Tarod, и мне очень нужна твоя помощь.",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#002": {
+  "Bob's Lost Soul#004": {
    "src": "Years ago, I met a very powerful and legendary warrior by the name of Bob. Yes, that Bob.",
    "dst": "Много лет назад я встретил могучего легендарного воина по имени Bob. Да, того самого Bob.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#003": {
+  "Bob's Lost Soul#005": {
    "src": "It's safe to say he was a very, well, admirable man. Him and I slowly became close friends over the years.",
    "dst": "Скажем так, он был человеком, ну, достойным восхищения. С годами мы стали близкими друзьями.",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#004": {
+  "Bob's Lost Soul#006": {
    "src": "That is, until one night, he vanished without a trace. The accepted story is that he was murdered by a pack of ravenous wolves...",
    "dst": "Пока однажды ночью он не исчез без следа. Считается, что его загрызла стая голодных волков…",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#005": {
+  "Bob's Lost Soul#007": {
    "src": "Now, I don't buy that story, but... look, the point here is that he's gone now, and I want to find out where the hell he ended up. That depressing zombie lumbering around {p} clearly isn't him.",
    "dst": "Я в это не верю, но… суть в том, что его больше нет, и я хочу знать, куда, чёрт возьми, он делся. Тот унылый зомби, что бродит у {p}, - точно не он.",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#006": {
+  "Bob's Lost Soul#008": {
    "src": "I believe he died in this area, and I have been looking for his body for quite a while now, with... less than success.",
    "dst": "Думаю, он умер где-то здесь. Я давно ищу его тело, но… без особого успеха.",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#007": {
+  "Bob's Lost Soul#009": {
    "src": "Rumors have spread that a tomb lies somewhere east of {p}, but I've never been able to find it. This is where I need you to help me out, yeah?",
    "dst": "Ходят слухи, что к востоку от {p} есть гробница, но я так её и не нашёл. Тут-то мне и нужна твоя помощь, ладно?",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#008": {
+  "Bob's Lost Soul#010": {
    "src": "Do you think you could help me out here? Search around that area, and report back to me if you see anything noteworthy.",
    "dst": "Поможешь? Обыщи ту местность и сообщи мне, если заметишь что-то важное.",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#009": {
+  "Bob's Lost Soul#011": {
    "src": "I'd be eternally grateful if you could help me uncover my old friend's true story.",
    "dst": "Буду вечно благодарен, если поможешь узнать правду о моём старом друге.",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#010": {
+  "Bob's Lost Soul#012": {
    "src": "Find Bob's Tomb",
    "dst": "Найди гробницу Bob",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#011": {
+  "Bob's Lost Soul#013": {
    "src": "Report what you've found to Tarod at [-{~}, {~}, -{~}]",
    "dst": "Расскажи Tarod о находке в [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#012": {
+  "Bob's Lost Soul#014": {
    "src": "Welcome back. Did you find anything worthwhile?",
    "dst": "С возвращением. Удалось найти что-нибудь стоящее?",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#013": {
+  "Bob's Lost Soul#015": {
    "src": "Oh? Yeah, that definitely sounds like the tomb! Were you able to see what's inside?",
    "dst": "О? Да, это точно та гробница! А внутрь заглянуть удалось?",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#014": {
+  "Bob's Lost Soul#016": {
    "src": "No? There's... a magical barrier? Great... just GREAT...",
    "dst": "Нет? Там… магический барьер? Отлично… просто ОТЛИЧНО…",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#015": {
+  "Bob's Lost Soul#017": {
    "src": "I have a feeling whoever made that tomb didn't want anyone attempting to get to him, but... Forget it, we have no other options. This is the only way we can place Bob's soul to rest for good.",
    "dst": "Похоже, строитель гробницы не хотел, чтобы к нему кто-то пробрался, но… Неважно, выбора нет. Только так душа Bob обретёт покой навсегда.",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#016": {
+  "Bob's Lost Soul#018": {
    "src": "Listen, I have a guy who can help us out. His name is Wedyf, a sorcerer type. If anyone could get rid of that barrier, it would be him.",
    "dst": "Слушай, есть у меня знакомый. Его зовут Wedyf, он вроде колдуна. Если кто и снимет барьер, так это он.",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#017": {
+  "Bob's Lost Soul#019": {
    "src": "He lives in {p}, a small town close to {p}. Go meet him, I'll wait for your return.",
    "dst": "Он живёт в {p}, городке близ {p}. Сходи к нему, а я подожду здесь.",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#018": {
+  "Bob's Lost Soul#020": {
    "src": "Talk to the sorcerer Wedyf in {p}.",
    "dst": "Поговори с колдуном Wedyf в {p}.",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#019": {
+  "Bob's Lost Soul#021": {
    "src": "Welcome traveler. Are you looking for something?",
    "dst": "Добро пожаловать, путник. Вы что-то ищете?",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#020": {
+  "Bob's Lost Soul#022": {
    "src": "Ooh, it has been a long time since I've released an undead...",
    "dst": "О-о, давненько я не освобождал нежить…",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#021": {
+  "Bob's Lost Soul#023": {
    "src": "The spirit of your dead friend must still be somewhere in this world. This is why we are unable to get close to his body. Soul magic works in mysterious ways.",
    "dst": "Дух вашего умершего друга всё ещё где-то в этом мире. Потому мы и не можем подойти к его телу. Магия душ непостижима.",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#022": {
+  "Bob's Lost Soul#024": {
    "src": "Don't worry, I can do it. I've heard a little bit of Bob's story before. What a tragedy. His own infallible protection used against him...",
    "dst": "Не волнуйтесь, я справлюсь. Я кое-что слышал о судьбе Bob. Какая трагедия. Его же безупречная защита обернулась против него…",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#023": {
+  "Bob's Lost Soul#025": {
    "src": "...Anyways, there's no need to lament on the past. Now, we need two items. The first is something from Bob himself. The other is the last thing that made his blood drop.",
    "dst": "…Впрочем, незачем горевать о прошлом. Нужны два предмета. Первый - вещь самого Bob. Второй - то, что последним пролило его кровь.",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#024": {
+  "Bob's Lost Soul#026": {
    "src": "Out past the other side of {p} there are two farm houses with an old cave inbetween then. An old florist used to live there, she has a rose that Bob had once cut himself on.",
    "dst": "За дальним краем {p} стоят две фермы, а между ними старая пещера. Там жила цветочница; у неё роза, о которую Bob однажды порезался.",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#025": {
+  "Bob's Lost Soul#027": {
    "src": "I will warn you, though; she was corrupted some time ago. It may not be that easy to take the rose, so do be prepared.",
    "dst": "Но предупреждаю: её давно поразила Скверна. Забрать розу будет непросто, так что подготовьтесь.",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#026": {
+  "Bob's Lost Soul#028": {
    "src": "Secondly... something of Bob's. I've heard rumors of a visage of him wandering around {p}, perhaps you can find something of use from it? Killing enemies in the {p} region may be worth your time, as well.",
    "dst": "Второе… вещь Bob. Говорят, у {p} бродит его призрачный облик, может, с него что-то добудете? Стоит и поохотиться на врагов в районе {p}.",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#027": {
+  "Bob's Lost Soul#029": {
    "src": "Bring me [{~} Rose] and [{~} Bob's Tear].",
    "dst": "Принесите мне [{~} Роза] и [{~} Слеза Bob].",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#028": {
+  "Bob's Lost Soul#030": {
    "src": "Bring [{~} Bob's Tear] from {p} and [{~} Rose] from the house in the {p} forest around [{~}, {~}, -{~}] to Wedyf",
    "dst": "Принеси Wedyf [{~} Слеза Bob] из {p} и [{~} Роза] из дома в лесу {p} у [{~}, {~}, -{~}]",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#029": {
+  "Bob's Lost Soul#031": {
    "src": "Great, you got everything.",
    "dst": "Отлично, всё на месте.",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#030": {
+  "Bob's Lost Soul#032": {
    "src": "Although... I might have forgot to tell you about something else too...",
    "dst": "Хотя… кажется, я забыл сказать ещё кое о чём…",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#031": {
+  "Bob's Lost Soul#033": {
    "src": "We also need a part of the soul of your dead friend.",
    "dst": "Нам нужна и частица души вашего умершего друга.",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#032": {
+  "Bob's Lost Soul#034": {
    "src": "This is something I unfortunately cannot do myself. There is a blacksmith close to {p} who does this kind of stuff.",
    "dst": "Увы, этого я сам не умею. Недалеко от {p} есть кузнец, который занимается такими делами.",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#033": {
+  "Bob's Lost Soul#035": {
    "src": "He can extract the soul from someone's weapon. Very useful in those situations. Go talk to him.",
    "dst": "Он умеет извлекать души из оружия. В таких случаях очень полезно. Поговорите с ним.",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#034": {
+  "Bob's Lost Soul#036": {
    "src": "Bring me the soul, and I'll be able to remove the spell preventing you from entering the tomb.",
    "dst": "Принесите мне душу, и я сниму заклятие, что не пускает вас в гробницу.",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#035": {
+  "Bob's Lost Soul#037": {
    "src": "Talk to the blacksmith in the small settlement southwest of {p} at [{~}, {~}, -{~}] about Bob's lost soul",
    "dst": "Поговори с кузнецом о потерянной душе Bob в поселении к юго-западу от {p}, в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#036": {
+  "Bob's Lost Soul#038": {
    "src": "What can I do for ya?",
    "dst": "Чем могу помочь?",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#037": {
+  "Bob's Lost Soul#039": {
    "src": "Oh yes! I can extract the soul from weapons!",
    "dst": "О да! Я умею извлекать души из оружия!",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#038": {
+  "Bob's Lost Soul#040": {
    "src": "Bring me the weapons of your friend, and I'll see if I can do something with it!",
    "dst": "Принеси мне оружие своего друга, и я посмотрю, что можно сделать!",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#039": {
+  "Bob's Lost Soul#041": {
    "src": "Oh it's... those weapons. Well, if you know what you're doing...",
    "dst": "О, это… то самое оружие. Что ж, если знаешь, что делаешь…",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#040": {
+  "Bob's Lost Soul#042": {
    "src": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shears] will do the trick.",
    "dst": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] и [{~} Depressing Shears] - вот что нужно.",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#041": {
+  "Bob's Lost Soul#043": {
    "src": "Be careful with the weapons, you will only get [ONE] of each. If you lose one, you will have to ask around if anyone has a spare.",
    "dst": "Береги оружие: каждого будет лишь [ОДНО]. Потеряешь - придётся искать, у кого есть запасное.",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#042": {
+  "Bob's Lost Soul#044": {
    "src": "Maybe someone will be selling one on the Trade Market in {p}, who knows.",
    "dst": "Может, кто-то продаёт такое на Торговой площадке в {p}, кто знает.",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#043": {
+  "Bob's Lost Soul#045": {
    "src": "My apprentice over there has traveled around a lot, they might know where the items are, but I warn you, they are a little bit quirky.",
    "dst": "Мой ученик вон там много странствовал, может, знает, где эти вещи. Но предупреждаю: он немного чудной.",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#044": {
+  "Bob's Lost Soul#046": {
    "src": "Weapons of the depressed kind? Oh, of course, of course, I know of the set! Around {p}, I hear they are kept.",
    "dst": "Оружие печали? О, конечно, конечно, знаю этот набор! Хранят его, слыхал я, у {p}.",
    "role": "desc",
@@ -456,7 +476,7 @@
    "speaker": "Apprentice",
    "source": "wiki"
   },
-  "Bob's Lost Soul#045": {
+  "Bob's Lost Soul#047": {
    "src": "An army of Linx you must clear, in a cave you shall find this spear!",
    "dst": "В пещере орду Linx разбей - и копьё найдёшь скорей!",
    "role": "desc",
@@ -466,7 +486,7 @@
    "speaker": "Apprentice",
    "source": "wiki"
   },
-  "Bob's Lost Soul#046": {
+  "Bob's Lost Soul#048": {
    "src": "To a skilled archer you must go, best her in a lumberyard and you will have her bow!",
    "dst": "К искусной лучнице ступай, на лесопилке её обыграй - и лук её забирай!",
    "role": "desc",
@@ -476,7 +496,7 @@
    "speaker": "Apprentice",
    "source": "wiki"
   },
-  "Bob's Lost Soul#047": {
+  "Bob's Lost Soul#049": {
    "src": "On an altar, effervescence leers, complete the sacrifice and you will gain your shears...",
    "dst": "На алтаре пузырится злой туман; свершишь обряд - и ножницы в карман…",
    "role": "desc",
@@ -486,7 +506,7 @@
    "speaker": "Apprentice",
    "source": "wiki"
   },
-  "Bob's Lost Soul#048": {
+  "Bob's Lost Soul#050": {
    "src": "In the forest, a house frozen in spikes thick, outsmart the contraption and be gifted a stick!",
    "dst": "В лесу дом в шипах густых промёрз до дна; перехитри механизм - и палка тебе дана!",
    "role": "desc",
@@ -496,7 +516,7 @@
    "speaker": "Apprentice",
    "source": "wiki"
   },
-  "Bob's Lost Soul#049": {
+  "Bob's Lost Soul#051": {
    "src": "But beware, beware! Danger lies ahead, and will try to halt you in your stead!",
    "dst": "Но берегись, берегись! Опасность впереди - попробует тебя остановить в пути!",
    "role": "desc",
@@ -506,7 +526,7 @@
    "speaker": "Apprentice",
    "source": "wiki"
   },
-  "Bob's Lost Soul#050": {
+  "Bob's Lost Soul#052": {
    "src": "Bring [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shear] to the Blacksmith.",
    "dst": "Принеси кузнецу [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] и [{~} Depressing Shear].",
    "role": "desc",
@@ -516,7 +536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#051": {
+  "Bob's Lost Soul#053": {
    "src": "Yo, what's up, bud?",
    "dst": "Йо, как жизнь, дружище?",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#052": {
+  "Bob's Lost Soul#054": {
    "src": "I've just been hangin' down here working on my teleportation device. The teleporters got partially frozen over, but I'm pretty damn sure they still work.",
    "dst": "Сижу тут внизу, вожусь со своим телепортом. Телепорты частично обледенели, но я чертовски уверен, что они работают.",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#053": {
+  "Bob's Lost Soul#055": {
    "src": "Hey, if you want to test it out, be my guest! You can use the teleporter core next to me to start it.",
    "dst": "Эй, хочешь проверить - пожалуйста! Запусти его ядром телепорта, что рядом со мной.",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#054": {
+  "Bob's Lost Soul#056": {
    "src": "Right click with it while on the center of the iced over teleporter chamber, and it will teleport you in a direction over to the next chamber.",
    "dst": "Встань в центр обледенелой камеры и нажми ПКМ с ядром - оно перенесёт тебя в каком-то направлении к следующей камере.",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#055": {
+  "Bob's Lost Soul#057": {
    "src": "It will then teleport you again in a direction {~} degrees clockwise, and it will keep doin' that forever.",
    "dst": "Затем оно снова перенесёт тебя, повернув на {~} градусов по часовой, и так без конца.",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#056": {
+  "Bob's Lost Soul#058": {
    "src": "Some of the ice walls have holes in them, and I believe if you use the teleporter core correctly you will be able to make it to the other side where the gold platform is.",
    "dst": "В некоторых ледяных стенах есть дыры, и если правильно пользоваться ядром, ты доберёшься на ту сторону, к золотой платформе.",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#057": {
+  "Bob's Lost Soul#059": {
    "src": "The core is unstable, though, and it will break if you run too far away. Keep that in mind, yeah?",
    "dst": "Только ядро нестабильно и сломается, если отбежишь слишком далеко. Имей в виду, лады?",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#058": {
+  "Bob's Lost Soul#060": {
    "src": "Oh, and I left an old wand of mine down at the gold platform. The thing was very depressing, though, so it ain't too much of an issue. But hey, if you can get to it, it's all yours, bud, free of cost!",
    "dst": "А, и я оставил у золотой платформы свою старую палочку. Штука была жутко унылая, так что не жалко. Но если доберёшься - она твоя, дружище, даром!",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "Markque The Wizard",
    "source": "wiki"
   },
-  "Bob's Lost Soul#059": {
+  "Bob's Lost Soul#061": {
    "src": "... Hi again. I see you got the weapons.",
    "dst": "…Снова привет. Вижу, оружие у тебя.",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#060": {
+  "Bob's Lost Soul#062": {
    "src": "These weapons emanate so much sadness... I'm sure you heard about Bob's story...",
    "dst": "От этого оружия веет такой печалью… Историю Bob ты наверняка знаешь…",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#061": {
+  "Bob's Lost Soul#063": {
    "src": "Here is the soul. It's a little bit crushed, but it can do the trick.",
    "dst": "Вот душа. Немного раздавлена, но сгодится.",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#062": {
+  "Bob's Lost Soul#064": {
    "src": "Good luck on your quest. Bob was a great hero, anything to help him is good in my book.",
    "dst": "Удачи в задании. Bob был великим героем, и помочь ему - дело доброе.",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "The Blacksmith",
    "source": "wiki"
   },
-  "Bob's Lost Soul#063": {
+  "Bob's Lost Soul#065": {
    "src": "Bring back [{~} Bob's Crushed Soul] to Wedyf.",
    "dst": "Отнеси [{~} Bob's Crushed Soul] обратно Wedyf.",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#064": {
+  "Bob's Lost Soul#066": {
    "src": "I'm glad to see you again.",
    "dst": "Рад снова вас видеть.",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#065": {
+  "Bob's Lost Soul#067": {
    "src": "I only need a part of the soul, you can keep the rest.",
    "dst": "Мне нужна лишь часть души, остальное оставьте себе.",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#066": {
+  "Bob's Lost Soul#068": {
    "src": "Give me a minute, I need to concentrate...",
    "dst": "Дайте минуту, мне нужно сосредоточиться…",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#067": {
+  "Bob's Lost Soul#069": {
    "src": "... . .. .",
    "dst": "... . .. .",
    "role": "desc",
@@ -686,7 +706,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#068": {
+  "Bob's Lost Soul#070": {
    "src": "..... .. ..... . . . . ...",
    "dst": "..... .. ..... . . . . ...",
    "role": "desc",
@@ -696,7 +716,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#069": {
+  "Bob's Lost Soul#071": {
    "src": "It is done. You should be able to enter the tomb now. Be careful.",
    "dst": "Готово. Теперь вы сможете войти в гробницу. Будьте осторожны.",
    "role": "desc",
@@ -706,7 +726,7 @@
    "speaker": "Wedyf",
    "source": "wiki"
   },
-  "Bob's Lost Soul#070": {
+  "Bob's Lost Soul#072": {
    "src": "Find Bob's corpse in his tomb.",
    "dst": "Найди тело Bob в его гробнице.",
    "role": "desc",
@@ -716,7 +736,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#071": {
+  "Bob's Lost Soul#073": {
    "src": "Report back what you've seen to Tarod",
    "dst": "Расскажи Tarod об увиденном",
    "role": "desc",
@@ -726,7 +746,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Bob's Lost Soul#072": {
+  "Bob's Lost Soul#074": {
    "src": "You're back... Has he... has he finally been put to rest?",
    "dst": "Ты здесь… Он… он наконец обрёл покой?",
    "role": "desc",
@@ -736,7 +756,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#073": {
+  "Bob's Lost Soul#075": {
    "src": "It's... hard to hear, knowing that my old friend is really gone, this time, but... I'm happy he won't have to suffer on this war-torn world for another second.",
    "dst": "Тяжело… это слышать: старого друга правда больше нет. Но… я рад, что он больше не мучится в этом истерзанном войной мире.",
    "role": "desc",
@@ -746,7 +766,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#074": {
+  "Bob's Lost Soul#076": {
    "src": "...I want you to have something. This is his old battle chesplate; he gave it to me a few days before he vanished. I think if he were still here, he'd want you to have this. Please, take good care of it for me...",
    "dst": "…Хочу кое-что тебе отдать. Это его старый боевой нагрудник; он отдал его мне за пару дней до исчезновения. Думаю, он хотел бы, чтобы он достался тебе. Прошу, береги его…",
    "role": "desc",
@@ -756,7 +776,7 @@
    "speaker": "Tarod",
    "source": "wiki"
   },
-  "Bob's Lost Soul#075": {
+  "Bob's Lost Soul#077": {
    "src": "Sometimes, fighting the corruption takes its toll on people.",
    "dst": "Порой борьба со Скверной тяжело сказывается на людях.",
    "role": "desc",
@@ -766,7 +786,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#076": {
+  "Bob's Lost Soul#078": {
    "src": "A dear friend of mine and the province was lost because he couldn't see a way out.",
    "dst": "Мой дорогой друг, друг всей провинции, погиб, потому что не видел выхода.",
    "role": "desc",
@@ -776,7 +796,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#077": {
+  "Bob's Lost Soul#079": {
    "src": "This memorial was erected for all those who suffer similarly.",
    "dst": "Этот мемориал воздвигнут для всех, кто страдает так же.",
    "role": "desc",
@@ -786,7 +806,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#078": {
+  "Bob's Lost Soul#080": {
    "src": "If you are ever confronted by the demons within, please seek help.",
    "dst": "Если тебя когда-нибудь одолеют внутренние демоны, прошу, обратись за помощью.",
    "role": "desc",
@@ -796,7 +816,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#079": {
+  "Bob's Lost Soul#081": {
    "src": "Out past the other side of {p}, near {p}, there are some arches in the mountains. An old florist lives in a house close by. She has a rose that Bob had once cut himself on.",
    "dst": "За дальним краем {p}, возле {p}, в горах есть несколько арок. Неподалёку в доме живёт старая цветочница. У неё роза, о которую Bob однажды порезался.",
    "role": "desc",
@@ -806,7 +826,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#080": {
+  "Bob's Lost Soul#082": {
    "src": "Anyway, my apprentice over there has traveled around a lot, they might know where you can find the items for yourself, but I warn you, they are a little bit quirky.",
    "dst": "В общем, мой ученик вон там много странствовал, может, подскажет, где самому найти эти вещи. Но предупреждаю: он немного чудной.",
    "role": "desc",
@@ -816,7 +836,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#081": {
+  "Bob's Lost Soul#083": {
    "src": "Hi! My name is Batelu, I've been studying those strange symbols on the walls for quite a while now.",
    "dst": "Привет! Меня зовут Batelu, я уже довольно давно изучаю эти странные символы на стенах.",
    "role": "desc",
@@ -826,7 +846,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#082": {
+  "Bob's Lost Soul#084": {
    "src": "I've learned a lot about Bob. Unfortunately, I do not think I am the person you are looking for.",
    "dst": "Я многое узнал о Bob. К сожалению, думаю, я не тот, кого ты ищешь.",
    "role": "desc",
@@ -836,7 +856,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#083": {
+  "Bob's Lost Soul#085": {
    "src": "If you are looking for Bob's corpse, it's under the stairs in the icy chamber. Talk to me when you are level {~}, I've got some work for you.",
    "dst": "Если ищешь тело Bob, оно под лестницей в ледяном зале. Поговори со мной, когда достигнешь {~} уровня, у меня будет для тебя работа.",
    "role": "desc",
@@ -846,7 +866,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#084": {
+  "Bob's Lost Soul#086": {
    "src": "Thank you for your help. I'm sure Bob thanks you too... wherever he is.",
    "dst": "Спасибо за помощь. Уверен, Bob тоже тебе благодарен… где бы он ни был.",
    "role": "desc",
@@ -856,7 +876,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#085": {
+  "Bob's Lost Soul#087": {
    "src": "The famous {p} lies to the south, in the area where the snow has melted.",
    "dst": "Знаменитый {p} лежит к югу, там, где растаял снег.",
    "role": "desc",
@@ -866,7 +886,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Bob's Lost Soul#086": {
+  "Bob's Lost Soul#088": {
    "src": "The mansion has a deep history with this land. The Twains used to fight the corruption before the likes of Bob were around, although people seem to forget about them.",
    "dst": "У особняка давняя история с этой землёй. Род Twain сражался со Скверной ещё до того, как появились такие, как Bob, хотя люди, кажется, о них забыли.",
    "role": "desc",

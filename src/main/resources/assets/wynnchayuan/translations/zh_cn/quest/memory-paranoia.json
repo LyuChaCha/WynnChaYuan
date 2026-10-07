@@ -1,12 +1,48 @@
 {
  "_meta": {
   "quest": "Memory Paranoia",
-  "count": 124,
+  "count": 127,
   "translated": 124,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Memory Paranoia#000": {
+   "src": "You can't quite make out the messy scribbles in the journal, but it looks very intense.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#001": {
+   "src": "The check is made out to a charity for a rather large amount of emeralds.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "This check is made out to a charity for a lot of emeralds.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.855,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#002": {
+   "src": "Nothing happened.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#003": {
    "src": "Oh, a human? If I could beg your pardon a moment... could I talk to you about the mansion here?",
    "dst": "哦，人类？能否耽误你片刻……我可以跟你聊聊这里的宅邸吗？",
    "role": "desc",
@@ -16,7 +52,7 @@
    "speaker": "Atisun",
    "source": "captured"
   },
-  "Memory Paranoia#001": {
+  "Memory Paranoia#004": {
    "src": "But... Eventually... Erm, we're not entirely sure what happened, only rumours have surfaced over the years, but... things took a turn, shall we say.",
    "dst": "可是……后来……呃，我们也不确定究竟发生了什么，这些年来只有一些传闻，但是……事情可以说是急转直下。",
    "role": "desc",
@@ -26,7 +62,7 @@
    "speaker": "Atisun",
    "source": "captured"
   },
-  "Memory Paranoia#002": {
+  "Memory Paranoia#005": {
    "src": "Because, aah... How shall I put this... One day they were all... discovered dead. Murdered. By each other.",
    "dst": "因为，啊……该怎么说呢……有一天，人们发现他们全都……死了。被谋杀。凶手是彼此。",
    "role": "desc",
@@ -36,7 +72,7 @@
    "speaker": "Atisun",
    "source": "captured"
   },
-  "Memory Paranoia#003": {
+  "Memory Paranoia#006": {
    "src": "Since, erm... Since there was no one alive to report the incident, it wasn't discovered until days later when a traveller passing by took notice of the mansion.",
    "dst": "因为，呃……没有活着的人能报告这件事，所以直到几天后，一个路过的旅人注意到这座宅邸，事情才被发现。",
    "role": "desc",
@@ -46,7 +82,7 @@
    "speaker": "Atisun",
    "source": "captured"
   },
-  "Memory Paranoia#004": {
+  "Memory Paranoia#007": {
    "src": "Yet, I am... scared of this place. It is the ruins of the life I should have had. The spirits of the dead are still there... Cursed. I need someone else to uncover my heritage.",
    "dst": "可是，我……害怕这个地方。这里是我本该拥有的人生的废墟。死者的灵魂还在那里……受着诅咒。我需要别人帮我揭开我的身世。",
    "role": "desc",
@@ -56,7 +92,7 @@
    "speaker": "Atisun",
    "source": "captured"
   },
-  "Memory Paranoia#005": {
+  "Memory Paranoia#008": {
    "src": "It's so kind of the Caritats to donate these supplies to the struggling people in the forest.",
    "dst": "Caritat 家把这些物资捐给森林里困苦的人，真是太好心了。",
    "role": "desc",
@@ -72,7 +108,7 @@
     "reason": "candidate"
    }
   },
-  "Memory Paranoia#006": {
+  "Memory Paranoia#009": {
    "src": "Mr. Caritat is always writing so intensely in that book... I do wonder what he could be saying.",
    "dst": "Caritat 先生总是那么专注地写那本书……我真想知道他可能在写什么。",
    "role": "desc",
@@ -82,14 +118,14 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#007": {
+  "Memory Paranoia#010": {
    "src": "I'll bet he's writing insults about us or something. He can't be as nice as he appears, no one is!",
    "dst": "我打赌他在写关于我们的坏话之类的。他不可能像表面上那么好，没有人是！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
+   "stage": "Stage 3",
+   "speaker": "Maid",
    "source": "captured",
    "similar": {
     "text": "I'll bet he's writing insults about us. He can't be as nice as he appears.",
@@ -98,7 +134,7 @@
     "reason": "candidate"
    }
   },
-  "Memory Paranoia#008": {
+  "Memory Paranoia#011": {
    "src": "Come on, Timmy. Mr. Caritat is crazily sweet. I doubt he'd be upset, even if you'd thrown it down there on purpose.",
    "dst": "别这样，Timmy。Caritat 先生好得不得了。就算你是故意丢下去的，我也不觉得他会生气。",
    "role": "desc",
@@ -108,7 +144,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#009": {
+  "Memory Paranoia#012": {
    "src": "G-g-ghosts?!",
    "dst": "鬼、鬼、鬼？",
    "role": "desc",
@@ -118,7 +154,7 @@
    "speaker": "Timmy",
    "source": "captured"
   },
-  "Memory Paranoia#010": {
+  "Memory Paranoia#013": {
    "src": "Mr. Caritat looks very engrossed in his writing... you best not disturb him.",
    "dst": "Caritat 先生看起来很专注在写东西……你最好不要打扰他。",
    "role": "desc",
@@ -128,7 +164,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#011": {
+  "Memory Paranoia#014": {
    "src": "I've forgotten, where should I look for my Library Key?",
    "dst": "我忘了，我的图书馆钥匙该去哪里找？",
    "role": "desc",
@@ -138,7 +174,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#012": {
+  "Memory Paranoia#015": {
    "src": "The drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, you should check there.",
    "dst": "排水管到现在大概已经把地下室的钥匙冲到宅邸东南角了，你该去那里看看。",
    "role": "desc",
@@ -154,7 +190,7 @@
     "reason": "candidate"
    }
   },
-  "Memory Paranoia#013": {
+  "Memory Paranoia#016": {
    "src": "Page {~}: The Caritats are as nice as people say. They're some of the kindest people I've ever met, let alone work for.",
    "dst": "第 {~} 页: Caritat 家真的像大家说的那么好。他们是我见过最善良的人之一，更别说我还替他们工作。",
    "role": "desc",
@@ -164,7 +200,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#014": {
+  "Memory Paranoia#017": {
    "src": "Page {~}: That Timmy boy has been acting rather unusual lately... Uncharacteristically hostile. I wonder what's come over him.",
    "dst": "第 {~} 页: 那个叫 Timmy 的男孩最近举止相当不寻常……反常地充满敌意。我很好奇他是怎么了。",
    "role": "desc",
@@ -174,7 +210,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#015": {
+  "Memory Paranoia#018": {
    "src": "Page {~}: I've been hearing strange noises at night. Scratching, and sometimes yelling... I do hope nothing bad is going on.",
    "dst": "第 {~} 页: 我晚上一直听到奇怪的声音。抓挠声，有时还有叫声……我真希望没有出什么坏事。",
    "role": "desc",
@@ -184,7 +220,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#016": {
+  "Memory Paranoia#019": {
    "src": "Page {~}: I don't even know how this happened, but Timmy performed dark magic. He shot a fireball! The north wall of the library was wrecked!",
    "dst": "第 {~} 页: 我甚至不知道这是怎么发生的，但 Timmy 施了黑魔法。他射出了一颗火球！图书馆的北墙被轰坏了！",
    "role": "desc",
@@ -194,7 +230,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#017": {
+  "Memory Paranoia#020": {
    "src": "It appears that all of the pages have been torn out...",
    "dst": "看起来所有页面都被撕掉了……",
    "role": "desc",
@@ -204,7 +240,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#018": {
+  "Memory Paranoia#021": {
    "src": "Aw man, I can't believe I'm not allowed to sit with the adults. I'm nearly twelve!",
    "dst": "唉，真不敢相信我不能跟大人坐在一起。我快十二岁了！",
    "role": "desc",
@@ -214,7 +250,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#019": {
+  "Memory Paranoia#022": {
    "src": "They appear to be chatting about local politics.",
    "dst": "他们看起来在聊本地的政治。",
    "role": "desc",
@@ -224,7 +260,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#020": {
+  "Memory Paranoia#023": {
    "src": "You hold up the spoon...",
    "dst": "你举起那支汤匙……",
    "role": "desc",
@@ -234,7 +270,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#021": {
+  "Memory Paranoia#024": {
    "src": "It's been depleted of its magic. How disappointing.",
    "dst": "它的法力已经被抽干了。真让人失望。",
    "role": "desc",
@@ -244,17 +280,17 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#022": {
+  "Memory Paranoia#025": {
    "src": "Thank you very much, Father, and everyone here. Here's to more years of health-",
    "dst": "非常感谢你，爸爸，也谢谢在场的每一位。愿我们今后年年健康——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
+   "stage": "Stage 8",
+   "speaker": "Timothy",
    "source": "captured"
   },
-  "Memory Paranoia#023": {
+  "Memory Paranoia#026": {
    "src": "My god... What is wrong with this place? No matter what I do, what I try...",
    "dst": "我的天……这地方到底怎么了？不管我怎么做、怎么试……",
    "role": "desc",
@@ -264,7 +300,7 @@
    "speaker": "Mr. Caritat",
    "source": "captured"
   },
-  "Memory Paranoia#024": {
+  "Memory Paranoia#027": {
    "src": "...Timothy, I'm going to ask you something, and I need you to answer me honestly. Were you... Were you responsible for this?",
    "dst": "……Timothy，我要问你一件事，你必须老实回答我。是……是你造成的吗？",
    "role": "desc",
@@ -274,7 +310,7 @@
    "speaker": "Mr. Caritat",
    "source": "captured"
   },
-  "Memory Paranoia#025": {
+  "Memory Paranoia#028": {
    "src": "Never, never!! That study is off-limits to everyone, even your mother! If I had known back then, I'd... I'd have... urgh...",
    "dst": "绝对不行，绝对不行！！那间书房对所有人都禁止进入，连你母亲也一样！要是我当时知道，我就……我就会……唔……",
    "role": "desc",
@@ -284,7 +320,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#026": {
+  "Memory Paranoia#029": {
    "src": "Page {~}: DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH.",
    "dst": "第 {~} 页: 死 死 死 死 死 死 死 死 死 死 死。",
    "role": "desc",
@@ -294,7 +330,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#027": {
+  "Memory Paranoia#030": {
    "src": "Page {~}: There is a dark power beyond our control within this mansion. There is no use trying to fight it.",
    "dst": "第 {~} 页: 这座宅邸里有一股我们无法控制的黑暗力量。试着对抗它是没有用的。",
    "role": "desc",
@@ -304,7 +340,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#028": {
+  "Memory Paranoia#031": {
    "src": "Page {~}: I felt like all of the skulls were watching me. I have had to turn them all towards the fireplace.",
    "dst": "第 {~} 页: 我觉得所有骷髅都在看着我。我只好把它们全部转向壁炉。",
    "role": "desc",
@@ -314,7 +350,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#029": {
+  "Memory Paranoia#032": {
    "src": "THAT WHICH STARTED THIS WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
    "dst": "引发那场战争之物将再度崛起。自那暗影、欺瞒与痛苦的领域而来。",
    "role": "desc",
@@ -324,17 +360,17 @@
    "speaker": "Mr. Caritat",
    "source": "captured"
   },
-  "Memory Paranoia#030": {
+  "Memory Paranoia#033": {
    "src": "FOREVER TRAPPED, FROM WHENCE IT CAME. THROUGH THE WEAK POINT BETWEEN REALMS IT. SHALL. RISE. AGAIN!",
    "dst": "永远被困于它的来处。它将穿过领域之间的薄弱之处。再。度。崛起！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
+   "stage": "Stage 15",
+   "speaker": "Mr. Caritat",
    "source": "captured"
   },
-  "Memory Paranoia#031": {
+  "Memory Paranoia#034": {
    "src": "Dear Anton, the chandelier fell in the main hall. Please fix it as soon as possible.",
    "dst": "亲爱的 Anton，大厅的吊灯掉下来了。请尽快修好。",
    "role": "desc",
@@ -344,17 +380,17 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#032": {
+  "Memory Paranoia#035": {
    "src": "FROM SOILS OF DOOM THE SERVANT LAID",
    "dst": "仆从自那毁灭之土降下",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Memory Paranoia",
-   "stage": "Stage 1",
-   "speaker": "Atisun",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
    "source": "captured"
   },
-  "Memory Paranoia#033": {
+  "Memory Paranoia#036": {
    "src": "All you have to do, is go in there and find answers. I'm sure the past won't haunt us both. Something happened here all those years ago... I want to know what.",
    "dst": "你只要进去里面找出答案就好。我相信过去不会同时缠着我们两个。那么多年前这里发生过什么事……我想知道那是什么。",
    "role": "desc",
@@ -364,7 +400,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#034": {
+  "Memory Paranoia#037": {
    "src": "I don't think it's wise you enter the mansion ever again...",
    "dst": "我认为你再进那座宅邸都不是明智之举……",
    "role": "desc",
@@ -374,7 +410,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Memory Paranoia#035": {
+  "Memory Paranoia#038": {
    "src": "Speak to Atisun.",
    "dst": "与 Atisun 交谈。",
    "role": "desc",
@@ -384,7 +420,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#037": {
+  "Memory Paranoia#039": {
    "src": "It was not always so dilapidated. It once stood tall, a monument to the family of Caritat, who constructed it from the ground up.",
    "dst": "它并不是一直这么破败。它曾经高高耸立，是 Caritat 家族的纪念碑，这座宅邸是他们从地基开始亲手建起来的。",
    "role": "desc",
@@ -394,7 +430,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#038": {
+  "Memory Paranoia#040": {
    "src": "The Caritats were unlike any other. Uncharacteristically selfless and helpful. Their wealth was everyone’s wealth as far as they were concerned.",
    "dst": "Caritat 家族与众不同。他们无私又乐于助人，难得一见。在他们看来，他们的财富就是所有人的财富。",
    "role": "desc",
@@ -414,7 +450,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#043": {
+  "Memory Paranoia#042": {
    "src": "I do not believe that my family simply went mad, but I do not know what happened. I want to know the truth. I think this mansion still holds the answers I'm looking for.",
    "dst": "我不相信我的家人就这样疯了，但我也不知道发生了什么。我想知道真相。我觉得这座宅邸仍然藏着我在寻找的答案。",
    "role": "desc",
@@ -424,7 +460,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#045": {
+  "Memory Paranoia#043": {
    "src": "Don't you worry, like my ancestors, I'm a generous man. If you help me, I will reward you handsomely. All you have to do, is go in there and find answers. I'm sure the past won't haunt us both.",
    "dst": "别担心，我跟我的祖先一样是个慷慨的人。如果你帮我，我会重重酬谢你。你只要进去找出答案就行。我相信过去不会来纠缠我们俩的。",
    "role": "desc",
@@ -434,7 +470,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#046": {
+  "Memory Paranoia#044": {
    "src": "Enter the {p}.",
    "dst": "进入 {p}。",
    "role": "desc",
@@ -444,7 +480,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#047": {
+  "Memory Paranoia#045": {
    "src": "Learn the story of the Caritat Family.",
    "dst": "了解 Caritat 家族的故事。",
    "role": "desc",
@@ -454,7 +490,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#048": {
+  "Memory Paranoia#046": {
    "src": "This check is made out to a charity for a lot of emeralds.",
    "dst": "这张支票是开给一个慈善机构的，金额是一大笔绿宝石。",
    "role": "desc",
@@ -464,7 +500,7 @@
    "speaker": "Check",
    "source": "wiki"
   },
-  "Memory Paranoia#049": {
+  "Memory Paranoia#047": {
    "src": "It's so nice that the Caritats are donating all of these supplies to the struggling people in the forest.",
    "dst": "Caritat 家把这些物资全都捐给森林里生活困苦的人，真是太好了。",
    "role": "desc",
@@ -474,7 +510,7 @@
    "speaker": "Maid",
    "source": "wiki"
   },
-  "Memory Paranoia#050": {
+  "Memory Paranoia#048": {
    "src": "He seems to be very engrossed in his writing.",
    "dst": "他似乎非常专注地在写东西。",
    "role": "desc",
@@ -484,7 +520,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#051": {
+  "Memory Paranoia#049": {
    "src": "I've heard about weird things happening around the house. People are saying the mansion might be haunted!",
    "dst": "我听说宅子里发生了一些怪事。大家都说这座宅邸可能闹鬼！",
    "role": "desc",
@@ -494,7 +530,7 @@
    "speaker": "Maid",
    "source": "wiki"
   },
-  "Memory Paranoia#052": {
+  "Memory Paranoia#050": {
    "src": "Ghosts? Preposterous! This mansion isn't haunted, don't believe those silly rumors!",
    "dst": "鬼？荒谬！这座宅邸才没有闹鬼，别相信那些无聊的传闻！",
    "role": "desc",
@@ -504,7 +540,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#054": {
+  "Memory Paranoia#051": {
    "src": "Mister Caritat is always writing in that book, always so intensely. I wonder what he is writing.",
    "dst": "Caritat 先生老是在那本书里写东西，总是写得那么专注。不知道他在写什么。",
    "role": "desc",
@@ -514,7 +550,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#055": {
+  "Memory Paranoia#052": {
    "src": "He won't even tell me what he's writing.",
    "dst": "他连我都不肯告诉他在写什么。",
    "role": "desc",
@@ -524,7 +560,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#057": {
+  "Memory Paranoia#053": {
    "src": "I accidentally dropped my Library Key down the drain, do you think my dad will be angry?",
    "dst": "我不小心把图书馆钥匙掉进下水道了，你觉得我爸爸会生气吗？",
    "role": "desc",
@@ -534,7 +570,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#058": {
+  "Memory Paranoia#054": {
    "src": "No, Mister Caritat is very forgiving. I doubt he'd be upset, especially if it was an accident.",
    "dst": "不会的，Caritat 先生很宽容。我想他不会生气的，尤其这还是个意外。",
    "role": "desc",
@@ -544,7 +580,7 @@
    "speaker": "Maid",
    "source": "wiki"
   },
-  "Memory Paranoia#059": {
+  "Memory Paranoia#055": {
    "src": "I still want to find the key though, do you know where I should look?",
    "dst": "可我还是想找到钥匙，你知道我该去哪里找吗？",
    "role": "desc",
@@ -554,7 +590,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#060": {
+  "Memory Paranoia#056": {
    "src": "Well, the drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, that's most likely where it is.",
    "dst": "嗯，排水管现在大概已经把钥匙冲到宅邸东南角的地下室了，最有可能就在那里。",
    "role": "desc",
@@ -564,7 +600,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#061": {
+  "Memory Paranoia#057": {
    "src": "Enter the basement and recover the Library Key.",
    "dst": "进入地下室，找回图书馆钥匙。",
    "role": "desc",
@@ -574,7 +610,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#062": {
+  "Memory Paranoia#058": {
    "src": "Enter the library of {p}.",
    "dst": "进入 {p} 的图书馆。",
    "role": "desc",
@@ -584,7 +620,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#063": {
+  "Memory Paranoia#059": {
    "src": "Enter the hole in the wall.",
    "dst": "钻进墙上的洞。",
    "role": "desc",
@@ -594,7 +630,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#064": {
+  "Memory Paranoia#060": {
    "src": "Timmy, is something bothering you? You have been acting so weird lately.",
    "dst": "Timmy，你有什么烦恼吗？你最近的举动好奇怪。",
    "role": "desc",
@@ -604,7 +640,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#065": {
+  "Memory Paranoia#061": {
    "src": "You cannot command me, mortal! You and all of your inferior species will bow to the darkness!",
    "dst": "你命令不了我，凡人！你和你们所有低劣的种族都将向黑暗俯首！",
    "role": "desc",
@@ -614,7 +650,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#066": {
+  "Memory Paranoia#062": {
    "src": "I don't know what game you are playing, Timmy. But I will not stand for it any longer, snap out of it!",
    "dst": "我不知道你在玩什么游戏，Timmy。但我再也不会容忍了，清醒一点！",
    "role": "desc",
@@ -624,7 +660,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#067": {
+  "Memory Paranoia#063": {
    "src": "You shall pay for your insolence, mortal!",
    "dst": "你将为你的无礼付出代价，凡人！",
    "role": "desc",
@@ -634,7 +670,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#068": {
+  "Memory Paranoia#064": {
    "src": "Dark magic? What foul books have you been reading? And what's that in your hand?",
    "dst": "黑魔法？你都读了些什么邪恶的书？你手里拿的又是什么？",
    "role": "desc",
@@ -644,7 +680,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#069": {
+  "Memory Paranoia#065": {
    "src": "Casting spells with a black spoon? I'm going to get rid of this foul thing!",
    "dst": "用一把黑勺子施法？我要把这邪恶的东西处理掉！",
    "role": "desc",
@@ -654,7 +690,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#070": {
+  "Memory Paranoia#066": {
    "src": "That is an item beyond you, mortal. Give it back to me this instant!",
    "dst": "那是你无法理解的东西，凡人。马上还给我！",
    "role": "desc",
@@ -664,7 +700,7 @@
    "speaker": "Timmy",
    "source": "wiki"
   },
-  "Memory Paranoia#071": {
+  "Memory Paranoia#067": {
    "src": "Return the spoon to the Kitchen.",
    "dst": "把勺子放回厨房。",
    "role": "desc",
@@ -674,7 +710,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#072": {
+  "Memory Paranoia#068": {
    "src": "Listen to Mr. Caritat's announcement.",
    "dst": "聆听 Caritat 先生的宣布。",
    "role": "desc",
@@ -684,7 +720,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#073": {
+  "Memory Paranoia#069": {
    "src": "Attention, attention everyone! I have an announcement I'd like to make!",
    "dst": "注意，大家注意！我有件事要宣布！",
    "role": "desc",
@@ -694,7 +730,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#074": {
+  "Memory Paranoia#070": {
    "src": "My son, Timothy, has just turned eighteen today.",
    "dst": "我的儿子 Timothy 今天满十八岁了。",
    "role": "desc",
@@ -704,7 +740,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#075": {
+  "Memory Paranoia#071": {
    "src": "Now, there have been a few slight hiccups over the years, but we've made it through mostly in one piece.",
    "dst": "这些年来虽然出过几次小状况，但我们大体上都平安度过了。",
    "role": "desc",
@@ -714,7 +750,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#076": {
+  "Memory Paranoia#072": {
    "src": "And I'd like to say, I'm very proud of him. To Timothy, a new man!",
    "dst": "我想说，我非常以他为荣。敬 Timothy，一个真正的男子汉！",
    "role": "desc",
@@ -724,7 +760,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#078": {
+  "Memory Paranoia#073": {
    "src": "Please, everyone stay calm. I'm sure it's just the cooks spilling something...",
    "dst": "请大家保持冷静。我相信只是厨师们打翻了什么东西……",
    "role": "desc",
@@ -734,7 +770,7 @@
    "speaker": "Mister Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#079": {
+  "Memory Paranoia#074": {
    "src": "Enter the Kitchen.",
    "dst": "进入厨房。",
    "role": "desc",
@@ -744,7 +780,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#080": {
+  "Memory Paranoia#075": {
    "src": "Oh my god... what is that thing?!",
    "dst": "我的天啊……那是什么东西？！",
    "role": "desc",
@@ -754,7 +790,7 @@
    "speaker": "Baker",
    "source": "wiki"
   },
-  "Memory Paranoia#081": {
+  "Memory Paranoia#076": {
    "src": "Everyone out, now! We can't fight these things!",
    "dst": "所有人马上出去！我们打不过这些东西！",
    "role": "desc",
@@ -764,7 +800,7 @@
    "speaker": "Chef",
    "source": "wiki"
   },
-  "Memory Paranoia#082": {
+  "Memory Paranoia#077": {
    "src": "Exit the Kitchen.",
    "dst": "离开厨房。",
    "role": "desc",
@@ -774,7 +810,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#083": {
+  "Memory Paranoia#078": {
    "src": "Speak to people who haven't fled from the disaster.",
    "dst": "与没有逃离灾难的人交谈。",
    "role": "desc",
@@ -784,7 +820,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#085": {
+  "Memory Paranoia#079": {
    "src": "How was any of that even possible? What are we going to tell their families?",
    "dst": "那种事怎么可能发生？我们要怎么跟他们的家人交代？",
    "role": "desc",
@@ -794,7 +830,7 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#087": {
+  "Memory Paranoia#080": {
    "src": "No, of course not! I overcame that years ago, you know that, I can't believe you still suspect me of-",
    "dst": "不，当然不是！我好几年前就克服那个了，你知道的，真不敢相信你还在怀疑我——",
    "role": "desc",
@@ -804,7 +840,7 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#088": {
+  "Memory Paranoia#081": {
    "src": "Ah, sir, we did find something rather unusual in the kitchen that might interest you? Maybe?",
    "dst": "啊，先生，我们在厨房里发现了一样相当不寻常的东西，您可能会感兴趣？大概吧？",
    "role": "desc",
@@ -814,7 +850,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#089": {
+  "Memory Paranoia#082": {
    "src": "What- Out with it! What did you find?! Please, please tell me I'm wrong!!",
    "dst": "什么——快说！你们找到了什么？！拜托，拜托告诉我是我想错了！！",
    "role": "desc",
@@ -824,7 +860,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#090": {
+  "Memory Paranoia#083": {
    "src": "We found this charred-looking black spoon. I've worked here for years, and I've never seen any spoons of this style in the mansion.",
    "dst": "我们找到了这把看起来烧焦了的黑勺子。我在这里工作好多年了，从没在宅邸里见过这种样式的勺子。",
    "role": "desc",
@@ -834,7 +870,7 @@
    "speaker": "Servant",
    "source": "wiki"
   },
-  "Memory Paranoia#091": {
+  "Memory Paranoia#084": {
    "src": "Wait, that spoon? I remember sneaking into your study that one time to get it, but how did it survive the fire?",
    "dst": "等等，那把勺子？我记得有一次偷偷溜进你的书房拿了它，可它怎么会在那场火里保存下来？",
    "role": "desc",
@@ -844,7 +880,7 @@
    "speaker": "Timothy",
    "source": "wiki"
   },
-  "Memory Paranoia#093": {
+  "Memory Paranoia#085": {
    "src": "Unlock the Study.",
    "dst": "打开书房的锁。",
    "role": "desc",
@@ -854,7 +890,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#094": {
+  "Memory Paranoia#086": {
    "src": "Enter the Study",
    "dst": "进入书房",
    "role": "desc",
@@ -864,7 +900,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#095": {
+  "Memory Paranoia#087": {
    "src": "Leave the Study.",
    "dst": "离开书房。",
    "role": "desc",
@@ -874,7 +910,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#096": {
+  "Memory Paranoia#088": {
    "src": "Speak with the Possessed Mr. Caritat.",
    "dst": "与被附身的 Caritat 先生交谈。",
    "role": "desc",
@@ -884,7 +920,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#100": {
+  "Memory Paranoia#089": {
    "src": "Bring the key to Timmy's bedroom.",
    "dst": "把钥匙带到 Timmy 的卧室。",
    "role": "desc",
@@ -894,7 +930,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#101": {
+  "Memory Paranoia#090": {
    "src": "Enter Timmy’s bedroom.",
    "dst": "进入 Timmy 的卧室。",
    "role": "desc",
@@ -904,7 +940,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#102": {
+  "Memory Paranoia#091": {
    "src": "Search Timmy's bedroom.",
    "dst": "搜查 Timmy 的卧室。",
    "role": "desc",
@@ -914,7 +950,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#103": {
+  "Memory Paranoia#092": {
    "src": "Bring the key to the Master Bedroom.",
    "dst": "把钥匙带到主卧室。",
    "role": "desc",
@@ -924,7 +960,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#104": {
+  "Memory Paranoia#093": {
    "src": "Enter the Master Bedroom.",
    "dst": "进入主卧室。",
    "role": "desc",
@@ -934,7 +970,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#105": {
+  "Memory Paranoia#094": {
    "src": "Harold, please...",
    "dst": "Harold，求你了……",
    "role": "desc",
@@ -944,7 +980,7 @@
    "speaker": "Mrs. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#106": {
+  "Memory Paranoia#095": {
    "src": "Stop this madness...",
    "dst": "别再这样疯下去了……",
    "role": "desc",
@@ -954,7 +990,7 @@
    "speaker": "Mrs. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#107": {
+  "Memory Paranoia#096": {
    "src": "Harold...?",
    "dst": "Harold……？",
    "role": "desc",
@@ -964,7 +1000,7 @@
    "speaker": "Mrs. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#109": {
+  "Memory Paranoia#097": {
    "src": "BREAK THROUGH THE REALMS TO THE LAND OF TRADE.",
    "dst": "冲破诸领域，直抵交易之地。",
    "role": "desc",
@@ -974,7 +1010,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#110": {
+  "Memory Paranoia#098": {
    "src": "CORRUPT THE WORLD WITH SEEDS OF PAIN",
    "dst": "以痛苦之种腐化世界",
    "role": "desc",
@@ -984,7 +1020,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#111": {
+  "Memory Paranoia#099": {
    "src": "SO THAT HE...",
    "dst": "好让他……",
    "role": "desc",
@@ -994,7 +1030,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#112": {
+  "Memory Paranoia#100": {
    "src": "...MAY RISE AGAIN!",
    "dst": "……得以再度崛起！",
    "role": "desc",
@@ -1004,7 +1040,7 @@
    "speaker": "Mr. Caritat",
    "source": "wiki"
   },
-  "Memory Paranoia#113": {
+  "Memory Paranoia#101": {
    "src": "Escape the flaming mansion through the back door.",
    "dst": "从后门逃出燃烧的宅邸。",
    "role": "desc",
@@ -1014,7 +1050,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#114": {
+  "Memory Paranoia#102": {
    "src": "Navigate the Caritat's basement.",
    "dst": "穿过 Caritat 家的地下室。",
    "role": "desc",
@@ -1024,7 +1060,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#115": {
+  "Memory Paranoia#103": {
    "src": "Escape through the mysterious rift.",
    "dst": "通过神秘的裂隙逃出去。",
    "role": "desc",
@@ -1034,7 +1070,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Memory Paranoia#116": {
+  "Memory Paranoia#104": {
    "src": "No, no! I said three feet left, you absolute...",
    "dst": "不，不！我说的是往左三英尺，你这个彻头彻尾的……",
    "role": "desc",
@@ -1044,7 +1080,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#117": {
+  "Memory Paranoia#105": {
    "src": "Mr. Caritat! What are you doing?!",
    "dst": "Caritat 先生！你在做什么？！",
    "role": "desc",
@@ -1054,7 +1090,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#118": {
+  "Memory Paranoia#106": {
    "src": "What are you doing here, Elf? You need proper equipment to be on this site-",
    "dst": "你来这里干什么，精灵？在工地里得穿戴合适的装备——",
    "role": "desc",
@@ -1064,7 +1100,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#119": {
+  "Memory Paranoia#107": {
    "src": "Mr Caritat, you can't build a house here!",
    "dst": "Caritat 先生，你不能在这里盖房子！",
    "role": "desc",
@@ -1074,7 +1110,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#120": {
+  "Memory Paranoia#108": {
    "src": "I can do whatever I like here, I bought the land.",
    "dst": "我在这里想做什么就做什么，这块地是我买的。",
    "role": "desc",
@@ -1084,7 +1120,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#121": {
+  "Memory Paranoia#109": {
    "src": "You don't understand! This is where it came... this is where the darkness invaded!",
    "dst": "你不明白！这里就是它来的……这里就是黑暗入侵的地方！",
    "role": "desc",
@@ -1094,7 +1130,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#122": {
+  "Memory Paranoia#110": {
    "src": "Don't be preposterous. I'm building here to show the people that there's simply nothing to worry about!",
    "dst": "别荒唐了。我在这里盖房子，就是要让大家看看根本没什么好担心的！",
    "role": "desc",
@@ -1104,7 +1140,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#123": {
+  "Memory Paranoia#111": {
    "src": "Besides, even if there was something, now that Dullahan's gone, it'll go too.",
    "dst": "况且，就算真有什么东西，现在 Dullahan 已经不在了，它也会跟着消失。",
    "role": "desc",
@@ -1114,7 +1150,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#124": {
+  "Memory Paranoia#112": {
    "src": "What?! He wasn't the one causing all this, it was-",
    "dst": "什么？！造成这一切的不是他，是——",
    "role": "desc",
@@ -1124,7 +1160,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#125": {
+  "Memory Paranoia#113": {
    "src": "Well of course you would think that. You and him had some... history, didn't you?",
    "dst": "嗯，你当然会这么想。你跟他有过一段……过去，不是吗？",
    "role": "desc",
@@ -1134,7 +1170,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#126": {
+  "Memory Paranoia#114": {
    "src": "I... Please, Mr Caritat. You don't understand what you're doing...",
    "dst": "我……求你了，Caritat 先生。你不明白你在做什么……",
    "role": "desc",
@@ -1144,7 +1180,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#127": {
+  "Memory Paranoia#115": {
    "src": "I am securing some prime real-estate right here. Oh... Perhaps that is why you're here?",
    "dst": "我正在这里拿下一块黄金地段。噢……也许这就是你来这里的原因？",
    "role": "desc",
@@ -1154,7 +1190,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#128": {
+  "Memory Paranoia#116": {
    "src": "What? No, I-",
    "dst": "什么？不，我——",
    "role": "desc",
@@ -1164,7 +1200,7 @@
    "speaker": "Lari",
    "source": "wiki"
   },
-  "Memory Paranoia#129": {
+  "Memory Paranoia#117": {
    "src": "Trying to expand elven territories, are you?! Well, I'll be having none of that! Leave, before I have my men escort you!",
    "dst": "想扩张精灵的地盘，是吧？！哼，我可不吃这一套！走开，不然我就叫我的人把你押出去！",
    "role": "desc",
@@ -1174,7 +1210,7 @@
    "speaker": "Caritat Senior",
    "source": "wiki"
   },
-  "Memory Paranoia#130": {
+  "Memory Paranoia#118": {
    "src": "Hey! Human! Are you alright?! Please, calm down, quit flailing around, you're safe!",
    "dst": "嘿！人类！你还好吗？！拜托，冷静下来，别再乱挥了，你安全了！",
    "role": "desc",
@@ -1184,7 +1220,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#132": {
+  "Memory Paranoia#119": {
    "src": "Oh thank goodness, you're back to us. I was so worried... er, you might not recall. Let me explain...",
    "dst": "噢，谢天谢地，你回过神来了。我好担心……呃，你可能不记得了。让我解释一下……",
    "role": "desc",
@@ -1194,7 +1230,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#133": {
+  "Memory Paranoia#120": {
    "src": "It... it seemed like you were possessed. You stood in the hall for... I don't know how long. I couldn't snap you out of it, no matter what I tried.",
    "dst": "你……你好像被附身了。你在大厅里站了……我也不知道有多久。不管我怎么做，都没办法让你清醒过来。",
    "role": "desc",
@@ -1204,7 +1240,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#134": {
+  "Memory Paranoia#121": {
    "src": "Voices that weren't yours, you spoke out their moments and thoughts. The maids, my father... everyone. I... you said what I needed to hear.",
    "dst": "你用不属于你的声音，说出了他们的经历和想法。女仆们、我父亲……每一个人。我……你说出了我需要听到的话。",
    "role": "desc",
@@ -1214,7 +1250,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#135": {
+  "Memory Paranoia#122": {
    "src": "My great grandfather, wanting to prove to everyone that the forest was still good, built his mansion atop the very spot that was acclaimed to be the cause of the Decay.",
    "dst": "我的曾祖父为了向大家证明森林依然美好，把他的宅邸建在了那个被认为是衰败源头的地点上。",
    "role": "desc",
@@ -1224,7 +1260,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#136": {
+  "Memory Paranoia#123": {
    "src": "My father tried to continue the traditions... but all of it was burned to ashes. I must consider myself lucky that I did not fall with them.",
    "dst": "我父亲试着延续传统……可一切都被烧成了灰烬。我没有跟他们一起丧命，只能说是幸运。",
    "role": "desc",
@@ -1234,7 +1270,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#137": {
+  "Memory Paranoia#124": {
    "src": "And what emerged from that spot? Who knows... but, whatever it was... the darkness must have lingered, and drove them all to madness.",
    "dst": "那个地点冒出了什么？谁知道呢……但不管那是什么……黑暗一定一直残留在那里，把他们全都逼疯了。",
    "role": "desc",
@@ -1244,7 +1280,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#138": {
+  "Memory Paranoia#125": {
    "src": "I'm sorry you went through that ordeal... I would suggest seeing a healer as soon as possible.",
    "dst": "很抱歉让你经历了那样的折磨……我建议你尽快去看看治疗师。",
    "role": "desc",
@@ -1254,7 +1290,7 @@
    "speaker": "Atisun",
    "source": "wiki"
   },
-  "Memory Paranoia#139": {
+  "Memory Paranoia#126": {
    "src": "I will make sure no one enters this house again. It is cursed. Thank you for helping me.",
    "dst": "我会确保再也没有人进入这座房子。它受到了诅咒。谢谢你帮我。",
    "role": "desc",

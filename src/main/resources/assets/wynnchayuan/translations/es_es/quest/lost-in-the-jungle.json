@@ -1,12 +1,28 @@
 {
  "_meta": {
   "quest": "Lost in the Jungle",
-  "count": 33,
+  "count": 34,
   "translated": 33,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost in the Jungle#000": {
+   "src": "Welcome, stranger, to our humble village.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Welcome traveler, to our humble island...",
+    "file": "quest/ice-nations.json",
+    "ratio": 0.805,
+    "reason": "candidate"
+   }
+  },
+  "Lost in the Jungle#001": {
    "src": "However... He also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
    "dst": "Pero también trajo una extraña gema morada. Nuestro chamán lo vio como mal augurio, pero yo estaba tan metido en la fiesta que no le hice caso.",
    "role": "desc",
@@ -16,7 +32,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Lost in the Jungle#001": {
+  "Lost in the Jungle#002": {
    "src": "Hm, I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
    "dst": "Hm... Ahora mismo veo un rastro extraño en el suelo... ¡es del color de la gema! Puede que te lleve hasta él, ¡por favor, síguelo!",
    "role": "desc",
@@ -26,7 +42,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Lost in the Jungle#002": {
+  "Lost in the Jungle#003": {
    "src": "You should talk to Aryn now...",
    "dst": "Ahora deberías hablar con Aryn…",
    "role": "desc",
@@ -36,7 +52,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Lost in the Jungle#003": {
+  "Lost in the Jungle#004": {
    "src": "Oh... My father sent you? Well, I am very impressed, Wynn warrior. You fight with the ferocity of our own!",
    "dst": "Oh... ¿te envió mi padre? Pues me impresionas, guerrero de Wynn. ¡Luchas con la ferocidad de los nuestros!",
    "role": "desc",
@@ -46,7 +62,7 @@
    "speaker": "Aryn",
    "source": "captured"
   },
-  "Lost in the Jungle#004": {
+  "Lost in the Jungle#005": {
    "src": "But that is beside the point. You say you have destroyed the spirit, and it does not feel tainted any longer, so I will trust you.",
    "dst": "Pero eso da igual ahora. Dices que destruiste al espíritu y que ya no se siente corrompida, así que confiaré en ti.",
    "role": "desc",
@@ -56,7 +72,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Lost in the Jungle#005": {
+  "Lost in the Jungle#006": {
    "src": "Speak to Gracen at [-{~}, {~}, -{~}]",
    "dst": "Habla con Gracen en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -66,7 +82,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#006": {
+  "Lost in the Jungle#007": {
    "src": "Excuse me, traveller... I am dreadfully sorry to ask this of you, but I need your help.",
    "dst": "Disculpa, viajero... Siento muchísimo pedirte esto, pero necesito tu ayuda.",
    "role": "desc",
@@ -76,7 +92,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#007": {
+  "Lost in the Jungle#008": {
    "src": "You see, my son, Aryn. Very recently, he underwent a traditional coming-of-age ceremony from our tribe.",
    "dst": "Verás, mi hijo, Aryn. Hace muy poco pasó la ceremonia tradicional de mayoría de edad de nuestra tribu.",
    "role": "desc",
@@ -86,7 +102,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#008": {
+  "Lost in the Jungle#009": {
    "src": "He was tasked to enter the dangerous {p}, just south of here, and brave the wilderness for three days. He returned a true man, successful.",
    "dst": "Debía entrar en la peligrosa {p}, al sur de aquí, y resistir tres días en la espesura. Volvió con éxito, hecho todo un hombre.",
    "role": "desc",
@@ -146,7 +162,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#016": {
+  "Lost in the Jungle#015": {
    "src": "Search the {p} for Aryn",
    "dst": "Busca a Aryn por {p}",
    "role": "desc",
@@ -156,7 +172,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#017": {
+  "Lost in the Jungle#016": {
    "src": "P-please, I beg of you spirit, let me go free! The tribesmen must be so worried-",
    "dst": "P-por favor, espíritu, ¡suéltame! La tribu estará preocupadísima-",
    "role": "desc",
@@ -166,7 +182,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#018": {
+  "Lost in the Jungle#017": {
    "src": "DO NOT RESIST, BOY! YOUR BODY IS MINE. I WAS TRAPPED IN THAT STONE FOR MILLENIA, AND NOW I AM FREE.",
    "dst": "¡NO TE RESISTAS, CHICO! TU CUERPO ES MÍO. ESTUVE ATRAPADO EN ESA PIEDRA MILENIOS, Y AHORA SOY LIBRE.",
    "role": "desc",
@@ -176,7 +192,7 @@
    "speaker": "Aryn?",
    "source": "wiki"
   },
-  "Lost in the Jungle#019": {
+  "Lost in the Jungle#018": {
    "src": "Aha, I hear someone coming! Surely a tribesman here to rescue me!",
    "dst": "¡Ajá, oigo a alguien venir! ¡Seguro que es alguien de la tribu!",
    "role": "desc",
@@ -186,7 +202,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#020": {
+  "Lost in the Jungle#019": {
    "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
    "dst": "¡Oh! ¡Entonces el cuerpo de este guerrero me servirá mucho mejor! ¡Dame tu poder, chico! ¡Debo vencerlo antes de poseerlo!",
    "role": "desc",
@@ -196,7 +212,7 @@
    "speaker": "Aryn?",
    "source": "wiki"
   },
-  "Lost in the Jungle#021": {
+  "Lost in the Jungle#020": {
    "src": "Defeat the spirit possessing Aryn",
    "dst": "Derrota al espíritu que posee a Aryn",
    "role": "desc",
@@ -206,7 +222,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#022": {
+  "Lost in the Jungle#021": {
    "src": "Make sure Aryn is safe at [-{~}, {~}, -{~}]",
    "dst": "Asegúrate de que Aryn está a salvo en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -216,7 +232,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#023": {
+  "Lost in the Jungle#022": {
    "src": "Hahah, take that, evil wraith! You'll never match the power of our tribe-",
    "dst": "¡Jajá, toma ya, espectro maligno! ¡Jamás igualarás a nuestra tribu-",
    "role": "desc",
@@ -226,7 +242,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#024": {
+  "Lost in the Jungle#023": {
    "src": "W-wait, you aren't part of our tribe! Who are you, why did you come here?",
    "dst": "E-espera, ¡tú no eres de nuestra tribu! ¿Quién eres, a qué has venido?",
    "role": "desc",
@@ -236,7 +252,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#026": {
+  "Lost in the Jungle#024": {
    "src": "I...can't say the same for myself. That spirit completely overtook me, I still can't move right now...",
    "dst": "Yo... no puedo decir lo mismo. Ese espíritu me dominó por completo; aún no puedo moverme...",
    "role": "desc",
@@ -246,7 +262,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#027": {
+  "Lost in the Jungle#025": {
    "src": "For now, please. Take away this gemstone. It caused all this, I don't want to be near such a bad luck charm.",
    "dst": "Por ahora, por favor, llévate esta gema. Ella causó todo esto; no quiero cerca un amuleto de mala suerte.",
    "role": "desc",
@@ -256,7 +272,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#028": {
+  "Lost in the Jungle#026": {
    "src": "Tell the tribe that I will return on my own. I made it back once, I can do it again once I am prepared.",
    "dst": "Dile a la tribu que volveré por mi cuenta. Ya lo logré una vez; lo lograré otra vez cuando esté listo.",
    "role": "desc",
@@ -266,7 +282,7 @@
    "speaker": "Aryn",
    "source": "wiki"
   },
-  "Lost in the Jungle#029": {
+  "Lost in the Jungle#027": {
    "src": "Bring the Mysterious Gemstone to Gracen at [-{~}, {~}, -{~}]",
    "dst": "Lleva la Gema Misteriosa a Gracen en [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -276,7 +292,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lost in the Jungle#030": {
+  "Lost in the Jungle#028": {
    "src": "Oh my... Aryn was possessed by a spirit residing within the gemstone?",
    "dst": "Cielos... ¿Un espíritu de la gema poseyó a Aryn?",
    "role": "desc",
@@ -286,7 +302,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#031": {
+  "Lost in the Jungle#029": {
    "src": "How shameful... Our shaman has never been wrong before, why did I disregard his warning...",
    "dst": "Qué vergüenza... Nuestro chamán nunca se ha equivocado, ¿por qué ignoré su advertencia...?",
    "role": "desc",
@@ -296,7 +312,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#033": {
+  "Lost in the Jungle#030": {
    "src": "Looking at it now, this is actually quite a valuable stone. If crushed to dust, it can be used in special charms we make.",
    "dst": "Ahora que la miro, es una piedra bastante valiosa. Molida, sirve para los amuletos especiales que hacemos.",
    "role": "desc",
@@ -306,7 +322,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#034": {
+  "Lost in the Jungle#031": {
    "src": "Here, allow me to grind this down for you. You can keep the shards for whatever purposes you may find for them in the future.",
    "dst": "Ven, deja que te la muela. Quédate los fragmentos para lo que quieras darles uso en el futuro.",
    "role": "desc",
@@ -316,7 +332,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#035": {
+  "Lost in the Jungle#032": {
    "src": "Our tribe, and especially myself... We thank you for your service. We shall consider you one of our own, from this day forward.",
    "dst": "Nuestra tribu, y yo en especial... te agradecemos tu ayuda. Desde hoy te consideraremos uno de los nuestros.",
    "role": "desc",
@@ -326,7 +342,7 @@
    "speaker": "Gracen",
    "source": "wiki"
   },
-  "Lost in the Jungle#036": {
+  "Lost in the Jungle#033": {
    "src": "In fact, if you'd like, you may even enter my house here whenever you'd like.",
    "dst": "De hecho, si quieres, puedes entrar en mi casa cuando gustes.",
    "role": "desc",
