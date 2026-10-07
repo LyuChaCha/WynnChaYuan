@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Star Thief",
-  "count": 23,
+  "count": 24,
   "translated": 23,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Star Thief#000": {
+   "src": "This pile of gravel appears to have blocked the entrance... Maybe there's a shovel nearby?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Star Thief",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Star Thief#001": {
    "src": "[{~}/{~}] Thief: .... I can't control myself...fjfjfj This rock...",
    "dst": "[{~}/{~}] 盜賊: .... 我control不住自己……fjfjfj 這塊石頭……",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Star Thief#001": {
+  "Star Thief#002": {
    "src": "Look into the rumors of strange weather near the Imal Inn at [-{~}, {~}, -{~}].",
    "dst": "前往 [-{~1}, {~2}, -{~3}] 的 Imal Inn 附近，調查天候異常的傳聞。",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Star Thief#002": {
+  "Star Thief#003": {
    "src": "Find the meteor's crash site at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 找到隕石的墜落地點。",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Star Thief#003": {
+  "Star Thief#004": {
    "src": "Hey you! Human. What are you doing here?",
    "dst": "喂，你！人類。你在這裡做什麼？",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Agent",
    "source": "wiki"
   },
-  "Star Thief#004": {
+  "Star Thief#005": {
    "src": "Under Villager law any extra terrestrial or extra voidal entities are prohibited and owned by the state.",
    "dst": "依村民律法，一切來自天外或虛空的物體皆屬禁品，歸國家所有。",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Agent",
    "source": "wiki"
   },
-  "Star Thief#005": {
+  "Star Thief#006": {
    "src": "Seeing as you are new to the land, I can't see you being prosecuted, especially a {p} Guard.",
    "dst": "不過你初來乍到，我想應該不至於被起訴，何況你還是 {p} 的守衛。",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Agent",
    "source": "wiki"
   },
-  "Star Thief#006": {
+  "Star Thief#007": {
    "src": "This meteor is different to what we've seen before. We suspect that direct contact with the meteor is dangerous.",
    "dst": "這顆隕石跟我們以往見過的都不一樣。我們懷疑直接接觸它是危險的。",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Agent",
    "source": "wiki"
   },
-  "Star Thief#007": {
+  "Star Thief#008": {
    "src": "The magical radiation doesn't seem to be affecting you at all though. Do you not feel anything? Perhaps you could help me locate it.",
    "dst": "可是那股魔法輻射對你好像完全沒有影響。你沒有任何感覺嗎？也許你可以幫我找到它。",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Agent",
    "source": "wiki"
   },
-  "Star Thief#008": {
+  "Star Thief#009": {
    "src": "Explore the cave that the meteor crashed into.",
    "dst": "探索隕石墜落造成的洞窟。",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Star Thief#009": {
+  "Star Thief#010": {
    "src": "It's... mine.",
    "dst": "它是……我的。",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Star Thief#010": {
+  "Star Thief#011": {
    "src": "Escape the collapsing cave.",
    "dst": "從崩塌的洞窟中逃出。",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Star Thief#011": {
+  "Star Thief#012": {
    "src": "Follow the trail leading off to the east from the cave.",
    "dst": "沿著洞窟往東延伸的痕跡追蹤。",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Star Thief#012": {
+  "Star Thief#013": {
    "src": "Explore the cave at [-{~}, {~}, -{~}] and defeat the insane thief.",
    "dst": "探索 [-{~1}, {~2}, -{~3}] 的洞窟，擊敗發狂的竊賊。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Star Thief#013": {
+  "Star Thief#014": {
    "src": ".... I can't control myself...fjfjfj This rock...",
    "dst": ".... 我控制不了自己……fjfjfj 這塊石頭……",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Thief",
    "source": "wiki"
   },
-  "Star Thief#014": {
+  "Star Thief#015": {
    "src": "What is... this feeling... No I won't listen..",
    "dst": "這是什麼……感覺……不，我不會聽的……",
    "role": "desc",

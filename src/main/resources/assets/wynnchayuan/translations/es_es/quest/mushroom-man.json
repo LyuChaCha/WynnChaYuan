@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "Mushroom Man",
-  "count": 82,
+  "count": 85,
   "translated": 82,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Mushroom Man#000": {
+   "src": "Did you know this forest was once the site of a gigantic corrupted siege?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#001": {
+   "src": "I don't remember all the details, but those watchtowers around the forest were used in those battles.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#002": {
+   "src": "Sure, they're empty now, but you should explore them and bone up on your history!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Mushroom Man",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Mushroom Man#003": {
    "src": "I'm sorry, recruit, but that passage is blocked. We used to use it, but not anymore...",
    "dst": "Lo siento, recluta, pero ese pasadizo está bloqueado. Antes lo usábamos, pero ya no…",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#001": {
+  "Mushroom Man#004": {
    "src": "Halt! You cannot go down this cave, it is blocked.",
    "dst": "¡Alto! No puedes bajar por esta cueva, está bloqueada.",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#002": {
+  "Mushroom Man#005": {
    "src": "He's... difficult. He's the son of my sister, who we lost to spiders some time ago.",
    "dst": "Él es… difícil. Es el hijo de mi hermana, a la que perdimos por las arañas hace algún tiempo.",
    "role": "desc",
@@ -42,7 +72,7 @@
     "reason": "candidate"
    }
   },
-  "Mushroom Man#003": {
+  "Mushroom Man#006": {
    "src": "With his father out of the picture, I had to take him in. He's a grown man now, yes, but... I fear the loss has taken its toll on us both.",
    "dst": "Al no estar su padre, tuve que acogerlo. Ya es un hombre hecho y derecho, sí, pero… me temo que la pérdida nos ha pasado factura a los dos.",
    "role": "desc",
@@ -52,7 +82,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#004": {
+  "Mushroom Man#007": {
    "src": "I truly hope he will cease with these ridiculous ploys soon... but I can't bring myself to do more than give him a stern talking to.",
    "dst": "Espero de veras que pronto deje estas tretas ridículas… pero no soy capaz de hacer más que echarle una buena reprimenda.",
    "role": "desc",
@@ -62,7 +92,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#005": {
+  "Mushroom Man#008": {
    "src": "He's a good man, truly. I believe that with my whole heart. I only wish he would show that side of himself to others.",
    "dst": "Es un buen hombre, de verdad. Lo creo con todo mi corazón. Solo desearía que mostrara ese lado suyo a los demás.",
    "role": "desc",
@@ -72,17 +102,17 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#006": {
+  "Mushroom Man#009": {
    "src": "{u}, hello! This place really is nice, isn't it? I'd like to stay a while longer before moving on towards {p}, but I'll be ready soon.",
    "dst": "¡Hola, {u}! Este sitio está muy bien, ¿verdad? Me gustaría quedarme un poco más antes de seguir hacia {p}, pero pronto estaré listo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
    "stage": "Stage 1",
-   "speaker": "",
+   "speaker": "Tasim",
    "source": "captured"
   },
-  "Mushroom Man#007": {
+  "Mushroom Man#010": {
    "src": "You need to be Woodcutting Lv. {~} to start this Mini-Quest.",
    "dst": "Necesitas nivel {~} de Tala para empezar esta minimisión.",
    "role": "desc",
@@ -92,7 +122,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#008": {
+  "Mushroom Man#011": {
    "src": "We can kill spiders! Right, {u}? Come on, this is what we're here to do! We became soldiers to help the people of Wynn, didn't we? We'll help you get your mushrooms back, sir.",
    "dst": "¡Arañas sabemos matar! ¿Verdad, {u}? ¡Venga, a esto hemos venido! Nos hicimos soldados para ayudar a la gente de Wynn, ¿no? Recuperaremos tus setas, señor.",
    "role": "desc",
@@ -102,37 +132,37 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#009": {
+  "Mushroom Man#012": {
    "src": "H-hm. Good. I can't m-make my soup without... mushrooms. F-follow me, I'll take you to the-... the spiders. B-bad spiders.",
    "dst": "H-hm. Bien. Sin setas no puedo... hacer sopa. S-sígueme, te llevo a las... las arañas. A-arañas malas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
    "source": "captured"
   },
-  "Mushroom Man#010": {
+  "Mushroom Man#013": {
    "src": "Ah, you two must be the the recruits Aledar has been telling us all about. It's good to finally meet you, though I can't help but notice you seem to have arrived in a rush.",
    "dst": "Ah, vosotros dos debéis de ser los reclutas de los que tanto nos habla Aledar. Me alegra conoceros por fin, aunque no puedo evitar notar que habéis llegado con prisa.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Admiral Aegis",
    "source": "captured"
   },
-  "Mushroom Man#011": {
+  "Mushroom Man#014": {
    "src": "O-oh! No, t-there's nothing going on. Not a th-thing. My m-m-mushrooms are... they're fine. Why are you a-asking? Ev-... everything is g-great. W-why wouldn't it b-be?",
    "dst": "¡O-oh! No, n-no pasa nada. Nada de n-nada. Mis s-s-setas están... están bien. ¿P-por qué lo preguntas? T-todo va g-genial. ¿P-por qué no iba a ir?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "Stage 2",
+   "speaker": "Yahya",
    "source": "captured"
   },
-  "Mushroom Man#012": {
+  "Mushroom Man#015": {
    "src": "Soon... s-soon I will have my m-mushrooms again...",
    "dst": "Pronto... p-pronto tendré otra vez mis s-setas...",
    "role": "desc",
@@ -142,7 +172,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#013": {
+  "Mushroom Man#016": {
    "src": "G-gah! D-don't you know it's rude to-... to e-eavesdrop?",
    "dst": "¡G-gah! ¿N-no sabes que espiar es de... de mala educación?",
    "role": "desc",
@@ -152,7 +182,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Mushroom Man#014": {
+  "Mushroom Man#017": {
    "src": "I-... this is bad. This is really bad. We need to tell the Mayor, now.",
    "dst": "Yo... Esto es malo, muy malo. Hay que avisar al alcalde, ya.",
    "role": "desc",
@@ -162,27 +192,27 @@
    "speaker": "Tasim",
    "source": "captured"
   },
-  "Mushroom Man#015": {
+  "Mushroom Man#018": {
    "src": "Right! Right. We've arrived from {p}, with bad news and a request for aid. The spiders of the forest have grown hostile, and threaten the town.",
    "dst": "¡Sí! Sí. Venimos de {p} con malas noticias y una petición de ayuda. Las arañas del bosque se han vuelto hostiles y amenazan al pueblo.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
    "source": "captured"
   },
-  "Mushroom Man#016": {
+  "Mushroom Man#019": {
    "src": "And Lieutenant Van is planning a raid on a corrupt stronghold! I'm sure he'd be glad to have more forces with him.",
    "dst": "¡Y el teniente Van prepara un asalto a una fortaleza corrupta! Seguro que agradecería más efectivos.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Mushroom Man",
-   "stage": "Stage 1",
-   "speaker": "",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
    "source": "captured"
   },
-  "Mushroom Man#019": {
+  "Mushroom Man#020": {
    "src": "In the meantime, I've been thinking about what we could do to help this place... I've maybe got something.",
    "dst": "Mientras tanto, he estado pensando en qué podríamos hacer por este lugar... Creo que tengo algo.",
    "role": "desc",
@@ -192,7 +222,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#020": {
+  "Mushroom Man#021": {
    "src": "Take a look at that villager over there. He's acting a little off, like he's got something going on. I wonder...",
    "dst": "Mira a ese aldeano de ahí. Actúa un poco raro, como si le pasara algo. Me pregunto...",
    "role": "desc",
@@ -202,7 +232,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#021": {
+  "Mushroom Man#022": {
    "src": "Alright, I've decided. I'm feeling a little restless, so let's go over there and see if there's anything we can help with!",
    "dst": "¡Vale, decidido! Estoy algo inquieto, así que vamos allí a ver si podemos echar una mano.",
    "role": "desc",
@@ -212,7 +242,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#022": {
+  "Mushroom Man#023": {
    "src": "Maybe we can leave this place better off than it was when we got here!",
    "dst": "¡Quizá dejemos este sitio mejor de como lo encontramos!",
    "role": "desc",
@@ -222,7 +252,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#023": {
+  "Mushroom Man#024": {
    "src": "Speak to the strange man at [-{~}, {~}, -{~}].",
    "dst": "Habla con el hombre extraño en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -232,7 +262,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#024": {
+  "Mushroom Man#025": {
    "src": "G-... Hi! H-how can I help you on this... this p-perfectly fine and n-n-normal day!",
    "dst": "G-... ¡Hola! ¿E-en qué puedo ayudarte en este... este día t-tan normal y c-corriente?",
    "role": "desc",
@@ -242,7 +272,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#025": {
+  "Mushroom Man#026": {
    "src": "Sorry to interrupt- we're soldiers traveling through this town, and you looked like the sort of person who might need the kind of help soldiers can provide. Anything we can help with?",
    "dst": "Perdona que te moleste: somos soldados de paso por el pueblo, y parecías de esos que necesitan la ayuda que damos los soldados. ¿Podemos ayudarte en algo?",
    "role": "desc",
@@ -292,7 +322,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#033": {
+  "Mushroom Man#031": {
    "src": "Follow Yahya to his infested mushroom patch at [-{~}, {~}, -{~}].",
    "dst": "Sigue a Yahya hasta su campo de setas infestado, en [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -302,7 +332,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#034": {
+  "Mushroom Man#032": {
    "src": "H-here we are. I- I can f-feel the m-m-mushrooms... from here. And the s-spiders! No-... no good.",
    "dst": "Y-ya estamos. D-desde aquí noto las s-s-setas. ¡Y las a-arañas! N-nada bueno.",
    "role": "desc",
@@ -312,7 +342,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#035": {
+  "Mushroom Man#033": {
    "src": "S-so! Mushrooms. Those-... those bad c-creepy c-crawly s-s-spiders... Kill them. P-please?",
    "dst": "¡A-así que! Setas. Esas... esas a-arañas asquerosas y r-rastreras... Mátalas. ¿P-porfa?",
    "role": "desc",
@@ -322,7 +352,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#036": {
+  "Mushroom Man#034": {
    "src": "We wouldn't have come here if we weren't planning to. Alright, {u}, let's clear out some spiders!",
    "dst": "No habríamos venido si no pensáramos hacerlo. ¡Venga, {u}, a limpiar arañas!",
    "role": "desc",
@@ -332,7 +362,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#037": {
+  "Mushroom Man#035": {
    "src": "Clear out the spiders from Yahya's favorite mushroom patch at [-{~}, {~}, -{~}], then return and talk to Yahya.",
    "dst": "Limpia de arañas el campo de setas favorito de Yahya, en [-{~}, {~}, -{~}], y vuelve a hablar con Yahya.",
    "role": "desc",
@@ -342,7 +372,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#039": {
+  "Mushroom Man#036": {
    "src": "Looks cleared to me. These are... uh... some fine mushrooms!",
    "dst": "A mí me parece limpio. Estas son... eh... ¡unas setas estupendas!",
    "role": "desc",
@@ -352,7 +382,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#040": {
+  "Mushroom Man#037": {
    "src": "Th-thank you soldiers! Th-that was-... I mean. I-it was f-fine, I g-... guess.",
    "dst": "¡G-gracias, soldados! E-eso ha sido... Digo. E-estuvo b-bien, supongo.",
    "role": "desc",
@@ -362,7 +392,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#041": {
+  "Mushroom Man#038": {
    "src": "...O-oh. Do I n-need to pay you... now? Heh. Is- is [{~} Emeralds] fine with y-you..?",
    "dst": "...O-oh. ¿T-tengo que pagaros... ahora? Je. ¿O-os vale con [{~} esmeraldas]..?",
    "role": "desc",
@@ -372,7 +402,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#042": {
+  "Mushroom Man#039": {
    "src": "...Come on.",
    "dst": "...Venga ya.",
    "role": "desc",
@@ -382,7 +412,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#043": {
+  "Mushroom Man#040": {
    "src": "Oho okay, ok-... okay! It was a joke, don't get all ex-... ex-... excited. Here, just take-",
    "dst": "Jo, v-vale, ¡v-vale! Era broma, no os p-p-pongáis así. Toma, coge-",
    "role": "desc",
@@ -392,7 +422,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#044": {
+  "Mushroom Man#041": {
    "src": "G-gah! C-creepy! C-c-crawly! S-s-s-spiders!!!",
    "dst": "¡G-gah! ¡Q-qué asco! ¡R-rastreras! ¡A-a-arañas!!!",
    "role": "desc",
@@ -402,7 +432,7 @@
    "speaker": "Yahya",
    "source": "wiki"
   },
-  "Mushroom Man#045": {
+  "Mushroom Man#042": {
    "src": "Yahya! No!",
    "dst": "¡Yahya! ¡No!",
    "role": "desc",
@@ -412,7 +442,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#046": {
+  "Mushroom Man#043": {
    "src": "...",
    "dst": "...",
    "role": "desc",
@@ -422,7 +452,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#048": {
+  "Mushroom Man#044": {
    "src": "Return to Mayor Alvin at [-{~}, {~}, -{~}] with news about the spiders.",
    "dst": "Vuelve con el alcalde Alvin, en [-{~}, {~}, -{~}], con noticias sobre las arañas.",
    "role": "desc",
@@ -432,7 +462,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#049": {
+  "Mushroom Man#045": {
    "src": "Ah, hello travelers. You seem to be in a rush- has something happened?",
    "dst": "Ah, hola, viajeros. Parecéis tener prisa, ¿ha pasado algo?",
    "role": "desc",
@@ -442,7 +472,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#050": {
+  "Mushroom Man#046": {
    "src": "Yes! Yes, something- something has happened. We went with Yahya to help him with a problem he was having with spiders-",
    "dst": "¡Sí! Sí, ha... ha pasado algo. Fuimos con Yahya a ayudarle con un problema que tenía con unas arañas-",
    "role": "desc",
@@ -452,7 +482,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#051": {
+  "Mushroom Man#047": {
    "src": "Yes, yes, I know of Yahya's antics... He doesn't seem to be with you. Has he ran off on you, just as Ope did?",
    "dst": "Sí, sí, conozco las andanzas de Yahya... No viene con vosotros. ¿Se os ha escapado, igual que Ope?",
    "role": "desc",
@@ -462,7 +492,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#052": {
+  "Mushroom Man#048": {
    "src": "No- no. When we finished clearing out the spiders, we were swarmed- and they took him!",
    "dst": "No... no. Cuando acabamos con las arañas, nos rodearon en masa... ¡y se lo llevaron!",
    "role": "desc",
@@ -472,7 +502,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#053": {
+  "Mushroom Man#049": {
    "src": "...Oh. Oh, dear. That isn't good at all. If they're making moves such as this, unprovoked...",
    "dst": "...Oh. Ay, madre. Eso no es nada bueno. Si actúan así, sin provocación...",
    "role": "desc",
@@ -482,7 +512,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#054": {
+  "Mushroom Man#050": {
    "src": "You two are soldiers, yes? I would ask you to continue your travels to {p}. Find an Admiral Aegis- tell him our little village needs aid.",
    "dst": "Sois soldados, ¿verdad? Os pediría que sigáis viaje hacia {p}. Buscad a un tal almirante Aegis y decidle que nuestra aldea necesita ayuda.",
    "role": "desc",
@@ -492,7 +522,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Mushroom Man#055": {
+  "Mushroom Man#051": {
    "src": "I-... of course. We'll set out immediately. Come on, {u}.",
    "dst": "Yo... claro. Salimos ahora mismo. Vamos, {u}.",
    "role": "desc",
@@ -502,7 +532,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#056": {
+  "Mushroom Man#052": {
    "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
    "dst": "Viaja a {p} para pedir ayuda a su ejército, en [{~}, {~}, -{~}].",
    "role": "desc",
@@ -512,7 +542,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Mushroom Man#057": {
+  "Mushroom Man#053": {
    "src": "Wait. Did you hear that?",
    "dst": "Espera. ¿Has oído eso?",
    "role": "desc",
@@ -522,7 +552,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#058": {
+  "Mushroom Man#054": {
    "src": "Gah! {u}, look out!",
    "dst": "¡Ah! ¡{u}, cuidado!",
    "role": "desc",
@@ -532,7 +562,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#059": {
+  "Mushroom Man#055": {
    "src": "Another one of these? We've fought one of them before, we can do it again!",
    "dst": "¿Otro de estos? ¡Ya luchamos contra uno, podemos repetir!",
    "role": "desc",
@@ -542,7 +572,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#060": {
+  "Mushroom Man#056": {
    "src": "Phew. I think that went about as well as it could have!",
    "dst": "Uf. ¡Creo que ha salido todo lo bien que podía salir!",
    "role": "desc",
@@ -552,7 +582,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#061": {
+  "Mushroom Man#057": {
    "src": "We're both in one piece, the corrupted is dead... Good. That's good!",
    "dst": "Estamos los dos de una pieza, el corrupto ha muerto... Bien. ¡Eso está bien!",
    "role": "desc",
@@ -562,7 +592,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#062": {
+  "Mushroom Man#058": {
    "src": "Let's keep moving towards {p}. I don't think it's too much further, if we keep heading east from here.",
    "dst": "Sigamos hacia {p}. No creo que quede mucho si seguimos al este desde aquí.",
    "role": "desc",
@@ -572,7 +602,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#063": {
+  "Mushroom Man#059": {
    "src": "Wait up!",
    "dst": "¡Espérame!",
    "role": "desc",
@@ -582,7 +612,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#064": {
+  "Mushroom Man#060": {
    "src": "Why'd you just leave me there? If we couldn't fight that thing off together, what made you think I could do it alone?",
    "dst": "¿Por qué me dejaste allí? Si juntos no podíamos con esa cosa, ¿qué te hizo pensar que yo solo sí?",
    "role": "desc",
@@ -592,7 +622,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#065": {
+  "Mushroom Man#061": {
    "src": "I managed to get away, but... still. What if I couldn't? Would you have just left me for dead?",
    "dst": "Logré escapar, pero... aun así. ¿Y si no hubiera podido? ¿Me habrías dejado morir sin más?",
    "role": "desc",
@@ -602,7 +632,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#066": {
+  "Mushroom Man#062": {
    "src": "...Whatever. I'm alive, you're alive... that's probably good enough. Let's go find Admiral Aegis",
    "dst": "...Da igual. Yo estoy vivo, tú estás vivo... con eso basta, supongo. Vamos a buscar al almirante Aegis.",
    "role": "desc",
@@ -612,7 +642,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#067": {
+  "Mushroom Man#063": {
    "src": "...Oh, {u}, you're awake! I was really worried there for a bit...",
    "dst": "...Oh, {u}, ¡estás despierto! Por un momento me preocupé mucho...",
    "role": "desc",
@@ -622,7 +652,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#068": {
+  "Mushroom Man#064": {
    "src": "After you went down, I managed to hold my own long enough for some nearby soldiers to arrive and help. I can't thank Lieutenant Van enough.",
    "dst": "Cuando caíste, aguanté lo justo para que llegaran unos soldados cercanos a ayudar. Nunca podré agradecérselo bastante al teniente Van.",
    "role": "desc",
@@ -632,7 +662,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#069": {
+  "Mushroom Man#065": {
    "src": "We, uh... brought you back here to rest up. Aledar's around here somewhere, I think.",
    "dst": "Nosotros, eh... te trajimos aquí a descansar. Aledar anda por aquí, creo.",
    "role": "desc",
@@ -642,7 +672,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#070": {
+  "Mushroom Man#066": {
    "src": "Oh, I spoke to Admiral Aegis about the spider problem already. He said he wants to speak to you about it, too. He should be downstairs",
    "dst": "Ah, ya le hablé al almirante Aegis del problema de las arañas. Dice que quiere hablarlo contigo también. Debe de estar abajo.",
    "role": "desc",
@@ -652,7 +682,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#071": {
+  "Mushroom Man#067": {
    "src": "...and that's how we managed to defeat that undead swarm, sir!",
    "dst": "...¡y así logramos acabar con esa horda de no muertos, señor!",
    "role": "desc",
@@ -662,7 +692,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Mushroom Man#072": {
+  "Mushroom Man#068": {
    "src": "That's good to hear. Thank you for your work, Aledar. I'll speak to Lieutenant Van and see if he'd be willing to take you into his squad.",
    "dst": "Me alegra oírlo. Gracias por tu trabajo, Aledar. Hablaré con el teniente Van a ver si quiere incorporarte a su escuadrón.",
    "role": "desc",
@@ -672,7 +702,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#073": {
+  "Mushroom Man#069": {
    "src": "Thank you for the opportunity, sir. I won't let you down-... Wait, is that- Tasim and {u}?",
    "dst": "Gracias por la oportunidad, señor. No le defrauda-... Espera, ¿esos son Tasim y {u}?",
    "role": "desc",
@@ -682,7 +712,7 @@
    "speaker": "Aledar",
    "source": "wiki"
   },
-  "Mushroom Man#074": {
+  "Mushroom Man#070": {
    "src": "Aledar! We've finally made it to {p}. We've had... something of an adventure, getting here.",
    "dst": "¡Aledar! Por fin hemos llegado a {p}. Ha sido... toda una aventura llegar hasta aquí.",
    "role": "desc",
@@ -692,7 +722,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#077": {
+  "Mushroom Man#071": {
    "src": "One of their townsfolk was captured and taken away in front of our eyes. Mayor Alvin sent us here to request the aid of {p}' army.",
    "dst": "A uno de sus vecinos se lo llevaron ante nuestros ojos. El alcalde Alvin nos envió a pedir la ayuda del ejército de {p}.",
    "role": "desc",
@@ -702,7 +732,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#078": {
+  "Mushroom Man#072": {
    "src": "Bad news, indeed. Very well, we will make preparations. For the time being, the two of you should rest and hone your skills. Captain Ragon here in the barracks would gladly offer some training.",
    "dst": "Malas noticias, desde luego. Muy bien, haremos los preparativos. Por ahora, deberíais descansar y pulir vuestras aptitudes. El capitán Ragon, aquí en los barracones, os dará gustoso algo de entrenamiento.",
    "role": "desc",
@@ -712,7 +742,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#079": {
+  "Mushroom Man#073": {
    "src": "Thank you, sir. But is there anything we could do to actually help?",
    "dst": "Gracias, señor. ¿Pero hay algo que podamos hacer para ayudar de verdad?",
    "role": "desc",
@@ -722,7 +752,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#080": {
+  "Mushroom Man#074": {
    "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I'd suggest you speak with him.",
    "dst": "¡Qué entusiasmo! Déjame pensar... Creo que el capitán Fenor, junto a la puerta oeste, buscaba ayuda. Si queréis, hablad con él.",
    "role": "desc",
@@ -732,7 +762,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#082": {
+  "Mushroom Man#075": {
    "src": "Yes, yes. Well, I must be off. If the threat of Nivla's spiders is growing... we must prepare accordingly. I hope to hear of your future endeavors, all three of you.",
    "dst": "Sí, sí. Bueno, debo irme. Si la amenaza de las arañas de Nivla va a más... tendremos que prepararnos en consecuencia. Espero saber de vuestras hazañas, los tres.",
    "role": "desc",
@@ -742,7 +772,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#083": {
+  "Mushroom Man#076": {
    "src": "...so, Captain, what do you think? We'll need to start training soldiers more quickly, but I hope that won't be a problem.",
    "dst": "...Entonces, capitán, ¿qué opinas? Tendremos que entrenar soldados más deprisa, pero espero que eso no sea problema.",
    "role": "desc",
@@ -752,7 +782,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#084": {
+  "Mushroom Man#077": {
    "src": "Of course, Admiral, I'll see what I can do.",
    "dst": "Por supuesto, almirante, veré qué puedo hacer.",
    "role": "desc",
@@ -762,7 +792,7 @@
    "speaker": "Captain Ragon",
    "source": "wiki"
   },
-  "Mushroom Man#085": {
+  "Mushroom Man#078": {
    "src": "Excellent. Now- ah, {u}. Good to see you're up and about again. You gave us quite a shock!",
    "dst": "Excelente. Y ahora... ah, {u}. Me alegra verte en pie otra vez. ¡Nos diste un buen susto!",
    "role": "desc",
@@ -772,7 +802,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#086": {
+  "Mushroom Man#079": {
    "src": "Van tells me that goliath the two of you faced was a dangerous foe. He was impressed you managed to damage it as much as you did, even if you ended up needing rescue.",
    "dst": "Van me dice que ese Goliath al que os enfrentasteis era un enemigo peligroso. Le impresionó lo mucho que lograsteis dañarlo, aunque al final hiciera falta rescataros.",
    "role": "desc",
@@ -782,7 +812,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#087": {
+  "Mushroom Man#080": {
    "src": "Now, to business. We've already begun planning for our assault on the spiders, but we'll need more well-trained soldiers. Captain Ragon here should be able to help you hone your skills.",
    "dst": "Vayamos al grano. Ya hemos empezado a planear el asalto a las arañas, pero necesitaremos más soldados bien entrenados. El capitán Ragon puede ayudarte a pulir tus aptitudes.",
    "role": "desc",
@@ -792,7 +822,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#088": {
+  "Mushroom Man#081": {
    "src": "And if we wanted to help out, sir? I'm getting a little stir-crazy in here.",
    "dst": "¿Y si quisiéramos ayudar, señor? Aquí encerrado me subo por las paredes.",
    "role": "desc",
@@ -802,7 +832,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Mushroom Man#089": {
+  "Mushroom Man#082": {
    "src": "Enthusiastic, aren't you! Let me think... I believe Captain Fenor out by the west gate was looking for aid. If you're willing, I suggest you speak with him.",
    "dst": "¡Qué entusiasmo! Déjame pensar... Creo que el capitán Fenor, junto a la puerta oeste, buscaba ayuda. Si queréis, hablad con él.",
    "role": "desc",
@@ -812,7 +842,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#090": {
+  "Mushroom Man#083": {
    "src": "In addition, Lieutenant Van was highly impressed by your fight with the goliath! He told me to pass on that he'd appreciate your help in a raid he's planning on a nearby corrupted stronghold. I believe your friend Aledar was involved.",
    "dst": "Además, ¡al teniente Van le impresionó mucho vuestra pelea con el Goliath! Me pidió que te dijera que agradecería tu ayuda en un asalto que prepara contra una fortaleza corrupta cercana. Creo que tu amigo Aledar participa en él.",
    "role": "desc",
@@ -822,7 +852,7 @@
    "speaker": "Admiral Aegis",
    "source": "wiki"
   },
-  "Mushroom Man#091": {
+  "Mushroom Man#084": {
    "src": "With that, I must be off. We have many preparations to make, and the enemy never rests. I hope to hear of your future endeavors, both of you.",
    "dst": "Dicho esto, debo irme. Tenemos muchos preparativos que hacer y el enemigo no descansa. Espero saber de vuestras hazañas, los dos.",
    "role": "desc",

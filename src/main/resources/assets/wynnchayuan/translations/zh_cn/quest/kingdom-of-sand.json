@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Kingdom of Sand",
-  "count": 71,
+  "count": 72,
   "translated": 71,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Kingdom of Sand#000": {
+   "src": "Ah! Good to see you. Of all the sites we've explored so far... this tomb is the most exciting.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#001": {
    "src": "... Until now. I believe I've managed to trace its possession to a nearby group of bandits. They probably have no idea what they're sitting on.",
    "dst": "……直到现在。我相信我已经查到它落在附近一伙强盗手里。他们大概根本不知道自己手上有什么。",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "Junes",
    "source": "captured"
   },
-  "Kingdom of Sand#001": {
+  "Kingdom of Sand#002": {
    "src": "Oi! Remember, yer need to nab that journal from the big mansion in {p}, if yer want to get in with us.",
    "dst": "喂！记住，你要是想入伙，就得去 {p} 那栋大宅子把那本日志弄到手。",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#002": {
+  "Kingdom of Sand#003": {
    "src": "Out with yer!",
    "dst": "滚出去！",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#003": {
+  "Kingdom of Sand#004": {
    "src": "Looks like this is the room the journal is kept in...",
    "dst": "看来日志就放在这个房间里……",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#004": {
+  "Kingdom of Sand#005": {
    "src": "What yer waiting for, get in here!",
    "dst": "还等什么，快进来！",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#005": {
+  "Kingdom of Sand#006": {
    "src": "Seems like there's a meeting going on...",
    "dst": "好像有人在开会……",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#006": {
+  "Kingdom of Sand#007": {
    "src": "Seems like that broken cart by the river might be worth checking out...",
    "dst": "河边那辆坏掉的推车好像值得去查查……",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#007": {
+  "Kingdom of Sand#008": {
    "src": "Get 'em!",
    "dst": "抓住他们！",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Desert Raider",
    "source": "captured"
   },
-  "Kingdom of Sand#008": {
+  "Kingdom of Sand#009": {
    "src": "Seems like that note might give you a clue...",
    "dst": "那张纸条也许能给你一点线索……",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#009": {
+  "Kingdom of Sand#010": {
    "src": "The sceptre hums with unmeasurable power, filled with a thousand years of Desert history.",
    "dst": "权杖嗡嗡作响，蕴含着难以估量的力量，承载着沙漠千年的历史。",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#010": {
+  "Kingdom of Sand#011": {
    "src": "You should get this back to Junes as soon as possible.",
    "dst": "你该尽快把它带回去给 Junes。",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#011": {
+  "Kingdom of Sand#012": {
    "src": "[-{~} The Emperor's Sceptre]",
    "dst": "[-{~} 皇帝的权杖]",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#012": {
+  "Kingdom of Sand#013": {
    "src": "I should get it to {p} right away. Thank you, {u}. You have my eternal gratitude.",
    "dst": "我应该马上把它送到 {p}。谢谢你，{u}。我会永远感激你。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Junes",
    "source": "captured"
   },
-  "Kingdom of Sand#013": {
+  "Kingdom of Sand#014": {
    "src": "Are you thinking of exploring the tomb? I'm sure you could learn so much about the Empire... but you best be careful.",
    "dst": "你打算去探索古墓吗？我相信你能了解很多关于帝国的事……不过最好小心点。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Junes",
    "source": "captured"
   },
-  "Kingdom of Sand#014": {
+  "Kingdom of Sand#015": {
    "src": "I have little to offer you for your help, but please accept these emeralds, and this lesser treasure I found nearby.",
    "dst": "我没什么能报答你的，不过请收下这些绿宝石，还有我在这附近找到的一件小宝物。",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#015": {
+  "Kingdom of Sand#016": {
    "src": "Talk to Junes at [{~}, {~}, -{~}]",
    "dst": "与 [{~}, {~}, -{~}] 的 Junes 对话",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#016": {
+  "Kingdom of Sand#017": {
    "src": "A {p} soldier! I imagine you're here to investigate the tomb up the hill?",
    "dst": "一位 {p} 的士兵！我猜你是来调查山上那座古墓的吧？",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#017": {
+  "Kingdom of Sand#018": {
    "src": "It's believed to house the remains of Prince Hashr, the son of the old Desert Emperor, but it's far too dangerous for me to explore personally.",
    "dst": "据说那里葬着 Hashr 王子，也就是古代沙漠皇帝的儿子，但我自己去探索实在太危险了。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#018": {
+  "Kingdom of Sand#019": {
    "src": "Instead I've been looking into a related legend - the Emperor's Sceptre.",
    "dst": "所以我一直在研究一个相关的传说——皇帝的权杖。",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#019": {
+  "Kingdom of Sand#020": {
    "src": "It was the source of his power, and potentially one of the most important artifacts in history.",
    "dst": "那是他力量的来源，也可能是史上最重要的文物之一。",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#020": {
+  "Kingdom of Sand#021": {
    "src": "When the Emperor was slain by his son, Hashr, it is said that the sceptre was lost amongst the raging sandstorm that followed.",
    "dst": "据说皇帝被他的儿子 Hashr 杀死之后，权杖就在随之而来的狂暴沙暴中失落了。",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#064": {
+  "Kingdom of Sand#063": {
    "src": "Search the abandoned house at [{~}, {~}, -{~}].",
    "dst": "搜查 [{~}, {~}, -{~}] 的废弃房屋。",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#065": {
+  "Kingdom of Sand#064": {
    "src": "Return to the tomb and give Junes the sceptre at [{~}, {~}, -{~}].",
    "dst": "回到 [{~}, {~}, -{~}] 的古墓，把权杖交给 Junes。",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#066": {
+  "Kingdom of Sand#065": {
    "src": "Ah, {u}. I couldn't help myself - I simply had to see the tomb up close.",
    "dst": "啊，{u}。我忍不住了——我就是得近距离看看这座古墓。",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#067": {
+  "Kingdom of Sand#066": {
    "src": "You have no idea how tempted I am to go inside, but I doubt I'd make it out alive.",
    "dst": "你不知道我有多想进去，不过我怀疑我没法活着出来。",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#068": {
+  "Kingdom of Sand#067": {
    "src": "You... you found the sceptre? Oh! This is incredible! I can't believe it!",
    "dst": "你……你找到权杖了？噢！这太不可思议了！真不敢相信！",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#069": {
+  "Kingdom of Sand#068": {
    "src": "This artifact, it witnessed the rise and fall of the Empire, thousands of years ago. And you've just been... holding it, without gloves...",
    "dst": "这件文物见证了几千年前帝国的兴衰。而你就这样……拿着它，连手套都没戴……",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#070": {
+  "Kingdom of Sand#069": {
    "src": "Under the circumstances, I think I can let that slide. But the things I could learn from studying it...",
    "dst": "考虑到情况特殊，我想这点可以不计较。不过研究它能学到的东西……",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#073": {
+  "Kingdom of Sand#070": {
    "src": "There are nasty legends of what it holds. Silverfish, skeletons... even Prince Hashr himself. Make sure to gear up!",
    "dst": "关于里面有什么，有很多可怕的传说。蠹虫、骷髅……甚至是 Hashr 王子本人。一定要把装备准备好！",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#074": {
+  "Kingdom of Sand#071": {
    "src": "I have little to offer you for your help, but please accept these emeralds, and a fossil bone I found around here.",
    "dst": "我没什么能报答你的，不过请收下这些绿宝石，还有我在这附近找到的一块化石骨头。",
    "role": "desc",

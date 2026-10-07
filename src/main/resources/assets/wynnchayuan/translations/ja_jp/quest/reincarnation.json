@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Reincarnation",
-  "count": 33,
+  "count": 36,
   "translated": 33,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -107,8 +107,8 @@
    "source": "wiki"
   },
   "Reincarnation#010": {
-   "src": "But I do. I know how to open the passage to Bob. This is where the animals come in useful...",
-   "dst": "だが私は違う。Bob への道を開く方法を知っている。そこで動物たちの出番さ…",
+   "src": "But I can. I know how to open the passage to Bob. This is where the animals will come in useful...",
+   "dst": "だが私にはできる。Bob への道を開く方法を知っている。そこで動物たちの出番さ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -117,6 +117,48 @@
    "source": "wiki"
   },
   "Reincarnation#011": {
+   "src": "Bring me [{~} Cluckles' Favourite Feather], [{~} Baab's Wool] [{~} Mooington's Skin] if you can find them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "Sakaki_nagi's Bird",
+   "source": "captured",
+   "similar": {
+    "text": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
+    "file": "quest/reincarnation.json",
+    "ratio": 0.962,
+    "reason": "placeholders"
+   }
+  },
+  "Reincarnation#012": {
+   "src": "How is your quest going along?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "Sakaki_nagi's Bird",
+   "source": "captured"
+  },
+  "Reincarnation#013": {
+   "src": "I am not worthy enough to enter it. I did not complete the task of the animals, I merely read it. You shall go alone. Be careful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Reincarnation",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
+    "file": "quest/reincarnation.json",
+    "ratio": 0.977,
+    "reason": "名字或框架差一個字就是另一條，原文沒有改"
+   }
+  },
+  "Reincarnation#014": {
    "src": "I believe Bob did something to those animals. I think if we could reunite them in some way, we could open the passage.",
    "dst": "Bob は動物たちに何かしたはずだ。何らかの形で再び揃えれば、道が開けると思う。",
    "role": "desc",
@@ -126,7 +168,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#012": {
+  "Reincarnation#015": {
    "src": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
    "dst": "見つけたら Cluckles の羽根 {~}、Baab の羊毛 {~}、Mooington の皮 {~} を持ってきてくれ。",
    "role": "desc",
@@ -136,7 +178,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#013": {
+  "Reincarnation#016": {
    "src": "I am sure that together, we can open the passage. Good luck.",
    "dst": "力を合わせれば、きっと道は開ける。幸運を。",
    "role": "desc",
@@ -146,7 +188,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#014": {
+  "Reincarnation#017": {
    "src": "Bring back {~} Cluckles' Favourite Feather, Baab's Wool, and Mooington's Skin to Batelu.",
    "dst": "Cluckles のお気に入りの羽根、Baab の羊毛、Mooington の皮 {~} 個を Batelu に届ける。",
    "role": "desc",
@@ -156,7 +198,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reincarnation#015": {
+  "Reincarnation#018": {
    "src": "Wonderful! We can now open the passage to the true tomb of Bob...",
    "dst": "素晴らしい！これで Bob の本当の墓への道が開ける…",
    "role": "desc",
@@ -166,7 +208,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#016": {
+  "Reincarnation#019": {
    "src": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
    "dst": "私に入る資格はない。動物の試練を果たしたのではなく、読んだだけだからね。一人で行くんだ、気をつけて。",
    "role": "desc",
@@ -176,7 +218,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#017": {
+  "Reincarnation#020": {
    "src": "Kill Bob's Reincarnation.",
    "dst": "Bob の転生体を倒す。",
    "role": "desc",
@@ -186,7 +228,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reincarnation#018": {
+  "Reincarnation#021": {
    "src": "I am Bob, master of the arts of Wynn.",
    "dst": "我は Bob、Wynn の技の達人。",
    "role": "desc",
@@ -196,7 +238,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#019": {
+  "Reincarnation#022": {
    "src": "Let me explain why you are here.",
    "dst": "汝がここにいる訳を話そう。",
    "role": "desc",
@@ -206,7 +248,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#020": {
+  "Reincarnation#023": {
    "src": "My animals, were my greatest allies in my travels through the world.",
    "dst": "我が動物たちは、世界を巡る旅の最大の味方であった。",
    "role": "desc",
@@ -216,7 +258,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#021": {
+  "Reincarnation#024": {
    "src": "I travelled too far, mined too deep, and of course challenged what should not be challenged. My time in Wynn was coming to an end.",
    "dst": "我は遠くへ行きすぎ、深く掘りすぎ、挑むべきでないものに挑んだ。Wynn での我が時は尽きかけていた。",
    "role": "desc",
@@ -226,7 +268,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#022": {
+  "Reincarnation#025": {
    "src": "I knew so, too. But I refused to leave without giving the power i had attained to those worthy of it.",
    "dst": "それは我も分かっていた。だが得た力をふさわしい者に託さずに去ることは拒んだ。",
    "role": "desc",
@@ -236,7 +278,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#023": {
+  "Reincarnation#026": {
    "src": "Using what ability I had left to me, I transferred my power to my animals, in three pieces. In the hope that those worthy to harness it will seek them out.",
    "dst": "残された力で、我が力を三つに分けて動物たちに移した。扱うにふさわしい者が探し出すことを願って。",
    "role": "desc",
@@ -246,7 +288,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#024": {
+  "Reincarnation#027": {
    "src": "The spell I placed on the door to this realm will only break to the one who collects my power. But it cannot have escaped your notice, you do not have my power.",
    "dst": "この領域の扉にかけた呪文は、我が力を集めた者にのみ破られる。だが気づいておろう、汝は我が力を持っておらぬ。",
    "role": "desc",
@@ -256,7 +298,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#025": {
+  "Reincarnation#028": {
    "src": "The truth is, you must pass a test, the ultimate test. Hone your skills you have learnt throughout your travels, and face me. Face me, and earn your place amongst soldiers of Wynn.",
    "dst": "実のところ、汝は究極の試練を越えねばならぬ。旅で学んだ技を磨き、我と対峙せよ。我に挑み、Wynn の戦士の列に加わる資格を得よ。",
    "role": "desc",
@@ -266,7 +308,7 @@
    "speaker": "Bob",
    "source": "wiki"
   },
-  "Reincarnation#026": {
+  "Reincarnation#029": {
    "src": "Bring back {~} Bob's Seal of Approval to Batelu.",
    "dst": "Bob の認可の印 {~} 個を Batelu に届ける。",
    "role": "desc",
@@ -276,7 +318,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Reincarnation#027": {
+  "Reincarnation#030": {
    "src": "Ah! You have returned! Tell me, what did you find within?",
    "dst": "おお！戻ったか！中で何を見つけたんだい？",
    "role": "desc",
@@ -286,7 +328,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#028": {
+  "Reincarnation#031": {
    "src": "...You faced Bob himself in combat? And you triumphed? That's quite remarkable!",
    "dst": "…Bob 本人と戦った？しかも勝った？これは驚いた！",
    "role": "desc",
@@ -296,7 +338,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#029": {
+  "Reincarnation#032": {
    "src": "And he gave you his Seal of Approval... Hm. If that is the case, then there is something I may do for you.",
    "dst": "それに認可の印まで授かったのか… ふむ。それなら、私にもできることがある。",
    "role": "desc",
@@ -306,7 +348,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#030": {
+  "Reincarnation#033": {
    "src": "Before Bob passed, he left his mythical weapons with a trusted friend. They were, so he said, to be kept for one who would be worthy to wield them...",
    "dst": "Bob は亡くなる前、神話級の武器を信頼する友に預けた。振るうにふさわしい者のために取っておけ、と言ってね…",
    "role": "desc",
@@ -316,7 +358,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#031": {
+  "Reincarnation#034": {
    "src": "Yes... Yes, I am certain. You have proven yourself worthy. Take this relic, the Stone of Myths, and bring it to the Temple of the Legends.",
    "dst": "そう… そうだ、間違いない。君はふさわしいと証明した。この遺物、神話の石を伝説の神殿へ持って行くんだ。",
    "role": "desc",
@@ -326,7 +368,7 @@
    "speaker": "Batelu",
    "source": "wiki"
   },
-  "Reincarnation#032": {
+  "Reincarnation#035": {
    "src": "Within, you will find a merchant who will offer you a weapon in exchange for it. I wish you luck with your future travels.",
    "dst": "中にいる商人が、それと引き換えに武器をくれるだろう。君の今後の旅に幸運を。",
    "role": "desc",

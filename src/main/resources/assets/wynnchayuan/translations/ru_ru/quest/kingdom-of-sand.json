@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Kingdom of Sand",
-  "count": 71,
+  "count": 72,
   "translated": 71,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Kingdom of Sand#000": {
+   "src": "Ah! Good to see you. Of all the sites we've explored so far... this tomb is the most exciting.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Kingdom of Sand#001": {
    "src": "... Until now. I believe I've managed to trace its possession to a nearby group of bandits. They probably have no idea what they're sitting on.",
    "dst": "...До сих пор. Кажется, я выследила, что он у банды разбойников неподалёку. Они вряд ли знают, на чём сидят.",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "Junes",
    "source": "captured"
   },
-  "Kingdom of Sand#001": {
+  "Kingdom of Sand#002": {
    "src": "Oi! Remember, yer need to nab that journal from the big mansion in {p}, if yer want to get in with us.",
    "dst": "Эй! Помни: хочешь к нам - стащи дневник из большого особняка в {p}.",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#002": {
+  "Kingdom of Sand#003": {
    "src": "Out with yer!",
    "dst": "Пшёл вон!",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#003": {
+  "Kingdom of Sand#004": {
    "src": "Looks like this is the room the journal is kept in...",
    "dst": "Похоже, дневник хранится в этой комнате...",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#004": {
+  "Kingdom of Sand#005": {
    "src": "What yer waiting for, get in here!",
    "dst": "Чего ждёшь, заходи!",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#005": {
+  "Kingdom of Sand#006": {
    "src": "Seems like there's a meeting going on...",
    "dst": "Похоже, тут идёт собрание...",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#006": {
+  "Kingdom of Sand#007": {
    "src": "Seems like that broken cart by the river might be worth checking out...",
    "dst": "Кажется, стоит осмотреть сломанную телегу у реки...",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#007": {
+  "Kingdom of Sand#008": {
    "src": "Get 'em!",
    "dst": "Хватай!",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Desert Raider",
    "source": "captured"
   },
-  "Kingdom of Sand#008": {
+  "Kingdom of Sand#009": {
    "src": "Seems like that note might give you a clue...",
    "dst": "Похоже, эта записка может что-то подсказать...",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#009": {
+  "Kingdom of Sand#010": {
    "src": "The sceptre hums with unmeasurable power, filled with a thousand years of Desert history.",
    "dst": "Скипетр гудит неизмеримой силой, храня тысячелетнюю историю Пустыни.",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#010": {
+  "Kingdom of Sand#011": {
    "src": "You should get this back to Junes as soon as possible.",
    "dst": "Надо поскорее вернуть его Junes.",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#011": {
+  "Kingdom of Sand#012": {
    "src": "[-{~} The Emperor's Sceptre]",
    "dst": "[-{~} Скипетр Императора]",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#012": {
+  "Kingdom of Sand#013": {
    "src": "I should get it to {p} right away. Thank you, {u}. You have my eternal gratitude.",
    "dst": "Мне надо сейчас же доставить его в {p}. Спасибо, {u}. Я вечно тебе благодарна.",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Junes",
    "source": "captured"
   },
-  "Kingdom of Sand#013": {
+  "Kingdom of Sand#014": {
    "src": "Are you thinking of exploring the tomb? I'm sure you could learn so much about the Empire... but you best be careful.",
    "dst": "Думаешь исследовать гробницу? Уверена, ты многое узнаешь об Империи... но будь осторожнее.",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Junes",
    "source": "captured"
   },
-  "Kingdom of Sand#014": {
+  "Kingdom of Sand#015": {
    "src": "I have little to offer you for your help, but please accept these emeralds, and this lesser treasure I found nearby.",
    "dst": "Отблагодарить почти нечем, но прими эти изумруды и небольшое сокровище, что я нашла неподалёку.",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Kingdom of Sand#015": {
+  "Kingdom of Sand#016": {
    "src": "Talk to Junes at [{~}, {~}, -{~}]",
    "dst": "Поговори с Junes в [{~}, {~}, -{~}]",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#016": {
+  "Kingdom of Sand#017": {
    "src": "A {p} soldier! I imagine you're here to investigate the tomb up the hill?",
    "dst": "Солдат {p}! Полагаю, ты здесь, чтобы исследовать гробницу на холме?",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#017": {
+  "Kingdom of Sand#018": {
    "src": "It's believed to house the remains of Prince Hashr, the son of the old Desert Emperor, but it's far too dangerous for me to explore personally.",
    "dst": "Считается, что там покоятся останки принца Hashr, сына старого Императора пустыни, но исследовать её самой слишком опасно.",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#018": {
+  "Kingdom of Sand#019": {
    "src": "Instead I've been looking into a related legend - the Emperor's Sceptre.",
    "dst": "Так что я занялась связанной легендой - скипетром Императора.",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#019": {
+  "Kingdom of Sand#020": {
    "src": "It was the source of his power, and potentially one of the most important artifacts in history.",
    "dst": "Он был источником его силы и, возможно, одним из важнейших артефактов в истории.",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#020": {
+  "Kingdom of Sand#021": {
    "src": "When the Emperor was slain by his son, Hashr, it is said that the sceptre was lost amongst the raging sandstorm that followed.",
    "dst": "Когда Император пал от руки сына, Hashr, скипетр, говорят, затерялся в разыгравшейся следом песчаной буре.",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "Kingdom of Sand#064": {
+  "Kingdom of Sand#063": {
    "src": "Search the abandoned house at [{~}, {~}, -{~}].",
    "dst": "Обыщи заброшенный дом в [{~}, {~}, -{~}].",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#065": {
+  "Kingdom of Sand#064": {
    "src": "Return to the tomb and give Junes the sceptre at [{~}, {~}, -{~}].",
    "dst": "Вернись к гробнице и отдай скипетр Junes в [{~}, {~}, -{~}].",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Kingdom of Sand#066": {
+  "Kingdom of Sand#065": {
    "src": "Ah, {u}. I couldn't help myself - I simply had to see the tomb up close.",
    "dst": "А, {u}. Не удержалась - хотелось увидеть гробницу вблизи.",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#067": {
+  "Kingdom of Sand#066": {
    "src": "You have no idea how tempted I am to go inside, but I doubt I'd make it out alive.",
    "dst": "Ты не представляешь, как хочется войти, но вряд ли я выберусь живой.",
    "role": "desc",
@@ -666,7 +676,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#068": {
+  "Kingdom of Sand#067": {
    "src": "You... you found the sceptre? Oh! This is incredible! I can't believe it!",
    "dst": "Ты... скипетр у тебя? О! Невероятно! Не могу поверить!",
    "role": "desc",
@@ -676,7 +686,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#069": {
+  "Kingdom of Sand#068": {
    "src": "This artifact, it witnessed the rise and fall of the Empire, thousands of years ago. And you've just been... holding it, without gloves...",
    "dst": "Этот артефакт видел расцвет и падение Империи тысячи лет назад. А ты его просто... держишь, без перчаток...",
    "role": "desc",
@@ -686,7 +696,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#070": {
+  "Kingdom of Sand#069": {
    "src": "Under the circumstances, I think I can let that slide. But the things I could learn from studying it...",
    "dst": "Учитывая обстоятельства, так и быть, прощу. Но сколько я узнаю, изучая его...",
    "role": "desc",
@@ -696,7 +706,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#073": {
+  "Kingdom of Sand#070": {
    "src": "There are nasty legends of what it holds. Silverfish, skeletons... even Prince Hashr himself. Make sure to gear up!",
    "dst": "О ней ходят мрачные легенды. Чешуйницы, скелеты... даже сам принц Hashr. Снаряжайся как следует!",
    "role": "desc",
@@ -706,7 +716,7 @@
    "speaker": "Junes",
    "source": "wiki"
   },
-  "Kingdom of Sand#074": {
+  "Kingdom of Sand#071": {
    "src": "I have little to offer you for your help, but please accept these emeralds, and a fossil bone I found around here.",
    "dst": "Отблагодарить почти нечем, но прими эти изумруды и окаменелую кость, что я нашла неподалёку.",
    "role": "desc",

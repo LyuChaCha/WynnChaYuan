@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "WynnExcavation Site D",
-  "count": 134,
+  "count": 135,
   "translated": 134,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -11,6 +11,22 @@
  },
  "entries": {
   "WynnExcavation Site D#000": {
+   "src": "Amadel couldn't be defeated....",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site D",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Amadel can't be defeated!",
+    "file": "quest/wynnexcavation-site-d.json",
+    "ratio": 0.821,
+    "reason": "candidate"
+   }
+  },
+  "WynnExcavation Site D#001": {
    "src": "You need the crystal shard from WynnExcavation Site C to start this quest!",
    "dst": "你需要 WynnExcavation C 號工地的水晶碎片才能開始這個任務！",
    "role": "desc",
@@ -20,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "WynnExcavation Site D#001": {
+  "WynnExcavation Site D#002": {
    "src": "He received a message and made his way frantically down to the panic room, which is somewhere inside of this throne room.",
    "dst": "他收到一封訊息之後，就慌慌張張地跑進了避難室，那間房就在這座王座廳裡的某處。",
    "role": "desc",
@@ -30,7 +46,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "captured"
   },
-  "WynnExcavation Site D#002": {
+  "WynnExcavation Site D#003": {
    "src": "The panic room is hidden somewhere in here, we just need to figure out how to open it...",
    "dst": "避難室就藏在這裡的某處，我們只要想出怎麼打開它……",
    "role": "desc",
@@ -40,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "WynnExcavation Site D#003": {
+  "WynnExcavation Site D#004": {
    "src": "Last I heard from His Majesty, he was muttering something about a fourth crystal... a green one.",
    "dst": "我上次聽陛下說話時，他正在唸著什麼第四顆水晶……一顆綠色的。",
    "role": "desc",
@@ -50,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "WynnExcavation Site D#004": {
+  "WynnExcavation Site D#005": {
    "src": "And then he said \"The order of the crystals will open the way\". Maybe it's a clue as to how to find him?",
    "dst": "接著他說了「水晶的順序將會開啟通路」。也許這是找到他的線索？",
    "role": "desc",
@@ -440,7 +456,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#045": {
+  "WynnExcavation Site D#044": {
    "src": "He hasn't been seen since. Only the King knows how to get into the panic room, but I've had my suspicions about it for a while now.",
    "dst": "從此就沒人見過他了。只有國王知道怎麼進避難室，不過我心裡對這件事已經懷疑好一陣子了。",
    "role": "desc",
@@ -450,7 +466,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#046": {
+  "WynnExcavation Site D#045": {
    "src": "He seemed to be expecting someone, but I'm fed up of waiting.",
    "dst": "他似乎在等什麼人，但我已經等到不耐煩了。",
    "role": "desc",
@@ -460,7 +476,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#047": {
+  "WynnExcavation Site D#046": {
    "src": "I managed to hear a few things he was muttering to himself just before he disappeared, though.",
    "dst": "不過他消失前自言自語的幾句話，我倒是聽見了一些。",
    "role": "desc",
@@ -470,7 +486,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#048": {
+  "WynnExcavation Site D#047": {
    "src": "He mentioned something about a fourth crystal... a green one.",
    "dst": "他提到了什麼第四顆水晶……綠色的那顆。",
    "role": "desc",
@@ -480,7 +496,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#050": {
+  "WynnExcavation Site D#048": {
    "src": "Please, we need to find him, I'm sick of telling everyone he's indisposed!",
    "dst": "拜託，我們得找到他，我實在受夠了逢人就說他不便會客！",
    "role": "desc",
@@ -490,7 +506,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#051": {
+  "WynnExcavation Site D#049": {
    "src": "Find the secret passageway inside of the throne room",
    "dst": "在王座廳裡找出祕密通道",
    "role": "desc",
@@ -500,7 +516,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#052": {
+  "WynnExcavation Site D#050": {
    "src": "Oh my, a secret passage has opened up beneath the throne! Quickly, head inside!",
    "dst": "我的天，王座底下開了一條密道！快，進去！",
    "role": "desc",
@@ -510,7 +526,7 @@
    "speaker": "Royal Advisor Carlos",
    "source": "wiki"
   },
-  "WynnExcavation Site D#053": {
+  "WynnExcavation Site D#051": {
    "src": "Explore the secrets beneath {p} Castle",
    "dst": "探索 {p} 城堡底下的祕密",
    "role": "desc",
@@ -520,7 +536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#054": {
+  "WynnExcavation Site D#052": {
    "src": "Talk to the King",
    "dst": "與國王交談",
    "role": "desc",
@@ -530,7 +546,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#055": {
+  "WynnExcavation Site D#053": {
    "src": "I am impressed you managed to find me. Someone of my intellect is not normally found when he hasn't the intention of being so.",
    "dst": "你居然找得到我，我很佩服。像我這種智識的人，若無意被人尋見，通常是尋不著的。",
    "role": "desc",
@@ -540,7 +556,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#056": {
+  "WynnExcavation Site D#054": {
    "src": "I suppose I at least owe you the truth for getting this far, not that it matters.",
    "dst": "我想你走到這一步，我至少欠你一個真相，儘管那已經無關緊要了。",
    "role": "desc",
@@ -550,7 +566,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#057": {
+  "WynnExcavation Site D#055": {
    "src": "WynnExcavation, the Gavel company is a fake, a facade. It's not real....",
    "dst": "WynnExcavation，那家 Gavel 公司是假的，是個門面。它並不存在……",
    "role": "desc",
@@ -560,7 +576,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#058": {
+  "WynnExcavation Site D#056": {
    "src": "It's actually a secret society run by the high and mighty of Gavel.",
    "dst": "它其實是一個由 Gavel 的權貴階層所掌控的祕密結社。",
    "role": "desc",
@@ -570,7 +586,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#059": {
+  "WynnExcavation Site D#057": {
    "src": "They have one goal, complete control.",
    "dst": "他們只有一個目標：完全的掌控。",
    "role": "desc",
@@ -580,7 +596,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#060": {
+  "WynnExcavation Site D#058": {
    "src": "You can't compete with them, kid. I tried to at first, but they had turned my inner circle before getting to me.",
    "dst": "孩子，你鬥不過他們的。我一開始也試過，但他們在找上我之前，就已經策反了我身邊的核心圈子。",
    "role": "desc",
@@ -590,7 +606,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#061": {
+  "WynnExcavation Site D#059": {
    "src": "Though I cannot admit I fought hard, their ideals are admirable.",
    "dst": "雖然我不能說自己奮力抵抗過，但他們的理念確實令人欽佩。",
    "role": "desc",
@@ -600,7 +616,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#062": {
+  "WynnExcavation Site D#060": {
    "src": "So I hope you will forgive me, I act only for the greater good of the world.",
    "dst": "所以我希望你能原諒我，我所做的一切都只是為了這個世界更大的利益。",
    "role": "desc",
@@ -610,7 +626,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#063": {
+  "WynnExcavation Site D#061": {
    "src": "As you will not be leaving the city, I wish you a fond farewell. When you leave, you will be accused of treason and will be hunted. It is the only way...",
    "dst": "既然你已經走不出這座城了，我在此向你道別。你一離開這裡就會被指控叛國並遭到追捕。這是唯一的辦法……",
    "role": "desc",
@@ -620,7 +636,7 @@
    "speaker": "King of Troms",
    "source": "wiki"
   },
-  "WynnExcavation Site D#064": {
+  "WynnExcavation Site D#062": {
    "src": "Exit the King's room",
    "dst": "離開國王的房間",
    "role": "desc",
@@ -630,7 +646,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#065": {
+  "WynnExcavation Site D#063": {
    "src": "Time is short, so I'll have to spare you the details, but let's just say I'm on your side.",
    "dst": "時間緊迫，細節我只能省略，總之你就當我是站在你這邊的。",
    "role": "desc",
@@ -640,7 +656,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#066": {
+  "WynnExcavation Site D#064": {
    "src": "The King just placed you under arrest for treason. They've locked down the entire city.",
    "dst": "國王剛以叛國罪對你發出逮捕令。他們已經封鎖了整座城。",
    "role": "desc",
@@ -650,7 +666,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#067": {
+  "WynnExcavation Site D#065": {
    "src": "Both the front gate and the Passage are closed down. So we've created another exit for you.",
    "dst": "正門和通道都關閉了。所以我們替你另外開了一個出口。",
    "role": "desc",
@@ -660,7 +676,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#068": {
+  "WynnExcavation Site D#066": {
    "src": "Just follow the path to your left around the city. Keep going until you see a villager next to a tunnel. We'll clear your name once you've escaped.",
    "dst": "沿著你左邊那條路繞著城走。一直走，直到你看見一個站在隧道旁的村民。等你逃出去，我們會替你洗清罪名。",
    "role": "desc",
@@ -670,7 +686,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#069": {
+  "WynnExcavation Site D#067": {
    "src": "You'll pass through the army headquarters on your way, so be prepared for a fight. I'm the only guard here to help you.",
    "dst": "路上你會經過軍隊總部，所以做好一戰的準備。這裡只有我一個守衛能幫你。",
    "role": "desc",
@@ -680,7 +696,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#070": {
+  "WynnExcavation Site D#068": {
    "src": "Now run! We don't have another moment to waste!",
    "dst": "現在快跑！我們一刻都不能再耽擱了！",
    "role": "desc",
@@ -690,7 +706,7 @@
    "speaker": "Troms Guard",
    "source": "wiki"
   },
-  "WynnExcavation Site D#071": {
+  "WynnExcavation Site D#069": {
    "src": "Escape {p}",
    "dst": "逃離 {p}",
    "role": "desc",
@@ -700,7 +716,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#072": {
+  "WynnExcavation Site D#070": {
    "src": "Hey, psst. Come here!",
    "dst": "喂，噓。過來這邊！",
    "role": "desc",
@@ -710,7 +726,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#073": {
+  "WynnExcavation Site D#071": {
    "src": "Take this, and run! You need to get out!",
    "dst": "拿著這個，快跑！你得離開這裡！",
    "role": "desc",
@@ -720,7 +736,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#074": {
+  "WynnExcavation Site D#072": {
    "src": "Head to those coordinates, there is no time to explain, now go! I'll close the tunnel behind you.",
    "dst": "照著那個座標走，沒時間解釋了，快去！我會在你身後把隧道封起來。",
    "role": "desc",
@@ -730,7 +746,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#075": {
+  "WynnExcavation Site D#073": {
    "src": "I'VE FOUND THE TRAITOR! THEY'RE OVER HERE!",
    "dst": "我找到叛徒了！他們在這裡！",
    "role": "desc",
@@ -740,7 +756,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "WynnExcavation Site D#076": {
+  "WynnExcavation Site D#074": {
    "src": "Head to the location on the note",
    "dst": "前往紙條上的地點",
    "role": "desc",
@@ -750,7 +766,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#077": {
+  "WynnExcavation Site D#075": {
    "src": "Speak to Traitor Thomas",
    "dst": "與叛徒 Thomas 交談",
    "role": "desc",
@@ -760,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#078": {
+  "WynnExcavation Site D#076": {
    "src": "I'm sorry, I can't let you in there.",
    "dst": "抱歉，我不能讓你進去。",
    "role": "desc",
@@ -770,7 +786,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#079": {
+  "WynnExcavation Site D#077": {
    "src": "I can't let you in there, not until you have proven you are truly on our side.",
    "dst": "我不能讓你進去，除非你先證明自己真的站在我們這邊。",
    "role": "desc",
@@ -780,7 +796,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#080": {
+  "WynnExcavation Site D#078": {
    "src": "We never know who to believe anymore. Unfortunately there is no way for you to prove your loyalty.",
    "dst": "我們已經不知道還能相信誰了。可惜的是，你沒有任何辦法證明自己的忠誠。",
    "role": "desc",
@@ -790,7 +806,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#081": {
+  "WynnExcavation Site D#079": {
    "src": "Now if you would excuse me, I have to hunt for the lost map fragments of Dernel. I'm sure these eyes have something to do with it...",
    "dst": "那麼恕我失陪，我還得去找 Dernel 那幾片遺失的地圖殘片。我確信那些眼睛跟這件事脫不了關係……",
    "role": "desc",
@@ -800,7 +816,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#082": {
+  "WynnExcavation Site D#080": {
    "src": "Find the three map fragments by following the eyes and return to Thomas.",
    "dst": "跟著那些眼睛找出三片地圖殘片，並帶回去給 Thomas。",
    "role": "desc",
@@ -810,7 +826,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#083": {
+  "WynnExcavation Site D#081": {
    "src": "I can't let you in, we're busy looking for an important document, I'm sure these eyes have something to do with it...",
    "dst": "我不能讓你進去，我們正忙著找一份重要的文件，我確信那些眼睛跟這件事脫不了關係……",
    "role": "desc",
@@ -820,7 +836,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#084": {
+  "WynnExcavation Site D#082": {
    "src": "Is that... The map fragments? You found them!",
    "dst": "那是……地圖殘片？你找到了！",
    "role": "desc",
@@ -830,7 +846,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#085": {
+  "WynnExcavation Site D#083": {
    "src": "Oh my, you better come in.",
    "dst": "我的天，你最好趕快進來。",
    "role": "desc",
@@ -840,7 +856,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#086": {
+  "WynnExcavation Site D#084": {
    "src": "There's not enough time! We need to combine those fragments with ours!",
    "dst": "時間不夠了！我們得把那些殘片跟我們手上的拼起來！",
    "role": "desc",
@@ -850,7 +866,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#087": {
+  "WynnExcavation Site D#085": {
    "src": "Hurry, get in the hideout!",
    "dst": "快，進據點裡！",
    "role": "desc",
@@ -860,7 +876,7 @@
    "speaker": "Traitor Thomas",
    "source": "wiki"
   },
-  "WynnExcavation Site D#088": {
+  "WynnExcavation Site D#086": {
    "src": "Enter the traitor camp",
    "dst": "進入叛徒營地",
    "role": "desc",
@@ -870,7 +886,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#089": {
+  "WynnExcavation Site D#087": {
    "src": "Speak to Rebel Leader Amadel",
    "dst": "與 Rebel Leader Amadel 交談",
    "role": "desc",
@@ -880,7 +896,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#090": {
+  "WynnExcavation Site D#088": {
    "src": "Welcome, friend. I knew you would figure it all out.",
    "dst": "歡迎，朋友。我就知道你會把一切都想通。",
    "role": "desc",
@@ -890,7 +906,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#091": {
+  "WynnExcavation Site D#089": {
    "src": "You must be surprised to see me. The excavation crew at site C tried very hard to kill me.",
    "dst": "看到我，你一定很意外吧。Site C 那批挖掘隊可是很努力想要我的命。",
    "role": "desc",
@@ -900,7 +916,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#092": {
+  "WynnExcavation Site D#090": {
    "src": "They didn't succeed though. I got away, and I swiped a fragment of a map, and I found out what it's for.",
    "dst": "不過他們沒能得逞。我逃出來了，還順走了一片地圖，也查出了它的用途。",
    "role": "desc",
@@ -910,7 +926,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#093": {
+  "WynnExcavation Site D#091": {
    "src": "If you made it this far, you know Wynn Excavation are not what they seem. They want to harness Wynn's ancient power.",
    "dst": "你既然走到這一步，就該知道 Wynn Excavation 並非表面上那樣。他們想要駕馭 Wynn 的遠古力量。",
    "role": "desc",
@@ -920,7 +936,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#094": {
+  "WynnExcavation Site D#092": {
    "src": "They control our governments, authorities and seem to be {~} steps ahead of any of us that oppose them.",
    "dst": "他們控制著我們的政府與當局，而且似乎永遠比任何反抗他們的人都領先 {~} 步。",
    "role": "desc",
@@ -930,7 +946,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#095": {
+  "WynnExcavation Site D#093": {
    "src": "That is, unless we're able to beat the excavationists to the last crystal.",
    "dst": "除非——我們能搶在挖掘者之前拿到最後一顆水晶。",
    "role": "desc",
@@ -940,7 +956,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#096": {
+  "WynnExcavation Site D#094": {
    "src": "They cannot use a single shard of power without combining them all.",
    "dst": "不把所有碎片湊齊，他們連一片的力量都用不了。",
    "role": "desc",
@@ -950,7 +966,7 @@
    "speaker": "Traitor Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#098": {
+  "WynnExcavation Site D#095": {
    "src": "WynnExcavation have done really horrible things, and I used to help...",
    "dst": "WynnExcavation 做過非常可怕的事，而我以前還幫過忙……",
    "role": "desc",
@@ -960,7 +976,7 @@
    "speaker": "Traitor Buice",
    "source": "wiki"
   },
-  "WynnExcavation Site D#099": {
+  "WynnExcavation Site D#096": {
    "src": "WynnExcavation will be destroyed, no matter what!",
    "dst": "不管付出什麼代價，WynnExcavation 都會被摧毀！",
    "role": "desc",
@@ -970,7 +986,7 @@
    "speaker": "Traitor Jaynar",
    "source": "wiki"
   },
-  "WynnExcavation Site D#100": {
+  "WynnExcavation Site D#097": {
    "src": "Go to Site D [-{~}, {~}, -{~}]",
    "dst": "前往 Site D [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -980,7 +996,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#101": {
+  "WynnExcavation Site D#098": {
    "src": "Solve the puzzle",
    "dst": "解開機關",
    "role": "desc",
@@ -990,7 +1006,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#102": {
+  "WynnExcavation Site D#099": {
    "src": "Search the excavation site",
    "dst": "搜索挖掘場",
    "role": "desc",
@@ -1000,7 +1016,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#103": {
+  "WynnExcavation Site D#100": {
    "src": "Talk to Excavator Admin Uci.",
    "dst": "與 Excavator Admin Uci 交談。",
    "role": "desc",
@@ -1010,7 +1026,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#104": {
+  "WynnExcavation Site D#101": {
    "src": "Oh my. It's you. I can't say I'm surprised to see you, we thought you might be stupid enough to come here.",
    "dst": "我的天。是你啊。見到你我倒說不上意外，我們早就猜到你可能會蠢到跑來這裡。",
    "role": "desc",
@@ -1020,7 +1036,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#105": {
+  "WynnExcavation Site D#102": {
    "src": "Stupid enough to come here, yet, smart enough to make it.",
    "dst": "蠢到會跑來這裡，卻又聰明到真的走到了這裡。",
    "role": "desc",
@@ -1030,7 +1046,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#106": {
+  "WynnExcavation Site D#103": {
    "src": "You were at every site, taking shards and attempting to thwart us.",
    "dst": "每一個場址你都出現過，搶走碎片，處處想妨礙我們。",
    "role": "desc",
@@ -1040,7 +1056,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#107": {
+  "WynnExcavation Site D#104": {
    "src": "This time we won, and you lost.",
    "dst": "這一次是我們贏了，你輸了。",
    "role": "desc",
@@ -1050,7 +1066,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#108": {
+  "WynnExcavation Site D#105": {
    "src": "What do your shards mean to us when we have all four crystals?",
    "dst": "我們四顆水晶都到手了，你那些碎片對我們還有什麼意義？",
    "role": "desc",
@@ -1060,7 +1076,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#109": {
+  "WynnExcavation Site D#106": {
    "src": "Nothing, that's what.",
    "dst": "什麼意義都沒有，就是這樣。",
    "role": "desc",
@@ -1070,7 +1086,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#110": {
+  "WynnExcavation Site D#107": {
    "src": "The boss wants to speak to you, I don't recommend keeping him waiting, he's not a patient man.",
    "dst": "老闆想跟你談談，我不建議讓他等，他可不是個有耐性的人。",
    "role": "desc",
@@ -1080,7 +1096,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#111": {
+  "WynnExcavation Site D#108": {
    "src": "He'll be waiting for you, head through that door.",
    "dst": "他會在裡面等你，穿過那扇門吧。",
    "role": "desc",
@@ -1090,7 +1106,7 @@
    "speaker": "Excavator Admin Uci",
    "source": "wiki"
   },
-  "WynnExcavation Site D#112": {
+  "WynnExcavation Site D#109": {
    "src": "My boss Uci is a bit of a mean guy, but hey the perks of minionship aren't bad!",
    "dst": "我老闆 Uci 是有點難相處，不過欸，當個小嘍囉的福利倒是不差！",
    "role": "desc",
@@ -1100,7 +1116,7 @@
    "speaker": "Excavator Sean",
    "source": "wiki"
   },
-  "WynnExcavation Site D#113": {
+  "WynnExcavation Site D#110": {
    "src": "This leads deeper into this dungeon, but it seems like it has to be activated from the other side.",
    "dst": "這條路通往地城更深處，不過看起來得從另一邊才能啟動。",
    "role": "desc",
@@ -1110,7 +1126,7 @@
    "speaker": "WynnExcavation Scientist Azure",
    "source": "wiki"
   },
-  "WynnExcavation Site D#114": {
+  "WynnExcavation Site D#111": {
    "src": "Enter The Ancient Dungeon",
    "dst": "進入 The Ancient Dungeon",
    "role": "desc",
@@ -1120,7 +1136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#115": {
+  "WynnExcavation Site D#112": {
    "src": "Complete the parkour",
    "dst": "完成跑酷",
    "role": "desc",
@@ -1130,7 +1146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#116": {
+  "WynnExcavation Site D#113": {
    "src": "Solve The Yellow Puzzle",
    "dst": "解開黃色謎題",
    "role": "desc",
@@ -1140,7 +1156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#117": {
+  "WynnExcavation Site D#114": {
    "src": "Solve The Purple Puzzle",
    "dst": "解開紫色謎題",
    "role": "desc",
@@ -1150,7 +1166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#118": {
+  "WynnExcavation Site D#115": {
    "src": "Solve The Red Puzzle",
    "dst": "解開紅色謎題",
    "role": "desc",
@@ -1160,7 +1176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#119": {
+  "WynnExcavation Site D#116": {
    "src": "Escape The Green Room",
    "dst": "逃出綠色房間",
    "role": "desc",
@@ -1170,7 +1186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#120": {
+  "WynnExcavation Site D#117": {
    "src": "Talk to Excavator Amadel",
    "dst": "與 Excavator Amadel 交談",
    "role": "desc",
@@ -1180,7 +1196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#121": {
+  "WynnExcavation Site D#118": {
    "src": "Well, well. Looks like you've finally made it.",
    "dst": "哎呀哎呀。看來你終於走到這裡了。",
    "role": "desc",
@@ -1190,7 +1206,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#122": {
+  "WynnExcavation Site D#119": {
    "src": "You might be a little shocked to see me here...",
    "dst": "在這裡看到我，你可能會有點震驚……",
    "role": "desc",
@@ -1200,7 +1216,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#123": {
+  "WynnExcavation Site D#120": {
    "src": "Everything was planned you see...",
    "dst": "你要知道，一切都是計畫好的……",
    "role": "desc",
@@ -1210,7 +1226,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#124": {
+  "WynnExcavation Site D#121": {
    "src": "You finding that old fool in the desert, you surviving that fall.",
    "dst": "你在沙漠裡找到那個老傻瓜，你從那一摔活了下來。",
    "role": "desc",
@@ -1220,7 +1236,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#125": {
+  "WynnExcavation Site D#122": {
    "src": "You finding that notebook, and eventually meeting me.",
    "dst": "你找到那本筆記本，最後見到了我。",
    "role": "desc",
@@ -1230,7 +1246,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#126": {
+  "WynnExcavation Site D#123": {
    "src": "Everything that you have done has been planned by the mastermind behind this organisation, me.",
    "dst": "你所做過的每一件事，都是這個組織背後的主謀安排好的，那個人就是我。",
    "role": "desc",
@@ -1240,7 +1256,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#128": {
+  "WynnExcavation Site D#124": {
    "src": "We needed you, an unaware human with some form of pure intent to bring empowered shards here. Anyone else would have ran off with the shards, and turned against us. It's just how it all works. I don't expect you to understand.. Now. Enough talking.",
    "dst": "我們需要你這樣一個不知情、又帶著某種純粹意圖的人類，把充能過的碎片帶到這裡。換成任何其他人，早就帶著碎片跑了，然後反過來對付我們。事情就是這麼運作的。我也不指望你能理解……好了。話說得夠多了。",
    "role": "desc",
@@ -1250,7 +1266,7 @@
    "speaker": "WynnExcavation Leader Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#129": {
+  "WynnExcavation Site D#125": {
    "src": "Teleport to the Ancient City",
    "dst": "傳送到 The Ancient City",
    "role": "desc",
@@ -1260,7 +1276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#130": {
+  "WynnExcavation Site D#126": {
    "src": "Explore The Ancient City",
    "dst": "探索 The Ancient City",
    "role": "desc",
@@ -1270,7 +1286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#131": {
+  "WynnExcavation Site D#127": {
    "src": "Speak to Amadel's Assistant",
    "dst": "與 Amadel 的助手交談",
    "role": "desc",
@@ -1280,7 +1296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#132": {
+  "WynnExcavation Site D#128": {
    "src": "Kill Corrupted Amadel",
    "dst": "擊殺 Corrupted Amadel",
    "role": "desc",
@@ -1290,7 +1306,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#133": {
+  "WynnExcavation Site D#129": {
    "src": "The crystals combine the power of the stars themselves.. an ultimate power... the power to reign over the entire WORLD!",
    "dst": "這些水晶結合了群星本身的力量……那是至高的力量……足以統治「整個世界」的力量！",
    "role": "desc",
@@ -1300,7 +1316,7 @@
    "speaker": "Corrupted Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#134": {
+  "WynnExcavation Site D#130": {
    "src": "Kill Shadow Amadel",
    "dst": "擊殺 Shadow Amadel",
    "role": "desc",
@@ -1310,7 +1326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#135": {
+  "WynnExcavation Site D#131": {
    "src": "I- I- I feel... unstoppable.. this power... will not allow me to lose..!!!",
    "dst": "我—我—我感覺……勢不可擋……這股力量……絕、絕不會讓我輸……！！！",
    "role": "desc",
@@ -1320,7 +1336,7 @@
    "speaker": "Shadow Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#136": {
+  "WynnExcavation Site D#132": {
    "src": "Kill Amadel",
    "dst": "擊殺 Amadel",
    "role": "desc",
@@ -1330,7 +1346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "WynnExcavation Site D#137": {
+  "WynnExcavation Site D#133": {
    "src": "DID YOU REALLY THINK YOU COULD WIN?!?! YOU ARE NOTHING COMPARED TO ME! NOTHING!! I WILL EXTERMINATE ALL LIFE, STARTING WITH YOU!! NOW, PERISH!!!",
    "dst": "你真以為你贏得了嗎？！？！你跟我比起來什麼都不是！什麼都不是！！我要消滅一切生命，就從你開始！！現在，去死吧！！！",
    "role": "desc",
@@ -1340,7 +1356,7 @@
    "speaker": "Amadel",
    "source": "wiki"
   },
-  "WynnExcavation Site D#138": {
+  "WynnExcavation Site D#134": {
    "src": "Talk to The King of {p}",
    "dst": "與 {p}的國王交談",
    "role": "desc",
