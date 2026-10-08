@@ -14,29 +14,46 @@ public final class Ui {
 
     // ------------------------------------------------------------ 色票
     //
-    // 石板灰的底、天藍的重點色（使用者可以在〈面板〉→〈框線顏色〉換掉）、
-    // 符文金只留給「這裡有東西要看」的小記號。
+    // 霧面玻璃：視窗本身半透明，底下是遊戲被模糊過的畫面。所以每一層都不是
+    // 「一個顏色」，而是「往上疊一點白」或「往下壓一點黑」——卡片比視窗亮一點、
+    // 輸入框比視窗暗一點，換到哪一種背景上都分得出層次。
+    // 重點色是使用者的「風格顏色」，不在這裡；符文金只留給「這裡有東西要看」。
 
-    public static final int WINDOW = 0xEB11171F;
-    public static final int CARD = 0xA61B2430;
-    public static final int FIELD = 0xFF0C1219;
-    public static final int RAISED = 0xFF1B2430;
-    public static final int BORDER = 0xFF2B3644;
-    public static final int LINE = 0xFF232C38;
-    public static final int KNOB_OFF = 0xFF6B7786;
-    public static final int TRACK_OFF = 0xFF3A4757;
+    /** 視窗底色。底下有模糊時用這個。 */
+    public static final int WINDOW = 0xB8181F2A;
+    /** 玩家把「選單背景模糊」關掉時用這個：沒有模糊，半透明的底會讓字很難讀。 */
+    public static final int WINDOW_SOLID = 0xF0161C26;
+    public static final int WIN_EDGE = 0x29FFFFFF;
+    public static final int RAIL = 0x0AFFFFFF;
+    public static final int CARD = 0x0EFFFFFF;
+    public static final int FIELD = 0x4D000000;
+    public static final int RAISED = 0x16FFFFFF;
+    public static final int BORDER = 0x26FFFFFF;
+    public static final int LINE = 0x17FFFFFF;
+    /** 彈出來的東西（色盤、下拉、說明）要蓋住底下的字，所以幾乎不透明。 */
+    public static final int POP = 0xFC1B2330;
+    /** 預覽裡那張示意圖的底：它在演遊戲畫面，不跟著玻璃透明。 */
+    public static final int SCENE = 0xFF0C1219;
+    public static final int KNOB_OFF = 0xFF7B8694;
+    public static final int TRACK_OFF = 0x33FFFFFF;
 
-    public static final int TEXT = 0xFFE6EDF5;
-    public static final int TEXT_2 = 0xFFC5CFDA;
-    public static final int HINT = 0xFF8E9BAA;
-    public static final int FAINT = 0xFF6B7786;
+    public static final int TEXT = 0xFFF2F5F9;
+    public static final int TEXT_2 = 0xFFD3DAE3;
+    public static final int TEXT_3 = 0xFFAEB8C5;
+    public static final int HINT = 0xFF8D98A6;
+    public static final int FAINT = 0xFF7B8694;
     /** 壓在重點色上面的字：重點色都偏亮，深色字才讀得清楚。 */
-    public static final int ON_ACCENT = 0xFF0C1420;
+    public static final int ON_ACCENT = 0xFF0B1420;
 
-    public static final int GOLD = 0xFFC9A45C;
+    public static final int GOLD = 0xFFE0BC6E;
     public static final int GREEN = 0xFF7BC47F;
     public static final int AMBER = 0xFFE0B354;
     public static final int RED = 0xFFE0706B;
+
+    /** 圓角：控制項、卡片、視窗。單位是 GUI 像素。 */
+    public static final float R1 = 4.5f;
+    public static final float R2 = 7f;
+    public static final float R3 = 9f;
 
     // ------------------------------------------------------------ 顏色運算
 
@@ -186,6 +203,32 @@ public final class Ui {
         }
     }
 
+    /**
+     * 玻璃風的一塊：圓角底色加一圈髮絲線。{@code edge} 傳 0 就不畫線。
+     *
+     * <p>線寬是螢幕上的一個點，不是一個 GUI 像素——介面縮放是 3 的時候後者有
+     * 三個點粗，看起來就不是玻璃的邊，是一條框。
+     */
+    public static void pane(Canvas c, float x, float y, float w, float h, float r, int fill,
+                            int edge) {
+        if (fill != 0) {
+            c.round(x, y, w, h, r, fill);
+        }
+        if (edge != 0) {
+            c.ring(x, y, w, h, r, c.px(), edge);
+        }
+    }
+
+    /** 滑鼠指著、或正在用的控制項：外面多一圈重點色的光暈。 */
+    public static void halo(Canvas c, float x, float y, float w, float h, float r, int accent,
+                            float strength) {
+        if (strength <= 0.01f) {
+            return;
+        }
+        float t = 1.5f;
+        c.ring(x - t, y - t, w + t * 2, h + t * 2, r + t, t, fade(alpha(accent, 0x55), strength));
+    }
+
     /** 框外面再套一圈淡淡的光——滑鼠指著、或鍵盤焦點在上面的時候。 */
     public static void glow(Canvas c, int x, int y, int w, int h, int argb) {
         box(c, x - 1, y - 1, w + 2, h + 2, 0, argb);
@@ -216,26 +259,6 @@ public final class Ui {
         }
     }
 
-    public static final String[] ICON_ITEMS = {
-        ".....##.", "....###.", "...###..", "#.###...", "###.....", ".##.....", "#.##....", "........"};
-    public static final String[] ICON_PANEL = {
-        "........", "#####.##", "#...#.##", "#...#.##", "#...#.##", "#...#.##", "#####.##", "........"};
-    public static final String[] ICON_DIALOGUE = {
-        "########", "#......#", "#......#", "#......#", "########", "..##....", ".##.....", "........"};
-    public static final String[] ICON_WORLD = {
-        "..####..", ".#.##.#.", "#..##..#", "########", "#..##..#", ".#.##.#.", "..####..", "........"};
-    public static final String[] ICON_DATA = {
-        ".######.", "#......#", ".######.", "#......#", ".######.", "#......#", ".######.", "........"};
-    public static final String[] ICON_SEARCH = {
-        ".###....", "#...#...", "#...#...", "#...#...", ".###....", "....##..", ".....##.", "........"};
-    public static final String[] ICON_RESET = {
-        ".####...", "#....#..", "#.......", "#....#.#", ".#...###", "..###.#.", "........"};
-    public static final String[] ICON_DOWN = {"#####", ".###.", "..#.."};
-    public static final String[] ICON_UP = {"..#..", ".###.", "#####"};
-    public static final String[] ICON_RIGHT = {"#..", "##.", "###", "##.", "#.."};
-    public static final String[] ICON_CHECK = {"......#", ".....##", "#...##.", "##.##..", ".###...", "..#...."};
-    public static final String[] ICON_CLOSE = {"#...#", ".#.#.", "..#..", ".#.#.", "#...#"};
-    public static final String[] ICON_NOTICE = {".##.", ".##.", ".##.", ".##.", "....", ".##.", ".##."};
     public static final String[] ICON_PIN = {"..#..", "..#..", "#####", "..#..", "..#..", "..#.."};
 
     // ------------------------------------------------------------ 文字
@@ -319,7 +342,7 @@ public final class Ui {
     }
 
     /** 點在不在這個矩形裡。 */
-    public static boolean in(double mx, double my, int x, int y, int w, int h) {
+    public static boolean in(double mx, double my, float x, float y, float w, float h) {
         return mx >= x && mx < x + w && my >= y && my < y + h;
     }
 }

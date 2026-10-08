@@ -86,13 +86,15 @@ public final class Preview {
     private static final int DLG_TEXT = 0xFFF1E3C4;
 
     /**
+     * @param frame    框線顏色：遊戲裡譯文小框的框，場景裡的小框都用它
+     * @param accent   風格顏色：只有「資料」那一頁的大數字用，那不是遊戲畫面
      * @param gapShown 動畫中的間距（像素，已經緩動過）——直接拿設定值的話滑桿
      *                 用鍵盤一格一格跳的時候框會跟著跳
      */
     public static void draw(Canvas c, int x, int y, int w, int h, Scene scene, State s,
-                            int accent, float gapShown) {
-        Ui.box(c, x, y, w, h, Ui.FIELD, Ui.LINE);
-        c.clip(x + 1, y + 1, x + w - 1, y + h - 1);
+                            int frame, int accent, float gapShown) {
+        Ui.pane(c, x, y, w, h, Ui.R2, Ui.SCENE, Ui.BORDER);
+        c.clip(x + 2, y + 2, x + w - 2, y + h - 2);
         // 很淡的格線：讓「這是一張示意圖」一眼看得出來，也給間距一個參照
         for (int gx = x + 16; gx < x + w - 1; gx += 16) {
             c.fill(gx, y + 1, gx + 1, y + h - 1, 0x09FFFFFF);
@@ -101,9 +103,9 @@ public final class Preview {
             c.fill(x + 1, gy, x + w - 1, gy + 1, 0x09FFFFFF);
         }
         switch (scene) {
-            case TOOLTIP -> tooltip(c, x, y, w, h, s, accent, gapShown);
-            case DIALOGUE -> dialogue(c, x, y, w, h, s, accent);
-            case WORLD -> world(c, x, y, w, h, s, accent);
+            case TOOLTIP -> tooltip(c, x, y, w, h, s, frame, gapShown);
+            case DIALOGUE -> dialogue(c, x, y, w, h, s, frame);
+            case WORLD -> world(c, x, y, w, h, s, frame);
             default -> data(c, x, y, w, h, s, accent);
         }
         c.unclip();
@@ -286,8 +288,9 @@ public final class Preview {
 
         // 左邊：NPC 與名牌
         String tag = s.nametag == 1 ? zh.apply(NPC) : NPC;
+        // 放在追蹤欄底下：俄文、西文的名牌很長，並排會蓋到右上那一塊
         int nx = x + 10;
-        int ny = y + 36;
+        int ny = y + 74;
         int tagW = c.width(tag) + 6;
         c.fill(nx, ny, nx + tagW, ny + 11, 0x70000000);
         c.text(tag, nx + 3, ny + 2, 0xFFFFFFFF);
@@ -305,7 +308,7 @@ public final class Preview {
         // 中央大字
         String title = s.titles ? zh.apply(TITLE) : TITLE;
         int cx = x + (w - c.width(title)) / 2;
-        int cy = y + h / 2 + 8;
+        int cy = Math.max(ny + 52, y + h / 2 + 14);
         c.text(title, cx + 1, cy + 1, 0xA0000000);
         c.text(title, cx, cy, 0xFFF5C56B);
 
@@ -336,25 +339,20 @@ public final class Preview {
         int px = x + 10;
         int py = y + 12;
         String big = String.format("%,d", s.loaded);
-        // 大數字：同一行字畫兩倍大做不到（這層沒有縮放），所以用主題色加一條粗底線撐場面
-        c.text(big, px, py, accent);
-        c.text(Ui.fit(c, s.loadedLabel, w - 24 - c.width(big)), px + c.width(big) + 4, py, Ui.HINT);
-        c.fill(px, py + 11, px + Math.min(w - 20, c.width(big) + 4 + c.width(s.loadedLabel)),
-               py + 13, Ui.alpha(accent, 0x90));
+        float scale = c.scale(2f);
+        c.text(big, px, py, accent, scale);
+        py += Math.round(8 * scale) + 4;
+        c.text(Ui.fit(c, s.loadedLabel, w - 20), px, py, Ui.HINT);
 
-        int labelW = 0;
-        for (String[] fact : s.facts) {
-            labelW = Math.max(labelW, c.width(fact[0]));
-        }
-        labelW = Math.min(labelW, (w - 20) / 2);
-        int row = py + 22;
-        for (int i = 0; i < s.facts.length && row + 10 < y + h; i++) {
+        // 名稱一行、值一行：俄文、西文的名稱很長，並排的話值只剩幾個字的位置
+        int row = py + 18;
+        for (int i = 0; i < s.facts.length && row + 20 < y + h; i++) {
             String[] fact = s.facts[i];
-            c.text(Ui.fit(c, fact[0], labelW), px, row, Ui.HINT);
+            c.text(Ui.fit(c, fact[0], w - 20), px, row, Ui.HINT);
             boolean version = fact.length > 2;
-            c.text(Ui.fit(c, fact[1], w - 26 - labelW), px + labelW + 6, row,
+            c.text(Ui.fit(c, fact[1], w - 20), px, row + 10,
                    version ? s.versionColour : Ui.TEXT);
-            row += 12;
+            row += 25;
         }
     }
 }

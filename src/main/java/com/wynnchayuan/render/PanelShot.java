@@ -132,6 +132,26 @@ public final class PanelShot {
      * 而<b>沒改綁</b>的人按 F8 又沒反應（見 {@link #conflict}）——
      * 兩邊都在騙人。改成讀真正的綁定。
      */
+    /**
+     * 截圖鍵有沒有綁。
+     *
+     * <p>預設不綁（見 {@code WynnChaYuan#registerKeyBind}）。沒綁的時候設定畫面
+     * 那一格要寫「還沒綁鍵」，不是把「未設定」塞進「按 %s 拍」裡。
+     */
+    public static boolean hasKey() {
+        if (bound == null) {
+            return false;
+        }
+        try {
+            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                    .getBoundKeyOf(bound);
+            return key != null
+                    && key.getValue() != com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue();
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
     public static String keyName() {
         if (bound == null) {
             return "未設定";

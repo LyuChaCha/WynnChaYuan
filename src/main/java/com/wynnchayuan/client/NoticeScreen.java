@@ -136,7 +136,7 @@ public final class NoticeScreen extends Screen {
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
         Cards.panel(g, cardX(), cardY(), cardW(), cardH());
         super.render(g, mouseX, mouseY, delta);
-        int accent = WynnChaYuan.config().accentARGB();
+        int accent = WynnChaYuan.config().themeARGB();
         int y = cardY() + PAD;
         g.drawCenteredString(this.font, this.title, this.width / 2, y, accent);
         y += LINE + 8;

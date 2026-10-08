@@ -135,7 +135,7 @@ public final class ShotScreen extends Screen {
         int y = this.height / 2 - h / 2;
 
         // 外框跟著設定裡的主題色，跟其他面板同一套
-        int accent = WynnChaYuan.config().accentARGB();
+        int accent = WynnChaYuan.config().themeARGB();
         graphics.fill(x - 3, y - 3, x + w + 3, y + h + 3, accent);
         graphics.fill(x - 1, y - 1, x + w + 1, y + h + 1, 0xFF000000);
         graphics.blit(RenderPipelines.GUI_TEXTURED, preview,

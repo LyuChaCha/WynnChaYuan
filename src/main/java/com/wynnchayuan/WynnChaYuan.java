@@ -219,6 +219,12 @@ public final class WynnChaYuan implements ClientModInitializer {
             System.out.println("[" + MOD_NAME + "] 按鍵註冊失敗，其餘功能照常："
                     + t);
         }
+        // 指令跟按鍵分開包：其中一個壞掉，另一個還是打得開設定
+        try {
+            registerCommand();
+        } catch (Throwable t) {
+            System.out.println("[" + MOD_NAME + "] 指令註冊失敗，其餘功能照常：" + t);
+        }
 
         // tooltip 面板要在整個畫面畫完之後才畫，否則會被原始 tooltip 蓋掉。
         // Wynntils 的 ItemTooltipRenderEvent.Post 從來沒被發送過，用不了，
@@ -260,7 +266,7 @@ public final class WynnChaYuan implements ClientModInitializer {
 
         System.out.println("[WynnChaYuan] 就緒，輸出於 " + dir.resolve("captured.json"));
         System.out.println("[WynnChaYuan] 譯文 " + translations.size() + " 條（"
-                + translations.loadedFiles() + " 個檔案），F6 開啟設定");
+                + translations.loadedFiles() + " 個檔案），/wcy 開啟設定");
         System.out.println("[WynnChaYuan] 地名清單 "
                 + com.wynnchayuan.capture.PlaceNames.size() + " 筆（不翻譯，原樣保留）");
     }
@@ -719,7 +725,6 @@ public final class WynnChaYuan implements ClientModInitializer {
         return language;
     }
 
-    /** F6 開啟設定面板。 */
     /**
      * 按鍵設定裡的分類。
      *
@@ -736,18 +741,31 @@ public final class WynnChaYuan implements ClientModInitializer {
             KeyMapping.Category.register(
                     net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "main"));
 
+    /**
+     * 三個鍵<b>預設都不綁</b>。
+     *
+     * <p>原本開設定是 F6、截圖是 F9（更早是 F8）。那兩個鍵是我們自己挑的，
+     * 而每個玩家裝的模組不一樣——F8 就撞過別人的鍵，按下去完全沒反應
+     * （見 {@code PanelShot#conflict}），換成 F9 也只是換一個還沒撞到的。
+     * 不替玩家佔鍵之後，設定從這幾個地方打得開：
+     * <ul>
+     *   <li>Mod Menu 的模組清單（見 {@code client.ModMenuEntry}）；</li>
+     *   <li>聊天輸入 {@code /wynnchayuan} 或 {@code /wcy}（見 {@link #registerCommand}）；</li>
+     *   <li>按鍵設定的 WynnChaYuan 那一區，自己綁一個順手的。</li>
+     * </ul>
+     * 已經在用的玩家不受影響：按鍵綁定存在遊戲自己的 {@code options.txt}，
+     * 這裡改的只是「從來沒設過的人」拿到什麼。
+     */
     private static void registerKeyBind() {
         openSettingsKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.openSettings",
                 InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_F6,
+                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
                 KEY_CATEGORY));
         screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.screenshot",
                 InputConstants.Type.KEYSYM,
-                // 預設從 F8 換成 F9：實機回報 F8 按下去沒反應（有東西也綁在
-                // 那個鍵上，見 PanelShot#conflict），改綁 F9 才會動。
-                org.lwjgl.glfw.GLFW.GLFW_KEY_F9,
+                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
                 KEY_CATEGORY));
         copyChatKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.copyChat",
@@ -769,6 +787,11 @@ public final class WynnChaYuan implements ClientModInitializer {
             while (openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());
             }
+            // 指令要求的那一次：見 #registerCommand 為什麼要拖到這裡
+            if (openSettingsNextTick) {
+                openSettingsNextTick = false;
+                client.setScreen(new SettingsScreen());
+            }
             while (copyChatKey.consumeClick()) {
                 client.setScreen(new com.wynnchayuan.client.ChatCopyScreen());
             }
@@ -787,6 +810,35 @@ public final class WynnChaYuan implements ClientModInitializer {
             // 見 TranslationUpdate#tellOnce。
             com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);
         });
+    }
+
+    /** 指令已經下了，等下一個 tick 開畫面。 */
+    private static volatile boolean openSettingsNextTick = false;
+
+    /**
+     * {@code /wynnchayuan} 與 {@code /wcy}：打開設定。
+     *
+     * <p>這是<b>客戶端指令</b>，不會送到伺服器，Wynncraft 那邊完全不知道。
+     *
+     * <h2>為什麼不在指令裡直接開畫面</h2>
+     * 指令是聊天框送出時執行的，而聊天框在那之後才把自己關掉
+     * （{@code setScreen(null)}）。在指令裡開的畫面會立刻被那一下關掉，
+     * 看起來就是「打了指令沒反應」。所以這裡只舉一個旗子，由下一個 tick 去開——
+     * 那時候聊天框已經收完了。
+     */
+    private static void registerCommand() {
+        net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback.EVENT
+                .register((dispatcher, registryAccess) -> {
+                    for (String name : new String[] {"wynnchayuan", "wcy"}) {
+                        dispatcher.register(
+                                net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+                                        .literal(name)
+                                        .executes(context -> {
+                                            openSettingsNextTick = true;
+                                            return 1;
+                                        }));
+                    }
+                });
     }
 
     /** 把打完但還沒送出的對話收進 store。 */

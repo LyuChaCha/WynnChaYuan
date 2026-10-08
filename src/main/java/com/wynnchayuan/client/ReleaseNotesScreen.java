@@ -168,7 +168,7 @@ public final class ReleaseNotesScreen extends Screen {
 
         int left = MARGIN;
         int width = this.width - MARGIN * 2;
-        int accent = WynnChaYuan.config().accentARGB();
+        int accent = WynnChaYuan.config().themeARGB();
 
         // 畫到可視範圍外的要剪掉，不然捲動時會畫到標題與按鈕上。
         g.enableScissor(0, top(), this.width, bottom());

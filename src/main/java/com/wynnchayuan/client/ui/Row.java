@@ -272,5 +272,5 @@ public final class Row {
 
     /** 一個分類。{@code scene} 決定右邊的即時預覽畫哪一種示意。 */
     public record Tab(String key, Supplier<String> name, Supplier<String> about,
-                      String[] icon, Preview.Scene scene, List<Group> groups) {}
+                      Icons.Icon icon, Preview.Scene scene, List<Group> groups) {}
 }

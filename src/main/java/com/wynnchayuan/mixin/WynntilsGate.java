@@ -42,7 +42,7 @@ public final class WynntilsGate implements IMixinConfigPlugin {
             return node != null;
         } catch (Throwable t) {
             System.out.println("[WynnChaYuan] 找不到 " + targetClassName
-                    + "，跳過就地取代那一塊（其餘功能照常）");
+                    + "，跳過接到它上面的那一塊（沒裝那個模組或它改版了；其餘功能照常）");
             return false;
         }
     }

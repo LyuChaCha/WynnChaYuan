@@ -24,7 +24,7 @@ public final class Cards {
 
     /** 一張卡片：深色底、主題色細邊、四角內縮。 */
     public static void panel(GuiGraphics g, int x, int y, int w, int h) {
-        int edge = (WynnChaYuan.config().accentARGB() & 0x00FFFFFF) | 0x50000000;
+        int edge = (WynnChaYuan.config().themeARGB() & 0x00FFFFFF) | 0x50000000;
 
         g.fill(x + 1, y, x + w - 1, y + h, CARD_BG);
         g.fill(x, y + 1, x + 1, y + h - 1, CARD_BG);
@@ -38,7 +38,7 @@ public final class Cards {
 
     /** 卡片標題：主題色文字加一條短底線。 */
     public static void title(GuiGraphics g, Font font, int x, int y, String text) {
-        int accent = WynnChaYuan.config().accentARGB();
+        int accent = WynnChaYuan.config().themeARGB();
         g.drawString(font, Component.literal(text), x, y, accent);
         int w = font.width(text);
         g.fill(x, y + 10, x + w, y + 11, accent);
@@ -83,7 +83,7 @@ public final class Cards {
      * 兩個就會疊在一起。
      */
     public static void header(GuiGraphics g, Font font, int screenW, String title, String subtitle) {
-        int accent = WynnChaYuan.config().accentARGB();
+        int accent = WynnChaYuan.config().themeARGB();
         g.fill(0, 0, screenW, 46, 0xD00B1119);
         g.fill(0, 46, screenW, 47, accent);
 

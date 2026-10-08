@@ -76,6 +76,36 @@ public final class MarketSearch {
         }
         index.computeIfAbsent(zh, k -> new LinkedHashSet<>()).add(en);
         shown.putIfAbsent(zh, bare(chinese));
+        reverse = null;
+    }
+
+    /** 英文名（小寫、單數）→ 畫面上的譯名。用到才建，索引一動就丟掉重建。 */
+    private volatile Map<String, String> reverse;
+
+    /**
+     * 這個英文名的譯名。
+     *
+     * <p>給「英文名旁邊多畫一行譯名」用（見 {@code WmsBridge}）。同一個英文名有好幾種
+     * 譯法時回傳先收進來的那一個——跟 {@link #suggestions} 列出來的順序一致。
+     *
+     * @return 索引裡沒有這個名字時回 {@code null}
+     */
+    public String shownFor(String english) {
+        if (english == null) {
+            return null;
+        }
+        Map<String, String> map = reverse;
+        if (map == null) {
+            map = new java.util.HashMap<>();
+            for (Map.Entry<String, Set<String>> e : index.entrySet()) {
+                String zh = shown.getOrDefault(e.getKey(), e.getKey());
+                for (String en : e.getValue()) {
+                    map.putIfAbsent(singular(en).toLowerCase(java.util.Locale.ROOT), zh);
+                }
+            }
+            reverse = map;
+        }
+        return map.get(singular(english.strip()).toLowerCase(java.util.Locale.ROOT));
     }
 
     /**
@@ -209,6 +239,7 @@ public final class MarketSearch {
     public void clear() {
         index.clear();
         shown.clear();
+        reverse = null;
     }
 
     /** 候選清單的一列：玩家認得的中文名，與要送出去的英文名。 */

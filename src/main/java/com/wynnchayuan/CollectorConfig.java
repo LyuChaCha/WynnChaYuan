@@ -409,6 +409,15 @@ public final class CollectorConfig {
      */
     private String accentColor = "#6FA8D8";
 
+    /**
+     * 設定畫面自己的主題色：標題、選到的項目、開關。
+     *
+     * <p>原本跟 {@link #accentColor} 是同一個值。使用者把框線調成近白色之後
+     * 整個設定畫面跟著變白、選到哪一項都看不出來，所以拆開——框線管遊戲裡的
+     * 小框，這個只管設定畫面。
+     */
+    private String themeColor = "#6FA8D8";
+
     /** 對話框在最後一次更新後還顯示多久（毫秒）。 */
     private int dialogueHoldMs = 6000;
 
@@ -767,6 +776,80 @@ public final class CollectorConfig {
         accentColor = v.toUpperCase();
         save();
         return true;
+    }
+
+    public int themeARGB() {
+        return 0xFF000000 | (parseHex(themeColor) & 0xFFFFFF);
+    }
+
+    public String themeColor() {
+        return themeColor;
+    }
+
+    public boolean setThemeColor(String hex) {
+        if (!setThemeColorLive(hex)) {
+            return false;
+        }
+        saveIfDirty();
+        return true;
+    }
+
+    /**
+     * 拖色盤的時候用：值馬上生效，但不寫檔。放手時由呼叫端叫 {@link #saveIfDirty}。
+     * 每動一格就存一次的話，拖一下就是幾百次磁碟寫入。
+     */
+    public boolean setThemeColorLive(String hex) {
+        String v = normalHex(hex);
+        if (v == null) {
+            return false;
+        }
+        if (!v.equals(themeColor)) {
+            themeColor = v;
+            dirty = true;
+        }
+        return true;
+    }
+
+    /** 見 {@link #setThemeColorLive}。 */
+    public boolean setAccentColorLive(String hex) {
+        String v = normalHex(hex);
+        if (v == null) {
+            return false;
+        }
+        if (!v.equals(accentColor)) {
+            accentColor = v;
+            dirty = true;
+        }
+        return true;
+    }
+
+    /** 見 {@link #setThemeColorLive}。 */
+    public void setPanelGapLive(int px) {
+        int v = Math.max(0, Math.min(px, 200));
+        if (v != panelGap) {
+            panelGap = v;
+            dirty = true;
+        }
+    }
+
+    /** 見 {@link #setThemeColorLive}。0 是持續顯示。 */
+    public void setDialogueHoldSecondsLive(int sec) {
+        int v = sec <= 0 ? Integer.MAX_VALUE : Math.min(sec, 600) * 1000;
+        if (v != dialogueHoldMs) {
+            dialogueHoldMs = v;
+            dirty = true;
+        }
+    }
+
+    private static String normalHex(String hex) {
+        if (hex == null) {
+            return null;
+        }
+        String v = hex.strip();
+        if (!v.startsWith("#")) {
+            v = "#" + v;
+        }
+        return v.matches("#[0-9a-fA-F]{6}") ? v.toUpperCase() : null;
     }
 
     private static int parseHex(String hex) {
@@ -1251,6 +1334,11 @@ public final class CollectorConfig {
         if (accent.matches("#[0-9a-fA-F]{6}")) {
             accentColor = accent;
         }
+        // 舊設定檔沒有這一項：沿用框線顏色，升級之後畫面的顏色才不會自己變
+        String theme = str(o, "themeColor", accentColor);
+        if (theme.matches("#[0-9a-fA-F]{6}")) {
+            themeColor = theme;
+        }
         int hold = integer(o, "dialogueHoldMs", dialogueHoldMs);
         // 跟 setDialogueHoldSeconds 一致：0 以下是「持續顯示」
         dialogueHoldMs = hold <= 0 ? Integer.MAX_VALUE : hold;
@@ -1423,6 +1511,7 @@ public final class CollectorConfig {
             o.addProperty("noticeDismissed", noticeDismissed);
             o.addProperty("panelGap", panelGap);
             o.addProperty("accentColor", accentColor);
+            o.addProperty("themeColor", themeColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("dialogueMode", dialogueMode.name());
             o.addProperty("choiceMode", choiceMode.name());
