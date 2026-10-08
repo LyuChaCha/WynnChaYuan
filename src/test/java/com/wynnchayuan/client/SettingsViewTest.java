@@ -415,6 +415,7 @@ public final class SettingsViewTest {
                     segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off"),
                     toggle("world.wynntils", true, null),
                     toggle("world.objectives", true, "mode.replace"),
+                    toggle("world.scoreboard", true, null),
                     toggle("world.helditem", true, null),
                     toggle("world.chatcopy", true, null));
             List<Row> langs = List.of(

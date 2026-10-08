@@ -201,6 +201,8 @@ public final class UpgradeSafetyTest {
         // 舊設定檔沒有，重寫時補上預設值。
         expected.addProperty("trackerMode", "REPLACE");
         expected.addProperty("translateObjectives", true);
+        // 1.0.0：記分板的開關。舊設定檔沒有，預設開著（跟原本的行為一樣）。
+        expected.addProperty("translateScoreboard", true);
         expected.addProperty("translateHeldItem", true);
         // 0.2.2：物品名稱從開／關改成三段。舊的 true 換成「只顯示譯名」。
         expected.remove("translateItemNames");

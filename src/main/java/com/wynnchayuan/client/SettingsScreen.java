@@ -330,6 +330,8 @@ public final class SettingsScreen extends Screen {
         rows.add(toggle("world.wynntils", true, cfg()::wynntilsUi, cfg()::toggleWynntilsUi));
         rows.add(toggle("world.objectives", true, cfg()::translateObjectives,
                 cfg()::toggleObjectives).onText(t("mode.replace")));
+        rows.add(toggle("world.scoreboard", true, cfg()::translateScoreboard,
+                cfg()::toggleScoreboard));
         rows.add(toggle("world.helditem", true, cfg()::translateHeldItem, cfg()::toggleHeldItem));
         rows.add(toggle("world.chatcopy", true, cfg()::chatCopy, cfg()::toggleChatCopy));
         return rows;

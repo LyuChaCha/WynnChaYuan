@@ -706,11 +706,44 @@ public final class WynntilsText {
         rawText = on;
     }
 
+    /**
+     * 記分板上現在有哪幾列，以及哪幾列有「整句切回來」的譯文。
+     *
+     * @param shown    每一列的字（去掉樣式），含各段的標題；追蹤任務那一段不在裡面
+     * @param replaced 其中有現成譯文的那幾列，見 {@code ScoreboardFlow}
+     */
+    private record Board(java.util.Set<String> shown,
+                         java.util.Map<String, StyledText> replaced) {}
+
+    private static volatile Board board = new Board(java.util.Set.of(), java.util.Map.of());
+
+    /** {@code ScoreboardListener} 每次記分板更新叫一次，整份換掉。 */
+    public static void setScoreboard(java.util.Set<String> shown,
+                                     java.util.Map<String, StyledText> replaced) {
+        board = new Board(java.util.Set.copyOf(shown), java.util.Map.copyOf(replaced));
+    }
+
     static StyledText screenText(StyledText text, CollectorConfig config,
                                  TranslationStore store) {
         if (text == null || text.isEmpty() || store == null
                 || config == null || !config.wynntilsUi()) {
             return text;
+        }
+        Board now = board;
+        if (!now.shown().isEmpty()) {
+            // 記分板那幾列先看：開關關掉就原樣，有整句切回來的譯文就用那一份。
+            // 擋在快取前面——同一列字開關一切就要換答案，而且整句的譯文會隨著
+            // 記分板更新（倒數的秒數）一直變。
+            String plain = text.getStringWithoutFormatting();
+            if (now.shown().contains(plain)) {
+                if (!config.translateScoreboard()) {
+                    return text;
+                }
+                StyledText whole = now.replaced().get(plain);
+                if (whole != null) {
+                    return whole;
+                }
+            }
         }
         if (rawText) {
             // 公會名是玩家自己取的、Wynntils 的簡稱是它自己拼的，跟語料撞名
@@ -731,6 +764,12 @@ public final class WynntilsText {
             return seen.out() == null ? text : seen.out();
         }
         net.minecraft.network.chat.Component hit = LineTranslator.translate(text, store);
+        // 這個入口一次只畫一行。查表不分換行與空白，所以單行的字可能對到
+        // 兩行的條目（「Hold the platform」對到漂浮字的「Hold\nthe platform」），
+        // 譯文裡的換行會被畫成方框——併掉。
+        if (hit != null && text.getString().indexOf('\n') < 0) {
+            hit = ScoreboardFlow.oneLine(hit);
+        }
         StyledText out = hit == null ? null : StyledText.fromComponent(hit);
         synchronized (SCREEN_CACHE) {
             SCREEN_CACHE.put(text, new Cached(store.generation(),

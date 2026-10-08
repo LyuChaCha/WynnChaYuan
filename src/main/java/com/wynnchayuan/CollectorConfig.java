@@ -119,6 +119,15 @@ public final class CollectorConfig {
     private boolean translateObjectives = true;
 
     /**
+     * <b>記分板</b>（畫面右邊那一欄：討伐戰、Lootrun、隊伍、公會戰⋯⋯）要不要翻。
+     *
+     * <p>使用者 2026-10-08 要的開關。記分板有兩個地方會出現譯文——Wynntils 自己畫的
+     * 那一塊（就地換字），以及「Wynntils 介面」關掉時我們面板底下補的那幾段——
+     * 這個開關兩邊一起管。追蹤中的任務不算在內，那一段看 {@link #trackerMode}。
+     */
+    private boolean translateScoreboard = true;
+
+    /**
      * 切換手上物品時，快捷列上方跳出來的那行名稱要不要翻。
      *
      * <p>預設打開（使用者要求）。不想看的人在 F6 關掉。
@@ -534,6 +543,17 @@ public final class CollectorConfig {
         translateObjectives = !translateObjectives;
         save();
         return translateObjectives;
+    }
+
+    /** 見 {@link #translateScoreboard}。 */
+    public boolean translateScoreboard() {
+        return translateScoreboard;
+    }
+
+    public boolean toggleScoreboard() {
+        translateScoreboard = !translateScoreboard;
+        save();
+        return translateScoreboard;
     }
 
     /** 見 {@link #translateHeldItem}。 */
@@ -1337,6 +1357,7 @@ public final class CollectorConfig {
             trackerMode = DialogueMode.OFF;
         }
         translateObjectives = bool(o, "translateObjectives", translateObjectives);
+        translateScoreboard = bool(o, "translateScoreboard", translateScoreboard);
         translateHeldItem = bool(o, "translateHeldItem", translateHeldItem);
         marketSearch = bool(o, "marketSearch", marketSearch);
         shiftPeekNames = bool(o, "shiftPeekNames", shiftPeekNames);
@@ -1563,6 +1584,7 @@ public final class CollectorConfig {
             o.addProperty("translateTitles", translateTitles);
             o.addProperty("trackerMode", trackerMode.name());
             o.addProperty("translateObjectives", translateObjectives);
+            o.addProperty("translateScoreboard", translateScoreboard);
             o.addProperty("translateHeldItem", translateHeldItem);
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("wynntilsUi", wynntilsUi);

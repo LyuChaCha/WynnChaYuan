@@ -1188,6 +1188,14 @@ tasks.register('runScoreboardMirrorChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runScoreboardMirrorChecks' }
 
+tasks.register('runScoreboardFlowChecks', JavaExec) {
+    group = 'verification'
+    description = '記分板折成好幾列的一句話併起來翻；譯文不帶換行；開關關得掉'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.ScoreboardFlowTest'
+}
+tasks.named('check') { dependsOn 'runScoreboardFlowChecks' }
+
 tasks.register('runCorpusVersionChecks', JavaExec) {
     group = 'verification'
     description = 'F6 的「譯文版本」那一列不可以把「問不到」說成「最新」'
