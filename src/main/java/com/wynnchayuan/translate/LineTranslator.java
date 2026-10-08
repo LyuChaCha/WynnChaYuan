@@ -8338,6 +8338,14 @@ public final class LineTranslator {
             styles.add(accent.style());
         }
         FlowedDebug.accents(texts, styles, usedAccent, flowed);
+        // 原文有哪個顏色沒回到譯文上：記進 captured.json，譯者不必進遊戲對。
+        // 見 ColourAudit。
+        List<String> templates = new ArrayList<>(parts.size());
+        for (LineParts part : parts) {
+            templates.add(part.template());
+        }
+        com.wynnchayuan.capture.ColourAudit.note(templates, flowed, allRuns, accents,
+                usedAccent, blockStyle);
         // 填回去的符號是什麼——見 FlowedDebug#glyphs（聲明了為什麼要這一欄）
         FlowedDebug.glyphs(glyphs, flowed);
         return out;

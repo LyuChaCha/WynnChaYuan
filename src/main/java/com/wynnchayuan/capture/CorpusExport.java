@@ -87,6 +87,10 @@ public final class CorpusExport {
         JsonObject root = new JsonObject();
         root.add("_meta", meta);
         root.add("entries", rows);
+        // 顏色沒對上的句子也帶著：收的時候就已經濾掉帶玩家資料的了。見 ColourAudit。
+        if (ColourAudit.size() > 0) {
+            root.add("colours", ColourAudit.toJson());
+        }
 
         Path out = file(configDir);
         Files.createDirectories(out.getParent());

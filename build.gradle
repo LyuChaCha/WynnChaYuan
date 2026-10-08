@@ -1196,6 +1196,14 @@ tasks.register('runScoreboardFlowChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runScoreboardFlowChecks' }
 
+tasks.register('runColourAuditChecks', JavaExec) {
+    group = 'verification'
+    description = '原文有個顏色沒回到譯文上的句子：該記的記、不該記的不記、修好自己消失'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.ColourAuditTest'
+}
+tasks.named('check') { dependsOn 'runColourAuditChecks' }
+
 tasks.register('runCorpusVersionChecks', JavaExec) {
     group = 'verification'
     description = 'F6 的「譯文版本」那一列不可以把「問不到」說成「最新」'
