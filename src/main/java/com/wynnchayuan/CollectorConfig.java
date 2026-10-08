@@ -182,19 +182,20 @@ public final class CollectorConfig {
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
-     * {@code AUTO} 每看到一份<b>沒拍過的</b>譯文就自動拍一張，
-     * 一場遊戲上限 200 張——這是給校稿用的，不是備份整個遊戲。
+     *
+     * <p>原本還有 {@code AUTO}（每看到一份沒拍過的譯文就自動拍），使用者 2026-10-08
+     * 要求拿掉。舊設定檔裡寫著 {@code AUTO} 的，讀進來認不得就退回 {@code KEY}。
      */
     private ShotMode shotMode = ShotMode.KEY;
 
-    /** OFF 不拍；KEY 按鍵才拍；AUTO 看到沒拍過的譯文就拍。 */
-    public enum ShotMode { KEY, AUTO, OFF }
+    /** OFF 不拍；KEY 按鍵才拍。 */
+    public enum ShotMode { KEY, OFF }
 
     public ShotMode shotMode() {
         return shotMode;
     }
 
-    /** 在 關閉 → 快捷鍵 → 自動 之間輪替。 */
+    /** 在 快捷鍵 ↔ 關閉 之間切換。 */
     public ShotMode cycleShotMode() {
         return cycleShotMode(1);
     }
@@ -351,6 +352,20 @@ public final class CollectorConfig {
 
     public boolean noticeDismissed() {
         return noticeDismissed;
+    }
+
+    /**
+     * 舊的預設鍵（F6、F9）清過了沒。只清一次，見 {@code WynnChaYuan#releaseOldDefaultKeys}。
+     */
+    private boolean oldKeysReleased = false;
+
+    public boolean oldKeysReleased() {
+        return oldKeysReleased;
+    }
+
+    public void markOldKeysReleased() {
+        oldKeysReleased = true;
+        save();
     }
 
     public void setNoticeDismissed(boolean value) {
@@ -961,6 +976,33 @@ public final class CollectorConfig {
         return true;
     }
 
+    /** 拖滑桿的時候用：值馬上生效但不寫檔，放手時由呼叫端叫 {@link #saveIfDirty}。 */
+    public void setNametagRangeLive(double value) {
+        double v = Math.max(2.0, Math.min(value, 64.0));
+        if (v != nametagRange) {
+            nametagRange = v;
+            dirty = true;
+        }
+    }
+
+    /** 見 {@link #setNametagRangeLive}。 */
+    public void setNametagAngleLive(double value) {
+        double v = Math.max(1.0, Math.min(value, 45.0));
+        if (v != nametagAngle) {
+            nametagAngle = v;
+            dirty = true;
+        }
+    }
+
+    /** 見 {@link #setNametagRangeLive}。 */
+    public void setNametagHoldSecondsLive(int sec) {
+        int v = Math.max(0, Math.min(sec, 60)) * 1000;
+        if (v != nametagHoldMs) {
+            nametagHoldMs = v;
+            dirty = true;
+        }
+    }
+
     private static Double parseNumber(String value) {
         try {
             return Double.parseDouble(value.strip());
@@ -1321,6 +1363,7 @@ public final class CollectorConfig {
         nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
         noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
+        oldKeysReleased = bool(o, "oldKeysReleased", oldKeysReleased);
         // 舊版只有開／關：開過的人給「譯名」，其餘照預設（關閉）。
         if (o.has("itemNames")) {
             itemNames = enumOr(o, "itemNames", ItemNames.class, itemNames);
@@ -1509,6 +1552,7 @@ public final class CollectorConfig {
             o.addProperty("panelSide", panelSide.name());
             o.addProperty("itemNames", itemNames.name());
             o.addProperty("noticeDismissed", noticeDismissed);
+            o.addProperty("oldKeysReleased", oldKeysReleased);
             o.addProperty("panelGap", panelGap);
             o.addProperty("accentColor", accentColor);
             o.addProperty("themeColor", themeColor);

@@ -10,6 +10,9 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 
 import java.io.InputStream;
@@ -44,11 +47,62 @@ final class GuiCanvas implements Canvas {
     private final GuiGraphics g;
     private final Font font;
     private final int scale;
+    private String lang;
 
     GuiCanvas(GuiGraphics g, Font font, int guiScale) {
         this.g = g;
         this.font = font;
         this.scale = Math.max(1, guiScale);
+        this.lang = family(T.pinnedLanguage() != null ? T.pinnedLanguage()
+                : Minecraft.getInstance().getLanguageManager().getSelected());
+    }
+
+    // ------------------------------------------------------------ 字型
+    //
+    // 設定畫面用隨模組附的 Noto Sans，不用原版的點陣字（見 tools/build-ui-fonts.py）。
+    // 字型定義照「語言」與「一個字點畫成螢幕上幾個點」各一份：TTF 字是先畫成點陣再
+    // 貼上去的，畫的解析度跟實際貼出來的大小一比一時邊緣才乾淨。
+
+    /** 有哪幾種倍率的字型定義。跟 build-ui-fonts.py 的 DOTS 要一致。 */
+    private static final int[] DOTS = {2, 3, 4, 6};
+    private static final java.util.Map<String, Style> STYLES = new HashMap<>();
+
+    /** 這個語言用哪一組字型定義；不是中日韓的都用拉丁那一組。 */
+    private static String family(String code) {
+        if (code == null) {
+            return "latin";
+        }
+        return switch (code) {
+            case "zh_tw", "zh_hk", "lzh" -> "zh_tw";
+            case "zh_cn" -> "zh_cn";
+            case "ja_jp" -> "ja_jp";
+            case "ko_kr" -> "ko_kr";
+            default -> "latin";
+        };
+    }
+
+    /** 要畫成每個字點 {@code dots} 個螢幕點時，用哪一份定義：剛好的那份，沒有就挑大一級的。 */
+    private Style style(int dots) {
+        int pick = DOTS[DOTS.length - 1];
+        for (int d : DOTS) {
+            if (d >= dots) {
+                pick = d;
+                break;
+            }
+        }
+        String key = lang + "_" + pick;
+        return STYLES.computeIfAbsent(key, k -> Style.EMPTY.withFont(new FontDescription.Resource(
+                Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID, "ui/" + k))));
+    }
+
+    @Override
+    public void language(String code) {
+        this.lang = family(code);
+    }
+
+    @Override
+    public void head(String minecraftName, float x, float y, float size) {
+        PlayerHeads.draw(g, minecraftName, p(x), p(y), Math.max(8, p(size)));
     }
 
     /** 把座標系換成螢幕上的點。畫完要叫 {@link #end}。 */
@@ -188,13 +242,14 @@ final class GuiCanvas implements Canvas {
         g.pose().pushMatrix();
         g.pose().translate(p(x), p(y));
         g.pose().scale(dots, dots);
-        g.drawString(font, text, 0, 0, argb, false);
+        g.drawString(font, Component.literal(text).withStyle(style(dots)), 0, 0, argb, false);
         g.pose().popMatrix();
     }
 
     @Override
     public int width(String text) {
-        return text == null ? 0 : font.width(text);
+        return text == null || text.isEmpty() ? 0
+                : font.width(Component.literal(text).withStyle(style(scale)));
     }
 
     @Override

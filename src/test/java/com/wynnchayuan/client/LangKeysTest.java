@@ -35,9 +35,13 @@ public final class LangKeysTest {
     private static final Path LANG =
             Path.of("src/main/resources/assets/wynnchayuan/lang");
 
-    /** {@code T.c("key"} 或 {@code T.s("key"}。 */
+    /**
+     * {@code T.c("key"} 或 {@code T.s("key"}，以及畫面那一層的 {@code shell.tr("key"}、
+     * {@code host.tr("key"}——{@code client.ui} 底下的畫面不認得 {@code T}，
+     * 字串是透過外殼問來的。
+     */
     private static final Pattern USED =
-            Pattern.compile("\\bT\\.[cs]\\(\\s*\"([^\"]+)\"");
+            Pattern.compile("(?:\\bT\\.[cs]|\\.tr)\\(\\s*\"([^\"]+)\"");
 
     /** {@code cycle("key", …)} 那一路：名稱與說明是同一個鍵推出來的。 */
     private static final Pattern ROW = Pattern.compile(

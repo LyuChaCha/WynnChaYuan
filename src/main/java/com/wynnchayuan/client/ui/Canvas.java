@@ -50,6 +50,18 @@ public interface Canvas {
     /** 這行字（一倍大）畫出來多寬。 */
     int width(String text);
 
+    /**
+     * 之後的字用哪一種語言的字型畫（{@code zh_tw}、{@code ja_jp}…）。
+     *
+     * <p>中日韓共用同一批漢字碼位，但各地的寫法不一樣（「骨」「直」「角」），
+     * 所以字型是照語言分的。平常整個畫面一種就好；更新說明可以單獨切成別的語言，
+     * 那一塊要換成那個語言的字型，不然簡體的說明會缺字。
+     */
+    void language(String lang);
+
+    /** 玩家的頭像，畫成 {@code size} 見方。還沒抓到皮膚時是預設的那張臉。 */
+    void head(String minecraftName, float x, float y, float size);
+
     /** 之後的繪製只留在這個範圍裡；可以巢狀，記得成對呼叫 {@link #unclip}。 */
     void clip(float x0, float y0, float x1, float y1);
 

@@ -228,6 +228,9 @@ public final class UpgradeSafetyTest {
         // 這一欄，補上的是<b>原本的框線顏色</b>——升級之後畫面的顏色不能自己變。
         expected.addProperty("themeColor", expected.has("accentColor")
                 ? expected.get("accentColor").getAsString() : "#6FA8D8");
+        // 同一版：舊的預設鍵（F6、F9）清過了沒。舊設定檔沒有，補上「還沒」——
+        // 清的動作在遊戲啟動完之後才做，見 WynnChaYuan#releaseOldDefaultKeys。
+        expected.addProperty("oldKeysReleased", false);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));

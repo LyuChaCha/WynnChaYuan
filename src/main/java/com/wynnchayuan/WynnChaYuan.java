@@ -203,6 +203,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 會直接吃到 NullPointerException 並讓遊戲開不起來。
         // WynnScribe 也是這樣處理的（見其 WynnscribeFabric）。
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> registerWithWynntils());
+        // 按鍵綁定這時候已經從 options.txt 讀進來了，才看得出誰還停在舊的預設鍵上
+        ClientLifecycleEvents.CLIENT_STARTED.register(WynnChaYuan::releaseOldDefaultKeys);
 
         // 遊戲語言也要等到這裡才問得到（見 #settleAutoLanguage），
         // 而同步要抓哪一個語言的檔得先知道語言是哪一個，所以接在它後面。
@@ -787,6 +789,13 @@ public final class WynnChaYuan implements ClientModInitializer {
             while (openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());
             }
+            if (tellKeysReleased && client.player != null) {
+                tellKeysReleased = false;
+                Component line = com.wynnchayuan.client.T.c("chat.keys.released")
+                        .withStyle(net.minecraft.ChatFormatting.AQUA);
+                com.wynnchayuan.capture.OwnOutputs.note(line);
+                client.player.displayClientMessage(line, false);
+            }
             // 指令要求的那一次：見 #registerCommand 為什麼要拖到這裡
             if (openSettingsNextTick) {
                 openSettingsNextTick = false;
@@ -810,6 +819,52 @@ public final class WynnChaYuan implements ClientModInitializer {
             // 見 TranslationUpdate#tellOnce。
             com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);
         });
+    }
+
+    /** 這次啟動清掉了舊的預設鍵：進到遊戲之後在聊天講一次。 */
+    private static volatile boolean tellKeysReleased = false;
+
+    /**
+     * 把還停在<b>舊預設鍵</b>上的綁定清掉，只做一次。
+     *
+     * <h2>為什麼不是改預設值就好</h2>
+     * 遊戲會把<b>每一個</b>按鍵寫進 {@code options.txt}，包括從來沒改過的。
+     * 所以裝過舊版的人，檔案裡白紙黑字寫著「開啟設定＝F6」——預設值改成不綁，
+     * 對他們一點作用都沒有，F6 與 F9 照樣被佔著（使用者 2026-10-08 回報）。
+     *
+     * <p>這裡分不出「沒動過，所以是 F6」與「特地選了 F6」。只清<b>剛好等於舊預設</b>的
+     * 那幾個（開啟設定＝F6，截圖＝F9 或更早的 F8），改綁成別的鍵的人不動；
+     * 清完在聊天講一次怎麼開設定、去哪裡綁回來。旗子記在設定檔裡，之後玩家自己
+     * 再綁回 F6 也不會被清第二次。
+     */
+    private static void releaseOldDefaultKeys(net.minecraft.client.Minecraft client) {
+        try {
+            if (config == null || config.oldKeysReleased() || openSettingsKey == null
+                    || screenshotKey == null) {
+                return;
+            }
+            boolean cleared = unbindIf(openSettingsKey, org.lwjgl.glfw.GLFW.GLFW_KEY_F6);
+            cleared |= unbindIf(screenshotKey, org.lwjgl.glfw.GLFW.GLFW_KEY_F9);
+            cleared |= unbindIf(screenshotKey, org.lwjgl.glfw.GLFW.GLFW_KEY_F8);
+            if (cleared) {
+                KeyMapping.resetMapping();
+                client.options.save();
+                tellKeysReleased = true;
+            }
+            config.markOldKeysReleased();
+        } catch (Throwable t) {
+            System.out.println("[" + MOD_NAME + "] 清舊的預設鍵時出錯，按鍵維持原樣：" + t);
+        }
+    }
+
+    private static boolean unbindIf(KeyMapping mapping, int key) {
+        InputConstants.Key bound = KeyBindingHelper.getBoundKeyOf(mapping);
+        if (bound == null || bound.getType() != InputConstants.Type.KEYSYM
+                || bound.getValue() != key) {
+            return false;
+        }
+        mapping.setKey(InputConstants.UNKNOWN);
+        return true;
     }
 
     /** 指令已經下了，等下一個 tick 開畫面。 */

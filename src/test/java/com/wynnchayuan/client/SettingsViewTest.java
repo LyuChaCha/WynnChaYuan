@@ -62,7 +62,10 @@ public final class SettingsViewTest {
         int frames = 0;
 
         for (String lang : LANGS) {
+            LANG = lang;
+            AwtCanvas.missing.clear();
             Fake fake = new Fake(lang);
+            fontCovers(lang, fake);
             for (int[] size : new int[][] {{640, 360}, {960, 540}, {480, 270}, {427, 240}}) {
                 SettingsView view = new SettingsView(fake.tabs(), fake, 0);
                 for (int tab = 0; tab < TABS.length; tab++) {
@@ -77,6 +80,7 @@ public final class SettingsViewTest {
                 }
             }
         }
+        LANG = "zh_tw";
         System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × "
                 + TABS.length + " 個分類 × 4 種大小）");
 
@@ -89,10 +93,12 @@ public final class SettingsViewTest {
             must("zh_tw " + TABS[tab] + "：標準大小下不必換成兩列", !view.pageWide());
         }
         // 俄文的「世界與聊天」放不下，要整頁換成兩列
+        LANG = "ru_ru";
         Fake ru = new Fake("ru_ru");
         view = new SettingsView(ru.tabs(), ru, 3);
         render(view, 640, 360, 1);
         must("ru_ru world：選項太長，整頁換成兩列", view.pageWide());
+        LANG = "zh_tw";
 
         interactions(out);
 
@@ -103,6 +109,9 @@ public final class SettingsViewTest {
         System.out.println("SettingsView: 全部通過，圖在 " + out.getPath());
     }
 
+    /** 現在用哪個語言的字型畫。 */
+    private static String LANG = "zh_tw";
+
     /** 假的時鐘：每畫一幀往前走一點，動畫才會走完。 */
     private static long CLOCK = 1000;
 
@@ -110,12 +119,33 @@ public final class SettingsViewTest {
     private static AwtCanvas render(SettingsView view, int w, int h, int scale) {
         AwtCanvas c = null;
         for (int i = 0; i < 8; i++) {
-            c = new AwtCanvas(w, h, scale);
+            c = new AwtCanvas(w, h, scale, LANG);
             c.backdrop();
             view.render(c, w, h, -100, -100, CLOCK += 90);
             c.done();
         }
         return c;
+    }
+
+    /**
+     * 這個語言的介面字串，隨模組附的字型都畫得出來。
+     *
+     * <p>字型是裁過的（見 {@code tools/build-ui-fonts.py}），只留用得到的字。
+     * 加了介面字串卻沒重裁，新的字會退回原版的點陣字——不會壞，但一行裡混著兩種字。
+     * 這裡把整份語言檔掃一遍，缺的字直接列出來。
+     */
+    private static void fontCovers(String lang, Fake fake) {
+        StringBuilder gone = new StringBuilder();
+        java.util.Set<Integer> seen = new java.util.HashSet<>();
+        for (String value : fake.strings.values()) {
+            value.codePoints().forEach(cp -> {
+                if (cp > ' ' && seen.add(cp) && !AwtCanvas.covers(lang, cp)) {
+                    gone.appendCodePoint(cp);
+                }
+            });
+        }
+        must(lang + "：介面字串的字，字型都有（缺：" + gone + "）——加了字串要重跑 tools/build-ui-fonts.py",
+                gone.length() == 0);
     }
 
     private static void check(String at, SettingsView view) {
@@ -211,7 +241,8 @@ public final class SettingsViewTest {
         view.searchFor("");
 
         // 大圖：給人看的
-        for (String lang : new String[] {"zh_tw", "ru_ru", "es_es", "ja_jp"}) {
+        for (String lang : new String[] {"zh_tw", "ru_ru", "es_es", "ja_jp", "ko_kr", "zh_cn"}) {
+            LANG = lang;
             Fake fake = new Fake(lang);
             SettingsView big = new SettingsView(fake.tabs(), fake, 0);
             for (int tab : new int[] {0, 3}) {
@@ -220,6 +251,7 @@ public final class SettingsViewTest {
                 ImageIO.write(c.image, "png", new File(out, "big-" + lang + "-" + TABS[tab] + ".png"));
             }
         }
+        LANG = "zh_tw";
         // 小畫面：介面縮放開到最大、或視窗很小的時候
         for (int[] size : new int[][] {{480, 270}, {427, 240}, {320, 240}}) {
             Fake fake = new Fake("zh_tw");
@@ -243,7 +275,7 @@ public final class SettingsViewTest {
     // ------------------------------------------------------------ 假的設定
 
     /** 一份假的設定：值存在表裡，字從語言檔讀。 */
-    private static final class Fake implements SettingsView.Host {
+    static final class Fake implements SettingsView.Host {
         private final Map<String, String> strings;
         private final Map<String, String> english;
         private final Map<String, Object> values = new HashMap<>();
@@ -294,7 +326,10 @@ public final class SettingsViewTest {
 
         private Row segment(String id, int selected, Row.Tone[] tones, String... keys) {
             init(id, selected);
-            Row r = Row.segment(id, () -> tr(id), () -> tr(id + ".hint"));
+            // 截圖那一列的說明看有沒有綁鍵，沒有固定的 .hint
+            String hintKey = english.containsKey("wynnchayuan." + id + ".hint")
+                    ? id + ".hint" : id + ".unbound";
+            Row r = Row.segment(id, () -> tr(id), () -> tr(hintKey));
             for (int i = 0; i < keys.length; i++) {
                 r.option(keys[i].startsWith("=") ? keys[i].substring(1) : tr(keys[i]), tones[i]);
             }
@@ -358,7 +393,8 @@ public final class SettingsViewTest {
                     segment("items.names", 2, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "mode.off"),
                     toggle("items.shiftpeek", true, null),
                     toggle("items.market", true, null),
-                    segment("items.shot", 0, new Row.Tone[] {a, bo, off}, "mode.key.unbound", "mode.auto", "mode.off"));
+                    segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
+                            .extra(() -> tr("button.keybinds"), () -> { }));
             List<Row> place = List.of(
                     segment("panel.anchor", 0, new Row.Tone[] {pl, pl}, "mode.follow", "mode.pinned"),
                     action("panel.place", "button.adjust"),
@@ -399,7 +435,7 @@ public final class SettingsViewTest {
                     action("data.submit", "data.submit.button"));
             List<Row.Tab> tabs = new ArrayList<>();
             tabs.add(tab("items", Icons.Icon.BOW, Preview.Scene.TOOLTIP, group("group.items", false, items)));
-            tabs.add(tab("panel", Icons.Icon.SCROLL, Preview.Scene.TOOLTIP,
+            tabs.add(tab("panel", Icons.Icon.SCROLL, Preview.Scene.PANEL,
                     group("group.place", false, place), group("group.look", false, look)));
             tabs.add(tab("dialogue", Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE, group("group.dialogue", false, dialogue)));
             tabs.add(tab("world", Icons.Icon.COMPASS, Preview.Scene.WORLD, group("group.world", false, world)));

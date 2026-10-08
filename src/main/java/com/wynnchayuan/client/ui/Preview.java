@@ -22,7 +22,13 @@ public final class Preview {
 
     private Preview() {}
 
-    public enum Scene { TOOLTIP, DIALOGUE, WORLD, DATA }
+    /**
+     * {@code PANEL} 跟 {@code TOOLTIP} 是同一張圖，差在<b>一定畫出面板</b>：「面板」那一頁
+     * 調的是面板放哪裡，物品翻譯設成就地取代或關閉的時候面板不會出現，預覽就整張不動
+     * （使用者 2026-10-08 回報「不管用哪種模式都沒有動作」）。所以那一頁照樣把面板畫出來，
+     * 底下再講一聲現在的設定下它不會出現。
+     */
+    public enum Scene { TOOLTIP, PANEL, DIALOGUE, WORLD, DATA }
 
     /**
      * 預覽要看的值。每一幀由 {@code SettingsScreen} 從設定填一次。
@@ -60,6 +66,8 @@ public final class Preview {
         public String loadedLabel = "";
         public String[][] facts = new String[0][];
         public int versionColour = Ui.TEXT;
+        /** 物品翻譯不是「另開面板」時，面板那一頁預覽底下的那句提醒。 */
+        public String panelOffNote = "";
 
         /** 原文 → 現在這個語言的譯文；查不到就原樣回來。 */
         public UnaryOperator<String> translate = s -> s;
@@ -103,7 +111,8 @@ public final class Preview {
             c.fill(x + 1, gy, x + w - 1, gy + 1, 0x09FFFFFF);
         }
         switch (scene) {
-            case TOOLTIP -> tooltip(c, x, y, w, h, s, frame, gapShown);
+            case TOOLTIP -> tooltip(c, x, y, w, h, s, frame, gapShown, false);
+            case PANEL -> tooltip(c, x, y, w, h, s, frame, gapShown, true);
             case DIALOGUE -> dialogue(c, x, y, w, h, s, frame);
             case WORLD -> world(c, x, y, w, h, s, frame);
             default -> data(c, x, y, w, h, s, accent);
@@ -114,12 +123,21 @@ public final class Preview {
     // ------------------------------------------------------------ 物品與面板
 
     private static void tooltip(Canvas c, int x, int y, int w, int h, State s,
-                                int accent, float gapShown) {
+                                int accent, float gapShown, boolean forcePanel) {
         String zhName = s.translate.apply(ITEM);
         String name = s.names == 0 ? zhName
                 : s.names == 1 ? zhName + " (" + ITEM + ")" : ITEM;
-        boolean replace = s.tooltipMode == 1;
-        boolean panel = s.tooltipMode == 0;
+        boolean replace = s.tooltipMode == 1 && !forcePanel;
+        boolean panel = s.tooltipMode == 0 || forcePanel;
+        if (forcePanel && s.tooltipMode != 0 && !s.panelOffNote.isEmpty()) {
+            java.util.List<String> note = Ui.wrap(c, s.panelOffNote, w - 16);
+            int ny = y + h - 6 - note.size() * 10;
+            c.fill(x + 2, ny - 5, x + w - 2, y + h - 2, 0xC0101822);
+            for (String line : note) {
+                c.text(line, x + 8, ny, Ui.AMBER);
+                ny += 10;
+            }
+        }
 
         String[] tip = new String[ITEM_LINES.length + 1];
         String[] side = new String[ITEM_LINES.length + 1];

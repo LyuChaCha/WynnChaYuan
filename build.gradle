@@ -354,6 +354,14 @@ tasks.register('runSettingsViewChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runSettingsViewChecks' }
 
+tasks.register('runSubViewChecks', JavaExec) {
+    group = 'verification'
+    description = '把使用須知、更新說明、貢獻者、調整面板位置、名牌進階離線算出來，再點幾下'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.client.SubViewsTest'
+}
+tasks.named('check') { dependsOn 'runSubViewChecks' }
+
 tasks.register('runStatusColourChecks', JavaExec) {
     group = 'verification'
     description = '驗證狀態名稱在譯文裡拿得到原文的顏色'

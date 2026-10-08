@@ -132,7 +132,7 @@ public final class SettingsScreen extends Screen {
         tabs.add(new Row.Tab("items", t("tab.items"), t("tab.items.about"), Icons.Icon.BOW,
                 Preview.Scene.TOOLTIP, List.of(new Row.Group(t("group.items"), false, items()))));
         tabs.add(new Row.Tab("panel", t("tab.panel"), t("tab.panel.about"), Icons.Icon.SCROLL,
-                Preview.Scene.TOOLTIP, List.of(
+                Preview.Scene.PANEL, List.of(
                         new Row.Group(t("group.place"), false, place()),
                         new Row.Group(t("group.look"), false, look()))));
         tabs.add(new Row.Tab("dialogue", t("tab.dialogue"), t("tab.dialogue.about"),
@@ -178,15 +178,18 @@ public final class SettingsScreen extends Screen {
                     if (clash != null) {
                         return T.s("items.shot.clash", clash);
                     }
-                    return T.s(PanelShot.hasKey() ? "items.shot.hint" : "items.shot.unbound");
+                    return PanelShot.hasKey() ? T.s("items.shot.bound", PanelShot.keyName())
+                                              : T.s("items.shot.unbound");
                 })
-                .option(PanelShot.hasKey() ? T.s("mode.key", PanelShot.keyName())
-                                           : T.s("mode.key.unbound"), Row.Tone.ACCENT)
-                .option(T.s("mode.auto"), Row.Tone.BOTH)
+                .option(T.s("mode.hotkey"), Row.Tone.ACCENT)
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> cfg().shotMode().ordinal())
                 .pick(i -> cycleTo(cfg()::shotMode, cfg()::cycleShotMode,
                         CollectorConfig.ShotMode.values()[i]))
+                // 鍵在遊戲自己的按鍵設定裡綁；這顆直接帶過去，不必自己找
+                .extra(t("button.keybinds"), () -> this.minecraft.setScreen(
+                        new net.minecraft.client.gui.screens.options.controls.KeyBindsScreen(
+                                this, this.minecraft.options)))
                 .reset(() -> cfg().shotMode() == CollectorConfig.ShotMode.KEY,
                         () -> cycleTo(cfg()::shotMode, cfg()::cycleShotMode,
                                 CollectorConfig.ShotMode.KEY)));
@@ -742,6 +745,7 @@ public final class SettingsScreen extends Screen {
         s.heldItem = c.translateHeldItem();
         s.loaded = WynnChaYuan.translations().size();
         s.loadedLabel = T.s("preview.loaded");
+        s.panelOffNote = T.s("preview.panel.off");
         String lang = c.language();
         String under = WynnChaYuan.fallbackLanguage();
         s.facts = new String[][] {

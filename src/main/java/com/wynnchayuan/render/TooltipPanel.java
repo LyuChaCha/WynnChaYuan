@@ -193,10 +193,6 @@ public final class TooltipPanel {
         // 所以左上角要退 4px、寬高各多留一點，否則圖的四邊會缺一條。
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
                 panelBox[0] + SHOT_MARGIN * 2, panelBox[1] + SHOT_MARGIN * 2, title);
-        // 自動模式的判別依據是<b>整份內容</b>而不是標題：同名的裝備會因為
-        // 詞條不同而有不同的譯文，只看標題會只拍到第一件。
-        PanelShot.auto(String.join("\n",
-                lines.stream().map(Component::getString).toList()));
     }
 
     /**
@@ -770,8 +766,6 @@ public final class TooltipPanel {
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
                        w + SHOT_MARGIN * 2, h + SHOT_MARGIN * 2,
                        tooltip.get(0).getString());
-        PanelShot.auto(String.join("\n",
-                tooltip.stream().map(Component::getString).toList()));
     }
 
     /**

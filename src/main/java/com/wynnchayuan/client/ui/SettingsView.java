@@ -1,10 +1,8 @@
 package com.wynnchayuan.client.ui;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 /**
  * 設定畫面的版面、互動與動畫。
@@ -36,7 +34,7 @@ import java.util.Map;
  * 只碰 {@link Canvas} 與 {@link Host}。測試接一張假畫布就能整個跑起來，
  * 見 {@code SettingsViewTest}。
  */
-public final class SettingsView {
+public final class SettingsView extends Surface {
 
     /** 這個畫面需要外面幫忙的事。 */
     public interface Host {
@@ -103,11 +101,9 @@ public final class SettingsView {
     /** 名稱一列、控制項一列的那種列。 */
     static final float ROW_WIDE_H = 40;
     static final float GROUP_HEAD = 15;
-    static final float CTRL_H = 16;
     static final float PREVIEW_W = 152;
     static final float NAV_H = 21;
 
-    private static final long TIP_DELAY_MS = 380;
 
     // ------------------------------------------------------------ 狀態
 
@@ -128,35 +124,11 @@ public final class SettingsView {
     private Row pickerRow;
     private final float[] hsv = {210, 0.5f, 0.85f};
 
-    private String hoverRow;
-    private long hoverSince;
-    private Zone dragging;
-    private String draggingKey;
 
-    private final Map<String, Float> anim = new HashMap<>();
-    private final Map<String, Integer> colours = new HashMap<>();
     private float bodyT = 1f;
     private float gapShown = -1;
-    private long lastFrame;
 
-    // 這一幀的東西
-    private Canvas c;
-    private int accent;
-    private float mx;
-    private float my;
-    private long now;
-    private float dt;
-    private final List<Zone> zones = new ArrayList<>();
-    private final List<float[]> clips = new ArrayList<>();
-    private float winX;
-    private float winY;
-    private float winW;
-    private float winH;
     private float railW;
-    private Runnable popover;
-    /** 正在畫彈出層：這時候底下的東西不該有滑過的反應，彈出層自己的要有。 */
-    private boolean inPopover;
-    private Tip tip;
     private boolean pageWide;
 
     /** 給測試看的：每一列實際畫在哪、名稱與控制項各佔到哪。 */
@@ -165,10 +137,80 @@ public final class SettingsView {
 
     private final List<Placed> placed = new ArrayList<>();
 
+    /**
+     * 只有一類設定的小視窗（名牌的進階設定）：沒有側欄與搜尋，底列只有一顆「返回」。
+     * 列的畫法、重置、說明、預覽都跟完整的設定畫面是同一份。
+     */
+    private final boolean sheet;
+    /** 小視窗這一幀量到的「剛好放得下」的高度，下一幀照它開；還沒量過是 0。 */
+    private float sheetH;
+
     public SettingsView(List<Row.Tab> tabs, Host host, int startTab) {
+        this(tabs, host, startTab, false);
+    }
+
+    public SettingsView(List<Row.Tab> tabs, Host host, int startTab, boolean sheet) {
         this.tabs = tabs;
         this.host = host;
         this.tab = Math.max(0, Math.min(tabs.size() - 1, startTab));
+        this.sheet = sheet;
+    }
+
+    @Override
+    protected int accentColour() {
+        return host.accent();
+    }
+
+    @Override
+    protected boolean covered() {
+        return popoverOpen();
+    }
+
+    @Override
+    protected void dismiss() {
+        closePopovers();
+    }
+
+    @Override
+    protected String clipboard() {
+        return host.clipboard();
+    }
+
+    @Override
+    protected void setClipboard(String text) {
+        host.setClipboard(text);
+    }
+
+    @Override
+    protected void click() {
+        host.click();
+    }
+
+    @Override
+    protected void draw() {
+        placed.clear();
+        float w = Math.min(screenW - 12, sheet ? 470 : MAX_W);
+        // 小視窗照內容長：四列的中文與換成兩列的俄文差了快一倍，固定高度不是空一截就是要捲
+        float h = Math.min(screenH - 14, sheet ? (sheetH > 0 ? sheetH : 236) : MAX_H);
+        window(Math.round((screenW - w) / 2f), Math.round((screenH - h) / 2f), w, h,
+               host.blurred());
+        railW = sheet ? 0 : (winW >= 430 ? RAIL_W : RAIL_SLIM);
+
+        // 點到空白處：收起彈出層、放掉輸入框的焦點
+        zone(0, 0, screenW, screenH, (x, y, b) -> {
+            closePopovers();
+            focus = null;
+        });
+
+        if (!sheet) {
+            rail();
+        }
+        header();
+        body();
+        footer();
+
+        bodyT = Ui.ease(bodyT, 1f, dt, 70f);
+        scroll = Ui.ease(scroll, scrollTarget, dt, 55f);
     }
 
     public int tab() {
@@ -205,110 +247,12 @@ public final class SettingsView {
         scroll = 0;
         scrollTarget = 0;
         bodyT = 1f;
-        anim.clear();
-        colours.clear();
+        settle();
     }
 
     // ------------------------------------------------------------ 可以點的地方
 
-    private interface Press {
-        void at(double x, double y, int button);
-    }
-
-    private static final class Zone {
-        float x;
-        float y;
-        float w;
-        float h;
-        Press press;
-        /** 按住拖曳時每動一下叫一次；{@code null} 就是普通的按鈕。 */
-        Press drag;
-        Runnable release;
-        String key;
-    }
-
-    private Zone zone(float x, float y, float w, float h, Press press) {
-        Zone z = new Zone();
-        float x0 = x;
-        float y0 = y;
-        float x1 = x + w;
-        float y1 = y + h;
-        // 捲出可視範圍的那一截不能點——畫的時候被裁掉了，點得到就是鬼按鈕
-        for (float[] clip : clips) {
-            x0 = Math.max(x0, clip[0]);
-            y0 = Math.max(y0, clip[1]);
-            x1 = Math.min(x1, clip[2]);
-            y1 = Math.min(y1, clip[3]);
-        }
-        z.x = x0;
-        z.y = y0;
-        z.w = Math.max(0, x1 - x0);
-        z.h = Math.max(0, y1 - y0);
-        z.press = press;
-        zones.add(z);
-        return z;
-    }
-
-    private void clip(float x0, float y0, float x1, float y1) {
-        c.clip(x0, y0, x1, y1);
-        clips.add(new float[] {x0, y0, x1, y1});
-    }
-
-    private void unclip() {
-        c.unclip();
-        clips.remove(clips.size() - 1);
-    }
-
-    /** 滑鼠在不在這塊上面（沒有被裁掉、沒有被彈出層蓋住、也沒有正在拖別的東西）。 */
-    private boolean over(float x, float y, float w, float h) {
-        if (dragging != null || (popoverOpen() && !inPopover)) {
-            return false;
-        }
-        for (float[] clip : clips) {
-            if (mx < clip[0] || mx >= clip[2] || my < clip[1] || my >= clip[3]) {
-                return false;
-            }
-        }
-        return Ui.in(mx, my, x, y, w, h);
-    }
-
     // ------------------------------------------------------------ 輸入
-
-    public boolean mouseDown(double x, double y, int button) {
-        for (int i = zones.size() - 1; i >= 0; i--) {
-            Zone z = zones.get(i);
-            if (z.w > 0 && z.h > 0 && Ui.in(x, y, z.x, z.y, z.w, z.h)) {
-                if (z.drag != null) {
-                    dragging = z;
-                    draggingKey = z.key;
-                }
-                z.press.at(x, y, button);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean mouseDrag(double x, double y) {
-        if (dragging == null) {
-            return false;
-        }
-        dragging.drag.at(x, y, 0);
-        return true;
-    }
-
-    public boolean mouseUp() {
-        if (dragging == null) {
-            return false;
-        }
-        Zone z = dragging;
-        dragging = null;
-        draggingKey = null;
-        if (z.release != null) {
-            z.release.run();
-        }
-        return true;
-    }
 
     public boolean scroll(double dy) {
         if (popoverOpen()) {
@@ -322,19 +266,6 @@ public final class SettingsView {
         return Math.max(0, Math.min(maxScroll, v));
     }
 
-    public static final int KEY_ESC = 256;
-    public static final int KEY_ENTER = 257;
-    public static final int KEY_BACKSPACE = 259;
-    public static final int KEY_DELETE = 261;
-    public static final int KEY_RIGHT = 262;
-    public static final int KEY_LEFT = 263;
-    public static final int KEY_DOWN = 264;
-    public static final int KEY_UP = 265;
-    public static final int KEY_PAGE_UP = 266;
-    public static final int KEY_PAGE_DOWN = 267;
-    public static final int KEY_HOME = 268;
-    public static final int KEY_END = 269;
-    public static final int KEY_KP_ENTER = 335;
 
     /**
      * @param ctrl Ctrl（mac 上是 Cmd）有沒有按著
@@ -370,7 +301,7 @@ public final class SettingsView {
                 focus = null;
                 return true;
             }
-            boolean changed = focus.key(key, ctrl, host);
+            boolean changed = focus.key(key, ctrl);
             if (changed) {
                 fieldChanged();
             }
@@ -472,108 +403,6 @@ public final class SettingsView {
     }
 
     // ------------------------------------------------------------ 繪製
-
-    public void render(Canvas canvas, int screenW, int screenH, double mouseX, double mouseY,
-                       long nowMs) {
-        this.c = canvas;
-        this.mx = (float) mouseX;
-        this.my = (float) mouseY;
-        this.now = nowMs;
-        this.dt = lastFrame == 0 ? 16f : Math.max(0f, Math.min(100f, nowMs - lastFrame));
-        this.lastFrame = nowMs;
-        this.accent = 0xFF000000 | (host.accent() & 0xFFFFFF);
-        zones.clear();
-        clips.clear();
-        placed.clear();
-        tip = null;
-        popover = null;
-        inPopover = false;
-        String wasHover = hoverRow;
-        hoverRow = null;
-
-        winW = Math.min(screenW - 12, MAX_W);
-        winH = Math.min(screenH - 14, MAX_H);
-        winX = Math.round((screenW - winW) / 2f);
-        winY = Math.round((screenH - winH) / 2f);
-        railW = winW >= 430 ? RAIL_W : RAIL_SLIM;
-
-        // 視窗底下一圈柔和的影子：往外幾層、一層比一層淡
-        for (int i = 4; i >= 1; i--) {
-            float g = i * 1.6f;
-            c.round(winX - g, winY - g + 2, winW + g * 2, winH + g * 2, Ui.R3 + g, 0x12000000);
-        }
-        Ui.pane(c, winX, winY, winW, winH, Ui.R3, host.blurred() ? Ui.WINDOW : Ui.WINDOW_SOLID,
-                Ui.WIN_EDGE);
-
-        // 點到空白處：收起彈出層、放掉輸入框的焦點
-        zone(0, 0, screenW, screenH, (x, y, b) -> {
-            closePopovers();
-            focus = null;
-        });
-
-        rail();
-        header();
-        body();
-        footer();
-
-        bodyT = Ui.ease(bodyT, 1f, dt, 70f);
-        scroll = Ui.ease(scroll, scrollTarget, dt, 55f);
-
-        if (popover != null) {
-            // 彈出層底下墊一塊「點外面就收起來」，而且不讓點擊穿到底下的控制項
-            zone(0, 0, screenW, screenH, (x, y, b) -> closePopovers());
-            inPopover = true;
-            popover.run();
-            inPopover = false;
-        }
-
-        // 說明：滑鼠在同一列上停一下才出現，不然掃過去整片都在閃
-        if (hoverRow == null || !hoverRow.equals(wasHover)) {
-            hoverSince = now;
-        }
-        if (tip != null && !popoverOpen() && dragging == null
-                && now - hoverSince >= TIP_DELAY_MS) {
-            tooltip(tip, Math.min(1f, (now - hoverSince - TIP_DELAY_MS) / 120f), screenH);
-        }
-    }
-
-    private float animate(String key, float target, float tau) {
-        float at = anim.getOrDefault(key, target);
-        at = Ui.ease(at, target, dt, tau);
-        anim.put(key, at);
-        return at;
-    }
-
-    /** 滑過的光暈強度：進去快、出來慢一點，掃過一排按鈕時才不會閃。 */
-    private float glow(String key, boolean hot) {
-        return animate("g:" + key, hot ? 1f : 0f, hot ? 35f : 90f);
-    }
-
-    /** 顏色也慢慢換過去：從「另開面板」切到「就地取代」時滑塊邊滑邊變色。 */
-    private int colourTo(String key, int target) {
-        int at = colours.getOrDefault(key, target);
-        int next = at;
-        if (at != target) {
-            float k = 1f - (float) Math.exp(-dt / 60f);
-            next = Ui.mix(at, target, Math.max(k, 0.08f));
-            boolean close = true;
-            for (int shift = 0; shift <= 24; shift += 8) {
-                if (Math.abs(((next >>> shift) & 0xFF) - ((target >>> shift) & 0xFF)) > 3) {
-                    close = false;
-                }
-            }
-            if (close) {
-                next = target;
-            }
-        }
-        colours.put(key, next);
-        return next;
-    }
-
-    /** 控制項的框線：平常是淡淡的白，滑過時往重點色靠。 */
-    private int edge(float g) {
-        return Ui.mix(Ui.BORDER, Ui.alpha(accent, 0x8C), g);
-    }
 
     // ------------------------------------------------------------ 側欄
 
@@ -716,23 +545,6 @@ public final class SettingsView {
         return y + h;
     }
 
-    /** 輸入框裡的字與游標；字比框長時讓游標那一段留在看得到的地方。 */
-    private void field(Field f, float x, float y, float w, boolean focused) {
-        String text = f.text.toString();
-        String head = text.substring(0, Math.min(f.caret, text.length()));
-        float shift = Math.max(0, c.width(head) - (w - 2));
-        clip(x, y - 2, x + w, y + 10);
-        if (f.all && text.length() > 0) {
-            c.fill(x - shift, y - 1, x - shift + c.width(text), y + 9, Ui.alpha(accent, 0x70));
-        }
-        c.text(text, x - shift, y, Ui.TEXT);
-        if (focused && (now / 500) % 2 == 0) {
-            float cx = x - shift + c.width(head);
-            c.fill(cx, y - 1, cx + Math.max(c.px(), 0.5f), y + 9, Ui.TEXT);
-        }
-        unclip();
-    }
-
     // ------------------------------------------------------------ 頁首
 
     private void header() {
@@ -822,7 +634,7 @@ public final class SettingsView {
         float left = winX + railW + 12;
         float full = winX + winW - 12 - left;
         float previewW = full >= 380 ? PREVIEW_W : (full >= 320 ? 130 : 0);
-        if (h < 190) {
+        if (h < 190 || sheet) {
             previewW = 0;                      // 矮到這樣示意圖裡的東西會疊在一起，乾脆不畫
         }
         float listW = previewW > 0 ? full - previewW - 8 : full;
@@ -879,6 +691,9 @@ public final class SettingsView {
             contentH += cardHeight(card) + 6;
         }
         contentH = Math.max(0, contentH - 6);
+        if (sheet) {
+            sheetH = HEAD_H + contentH + 8 + FOOT_H + 1;
+        }
         maxScroll = Math.max(0, contentH - h);
         scrollTarget = clampScroll(scrollTarget);
         scroll = clampScroll(scroll);
@@ -960,6 +775,16 @@ public final class SettingsView {
      * @param inner 一列裡名稱加控制項總共能用多寬
      */
     private boolean measure(List<Card> cards, float inner, boolean searching) {
+        // 同一頁的滑桿，數值那一欄留一樣寬：不然「1 秒」「6」「6°」各自留各自的，
+        // 幾條軌道的左緣就參差不齊
+        sliderValueW = 0;
+        for (Card card : cards) {
+            for (Row r : card.rows()) {
+                if (r.kind == Row.Kind.SLIDER) {
+                    sliderValueW = Math.max(sliderValueW, ownValueWidth(r));
+                }
+            }
+        }
         for (Card card : cards) {
             for (Row r : card.rows()) {
                 if (!stretches(r.kind)) {
@@ -1008,7 +833,14 @@ public final class SettingsView {
         }
     }
 
+    /** 這一頁滑桿的數值欄要留多寬；{@link #measure} 每一幀先算好。 */
+    private float sliderValueW;
+
     private float valueWidth(Row r) {
+        return Math.max(sliderValueW, ownValueWidth(r));
+    }
+
+    private float ownValueWidth(Row r) {
         return Math.max(c.width(r.format.apply(r.max)),
                         Math.max(c.width(r.format.apply(r.min)),
                                  c.width(r.format.apply(r.value.getAsInt()))));
@@ -1101,35 +933,6 @@ public final class SettingsView {
             case ACTION -> action(r, left, right, y);
             default -> status(r, left, right, y);
         }
-    }
-
-    /** 一顆按鈕。 */
-    private void button(String key, float x, float y, float w, float h, String label,
-                        boolean enabled, boolean primary, Icons.Icon icon, Runnable go) {
-        boolean hot = enabled && over(x, y, w, h);
-        float g = glow("b:" + key, hot);
-        Ui.halo(c, x, y, w, h, Ui.R1, accent, g);
-        if (primary && enabled) {
-            c.round(x, y, w, h, Ui.R1, Ui.mix(accent, 0xFFFFFFFF, g * 0.14f));
-        } else {
-            Ui.pane(c, x, y, w, h, Ui.R1, Ui.RAISED, edge(g));
-        }
-        int ink = !enabled ? Ui.fade(Ui.FAINT, 0.7f)
-                : primary ? Ui.ON_ACCENT : Ui.mix(Ui.TEXT_2, Ui.TEXT, g);
-        float iconW = icon == null ? 0 : 11;
-        String text = Ui.fit(c, label, (int) (w - 10 - iconW));
-        float tx = x + (w - c.width(text) - iconW) / 2f;
-        c.text(text, tx, y + (h - 8) / 2f, ink);
-        if (icon != null) {
-            c.icon(icon, tx + c.width(text) + 4, y + (h - 7) / 2f, 7,
-                   enabled ? Ui.TEXT_3 : Ui.FAINT);
-        }
-        zone(x, y, w, h, (px, py, b) -> {
-            if (enabled) {
-                host.click();
-                go.run();
-            }
-        });
     }
 
     // ---- 開關
@@ -1410,15 +1213,6 @@ public final class SettingsView {
                });
     }
 
-    /** 彈出層的底：影子、幾乎不透明的底色、一圈重點色的髮絲線。 */
-    private void popPane(float x, float y, float w, float h, float in) {
-        for (int i = 3; i >= 1; i--) {
-            float g = i * 1.5f;
-            c.round(x - g, y - g + 2, w + g * 2, h + g * 2, Ui.R2 + g, Ui.fade(0x18000000, in));
-        }
-        Ui.pane(c, x, y, w, h, Ui.R2, Ui.fade(Ui.POP, in), Ui.fade(Ui.alpha(accent, 0x8C), in));
-    }
-
     private void pickSv(Row r, float sx, float sy, float sw, float sh, double px, double py) {
         hsv[1] = (float) Math.max(0, Math.min(1, (px - sx) / Math.max(1f, sw)));
         hsv[2] = 1f - (float) Math.max(0, Math.min(1, (py - sy) / Math.max(1f, sh)));
@@ -1608,18 +1402,18 @@ public final class SettingsView {
         float y = winY + winH - FOOT_H;
         float left = winX + railW + 12;
         float right = winX + winW - 12;
-        c.fill(winX + railW, y, winX + winW - 1, y + c.px(), Ui.LINE);
+        c.fill(winX + railW + (sheet ? 1 : 0), y, winX + winW - 1, y + c.px(), Ui.LINE);
         float h = 18;
         float by = y + (FOOT_H - h) / 2f;
 
-        String done = host.tr("button.done");
+        String done = host.tr(sheet ? "button.back" : "button.done");
         float dw = c.width(done) + 28;
         button("done", right - dw, by, dw, h, done, true, true, null, host::done);
         right -= dw + 5;
 
         String credits = host.tr("button.credits");
         float cw = c.width(credits) + 16;
-        if (right - cw - 60 > left) {
+        if (!sheet && right - cw - 60 > left) {
             button("credits", right - cw, by, cw, h, credits, true, false, null,
                    host::openCredits);
             right -= cw + 5;
@@ -1628,7 +1422,7 @@ public final class SettingsView {
         boolean fresh = host.hasUpdate();
         String updates = host.tr(fresh ? "button.updates.new" : "button.updates");
         float uw = c.width(updates) + 16;
-        if (right - uw - 40 > left) {
+        if (!sheet && right - uw - 40 > left) {
             float ux = right - uw;
             boolean hot = over(ux, by, uw, h);
             float g = glow("b:updates", hot);
@@ -1651,150 +1445,6 @@ public final class SettingsView {
 
     // ------------------------------------------------------------ 說明
 
-    private record Tip(String text, float x, float y, float w, float h) {}
-
-    private void tooltip(Tip t, float alpha, int screenH) {
-        if (t.text() == null || t.text().isEmpty()) {
-            return;
-        }
-        float maxW = Math.min(240, winW - 24);
-        List<String> lines = Ui.wrap(c, t.text(), (int) (maxW - 14));
-        float w = 14;
-        for (String line : lines) {
-            w = Math.max(w, c.width(line) + 14);
-        }
-        float h = lines.size() * 10 + 9;
-        float x = Math.max(winX + 4, Math.min(winX + winW - w - 4, t.x() + 8));
-        float y = t.y() + t.h() + 4;
-        if (y + h > winY + winH - 4) {
-            y = t.y() - h - 4;                 // 底下放不下就翻到上面
-        }
-        y = Math.max(2, Math.min(screenH - h - 2, y)) + (1f - alpha) * 3f;
-        popPane(x, y, w, h, alpha);
-        for (int i = 0; i < lines.size(); i++) {
-            c.text(lines.get(i), x + 7, y + 5 + i * 10, Ui.fade(Ui.TEXT, alpha));
-        }
-    }
-
     // ------------------------------------------------------------ 輸入框
 
-    /**
-     * 一行文字的輸入框：搜尋與色碼各一個。
-     *
-     * <p>不用原版的 {@code EditBox}：那個要活在 {@code Screen} 的元件樹裡，
-     * 這一層就得認得遊戲了。這裡只需要一行、不折行、游標在哪裡——夠用，
-     * 而且輸入法送進來的字照樣收得到（{@code charTyped} 給的就是選好的字）。
-     */
-    static final class Field {
-        final StringBuilder text = new StringBuilder();
-        final int max;
-        int caret;
-        /** 全選：下一個打進來的字會把整段換掉。 */
-        boolean all;
-
-        Field(int max) {
-            this.max = max;
-        }
-
-        void clear() {
-            text.setLength(0);
-            caret = 0;
-            all = false;
-        }
-
-        void set(String value) {
-            text.setLength(0);
-            text.append(value == null ? "" : value);
-            caret = text.length();
-            all = false;
-        }
-
-        boolean type(String s) {
-            if (s == null || s.isEmpty() || s.charAt(0) < ' ') {
-                return false;
-            }
-            if (all) {
-                clear();
-            }
-            if (text.codePointCount(0, text.length()) + s.codePointCount(0, s.length()) > max) {
-                return false;
-            }
-            text.insert(caret, s);
-            caret += s.length();
-            return true;
-        }
-
-        boolean key(int key, boolean ctrl, Host host) {
-            if (ctrl && key == 'A') {
-                all = text.length() > 0;
-                caret = text.length();
-                return false;
-            }
-            if (ctrl && key == 'C') {
-                host.setClipboard(text.toString());
-                return false;
-            }
-            if (ctrl && key == 'V') {
-                String clip = host.clipboard();
-                if (clip == null) {
-                    return false;
-                }
-                boolean changed = false;
-                for (int i = 0; i < clip.length(); ) {
-                    int cp = clip.codePointAt(i);
-                    i += Character.charCount(cp);
-                    if (cp >= ' ') {
-                        changed |= type(new String(Character.toChars(cp)));
-                    }
-                }
-                return changed;
-            }
-            switch (key) {
-                case KEY_BACKSPACE -> {
-                    if (all) {
-                        clear();
-                        return true;
-                    }
-                    if (caret > 0) {
-                        int from = text.offsetByCodePoints(caret, -1);
-                        text.delete(from, caret);
-                        caret = from;
-                        return true;
-                    }
-                }
-                case KEY_DELETE -> {
-                    if (all) {
-                        clear();
-                        return true;
-                    }
-                    if (caret < text.length()) {
-                        text.delete(caret, text.offsetByCodePoints(caret, 1));
-                        return true;
-                    }
-                }
-                case KEY_LEFT -> {
-                    all = false;
-                    if (caret > 0) {
-                        caret = text.offsetByCodePoints(caret, -1);
-                    }
-                }
-                case KEY_RIGHT -> {
-                    all = false;
-                    if (caret < text.length()) {
-                        caret = text.offsetByCodePoints(caret, 1);
-                    }
-                }
-                case KEY_HOME -> {
-                    all = false;
-                    caret = 0;
-                }
-                case KEY_END -> {
-                    all = false;
-                    caret = text.length();
-                }
-                default -> { }
-            }
-            return false;
-        }
-    }
 }
