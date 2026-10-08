@@ -46,9 +46,32 @@ public final class DialogueOverlayTest {
                 "明天從 Troms 前往 Detlas。", SOURCE);
 
         checkCacheReuse(store);
+        checkKeepAlive();
 
         System.out.println(failures == 0 ? "\n全部通過" : "\n失敗 " + failures + " 項");
         System.exit(failures == 0 ? 0 : 1);
+    }
+
+    /**
+     * 原文還在畫面上的時候，小框不可以自己先淡掉（issue #1081）。
+     *
+     * <p>停留秒數從譯文最後一次更新起算，而一句話打完之後就不再更新。等玩家按
+     * shift 的對話原文會一直留著，小框卻在六秒後淡掉、內容也跟著丟了。
+     */
+    private static void checkKeepAlive() {
+        long now = System.currentTimeMillis();
+        long old = now - 60_000;               // 一分鐘前打完的一句話
+        int hold = 6000;
+        check("前提：一分鐘前更新的小框，照停留秒數早就淡完了",
+                Fade.alphaFor(old, hold) == 0f);
+        check("★ 在等玩家按 shift：原文還在，小框就還在",
+                Fade.alphaFor(DialogueOverlay.keptAlive(old, now, true, true, false), hold) == 1f);
+        check("★ 就地取代模式：接手的小框不跟著停留秒數淡掉",
+                Fade.alphaFor(DialogueOverlay.keptAlive(old, now, true, false, true), hold) == 1f);
+        check("會自己往下講的對話照舊看停留秒數",
+                DialogueOverlay.keptAlive(old, now, true, false, false) == old);
+        check("小框裡沒東西就不必續",
+                DialogueOverlay.keptAlive(old, now, false, true, true) == old);
     }
 
     private static void checkPrefix(String name, String raw, TranslationStore store,
