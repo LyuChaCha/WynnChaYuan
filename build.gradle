@@ -1204,6 +1204,14 @@ tasks.register('runColourAuditChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runColourAuditChecks' }
 
+tasks.register('runPanelFlowChecks', JavaExec) {
+    group = 'verification'
+    description = '兩欄面板裡折成好幾列的一句話：併起來翻、切回原本的列、別的格子不動'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.PanelFlowTest'
+}
+tasks.named('check') { dependsOn 'runPanelFlowChecks' }
+
 tasks.register('runCorpusVersionChecks', JavaExec) {
     group = 'verification'
     description = 'F6 的「譯文版本」那一列不可以把「問不到」說成「最新」'
