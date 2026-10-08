@@ -7362,10 +7362,28 @@ public final class LineTranslator {
      * 某一段橫跨了兩種顏色也整組不做——那一段的顏色本來就有歧義，猜錯比不猜糟。
      * 被 tooltip 寬度切成兩行的括號（{@code [Combat Lv.} ＋ {@code 88]}）不算
      * 歧義，只要那幾段同色就算一段。
+     *
+     * <h2>譯文把括號換了位置的時候</h2>
+     * 「順序一樣」在任務說明上不成立。英文把座標放句尾，中文習慣先講去哪裡：
+     *
+     * <pre>
+     *   Collect [4 Gold Chunks] for Jankan in the mineshaft at [605, 80, -4920].
+     *   到 [{~2}, {~3}, -{~4}] 的礦坑替 Jankan 收集 [{~1} 塊金塊]。
+     * </pre>
+     *
+     * 第 i 個對第 i 個的話，座標拿到物品的顏色、物品拿到座標的顏色——兩個括號的
+     * 顏色整個對調（使用者 2026-10-08：「任務說明顏色還是會有錯誤」）。語料裡這樣
+     * 換過位置的任務說明，繁中 18 條、簡中 16、日文 14、韓文 19（俄文、西文語序跟英文一樣，沒有）。
+     *
+     * <p>所以順序對不上時改成<b>先分類再配</b>：括號裡只有數字與標點的是一類
+     * （座標、百分比），帶字的是另一類（物品、等級），同一類的照順序配。兩邊各類的
+     * 個數一樣才這樣做；不一樣就照舊第 i 個對第 i 個。見 {@link #pairBrackets}。
      */
     static List<LineParts.Piece> bracketAccents(
             List<LineParts.Piece> allRuns, String[] translated, Style blockStyle) {
         List<Style> source = new ArrayList<>();
+        List<String> sourceText = new ArrayList<>();
+        StringBuilder inside = new StringBuilder();
         Style open = null;
         boolean mixed = false;
         int depth = 0;
@@ -7380,6 +7398,7 @@ public final class LineTranslator {
                     if (depth == 0) {
                         open = run.style();
                         mixed = false;
+                        inside.setLength(0);
                     }
                     depth++;
                 } else if (c == ']' && depth > 0) {
@@ -7389,8 +7408,11 @@ public final class LineTranslator {
                             return List.of();  // 見上：有歧義就整組不做
                         }
                         source.add(open);
+                        sourceText.add(inside.toString());
                         open = null;
                     }
+                } else if (depth > 0) {
+                    inside.append(c);
                 }
             }
         }
@@ -7401,9 +7423,10 @@ public final class LineTranslator {
         if (spans.size() != source.size()) {
             return List.of();
         }
+        int[] from = pairBrackets(sourceText, spans);
         List<LineParts.Piece> out = new ArrayList<>();
         for (int i = 0; i < spans.size(); i++) {
-            Style style = source.get(i);
+            Style style = source.get(from[i]);
             if (style == null || sameColour(style, blockStyle) || spans.get(i).isBlank()) {
                 continue;                      // 跟底色同色的不必貼
             }
@@ -7445,6 +7468,54 @@ public final class LineTranslator {
     /** 這一段裡有沒有字母或方塊字——標點與數字不算。 */
     private static boolean hasLetter(String text) {
         return text.codePoints().anyMatch(Character::isLetter);
+    }
+
+    /**
+     * 譯文的第 i 個方括號該拿原文第幾個的顏色。
+     *
+     * <p>兩邊的「種類順序」一樣就是第 i 個對第 i 個（絕大多數的情形）。不一樣、
+     * 但各種類的個數相同時，同一類的照順序配——那就是譯文把座標與物品換了位置。
+     * 個數也對不上的話沒有根據可以猜，照舊第 i 個對第 i 個。
+     *
+     * @param source 原文每個括號裡面的字（實際的數字）
+     * @param spans  譯文每個括號，含括號本身（數字還是佔位符）
+     */
+    static int[] pairBrackets(List<String> source, List<String> spans) {
+        int n = spans.size();
+        int[] same = new int[n];
+        boolean[] srcWordy = new boolean[n];
+        boolean[] dstWordy = new boolean[n];
+        boolean identical = true;
+        int srcCount = 0;
+        int dstCount = 0;
+        for (int i = 0; i < n; i++) {
+            same[i] = i;
+            srcWordy[i] = hasLetter(source.get(i));
+            dstWordy[i] = hasLetter(PLACEHOLDER.matcher(spans.get(i)).replaceAll(""));
+            identical &= srcWordy[i] == dstWordy[i];
+            srcCount += srcWordy[i] ? 1 : 0;
+            dstCount += dstWordy[i] ? 1 : 0;
+        }
+        if (identical || srcCount != dstCount) {
+            return same;
+        }
+        int[] out = new int[n];
+        int wordy = 0;
+        int plain = 0;
+        for (int i = 0; i < n; i++) {
+            if (dstWordy[i]) {
+                while (!srcWordy[wordy]) {
+                    wordy++;
+                }
+                out[i] = wordy++;
+            } else {
+                while (srcWordy[plain]) {
+                    plain++;
+                }
+                out[i] = plain++;
+            }
+        }
+        return out;
     }
 
     /**
