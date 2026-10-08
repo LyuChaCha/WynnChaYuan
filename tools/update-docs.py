@@ -234,7 +234,7 @@ def coverage_note(rows: list[tuple[str, int, int]], stamp: str,
         f"更新於 {stamp} / Updated {stamp}",
         "",
         "**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、"
-        "技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、"
+        "技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、"
         "NPC 與地區名稱、看板與聊天公告。",
         "",
         f"**大概翻到哪**：{len(rows)} 種語言目前都在 **{rough}% 以上**，"
@@ -243,7 +243,7 @@ def coverage_note(rows: list[tuple[str, int, int]], stamp: str,
         f"[開個 issue]({REPO}/issues) 告訴我們就好。",
         "",
         "**What's covered**: quest dialogue and the quest book, items (names, "
-        "stats, lore, Major IDs), the ability tree, the interface (F6, "
+        "stats, lore, Major IDs), the ability tree, the interface (settings, "
         "inventory, trade market, guild, map, tracker), NPC and place names, "
         "signs and chat announcements.",
         "",
