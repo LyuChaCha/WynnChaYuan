@@ -51,7 +51,7 @@ import java.util.function.ToIntFunction;
  *   戰鬥等級                  1     ← 被推到新的右緣
  * </pre>
  *
- * <p>撐寬看到的還是<b>沒拆開</b>的「{@code 橡木法杖 (Oak Wood Wand)}」——那一行比英文
+ * <p>撐寬看到的還是<b>沒拆開</b>的「{@code 橡木魔杖 (Oak Wood Wand)}」——那一行比英文
  * 寬了六十幾像素，於是整份 tooltip 照那個寬度撐開，靠右的欄位跟著往右移。等這裡再把
  * 名稱拆成兩行，寬度已經回不去了，右邊就空出一大塊。
  *
@@ -189,7 +189,7 @@ public final class NameWrap {
      * 比名字凸出去一大塊——使用者回報的「名稱跑掉」：
      *
      * <pre>
-     *       橡木法杖          ← 名字從徽記後面開始
+     *       橡木魔杖          ← 名字從徽記後面開始
      *   (Oak Wood Wand)      ← 第二行卻從最左邊開始
      * </pre>
      *
