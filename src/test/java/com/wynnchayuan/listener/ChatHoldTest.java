@@ -108,14 +108,16 @@ public final class ChatHoldTest {
                 one(116, "(2 rerolls left)"),
                 one(90, "Totally Unknown Row"));
 
-        check("多欄的列認得出來（從這一列開始攔）",
-              LineTranslator.chatPanel(List.of(panel.get(0))));
-        check("單欄的標題列不算", !LineTranslator.chatPanel(List.of(one(102, "Choose a Beacon!"))));
+        check("多欄的列認得出來（從這一列開始攔）", LineTranslator.panelRow(panel.get(0)));
+        check("單欄的標題列不算", !LineTranslator.panelRow(one(102, "Choose a Beacon!")));
+        // ★ 一般訊息裡圖示與字之間一兩個像素的字距微調不是欄界
+        check("★ 字距微調不算兩欄", !LineTranslator.panelRow(two(40, "Some icon", 2, "and its text")));
+        check("空行不算", !LineTranslator.panelRow(blank()));
 
         ChatBlock.clear();
         check("一開始沒有在攔", !ChatBlock.holding());
         for (StyledText row : panel) {
-            ChatBlock.hold(row);
+            ChatBlock.hold(row, false);
         }
         check("攔了之後後面的列也要跟著攔", ChatBlock.holding());
         check("攔了幾列就攢幾列（實際 " + ChatBlock.size() + "）", ChatBlock.size() == panel.size());
@@ -145,13 +147,33 @@ public final class ChatHoldTest {
 
         // ★ 整塊一列都沒翻到：攔下來的也要送，不然伺服器送來的內容憑空消失
         ChatBlock.clear();
-        ChatBlock.hold(two(10, "Nothing Here", 20, "Nothing There"));
-        ChatBlock.hold(one(30, "Still Nothing"));
+        ChatBlock.hold(two(10, "Nothing Here", 20, "Nothing There"), false);
+        ChatBlock.hold(one(30, "Still Nothing"), false);
         Component raw = ChatBlock.preview(store);
         check("★ 一列都沒翻到的攔截塊照樣送出原文",
               raw != null && raw.getString().contains("Nothing Here")
                       && raw.getString().contains("Nothing There")
                       && raw.getString().contains("Still Nothing"));
+
+        // ★ 攔下來但標了「不翻」的列（夾著別人的名字）：語料裡就算查得到也照原文
+        ChatBlock.clear();
+        ChatBlock.hold(two(33, "Purple Beacon", 69, "Red Beacon"), false);
+        ChatBlock.hold(one(105, "Click here to reroll"), true);
+        Component kept = ChatBlock.preview(store);
+        check("★ 標了不翻的列照原文（實際 " + (kept == null ? "null" : visible(kept.getString())) + "）",
+              kept != null && kept.getString().contains("Click here to reroll")
+                      && kept.getString().contains("紫標"));
+
+        // ★ 攔太久要強制送：後面一直有訊息進來，「安靜下來」等不到
+        ChatBlock.clear();
+        long now = System.currentTimeMillis();
+        ChatBlock.hold(two(33, "Purple Beacon", 69, "Red Beacon"), false);
+        ChatBlock.heldAt(now - 700);
+        ChatBlock.arrivedAt(now);
+        check("★ 剛來一則、但已經攔了 700ms -> 送", ChatBlock.ready(now + 10));
+        ChatBlock.heldAt(now);
+        check("才剛開始攔、又剛來一則 -> 還不送", !ChatBlock.ready(now + 10));
+        check("安靜 200ms -> 送", ChatBlock.ready(now + 200));
 
         // 沒被攔的（原文加譯文模式）照舊：一列都沒翻到就不送
         ChatBlock.clear();
@@ -203,7 +225,7 @@ public final class ChatHoldTest {
             store.loadAll(base.resolve(lang));
             ChatBlock.clear();
             for (StyledText row : panel) {
-                ChatBlock.hold(row);
+                ChatBlock.hold(row, false);
             }
             Component made = ChatBlock.preview(store);
             String all = made == null ? "" : made.getString();

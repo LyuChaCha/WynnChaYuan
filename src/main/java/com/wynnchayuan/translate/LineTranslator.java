@@ -4706,6 +4706,41 @@ public final class LineTranslator {
         return false;
     }
 
+    /**
+     * 這一列是不是面板上「兩欄併排」的那一種：至少兩段實字，中間隔著<b>夠寬</b>的
+     * 排版偏移。
+     *
+     * <h2>跟 {@link #chatPanel} 差在哪</h2>
+     * 那一支是整塊已經攢好之後問的，任何正的偏移都算欄界。這一支是就地取代模式
+     * 拿來決定「要不要從這一列開始把訊息攔下來」的（見 {@code ChatListener#onMatch}），
+     * 誤判的代價高得多——被攔的訊息會晚兩百毫秒、而且跟後面的訊息併成一塊。
+     * 而一般的聊天訊息裡也有正的偏移：圖示與字之間一兩個像素的字距微調。
+     * 所以這裡只認寬的：信標面板兩欄之間是四十幾到八十幾像素。
+     */
+    public static boolean panelRow(StyledText row) {
+        for (List<Run> line : splitRows(runs(row.getComponent()))) {
+            int columns = 0;
+            boolean text = false;
+            for (Run run : line) {
+                if (run.space()) {
+                    if (text && run.px() >= PANEL_GAP_MIN) {
+                        columns++;
+                        text = false;
+                    }
+                } else if (hasContent(run.text())) {
+                    text = true;
+                }
+            }
+            if ((text ? columns + 1 : columns) >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 見 {@link #panelRow}：兩欄之間至少隔這麼寬才算。字距微調是一到四像素。 */
+    private static final int PANEL_GAP_MIN = 16;
+
     /** 一句話最多折成幾列。信標的敘述最長五、六列。 */
     private static final int PANEL_RUN_MAX = 8;
 

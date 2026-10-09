@@ -64,13 +64,24 @@ public final class ChatListener {
         }
         boolean panel;
         try {
-            panel = ChatBlock.holding() || LineTranslator.chatPanel(java.util.List.of(message));
+            panel = ChatBlock.holding() || LineTranslator.panelRow(message);
         } catch (Throwable t) {
             panel = false;               // 判斷出事就當成一般訊息，照舊當場處理
         }
         if (panel) {
+            // 跟 Edit 那一關同一道守門：夾著別人名字的、別的模組要讀的，攔下來也不翻
+            boolean keep;
+            try {
+                keep = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
+                               message.getStringWithoutFormatting())
+                        || (com.wynnchayuan.capture.Broadcasts.find(message) == null
+                            && PlayerDataFilter.carriesPlayerData(
+                                    GlyphSplitter.toTemplate(message)));
+            } catch (Throwable t) {
+                keep = true;
+            }
             event.cancelChat();
-            ChatBlock.hold(message);
+            ChatBlock.hold(message, keep);
             // 被攔下來的訊息不會再有 Edit，「複製聊天」那份緩衝區要在這裡記
             if (WynnChaYuan.config().chatCopy()) {
                 ChatLog.add(message.getComponent(), null);

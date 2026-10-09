@@ -56,7 +56,12 @@ public final class ChatBlock {
     /** 一塊最多攢幾行。再多就不是「一塊訊息」，是聊天在洗版。 */
     private static final int MAX_ROWS = 24;
 
-    private record Row(StyledText original, Component translated) {}
+    /**
+     * @param keep 這一列<b>不翻</b>，照原文送回去——夾著別人名字的伺服器訊息、
+     *             別的模組要讀的那幾條。只有被攔下來的列會帶這個旗標：沒被攔的
+     *             那一種，原文本來就自己顯示了。
+     */
+    private record Row(StyledText original, Component translated, boolean keep) {}
 
     private static final List<Row> pending = new ArrayList<>();
     private static long last;
@@ -71,7 +76,7 @@ public final class ChatBlock {
         if (pending.size() >= MAX_ROWS) {
             flush();
         }
-        pending.add(new Row(original, translated));
+        pending.add(new Row(original, translated, false));
         last = System.currentTimeMillis();
     }
 
@@ -96,14 +101,38 @@ public final class ChatBlock {
      */
     private static boolean held = false;
 
-    /** 攔下一列。見 {@link #held}。 */
-    public static synchronized void hold(StyledText original) {
+    /**
+     * 攔下一列。見 {@link #held}。
+     *
+     * @param keep 這一列照原文送回去、不要翻（見 {@link Row}）
+     */
+    public static synchronized void hold(StyledText original, boolean keep) {
         if (pending.size() >= MAX_ROWS) {
             flush();
         }
-        pending.add(new Row(original, null));
+        long now = System.currentTimeMillis();
+        if (!held || pending.isEmpty()) {
+            heldSince = now;
+        }
+        pending.add(new Row(original, null, keep));
         held = true;
-        last = System.currentTimeMillis();
+        last = now;
+    }
+
+    /**
+     * 最多攔多久。
+     *
+     * <p>「安靜下來」是等不到的時候：面板後面緊跟著一連串伺服器訊息（戰鬥中每幾十毫秒
+     * 一則），每來一則就重新計時，面板會一直出不來。信標面板整塊是同一個 tick 送完的，
+     * 六百毫秒遠遠夠。
+     */
+    private static final long HOLD_MAX_MS = 600;
+
+    private static long heldSince;
+
+    /** 假裝是那個時間點開始攔的，測試用。 */
+    static synchronized void heldAt(long when) {
+        heldSince = when;
     }
 
     /** 現在是不是正在攔一塊面板——是的話後面跟著來的列也要一起攔，順序才不會亂。 */
@@ -123,7 +152,10 @@ public final class ChatBlock {
      * {@link #flush} 會碰到 Minecraft 的實例，headless 測不了。
      */
     static synchronized boolean ready(long now) {
-        return !pending.isEmpty() && now - last >= IDLE_MS;
+        if (pending.isEmpty()) {
+            return false;
+        }
+        return now - last >= IDLE_MS || (held && now - heldSince >= HOLD_MAX_MS);
     }
 
     /** 目前攢了幾行，測試用。 */
@@ -319,10 +351,11 @@ public final class ChatBlock {
             // 只有一則時收進來那份就是對的（ChatListener 走的是同一支），
             // 不必再翻一次——翻兩次連診斷檔都會記兩份。
             Component line = centred == null ? rows.get(i).translated() : null;
-            if (flowed != null && flowed[i] != null) {
+            boolean keep = rows.get(i).keep();
+            if (!keep && flowed != null && flowed[i] != null) {
                 line = flowed[i];
             }
-            if (line == null) {
+            if (line == null && !keep) {
                 try {
                     line = LineTranslator.translateChat(rows.get(i).original(),
                                                         store,
@@ -334,6 +367,15 @@ public final class ChatBlock {
             }
             if (line == null) {
                 line = rows.get(i).translated();
+            }
+            if (line == null && wasHeld && !keep) {
+                // 被攔下來的列沒有經過 ChatListener 的就地取代，那邊查不到整則的鍵
+                // 還會退回通用的那一支；這裡補上同一步，免得被攔的單則訊息反而少翻。
+                try {
+                    line = LineTranslator.translate(rows.get(i).original(), store);
+                } catch (Throwable t) {
+                    line = null;
+                }
             }
             if (line == null) {
                 // 查不到譯文就<b>原樣送出</b>，絕對不能跳過。
