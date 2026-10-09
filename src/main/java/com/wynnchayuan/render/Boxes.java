@@ -26,6 +26,29 @@ public final class Boxes {
         draw(g, x, y, w, h, 1.0f);
     }
 
+    /** 小框離畫面邊緣至少留這麼多。 */
+    static final int EDGE = 2;
+
+    /**
+     * 把一個小框拉回畫面裡。
+     *
+     * <h2>為什麼每個小框都要過這一關（issue #1081）</h2>
+     * 玩家擺過的位置是照<b>當時的視窗大小</b>存的。視窗縮小、或換了 GUI 比例之後，
+     * 同一個座標可能已經在畫面外——譯文照樣算出來、照樣畫，只是畫在看不到的地方。
+     * 玩家看到的就是「原文在、小框裡什麼都沒有」，而且診斷檔寫的是翻到了。
+     * 回報的人平常用 1920×1009 的視窗擺位置，錄影時縮成 1280×720，就遇上了。
+     *
+     * <p>追蹤欄與對話選項本來就有夾，對話小框與名牌小框漏了。集中成一支，
+     * 以後新增的小框沒理由再漏。
+     *
+     * @return {@code {x, y}}；框比畫面還大時貼著左上角（至少看得到開頭）
+     */
+    public static int[] intoScreen(int x, int y, int w, int h, int screenW, int screenH) {
+        int maxX = Math.max(EDGE, screenW - w - EDGE);
+        int maxY = Math.max(EDGE, screenH - h - EDGE);
+        return new int[] {Math.max(EDGE, Math.min(maxX, x)), Math.max(EDGE, Math.min(maxY, y))};
+    }
+
     /**
      * 同上，但整個框（含邊線）乘上一個透明度，用來做淡出。
      *

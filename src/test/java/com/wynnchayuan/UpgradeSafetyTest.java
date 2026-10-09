@@ -85,6 +85,7 @@ public final class UpgradeSafetyTest {
         obsoleteFilesAreRemoved();
         brokenCopiesAreCapped();
         settingsThatUsedToReset();
+        themeColourFollowsOldBorder();
         downloadValidation();
         partialStarterInstall();
         otherLanguageIsNotSwallowed();
@@ -200,6 +201,8 @@ public final class UpgradeSafetyTest {
         // 舊設定檔沒有，重寫時補上預設值。
         expected.addProperty("trackerMode", "REPLACE");
         expected.addProperty("translateObjectives", true);
+        // 1.0.0：記分板的開關。舊設定檔沒有，預設開著（跟原本的行為一樣）。
+        expected.addProperty("translateScoreboard", true);
         expected.addProperty("translateHeldItem", true);
         // 0.2.2：物品名稱從開／關改成三段。舊的 true 換成「只顯示譯名」。
         expected.remove("translateItemNames");
@@ -223,6 +226,13 @@ public final class UpgradeSafetyTest {
         // ——空的代表不知道日期，下一次問版本時會補回來，
         // 見 TranslationUpdate#adoptDate。
         expected.addProperty("syncedTranslationsDate", "");
+        // 設定畫面改版：畫面自己的主題色（themeColor）從框線顏色拆出來。舊設定檔沒有
+        // 這一欄，補上的是<b>原本的框線顏色</b>——升級之後畫面的顏色不能自己變。
+        expected.addProperty("themeColor", expected.has("accentColor")
+                ? expected.get("accentColor").getAsString() : "#6FA8D8");
+        // 同一版：舊的預設鍵（F6、F9）清過了沒。舊設定檔沒有，補上「還沒」——
+        // 清的動作在遊戲啟動完之後才做，見 WynnChaYuan#releaseOldDefaultKeys。
+        expected.addProperty("oldKeysReleased", false);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));
@@ -236,6 +246,29 @@ public final class UpgradeSafetyTest {
      * 但 {@code save} 沒寫這兩欄、{@code load} 也沒讀——設定檔裡從來沒有它們，
      * 於是每次重開遊戲都回到預設。日文、韓文的介面檔早就翻好了，選了卻留不住。
      */
+    /**
+     * 設定畫面的主題色是從框線顏色拆出來的。
+     *
+     * <p>把框線調成別的顏色的玩家，升級之後設定畫面要<b>維持他原本看到的顏色</b>，
+     * 不能自己跳回預設的藍。之後兩個各自改、各自存。
+     */
+    private static void themeColourFollowsOldBorder() throws Exception {
+        Path dir = Files.createTempDirectory("wcy-up-theme");
+        Path file = dir.resolve("config.json");
+        Files.writeString(file, "{ \"accentColor\": \"#C0FFEE\" }");
+        CollectorConfig old = new CollectorConfig(file);
+        check("★ 舊設定檔只有框線顏色：主題色沿用它", "#C0FFEE".equals(old.themeColor()));
+        check("改主題色不動框線", old.setThemeColor("#112233")
+                && "#C0FFEE".equals(old.accentColor()));
+        check("改框線不動主題色", old.setAccentColor("#445566")
+                && "#112233".equals(old.themeColor()));
+        CollectorConfig again = new CollectorConfig(file);
+        check("重開之後兩個顏色各自還在", "#112233".equals(again.themeColor())
+                && "#445566".equals(again.accentColor()));
+        check("拖色盤時的寫法不合格式就不收", !again.setThemeColorLive("藍色")
+                && "#112233".equals(again.themeColor()));
+    }
+
     private static void settingsThatUsedToReset() throws Exception {
         Path dir = Files.createTempDirectory("wcy-up-keep");
         Path file = dir.resolve("config.json");

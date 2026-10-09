@@ -453,6 +453,42 @@ public final class DialogueOverlay {
         return !current.isEmpty() || !choices.isEmpty();
     }
 
+    /**
+     * 原文那個對話框<b>還在畫面上</b>；action bar 每畫一次叫一次。
+     *
+     * <h2>為什麼要有（issue #1081）</h2>
+     * 停留秒數是從「譯文最後一次更新」起算的，而譯文只在對話事件來的時候更新。
+     * 一句話打完之後就沒有事件了——等玩家按 shift 的那種對話，原文會一直留在
+     * 畫面上，小框卻照樣在六秒後淡掉，而且淡完就把內容丟了，再也回不來。
+     * 句子愈長、讀得愈久，愈容易遇到；回報的人看到的是「有時候另一個框裡
+     * 什麼都沒有」。
+     *
+     * <p>就地取代放不下、改由小框接手的那種長句也是同一個下場（#864 的後續）：
+     * 六秒後小框淡掉，畫面上只剩英文原文。而在就地取代模式下把內容丟掉之後，
+     * 切回小框模式也沒有東西可以畫。
+     *
+     * <p>所以這兩種情形下，原文還在就一直算「剛更新過」。原文消失之後由
+     * {@code ActionBarListener} 收掉，跟原本一樣。
+     */
+    public static void stillOnScreen() {
+        boolean inPlace = WynnChaYuan.config().dialogueMode()
+                == CollectorConfig.DialogueMode.REPLACE;
+        lastUpdate = keptAlive(lastUpdate, System.currentTimeMillis(), hasContent(),
+                needsShift, inPlace);
+    }
+
+    /**
+     * 見 {@link #stillOnScreen}。
+     *
+     * @param waitsForShift 遊戲在等玩家按 shift——原文不會自己消失
+     * @param inPlace       就地取代模式：寫進對話框的譯文不會淡掉，接手的小框也不該
+     * @return 新的「最後更新時間」；不該續命時原樣回傳
+     */
+    static long keptAlive(long lastUpdate, long now, boolean hasContent,
+                          boolean waitsForShift, boolean inPlace) {
+        return hasContent && (waitsForShift || inPlace) ? now : lastUpdate;
+    }
+
     public static void clear() {
         current = List.of();
         choices = List.of();
@@ -526,6 +562,10 @@ public final class DialogueOverlay {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.DIALOGUE) - boxW / 2;
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
         }
+        // 存的位置是照當時的視窗大小；視窗縮小之後可能已經在畫面外。見 Boxes#intoScreen。
+        int[] at = Boxes.intoScreen(x, y, boxW, boxH, graphics.guiWidth(), graphics.guiHeight());
+        x = at[0];
+        y = at[1];
 
         if (!lines.isEmpty()) {
             if (sized) {

@@ -119,6 +119,15 @@ public final class CollectorConfig {
     private boolean translateObjectives = true;
 
     /**
+     * <b>記分板</b>（畫面右邊那一欄：討伐戰、Lootrun、隊伍、公會戰⋯⋯）要不要翻。
+     *
+     * <p>使用者 2026-10-08 要的開關。記分板有兩個地方會出現譯文——Wynntils 自己畫的
+     * 那一塊（就地換字），以及「Wynntils 介面」關掉時我們面板底下補的那幾段——
+     * 這個開關兩邊一起管。追蹤中的任務不算在內，那一段看 {@link #trackerMode}。
+     */
+    private boolean translateScoreboard = true;
+
+    /**
      * 切換手上物品時，快捷列上方跳出來的那行名稱要不要翻。
      *
      * <p>預設打開（使用者要求）。不想看的人在 F6 關掉。
@@ -182,19 +191,20 @@ public final class CollectorConfig {
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
-     * {@code AUTO} 每看到一份<b>沒拍過的</b>譯文就自動拍一張，
-     * 一場遊戲上限 200 張——這是給校稿用的，不是備份整個遊戲。
+     *
+     * <p>原本還有 {@code AUTO}（每看到一份沒拍過的譯文就自動拍），使用者 2026-10-08
+     * 要求拿掉。舊設定檔裡寫著 {@code AUTO} 的，讀進來認不得就退回 {@code KEY}。
      */
     private ShotMode shotMode = ShotMode.KEY;
 
-    /** OFF 不拍；KEY 按鍵才拍；AUTO 看到沒拍過的譯文就拍。 */
-    public enum ShotMode { KEY, AUTO, OFF }
+    /** OFF 不拍；KEY 按鍵才拍。 */
+    public enum ShotMode { KEY, OFF }
 
     public ShotMode shotMode() {
         return shotMode;
     }
 
-    /** 在 關閉 → 快捷鍵 → 自動 之間輪替。 */
+    /** 在 快捷鍵 ↔ 關閉 之間切換。 */
     public ShotMode cycleShotMode() {
         return cycleShotMode(1);
     }
@@ -353,6 +363,20 @@ public final class CollectorConfig {
         return noticeDismissed;
     }
 
+    /**
+     * 舊的預設鍵（F6、F9）清過了沒。只清一次，見 {@code WynnChaYuan#releaseOldDefaultKeys}。
+     */
+    private boolean oldKeysReleased = false;
+
+    public boolean oldKeysReleased() {
+        return oldKeysReleased;
+    }
+
+    public void markOldKeysReleased() {
+        oldKeysReleased = true;
+        save();
+    }
+
     public void setNoticeDismissed(boolean value) {
         noticeDismissed = value;
         save();
@@ -408,6 +432,15 @@ public final class CollectorConfig {
      * 所有小框的主題色（框線）。以 {@code #RRGGBB} 存，方便手改設定檔。
      */
     private String accentColor = "#6FA8D8";
+
+    /**
+     * 設定畫面自己的主題色：標題、選到的項目、開關。
+     *
+     * <p>原本跟 {@link #accentColor} 是同一個值。使用者把框線調成近白色之後
+     * 整個設定畫面跟著變白、選到哪一項都看不出來，所以拆開——框線管遊戲裡的
+     * 小框，這個只管設定畫面。
+     */
+    private String themeColor = "#6FA8D8";
 
     /** 對話框在最後一次更新後還顯示多久（毫秒）。 */
     private int dialogueHoldMs = 6000;
@@ -510,6 +543,17 @@ public final class CollectorConfig {
         translateObjectives = !translateObjectives;
         save();
         return translateObjectives;
+    }
+
+    /** 見 {@link #translateScoreboard}。 */
+    public boolean translateScoreboard() {
+        return translateScoreboard;
+    }
+
+    public boolean toggleScoreboard() {
+        translateScoreboard = !translateScoreboard;
+        save();
+        return translateScoreboard;
     }
 
     /** 見 {@link #translateHeldItem}。 */
@@ -769,6 +813,80 @@ public final class CollectorConfig {
         return true;
     }
 
+    public int themeARGB() {
+        return 0xFF000000 | (parseHex(themeColor) & 0xFFFFFF);
+    }
+
+    public String themeColor() {
+        return themeColor;
+    }
+
+    public boolean setThemeColor(String hex) {
+        if (!setThemeColorLive(hex)) {
+            return false;
+        }
+        saveIfDirty();
+        return true;
+    }
+
+    /**
+     * 拖色盤的時候用：值馬上生效，但不寫檔。放手時由呼叫端叫 {@link #saveIfDirty}。
+     * 每動一格就存一次的話，拖一下就是幾百次磁碟寫入。
+     */
+    public boolean setThemeColorLive(String hex) {
+        String v = normalHex(hex);
+        if (v == null) {
+            return false;
+        }
+        if (!v.equals(themeColor)) {
+            themeColor = v;
+            dirty = true;
+        }
+        return true;
+    }
+
+    /** 見 {@link #setThemeColorLive}。 */
+    public boolean setAccentColorLive(String hex) {
+        String v = normalHex(hex);
+        if (v == null) {
+            return false;
+        }
+        if (!v.equals(accentColor)) {
+            accentColor = v;
+            dirty = true;
+        }
+        return true;
+    }
+
+    /** 見 {@link #setThemeColorLive}。 */
+    public void setPanelGapLive(int px) {
+        int v = Math.max(0, Math.min(px, 200));
+        if (v != panelGap) {
+            panelGap = v;
+            dirty = true;
+        }
+    }
+
+    /** 見 {@link #setThemeColorLive}。0 是持續顯示。 */
+    public void setDialogueHoldSecondsLive(int sec) {
+        int v = sec <= 0 ? Integer.MAX_VALUE : Math.min(sec, 600) * 1000;
+        if (v != dialogueHoldMs) {
+            dialogueHoldMs = v;
+            dirty = true;
+        }
+    }
+
+    private static String normalHex(String hex) {
+        if (hex == null) {
+            return null;
+        }
+        String v = hex.strip();
+        if (!v.startsWith("#")) {
+            v = "#" + v;
+        }
+        return v.matches("#[0-9a-fA-F]{6}") ? v.toUpperCase() : null;
+    }
+
     private static int parseHex(String hex) {
         try {
             return Integer.parseInt(hex.replace("#", ""), 16);
@@ -876,6 +994,33 @@ public final class CollectorConfig {
         nametagAngle = Math.max(1.0, Math.min(v, 45.0));
         save();
         return true;
+    }
+
+    /** 拖滑桿的時候用：值馬上生效但不寫檔，放手時由呼叫端叫 {@link #saveIfDirty}。 */
+    public void setNametagRangeLive(double value) {
+        double v = Math.max(2.0, Math.min(value, 64.0));
+        if (v != nametagRange) {
+            nametagRange = v;
+            dirty = true;
+        }
+    }
+
+    /** 見 {@link #setNametagRangeLive}。 */
+    public void setNametagAngleLive(double value) {
+        double v = Math.max(1.0, Math.min(value, 45.0));
+        if (v != nametagAngle) {
+            nametagAngle = v;
+            dirty = true;
+        }
+    }
+
+    /** 見 {@link #setNametagRangeLive}。 */
+    public void setNametagHoldSecondsLive(int sec) {
+        int v = Math.max(0, Math.min(sec, 60)) * 1000;
+        if (v != nametagHoldMs) {
+            nametagHoldMs = v;
+            dirty = true;
+        }
     }
 
     private static Double parseNumber(String value) {
@@ -1212,6 +1357,7 @@ public final class CollectorConfig {
             trackerMode = DialogueMode.OFF;
         }
         translateObjectives = bool(o, "translateObjectives", translateObjectives);
+        translateScoreboard = bool(o, "translateScoreboard", translateScoreboard);
         translateHeldItem = bool(o, "translateHeldItem", translateHeldItem);
         marketSearch = bool(o, "marketSearch", marketSearch);
         shiftPeekNames = bool(o, "shiftPeekNames", shiftPeekNames);
@@ -1238,6 +1384,7 @@ public final class CollectorConfig {
         nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
         panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
         noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
+        oldKeysReleased = bool(o, "oldKeysReleased", oldKeysReleased);
         // 舊版只有開／關：開過的人給「譯名」，其餘照預設（關閉）。
         if (o.has("itemNames")) {
             itemNames = enumOr(o, "itemNames", ItemNames.class, itemNames);
@@ -1250,6 +1397,11 @@ public final class CollectorConfig {
         String accent = str(o, "accentColor", accentColor);
         if (accent.matches("#[0-9a-fA-F]{6}")) {
             accentColor = accent;
+        }
+        // 舊設定檔沒有這一項：沿用框線顏色，升級之後畫面的顏色才不會自己變
+        String theme = str(o, "themeColor", accentColor);
+        if (theme.matches("#[0-9a-fA-F]{6}")) {
+            themeColor = theme;
         }
         int hold = integer(o, "dialogueHoldMs", dialogueHoldMs);
         // 跟 setDialogueHoldSeconds 一致：0 以下是「持續顯示」
@@ -1421,8 +1573,10 @@ public final class CollectorConfig {
             o.addProperty("panelSide", panelSide.name());
             o.addProperty("itemNames", itemNames.name());
             o.addProperty("noticeDismissed", noticeDismissed);
+            o.addProperty("oldKeysReleased", oldKeysReleased);
             o.addProperty("panelGap", panelGap);
             o.addProperty("accentColor", accentColor);
+            o.addProperty("themeColor", themeColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("dialogueMode", dialogueMode.name());
             o.addProperty("choiceMode", choiceMode.name());
@@ -1430,6 +1584,7 @@ public final class CollectorConfig {
             o.addProperty("translateTitles", translateTitles);
             o.addProperty("trackerMode", trackerMode.name());
             o.addProperty("translateObjectives", translateObjectives);
+            o.addProperty("translateScoreboard", translateScoreboard);
             o.addProperty("translateHeldItem", translateHeldItem);
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("wynntilsUi", wynntilsUi);

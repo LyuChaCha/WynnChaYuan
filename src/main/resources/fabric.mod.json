@@ -18,6 +18,9 @@
   "entrypoints": {
     "client": [
       "com.wynnchayuan.WynnChaYuan"
+    ],
+    "modmenu": [
+      "com.wynnchayuan.client.ModMenuEntry"
     ]
   },
   "depends": {
@@ -26,6 +29,9 @@
     "java": ">=21",
     "fabric-api": "*",
     "wynntils": ">=4.2.0 <5.0.0-"
+  },
+  "suggests": {
+    "modmenu": "*"
   },
   "mixins": [
     "wynnchayuan.mixins.json"

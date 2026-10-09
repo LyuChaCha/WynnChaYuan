@@ -68,6 +68,7 @@ public final class BracketAccentTest {
         spanAcrossRows();
         coordBracketOnOwnRow();
         noBracketsInTranslation();
+        reorderedBrackets();
         plurals();
         rules();
 
@@ -276,6 +277,63 @@ public final class BracketAccentTest {
         check("★［座標自成一列］收尾那個「]」也是白的（拿到 "
               + show(charColour(built, text.lastIndexOf(']'))) + "）",
               is(charColour(built, text.lastIndexOf(']')), COORD));
+    }
+
+    /**
+     * 譯文把座標搬到物品前面：顏色要跟著<b>種類</b>走，不是跟著「第幾個」。
+     *
+     * <h2>實機回報（2026-10-08）</h2>
+     * 「任務說明顏色還是會有錯誤」。英文把座標放句尾，中文習慣先講去哪裡：
+     *
+     * <pre>
+     *   Collect [4 Gold Chunks] for Jankan in the mineshaft at [605, 80, -4920].
+     *   到 [{~2}, {~3}, -{~4}] 的礦坑替 Jankan 收集 [{~1} 塊金塊]。
+     * </pre>
+     *
+     * 方括號原本是照出現順序配色的，於是座標拿到物品的青色、物品拿到座標的白色。
+     */
+    private static void reorderedBrackets() {
+        List<LineParts.Piece> runs = List.of(
+                piece("Collect ", BODY),
+                piece("[4 Gold Chunks]", ITEM),
+                piece(" for Jankan in the mineshaft at ", BODY),
+                piece("[605, 80, -4920]", COORD),
+                piece(".", BODY));
+        String[] translated = {"到 [{~2}, {~3}, -{~4}] 的礦坑替 Jankan 收集 [{~1} 塊金塊]。"};
+        Integer coords = null;
+        Integer item = null;
+        for (LineParts.Piece accent
+                : LineTranslator.bracketAccents(runs, translated, colour(BODY))) {
+            Integer rgb = accent.style().getColor() == null ? null
+                    : accent.style().getColor().getValue();
+            if (accent.text().startsWith("[{~2}")) {
+                coords = rgb;
+            }
+            if (accent.text().contains("塊金塊]")) {
+                item = rgb;
+            }
+        }
+        check("★［括號換位］座標那一組拿到座標的白（拿到 " + show(coords) + "）",
+                is(coords, COORD));
+        check("★［括號換位］物品那一組拿到物品的青（拿到 " + show(item) + "）",
+                is(item, ITEM));
+
+        // 順序沒變的照舊：第 i 個對第 i 個
+        check("［括號換位］種類順序一樣時不重排",
+                java.util.Arrays.equals(LineTranslator.pairBrackets(
+                        List.of("4 Gold Chunks", "605, 80, -4920"),
+                        List.of("[{~} 塊金塊]", "[{~}, {~}, -{~}]")), new int[] {0, 1}));
+        // 兩邊各類的個數對不上：沒有根據可以猜，照舊第 i 個對第 i 個
+        check("［括號換位］個數對不上時不亂配",
+                java.util.Arrays.equals(LineTranslator.pairBrackets(
+                        List.of("4 Gold Chunks", "605, 80, -4920"),
+                        List.of("[{~}, {~}]", "[{~}, {~}, -{~}]")), new int[] {0, 1}));
+        // 三個括號、兩種混著換：同一類的照順序
+        check("［括號換位］三組：同類的照順序配",
+                java.util.Arrays.equals(LineTranslator.pairBrackets(
+                        List.of("Combat Lv. 88", "4 Hides", "1, 2, -3"),
+                        List.of("[{~}, {~}, -{~}]", "[戰鬥等級 {~}]", "[{~} 張皮]")),
+                        new int[] {2, 0, 1}));
     }
 
     /** 折行用的換行字元，跟 LineTranslator 那邊同一個。 */

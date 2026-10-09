@@ -193,10 +193,6 @@ public final class TooltipPanel {
         // 所以左上角要退 4px、寬高各多留一點，否則圖的四邊會缺一條。
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
                 panelBox[0] + SHOT_MARGIN * 2, panelBox[1] + SHOT_MARGIN * 2, title);
-        // 自動模式的判別依據是<b>整份內容</b>而不是標題：同名的裝備會因為
-        // 詞條不同而有不同的譯文，只看標題會只拍到第一件。
-        PanelShot.auto(String.join("\n",
-                lines.stream().map(Component::getString).toList()));
     }
 
     /**
@@ -266,7 +262,14 @@ public final class TooltipPanel {
         boolean abilityPanel = isAbilityNode(styled);
         String gearName = n == 0 || abilityPanel ? null : bareName(
                 com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
-        if (gearName != null && store.isBareGearName(gearName)) {
+        // 另外取了名字的裝備（scoped/gear.json）不擋：它在一般語料裡可能還沒翻
+        // （Chief、Red 這種跟介面詞同名的），但它有自己的名字可以用。
+        // F6 關掉物品名稱時照舊留原文。見 TranslationStore#gearOwnName。
+        boolean ownName = gearName != null && store.translatesNames()
+                && store.gearOwnName(gearName) != null
+                && TranslationStore.nameRowInner(com.wynnchayuan.capture.LineParts.of(
+                        styled.get(0)).template()) != null;
+        if (gearName != null && !ownName && store.isBareGearName(gearName)) {
             out.add(LineTranslator.untranslated(styled.get(0)));
             spans.add(new int[] {0, 1, 0, 1});
             i = 1;
@@ -295,9 +298,18 @@ public final class TooltipPanel {
         // 物品名稱最多佔前兩行（第 0 行寬度是 0，看得見的在第 1 行）。
         // 第三行起是敘述，裡面提到的同名裝備不附原文。見
         // TranslationStore#holdAppendedOriginal。
+        // 這份說明的頭兩行是不是「物品的名稱列」。是的話，跟技能同名的裝備在這兩行
+        // 用它自己的名字（scoped/gear.json），見 TranslationStore#gearOwnName。
+        //
+        // 認得很窄：第 0 行必須是名稱列的外框（圖示夾著名字，見 #nameRowInner），
+        // 而且不是技能樹的節點。Lootrun 使命卡的標題是「{#}Redemption」——只有開頭
+        // 一個圖示，不是名稱列，所以使命「救贖」不會變成那件護腿的名字。
+        boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
+                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()) != null;
         try {
             while (i < n) {
                 TranslationStore.holdAppendedOriginal(i >= 2);
+                TranslationStore.nameLine(itemRows && i < 2);
                 int longest = Math.min(store.maxBlockLines(), n - i);
                 List<Component> block = null;
                 int used = 0;
@@ -373,8 +385,10 @@ public final class TooltipPanel {
                 // 只在<b>不是</b>技能樹／使命面板時擋。技能樹的「解鎖後將封鎖:」
                 // 底下列的正是技能名，那些該翻——而它們剛好也有同名裝備，
                 // 所以分辨面板這一步不能省。見 #isAbilityNode。
+                // 名稱列上另外取了名字的裝備不擋，見上面的 ownName。
                 Component translated =
-                        !abilityPanel && blockedGearName(styled.get(i), store)
+                        !abilityPanel && !(ownName && i < 2)
+                                && blockedGearName(styled.get(i), store)
                         ? null
                         : LineTranslator.translate(styled.get(i), store, centered[i],
                                                    leftAligned);
@@ -390,6 +404,7 @@ public final class TooltipPanel {
             }
         } finally {
             TranslationStore.holdAppendedOriginal(false);
+            TranslationStore.nameLine(false);
         }
         // 同一段不能一半中文一半英文，見 evenOut。
         //
@@ -447,7 +462,50 @@ public final class TooltipPanel {
                 leftAligned, TooltipPanel::measure);
         com.wynnchayuan.translate.LayoutDebug.drawn(
                 "\u6490\u5bec\u5f8c", split.original(), fitted, TooltipPanel::measure);
+        noteWidened(split.original(), fitted);
         return fitted;
+    }
+
+    /**
+     * 整份說明比原文寬的時候記一筆：記的是譯文裡最寬的那一行。見 OverflowAudit。
+     *
+     * <p>量不到寬度（沒有字型的測試環境）時兩邊都是 0，什麼都不會記。
+     */
+    private static void noteWidened(List<Component> original, List<Component> fitted) {
+        try {
+            if (original == null || fitted == null || original.size() != fitted.size()) {
+                return;
+            }
+            int frame = 0;
+            int widest = 0;
+            int at = -1;
+            for (int i = 0; i < fitted.size(); i++) {
+                frame = Math.max(frame, measure(original.get(i)));
+                int w = measure(fitted.get(i));
+                if (w > widest) {
+                    widest = w;
+                    at = i;
+                }
+            }
+            if (at < 0 || frame <= 0) {
+                return;
+            }
+            if (widest <= frame && com.wynnchayuan.capture.OverflowAudit.size() == 0) {
+                return;                        // 沒撐寬、也沒有記過的要拿掉
+            }
+            String src = com.wynnchayuan.capture.LineParts.of(
+                    com.wynntils.core.text.StyledText.fromComponent(original.get(at))).template();
+            String dst = com.wynnchayuan.capture.LineParts.of(
+                    com.wynntils.core.text.StyledText.fromComponent(fitted.get(at))).template();
+            if (src.equals(dst)) {
+                return;                        // 最寬的是沒翻的那一行，不是譯文的事
+            }
+            com.wynnchayuan.capture.OverflowAudit.note(
+                    com.wynnchayuan.capture.OverflowAudit.TOOLTIP, src, dst, frame, widest,
+                    com.wynnchayuan.capture.OverflowAudit.PX_UNIT);
+        } catch (Throwable t) {
+            // 診斷不能弄壞畫面
+        }
     }
 
     /** 量一行畫出來多寬。跟翻譯那邊走同一個入口，測試才量得到。 */
@@ -770,8 +828,6 @@ public final class TooltipPanel {
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
                        w + SHOT_MARGIN * 2, h + SHOT_MARGIN * 2,
                        tooltip.get(0).getString());
-        PanelShot.auto(String.join("\n",
-                tooltip.stream().map(Component::getString).toList()));
     }
 
     /**

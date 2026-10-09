@@ -68,20 +68,6 @@ public final class PanelShot {
     /** 截圖鍵本身。畫面開著的時候直接問 GLFW「這顆鍵現在按著嗎」。 */
     private static KeyMapping bound;
 
-    /** 已經自動拍過哪些內容。同一件物品看十次不必拍十張。 */
-    private static final java.util.Set<String> seen =
-            java.util.concurrent.ConcurrentHashMap.newKeySet();
-
-    /**
-     * 自動模式一場遊戲最多拍幾張。
-     *
-     * <p>沒有上限的話，一趟商城逛下來就是幾百張圖躺在硬碟裡。這個功能是拿來
-     * 校稿的，不是拿來備份整個遊戲的。
-     */
-    private static final int AUTO_LIMIT = 200;
-
-    private static int autoTaken = 0;
-
     private PanelShot() {}
 
     /**
@@ -132,6 +118,26 @@ public final class PanelShot {
      * 而<b>沒改綁</b>的人按 F8 又沒反應（見 {@link #conflict}）——
      * 兩邊都在騙人。改成讀真正的綁定。
      */
+    /**
+     * 截圖鍵有沒有綁。
+     *
+     * <p>預設不綁（見 {@code WynnChaYuan#registerKeyBind}）。沒綁的時候設定畫面
+     * 那一格要寫「還沒綁鍵」，不是把「未設定」塞進「按 %s 拍」裡。
+     */
+    public static boolean hasKey() {
+        if (bound == null) {
+            return false;
+        }
+        try {
+            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                    .getBoundKeyOf(bound);
+            return key != null
+                    && key.getValue() != com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue();
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
     public static String keyName() {
         if (bound == null) {
             return "未設定";
@@ -362,25 +368,6 @@ public final class PanelShot {
         captureScreen();
     }
 
-    /**
-     * 自動模式：這一份譯文是第一次看到就拍一張。
-     *
-     * <p>{@code key} 是內容本身而不是位置或時間——同一件物品在不同地方看到
-     * 是同一份譯文，不需要第二張。
-     */
-    public static void auto(String key) {
-        if (WynnChaYuan.config().shotMode() != com.wynnchayuan.CollectorConfig
-                .ShotMode.AUTO) {
-            return;
-        }
-        if (key == null || key.isBlank() || autoTaken >= AUTO_LIMIT
-                || !seen.add(key)) {
-            return;
-        }
-        autoTaken++;
-        pending = true;
-    }
-
     /** 繪製端呼叫：記下這一幀面板的位置與大小。 */
     public static void note(int x, int y, int w, int h, String name) {
         lastX = x;
@@ -440,9 +427,6 @@ public final class PanelShot {
      */
     private static void shoot(Minecraft mc, int px, int py, int pw, int ph,
                               String name) {
-        boolean auto = WynnChaYuan.config().shotMode()
-                == com.wynnchayuan.CollectorConfig.ShotMode.AUTO;
-
         Screenshot.takeScreenshot(mc.getMainRenderTarget(), full -> {
             NativeImage cropped;
             try (NativeImage image = full) {
@@ -452,13 +436,8 @@ public final class PanelShot {
                         .withStyle(ChatFormatting.RED));
                 return;
             }
-            // 自動模式不打斷玩家——他正在逛商城，不是在校稿。直接存檔。
-            // 手動按 F8 才跳面板：那一下就是「我要拿這張圖做事」。
+            // 按了截圖鍵就跳面板：那一下就是「我要拿這張圖做事」。
             mc.execute(() -> {
-                if (auto) {
-                    save(cropped, name);
-                    return;
-                }
                 try {
                     mc.setScreen(new com.wynnchayuan.client.ShotScreen(
                             cropped, name, mc.screen));

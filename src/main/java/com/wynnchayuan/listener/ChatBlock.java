@@ -231,6 +231,20 @@ public final class ChatBlock {
                 panel = false;
             }
         }
+        // 面板的每一欄先試「折成好幾列的一句話併起來翻」；併不起來的列是 null，
+        // 底下照舊逐列翻。見 LineTranslator#flowPanel。
+        Component[] flowed = null;
+        if (panel) {
+            try {
+                List<StyledText> originals = new ArrayList<>(rows.size());
+                for (Row row : rows) {
+                    originals.add(row.original());
+                }
+                flowed = LineTranslator.flowPanel(originals, WynnChaYuan.translations(), centred);
+            } catch (Throwable t) {
+                flowed = null;                 // 併句出事不能拖累逐列那條路
+            }
+        }
         net.minecraft.network.chat.MutableComponent out = Component.empty();
         boolean any = false;
         // 「有沒有東西可送」與「有沒有真的翻到」是兩件事。
@@ -246,6 +260,9 @@ public final class ChatBlock {
             // 只有一則時收進來那份就是對的（ChatListener 走的是同一支），
             // 不必再翻一次——翻兩次連診斷檔都會記兩份。
             Component line = centred == null ? rows.get(i).translated() : null;
+            if (flowed != null && flowed[i] != null) {
+                line = flowed[i];
+            }
             if (line == null) {
                 try {
                     line = LineTranslator.translateChat(rows.get(i).original(),

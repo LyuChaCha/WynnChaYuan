@@ -295,6 +295,8 @@ public final class ActionBarListener {
             return;
         }
         missing = 0;
+        // 原文還在畫面上：等玩家按 shift 的對話，譯文小框不可以自己先淡掉（#1081）
+        DialogueOverlay.stillOnScreen();
 
         // 這裡不再藏原文。就地取代改成<b>改寫</b>那條訊息的內容
         // （見 onGameInfoRewrite）——藏掉的話，框、名牌、頭像會一起不見，

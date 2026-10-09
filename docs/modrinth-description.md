@@ -31,7 +31,7 @@
 | Discoveries | Names, descriptions, secret discovery stories |
 | Title text | The big text in the middle of the screen |
 
-Gear names stay in English by default; they can be turned on in F6.
+Gear names stay in English by default; they can be turned on in the settings.
 
 ### More
 
@@ -40,8 +40,8 @@ Gear names stay in English by default; they can be turned on in F6.
 | Translations update themselves | New translations are downloaded from GitHub on your next launch, no mod update needed |
 | Market search | Type the translated name in the trade market; the English one is sent |
 | Copy chat | Copy recent chat lines for a report |
-| F9 screenshot | Captures the translation panel to the clipboard or a file |
-| F6 settings | A mode for each kind of text; translation, fallback and interface language; draggable, resizable boxes |
+| Screenshot | Captures the translation panel to the clipboard or a file (no key by default; bind one under Controls) |
+| Settings | Open from Mod Menu, with `/wcy`, or with a key you bind yourself. A mode for each kind of text; translation, fallback and interface language; draggable, resizable boxes |
 | Update notice | A one-time chat notice linking to GitHub Releases |
 
 Client-side only. The server does not need it.
@@ -57,18 +57,18 @@ Client-side only. The server does not need it.
 | Korean | Everything, quest dialogue included |
 | Spanish | Everything, quest dialogue included |
 
-Switch under F6 → Data, without changing the game's language.
+Switch under Settings → Data, without changing the game's language.
 
 ### Progress
 
 <!-- 進度:開始 -->
 更新於 2026-10-09 / Updated 2026-10-09
 
-**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
+**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
 **大概翻到哪**：6 種語言目前都在 **95% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
 
-**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (F6, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
+**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (settings, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
 
 **Roughly how far**: every language is past **95%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
 
@@ -82,8 +82,9 @@ Switch under F6 → Data, without changing the game's language.
 | Minecraft | 1.21.11 |
 | Loader | Fabric |
 | Dependencies | [Wynntils](https://modrinth.com/mod/wynntils) 4.2+, [Fabric API](https://modrinth.com/mod/fabric-api) |
+| Works with | [Mod Menu](https://modrinth.com/mod/modmenu) (settings button), [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) (search by translated name), [WynnMod](https://modrinth.com/mod/wynnmod) |
 
-Put the jar in `mods/` and press **F6** in game.
+Put the jar in `mods/`. In game, open the settings from Mod Menu or by typing `/wcy`.
 
 ### A line switches back to English halfway?
 
@@ -91,7 +92,7 @@ Put the jar in `mods/` and press **F6** in game.
 
 ### How to help
 
-Press **F6 → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**F6 → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
+Open **Settings → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**Settings → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
 
 The mod never sends anything by itself. The export already leaves out player names and guild, party, shout and private chat.
 
@@ -126,7 +127,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 | 探索點 | 名稱、說明、祕密發現的故事 |
 | 畫面中央大字 | 標題與副標題 |
 
-裝備名稱預設保留原文，F6 可以打開。
+裝備名稱預設保留原文，在設定裡可以打開。
 
 ### 其他功能
 
@@ -135,8 +136,8 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 | 譯文自動更新 | 新的翻譯下次進遊戲就從 GitHub 下載，不必更新模組 |
 | 市集搜尋 | 在交易市集打譯名，送出前自動換回英文原名 |
 | 複製聊天 | 複製最近的聊天訊息，方便回報 |
-| F9 截圖 | 把譯文面板複製到剪貼簿或存成檔案 |
-| F6 設定 | 每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小 |
+| 截圖 | 把譯文面板複製到剪貼簿或存成檔案（按鍵預設不綁，到「按鍵設定」自己綁） |
+| 設定 | 從 Mod Menu、`/wcy` 或自己綁的按鍵打開。每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小 |
 | 更新提示 | 有新版時在聊天室提示一次，連到 GitHub Releases |
 
 純客戶端，伺服器不需要裝。
@@ -152,18 +153,18 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 | 韓文 | 所有內容，含任務對話 |
 | 西班牙文 | 所有內容，含任務對話 |
 
-在 F6 →「資料」切換，不必改遊戲語言。
+在設定 →「資料」切換，不必改遊戲語言。
 
 ### 翻譯進度
 
 <!-- 進度:開始 -->
 更新於 2026-10-09 / Updated 2026-10-09
 
-**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
+**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
 **大概翻到哪**：6 種語言目前都在 **95% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
 
-**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (F6, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
+**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (settings, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
 
 **Roughly how far**: every language is past **95%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
 
@@ -177,8 +178,9 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 | Minecraft | 1.21.11 |
 | 載入器 | Fabric |
 | 前置 | [Wynntils](https://modrinth.com/mod/wynntils) 4.2 以上、[Fabric API](https://modrinth.com/mod/fabric-api) |
+| 一起用 | [Mod Menu](https://modrinth.com/mod/modmenu)（設定按鈕）、[WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch)（用譯名搜尋）、[WynnMod](https://modrinth.com/mod/wynnmod) |
 
-jar 放進 `mods/`，進遊戲按 **F6**。
+jar 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設定。
 
 ### 翻到一半變回英文？
 
@@ -186,7 +188,7 @@ jar 放進 `mods/`，進遊戲按 **F6**。
 
 ### 怎麼幫忙
 
-按 **F6 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**F6 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
+打開 **設定 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**設定 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
 
 模組不會自動送出任何東西；匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
 

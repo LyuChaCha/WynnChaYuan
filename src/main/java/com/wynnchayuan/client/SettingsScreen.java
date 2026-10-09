@@ -4,1069 +4,444 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.capture.CorpusExport;
-import com.wynnchayuan.render.Colors;
+import com.wynnchayuan.client.ui.Icons;
+import com.wynnchayuan.client.ui.Preview;
+import com.wynnchayuan.client.ui.Row;
+import com.wynnchayuan.client.ui.SettingsView;
+import com.wynnchayuan.client.ui.Ui;
+import com.wynnchayuan.render.PanelShot;
+import com.wynnchayuan.translate.Languages;
 import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.TranslationUpdate;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.CharacterEvent;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-// 版面常數統一由 SettingsLayout 定義——分兩份會再走上舊版各算各的老路。
-import static com.wynnchayuan.client.SettingsLayout.FOOT_H;
-import static com.wynnchayuan.client.SettingsLayout.PAD;
-import static com.wynnchayuan.client.SettingsLayout.TAB_W;
-import static com.wynnchayuan.client.SettingsLayout.TOP;
-
 /**
- * F6 開啟的設定畫面。
+ * 設定畫面。
  *
- * <h2>為什麼重做</h2>
- * 舊版是「左右兩張卡片、每個按鈕底下印一行說明」。三個問題：
+ * <p>從三個地方打得開：Mod Menu 的模組清單、{@code /wynnchayuan}（{@code /wcy}）指令，
+ * 以及按鍵設定裡自己綁的鍵——預設不綁，見 {@code WynnChaYuan#registerKeyBind}。
  *
- * <ol>
- *   <li><b>找不到東西。</b>分類是〈顯示〉〈翻譯〉〈資料〉，但「物品翻譯」在顯示、
- *       「翻譯物品名稱」在翻譯、「名牌漂浮字」也在翻譯——按功能分聽起來合理，
- *       用起來要一欄一欄掃。</li>
- *   <li><b>說明擠在按鈕底下很亂。</b>每一列佔兩倍高，整片畫面都是小字。</li>
- *   <li><b>版面會跟方框對不上。</b>這是結構問題：按鈕在 {@code init()} 用
- *       {@code TOP + rowH()*N} 擺，說明在 {@code render()} 用<b>另一組</b>手算座標擺，
- *       卡片高度是第三條公式。三邊各算各的，實際上早就漂掉了——第 2 列的按鈕是
- *       「任務對話」，底下印的卻是「對話框停留秒數」，而第 5 到第 8 列
- *       <b>一行說明都沒有</b>。加一列就會再壞一次。</li>
- * </ol>
- *
- * <h2>現在怎麼做</h2>
- * <ul>
- *   <li>左邊分類、右邊只顯示那一類。分類照<b>「這東西出現在遊戲的哪裡」</b>取名
- *       （物品／面板／對話／世界與聊天／資料），不是照程式怎麼分。</li>
- *   <li>一列 = 左邊名稱、右邊控制項。說明改成<b>滑鼠移上去</b>時顯示在底下那一條，
- *       清單本身乾淨。</li>
- *   <li><b>說明跟著那一列走</b>（{@link Row} 同時帶名稱、說明與控制項），
- *       座標只算一次。結構上不可能再漂掉。</li>
- *   <li>放不下就可以滾。以後再加二十個設定也不會擠爆。</li>
- * </ul>
- *
- * <p>只用原版 {@link Button} 與 {@link EditBox}，不引入 Cloth Config／YACL——
- * 設定就這幾項，多一個依賴只是多一個會壞掉的東西。
+ * <h2>這個類別只做接線</h2>
+ * 版面、命中判定與動畫全部在 {@link SettingsView}，它不認得遊戲；這裡負責兩件事：
+ * 把每一項設定寫成「值去哪裡問、改了去哪裡講」（{@link #buildTabs}），以及把遊戲的
+ * 滑鼠鍵盤事件轉給它。所有的值都是<b>當下</b>問設定檔問到的，畫面不另外存一份，
+ * 不會有畫面上一個值、設定檔裡另一個值的時候。
  */
 public final class SettingsScreen extends Screen {
 
-    // ------------------------------------------------------------ 版面
+    /** 上次停在哪一類；關掉再開回到同一頁。 */
+    private static int lastTab = 0;
 
-    /** 版面算式全部在 {@link SettingsLayout}——那裡是純算術，測得到。 */
-    private SettingsLayout box() {
-        return new SettingsLayout(this.width, this.height, rows.size());
-    }
+    private final Screen parent;
+    private SettingsView view;
 
-    // ------------------------------------------------------------ 狀態
-
-    /**
-     * 目前選到第幾個分類，以及清單捲到哪。
-     *
-     * <p>做成靜態的：關掉再開回來時停在原地，調完一個設定不必再找一次。
-     * 捲動以<b>列</b>為單位，不是像素——半列露在外面比較難看。
-     */
-    private static int tab = 0;
-
-    private static int scroll = 0;
-
-    private Component status = Component.empty();
-
-    /**
-     * 動作結果是<b>什麼時候</b>設的。
-     *
-     * <p>先前 status 設了就不清，而它的優先序在說明之上——按過一次「套用」之後，
-     * 底下那條就被「✔ 已套用顏色」佔住，之後滑到任何一列都看不到說明了。
-     * 使用者回報「希望還是可以保有說明」講的就是這個。
-     *
-     * <p>兩件事都要看得到，所以改成<b>輪流</b>：結果先顯示幾秒——按下去的當下
-     * 滑鼠通常正壓在那一列上，說明先讓開——過了就換回說明。
-     */
+    private String status = "";
+    private int statusColour = Ui.TEXT_3;
     private long statusAt = 0;
-
-    /** 動作結果顯示多久。見 {@link #statusAt}。 */
     private static final long STATUS_MS = 4000;
-
-    /** 設一則動作結果。 */
-    private void say(Component text) {
-        status = text;
-        statusAt = System.currentTimeMillis();
-    }
-
-    /** 正在向 GitHub 抓譯文。抓多久不知道，這期間那條訊息不能被說明蓋掉。 */
+    /** 正在抓資料：狀態列那一句要留到抓完，不照平常的幾秒後讓開。 */
     private boolean fetching = false;
+    private boolean checkingVersion;
 
-    private boolean statusFresh() {
-        if (status.getString().isEmpty()) {
-            return false;
-        }
-        return fetching || System.currentTimeMillis() - statusAt < STATUS_MS;
-    }
-    private final List<Row> rows = new ArrayList<>();
-    private EditBox colorBox;
-    private EditBox gapBox;
-    private EditBox dialogueHoldBox;
-    private Button reloadButton;
+    /** 選了但還沒按「套用」的語言；{@code null} 是沒有動過。 */
+    private String pendingLanguage;
+    private String pendingFallback;
+    private String languageBusy;
+    private String fallbackBusy;
 
     public SettingsScreen() {
+        this(null);
+    }
+
+    /** @param parent 關掉之後要回到哪個畫面（從 Mod Menu 進來時是它的清單） */
+    public SettingsScreen(Screen parent) {
         super(Component.literal("WynnChaYuan"));
-    }
-
-    // ------------------------------------------------------------ 一列
-
-    /**
-     * 一列設定。
-     *
-     * <p>名稱、說明與控制項<b>綁在同一個物件上</b>，這正是舊版漂掉的地方：
-     * 那時候三樣東西分別在兩個方法裡各自手算座標。
-     */
-    private static final class Row {
-        final String name;
-        final String hint;
-        final List<AbstractWidget> widgets = new ArrayList<>();
-        /** 屬於底下那一組「工具」（一次性的動作），見 {@link #tools}。 */
-        boolean tool;
-        int y;
-
-        Row(String name, String hint) {
-            this.name = name;
-            this.hint = hint;
-        }
-    }
-
-    /** 分類的名字。順序就是左邊那一排的順序。 */
-    private static final String[] TAB_KEYS = {
-        "tab.items", "tab.panel", "tab.dialogue", "tab.world", "tab.data",
-    };
-
-    /**
-     * 每一類在管什麼，印在清單上面那一行。
-     *
-     * <p>分類名稱只有兩三個字，光看「面板」不知道裡面有什麼。多這一行就
-     * 不用一個一個滑過去才知道自己找對地方沒有。
-     */
-    private static String tabName(int which) {
-        return T.s(TAB_KEYS[which]);
-    }
-
-    /** 每一類在管什麼，印在清單上面那一行。 */
-    private static String tabAbout(int which) {
-        return T.s(TAB_KEYS[which] + ".about");
-    }
-
-    // ------------------------------------------------------------ 佈局
-
-    private int paneW() {
-        return box().paneW();
-    }
-
-    private int originX() {
-        return box().originX();
-    }
-
-    private int paneX() {
-        return box().paneX();
-    }
-
-    private int ctrlW() {
-        return box().ctrlW();
-    }
-
-    private int perPage() {
-        return box().perPage();
+        this.parent = parent;
     }
 
     @Override
     protected void init() {
-        rows.clear();
-        backward.clear();
-        toolRows = false;
-        buildRows();
-
-        // 換分類之後列數變少，捲動位置要跟著收回來，不然會停在空白處。
-        scroll = Math.max(0, Math.min(scroll, rows.size() - perPage()));
-
-        int right = box().ctrlX();
-        for (int i = 0; i < rows.size(); i++) {
-            Row row = rows.get(i);
-            int at = i - scroll;
-            row.y = box().rowY(at);
-            boolean shown = at >= 0 && at < perPage();
-            for (AbstractWidget w : row.widgets) {
-                // 建列時座標是「相對控制項左緣」的偏移，這裡才平移到實際位置。
-                w.setX(w.getX() + right);
-                w.setY(row.y);
-                w.visible = shown;
-                w.active = shown;
-                addRenderableWidget(w);
-            }
+        // 改視窗大小會再跑一次 init：畫面留著，捲到哪、開著哪個選單都不要丟
+        if (view == null) {
+            view = new SettingsView(buildTabs(), new Host(), lastTab);
         }
-
-        // ---- 左邊的分類 ----
-        for (int i = 0; i < TAB_KEYS.length; i++) {
-            int which = i;
-            addRenderableWidget(Button.builder(
-                    // 選到的那一類靠<b>左邊那條主題色</b>表示，不加「▸」——
-                    // 加了字會被推右，跟其他幾個對不齊，一眼就看得出來歪。
-                    Component.literal(tabName(i)),
-                    b -> {
-                        tab = which;
-                        scroll = 0;
-                        rebuildWidgets();
-                    })
-                    .bounds(originX(), box().rowY(i), TAB_W, 20).build());
-        }
-
-        // ---- 底部 ----
-        //
-        // 「更新說明」擺在這裡而不是藏進某一個分類：它講的是<b>整個模組</b>，
-        // 不屬於物品、面板或對話任何一類；而有新版時那個提示要從 F6 一打開
-        // 就看得到，不能要人先點對分類。
-        // ---- 右上角：警語 ----
-        //
-        // 「跟別的玩家講話請用原文」。第一次進 Wynncraft 會自動跳出，勾了不再顯示之後
-        // 只能從這裡打開，所以放在每一頁都看得到的標題列，不藏進分類。
-        addRenderableWidget(Button.builder(Component.literal("!"),
-                        b -> this.minecraft.setScreen(new NoticeScreen(this)))
-                .bounds(this.width - 28, 8, 20, 20)
-                .tooltip(net.minecraft.client.gui.components.Tooltip.create(T.c("notice.button")))
-                .build());
-
-        int mid = this.width / 2;
-        int left = mid - 148;
-        addRenderableWidget(Button.builder(updateLabel(),
-                b -> this.minecraft.setScreen(new ReleaseNotesScreen(this)))
-                .bounds(left, this.height - 26, 92, 20).build());
-        addRenderableWidget(Button.builder(T.c("button.credits"),
-                b -> this.minecraft.setScreen(new CreditsScreen(this)))
-                .bounds(left + 96, this.height - 26, 108, 20).build());
-        // 「完成」順手把還沒套用的選擇套用掉。
-        //
-        // 套用鈕就在同一個畫面上，但沒有人會覺得「完成」不含「套用」——
-        // 選好語言按完成，畫面關掉、選的東西沒了，那是最容易踩到的坑。
-        addRenderableWidget(Button.builder(T.c("button.done"), b -> {
-            if (pendingLanguage != null) {
-                applyLanguage();
-            } else if (pendingFallback != null) {
-                applyFallback();
-            }
-            onClose();
-        }).bounds(left + 208, this.height - 26, 88, 20).build());
     }
 
-    // ------------------------------------------------------------ 建一列
-
-    private Row add(String name, String hint) {
-        Row row = new Row(name, hint);
-        row.tool = toolRows;
-        rows.add(row);
-        return row;
+    private static CollectorConfig cfg() {
+        return WynnChaYuan.config();
     }
 
-    /** 這之後加的列都算「工具」那一組。每次重建列時歸零。 */
-    private boolean toolRows;
-
-    /**
-     * 從這裡開始是<b>工具</b>：按了就做一件事、或在兩個來源之間選，
-     * 不是「開著／關著」的設定。
-     *
-     * <p>它們的按鈕是白字（見 {@link #pick}），先前跟有顏色的開關夾雜在一起，
-     * 一整頁看起來像隨便排的。集中到最下面、墊一層淡淡的底色、上面一條
-     * 主題色的分隔線，一眼就分得出「上面是設定、下面是動作」。
-     */
-    private void tools() {
-        toolRows = true;
+    private void say(String text, int colour) {
+        status = text;
+        statusColour = colour;
+        statusAt = System.currentTimeMillis();
     }
 
-    /** 一顆佔滿控制項那一半的按鈕（切換、循環都用這個）。 */
-    /**
-     * 大部分的列，名稱與說明都照同一個鍵取：{@code key} 與 {@code key + ".hint"}。
-     *
-     * <p>兩個字串各寫一次的話，改名時一定有一邊會被忘掉——而忘掉的那一邊
-     * 不會編譯失敗，畫面上直接印出鍵名。
-     */
-    private Button cycle(String key, Supplier<Component> label,
-                         Consumer<Button> onPress) {
-        return cycleNamed(T.s(key), T.s(key + ".hint"), label, onPress);
+    // ------------------------------------------------------------ 每一項設定
+
+    private static Supplier<String> t(String key) {
+        return () -> T.s(key);
     }
 
     /**
-     * 名稱與說明都<b>已經是現成的字</b>的版本。
+     * 開關，附預設值。
      *
-     * <h2>為什麼不跟上面那支同名</h2>
-     * 兩支只差一個參數，而多的那個也是 {@code String}。於是
-     * {@code cycle("items.shot", hint, …)} 編得過、跑得動，只是畫面上那一列
-     * 印出來的是 {@code items.shot} 四個字——那一列的名字就這樣消失了一版。
-     * 取不同的名字，這種傳錯就變成編譯錯誤。
+     * @param byDefault 預設是開還是關——跟 {@code CollectorConfig} 欄位的初始值一致
      */
-    private Button cycleNamed(String name, String hint,
-                              Supplier<Component> label, Consumer<Button> onPress) {
-        Button button = Button.builder(label.get(), onPress::accept)
-                .bounds(0, 0, ctrlW(), 20).build();
-        add(name, hint).widgets.add(button);
-        // 預設「往回一步」就是往前一步。兩態的選項前後本來就是同一件事，
-        // 三態以上的用 #back 另外登記。
-        backward.put(button, onPress);
-        return button;
+    private static Row toggle(String key, boolean byDefault,
+                              java.util.function.BooleanSupplier get, Runnable flip) {
+        return Row.toggle(key, t(key), t(key + ".hint")).on(get).flip(flip)
+                .reset(() -> get.getAsBoolean() == byDefault, () -> {
+                    if (get.getAsBoolean() != byDefault) {
+                        flip.run();
+                    }
+                });
     }
 
     /**
-     * 右鍵要往回走哪一步。
+     * 一直按「下一個」直到變成要的那一個。
      *
-     * <h2>為什麼需要</h2>
-     * 循環按鈕只能往前。選項一多，按過頭就得再繞一整圈——而「繞一圈」
-     * 在切換語言那一列的代價是把每一種語言都點過一次。
-     *
-     * <p>沒登記的按鈕右鍵等同左鍵，那對兩態的選項是對的。
+     * <p>設定檔對外只有「換下一種」的方法（舊畫面是一顆按了會輪的按鈕）。
+     * 分段控制器要的是「直接選這一個」，這裡用現成的方法湊出來，不必為了新畫面
+     * 把每個欄位都再開一個寫入口。最多轉一圈就停，設定檔被手改成怪值也不會卡死。
      */
-    private final java.util.Map<net.minecraft.client.gui.components.AbstractWidget,
-            Consumer<Button>> backward = new java.util.HashMap<>();
-
-    /** 給多態的那幾列登記真正的「上一個」。 */
-    private Button back(Button button, Consumer<Button> step) {
-        backward.put(button, step);
-        return button;
-    }
-
-    @Override
-    public boolean mouseClicked(net.minecraft.client.input.MouseButtonEvent event,
-                                boolean doubleClick) {
-        if (event.button() == 1) {
-            for (var entry : backward.entrySet()) {
-                var widget = entry.getKey();
-                if (widget.active && widget.visible
-                        && widget.isMouseOver(event.x(), event.y())) {
-                    widget.playDownSound(this.minecraft.getSoundManager());
-                    entry.getValue().accept((Button) widget);
-                    return true;
-                }
-            }
-        }
-        return super.mouseClicked(event, doubleClick);
-    }
-
-    /** 按鈕 + 右邊一顆小的（進階…）。 */
-    private void cycleWith(String key, Supplier<Component> label,
-                           Consumer<Button> onPress, String extra, Runnable action) {
-        cycleWithNamed(T.s(key), T.s(key + ".hint"), label, onPress, extra, action);
-    }
-
-    /** 見 {@link #cycleNamed}：名稱與說明都已經是現成的字。 */
-    private void cycleWithNamed(String name, String hint, Supplier<Component> label,
-                                Consumer<Button> onPress, String extra,
-                                Runnable action) {
-        Row row = add(name, hint);
-        row.widgets.add(Button.builder(label.get(), onPress::accept)
-                .bounds(0, 0, ctrlW() - 46, 20).build());
-        row.widgets.add(Button.builder(Component.literal(extra), b -> action.run())
-                .bounds(ctrlW() - 42, 0, 42, 20).build());
-    }
-
-    /** 輸入框 + 套用。 */
-    private EditBox field(String key, String hint, String value, int max,
-                          Runnable apply) {
-        return fieldNamed(T.s(key), hint, value, max, apply);
-    }
-
-    private EditBox fieldNamed(String name, String hint, String value, int max,
-                               Runnable apply) {
-        Row row = add(name, hint);
-        EditBox box = new EditBox(this.font, 0, 0, ctrlW() - 46, 20,
-                Component.literal(name));
-        box.setValue(value);
-        box.setMaxLength(max);
-        row.widgets.add(box);
-        row.widgets.add(Button.builder(T.c("button.apply"), b -> apply.run())
-                .bounds(ctrlW() - 42, 0, 42, 20).build());
-        return box;
-    }
-
-    /** 只有一顆按鈕的一列（開子畫面、執行動作）。 */
-    private Button action(String key, String hint, Component label, Runnable go) {
-        return actionNamed(T.s(key), hint, label, go);
-    }
-
-    private Button actionNamed(String name, String hint, Component label, Runnable go) {
-        Button button = Button.builder(label, b -> go.run())
-                .bounds(0, 0, ctrlW(), 20).build();
-        add(name, hint).widgets.add(button);
-        return button;
-    }
-
-    // ------------------------------------------------------------ 每個分類有哪些列
-
-    /**
-     * 分類照<b>「這東西出現在遊戲的哪裡」</b>取名。
-     *
-     * <p>舊版按功能分成〈顯示〉〈翻譯〉〈資料〉，聽起來合理，但玩家想關掉
-     * 名牌翻譯的時候不會知道那是〈翻譯〉還是〈顯示〉。改成照畫面上的位置分，
-     * 不用看說明也找得到。
-     */
-    private void buildRows() {
-        switch (tab) {
-            case 0 -> items();
-            case 1 -> panel();
-            case 2 -> dialogue();
-            case 3 -> world();
-            default -> data();
+    private static <E extends Enum<E>> void cycleTo(Supplier<E> get, Runnable next, E want) {
+        for (int i = 0; i < want.getDeclaringClass().getEnumConstants().length
+                && get.get() != want; i++) {
+            next.run();
         }
     }
 
-    private void items() {
-        back(cycle("items.tooltip",
-                this::tooltipModeLabel, b -> {
-                    WynnChaYuan.config().cycleTooltipMode();
-                    b.setMessage(tooltipModeLabel());
-                }), b -> {
-                    WynnChaYuan.config().cycleTooltipMode(-1);
-                    b.setMessage(tooltipModeLabel());
-                });
-        back(cycle("items.names",
-                this::itemNameLabel, b -> {
-                    WynnChaYuan.translations().setNameMode(
-                            WynnChaYuan.config().cycleItemNames(1));
-                    b.setMessage(itemNameLabel());
-                }), b -> {
-                    WynnChaYuan.translations().setNameMode(
-                            WynnChaYuan.config().cycleItemNames(-1));
-                    b.setMessage(itemNameLabel());
-                });
-        cycle("items.shiftpeek",
-                this::shiftPeekLabel, b -> {
-                    WynnChaYuan.config().toggleShiftPeekNames();
-                    b.setMessage(shiftPeekLabel());
-                });
-        cycle("items.market",
-                this::marketLabel, b -> {
-                    WynnChaYuan.config().toggleMarketSearch();
-                    b.setMessage(marketLabel());
-                });
-        String clash = com.wynnchayuan.render.PanelShot.conflict();
-        back(cycleNamed(T.s("items.shot"),
-                clash == null ? T.s("items.shot.hint") : T.s("items.shot.clash", clash),
-                this::shotLabel, b -> {
-                    WynnChaYuan.config().cycleShotMode();
-                    b.setMessage(shotLabel());
-                }), b -> {
-                    WynnChaYuan.config().cycleShotMode(-1);
-                    b.setMessage(shotLabel());
-                });
+    private List<Row.Tab> buildTabs() {
+        List<Row.Tab> tabs = new ArrayList<>();
+        tabs.add(new Row.Tab("items", t("tab.items"), t("tab.items.about"), Icons.Icon.BOW,
+                Preview.Scene.TOOLTIP, List.of(new Row.Group(t("group.items"), false, items()))));
+        tabs.add(new Row.Tab("panel", t("tab.panel"), t("tab.panel.about"), Icons.Icon.SCROLL,
+                Preview.Scene.PANEL, List.of(
+                        new Row.Group(t("group.place"), false, place()),
+                        new Row.Group(t("group.look"), false, look()))));
+        tabs.add(new Row.Tab("dialogue", t("tab.dialogue"), t("tab.dialogue.about"),
+                Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE,
+                List.of(new Row.Group(t("group.dialogue"), false, dialogue()))));
+        tabs.add(new Row.Tab("world", t("tab.world"), t("tab.world.about"), Icons.Icon.COMPASS,
+                Preview.Scene.WORLD, List.of(new Row.Group(t("group.world"), false, world()))));
+        tabs.add(new Row.Tab("data", t("tab.data"), t("tab.data.about"), Icons.Icon.BOOK,
+                Preview.Scene.DATA, List.of(
+                        new Row.Group(t("group.lang"), false, languages()),
+                        new Row.Group(t("group.tools"), true, tools()))));
+        return tabs;
     }
 
-    private void panel() {
-        cycle("panel.anchor",
-                this::anchorLabel, b -> {
-                    WynnChaYuan.config().togglePanelAnchor();
-                    b.setMessage(anchorLabel());
-                });
-        action("panel.place", T.s("panel.place.hint"), T.c("button.adjust"),
-                () -> this.minecraft.setScreen(new PositionScreen(this)));
-        back(cycle("panel.side",
-                this::sideLabel, b -> {
-                    WynnChaYuan.config().cyclePanelSide();
-                    b.setMessage(sideLabel());
-                }), b -> {
-                    WynnChaYuan.config().cyclePanelSide(-1);
-                    b.setMessage(sideLabel());
-                });
-        gapBox = field("panel.gap", T.s("panel.gap.hint"),
-                String.valueOf(WynnChaYuan.config().panelGap()), 3, this::applyGap);
-        colorBox = field("panel.colour", T.s("panel.colour.hint"),
-                WynnChaYuan.config().accentColor(), 7, this::applyColor);
+    private List<Row> items() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(Row.segment("items.tooltip", t("items.tooltip"), t("items.tooltip.hint"))
+                .option(T.s("mode.panel"), Row.Tone.ACCENT)
+                .option(T.s("mode.replace"), Row.Tone.REPLACE)
+                .option(T.s("mode.off"), Row.Tone.OFF)
+                .selected(() -> cfg().tooltipMode().ordinal())
+                .pick(i -> cycleTo(cfg()::tooltipMode, cfg()::cycleTooltipMode,
+                        CollectorConfig.TooltipMode.values()[i]))
+                .reset(() -> cfg().tooltipMode() == CollectorConfig.TooltipMode.PANEL,
+                        () -> cycleTo(cfg()::tooltipMode, cfg()::cycleTooltipMode,
+                                CollectorConfig.TooltipMode.PANEL)));
+        Runnable nextName = () ->
+                WynnChaYuan.translations().setNameMode(cfg().cycleItemNames(1));
+        rows.add(Row.segment("items.names", t("items.names"), t("items.names.hint"))
+                .option(T.s("mode.on"), Row.Tone.ACCENT)
+                .option(T.s("items.names.both"), Row.Tone.BOTH)
+                .option(T.s("mode.off"), Row.Tone.OFF)
+                .selected(() -> cfg().itemNames().ordinal())
+                .pick(i -> cycleTo(cfg()::itemNames, nextName,
+                        CollectorConfig.ItemNames.values()[i]))
+                .reset(() -> cfg().itemNames() == CollectorConfig.ItemNames.OFF,
+                        () -> cycleTo(cfg()::itemNames, nextName, CollectorConfig.ItemNames.OFF)));
+        rows.add(toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
+                cfg()::toggleShiftPeekNames));
+        rows.add(toggle("items.market", true, cfg()::marketSearch, cfg()::toggleMarketSearch));
+        rows.add(Row.segment("items.shot", t("items.shot"), () -> {
+                    String clash = PanelShot.conflict();
+                    if (clash != null) {
+                        return T.s("items.shot.clash", clash);
+                    }
+                    return PanelShot.hasKey() ? T.s("items.shot.bound", PanelShot.keyName())
+                                              : T.s("items.shot.unbound");
+                })
+                .option(T.s("mode.hotkey"), Row.Tone.ACCENT)
+                .option(T.s("mode.off"), Row.Tone.OFF)
+                .selected(() -> cfg().shotMode().ordinal())
+                .pick(i -> cycleTo(cfg()::shotMode, cfg()::cycleShotMode,
+                        CollectorConfig.ShotMode.values()[i]))
+                // 鍵在遊戲自己的按鍵設定裡綁；這顆直接帶過去，不必自己找
+                .extra(t("button.keybinds"), () -> this.minecraft.setScreen(
+                        new net.minecraft.client.gui.screens.options.controls.KeyBindsScreen(
+                                this, this.minecraft.options)))
+                .reset(() -> cfg().shotMode() == CollectorConfig.ShotMode.KEY,
+                        () -> cycleTo(cfg()::shotMode, cfg()::cycleShotMode,
+                                CollectorConfig.ShotMode.KEY)));
+        return rows;
     }
 
-    private void dialogue() {
-        back(cycle("dialogue.mode",
-                this::dialogueModeLabel, b -> {
-                    WynnChaYuan.config().cycleDialogueMode();
-                    b.setMessage(dialogueModeLabel());
-                }), b -> {
-                    WynnChaYuan.config().cycleDialogueMode(-1);
-                    b.setMessage(dialogueModeLabel());
-                });
-        // 選項是<b>另一條訊息、另一個框</b>，所以自己一列。見 CollectorConfig#choiceMode
-        back(cycle("dialogue.choices",
-                this::choiceModeLabel, b -> {
-                    WynnChaYuan.config().cycleChoiceMode();
-                    b.setMessage(choiceModeLabel());
-                }), b -> {
-                    WynnChaYuan.config().cycleChoiceMode(-1);
-                    b.setMessage(choiceModeLabel());
-                });
-        dialogueHoldBox = field("dialogue.hold", T.s("dialogue.hold.hint"),
-                holdSeconds(), 3, this::applySeconds);
-        cycle("dialogue.overlays",
-                this::overlayLabel, b -> {
-                    WynnChaYuan.config().toggleOverlays();
-                    b.setMessage(overlayLabel());
-                });
+    private List<Row> place() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(Row.segment("panel.anchor", t("panel.anchor"), t("panel.anchor.hint"))
+                .option(T.s("mode.follow"), Row.Tone.PLAIN)
+                .option(T.s("mode.pinned"), Row.Tone.PLAIN)
+                .selected(() -> cfg().panelAnchor().ordinal())
+                .pick(i -> cycleTo(cfg()::panelAnchor, cfg()::togglePanelAnchor,
+                        CollectorConfig.PanelAnchor.values()[i]))
+                .reset(() -> cfg().panelAnchor() == CollectorConfig.PanelAnchor.FOLLOW,
+                        () -> cycleTo(cfg()::panelAnchor, cfg()::togglePanelAnchor,
+                                CollectorConfig.PanelAnchor.FOLLOW)));
+        rows.add(Row.action("panel.place", t("panel.place"), t("panel.place.hint"))
+                .label(t("button.adjust"))
+                .run(() -> this.minecraft.setScreen(new PositionScreen(this))));
+        rows.add(Row.segment("panel.side", t("panel.side"), t("panel.side.hint"))
+                .option(T.s("mode.auto"), Row.Tone.PLAIN)
+                .option(T.s("mode.right"), Row.Tone.PLAIN)
+                .option(T.s("mode.left"), Row.Tone.PLAIN)
+                .selected(() -> cfg().panelSide().ordinal())
+                .pick(i -> cycleTo(cfg()::panelSide, cfg()::cyclePanelSide,
+                        CollectorConfig.PanelSide.values()[i]))
+                .reset(() -> cfg().panelSide() == CollectorConfig.PanelSide.AUTO,
+                        () -> cycleTo(cfg()::panelSide, cfg()::cyclePanelSide,
+                                CollectorConfig.PanelSide.AUTO)));
+        rows.add(Row.slider("panel.gap", t("panel.gap"), t("panel.gap.hint"))
+                .range(0, 200)
+                .value(() -> cfg().panelGap())
+                .slide(v -> cfg().setPanelGapLive(v))
+                .format(v -> v + " px")
+                .commit(cfg()::saveIfDirty)
+                .reset(() -> cfg().panelGap() == 12, () -> {
+                    cfg().setPanelGapLive(12);
+                    cfg().saveIfDirty();
+                }));
+        return rows;
     }
 
-    private void world() {
-        // 名牌與漂浮字的三段模式擺在最上面。
-        //
-        // 它本來只在子畫面裡，而子畫面又叫「NPC 名牌設定」——
-        // 想把畫面中央那些大字換成中文的人，根本不會點進去。
-        // 剩下的參數（停留秒數、偵測距離與夾角）才留在子畫面。
-        cycleWith("world.nametag",
-                this::nametagLabel, b -> {
-                    WynnChaYuan.config().cycleNametagMode();
-                    b.setMessage(nametagLabel());
-                }, T.s("button.advanced"), () -> this.minecraft.setScreen(new NametagScreen(this)));
-        back(cycle("world.chat",
-                this::chatModeLabel, b -> {
-                    WynnChaYuan.config().cycleChatMode();
-                    b.setMessage(chatModeLabel());
-                }), b -> {
-                    WynnChaYuan.config().cycleChatMode(-1);
-                    b.setMessage(chatModeLabel());
-                });
-        cycle("world.titles",
-                this::titleLabel, b -> {
-                    WynnChaYuan.config().toggleTitles();
-                    b.setMessage(titleLabel());
-                });
-        // 打怪時橫在畫面正中間那一條。先前只跟著名牌那個沒有 UI 的舊開關走，
-        // 等於關不掉（issue #825）。
-        cycle("world.bossbar",
-                this::bossBarLabel, b -> {
-                    WynnChaYuan.config().toggleBossBar();
-                    b.setMessage(bossBarLabel());
-                });
-        // 右上那一欄：任務追蹤、每日目標、世界事件、Lootrun、團隊。
-        // 三段：就地取代 Wynntils 疊層裡的字／畫在我們自己的小框／不翻。
-        back(cycle("world.tracker",
-                this::trackerModeLabel, b -> {
-                    WynnChaYuan.config().cycleTrackerMode();
-                    b.setMessage(trackerModeLabel());
-                }), b -> {
-                    WynnChaYuan.config().cycleTrackerMode(-1);
-                    b.setMessage(trackerModeLabel());
-                });
-        // Wynntils 自己畫的那些畫面（綜合頁面、地圖⋯⋯）。見 CollectorConfig#wynntilsUi。
-        cycle("world.wynntils",
-                this::wynntilsUiLabel, b -> {
-                    WynnChaYuan.config().toggleWynntilsUi();
-                    b.setMessage(wynntilsUiLabel());
-                });
-        // 目標那幾條是進度條上的字，沒有地方再開一個框，所以只有開與關。
-        cycle("world.objectives",
-                this::objectiveLabel, b -> {
-                    WynnChaYuan.config().toggleObjectives();
-                    b.setMessage(objectiveLabel());
-                });
-        cycle("world.helditem",
-                this::heldItemLabel, b -> {
-                    WynnChaYuan.config().toggleHeldItem();
-                    b.setMessage(heldItemLabel());
-                });
-        cycle("world.chatcopy",
-                this::chatCopyLabel, b -> {
-                    WynnChaYuan.config().toggleChatCopy();
-                    b.setMessage(chatCopyLabel());
-                });
+    private static final String DEFAULT_COLOUR = "#6FA8D8";
+
+    private List<Row> look() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(Row.colour("panel.theme", t("panel.theme"), t("panel.theme.hint"))
+                .hex(() -> cfg().themeColor())
+                .setHex(hex -> cfg().setThemeColorLive(hex))
+                .commit(cfg()::saveIfDirty)
+                .reset(() -> DEFAULT_COLOUR.equalsIgnoreCase(cfg().themeColor()),
+                        () -> cfg().setThemeColor(DEFAULT_COLOUR)));
+        rows.add(Row.colour("panel.colour", t("panel.colour"), t("panel.colour.hint"))
+                .hex(() -> cfg().accentColor())
+                .setHex(hex -> cfg().setAccentColorLive(hex))
+                .commit(cfg()::saveIfDirty)
+                .reset(() -> DEFAULT_COLOUR.equalsIgnoreCase(cfg().accentColor()),
+                        () -> cfg().setAccentColor(DEFAULT_COLOUR)));
+        return rows;
     }
 
-    private void data() {
-        // 語言擺在最前面：先決定要哪一種語言，其他設定才有意義。
-        languageRow();
-        fallbackRow();
-        back(cycle("data.ui", this::uiLanguageLabel, b -> {
-            WynnChaYuan.config().setUiLanguage(stepUi(1));
-            b.setMessage(uiLanguageLabel());
-            rebuildWidgets();          // 整個畫面的字都要跟著換
-        }), b -> {
-            WynnChaYuan.config().setUiLanguage(stepUi(-1));
-            b.setMessage(uiLanguageLabel());
-            rebuildWidgets();
-        });
-        cycle("data.collect",
-                this::collectLabel, b -> {
-                    WynnChaYuan.config().toggleCollect();
-                    b.setMessage(collectLabel());
-                });
-        cycle("data.collectgui",
-                this::guiCollectLabel, b -> {
-                    WynnChaYuan.config().toggleCollectGuiText();
-                    b.setMessage(guiCollectLabel());
-                });
-        cycle("data.debug",
-                this::debugLabel, b -> {
-                    WynnChaYuan.config().toggleDebugDumps();
-                    b.setMessage(debugLabel());
-                    say(T.c(WynnChaYuan.config().debugDumps()
-                            ? "data.debug.on" : "data.debug.off")
-                            .withStyle(ChatFormatting.GREEN));
-                });
-
-        // 底下是工具：譯文從哪裡來、現在就重抓、匯出、提交。
-        tools();
-        cycle("data.source",
-                this::sourceLabel, b -> {
-                    WynnChaYuan.config().toggleSource();
-                    b.setMessage(sourceLabel());
-                    reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
-                });
-        cycle("data.autoupdate",
-                this::autoUpdateLabel, b -> {
-                    WynnChaYuan.config().toggleAutoUpdateTranslations();
-                    b.setMessage(autoUpdateLabel());
-                });
-        reloadButton = action("data.reload",
-                T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
-                        ? "data.reload.github" : "data.reload.local"),
-                reloadLabel(), this::reload);
-        // 擺在「更新譯文」正下面：看到「有新版」，要按的那一顆就在上面一列。
-        versionRow();
-        // 先前這裡是「分享給翻譯團隊」的開關。模組現在不送任何東西出去，
-        // 改成兩顆按鈕：匯出成本機檔案、打開 Issue 表單——看不看、交不交由玩家決定。
-        action("data.export", T.s("data.export.hint"),
-                pick(T.s("data.export.button")), this::exportCorpus);
-        action("data.submit", T.s("data.submit.hint"),
-                pick(T.s("data.submit.button")),
-                // 跟原版開連結一樣先跳確認畫面：網址擺在玩家眼前，按了才開瀏覽器。
-                () -> ConfirmLinkScreen.confirmLinkNow(this, CorpusExport.ISSUE_URL));
-    }
-
-    // ------------------------------------------------------------ 繪製
-
-    @Override
-    public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
-        // 開機那一次的版本詢問在背景跑，可能在 F6 開著的時候才回來。
-        // 每一幀比一次字串，不一樣才換——不比的話那一列會一直停在「不確定」。
-        if (versionButton != null) {
-            Component now = versionLabel();
-            if (!now.getString().equals(versionButton.getMessage().getString())) {
-                versionButton.setMessage(now);
-            }
-        }
-        SettingsLayout box = box();
-        int x0 = originX();
-        int pane = paneW();
-        int px = paneX();
-        int listH = box.listH();
-
-        // 卡片墊在按鈕底下，所以先於 super.render。
-        // 左右緣都問 SettingsLayout——先前兩張卡片各自 ±8，實際上疊了 4px。
-        Cards.panel(g, box.tabsCardX(), box.tabsY(),
-                box.tabsCardW(), box.tabsBottom() - box.tabsY());
-        Cards.panel(g, box.listCardX(), box.tabsY(),
-                box.listCardW(), box.listBottom() - box.tabsY());
-
-        super.render(g, mouseX, mouseY, delta);
-
-        Cards.header(g, this.font, this.width, "WynnChaYuan",
-                T.s("header.subtitle", WynnChaYuan.version()));
-
-        // 選到的那一類，左邊一條主題色。貼著按鈕畫，不要壓在卡片框線上。
-        g.fill(x0 - PAD + 2, box.rowY(tab), x0 - 1, box.rowY(tab) + 20,
-                WynnChaYuan.config().accentARGB());
-
-        // 這一頁在管什麼。標題列與卡片之間那一行。
-        int accent = WynnChaYuan.config().accentARGB();
-        g.drawString(this.font, Component.literal(tabName(tab)),
-                box.tabsCardX() + 2, SettingsLayout.LEAD_Y, accent);
-        int lead = box.tabsCardX() + 2 + this.font.width(tabName(tab)) + 8;
-        g.drawString(this.font,
-                Component.literal(Cards.fit(this.font, tabAbout(tab),
-                        box.tabsCardX() + box.footerW() - lead - 4)),
-                lead, SettingsLayout.LEAD_Y, Colors.FAINT);
-
-        // 每一列的名稱。控制項自己會畫。
-        String hovered = null;
-        for (int i = 0; i < rows.size(); i++) {
-            int at = i - scroll;
-            if (at < 0 || at >= perPage()) {
-                continue;
-            }
-            Row row = rows.get(i);
-            // 指到這一列的判定範圍就是卡片內緣，跟底下畫的高亮同一組座標。
-            int hiL = box.listCardX() + 1;
-            int hiR = box.listCardX() + box.listCardW() - 1;
-            boolean on = mouseX >= hiL && mouseX <= hiR
-                    && mouseY >= row.y - 2 && mouseY < row.y + 22;
-            int half = (box.rowH() - 20) / 2;
-            boolean groupStart = row.tool && (i == 0 || !rows.get(i - 1).tool);
-            if (row.tool) {
-                // 工具那一組墊一層淡淡的主題色，整組看起來是一塊
-                g.fill(hiL, row.y - half, hiR, row.y + 20 + half,
-                        (accent & 0xFFFFFF) | 0x10000000);
-            }
-            if (on) {
-                hovered = row.hint;
-                g.fill(hiL, row.y - 2, hiR, row.y + 22, 0x18FFFFFF);
-            }
-            // 列與列之間一條很淡的線。滑鼠沒指著任何一列時，眼睛也分得出來
-            // 哪個控制項配哪個名稱——右邊那一欄離名稱有一段距離。
-            // 工具那一組的第一列上面改成主題色的線，當作分段。
-            if (groupStart && at > 0) {
-                g.fill(hiL + 3, row.y - half - 1, hiR - 3, row.y - half,
-                       (accent & 0xFFFFFF) | 0x90000000);
-            } else if (at > 0) {
-                g.fill(hiL + 3, row.y - (box.rowH() - 20) / 2 - 1,
-                       hiR - 3, row.y - (box.rowH() - 20) / 2,
-                       0x14FFFFFF);
-            }
-            // 真的還是放不下就截斷。凸出去比截斷難看得多。
-            g.drawString(this.font,
-                    Component.literal(Cards.fit(this.font, row.name, pane - ctrlW() - 6)),
-                    px, row.y + 6, on ? Colors.TEXT : Colors.HINT);
-        }
-
-        // 還有更多列的時候講一聲，不然使用者不知道可以滾
-        if (rows.size() > perPage()) {
-            g.drawString(this.font,
-                    T.c("footer.scroll", scroll + 1,
-                            Math.min(rows.size(), scroll + perPage()),
-                            rows.size()),
-                    px, TOP + listH + 2, Colors.HINT);
-        }
-
-        footer(g, x0, pane, hovered);
+    private Row dialogueMode(String key, Supplier<CollectorConfig.DialogueMode> get,
+                             Runnable next) {
+        return Row.segment(key, t(key), t(key + ".hint"))
+                .option(T.s("mode.box"), Row.Tone.ACCENT)
+                .option(T.s("mode.replace"), Row.Tone.REPLACE)
+                .option(T.s("mode.off"), Row.Tone.OFF)
+                .selected(() -> get.get().ordinal())
+                .pick(i -> {
+                    cycleTo(get, next, CollectorConfig.DialogueMode.values()[i]);
+                    // 選項的小框不受總開關管（見 RenderListener#renderHud），只有內文要
+                    needBoxes("dialogue.mode".equals(key)
+                            && get.get() == CollectorConfig.DialogueMode.PANEL);
+                })
+                .reset(() -> get.get() == CollectorConfig.DialogueMode.REPLACE,
+                        () -> cycleTo(get, next, CollectorConfig.DialogueMode.REPLACE));
     }
 
     /**
-     * 底下那一條說明。
+     * 選了「小框」就把小框的總開關一起打開。
      *
-     * <p>三種東西共用同一行，優先序：剛做完的動作結果 &gt; 滑鼠指著的那一列的說明
-     * &gt; 載入了幾條譯文。分成三個位置的話，畫面下緣會空一大片沒人看的字。
+     * <p>「對話／追蹤小框」那個總開關關著的時候，對話、追蹤、名牌選成小框模式，
+     * 畫面上什麼都不會出現——原文照舊、譯文沒有，而設定畫面上兩邊各自看起來都
+     * 沒問題。挑小框的人要的就是看到小框，所以直接替他打開，不要讓兩個設定互相抵消
+     * （issue #1081 的其中一種可能）。反過來關掉總開關仍然是一鍵全收，不受影響。
      */
-    private void footer(GuiGraphics g, int x0, int pane, String hovered) {
-        int w = box().footerW();
-        int y = box().footerY();
-        Cards.panel(g, box().tabsCardX(), y, w, 20);
-
-        Component line;
-        if (statusFresh()) {
-            line = status;                     // 剛做完的事先講，幾秒後讓開
-        } else if (hovered != null) {
-            line = Component.literal(hovered).withStyle(ChatFormatting.GRAY);
-        } else {
-            // 沒指著任何一列時順便教一次——不然沒人知道說明藏在滑鼠底下。
-            int size = WynnChaYuan.translations().size();
-            line = T.c("footer.hint", size)
-                    .withStyle(size > 0 ? ChatFormatting.DARK_GRAY : ChatFormatting.RED);
-        }
-        // GitHub 回來的訊息長度事先不知道（「連線失敗：UnknownHostException…」），
-        // 不截的話會跑到卡片外面去。顏色要留著，所以截字不截 Component。
-        g.drawString(this.font,
-                Component.literal(Cards.fit(this.font, line.getString(), w - 10))
-                        .withStyle(line.getStyle()),
-                x0 - 2, y + 6, Colors.TEXT);
-    }
-
-    @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double dx, double dy) {
-        if (rows.size() > perPage()) {
-            int max = rows.size() - perPage();
-            int next = Math.max(0, Math.min(max, scroll - (int) Math.signum(dy)));
-            if (next != scroll) {
-                scroll = next;
-                rebuildWidgets();
-                return true;
-            }
-        }
-        return super.mouseScrolled(mouseX, mouseY, dx, dy);
-    }
-
-    @Override
-    public boolean isPauseScreen() {
-        return false;
-    }
-
-    // ------------------------------------------------------------ 標籤
-    //
-    // 只寫「值」，不寫「名稱：值」——名稱已經在左邊那一欄了。
-    //
-    // 放不下的字<b>不截斷</b>：原版按鈕會自己左右慢慢捲動，把整句秀出來。
-    // 先前截成「…」，西班牙文的「Según las traducciones (Es…」就永遠看不到後半。
-    //
-
-    /**
-     * 開關類的值：開著用主題色、關著灰色。
-     *
-     * <p>一眼掃過去就知道哪幾項是關的，不必逐行讀字。灰色也順便暗示
-     * 「這一項現在沒在做事」。
-     *
-     * <p>本來用的是原版的綠（{@code #55FF55}）。那個綠很飽和，畫在按鈕的
-     * 淺色底上刺眼——使用者回報「有點小刺眼」。改用<b>主題色</b>：那個顏色
-     * 本來就在畫框線與標題，畫面上早就看習慣了，而且使用者可以在
-     * 〈面板〉→〈框線顏色〉自己換成任何喜歡的顏色。
-     */
-    private Component ctrl(String text) {
-        return state(Component.literal(text), text);
-    }
-
-    private Component state(Component text, String value) {
-        return text.copy().withStyle(
-                Style.EMPTY.withColor(TextColor.fromRgb(modeColour(value) & 0xFFFFFF)));
-    }
-
-    /**
-     * 每一種顯示方式一種顏色，見 {@link ModeColours}：另開的是主題色、
-     * 就地取代是它的補色、原文加譯文在中間、關閉是灰色。
-     */
-    private static int modeColour(String value) {
-        int accent = WynnChaYuan.config().accentARGB();
-        if (T.s("mode.off").equals(value)) {
-            return ModeColours.OFF;
-        }
-        if (T.s("mode.replace").equals(value)) {
-            return ModeColours.replace(accent);
-        }
-        if (T.s("mode.both").equals(value)) {
-            return ModeColours.both(accent);
-        }
-        return ModeColours.separate(accent);
-    }
-
-    /**
-     * 選擇類的值：固定位置／跟隨滑鼠、GitHub／本機。
-     *
-     * <p>這種沒有「開」與「關」之分，兩個選項一樣正常，所以不上綠也不上灰——
-     * 上了顏色反而像在暗示哪一個才對。
-     */
-    private Component pick(String text) {
-        return Component.literal(text);
-    }
-
-    /** 右邊還帶一顆小按鈕的那一列，主按鈕窄 46px。見 {@link #cycleWith}。 */
-    private Component ctrlNarrow(String text) {
-        return state(Component.literal(text), text);
-    }
-
-    private Component tooltipModeLabel() {
-        return ctrl(switch (WynnChaYuan.config().tooltipMode()) {
-            case PANEL -> T.s("mode.panel");
-            case REPLACE -> T.s("mode.replace");
-            case OFF -> T.s("mode.off");
-        });
-    }
-
-    private Component dialogueModeLabel() {
-        return ctrl(switch (WynnChaYuan.config().dialogueMode()) {
-            case PANEL -> T.s("mode.box");
-            case REPLACE -> T.s("mode.replace");
-            case OFF -> T.s("mode.off");
-        });
-    }
-
-    /** 對話<b>選項</b>那幾列，跟上面的內文分開管。 */
-    private Component choiceModeLabel() {
-        return ctrl(switch (WynnChaYuan.config().choiceMode()) {
-            case PANEL -> T.s("mode.box");
-            case REPLACE -> T.s("mode.replace");
-            case OFF -> T.s("mode.off");
-        });
-    }
-
-    /** 聊天視窗裡的伺服器訊息。玩家發言不在範圍內，見 {@code ChatListener}。 */
-    private Component chatModeLabel() {
-        return ctrl(switch (WynnChaYuan.config().chatMode()) {
-            case OFF -> T.s("mode.off");
-            case REPLACE -> T.s("mode.replace");
-            case BOTH -> T.s("mode.both");
-        });
-    }
-
-    /** 螢幕正中央那行大字。沒有面板選項——那裡沒空間，見 {@code TitleListener}。 */
-    private Component titleLabel() {
-        return ctrl(T.s(WynnChaYuan.config().translateTitles()
-                ? "mode.replace" : "mode.off"));
-    }
-
-    /** 名牌與漂浮字。跟 {@code NametagScreen} 那一個是同一個設定。 */
-    private Component nametagLabel() {
-        return ctrlNarrow(switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> T.s("mode.off");
-            case LOOK_AT -> T.s("mode.lookat");
-            case REPLACE -> T.s("mode.replace");
-        });
-    }
-
-    private Component chatCopyLabel() {
-        return ctrl(onOff(WynnChaYuan.config().chatCopy()));
-    }
-
-    private Component shotLabel() {
-        return ctrl(switch (WynnChaYuan.config().shotMode()) {
-            case OFF -> T.s("mode.off");
-            case KEY -> T.s("mode.key", com.wynnchayuan.render.PanelShot.keyName());
-            case AUTO -> T.s("mode.auto");
-        });
-    }
-
-    private Component trackerModeLabel() {
-        return ctrlNarrow(switch (WynnChaYuan.config().trackerMode()) {
-            case REPLACE -> T.s("mode.replace");
-            case PANEL -> T.s("mode.panel");
-            case OFF -> T.s("mode.off");
-        });
-    }
-
-    private Component bossBarLabel() {
-        return ctrl(WynnChaYuan.config().translateBossBar()
-                ? T.s("mode.replace") : T.s("mode.off"));
-    }
-
-    private Component objectiveLabel() {
-        return ctrl(WynnChaYuan.config().translateObjectives()
-                ? T.s("mode.replace") : T.s("mode.off"));
-    }
-
-    private Component heldItemLabel() {
-        return ctrl(onOff(WynnChaYuan.config().translateHeldItem()));
-    }
-
-    private Component overlayLabel() {
-        return ctrl(onOff(WynnChaYuan.config().showOverlays()));
-    }
-
-    private Component anchorLabel() {
-        boolean fixed = WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
-        return pick(T.s(fixed ? "mode.pinned" : "mode.follow"));
-    }
-
-    private Component sideLabel() {
-        return pick(switch (WynnChaYuan.config().panelSide()) {
-            case AUTO -> T.s("mode.auto");
-            case RIGHT -> T.s("mode.right");
-            case LEFT -> T.s("mode.left");
-        });
-    }
-
-    /** Wynntils 自己畫的那些畫面。見 {@link com.wynnchayuan.CollectorConfig#wynntilsUi}。 */
-    private Component wynntilsUiLabel() {
-        return ctrl(onOff(WynnChaYuan.config().wynntilsUi()));
-    }
-
-    /** 按住 Shift 暫時看另一種名稱。見 {@link com.wynnchayuan.CollectorConfig#shiftPeekNames}。 */
-    private Component shiftPeekLabel() {
-        return ctrl(onOff(WynnChaYuan.config().shiftPeekNames()));
-    }
-
-    /** 市集搜尋打中文自動換成英文。見 {@code MarketListener}。 */
-    private Component marketLabel() {
-        return ctrl(onOff(WynnChaYuan.config().marketSearch()));
-    }
-
-    /** 譯名／譯名加原文／關閉。見 {@link com.wynnchayuan.CollectorConfig.ItemNames}。 */
-    private Component itemNameLabel() {
-        return ctrl(switch (WynnChaYuan.config().itemNames()) {
-            case ON -> T.s("mode.on");
-            case BOTH -> T.s("items.names.both");
-            case OFF -> T.s("mode.off");
-        });
-    }
-
-    /**
-     * 更新按鈕的字。
-     *
-     * <p>有新版時加一個亮黃色的點。按鈕上只有四個字的空間，寫不下版本號——
-     * 但「這裡有東西要看」一個點就夠了，版本號點進去就看得到。
-     */
-    private Component updateLabel() {
-        return com.wynnchayuan.Releases.newer() == null
-                ? T.c("button.updates")
-                : T.c("button.updates.new").withStyle(ChatFormatting.YELLOW);
-    }
-
-    /**
-     * 譯文語言那一列。
-     *
-     * <h2>為什麼要按過套用才真的換</h2>
-     * 換一種語言＝把那一種的<b>整份</b>譯文從 GitHub 抓下來，三十幾個檔。
-     * 先前是「點一下就換」，於是從〈跟著遊戲〉走到〈简体中文〉的路上，
-     * <b>每點一下都會觸發一次完整下載</b>，而按鈕上只有一個「…」——
-     * 分不出是在下載還是當掉了，也很容易停在半路上那個沒人要的語言。
-     *
-     * <p>所以拆成兩件事：點按鈕只改<b>待套用</b>的選擇（不連線，立刻反應），
-     * 按下套用才真的換，期間按鈕上顯示抓到第幾個檔。
-     */
-    private void languageRow() {
-        Row row = add(T.s("data.language"), T.s("data.language.hint"));
-        languageButton = Button.builder(languageLabel(), b -> {
-            pendingLanguage = nextLanguage();
-            b.setMessage(languageLabel());
-            refreshApply();
-        }).bounds(0, 0, ctrlW() - 46, 20).build();
-        back(languageButton, b -> {
-            pendingLanguage = stepLanguage(-1);
-            b.setMessage(languageLabel());
-            refreshApply();
-        });
-        languageApply = Button.builder(T.c("button.apply"), b -> applyLanguage())
-                .bounds(ctrlW() - 42, 0, 42, 20).build();
-        row.widgets.add(languageButton);
-        row.widgets.add(languageApply);
-        refreshApply();
-    }
-
-    /** 輔助語言那一列。跟 {@link #languageRow} 同一套理由。 */
-    private void fallbackRow() {
-        Row row = add(T.s("data.fallback"), T.s("data.fallback.hint"));
-        fallbackButton = Button.builder(fallbackLabel(), b -> {
-            pendingFallback = nextFallback();
-            b.setMessage(fallbackLabel());
-            refreshApply();
-        }).bounds(0, 0, ctrlW() - 46, 20).build();
-        back(fallbackButton, b -> {
-            pendingFallback = stepFallback(-1);
-            b.setMessage(fallbackLabel());
-            refreshApply();
-        });
-        fallbackApply = Button.builder(T.c("button.apply"), b -> applyFallback())
-                .bounds(ctrlW() - 42, 0, 42, 20).build();
-        row.widgets.add(fallbackButton);
-        row.widgets.add(fallbackApply);
-        refreshApply();
-    }
-
-    /** 選的跟現在用的不一樣，套用才亮得起來。 */
-    private void refreshApply() {
-        if (languageApply != null) {
-            languageApply.active = pendingLanguage != null
-                    && !pendingLanguage.equals(WynnChaYuan.config().language());
-        }
-        if (fallbackApply != null) {
-            fallbackApply.active = pendingFallback != null
-                    && !pendingFallback.equals(WynnChaYuan.config().fallbackLanguage());
+    private static void needBoxes(boolean box) {
+        if (box && !cfg().showOverlays()) {
+            cfg().toggleOverlays();
         }
     }
 
-    /** 切換期間全部鎖住——同時跑兩個切換，最後是哪一種說了不算。 */
-    private void lockLanguageRows(boolean locked) {
-        fetching = locked;
-        if (languageButton != null) {
-            languageButton.active = !locked;
-        }
-        if (fallbackButton != null) {
-            fallbackButton.active = !locked;
-        }
-        if (locked) {
-            if (languageApply != null) {
-                languageApply.active = false;
-            }
-            if (fallbackApply != null) {
-                fallbackApply.active = false;
-            }
-        } else {
-            refreshApply();
-        }
+    private static int holdSeconds() {
+        int ms = cfg().dialogueHoldMs();
+        return ms == Integer.MAX_VALUE ? 0 : ms / 1000;
+    }
+
+    private List<Row> dialogue() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(dialogueMode("dialogue.mode", cfg()::dialogueMode, cfg()::cycleDialogueMode));
+        rows.add(dialogueMode("dialogue.choices", cfg()::choiceMode, cfg()::cycleChoiceMode));
+        rows.add(Row.slider("dialogue.hold", t("dialogue.hold"), t("dialogue.hold.hint"))
+                .range(0, 30)
+                .value(() -> Math.min(30, holdSeconds()))
+                .slide(v -> cfg().setDialogueHoldSecondsLive(v))
+                .format(v -> v == 0 ? T.s("unit.forever") : T.s("unit.seconds", v))
+                .commit(cfg()::saveIfDirty)
+                .reset(() -> holdSeconds() == 6, () -> {
+                    cfg().setDialogueHoldSecondsLive(6);
+                    cfg().saveIfDirty();
+                }));
+        rows.add(toggle("dialogue.overlays", true, cfg()::showOverlays, cfg()::toggleOverlays));
+        return rows;
+    }
+
+    private List<Row> world() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(Row.segment("world.nametag", t("world.nametag"), t("world.nametag.hint"))
+                .option(T.s("mode.lookat"), Row.Tone.ACCENT)
+                .option(T.s("mode.replace"), Row.Tone.REPLACE)
+                .option(T.s("mode.off"), Row.Tone.OFF)
+                .selected(() -> cfg().nametagMode().ordinal())
+                .pick(i -> {
+                    cycleTo(cfg()::nametagMode, cfg()::cycleNametagMode,
+                            CollectorConfig.NametagMode.values()[i]);
+                    needBoxes(cfg().nametagMode() == CollectorConfig.NametagMode.LOOK_AT);
+                })
+                .extra(t("button.advanced"), () -> this.minecraft.setScreen(new NametagScreen(this)))
+                .reset(() -> cfg().nametagMode() == CollectorConfig.NametagMode.REPLACE,
+                        () -> cycleTo(cfg()::nametagMode, cfg()::cycleNametagMode,
+                                CollectorConfig.NametagMode.REPLACE)));
+        rows.add(Row.segment("world.chat", t("world.chat"), t("world.chat.hint"))
+                .option(T.s("mode.replace"), Row.Tone.REPLACE)
+                .option(T.s("mode.both"), Row.Tone.BOTH)
+                .option(T.s("mode.off"), Row.Tone.OFF)
+                .selected(() -> cfg().chatMode().ordinal())
+                .pick(i -> cycleTo(cfg()::chatMode, cfg()::cycleChatMode,
+                        CollectorConfig.ChatMode.values()[i]))
+                .reset(() -> cfg().chatMode() == CollectorConfig.ChatMode.BOTH,
+                        () -> cycleTo(cfg()::chatMode, cfg()::cycleChatMode,
+                                CollectorConfig.ChatMode.BOTH)));
+        rows.add(toggle("world.titles", true, cfg()::translateTitles, cfg()::toggleTitles)
+                .onText(t("mode.replace")));
+        rows.add(toggle("world.bossbar", true, cfg()::translateBossBar, cfg()::toggleBossBar)
+                .onText(t("mode.replace")));
+        // 追蹤欄跟對話共用同一個列舉，但畫面上的順序是「就地取代、另開面板、關閉」
+        CollectorConfig.DialogueMode[] order = {
+            CollectorConfig.DialogueMode.REPLACE, CollectorConfig.DialogueMode.PANEL,
+            CollectorConfig.DialogueMode.OFF};
+        rows.add(Row.segment("world.tracker", t("world.tracker"), t("world.tracker.hint"))
+                .option(T.s("mode.replace"), Row.Tone.REPLACE)
+                .option(T.s("mode.panel"), Row.Tone.ACCENT)
+                .option(T.s("mode.off"), Row.Tone.OFF)
+                .selected(() -> java.util.Arrays.asList(order).indexOf(cfg().trackerMode()))
+                .pick(i -> {
+                    cycleTo(cfg()::trackerMode, cfg()::cycleTrackerMode, order[i]);
+                    needBoxes(cfg().trackerMode() == CollectorConfig.DialogueMode.PANEL);
+                })
+                .reset(() -> cfg().trackerMode() == CollectorConfig.DialogueMode.REPLACE,
+                        () -> cycleTo(cfg()::trackerMode, cfg()::cycleTrackerMode,
+                                CollectorConfig.DialogueMode.REPLACE)));
+        rows.add(toggle("world.wynntils", true, cfg()::wynntilsUi, cfg()::toggleWynntilsUi));
+        rows.add(toggle("world.objectives", true, cfg()::translateObjectives,
+                cfg()::toggleObjectives).onText(t("mode.replace")));
+        rows.add(toggle("world.scoreboard", true, cfg()::translateScoreboard,
+                cfg()::toggleScoreboard));
+        rows.add(toggle("world.helditem", true, cfg()::translateHeldItem, cfg()::toggleHeldItem));
+        rows.add(toggle("world.chatcopy", true, cfg()::chatCopy, cfg()::toggleChatCopy));
+        return rows;
+    }
+
+    // ---- 語言
+
+    private static String badge(String lang) {
+        return switch (lang) {
+            case "zh_tw" -> "繁";
+            case "zh_cn" -> "简";
+            case "ja_jp" -> "日";
+            case "ko_kr" -> "한";
+            default -> lang.length() >= 2 ? lang.substring(0, 2).toUpperCase() : lang;
+        };
+    }
+
+    private static Row.Choice language(String lang) {
+        return new Row.Choice(lang, Languages.nativeName(lang), badge(lang), false);
+    }
+
+    private List<Row> languages() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(Row.select("data.language", t("data.language"), t("data.language.hint"))
+                .choices(() -> {
+                    List<Row.Choice> out = new ArrayList<>();
+                    out.add(new Row.Choice("", T.s("data.language.auto",
+                            Languages.nativeName(WynnChaYuan.autoLanguage())), "A", true));
+                    for (String lang : Languages.bundled()) {
+                        out.add(language(lang));
+                    }
+                    return out;
+                })
+                .current(() -> pendingLanguage != null ? pendingLanguage : cfg().language())
+                .choose(id -> pendingLanguage = id.equals(cfg().language()) ? null : id)
+                .apply(() -> pendingLanguage != null, this::applyLanguage)
+                .locked(() -> fetching)
+                .busy(() -> languageBusy));
+        rows.add(Row.select("data.fallback", t("data.fallback"), t("data.fallback.hint"))
+                .choices(() -> {
+                    List<Row.Choice> out = new ArrayList<>();
+                    String under = WynnChaYuan.fallbackLanguage();
+                    out.add(new Row.Choice("", under == null
+                            ? T.s("data.fallback.auto.none")
+                            : T.s("data.fallback.auto", Languages.nativeName(under)), "A", true));
+                    out.add(new Row.Choice(WynnChaYuan.OFF, T.s("data.fallback.off"), "EN", false));
+                    for (String lang : Languages.bundled()) {
+                        if (!lang.equals(WynnChaYuan.language())) {
+                            out.add(language(lang));
+                        }
+                    }
+                    return out;
+                })
+                .current(() -> pendingFallback != null ? pendingFallback : cfg().fallbackLanguage())
+                .choose(id -> pendingFallback = id.equals(cfg().fallbackLanguage()) ? null : id)
+                .apply(() -> pendingFallback != null, this::applyFallback)
+                .locked(() -> fetching)
+                .busy(() -> fallbackBusy));
+        rows.add(Row.select("data.ui", t("data.ui"), t("data.ui.hint"))
+                .choices(() -> {
+                    List<Row.Choice> out = new ArrayList<>();
+                    String following = cfg().language();
+                    out.add(new Row.Choice("", T.s("data.ui.auto", Languages.nativeName(
+                            following.isEmpty() ? WynnChaYuan.autoLanguage() : following)),
+                            "A", true));
+                    for (String lang : T.available()) {
+                        out.add(language(lang));
+                    }
+                    return out;
+                })
+                .current(() -> cfg().uiLanguage())
+                .choose(id -> {
+                    cfg().setUiLanguage(id);
+                    // 分段上的字是建表的時候取的；換了介面語言整張表重建，字才會跟著換
+                    lastTab = view.tab();
+                    view = new SettingsView(buildTabs(), new Host(), lastTab);
+                }));
+        rows.add(toggle("data.collect", true, cfg()::collect, cfg()::toggleCollect));
+        rows.add(toggle("data.collectgui", false, cfg()::collectGuiText,
+                cfg()::toggleCollectGuiText));
+        rows.add(toggle("data.debug", false, cfg()::debugDumps, () -> {
+            cfg().toggleDebugDumps();
+            say(T.s(cfg().debugDumps() ? "data.debug.on" : "data.debug.off"), Ui.GREEN);
+        }));
+        return rows;
     }
 
     private void applyLanguage() {
@@ -1074,21 +449,20 @@ public final class SettingsScreen extends Screen {
         if (next == null) {
             return;
         }
-        lockLanguageRows(true);
-        say(T.c("data.language.switching").withStyle(ChatFormatting.GRAY));
+        fetching = true;
+        say(T.s("data.language.switching"), Ui.TEXT_3);
         WynnChaYuan.switchLanguage(next, result -> {
             pendingLanguage = null;
-            // 待套用的輔助語言留著——除非它剛好就是現在切過去的這一種，
-            // 那樣的話它已經沒有意義（拿自己墊自己）。
             if (next.equals(pendingFallback)) {
                 pendingFallback = null;
             }
-            lockLanguageRows(false);
-            languageButton.setMessage(languageLabel());
-            fallbackButton.setMessage(fallbackLabel());
-            say(Component.literal("✔ " + result)
-                    .withStyle(ChatFormatting.GREEN));
-        }, (done, total) -> showProgress(languageButton, done, total));
+            fetching = false;
+            languageBusy = null;
+            say("✔ " + result, Ui.GREEN);
+        }, (done, total) -> Minecraft.getInstance().execute(() -> {
+            languageBusy = T.s("data.language.progress", done, total);
+            say(languageBusy, Ui.TEXT_3);
+        }));
     }
 
     private void applyFallback() {
@@ -1096,237 +470,63 @@ public final class SettingsScreen extends Screen {
         if (next == null) {
             return;
         }
-        lockLanguageRows(true);
-        say(T.c("data.language.switching").withStyle(ChatFormatting.GRAY));
+        fetching = true;
+        say(T.s("data.language.switching"), Ui.TEXT_3);
         WynnChaYuan.switchFallback(next, result -> {
             pendingFallback = null;
-            lockLanguageRows(false);
-            fallbackButton.setMessage(fallbackLabel());
-            say(Component.literal("✔ " + result)
-                    .withStyle(ChatFormatting.GREEN));
-        }, (done, total) -> showProgress(fallbackButton, done, total));
+            fetching = false;
+            fallbackBusy = null;
+            say("✔ " + result, Ui.GREEN);
+        }, (done, total) -> Minecraft.getInstance().execute(() -> {
+            fallbackBusy = T.s("data.language.progress", done, total);
+            say(fallbackBusy, Ui.TEXT_3);
+        }));
     }
 
-    /**
-     * 抓到第幾個檔了。
-     *
-     * <p>回呼是在背景執行緒上叫的，動畫面上的東西一定要先回主執行緒。
-     */
-    private void showProgress(Button button, int done, int total) {
-        net.minecraft.client.Minecraft.getInstance().execute(() -> {
-            button.setMessage(ctrl(T.s("data.language.progress", done, total)));
-            say(T.c("data.language.progress", done, total)
-                    .withStyle(ChatFormatting.GRAY));
-        });
+    // ---- 工具
+
+    private static boolean github() {
+        return cfg().source() == CollectorConfig.Source.GITHUB;
     }
 
-    /** 還沒套用的選擇。{@code null} 表示沒改過，畫面上顯示現在用的那一種。 */
-    private String pendingLanguage;
-    private String pendingFallback;
-    private Button languageButton;
-    private Button languageApply;
-    private Button fallbackButton;
-    private Button fallbackApply;
-
-    /**
-     * 下一個要切到的語言。
-     *
-     * <p>順序是「跟著遊戲」→ 打包進來的每一種 → 回到「跟著遊戲」。
-     * 空字串代表跟著遊戲走，它排在最前面是因為那是預設、也是多數人要的。
-     */
-    private String nextLanguage() {
-        return stepLanguage(1);
+    private List<Row> tools() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(Row.segment("data.source", t("data.source"), t("data.source.hint"))
+                .option(T.s("data.source.github"), Row.Tone.PLAIN)
+                .option(T.s("data.source.local"), Row.Tone.PLAIN)
+                .selected(() -> cfg().source().ordinal())
+                .pick(i -> cycleTo(cfg()::source, cfg()::toggleSource,
+                        CollectorConfig.Source.values()[i]))
+                .reset(SettingsScreen::github, () -> cycleTo(cfg()::source, cfg()::toggleSource,
+                        CollectorConfig.Source.GITHUB)));
+        rows.add(toggle("data.autoupdate", false, cfg()::autoUpdateTranslations,
+                cfg()::toggleAutoUpdateTranslations));
+        rows.add(Row.action("data.reload", t("data.reload"),
+                        () -> T.s(github() ? "data.reload.github" : "data.reload.local"))
+                .label(() -> T.s(github() ? "data.reload.fetch" : "data.reload.reread"))
+                .enabled(() -> !fetching)
+                .run(this::reload));
+        rows.add(Row.status("data.version", t("data.version"), this::versionHint)
+                .label(() -> T.s(VERSION_KEY.get(versionState())))
+                .labelColour(() -> switch (versionState()) {
+                    case LATEST -> Ui.GREEN;
+                    case BEHIND -> Ui.AMBER;
+                    case UNKNOWN -> Ui.RED;
+                    default -> Ui.TEXT_2;
+                })
+                .run(this::recheckVersion));
+        rows.add(Row.action("data.export", t("data.export"), t("data.export.hint"))
+                .label(t("data.export.button"))
+                .run(this::exportCorpus));
+        rows.add(Row.action("data.submit", t("data.submit"), t("data.submit.hint"))
+                .label(t("data.submit.button"))
+                .run(() -> ConfirmLinkScreen.confirmLinkNow(this, CorpusExport.ISSUE_URL)));
+        return rows;
     }
 
-    /** @param step 往前幾格；{@code -1} 是右鍵那條路 */
-    private String stepLanguage(int step) {
-        java.util.List<String> all = new java.util.ArrayList<>();
-        all.add("");                       // 跟著遊戲
-        all.addAll(com.wynnchayuan.translate.Languages.bundled());
-        String now = pendingLanguage != null
-                ? pendingLanguage : WynnChaYuan.config().language();
-        return all.get(Math.floorMod(all.indexOf(now) + step, all.size()));
-    }
-
-    /**
-     * 語言按鈕的字。
-     *
-     * <p>「跟著遊戲」時把實際選到的那一種寫在括號裡——不寫的話，
-     * 玩家看到的是「跟著遊戲」四個字，而畫面上是中文，他無從確認這兩件事
-     * 是不是同一回事。
-     */
-    private Component languageLabel() {
-        String chosen = pendingLanguage != null
-                ? pendingLanguage : WynnChaYuan.config().language();
-        // 「跟著遊戲」時要算的是<b>遊戲</b>語言會挑到哪一種，不能拿現在用的那一種。
-        // 現在釘著簡體、待套用選了「跟著遊戲」的話，那兩件事是不一樣的。
-        String inUse = com.wynnchayuan.translate.Languages.nativeName(
-                chosen.isEmpty() ? WynnChaYuan.autoLanguage() : chosen);
-        return ctrl(chosen.isEmpty() ? T.s("data.language.auto", inUse) : inUse);
-    }
-
-    /**
-     * 下一個要切到的輔助語言。
-     *
-     * <p>順序：自動 → 不墊（顯示原文）→ 打包進來的每一種 → 回到自動。
-     * 目前這一種語言自己不列——拿自己墊自己沒有意義。
-     */
-    private String nextFallback() {
-        return stepFallback(1);
-    }
-
-    /** @param step 往前幾格；{@code -1} 是右鍵那條路 */
-    private String stepFallback(int step) {
-        java.util.List<String> all = new java.util.ArrayList<>();
-        all.add("");                       // 自動
-        all.add(WynnChaYuan.OFF);          // 不墊
-        for (String lang : com.wynnchayuan.translate.Languages.bundled()) {
-            if (!lang.equals(WynnChaYuan.language())) {
-                all.add(lang);
-            }
-        }
-        String now = pendingFallback != null
-                ? pendingFallback : WynnChaYuan.config().fallbackLanguage();
-        return all.get(Math.floorMod(all.indexOf(now) + step, all.size()));
-    }
-
-    /**
-     * 輔助語言按鈕的字。
-     *
-     * <p>「自動」時把實際墊的那一種寫在括號裡，沒有墊就寫「顯示原文」——
-     * 不寫的話「自動」兩個字看不出它到底做了什麼。
-     */
-    private Component fallbackLabel() {
-        String chosen = pendingFallback != null
-                ? pendingFallback : WynnChaYuan.config().fallbackLanguage();
-        if (WynnChaYuan.OFF.equals(chosen)) {
-            return ctrl(T.s("data.fallback.off"));
-        }
-        if (!chosen.isEmpty()) {
-            return ctrl(com.wynnchayuan.translate.Languages.nativeName(chosen));
-        }
-        String under = WynnChaYuan.fallbackLanguage();
-        return ctrl(under == null
-                ? T.s("data.fallback.auto.none")
-                : T.s("data.fallback.auto",
-                      com.wynnchayuan.translate.Languages.nativeName(under)));
-    }
-
-    /**
-     * 下一個介面語言。
-     *
-     * <p>順序是「跟著譯文語言」→ 有介面語言檔的每一種 → 回到開頭。
-     * 清單問的是檔案在不在，所以多放一份 json 進去就會自己出現。
-     */
-    private String stepUi(int step) {
-        java.util.List<String> all = new java.util.ArrayList<>();
-        all.add("");                       // 跟著譯文語言
-        all.addAll(T.available());
-        int at = all.indexOf(WynnChaYuan.config().uiLanguage());
-        return all.get(Math.floorMod((at < 0 ? 0 : at) + step, all.size()));
-    }
-
-    /**
-     * 介面語言按鈕的字。
-     *
-     * <p>「跟著譯文語言」時把實際用到的那一種寫在括號裡——不寫的話，
-     * 畫面上是日文而按鈕寫著「跟著譯文語言」，看不出這兩件事的關係。
-     */
-    private Component uiLanguageLabel() {
-        String chosen = WynnChaYuan.config().uiLanguage();
-        if (!chosen.isEmpty()) {
-            return ctrl(com.wynnchayuan.translate.Languages.nativeName(chosen));
-        }
-        String following = WynnChaYuan.config().language();
-        return ctrl(T.s("data.ui.auto",
-                com.wynnchayuan.translate.Languages.nativeName(
-                        following.isEmpty() ? WynnChaYuan.autoLanguage() : following)));
-    }
-
-    private Component sourceLabel() {
-        boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
-        return pick(T.s(github ? "data.source.github" : "data.source.local"));
-    }
-
-    /** 進遊戲就自己抓新譯文。見 {@link com.wynnchayuan.CollectorConfig#autoUpdateTranslations}。 */
-    private Component autoUpdateLabel() {
-        return ctrl(onOff(WynnChaYuan.config().autoUpdateTranslations()));
-    }
-
-    private Component collectLabel() {
-        return ctrl(onOff(WynnChaYuan.config().collect()));
-    }
-
-    private Component guiCollectLabel() {
-        return ctrl(onOff(WynnChaYuan.config().collectGuiText()));
-    }
-
-    /**
-     * 匯出給翻譯團隊的檔案，然後打開那個資料夾。
-     *
-     * <h2>為什麼是按鈕，不是自動送</h2>
-     * 先前是背景自動上傳，CurseForge 審核把它判成「擷取的文字送往遠端可改的伺服器」。
-     * 現在模組不送任何東西：玩家按這一顆、打開檔案看過，再自己拖進 Issue。
-     *
-     * <p>寫檔丟到背景執行緒：{@code captured.json} 玩久了有好幾 MB，在繪製執行緒上寫
-     * 會讓畫面卡一下。寫完再回主執行緒更新狀態列、打開資料夾。
-     */
-    private void exportCorpus() {
-        CaptureStore store = WynnChaYuan.store();
-        java.nio.file.Path dir = WynnChaYuan.configDir();
-        if (store == null || dir == null) {
-            return;
-        }
-        say(T.c("data.export.working").withStyle(ChatFormatting.GRAY));
-        Minecraft client = Minecraft.getInstance();
-        Thread worker = new Thread(() -> {
-            try {
-                CorpusExport.Result result = CorpusExport.write(
-                        dir, store, WynnChaYuan.version(), WynnChaYuan.language());
-                client.execute(() -> {
-                    say(result.count() == 0
-                            ? T.c("data.export.empty").withStyle(ChatFormatting.GRAY)
-                            : T.c("data.export.done", result.count())
-                                    .withStyle(ChatFormatting.GREEN));
-                    // 開資料夾不開檔案：直接開 .json 會丟給系統的預設程式，有些電腦上
-                    // 那是一個「要用什麼開啟」的對話框；資料夾一定開得起來，
-                    // 而且要拖進瀏覽器的正是裡面那個檔。
-                    Util.getPlatform().openPath(result.file().getParent());
-                });
-            } catch (Exception e) {
-                client.execute(() -> say(T.c("data.export.failed",
-                                String.valueOf(e.getMessage()))
-                        .withStyle(ChatFormatting.RED)));
-            }
-        }, WynnChaYuan.MOD_ID + "-export");
-        worker.setDaemon(true);
-        worker.start();
-    }
-
-    /**
-     * 診斷檔開關。
-     *
-     * <p>預設關閉：那些檔案是回報問題用的，一般玩家的 config 資料夾不該被
-     * 十幾個 txt 洗版。跟「收集未翻譯字串」是兩件事——那個是缺哪些句子要翻，
-     * 這個是翻了但畫面上不對。
-     */
-    private Component debugLabel() {
-        return ctrl(onOff(WynnChaYuan.config().debugDumps()));
-    }
-
-    private Component reloadLabel() {
-        return pick(T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
-                ? "data.reload.fetch" : "data.reload.reread"));
-    }
-
-    /** 譯文是不是最新的。見 {@link #versionRow}。 */
     private TranslationUpdate.State versionState() {
-        return TranslationUpdate.verdict(
-                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB,
-                checkingVersion,
-                TranslationUpdate.asked(),
-                WynnChaYuan.config().syncedTranslations(),
-                TranslationUpdate.seen());
+        return TranslationUpdate.verdict(github(), checkingVersion, TranslationUpdate.asked(),
+                cfg().syncedTranslations(), TranslationUpdate.seen());
     }
 
     private static final java.util.Map<TranslationUpdate.State, String> VERSION_KEY =
@@ -1337,171 +537,356 @@ public final class SettingsScreen extends Screen {
                     TranslationUpdate.State.BEHIND, "data.version.behind",
                     TranslationUpdate.State.UNKNOWN, "data.version.unknown");
 
-    private Component versionLabel() {
-        TranslationUpdate.State state = versionState();
-        Component text = Component.literal(T.s(VERSION_KEY.get(state)));
-        return switch (state) {
-            case LATEST -> text.copy().withStyle(ChatFormatting.GREEN);
-            case BEHIND -> text.copy().withStyle(ChatFormatting.YELLOW);
-            case UNKNOWN -> text.copy().withStyle(ChatFormatting.RED);
-            default -> text;
-        };
-    }
-
-    /**
-     * 那一份譯文的版本，講給人看的寫法。
-     *
-     * <h2>為什麼不印 SHA</h2>
-     * 先前印的是 commit 的前七碼（{@code a1b2c3d}）。使用者回報那看起來像亂碼
-     * ——確實是：那串字對玩家不表達任何東西，兩個版本擺在一起也看不出哪個新。
-     * 版本號要回答的是「我手上這份是<b>什麼時候</b>的」，所以改印日期。
-     *
-     * <p>新舊的判斷完全沒有跟著改：那一列是綠是黃，比的還是 SHA
-     * （{@link TranslationUpdate#verdict}）。日期只負責顯示——同一天合兩次的話
-     * 兩份的日期會一樣，但狀態那一列照樣分得出來。
-     *
-     * <h2>沒有日期的時候</h2>
-     * 沒同步過就說「內建」——那是 jar 裡打包的那一份，沒有 commit 可以報。
-     * 從舊版升上來的人 SHA 有而日期沒有，暫時退回短碼；下一次問版本就會補上
-     * （見 {@code TranslationUpdate#adoptDate}），不必等到真的有新譯文。
-     */
     private static String shortVersion(String sha, String date) {
         return TranslationUpdate.label(sha, date, T.s("data.version.bundled"));
     }
 
-    /** 正在問版本。 */
-    private boolean checkingVersion;
-
-    /**
-     * 「譯文版本」那一列。
-     *
-     * <h2>為什麼要有</h2>
-     * 「我明明更新到最新版了，怎麼還有沒翻的」這個問題，玩家在遊戲裡<b>無從判斷</b>：
-     * 模組版本看得到，譯文版本看不到。而譯文是從 GitHub 同步的，跟模組版本無關——
-     * 手上的 jar 是最新的，譯文卻可能是兩週前那一份（斷網、API 額度用完、
-     * 關掉自動更新之後沒再按過）。
-     *
-     * <p>所以這一列直接把三件事分開講：本機這份是哪一個 commit、GitHub 上最新是
-     * 哪一個、兩者一不一樣。<b>問不到的時候說問不到</b>，不假裝是最新——
-     * 見 {@link TranslationUpdate#checked}。
-     *
-     * <p>按鈕按下去只問版本，不抓檔案（{@link WynnChaYuan#recheckTranslationVersion}）。
-     * 要真的更新是上面那一顆。
-     */
-    private void versionRow() {
-        versionButton = action("data.version", versionHint(), versionLabel(), () -> {
-            if (checkingVersion) {
-                return;
-            }
-            if (WynnChaYuan.config().source() != CollectorConfig.Source.GITHUB) {
-                say(T.c("data.version.local.hint").withStyle(ChatFormatting.GRAY));
-                return;
-            }
-            checkingVersion = true;
-            versionButton.setMessage(versionLabel());
-            WynnChaYuan.recheckTranslationVersion(() -> {
-                checkingVersion = false;
-                versionButton.setMessage(versionLabel());
-                say(Component.literal(versionHint()).withStyle(
-                        versionState() == TranslationUpdate.State.LATEST
-                                ? ChatFormatting.GREEN : ChatFormatting.YELLOW));
-            });
-        });
-    }
-
-    private Button versionButton;
-
-    /** 那一列的說明：把手上這份與遠端那份的日期攤開來，看得出到底差在哪。 */
     private String versionHint() {
-        String local = shortVersion(WynnChaYuan.config().syncedTranslations(),
-                                    WynnChaYuan.config().syncedTranslationsDate());
+        String local = shortVersion(cfg().syncedTranslations(), cfg().syncedTranslationsDate());
         return switch (versionState()) {
             case LOCAL -> T.s("data.version.local.hint");
             case CHECKING -> T.s("data.version.checking");
             case LATEST -> T.s("data.version.latest.hint", local);
-            // 遠端那一份的日期是這一次剛問到的，不是設定檔裡那個
             case BEHIND -> T.s("data.version.behind.hint", local,
                     shortVersion(TranslationUpdate.seen(), RemoteSync.lastRemoteDate()));
             case UNKNOWN -> T.s("data.version.unknown.hint", local);
         };
     }
 
-    private static String onOff(boolean on) {
-        return T.s(on ? "mode.on" : "mode.off");
-    }
-
-    // ------------------------------------------------------------ 動作
-
-    /** 秒數以 0 表示持續顯示，比「999」直觀。 */
-    private String holdSeconds() {
-        int ms = WynnChaYuan.config().dialogueHoldMs();
-        return ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000);
-    }
-
-    private void applySeconds() {
-        if (WynnChaYuan.config().setDialogueHoldSeconds(dialogueHoldBox.getValue())) {
-            dialogueHoldBox.setValue(holdSeconds());
-            say(T.c("status.hold.ok").withStyle(ChatFormatting.GREEN));
-        } else {
-            say(T.c("status.hold.bad")
-                    .withStyle(ChatFormatting.RED));
+    private void recheckVersion() {
+        if (checkingVersion) {
+            return;
         }
-    }
-
-    private void applyGap() {
-        if (WynnChaYuan.config().setPanelGap(gapBox.getValue())) {
-            // 超出範圍會被夾住，把實際生效的值寫回去，免得使用者以為沒生效
-            gapBox.setValue(String.valueOf(WynnChaYuan.config().panelGap()));
-            say(T.c("status.gap.ok").withStyle(ChatFormatting.GREEN));
-        } else {
-            say(T.c("status.gap.bad")
-                    .withStyle(ChatFormatting.RED));
+        if (!github()) {
+            say(T.s("data.version.local.hint"), Ui.TEXT_3);
+            return;
         }
+        checkingVersion = true;
+        WynnChaYuan.recheckTranslationVersion(() -> {
+            checkingVersion = false;
+            say(versionHint(),
+                    versionState() == TranslationUpdate.State.LATEST ? Ui.GREEN : Ui.AMBER);
+        });
     }
 
-    /** 套用色碼；格式不對就講清楚並還原，不要靜靜地忽略。 */
-    private void applyColor() {
-        if (WynnChaYuan.config().setAccentColor(colorBox.getValue())) {
-            colorBox.setValue(WynnChaYuan.config().accentColor());
-            say(T.c("status.colour.ok").withStyle(ChatFormatting.GREEN));
-        } else {
-            colorBox.setValue(WynnChaYuan.config().accentColor());
-            say(T.c("status.colour.bad").withStyle(ChatFormatting.RED));
-        }
-    }
-
-    /**
-     * 取得最新譯文。
-     *
-     * <p>「最新」是什麼意思要看譯文來源：設在 GitHub 就得<b>重新連線抓</b>，
-     * 只重讀本機檔案的話讀到的還是同一份舊快取——譯者在 GitHub 上改完之後
-     * 按這個按鈕沒反應，就是因為這個。
-     */
     private void reload() {
-        if (WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB) {
-            say(T.c("status.fetching").withStyle(ChatFormatting.GRAY));
+        if (github()) {
+            say(T.s("status.fetching"), Ui.TEXT_3);
             fetching = true;
-            reloadButton.active = false;
             WynnChaYuan.resyncTranslations(result -> {
                 fetching = false;
-                reloadButton.active = true;
                 report(result, WynnChaYuan.translations().size() > 0);
             });
             return;
         }
         WynnChaYuan.reloadTranslations();
-        report(WynnChaYuan.translations().lastResult(),
-                WynnChaYuan.translations().size() > 0);
+        report(WynnChaYuan.translations().lastResult(), WynnChaYuan.translations().size() > 0);
     }
 
+    /** 結果同時寫進狀態列與聊天：聊天留得久，按完切回遊戲還看得到。 */
     private void report(String result, boolean ok) {
-        say(Component.literal((ok ? "✔ " : "✘ ") + result)
-                .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED));
+        say((ok ? "✔ " : "✘ ") + result, ok ? Ui.GREEN : Ui.RED);
         if (this.minecraft != null && this.minecraft.player != null) {
             Component line = Component.literal("[WynnChaYuan] " + result)
                     .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED);
             com.wynnchayuan.capture.OwnOutputs.note(line);
             this.minecraft.player.displayClientMessage(line, false);
         }
+    }
+
+    private void exportCorpus() {
+        CaptureStore store = WynnChaYuan.store();
+        java.nio.file.Path dir = WynnChaYuan.configDir();
+        if (store == null || dir == null) {
+            return;
+        }
+        say(T.s("data.export.working"), Ui.TEXT_3);
+        Minecraft client = Minecraft.getInstance();
+        Thread worker = new Thread(() -> {
+            try {
+                CorpusExport.Result result = CorpusExport.write(
+                        dir, store, WynnChaYuan.version(), WynnChaYuan.language());
+                client.execute(() -> {
+                    if (result.count() == 0) {
+                        say(T.s("data.export.empty"), Ui.TEXT_3);
+                    } else {
+                        say(T.s("data.export.done", result.count()), Ui.GREEN);
+                    }
+                    Util.getPlatform().openPath(result.file().getParent());
+                });
+            } catch (Exception e) {
+                client.execute(() -> say(T.s("data.export.failed", String.valueOf(e.getMessage())),
+                        Ui.RED));
+            }
+        }, WynnChaYuan.MOD_ID + "-export");
+        worker.setDaemon(true);
+        worker.start();
+    }
+
+    // ------------------------------------------------------------ 給畫面問的事
+
+    private final class Host implements SettingsView.Host {
+
+        @Override
+        public int accent() {
+            return cfg().themeARGB();
+        }
+
+        @Override
+        public int frame() {
+            return cfg().accentARGB();
+        }
+
+        @Override
+        public int tone(Row.Tone tone) {
+            int accent = cfg().themeARGB();
+            return switch (tone) {
+                case REPLACE -> ModeColours.replace(accent);
+                case BOTH -> ModeColours.both(accent);
+                case OFF -> 0x40FFFFFF;
+                default -> accent;
+            };
+        }
+
+        @Override
+        public String tr(String key, Object... args) {
+            return T.s(key, args);
+        }
+
+        @Override
+        public String title() {
+            return "WynnChaYuan";
+        }
+
+        @Override
+        public String tagline() {
+            return T.s("header.tagline");
+        }
+
+        @Override
+        public String version() {
+            return "v" + WynnChaYuan.version();
+        }
+
+        @Override
+        public SettingsView.Status status() {
+            if (!status.isEmpty()
+                    && (fetching || System.currentTimeMillis() - statusAt < STATUS_MS)) {
+                return new SettingsView.Status(status, statusColour);
+            }
+            int size = WynnChaYuan.translations().size();
+            return new SettingsView.Status(T.s("footer.hint", String.format("%,d", size)),
+                    size > 0 ? Ui.TEXT_3 : Ui.RED);
+        }
+
+        @Override
+        public boolean hasUpdate() {
+            return com.wynnchayuan.Releases.newer() != null;
+        }
+
+        @Override
+        public boolean blurred() {
+            Minecraft mc = Minecraft.getInstance();
+            return mc.options.getMenuBackgroundBlurriness() > 0;
+        }
+
+        @Override
+        public void openNotice() {
+            SettingsScreen.this.minecraft.setScreen(new NoticeScreen(SettingsScreen.this));
+        }
+
+        @Override
+        public void openUpdates() {
+            SettingsScreen.this.minecraft.setScreen(new ReleaseNotesScreen(SettingsScreen.this));
+        }
+
+        @Override
+        public void openCredits() {
+            SettingsScreen.this.minecraft.setScreen(new CreditsScreen(SettingsScreen.this));
+        }
+
+        @Override
+        public void done() {
+            // 選了語言沒按「套用」就按完成：當作要套用。不然選了等於沒選，
+            // 而且畫面關掉之後沒有任何地方會告訴玩家那一下沒有生效。
+            if (pendingLanguage != null) {
+                applyLanguage();
+            } else if (pendingFallback != null) {
+                applyFallback();
+            }
+            onClose();
+        }
+
+        @Override
+        public String clipboard() {
+            return Minecraft.getInstance().keyboardHandler.getClipboard();
+        }
+
+        @Override
+        public void setClipboard(String text) {
+            Minecraft.getInstance().keyboardHandler.setClipboard(text);
+        }
+
+        @Override
+        public void click() {
+            Minecraft.getInstance().getSoundManager()
+                    .play(SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0f));
+        }
+
+        @Override
+        public Preview.State preview() {
+            return previewState();
+        }
+
+        @Override
+        public void resetDone(String what) {
+            say(T.s("reset.done", what), cfg().themeARGB());
+        }
+    }
+
+    private final Preview.State previewState = new Preview.State();
+
+    /** 預覽要看的值，每一幀從設定填一次。 */
+    private Preview.State previewState() {
+        Preview.State s = previewState;
+        CollectorConfig c = cfg();
+        s.tooltipMode = c.tooltipMode().ordinal();
+        s.names = c.itemNames().ordinal();
+        s.anchorFixed = c.panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
+        s.side = c.panelSide().ordinal();
+        s.gap = c.panelGap();
+        s.dialogueMode = c.dialogueMode().ordinal();
+        s.choiceMode = c.choiceMode().ordinal();
+        s.holdSeconds = holdSeconds();
+        s.overlays = c.showOverlays();
+        s.nametag = c.nametagMode().ordinal();
+        s.chat = c.chatMode().ordinal();
+        s.titles = c.translateTitles();
+        s.bossbar = c.translateBossBar();
+        s.tracker = switch (c.trackerMode()) {
+            case REPLACE -> 0;
+            case PANEL -> 1;
+            case OFF -> 2;
+        };
+        s.objectives = c.translateObjectives();
+        s.scoreboard = c.translateScoreboard();
+        s.heldItem = c.translateHeldItem();
+        s.loaded = WynnChaYuan.translations().size();
+        s.loadedLabel = T.s("preview.loaded");
+        s.panelOffNote = T.s("preview.panel.off");
+        String lang = c.language();
+        String under = WynnChaYuan.fallbackLanguage();
+        s.facts = new String[][] {
+            {T.s("data.language"), Languages.nativeName(
+                    lang.isEmpty() ? WynnChaYuan.autoLanguage() : lang)},
+            {T.s("data.fallback"), under == null ? T.s("data.fallback.off")
+                    : Languages.nativeName(under)},
+            {T.s("data.source"), T.s(github() ? "data.source.github" : "data.source.local")},
+            {T.s("data.version"), T.s(VERSION_KEY.get(versionState())), "version"},
+        };
+        s.versionColour = switch (versionState()) {
+            case LATEST -> Ui.GREEN;
+            case BEHIND -> Ui.AMBER;
+            case UNKNOWN -> Ui.RED;
+            default -> Ui.TEXT_2;
+        };
+        s.translate = SettingsScreen::previewLookup;
+        return s;
+    }
+
+    /**
+     * 預覽用的查表：只要譯文本身，不要語料順手附上的原文。
+     *
+     * <h2>為什麼不能直接用 lookup</h2>
+     * 物品名稱設成「譯名加原文」時，{@code lookup} 回來的就已經是
+     * 「骨弓 (Bony Bow)」。預覽自己會照設定再接一次原文，於是畫成
+     * 「骨弓 (Bony Bow) (Bony Bow)」（使用者 2026-10-09 回報）。
+     * 預覽要示範的是「三種模式各長什麼樣」，接不接原文由它自己決定，
+     * 所以這裡把語料附的那一段拿掉。
+     */
+    static String previewLookup(String text) {
+        var store = WynnChaYuan.translations();
+        String hit = store.lookup(text);
+        if (hit == null || hit.isBlank()) {
+            return text;
+        }
+        return Preview.bareName(hit, text, store.appendedOriginalAt(hit));
+    }
+
+    // ------------------------------------------------------------ 遊戲事件
+
+    @Override
+    public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
+        Minecraft mc = Minecraft.getInstance();
+        int guiScale = (int) mc.getWindow().getGuiScale();
+        GuiCanvas canvas = new GuiCanvas(g, this.font, guiScale);
+        canvas.begin();
+        try {
+            // 滑鼠座標給的是整數的 GUI 像素；問視窗可以拿到小數，拖滑桿才不會一格一格跳
+            double mx = mc.mouseHandler.xpos() * mc.getWindow().getGuiScaledWidth()
+                    / Math.max(1, mc.getWindow().getScreenWidth());
+            double my = mc.mouseHandler.ypos() * mc.getWindow().getGuiScaledHeight()
+                    / Math.max(1, mc.getWindow().getScreenHeight());
+            view.render(canvas, this.width, this.height, mx, my, Util.getMillis());
+        } finally {
+            canvas.end();
+        }
+    }
+
+    @Override
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        return view.mouseDown(event.x(), event.y(), event.button());
+    }
+
+    @Override
+    public boolean mouseDragged(MouseButtonEvent event, double dx, double dy) {
+        return view.mouseDrag(event.x(), event.y());
+    }
+
+    @Override
+    public boolean mouseReleased(MouseButtonEvent event) {
+        return view.mouseUp();
+    }
+
+    @Override
+    public boolean mouseScrolled(double mouseX, double mouseY, double dx, double dy) {
+        return view.scroll(dy);
+    }
+
+    @Override
+    public boolean keyPressed(KeyEvent event) {
+        // GLFW 的修飾鍵位元：2 是 Ctrl、8 是 Super（mac 的 Cmd）
+        boolean ctrl = (event.modifiers() & (2 | 8)) != 0;
+        if (view.key(event.key(), ctrl)) {
+            return true;
+        }
+        return super.keyPressed(event);
+    }
+
+    @Override
+    public boolean charTyped(CharacterEvent event) {
+        return view.typed(event.codepointAsString());
+    }
+
+    @Override
+    public void onClose() {
+        cfg().saveIfDirty();
+        lastTab = view == null ? lastTab : view.tab();
+        this.minecraft.setScreen(parent);
+    }
+
+    @Override
+    public void removed() {
+        // 切到子畫面（調整位置、更新說明）也會經過這裡：拖到一半的值先落地
+        cfg().saveIfDirty();
+        if (view != null) {
+            lastTab = view.tab();
+        }
+        super.removed();
+    }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
     }
 }

@@ -147,7 +147,7 @@ public final class NameWrapTest {
      * 第一版把開頭那截徽記留在第一行、第二行從零開始，畫出來是：
      *
      * <pre>
-     *       橡木法杖
+     *       橡木魔杖
      *   (Oak Wood Wand)      ← 貼著最左邊，比名字凸出去一截
      * </pre>
      *

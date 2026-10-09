@@ -36,31 +36,37 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 | 探索點、祕密發現 | 名稱、說明與故事 |
 | 畫面中央大字 | 標題與副標題 |
 
-裝備名稱預設保留原文——那是專有名詞，交易市場與 wiki 都用英文。F6 可以打開。
+裝備名稱預設保留原文——那是專有名詞，交易市場與 wiki 都用英文。設定裡可以打開。
 
 ### 其他
 
 - **譯文自動更新**：譯文從 GitHub 下載，新的翻譯合併後下次進遊戲就生效，**不必更新模組**。離線時用上次的快取或 jar 內建版本
-- **市集搜尋**：在交易市集用你的語言搜尋，送出前自動換回英文原名；打字時列出候選，↑↓ 選、Tab 填入
+- **市集搜尋**：在交易市集用你的語言搜尋，送出前自動換回英文原名；打字時列出候選，↑↓ 選、Tab 填入。裝了 [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) 的話，它的搜尋面板也能直接打譯名
 - **複製聊天**：列出最近的聊天訊息，點一則複製，方便回報（按鍵預設沒綁）
-- **譯文截圖**：**F9** 把翻譯面板複製到剪貼簿或存成檔案（可改綁）
+- **譯文截圖**：把翻譯面板複製到剪貼簿或存成檔案（按鍵預設沒綁）
 - **面板調整**：小框都能拖曳定位；對話、選項、任務追蹤可拉右下角改大小
 - **更新提示**：有新版時在聊天室提示一次，連到 GitHub Releases
 - **貢獻者標記**：名單上的人，名牌上方多一行標記，只有裝了本模組的人看得到（可關）
 
 **純客戶端**，伺服器不需要裝。
 
-### F6 設定
+### 設定
+
+三種開法，挑順手的：
+
+- [Mod Menu](https://modrinth.com/mod/modmenu) 的模組清單 → WynnChaYuan → 設定
+- 聊天輸入 `/wcy`（或 `/wynnchayuan`）
+- 到遊戲的「按鍵設定」→ WynnChaYuan，自己綁一個鍵（**預設不綁**，不佔你的按鍵）
 
 | 分頁 | 內容 |
 |---|---|
 | 物品 | 物品翻譯（另開面板／就地取代／關閉）、翻譯物品名稱、市集搜尋、譯文截圖 |
-| 面板 | 跟隨滑鼠或固定、放在哪一側、間距、框線顏色、調整面板位置 |
+| 面板 | 跟隨滑鼠或固定、放在哪一側、間距、調整面板位置；風格顏色（設定畫面自己的主題色）與框線顏色（遊戲裡小框的框）分開設 |
 | 對話 | 任務對話、對話選項（另開小框／就地取代／關閉）、停留秒數、對話／追蹤小框 |
 | 世界與聊天 | 名牌與漂浮字（含偵測距離與準心夾角）、聊天訊息、畫面中央大字、複製聊天 |
 | 資料 | 譯文語言、輔助語言、介面語言、譯文來源、重新載入、收集未翻譯字串、收集介面文字、匯出未翻譯字串、如何提交、診斷檔 |
 
-滑鼠移到項目上會顯示說明。
+滑鼠移到項目上會顯示說明；左上可以搜尋設定，右邊的預覽會跟著你調的值即時變化。
 
 ## 支援語言與進度
 
@@ -73,20 +79,20 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 | `ko_kr` 한국어 | 所有內容，含任務對話 |
 | `es_es` Español | 所有內容，含任務對話 |
 
-在 **F6 →「資料」** 切換，不必改遊戲語言，也不用重開：
+在 **設定 →「資料」** 切換，不必改遊戲語言，也不用重開：
 
 - **譯文語言**：看哪一種語言的翻譯
 - **輔助語言**：譯文語言還沒翻到的句子改顯示哪一種（或原文）
-- **介面語言**：F6 設定畫面本身的語言（另有英文）
+- **介面語言**：設定畫面本身的語言（另有英文）
 
 <!-- 進度:開始 -->
 更新於 2026-10-09 / Updated 2026-10-09
 
-**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
+**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
 **大概翻到哪**：6 種語言目前都在 **95% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
 
-**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (F6, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
+**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (settings, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
 
 **Roughly how far**: every language is past **95%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
 
@@ -104,7 +110,20 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 1. 下載 jar：[GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
    [Modrinth](https://modrinth.com/mod/wynnchayuan) ·
    [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan)
-2. 放進 `mods/`，進遊戲按 **F6** 開設定。
+2. 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設定。
+
+### 模組相容
+
+| 模組 | 關係 | 說明 |
+|---|---|---|
+| [Wynntils](https://modrinth.com/mod/wynntils) 4.2 以上 | **必要** | 物品、任務、聊天的資料都從它來；它自己的畫面（綜合頁面、地圖、任務與洞穴名稱）也會翻 |
+| [Fabric API](https://modrinth.com/mod/fabric-api) | **必要** | |
+| [Mod Menu](https://modrinth.com/mod/modmenu) | 選裝，有支援 | 模組清單上多一顆設定按鈕 |
+| [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) | 選裝，有支援 | 它的搜尋面板打譯名也找得到，結果列在英文名旁邊附上譯名；送出去的仍是英文名 |
+| [WynnMod](https://modrinth.com/mod/wynnmod) | 相容 | 它用來判斷討伐戰結果的那幾句話，裝了它的時候保留英文，連勝才不會算錯（沒裝的人照常看到譯文） |
+| 會在 tooltip 加區塊的模組（Nori、Wynnpool…） | 相容 | 那些區塊照原樣留著。翻譯面板因此比原文多出幾行時，把區塊標籤填進 `config/wynnchayuan/third-party-sections.json` 就會濾掉 |
+
+沒列在上面的模組多半也能一起用：本模組只在客戶端換畫面上的字。遇到衝突請[開 Issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 並附上模組清單。
 
 ## 翻到一半變回英文？
 
@@ -116,9 +135,9 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 
 任務對話與 NPC 名牌沒有官方資料可抓，只能靠玩家在遊戲裡遇到。**不用翻任何東西**，把你遇到的缺口交給我們就好：
 
-1. **F6 →「資料」→「匯出未翻譯字串」**，會打開 `config/wynnchayuan/export`，裡面是 `captured.json`。
+1. **設定 →「資料」→「匯出未翻譯字串」**，會打開 `config/wynnchayuan/export`，裡面是 `captured.json`。
 2. 打開檔案看一遍，刪掉任何個人資訊（別人的名字、公會名、私人對話）。
-3. **F6 →「資料」→「如何提交」**打開 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)，把檔案拖進去；或在 Discord 傳給 **LyuChaCha**。
+3. **設定 →「資料」→「如何提交」**打開 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)，把檔案拖進去；或在 Discord 傳給 **LyuChaCha**。
 
 模組**不會自動送出任何東西**。匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊，但濾網是猜的，送出前請自己看過。
 
@@ -132,7 +151,7 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 - [GLOSSARY.md](GLOSSARY.md)：專有名詞對照
 - [給翻譯團隊](docs/for-translators.md)：最近的慣例與改動
 
-想在遊戲裡試自己的譯文：F6 把「譯文來源」切成**本機**，改完按「重新載入」。
+想在遊戲裡試自己的譯文：到設定把「譯文來源」切成**本機**，改完按「重新載入」。
 
 ## 從原始碼建置
 
@@ -147,11 +166,11 @@ gradle build
 
 免費，也會一直免費。想請我們喝杯茶：**<https://ko-fi.com/lyuchacha>**
 
-每月 **3 USD** 或單次 **10 USD** 以上列入贊助者名單：出現在下方、F6 →「關於／貢獻者」，名牌上方也會多一行標記。贊助不影響翻譯內容，沒有付費功能。
+每月 **3 USD** 或單次 **10 USD** 以上列入贊助者名單：出現在下方、設定 →「關於／貢獻者」，名牌上方也會多一行標記。贊助不影響翻譯內容，沒有付費功能。
 
 ## 翻譯團隊
 
-同一份名單也在遊戲內 **F6 →「關於／貢獻者」**。要加人改 [`credits.json`](src/main/resources/assets/wynnchayuan/credits.json)。
+同一份名單也在遊戲內 **設定 →「關於／貢獻者」**。要加人改 [`credits.json`](src/main/resources/assets/wynnchayuan/credits.json)。
 
 <!-- credits:begin -->
 

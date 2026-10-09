@@ -2,269 +2,229 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.render.Colors;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.EditBox;
+import com.wynnchayuan.client.ui.Icons;
+import com.wynnchayuan.client.ui.Preview;
+import com.wynnchayuan.client.ui.Row;
+import com.wynnchayuan.client.ui.SettingsView;
+import com.wynnchayuan.client.ui.Surface;
+import com.wynnchayuan.client.ui.Ui;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
+
+import java.util.List;
 
 /**
- * NPC 名牌的細項設定。
+ * 名牌的進階設定：怎麼顯示，以及什麼情況下才算「你在看它」。
  *
- * <p>拉出來獨立一頁，是因為這幾項只有在「調到剛好」的時候才會去碰，
- * 平常擠在主設定裡只會讓那張卡片變得很長很難掃。
- *
- * <p>距離與夾角沒有一個值兩邊都好用：城裡 NPC 站得密，錐要收窄才不會一直
- * 抓到後排；曠野找人則希望掃過去就跳出來。所以做成可調而不是挑一個折衷值。
+ * <p>從設定畫面「世界與聊天 → 名牌與漂浮字」旁邊的「進階…」進來。內容只有四列，
+ * 用的是跟設定畫面同一套列（{@link SettingsView} 的小視窗模式）——分段、滑桿、
+ * 逐項重置、滑過的說明都一樣，不另外做一套。
  */
-public final class NametagScreen extends Screen {
+public final class NametagScreen extends CanvasScreen {
 
-    /**
-     * 面板寬度。
-     *
-     * <p>先前寫死 220，說明文字比它長就直接畫出框外。改成量過每一行再決定——
-     * 中文與英文的寬度差很多，其他語言的說明也未必跟中文一樣長，
-     * 寫死任何一個數字都只是把問題往後推。
-     */
-    private int W = 220;
-
-    /** 面板至少這麼寬，免得只有短句時縮成一條。 */
-    private static final int MIN_W = 220;
-
-    /** 面板上緣要離第一個按鈕多遠。副標題畫在面板外，這個值得留得下它。 */
-    private static final int PANEL_PAD = 14;
-
-    /**
-     * 一個輸入欄位佔多高（說明 + 輸入框 + 間距）。
-     *
-     * <p>說明畫在<b>輸入框上方</b>。先前是畫在下方，於是每一行說明看起來都在
-     * 標示<b>下一個</b>欄位——「停留秒數」看起來標到了偵測距離的框，
-     * 最後一行說明還掉出面板外面。
-     */
-    private static final int FIELD_ROW = 37;
-
-    /**
-     * 第一個輸入欄位離面板頂端多遠。上面放模式按鈕與它的但書。
-     *
-     * <p>先前是 47，模式的但書跟第一個欄位的標題正好只差一行高，兩行黏在一起
-     * 看起來像同一段——標題就好像在解釋上面那句話，而不是下面那個框。
-     */
-    private static final int FIRST_FIELD = 60;
-
-    /** 說明離它所標示的輸入框多高。 */
-    private static final int LABEL_LIFT = 11;
-
-    private final Screen parent;
-
-    private EditBox holdBox;
-    private EditBox rangeBox;
-    private EditBox angleBox;
-    private Component status = Component.empty();
+    private final SettingsView view;
+    private final Preview.State preview = new Preview.State();
 
     public NametagScreen(Screen parent) {
-        super(T.c("nametag.title"));
-        this.parent = parent;
-    }
-
-    private int left() {
-        return this.width / 2 - W / 2;
-    }
-
-    private int top() {
-        return 62;
-    }
-
-    /** 面板裡會畫到的每一行說明。寬度就是照它們量出來的。 */
-    private String[] insideLines() {
-        return new String[] {
-            modeHint(),
-            T.s("nametag.hold"),
-            T.s("nametag.range"),
-            T.s("nametag.angle"),
-        };
-    }
-
-    /**
-     * 畫在面板<b>外面</b>、但橫跨面板的幾行：副標題與底部那句提示。
-     *
-     * <p>它們是照畫面中心置中的，面板也是——所以只要它們比面板寬就會兩頭露出來，
-     * 看起來像「字跑出格子」。量寬度時得把它們算進去。
-     */
-    private String[] aroundLines() {
-        return new String[] {
-            T.s("nametag.about1"),
-            T.s("nametag.about2"),
-        };
-    }
-
-    private int measure() {
-        int widest = MIN_W;
-        for (String line : insideLines()) {
-            widest = Math.max(widest, this.font.width(line) + 8);
-        }
-        for (String line : aroundLines()) {
-            // 面板本身比 W 多 20（左右各 10），所以外圍的行只要不超過那個就好
-            widest = Math.max(widest, this.font.width(line) + 8 - 20);
-        }
-        return Math.max(widest, this.font.width(modeLabel()) + 20);
+        super(T.c("nametag.title"), parent);
+        this.view = new SettingsView(List.of(new Row.Tab("nametag", () -> T.s("nametag.title"),
+                () -> T.s("nametag.about1"), Icons.Icon.COMPASS, Preview.Scene.WORLD,
+                List.of(new Row.Group(() -> T.s("world.nametag"), false, rows())))),
+                new Host(), 0, true);
     }
 
     @Override
-    protected void init() {
-        W = measure();
-        int x = left();
-        int y = top();
-
-        addRenderableWidget(Button.builder(modeLabel(), b -> {
-            WynnChaYuan.config().cycleNametagMode();
-            b.setMessage(modeLabel());
-        }).bounds(x, y, W, 20).build());
-
-        holdBox = field(x, fieldY(0), hold());
-        addRenderableWidget(Button.builder(T.c("button.apply"),
-                b -> apply(Field.HOLD)).bounds(x + W - 42, fieldY(0), 42, 20).build());
-
-        rangeBox = field(x, fieldY(1),
-                trim(WynnChaYuan.config().nametagRange()));
-        addRenderableWidget(Button.builder(T.c("button.apply"),
-                b -> apply(Field.RANGE)).bounds(x + W - 42, fieldY(1), 42, 20).build());
-
-        angleBox = field(x, fieldY(2),
-                trim(WynnChaYuan.config().nametagAngle()));
-        addRenderableWidget(Button.builder(T.c("button.apply"),
-                b -> apply(Field.ANGLE)).bounds(x + W - 42, fieldY(2), 42, 20).build());
-
-        addRenderableWidget(Button.builder(T.c("nametag.reset"), b -> resetAll())
-                .bounds(this.width / 2 - 105, this.height - 30, 100, 20).build());
-        addRenderableWidget(Button.builder(T.c("button.back"), b -> onClose())
-                .bounds(this.width / 2 + 5, this.height - 30, 100, 20).build());
+    protected Surface view() {
+        return view;
     }
 
-    /** 第 {@code index} 個輸入框的 y 座標。 */
-    private int fieldY(int index) {
-        return top() + FIRST_FIELD + index * FIELD_ROW;
+    private static CollectorConfig cfg() {
+        return WynnChaYuan.config();
     }
 
-    private EditBox field(int x, int y, String value) {
-        EditBox box = new EditBox(this.font, x, y, W - 46, 20, T.c("nametag.value"));
-        box.setValue(value);
-        box.setMaxLength(5);
-        addRenderableWidget(box);
-        return box;
+    private static int holdSeconds() {
+        int ms = cfg().nametagHoldMs();
+        return ms == Integer.MAX_VALUE ? 0 : ms / 1000;
     }
 
-    private enum Field { HOLD, RANGE, ANGLE }
-
-    private void apply(Field which) {
-        CollectorConfig cfg = WynnChaYuan.config();
-        boolean ok = switch (which) {
-            case HOLD -> cfg.setNametagHoldSeconds(holdBox.getValue());
-            case RANGE -> cfg.setNametagRange(rangeBox.getValue());
-            case ANGLE -> cfg.setNametagAngle(angleBox.getValue());
-        };
-        // 不管成不成功都把框裡的值換成「實際生效」的值 ——
-        // 輸入 999 被夾成 64 的話，框裡還留著 999 會讓人以為沒生效
-        refresh();
-        status = ok
-                ? T.c("nametag.applied").withStyle(ChatFormatting.GREEN)
-                : T.c("nametag.notanumber").withStyle(ChatFormatting.RED);
-    }
-
-    private void resetAll() {
-        CollectorConfig cfg = WynnChaYuan.config();
-        cfg.setNametagHoldSeconds("1");
-        cfg.setNametagRange("24");
-        cfg.setNametagAngle("6");
-        refresh();
-        status = T.c("nametag.reset.done").withStyle(ChatFormatting.GREEN);
-    }
-
-    private void refresh() {
-        CollectorConfig cfg = WynnChaYuan.config();
-        holdBox.setValue(hold());
-        rangeBox.setValue(trim(cfg.nametagRange()));
-        angleBox.setValue(trim(cfg.nametagAngle()));
-    }
-
-    private static String hold() {
-        int ms = WynnChaYuan.config().nametagHoldMs();
-        return ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000);
-    }
-
-    /** 整數就不要顯示小數點，24.0 看起來像是可以填很精細的東西。 */
-    private static String trim(double value) {
-        return value == Math.floor(value)
-                ? String.valueOf((int) value) : String.valueOf(value);
-    }
-
-    private Component modeLabel() {
-        String name = T.s(switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "mode.off";
-            case LOOK_AT -> "nametag.mode.lookat";
-            case REPLACE -> "nametag.mode.replace";
-        });
-        // 標籤用半形冒號，跟語料一致
-        return T.c("nametag.label", name);
-    }
-
-    /** 目前這個模式的但書。 */
-    private String modeHint() {
-        return T.s(switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "nametag.desc.off";
-            case LOOK_AT -> "nametag.desc.lookat";
-            case REPLACE -> "nametag.desc.replace";
-        });
+    private static List<Row> rows() {
+        Runnable next = () -> cfg().cycleNametagMode();
+        return List.of(
+                Row.segment("nametag.mode", () -> T.s("world.nametag"),
+                                () -> T.s(switch (cfg().nametagMode()) {
+                                    case OFF -> "nametag.desc.off";
+                                    case LOOK_AT -> "nametag.desc.lookat";
+                                    case REPLACE -> "nametag.desc.replace";
+                                }))
+                        .option(T.s("mode.lookat"), Row.Tone.ACCENT)
+                        .option(T.s("mode.replace"), Row.Tone.REPLACE)
+                        .option(T.s("mode.off"), Row.Tone.OFF)
+                        .selected(() -> cfg().nametagMode().ordinal())
+                        .pick(i -> {
+                            for (int n = 0; n < 3 && cfg().nametagMode().ordinal() != i; n++) {
+                                next.run();
+                            }
+                        })
+                        .reset(() -> cfg().nametagMode() == CollectorConfig.NametagMode.REPLACE,
+                                () -> {
+                                    for (int n = 0; n < 3 && cfg().nametagMode()
+                                            != CollectorConfig.NametagMode.REPLACE; n++) {
+                                        next.run();
+                                    }
+                                }),
+                Row.slider("nametag.hold", () -> T.s("nametag.hold"), () -> T.s("nametag.about1"))
+                        .range(0, 15)
+                        .value(() -> Math.min(15, holdSeconds()))
+                        .slide(v -> cfg().setNametagHoldSecondsLive(v))
+                        .format(v -> v == 0 ? T.s("unit.forever") : T.s("unit.seconds", v))
+                        .commit(cfg()::saveIfDirty)
+                        .reset(() -> holdSeconds() == 1, () -> {
+                            cfg().setNametagHoldSecondsLive(1);
+                            cfg().saveIfDirty();
+                        }),
+                Row.slider("nametag.range", () -> T.s("nametag.range"), () -> T.s("nametag.about2"))
+                        .range(2, 64)
+                        .value(() -> (int) Math.round(cfg().nametagRange()))
+                        .slide(v -> cfg().setNametagRangeLive(v))
+                        .format(String::valueOf)
+                        .commit(cfg()::saveIfDirty)
+                        .reset(() -> Math.round(cfg().nametagRange()) == 6, () -> {
+                            cfg().setNametagRangeLive(6);
+                            cfg().saveIfDirty();
+                        }),
+                Row.slider("nametag.angle", () -> T.s("nametag.angle"), () -> T.s("nametag.about2"))
+                        .range(1, 45)
+                        .value(() -> (int) Math.round(cfg().nametagAngle()))
+                        .slide(v -> cfg().setNametagAngleLive(v))
+                        .format(v -> v + "°")
+                        .commit(cfg()::saveIfDirty)
+                        .reset(() -> Math.round(cfg().nametagAngle()) == 6, () -> {
+                            cfg().setNametagAngleLive(6);
+                            cfg().saveIfDirty();
+                        }));
     }
 
     @Override
-    public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
-        int x = left();
-        int y = top();
+    public void removed() {
+        cfg().saveIfDirty();
+        super.removed();
+    }
 
-        // 面板上下都要讓出空間給畫在外面的那兩行（副標題、底部提示）。
-        // 先前上緣只留 22，而副標題畫在 36——文字底部剛好壓在框線上；
-        // 底部提示也只隔 8，同樣貼著框。兩邊都加寬。
-        int panelTop = y - PANEL_PAD;
-        int panelBottom = fieldY(2) + 20 + 8;
-        Cards.panel(g, x - 10, panelTop, W + 20, panelBottom - panelTop);
-        super.render(g, mouseX, mouseY, delta);
+    private final class Host implements SettingsView.Host {
+        private String status = "";
+        private long statusAt;
 
-        g.drawCenteredString(this.font, this.title, this.width / 2, 22, Colors.TEXT);
-        g.drawCenteredString(this.font,
-                Component.literal(aroundLines()[0])
-                        .withStyle(ChatFormatting.GRAY),
-                this.width / 2, 36, Colors.SUBTLE);
-
-        // 模式按鈕的但書，緊接在按鈕下面——說的必須是<b>現在選的</b>那個模式。
-        // 先前這裡固定寫「取代原文則……」，於是選著「注視時顯示」的人看到的
-        // 是另一個模式的但書，跟按鈕上的字對不起來。
-        Cards.hint(g, this.font, x, y + 24, modeHint());
-
-        // 其餘每一行都是它「下方」那個輸入框的標題
-        String[] labels = insideLines();
-        for (int n = 0; n < 3; n++) {
-            Cards.hint(g, this.font, x, fieldY(n) - LABEL_LIFT, labels[n + 1]);
+        @Override
+        public int accent() {
+            return SHELL.accent();
         }
 
-        g.drawCenteredString(this.font,
-                Component.literal(aroundLines()[1])
-                        .withStyle(ChatFormatting.DARK_GRAY),
-                this.width / 2, panelBottom + 16, Colors.FAINT);
-
-        if (!status.getString().isEmpty()) {
-            g.drawCenteredString(this.font, status, this.width / 2, this.height - 46, Colors.TEXT);
+        @Override
+        public int frame() {
+            return SHELL.frame();
         }
-    }
 
-    @Override
-    public boolean isPauseScreen() {
-        return false;
-    }
+        @Override
+        public int tone(Row.Tone tone) {
+            int accent = cfg().themeARGB();
+            return switch (tone) {
+                case REPLACE -> ModeColours.replace(accent);
+                case BOTH -> ModeColours.both(accent);
+                case OFF -> 0x40FFFFFF;
+                default -> accent;
+            };
+        }
 
-    @Override
-    public void onClose() {
-        this.minecraft.setScreen(parent);
+        @Override
+        public String tr(String key, Object... args) {
+            return T.s(key, args);
+        }
+
+        @Override
+        public String title() {
+            return WynnChaYuan.MOD_NAME;
+        }
+
+        @Override
+        public String tagline() {
+            return "";
+        }
+
+        @Override
+        public String version() {
+            return "";
+        }
+
+        @Override
+        public SettingsView.Status status() {
+            if (!status.isEmpty() && System.currentTimeMillis() - statusAt < 4000) {
+                return new SettingsView.Status(status, cfg().themeARGB());
+            }
+            return new SettingsView.Status(T.s("nametag.about2"), Ui.TEXT_3);
+        }
+
+        @Override
+        public boolean hasUpdate() {
+            return false;
+        }
+
+        @Override
+        public boolean blurred() {
+            return SHELL.blurred();
+        }
+
+        @Override
+        public void openNotice() { }
+
+        @Override
+        public void openUpdates() { }
+
+        @Override
+        public void openCredits() { }
+
+        @Override
+        public void done() {
+            onClose();
+        }
+
+        @Override
+        public String clipboard() {
+            return Minecraft.getInstance().keyboardHandler.getClipboard();
+        }
+
+        @Override
+        public void setClipboard(String text) {
+            Minecraft.getInstance().keyboardHandler.setClipboard(text);
+        }
+
+        @Override
+        public void click() {
+            SHELL.click();
+        }
+
+        @Override
+        public Preview.State preview() {
+            CollectorConfig c = cfg();
+            preview.nametag = c.nametagMode().ordinal();
+            preview.chat = c.chatMode().ordinal();
+            preview.titles = c.translateTitles();
+            preview.bossbar = c.translateBossBar();
+            preview.tracker = switch (c.trackerMode()) {
+                case REPLACE -> 0;
+                case PANEL -> 1;
+                case OFF -> 2;
+            };
+            preview.objectives = c.translateObjectives();
+            preview.scoreboard = c.translateScoreboard();
+            preview.heldItem = c.translateHeldItem();
+            preview.translate = SettingsScreen::previewLookup;
+            return preview;
+        }
+
+        @Override
+        public void resetDone(String what) {
+            status = T.s("reset.done", what);
+            statusAt = System.currentTimeMillis();
+        }
     }
 }

@@ -4704,6 +4704,224 @@ public final class LineTranslator {
         return false;
     }
 
+    /** 一句話最多折成幾列。信標的敘述最長五、六列。 */
+    private static final int PANEL_RUN_MAX = 8;
+
+    /**
+     * 面板的一列拆開：行首的排版偏移、每一格的字、格與格之間的偏移。
+     *
+     * @param gaps 與 {@code cells} 等長：第 i 格<b>後面</b>的那段偏移（最後一格的通常是空的）
+     */
+    private record PanelRow(List<Run> lead, List<List<Run>> cells, List<List<Run>> gaps) {
+
+        /** 一則裡有好幾行的不是這條路管的，回 {@code null}。 */
+        static PanelRow parse(List<Run> runs) {
+            List<Run> lead = new ArrayList<>();
+            List<List<Run>> cells = new ArrayList<>();
+            List<List<Run>> gaps = new ArrayList<>();
+            List<Run> cell = null;
+            List<Run> gap = null;
+            boolean text = false;              // 目前這一格裡已經有實字了
+            for (Run run : runs) {
+                if (!run.space() && run.text().indexOf('\n') >= 0) {
+                    return null;
+                }
+                if (run.space() && cell == null && gap == null) {
+                    lead.add(run);             // 行首的偏移
+                } else if (run.space() && (gap != null || (text && run.px() > 0))) {
+                    if (gap == null) {         // 一段實字結束在一個正的間隔上：這一格收掉
+                        gap = new ArrayList<>();
+                        cells.add(cell);
+                        gaps.add(gap);
+                        cell = null;
+                        text = false;
+                    }
+                    gap.add(run);
+                } else {
+                    if (cell == null) {
+                        cell = new ArrayList<>();
+                        gap = null;
+                    }
+                    cell.add(run);
+                    text |= !run.space() && hasContent(run.text());
+                }
+            }
+            if (cell != null) {
+                cells.add(cell);
+                gaps.add(new ArrayList<>());
+            }
+            return new PanelRow(lead, cells, gaps);
+        }
+
+        static Component text(List<Run> cell) {
+            MutableComponent out = Component.empty();
+            for (Run run : cell) {
+                out.append(Component.literal(run.text()).withStyle(run.style()));
+            }
+            return out;
+        }
+
+        static boolean hasText(List<Run> cell) {
+            for (Run run : cell) {
+                if (!run.space() && hasContent(run.text())) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    /**
+     * 兩欄併排的面板：同一欄裡<b>折成好幾列的一句話</b>，併起來當一句翻。
+     *
+     * <h2>為什麼要有</h2>
+     * Lootrun 的信標面板是兩欄併排、一列一則訊息送來的，而每一欄的敘述是伺服器
+     * 自己折好的：
+     *
+     * <pre>
+     *   {#}[+5 Radiance Power]{#}Getting a Boon Type that you
+     *   {#}[+5 Radiance Power]{#}already have will grant +1
+     *   {#}[+5 Radiance Chance]{#}Pulls per duplicate. Your
+     * </pre>
+     *
+     * 一列一列查，查到的是半句（「{#}信標，於」「{#} (最多」）——中文的語序跟英文
+     * 不一樣，半句照原順序排出來不成句，而且左右兩欄任意配對，語料裡硬列了八百多條
+     * 成對的半句還是不夠。使用者 2026-10-08 點名的「Lootrun 語句不通順」就是這個。
+     *
+     * <p>但<b>整句</b>語料裡本來就有（Lootrun 選單上同一段敘述是整段收的）。所以
+     * 這裡把同一欄連續的幾格接起來查整句：查得到就整句翻，再照原本的列數切回去，
+     * 一格一格擺回原位；查不到的格子照舊逐格查。
+     *
+     * <h2>只有一格的列</h2>
+     * 短的那一欄講完之後，剩下的列只有一格，光看那一列分不出它是左欄還是右欄
+     * （要量字寬才知道，而且測試環境沒有字型）。所以兩欄都讓它試：只有「接起來
+     * 真的是語料裡的一句話」才算數，接錯欄的湊不成句。
+     *
+     * @param centred 每一列置不置中（{@link #chatCentred} 的結果），可以是 {@code null}
+     * @return 與 {@code rows} 等長；那一列沒有任何一格併成句子就是 {@code null}，
+     *         呼叫端照舊逐列翻
+     */
+    public static Component[] flowPanel(List<StyledText> rows, TranslationStore store,
+                                        boolean[] centred) {
+        int n = rows.size();
+        Component[] out = new Component[n];
+        List<PanelRow> parsed = new ArrayList<>(n);
+        int columns = 0;
+        for (StyledText row : rows) {
+            PanelRow one = PanelRow.parse(runs(row.getComponent()));
+            if (one == null) {
+                return out;
+            }
+            parsed.add(one);
+            columns = Math.max(columns, one.cells().size());
+        }
+        if (columns < 2) {
+            return out;                        // 不是多欄的面板
+        }
+        Component[][] made = new Component[n][];
+        for (int i = 0; i < n; i++) {
+            made[i] = new Component[parsed.get(i).cells().size()];
+        }
+        for (int col = 0; col < columns; col++) {
+            // 這一欄從上到下的格子：{列, 第幾格}
+            List<int[]> thread = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                int count = parsed.get(i).cells().size();
+                int cell = count == columns ? col : (count == 1 ? 0 : -1);
+                if (cell >= 0 && PanelRow.hasText(parsed.get(i).cells().get(cell))) {
+                    thread.add(new int[] {i, cell});
+                }
+            }
+            int s = 0;
+            while (s < thread.size()) {
+                int took = 0;
+                for (int len = Math.min(PANEL_RUN_MAX, thread.size() - s); len >= 2; len--) {
+                    List<Component> lines = panelSentence(parsed, made, thread, s, len, store);
+                    if (lines != null) {
+                        for (int k = 0; k < len; k++) {
+                            int[] at = thread.get(s + k);
+                            made[at[0]][at[1]] = lines.get(k);
+                        }
+                        took = len;
+                        break;
+                    }
+                }
+                s += Math.max(1, took);
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            PanelRow row = parsed.get(i);
+            boolean any = false;
+            for (Component cell : made[i]) {
+                any |= cell != null;
+            }
+            if (!any) {
+                continue;
+            }
+            MutableComponent rebuilt = Component.empty();
+            rebuilt.append(PanelRow.text(row.lead()));
+            for (int c = 0; c < row.cells().size(); c++) {
+                Component cell = made[i][c];
+                if (cell == null) {
+                    // 沒併到的那一格照舊自己查；查不到就原文
+                    Component original = PanelRow.text(row.cells().get(c));
+                    cell = translate(StyledText.fromComponent(original), store);
+                    if (cell == null) {
+                        cell = original;
+                    }
+                }
+                rebuilt.append(cell);
+                rebuilt.append(PanelRow.text(row.gaps().get(c)));
+            }
+            out[i] = unslant(realignChat(rows.get(i), rebuilt,
+                    centred == null ? null : centred[i], true));
+        }
+        return out;
+    }
+
+    /**
+     * 這一欄從第 {@code s} 格起連續 {@code len} 格，接起來是不是語料裡的一句話。
+     *
+     * @return 切回 {@code len} 列的譯文；不是一句話（或有格子已經被別句用掉、
+     *         中間隔了別的列）就回 {@code null}
+     */
+    private static List<Component> panelSentence(List<PanelRow> parsed, Component[][] made,
+                                                 List<int[]> thread, int s, int len,
+                                                 TranslationStore store) {
+        List<StyledText> cells = new ArrayList<>(len);
+        StringBuilder key = new StringBuilder();
+        for (int k = 0; k < len; k++) {
+            int[] at = thread.get(s + k);
+            if (made[at[0]][at[1]] != null
+                    || (k > 0 && at[0] != thread.get(s + k - 1)[0] + 1)) {
+                return null;
+            }
+            StyledText cell = StyledText.fromComponent(
+                    PanelRow.text(parsed.get(at[0]).cells().get(at[1])));
+            cells.add(cell);
+            if (k > 0) {
+                key.append('\n');
+            }
+            key.append(GlyphSplitter.toTemplate(cell));
+        }
+        // 先問語料「有沒有這一整句」。translateBlock 自己還會試「名稱: 說明」那種
+        // 拆法，隨便兩格（「Rewards:」加上下一格）都可能湊出東西來。
+        String template = key.toString();
+        if (store.lookup(template) == null && store.lookupFlat(template) == null
+                && store.lookupUnwrapped(template) == null) {
+            return null;
+        }
+        List<Component> lines = translateBlock(cells, store, new boolean[len]);
+        if (lines == null || lines.isEmpty()) {
+            return null;
+        }
+        if (lines.size() != len) {
+            // 譯文的行數跟原文不一樣（中文比較短）：接成一句，照原本的列數重切
+            lines = TextSplit.split(TextSplit.join(lines), len);
+        }
+        return lines;
+    }
+
     /**
      * 這一行有幾段實字被<b>正的排版偏移</b>隔開。
      *
@@ -7144,10 +7362,28 @@ public final class LineTranslator {
      * 某一段橫跨了兩種顏色也整組不做——那一段的顏色本來就有歧義，猜錯比不猜糟。
      * 被 tooltip 寬度切成兩行的括號（{@code [Combat Lv.} ＋ {@code 88]}）不算
      * 歧義，只要那幾段同色就算一段。
+     *
+     * <h2>譯文把括號換了位置的時候</h2>
+     * 「順序一樣」在任務說明上不成立。英文把座標放句尾，中文習慣先講去哪裡：
+     *
+     * <pre>
+     *   Collect [4 Gold Chunks] for Jankan in the mineshaft at [605, 80, -4920].
+     *   到 [{~2}, {~3}, -{~4}] 的礦坑替 Jankan 收集 [{~1} 塊金塊]。
+     * </pre>
+     *
+     * 第 i 個對第 i 個的話，座標拿到物品的顏色、物品拿到座標的顏色——兩個括號的
+     * 顏色整個對調（使用者 2026-10-08：「任務說明顏色還是會有錯誤」）。語料裡這樣
+     * 換過位置的任務說明，繁中 18 條、簡中 16、日文 14、韓文 19（俄文、西文語序跟英文一樣，沒有）。
+     *
+     * <p>所以順序對不上時改成<b>先分類再配</b>：括號裡只有數字與標點的是一類
+     * （座標、百分比），帶字的是另一類（物品、等級），同一類的照順序配。兩邊各類的
+     * 個數一樣才這樣做；不一樣就照舊第 i 個對第 i 個。見 {@link #pairBrackets}。
      */
     static List<LineParts.Piece> bracketAccents(
             List<LineParts.Piece> allRuns, String[] translated, Style blockStyle) {
         List<Style> source = new ArrayList<>();
+        List<String> sourceText = new ArrayList<>();
+        StringBuilder inside = new StringBuilder();
         Style open = null;
         boolean mixed = false;
         int depth = 0;
@@ -7162,6 +7398,7 @@ public final class LineTranslator {
                     if (depth == 0) {
                         open = run.style();
                         mixed = false;
+                        inside.setLength(0);
                     }
                     depth++;
                 } else if (c == ']' && depth > 0) {
@@ -7171,8 +7408,11 @@ public final class LineTranslator {
                             return List.of();  // 見上：有歧義就整組不做
                         }
                         source.add(open);
+                        sourceText.add(inside.toString());
                         open = null;
                     }
+                } else if (depth > 0) {
+                    inside.append(c);
                 }
             }
         }
@@ -7183,9 +7423,10 @@ public final class LineTranslator {
         if (spans.size() != source.size()) {
             return List.of();
         }
+        int[] from = pairBrackets(sourceText, spans);
         List<LineParts.Piece> out = new ArrayList<>();
         for (int i = 0; i < spans.size(); i++) {
-            Style style = source.get(i);
+            Style style = source.get(from[i]);
             if (style == null || sameColour(style, blockStyle) || spans.get(i).isBlank()) {
                 continue;                      // 跟底色同色的不必貼
             }
@@ -7227,6 +7468,54 @@ public final class LineTranslator {
     /** 這一段裡有沒有字母或方塊字——標點與數字不算。 */
     private static boolean hasLetter(String text) {
         return text.codePoints().anyMatch(Character::isLetter);
+    }
+
+    /**
+     * 譯文的第 i 個方括號該拿原文第幾個的顏色。
+     *
+     * <p>兩邊的「種類順序」一樣就是第 i 個對第 i 個（絕大多數的情形）。不一樣、
+     * 但各種類的個數相同時，同一類的照順序配——那就是譯文把座標與物品換了位置。
+     * 個數也對不上的話沒有根據可以猜，照舊第 i 個對第 i 個。
+     *
+     * @param source 原文每個括號裡面的字（實際的數字）
+     * @param spans  譯文每個括號，含括號本身（數字還是佔位符）
+     */
+    static int[] pairBrackets(List<String> source, List<String> spans) {
+        int n = spans.size();
+        int[] same = new int[n];
+        boolean[] srcWordy = new boolean[n];
+        boolean[] dstWordy = new boolean[n];
+        boolean identical = true;
+        int srcCount = 0;
+        int dstCount = 0;
+        for (int i = 0; i < n; i++) {
+            same[i] = i;
+            srcWordy[i] = hasLetter(source.get(i));
+            dstWordy[i] = hasLetter(PLACEHOLDER.matcher(spans.get(i)).replaceAll(""));
+            identical &= srcWordy[i] == dstWordy[i];
+            srcCount += srcWordy[i] ? 1 : 0;
+            dstCount += dstWordy[i] ? 1 : 0;
+        }
+        if (identical || srcCount != dstCount) {
+            return same;
+        }
+        int[] out = new int[n];
+        int wordy = 0;
+        int plain = 0;
+        for (int i = 0; i < n; i++) {
+            if (dstWordy[i]) {
+                while (!srcWordy[wordy]) {
+                    wordy++;
+                }
+                out[i] = wordy++;
+            } else {
+                while (srcWordy[plain]) {
+                    plain++;
+                }
+                out[i] = plain++;
+            }
+        }
+        return out;
     }
 
     /**
@@ -8338,6 +8627,14 @@ public final class LineTranslator {
             styles.add(accent.style());
         }
         FlowedDebug.accents(texts, styles, usedAccent, flowed);
+        // 原文有哪個顏色沒回到譯文上：記進 captured.json，譯者不必進遊戲對。
+        // 見 ColourAudit。
+        List<String> templates = new ArrayList<>(parts.size());
+        for (LineParts part : parts) {
+            templates.add(part.template());
+        }
+        com.wynnchayuan.capture.ColourAudit.note(templates, flowed, allRuns, accents,
+                usedAccent, blockStyle);
         // 填回去的符號是什麼——見 FlowedDebug#glyphs（聲明了為什麼要這一欄）
         FlowedDebug.glyphs(glyphs, flowed);
         return out;

@@ -2,269 +2,95 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.Releases;
 import com.wynnchayuan.WynnChaYuan;
-import com.wynnchayuan.render.Colors;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
+import com.wynnchayuan.client.ui.NotesView;
+import com.wynnchayuan.client.ui.Surface;
 import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
-import net.minecraft.util.FormattedCharSequence;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 每一版改了什麼。
+ * 更新說明。
  *
- * <h2>為什麼一版一個框</h2>
- * 先前只印手上這一版的條目，一長串灰字接在一起。兩件事看不出來：
- * 哪幾條屬於哪一版，以及自己落後了幾版。一版一個框、框線用主題色，
- * 這兩件事一眼就有答案。
+ * <p>每一版都寫了英文、繁中、簡中三份。預設跟著介面語言，但玩家可以在右上角換——
+ * 介面是日文、韓文的人沒有自己語言的說明，要能自己挑看得懂的那一份。
+ * 選了之後整場遊戲都記著，不必每次打開再選一次。
  *
- * <p>內容讀自 {@link Releases}：線上讀得到就用線上那份（比較新），
- * 讀不到就用打包進 jar 的那份——所以斷網時「本版改了什麼」照樣看得到，
- * 只是不會說「有新版」。
+ * <p>畫面本身在 {@link NotesView}。
  */
-public final class ReleaseNotesScreen extends Screen {
+public final class ReleaseNotesScreen extends CanvasScreen {
 
-    /** 內文左右各留多少。太寬的行讀起來會跳行。 */
-    private static final int MARGIN = 34;
-
-    /** 框內縮排。 */
-    private static final int PAD = 8;
-
-    /** 每一條前面那個點佔的寬度，續行對齊在它右邊。 */
-    private static final int BULLET = 9;
-
-    /** 兩個版本框之間的距離。 */
-    private static final int GAP = 8;
-
-    private static final int ROW = 11;
-
-    /** 框的底色。 */
-    private static final int CARD_BG = 0xC0121A24;
-
-    /** 手上這一版的框稍亮一點，一眼找得到自己在哪。 */
-    private static final int CARD_BG_CURRENT = 0xC01B2838;
-
-    private final Screen parent;
-
-    private int scroll = 0;
-
-    /**
-     * 更新說明用哪一種語言看。
-     *
-     * <p>每一版都寫了英文、繁中、簡中三份。預設跟著 F6 介面語言，但玩家可以在
-     * 右上角自己切——想拿英文那份去跟別人講、或介面是日文卻想看中文說明都行。
-     * 關掉再開會記得上一次選的。
-     */
     private static final String[] LANGS = {"en_us", "zh_tw", "zh_cn"};
+
+    /** 玩家自己挑的說明語言；沒挑過是 {@code null}，跟著介面語言。 */
     private static String chosen;
 
-    /** 目前顯示的是哪一種：選過就是選的那個，沒選過照介面語言、再退回英文。 */
-    private static String shown() {
-        if (chosen != null) {
-            return chosen;
-        }
-        String pinned = T.pinnedLanguage();
-        for (String l : LANGS) {
-            if (l.equals(pinned)) {
-                return l;
-            }
-        }
-        return "en_us";
-    }
-
-    private static Component langLabel() {
-        return T.c("notes.lang", T.s("notes.lang." + shown()));
-    }
-    private int contentHeight = 0;
+    private final NotesView view;
 
     public ReleaseNotesScreen(Screen parent) {
-        super(T.c("notes.title"));
-        this.parent = parent;
+        super(T.c("notes.title"), parent);
+        this.view = new NotesView(SHELL, new NotesView.Host() {
+            @Override
+            public List<String> versions() {
+                return Releases.versions();
+            }
+
+            @Override
+            public NotesView.Note notes(String version, String lang) {
+                Releases.Notes notes = Releases.notesFor(version, lang);
+                return notes == null ? null : new NotesView.Note(notes.headline(), notes.items());
+            }
+
+            @Override
+            public String running() {
+                return WynnChaYuan.version();
+            }
+
+            @Override
+            public String newer() {
+                return Releases.newer();
+            }
+
+            @Override
+            public String[] languages() {
+                return LANGS;
+            }
+
+            @Override
+            public int language() {
+                return shown();
+            }
+
+            @Override
+            public void pickLanguage(int index) {
+                chosen = LANGS[Math.max(0, Math.min(LANGS.length - 1, index))];
+            }
+
+            @Override
+            public void download() {
+                ConfirmLinkScreen.confirmLinkNow(ReleaseNotesScreen.this, Releases.downloadUrl());
+            }
+
+            @Override
+            public void close() {
+                onClose();
+            }
+        });
+    }
+
+    /** 現在顯示第幾種語言的說明：挑過就用挑的，沒有就看介面語言，都對不上用英文。 */
+    private static int shown() {
+        String want = chosen != null ? chosen : T.pinnedLanguage();
+        for (int i = 0; i < LANGS.length; i++) {
+            if (LANGS[i].equals(want)) {
+                return i;
+            }
+        }
+        return 0;
     }
 
     @Override
-    protected void init() {
-        int cx = this.width / 2;
-        String latest = Releases.newer();
-        if (latest != null) {
-            // 有新版才給下載按鈕。沒有新版時擺一顆按不出東西的按鈕，
-            // 只會讓人以為自己漏看了什麼。
-            String url = Releases.downloadUrl();
-            addRenderableWidget(Button.builder(
-                    T.c("notes.download", latest),
-                    b -> ConfirmLinkScreen.confirmLinkNow(this, url))
-                    .bounds(cx - 100, this.height - 52, 200, 20).build());
-        }
-        addRenderableWidget(Button.builder(langLabel(), b -> {
-                    String now = shown();
-                    int at = 0;
-                    for (int i = 0; i < LANGS.length; i++) {
-                        if (LANGS[i].equals(now)) {
-                            at = i;
-                        }
-                    }
-                    chosen = LANGS[(at + 1) % LANGS.length];
-                    b.setMessage(langLabel());
-                    scroll = 0;
-                })
-                .bounds(this.width - 128, 8, 120, 20).build());
-        addRenderableWidget(Button.builder(T.c("button.back"), b -> onClose())
-                .bounds(cx - 50, this.height - 26, 100, 20).build());
-    }
-
-    private int top() {
-        return 44;
-    }
-
-    /**
-     * 卡片畫到哪裡為止。
-     *
-     * <h2>先前壓到按鈕上</h2>
-     * 「滾輪往下看更早的版本」那一行畫在 {@code bottom() + 3}，而按鈕的上緣
-     * 就在它下面幾格——兩者重疊，那一行的下半截被按鈕蓋掉。
-     *
-     * <p>改成先算按鈕的上緣，再往上讓出提示那一行的高度。兩邊都從同一個地方算，
-     * 就不會再有「一邊改了另一邊沒跟上」。
-     */
-    private int bottom() {
-        return buttonsTop() - HINT_H;
-    }
-
-    /** 底下那排按鈕的上緣。有新版時多一顆下載鈕。 */
-    private int buttonsTop() {
-        return this.height - (Releases.newer() != null ? 52 : 26);
-    }
-
-    /** 捲動提示那一行佔的高度，含跟按鈕之間的空隙。 */
-    private static final int HINT_H = 14;
-
-    @Override
-    public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
-        super.render(g, mouseX, mouseY, delta);
-
-        int cx = this.width / 2;
-        g.drawCenteredString(this.font, this.title, cx, 16, Colors.TEXT);
-
-        String latest = Releases.newer();
-        String running = WynnChaYuan.version();
-        g.drawCenteredString(this.font, latest != null
-                        ? T.c("notes.newer", latest, running)
-                                .withStyle(ChatFormatting.YELLOW)
-                        : T.c("notes.uptodate", running)
-                                .withStyle(ChatFormatting.DARK_GRAY),
-                cx, 30, latest != null ? Colors.TEXT : Colors.DIM);
-
-        List<String> versions = Releases.versions();
-        if (versions.isEmpty()) {
-            g.drawCenteredString(this.font,
-                    T.c("notes.none").withStyle(ChatFormatting.DARK_GRAY),
-                    cx, top() + 20, Colors.FAINT);
-            return;
-        }
-
-        int left = MARGIN;
-        int width = this.width - MARGIN * 2;
-        int accent = WynnChaYuan.config().accentARGB();
-
-        // 畫到可視範圍外的要剪掉，不然捲動時會畫到標題與按鈕上。
-        g.enableScissor(0, top(), this.width, bottom());
-        int y = top() - scroll;
-        int total = 0;
-        for (String version : versions) {
-            Releases.Notes notes = Releases.notesFor(version, shown());
-            if (notes == null) {
-                continue;
-            }
-            int h = cardHeight(notes, width);
-            if (y + h > top() && y < bottom()) {
-                drawCard(g, left, y, width, h, version, notes, accent,
-                         version.equals(running));
-            }
-            y += h + GAP;
-            total += h + GAP;
-        }
-        g.disableScissor();
-        contentHeight = total;
-
-        if (contentHeight > bottom() - top()) {
-            g.drawCenteredString(this.font,
-                    T.c("notes.scroll").withStyle(ChatFormatting.DARK_GRAY),
-                    cx, bottom() + 3, Colors.FAINT);
-        }
-    }
-
-    private List<FormattedCharSequence> wrap(String text, int room) {
-        return new ArrayList<>(this.font.split(Component.literal(text), room));
-    }
-
-    /** 這一版的框要多高。跟 {@link #drawCard} 是同一套算法，改要一起改。 */
-    private int cardHeight(Releases.Notes notes, int width) {
-        int h = PAD + ROW + 2;                       // 版本號那一行
-        if (!notes.headline().isBlank()) {
-            h += wrap(notes.headline(), width - PAD * 2).size() * ROW + 2;
-        }
-        for (String item : notes.items()) {
-            h += wrap(item, width - PAD * 2 - BULLET).size() * ROW;
-        }
-        return h + PAD;
-    }
-
-    private void drawCard(GuiGraphics g, int x, int y, int w, int h,
-                          String version, Releases.Notes notes, int accent,
-                          boolean current) {
-        g.fill(x, y, x + w, y + h, current ? CARD_BG_CURRENT : CARD_BG);
-        g.renderOutline(x, y, w, h, accent);
-        // 左緣多一條實色的邊。純外框的卡片疊在一起看起來像表格，
-        // 加這一條才有「一張一張」的樣子。
-        g.fill(x, y, x + 2, y + h, accent);
-
-        int textY = y + PAD;
-        g.drawString(this.font, Component.literal("v" + version),
-                x + PAD, textY, accent, false);
-        if (current) {
-            int at = x + PAD + this.font.width("v" + version) + 6;
-            g.drawString(this.font,
-                    T.c("notes.current").withStyle(ChatFormatting.DARK_GRAY),
-                    at, textY, Colors.FAINT, false);
-        }
-        textY += ROW + 2;
-
-        if (!notes.headline().isBlank()) {
-            for (FormattedCharSequence line : wrap(notes.headline(), w - PAD * 2)) {
-                g.drawString(this.font, line, x + PAD, textY, Colors.TEXT, false);
-                textY += ROW;
-            }
-            textY += 2;
-        }
-        for (String item : notes.items()) {
-            g.drawString(this.font, Component.literal("·")
-                            .withStyle(ChatFormatting.DARK_GRAY),
-                    x + PAD, textY, Colors.DIM, false);
-            for (FormattedCharSequence line : wrap(item, w - PAD * 2 - BULLET)) {
-                g.drawString(this.font, line, x + PAD + BULLET, textY,
-                             Colors.SUBTLE, false);
-                textY += ROW;
-            }
-        }
-    }
-
-    @Override
-    public boolean mouseScrolled(double mouseX, double mouseY,
-                                 double deltaX, double deltaY) {
-        int room = bottom() - top();
-        if (contentHeight > room) {
-            scroll = Math.max(0, Math.min(contentHeight - room,
-                    scroll - (int) (deltaY * 16)));
-        }
-        return true;
-    }
-
-    @Override
-    public void onClose() {
-        this.minecraft.setScreen(parent);
+    protected Surface view() {
+        return view;
     }
 }

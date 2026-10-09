@@ -3,7 +3,9 @@ package com.wynnchayuan.listener;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
+import com.wynnchayuan.render.ScoreboardFlow;
 import com.wynnchayuan.render.TrackerOverlay;
+import com.wynnchayuan.render.WynntilsText;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -14,7 +16,11 @@ import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 畫面右上那一欄（每日目標、世界事件、Lootrun、團隊）。
@@ -81,37 +87,71 @@ public final class ScoreboardListener {
     private void update(ScoreboardUpdatedEvent event) {
         TranslationStore store = WynnChaYuan.translations();
         List<Component> lines = new ArrayList<>();
+        // 記分板上現在有哪幾列、哪幾列有整句切回來的譯文：給 Wynntils 自己畫的
+        // 那一塊用（見 WynntilsText#screenText），每次更新整份換掉。
+        Set<String> shown = new HashSet<>();
+        Map<String, StyledText> replaced = new HashMap<>();
         boolean any = false;
         for (var pair : event.getScoreboardSegments()) {
             ScoreboardSegment segment = pair.b();
             if (segment == null || !segment.isVisible()) {
                 continue;
             }
-            // 追蹤中的任務（上半部已經有了）與 Lootrun（記分板本來就在）不收。
-            // 見 #mirrors。
-            if (pair.a() != null
-                    && !mirrors(pair.a().getClass().getSimpleName())) {
+            String part = pair.a() == null ? null : pair.a().getClass().getSimpleName();
+            // 追蹤中的任務整段不碰：它同時畫在 Wynntils 的追蹤欄，歸「右上任務追蹤」管，
+            // 記分板的開關關掉時不該連那邊一起變回英文。
+            if (part != null && part.contains(ACTIVITY_PART)) {
                 continue;
             }
-            any |= add(lines, segment.getHeader(), store, "name");
-            for (StyledText row : segment.getContent()) {
-                any |= add(lines, row, store, "desc");
+            List<StyledText> content = segment.getContent();
+            shown.add(ScoreboardFlow.key(segment.getHeader()));
+            for (StyledText row : content) {
+                shown.add(ScoreboardFlow.key(row));
+                capture(row, "desc");
             }
+            captureBlock(content);
+            ScoreboardFlow.Plan plan = ScoreboardFlow.plan(content, store);
+            replaced.putAll(plan.rows());
+            // Lootrun（記分板本來就在）不抄進面板，見 #mirrors；但上面那份對照表照做
+            if (!mirrors(part)) {
+                continue;
+            }
+            any |= header(lines, segment.getHeader(), store);
+            lines.addAll(plan.panel());
+            any |= plan.any();
         }
         WynnChaYuan.store().noteEvent(any ? "scoreboard.shown" : "scoreboard.noMatch");
+        boolean on = WynnChaYuan.config() == null || WynnChaYuan.config().translateScoreboard();
+        WynntilsText.setScoreboard(shown, replaced);
         // 一行都沒翻出來就整塊不擺：全是英文的話，右上角那一欄本來就看得到，
-        // 我們再抄一次只是佔位置。
-        TrackerOverlay.setExtras(any ? lines : List.of());
+        // 我們再抄一次只是佔位置。開關關掉也不擺。
+        TrackerOverlay.setExtras(any && on ? lines : List.of());
     }
 
     /**
-     * 收一行：翻得出來就擺譯文，翻不出來擺原文（整塊的其他行可能翻得出來，
+     * 一段的標題：翻得出來就擺譯文，翻不出來擺原文（整塊的其他行可能翻得出來，
      * 少一行會讓人以為那一項不見了）。同時把沒譯文的收進語料。
      *
      * @return 這一行真的翻出來了嗎
      */
-    private boolean add(List<Component> lines, StyledText row,
-                        TranslationStore store, String role) {
+    private boolean header(List<Component> lines, StyledText row, TranslationStore store) {
+        if (!capture(row, "name")) {
+            return false;
+        }
+        Component translated = LineTranslator.translate(row, store);
+        if (translated != null) {
+            translated = ScoreboardFlow.oneLine(translated);
+        }
+        lines.add(translated != null ? translated : LineTranslator.untranslated(row));
+        return translated != null;
+    }
+
+    /**
+     * 把一列收進語料（沒譯文的才會真的留下來）。
+     *
+     * @return 這一列有沒有字（純圖示、空白的回 {@code false}）
+     */
+    private boolean capture(StyledText row, String role) {
         if (row == null || GlyphSplitter.isGlyphOnly(row)) {
             return false;
         }
@@ -129,8 +169,39 @@ public final class ScoreboardListener {
         } else {
             WynnChaYuan.store().record(template, role, "quest", "scoreboard");
         }
-        Component translated = LineTranslator.translate(row, store);
-        lines.add(translated != null ? translated : LineTranslator.untranslated(row));
-        return translated != null;
+        return true;
+    }
+
+    /**
+     * 整段內容再收一份，列與列之間用換行接起來。
+     *
+     * <h2>為什麼一列一列收還不夠</h2>
+     * 一句話被折成四列，一列一列收進去就是四條半句，而且中間翻過的那幾列
+     * <b>不會出現在 capture 裡</b>（只列還沒翻的）——拿到檔案的人看到
+     * {@code tower. [{~}/{~}]} 一條孤零零的，根本拼不回原句。整段收一份，
+     * 譯者才看得到完整的句子，也才寫得出 {@link ScoreboardFlow} 要的整句條目。
+     *
+     * <p>只有一列的不必再收（跟上面那一份一模一樣）；任何一列帶著玩家資料就整段不收。
+     */
+    private void captureBlock(List<StyledText> content) {
+        List<String> rows = new ArrayList<>();
+        for (StyledText row : content) {
+            if (row == null || GlyphSplitter.isGlyphOnly(row)) {
+                continue;
+            }
+            String template = GlyphSplitter.toTemplate(row);
+            if (template.isBlank()) {
+                continue;
+            }
+            if (PlayerDataFilter.carriesPlayerData(template)
+                    || PlayerDataFilter.mentionsOnlinePlayerLoose(template)) {
+                return;
+            }
+            rows.add(template);
+        }
+        if (rows.size() >= 2) {
+            WynnChaYuan.store().record(String.join("\n", rows), "desc", "quest",
+                    "scoreboard/block");
+        }
     }
 }

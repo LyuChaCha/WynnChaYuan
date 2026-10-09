@@ -17,6 +17,8 @@ loom {
 repositories {
     mavenCentral()
     maven { url = 'https://maven.fabricmc.net/' }
+    // Mod Menu 的 API（只在編譯時用，見下面的 modCompileOnly）
+    maven { url = 'https://maven.terraformersmc.com/releases/' }
 }
 
 dependencies {
@@ -35,6 +37,10 @@ dependencies {
     // 該座標實際會抓到 NeoForge jar（已驗證：回傳的檔案含 neoforge.mods.toml
     // 而非 fabric.mod.json）。詳見 README。
     modCompileOnly fileTree(dir: 'libs', include: ['wynntils-*-fabric*.jar'])
+
+    // Mod Menu：只拿它的介面來編譯 client.ModMenuEntry，不打包、也不要求玩家安裝。
+    // 沒裝 Mod Menu 的人那個類別根本不會被載入（見該類別的說明）。
+    modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 // 少了 Wynntils jar 的話，錯誤會是一長串「找不到 com.wynntils.*」，很難看出真正原因。
@@ -340,13 +346,21 @@ tasks.register('runGuiBlockGapChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGuiBlockGapChecks' }
 
-tasks.register('runSettingsLayoutChecks', JavaExec) {
+tasks.register('runSettingsViewChecks', JavaExec) {
     group = 'verification'
-    description = '驗證 F6 版面在任何畫面尺寸下都不會凸出或重疊'
+    description = '把設定畫面離線算出來：各種畫面尺寸與六種語言都不凸出、不重疊'
     classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.wynnchayuan.client.SettingsLayoutTest'
+    mainClass = 'com.wynnchayuan.client.SettingsViewTest'
 }
-tasks.named('check') { dependsOn 'runSettingsLayoutChecks' }
+tasks.named('check') { dependsOn 'runSettingsViewChecks' }
+
+tasks.register('runSubViewChecks', JavaExec) {
+    group = 'verification'
+    description = '把使用須知、更新說明、貢獻者、調整面板位置、名牌進階離線算出來，再點幾下'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.client.SubViewsTest'
+}
+tasks.named('check') { dependsOn 'runSubViewChecks' }
 
 tasks.register('runStatusColourChecks', JavaExec) {
     group = 'verification'
@@ -1174,6 +1188,30 @@ tasks.register('runScoreboardMirrorChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runScoreboardMirrorChecks' }
 
+tasks.register('runScoreboardFlowChecks', JavaExec) {
+    group = 'verification'
+    description = '記分板折成好幾列的一句話併起來翻；譯文不帶換行；開關關得掉'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.ScoreboardFlowTest'
+}
+tasks.named('check') { dependsOn 'runScoreboardFlowChecks' }
+
+tasks.register('runColourAuditChecks', JavaExec) {
+    group = 'verification'
+    description = '原文有個顏色沒回到譯文上的句子：該記的記、不該記的不記、修好自己消失'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.ColourAuditTest'
+}
+tasks.named('check') { dependsOn 'runColourAuditChecks' }
+
+tasks.register('runPanelFlowChecks', JavaExec) {
+    group = 'verification'
+    description = '兩欄面板裡折成好幾列的一句話：併起來翻、切回原本的列、別的格子不動'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.PanelFlowTest'
+}
+tasks.named('check') { dependsOn 'runPanelFlowChecks' }
+
 tasks.register('runCorpusVersionChecks', JavaExec) {
     group = 'verification'
     description = 'F6 的「譯文版本」那一列不可以把「問不到」說成「最新」'
@@ -1221,3 +1259,35 @@ tasks.register('runDialogueTooLongChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.DialogueTooLongTest'
 }
 tasks.named('check') { dependsOn 'runDialogueTooLongChecks' }
+
+tasks.register('runWmsBridgeChecks', JavaExec) {
+    group = 'verification'
+    description = 'WynnMarketSearch 的搜尋框打譯名找得到，而且不會把它的搜尋弄壞'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WmsBridgeTest'
+}
+tasks.named('check') { dependsOn 'runWmsBridgeChecks' }
+
+tasks.register('runNameRowChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證物品名稱那一列不會被語料裡的整列條目蓋掉'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameRowTest'
+}
+tasks.named('check') { dependsOn 'runNameRowChecks' }
+
+tasks.register('runOverflowAuditChecks', JavaExec) {
+    group = 'verification'
+    description = '譯文比原本那一格大的句子：塞不下才記、帶玩家資料不記、改短之後自己消失'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.OverflowAuditTest'
+}
+tasks.named('check') { dependsOn 'runOverflowAuditChecks' }
+
+tasks.register('runGearOwnNameChecks', JavaExec) {
+    group = 'verification'
+    description = '跟技能同名的裝備在名稱列用自己的名字；技能樹、使命卡、敘述不受影響'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.GearOwnNameTest'
+}
+tasks.named('check') { dependsOn 'runGearOwnNameChecks' }

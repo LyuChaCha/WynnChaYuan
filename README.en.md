@@ -40,26 +40,32 @@ translation is shown beside it, or written in its place.
 | Title text | The big title and subtitle in the middle of the screen |
 
 Gear names stay in English by default: they are proper nouns, and the trade market and the wiki use
-the English ones. F6 can turn them on.
+the English ones. You can turn them on in the settings.
 
 ### More
 
 - **Translations update themselves**: translations are downloaded from GitHub, so new ones arrive on your next launch, **no mod update needed**. Offline, the last cache or the copy in the jar is used
-- **Market search**: search the trade market in your language; the English name is sent. Matches are listed as you type: ↑↓ to pick, Tab to fill
+- **Market search**: search the trade market in your language; the English name is sent. Matches are listed as you type: ↑↓ to pick, Tab to fill. With [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) installed, its search panel takes translated names too
 - **Copy chat**: lists recent chat messages; click one to copy it for a report (key unbound by default)
-- **Panel screenshot**: **F9** copies the translation panel to the clipboard or saves it to a file (rebindable)
+- **Panel screenshot**: copies the translation panel to the clipboard or saves it to a file (key unbound by default)
 - **Adjustable panels**: boxes can be dragged; dialogue, choices and the tracker can be resized from the corner
 - **Update notice**: says so once in chat when a new version is out, linking to GitHub Releases
 - **Contributor tags**: people on the credits list get an extra line above their nameplate, visible only to others running the mod (can be turned off)
 
 **Client-side only.** The server does not need it.
 
-### Settings (F6)
+### Settings
+
+Three ways to open them:
+
+- [Mod Menu](https://modrinth.com/mod/modmenu)'s mod list → WynnChaYuan → configure
+- type `/wcy` (or `/wynnchayuan`) in chat
+- bind a key under Controls → WynnChaYuan (**nothing is bound by default**, so the mod takes none of your keys)
 
 | Tab | What's in it |
 |---|---|
 | Items | Item translation (separate panel / replace in place / off), translate item names, market search, panel screenshot |
-| Panel | Follow the mouse or pin it, which side, gap, border colour, arrange the boxes |
+| Panel | Follow the mouse or pin it, which side, gap, arrange the boxes; the theme colour (of the settings screen) and the border colour (of the boxes in game) are set separately |
 | Dialogue | Quest dialogue, dialogue choices (separate box / replace in place / off), hold time, dialogue/tracker boxes |
 | World & chat | Nameplates and floating text (with range and aim angle), chat messages, title text, copy chat |
 | Data | Translation language, fallback language, interface language, translation source, reload, collect untranslated strings, collect GUI text, export untranslated strings, how to submit, debug dumps |
@@ -77,20 +83,20 @@ Hover a setting for an explanation.
 | `ko_kr` Korean | Everything, quest dialogue included |
 | `es_es` Spanish | Everything, quest dialogue included |
 
-Switch under **F6 → Data**, without changing the game's language or restarting:
+Switch under **Settings → Data**, without changing the game's language or restarting:
 
 - **Translation language**: which translations to show
 - **Fallback language**: what to show where that language has nothing yet (another language, or the original)
-- **Interface language**: the language of the F6 screens themselves (English included)
+- **Interface language**: the language of the settings screens themselves (English included)
 
 <!-- 進度:開始 -->
 更新於 2026-10-09 / Updated 2026-10-09
 
-**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
+**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
 **大概翻到哪**：6 種語言目前都在 **95% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
 
-**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (F6, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
+**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (settings, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
 
 **Roughly how far**: every language is past **95%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
 
@@ -108,7 +114,20 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 1. Download the jar: [GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
    [Modrinth](https://modrinth.com/mod/wynnchayuan) ·
    [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan)
-2. Put it in `mods/` and press **F6** in game.
+2. Put it in `mods/`. In game, open the settings from Mod Menu or by typing `/wcy` in chat.
+
+### Mod compatibility
+
+| Mod | Status | Notes |
+|---|---|---|
+| [Wynntils](https://modrinth.com/mod/wynntils) 4.2+ | **Required** | Item, quest and chat data all come through it; its own screens (content book, map, quest and cave names) are translated too |
+| [Fabric API](https://modrinth.com/mod/fabric-api) | **Required** | |
+| [Mod Menu](https://modrinth.com/mod/modmenu) | Optional, supported | Adds a configure button to the mod list |
+| [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) | Optional, supported | Its search panel finds items by translated name and shows the translation next to the English name; what gets sent is still the English name |
+| [WynnMod](https://modrinth.com/mod/wynnmod) | Compatible | The lines it reads to decide a raid's outcome stay in English while it is installed, so streaks are counted correctly (without it you see the translation as usual) |
+| Mods that add sections to tooltips (Nori, Wynnpool…) | Compatible | Those sections are kept as they are. If they make the translation panel longer than the original, list their labels in `config/wynnchayuan/third-party-sections.json` to filter them |
+
+Mods not listed here usually work alongside as well: this mod only changes the text drawn on your client. If something clashes, [open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues) with your mod list.
 
 ## A line switches back to English halfway?
 
@@ -122,9 +141,9 @@ gets it on their next launch; no mod update needed.
 Quest dialogue and NPC nameplates have no official data source; they only arrive when players run
 into them. **You do not have to translate anything**, just hand us the gaps you found:
 
-1. **F6 → Data → Export untranslated strings** opens `config/wynnchayuan/export`, which holds `captured.json`.
+1. **Settings → Data → Export untranslated strings** opens `config/wynnchayuan/export`, which holds `captured.json`.
 2. Look through the file and delete anything personal (other players' names, guild names, private chat).
-3. **F6 → Data → How to submit** opens the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml); drag the file in. Or send it to **LyuChaCha** on Discord.
+3. **Settings → Data → How to submit** opens the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml); drag the file in. Or send it to **LyuChaCha** on Discord.
 
 The mod **never sends anything by itself**. The export already leaves out player names and guild,
 party, shout and private chat, but the filter is heuristic, so check it before you send it.
@@ -140,7 +159,7 @@ No programming needed: translations are JSON, and you fill in `dst` on the GitHu
 - [GLOSSARY.md](GLOSSARY.md): term glossary (Traditional Chinese)
 - [For translators](docs/for-translators.md): recent conventions and changes (Traditional Chinese)
 
-To try your own translations in game: set F6 → Translation source to **Local**, then press Reload after editing.
+To try your own translations in game: set Settings → Translation source to **Local**, then press Reload after editing.
 
 ## Building from source
 
@@ -157,12 +176,12 @@ you if it is missing). Corpus checks: `python tools/validate.py`.
 Free, and it will stay free. To buy us a tea: **<https://ko-fi.com/lyuchacha>**
 
 **3 USD/month** or a one-off **10 USD** or more puts you on the sponsor list: below, under
-F6 → About / Credits, and as an extra line above your nameplate. Sponsoring does not influence
+Settings → About / Credits, and as an extra line above your nameplate. Sponsoring does not influence
 translations, and there are no paid features.
 
 ## Translation team
 
-The same list is in game under **F6 → About / Credits**. To add someone, edit
+The same list is in game under **Settings → About / Credits**. To add someone, edit
 [`credits.json`](src/main/resources/assets/wynnchayuan/credits.json).
 
 <!-- credits:begin -->

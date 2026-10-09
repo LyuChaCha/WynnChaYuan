@@ -1740,7 +1740,57 @@ public final class TranslationStore {
         return nameKeys.contains(key) && !otherOwners.contains(key);
     }
 
+    /** 裝備專用的名字放在哪個範圍。見 {@link #gearOwnName}。 */
+    private static final String GEAR_SCOPE = "gear";
+
+    /**
+     * 這件裝備<b>自己的</b>譯名；沒有另外取名的回 {@code null}。
+     *
+     * <h2>為什麼要另外放一份</h2>
+     * 一般語料一個原文只能有一種譯法（validate 會擋）。而 Wynncraft 有五十幾件裝備
+     * 的名字跟技能、Lootrun 使命、Major ID 一模一樣：{@code Frenzy} 是弓箭手技能
+     * 「得寸進尺」也是一把長矛，{@code Aerodynamics} 是戰士技能「流線身法」也是一件
+     * 胸甲，{@code Radiance} 是「榮光賜福」也是一把弓。裝備只能跟著技能叫——
+     * 畫面上就是一把叫「得寸進尺」的矛（使用者 2026-10-09：這 46 件也要處理）。
+     *
+     * <p>{@code scoped/gear.json} 收的是這些裝備當<b>物品名稱</b>時的譯名
+     * （「狂躁之矛」「空氣動力胸甲」「光輝之弓」）。它只在物品說明的名稱那兩行生效
+     * ——由 {@code TooltipPanel#translateLines} 掛 {@link #nameLine} 決定——
+     * 技能樹、使命卡、Major ID 的說明照舊用一般語料那一份。
+     *
+     * <p>不列進 {@code _index.json}（見 {@link FileIndex#SCOPED}）：舊版不認得這個檔，
+     * 不會把它當一般語料載進去、反過來把技能名蓋成裝備名。
+     */
+    public String gearOwnName(String key) {
+        return key == null ? null : scopedLookup(GEAR_SCOPE, key);
+    }
+
+    /**
+     * 現在畫的是物品說明的<b>名稱那兩行</b>。見 {@link #gearOwnName}。
+     *
+     * <p>預設是關的：漏掛只是那幾件裝備照舊跟著技能叫，掛錯才會讓技能樹上的
+     * 「得寸進尺」變成一把矛。所以只有 {@code TooltipPanel} 在認出「這是物品的
+     * 名稱列」之後才掛，畫完就放下。
+     */
+    public static void nameLine(boolean on) {
+        nameLine = on;
+    }
+
+    /** 見 {@link #nameLine}。算繪只有一條執行緒，用靜態的就夠。 */
+    private static volatile boolean nameLine = false;
+
     public String lookup(String template) {
+        if (nameLine && template != null) {
+            String own = gearOwnName(template);
+            if (own != null) {
+                if (!translateNames) {
+                    return null;               // 使用者選擇不翻物品名稱
+                }
+                // 「譯名 (原文)」：跟一般裝備名同一個規矩
+                return namesWithOriginal && !holdAppended
+                        ? own + " (" + template.strip() + ")" : own;
+            }
+        }
         String hit = lookupBase(template);
         if (hit == null) {
             return shiny(template);
@@ -1780,7 +1830,8 @@ public final class TranslationStore {
         if (at < 0) {
             return -1;
         }
-        return isAppendedOriginal(text.substring(at + 2, text.length() - 1)) ? at : -1;
+        return isAppendedOriginal(text.substring(at + 2, text.length() - 1),
+                text.substring(0, at)) ? at : -1;
     }
 
     /**
@@ -1814,12 +1865,29 @@ public final class TranslationStore {
             if (close < 0) {
                 return null;
             }
-            if (isAppendedOriginal(text.substring(at + 2, close))) {
+            if (isAppendedOriginal(text.substring(at + 2, close), text.substring(0, at))) {
                 return new int[] {at, close + 1};
             }
             at = text.indexOf(" (", at + 2);
         }
         return null;
+    }
+
+    /**
+     * 括號前面就是那件裝備自己的名字時也算。
+     *
+     * <p>另外取名的裝備（跟技能同名的那幾十件，見 {@link #gearOwnName}）不是
+     * {@link #gearOnly}——別的檔也有這個原文——所以光看括號裡的字分不出來。
+     * 但「狂躁之矛 (Frenzy)」只有我們自己會寫：括號前面緊貼著的正是那個原文的
+     * 裝備專用譯名。拆名稱那一步（NameWrap）在名稱列畫完<b>之後</b>才跑，那時
+     * {@link #nameLine} 已經放下了，所以不能靠那個旗標認。
+     */
+    private boolean isAppendedOriginal(String inner, String before) {
+        if (isAppendedOriginal(inner)) {
+            return true;
+        }
+        String own = gearOwnName(inner);
+        return own != null && before != null && before.endsWith(own);
     }
 
     /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
@@ -1923,6 +1991,84 @@ public final class TranslationStore {
         return out;
     }
 
+    /** 圖示的佔位符。 */
+    private static final String ICON = "{#}";
+
+    /** 名稱列尾巴的鑑定度。 */
+    private static final String ROLLED = " [{~}]";
+
+    /**
+     * 「物品名稱那一列」裡面的名稱；不是這種列回傳 {@code null}。
+     *
+     * <h2>名稱列長什麼樣</h2>
+     * 同一個名字在 tooltip 上會以幾種外框出現，差別只在前後的圖示與鑑定度：
+     *
+     * <pre>
+     *   {#}Warp{#}                    第 0 行（看不見的那一行）
+     *   {#}{#}{#}Capricorn{#}
+     *   {#}{#}{#}{#}{#}Warp [{~}]     看得見的那一行，已鑑定
+     *   {#}{#}{#}{#}{#}Filched Purse
+     *   {#}{#}{#}{#}{#}{#}{#}Hero
+     * </pre>
+     *
+     * <h2>為什麼這種列不能有整列的譯文（使用者 2026-10-09 回報）</h2>
+     * 整列模板的優先度高於逐片段。語料裡一旦有 {@code {#}Warp{#}} 這種條目，
+     * 名稱就不再經過「名稱」那條路，於是那條路負責的事全部失效，而且
+     * <b>只有這幾件</b>失效，看起來像隨機：
+     *
+     * <ul>
+     *   <li>「譯名加原文」不附原文——越相杖、静星耀杖沒有 (Warp)、(Halcyon)，
+     *       旁邊的橡木匕首卻有；</li>
+     *   <li>F6 關掉物品名稱、按住 Shift 看原文，這幾件照樣是譯名；</li>
+     *   <li>條目的譯文跟原文一樣時（收進來時還沒翻），裝備檔後來補的譯名
+     *       永遠顯示不出來——繁中的 Withdrawal、Capricorn 就是這樣卡在英文。</li>
+     * </ul>
+     *
+     * <p>這種條目是收集端把「名稱還沒翻的那一列」當成缺口記下來、再被照著補出來的，
+     * 清掉一批還會再長。所以查表這一層直接不認，收集端也不再記
+     * （見 {@link #hasTranslation}）。
+     *
+     * <h2>哪些不算</h2>
+     * 只有一個圖示開頭、後面什麼都沒有的（{@code {#}Redemption}）是 Lootrun 的
+     * 使命名，剛好跟裝備撞名，不是名稱列。所以外框要夠像：尾巴有圖示或鑑定度，
+     * 或者開頭至少三個圖示。
+     */
+    public static String nameRowInner(String key) {
+        if (key == null) {
+            return null;
+        }
+        int start = 0;
+        while (key.startsWith(ICON, start)) {
+            start += ICON.length();
+        }
+        int leading = start / ICON.length();
+        int end = key.length();
+        boolean rolled = key.endsWith(ROLLED);
+        if (rolled) {
+            end -= ROLLED.length();
+        }
+        int trailing = 0;
+        while (end - ICON.length() >= start && key.startsWith(ICON, end - ICON.length())) {
+            end -= ICON.length();
+            trailing++;
+        }
+        if (leading == 0 || end <= start) {
+            return null;
+        }
+        if (trailing == 0 && !rolled && leading < 3) {
+            return null;                       // {#}Redemption：使命名，不是名稱列
+        }
+        String inner = key.substring(start, end);
+        return inner.indexOf('{') >= 0 || !inner.equals(inner.strip()) ? null : inner;
+    }
+
+    /** 這個鍵是不是「圖示 + 已知的物品名稱」那一列。見 {@link #nameRowInner}。 */
+    private boolean isNameRow(String key) {
+        String inner = nameRowInner(key);
+        return inner != null && (nameKeys.contains(inner) || gearNameKeys.contains(inner)
+                || plainNameKeys.contains(inner));
+    }
+
     private String lookupBase(String template) {
         if (template == null) {
             return null;
@@ -1933,6 +2079,9 @@ public final class TranslationStore {
         }
         if (peekPlainNames && plainNameKeys.contains(key)) {
             return null;                       // 按住 Shift：素材與材料看原文
+        }
+        if (isNameRow(key)) {
+            return null;                       // 名稱那一列不收整列的譯文，見 #nameRowInner
         }
 
         if (topLayer > 0) {
@@ -2246,6 +2395,11 @@ public final class TranslationStore {
         }
         String key = template.strip();
         if (entries.containsKey(key) || lookupIndented(key) != null) {
+            return true;
+        }
+        if (isNameRow(key)) {
+            // 名稱列不是語料的單位：名稱翻了就是翻了，沒翻的缺口是「名稱」那一條。
+            // 記成缺口的話，補出來的整列條目會把名稱那條路蓋掉。見 #nameRowInner。
             return true;
         }
         if (lookupMarked(key) != null) {

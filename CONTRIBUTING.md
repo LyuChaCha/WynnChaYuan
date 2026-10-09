@@ -52,11 +52,11 @@ English: **[CONTRIBUTING.en.md](CONTRIBUTING.en.md)**
 <!-- 進度:開始 -->
 更新於 2026-10-09 / Updated 2026-10-09
 
-**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（F6 設定、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
+**翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
 **大概翻到哪**：6 種語言目前都在 **95% 以上**，繁體中文最完整。剩下的多半是零星的名稱與半句話，而且遊戲還在更新——**一定還有漏的**。看到沒翻、翻錯或版面跑掉的，[開個 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 告訴我們就好。
 
-**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (F6, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
+**What's covered**: quest dialogue and the quest book, items (names, stats, lore, Major IDs), the ability tree, the interface (settings, inventory, trade market, guild, map, tracker), NPC and place names, signs and chat announcements.
 
 **Roughly how far**: every language is past **95%**, Traditional Chinese being the most complete. What is left is mostly stray names and half-sentences, and the game keeps changing — **there will be gaps**. Found something untranslated, wrong, or laid out badly? [Open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues).
 
@@ -180,7 +180,7 @@ python tools/progress.py --next 30
 非原版的色碼都會一起帶過去；遊戲哪天改了調色盤，譯文自動跟著改。
 
 **哪一個編號是哪一個顏色**，看診斷檔 `config/wynnchayuan/majorid-debug.txt`
-裡的「可用的顏色」那一段（F6 → 診斷開著才會寫）：
+裡的「可用的顏色」那一段（設定裡的診斷開著才會寫）：
 
 ```
 === 可用的顏色 1 ===
@@ -251,9 +251,9 @@ python tools/validate.py ui-labels.json
 **這一步不能跳。** 機器只看得出格式，看不出「翻出來會不會超出框」、
 「語氣對不對」、「這個詞在遊戲脈絡下是不是這個意思」。
 
-1. 遊戲裡按 **F6** → 把「譯文來源」切成 **本機**
+1. 遊戲裡打開 **設定**（Mod Menu 或 `/wcy`）→ 把「譯文來源」切成 **本機**
 2. 改 `config/wynnchayuan/translations/` 底下的檔案
-3. **F6 → 重新載入本機譯文檔**
+3. **設定 → 重新載入本機譯文檔**
 4. 去看那個物品／NPC／介面，確認畫面上長得對
 
 用「另開面板」模式看最清楚——原文和譯文並排，一眼就知道有沒有翻錯行。
@@ -345,7 +345,7 @@ Health Regen = 生命回復
 任務對話與 NPC 名稱**沒有官方資料可抓**，只能靠玩家在遊戲裡實際遇到。
 
 模組會把沒翻到的句子記進 `config/wynnchayuan/captured.json`（只在你自己的電腦上，不會自動送出）。
-玩一段時間後按 **F6 →「資料」→「匯出未翻譯字串」**，把匯出的檔案用
+玩一段時間後打開 **設定 →「資料」→「匯出未翻譯字串」**，把匯出的檔案用
 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)附上來，
 就能變成大家共用的待翻條目。
 
