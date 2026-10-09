@@ -1,12 +1,102 @@
 {
  "_meta": {
   "quest": "Flight in Distress",
-  "count": 103,
-  "translated": 103,
+  "count": 112,
+  "translated": 112,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Flight in Distress#000": {
+   "src": "The inscription on the gravestone reads \"Here lies our great founder, Tisaun Sodeta. May he guide us through the endless fight.\"",
+   "dst": "Надпись на надгробии гласит: «Здесь покоится наш великий основатель, Tisaun Sodeta. Да ведёт он нас в бесконечной битве».",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Gravestone\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#001": {
+   "src": "An unsettlingly powerful energy seems to blanket the area. There is potential here for...something. But not yet...",
+   "dst": "Кажется, всё вокруг окутано тревожно мощной энергией. Здесь таится возможность… чего-то. Но ещё не время…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Gravestone\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#002": {
+   "src": "No worries, have a nice day!",
+   "dst": "Ничего страшного, хорошего дня!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Flight in Distress#003": {
+   "src": "Seems like you are already part of my division! There is nothing left that I can do for you at the moment.",
+   "dst": "Похоже, вы уже в моём отделе! Сейчас мне больше нечем вам помочь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Flight in Distress#004": {
+   "src": "Hi! Welcome to the {p}! How can I help?",
+   "dst": "Привет! Добро пожаловать в {p}! Чем могу помочь?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#005": {
+   "src": "Don't let the name intimidate you, put your head to it and you'll find your way just fine!",
+   "dst": "Пусть название вас не пугает: пораскиньте умом - и легко найдёте дорогу!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#006": {
+   "src": "Ranking up is super simple! All you have to do is complete Lootruns!",
+   "dst": "Повысить ранг проще простого! Нужно всего лишь проходить Lootrun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#007": {
+   "src": "The more challenges you complete, the more experience you gain at the end!",
+   "dst": "Чем больше испытаний пройдёте, тем больше опыта получите в конце!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#008": {
+   "src": "And that's all there is to it! Let me know if you want to know more.",
+   "dst": "Вот и всё! Скажите, если захотите узнать больше.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Flight in Distress#009": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "Отнеси паспорт Gavel служащему дирижаблей [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -16,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#001": {
+  "Flight in Distress#010": {
    "src": "Good day, soldier! Will you be flying with us today?",
    "dst": "Добрый день, солдат! Полетите сегодня с нами?",
    "role": "desc",
@@ -26,7 +116,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#002": {
+  "Flight in Distress#011": {
    "src": "May I see your passport please?",
    "dst": "Можно ваш паспорт, пожалуйста?",
    "role": "desc",
@@ -36,7 +126,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#003": {
+  "Flight in Distress#012": {
    "src": "It's a bit dusty! It looks very old, but the picture looks like you.",
    "dst": "Пыльный немного! Совсем старый, но на фото вы.",
    "role": "desc",
@@ -46,7 +136,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#004": {
+  "Flight in Distress#013": {
    "src": "Well everything seems to be in order, climb aboard and I hope you have a pleasant journey.",
    "dst": "Что ж, всё в порядке, поднимайтесь на борт. Приятного полёта!",
    "role": "desc",
@@ -56,7 +146,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#005": {
+  "Flight in Distress#014": {
    "src": "Enter the airship.",
    "dst": "Поднимись на дирижабль.",
    "role": "desc",
@@ -66,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#006": {
+  "Flight in Distress#015": {
    "src": "Please remain seated, passengers. We'll be taking off in a moment!",
    "dst": "Пассажиры, оставайтесь на местах. Скоро взлетаем!",
    "role": "desc",
@@ -76,7 +166,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#007": {
+  "Flight in Distress#016": {
    "src": "Speak to Captain Ackbar regarding the missing child.",
    "dst": "Поговори с капитаном Ackbar о пропавшем ребёнке.",
    "role": "desc",
@@ -86,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#008": {
+  "Flight in Distress#017": {
    "src": "Attention passengers. There has been a missing person reported aboard. If there are any volunteers to help search for them, please report to the bridge and speak to the captain.",
    "dst": "Внимание, пассажиры. На борту пропал человек. Добровольцев, готовых помочь в поисках, просим пройти на мостик к капитану.",
    "role": "desc",
@@ -96,7 +186,7 @@
    "speaker": "Broadcast",
    "source": "wiki"
   },
-  "Flight in Distress#009": {
+  "Flight in Distress#018": {
    "src": "This area is off limits to passengers during take off. Climb up to the passenger decks, there will be an attendee waiting at your cabin.",
    "dst": "Во время взлёта пассажирам сюда нельзя. Поднимайтесь на пассажирскую палубу, у вашей каюты ждёт стюард.",
    "role": "desc",
@@ -106,7 +196,7 @@
    "speaker": "Ship Crew",
    "source": "wiki"
   },
-  "Flight in Distress#010": {
+  "Flight in Distress#019": {
    "src": "I hope I do not get nauseous...",
    "dst": "Надеюсь, меня не укачает…",
    "role": "desc",
@@ -116,7 +206,7 @@
    "speaker": "Passenger Jeremy",
    "source": "wiki"
   },
-  "Flight in Distress#011": {
+  "Flight in Distress#020": {
    "src": "Greetings, young adventurer. You haven't seen my glasses, have you?",
    "dst": "Приветствую, юный искатель приключений. Вы не видели мои очки?",
    "role": "desc",
@@ -126,7 +216,7 @@
    "speaker": "Baron Axol",
    "source": "wiki"
   },
-  "Flight in Distress#012": {
+  "Flight in Distress#021": {
    "src": "The interior of this ship is beautiful!",
    "dst": "Внутри этот корабль прекрасен!",
    "role": "desc",
@@ -136,7 +226,7 @@
    "speaker": "Passenger John",
    "source": "wiki"
   },
-  "Flight in Distress#013": {
+  "Flight in Distress#022": {
    "src": "Good day to you, soldier! This will be your quarters for the flight. I wish you a pleasant trip with us!",
    "dst": "Добрый день, солдат! Это ваша каюта на время полёта. Приятного путешествия!",
    "role": "desc",
@@ -146,7 +236,7 @@
    "speaker": "Attendant",
    "source": "wiki"
   },
-  "Flight in Distress#014": {
+  "Flight in Distress#023": {
    "src": "You can sleep through your journey here if you have nothing else to do!",
    "dst": "Если больше нечем заняться, можете проспать тут весь полёт!",
    "role": "desc",
@@ -156,7 +246,7 @@
    "speaker": "Attendant",
    "source": "wiki"
   },
-  "Flight in Distress#015": {
+  "Flight in Distress#024": {
    "src": "The food they serve here is dreadful! As if it were meant for beasts they transport below deck.",
    "dst": "Еда здесь отвратительная! Будто её готовят для зверей, которых везут в трюме.",
    "role": "desc",
@@ -166,7 +256,7 @@
    "speaker": "Passenger Casula",
    "source": "wiki"
   },
-  "Flight in Distress#016": {
+  "Flight in Distress#025": {
    "src": "*Sniff*... Have you seen my child? We were in our cabin, and then he just disappeared!",
    "dst": "*Всхлип*… Вы не видели моего ребёнка? Мы были в каюте, и он просто исчез!",
    "role": "desc",
@@ -176,7 +266,7 @@
    "speaker": "Passenger Nancy",
    "source": "wiki"
   },
-  "Flight in Distress#017": {
+  "Flight in Distress#026": {
    "src": "I heard that a big ship was approaching from north. I saw it from the entrance deck. I wonder what they are doing.",
    "dst": "Слышал, с севера приближается большой корабль. Я видел его с входной палубы. Интересно, что им нужно.",
    "role": "desc",
@@ -186,7 +276,7 @@
    "speaker": "Sub-engineer Akot",
    "source": "wiki"
   },
-  "Flight in Distress#018": {
+  "Flight in Distress#027": {
    "src": "Are you here to volunteer to search for the missing child?",
    "dst": "Вы пришли вызваться на поиски пропавшего ребёнка?",
    "role": "desc",
@@ -196,7 +286,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#019": {
+  "Flight in Distress#028": {
    "src": "We only just to set off and there is already an incident.",
    "dst": "Мы только взлетели, а уже происшествие.",
    "role": "desc",
@@ -206,7 +296,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#020": {
+  "Flight in Distress#029": {
    "src": "His mother informed us that her son disappeared soon after boarding.",
    "dst": "Мать сказала, что сын пропал вскоре после посадки.",
    "role": "desc",
@@ -216,7 +306,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#021": {
+  "Flight in Distress#030": {
    "src": "Poor parenting, if you ask me. Alas, we must find the lad.",
    "dst": "Плохо смотрела за ним, по-моему. Увы, парня надо найти.",
    "role": "desc",
@@ -226,7 +316,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#022": {
+  "Flight in Distress#031": {
    "src": "Since we don't have any leads, it might be best to ask some of the passengers for information.",
    "dst": "Зацепок у нас нет, так что лучше расспросить пассажиров.",
    "role": "desc",
@@ -236,7 +326,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#023": {
+  "Flight in Distress#032": {
    "src": "Most of them will be in the dining area or in the lounge.",
    "dst": "Большинство в столовой или в салоне.",
    "role": "desc",
@@ -246,7 +336,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#024": {
+  "Flight in Distress#033": {
    "src": "Thank you so much for your help; I hope you find the lad soon.",
    "dst": "Большое спасибо за помощь; надеюсь, вы скоро найдёте парня.",
    "role": "desc",
@@ -256,7 +346,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#025": {
+  "Flight in Distress#034": {
    "src": "Try and find out where the missing child is located by speaking to the passengers.",
    "dst": "Расспроси пассажиров и выясни, где пропавший ребёнок.",
    "role": "desc",
@@ -266,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#026": {
+  "Flight in Distress#035": {
    "src": "Hey! Look at that ship over in the distance. It has been following the ship almost since we left off.",
    "dst": "Эй! Смотри на тот корабль вдали. Он летит за нами почти с самого вылета.",
    "role": "desc",
@@ -276,7 +366,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#027": {
+  "Flight in Distress#036": {
    "src": "I know I shouldn't be down here but...",
    "dst": "Знаю, мне нельзя сюда, но…",
    "role": "desc",
@@ -286,7 +376,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#028": {
+  "Flight in Distress#037": {
    "src": "I love airships, and I have never seen one like that.",
    "dst": "Я обожаю дирижабли, а такого ещё никогда не видел.",
    "role": "desc",
@@ -296,7 +386,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#029": {
+  "Flight in Distress#038": {
    "src": "Oh, my mummy wants me?",
    "dst": "Ой, меня мама ищет?",
    "role": "desc",
@@ -306,7 +396,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#030": {
+  "Flight in Distress#039": {
    "src": "Okay then, I will head back right now!",
    "dst": "Ладно, сейчас же вернусь!",
    "role": "desc",
@@ -316,7 +406,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#031": {
+  "Flight in Distress#040": {
    "src": "Return back to the Captain.",
    "dst": "Вернись к капитану.",
    "role": "desc",
@@ -326,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#032": {
+  "Flight in Distress#041": {
    "src": "Thank you so much for finding my child! He will not be leaving my side for the rest of the trip.",
    "dst": "Огромное спасибо, что нашли моего ребёнка! До конца полёта он от меня ни на шаг.",
    "role": "desc",
@@ -336,7 +426,7 @@
    "speaker": "Passenger Nancy",
    "source": "wiki"
   },
-  "Flight in Distress#033": {
+  "Flight in Distress#042": {
    "src": "I'm sorry I caused such a worry earlier...",
    "dst": "Простите, что всех напугал…",
    "role": "desc",
@@ -346,7 +436,7 @@
    "speaker": "Found Child",
    "source": "wiki"
   },
-  "Flight in Distress#034": {
+  "Flight in Distress#043": {
    "src": "Hello again, did you find him?",
    "dst": "Снова здравствуйте, нашли его?",
    "role": "desc",
@@ -356,7 +446,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#035": {
+  "Flight in Distress#044": {
    "src": "How did he get down there?! There is supposed to be someone on duty!",
    "dst": "Как он туда попал?! Там должен быть дежурный!",
    "role": "desc",
@@ -366,7 +456,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#036": {
+  "Flight in Distress#045": {
    "src": "Thank you so much for finding him. You were the only volunteer.",
    "dst": "Большое спасибо, что нашли его. Вы единственный вызвались.",
    "role": "desc",
@@ -376,7 +466,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#037": {
+  "Flight in Distress#046": {
    "src": "Hopefully that is the only hiccup in the journey.",
    "dst": "Надеюсь, это единственная заминка в пути.",
    "role": "desc",
@@ -386,7 +476,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#038": {
+  "Flight in Distress#047": {
    "src": "What in good heavens was that? Crew, report!",
    "dst": "Боже правый, что это было? Экипаж, доложить!",
    "role": "desc",
@@ -396,7 +486,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#039": {
+  "Flight in Distress#048": {
    "src": "Sir! One of our engines blew out! We've lost all thrust on that side.",
    "dst": "Капитан! Взорвался один из двигателей! С той стороны тяги нет.",
    "role": "desc",
@@ -406,7 +496,7 @@
    "speaker": "Airship Crewmember",
    "source": "wiki"
   },
-  "Flight in Distress#040": {
+  "Flight in Distress#049": {
    "src": "Blast it all! We are sitting dead in the water without both engines.",
    "dst": "Проклятье! Без обоих двигателей мы застряли, как в штиль.",
    "role": "desc",
@@ -416,7 +506,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#041": {
+  "Flight in Distress#050": {
    "src": "Go check on the condition of the passengers.",
    "dst": "Проверьте, как там пассажиры.",
    "role": "desc",
@@ -426,7 +516,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#042": {
+  "Flight in Distress#051": {
    "src": "Soldier, go report to the Engineer in the engine room and see if there is anything you can do to help us get moving once again.",
    "dst": "Солдат, доложитесь инженеру в машинном отделении и узнайте, чем можете помочь, чтобы мы снова двинулись.",
    "role": "desc",
@@ -436,7 +526,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#043": {
+  "Flight in Distress#052": {
    "src": "Look if the engineer has something for you to do in order to help.",
    "dst": "Узнай у инженера, чем можно помочь.",
    "role": "desc",
@@ -446,7 +536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#044": {
+  "Flight in Distress#053": {
    "src": "You must be the 'uman the captain done told me.",
    "dst": "Ты, стал быть, тот человек, про какого кэп сказывал.",
    "role": "desc",
@@ -456,7 +546,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#045": {
+  "Flight in Distress#054": {
    "src": "We sure are havin' quite the situation down 'ere.",
    "dst": "Ну и заваруха у нас тут внизу.",
    "role": "desc",
@@ -466,7 +556,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#046": {
+  "Flight in Distress#055": {
    "src": "I hafta stay here and man the 'ngines, else she might damage 'erself.",
    "dst": "Мне тут торчать надо, при движках, не то она себе навредит.",
    "role": "desc",
@@ -476,7 +566,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#047": {
+  "Flight in Distress#056": {
    "src": "If ye wanna help 'uman, go on up the riggin' and take a gander at the props.",
    "dst": "Хошь помочь, человече, - лезь по такелажу да глянь на винты.",
    "role": "desc",
@@ -486,7 +576,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#048": {
+  "Flight in Distress#057": {
    "src": "Ye can get to 'em through the access 'atches in the bridge.",
    "dst": "Туда пролезешь через люки на мостике.",
    "role": "desc",
@@ -496,7 +586,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#049": {
+  "Flight in Distress#058": {
    "src": "If'n they're stopped, just hit the breakers that are off.",
    "dst": "Коль встали - врубай рубильники, какие выключены.",
    "role": "desc",
@@ -506,7 +596,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#050": {
+  "Flight in Distress#059": {
    "src": "Come back here when ye done. I need ta stay here and keep her cool.",
    "dst": "Как управишься, вертайся. Мне тут надо её остужать.",
    "role": "desc",
@@ -516,7 +606,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#051": {
+  "Flight in Distress#060": {
    "src": "Go find and fix the issue with the airship's engines. They are located on top of the balloon through the bridge.",
    "dst": "Найди и устрани неполадку двигателей дирижабля. Они наверху баллона, путь через мостик.",
    "role": "desc",
@@ -526,7 +616,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#052": {
+  "Flight in Distress#061": {
    "src": "In event of shut-down, maitenence must be performed.",
    "dst": "При остановке необходимо провести обслуживание.",
    "role": "desc",
@@ -536,7 +626,7 @@
    "speaker": "Engine Instructions",
    "source": "wiki"
   },
-  "Flight in Distress#053": {
+  "Flight in Distress#062": {
    "src": "Worker must restart all wooden switches before engine overheats.",
    "dst": "Включить все деревянные рычаги до перегрева двигателя.",
    "role": "desc",
@@ -546,7 +636,7 @@
    "speaker": "Engine Instructions",
    "source": "wiki"
   },
-  "Flight in Distress#054": {
+  "Flight in Distress#063": {
    "src": "DO NOT PRESS THE STONE SWITCHES",
    "dst": "НЕ НАЖИМАТЬ КАМЕННЫЕ КНОПКИ",
    "role": "desc",
@@ -556,7 +646,7 @@
    "speaker": "Engine Instructions",
    "source": "wiki"
   },
-  "Flight in Distress#055": {
+  "Flight in Distress#064": {
    "src": "Report to Engineer Eric that you fixed the engines.",
    "dst": "Доложи инженеру Eric, что двигатели починены.",
    "role": "desc",
@@ -566,7 +656,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#056": {
+  "Flight in Distress#065": {
    "src": "Thank ye! The 'ngines are back up and running!",
    "dst": "Спасибо! Движки опять пашут!",
    "role": "desc",
@@ -576,7 +666,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#057": {
+  "Flight in Distress#066": {
    "src": "I couldn't have dun this without ye.",
    "dst": "Без тебя я б не сдюжил.",
    "role": "desc",
@@ -586,7 +676,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#058": {
+  "Flight in Distress#067": {
    "src": "You go back to yer quarters and get some rest. A passen'er like yerself shouldn' have to help the crew.",
    "dst": "Ступай в каюту, отдохни. Пассажиру вроде тебя не след помогать команде.",
    "role": "desc",
@@ -596,7 +686,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#059": {
+  "Flight in Distress#068": {
    "src": "I hope the rest of yer journey is good. I'll let the cap'n know so he can turn her up ta max and get us movin' again.",
    "dst": "Пусть остаток пути будет добрым. Скажу кэпу, чтоб дал полный ход, и мы снова двинем.",
    "role": "desc",
@@ -606,7 +696,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#060": {
+  "Flight in Distress#069": {
    "src": "Thanks 'uman.",
    "dst": "Спасибо, человече.",
    "role": "desc",
@@ -616,7 +706,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#061": {
+  "Flight in Distress#070": {
    "src": "Return back to your cabin.",
    "dst": "Вернись в свою каюту.",
    "role": "desc",
@@ -626,7 +716,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#062": {
+  "Flight in Distress#071": {
    "src": "muffled yelling",
    "dst": "приглушённые крики",
    "role": "desc",
@@ -636,7 +726,7 @@
    "speaker": "Airship Crew",
    "source": "wiki"
   },
-  "Flight in Distress#063": {
+  "Flight in Distress#072": {
    "src": "All staff report to stations! This is not a drill! All staff report to stations!",
    "dst": "Всем по местам! Это не учения! Всем по местам!",
    "role": "desc",
@@ -646,7 +736,7 @@
    "speaker": "Broadcast",
    "source": "wiki"
   },
-  "Flight in Distress#064": {
+  "Flight in Distress#073": {
    "src": "Explore the lower deck and find out what caused the explosion.",
    "dst": "Осмотри нижнюю палубу и выясни причину взрыва.",
    "role": "desc",
@@ -656,7 +746,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#065": {
+  "Flight in Distress#074": {
    "src": "Hol' togetha old girl, ye got this!",
    "dst": "Держись, старушка, ты сможешь!",
    "role": "desc",
@@ -666,7 +756,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#066": {
+  "Flight in Distress#075": {
    "src": "Men, hold her steady. We can still survive this! We just need to stop them following us.",
    "dst": "Держите её ровно, парни. Мы ещё выживем! Надо только стряхнуть погоню.",
    "role": "desc",
@@ -676,7 +766,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#067": {
+  "Flight in Distress#076": {
    "src": "Get to the other ship.",
    "dst": "Попади на другой корабль.",
    "role": "desc",
@@ -686,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#068": {
+  "Flight in Distress#077": {
    "src": "Look here girls, the meat has come to us!",
    "dst": "Гляньте, девки, мясо само пришло!",
    "role": "desc",
@@ -696,7 +786,7 @@
    "speaker": "Sky Raider",
    "source": "wiki"
   },
-  "Flight in Distress#069": {
+  "Flight in Distress#078": {
    "src": "Send more in! They can't get all of us!",
    "dst": "Шлите ещё! Всех не перебьют!",
    "role": "desc",
@@ -706,7 +796,7 @@
    "speaker": "Sky Raider",
    "source": "wiki"
   },
-  "Flight in Distress#070": {
+  "Flight in Distress#079": {
    "src": "The rest of you all, get in here!",
    "dst": "Остальные, все сюда!",
    "role": "desc",
@@ -716,7 +806,7 @@
    "speaker": "Sky Raider",
    "source": "wiki"
   },
-  "Flight in Distress#071": {
+  "Flight in Distress#080": {
    "src": "Head below deck.",
    "dst": "Спустись под палубу.",
    "role": "desc",
@@ -726,7 +816,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#072": {
+  "Flight in Distress#081": {
    "src": "I heard fighting? Is someone there? I am in the jail cell!",
    "dst": "Я слышал бой? Там кто-то есть? Я в камере!",
    "role": "desc",
@@ -736,7 +826,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#073": {
+  "Flight in Distress#082": {
    "src": "Speak to the prisoner.",
    "dst": "Поговори с пленником.",
    "role": "desc",
@@ -746,7 +836,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#074": {
+  "Flight in Distress#083": {
    "src": "I heard fighting above, well done! Any chance to see those raiders get what's coming warms my old heart.",
    "dst": "Слышал бой наверху, молодец! Видеть, как налётчикам воздаётся, - бальзам для старого сердца.",
    "role": "desc",
@@ -756,7 +846,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#075": {
+  "Flight in Distress#084": {
    "src": "I used to be the greatest locksmith in all of Gavel! I was known all over, unfortunately.",
    "dst": "Когда-то я был лучшим мастером замков во всём Gavel! Меня знали повсюду, к несчастью.",
    "role": "desc",
@@ -766,7 +856,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#076": {
+  "Flight in Distress#085": {
    "src": "These fiends captured me, years ago, and made me create hundreds of keys for their raids.",
    "dst": "Эти изверги схватили меня много лет назад и заставили делать сотни ключей для их налётов.",
    "role": "desc",
@@ -776,7 +866,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#077": {
+  "Flight in Distress#086": {
    "src": "I am much too old now, but I would love to see them taken down before I leave this world.",
    "dst": "Я уже слишком стар, но хотел бы увидеть их падение, прежде чем покину этот мир.",
    "role": "desc",
@@ -786,7 +876,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#078": {
+  "Flight in Distress#087": {
    "src": "My key making gear is stored down the hall, behind the staircase. You can use them to craft a way inside the Queen's quarters.",
    "dst": "Мои инструменты хранятся в конце коридора, за лестницей. С их помощью сделаешь ключ в покои королевы.",
    "role": "desc",
@@ -796,7 +886,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#079": {
+  "Flight in Distress#088": {
    "src": "Just look into the keyhole to see how to make them. Good luck!",
    "dst": "Загляни в замочную скважину - поймёшь, как делать. Удачи!",
    "role": "desc",
@@ -806,7 +896,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#080": {
+  "Flight in Distress#089": {
    "src": "Make the key to reach the Skyraider Queen.",
    "dst": "Сделай ключ, чтобы добраться до королевы небесных налётчиков.",
    "role": "desc",
@@ -816,7 +906,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#081": {
+  "Flight in Distress#090": {
    "src": "So you think you can just come on my ship, huh?",
    "dst": "Думаешь, можно вот так заявиться на мой корабль, а?",
    "role": "desc",
@@ -826,7 +916,7 @@
    "speaker": "Skyraider Queen",
    "source": "wiki"
   },
-  "Flight in Distress#082": {
+  "Flight in Distress#091": {
    "src": "Kill my crew? Interrupt my plunder?",
    "dst": "Бить мою команду? Мешать грабежу?",
    "role": "desc",
@@ -836,7 +926,7 @@
    "speaker": "Skyraider Queen",
    "source": "wiki"
   },
-  "Flight in Distress#083": {
+  "Flight in Distress#092": {
    "src": "I know how to deal with 'problems' like you!",
    "dst": "Я знаю, как решать «проблемы» вроде тебя!",
    "role": "desc",
@@ -846,7 +936,7 @@
    "speaker": "Skyraider Queen",
    "source": "wiki"
   },
-  "Flight in Distress#084": {
+  "Flight in Distress#093": {
    "src": "Fight the Skyraider Queen and take one of her personal treasures with you.",
    "dst": "Победи королеву небесных налётчиков и забери одно из её сокровищ.",
    "role": "desc",
@@ -856,7 +946,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#085": {
+  "Flight in Distress#094": {
    "src": "Escape the ship and speak to Captain Ackbar.",
    "dst": "Сбеги с корабля и поговори с капитаном Ackbar.",
    "role": "desc",
@@ -866,7 +956,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#086": {
+  "Flight in Distress#095": {
    "src": "Wow, You single handedly took out a skyraider invasion.",
    "dst": "Ого, вы в одиночку отбили нападение небесных налётчиков.",
    "role": "desc",
@@ -876,7 +966,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#087": {
+  "Flight in Distress#096": {
    "src": "And you're a passenger! It's a good job you did...",
    "dst": "И вы ведь пассажир! Отличная работа…",
    "role": "desc",
@@ -886,7 +976,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#088": {
+  "Flight in Distress#097": {
    "src": "We have no defense on this ship. We are a civilian carrier.",
    "dst": "У нас на борту нет защиты. Мы гражданское судно.",
    "role": "desc",
@@ -896,7 +986,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#089": {
+  "Flight in Distress#098": {
    "src": "What is this? A ring from the queen? It looks valuable. You should keep it.",
    "dst": "Что это? Кольцо королевы? Выглядит ценным. Оставьте себе.",
    "role": "desc",
@@ -906,7 +996,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#090": {
+  "Flight in Distress#099": {
    "src": "I still do not know how to thank you... We owe you so much.",
    "dst": "Даже не знаю, как вас отблагодарить… Мы стольким вам обязаны.",
    "role": "desc",
@@ -916,7 +1006,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#091": {
+  "Flight in Distress#100": {
    "src": "Wait! I know! You can have free travel from {p} to {p}!",
    "dst": "Стойте! Придумал! Летайте бесплатно из {p} в {p}!",
    "role": "desc",
@@ -926,7 +1016,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#092": {
+  "Flight in Distress#101": {
    "src": "A private airship owner called Calo owes me big.",
    "dst": "Владелец частного дирижабля Calo мне крупно должен.",
    "role": "desc",
@@ -936,7 +1026,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#093": {
+  "Flight in Distress#102": {
    "src": "I will tell him the deal. All you have to do is enter his ship and he'll take you back and forth!",
    "dst": "Я с ним договорюсь. Просто садитесь на его корабль, и он будет возить вас туда и обратно!",
    "role": "desc",
@@ -946,7 +1036,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#094": {
+  "Flight in Distress#103": {
    "src": "Oh, and you will also be rewarded kindly monetarily. I will also personally send him the ring, so that it doesn't get damaged on the way, and you will receive it there.",
    "dst": "Да, и вы получите щедрую денежную награду. Кольцо я лично отправлю ему, чтобы оно не пострадало в пути, там его и получите.",
    "role": "desc",
@@ -956,7 +1046,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#095": {
+  "Flight in Distress#104": {
    "src": "Just head down to the entrance deck, and we are about to arrive at {p} Airbase now.",
    "dst": "Спускайтесь на входную палубу, мы уже подлетаем к авиабазе {p}.",
    "role": "desc",
@@ -966,7 +1056,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#096": {
+  "Flight in Distress#105": {
    "src": "Thanks for helping us, really!",
    "dst": "Спасибо за помощь, правда!",
    "role": "desc",
@@ -976,7 +1066,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#097": {
+  "Flight in Distress#106": {
    "src": "Head down to the entrance deck, and get off.",
    "dst": "Спустись на входную палубу и сойди с корабля.",
    "role": "desc",
@@ -986,7 +1076,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#098": {
+  "Flight in Distress#107": {
    "src": "Speak to Calo next to the little ship at the {p} docks.",
    "dst": "Поговори с Calo у маленького корабля в доках {p}.",
    "role": "desc",
@@ -996,7 +1086,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#099": {
+  "Flight in Distress#108": {
    "src": "Hey there. You must be the Human Ackbar told me about.",
    "dst": "Привет. Ты, должно быть, тот человек, о котором говорил Ackbar.",
    "role": "desc",
@@ -1006,7 +1096,7 @@
    "speaker": "Calo",
    "source": "wiki"
   },
-  "Flight in Distress#100": {
+  "Flight in Distress#109": {
    "src": "I heard what you did on the ship, very admirable. Fortunately for you, I owe Ackbar.",
    "dst": "Слышал про твои дела на корабле, достойно. На твоё счастье, я должен Ackbar.",
    "role": "desc",
@@ -1016,7 +1106,7 @@
    "speaker": "Calo",
    "source": "wiki"
   },
-  "Flight in Distress#101": {
+  "Flight in Distress#110": {
    "src": "I'll take you from {p} to {p} or vice versa whenever you want.",
    "dst": "Отвезу тебя из {p} в {p} или обратно, когда захочешь.",
    "role": "desc",
@@ -1026,7 +1116,7 @@
    "speaker": "Calo",
    "source": "wiki"
   },
-  "Flight in Distress#102": {
+  "Flight in Distress#111": {
    "src": "All you have to do is board my ship. Oh, this was also from Ackbar.",
    "dst": "Просто садись на мой корабль. О, и это тоже от Ackbar.",
    "role": "desc",

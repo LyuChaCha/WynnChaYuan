@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "The Sewers of Ragni",
-  "count": 35,
-  "translated": 35,
+  "count": 36,
+  "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Sewers of Ragni#000": {
+   "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
+   "dst": "兵士！下水道を探索してきたのか？しっかり準備できているといいが。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#001": {
    "src": "Soldier! Good timing. We've been requestin' help for ages.",
    "dst": "兵士！いいところに来た。ずっと援軍を要請していたんだ。",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#001": {
+  "The Sewers of Ragni#002": {
    "src": "With the corrupted hordes terrorisin' the Plains, more and more people are moving to {p}.",
    "dst": "腐敗した群れが平原を荒らしているせいで、{p} に移る者が増えている。",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#002": {
+  "The Sewers of Ragni#003": {
    "src": "Issue is, a major sewer pipe's been blocked up. No wonder nobody wanted the job.",
    "dst": "問題は、主要な下水管が詰まったことだ。誰もやりたがらないのも当然だな。",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#003": {
+  "The Sewers of Ragni#004": {
    "src": "I'm going to need ya to get your hands dirty. I'll need some assistance with the blockage.",
    "dst": "手を汚してもらうぞ。詰まりの処理を手伝ってほしい。",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#004": {
+  "The Sewers of Ragni#005": {
    "src": "Here's the brief. We get in, deploy small explosives to dislodge the blockage, and get out.",
    "dst": "作戦を説明する。中に入り、小型爆薬で詰まりを吹き飛ばし、脱出する。",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#005": {
+  "The Sewers of Ragni#006": {
    "src": "We're usin' this side pipe. The larger one down the hill, well... ya don't want to stray too far into that one.",
    "dst": "使うのはこの脇の管だ。丘の下の大きい方は…あまり奥まで行かない方がいい。",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#006": {
+  "The Sewers of Ragni#007": {
    "src": "Keep your wits about you in there. All sorts of things could be lurkin'. Ready? Let's go!",
    "dst": "中では気を抜くな。何が潜んでいてもおかしくない。準備はいいか？行くぞ！",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#007": {
+  "The Sewers of Ragni#008": {
    "src": "New Quest Started: The Sewers of {p}",
    "dst": "新しいクエスト開始: {p} の下水道",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Sewers of Ragni#008": {
+  "The Sewers of Ragni#009": {
    "src": "Good, ya caught up. Watch your step around this place, soldier.",
    "dst": "よし、追いついたな。ここでは足元に気をつけろ、兵士。",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#009": {
+  "The Sewers of Ragni#010": {
    "src": "Our scouts've confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
    "dst": "偵察兵がこの区域の安全を確認したが、道を間違えれば古い監獄に迷い込むぞ。",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#010": {
+  "The Sewers of Ragni#011": {
    "src": "I... we really don't want t' end up there.",
    "dst": "俺…俺たちは、あそこには絶対に行きたくない。",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#011": {
+  "The Sewers of Ragni#012": {
    "src": "Here's a small explosive. I placed one at the blockage already, if that alone doesn't work, use this.",
    "dst": "小型爆薬だ。詰まりにはもう一つ仕掛けてある。それで駄目なら、これを使え。",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#012": {
+  "The Sewers of Ragni#013": {
    "src": "The exit has opened...",
    "dst": "出口が開いた…",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Sewers of Ragni#013": {
+  "The Sewers of Ragni#014": {
    "src": "The pillar seems very unstable...",
    "dst": "柱がひどく不安定なようだ…",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Sewers of Ragni#014": {
+  "The Sewers of Ragni#015": {
    "src": "Ah, you're alive! Looks like we underestimated the amount of sewage.",
    "dst": "ああ、生きていたか！汚水の量を甘く見ていたようだ。",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#015": {
+  "The Sewers of Ragni#016": {
    "src": "... ah. This sewer has some history, y'know. Back durin' the {p} Raids, they used to hide civilians here, in the old prison.",
    "dst": "…ああ。この下水道には歴史があるんだ。{p} 襲撃の時代、古い監獄に市民を匿っていた。",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#016": {
+  "The Sewers of Ragni#017": {
    "src": "Let's get out of here. D'you still have the explosive I gave you?",
    "dst": "ここを出よう。渡した爆薬はまだあるか？",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#017": {
+  "The Sewers of Ragni#018": {
    "src": "Phew! Looks like that first explosion cleared the pipe, the {p} citizens are going to be happy.",
    "dst": "ふう！最初の爆発で管が通ったようだ。{p} の住民も喜ぶだろう。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#018": {
+  "The Sewers of Ragni#019": {
    "src": "... I don't know exactly what's in there, soldier.",
    "dst": "…中に何がいるのか、俺にもよくわからん、兵士。",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "The Sewers of Ragni#019": {
+  "The Sewers of Ragni#020": {
    "src": "I can't stop you from explorin' the dungeon, but I recommend you gear up first.",
    "dst": "ダンジョンに挑むのは止めないが、先に装備を整えることを勧める。",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#020": {
+  "The Sewers of Ragni#021": {
    "src": "Legend has it that Bob, the legendary warrior, was born in 'em durin' a raid on {p}.",
    "dst": "伝説の戦士 Bob は、{p} が襲撃された時にあの中で生まれたという話だ。",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#021": {
+  "The Sewers of Ragni#022": {
    "src": "His mother died in childbirth, but some people say she lay down there for years. Rotting. Waiting.",
    "dst": "母親は出産で死んだが、何年もあそこに横たわっていたと言う者もいる。腐りながら。待ちながら。",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#022": {
+  "The Sewers of Ragni#023": {
    "src": "But that's just a story! Thanks for your help, soldier, an' good luck.",
    "dst": "まあ、ただの噂だ！助かったぞ、兵士。幸運を。",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Jenprest",
    "source": "captured"
   },
-  "The Sewers of Ragni#023": {
+  "The Sewers of Ragni#024": {
    "src": "The Lieutenant at [-{~}, {~}, -{~}] needs help.",
    "dst": "[-{~}, {~}, -{~}] の中尉が助けを求めている。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#031": {
+  "The Sewers of Ragni#025": {
    "src": "Enter the sewer at [-{~}, {~}, -{~}] and find the blockage.",
    "dst": "[-{~}, {~}, -{~}] から下水道に入り、詰まりを見つける。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#032": {
+  "The Sewers of Ragni#026": {
    "src": "Explore the sewer and find the blockage.",
    "dst": "下水道を探索し、詰まりを見つける。",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#036": {
+  "The Sewers of Ragni#027": {
    "src": "Anyway, I've found the blockage. It's right up ahead.",
    "dst": "ともかく、詰まりを見つけた。すぐこの先だ。",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#038": {
+  "The Sewers of Ragni#028": {
    "src": "Find a way to fix the blockage.",
    "dst": "詰まりを解消する方法を見つける。",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#039": {
+  "The Sewers of Ragni#029": {
    "src": "Find a way out of the spooky sewer.",
    "dst": "不気味な下水道から出る方法を見つける。",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#041": {
+  "The Sewers of Ragni#030": {
    "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
    "dst": "さっきは一時はぐれたな。正直、また会えたのは運が良かった。",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#043": {
+  "The Sewers of Ragni#031": {
    "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
    "dst": "時には…時にはそれでも足りなかった。今もあそこを…何かがうろついていると言う者もいる。虐殺の名残がな。",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#045": {
+  "The Sewers of Ragni#032": {
    "src": "Good, let's use it on this wall, it looks like we can break right through...",
    "dst": "よし、この壁に使おう。そのまま突き破れそうだ…",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#046": {
+  "The Sewers of Ragni#033": {
    "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] の Jenprest と話す",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Sewers of Ragni#048": {
+  "The Sewers of Ragni#034": {
    "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
    "dst": "それに、中で厄介なものに出くわさなかったのは運が良かったと思え。噂の中には…",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "Jenprest",
    "source": "wiki"
   },
-  "The Sewers of Ragni#049": {
+  "The Sewers of Ragni#035": {
    "src": "... I don't exactly know what's in there, soldier.",
    "dst": "…中に何がいるのか、俺にもよくわからん、兵士。",
    "role": "desc",

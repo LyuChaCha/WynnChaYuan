@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Passage (Quest)",
-  "count": 28,
-  "translated": 26,
+  "count": 32,
+  "translated": 30,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -279,6 +279,52 @@
   "The Passage (Quest)#027": {
    "src": "Well... I'm glad it worked out for you.",
    "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Passage (Quest)#028": {
+   "src": "Glad to see you, citizen!",
+   "dst": "很高兴见到你，居民！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Glad to see you again!",
+    "file": "quest/underwater.json",
+    "ratio": 0.809,
+    "reason": "candidate"
+   }
+  },
+  "The Passage (Quest)#029": {
+   "src": "Have you heard tales about the great General Skien? Many years ago, he led the Tromsian Army into battle.",
+   "dst": "你听过伟大的 Skien 将军的故事吗？很多年前，他率领 Tromsian 军队上了战场。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "Troms Citizen\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "The Passage (Quest)#030": {
+   "src": "But what is most famous about him is not stories of victory, but rather something much more mysterious.",
+   "dst": "不过他最出名的不是打胜仗的事迹，而是一件神秘得多的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "Troms Citizen\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "The Passage (Quest)#031": {
+   "src": "One day, Skien started acting very strange, and he vanished along with the entire Tromsian Army.",
+   "dst": "有一天，Skien 的举止开始变得非常古怪，然后就连同整支 Tromsian 军队一起消失了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",

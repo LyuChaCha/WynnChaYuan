@@ -1,12 +1,28 @@
 {
  "_meta": {
   "quest": "A Grave Mistake",
-  "count": 18,
-  "translated": 18,
+  "count": 19,
+  "translated": 19,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Grave Mistake#000": {
+   "src": "I have nothing more to say. Take these.",
+   "dst": "No tengo nada más que decir. Toma esto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Grave Mistake",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "I have nothing more to say.",
+    "file": "misc.json",
+    "ratio": 0.818,
+    "reason": "candidate"
+   }
+  },
+  "A Grave Mistake#001": {
    "src": "Thank you again for all of your help!",
    "dst": "¡Gracias otra vez por toda tu ayuda!",
    "role": "desc",
@@ -16,7 +32,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Grave Mistake#001": {
+  "A Grave Mistake#002": {
    "src": "Leave.",
    "dst": "Marcharse.",
    "role": "desc",
@@ -26,7 +42,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Grave Mistake#002": {
+  "A Grave Mistake#003": {
    "src": "But since you have made it thus far, I suppose I shall show you the truth...",
    "dst": "Pero ya que has llegado hasta aquí, supongo que te mostraré la verdad...",
    "role": "desc",
@@ -36,7 +52,7 @@
    "speaker": "???",
    "source": "captured"
   },
-  "A Grave Mistake#003": {
+  "A Grave Mistake#004": {
    "src": "Then leave, and forget the horrors you have witnessed here today...",
    "dst": "Entonces márchate y olvida los horrores que has presenciado hoy aquí…",
    "role": "desc",
@@ -46,7 +62,7 @@
    "speaker": "Mael",
    "source": "captured"
   },
-  "A Grave Mistake#004": {
+  "A Grave Mistake#005": {
    "src": "Keep in mind what you have learned.",
    "dst": "Ten presente lo que has aprendido.",
    "role": "desc",
@@ -56,7 +72,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Grave Mistake#005": {
+  "A Grave Mistake#006": {
    "src": "You might want to leave.",
    "dst": "Deberías marcharte.",
    "role": "desc",
@@ -66,7 +82,7 @@
    "speaker": "Alem",
    "source": "wiki"
   },
-  "A Grave Mistake#006": {
+  "A Grave Mistake#007": {
    "src": "There is nothing in this graveyard.",
    "dst": "No hay nada en este cementerio.",
    "role": "desc",
@@ -76,7 +92,7 @@
    "speaker": "Alem",
    "source": "wiki"
   },
-  "A Grave Mistake#007": {
+  "A Grave Mistake#008": {
    "src": "This place is private.",
    "dst": "Este lugar es privado.",
    "role": "desc",
@@ -86,7 +102,7 @@
    "speaker": "Alem",
    "source": "wiki"
   },
-  "A Grave Mistake#008": {
+  "A Grave Mistake#009": {
    "src": ".;I. ,told;.",
    "dst": ".;Te. ,lo dije;.",
    "role": "desc",
@@ -96,7 +112,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Grave Mistake#009": {
+  "A Grave Mistake#010": {
    "src": "I have warned you...",
    "dst": "Te lo advertí...",
    "role": "desc",
@@ -106,7 +122,7 @@
    "speaker": "Alem",
    "source": "wiki"
   },
-  "A Grave Mistake#010": {
+  "A Grave Mistake#011": {
    "src": "Oh, my arm.. It's ba...",
    "dst": "Ay, mi brazo.. Ha vuel...",
    "role": "desc",
@@ -116,7 +132,7 @@
    "speaker": "XXXXXXX",
    "source": "wiki"
   },
-  "A Grave Mistake#011": {
+  "A Grave Mistake#012": {
    "src": "Where di.. my arm.? I need my a... I had it somewh... upstairs?",
    "dst": "¿Dónde es.. mi brazo.? Necesito mi br... Lo dejé en algún... ¿arriba?",
    "role": "desc",
@@ -126,7 +142,7 @@
    "speaker": "XXXXXXX",
    "source": "wiki"
   },
-  "A Grave Mistake#012": {
+  "A Grave Mistake#013": {
    "src": "You were warned not to enter this forsaken place.",
    "dst": "Se te advirtió que no entraras en este lugar olvidado.",
    "role": "desc",
@@ -146,7 +162,7 @@
    "speaker": "Mael",
    "source": "wiki"
   },
-  "A Grave Mistake#016": {
+  "A Grave Mistake#015": {
    "src": "They are safer here.",
    "dst": "Aquí están más seguros.",
    "role": "desc",
@@ -156,7 +172,7 @@
    "speaker": "Mael",
    "source": "wiki"
   },
-  "A Grave Mistake#017": {
+  "A Grave Mistake#016": {
    "src": ".Return;' to:, 'Alem;,",
    "dst": ".Vuelve;' con:, 'Alem;,",
    "role": "desc",
@@ -166,7 +182,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Grave Mistake#019": {
+  "A Grave Mistake#017": {
    "src": "Ooh.. oh... another victim... Welcome... there is no need for a quick introduction... ... you will have just time enough now...",
    "dst": "Ooh.. oh... otra víctima... Bienvenido... no hace falta presentarse... ... ahora tendrás el tiempo justo...",
    "role": "desc",
@@ -176,7 +192,7 @@
    "speaker": "Skull",
    "source": "wiki"
   },
-  "A Grave Mistake#020": {
+  "A Grave Mistake#018": {
    "src": "After all... you just fell into a grave... but, let us make it a little comfortable... where shall I bite first?!",
    "dst": "Al fin y al cabo... acabas de caer en una tumba... pero pongámonos cómodos... ¡¿por dónde muerdo primero?!",
    "role": "desc",
