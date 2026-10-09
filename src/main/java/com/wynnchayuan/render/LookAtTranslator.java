@@ -556,6 +556,10 @@ public final class LookAtTranslator {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG) - total / 2;
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.NAMETAG);
         }
+        // 存的位置是照當時的視窗大小；視窗縮小之後可能已經在畫面外。見 Boxes#intoScreen。
+        int[] at = Boxes.intoScreen(x, y, total, tallest, graphics.guiWidth(), graphics.guiHeight());
+        x = at[0];
+        y = at[1];
 
         for (int i = 0; i < rows.size(); i++) {
             List<Component> lines = rows.get(i);

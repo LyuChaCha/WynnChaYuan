@@ -562,6 +562,10 @@ public final class DialogueOverlay {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.DIALOGUE) - boxW / 2;
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
         }
+        // 存的位置是照當時的視窗大小；視窗縮小之後可能已經在畫面外。見 Boxes#intoScreen。
+        int[] at = Boxes.intoScreen(x, y, boxW, boxH, graphics.guiWidth(), graphics.guiHeight());
+        x = at[0];
+        y = at[1];
 
         if (!lines.isEmpty()) {
             if (sized) {

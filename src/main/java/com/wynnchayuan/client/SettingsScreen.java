@@ -259,9 +259,28 @@ public final class SettingsScreen extends Screen {
                 .option(T.s("mode.replace"), Row.Tone.REPLACE)
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> get.get().ordinal())
-                .pick(i -> cycleTo(get, next, CollectorConfig.DialogueMode.values()[i]))
+                .pick(i -> {
+                    cycleTo(get, next, CollectorConfig.DialogueMode.values()[i]);
+                    // 選項的小框不受總開關管（見 RenderListener#renderHud），只有內文要
+                    needBoxes("dialogue.mode".equals(key)
+                            && get.get() == CollectorConfig.DialogueMode.PANEL);
+                })
                 .reset(() -> get.get() == CollectorConfig.DialogueMode.REPLACE,
                         () -> cycleTo(get, next, CollectorConfig.DialogueMode.REPLACE));
+    }
+
+    /**
+     * 選了「小框」就把小框的總開關一起打開。
+     *
+     * <p>「對話／追蹤小框」那個總開關關著的時候，對話、追蹤、名牌選成小框模式，
+     * 畫面上什麼都不會出現——原文照舊、譯文沒有，而設定畫面上兩邊各自看起來都
+     * 沒問題。挑小框的人要的就是看到小框，所以直接替他打開，不要讓兩個設定互相抵消
+     * （issue #1081 的其中一種可能）。反過來關掉總開關仍然是一鍵全收，不受影響。
+     */
+    private static void needBoxes(boolean box) {
+        if (box && !cfg().showOverlays()) {
+            cfg().toggleOverlays();
+        }
     }
 
     private static int holdSeconds() {
@@ -294,8 +313,11 @@ public final class SettingsScreen extends Screen {
                 .option(T.s("mode.replace"), Row.Tone.REPLACE)
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> cfg().nametagMode().ordinal())
-                .pick(i -> cycleTo(cfg()::nametagMode, cfg()::cycleNametagMode,
-                        CollectorConfig.NametagMode.values()[i]))
+                .pick(i -> {
+                    cycleTo(cfg()::nametagMode, cfg()::cycleNametagMode,
+                            CollectorConfig.NametagMode.values()[i]);
+                    needBoxes(cfg().nametagMode() == CollectorConfig.NametagMode.LOOK_AT);
+                })
                 .extra(t("button.advanced"), () -> this.minecraft.setScreen(new NametagScreen(this)))
                 .reset(() -> cfg().nametagMode() == CollectorConfig.NametagMode.REPLACE,
                         () -> cycleTo(cfg()::nametagMode, cfg()::cycleNametagMode,
@@ -323,7 +345,10 @@ public final class SettingsScreen extends Screen {
                 .option(T.s("mode.panel"), Row.Tone.ACCENT)
                 .option(T.s("mode.off"), Row.Tone.OFF)
                 .selected(() -> java.util.Arrays.asList(order).indexOf(cfg().trackerMode()))
-                .pick(i -> cycleTo(cfg()::trackerMode, cfg()::cycleTrackerMode, order[i]))
+                .pick(i -> {
+                    cycleTo(cfg()::trackerMode, cfg()::cycleTrackerMode, order[i]);
+                    needBoxes(cfg().trackerMode() == CollectorConfig.DialogueMode.PANEL);
+                })
                 .reset(() -> cfg().trackerMode() == CollectorConfig.DialogueMode.REPLACE,
                         () -> cycleTo(cfg()::trackerMode, cfg()::cycleTrackerMode,
                                 CollectorConfig.DialogueMode.REPLACE)));

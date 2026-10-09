@@ -47,6 +47,7 @@ public final class DialogueOverlayTest {
 
         checkCacheReuse(store);
         checkKeepAlive();
+        checkIntoScreen();
 
         System.out.println(failures == 0 ? "\n全部通過" : "\n失敗 " + failures + " 項");
         System.exit(failures == 0 ? 0 : 1);
@@ -72,6 +73,25 @@ public final class DialogueOverlayTest {
                 DialogueOverlay.keptAlive(old, now, true, false, false) == old);
         check("小框裡沒東西就不必續",
                 DialogueOverlay.keptAlive(old, now, false, true, true) == old);
+    }
+
+    /**
+     * 存的位置在畫面外時，小框要被拉回來（issue #1081）。
+     *
+     * <p>回報的人平常用 1920×1009 的視窗（GUI 960×504）把對話小框擺在下方，
+     * 錄影時把視窗縮成 1280×720（GUI 640×360）——存的 y 比整個畫面還高，
+     * 小框照樣畫，只是畫在看不到的地方。
+     */
+    private static void checkIntoScreen() {
+        int[] at = Boxes.intoScreen(380, 430, 200, 42, 640, 360);
+        check("★ 存在畫面外的小框被拉回來（實際 " + at[0] + "," + at[1] + "）",
+                at[0] >= 0 && at[0] + 200 <= 640 && at[1] >= 0 && at[1] + 42 <= 360);
+        int[] same = Boxes.intoScreen(220, 250, 200, 42, 640, 360);
+        check("本來就在畫面裡的不動", same[0] == 220 && same[1] == 250);
+        int[] left = Boxes.intoScreen(-300, -50, 200, 42, 640, 360);
+        check("往左上跑掉的也拉回來", left[0] >= 0 && left[1] >= 0);
+        int[] huge = Boxes.intoScreen(100, 100, 900, 500, 640, 360);
+        check("比畫面還大的貼著左上角，至少看得到開頭", huge[0] <= 2 && huge[1] <= 2);
     }
 
     private static void checkPrefix(String name, String raw, TranslationStore store,
