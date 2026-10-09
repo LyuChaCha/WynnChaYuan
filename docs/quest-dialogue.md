@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**22,644 / 22,817 句已翻（99.2%），共 160 個任務，還沒有人動的有 0 個。**
+**22,671 / 22,844 句已翻（99.2%），共 160 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -81,7 +81,7 @@
 | Enzan's Brother | [`enzan-s-brother.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enzan-s-brother.json) | 30 | 27 | 2 | 97% |
 | Fallen Delivery | [`fallen-delivery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fallen-delivery.json) | 65 | 55 | 5 | ✅ |
 | Fallen Factory | [`fallen-factory.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fallen-factory.json) | 58 | 58 | 2 | ✅ |
-| Fantastic Voyage | [`fantastic-voyage.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fantastic-voyage.json) | 279 | 260 | 5 | ✅ |
+| Fantastic Voyage | [`fantastic-voyage.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fantastic-voyage.json) | 306 | 285 | 5 | ✅ |
 | Fate of the Fallen | [`fate-of-the-fallen.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fate-of-the-fallen.json) | 88 | 79 | 5 | ✅ |
 | Finding the Light | [`finding-the-light.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/finding-the-light.json) | 156 | 140 | 3 | ✅ |
 | Flight in Distress | [`flight-in-distress.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/flight-in-distress.json) | 112 | 94 | 23 | ✅ |
