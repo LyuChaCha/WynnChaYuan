@@ -120,7 +120,7 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 | [Fabric API](https://modrinth.com/mod/fabric-api) | **必要** | |
 | [Mod Menu](https://modrinth.com/mod/modmenu) | 選裝，有支援 | 模組清單上多一顆設定按鈕 |
 | [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) | 選裝，有支援 | 它的搜尋面板打譯名也找得到，結果列在英文名旁邊附上譯名；送出去的仍是英文名 |
-| WynnMod | 相容 | 它用來判斷討伐戰結果的那幾句話，裝了它的時候保留英文，連勝才不會算錯（沒裝的人照常看到譯文） |
+| [WynnMod](https://modrinth.com/mod/wynnmod) | 相容 | 它用來判斷討伐戰結果的那幾句話，裝了它的時候保留英文，連勝才不會算錯（沒裝的人照常看到譯文） |
 | 會在 tooltip 加區塊的模組（Nori、Wynnpool…） | 相容 | 那些區塊照原樣留著。翻譯面板因此比原文多出幾行時，把區塊標籤填進 `config/wynnchayuan/third-party-sections.json` 就會濾掉 |
 
 沒列在上面的模組多半也能一起用：本模組只在客戶端換畫面上的字。遇到衝突請[開 Issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 並附上模組清單。

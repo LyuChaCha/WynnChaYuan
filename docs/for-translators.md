@@ -243,7 +243,7 @@ NPC 是用「玩家正前方最近的名牌」猜的，旁邊站著別人時可�
   整行不顯示不行。
 
 哪個編號是哪個顏色，看診斷檔 `config/wynnchayuan/majorid-debug.txt` 的
-「可用的顏色」那一段（F6 打開診斷才會寫）。完整說明見
+「可用的顏色」那一段（設定裡打開診斷才會寫）。完整說明見
 [CONTRIBUTING.md](../CONTRIBUTING.md)。
 
 ---

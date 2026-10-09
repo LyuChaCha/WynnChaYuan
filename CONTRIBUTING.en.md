@@ -95,7 +95,7 @@ non-vanilla colour codes come along, so the line follows the game if its palette
 ever changes.
 
 **To see which number is which colour**, read the "available colours" section of
-`config/wynnchayuan/majorid-debug.txt` (written while diagnostics are on, F6):
+`config/wynnchayuan/majorid-debug.txt` (written while diagnostics are on in the settings):
 
 ```
 === available colours 1 ===
@@ -176,7 +176,7 @@ Ask a maintainer if you'd rather not run it yourself.
 ## Reporting missing text
 
 If you find game text that isn't in the corpus at all, keep collection on in the
-F6 settings and walk past it. Then press **F6 → Data → Export untranslated strings**,
+settings and walk past it. Then open **Settings → Data → Export untranslated strings**,
 look through the exported file, and attach it with the
 [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml).
 The mod never sends anything by itself.

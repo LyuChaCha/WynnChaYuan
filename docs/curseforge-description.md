@@ -25,15 +25,15 @@
 - **Lootruns, raids and dungeons**: missions, boons, beacons, aspects, gambits, loot panels, dungeon names
 - **Discoveries** and **title text**
 
-Gear names stay in English by default; they can be turned on in F6.
+Gear names stay in English by default; they can be turned on in the settings.
 
 ### More
 
 - **Translations update themselves**: new translations are downloaded from GitHub on your next launch, no mod update needed
 - **Market search in your language**: type the translated name in the trade market, the English one is sent
 - **Copy chat**: copy recent chat lines for a report
-- **F9**: screenshot of the translation panel
-- **F6 settings**: a mode for each kind of text; translation, fallback and interface language; draggable and resizable boxes
+- **Screenshot** of the translation panel (no key by default; bind one under Controls)
+- **Settings** (Mod Menu, `/wcy`, or a key you bind yourself): a mode for each kind of text; translation, fallback and interface language; draggable and resizable boxes
 - **Update notice**: a one-time chat notice linking to GitHub Releases
 
 Client-side only. The server does not need it.
@@ -43,7 +43,7 @@ Client-side only. The server does not need it.
 - **Traditional Chinese**: main language, everything
 - **Simplified Chinese**, **Japanese**, **Russian**, **Korean** and **Spanish**: everything, quest dialogue included
 
-Switch under F6 → Data, without changing the game's language.
+Switch under Settings → Data, without changing the game's language.
 
 ### Progress
 
@@ -67,7 +67,7 @@ Switch under F6 → Data, without changing the game's language.
 - [Wynntils](https://www.curseforge.com/minecraft/mc-mods/wynntils) **4.2+**
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 
-Put the jar in `mods/` and press **F6** in game.
+Put the jar in `mods/`. In game, open the settings from Mod Menu or by typing `/wcy`.
 
 ### A line switches back to English halfway?
 
@@ -75,7 +75,7 @@ Put the jar in `mods/` and press **F6** in game.
 
 ### How to help
 
-Press **F6 → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**F6 → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
+Open **Settings → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**Settings → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
 
 The mod never sends anything by itself. The export already leaves out player names and guild, party, shout and private chat.
 
@@ -106,15 +106,15 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 - **Lootrun、討伐戰、地城**：使命、賜福、信標、Aspect、Gambit、戰利品面板、地城名稱
 - **探索點**與**畫面中央大字**
 
-裝備名稱預設保留原文，F6 可以打開。
+裝備名稱預設保留原文，在設定裡可以打開。
 
 ### 其他功能
 
 - **譯文自動更新**：新的翻譯下次進遊戲就從 GitHub 下載，不必更新模組
 - **市集搜尋**：在交易市集打譯名，送出前自動換回英文原名
 - **複製聊天**：複製最近的聊天訊息，方便回報
-- **F9**：譯文面板截圖
-- **F6 設定**：每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小
+- **截圖**：譯文面板截圖（按鍵預設不綁，到「按鍵設定」自己綁）
+- **設定**（Mod Menu、`/wcy` 或自己綁的按鍵）：每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小
 - **更新提示**：有新版時在聊天室提示一次，連到 GitHub Releases
 
 純客戶端，伺服器不需要裝。
@@ -124,7 +124,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 - **繁體中文**：主要語言，所有內容
 - **簡體中文**、**日文**、**俄文**、**韓文**、**西班牙文**：所有內容，含任務對話
 
-在 F6 →「資料」切換，不必改遊戲語言。
+在設定 →「資料」切換，不必改遊戲語言。
 
 ### 翻譯進度
 
@@ -148,7 +148,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 - [Wynntils](https://www.curseforge.com/minecraft/mc-mods/wynntils) **4.2 以上**
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 
-jar 放進 `mods/`，進遊戲按 **F6**。
+jar 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設定。
 
 ### 翻到一半變回英文？
 
@@ -156,7 +156,7 @@ jar 放進 `mods/`，進遊戲按 **F6**。
 
 ### 怎麼幫忙
 
-按 **F6 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**F6 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
+打開 **設定 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**設定 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
 
 模組不會自動送出任何東西；匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
 

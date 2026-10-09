@@ -124,7 +124,7 @@ Switch under **Settings → Data**, without changing the game's language or rest
 | [Fabric API](https://modrinth.com/mod/fabric-api) | **Required** | |
 | [Mod Menu](https://modrinth.com/mod/modmenu) | Optional, supported | Adds a configure button to the mod list |
 | [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) | Optional, supported | Its search panel finds items by translated name and shows the translation next to the English name; what gets sent is still the English name |
-| WynnMod | Compatible | The lines it reads to decide a raid's outcome stay in English while it is installed, so streaks are counted correctly (without it you see the translation as usual) |
+| [WynnMod](https://modrinth.com/mod/wynnmod) | Compatible | The lines it reads to decide a raid's outcome stay in English while it is installed, so streaks are counted correctly (without it you see the translation as usual) |
 | Mods that add sections to tooltips (Nori, Wynnpool…) | Compatible | Those sections are kept as they are. If they make the translation panel longer than the original, list their labels in `config/wynnchayuan/third-party-sections.json` to filter them |
 
 Mods not listed here usually work alongside as well: this mod only changes the text drawn on your client. If something clashes, [open an issue](https://github.com/LyuChaCha/WynnChaYuan/issues) with your mod list.
