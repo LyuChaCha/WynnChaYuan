@@ -1,0 +1,126 @@
+# 撞名報表：PR 引入了「兩個不同原文撞到同一譯名」嗎？
+#
+# 為什麼是留言而不是紅燈
+# ----------------------
+# tools/check-collisions.py 的定位是<b>人看的報表</b>：撞名有大量合法例外
+# （原文措辭變體、刻意同譯的整套），機器只能投票、不能定案，所以腳本本身
+# 永遠回傳 0。這裡也一樣——這個 workflow 從不失敗，只在 PR 上留一則留言，
+# 告訴譯者「你這批譯文多出了幾對要修」，看不看、修不修由人決定。
+#
+# 為什麼只報「新增的」
+# --------------------
+# 語料裡本來就躺著二十幾對歷史撞名（見 tools/reference/ 的對照組）。每個
+# PR 都把整份報表貼出來，留言會變成沒人看的雜訊。所以這裡跑兩次——main
+# 一次、PR 一次——只貼 PR 多出来的「要修」對子。PR 把舊撞名修掉了不留言，
+# 默默感謝就好。
+#
+# 安全性跟 validate-translations.yml 同一套：pull_request_target 拿的是
+# 有寫入權的 token，所以只 checkout <b>本倉庫</b>的程式（tools/ 是可信的），
+# PR 那邊只取譯文 JSON 當資料——JSON 不會被執行。
+name: 撞名報表
+
+on:
+  pull_request_target:
+    paths:
+      - 'src/main/resources/assets/wynnchayuan/translations/**'
+  # 手動跑：不對比、不留言，把 main 現況的完整報表放上 Summary。
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write   # 在 PR 上留／更新／刪除那則留言
+
+jobs:
+  collisions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取出本倉庫的程式
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 基準報表（main 的語料）
+        run: python tools/check-collisions.py > base-report.txt
+
+      - name: 取出 PR 的譯文檔（只取資料，不取程式）
+        if: github.event_name == 'pull_request_target'
+        run: |
+          git fetch origin "pull/${{ github.event.pull_request.number }}/head:pr"
+          git checkout pr -- src/main/resources/assets/wynnchayuan/translations/
+
+      - name: PR 的報表
+        if: github.event_name == 'pull_request_target'
+        run: python tools/check-collisions.py > pr-report.txt
+
+      # 報表裡「要修」那段的行長這樣：
+      #   [5/6 分得開] 要修   corrupted slinger / corruption slinger
+      # 兩份報表各抽出要修對子，相減就是這個 PR 新引入的。
+      - name: 對比出 PR 新增的要修對子
+        if: github.event_name == 'pull_request_target'
+        run: |
+          python - <<'EOF'
+          import re
+          from pathlib import Path
+
+          def fixable(path):
+              pairs = set()
+              for line in Path(path).read_text(encoding="utf-8").splitlines():
+                  m = re.match(r"\[\d+/6 分得開\] 要修\s+(.+)", line)
+                  if m:
+                      pairs.add(m.group(1).strip())
+              return pairs
+
+          new = sorted(fixable("pr-report.txt") - fixable("base-report.txt"))
+          Path("new-collisions.txt").write_text("\n".join(new), encoding="utf-8")
+          print(f"PR 新增的要修對子：{len(new)} 對")
+          EOF
+
+      # 一個 PR 只留一則（用 marker 認），重跑就更新；PR 修乾淨了就把留言
+      # 收掉，不留「現在沒問題」的殭屍留言。
+      - name: 在 PR 上貼出新增撞名
+        if: github.event_name == 'pull_request_target'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '<!-- collision-report -->';
+            const lines = fs.readFileSync('new-collisions.txt', 'utf8').trim();
+            const { owner, repo } = context.repo;
+            const number = context.payload.pull_request.number;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner, repo, issue_number: number, per_page: 100,
+            });
+            const existing = comments.find(c => c.user.type === 'Bot' && c.body.includes(marker));
+            if (!lines) {
+              if (existing) {
+                await github.rest.issues.deleteComment({ owner, repo, comment_id: existing.id });
+              }
+              return;
+            }
+            const body = [
+              marker,
+              '### 撞名報表：這個 PR 引入了新的「要修」對子',
+              '',
+              ...lines.split('\n').map(l => `- \`${l}\``),
+              '',
+              '兩個不同的原文被譯成了同一個名字，玩家在遊戲裡會以為是同一個東西。',
+              '判準與「整套／待判」的說明見 `tools/check-collisions.py` 的開頭；',
+              '完整報表在這次 workflow 的 Summary。這則留言只是提醒，不擋合併。',
+            ].join('\n');
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number: number, body });
+            }
+
+      # 不管哪種觸發，完整報表都放 Summary——留言只有對子清單，細節在這裡。
+      - name: 完整報表放上 Summary
+        if: always()
+        run: |
+          if [ -f pr-report.txt ]; then
+            cat pr-report.txt >> "$GITHUB_STEP_SUMMARY"
+          else
+            cat base-report.txt >> "$GITHUB_STEP_SUMMARY"
+          fi
