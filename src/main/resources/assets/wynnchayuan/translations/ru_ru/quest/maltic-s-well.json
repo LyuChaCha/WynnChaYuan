@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Maltic's Well",
-  "count": 25,
+  "count": 27,
   "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Maltic's Well#000": {
+   "src": "At the northern side of {p}, there is a very dangerous cave.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#001": {
+   "src": "It's filled with an unnaturally large nest of spiders. I wouldn't dare go in there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#002": {
    "src": "Please do something! I know {p} isn't of much importance to you humans, being a villager settlement, but...my son!",
    "dst": "Сделайте что-нибудь! Знаю, {p} для вас, людей, - селянское захолустье, но... мой сын!",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "Rynend",
    "source": "captured"
   },
-  "Maltic's Well#001": {
+  "Maltic's Well#003": {
    "src": "New Quest Started: {p}'s Well",
    "dst": "Новое задание: Колодец {p}",
    "role": "desc",
@@ -32,14 +52,14 @@
     "reason": "candidate"
    }
   },
-  "Maltic's Well#002": {
+  "Maltic's Well#004": {
    "src": "I don't know why they call me a witch. This one's father made fun of my looks, so I'll turn his son into a Grook!",
    "dst": "Не понимаю, почему меня называют ведьмой. Отец этого мальца смеялся над моей внешностью, так что я превращу его сына в Grook!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "Stage 1",
-   "speaker": "Rynend",
+   "stage": "Stage 2",
+   "speaker": "Witch",
    "source": "captured",
    "similar": {
     "text": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
@@ -48,27 +68,27 @@
     "reason": "candidate"
    }
   },
-  "Maltic's Well#003": {
+  "Maltic's Well#005": {
    "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The... the Beast-That-Eats-{p}-Guards-For-Brunch!!",
    "dst": "...ведь ошибёшься дверью - и попадёшь к зверю, ужаснейшему зверю! Э-э... Зверю-Что-Ест-Стражу-{p}-На-Завтрак!! Точно!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "Stage 1",
-   "speaker": "Rynend",
+   "stage": "Stage 2",
+   "speaker": "Witch",
    "source": "captured"
   },
-  "Maltic's Well#004": {
+  "Maltic's Well#006": {
    "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing this cowl, and have warts.",
    "dst": "Ох... так и думала, что не поверишь. Знаешь, в магии я не сильна. Просто люблю остроконечные шляпы, и у меня бородавки.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Maltic's Well",
-   "stage": "Stage 1",
-   "speaker": "Rynend",
+   "stage": "Stage 2",
+   "speaker": "Witch",
    "source": "captured"
   },
-  "Maltic's Well#005": {
+  "Maltic's Well#007": {
    "src": "I cannot thank you enough for your help!",
    "dst": "Не могу выразить, как я благодарен вам за помощь!",
    "role": "desc",
@@ -78,7 +98,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Maltic's Well#006": {
+  "Maltic's Well#008": {
    "src": "Talk to Rynend located in {p} at [-{~}, {~}, -{~}]",
    "dst": "Поговори с Rynend в {p}, [-{~}, {~}, -{~}]",
    "role": "desc",
@@ -88,7 +108,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Maltic's Well#007": {
+  "Maltic's Well#009": {
    "src": "Please help us! We called for a {p} guard days ago, but Humans tend to forget this little village.",
    "dst": "Помогите нам! Мы давно звали стражу {p}, но люди вечно забывают нашу деревушку.",
    "role": "desc",
@@ -98,7 +118,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#008": {
+  "Maltic's Well#010": {
    "src": "Last week, an evil witch found refuge in our old well. Normally this wouldn't be a problem...",
    "dst": "На прошлой неделе злая ведьма укрылась в нашем старом колодце. Обычно это не беда...",
    "role": "desc",
@@ -108,7 +128,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#009": {
+  "Maltic's Well#011": {
    "src": "But she's lured my child into the well! My only child! He was born in Wynn, that makes him a Wynn citizen!",
    "dst": "Но она заманила в колодец моего ребёнка! Единственного! Он родился в Wynn, он гражданин Wynn!",
    "role": "desc",
@@ -118,7 +138,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#011": {
+  "Maltic's Well#012": {
    "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",
    "dst": "Осмотри старый колодец {p} в [-{~}, {~}, -{~}] и принеси Rynend [{~} Witch's Empty Bottle]",
    "role": "desc",
@@ -128,7 +148,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Maltic's Well#012": {
+  "Maltic's Well#013": {
    "src": "Help me! Someone! The witch is being mean!!",
    "dst": "Помогите! Кто-нибудь! Ведьма обижает!!",
    "role": "desc",
@@ -138,7 +158,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Maltic's Well#013": {
+  "Maltic's Well#014": {
    "src": "I wondered when they'd send the famous {p} guards. You'll never get me!",
    "dst": "Так и знала, что пришлют знаменитую стражу {p}. Меня не поймать!",
    "role": "desc",
@@ -168,7 +188,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#019": {
+  "Maltic's Well#017": {
    "src": "Maybe if the people of this village weren't so mean to me, I wouldn't have been forced to live here.",
    "dst": "Не будь жители деревни так злы ко мне, мне не пришлось бы здесь жить.",
    "role": "desc",
@@ -178,7 +198,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#020": {
+  "Maltic's Well#018": {
    "src": "I know it's a crime, but his father and the rest of the villagers here hunt me like I'm a rabid dog!",
    "dst": "Знаю, это преступление, но его отец и прочие селяне травят меня, как бешеную собаку!",
    "role": "desc",
@@ -188,7 +208,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#021": {
+  "Maltic's Well#019": {
    "src": "I wasn't really going to turn this boy into a Grook. I doubt I could even make him grow one feather. I mean, watch...",
    "dst": "Я не собиралась превращать мальчика в Grook. У меня и перо у него не вырастет. Вот, смотри...",
    "role": "desc",
@@ -198,7 +218,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#022": {
+  "Maltic's Well#020": {
    "src": "Aiyeeee! What's happening to meeee?!",
    "dst": "Аааааай! Что со мной?!",
    "role": "desc",
@@ -208,7 +228,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Maltic's Well#023": {
+  "Maltic's Well#021": {
    "src": "...oh my gosh it worked???? It worked, I did a spell for once in my miserable life!!",
    "dst": "...батюшки, получилось???? Получилось, раз в жизни я сотворила заклинание!!",
    "role": "desc",
@@ -218,7 +238,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#024": {
+  "Maltic's Well#022": {
    "src": "W-Wait, that's not good at all, you're gonna... No! You won't take me out of here alive!",
    "dst": "П-постой, это же плохо, ты теперь... Нет! Живой ты меня отсюда не выведешь!",
    "role": "desc",
@@ -228,7 +248,7 @@
    "speaker": "Witch",
    "source": "wiki"
   },
-  "Maltic's Well#025": {
+  "Maltic's Well#023": {
    "src": "Thank you for saving me from the witch... She was nice at first and made me cookies, but I want to go home now.",
    "dst": "Спасибо, что выручили от ведьмы... Сначала она была доброй и пекла печенье, но я хочу домой.",
    "role": "desc",
@@ -238,7 +258,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Maltic's Well#026": {
+  "Maltic's Well#024": {
    "src": "Oh my son! What happened down there? Erh, not a witch, you say?",
    "dst": "Сынок! Что там случилось? Э, говорите, не ведьма?",
    "role": "desc",
@@ -248,7 +268,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#027": {
+  "Maltic's Well#025": {
    "src": "Preposterous! She wore a hat and had warts! I guess it's too late now... Thank you so much for your help.",
    "dst": "Вздор! У неё шляпа и бородавки! Теперь уж поздно... Огромное спасибо за помощь.",
    "role": "desc",
@@ -258,7 +278,7 @@
    "speaker": "Rynend",
    "source": "wiki"
   },
-  "Maltic's Well#028": {
+  "Maltic's Well#026": {
    "src": "I have very little to offer you as reward... I hope my appreciation will be more than enough!",
    "dst": "Наградить мне вас почти нечем... Надеюсь, моей благодарности хватит!",
    "role": "desc",
