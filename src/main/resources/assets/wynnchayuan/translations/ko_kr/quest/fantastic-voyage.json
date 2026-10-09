@@ -1,14 +1,14 @@
 {
  "_meta": {
   "quest": "Fantastic Voyage",
-  "count": 279,
-  "translated": 279,
+  "count": 306,
+  "translated": 306,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Fantastic Voyage#000": {
-   "src": "Speak to Relend.",
-   "dst": "Relend와 대화하세요.",
+   "src": "Speak to Relend at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]에 있는 Relend와 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -17,8 +17,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#001": {
-   "src": "Let's go, just you and me! On a grand voyage across the sea!",
-   "dst": "가세, 자네와 나 둘이서! 바다 건너 큰 항해를 떠나서!",
+   "src": "Let's go, just you and me! On a fantastic voyage across the sea!",
+   "dst": "가세, 자네와 나 둘이서! 바다 건너 환상의 항해를 떠나서!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -787,7 +787,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#082": {
-   "src": "'pparently he takes 'em for joyrides 'round the sea and gets all sorts'a labor out of 'em, then just drops 'em back here.",
+   "src": "'pparently he takes 'em for joyrides 'round the sea and get's all sorts'a labour out of 'em, then just drops 'em back here.",
    "dst": "듣자 하니 사람들을 바다 유람에 데려가서 온갖 일을 시키고는 여기다 그냥 내려놓는대요.",
    "role": "desc",
    "kind": "dialogue",
@@ -807,8 +807,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#084": {
-   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
-   "dst": "...아, Relend랑 나간다고요? 정말요?",
+   "src": "...Oh, you're goin' out with Relend, hey? Even after all I said?",
+   "dst": "...아, Relend랑 나간다고요? 내가 그렇게 말했는데도요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -937,8 +937,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#097": {
-   "src": "Really, I wish some of those nutters sit down and take a good bite of some raw, authentic Rye, or a hearty whole-wheat.",
-   "dst": "진짜, 그 괴짜들이 앉아서 날것 그대로의 진짜 호밀이나 든든한 통밀 한 입 제대로 먹어 봤으면 좋겠어.",
+   "src": "Really, I wish I could see those nutters sit down and take a good bite of some raw, authentic Rye, or a hearty whole-wheat.",
+   "dst": "진짜, 그 괴짜들이 앉아서 날것 그대로의 진짜 호밀이나 든든한 통밀 한 입 제대로 먹는 걸 봤으면 좋겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -977,7 +977,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#101": {
-   "src": "You know what people always miss when talking about bread, the CONSISTENCY! The consistency is consistently the most im-",
+   "src": "You know what people always miss when discussing bread, the CONSISTENCY! The consistency is consistently the most im-",
    "dst": "빵 얘기할 때 다들 놓치는 게 뭔지 알아? 바로 식감의 일관성! 일관성은 일관되게 제일 중...",
    "role": "desc",
    "kind": "dialogue",
@@ -1027,7 +1027,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#106": {
-   "src": "Overusin’ so-called “refined” grains is a sure and done way to get runny slop that’s not fit for the pigs.",
+   "src": "Overusin' so-called 'refined' grains is a sure and done way to get runny slop that's not fit for the pigs.",
    "dst": "소위 '정제' 곡물을 너무 쓰면 돼지도 안 먹을 질척한 죽이 되는 건 확실해.",
    "role": "desc",
    "kind": "dialogue",
@@ -1037,7 +1037,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#107": {
-   "src": "Come to think, you shouldn’t feed pigs refined grains anyway. It’s hard on their digestion.",
+   "src": "Come to think, you shouldn't feed pig refined grains anyway. It's hard on their digestion.",
    "dst": "생각해 보니 돼지한테도 정제 곡물은 먹이면 안 돼. 소화에 안 좋거든.",
    "role": "desc",
    "kind": "dialogue",
@@ -1087,7 +1087,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#112": {
-   "src": "I’ll let you in on a little secret. The Sky’s Kitchen is great and all, but what passes for bread there is intolerable. No substance at all!",
+   "src": "I'll let you in on a little secret. The Sky's Kitchen's great and all, but what passes for bread there is intolerable. No substance at all!",
    "dst": "비밀 하나 알려 줄게. Sky's Kitchen이 훌륭하긴 한데, 거기서 빵이라고 내놓는 건 못 참겠어. 알맹이가 하나도 없어!",
    "role": "desc",
    "kind": "dialogue",
@@ -1097,7 +1097,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#113": {
-   "src": "What you’ll want to do is get it straight from the fields, right from the soil! Well, not literally, but from the countryside! Leave breadmakin’ to those who’ve been workin’ with grain before they could walk on two legs!",
+   "src": "What you'll want to do is get it straight from the fields, right from the soil! Well, not literally, but from the countryside! Leave breadmakin' to those who've been workin' with grain before they could even walk on two legs!",
    "dst": "빵은 들판에서, 흙에서 곧장 가져와야 해! 뭐, 말 그대로는 아니고 시골에서 말이야! 빵 굽기는 두 발로 걷기 전부터 곡물을 만진 사람들한테 맡기라고!",
    "role": "desc",
    "kind": "dialogue",
@@ -1107,7 +1107,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#114": {
-   "src": "Heck, I bet even I could do better than those snobby sauciers.",
+   "src": "Heck, I bet even I could do a better job than those snobby sauciers.",
    "dst": "참나, 그 잘난 소스 요리사들보단 나도 더 잘하겠다.",
    "role": "desc",
    "kind": "dialogue",
@@ -1117,7 +1117,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#115": {
-   "src": "Right. Digestion. The fiber in whole-grain bread is a lifesaver.",
+   "src": "Right. Digestion. The fiber in whole-grain bread is a real lifesaver.",
    "dst": "그래. 소화. 통곡물 빵의 섬유질은 생명의 은인이야.",
    "role": "desc",
    "kind": "dialogue",
@@ -1187,7 +1187,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#122": {
-   "src": "Those hawkers can pretend that it’s an upper-crust good all they want, but we all know that it’s just a waste of dough.",
+   "src": "Those hawkers can pretend that it's an upper-crust good all they want, but we all know it's just a waste of dough.",
    "dst": "장사꾼들이 아무리 고급품인 척해도, 다들 알잖아. 그냥 반죽 낭비, 돈 낭비라는 거.",
    "role": "desc",
    "kind": "dialogue",
@@ -1227,7 +1227,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#126": {
-   "src": "But just because you can doesn’t mean that you should. Who could stomach somethin’ like “Oatmeal-Bran Fusion Delight”? WHO WOULD EVEN MAKE BREAD OUT OF OATS?!",
+   "src": "But just because you can doesn't mean that you should. Who could stomach somethin' like 'Oatmeal-Bran Fusion Delight'? WHO WOULD EVEN MAKE BREAD OUT OF OATS?!",
    "dst": "하지만 할 수 있다고 해야 하는 건 아니지. '오트밀 밀기울 퓨전 딜라이트' 같은 걸 누가 먹어? 대체 누가 귀리로 빵을 만들어?!",
    "role": "desc",
    "kind": "dialogue",
@@ -1247,7 +1247,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#128": {
-   "src": "...and don’t get me started on “Pain au {p}”! But really, Oatmeal-Bran Fusion Delight is among the worst. Oh! That reminds me about a better use for oats.",
+   "src": "...and don't get me started on 'Pain au {p}'! But really, Oatmeal-Bran Fusion Delight is among the worst. Oh! That reminds me about a better use for oats.",
    "dst": "...'Pain au {p}'는 말도 꺼내지 마! 근데 진짜 오트밀 밀기울 퓨전 딜라이트가 최악 중 하나야. 오! 귀리의 더 좋은 쓸모가 생각났다.",
    "role": "desc",
    "kind": "dialogue",
@@ -1297,7 +1297,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#133": {
-   "src": "Though, it seems like you can’t just get a good loaf of bread nearby. Sure, there’s sailin’ biscuits, but that hardly qualifies!",
+   "src": "Though it seems like you just can't get a good loaf of bread nearby. Sure, there's sailin' biscuits, but that hardly qualifies!",
    "dst": "근데 이 근처에선 제대로 된 빵을 구할 수가 없는 것 같아. 항해용 비스킷이 있긴 한데, 그건 빵 축에도 못 껴!",
    "role": "desc",
    "kind": "dialogue",
@@ -1327,7 +1327,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#136": {
-   "src": "Ready? Right, let’s get started! The less ingredients you use, the closer you’ll be to makin’ a real loaf! Not the wannabe poundcakes eaten by wannabe spendthrifts.",
+   "src": "Ready? Right, let's get started! The less ingredients you use, the closer you'll get to makin' a real loaf! Not the wannabe poundcakes eaten by wannabe spendthrifts.",
    "dst": "준비됐어? 좋아, 시작하자! 재료를 적게 쓸수록 진짜 빵에 가까워져! 허세꾼들이나 먹는 짝퉁 파운드케이크 말고.",
    "role": "desc",
    "kind": "dialogue",
@@ -1337,7 +1337,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#137": {
-   "src": "There’s a common misconception that you need sugar for the yeast to start risin’. Not true!",
+   "src": "There's a common misconception that you need sugar for yeast to start risin'. Not true!",
    "dst": "효모가 부풀려면 설탕이 필요하다는 흔한 오해가 있는데, 틀렸어!",
    "role": "desc",
    "kind": "dialogue",
@@ -1547,7 +1547,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#158": {
-   "src": "Some people put the cart before the horse and think that yeast works like bakin’ powder. Try that, and you’ll end up with scorchin’-hot bricks in your oven.",
+   "src": "Some people put the cart before the horse and think that yeast works like bakin' powder. Try that, and you'll end up with some scorchin'-hot bricks in your oven.",
    "dst": "어떤 사람들은 순서를 거꾸로 알고 효모가 베이킹파우더처럼 작용한다고 생각해. 그러면 오븐에서 뜨거운 벽돌만 나와.",
    "role": "desc",
    "kind": "dialogue",
@@ -1577,7 +1577,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#161": {
-   "src": "Though that may not be the case for other pastries. For one, I’ve never once heard of a pie with a chewy crust.",
+   "src": "Though that may not be the case for some other pastries. For one, I've never once heard of a pie with a chewy crust.",
    "dst": "다른 과자류는 아닐 수도 있지만. 일단 난 껍질이 쫄깃한 파이는 들어 본 적이 없어.",
    "role": "desc",
    "kind": "dialogue",
@@ -1587,7 +1587,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#162": {
-   "src": "Really, the beauty in bread lies with it’s simplicity! No complicated steps, no chances for the dough to rebel. Certainly not as fickle as somethin’ like a cream puff.",
+   "src": "Really, the beauty in bread lies with its simplicity! No complicated steps, no chances for the dough to rebel. Certainly not as fickle as somethin' like a cream puff.",
    "dst": "진짜로, 빵의 아름다움은 단순함에 있어! 복잡한 단계도 없고, 반죽이 반항할 틈도 없지. 슈크림처럼 까다롭지도 않고.",
    "role": "desc",
    "kind": "dialogue",
@@ -1627,7 +1627,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#166": {
-   "src": "Though some people insist upon puttin’ butter in the bread. Not just on it, but in it! There’s more butter than bread at that point!",
+   "src": "Though some people insist upon putin' butter in the bread. Not just on it, but in it! There's more butter than bread at that point!",
    "dst": "근데 굳이 빵에 버터를 넣겠다는 사람들이 있어. 위에 바르는 게 아니라 안에! 그쯤 되면 빵보다 버터가 많아!",
    "role": "desc",
    "kind": "dialogue",
@@ -1737,7 +1737,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#177": {
-   "src": "Namely, the two extremes: too chewy, and not chewy enough. I already spoke on hardly chewy bread plenty, but there’s such a thing as too much of a good thing.",
+   "src": "Namely, the two extremes: too chewy and not chewy enough. I already spoke on hardly chewy bread plenty, but there's such a thing as too much of a good thing.",
    "dst": "말하자면 두 극단이야. 너무 쫄깃한 것과 덜 쫄깃한 것. 거의 안 쫄깃한 빵 얘긴 많이 했지만, 좋은 것도 지나치면 문제거든.",
    "role": "desc",
    "kind": "dialogue",
@@ -1957,7 +1957,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#199": {
-   "src": "I see plenty parrots every day, I don't keep track.",
+   "src": "I see plenty parrots everyday, I don't keep track.",
    "dst": "앵무새야 매일 잔뜩 보는데 일일이 기억 못 해.",
    "role": "desc",
    "kind": "dialogue",
@@ -2137,8 +2137,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#217": {
-   "src": "Bring a Wooden Board, a Center Piece, and a String to the Crafting Table.",
-   "dst": "나무판, 중심 부품, 끈을 제작대로 가져가세요.",
+   "src": "Bring a [Wooden Board], a [Center Piece], and a [String] to the Crafting Table",
+   "dst": "[나무판], [중심 부품], [끈]을 제작대로 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -2147,8 +2147,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#218": {
-   "src": "Bring the Steering Wheel to Captain Relend.",
-   "dst": "조타륜을 Relend 선장에게 가져가세요.",
+   "src": "Bring the [Steering Wheel] to Captain Relend.",
+   "dst": "[조타륜]을 Relend 선장에게 가져가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -2477,8 +2477,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#251": {
-   "src": "I know we can come up with a solution using our wits. Perhaps we can use an explosive to blow that big rock to bits!",
-   "dst": "머리를 쓰면 해결책이 나올 걸세. 폭약으로 저 큰 바위를 산산조각 내 보세!",
+   "src": "I know we can come up with a solution using our wits. Perhaps we can craft an explosive to blow that big rock to bits!",
+   "dst": "머리를 쓰면 해결책이 나올 걸세. 폭약을 만들어 저 큰 바위를 산산조각 내 보세!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -2537,8 +2537,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#257": {
-   "src": "Bring {~} Gritty Sand, {~} Saw Dust, and {~} Black Powder to the Crafting Table.",
-   "dst": "{~} Gritty Sand, {~} Saw Dust, {~} Black Powder를 제작대로 가져가세요.",
+   "src": "Bring [{~} Gritty Sand], [{~} Saw Dust], and [{~} Black Powder] to the Crafting Table",
+   "dst": "[{~} Gritty Sand], [{~} Saw Dust], [{~} Black Powder]를 제작대로 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -2727,8 +2727,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#276": {
-   "src": "Whatever it is, I feel that we're being overseen from afar.",
-   "dst": "뭐가 됐든, 멀리서 누가 지켜보는 것 같지 않나.",
+   "src": "Wherever it is, I feel that we're being overseen from afar.",
+   "dst": "어디가 됐든, 멀리서 누가 지켜보는 것 같지 않나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -2737,7 +2737,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#277": {
-   "src": "With all this danger, I still hope my good friend is still okay.",
+   "src": "With all this danger, I do hope my good friend is still okay.",
    "dst": "이 모든 위험 속에서도 좋은 친구가 무사하길 바라네.",
    "role": "desc",
    "kind": "dialogue",
@@ -2795,6 +2795,277 @@
    "stage": "Stage 19",
    "speaker": "Relend",
    "source": "wiki"
+  },
+  "Fantastic Voyage#283": {
+   "src": "Get on it then, no time for a nap! That thieving parrot has our map!",
+   "dst": "어서 움직이게, 낮잠 잘 틈이 어디 있나! 저 도둑 앵무새가 우리 지도를 갖고 있잖나!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#284": {
+   "src": "Perhaps these citizens may help us out, ask them about the parrot's route!",
+   "dst": "이곳 주민들이 도와줄지도 모르겠네, 앵무새가 간 길을 물어보면 되겠네!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#285": {
+   "src": "He seems distracted, best to walk away while you can.",
+   "dst": "그는 딴 데 정신이 팔린 것 같다. 갈 수 있을 때 자리를 뜨는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#286": {
+   "src": "He begins to list off a seemingly endless amount of examples.",
+   "dst": "그가 끝도 없어 보이는 예시를 줄줄이 늘어놓기 시작한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#287": {
+   "src": "It looks like he's nearly finished.",
+   "dst": "거의 다 끝나 가는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#288": {
+   "src": "It seems like he's lost in reminiscence.",
+   "dst": "그는 추억에 잠긴 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#289": {
+   "src": "He doesn't seem to be stopping any time soon.",
+   "dst": "당분간 멈출 기미가 없어 보인다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#290": {
+   "src": "It seems like he's waiting expectantly.",
+   "dst": "그는 기대에 찬 얼굴로 기다리는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#291": {
+   "src": "He's thoughtfully rubbing his jaw. Best to leave him be",
+   "dst": "그는 생각에 잠겨 턱을 문지르고 있다. 그냥 내버려 두는 게 좋겠다",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#292": {
+   "src": "He's beaming with pride.",
+   "dst": "그는 뿌듯한 얼굴로 활짝 웃고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#293": {
+   "src": "It seems like he's deep in thought.",
+   "dst": "그는 깊은 생각에 빠진 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#294": {
+   "src": "He proceeds to rattle off several grievances about pastry making.",
+   "dst": "그가 과자 만들기에 대한 불만을 줄줄이 늘어놓는다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#295": {
+   "src": "He's waiting expectantly.",
+   "dst": "그는 기대에 찬 얼굴로 기다리고 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#296": {
+   "src": "You don't have the time for this.",
+   "dst": "이럴 시간이 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#297": {
+   "src": "He seems pretty comfortable, best not to disturb him.",
+   "dst": "꽤 편안해 보인다. 방해하지 않는 게 좋겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#298": {
+   "src": "Heh, have fun, mate. Lot'sa treasure out there, eh?",
+   "dst": "헤, 재밌게 놀다 와요, 친구. 저 바깥엔 보물이 잔뜩 있다죠, 그쵸?",
+   "text": "You know he's nuts, right mate? Y'not gonna find any treasure or anythin'.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#299": {
+   "src": "Looks like the parrot dropped the map! You should get this back to Relend.",
+   "dst": "앵무새가 지도를 떨어뜨린 것 같다! Relend에게 돌려줘야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#300": {
+   "src": "You have no use for this yet, you should speak with Relend up near the steering wheel.",
+   "dst": "아직은 쓸 데가 없다. 위쪽 조타륜 근처에 있는 Relend와 이야기해야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#301": {
+   "src": "You'll need a [Wooden Board], a [Center Piece], and a [String] to craft a Steering Wheel.",
+   "dst": "조타륜을 만들려면 [나무판], [중심 부품], [끈]이 필요하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#302": {
+   "src": "This will probably work... You should show Relend.",
+   "dst": "이거면 될 것 같다... Relend에게 보여 줘야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#303": {
+   "src": "You have nothing to load... You should continue through the wreckage.",
+   "dst": "장전할 것이 없다... 잔해를 계속 헤치고 나아가야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#304": {
+   "src": "Bring [{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], and [{~} Berries] to the Cooking Pot",
+   "dst": "[{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], [{~} Berries]를 요리 냄비로 가져가세요",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#305": {
+   "src": "You'll need [{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], and [{~} Berries] to make a stew.",
+   "dst": "스튜를 만들려면 [{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], [{~} Berries]가 필요하다.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#306": {
+   "src": "Take a look at your content book if you forgot your project, this island has supplies we ought to collect!",
+   "dst": "할 일을 잊었거든 콘텐츠 북을 펴 보게, 이 섬엔 챙겨야 할 물자가 있으니 어서 모아 오게!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#308": {
+   "src": "The volcano is erupting!",
+   "dst": "화산이 폭발하고 있다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#309": {
+   "src": "This looks dangerous! You should go blow open that boulder now.",
+   "dst": "위험해 보인다! 지금 당장 가서 저 바위를 날려 버려야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#310": {
+   "src": "I've been looking for my old friend all this time. Sailing with every young adventurer in their prime!",
+   "dst": "이제껏 줄곧 옛 친구를 찾아다녔네. 한창때인 젊은 모험가라면 누구와든 함께 배를 탔네!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }
