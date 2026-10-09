@@ -1923,6 +1923,84 @@ public final class TranslationStore {
         return out;
     }
 
+    /** 圖示的佔位符。 */
+    private static final String ICON = "{#}";
+
+    /** 名稱列尾巴的鑑定度。 */
+    private static final String ROLLED = " [{~}]";
+
+    /**
+     * 「物品名稱那一列」裡面的名稱；不是這種列回傳 {@code null}。
+     *
+     * <h2>名稱列長什麼樣</h2>
+     * 同一個名字在 tooltip 上會以幾種外框出現，差別只在前後的圖示與鑑定度：
+     *
+     * <pre>
+     *   {#}Warp{#}                    第 0 行（看不見的那一行）
+     *   {#}{#}{#}Capricorn{#}
+     *   {#}{#}{#}{#}{#}Warp [{~}]     看得見的那一行，已鑑定
+     *   {#}{#}{#}{#}{#}Filched Purse
+     *   {#}{#}{#}{#}{#}{#}{#}Hero
+     * </pre>
+     *
+     * <h2>為什麼這種列不能有整列的譯文（使用者 2026-10-09 回報）</h2>
+     * 整列模板的優先度高於逐片段。語料裡一旦有 {@code {#}Warp{#}} 這種條目，
+     * 名稱就不再經過「名稱」那條路，於是那條路負責的事全部失效，而且
+     * <b>只有這幾件</b>失效，看起來像隨機：
+     *
+     * <ul>
+     *   <li>「譯名加原文」不附原文——越相杖、静星耀杖沒有 (Warp)、(Halcyon)，
+     *       旁邊的橡木匕首卻有；</li>
+     *   <li>F6 關掉物品名稱、按住 Shift 看原文，這幾件照樣是譯名；</li>
+     *   <li>條目的譯文跟原文一樣時（收進來時還沒翻），裝備檔後來補的譯名
+     *       永遠顯示不出來——繁中的 Withdrawal、Capricorn 就是這樣卡在英文。</li>
+     * </ul>
+     *
+     * <p>這種條目是收集端把「名稱還沒翻的那一列」當成缺口記下來、再被照著補出來的，
+     * 清掉一批還會再長。所以查表這一層直接不認，收集端也不再記
+     * （見 {@link #hasTranslation}）。
+     *
+     * <h2>哪些不算</h2>
+     * 只有一個圖示開頭、後面什麼都沒有的（{@code {#}Redemption}）是 Lootrun 的
+     * 使命名，剛好跟裝備撞名，不是名稱列。所以外框要夠像：尾巴有圖示或鑑定度，
+     * 或者開頭至少三個圖示。
+     */
+    static String nameRowInner(String key) {
+        if (key == null) {
+            return null;
+        }
+        int start = 0;
+        while (key.startsWith(ICON, start)) {
+            start += ICON.length();
+        }
+        int leading = start / ICON.length();
+        int end = key.length();
+        boolean rolled = key.endsWith(ROLLED);
+        if (rolled) {
+            end -= ROLLED.length();
+        }
+        int trailing = 0;
+        while (end - ICON.length() >= start && key.startsWith(ICON, end - ICON.length())) {
+            end -= ICON.length();
+            trailing++;
+        }
+        if (leading == 0 || end <= start) {
+            return null;
+        }
+        if (trailing == 0 && !rolled && leading < 3) {
+            return null;                       // {#}Redemption：使命名，不是名稱列
+        }
+        String inner = key.substring(start, end);
+        return inner.indexOf('{') >= 0 || !inner.equals(inner.strip()) ? null : inner;
+    }
+
+    /** 這個鍵是不是「圖示 + 已知的物品名稱」那一列。見 {@link #nameRowInner}。 */
+    private boolean isNameRow(String key) {
+        String inner = nameRowInner(key);
+        return inner != null && (nameKeys.contains(inner) || gearNameKeys.contains(inner)
+                || plainNameKeys.contains(inner));
+    }
+
     private String lookupBase(String template) {
         if (template == null) {
             return null;
@@ -1933,6 +2011,9 @@ public final class TranslationStore {
         }
         if (peekPlainNames && plainNameKeys.contains(key)) {
             return null;                       // 按住 Shift：素材與材料看原文
+        }
+        if (isNameRow(key)) {
+            return null;                       // 名稱那一列不收整列的譯文，見 #nameRowInner
         }
 
         if (topLayer > 0) {
@@ -2246,6 +2327,11 @@ public final class TranslationStore {
         }
         String key = template.strip();
         if (entries.containsKey(key) || lookupIndented(key) != null) {
+            return true;
+        }
+        if (isNameRow(key)) {
+            // 名稱列不是語料的單位：名稱翻了就是翻了，沒翻的缺口是「名稱」那一條。
+            // 記成缺口的話，補出來的整列條目會把名稱那條路蓋掉。見 #nameRowInner。
             return true;
         }
         if (lookupMarked(key) != null) {

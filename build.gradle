@@ -1267,3 +1267,11 @@ tasks.register('runWmsBridgeChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.WmsBridgeTest'
 }
 tasks.named('check') { dependsOn 'runWmsBridgeChecks' }
+
+tasks.register('runNameRowChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證物品名稱那一列不會被語料裡的整列條目蓋掉'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameRowTest'
+}
+tasks.named('check') { dependsOn 'runNameRowChecks' }
