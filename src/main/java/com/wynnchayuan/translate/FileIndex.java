@@ -53,7 +53,7 @@ public final class FileIndex {
      * 自然不會讀到它。
      */
     public static final List<String> SCOPED = List.of("scoped/label.json", "scoped/bossbar.json",
-            "scoped/name.json", "scoped/archetype.json");
+            "scoped/name.json", "scoped/archetype.json", "scoped/gear.json");
 
     /** 打包在 jar 裡的清單。 */
     public static List<String> bundled() {

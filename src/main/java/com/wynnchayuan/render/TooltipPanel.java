@@ -262,7 +262,14 @@ public final class TooltipPanel {
         boolean abilityPanel = isAbilityNode(styled);
         String gearName = n == 0 || abilityPanel ? null : bareName(
                 com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
-        if (gearName != null && store.isBareGearName(gearName)) {
+        // 另外取了名字的裝備（scoped/gear.json）不擋：它在一般語料裡可能還沒翻
+        // （Chief、Red 這種跟介面詞同名的），但它有自己的名字可以用。
+        // F6 關掉物品名稱時照舊留原文。見 TranslationStore#gearOwnName。
+        boolean ownName = gearName != null && store.translatesNames()
+                && store.gearOwnName(gearName) != null
+                && TranslationStore.nameRowInner(com.wynnchayuan.capture.LineParts.of(
+                        styled.get(0)).template()) != null;
+        if (gearName != null && !ownName && store.isBareGearName(gearName)) {
             out.add(LineTranslator.untranslated(styled.get(0)));
             spans.add(new int[] {0, 1, 0, 1});
             i = 1;
@@ -291,9 +298,18 @@ public final class TooltipPanel {
         // 物品名稱最多佔前兩行（第 0 行寬度是 0，看得見的在第 1 行）。
         // 第三行起是敘述，裡面提到的同名裝備不附原文。見
         // TranslationStore#holdAppendedOriginal。
+        // 這份說明的頭兩行是不是「物品的名稱列」。是的話，跟技能同名的裝備在這兩行
+        // 用它自己的名字（scoped/gear.json），見 TranslationStore#gearOwnName。
+        //
+        // 認得很窄：第 0 行必須是名稱列的外框（圖示夾著名字，見 #nameRowInner），
+        // 而且不是技能樹的節點。Lootrun 使命卡的標題是「{#}Redemption」——只有開頭
+        // 一個圖示，不是名稱列，所以使命「救贖」不會變成那件護腿的名字。
+        boolean itemRows = n > 0 && !abilityPanel && TranslationStore.nameRowInner(
+                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()) != null;
         try {
             while (i < n) {
                 TranslationStore.holdAppendedOriginal(i >= 2);
+                TranslationStore.nameLine(itemRows && i < 2);
                 int longest = Math.min(store.maxBlockLines(), n - i);
                 List<Component> block = null;
                 int used = 0;
@@ -369,8 +385,10 @@ public final class TooltipPanel {
                 // 只在<b>不是</b>技能樹／使命面板時擋。技能樹的「解鎖後將封鎖:」
                 // 底下列的正是技能名，那些該翻——而它們剛好也有同名裝備，
                 // 所以分辨面板這一步不能省。見 #isAbilityNode。
+                // 名稱列上另外取了名字的裝備不擋，見上面的 ownName。
                 Component translated =
-                        !abilityPanel && blockedGearName(styled.get(i), store)
+                        !abilityPanel && !(ownName && i < 2)
+                                && blockedGearName(styled.get(i), store)
                         ? null
                         : LineTranslator.translate(styled.get(i), store, centered[i],
                                                    leftAligned);
@@ -386,6 +404,7 @@ public final class TooltipPanel {
             }
         } finally {
             TranslationStore.holdAppendedOriginal(false);
+            TranslationStore.nameLine(false);
         }
         // 同一段不能一半中文一半英文，見 evenOut。
         //

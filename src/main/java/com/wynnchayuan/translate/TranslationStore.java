@@ -1740,7 +1740,57 @@ public final class TranslationStore {
         return nameKeys.contains(key) && !otherOwners.contains(key);
     }
 
+    /** 裝備專用的名字放在哪個範圍。見 {@link #gearOwnName}。 */
+    private static final String GEAR_SCOPE = "gear";
+
+    /**
+     * 這件裝備<b>自己的</b>譯名；沒有另外取名的回 {@code null}。
+     *
+     * <h2>為什麼要另外放一份</h2>
+     * 一般語料一個原文只能有一種譯法（validate 會擋）。而 Wynncraft 有五十幾件裝備
+     * 的名字跟技能、Lootrun 使命、Major ID 一模一樣：{@code Frenzy} 是弓箭手技能
+     * 「得寸進尺」也是一把長矛，{@code Aerodynamics} 是戰士技能「流線身法」也是一件
+     * 胸甲，{@code Radiance} 是「榮光賜福」也是一把弓。裝備只能跟著技能叫——
+     * 畫面上就是一把叫「得寸進尺」的矛（使用者 2026-10-09：這 46 件也要處理）。
+     *
+     * <p>{@code scoped/gear.json} 收的是這些裝備當<b>物品名稱</b>時的譯名
+     * （「狂躁之矛」「空氣動力胸甲」「光輝之弓」）。它只在物品說明的名稱那兩行生效
+     * ——由 {@code TooltipPanel#translateLines} 掛 {@link #nameLine} 決定——
+     * 技能樹、使命卡、Major ID 的說明照舊用一般語料那一份。
+     *
+     * <p>不列進 {@code _index.json}（見 {@link FileIndex#SCOPED}）：舊版不認得這個檔，
+     * 不會把它當一般語料載進去、反過來把技能名蓋成裝備名。
+     */
+    public String gearOwnName(String key) {
+        return key == null ? null : scopedLookup(GEAR_SCOPE, key);
+    }
+
+    /**
+     * 現在畫的是物品說明的<b>名稱那兩行</b>。見 {@link #gearOwnName}。
+     *
+     * <p>預設是關的：漏掛只是那幾件裝備照舊跟著技能叫，掛錯才會讓技能樹上的
+     * 「得寸進尺」變成一把矛。所以只有 {@code TooltipPanel} 在認出「這是物品的
+     * 名稱列」之後才掛，畫完就放下。
+     */
+    public static void nameLine(boolean on) {
+        nameLine = on;
+    }
+
+    /** 見 {@link #nameLine}。算繪只有一條執行緒，用靜態的就夠。 */
+    private static volatile boolean nameLine = false;
+
     public String lookup(String template) {
+        if (nameLine && template != null) {
+            String own = gearOwnName(template);
+            if (own != null) {
+                if (!translateNames) {
+                    return null;               // 使用者選擇不翻物品名稱
+                }
+                // 「譯名 (原文)」：跟一般裝備名同一個規矩
+                return namesWithOriginal && !holdAppended
+                        ? own + " (" + template.strip() + ")" : own;
+            }
+        }
         String hit = lookupBase(template);
         if (hit == null) {
             return shiny(template);
@@ -1780,7 +1830,8 @@ public final class TranslationStore {
         if (at < 0) {
             return -1;
         }
-        return isAppendedOriginal(text.substring(at + 2, text.length() - 1)) ? at : -1;
+        return isAppendedOriginal(text.substring(at + 2, text.length() - 1),
+                text.substring(0, at)) ? at : -1;
     }
 
     /**
@@ -1814,12 +1865,29 @@ public final class TranslationStore {
             if (close < 0) {
                 return null;
             }
-            if (isAppendedOriginal(text.substring(at + 2, close))) {
+            if (isAppendedOriginal(text.substring(at + 2, close), text.substring(0, at))) {
                 return new int[] {at, close + 1};
             }
             at = text.indexOf(" (", at + 2);
         }
         return null;
+    }
+
+    /**
+     * 括號前面就是那件裝備自己的名字時也算。
+     *
+     * <p>另外取名的裝備（跟技能同名的那幾十件，見 {@link #gearOwnName}）不是
+     * {@link #gearOnly}——別的檔也有這個原文——所以光看括號裡的字分不出來。
+     * 但「狂躁之矛 (Frenzy)」只有我們自己會寫：括號前面緊貼著的正是那個原文的
+     * 裝備專用譯名。拆名稱那一步（NameWrap）在名稱列畫完<b>之後</b>才跑，那時
+     * {@link #nameLine} 已經放下了，所以不能靠那個旗標認。
+     */
+    private boolean isAppendedOriginal(String inner, String before) {
+        if (isAppendedOriginal(inner)) {
+            return true;
+        }
+        String own = gearOwnName(inner);
+        return own != null && before != null && before.endsWith(own);
     }
 
     /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
@@ -1965,7 +2033,7 @@ public final class TranslationStore {
      * 使命名，剛好跟裝備撞名，不是名稱列。所以外框要夠像：尾巴有圖示或鑑定度，
      * 或者開頭至少三個圖示。
      */
-    static String nameRowInner(String key) {
+    public static String nameRowInner(String key) {
         if (key == null) {
             return null;
         }

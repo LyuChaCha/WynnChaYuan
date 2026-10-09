@@ -1283,3 +1283,11 @@ tasks.register('runOverflowAuditChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.capture.OverflowAuditTest'
 }
 tasks.named('check') { dependsOn 'runOverflowAuditChecks' }
+
+tasks.register('runGearOwnNameChecks', JavaExec) {
+    group = 'verification'
+    description = '跟技能同名的裝備在名稱列用自己的名字；技能樹、使命卡、敘述不受影響'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.GearOwnNameTest'
+}
+tasks.named('check') { dependsOn 'runGearOwnNameChecks' }
