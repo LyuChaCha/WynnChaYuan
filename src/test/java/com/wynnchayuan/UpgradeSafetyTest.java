@@ -233,6 +233,10 @@ public final class UpgradeSafetyTest {
         // 同一版：舊的預設鍵（F6、F9）清過了沒。舊設定檔沒有，補上「還沒」——
         // 清的動作在遊戲啟動完之後才做，見 WynnChaYuan#releaseOldDefaultKeys。
         expected.addProperty("oldKeysReleased", false);
+        // 1.0.0 之後：Wynnventory 的文字也翻（有裝才有作用）。舊設定檔沒有，補上預設值。
+        expected.addProperty("wynnventory", true);
+        // 同一輪：WynnMarketSearch 的支援有了自己的開關。舊設定檔沒有，補上預設值。
+        expected.addProperty("wynnMarketSearch", true);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));

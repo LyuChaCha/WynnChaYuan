@@ -782,6 +782,21 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.render.PanelShot.bind(screenshotKey);
         com.wynnchayuan.render.PanelShot.listen();
 
+        // Wynnventory 的文字：開關、Shift、語料一有變就讓它畫面上的字重查。
+        // 沒裝的人不掛這一格。見 WynnventoryBridge。
+        if (com.wynnchayuan.translate.WynnventoryBridge.installed()) {
+            ClientTickEvents.END_CLIENT_TICK.register(client -> {
+                CollectorConfig c = config();
+                TranslationStore store = translations();
+                if (c == null || store == null) {
+                    return;
+                }
+                com.wynnchayuan.translate.WynnventoryBridge.tick(c.wynnventory(),
+                        c.shiftPeekNames() && com.wynnchayuan.listener.RenderListener.shiftHeld(),
+                        store.generation());
+            });
+        }
+
         // 警語等載入畫面收掉才跳，見 NoticeScreen#clientTick
         ClientTickEvents.END_CLIENT_TICK.register(
                 client -> com.wynnchayuan.client.NoticeScreen.clientTick());

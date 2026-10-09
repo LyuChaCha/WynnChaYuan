@@ -1,14 +1,14 @@
 {
  "_meta": {
   "quest": "Fantastic Voyage",
-  "count": 279,
-  "translated": 279,
+  "count": 306,
+  "translated": 306,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Fantastic Voyage#000": {
-   "src": "Speak to Relend.",
-   "dst": "与 Relend 交谈。",
+   "src": "Speak to Relend at [{~}, {~}, -{~}]",
+   "dst": "与 [{~}, {~}, -{~}] 的 Relend 交谈",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -17,8 +17,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#001": {
-   "src": "Let's go, just you and me! On a grand voyage across the sea!",
-   "dst": "出发吧，就你和我！扬帆远航，越过大海的浪波！",
+   "src": "Let's go, just you and me! On a fantastic voyage across the sea!",
+   "dst": "出发吧，就你和我！踏上奇幻航程，越过大海的浪波！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -787,7 +787,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#082": {
-   "src": "'pparently he takes 'em for joyrides 'round the sea and gets all sorts'a labor out of 'em, then just drops 'em back here.",
+   "src": "'pparently he takes 'em for joyrides 'round the sea and get's all sorts'a labour out of 'em, then just drops 'em back here.",
    "dst": "听说他带人出海兜风，让他们干各种苦活，然后就把人丢回这里。",
    "role": "desc",
    "kind": "dialogue",
@@ -807,8 +807,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#084": {
-   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
-   "dst": "……噢，你要跟 Relend 出海，是吧？你确定？",
+   "src": "...Oh, you're goin' out with Relend, hey? Even after all I said?",
+   "dst": "……噢，你要跟 Relend 出海，是吧？我都说了这么多，你还要去？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -937,8 +937,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#097": {
-   "src": "Really, I wish some of those nutters sit down and take a good bite of some raw, authentic Rye, or a hearty whole-wheat.",
-   "dst": "说真的，我真希望那些神经病能坐下来，好好咬一口朴实正宗的黑麦，或者扎实的全麦。",
+   "src": "Really, I wish I could see those nutters sit down and take a good bite of some raw, authentic Rye, or a hearty whole-wheat.",
+   "dst": "说真的，我真希望能看到那些神经病坐下来，好好咬一口朴实正宗的黑麦，或者扎实的全麦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -977,7 +977,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#101": {
-   "src": "You know what people always miss when talking about bread, the CONSISTENCY! The consistency is consistently the most im-",
+   "src": "You know what people always miss when discussing bread, the CONSISTENCY! The consistency is consistently the most im-",
    "dst": "你知道大家聊面包的时候老是忽略什么吗？质地！质地始终是最重——",
    "role": "desc",
    "kind": "dialogue",
@@ -1027,7 +1027,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#106": {
-   "src": "Overusin’ so-called “refined” grains is a sure and done way to get runny slop that’s not fit for the pigs.",
+   "src": "Overusin' so-called 'refined' grains is a sure and done way to get runny slop that's not fit for the pigs.",
    "dst": "用太多所谓“精制”的谷物，保证只会做出一摊连猪都不吃的稀糊。",
    "role": "desc",
    "kind": "dialogue",
@@ -1037,7 +1037,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#107": {
-   "src": "Come to think, you shouldn’t feed pigs refined grains anyway. It’s hard on their digestion.",
+   "src": "Come to think, you shouldn't feed pig refined grains anyway. It's hard on their digestion.",
    "dst": "说到这个，你本来就不该拿精制谷物喂猪。那对它们的消化很伤。",
    "role": "desc",
    "kind": "dialogue",
@@ -1087,7 +1087,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#112": {
-   "src": "I’ll let you in on a little secret. The Sky’s Kitchen is great and all, but what passes for bread there is intolerable. No substance at all!",
+   "src": "I'll let you in on a little secret. The Sky's Kitchen's great and all, but what passes for bread there is intolerable. No substance at all!",
    "dst": "我跟你透露个小秘密。天空厨房是很棒没错，但那里所谓的面包简直让人受不了。一点实在的东西都没有！",
    "role": "desc",
    "kind": "dialogue",
@@ -1097,7 +1097,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#113": {
-   "src": "What you’ll want to do is get it straight from the fields, right from the soil! Well, not literally, but from the countryside! Leave breadmakin’ to those who’ve been workin’ with grain before they could walk on two legs!",
+   "src": "What you'll want to do is get it straight from the fields, right from the soil! Well, not literally, but from the countryside! Leave breadmakin' to those who've been workin' with grain before they could even walk on two legs!",
    "dst": "你该做的，是直接从田里、从土里拿！嗯，不是字面意思，是从乡下！做面包就该交给那些还没学会用两条腿走路就在跟谷物打交道的人！",
    "role": "desc",
    "kind": "dialogue",
@@ -1107,7 +1107,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#114": {
-   "src": "Heck, I bet even I could do better than those snobby sauciers.",
+   "src": "Heck, I bet even I could do a better job than those snobby sauciers.",
    "dst": "见鬼，我敢打赌连我都能做得比那些眼高于顶的酱汁厨师好。",
    "role": "desc",
    "kind": "dialogue",
@@ -1117,7 +1117,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#115": {
-   "src": "Right. Digestion. The fiber in whole-grain bread is a lifesaver.",
+   "src": "Right. Digestion. The fiber in whole-grain bread is a real lifesaver.",
    "dst": "对。消化。全麦面包里的纤维可是救命的东西。",
    "role": "desc",
    "kind": "dialogue",
@@ -1187,7 +1187,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#122": {
-   "src": "Those hawkers can pretend that it’s an upper-crust good all they want, but we all know that it’s just a waste of dough.",
+   "src": "Those hawkers can pretend that it's an upper-crust good all they want, but we all know it's just a waste of dough.",
    "dst": "那些小贩爱怎么装它是上流好货都行，但我们都知道那只是浪费面团。",
    "role": "desc",
    "kind": "dialogue",
@@ -1227,7 +1227,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#126": {
-   "src": "But just because you can doesn’t mean that you should. Who could stomach somethin’ like “Oatmeal-Bran Fusion Delight”? WHO WOULD EVEN MAKE BREAD OUT OF OATS?!",
+   "src": "But just because you can doesn't mean that you should. Who could stomach somethin' like 'Oatmeal-Bran Fusion Delight'? WHO WOULD EVEN MAKE BREAD OUT OF OATS?!",
    "dst": "但能做不代表就该做。谁吞得下“燕麦麸皮融合乐”这种东西？到底谁会用燕麦做面包啊？！",
    "role": "desc",
    "kind": "dialogue",
@@ -1247,7 +1247,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#128": {
-   "src": "...and don’t get me started on “Pain au {p}”! But really, Oatmeal-Bran Fusion Delight is among the worst. Oh! That reminds me about a better use for oats.",
+   "src": "...and don't get me started on 'Pain au {p}'! But really, Oatmeal-Bran Fusion Delight is among the worst. Oh! That reminds me about a better use for oats.",
    "dst": "……还有别让我提“{p} 法式面包”！不过说真的，燕麦麸皮融合乐是最糟的之一。噢！这让我想到燕麦更好的用法。",
    "role": "desc",
    "kind": "dialogue",
@@ -1297,7 +1297,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#133": {
-   "src": "Though, it seems like you can’t just get a good loaf of bread nearby. Sure, there’s sailin’ biscuits, but that hardly qualifies!",
+   "src": "Though it seems like you just can't get a good loaf of bread nearby. Sure, there's sailin' biscuits, but that hardly qualifies!",
    "dst": "不过，这附近好像买不到一条像样的面包。当然，有航海饼干，但那根本不算数！",
    "role": "desc",
    "kind": "dialogue",
@@ -1327,7 +1327,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#136": {
-   "src": "Ready? Right, let’s get started! The less ingredients you use, the closer you’ll be to makin’ a real loaf! Not the wannabe poundcakes eaten by wannabe spendthrifts.",
+   "src": "Ready? Right, let's get started! The less ingredients you use, the closer you'll get to makin' a real loaf! Not the wannabe poundcakes eaten by wannabe spendthrifts.",
    "dst": "准备好了？好，我们开始！用的材料越少，你就越接近做出真正的面包！不是那些冒牌暴发户吃的冒牌磅蛋糕。",
    "role": "desc",
    "kind": "dialogue",
@@ -1337,7 +1337,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#137": {
-   "src": "There’s a common misconception that you need sugar for the yeast to start risin’. Not true!",
+   "src": "There's a common misconception that you need sugar for yeast to start risin'. Not true!",
    "dst": "很多人误以为酵母要有糖才会开始发酵。不是这样的！",
    "role": "desc",
    "kind": "dialogue",
@@ -1547,7 +1547,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#158": {
-   "src": "Some people put the cart before the horse and think that yeast works like bakin’ powder. Try that, and you’ll end up with scorchin’-hot bricks in your oven.",
+   "src": "Some people put the cart before the horse and think that yeast works like bakin' powder. Try that, and you'll end up with some scorchin'-hot bricks in your oven.",
    "dst": "有些人本末倒置，以为酵母跟泡打粉一样用。这么做的话，你烤箱里只会出来一块块烫手的砖头。",
    "role": "desc",
    "kind": "dialogue",
@@ -1577,7 +1577,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#161": {
-   "src": "Though that may not be the case for other pastries. For one, I’ve never once heard of a pie with a chewy crust.",
+   "src": "Though that may not be the case for some other pastries. For one, I've never once heard of a pie with a chewy crust.",
    "dst": "不过其他糕点也许就不是这样了。比方说，我从来没听过哪个派的外皮是有嚼劲的。",
    "role": "desc",
    "kind": "dialogue",
@@ -1587,7 +1587,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#162": {
-   "src": "Really, the beauty in bread lies with it’s simplicity! No complicated steps, no chances for the dough to rebel. Certainly not as fickle as somethin’ like a cream puff.",
+   "src": "Really, the beauty in bread lies with its simplicity! No complicated steps, no chances for the dough to rebel. Certainly not as fickle as somethin' like a cream puff.",
    "dst": "说真的，面包的美就在于它的简单！没有复杂的步骤，面团没机会造反。绝对不像泡芙那种东西那么难伺候。",
    "role": "desc",
    "kind": "dialogue",
@@ -1627,7 +1627,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#166": {
-   "src": "Though some people insist upon puttin’ butter in the bread. Not just on it, but in it! There’s more butter than bread at that point!",
+   "src": "Though some people insist upon putin' butter in the bread. Not just on it, but in it! There's more butter than bread at that point!",
    "dst": "不过有些人坚持要把黄油放进面包里。不是抹在上面，是放进里面！到那地步黄油都比面包多了！",
    "role": "desc",
    "kind": "dialogue",
@@ -1737,7 +1737,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#177": {
-   "src": "Namely, the two extremes: too chewy, and not chewy enough. I already spoke on hardly chewy bread plenty, but there’s such a thing as too much of a good thing.",
+   "src": "Namely, the two extremes: too chewy and not chewy enough. I already spoke on hardly chewy bread plenty, but there's such a thing as too much of a good thing.",
    "dst": "也就是两个极端: 太有嚼劲，和不够有嚼劲。不够有嚼劲的面包我已经讲了很多，但好东西也会过犹不及。",
    "role": "desc",
    "kind": "dialogue",
@@ -1957,7 +1957,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#199": {
-   "src": "I see plenty parrots every day, I don't keep track.",
+   "src": "I see plenty parrots everyday, I don't keep track.",
    "dst": "我每天都看到一大堆鹦鹉，没在记的。",
    "role": "desc",
    "kind": "dialogue",
@@ -2137,8 +2137,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#217": {
-   "src": "Bring a Wooden Board, a Center Piece, and a String to the Crafting Table.",
-   "dst": "把木板、中心部件和线带到制作台。",
+   "src": "Bring a [Wooden Board], a [Center Piece], and a [String] to the Crafting Table",
+   "dst": "把 [木板]、[中心部件] 和 [线] 带到制作台",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -2147,8 +2147,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#218": {
-   "src": "Bring the Steering Wheel to Captain Relend.",
-   "dst": "把舵轮交给 Relend 船长。",
+   "src": "Bring the [Steering Wheel] to Captain Relend.",
+   "dst": "把 [舵轮] 交给 Relend 船长。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -2477,8 +2477,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#251": {
-   "src": "I know we can come up with a solution using our wits. Perhaps we can use an explosive to blow that big rock to bits!",
-   "dst": "我知道只要动动脑筋，我们一定能想出办法。也许我们可以用炸药把那块大石头炸个稀巴烂！",
+   "src": "I know we can come up with a solution using our wits. Perhaps we can craft an explosive to blow that big rock to bits!",
+   "dst": "我知道只要动动脑筋，我们一定能想出办法。也许我们可以做出炸药，把那块大石头炸个稀巴烂！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -2537,8 +2537,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#257": {
-   "src": "Bring {~} Gritty Sand, {~} Saw Dust, and {~} Black Powder to the Crafting Table.",
-   "dst": "把 {~} 粗砂、{~} 木屑和 {~} 黑火药带到制作台。",
+   "src": "Bring [{~} Gritty Sand], [{~} Saw Dust], and [{~} Black Powder] to the Crafting Table",
+   "dst": "把 [{~} 粗砂]、[{~} 木屑] 和 [{~} 黑火药] 带到制作台",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -2727,7 +2727,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#276": {
-   "src": "Whatever it is, I feel that we're being overseen from afar.",
+   "src": "Wherever it is, I feel that we're being overseen from afar.",
    "dst": "不管这是哪里，我都感觉有什么在远处注视着我们，藏在暗里。",
    "role": "desc",
    "kind": "dialogue",
@@ -2737,8 +2737,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#277": {
-   "src": "With all this danger, I still hope my good friend is still okay.",
-   "dst": "危险这么多，我还是希望我的好朋友平安无恙。",
+   "src": "With all this danger, I do hope my good friend is still okay.",
+   "dst": "危险这么多，我真心希望我的好朋友依然平安无恙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -2795,6 +2795,277 @@
    "stage": "Stage 19",
    "speaker": "Relend",
    "source": "wiki"
+  },
+  "Fantastic Voyage#283": {
+   "src": "Get on it then, no time for a nap! That thieving parrot has our map!",
+   "dst": "那就快去吧，可没时间让你睡！那只贼鹦鹉拿着我们的地图，快去追！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#284": {
+   "src": "Perhaps these citizens may help us out, ask them about the parrot's route!",
+   "dst": "也许这里的居民能帮上忙，去问问他们鹦鹉飞往何方！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#285": {
+   "src": "He seems distracted, best to walk away while you can.",
+   "dst": "他好像走神了，最好趁现在赶紧离开。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#286": {
+   "src": "He begins to list off a seemingly endless amount of examples.",
+   "dst": "他开始列举似乎没完没了的例子。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#287": {
+   "src": "It looks like he's nearly finished.",
+   "dst": "看来他快讲完了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#288": {
+   "src": "It seems like he's lost in reminiscence.",
+   "dst": "他好像沉浸在回忆里。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#289": {
+   "src": "He doesn't seem to be stopping any time soon.",
+   "dst": "他看起来一时半会儿停不下来。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#290": {
+   "src": "It seems like he's waiting expectantly.",
+   "dst": "他好像正满怀期待地等着。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#291": {
+   "src": "He's thoughtfully rubbing his jaw. Best to leave him be",
+   "dst": "他若有所思地摸着下巴。最好别打扰他",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#292": {
+   "src": "He's beaming with pride.",
+   "dst": "他满脸都是自豪的笑容。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#293": {
+   "src": "It seems like he's deep in thought.",
+   "dst": "他好像陷入了沉思。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#294": {
+   "src": "He proceeds to rattle off several grievances about pastry making.",
+   "dst": "他接着滔滔不绝地抱怨起做糕点的种种不是。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#295": {
+   "src": "He's waiting expectantly.",
+   "dst": "他正满怀期待地等着。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#296": {
+   "src": "You don't have the time for this.",
+   "dst": "你没时间耗在这上面。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#297": {
+   "src": "He seems pretty comfortable, best not to disturb him.",
+   "dst": "他看起来挺舒服的，最好别打扰他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#298": {
+   "src": "Heh, have fun, mate. Lot'sa treasure out there, eh?",
+   "dst": "嘿，玩得开心，伙计。外面宝藏多得很，嗯？",
+   "text": "You know he's nuts, right mate? Y'not gonna find any treasure or anythin'.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#299": {
+   "src": "Looks like the parrot dropped the map! You should get this back to Relend.",
+   "dst": "看来鹦鹉把地图弄掉了！你该把它带回去给 Relend。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#300": {
+   "src": "You have no use for this yet, you should speak with Relend up near the steering wheel.",
+   "dst": "你现在还用不上这个，该去上面舵轮旁边找 Relend 谈谈。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#301": {
+   "src": "You'll need a [Wooden Board], a [Center Piece], and a [String] to craft a Steering Wheel.",
+   "dst": "你需要 [木板]、[中心部件] 和 [线] 才能制作舵轮。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#302": {
+   "src": "This will probably work... You should show Relend.",
+   "dst": "这个应该能行……你该拿给 Relend 看看。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#303": {
+   "src": "You have nothing to load... You should continue through the wreckage.",
+   "dst": "你没有东西可以装填……你该继续穿过残骸前进。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#304": {
+   "src": "Bring [{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], and [{~} Berries] to the Cooking Pot",
+   "dst": "把 [{~} 生羊肉]、[{~} 可食用蘑菇]、[{~} 椰子] 和 [{~} 浆果] 带到烹饪锅",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#305": {
+   "src": "You'll need [{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], and [{~} Berries] to make a stew.",
+   "dst": "你需要 [{~} 生羊肉]、[{~} 可食用蘑菇]、[{~} 椰子] 和 [{~} 浆果] 才能做一锅炖菜。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#306": {
+   "src": "Take a look at your content book if you forgot your project, this island has supplies we ought to collect!",
+   "dst": "要是忘了要做的事，就翻开内容手册瞧一瞧，这座岛上的物资我们该去找一找！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#308": {
+   "src": "The volcano is erupting!",
+   "dst": "火山喷发了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#309": {
+   "src": "This looks dangerous! You should go blow open that boulder now.",
+   "dst": "看起来很危险！你该现在就去把那块巨石炸开。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#310": {
+   "src": "I've been looking for my old friend all this time. Sailing with every young adventurer in their prime!",
+   "dst": "一直以来，我都在寻找我的老朋友。与每一位正值盛年的年轻冒险者一同出海远走！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

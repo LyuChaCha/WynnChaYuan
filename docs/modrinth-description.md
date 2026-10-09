@@ -82,7 +82,7 @@ Switch under Settings → Data, without changing the game's language.
 | Minecraft | 1.21.11 |
 | Loader | Fabric |
 | Dependencies | [Wynntils](https://modrinth.com/mod/wynntils) 4.2+, [Fabric API](https://modrinth.com/mod/fabric-api) |
-| Works with | [Mod Menu](https://modrinth.com/mod/modmenu) (settings button), [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) (search by translated name), [WynnMod](https://modrinth.com/mod/wynnmod) |
+| Works with | [Mod Menu](https://modrinth.com/mod/modmenu) (settings button), [WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch) (search by translated name), [Wynnventory](https://modrinth.com/mod/wynnventory) (its price box and screens are translated), [WynnMod](https://modrinth.com/mod/wynnmod) |
 
 Put the jar in `mods/`. In game, open the settings from Mod Menu or by typing `/wcy`.
 
@@ -178,7 +178,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 | Minecraft | 1.21.11 |
 | 載入器 | Fabric |
 | 前置 | [Wynntils](https://modrinth.com/mod/wynntils) 4.2 以上、[Fabric API](https://modrinth.com/mod/fabric-api) |
-| 一起用 | [Mod Menu](https://modrinth.com/mod/modmenu)（設定按鈕）、[WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch)（用譯名搜尋）、[WynnMod](https://modrinth.com/mod/wynnmod) |
+| 一起用 | [Mod Menu](https://modrinth.com/mod/modmenu)（設定按鈕）、[WynnMarketSearch](https://modrinth.com/mod/wynnmarketsearch)（用譯名搜尋）、[Wynnventory](https://modrinth.com/mod/wynnventory)（價格框與畫面也翻）、[WynnMod](https://modrinth.com/mod/wynnmod) |
 
 jar 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設定。
 

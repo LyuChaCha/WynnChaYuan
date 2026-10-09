@@ -25,7 +25,7 @@
   "wynnchayuan.items.tooltip": "物品翻译",
   "wynnchayuan.items.tooltip.hint": "鼠标指着物品时的说明；面板保留原文，替换则画面更干净",
   "wynnchayuan.items.names": "翻译物品名称",
-  "wynnchayuan.items.names.hint": "装备名称可以只显示译名、译名后括号附原文（对得上 wiki 与交易市场），或保留原文。神话装备一律保留原文",
+  "wynnchayuan.items.names.hint": "装备名称可以只显示译名、译名后括号附原文（对得上 wiki 与交易市场），或保留原文。神话装备一律保留原文。选「译名加原文」时，材料与素材也会附上原文",
   "wynnchayuan.items.names.both": "译名加原文",
   "wynnchayuan.items.shiftpeek": "按 Shift 看另一种",
   "wynnchayuan.items.shiftpeek.hint": "按住 Shift 把物品名称换成另一种：显示译名时看到原文，显示原文时看到译名。「译名加原文」本来就两个都给了，按了不会有变化。素材与材料永远显示译名，所以按住 Shift 会看到原文",
@@ -281,5 +281,10 @@
   "wynnchayuan.chat.keys.released": "[WynnChaYuan] 打开设置与截图不再默认占用按键(原本是 F6/F9)。设置从 Mod Menu 或输入 /wcy 打开；想用按键请到「按键设置」→ WynnChaYuan 自己绑定。",
   "wynnchayuan.pos.reset.one": "重置〈%s〉",
   "wynnchayuan.world.scoreboard": "记分板",
-  "wynnchayuan.world.scoreboard.hint": "画面右边那一栏：讨伐战目标、Lootrun、队伍与公会战。追踪中的任务看上面「右上任务追踪」"
+  "wynnchayuan.world.scoreboard.hint": "画面右边那一栏：讨伐战目标、Lootrun、队伍与公会战。追踪中的任务看上面「右上任务追踪」",
+  "wynnchayuan.items.wynnventory": "Wynnventory 翻译",
+  "wynnchayuan.items.wynnventory.hint": "Wynnventory 的价格框、奖励界面与设置也显示译文。按住 Shift 看原文",
+  "wynnchayuan.items.wms": "WynnMarketSearch 支持",
+  "wynnchayuan.items.wms.hint": "WynnMarketSearch 的搜索面板可以输入译名，结果列在英文名旁边附上译名",
+  "wynnchayuan.group.mods": "模组支持"
 }

@@ -130,7 +130,9 @@ public final class SettingsScreen extends Screen {
     private List<Row.Tab> buildTabs() {
         List<Row.Tab> tabs = new ArrayList<>();
         tabs.add(new Row.Tab("items", t("tab.items"), t("tab.items.about"), Icons.Icon.BOW,
-                Preview.Scene.TOOLTIP, List.of(new Row.Group(t("group.items"), false, items()))));
+                Preview.Scene.TOOLTIP, List.of(
+                        new Row.Group(t("group.items"), false, items()),
+                        new Row.Group(t("group.mods"), false, mods()))));
         tabs.add(new Row.Tab("panel", t("tab.panel"), t("tab.panel.about"), Icons.Icon.SCROLL,
                 Preview.Scene.PANEL, List.of(
                         new Row.Group(t("group.place"), false, place()),
@@ -145,6 +147,25 @@ public final class SettingsScreen extends Screen {
                         new Row.Group(t("group.lang"), false, languages()),
                         new Row.Group(t("group.tools"), true, tools()))));
         return tabs;
+    }
+
+    /**
+     * 別的模組的支援，放在一起（使用者 2026-10-09）。
+     *
+     * <p>Wynntils 是必要的相依，那一列永遠在；另外兩個是選裝的，<b>有裝才出現</b>——
+     * 沒裝的人看到一個按了沒有任何反應的開關，只會以為功能壞了。
+     */
+    private List<Row> mods() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(toggle("world.wynntils", true, cfg()::wynntilsUi, cfg()::toggleWynntilsUi));
+        if (com.wynnchayuan.translate.WmsBridge.installed()) {
+            rows.add(toggle("items.wms", true, cfg()::wynnMarketSearch,
+                    cfg()::toggleWynnMarketSearch));
+        }
+        if (com.wynnchayuan.translate.WynnventoryBridge.installed()) {
+            rows.add(toggle("items.wynnventory", true, cfg()::wynnventory, cfg()::toggleWynnventory));
+        }
+        return rows;
     }
 
     private List<Row> items() {
@@ -352,7 +373,6 @@ public final class SettingsScreen extends Screen {
                 .reset(() -> cfg().trackerMode() == CollectorConfig.DialogueMode.REPLACE,
                         () -> cycleTo(cfg()::trackerMode, cfg()::cycleTrackerMode,
                                 CollectorConfig.DialogueMode.REPLACE)));
-        rows.add(toggle("world.wynntils", true, cfg()::wynntilsUi, cfg()::toggleWynntilsUi));
         rows.add(toggle("world.objectives", true, cfg()::translateObjectives,
                 cfg()::toggleObjectives).onText(t("mode.replace")));
         rows.add(toggle("world.scoreboard", true, cfg()::translateScoreboard,

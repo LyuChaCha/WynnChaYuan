@@ -174,6 +174,19 @@ public final class CollectorConfig {
     private boolean marketSearch = true;
 
     /**
+     * WynnMarketSearch 的搜尋面板吃譯名、結果列附上譯名。原本跟上面的
+     * {@link #marketSearch} 共用一個開關；使用者 2026-10-09 要它自己一個，
+     * 而且有裝那個模組才出現在設定畫面。見 {@code WmsBridge}。
+     */
+    private boolean wynnMarketSearch = true;
+
+    /**
+     * Wynnventory（交易市場價格框、獎勵畫面）的文字也翻。有裝那個模組才有作用，
+     * 設定畫面也是有裝才出現這一列。見 {@code WynnventoryBridge}。
+     */
+    private boolean wynnventory = true;
+
+    /**
      * 按住 Shift 暫時換成另一種：看譯名的人看到原文，看原文的人看到譯名。
      *
      * <h2>為什麼不是再開一個模式</h2>
@@ -585,6 +598,28 @@ public final class CollectorConfig {
         marketSearch = !marketSearch;
         save();
         return marketSearch;
+    }
+
+    /** 見 {@link #wynnMarketSearch}。 */
+    public boolean wynnMarketSearch() {
+        return wynnMarketSearch;
+    }
+
+    public boolean toggleWynnMarketSearch() {
+        wynnMarketSearch = !wynnMarketSearch;
+        save();
+        return wynnMarketSearch;
+    }
+
+    /** 見 {@link #wynnventory}。 */
+    public boolean wynnventory() {
+        return wynnventory;
+    }
+
+    public boolean toggleWynnventory() {
+        wynnventory = !wynnventory;
+        save();
+        return wynnventory;
     }
 
     /** 見 {@link #shiftPeekNames}：按住 Shift 要不要暫時換另一種。 */
@@ -1360,6 +1395,8 @@ public final class CollectorConfig {
         translateScoreboard = bool(o, "translateScoreboard", translateScoreboard);
         translateHeldItem = bool(o, "translateHeldItem", translateHeldItem);
         marketSearch = bool(o, "marketSearch", marketSearch);
+        wynnventory = bool(o, "wynnventory", wynnventory);
+        wynnMarketSearch = bool(o, "wynnMarketSearch", wynnMarketSearch);
         shiftPeekNames = bool(o, "shiftPeekNames", shiftPeekNames);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
@@ -1586,6 +1623,8 @@ public final class CollectorConfig {
             o.addProperty("translateObjectives", translateObjectives);
             o.addProperty("translateScoreboard", translateScoreboard);
             o.addProperty("translateHeldItem", translateHeldItem);
+            o.addProperty("wynnventory", wynnventory);
+            o.addProperty("wynnMarketSearch", wynnMarketSearch);
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("wynntilsUi", wynntilsUi);
             o.addProperty("marketSearch", marketSearch);

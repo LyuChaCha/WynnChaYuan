@@ -170,6 +170,17 @@ public final class TranslationStore {
      * 處理（見 {@link #isBareGearName}），查表層不擋。
      */
     private final java.util.Set<String> otherOwners = new java.util.HashSet<>();
+
+    /**
+     * <b>不是物品名稱</b>的條目也用到的原文：技能名、Major ID、介面上的字、整句話。
+     *
+     * <p>跟 {@link #otherOwners} 差在哪：那一份把素材與材料也算成「別人」（它問的是
+     * 「除了<b>裝備</b>以外還有誰」），這一份只算物品以外的。「譯名加原文」要不要替
+     * 素材附原文靠它判斷（{@link #plainOnly}）：素材 {@code Black Hole} 同時是刺客的
+     * 技能，在技能樹上附一個「(Black Hole)」就錯了；而素材 {@code Dark Matter} 只跟一頂
+     * 頭盔同名，兩邊都是物品，附上去沒有問題。
+     */
+    private final java.util.Set<String> nonItemOwners = new java.util.HashSet<>();
     private volatile int loadedFiles = 0;
 
     /**
@@ -254,6 +265,7 @@ public final class TranslationStore {
         nameKeys.clear();
         plainNameKeys.clear();
         otherOwners.clear();
+        nonItemOwners.clear();
         gearNameKeys.clear();
         market.clear();
         ordered.clear();
@@ -621,6 +633,9 @@ public final class TranslationStore {
                 if (!(itemNames && gearNames && "name".equals(optString(e, "role")))) {
                     otherOwners.add(srcKey);
                 }
+                if (!(itemNames && "name".equals(optString(e, "role")))) {
+                    nonItemOwners.add(srcKey);      // 見 #plainOnly
+                }
                 layerOf.put(srcKey, layer);
                 ordered.add(srcKey);
                 if (srcKey.length() >= MIN_PREFIX_LENGTH) {
@@ -686,6 +701,7 @@ public final class TranslationStore {
                 String flat = LineTranslator.deIcon(v.getAsString().strip());
                 entries.put(key.strip(), flat);
                 otherOwners.add(key.strip());   // 扁平檔一律不是裝備名稱
+                nonItemOwners.add(key.strip());
                 layerOf.put(key.strip(), layer);
                 market.addListed(key.strip(), flat);
                 ordered.add(key.strip());
@@ -1740,6 +1756,23 @@ public final class TranslationStore {
         return nameKeys.contains(key) && !otherOwners.contains(key);
     }
 
+    /**
+     * 素材或材料的名稱，而且物品以外沒有別的條目用這個原文。
+     *
+     * <p>「譯名加原文」原本只替裝備附原文（那個模式是為了對得上交易市場，而素材從
+     * 一開始就不歸那個開關管）。使用者 2026-10-09：素材、材料也要有——要去 wiki 查
+     * 配方、跟別人講要哪個素材的時候，一樣需要原文。只有「附原文」這一段套過來，
+     * 「關閉」照舊不管素材：關掉物品名稱時素材還是譯名。
+     */
+    private boolean plainOnly(String key) {
+        return plainNameKeys.contains(key) && !nonItemOwners.contains(key);
+    }
+
+    /** 「譯名加原文」會替它附原文的名字：裝備，或素材與材料。 */
+    private boolean getsOriginal(String key) {
+        return gearOnly(key) || plainOnly(key);
+    }
+
     /** 裝備專用的名字放在哪個範圍。見 {@link #gearOwnName}。 */
     private static final String GEAR_SCOPE = "gear";
 
@@ -1795,7 +1828,7 @@ public final class TranslationStore {
         if (hit == null) {
             return shiny(template);
         }
-        if (namesWithOriginal && !holdAppended && gearOnly(template.strip())) {
+        if (namesWithOriginal && !holdAppended && getsOriginal(template.strip())) {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
             return hit + " (" + template.strip() + ")";
         }
@@ -1892,7 +1925,7 @@ public final class TranslationStore {
 
     /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
     private boolean isAppendedOriginal(String inner) {
-        if (gearOnly(inner)) {
+        if (getsOriginal(inner)) {
             return true;
         }
         // Shiny 的原文是「Shiny X」，語料裡不會有這種鍵，見 #shiny

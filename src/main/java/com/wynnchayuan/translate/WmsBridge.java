@@ -25,7 +25,7 @@ import java.util.function.Supplier;
  * 它自己的排序、最愛、上限十四筆都照舊。點下去送出的仍然是英文名，那一段我們不碰。
  *
  * <p>譯名哪裡來：跟聊天框那一路同一份索引（{@link MarketSearch}），只收可交易的物品。
- * 開關也是同一個（「市集搜尋轉英文」）。
+ * 開關是它自己的（「WynnMarketSearch 支援」，有裝那個模組才出現在設定畫面）。
  *
  * <h2>這個類別不碰遊戲</h2>
  * 掛進那個模組的 mixin 在 {@code mixin.WmsItemSearchMixin}，它只負責把問題轉過來。
@@ -39,7 +39,24 @@ public final class WmsBridge {
     static Supplier<MarketSearch> source = () ->
             com.wynnchayuan.WynnChaYuan.translations().market();
     static BooleanSupplier enabled = () ->
-            com.wynnchayuan.WynnChaYuan.config().marketSearch();
+            com.wynnchayuan.WynnChaYuan.config().wynnMarketSearch();
+
+    private static volatile Boolean installed;
+
+    /** 有沒有裝 WynnMarketSearch（模組 id 是 {@code wms}）。設定畫面靠這個決定要不要出現那一列。 */
+    public static boolean installed() {
+        Boolean known = installed;
+        if (known == null) {
+            boolean found;
+            try {
+                found = net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded("wms");
+            } catch (Throwable t) {
+                found = false;
+            }
+            installed = known = found;
+        }
+        return known;
+    }
 
     /** 打不到兩個字不查：一個字會對到幾百件，面板只列得下十四筆，等於沒查。 */
     private static final int MIN_QUERY = 2;

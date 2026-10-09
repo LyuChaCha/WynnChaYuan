@@ -71,7 +71,7 @@ public final class RenderListener {
      * <p>直接問視窗而不是問畫面：{@code Screen} 那個判斷只在有畫面開著的時候
      * 才準，而手上拿的物品名是在 HUD 上畫的，那時候沒有畫面。
      */
-    private static boolean shiftHeld() {
+    public static boolean shiftHeld() {
         net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
         if (mc == null || mc.getWindow() == null) {
             return false;
