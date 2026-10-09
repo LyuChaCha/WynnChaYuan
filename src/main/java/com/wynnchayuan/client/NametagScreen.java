@@ -215,6 +215,7 @@ public final class NametagScreen extends CanvasScreen {
                 case OFF -> 2;
             };
             preview.objectives = c.translateObjectives();
+            preview.scoreboard = c.translateScoreboard();
             preview.heldItem = c.translateHeldItem();
             preview.translate = SettingsScreen::previewLookup;
             return preview;

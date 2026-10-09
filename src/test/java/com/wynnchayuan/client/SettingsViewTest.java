@@ -79,6 +79,10 @@ public final class SettingsViewTest {
                     }
                 }
             }
+            // 矮視窗：示意圖裡的記分板放不進大字底下，會退到 NPC 旁邊。那個排法另外留一張
+            SettingsView low = new SettingsView(fake.tabs(), fake, 0);
+            low.showTab(3);
+            ImageIO.write(render(low, 720, 300, 2).image, "png", new File(out, lang + "-world-short.png"));
         }
         LANG = "zh_tw";
         System.out.println("  [PASS] 算了 " + frames + " 張畫面（" + LANGS.length + " 種語言 × "
@@ -112,6 +116,29 @@ public final class SettingsViewTest {
         must("譯文本來就帶別的括號的不動",
                 "緩慢 (每秒 1.5 次)".equals(Preview.bareName("緩慢 (每秒 1.5 次)", "Slow", -1)));
 
+        // 預覽的記分板：語料的鍵帶佔位符，數字要填對位置（使用者 2026-10-09：記分板的預覽也要做）
+        must("沒編號的佔位符照順序填",
+                "- Mobs slain: 42/100".equals(Preview.fill("- Mobs slain: {~}/{~}", "42", "100")));
+        must("有編號的照編號填（譯文換過語序的那種）",
+                "100 之中的 42".equals(Preview.fill("{~2} 之中的 {~1}", "42", "100")));
+        must("數字不夠也不會炸、不留佔位符",
+                "T2+: 0/0".equals(Preview.fill("T{~1}+: {~2}/{~3}", "2")));
+        must("別種大括號不動", "{#}甲 3".equals(Preview.fill("{#}甲 {~}", "3")));
+        // 範例句在六個語言的語料裡都要查得到——查不到的語言開了開關預覽也不會變
+        for (String lang : LANGS) {
+            if ("en_us".equals(lang)) {
+                continue;                       // 介面語言，不是譯文語言，沒有語料
+            }
+            Map<String, String> corpus = corpus(lang);
+            for (String key : new String[] {"Daily Objective:", "- Loot Chests T{~}+: {~}/{~}",
+                                            "- Mobs slain: {~}/{~}"}) {
+                String hit = corpus.get(key);
+                must(lang + "：記分板範例「" + key + "」有譯文", hit != null && !hit.isBlank());
+                must(lang + "：填完數字沒有殘留佔位符（" + hit + "）",
+                        hit == null || !Preview.fill(hit, "2", "3", "5").contains("{~"));
+            }
+        }
+
         if (failures > 0) {
             System.out.println("SettingsView: " + failures + " 項失敗");
             System.exit(1);
@@ -121,6 +148,40 @@ public final class SettingsViewTest {
 
     /** 現在用哪個語言的字型畫。 */
     private static String LANG = "zh_tw";
+
+    /** 一個語言出貨的扁平語料（兩種檔案形狀都讀），只給示意圖查範例句用。 */
+    private static Map<String, String> corpus(String lang) throws Exception {
+        Map<String, String> out = new HashMap<>();
+        File dir = new File("src/main/resources/assets/wynnchayuan/translations", lang);
+        File[] files = dir.listFiles((d, name) -> name.endsWith(".json") && !name.startsWith("_")
+                && !name.endsWith("-dialogue.json"));
+        if (files == null) {
+            return out;
+        }
+        for (File f : files) {
+            com.google.gson.JsonObject root = com.google.gson.JsonParser.parseString(
+                    java.nio.file.Files.readString(f.toPath(), StandardCharsets.UTF_8)).getAsJsonObject();
+            if (root.has("entries") && root.get("entries").isJsonObject()) {
+                for (var e : root.getAsJsonObject("entries").entrySet()) {
+                    if (!e.getValue().isJsonObject()) {
+                        continue;
+                    }
+                    var o = e.getValue().getAsJsonObject();
+                    if (o.has("src") && o.has("dst") && !o.get("dst").getAsString().isBlank()) {
+                        out.putIfAbsent(o.get("src").getAsString(), o.get("dst").getAsString());
+                    }
+                }
+            } else {
+                for (var e : root.entrySet()) {
+                    if (!e.getKey().startsWith("_") && e.getValue().isJsonPrimitive()
+                            && !e.getValue().getAsString().isBlank()) {
+                        out.putIfAbsent(e.getKey(), e.getValue().getAsString());
+                    }
+                }
+            }
+        }
+        return out;
+    }
 
     /** 假的時鐘：每畫一幀往前走一點，動畫才會走完。 */
     private static long CLOCK = 1000;
@@ -292,9 +353,12 @@ public final class SettingsViewTest {
         private final Map<String, Object> defaults = new HashMap<>();
         int commits;
 
+        private final Map<String, String> corpus;
+
         Fake(String lang) throws Exception {
             strings = load(lang);
             english = load("en_us");
+            corpus = corpus(lang);
         }
 
         private static Map<String, String> load(String lang) throws Exception {
@@ -565,6 +629,11 @@ public final class SettingsViewTest {
                 {tr("data.source"), tr("data.source.github")},
                 {tr("data.version"), tr("data.version.latest"), "version"}};
             s.versionColour = Ui.GREEN;
+            // 示意圖用真的譯文畫：俄文、西文比中文長一倍，疊不疊要看它們
+            s.translate = text -> {
+                String hit = corpus.get(text);
+                return hit == null || hit.isBlank() ? text : hit;
+            };
             return s;
         }
 

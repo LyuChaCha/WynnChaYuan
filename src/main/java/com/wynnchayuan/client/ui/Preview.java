@@ -60,6 +60,8 @@ public final class Preview {
         /** 0 就地取代、1 另開面板、2 關閉。 */
         public int tracker;
         public boolean objectives = true;
+        /** 畫面右邊那一欄（記分板）翻不翻。 */
+        public boolean scoreboard = true;
         public boolean heldItem = true;
 
         public int loaded;
@@ -85,6 +87,12 @@ public final class Preview {
     private static final String TRACK_1 = "World Event";
     private static final String TRACK_2 = "Click To Track";
     private static final String CHAT = "The trade has been completed!";
+    // 記分板：每日目標那一段。標題一行、底下兩行進度，數字是佔位符，
+    // 照語料的鍵查了再把數字填回去（見 #fill）。
+    private static final String SCORE_HEAD = "Daily Objective:";
+    private static final String[] SCORE_LINES = {
+        "- Loot Chests T{~}+: {~}/{~}", "- Mobs slain: {~}/{~}"};
+    private static final String[][] SCORE_VALUES = {{"2", "3", "5"}, {"42", "100"}};
 
     private static final int TIP_BG = 0xF0160A22;
     private static final int TIP_EDGE = 0xFF4B2A8A;
@@ -294,6 +302,41 @@ public final class Preview {
 
     // ------------------------------------------------------------ 世界與聊天
 
+    /**
+     * 把數字填回模板的佔位符。
+     *
+     * <p>語料的鍵是「{@code - Mobs slain: {~}/{~}}」，譯文可能照原順序寫 {@code {~}}，
+     * 也可能因為語序不同寫成 {@code {~1}}、{@code {~2}}（見「數字會接錯欄位」那條規矩）。
+     * 兩種都認：有編號的照編號，沒編號的照出現的順序。
+     */
+    public static String fill(String template, String... values) {
+        StringBuilder out = new StringBuilder();
+        int next = 0;
+        int i = 0;
+        while (i < template.length()) {
+            if (template.startsWith("{~", i)) {
+                int end = template.indexOf('}', i);
+                if (end > 0) {
+                    String inside = template.substring(i + 2, end);
+                    int at = -1;
+                    if (inside.isEmpty()) {
+                        at = next++;
+                    } else if (inside.chars().allMatch(Character::isDigit)) {
+                        at = Integer.parseInt(inside) - 1;
+                    }
+                    if (at >= 0) {
+                        out.append(at < values.length ? values[at] : "0");
+                        i = end + 1;
+                        continue;
+                    }
+                }
+            }
+            out.append(template.charAt(i));
+            i++;
+        }
+        return out.toString();
+    }
+
     private static void world(Canvas c, int x, int y, int w, int h, State s, int accent) {
         UnaryOperator<String> zh = s.translate;
 
@@ -356,6 +399,33 @@ public final class Preview {
         c.text(Ui.fit(c, s.chat == 0 ? chatZh : CHAT, cw - 6), x + 7, chatY, 0xFFB8C0CC);
         if (s.chat == 1) {
             c.text(Ui.fit(c, chatZh, cw - 6), x + 7, chatY + 10, accent);
+        }
+
+        // 右邊：記分板。遊戲裡它貼著畫面右緣、在畫面中段。
+        // 平常放在中央大字底下、聊天上面那一段：整個寬度都能用，俄文、西文的
+        // 長句子不用截。視窗矮到那一段放不下時，退到 NPC 旁邊（名牌那一列的
+        // 下面一列），寬度讓開 NPC 的身體。
+        String[] board = new String[1 + SCORE_LINES.length];
+        board[0] = s.scoreboard ? zh.apply(SCORE_HEAD) : SCORE_HEAD;
+        int boardW = c.width(board[0]);
+        for (int i = 0; i < SCORE_LINES.length; i++) {
+            String line = s.scoreboard ? zh.apply(SCORE_LINES[i]) : SCORE_LINES[i];
+            board[i + 1] = fill(line, SCORE_VALUES[i]);
+            boardW = Math.max(boardW, c.width(board[i + 1]));
+        }
+        int boardH = 3 + board.length * 9;
+        int sy = cy + 13;
+        int room = w - 10;
+        if (sy + boardH > chatY - 4) {
+            sy = ny + 15;
+            room = x + w - 5 - (px + 14 + 4);
+        }
+        boardW = Math.min(room, boardW + 6);
+        int sx = x + w - boardW - 5;
+        c.fill(sx, sy, sx + boardW, sy + boardH, 0x60000000);
+        for (int i = 0; i < board.length; i++) {
+            c.text(Ui.fit(c, board[i], boardW - 6), sx + 3, sy + 2 + i * 9,
+                    i == 0 ? 0xFFF5C56B : 0xFFB8C0CC);
         }
 
         // 底部：快捷列與手上那件的名字

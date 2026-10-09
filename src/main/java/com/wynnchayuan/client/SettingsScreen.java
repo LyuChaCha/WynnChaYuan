@@ -769,6 +769,7 @@ public final class SettingsScreen extends Screen {
             case OFF -> 2;
         };
         s.objectives = c.translateObjectives();
+        s.scoreboard = c.translateScoreboard();
         s.heldItem = c.translateHeldItem();
         s.loaded = WynnChaYuan.translations().size();
         s.loadedLabel = T.s("preview.loaded");
