@@ -1,56 +1,12 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.0",
+ "latest": "0.2.8_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
-  "1.0.0": {
-   "headline": "1.0.0: redesigned settings, scoreboard translation, reworked gear names",
-   "items": [
-    "The settings screen is redesigned: categories on the left, grouped settings in the middle, a live preview on the right, and a search box. The notice, release notes, credits, box position and nametag screens follow the new look.",
-    "Opening the settings and taking a screenshot no longer take F6 / F9 by default. Open the settings from Mod Menu or by typing `/wcy`; to use a key, bind one under Controls. **If you were already using the mod, your old F6 / F9 bindings are cleared once.**",
-    "\"Style colour\" (the accent of the settings screen) and \"Frame colour\" (the frame of the in-game translation boxes) are now two separate settings.",
-    "The interface font is now Noto Sans.",
-    "New \"Scoreboard\" switch (World and chat): the sidebar on the right with raid objectives, lootruns, party and guild war. Sentences wrapped over several rows are translated as one sentence; the lootrun beacon panel too.",
-    "WynnMarketSearch support: type the translated name in its search panel.",
-    "Hold Shift to see the original: now also for ingredients and materials.",
-    "Gear names reworked in all six languages (Mythics excluded): the sense is taken from the item lore, and names that did not read as an item get the item type, e.g. \"Spear of Abhorrence\".",
-    "56 pieces of gear that share their name with an ability or a lootrun mission now have a name of their own.",
-    "The \"Automatic\" mode of the translation screenshot is gone; only \"Use hotkey\" and \"Off\" remain.",
-    "The dialogue box faded out before the original text was gone.",
-    "A box whose saved position was off screen (after changing resolution) could not be seen; it is now pulled back. Choosing a \"box\" mode also turns the boxes on.",
-    "With item names set to \"Translation + original\", some items (Mythics included) did not get the original appended.",
-    "Hollow boxes appeared in translated scoreboard lines.",
-    "In quest descriptions, the colours of the two bracketed parts were swapped when the translation moved the coordinates to the front.",
-    "`captured.json` from \"Export untranslated strings\" records two more things: sentences that lost a colour, and translations longer than the space they had.",
-    "Added nearly two thousand translations reported by players (raids, lootruns, interface; six languages)."
-   ],
-   "zh_tw": {
-    "headline": "1.0.0：設定畫面全面改版、記分板翻譯、裝備名稱重新整理",
-    "items": [
-     "設定畫面全面改版：左邊分類、中間分組、右邊即時預覽，可以搜尋設定。使用須知、更新說明、貢獻者、調整面板位置、名牌進階也一起換新。",
-     "開啟設定與截圖不再預設佔用 F6／F9。設定從 Mod Menu 或輸入 `/wcy` 打開；想用按鍵請到遊戲的「按鍵設定」自己綁。**已經在用的人，原本的 F6／F9 也會被清掉一次。**",
-     "「風格顏色」（設定畫面的主題色）與「框線顏色」（遊戲裡譯文小框的框）分成兩個設定。",
-     "介面字型換成 Noto Sans。",
-     "新增「記分板」開關（世界與聊天）：畫面右邊那一欄的討伐戰目標、Lootrun、隊伍與公會戰。折成好幾列的句子會併成一句翻，Lootrun 的信標面板也是。",
-     "支援 WynnMarketSearch：搜尋面板可以直接輸入譯名。",
-     "按住 Shift 看原文：素材與材料也可以了。",
-     "裝備名稱重新整理（六個語言，Mythic 除外）：參考物品敘述挑詞義，看不出是什麼東西的加上類別，例如「憎惡之矛」「冰封護腿」。繁中的 relik 統一叫「法器」、wand 叫「魔杖」。",
-     "跟技能或 Lootrun 使命同名的 56 件裝備有了自己的名字，例如長矛 Frenzy 不再跟著技能叫「得寸進尺」。",
-     "譯文截圖的「自動」模式拿掉了，只剩「使用快捷鍵」與「關閉」。",
-     "對話小框在原文還沒消失之前就先淡掉。",
-     "小框的位置存在畫面外時看不到（換過解析度之後）；現在會拉回畫面裡。選「小框」模式時也會順手打開小框的總開關。",
-     "物品名稱設成「譯名加原文」時，部分物品（含 Mythic）沒有附上原文。",
-     "記分板的譯文裡出現方框。",
-     "任務說明裡，譯文把座標移到前面時兩個方括號的顏色對調。",
-     "「匯出未翻譯字串」的 `captured.json` 多記兩段：顏色沒對上的句子，以及譯文比原本那一格長的句子。",
-     "補上玩家回報的近兩千條譯文（討伐戰、Lootrun、介面，六個語言）。"
-    ]
-   }
-  },
   "0.2.8_2": {
    "headline": "The \"Show on look\" box now aims at the text, not at the entity",
    "items": [
