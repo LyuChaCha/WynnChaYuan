@@ -1291,3 +1291,11 @@ tasks.register('runGearOwnNameChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.GearOwnNameTest'
 }
 tasks.named('check') { dependsOn 'runGearOwnNameChecks' }
+
+tasks.register('runWynnventoryChecks', JavaExec) {
+    group = 'verification'
+    description = 'Wynnventory 的價格框與語言鍵翻得出來；按住 Shift、沒裝的人、六個語言的語料'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WynnventoryBridgeTest'
+}
+tasks.named('check') { dependsOn 'runWynnventoryChecks' }

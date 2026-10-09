@@ -467,6 +467,8 @@ public final class SettingsViewTest {
                     segment("items.names", 2, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "mode.off"),
                     toggle("items.shiftpeek", true, null),
                     toggle("items.market", true, null),
+                    // 有裝 Wynnventory 才會出現的那一列；版面照「有」的情況量
+                    toggle("items.wynnventory", true, null),
                     segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
                             .extra(() -> tr("button.keybinds"), () -> { }));
             List<Row> place = List.of(

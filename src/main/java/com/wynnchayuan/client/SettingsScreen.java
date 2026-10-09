@@ -173,6 +173,10 @@ public final class SettingsScreen extends Screen {
         rows.add(toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
                 cfg()::toggleShiftPeekNames));
         rows.add(toggle("items.market", true, cfg()::marketSearch, cfg()::toggleMarketSearch));
+        // 別的模組的文字：有裝才出現（使用者 2026-10-09）
+        if (com.wynnchayuan.translate.WynnventoryBridge.installed()) {
+            rows.add(toggle("items.wynnventory", true, cfg()::wynnventory, cfg()::toggleWynnventory));
+        }
         rows.add(Row.segment("items.shot", t("items.shot"), () -> {
                     String clash = PanelShot.conflict();
                     if (clash != null) {
