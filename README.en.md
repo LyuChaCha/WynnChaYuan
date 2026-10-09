@@ -15,7 +15,7 @@ translation is shown beside it, or written in its place.
 [Ko-fi](https://ko-fi.com/lyuchacha)
 
 > [!IMPORTANT]
-> **This is a beta.** Some of the translations are written by hand and then rendered by AI,
+> **About the translations.** Some of the translations are written by hand and then rendered by AI,
 > a smaller part is translated by AI directly, and most of the core content has been
 > proofread by a person. The other languages are currently AI-translated from the
 > Traditional Chinese, so expect mistranslations and inconsistent terms.
