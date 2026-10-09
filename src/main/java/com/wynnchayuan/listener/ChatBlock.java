@@ -75,6 +75,42 @@ public final class ChatBlock {
         last = System.currentTimeMillis();
     }
 
+    /**
+     * 攢著的這幾行，原文<b>已經被攔下來、沒有顯示</b>。
+     *
+     * <h2>就地取代模式的多欄面板</h2>
+     * 就地取代是一則訊息當場換一則，而 Lootrun 的信標面板是<b>一列一則</b>送來的：
+     * 每一列只看得到自己，於是多欄的列照欄置中、單欄的接續列原地不動（兩者錯開），
+     * 伺服器折好行的敘述也只能一列一列查到半句（「+6 場挑戰以／本次 Lootrun。獲得／
+     * 完成它們不會／獲得時間獎勵。」）。原文加譯文那個模式沒有這個問題，因為它本來
+     * 就等整塊跳完才一起算（{@link #stacked}）。使用者 2026-10-10：「又遇到老問題，
+     * 字不會置中對齊 (lootrun)」——他用的正是就地取代。
+     *
+     * <p>所以就地取代遇到多欄的列時，從那一列起把伺服器訊息<b>攔下來</b>
+     * （{@code ChatMessageEvent.Match#cancelChat}，見 {@code ChatListener#onMatch}），
+     * 攢到安靜下來再整塊翻、整塊送——走的是跟原文加譯文同一支 {@link #stacked}，
+     * 差別只在原文那一份不顯示。
+     *
+     * <p>攔下來的東西<b>一定要送出去</b>：一行都沒翻到也要把原文原樣補回畫面，
+     * 不然伺服器送來的內容就憑空消失了。見 {@link #compose}。
+     */
+    private static boolean held = false;
+
+    /** 攔下一列。見 {@link #held}。 */
+    public static synchronized void hold(StyledText original) {
+        if (pending.size() >= MAX_ROWS) {
+            flush();
+        }
+        pending.add(new Row(original, null));
+        held = true;
+        last = System.currentTimeMillis();
+    }
+
+    /** 現在是不是正在攔一塊面板——是的話後面跟著來的列也要一起攔，順序才不會亂。 */
+    public static synchronized boolean holding() {
+        return held && !pending.isEmpty();
+    }
+
     /** 每一幀問一次：安靜夠久了就把攢著的送出去。由 HUD 的算繪路徑呼叫。 */
     public static synchronized void tick() {
         if (ready(System.currentTimeMillis())) {
@@ -103,6 +139,7 @@ public final class ChatBlock {
     /** 換伺服器、關掉功能時清掉，免得下一塊沾到上一塊的尾巴。 */
     public static synchronized void clear() {
         pending.clear();
+        held = false;
         mine.clear();
     }
 
@@ -145,21 +182,41 @@ public final class ChatBlock {
 
     private static void flush() {
         List<Row> rows = new ArrayList<>(pending);
+        boolean wasHeld = held;
         pending.clear();
+        held = false;
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.player == null) {
             return;
         }
-        Component whole = rows.size() > 1 ? asBlock(rows) : null;
-        if (whole == null) {
-            whole = stacked(rows);
-        }
+        Component whole = compose(rows, wasHeld, WynnChaYuan.translations());
         if (whole != null) {
             // 先記下來再送：displayClientMessage 會同步再觸發一次聊天事件，
             // 記晚了就來不及擋。見 #mine。
             remember(whole);
             mc.player.displayClientMessage(whole, false);
         }
+    }
+
+    /**
+     * 這一塊要送出去的樣子。
+     *
+     * @param wasHeld 原文被攔下來了（見 {@link #held}）：就算一行都沒翻到，也要把原文
+     *                原樣送回去
+     * @return 不必送的時候回 {@code null}（原文自己會顯示，而且沒有東西可翻）
+     */
+    static Component compose(List<Row> rows, boolean wasHeld,
+                             com.wynnchayuan.translate.TranslationStore store) {
+        Component whole = rows.size() > 1 ? asBlock(rows, store) : null;
+        if (whole == null) {
+            whole = stacked(rows, wasHeld, store);
+        }
+        return whole;
+    }
+
+    /** 測試用：現在攢著的這幾行會送出什麼。不清掉攢著的東西。 */
+    static synchronized Component preview(com.wynnchayuan.translate.TranslationStore store) {
+        return compose(new ArrayList<>(pending), held, store);
     }
 
     /**
@@ -178,7 +235,8 @@ public final class ChatBlock {
      *
      * @return 整塊的譯文；查不到就回傳 {@code null}，讓呼叫端退回逐行那幾句
      */
-    private static Component asBlock(List<Row> rows) {
+    private static Component asBlock(List<Row> rows,
+                                     com.wynnchayuan.translate.TranslationStore store) {
         try {
             net.minecraft.network.chat.MutableComponent joined = Component.empty();
             for (int i = 0; i < rows.size(); i++) {
@@ -188,7 +246,7 @@ public final class ChatBlock {
                 joined.append(rows.get(i).original().getComponent());
             }
             return LineTranslator.translateChat(StyledText.fromComponent(joined),
-                                                WynnChaYuan.translations());
+                                                store);
         } catch (Throwable t) {
             return null;              // 整塊查表出事也不能讓逐行那幾句跟著不見
         }
@@ -204,7 +262,8 @@ public final class ChatBlock {
      * （見 {@link LineTranslator#chatCentred}）。所以先問過整塊，再把答案
      * 一行一行傳下去重譯一次；重譯不到的才用收進來時那份。
      */
-    private static Component stacked(List<Row> rows) {
+    private static Component stacked(List<Row> rows, boolean wasHeld,
+                                     com.wynnchayuan.translate.TranslationStore store) {
         // 只有一則的時候<b>不能</b>先算對齊。
         //
         // 「洞穴完成」那一塊是六行擠在一則訊息裡，這裡拿到的是<b>一個</b>
@@ -240,7 +299,7 @@ public final class ChatBlock {
                 for (Row row : rows) {
                     originals.add(row.original());
                 }
-                flowed = LineTranslator.flowPanel(originals, WynnChaYuan.translations(), centred);
+                flowed = LineTranslator.flowPanel(originals, store, centred);
             } catch (Throwable t) {
                 flowed = null;                 // 併句出事不能拖累逐列那條路
             }
@@ -266,7 +325,7 @@ public final class ChatBlock {
             if (line == null) {
                 try {
                     line = LineTranslator.translateChat(rows.get(i).original(),
-                                                        WynnChaYuan.translations(),
+                                                        store,
                                                         centred == null ? null : centred[i],
                                                         panel);
                 } catch (Throwable t) {
@@ -296,7 +355,8 @@ public final class ChatBlock {
             out.append(line);
             any = true;
         }
-        return worthSending(any, translated) ? out : null;
+        // 攔下來的那一種沒有「原文自己會顯示」這回事，有東西就得送
+        return (wasHeld ? any : worthSending(any, translated)) ? out : null;
     }
 
     /**

@@ -3818,7 +3818,9 @@ public final class LineTranslator {
      */
     public static Component translateChat(StyledText message, TranslationStore store,
                                           Boolean centred, boolean inPanel) {
-        LineParts parts = LineParts.of(message);
+        // 「某某人丟了炸彈」這類廣播：別人的名字收成 {u}，語料一條所有人通用。
+        // 不是那種句型就是平常的 LineParts.of。見 Broadcasts。
+        LineParts parts = com.wynnchayuan.capture.Broadcasts.parts(message);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
