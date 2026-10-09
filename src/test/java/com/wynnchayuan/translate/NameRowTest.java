@@ -138,6 +138,20 @@ public final class NameRowTest {
                 peeked.contains("Filched Purse"));
         store.setPeekPlainNames(false);
 
+        // ---- ★ 譯名加原文也套到素材（使用者 2026-10-09）----
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        String purseBoth = row(ICON.repeat(5), "Filched Purse", "", store);
+        check("★ 譯名加原文：素材的名稱列附原文（實際 " + plain(purseBoth) + "）",
+                purseBoth.contains("扒來的錢包 (Filched Purse)"));
+        check("原文只附一次", purseBoth.indexOf("(Filched Purse)")
+                == purseBoth.lastIndexOf("(Filched Purse)"));
+        store.setPeekPlainNames(true);
+        String purseBothPeek = row(ICON.repeat(5), "Filched Purse", "", store);
+        check("★ 譯名加原文＋按住 Shift：只剩原文（實際 " + plain(purseBothPeek) + "）",
+                purseBothPeek.contains("Filched Purse") && !purseBothPeek.contains("扒來的錢包"));
+        store.setPeekPlainNames(false);
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+
         // ---- 長得像但不是名稱列的，照舊 ----
         same("Lootrun 使命名不受影響", "{#}救贖使命", store.lookup("{#}Redemption"));
         same("裡面不是物品名稱的整列條目不受影響", "{#}{#}{#}每日獎勵{#}",

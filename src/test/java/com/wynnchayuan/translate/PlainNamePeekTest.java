@@ -37,7 +37,8 @@ public final class PlainNamePeekTest {
         Files.writeString(dir.resolve("ingredient.json"), """
                 {"_meta": {"itemNames": true, "gearNames": false},
                  "entries": {
-                   "i1": {"src": "Acid Magma", "dst": "酸性岩漿", "role": "name"}
+                   "i1": {"src": "Acid Magma", "dst": "酸性岩漿", "role": "name"},
+                   "i2": {"src": "Black Hole", "dst": "黑洞", "role": "name"}
                  }}
                 """, StandardCharsets.UTF_8);
         Files.writeString(dir.resolve("material.json"), """
@@ -50,6 +51,12 @@ public final class PlainNamePeekTest {
         Files.writeString(dir.resolve("gear-weapon.json"), """
                 {"_meta": {"gearNames": true},
                  "entries": {"g1": {"src": "Idol", "dst": "神像", "role": "name"}}}
+                """, StandardCharsets.UTF_8);
+        // 跟素材同名的技能（實際語料裡就有這一組）
+        Files.createDirectories(dir.resolve("ability"));
+        Files.writeString(dir.resolve("ability").resolve("assassin.json"), """
+                {"_meta": {"itemNames": false},
+                 "entries": {"s1": {"src": "Black Hole", "dst": "黑洞", "role": "name"}}}
                 """, StandardCharsets.UTF_8);
         Files.writeString(dir.resolve("misc.json"),
                 "{\"[+{~} Acid Magma]\": \"[+{~} 酸性岩漿]\"}", StandardCharsets.UTF_8);
@@ -84,13 +91,37 @@ public final class PlainNamePeekTest {
         check("按住時裝備名不受這個旗標影響（它走名稱模式那條路）",
               "神像".equals(store.lookup("Idol")));
 
-        // 「譯名加原文」只替裝備附原文，素材沒有，所以按住一樣要看得到原文。
+        // 「譯名加原文」模式下按住：素材看到的是原文，不是「譯名 (原文)」。
         store.setNameMode(CollectorConfig.ItemNames.BOTH);
         check("「譯名加原文」模式下按住，素材也看到原文",
               store.lookup("Acid Magma") == null);
         store.setNameMode(CollectorConfig.ItemNames.ON);
 
         store.setPeekPlainNames(false);
+
+        // ★ 「譯名加原文」也替素材與材料附原文（使用者 2026-10-09）。
+        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        check("★ 譯名加原文：素材附原文（實際 " + store.lookup("Acid Magma") + "）",
+              "酸性岩漿 (Acid Magma)".equals(store.lookup("Acid Magma")));
+        check("★ 譯名加原文：材料附原文（實際 " + store.lookup("Copper Ingot") + "）",
+              "銅錠 (Copper Ingot)".equals(store.lookup("Copper Ingot")));
+        check("★ 那對括號認得出是我們附的（折行、詞表替換都靠這個不去動它）",
+              store.appendedOriginalAt("酸性岩漿 (Acid Magma)") == "酸性岩漿".length());
+        check("材料的敘述不附", "用來製作武器".equals(store.lookup("Used to craft weapons")));
+        check("嵌著素材名的框架不附——那是另一個鍵",
+              "[+{~} 酸性岩漿]".equals(store.lookup("[+{~} Acid Magma]")));
+        check("★ 同名的技能不能被連坐：素材 Black Hole 也是刺客的技能，不附（實際 "
+                + store.lookup("Black Hole") + "）",
+              "黑洞".equals(store.lookup("Black Hole")));
+        TranslationStore.holdAppendedOriginal(true);
+        check("★ 不是名稱那一行（敘述裡提到同一個名字）不附",
+              "酸性岩漿".equals(store.lookup("Acid Magma")));
+        TranslationStore.holdAppendedOriginal(false);
+        store.setNameMode(CollectorConfig.ItemNames.OFF);
+        check("★ 關掉物品名稱：素材照舊是譯名，不附原文（實際 " + store.lookup("Acid Magma") + "）",
+              "酸性岩漿".equals(store.lookup("Acid Magma")));
+        store.setNameMode(CollectorConfig.ItemNames.ON);
+        check("只給譯名的模式不附", "酸性岩漿".equals(store.lookup("Acid Magma")));
         check("★ 放開之後馬上回到譯名", "酸性岩漿".equals(store.lookup("Acid Magma")));
 
         shipped();
