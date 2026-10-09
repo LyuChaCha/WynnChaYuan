@@ -1,12 +1,102 @@
 {
  "_meta": {
   "quest": "Flight in Distress",
-  "count": 103,
-  "translated": 103,
+  "count": 112,
+  "translated": 112,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Flight in Distress#000": {
+   "src": "The inscription on the gravestone reads \"Here lies our great founder, Tisaun Sodeta. May he guide us through the endless fight.\"",
+   "dst": "墓石にはこう刻まれている。「偉大なる創設者 Tisaun Sodeta、ここに眠る。果てなき戦いの中で我らを導きたまえ」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Gravestone\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#001": {
+   "src": "An unsettlingly powerful energy seems to blanket the area. There is potential here for...something. But not yet...",
+   "dst": "不穏なほど強い力が辺りを覆っているようだ。ここには何かが… 起こりそうな気配がある。だが、まだだ…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Gravestone\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#002": {
+   "src": "No worries, have a nice day!",
+   "dst": "気にしないで、良い一日を！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Flight in Distress#003": {
+   "src": "Seems like you are already part of my division! There is nothing left that I can do for you at the moment.",
+   "dst": "もううちの部門の一員みたいだね！今のところ、こちらでしてあげられることはないよ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Flight in Distress#004": {
+   "src": "Hi! Welcome to the {p}! How can I help?",
+   "dst": "やあ！{p} へようこそ！何かお手伝いしようか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#005": {
+   "src": "Don't let the name intimidate you, put your head to it and you'll find your way just fine!",
+   "dst": "名前に怖じ気づかないで。頭を使えば、ちゃんと道は見つかるよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#006": {
+   "src": "Ranking up is super simple! All you have to do is complete Lootruns!",
+   "dst": "ランクアップはすごく簡単！ルートランを完了するだけでいいんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#007": {
+   "src": "The more challenges you complete, the more experience you gain at the end!",
+   "dst": "チャレンジをたくさんこなすほど、最後にもらえる経験値が増えるよ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "Silverbull Rank Expert\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Flight in Distress#008": {
+   "src": "And that's all there is to it! Let me know if you want to know more.",
+   "dst": "これで全部だよ！もっと知りたくなったら声をかけてね。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Flight in Distress",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Flight in Distress#009": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
    "dst": "Gavel のパスポートを [-{~}, {~}, -{~}] の飛行船の受付に持っていく。",
    "role": "desc",
@@ -16,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#001": {
+  "Flight in Distress#010": {
    "src": "Good day, soldier! Will you be flying with us today?",
    "dst": "こんにちは、兵隊さん！本日はご搭乗ですか？",
    "role": "desc",
@@ -26,7 +116,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#002": {
+  "Flight in Distress#011": {
    "src": "May I see your passport please?",
    "dst": "パスポートを拝見します。",
    "role": "desc",
@@ -36,7 +126,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#003": {
+  "Flight in Distress#012": {
    "src": "It's a bit dusty! It looks very old, but the picture looks like you.",
    "dst": "ちょっと埃っぽいですね！かなり古そうですが、写真はあなたですね。",
    "role": "desc",
@@ -46,7 +136,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#004": {
+  "Flight in Distress#013": {
    "src": "Well everything seems to be in order, climb aboard and I hope you have a pleasant journey.",
    "dst": "はい、問題ありません。ご搭乗ください、快適な旅をお祈りします。",
    "role": "desc",
@@ -56,7 +146,7 @@
    "speaker": "Airship Clerk",
    "source": "wiki"
   },
-  "Flight in Distress#005": {
+  "Flight in Distress#014": {
    "src": "Enter the airship.",
    "dst": "飛行船に乗り込む。",
    "role": "desc",
@@ -66,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#006": {
+  "Flight in Distress#015": {
    "src": "Please remain seated, passengers. We'll be taking off in a moment!",
    "dst": "乗客の皆様、ご着席ください。まもなく離陸いたします！",
    "role": "desc",
@@ -76,7 +166,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#007": {
+  "Flight in Distress#016": {
    "src": "Speak to Captain Ackbar regarding the missing child.",
    "dst": "行方不明の子供について Ackbar 船長と話す。",
    "role": "desc",
@@ -86,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#008": {
+  "Flight in Distress#017": {
    "src": "Attention passengers. There has been a missing person reported aboard. If there are any volunteers to help search for them, please report to the bridge and speak to the captain.",
    "dst": "乗客の皆様にお知らせします。船内で行方不明者の届けがありました。捜索にご協力いただける方は、艦橋で船長にお申し出ください。",
    "role": "desc",
@@ -96,7 +186,7 @@
    "speaker": "Broadcast",
    "source": "wiki"
   },
-  "Flight in Distress#009": {
+  "Flight in Distress#018": {
    "src": "This area is off limits to passengers during take off. Climb up to the passenger decks, there will be an attendee waiting at your cabin.",
    "dst": "離陸中、この区域は乗客立入禁止です。客室デッキへお上がりください。お部屋で係員がお待ちしています。",
    "role": "desc",
@@ -106,7 +196,7 @@
    "speaker": "Ship Crew",
    "source": "wiki"
   },
-  "Flight in Distress#010": {
+  "Flight in Distress#019": {
    "src": "I hope I do not get nauseous...",
    "dst": "酔わないといいけど…",
    "role": "desc",
@@ -116,7 +206,7 @@
    "speaker": "Passenger Jeremy",
    "source": "wiki"
   },
-  "Flight in Distress#011": {
+  "Flight in Distress#020": {
    "src": "Greetings, young adventurer. You haven't seen my glasses, have you?",
    "dst": "やあ、若き冒険者よ。わしの眼鏡を見かけなかったかね？",
    "role": "desc",
@@ -126,7 +216,7 @@
    "speaker": "Baron Axol",
    "source": "wiki"
   },
-  "Flight in Distress#012": {
+  "Flight in Distress#021": {
    "src": "The interior of this ship is beautiful!",
    "dst": "この船の内装は素敵だ！",
    "role": "desc",
@@ -136,7 +226,7 @@
    "speaker": "Passenger John",
    "source": "wiki"
   },
-  "Flight in Distress#013": {
+  "Flight in Distress#022": {
    "src": "Good day to you, soldier! This will be your quarters for the flight. I wish you a pleasant trip with us!",
    "dst": "こんにちは、兵隊さん！こちらが今回のお部屋です。快適な空の旅を！",
    "role": "desc",
@@ -146,7 +236,7 @@
    "speaker": "Attendant",
    "source": "wiki"
   },
-  "Flight in Distress#014": {
+  "Flight in Distress#023": {
    "src": "You can sleep through your journey here if you have nothing else to do!",
    "dst": "他にすることがなければ、ここで寝て過ごしてもいいですよ！",
    "role": "desc",
@@ -156,7 +246,7 @@
    "speaker": "Attendant",
    "source": "wiki"
   },
-  "Flight in Distress#015": {
+  "Flight in Distress#024": {
    "src": "The food they serve here is dreadful! As if it were meant for beasts they transport below deck.",
    "dst": "ここの食事はひどいわ！まるで下の甲板で運んでる獣のエサみたい。",
    "role": "desc",
@@ -166,7 +256,7 @@
    "speaker": "Passenger Casula",
    "source": "wiki"
   },
-  "Flight in Distress#016": {
+  "Flight in Distress#025": {
    "src": "*Sniff*... Have you seen my child? We were in our cabin, and then he just disappeared!",
    "dst": "*ぐすっ*…うちの子を見ませんでしたか？部屋にいたのに、急にいなくなったんです！",
    "role": "desc",
@@ -176,7 +266,7 @@
    "speaker": "Passenger Nancy",
    "source": "wiki"
   },
-  "Flight in Distress#017": {
+  "Flight in Distress#026": {
    "src": "I heard that a big ship was approaching from north. I saw it from the entrance deck. I wonder what they are doing.",
    "dst": "北から大きな船が近づいてるらしい。入口デッキから見えたよ。何をするつもりだろう。",
    "role": "desc",
@@ -186,7 +276,7 @@
    "speaker": "Sub-engineer Akot",
    "source": "wiki"
   },
-  "Flight in Distress#018": {
+  "Flight in Distress#027": {
    "src": "Are you here to volunteer to search for the missing child?",
    "dst": "行方不明の子の捜索に志願してくれたのかね？",
    "role": "desc",
@@ -196,7 +286,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#019": {
+  "Flight in Distress#028": {
    "src": "We only just to set off and there is already an incident.",
    "dst": "出発したばかりなのに、もう事件だ。",
    "role": "desc",
@@ -206,7 +296,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#020": {
+  "Flight in Distress#029": {
    "src": "His mother informed us that her son disappeared soon after boarding.",
    "dst": "母親によると、乗船してすぐに息子がいなくなったそうだ。",
    "role": "desc",
@@ -216,7 +306,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#021": {
+  "Flight in Distress#030": {
    "src": "Poor parenting, if you ask me. Alas, we must find the lad.",
    "dst": "親の監督不行き届きだと思うがね。まあ、あの子を見つけねば。",
    "role": "desc",
@@ -226,7 +316,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#022": {
+  "Flight in Distress#031": {
    "src": "Since we don't have any leads, it might be best to ask some of the passengers for information.",
    "dst": "手がかりがないから、乗客に話を聞いて回るのがいいだろう。",
    "role": "desc",
@@ -236,7 +326,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#023": {
+  "Flight in Distress#032": {
    "src": "Most of them will be in the dining area or in the lounge.",
    "dst": "ほとんどは食堂かラウンジにいるはずだ。",
    "role": "desc",
@@ -246,7 +336,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#024": {
+  "Flight in Distress#033": {
    "src": "Thank you so much for your help; I hope you find the lad soon.",
    "dst": "協力に感謝する。早くあの子が見つかるといいが。",
    "role": "desc",
@@ -256,7 +346,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#025": {
+  "Flight in Distress#034": {
    "src": "Try and find out where the missing child is located by speaking to the passengers.",
    "dst": "乗客たちに話を聞き、行方不明の子供の居場所を突き止める。",
    "role": "desc",
@@ -266,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#026": {
+  "Flight in Distress#035": {
    "src": "Hey! Look at that ship over in the distance. It has been following the ship almost since we left off.",
    "dst": "ねえ！あっちの遠くの船を見て。出発してからずっとこの船について来てるんだ。",
    "role": "desc",
@@ -276,7 +366,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#027": {
+  "Flight in Distress#036": {
    "src": "I know I shouldn't be down here but...",
    "dst": "ここにいちゃダメなのは分かってるけど…",
    "role": "desc",
@@ -286,7 +376,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#028": {
+  "Flight in Distress#037": {
    "src": "I love airships, and I have never seen one like that.",
    "dst": "飛行船が大好きなんだ。あんなの見たことないよ。",
    "role": "desc",
@@ -296,7 +386,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#029": {
+  "Flight in Distress#038": {
    "src": "Oh, my mummy wants me?",
    "dst": "あ、ママが呼んでるの？",
    "role": "desc",
@@ -306,7 +396,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#030": {
+  "Flight in Distress#039": {
    "src": "Okay then, I will head back right now!",
    "dst": "じゃあ、すぐ戻るね！",
    "role": "desc",
@@ -316,7 +406,7 @@
    "speaker": "Missing Child",
    "source": "wiki"
   },
-  "Flight in Distress#031": {
+  "Flight in Distress#040": {
    "src": "Return back to the Captain.",
    "dst": "船長のもとへ戻る。",
    "role": "desc",
@@ -326,7 +416,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#032": {
+  "Flight in Distress#041": {
    "src": "Thank you so much for finding my child! He will not be leaving my side for the rest of the trip.",
    "dst": "うちの子を見つけてくれて本当にありがとう！残りの旅の間、この子は絶対にそばから離しません。",
    "role": "desc",
@@ -336,7 +426,7 @@
    "speaker": "Passenger Nancy",
    "source": "wiki"
   },
-  "Flight in Distress#033": {
+  "Flight in Distress#042": {
    "src": "I'm sorry I caused such a worry earlier...",
    "dst": "さっきは心配かけてごめんなさい…",
    "role": "desc",
@@ -346,7 +436,7 @@
    "speaker": "Found Child",
    "source": "wiki"
   },
-  "Flight in Distress#034": {
+  "Flight in Distress#043": {
    "src": "Hello again, did you find him?",
    "dst": "やあ、見つかったかね？",
    "role": "desc",
@@ -356,7 +446,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#035": {
+  "Flight in Distress#044": {
    "src": "How did he get down there?! There is supposed to be someone on duty!",
    "dst": "どうして下に行けたんだ？！当番がいるはずだぞ！",
    "role": "desc",
@@ -366,7 +456,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#036": {
+  "Flight in Distress#045": {
    "src": "Thank you so much for finding him. You were the only volunteer.",
    "dst": "見つけてくれて本当にありがとう。志願者は君だけだった。",
    "role": "desc",
@@ -376,7 +466,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#037": {
+  "Flight in Distress#046": {
    "src": "Hopefully that is the only hiccup in the journey.",
    "dst": "旅のトラブルがこれだけで済むといいが。",
    "role": "desc",
@@ -386,7 +476,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#038": {
+  "Flight in Distress#047": {
    "src": "What in good heavens was that? Crew, report!",
    "dst": "一体何事だ？乗組員、報告しろ！",
    "role": "desc",
@@ -396,7 +486,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#039": {
+  "Flight in Distress#048": {
    "src": "Sir! One of our engines blew out! We've lost all thrust on that side.",
    "dst": "船長！エンジンが一基吹っ飛びました！そちら側の推力が全部失われました！",
    "role": "desc",
@@ -406,7 +496,7 @@
    "speaker": "Airship Crewmember",
    "source": "wiki"
   },
-  "Flight in Distress#040": {
+  "Flight in Distress#049": {
    "src": "Blast it all! We are sitting dead in the water without both engines.",
    "dst": "くそっ！エンジンが両方ないと、立ち往生だ。",
    "role": "desc",
@@ -416,7 +506,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#041": {
+  "Flight in Distress#050": {
    "src": "Go check on the condition of the passengers.",
    "dst": "乗客の様子を確認してきてくれ。",
    "role": "desc",
@@ -426,7 +516,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#042": {
+  "Flight in Distress#051": {
    "src": "Soldier, go report to the Engineer in the engine room and see if there is anything you can do to help us get moving once again.",
    "dst": "兵士よ、機関室の機関士のところへ行ってくれ。再び動けるよう、何か手伝えることがないか確かめてほしい。",
    "role": "desc",
@@ -436,7 +526,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#043": {
+  "Flight in Distress#052": {
    "src": "Look if the engineer has something for you to do in order to help.",
    "dst": "機関士に手伝えることがないか確かめる。",
    "role": "desc",
@@ -446,7 +536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#044": {
+  "Flight in Distress#053": {
    "src": "You must be the 'uman the captain done told me.",
    "dst": "おめえが船長の言ってた人間だな。",
    "role": "desc",
@@ -456,7 +546,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#045": {
+  "Flight in Distress#054": {
    "src": "We sure are havin' quite the situation down 'ere.",
    "dst": "下じゃ、えれえことになってるだ。",
    "role": "desc",
@@ -466,7 +556,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#046": {
+  "Flight in Distress#055": {
    "src": "I hafta stay here and man the 'ngines, else she might damage 'erself.",
    "dst": "おらはここでエンジンを見てねえと、こいつが自分をぶっ壊しちまう。",
    "role": "desc",
@@ -476,7 +566,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#047": {
+  "Flight in Distress#056": {
    "src": "If ye wanna help 'uman, go on up the riggin' and take a gander at the props.",
    "dst": "手伝う気があんなら、索具を登ってプロペラを見てきてくれ。",
    "role": "desc",
@@ -486,7 +576,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#048": {
+  "Flight in Distress#057": {
    "src": "Ye can get to 'em through the access 'atches in the bridge.",
    "dst": "艦橋の点検口から行けるだ。",
    "role": "desc",
@@ -496,7 +586,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#049": {
+  "Flight in Distress#058": {
    "src": "If'n they're stopped, just hit the breakers that are off.",
    "dst": "止まってたら、落ちてるブレーカーを入れりゃいい。",
    "role": "desc",
@@ -506,7 +596,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#050": {
+  "Flight in Distress#059": {
    "src": "Come back here when ye done. I need ta stay here and keep her cool.",
    "dst": "終わったらここへ戻ってこい。おらはここでこいつを冷やさねえと。",
    "role": "desc",
@@ -516,7 +606,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#051": {
+  "Flight in Distress#060": {
    "src": "Go find and fix the issue with the airship's engines. They are located on top of the balloon through the bridge.",
    "dst": "飛行船のエンジンの不具合を見つけて直す。エンジンは艦橋から上がった気嚢の上にある。",
    "role": "desc",
@@ -526,7 +616,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#052": {
+  "Flight in Distress#061": {
    "src": "In event of shut-down, maitenence must be performed.",
    "dst": "停止時は、整備を行うこと。",
    "role": "desc",
@@ -536,7 +626,7 @@
    "speaker": "Engine Instructions",
    "source": "wiki"
   },
-  "Flight in Distress#053": {
+  "Flight in Distress#062": {
    "src": "Worker must restart all wooden switches before engine overheats.",
    "dst": "作業員はエンジン過熱前に全ての木製スイッチを再起動すること。",
    "role": "desc",
@@ -546,7 +636,7 @@
    "speaker": "Engine Instructions",
    "source": "wiki"
   },
-  "Flight in Distress#054": {
+  "Flight in Distress#063": {
    "src": "DO NOT PRESS THE STONE SWITCHES",
    "dst": "石製スイッチは押さないこと",
    "role": "desc",
@@ -556,7 +646,7 @@
    "speaker": "Engine Instructions",
    "source": "wiki"
   },
-  "Flight in Distress#055": {
+  "Flight in Distress#064": {
    "src": "Report to Engineer Eric that you fixed the engines.",
    "dst": "エンジンを直したことを Engineer Eric に報告する。",
    "role": "desc",
@@ -566,7 +656,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#056": {
+  "Flight in Distress#065": {
    "src": "Thank ye! The 'ngines are back up and running!",
    "dst": "ありがとよ！エンジンがまた動き出しただ！",
    "role": "desc",
@@ -576,7 +666,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#057": {
+  "Flight in Distress#066": {
    "src": "I couldn't have dun this without ye.",
    "dst": "おめえがいなきゃ無理だった。",
    "role": "desc",
@@ -586,7 +676,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#058": {
+  "Flight in Distress#067": {
    "src": "You go back to yer quarters and get some rest. A passen'er like yerself shouldn' have to help the crew.",
    "dst": "部屋へ戻って休んでくれ。おめえみてえな乗客が船員の手伝いなんぞするもんじゃねえ。",
    "role": "desc",
@@ -596,7 +686,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#059": {
+  "Flight in Distress#068": {
    "src": "I hope the rest of yer journey is good. I'll let the cap'n know so he can turn her up ta max and get us movin' again.",
    "dst": "残りの旅がいいもんになるといいな。船長に言って全開にしてもらって、また進むだ。",
    "role": "desc",
@@ -606,7 +696,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#060": {
+  "Flight in Distress#069": {
    "src": "Thanks 'uman.",
    "dst": "ありがとよ、人間。",
    "role": "desc",
@@ -616,7 +706,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#061": {
+  "Flight in Distress#070": {
    "src": "Return back to your cabin.",
    "dst": "自分の客室へ戻る。",
    "role": "desc",
@@ -626,7 +716,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#062": {
+  "Flight in Distress#071": {
    "src": "muffled yelling",
    "dst": "くぐもった叫び声",
    "role": "desc",
@@ -636,7 +726,7 @@
    "speaker": "Airship Crew",
    "source": "wiki"
   },
-  "Flight in Distress#063": {
+  "Flight in Distress#072": {
    "src": "All staff report to stations! This is not a drill! All staff report to stations!",
    "dst": "全乗組員、持ち場につけ！訓練ではない！全乗組員、持ち場につけ！",
    "role": "desc",
@@ -646,7 +736,7 @@
    "speaker": "Broadcast",
    "source": "wiki"
   },
-  "Flight in Distress#064": {
+  "Flight in Distress#073": {
    "src": "Explore the lower deck and find out what caused the explosion.",
    "dst": "下層デッキを探索し、爆発の原因を突き止める。",
    "role": "desc",
@@ -656,7 +746,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#065": {
+  "Flight in Distress#074": {
    "src": "Hol' togetha old girl, ye got this!",
    "dst": "しっかりしろ、おめえならやれる！",
    "role": "desc",
@@ -666,7 +756,7 @@
    "speaker": "Engineer Eric",
    "source": "wiki"
   },
-  "Flight in Distress#066": {
+  "Flight in Distress#075": {
    "src": "Men, hold her steady. We can still survive this! We just need to stop them following us.",
    "dst": "野郎ども、船を安定させろ。まだ助かる！奴らの追跡を止めればいいんだ！",
    "role": "desc",
@@ -676,7 +766,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#067": {
+  "Flight in Distress#076": {
    "src": "Get to the other ship.",
    "dst": "もう一隻の船へ向かう。",
    "role": "desc",
@@ -686,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#068": {
+  "Flight in Distress#077": {
    "src": "Look here girls, the meat has come to us!",
    "dst": "見なよ、獲物が来たよ！",
    "role": "desc",
@@ -696,7 +786,7 @@
    "speaker": "Sky Raider",
    "source": "wiki"
   },
-  "Flight in Distress#069": {
+  "Flight in Distress#078": {
    "src": "Send more in! They can't get all of us!",
    "dst": "もっと送り込め！全員は倒せないさ！",
    "role": "desc",
@@ -706,7 +796,7 @@
    "speaker": "Sky Raider",
    "source": "wiki"
   },
-  "Flight in Distress#070": {
+  "Flight in Distress#079": {
    "src": "The rest of you all, get in here!",
    "dst": "残りの奴らも、全員来な！",
    "role": "desc",
@@ -716,7 +806,7 @@
    "speaker": "Sky Raider",
    "source": "wiki"
   },
-  "Flight in Distress#071": {
+  "Flight in Distress#080": {
    "src": "Head below deck.",
    "dst": "下層デッキへ向かう。",
    "role": "desc",
@@ -726,7 +816,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#072": {
+  "Flight in Distress#081": {
    "src": "I heard fighting? Is someone there? I am in the jail cell!",
    "dst": "戦いの音が？誰かいるのか？わしは牢屋の中だ！",
    "role": "desc",
@@ -736,7 +826,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#073": {
+  "Flight in Distress#082": {
    "src": "Speak to the prisoner.",
    "dst": "囚人と話す。",
    "role": "desc",
@@ -746,7 +836,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#074": {
+  "Flight in Distress#083": {
    "src": "I heard fighting above, well done! Any chance to see those raiders get what's coming warms my old heart.",
    "dst": "上で戦っているのが聞こえた、見事だ！あの略奪者どもが報いを受けるのを見られるなら、この老骨も温まる。",
    "role": "desc",
@@ -756,7 +846,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#075": {
+  "Flight in Distress#084": {
    "src": "I used to be the greatest locksmith in all of Gavel! I was known all over, unfortunately.",
    "dst": "わしはかつて Gavel 一の錠前師だった！不幸にも、あちこちに名が知れていてな。",
    "role": "desc",
@@ -766,7 +856,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#076": {
+  "Flight in Distress#085": {
    "src": "These fiends captured me, years ago, and made me create hundreds of keys for their raids.",
    "dst": "この悪党どもは何年も前にわしを捕らえ、略奪用の鍵を何百本も作らせた。",
    "role": "desc",
@@ -776,7 +866,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#077": {
+  "Flight in Distress#086": {
    "src": "I am much too old now, but I would love to see them taken down before I leave this world.",
    "dst": "もう年だが、この世を去る前に奴らが倒されるのを見たいものだ。",
    "role": "desc",
@@ -786,7 +876,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#078": {
+  "Flight in Distress#087": {
    "src": "My key making gear is stored down the hall, behind the staircase. You can use them to craft a way inside the Queen's quarters.",
    "dst": "わしの鍵作りの道具は、廊下の先の階段の裏にしまってある。それで女王の部屋に入る鍵を作れるはずだ。",
    "role": "desc",
@@ -796,7 +886,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#079": {
+  "Flight in Distress#088": {
    "src": "Just look into the keyhole to see how to make them. Good luck!",
    "dst": "鍵穴を覗けば作り方が分かる。幸運を祈る！",
    "role": "desc",
@@ -806,7 +896,7 @@
    "speaker": "Captured Prisoner",
    "source": "wiki"
   },
-  "Flight in Distress#080": {
+  "Flight in Distress#089": {
    "src": "Make the key to reach the Skyraider Queen.",
    "dst": "スカイレイダーの女王のもとへ行くための鍵を作る。",
    "role": "desc",
@@ -816,7 +906,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#081": {
+  "Flight in Distress#090": {
    "src": "So you think you can just come on my ship, huh?",
    "dst": "あたしの船に乗り込めると思ったのかい？",
    "role": "desc",
@@ -826,7 +916,7 @@
    "speaker": "Skyraider Queen",
    "source": "wiki"
   },
-  "Flight in Distress#082": {
+  "Flight in Distress#091": {
    "src": "Kill my crew? Interrupt my plunder?",
    "dst": "手下を殺して？略奪の邪魔をして？",
    "role": "desc",
@@ -836,7 +926,7 @@
    "speaker": "Skyraider Queen",
    "source": "wiki"
   },
-  "Flight in Distress#083": {
+  "Flight in Distress#092": {
    "src": "I know how to deal with 'problems' like you!",
    "dst": "あんたみたいな「厄介者」の扱いは心得てるよ！",
    "role": "desc",
@@ -846,7 +936,7 @@
    "speaker": "Skyraider Queen",
    "source": "wiki"
   },
-  "Flight in Distress#084": {
+  "Flight in Distress#093": {
    "src": "Fight the Skyraider Queen and take one of her personal treasures with you.",
    "dst": "スカイレイダーの女王と戦い、彼女の私物の宝を一つ持ち帰る。",
    "role": "desc",
@@ -856,7 +946,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#085": {
+  "Flight in Distress#094": {
    "src": "Escape the ship and speak to Captain Ackbar.",
    "dst": "船から脱出し、Ackbar 船長と話す。",
    "role": "desc",
@@ -866,7 +956,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#086": {
+  "Flight in Distress#095": {
    "src": "Wow, You single handedly took out a skyraider invasion.",
    "dst": "なんと、スカイレイダーの襲撃を一人で撃退するとは。",
    "role": "desc",
@@ -876,7 +966,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#087": {
+  "Flight in Distress#096": {
    "src": "And you're a passenger! It's a good job you did...",
    "dst": "しかも乗客なのに！大した働きだった…",
    "role": "desc",
@@ -886,7 +976,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#088": {
+  "Flight in Distress#097": {
    "src": "We have no defense on this ship. We are a civilian carrier.",
    "dst": "この船には防衛手段がない。民間の輸送船なのだ。",
    "role": "desc",
@@ -896,7 +986,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#089": {
+  "Flight in Distress#098": {
    "src": "What is this? A ring from the queen? It looks valuable. You should keep it.",
    "dst": "これは？女王の指輪？高価そうだ。君が持っていたまえ。",
    "role": "desc",
@@ -906,7 +996,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#090": {
+  "Flight in Distress#099": {
    "src": "I still do not know how to thank you... We owe you so much.",
    "dst": "どう礼をすればいいか…君には大きな借りができた。",
    "role": "desc",
@@ -916,7 +1006,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#091": {
+  "Flight in Distress#100": {
    "src": "Wait! I know! You can have free travel from {p} to {p}!",
    "dst": "待て！そうだ！{p} と {p} の間を無料で移動できるようにしよう！",
    "role": "desc",
@@ -926,7 +1016,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#092": {
+  "Flight in Distress#101": {
    "src": "A private airship owner called Calo owes me big.",
    "dst": "Calo という自家用飛行船の持ち主に大きな貸しがある。",
    "role": "desc",
@@ -936,7 +1026,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#093": {
+  "Flight in Distress#102": {
    "src": "I will tell him the deal. All you have to do is enter his ship and he'll take you back and forth!",
    "dst": "話はつけておく。彼の船に乗るだけで、往復で運んでくれるぞ！",
    "role": "desc",
@@ -946,7 +1036,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#094": {
+  "Flight in Distress#103": {
    "src": "Oh, and you will also be rewarded kindly monetarily. I will also personally send him the ring, so that it doesn't get damaged on the way, and you will receive it there.",
    "dst": "ああ、それから謝礼金もたっぷり出る。指輪は途中で傷まないよう私が直接彼に送っておくから、向こうで受け取ってくれ。",
    "role": "desc",
@@ -956,7 +1046,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#095": {
+  "Flight in Distress#104": {
    "src": "Just head down to the entrance deck, and we are about to arrive at {p} Airbase now.",
    "dst": "入口デッキへ下りてくれ。まもなく {p} 空軍基地に到着する。",
    "role": "desc",
@@ -966,7 +1056,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#096": {
+  "Flight in Distress#105": {
    "src": "Thanks for helping us, really!",
    "dst": "本当に助かったよ！",
    "role": "desc",
@@ -976,7 +1066,7 @@
    "speaker": "Captain Ackbar",
    "source": "wiki"
   },
-  "Flight in Distress#097": {
+  "Flight in Distress#106": {
    "src": "Head down to the entrance deck, and get off.",
    "dst": "入口デッキへ下り、船を降りる。",
    "role": "desc",
@@ -986,7 +1076,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#098": {
+  "Flight in Distress#107": {
    "src": "Speak to Calo next to the little ship at the {p} docks.",
    "dst": "{p} の港にある小さな船の横で Calo と話す。",
    "role": "desc",
@@ -996,7 +1086,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Flight in Distress#099": {
+  "Flight in Distress#108": {
    "src": "Hey there. You must be the Human Ackbar told me about.",
    "dst": "やあ。Ackbar が言ってた人間だな。",
    "role": "desc",
@@ -1006,7 +1096,7 @@
    "speaker": "Calo",
    "source": "wiki"
   },
-  "Flight in Distress#100": {
+  "Flight in Distress#109": {
    "src": "I heard what you did on the ship, very admirable. Fortunately for you, I owe Ackbar.",
    "dst": "船でのことは聞いたよ、見事だった。運がいいな、俺は Ackbar に借りがある。",
    "role": "desc",
@@ -1016,7 +1106,7 @@
    "speaker": "Calo",
    "source": "wiki"
   },
-  "Flight in Distress#101": {
+  "Flight in Distress#110": {
    "src": "I'll take you from {p} to {p} or vice versa whenever you want.",
    "dst": "いつでも {p} から {p}、その逆でも乗せてやる。",
    "role": "desc",
@@ -1026,7 +1116,7 @@
    "speaker": "Calo",
    "source": "wiki"
   },
-  "Flight in Distress#102": {
+  "Flight in Distress#111": {
    "src": "All you have to do is board my ship. Oh, this was also from Ackbar.",
    "dst": "俺の船に乗るだけでいい。ああ、これも Ackbar からだ。",
    "role": "desc",

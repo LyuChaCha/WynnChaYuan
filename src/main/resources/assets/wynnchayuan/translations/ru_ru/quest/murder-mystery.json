@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Murder Mystery",
-  "count": 75,
-  "translated": 75,
+  "count": 77,
+  "translated": 77,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Murder Mystery#000": {
+   "src": "It's some kind of snake symbol, but it's probably not useful to you now.",
+   "dst": "Это какой-то символ змеи, но сейчас от него вряд ли будет толк.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#001": {
+   "src": "If you find any more leads remember to come to me - and if you find the murder weapon, make sure to bring it to us immediately!",
+   "dst": "Если найдёте новые зацепки, обязательно приходите ко мне - а если найдёте орудие убийства, немедленно несите его нам!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Murder Mystery#002": {
    "src": "Have you made any progress? There was a smashed window in there, it might be a good place to start.",
    "dst": "Есть успехи? Там было разбитое окно, пожалуй, с него и стоит начать.",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#001": {
+  "Murder Mystery#003": {
    "src": "It looks like the victim's head was somehow detatched from his body...",
    "dst": "Похоже, голову жертвы каким-то образом отделили от тела…",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#002": {
+  "Murder Mystery#004": {
    "src": "The victim's book collection seems to be exclusively made up of dimestore romance novels.",
    "dst": "Собрание книг жертвы, похоже, состоит исключительно из дешёвых любовных романов.",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#003": {
+  "Murder Mystery#005": {
    "src": "This painting doesn't seem to have anything to do with the murder, but its a nice landscape of {p}.",
    "dst": "Эта картина, похоже, никак не связана с убийством, зато это славный вид {p}.",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#004": {
+  "Murder Mystery#006": {
    "src": "This half-finished letter seems to be asking for a loan to pay off some kind of debt...",
    "dst": "Это недописанное письмо, похоже, просит о ссуде, чтобы покрыть какой-то долг…",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#005": {
+  "Murder Mystery#007": {
    "src": "It looks like the attacker managed to break in through the window.",
    "dst": "Похоже, нападавший сумел влезть через окно.",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#006": {
+  "Murder Mystery#008": {
    "src": "It's a letter addressed to someone called Rohem in House No. {~} in {p}.",
    "dst": "Это письмо, адресованное некоему Rohem из дома № {~} в {p}.",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Tattered Letter 󏿿󏿿󏿿󏿿󏿿󏿪 󐀂",
    "source": "captured"
   },
-  "Murder Mystery#007": {
+  "Murder Mystery#009": {
    "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation.",
    "dst": "Найдёте его - он укажет путь в канализацию. Простите, больше я не знаю. Удачи вам в расследовании.",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
-  "Murder Mystery#008": {
+  "Murder Mystery#010": {
    "src": "Some of those gamblers had a symbol built into their homes, shaped like a snake. If you find it, it'll show you the way into the sewers. Good luck, officer.",
    "dst": "У некоторых из тех игроков в домах был встроен знак в виде змеи. Если найдёшь его, он покажет тебе путь в канализацию. Удачи, офицер.",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "Cinfras Citizen 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
    "source": "captured"
   },
-  "Murder Mystery#009": {
+  "Murder Mystery#011": {
    "src": "The barkeeper takes the snake symbol and examines it for a moment before nodding and giving it back to you.",
    "dst": "Трактирщик берёт змеиный знак, разглядывает его мгновение, затем кивает и возвращает тебе.",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "Barkeeper\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
-  "Murder Mystery#010": {
+  "Murder Mystery#012": {
    "src": "The barkeeper gestures down to the open trapdoor.",
    "dst": "Трактирщик указывает вниз, на открытый люк.",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#011": {
+  "Murder Mystery#013": {
    "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, til neither of em had anythin' left.",
    "dst": "Но в тот день, как он привёл Eminar, быстро запахло жареным. Тот всё занимал изумруды у Rohem и проигрывал, пока у обоих ничего не осталось.",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "Valimare",
    "source": "captured"
   },
-  "Murder Mystery#012": {
+  "Murder Mystery#014": {
    "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back 'n we'll be happy to serve ya!",
    "dst": "А теперь проваливай: вон в стене чёрный ход. Но если захочешь сыграть в очко, заходи - обслужим с радостью!",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Valimare",
    "source": "captured"
   },
-  "Murder Mystery#013": {
+  "Murder Mystery#015": {
    "src": "What are ya lingerin' around 'ere for? I've told ya all I know. Now either take a seat or get out.",
    "dst": "Чего ты тут околачиваешься? Я рассказал всё, что знаю. Теперь либо садись, либо уходи.",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#014": {
+  "Murder Mystery#016": {
    "src": "Ya can then hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
    "dst": "Можно брать ещё карту сколько угодно раз или остановиться и закончить ход. Цель - набрать очков как можно ближе к {~}!",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Blackjack Dealer",
    "source": "captured"
   },
-  "Murder Mystery#015": {
+  "Murder Mystery#017": {
    "src": "It seems like you better go have a chat with Rohem...",
    "dst": "Похоже, тебе лучше потолковать с Rohem…",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#016": {
+  "Murder Mystery#018": {
    "src": "You should look around for clues that tie Rohem to the murder.",
    "dst": "Тебе стоит поискать вокруг улики, связывающие Rohem с убийством.",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
-  "Murder Mystery#017": {
+  "Murder Mystery#019": {
    "src": "Get out of my house, officer, and don't you dare go rooting around in my property!",
    "dst": "Убирайся из моего дома, офицер, и не смей рыться в моём имуществе!",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Grook 󏿿󏿿󏿿󏿿󏿿󏿿󏿿󏿞 󐀂\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
-  "Murder Mystery#018": {
+  "Murder Mystery#020": {
    "src": "It's a dirty shovel - it must've been used recently to dig something up.",
    "dst": "Это грязная лопата - должно быть, ею недавно что-то выкапывали.",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#019": {
+  "Murder Mystery#021": {
    "src": "There's a trail of muddy footprints leading back into the house.",
    "dst": "Цепочка грязных следов ведёт обратно в дом.",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#020": {
+  "Murder Mystery#022": {
    "src": "Whatever, you pale-faced walking cowlick. You're headed to {p} with a charge of first-class murder. Guards, take him away.",
    "dst": "Как скажешь, бледный ходячий вихор. Отправишься в тюрьму {p} за убийство первой степени. Стража, увести.",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Rohem\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
-  "Murder Mystery#021": {
+  "Murder Mystery#023": {
    "src": "Thank you for your help in catching the perpetrator!",
    "dst": "Спасибо за помощь в поимке преступника!",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Detective Lorias\n󏿿󏿿󏿿󏿿󏿬󐀂",
    "source": "captured"
   },
-  "Murder Mystery#022": {
+  "Murder Mystery#024": {
    "src": "Looks like the symbol has something carved in on the back...",
    "dst": "Похоже, на обороте символа что-то вырезано…",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Murder Mystery#023": {
+  "Murder Mystery#025": {
    "src": "Talk to Detective Lorias at [-{~}, -{~}].",
    "dst": "Поговори с детективом Lorias на [-{~}, -{~}].",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#024": {
+  "Murder Mystery#026": {
    "src": "Stand back, human! This is a crime scene, under my authority. I cannot let you inside.",
    "dst": "Назад, человек! Это место преступления, и тут командую я. Внутрь нельзя.",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#025": {
+  "Murder Mystery#027": {
    "src": "Although we are in need of some... assistance... and you are fairly experienced, are you not?",
    "dst": "Хотя нам не помешает… помощь… А вы ведь человек опытный, не так ли?",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#026": {
+  "Murder Mystery#028": {
    "src": "Well, straight to the point... do you think I might be able to hire you as a private investigator?",
    "dst": "Что ж, к делу… Не согласитесь ли поработать у меня частным сыщиком?",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#027": {
+  "Murder Mystery#029": {
    "src": "To put it bluntly, the owner of this house, Eminar, was murdered a few days ago, and what few leads we had have all gone cold.",
    "dst": "Скажу прямо: хозяина дома, Eminar, убили несколько дней назад, а те немногие зацепки, что были, никуда не ведут.",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#028": {
+  "Murder Mystery#030": {
    "src": "This is acting outside protocol, of course... but if you manage to catch the killer, I'm sure I could pull some strings and pay you for your work!",
    "dst": "Это, конечно, против правил… Но если поймаете убийцу, я уж подёргаю за ниточки, и вам заплатят!",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#029": {
+  "Murder Mystery#031": {
    "src": "I'll make sure no one stops you inside the crime scene. Head inside the house and see if you can find anything helpful.",
    "dst": "Никто вам на месте не помешает. Зайдите в дом и поищите что-нибудь полезное.",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#030": {
+  "Murder Mystery#032": {
    "src": "My soldiers and I will keep watch outside the house, and make sure you're not disturbed. Be careful in there!",
    "dst": "Мы с солдатами покараулим снаружи, чтобы вас не беспокоили. Будьте осторожны!",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#031": {
+  "Murder Mystery#033": {
    "src": "Investigate the crime scene at [-{~}, {~}, -{~}] for clues.",
    "dst": "Поищи улики на месте преступления на [-{~}, {~}, -{~}].",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#032": {
+  "Murder Mystery#034": {
    "src": "Ah, a human! A refreshing sight these days. You've come to see me, I presume? What brings you here?",
    "dst": "О, человек! Нынче редкое зрелище. Полагаю, вы ко мне? Что вас привело?",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#033": {
+  "Murder Mystery#035": {
    "src": "An investigation!? Eminar? That's... that's absurd. I've done nothing wrong.",
    "dst": "Расследование?! Eminar? Это… это абсурд. Я ничего не сделал.",
    "role": "desc",
@@ -346,7 +366,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#034": {
+  "Murder Mystery#036": {
    "src": "Still, the poor man. Eminar and I were good friends, you know. If it could help find his killer, I may have some information for you... strictly off-record, of course...",
    "dst": "И всё же бедняга. Мы с Eminar были добрыми друзьями. Если это поможет найти убийцу, кое-что я вам расскажу… строго не для протокола, разумеется…",
    "role": "desc",
@@ -356,7 +376,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#035": {
+  "Murder Mystery#037": {
    "src": "Well. You see, there's an underground gambling den hidden in the city's sewers. Only the elite can get in, and Eminar happened to be a frequent visitor.",
    "dst": "Видите ли, в городской канализации спрятан подпольный игорный притон. Пускают туда лишь избранных, и Eminar там часто бывал.",
    "role": "desc",
@@ -366,7 +386,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#036": {
+  "Murder Mystery#038": {
    "src": "Once, he even brought me along with him.",
    "dst": "Раз даже меня туда водил.",
    "role": "desc",
@@ -376,7 +396,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#037": {
+  "Murder Mystery#039": {
    "src": "Eminar, though, he often tried to cheat the other gamblers. I suppose it was only a matter of time before they had enough; most do not take cheating lightly.",
    "dst": "Только Eminar частенько жульничал. Видно, рано или поздно терпение у игроков лопнуло бы: шулеров мало кто прощает.",
    "role": "desc",
@@ -386,7 +406,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#038": {
+  "Murder Mystery#040": {
    "src": "Back to the point, many of them, including poor Eminar, had a symbol built into the sides of their homes, shaped like a snake. A proof of membership, you could say.",
    "dst": "Так вот, у многих из них, и у бедного Eminar тоже, на стене дома выложен знак в виде змеи. Своего рода членский билет.",
    "role": "desc",
@@ -396,7 +416,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#040": {
+  "Murder Mystery#041": {
    "src": "Return to the victim's house at [-{~}, {~}, -{~}] to find a snake symbol.",
    "dst": "Вернись в дом жертвы на [-{~}, {~}, -{~}] и найди знак змеи.",
    "role": "desc",
@@ -406,7 +426,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#041": {
+  "Murder Mystery#042": {
    "src": "Find the gamblers in the {p} sewers.",
    "dst": "Найди игроков в канализации {p}.",
    "role": "desc",
@@ -416,7 +436,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#042": {
+  "Murder Mystery#043": {
    "src": "How did ya find us down 'ere? I don't remember you... you're with the police, aren't ya? Here after Eminar, I suppose?",
    "dst": "Кто ж тебе нас тут показал? Тебя я не помню… Из полиции, небось? По делу Eminar?",
    "role": "desc",
@@ -426,7 +446,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#043": {
+  "Murder Mystery#044": {
    "src": "Yeah, we've 'eard about what happened to him. Murders don't happen every day up there, ya know. And as it happened, I saw Eminar down here, not too long ago...",
    "dst": "Ага, слыхали, что с ним стряслось. Наверху не каждый день убивают. А Eminar, как назло, недавно тут бывал…",
    "role": "desc",
@@ -436,7 +456,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#044": {
+  "Murder Mystery#045": {
    "src": "Well... as long as I get a guarantee I won't be shut down, I'll help ya. This is a very profitable place, as I'm sure ya might've guessed.",
    "dst": "Ну… Дашь слово, что лавочку не прикроют, - помогу. Место тут очень прибыльное, как понимаешь.",
    "role": "desc",
@@ -446,7 +466,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#045": {
+  "Murder Mystery#046": {
    "src": "He was brought down here by his friend one day. Rohem, it was. A fine customer, you understand. Never failed to pay his dues...",
    "dst": "Как-то раз его привёл сюда приятель. Rohem это был. Клиент что надо, понимаешь. Всегда платил по счетам…",
    "role": "desc",
@@ -476,7 +496,7 @@
    "speaker": "Valimare",
    "source": "wiki"
   },
-  "Murder Mystery#050": {
+  "Murder Mystery#049": {
    "src": "Confront Rohem about the murder at house #{~} in {p}.",
    "dst": "Припри Rohem к стенке насчёт убийства: дом #{~} в {p}.",
    "role": "desc",
@@ -486,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#051": {
+  "Murder Mystery#050": {
    "src": "Ah... you again! You're back. I see that. I must admit, I did not expect you to return... so soon...",
    "dst": "А… опять вы! Вернулись. Вижу. Признаться, не ждал вас обратно… так скоро…",
    "role": "desc",
@@ -496,7 +516,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#052": {
+  "Murder Mystery#051": {
    "src": "You really did find your way down there? Oh, that's... excellent... I hope the investigation is going well. Now if you'll just leave me be-",
    "dst": "Вы и правда нашли туда дорогу? О, это… превосходно… Надеюсь, расследование идёт хорошо. А теперь оставьте меня в пок-",
    "role": "desc",
@@ -506,7 +526,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#053": {
+  "Murder Mystery#052": {
    "src": "Valimare? Bah! Why would you trust anything he says? He's a criminal! A scam artist! I mean, I did direct you to him, but...",
    "dst": "Valimare? Ба! С чего ему верить? Он преступник! Мошенник! Ну да, это я вас к нему направил, но…",
    "role": "desc",
@@ -516,7 +536,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#054": {
+  "Murder Mystery#053": {
    "src": "He- He's the one you should be arresting. Eminar was a danger to society, got what he deserved, the fool-",
    "dst": "Это е-его надо арестовать. Eminar был угрозой обществу, получил по заслугам, дурак-",
    "role": "desc",
@@ -526,7 +546,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#055": {
+  "Murder Mystery#054": {
    "src": "Wait! No! Don't turn me in! Can't you let me finish my drink in peace? Get out, get out, you can't prove anything!",
    "dst": "Стойте! Нет! Не сдавайте меня! Дайте хоть допить спокойно! Вон, вон, вы ничего не докажете!",
    "role": "desc",
@@ -536,7 +556,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#056": {
+  "Murder Mystery#055": {
    "src": "Besides, have you ever heard of a little thing called evidence? You don't have any proof!",
    "dst": "К тому же слыхали о такой мелочи, как улики? У вас нет доказательств!",
    "role": "desc",
@@ -546,7 +566,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#057": {
+  "Murder Mystery#056": {
    "src": "Now, officer, if you don't have a proper warrant, I expect you to vacate my property immediately!",
    "dst": "Итак, офицер, если у вас нет ордера, извольте немедленно покинуть мой дом!",
    "role": "desc",
@@ -556,7 +576,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#058": {
+  "Murder Mystery#057": {
    "src": "Find the murder weapon around Rohem's house at house #{~} in {p}.",
    "dst": "Найди орудие убийства у дома Rohem: дом #{~} в {p}.",
    "role": "desc",
@@ -566,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Murder Mystery#059": {
+  "Murder Mystery#058": {
    "src": "Hi! I'm digging a hole in my garden, just like Mr. Rohem did last night!",
    "dst": "Привет! Я копаю яму в саду, как господин Rohem прошлой ночью!",
    "role": "desc",
@@ -576,7 +596,7 @@
    "speaker": "Child",
    "source": "wiki"
   },
-  "Murder Mystery#060": {
+  "Murder Mystery#059": {
    "src": "For the last time officer, would you either show me a warrant or get out of my- what are you doing in my garden?!",
    "dst": "Последний раз говорю, офицер: или ордер, или вон из моего… что вы делаете в моём саду?!",
    "role": "desc",
@@ -586,7 +606,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#061": {
+  "Murder Mystery#060": {
    "src": "A... a hatchet? I don't know what you mean, I- I've never seen that before in my life!",
    "dst": "Т-топорик? Не понимаю, о чём вы, я… я в жизни его не видел!",
    "role": "desc",
@@ -596,7 +616,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#062": {
+  "Murder Mystery#061": {
    "src": "Gah! Curse you, human! I might be headed to jail, but I can send you straight to hell!",
    "dst": "Проклятье на тебя, человек! Пусть я сяду в тюрьму, но тебя отправлю прямиком в ад!",
    "role": "desc",
@@ -606,7 +626,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#063": {
+  "Murder Mystery#062": {
    "src": "That's enough, Rohem! Stand down, or the guards will attack.",
    "dst": "Довольно, Rohem! Сдавайся, или стража атакует.",
    "role": "desc",
@@ -616,7 +636,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#064": {
+  "Murder Mystery#063": {
    "src": "Augh! Fine, you've got me. But mark my words, this won't be the last you hear of me, human!",
    "dst": "Агх! Ладно, попался. Но попомни мои слова, человек: ты обо мне ещё услышишь!",
    "role": "desc",
@@ -626,7 +646,7 @@
    "speaker": "Rohem",
    "source": "wiki"
   },
-  "Murder Mystery#066": {
+  "Murder Mystery#064": {
    "src": "As for you, human, please accept my immense gratitude. We probably wouldn't have caught that rat without you.",
    "dst": "А вам, человек, моя огромная благодарность. Без вас мы бы эту крысу вряд ли поймали.",
    "role": "desc",
@@ -636,7 +656,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#067": {
+  "Murder Mystery#065": {
    "src": "On behalf of the city of {p}, please accept these emeralds as compensation for your services. You were a fine detective today!",
    "dst": "От имени города {p} примите эти изумруды в награду за труды. Сегодня из вас вышел отличный сыщик!",
    "role": "desc",
@@ -646,7 +666,7 @@
    "speaker": "Detective Lorias",
    "source": "wiki"
   },
-  "Murder Mystery#068": {
+  "Murder Mystery#066": {
    "src": "Heya there! Fancy a quick game of blackjack?",
    "dst": "Эй, привет! Сыграем разок в блэкджек?",
    "role": "desc",
@@ -656,7 +676,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#069": {
+  "Murder Mystery#067": {
    "src": "Alrighty, let's play some blackjack!",
    "dst": "Отлично, играем в блэкджек!",
    "role": "desc",
@@ -666,7 +686,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#070": {
+  "Murder Mystery#068": {
    "src": "Good stuff! Put ya money in the pot and I'll start the deal.",
    "dst": "Вот и славно! Ставь деньги в банк, и я начну раздачу.",
    "role": "desc",
@@ -676,7 +696,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#071": {
+  "Murder Mystery#069": {
    "src": "Not feelin' up to playin' right now? No worries, just drop by later!",
    "dst": "Нет настроения играть? Не беда, загляни попозже!",
    "role": "desc",
@@ -686,7 +706,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#072": {
+  "Murder Mystery#070": {
    "src": "Not right now? No worries - come back another time!",
    "dst": "Не сейчас? Не беда - приходи в другой раз!",
    "role": "desc",
@@ -696,7 +716,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#073": {
+  "Murder Mystery#071": {
    "src": "Ah, new to the game huh? No worries, lemme tell ya all about it!",
    "dst": "А, впервые играешь? Не беда, сейчас всё расскажу!",
    "role": "desc",
@@ -706,7 +726,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#074": {
+  "Murder Mystery#072": {
    "src": "The rules are simple! I deal two cards face up to ya both face down, and two cards to me, one face up and one face down.",
    "dst": "Правила простые! Тебе я сдаю две карты рубашкой вверх, а себе две: одну открытую и одну закрытую.",
    "role": "desc",
@@ -716,7 +736,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#076": {
+  "Murder Mystery#073": {
    "src": "Number cards are worth what they say, all picture cards are worth {~}, and an ace can be worth either {~} or {~}, whichever works best for ya hand.",
    "dst": "Числовые карты стоят свой номинал, картинки - по {~}, а туз - {~} или {~}, как тебе выгоднее.",
    "role": "desc",
@@ -726,7 +746,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#077": {
+  "Murder Mystery#074": {
    "src": "Go over {~} and that's it - you're bust! Stand with your current hand and it's my turn to hit or stand to try and beat your hand.",
    "dst": "Больше {~} - и всё, перебор! Остановишься - и мой черёд брать или остановиться, чтобы тебя побить.",
    "role": "desc",
@@ -736,7 +756,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#078": {
+  "Murder Mystery#075": {
    "src": "And if ya get a blackjack - that's an ace and a picture card or a ten - ya automatically get double ya money back!",
    "dst": "А выпадет блэкджек - туз с картинкой или десяткой - сразу получишь ставку вдвойне!",
    "role": "desc",
@@ -746,7 +766,7 @@
    "speaker": "Blackjack Dealer",
    "source": "wiki"
   },
-  "Murder Mystery#079": {
+  "Murder Mystery#076": {
    "src": "Sound fair enough? Alrighty, just right-click me again to play!",
    "dst": "Честно? Отлично, жми на меня ПКМ ещё раз, чтобы сыграть!",
    "role": "desc",

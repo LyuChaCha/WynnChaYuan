@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "Wrath of the Mummy",
-  "count": 35,
-  "translated": 35,
+  "count": 38,
+  "translated": 38,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Wrath of the Mummy#000": {
+   "src": "Finally tough enough to call yourself one of us, are you?",
+   "dst": "やっと俺たちの仲間を名乗れるくらいタフになったってわけか？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "Rymek Citizen\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#001": {
+   "src": "Then why not look for old Kaven, try your luck? He was always trying to hunt something or other. Might be fun.",
+   "dst": "なら Kaven の爺さんを探して運試ししてみな。あいつはいつも何かしら狩ろうとしてたんだ。面白いかもな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "Rymek Citizen\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#002": {
+   "src": "He's probably holed up someplace just out of town. Don't know where though.",
+   "dst": "たぶん町を出てすぐのどこかに籠もってるんだろう。場所までは知らねえがな。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Wrath of the Mummy",
+   "stage": "",
+   "speaker": "Grook 󏿿󏿿󏿿󏿿󏿿󏿿󏿦 󐀂\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Wrath of the Mummy#003": {
    "src": "Do I know anything about Mummies? Of course! I've spent my entire life studying them!",
    "dst": "ミイラに詳しいか？もちろん！一生かけて研究してきたんだ！",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "Achper",
    "source": "captured"
   },
-  "Wrath of the Mummy#001": {
+  "Wrath of the Mummy#004": {
    "src": "Mummies aren't known to be weak, especially that one. It's demonic... pure evil. It's easily one of the most powerful specimens I've encountered.",
    "dst": "ミイラは弱いものではない…特にあれは。悪魔的で…純粋な邪悪。私が出会った中でも間違いなく最強の部類だ。",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "Achper",
    "source": "captured"
   },
-  "Wrath of the Mummy#002": {
+  "Wrath of the Mummy#005": {
    "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just restocked.",
    "dst": "ただし…なあ。ピンクの羊毛がずっと欲しかったんだが、唯一売ってる店がちょうど入荷したところでな。",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "Bandit",
    "source": "captured"
   },
-  "Wrath of the Mummy#003": {
+  "Wrath of the Mummy#006": {
    "src": "Or better yet, if you happen to have some of that pink wool on you. If you give it to me, well... the tomb is all yours.",
    "dst": "いや、もっといいのは、お前がピンクの羊毛をたまたま持ってる場合だ。渡してくれりゃ… 墓はお前のもんだ。",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Wrath of the Mummy#004": {
+  "Wrath of the Mummy#007": {
    "src": "Either way, you can take my wagon over there to {p}, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
    "dst": "どっちにしろ、向こうの {p} まで俺の荷馬車を使っていいが、帰りは自力だ。[{~} ピンクの羊毛] を渡せば通してやる。",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Bandit",
    "source": "captured"
   },
-  "Wrath of the Mummy#005": {
+  "Wrath of the Mummy#008": {
    "src": "Have you got me [{~} Pink Wool] yet!? You can get it from the shop in {p}.",
    "dst": "[{~} ピンクの羊毛] はまだか！？{p} の店で買えるぞ。",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Wrath of the Mummy#006": {
+  "Wrath of the Mummy#009": {
    "src": "I don't know you, and you don't know me. Got it?",
    "dst": "俺はお前を知らねえし、お前も俺を知らねえ。いいな？",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Wrath of the Mummy#008": {
+  "Wrath of the Mummy#010": {
    "src": "Stay away, friend!",
    "dst": "近寄るな、友よ！",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#009": {
+  "Wrath of the Mummy#011": {
    "src": "I live in this camp by choice. A curse follows me... and now trouble starts wherever I go. I left civilization and made camp in the desert, where I could do no more harm.",
    "dst": "私は好きでこの野営地に住んでいる。呪いにつきまとわれ…行く先々で災いが起きるのだ。だから文明を離れ、害を及ぼさぬよう砂漠に野営した。",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#010": {
+  "Wrath of the Mummy#012": {
    "src": "I do miss the comforts of {p} some days, though... you look like a learned adventurer. If I asked you to investigate this curse, perhaps you could help me rid myself of it?",
    "dst": "それでも {p} の暮らしが恋しい日もある…君は学のある冒険者に見える。この呪いを調べてくれたら、解く手助けになるだろうか？",
    "role": "desc",
@@ -106,7 +136,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#011": {
+  "Wrath of the Mummy#013": {
    "src": "It all started when I discovered an old tomb in the North of the desert. Upon entering it, the ground started shaking and I heard inhuman screams coming from deeper within.",
    "dst": "すべては砂漠の北で古い墓を見つけた時に始まった。中に入ると地面が揺れ、奥から人ならぬ叫び声が聞こえたのだ。",
    "role": "desc",
@@ -116,7 +146,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#012": {
+  "Wrath of the Mummy#014": {
    "src": "I ran as fast as I could, learning later the tomb housed the remains of an ancient Mummy... which I accidentally awoke. If the Mummy could be put back to rest, perhaps the curse would go away.",
    "dst": "必死に逃げ、後で知ったのだが、その墓には古代のミイラが眠っていた…私はそれをうっかり起こしてしまった。ミイラを再び眠らせれば、呪いも消えるかもしれない。",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#013": {
+  "Wrath of the Mummy#015": {
    "src": "I have heard of a scholar in {p}, Achper, who may know more about the tomb. I am reluctant to return to the city, in case my presence hurts anyone else.",
    "dst": "{p} に Achper という学者がいて、その墓に詳しいらしい。私がいると誰かを傷つけかねないから、街には戻りたくないのだ。",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#014": {
+  "Wrath of the Mummy#016": {
    "src": "If you would truly like to help, you should start by talking to him.",
    "dst": "本当に助けてくれるなら、まず彼と話すといい。",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#015": {
+  "Wrath of the Mummy#017": {
    "src": "Talk to Achper in {p} about the curse at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}] の {p} で Achper に呪いのことを聞く。",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#017": {
+  "Wrath of the Mummy#018": {
    "src": "They usually are very hard to reach, hidden in their tomb... and they don't like being disturbed.",
    "dst": "たいてい墓に隠れていて近づくのはとても難しい…それに邪魔されるのを嫌う。",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#018": {
+  "Wrath of the Mummy#019": {
    "src": "I have heard of the curse that follows Ormrod, and the only way to remove its effects would be to kill the mummy.",
    "dst": "Ormrod につきまとう呪いの話は聞いている。その効果を消す唯一の方法はミイラを倒すことだ。",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "Achper",
    "source": "wiki"
   },
-  "Wrath of the Mummy#019": {
+  "Wrath of the Mummy#020": {
    "src": "The tomb lies in the North of the desert, but be very careful!",
    "dst": "墓は砂漠の北にある。だが十分に気をつけて！",
    "role": "desc",
@@ -226,7 +256,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#026": {
+  "Wrath of the Mummy#025": {
    "src": "Trouble is, the shop's over in {p} and I'm stuck guarding this tomb. If you go and grab me some before it sells out, I can look the other way.",
    "dst": "問題は、その店が {p} にあって、俺はこの墓の見張りで動けねえ。売り切れる前に買ってきてくれたら、見逃してやる。",
    "role": "desc",
@@ -236,7 +266,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#028": {
+  "Wrath of the Mummy#026": {
    "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}.",
    "dst": "[{~}, {~}, -{~}] の盗賊の荷馬車で {p} へ向かう。",
    "role": "desc",
@@ -246,7 +276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#029": {
+  "Wrath of the Mummy#027": {
    "src": "Bring back [{~} Pink Wool] to the bandit at [{~}, {~}, -{~}].",
    "dst": "[{~} ピンクの羊毛] を [{~}, {~}, -{~}] の盗賊に届ける。",
    "role": "desc",
@@ -256,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#030": {
+  "Wrath of the Mummy#028": {
    "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
    "dst": "おやおや、驚いた！ピンクの羊毛を手に入れたか！よし、渡しな。見なかったことにして墓に入れてやる。",
    "role": "desc",
@@ -266,7 +296,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#031": {
+  "Wrath of the Mummy#029": {
    "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
    "dst": "ただし金には触るなよ？それと、俺ならあまり奥へは行かねえ。",
    "role": "desc",
@@ -276,7 +306,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#032": {
+  "Wrath of the Mummy#030": {
    "src": "The clan was going to explore further inside, but the sounds...",
    "dst": "団の連中は奥まで探るつもりだったが、あの音が…",
    "role": "desc",
@@ -286,7 +316,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#033": {
+  "Wrath of the Mummy#031": {
    "src": "Anyway, I'll still let you inside if you want. Just remember, if anyone asks, this conversation never happened.",
    "dst": "とにかく、入りたきゃ入れてやる。ただ覚えとけ、誰かに聞かれても、この話はなかったことだ。",
    "role": "desc",
@@ -296,7 +326,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "Wrath of the Mummy#034": {
+  "Wrath of the Mummy#032": {
    "src": "Enter the tomb at [{~}, {~}, -{~}] and kill the Mummy.",
    "dst": "[{~}, {~}, -{~}] の墓に入り、ミイラを倒す。",
    "role": "desc",
@@ -306,7 +336,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#035": {
+  "Wrath of the Mummy#033": {
    "src": "Bring [{~} Mummy's Bandage] to Ormrod at [{~}, {~}, -{~}].",
    "dst": "[{~} ミイラの包帯] を [{~}, {~}, -{~}] の Ormrod に届ける。",
    "role": "desc",
@@ -316,7 +346,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Wrath of the Mummy#036": {
+  "Wrath of the Mummy#034": {
    "src": "Hello, again... have you had any luck?",
    "dst": "やあ、また会ったな…どうだった？",
    "role": "desc",
@@ -326,7 +356,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#037": {
+  "Wrath of the Mummy#035": {
    "src": "Those are the Mummy's bandages?! You did it? My curse is finally lifted!",
    "dst": "それはミイラの包帯？！やったのか？ついに呪いが解けた！",
    "role": "desc",
@@ -336,7 +366,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#038": {
+  "Wrath of the Mummy#036": {
    "src": "I can't thank you enough! As a reward, take this rag I got from the Mummy when I entered the tomb.",
    "dst": "感謝してもしきれない！礼として、墓に入った時にミイラから取ったこの布をあげよう。",
    "role": "desc",
@@ -346,7 +376,7 @@
    "speaker": "Ormrod",
    "source": "wiki"
   },
-  "Wrath of the Mummy#039": {
+  "Wrath of the Mummy#037": {
    "src": "I am not strong enough to wear it, but I'm sure you are! Take these emeralds too, that's the least I can do!",
    "dst": "私には身につける力はないが、君ならきっと大丈夫だ！このエメラルドも持っていってくれ、せめてもの礼だ！",
    "role": "desc",

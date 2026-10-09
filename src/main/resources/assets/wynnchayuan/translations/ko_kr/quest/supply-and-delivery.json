@@ -1,12 +1,98 @@
 {
  "_meta": {
   "quest": "Supply and Delivery",
-  "count": 59,
-  "translated": 59,
+  "count": 67,
+  "translated": 67,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
+  "Supply and Delivery#000": {
+   "src": "Well? Did you buy the supply crate yet?",
+   "dst": "어때? 보급품 상자는 샀어?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "Ope\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
   "Supply and Delivery#001": {
+   "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. It's not that hard!",
+   "dst": "거래소에 가서 보급품 상자만 사 오면 돼. 그렇게 어렵지 않잖아!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "Ope\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured",
+   "similar": {
+    "text": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
+    "file": "quest/supply-and-delivery.json",
+    "ratio": 0.876,
+    "reason": "candidate"
+   }
+  },
+  "Supply and Delivery#002": {
+   "src": "You bought the crate! Good, good. You still need to pick it up from the Trade Market, though!",
+   "dst": "상자를 샀구나! 좋아, 좋아. 그래도 거래소에서 받아 와야 해!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "Ope\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Supply and Delivery#003": {
+   "src": "\"The forward defenses have fallen.\"",
+   "dst": "\"전방 방어선이 무너졌다.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#004": {
+   "src": "\"They have taken the forest. The last barrier between them and {p} is us.\"",
+   "dst": "\"놈들이 숲을 점령했다. 놈들과 {p} 사이에 남은 마지막 방벽은 우리다.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#005": {
+   "src": "\"We must fortify. Put those fires out!\"",
+   "dst": "\"방비를 강화해야 한다. 저 불을 꺼라!\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#006": {
+   "src": "\"If we lose tree cover, we lose the war.\"",
+   "dst": "\"숲의 엄폐를 잃으면 전쟁에서 진다.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#007": {
+   "src": "\"Oh no.. It's him.\"",
+   "dst": "\"안 돼.. 그자다.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Supply and Delivery#008": {
    "src": "Hey! I- uh, I can't help but notice that. You're still here. With the crate. You need to bring it to {p}, remember?",
    "dst": "어이! 나는 - 어, 어쩔 수 없이 눈에 띄어서 말이야. 아직 여기 있군. 상자를 들고. 그걸 {p}로 가져가야 하는 거 아닌가?",
    "role": "desc",
@@ -16,7 +102,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#002": {
+  "Supply and Delivery#009": {
    "src": "Oh, you're one of those {p} soldiers. If I can give some advice?",
    "dst": "오, {p} 병사 중 한 명이군. 조언 하나 해도 될까?",
    "role": "desc",
@@ -26,7 +112,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#003": {
+  "Supply and Delivery#010": {
    "src": "You should pick up some items from the Accessory Merchant in town! They might really help you out.",
    "dst": "마을의 장신구 상인에게서 물건을 몇 개 사 두는 게 좋아! 정말 큰 도움이 될지도 몰라.",
    "role": "desc",
@@ -36,7 +122,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#004": {
+  "Supply and Delivery#011": {
    "src": "Normally you can only find accessories in rare cave loot, so a merchant like ours is actually a rarity.",
    "dst": "보통 장신구는 희귀한 동굴 전리품에서만 나오니, 우리 같은 상인은 사실 드문 편이지.",
    "role": "desc",
@@ -46,7 +132,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#005": {
+  "Supply and Delivery#012": {
    "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefited from. I got the plant, and you... well. You gained experience?",
    "dst": "뭐? 그런 눈으로 보지 마! 서로 이득 본 공정한 거래였잖아. 난 약초를 얻고, 넌... 음. 경험을 얻었잖아?",
    "role": "desc",
@@ -56,7 +142,7 @@
    "speaker": "Ope",
    "source": "captured"
   },
-  "Supply and Delivery#006": {
+  "Supply and Delivery#013": {
    "src": "So either you run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
    "dst": "그러니 네가 {p}까지 보급품을 나르든지... 아니면 우리 둘 다 도망쳐서 새 삶을 시작하고, 저지른 일의 대가를 피하는 거지!",
    "role": "desc",
@@ -66,7 +152,7 @@
    "speaker": "Ope",
    "source": "captured"
   },
-  "Supply and Delivery#007": {
+  "Supply and Delivery#014": {
    "src": "Howdy! Lookin' to hitch a ride off to {p}? Sorry to say, but the wagon's broken down.",
    "dst": "안녕! {p}까지 마차 타고 가려고? 미안하지만 마차가 고장 났어.",
    "role": "desc",
@@ -76,7 +162,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#008": {
+  "Supply and Delivery#015": {
    "src": "I reckon it won't be long 'till it's fixed up, but you'll have to make the journey yourself for now.",
    "dst": "금방 고쳐질 것 같긴 한데, 당분간은 직접 걸어가야 할 거야.",
    "role": "desc",
@@ -86,7 +172,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#009": {
+  "Supply and Delivery#016": {
    "src": "This fast travel requires Supply and Delivery to use.",
    "dst": "이 빠른 이동을 이용하려면 '보급과 배송' 퀘스트를 완료해야 합니다.",
    "role": "desc",
@@ -96,7 +182,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Supply and Delivery#010": {
+  "Supply and Delivery#017": {
    "src": "I hope these emeralds will suffice. Additionally... we have recently fixed up one of our broken carts, which makes the trip to {p} and back.",
    "dst": "이 에메랄드면 충분하길 바라요. 그리고... 최근에 고장 난 마차 하나를 고쳤는데, {p}까지 오가요.",
    "role": "desc",
@@ -106,7 +192,7 @@
    "speaker": "Mayor Alvin",
    "source": "captured"
   },
-  "Supply and Delivery#011": {
+  "Supply and Delivery#018": {
    "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 {p}에 있는 Ope에게 말을 거세요.",
    "role": "desc",
@@ -116,7 +202,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#012": {
+  "Supply and Delivery#019": {
    "src": "Oh, man... What am I going to do now...",
    "dst": "아, 이런... 이제 어떡하지...",
    "role": "desc",
@@ -126,7 +212,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#013": {
+  "Supply and Delivery#020": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
    "dst": "어, 어! 아, 안녕 병사님! 와, 우리 둘 다 오늘... {p}에... 있다니 이런 우연이...",
    "role": "desc",
@@ -136,7 +222,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#015": {
+  "Supply and Delivery#021": {
    "src": "Look, alright, I get it! But I can't pay you back either way. The mayor sent me here to pick up a crate of supplies for the village.",
    "dst": "알았어, 알았다고! 근데 어차피 갚을 돈이 없어. 촌장님이 마을 보급품 상자를 받아 오라고 날 보냈거든.",
    "role": "desc",
@@ -146,7 +232,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#016": {
+  "Supply and Delivery#022": {
    "src": "The issue is... I've already run out of money on- uh, unrelated purchases. And even if I had the money, I couldn't buy the supply crate anyway...",
    "dst": "문제는... 돈을 벌써 다 써 버렸어, 어, 딴 데에. 돈이 있어도 보급품 상자는 어차피 못 사고...",
    "role": "desc",
@@ -156,7 +242,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#017": {
+  "Supply and Delivery#023": {
    "src": "Those two over there who run the market banned me from ever using it after I tried to buy out the world's supplies of magical powders.",
    "dst": "저기 거래소 운영하는 두 사람이, 내가 세상 마법 파우더를 싹쓸이하려 한 뒤로 날 영영 출입 금지했거든.",
    "role": "desc",
@@ -166,7 +252,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#018": {
+  "Supply and Delivery#024": {
    "src": "Look, it's not my fault I'm making big market moves. I'm just, you know- smarter than all these other folks!",
    "dst": "이봐, 내가 시장의 큰손인 게 내 잘못은 아니잖아. 난 그냥, 알지- 여기 사람들보다 똑똑할 뿐이야!",
    "role": "desc",
@@ -176,7 +262,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#019": {
+  "Supply and Delivery#025": {
    "src": "... The point is. I could really use your help right now! I- I promise, I'll pay you back for it this time.",
    "dst": "... 요점은. 지금 네 도움이 정말 필요해! 야, 약속할게, 이번엔 꼭 갚을게.",
    "role": "desc",
@@ -186,7 +272,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#020": {
+  "Supply and Delivery#026": {
    "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
    "dst": "거래소에 가서 보급품 상자만 사 오면 돼. 부탁해, 응?",
    "role": "desc",
@@ -196,7 +282,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#028": {
+  "Supply and Delivery#027": {
    "src": "... What? They also banned you from the market?! Well, great. What are we supposed to do now?",
    "dst": "... 뭐? 너도 거래소 출입 금지야?! 아주 잘됐네. 이제 어떡하라고?",
    "role": "desc",
@@ -206,7 +292,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#029": {
+  "Supply and Delivery#028": {
    "src": "Well, do you have any other friends we could get involved? There was... that other soldier guy, right? His name was... Tim. Or something.",
    "dst": "그럼 끌어들일 다른 친구 없어? 그... 다른 병사 있었잖아? 이름이... Tim. 뭐 그런 거.",
    "role": "desc",
@@ -216,7 +302,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#030": {
+  "Supply and Delivery#029": {
    "src": "Look- alright, I get it, I'm a jerk who doesn't remember peoples' names! Could you just ask him to buy the supplies for us?? He's our last hope... probably.",
    "dst": "그래, 알았어, 난 남 이름도 못 외우는 나쁜 놈이야! 그냥 그 친구한테 보급품 좀 사 달라고 해 줄래?? 우리 마지막 희망이야... 아마도.",
    "role": "desc",
@@ -226,7 +312,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#031": {
+  "Supply and Delivery#030": {
    "src": "Purchase the supply crate from the Trade Market at [{~}, {~}, -{~}].",
    "dst": "[{~}, {~}, -{~}]의 거래소에서 보급품 상자를 구매하세요.",
    "role": "desc",
@@ -236,7 +322,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#032": {
+  "Supply and Delivery#031": {
    "src": "Hey, good work! Now you'll need to pick up the supply crate.",
    "dst": "오, 잘했어! 이제 보급품 상자를 받아 와야 해.",
    "role": "desc",
@@ -246,7 +332,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#033": {
+  "Supply and Delivery#032": {
    "src": "Find Tasim at [{~}, {~}, -{~}] and convince him to buy the supply crate for you.",
    "dst": "[{~}, {~}, -{~}]에서 Tasim을 찾아 보급품 상자를 대신 사 달라고 설득하세요.",
    "role": "desc",
@@ -256,7 +342,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#034": {
+  "Supply and Delivery#033": {
    "src": "Oh, hey {u}! Are you just here to hang out? Or- that look on your face tells me you're here for something else.",
    "dst": "오, {u}! 그냥 놀러 온 거야? 아니면- 표정 보니 다른 일로 온 것 같은데.",
    "role": "desc",
@@ -266,7 +352,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#035": {
+  "Supply and Delivery#034": {
    "src": "[{~}] Can you buy something from the Trade Market for me?",
    "dst": "[{~}] 거래소에서 뭐 좀 사 줄 수 있어?",
    "role": "desc",
@@ -276,7 +362,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#036": {
+  "Supply and Delivery#035": {
    "src": "I... guess so? Is there a reason you can't do it yourself?",
    "dst": "음... 그래? 네가 직접 못 사는 이유라도 있어?",
    "role": "desc",
@@ -286,7 +372,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#037": {
+  "Supply and Delivery#036": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
    "dst": "...거래소 출입 금지라고? 대체 어떻게 한 거야? {p}에 온 지 얼마 되지도 않았는데!",
    "role": "desc",
@@ -296,7 +382,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#038": {
+  "Supply and Delivery#037": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy... whatever it is you need.",
    "dst": "너- 뭐!? 됐어, 알고 싶지 않아. 가자, 앞장서. 필요한 거... 뭐든 사 줄게.",
    "role": "desc",
@@ -306,7 +392,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#039": {
+  "Supply and Delivery#038": {
    "src": "...Oh. Well, that explains that. Though- is there a reason you can't get it yourself?",
    "dst": "...아. 그럼 말이 되네. 근데- 네가 직접 못 가져올 이유라도 있어?",
    "role": "desc",
@@ -316,7 +402,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#041": {
+  "Supply and Delivery#039": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy whatever it is Ope needs.",
    "dst": "너- 뭐!? 됐어, 알고 싶지 않아. 가자, 앞장서. Ope한테 필요한 건 뭐든 사 줄게.",
    "role": "desc",
@@ -326,7 +412,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#042": {
+  "Supply and Delivery#040": {
    "src": "Oh, hello . Are you here for training as well? Or- that look on your face tells me you're here for something else.",
    "dst": "오, 안녕. 너도 훈련받으러 왔어? 아니면- 표정 보니 다른 일로 온 것 같은데.",
    "role": "desc",
@@ -336,7 +422,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#049": {
+  "Supply and Delivery#041": {
    "src": "Bring Tasim to the Trade Market at [{~}, {~}, -{~}].",
    "dst": "Tasim을 [{~}, {~}, -{~}]의 거래소로 데려가세요.",
    "role": "desc",
@@ -346,7 +432,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#050": {
+  "Supply and Delivery#042": {
    "src": "Alright. So I'm just buying a supply crate...",
    "dst": "좋아. 그러니까 보급품 상자 하나만 사면 되는 거지...",
    "role": "desc",
@@ -356,7 +442,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#051": {
+  "Supply and Delivery#043": {
    "src": "Here it is. I wish you luck with... whatever it is you're up to.",
    "dst": "여기 있어. 네가 뭘 꾸미든... 행운을 빌게.",
    "role": "desc",
@@ -366,7 +452,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Supply and Delivery#052": {
+  "Supply and Delivery#044": {
    "src": "Return to Ope with the supply crate at [{~}, {~}, -{~}]",
    "dst": "보급품 상자를 가지고 [{~}, {~}, -{~}]의 Ope에게 돌아가세요",
    "role": "desc",
@@ -376,7 +462,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#053": {
+  "Supply and Delivery#045": {
    "src": "Perfect! Now, quickly, come back over here, before those two realize you're working with me!",
    "dst": "완벽해! 자, 저 두 사람이 네가 나랑 한패인 걸 눈치채기 전에 얼른 이리 와!",
    "role": "desc",
@@ -386,7 +472,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#054": {
+  "Supply and Delivery#046": {
    "src": "You got the item? Good. Good, good good.",
    "dst": "물건 받았어? 좋아. 좋아, 좋아 좋아.",
    "role": "desc",
@@ -396,7 +482,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#055": {
+  "Supply and Delivery#047": {
    "src": "Okay! Now, we're onto step two. So, you see, this package still needs to make it to {p}...",
    "dst": "좋아! 이제 2단계야. 그러니까, 이 짐은 아직 {p}까지 가야 하거든...",
    "role": "desc",
@@ -406,7 +492,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#056": {
+  "Supply and Delivery#048": {
    "src": "And. Well. You're the one holding the crate, not me! So... you know!",
    "dst": "그리고. 음. 상자를 든 건 내가 아니라 너잖아! 그러니까... 알지!",
    "role": "desc",
@@ -416,7 +502,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#057": {
+  "Supply and Delivery#049": {
    "src": "Great! You know the way by now, surely! No need for me to, uh, get in your way!",
    "dst": "좋아! 이제 길은 확실히 알잖아! 내가, 어, 방해할 필요는 없겠지!",
    "role": "desc",
@@ -426,7 +512,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#058": {
+  "Supply and Delivery#050": {
    "src": "Just take those supplies to {p}, and. Well. Things will work out.",
    "dst": "그 보급품만 {p}에 갖다주면. 음. 다 잘 풀릴 거야.",
    "role": "desc",
@@ -436,7 +522,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#059": {
+  "Supply and Delivery#051": {
    "src": "...probably.",
    "dst": "...아마도.",
    "role": "desc",
@@ -446,7 +532,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#060": {
+  "Supply and Delivery#052": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
    "dst": "그게 말이야. 난 정말 하기 싫어. 그리고 안 할 거야!",
    "role": "desc",
@@ -456,7 +542,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#062": {
+  "Supply and Delivery#053": {
    "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",
    "dst": "...싫어? 싫구나. 그래. 해 볼 만했어. 뭐, 이제 길은 알잖아! 내가, 어, 방해할 필요는 없겠지! 헤...",
    "role": "desc",
@@ -466,7 +552,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#063": {
+  "Supply and Delivery#054": {
    "src": "He bought you the item? Good. Good, good good. Okay! That was... harder than expected.",
    "dst": "그 친구가 사 줬어? 좋아. 좋아, 좋아 좋아. 좋아! 그건... 생각보다 어려웠네.",
    "role": "desc",
@@ -476,7 +562,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Supply and Delivery#072": {
+  "Supply and Delivery#055": {
    "src": "Bring the supply crate to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
    "dst": "보급품 상자를 [-{~}, {~}, -{~}]의 {p}에 있는 Alvin 촌장에게 가져가세요.",
    "role": "desc",
@@ -486,7 +572,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Supply and Delivery#073": {
+  "Supply and Delivery#056": {
    "src": "Ah, hello! What can I do for you today?",
    "dst": "아, 안녕하세요! 무슨 일로 오셨어요?",
    "role": "desc",
@@ -496,7 +582,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#074": {
+  "Supply and Delivery#057": {
    "src": "Ah... So you do. I thought I had sent Ope to pick that up...",
    "dst": "아... 그렇군요. Ope한테 가져오라고 보낸 줄 알았는데...",
    "role": "desc",
@@ -506,7 +592,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#075": {
+  "Supply and Delivery#058": {
    "src": "More of his shenanigans, I suppose. I am sorry you have had to deal with him twice.",
    "dst": "또 그 애 장난이겠죠. 그 애를 두 번이나 상대하게 해서 죄송해요.",
    "role": "desc",
@@ -516,7 +602,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#076": {
+  "Supply and Delivery#059": {
    "src": "When he returns to the village, I'm going to need to have a word with him... Ah, but of course, I should pay you for your troubles.",
    "dst": "마을에 돌아오면 그 애랑 얘기 좀 해야겠어요... 아, 물론 수고하셨으니 보답을 드려야죠.",
    "role": "desc",
@@ -526,7 +612,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#078": {
+  "Supply and Delivery#060": {
    "src": "You may feel free to use it whenever you like! As thanks for all you have done for us.",
    "dst": "언제든 편하게 이용하세요! 저희를 위해 해 주신 모든 일에 대한 감사예요.",
    "role": "desc",
@@ -536,7 +622,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#082": {
+  "Supply and Delivery#061": {
    "src": "He's a good man, truly. I believe that with my whole heart. It's alright if you don't feel the same way, though. I will not force you to interact with him if you do not wish to.",
    "dst": "정말 좋은 사람이에요. 진심으로 그렇게 믿어요. 그래도 생각이 다르셔도 괜찮아요. 원치 않으시면 그 애와 어울리라고 강요하지 않을게요.",
    "role": "desc",
@@ -546,7 +632,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#083": {
+  "Supply and Delivery#062": {
    "src": "Oh, dear... I suppose it must have been fifteen years ago that I took the position, when the old mayor stepped down.",
    "dst": "어머나... 이 자리를 맡은 게 열다섯 해 전쯤이었을 거예요. 전 촌장님이 물러나셨을 때요.",
    "role": "desc",
@@ -556,7 +642,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#084": {
+  "Supply and Delivery#063": {
    "src": "He was a kind man, always looking out for the townsfolk. Though, by the time he retired, it was clear he was growing restless in our little town.",
    "dst": "마을 사람들을 늘 챙기던 친절한 분이었어요. 하지만 은퇴하실 즈음엔 우리 작은 마을을 답답해하시는 게 보였죠.",
    "role": "desc",
@@ -566,7 +652,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#085": {
+  "Supply and Delivery#064": {
    "src": "Well, as soon as he passed down the position to me, he immediately traveled to {p} and enlisted in their army! I hear he's in the business of training soldiers these days.",
    "dst": "그런데 저한테 자리를 넘기자마자 곧장 {p}에 가서 입대하셨어요! 요즘은 병사들을 훈련시키신다더군요.",
    "role": "desc",
@@ -576,8 +662,8 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#086": {
-   "src": "Ah, but I've tried lived up to his legacy. I like to think I've done well in my time as mayor!",
+  "Supply and Delivery#065": {
+   "src": "Ah, but I've tried to live up to his legacy. I like to think I've done well in my time as mayor!",
    "dst": "아, 그래도 전 그분의 뜻을 이어가려 애썼어요. 촌장으로서 잘해 왔다고 생각하고 싶네요!",
    "role": "desc",
    "kind": "dialogue",
@@ -586,7 +672,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Supply and Delivery#087": {
+  "Supply and Delivery#066": {
    "src": "A fine day for passing through! I hope you enjoy your stay.",
    "dst": "지나가기 좋은 날이네요! 즐겁게 머물다 가세요.",
    "role": "desc",
