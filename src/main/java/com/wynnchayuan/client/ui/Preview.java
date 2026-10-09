@@ -122,6 +122,23 @@ public final class Preview {
 
     // ------------------------------------------------------------ 物品與面板
 
+    /**
+     * 把譯名後面附的原文拿掉。
+     *
+     * @param appendedAt 語料認出來的「 (原文)」從哪裡開始；認不出來是 -1
+     */
+    public static String bareName(String translated, String original, int appendedAt) {
+        if (appendedAt > 0) {
+            return translated.substring(0, appendedAt);
+        }
+        // 語料認不出來的（它只認裝備名）也照字面收一次：結尾剛好是「 (原文)」
+        String tail = " (" + original + ")";
+        if (translated.endsWith(tail) && translated.length() > tail.length()) {
+            return translated.substring(0, translated.length() - tail.length());
+        }
+        return translated;
+    }
+
     private static void tooltip(Canvas c, int x, int y, int w, int h, State s,
                                 int accent, float gapShown, boolean forcePanel) {
         String zhName = s.translate.apply(ITEM);

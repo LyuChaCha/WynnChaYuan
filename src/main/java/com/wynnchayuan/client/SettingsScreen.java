@@ -789,11 +789,27 @@ public final class SettingsScreen extends Screen {
             case UNKNOWN -> Ui.RED;
             default -> Ui.TEXT_2;
         };
-        s.translate = text -> {
-            String hit = WynnChaYuan.translations().lookup(text);
-            return hit == null || hit.isBlank() ? text : hit;
-        };
+        s.translate = SettingsScreen::previewLookup;
         return s;
+    }
+
+    /**
+     * 預覽用的查表：只要譯文本身，不要語料順手附上的原文。
+     *
+     * <h2>為什麼不能直接用 lookup</h2>
+     * 物品名稱設成「譯名加原文」時，{@code lookup} 回來的就已經是
+     * 「骨弓 (Bony Bow)」。預覽自己會照設定再接一次原文，於是畫成
+     * 「骨弓 (Bony Bow) (Bony Bow)」（使用者 2026-10-09 回報）。
+     * 預覽要示範的是「三種模式各長什麼樣」，接不接原文由它自己決定，
+     * 所以這裡把語料附的那一段拿掉。
+     */
+    static String previewLookup(String text) {
+        var store = WynnChaYuan.translations();
+        String hit = store.lookup(text);
+        if (hit == null || hit.isBlank()) {
+            return text;
+        }
+        return Preview.bareName(hit, text, store.appendedOriginalAt(hit));
     }
 
     // ------------------------------------------------------------ 遊戲事件

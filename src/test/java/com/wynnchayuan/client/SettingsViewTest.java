@@ -102,6 +102,16 @@ public final class SettingsViewTest {
 
         interactions(out);
 
+        // 預覽的物品名：語料在「譯名加原文」時回來的已經帶著原文，預覽自己還會再接一次
+        // （使用者 2026-10-09 回報畫成「骨弓 (Bony Bow) (Bony Bow)」）
+        must("語料附的原文要先拿掉（認得出來的那種）",
+                "骨弓".equals(Preview.bareName("骨弓 (Bony Bow)", "Bony Bow", 2)));
+        must("語料認不出來、但結尾剛好是「 (原文)」的也拿掉",
+                "骨弓".equals(Preview.bareName("骨弓 (Bony Bow)", "Bony Bow", -1)));
+        must("沒附原文的不動", "骨弓".equals(Preview.bareName("骨弓", "Bony Bow", -1)));
+        must("譯文本來就帶別的括號的不動",
+                "緩慢 (每秒 1.5 次)".equals(Preview.bareName("緩慢 (每秒 1.5 次)", "Slow", -1)));
+
         if (failures > 0) {
             System.out.println("SettingsView: " + failures + " 項失敗");
             System.exit(1);

@@ -216,10 +216,7 @@ public final class NametagScreen extends CanvasScreen {
             };
             preview.objectives = c.translateObjectives();
             preview.heldItem = c.translateHeldItem();
-            preview.translate = text -> {
-                String hit = WynnChaYuan.translations().lookup(text);
-                return hit == null || hit.isBlank() ? text : hit;
-            };
+            preview.translate = SettingsScreen::previewLookup;
             return preview;
         }
 
