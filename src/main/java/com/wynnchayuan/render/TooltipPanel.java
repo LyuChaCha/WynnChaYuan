@@ -71,7 +71,8 @@ public final class TooltipPanel {
 
     /** 一次翻譯的結果，連同當時的語料狀態。 */
     private record CachedLines(int generation, boolean namesWithOriginal,
-                               boolean translateNames, List<Component> lines) {}
+                               boolean translateNames, boolean peekPlain,
+                               List<Component> lines) {}
 
     /**
      * {@link #translateLines} 的快取版：同一份內容直接回上一次的結果。
@@ -101,14 +102,17 @@ public final class TooltipPanel {
             CachedLines hit = LINES_CACHE.get(key);
             if (hit != null && hit.generation() == store.generation()
                     && hit.namesWithOriginal() == store.namesWithOriginal()
-                    && hit.translateNames() == store.translatesNames()) {
+                    && hit.translateNames() == store.translatesNames()
+                    // 按住 Shift 的那幾幀是另一份答案，放開要馬上換回來
+                    && hit.peekPlain() == store.peeksPlainNames()) {
                 return new ArrayList<>(hit.lines());
             }
         }
         List<Component> out = List.copyOf(translateLines(tooltip, store));
         synchronized (LINES_CACHE) {
             LINES_CACHE.put(key, new CachedLines(store.generation(),
-                    store.namesWithOriginal(), store.translatesNames(), out));
+                    store.namesWithOriginal(), store.translatesNames(),
+                    store.peeksPlainNames(), out));
         }
         return new ArrayList<>(out);
     }

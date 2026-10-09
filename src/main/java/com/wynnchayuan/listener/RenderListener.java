@@ -123,10 +123,16 @@ public final class RenderListener {
     private static <T> T withPeek(java.util.function.Supplier<T> body) {
         CollectorConfig config = WynnChaYuan.config();
         WynnChaYuan.translations().setNameMode(peeked(config));
+        // 素材與材料不歸「翻譯物品名稱」管，所以撥那個開關對它們沒有用——
+        // 它們永遠是譯名，按住 Shift 就是看原文。三種名稱模式都一樣，包含
+        // 「譯名加原文」：那一種只替裝備附原文，素材並沒有。
+        WynnChaYuan.translations().setPeekPlainNames(
+                config.shiftPeekNames() && shiftHeld());
         try {
             return body.get();
         } finally {
             WynnChaYuan.translations().setNameMode(config.itemNames());
+            WynnChaYuan.translations().setPeekPlainNames(false);
         }
     }
 

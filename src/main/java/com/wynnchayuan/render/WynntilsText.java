@@ -734,7 +734,8 @@ public final class WynntilsText {
         StyledText out = hit == null ? null : StyledText.fromComponent(hit);
         synchronized (SCREEN_CACHE) {
             SCREEN_CACHE.put(text, new Cached(store.generation(),
-                    store.namesWithOriginal(), store.translatesNames(), out));
+                    store.namesWithOriginal(), store.translatesNames(),
+                    store.peeksPlainNames(), out));
         }
         return out == null ? text : out;
     }
@@ -763,12 +764,13 @@ public final class WynntilsText {
 
     /** 一次翻譯的結果；{@code out} 是 {@code null} 代表「查不到，原樣就是答案」。 */
     private record Cached(int generation, boolean namesWithOriginal,
-                          boolean translateNames, StyledText out) {
+                          boolean translateNames, boolean peekPlain, StyledText out) {
 
         boolean fresh(TranslationStore store) {
             return generation == store.generation()
                     && namesWithOriginal == store.namesWithOriginal()
-                    && translateNames == store.translatesNames();
+                    && translateNames == store.translatesNames()
+                    && peekPlain == store.peeksPlainNames();
         }
     }
 

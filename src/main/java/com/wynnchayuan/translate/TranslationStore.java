@@ -123,6 +123,45 @@ public final class TranslationStore {
             java.util.concurrent.ConcurrentHashMap.newKeySet();
 
     /**
+     * 素材與材料的名稱：<b>不受</b> F6「翻譯物品名稱」管，但按住 Shift 要看得到原文。
+     *
+     * <h2>為什麼另外一份</h2>
+     * {@link #nameKeys} 管的是那個開關，而素材與材料從一開始就刻意不歸它管
+     * （見 {@link #itemNames}：那個開關是為了讓<b>裝備</b>對得上交易市場）。
+     * 於是「按住 Shift 看另一種」——它的做法是暫時把開關撥到另一邊——對這兩類
+     * 完全沒有作用：名稱永遠是譯名，要去 wiki 查配方、跟別人講要哪個素材的時候
+     * 沒有地方看原文。
+     *
+     * <p>塞進 {@link #nameKeys} 不行，那樣 F6 關掉裝備名稱時素材也會跟著變英文
+     * ——v1.99.71 踩過的就是這個。所以另外記一份，只給 {@link #peekPlainNames} 用。
+     */
+    private final java.util.Set<String> plainNameKeys =
+            java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    /**
+     * 這一刻要不要把 {@link #plainNameKeys} 當成沒翻。
+     *
+     * <p>只有按住 Shift 畫物品 tooltip 的那一小段會是 {@code true}，畫完就還原
+     * （見 {@code RenderListener#withPeek}）。跟 {@link #translateNames} 一樣做成
+     * 旗標而不是直接問鍵盤：查詢表不該伸手抓遊戲狀態。
+     */
+    private volatile boolean peekPlainNames = false;
+
+    public void setPeekPlainNames(boolean value) {
+        this.peekPlainNames = value;
+    }
+
+    /** 見 {@link #setPeekPlainNames}：給算繪端的快取做有效性判斷用。 */
+    public boolean peeksPlainNames() {
+        return peekPlainNames;
+    }
+
+    /** 這個原文是不是素材或材料的名稱。見 {@link #plainNameKeys}。 */
+    public boolean isPlainName(String key) {
+        return key != null && plainNameKeys.contains(key.strip());
+    }
+
+    /**
      * 除了裝備名稱以外，<b>別的檔案</b>也有條目的原文（技能名、使命、Major ID⋯）。
      *
      * <p>F6 關掉物品名稱時，{@link #lookupBase} 會把 {@link #nameKeys} 一律當成
@@ -213,6 +252,7 @@ public final class TranslationStore {
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
+        plainNameKeys.clear();
         otherOwners.clear();
         gearNameKeys.clear();
         market.clear();
@@ -618,9 +658,12 @@ public final class TranslationStore {
                         noteTerm(srcKey, dst.strip());
                     } else if (gearNames) {
                         nameKeys.add(srcKey);       // 受 F6 開關管
+                    } else {
+                        // 兩個都不是（素材、材料）：照一般條目翻，既不會被拿去
+                        // 替換別的句子，也不受裝備開關影響——只有按住 Shift
+                        // 看原文那一下會用到，見 #plainNameKeys。
+                        plainNameKeys.add(srcKey);
                     }
-                    // 兩個都不是（素材、材料、典籍…）：照一般條目翻，
-                    // 既不會被拿去替換別的句子，也不受裝備開關影響。
                 }
             }
         }
@@ -1888,6 +1931,9 @@ public final class TranslationStore {
         if (!translateNames && gearOnly(key)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
+        if (peekPlainNames && plainNameKeys.contains(key)) {
+            return null;                       // 按住 Shift：素材與材料看原文
+        }
 
         if (topLayer > 0) {
             // 疊層時先只收最上面那一層的答案。見 #layerOf：簡體翻的是只差標點或
@@ -2077,6 +2123,9 @@ public final class TranslationStore {
         }
         if (!translateNames && gearOnly(src)) {
             return null;                       // 使用者選擇不翻物品名稱
+        }
+        if (peekPlainNames && plainNameKeys.contains(src)) {
+            return null;                       // 按住 Shift：素材與材料看原文
         }
         return entries.get(src);
     }
