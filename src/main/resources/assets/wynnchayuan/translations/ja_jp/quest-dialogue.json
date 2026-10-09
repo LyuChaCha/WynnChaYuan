@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ja_jp",
-  "count": 22882,
-  "translated": 22709,
+  "count": 22909,
+  "translated": 22736,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -75660,8 +75660,8 @@
    "source": "captured"
   },
   "Fantastic Voyage#000": {
-   "src": "Speak to Relend.",
-   "dst": "Relend と話す。",
+   "src": "Speak to Relend at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}]にいる Relend と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -75670,8 +75670,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#001": {
-   "src": "Let's go, just you and me! On a grand voyage across the sea!",
-   "dst": "さあ行こう、君と二人で！海を越える大いなる船旅で！",
+   "src": "Let's go, just you and me! On a fantastic voyage across the sea!",
+   "dst": "さあ行こう、君と二人で！海を越える大いなる船旅へ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -76440,7 +76440,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#082": {
-   "src": "'pparently he takes 'em for joyrides 'round the sea and gets all sorts'a labor out of 'em, then just drops 'em back here.",
+   "src": "'pparently he takes 'em for joyrides 'round the sea and get's all sorts'a labour out of 'em, then just drops 'em back here.",
    "dst": "どうも、人を海の遊覧に連れ出して、あれこれ働かせた挙句、ここに置いて帰るらしい。",
    "role": "desc",
    "kind": "dialogue",
@@ -76460,8 +76460,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#084": {
-   "src": "...Oh, you're goin' out with Relend, hey? You sure?",
-   "dst": "…へえ、Relend と出航するのか？本気か？",
+   "src": "...Oh, you're goin' out with Relend, hey? Even after all I said?",
+   "dst": "…へえ、Relend と出航するのか？俺があんだけ言ったのに？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -76590,8 +76590,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#097": {
-   "src": "Really, I wish some of those nutters sit down and take a good bite of some raw, authentic Rye, or a hearty whole-wheat.",
-   "dst": "ああいう変人どもには、座って本物の生のライ麦か、しっかりした全粒粉を一口かじってほしいもんだ。",
+   "src": "Really, I wish I could see those nutters sit down and take a good bite of some raw, authentic Rye, or a hearty whole-wheat.",
+   "dst": "ああいう変人どもには、座って本物の生のライ麦か、ボリュームたっぷりの全粒粉を一口かじってほしいもんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -76630,7 +76630,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#101": {
-   "src": "You know what people always miss when talking about bread, the CONSISTENCY! The consistency is consistently the most im-",
+   "src": "You know what people always miss when discussing bread, the CONSISTENCY! The consistency is consistently the most im-",
    "dst": "パンを語る時にみんな見落とすもの、それは「きめ」だ！きめはきめ細かく見るのが一番大…",
    "role": "desc",
    "kind": "dialogue",
@@ -76680,7 +76680,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#106": {
-   "src": "Overusin’ so-called “refined” grains is a sure and done way to get runny slop that’s not fit for the pigs.",
+   "src": "Overusin' so-called 'refined' grains is a sure and done way to get runny slop that's not fit for the pigs.",
    "dst": "いわゆる「精製」穀物を使いすぎりゃ、豚にも食わせられないドロドロになるのは確実だ。",
    "role": "desc",
    "kind": "dialogue",
@@ -76690,7 +76690,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#107": {
-   "src": "Come to think, you shouldn’t feed pigs refined grains anyway. It’s hard on their digestion.",
+   "src": "Come to think, you shouldn't feed pig refined grains anyway. It's hard on their digestion.",
    "dst": "考えてみりゃ、豚に精製穀物を食わせるのもよくない。消化に悪いんだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -76740,7 +76740,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#112": {
-   "src": "I’ll let you in on a little secret. The Sky’s Kitchen is great and all, but what passes for bread there is intolerable. No substance at all!",
+   "src": "I'll let you in on a little secret. The Sky's Kitchen's great and all, but what passes for bread there is intolerable. No substance at all!",
    "dst": "ちょっと秘密を教えよう。Sky's Kitchen は確かに良い店だが、あそこのパンと呼ばれる物は我慢ならん。中身がまるでない！",
    "role": "desc",
    "kind": "dialogue",
@@ -76750,7 +76750,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#113": {
-   "src": "What you’ll want to do is get it straight from the fields, right from the soil! Well, not literally, but from the countryside! Leave breadmakin’ to those who’ve been workin’ with grain before they could walk on two legs!",
+   "src": "What you'll want to do is get it straight from the fields, right from the soil! Well, not literally, but from the countryside! Leave breadmakin' to those who've been workin' with grain before they could even walk on two legs!",
    "dst": "やるべきは畑から直接、土から直接手に入れることだ！まあ文字通りじゃないが、田舎からな！パン作りは、二本足で歩く前から穀物に触れてきた連中に任せな！",
    "role": "desc",
    "kind": "dialogue",
@@ -76760,7 +76760,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#114": {
-   "src": "Heck, I bet even I could do better than those snobby sauciers.",
+   "src": "Heck, I bet even I could do a better job than those snobby sauciers.",
    "dst": "ちくしょう、あのお高くとまったソース職人より俺の方がうまく作れるね。",
    "role": "desc",
    "kind": "dialogue",
@@ -76770,8 +76770,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#115": {
-   "src": "Right. Digestion. The fiber in whole-grain bread is a lifesaver.",
-   "dst": "そうだ。消化。全粒パンの食物繊維は命の恩人だ。",
+   "src": "Right. Digestion. The fiber in whole-grain bread is a real lifesaver.",
+   "dst": "そうだ。消化。全粒粉パンの食物繊維は命の恩人だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -76840,7 +76840,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#122": {
-   "src": "Those hawkers can pretend that it’s an upper-crust good all they want, but we all know that it’s just a waste of dough.",
+   "src": "Those hawkers can pretend that it's an upper-crust good all they want, but we all know it's just a waste of dough.",
    "dst": "物売りどもは上流の品だと好きに装えばいい。だがみんな知ってる、ただの生地と金の無駄だってな。",
    "role": "desc",
    "kind": "dialogue",
@@ -76880,7 +76880,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#126": {
-   "src": "But just because you can doesn’t mean that you should. Who could stomach somethin’ like “Oatmeal-Bran Fusion Delight”? WHO WOULD EVEN MAKE BREAD OUT OF OATS?!",
+   "src": "But just because you can doesn't mean that you should. Who could stomach somethin' like 'Oatmeal-Bran Fusion Delight'? WHO WOULD EVEN MAKE BREAD OUT OF OATS?!",
    "dst": "でも作れるからって作るべきとは限らない。「オーツ麦ふすま融合デライト」なんて誰が食える？オーツ麦でパンを作る奴がどこにいる？！",
    "role": "desc",
    "kind": "dialogue",
@@ -76900,7 +76900,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#128": {
-   "src": "...and don’t get me started on “Pain au {p}”! But really, Oatmeal-Bran Fusion Delight is among the worst. Oh! That reminds me about a better use for oats.",
+   "src": "...and don't get me started on 'Pain au {p}'! But really, Oatmeal-Bran Fusion Delight is among the worst. Oh! That reminds me about a better use for oats.",
    "dst": "…「パン・オ・{p}」なんて言い出したらきりがない！だが本当に、オーツ麦ふすま融合デライトは最悪の部類だ。お！オーツ麦のもっといい使い道を思い出した。",
    "role": "desc",
    "kind": "dialogue",
@@ -76950,7 +76950,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#133": {
-   "src": "Though, it seems like you can’t just get a good loaf of bread nearby. Sure, there’s sailin’ biscuits, but that hardly qualifies!",
+   "src": "Though it seems like you just can't get a good loaf of bread nearby. Sure, there's sailin' biscuits, but that hardly qualifies!",
    "dst": "とはいえ、この辺じゃまともなパンが手に入らないみたいだ。航海用ビスケットはあるが、あれはパンと呼べん！",
    "role": "desc",
    "kind": "dialogue",
@@ -76980,7 +76980,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#136": {
-   "src": "Ready? Right, let’s get started! The less ingredients you use, the closer you’ll be to makin’ a real loaf! Not the wannabe poundcakes eaten by wannabe spendthrifts.",
+   "src": "Ready? Right, let's get started! The less ingredients you use, the closer you'll get to makin' a real loaf! Not the wannabe poundcakes eaten by wannabe spendthrifts.",
    "dst": "準備はいいか？よし、始めよう！材料が少ないほど本物のパンに近づく！見栄っ張りの浪費家気取りが食う、パウンドケーキ気取りじゃないぞ。",
    "role": "desc",
    "kind": "dialogue",
@@ -76990,7 +76990,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#137": {
-   "src": "There’s a common misconception that you need sugar for the yeast to start risin’. Not true!",
+   "src": "There's a common misconception that you need sugar for yeast to start risin'. Not true!",
    "dst": "酵母が膨らむには砂糖が要るってよくある誤解がある。違う！",
    "role": "desc",
    "kind": "dialogue",
@@ -77200,7 +77200,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#158": {
-   "src": "Some people put the cart before the horse and think that yeast works like bakin’ powder. Try that, and you’ll end up with scorchin’-hot bricks in your oven.",
+   "src": "Some people put the cart before the horse and think that yeast works like bakin' powder. Try that, and you'll end up with some scorchin'-hot bricks in your oven.",
    "dst": "本末転倒で、酵母がベーキングパウダーと同じ働きをすると思ってる奴もいる。そんなことしたら、オーブンに焼けた煉瓦ができるだけだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -77230,7 +77230,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#161": {
-   "src": "Though that may not be the case for other pastries. For one, I’ve never once heard of a pie with a chewy crust.",
+   "src": "Though that may not be the case for some other pastries. For one, I've never once heard of a pie with a chewy crust.",
    "dst": "他の焼き菓子は違うかもしれんがな。例えば、もちもちの皮のパイなんて一度も聞いたことがない。",
    "role": "desc",
    "kind": "dialogue",
@@ -77240,7 +77240,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#162": {
-   "src": "Really, the beauty in bread lies with it’s simplicity! No complicated steps, no chances for the dough to rebel. Certainly not as fickle as somethin’ like a cream puff.",
+   "src": "Really, the beauty in bread lies with its simplicity! No complicated steps, no chances for the dough to rebel. Certainly not as fickle as somethin' like a cream puff.",
    "dst": "本当に、パンの美しさは素朴さにある！複雑な工程もなく、生地が反抗する余地もない。シュークリームみたいな気まぐれな物とは大違いだ。",
    "role": "desc",
    "kind": "dialogue",
@@ -77280,7 +77280,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#166": {
-   "src": "Though some people insist upon puttin’ butter in the bread. Not just on it, but in it! There’s more butter than bread at that point!",
+   "src": "Though some people insist upon putin' butter in the bread. Not just on it, but in it! There's more butter than bread at that point!",
    "dst": "なのにパンにバターを入れると言い張る奴がいる。上に塗るんじゃなく、中にだ！もうパンよりバターの方が多い！",
    "role": "desc",
    "kind": "dialogue",
@@ -77390,7 +77390,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#177": {
-   "src": "Namely, the two extremes: too chewy, and not chewy enough. I already spoke on hardly chewy bread plenty, but there’s such a thing as too much of a good thing.",
+   "src": "Namely, the two extremes: too chewy and not chewy enough. I already spoke on hardly chewy bread plenty, but there's such a thing as too much of a good thing.",
    "dst": "つまり二つの極端、噛みごたえがありすぎと、足りなさすぎだ。足りない方はもう散々話したが、過ぎたるは及ばざるが如しってな。",
    "role": "desc",
    "kind": "dialogue",
@@ -77610,7 +77610,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#199": {
-   "src": "I see plenty parrots every day, I don't keep track.",
+   "src": "I see plenty parrots everyday, I don't keep track.",
    "dst": "オウムなんて毎日山ほど見る、いちいち覚えちゃいない。",
    "role": "desc",
    "kind": "dialogue",
@@ -77790,8 +77790,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#217": {
-   "src": "Bring a Wooden Board, a Center Piece, and a String to the Crafting Table.",
-   "dst": "木の板、中心部品、糸を作業台に持っていく。",
+   "src": "Bring a [Wooden Board], a [Center Piece], and a [String] to the Crafting Table",
+   "dst": "{c2}木の板{/}、{c2}中心部品{/}、{c2}糸{/}を作業台に持っていく。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -77800,8 +77800,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#218": {
-   "src": "Bring the Steering Wheel to Captain Relend.",
-   "dst": "舵輪を Relend 船長に渡す。",
+   "src": "Bring the [Steering Wheel] to Captain Relend.",
+   "dst": "総舵輪を Relend 船長に渡す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -78130,7 +78130,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#251": {
-   "src": "I know we can come up with a solution using our wits. Perhaps we can use an explosive to blow that big rock to bits!",
+   "src": "I know we can come up with a solution using our wits. Perhaps we can craft an explosive to blow that big rock to bits!",
    "dst": "知恵を絞れば、解決策は見つかるはず。爆薬で、あの大岩を粉々にできるはず！",
    "role": "desc",
    "kind": "dialogue",
@@ -78181,7 +78181,7 @@
   },
   "Fantastic Voyage#256": {
    "src": "You'll need those items you craft the bomb, I just told you where to look. If you forget what you need to find, check your quest book.",
-   "dst": "必要な物と探す場所は、今伝えたとおり。忘れたら、クエストブックを開くのだ、いつもどおり。",
+   "dst": "必要な物と探す場所は、今伝えたとおり。忘れたら、いつもどおりクエストブックを開くのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fantastic Voyage",
@@ -78190,8 +78190,8 @@
    "source": "wiki"
   },
   "Fantastic Voyage#257": {
-   "src": "Bring {~} Gritty Sand, {~} Saw Dust, and {~} Black Powder to the Crafting Table.",
-   "dst": "{~} 個の Gritty Sand、{~} 個の Saw Dust、{~} 個の Black Powder を作業台に持っていく。",
+   "src": "Bring [{~} Gritty Sand], [{~} Saw Dust], and [{~} Black Powder] to the Crafting Table",
+   "dst": "[{~} Gritty Sand], [{~} Saw Dust], [{~} Black Powder]を作業台に持っていく。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fantastic Voyage",
@@ -78380,7 +78380,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#276": {
-   "src": "Whatever it is, I feel that we're being overseen from afar.",
+   "src": "Wherever it is, I feel that we're being overseen from afar.",
    "dst": "何にせよ、遠くから見られている気がする、どうも。",
    "role": "desc",
    "kind": "dialogue",
@@ -78390,7 +78390,7 @@
    "source": "wiki"
   },
   "Fantastic Voyage#277": {
-   "src": "With all this danger, I still hope my good friend is still okay.",
+   "src": "With all this danger, I do hope my good friend is still okay.",
    "dst": "これほど危険でも、我が友の無事をまだ願っている。",
    "role": "desc",
    "kind": "dialogue",
@@ -78448,6 +78448,277 @@
    "stage": "Stage 19",
    "speaker": "Relend",
    "source": "wiki"
+  },
+  "Fantastic Voyage#283": {
+   "src": "Get on it then, no time for a nap! That thieving parrot has our map!",
+   "dst": "さあ、急ごう！昼寝してる暇はないぞ！あの泥棒のオウムが、俺たちの地図を盗んだんだ！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#284": {
+   "src": "Perhaps these citizens may help us out, ask them about the parrot's route!",
+   "dst": "もしかすると、この市民たちが私たちを助けてくれるかもしれない。オウムの移動ルートについて彼らに聞いてみよう！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#285": {
+   "src": "He seems distracted, best to walk away while you can.",
+   "dst": "彼は気が散っているようだ。今のうちにその場を離れたほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#286": {
+   "src": "He begins to list off a seemingly endless amount of examples.",
+   "dst": "彼は、まるで尽きることのないかのような例を次々と挙げ始めた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#287": {
+   "src": "It looks like he's nearly finished.",
+   "dst": "もうすぐ終わりのようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#288": {
+   "src": "It seems like he's lost in reminiscence.",
+   "dst": "彼は思い出にふけっているようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#289": {
+   "src": "He doesn't seem to be stopping any time soon.",
+   "dst": "彼は当分、止まる気配がないようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#290": {
+   "src": "It seems like he's waiting expectantly.",
+   "dst": "彼は期待に胸を膨らませて待っているようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#291": {
+   "src": "He's thoughtfully rubbing his jaw. Best to leave him be",
+   "dst": "彼は思案げに顎をさすっている。放っておいたほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#292": {
+   "src": "He's beaming with pride.",
+   "dst": "彼は誇らしげに満面の笑みを浮かべている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#293": {
+   "src": "It seems like he's deep in thought.",
+   "dst": "彼は深く考え込んでいるようだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#294": {
+   "src": "He proceeds to rattle off several grievances about pastry making.",
+   "dst": "彼は、菓子作りに関する不満を次々と口にし始めた。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#295": {
+   "src": "He's waiting expectantly.",
+   "dst": "彼は期待に胸を膨らませて待っている。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#296": {
+   "src": "You don't have the time for this.",
+   "dst": "こんなことに時間を割いている場合じゃない。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#297": {
+   "src": "He seems pretty comfortable, best not to disturb him.",
+   "dst": "彼はぐっすり寝てるようだ。邪魔しないほうがいいだろう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#298": {
+   "src": "Heh, have fun, mate. Lot'sa treasure out there, eh?",
+   "dst": "へえ、楽しんでな、相棒。あそこには宝が山ほどあるんだろ？",
+   "text": "You know he's nuts, right mate? Y'not gonna find any treasure or anythin'.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#299": {
+   "src": "Looks like the parrot dropped the map! You should get this back to Relend.",
+   "dst": "オウムが地図を落としたみたいだ！これをRelendに返してあげよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#300": {
+   "src": "You have no use for this yet, you should speak with Relend up near the steering wheel.",
+   "dst": "まだこれは必要ないだろう。操舵輪の近くにいるRelendに話しかけてみよう。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#301": {
+   "src": "You'll need a [Wooden Board], a [Center Piece], and a [String] to craft a Steering Wheel.",
+   "dst": "総舵輪をクラフトするには、[木の板]、[中心部品]、[糸]が必要だ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#302": {
+   "src": "This will probably work... You should show Relend.",
+   "dst": "たぶんこれでうまくいくはず……Relendに見せたほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#303": {
+   "src": "You have nothing to load... You should continue through the wreckage.",
+   "dst": "積むものは何もない……瓦礫の中を進み続けるべきだ。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#304": {
+   "src": "Bring [{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], and [{~} Berries] to the Cooking Pot",
+   "dst": "[{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], [{~} Berries]をCooking Potに持っていく",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#305": {
+   "src": "You'll need [{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], and [{~} Berries] to make a stew.",
+   "dst": "シチューを作るには[{~} Raw Mutton], [{~} Edible Mushrooms], [{~} Coconut], [{~} Berries]が必要だ。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#306": {
+   "src": "Take a look at your content book if you forgot your project, this island has supplies we ought to collect!",
+   "dst": "やる事を忘れてしまったら、コンテンツブックを確認して。この島には、集めておくべきアイテムがある！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 12",
+   "speaker": "Relend",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#308": {
+   "src": "The volcano is erupting!",
+   "dst": "火山が噴火している！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#309": {
+   "src": "This looks dangerous! You should go blow open that boulder now.",
+   "dst": "これは危なっかしい！　今すぐあの岩を吹き飛ばしたほうがいい。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Fantastic Voyage#310": {
+   "src": "I've been looking for my old friend all this time. Sailing with every young adventurer in their prime!",
+   "dst": "ずっと、あの旧友を探し続けてきたんだ。全盛期の若い冒険者たちと、共に航海しながらね！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fantastic Voyage",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "captured.json"
   },
   "Fate of the Fallen#005": {
    "src": "Ah, a member of the {p} army. We're trying to learn more of this frozen barrow. We could use your aid.",
