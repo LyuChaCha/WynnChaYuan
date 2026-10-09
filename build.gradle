@@ -1275,3 +1275,11 @@ tasks.register('runNameRowChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.NameRowTest'
 }
 tasks.named('check') { dependsOn 'runNameRowChecks' }
+
+tasks.register('runOverflowAuditChecks', JavaExec) {
+    group = 'verification'
+    description = '譯文比原本那一格大的句子：塞不下才記、帶玩家資料不記、改短之後自己消失'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.OverflowAuditTest'
+}
+tasks.named('check') { dependsOn 'runOverflowAuditChecks' }

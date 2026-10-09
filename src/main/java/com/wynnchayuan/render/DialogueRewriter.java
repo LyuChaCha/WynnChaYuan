@@ -533,6 +533,24 @@ public final class DialogueRewriter {
      *
      * @return 每一行的內容；攤不進去時回傳 {@code null}
      */
+    /** 多給幾列才塞得下：從現有的列數往上試。超過 {@link #ROWS_TRIED} 列就回那個上限。 */
+    static int rowsNeeded(String text, int rows, Style style, int limit) {
+        for (int n = rows + 1; n <= rows + ROWS_TRIED; n++) {
+            if (wrap(text, n, style, limit) != null) {
+                return n;
+            }
+        }
+        return rows + ROWS_TRIED;
+    }
+
+    /** 標準框寬下要幾列；給測試用。 */
+    static int rowsNeeded(String text, int rows) {
+        return rowsNeeded(text, rows, null, BODY_LEFT * 2);
+    }
+
+    /** 見 {@link #rowsNeeded}：最多往上試幾列。對話框本身只有五列，再多沒有意義。 */
+    static final int ROWS_TRIED = 6;
+
     static List<String> wrap(String text, int rows) {
         return wrap(text, rows, null, BODY_LEFT * 2);
     }
@@ -1295,10 +1313,18 @@ public final class DialogueRewriter {
             // 這一條是<b>刻意</b>不沿用上一幀的：那會讓畫面停在半句中文，
             // 正是這裡要避免的東西。
             if (wrap(hit, rows, style, width) != null) {
+                com.wynnchayuan.capture.OverflowAudit.note(
+                        com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
+                        rows, rows, com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
                 return show(raw, hit, null);
             }
             // 翻得出來、只是放不下。記一筆讓小框接手，見 {@link #tooLong}。
             tooLong = true;
+            // 也記進 capture：譯者才知道是哪一句害玩家多看一個小框。見 OverflowAudit。
+            com.wynnchayuan.capture.OverflowAudit.note(
+                    com.wynnchayuan.capture.OverflowAudit.DIALOGUE, source, hit,
+                    rows, rowsNeeded(hit, rows, style, width),
+                    com.wynnchayuan.capture.OverflowAudit.ROWS_UNIT);
             return drop();
         }
         // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。

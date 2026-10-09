@@ -427,6 +427,9 @@ public final class CaptureStore {
         if (ColourAudit.takeDirty()) {
             dirty.set(true);
         }
+        if (OverflowAudit.takeDirty()) {
+            dirty.set(true);
+        }
         if (!dirty.getAndSet(false)) {
             return;
         }
@@ -447,8 +450,13 @@ public final class CaptureStore {
                 + " colours 是<翻出來了、但原文有個顏色沒回到譯文上>的句子："
                 + "runs 是原文的顏色分段（#RRGGBB，b 粗體、u 底線），missed 是掉了的"
                 + "那幾個顏色。照 runs 的先後數，第一個出現的顏色是 {c1}、第二個是 {c2}，"
-                + "在譯文裡寫 {c2}…{/} 就能指定。");
+                + "在譯文裡寫 {c2}…{/} 就能指定。"
+                + " overflow 是<翻出來了、但譯文比原本那一格大>的句子：where 是介面"
+                + "（dialogue 對話框、tooltip 物品說明），room 是原本容得下多少、"
+                + "need 是譯文要多少，unit 是單位（rows 列、px 像素）。"
+                + "對話那一種在畫面上會改由小框顯示。");
         meta.addProperty("colours", ColourAudit.size());
+        meta.addProperty("overflow", OverflowAudit.size());
         meta.addProperty("untranslated", untranslated.size());
         JsonObject events = new JsonObject();
         eventCounts.entrySet().stream()
@@ -506,6 +514,10 @@ public final class CaptureStore {
         if (ColourAudit.size() > 0) {
             root.add("colours", ColourAudit.toJson());
         }
+        // 譯文比原本那一格大的句子。見 OverflowAudit。
+        if (OverflowAudit.size() > 0) {
+            root.add("overflow", OverflowAudit.toJson());
+        }
 
         try {
             Files.createDirectories(file.getParent());
@@ -543,6 +555,7 @@ public final class CaptureStore {
             return;
         }
         ColourAudit.load(root.get("colours"));
+        OverflowAudit.load(root.get("overflow"));
         com.google.gson.JsonElement pending = root.get("untranslated");
         if (pending != null && pending.isJsonArray()) {
             for (var row : pending.getAsJsonArray()) {

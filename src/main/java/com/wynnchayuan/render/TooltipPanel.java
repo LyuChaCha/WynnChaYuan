@@ -443,7 +443,50 @@ public final class TooltipPanel {
                 leftAligned, TooltipPanel::measure);
         com.wynnchayuan.translate.LayoutDebug.drawn(
                 "\u6490\u5bec\u5f8c", split.original(), fitted, TooltipPanel::measure);
+        noteWidened(split.original(), fitted);
         return fitted;
+    }
+
+    /**
+     * 整份說明比原文寬的時候記一筆：記的是譯文裡最寬的那一行。見 OverflowAudit。
+     *
+     * <p>量不到寬度（沒有字型的測試環境）時兩邊都是 0，什麼都不會記。
+     */
+    private static void noteWidened(List<Component> original, List<Component> fitted) {
+        try {
+            if (original == null || fitted == null || original.size() != fitted.size()) {
+                return;
+            }
+            int frame = 0;
+            int widest = 0;
+            int at = -1;
+            for (int i = 0; i < fitted.size(); i++) {
+                frame = Math.max(frame, measure(original.get(i)));
+                int w = measure(fitted.get(i));
+                if (w > widest) {
+                    widest = w;
+                    at = i;
+                }
+            }
+            if (at < 0 || frame <= 0) {
+                return;
+            }
+            if (widest <= frame && com.wynnchayuan.capture.OverflowAudit.size() == 0) {
+                return;                        // 沒撐寬、也沒有記過的要拿掉
+            }
+            String src = com.wynnchayuan.capture.LineParts.of(
+                    com.wynntils.core.text.StyledText.fromComponent(original.get(at))).template();
+            String dst = com.wynnchayuan.capture.LineParts.of(
+                    com.wynntils.core.text.StyledText.fromComponent(fitted.get(at))).template();
+            if (src.equals(dst)) {
+                return;                        // 最寬的是沒翻的那一行，不是譯文的事
+            }
+            com.wynnchayuan.capture.OverflowAudit.note(
+                    com.wynnchayuan.capture.OverflowAudit.TOOLTIP, src, dst, frame, widest,
+                    com.wynnchayuan.capture.OverflowAudit.PX_UNIT);
+        } catch (Throwable t) {
+            // 診斷不能弄壞畫面
+        }
     }
 
     /** 量一行畫出來多寬。跟翻譯那邊走同一個入口，測試才量得到。 */

@@ -91,6 +91,10 @@ public final class CorpusExport {
         if (ColourAudit.size() > 0) {
             root.add("colours", ColourAudit.toJson());
         }
+        // 過長的句子也帶著：交進來的都是模板，帶玩家資料的在收的時候就濾掉了。見 OverflowAudit。
+        if (OverflowAudit.size() > 0) {
+            root.add("overflow", OverflowAudit.toJson());
+        }
 
         Path out = file(configDir);
         Files.createDirectories(out.getParent());
