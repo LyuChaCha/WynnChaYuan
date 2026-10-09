@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 VERSION_FILE = ROOT / "version.json"
 GRADLE = ROOT / "gradle.properties"
 
-# Beta 期間的寫法：0.1.0 或 0.1.0_1。見 CHANGELOG.md 開頭。
+# 版本號的寫法：0.1.0 或 0.1.0_1（1.0.0 之後照舊）。見 CHANGELOG.md 開頭。
 SHAPE = re.compile(r"^\d+\.\d+\.\d+(?:_\d+)?$")
 
 
@@ -62,7 +62,7 @@ def main() -> int:
 
     if not SHAPE.match(running):
         problems.append(
-            f"版本號 {running!r} 不符合 Beta 期間的寫法（0.1.0 或 0.1.0_1）")
+            f"版本號 {running!r} 不符合版本號的寫法（0.1.0 或 0.1.0_1）")
 
     notes = data.get("notes", {})
     if running not in notes:
