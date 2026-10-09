@@ -90,7 +90,7 @@ Switch under **Settings → Data**, without changing the game's language or rest
 - **Interface language**: the language of the settings screens themselves (English included)
 
 <!-- 進度:開始 -->
-更新於 2026-10-09 / Updated 2026-10-09
+更新於 2026-10-10 / Updated 2026-10-10
 
 **翻了哪些**：任務對話與任務書、物品（名稱、詞條、敘述、Major ID）、技能樹、介面（設定畫面、背包、交易市場、公會、地圖、追蹤欄）、NPC 與地區名稱、看板與聊天公告。
 
