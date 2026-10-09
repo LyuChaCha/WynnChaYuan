@@ -89,7 +89,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 沒有 `_meta.review` 的檔。**這裡不代表已經校過**——
 只代表沒有人記錄過它是誰翻的。多半是團隊自己翻的、或早期沒有這個欄位。
 
-<details><summary>展開（161 個檔）</summary>
+<details><summary>展開（162 個檔）</summary>
 
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
@@ -194,6 +194,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Tempo Town Trouble | 58 | [`tempo-town-trouble.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tempo-town-trouble.json) |
 | Dearly Departed | 57 | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) |
 | The Lost | 57 | [`the-lost.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-lost.json) |
+| gear.json | 56 | [`gear.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/scoped/gear.json) |
 | Point of No Return | 53 | [`point-of-no-return.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/point-of-no-return.json) |
 | Crop Failure | 52 | [`crop-failure.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/crop-failure.json) |
 | Blazing Retribution | 51 | [`blazing-retribution.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/blazing-retribution.json) |
