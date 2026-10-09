@@ -63,6 +63,10 @@ public final class WynnventoryBridgeTest {
                  "Trade Market Price Info": "交易市場價格資訊",
                  "No data yet.": "還沒有資料。",
                  "Mythic Aspects": "神話意象",
+                 "Aspects": "意象",
+                 "Mythic": "神話",
+                 "%s in %s": "%s，在 %s",
+                 "%s more...": "還有 %s 件...",
                  "New version available: %s. Attempting to auto-update...": "有新版本: %s。正在嘗試自動更新..."}
                 """, StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
@@ -155,8 +159,30 @@ public final class WynnventoryBridgeTest {
         check("沒有語料可查的時候原樣（不炸）",
                 "Lowest: ".equals(wrapped.getOrDefault("feature.wynnventory.tooltip.lowest", "?")));
 
+        // ---- ★ 通知底下那一行 ----
+        check("★ 通知：物品名換了、顏色碼與獎勵池的名字原樣（實際 "
+                        + WynnventoryBridge.toast(store, "\u00a75Oak Wood Dagger\u00a7f in NOTG") + "）",
+                "\u00a75橡木匕首\u00a7f，在 NOTG".equals(
+                        WynnventoryBridge.toast(store, "\u00a75Oak Wood Dagger\u00a7f in NOTG")));
+        check("★ 通知：語料沒有的物品名留著，句子照翻（實際 "
+                        + WynnventoryBridge.toast(store, "Zzyzx in Sky Islands") + "）",
+                "Zzyzx，在 Sky Islands".equals(WynnventoryBridge.toast(store, "Zzyzx in Sky Islands")));
+        check("★ 通知：還有幾件（實際 " + WynnventoryBridge.toast(store, "3 more...") + "）",
+                "還有 3 件...".equals(WynnventoryBridge.toast(store, "3 more...")));
+        check("不是這兩種句子的不動", WynnventoryBridge.toast(store, "Hello there") == null);
+
         // ---- ★ 不翻的時候 ----
+        // label／word 用的是全域那份語料，遊戲裡才有；這裡驗沒有語料時原樣放行、不炸
+        WynnventoryBridge.pretend(true, true);
+        check("沒有語料可查：標籤回 null（照它原本的畫）",
+                WynnventoryBridge.label(Component.literal("Aspects")) == null);
+        check("沒有語料可查：篩選名原樣", "Mythic".equals(WynnventoryBridge.word("Mythic")));
         WynnventoryBridge.pretend(true, false);
+        check("★ 開關關著／按住 Shift：標籤照它原本的畫",
+                WynnventoryBridge.label(Component.literal("Aspects")) == null);
+        check("★ 開關關著／按住 Shift：篩選名原樣", "Mythic".equals(WynnventoryBridge.word("Mythic")));
+        Component toast = Component.literal("3 more...");
+        check("★ 開關關著／按住 Shift：通知原樣（同一個物件）", WynnventoryBridge.toast(toast) == toast);
         check("★ 開關關著／按住 Shift：價格框原樣（同一個物件）",
                 WynnventoryBridge.lines(box) == box);
         check("★ 開關關著／按住 Shift：語言鍵原樣",
@@ -171,7 +197,10 @@ public final class WynnventoryBridgeTest {
             check("它的鍵都認得出來：" + key, WynnventoryBridge.ours(key));
             sentences.add(theirs.get(key).getAsString());
         }
-        sentences.addAll(List.of("No data yet.", "Mythic Aspects", "Filters"));
+        sentences.addAll(List.of("No data yet.", "Mythic Aspects", "Filters",
+                // 獎勵畫面的分區標題與篩選名、通知的兩種句子：寫死在它的程式裡
+                "Aspects", "Tomes", "Gear", "Misc", "Mythic", "Fabled", "Legendary", "Rare",
+                "Unique", "Normal", "Common", "Set", "%s in %s", "%s more..."));
         for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")) {
             Path real = Path.of("src/main/resources/assets/wynnchayuan/translations", lang);
             TranslationStore rs = new TranslationStore();

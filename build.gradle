@@ -1299,3 +1299,11 @@ tasks.register('runWynnventoryChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.WynnventoryBridgeTest'
 }
 tasks.named('check') { dependsOn 'runWynnventoryChecks' }
+
+tasks.register('runWynnventoryBoxChecks', JavaExec) {
+    group = 'verification'
+    description = '譯文面板讓開 Wynnventory 的價格框：另一邊、外側、都放不下就留在原位'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.WynnventoryBoxTest'
+}
+tasks.named('check') { dependsOn 'runWynnventoryBoxChecks' }

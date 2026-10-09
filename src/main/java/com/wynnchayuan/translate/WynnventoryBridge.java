@@ -210,6 +210,94 @@ public final class WynnventoryBridge {
         }
     }
 
+    // ------------------------------------------------------------ 獎勵畫面與通知裡寫死的字
+
+    /**
+     * 獎勵畫面上的一塊標籤（Aspects、Tomes、Mythic、Filters…）→ 譯文；
+     * 不翻、或表裡沒有的回 {@code null}，那一塊照它原本的畫。
+     *
+     * <p>只查 Wynnventory 自己的表，不查一般語料：獎勵池的名字是縮寫（NOTG、TCC）
+     * 與地區名（Sky Islands），照這個專案的規矩留英文，不能讓一般語料碰巧翻掉。
+     */
+    public static Component label(Component text) {
+        if (!active || text == null) {
+            return null;
+        }
+        String hit = text(store(), text.getString());
+        return hit == null ? null : Component.literal(hit).withStyle(text.getStyle());
+    }
+
+    /** 篩選鈕的名字。不翻或查不到就原樣回去。 */
+    public static String word(String english) {
+        if (!active || english == null || english.isEmpty()) {
+            return english;
+        }
+        String hit = text(store(), english);
+        return hit == null ? english : hit;
+    }
+
+    private static final java.util.regex.Pattern TOAST_FOUND = java.util.regex.Pattern.compile(
+            "^((?:\u00a7.)*)(.+?)((?:\u00a7.)*) in (.+)$");
+    private static final java.util.regex.Pattern TOAST_MORE = java.util.regex.Pattern.compile(
+            "^(\\d+) more\\.\\.\\.$");
+
+    /**
+     * 「找到收藏的物品」通知底下那一行。兩種：
+     * 「{@code <顏色碼><物品><顏色碼> in <獎勵池>}」與「{@code N more...}」。
+     * 物品名照一般語料（跟著「翻譯物品名稱」），獎勵池的名字不動。
+     */
+    public static Component toast(Component description) {
+        if (!active || description == null) {
+            return description;
+        }
+        try {
+            String done = toast(store(), description.getString());
+            return done == null ? description
+                    : Component.literal(done).withStyle(description.getStyle());
+        } catch (Throwable t) {
+            return description;
+        }
+    }
+
+    /** 見 {@link #toast(Component)}；沒有東西可換就回 {@code null}。 */
+    static String toast(TranslationStore store, String line) {
+        if (store == null || line == null) {
+            return null;
+        }
+        java.util.regex.Matcher more = TOAST_MORE.matcher(line);
+        if (more.matches()) {
+            String frame = text(store, "%s more...");
+            return frame == null ? null : frame.replace("%s", more.group(1));
+        }
+        java.util.regex.Matcher found = TOAST_FOUND.matcher(line);
+        if (!found.matches()) {
+            return null;
+        }
+        String name = store.lookup(found.group(2));
+        String frame = text(store, "%s in %s");
+        if ((name == null || name.isBlank()) && frame == null) {
+            return null;
+        }
+        String item = found.group(1) + (name == null || name.isBlank() ? found.group(2) : name)
+                + found.group(3);
+        String shape = frame == null ? "%s in %s" : frame;
+        int first = shape.indexOf("%s");
+        int second = shape.indexOf("%s", first + 2);
+        if (first < 0 || second < 0) {
+            return null;
+        }
+        return shape.substring(0, first) + item + shape.substring(first + 2, second)
+                + found.group(4) + shape.substring(second + 2);
+    }
+
+    private static TranslationStore store() {
+        try {
+            return WynnChaYuan.translations();
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
     // ------------------------------------------------------------ 價格框裡寫死的字
 
     /**

@@ -467,8 +467,6 @@ public final class SettingsViewTest {
                     segment("items.names", 2, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "mode.off"),
                     toggle("items.shiftpeek", true, null),
                     toggle("items.market", true, null),
-                    // 有裝 Wynnventory 才會出現的那一列；版面照「有」的情況量
-                    toggle("items.wynnventory", true, null),
                     segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
                             .extra(() -> tr("button.keybinds"), () -> { }));
             List<Row> place = List.of(
@@ -489,7 +487,6 @@ public final class SettingsViewTest {
                     toggle("world.titles", true, "mode.replace"),
                     toggle("world.bossbar", true, "mode.replace"),
                     segment("world.tracker", 0, new Row.Tone[] {rp, a, off}, "mode.replace", "mode.panel", "mode.off"),
-                    toggle("world.wynntils", true, null),
                     toggle("world.objectives", true, "mode.replace"),
                     toggle("world.scoreboard", true, null),
                     toggle("world.helditem", true, null),
@@ -511,7 +508,13 @@ public final class SettingsViewTest {
                     action("data.export", "data.export.button"),
                     action("data.submit", "data.submit.button"));
             List<Row.Tab> tabs = new ArrayList<>();
-            tabs.add(tab("items", Icons.Icon.BOW, Preview.Scene.TOOLTIP, group("group.items", false, items)));
+            // 「模組支援」：Wynntils 那一列永遠在，另外兩列有裝才出現；版面照「都有」的情況量
+            List<Row> mods = List.of(
+                    toggle("world.wynntils", true, null),
+                    toggle("items.wms", true, null),
+                    toggle("items.wynnventory", true, null));
+            tabs.add(tab("items", Icons.Icon.BOW, Preview.Scene.TOOLTIP,
+                    group("group.items", false, items), group("group.mods", false, mods)));
             tabs.add(tab("panel", Icons.Icon.SCROLL, Preview.Scene.PANEL,
                     group("group.place", false, place), group("group.look", false, look)));
             tabs.add(tab("dialogue", Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE, group("group.dialogue", false, dialogue)));

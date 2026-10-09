@@ -176,6 +176,14 @@ public final class TooltipPanel {
         // 夾在畫面內，避免超出邊界時 Minecraft 自動換行導致文字重疊
         x = Math.max(0, Math.min(x, Math.max(0, screenW - panelW)));
         y = Math.max(0, Math.min(y, Math.max(0, screenH - panelH)));
+        // Wynnventory 的價格框也放在物品說明旁邊；跟著游標的面板要讓開它。
+        // 使用者自己釘住位置的（FIXED）不動——那是他挑的地方。
+        if (WynnChaYuan.config().panelAnchor() != CollectorConfig.PanelAnchor.FIXED) {
+            int originalW = box(mc, tooltip)[0] + 8;
+            int originalLeft = mouseX + 12;
+            x = WynnventoryBox.place(x, y, panelW, panelH, originalLeft - gap - panelW,
+                    originalLeft + originalW + gap, screenW, gap);
+        }
 
         List<ClientTooltipComponent> components = lines.stream()
                 .map(Component::getVisualOrderText)
