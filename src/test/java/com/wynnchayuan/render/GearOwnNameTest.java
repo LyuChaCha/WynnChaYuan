@@ -130,6 +130,53 @@ public final class GearOwnNameTest {
         check("★ Lootrun 使命卡的標題還是使命名（實際 " + mission.get(0) + "）",
                 mission.get(0).contains("救贖") && !mission.get(0).contains("護腿"));
 
+        // ---- ★ 真實語料：scoped/gear.json 的每一條都要真的顯示在名稱列 ----
+        // 上面是自己造的語料。這裡拿出貨的那一份跑：某一條被別的守門擋掉
+        // （名字像玩家資料、跟整列條目撞到…）只有這樣才看得出來。不寫死任何譯名。
+        //
+        // 六個語言用同一個 store 重載：TooltipPanel 的快取認的是「同樣的內容＋
+        // 同一個 generation」，各開一個新的 store 的話每個都是第 1 代，後面五個語言
+        // 會直接拿到繁中那一輪的結果（實機只有一個 store，不會遇到）。先載一次上面
+        // 那份自己造的語料，讓真實語料從第 2 代開始，也不跟上面那個 store 撞。
+        TranslationStore rs = new TranslationStore();
+        rs.loadAll(dir);
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")) {
+            Path real = Path.of("src/main/resources/assets/wynnchayuan/translations", lang);
+            Path file = real.resolve("scoped").resolve("gear.json");
+            if (!Files.exists(file)) {
+                check("真實語料 " + lang + "：scoped/gear.json 在", false);
+                continue;
+            }
+            rs.loadAll(real);
+            rs.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+            com.google.gson.JsonObject own = com.google.gson.JsonParser.parseString(
+                    Files.readString(file, StandardCharsets.UTF_8)).getAsJsonObject();
+            int total = 0;
+            List<String> missed = new ArrayList<>();
+            List<String> leaked = new ArrayList<>();
+            for (String key : own.keySet()) {
+                if (key.startsWith("_")) {
+                    continue;
+                }
+                total++;
+                String name = own.get(key).getAsString();
+                List<String> rows = shown(item(key), rs);
+                if (!rows.get(1).contains(name) || !rows.get(0).contains(name)) {
+                    missed.add(key + "→" + rows.get(1));
+                }
+                // 技能樹的節點不能變成裝備名。裝備的名字本來就跟技能那個一樣的
+                // （Dancing Blade 兩邊都是「舞動之刃」那一類）看不出差別，不算。
+                String title = shown(abilityNode(key), rs).get(0);
+                if (title.contains(name) && !name.equals(rs.lookup(key))) {
+                    leaked.add(key + "→" + title);
+                }
+            }
+            check("★ 真實語料 " + lang + "：" + total + " 條裝備專用名都顯示在名稱列（沒顯示的 "
+                    + missed + "）", total > 0 && missed.isEmpty());
+            check("★ 真實語料 " + lang + "：技能樹節點沒有變成裝備名（變了的 " + leaked + "）",
+                    leaked.isEmpty());
+        }
+
         if (failures > 0) {
             System.err.println(failures + " 項失敗");
             System.exit(1);
