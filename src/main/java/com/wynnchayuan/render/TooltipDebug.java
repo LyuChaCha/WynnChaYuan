@@ -101,6 +101,32 @@ public final class TooltipDebug {
               + "shown 是實際畫出去的那一行；兩邊的 spacePx 對照就看得出欄距補了多少。");
     }
 
+    /** 別的模組重畫的 tooltip 最多記幾份。 */
+    private static final int MAX_FOREIGN = 8;
+    private static int foreign = 0;
+
+    /**
+     * 記下一份<b>別的模組重畫</b>的 tooltip（WynnMod）。
+     *
+     * <p>它的排版跟伺服器送來的不一樣——字型、欄距的做法、標籤的措辭都是它自己的，
+     * 而我們的語料與對齊都是照伺服器那一份寫的。哪幾行翻不到、翻了之後欄位歪不歪，
+     * 只有把它實際交出來的片段記下來才看得出來。
+     *
+     * @param shown 我們交回去的那幾行；一行都沒翻到就是 {@code null}
+     */
+    public static synchronized void dumpForeign(String who, List<Component> tooltip,
+                                                List<Component> shown) {
+        if (file == null || foreign >= MAX_FOREIGN || tooltip.isEmpty()) {
+            return;
+        }
+        if (!seen.add(who + "|" + key(tooltip))) {
+            return;                            // 同一件物品只記一次
+        }
+        foreign++;
+        write(tooltip, shown, null, who + "-tooltip-" + foreign + ".json",
+              who + " 重畫的 tooltip。shown 是我們翻完交回去的那一行；沒有 shown 就是整份都沒翻到。");
+    }
+
     /** 同一份 tooltip 只寫一次，見 {@link #seen}。 */
     private static String key(List<Component> tooltip) {
         StringBuilder sb = new StringBuilder();
