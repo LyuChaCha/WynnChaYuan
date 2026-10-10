@@ -137,6 +137,19 @@ public final class RenderListener {
     }
 
     /**
+     * 別的模組自己重畫的物品說明（WynnMod）：照同一套翻一次。
+     *
+     * <p>跟 {@link #replaceInPlace} 走同一條 {@code translateInPlace}，Shift 的暫時模式也一樣，
+     * 所以同一件物品不管是誰畫的，按住 Shift 看到的東西是一致的。
+     *
+     * @return 譯文；一行都沒翻到就回空的（呼叫端的約定是「空的 = 原文不動」）
+     */
+    public static List<Component> translateForeign(List<Component> lines) {
+        return withPeek(() -> com.wynnchayuan.render.TooltipPanel
+                .translateInPlace(lines, WynnChaYuan.translations()));
+    }
+
+    /**
      * 就地取代：把譯文寫回事件，讓遊戲直接畫譯文而不是原文。
      *
      * <p>用的是與側邊面板<b>完全相同</b>的逐片段替換，所以格式保真程度一樣——
