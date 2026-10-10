@@ -1,12 +1,30 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.1",
+ "latest": "1.0.1_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.1_1": {
+   "headline": "1.0.1_1: WynnMod tooltips, item name fixes",
+   "items": [
+    "WynnMod: gear tooltips redrawn by WynnMod (its \"Decorate Item Tooltip\" feature) are now translated too. Can be turned off under F6 > Mod support.",
+    "Fixed: after playing for a while, most often right after switching language, the names of gear, ingredients and materials all went back to English and stayed that way until the game was restarted.",
+    "Fixed: switching to a language you do not normally use loaded an old copy of its translations and missed everything added since.",
+    "Translations: about a thousand more Turkish entries; new dialogue, nameplates and messages from the Festival of the Spirits and three Fruma quests (A Journey Home, A New Beginning, The Cursed One) in all seven languages."
+   ],
+   "zh_tw": {
+    "headline": "1.0.1_1：WynnMod 物品說明、物品名稱修正",
+    "items": [
+     "WynnMod：它重畫的裝備說明（Decorate Item Tooltip 功能）現在也會翻成譯文。F6「模組支援」可以關掉。",
+     "修正：玩一陣子之後（切換語言之後最容易遇到），裝備、素材與材料的名稱全部變回英文，要重開遊戲才會恢復。",
+     "修正：切換到平常沒在用的語言時，載入的是很久以前的譯文，少了之後補上的內容。",
+     "譯文：土耳其文再補約一千條；靈魂節與 Fruma 三個任務（A Journey Home、A New Beginning、The Cursed One）新收的對話、名牌與訊息，七個語言都有。"
+    ]
+   }
+  },
   "1.0.1": {
    "headline": "1.0.1: Turkish",
    "items": [
