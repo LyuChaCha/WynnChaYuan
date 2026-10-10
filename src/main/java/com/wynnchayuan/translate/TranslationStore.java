@@ -573,6 +573,63 @@ public final class TranslationStore {
         return key != null && uiLabels.contains(key.strip());
     }
 
+    /** 短於這個長度的開頭不拿來猜：三四個字母對得上的標籤太多。見 {@link #completeUiLabel}。 */
+    private static final int MIN_TRUNCATED_LABEL = 6;
+
+    /**
+     * 被截短的介面標籤原本是哪一條。
+     *
+     * <h2>實機回報（2026-10-10）</h2>
+     * WynnMod 重畫的裝備說明把標籤欄限在固定寬度，放不下的砍掉尾巴接兩個點：
+     *
+     * <pre>
+     *   Elemental Spell Da..  *+366 [92.0%]
+     * </pre>
+     *
+     * 整份說明都翻好了，只有這一列留著英文——「Elemental Spell Da」不是任何一條鍵。
+     *
+     * <h2>怎麼認</h2>
+     * 拿開頭去對 {@code ui-labels.json} 的每一條鍵，<b>只對得上一個標籤</b>才算數。
+     * 同一個屬性的三條鍵（{@code X}、{@code X%}、{@code X Raw}）是同一個標籤的
+     * 三種數值，不算三個；要挑哪一種由呼叫端照數值決定。對得上兩個以上不同的
+     * 標籤就不猜，那一列留原文。
+     *
+     * @param prefix 砍剩的開頭，結尾的空白有意義（砍在空白後面的，下一個字要從頭對）
+     * @return 完整的標籤（不帶 {@code %} 與 {@code Raw}）；認不出來回傳 {@code null}
+     */
+    public String completeUiLabel(String prefix) {
+        if (prefix == null) {
+            return null;
+        }
+        String head = prefix.stripLeading();
+        if (head.strip().length() < MIN_TRUNCATED_LABEL) {
+            return null;
+        }
+        String found = null;
+        for (String key : uiLabels) {
+            String base = labelBase(key);
+            if (base.length() <= head.length() || !base.startsWith(head)) {
+                continue;
+            }
+            if (found != null && !found.equals(base)) {
+                return null;                   // 兩個不同的標籤都對得上，不猜
+            }
+            found = base;
+        }
+        return found;
+    }
+
+    /** 標籤去掉數值種類的記號：{@code "Spell Damage%"}、{@code "Spell Damage Raw"} 都是「Spell Damage」。 */
+    private static String labelBase(String key) {
+        if (key.endsWith("%")) {
+            return key.substring(0, key.length() - 1).stripTrailing();
+        }
+        if (key.endsWith(" Raw")) {
+            return key.substring(0, key.length() - 4).stripTrailing();
+        }
+        return key;
+    }
+
     /**
      * 名稱要怎麼收，是<b>兩個各自獨立的問題</b>，用兩個旗標分開問。
      *
