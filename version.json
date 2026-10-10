@@ -1,12 +1,38 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.0",
+ "latest": "1.0.0_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.0_1": {
+   "headline": "1.0.0_1: bomb broadcasts, the Lootrun beacon panel in \"Replace in place\" chat, fixes",
+   "items": [
+    "Bomb broadcasts are translated: the bell message, the lines shown when a bomb is thrown, the expiry notice and the thank-you line. Player names are left exactly as they are.",
+    "Chat set to \"Replace in place\": the Lootrun beacon panel is now translated as a whole, so its columns line up and a description wrapped over several rows reads as one sentence. The panel appears a fraction of a second after its title.",
+    "Gathering tools (pickaxes, axes, scythes, rods): names and tooltips are translated. Hold Shift to see the original name.",
+    "Festival of the Spirits: the large floating text of the entrance animation and the festival messages are translated.",
+    "Lootrun boon descriptions are reworded in Traditional and Simplified Chinese so that each one reads as a single sentence.",
+    "With item names set to \"Translation + original\", the original is now moved to the next line when it does not fit, also on tomes and other items whose description takes fewer rows once translated.",
+    "Fixed: in the Lootrun beacon counter of Wynntils, White, Crimson and Rainbow were replaced by gear of the same name, and Aqua and Dark Gray stayed in English.",
+    "Fixed: on Lootrun boon cards a wide gap opened between an attribute icon and the attribute name."
+   ],
+   "zh_tw": {
+    "headline": "1.0.0_1：炸彈廣播、就地取代的信標面板，以及幾個修正",
+    "items": [
+     "炸彈廣播翻得出來了：鈴鐺那一則、丟出炸彈時的那幾行、到期通知與感謝那一行。玩家的名字原樣保留。",
+     "聊天設成「就地取代」時，Lootrun 的信標面板改成整塊一起翻：欄位對得齊，折成好幾列的敘述也併成一句。面板會比標題晚一點點出現。",
+     "採集工具（鎬、斧、鐮刀、釣竿）：名稱與說明都有譯文，按住 Shift 看原文。",
+     "靈魂節：進場動畫的漂浮大字與節慶訊息有譯文了。",
+     "Lootrun 賜福的敘述（繁中、簡中）改寫成一句讀得順的話。",
+     "物品名稱設成「譯名加原文」時，放不下的原文會折到下一行——精通書卷這類翻完行數變少的物品現在也會。",
+     "修正：Wynntils 的 Lootrun 信標計數裡，White、Crimson、Rainbow 被換成同名的裝備，Aqua 與 Dark Gray 沒有翻。",
+     "修正：Lootrun 賜福卡上，屬性圖示與屬性名之間多出一大段空白。"
+    ]
+   }
+  },
   "1.0.0": {
    "headline": "1.0.0: redesigned settings, scoreboard translation, reworked gear names",
    "items": [
