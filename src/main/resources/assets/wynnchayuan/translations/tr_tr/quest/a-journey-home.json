@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A Journey Home",
-  "count": 131,
-  "translated": 130,
+  "count": 139,
+  "translated": 138,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -11,6 +11,92 @@
  },
  "entries": {
   "A Journey Home#000": {
+   "src": "...you were scared of those, once upon a time. What a difference time makes.",
+   "dst": "...bir zamanlar bunlardan korkardın. Zaman insanı ne kadar değiştiriyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#001": {
+   "src": "You can take that armor to an Item Identifier right there, and then you can wear it once identified.",
+   "dst": "O zırhı hemen şuradaki Eşya Tanımlayıcı'ya götürebilirsin, tanımlandıktan sonra da giyebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Soldier",
+   "source": "captured",
+   "similar": {
+    "text": "That looks like the stuff. You can take that armor to an Item Identifier right there, and then you can wear it once identified.",
+    "file": "quest/a-journey-home.json",
+    "ratio": 0.881,
+    "reason": "candidate"
+   }
+  },
+  "A Journey Home#002": {
+   "src": "This gate marks the Fruman Border- you must make sure you aren't spotted from this point onwards.",
+   "dst": "Bu kapı Fruma Sınırı'nı gösteriyor- bu noktadan sonra kimseye görünmemelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#003": {
+   "src": "Sounds like new recruits are walking down the path! You better find somewhere to hide before they spot you!",
+   "dst": "Yoldan yeni acemiler geliyor gibi! Seni fark etmeden önce saklanacak bir yer bulsan iyi olur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#004": {
+   "src": "This is your chance, the gate's open! Follow the Caravan Driver!",
+   "dst": "İşte fırsatın, kapı açık! Kervan Sürücüsü'nü takip et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#005": {
+   "src": "...you need to escape. Strike while the commander is busy, and find a way out!",
+   "dst": "...kaçman lazım. Komutan meşgulken saldır ve bir çıkış yolu bul!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "Guard",
+   "source": "captured"
+  },
+  "A Journey Home#006": {
+   "src": "You have emptied {p} of soldiers. You must escape before someone discovers what has happened here. The only way out is forward.",
+   "dst": "{p} içinde tek bir asker bile bırakmadın. Biri burada olanları fark etmeden kaçmalısın. Tek çıkış yolu ileride.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#007": {
+   "src": "Again.",
+   "dst": "Yine.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#008": {
    "src": "What is this place? Such technology, you can hardly imagine how it was made.",
    "dst": "Burası da ne? Böyle bir teknoloji... Nasıl yapıldığını hayal bile edemezsin.",
    "role": "desc",
@@ -20,7 +106,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#001": {
+  "A Journey Home#009": {
    "src": "The caravan driver seems to have disappeared... maybe you can find something if you look in some of mechanized carriages?",
    "dst": "Kervan sürücüsü ortadan kaybolmuş gibi... Mekanik vagonlardan birkaçına bakarsan belki bir şey bulursun?",
    "role": "desc",
@@ -30,7 +116,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#002": {
+  "A Journey Home#010": {
    "src": "{p}'s relations with Fruma exclusively consist of the generous batches of recruits sent to fight the corruption here in Wynn.",
    "dst": "{p} ile Fruma arasındaki ilişki, buradaki Wynn'de yozlaşmayla savaşmak için gönderilen bol bol acemi askerden ibaret.",
    "role": "desc",
@@ -40,7 +126,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#003": {
+  "A Journey Home#011": {
    "src": "They've shut you out. There's no way in from here... But what if you went back the way",
    "dst": "Seni dışarıda bıraktılar. Buradan içeri girmenin yolu yok... Peki ya geldiğin yoldan",
    "role": "desc",
@@ -50,7 +136,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#004": {
+  "A Journey Home#012": {
    "src": "...Ah. I see. So I suppose...things must not have gone well. Have all the others returned?",
    "dst": "...Ah. Anlıyorum. Demek ki... işler iyi gitmedi. Diğerlerinin hepsi döndü mü?",
    "role": "desc",
@@ -60,7 +146,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#005": {
+  "A Journey Home#013": {
    "src": "Maybe another spell?",
    "dst": "Belki başka bir büyü?",
    "role": "desc",
@@ -70,7 +156,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#006": {
+  "A Journey Home#014": {
    "src": "Is there anything I can do for you today?",
    "dst": "Bugün senin için yapabileceğim bir şey var mı?",
    "role": "desc",
@@ -80,7 +166,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#007": {
+  "A Journey Home#015": {
    "src": "...something's prickling at the back of your mind. Weren't you asleep like this when you first arrived, too?",
    "dst": "...zihninin bir köşesinde bir şey kıpırdıyor. İlk geldiğinde de böyle uyumuyor muydun?",
    "role": "desc",
@@ -90,7 +176,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#008": {
+  "A Journey Home#016": {
    "src": "Investigate the Fruma Gate at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki Fruma Kapısı'nı incele.",
    "role": "desc",
@@ -100,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#009": {
+  "A Journey Home#017": {
    "src": "Explore near where you originally arrived in Wynn.",
    "dst": "Wynn'e ilk geldiğin yerin yakınlarını keşfet.",
    "role": "desc",
@@ -110,7 +196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#010": {
+  "A Journey Home#018": {
    "src": "Leave {p} through the door at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki kapıdan çıkarak {p} bölgesinden ayrıl.",
    "role": "desc",
@@ -120,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#011": {
+  "A Journey Home#019": {
    "src": "Continue back down the path to Fruma.",
    "dst": "Fruma'ya giden yoldan aşağı inmeye devam et.",
    "role": "desc",
@@ -130,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#012": {
+  "A Journey Home#020": {
    "src": "This job is impossible!! Why am I even here?!",
    "dst": "Bu iş imkânsız!! Ben burada ne arıyorum ki?!",
    "role": "desc",
@@ -140,7 +226,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#013": {
+  "A Journey Home#021": {
    "src": "Ah! You're a soldier, right? Look, I- It's, it's just a really difficult time right now.",
    "dst": "Ah! Sen asker misin, değil mi? Bak, ben- Şu, şu an gerçekten çok zor bir dönemdeyiz.",
    "role": "desc",
@@ -150,7 +236,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#014": {
+  "A Journey Home#022": {
    "src": "This, this whole situation is definitely above my paygrade! I don't know how I'm going to deal with this...",
    "dst": "Bu, bu iş kesinlikle benim maaşımın çok üstünde! Bununla nasıl başa çıkacağımı bilmiyorum...",
    "role": "desc",
@@ -160,7 +246,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#015": {
+  "A Journey Home#023": {
    "src": "Enough of that, I, ah, I suppose. What is it you need?",
    "dst": "Neyse, bunu, şey, bırakalım. Neye ihtiyacın var?",
    "role": "desc",
@@ -170,7 +256,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#016": {
+  "A Journey Home#024": {
    "src": "Oh. Oh no. Ah, I, you see, that'll be a problem, I think. What do you even need to do at the border anyway?",
    "dst": "Ah. Ah, hayır. Şey, ben, bak, bu bir sorun olacak sanırım. Sınırda ne işin var ki zaten?",
    "role": "desc",
@@ -180,7 +266,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#017": {
+  "A Journey Home#025": {
    "src": "I can't really imagine what you could need there, but, whatever it is, it'll need to wait! This Corkian drill won't work, and Paxon's stuck, and",
    "dst": "Orada neye ihtiyacın olabilir aklım almıyor ama, ne olursa olsun, beklemesi gerekecek! Bu Corkus matkabı çalışmıyor, Paxon da mahsur kaldı, ve",
    "role": "desc",
@@ -190,7 +276,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#018": {
+  "A Journey Home#026": {
    "src": "Look, I'm...I'm sorry for snapping at you. I'm trained for military operation, not for cave-in clearance, but no one else was available!",
    "dst": "Bak, ben... sana çıkıştığım için özür dilerim. Ben askeri operasyon için eğitildim, göçük temizliği için değil, ama başka kimse yoktu!",
    "role": "desc",
@@ -200,7 +286,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#019": {
+  "A Journey Home#027": {
    "src": "Even the demolitions expert I hired is stuck, so it's all just, it's all going wrong and I don't know what to do.",
    "dst": "Tuttuğum yıkım uzmanı bile mahsur kaldı, yani her şey, her şey ters gidiyor ve ne yapacağımı bilmiyorum.",
    "role": "desc",
@@ -210,7 +296,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#020": {
+  "A Journey Home#028": {
    "src": "You see that new entrance over there? The expert, Paxon, has been in there for almost as long as I was trying this dud machine.",
    "dst": "Şuradaki yeni girişi görüyor musun? Uzman, Paxon, ben bu işe yaramaz makineyle uğraştığım süre kadar orada.",
    "role": "desc",
@@ -220,7 +306,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#021": {
+  "A Journey Home#029": {
    "src": "If you think you can do a job better than an expert, go ahead and talk with them, but I'm pretty sure you'll have to cancel whatever plans you had.",
    "dst": "Bir uzmandan daha iyi iş çıkarabileceğini düşünüyorsan, git onunla konuş, ama bence planların neyse iptal etmen gerekecek.",
    "role": "desc",
@@ -230,7 +316,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#022": {
+  "A Journey Home#030": {
    "src": "Talk to the Demolition Mage at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki Yıkım Büyücüsü ile konuş.",
    "role": "desc",
@@ -240,7 +326,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#023": {
+  "A Journey Home#031": {
    "src": "If you really need to get to the border, your best bet is to talk to Paxon in the new cave entrance.",
    "dst": "Sınıra gerçekten gitmen gerekiyorsa, en iyisi yeni mağara girişindeki Paxon ile konuşman.",
    "role": "desc",
@@ -250,7 +336,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#024": {
+  "A Journey Home#032": {
    "src": "But, they're an expert, so I think your business will have to wait. Really, really sorry about all this!",
    "dst": "Ama o bir uzman, yani işinin beklemesi gerekecek bence. Bütün bunlar için gerçekten, gerçekten çok üzgünüm!",
    "role": "desc",
@@ -260,8 +346,8 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#025": {
-   "src": "Oh no, not another one I don't care what rank you are, what you're asking is impossible! Even for me, it",
+  "A Journey Home#033": {
+   "src": "Oh no, not another one- I don't care what rank you are, what you're asking is impossible! Even for me, it-",
    "dst": "Ah hayır, bir tane daha olmasın, rütben ne olursa olsun umurumda değil, istediğin şey imkânsız! Benim için bile, bu",
    "role": "desc",
    "kind": "dialogue",
@@ -270,7 +356,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#026": {
+  "A Journey Home#034": {
    "src": "Wait, you aren't part of the... You're just a regular soldier. You're just trying to get through here, aren't you?",
    "dst": "Dur, sen şeyden değilsin... Sen sıradan bir askersin. Sadece buradan geçmeye çalışıyorsun, değil mi?",
    "role": "desc",
@@ -280,7 +366,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#027": {
+  "A Journey Home#035": {
    "src": "May as well give up now! Not happening. No way. You're wasting your time, and let me tell you exactly why.",
    "dst": "Şimdiden pes etsen iyi olur! Olmayacak. Hiç şansı yok. Vaktini boşa harcıyorsun, nedenini de tam olarak anlatayım.",
    "role": "desc",
@@ -290,7 +376,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#028": {
+  "A Journey Home#036": {
    "src": "You see that blue rock over there? It's a break point. If I could set off these explosives at it, it'd open a path.",
    "dst": "Şuradaki mavi kayayı görüyor musun? Orası bir kırılma noktası. Bu patlayıcıları orada patlatabilsem, bir yol açılırdı.",
    "role": "desc",
@@ -300,7 +386,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#029": {
+  "A Journey Home#037": {
    "src": "They're gone. Hurry down the path!",
    "dst": "Gittiler. Yoldan aşağı acele et!",
    "role": "desc",
@@ -310,7 +396,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#030": {
+  "A Journey Home#038": {
    "src": "But apparently all these structures set up are so important that any of it being damaged, or MOVED, is unacceptable!",
    "dst": "Ama görünüşe göre burada kurulu bütün yapılar o kadar önemliymiş ki herhangi birinin hasar görmesi, ya da YERİNDEN OYNAMASI kabul edilemezmiş!",
    "role": "desc",
@@ -320,7 +406,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#031": {
+  "A Journey Home#039": {
    "src": "And to make sure I'm 'supervised' while the lieutenant is working on the drill, the detonator HAS to be here.",
    "dst": "Bir de teğmen matkapla uğraşırken 'gözetim altında' olayım diye fünyenin BURADA olması ŞARTMIŞ.",
    "role": "desc",
@@ -330,7 +416,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#032": {
+  "A Journey Home#040": {
    "src": "So I have to daisy-chain a limited amount of explosives all the way over to the stone, without blasting any structures!",
    "dst": "Yani sınırlı sayıda patlayıcıyı hiçbir yapıyı havaya uçurmadan zincirleme şekilde ta taşa kadar dizmem gerekiyor!",
    "role": "desc",
@@ -340,7 +426,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#033": {
+  "A Journey Home#041": {
    "src": "I've been trying for hours and gotten absolutely nowhere! I'm one of the best in my field, even! It's ridiculous!!",
    "dst": "Saatlerdir uğraşıyorum ve hiçbir yere varamadım! Üstelik alanımın en iyilerinden biriyim! Bu saçmalık!!",
    "role": "desc",
@@ -350,7 +436,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#034": {
+  "A Journey Home#042": {
    "src": "If you feel like wasting your time, here's my stock of explosives. Feel free to try your hand at it, but you should really just go.",
    "dst": "Vaktini boşa harcamak istiyorsan, al sana patlayıcı stoğum. Bir dene istersen, ama aslında gitsen daha iyi.",
    "role": "desc",
@@ -360,7 +446,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#035": {
+  "A Journey Home#043": {
    "src": "Use the TNT to open up a path through the cave.",
    "dst": "Mağarada bir yol açmak için TNT kullan.",
    "role": "desc",
@@ -370,7 +456,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#036": {
+  "A Journey Home#044": {
    "src": "Still at it? What, do you need a reminder? I've got nothing better to do.",
    "dst": "Hâlâ uğraşıyor musun? Ne o, hatırlatma mı lazım? Zaten yapacak daha iyi bir işim yok.",
    "role": "desc",
@@ -380,7 +466,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#037": {
+  "A Journey Home#045": {
    "src": "So the blue rock is soft enough to crack with the explosives. But the detonator's stuck here.",
    "dst": "Mavi kaya patlayıcılarla çatlatılacak kadar yumuşak. Ama fünye burada sabit.",
    "role": "desc",
@@ -390,7 +476,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#038": {
+  "A Journey Home#046": {
    "src": "So we need to use the TNT Placer to daisy-chain blasts from the detonator, without blasting any tents, crates, or walls.",
    "dst": "Yani TNT Yerleştirici ile fünyeden başlayan zincirleme patlamalar yapmalıyız, hiçbir çadırı, sandığı ya da duvarı patlatmadan.",
    "role": "desc",
@@ -400,7 +486,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#039": {
+  "A Journey Home#047": {
    "src": "You can look at placed TNT to see its blast radius, as well.",
    "dst": "Ayrıca yerleştirdiğin TNT'ye bakarak patlama yarıçapını görebilirsin.",
    "role": "desc",
@@ -410,7 +496,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#040": {
+  "A Journey Home#048": {
    "src": "But given how tight the squeeze between some of those structures is, there's just no way it's happening.",
    "dst": "Ama o yapıların bazılarının arası o kadar dar ki, bu iş kesinlikle olmaz.",
    "role": "desc",
@@ -420,7 +506,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#041": {
+  "A Journey Home#049": {
    "src": "Like I said, you really should just mosey on back to the castle. If I can't get anywhere, I don't think you'll fare better.",
    "dst": "Dediğim gibi, sen en iyisi kaleye doğru yavaş yavaş geri dön. Ben bir yere varamıyorsam, sen de daha iyisini yapamazsın bence.",
    "role": "desc",
@@ -430,7 +516,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#042": {
+  "A Journey Home#050": {
    "src": "Continue through the cave.",
    "dst": "Mağaradan ilerlemeye devam et.",
    "role": "desc",
@@ -440,7 +526,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#043": {
+  "A Journey Home#051": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki Muhafız ile konuş.",
    "role": "desc",
@@ -450,7 +536,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#044": {
+  "A Journey Home#052": {
    "src": "Halt! Where did you come from? There was a cave-in past here, wasn't there?",
    "dst": "Dur! Nereden geldin sen? Bu taraftan sonra bir göçük vardı, değil mi?",
    "role": "desc",
@@ -460,7 +546,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#045": {
+  "A Journey Home#053": {
    "src": "A new path, huh? I didn't think you'd have things to be doing back here, though I won't say I'm ungrateful.",
    "dst": "Yeni bir yol, ha? Burada yapacak işin olacağını sanmazdım, yine de minnettar olmadığımı söyleyemem.",
    "role": "desc",
@@ -470,7 +556,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#046": {
+  "A Journey Home#054": {
    "src": "It even crushed the grook's nest there. I've been working off field rations for a few days. So where are you headed?",
    "dst": "Göçük şuradaki grook yuvasını bile ezdi. Birkaç gündür sahra tayınıyla idare ediyorum. Peki nereye gidiyorsun?",
    "role": "desc",
@@ -480,7 +566,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#047": {
+  "A Journey Home#055": {
    "src": "The border? I suppose if you're headed there, it must be important, official business. Although, it might have to wait.",
    "dst": "Sınıra mı? Oraya gidiyorsan önemli, resmi bir işin olmalı. Gerçi beklemesi gerekebilir.",
    "role": "desc",
@@ -490,7 +576,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#048": {
+  "A Journey Home#056": {
    "src": "The bridge repair was something of a hackjob. It may not bear up your weight. Now that the cave-in's clear, we might be able to get it fixed proper...",
    "dst": "Köprü onarımı biraz baştan savma yapıldı. Ağırlığını kaldırmayabilir. Göçük temizlendiğine göre artık düzgünce tamir ettirebiliriz belki...",
    "role": "desc",
@@ -500,8 +586,8 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#049": {
-   "src": "But that'll take time. I'd just as soon turn back whatever business you have isn't worth your life, after all.",
+  "A Journey Home#057": {
+   "src": "But that'll take time. I'd just as soon turn back- whatever business you have isn't worth your life, after all.",
    "dst": "Ama o zaman alır. Ben olsam geri dönerdim, ne işin varsa canına değmez sonuçta.",
    "role": "desc",
    "kind": "dialogue",
@@ -510,7 +596,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#050": {
+  "A Journey Home#058": {
    "src": "Cross the repaired bridge at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki onarılmış köprüden geç.",
    "role": "desc",
@@ -520,7 +606,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#051": {
+  "A Journey Home#059": {
    "src": "Say, I think I recognize you, actually. That's a rarity for this line of work.",
    "dst": "Baksana, aslında seni tanıyor gibiyim. Bu işte pek sık olmaz.",
    "role": "desc",
@@ -530,7 +616,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#052": {
+  "A Journey Home#060": {
    "src": "Are you sure that what you have to do is worth it? That bridge is awful rickety. Wouldn't want to lose you.",
    "dst": "Yapman gereken şeyin buna değdiğinden emin misin? O köprü fena halde sallantılı. Seni kaybetmek istemem.",
    "role": "desc",
@@ -540,7 +626,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#054": {
+  "A Journey Home#061": {
    "src": "Hey, you there! Come talk to me before you pass through.",
    "dst": "Hey, sen! Geçmeden önce gel benimle konuş.",
    "role": "desc",
@@ -550,7 +636,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#055": {
+  "A Journey Home#062": {
    "src": "Hey, you! Come talk to me first, recruit!",
    "dst": "Hey, sen! Önce gel benimle konuş, acemi!",
    "role": "desc",
@@ -560,7 +646,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#056": {
+  "A Journey Home#063": {
    "src": "Coming or going, I'm under strict orders to intercept soldiers and make sure they're equipped before heading on.",
    "dst": "Gelen de giden de fark etmez, askerleri durdurup yola çıkmadan önce donanımlı olduklarından emin olmak için kesin emir aldım.",
    "role": "desc",
@@ -570,7 +656,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#057": {
+  "A Journey Home#064": {
    "src": "No exceptions, not for any reason. Especially not since the cave-in across the river!",
    "dst": "İstisna yok, hiçbir sebeple. Hele nehrin karşısındaki göçükten sonra hiç yok!",
    "role": "desc",
@@ -580,7 +666,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#058": {
+  "A Journey Home#065": {
    "src": "Nothing's more important than your life, and moving on without being suited up could cost you it!",
    "dst": "Hiçbir şey canından daha önemli değil, donanımsız yola çıkmak sana canına mal olabilir!",
    "role": "desc",
@@ -590,7 +676,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#059": {
+  "A Journey Home#066": {
    "src": "Well, let me take a look at it and see if this stuff is up to regulation.",
    "dst": "Pekâlâ, bir bakayım da bu malzeme yönetmeliğe uygun mu görelim.",
    "role": "desc",
@@ -600,7 +686,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#060": {
+  "A Journey Home#067": {
    "src": "Well, let me take a look and see if this stuff is up to regulation.",
    "dst": "Pekâlâ, bir bakayım da bu malzeme yönetmeliğe uygun mu görelim.",
    "role": "desc",
@@ -610,7 +696,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#061": {
+  "A Journey Home#068": {
    "src": "Hmm... Ah, yep, signs of wear all over... Armor not polished... Weapon looks liable to fall apart any second...",
    "dst": "Hmm... Ah, evet, her yerinde aşınma izi... Zırh cilalanmamış... Silah her an dağılacakmış gibi duruyor...",
    "role": "desc",
@@ -620,7 +706,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#062": {
+  "A Journey Home#069": {
    "src": "I'm surprised you made it ten feet out here with those rusty trinkets! This is no way to protect yourself!",
    "dst": "Bu paslı ıvır zıvırla buraya üç adım bile gelebilmene şaştım! Kendini böyle koruyamazsın!",
    "role": "desc",
@@ -630,7 +716,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#063": {
+  "A Journey Home#070": {
    "src": "Look, there's a loot chest in the cave just there, so you need to head in and get yourself some proper equipment.",
    "dst": "Bak, hemen şuradaki mağarada bir ganimet sandığı var, içeri girip kendine düzgün bir teçhizat almalısın.",
    "role": "desc",
@@ -640,7 +726,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#064": {
+  "A Journey Home#071": {
    "src": "...that so, huh? Well, I think you should take a second look up ahead.",
    "dst": "...öyle mi, ha? Bence ileriye bir daha bakmalısın.",
    "role": "desc",
@@ -650,7 +736,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#065": {
+  "A Journey Home#072": {
    "src": "See? Now no more guff about levels you either gear up properly, or you don't pass! I won't have you risking your life.",
    "dst": "Gördün mü? Artık seviye mevzusunda laf istemem, ya düzgünce donanırsın ya da geçemezsin! Canını tehlikeye atmana izin vermem.",
    "role": "desc",
@@ -660,7 +746,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#066": {
+  "A Journey Home#073": {
    "src": "You can find good stuff in caves, like the one just next to me, so hop to it.",
    "dst": "Mağaralarda iyi şeyler bulabilirsin, hemen yanımdaki gibi, hadi bakalım, kımılda.",
    "role": "desc",
@@ -670,7 +756,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#067": {
+  "A Journey Home#074": {
    "src": "Like I said, coming or going. No matter what, you should gear up by looting the cave here before heading onwards.",
    "dst": "Dediğim gibi, gelen de giden de fark etmez. Ne olursa olsun, yola devam etmeden önce şuradaki mağarayı yağmalayıp donanmalısın.",
    "role": "desc",
@@ -680,7 +766,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#068": {
+  "A Journey Home#075": {
    "src": "Good stuff. There's a loot chest in that cave there, so you should find everything you need. Get to it!",
    "dst": "Güzel. Şuradaki mağarada bir ganimet sandığı var, ihtiyacın olan her şeyi bulursun. Hadi işe koyul!",
    "role": "desc",
@@ -690,7 +776,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#069": {
+  "A Journey Home#076": {
    "src": "Explore the cave to find some loot.",
    "dst": "Ganimet bulmak için mağarayı keşfet.",
    "role": "desc",
@@ -700,7 +786,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#070": {
+  "A Journey Home#077": {
    "src": "Enter the cave and open the loot chest.",
    "dst": "Mağaraya gir ve ganimet sandığını aç.",
    "role": "desc",
@@ -710,7 +796,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#072": {
+  "A Journey Home#078": {
    "src": "That looks like the stuff. You can take that armor to an Item Identifier right there, and then you can wear it once identified.",
    "dst": "İşte bu. O zırhı hemen şuradaki Eşya Tanımlayıcı'ya götürebilirsin, tanımlandıktan sonra da giyebilirsin.",
    "role": "desc",
@@ -720,8 +806,8 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#073": {
-   "src": "Though... since you seem to be heading back to the border... I have to ask why. It's pretty unusual. Probably best you head back to {p}.",
+  "A Journey Home#079": {
+   "src": "Though, since you seem to be headed back to the border... I have to ask why. It's pretty unusual. Probably best you head back to {p}.",
    "dst": "Gerçi... sınıra geri dönüyor gibisin... Nedenini sormam lazım. Pek alışılmış bir şey değil. En iyisi {p} bölgesine geri dönmen.",
    "role": "desc",
    "kind": "dialogue",
@@ -730,7 +816,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#074": {
+  "A Journey Home#080": {
    "src": "If other recruits see you coming the other way, they might get confused, or discouraged. Wouldn't want to risk that, right?",
    "dst": "Diğer acemiler seni ters yönden gelirken görürse kafaları karışabilir ya da cesaretleri kırılabilir. Bunu göze almak istemezsin, değil mi?",
    "role": "desc",
@@ -740,7 +826,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#075": {
+  "A Journey Home#081": {
    "src": "Are you sure whatever you're doing is worth it? Maybe you should just head back to town.",
    "dst": "Ne yapıyorsan buna değdiğinden emin misin? Belki de kasabaya geri dönmelisin.",
    "role": "desc",
@@ -750,7 +836,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#076": {
+  "A Journey Home#082": {
    "src": "Avoid the Fruman recruits on the path.",
    "dst": "Yoldaki Frumalı acemilere görünme.",
    "role": "desc",
@@ -760,7 +846,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#077": {
+  "A Journey Home#083": {
    "src": "...been recruiting Fruman soldiers for the war effort. Apparently things are really bad over there. Makes me nervous...",
    "dst": "...savaş için Frumalı asker topluyorlarmış. Oralarda işler gerçekten kötüymüş galiba. Beni geriyor...",
    "role": "desc",
@@ -770,7 +856,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#078": {
+  "A Journey Home#084": {
    "src": "Walking corpses aren't anything I'm going to underestimate, but it can't be all doom and gloom, right?",
    "dst": "Yürüyen cesetleri hafife alacak değilim ama her şey de kara kara olamaz, değil mi?",
    "role": "desc",
@@ -780,8 +866,8 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#079": {
-   "src": "I suppose we'll see once we pass this gate. It marks the border... Deep breaths, deep breaths...",
+  "A Journey Home#085": {
+   "src": "I suppose we'll see once we pass through this gate. It marks the border... Deep breaths, deep breaths...",
    "dst": "Sanırım bu kapıdan geçince göreceğiz. Burası sınır... Derin nefes, derin nefes...",
    "role": "desc",
    "kind": "dialogue",
@@ -790,7 +876,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#080": {
+  "A Journey Home#086": {
    "src": "...know anything about Wynn? I didn't get any debriefing.",
    "dst": "...Wynn hakkında bir şey biliyor musun? Bana hiçbir bilgi verilmedi.",
    "role": "desc",
@@ -800,8 +886,8 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#081": {
-   "src": "I remember rumors... Something about a great hero. Name started with...and R?",
+  "A Journey Home#087": {
+   "src": "I remember rumors... Something about a great hero. Name started with...an R?",
    "dst": "Bazı söylentiler hatırlıyorum... Büyük bir kahramanla ilgili bir şey. Adı... R ile mi başlıyordu?",
    "role": "desc",
    "kind": "dialogue",
@@ -810,7 +896,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#082": {
+  "A Journey Home#088": {
    "src": "We'll make it a point to ask as soon as we can. Information's key to fighting wars.",
    "dst": "İlk fırsatta sormayı kafamıza koyalım. Savaşta bilgi her şeydir.",
    "role": "desc",
@@ -820,7 +906,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#083": {
+  "A Journey Home#089": {
    "src": "...rotten driver. I feel for the man, but he said he always hits that boulder. Sounds like his own fault to me.",
    "dst": "...berbat sürücü. Adama üzülüyorum ama hep o kayaya çarptığını söyledi. Bence kendi suçu.",
    "role": "desc",
@@ -830,7 +916,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#084": {
+  "A Journey Home#090": {
    "src": "I'm thinking about meals more than wheels. I feel like I haven't eaten in days. Hope the walk's short...",
    "dst": "Ben tekerlekten çok yemeği düşünüyorum. Günlerdir bir şey yememişim gibi. Umarım yol kısadır...",
    "role": "desc",
@@ -840,7 +926,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#085": {
+  "A Journey Home#091": {
    "src": "Well, if he was a more competent driver you wouldn't have to walk so far on an empty stomach! Let's hurry so we can get you a feast, huh?",
    "dst": "Daha becerikli bir sürücü olsaydı aç karnına bu kadar yürümen gerekmezdi! Hadi acele edelim de sana bir ziyafet bulalım, ha?",
    "role": "desc",
@@ -850,7 +936,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#086": {
+  "A Journey Home#092": {
    "src": "Wait, who's that? Why are they coming from the border??",
    "dst": "Dur, o kim? Neden sınır tarafından geliyor??",
    "role": "desc",
@@ -860,7 +946,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#087": {
+  "A Journey Home#093": {
    "src": "Hide from the Caravan Driver.",
    "dst": "Kervan Sürücüsü'nden saklan.",
    "role": "desc",
@@ -870,7 +956,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#088": {
+  "A Journey Home#094": {
    "src": "...and that's the last of them for today.",
    "dst": "...ve bugünlük sonuncusu da bu.",
    "role": "desc",
@@ -880,7 +966,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#089": {
+  "A Journey Home#095": {
    "src": "Lot of pairs today. Eight more in the wings... But that's for tomorrow.",
    "dst": "Bugün çok çift vardı. Sırada sekiz kişi daha var... Ama o yarına.",
    "role": "desc",
@@ -890,7 +976,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#090": {
+  "A Journey Home#096": {
    "src": "Same darn boulder... Same darn line, too. Wonder if they'll let me shake it up one day. This is always a pain...",
    "dst": "Yine aynı lanet kaya... Yine aynı lanet replik. Bir gün değiştirmeme izin verirler mi acaba. Her seferinde dert...",
    "role": "desc",
@@ -900,7 +986,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#091": {
+  "A Journey Home#097": {
    "src": "And that's that about that. And now, to be off...to the home I choose. And there's no troubles to follow me there.",
    "dst": "Ve işte bu kadar. Şimdi de yola... seçtiğim yuvaya. Orada beni hiçbir dert takip etmez.",
    "role": "desc",
@@ -910,7 +996,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#092": {
+  "A Journey Home#098": {
    "src": "Explore past the Fruma Gate.",
    "dst": "Fruma Kapısı'nın ötesini keşfet.",
    "role": "desc",
@@ -920,7 +1006,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#093": {
+  "A Journey Home#099": {
    "src": "Just couldn't take the hint, huh?",
    "dst": "Lafı anlamadın, değil mi?",
    "role": "desc",
@@ -930,7 +1016,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#094": {
+  "A Journey Home#100": {
    "src": "Bet you think you're slick. Didn't even notice me hang back to watch, huh? I wasn't born yesterday.",
    "dst": "Kendini çok kurnaz sanıyorsun herhalde. Arkada kalıp izlediğimi fark etmedin bile, ha? Ben dünün çocuğu değilim.",
    "role": "desc",
@@ -940,7 +1026,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#095": {
+  "A Journey Home#101": {
    "src": "Listen, this isn't the first time something like this has happened- Y'know. Someone gets curious, retraces their steps.",
    "dst": "Dinle, böyle bir şey ilk kez olmuyor- Bilirsin. Birinin merakı kabarır, geldiği yolu geri yürür.",
    "role": "desc",
@@ -950,7 +1036,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#096": {
+  "A Journey Home#102": {
    "src": "...I will make only one demand of you. Whatever happens...come back alive.",
    "dst": "...senden tek bir şey isteyeceğim. Ne olursa olsun... sağ dön.",
    "role": "desc",
@@ -960,7 +1046,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#097": {
+  "A Journey Home#103": {
    "src": "If you couldn't tell, this whole thing's meant to be a one way trip. The bridge, the cave-in, everyone trying to discourage you.",
    "dst": "Anlamadıysan söyleyeyim, bu iş tek yönlü bir yolculuk olsun diye tasarlandı. Köprü, göçük, herkesin seni vazgeçirmeye çalışması.",
    "role": "desc",
@@ -970,7 +1056,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#098": {
+  "A Journey Home#104": {
    "src": "It's not wise to be here- After all, you weren't the one out of your group of three that got permission to stay. Yeah, I heard about the tournament results.",
    "dst": "Burada olman akıllıca değil- Sonuçta üç kişilik grubundan kalma izni alan sen değildin. Evet, turnuva sonuçlarını duydum.",
    "role": "desc",
@@ -980,7 +1066,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#099": {
+  "A Journey Home#105": {
    "src": "He's dead asleep. You could probably ring a church bell an inch above his head and he'd stay unconscious.",
    "dst": "Ölü gibi uyuyor. Kafasının bir parmak üstünde kilise çanı çalsan muhtemelen yine uyanmaz.",
    "role": "desc",
@@ -990,7 +1076,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#100": {
+  "A Journey Home#106": {
    "src": "That looks like the stuff. See? That wasn't so hard. Alright, now!",
    "dst": "İşte bu. Gördün mü? O kadar da zor değildi. Pekâlâ, şimdi!",
    "role": "desc",
@@ -1000,7 +1086,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#101": {
+  "A Journey Home#107": {
    "src": "So...you got two choices, buddy. We can let this slide between us. We can. You can go marching right back to {p} and my lips will be sealed.",
    "dst": "Yani... iki seçeneğin var, dostum. Bu işi aramızda kapatabiliriz. Kapatabiliriz. Sen doğruca {p} bölgesine dönersin, ben de ağzımı açmam.",
    "role": "desc",
@@ -1010,7 +1096,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#102": {
+  "A Journey Home#108": {
    "src": "Alas, I am afraid my hands are quite tied here. There is little I can do- you recall what I said in the meeting.",
    "dst": "Ne yazık ki burada elim kolum bağlı. Yapabileceğim pek bir şey yok- toplantıda ne dediğimi hatırlarsın.",
    "role": "desc",
@@ -1020,8 +1106,8 @@
    "speaker": "",
    "source": "captured"
   },
-  "A Journey Home#103": {
-   "src": "Or, you can live life dangerously and follow me on the train to {p}. Better make your choice quick, though it's leaving soon.",
+  "A Journey Home#109": {
+   "src": "Or, you can live life dangerously and follow me on the train to {p}. Better make your choice quick, though- it's leaving soon.",
    "dst": "Ya da tehlikeli yaşarsın ve trende beni takip edip {p} yoluna düşersin. Kararını çabuk ver ama, tren birazdan kalkıyor.",
    "role": "desc",
    "kind": "dialogue",
@@ -1030,7 +1116,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#104": {
+  "A Journey Home#110": {
    "src": "If I see you in the passenger cabin, well...that'll be that, and you'll just have to wait and see what comes of it.",
    "dst": "Seni yolcu kabininde görürsem, şey... iş biter, sen de bundan ne çıkacağını bekleyip görürsün.",
    "role": "desc",
@@ -1040,7 +1126,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#105": {
+  "A Journey Home#111": {
    "src": "Join the Caravan Driver in the passenger car at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki yolcu vagonunda Kervan Sürücüsü'ne katıl.",
    "role": "desc",
@@ -1050,7 +1136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#106": {
+  "A Journey Home#112": {
    "src": "Last chance to back out. This your choice?",
    "dst": "Vazgeçmek için son şans. Kararın bu mu?",
    "role": "desc",
@@ -1060,7 +1146,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#107": {
+  "A Journey Home#113": {
    "src": "Well, you better get headed on the long walk back to {p} then.",
    "dst": "Eh, o zaman {p} bölgesine giden uzun yola koyulsan iyi olur.",
    "role": "desc",
@@ -1070,7 +1156,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#108": {
+  "A Journey Home#114": {
    "src": "Arrive in Fruma.",
    "dst": "Fruma'ya var.",
    "role": "desc",
@@ -1080,7 +1166,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#109": {
+  "A Journey Home#115": {
    "src": "Well. We've arrived.",
    "dst": "Eh. Vardık.",
    "role": "desc",
@@ -1090,7 +1176,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#110": {
+  "A Journey Home#116": {
    "src": "....",
    "dst": "",
    "role": "desc",
@@ -1100,7 +1186,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#111": {
+  "A Journey Home#117": {
    "src": "You know what they say about curiosity, and how it killed the cat. You the type to believe satisfaction'll bring it back?",
    "dst": "Merakın kediyi öldürdüğünü söylerler, bilirsin. Sen tatmin olunca kedinin dirileceğine inananlardan mısın?",
    "role": "desc",
@@ -1110,7 +1196,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#112": {
+  "A Journey Home#118": {
    "src": "Well, 'kittycat,' you didn't find the cream- just the hound dogs.",
    "dst": "Eh, 'pisicik', kaymağı bulamadın- sadece av köpeklerini buldun.",
    "role": "desc",
@@ -1120,7 +1206,7 @@
    "speaker": "Fruman Guard",
    "source": "wiki"
   },
-  "A Journey Home#113": {
+  "A Journey Home#119": {
    "src": "Intruder to Fruma, you are under arrest! Now march!",
    "dst": "Fruma'ya izinsiz giren, tutuklusun! Yürü bakalım!",
    "role": "desc",
@@ -1130,7 +1216,7 @@
    "speaker": "Fruman Guard",
    "source": "wiki"
   },
-  "A Journey Home#114": {
+  "A Journey Home#120": {
    "src": "You really thought the Driver was on your side, intruder? What a fool you are. We gave you every chance to quit this endeavor, but here you are. Let's go.",
    "dst": "Sürücünün senin tarafında olduğunu gerçekten sandın mı, davetsiz misafir? Ne aptalsın. Bu işten vazgeçmen için sana her fırsatı verdik, ama yine de buradasın. Yürü.",
    "role": "desc",
@@ -1140,7 +1226,7 @@
    "speaker": "Commander Lilles",
    "source": "wiki"
   },
-  "A Journey Home#115": {
+  "A Journey Home#121": {
    "src": "Commander! We must speak immediately!",
    "dst": "Komutanım! Hemen konuşmamız lazım!",
    "role": "desc",
@@ -1150,7 +1236,7 @@
    "speaker": "Guard Captain",
    "source": "wiki"
   },
-  "A Journey Home#116": {
+  "A Journey Home#122": {
    "src": "I have urgent news to report from the gate.",
    "dst": "Kapıdan bildirmem gereken acil haberler var.",
    "role": "desc",
@@ -1160,7 +1246,7 @@
    "speaker": "Guard Captain",
    "source": "wiki"
   },
-  "A Journey Home#117": {
+  "A Journey Home#123": {
    "src": "If it is truly so urgent, let's speak.",
    "dst": "Gerçekten bu kadar acilse, konuşalım.",
    "role": "desc",
@@ -1170,7 +1256,7 @@
    "speaker": "Commander Lilles",
    "source": "wiki"
   },
-  "A Journey Home#118": {
+  "A Journey Home#124": {
    "src": "Soldiers! Keep the intruder still. I've every faith in you.",
    "dst": "Askerler! Davetsiz misafiri kıpırdatmayın. Size tüm kalbimle güveniyorum.",
    "role": "desc",
@@ -1180,7 +1266,7 @@
    "speaker": "Commander Lilles",
    "source": "wiki"
   },
-  "A Journey Home#119": {
+  "A Journey Home#125": {
    "src": "Defeat the guards and escape.",
    "dst": "Muhafızları yen ve kaç.",
    "role": "desc",
@@ -1190,7 +1276,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#120": {
+  "A Journey Home#126": {
    "src": "Leave {p}.",
    "dst": "{p} bölgesinden ayrıl.",
    "role": "desc",
@@ -1200,7 +1286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#121": {
+  "A Journey Home#127": {
    "src": "Mmn. Hey there, stranger.",
    "dst": "Hımm. Selam, yabancı.",
    "role": "desc",
@@ -1210,7 +1296,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#122": {
+  "A Journey Home#128": {
    "src": "Anythin' I can help you with?",
    "dst": "Yardım edebileceğim bi' şey var mı?",
    "role": "desc",
@@ -1220,7 +1306,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#123": {
+  "A Journey Home#129": {
    "src": "Hm. Suppose there's no harm. But watch yourself, alright?",
    "dst": "Hm. Bir zararı yok herhalde. Ama dikkat et, tamam mı?",
    "role": "desc",
@@ -1230,7 +1316,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#124": {
+  "A Journey Home#130": {
    "src": "This here's our home. I wouldn't take too kindly to you messin' anything up, understand?",
    "dst": "Burası bizim evimiz. Herhangi bi' şeyi dağıtırsan hiç hoş karşılamam, anladın mı?",
    "role": "desc",
@@ -1240,7 +1326,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#125": {
+  "A Journey Home#131": {
    "src": "...doin' alright, all things considered. Weather's nice, I suppose. Festival comin' up.",
    "dst": "...idare ediyoruz, her şeye rağmen. Hava güzel sanırım. Festival yaklaşıyor.",
    "role": "desc",
@@ -1250,7 +1336,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#126": {
+  "A Journey Home#132": {
    "src": "But that ain't none of our business, really. If you didn't need anythin' else, I'll kindly ask you to take your leave.",
    "dst": "Ama o aslında bizi pek ilgilendirmez. Başka bi' şeye ihtiyacın yoksa, kibarca gitmeni rica edeceğim.",
    "role": "desc",
@@ -1260,7 +1346,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#127": {
+  "A Journey Home#133": {
    "src": "Hm. Good. Have a nice day, now.",
    "dst": "Hm. İyi. İyi günler, hadi.",
    "role": "desc",
@@ -1270,7 +1356,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#128": {
+  "A Journey Home#134": {
    "src": "Hmm? And who may you be?",
    "dst": "Hmm? Peki sen kim oluyorsun?",
    "role": "desc",
@@ -1280,7 +1366,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#129": {
+  "A Journey Home#135": {
    "src": "Hoh, oh well. Might I help you with something?",
    "dst": "Hoh, eh peki. Sana bir konuda yardım edebilir miyim?",
    "role": "desc",
@@ -1290,7 +1376,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#130": {
+  "A Journey Home#136": {
    "src": "Ah, completing some assorted metalworking projects. There always seems to be something to replace or maintain around here...",
    "dst": "Ah, çeşitli metal işlerini bitiriyorum. Buralarda değiştirilecek ya da bakım yapılacak hep bir şey çıkıyor...",
    "role": "desc",
@@ -1300,7 +1386,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#131": {
+  "A Journey Home#137": {
    "src": "Though, I certainly am no expert! But I can handle the tools well enough, and that is all that is needed for the task.",
    "dst": "Gerçi, kesinlikle uzman değilim! Ama aletleri yeterince iyi kullanabiliyorum, bu iş için de gereken tek şey bu.",
    "role": "desc",
@@ -1310,7 +1396,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#132": {
+  "A Journey Home#138": {
    "src": "Farewell, stranger! I hope that you will return home safely.",
    "dst": "Hoşça kal, yabancı! Umarım evine sağ salim dönersin.",
    "role": "desc",
