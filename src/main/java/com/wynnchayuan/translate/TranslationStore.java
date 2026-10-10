@@ -156,6 +156,33 @@ public final class TranslationStore {
         return peekPlainNames;
     }
 
+    /**
+     * 採集工具的名稱（{@code Dernic Pickaxe T{~}}），含名稱那一列的外框。
+     *
+     * <h2>為什麼不放進 {@link #plainNameKeys}</h2>
+     * 工具的名稱帶著等級的數字，模板裡是 {@code T{~}}。名稱列的那條路
+     * （{@link #nameRowInner}）不收帶佔位符的名字，所以工具的名稱列在語料裡是
+     * <b>整列</b>的條目（{@code {#}{#}{#}{#}{#}Dernic Pickaxe T{~}}），跟素材那種
+     * 「一個名字、各種外框共用」不一樣，按住 Shift 也就輪不到它
+     * （使用者 2026-10-10：「工具 shift 變回原文也可以裝」）。
+     *
+     * <p>認形狀而不是列名單：材質是一個首字大寫的詞，工具是四種之一，後面接
+     * {@code T{~}}，前後只能是圖示。句子裡提到工具的（「再 {~} 級就能使用…」
+     * 「已完成購買…」）不是這個形狀，按住 Shift 照舊是譯文。
+     */
+    private static final java.util.regex.Pattern TOOL_NAME = java.util.regex.Pattern.compile(
+            "^(?:\\{#})*[A-Z][a-z]+ (?:Pickaxe|Axe|Scythe|Rod) T\\{~}(?:\\{#})*$");
+
+    /** 見 {@link #TOOL_NAME}。 */
+    static boolean isToolName(String key) {
+        return key != null && TOOL_NAME.matcher(key).matches();
+    }
+
+    /** 按住 Shift 時要看原文的名字：素材、材料，以及採集工具。 */
+    private boolean peeked(String key) {
+        return peekPlainNames && (plainNameKeys.contains(key) || isToolName(key));
+    }
+
     /** 這個原文是不是素材或材料的名稱。見 {@link #plainNameKeys}。 */
     public boolean isPlainName(String key) {
         return key != null && plainNameKeys.contains(key.strip());
@@ -2110,8 +2137,8 @@ public final class TranslationStore {
         if (!translateNames && gearOnly(key)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
-        if (peekPlainNames && plainNameKeys.contains(key)) {
-            return null;                       // 按住 Shift：素材與材料看原文
+        if (peeked(key)) {
+            return null;                       // 按住 Shift：素材、材料與採集工具看原文
         }
         if (isNameRow(key)) {
             return null;                       // 名稱那一列不收整列的譯文，見 #nameRowInner
@@ -2306,8 +2333,8 @@ public final class TranslationStore {
         if (!translateNames && gearOnly(src)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
-        if (peekPlainNames && plainNameKeys.contains(src)) {
-            return null;                       // 按住 Shift：素材與材料看原文
+        if (peeked(src)) {
+            return null;                       // 按住 Shift：素材、材料與採集工具看原文
         }
         return entries.get(src);
     }
