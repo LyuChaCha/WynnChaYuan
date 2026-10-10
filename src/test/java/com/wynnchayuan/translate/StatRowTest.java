@@ -76,6 +76,9 @@ public final class StatRowTest {
         starts(store, "Elemental Spell Damage {#}+{~} [{~}, {~}]", "元素法術傷害");
         starts(store, "Damage Scale{#} [{~}]", "傷害適性");
         starts(store, "Main Scale{#} [{~}]", "主要適性");
+        // WynnMod 重畫的那一種：前面多一個圖示與空白，括號緊貼著欄距
+        starts(store, true, "{#} Main Scale{#}[{~}]", "{#} 主要適性");
+        starts(store, true, "{#} Damage Scale{#}[{~}]", "{#} 傷害適性");
         starts(store, "Walk Speed {#}+{~} [{~}]", "移動速度");
         starts(store, "Health Regen {#}-{~} [{~}]", "生命回復");
         starts(store, "Teleport Cost {#}-{~} [{~}]", "傳送消耗");
@@ -85,6 +88,7 @@ public final class StatRowTest {
         starts(store, true, "Spell Damage {#}+{~} [{~}]", "法術傷害百分比");
         starts(store, false, "Spell Damage {#}+{~} [{~}]", "法術傷害值");
 
+        truncated(store);
         everyLabel(store);
         ownerLabels(store);
         notAGap(store);
@@ -290,6 +294,65 @@ public final class StatRowTest {
                 all.contains("普攻傷害") && !all.contains("Main Attack"));
         report("畫出來數值與括號原樣（實際：" + all + "）",
                 all.startsWith("+22 ") && all.endsWith("[45%]"));
+    }
+
+    /**
+     * 標籤被砍掉尾巴、接兩個點的屬性列。
+     *
+     * <h2>實機回報（2026-10-10）</h2>
+     * WynnMod 重畫的裝備說明把標籤欄限在固定寬度，「Elemental Spell Damage」放不下，
+     * 畫出來是「Elemental Spell Da..」。整份說明都是中文，只有這一列留著英文。
+     * 第一列是診斷檔 {@code wynnmod-tooltip-2.json} 第 33 列的模板，一字不改。
+     */
+    private static void truncated(TranslationStore store) {
+        String raw = LineTranslator.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, false);
+        String pct = LineTranslator.lookup("Elemental Spell Damage {#}+{~} [{~}]", store, true);
+        report("前提：完整的標籤查得到，實數與百分比是兩種譯法（實際：" + raw + "／" + pct + "）",
+                raw != null && pct != null && !raw.equals(pct));
+        String rawLabel = raw == null ? "" : raw.substring(0, raw.indexOf(" {#}"));
+        String pctLabel = pct == null ? "" : pct.substring(0, pct.indexOf(" {#}"));
+
+        equals(store, false, "Elemental Spell Da..{#}*+{~} [{~}]", rawLabel + "{#}*+{~} [{~}]");
+        equals(store, true, "Elemental Spell Da..{#}*+{~} [{~}]", pctLabel + "{#}*+{~} [{~}]");
+        // 砍在哪個字都一樣，砍在空白後面的、前面帶圖示的也是
+        equals(store, true, "Elemental Sp..{#}+{~} [{~}]", pctLabel + "{#}+{~} [{~}]");
+        equals(store, true, "Elemental Spell ..{#}+{~} [{~}]", pctLabel + "{#}+{~} [{~}]");
+        equals(store, true, "{#} Elemental Spell Da..{#}+{~} [{~}]",
+                "{#} " + pctLabel + "{#}+{~} [{~}]");
+
+        // 反面一：開頭對得上兩個以上不同的標籤就不猜
+        java.util.Set<String> bases = new java.util.TreeSet<>();
+        try {
+            for (String key : labels()) {
+                if (key.startsWith("Elemental ")) {
+                    bases.add(key.replaceAll("(%| Raw)$", ""));
+                }
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
+        report("前提：Elemental 開頭的標籤不只一個（實際：" + bases + "）", bases.size() > 1);
+        nothing(store, "Elemental ..{#}+{~} [{~}]");
+        // 反面二：太短的開頭、後面沒有數值的「..」、沒有這個標籤，都留原文
+        nothing(store, "Elem..{#}+{~} [{~}]");
+        nothing(store, "Elemental Spell Da..{#}");
+        nothing(store, "Elemental Spell Da...");
+        nothing(store, "Elemental..");
+
+        // 逐片段那條路拿到的是單獨一段，數值在別的片段裡。跟沒被砍的標籤同一個查法。
+        String plainRaw = LineTranslator.lookup("Elemental Spell Damage", store, false);
+        String plainPct = LineTranslator.lookup("Elemental Spell Damage", store, true);
+        report("前提：單獨一段的完整標籤查得到（實際：" + plainRaw + "／" + plainPct + "）",
+                plainRaw != null && plainPct != null);
+        equals(store, false, "Elemental Spell Da..", plainRaw);
+        equals(store, true, "Elemental Spell Da..", plainPct);
+        nothing(store, "Completely Made Up La..{#}+{~} [{~}]");
+    }
+
+    private static void equals(TranslationStore store, boolean percent, String row, String want) {
+        String hit = LineTranslator.lookup(row, store, percent);
+        report("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
+                + "-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
     }
 
     private static void starts(TranslationStore store, boolean percent,

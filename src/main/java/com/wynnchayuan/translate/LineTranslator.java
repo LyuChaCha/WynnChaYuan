@@ -6811,6 +6811,18 @@ public final class LineTranslator {
             return null;
         }
         String tail = template.substring(from);
+        String whole = untruncated(label, tail, store);
+        if (whole != null) {
+            // 標籤被砍過（「Elemental Spell Da..」）：換回完整的那一條，兩個點不留
+            tail = tail.substring(tail.indexOf(TRUNCATED) + TRUNCATED.length());
+            label = whole;
+            if (tail.isBlank()) {
+                // 逐片段那條路：數值在別的片段裡，這一段只有標籤。跟同一份說明裡
+                // 沒被砍的標籤走同一個查法，上下兩列的用詞才會一致。
+                String zh = lookupTrimmed(label, store, percent);
+                return zh == null || zh.isBlank() ? null : zh + tail;
+            }
+        }
         if (store.itemNameOnly(label)) {
             // 物品的名字不是標籤。後面接冒號的看語料有沒有另外收帶冒號的那一條；
             // 接數量的（「名字 [3/5]」「名字 (2)」）才真的是在講那件物品，照舊翻；
@@ -6869,6 +6881,71 @@ public final class LineTranslator {
         }
         String zh = statLabel(name, store, percent);
         return zh == null ? null : translateTail(lead, store) + zh + translateTail(tail, store);
+    }
+
+    /** WynnMod 砍標籤時接在後面的記號。見 {@link #untruncated}。 */
+    private static final String TRUNCATED = "..";
+
+    /** 後面沒有數值可以佐證時，砍剩的開頭至少要這麼長才認。見 {@link #untruncated}。 */
+    private static final int MIN_BARE_TRUNCATED = 10;
+
+    /**
+     * 標籤被<b>砍掉尾巴</b>的屬性列，原本的標籤是哪一條。
+     *
+     * <h2>實機回報（2026-10-10）</h2>
+     * WynnMod 重畫的裝備說明裡，標籤欄放不下的字會被砍掉、接上兩個點：
+     *
+     * <pre>
+     *   Elemental Spell Da..{#}*+{~} [{~}]
+     * </pre>
+     *
+     * 點算數值字元，所以切出來的標籤是「Elemental Spell Da」、兩個點在尾巴開頭。
+     * 那不是任何一條鍵，整份說明只剩這一列是英文。
+     *
+     * <h2>三個條件</h2>
+     * 尾巴要以兩個點開頭、點後面要真的有數值、開頭在 {@code ui-labels.json} 裡
+     * 只對得上一個標籤（見 {@link TranslationStore#completeUiLabel}）。
+     *
+     * <p>逐片段那條路拿到的是<b>單獨一段</b>「Elemental Spell Da..」，數值在別的片段裡。
+     * 那種只認剛好兩個點收尾、而且開頭夠長（{@value #MIN_BARE_TRUNCATED} 個字以上）的：
+     * 句子的刪節號是三個點，短短一個字加兩個點的也不是砍過的標籤。
+     *
+     * <p>畫面上的欄位不用另外處理：欄距是照<b>原文那一列</b>的寬度補的，而原文
+     * 就是砍過的那個寬度，數值還是落在同一欄。
+     *
+     * @return 換回完整標籤的那一段（行首的圖示與空白原樣留著）；不是這種列回傳 {@code null}
+     */
+    private static String untruncated(String label, String tail, TranslationStore store) {
+        int dots = 0;
+        while (dots < tail.length() && Character.isWhitespace(tail.charAt(dots))) {
+            dots++;
+        }
+        if (!tail.startsWith(TRUNCATED, dots)) {
+            return null;
+        }
+        String after = tail.substring(dots + TRUNCATED.length());
+        boolean bare = after.isBlank();
+        if (!bare && after.indexOf(GlyphSplitter.NUMBER_PLACEHOLDER) < 0) {
+            return null;
+        }
+        // 行首的圖示與空白不是標籤的一部分（「{#} Main Scale」）
+        int start = 0;
+        while (start < label.length()) {
+            if (label.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER, start)) {
+                start += GlyphSplitter.GLYPH_PLACEHOLDER.length();
+            } else if (Character.isWhitespace(label.charAt(start))) {
+                start++;
+            } else {
+                break;
+            }
+        }
+        // 砍在空白後面的（「Elemental Spell ..」）空白被算進尾巴了，接回來再對
+        String head = label.substring(start) + tail.substring(0, dots);
+        if (bare && head.strip().length() < MIN_BARE_TRUNCATED) {
+            return null;
+        }
+        String whole = store.completeUiLabel(head);
+        return whole == null ? null : label.substring(0, start) + whole;
     }
 
     /** 尾巴的第一個字（不算空白）是不是括號——「{@code 名字 [數量]}」那種列。見 {@link #statRow}。 */
