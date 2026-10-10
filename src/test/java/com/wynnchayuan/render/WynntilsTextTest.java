@@ -7,6 +7,7 @@ import com.wynntils.core.text.StyledText;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 /**
  * 就地取代 Wynntils 疊層裡的字。
@@ -45,6 +46,7 @@ public final class WynntilsTextTest {
         entityName(config, store);
         switched(config);
         wynntilsScreens(config, store);
+        beaconCount(config);
 
         System.out.println(failures == 0 ? "\n就地取代：全部通過"
                 : "\n就地取代：" + failures + " 項失敗");
@@ -323,6 +325,68 @@ public final class WynntilsTextTest {
      * <p>真正的風險是<b>換太多</b>：這個入口所有字都會經過，
      * 所以「查不到就原樣回去」與「關掉就完全不動」兩邊都要測。
      */
+    /**
+     * Wynntils 的 Lootrun 信標計數：顏色不能被換成同名的裝備。
+     *
+     * <h2>實機回報（2026-10-10）：「武器翻譯會翻到信標名稱」</h2>
+     * <pre>
+     *   White: 0/1       ->  纯白之戒 (White): 0/1
+     *   Crimson: 0/2     ->  绯红法器 (Crimson): 0/2
+     *   Rainbow: 0 (0)   ->  彩虹之戒 (Rainbow): 0 (0)
+     * </pre>
+     *
+     * 那幾列照 Wynntils 的樣板抄（{@code LootrunBeaconCountOverlay}）：一列一個
+     * 顏色，整列同一個樣式。釘兩件事：六個語言十三個顏色都翻得出來而且沒有裝備名
+     * 混進去；語料<b>沒收</b>的「物品名 + 冒號 + 數值」原樣留著。
+     */
+    private static void beaconCount(CollectorConfig config) {
+        System.out.println("=== 信標計數 ===");
+        List<String> rows = List.of("\u00a7eYellow: 0", "\u00a79Blue: 0", "\u00a75Purple: 0",
+                "\u00a77Gray: 0/3", "\u00a76Orange: 0 (+1) (5)", "\u00a7bAqua: 0",
+                "\u00a78Dark Gray: 0/1", "\u00a7aGreen: 0", "\u00a7cRed: 0 (0)",
+                "\u00a7fWhite: 0/1", "\u00a7dPink: 0", "\u00a74Crimson: 0/2",
+                "\u00a72Rainbow: 0 (10)");
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")) {
+            TranslationStore store = new TranslationStore();
+            store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
+            store.setNameMode(CollectorConfig.ItemNames.BOTH);
+            StringBuilder left = new StringBuilder();
+            StringBuilder gear = new StringBuilder();
+            for (String row : rows) {
+                StyledText in = StyledText.fromString(row);
+                String plain = in.getStringWithoutFormatting();
+                String colour = plain.substring(0, plain.indexOf(':'));
+                String out = WynntilsText.screenText(in, config, store)
+                        .getStringWithoutFormatting();
+                if ("zh_cn".equals(lang)) {
+                    System.out.println("      " + plain + "  ->  " + out);
+                }
+                if (out.equals(plain)) {
+                    left.append(' ').append(colour);
+                }
+                // 「譯名 (原文)」是物品名稱才有的寫法
+                if (out.contains("(" + colour + ")")) {
+                    gear.append(' ').append(colour);
+                }
+                check(lang + "：" + plain + " 的數值原樣留著（實際 " + out + "）",
+                      out.endsWith(plain.substring(plain.indexOf(':') + 1)));
+            }
+            check(lang + "：★ 沒有顏色被換成裝備名（實際" + gear + "）", gear.length() == 0);
+            check(lang + "：十三個顏色都翻了（沒翻的" + left + "）", left.length() == 0);
+        }
+        // 語料沒收的那一種：冒號前面只是一件裝備的名字
+        TranslationStore store = new TranslationStore();
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", "zh_cn"));
+        store.setNameMode(CollectorConfig.ItemNames.BOTH);
+        for (String name : List.of("Halcyon", "Cumulonimbus")) {
+            check("前提：" + name + " 是翻好的裝備名", store.lookup(name) != null);
+            StyledText in = StyledText.fromString("\u00a7f" + name + ": 0/1");
+            StyledText out = WynntilsText.screenText(in, config, store);
+            check("★ 「" + name + ": 0/1」不是屬性列，原樣留著（實際 "
+                    + out.getStringWithoutFormatting() + "）", out == in);
+        }
+    }
+
     private static void wynntilsScreens(CollectorConfig config, TranslationStore store) {
         StyledText inProgress = StyledText.fromString("Currently in progress");
         StyledText shown = WynntilsText.screenText(inProgress, config, store);

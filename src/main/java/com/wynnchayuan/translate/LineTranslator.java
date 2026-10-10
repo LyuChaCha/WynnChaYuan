@@ -105,6 +105,7 @@ public final class LineTranslator {
         List<LineParts.Piece> places = null;
         List<LineParts.Piece> glyphs = null;
         boolean flowed = false;
+        boolean rewrapped = false;
         if ((translated == null || translated.isBlank()) && layoutRow) {
             // 攤平查表這條路<b>只能</b>給「被 tooltip 寬度折斷的一整段」用：
             // 它把換行壓成空格，等於假設每一行都是同一句話的一部分。
@@ -181,6 +182,7 @@ public final class LineTranslator {
                 translated = swapped;
             }
             translated = wrapToBlock(translated, run);
+            rewrapped = true;
         }
         translated = breakBeforeOriginal(translated, widestOf(run), store,
                                          piece -> widthOf(Component.literal(piece)));
@@ -200,9 +202,51 @@ public final class LineTranslator {
         }
         List<Component> out = new ArrayList<>(run.size());
         for (int i = 0; i < run.size(); i++) {
-            out.add(unslant(realign(run.get(i), built.get(i), centered[i])));
+            // 我們自己重折的句子，第 i 列裝的不是原文第 i 列的那幾個字。列數剛好一樣
+            // 只是巧合，不能拿原文那一列的座標來對。見 #hasInnerGap。
+            Component row = built.get(i);
+            out.add(unslant(rewrapped && hasInnerGap(row)
+                    ? row : realign(run.get(i), row, centered[i])));
         }
         return out;
+    }
+
+    /**
+     * 這一列<b>字的中間</b>夾著排版偏移嗎——前面已經有字，後面還有字。
+     *
+     * <h2>實機回報（2026-10-10）：「lootrun 的文字格式怪怪的」</h2>
+     * Lootrun 賜福卡的敘述是一整句折成三列，譯文照使用者的語序重寫過，再由我們
+     * 折回三列：
+     *
+     * <pre>
+     *   For the rest of this Lootrun,          每开启一个宝箱，
+     *   gain +2 [圖示]Dexterity (Max x15)      +2 [圖示]　　　灵巧 (上限 x15)，
+     *   everytime you open a Chest             本次 Lootrun 都会持续生效
+     * </pre>
+     *
+     * 圖示後面跟著一個兩像素的偏移（圖示與屬性名之間的縫）。{@link #realign} 把它
+     * 當成欄位交界，要讓「灵巧」落回原文「Dexterity」的起點——原文那一列前面多了
+     * 一個「gain 」，於是那條縫被撐開二十幾像素。
+     *
+     * <p>逐列對座標的前提是<b>譯文第 i 列就是原文第 i 列</b>：整段收在語料裡、
+     * 列數照原文寫的那種成立；我們自己重折的不成立，圖示落在同一列只是剛好。
+     * 所以重折過的列，中間有偏移就照重建出來的樣子，不對座標。只有行首縮排的列
+     * （置中、縮排）不受影響，照舊走 {@link #realign}。
+     */
+    private static boolean hasInnerGap(Component row) {
+        boolean textBefore = false;
+        boolean gapPending = false;
+        for (Run r : mergeSpaces(splitGaps(runs(row)))) {
+            if (r.space()) {
+                gapPending = textBefore;
+            } else if (!r.text().isBlank()) {
+                if (gapPending) {
+                    return true;
+                }
+                textBefore = true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -3818,7 +3862,9 @@ public final class LineTranslator {
      */
     public static Component translateChat(StyledText message, TranslationStore store,
                                           Boolean centred, boolean inPanel) {
-        LineParts parts = LineParts.of(message);
+        // 「某某人丟了炸彈」這類廣播：別人的名字收成 {u}，語料一條所有人通用。
+        // 不是那種句型就是平常的 LineParts.of。見 Broadcasts。
+        LineParts parts = com.wynnchayuan.capture.Broadcasts.parts(message);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
@@ -4675,6 +4721,7 @@ public final class LineTranslator {
         sharedCentre(runRows, centred);
         spacePadded(runRows, centred);
         sameLeadList(runRows, centred);
+        onChatCentre(runRows, centred);
         return centred;
     }
 
@@ -4703,6 +4750,41 @@ public final class LineTranslator {
         }
         return false;
     }
+
+    /**
+     * 這一列是不是面板上「兩欄併排」的那一種：至少兩段實字，中間隔著<b>夠寬</b>的
+     * 排版偏移。
+     *
+     * <h2>跟 {@link #chatPanel} 差在哪</h2>
+     * 那一支是整塊已經攢好之後問的，任何正的偏移都算欄界。這一支是就地取代模式
+     * 拿來決定「要不要從這一列開始把訊息攔下來」的（見 {@code ChatListener#onMatch}），
+     * 誤判的代價高得多——被攔的訊息會晚兩百毫秒、而且跟後面的訊息併成一塊。
+     * 而一般的聊天訊息裡也有正的偏移：圖示與字之間一兩個像素的字距微調。
+     * 所以這裡只認寬的：信標面板兩欄之間是四十幾到八十幾像素。
+     */
+    public static boolean panelRow(StyledText row) {
+        for (List<Run> line : splitRows(runs(row.getComponent()))) {
+            int columns = 0;
+            boolean text = false;
+            for (Run run : line) {
+                if (run.space()) {
+                    if (text && run.px() >= PANEL_GAP_MIN) {
+                        columns++;
+                        text = false;
+                    }
+                } else if (hasContent(run.text())) {
+                    text = true;
+                }
+            }
+            if ((text ? columns + 1 : columns) >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 見 {@link #panelRow}：兩欄之間至少隔這麼寬才算。字距微調是一到四像素。 */
+    private static final int PANEL_GAP_MIN = 16;
 
     /** 一句話最多折成幾列。信標的敘述最長五、六列。 */
     private static final int PANEL_RUN_MAX = 8;
@@ -4968,6 +5050,7 @@ public final class LineTranslator {
             sharedCentre(origRows, centre);
             spacePadded(origRows, centre);
             sameLeadList(origRows, centre);
+            onChatCentre(origRows, centre);
         }
         // 這一塊是不是「兩欄併排的面板」。見 #columnPanel。
         //
@@ -5264,6 +5347,93 @@ public final class LineTranslator {
         return isCjkBreakable(a) || isCjkBreakable(b)
                 ? !(isWordChar(a) && isWordChar(b)) : false;
     }
+
+    /**
+     * Wynncraft 聊天的置中線，乘以二（實際是 154.5px）。
+     *
+     * <p>伺服器置中是照<b>固定的聊天寬度</b>算的：縮排 = 154.5 − 內容寬度的一半。
+     * 實機 log 與診斷檔裡量到的每一行都落在這條線上：
+     *
+     * <pre>
+     *   Choose a Beacon!（粗體）                 縮排 102 ＋ 104/2 = 154
+     *   Walk towards one to start a challenge    縮排  58 ＋ 192/2 = 154
+     *   [+1 Reward Pull]                         縮排 113 ＋  82/2 = 154
+     *   Welcome to Wynncraft!                    縮排  89 ＋ 131/2 = 154.5
+     *   and 2 mounts have no food in the…        縮排  46 ＋ 217/2 = 154.5
+     * </pre>
+     */
+    private static final int CHAT_CENTRE_X2 = 309;
+
+    /**
+     * 離那條線多遠以內算數（乘以二，也就是七個像素）。
+     *
+     * <p>伺服器取整數，奇數寬度會差半個像素；另外有少數標題它自己就算偏了——
+     * 「Mission Started」（粗體）縮排 103、內容 91，中心在 148.5，偏左六個像素。
+     * 2026-10-08 到 10-10 的 log 裡，行首有偏移的單欄列 133 列中 120 列偏離不到一個
+     * 像素，剩下的是這一種與面板的接續列（那種離得很遠，一百多像素）。
+     */
+    private static final int CHAT_CENTRE_SLACK_X2 = 14;
+
+    /**
+     * 單獨一行也認得出置中：它的中心就落在聊天的置中線上。
+     *
+     * <h2>實機回報（2026-10-10）：「部分還是會不對齊」</h2>
+     * 就地取代模式的「挑戰完成」那一塊：
+     *
+     * <pre>
+     *        挑战完成                      ← 兩行標題都往左偏
+     *     下一批信标即将出现！
+     *
+     *            [+1 奖励抽取次数]
+     *           [+10% 怪物伤害]
+     * </pre>
+     *
+     * 那一塊是<b>一列一則</b>訊息，每一則當場換掉。置中的判斷（{@link BlockLayout#centered}、
+     * {@link #sharedCentre}、{@link #spacePadded}）全都要<b>兩行以上</b>互相比才看得出來，
+     * 單獨一行一律當成靠左——縮排照抄原文，而中文短得多，整行就往左偏了半個寬度差
+     * （「Challenge Completed」換成「挑战完成」偏了三十幾像素；括號那幾列長度差不多，
+     * 所以看起來沒歪）。
+     *
+     * <p>不必跟別行比：伺服器是照固定的寬度置中的，中心落在那條線上就是置中。
+     *
+     * <h2>只管「整塊就這一列」的情況</h2>
+     * 兩行以上的訊息不在這裡管，原本那幾道判斷看得到別行，比這條線可靠。而且
+     * <b>折滿整個聊天寬度的散文</b>中心天生就在那條線附近——
+     * 「Hateful echoes erupt from the Portal. Wynn faces」縮排 8、寬 288，中心 152，
+     * 它是靠左的散文不是置中；算成置中的話整段就不會重新斷行了
+     * （{@code ChatReflowTest} 釘著這一條）。同一個道理，縮排太小的單獨一列
+     * （不到 {@value #CHAT_CENTRE_MIN_LEAD}px）也不認：那是寫滿一整行的句子。
+     * 分欄的列另有規則，同樣不在這裡管。
+     */
+    private static void onChatCentre(List<List<Run>> rows, boolean[] centre) {
+        int only = -1;
+        for (int i = 0; i < rows.size() && i < centre.length; i++) {
+            List<Run> row = rows.get(i);
+            if (rowWidth(row) - leadWidth(row) <= 0) {
+                continue;                              // 空行
+            }
+            if (only >= 0) {
+                return;                                // 不只一列有字
+            }
+            only = i;
+        }
+        if (only < 0 || centre[only]) {
+            return;
+        }
+        List<Run> row = rows.get(only);
+        int lead = leadWidth(row);
+        int body = rowWidth(row) - lead;
+        if (lead < CHAT_CENTRE_MIN_LEAD
+                || columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+            return;
+        }
+        if (Math.abs(2 * lead + body - CHAT_CENTRE_X2) <= CHAT_CENTRE_SLACK_X2) {
+            centre[only] = true;
+        }
+    }
+
+    /** 縮排不到這麼多的單獨一列不當成置中。見 {@link #onChatCentre}。 */
+    private static final int CHAT_CENTRE_MIN_LEAD = 16;
 
     /**
      * 聊天裡用空白墊出來的置中：幾行都有縮排、縮排長短不一，中心卻落在差不多的位置。
@@ -6641,10 +6811,21 @@ public final class LineTranslator {
             return null;
         }
         String tail = template.substring(from);
+        if (colonFirst(tail) && store.itemNameOnly(label)) {
+            return itemAsLabel(label, tail, store);
+        }
         if (!tail.isEmpty()) {
             String zh = statLabel(label, store, percent);
             if (zh != null) {
                 return zh + translateTail(tail, store);
+            }
+            if (colonFirst(tail)) {
+                // 語料只收了帶冒號的那一條（「Aqua:」）：冒號被算進數值尾巴，
+                // 上面查的是不帶冒號的「Aqua」，查不到。
+                String own = itemAsLabel(label, tail, store);
+                if (own != null) {
+                    return own;
+                }
             }
         }
         // 數值在<b>前面</b>的那一種：
@@ -6671,6 +6852,48 @@ public final class LineTranslator {
         }
         String zh = statLabel(name, store, percent);
         return zh == null ? null : translateTail(lead, store) + zh + translateTail(tail, store);
+    }
+
+    /** 尾巴的第一個字（不算空白）是不是冒號——「{@code 名字: 數值}」那種列。 */
+    private static boolean colonFirst(String tail) {
+        String t = tail.stripLeading();
+        return !t.isEmpty() && isTrailingColon(t.charAt(0));
+    }
+
+    /**
+     * 「{@code 名字: 數值}」的名字<b>只是一件物品的名字</b>。
+     *
+     * <h2>實機回報（2026-10-10）：「武器翻譯會翻到信標名稱」</h2>
+     * Wynntils 的 Lootrun 信標計數是一列一個顏色：
+     *
+     * <pre>
+     *   Yellow: 0        ->  黄色: 0
+     *   White: 0/1       ->  纯白之戒 (White): 0/1
+     *   Crimson: 0/2     ->  绯红法器 (Crimson): 0/2
+     *   Rainbow: 0 (0)   ->  彩虹之戒 (Rainbow): 0 (0)
+     * </pre>
+     *
+     * 冒號與後面的數字都算數值尾巴，於是標籤只剩「White」——一枚戒指的名字。
+     * 六個語言的裝備名補齊之後，四千多個裝備名都成了屬性列標籤的候選，其中不少
+     * 是一般的字。
+     *
+     * <p>物品的名字不是標籤。冒號前面那個字<b>只有</b>物品在用（別的檔案沒有同名
+     * 條目）時，這一列不算屬性列：語料另外收了帶冒號的那一條（{@code "White:"}）
+     * 就用它，沒收就留原文——留英文比寫上一件不相干的裝備好。
+     *
+     * @return 語料收了帶冒號的鍵時回傳譯好的整列，沒收回傳 {@code null}
+     */
+    private static String itemAsLabel(String label, String tail, TranslationStore store) {
+        String word = label.strip();
+        String own = store.lookupExact(word + ":");
+        if (own == null) {
+            return null;
+        }
+        String lead = label.substring(0, label.indexOf(word));
+        // 譯文自己帶著冒號，尾巴從冒號後面接
+        String t = tail.stripLeading();
+        String rest = t.substring(1);
+        return lead + own + translateTail(reattach(own, rest), store);
     }
 
     /**

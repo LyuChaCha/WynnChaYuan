@@ -16,11 +16,12 @@
 
 ### What it translates
 
-- **Item tooltips**: gear lore, stats and Major IDs, in a panel beside the tooltip or written into the tooltip itself
+- **Item tooltips**: gear, ingredients, materials and gathering tools (lore, stats, Major IDs), in a panel beside the tooltip or written into the tooltip itself
 - **Ability trees**: nodes, descriptions and archetypes for all five classes
 - **Quest dialogue and choices**: inside Wynncraft's own dialogue box (frame, nameplate and portrait kept), typed out in step with the original; or a separate box
 - **Quest tracker** and **NPC nameplates and floating text**
-- **Chat messages**: server messages, with column layouts such as the Lootrun summary and beacons kept aligned (player chat is never translated)
+- **Chat messages**: server messages, with column layouts such as the Lootrun summary and beacons kept aligned; bomb broadcasts too, with the player's name left as it is (player chat is never translated)
+- **Scoreboard**: the sidebar on the right with raid objectives, lootruns, party and guild war
 - **Menus and interfaces**: trade market, guild, store and other screens
 - **Lootruns, raids and dungeons**: missions, boons, beacons, aspects, gambits, loot panels, dungeon names
 - **Discoveries** and **title text**
@@ -31,6 +32,7 @@ Gear names stay in English by default; they can be turned on in the settings.
 
 - **Translations update themselves**: new translations are downloaded from GitHub on your next launch, no mod update needed
 - **Market search in your language**: type the translated name in the trade market, the English one is sent
+- **Hold Shift to see the original**: names of ingredients, materials and gathering tools switch back to English while Shift is held
 - **Copy chat**: copy recent chat lines for a report
 - **Screenshot** of the translation panel (no key by default; bind one under Controls)
 - **Settings** (Mod Menu, `/wcy`, or a key you bind yourself): a mode for each kind of text; translation, fallback and interface language; draggable and resizable boxes
@@ -97,11 +99,12 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 
 ### 翻譯範圍
 
-- **物品 tooltip**：裝備敘述、屬性與 Major ID，旁邊另開面板，或寫進原本的 tooltip
+- **物品 tooltip**：裝備、素材、材料與採集工具的敘述、屬性與 Major ID，旁邊另開面板，或寫進原本的 tooltip
 - **技能樹**：五個職業的節點、說明與流派
 - **任務對話與選項**：寫進 Wynncraft 自己的對話框（框、名牌、頭像不動），逐字打出的節奏跟原文同步；也可另開小框
 - **任務追蹤**與 **NPC 名牌、漂浮字**
-- **聊天訊息**：伺服器訊息，Lootrun 結算、信標這類分欄訊息保持對齊（玩家發言不翻）
+- **聊天訊息**：伺服器訊息，Lootrun 結算、信標這類分欄訊息保持對齊；炸彈廣播也翻，玩家的名字原樣保留（玩家發言不翻）
+- **記分板**：畫面右邊那一欄的討伐戰目標、Lootrun、隊伍與公會戰
 - **選單與介面**：交易市場、公會、商城等畫面
 - **Lootrun、討伐戰、地城**：使命、賜福、信標、Aspect、Gambit、戰利品面板、地城名稱
 - **探索點**與**畫面中央大字**
@@ -112,6 +115,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 
 - **譯文自動更新**：新的翻譯下次進遊戲就從 GitHub 下載，不必更新模組
 - **市集搜尋**：在交易市集打譯名，送出前自動換回英文原名
+- **按住 Shift 看原文**：素材、材料與採集工具的名稱，按住 Shift 時變回英文
 - **複製聊天**：複製最近的聊天訊息，方便回報
 - **截圖**：譯文面板截圖（按鍵預設不綁，到「按鍵設定」自己綁）
 - **設定**（Mod Menu、`/wcy` 或自己綁的按鍵）：每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小
