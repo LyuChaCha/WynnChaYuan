@@ -1859,17 +1859,19 @@ public final class TranslationStore {
      * 名稱列」之後才掛，畫完就放下。
      */
     public static void nameLine(boolean on) {
-        nameLine = on;
+        NAME_LINE.set(on);
     }
 
-    /** 見 {@link #nameLine}。算繪只有一條執行緒，用靜態的就夠。 */
-    private static volatile boolean nameLine = false;
+    /** 見 {@link #nameLine}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */
+    private static final ThreadLocal<Boolean> NAME_LINE =
+            ThreadLocal.withInitial(() -> Boolean.FALSE);
 
     public String lookup(String template) {
-        if (barItems && template != null && getsOriginal(template.strip())) {
+        if (BAR_ITEMS.get() && template != null && getsOriginal(template.strip())) {
             return null;                       // 這個位置不會是物品，見 barItemNames
         }
-        if (nameLine && template != null) {
+        boolean holdAppended = HOLD_APPENDED.get();
+        if (NAME_LINE.get() && template != null) {
             String own = gearOwnName(template);
             if (own != null) {
                 if (!translateNames) {
@@ -2018,11 +2020,12 @@ public final class TranslationStore {
      * <p>預設是關的：漏掛只會少一對括號，掛錯才會讓整份語料的名稱都不附原文。
      */
     public static void holdAppendedOriginal(boolean on) {
-        holdAppended = on;
+        HOLD_APPENDED.set(on);
     }
 
-    /** 見 {@link #holdAppendedOriginal}。算繪只有一條執行緒，用靜態的就夠。 */
-    private static volatile boolean holdAppended = false;
+    /** 見 {@link #holdAppendedOriginal}。每條執行緒各一份，理由見 {@link #BAR_ITEMS}。 */
+    private static final ThreadLocal<Boolean> HOLD_APPENDED =
+            ThreadLocal.withInitial(() -> Boolean.FALSE);
 
     /**
      * 接下來查的這一段<b>不在物品會出現的位置</b>：只有物品在用的名字查到了也不算數。
@@ -2051,16 +2054,40 @@ public final class TranslationStore {
      * 這幾條路會互相呼叫。
      */
     public static void barItemNames(boolean on) {
-        barItems = on;
+        BAR_ITEMS.set(on);
     }
 
     /** 見 {@link #barItemNames}。 */
     public static boolean itemNamesBarred() {
-        return barItems;
+        return BAR_ITEMS.get();
     }
 
-    /** 見 {@link #barItemNames}。算繪只有一條執行緒，用靜態的就夠。 */
-    private static volatile boolean barItems = false;
+    /**
+     * 見 {@link #barItemNames}。<b>每條執行緒各一份</b>。
+     *
+     * <h2>實機回報（2026-10-10，1.0.1）：「切換語言之後物品翻譯都會失效」</h2>
+     * 這裡原本是一個靜態的 {@code volatile boolean}，註解寫「算繪只有一條執行緒，
+     * 用靜態的就夠」。查表不只算繪那一條在做：收集端每 30 秒在背景執行緒整理一次
+     * {@code captured.json}（{@code CaptureStore#prune}），每一條都問
+     * {@link #hasTranslation}，那條路會走進 {@code LineTranslator#lookup}，
+     * 同樣「掛上、查、還原成進來時的值」。兩條執行緒交錯時：
+     *
+     * <pre>
+     *   背景   掛上（true）
+     *   算繪   讀到進來時的值 = true ……
+     *   背景   還原（false）
+     *   算繪   …… 還原成「進來時的值」= true      ← 從此沒有人會再把它放下
+     * </pre>
+     *
+     * 旗標一旦卡在開著，只有物品在用的名字（裝備、素材、材料）就<b>全部</b>查不到，
+     * 屬性與敘述照舊翻——畫面上是「名稱列英文、底下是譯文」，重開遊戲才會好。
+     * 切語言會讓所有快取作廢、整個畫面重翻一次，所以特別容易撞上；但它跟語言無關。
+     *
+     * <p>{@link #NAME_LINE}、{@link #HOLD_APPENDED} 只有算繪那條在寫，不會卡住，
+     * 但背景那條不該讀到「現在正在畫名稱列」，一起改掉。
+     */
+    private static final ThreadLocal<Boolean> BAR_ITEMS =
+            ThreadLocal.withInitial(() -> Boolean.FALSE);
 
     /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
     public boolean namesWithOriginal() {
