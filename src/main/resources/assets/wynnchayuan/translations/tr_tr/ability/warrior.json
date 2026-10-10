@@ -74,7 +74,7 @@
   },
   "ability-warrior#0243": {
    "src": "Gain +{~} Damage per {~}{#}Harmony.",
-   "dst": "Her {~}{#}Uyum için +{~} Hasar kazan.",
+   "dst": "Her {~2}{#}Uyum için +{~1} Hasar kazan.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -88,7 +88,7 @@
   },
   "ability-warrior#0241": {
    "src": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "Her {~}{#}Yozlaşmış {#} için +{~} Sabit Hasar kazan. (Maks. +{~})",
+   "dst": "Her {~2}{#}Yozlaşmış {#} için +{~1} Sabit Hasar kazan. (Maks. +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -102,7 +102,7 @@
   },
   "ability-warrior#0242": {
    "src": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "Her {~}{#}Yozlaşmış {#} için +{~} hasar kazan. (Maks. +{~})",
+   "dst": "Her {~2}{#}Yozlaşmış {#} için +{~1} hasar kazan. (Maks. +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -130,7 +130,7 @@
   },
   "ability-warrior#0240": {
    "src": "Increase Bash's damage by {~}\nper {~} {#}{#}Area of Effect it has.",
-   "dst": "Bash, sahip olduğu her {~} {#}{#}Etki Alanı\niçin {~} daha fazla hasar verir.",
+   "dst": "Bash, sahip olduğu her {~2} {#}{#}Etki Alanı\niçin {~1} daha fazla hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1338,7 +1338,7 @@
   },
   "ability-warrior#0050": {
    "src": "When casting War Scream, create a holy\nshield around you that reduces all\nincoming damage by -{~} for {~} hits.",
-   "dst": "War Scream yaptığında etrafında kutsal\nbir kalkan oluşur; {~} vuruş boyunca\ngelen tüm hasarı -{~} azaltır.",
+   "dst": "War Scream yaptığında etrafında kutsal\nbir kalkan oluşur; {~2} vuruş boyunca\ngelen tüm hasarı -{~1} azaltır.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1380,7 +1380,7 @@
   },
   "ability-warrior#0053": {
    "src": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "Her {~} Yozlaşmış {#} için +{~} Sabit Hasar kazan. (Maks. +{~})",
+   "dst": "Her {~2} Yozlaşmış {#} için +{~1} Sabit Hasar kazan. (Maks. +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1775,7 +1775,7 @@
   },
   "ability-warrior#0082": {
    "src": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "Her {~} Yozlaşmış {#} için +{~} hasar kazan. (Maks. +{~})",
+   "dst": "Her {~2} Yozlaşmış {#} için +{~1} hasar kazan. (Maks. +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2139,7 +2139,7 @@
   },
   "ability-warrior#0109": {
    "src": "War Scream will ripple the ground and\ndeal damage to enemies {~} times\nover a large area every {~}s.",
-   "dst": "War Scream yeri dalgalandırır ve geniş\nbir alandaki düşmanlara her {~} sn'de\n{~} kez hasar verir.",
+   "dst": "War Scream yeri dalgalandırır ve geniş\nbir alandaki düşmanlara her {~2} sn'de\n{~1} kez hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2491,7 +2491,7 @@
   },
   "ability-warrior#0135": {
    "src": "Increase Bash's area of effect radius\nby +{~} per {~} Corrupted {#}. (Max +{~})",
-   "dst": "Bash'in etki alanı yarıçapını her {~} Yozlaşmış {#}\niçin +{~} artırır. (Maks. +{~})",
+   "dst": "Bash'in etki alanı yarıçapını her {~2} Yozlaşmış {#}\niçin +{~1} artırır. (Maks. +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3039,7 +3039,7 @@
   },
   "ability-warrior#0175": {
    "src": "You gain a +{~} Resistance buff\nif your health is at {~} or less.",
-   "dst": "Canın {~} ya da altındaysa\n+{~} Direnç güçlendirmesi kazanırsın.",
+   "dst": "Canın {~2} ya da altındaysa\n+{~1} Direnç güçlendirmesi kazanırsın.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3200,7 +3200,7 @@
   },
   "ability-warrior#0187": {
    "src": "Increase Bash's damage by {~}\nper {~} {#} Area of Effect it has.",
-   "dst": "Bash, sahip olduğu her {~} {#} Etki Alanı\niçin {~} daha fazla hasar verir.",
+   "dst": "Bash, sahip olduğu her {~2} {#} Etki Alanı\niçin {~1} daha fazla hasar verir.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3430,7 +3430,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "Generalist'i etkinleştirmek {~} sn boyunca\n+{~} Uyum verir. (Maks. {~})",
+   "dst": "Generalist'i etkinleştirmek {~2} sn boyunca\n+{~1} Uyum verir. (Maks. {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3445,7 +3445,7 @@
   },
   "ability-warrior#0205": {
    "src": "Gain +{~} Damage per {~} Harmony.",
-   "dst": "Her {~} Uyum için +{~} Hasar kazan.",
+   "dst": "Her {~2} Uyum için +{~1} Hasar kazan.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3609,7 +3609,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "Shield Strike daha fazla hasar verir ve kullanılan\nher {~} kırık pelerin için yakındaki müttefiklere\n{~} Bovemist Pelerini şarjı verir. (Maks. {~})",
+   "dst": "Shield Strike daha fazla hasar verir ve kullanılan\nher {~2} kırık pelerin için yakındaki müttefiklere\n{~1} Bovemist Pelerini şarjı verir. (Maks. {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
