@@ -55,7 +55,7 @@ public final class CombatText {
         if (core.isEmpty()) {
             return false;                      // 純圖示由 GlyphSplitter 處理
         }
-        if (WORDS.contains(core.toLowerCase())) {
+        if (WORDS.contains(core.toLowerCase(java.util.Locale.ROOT))) {
             return true;
         }
         return isNumericOnly(core);

@@ -108,7 +108,7 @@ public final class ThirdPartySections {
     }
 
     private static boolean isBadge(Component line) {
-        return badges.contains(readable(line).toLowerCase());
+        return badges.contains(readable(line).toLowerCase(java.util.Locale.ROOT));
     }
 
     /** 去掉圖示與空白之後剩下的字。 */
@@ -138,7 +138,7 @@ public final class ThirdPartySections {
                 return;
             }
             for (JsonElement el : arr) {
-                String name = el.getAsString().strip().toLowerCase();
+                String name = el.getAsString().strip().toLowerCase(java.util.Locale.ROOT);
                 if (!name.isEmpty()) {
                     into.add(name);
                 }
