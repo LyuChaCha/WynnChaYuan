@@ -184,6 +184,7 @@ public final class ChatHoldTest {
         ChatBlock.clear();
 
         realCorpus();
+        ownMessage();
 
         System.out.println(failures == 0 ? "攔截面板：全部通過" : "攔截面板：" + failures + " 項失敗");
         if (failures > 0) {
@@ -244,6 +245,59 @@ public final class ChatHoldTest {
             check(lang + "：整塊沒有留英文", !english);
         }
         ChatBlock.clear();
+    }
+
+    /**
+     * ★ 攔下來、翻好、送出去的那一則，再進來的時候要認得是自己送的。
+     *
+     * <h2>實機回報（2026-10-10）：「信標直接不出來了」</h2>
+     * 送出去的面板一樣是多欄的列，認不出來就會被自己再攔一次——攔下來的東西
+     * 一定會再送，於是每兩百毫秒重送一次，永遠到不了畫面（那一場的 log 裡重送了
+     * 一千三百多次）。認不出來是因為記的是純文字、比的是帶顏色碼的字；沒有顏色的
+     * 訊息兩者相同，所以上面那幾段（列都沒上色）測不出來。這裡的信標名稱照實機
+     * 上粗體與顏色。
+     */
+    private static void ownMessage() {
+        System.out.println("=== 自己送的那一則不會再被攔 ===");
+        TranslationStore store = new TranslationStore();
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", "zh_cn"));
+        Style yellow = Style.EMPTY.withBold(true)
+                .withColor(net.minecraft.network.chat.TextColor.fromRgb(0xffff33));
+        Style blue = Style.EMPTY.withBold(true)
+                .withColor(net.minecraft.network.chat.TextColor.fromRgb(0x5c5ce6));
+        Style grey = Style.EMPTY
+                .withColor(net.minecraft.network.chat.TextColor.fromRgb(0xaaaaaa));
+        MutableComponent names = Component.empty();
+        names.append(offset(36)).append(Component.literal("Yellow Beacon").withStyle(yellow))
+             .append(offset(77)).append(Component.literal("Blue Beacon").withStyle(blue));
+        MutableComponent effects = Component.empty();
+        effects.append(offset(25))
+               .append(Component.literal("Spawn 2 Flying Chest").withStyle(grey))
+               .append(offset(58))
+               .append(Component.literal("Choose a Boon at").withStyle(grey));
+        ChatBlock.clear();
+        ChatBlock.hold(StyledText.fromComponent(names), false);
+        ChatBlock.hold(StyledText.fromComponent(effects), false);
+        Component made = ChatBlock.preview(store);
+        check("面板翻得出來", made != null && !made.getString().contains("Beacon"));
+        if (made == null) {
+            ChatBlock.clear();
+            return;
+        }
+        // 聊天事件拿到的是 Wynntils 從那一則元件轉回來的 StyledText
+        StyledText back = StyledText.fromComponent(made);
+        check("前提：送出去的那一則本身也是多欄的列（所以不認得就會再被攔）",
+              LineTranslator.panelRow(back));
+        check("前提：帶顏色碼的字跟純文字不一樣（先前比的就是這兩個）",
+              !back.getString().equals(made.getString()));
+        ChatBlock.clear();
+        check("還沒送之前不算自己的", !ChatBlock.isOurs(back));
+        ChatBlock.remember(made);
+        check("★ 送過之後認得出來", ChatBlock.isOurs(back));
+        check("別的訊息不會被當成自己的",
+              !ChatBlock.isOurs(StyledText.fromComponent(names)));
+        ChatBlock.clear();
+        check("換伺服器之後清掉", !ChatBlock.isOurs(back));
     }
 
     /** 去掉排版偏移之後看得見的字。 */

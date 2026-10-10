@@ -107,10 +107,12 @@ public final class ChatBlock {
      * @param keep 這一列照原文送回去、不要翻（見 {@link Row}）
      */
     public static synchronized void hold(StyledText original, boolean keep) {
-        if (pending.size() >= MAX_ROWS) {
+        long now = System.currentTimeMillis();
+        // 上一塊早就該送了卻還攢著（HUD 沒在畫的時候 tick 不會來）：先放它走，
+        // 別讓新來的這一列接在一塊過期的面板後面。
+        if (pending.size() >= MAX_ROWS || ready(now)) {
             flush();
         }
-        long now = System.currentTimeMillis();
         if (!held || pending.isEmpty()) {
             heldSince = now;
         }
@@ -173,6 +175,7 @@ public final class ChatBlock {
         pending.clear();
         held = false;
         mine.clear();
+        sentAt.clear();
     }
 
     /**
@@ -203,13 +206,73 @@ public final class ChatBlock {
     /** 記得自己送過的最後幾則就夠了——事件是同一個 tick 回來的。 */
     private static final int MINE_MEMORY = 32;
 
-    /** 這一則是不是我們自己剛送出去的譯文。 */
-    public static synchronized boolean isOurs(String message) {
-        return message != null && mine.contains(message);
+    /**
+     * 現在正在把攢著的那一則送出去。
+     *
+     * <h2>實機回報（2026-10-10）：「信標直接不出來了」</h2>
+     * 就地取代模式攔下信標面板、整塊翻好送出去之後，那一則<b>又被自己攔回來</b>：
+     * 它一樣是多欄的列（{@code LineTranslator#panelRow}），而「是不是自己送的」
+     * 沒認出來。攔下來的東西一定會再送，於是每兩百毫秒重送一次、永遠到不了畫面
+     * ——那一場的 log 裡同一塊面板重送了一千三百多次，期間別的伺服器訊息也被捲進去。
+     *
+     * <p>沒認出來是因為兩邊拿來比的字不是同一種：記下來的是
+     * {@code Component#getString}（純文字），事件那邊拿的是
+     * {@code StyledText#getString}——<b>帶顏色碼</b>的。沒有顏色的訊息兩者剛好
+     * 相同，所以原文加譯文那個模式一直沒事（認不出來也只是白查一次表）；面板的
+     * 信標名稱是粗體加顏色，就對不上了。
+     *
+     * <p>所以改成兩道：
+     * <ol>
+     *   <li>送的那一刻掛這個旗標。{@code displayClientMessage} 是<b>同步</b>觸發
+     *       聊天事件的（Wynntils 的 {@code ChatHandler} 當場發 Match 與 Edit），
+     *       旗標掛著的時候進來的就是我們自己那一則，跟內容長什麼樣無關；</li>
+     *   <li>內容那一道照舊留著（萬一哪個模組把聊天延後處理），但兩邊都比
+     *       <b>去掉樣式的字</b>，而且只記幾秒。</li>
+     * </ol>
+     */
+    private static boolean sending = false;
+
+    /** 內容那一道記多久。事件是當場回來的，幾秒只是給延後處理的模組留餘地。 */
+    private static final long MINE_TTL_MS = 5_000;
+
+    /** {@link #mine} 裡每一則是什麼時候送的。 */
+    private static final java.util.Map<String, Long> sentAt = new java.util.HashMap<>();
+
+    /** 這一則是不是我們自己剛送出去的譯文。見 {@link #sending}。 */
+    public static synchronized boolean isOurs(StyledText message) {
+        if (message == null) {
+            return false;
+        }
+        return sending || isOurs(message.getStringWithoutFormatting());
     }
 
-    private static synchronized void remember(Component sent) {
-        mine.add(sent.getString());
+    /** 內容那一道：比的是去掉樣式的字。見 {@link #sending}。 */
+    static synchronized boolean isOurs(String plain) {
+        if (plain == null) {
+            return false;
+        }
+        String key = bare(plain);
+        if (!mine.contains(key)) {
+            return false;
+        }
+        Long when = sentAt.get(key);
+        return when != null && System.currentTimeMillis() - when <= MINE_TTL_MS;
+    }
+
+    /** 去掉樣式碼之後的字。兩邊都過這一道，比的才是同一種東西。 */
+    private static String bare(String text) {
+        return text.indexOf('\u00a7') < 0 ? text : STYLE_CODE.matcher(text).replaceAll("");
+    }
+
+    private static final java.util.regex.Pattern STYLE_CODE =
+            java.util.regex.Pattern.compile("\u00a7(?:#[0-9a-fA-F]{8}|\\{[^}]*}|\\[[^\\]]*]|.)");
+
+    /** 記下「這一則是我們送的」。測試也從這裡進來（{@link #flush} headless 跑不了）。 */
+    static synchronized void remember(Component sent) {
+        String key = bare(sent.getString());
+        mine.add(key);
+        sentAt.put(key, System.currentTimeMillis());
+        sentAt.keySet().retainAll(mine);
     }
 
     private static void flush() {
@@ -224,9 +287,14 @@ public final class ChatBlock {
         Component whole = compose(rows, wasHeld, WynnChaYuan.translations());
         if (whole != null) {
             // 先記下來再送：displayClientMessage 會同步再觸發一次聊天事件，
-            // 記晚了就來不及擋。見 #mine。
+            // 記晚了就來不及擋。見 #mine 與 #sending。
             remember(whole);
-            mc.player.displayClientMessage(whole, false);
+            sending = true;
+            try {
+                mc.player.displayClientMessage(whole, false);
+            } finally {
+                sending = false;
+            }
         }
     }
 

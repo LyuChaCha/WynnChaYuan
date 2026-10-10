@@ -105,6 +105,7 @@ public final class LineTranslator {
         List<LineParts.Piece> places = null;
         List<LineParts.Piece> glyphs = null;
         boolean flowed = false;
+        boolean rewrapped = false;
         if ((translated == null || translated.isBlank()) && layoutRow) {
             // 攤平查表這條路<b>只能</b>給「被 tooltip 寬度折斷的一整段」用：
             // 它把換行壓成空格，等於假設每一行都是同一句話的一部分。
@@ -181,6 +182,7 @@ public final class LineTranslator {
                 translated = swapped;
             }
             translated = wrapToBlock(translated, run);
+            rewrapped = true;
         }
         translated = breakBeforeOriginal(translated, widestOf(run), store,
                                          piece -> widthOf(Component.literal(piece)));
@@ -200,9 +202,51 @@ public final class LineTranslator {
         }
         List<Component> out = new ArrayList<>(run.size());
         for (int i = 0; i < run.size(); i++) {
-            out.add(unslant(realign(run.get(i), built.get(i), centered[i])));
+            // 我們自己重折的句子，第 i 列裝的不是原文第 i 列的那幾個字。列數剛好一樣
+            // 只是巧合，不能拿原文那一列的座標來對。見 #hasInnerGap。
+            Component row = built.get(i);
+            out.add(unslant(rewrapped && hasInnerGap(row)
+                    ? row : realign(run.get(i), row, centered[i])));
         }
         return out;
+    }
+
+    /**
+     * 這一列<b>字的中間</b>夾著排版偏移嗎——前面已經有字，後面還有字。
+     *
+     * <h2>實機回報（2026-10-10）：「lootrun 的文字格式怪怪的」</h2>
+     * Lootrun 賜福卡的敘述是一整句折成三列，譯文照使用者的語序重寫過，再由我們
+     * 折回三列：
+     *
+     * <pre>
+     *   For the rest of this Lootrun,          每开启一个宝箱，
+     *   gain +2 [圖示]Dexterity (Max x15)      +2 [圖示]　　　灵巧 (上限 x15)，
+     *   everytime you open a Chest             本次 Lootrun 都会持续生效
+     * </pre>
+     *
+     * 圖示後面跟著一個兩像素的偏移（圖示與屬性名之間的縫）。{@link #realign} 把它
+     * 當成欄位交界，要讓「灵巧」落回原文「Dexterity」的起點——原文那一列前面多了
+     * 一個「gain 」，於是那條縫被撐開二十幾像素。
+     *
+     * <p>逐列對座標的前提是<b>譯文第 i 列就是原文第 i 列</b>：整段收在語料裡、
+     * 列數照原文寫的那種成立；我們自己重折的不成立，圖示落在同一列只是剛好。
+     * 所以重折過的列，中間有偏移就照重建出來的樣子，不對座標。只有行首縮排的列
+     * （置中、縮排）不受影響，照舊走 {@link #realign}。
+     */
+    private static boolean hasInnerGap(Component row) {
+        boolean textBefore = false;
+        boolean gapPending = false;
+        for (Run r : mergeSpaces(splitGaps(runs(row)))) {
+            if (r.space()) {
+                gapPending = textBefore;
+            } else if (!r.text().isBlank()) {
+                if (gapPending) {
+                    return true;
+                }
+                textBefore = true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -6678,10 +6722,21 @@ public final class LineTranslator {
             return null;
         }
         String tail = template.substring(from);
+        if (colonFirst(tail) && store.itemNameOnly(label)) {
+            return itemAsLabel(label, tail, store);
+        }
         if (!tail.isEmpty()) {
             String zh = statLabel(label, store, percent);
             if (zh != null) {
                 return zh + translateTail(tail, store);
+            }
+            if (colonFirst(tail)) {
+                // 語料只收了帶冒號的那一條（「Aqua:」）：冒號被算進數值尾巴，
+                // 上面查的是不帶冒號的「Aqua」，查不到。
+                String own = itemAsLabel(label, tail, store);
+                if (own != null) {
+                    return own;
+                }
             }
         }
         // 數值在<b>前面</b>的那一種：
@@ -6708,6 +6763,48 @@ public final class LineTranslator {
         }
         String zh = statLabel(name, store, percent);
         return zh == null ? null : translateTail(lead, store) + zh + translateTail(tail, store);
+    }
+
+    /** 尾巴的第一個字（不算空白）是不是冒號——「{@code 名字: 數值}」那種列。 */
+    private static boolean colonFirst(String tail) {
+        String t = tail.stripLeading();
+        return !t.isEmpty() && isTrailingColon(t.charAt(0));
+    }
+
+    /**
+     * 「{@code 名字: 數值}」的名字<b>只是一件物品的名字</b>。
+     *
+     * <h2>實機回報（2026-10-10）：「武器翻譯會翻到信標名稱」</h2>
+     * Wynntils 的 Lootrun 信標計數是一列一個顏色：
+     *
+     * <pre>
+     *   Yellow: 0        ->  黄色: 0
+     *   White: 0/1       ->  纯白之戒 (White): 0/1
+     *   Crimson: 0/2     ->  绯红法器 (Crimson): 0/2
+     *   Rainbow: 0 (0)   ->  彩虹之戒 (Rainbow): 0 (0)
+     * </pre>
+     *
+     * 冒號與後面的數字都算數值尾巴，於是標籤只剩「White」——一枚戒指的名字。
+     * 六個語言的裝備名補齊之後，四千多個裝備名都成了屬性列標籤的候選，其中不少
+     * 是一般的字。
+     *
+     * <p>物品的名字不是標籤。冒號前面那個字<b>只有</b>物品在用（別的檔案沒有同名
+     * 條目）時，這一列不算屬性列：語料另外收了帶冒號的那一條（{@code "White:"}）
+     * 就用它，沒收就留原文——留英文比寫上一件不相干的裝備好。
+     *
+     * @return 語料收了帶冒號的鍵時回傳譯好的整列，沒收回傳 {@code null}
+     */
+    private static String itemAsLabel(String label, String tail, TranslationStore store) {
+        String word = label.strip();
+        String own = store.lookupExact(word + ":");
+        if (own == null) {
+            return null;
+        }
+        String lead = label.substring(0, label.indexOf(word));
+        // 譯文自己帶著冒號，尾巴從冒號後面接
+        String t = tail.stripLeading();
+        String rest = t.substring(1);
+        return lead + own + translateTail(reattach(own, rest), store);
     }
 
     /**

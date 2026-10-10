@@ -1800,6 +1800,32 @@ public final class TranslationStore {
         return gearOnly(key) || plainOnly(key);
     }
 
+    /**
+     * 這個原文<b>只是</b>一件物品的名字——裝備、素材或材料，別的檔案沒有同名條目。
+     *
+     * <p>給「名字: 數值」那條路用（{@code LineTranslator#itemAsLabel}）：物品的名字
+     * 不是標籤。見那邊的說明。
+     */
+    public boolean itemNameOnly(String key) {
+        return key != null && getsOriginal(key.strip());
+    }
+
+    /**
+     * 只認<b>一字不差</b>的那一條，不放寬標點、不看縮排。
+     *
+     * <p>{@link #lookup} 查不到精確的鍵時會放掉行尾的冒號再查一次——
+     * 「語料有沒有另外收帶冒號的那一條」這個問題不能問它，它一律說有。
+     *
+     * @return 譯文；沒有這一條、或譯文留空時回傳 {@code null}
+     */
+    public String lookupExact(String key) {
+        if (key == null) {
+            return null;
+        }
+        String hit = entries.get(key.strip());
+        return hit == null || hit.isBlank() ? null : hit;
+    }
+
     /** 裝備專用的名字放在哪個範圍。見 {@link #gearOwnName}。 */
     private static final String GEAR_SCOPE = "gear";
 

@@ -59,7 +59,7 @@ public final class ChatListener {
             return;
         }
         StyledText message = event.getMessage();
-        if (message == null || ChatBlock.isOurs(message.getString())) {
+        if (message == null || ChatBlock.isOurs(message)) {
             return;
         }
         boolean panel;
@@ -103,7 +103,7 @@ public final class ChatListener {
         }
         // 我們自己送出去的譯文會再觸發一次這個事件。再翻一次是白費力氣，
         // 而且它會跟後面真正的新訊息攢成同一塊。見 ChatBlock#isOurs。
-        if (ChatBlock.isOurs(message.getString())) {
+        if (ChatBlock.isOurs(message)) {
             return;
         }
         CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
