@@ -70,6 +70,7 @@ public final class ItemNameContextTest {
             check(lang + "：「名字 [數量]」照舊翻（" + count + "/" + n + "）", count == n);
             check(lang + "：單獨一個名字照舊翻（" + bare + "/" + n + "）", bare == n);
             check(lang + "：旗標用完有放下", !TranslationStore.itemNamesBarred());
+            otherThreads(store, names, lang);
         }
 
         System.out.println(failures == 0
@@ -131,6 +132,72 @@ public final class ItemNameContextTest {
             }
         }
         return out;
+    }
+
+    /**
+     * 別條執行緒也在查表時，這一條的物品名不能受影響。
+     *
+     * <h2>實機回報（2026-10-10，1.0.1）：「切換語言之後物品翻譯都會失效」</h2>
+     * 「這個位置不是物品」原本是一個全域旗標。收集端每 30 秒在背景執行緒整理
+     * {@code captured.json}，每一條都問 {@code hasTranslation}，那條路同樣會
+     * 掛上再還原這個旗標；跟算繪那一條交錯時，旗標被「還原」成對方掛上的值，
+     * 從此卡在開著——所有只有物品在用的名字都查不到，重開遊戲才會好。
+     *
+     * <p>第一段是必現的寫法：別條執行緒掛著旗標不放，這一條照樣要翻得到。
+     * 第二段是實機那個情境：兩條一起跑，跑完旗標要是放下的。
+     */
+    private static void otherThreads(TranslationStore store, List<String> names, String lang)
+            throws Exception {
+        String name = names.get(0);
+        java.util.concurrent.CountDownLatch held = new java.util.concurrent.CountDownLatch(1);
+        java.util.concurrent.CountDownLatch release = new java.util.concurrent.CountDownLatch(1);
+        Thread holder = new Thread(() -> {
+            TranslationStore.barItemNames(true);
+            held.countDown();
+            try {
+                release.await();
+            } catch (InterruptedException ignored) {
+                Thread.currentThread().interrupt();
+            } finally {
+                TranslationStore.barItemNames(false);
+            }
+        }, "holder");
+        holder.start();
+        held.await();
+        boolean mine = store.lookup(name) != null && !TranslationStore.itemNamesBarred();
+        release.countDown();
+        holder.join();
+        check(lang + "：★ 別條執行緒掛著旗標，這一條的物品名照舊翻", mine);
+
+        // 背景那一條：收集端整理時問的就是 hasTranslation（名牌、血條、某人的東西）
+        java.util.concurrent.atomic.AtomicBoolean stop =
+                new java.util.concurrent.atomic.AtomicBoolean();
+        Thread pruner = new Thread(() -> {
+            while (!stop.get()) {
+                for (String n : names) {
+                    store.hasTranslation(n + " {#}{#}");
+                    store.hasTranslation(n + " - {~}❤");
+                    store.hasTranslation("Somebody's " + n);
+                }
+            }
+        }, "pruner");
+        pruner.start();
+        int lost = 0;
+        long until = System.nanoTime() + 1_500_000_000L;
+        while (System.nanoTime() < until) {
+            for (String n : names) {
+                LineTranslator.lookup(n + " {#}{#}", store, false);
+                LineTranslator.lookup(n + " to {p}", store, false);
+                if (store.lookup(n) == null) {
+                    lost++;
+                }
+            }
+        }
+        stop.set(true);
+        pruner.join();
+        check(lang + "：★ 背景整理與算繪一起查，物品名一次都沒有掉（" + lost + " 次）", lost == 0);
+        check(lang + "：★ 兩條一起跑完，旗標是放下的", !TranslationStore.itemNamesBarred());
+        check(lang + "：★ 跑完之後物品名照舊翻", store.lookup(name) != null);
     }
 
     private static void check(String name, boolean ok) {
