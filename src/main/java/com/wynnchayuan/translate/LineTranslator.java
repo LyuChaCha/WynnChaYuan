@@ -4721,6 +4721,7 @@ public final class LineTranslator {
         sharedCentre(runRows, centred);
         spacePadded(runRows, centred);
         sameLeadList(runRows, centred);
+        onChatCentre(runRows, centred);
         return centred;
     }
 
@@ -5049,6 +5050,7 @@ public final class LineTranslator {
             sharedCentre(origRows, centre);
             spacePadded(origRows, centre);
             sameLeadList(origRows, centre);
+            onChatCentre(origRows, centre);
         }
         // 這一塊是不是「兩欄併排的面板」。見 #columnPanel。
         //
@@ -5344,6 +5346,76 @@ public final class LineTranslator {
         }
         return isCjkBreakable(a) || isCjkBreakable(b)
                 ? !(isWordChar(a) && isWordChar(b)) : false;
+    }
+
+    /**
+     * Wynncraft 聊天的置中線，乘以二（實際是 154.5px）。
+     *
+     * <p>伺服器置中是照<b>固定的聊天寬度</b>算的：縮排 = 154.5 − 內容寬度的一半。
+     * 實機 log 與診斷檔裡量到的每一行都落在這條線上：
+     *
+     * <pre>
+     *   Choose a Beacon!（粗體）                 縮排 102 ＋ 104/2 = 154
+     *   Walk towards one to start a challenge    縮排  58 ＋ 192/2 = 154
+     *   [+1 Reward Pull]                         縮排 113 ＋  82/2 = 154
+     *   Welcome to Wynncraft!                    縮排  89 ＋ 131/2 = 154.5
+     *   and 2 mounts have no food in the…        縮排  46 ＋ 217/2 = 154.5
+     * </pre>
+     */
+    private static final int CHAT_CENTRE_X2 = 309;
+
+    /**
+     * 離那條線多遠以內算數（乘以二，也就是七個像素）。
+     *
+     * <p>伺服器取整數，奇數寬度會差半個像素；另外有少數標題它自己就算偏了——
+     * 「Mission Started」（粗體）縮排 103、內容 91，中心在 148.5，偏左六個像素。
+     * 2026-10-08 到 10-10 的 log 裡，行首有偏移的單欄列 133 列中 120 列偏離不到一個
+     * 像素，剩下的是這一種與面板的接續列（那種離得很遠，一百多像素）。
+     */
+    private static final int CHAT_CENTRE_SLACK_X2 = 14;
+
+    /**
+     * 單獨一行也認得出置中：它的中心就落在聊天的置中線上。
+     *
+     * <h2>實機回報（2026-10-10）：「部分還是會不對齊」</h2>
+     * 就地取代模式的「挑戰完成」那一塊：
+     *
+     * <pre>
+     *        挑战完成                      ← 兩行標題都往左偏
+     *     下一批信标即将出现！
+     *
+     *            [+1 奖励抽取次数]
+     *           [+10% 怪物伤害]
+     * </pre>
+     *
+     * 那一塊是<b>一列一則</b>訊息，每一則當場換掉。置中的判斷（{@link BlockLayout#centered}、
+     * {@link #sharedCentre}、{@link #spacePadded}）全都要<b>兩行以上</b>互相比才看得出來，
+     * 單獨一行一律當成靠左——縮排照抄原文，而中文短得多，整行就往左偏了半個寬度差
+     * （「Challenge Completed」換成「挑战完成」偏了三十幾像素；括號那幾列長度差不多，
+     * 所以看起來沒歪）。
+     *
+     * <p>不必跟別行比：伺服器是照固定的寬度置中的，中心落在那條線上就是置中。
+     * 分欄的列另有規則，不在這裡管；靠左的清單（縮排 8、40 那種）離那條線很遠，
+     * 不會被誤認。
+     */
+    private static void onChatCentre(List<List<Run>> rows, boolean[] centre) {
+        for (int i = 0; i < rows.size() && i < centre.length; i++) {
+            if (centre[i]) {
+                continue;
+            }
+            List<Run> row = rows.get(i);
+            int lead = leadWidth(row);
+            int body = rowWidth(row) - lead;
+            if (lead <= 0 || body <= 0) {
+                continue;
+            }
+            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+                continue;                              // 分欄的面板另有規則
+            }
+            if (Math.abs(2 * lead + body - CHAT_CENTRE_X2) <= CHAT_CENTRE_SLACK_X2) {
+                centre[i] = true;
+            }
+        }
     }
 
     /**

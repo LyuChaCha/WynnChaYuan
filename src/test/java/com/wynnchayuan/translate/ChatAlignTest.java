@@ -135,6 +135,7 @@ public final class ChatAlignTest {
         tooltipColumns();
         try {
             lootrunSummary();
+            singleRowCentre();
         } finally {
             LineTranslator.measureForTest = null;
         }
@@ -523,6 +524,61 @@ public final class ChatAlignTest {
      *
      * <p>這裡驗的是<b>算式</b>：原文的中心在哪，譯文的中心就該在哪。
      */
+    /**
+     * ★ 一列一則送來的置中行，單獨一則也要重新置中。
+     *
+     * <h2>實機回報（2026-10-10）</h2>
+     * 就地取代模式的「挑戰完成」那一塊，兩行標題往左偏了三十幾像素：每一則訊息
+     * 當場換掉，只看得到自己那一列，而置中的判斷先前全都要兩行以上互相比。
+     * 伺服器是照固定的寬度置中的（中心 154.5px），單獨一列量得出來。
+     *
+     * <p>縮排照 log 的算法給：154.5 減掉內容寬度的一半。
+     */
+    private static void singleRowCentre() throws Exception {
+        System.out.println("=== 單獨一則的置中行 ===");
+        LineTranslator.measureForTest = ChatAlignTest::measure;
+        Path dir = Files.createTempDirectory("wynnchayuan-chat-centre");
+        com.google.gson.JsonObject root = new com.google.gson.JsonObject();
+        root.addProperty("{#}Challenge Completed", "{#}挑戰完成");
+        root.addProperty("{#}Next beacons will appear soon!", "{#}下一批信標即將出現！");
+        root.addProperty("{#}[+{~} Reward Pull]", "{#}[+{~} 獎勵抽取次數]");
+        root.addProperty("{#}Mission Started", "{#}使命開始");
+        root.addProperty("{#}- +Access to the Province of Wynn", "{#}- +取得進入 Wynn 行省的資格");
+        Files.writeString(dir.resolve("misc.json"), root.toString(), StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+
+        for (String text : new String[] {"Challenge Completed", "Next beacons will appear soon!",
+                "[+1 Reward Pull]", "Mission Started"}) {
+            int body = measure(Component.literal(text));
+            // 「Mission Started」伺服器自己就算偏了六個像素（實機縮排 103、該是 109）
+            int lead = (309 - body) / 2 - (text.startsWith("Mission") ? 6 : 0);
+            MutableComponent row = Component.empty();
+            row.append(offset(lead)).append(lit(text, GREY));
+            Component hit = LineTranslator.translateChat(StyledText.fromComponent(row), store);
+            check(text + "：查得到譯文", hit != null);
+            if (hit == null) {
+                continue;
+            }
+            int madeLead = leads(hit)[0];
+            int madeBody = measure(hit) - madeLead;
+            int centreX2 = 2 * madeLead + madeBody;
+            check("★ " + text + "：譯文的中心跟原文同一個位置（原文縮排 " + lead + "、內容 " + body
+                          + "；譯文縮排 " + madeLead + "、內容 " + madeBody + "）",
+                  Math.abs(centreX2 - (2 * lead + body)) <= 2 && madeLead != lead);
+        }
+
+        // 靠左的清單列離置中線很遠，縮排不能動
+        String item = "- +Access to the Province of Wynn";
+        MutableComponent left = Component.empty();
+        left.append(offset(8)).append(lit(item, GREY));
+        Component kept = LineTranslator.translateChat(StyledText.fromComponent(left), store);
+        check("靠左的清單列查得到譯文", kept != null);
+        if (kept != null) {
+            check("★ 靠左的清單列縮排照舊（實際 " + leads(kept)[0] + "）", leads(kept)[0] == 8);
+        }
+    }
+
     private static void panelSingles() {
         // 原文：縮排 105、內容 98 → 中心 154。譯文內容 54 → 縮排該是 154-27=127。
         int origLead = 105;
