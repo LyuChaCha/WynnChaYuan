@@ -930,6 +930,14 @@ UNIT_DST: dict[str, list[tuple[str, str, str]]] = {
         ("veces", "times", r"\s*(?:veces|vez)"),
         ("monstruos", "mobs", r"\s*(?:monstruos?|mobs?)"),
     ],
+    "tr_tr": [
+        ("blok", "blocks", r"\s*blok"),
+        ("sn", "seconds", r"\s*(?:sn\b|saniye|s\b)"),
+        ("kez", "times", r"\s*(?:kez|kere|defa)\b"),
+        ("mücadele", "challenges", r"\s*[Mm]ücadele"),
+        ("yaratık", "mobs", r"\s*(?:[Yy]aratık|[Cc]anavar|[Mm]ob)"),
+        ("eşya", "items", r"\s*eşya"),
+    ],
 }
 
 

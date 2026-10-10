@@ -82,6 +82,7 @@ Hover a setting for an explanation.
 | `ru_ru` Russian | Everything, quest dialogue included |
 | `ko_kr` Korean | Everything, quest dialogue included |
 | `es_es` Spanish | Everything, quest dialogue included |
+| `tr_tr` Turkish | Everything, quest dialogue included |
 
 Switch under **Settings → Data**, without changing the game's language or restarting:
 

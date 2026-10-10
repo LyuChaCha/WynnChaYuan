@@ -77,6 +77,7 @@ public final class Languages {
                     java.util.Map.entry("fr_fr", "Français"),
                     java.util.Map.entry("es_es", "Español"),
                     java.util.Map.entry("pt_br", "Português"),
+                    java.util.Map.entry("tr_tr", "Türkçe"),
                     java.util.Map.entry("en_us", "English"));
 
     /** 顯示給人看的語言名字。認不出來就回傳代碼本身。 */

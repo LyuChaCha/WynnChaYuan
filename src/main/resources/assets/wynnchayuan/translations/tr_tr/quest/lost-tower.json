@@ -1,0 +1,104 @@
+{
+ "_meta": {
+  "quest": "Lost Tower",
+  "count": 9,
+  "translated": 9,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Lost Tower#000": {
+   "src": "Hey, adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
+   "dst": "Hey, maceracı! Bana bir saniye yardım eder misin? Başım biraz dertte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "captured"
+  },
+  "Lost Tower#001": {
+   "src": "A long time ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
+   "dst": "Uzun zaman önce, {p} yok edilmeden önce, ailemin büyük güce sahip yerler ve varlıklar hakkında bilgi içeren epey ilginç bir kitabı vardı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "captured"
+  },
+  "Lost Tower#005": {
+   "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",
+   "dst": "Ne yazık ki {p} yıkımına yol açan saldırı sırasında bir yaratık onu çaldı ve o günden beri kimse görmedi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "wiki"
+  },
+  "Lost Tower#006": {
+   "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
+   "dst": "Yardım etmek istiyorsan bana [{~} Book of the Bones] getir. Bu kitabın artık {p} içindeki eski bir kulede, iskeletlerin elinde olduğuna inanıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "wiki"
+  },
+  "Lost Tower#007": {
+   "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
+   "dst": "Bu kuleyi bulabilir misin bir bak, iskeletlerden biri muhtemelen kitabı içeride bir yerde tutuyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 1",
+   "speaker": "Laen",
+   "source": "wiki"
+  },
+  "Lost Tower#008": {
+   "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] konumunda, {p} içindeki kayıp kuleyi bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Tower#009": {
+   "src": "Find the book in the tower, and bring it back to Laen.",
+   "dst": "Kuledeki kitabı bul ve Laen'e geri getir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Tower#010": {
+   "src": "Bring back the book to Laen.",
+   "dst": "Kitabı Laen'e geri getir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Tower",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Tower#011": {
+   "src": "Great! This will be very interesting to read, thank you!",
+   "dst": "Harika! Bunu okumak çok ilginç olacak, teşekkürler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Tower",
+   "stage": "Stage 4",
+   "speaker": "Laen",
+   "source": "wiki"
+  }
+ }
+}

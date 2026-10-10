@@ -23,7 +23,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = ROOT / "src/main/resources/assets/wynnchayuan/translations"
-LANGS = ("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")
+LANGS = ("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr")
 ARGS = [a for a in sys.argv[1:] if a in LANGS] or list(LANGS)
 CJK = re.compile(r"[぀-ヿ㐀-鿿가-힯]")
 COMMON = {

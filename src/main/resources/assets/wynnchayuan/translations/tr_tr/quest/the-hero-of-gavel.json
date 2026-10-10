@@ -1,0 +1,1944 @@
+{
+ "_meta": {
+  "quest": "The Hero of Gavel",
+  "count": 193,
+  "translated": 187,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Hero of Gavel#000": {
+   "src": "Find out what's happening in the center of {p} at [{~}, {~}, -{~}]",
+   "dst": "{p} merkezinde neler olduğunu öğren: [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#001": {
+   "src": "Hmm.. I might have just enough for one tier {~}... Why are you standing there?",
+   "dst": "Hmm.. {~}. kademe için ancak yetecek kadar param olabilir... Sen niye dikiliyorsun orada?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#002": {
+   "src": "What all these people are here for? Don't tell me you don't know about the Siegfried contest.",
+   "dst": "Bu kalabalık ne için mi burada? Bana Siegfried yarışmasını bilmediğini söyleme.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#003": {
+   "src": "Are you SERIOUS?! It's the biggest thing happening since the last contest last month!",
+   "dst": "CİDDİ MİSİN?! Geçen ayki yarışmadan beri olan en büyük olay bu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#004": {
+   "src": "Whoever wins the big scavenger hunt gets to go on an adventure with Siegfried himself.",
+   "dst": "Büyük hazine avını kazanan, bizzat Siegfried'le maceraya çıkıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#005": {
+   "src": "This year, I think I even have a good chance to win!",
+   "dst": "Bu yıl kazanma şansım bile var bence!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#006": {
+   "src": "Huh? Oh, you want this ticket? No way, this one's mine. Go get your own at that little shop.",
+   "dst": "Ha? Bu bileti mi istiyorsun? Olmaz, bu benim. Git kendininkini şu küçük dükkândan al.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Excited Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#007": {
+   "src": "Hey, that's the mug I dropped!",
+   "dst": "Hey, düşürdüğüm kupa bu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 1",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#008": {
+   "src": "No, this is mine.",
+   "dst": "Hayır, bu benim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 2",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#009": {
+   "src": "THIEF! GIVE IT BACK!",
+   "dst": "HIRSIZ! GERİ VER ONU!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 1",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#010": {
+   "src": "Ow! Fine, take it!",
+   "dst": "Ay! Peki, al şunu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 2",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#011": {
+   "src": "How can I win an adventure now?",
+   "dst": "Şimdi ben nasıl macera kazanacağım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 1",
+   "speaker": "Siegfried Fan 2",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#012": {
+   "src": "Get a Siegfried Scavenger Hunt ticket in the center of {p} at [{~}, {~}, -{~}]",
+   "dst": "{p} merkezinden bir Siegfried Hazine Avı bileti al: [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#013": {
+   "src": "Tickets for sale! You! Would you like to join the great Siegfried Scavenger Hunt?",
+   "dst": "Biletler satışta! Sen! Büyük Siegfried Hazine Avı'na katılmak ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#014": {
+   "src": "Entry is completely free, and if you win, you'll get to adventure with Siegfried himself!",
+   "dst": "Katılım tamamen ücretsiz, kazanırsan bizzat Siegfried'le maceraya çıkacaksın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#015": {
+   "src": "You're interested? Great! Here, it's all quite simple.",
+   "dst": "İlgileniyor musun? Harika! Al, gayet basit.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#016": {
+   "src": "The ticket shows what items you need to find. It's split into three tiers.",
+   "dst": "Bilette bulman gereken eşyalar yazıyor. Üç kademeye ayrılıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#017": {
+   "src": "The first two, they're for the common folk. But if you REALLY want to win, you need a tier {~} item.",
+   "dst": "İlk ikisi sıradan halk için. Ama GERÇEKTEN kazanmak istiyorsan {~}. kademeden bir eşya lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#018": {
+   "src": "Heh, you can even bring all three and you're practically guaranteed to win!",
+   "dst": "Heh, üçünü birden getirirsen kazanman neredeyse garanti!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#019": {
+   "src": "Here, take the ticket. Come back with your items and you'll be entered into the draw.",
+   "dst": "Al, bilet senin. Eşyalarınla geri gel, seni çekilişe yazayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#020": {
+   "src": "Bring all three limited Siegfried Collection items to the merchant in {p} Center at [{~}, {~}, -{~}]",
+   "dst": "Üç sınırlı Siegfried Koleksiyonu eşyasının hepsini {p} merkezindeki tüccara götür: [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#021": {
+   "src": "You’re back! Let me see your items.",
+   "dst": "Döndün! Göster bakalım eşyalarını.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#022": {
+   "src": "This… Wow, all of them? Let me take a look at these…",
+   "dst": "Bu… Vay, hepsi mi? Bir bakayım şunlara…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#023": {
+   "src": "They’re all authentic! You must be ri-I mean, you must be a huge fan of Siegfried!",
+   "dst": "Hepsi orijinal! Sen zengin ol- yani, Siegfried'in büyük bir hayranı olmalısın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#025": {
+   "src": "Okay, I’ve entered you into the draw. The event’s taking place at the Golden Eagle Theatre.",
+   "dst": "Tamam, seni çekilişe yazdım. Etkinlik Golden Eagle Theatre'da yapılacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#026": {
+   "src": "Just turn toward the bank and follow the signs, the winner will be selected when everyone gets there.",
+   "dst": "Bankaya doğru dön ve tabelaları takip et, herkes gelince kazanan seçilecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 3",
+   "speaker": "Scavenger Hunt Collector",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#027": {
+   "src": "Go to the Golden Eagle Theatre behind the Bank in {p} at [{~}, {~}, -{~}] for the winners to be announced.",
+   "dst": "Kazananların açıklanması için {p} bankasının arkasındaki Golden Eagle Theatre'a git: [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#028": {
+   "src": "Welcome, welcome everyone! We’re only waiting on a few more people before we begin.",
+   "dst": "Hoş geldiniz, hoş geldiniz! Başlamadan önce birkaç kişiyi daha bekliyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#029": {
+   "src": "Ah, there we go! I believe we’re all set now.",
+   "dst": "Ah, işte geldiler! Sanırım artık hazırız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#030": {
+   "src": "Welcome everyone, to the monthly SIEGFRIED FESTIVAL SCAVENGER HUNT!",
+   "dst": "Herkes hoş geldi, aylık SIEGFRIED FESTİVALİ HAZİNE AVI'NA!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#031": {
+   "src": "Today, we are once again celebrating the heroic deeds of Siegfried!",
+   "dst": "Bugün yine Siegfried'in kahramanlıklarını kutluyoruz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#032": {
+   "src": "All of you, my fellow gavellians, have adventured far and wide to gather rare items across the province.",
+   "dst": "Siz, sevgili Gavelli dostlarım, eyaletin dört bir yanında nadir eşyalar toplamak için uzun yollar katettiniz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#033": {
+   "src": "And yet, I cannot announce the winner…",
+   "dst": "Yine de kazananı ben açıklayamam…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#034": {
+   "src": "BECAUSE SIEGFRIED WILL!",
+   "dst": "ÇÜNKÜ SIEGFRIED AÇIKLAYACAK!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Announcer",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#035": {
+   "src": "SIEGFRIED!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#036": {
+   "src": "It's SIEGFRIED!",
+   "dst": "SIEGFRIED bu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#037": {
+   "src": "It's him!",
+   "dst": "Bu o!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#038": {
+   "src": "SIEGFRIED PICK MEEE!",
+   "dst": "SIEGFRIED BENİ SEÇ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#039": {
+   "src": "SIEEEGGFRIEED!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#040": {
+   "src": "Stay back!",
+   "dst": "Geri dur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Agent",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#042": {
+   "src": "Hello, Citizens of Gavel!",
+   "dst": "Merhaba, Gavel halkı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#043": {
+   "src": "Thank you all for participating in this fantastic scavenger hunt around Gavel! Siegfried: The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
+   "dst": "Gavel'daki bu harika hazine avına katılan herkese teşekkürler! Siegfried: Bu avın galibi, benimle hayatında bir kez yaşanacak, tamamen gerçek bir maceraya çıkma ayrıcalığına sahip olacak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#044": {
+   "src": "Now, without further ado: I shall announce the winner!",
+   "dst": "Şimdi, lafı uzatmadan: Kazananı açıklıyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#045": {
+   "src": "And the winner is…",
+   "dst": "Ve kazanan…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#046": {
+   "src": "Finally!",
+   "dst": "Sonunda!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#047": {
+   "src": "I better win, I bought his mug!",
+   "dst": "Kazansam iyi olur, kupasını aldım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#048": {
+   "src": "Maybe I'll win this time?",
+   "dst": "Belki bu sefer ben kazanırım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#049": {
+   "src": "{u}!! Congratulations!",
+   "dst": "{u}!! Tebrikler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#050": {
+   "src": "THE HUMAN?!",
+   "dst": "İNSAN MI?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried Fan",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#051": {
+   "src": "{u}, please head to the backstage area to my right for your adventure. Thank you everyone!!",
+   "dst": "{u}, maceran için lütfen sağımdaki kulise geç. Herkese teşekkürler!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 4",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#052": {
+   "src": "Meet Siegfried backstage in the Golden Eagle Theatre to go on your adventure!",
+   "dst": "Maceraya çıkmak için Golden Eagle Theatre'ın kulisinde Siegfried'le buluş!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#053": {
+   "src": "Welcome ! Congratulations on winning the scavenger hunt!",
+   "dst": "Hoş geldin ! Hazine avını kazandığın için tebrikler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#054": {
+   "src": "Today, you’ll be going with me on one of my glorious adventures.",
+   "dst": "Bugün benimle şanlı maceralarımdan birine çıkacaksın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#055": {
+   "src": "And to get there, we’ll ride in the great Siegfried Airship!",
+   "dst": "Oraya gitmek için de büyük Siegfried Zeplini'ne bineceğiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#056": {
+   "src": "It’s up at the airship docks – I’ll teleport us there!",
+   "dst": "Zeplin limanında duruyor, bizi oraya ışınlayacağım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#057": {
+   "src": "(translated: Gavellian) MAGICAL MAGICKY MAGIC MAGICSPELL. Teleport!",
+   "dst": "(çeviri: Gavelce) BÜYÜLÜ BÜYÜCÜK BÜYÜ BÜYÜSÖZ. Işınlan!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#058": {
+   "src": "TELEPORT!",
+   "dst": "IŞINLAN!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 5",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#059": {
+   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~},-{~}]",
+   "dst": "{p} zeplin limanında Siegfried'in zepliniyle yolculuk et: [{~}, {~},-{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#060": {
+   "src": "Here, follow me onto the airship!",
+   "dst": "Hadi, peşimden zepline gel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#061": {
+   "src": "And away we go!",
+   "dst": "Ve yola çıkıyoruz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#062": {
+   "src": "Impressed by my piloting skills? Dodging these islands isn’t a challenge at all for the mighty Siegfried!",
+   "dst": "Pilotluk becerilerime hayran mı kaldın? Bu adalardan kaçmak yüce Siegfried için hiç zor değil!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#063": {
+   "src": "I rode an airship much like this one when I saved {p} from the dragon.",
+   "dst": "{p} bölgesini ejderhadan kurtardığımda da buna çok benzeyen bir zeplin kullanmıştım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#064": {
+   "src": "Right now we’re heading to a cave on the far east of the region.",
+   "dst": "Şu an bölgenin en doğusundaki bir mağaraya gidiyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#065": {
+   "src": "We’ll have to navigate its treacherous corridors and defeat terrible beasts to get to the treasure at the end.",
+   "dst": "Sondaki hazineye ulaşmak için hain koridorlarından geçip korkunç canavarları yenmemiz gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#066": {
+   "src": "Why don’t you go get my map from the upper level of the airship, and we’ll get ready for our adventure.",
+   "dst": "Zeplinin üst katından haritamı getirsene, biz de maceraya hazırlanalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#067": {
+   "src": "How much lon- Oh, you brought the map!",
+   "dst": "Daha ne kadar- Aa, haritayı getirmişsin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#068": {
+   "src": "We’ll need to use this map to navigate the dangerous cave we’re going to.",
+   "dst": "Gideceğimiz tehlikeli mağarada yolumuzu bu haritayla bulacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#069": {
+   "src": "How did I get this? Well-er- I always prepare before my adventures!",
+   "dst": "Bunu nereden mi buldum? Şey-ee- Maceralarımdan önce hep hazırlık yaparım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#070": {
+   "src": "Anyway, we’re about to land now – be careful not to fall off!",
+   "dst": "Neyse, inmek üzereyiz, dikkat et de düşme!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#071": {
+   "src": "Enter the perilous cave on the eastern edge of the {p} with Siegfried at [{~}, {~}, -{~}]",
+   "dst": "Siegfried'le birlikte {p} bölgesinin doğu ucundaki tehlikeli mağaraya gir: [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#072": {
+   "src": "Here we are, the great Cave of Treasure-Hoarding Evil Creatures!",
+   "dst": "İşte geldik, Hazine İstifleyen Kötü Yaratıklar'ın büyük Mağarası!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#073": {
+   "src": "Speak to me when you’re fully prepared for this dangerous adventure.",
+   "dst": "Bu tehlikeli maceraya tamamen hazır olduğunda benimle konuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#074": {
+   "src": "This cave is exceedingly dangerous, so make sure to follow my instructions.",
+   "dst": "Bu mağara son derece tehlikeli, o yüzden talimatlarıma uymaya dikkat et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#075": {
+   "src": "I’ve got decades of experience bravely adventuring in these caves, so I know what I’m doing.",
+   "dst": "Bu mağaralarda yılların cesur maceracılık tecrübesi var bende, ne yaptığımı biliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#076": {
+   "src": "Onwards! {u}, stay right behind me!",
+   "dst": "İleri! {u}, hemen arkamda dur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 7",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#077": {
+   "src": "Follow Siegfried through the cave on the eastern edge of the {p} at [{~}, {~}, -{~}]",
+   "dst": "{p} bölgesinin doğu ucundaki mağarada Siegfried'i takip et: [{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#078": {
+   "src": "You sure took your time getting here! No matter.",
+   "dst": "Buraya gelmen epey sürdü! Neyse, önemli değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#079": {
+   "src": "I adventure in caves such as these often to get rid of the evil beasts dwelling within.",
+   "dst": "İçinde yaşayan kötü canavarlardan kurtulmak için böyle mağaralarda sık sık maceraya atılırım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#080": {
+   "src": "If it wasn’t for me defeating them before they could even--",
+   "dst": "Onlar daha harekete geçemeden ben yenmeseydim--",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#081": {
+   "src": "Woah, stop! This might look like a harmless decoration, but it’s a trap!",
+   "dst": "Dur, dur! Bu zararsız bir süs gibi görünebilir ama bir tuzak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#082": {
+   "src": "Stay behind me, I’ll open it with my magic spell. (translated: Gavellian) OPEN!",
+   "dst": "Arkamda dur, büyümle açacağım. (çeviri: Gavelce) AÇIL!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#083": {
+   "src": "Aha! I’ll protect you from the guardian, you deal with the rat!",
+   "dst": "Aha! Seni bekçiden ben korurum, sen fareyi hallet!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#084": {
+   "src": "Take THIS!",
+   "dst": "Al BUNU!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#085": {
+   "src": "Ow- I mean, hah! That was easier than swatting a fly for the mighty Siegfried!",
+   "dst": "Ay- yani, hah! Yüce Siegfried için sinek kovalamaktan bile kolaydı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#086": {
+   "src": "Seems like we’re done here! That must have been a very difficult fight for you.",
+   "dst": "Görünüşe göre burada işimiz bitti! Senin için çok zorlu bir dövüş olmuştur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#087": {
+   "src": "The caves I adventure in are filled with terrifying beasts similar to those.",
+   "dst": "Maceraya atıldığım mağaralar bunlara benzer korkunç canavarlarla dolu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#088": {
+   "src": "WAIT! Don’t move, that boulder is about to fall!",
+   "dst": "DUR! Kıpırdama, o kaya düşmek üzere!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#089": {
+   "src": "Wow, that was close! Of course, I saw that coming and had no risk at all.",
+   "dst": "Vay, kıl payı! Tabii ben bunu önceden gördüm, hiç risk yoktu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#090": {
+   "src": "You might say that we can’t go further, as it’s blocking our way. But I can fix that!",
+   "dst": "Yolumuzu kapattığı için daha ileri gidemeyiz diyebilirsin. Ama ben bunu hallederim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#091": {
+   "src": "And no more boulder! Only one as powerful as I can do that.",
+   "dst": "Ve kaya yok! Bunu ancak benim kadar güçlü biri yapabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#092": {
+   "src": "All we must do now is cross a perilous bridge over the Endless Chasm.",
+   "dst": "Şimdi tek yapmamız gereken Sonsuz Uçurum'un üzerindeki tehlikeli köprüden geçmek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#093": {
+   "src": "Aa, why did- Woah, careful! It looks like the bridge fell.",
+   "dst": "Aa, niye- Dikkat! Köprü çökmüş galiba.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#094": {
+   "src": "But this is not such an obstacle as you might think, for I can, uh, jump over this chasm!",
+   "dst": "Ama bu sandığın kadar büyük bir engel değil, çünkü ben, ıı, bu uçurumun üstünden atlayabilirim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#095": {
+   "src": "Here I go!",
+   "dst": "İşte atlıyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#096": {
+   "src": "WAIT!",
+   "dst": "DUR!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#097": {
+   "src": "The spell--",
+   "dst": "Büyü--",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#098": {
+   "src": "AAAAAAAAAAAAAH!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#099": {
+   "src": "Jump after Siegfried into the pit at the end of the cave.",
+   "dst": "Mağaranın sonundaki çukura Siegfried'in peşinden atla.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#100": {
+   "src": "Find a way to wake Siegfried.",
+   "dst": "Siegfried'i uyandırmanın bir yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#101": {
+   "src": "AAAAAAGH!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#102": {
+   "src": "Aaaaggggh my LEGS MY LEGS AAAGGH SO COLD!",
+   "dst": "Aaaaggggh BACAKLARIM BACAKLARIM AAAGGH ÇOK SOĞUK!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#103": {
+   "src": "SO COLD so PAINFUL…",
+   "dst": "ÇOK SOĞUK, çok ACIYOR…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#104": {
+   "src": "Why couldn’t I THINK when I signed that STUPID CONTRACT that I’d end up here!?",
+   "dst": "O APTAL SÖZLEŞMEYİ imzalarken neden buraya düşeceğimi DÜŞÜNEMEDİM ki!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#105": {
+   "src": "…Well, this is it.",
+   "dst": "…Eh, buraya kadarmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#106": {
+   "src": "They aren’t gonna come rescue us, you know. We’re on our own.",
+   "dst": "Bizi kurtarmaya gelmeyecekler, biliyorsun. Başımızın çaresine kendimiz bakacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#107": {
+   "src": "Why are you so calm? DON’T YOU SEE?!",
+   "dst": "Nasıl bu kadar sakinsin? GÖRMÜYOR MUSUN?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#108": {
+   "src": "WE’RE ON OUR OWN! This is REAL now! No coming back after ‘dying’, no more obvious traps, no more Siegfried. If I die here, I DIE! No coming back!",
+   "dst": "YAPAYALNIZIZ! Bu artık GERÇEK! 'Öldükten' sonra geri dönmek yok, göstermelik tuzaklar yok, Siegfried yok. Burada ölürsem ÖLÜRÜM! Dönüşü yok!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#109": {
+   "src": "I.. I can’t do this. We’ll just starve here, in this cave… where nobody will ever find our bodies.",
+   "dst": "Ben.. ben bunu yapamam. Burada, bu mağarada açlıktan öleceğiz… cesetlerimizi kimse bulamayacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#110": {
+   "src": "Stop looking at me! You figure out how to get us out of here, I’m just a worthless actor! Tell me if you find anything, I- I need a moment alone.",
+   "dst": "Bakma bana öyle! Buradan nasıl çıkacağımızı sen bul, ben değersiz bir aktörüm sadece! Bir şey bulursan söyle, ben- biraz yalnız kalmam lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#111": {
+   "src": "You found something? Ok. I’ll… follow you then.",
+   "dst": "Bir şey mi buldun? Tamam. O zaman… seni takip ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#112": {
+   "src": "WHAT WAS THAT SOUND?! A- are you sure we should go into there?",
+   "dst": "O SES DE NEYDİ?! G- gerçekten oraya girmeli miyiz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#113": {
+   "src": "MY ARM! IT HIT MY ARM!",
+   "dst": "KOLUM! KOLUMA ÇARPTI!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#114": {
+   "src": "… I think I can manage.. OW!",
+   "dst": "… Sanırım idare ederim.. AY!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#115": {
+   "src": "Venture deeper into the cave with Siegfried.",
+   "dst": "Siegfried'le mağaranın derinliklerine ilerle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#116": {
+   "src": "You.. You got us out of there!",
+   "dst": "Sen.. Sen bizi oradan çıkardın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#117": {
+   "src": "I didn’t think we’d ever find a way out of there…",
+   "dst": "Oradan bir çıkış bulabileceğimizi hiç sanmıyordum…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#118": {
+   "src": "… Well, I guess we should keep going. M- Maybe there’s a way out?",
+   "dst": "… Eh, sanırım devam etmeliyiz. B- Belki bir çıkış vardır?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#119": {
+   "src": "L- Look! There’s plants and light up ahead! A WAY OUT!",
+   "dst": "B- Bak! İleride bitkiler ve ışık var! BİR ÇIKIŞ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#120": {
+   "src": "Come on, follow me!",
+   "dst": "Hadi, peşimden gel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#121": {
+   "src": "AAAH!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 12",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#122": {
+   "src": "Rescue Siegfried from the trap OR leave him there.",
+   "dst": "Siegfried'i tuzaktan kurtar YA DA onu orada bırak.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#123": {
+   "src": "W- What just happened?! I’m trapped in here!",
+   "dst": "N- Ne oldu?! Burada mahsur kaldım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#124": {
+   "src": "… It’s… some sort of trap. I can feel the ground heating up!!",
+   "dst": "… Bu… bir çeşit tuzak. Zeminin ısındığını hissediyorum!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#125": {
+   "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
+   "dst": "Ç-Çok korkunçtu… H-hayatımı kurtardın. Teşekkür ederim … Böyle gerçek bir tehlikeye hazırlıklı değildim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 13",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#126": {
+   "src": "Rest before continuing through the cave.",
+   "dst": "Mağarada ilerlemeden önce dinlen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#127": {
+   "src": "…What? Houses, and a well? All the way down here?",
+   "dst": "…Ne? Evler ve bir kuyu mu? Bu kadar aşağıda?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#128": {
+   "src": "It’s… empty. And the houses sure don’t look like anyone’s lived here for.. centuries.",
+   "dst": "Burası… boş. Evlere bakılırsa burada yüzyıllardır.. kimse yaşamamış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#129": {
+   "src": "OW! MY LEGS! And my arms, too! E- Everything hurts so much.. I need to sit down. I think I turned my arm the wrong way.",
+   "dst": "AY! BACAKLARIM! Kollarım da! H- Her yerim çok acıyor.. Oturmam lazım. Sanırım kolumu ters çevirdim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#130": {
+   "src": "I’ll just.. rest here a bit. W- would you mind taking a look around for something we can eat? I can.. hardly move.",
+   "dst": "Ben biraz.. burada dinleneyim. Y- yiyecek bir şeyler için etrafa bakar mısın? Ben.. kıpırdayamıyorum bile.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#131": {
+   "src": "… Was this a sandwich at some point?",
+   "dst": "… Bu bir zamanlar sandviç miydi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#132": {
+   "src": "It barely has any resemblance to one.",
+   "dst": "Sandviçe pek benzer yanı kalmamış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#133": {
+   "src": "Well… I doubt there’s anything better around here. I- I’ll take it.",
+   "dst": "Eh… Buralarda daha iyisi yoktur herhalde. B- Bunu alayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#134": {
+   "src": "OW!! I think I broke my teeth! This is like eating stone!",
+   "dst": "AY!! Sanırım dişlerimi kırdım! Taş yemek gibi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#135": {
+   "src": "… I th-ow-ink I’m ready to- ow- move on. Let’s get go-oow-ing.",
+   "dst": "… Sanı-ay-rım devam etmeye- ay- hazırım. Hadi gide-ayy-lim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#136": {
+   "src": "... Is this the food you found?",
+   "dst": "... Bulduğun yiyecek bu mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#137": {
+   "src": "I guess it's... the best that could be found here. You say you cooked it yourself?",
+   "dst": "Herhalde... burada bulunabilecek en iyisi bu. Kendin mi pişirdin dedin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#138": {
+   "src": "I'll give it a try, then. Doubt there's anything better around here.",
+   "dst": "O zaman bir deneyeyim. Buralarda daha iyisi yoktur zaten.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#139": {
+   "src": "These are... amazing!",
+   "dst": "Bunlar... harika!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#140": {
+   "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
+   "dst": "Teşekkürler, {u}! Çok daha iyi hissediyorum. Sen hazır olduğunda derinlere inebilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#141": {
+   "src": "... These look disgusting.",
+   "dst": "... Bunlar iğrenç görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#142": {
+   "src": "I guess... I'll eat it, if it's the only food around.",
+   "dst": "Herhalde... buralardaki tek yiyecek buysa yerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#143": {
+   "src": "Let's see... How do i even eat these?",
+   "dst": "Bakalım... Bunlar nasıl yenir ki?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#144": {
+   "src": "Ugh... These are awful.",
+   "dst": "Iyy... Bunlar berbat.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#145": {
+   "src": "Venture deeper into the cave.",
+   "dst": "Mağaranın derinliklerine ilerle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#146": {
+   "src": "You know… my name is actually Gurix.",
+   "dst": "Biliyor musun… asıl adım Gurix.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#147": {
+   "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
+   "dst": "Çok Corkuslu duruyor, biliyorum. Daha az yabancı geldiği için Siegfried adını kullandırdılar herhalde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#148": {
+   "src": "AAAH! Get away!",
+   "dst": "AAAH! Uzak dur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#149": {
+   "src": "OW! {u}, I think this web is poisoned! Quick, get me out with one of your spells!",
+   "dst": "AY! {u}, bu ağ zehirli galiba! Çabuk, bir büyünle çıkar beni!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#150": {
+   "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
+   "dst": "Teşekkürler . Ben.. Bundan sonra seni takip edeceğim. Belli ki benden daha hazırlıklısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 15",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#151": {
+   "src": "Find your way through the spider burrows.",
+   "dst": "Örümcek yuvalarından geçmenin yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#152": {
+   "src": "{u}? I think that giant web there is being held up by the platforms on the walls.",
+   "dst": "{u}? Sanırım şuradaki dev ağı duvarlardaki platformlar tutuyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#153": {
+   "src": "I think… Maybe you can cut them down? I’ll stay here, I think it’s the safest place. I’ll call for you if a spider webs me again.",
+   "dst": "Bence… Belki onları kesebilirsin? Ben burada kalayım, en güvenli yer burası galiba. Bir örümcek beni yine ağa sararsa seslenirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#154": {
+   "src": "You did it! The web fell!",
+   "dst": "Başardın! Ağ düştü!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#155": {
+   "src": "Let’s head onwards, I don’t want to deal with any more spiders.",
+   "dst": "Hadi ilerleyelim, daha fazla örümcekle uğraşmak istemiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 16",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#157": {
+   "src": "Hey, wait up! Thanks for saving me there.",
+   "dst": "Hey, bekle! Orada beni kurtardığın için sağ ol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#158": {
+   "src": "Woah... This is enormous! Who knows what this used to be?",
+   "dst": "Vay... Burası devasa! Eskiden ne olduğunu kim bilir?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#159": {
+   "src": "The path seems to be across those yellow shards, maybe we can reach them?",
+   "dst": "Yol şu sarı kristallerin karşısında gibi, onlara ulaşabilir miyiz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#160": {
+   "src": "Find a way to escape through the skylight at the end of the cave.",
+   "dst": "Mağaranın sonundaki tavan penceresinden kaçmanın bir yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#161": {
+   "src": "Another town? Or another part of the same one? I’m not sure..",
+   "dst": "Başka bir kasaba mı? Yoksa aynısının başka bir kısmı mı? Emin değilim..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#162": {
+   "src": "This one even seems to have a forge and a tailor.. It was a full, proper village!",
+   "dst": "Burada demirhane ve terzi bile var gibi.. Tam teşekküllü bir köymüş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#163": {
+   "src": "That.. is that sunlight?",
+   "dst": "Şu.. güneş ışığı mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#164": {
+   "src": "{u}, look! I can see the sky from here! M- maybe there’s a way to get up!",
+   "dst": "{u}, bak! Buradan gökyüzünü görebiliyorum! B- belki yukarı çıkmanın bir yolu vardır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#165": {
+   "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
+   "dst": "Bence.. ya şu gayzeri bir şekilde kullanabilirsek? Uykuda gibi duruyor ama yeniden çalıştırabiliriz gibi geliyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#166": {
+   "src": "You take a look around, I’ll be resting a little. I don’t think I’ve ever walked this much in my life…",
+   "dst": "Sen etrafa bir bak, ben biraz dinleneceğim. Hayatımda hiç bu kadar yürüdüğümü sanmıyorum…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#167": {
+   "src": "Woah! The geyser’s active!",
+   "dst": "Vay! Gayzer çalıştı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#168": {
+   "src": "W-Wait.. that’ll be quite a long fall after we get launched up. Can you try making some safety equipment, like a parachute or some really soft boots?",
+   "dst": "B-Bekle.. yukarı fırlatıldıktan sonra epey uzun bir düşüş olacak. Paraşüt ya da çok yumuşak botlar gibi bir güvenlik donanımı yapmayı deneyebilir misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#169": {
+   "src": "You’ve already made something? Let me see.",
+   "dst": "Bir şey yaptın bile mi? Göster bakayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#170": {
+   "src": "This looks… usable? It’s something, at least.",
+   "dst": "Bu… kullanılabilir gibi mi? En azından bir şey.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#171": {
+   "src": "Probably the best we’ll get down here. Are you sure you don’t need anything for yourself? No? Okay.",
+   "dst": "Herhalde burada elde edebileceğimizin en iyisi bu. Kendin için bir şeye ihtiyacın olmadığından emin misin? Yok mu? Peki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#172": {
+   "src": "I can’t wait to see the look on their faces when we get back. We’ve just saved the legacy of Siegfried!",
+   "dst": "Döndüğümüzde suratlarındaki ifadeyi görmek için sabırsızlanıyorum. Siegfried'in mirasını kurtardık!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#173": {
+   "src": "Escape the cave!",
+   "dst": "Mağaradan kaç!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#174": {
+   "src": "Woah! The parachute worked!",
+   "dst": "Vay! Paraşüt işe yaradı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 21",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#175": {
+   "src": "???",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#176": {
+   "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
+   "dst": "B-başardık mı? …, BAŞARDIK! GERİ DÖNDÜK! HAHAAA! YAŞIYORUM!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#177": {
+   "src": "Hello there! It is I, Siegfried, and I just stopped the threat that was this cave!",
+   "dst": "Merhaba! Benim, Siegfried, ve bu mağaranın tehdidini az önce durdurdum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#178": {
+   "src": "Hah, that’s a great costume you have there! Looks just like me!",
+   "dst": "Hah, harika bir kostümün var! Tıpkı bana benziyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#179": {
+   "src": "What? I- I’ve been REPLACED?",
+   "dst": "Ne? B- Benim yerime başkasını mı KOYDULAR?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#180": {
+   "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
+   "dst": "Hah, şuradaki şakacıya aldırma. Gerçi kostümü etkileyici!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#181": {
+   "src": "W-what's going on here? You can't replace me!",
+   "dst": "N-neler oluyor burada? Benim yerime başkasını koyamazsınız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#182": {
+   "src": "This way, please.",
+   "dst": "Bu taraftan, lütfen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#183": {
+   "src": "Look over there! Those must be fireworks to celebrate my victory!",
+   "dst": "Şuraya bakın! Bunlar zaferimi kutlamak için atılan havai fişekler olmalı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#184": {
+   "src": "Wait, wha-",
+   "dst": "Dur, ne-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Gurix",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#185": {
+   "src": "Well, anyways! You had a really bad fall in that cave there. I carried you out myself, you must’ve had some wild hallucinations.",
+   "dst": "Neyse işte! O mağarada çok kötü düştün. Seni oradan bizzat ben taşıdım, epey tuhaf halüsinasyonlar görmüş olmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#186": {
+   "src": "Even though it was your own mistake, I’ll return you the emeralds you spent on the scavenger hunt.. and some more as compensation. That'll be.. [{~} Liquified Emeralds]!",
+   "dst": "Kendi hatan olsa da hazine avına harcadığın zümrütleri.. bir de tazminat olarak biraz daha fazlasını sana geri vereceğim. Ediyor.. [{~} Sıvı Zümrüt]!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#187": {
+   "src": "I must return to {p} for the celebration now. Perhaps we will meet again at the next scavenger hunt!",
+   "dst": "Şimdi kutlama için {p} şehrine dönmeliyim. Belki bir sonraki hazine avında yine karşılaşırız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#188": {
+   "src": "Hello there, human! It is I, Siegfried! You must have just missed how I expertly ended the threat of this monster-ridden cave!",
+   "dst": "Merhaba, insan! Benim, Siegfried! Canavar dolu bu mağaranın tehdidine nasıl ustalıkla son verdiğimi az farkla kaçırdın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#189": {
+   "src": "Wait!",
+   "dst": "Dur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#190": {
+   "src": "*inaudible*",
+   "dst": "*duyulmuyor*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#191": {
+   "src": "{u}, I'm glad to see you managed to get out alive. That must have been quite a fall into the chasm.",
+   "dst": "{u}, sağ salim çıkabildiğine sevindim. Uçuruma düşmek epey sert olmuş olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#192": {
+   "src": "Of course, I got out easily using my spells and great knowledge of caves! Well, I must be off now. Maybe we may meet again if you win the next scavenger hunt!",
+   "dst": "Ben tabii büyülerim ve mağaralar hakkındaki engin bilgim sayesinde kolayca çıktım! Eh, artık gitmeliyim. Belki bir sonraki hazine avını kazanırsan yine karşılaşırız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Siegfried",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#193": {
+   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items.",
+   "dst": "Talihsiz kazanın için tazminat olarak Siegfried, hazine avı eşyalarına harcadığın zümrütleri sana geri verecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#194": {
+   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried!",
+   "dst": "Bu da... {~} Sıvı Zümrüt ediyor. Siegfried'le maceran sırasında yaşadığın zorluklar için özür dileriz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hero of Gavel#195": {
+   "src": "- Sky's Kitchen: Cooking with Siegfried!",
+   "dst": "- Sky's Kitchen: Siegfried'le Yemek Yapıyoruz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 22",
+   "speaker": "Coming Soon",
+   "source": "wiki"
+  }
+ }
+}

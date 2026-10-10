@@ -1,0 +1,304 @@
+{
+ "_meta": {
+  "quest": "Tribal Aggression",
+  "count": 29,
+  "translated": 29,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Tribal Aggression#000": {
+   "src": "Not only did the {p} steal our totem but also stole one of our Idol's eyes!",
+   "dst": "{p} totemimizi çalmakla kalmadı, Putumuzun gözlerinden birini de çaldı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Eagle Tribesman\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Tribal Aggression#001": {
+   "src": "The totems hold great protective magical power. Without all the parts, it can not function.",
+   "dst": "Totemler büyük bir koruyucu büyü gücü taşır. Bütün parçaları olmadan çalışamaz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "Eagle Tribesman\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Tribal Aggression#002": {
+   "src": "It is probably hiding away somewhere at the {p}. Maybe if there's peace we can return it.",
+   "dst": "Muhtemelen {p} içinde bir yerde saklıdır. Belki barış olursa onu geri verebiliriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#003": {
+   "src": "You may go now traveler, farewell.",
+   "dst": "Artık gidebilirsin yolcu, elveda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#004": {
+   "src": "My tribe worries our own business, stranger.",
+   "dst": "Kabilem kendi işine bakar, yabancı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "captured"
+  },
+  "Tribal Aggression#005": {
+   "src": "I'm sure they hid the totem, but if you are able to find it, I await your return!",
+   "dst": "Totemi sakladıklarından eminim, ama bulabilirsen dönüşünü bekliyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "captured"
+  },
+  "Tribal Aggression#006": {
+   "src": "Hopefully, we two camps will never set foot on another's land in an attempt to steal back the totems, and live in peace.",
+   "dst": "Umarım iki kampımız da totemleri geri çalmak için bir daha birbirinin toprağına ayak basmaz ve barış içinde yaşarız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "captured"
+  },
+  "Tribal Aggression#007": {
+   "src": "I-Is that, the totem? My, it has been a long time since the owl has been with me. Though I wonder if the Eagle and Owl totem possess the same mystic powers.",
+   "dst": "B-Bu, totem mi? Aman, baykuş benimle olalı çok uzun zaman oldu. Gerçi Kartal ve Baykuş totemlerinin aynı mistik güçlere sahip olup olmadığını merak ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "Caras",
+   "source": "captured"
+  },
+  "Tribal Aggression#008": {
+   "src": "Have you gotten our totem back yet? The Eagle camp is across the river, on the other side of the canyon.",
+   "dst": "Totemimizi geri aldın mı? Kartal kampı nehrin karşısında, kanyonun öbür tarafında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tribal Aggression#009": {
+   "src": "Talk to Caras at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki Caras ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#010": {
+   "src": "Oh, my apologies, I did not realize you are a warrior of the province! We would be grateful of your help.",
+   "dst": "Ah, özür dilerim, eyaletin bir savaşçısı olduğunu fark etmemiştim! Yardımına minnettar oluruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#011": {
+   "src": "Our sacred owl totem that we worship was stolen by the cunning Eagle Tribe many years ago. Its magical properties used to bring prosperity to our camp.",
+   "dst": "Taptığımız kutsal baykuş totemimiz yıllar önce kurnaz Kartal Kabilesi tarafından çalındı. Büyülü özellikleri kampımıza bolluk getirirdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#012": {
+   "src": "However, the Eagle tribe are not victorious, we possess their mystic eagle totem, but alas, I do not know who was the original thief.",
+   "dst": "Ama Kartal kabilesi kazanmış değil, onların mistik kartal totemi bizde, ne yazık ki ilk hırsızın kim olduğunu bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#013": {
+   "src": "We have been at war for years now, despite being neighbors. Without our totem, our rivalry will continue for ages and peace will never again be felt in our hearts.",
+   "dst": "Komşu olmamıza rağmen yıllardır savaştayız. Totemimiz olmadan rekabetimiz çağlar boyu sürecek ve kalplerimiz bir daha asla huzur bulmayacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#014": {
+   "src": "Retrieve our totem, and the blessing of the Owl spirit will be with you.",
+   "dst": "Totemimizi geri getir, Baykuş ruhunun kutsaması seninle olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#015": {
+   "src": "Now, enter the Eagle Camp across the river, you may have to search the camp, I'm sure they have hidden our totem!",
+   "dst": "Şimdi nehrin karşısındaki Kartal Kampı'na gir, kampı araman gerekebilir, totemimizi sakladıklarından eminim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 1",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#016": {
+   "src": "Enter the Eagle Camp and talk to Favian",
+   "dst": "Kartal Kampı'na gir ve Favian ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#017": {
+   "src": "Greetings, what brings you to the noble Eagle tribe?",
+   "dst": "Selamlar, seni soylu Kartal kabilesine getiren nedir?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#018": {
+   "src": "You seek the Owl totem? The cursed Owl tribe trying to retain their lost dignity again.",
+   "dst": "Baykuş totemini mi arıyorsun? Lanet Baykuş kabilesi yine kayıp onurlarını geri kazanmaya çalışıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#019": {
+   "src": "Why should we give you their totem back? They stole our source of enlightenment all those years ago.",
+   "dst": "Totemlerini neden sana geri verelim? Bunca yıl önce aydınlanma kaynağımızı onlar çaldı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#020": {
+   "src": "Tell you what, if you can retrieve our Eagle Totem, I will allow you to go return the Owl totem.",
+   "dst": "Bak ne diyeceğim, Kartal Totemimizi geri getirebilirsen Baykuş totemini götürüp geri vermene izin veririm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 2",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#021": {
+   "src": "Bring back the Eagle Totem from the Owl Camp",
+   "dst": "Kartal Totemini Baykuş Kampı'ndan geri getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#022": {
+   "src": "Wonderful! You may now enter the cave to retrieve the blasted Owl totem.",
+   "dst": "Harika! Artık o lanet Baykuş totemini almak için mağaraya girebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#023": {
+   "src": "Be careful, there are Eagle guardians in the cave, be prepared traveller.",
+   "dst": "Dikkatli ol, mağarada Kartal muhafızları var, hazırlıklı ol yolcu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#024": {
+   "src": "Once you get the totem, you may return it to its original tribe.",
+   "dst": "Totemi aldıktan sonra asıl kabilesine geri verebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#025": {
+   "src": "Anyways, hurry up, even the thought of the two totems sharing the same space makes me sick.",
+   "dst": "Neyse, acele et, iki totemin aynı yerde durduğunu düşünmek bile midemi bulandırıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 3",
+   "speaker": "Favian",
+   "source": "wiki"
+  },
+  "Tribal Aggression#026": {
+   "src": "Retrieve the Owl Totem and return it to the Owl Camp",
+   "dst": "Baykuş Totemini al ve Baykuş Kampı'na geri götür",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tribal Aggression#027": {
+   "src": "To think, such a long war could end so quickly and by the help of a single person.",
+   "dst": "Düşünsene, bu kadar uzun bir savaş bu kadar çabuk ve tek bir kişinin yardımıyla sona erebiliyormuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "Caras",
+   "source": "wiki"
+  },
+  "Tribal Aggression#028": {
+   "src": "Many thanks to you! I shall keep my promise, please accept this reward, and may the Owl be forever with you.",
+   "dst": "Çok teşekkürler! Sözümü tutacağım, lütfen bu ödülü kabul et, Baykuş sonsuza dek seninle olsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tribal Aggression",
+   "stage": "Stage 4",
+   "speaker": "Caras",
+   "source": "wiki"
+  }
+ }
+}

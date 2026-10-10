@@ -1,0 +1,614 @@
+{
+ "_meta": {
+  "quest": "The Thanos Depository",
+  "count": 60,
+  "translated": 60,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Thanos Depository#000": {
+   "src": "Thank you again...soldier. For helping us make peace...",
+   "dst": "Tekrar teşekkürler... asker. Barışı sağlamamıza yardım ettiğin için...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Thanos Depository#001": {
+   "src": "[+{~} Track Controller]",
+   "dst": "[+{~} Ray Kumandası]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Thanos Depository#002": {
+   "src": "Please take a track controller before entering the rail line.",
+   "dst": "Lütfen ray hattına girmeden önce bir ray kumandası al.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Thanos Depository#003": {
+   "src": "Find out what's happening at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumunda neler olduğunu öğren",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#004": {
+   "src": "This is just a disaster... I pray nothing goes awry with the recovery team.",
+   "dst": "Bu tam bir felaket... Kurtarma ekibine bir şey olmaması için dua ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#005": {
+   "src": "I'd never be able to live it off if I'm responsible for more deaths.",
+   "dst": "Daha fazla ölümden ben sorumlu olursam bununla asla yaşayamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#006": {
+   "src": "But I must do what it takes to prevent {p} from any more disaster.",
+   "dst": "Ama {p} şehrini yeni felaketlerden korumak için ne gerekiyorsa yapmalıyım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#007": {
+   "src": "Sir! Coulmis, sir!",
+   "dst": "Efendim! Coulmis, efendim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#008": {
+   "src": "Atila, you're back! Give it to me straight, did they succeed? We can't afford any more losses.",
+   "dst": "Atila, döndün! Bana açıkça söyle, başardılar mı? Daha fazla kayıp kaldıramayız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#009": {
+   "src": "No, sir... I'm afraid not.",
+   "dst": "Hayır, efendim... Korkarım başaramadılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#010": {
+   "src": "The elevator leads right in to where the dragon lays. Without knowing when it's asleep, it's a gamble.",
+   "dst": "Asansör doğrudan ejderhanın yattığı yere iniyor. Ne zaman uyuduğunu bilmeden bu bir kumar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#011": {
+   "src": "The elevator leads right in to where the dragon lays. Without knowing when it's asleep, it's a gamble...",
+   "dst": "Asansör doğrudan ejderhanın yattığı yere iniyor. Ne zaman uyuduğunu bilmeden bu bir kumar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#012": {
+   "src": "It's a great feat what you've accomplished. The dwarven defense system was thought to be impeccable. We'll need to rethink our security!",
+   "dst": "Başardığın şey büyük bir iş. Cücelerin savunma sisteminin kusursuz olduğu sanılıyordu. Güvenliğimizi yeniden düşünmemiz gerekecek!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Thanos Depository#013": {
+   "src": "So we truly do need to go through the vault. But with the defense systems gone haywire...",
+   "dst": "Demek gerçekten kasanın içinden geçmemiz gerekiyor. Ama savunma sistemleri çıldırmışken...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#014": {
+   "src": "I'm sorry sir...",
+   "dst": "Üzgünüm efendim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#015": {
+   "src": "Think nothing of it, let's get back to the drawing board.",
+   "dst": "Hiç dert etme, plana en baştan başlayalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#016": {
+   "src": "Yes, I'll get to it immediately.",
+   "dst": "Emredersiniz, hemen başlıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#017": {
+   "src": "You there, human! What's your business here? Come speak to me.",
+   "dst": "Hey sen, insan! Burada ne işin var? Gel de konuşalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#018": {
+   "src": "What's your business here? This place is off limits, the vault is very dangerous right now.",
+   "dst": "Burada ne işin var? Buraya girmek yasak, kasa şu anda çok tehlikeli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#019": {
+   "src": "Now that I look, say, that gear of yours is pretty high-quality, yeah? What's your name?",
+   "dst": "Şimdi bakınca, şu teçhizatın epey kaliteli, değil mi? Adın ne?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#020": {
+   "src": "Now that I look, say, that gear of yours is pretty high quality, yeah? What's your name?",
+   "dst": "Şimdi bakınca, şu teçhizatın epey kaliteli, değil mi? Adın ne?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#021": {
+   "src": "... where have I heard that name before... Oh, I remember! You're that guy who defeated that Qira woman, yeah?",
+   "dst": "... bu adı nerede duymuştum... Ha, hatırladım! O Qira denen kadını yenen kişi sensin, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#022": {
+   "src": "... where have I heard that name before... Oh, I remember! You're the one who helped resolve the whole Dogun thing, right?",
+   "dst": "... bu adı nerede duymuştum... Ha, hatırladım! Şu bütün Dogun meselesini çözmeye yardım eden sensin, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#023": {
+   "src": "I see, I haven't seen you around before.",
+   "dst": "Anlıyorum, seni daha önce buralarda görmemiştim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#024": {
+   "src": "Nevertheless, {p} is in danger. To put it simply, a dragon is living uninvited in our depository.",
+   "dst": "Neyse, {p} tehlikede. Kısacası, deposumuzda davetsiz bir ejderha yaşıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#025": {
+   "src": "Perhaps, you've seen its lair above our city. Normally she leaves us unharmed, but one day she suddenly made her way in to this vault.",
+   "dst": "Belki şehrimizin üstündeki inini görmüşsündür. Normalde bize zarar vermez, ama bir gün aniden bu kasaya girdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#026": {
+   "src": "My great friend Atila has been leading a recon squad, he's discerned that she's nesting an egg.",
+   "dst": "Değerli dostum Atila bir keşif ekibine liderlik ediyor, ejderhanın bir yumurtanın üstünde yattığını fark etti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#027": {
+   "src": "We've tried at our greatest expenses to steal the egg, and bring it back to her nest, so that maybe she would leave... But, as you've heard, it's not going well.",
+   "dst": "Büyük bedeller ödeyerek yumurtayı çalıp yuvasına geri götürmeye çalıştık, belki o da giderdi diye... Ama duyduğun gibi, işler iyi gitmiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#028": {
+   "src": "I don't normally ask this of strangers, but we've run ourselves thin. Do you think you're up to help? I'll make sure it's all worth your trouble.",
+   "dst": "Normalde yabancılardan böyle bir şey istemem ama gücümüz tükendi. Yardım edebileceğini düşünüyor musun? Zahmetine değeceğinden emin olacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#029": {
+   "src": "So you'll help!? Thank you so much! I'll make sure it's worth every moment!",
+   "dst": "Yani yardım edecek misin!? Çok teşekkürler! Her anına değeceğinden emin olacağım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#030": {
+   "src": "You'll have to go through this chamber behind me to reach the depository. Our only other way in is right where the dragon is...",
+   "dst": "Depoya ulaşmak için arkamdaki bu odadan geçmen gerekecek. Diğer tek giriş yolumuz tam ejderhanın olduğu yer...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#031": {
+   "src": "You have to go through this chamber behind me to reach the depository. Our only other way in is right where the dragon is...",
+   "dst": "Depoya ulaşmak için arkamdaki bu odadan geçmen gerekiyor. Diğer tek giriş yolumuz tam ejderhanın olduğu yer...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#032": {
+   "src": "The people of {p} have everlasting gratitude, soldier.",
+   "dst": "{p} halkı sana sonsuza dek minnettar, asker.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Thanos Depository#033": {
+   "src": "New Quest Started: The {p} Depository",
+   "dst": "Yeni Görev Başladı: {p} Deposu",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Thanos Depository#034": {
+   "src": "Atila knows some of the inner workings of the vault. I bid you good luck and will be praying for your success. Your courage will inspire {p}.",
+   "dst": "Atila kasanın işleyişini biraz bilir. Sana bol şans diliyorum, başarın için dua edeceğim. Cesaretin {p} halkına ilham verecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#035": {
+   "src": "Oh, so it wasn't meant to be I suppose...",
+   "dst": "Ah, demek olmayacakmış...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#036": {
+   "src": "Well, if we cross paths again, I'll always much appreciate your help... Back to the drawing board...",
+   "dst": "Neyse, yollarımız yine kesişirse yardımın için her zaman minnettar olurum... Plana en baştan başlayalım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 1",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#037": {
+   "src": "Enter the vault at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki kasaya gir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#038": {
+   "src": "Head to the {p} Depository at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki {p} Deposu'na git",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#039": {
+   "src": "Find a way through the depository.",
+   "dst": "Depodan geçmenin bir yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#040": {
+   "src": "Ride the minecarts to get further in to the depository",
+   "dst": "Deponun daha derinlerine ilerlemek için vagonlara bin",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#041": {
+   "src": "Steal Ozoth's egg and escape the depository.",
+   "dst": "Ozoth'un yumurtasını çal ve depodan kaç.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#042": {
+   "src": "Use the lift to escape.",
+   "dst": "Kaçmak için asansörü kullan.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#043": {
+   "src": "Oh-oh my gosh!! I took you for dead, and thought the dragon was sending me up a corpse!",
+   "dst": "Aman-aman tanrım!! Seni ölü sanmıştım, ejderhanın bana bir ceset gönderdiğini düşündüm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 7",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#044": {
+   "src": "You really got it!? Hurry, then, the nest is up through this cave! Maybe {p} can finally be rid of its woes...",
+   "dst": "Gerçekten aldın mı!? O zaman acele et, yuva bu mağaranın yukarısında! Belki {p} sonunda dertlerinden kurtulur...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 7",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#045": {
+   "src": "Place Ozoth's egg back in her nest at [{~},-{~}].",
+   "dst": "Ozoth'un yumurtasını [{~},-{~}] konumundaki yuvasına geri koy.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#046": {
+   "src": "Talk to Atila.",
+   "dst": "Atila ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Thanos Depository#047": {
+   "src": "She's a beauty, isn't she? A monster though, nevertheless.",
+   "dst": "Güzel bir şey, değil mi? Yine de bir canavar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 9",
+   "speaker": "Atila",
+   "source": "wiki"
+  },
+  "The Thanos Depository#048": {
+   "src": "{u}! Over here... Atila told me the news, I came as fast as I could!",
+   "dst": "{u}! Buraya... Atila bana haberi verdi, olabildiğince hızlı geldim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 9",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#049": {
+   "src": "You're a hero, lad! With the dragon out of our city, {p} no longer has to live in fear.",
+   "dst": "Sen bir kahramansın, evlat! Ejderha şehrimizden çıktığına göre {p} artık korku içinde yaşamak zorunda değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 9",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#050": {
+   "src": "I've prepared your reward. The people of {p} will remember your contribution for years to come.",
+   "dst": "Ödülünü hazırladım. {p} halkı katkını yıllarca hatırlayacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "Stage 9",
+   "speaker": "Coulmis",
+   "source": "wiki"
+  },
+  "The Thanos Depository#051": {
+   "src": "Will you help Coulmis?",
+   "dst": "Coulmis'e yardım edecek misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#052": {
+   "src": "So you've taken the job. Good luck to you in there.",
+   "dst": "Demek işi kabul ettin. İçeride bol şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#053": {
+   "src": "What would you like to know?",
+   "dst": "Ne öğrenmek istersin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#054": {
+   "src": "The way to the depository is guarded by some dragon-like sentinels. They're meant to cook any thieves to be well done.",
+   "dst": "Depoya giden yolu ejderhaya benzer bekçiler koruyor. Hırsızları iyice pişirmek için yapılmışlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#055": {
+   "src": "There's a bit of a workaround though, if you kill the living sentinel, they'll deactivate and you can go through.",
+   "dst": "Ama bir açık var, canlı bekçiyi öldürürsen devre dışı kalırlar ve geçebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#056": {
+   "src": "Make sure you don't get scorched either, the statues take a few seconds before they breath their flames. Good luck and godspeed!",
+   "dst": "Kavrulmamaya da dikkat et, heykeller alev püskürtmeden önce birkaç saniye bekler. Bol şans, yolun açık olsun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#057": {
+   "src": "You'll be going directly in to the chamber. Once you see she's asleep, you book it to the egg!",
+   "dst": "Doğrudan odaya gireceksin. Uyuduğunu görür görmez yumurtaya koş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#058": {
+   "src": "I understand if you're worried, but right now I can't think of anything else we can do...",
+   "dst": "Endişelenmeni anlıyorum, ama şu anda yapabileceğimiz başka bir şey aklıma gelmiyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Thanos Depository#059": {
+   "src": "Don't wait any longer, {u}! Place the egg and we can finally lure that wretched dragon out!",
+   "dst": "Daha fazla bekleme, {u}! Yumurtayı koy, o lanet ejderhayı sonunda dışarı çekelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Thanos Depository",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  }
+ }
+}

@@ -1,0 +1,992 @@
+{
+ "_meta": {
+  "quest": "The Worm Holes",
+  "count": 96,
+  "translated": 94,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Worm Holes#000": {
+   "src": "...Haven'",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "Lari\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "The Worm Holes#001": {
+   "src": "Soon Gavel will open a museum for my art...",
+   "dst": "Yakında Gavel benim sanatım için bir müze açacak...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#002": {
+   "src": "New Quest Started: Realm of Light I - The Worm Holes",
+   "dst": "Yeni Görev Başladı: Işık Diyarı I - Solucan Delikleri",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "New Quest Started: Realm of Light V - The Realm of Light",
+    "file": "quest/the-realm-of-light-quest.json",
+    "ratio": 0.815,
+    "reason": "candidate"
+   }
+  },
+  "The Worm Holes#003": {
+   "src": "{u}, then... Let us head to the site. I need to fix this... Please, help me get to the root of this problem so I may soothe the land's pain.",
+   "dst": "{u}, öyleyse... Bölgeye gidelim. Bunu düzeltmem gerek... Lütfen, sorunun köküne inmeme yardım et ki toprağın acısını dindirebileyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "captured",
+   "similar": {
+    "text": "{u}, then... Let us head to the site. {u}. I need to fix this... Please, help me get to the root of this problem so I may soothe the land's pain.",
+    "file": "quest/the-worm-holes.json",
+    "ratio": 0.982,
+    "reason": "placeholders"
+   }
+  },
+  "The Worm Holes#004": {
+   "src": "So this is the site... siochain do d'anamacha i mait...",
+   "dst": "Demek burası... siochain do d'anamacha i mait...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#005": {
+   "src": "Even if I am alone on that front...though I understand you are taught differently where you come from. I do not envy you, though I still thank you for your aid thus far.",
+   "dst": "O konuda yalnız olsam bile... gerçi senin geldiğin yerde farklı öğretildiğini anlıyorum. Sana imrenmiyorum, ama şimdiye kadarki yardımın için yine de teşekkür ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#006": {
+   "src": "Not that way, {u}.",
+   "dst": "O taraftan değil, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#007": {
+   "src": "AH! cosain!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#008": {
+   "src": "W-wait, again? co-cosa- Aah, MOVE!",
+   "dst": "B-bekle, yine mi? co-cosa- Aah, ÇEKİL!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#009": {
+   "src": "It looked like it escaped! Did you see where it went?",
+   "dst": "Kaçmış gibi görünüyordu! Nereye gittiğini gördün mü?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#010": {
+   "src": "Wait a second...",
+   "dst": "Bir saniye...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#011": {
+   "src": "Under you!",
+   "dst": "Altında!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#012": {
+   "src": "...y-you... {u}... I...y-you're still alright? I...*hic* I...",
+   "dst": "...s-sen... {u}... Ben... h-hâlâ iyi misin? Ben... *hık* Ben...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "captured",
+   "similar": {
+    "text": "...y-you... ... I...y-you're still alright? I...*hic* I...",
+    "file": "quest/the-worm-holes.json",
+    "ratio": 0.975,
+    "reason": "placeholders"
+   }
+  },
+  "The Worm Holes#013": {
+   "src": "New Questline Started: The Realm of Light",
+   "dst": "Yeni Görev Serisi Başladı: Işık Diyarı",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Worm Holes#014": {
+   "src": "Find out what's going on at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumunda neler olduğunu öğren",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Worm Holes#015": {
+   "src": "Arrighty fellers, let's get this wrapped up now! 'ere's plenty more holes where this one came from!",
+   "dst": "Hadi bakalım beyler, şu işi bitirelim artık! Bunun gibi daha bi' sürü delik var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#016": {
+   "src": "...what in...aw no!",
+   "dst": "...bu da ne... ah hayır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#017": {
+   "src": "The scaffolds are crackin'! Everyone, get offa there, now!!",
+   "dst": "İskeleler çatlıyor! Herkes in oradan, hemen!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#018": {
+   "src": "GwaaAAAAAH!!",
+   "dst": "AaaAAAAAH!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "The Worm Holes#019": {
+   "src": "Aw, hell... I knew this project was a bust from the start...there goes Willam and Clint cause a' this!",
+   "dst": "Hay aksi... Bu projenin baştan batacağını biliyordum... Willam ile Clint bu yüzden gitti!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#020": {
+   "src": "I gotta get someone tough enough to get down there...hm? Hey, a human! Git on over here!",
+   "dst": "Aşağı inebilecek kadar sağlam birini bulmam lazım... hm? Hey, bir insan! Gel bakalım buraya!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#021": {
+   "src": "I gotta ask, how much 'a that didja see, Wynn feller? Wasn't pretty, and I'm in charge a' them folks, so I gotta take responsibility fer that.",
+   "dst": "Sormam lazım, ne kadarını gördün Wynn'li ahbap? Hiç hoş değildi, o adamların başında ben varım, o yüzden sorumluluğu almam gerek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#022": {
+   "src": "Th' mayor of {p} there saw these holes poppin' up, and hired us out to cover 'em up. Thing is, the ground's too unstable to build.",
+   "dst": "{p} belediye başkanı şu deliklerin açıldığını görüp kapatmak için bizi tuttu. İşin aslı, zemin inşaat yapamayacak kadar sağlam değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#023": {
+   "src": "It's gettin' real worrying round here. They only started openin' up recently, and there've been quakes too. Feels like the place is gonna collapse!",
+   "dst": "Buralarda işler gerçekten endişe verici olmaya başladı. Delikler daha yeni açılmaya başladı, bir de depremler oluyor. Sanki burası çökecek gibi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#024": {
+   "src": "I think we oughta head down there and figure out what 'n heck's goin' on, and you're the best armed outta any of us, being human 'n all.",
+   "dst": "Bence aşağı inip ne halt döndüğünü çözmemiz lazım, insan olduğun için de aramızda en iyi silahlanan sensin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#025": {
+   "src": "Think y'all could head down 'n see if you can rustle up any leads? There's a path down just to the left of the hole.",
+   "dst": "Aşağı inip bir ipucu bulabilir misin dersin? Deliğin hemen solunda aşağı inen bir yol var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 1",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#026": {
+   "src": "Go down the hole and look for what's causing this and return to Malo at [-{~}, {~}, -{~}] with proof.",
+   "dst": "Deliğe in, buna neyin sebep olduğunu araştır ve kanıtla birlikte [-{~}, {~}, -{~}] konumundaki Malo'ya dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Worm Holes",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Worm Holes#027": {
+   "src": "What in tarnation...? The heck did you find down there, soldier?",
+   "dst": "Bu da ne böyle...? Aşağıda ne buldun sen, asker?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 2",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#028": {
+   "src": "Oh, it was just the skin, huh? Dang...was hopin' you'd've seen what it was, cause I got no clue 'bout this.",
+   "dst": "Ha, sadece deri miymiş? Hay aksi... Ne olduğunu görmüşsündür diye umuyordum, çünkü bu işten hiç anlamıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 2",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#029": {
+   "src": "Urgh. Only gal I know who might have an idea 'bout this is that durn elf lady...",
+   "dst": "Of. Bu konuda fikri olabilecek tanıdığım tek kişi şu lanet elf kadın...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 2",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#030": {
+   "src": "She's got purple hair and's been wanderin' round like she knows everything. Yeah, she's a bright penny but she ain't gotta be so uppity ta all of us 'bout it.",
+   "dst": "Mor saçları var, her şeyi biliyormuş gibi ortalıkta dolaşıp duruyor. Evet, akıllı bi' kız ama bu yüzden hepimize bu kadar burnu havada davranması şart değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 2",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#031": {
+   "src": "She put up a camp just east of here. She'll prob'ly react better to you than me, so I'll go to the authorities and see if they have any leads.",
+   "dst": "Buranın hemen doğusunda bir kamp kurdu. Sana muhtemelen benden daha iyi davranır, ben de yetkililere gidip bir ipuçları var mı bakayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 2",
+   "speaker": "Malo",
+   "source": "wiki"
+  },
+  "The Worm Holes#032": {
+   "src": "Look for Lari and ask what is going on at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumunda Lari'yi bul ve neler olduğunu sor",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Worm Holes#033": {
+   "src": "...Haven’t we met? I have witnessed your presence in Gavel more than once.",
+   "dst": "...Daha önce karşılaşmadık mı? Seni Gavel'da birden fazla kez gördüm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#034": {
+   "src": "I am Lari. I might have greeted you properly before if I were not so busy, which reminds me. You have a reason to be here, yes?",
+   "dst": "Ben Lari. Bu kadar meşgul olmasaydım seni daha önce düzgünce selamlardım, bu da aklıma getirdi. Burada olmak için bir sebebin var, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#035": {
+   "src": "Hm...I believe I know what you have found, by your description. That dead skin too, is proof enough, I would say.",
+   "dst": "Hm... Anlattıklarına bakılırsa ne bulduğunu biliyorum sanırım. O ölü deri de yeterince kanıt bence.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#036": {
+   "src": "The creature which shed that skin is known as a Grootslang. Though large, they are rather peaceful. Gentle giants, I believe the saying is?",
+   "dst": "O deriyi döken yaratığa Grootslang denir. İri olsalar da oldukça barışçıldırlar. Uysal devler, deyim böyleydi sanırım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#037": {
+   "src": "This horrid Decay...it affects their habitats underground. They are seeking shelter closer to the surface. I have been trying to scrub the Decay without success...",
+   "dst": "Bu korkunç Çürüme... yeraltındaki yaşam alanlarını etkiliyor. Yüzeye daha yakın yerlerde sığınak arıyorlar. Çürümeyi temizlemeye çalışıyorum ama başaramıyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#038": {
+   "src": "Wait... More holes appeared just today? There...there were deaths?! W-where, when?!",
+   "dst": "Dur... Daha bugün yeni delikler mi açıldı? Ölenler... ölenler mi oldu?! N-nerede, ne zaman?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#039": {
+   "src": "No, no...! I refuse to be responsible for any more deaths... Human, tell me your name, please.",
+   "dst": "Hayır, hayır...! Daha fazla ölümden sorumlu olmayı reddediyorum... İnsan, adını söyle lütfen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 3",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#040": {
+   "src": "Meet up with Lari at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumunda Lari ile buluş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Worm Holes#041": {
+   "src": "So this is the site... [Gavellian Spell]...",
+   "dst": "Demek burası... [Gavellian Spell]...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#042": {
+   "src": "Here. Allow me to provide at least one person safe passage into the pit.",
+   "dst": "İşte. Hiç değilse bir kişinin çukura güvenle inmesini sağlayayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#043": {
+   "src": "Have faith- Jump in. I will carry you down slowly.",
+   "dst": "Güven bana- Atla. Seni yavaşça aşağı indireceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#044": {
+   "src": "Take the lead. If we can find any further evidence of the Grootslangs around here, it will aid in my understanding.",
+   "dst": "Önden sen git. Burada Grootslang'lara dair başka kanıt bulursak durumu anlamama yardımcı olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#045": {
+   "src": "Hm? This wall looks like it's been disturbed recently...",
+   "dst": "Hm? Bu duvar yakın zamanda yerinden oynamış gibi görünüyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#046": {
+   "src": "I can hear it...but where is it crawling...?",
+   "dst": "Sesini duyabiliyorum... ama nerede sürünüyor...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#047": {
+   "src": "That's the mother Wyrm! She must be what is making the holes. We need to follow her!",
+   "dst": "Bu Ana Wyrm! Delikleri açan o olmalı. Onu takip etmemiz lazım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#048": {
+   "src": "Never mind the spiders, we need to keep following the Wyrm!",
+   "dst": "Örümcekleri boş ver, Wyrm'ü takip etmeye devam etmeliyiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#049": {
+   "src": "Ah...ehm, {u}? I've... Um, this is...a bit difficult to say, but...",
+   "dst": "Ah... şey, {u}? Ben... Hım, bunu söylemesi... biraz zor, ama...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#050": {
+   "src": "I...do not believe we need to fight, or to kill, here? The creatures are native to here, we are invading their space.",
+   "dst": "Ben... burada savaşmamız ya da öldürmemiz gerektiğine inanmıyorum? Bu yaratıklar buranın yerlisi, onların alanını işgal eden biziz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#051": {
+   "src": "Why should they be attacked for merely existing in their territory? Even if they are animals, I believe that you can solve these problems without killing.",
+   "dst": "Sadece kendi topraklarında var oldukları için neden saldırıya uğrasınlar? Hayvan olsalar bile bu sorunları öldürmeden çözebileceğine inanıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#052": {
+   "src": "I...understand you may not have the same powers as myself... And I, ah...am not free of guilt, either. But I think you could stand to take a peaceful stance.",
+   "dst": "Ben... benimle aynı güçlere sahip olmayabileceğini anlıyorum... Ben de, şey... suçsuz değilim. Ama bence daha barışçıl bir tutum takınabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#053": {
+   "src": "Your methods are...disagreeable, but you still have a sense of right to you, I feel... Well, the tunnel diverges here. We'll need to split apart.",
+   "dst": "Yöntemlerin... hoş değil, ama yine de içinde bir doğruluk duygusu var, öyle hissediyorum... Neyse, tünel burada ayrılıyor. Ayrılmamız gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#054": {
+   "src": "I'll go to the right, so you ought to continue to the left here. I will meet up with you again soon, hopefully.",
+   "dst": "Ben sağdan gideceğim, sen de buradan sola devam etmelisin. Umarım yakında yeniden buluşuruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#055": {
+   "src": "Take the lead.",
+   "dst": "Önden sen git.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 4",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#056": {
+   "src": "Investigate the worm tunnels.",
+   "dst": "Solucan tünellerini araştır.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Worm Holes#057": {
+   "src": "Aah! {u}! Don't...don't make any sudden movements.",
+   "dst": "Aah! {u}! Sakın... sakın ani hareket yapma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#058": {
+   "src": "This Grootslang is uncharacteristically aggressive... She's scared, being so close to the surface. Stay behind me, please.",
+   "dst": "Bu Grootslang alışılmadık derecede saldırgan... Yüzeye bu kadar yakın olmaktan korkuyor. Lütfen arkamda dur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#059": {
+   "src": "AH! [Gavellian Spell]!",
+   "dst": "AH! [Gavel Büyüsü]!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#060": {
+   "src": "Do not approach it! The power of the Wyrm is far too much for you!",
+   "dst": "Ona yaklaşma! Wyrm'ün gücü sana fazla gelir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#061": {
+   "src": "W-wait, again? [Gavellian Spell]- Aah, MOVE!",
+   "dst": "B-bekle, yine mi? [Gavellian Spell]- Aah, ÇEKİL!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#062": {
+   "src": "{u}!! You're unharmed, yes? She's scared and in pain!",
+   "dst": "{u}!! Yara almadın, değil mi? Korkuyor ve acı çekiyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#063": {
+   "src": "I have to get it right this time... I'm going to talk her down, stay there!",
+   "dst": "Bu sefer doğru yapmalıyım... Onu sakinleştireceğim, orada kal!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#064": {
+   "src": "You must be calm, I beg you. Retreat to the earth- You harm those above!",
+   "dst": "Sakin olmalısın, yalvarırım. Toprağa geri çekil- Yukarıdakilere zarar veriyorsun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#065": {
+   "src": "The earth rotting... I take full responsibility, but does the grass above not rot also?",
+   "dst": "Toprak çürüyor... Bütün sorumluluğu üstleniyorum, ama yukarıdaki çimler de çürümüyor mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#066": {
+   "src": "I wish to soothe your pain, but you must allow me to aid you- You must listen!",
+   "dst": "Acını dindirmek istiyorum, ama sana yardım etmeme izin vermelisin- Dinlemelisin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#067": {
+   "src": "What does this violence solve? Be calm, please!",
+   "dst": "Bu şiddet neyi çözer? Sakin ol, lütfen!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#068": {
+   "src": "{u}, it won't budge... There's something in its mind rejecting me. Distract it- but don't approach! It will kill you if you get close. Just...be loud!",
+   "dst": "{u}, yerinden kıpırdamıyor... Zihninde beni reddeden bir şey var. Dikkatini dağıt- ama yaklaşma! Yaklaşırsan seni öldürür. Sadece... gürültü yap!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 5",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#069": {
+   "src": "Fight the Grootslang with Lari",
+   "dst": "Lari ile birlikte Grootslang'la savaş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Worm Holes#070": {
+   "src": "AIYEE! {u}! Hold on in there!",
+   "dst": "AYYY! {u}! Dayan orada!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#071": {
+   "src": "Can you hear me?! I'll get her to...to...s-something! Spit you up, I don't know! Just...please, d-don't die!",
+   "dst": "Beni duyabiliyor musun?! Onu... şey... b-bir şey yapmaya ikna edeceğim! Seni tükürmeye, bilmiyorum! Sadece... lütfen, ö-ölme!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#072": {
+   "src": "W-We have... We have not laid a blow against you! It is not right for you to do the same!",
+   "dst": "B-Biz... Biz sana tek bir darbe indirmedik! Senin de aynısını yapman doğru değil!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#073": {
+   "src": "You would wound and consume everything in your rage? Even knowing the consequences?",
+   "dst": "Öfkenle her şeyi yaralayıp yutar mısın? Sonuçlarını bile bile?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#074": {
+   "src": "Your hunger cannot be sated with this fruitless destruction! I beg of you, let them out!",
+   "dst": "Bu boş yıkımla açlığın dinmez! Yalvarırım, bırak çıksınlar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#075": {
+   "src": "You know th- W-wait...where did you... AAAH!",
+   "dst": "Biliyorsun- B-bekle... sen nereden... AAAH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#076": {
+   "src": "I tried...w-why does no one listen to me? Why won't a-anything change for me?",
+   "dst": "Denedim... n-neden kimse beni dinlemiyor? Neden benim için h-hiçbir şey değişmiyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#077": {
+   "src": "She...she's been eating dark parasites. They're wracking her insides and h-hurting her head...",
+   "dst": "O... karanlık parazitler yiyormuş. İçini parçalıyor ve b-başını ağrıtıyorlar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#078": {
+   "src": "I...i-it's so d-dark... I c-can't breathe... This...th-this can't be the end...",
+   "dst": "Ben... ç-çok k-karanlık... N-nefes alamıyorum... Bu... b-bu son olamaz...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#079": {
+   "src": "I...n-no, I can't die in here... I-I'm needed still... You're n-needed still! I... I...",
+   "dst": "Ben... h-hayır, burada ölemem... B-Bana hâlâ ihtiyaç var... Sana da h-hâlâ ihtiyaç var! Ben... Ben...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#080": {
+   "src": "I n-need... Or... O-Or... C-Concentrate, Lari... You can do this...",
+   "dst": "Benim... l-lazım... Ya da... Y-Ya da... O-Odaklan, Lari... Bunu yapabilirsin...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#081": {
+   "src": "[Gavellian Spell]! [Gavellian Spell]!",
+   "dst": "[Gavel Büyüsü]! [Gavel Büyüsü]!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#082": {
+   "src": "LET US OUT! LET US OUT OF HERE! DON'T LET US DIE LIKE THIS! I'M BEGGING YOU, PLEASE!!",
+   "dst": "BIRAK BİZİ! ÇIKAR BİZİ BURADAN! BÖYLE ÖLMEMİZE İZİN VERME! YALVARIRIM, LÜTFEN!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#083": {
+   "src": "...I...oh no... It's...d-d... I... I j-just... I just w-wanted out... Ohhh...n-no...",
+   "dst": "...Ben... ah hayır... O... ö-ö... Ben... Ben s-sadece... Ben sadece ç-çıkmak istedim... Ahhh... h-hayır...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#084": {
+   "src": "...w-we're...leaving. I...I c-can't look at this any more...",
+   "dst": "...g-gidiyoruz... Ben... buna d-daha fazla bakamıyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#085": {
+   "src": "...I... That's...m-my fault...",
+   "dst": "...Ben... Bu... b-benim suçum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#086": {
+   "src": "I'm...I'm so sorry, {u}. If I'd...I don't... I don't even know what else I could have d-done...",
+   "dst": "Çok... çok üzgünüm, {u}. Eğer ben... Bilmiyorum... Başka ne y-yapabilirdim bilmiyorum bile...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#087": {
+   "src": "There...it didn’t feel like there was...anything left to it... But, if I’d just been quicker, then... Would it...would it even have made a difference?",
+   "dst": "Orada... içinde hiçbir şey... kalmamış gibiydi... Ama daha hızlı olsaydım, o zaman... Bir... bir şey değişir miydi ki?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#088": {
+   "src": "...some savior I am... I need to be better, but what else even is there that...ugh, I'm going in circles...",
+   "dst": "...ne biçim kurtarıcıyım ben... Daha iyi olmalıyım, ama başka ne var ki... of, kısır döngüye girdim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#089": {
+   "src": "Let's... Let's just leave...",
+   "dst": "Hadi... Hadi gidelim artık...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#090": {
+   "src": "...I...I can't believe this. This is...does destiny just hate me? What have I done to deserve this?!",
+   "dst": "...Ben... Buna inanamıyorum. Bu... kader benden nefret mi ediyor? Bunu hak edecek ne yaptım ben?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#091": {
+   "src": "The Mother Wyrm laid eggs... Eggs infested with parasites! Every single one is going to be born berserk!!",
+   "dst": "Ana Wyrm yumurta bırakmış... Parazitlerle dolu yumurtalar! Her biri çılgına dönmüş halde doğacak!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#092": {
+   "src": "You saw how strong the mother was...an infestation like this could cause the entire region of Gavel to collapse in a quake...",
+   "dst": "Annenin ne kadar güçlü olduğunu gördün... Böyle bir istila bütün Gavel bölgesinin bir depremle çökmesine yol açabilir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#093": {
+   "src": "They...they need to be stopped, but...I can't do it. I c-can't kill... I'm sorry, I just can't!",
+   "dst": "Onlar... onların durdurulması lazım, ama... ben yapamam. Ö-öldüremem... Üzgünüm, yapamıyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#094": {
+   "src": "Bring a group... Even Whelps can be a terror if they're enraged. Just...p-please, take care of this quickly.",
+   "dst": "Bir grup topla... Yavrular bile öfkelendiklerinde dehşet saçabilir. Sadece... l-lütfen, bu işi çabucak hallet.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "The Worm Holes#095": {
+   "src": "You deserve the best... But that's more than I can give...so here. Take these. I'll move along.",
+   "dst": "En iyisini hak ediyorsun... Ama bu benim verebileceğimden fazlası... o yüzden al. Bunları al. Ben yoluma gideyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Worm Holes",
+   "stage": "Stage 6",
+   "speaker": "Lari",
+   "source": "wiki"
+  }
+ }
+}

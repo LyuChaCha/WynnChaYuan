@@ -1,0 +1,3120 @@
+{
+ "_meta": {
+  "quest": "The Breaking Point",
+  "count": 310,
+  "translated": 306,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Breaking Point#000": {
+   "src": "Hey, keep up! We need to get this part into the machine as quickly as we can!",
+   "dst": "Hey, geride kalma! Bu parçayı bir an önce makineye takmamız lazım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#001": {
+   "src": "Amazing work! I'll get us back to Kandon Beda with that capacitor as quick as possible.",
+   "dst": "Harika iş! O kondansatörle bizi olabildiğince çabuk Kandon Beda'ya geri götüreceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#002": {
+   "src": "I... see. {u}... Ozoth tells me... that an Everflame ... will free the Elders.",
+   "dst": "Anlıyorum... {u}... Ozoth diyor ki... bir Everflame... İhtiyarları özgür bırakacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "captured",
+   "similar": {
+    "text": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
+    "file": "quest/the-breaking-point.json",
+    "ratio": 0.98,
+    "reason": "placeholders"
+   }
+  },
+  "The Breaking Point#003": {
+   "src": "You need to get onto the path up to {p}. There should be signposts outside of {p}...",
+   "dst": "{p} yoluna çıkman gerek. {p} dışında tabelalar olmalı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#004": {
+   "src": "Speak to General Elix at [{~}, {~}, -{~}] in {p}.",
+   "dst": "{p} içindeki [{~}, {~}, -{~}] konumunda General Elix ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#005": {
+   "src": "... Alright, let's see here... Private! Give me a report!",
+   "dst": "... Pekâlâ, bakalım... Er! Rapor ver!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#006": {
+   "src": "Sir, our readings are positive! Stability is at {~}, and shows no sign of dropping.",
+   "dst": "Efendim, ölçümler olumlu! Denge {~} seviyesinde ve düşme belirtisi yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#007": {
+   "src": "Readings are positive!",
+   "dst": "Ölçümler olumlu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#008": {
+   "src": "Excellent. Keep an eye on everything, and let me know if something comes up. Now, I need to go find... -",
+   "dst": "Mükemmel. Her şeye göz kulak ol, bir şey çıkarsa haber ver. Şimdi gidip bulmam gereken... -",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#009": {
+   "src": "Hmph. And who exactly are you? This site is off-limits to civilians.",
+   "dst": "Hıh. Peki sen kimsin bakalım? Bu alan sivillere yasak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#010": {
+   "src": "Adventurer. Of course. Well, as it stands, we're doing rather dangerous work here. I'll have to ask you to-",
+   "dst": "Maceracı. Tabii ya. Neyse, şu an burada epey tehlikeli bir iş yapıyoruz. Senden rica etmek zorundayım-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#011": {
+   "src": "... The stabilizer? We're doing rather dangerous work here, keeping the thing beyond that cliff passive. So, I'll have to ask you to-",
+   "dst": "... Dengeleyici mi? Şu uçurumun ötesindeki şeyi sakin tutmak için epey tehlikeli bir iş yapıyoruz. Bu yüzden senden rica etmek zorundayım-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#012": {
+   "src": "General! Stability is dropping, and fast!",
+   "dst": "General! Denge düşüyor, hem de hızla!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#013": {
+   "src": "General!",
+   "dst": "Generalim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#014": {
+   "src": "What?! Of all times for it to-",
+   "dst": "Ne?! Tam da şimdi mi-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#015": {
+   "src": "Urgh... Soldiers, follow protocol! Secure what you can, leave what you can't! And- you! I haven't forgotten about you. As soon as this all clears up, we'll-",
+   "dst": "Ahh... Askerler, protokole uyun! Kurtarabildiğinizi kurtarın, kurtaramadığınızı bırakın! Ve- sen! Seni unutmadım. Bu iş biter bitmez-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#016": {
+   "src": "Gah! This damned Colossus! What I wouldn't give to...",
+   "dst": "Ah! Şu lanet Colossus! Neler vermezdim ki...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#017": {
+   "src": "... It's over. Walder! Survey the damages to our equipment! Morec! Take count of injuries around the base, make sure everyone's safe!",
+   "dst": "... Bitti. Walder! Ekipmandaki hasarı incele! Morec! Üsteki yaralıları say, herkesin güvende olduğundan emin ol!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#018": {
+   "src": "Yes sir!",
+   "dst": "Emredersiniz efendim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Private Walder",
+   "source": "wiki"
+  },
+  "The Breaking Point#019": {
+   "src": "General! We came as soon as we could- we were down in the library and the exit co- Oh. Wow.",
+   "dst": "General! Elimizden geldiğince çabuk geldik- aşağıda kütüphanedeydik ve çıkış ka- Aa. Vay.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Breaking Point#020": {
+   "src": "Well, Rhay, you're here now, yes? What do you think, can you fix it? We'll need to get it working before-",
+   "dst": "Neyse, Rhay, artık buradasın, değil mi? Ne dersin, tamir edebilir misin? Çalışır hâle getirmemiz lazım, yoksa-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#021": {
+   "src": "Can I- No, of course I can't fix it! Not on my own, especially since we don't have the proper equipment around here! Ugh, how long has it even been since last time?",
+   "dst": "Tamir edebilir miyim- Hayır, tabii ki tamir edemem! Tek başıma olmaz, hele burada doğru düzgün ekipmanımız bile yokken! Of, son seferden beri ne kadar zaman geçti ki?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#022": {
+   "src": "It has been... three days... give or take. Rhay... you know we can't keep-",
+   "dst": "Geçti... üç gün... aşağı yukarı. Rhay... biliyorsun, böyle devam-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Breaking Point#023": {
+   "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
+   "dst": "Dengeleyici şimdiye kadar çalıştı, Ineos! Eyaletimizin sunabileceği en iyi teknolojilerden biri, ve çalışıyordu da!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#024": {
+   "src": "Rhay, you know... as well as I do... that it is getting worse. The Protector is... growing resistant to... your machines. We need... a new plan.",
+   "dst": "Rhay, sen de... benim kadar iyi biliyorsun... durumun kötüleştiğini. Koruyucu... makinelerine karşı... direnç kazanıyor. Bize... yeni bir plan lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#025": {
+   "src": "Yes, well, as soon as you come up with one, I'll be glad to hear it! But so far, you've barely gotten anything-",
+   "dst": "Evet, peki, sen bir tane bulur bulmaz dinlemekten memnun olurum! Ama şimdiye kadar elle tutulur hiçbir şey-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#026": {
+   "src": "...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#028": {
+   "src": "... Sorry. I'm sorry, I didn't mean that. General, to answer your question... The stabilizer itself is damaged, but you should have what's needed to repair it here.",
+   "dst": "... Özür dilerim. Özür dilerim, öyle demek istemedim. General, sorunuzun cevabı... Dengeleyicinin kendisi hasarlı, ama onarmak için gerekenler burada olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#029": {
+   "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
+   "dst": "Sorun şu ki kontroller yanmış gibi görünüyor! Burada hiç yedek parçamız da yok. Corkus'a geri gitmemiz gerekecek, ve...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#030": {
+   "src": "... Right. You. You're an adventurer, yes? And you appear to be well-equipped. Then you'll be traveling to Corkus with Rhay, and assist with whatever is needed there.",
+   "dst": "... Doğru. Sen. Maceracısın, değil mi? Donanımın da sağlam görünüyor. O hâlde Rhay ile birlikte Corkus'a gidecek ve orada ne gerekiyorsa yardım edeceksin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#031": {
+   "src": "Huh?",
+   "dst": "Ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#032": {
+   "src": "Wait, General-... Right. Alright. In that case... I'll give you time to prepare. We'll take the Hot Air Balloon to travel to Corkus, so I'll meet you there. We don't have any time to waste.",
+   "dst": "Dur, General-... Doğru. Peki. O zaman... sana hazırlanman için zaman vereyim. Corkus'a Sıcak Hava Balonu ile gideceğiz, orada buluşuruz. Kaybedecek vaktimiz yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#033": {
+   "src": "And I will... return to the library. I trust... you will succeed... But we must... prepare for the... worst.",
+   "dst": "Ben de... kütüphaneye... döneceğim. Başaracağınıza... inanıyorum... Ama en kötüsüne... hazırlıklı... olmalıyız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#034": {
+   "src": "Alright...",
+   "dst": "Peki...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 1",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#035": {
+   "src": "Meet Rhay at the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki Sıcak Hava Balonu'nda Rhay ile buluş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#036": {
+   "src": "Ah, you're here! Well, if you're ready, then we'd best be off. Just hop aboard this balloon, and the captain will take us where we need to go.",
+   "dst": "Ah, geldin! Hazırsan yola çıksak iyi olur. Şu balona atla yeter, kaptan bizi gitmemiz gereken yere götürür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#037": {
+   "src": "I can tell you more while we travel, but we need to get going quick. There's no telling how much time we have before-",
+   "dst": "Yolda sana daha fazlasını anlatırım, ama bir an önce yola çıkmamız lazım. Ne kadar vaktimiz kaldığını bilemeyiz, sonra-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#038": {
+   "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, obvious reasons. Just hop aboard.",
+   "dst": "Tamam, tamam. Bana aldırma, sadece biraz gerginim, çünkü... yani, belli sebeplerden. Atla hadi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#039": {
+   "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, for obvious reasons. Just hop aboard.",
+   "dst": "Tamam, tamam. Bana aldırma, sadece biraz gerginim, çünkü... yani, gayet belli sebeplerden. Atla hadi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#040": {
+   "src": "Travel to {p} via the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki Sıcak Hava Balonu ile {p} bölgesine git",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#041": {
+   "src": "Well, there it is! The Canyon Colossus itself. The source of all our problems here at {p}.",
+   "dst": "İşte orada! The Canyon Colossus'un ta kendisi. {p} bölgesindeki bütün dertlerimizin kaynağı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#042": {
+   "src": "Well, there it is! The Canyon Colossus itself. The source of all of our problems here at {p}.",
+   "dst": "İşte orada! The Canyon Colossus'un ta kendisi. Burada, {p} bölgesinde yaşadığımız bütün dertlerin kaynağı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#043": {
+   "src": "So! How much do you already know? I know we dragged you into this without telling you much, so... I can fill you in on the details.",
+   "dst": "Evet! Şimdiye kadar ne kadarını biliyorsun? Seni pek bir şey anlatmadan bu işe sürüklediğimizin farkındayım, yani... ayrıntıları anlatabilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#044": {
+   "src": "Oh, he did? Right, that makes sense. Well, you're right in that it's the source of the earthquakes, but there's more to it than that.",
+   "dst": "Ah, öyle mi dedi? Doğru, mantıklı. Depremlerin kaynağı olduğu konusunda haklısın, ama işin içinde daha fazlası var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#045": {
+   "src": "You've seen the {p}, right? Heard of the Fracturing. From what we can tell, what happened to that region a thousand years ago is happening again, here and now.",
+   "dst": "{p} bölgesini gördün, değil mi? Parçalanma'yı duydun. Anladığımız kadarıyla o bölgenin bin yıl önce başına gelen şey şimdi burada yeniden oluyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#046": {
+   "src": "Yes, exactly. It's been malfunctioning for a long time now, and it's starting to tear the canyon apart. That's where we come in.",
+   "dst": "Evet, aynen öyle. Uzun zamandır arızalı çalışıyor ve kanyonu parçalamaya başladı. İşte biz burada devreye giriyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#047": {
+   "src": "Well... To start with, it's an ancient thing. It was built long before even the doguns can remember, and they've lived in this region for thousands of years.",
+   "dst": "Şey... Her şeyden önce kadim bir şey. Dogunların bile hatırlayamayacağı kadar eskiden inşa edilmiş, ki onlar binlerce yıldır bu bölgede yaşıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#048": {
+   "src": "According to Ineos, the doguns used to be responsible for keeping it calm, but ever since the dwarves came in and started their war, that knowledge has been lost to time.",
+   "dst": "Ineos'a göre onu sakin tutmak eskiden dogunların göreviymiş, ama cüceler gelip savaşlarını başlattığından beri o bilgi zamanla kaybolmuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#049": {
+   "src": "Which is... a problem! {p} has been malfunctioning for hundreds of years, and it's reaching its breaking point. If we don't stop it, it'll tear the canyon apart.",
+   "dst": "Ki bu... büyük bir sorun! {p} yüzlerce yıldır arızalı çalışıyor ve artık kırılma noktasına geliyor. Onu durdurmazsak kanyonu paramparça edecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#050": {
+   "src": "Oh? So you've traveled the canyon, then. Yeah, then you've seen how the canyon twists and changes.",
+   "dst": "Öyle mi? Demek kanyonu gezdin. Evet, o zaman kanyonun nasıl kıvrılıp değiştiğini görmüşsündür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#051": {
+   "src": "It destroys peoples' homes, it traps them deep within the maze-like valleys... And, more recently, it has been tearing a hole into the void.",
+   "dst": "İnsanların evlerini yıkıyor, onları labirent gibi vadilerin derinliklerinde hapsediyor... Son zamanlarda da boşluğa doğru bir delik açıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#052": {
+   "src": "This thing is ancient, and we don't know how it works. The best we can do is try to keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
+   "dst": "Bu şey kadim ve nasıl çalıştığını bilmiyoruz. Yapabileceğimiz en iyi şey kırılma noktasına varmasını engellemek ve kanyonun {p} ile aynı akıbete uğramasını önlemek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#053": {
+   "src": "This thing is ancient, and we don't know how it works. The best we can do is try and keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
+   "dst": "Bu şey kadim ve nasıl çalıştığını bilmiyoruz. Elimizden gelen tek şey kırılma noktasına varmasını engellemeye çalışmak ve kanyonun {p} ile aynı akıbete uğramasını önlemek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#054": {
+   "src": "So, Gavel's government contacted us in Corkus some time ago, requesting our help to deal with this threat.",
+   "dst": "Kısacası, bir süre önce Gavel hükümeti bu tehditle başa çıkmak için yardım istemek üzere Corkus'taki bizimle iletişime geçti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#055": {
+   "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified that Colossus long ago.",
+   "dst": "Konseyimiz kabul etti, biz de uzun zaman önce o Colossus'u yatıştıran dogun büyüsünü taklit edebilecek bir makine tasarlamaya koyulduk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#056": {
+   "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified the Colossus long ago.",
+   "dst": "Konseyimiz kabul etti, biz de uzun zaman önce Colossus'u yatıştıran dogun büyüsünü taklit edebilecek bir makine tasarlamaya koyulduk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#057": {
+   "src": "We've had Ineos' help on that front. He and I have been working here in {p} to ensure things are running smoothly. Which... evidently, they are not.",
+   "dst": "O konuda Ineos'tan yardım aldık. O ve ben her şeyin yolunda gitmesi için burada, {p} bölgesinde çalışıyoruz. Ki... görünüşe göre gitmiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#058": {
+   "src": "... We'll be fine! We're going to meet up with my husband at Corkus, and he'll know what to do. He always does.",
+   "dst": "... Bir şey olmaz! Corkus'ta kocamla buluşacağız, o ne yapacağını bilir. Her zaman bilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#059": {
+   "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
+   "dst": "Oradaki adamlarımız cihazı onarmak için gereken parçaları bize bulabilir. Bu... ilk patlayışı değil. Bu sefer dengede tutmayı başarırız diye ummuştum, ama...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#060": {
+   "src": "But, hey! We have it under control. We're always able to repair it quickly enough to keep it running while the Colossus is active.",
+   "dst": "Ama hey! Durum kontrolümüz altında. Colossus aktifken çalışır tutacak kadar hızlı onarmayı her zaman başarıyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#061": {
+   "src": "Oh! Yeah. He's the one responsible for the design and production of this device. He's got a talent for designing these sorts of things, without him... well, we'd be in a much worse situation than we are now.",
+   "dst": "Ha! Evet. Bu cihazın tasarımından ve üretiminden o sorumlu. Böyle şeyleri tasarlamada bir yeteneği var, o olmasa... şu anki durumumuzdan çok daha kötü olurduk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#062": {
+   "src": "I'll be glad to see him again. It's been a while since I last had to travel to Corkus, and... Well, I'm confident he'll know what to do here. He always does.",
+   "dst": "Onu yeniden görmek beni sevindirecek. Corkus'a en son gitmek zorunda kaldığımdan beri epey zaman geçti, ve... Neyse, burada ne yapacağını bileceğinden eminim. Her zaman bilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#063": {
+   "src": "... Right! Hey, it looks like we're almost there. We'll be able to get this all sorted out, and we'll be back to {p} in no time.",
+   "dst": "... Doğru! Hey, galiba neredeyse geldik. Bu işi hallederiz ve hemencecik {p} bölgesine döneriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 3",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#064": {
+   "src": "Find the contact in the factory at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumundaki fabrikada bağlantı kişisini bul",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#065": {
+   "src": "Alright, let's just head on in. My husband should be around here somewhere...",
+   "dst": "Pekâlâ, hadi içeri girelim. Kocam buralarda bir yerde olmalı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#066": {
+   "src": "Rhay, love! You're back already? Our next routine maintenance isn't for another- Wait, {u}? What are you doing here?",
+   "dst": "Rhay, aşkım! Döndün mü bile? Bir sonraki rutin bakımımız daha- Dur, {u}? Senin burada ne işin var?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#067": {
+   "src": "I... You two know each other?",
+   "dst": "Ben... Siz ikiniz tanışıyor musunuz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#068": {
+   "src": "Of course we do - they're the one who helped me with all the Factory stuff! How did you two meet?",
+   "dst": "Tabii ki tanışıyoruz - bütün o Fabrika işlerinde bana yardım eden kişi o! Siz ikiniz nasıl tanıştınız?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#069": {
+   "src": "They just showed up at {p} and agreed to help us with... - Why didn't you bring this up earlier?",
+   "dst": "Bir anda {p} bölgesine çıkıp geldi ve bize yardım etmeyi kabul etti... - Bundan neden daha önce bahsetmedin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#070": {
+   "src": "It must have...- right. Well, if anything that makes you even more qualified to help us out, I guess! I can't believe I didn't recognize you...?",
+   "dst": "Herhalde...- tamam. Neyse, bu seni bize yardım etmek için daha da yetkin yapıyor sanırım! Seni tanımadığıma inanamıyorum...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#071": {
+   "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maitenance, isn't there?",
+   "dst": "Tamam, peki, soruya dönelim - siz ikiniz şimdiden burada ne yapıyorsunuz? Bir sonraki rutin bakımımıza daha birkaç gün falan var, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#072": {
+   "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maintenance, isn't there?",
+   "dst": "Tamam, peki, soruya dönelim - siz ikiniz şimdiden burada ne yapıyorsunuz? Bir sonraki rutin bakımımıza daha birkaç gün falan var, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#073": {
+   "src": "I did send you an invite! I gave it to... you know, the one captain who ferries people around! But then you didn't show up to the wedding, so I guess it didn't reach you...",
+   "dst": "Sana davetiye gönderdim ama! Şeye verdim... bilirsin, insanları oradan oraya taşıyan o kaptana! Ama düğüne gelmedin, demek ki sana ulaşmadı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#074": {
+   "src": "Look, you're a hard person to reach! You've been all over the world at this point, including {p} of all places- speaking of, why are you two here?",
+   "dst": "Bak, sana ulaşmak zor! Şimdiye kadar dünyanın her yerini gezdin, hem de {p} gibi bir yer dahil- laf açılmışken, siz ikiniz neden buradasınız?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#075": {
+   "src": "!!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#076": {
+   "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an undetected seismic event, and the device was heavily damaged.",
+   "dst": "Doğru! Doğru. Biraz dalıp gittim... Şey, {p} bölgesinde bir sorunla karşılaştık. Fark edilmeyen bir sismik olay yaşadık ve cihaz ağır hasar gördü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#077": {
+   "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an unexpected seismic event, and the device was heavily damaged.",
+   "dst": "Doğru! Doğru. Biraz dalıp gittim... Şey, {p} bölgesinde bir sorunla karşılaştık. Beklenmedik bir sismik olay yaşadık ve cihaz ağır hasar gördü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#078": {
+   "src": "We should be able to finish most of the repairs with what materials we have there, but we're missing a Magmaflux Capacitor for the control panel.",
+   "dst": "Onarımların çoğunu oradaki malzemelerle bitirebiliriz, ama kontrol paneli için bir Magmaflux Capacitor eksik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#079": {
+   "src": "... Oh. That's going to be a problem. We haven't had an opportunity to make more parts yet - it hasn't been long enough since our last maintenance. So... I'm not sure what we-",
+   "dst": "... Ah. Bu bir sorun olacak. Henüz yeni parça yapma fırsatımız olmadı - son bakımımızdan bu yana yeterince zaman geçmedi. Yani... ne yapacağımızı pek-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#080": {
+   "src": "I overheard the conversation from over there- good to see you Rhay, by the way- But. We may not have any capacitors left up here, but I know where you can get one.",
+   "dst": "Konuşmanızı şuradan duydum- bu arada seni görmek güzel, Rhay- Neyse. Burada hiç kondansatörümüz kalmamış olabilir, ama nereden bulabileceğinizi biliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#081": {
+   "src": "We repurposed this factory for our needs, but it was built here to process resources from the mines below.",
+   "dst": "Bu fabrikayı kendi ihtiyaçlarımıza göre dönüştürdük, ama aslında aşağıdaki madenlerden gelen kaynakları işlemek için kurulmuştu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#082": {
+   "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
+   "dst": "Kullanımdan kaldırılmış olsa da aşağıda hâlâ madenci robotları olması çok muhtemel- daha güçlü modellerin bazıları bugün kullandığımız kondansatörlere çok benzeyen devreler kullanıyordu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Nodise",
+   "source": "wiki"
+  },
+  "The Breaking Point#083": {
+   "src": "...You're right! If they're still down there, we should be able to scrap one of the bots and reuse its circuits. {u}, we can send you down into the mines to find what we need, while we prepare up here!",
+   "dst": "...Haklısın! Hâlâ aşağıdalarsa robotlardan birini söküp devrelerini yeniden kullanabiliriz. {u}, biz burada hazırlanırken gerekeni bulman için seni madenlere gönderebiliriz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#084": {
+   "src": "Alright... Good luck down there! Find the bot, destroy it, and bring the capacitor back up! Just step on the platform in the middle of the factory when you're ready.",
+   "dst": "Pekâlâ... Aşağıda bol şans! Robotu bul, yok et ve kondansatörü yukarı getir! Hazır olduğunda fabrikanın ortasındaki platforma bas yeter.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#085": {
+   "src": "Okay. That's fine, just make it quick! You know we can't waste any time here.",
+   "dst": "Tamam. Sorun değil, sadece çabuk ol! Burada hiç vakit kaybedemeyeceğimizi biliyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#086": {
+   "src": "Retrieve the part from the cave at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumundaki mağaradan parçayı al",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#087": {
+   "src": "Door opening in {~}...",
+   "dst": "Kapı açılıyor: {~}...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#088": {
+   "src": "{~}...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#090": {
+   "src": "INTRUDER DETECTED. HOSTILE ENGAGEMENT AUTHORISED.",
+   "dst": "DAVETSİZ MİSAFİR TESPİT EDİLDİ. SALDIRI YETKİSİ VERİLDİ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#091": {
+   "src": "DEPLOYING SECONDARY ANTI-INTRUDER MEASURES.",
+   "dst": "İKİNCİL DAVETSİZ MİSAFİR ÖNLEMLERİ DEVREYE ALINIYOR.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#092": {
+   "src": "DIVERTING ALL AVAILABLE UNITS TO HALT INTRUDER.",
+   "dst": "TÜM UYGUN BİRİMLER DAVETSİZ MİSAFİRİ DURDURMAYA YÖNLENDİRİLİYOR.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "Mining Robots",
+   "source": "wiki"
+  },
+  "The Breaking Point#093": {
+   "src": "THIS IS A RESTRICTED AREA. REQUESTING AUTHORISATION FOR USE OF LETHAL FORCE AGAINST INTRUDER...",
+   "dst": "BURASI YASAK BÖLGE. DAVETSİZ MİSAFİRE KARŞI ÖLÜMCÜL GÜÇ KULLANIMI İÇİN YETKİ TALEP EDİLİYOR...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#094": {
+   "src": "AUTHORISATION GRANTED.",
+   "dst": "YETKİ VERİLDİ.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#095": {
+   "src": "DIVERTING MINER MECHS TO HALT INTRUDER.",
+   "dst": "MADENCİ ROBOTLARI DAVETSİZ MİSAFİRİ DURDURMAYA YÖNLENDİRİLİYOR.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 5",
+   "speaker": "The Mother Drill",
+   "source": "wiki"
+  },
+  "The Breaking Point#096": {
+   "src": "Return to the hot air balloon at [-{~}, {~}, -{~}] with the Magmaflux Capacitor.",
+   "dst": "Magmaflux Capacitor ile [-{~}, {~}, -{~}] konumundaki sıcak hava balonuna dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#098": {
+   "src": "Good to see you again, {u}. Good luck with the colossus. And Rhay... come home as soon as you can.",
+   "dst": "Seni yeniden görmek güzeldi, {u}. Colossus konusunda bol şans. Ve Rhay... elinden geldiğince çabuk eve dön.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#099": {
+   "src": "Fly safe, both of you.",
+   "dst": "İyi uçuşlar, ikinize de.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 6",
+   "speaker": "Maxie",
+   "source": "wiki"
+  },
+  "The Breaking Point#100": {
+   "src": "Return to General Elix with the Corkian Stabiliser",
+   "dst": "Corkus Dengeleyicisi ile General Elix'e dön",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#101": {
+   "src": "Well... that went better than expected, really. I still can't believe you didn't tell me you already knew Maxie.",
+   "dst": "Şey... aslında beklediğimden iyi geçti. Maxie'yi zaten tanıdığını bana söylemediğine hâlâ inanamıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#102": {
+   "src": "Oh, wow. It looks like they've managed to fix up the machine pretty well, all things considered. Just this part left to get it running again...",
+   "dst": "Vay be. Her şeye rağmen makineyi epey iyi toparlamışlar gibi görünüyor. Yeniden çalıştırmak için sadece bu parça kaldı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#103": {
+   "src": "Hmph. Rhay, there you are. Seeing as you've returned, I gather everything went smoothly at Corkus?",
+   "dst": "Hıh. Rhay, işte buradasın. Döndüğüne göre Corkus'ta her şey yolunda gitti diye anlıyorum?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#104": {
+   "src": "Smoothly enough, General! We have what we need to repair the control panel. We'll be able to get the stabilizer running again!",
+   "dst": "Yeterince yolunda, General! Kontrol panelini onarmak için gerekenler elimizde. Dengeleyiciyi yeniden çalıştırabileceğiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#105": {
+   "src": "Well?! What are you waiting for? Finish the repairs, we can't afford to lose any time with this damned Colossus looming over us.",
+   "dst": "Eee?! Ne bekliyorsun? Onarımları bitir, şu lanet Colossus tepemizde dikilirken bir an bile kaybedemeyiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#106": {
+   "src": "Yes, sir! Alright. {u}, just slot the capacitor in right... there. I'll make sure it runs smoothly.",
+   "dst": "Emredersiniz! Pekâlâ. {u}, kondansatörü tam... şuraya tak. Düzgün çalışmasını ben sağlarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#107": {
+   "src": "There we are. Now, let's get this thing running again! Walder, keep an eye on stability! And... Rhay. You're confident this will work?",
+   "dst": "İşte oldu. Şimdi şu şeyi yeniden çalıştıralım! Walder, dengeye göz kulak ol! Ve... Rhay. Bunun işe yarayacağından emin misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#108": {
+   "src": "I-I'm sure. This is our last chance. We have to hold out hope that the stabilizer will hold.",
+   "dst": "E-eminim. Bu son şansımız. Dengeleyicinin dayanacağını ummaktan başka çaremiz yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#109": {
+   "src": "Alright, alright... It's now or never... Hold, stabilizer, hold!",
+   "dst": "Tamam, tamam... Ya şimdi ya hiç... Dayan, dengeleyici, dayan!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#110": {
+   "src": "... Oh. That's... that's it, then. It's over. We failed.",
+   "dst": "... Ah. Demek... demek bu kadar. Bitti. Başaramadık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#111": {
+   "src": "I... am sorry, Rhay. I had... hoped it would work. In truth... I do not have... a plan... either.",
+   "dst": "Ben... üzgünüm, Rhay. İşe... yarayacağını ummuştum. Doğrusu... benim de... bir planım... yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#112": {
+   "src": "The Elders... would have known... what to do... But they are... long gone. Nothing but... ruins remain.",
+   "dst": "İhtiyarlar... ne yapılacağını... bilirlerdi... Ama onlar... çoktan gitti. Geriye... harabelerden başka... bir şey kalmadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#113": {
+   "src": "The Elders... They were... the greatest... of doguns. As old... as the oldest stones... and as wise... as the earth itself...",
+   "dst": "İhtiyarlar... Onlar... dogunların... en büyükleriydi. En eski... taşlar kadar yaşlı... ve toprağın kendisi... kadar bilge...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#114": {
+   "src": "They were capable... of magic... beyond what any... of us could achieve. They alone... could calm our... Protector.",
+   "dst": "Hiçbirimizin... ulaşamayacağı... bir büyüye... sahiptiler. Koruyucumuzu... yalnızca onlar... yatıştırabilirdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#115": {
+   "src": "They were... sealed away. Frozen in... the deepest... of ice. When the dwarves... slew Garaheth... the Elders... fell with him.",
+   "dst": "Onlar... mühürlendi. En derin... buzun içinde... donduruldu. Cüceler... Garaheth'i öldürdüğünde... İhtiyarlar da... onunla birlikte düştü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#116": {
+   "src": "Such atrocities... The war... My people... But it is not... to dwell on, now. There are... more important... things at hand.",
+   "dst": "Öyle vahşetler ki... Savaş... Halkım... Ama şimdi... bunun üzerinde... durmanın sırası değil. Önümüzde... daha önemli... işler var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#117": {
+   "src": "I... I did not... know of this. My people... are free? How long... has it been... since I have seen... my home?",
+   "dst": "Ben... Ben bunu... bilmiyordum. Halkım... özgür mü? Evimi... görmeyeli... ne kadar... oldu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#118": {
+   "src": "You... Adventurer. We must... speak to my people. Our chieftain... will know... how we may free... the Elders.",
+   "dst": "Sen... Maceracı. Halkımla... konuşmalıyız. Reisimiz... İhtiyarları nasıl... özgür bırakabileceğimizi... bilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#119": {
+   "src": "If there's a chance... We have to take it. Ineos, {u}, take the balloon. We'll do what we can here. Now, go! There's no time to waste!",
+   "dst": "Bir şans varsa... Denememiz gerek. Ineos, {u}, balonu alın. Biz burada elimizden geleni yaparız. Hadi, gidin! Kaybedecek vakit yok!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 7",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#120": {
+   "src": "It looks like Ozoth's body is trying to prevent you from getting the Everflame!",
+   "dst": "Görünüşe göre Ozoth'un bedeni Everflame'i almanı engellemeye çalışıyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#121": {
+   "src": "Meet Ineos and Rhay at the Hot Air Balloon at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] konumundaki Sıcak Hava Balonu'nda Ineos ve Rhay ile buluş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#122": {
+   "src": "I have never... seen the Heights... from above. I wonder... if their glow... holds the same strength... it does from below...",
+   "dst": "Heights'ı... hiç yukarıdan... görmemiştim. Merak ediyorum... ışıltısı... aşağıdan göründüğü kadar... güçlü mü acaba...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#123": {
+   "src": "I only hope... the Elders... are not gone... for good. We greatly need... their wisdom.",
+   "dst": "Tek umudum... İhtiyarların... sonsuza dek... gitmemiş olması. Onların bilgeliğine... çok ihtiyacımız var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#124": {
+   "src": "Ah... I believe us... to be landing...",
+   "dst": "Ah... Sanırım... iniyoruz...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#125": {
+   "src": "Travel to {p} with Ineos via the Hot Air Balloon at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki Sıcak Hava Balonu ile Ineos'la birlikte {p} bölgesine git",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#126": {
+   "src": "{u}... Hello. What a... strange sight... to see you landing... at our village... in such a contraption...",
+   "dst": "{u}... Merhaba. Seni böyle... bir alet içinde... köyümüze inerken... görmek ne... tuhaf...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#127": {
+   "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
+   "dst": "Ve... o Ineos mu? Biz... cücelerin seni... moloza çevirdiğini... sanmıştık...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#128": {
+   "src": "I escaped... It is a long... story, Korzim. We do not... have time. Where is... your father?",
+   "dst": "Kaçtım... Uzun bir... hikâye, Korzim. Vaktimiz... yok. Baban... nerede?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#129": {
+   "src": "He is... below. They are... freeing the frozen... in New Taloka. Why do you... wish to speak... with him?",
+   "dst": "O... aşağıda. New Taloka'da... donmuşları... çözüyorlar. Onunla neden... konuşmak... istiyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#130": {
+   "src": "The Protector... is angered. We must find... the Elders. They will know... how to calm it.",
+   "dst": "Koruyucu... öfkeli. İhtiyarları... bulmalıyız. Onu nasıl yatıştıracaklarını... onlar bilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#131": {
+   "src": "The... Protector... I understand. I will... bring you two... to him. Sidio... Raetin... I leave you two... in charge.",
+   "dst": "Koruyucu... Anlıyorum. Sizi... ona... götüreceğim. Sidio... Raetin... burayı size... emanet ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#132": {
+   "src": "Now, let us... travel. Through flame... and through stone...",
+   "dst": "Şimdi... yola koyulalım. Alevin içinden... ve taşın içinden...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 9",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#133": {
+   "src": "Speak to {p}'s King and the Dogun Chieftain at New Taloka at [{~}, {~}, -{~}]",
+   "dst": "New Taloka'daki [{~}, {~}, -{~}] konumunda {p} Kralı ve Dogun Reisi ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#134": {
+   "src": "We are... here. Taloka was... one of the first to fall... in the war. We have been... working with the dwarves... to restore it.",
+   "dst": "Geldik... Taloka... savaşta ilk düşenlerden... biriydi. Onu yeniden kurmak için... cücelerle... birlikte çalışıyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#135": {
+   "src": "Are we all ready?",
+   "dst": "Herkes hazır mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#136": {
+   "src": "Ready...",
+   "dst": "Hazır...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Edac",
+   "source": "wiki"
+  },
+  "The Breaking Point#137": {
+   "src": "Ready!",
+   "dst": "Hazır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dwarven Technician",
+   "source": "wiki"
+  },
+  "The Breaking Point#138": {
+   "src": "Very well. Begin on three. One... Two... Three!",
+   "dst": "Pekâlâ. Üçte başlayın. Bir... İki... Üç!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#139": {
+   "src": "Beginning reheating cycle! Stand back from the subject.",
+   "dst": "Yeniden ısıtma döngüsü başlıyor! Denekten uzak durun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dwarven Technician",
+   "source": "wiki"
+  },
+  "The Breaking Point#140": {
+   "src": "... Where... am... I? How long... has it... been...?",
+   "dst": "... Neredeyim... ben? Ne kadar... zaman... geçti...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Unsealed Dogun",
+   "source": "wiki"
+  },
+  "The Breaking Point#141": {
+   "src": "...Dwarf... You... you froze me... I will... I will...!",
+   "dst": "...Cüce... Sen... sen beni dondurdun... Seni... seni...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Unsealed Dogun",
+   "source": "wiki"
+  },
+  "The Breaking Point#142": {
+   "src": "Calm yourself... Delg. Our war... has ended. We are... freed. You have been... freed.",
+   "dst": "Sakin ol... Delg. Savaşımız... sona erdi. Özgürüz. Sen de... özgür bırakıldın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#143": {
+   "src": "... Freedom? Hundreds... of years... of war... And we are... free?",
+   "dst": "... Özgürlük mü? Yüzlerce... yıllık... savaş... Ve şimdi... özgür müyüz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Dogun Delg",
+   "source": "wiki"
+  },
+  "The Breaking Point#144": {
+   "src": "Yes. We are free... to roam our home... once more. Edac... Escort Delg... and help him re-adjust... to the heights.",
+   "dst": "Evet. Yurdumuzda... yeniden özgürce... dolaşabiliriz. Edac... Delg'e eşlik et... ve Heights'a yeniden... alışmasına yardım et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#145": {
+   "src": "Ah, {u}! It's good to see you again. We haven't seen you around here since... since the end of it.",
+   "dst": "Ah, {u}! Seni yeniden görmek güzel. Şeyden beri... her şeyin bitişinden beri seni buralarda görmemiştik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#146": {
+   "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed bretheren... have been returned to life.",
+   "dst": "Evet. Son haftalarda... çok çalıştık. Taloka yakında... yeniden ayağa kalkacak. Ve mühürlenmiş... kardeşlerimizin çoğu... hayata döndürüldü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#147": {
+   "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed brethren... have been returned to life.",
+   "dst": "Evet. Son haftalarda... çok çalıştık. Taloka yakında... yeniden ayağa kalkacak. Ve mühürlenmiş... kardeşlerimizin çoğu... hayata döndürüldü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#148": {
+   "src": "[-{~} Magmaflux Capacitor]",
+   "dst": "[-{~} Magmaflux Kondansatörü]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#149": {
+   "src": "You use the grappling hook to swing back to the King in a dazzling feat of trapeze consisting of mid-air flips and acrobatic flourishes.",
+   "dst": "Kancayı kullanarak havada taklalar ve akrobatik gösterilerle dolu göz kamaştırıcı bir trapez numarasıyla Kral'ın yanına geri savruluyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#150": {
+   "src": "Ah, but we can talk more about that later. Tell me, what brings you here today? Is there something you need from us?",
+   "dst": "Ah, ama bunu sonra daha çok konuşuruz. Söyle bakalım, bugün seni buraya ne getirdi? Bizden bir şeye ihtiyacın mı var?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#151": {
+   "src": "The situtation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
+   "dst": "Durum... vahim. Büyük Koruyucu... çok uzun zamandır... yalnız bırakıldı. İhtiyarlarımızın... bilgeliğine... ihtiyacımız var. Nerede mühürlendiklerini... biliyor musunuz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#152": {
+   "src": "The situation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
+   "dst": "Durum... vahim. Büyük Koruyucu... çok uzun zamandır... yalnız bırakıldı. İhtiyarlarımızın... bilgeliğine... ihtiyacımız var. Nerede mühürlendiklerini... biliyor musunuz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#153": {
+   "src": "The Elders?! Yes, we know where they are sealed. However, retrieving them is no simple task. It would take us years to break past the defenses, and we have countless other doguns to release first.",
+   "dst": "İhtiyarlar mı?! Evet, nerede mühürlendiklerini biliyoruz. Ama onları çıkarmak hiç de kolay değil. Savunmaları aşmamız yıllar sürer, üstelik önce serbest bırakmamız gereken sayısız dogun var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#154": {
+   "src": "The Protector?!",
+   "dst": "Koruyucu mu?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#155": {
+   "src": "Ineos... I want our Elders free... as much as you do. But our Protector... has stood firm... for hundreds of years. It can stand... for another-",
+   "dst": "Ineos... İhtiyarlarımızın özgür kalmasını... ben de senin kadar istiyorum. Ama Koruyucumuz... yüzlerce yıldır... sapasağlam ayakta. Bir süre daha... dayanabilir-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#156": {
+   "src": "No... Has it truly... fallen this far..?",
+   "dst": "Hayır... Gerçekten de... bu kadar mı kötüleşti..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#157": {
+   "src": "... That was your Protector? How powerful is it, if it can reach this far?",
+   "dst": "... Az önceki sizin Koruyucunuz muydu? Ta buraya kadar ulaşabiliyorsa ne kadar güçlü bu şey?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#158": {
+   "src": "If the Protector... could shake even the Heights... It could destroy... half of this province.",
+   "dst": "Koruyucu... Heights'ı bile sarsabiliyorsa... Bu eyaletin... yarısını yok edebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#159": {
+   "src": "Draani... the Elders must be freed. They alone... would know how to calm it.",
+   "dst": "Draani... İhtiyarlar özgür bırakılmalı. Onu nasıl yatıştıracaklarını... yalnızca onlar bilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#160": {
+   "src": "Yes... I understand. Very well. {u}, I will take you to the Elders' vault. I hold the keys to open the way forward. Paku, gather your people. See if anyone has alternative solutions.",
+   "dst": "Evet... Anlıyorum. Pekâlâ. {u}, seni İhtiyarların mahzenine götüreceğim. Yolu açacak anahtarlar bende. Paku, halkını topla. Başka bir çözümü olan var mı bir bak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#161": {
+   "src": "We will... search for one. I cannot... promise that one exists.",
+   "dst": "Bir tane... arayacağız. Böyle bir çözüm olduğuna... söz veremem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#162": {
+   "src": "{u}, let us go. It sounds as if we have very little time to waste.",
+   "dst": "{u}, gidelim. Görünüşe göre kaybedecek çok az vaktimiz var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#163": {
+   "src": "I will make preparations, and meet you at the Vault of Ice.",
+   "dst": "Hazırlıkları yapacağım, seninle Buz Mahzeni'nde buluşuruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 10",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#164": {
+   "src": "Enter the Dogun Vault within the lower Freezing Heights at [{~}, {~}, -{~}]",
+   "dst": "Alt Freezing Heights'taki [{~}, {~}, -{~}] konumunda bulunan Dogun Mahzeni'ne gir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#165": {
+   "src": "... Ahem. This is the entrance, then. One of our most closely guarded secrets... I was hoping not to have to confront this reminder for a while yet...",
+   "dst": "... Öhö. Demek giriş burası. En sıkı korunan sırlarımızdan biri... Bu hatırayla bir süre daha yüzleşmek zorunda kalmamayı umuyordum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#166": {
+   "src": "But it seems we don't have much choice now. I have the keys, let's go inside.",
+   "dst": "Ama görünüşe göre artık pek seçeneğimiz yok. Anahtarlar bende, içeri girelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 11",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#167": {
+   "src": "Unlock the Dogun Vault to find the Elders.",
+   "dst": "İhtiyarları bulmak için Dogun Mahzeni'nin kilidini aç.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#168": {
+   "src": "Rather cold in here, isn't it? A vault carved into a drake's True Ice... I suppose my ancestors hoped to seal these doguns here forever. I'll be glad to disappoint them.",
+   "dst": "Burası epey soğuk, değil mi? Bir ejderin Gerçek Buzu'na oyulmuş bir mahzen... Sanırım atalarım bu dogunları burada sonsuza dek mühürlemeyi umuyordu. Onları hayal kırıklığına uğratmaktan memnun olacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#169": {
+   "src": "Quickly, then, let us proceed to the primary door. I pray the Elders' will be responsive to our situation with the Colossus.",
+   "dst": "Öyleyse çabuk, ana kapıya ilerleyelim. Umarım İhtiyarlar Colossus'la ilgili durumumuza kulak verir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#170": {
+   "src": "In any case... Let me see if I can open this second gate. It should be as simple as...",
+   "dst": "Her neyse... Bu ikinci kapıyı açabilecek miyim bir bakayım. Şu kadar basit olmalı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#171": {
+   "src": "Hm. That... didn't work. This magic is old, and I have never took the time to learn it properly... Alright. We have alternatives.",
+   "dst": "Hm. Bu... işe yaramadı. Bu büyü eski, ben de hiç doğru düzgün öğrenmeye vakit ayırmadım... Peki. Başka seçeneklerimiz var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#172": {
+   "src": "If my memory serves correctly, there should be a manual override on the other side of this chasm.",
+   "dst": "Hafızam beni yanıltmıyorsa bu uçurumun öbür tarafında elle çalışan bir devre dışı bırakma şalteri olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#173": {
+   "src": "Hm. That... didn't work. This magic is old, and I never took the time to learn it properly... Alright. We have alternatives.",
+   "dst": "Hm. Bu... işe yaramadı. Bu büyü eski, ben de hiç doğru düzgün öğrenmeye vakit ayırmadım... Peki. Başka seçeneklerimiz var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#174": {
+   "src": "If my memory serves correctly, there should be a manual override on the other end of this chasm.",
+   "dst": "Hafızam beni yanıltmıyorsa bu uçurumun öbür ucunda elle çalışan bir devre dışı bırakma şalteri olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#175": {
+   "src": "[+{~} Trusty Grappling Hook]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#176": {
+   "src": "The issue is that treacherous pool of lava on the way... and I don't think my knees are up to the task of jumping over it all.",
+   "dst": "Sorun şu ki yolda tehlikeli bir lav gölü var... ve dizlerimin bütün o atlayışlara dayanacağını hiç sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#177": {
+   "src": "I would never usually do this, but these are desperate times. Here, take my Trusty Grappling Hook. It should help you get over to the switch.",
+   "dst": "Normalde bunu asla yapmam, ama çaresiz zamanlardayız. Al, Trusty Grappling Hook'umu al. Şaltere ulaşmana yardımcı olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#178": {
+   "src": "It has limitations, though. It will only be able to latch onto those blue rocks on the walls - and I'll be taking it back once you're finished, thank you very much!",
+   "dst": "Yalnız sınırları var. Sadece duvarlardaki o mavi kayalara tutunabiliyor - ve işin bitince geri alacağım, haberin olsun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#179": {
+   "src": "Hey, {u}! Looks like you're doing good so far, but if you get stuck remember you can jump and then grapple mid-air, that might help on some of those trickier platforms!",
+   "dst": "Hey, {u}! Şimdiye kadar iyi gidiyorsun gibi, ama takılırsan unutma, zıplayıp havadayken de kancayı atabilirsin, o zor platformlarda işine yarayabilir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#180": {
+   "src": "Looks like that unlocked it, {u}! Get yourself back over here and I'll open the door.",
+   "dst": "Görünüşe göre kilidi açtın, {u}! Hemen buraya dön, kapıyı açayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#181": {
+   "src": "There we are! Excellent work. You used that hook like a true expert! Ah, reminds me of the time-...",
+   "dst": "İşte oldu! Mükemmel iş. O kancayı gerçek bir uzman gibi kullandın! Ah, bana şeyi hatırlattı-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#182": {
+   "src": "...Ahem. Excellent work, indeed. With the override activated, I should be able to do the rest of the work to open the gate.",
+   "dst": "...Öhö. Gerçekten mükemmel iş. Devre dışı bırakma etkinleştiğine göre kapıyı açmak için gerisini ben halledebilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#183": {
+   "src": "First, though, I'll be having that grappling hook back! Think of what could happen if you had free reign of that all over.",
+   "dst": "Ama önce o kancayı geri alıyorum! Bir düşün, onunla her yerde başıboş dolaşsan neler olabilirdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#184": {
+   "src": "And so... I believe we have gone as far as we can.",
+   "dst": "Ve böylece... sanırım gidebileceğimiz yere kadar geldik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#185": {
+   "src": "This is True Ice, {u}. It has scarred this part of the Heights for centuries, ever since it was created by an ice dragon in my ancestors' conquest.",
+   "dst": "Bu Gerçek Buz, {u}. Atalarımın fethi sırasında bir buz ejderhası tarafından yaratıldığından beri yüzyıllardır Heights'ın bu kısmında bir yara gibi duruyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#186": {
+   "src": "It cannot be melted or burned through by any means. It is why this location was chosen for their tomb. I'm afraid there is nothing more we can do.",
+   "dst": "Hiçbir şekilde eritilemez ya da yakılarak delinemez. Mezarları için bu yerin seçilmesinin sebebi de bu. Korkarım yapabileceğimiz başka bir şey yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#187": {
+   "src": "At the end of the war, I imagine.",
+   "dst": "Savaşın sonunda, diye tahmin ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#188": {
+   "src": "As the final dogun settlements fell, and as Garaheth was slain for the first time, my ancestors must have sealed them deep in this ice.",
+   "dst": "Son dogun yerleşimleri düşerken ve Garaheth ilk kez öldürülürken atalarım onları bu buzun derinliklerine mühürlemiş olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#189": {
+   "src": "The... actions of the Dwarves after winning the war are well documented. I would not be surprised if our accounts describe this imprisonment as a great victory.",
+   "dst": "Cücelerin savaşı kazandıktan sonra yaptıkları... iyi belgelenmiştir. Kayıtlarımızın bu hapsedilmeyi büyük bir zafer olarak anlatmasına şaşırmam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#190": {
+   "src": "The Dwarves, of course. Who else?",
+   "dst": "Cüceler tabii ki. Başka kim olacak?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#191": {
+   "src": "I believe it was General Algard of the Dwarven army who ordered the Elders' imprisonments",
+   "dst": "Sanırım İhtiyarların hapsedilmesini emreden, Cüce ordusundan General Algard'dı",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#192": {
+   "src": "He was lauded as a hero, naturally. Now... now we must reap the consequences of such a decision.",
+   "dst": "Doğal olarak kahraman diye övüldü. Şimdi... şimdi o kararın bedelini ödemek zorundayız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#193": {
+   "src": "True Ice is a material which cannot be melted or burned through by any means. Not even dogun magic has been able to make a dent.",
+   "dst": "Gerçek Buz, hiçbir şekilde eritilemeyen ya da yakılarak delinemeyen bir madde. Dogun büyüsü bile onda bir çizik açamadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#194": {
+   "src": "... I imagine this is why this location was chosen to hold the elders. A prison from which they would never be able to escape.",
+   "dst": "... Sanırım İhtiyarları tutmak için bu yerin seçilmesinin sebebi de bu. Asla kaçamayacakları bir hapishane.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#195": {
+   "src": "It is known for it to form naturally under extreme conditions... But the ice here is nowhere near natural.",
+   "dst": "Aşırı koşullarda doğal olarak oluştuğu bilinir... Ama buradaki buz hiç de doğal değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#196": {
+   "src": "It was formed by an Ice Drake's Breath partway through the war- and, well, as you can see, it has remained here ever since.",
+   "dst": "Savaşın ortasında bir Buz Ejderinin nefesiyle oluştu- ve gördüğün gibi o zamandan beri burada duruyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#197": {
+   "src": "Just another remnant of our past mistakes, I suppose...",
+   "dst": "Geçmişteki hatalarımızın bir kalıntısı daha, sanırım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#198": {
+   "src": "Ahem. In any case- as I said, True Ice is impossible to break through, even with the most scorching flames.",
+   "dst": "Öhö. Her neyse- dediğim gibi, Gerçek Buzu en kavurucu alevlerle bile kırmak imkânsız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#199": {
+   "src": "I... I suppose that a dragon's breath might be able to melt it. That logic does make sense.",
+   "dst": "Ben... Sanırım bir ejderhanın nefesi onu eritebilir. Bu mantıklı geliyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#200": {
+   "src": "We have little knowledge of what dragons were like, though. As they went extinct, that information became... useless. And so, it was lost.",
+   "dst": "Ama ejderhaların nasıl olduğu hakkında pek bilgimiz yok. Nesilleri tükenince o bilgi... işe yaramaz hâle geldi. Böylece de kayboldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#201": {
+   "src": "If anyone would know more about dragons, it would be the doguns.",
+   "dst": "Ejderhalar hakkında daha fazla bilen biri varsa, o da dogunlardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#202": {
+   "src": "But none of that matters. All the dragons are gone, after all. We still have no options.",
+   "dst": "Ama bunların hiçbiri önemli değil. Sonuçta bütün ejderhalar yok oldu. Hâlâ hiçbir seçeneğimiz yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#203": {
+   "src": "Why, they died out. As Gavellian civilizations grew in size, the ferocity and size of a dragon was simply too big a threat.",
+   "dst": "Nesilleri tükendi tabii. Gavel medeniyetleri büyüdükçe bir ejderhanın vahşiliği ve iriliği fazlasıyla büyük bir tehdit oldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#204": {
+   "src": "Some were hunted. Some died of starvation. Eggs were taken from nests and shattered over boulders for the birds to feed on.",
+   "dst": "Bazıları avlandı. Bazıları açlıktan öldü. Yumurtalar yuvalardan alındı ve kuşlar yesin diye kayaların üstünde parçalandı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#205": {
+   "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
+   "dst": "Şimdi geriye kalan tek şey yavru ejderhalar - bir zamanlar büyük olan atalarının yankıları, alevleri zırhını zar zor kavuracak kadar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#206": {
+   "src": "You- what? Near {p}?",
+   "dst": "Sen- ne? {p} yakınında mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#207": {
+   "src": "A living dragon... You've done quite a lot, haven't you? Stopped a war, moved a dragon...",
+   "dst": "Yaşayan bir ejderha... Epey iş yapmışsın, değil mi? Bir savaşı durdurdun, bir ejderhanın yerini değiştirdin...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#208": {
+   "src": "Well... if there is a living dragon at {p}... Then we still have hope! {u}, we must ask for its help.",
+   "dst": "Pekâlâ... {p} bölgesinde yaşayan bir ejderha varsa... O hâlde hâlâ umudumuz var! {u}, ondan yardım istemeliyiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#209": {
+   "src": "Let us return to the others. I asked them to wait outside of {p}... perhaps they'll be able to confirm that a dragon's breath would do the job.",
+   "dst": "Diğerlerinin yanına dönelim. Onlardan {p} dışında beklemelerini istedim... belki bir ejderha nefesinin işe yarayacağını doğrulayabilirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#210": {
+   "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
+   "dst": "Aynen öyle. Savaşta onların safında yer alan ateş ejderhaları. Freezing Heights'ın hemen dışındaki iskelete rastlamışsındır eminim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#211": {
+   "src": "Yes, well... the Dwarves needed a counter to the sheer power of a fire dragon in battle, and so they resorted to enslaving dragons and drakes of other elements.",
+   "dst": "Evet, şey... Cücelerin savaşta bir ateş ejderhasının muazzam gücüne karşı bir çareye ihtiyacı vardı, bu yüzden başka elementlerden ejderhaları ve ejderleri köleleştirmeye başvurdular.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#212": {
+   "src": "Like the Ice Drake that created this vault, and encased the Elders in the truest of ice.",
+   "dst": "Bu mahzeni yaratan ve İhtiyarları en gerçek buza hapseden Buz Ejderi gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#213": {
+   "src": "... Well, there was this excellent novel of about one of those creatures from the Shiar, who had to travel to the Heights with this ring he had inherited-",
+   "dst": "... Şey, Shiar'dan o yaratıklardan biri hakkında harika bir roman vardı, miras kalan bir yüzükle Heights'a gitmek zorunda kalan-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#214": {
+   "src": "But I confess, these questions seem almost irrelevant. We have a more pressing issue at hand, {u}.",
+   "dst": "Ama itiraf etmeliyim, bu sorular neredeyse anlamsız görünüyor. Önümüzde daha acil bir sorun var, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#215": {
+   "src": "This ice is harder than obsidian itself. The crystals which form the material are bonded by ancient magic.",
+   "dst": "Bu buz obsidiyenden bile sert. Maddeyi oluşturan kristaller kadim bir büyüyle birbirine bağlı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#216": {
+   "src": "Shattering it with such tools isn't an option. Perhaps there is a weapon that could break through, somewhere deep in our armory- after all, this vault had to be carved somehow...",
+   "dst": "Böyle aletlerle parçalamak söz konusu değil. Belki cephaneliğimizin derinliklerinde onu delebilecek bir silah vardır- sonuçta bu mahzen bir şekilde oyulmuş olmalı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#217": {
+   "src": "However, given the circumstances, I don't think we have the time to search for it. Even if we started now, our armory is enormous. It would take weeks to find what we need.",
+   "dst": "Ama şartlar düşünülünce onu aramaya vaktimiz olduğunu sanmıyorum. Şimdi başlasak bile cephaneliğimiz devasa. Gerekeni bulmak haftalar sürer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#218": {
+   "src": "The lava of the Heights is nothing more than molten rock. Just a remnant of the shaping of these caverns.",
+   "dst": "Heights'ın lavı erimiş kayadan başka bir şey değil. Bu mağaraların oluşumundan kalma bir kalıntı sadece.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#219": {
+   "src": "It's not nearly hot enough to melt True Ice. If it could, the Freezing Heights would have faded long ago.",
+   "dst": "Gerçek Buzu eritecek kadar sıcak olmaktan çok uzak. Eritebilseydi Freezing Heights çoktan yok olurdu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#220": {
+   "src": "My... uhm... green is nice, I suppose? Though perhaps not very Dwarven...",
+   "dst": "Benim... ıhm... yeşil güzel, sanırım? Gerçi pek Cüce işi değil...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#221": {
+   "src": "Red, then. Or orange! ...Although my bedsheets are the most wonderful shade of navy blue...",
+   "dst": "O zaman kırmızı. Ya da turuncu! ...Gerçi çarşaflarım en harika lacivert tonunda...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#222": {
+   "src": "Breakfast... I had some eggs, I suppose. Though, I had no idea that breakfast would be my last, did I..?",
+   "dst": "Kahvaltı... Birkaç yumurta yedim galiba. Gerçi o kahvaltının son kahvaltım olacağından haberim yoktu, değil mi..?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#223": {
+   "src": "Hm... Had I known, maybe I would have chosen differently. Maybe I would have-... nevermind.",
+   "dst": "Hm... Bilseydim belki başka bir şey seçerdim. Belki de-... boş ver.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#224": {
+   "src": "Regroup at outside {p} at [{~}, {~}, -{~}] to figure out how to free the Elders.",
+   "dst": "İhtiyarları nasıl özgür bırakacağınızı bulmak için {p} dışında, [{~}, {~}, -{~}] konumunda toplanın.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#225": {
+   "src": "... so this is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
+   "dst": "... işte kendimizi bu durumda buluyoruz. Paku, ne düşünüyorsun? Böyle bir plan işe yarar mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#226": {
+   "src": "... so that is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
+   "dst": "... işte durumumuz bu. Paku, ne düşünüyorsun? Böyle bir plan işe yarar mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#227": {
+   "src": "Hm... You may be correct... Draani. The magic in... a dragon's breath... was very potent. And to think... mighty Ozoth had survived... all these years...",
+   "dst": "Hm... Haklı olabilirsin... Draani. Bir ejderhanın nefesindeki... büyü çok güçlüydü. Bir de düşün... yüce Ozoth... bunca yıl hayatta kalmış...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#228": {
+   "src": "If Ozoth is alive... we must seek her help. If the doguns ask... for her aid, she will... give it.",
+   "dst": "Ozoth hayattaysa... ondan yardım istemeliyiz. Dogunlar... yardım isterse... verecektir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#229": {
+   "src": "Well, that's as good a plan as any. {u}, you'll travel to seek this dragon's counsel, along with... Ineos, was it? Good luck.",
+   "dst": "Pekâlâ, bu da her plan kadar iyi. {u}, bu ejderhanın öğüdünü almaya gideceksin, yanında da... Ineos'tu, değil mi? Bol şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#230": {
+   "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
+   "dst": "Ticaret Tüneli'ni... kullanmalısın... {u}. Koordinatları... Görev Kitabı'na... yazacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 13",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#231": {
+   "src": "Use the {p} trading tunnel at [{~}, {~}, -{~}] to travel to {p}.",
+   "dst": "[{~}, {~}, -{~}] konumundaki {p} ticaret tünelini kullanarak {p} bölgesine git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#232": {
+   "src": "Travel to {p} at [{~}, {~}, -{~}] to attempt to speak with her.",
+   "dst": "Onunla konuşmayı denemek için [{~}, {~}, -{~}] konumundaki {p} bölgesine git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#233": {
+   "src": "Ah... it is... good to... see you. We must... proceed to Ozoth... with all haste.",
+   "dst": "Ah... seni... görmek... güzel. Vakit kaybetmeden... Ozoth'a... ilerlemeliyiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#234": {
+   "src": "Ozoth the Dragon... Endless Kindler... we have come... to ask for your aid.",
+   "dst": "Ejderha Ozoth... Endless Kindler... yardımını... istemeye geldik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#236": {
+   "src": "We are searching... for a way... to melt the truest... of ice. The fate... of Gavel... hangs in the balance.",
+   "dst": "En gerçek... buzu... eritmenin bir yolunu... arıyoruz. Gavel'in... kaderi... pamuk ipliğine bağlı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#237": {
+   "src": "Doguns... and Dragons... our fates have been entwined... for centuries. We call on you now... Endless Kindler... to save this province.",
+   "dst": "Dogunlar... ve Ejderhalar... kaderlerimiz yüzyıllardır... iç içe. Şimdi sana sesleniyoruz... Endless Kindler... bu eyaleti kurtar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#240": {
+   "src": "... well...",
+   "dst": "... şey...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#241": {
+   "src": "The Endless Kindler... is willing to part... with hers. You must... retrieve it... from her stomach.",
+   "dst": "Endless Kindler... kendi alevinden... vazgeçmeye razı. Onu... midesinden... sen almalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#243": {
+   "src": "I would advise you... not to think... too much about this. When... you are ready... enter Ozoth's mouth and retrieve... the flame.",
+   "dst": "Sana tavsiyem... bunu... fazla düşünmemen. Hazır... olduğunda... Ozoth'un ağzına gir ve alevi... al.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 15",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#244": {
+   "src": "Descend into Ozoth's belly to retrieve an Everflame.",
+   "dst": "Bir Everflame almak için Ozoth'un midesine in.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#245": {
+   "src": "Travel to {p} at [{~}, {~}, -{~}] with an Everflame.",
+   "dst": "Bir Everflame ile [{~}, {~}, -{~}] konumundaki {p} bölgesine git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#246": {
+   "src": "{u}! Have you retrieved... the Eternal Flame?",
+   "dst": "{u}! Ebedi Alevi... aldın mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#247": {
+   "src": "{u}! Have you retrieved... the Everflame?",
+   "dst": "{u}! Everflame'i... aldın mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#248": {
+   "src": "Excellent. Endless Kindler... thank you... for your sacrifice. I will ensure... that your flame... is returned to you.",
+   "dst": "Mükemmel. Endless Kindler... fedakârlığın için... teşekkür ederim. Alevinin... sana geri dönmesini... sağlayacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#250": {
+   "src": "Ozoth apologises... if it was a bit hot... in there.",
+   "dst": "Ozoth özür diliyor... içerisi biraz... sıcak olduysa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#251": {
+   "src": "Now, {u}... I was never the best... at the ancient magic... but I hope I have enough skill... to take us the short route back...",
+   "dst": "Şimdi, {u}... Kadim büyüde... hiçbir zaman en iyisi... değildim... ama umarım bizi kısa yoldan... geri götürecek kadar... becerim vardır...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#252": {
+   "src": "You have returned! Is there news from {p}? Did the dragon offer aid?",
+   "dst": "Döndünüz! {p} tarafından haber var mı? Ejderha yardım etmeyi kabul etti mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#253": {
+   "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Eternal Flame... to melt the ice.",
+   "dst": "Etti... Ozoth bu eyalet için... büyük bir fedakârlık yaptı... ama artık buzu eritecek... bir Ebedi Alevimiz var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#254": {
+   "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Everflame... to melt the ice.",
+   "dst": "Etti... Ozoth bu eyalet için... büyük bir fedakârlık yaptı... ama artık buzu eritecek... bir Everflame'imiz var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#255": {
+   "src": "Well done... both of you. I will ensure... that the doguns thank her... properly. The dwarves would do well... to do the same.",
+   "dst": "Aferin... ikinize de. Dogunların ona... gereği gibi teşekkür etmesini... sağlayacağım. Cüceler de... aynısını yapsa iyi olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#256": {
+   "src": "Yes, yes, but there's no time to worry about that now. Quick, let's get back to the-",
+   "dst": "Evet, evet, ama şu an bunu dert etmenin zamanı değil. Çabuk, hadi geri dönelim-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#257": {
+   "src": "Be wary... of the Elders... Draani. It is unlikely they will react well... after their imprisonment. It is vital... you explain the situation... to them.",
+   "dst": "İhtiyarlara karşı... dikkatli ol... Draani. Hapsedilmelerinden sonra... iyi tepki vermeleri pek olası değil. Durumu onlara... açıklaman... hayati önem taşıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#258": {
+   "src": "I would join you... both... but the ice is inhospitable... to my kind. I wish the both of you... the best of luck.",
+   "dst": "Size ben de... katılırdım... ama buz benim türüm için... yaşanmaz bir yer. İkinize de... bol şans diliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#259": {
+   "src": "...right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "...doğru. Evet. Neyse, bundan kaçış yok. Gel, {u}. İhtiyarları çözüp bizi dinlemelerini sağlamalıyız. Alevi getir, seninle Mahzen'de buluşuruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#260": {
+   "src": "... right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "... doğru. Evet. Neyse, bundan kaçış yok. Gel, {u}. İhtiyarları çözüp bizi dinlemelerini sağlamalıyız. Alevi getir, seninle Mahzen'de buluşuruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 17",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#261": {
+   "src": "Return to the Dogun Vault at [{~}, {~}, -{~}] to free the Dogun Elders.",
+   "dst": "Dogun İhtiyarlarını özgür bırakmak için [{~}, {~}, -{~}] konumundaki Dogun Mahzeni'ne dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#262": {
+   "src": "Well then, what are we waiting for! Let's free these elders, shall we?",
+   "dst": "Eee, ne bekliyoruz! Şu İhtiyarları özgür bırakalım, ne dersin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#263": {
+   "src": "Just bring the Everflame to each of the cells, and melt through that True Ice.",
+   "dst": "Everflame'i hücrelerin her birine götür ve o Gerçek Buzu erit.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#264": {
+   "src": "Excellent! We've done it! Now we just need to explain the situation-...",
+   "dst": "Mükemmel! Başardık! Şimdi tek yapmamız gereken durumu açıklamak-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#265": {
+   "src": "We are freed.",
+   "dst": "Özgürüz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#266": {
+   "src": "...Ah. I suppose I did not... think this through. Ehm. Elders, I must apo-",
+   "dst": "...Ah. Galiba bunu pek... düşünmemiştim. Ehm. İhtiyarlar, özür dil-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#267": {
+   "src": "Dwarf... Hm. The crimes... of your ancestors... must be repaid.",
+   "dst": "Cüce... Hm. Atalarının... suçlarının... bedeli ödenmeli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#268": {
+   "src": "However. We have... heard you speak. We have... learned of... the Protector's state.",
+   "dst": "Ancak. Konuştuğunu... duyduk. Koruyucu'nun... durumunu... öğrendik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#269": {
+   "src": "We will... settle your debt... later. This situation... is a more pressing... concern. The Protector... must be calmed.",
+   "dst": "Borcunu... sonra... kapatacağız. Bu durum... çok daha acil... bir mesele. Koruyucu... yatıştırılmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#270": {
+   "src": "...Yes. You. Human. That was... dragonfire... was it not?",
+   "dst": "...Evet. Sen. İnsan. O... ejderha ateşiydi... değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#271": {
+   "src": "Then allow me... to borrow it. Its strength... will allow us... to restore ours. Now... Who now holds... the title... of Chieftain?",
+   "dst": "O hâlde izin ver... onu ödünç alayım. Onun gücü... bizim gücümüzü... geri getirecek. Şimdi... Reis... unvanı... kimde?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#272": {
+   "src": "A-ah! Paku is now the Dogun Chieftain. He would be at... At Taloka.",
+   "dst": "A-ah! Dogun Reisi artık Paku. Şu anda... Taloka'da olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#273": {
+   "src": "Very well... We shall travel... through flame... and through stone...",
+   "dst": "Pekâlâ... Yola koyulacağız... alevin içinden... ve taşın içinden...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#274": {
+   "src": "...The Elders... after all this time... to see you, again... in the flesh...",
+   "dst": "...İhtiyarlar... bunca zaman sonra... sizi yeniden... karşımda görmek...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#275": {
+   "src": "Greetings, Paku. We have much... to discuss. But first... we must travel... to the Protector.",
+   "dst": "Selam, Paku. Konuşacak... çok şeyimiz var. Ama önce... Koruyucu'nun yanına... gitmeliyiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#276": {
+   "src": "Join us... Ineos and Paku. There is... very little time... to waste.",
+   "dst": "Bize katılın... Ineos ve Paku. Kaybedecek... çok az... vakit var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#277": {
+   "src": "Now, let us travel... Through flame... and through stone...",
+   "dst": "Şimdi, yola koyulalım... Alevin içinden... ve taşın içinden...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#278": {
+   "src": "Korzim... my son... join us. The Elders must see... to the Protector.",
+   "dst": "Korzim... oğlum... bize katıl. İhtiyarlar... Koruyucu'yla ilgilenmeli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#279": {
+   "src": "Iscor... Astal... Desint... it has been... too long. I will come.",
+   "dst": "Iscor... Astal... Desint... sizi görmeyeli... çok uzun zaman oldu. Geliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#280": {
+   "src": "earth and flame... fire and stone... transport us through your form!",
+   "dst": "toprak ve alev... ateş ve taş... bizi bedeninden geçir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#281": {
+   "src": "-have to trust that they'll return!",
+   "dst": "-geri döneceklerine güvenmek zorundayız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#282": {
+   "src": "There's no time! I can feel the damned ground cracking beneath my feet, we have to turn to the final option. We've had demolition mages on standby the past few days, our only choice is to-",
+   "dst": "Vakit yok! Lanet olası zeminin ayaklarımın altında çatladığını hissedebiliyorum, son seçeneğe başvurmalıyız. Son birkaç gündür yıkım büyücülerini hazır bekletiyoruz, tek seçeneğimiz-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#283": {
+   "src": "Rhay. Elix. My Elders... have been freed. They are here... to help... the Protector.",
+   "dst": "Rhay. Elix. İhtiyarlarım... özgür bırakıldı. Koruyucu'ya... yardım etmek için... buradalar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#284": {
+   "src": "Join us... brave ones. You will see... that your efforts to save this Province... have not been in vain.",
+   "dst": "Bize katılın... cesurlar. Bu Eyaleti kurtarma çabalarınızın... boşa gitmediğini... göreceksiniz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#285": {
+   "src": "flames of the earth... take us to the great protector... to make our plea!",
+   "dst": "toprağın alevleri... yalvarışımızı sunmak için... bizi büyük koruyucuya götürün!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 18",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#286": {
+   "src": "Travel to the Canyon Colossus at [{~}, {~}, -{~}] to attempt to calm it.",
+   "dst": "Canyon Colossus'u yatıştırmayı denemek için [{~}, {~}, -{~}] konumuna git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Breaking Point#287": {
+   "src": "Great Protector... It is furious.",
+   "dst": "Büyük Koruyucu... Öfkeden kudurmuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#288": {
+   "src": "Hmph. Foolish dwarves... This is what has come...of your needless war... You are fortunate...to have freed us now...",
+   "dst": "Hıh. Aptal cüceler... Gereksiz savaşınız...işte buna yol açtı... Bizi şimdi...özgür bırakmanız şansınıza...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#289": {
+   "src": "Desint... Iscor... I will prepare... the ritual. Defend me... as I do so.",
+   "dst": "Desint... Iscor... Ayini... ben hazırlayacağım. Ben hazırlarken... beni koruyun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#290": {
+   "src": "Human. We will pull the Protector... away from the brink. That is all we can do now. All the power... we can muster.",
+   "dst": "İnsan. Koruyucu'yu... uçurumun kenarından geri çekeceğiz. Şu an yapabileceğimiz tek şey bu. Toplayabildiğimiz... bütün güç.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Desint",
+   "source": "wiki"
+  },
+  "The Breaking Point#291": {
+   "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
+   "dst": "Bu kutsal topraklara... girmelisin. Sonuna kadar savaşarak ilerle... Aklını... başına getir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Iscor",
+   "source": "wiki"
+  },
+  "The Breaking Point#292": {
+   "src": "Adventurer... We are counting...on you. We will try to...support you however we can.",
+   "dst": "Maceracı... Sana...güveniyoruz. Sana elimizden geldiğince...destek olmaya çalışacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Ineos",
+   "source": "wiki"
+  },
+  "The Breaking Point#293": {
+   "src": "We'll do the best we can out here! I have some ideas already...",
+   "dst": "Biz burada elimizden geleni yapacağız! Şimdiden birkaç fikrim var bile...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Rhay",
+   "source": "wiki"
+  },
+  "The Breaking Point#294": {
+   "src": "Rhay, this isn't the time. Human. We have your back. You can do this.",
+   "dst": "Rhay, sırası değil. İnsan. Arkanı kolluyoruz. Bunu başarabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "General Elix",
+   "source": "wiki"
+  },
+  "The Breaking Point#295": {
+   "src": "You have faced...worse odds before...have you not? You will face them...again.",
+   "dst": "Daha önce...daha zor durumlarla...yüzleştin, değil mi? Yine...yüzleşeceksin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "The Breaking Point#296": {
+   "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
+   "dst": "Tamamlandı. Desint... Iscor... Yerlerinizi alın. Onu... geri tutmalıyız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#297": {
+   "src": "great protector, lord of stone, hear our burning call. your fury clouds your vision, your anger burns and twists our home.",
+   "dst": "ey büyük koruyucu, taşın efendisi, yakarışımızı duy. öfken gözlerini bulandırıyor, hiddetin yurdumuzu yakıp büküyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#298": {
+   "src": "we, the doguns, who now hold the final flame of a fallen god... we will hold you back. we will keep this land intact!",
+   "dst": "biz, düşmüş bir tanrının son alevini taşıyan dogunlar... seni geri tutacağız. bu toprakları bütün tutacağız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#299": {
+   "src": "We will... hold it from here... human. Now... go! We will not... be able to hold it... for long...",
+   "dst": "Onu buradan... biz tutacağız... insan. Şimdi... git! Onu... uzun süre... tutamayacağız...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#300": {
+   "src": "This crystal...will let you harness...our flame. Use it...to break through...its defenses.",
+   "dst": "Bu kristal...alevimizi kullanmanı...sağlayacak. Onunla...savunmalarını...kır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Elder Astal",
+   "source": "wiki"
+  },
+  "The Breaking Point#301": {
+   "src": "{u}... Before you go. I will offer you... these powerful relics. Our people... have held them for... longer than I have lived. They may... help you on your quest.",
+   "dst": "{u}... Gitmeden önce. Sana... bu güçlü kalıntıları sunacağım. Halkım onları... benim ömrümden... daha uzun süredir saklıyor. Görevinde... sana yardımcı olabilirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "Chieftain Paku",
+   "source": "wiki"
+  },
+  "The Breaking Point#302": {
+   "src": "I cannot give you something as unique as what Paku has offered, but I can still lend you a sum from our treasury. Use it as you must, so long as you can calm that thing. Good luck.",
+   "dst": "Sana Paku'nun sunduğu kadar eşsiz bir şey veremem, ama hazinemizden bir miktar borç verebilirim. O şeyi yatıştırabildiğin sürece dilediğin gibi kullan. Bol şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 19",
+   "speaker": "King Draani",
+   "source": "wiki"
+  },
+  "The Breaking Point#303": {
+   "src": "[+{~} Magmaflux Capacitor]",
+   "dst": "[+{~} Magmaflux Kondansatörü]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#304": {
+   "src": "Have you flown to Corkus with Rhay yet? Quick, get to the Hot Air Balloon in the south!",
+   "dst": "Rhay ile Corkus'a uçtun mu? Çabuk, güneydeki Sıcak Hava Balonu'na git!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 2",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#305": {
+   "src": "Just step on the iron platform and we'll send you down!",
+   "dst": "Demir platforma bas yeter, seni aşağı göndereceğiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#307": {
+   "src": "[!] Central bore tunnel opening! Exercise caution around the deep drop.",
+   "dst": "[!] Merkezi sondaj tüneli açılıyor! Derin boşluğun çevresinde dikkatli olun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Breaking Point#308": {
+   "src": "You got the part! Head back to the balloon and I'll meet you there.",
+   "dst": "Parçayı aldın! Balona geri dön, orada buluşuruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 4",
+   "speaker": "Maxie",
+   "source": "captured"
+  },
+  "The Breaking Point#309": {
+   "src": "Have you flown to the Heights with Ineos yet? Quick, get to the Hot Air Balloon in the south!",
+   "dst": "Ineos ile Heights'a uçtun mu? Çabuk, güneydeki Sıcak Hava Balonu'na git!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#310": {
+   "src": "I... will meet you... by the airship. I am... eager... to see my home... again.",
+   "dst": "Seninle... hava gemisinin... yanında buluşacağım. Yurdumu... yeniden görmek için... sabırsızlanıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "General Elix",
+   "source": "captured"
+  },
+  "The Breaking Point#311": {
+   "src": "Well... That's it, then! I'll see you two off, and then... Then I'll figure out how to clean up here.",
+   "dst": "Pekâlâ... Demek bu kadar! Sizi uğurlayacağım, sonra da... Sonra da burayı nasıl toparlayacağımı düşüneceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#312": {
+   "src": "I... I really did hope we could do it. I thought that our magic could save the day, that it could stop this thing!",
+   "dst": "Ben... Gerçekten başarabileceğimizi ummuştum. Büyümüzün günü kurtarabileceğini, bu şeyi durdurabileceğini sanmıştım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#313": {
+   "src": "... Nothing to do about it now, of course! Good luck out there. We're counting on you two now. Go find those Elders!",
+   "dst": "... Artık yapacak bir şey yok tabii! Orada bol şans. Artık size güveniyoruz. Gidin, bulun o İhtiyarları!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#314": {
+   "src": "It has been... many years... since I fled the Heights. I am... grateful to... the Corkians... for taking me in.",
+   "dst": "Heights'tan... kaçalı... uzun yıllar oldu. Beni yanlarına aldıkları için... Corkuslulara... minnettarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#315": {
+   "src": "But... The war... has ended. I can finally... go home...",
+   "dst": "Ama... Savaş... sona erdi. Sonunda... evime... dönebilirim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#316": {
+   "src": "... {p} first... though. We still... have work to do...",
+   "dst": "... Ama önce... {p}. Daha... yapacak işimiz... var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "Rhay",
+   "source": "captured"
+  },
+  "The Breaking Point#317": {
+   "src": "What are you waiting for? Use my hook to get to the override switch at the end of this cave!",
+   "dst": "Ne bekliyorsun? Bu mağaranın sonundaki şaltere ulaşmak için kancamı kullan!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 8",
+   "speaker": "King Draani",
+   "source": "captured"
+  },
+  "The Breaking Point#318": {
+   "src": "Come, {u}. We must unfreeze the Elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
+   "dst": "Gel, {u}. İhtiyarları çözüp bizi dinlemelerini sağlamalıyız. Alevi getir, seninle Mahzen'de buluşuruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Breaking Point",
+   "stage": "Stage 12",
+   "speaker": "King Draani",
+   "source": "wiki"
+  }
+ }
+}

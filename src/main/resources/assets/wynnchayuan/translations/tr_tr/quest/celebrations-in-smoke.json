@@ -1,0 +1,5320 @@
+{
+ "_meta": {
+  "quest": "Celebrations in Smoke",
+  "count": 530,
+  "translated": 529,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Celebrations in Smoke#000": {
+   "src": "The dagger is lightly stained with blood.",
+   "dst": "Hançerde hafif kan lekeleri var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#001": {
+   "src": "Have you seen any danger?",
+   "dst": "Tehlikeli bir şey gördün mü?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#002": {
+   "src": "That should be enough to go off if you can find a member of the Kalkalrah clan. If you want to get more information though, you can continue the interrogation.",
+   "dst": "Kalkalrah klanından birini bulabilirsen bu kadarı yeterli olur. Daha fazla bilgi istiyorsan sorguya devam edebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#003": {
+   "src": "Are you familiar with any green tea dealers?",
+   "dst": "Yeşil çay satan birini tanıyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#004": {
+   "src": "Why are you so nervous?",
+   "dst": "Neden bu kadar gerginsin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#005": {
+   "src": "These ashes of a medallion seem to indicate that Arris really was exiled. You'll need to confront them about it.",
+   "dst": "Bu madalyon külleri Arris'in gerçekten sürgün edildiğini gösteriyor. Bu konuda onunla yüzleşmen gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#006": {
+   "src": "This looks like what Cerisa was trying to hide when she snuck in. It's a box full of... soldier's gear?",
+   "dst": "Cerisa'nın gizlice girerken saklamaya çalıştığı şey bu olmalı. İçi dolu bir kutu... asker teçhizatı mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#007": {
+   "src": "I never said I thought you did it.",
+   "dst": "Senin yaptığını düşündüğümü hiç söylemedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#008": {
+   "src": "One of your clan members told me you were exiled.",
+   "dst": "Klanından biri sürgün edildiğini söyledi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#009": {
+   "src": "Do you know Arris? They say they're a member of your clan?",
+   "dst": "Arris'i tanıyor musun? Senin klanından olduğunu söylüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#010": {
+   "src": "Read the noticeboard at [-{~}, {~}, -{~}] near {p}.",
+   "dst": "[-{~}, {~}, -{~}] konumundaki, {p} yakınlarındaki ilan panosunu oku.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#011": {
+   "src": "The board is plastered full of old notices, but a newer one catches your eye:",
+   "dst": "Pano eski ilanlarla dolu ama daha yeni bir tanesi gözüne çarpıyor:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "Bulletin Board",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#012": {
+   "src": "THE FESTIVAL OF THE WICKER HAS RETURNED AGAIN! JOIN THE ENTIRE MISTWOODS IN ALDWELL FOR THE FESTIVITIES",
+   "dst": "HASIR FESTİVALİ YİNE GERİ DÖNDÜ! ŞENLİKLER İÇİN TÜM MISTWOODS'A ALDWELL'DE KATIL",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "Bulletin Board",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#013": {
+   "src": "It looks like the festival starts tomorrow afternoon. Would you like to attend?",
+   "dst": "Festival yarın öğleden sonra başlıyor gibi görünüyor. Katılmak ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "Bulletin Board",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#014": {
+   "src": "Maybe another time then.",
+   "dst": "Belki başka zaman o zaman.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 1",
+   "speaker": "Bulletin Board",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#015": {
+   "src": "Enter the Festival of the Wicker at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Hasır Festivali'ne gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#016": {
+   "src": "Welcome to the Festival of the Wicker!",
+   "dst": "Hasır Festivali'ne hoş geldin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#017": {
+   "src": "May I see your medallion?",
+   "dst": "Madalyonunu görebilir miyim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#018": {
+   "src": "Then you cannot be trusted. Leave.",
+   "dst": "O zaman sana güvenilmez. Git buradan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#019": {
+   "src": "Thank you, enjoy the festival! You can grab a mask inside.",
+   "dst": "Teşekkürler, festivalin tadını çıkar! İçeride bir maske alabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#020": {
+   "src": "The board doesn't have anything else on it that catches your eye.",
+   "dst": "Panoda gözüne çarpan başka bir şey yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Bulletin Board",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#021": {
+   "src": "We can't let you in without seeing your medallion!",
+   "dst": "Madalyonunu görmeden seni içeri alamayız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 2",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#022": {
+   "src": "Take a spare mask.",
+   "dst": "Yedek bir maske al.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#023": {
+   "src": "Once you get inside, make sure to put your mask on.",
+   "dst": "İçeri girince maskeni takmayı unutma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 3",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#024": {
+   "src": "Talk to festival attendees.",
+   "dst": "Festival katılımcılarıyla konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#025": {
+   "src": "I hope you're enjoying the festival!",
+   "dst": "Umarım festivalden keyif alıyorsundur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#026": {
+   "src": "Welcome to Festival of the Wicker's premier food stall!",
+   "dst": "Hasır Festivali'nin en seçkin yemek tezgâhına hoş geldin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#027": {
+   "src": "What can I get you?",
+   "dst": "Sana ne verebilirim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#028": {
+   "src": "Enjoy your rabbit roast!",
+   "dst": "Tavşan kızartmanın tadını çıkar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#029": {
+   "src": "Enjoy your green tea!",
+   "dst": "Yeşil çayının tadını çıkar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#030": {
+   "src": "Enjoy your fortune cookie!",
+   "dst": "Fal kurabiyenin tadını çıkar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#031": {
+   "src": "Have a nice day.",
+   "dst": "İyi günler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#032": {
+   "src": "'A clan member you hate will soon change your life.'",
+   "dst": "'Nefret ettiğin bir klan üyesi yakında hayatını değiştirecek.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#033": {
+   "src": "'Foxes in threes bare good tidings.'",
+   "dst": "'Üçlü gelen tilkiler iyi haber getirir.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#034": {
+   "src": "'A new love will soon enter your life!'",
+   "dst": "'Yakında hayatına yeni bir aşk girecek!'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#035": {
+   "src": "'Do not forget the danger of outsiders or someday you will have great trouble.'",
+   "dst": "'Yabancıların tehlikesini unutma, yoksa bir gün başın büyük belaya girer.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#036": {
+   "src": "'Avoid the forest floor, a great calamity awaits you.'",
+   "dst": "'Orman zemininden uzak dur, seni büyük bir felaket bekliyor.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#037": {
+   "src": "'Love with the same passion that you hate or both will consume you.'",
+   "dst": "'Nefret ettiğin tutkuyla sev, yoksa ikisi de seni tüketir.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#038": {
+   "src": "'Your suspicion which no one else believes will someday be right.'",
+   "dst": "'Kimsenin inanmadığı şüphen bir gün haklı çıkacak.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#039": {
+   "src": "'Be careful around squirrels.'",
+   "dst": "'Sincapların yanında dikkatli ol.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#040": {
+   "src": "'Beware some of those closest to you! They may not be what they seem.'",
+   "dst": "'Sana en yakın olanların bazılarına dikkat et! Göründükleri gibi olmayabilirler.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#041": {
+   "src": "'Mist is pretty from a distance, but do not lose yourself in it.'",
+   "dst": "'Sis uzaktan güzeldir ama içinde kaybolma.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#042": {
+   "src": "'Restrain your curiosity, especially around odd beatles.'",
+   "dst": "'Merakını dizginle, özellikle tuhaf böceklerin yanında.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#043": {
+   "src": "'You will live an uneventful life, unremarkable in every way.'",
+   "dst": "'Her açıdan sıradan, olaysız bir hayat yaşayacaksın.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#044": {
+   "src": "'A river will both give and take what you love most.'",
+   "dst": "'Bir nehir en çok sevdiğin şeyi hem verecek hem alacak.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#045": {
+   "src": "'Make the most of your life, it will come to a nasty end.'",
+   "dst": "'Hayatının tadını çıkar, sonu kötü bitecek.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#046": {
+   "src": "'Beware an uncomfortable encounter with an eagle.'",
+   "dst": "'Bir kartalla yaşayacağın tatsız bir karşılaşmaya dikkat et.'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Fortune Cookie",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#048": {
+   "src": "I'm sorry, I'm still setting up, maybe I'll have something at a later date.",
+   "dst": "Kusura bakma, hâlâ hazırlanıyorum, belki ileride bir şeyim olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#049": {
+   "src": "Come to redeem your tokens?",
+   "dst": "Jetonlarını bozdurmaya mı geldin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#050": {
+   "src": "What would you like to buy?",
+   "dst": "Ne almak istersin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#051": {
+   "src": "How many would you like to buy?",
+   "dst": "Kaç tane almak istersin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#052": {
+   "src": "There is your token, enjoy the festival!",
+   "dst": "Al bakalım jetonun, festivalin tadını çıkar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#053": {
+   "src": "There are your tokens, enjoy the festival!",
+   "dst": "Al bakalım jetonların, festivalin tadını çıkar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#055": {
+   "src": "You can come get some at any time during the festival.",
+   "dst": "Festival boyunca istediğin zaman gelip alabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#056": {
+   "src": "Make sure you do before the festival ends!",
+   "dst": "Festival bitmeden almayı unutma!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#057": {
+   "src": "I'm afraid you can't afford that.",
+   "dst": "Korkarım buna paran yetmiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#058": {
+   "src": "H-hi. I, um, hope you're having as good a time as I am.",
+   "dst": "M-merhaba. Ş-şey, umarım sen de benim kadar eğleniyorsundur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#059": {
+   "src": "Hello.",
+   "dst": "Merhaba.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#060": {
+   "src": "It really is fun to finally get a chance to relax.",
+   "dst": "Sonunda dinlenme fırsatı bulmak gerçekten çok güzel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#061": {
+   "src": "I love being a part of the Kalkalrah clan, but at times like this it's nice to have the chance to be alone.",
+   "dst": "Kalkalrah klanının bir parçası olmayı seviyorum ama böyle zamanlarda yalnız kalma şansı bulmak hoş oluyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#062": {
+   "src": "Staring across the pond, enjoying the festival, surrounded by people I love.",
+   "dst": "Gölün karşısına bakıyorum, festivalin tadını çıkarıyorum, sevdiğim insanlarla çevriliyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#063": {
+   "src": "It's a sort of quiet, safe calm. One unlike the rest of the year.",
+   "dst": "Sessiz, güvenli bir huzur bu. Yılın geri kalanına hiç benzemeyen bir huzur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#064": {
+   "src": "It's the festival again! And you know what that means...",
+   "dst": "Yine festival zamanı! Bunun ne demek olduğunu biliyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#065": {
+   "src": "Green tea!!! I never know how to get this stuff outside the festival.",
+   "dst": "Yeşil çay!!! Festival dışında bu şeyi nereden bulacağımı hiç bilemiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#066": {
+   "src": "I'm going to spend all night standing right here, drinking as much of it as I can!",
+   "dst": "Bütün geceyi tam burada dikilip içebildiğim kadar içerek geçireceğim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#067": {
+   "src": "Do you want to watch the next round of fox races?",
+   "dst": "Sıradaki tilki yarışını izlemek ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#068": {
+   "src": "Get ready then, because they're ready to go!",
+   "dst": "O zaman hazırlan, çünkü onlar hazır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#069": {
+   "src": "The rules are simple: you pick the fox you think will win a race around the wickerman and back.",
+   "dst": "Kurallar basit: hasır adamın etrafını dolaşıp geri dönecek yarışı kazanacağını düşündüğün tilkiyi seçiyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#070": {
+   "src": "Costs {~} tokens to enter, you get your tokens back if your pick is {~}nd, double it if it gets first.",
+   "dst": "Katılmak {~1} jeton. Seçtiğin tilki {~2}. olursa jetonların geri, birinci olursa iki katı senin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#071": {
+   "src": "I'll give you a banner you can use to cheer your fox on. It should be helpful, although sometimes they can get a bit overwhelmed.",
+   "dst": "Sana tilkini desteklemen için bir sancak vereceğim. İşe yarar, gerçi bazen biraz fazla heyecanlanabiliyorlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#072": {
+   "src": "Best of luck if you do choose to play!",
+   "dst": "Oynamaya karar verirsen bol şans!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#073": {
+   "src": "We'll be holding more races all night if you change your mind!",
+   "dst": "Fikrini değiştirirsen bütün gece yarış düzenleyeceğiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#074": {
+   "src": "I'm afraid you don't have enough tokens to watch a fox race.",
+   "dst": "Korkarım tilki yarışı izlemeye yetecek kadar jetonun yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#075": {
+   "src": "If you need more, you can buy some at the Reward Merchant to the east.",
+   "dst": "Daha fazlası lazımsa doğudaki Ödül Tüccarı'ndan alabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#076": {
+   "src": "May the best fox win!",
+   "dst": "En iyi tilki kazansın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#077": {
+   "src": "Wow! Your support for your fox was really impressive.",
+   "dst": "Vay! Tilkine verdiğin destek gerçekten etkileyiciydi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#078": {
+   "src": "You've easily earned these tokens. Enjoy!",
+   "dst": "Bu jetonları rahat rahat hak ettin. Tadını çıkar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#079": {
+   "src": "Looks like you helped your fox want to win!",
+   "dst": "Görünüşe göre tilkine kazanma hevesi aşılamışsın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#080": {
+   "src": "It just wasn't strong enough to come in first.",
+   "dst": "Ama birinci olacak kadar güçlü değildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#081": {
+   "src": "Second's not bad though! You've earned these tokens back.",
+   "dst": "Yine de ikincilik fena değil! Jetonlarını geri kazandın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#082": {
+   "src": "Aww, it looks like your fox didn't manage to pull off a win.",
+   "dst": "Tüh, galiba tilkin kazanmayı beceremedi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#083": {
+   "src": "Maybe one of you needs to put in a bit more effort next time?",
+   "dst": "Belki bir dahaki sefere ikinizden biri biraz daha çaba göstermeli?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#084": {
+   "src": "Hmm, in the last race, blue looked like it was going to...",
+   "dst": "Hmm, son yarışta mavi sanki şey yapacakmış gibi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#085": {
+   "src": "Oh, hi. Don't worry about me, I'm just analyzing the performances of the last few races.",
+   "dst": "Ah, selam. Bana aldırma, son birkaç yarıştaki performansları inceliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#086": {
+   "src": "It's nothing you'd be able to understand anyway, so don't worry about it.",
+   "dst": "Zaten anlayabileceğin bir şey değil, kafanı yorma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#087": {
+   "src": "Isn't it nice to see kids having fun?",
+   "dst": "Çocukları eğlenirken görmek güzel değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#088": {
+   "src": "I try to lighten his life when I can, but it's so hard to some days.",
+   "dst": "Elimden geldikçe onun hayatını neşelendirmeye çalışıyorum ama bazı günler çok zor oluyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#089": {
+   "src": "That's why I love the festival. Makes my job easier!",
+   "dst": "Festivali bu yüzden seviyorum. İşimi kolaylaştırıyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#090": {
+   "src": "He can entertain himself, I can watch for danger.",
+   "dst": "O kendi kendine eğlenebiliyor, ben de tehlikeye karşı gözümü açık tutabiliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#091": {
+   "src": "I love when the festival finally comes around again!",
+   "dst": "Festivalin sonunda yeniden gelmesine bayılıyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Excited Child",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#092": {
+   "src": "The festival is a great time to hang out with friends, away from anyone who might want to intrude on us.",
+   "dst": "Festival, araya girmek isteyebilecek herkesten uzakta arkadaşlarla takılmak için harika bir zaman.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Clan Member",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#093": {
+   "src": "Oh, it's so kind of you to come and see me.",
+   "dst": "Ah, beni görmeye gelmen ne büyük incelik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#094": {
+   "src": "I'm much too weak to ride the ziplines around town anymore so I appreciate any company I can get.",
+   "dst": "Artık kasabadaki teleferiklere binemeyecek kadar güçsüzüm, o yüzden bulabildiğim her arkadaşlığa minnettarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#095": {
+   "src": "Even so, I love getting to sit on my porch and look down at all the happy people around this time of year.",
+   "dst": "Yine de yılın bu zamanında verandamda oturup aşağıdaki mutlu insanları seyretmeyi çok seviyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#096": {
+   "src": "Welcome to the festival!",
+   "dst": "Festivale hoş geldin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#097": {
+   "src": "It's a lot of work to put on, but it's always worth it to see everyone together.",
+   "dst": "Düzenlemesi çok emek istiyor ama herkesi bir arada görmek her zaman buna değiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#098": {
+   "src": "This is the only time of year a lot of us get to relax, we have to take what we can get.",
+   "dst": "Çoğumuzun dinlenebildiği tek zaman bu, elimize ne geçerse almalıyız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#099": {
+   "src": "Hm... do you hear that? That crackling... and that smell... is that...?",
+   "dst": "Hm... bunu duyuyor musun? O çıtırtı... ve o koku... bu...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#100": {
+   "src": "Smoke? Flames?!",
+   "dst": "Duman mı? Alev mi?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#101": {
+   "src": "Quick! Somebody run to the pond to get some water and put out the fire!",
+   "dst": "Çabuk! Biri gölden su getirip yangını söndürsün!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 4",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#102": {
+   "src": "Put out the fire.",
+   "dst": "Yangını söndür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#103": {
+   "src": "Quick, put out the fire!",
+   "dst": "Çabuk, yangını söndür!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#104": {
+   "src": "Thank you so much for your quick action. I hope you don't mind, but I'll need some more help.",
+   "dst": "Çabuk davrandığın için çok teşekkürler. Umarım sakıncası yoktur ama biraz daha yardımına ihtiyacım olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#105": {
+   "src": "You three!",
+   "dst": "Siz üçünüz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#106": {
+   "src": "Can any of you show me a medallion?",
+   "dst": "Herhangi biriniz bana bir madalyon gösterebilir mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#107": {
+   "src": "Just as I thought. All of you will be held until we can figure out the truth.",
+   "dst": "Tam düşündüğüm gibi. Gerçeği ortaya çıkarana kadar hepiniz gözaltında tutulacaksınız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#108": {
+   "src": "Into that house, all three of you.",
+   "dst": "Üçünüz de şu eve.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#109": {
+   "src": "There will have to be an investigation into this incident and you're one person I'm positive didn't start the fire.",
+   "dst": "Bu olayın soruşturulması gerekecek ve yangını senin çıkarmadığından emin olduğum tek kişi sensin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#110": {
+   "src": "Please, follow me.",
+   "dst": "Lütfen, beni takip et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 5",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#111": {
+   "src": "Follow the Festival Organizer into the house at [-{~}, {~}, -{~}].",
+   "dst": "Festival Düzenleyicisi'ni [-{~}, {~}, -{~}] konumundaki eve kadar takip et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#112": {
+   "src": "Thank you so much for your help again, without your assistance the festival would have been ruined.",
+   "dst": "Yardımın için tekrar çok teşekkürler, sen olmasaydın festival mahvolurdu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#113": {
+   "src": "I cannot express my gratitude more effusely, but I'm afraid I must ask more of you.",
+   "dst": "Minnettarlığımı bundan daha coşkulu ifade edemem ama korkarım senden daha fazlasını istemek zorundayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#114": {
+   "src": "You see, I do not believe that fire was set by an accident. There's a vandal in our midst and I fear the worst.",
+   "dst": "Görüyorsun ya, o yangının kazara çıktığına inanmıyorum. Aramızda bir sabotajcı var ve en kötüsünden korkuyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#115": {
+   "src": "Just as generations ago, when our ancestors first exposed and immolated the changeling threat that we are supposed to be celebrating today, we must remain vigilant!",
+   "dst": "Tıpkı nesiller önce, atalarımızın bugün kutlamamız gereken değişkin tehdidini ilk kez açığa çıkarıp yaktıkları zamanki gibi, tetikte olmalıyız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#116": {
+   "src": "Unfortunately... the festival has always been a time when that vigilance has lapsed a bit. We have an unwelcome attendee.",
+   "dst": "Ne yazık ki... festival hep bu dikkatin biraz gevşediği bir zaman olmuştur. İstenmeyen bir misafirimiz var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#117": {
+   "src": "I suspect that flame was set by a changeling, hoping to use the fire as a distraction to infiltrate the festival. To catch someone off guard and take their form.",
+   "dst": "O alevi bir değişkinin yaktığından şüpheleniyorum; yangını festivale sızmak için dikkat dağıtıcı olarak kullanmayı ummuş. Birini hazırlıksız yakalayıp onun kılığına girmek için.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#118": {
+   "src": "Due to your efforts, they were unable to do so. But they could not have gone far.",
+   "dst": "Senin çabaların sayesinde bunu başaramadılar. Ama çok uzağa gitmiş olamazlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#119": {
+   "src": "I rounded up the three people nearest to where the fire ignited and found all of them had snuck in without a medallion!",
+   "dst": "Yangının başladığı yere en yakın üç kişiyi topladım ve hepsinin madalyonsuz gizlice girdiğini öğrendim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#120": {
+   "src": "While I keep them held here... I'd ask of you to interrogate them and, if needed, search around the festival to find information on who they really are.",
+   "dst": "Ben onları burada tutarken... senden onları sorgulamanı ve gerekirse gerçekte kim olduklarını öğrenmek için festivalin etrafını araştırmanı rica ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#121": {
+   "src": "Once you have unmasked each of them for who they really are, return to me and tell me which one is a changeling in disguise. I can handle matters from there.",
+   "dst": "Her birinin maskesini düşürüp gerçek yüzlerini ortaya çıkardığında bana dön ve hangisinin kılık değiştirmiş bir değişkin olduğunu söyle. Gerisini ben hallederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#122": {
+   "src": "Take this book. You can write any notes you take while investigating down to check later.",
+   "dst": "Şu defteri al. Soruşturma sırasında aldığın notları sonra bakmak için içine yazabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#123": {
+   "src": "Once you've investigated all of them, you can return to me.",
+   "dst": "Hepsini araştırdıktan sonra bana dönebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 6",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#124": {
+   "src": "Find evidence against the three suspects.",
+   "dst": "Üç şüpheliye karşı kanıt bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#125": {
+   "src": "Come back to me once you've found what they're all hiding.",
+   "dst": "Hepsinin ne sakladığını bulunca bana geri gel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#127": {
+   "src": "Really? Where?",
+   "dst": "Gerçekten mi? Nerede?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#128": {
+   "src": "Oh! Thank you so much.",
+   "dst": "Ah! Çok teşekkür ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#129": {
+   "src": "I don't know how, but this alley must have slipped through our planning.",
+   "dst": "Nasıl oldu bilmiyorum ama bu ara sokak planlamamızda gözümüzden kaçmış olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#130": {
+   "src": "I'll stand here for now to make sure no one can get in.",
+   "dst": "Kimse giremesin diye şimdilik burada duracağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#131": {
+   "src": "I'm so grateful you warned us before anyone bad might have noticed it.",
+   "dst": "Kötü niyetli biri fark etmeden bizi uyardığın için çok minnettarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#132": {
+   "src": "Thank you so much for exposing that gap in our security!",
+   "dst": "Güvenliğimizdeki o açığı ortaya çıkardığın için çok teşekkürler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#133": {
+   "src": "I'm, um, Arris. I don't know what's happening, I got shoved into here by the festival organizer with these other two.",
+   "dst": "Ben, şey, Arris. Neler olduğunu bilmiyorum, festival düzenleyicisi beni bu ikisiyle birlikte buraya tıktı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#134": {
+   "src": "Why are you admitting that you're a thief?",
+   "dst": "Neden hırsız olduğunu itiraf ediyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#135": {
+   "src": "[+ {~} Burnt Medallion]",
+   "dst": "[+ {~} Yanık Madalyon]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#136": {
+   "src": "Some regions are circled, appearing to indicate the location of easy game.",
+   "dst": "Bazı bölgeler daire içine alınmış, kolay av bulunan yerleri gösteriyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#137": {
+   "src": "That should be enough to go off if you can find someone who was observant enough to see Cerisa sneak in. If you want to get more information though, you can continue the interrogation.",
+   "dst": "Cerisa'nın gizlice girdiğini görecek kadar dikkatli birini bulabilirsen bu kadarı yeterli olur. Daha fazla bilgi istiyorsan sorguya devam edebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#138": {
+   "src": "New Quest Start: Celebrations in Smoke",
+   "dst": "Yeni Görev Başladı: Duman İçinde Kutlamalar",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#139": {
+   "src": "From the information you have, he just looks like a hunter who really likes green tea?",
+   "dst": "Elindeki bilgilere bakılırsa yeşil çayı çok seven bir avcıya benziyor sadece?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#140": {
+   "src": "It's still stuck. Maybe try again, pulling even harder?",
+   "dst": "Hâlâ sıkışık. Belki daha da sert çekerek tekrar dene?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#141": {
+   "src": "You wouldn't know of anyone at all who claimed to be a green tea merchant?",
+   "dst": "Yeşil çay tüccarı olduğunu söyleyen hiç kimseyi tanımıyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#142": {
+   "src": "Do you want to wear the fox mask?",
+   "dst": "Tilki maskesini takmak ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#143": {
+   "src": "Based on what you've seen here, while Burick does have a lot of green tea, there's no evidence he's a merchant.",
+   "dst": "Burada gördüklerine bakılırsa Burick'in bolca yeşil çayı olsa da tüccar olduğuna dair bir kanıt yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#144": {
+   "src": "Ask Cerisa further questions?",
+   "dst": "Cerisa'ya başka sorular sorulsun mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#145": {
+   "src": "Ask Arris further questions?",
+   "dst": "Arris'e başka sorular sorulsun mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#146": {
+   "src": "Ask the clan member further questions?",
+   "dst": "Klan üyesine başka sorular sorulsun mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#147": {
+   "src": "What does it even mean to be a trader in the {p}?",
+   "dst": "{p} bölgesinde tüccar olmak ne demek ki?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#148": {
+   "src": "Did you see who burned down the wickerman?",
+   "dst": "Hasır adamı kimin yaktığını gördün mü?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#149": {
+   "src": "Probe Burick further?",
+   "dst": "Burick biraz daha sıkıştırılsın mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#150": {
+   "src": "Ask the tea enthusiast further questions?",
+   "dst": "Çay meraklısına başka sorular sorulsun mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#151": {
+   "src": "Why did you burn down the wickerman?",
+   "dst": "Hasır adamı neden yaktın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#152": {
+   "src": "You'll have to interrogate him again to see if you can get any new information.",
+   "dst": "Yeni bir bilgi alabilir misin diye onu tekrar sorgulaman gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#153": {
+   "src": "I found your camp. There's green tea, but nothing else I would expect from a merchant",
+   "dst": "Kampını buldum. Yeşil çay var ama bir tüccardan bekleyeceğim başka hiçbir şey yok",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#154": {
+   "src": "I'm simply an ordinary member of the Kalkalrah clan, I don't know what's happening.",
+   "dst": "Ben Kalkalrah klanının sıradan bir üyesiyim, neler olduğunu bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#155": {
+   "src": "Please don't accuse me of doing whatever you think I did, please.",
+   "dst": "Lütfen beni yaptığımı düşündüğün her neyse onunla suçlama, lütfen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#156": {
+   "src": "Nothing, I don't think. Or, well, that's not what I meant.",
+   "dst": "Hiçbir şey, sanırım. Ya da, şey, öyle demek istemedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#157": {
+   "src": "I only, um, do general upkeep. Fixing stuff and cleaning stuff, I mean.",
+   "dst": "Ben sadece, şey, genel bakım işleri yapıyorum. Yani bir şeyleri tamir edip temizliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#158": {
+   "src": "There's not much more to say than that, you know?",
+   "dst": "Bundan fazla söylenecek pek bir şey yok, anlıyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#159": {
+   "src": "I'm nothing more than a helpful member of my clan who assists in the, uh- in the \"making everyone live together with ease\" part of clan life!",
+   "dst": "Ben klan hayatının, ıı- \"herkesin rahatça bir arada yaşaması\" kısmına yardım eden, işe yarar bir klan üyesinden başka bir şey değilim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#160": {
+   "src": "That's what I mean by nothing, you see, that's what I meant when I said that.",
+   "dst": "Hiçbir şey derken bunu kastettim işte, öyle dediğimde bunu demek istedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#161": {
+   "src": "I don't literally do nothing, obviously, that would be dumb. I have an important role and am, uh, valued by my clan.",
+   "dst": "Tabii ki gerçekten hiçbir şey yapmıyor değilim, bu aptalca olurdu. Önemli bir görevim var ve klanım tarafından, ıı, değer görüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#162": {
+   "src": "But it isn't super important or cool or anything, that's what I meant by nothing.",
+   "dst": "Ama çok önemli ya da havalı falan değil, hiçbir şey derken bunu kastettim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#163": {
+   "src": "Oh, that's what you meant. You, um, wanted a specific answer.",
+   "dst": "Ah, onu demek istemişsin. Sen, şey, belirli bir cevap istiyordun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#164": {
+   "src": "Okay. I can give you that.",
+   "dst": "Tamam. Onu verebilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#165": {
+   "src": "Like sometimes I will guard things. I will, um, um, stand watch for changelings or thieves or animals!",
+   "dst": "Mesela bazen bir şeylerin başında nöbet tutarım. Ben, şey, şey, değişkinlere, hırsızlara ya da hayvanlara karşı nöbet tutarım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#166": {
+   "src": "Or anything trying to steal. We try to stop people from stealing from us.",
+   "dst": "Ya da çalmaya çalışan herhangi bir şeye. İnsanların bizden bir şey çalmasını engellemeye çalışırız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#167": {
+   "src": "O-of course.",
+   "dst": "T-tabii ki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#168": {
+   "src": "Oh, sorry, I'm not trying to be.",
+   "dst": "Ah, özür dilerim, öyle olmaya çalışmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#169": {
+   "src": "I'm not, um, sure what's happening. And that makes me a little nervous, can you understand?",
+   "dst": "Neler olduğundan, şey, emin değilim. Bu da beni biraz geriyor, anlayabiliyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#170": {
+   "src": "All this investigation stuff makes me feel like I did something wrong. And I didn't do anything wrong!",
+   "dst": "Bütün bu soruşturma işleri bana yanlış bir şey yapmışım gibi hissettiriyor. Ama yanlış hiçbir şey yapmadım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#171": {
+   "src": "But it's hard to prove that and so I get nervous and stumble over the things I'm saying and misstate what I really mean which only makes it harder!",
+   "dst": "Ama bunu kanıtlamak zor, o yüzden geriliyorum, söylediklerimde takılıyorum ve asıl demek istediğimi yanlış söylüyorum, bu da işi daha da zorlaştırıyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#172": {
+   "src": "Sorry. I don't think I'm helping my case.",
+   "dst": "Özür dilerim. Kendime pek yardımcı olduğumu sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#173": {
+   "src": "Um, I'm not sure. Sorry.",
+   "dst": "Şey, emin değilim. Özür dilerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#174": {
+   "src": "I think a little bit? But obviously not as much as this! Like when I'm under interrogation for something I didn't do even though you really seem to think I did.",
+   "dst": "Sanırım biraz? Ama tabii bu kadar değil! Mesela yapmadığım bir şey için sorgulanırken, sen de yaptığımı düşünüyor gibi görünürken.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#175": {
+   "src": "Well, um, of course you do. You're going to think I committed arson or something and then report me and everything will be horrible.",
+   "dst": "Şey, ıı, tabii ki düşünüyorsun. Kundaklama falan yaptığımı düşüneceksin, sonra beni ihbar edeceksin ve her şey berbat olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#176": {
+   "src": "There's no way you don't think I didn't. Look at how much time you're spending interrogating me compared to everyone else.",
+   "dst": "Yapmadığımı düşünmüyor olamazsın. Baksana, beni sorgulamaya herkesten ne kadar çok zaman harcıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#177": {
+   "src": "Please. Please don't. I didn't do it I promise I didn't do it, please don't think that I did it.",
+   "dst": "Lütfen. Lütfen yapma. Ben yapmadım, söz veriyorum ben yapmadım, lütfen yaptığımı düşünme.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#178": {
+   "src": "I'm innocent I promise please, I didn't do anything I didn't I swear.",
+   "dst": "Masumum söz veriyorum lütfen, hiçbir şey yapmadım yapmadım yemin ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#179": {
+   "src": "Um, here, let me try.",
+   "dst": "Şey, dur, bir deneyeyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#180": {
+   "src": "Hi.",
+   "dst": "Selam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#181": {
+   "src": "I am.",
+   "dst": "Ben.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#182": {
+   "src": "Not.",
+   "dst": "Bu işte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#183": {
+   "src": "Very good.",
+   "dst": "Pek iyi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#184": {
+   "src": "At this.",
+   "dst": "Değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#185": {
+   "src": "Sorry I don't think I'm, uh, cut out for that, sorry.",
+   "dst": "Özür dilerim, sanırım ben, ıı, bu iş için biçilmiş kaftan değilim, özür dilerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#186": {
+   "src": "Alright...",
+   "dst": "Peki...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#187": {
+   "src": "No, I don't think- I didn't see.",
+   "dst": "Hayır, sanmıyorum- görmedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#188": {
+   "src": "Maybe I saw some movement out of the corner of my eye? But that could have been nothing.",
+   "dst": "Belki göz ucuyla bir hareket gördüm? Ama hiçbir şey de olabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#189": {
+   "src": "It's hard to know, I wasn't really paying attention at the time and now you're asking me these questions like I have some sort of, um, picture perfect memory!",
+   "dst": "Bilmek zor, o sırada pek dikkat etmiyordum, şimdi de sen bana sanki, şey, kusursuz bir hafızam varmış gibi bu soruları soruyorsun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#190": {
+   "src": "Even though I definitely don't! And wasn't even trying to remember what was happening in the first place!",
+   "dst": "Kesinlikle öyle bir hafızam olmadığı halde! Hem en başta neler olduğunu aklımda tutmaya çalışmıyordum bile!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#191": {
+   "src": "Sorry, I was shouting, wasn't I. I didn't mean to. I'm only stressed. Sorry.",
+   "dst": "Özür dilerim, bağırıyordum, değil mi. İstemeden oldu. Sadece stresliyim. Özür dilerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#192": {
+   "src": "I didn't! I promise I didn't.",
+   "dst": "Yapmadım! Söz veriyorum yapmadım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#193": {
+   "src": "Please don't think I tried to, I promise I have no idea what you're talking about.",
+   "dst": "Lütfen denediğimi düşünme, söz veriyorum neden bahsettiğin hakkında hiçbir fikrim yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#194": {
+   "src": "All that I was doing was sitting there quietly and then all of a sudden behind me there were really big flames and then before I could even act you threw water on them and saved the wickerman and then I was being brought in here even though I",
+   "dst": "Tek yaptığım orada sessizce oturmaktı, sonra birden arkamda kocaman alevler belirdi, daha ben bir şey yapamadan sen üstüne su attın ve hasır adamı kurtardın, sonra da beni buraya getirdiler, oysa ben",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#195": {
+   "src": "didn't do anything and am just an ordinary clan member and have nothing to hide.",
+   "dst": "hiçbir şey yapmadım, sıradan bir klan üyesiyim ve saklayacak hiçbir şeyim yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#196": {
+   "src": "I promise I didn't try to burn down the wickerman.",
+   "dst": "Söz veriyorum hasır adamı yakmaya çalışmadım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#197": {
+   "src": "Find someone who might know something about Arris's clan.",
+   "dst": "Arris'in klanı hakkında bir şeyler bilebilecek birini bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#201": {
+   "src": "Hmm? Ah. Yes, unfortunately I do.",
+   "dst": "Hm? Ah. Evet, ne yazık ki tanıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#202": {
+   "src": "They were a member of our clan until a week ago, when they were expelled and exiled.",
+   "dst": "Bir hafta öncesine kadar klanımızın üyesiydi, sonra kovulup sürgün edildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#203": {
+   "src": "Their old medallion was handed to me to burn. In fact, just on my way into the festival I threw its ashes up the tallest tree in {p}.",
+   "dst": "Eski madalyonu yakmam için bana verildi. Hatta festivale gelirken küllerini {p} içindeki en uzun ağacın tepesine attım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#204": {
+   "src": "Interrogated them? Oh, I hope they haven't done anything bad.",
+   "dst": "Sorguladınız mı? Ah, umarım kötü bir şey yapmamıştır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#205": {
+   "src": "You know, they were always a bit troubled. But I don't think they're bad. They just weren't suited for clan life.",
+   "dst": "Biliyor musun, hep biraz sorunluydu. Ama kötü biri olduğunu sanmıyorum. Sadece klan hayatına uygun değildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#206": {
+   "src": "Not... communal enough.",
+   "dst": "Yeterince... topluluk insanı değildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#207": {
+   "src": "The fate they were given will be a hard one though. Most exiles don't survive a year.",
+   "dst": "Yine de ona biçilen kader zor olacak. Sürgünlerin çoğu bir yıl dayanamaz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#208": {
+   "src": "Not as much as I wish you could. Please treat them with kindness though, they only lie out of fear.",
+   "dst": "Keşke daha fazla yardımcı olabilseydim. Ama lütfen ona nazik davran, sadece korktuğu için yalan söylüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#209": {
+   "src": "I do not mean to be rude, but you cut an imposing figure. There's a lot to be afraid of.",
+   "dst": "Kaba olmak istemem ama oldukça heybetli görünüyorsun. Korkacak çok şey var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#210": {
+   "src": "I hope they stays well, even if they are troubled.",
+   "dst": "Sorunlu olsa da umarım iyi kalır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#211": {
+   "src": "No no no, that isn't true at all.",
+   "dst": "Hayır hayır hayır, bu hiç doğru değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#212": {
+   "src": "I have no idea who or what you were talking to but I can assure you I, uh, was not exiled from my clan very recently.",
+   "dst": "Kiminle ya da neyle konuştun bilmiyorum ama sana temin ederim ki ben, ıı, yakın zamanda klanımdan sürgün edilmedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#213": {
+   "src": "You don't have any proof of it, right? Right? So it's my word against theirs, there is no reason to believe anything that they have to say over me.",
+   "dst": "Bunun hiçbir kanıtın yok, değil mi? Değil mi? Yani benim sözüm onunkine karşı, onun söylediklerine benimkinden çok inanman için hiçbir sebep yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#214": {
+   "src": "I'm an, um, ordinary clan member who got caught up in something that I do not understand.",
+   "dst": "Ben, şey, anlamadığım bir şeyin içine düşmüş sıradan bir klan üyesiyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#215": {
+   "src": "Search the tallest tree in {p} for Arris's burnt medallion.",
+   "dst": "Arris'in yanmış madalyonunu bulmak için {p} içindeki en uzun ağacı ara.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#216": {
+   "src": "Confront Arris",
+   "dst": "Arris ile yüzleş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#217": {
+   "src": "I- I- I-",
+   "dst": "B- b- ben-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#218": {
+   "src": "Yes I was exiled from my clan and yes I did lie to you but I promise I didn't do anything else bad.",
+   "dst": "Evet klanımdan sürgün edildim ve evet sana yalan söyledim ama söz veriyorum başka kötü bir şey yapmadım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#219": {
+   "src": "I don't know who burned down the wickerman but it wasn't me, you have to believe me.",
+   "dst": "Hasır adamı kimin yaktığını bilmiyorum ama ben değildim, bana inanmak zorundasın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#220": {
+   "src": "I only lied because I panicked and I'm sorry for panicking but please please please you cannot tell them that I'm a changeling or whatever.",
+   "dst": "Sadece panikledim diye yalan söyledim, paniklediğim için özür dilerim ama lütfen lütfen lütfen onlara benim değişkin falan olduğumu söyleme.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#221": {
+   "src": "Please.",
+   "dst": "Lütfen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#222": {
+   "src": "Because they all thought I stole something! Even though I promise, I promise I didn't.",
+   "dst": "Çünkü hepsi bir şey çaldığımı düşündü! Söz veriyorum, söz veriyorum çalmadım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#223": {
+   "src": "I was supposed to be keeping watch over our clan's stores. And I don't know how, but a box of our special green tea went missing.",
+   "dst": "Klanımızın erzak deposunu korumam gerekiyordu. Nasıl oldu bilmiyorum ama özel yeşil çayımızdan bir kutu kayboldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#224": {
+   "src": "I promise I didn't steal it, I really do. But none of them believed me, it somehow disappeared.",
+   "dst": "Söz veriyorum çalmadım, gerçekten. Ama hiçbiri bana inanmadı, bir şekilde ortadan kayboldu işte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#225": {
+   "src": "They said I had lost years of trust with them, over something I swear I didn't do, and kicked me out.",
+   "dst": "Yemin ederim yapmadığım bir şey yüzünden yıllardır kazandığım güveni kaybettiğimi söyleyip beni kovdular.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#226": {
+   "src": "Since then, I've been having to find my own way to survive. I've, uh, not been very good at that.",
+   "dst": "O zamandan beri hayatta kalmanın bir yolunu kendim bulmak zorundayım. Bu konuda, ıı, pek iyi değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#227": {
+   "src": "Maybe a week? I- I- I'm not exactly sure. It has been difficult keeping track of time.",
+   "dst": "Bir hafta kadar mı? B- b- ben tam emin değilim. Zamanın takibini yapmak zor oldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#228": {
+   "src": "Yes! I've never lost anything like that before and I definitely haven't stolen anything ever at all.",
+   "dst": "Evet! Daha önce hiç öyle bir şey kaybetmedim ve kesinlikle hayatımda hiçbir şey çalmadım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#229": {
+   "src": "... Although, I was caught sleeping while on watch a few times. And my clan got really upset with me for that, even though I promise nothing bad happened.",
+   "dst": "... Gerçi nöbet sırasında birkaç kez uyurken yakalandım. Klanım da buna çok kızdı, söz veriyorum hiçbir kötü şey olmadığı halde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#230": {
+   "src": "I wasn't trying to sleep, but it's so hard to stay up all night while nothing is happening.",
+   "dst": "Uyumaya çalışmıyordum ama hiçbir şey olmazken bütün gece uyanık kalmak çok zor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#231": {
+   "src": "O- okay.",
+   "dst": "T- tamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#232": {
+   "src": "Oh, uh, well you know. I was, um.",
+   "dst": "Ah, ıı, şey işte. Ben, şey.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#233": {
+   "src": "Running out of food.",
+   "dst": "Yiyeceğim tükeniyordu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#234": {
+   "src": "And this was the only place I could think of that would have any and I really missed not having to run across the {p} trying to forage and I really really hate being exiled and I need somewhere to go.",
+   "dst": "Yiyecek bulunabilecek aklıma gelen tek yer burasıydı, {p} bölgesinde oradan oraya koşup yiyecek aramak zorunda olmadığım günleri çok özledim, sürgün olmaktan gerçekten çok nefret ediyorum ve gidecek bir yere ihtiyacım var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#235": {
+   "src": "Sorry, I didn't mean to dump all my troubles on you.",
+   "dst": "Özür dilerim, bütün dertlerimi sana boşaltmak istemedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#236": {
+   "src": "...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#237": {
+   "src": "Um. If it wouldn't be too much to ask.",
+   "dst": "Şey. Çok şey istemek olmazsa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#238": {
+   "src": "Would you mind getting me a Fortune Cookie?",
+   "dst": "Bana bir Fal Kurabiyesi alır mısın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#239": {
+   "src": "I don't want to burden you or anything and I know I just lied to you and you're trying to investigate me for a horrible crime, but I'm really hungry and didn't get a chance to eat before you all shoved me in here.",
+   "dst": "Sana yük olmak istemem, biliyorum az önce sana yalan söyledim ve sen de beni korkunç bir suç için soruşturuyorsun ama çok açım ve hepiniz beni buraya tıkmadan önce yemek yemeye fırsatım olmadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#240": {
+   "src": "Thank you so so so so much.",
+   "dst": "Çok çok çok çok teşekkür ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#241": {
+   "src": "Thank you! I don't think I've had one of these since I was a kid.",
+   "dst": "Teşekkürler! Çocukluğumdan beri bunlardan yediğimi sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#242": {
+   "src": "Here, let me read my fortune to you.",
+   "dst": "Dur, falımı sana okuyayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#243": {
+   "src": "\"Beware some of those closest to you! They may not be what they seem.\"",
+   "dst": "\"Sana en yakın olanların bazılarına dikkat et! Göründükleri gibi olmayabilirler.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#244": {
+   "src": "That, uh, would have been more useful a couple weeks ago.",
+   "dst": "Bu, ıı, birkaç hafta önce daha işe yarardı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#245": {
+   "src": "Sorry for asking.",
+   "dst": "İstediğim için özür dilerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#246": {
+   "src": "Sorry. Please don't think I did whatever I can tell you think I did.",
+   "dst": "Özür dilerim. Lütfen yaptığımı düşündüğünü sezdiğim şeyi yaptığımı düşünme.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#251": {
+   "src": "Burick. I'm simply a humble green tea trader.",
+   "dst": "Burick. Ben sadece mütevazı bir yeşil çay tüccarıyım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#252": {
+   "src": "I don't know what happened, I wasn't involved, and that's all I have to say.",
+   "dst": "Ne olduğunu bilmiyorum, işin içinde değildim, söyleyeceklerim bu kadar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#253": {
+   "src": "Self explanatory, I assumed.",
+   "dst": "Açıklamaya gerek yok sanmıştım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#254": {
+   "src": "I found this burnt medallion, confirming what I was told by a former clan member of yours. You were exiled for theft.",
+   "dst": "Bu yanmış madalyonu buldum, eski bir klan arkadaşının bana anlattıklarını doğruluyor. Hırsızlık yüzünden sürgün edilmişsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Celebrations in Smoke#255": {
+   "src": "That should be enough to go off if you can find someone who buys a lot of green tea. If you want to get more information though, you can continue the interrogation.",
+   "dst": "Çok yeşil çay alan birini bulabilirsen bu kadarı yeterli olur. Daha fazla bilgi istiyorsan sorguya devam edebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "That should be enough to go off if you can find someone who was observant enough to see Cerisa sneak in. If you want to get more information though, you can continue the interrogation.",
+    "file": "quest/celebrations-in-smoke.json",
+    "ratio": 0.851,
+    "reason": "candidate"
+   }
+  },
+  "Celebrations in Smoke#256": {
+   "src": "One clan wants to get rid of stuff, while another clan wants to get their hands on it.",
+   "dst": "Bir klan bir şeylerden kurtulmak ister, başka bir klan da o şeyleri elde etmek ister.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#257": {
+   "src": "The {p} is a big and dangerous place. They need a trader to make it happen.",
+   "dst": "{p} büyük ve tehlikeli bir yer. Bu işi yürütmek için bir tüccara ihtiyaçları var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#258": {
+   "src": "Yes. Someone has to do it though.",
+   "dst": "Evet. Ama birinin bunu yapması gerek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#259": {
+   "src": "Nope. And neither has anyone else I've spoken to.",
+   "dst": "Hayır. Konuştuğum başka kimse de görmedi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#260": {
+   "src": "I'm not even certain they're real.",
+   "dst": "Gerçek olduklarından bile emin değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#262": {
+   "src": "Don't mention to anyone else that I said that.",
+   "dst": "Bunu söylediğimi kimseye söyleme.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#263": {
+   "src": "Some people get really upset when you imply that.",
+   "dst": "Bunu ima ettiğinde bazı insanlar çok sinirleniyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#264": {
+   "src": "The Kalkalrah clan sells it to me. So wherever they get it, I suppose.",
+   "dst": "Bana Kalkalrah klanı satıyor. Yani onlar nereden alıyorsa oradan, sanırım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#265": {
+   "src": "Yes. That's what a merchant is.",
+   "dst": "Evet. Tüccar dediğin bu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#266": {
+   "src": "I'm not a member of any clan. I travel around selling my products.",
+   "dst": "Hiçbir klanın üyesi değilim. Dolaşıp mallarımı satarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#267": {
+   "src": "Clan life would be too stifling. I like getting to see more than the trunk of a single tree.",
+   "dst": "Klan hayatı fazla boğucu olurdu. Tek bir ağacın gövdesinden fazlasını görebilmeyi seviyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#268": {
+   "src": "Sure.",
+   "dst": "Olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#269": {
+   "src": "Alright.",
+   "dst": "Peki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#270": {
+   "src": "I'm a merchant, not a member of a clan.",
+   "dst": "Ben tüccarım, klan üyesi değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#271": {
+   "src": "I don't have a way to get one and it hasn't been a problem.",
+   "dst": "Edinmenin bir yolu yok bende, şimdiye kadar da sorun olmadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#272": {
+   "src": "I walked closely behind a group that did.",
+   "dst": "Madalyonu olan bir grubun hemen arkasından yürüdüm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#273": {
+   "src": "I was bored and lonely.",
+   "dst": "Sıkılmıştım ve yalnızdım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#274": {
+   "src": "Gives me a good chance to investigate the green tea market too.",
+   "dst": "Hem yeşil çay piyasasını incelemek için de iyi bir fırsat.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#275": {
+   "src": "They didn't really trust me.",
+   "dst": "Bana pek güvenmediler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#276": {
+   "src": "Trades were handled quickly, while the other parties were heavily armed, and in small enough quantities that if I was a changeling no major loss would be incurred.",
+   "dst": "Alışverişler çabucak yapıldı, karşı taraf tepeden tırnağa silahlıydı ve miktarlar da değişkin çıksam büyük bir kayıp olmayacak kadar küçüktü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#277": {
+   "src": "Okay.",
+   "dst": "Tamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#278": {
+   "src": "I did not and I would not hazard a guess as to who did.",
+   "dst": "Ben yapmadım, kimin yaptığı hakkında da tahmin yürütmem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#279": {
+   "src": "I am answering your questions to the best of my knowledge and ability.",
+   "dst": "Sorularını bildiğim ve elimden geldiğince cevaplıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#280": {
+   "src": "Isn't it your job to figure that stuff out?",
+   "dst": "O tür şeyleri çözmek senin işin değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#281": {
+   "src": "I see no reason to do your own work and give you more rope to hang me with.",
+   "dst": "Senin işini yapıp beni asman için eline daha çok ip vermek için bir sebep görmüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#282": {
+   "src": "It's only an expression.",
+   "dst": "Sadece bir deyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#283": {
+   "src": "I'm cooperating. But I don't see why I should trust someone I don't know or trust with more details than they need.",
+   "dst": "İşbirliği yapıyorum. Ama tanımadığım ya da güvenmediğim birine gerekenden fazla ayrıntı vermem için bir sebep görmüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#284": {
+   "src": "It would be helpful for my business if you just let me go.",
+   "dst": "Beni bıraksan işlerim açısından iyi olurdu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#285": {
+   "src": "But I'm not demanding that. You can give me the same etiquette.",
+   "dst": "Ama bunu talep etmiyorum. Sen de bana aynı nezaketi gösterebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#286": {
+   "src": "Thank you.",
+   "dst": "Teşekkürler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#287": {
+   "src": "Sure, but I have no use for your emeralds.",
+   "dst": "Olur, ama senin Zümrütlerin işime yaramaz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#288": {
+   "src": "It's been a while since I've had some rabbit roast. Get some of that for me and I'll see what I can do.",
+   "dst": "Uzun zamandır tavşan kızartması yemedim. Bana biraz getir, bakarım ne yapabilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#289": {
+   "src": "Huh. I didn't think you actually would, thanks.",
+   "dst": "Hıh. Gerçekten getireceğini düşünmemiştim, sağ ol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#290": {
+   "src": "Anyway, I'm terse because I'm used to being. It doesn't really have anything to do with you.",
+   "dst": "Neyse, kısa konuşuyorum çünkü alışkınım. Seninle pek bir ilgisi yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#291": {
+   "src": "I spend so much time alone by myself in the woods that I'm not used to making conversation, even when it's needed.",
+   "dst": "Ormanda kendi başıma o kadar çok vakit geçiriyorum ki gerektiğinde bile sohbet etmeye alışık değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#292": {
+   "src": "Sorry, you seem nice, I wish I could be of more use to your investigation.",
+   "dst": "Kusura bakma, iyi birine benziyorsun, keşke soruşturmana daha çok faydam dokunsa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#293": {
+   "src": "I have enough of them as is.",
+   "dst": "Onlardan zaten yeterince var bende.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#294": {
+   "src": "Most of the time I trade in kind anyway.",
+   "dst": "Çoğu zaman zaten takas yaparak alışveriş ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#295": {
+   "src": "I didn't.",
+   "dst": "Görmedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#296": {
+   "src": "Yes.",
+   "dst": "Evet.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#298": {
+   "src": "I don't know and you're not getting a guess out of me.",
+   "dst": "Bilmiyorum, benden tahmin de koparamazsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#299": {
+   "src": "I could have missed something, but I didn't see any of us do it.",
+   "dst": "Bir şeyi kaçırmış olabilirim ama hiçbirimizin yaptığını görmedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#300": {
+   "src": "Find someone who might be familiar with a green tea merchant.",
+   "dst": "Bir yeşil çay tüccarını tanıyor olabilecek birini bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#304": {
+   "src": "No, do you know one?!",
+   "dst": "Hayır, sen tanıyor musun?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#305": {
+   "src": "Please, tell me, I would love to know. I've been searching for one for years.",
+   "dst": "Lütfen söyle, bilmeyi çok isterim. Yıllardır birini arıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#306": {
+   "src": "The closest I got was some odd tent in the woods east of {p} with a box of the stuff, but that just a scavenger's tent.",
+   "dst": "En çok yaklaştığım, {p} doğusundaki ormanda içinde bir kutu çay olan tuhaf bir çadırdı ama o da bir çöpçünün çadırıydı işte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#307": {
+   "src": "I wish the Kalkalrah clan wouldn't keep the secret so well hidden.",
+   "dst": "Keşke Kalkalrah klanı bu sırrı bu kadar iyi saklamasa.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#308": {
+   "src": "No, of course not. They keep it a secret, hoarding it up all year, so they can charge us extra during the festival.",
+   "dst": "Hayır, tabii ki hayır. Sır gibi saklıyorlar, bütün yıl stokluyorlar ki festivalde bizden daha fazla para alabilsinler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#309": {
+   "src": "They do all this under the guise of it being \"mystical\" and \"only suited for ceremonial occasions like this,\" but everyone sees through their sales techniques.",
+   "dst": "Bütün bunları \"mistik\" ve \"sadece böyle törensel durumlara uygun\" olduğu bahanesiyle yapıyorlar ama satış taktiklerini herkes görüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#310": {
+   "src": "... not that it stops me from buying every bottle I can get my hands on. It feels amazing.",
+   "dst": "... gerçi bu, elime geçen her şişeyi almamı engellemiyor. Harika hissettiriyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#311": {
+   "src": "Okay, you have to be holding out on me.",
+   "dst": "Tamam, kesin benden bir şey saklıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#312": {
+   "src": "Come on, give me the name. What do you want, emeralds? Information? I'll give it to you, just tell me where I can find a year round green tea merchant.",
+   "dst": "Hadi ama, ismi ver. Ne istiyorsun, Zümrüt mü? Bilgi mi? Veririm, yeter ki yıl boyu yeşil çay satan tüccarı nerede bulacağımı söyle.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#313": {
+   "src": "What are you wasting my time for then?",
+   "dst": "O zaman neden vaktimi harcıyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#314": {
+   "src": "If you get any leads on that tea trader, make sure to let me know right away.",
+   "dst": "O çay tüccarıyla ilgili bir ipucu bulursan hemen bana haber ver.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#315": {
+   "src": "You must not have spoken to the people I sold to then.",
+   "dst": "Demek ki mal sattığım kişilerle konuşmamışsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#316": {
+   "src": "Not sure how much of an enthusiast they could be if they don't know me.",
+   "dst": "Beni tanımıyorsa ne kadar meraklı olabilir ki, emin değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#317": {
+   "src": "Even so, that's only the words of one person. I won't pretend to know everyone in the {p}. Even the ones I do meet I don't make a major impression on.",
+   "dst": "Yine de bu sadece bir kişinin sözü. {p} bölgesindeki herkesi tanıyormuş gibi yapmayacağım. Tanıştıklarımda bile pek iz bırakmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#318": {
+   "src": "You're welcome.",
+   "dst": "Rica ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#319": {
+   "src": "Search for a camp east of {p} [-{~}, {~}, -{~}] that Burick might have been spotted at.",
+   "dst": "{p} doğusunda, [-{~}, {~}, -{~}] civarında Burick'in görülmüş olabileceği bir kampı ara.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#320": {
+   "src": "Confront Burick",
+   "dst": "Burick ile yüzleş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#321": {
+   "src": "What else would I need? I'm sure while you were violating my privacy you snooped through my stuff. I have nothing to hide.",
+   "dst": "Başka neye ihtiyacım olsun? Eminim mahremiyetimi çiğnerken eşyalarımı da karıştırmışsındır. Saklayacak bir şeyim yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#322": {
+   "src": "There simply isn't much excess gear that I need as a merchant.",
+   "dst": "Bir tüccar olarak fazladan pek teçhizata ihtiyacım yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#325": {
+   "src": "You're not believing that, are you.",
+   "dst": "Buna inanmıyorsun, değil mi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#326": {
+   "src": "Fine. I'm not really a merchant.",
+   "dst": "Peki. Aslında tüccar değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#327": {
+   "src": "I'm a scavenger. I was born without a clan and have lived my entire life without one.",
+   "dst": "Ben bir çöpçüyüm. Klansız doğdum ve bütün hayatımı klansız geçirdim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#328": {
+   "src": "When pressed, I pose as a merchant. I've spent enough time wandering the {p} that I have enough knowledge to be one.",
+   "dst": "Sıkıştırıldığımda tüccar kılığına girerim. {p} bölgesinde tüccar olabilecek kadar bilgi edinecek kadar çok dolaştım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#329": {
+   "src": "Still though, that's all. I won't pretend I didn't lie to you, but beside that I'm telling the truth.",
+   "dst": "Yine de hepsi bu. Sana yalan söylemediğimi iddia etmeyeceğim ama onun dışında doğruyu söylüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#330": {
+   "src": "I don't know who tried to burn down the wickerman or why. It certainly wasn't me.",
+   "dst": "Hasır adamı kimin neden yakmaya çalıştığını bilmiyorum. Ama kesinlikle ben değildim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#331": {
+   "src": "There's not much to do out in the wilderness. Only so many times I can forage the same bush for food or admire the same river.",
+   "dst": "Vahşi doğada yapacak pek bir şey yok. Aynı çalıdan yiyecek toplamanın ya da aynı nehri seyretmenin bir sınırı var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#332": {
+   "src": "I get lonely. I still am lonely.",
+   "dst": "Yalnız kalıyorum. Hâlâ yalnızım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#333": {
+   "src": "The festival is the only time of year I really get to be with others, I've been attending for years now.",
+   "dst": "Festival, yıl içinde başkalarıyla gerçekten bir arada olabildiğim tek zaman, yıllardır geliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#334": {
+   "src": "Not that I can speak to anyone much. They might realize I'm not supposed to be here.",
+   "dst": "Gerçi kimseyle pek konuşamıyorum. Burada olmamam gerektiğini fark edebilirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#335": {
+   "src": "How did you actually get in?",
+   "dst": "İçeri aslında nasıl girdin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#336": {
+   "src": "I've managed to find a spot in the {p} wall where you can leap over and the guards can't see. I'm amazed they haven't fixed it yet.",
+   "dst": "{p} surunda üstünden atlayabileceğin ve muhafızların göremeyeceği bir yer buldum. Hâlâ onarmamış olmalarına şaşıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#337": {
+   "src": "Come to think of it, if someone else was coming here uninvited, that's probably how they got in too.",
+   "dst": "Şimdi düşünüyorum da, buraya davetsiz gelen başka biri varsa muhtemelen o da oradan girmiştir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#338": {
+   "src": "I found it lying on the ground a few weeks ago, cracked open and half empty.",
+   "dst": "Birkaç hafta önce yerde buldum, çatlamış ve yarısı boşalmıştı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#339": {
+   "src": "Someone must have lost it or something, maybe a patrol of soldiers? That would be odd though, they're usually quite tidy.",
+   "dst": "Biri kaybetmiş olmalı, belki bir asker devriyesi? Gerçi bu tuhaf olurdu, genelde oldukça derli topludurlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#340": {
+   "src": "It could have been one of the clans too. At least one of them knows how to produce the stuff.",
+   "dst": "Klanlardan biri de olabilir. En azından biri bu şeyi nasıl üreteceğini biliyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#341": {
+   "src": "I don't know, but I'm glad I found it! It's been too long since I've managed to drink any.",
+   "dst": "Bilmiyorum ama bulduğuma sevindim! İçmeyeli çok uzun zaman olmuştu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#342": {
+   "src": "I hope you didn't confiscate it while you were snooping through my home.",
+   "dst": "Umarım evimi karıştırırken ona el koymamışsındır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#343": {
+   "src": "My parents were exiled, I think?",
+   "dst": "Ailem sürgün edilmişti, sanırım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#344": {
+   "src": "I've never really gotten the entirety of that story, so I'm unsure.",
+   "dst": "O hikâyenin tamamını hiç öğrenemedim, o yüzden emin değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#345": {
+   "src": "I don't really feel like going deeper into it than that.",
+   "dst": "Bundan daha derine inmeye pek niyetim yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#346": {
+   "src": "It's nice to meet you too. I'm Cerisa, a petty thief.",
+   "dst": "Ben de tanıştığıma memnun oldum. Ben Cerisa, adi bir hırsız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#347": {
+   "src": "I snuck into the festival to snag shiny trinkets and whatever else I could get my hands on.",
+   "dst": "Parlak süs eşyaları ve elime geçen ne varsa aşırmak için festivale gizlice girdim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#348": {
+   "src": "I was also completely uninvolved in who or what tried to burn down the wickerman, so you can let me go whenever you're ready to.",
+   "dst": "Hasır adamı kimin ya da neyin yakmaya çalıştığıyla da hiçbir ilgim yok, yani hazır olduğunda beni bırakabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#349": {
+   "src": "Did you have anything else you wanted to know?",
+   "dst": "Bilmek istediğin başka bir şey var mıydı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#350": {
+   "src": "Because you'd figure it out one way or another, I don't have a more respectable occupation to cover it up with that you wouldn't quickly disprove.",
+   "dst": "Çünkü öyle ya da böyle öğrenirdin; bunu örtmek için hemen çürütemeyeceğin daha saygın bir mesleğim yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#351": {
+   "src": "It'd be irrational to hide my criminal nature when that is precisely what you're searching for.",
+   "dst": "Tam da aradığın şey buyken suçlu yanımı saklamam mantıksız olurdu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#352": {
+   "src": "If I deceived you and you found out, you would surely take it as evidence that I had even more to hide.",
+   "dst": "Seni kandırsaydım ve sen bunu öğrenseydin, bunu kesinlikle saklayacak daha çok şeyim olduğunun kanıtı sayardın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#353": {
+   "src": "My solitary purpose right now is to convince you that I did not try to burn the effigy. I can deal with the consequences of being exposed as a thief later.",
+   "dst": "Şu anki tek amacım seni o kuklayı yakmaya çalışmadığıma ikna etmek. Hırsız olarak ifşa olmanın sonuçlarıyla sonra uğraşırım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#354": {
+   "src": "Of course not, that would be contrary to my overall purpose.",
+   "dst": "Elbette hayır, bu genel amacıma ters düşerdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#355": {
+   "src": "Mind you, I don't expect you to believe me when I say that. You should definitely act as though I am lying to you.",
+   "dst": "Ama bunu söylediğimde bana inanmanı beklemiyorum. Kesinlikle sana yalan söylüyormuşum gibi davranmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#356": {
+   "src": "But I won't. You trusting me is my best ticket out of this mess.",
+   "dst": "Ama yalan söylemeyeceğim. Bana güvenmen bu karmaşadan çıkmak için en iyi biletim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#357": {
+   "src": "I do. I have no idea what they'd do to me and I don't want to find out.",
+   "dst": "Korkuyorum. Bana ne yapacaklarını hiç bilmiyorum ve öğrenmek de istemiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#358": {
+   "src": "From what I was able to overhear between you and the organizer, it sounds like you're looking for a changeling.",
+   "dst": "Seninle düzenleyici arasında kulak misafiri olabildiğim kadarıyla bir değişkin arıyorsun gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#359": {
+   "src": "And based on what they do to just an effigy of a changeling, I have absolutely no desire to find out what would happen to me if they actually thought I was one.",
+   "dst": "Bir değişkinin sadece kuklasına bile ne yaptıklarını görünce, gerçekten öyle olduğumu düşünseler bana ne olacağını öğrenmeye hiç hevesim yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#360": {
+   "src": "I'll take whatever punishment my thievery gets me and move on.",
+   "dst": "Hırsızlığım bana ne ceza getirirse çekerim ve yoluma bakarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#361": {
+   "src": "Of course, I'll talk about whatever you want.",
+   "dst": "Elbette, ne istersen konuşurum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#362": {
+   "src": "Change subject",
+   "dst": "Konuyu değiştir",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#363": {
+   "src": "Of course. I'll talk about whatever you want.",
+   "dst": "Elbette. Ne istersen konuşurum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#364": {
+   "src": "Yes. Being outside of a clan, there's no one particularly trustworthy in the {p}.",
+   "dst": "Evet. Bir klanın dışında olunca {p} bölgesinde güvenilir pek kimse yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#365": {
+   "src": "With the changelings, even if I were to find a partner, I don't know how to make medallions and so could never be sure they weren't killed and replaced.",
+   "dst": "Değişkinler yüzünden bir ortak bulsam bile madalyon yapmayı bilmediğim için onun öldürülüp yerine başkasının geçmediğinden asla emin olamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#366": {
+   "src": "It's much easier this way, I assure you.",
+   "dst": "Böylesi çok daha kolay, inan bana.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#367": {
+   "src": "Whoever I can. For the most part it's the clans, they can be shockingly lazy if you know where you're looking.",
+   "dst": "Kimden çalabilirsem. Çoğunlukla klanlardan; nereye bakacağını bilirsen şaşırtıcı derecede gevşek olabiliyorlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#368": {
+   "src": "I have stolen a bit from the military when their watch lapses, although that's obviously much harder to pull off.",
+   "dst": "Nöbetleri gevşediğinde ordudan da biraz çaldım, gerçi bunu becermek tabii ki çok daha zor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#369": {
+   "src": "Not personally, no. I've heard some rumors though.",
+   "dst": "Bizzat hayır. Ama bazı söylentiler duydum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#370": {
+   "src": "Hard to tell fact from fiction, but they certainly seem to be a nasty bunch.",
+   "dst": "Gerçeği uydurmadan ayırmak zor ama oldukça pis bir güruh oldukları kesin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#371": {
+   "src": "I wouldn't be surprised to hear one tried to break into the festival.",
+   "dst": "Birinin festivale sızmaya çalıştığını duysam şaşırmazdım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#373": {
+   "src": "Not directly, no. But of the three of us, I was the farthest from where the flame was kindled.",
+   "dst": "Doğrudan hayır. Ama üçümüz içinde alevin tutuştuğu yere en uzak olan bendim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#374": {
+   "src": "I may have seen one of the other two suspects move, but I can't be positive about that.",
+   "dst": "Diğer iki şüpheliden birinin kıpırdadığını görmüş olabilirim ama bundan kesin emin olamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#375": {
+   "src": "If I had more information I would of course provide it.",
+   "dst": "Daha fazla bilgim olsaydı elbette verirdim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#376": {
+   "src": "Ah, have you decided to try and play confrontational?",
+   "dst": "Ah, sert oynamaya mı karar verdin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#377": {
+   "src": "That's fine, I will reiterate that I didn't do it. Whether you believe me or not, that is the truth.",
+   "dst": "Sorun değil, tekrar ediyorum: ben yapmadım. İster inan ister inanma, gerçek bu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#378": {
+   "src": "My fate lies entirely in your hands, so to speak. You don't have to engage in theatrics to intimidate me, you are exactly as scary as you were before.",
+   "dst": "Kaderim tamamen senin ellerinde, tabiri caizse. Beni korkutmak için tiyatro yapmana gerek yok, önceden ne kadar korkutucuysan şimdi de o kadarsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#379": {
+   "src": "Find someone who might have been observant enough to see Cerisa sneak in.",
+   "dst": "Cerisa'nın gizlice girdiğini görecek kadar dikkatli olabilecek birini bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#384": {
+   "src": "Nothing obviously dangerous, but I always keep in mind.",
+   "dst": "Belirgin bir tehlike yok ama ben hep aklımda tutarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#385": {
+   "src": "I did see something very odd a few hours ago though. By the entrance to {p}, it looked like someone hopped over the fence.",
+   "dst": "Gerçi birkaç saat önce çok tuhaf bir şey gördüm. {p} girişinin yanında biri çitin üstünden atlamış gibiydi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#386": {
+   "src": "It might have been a trick of the light, but I think I saw them change clothes and shove something under the bridge.",
+   "dst": "Işık oyunu da olabilir ama sanırım üstünü değiştirip köprünün altına bir şey tıkıştırdığını gördüm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#387": {
+   "src": "Those might just be the ramblings of a worried old parent though!",
+   "dst": "Gerçi bunlar endişeli yaşlı bir ebeveynin saçmalıkları da olabilir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#388": {
+   "src": "Oh really? That's a shame, I thought I was stealthier than that.",
+   "dst": "Öyle mi? Yazık, bundan daha sinsi olduğumu sanıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#389": {
+   "src": "I'm not sure that's a real revelation though, I've been open to you that that's what I did.",
+   "dst": "Ama bunun gerçek bir ifşa olduğundan emin değilim, yaptığımın bu olduğunu sana açıkça söyledim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#390": {
+   "src": "Is there anything else you wanted to call me to account for?",
+   "dst": "Benden hesap sormak istediğin başka bir şey var mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#391": {
+   "src": "Yes, I had a change in clothes. The clothes I wear on a daily basis are no fit for a cheerful atmosphere like the festival.",
+   "dst": "Evet, üstümü değiştirdim. Her gün giydiğim kıyafetler festival gibi neşeli bir ortama uygun değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#392": {
+   "src": "In that case, I appreciate you keeping me up to date on the progress of your investigation. Your commitment to transparency in the judicial process is admirable.",
+   "dst": "Öyleyse soruşturmanın gidişatı hakkında beni bilgilendirdiğin için teşekkür ederim. Yargı sürecindeki şeffaflığa bağlılığın takdire şayan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#393": {
+   "src": "Search under the bridge around [-{~}, {~}, -{~}] for something Cerisa may have left behind.",
+   "dst": "[-{~}, {~}, -{~}] civarındaki köprünün altında Cerisa'nın bırakmış olabileceği bir şeyi ara.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#394": {
+   "src": "Confront Cerisa",
+   "dst": "Cerisa ile yüzleş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#395": {
+   "src": "That would be because it's mine.",
+   "dst": "Çünkü o benim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#396": {
+   "src": "Your investigation is quite impressive, I'll admit. I was not expecting anyone to find those, I must not have disposed of them properly.",
+   "dst": "Soruşturman oldukça etkileyici, kabul ediyorum. Kimsenin onları bulmasını beklemiyordum, düzgünce elden çıkaramamış olmalıyım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#397": {
+   "src": "Although you did get a bit lucky, didn't you. If no one had spotted me sneak in, you never would have found them.",
+   "dst": "Gerçi biraz şanslıydın, değil mi. Biri gizlice girdiğimi görmeseydi onları asla bulamazdın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#398": {
+   "src": "I am a deserter from the military, as of a couple days ago. My stop here is a temporary respite to steal whatever I can before disappearing into the {p} as far as I can.",
+   "dst": "Birkaç gün öncesi itibarıyla ordudan kaçmış bir askerim. Buradaki duraklamam, {p} bölgesinde gidebildiğim kadar uzağa kaybolmadan önce çalabildiğimi çalmak için geçici bir mola.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#399": {
+   "src": "No I didn't. I am a thief who came to the festival in part to steal petty trinkets. Nothing I told you was a lie.",
+   "dst": "Hayır, söylemedim. Kısmen ufak tefek süs eşyaları çalmak için festivale gelen bir hırsızım. Sana söylediğim hiçbir şey yalan değildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#400": {
+   "src": "I'll grant that I did not tell you things you might have been interested in knowing, but that is only because you never asked about them.",
+   "dst": "Bilmek isteyebileceğin bazı şeyleri sana söylemediğimi kabul ediyorum ama bu sadece onları hiç sormadığın içindi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#401": {
+   "src": "Had you asked me if I was a former soldier, I would have provided you with all the information you are being given right now.",
+   "dst": "Eski bir asker olup olmadığımı sorsaydın, sana şu an verdiğim bütün bilgileri verirdim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#402": {
+   "src": "Yes, it is to a degree. But you have to understand, you trusting me isn't my only strategy to get out of this.",
+   "dst": "Evet, bir dereceye kadar öyle. Ama şunu anlamalısın, bana güvenmen buradan kurtulmak için tek stratejim değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#403": {
+   "src": "It was a gamble to avoid mentioning my desertion. I had to weigh the odds of you finding evidence of my desertion with the danger I might be in by admitting to it.",
+   "dst": "Firarımdan bahsetmemek bir kumardı. Firarıma dair kanıt bulma ihtimalini, bunu itiraf edersem düşebileceğim tehlikeyle tartmam gerekti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#404": {
+   "src": "With hindsight, I bet wrongly, but I don't think my bet was irrational.",
+   "dst": "Geriye dönüp bakınca yanlış oynadım ama oynadığım kumarın mantıksız olduğunu düşünmüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#405": {
+   "src": "Had you been a worse investigator or gotten a bit less lucky, it would have paid off immensely.",
+   "dst": "Daha kötü bir müfettiş olsaydın ya da biraz daha az şanslı olsaydın, fazlasıyla karşılığını alacaktı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#406": {
+   "src": "And I trust that even now, you are a fair enough judicator you will look at the facts and only the facts.",
+   "dst": "Ve şimdi bile, sadece gerçeklere ve yalnızca gerçeklere bakacak kadar adil bir yargıç olduğuna güveniyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#407": {
+   "src": "The facts that show I had nothing to do with what you're investigating.",
+   "dst": "Araştırdığın şeyle hiçbir ilgim olmadığını gösteren gerçeklere.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#408": {
+   "src": "You could. And if you did you would be personally and entirely responsible for my death.",
+   "dst": "Yapabilirsin. Ve yaparsan ölümümden bizzat ve tamamen sen sorumlu olursun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#409": {
+   "src": "Should you choose to, I hope my face haunts your nightmares for the rest of your life.",
+   "dst": "Bunu seçersen umarım yüzüm hayatının sonuna kadar kâbuslarına girer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#410": {
+   "src": "But I don't think you will.",
+   "dst": "Ama yapacağını sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#411": {
+   "src": "I'll admit I struggle to express this in words, but you don't seem the type.",
+   "dst": "Bunu kelimelere dökmekte zorlandığımı itiraf ediyorum ama sen o tip birine benzemiyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#412": {
+   "src": "You couldn't really go through with something like that.",
+   "dst": "Öyle bir şeyi gerçekten sonuna kadar götüremezdin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#414": {
+   "src": "Military life was too stifling for me. So many direct orders that I can do nothing but obey.",
+   "dst": "Askerlik hayatı benim için fazla boğucuydu. Körü körüne itaat etmekten başka bir şey yapamadığım o kadar çok doğrudan emir vardı ki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#415": {
+   "src": "And it was so boring. Most of my time was spent standing still, watching for threats that never came.",
+   "dst": "Hem çok sıkıcıydı. Zamanımın çoğu kıpırdamadan durup hiç gelmeyen tehditleri gözlemekle geçti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#416": {
+   "src": "So I left. I wish them all the best and apologize to Her Majesty for my inability to serve her as I wanted to, but my time soured me on the whole affair.",
+   "dst": "Ben de ayrıldım. Hepsine en iyisini diliyorum ve Majesteleri'ne istediğim gibi hizmet edemediğim için özür dilerim, ama geçirdiğim zaman bütün bu işten soğumama yol açtı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#417": {
+   "src": "Oh, I see you're getting better at this.",
+   "dst": "Ah, bu işte daha iyi olmaya başladığını görüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#418": {
+   "src": "Yes, the other reason I left was the brutality of it. I do not handle blood well and was unprepared for the amount of blood I would see.",
+   "dst": "Evet, ayrılmamın diğer sebebi de bu işin vahşetiydi. Kana pek dayanamam ve göreceğim kan miktarına hazırlıklı değildim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#419": {
+   "src": "Most of the time, being a soldier is dull. Mind numbingly so. But the few times it was not made me wish more than anything in the world that I could be bored.",
+   "dst": "Asker olmak çoğu zaman sıkıcıdır. Akıl uyuşturacak kadar hem de. Ama sıkıcı olmadığı o birkaç sefer, dünyada her şeyden çok sıkılmayı dilememe yol açtı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#420": {
+   "src": "I'm not even sure the violence was wrong, I just cannot participate in it.",
+   "dst": "Şiddetin yanlış olduğundan bile emin değilim, sadece onun bir parçası olamıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#421": {
+   "src": "Unpleasant life at home. There was nothing for me to stay behind for. The military seemed like my best way out.",
+   "dst": "Evdeki hayatım tatsızdı. Orada kalmam için hiçbir sebep yoktu. Ordu en iyi kaçış yolum gibi görünüyordu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#422": {
+   "src": "I think I would make the same choice again, even knowing how it would end. There's no way I could stay there for much longer.",
+   "dst": "Sanırım nasıl biteceğini bilsem bile aynı seçimi yine yapardım. Orada daha uzun süre kalmamın hiçbir yolu yoktu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#424": {
+   "src": "Let me look at that more closely.",
+   "dst": "Bir de yakından bakayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#425": {
+   "src": "No, I don't. The residue smells far more pungent than any drink I recognize.",
+   "dst": "Hayır, tanımıyorum. Kalıntı, bildiğim her içecekten çok daha keskin kokuyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#426": {
+   "src": "If you found it here, you could try asking around the festival to see if anyone else recognizes it.",
+   "dst": "Burada bulduysan festivalde başka tanıyan var mı diye etrafa sorabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#427": {
+   "src": "Anything else?",
+   "dst": "Başka bir şey?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#428": {
+   "src": "Well, I can tell you it's not definitely not green tea. Not sure beyond that.",
+   "dst": "Şunu söyleyebilirim, kesinlikle yeşil çay değil. Ötesinden emin değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#429": {
+   "src": "Hmm... neither of us have seen anyone carrying something that smells like that in.",
+   "dst": "Hmm... ikimiz de böyle kokan bir şeyi içeri taşıyan kimseyi görmedik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#430": {
+   "src": "It would have had to have already been in {p} or they would have had to have arrived even before us.",
+   "dst": "Ya zaten {p} içinde olmalıydı ya da getirenler bizden bile önce gelmiş olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Aldwell Guard",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#431": {
+   "src": "A broken bottle? It looks kind of like the ones we use for our Bottles of Mist, but the smell is totally different.",
+   "dst": "Kırık bir şişe mi? Bottles of Mist için kullandığımız şişelere benziyor ama kokusu bambaşka.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#432": {
+   "src": "Whoa, that's super cool! I bet those pointy edges could hurt a changeling pretty bad...",
+   "dst": "Vay, bu süper havalı! Bahse girerim o sivri kenarlar bir değişkini fena yaralar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Excited Child",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#433": {
+   "src": "Recognize it? No, but I wish I did!",
+   "dst": "Tanıyor muyum? Hayır, ama keşke tanısaydım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Excited Child",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#434": {
+   "src": "That smell... I don't recognize it, I'm afraid. It certainly doesn't smell safe!",
+   "dst": "Bu koku... Korkarım tanımıyorum. Ama hiç de güvenli kokmuyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#435": {
+   "src": "I don't recognize it. Would you mind putting it away though? The smell appears to be bothering a couple of the foxes.",
+   "dst": "Tanımıyorum. Ama onu kaldırabilir misin? Koku birkaç tilkiyi rahatsız ediyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Stall Attendant",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#436": {
+   "src": "Hmm. I don't recall.",
+   "dst": "Hmm. Hatırlamıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#437": {
+   "src": "It's vaguely familiar to me, but I'm sorry to say I can't place where from.",
+   "dst": "Bana belli belirsiz tanıdık geliyor ama ne yazık ki nereden olduğunu çıkaramıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#438": {
+   "src": "Whatever it is though, I certainly didn't bring it here.",
+   "dst": "Ne olursa olsun, buraya ben getirmedim, orası kesin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#439": {
+   "src": "aUm, no, I don't think so.",
+   "dst": "Iı, hayır, sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#440": {
+   "src": "Sorry if you were hoping I had.",
+   "dst": "Gördüğümü umduysan özür dilerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#441": {
+   "src": "No.",
+   "dst": "Hayır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#442": {
+   "src": "I can't say I have.",
+   "dst": "Gördüm diyemem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#443": {
+   "src": "There's not much distinctive about it though, except for that odor.",
+   "dst": "Gerçi o koku dışında pek ayırt edici bir yanı yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Cerisa",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#444": {
+   "src": "No. And we're in the middle of a conversation, please don't interrupt us.",
+   "dst": "Hayır. Hem şu an sohbetin ortasındayız, lütfen lafımızı bölme.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Clan Member",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#445": {
+   "src": "That bottle? Absolutely not, that smell is much more than what this old body could take.",
+   "dst": "O şişe mi? Kesinlikle hayır, o koku bu yaşlı bedenin kaldırabileceğinden çok fazla.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#446": {
+   "src": "Hmm... maybe.",
+   "dst": "Hmm... belki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#447": {
+   "src": "But they paid me pretty good not to say!",
+   "dst": "Ama söylemeyeyim diye bana epey iyi para verdiler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#448": {
+   "src": "The only way I would is if I were to really be impressed by someone.",
+   "dst": "Söylemem için birinin beni gerçekten etkilemesi lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#449": {
+   "src": "You're on.",
+   "dst": "Tamamdır, varım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#450": {
+   "src": "Ha! I knew you couldn't do it.",
+   "dst": "Ha! Yapamayacağını biliyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#451": {
+   "src": "No hard feelings, nobody can expect to beat me at fox racing though.",
+   "dst": "Alınma ama kimse beni tilki yarışında yenmeyi bekleyemez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#452": {
+   "src": "Of course, if you want to try again, you're free to. Just don't be surprised when you get the same result.",
+   "dst": "Tabii yeniden denemek istersen denemekte özgürsün. Sadece aynı sonucu alınca şaşırma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#453": {
+   "src": "Alright, let's go again then!",
+   "dst": "Tamam, o zaman bir daha!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#454": {
+   "src": "You won!? I-I-I've never been beaten!",
+   "dst": "Kazandın mı!? B-b-beni hiç kimse yenmemişti!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#455": {
+   "src": "I don't even know how that's possible, you looked like you were just picking randomly!",
+   "dst": "Bunun nasıl mümkün olduğunu bile bilmiyorum, rastgele seçiyormuş gibi görünüyordun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#456": {
+   "src": "Well, fair is fair. You gave me a good show, I'll tell you what I know.",
+   "dst": "Peki, hak hakkı. Bana iyi bir gösteri sundun, bildiğimi anlatacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#457": {
+   "src": "It's really not that big of a deal, I'm not sure why they paid me to stay quiet about it.",
+   "dst": "Aslında o kadar da büyük bir mesele değil, bu konuda susmam için bana neden para verdiklerini anlamadım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#458": {
+   "src": "While studying the foxes before the races started, I caught some members of the Kalkalrah clan bringing in bottles like those.",
+   "dst": "Yarışlar başlamadan önce tilkileri incelerken, Kalkalrah klanından bazılarını bunlara benzer şişeleri içeri sokarken gördüm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#459": {
+   "src": "I thought they were just green tea, but clearly they're not!",
+   "dst": "Yeşil çay sanmıştım ama belli ki değillermiş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#460": {
+   "src": "I'm not positive where they are now, but I think I saw them head up the zipline to the second floor of {p}?",
+   "dst": "Şu an nerede olduklarından emin değilim ama sanırım teleferikle {p} içinde ikinci kata çıktıklarını gördüm?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#461": {
+   "src": "And if you'd teach me your racing technique at some point, I'd really appreciate it!",
+   "dst": "Bir ara bana yarış tekniğini öğretirsen çok sevinirim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Racing Expert",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#462": {
+   "src": "Be careful with the accusations you throw around.",
+   "dst": "Ortalığa saçtığın suçlamalara dikkat et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#463": {
+   "src": "Not everyone has their guard down around this festival for those who stick their noses where they don't belong.",
+   "dst": "Bu festivalde burnunu ait olmadığı yerlere sokanlara karşı herkes gardını indirmiş değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Attendee",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#464": {
+   "src": "Give me that, let me look at what you were showing them more closely.",
+   "dst": "Ver şunu, onlara gösterdiğin şeye bir de yakından bakayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#465": {
+   "src": "Ahhh, yes, you know something about that group, don't you?",
+   "dst": "Ahhh, evet, o grup hakkında bir şeyler biliyorsun, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#466": {
+   "src": "You don't need to tell me, I know as much as you do and more.",
+   "dst": "Söylemene gerek yok, ben de senin kadar, hatta daha fazlasını biliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#467": {
+   "src": "It's been many years since I was able to freely move about the city, my old age imprisoning me in my home.",
+   "dst": "Şehirde özgürce dolaşabildiğim günlerin üzerinden çok yıl geçti, yaşlılık beni evime hapsetti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#468": {
+   "src": "But I can still sit and watch the scurrying people below. I can see what they all do when they think nobody is watching.",
+   "dst": "Ama hâlâ oturup aşağıda koşturan insanları izleyebiliyorum. Kimse bakmıyor sandıklarında ne yaptıklarını görebiliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#469": {
+   "src": "It's a sort of power. A way to keep myself grounded, hanging here in the canopy.",
+   "dst": "Bir çeşit güç bu. Burada, ağaçların tepesinde asılı dururken ayaklarımı yere bastırmanın bir yolu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#470": {
+   "src": "I watched you scramble to extinguish the fire and I watched what that group did after the flame was lit.",
+   "dst": "Yangını söndürmek için nasıl koşturduğunu da izledim, alev yandıktan sonra o grubun ne yaptığını da.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#471": {
+   "src": "I watched as those three outsiders were corralled into custody.",
+   "dst": "O üç yabancının nasıl toplanıp gözaltına alındığını izledim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#472": {
+   "src": "However, I cannot hear the details. I do not know the specifics.",
+   "dst": "Ama ayrıntıları duyamıyorum. İnce ayrıntıları bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#473": {
+   "src": "Tell me what your suspects have done and what you have found. Then, I will give you what you seek.",
+   "dst": "Şüphelilerinin ne yaptığını ve neler bulduğunu anlat bana. Sonra da aradığını vereceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#474": {
+   "src": "A bunch of lying outsiders then. To be expected, it's a pity you can't say they all did it.",
+   "dst": "Bir sürü yalancı yabancı demek. Beklenen bir şey; hepsinin yaptığını söyleyememen ne yazık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#475": {
+   "src": "As for that clique, I suspect they're secretly security for the festival.",
+   "dst": "O hizbe gelince, gizlice festivalin güvenliğini sağladıklarından şüpheleniyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#476": {
+   "src": "I didn't see who lit the flame, but moments after it was lit, one of them threw a bottle just like the one you're holding at it.",
+   "dst": "Alevi kimin yaktığını görmedim ama yandıktan birkaç saniye sonra içlerinden biri elindekinin aynısı bir şişeyi ateşe fırlattı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#477": {
+   "src": "It must have been filled with fuel, because after it hit the flame grew much larger.",
+   "dst": "İçi yakıtla dolu olmalı, çünkü çarptıktan sonra alev çok daha büyüdü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#478": {
+   "src": "Probably for the best, you never know what vermin you can roast if you're not afraid to burn the bush.",
+   "dst": "Muhtemelen en iyisi buydu; çalıyı yakmaktan korkmazsan kimbilir ne haşaratı kızartabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#479": {
+   "src": "If you will entertain an old woman, then I have no use for you. Quit blocking my view.",
+   "dst": "Yaşlı bir kadını eğlendirmeyeceksen sana ihtiyacım yok. Manzaramı kapatmayı bırak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#480": {
+   "src": "My investigator has returned. Now, tell me what you know.",
+   "dst": "Müfettişim geri döndü. Hadi, bildiklerini anlat bana.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Elderly Woman",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#481": {
+   "src": "You look like you have something on your mind, what is it?",
+   "dst": "Kafanda bir şey var gibi görünüyorsun, nedir?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#482": {
+   "src": "Ah, I see your investigations have borne fruit.",
+   "dst": "Ah, görüyorum ki soruşturman meyvesini vermiş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#483": {
+   "src": "Yes. As you have seen, people tend to let their guard down at the festival in a way they normally wouldn't.",
+   "dst": "Evet. Gördüğün gibi insanlar festivalde normalde yapmayacakları şekilde gardlarını indirme eğiliminde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#484": {
+   "src": "They are a necessity to ensure any unexpected guests are swiftly taken care of.",
+   "dst": "Beklenmedik misafirlerin hızla icabına bakılması için onlar bir zorunluluk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#485": {
+   "src": "I suspect you're probably right. And yet, that is irrelevant.",
+   "dst": "Muhtemelen haklısın. Yine de bunun bir önemi yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#486": {
+   "src": "You will tell me they are reckless and a danger to others. I don't disagree, but I encourage you to look at the wider picture.",
+   "dst": "Bana onların pervasız ve başkaları için tehlikeli olduğunu söyleyeceksin. Karşı çıkmıyorum ama büyük resme bakmanı tavsiye ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#487": {
+   "src": "If we let up our vigilance for even a moment, we have already lost our war. Our clans and families will be infiltrated within the day.",
+   "dst": "Bir an bile dikkatimizi gevşetirsek savaşımızı çoktan kaybetmişiz demektir. Klanlarımıza ve ailelerimize daha gün bitmeden sızılır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#488": {
+   "src": "Their recklessness prevents this. In a case where the smallest failure would be a catastrophe, recklessness becomes necessity.",
+   "dst": "Onların pervasızlığı bunu önlüyor. En küçük hatanın felaket olacağı bir durumda pervasızlık zorunluluğa dönüşür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#489": {
+   "src": "Imagine they had not acted rashly in throwing the bottle of fuel onto the already lit flame.",
+   "dst": "Zaten yanan aleve yakıt şişesini atarken aceleci davranmadıklarını bir düşün.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#490": {
+   "src": "They did not create the flame, someone else must have been hoping to gain from it.",
+   "dst": "Alevi onlar yakmadı, başka biri ondan bir çıkar ummuş olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#491": {
+   "src": "Their actions, while dangerous, prevented any fiends from exploiting the opportunity. We took it out of their control.",
+   "dst": "Yaptıkları tehlikeli olsa da hiçbir şeytanın bu fırsattan yararlanmasına izin vermedi. Kontrolü onların elinden aldık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#492": {
+   "src": "Whatever risk their actions created was worth the price.",
+   "dst": "Yaptıklarının yarattığı risk, ödenen bedele değdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#493": {
+   "src": "Apologies for rambling, I assure you though that safety is our top concern. Whatever the price.",
+   "dst": "Lafı uzattığım için kusura bakma ama sana temin ederim ki en büyük önceliğimiz güvenlik. Bedeli ne olursa olsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 7",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#494": {
+   "src": "Return to the festival organizer at [-{~}, {~}, -{~}] or look into the suspects a bit more.",
+   "dst": "[-{~}, {~}, -{~}] konumundaki festival düzenleyicisine dön ya da şüphelileri biraz daha araştır.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#495": {
+   "src": "You think you know who the changeling is?",
+   "dst": "Değişkinin kim olduğunu bildiğini mi düşünüyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#496": {
+   "src": "You've dug into them all and have found something? Excellent.",
+   "dst": "Hepsini araştırıp bir şey mi buldun? Harika.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#497": {
+   "src": "So, who do you think tried to burn down the wickerman?",
+   "dst": "Peki, sence hasır adamı yakmaya çalışan kim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#498": {
+   "src": "Suspect {~}? Very well. I will take care of things from here.",
+   "dst": "{~} numaralı şüpheli mi? Pekâlâ. Bundan sonrasını ben hallederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#499": {
+   "src": "Again, thank you so much for your help. I cannot emphasize enough how much you assisting in this matter for us allowed the festival to be a success.",
+   "dst": "Yardımın için tekrar çok teşekkürler. Bu konuda bize yardım etmenin festivalin başarılı geçmesini ne kadar sağladığını yeterince vurgulayamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#500": {
+   "src": "Enjoy the rest of the festival, and make sure to watch the wickerman burn! I'll save a special seat for you near the front as a sign of our appreciation.",
+   "dst": "Festivalin geri kalanının tadını çıkar ve hasır adamın yanışını izlemeyi unutma! Minnettarlığımızın bir göstergesi olarak sana önde özel bir yer ayıracağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#507": {
+   "src": "I understand your reticense to pick one. We don't have anything close to the information required to make a proper judgement.",
+   "dst": "Birini seçmekte çekingen davranmanı anlıyorum. Doğru bir karar vermek için gereken bilginin yakınından bile geçmiyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#508": {
+   "src": "But you cannot allow that to stop you. We do not have the luxury to close our eyes and pretend it didn't happen.",
+   "dst": "Ama bunun seni durdurmasına izin veremezsin. Gözlerimizi kapatıp hiçbir şey olmamış gibi davranma lüksümüz yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#509": {
+   "src": "Please, from the inevitably incomplete investigation you conducted, tell me who you think lit that flame.",
+   "dst": "Lütfen, yürüttüğün kaçınılmaz olarak eksik soruşturmaya dayanarak o alevi kimin yaktığını düşündüğünü söyle bana.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#510": {
+   "src": "Very well then. I am disappointed, but understand.",
+   "dst": "Pekâlâ o zaman. Hayal kırıklığına uğradım ama anlıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#511": {
+   "src": "I will take care of things from this point forward.",
+   "dst": "Bundan sonrasını ben hallederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#512": {
+   "src": "In thanks for saving the wickerman, there will be a seat saved for you when you are ready to watch it burn.",
+   "dst": "Hasır adamı kurtardığın için teşekkür olarak, yanışını izlemeye hazır olduğunda sana bir yer ayrılmış olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#513": {
+   "src": "Enjoy the rest of the festival.",
+   "dst": "Festivalin geri kalanının tadını çıkar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#514": {
+   "src": "Keep looking then. Return here once you've made a decision.",
+   "dst": "O zaman aramaya devam et. Bir karar verdiğinde buraya dön.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 8",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#515": {
+   "src": "Watch the wickerman burn at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda hasır adamın yanışını izle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#516": {
+   "src": "Watch the wickerman burn.",
+   "dst": "Hasır adamın yanışını izle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#517": {
+   "src": "You children of the {p} gather round",
+   "dst": "{p} evlatları, toplanın etrafa",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#518": {
+   "src": "To gaze upon this relic from years past,",
+   "dst": "Geçmiş yıllardan kalan bu emanete bakın,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#519": {
+   "src": "This effigy, of ancient foes we fought—",
+   "dst": "Bu kukla, savaştığımız kadim düşmanların—",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#520": {
+   "src": "In memory, we will again ignite!",
+   "dst": "Anısına, onu yeniden ateşe vereceğiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#521": {
+   "src": "An ancient beast, rebuilt with plank and straw,",
+   "dst": "Tahta ve samanla yeniden kurulmuş kadim bir canavar,",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#522": {
+   "src": "What once was flesh, reconstitute as wood;",
+   "dst": "Bir zamanlar et olan, şimdi tahtadan;",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#523": {
+   "src": "All monsters, old and new, must meet their end—",
+   "dst": "Eski yeni bütün canavarlar sonunu bulmalı—",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#524": {
+   "src": "All fiends must burn! Must broil and char and melt!",
+   "dst": "Bütün şeytanlar yanmalı! Kavrulmalı, kömürleşmeli, erimeli!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#525": {
+   "src": "Substance beside, all that remains persists...",
+   "dst": "Özü gidince geriye kalan tek şey...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#526": {
+   "src": "...as blackened corpse, no threat there can exist!",
+   "dst": "...kararmış bir cesettir, orada tehdit kalamaz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Festival Organizer",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#527": {
+   "src": "Oh, hi, I never got the chance to thank you.",
+   "dst": "Ah, selam, sana teşekkür etme fırsatım olmamıştı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#528": {
+   "src": "I'm not sure what happened after you left.",
+   "dst": "Sen gittikten sonra ne oldu, emin değilim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#529": {
+   "src": "The festival organizer came back and took Burick/Cerisa away with him.",
+   "dst": "Festival düzenleyicisi geri gelip Burick/Cerisa denen kişiyi yanında götürdü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#530": {
+   "src": "I'm not sure what happened but, um, I don't think it was good.",
+   "dst": "Ne oldu emin değilim ama, şey, iyi bir şey olduğunu sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#531": {
+   "src": "So, thank you again. I wasn't really in the right mind enough to show it then.",
+   "dst": "Yani, tekrar teşekkürler. O zaman bunu gösterecek kadar kendimde değildim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#532": {
+   "src": "I... don't know.",
+   "dst": "Ben... bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#533": {
+   "src": "I'll see how long I can hang around here, but the locals are beginning to glare at me a bit.",
+   "dst": "Burada ne kadar takılabileceğime bakacağım ama yerliler bana biraz ters ters bakmaya başladı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#534": {
+   "src": "I might try to head deeper into the woods, see if there's anything I can find.",
+   "dst": "Belki ormanın daha derinlerine gitmeyi denerim, bir şey bulabilir miyim diye bakarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#535": {
+   "src": "Or join the military? I don't think I'd be very good at it and I don't even think they'd accept me, but it might be worth a shot.",
+   "dst": "Ya da orduya katılsam mı? Pek iyi olacağımı sanmıyorum, beni kabul edeceklerini bile sanmıyorum ama denemeye değebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#536": {
+   "src": "Otherwise, all I can do is try to live off of what I can find. I, uh, don't like my chances with that.",
+   "dst": "Yoksa tek yapabileceğim bulduklarımla geçinmeye çalışmak. Bu konuda, ıı, şansıma pek güvenmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#537": {
+   "src": "I am! I'm always a, uh, little nervous. But a lot less than I was.",
+   "dst": "İyiyim! Her zaman, ıı, biraz gerginimdir. Ama eskisinden çok daha az.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#538": {
+   "src": "It felt like the axe that had been pressed against my neck was lifted, thanks to you.",
+   "dst": "Senin sayende boynuma dayanmış balta kalkmış gibi hissettim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#539": {
+   "src": "There's still a lot of uncertainty, but I no longer feel like I'm scrambling like a rabbit in a cage.",
+   "dst": "Hâlâ çok belirsizlik var ama artık kafesteki bir tavşan gibi çırpındığımı hissetmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#540": {
+   "src": "I was still in a bit of a daze, so not really, sorry.",
+   "dst": "Hâlâ biraz sersemdim, o yüzden pek değil, özür dilerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#541": {
+   "src": "She left pretty quick though, she must have been in a hurry to get somewhere",
+   "dst": "Ama çok çabuk ayrıldı, bir yere yetişmek için acelesi vardı herhalde",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#542": {
+   "src": "Goodbye!",
+   "dst": "Hoşça kal!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Arris",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#543": {
+   "src": "Hello. Please try not to come too close.",
+   "dst": "Merhaba. Lütfen çok yaklaşmamaya çalış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#544": {
+   "src": "We can talk from a distance.",
+   "dst": "Uzaktan konuşabiliriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#545": {
+   "src": "Apologies for the coolness, your help was appreciated.",
+   "dst": "Soğukluğum için kusura bakma, yardımın için minnettarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#546": {
+   "src": "But I cannot be sure you are who you say you are.",
+   "dst": "Ama dediğin kişi olduğundan emin olamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#547": {
+   "src": "Acceptable.",
+   "dst": "Kabul edilebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#548": {
+   "src": "Since our run in at the festival, I have been laying lower than usual.",
+   "dst": "Festivaldeki o karşılaşmamızdan beri her zamankinden daha çok göze batmamaya çalışıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#549": {
+   "src": "My life has not been much different than it usually is.",
+   "dst": "Hayatım her zamankinden pek farklı değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#550": {
+   "src": "It was a horrific mistake to even attend the festival.",
+   "dst": "Festivale gitmek bile korkunç bir hataydı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#551": {
+   "src": "I allowed myself to be controlled by my own humanity; that is a mistake the {p} rarely lets off easily.",
+   "dst": "Kendi insanlığımın beni yönetmesine izin verdim; {p} böyle bir hatayı nadiren kolay affeder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#552": {
+   "src": "I will not make the same mistake again. Loneliness will hurt, but trust will kill.",
+   "dst": "Aynı hatayı bir daha yapmayacağım. Yalnızlık acıtır ama güven öldürür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#553": {
+   "src": "Last I saw, they were still in {p}.",
+   "dst": "En son gördüğümde hâlâ {p} içindeydi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#554": {
+   "src": "They don't seem cut out for the life of a scavenger, if they can't find any other way to live outside a clan they'll be dead within the week.",
+   "dst": "Çöpçü hayatına uygun biri gibi görünmüyor; bir klanın dışında yaşamanın başka bir yolunu bulamazsa bir hafta içinde ölür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#555": {
+   "src": "It's unfortunate, but that's reality.",
+   "dst": "Talihsizlik ama gerçek bu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#556": {
+   "src": "Yes, while everyone else was watching the wickerman burn she rustled through as many abandoned stalls, bags, and houses as she could.",
+   "dst": "Evet, herkes hasır adamın yanışını izlerken o, terk edilmiş tezgâhları, çantaları ve evleri elinden geldiğince karıştırdı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#557": {
+   "src": "I left before she was finished, but this morning I saw a figure walking south out of {p}, carrying several large bags.",
+   "dst": "O işini bitirmeden ayrıldım ama bu sabah {p} şehrinden güneye doğru yürüyen, birkaç büyük çanta taşıyan birini gördüm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#558": {
+   "src": "Wherever she's headed, she's prepared for a long trek.",
+   "dst": "Nereye gidiyorsa uzun bir yolculuğa hazırlanmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  },
+  "Celebrations in Smoke#559": {
+   "src": "Goodbye.",
+   "dst": "Hoşça kal.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Celebrations in Smoke",
+   "stage": "Stage 10",
+   "speaker": "Burick",
+   "source": "wiki"
+  }
+ }
+}
