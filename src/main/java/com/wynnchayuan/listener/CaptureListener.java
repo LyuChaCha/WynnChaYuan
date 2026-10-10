@@ -138,6 +138,10 @@ public final class CaptureListener {
     /** 供定時器呼叫：內容穩定夠久就送出，避免最後一句卡在緩衝區。 */
     public void flushSettled() {
         record(buffer.flushIfSettled());
+        // 聊天扣著等下一列的那幾則也一樣：等夠久了就放行。見 ChatRows。
+        if (WynnChaYuan.config().collect()) {
+            WynnChaYuan.store().settleChat(System.currentTimeMillis());
+        }
     }
 
     private void record(String completed) {
@@ -176,18 +180,50 @@ public final class CaptureListener {
         if (!SERVER_MESSAGES.contains(event.getRecipientType())) {
             return;                  // 玩家發言，不記錄
         }
-        StyledText message = event.getMessage();
-        if (message == null || GlyphSplitter.isGlyphOnly(message)) {
+        String template = chatTemplate(event.getMessage(), WynnChaYuan.store()::noteEvent);
+        if (template == null) {
             return;
+        }
+        WynnChaYuan.store().recordChat(
+                template, "chat/" + event.getRecipientType(), System.currentTimeMillis());
+    }
+
+    /**
+     * 這一則聊天要收成什麼；不該收就回傳 {@code null}。
+     *
+     * <h2>我們自己重送的那一則不是原文（issue #1124）</h2>
+     * 原文加譯文模式、以及就地取代模式攔下來的面板，譯文都是 {@link ChatBlock}
+     * 用 {@code displayClientMessage} <b>另外送一則</b>——而那一則會再觸發一次
+     * {@code ChatMessageEvent.Match}，分類一樣是 {@code INFO}。翻譯那一邊早就會認
+     * （{@link ChatBlock#isOurs}），收集這一邊卻照收，於是缺口清單裡出現：
+     *
+     * <pre>
+     *   {#}[Görev Tamamlandı]⏎{#}Eve Yolculuk⏎…⏎            - +Access to the {p}
+     *   {#} Arachnid Pusu Dünya Etkinliği {~}dk {~}sn sonra başlıyor! …
+     *   {#}Welcome to Wynncraft!⏎…⏎Sis kalkıyor.
+     * </pre>
+     *
+     * 整塊都是我們畫出去的土耳其文，中間夾著沒翻到的那幾列原文。
+     * {@link com.wynnchayuan.capture.OwnOutputs} 認不出來：它比的是<b>一條</b>譯文，
+     * 而這裡是好幾條接在一起、名字也已經填回去了。沒翻的那幾列原文在它們
+     * <b>第一次</b>進來時就各自收過了，這一則整個略過不會少東西。
+     *
+     * @param skipped 略過的原因（事件名）往這裡記
+     */
+    static String chatTemplate(StyledText message, java.util.function.Consumer<String> skipped) {
+        if (message == null || GlyphSplitter.isGlyphOnly(message)) {
+            return null;
+        }
+        if (ChatBlock.isOurs(message)) {
+            skipped.accept("chat.skipped.ownOutput");
+            return null;
         }
         String template = GlyphSplitter.toTemplate(message);
         if (PlayerDataFilter.carriesPlayerData(template)) {
-            WynnChaYuan.store().noteEvent("chat.blocked.playerData");
-            return;              // 夾帶玩家名稱／好友名單／座標，不寫進共享檔案
+            skipped.accept("chat.blocked.playerData");
+            return null;         // 夾帶玩家名稱／好友名單／座標，不寫進共享檔案
         }
-        WynnChaYuan.store().record(
-                template, "desc", "chat",
-                "chat/" + event.getRecipientType());
+        return template;
     }
 
     // ---------------------------------------------------------------- 名牌
