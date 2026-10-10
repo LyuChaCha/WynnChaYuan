@@ -40,6 +40,7 @@ public final class LootrunBoonTest {
         heavensent(store);
         rewrapColour(store);
         heavensentElemental(store);
+        serendipity(store);
         missionReward(store);
         corpusBoons();
 
@@ -224,6 +225,66 @@ public final class LootrunBoonTest {
      * <p>期望的字從語料取，不寫死措辭：譯法會改（「每提供一個信標就」後來改成
      * 「每出現一個信標，獲得」），這條要盯的是折法，不是譯法。
      */
+    /**
+     * 圖示與屬性名之間的那條縫不能被撐開。
+     *
+     * <h2>實機回報（2026-10-10）：「lootrun 的文字格式怪怪的」</h2>
+     * <pre>
+     *   每开启一个宝箱，
+     *   +2 [圖示]　　　灵巧 (上限 x15)，
+     *   本次 Lootrun 都会持续生效
+     * </pre>
+     *
+     * 圖示後面是一個兩像素的排版偏移。譯文照使用者的語序重寫、由我們重折成三列，
+     * 圖示剛好落在跟原文同一列；逐列對座標那一步就把「靈巧」推回原文「Dexterity」
+     * 的起點——原文那一列前面多一個「gain 」，縫被撐開三十像素。
+     *
+     * <p>{@link #heavensent} 那一條抓不到：它的圖示是三個一般的圖示碼位，沒有
+     * <b>可以調整的偏移</b>。這裡照實機放一個 space 字型的偏移。
+     */
+    private static void serendipity(TranslationStore store) {
+        System.out.println("=== Serendipity（圖示後面的縫）===");
+        String key = "For the rest of this Lootrun, gain +{~} {#}Dexterity (Max x{~})"
+                + " everytime you open a Chest";
+        String dst = store.lookup(key);
+        check("語料收著這一句（實際 " + dst + "）", dst != null && dst.contains("{#}"));
+        if (dst == null || !dst.contains("{#}")) {
+            return;
+        }
+        String sprite = "\uE003";
+        // 圖示與偏移是同一個片段（語料裡那一句只有一個 {#}），掛在 space 字型底下
+        MutableComponent icon = Component.literal(sprite + SpaceOffset.encode(2))
+                .setStyle(SpaceOffset.styleFor(Style.EMPTY));
+        List<StyledText> run = List.of(
+                st(line(GREY, "For the rest of this Lootrun,")),
+                st(join(part(GREY, "gain "), part(WHITE, "+2"), part(GREY, " "),
+                        icon, part(RED, "Dexterity"),
+                        part(GREY, " (Max x15)"))),
+                st(line(GREY, "everytime you open a Chest")));
+        LineTranslator.measureForTest = LootrunBoonTest::width;
+        List<Component> out;
+        try {
+            out = LineTranslator.translateBlock(run, store, new boolean[3]);
+        } finally {
+            LineTranslator.measureForTest = null;
+        }
+        check("整句查得到", out != null);
+        if (out == null) {
+            return;
+        }
+        dump(out);
+        // 屬性名怎麼寫由語料決定：{#} 後面到下一個空白為止
+        int at = dst.indexOf("{#}") + 3;
+        int end = dst.indexOf(' ', at);
+        String name = dst.substring(at, end < 0 ? dst.length() : end);
+        String want = sprite + SpaceOffset.encode(2) + name;
+        boolean tight = false;
+        for (Component row : out) {
+            tight |= row.getString().contains(want);
+        }
+        check("★ 圖示、原本那兩像素、屬性名「" + name + "」緊緊相連，縫沒有被撐開", tight);
+    }
+
     private static void heavensentElemental(TranslationStore store) {
         System.out.println("=== Heavensent（元素傷害）===");
         String key = "For the rest of your Lootrun,\ngain +{~} Elemental Damage"

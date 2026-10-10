@@ -59,6 +59,17 @@ import java.util.function.ToIntFunction;
  * 那一行拿原本的名稱那一行當對照，兩截都比它窄，撐寬那一步因此什麼都不會做——
  * 正是我們要的。
  *
+ * <h2>譯文的行數可以比原文少</h2>
+ * 一句折成三列的敘述，中文兩列就講完了，譯文那一份就比原文少一行。先前這裡要求
+ * 置中旗標跟<b>譯文</b>等長（旗標是照原文算的，所以等於要求兩邊行數相同），對不上
+ * 就整個不做事——於是「還沒鑑定的物品」一律不拆，因為它們都帶著那句三列的
+ * 「This item's power has been sealed, an Item Identifier can unlock its potential.」。
+ * 使用者 2026-10-10 回報的精通書卷就是這樣：名稱那一行把整份說明撐寬了一半，
+ * 右邊的數值卻還停在原本的右緣。
+ *
+ * <p>名稱在最前面兩行，併行都發生在它後面，所以名稱那幾行兩邊的行號本來就對得上。
+ * 旗標跟原文等長、或跟譯文等長都收；拆出一行時照它自己的長度補一格。
+ *
  * <h2>看不見的第 0 行不會被動到</h2>
  * 物品名稱其實是兩行，第 0 行寬度是 0（見 {@code TooltipPanel}）。量出來是 0，
  * 「有沒有超過」永遠不成立，所以那一行照舊。
@@ -82,9 +93,13 @@ public final class NameWrap {
                               ToIntFunction<Component> width) {
         Split same = new Split(original, translated, centered);
         if (original == null || translated == null || centered == null || store == null
-                || !store.namesWithOriginal() || centered.length != translated.size()) {
+                || !store.namesWithOriginal()
+                // 旗標是照原文算的；譯文併過行的話它跟原文等長、比譯文長。見類別說明。
+                || (centered.length != translated.size() && centered.length != original.size())) {
             return same;
         }
+        // 行數對不上時，只有最前面那幾行（名稱）兩邊的行號是同一行
+        boolean aligned = original.size() == translated.size();
         // 整份 tooltip 有多寬。名字只要收得進這個寬度就不必拆——拆了反而多一行。
         int frame = 0;
         for (Component row : original) {
@@ -92,6 +107,9 @@ public final class NameWrap {
         }
         int n = Math.min(original.size(), translated.size());
         for (int i = 0; i < n; i++) {
+            if (!aligned && i >= NAME_ROWS) {
+                break;                         // 後面的行號已經錯開，不拿來比
+            }
             Component line = translated.get(i);
             // 放得下整份 tooltip 就不算太長，見 #split 的「怎麼判斷太長」。
             int budget = Math.max(width.applyAsInt(original.get(i)), frame);
@@ -115,6 +133,9 @@ public final class NameWrap {
         }
         return same;
     }
+
+    /** 物品名稱最多佔前兩行：第 0 行看不見，看得見的在第 1 行。 */
+    private static final int NAME_ROWS = 2;
 
     /**
      * 拆完的三份：原文、譯文、置中旗標，行數一致。

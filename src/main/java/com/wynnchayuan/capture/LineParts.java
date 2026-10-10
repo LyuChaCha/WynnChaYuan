@@ -163,6 +163,23 @@ public record LineParts(
     }
 
     public static LineParts of(StyledText line) {
+        return of(line, null);
+    }
+
+    /**
+     * 同 {@link #of(StyledText)}，但照 {@link Broadcasts} 算出來的位置，把別的玩家的
+     * 名字收成 {@code {u}}、世界名收成一個 {@code {~}}。
+     *
+     * <p>位置是{@linkplain #flat 攤平文字}裡的索引，所以名字跨了幾個片段都收得起來
+     * （Wynntils 會把暱稱改寫成「帳號名/暱稱」兩段，樣式不同）。跨段的名字整個
+     * 算一個 {@code {u}}，樣式用第一段的。
+     *
+     * @param spans {@code null} 就是平常那一份
+     */
+    public static LineParts of(StyledText line, Broadcasts.Spans spans) {
+        // 攤平文字走到哪裡了；{u} 與世界名各自落在 users／numbers 的第幾個
+        int flatAt = 0;
+        int[] slot = {-1, -1};
         StringBuilder tmpl = new StringBuilder();
         List<Piece> glyphs = new ArrayList<>();
         List<Piece> places = new ArrayList<>();
@@ -222,7 +239,12 @@ public record LineParts(
             if (!text.isBlank()) {
                 runs.add(new Piece(text, style));
             }
-            appendParametrized(text, style, tmpl, places, numbers, users);
+            if (spans == null) {
+                appendParametrized(text, style, tmpl, places, numbers, users);
+            } else {
+                appendSpanned(text, flatAt, style, spans, slot, tmpl, places, numbers, users);
+            }
+            flatAt += text.length();
             if (!tail.isEmpty()) {
                 tmpl.append(GlyphSplitter.GLYPH_PLACEHOLDER);
                 glyphs.add(new Piece(tail, style));
@@ -242,6 +264,78 @@ public record LineParts(
                 accents(runs, textStyle),
                 textStyle,
                 List.copyOf(runs));
+    }
+
+    /**
+     * 一行攤平成純文字：圖示拿掉，各段文字照順序接起來。
+     *
+     * <p>{@link Broadcasts} 拿這一份比對句型，回報的位置也是這一份的索引。
+     * 切法必須跟 {@link #of(StyledText, Broadcasts.Spans)} 逐段相同——那邊是照
+     * 「每一段去掉圖示之後的長度」往前走的。
+     */
+    public static String flat(StyledText line) {
+        StringBuilder out = new StringBuilder();
+        for (StyledTextPart part : line) {
+            String raw = part.getString(null, StyleType.NONE);
+            if (raw.isEmpty() || GlyphSplitter.isGlyphPart(part)) {
+                continue;
+            }
+            String lead = leadingGlyphs(raw);
+            String tail = trailingGlyphs(raw, lead.length());
+            out.append(GlyphSplitter.stripGlyphChars(
+                    raw.substring(lead.length(), raw.length() - tail.length())));
+        }
+        return out.toString();
+    }
+
+    /**
+     * 一段文字裡，落在名字（或世界名）範圍內的那一截收成佔位符，其餘照平常處理。
+     *
+     * @param at   這一段在攤平文字裡的起點
+     * @param slot {@code [0]} 是名字在 {@code users} 的第幾個、{@code [1]} 是世界名在
+     *             {@code numbers} 的第幾個；還沒遇到是 {@code -1}。跨段時接在同一個上面
+     */
+    private static void appendSpanned(String text, int at, Style style, Broadcasts.Spans spans,
+                                      int[] slot, StringBuilder tmpl, List<Piece> places,
+                                      List<Piece> numbers, List<Piece> users) {
+        int end = at + text.length();
+        int pos = at;
+        while (pos < end) {
+            int next;
+            if (pos >= spans.userStart() && pos < spans.userEnd()) {
+                next = Math.min(end, spans.userEnd());
+                slot[0] = extend(users, slot[0], text.substring(pos - at, next - at), style,
+                                 tmpl, GlyphSplitter.PLAYER_PLACEHOLDER);
+            } else if (pos >= spans.worldStart() && pos < spans.worldEnd()) {
+                next = Math.min(end, spans.worldEnd());
+                slot[1] = extend(numbers, slot[1], text.substring(pos - at, next - at), style,
+                                 tmpl, GlyphSplitter.NUMBER_PLACEHOLDER);
+            } else {
+                next = end;
+                if (spans.userStart() > pos) {
+                    next = Math.min(next, spans.userStart());
+                }
+                if (spans.worldStart() > pos) {
+                    next = Math.min(next, spans.worldStart());
+                }
+                appendParametrized(text.substring(pos - at, next - at), style,
+                                   tmpl, places, numbers, users);
+            }
+            pos = next;
+        }
+    }
+
+    /** 第一截開一個新的佔位符，後面幾截接在同一個碎片上。回傳那個碎片的索引。 */
+    private static int extend(List<Piece> pool, int index, String piece, Style style,
+                              StringBuilder tmpl, String placeholder) {
+        if (index < 0) {
+            tmpl.append(placeholder);
+            pool.add(new Piece(piece, style));
+            return pool.size() - 1;
+        }
+        Piece open = pool.get(index);
+        pool.set(index, new Piece(open.text() + piece, open.style()));
+        return index;
     }
 
     /**

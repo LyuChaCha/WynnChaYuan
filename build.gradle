@@ -632,6 +632,22 @@ tasks.register('runChatColumnChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatColumnChecks' }
 
+tasks.register('runBroadcastChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證「某某人丟了炸彈」這類廣播翻得出來，而且玩家名字原樣不動'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.BroadcastTest'
+}
+tasks.named('check') { dependsOn 'runBroadcastChecks' }
+
+tasks.register('runChatHoldChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證就地取代模式會把多欄面板整塊攔下來一起翻，而且一列都不會少'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.ChatHoldTest'
+}
+tasks.named('check') { dependsOn 'runChatHoldChecks' }
+
 tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'

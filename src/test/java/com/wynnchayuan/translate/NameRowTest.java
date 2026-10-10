@@ -77,6 +77,10 @@ public final class NameRowTest {
                  "{#}Bonder{#}": "{#}Bonder{#}",
                  "{#}{#}{#}{#}{#}Filched Purse": "{#}{#}{#}{#}{#}扒來的錢包",
                  "{#}Redemption": "{#}救贖使命",
+                 "{#}Dernic Pickaxe T{~}{#}": "{#}德尼鎬 T{~}{#}",
+                 "{#}{#}{#}{#}{#}Dernic Pickaxe T{~}": "{#}{#}{#}{#}{#}德尼鎬 T{~}",
+                 "Dernic Pickaxe T{~}": "德尼鎬 T{~}",
+                 "{#} Finished buying Dernic Pickaxe T{~}.": "{#} 買好了德尼鎬 T{~}。",
                  "{#}{#}{#}Daily Reward{#}": "{#}{#}{#}每日獎勵{#}"}
                 """, StandardCharsets.UTF_8);
 
@@ -151,6 +155,35 @@ public final class NameRowTest {
                 purseBothPeek.contains("Filched Purse") && !purseBothPeek.contains("扒來的錢包"));
         store.setPeekPlainNames(false);
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+
+        // ---- ★ 採集工具：名稱列是整列條目，按住 Shift 一樣要看得到原文（使用者 2026-10-10）----
+        String tool = row(ICON.repeat(5), "Dernic Pickaxe T12", "", store);
+        same("工具那一列的模板", "{#}{#}{#}{#}{#}Dernic Pickaxe T{~}", lastTemplate);
+        check("工具名稱平常是譯名（實際 " + plain(tool) + "）", tool.contains("德尼鎬 T12"));
+        String toolHidden = row(ICON, "Dernic Pickaxe T12", TAIL, store);
+        check("看不見的第 0 行也是譯名（實際 " + plain(toolHidden) + "）",
+                toolHidden.contains("德尼鎬 T12"));
+        store.setPeekPlainNames(true);
+        String toolPeek = row(ICON.repeat(5), "Dernic Pickaxe T12", "", store);
+        check("★ 按住 Shift 時工具名稱是原文（實際 " + plain(toolPeek) + "）",
+                toolPeek.contains("Dernic Pickaxe T12") && !toolPeek.contains("德尼鎬"));
+        String toolHiddenPeek = row(ICON, "Dernic Pickaxe T12", TAIL, store);
+        check("★ 第 0 行也跟著是原文（實際 " + plain(toolHiddenPeek) + "）",
+                toolHiddenPeek.contains("Dernic Pickaxe T12") && !toolHiddenPeek.contains("德尼鎬"));
+        check("★ 單獨的名稱也是原文", store.lookup("Dernic Pickaxe T{~}") == null);
+        check("句子裡提到工具的不受影響（實際 "
+                        + store.lookup("{#} Finished buying Dernic Pickaxe T{~}.") + "）",
+                "{#} 買好了德尼鎬 T{~}。".equals(
+                        store.lookup("{#} Finished buying Dernic Pickaxe T{~}.")));
+        store.setPeekPlainNames(false);
+        String toolAgain = row(ICON.repeat(5), "Dernic Pickaxe T12", "", store);
+        check("放開之後回到譯名（實際 " + plain(toolAgain) + "）", toolAgain.contains("德尼鎬 T12"));
+        check("形狀：材質＋工具＋T{~}，前後只能是圖示",
+                TranslationStore.isToolName("{#}Golden Rod T{~}{#}")
+                        && TranslationStore.isToolName("Stone Axe T{~}")
+                        && !TranslationStore.isToolName("- {~}x Golden Pickaxe T{~}")
+                        && !TranslationStore.isToolName("{#}Warp{#}")
+                        && !TranslationStore.isToolName("Golden Rod"));
 
         // ---- 長得像但不是名稱列的，照舊 ----
         same("Lootrun 使命名不受影響", "{#}救贖使命", store.lookup("{#}Redemption"));

@@ -40,6 +40,56 @@ public final class ChatListener {
             EnumSet.of(RecipientType.INFO, RecipientType.GAME_MESSAGE);
 
     /**
+     * 就地取代模式：多欄的面板整塊攔下來，等它跳完再一起翻。見 {@link ChatBlock#hold}。
+     *
+     * <p>掛在 {@code Match}，因為只有這一支能讓原文不顯示（{@code cancelChat}）；
+     * 被攔下來的訊息不會再有 {@code Edit}。優先權放最低：別的模組（Wynntils 自己的
+     * Lootrun 模型）照常先讀到原文。
+     *
+     * <p>從<b>第一個多欄的列</b>開始攔，之後跟著來的伺服器訊息（單欄的接續列、
+     * 空行、重抽那兩列）一起攔到安靜下來為止——只攔多欄那幾列的話，夾在中間的
+     * 單欄列會先顯示，整塊的順序就亂了。面板前面的標題列（「選擇一個信標！」）
+     * 在第一個多欄列之前就到了，照舊當場換掉。
+     */
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void onMatch(ChatMessageEvent.Match event) {
+        if (event.isChatCanceled()
+                || WynnChaYuan.config().chatMode() != CollectorConfig.ChatMode.REPLACE
+                || !SERVER_MESSAGES.contains(event.getRecipientType())) {
+            return;
+        }
+        StyledText message = event.getMessage();
+        if (message == null || ChatBlock.isOurs(message)) {
+            return;
+        }
+        boolean panel;
+        try {
+            panel = ChatBlock.holding() || LineTranslator.panelRow(message);
+        } catch (Throwable t) {
+            panel = false;               // 判斷出事就當成一般訊息，照舊當場處理
+        }
+        if (panel) {
+            // 跟 Edit 那一關同一道守門：夾著別人名字的、別的模組要讀的，攔下來也不翻
+            boolean keep;
+            try {
+                keep = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
+                               message.getStringWithoutFormatting())
+                        || (com.wynnchayuan.capture.Broadcasts.find(message) == null
+                            && PlayerDataFilter.carriesPlayerData(
+                                    GlyphSplitter.toTemplate(message)));
+            } catch (Throwable t) {
+                keep = true;
+            }
+            event.cancelChat();
+            ChatBlock.hold(message, keep);
+            // 被攔下來的訊息不會再有 Edit，「複製聊天」那份緩衝區要在這裡記
+            if (WynnChaYuan.config().chatCopy()) {
+                ChatLog.add(message.getComponent(), null);
+            }
+        }
+    }
+
+    /**
      * 用 {@code Edit} 而不是 {@code Match}——只有 {@code Edit} 收得到
      * {@code setMessage}，那是 Wynntils 專門留給「改寫聊天內容」的那一支。
      *
@@ -53,7 +103,7 @@ public final class ChatListener {
         }
         // 我們自己送出去的譯文會再觸發一次這個事件。再翻一次是白費力氣，
         // 而且它會跟後面真正的新訊息攢成同一塊。見 ChatBlock#isOurs。
-        if (ChatBlock.isOurs(message.getString())) {
+        if (ChatBlock.isOurs(message)) {
             return;
         }
         CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
@@ -68,15 +118,27 @@ public final class ChatListener {
         // 順便省掉一次重複翻譯：先前這裡翻一次，ChatBlock 送出前又翻一次，
         // 兩份都會寫進診斷檔，於是逐行對齊的額度被灌爆——回報回來的檔案裡
         // 常常連想看的那一塊都排不進去。
-        Component hit = serverSide
-                && !PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message))
-                // 別的模組從聊天解遊戲狀態，那幾條留英文。見 ThirdPartyLiterals。
-                && !com.wynnchayuan.render.ThirdPartyLiterals.reserved(
-                        message.getStringWithoutFormatting())
-                ? (mode == CollectorConfig.ChatMode.BOTH
-                        ? LineTranslator.translateChat(message, WynnChaYuan.translations())
-                        : replaceInPlace(message))
-                : null;
+        //
+        // 例外是<b>句型固定的伺服器廣播</b>（某某人丟了炸彈）：句子是伺服器的文案，
+        // 只有主詞是別人的名字。那個名字被收成佔位符原樣填回，不會拿去查表。
+        // 只走聊天專用那一支——它只認整條訊息的鍵，查不到就整句不動，
+        // 不會退到逐片段去碰名字那一段。見 Broadcasts。
+        boolean reserved = com.wynnchayuan.render.ThirdPartyLiterals.reserved(
+                message.getStringWithoutFormatting());
+        Component hit;
+        if (serverSide && !reserved
+                && com.wynnchayuan.capture.Broadcasts.find(message) != null) {
+            hit = LineTranslator.translateChat(message, WynnChaYuan.translations());
+        } else {
+            hit = serverSide
+                    && !PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message))
+                    // 別的模組從聊天解遊戲狀態，那幾條留英文。見 ThirdPartyLiterals。
+                    && !reserved
+                    ? (mode == CollectorConfig.ChatMode.BOTH
+                            ? LineTranslator.translateChat(message, WynnChaYuan.translations())
+                            : replaceInPlace(message))
+                    : null;
+        }
 
         // 先記進複製用的緩衝區，再考慮要不要改畫面。
         //
