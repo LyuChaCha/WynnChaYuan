@@ -98,6 +98,9 @@ public final class PlayerDataFilter {
             " fell victim to ",
             " was clobbered by ",
             " was bashed into paste by ",
+            // 死亡的大字標題：「PoorChaCha was butchered by Dead Lumberjack.」
+            // 2026-10-10 實機的 captured.json 裡收進了兩筆。
+            " was butchered by ",
             " was impaled by ",
             " was silenced by ",
             " was stomped by ",

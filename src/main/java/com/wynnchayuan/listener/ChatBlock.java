@@ -56,7 +56,12 @@ public final class ChatBlock {
     /** 一塊最多攢幾行。再多就不是「一塊訊息」，是聊天在洗版。 */
     private static final int MAX_ROWS = 24;
 
-    private record Row(StyledText original, Component translated) {}
+    /**
+     * @param keep 這一列<b>不翻</b>，照原文送回去——夾著別人名字的伺服器訊息、
+     *             別的模組要讀的那幾條。只有被攔下來的列會帶這個旗標：沒被攔的
+     *             那一種，原文本來就自己顯示了。
+     */
+    private record Row(StyledText original, Component translated, boolean keep) {}
 
     private static final List<Row> pending = new ArrayList<>();
     private static long last;
@@ -71,8 +76,70 @@ public final class ChatBlock {
         if (pending.size() >= MAX_ROWS) {
             flush();
         }
-        pending.add(new Row(original, translated));
+        pending.add(new Row(original, translated, false));
         last = System.currentTimeMillis();
+    }
+
+    /**
+     * 攢著的這幾行，原文<b>已經被攔下來、沒有顯示</b>。
+     *
+     * <h2>就地取代模式的多欄面板</h2>
+     * 就地取代是一則訊息當場換一則，而 Lootrun 的信標面板是<b>一列一則</b>送來的：
+     * 每一列只看得到自己，於是多欄的列照欄置中、單欄的接續列原地不動（兩者錯開），
+     * 伺服器折好行的敘述也只能一列一列查到半句（「+6 場挑戰以／本次 Lootrun。獲得／
+     * 完成它們不會／獲得時間獎勵。」）。原文加譯文那個模式沒有這個問題，因為它本來
+     * 就等整塊跳完才一起算（{@link #stacked}）。使用者 2026-10-10：「又遇到老問題，
+     * 字不會置中對齊 (lootrun)」——他用的正是就地取代。
+     *
+     * <p>所以就地取代遇到多欄的列時，從那一列起把伺服器訊息<b>攔下來</b>
+     * （{@code ChatMessageEvent.Match#cancelChat}，見 {@code ChatListener#onMatch}），
+     * 攢到安靜下來再整塊翻、整塊送——走的是跟原文加譯文同一支 {@link #stacked}，
+     * 差別只在原文那一份不顯示。
+     *
+     * <p>攔下來的東西<b>一定要送出去</b>：一行都沒翻到也要把原文原樣補回畫面，
+     * 不然伺服器送來的內容就憑空消失了。見 {@link #compose}。
+     */
+    private static boolean held = false;
+
+    /**
+     * 攔下一列。見 {@link #held}。
+     *
+     * @param keep 這一列照原文送回去、不要翻（見 {@link Row}）
+     */
+    public static synchronized void hold(StyledText original, boolean keep) {
+        long now = System.currentTimeMillis();
+        // 上一塊早就該送了卻還攢著（HUD 沒在畫的時候 tick 不會來）：先放它走，
+        // 別讓新來的這一列接在一塊過期的面板後面。
+        if (pending.size() >= MAX_ROWS || ready(now)) {
+            flush();
+        }
+        if (!held || pending.isEmpty()) {
+            heldSince = now;
+        }
+        pending.add(new Row(original, null, keep));
+        held = true;
+        last = now;
+    }
+
+    /**
+     * 最多攔多久。
+     *
+     * <p>「安靜下來」是等不到的時候：面板後面緊跟著一連串伺服器訊息（戰鬥中每幾十毫秒
+     * 一則），每來一則就重新計時，面板會一直出不來。信標面板整塊是同一個 tick 送完的，
+     * 六百毫秒遠遠夠。
+     */
+    private static final long HOLD_MAX_MS = 600;
+
+    private static long heldSince;
+
+    /** 假裝是那個時間點開始攔的，測試用。 */
+    static synchronized void heldAt(long when) {
+        heldSince = when;
+    }
+
+    /** 現在是不是正在攔一塊面板——是的話後面跟著來的列也要一起攔，順序才不會亂。 */
+    public static synchronized boolean holding() {
+        return held && !pending.isEmpty();
     }
 
     /** 每一幀問一次：安靜夠久了就把攢著的送出去。由 HUD 的算繪路徑呼叫。 */
@@ -87,7 +154,10 @@ public final class ChatBlock {
      * {@link #flush} 會碰到 Minecraft 的實例，headless 測不了。
      */
     static synchronized boolean ready(long now) {
-        return !pending.isEmpty() && now - last >= IDLE_MS;
+        if (pending.isEmpty()) {
+            return false;
+        }
+        return now - last >= IDLE_MS || (held && now - heldSince >= HOLD_MAX_MS);
     }
 
     /** 目前攢了幾行，測試用。 */
@@ -103,7 +173,9 @@ public final class ChatBlock {
     /** 換伺服器、關掉功能時清掉，免得下一塊沾到上一塊的尾巴。 */
     public static synchronized void clear() {
         pending.clear();
+        held = false;
         mine.clear();
+        sentAt.clear();
     }
 
     /**
@@ -134,32 +206,117 @@ public final class ChatBlock {
     /** 記得自己送過的最後幾則就夠了——事件是同一個 tick 回來的。 */
     private static final int MINE_MEMORY = 32;
 
-    /** 這一則是不是我們自己剛送出去的譯文。 */
-    public static synchronized boolean isOurs(String message) {
-        return message != null && mine.contains(message);
+    /**
+     * 現在正在把攢著的那一則送出去。
+     *
+     * <h2>實機回報（2026-10-10）：「信標直接不出來了」</h2>
+     * 就地取代模式攔下信標面板、整塊翻好送出去之後，那一則<b>又被自己攔回來</b>：
+     * 它一樣是多欄的列（{@code LineTranslator#panelRow}），而「是不是自己送的」
+     * 沒認出來。攔下來的東西一定會再送，於是每兩百毫秒重送一次、永遠到不了畫面
+     * ——那一場的 log 裡同一塊面板重送了一千三百多次，期間別的伺服器訊息也被捲進去。
+     *
+     * <p>沒認出來是因為兩邊拿來比的字不是同一種：記下來的是
+     * {@code Component#getString}（純文字），事件那邊拿的是
+     * {@code StyledText#getString}——<b>帶顏色碼</b>的。沒有顏色的訊息兩者剛好
+     * 相同，所以原文加譯文那個模式一直沒事（認不出來也只是白查一次表）；面板的
+     * 信標名稱是粗體加顏色，就對不上了。
+     *
+     * <p>所以改成兩道：
+     * <ol>
+     *   <li>送的那一刻掛這個旗標。{@code displayClientMessage} 是<b>同步</b>觸發
+     *       聊天事件的（Wynntils 的 {@code ChatHandler} 當場發 Match 與 Edit），
+     *       旗標掛著的時候進來的就是我們自己那一則，跟內容長什麼樣無關；</li>
+     *   <li>內容那一道照舊留著（萬一哪個模組把聊天延後處理），但兩邊都比
+     *       <b>去掉樣式的字</b>，而且只記幾秒。</li>
+     * </ol>
+     */
+    private static boolean sending = false;
+
+    /** 內容那一道記多久。事件是當場回來的，幾秒只是給延後處理的模組留餘地。 */
+    private static final long MINE_TTL_MS = 5_000;
+
+    /** {@link #mine} 裡每一則是什麼時候送的。 */
+    private static final java.util.Map<String, Long> sentAt = new java.util.HashMap<>();
+
+    /** 這一則是不是我們自己剛送出去的譯文。見 {@link #sending}。 */
+    public static synchronized boolean isOurs(StyledText message) {
+        if (message == null) {
+            return false;
+        }
+        return sending || isOurs(message.getStringWithoutFormatting());
     }
 
-    private static synchronized void remember(Component sent) {
-        mine.add(sent.getString());
+    /** 內容那一道：比的是去掉樣式的字。見 {@link #sending}。 */
+    static synchronized boolean isOurs(String plain) {
+        if (plain == null) {
+            return false;
+        }
+        String key = bare(plain);
+        if (!mine.contains(key)) {
+            return false;
+        }
+        Long when = sentAt.get(key);
+        return when != null && System.currentTimeMillis() - when <= MINE_TTL_MS;
+    }
+
+    /** 去掉樣式碼之後的字。兩邊都過這一道，比的才是同一種東西。 */
+    private static String bare(String text) {
+        return text.indexOf('\u00a7') < 0 ? text : STYLE_CODE.matcher(text).replaceAll("");
+    }
+
+    private static final java.util.regex.Pattern STYLE_CODE =
+            java.util.regex.Pattern.compile("\u00a7(?:#[0-9a-fA-F]{8}|\\{[^}]*}|\\[[^\\]]*]|.)");
+
+    /** 記下「這一則是我們送的」。測試也從這裡進來（{@link #flush} headless 跑不了）。 */
+    static synchronized void remember(Component sent) {
+        String key = bare(sent.getString());
+        mine.add(key);
+        sentAt.put(key, System.currentTimeMillis());
+        sentAt.keySet().retainAll(mine);
     }
 
     private static void flush() {
         List<Row> rows = new ArrayList<>(pending);
+        boolean wasHeld = held;
         pending.clear();
+        held = false;
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.player == null) {
             return;
         }
-        Component whole = rows.size() > 1 ? asBlock(rows) : null;
-        if (whole == null) {
-            whole = stacked(rows);
-        }
+        Component whole = compose(rows, wasHeld, WynnChaYuan.translations());
         if (whole != null) {
             // 先記下來再送：displayClientMessage 會同步再觸發一次聊天事件，
-            // 記晚了就來不及擋。見 #mine。
+            // 記晚了就來不及擋。見 #mine 與 #sending。
             remember(whole);
-            mc.player.displayClientMessage(whole, false);
+            sending = true;
+            try {
+                mc.player.displayClientMessage(whole, false);
+            } finally {
+                sending = false;
+            }
         }
+    }
+
+    /**
+     * 這一塊要送出去的樣子。
+     *
+     * @param wasHeld 原文被攔下來了（見 {@link #held}）：就算一行都沒翻到，也要把原文
+     *                原樣送回去
+     * @return 不必送的時候回 {@code null}（原文自己會顯示，而且沒有東西可翻）
+     */
+    static Component compose(List<Row> rows, boolean wasHeld,
+                             com.wynnchayuan.translate.TranslationStore store) {
+        Component whole = rows.size() > 1 ? asBlock(rows, store) : null;
+        if (whole == null) {
+            whole = stacked(rows, wasHeld, store);
+        }
+        return whole;
+    }
+
+    /** 測試用：現在攢著的這幾行會送出什麼。不清掉攢著的東西。 */
+    static synchronized Component preview(com.wynnchayuan.translate.TranslationStore store) {
+        return compose(new ArrayList<>(pending), held, store);
     }
 
     /**
@@ -178,7 +335,8 @@ public final class ChatBlock {
      *
      * @return 整塊的譯文；查不到就回傳 {@code null}，讓呼叫端退回逐行那幾句
      */
-    private static Component asBlock(List<Row> rows) {
+    private static Component asBlock(List<Row> rows,
+                                     com.wynnchayuan.translate.TranslationStore store) {
         try {
             net.minecraft.network.chat.MutableComponent joined = Component.empty();
             for (int i = 0; i < rows.size(); i++) {
@@ -188,7 +346,7 @@ public final class ChatBlock {
                 joined.append(rows.get(i).original().getComponent());
             }
             return LineTranslator.translateChat(StyledText.fromComponent(joined),
-                                                WynnChaYuan.translations());
+                                                store);
         } catch (Throwable t) {
             return null;              // 整塊查表出事也不能讓逐行那幾句跟著不見
         }
@@ -204,7 +362,8 @@ public final class ChatBlock {
      * （見 {@link LineTranslator#chatCentred}）。所以先問過整塊，再把答案
      * 一行一行傳下去重譯一次；重譯不到的才用收進來時那份。
      */
-    private static Component stacked(List<Row> rows) {
+    private static Component stacked(List<Row> rows, boolean wasHeld,
+                                     com.wynnchayuan.translate.TranslationStore store) {
         // 只有一則的時候<b>不能</b>先算對齊。
         //
         // 「洞穴完成」那一塊是六行擠在一則訊息裡，這裡拿到的是<b>一個</b>
@@ -240,7 +399,7 @@ public final class ChatBlock {
                 for (Row row : rows) {
                     originals.add(row.original());
                 }
-                flowed = LineTranslator.flowPanel(originals, WynnChaYuan.translations(), centred);
+                flowed = LineTranslator.flowPanel(originals, store, centred);
             } catch (Throwable t) {
                 flowed = null;                 // 併句出事不能拖累逐列那條路
             }
@@ -260,13 +419,14 @@ public final class ChatBlock {
             // 只有一則時收進來那份就是對的（ChatListener 走的是同一支），
             // 不必再翻一次——翻兩次連診斷檔都會記兩份。
             Component line = centred == null ? rows.get(i).translated() : null;
-            if (flowed != null && flowed[i] != null) {
+            boolean keep = rows.get(i).keep();
+            if (!keep && flowed != null && flowed[i] != null) {
                 line = flowed[i];
             }
-            if (line == null) {
+            if (line == null && !keep) {
                 try {
                     line = LineTranslator.translateChat(rows.get(i).original(),
-                                                        WynnChaYuan.translations(),
+                                                        store,
                                                         centred == null ? null : centred[i],
                                                         panel);
                 } catch (Throwable t) {
@@ -275,6 +435,15 @@ public final class ChatBlock {
             }
             if (line == null) {
                 line = rows.get(i).translated();
+            }
+            if (line == null && wasHeld && !keep) {
+                // 被攔下來的列沒有經過 ChatListener 的就地取代，那邊查不到整則的鍵
+                // 還會退回通用的那一支；這裡補上同一步，免得被攔的單則訊息反而少翻。
+                try {
+                    line = LineTranslator.translate(rows.get(i).original(), store);
+                } catch (Throwable t) {
+                    line = null;
+                }
             }
             if (line == null) {
                 // 查不到譯文就<b>原樣送出</b>，絕對不能跳過。
@@ -296,7 +465,8 @@ public final class ChatBlock {
             out.append(line);
             any = true;
         }
-        return worthSending(any, translated) ? out : null;
+        // 攔下來的那一種沒有「原文自己會顯示」這回事，有東西就得送
+        return (wasHeld ? any : worthSending(any, translated)) ? out : null;
     }
 
     /**
