@@ -58,6 +58,7 @@ Client-side only. The server does not need it.
 | Russian | Everything, quest dialogue included |
 | Korean | Everything, quest dialogue included |
 | Spanish | Everything, quest dialogue included |
+| Turkish | Everything, quest dialogue included |
 
 Switch under Settings → Data, without changing the game's language.
 
@@ -156,6 +157,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 | 俄文 | 所有內容，含任務對話 |
 | 韓文 | 所有內容，含任務對話 |
 | 西班牙文 | 所有內容，含任務對話 |
+| 土耳其文 | 所有內容，含任務對話 |
 
 在設定 →「資料」切換，不必改遊戲語言。
 

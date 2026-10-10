@@ -53,7 +53,7 @@ public final class SettingsViewTest {
         }
     }
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "en_us"};
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "en_us"};
     private static final String[] TABS = {"items", "panel", "dialogue", "world", "data"};
 
     public static void main(String[] args) throws Exception {
