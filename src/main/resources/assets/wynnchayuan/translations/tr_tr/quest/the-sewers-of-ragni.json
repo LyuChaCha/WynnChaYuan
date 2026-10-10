@@ -1,0 +1,374 @@
+{
+ "_meta": {
+  "quest": "The Sewers of Ragni",
+  "count": 36,
+  "translated": 36,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Sewers of Ragni#000": {
+   "src": "Soldier! Have you been explorin' the sewers? I hope you're well prepared.",
+   "dst": "Asker! Kanalizasyonu mu keşfediyordun? Umarım iyi hazırlanmışsındır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#001": {
+   "src": "Soldier! Good timing. We've been requestin' help for ages.",
+   "dst": "Asker! Tam zamanında. Yıllardır yardım istiyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#002": {
+   "src": "With the corrupted hordes terrorisin' the Plains, more and more people are moving to {p}.",
+   "dst": "Yozlaşmış sürüler Ovalar'ı kasıp kavururken gittikçe daha çok insan {p} şehrine taşınıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#003": {
+   "src": "Issue is, a major sewer pipe's been blocked up. No wonder nobody wanted the job.",
+   "dst": "Mesele şu, büyük bir kanalizasyon borusu tıkanmış. Kimsenin bu işi istememesine şaşmamalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#004": {
+   "src": "I'm going to need ya to get your hands dirty. I'll need some assistance with the blockage.",
+   "dst": "Ellerini biraz kirletmen gerekecek. Tıkanıklık için yardıma ihtiyacım var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#005": {
+   "src": "Here's the brief. We get in, deploy small explosives to dislodge the blockage, and get out.",
+   "dst": "Plan şu. İçeri gireriz, tıkanıklığı söküp atmak için küçük patlayıcılar yerleştiririz ve çıkarız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#006": {
+   "src": "We're usin' this side pipe. The larger one down the hill, well... ya don't want to stray too far into that one.",
+   "dst": "Şu yan boruyu kullanıyoruz. Tepenin aşağısındaki büyük olan var ya... ona fazla dalmak istemezsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#007": {
+   "src": "Keep your wits about you in there. All sorts of things could be lurkin'. Ready? Let's go!",
+   "dst": "Orada aklını başında tut. Her türlü şey pusuda bekliyor olabilir. Hazır mısın? Gidelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#008": {
+   "src": "New Quest Started: The Sewers of {p}",
+   "dst": "Yeni Görev Başladı: {p} Kanalizasyonu",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#009": {
+   "src": "Good, ya caught up. Watch your step around this place, soldier.",
+   "dst": "Güzel, yetiştin. Buralarda adımına dikkat et, asker.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#010": {
+   "src": "Our scouts've confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
+   "dst": "Keşifçilerimiz bu bölgenin temiz olduğunu doğruladı, ama yanlış bir dönüş seni eski hapishane kompleksine götürebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#011": {
+   "src": "I... we really don't want t' end up there.",
+   "dst": "Ben... biz oraya hiç düşmek istemeyiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#012": {
+   "src": "Here's a small explosive. I placed one at the blockage already, if that alone doesn't work, use this.",
+   "dst": "Al, küçük bir patlayıcı. Tıkanıklığa zaten bir tane yerleştirdim, o tek başına işe yaramazsa bunu kullan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#013": {
+   "src": "The exit has opened...",
+   "dst": "Çıkış açıldı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#014": {
+   "src": "The pillar seems very unstable...",
+   "dst": "Sütun çok sağlam görünmüyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#015": {
+   "src": "Ah, you're alive! Looks like we underestimated the amount of sewage.",
+   "dst": "Ah, yaşıyorsun! Görünüşe göre lağımın miktarını hafife almışız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#016": {
+   "src": "... ah. This sewer has some history, y'know. Back durin' the {p} Raids, they used to hide civilians here, in the old prison.",
+   "dst": "... ah. Bu kanalizasyonun bir geçmişi var, bilirsin. {p} Baskınları sırasında sivilleri burada, eski hapishanede saklarlardı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#017": {
+   "src": "Let's get out of here. D'you still have the explosive I gave you?",
+   "dst": "Çıkalım buradan. Sana verdiğim patlayıcı hâlâ sende mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#018": {
+   "src": "Phew! Looks like that first explosion cleared the pipe, the {p} citizens are going to be happy.",
+   "dst": "Oh be! Görünüşe göre ilk patlama boruyu açmış, {p} halkı memnun olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#019": {
+   "src": "... I don't know exactly what's in there, soldier.",
+   "dst": "... İçeride tam olarak ne var bilmiyorum, asker.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#020": {
+   "src": "I can't stop you from explorin' the dungeon, but I recommend you gear up first.",
+   "dst": "Zindanı keşfetmeni engelleyemem, ama önce iyice teçhizatlanmanı tavsiye ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#021": {
+   "src": "Legend has it that Bob, the legendary warrior, was born in 'em durin' a raid on {p}.",
+   "dst": "Efsaneye göre efsanevi savaşçı Bob, {p} baskını sırasında oralarda doğmuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#022": {
+   "src": "His mother died in childbirth, but some people say she lay down there for years. Rotting. Waiting.",
+   "dst": "Annesi doğum sırasında ölmüş, ama bazıları onun yıllarca orada yattığını söylüyor. Çürüyerek. Bekleyerek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#023": {
+   "src": "But that's just a story! Thanks for your help, soldier, an' good luck.",
+   "dst": "Ama bu sadece bir hikâye! Yardımın için sağ ol, asker, bol şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "captured"
+  },
+  "The Sewers of Ragni#024": {
+   "src": "The Lieutenant at [-{~}, {~}, -{~}] needs help.",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Teğmen'in yardıma ihtiyacı var.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#025": {
+   "src": "Enter the sewer at [-{~}, {~}, -{~}] and find the blockage.",
+   "dst": "[-{~}, {~}, -{~}] konumundaki kanalizasyona gir ve tıkanıklığı bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#026": {
+   "src": "Explore the sewer and find the blockage.",
+   "dst": "Kanalizasyonu keşfet ve tıkanıklığı bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#027": {
+   "src": "Anyway, I've found the blockage. It's right up ahead.",
+   "dst": "Neyse, tıkanıklığı buldum. Hemen ileride.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 3",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#028": {
+   "src": "Find a way to fix the blockage.",
+   "dst": "Tıkanıklığı gidermenin bir yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#029": {
+   "src": "Find a way out of the spooky sewer.",
+   "dst": "Ürkütücü kanalizasyondan çıkmanın bir yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#030": {
+   "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
+   "dst": "Az önce seni bir süre kaybettim. Açıkçası birbirimizi bulmamız şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#031": {
+   "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
+   "dst": "Bazen... bazen yetmiyordu. Bazıları orada hâlâ... şeylerin dolaştığını söylüyor. Katliamlardan kalma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#032": {
+   "src": "Good, let's use it on this wall, it looks like we can break right through...",
+   "dst": "Güzel, bunu şu duvarda kullanalım, görünüşe göre tam ortasından kırabiliriz...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 5",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#033": {
+   "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Jenprest ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#034": {
+   "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
+   "dst": "Ve içeride çok kötü bir şeyle karşılaşmadığımız için şanslı say kendini. Bazı hikâyeler...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "The Sewers of Ragni#035": {
+   "src": "... I don't exactly know what's in there, soldier.",
+   "dst": "... İçeride tam olarak ne olduğunu bilmiyorum, asker.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Sewers of Ragni",
+   "stage": "Stage 6",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  }
+ }
+}

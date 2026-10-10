@@ -1,0 +1,410 @@
+{
+ "_meta": {
+  "quest": "Lexdale Witch Trials",
+  "count": 39,
+  "translated": 39,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Lexdale Witch Trials#000": {
+   "src": "New Quest Started: {p} Witch Trials",
+   "dst": "Yeni Görev Başladı: {p} Cadı Mahkemeleri",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "New Quest Started: {p} Trouble",
+    "file": "quest/tempo-town-trouble.json",
+    "ratio": 0.8,
+    "reason": "candidate"
+   }
+  },
+  "Lexdale Witch Trials#001": {
+   "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of dark magic threatens us!",
+   "dst": "{p} içinde, aramızda bir düşman var! Bu cadının yasadışı kara büyüsü hepimizi tehdit ediyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#002": {
+   "src": "Ms. Amira's home was found to be plagued with spreading Decay! We must kill the witch to protect our sanctity!",
+   "dst": "Ms. Amira'nın evinin yayılan Çürüme ile sarıldığı ortaya çıktı! Kutsallığımızı korumak için cadıyı öldürmeliyiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#003": {
+   "src": "Further...intruders...? You are not of the worms...the parasites?",
+   "dst": "Yine mi...davetsiz misafir...? Sen kurtlardan değilsin...asalaklardan?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#004": {
+   "src": "We cannot escape, for the sun scorches us. There is no place to go, no place we can burrow that they do not wait.",
+   "dst": "Kaçamayız, çünkü güneş bizi kavurur. Gidecek yer yok, onların beklemediği tek bir kazılacak yer yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#005": {
+   "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive til this torture ends...",
+   "dst": "Sen... Sen... Sende hayat var. Kalbin, kasın, etin var... Bu işkence bitene dek hayatta kalmak için...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#006": {
+   "src": "You're stuck! Maybe you can dig yourself out?",
+   "dst": "Sıkıştın! Belki kazarak kendini kurtarabilirsin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "À",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#007": {
+   "src": "It seems like the creature was knocked out. Now is the time to catch it! The cage seems like a good place to keep it.",
+   "dst": "Görünüşe göre yaratık bayıldı. Onu yakalamanın tam zamanı! Kafes onu tutmak için iyi bir yer gibi duruyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "À",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#008": {
+   "src": "Something feels off...",
+   "dst": "Bir şeyler ters gibi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#009": {
+   "src": "The creature is out of control!",
+   "dst": "Yaratık kontrolden çıktı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#010": {
+   "src": "It seemed like the creature calmed down... You should show the mayor to free Amira.",
+   "dst": "Yaratık sakinleşmiş gibi... Amira'yı kurtarmak için onu belediye başkanına göstermelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#011": {
+   "src": "...Fine then. This...creature...bug...leech? This whatever-it-is... I'll accept your explanation.",
+   "dst": "...Peki öyleyse. Bu...yaratık...böcek...sülük? Bu her neyse... Açıklamanı kabul ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#012": {
+   "src": "Gah, finally! You're seeing sense! It's almost like something just...took you over one day and never left 'til now!",
+   "dst": "Ah, nihayet! Aklın başına geldi! Sanki bir gün bir şey...seni ele geçirmiş de şimdiye kadar hiç bırakmamış gibi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#013": {
+   "src": "As for the...THING... Well... I'll be sure to inform the Gavel government.",
+   "dst": "O...ŞEYE gelince... Eh... Gavel hükümetini mutlaka bilgilendireceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#014": {
+   "src": "You should follow the creature before it gets away!",
+   "dst": "Kaçmadan önce yaratığın peşine düşmelisin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#015": {
+   "src": "See what's going on in the center of {p} at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda, {p} merkezinde neler olduğuna bak.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#018": {
+   "src": "WAIT! Let me GO already! I told you what was happening!",
+   "dst": "DUR! BIRAKIN ARTIK BENİ! Neler olduğunu size anlattım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#019": {
+   "src": "The deceit of your dark magic won't work, Ms. Amira. Go quietly- leave us in peace!",
+   "dst": "Kara büyünün hileleri işe yaramaz, Ms. Amira. Sessizce git, bizi rahat bırak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#020": {
+   "src": "SHUT UP ALREADY! You can't just single people out like this!!",
+   "dst": "KES SESİNİ ARTIK! İnsanları böyle hedef gösteremezsin!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#021": {
+   "src": "Just hear me out for a second! It's not me, something infected my home! That's the reason it was so dark!!",
+   "dst": "Bir saniye dinleyin beni! Ben değilim, evime bir şey bulaştı! O yüzden o kadar karanlıktı!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#022": {
+   "src": "My basement, some outlandish thing dug into it! Wherever it went, the area withered and decayed!",
+   "dst": "Bodrumuma acayip bir şey kazıp girdi! Nereye gittiyse orası kurudu, çürüdü!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#023": {
+   "src": "There's proof in my house that it wasn't me! It's the one that's decayed and barren! You'll see if you LOOK, you gorehound!!",
+   "dst": "Evimde benim olmadığıma dair kanıt var! Çürüyüp çoraklaşan yer orası! BAKARSAN görürsün, seni kan dökücü!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#024": {
+   "src": "Quit with the insults! We'll delay for now- If there's no proof of the witch's innocence she will be executed!",
+   "dst": "Hakaretleri kes! Şimdilik erteliyoruz. Cadının masum olduğuna dair kanıt yoksa idam edilecek!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 1",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#025": {
+   "src": "Explore the basement of the decayed and barren house.",
+   "dst": "Çürümüş ve çorak evin bodrumunu keşfet.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#026": {
+   "src": "Follow the creature down the tunnels.",
+   "dst": "Yaratığı tünellerin içinde takip et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#027": {
+   "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki tünelden yaratığı takip etmeye devam et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#030": {
+   "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
+   "dst": "Bir yabancı daha... Tünelleri görmüş olmalısın. Taşı lekeliyorlar, kökleri kurutuyorlar, toprağı cansız bırakıyorlar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#031": {
+   "src": "And here, we starve in isolation. My people are lost, as the very earth itself warps and shifts.",
+   "dst": "Ve burada, yalnızlık içinde açlıktan ölüyoruz. Toprağın kendisi bükülüp kayarken halkım kayboldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#032": {
+   "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
+   "dst": "Su, durgun ve gri. O korkunç büyülü belalardan ve kurtların kendisinden başka karnımızı doyuracak bir şey yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#035": {
+   "src": "Stranger, you must perish.",
+   "dst": "Yabancı, ölmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 5",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#036": {
+   "src": "Defeat the Tunnel Dweller Chieftain.",
+   "dst": "Tunnel Dweller Chieftain'ı yen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#037": {
+   "src": "Wait... These earthquakes! IT'S THEM! AGHHHHHHHHHHH!!",
+   "dst": "Dur... Bu depremler! ONLAR! AGHHHHHHHHHHH!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 6",
+   "speaker": "Tunnel Dweller Chieftain",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#038": {
+   "src": "Dig yourself out of the dirt. Then go after the creature.",
+   "dst": "Kazarak topraktan çık. Sonra yaratığın peşine düş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#039": {
+   "src": "Return to {p} and try to show the mayor the creature at [-{~}, {~}, -{~}].",
+   "dst": "{p} kasabasına dön ve yaratığı [-{~}, {~}, -{~}] konumundaki belediye başkanına göstermeye çalış.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#040": {
+   "src": "You're back. Did- Wait, what in the nine hells is THAT?!",
+   "dst": "Döndün. Acaba- Dur, o da NE öyle, cehennemin dibinden mi çıktı?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#041": {
+   "src": "That! That was the thing in my basement!! I knew that human could find it! Thank you!!",
+   "dst": "O! Bodrumumdaki şey oydu!! O insanın onu bulacağını biliyordum! Teşekkürler!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#042": {
+   "src": "That thing was spreading the decay through my house! It's NOT witches or magic like you suddenly DECIDED one day!!",
+   "dst": "O şey çürümeyi evimin içine yayıyordu! Bir gün durduk yere KARAR VERDİĞİNİZ gibi cadılık ya da büyü DEĞİL!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "Amira",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#044": {
+   "src": "Step off the podium, Ms. Amira. You're innocent.",
+   "dst": "Kürsüden in, Ms. Amira. Masumsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  },
+  "Lexdale Witch Trials#046": {
+   "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
+   "dst": "...hm. Bu... Mmh. Her neyse. İnsan, güvenilir olduğunu kanıtladın. Kapılarımız sana hep açık olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "Stage 8",
+   "speaker": "The Mayor",
+   "source": "wiki"
+  }
+ }
+}

@@ -1,0 +1,1294 @@
+{
+ "_meta": {
+  "quest": "King's Recruit",
+  "count": 128,
+  "translated": 127,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "King's Recruit#001": {
+   "src": "{#}Cast your Arrow Bomb Spell by clicking  LEFT -  RIGHT -  RIGHT  while holding your Bow",
+   "dst": "{#}Yayını tutarken  SOL -  SAĞ -  SAĞ  tıklayarak Arrow Bomb büyünü yap",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "{#}Cast your Arrow Storm Spell by clicking  RIGHT -  LEFT -  RIGHT  while holding your Bow",
+    "file": "quest.json",
+    "ratio": 0.894,
+    "reason": "candidate"
+   }
+  },
+  "King's Recruit#002": {
+   "src": "You three are going to make fine soldiers. Now, go on to {p}, the King is awaiting your arrival.",
+   "dst": "Siz üçünüzden iyi asker olur. Şimdi {p} şehrine gidin, Kral sizi bekliyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "King's Recruit#003": {
+   "src": "Well, what are we waiting for?",
+   "dst": "Eee, ne bekliyoruz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "King's Recruit#004": {
+   "src": "Awaken",
+   "dst": "Uyan",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#005": {
+   "src": "Agh!",
+   "dst": "Ağh!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "King's Recruit#006": {
+   "src": "Hey, {u}! You alright in there? Looks like we hit something.",
+   "dst": "Hey, {u}! İyi misin orada? Galiba bir şeye çarptık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "King's Recruit#007": {
+   "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
+   "dst": "Kervandan çık ve [-{~}, {~}, -{~}] konumundaki Kervan Sürücüsü ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#008": {
+   "src": "Hm... I swear I hit this same darn boulder every time I make this trip. Sorry folks.",
+   "dst": "Hm... Yemin ederim bu yolculuğu her yaptığımda aynı lanet kayaya çarpıyorum. Kusura bakmayın millet.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Caravan Driver",
+   "source": "wiki"
+  },
+  "King's Recruit#009": {
+   "src": "Ah. Does this mean we have to walk all the way to {p} from here?",
+   "dst": "Ah. Yani buradan {p} şehrine kadar yürümek zorunda mıyız?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#010": {
+   "src": "Unfortunately so. Luckily, it's not that far from here. Just a straight path forward.",
+   "dst": "Ne yazık ki öyle. Neyse ki buradan çok uzak değil. Dümdüz ileri giden bir yol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Caravan Driver",
+   "source": "wiki"
+  },
+  "King's Recruit#011": {
+   "src": "Well, nothing to do but keep moving! Tasim, {u}, I'll race you to the gate!",
+   "dst": "Eh, yürümeye devam etmekten başka çare yok! Tasim, {u}, kapıya kadar yarışalım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#012": {
+   "src": "Wait, don't!",
+   "dst": "Dur, yapma!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#013": {
+   "src": "... He's already gone. We'll have to catch up to him. {u}, lead the way.",
+   "dst": "... Çoktan gitti bile. Ona yetişmemiz gerekecek. {u}, sen önden git.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#014": {
+   "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Wynn Eyaleti kapısına doğru patikadan ilerle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#015": {
+   "src": "I don't suppose you know much about Wynn either, do you?",
+   "dst": "Sen de Wynn hakkında pek bir şey bilmiyorsundur, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#016": {
+   "src": "Of course, the King of {p}'s been recruiting Fruma soldiers, but...",
+   "dst": "Tabii {p} Kralı Fruma'dan asker topluyor, ama...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#017": {
+   "src": "That war of theirs must be getting pretty bad if they need this much support.",
+   "dst": "Bu kadar desteğe ihtiyaç duyduklarına göre savaşları epey kötüye gidiyor olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#018": {
+   "src": "Oh, there's Aledar! And the gate, by the looks of it.",
+   "dst": "Ah, işte Aledar! Görünüşe bakılırsa kapı da orada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#019": {
+   "src": "There you two are! You'll have to be faster than that if you want to stand a chance against the undead.",
+   "dst": "İşte geldiniz! Ölümsüzlere karşı şansınız olsun istiyorsanız bundan daha hızlı olmanız gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#020": {
+   "src": "Yes, yes, we'll be faster next time. So, is this the gate marking the border between Wynn and Fruma?",
+   "dst": "Tamam, tamam, bir dahakine daha hızlı oluruz. Peki, Wynn ile Fruma arasındaki sınırı belirleyen kapı bu mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#021": {
+   "src": "It looks like it, yep! Are you two ready for the start of our new lives?",
+   "dst": "Öyle görünüyor, evet! Yeni hayatlarımızın başlangıcına hazır mısınız?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#022": {
+   "src": "{u}, why don't you do the honours? Go ahead and open that gate.",
+   "dst": "{u}, onur senin olsun mu? Hadi, aç şu kapıyı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#023": {
+   "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundan Wynn Eyaleti'ne gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#024": {
+   "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
+   "dst": "Eee, ne bekliyoruz? Hadi gidip bu eyaleti keşfedelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#025": {
+   "src": "Continue through the Wynn Province to the castle",
+   "dst": "Wynn Eyaleti'nde kaleye doğru ilerlemeye devam et",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#026": {
+   "src": "So this is Wynn we've all been hearing about... It's beautiful.",
+   "dst": "Demek hep duyduğumuz Wynn burası... Çok güzel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#027": {
+   "src": "I guess the war hasn't made it this far. This is what we'll be fighting to protect.",
+   "dst": "Sanırım savaş buraya kadar ulaşmamış. Korumak için savaşacağımız şey bu işte.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#028": {
+   "src": "Hey, recruits! Come over here, I have something to tell you.",
+   "dst": "Hey, acemiler! Buraya gelin, size söyleyeceğim bir şey var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#029": {
+   "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Asker ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#030": {
+   "src": "A soldier? What are you doing all the way out here?",
+   "dst": "Bir asker mi? Ta buralarda ne işin var?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#031": {
+   "src": "There's a bit of trouble up ahead. They sent me out here to intercept new recruits.",
+   "dst": "İleride biraz sorun var. Beni yeni acemileri karşılamak için buraya gönderdiler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#032": {
+   "src": "If you want to survive out here, you're going to need this.",
+   "dst": "Burada hayatta kalmak istiyorsan buna ihtiyacın olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#033": {
+   "src": "And for you two.",
+   "dst": "Bu da siz ikiniz için.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#034": {
+   "src": "Woah, awesome!",
+   "dst": "Vay, harika!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#035": {
+   "src": "Hopefully we won't have to use these just yet.",
+   "dst": "Umarım bunları hemen kullanmak zorunda kalmayız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#036": {
+   "src": "Good luck out there, recruits! Just follow this path, and there will be a bridge up ahead.",
+   "dst": "Bol şans, acemiler! Bu patikayı takip edin yeter, ileride bir köprü olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#037": {
+   "src": "Cross the bridge at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki köprüden geç.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#038": {
+   "src": "Ah, this must be the bridge the soldier was talking about. But it certainly looks very...",
+   "dst": "Ah, askerin bahsettiği köprü bu olmalı. Ama kesinlikle pek...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#039": {
+   "src": "Well, let's not keep the King of {p} waiting!",
+   "dst": "Eh, {p} Kralı'nı bekletmeyelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#040": {
+   "src": "No, wait!",
+   "dst": "Hayır, dur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#041": {
+   "src": "Aledar!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#042": {
+   "src": "That sure was close!",
+   "dst": "Kıl payı kurtulduk!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#043": {
+   "src": "That's what I was trying to warn you about! Let's just get off this bridge before the rest of it collapses...",
+   "dst": "Ben de seni bu konuda uyarmaya çalışıyordum! Hadi geri kalanı da çökmeden bu köprüden inelim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#044": {
+   "src": "Well, how are we meant to get to the other side of this ravine now? Ugh. Another thing gone wrong, just like-...",
+   "dst": "Peki, şimdi bu vadinin karşısına nasıl geçeceğiz? Of. Yine bir şey ters gitti, tıpkı-...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#045": {
+   "src": "... Aledar? What's wrong?",
+   "dst": "... Aledar? Ne oldu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#046": {
+   "src": "That's... weird. I was just thinking about something from before Wynn, but... it's gone. I can't remember.",
+   "dst": "Bu... tuhaf. Wynn'den önceki bir şeyi düşünüyordum, ama... gitti. Hatırlayamıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#047": {
+   "src": "Hm. I can't remember anything from Fruma either... {u}, how about you?",
+   "dst": "Hm. Ben de Fruma'dan hiçbir şey hatırlayamıyorum... {u}, ya sen?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#048": {
+   "src": "Nothing. It can't be a coincidence we all lost our memories at the same time, right?",
+   "dst": "Hiçbir şey. Hepimizin aynı anda hafızasını kaybetmesi tesadüf olamaz, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#049": {
+   "src": "No, but... We can worry about that later. For now, we need to find a way past this ravine. Aledar, {u}, you should look around for a way across. I'll keep looking here.",
+   "dst": "Olamaz, ama... Bunu sonra dert ederiz. Şimdilik bu vadiyi geçmenin bir yolunu bulmalıyız. Aledar, {u}, etrafa bakıp karşıya geçmenin bir yolunu arayın. Ben burada aramaya devam edeceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#050": {
+   "src": "Alright! Let's go, {u}.",
+   "dst": "Tamam! Hadi, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#051": {
+   "src": "Search for another way across the ravine at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda vadinin karşısına geçmenin başka bir yolunu ara.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#052": {
+   "src": "Woah! That sure did the trick, {u}. Good thinking!",
+   "dst": "Vay! Bu tam işe yaradı, {u}. İyi düşündün!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#053": {
+   "src": "Hey, Tasim! Come over here, {u} found a way over!",
+   "dst": "Hey, Tasim! Buraya gel, {u} karşıya geçmenin bir yolunu buldu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#054": {
+   "src": "Continue onwards to [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumuna doğru ilerlemeye devam et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#055": {
+   "src": "Phew! We made it over safely this time at least.",
+   "dst": "Of! En azından bu sefer güvenle karşıya geçtik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#056": {
+   "src": "If we just continue forward, we should make it to {p} in no time!",
+   "dst": "Böyle dümdüz devam edersek kısa sürede {p} şehrine varırız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#057": {
+   "src": "Hmm? What's that guard doing here? We should probably talk to them if we want to pass through.",
+   "dst": "Hmm? O muhafızın burada ne işi var? Geçmek istiyorsak onunla konuşsak iyi olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#058": {
+   "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Muhafız ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#059": {
+   "src": "Halt, recruits!",
+   "dst": "Durun, acemiler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#060": {
+   "src": "What? What's going on?",
+   "dst": "Ne? Neler oluyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#061": {
+   "src": "A group of corrupted have sieged this underpass. I can't let you enter without any armour.",
+   "dst": "Bir grup yozlaşmış bu alt geçidi kuşattı. Zırhınız olmadan girmenize izin veremem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#062": {
+   "src": "Then what do we do? We have to get to {p}!",
+   "dst": "O zaman ne yapacağız? {p} şehrine gitmemiz lazım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#063": {
+   "src": "Do you see that cave over there? Caves such as those often contain useful loot that can help keep you alive.",
+   "dst": "Şuradaki mağarayı görüyor musunuz? Öyle mağaralarda genelde hayatta kalmanıza yardım edecek işe yarar ganimetler olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#064": {
+   "src": "If you enter the cave, you should be able to find some armour to protect you. After that return to me.",
+   "dst": "Mağaraya girerseniz sizi koruyacak birkaç zırh bulabilirsiniz. Sonra bana geri dönün.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#065": {
+   "src": "What do you say {u}? Let's go see what's in that cave.",
+   "dst": "Ne dersin, {u}? Hadi gidip o mağarada ne var bakalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#066": {
+   "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki mağaraya gir ve zırh bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#067": {
+   "src": "We should return to the guard to see if he'll let us through now!",
+   "dst": "Muhafıza dönüp artık geçmemize izin verecek mi bakalım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 11",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#069": {
+   "src": "So you found some armor, huh?",
+   "dst": "Demek zırh buldunuz, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#070": {
+   "src": "Yes, a helmet! Will you let us pass now?",
+   "dst": "Evet, bir miğfer! Artık geçmemize izin verecek misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#071": {
+   "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
+   "dst": "Dur bakalım, acemi. Bir zırh parçasını giyebilmek için önce onu tanımlaman gerekir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#072": {
+   "src": "And how do we do that?",
+   "dst": "Peki bunu nasıl yapacağız?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#073": {
+   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
+   "dst": "Eşyaları Eşya Tanımlayıcılarda tanımlayabilirsiniz. Dünyanın her şehrinde bulunurlar, kolaylık olsun diye burada da bir tane tutuyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#074": {
+   "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "Miğferini Eşya Tanımlayıcı'da tanımla, sonra onu giyip bana dön. Bunu yaptıktan sonra geçmene izin vereceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#076": {
+   "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
+   "dst": "Miğferini taktığını görüyorum. Harika, artık geçebilirsin. Kapıyı senin için açayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#077": {
+   "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
+   "dst": "İçeride bol şans, acemiler! Zırhınız olsa bile o kadar kolay olmayacak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#078": {
+   "src": "Enter the underpass at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki alt geçide gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#079": {
+   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
+   "dst": "Alt geçitte [-{~}, {~}, -{~}] konumuna doğru ilerlemeye devam et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#080": {
+   "src": "Wow, that guard wasn't joking. This place is crawling with the corrupt.",
+   "dst": "Vay, o muhafız şaka yapmıyormuş. Burası yozlaşmışlarla kaynıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#081": {
+   "src": "Well, we've got no choice but to make it through! Finally time for us to use these weapons we got. Let's go, {u}.",
+   "dst": "Eh, ilerlemekten başka çaremiz yok! Sonunda aldığımız bu silahları kullanma zamanı geldi. Hadi, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#082": {
+   "src": "{u}, you take the skeleton in the front. We'll handle the two zombies in the back!",
+   "dst": "{u}, öndeki iskelet senin. Arkadaki iki zombiyi biz hallederiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#083": {
+   "src": "Defeat the Skeleton!",
+   "dst": "İskeleti yen!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#084": {
+   "src": "We did it!",
+   "dst": "Başardık!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#085": {
+   "src": "This path opened up, let's continue through the underpass.",
+   "dst": "Bu yol açıldı, alt geçitte devam edelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#087": {
+   "src": "Over here! You're just what I needed!",
+   "dst": "Buraya! Tam da ihtiyacım olan şeysiniz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 16",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#088": {
+   "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Teğmen ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#089": {
+   "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
+   "dst": "Nihayet biraz destek! Bir saniye... siz doğrudan Fruma'dan geliyorsunuz, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#090": {
+   "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
+   "dst": "Neyse, bu bölge artık temizlenmiş olmalı. Ne de olsa {p} hemen ileride.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#091": {
+   "src": "Lieutenant, watch out behind you!",
+   "dst": "Teğmen, arkana dikkat et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#092": {
+   "src": "Quick, you have to use an ability!",
+   "dst": "Çabuk, bir yetenek kullanmalısın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#093": {
+   "src": "Great job, {u}!",
+   "dst": "Harika iş, {u}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#094": {
+   "src": "Wait, it's running away! We have to save the Lieutenant!",
+   "dst": "Dur, kaçıyor! Teğmeni kurtarmamız lazım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#095": {
+   "src": "Chase the Goliath to [-{~}, {~}, -{~}]!",
+   "dst": "Goliath'ı [-{~}, {~}, -{~}] konumuna kadar kovala!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#096": {
+   "src": "Defeat the Goliath and free the Lieutenant.",
+   "dst": "Goliath'ı yen ve Teğmeni kurtar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#097": {
+   "src": "That sure was close... Thanks for the save, {u}!",
+   "dst": "Kıl payı kurtuldum... Kurtardığın için sağ ol, {u}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#098": {
+   "src": "I think you three are going to make good soldiers - not many can handle themselves like you just did.",
+   "dst": "Bence siz üçünüzden iyi asker olacak. Az önce yaptığınız gibi kendini idare edebilen pek kimse yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#099": {
+   "src": "It seems that beast dropped something, you should check it out before heading to {p}.",
+   "dst": "Görünüşe göre o canavar bir şey düşürdü. {p} şehrine gitmeden önce ona bir bakmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#100": {
+   "src": "Pick up the loot dropped by the Goliath.",
+   "dst": "Goliath'ın düşürdüğü ganimeti al.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#101": {
+   "src": "That item looks rare! Maybe there's an identifier around here.",
+   "dst": "Bu eşya nadir görünüyor! Belki buralarda bir tanımlayıcı vardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 20",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#102": {
+   "src": "Onward to {p}! We're almost there.",
+   "dst": "Haydi {p} yoluna! Neredeyse vardık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 20",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#103": {
+   "src": "Enter the castle at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki kaleye gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#104": {
+   "src": "We... we made it! We really made it! Sure was a close call at the end.",
+   "dst": "Biz... başardık! Gerçekten başardık! Sonda kıl payı kurtulduk ama.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#105": {
+   "src": "... Still think those corrupted don't stand a chance against you?",
+   "dst": "... Hâlâ o yozlaşmışların sana karşı hiç şansı olmadığını mı düşünüyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#106": {
+   "src": "Ha ha. Very funny. Ah, {u}, there seems to be an identifier here for you to identify that rare helmet.",
+   "dst": "Ha ha. Çok komik. Ah, {u}, burada o nadir miğferi tanımlaman için bir tanımlayıcı var galiba.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#107": {
+   "src": "And a blacksmith too, you can sell your old helmet there for some emeralds.",
+   "dst": "Bir de demirci var, eski miğferini orada biraz Zümrüt karşılığında satabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#108": {
+   "src": "Here it is, the end of our journey.",
+   "dst": "İşte geldik, yolculuğumuzun sonu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#109": {
+   "src": "The end of one adventure, but the beginning of another! Let's go inside and talk to the King!",
+   "dst": "Bir maceranın sonu, ama bir başkasının başlangıcı! Hadi içeri girip Kral ile konuşalım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#110": {
+   "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda, {p} Kralı ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#111": {
+   "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
+   "dst": "Wynn Eyaleti'ne hoş geldiniz! Perişan halinize bakılırsa buraya yolculuğunuz epey maceralı geçmiş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#112": {
+   "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
+   "dst": "Burası, acemiler, eyaletimizin büyük şehirlerinden biri olan asil {p} kalesi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#113": {
+   "src": "As soldiers of Wynn, it is your duty to stem the tide of corrupted monsters ravaging this land.",
+   "dst": "Wynn askerleri olarak bu toprakları kasıp kavuran yozlaşmış canavar dalgasını durdurmak sizin görevinizdir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#114": {
+   "src": "Although, you may want to gain some experience beforehand. Many lives are tragically lost every day...",
+   "dst": "Gerçi önce biraz tecrübe kazanmak isteyebilirsiniz. Her gün acı bir şekilde pek çok can kaybediliyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#115": {
+   "src": "Take this [{p} Teleportation Scroll] to aid you in your journey. Upon use, it will instantly bring you back to this city, wherever you may be.",
+   "dst": "Yolculuğunda işine yarasın diye bu [{p} Işınlanma Parşömeni]'ni al. Kullandığında, nerede olursan ol seni anında bu şehre geri getirir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#116": {
+   "src": "With that, I must bid you farewell, more recruits may arrive at any time. Good luck out there, soldiers of Wynn!",
+   "dst": "Bununla birlikte size veda etmeliyim, her an yeni acemiler gelebilir. Bol şans, Wynn askerleri!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#117": {
+   "src": "So! Wynn, huh? It's pretty exciting to finally be here.",
+   "dst": "Eee! Wynn, ha? Sonunda burada olmak epey heyecan verici.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#118": {
+   "src": "I can't wait to discover what it looks like for myself!",
+   "dst": "Nasıl bir yer olduğunu kendi gözlerimle görmek için sabırsızlanıyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#119": {
+   "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
+   "dst": "Ha, şey, sanırım yakında {p} tarafına doğru gideceğim, gerçi yolda {p} diye bir şey var gibi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#120": {
+   "src": "Enough talking already! Let's get out there and help some people!",
+   "dst": "Bu kadar laf yeter! Hadi dışarı çıkıp birilerine yardım edelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#121": {
+   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
+   "dst": "Ve yine gitti... Neyse, eminim onu yakında yine görürüz. Şimdilik Wynn gerçekten nasıl bir yer, bir bakalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#122": {
+   "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
+   "dst": "Çok güzel... Ah! Sana söylemeyi neredeyse unutuyordum, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#123": {
+   "src": "There's this handy item we were all given on our way here, the Content Book. It displays most things you can do in this world; Quests, Caves, and much, much more.",
+   "dst": "Buraya gelirken hepimize verilen kullanışlı bir eşya var: İçerik Kitabı. Bu dünyada yapabileceğin şeylerin çoğunu gösterir; Görevler, Mağaralar ve çok daha fazlası.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#124": {
+   "src": "It also lets you track any content you want, which will create beacons for you to follow.",
+   "dst": "Ayrıca istediğin içeriği takip etmeni sağlar, bu da senin izlemen için fenerler oluşturur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#125": {
+   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "dst": "Al, neden bir denemiyorsun? İçerik Kitabını kullan ve vurgulanmış göreve tıkla.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#126": {
+   "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
+   "dst": "İşte oldu! Ben {p} yoluna düşüyorum, {p} bölgesinin sonunda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#127": {
+   "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u}.",
+   "dst": "Biraz güçlendikten sonra orada buluşalım. Neyse, görüşürüz, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#128": {
+   "src": "What are you waiting for recruits? Go identify your helmet at the  Item Identifier and then equip it in your helmet slot!",
+   "dst": "Ne bekliyorsunuz, acemiler? Gidip miğferinizi  Eşya Tanımlayıcı'da tanımlayın, sonra da miğfer yuvanıza takın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#129": {
+   "src": "Unless you'd rather stand around here all day, that's fine by me too.",
+   "dst": "Tabii bütün gün burada dikilmeyi tercih etmiyorsanız. O da bana uyar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#130": {
+   "src": "Well, what are you waiting for?",
+   "dst": "Eee, ne bekliyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#131": {
+   "src": "Good luck in there, recruits! You're gonna need it...",
+   "dst": "İçeride bol şans, acemiler! İhtiyacınız olacak...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "capture"
+  }
+ }
+}

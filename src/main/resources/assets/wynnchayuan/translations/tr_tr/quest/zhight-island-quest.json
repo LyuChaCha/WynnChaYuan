@@ -1,0 +1,626 @@
+{
+ "_meta": {
+  "quest": "Zhight Island (Quest)",
+  "count": 60,
+  "translated": 60,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Zhight Island (Quest)#000": {
+   "src": "Talk to Zhight of {p} at [-{~}, {~}, -{~}]",
+   "dst": "Zhight ile konuş, {p} [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#001": {
+   "src": "Hello, esteemed tourist sir or madame! I see you have found my illustrious resort, {p}!",
+   "dst": "Merhaba, saygıdeğer turist beyefendi ya da hanımefendi! Görüyorum ki muhteşem tatil köyümü buldunuz, {p}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#002": {
+   "src": "Normally, you'd need a reservation to stay here, but our human visitors are ALWAYS welcome! Ehm...",
+   "dst": "Normalde burada kalmak için rezervasyon gerekir, ama insan misafirlerimize kapımız HER ZAMAN açık! Ehm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#003": {
+   "src": "...w-well, actually...wait, no, it's nothing, nothing, friend! I guarantee you'll enjoy your stay here!",
+   "dst": "...a-aslında... dur, yok, bir şey yok, bir şey yok, dostum! Burada kalmaktan keyif alacağını garanti ederim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#004": {
+   "src": "Even if m-my usual supplies haven't arrived in weeks, I, um, I'm TOTALLY sure we can accommodate for you!",
+   "dst": "H-her zamanki malzemelerim haftalardır gelmemiş olsa bile, şey, seni ağırlayabileceğimizden KESİNLİKLE eminim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#005": {
+   "src": "We can just...um...w-well, I won't impose on you, dearest most welcomest traveller, no sir! Or madame!",
+   "dst": "Biz sadece... şey... y-yani, seni rahatsız etmeyeceğim, en kıymetli, en hoş gelmiş yolcum, hayır efendim! Ya da hanımefendi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#006": {
+   "src": "B-But, if, perchance, you were to, um...happen to find my supplier, Phief, who hasn't come around in weeks the bas-",
+   "dst": "A-ama, eğer bir ihtimal, şey... haftalardır ortalarda görünmeyen tedarikçim Phief'e denk gelirsen, o al-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#007": {
+   "src": "I! I mean! Nothing, nothing! Just, ehm, our extra reliable supplier often stops by {p} for supplies...",
+   "dst": "Ben! Yani! Bir şey yok, bir şey yok! Sadece, ehm, son derece güvenilir tedarikçimiz malzeme için sık sık {p} şehrine uğrar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#008": {
+   "src": "S-So, if you just happen to stop by there after your lovely stay here, and tell him to get off his sorry butt and send me my supplies that'd be just peachy!",
+   "dst": "Y-yani, buradaki güzel konaklamandan sonra bir şekilde oraya uğrarsan ve ona o tembel kıçını kaldırıp malzemelerimi göndermesini söylersen, harika olur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#009": {
+   "src": "Look for Phief at {p}",
+   "dst": "{p} civarında Phief'i ara",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#010": {
+   "src": "Hello there. I see Zhight has sent you, correct?",
+   "dst": "Merhaba. Seni Zhight gönderdi, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#011": {
+   "src": "I do hope he isn't mad at me. I fully intended to bring the supplies to him.",
+   "dst": "Umarım bana kızgın değildir. Malzemeleri ona götürmeye kesinlikle niyetliydim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#012": {
+   "src": "But things took a turn for the worst quickly, and I no longer have access to my ship.",
+   "dst": "Ama işler hızla kötüye gitti ve artık gemime ulaşamıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#013": {
+   "src": "A madman jumped onto my ship, overpowered me, and held me hostage!",
+   "dst": "Deli bir adam gemime atladı, beni alt etti ve rehin tuttu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#014": {
+   "src": "He was telling me how he wanted to \"take back what was stolen from him\", and it looked like he was heading to {p}.",
+   "dst": "Bana \"kendisinden çalınanı geri almak\" istediğini anlatıyordu, {p} tarafına gidiyor gibiydi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#015": {
+   "src": "I have no clue whether he was deranged, paranoid, or if someone really did take something from him.",
+   "dst": "Kafayı mı yemişti, paranoyak mıydı, yoksa biri gerçekten ondan bir şey mi almıştı, hiçbir fikrim yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#016": {
+   "src": "I am certain of one thing. Nobody is going to sail my boat but me. I took my first chance to escape, broke the controls.",
+   "dst": "Bir şeyden eminim. Benim teknemi benden başkası süremez. İlk fırsatta kaçtım, dümeni bozdum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#017": {
+   "src": "And I swam back to land, here. Problem is, I haven't exactly decided how I'll get the ship back for myself.",
+   "dst": "Ve yüzerek karaya, buraya döndüm. Sorun şu ki gemiyi nasıl geri alacağıma pek karar veremedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#018": {
+   "src": "Find Phief's ship, and return it to its rightful owner",
+   "dst": "Phief'in gemisini bul ve gerçek sahibine geri ver",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#019": {
+   "src": "He told you what?! That fumbleknuckle...",
+   "dst": "Sana ne dedi?! O beceriksiz ahmak...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#020": {
+   "src": "We didn't steal the ship from Phief, we were taking back what he stole from us years ago!",
+   "dst": "Gemiyi Phief'ten çalmadık, yıllar önce bizden çaldığını geri alıyorduk!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#021": {
+   "src": "He attacked us on our way home to {p}, kicked us off the boat, and sailed it to who-knows-where.",
+   "dst": "Eve, {p} tarafına dönerken bize saldırdı, bizi tekneden attı ve kim bilir nereye götürdü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#022": {
+   "src": "We didn't think we would ever get it back, until we started seeing him sailing to that doofbumble Zhight.",
+   "dst": "Onu o salak bozuntusu Zhight'a gemiyle giderken görmeye başlayana kadar asla geri alamayacağımızı düşünüyorduk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#023": {
+   "src": "Luckily, he decided to claim an island so close to {p}, or else we would have never seen him.",
+   "dst": "Neyse ki {p} bölgesine bu kadar yakın bir adayı sahiplenmeye karar verdi, yoksa onu asla görmezdik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#024": {
+   "src": "My father started following him with a small sailboat he made, and decided on the perfect place to attack.",
+   "dst": "Babam yaptığı küçük bir yelkenliyle onu takip etmeye başladı ve saldırmak için en uygun yeri seçti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#025": {
+   "src": "But then Phief just had to throw a hissy fit and leave us stranded here.",
+   "dst": "Ama Phief illa ki bir tantana koparıp bizi burada mahsur bırakacaktı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#026": {
+   "src": "My father took a paddleboat back to {p} to gather supplies. He took the cargo the ship had with him.",
+   "dst": "Babam malzeme toplamak için bir kürekli tekneyle {p} tarafına döndü. Gemideki yükü de yanında götürdü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#027": {
+   "src": "If you need that, you should go talk to him. His name is Czytash.",
+   "dst": "O sana lazımsa gidip onunla konuşmalısın. Adı Czytash.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Tirt",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#028": {
+   "src": "Get Zhight's supplies from Czytash at {p}",
+   "dst": "Czytash'tan Zhight'ın malzemelerini al, {p}",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#029": {
+   "src": "Ah, yes, I did find plenty o' supplies on that ship.",
+   "dst": "Ah, evet, o gemide bi' sürü malzeme buldum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#030": {
+   "src": "I assumed it was more of Phief's thiefed goods, so I took it home to use it myself.",
+   "dst": "Phief'in çaldığı mallardan biri sandım, ben de kendim kullanmak için eve götürdüm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#031": {
+   "src": "It is Zhight's supplies you say?",
+   "dst": "Zhight'ın malzemeleri mi diyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#032": {
+   "src": "Aye, of course it had to be that idiot's.",
+   "dst": "Hah, tabii o aptalın olacaktı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#033": {
+   "src": "I guess me thinking he's dumber'n a box o' rocks is no reason for me to let him starve... Here, take the crate.",
+   "dst": "Herifin bir çuval taştan daha kalın kafalı olduğunu düşünmem, onu aç bırakmam için sebep değil herhalde... Al, sandığı götür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#034": {
+   "src": "I haven't opened it yet, so everything is left exactly how he ordered it.",
+   "dst": "Daha açmadım, yani her şey tam sipariş ettiği gibi duruyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#035": {
+   "src": "I wonder what is on that numbskull's menu, that crate smelled rancid. Almost threw it off me boat.",
+   "dst": "O mankafanın menüsünde ne var merak ediyorum, sandık leş gibi kokuyordu. Az kalsın teknemden atıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#036": {
+   "src": "Anyways, good luck on your adventure matey.",
+   "dst": "Neyse, maceranda bol şans, ahbap.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#037": {
+   "src": "Sorry, what was that? My son?",
+   "dst": "Pardon, ne dedin? Oğlum mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#038": {
+   "src": "Ah, I figured it is about time he learned how to maneuver a boat. I fixed everything before I left.",
+   "dst": "Ah, tekne kullanmayı öğrenmesinin vakti geldi diye düşündüm. Gitmeden önce her şeyi tamir ettim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#039": {
+   "src": "When he returns, he will return a man.",
+   "dst": "Döndüğünde adam olarak dönecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#040": {
+   "src": "Wait, why am I telling you this? Butt out of my personal life, and just bring the man his crate.",
+   "dst": "Dur, bunu sana niye anlatıyorum ki? Özel hayatıma burnunu sokma da adama sandığını götür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 4",
+   "speaker": "Czytash",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#041": {
+   "src": "Give Zhight his supplies",
+   "dst": "Zhight'a malzemelerini ver",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#042": {
+   "src": "Ahaaa, esteemed sir! Or madame! I can't actually tell under all that armour...",
+   "dst": "Ahaaa, saygıdeğer beyefendi! Ya da hanımefendi! O kadar zırhın altından anlayamıyorum da...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#043": {
+   "src": "ER! I MEAN! N-No trouble at all, esteemed visitor! We at {p} Resort are always welcoming!",
+   "dst": "EE! YANİ! H-Hiç sorun değil, saygıdeğer misafirim! Biz {p} Tatil Köyü olarak herkese her zaman kapımızı açarız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#044": {
+   "src": "...wait, is that the... Oh my! The supply crate! You went out and found Phief?! What an upstanding fellow you are!",
+   "dst": "...dur, o şey... Aman! Malzeme sandığı! Gidip Phief'i buldun mu?! Ne kadar dürüst birisin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#045": {
+   "src": "Wait, he was a boat thief? Well, good thing you've told me, we can't have pirates here at our resort! I'll blacklist him ASAP!",
+   "dst": "Dur, gemi hırsızı mıydı? Neyse ki söyledin, tatil köyümüzde korsan istemeyiz! Onu derhal kara listeye alacağım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#046": {
+   "src": "You're only a visitor but you've been more help today than anyone else, really, I'm honestly in your debt.",
+   "dst": "Sadece bir misafirsin ama bugün herkesten çok yardım ettin, cidden, gerçekten sana borçluyum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#047": {
+   "src": "So here! The repairs at the Zhight Grand Exchange and Zhight Treasure Tour have just finished, so you can head in and see the fruits of your labor!",
+   "dst": "Al bakalım! Zhight Grand Exchange ve Zhight Treasure Tour'daki tamirat az önce bitti, içeri girip emeğinin meyvelerini görebilirsin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#048": {
+   "src": "And, as a token of my thanks, some exclusive currency for our resort, Zhight Money, on the house and just for you! I hope you enjoy your stay!",
+   "dst": "Ve teşekkürümün bir nişanesi olarak, tatil köyümüze özel para, Zhight Money, müesseseden ve sadece senin için! Umarım konaklamanın keyfini çıkarırsın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 5",
+   "speaker": "Zhight",
+   "source": "wiki"
+  },
+  "Zhight Island (Quest)#049": {
+   "src": "Terribly sorry but the Zhight Grand Exchange is under repairs right now! You can't go in yet!",
+   "dst": "Çok üzgünüm ama Zhight Grand Exchange şu an tamirde! Henüz içeri giremezsin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#050": {
+   "src": "Maybe you can help me with that. The ship should still be stuck, due north of here, it has a red and white sail. I'd love to get my sea legs back.",
+   "dst": "Belki bu konuda bana yardım edebilirsin. Gemi hâlâ buranın tam kuzeyinde takılı kalmış olmalı, kırmızı beyaz bir yelkeni var. Yeniden denizlere açılmayı çok isterim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Phief",
+   "source": "captured",
+   "similar": {
+    "text": "Maybe you can help me with that. The ship should still be stuck, due north of here. I'd love to get my sea legs back.",
+    "file": "quest/zhight-island-quest.json",
+    "ratio": 0.89,
+    "reason": "candidate"
+   }
+  },
+  "Zhight Island (Quest)#051": {
+   "src": "Welcome traveller, to our island.",
+   "dst": "Adamıza hoş geldin, yolcu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "Loot Chest [✫✫✫✫]",
+   "source": "captured",
+   "similar": {
+    "text": "Welcome traveler, to our humble island...",
+    "file": "quest/ice-nations.json",
+    "ratio": 0.865,
+    "reason": "candidate"
+   }
+  },
+  "Zhight Island (Quest)#052": {
+   "src": "Oh? Well, greetings. What brings you all the way up here?",
+   "dst": "Hm? Şey, selamlar. Seni buralara kadar ne getirdi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#053": {
+   "src": "Hello and welcome! Are you here to try the Zhight Treasure Tour? I'll teach you the rules!",
+   "dst": "Merhaba ve hoş geldin! Zhight Treasure Tour'u denemeye mi geldin? Sana kuralları anlatayım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "Zhight Tour Guide\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#054": {
+   "src": "Simply pay for a token down in the cave and deposit it at the collector, and you'll be ushered into a sprawling cave system!",
+   "dst": "Aşağıdaki mağarada bir jeton satın al ve toplayıcıya at, seni koca bir mağara sistemine götürecekler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "Sakaki_nagi's Bird",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#055": {
+   "src": "It's full of dangerous enemies and perilous plights, but they carry lots of rewards and riches!",
+   "dst": "İçi tehlikeli düşmanlar ve zorlu belalarla dolu, ama bol bol ödül ve hazine de var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "Sakaki_nagi's Bird",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#056": {
+   "src": "If you stay in the cave for five minutes, or if you want to leave early or get knocked out, you'll be brought out of the cave.",
+   "dst": "Mağarada beş dakika kalırsan, erken çıkmak istersen ya da bayılırsan mağaradan dışarı çıkarılırsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#057": {
+   "src": "Anything you find in there, and we do mean ANYTHING, is yours to keep.",
+   "dst": "İçeride bulduğun her şey, ama HER ŞEY, senin olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "Sakaki_nagi's Bird",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#058": {
+   "src": "You can also exchange some of our special tokens for things that adventuring types like yourself will find indispensable, up in the gazebo!",
+   "dst": "Ayrıca yukarıdaki çardakta özel jetonlarımızdan bazılarını senin gibi maceracıların vazgeçemeyeceği şeylerle değiştirebilirsin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "Sakaki_nagi's Bird",
+   "source": "captured"
+  },
+  "Zhight Island (Quest)#059": {
+   "src": "We hope you enjoy your stay at {p} Resort, thank you!",
+   "dst": "{p} Tatil Köyü'nde keyifli vakit geçirmeni dileriz, teşekkürler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Zhight Island (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

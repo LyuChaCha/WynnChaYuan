@@ -1,0 +1,904 @@
+{
+ "_meta": {
+  "quest": "Bob's Lost Soul",
+  "count": 89,
+  "translated": 87,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Bob's Lost Soul#000": {
+   "src": "Brr... It's a little bit cold out there, don't you think?",
+   "dst": "Brr... Dışarısı biraz soğuk, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "Tarod\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#001": {
+   "src": "Welcome back to our humble little town!",
+   "dst": "Mütevazı kasabamıza tekrar hoş geldin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#002": {
+   "src": "Talk to Tarod in {p}'s Forest at [-{~}, {~}, -{~}]",
+   "dst": "{p} Ormanı'nda [-{~}, {~}, -{~}] konumundaki Tarod ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#003": {
+   "src": "You're one of those soldier types, right? My name is Tarod, and I could really use your assistance here.",
+   "dst": "Sen şu asker tiplerinden birisin, değil mi? Adım Tarod ve burada yardımına gerçekten ihtiyacım var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#004": {
+   "src": "Years ago, I met a very powerful and legendary warrior by the name of Bob. Yes, that Bob.",
+   "dst": "Yıllar önce Bob adında çok güçlü, efsanevi bir savaşçıyla tanıştım. Evet, o Bob.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#005": {
+   "src": "It's safe to say he was a very, well, admirable man. Him and I slowly became close friends over the years.",
+   "dst": "Rahatlıkla söyleyebilirim ki, şey, takdire değer bir adamdı. Yıllar içinde yavaş yavaş yakın dost olduk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#006": {
+   "src": "That is, until one night, he vanished without a trace. The accepted story is that he was murdered by a pack of ravenous wolves...",
+   "dst": "Ta ki bir gece iz bırakmadan ortadan kaybolana kadar. Herkesin kabul ettiği hikâyeye göre aç bir kurt sürüsü onu öldürmüş...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#007": {
+   "src": "Now, I don't buy that story, but... look, the point here is that he's gone now, and I want to find out where the hell he ended up. That depressing zombie lumbering around {p} clearly isn't him.",
+   "dst": "Ben o hikâyeye inanmıyorum ama... bak, mesele şu: Artık yok ve ben onun nereye gittiğini öğrenmek istiyorum, lanet olsun. {p} civarında sürünen o kasvetli zombi kesinlikle o değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#008": {
+   "src": "I believe he died in this area, and I have been looking for his body for quite a while now, with... less than success.",
+   "dst": "Bence bu civarda öldü. Epeydir cesedini arıyorum ama... pek başarılı olduğum söylenemez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#009": {
+   "src": "Rumors have spread that a tomb lies somewhere east of {p}, but I've never been able to find it. This is where I need you to help me out, yeah?",
+   "dst": "Söylentilere göre {p} bölgesinin doğusunda bir yerde bir mezar varmış ama ben hiç bulamadım. İşte burada bana yardım etmen lazım, tamam mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#010": {
+   "src": "Do you think you could help me out here? Search around that area, and report back to me if you see anything noteworthy.",
+   "dst": "Bana yardım edebilir misin? O civarı araştır, kayda değer bir şey görürsen gelip bana haber ver.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#011": {
+   "src": "I'd be eternally grateful if you could help me uncover my old friend's true story.",
+   "dst": "Eski dostumun gerçek hikâyesini ortaya çıkarmama yardım edersen sana sonsuza dek minnettar kalırım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 1",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#012": {
+   "src": "Find Bob's Tomb",
+   "dst": "Bob'un Mezarı'nı bul",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#013": {
+   "src": "Report what you've found to Tarod at [-{~}, {~}, -{~}]",
+   "dst": "Bulduklarını [-{~}, {~}, -{~}] konumundaki Tarod'a anlat",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#014": {
+   "src": "Welcome back. Did you find anything worthwhile?",
+   "dst": "Tekrar hoş geldin. İşe yarar bir şey buldun mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#015": {
+   "src": "Oh? Yeah, that definitely sounds like the tomb! Were you able to see what's inside?",
+   "dst": "Öyle mi? Evet, kesinlikle mezara benziyor! İçinde ne olduğunu görebildin mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#016": {
+   "src": "No? There's... a magical barrier? Great... just GREAT...",
+   "dst": "Hayır mı? Bir... büyülü bariyer mi var? Harika... gerçekten HARİKA...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#017": {
+   "src": "I have a feeling whoever made that tomb didn't want anyone attempting to get to him, but... Forget it, we have no other options. This is the only way we can place Bob's soul to rest for good.",
+   "dst": "İçimden bir ses, o mezarı yapan kişinin kimsenin ona ulaşmasını istemediğini söylüyor ama... Boş ver, başka seçeneğimiz yok. Bob'un ruhunu sonsuza dek huzura kavuşturmanın tek yolu bu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#018": {
+   "src": "Listen, I have a guy who can help us out. His name is Wedyf, a sorcerer type. If anyone could get rid of that barrier, it would be him.",
+   "dst": "Dinle, bize yardım edebilecek bir tanıdığım var. Adı Wedyf, büyücü tiplerinden. O bariyerden kurtulabilecek biri varsa o da odur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#019": {
+   "src": "He lives in {p}, a small town close to {p}. Go meet him, I'll wait for your return.",
+   "dst": "{p} kasabasında yaşıyor, {p} yakınlarında küçük bir kasaba. Git onunla görüş, ben dönüşünü bekleyeceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 3",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#020": {
+   "src": "Talk to the sorcerer Wedyf in {p}.",
+   "dst": "{p} kasabasındaki büyücü Wedyf ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#021": {
+   "src": "Welcome traveler. Are you looking for something?",
+   "dst": "Hoş geldin yolcu. Bir şey mi arıyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#022": {
+   "src": "Ooh, it has been a long time since I've released an undead...",
+   "dst": "Ooo, bir ölümsüzü serbest bırakmayalı uzun zaman oldu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#023": {
+   "src": "The spirit of your dead friend must still be somewhere in this world. This is why we are unable to get close to his body. Soul magic works in mysterious ways.",
+   "dst": "Ölen dostunun ruhu hâlâ bu dünyada bir yerde olmalı. Bu yüzden cesedine yaklaşamıyoruz. Ruh büyüsünün işleri gizemlidir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#024": {
+   "src": "Don't worry, I can do it. I've heard a little bit of Bob's story before. What a tragedy. His own infallible protection used against him...",
+   "dst": "Merak etme, yapabilirim. Bob'un hikâyesini daha önce biraz duymuştum. Ne büyük trajedi. Kendi kusursuz koruması ona karşı kullanıldı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#025": {
+   "src": "...Anyways, there's no need to lament on the past. Now, we need two items. The first is something from Bob himself. The other is the last thing that made his blood drop.",
+   "dst": "...Neyse, geçmişe ağıt yakmanın anlamı yok. Şimdi iki eşyaya ihtiyacımız var. Birincisi Bob'un kendisinden bir şey. Diğeri de onun kanını son kez akıtan şey.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#026": {
+   "src": "Out past the other side of {p} there are two farm houses with an old cave inbetween then. An old florist used to live there, she has a rose that Bob had once cut himself on.",
+   "dst": "{p} bölgesinin öbür tarafını geçince, aralarında eski bir mağara olan iki çiftlik evi var. Orada yaşlı bir çiçekçi kadın otururdu, Bob'un bir zamanlar elini kestiği bir gül onda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#027": {
+   "src": "I will warn you, though; she was corrupted some time ago. It may not be that easy to take the rose, so do be prepared.",
+   "dst": "Yine de seni uyarayım; bir süre önce yozlaştı. Gülü almak o kadar kolay olmayabilir, o yüzden hazırlıklı ol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#028": {
+   "src": "Secondly... something of Bob's. I've heard rumors of a visage of him wandering around {p}, perhaps you can find something of use from it? Killing enemies in the {p} region may be worth your time, as well.",
+   "dst": "İkincisi... Bob'a ait bir şey. {p} civarında onun bir sureti dolaşıyormuş diye söylentiler duydum, belki ondan işe yarar bir şey bulursun? {p} bölgesindeki düşmanları öldürmeye de değebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#029": {
+   "src": "Bring me [{~} Rose] and [{~} Bob's Tear].",
+   "dst": "Bana [{~} Rose] ve [{~} Bob's Tear] getir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 4",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#030": {
+   "src": "Bring [{~} Bob's Tear] from {p} and [{~} Rose] from the house in the {p} forest around [{~}, {~}, -{~}] to Wedyf",
+   "dst": "{p} bölgesinden [{~1} Bob's Tear] ve {p} ormanında [{~3}, {~4}, -{~5}] civarındaki evden [{~2} Rose] getirip Wedyf'e ver",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#031": {
+   "src": "Great, you got everything.",
+   "dst": "Harika, her şeyi getirmişsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#032": {
+   "src": "Although... I might have forgot to tell you about something else too...",
+   "dst": "Gerçi... sana başka bir şeyden bahsetmeyi unutmuş olabilirim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#033": {
+   "src": "We also need a part of the soul of your dead friend.",
+   "dst": "Ölen dostunun ruhundan bir parçaya da ihtiyacımız var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#034": {
+   "src": "This is something I unfortunately cannot do myself. There is a blacksmith close to {p} who does this kind of stuff.",
+   "dst": "Ne yazık ki bunu kendim yapamam. {p} yakınlarında bu tür işlerle uğraşan bir demirci var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#035": {
+   "src": "He can extract the soul from someone's weapon. Very useful in those situations. Go talk to him.",
+   "dst": "Birinin silahından ruhu çıkarabiliyor. Böyle durumlarda çok işe yarar. Git onunla konuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#036": {
+   "src": "Bring me the soul, and I'll be able to remove the spell preventing you from entering the tomb.",
+   "dst": "Ruhu bana getir, ben de mezara girmeni engelleyen büyüyü kaldırabileyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 5",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#037": {
+   "src": "Talk to the blacksmith in the small settlement southwest of {p} at [{~}, {~}, -{~}] about Bob's lost soul",
+   "dst": "{p} bölgesinin güneybatısındaki küçük yerleşimde, [{~}, {~}, -{~}] konumundaki demirciyle Bob'un kayıp ruhu hakkında konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#038": {
+   "src": "What can I do for ya?",
+   "dst": "Senin için ne yapabilirim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#039": {
+   "src": "Oh yes! I can extract the soul from weapons!",
+   "dst": "Ah evet! Silahlardan ruh çıkarabilirim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#040": {
+   "src": "Bring me the weapons of your friend, and I'll see if I can do something with it!",
+   "dst": "Bana dostunun silahlarını getir, bir şey yapabilir miyim bakarım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#041": {
+   "src": "Oh it's... those weapons. Well, if you know what you're doing...",
+   "dst": "Ah, şu... o silahlar. Eh, ne yaptığını biliyorsan...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#042": {
+   "src": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shears] will do the trick.",
+   "dst": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] ve [{~} Depressing Shears] işimi görür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#043": {
+   "src": "Be careful with the weapons, you will only get [ONE] of each. If you lose one, you will have to ask around if anyone has a spare.",
+   "dst": "Silahlara dikkat et, her birinden sadece [BİR] tane alacaksın. Birini kaybedersen, yedeği olan var mı diye etrafa sorman gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#044": {
+   "src": "Maybe someone will be selling one on the Trade Market in {p}, who knows.",
+   "dst": "Belki {p} şehrindeki Ticaret Pazarı'nda biri satıyordur, kim bilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#045": {
+   "src": "My apprentice over there has traveled around a lot, they might know where the items are, but I warn you, they are a little bit quirky.",
+   "dst": "Şuradaki çırağım çok gezdi, eşyaların nerede olduğunu biliyor olabilir ama seni uyarayım, biraz tuhaftır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#046": {
+   "src": "Weapons of the depressed kind? Oh, of course, of course, I know of the set! Around {p}, I hear they are kept.",
+   "dst": "Kederli türden silahlar mı? Ah, elbette, elbette, o seti bilirim! {p} civarında saklanıyorlar, öyle duydum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#047": {
+   "src": "An army of Linx you must clear, in a cave you shall find this spear!",
+   "dst": "Bir Linx ordusunu temizlemen gerek, mağarada mızrağı bulman gerek!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#048": {
+   "src": "To a skilled archer you must go, best her in a lumberyard and you will have her bow!",
+   "dst": "Usta bir okçuya gideceksin, kereste deposunda onu yenersen yayını alacaksın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#049": {
+   "src": "On an altar, effervescence leers, complete the sacrifice and you will gain your shears...",
+   "dst": "Bir sunakta köpükler sırıtır, kurbanı tamamla, makas sana kalır...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#050": {
+   "src": "In the forest, a house frozen in spikes thick, outsmart the contraption and be gifted a stick!",
+   "dst": "Ormanda, kalın dikenlerle donmuş bir ev, düzeneği alt et, çubuk senin olsun hediyen!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#051": {
+   "src": "But beware, beware! Danger lies ahead, and will try to halt you in your stead!",
+   "dst": "Ama dikkat, dikkat! Önünde tehlike var, yolunu kesmeye çalışacak, ona göre davran!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 6",
+   "speaker": "Apprentice",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#052": {
+   "src": "Bring [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shear] to the Blacksmith.",
+   "dst": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] ve [{~} Depressing Shear] eşyalarını Demirci'ye götür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#053": {
+   "src": "Yo, what's up, bud?",
+   "dst": "Yo, n'aber dostum?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#054": {
+   "src": "I've just been hangin' down here working on my teleportation device. The teleporters got partially frozen over, but I'm pretty damn sure they still work.",
+   "dst": "Burada takılıp ışınlanma cihazım üzerinde çalışıyordum. Işınlayıcıların bir kısmı dondu ama hâlâ çalıştıklarından adım gibi eminim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#055": {
+   "src": "Hey, if you want to test it out, be my guest! You can use the teleporter core next to me to start it.",
+   "dst": "Hey, denemek istersen buyur! Başlatmak için yanımdaki ışınlayıcı çekirdeğini kullanabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#056": {
+   "src": "Right click with it while on the center of the iced over teleporter chamber, and it will teleport you in a direction over to the next chamber.",
+   "dst": "Buzla kaplı ışınlayıcı odasının ortasındayken onunla sağ tıkla, seni bir yöne doğru bir sonraki odaya ışınlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#057": {
+   "src": "It will then teleport you again in a direction {~} degrees clockwise, and it will keep doin' that forever.",
+   "dst": "Sonra seni saat yönünde {~} derece dönmüş bir yöne tekrar ışınlar ve bunu sonsuza dek yapmaya devam eder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#058": {
+   "src": "Some of the ice walls have holes in them, and I believe if you use the teleporter core correctly you will be able to make it to the other side where the gold platform is.",
+   "dst": "Buz duvarların bazılarında delikler var. Işınlayıcı çekirdeğini doğru kullanırsan altın platformun olduğu öbür tarafa geçebilirsin diye düşünüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#059": {
+   "src": "The core is unstable, though, and it will break if you run too far away. Keep that in mind, yeah?",
+   "dst": "Ama çekirdek dengesiz, fazla uzağa koşarsan kırılır. Bunu aklında tut, tamam mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#060": {
+   "src": "Oh, and I left an old wand of mine down at the gold platform. The thing was very depressing, though, so it ain't too much of an issue. But hey, if you can get to it, it's all yours, bud, free of cost!",
+   "dst": "Ha, bir de altın platformda eski bir asamı bıraktım. Gerçi çok kasvetli bir şeydi, o yüzden pek dert değil. Ama hey, ona ulaşabilirsen senindir dostum, bedava!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "Markque The Wizard",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#061": {
+   "src": "... Hi again. I see you got the weapons.",
+   "dst": "... Yine merhaba. Silahları almışsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#062": {
+   "src": "These weapons emanate so much sadness... I'm sure you heard about Bob's story...",
+   "dst": "Bu silahlardan öyle çok hüzün yayılıyor ki... Eminim Bob'un hikâyesini duymuşsundur...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#063": {
+   "src": "Here is the soul. It's a little bit crushed, but it can do the trick.",
+   "dst": "İşte ruh. Biraz ezilmiş ama iş görür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#064": {
+   "src": "Good luck on your quest. Bob was a great hero, anything to help him is good in my book.",
+   "dst": "Görevinde bol şans. Bob büyük bir kahramandı, ona yardım edecek her şey benim gözümde iyidir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 7",
+   "speaker": "The Blacksmith",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#065": {
+   "src": "Bring back [{~} Bob's Crushed Soul] to Wedyf.",
+   "dst": "[{~} Bob's Crushed Soul] eşyasını Wedyf'e geri götür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#066": {
+   "src": "I'm glad to see you again.",
+   "dst": "Seni tekrar gördüğüme sevindim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#067": {
+   "src": "I only need a part of the soul, you can keep the rest.",
+   "dst": "Ruhun sadece bir parçasına ihtiyacım var, kalanı sende kalabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#068": {
+   "src": "Give me a minute, I need to concentrate...",
+   "dst": "Bana bir dakika ver, konsantre olmam lazım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#069": {
+   "src": "... . .. .",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#070": {
+   "src": "..... .. ..... . . . . ...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#071": {
+   "src": "It is done. You should be able to enter the tomb now. Be careful.",
+   "dst": "Tamamdır. Artık mezara girebilmen lazım. Dikkatli ol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 8",
+   "speaker": "Wedyf",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#072": {
+   "src": "Find Bob's corpse in his tomb.",
+   "dst": "Mezarında Bob'un cesedini bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#073": {
+   "src": "Report back what you've seen to Tarod",
+   "dst": "Gördüklerini Tarod'a anlat",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#074": {
+   "src": "You're back... Has he... has he finally been put to rest?",
+   "dst": "Döndün... Peki o... sonunda huzura kavuştu mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#075": {
+   "src": "It's... hard to hear, knowing that my old friend is really gone, this time, but... I'm happy he won't have to suffer on this war-torn world for another second.",
+   "dst": "Eski dostumun bu sefer gerçekten gittiğini bilmek... duyması zor ama... bu savaşın yıktığı dünyada bir saniye daha acı çekmeyecek olmasına seviniyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#076": {
+   "src": "...I want you to have something. This is his old battle chesplate; he gave it to me a few days before he vanished. I think if he were still here, he'd want you to have this. Please, take good care of it for me...",
+   "dst": "...Sana bir şey vermek istiyorum. Bu onun eski savaş göğüslüğü; kaybolmadan birkaç gün önce bana vermişti. Bence hâlâ burada olsaydı bunun sende olmasını isterdi. Lütfen, benim için ona iyi bak...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "Stage 10",
+   "speaker": "Tarod",
+   "source": "wiki"
+  },
+  "Bob's Lost Soul#077": {
+   "src": "Sometimes, fighting the corruption takes its toll on people.",
+   "dst": "Bazen Yozlaşma'yla savaşmak insanlardan bedel alır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#078": {
+   "src": "A dear friend of mine and the province was lost because he couldn't see a way out.",
+   "dst": "Benim ve bu eyaletin çok sevdiği bir dost, bir çıkış yolu göremediği için kaybedildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#079": {
+   "src": "This memorial was erected for all those who suffer similarly.",
+   "dst": "Bu anıt, benzer acıları çeken herkes için dikildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#080": {
+   "src": "If you are ever confronted by the demons within, please seek help.",
+   "dst": "Bir gün içindeki şeytanlarla yüzleşirsen lütfen yardım iste.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#081": {
+   "src": "Out past the other side of {p}, near {p}, there are some arches in the mountains. An old florist lives in a house close by. She has a rose that Bob had once cut himself on.",
+   "dst": "{p} bölgesinin öbür tarafını geçince, {p} yakınında dağlarda kemerler var. Yakınlardaki bir evde yaşlı bir çiçekçi kadın oturuyor. Bob'un bir zamanlar elini kestiği bir gül onda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#082": {
+   "src": "Anyway, my apprentice over there has traveled around a lot, they might know where you can find the items for yourself, but I warn you, they are a little bit quirky.",
+   "dst": "Neyse, şuradaki çırağım çok gezdi, eşyaları kendin nerede bulabileceğini biliyor olabilir ama seni uyarayım, biraz tuhaftır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#083": {
+   "src": "Hi! My name is Batelu, I've been studying those strange symbols on the walls for quite a while now.",
+   "dst": "Selam! Adım Batelu, epeydir duvarlardaki şu tuhaf sembolleri inceliyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#084": {
+   "src": "I've learned a lot about Bob. Unfortunately, I do not think I am the person you are looking for.",
+   "dst": "Bob hakkında çok şey öğrendim. Ne yazık ki aradığın kişinin ben olduğunu sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#085": {
+   "src": "If you are looking for Bob's corpse, it's under the stairs in the icy chamber. Talk to me when you are level {~}, I've got some work for you.",
+   "dst": "Bob'un cesedini arıyorsan buzlu odadaki merdivenlerin altında. {~}. seviyeye gelince benimle konuş, sana bir işim olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#086": {
+   "src": "Thank you for your help. I'm sure Bob thanks you too... wherever he is.",
+   "dst": "Yardımın için teşekkürler. Eminim Bob da sana teşekkür ediyordur... her neredeyse.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#087": {
+   "src": "The famous {p} lies to the south, in the area where the snow has melted.",
+   "dst": "Ünlü {p} güneyde, karların eridiği bölgede.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Bob's Lost Soul#088": {
+   "src": "The mansion has a deep history with this land. The Twains used to fight the corruption before the likes of Bob were around, although people seem to forget about them.",
+   "dst": "Konağın bu topraklarla derin bir geçmişi var. Twain'ler, Bob gibileri ortada yokken Yozlaşma'yla savaşırdı ama insanlar onları unutmuş gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Bob's Lost Soul",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

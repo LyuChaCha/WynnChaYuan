@@ -1,0 +1,764 @@
+{
+ "_meta": {
+  "quest": "The Hidden City",
+  "count": 75,
+  "translated": 75,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Hidden City#000": {
+   "src": "Speak to Narder.",
+   "dst": "Narder ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#001": {
+   "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
+   "dst": "Bir İnsan! Ah! Bana tıbbi yardım bulmak için endişelenme, durum kontrolüm altında...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#002": {
+   "src": "It's a broken leg. I'm already getting it treated, but I have a job to do elsewise- and a time sensitive one, too.",
+   "dst": "Bacağım kırık. Tedavi ettiriyorum zaten, ama başka bir yerde yapmam gereken bir iş var, üstelik zamanı da kısıtlı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#003": {
+   "src": "I won't be able to do it like this, but it doesn't matter if I'm the one who carries it out. It just needs to be done.",
+   "dst": "Bu hâlde yapamam, ama işi benim yapmam şart değil. Yeter ki yapılsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#004": {
+   "src": "I don't work for villagers, I was hired to come here by other humans... there's something you must keep secret.",
+   "dst": "Köylüler için çalışmıyorum, beni buraya başka insanlar tuttu... gizli tutman gereken bir şey var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#005": {
+   "src": "Swear it! If you're going to take the job, and my payment for it, you must be silent about it!",
+   "dst": "Yemin et! İşi ve karşılığında vereceğim ücreti alacaksan, ağzını sıkı tutmalısın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#006": {
+   "src": "Do you agree?",
+   "dst": "Kabul ediyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#007": {
+   "src": "Good. To business then.",
+   "dst": "Güzel. O zaman işe gelelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#008": {
+   "src": "There is a hidden town in the canyon here. Up in the mountains- it was built and run by humans.",
+   "dst": "Buradaki kanyonda gizli bir kasaba var. Dağlarda- insanlar kurmuş ve insanlar yönetiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#009": {
+   "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
+   "dst": "Köylülerin, topraklarında yaşayan insanlarla ilgili çok katı kuralları var ve bu ÇOK yasa dışı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#010": {
+   "src": "I was contacted by the Mayor because he is aware that the town may have become... compromised.",
+   "dst": "Benimle Belediye Başkanı iletişime geçti, çünkü kasabanın... ifşa olmuş olabileceğini biliyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#011": {
+   "src": "The job is to figure out who and why, of course. To let this slip could collapse the treatise between our races.",
+   "dst": "İş de tabii ki bunu kimin ve neden yaptığını bulmak. Bu meselenin sızması ırklarımız arasındaki antlaşmayı çökertebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#012": {
+   "src": "I've never been to the city in the mountains, but I was given instructions. Here, I'll write down the location in your book.",
+   "dst": "Dağlardaki şehre hiç gitmedim ama bana talimat verildi. Dur, konumu kitabına yazayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#013": {
+   "src": "Be aware though, they won't let you in unless the area is safe. They can't risk villagers wandering in.",
+   "dst": "Ama dikkat et, bölge güvenli olmadıkça seni içeri almazlar. Köylülerin içeri girmesi riskini göze alamazlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#014": {
+   "src": "Good luck.",
+   "dst": "Bol şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "",
+   "speaker": "Narder",
+   "source": "wiki"
+  },
+  "The Hidden City#015": {
+   "src": "Head to [{~}, {~}, -{~}] to find the human town.",
+   "dst": "İnsan kasabasını bulmak için [{~}, {~}, -{~}] konumuna git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#016": {
+   "src": "Hm? Oh, a fellow adventurer, I see! I'm sorry, but this discovery is mine to make. There's something strange about that door...",
+   "dst": "Hm? Ah, bir maceracı dostu, anlıyorum! Kusura bakma ama bu keşif benim olacak. O kapıda tuhaf bir şey var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#017": {
+   "src": "Deadly gasses? Nonsense! As you can see the two of us are breathing just fine.",
+   "dst": "Ölümcül gazlar mı? Saçmalık! Gördüğün gibi ikimiz de gayet rahat nefes alıyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#018": {
+   "src": "You want me to leave? Why, so that you can have all of the glory for yourself? Ha, not a chance!",
+   "dst": "Gitmemi mi istiyorsun? Neden, bütün şan şöhret sana kalsın diye mi? Ha, hayatta olmaz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#019": {
+   "src": "The only way I'm leaving is if I can get that door open or if the whole cave starts crashing down on us.",
+   "dst": "Buradan ancak o kapıyı açabilirsem ya da bütün mağara tepemize çökmeye başlarsa giderim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 2",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#020": {
+   "src": "Cause the cave to collapse",
+   "dst": "Mağarayı çökert",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#021": {
+   "src": "Gweh! I just had to go running my mouth about the cave collapsing! I'm out- if you have any sense you'll leave too!",
+   "dst": "Gıh! Mağaranın çökmesi hakkında çenemi tutamadım tabii! Ben gidiyorum, aklın varsa sen de gidersin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "Curious Villager",
+   "source": "wiki"
+  },
+  "The Hidden City#022": {
+   "src": "Go up to the door and inspect the noise.",
+   "dst": "Kapıya çık ve sesi incele.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#023": {
+   "src": "Talk to {p} Guard.",
+   "dst": "{p} Muhafızı ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#024": {
+   "src": "Thank you for getting rid of that curious villager! We thought he'd never leave.",
+   "dst": "O meraklı köylüden kurtulduğun için teşekkürler! Hiç gitmeyecek sandık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#025": {
+   "src": "I've never seen you before. Who gave you access to the town?",
+   "dst": "Seni daha önce hiç görmedim. Kasabaya girme iznini sana kim verdi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#026": {
+   "src": "You're here in place of the detective the mayor hired?",
+   "dst": "Belediye başkanının tuttuğu dedektifin yerine mi geldin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#027": {
+   "src": "Normally, I wouldn't believe that, but come in. We're desperate.",
+   "dst": "Normalde buna inanmazdım, ama gel içeri. Çaresiz durumdayız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#028": {
+   "src": "If you ever need to leave and get back, I can simply open the way.",
+   "dst": "Çıkıp geri gelmen gerekirse yolu açarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#029": {
+   "src": "You probably should be going now. Our mayor can get impatient.",
+   "dst": "Artık gitsen iyi olur. Başkanımız sabırsızlanabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 5",
+   "speaker": "Eltom Guard",
+   "source": "wiki"
+  },
+  "The Hidden City#030": {
+   "src": "Talk to Mayor Eoric in the town hall.",
+   "dst": "Belediye binasında Belediye Başkanı Eoric ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#031": {
+   "src": "What are you doing here? I'm writing an important letter, this better be worth my time.",
+   "dst": "Ne işin var burada? Önemli bir mektup yazıyorum, değse iyi olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#032": {
+   "src": "What? Narder sent you? Why'd he send a {p} soldier?",
+   "dst": "Ne? Seni Narder mı gönderdi? Neden bir {p} askeri göndermiş?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#033": {
+   "src": "I didn't think the army were authorized to know about {p}, especially Fruma recruits.",
+   "dst": "Ordunun {p} hakkında bilgi sahibi olmaya yetkisi olduğunu sanmıyordum, hele Fruma'lı acemilerin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#034": {
+   "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
+   "dst": "Neyse, {p} kasabasının gizliliği büyük tehlikede. Hainin izlerini bulduk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#035": {
+   "src": "We have locked down all of the exits. No one leaves or enters without my permission.",
+   "dst": "Bütün çıkışları kapattık. Benim iznim olmadan kimse giremez, çıkamaz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#036": {
+   "src": "We need a detective to sniff out the traitor and expose him.",
+   "dst": "Haini kokusundan bulup ortaya çıkaracak bir dedektife ihtiyacımız var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#037": {
+   "src": "Start by asking the citizens around here about anything suspicious they've seen.",
+   "dst": "İşe buradaki halka gördükleri şüpheli şeyleri sorarak başla.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#038": {
+   "src": "When you find the culprit, remember to leave him alive! The guards will take care of him.",
+   "dst": "Suçluyu bulduğunda sakın öldürme! Muhafızlar onun icabına bakar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 6",
+   "speaker": "Eoric",
+   "source": "wiki"
+  },
+  "The Hidden City#039": {
+   "src": "Ask {p} Citizens about the note.",
+   "dst": "{p} halkına not hakkında soru sor.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#040": {
+   "src": "Sorry, detective, but I haven't seen anything suspicious. In fact, I haven't even left my house for the last week.",
+   "dst": "Kusura bakma dedektif, şüpheli bir şey görmedim. Hatta geçen haftadan beri evden bile çıkmadım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Reder",
+   "source": "wiki"
+  },
+  "The Hidden City#041": {
+   "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
+   "dst": "Gördüğüm tek şüpheli şey ortalıkta dolaşan kapüşonlu bir adam. {p} kasabasında pek insan yok, o yüzden tuhaf.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Nichye",
+   "source": "wiki"
+  },
+  "The Hidden City#042": {
+   "src": "If you want to find out anything, the best person to ask is Lumilda. She's in her bakery, next to the Scroll Shop.",
+   "dst": "Bir şey öğrenmek istiyorsan en iyisi Lumilda'ya sormak. Parşömen Dükkânı'nın yanındaki fırınında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Sybeth",
+   "source": "wiki"
+  },
+  "The Hidden City#043": {
+   "src": "Ah, detective! What brings you to the sweet Lumilda's Bakery?",
+   "dst": "Ah, dedektif! Seni tatlı mı tatlı Lumilda'nın Fırını'na hangi rüzgâr attı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#044": {
+   "src": "Hm, yes, there is a weird person coming through.",
+   "dst": "Hm, evet, buradan tuhaf biri geçip duruyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#045": {
+   "src": "It's a hooded man. Never seen the face. A trouble maker, if you ask me!",
+   "dst": "Kapüşonlu bir adam. Yüzünü hiç görmedim. Bana sorarsan, bela arıyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#046": {
+   "src": "He's been here a few times, usually writing things on a piece of paper. That man's a real mystery. No one even knows where he lives.",
+   "dst": "Birkaç kez geldi, genelde bir kâğıda bir şeyler yazıyordu. O adam tam bir muamma. Nerede yaşadığını bile kimse bilmiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#047": {
+   "src": "One time my grandson couldn't resist and followed the man. Last thing he saw was the man leaving through the Eastern Exit.",
+   "dst": "Bir keresinde torunum dayanamayıp adamı takip etti. En son adamın Doğu Çıkışı'ndan çıktığını görmüş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#048": {
+   "src": "Ain't that a place to start, sweetheart?",
+   "dst": "Başlamak için iyi bir yer değil mi, tatlım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 7",
+   "speaker": "Lumilda",
+   "source": "wiki"
+  },
+  "The Hidden City#049": {
+   "src": "Inspect anything beyond the Eastern Exit.",
+   "dst": "Doğu Çıkışı'nın ötesindeki her şeyi incele.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#050": {
+   "src": "Inspect the house.",
+   "dst": "Evi incele.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#051": {
+   "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
+   "dst": "Ah. Demek dedektif sensin. O kalın kafalı Eltomlulardan hiçbiri bunu çözemezdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#052": {
+   "src": "I guess the Grook is out of the pen then.",
+   "dst": "Demek Grook ağıldan kaçtı, ha.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#053": {
+   "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
+   "dst": "Bu kasaba burada olmamalı bile. İnsanların Gavel'a yerleşmesi yasak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#054": {
+   "src": "These Humans couldn’t be bothered to fight their own war, so they hid an entire city here.",
+   "dst": "Bu İnsanlar kendi savaşlarını vermeye üşenip koca bir şehri buraya sakladılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#055": {
+   "src": "Traitor? I’m no traitor. I'm just looking to carry out the law where it needs to be carried out. Nothing personal, yes?",
+   "dst": "Hain mi? Ben hain değilim. Yalnızca yasanın uygulanması gereken yerde uygulanmasını istiyorum. Kişisel bir şey yok, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Hidden City#056": {
+   "src": "Maybe they'll actually use \"Ardulf\" instead of saying \"freak\" once they've seen the good I can do for them!",
+   "dst": "Onlar için yapabileceğim iyiliği görünce belki bana \"ucube\" yerine sonunda \"Ardulf\" derler!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#057": {
+   "src": "Read the note on the table.",
+   "dst": "Masadaki notu oku.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#058": {
+   "src": "*- Airship leaves {p} {~}:{~} to {p}",
+   "dst": "*- Zeplin: {p} kalkış {~}:{~}, varış {p}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "Notes",
+   "source": "wiki"
+  },
+  "The Hidden City#059": {
+   "src": "Head to {p}'s Airbase.",
+   "dst": "{p} Hava Üssü'ne git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#060": {
+   "src": "Talk to Hilan.",
+   "dst": "Hilan ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#061": {
+   "src": "H-h-help!",
+   "dst": "Y-y-yardım edin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#062": {
+   "src": "Hooded man... Climbed tower...",
+   "dst": "Kapüşonlu adam... Kuleye tırmandı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#063": {
+   "src": "Requested to use a ship... I refused...",
+   "dst": "Bir gemi kullanmak istedi... Reddettim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#064": {
+   "src": "He beat me up... And left...",
+   "dst": "Beni dövdü... Ve gitti...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#065": {
+   "src": "Hurry!",
+   "dst": "Çabuk ol!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 12",
+   "speaker": "Hilan",
+   "source": "wiki"
+  },
+  "The Hidden City#066": {
+   "src": "Head up to the Airbase's Tower to confront the hooded man.",
+   "dst": "Kapüşonlu adamla yüzleşmek için Hava Üssü'nün Kulesi'ne çık.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#067": {
+   "src": "Board the {p} Cargo Ship.",
+   "dst": "{p} Kargo Gemisi'ne bin.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#068": {
+   "src": "What are you doing here? Why are you protecting this illegal town?",
+   "dst": "Ne işin var burada? Bu yasa dışı kasabayı neden koruyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#069": {
+   "src": "The Villagers will not be happy about {p}. This could seriously harm the Gavel-Wynn relationship.",
+   "dst": "Köylüler {p} meselesinden hiç hoşlanmayacak. Bu, Gavel-Wynn ilişkilerine ciddi zarar verebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#070": {
+   "src": "You can't stop me. You wouldn't murder one of your own, would you?",
+   "dst": "Beni durduramazsın. Kendi soyundan birini öldürmezsin, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#071": {
+   "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
+   "dst": "{p} belediye başkanına bu yeri baştan sona anlatacağım ve ödülümü alacağım. Zengin olacağım, beni durdurmak istiyorsan bunu kendin yapman gerekecek!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 14",
+   "speaker": "Ardulf",
+   "source": "wiki"
+  },
+  "The Hidden City#072": {
+   "src": "Escape your cell and find a way to sabotage the ship.",
+   "dst": "Hücrenden kaç ve gemiyi sabote etmenin bir yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Hidden City#073": {
+   "src": "*To Hilan.",
+   "dst": "*Hilan'a.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hidden City",
+   "stage": "Stage 15",
+   "speaker": "Note",
+   "source": "wiki"
+  },
+  "The Hidden City#074": {
+   "src": "Talk to {p}'s Mayor at the top of {p}.",
+   "dst": "{p} kasabasının tepesindeki {p} Belediye Başkanı ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hidden City",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  }
+ }
+}

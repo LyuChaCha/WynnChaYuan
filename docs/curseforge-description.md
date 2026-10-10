@@ -43,7 +43,7 @@ Client-side only. The server does not need it.
 ### Languages
 
 - **Traditional Chinese**: main language, everything
-- **Simplified Chinese**, **Japanese**, **Russian**, **Korean** and **Spanish**: everything, quest dialogue included
+- **Simplified Chinese**, **Japanese**, **Russian**, **Korean**, **Spanish** and **Turkish**: everything, quest dialogue included
 
 Switch under Settings → Data, without changing the game's language.
 
@@ -126,7 +126,7 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 ### 支援語言
 
 - **繁體中文**：主要語言，所有內容
-- **簡體中文**、**日文**、**俄文**、**韓文**、**西班牙文**：所有內容，含任務對話
+- **簡體中文**、**日文**、**俄文**、**韓文**、**西班牙文**、**土耳其文**：所有內容，含任務對話
 
 在設定 →「資料」切換，不必改遊戲語言。
 

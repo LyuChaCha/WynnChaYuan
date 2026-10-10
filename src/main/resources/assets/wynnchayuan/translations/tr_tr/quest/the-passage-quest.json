@@ -1,0 +1,340 @@
+{
+ "_meta": {
+  "quest": "The Passage (Quest)",
+  "count": 32,
+  "translated": 32,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Passage (Quest)#000": {
+   "src": "Not so fast, you!",
+   "dst": "Dur bakalım, sen!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Wirt",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#001": {
+   "src": "My dad said I can't let any strangers through this passage!",
+   "dst": "Babam bu geçitten hiçbir yabancıyı geçirmememi söyledi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Wirt",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#002": {
+   "src": "If you want access, talk to him, he's the recruiter of the town! His name is Ildan. He's just southwest of here.",
+   "dst": "Geçmek istiyorsan onunla konuş, kasabanın üye sorumlusu o! Adı Ildan. Buranın hemen güneybatısında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 1",
+   "speaker": "Wirt",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#003": {
+   "src": "Find Ildan in {p} at [-{~}, {~}, -{~}] and ask to be a member of the town",
+   "dst": "{p} bölgesinde [-{~}, {~}, -{~}] konumundaki Ildan'ı bul ve kasabaya üye olmak istediğini söyle",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#004": {
+   "src": "Oh! So you want to become a member of this town?",
+   "dst": "Oo! Demek bu kasabanın bir üyesi olmak istiyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#005": {
+   "src": "You will have to help us first, of course!",
+   "dst": "Önce bize yardım etmen gerekecek, elbette!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#006": {
+   "src": "They used to have a powerful chief, but he eventually died in battle.",
+   "dst": "Eskiden güçlü bir şefleri vardı ama sonunda savaşta öldü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#007": {
+   "src": "The tribe couldn't bear the fact that he was dead. They performed some unethical necromancy spell on him.",
+   "dst": "Kabile onun öldüğünü kabullenemedi. Ona ahlaka aykırı bir ölü büyüsü yaptılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#008": {
+   "src": "He keeps reviving his minions and it's causing quite some problems to our army.",
+   "dst": "Adamlarını durmadan diriltiyor ve bu da ordumuza epey sorun çıkarıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#009": {
+   "src": "You can access the tomb from a sacrificial shrine, I've heard, but I'm not sure how. There are probably hints nearby the shrine.",
+   "dst": "Duyduğuma göre mezara bir kurban sunağından girilebiliyormuş ama nasıl olduğunu bilmiyorum. Sunağın yakınlarında muhtemelen ipuçları vardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#010": {
+   "src": "Bring me back [{~} Antic Bead] as a proof of its death, and I will let you become a citizen.",
+   "dst": "Ölümünün kanıtı olarak bana [{~} Antic Bead] getir, ben de vatandaş olmana izin vereyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#011": {
+   "src": "I've marked the direction to the shrine in your book. Remember, there should be hints right nearby the shrine. Good luck.",
+   "dst": "Sunağın yönünü kitabına işaretledim. Unutma, sunağın hemen yakınında ipuçları olmalı. Bol şans.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#012": {
+   "src": "Search for clues near [-{~}, {~}, -{~}] and bring back [{~} Antic Bead] to Ildan.",
+   "dst": "[-{~}, {~}, -{~}] yakınlarında ipucu ara ve Ildan'a [{~} Antic Bead] getir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#013": {
+   "src": "Impressive! You got the bead!",
+   "dst": "Etkileyici! Boncuğu almışsın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#014": {
+   "src": "Well, welcome to this town, adventurer! You are now officially a citizen.",
+   "dst": "Eh, kasabamıza hoş geldin, maceracı! Artık resmen vatandaşsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#015": {
+   "src": "Oh, but before you go! I do have a few things to say. First, about the beads here.",
+   "dst": "Ah, ama gitmeden önce! Söyleyeceğim birkaç şey var. İlki, buradaki boncuklar hakkında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#016": {
+   "src": "The tribesmen accept these as currency, so if you collect enough, I've heard they can offer you powerful masks.",
+   "dst": "Kabile üyeleri bunları para olarak kabul ediyor, yeterince toplarsan sana güçlü maskeler verebildiklerini duydum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#017": {
+   "src": "Second, about the shrine. Now, this is just a rumor, but apparently that tomb is not unique.",
+   "dst": "İkincisi, sunak hakkında. Bu sadece bir söylenti ama görünüşe göre o mezar tek değilmiş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#018": {
+   "src": "There are supposed to be a bunch of these altars scattered around the province, even in Gavel too!",
+   "dst": "Güya eyaletin dört bir yanına dağılmış bu sunaklardan bir sürü varmış, Gavel'da bile!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#019": {
+   "src": "If true, you should look for them. While the fights will be tough, I would imagine great rewards could be gotten from them!",
+   "dst": "Doğruysa onları aramalısın. Dövüşler zorlu olacak ama bence onlardan büyük ödüller kazanılabilir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#020": {
+   "src": "Anyway, I've talked enough. I'm proud to have such a powerful fighter join our town! I wish you luck, friend!",
+   "dst": "Neyse, yeterince konuştum. Böyle güçlü bir savaşçının kasabamıza katılmasından gurur duyuyorum! Bol şans, dostum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 3",
+   "speaker": "Ildan",
+   "source": "wiki"
+  },
+  "The Passage (Quest)#021": {
+   "src": "Outsiders! Kill the outsiders!",
+   "dst": "Yabancılar! Öldürün yabancıları!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Passage (Quest)#022": {
+   "src": "Kill the outsiders!",
+   "dst": "Öldürün yabancıları!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Passage (Quest)#023": {
+   "src": "I'm sure you've noticed, but there is a tribe camp not far from here.",
+   "dst": "Fark etmişsindir ama buradan pek uzak olmayan bir kabile kampı var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "captured"
+  },
+  "The Passage (Quest)#024": {
+   "src": "They quickly realised that it was a bad idea, so they locked him in a tomb.",
+   "dst": "Bunun kötü bir fikir olduğunu çabucak anladılar ve onu bir mezara kilitlediler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "Stage 2",
+   "speaker": "Ildan",
+   "source": "captured"
+  },
+  "The Passage (Quest)#025": {
+   "src": "Have you found the shrine yet? I've heard that throwing something as tribute to it could do the trick... There should be clues about what it might be near the shrine.",
+   "dst": "Sunağı buldun mu? Ona haraç olarak bir şey atmanın işe yarayabileceğini duydum... Ne olabileceğine dair ipuçları sunağın yakınında olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Passage (Quest)#026": {
+   "src": "Sorry man, if you haven't got any business with me then I can't talk.",
+   "dst": "Kusura bakma dostum, benimle bir işin yoksa konuşamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "Troms Citizen 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
+   "source": "captured"
+  },
+  "The Passage (Quest)#027": {
+   "src": "Well... I'm glad it worked out for you.",
+   "dst": "Eh... Senin için iyi sonuçlandığına sevindim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Passage (Quest)#028": {
+   "src": "Glad to see you, citizen!",
+   "dst": "Seni gördüğüme sevindim, vatandaş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Glad to see you again!",
+    "file": "quest/underwater.json",
+    "ratio": 0.809,
+    "reason": "candidate"
+   }
+  },
+  "The Passage (Quest)#029": {
+   "src": "Have you heard tales about the great General Skien? Many years ago, he led the Tromsian Army into battle.",
+   "dst": "Büyük General Skien'in hikâyelerini duydun mu? Yıllar önce Troms Ordusu'nu savaşa götürmüştü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "Troms Citizen\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "The Passage (Quest)#030": {
+   "src": "But what is most famous about him is not stories of victory, but rather something much more mysterious.",
+   "dst": "Ama onu en ünlü yapan şey zafer hikâyeleri değil, çok daha gizemli bir şey.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "Troms Citizen\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "The Passage (Quest)#031": {
+   "src": "One day, Skien started acting very strange, and he vanished along with the entire Tromsian Army.",
+   "dst": "Bir gün Skien çok tuhaf davranmaya başladı ve bütün Troms Ordusu ile birlikte ortadan kayboldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Passage (Quest)",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

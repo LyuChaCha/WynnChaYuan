@@ -56,7 +56,7 @@ public final class SubViewsTest {
         }
     }
 
-    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "en_us"};
+    private static final String[] LANGS = {"zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr", "en_us"};
     private static final int[][] SIZES = {{640, 360}, {960, 540}, {480, 270}, {427, 240}};
 
     private static long CLOCK = 1000;

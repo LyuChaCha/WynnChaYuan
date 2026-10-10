@@ -1,0 +1,194 @@
+{
+ "_meta": {
+  "quest": "Dwelling Walls",
+  "count": 18,
+  "translated": 17,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Dwelling Walls#000": {
+   "src": "I've heard that zombies tend to gather near a large tree in the fallen city. Why are they so attracted to it, I wonder? Maybe we should ask Ragnar to investigate.",
+   "dst": "Zombilerin yıkık şehirdeki büyük bir ağacın yanında toplandığını duydum. Neden o ağaca bu kadar çekiliyorlar acaba? Belki de Ragnar'dan araştırmasını istemeliyiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwelling Walls#001": {
+   "src": "I left a very precious journal inside of this mansion, a hell within walls. It was my great grandfather's!",
+   "dst": "Bu konağın içinde çok değerli bir günlük bıraktım, duvarlar arasında bir cehennem burası. Büyük büyük dedemindi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "captured"
+  },
+  "Dwelling Walls#002": {
+   "src": "Talk to Leucsaa at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki Leucsaa ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwelling Walls#003": {
+   "src": "Let's see here... mother's old vase... check!",
+   "dst": "Bakalım... annemin eski vazosu... tamam!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#004": {
+   "src": "Dining room table... got it here, check!",
+   "dst": "Yemek masası... burada, tamam!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#005": {
+   "src": "Finally, the journal. It's out here somewhere, I assume. I'll look around.",
+   "dst": "Son olarak günlük. Sanırım buralarda bir yerde. Bir etrafa bakayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#006": {
+   "src": "...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#007": {
+   "src": "Hold on, what? The journal! I must have forgotten it inside the mansion!",
+   "dst": "Dur, ne? Günlük! Konağın içinde unutmuş olmalıyım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#008": {
+   "src": "You there! Would you mind doing me a deed?",
+   "dst": "Sen oradaki! Bana bir iyilik yapar mısın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#009": {
+   "src": "The mansion was designed by a Corkian architect, and I was scammed into buying it.",
+   "dst": "Konağı Corkuslu bir mimar tasarladı ve satın alırken kazıklandım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#010": {
+   "src": "If you step inside the mansion just for a few moments, you'll understand why the sellers had to trick someone into investing in their god forsaken real estate!",
+   "dst": "Konağa birkaç dakikalığına adım atsan bile satıcıların o lanet olası mülklerine yatırım yapsın diye neden birini kandırmak zorunda kaldığını anlarsın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#011": {
+   "src": "Navigating from room to room is nearly impossible, the rooms move around. I've only been in the mansion for a week and I'm already packing my bags and moving to {p}.",
+   "dst": "Odadan odaya geçmek neredeyse imkânsız, odalar yer değiştiriyor. Konakta daha bir haftadır kalıyorum ve şimdiden bavullarımı toplayıp {p} şehrine taşınıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 1",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#012": {
+   "src": "Enter the mansion",
+   "dst": "Konağa gir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwelling Walls#013": {
+   "src": "Navigate the mansion to the room holding the journal",
+   "dst": "Konakta yolunu bulup günlüğün olduğu odaya ulaş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwelling Walls#014": {
+   "src": "Talk to Leucsaa",
+   "dst": "Leucsaa ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwelling Walls#015": {
+   "src": "The journal! You outsmarted the mansion!",
+   "dst": "Günlük! Konağı alt ettin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 4",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#016": {
+   "src": "I must thank you, that journal was priceless to my family.",
+   "dst": "Sana teşekkür borçluyum, o günlük ailem için paha biçilmezdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 4",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  },
+  "Dwelling Walls#017": {
+   "src": "Let this be a life lesson to you. Never buy a house from a Corkian architect.",
+   "dst": "Bu sana hayat dersi olsun. Corkuslu bir mimardan asla ev alma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwelling Walls",
+   "stage": "Stage 4",
+   "speaker": "Leucsaa",
+   "source": "wiki"
+  }
+ }
+}

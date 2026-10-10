@@ -1,0 +1,566 @@
+{
+ "_meta": {
+  "quest": "Dearly Departed",
+  "count": 57,
+  "translated": 56,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Dearly Departed#000": {
+   "src": "{#} Dexterity's a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+   "dst": "{#} Beceri biraz çetrefilli. Ne kadar çok olursa saldırılarının çift hasar verme ihtimali o kadar artar. Hoş, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "similar": {
+    "text": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.955,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#001": {
+   "src": "{#} Intelligence is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+   "dst": "{#} Zekâ büyücüler içindir, büyü yapma maliyetini düşürür ve azami mana miktarını artırır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured",
+   "similar": {
+    "text": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
+    "file": "quest/dearly-departed.json",
+    "ratio": 0.919,
+    "reason": "placeholders"
+   }
+  },
+  "Dearly Departed#002": {
+   "src": "[+{~} Muddy Shovel]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dearly Departed#003": {
+   "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Çiftçi Cevalus ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#004": {
+   "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
+   "dst": "Ah, yeni bir acemi gibi görünüyor! İlanımı gördün mü? Güzel, güzel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#005": {
+   "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
+   "dst": "Bak, sevgili kayınpederim yakın zamanda vefat etti ve onu aceleyle arka tarafa gömmem gerekti. Onu usulünce gömmesi için zamanında bir rahip getiremedim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#006": {
+   "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
+   "dst": "Ne yazık ki onu toprağa verirken alyansım parmağımdan kaymış olabilir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#007": {
+   "src": "I need you to go back there and, well, recover the ring.",
+   "dst": "Oraya gidip, şey, yüzüğü geri almanı istiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#008": {
+   "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
+   "dst": "Kendim de halledebileceğim bir iş elbette, ama karım zaten bir şeylerden şüpheleniyor, bir de sevgili babası daha yeni vefat etmişken...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#009": {
+   "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
+   "dst": "Eh, ne durumda olduğumu görüyorsun, değil mi? Garibana bir yardım et, şuradaki [Muddy Shovel] eşyasını alıp bana geri gel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 1",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#010": {
+   "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki küreği al.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#011": {
+   "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
+   "dst": "[Muddy Shovel] hemen şurada. Yardımın için çok minnettar olurum, acemi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 2",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#012": {
+   "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Çiftçi Cevalus'a dön",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#013": {
+   "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
+   "dst": "Küreği aldın mı? Harika! Sağlam bir zırhın ve silahın da vardır, sanırım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#014": {
+   "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
+   "dst": "Güzel, güzel. Tedbirli olmak iyidir... Hep söylerim! Hep, ha ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#015": {
+   "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
+   "dst": "Ah, hiçbir sebebi yok! Sadece emin olmak istedim, ha ha... Orası gayet güvenli olmalı, gayet güvenli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#017": {
+   "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
+   "dst": "Eh, onlar Beceri Puanı! Seviye atladıkça kazanırsın, sonra dağıtıp savaşta bonus elde edersin. Bak, ben asker değilim ama onları kullanman gerektiğini ben bile biliyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#019": {
+   "src": "You get it, or do you want me to tell you what they are?",
+   "dst": "Anladın mı, yoksa ne olduklarını anlatayım mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#023": {
+   "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
+   "dst": "hayatta kalmakta zorlanıyorsan en iyi seçeneğin. Aldığın hasarı azaltır, o kadar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#024": {
+   "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
+   "dst": "Çeviklik ise risk sevenler için. Ne kadar çok olursa gelen saldırılardan kaçma ihtimalin o kadar artar, hasarın çoğunu boşa çıkarırsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#025": {
+   "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
+   "dst": "İşin en güzel yanı, sınıfın ya da dövüş tarzın ne olursa olsun onları istediğin gibi birleştirebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#026": {
+   "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
+   "dst": "Beceri Puanlarını dağıtmak için pusulanı aç. Sonra hazır olunca içeri gir ve yüzüğümü getir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#028": {
+   "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
+   "dst": "Hadi bakalım, asker! Bize {p} ordusunun gücünü göster! Şey, yani... o yüzüğü getir bana!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#029": {
+   "src": "What's going on in there, soldier? Have you found the ring yet?",
+   "dst": "Orada neler oluyor, asker? Yüzüğü buldun mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#030": {
+   "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
+   "dst": "Gerçekten acele etmelisin, yoksa... boş ver! Yüzüğü bul ve oradan çık!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#031": {
+   "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
+   "dst": "Kutsal İnek! O... o... geri döndü! Öldür onu, çabuk!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 4",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#032": {
+   "src": "Kill the Corrupted Father-in-Law!",
+   "dst": "Yozlaşmış Kayınpeder'i öldür!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dearly Departed",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dearly Departed#033": {
+   "src": "You did it! Come back here now, so I can finally get my ring back.",
+   "dst": "Başardın! Hemen buraya gel de sonunda yüzüğümü geri alayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 5",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#035": {
+   "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
+   "dst": "Aman tanrım, beklediğimden biraz daha heyecanlı oldu, hıh. Yine de iyi iş! O canavardan kurtulabildiğimize sevindim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#036": {
+   "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
+   "dst": "Yani... zavallı kayınpederim! Bunu karıma nasıl açıklayacağımı bilmiyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#037": {
+   "src": "I'll take the ring now, it's rather precious to me...",
+   "dst": "Yüzüğü şimdi alayım, benim için epey kıymetli...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#038": {
+   "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
+   "dst": "Neyse, bugün yaptığın, şey, işler için hak ettiğin bu ödülü al. Belki böyle devam edersen bir gün Ragnar gibi bir kahraman bile olursun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Cevalus",
+   "source": "wiki"
+  },
+  "Dearly Departed#039": {
+   "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
+   "dst": "Merhaba, yabancı. Benimle konuşmak istediğin bir şey mi vardı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#040": {
+   "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
+   "dst": "Kızmam lazım ama... şaşırmış gibi yapamam. Hep böyle unutkan bir ahmak olmuştur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#041": {
+   "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
+   "dst": "Ama bu çok şeyi açıklıyor... Babam öldüğünden beri tuhaf davranıyordu. Demek olan buymuş, söylediğin için teşekkürler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#042": {
+   "src": "That's right. The one and only, ha ha...",
+   "dst": "Aynen öyle. Bir tanecik, ha ha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#043": {
+   "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
+   "dst": "Biz geçinmeye çalışan basit çiftçileriz. Babama bakıyorduk ta ki... şey... işte...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#044": {
+   "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
+   "dst": "Teşekkür ederim... Her şey öyle ani oldu ki. {p} bölgesine gittiğim gün babam turp gibiydi, döndüğümde ise çoktan gömülmüştü. Hastalık çok hızlı gelmiş olmalı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#045": {
+   "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
+   "dst": "Ama o yaşta şaşırmıyorum... Sadece zamanında buraya bir rahip getiremememiz üzücü, babam çok dindar bir adamdı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#046": {
+   "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
+   "dst": "Babam... Her şeyden önce iyi kalpli ve hep cömertti. Bütün bu çiftliği bize bıraktı. Bir de çok dindardı, gerçek bir mümin. Belki de o yüzden bu kadar uzun yaşadı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#047": {
+   "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
+   "dst": "Ah, canım... Susmazsam yine ağlamaya başlayacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 6",
+   "speaker": "Farmer Kelri",
+   "source": "wiki"
+  },
+  "Dearly Departed#048": {
+   "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
+   "dst": "Beceri Puanlarını da kullandın, değil mi? Bir şey olursa işine yarayabilirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#049": {
+   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
+   "dst": "Beş tane var.  Güç,  Beceri,  Zekâ,  Savunma ve  Çeviklik, her birinin farklı bonusu var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#050": {
+   "src": "Why are you asking me that?",
+   "dst": "Bunu neden soruyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#051": {
+   "src": "What are Skill Points?",
+   "dst": "Beceri Puanı nedir?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#052": {
+   "src": "I got it.",
+   "dst": "Anladım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#053": {
+   "src": "About Strength.",
+   "dst": "Güç hakkında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#054": {
+   "src": "About Dexterity.",
+   "dst": "Beceri hakkında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#055": {
+   "src": "About Intelligence.",
+   "dst": "Zekâ hakkında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#056": {
+   "src": "Not yet...",
+   "dst": "Henüz değil...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#057": {
+   "src": "Dig up the grave?",
+   "dst": "Mezarı kazayım mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#058": {
+   "src": "There you go...",
+   "dst": "İşte oldu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#059": {
+   "src": "Now to see if you can find that ring Cevalus mentioned...",
+   "dst": "Şimdi Cevalus'un bahsettiği yüzüğü bulabilecek misin, bakalım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#060": {
+   "src": "You manage to pry the ring off the monster's finger...",
+   "dst": "Yüzüğü canavarın parmağından sökmeyi başarıyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#061": {
+   "src": "About Defence.",
+   "dst": "Savunma hakkında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#062": {
+   "src": "About Agility.",
+   "dst": "Çeviklik hakkında.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#063": {
+   "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
+   "dst": "{#} Güç, düşmanları devirmekte zorlanıyorsan işe yarar. Saldırıların daha sert vurur, bu kadar basit.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured"
+  }
+ }
+}

@@ -1,0 +1,524 @@
+{
+ "_meta": {
+  "quest": "Taking the Tower",
+  "count": 51,
+  "translated": 50,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Taking the Tower#000": {
+   "src": "You look like an adventurer in need of some work, pal. I have need of your services, but you'll need to be level {~} at least.",
+   "dst": "İşe ihtiyacı olan bir maceracıya benziyorsun, dostum. Hizmetlerine ihtiyacım var ama en az {~}. seviye olman gerek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "Aledar\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Taking the Tower#001": {
+   "src": "Tasim told me all about the corrupted force you took out. I wish I could have been here to help!",
+   "dst": "Tasim, alt ettiğiniz o yozlaşmış birliği bana baştan sona anlattı. Keşke ben de burada olup yardım edebilseydim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#002": {
+   "src": "We did it! Let's get back to Lieutenant Van and tell him the news.",
+   "dst": "Başardık! Hadi Teğmen Van'a dönüp haberi verelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#003": {
+   "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Item Upgrader!",
+   "dst": "Ah, dur. Önce uğramamız gereken bir yer var. Beni Eşya Geliştirici'ye kadar takip et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#004": {
+   "src": "Apparently, the big bad at the top of the tower is weak to  Water damage!",
+   "dst": "Duyduğuma göre kulenin tepesindeki koca kötü  Su hasarına karşı zayıfmış!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#005": {
+   "src": "You can apply various elemental powders to your weapons, which lets them deal types of damage they might not have been able to before.",
+   "dst": "Silahlarına çeşitli elementel tozlar uygulayabilirsin; böylece daha önce veremedikleri türde hasar verebilirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#006": {
+   "src": "In this case, you can apply a  Water powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
+   "dst": "Bu durumda bir  Su tozu uygulayabilirsin, böylece silahın kuledeki yozlaşmış düşmanlara karşı daha etkili olur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#007": {
+   "src": "...The point is- here. Take this elemental powder and Hold the powder, then Right Click on your weapon. Let me know when you're done!",
+   "dst": "...Demem o ki, al bakalım. Bu elementel tozu al, tozu eline tut, sonra silahına Sağ Tık yap. Bitince bana haber ver!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#008": {
+   "src": "[+{~} Water Powder I]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#009": {
+   "src": "You see this Item Upgrader? It can be used to upgrade powders to high tiers.",
+   "dst": "Şu Eşya Geliştirici'yi görüyor musun? Tozları daha yüksek kademelere yükseltmek için kullanılabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#010": {
+   "src": "It can also remove powders from your items, if you need to- don't worry, you'll get your powders back!",
+   "dst": "Gerekirse eşyalarındaki tozları da çıkarabilir. Merak etme, tozlarını geri alırsın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#011": {
+   "src": "...Anyway, Lieutenant Van and the others are by that bunch of houses in the {p}- you probably saw it on your way in.",
+   "dst": "...Neyse, Teğmen Van ve diğerleri {p} bölgesindeki şu ev kümesinin yanında. Gelirken muhtemelen görmüşsündür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#012": {
+   "src": "It doesn't much matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
+   "dst": "İşi kimin yaptığı pek önemli değil, yeter ki yapılsın. Bir fırsat görürsen, dal gitsin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "captured"
+  },
+  "Taking the Tower#013": {
+   "src": "If you need to retreat, or the corrupteds are slain, regroup here! Understood?",
+   "dst": "Geri çekilmen gerekirse ya da yozlaşmışlar öldürülürse burada toplanın! Anlaşıldı mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "captured"
+  },
+  "Taking the Tower#014": {
+   "src": "Hey, {u}, there you are! Come on, let's climb that tower!",
+   "dst": "Hey, {u}, buradasın demek! Hadi, tırmanalım şu kuleye!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Taking the Tower#015": {
+   "src": "They have, lieutenant! {u} and I reached the top and defeated the corrupted.",
+   "dst": "Yenildiler, teğmenim! {u} ile birlikte tepeye ulaşıp yozlaşmışı yendik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "captured"
+  },
+  "Taking the Tower#016": {
+   "src": "Speak to Aledar in the {p} Barracks at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] konumunda, {p} Kışlası'ndaki Aledar ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#017": {
+   "src": "Oh, {u}! Hey! It's good to see you and Tasim again. Hope you didn't have too many adventures without me!",
+   "dst": "Aa, {u}! Selam! Seni ve Tasim'i yeniden görmek ne güzel. Umarım bensiz çok fazla maceraya atılmamışsınızdır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#018": {
+   "src": "Tasim's gone off to the training room, if you were looking for him. He's really jumping straight into it, which... is good! We all need to get stronger so we can defend the province.",
+   "dst": "Tasim'i arıyorsan eğitim odasına gitti. Doğrudan işe dalıyor, bu da... iyi bir şey! Eyaleti savunabilmek için hepimizin güçlenmesi lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#019": {
+   "src": "...Oh! Since you're here- I was about to head out to join Lieutenant Van's squad to take back a tower overtaken by corrupteds. You should come with us, too!",
+   "dst": "...Ha! Madem buradasın, ben de yozlaşmışların ele geçirdiği bir kuleyi geri almak için Teğmen Van'ın birliğine katılmaya gidiyordum. Sen de bizimle gelmelisin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#020": {
+   "src": "Well? What do you think? Want to get some real combat experience? It shouldn't take long.",
+   "dst": "Ee? Ne dersin? Biraz gerçek savaş tecrübesi edinmek ister misin? Uzun sürmez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#021": {
+   "src": "Perfect. Well, no time better than the present! Let's get going.",
+   "dst": "Mükemmel. Eh, işin en iyisi hemen başlamak! Hadi gidelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#022": {
+   "src": "Oh. Alright.",
+   "dst": "Ha. Peki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#023": {
+   "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
+   "dst": "Neyse, bir süre daha buralardayım. Fikrini değiştirirsen haber ver!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#024": {
+   "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
+   "dst": "Hey, döndün! Fikrini değiştirdin mi? Yozlaşmış bir kuleye baskına katılmak ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 1",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#025": {
+   "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
+   "dst": "Aledar'ı [{~}, {~}, -{~}] konumundaki Toz Ustası'na kadar takip et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#026": {
+   "src": "Alright, so. There's something I've been told about the tower we're going to be attacking which we can prepare for!",
+   "dst": "Pekâlâ. Saldıracağımız kule hakkında bana söylenen, hazırlanabileceğimiz bir şey var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#027": {
+   "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
+   "dst": "Duyduğuma göre kulenin tepesindeki koca kötü hasara karşı zayıfmış! Bu yüzden de Toz Ustası'nın yanındayız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#028": {
+   "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
+   "dst": "Ben, ıı... şu element konuşmasının tamamını ezbere hatırlamıyorum. Bunlar hakkında daha fazlasını öğrenmek istersen kışladaki Kaptan Ragon ile konuşman gerek. Bu konuda koca bir dersi var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#029": {
+   "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
+   "dst": "...Demem o ki, al bakalım. Bu elementel tozu al ve uygulatmak için Toz Ustası ile konuş. Bitince bana haber ver!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#030": {
+   "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
+   "dst": "Silahına bir Su Tozu uygula, sonra [{~}, {~}, -{~}] konumundaki Aledar'a haber ver.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#031": {
+   "src": "Got the powder on your weapon? Good, that means we're ready.",
+   "dst": "Tozu silahına uyguladın mı? Güzel, demek ki hazırız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#032": {
+   "src": "Lead the way! I'll be right behind you.",
+   "dst": "Yolu göster! Hemen arkandayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#033": {
+   "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] konumunda, Raging Tower yakınındaki Teğmen Van'ın birliğiyle buluş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#034": {
+   "src": "Ah, Aledar! Good to see you here. Who's this with you?",
+   "dst": "Ah, Aledar! Seni burada görmek güzel. Yanındaki kim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#035": {
+   "src": "This is {u}, sir. They're here to join our assault, if you'll allow it.",
+   "dst": "Bu {u}, efendim. İzin verirseniz saldırımıza katılmak için burada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#036": {
+   "src": "Hm... Well, I don't see why not. The more the merrier, that's what I say.",
+   "dst": "Hm... Neden olmasın? Ne kadar kalabalık o kadar iyi, ben öyle derim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#037": {
+   "src": "If everyone's here, we can begin. Here's the plan! We'll need to fight off some of the forces near the base of the tower, so that someone can climb to the top.",
+   "dst": "Herkes geldiyse başlayabiliriz. Plan şu! Birinin tepeye tırmanabilmesi için kulenin dibindeki kuvvetlerin bir kısmını püskürtmemiz gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#038": {
+   "src": "Yes, sir!",
+   "dst": "Emredersin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#039": {
+   "src": "Good. Alright soldiers, let's take back that tower!",
+   "dst": "Güzel. Pekâlâ askerler, geri alalım şu kuleyi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#040": {
+   "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
+   "dst": "Haydi, kuleye doğru! Şansımız yaver giderse kuleyi ele geçiren yozlaşmışları temizleyebiliriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 4",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#041": {
+   "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
+   "dst": "[{~}, {~}, -{~}] konumundaki Raging Tower'a saldır ve tepedeki canavarı yen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#042": {
+   "src": "Alright. It's time to take on the tower! We've got this, {u}.",
+   "dst": "Pekâlâ. Kuleye girme vakti! Bunu başarırız, {u}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 5",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#043": {
+   "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumundaki Teğmen Van'a başarını bildir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#044": {
+   "src": "We did it, we killed the corrupted! Come on, let's get back to Lieutenant Van with the news!",
+   "dst": "Başardık, yozlaşmışı öldürdük! Hadi, Teğmen Van'a dönüp haberi verelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "Taking the Tower#045": {
+   "src": "It seems everyone has returned. Well? Have the corrupted forces been vanquished?",
+   "dst": "Görünüşe göre herkes döndü. Eee? Yozlaşmış kuvvetler yok edildi mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#046": {
+   "src": "Fine work, soldiers! Another great victory for the {p} army. With the leader killed, it shouldn't be too difficult to clear out the rest of them.",
+   "dst": "İyi iş, askerler! {p} ordusu için bir büyük zafer daha. Liderleri öldüğüne göre gerisini temizlemek zor olmamalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#047": {
+   "src": "I'll let the Admiral know of your victory today, soldiers. And- here, some payment for your work.",
+   "dst": "Bugünkü zaferinizi Amiral'e bildireceğim, askerler. Ve, alın, emeğinizin karşılığı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#048": {
+   "src": "The two of you have a promising future. I look forward to serving with you in the future!",
+   "dst": "İkinizin de parlak bir geleceği var. İleride sizinle birlikte hizmet etmeyi dört gözle bekliyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  },
+  "Taking the Tower#049": {
+   "src": "Talking Lieutenant Van",
+   "dst": "Teğmen Van ile konuşuluyor",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Taking the Tower#050": {
+   "src": "We'll take care of the remaining stragglers, don't you worry. Thank you for your work today, soldier.",
+   "dst": "Kalan başıboşların icabına biz bakarız, siz merak etmeyin. Bugünkü emeğin için teşekkürler, asker.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Taking the Tower",
+   "stage": "Stage 6",
+   "speaker": "Lieutenant Van",
+   "source": "wiki"
+  }
+ }
+}

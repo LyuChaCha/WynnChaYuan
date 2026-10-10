@@ -1,0 +1,480 @@
+{
+ "_meta": {
+  "quest": "Creeper Infiltration",
+  "count": 47,
+  "translated": 47,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Creeper Infiltration#000": {
+   "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
+   "dst": "Creeper mağarasına gitmek için batı yolunu takip et ve domuz adam kamplarında sola dön.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "Thomas\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured",
+   "similar": {
+    "text": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
+    "file": "quest/creeper-infiltration.json",
+    "ratio": 0.891,
+    "reason": "candidate"
+   }
+  },
+  "Creeper Infiltration#001": {
+   "src": "You had a piece of skin? Well, you don't seem to have it now, so I can't say I believe you.",
+   "dst": "Bir parça derin mi vardı? Eh, şu an üstünde yok gibi, o yüzden sana inandığımı söyleyemem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Creeper Infiltration#002": {
+   "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
+   "dst": "Ben Thomas, Pigman Ravine'deki bir köyün erzakını yönetmeye yardım ediyorum. Ama ufak bir sorunum var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#003": {
+   "src": "We're running low on ravine grains, which is our main staple we use for our food.",
+   "dst": "Vadi tahılımız azalıyor, yemeklerimizin temeli o.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#004": {
+   "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
+   "dst": "Son girişimizde tepeden bir patlama duydum. Korkarım domuz adamlar tahıl stoğumuzu TNT ile havaya uçuruyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#005": {
+   "src": "I came here to {p} to see if I could find help here, but I've had no luck. Until now, that is. Would you be willing to help?",
+   "dst": "Yardım bulabilir miyim diye {p} bölgesine geldim ama hiç şansım yaver gitmedi. Şimdiye kadar, yani. Yardım eder misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#006": {
+   "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
+   "dst": "Eder misin? Hayatımı kurtarıyorsun. Köyde buluşuruz, kasabadan çıkan yolu takip et ve vadilere giden en kuzeydeki girişi kullan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#007": {
+   "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
+   "dst": "Oraya varınca vadinin sağ duvarına yakın dur ve girişe ulaşmak için merdivenleri tırman. Bir de tünelde dikkatli ol, domuz adamlar silah olarak taş fırlatıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#008": {
+   "src": "Oh, finally, someone has come to this hidden village!",
+   "dst": "Ah, nihayet biri bu gizli köye geldi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#009": {
+   "src": "I am Thomas, and I help manage the supplies for this ravine village. Though, I have a bit of a problem...",
+   "dst": "Ben Thomas, bu vadi köyünün erzakını yönetmeye yardım ediyorum. Ama ufak bir sorunum var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#010": {
+   "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
+   "dst": "Benden çok daha güçlü görünüyorsun, belki tüneldeki domuz adamları geçip tepedeki patlamalara son verebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#011": {
+   "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
+   "dst": "Vadinin sağ duvarına yakın dur ve girişe ulaşmak için merdivenleri tırman. Bir de tünelde dikkatli ol, domuz adamlar silah olarak taş fırlatıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 1",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#012": {
+   "src": "Enter the tunnel at [-{~}, {~}, -{~}] and reach the top of the ravine",
+   "dst": "[-{~}, {~}, -{~}] konumundaki tünele gir ve vadinin tepesine ulaş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#013": {
+   "src": "Bring back the [Creeper Skin] to Thomas at [-{~}, {~}, -{~}]",
+   "dst": "[Creeper Skin] eşyasını [-{~}, {~}, -{~}] konumundaki Thomas'a geri getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#014": {
+   "src": "I didn't expect you to fall out of the sky like that. Are you okay, or should I go get the potion merchant to heal you?",
+   "dst": "Gökten öyle düşeceğini beklemiyordum. İyi misin, yoksa seni iyileştirsin diye iksir tüccarını mı çağırayım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#015": {
+   "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
+   "dst": "İyi misin? Ah, buna sevindim. Domuz adamlardan ve patlayıcılarından kurtulabildin mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#016": {
+   "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
+   "dst": "Yeşil bir yaratık mı? \"Creeper\" mı? Bu dünyada öyle bir şey yok, hele etrafta bu kadar domuz adam varken!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#017": {
+   "src": "Oh, you brought a piece of skin back. How odd, I've seen this skin before...",
+   "dst": "Ah, bir parça deri getirmişsin. Ne tuhaf, bu deriyi daha önce görmüştüm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#018": {
+   "src": "There's a large cave over to the south. I tried to enter it, but I got ambushed by green creatures...",
+   "dst": "Güneyde büyük bir mağara var. İçeri girmeye çalıştım ama yeşil yaratıkların pususuna düştüm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#019": {
+   "src": "I thought I was just dreaming, but these \"creepers\" you talk about...they might live in that cave.",
+   "dst": "Rüya gördüğümü sanmıştım ama bahsettiğin şu \"creeper\"lar...o mağarada yaşıyor olabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#020": {
+   "src": "I have an idea. I need to know for sure that they live there. A merchant can make you a mask with the skin and another material.",
+   "dst": "Bir fikrim var. Orada yaşadıklarından emin olmam lazım. Bir tüccar bu deri ve başka bir malzemeyle sana bir maske yapabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#021": {
+   "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
+   "dst": "Yakınlardaki bir mağarada bazen bir Pigman Overlord takılıyor. Onu öldürürsen maske yapmaya yetecek kadar sağlam bir domuz adam postu alabilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#022": {
+   "src": "If you continue on the western path past the tunnel entrance, you should find a camp where the Overlord is located.",
+   "dst": "Batı yolundan tünel girişini geçip devam edersen Overlord'un bulunduğu bir kampa varırsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#023": {
+   "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
+   "dst": "Git domuz adam postunu al, sonra bana dön de sana ne yapacağını söyleyeyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 3",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#024": {
+   "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
+   "dst": "[-{~2}, {~3}, -{~4}] yakınındaki Pigman Overlord'dan [{~1} Pigman Hide] al ve Thomas'a dön",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#025": {
+   "src": "I see you have the hide. This skin will work perfectly for my plan.",
+   "dst": "Postu almışsın. Bu deri planım için mükemmel olacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#026": {
+   "src": "There is a Mask Merchant in this village. He can make you a mask with the two materials I have.",
+   "dst": "Bu köyde bir Maske Tüccarı var. Elimdeki iki malzemeyle sana bir maske yapabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#027": {
+   "src": "With the mask, you can put it on and go undetected into the cave with these \"creepers\". Only then will we know the truth.",
+   "dst": "Maskeyi takınca o \"creeper\"ların mağarasına fark edilmeden girebilirsin. Ancak o zaman gerçeği öğreniriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#028": {
+   "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
+   "dst": "Bir de maskeyi bir şekilde kaybedersen, tüccara bir parça deri ve post daha götürürsen sana yenisini yapabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#029": {
+   "src": "Here are the materials. Be careful out there. Who knows what those green monsters could do to you...",
+   "dst": "İşte malzemeler. Dışarıda dikkatli ol. O yeşil canavarların sana neler yapabileceğini kim bilir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 4",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#030": {
+   "src": "Buy the creeper mask from the merchant and enter the creeper hideout at [-{~}, {~}, -{~}]",
+   "dst": "Tüccardan creeper maskesini satın al ve [-{~}, {~}, -{~}] konumundaki creeper sığınağına gir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#031": {
+   "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
+   "dst": "Creeper'ların Wynn'de var olduğunu kanıtlamak için [{~} Creeper Powder] eşyasını [-{~}, {~}, -{~}] konumundaki Thomas'a getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#032": {
+   "src": "So, what was in the cave? Were there really creepers in there?",
+   "dst": "Eee, mağarada ne vardı? Gerçekten içeride creeper'lar var mıydı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#033": {
+   "src": "What's this? It smells like gunpowder...but more earthy. And this came from the cave?",
+   "dst": "Bu da ne? Barut gibi kokuyor...ama daha topraksı. Bu mağaradan mı geldi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#034": {
+   "src": "This powder is definitely not native to this area. It has to have come from those creepers.",
+   "dst": "Bu toz kesinlikle bu bölgeye ait değil. O creeper'lardan gelmiş olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#035": {
+   "src": "I guess for now we'll leave them at peace. If they do exist, they don't need to be hunted down to extinction.",
+   "dst": "Sanırım şimdilik onları rahat bırakacağız. Gerçekten varlarsa, nesilleri tükenene kadar avlanmaları gerekmez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#036": {
+   "src": "Besides, if they are composed of gunpowder, they could easily blow this ravine to pieces.",
+   "dst": "Hem baruttan oluşuyorlarsa bu vadiyi kolayca havaya uçurabilirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#037": {
+   "src": "Thank you for your help. I guess you deserve some sort of reward, considering you helped solve the ravine's big mystery.",
+   "dst": "Yardımın için teşekkürler. Vadinin büyük gizemini çözmeye yardım ettiğine göre bir ödülü hak ediyorsun herhalde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#038": {
+   "src": "Feel free to come back to our village any time. By then our food supply should be stable.",
+   "dst": "Köyümüze istediğin zaman tekrar gel. O zamana kadar yiyecek stoğumuz düzelmiş olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "stage": "Stage 6",
+   "speaker": "Thomas",
+   "source": "wiki"
+  },
+  "Creeper Infiltration#039": {
+   "src": "Ah, it's good to see you again, pal! I apologize for not inviting you to the celebrations, but you seemed rather busy!",
+   "dst": "Ah, seni yeniden görmek ne güzel, dostum! Seni kutlamalara çağırmadığım için kusura bakma, epey meşgul görünüyordun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#040": {
+   "src": "Oh, it's you! Aaaagghh... Thank you for what you did for us, it's... mmhhhgg... really appreciated...",
+   "dst": "Ah, sen misin! Aaaagghh... Bizim için yaptıkların için teşekkürler, gerçekten... mmhhhgg... çok makbule geçti...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#041": {
+   "src": "Anyone! Can anyone- oh, hello. You look strong enough to be able to help me.",
+   "dst": "Kimse yok mu! Biri bana- ah, merhaba. Bana yardım edecek kadar güçlü görünüyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
+  },
+  "Creeper Infiltration#042": {
+   "src": "We usually get it ourselves, but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
+   "dst": "Genelde kendimiz toplarız ama son zamanlarda öfkeli bir domuz adam grubu, tahılın yetiştiği vadinin tepesine çıkan tüneli ele geçirdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "stage": "Stage 1",
+   "speaker": "Thomas"
+  },
+  "Creeper Infiltration#043": {
+   "src": "Have you been to the creeper cave? Just follow the western path and turn left at the pigman camps.",
+   "dst": "Creeper mağarasına gittin mi? Batı yolunu takip et ve domuz adam kamplarında sola dön.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured",
+   "stage": "Stage 4",
+   "speaker": "Thomas"
+  },
+  "Creeper Infiltration#044": {
+   "src": "Oh, a visitor? Interesting. I thought I only knew about this cave, considering I was called crazy by my master.",
+   "dst": "Ah, bir ziyaretçi mi? İlginç. Ustam bana deli dediğine göre bu mağarayı bir tek ben biliyorum sanıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#045": {
+   "src": "I've lived down here for a while now, studying the creepers. They are mythical in this region, and I want to prove everyone wrong.",
+   "dst": "Bir süredir burada yaşıyorum, creeper'ları inceliyorum. Bu bölgede efsane sayılıyorlar, ben de herkesin yanıldığını kanıtlamak istiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  },
+  "Creeper Infiltration#046": {
+   "src": "Don't worry about being trapped in here, though. There's a magic doorway right outside my house that can teleport you out if you wish to leave.",
+   "dst": "Burada mahsur kalmaktan korkma ama. Evimin hemen dışında, gitmek istersen seni dışarı ışınlayabilecek büyülü bir kapı var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Creeper Infiltration",
+   "source": "captured"
+  }
+ }
+}

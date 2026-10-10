@@ -1,0 +1,304 @@
+{
+ "_meta": {
+  "quest": "WynnExcavation Site B",
+  "count": 29,
+  "translated": 29,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "WynnExcavation Site B#000": {
+   "src": "Hello there! We are working very hard here at this excavation site! We have one in {p} as well, I think you should check it out!",
+   "dst": "Merhaba! Bu kazı alanında çok sıkı çalışıyoruz! {p} bölgesinde de bir tane var, bence bir göz atmalısın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "WynnExcavation Site B#001": {
+   "src": "Bring the Yellow Crystal Shard to Excavator Lykron at [{~}, {~}, -{~}] The entrance to the cave is at [{~}, {~}, -{~}].",
+   "dst": "Sarı Kristal Parçasını Kazıcı Lykron'a götür: [{~}, {~}, -{~}]. Mağaranın girişi: [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#002": {
+   "src": "Good day! You're the person that helped us out in the desert aren't you? Excellent! Just the person I need! Can you help me out with a problem I have?",
+   "dst": "İyi günler! Çölde bize yardım eden kişi sen değil misin? Mükemmel! Tam ihtiyacım olan kişi! Bir sorunumda bana yardım edebilir misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 1",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#003": {
+   "src": "Perfect! You see, we are supposed to be searching for some of the... uhhh... long lost ruins of ancient Wynn, just like in the desert!",
+   "dst": "Harika! Bak, aslında burada kadim Wynn'in şey... ııı... çoktan kaybolmuş kalıntılarından bazılarını arıyor olmamız gerekiyor, tıpkı çöldeki gibi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 1",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#004": {
+   "src": "However, it seems no progress has been made recently; my workers have stopped working!",
+   "dst": "Ama görünüşe göre son zamanlarda hiç ilerleme olmadı; işçilerim çalışmayı bıraktı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 1",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#005": {
+   "src": "The problem is, there are strange creatures down at the bottom of the cave disturbing them.",
+   "dst": "Sorun şu ki mağaranın dibinde onları rahatsız eden tuhaf yaratıklar var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 1",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#006": {
+   "src": "I need you to go and kill them, but first you should go talk to one of my colleagues, he has more information for you.",
+   "dst": "Gidip onları öldürmeni istiyorum, ama önce meslektaşlarımdan biriyle konuşmalısın, sana daha fazla bilgi verecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 1",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#007": {
+   "src": "He is located directly at the bottom of this cave, go speak to him, go on now! Off you go!",
+   "dst": "Tam bu mağaranın dibinde, git onunla konuş, hadi bakalım! Yallah!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 1",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#008": {
+   "src": "Investigate the depths of the cave",
+   "dst": "Mağaranın derinliklerini araştır",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#009": {
+   "src": "We know what you stole from us in the desert! Take THIS! You won't be escaping this dead end any time soon!",
+   "dst": "Çölde bizden ne çaldığını biliyoruz! Al BUNU! Bu çıkmaz sokaktan yakında kurtulamayacaksın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 2",
+   "speaker": "Flendar",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#010": {
+   "src": "Solve the puzzle",
+   "dst": "Bulmacayı çöz",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#011": {
+   "src": "Find the crystal",
+   "dst": "Kristali bul",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#012": {
+   "src": "What are you doing here?!",
+   "dst": "Burada ne yapıyorsun?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Guard",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#013": {
+   "src": "This door is closed; the mine entrance behind it isn't open at this time.",
+   "dst": "Bu kapı kapalı; arkasındaki maden girişi şu anda açık değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Guard",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#014": {
+   "src": "I'm here to make sure no one uses the passage while the archaeologist works.",
+   "dst": "Arkeolog çalışırken kimsenin geçidi kullanmamasını sağlamak için buradayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Guard",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#015": {
+   "src": "You will have to find another exit if you want to get out!",
+   "dst": "Çıkmak istiyorsan başka bir çıkış bulman gerekecek!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Guard",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#016": {
+   "src": "Baffling... What a puzzling situation I am in...",
+   "dst": "Şaşırtıcı... Ne kafa karıştırıcı bir durumdayım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Archaeologist",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#017": {
+   "src": "I cannot open this door for some reason...",
+   "dst": "Nedense bu kapıyı açamıyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Archaeologist",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#018": {
+   "src": "We suspect the purple crystal is behind this door, but the descriptions in the scriptures don't match this door.",
+   "dst": "Mor kristalin bu kapının ardında olduğundan şüpheleniyoruz, ama yazıtlardaki tarifler bu kapıya uymuyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Archaeologist",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#019": {
+   "src": "They seem to describe another door, but all our evidence says otherwise.",
+   "dst": "Başka bir kapıyı tarif ediyor gibiler, ama bütün kanıtlarımız aksini söylüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Archaeologist",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#020": {
+   "src": "The scriptures also say something about hidden within the rocks... But we removed them all!",
+   "dst": "Yazıtlar kayaların içinde saklı bir şeyden de bahsediyor... Ama hepsini kaldırdık!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Archaeologist",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#021": {
+   "src": "Well, the writing isn't actually all that clear. It could mean virtually anything, I think one of these words means hippo! Guess we'll have to find out!",
+   "dst": "Eh, yazı aslında o kadar da açık değil. Hemen hemen her anlama gelebilir, bence şu kelimelerden biri su aygırı demek! Görünüşe göre öğreneceğiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Archaeologist",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#022": {
+   "src": "Anyway, back to figuring out what needs to be done here... Wait, who are you, you're not an employee of WynnExcavation!",
+   "dst": "Neyse, burada ne yapılması gerektiğini çözmeye dönelim... Dur, sen kimsin, sen WynnKazı çalışanı değilsin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 4",
+   "speaker": "WynnExcavation Archaeologist",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#023": {
+   "src": "Talk to Excavator Lykron",
+   "dst": "Kazıcı Lykron ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#024": {
+   "src": "I have to admit, I'm impressed. I genuinely thought our plan would be successful. Who knew that dead end had a secret exit.",
+   "dst": "İtiraf etmeliyim, etkilendim. Planımızın başarılı olacağını gerçekten düşünmüştüm. O çıkmaz sokağın gizli bir çıkışı olduğunu kim bilebilirdi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 5",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#025": {
+   "src": "Not me apparently. We know what you took in the desert, you were just some kid expected to do a delivery job, who knew you'd take a shard of the crystal.",
+   "dst": "Ben değil, belli ki. Çölde ne aldığını biliyoruz, sen yalnızca bir teslimat işi yapması beklenen bir çocuktun, kristalden bir parça alacağın kimin aklına gelirdi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 5",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#026": {
+   "src": "Don't pretend like you don't know what it is, you know as well as I do combining the four crystal shards is told to bring unlimited power!",
+   "dst": "Ne olduğunu bilmiyormuş gibi yapma, dört kristal parçasını birleştirmenin sınırsız güç getirdiği söylendiğini sen de benim kadar iyi biliyorsun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 5",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#027": {
+   "src": "You will not interfere any longer. The location of the remaining crystals are known only to us; the fire and leaf crystals are safe.",
+   "dst": "Artık işimize karışmayacaksın. Kalan kristallerin yerini yalnızca biz biliyoruz; ateş ve yaprak kristalleri güvende.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 5",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  },
+  "WynnExcavation Site B#028": {
+   "src": "I see that tricking you isn't the way to defeating you. If we ever meet again, we'll be using force and upping our security. Now I never want to see you again. Our socie- I mean company, will not tolerate your interference again.",
+   "dst": "Görüyorum ki seni yenmenin yolu kandırmak değil. Bir daha karşılaşırsak güç kullanacak ve güvenliğimizi artıracağız. Şimdi seni bir daha görmek istemiyorum. Cemiyetimiz- yani şirketimiz, bir daha işimize karışmana göz yummayacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "WynnExcavation Site B",
+   "stage": "Stage 5",
+   "speaker": "Excavator Lykron",
+   "source": "wiki"
+  }
+ }
+}

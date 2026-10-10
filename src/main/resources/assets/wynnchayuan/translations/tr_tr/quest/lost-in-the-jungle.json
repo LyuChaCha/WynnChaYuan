@@ -1,0 +1,360 @@
+{
+ "_meta": {
+  "quest": "Lost in the Jungle",
+  "count": 34,
+  "translated": 34,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Lost in the Jungle#000": {
+   "src": "Welcome, stranger, to our humble village.",
+   "dst": "Mütevazı köyümüze hoş geldin, yabancı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Welcome traveler, to our humble island...",
+    "file": "quest/ice-nations.json",
+    "ratio": 0.805,
+    "reason": "candidate"
+   }
+  },
+  "Lost in the Jungle#001": {
+   "src": "However... He also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
+   "dst": "Ancak... Yanında tuhaf, mor bir değerli taş da getirmişti. Şamanımız bunu kötüye yordu ama ben kutlamalara öyle kapılmıştım ki boş verdim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#002": {
+   "src": "Hm, I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
+   "dst": "Hm, yerde tuhaf bir iz görüyorum şimdi... değerli taşın rengiyle aynı! Seni ona götürebilir, lütfen, izi takip et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#003": {
+   "src": "You should talk to Aryn now...",
+   "dst": "Şimdi Aryn ile konuşmalısın...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#004": {
+   "src": "Oh... My father sent you? Well, I am very impressed, Wynn warrior. You fight with the ferocity of our own!",
+   "dst": "Ah... Seni babam mı gönderdi? Doğrusu çok etkilendim, Wynn savaşçısı. Bizimkiler kadar vahşi dövüşüyorsun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "captured"
+  },
+  "Lost in the Jungle#005": {
+   "src": "But that is beside the point. You say you have destroyed the spirit, and it does not feel tainted any longer, so I will trust you.",
+   "dst": "Ama konumuz bu değil. Ruhu yok ettiğini söylüyorsun, artık lekelenmiş gibi de hissettirmiyor, o yüzden sana güveneceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost in the Jungle#006": {
+   "src": "Speak to Gracen at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Gracen ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#007": {
+   "src": "Excuse me, traveller... I am dreadfully sorry to ask this of you, but I need your help.",
+   "dst": "Affedersin, yolcu... Bunu senden istediğim için çok üzgünüm ama yardımına ihtiyacım var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#008": {
+   "src": "You see, my son, Aryn. Very recently, he underwent a traditional coming-of-age ceremony from our tribe.",
+   "dst": "Bak, oğlum Aryn. Çok yakın zamanda kabilemizin geleneksel ergenlik törenine katıldı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#009": {
+   "src": "He was tasked to enter the dangerous {p}, just south of here, and brave the wilderness for three days. He returned a true man, successful.",
+   "dst": "Hemen güneydeki tehlikeli {p} bölgesine girip vahşi doğada üç gün dayanması gerekiyordu. Başarıyla, gerçek bir adam olarak döndü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#010": {
+   "src": "Strange happenings began around the village. Aryn walked about at night, talking to someone, but no one else was there with him.",
+   "dst": "Köyde tuhaf şeyler olmaya başladı. Aryn geceleri ortalıkta dolaşıp biriyle konuşuyordu ama yanında kimse yoktu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#011": {
+   "src": "Just last sunrise, he vanished entirely. We sent out a search for him, but even our hardiest warriors could not venture deep into the jungle.",
+   "dst": "Daha geçen gün doğumunda tamamen ortadan kayboldu. Onu aramaya gittik ama en dayanıklı savaşçılarımız bile ormanın derinlerine giremedi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#012": {
+   "src": "We returned empty-handed, having lost our newest tribesman. The village is in terrible spirits, and I feel as though I am responsible.",
+   "dst": "Kabilemizin en yeni üyesini kaybetmiş olarak eli boş döndük. Köyün morali çok bozuk, ben de kendimi sorumlu hissediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#013": {
+   "src": "You Wynn warriors, however... great stories are told of your exploits. Surely, you will be able to brave the jungle, yes?",
+   "dst": "Ama siz Wynn savaşçıları... yaptıklarınıza dair büyük hikâyeler anlatılır. Sen bu ormana göğüs gerebilirsin, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#014": {
+   "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
+   "dst": "Yalvarırım, lütfen oğlumu bul. Tam olarak nerede bilmiyorum ama hiç şüphesiz epey içerilere götürülmüştür...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 1",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#015": {
+   "src": "Search the {p} for Aryn",
+   "dst": "Aryn'i bulmak için {p} bölgesini ara",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#016": {
+   "src": "P-please, I beg of you spirit, let me go free! The tribesmen must be so worried-",
+   "dst": "L-lütfen, yalvarırım ruh, bırak beni! Kabiledekiler çok endişelenmiştir-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#017": {
+   "src": "DO NOT RESIST, BOY! YOUR BODY IS MINE. I WAS TRAPPED IN THAT STONE FOR MILLENIA, AND NOW I AM FREE.",
+   "dst": "KARŞI KOYMA, OĞLAN! BEDENİN ARTIK BENİM. BİNLERCE YIL O TAŞIN İÇİNDE HAPSOLDUM, ŞİMDİ ÖZGÜRÜM.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn?",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#018": {
+   "src": "Aha, I hear someone coming! Surely a tribesman here to rescue me!",
+   "dst": "Aha, birinin geldiğini duyuyorum! Kesin beni kurtarmaya gelen bir kabile üyesi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#019": {
+   "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
+   "dst": "Oh! Öyleyse bu savaşçının bedeni işime çok daha iyi yarar! Gücünü bana ver, oğlan! Ele geçirmek için önce onları bir güzel benzetmem lazım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 2",
+   "speaker": "Aryn?",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#020": {
+   "src": "Defeat the spirit possessing Aryn",
+   "dst": "Aryn'i ele geçiren ruhu yen",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#021": {
+   "src": "Make sure Aryn is safe at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumunda Aryn'in güvende olduğundan emin ol",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#022": {
+   "src": "Hahah, take that, evil wraith! You'll never match the power of our tribe-",
+   "dst": "Hahah, al sana, kötü hayalet! Kabilemizin gücüne asla yetişemezsin-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#023": {
+   "src": "W-wait, you aren't part of our tribe! Who are you, why did you come here?",
+   "dst": "D-dur, sen kabilemizden değilsin! Kimsin, buraya neden geldin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#024": {
+   "src": "I...can't say the same for myself. That spirit completely overtook me, I still can't move right now...",
+   "dst": "Ben... aynısını kendim için söyleyemem. O ruh beni tamamen ele geçirdi, hâlâ kımıldayamıyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#025": {
+   "src": "For now, please. Take away this gemstone. It caused all this, I don't want to be near such a bad luck charm.",
+   "dst": "Şimdilik lütfen şu değerli taşı götür. Hepsine o sebep oldu, böyle uğursuz bir şeyin yanında olmak istemiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#026": {
+   "src": "Tell the tribe that I will return on my own. I made it back once, I can do it again once I am prepared.",
+   "dst": "Kabileye kendi başıma döneceğimi söyle. Bir kere geri döndüm, hazır olunca yine yapabilirim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 4",
+   "speaker": "Aryn",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#027": {
+   "src": "Bring the Mysterious Gemstone to Gracen at [-{~}, {~}, -{~}]",
+   "dst": "Mysterious Gemstone'u [-{~}, {~}, -{~}] konumundaki Gracen'e götür",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#028": {
+   "src": "Oh my... Aryn was possessed by a spirit residing within the gemstone?",
+   "dst": "Aman... Aryn'i değerli taşın içinde yaşayan bir ruh mu ele geçirdi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#029": {
+   "src": "How shameful... Our shaman has never been wrong before, why did I disregard his warning...",
+   "dst": "Ne utanç verici... Şamanımız daha önce hiç yanılmadı, uyarısını neden umursamadım ki...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#030": {
+   "src": "Looking at it now, this is actually quite a valuable stone. If crushed to dust, it can be used in special charms we make.",
+   "dst": "Şimdi bakınca bu aslında epey değerli bir taş. Toz haline getirilirse yaptığımız özel tılsımlarda kullanılabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#031": {
+   "src": "Here, allow me to grind this down for you. You can keep the shards for whatever purposes you may find for them in the future.",
+   "dst": "Al, bunu senin için öğüteyim. Parçaları ileride ne amaçla kullanırsan kullan, sende kalsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#032": {
+   "src": "Our tribe, and especially myself... We thank you for your service. We shall consider you one of our own, from this day forward.",
+   "dst": "Kabilemiz ve özellikle ben... Hizmetin için sana teşekkür ederiz. Bugünden itibaren seni bizden biri sayacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  },
+  "Lost in the Jungle#033": {
+   "src": "In fact, if you'd like, you may even enter my house here whenever you'd like.",
+   "dst": "Hatta istersen buradaki evime de istediğin zaman girebilirsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost in the Jungle",
+   "stage": "Stage 5",
+   "speaker": "Gracen",
+   "source": "wiki"
+  }
+ }
+}

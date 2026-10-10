@@ -89,6 +89,7 @@ public final class DialogueOffsetTest {
         check("日文畫不出來", !DialogueRewriter.drawable("グルック"));
         check("諺文畫不出來", !DialogueRewriter.drawable("계속하려면"));
         check("西里爾畫不出來", !DialogueRewriter.drawable("продолжить"));
+        check("ç 交給配對字型（Wynncraft 字型裡是空白字）", !DialogueRewriter.drawable("devam etmek için"));
 
         // 折行處被吃掉的空格要補回來，否則跨行的台詞永遠查不到
         check("接第一行不補空格",

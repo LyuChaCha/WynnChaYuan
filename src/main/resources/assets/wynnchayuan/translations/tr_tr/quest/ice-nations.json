@@ -1,0 +1,314 @@
+{
+ "_meta": {
+  "quest": "Ice Nations",
+  "count": 30,
+  "translated": 30,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Ice Nations#000": {
+   "src": "Thank you again for bringing peace upon our islands.",
+   "dst": "Adalarımıza barış getirdiğin için tekrar teşekkürler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "Hallfred\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Ice Nations#001": {
+   "src": "You are a great warrior!",
+   "dst": "Sen büyük bir savaşçısın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "Dujgon Viking 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂",
+   "source": "captured"
+  },
+  "Ice Nations#002": {
+   "src": "It's useless to come back to me if you do not have the treasure.",
+   "dst": "Hazine yanında değilse bana dönmen boşuna.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#003": {
+   "src": "...You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
+   "dst": "...Görüyorsun ya, gemimizin batmasının sebebi doğal değildi. Saldırıya uğradık...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "captured"
+  },
+  "Ice Nations#004": {
+   "src": "Have you made any progress?",
+   "dst": "Bir ilerleme kaydettin mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Ice Nations#005": {
+   "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
+   "dst": "[{~}, {~}, -{~}] konumunda, {p} üzerindeki Adigard ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#006": {
+   "src": "Welcome traveler, to our humble island...",
+   "dst": "Mütevazı adamıza hoş geldin, yolcu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#007": {
+   "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
+   "dst": "Halkımla ben buraya yıllar önce vardık. Ne yazık ki gemimiz bunu başaramadı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#008": {
+   "src": "We tried to build a nation on these islands but became divided through the years.",
+   "dst": "Bu adalarda bir ulus kurmaya çalıştık ama yıllar içinde bölündük.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#009": {
+   "src": "Because of this, we are fighting a useless war with our neighbours.",
+   "dst": "Bu yüzden komşularımızla anlamsız bir savaş veriyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#010": {
+   "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
+   "dst": "Bir barış antlaşması yapmayı denememiz gerektiğine inanıyorum, ama adadan ayrılırsam öldürülmekten korkuyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#011": {
+   "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
+   "dst": "Bize yardım eder misin? Bu antlaşma hakkında Hallfred ile konuş. Yakınlardaki başka bir buz adasında yaşıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 1",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#012": {
+   "src": "Talk to Hallfred about the peace treaty",
+   "dst": "Barış antlaşması hakkında Hallfred ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#013": {
+   "src": "Welcome traveler! What brings you to our island?",
+   "dst": "Hoş geldin, yolcu! Seni adamıza ne getirdi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#014": {
+   "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
+   "dst": "Ah, demek Adigard korkaklığından artık yabancıları gönderiyor! Öldürülmekten mi korkuyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#015": {
+   "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
+   "dst": "Bunu son kez söylüyorum: Barış antlaşmasını, Adigard ve ulusu bize... hazineyi geri verdiği gün imzalayacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#016": {
+   "src": "The one that they kept and hid from us after the shipwreck.",
+   "dst": "Gemi battıktan sonra alıkoyup bizden sakladıkları hazineyi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#017": {
+   "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
+   "dst": "Saf altın, çok değerli ve nadir! Ona onu beklediğimi söyle. Ve şu saçma hikâyeyi bir daha duymak istemiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 2",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#018": {
+   "src": "Talk back to Adigard about Hallfred's response",
+   "dst": "Hallfred'in cevabını Adigard'a ilet",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#019": {
+   "src": "I should have expected that. Hallfred was always very greedy...",
+   "dst": "Bunu beklemeliydim. Hallfred hep çok açgözlüydü...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#020": {
+   "src": "We tried to make him understand that we do not have the treasure, without much success.",
+   "dst": "Hazinenin bizde olmadığını ona anlatmaya çalıştık, pek başarılı olamadık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#021": {
+   "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
+   "dst": "Kim tarafından mı? Ölümsüzler. Canavar gibi bir gemiyi süren hayaletler ve iblisler. Bizi gafil avladılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#022": {
+   "src": "I believe they also stole our treasure during the attack.",
+   "dst": "Saldırı sırasında hazinemizi de onların çaldığına inanıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#023": {
+   "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
+   "dst": "Ulusumuzun yeniden birleşmesine yardım eder misin? Bu gemiyi bul ve hazineyi Hallfred'e götür, böylece sonunda barış içinde yaşayabiliriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#024": {
+   "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
+   "dst": "Kuzeye yelken aç. Yıllar önce bize orada saldırdılar. Bulması kolay olmalı, eminim orada şanla demirlemişlerdir... Teşekkür ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 3",
+   "speaker": "Adigard",
+   "source": "wiki"
+  },
+  "Ice Nations#025": {
+   "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
+   "dst": "Hayalet gemiyi bul ve [Ancient Treasure] eşyasını Hallfred'e getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Ice Nations#026": {
+   "src": "Incredible! He actually delivered the treasure!",
+   "dst": "İnanılmaz! Hazineyi gerçekten teslim etti!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#027": {
+   "src": "I suppose that means the end of the war between our nations!",
+   "dst": "Sanırım bu, uluslarımız arasındaki savaşın sonu demek!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#028": {
+   "src": "This is a great day! Here, take this as a reward for helping our nation.",
+   "dst": "Bugün büyük bir gün! Al, ulusumuza yardım ettiğin için bunu ödül olarak kabul et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  },
+  "Ice Nations#029": {
+   "src": "I'm sure you'll find a use for this helmet one day!",
+   "dst": "Eminim bu miğferi bir gün bir işe yarar bulursun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Ice Nations",
+   "stage": "Stage 4",
+   "speaker": "Hallfred",
+   "source": "wiki"
+  }
+ }
+}

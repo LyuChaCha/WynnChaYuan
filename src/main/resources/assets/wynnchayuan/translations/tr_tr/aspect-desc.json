@@ -1,0 +1,1438 @@
+{
+ "_meta": {
+  "domain": "aspect-desc",
+  "itemNames": true,
+  "lang": "tr_tr",
+  "count": 209,
+  "translated": 209,
+  "note": "Aspect 各階的能力說明，取自 Wynntils CDN。句型高度重複，所以是用規則轉的——同一個句型永遠得到同樣的中文。技能名稱原樣留著，交給既有的技能名詞典去換。dst 空白的代表還沒有對應的句型規則，畫面上會顯示灰色原文。 名稱不受「翻譯物品名稱」開關影響——那個開關是為了讓裝備名稱保持英文，跟這裡的道具無關。",
+  "gearNames": false,
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "aspect-desc#0000": {
+   "src": "Your Ultimate charges {~} faster.",
+   "dst": "Nihai yeteneğin {~} daha hızlı dolar.",
+   "role": "desc",
+   "aspect": "Archer's Embodiment of Perceptive Finesse",
+   "class": "archer"
+  },
+  "aspect-desc#0001": {
+   "src": "Ascension lasts +{~} longer.",
+   "dst": "Ascension +{~} daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Archer's Embodiment of Perceptive Finesse",
+   "class": "archer"
+  },
+  "aspect-desc#0002": {
+   "src": "Extinction Event spawns +{~} bombs.",
+   "dst": "Extinction Event +{~} bomba oluşturur.",
+   "role": "desc",
+   "aspect": "Archer's Embodiment of Perceptive Finesse",
+   "class": "archer"
+  },
+  "aspect-desc#0003": {
+   "src": "Twilight Zone's mark cap is +{~} higher.",
+   "dst": "Alacakaranlık Bölgesi İşaret sınırı +{~} artar.",
+   "role": "desc",
+   "aspect": "Archer's Embodiment of Perceptive Finesse",
+   "class": "archer"
+  },
+  "aspect-desc#0004": {
+   "src": "Arrow Shield gains +{~} ❁ Resistance.",
+   "dst": "Arrow Shield +{~} ❁ Direnç kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Battlement Fortification",
+   "class": "archer"
+  },
+  "aspect-desc#0005": {
+   "src": "Shrapnel Bomb gains +{~} shrapnel.",
+   "dst": "Shrapnel Bomb +{~} şarapnel kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Bullet Hell",
+   "class": "archer"
+  },
+  "aspect-desc#0006": {
+   "src": "Bryophyte Roots gains +{~} {#} Area of Effect.",
+   "dst": "Bryophyte Roots +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Clinging Lichen",
+   "class": "archer"
+  },
+  "aspect-desc#0007": {
+   "src": "Fierce Stomp gains +{~} {#} Area of Effect.",
+   "dst": "Fierce Stomp +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Dynamic Entry",
+   "class": "archer"
+  },
+  "aspect-desc#0008": {
+   "src": "Coursing Restraints gains +{~}s {#} Duration.",
+   "dst": "Coursing Restraints +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Extreme Current",
+   "class": "archer"
+  },
+  "aspect-desc#0009": {
+   "src": "Arrow Bomb gains +{~} {#} Area of Effect.",
+   "dst": "Arrow Bomb +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Extreme Firepower",
+   "class": "archer"
+  },
+  "aspect-desc#0010": {
+   "src": "Grape Bomb deals additional damage.",
+   "dst": "Grape Bomb ek hasar verir.",
+   "role": "desc",
+   "aspect": "Aspect of Fragmentation Rounds",
+   "class": "archer"
+  },
+  "aspect-desc#0011": {
+   "src": "{#} Total Damage: +{~} (of your DPS) ({#} Damage: +{~})",
+   "dst": "{#} Toplam Hasar: +{~} (DPS'inin) ({#} Hasar: +{~})",
+   "role": "desc",
+   "aspect": "Aspect of Fragmentation Rounds",
+   "class": "archer"
+  },
+  "aspect-desc#0012": {
+   "src": "Arrow Storm gains velocity and {~} reduced spread.",
+   "dst": "Arrow Storm hız kazanır ve dağılımı {~} azalır.",
+   "role": "desc",
+   "aspect": "Aspect of Further Horizons",
+   "class": "archer"
+  },
+  "aspect-desc#0013": {
+   "src": "Phantom Ray gains +{~} {#} Range.",
+   "dst": "Phantom Ray +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Further Horizons",
+   "class": "archer"
+  },
+  "aspect-desc#0014": {
+   "src": "Reduces Sniffer Dog's cooldown by -{~}s.",
+   "dst": "Sniffer Dog bekleme süresi -{~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of Olfactorial Enhancement",
+   "class": "archer"
+  },
+  "aspect-desc#0015": {
+   "src": "Frenzy builds walk speed +{~} faster and its maximum walk speed is increased by +{~}.",
+   "dst": "Frenzy yürüme hızını +{~} daha hızlı biriktirir ve maksimum yürüme hızı +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of Undercrank",
+   "class": "archer"
+  },
+  "aspect-desc#0016": {
+   "src": "Increase Grappling Hook's range by +{~}.",
+   "dst": "Grappling Hook menzili +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Barley-Woven",
+   "class": "archer"
+  },
+  "aspect-desc#0017": {
+   "src": "Increase your maximum Flint Arrows by +{~}.",
+   "dst": "Maksimum Çakmaktaşı Ok sayın +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Battle-Fletcher",
+   "class": "archer"
+  },
+  "aspect-desc#0018": {
+   "src": "{#} Total Damage: -{~} (Main Attack Damage, per arrow) ({#} Damage: -{~})",
+   "dst": "{#} Toplam Hasar: -{~} (Ana Saldırı Hasarı, ok başına) ({#} Hasar: -{~})",
+   "role": "desc",
+   "aspect": "Aspect of the Battle-Fletcher",
+   "class": "archer"
+  },
+  "aspect-desc#0019": {
+   "src": "Increase your Hound's attack speed by +{~}.",
+   "dst": "Tazının saldırı hızı +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Beastmaster",
+   "class": "archer"
+  },
+  "aspect-desc#0020": {
+   "src": "Increase your Snake's weakness effect by +{~}.",
+   "dst": "Yılanının zayıflatma etkisi +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Beastmaster",
+   "class": "archer"
+  },
+  "aspect-desc#0021": {
+   "src": "Increase your Crow's distraction duration by +{~}s.",
+   "dst": "Karganın dikkat dağıtma süresi +{~} sn artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Beastmaster",
+   "class": "archer"
+  },
+  "aspect-desc#0022": {
+   "src": "Increase your Hound's attack speed by +{~} and movement speed by +{~}.",
+   "dst": "Tazının saldırı hızı +{~}, hareket hızı +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Beastmaster",
+   "class": "archer"
+  },
+  "aspect-desc#0023": {
+   "src": "Guardian Angels gain +{~} ammunition.",
+   "dst": "Koruyucu Melekler +{~} cephane kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Heavenly Mandate",
+   "class": "archer"
+  },
+  "aspect-desc#0024": {
+   "src": "Arrow Storm gains +{~} arrow per stream.",
+   "dst": "Arrow Storm her akışta +{~} ok kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Inexhaustible Quiver",
+   "class": "archer"
+  },
+  "aspect-desc#0025": {
+   "src": "Arrow Storm gains +{~} arrows per stream.",
+   "dst": "Arrow Storm her akışta +{~} ok kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Inexhaustible Quiver",
+   "class": "archer"
+  },
+  "aspect-desc#0026": {
+   "src": "Phasing Beam can pierce through +{~} enemy.",
+   "dst": "Phasing Beam +{~} düşmanı delip geçebilir.",
+   "role": "desc",
+   "aspect": "Aspect of the Iron String",
+   "class": "archer"
+  },
+  "aspect-desc#0027": {
+   "src": "Phasing Beam can pierce through +{~} enemies.",
+   "dst": "Phasing Beam +{~} düşmanı delip geçebilir.",
+   "role": "desc",
+   "aspect": "Aspect of the Iron String",
+   "class": "archer"
+  },
+  "aspect-desc#0028": {
+   "src": "Snow Storm gains +{~} {#} Range.",
+   "dst": "Snow Storm +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the North Wind",
+   "class": "archer"
+  },
+  "aspect-desc#0029": {
+   "src": "Phantom Ray gains +{~}s {#} Duration.",
+   "dst": "Phantom Ray +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Poltergeist",
+   "class": "archer"
+  },
+  "aspect-desc#0030": {
+   "src": "Reduce Ghostly Trigger's cooldown by -{~}s.",
+   "dst": "Ghostly Trigger bekleme süresi -{~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of the Steadying Hand",
+   "class": "archer"
+  },
+  "aspect-desc#0031": {
+   "src": "Arrow Bomb travels +{~} faster.",
+   "dst": "Arrow Bomb +{~} daha hızlı ilerler.",
+   "role": "desc",
+   "aspect": "Aspect of the Thunderbolt",
+   "class": "archer"
+  },
+  "aspect-desc#0032": {
+   "src": "Divine Intervention will cause Guardian Angels to fire {~}x faster instead.",
+   "dst": "Divine Intervention bunun yerine Koruyucu Meleklerin {~}x daha hızlı ateş etmesini sağlar.",
+   "role": "desc",
+   "aspect": "Boltslinger's Embodiment of Rended Skies",
+   "class": "archer"
+  },
+  "aspect-desc#0033": {
+   "src": "Divine Intervention will cause Guardian Angels to fire {~}x faster instead, and cause explosive shots to deal +{~} more damage.",
+   "dst": "Divine Intervention bunun yerine Koruyucu Meleklerin {~}x daha hızlı ateş etmesini ve patlayıcı atışların +{~} daha fazla hasar vermesini sağlar.",
+   "role": "desc",
+   "aspect": "Boltslinger's Embodiment of Rended Skies",
+   "class": "archer"
+  },
+  "aspect-desc#0034": {
+   "src": "Triple Shots gains +{~} arrows.",
+   "dst": "Triple Shots +{~} ok kazanır.",
+   "role": "desc",
+   "aspect": "Boltslinger's Embodiment of Rended Skies",
+   "class": "archer"
+  },
+  "aspect-desc#0035": {
+   "src": "Focus' cooldown is reduced by -{~}s.",
+   "dst": "Focus bekleme süresi -{~} sn azalır.",
+   "role": "desc",
+   "aspect": "Sharpshooter's Embodiment of Laser Precision",
+   "class": "archer"
+  },
+  "aspect-desc#0036": {
+   "src": "Patient Hunter gains +{~} damage per second.",
+   "dst": "Patient Hunter saniye başına +{~} hasar kazanır.",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
+  },
+  "aspect-desc#0037": {
+   "src": "Chilling Snare gains +{~}s {#} Duration.",
+   "dst": "Chilling Snare +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Trapper's Embodiment of Persistence Predation",
+   "class": "archer"
+  },
+  "aspect-desc#0038": {
+   "src": "Lacerate gains +{~} hits, and becomes {~} faster.",
+   "dst": "Lacerate +{~} vuruş kazanır ve {~} hızlanır.",
+   "role": "desc",
+   "aspect": "Acrobat's Embodiment of Gravity Defiance",
+   "class": "assassin"
+  },
+  "aspect-desc#0039": {
+   "src": "Momentum {#} requires -{~} hits to gain a stack.",
+   "dst": "İvme {#} yığını için -{~} daha az vuruş gerekir.",
+   "role": "desc",
+   "aspect": "Acrobat's Embodiment of Gravity Defiance",
+   "class": "assassin"
+  },
+  "aspect-desc#0040": {
+   "src": "Dash is {~} stronger, and Shadow Projection launches {~} further.",
+   "dst": "Dash {~} daha güçlü olur, Shadow Projection {~} daha uzağa fırlatır.",
+   "role": "desc",
+   "aspect": "Aspect of Athleticism",
+   "class": "assassin"
+  },
+  "aspect-desc#0041": {
+   "src": "Increase Smoke Bomb's duration by {~}.",
+   "dst": "Smoke Bomb süresi {~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of Clouded Vision",
+   "class": "assassin"
+  },
+  "aspect-desc#0042": {
+   "src": "Mirror Clones {#} reduce damage by -{~}.",
+   "dst": "Ayna Klonları {#} hasarı -{~} azaltır.",
+   "role": "desc",
+   "aspect": "Aspect of Enduring Illusions",
+   "class": "assassin"
+  },
+  "aspect-desc#0043": {
+   "src": "Sandbagging's damage threshold is increased by +{~} of your max health.",
+   "dst": "Sandbagging hasar eşiği maks. canının +{~} kadarı artar.",
+   "role": "desc",
+   "aspect": "Aspect of False Coercing",
+   "class": "assassin"
+  },
+  "aspect-desc#0044": {
+   "src": "Bamboozle gains +{~} {#} Area of Effect.",
+   "dst": "Bamboozle +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Flamboyance",
+   "class": "assassin"
+  },
+  "aspect-desc#0045": {
+   "src": "Multihit gains +{~} {#} Range.",
+   "dst": "Multihit +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Redoublement",
+   "class": "assassin"
+  },
+  "aspect-desc#0046": {
+   "src": "Backstab gains +{~} {#} Range.",
+   "dst": "Backstab +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Redoublement",
+   "class": "assassin"
+  },
+  "aspect-desc#0047": {
+   "src": "Ricochets gains +{~} bounce.",
+   "dst": "Ricochets +{~} sekme kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Seeking Stars",
+   "class": "assassin"
+  },
+  "aspect-desc#0048": {
+   "src": "Ricochets gains +{~} bounces.",
+   "dst": "Ricochets +{~} sekme kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Seeking Stars",
+   "class": "assassin"
+  },
+  "aspect-desc#0049": {
+   "src": "Dissolution gains +{~}s {#} Duration.",
+   "dst": "Dissolution +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Shadow Armor",
+   "class": "assassin"
+  },
+  "aspect-desc#0050": {
+   "src": "Shurikens and Dextrous Hands prepare +{~} shurikens.",
+   "dst": "Shurikens ve Dextrous Hands +{~} shuriken hazırlar.",
+   "role": "desc",
+   "aspect": "Aspect of Sleight-Of-Hand",
+   "class": "assassin"
+  },
+  "aspect-desc#0051": {
+   "src": "Increase the amount of Shurikens you can hold by.",
+   "dst": "Taşıyabileceğin Shurikenler sayısını artırır.",
+   "role": "desc",
+   "aspect": "Aspect of Sleight-Of-Hand",
+   "class": "assassin"
+  },
+  "aspect-desc#0052": {
+   "src": "{~} {#} Total Damage: {~} (of your DPS, per shuriken) ({#} Damage: {~}) ({#} Fire: {~})",
+   "dst": "{~} {#} Toplam Hasar: {~} (DPS'inin, shuriken başına) ({#} Hasar: {~}) ({#} Ateş: {~})",
+   "role": "desc",
+   "aspect": "Aspect of Sleight-Of-Hand",
+   "class": "assassin"
+  },
+  "aspect-desc#0053": {
+   "src": "Increase the amount of Shurikens you can hold by +{~}.",
+   "dst": "Taşıyabileceğin Shurikenler sayısı +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of Sleight-Of-Hand",
+   "class": "assassin"
+  },
+  "aspect-desc#0054": {
+   "src": "{#} Total Damage: -{~} (of your DPS, per shuriken) ({#} Damage: -{~}) ({#} Fire: -{~})",
+   "dst": "{#} Toplam Hasar: -{~} (DPS'inin, shuriken başına) ({#} Hasar: -{~}) ({#} Ateş: -{~})",
+   "role": "desc",
+   "aspect": "Aspect of Sleight-Of-Hand",
+   "class": "assassin"
+  },
+  "aspect-desc#0055": {
+   "src": "Backstab's angle to deal double damage is increased by +{~}°.",
+   "dst": "Backstab'ın çift hasar verdiği açı +{~}° artar.",
+   "role": "desc",
+   "aspect": "Aspect of Unyielding Fate",
+   "class": "assassin"
+  },
+  "aspect-desc#0056": {
+   "src": "Reduce Mirage's cooldown by {~}s.",
+   "dst": "Mirage bekleme süresi {~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of Visual Distortion",
+   "class": "assassin"
+  },
+  "aspect-desc#0057": {
+   "src": "Aerial Ace gains +{~}s {#} Duration.",
+   "dst": "Aerial Ace +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Agile Blade",
+   "class": "assassin"
+  },
+  "aspect-desc#0058": {
+   "src": "Jasmine Bloom gains +{~} {#} Area of Effect per bloom.",
+   "dst": "Jasmine Bloom her çiçek için +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Airborne",
+   "class": "assassin"
+  },
+  "aspect-desc#0059": {
+   "src": "Decrease your damage per Mark {#} by -{~}.",
+   "dst": "İşaret {#} başına hasarın -{~} azalır.",
+   "role": "desc",
+   "aspect": "Aspect of the Calling Card",
+   "class": "assassin"
+  },
+  "aspect-desc#0060": {
+   "src": "Your Main Attack gains +{~} {#} Range.",
+   "dst": "Ana Saldırın +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Chain Knife",
+   "class": "assassin"
+  },
+  "aspect-desc#0061": {
+   "src": "Decrease your maximum Knives by -{~}.",
+   "dst": "Maksimum Bıçak sayın -{~} azalır.",
+   "role": "desc",
+   "aspect": "Aspect of the Dagger's Silhouette",
+   "class": "assassin"
+  },
+  "aspect-desc#0062": {
+   "src": "Increase the damage of each Knife by +{~}.",
+   "dst": "Her Bıçağın hasarı +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Dagger's Silhouette",
+   "class": "assassin"
+  },
+  "aspect-desc#0063": {
+   "src": "Reduce Shadow Projection's cooldown by {~}s.",
+   "dst": "Shadow Projection bekleme süresi {~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of the Disappearing Act",
+   "class": "assassin"
+  },
+  "aspect-desc#0064": {
+   "src": "Smoke Bomb gains +{~} {#} Area of Effect.",
+   "dst": "Smoke Bomb +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Fog Machine",
+   "class": "assassin"
+  },
+  "aspect-desc#0065": {
+   "src": "Spin Attack and Lacerate gain +{~} {#} Area of Effect.",
+   "dst": "Spin Attack ve Lacerate +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Pinwheel",
+   "class": "assassin"
+  },
+  "aspect-desc#0066": {
+   "src": "Multihit gains +{~} hit.",
+   "dst": "Multihit +{~} vuruş kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Stellar Flurry",
+   "class": "assassin"
+  },
+  "aspect-desc#0067": {
+   "src": "Multihit gains +{~} hits.",
+   "dst": "Multihit +{~} vuruş kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Stellar Flurry",
+   "class": "assassin"
+  },
+  "aspect-desc#0068": {
+   "src": "Aerial Ace gains +{~} {#} Damage Bonus.",
+   "dst": "Aerial Ace +{~} {#} Hasar Bonusu kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Unstoppable Force",
+   "class": "assassin"
+  },
+  "aspect-desc#0069": {
+   "src": "Pierce the Veil lasts +{~}s longer.",
+   "dst": "Pierce the Veil +{~} sn daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Assassin's Embodiment of Otherworldly Detachment",
+   "class": "assassin"
+  },
+  "aspect-desc#0070": {
+   "src": "Another Self has +{~} more health.",
+   "dst": "Another Self +{~} daha fazla cana sahiptir.",
+   "role": "desc",
+   "aspect": "Assassin's Embodiment of Otherworldly Detachment",
+   "class": "assassin"
+  },
+  "aspect-desc#0071": {
+   "src": "Serpent's Garden lasts +{~}s longer.",
+   "dst": "Serpent's Garden +{~} sn daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Assassin's Embodiment of Otherworldly Detachment",
+   "class": "assassin"
+  },
+  "aspect-desc#0072": {
+   "src": "Vanish's cooldown is reduced by -{~}s.",
+   "dst": "Vanish bekleme süresi -{~} sn azalır.",
+   "role": "desc",
+   "aspect": "Shadestepper's Embodiment of Unseen Execution",
+   "class": "assassin"
+  },
+  "aspect-desc#0073": {
+   "src": "Satsujin's cooldown is reduced by -{~}s.",
+   "dst": "Satsujin bekleme süresi -{~} sn azalır.",
+   "role": "desc",
+   "aspect": "Shadestepper's Embodiment of Unseen Execution",
+   "class": "assassin"
+  },
+  "aspect-desc#0074": {
+   "src": "Noxious Haze can benefit from +{~} debuff.",
+   "dst": "Noxious Haze +{~} olumsuz etkiden faydalanabilir.",
+   "role": "desc",
+   "aspect": "Trickster's Embodiment of Malevolent Mischief",
+   "class": "assassin"
+  },
+  "aspect-desc#0075": {
+   "src": "Summon +{~} additional Mirror Clone {#} with Mirror Image.",
+   "dst": "Mirror Image ile +{~} ek Ayna Klonu {#} çağır.",
+   "role": "desc",
+   "aspect": "Trickster's Embodiment of Malevolent Mischief",
+   "class": "assassin"
+  },
+  "aspect-desc#0076": {
+   "src": "Noxious Haze can benefit from +{~} debuff, and grants +{~} damage per debuff.",
+   "dst": "Noxious Haze +{~} olumsuz etkiden faydalanabilir ve olumsuz etki başına +{~} hasar verir.",
+   "role": "desc",
+   "aspect": "Trickster's Embodiment of Malevolent Mischief",
+   "class": "assassin"
+  },
+  "aspect-desc#0077": {
+   "src": "Chaos Explosion requires -{~} mana to activate.",
+   "dst": "Chaos Explosion etkinleşmek için -{~} daha az mana ister.",
+   "role": "desc",
+   "aspect": "Arcanist's Embodiment of Total Obliteration",
+   "class": "mage"
+  },
+  "aspect-desc#0078": {
+   "src": "Chaos Explosion casts {~} faster.",
+   "dst": "Chaos Explosion {~} daha hızlı yapılır.",
+   "role": "desc",
+   "aspect": "Arcanist's Embodiment of Total Obliteration",
+   "class": "mage"
+  },
+  "aspect-desc#0079": {
+   "src": "Increase your maximum Mana Bank ✺ by +{~}.",
+   "dst": "Maksimum Mana Bankası ✺ +{~} artar.",
+   "role": "desc",
+   "aspect": "Arcanist's Embodiment of Total Obliteration",
+   "class": "mage"
+  },
+  "aspect-desc#0080": {
+   "src": "Sunflare requires -{~} healing to activate.",
+   "dst": "Sunflare etkinleşmek için -{~} daha az iyileştirme ister.",
+   "role": "desc",
+   "aspect": "Aspect of Burning Providence",
+   "class": "mage"
+  },
+  "aspect-desc#0081": {
+   "src": "Paradox delays +{~} more damage.",
+   "dst": "Paradox +{~} daha fazla hasarı erteler.",
+   "role": "desc",
+   "aspect": "Aspect of Futures Rewritten",
+   "class": "mage"
+  },
+  "aspect-desc#0082": {
+   "src": "Paradox delays +{~} more damage and refunds +{~} more mana.",
+   "dst": "Paradox +{~} daha fazla hasarı erteler ve +{~} daha fazla mana iade eder.",
+   "role": "desc",
+   "aspect": "Aspect of Futures Rewritten",
+   "class": "mage"
+  },
+  "aspect-desc#0083": {
+   "src": "Gospel of Light gains +{~} {#} Area of Effect.",
+   "dst": "Gospel of Light +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Indoctrination",
+   "class": "mage"
+  },
+  "aspect-desc#0084": {
+   "src": "Increase your maximum Arcane Overflow Mana by +{~}.",
+   "dst": "Maksimum Arcane Overflow Manası +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of Limitless Knowledge",
+   "class": "mage"
+  },
+  "aspect-desc#0085": {
+   "src": "Manastorm requires -{~} Mana to activate.",
+   "dst": "Manastorm etkinleşmek için -{~} daha az Mana ister.",
+   "role": "desc",
+   "aspect": "Aspect of Manaflux",
+   "class": "mage"
+  },
+  "aspect-desc#0086": {
+   "src": "Fortitude gains +{~}s {#} Duration.",
+   "dst": "Fortitude +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Mystic Transfer",
+   "class": "mage"
+  },
+  "aspect-desc#0087": {
+   "src": "Burning Sigil and Freezing Sigil gain +{~} {#} Area of Effect.",
+   "dst": "Burning Sigil ve Freezing Sigil +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Runic Extravagance",
+   "class": "mage"
+  },
+  "aspect-desc#0088": {
+   "src": "Lightweaver requires -{~} healing to activate.",
+   "dst": "Lightweaver etkinleşmek için -{~} daha az iyileştirme ister.",
+   "role": "desc",
+   "aspect": "Aspect of Shining Status",
+   "class": "mage"
+  },
+  "aspect-desc#0089": {
+   "src": "Arcane Speed gains +{~} speed.",
+   "dst": "Arcane Speed +{~} hız kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Wind Walking",
+   "class": "mage"
+  },
+  "aspect-desc#0090": {
+   "src": "Pyrokinesis gains +{~} {#} Area of Effect.",
+   "dst": "Pyrokinesis +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of a Scorching Sun",
+   "class": "mage"
+  },
+  "aspect-desc#0091": {
+   "src": "Time Dilation gains +{~} {#} Area of Effect.",
+   "dst": "Time Dilation +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of a Thousand Hours",
+   "class": "mage"
+  },
+  "aspect-desc#0092": {
+   "src": "Meteor and Astral Fragmentation gain +{~} {#} Area of Effect.",
+   "dst": "Meteor ve Astral Fragmentation +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Comet",
+   "class": "mage"
+  },
+  "aspect-desc#0093": {
+   "src": "Ophanim gains +{~} {#} Range.",
+   "dst": "Ophanim +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Comet",
+   "class": "mage"
+  },
+  "aspect-desc#0094": {
+   "src": "Ophanim's orbs travel {~} faster.",
+   "dst": "Ophanim Küreleri {~} daha hızlı ilerler.",
+   "role": "desc",
+   "aspect": "Aspect of the Comet",
+   "class": "mage"
+  },
+  "aspect-desc#0095": {
+   "src": "Teleport gains +{~} {#} Range.",
+   "dst": "Teleport +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Dimension's Door",
+   "class": "mage"
+  },
+  "aspect-desc#0096": {
+   "src": "Displacement gains +{~} {#} Range.",
+   "dst": "Displacement +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Dimension's Door",
+   "class": "mage"
+  },
+  "aspect-desc#0097": {
+   "src": "Reduce Judrajim's cooldown by {~}s.",
+   "dst": "Judrajim bekleme süresi {~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of the Forbidden Ritual",
+   "class": "mage"
+  },
+  "aspect-desc#0098": {
+   "src": "Increase your Riftspawn's attack speed by +{~}.",
+   "dst": "Yarık Yaratığının saldırı hızı +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Indescribable",
+   "class": "mage"
+  },
+  "aspect-desc#0099": {
+   "src": "Riftspawn gains +{~} {#} Vision.",
+   "dst": "Yarık Yaratığı +{~} {#} Görüş kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Indescribable",
+   "class": "mage"
+  },
+  "aspect-desc#0100": {
+   "src": "Dimensional Tear and Rift Rupture gain +{~} {#} Area of Effect.",
+   "dst": "Dimensional Tear ve Rift Rupture +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Inescapable Void",
+   "class": "mage"
+  },
+  "aspect-desc#0101": {
+   "src": "Dimensional Tear gains +{~} ❁ Resistance.",
+   "dst": "Dimensional Tear +{~} ❁ Direnç kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Inescapable Void",
+   "class": "mage"
+  },
+  "aspect-desc#0102": {
+   "src": "Psychokinesis gains +{~} {#} Range.",
+   "dst": "Psychokinesis +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Magic Missile",
+   "class": "mage"
+  },
+  "aspect-desc#0103": {
+   "src": "Ice Snake and Frozen Tornado gains +{~} {#} Area of Effect.",
+   "dst": "Ice Snake ve Frozen Tornado +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Ray of Frost",
+   "class": "mage"
+  },
+  "aspect-desc#0104": {
+   "src": "Heal gains +{~} {#} Range.",
+   "dst": "Heal +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Savior",
+   "class": "mage"
+  },
+  "aspect-desc#0105": {
+   "src": "Vacuokinesis gains +{~} {#} Damage from Distortion {#}.",
+   "dst": "Vacuokinesis, Bozulma {#} sayesinde +{~} {#} Hasar kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Vast Emptiness",
+   "class": "mage"
+  },
+  "aspect-desc#0106": {
+   "src": "Lightweaver gains +{~} orbs.",
+   "dst": "Lightweaver +{~} Küre kazanır.",
+   "role": "desc",
+   "aspect": "Light Bender's Embodiment of Celestial Brilliance",
+   "class": "mage"
+  },
+  "aspect-desc#0107": {
+   "src": "Ophanim gains +{~} orb.",
+   "dst": "Ophanim +{~} Küre kazanır.",
+   "role": "desc",
+   "aspect": "Light Bender's Embodiment of Celestial Brilliance",
+   "class": "mage"
+  },
+  "aspect-desc#0108": {
+   "src": "Dawn spawns +{~} more wisps.",
+   "dst": "Dawn +{~} daha fazla ruh ışığı oluşturur.",
+   "role": "desc",
+   "aspect": "Mage's Embodiment of Morbid Curiosity",
+   "class": "mage"
+  },
+  "aspect-desc#0109": {
+   "src": "Gravitational Collapse lasts +{~}s longer.",
+   "dst": "Gravitational Collapse +{~} sn daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Mage's Embodiment of Morbid Curiosity",
+   "class": "mage"
+  },
+  "aspect-desc#0110": {
+   "src": "Tangled Origin attacks +{~} faster.",
+   "dst": "Tangled Origin +{~} daha hızlı saldırır.",
+   "role": "desc",
+   "aspect": "Mage's Embodiment of Morbid Curiosity",
+   "class": "mage"
+  },
+  "aspect-desc#0111": {
+   "src": "Distortion {#} decays -{~} slower.",
+   "dst": "Bozulma {#} -{~} daha yavaş azalır.",
+   "role": "desc",
+   "aspect": "Riftwalker's Embodiment of Reality Alteration",
+   "class": "mage"
+  },
+  "aspect-desc#0112": {
+   "src": "Riftbound gains +{~}s {#} Duration.",
+   "dst": "Riftbound +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Riftwalker's Embodiment of Reality Alteration",
+   "class": "mage"
+  },
+  "aspect-desc#0113": {
+   "src": "Blood Sorrow gains +{~}s {#} Duration.",
+   "dst": "Blood Sorrow +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Acolyte's Embodiment of Unwavering Adherence",
+   "class": "shaman"
+  },
+  "aspect-desc#0114": {
+   "src": "Eldritch Call summons +{~} tentacle, and strikes {~} faster.",
+   "dst": "Eldritch Call +{~} dokunaç çağırır ve {~} daha hızlı vurur.",
+   "role": "desc",
+   "aspect": "Acolyte's Embodiment of Unwavering Adherence",
+   "class": "shaman"
+  },
+  "aspect-desc#0115": {
+   "src": "Your Puppets and Effigies move {~} faster.",
+   "dst": "Kuklaların ve Heykelciklerin {~} daha hızlı hareket eder.",
+   "role": "desc",
+   "aspect": "Aspect of Acceleration",
+   "class": "shaman"
+  },
+  "aspect-desc#0116": {
+   "src": "Totem gains +{~} {#} Area of Effect.",
+   "dst": "Totem +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Emanant Force",
+   "class": "shaman"
+  },
+  "aspect-desc#0117": {
+   "src": "Eldritch Call gains +{~} {#} Area of Effect.",
+   "dst": "Eldritch Call +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Emanant Force",
+   "class": "shaman"
+  },
+  "aspect-desc#0118": {
+   "src": "Twisted Tether requires -{~} Health lost to activate.",
+   "dst": "Twisted Tether etkinleşmek için -{~} daha az Can kaybı ister.",
+   "role": "desc",
+   "aspect": "Aspect of Empathy",
+   "class": "shaman"
+  },
+  "aspect-desc#0119": {
+   "src": "Increase your maximum Blood Pool {#} and Bleeding {#} duration by +{~}.",
+   "dst": "Maksimum Kan Havuzu {#} ve Kanama {#} süresi +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of Exsanguination",
+   "class": "shaman"
+  },
+  "aspect-desc#0120": {
+   "src": "Lashing Lance inflicts +{~}s of Bleeding {#} per hit.",
+   "dst": "Lashing Lance her vuruşta +{~} sn Kanama {#} uygular.",
+   "role": "desc",
+   "aspect": "Aspect of Gushing Blood",
+   "class": "shaman"
+  },
+  "aspect-desc#0121": {
+   "src": "Friendly Fire reduces Puppet duration by -{~}s.",
+   "dst": "Friendly Fire Kukla süresini -{~} sn azaltır.",
+   "role": "desc",
+   "aspect": "Aspect of Incineration",
+   "class": "shaman"
+  },
+  "aspect-desc#0122": {
+   "src": "Bullwhip gains +{~} {#} Damage Bonus to Summons.",
+   "dst": "Bullwhip, Çağrılanlara +{~} {#} Hasar Bonusu kazandırır.",
+   "role": "desc",
+   "aspect": "Aspect of Motivation",
+   "class": "shaman"
+  },
+  "aspect-desc#0123": {
+   "src": "Your Hummingbird Carvings attack enemies for +{~}s and gain +{~} {#} Vision.",
+   "dst": "Sinekkuşu Oymaların düşmanlara +{~} sn daha saldırır ve +{~} {#} Görüş kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Occupation",
+   "class": "shaman"
+  },
+  "aspect-desc#0124": {
+   "src": "Totemic Smash gains +{~} {#} Area of Effect.",
+   "dst": "Totemic Smash +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Reverberation",
+   "class": "shaman"
+  },
+  "aspect-desc#0125": {
+   "src": "Nature's Jolt gains +{~} {#} Area of Effect.",
+   "dst": "Nature's Jolt +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Seismic Sense",
+   "class": "shaman"
+  },
+  "aspect-desc#0126": {
+   "src": "Mystics Masks bonus effect is increased by {~}x",
+   "dst": "Mystics Masks bonus etkisi {~}x artar",
+   "role": "desc",
+   "aspect": "Aspect of Stances",
+   "class": "shaman"
+  },
+  "aspect-desc#0127": {
+   "src": "Increase Storm Dance's pull strength by {~}.",
+   "dst": "Storm Dance çekme gücü {~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of Summer Storms",
+   "class": "shaman"
+  },
+  "aspect-desc#0128": {
+   "src": "Aura travels {~}s faster.",
+   "dst": "Aura {~} sn daha hızlı ilerler.",
+   "role": "desc",
+   "aspect": "Aspect of Surging Presence",
+   "class": "shaman"
+  },
+  "aspect-desc#0129": {
+   "src": "Uproot and Haunting Memory gain +{~} {#} Range.",
+   "dst": "Uproot ve Haunting Memory +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Alraune's Roots",
+   "class": "shaman"
+  },
+  "aspect-desc#0130": {
+   "src": "Frog Dance gains +{~} bounces.",
+   "dst": "Frog Dance +{~} sekme kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Amphibian",
+   "class": "shaman"
+  },
+  "aspect-desc#0131": {
+   "src": "Crystal Knives gains +{~} pierce.",
+   "dst": "Crystal Knives +{~} delme kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Artisan",
+   "class": "shaman"
+  },
+  "aspect-desc#0132": {
+   "src": "Puppet Master gains +{~} Puppets.",
+   "dst": "Puppet Master +{~} Kukla kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Beckoned Legion",
+   "class": "shaman"
+  },
+  "aspect-desc#0133": {
+   "src": "{#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
+   "dst": "{#} Toplam Hasar: -{~} (DPS'inin) ({#} Toprak: -{~})",
+   "role": "desc",
+   "aspect": "Aspect of the Beckoned Legion",
+   "class": "shaman"
+  },
+  "aspect-desc#0134": {
+   "src": "{#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
+   "dst": "{#} Toplam Hasar: -{~} (DPS'inin) ({#} Hava: -{~}) ({#} Toprak: -{~})",
+   "role": "desc",
+   "aspect": "Aspect of the Beckoned Legion",
+   "class": "shaman"
+  },
+  "aspect-desc#0135": {
+   "src": "{#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
+   "dst": "{#} Toplam Hasar: -{~} (DPS'inin) ({#} Hasar: -{~}) ({#} Hava: -{~}) ({#} Toprak: -{~})",
+   "role": "desc",
+   "aspect": "Aspect of the Beckoned Legion",
+   "class": "shaman"
+  },
+  "aspect-desc#0136": {
+   "src": "Corporeal Manifestation spins {~} faster.",
+   "dst": "Corporeal Manifestation {~} daha hızlı döner.",
+   "role": "desc",
+   "aspect": "Aspect of the Blurred Line",
+   "class": "shaman"
+  },
+  "aspect-desc#0137": {
+   "src": "Fortified Formation grants +{~} ❁ Resistance.",
+   "dst": "Fortified Formation +{~} ❁ Direnç verir.",
+   "role": "desc",
+   "aspect": "Aspect of the Bodyguard",
+   "class": "shaman"
+  },
+  "aspect-desc#0138": {
+   "src": "Tribal Chants gain +{~} {#} Area of Effect.",
+   "dst": "Tribal Chants +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Channeler",
+   "class": "shaman"
+  },
+  "aspect-desc#0139": {
+   "src": "Totem gains +{~}s {#} Duration.",
+   "dst": "Totem +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Monolith",
+   "class": "shaman"
+  },
+  "aspect-desc#0140": {
+   "src": "Awakened requires -{~} mana to activate.",
+   "dst": "Awakened etkinleşmek için -{~} daha az mana ister.",
+   "role": "desc",
+   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
+   "class": "shaman"
+  },
+  "aspect-desc#0141": {
+   "src": "Awakened gains +{~}s {#} Duration.",
+   "dst": "Awakened +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
+   "class": "shaman"
+  },
+  "aspect-desc#0142": {
+   "src": "Patchwork Abomination lasts +{~}s longer.",
+   "dst": "Yamalı Ucube +{~} sn daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Shaman's Embodiment of Serene Harmony",
+   "class": "shaman"
+  },
+  "aspect-desc#0143": {
+   "src": "Sundered Skies' delay between lightning strikes is -{~}s shorter.",
+   "dst": "Sundered Skies yıldırım düşüşleri arasındaki bekleme -{~} sn kısalır.",
+   "role": "desc",
+   "aspect": "Shaman's Embodiment of Serene Harmony",
+   "class": "shaman"
+  },
+  "aspect-desc#0144": {
+   "src": "Monument to Gloom lasts +{~} longer.",
+   "dst": "Monument to Gloom +{~} daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Shaman's Embodiment of Serene Harmony",
+   "class": "shaman"
+  },
+  "aspect-desc#0145": {
+   "src": "Triple Totem gains +{~} Totem.",
+   "dst": "Triple Totem +{~} Totem kazanır.",
+   "role": "desc",
+   "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
+   "class": "shaman"
+  },
+  "aspect-desc#0146": {
+   "src": "Totem and Aura will do {~} less damage.",
+   "dst": "Totem ve Aura {~} daha az hasar verir.",
+   "role": "desc",
+   "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
+   "class": "shaman"
+  },
+  "aspect-desc#0147": {
+   "src": "Regeneration and Sacrificial Shrine will heal {~} less health.",
+   "dst": "Regeneration ve Sacrificial Shrine {~} daha az can iyileştirir.",
+   "role": "desc",
+   "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
+   "class": "shaman"
+  },
+  "aspect-desc#0148": {
+   "src": "Hummingbird's Song gains +{~} Hummingbird.",
+   "dst": "Hummingbird's Song +{~} Sinekkuşu kazanır.",
+   "role": "desc",
+   "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
+   "class": "shaman"
+  },
+  "aspect-desc#0149": {
+   "src": "Hummingbirds attack {~} faster.",
+   "dst": "Sinekkuşları {~} daha hızlı saldırır.",
+   "role": "desc",
+   "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
+   "class": "shaman"
+  },
+  "aspect-desc#0150": {
+   "src": "Emboldening Cry grants +{~} ❁ Resistance to Allies.",
+   "dst": "Emboldening Cry müttefiklere +{~} ❁ Direnç verir.",
+   "role": "desc",
+   "aspect": "Aspect of Bovine Inspiration",
+   "class": "warrior"
+  },
+  "aspect-desc#0151": {
+   "src": "Tempest hits delay is reduced by {~}s.",
+   "dst": "Tempest vuruşları arasındaki gecikme {~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of Deafening Echoes",
+   "class": "warrior"
+  },
+  "aspect-desc#0152": {
+   "src": "Bash gains +{~} {#} Area of Effect.",
+   "dst": "Bash +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Earthshaking",
+   "class": "warrior"
+  },
+  "aspect-desc#0153": {
+   "src": "Radiance gains +{~}s {#} Duration.",
+   "dst": "Radiance +{~} sn {#} Süre kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Empowering Fantasy",
+   "class": "warrior"
+  },
+  "aspect-desc#0154": {
+   "src": "Counter's cooldown is reduced by -{~}s.",
+   "dst": "Counter bekleme süresi -{~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of Hyper-Perception",
+   "class": "warrior"
+  },
+  "aspect-desc#0155": {
+   "src": "Exhilarate restores +{~} of your Corrupted {#} bar as max health.",
+   "dst": "Exhilarate, Yozlaşmış {#} çubuğunun +{~} kadarını daha maks. can olarak geri verir.",
+   "role": "desc",
+   "aspect": "Aspect of Maniacal Frisson",
+   "class": "warrior"
+  },
+  "aspect-desc#0156": {
+   "src": "Sparkling Hope requires -{~} healing to activate.",
+   "dst": "Sparkling Hope etkinleşmek için -{~} daha az iyileştirme ister.",
+   "role": "desc",
+   "aspect": "Aspect of Overflowing Hope",
+   "class": "warrior"
+  },
+  "aspect-desc#0157": {
+   "src": "Sacred Surge gains +{~} holy power for every spell or ability triggered.",
+   "dst": "Sacred Surge, tetiklenen her büyü ya da yetenek için +{~} Kutsal Güç kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Rallying Fervor",
+   "class": "warrior"
+  },
+  "aspect-desc#0158": {
+   "src": "Luster Purge grants +{~} holy power.",
+   "dst": "Luster Purge +{~} Kutsal Güç verir.",
+   "role": "desc",
+   "aspect": "Aspect of Rallying Fervor",
+   "class": "warrior"
+  },
+  "aspect-desc#0159": {
+   "src": "Rejuvenating Skin restores Health {~}s faster.",
+   "dst": "Rejuvenating Skin Canı {~} sn daha hızlı yeniler.",
+   "role": "desc",
+   "aspect": "Aspect of Rekindling",
+   "class": "warrior"
+  },
+  "aspect-desc#0160": {
+   "src": "Increase your maximum Discombobulated ⚙ by +{~}.",
+   "dst": "Maksimum Allak Bullak ⚙ sınırın +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of Seeing Stars",
+   "class": "warrior"
+  },
+  "aspect-desc#0161": {
+   "src": "Uppercut gains +{~} {#} Range.",
+   "dst": "Uppercut +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Skyward Strikes",
+   "class": "warrior"
+  },
+  "aspect-desc#0162": {
+   "src": "War Scream, Tempest, and Bloodlust gain +{~} {#} Area of Effect.",
+   "dst": "War Scream, Tempest ve Bloodlust +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Steel Chords",
+   "class": "warrior"
+  },
+  "aspect-desc#0163": {
+   "src": "Cyclone gains +{~} {#} Area of Effect.",
+   "dst": "Cyclone +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of Turbulence",
+   "class": "warrior"
+  },
+  "aspect-desc#0164": {
+   "src": "Boiling Blood's cooldown is reduced by -{~}s.",
+   "dst": "Boiling Blood bekleme süresi -{~} sn azalır.",
+   "role": "desc",
+   "aspect": "Aspect of Unquenching Flames",
+   "class": "warrior"
+  },
+  "aspect-desc#0165": {
+   "src": "Flyby Slam's landing, Flying Kick and Collide gain +{~} {#} Area of Effect.",
+   "dst": "Flyby Slam inişi, Flying Kick ve Collide +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Anvil Drop",
+   "class": "warrior"
+  },
+  "aspect-desc#0166": {
+   "src": "Armour Breaker gains +{~} Damage Bonus (⚔) to Self.",
+   "dst": "Armour Breaker kendine +{~} Hasar Bonusu (⚔) kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Berserker",
+   "class": "warrior"
+  },
+  "aspect-desc#0167": {
+   "src": "Increase Bloodied Armory's angle by +{~}°.",
+   "dst": "Bloodied Armory açısı +{~}° artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Crimson Scrivener",
+   "class": "warrior"
+  },
+  "aspect-desc#0168": {
+   "src": "Increase your damage per Harmony by +{~}.",
+   "dst": "Uyum başına hasarın +{~} artar.",
+   "role": "desc",
+   "aspect": "Aspect of the Enforcer",
+   "class": "warrior"
+  },
+  "aspect-desc#0169": {
+   "src": "Luster Purge grants +{~} {#} Main Attack Damage and +{~} {#} Main Attack Range.",
+   "dst": "Luster Purge +{~} {#} Ana Saldırı Hasarı ve +{~} {#} Ana Saldırı Menzili verir.",
+   "role": "desc",
+   "aspect": "Aspect of the Golden Dawn",
+   "class": "warrior"
+  },
+  "aspect-desc#0170": {
+   "src": "Devout Union gains +{~} {#} Area of Effect.",
+   "dst": "Devout Union +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Humming Choir",
+   "class": "warrior"
+  },
+  "aspect-desc#0171": {
+   "src": "Air Shout gains +{~} {#} Area of Effect.",
+   "dst": "Air Shout +{~} {#} Etki Alanı kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Megaphone",
+   "class": "warrior"
+  },
+  "aspect-desc#0172": {
+   "src": "Your Main Attack and Bloodied Armory gains +{~} {#} Range.",
+   "dst": "Ana Saldırın ve Bloodied Armory +{~} {#} Menzil kazanır.",
+   "role": "desc",
+   "aspect": "Aspect of the Returning Javelin",
+   "class": "warrior"
+  },
+  "aspect-desc#0173": {
+   "src": "Brink of Madness activates at +{~} higher Health.",
+   "dst": "Brink of Madness +{~} daha yüksek Canda etkinleşir.",
+   "role": "desc",
+   "aspect": "Aspect of the Tightrope Walk",
+   "class": "warrior"
+  },
+  "aspect-desc#0174": {
+   "src": "Pressure is stronger.",
+   "dst": "Pressure daha güçlüdür.",
+   "role": "desc",
+   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
+   "class": "warrior"
+  },
+  "aspect-desc#0175": {
+   "src": "Bash gains +{~}x as many hits.",
+   "dst": "Bash {~}x daha fazla vurur.",
+   "role": "desc",
+   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
+   "class": "warrior"
+  },
+  "aspect-desc#0176": {
+   "src": "Uppercut deals +{~} neutral and +{~} Damage in all Elements.",
+   "dst": "Uppercut +{~} nötr ve tüm Elementlerde +{~} Hasar verir.",
+   "role": "desc",
+   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
+   "class": "warrior"
+  },
+  "aspect-desc#0177": {
+   "src": "{#} Total Damage: {~} ({#} Damage: {~}) ({#}{#}{#}{#}{#} Damage: {~})",
+   "dst": "{#} Toplam Hasar: {~} ({#} Hasar: {~}) ({#}{#}{#}{#}{#} Hasar: {~})",
+   "role": "desc",
+   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
+   "class": "warrior"
+  },
+  "aspect-desc#0178": {
+   "src": "{#} Total Damage: {~} ({#} Damage: {~}) ({#}{#}{#}{#}{#} Damage: {~}) War Scream grants a higher damage boost.",
+   "dst": "{#} Toplam Hasar: {~} ({#} Hasar: {~}) ({#}{#}{#}{#}{#} Hasar: {~}) War Scream daha yüksek hasar artışı verir.",
+   "role": "desc",
+   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
+   "class": "warrior"
+  },
+  "aspect-desc#0179": {
+   "src": "Bash gains +{~}x as many hits and more damage.",
+   "dst": "Bash {~}x daha fazla vurur ve daha fazla hasar verir.",
+   "role": "desc",
+   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
+   "class": "warrior"
+  },
+  "aspect-desc#0180": {
+   "src": "{#} Total Damage: {~} ({#} Thunder: {~}) Uppercut deals {~} neutral and {~} Damage in all Elements.",
+   "dst": "{#} Toplam Hasar: {~} ({#} Yıldırım: {~}) Uppercut {~} nötr ve tüm Elementlerde {~} Hasar verir.",
+   "role": "desc",
+   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
+   "class": "warrior"
+  },
+  "aspect-desc#0181": {
+   "src": "Blood Pact's health cost is reduced by {~}.",
+   "dst": "Blood Pact can maliyeti {~} azalır.",
+   "role": "desc",
+   "aspect": "Fallen's Embodiment of Blind Fury",
+   "class": "warrior"
+  },
+  "aspect-desc#0182": {
+   "src": "Blood Pact adds +{~} to +{~} more damage when using health.",
+   "dst": "Blood Pact can kullanırken +{~} ile +{~} arası daha fazla hasar ekler.",
+   "role": "desc",
+   "aspect": "Fallen's Embodiment of Blind Fury",
+   "class": "warrior"
+  },
+  "aspect-desc#0183": {
+   "src": "Mantle of the Bovemists gains +{~} charges.",
+   "dst": "Bovemist Pelerini +{~} şarj kazanır.",
+   "role": "desc",
+   "aspect": "Paladin's Embodiment of Undying Determination",
+   "class": "warrior"
+  },
+  "aspect-desc#0184": {
+   "src": "Sacred Surge spends -{~} Holy Power ✧ to activate.",
+   "dst": "Sacred Surge etkinleşmek için -{~} daha az Kutsal Güç ✧ harcar.",
+   "role": "desc",
+   "aspect": "Paladin's Embodiment of Undying Determination",
+   "class": "warrior"
+  },
+  "aspect-desc#0185": {
+   "src": "Beyond Salvation spawns +{~} spikes.",
+   "dst": "Beyond Salvation +{~} diken oluşturur.",
+   "role": "desc",
+   "aspect": "Warrior's Embodiment of Everlasting Perseverance",
+   "class": "warrior"
+  },
+  "aspect-desc#0186": {
+   "src": "Zenith Stance lasts +{~}s longer.",
+   "dst": "Zenith Stance +{~} sn daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Warrior's Embodiment of Everlasting Perseverance",
+   "class": "warrior"
+  },
+  "aspect-desc#0187": {
+   "src": "Judgement lasts +{~} longer.",
+   "dst": "Judgement +{~} daha uzun sürer.",
+   "role": "desc",
+   "aspect": "Warrior's Embodiment of Everlasting Perseverance",
+   "class": "warrior"
+  },
+  "blk000": {
+   "src": "Ascension lasts +{~} longer. Extinction Event spawns +{~} bombs. Twilight Zone's mark cap is +{~} higher.",
+   "dst": "Ascension +{~} daha uzun sürer. Extinction Event +{~} bomba oluşturur. Alacakaranlık Bölgesi İşaret sınırı +{~} artar.",
+   "role": "desc"
+  },
+  "blk001": {
+   "src": "Multihit gains +{~} {#} Range. Backstab gains +{~} {#} Range.",
+   "dst": "Multihit +{~} {#} Menzil kazanır. Backstab +{~} {#} Menzil kazanır.",
+   "role": "desc"
+  },
+  "blk002": {
+   "src": "Increase the amount of Shurikens you can hold by. +{~}",
+   "dst": "Taşıyabileceğin Shurikenler sayısı artar. +{~}",
+   "role": "desc"
+  },
+  "blk003": {
+   "src": "Increase your maximum Marks {#} by +{~}. Decrease your damage per Mark {#} by -{~}.",
+   "dst": "Maksimum İşaret {#} sayın +{~} artar. İşaret {#} başına hasarın -{~} azalır.",
+   "role": "desc"
+  },
+  "blk004": {
+   "src": "Decrease your maximum Knives by -{~}. Increase the damage of each Knife by +{~}.",
+   "dst": "Maksimum Bıçak sayın -{~} azalır. Her Bıçağın hasarı +{~} artar.",
+   "role": "desc"
+  },
+  "blk005": {
+   "src": "Pierce the Veil lasts +{~}s longer. Another Self has +{~} more health. Serpent's Garden lasts +{~}s longer.",
+   "dst": "Pierce the Veil +{~} sn daha uzun sürer. Another Self +{~} daha fazla cana sahiptir. Serpent's Garden +{~} sn daha uzun sürer.",
+   "role": "desc"
+  },
+  "blk006": {
+   "src": "Chaos Explosion requires -{~} mana to activate. Chaos Explosion casts {~} faster.",
+   "dst": "Chaos Explosion etkinleşmek için -{~} daha az mana ister. Chaos Explosion {~} daha hızlı yapılır.",
+   "role": "desc"
+  },
+  "blk007": {
+   "src": "Ophanim gains +{~} {#} Range. Ophanim's orbs travel {~} faster.",
+   "dst": "Ophanim +{~} {#} Menzil kazanır. Ophanim Küreleri {~} daha hızlı ilerler.",
+   "role": "desc"
+  },
+  "blk008": {
+   "src": "Dawn spawns +{~} more wisps. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
+   "dst": "Dawn +{~} daha fazla ruh ışığı oluşturur. Gravitational Collapse +{~} sn daha uzun sürer. Tangled Origin +{~} daha hızlı saldırır.",
+   "role": "desc"
+  },
+  "blk009": {
+   "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
+   "dst": "Puppet Master +{~} Kukla kazanır. {#} Toplam Hasar: -{~} (DPS'inin) ({#} Toprak: -{~})",
+   "role": "desc"
+  },
+  "blk010": {
+   "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
+   "dst": "Puppet Master +{~} Kukla kazanır. {#} Toplam Hasar: -{~} (DPS'inin) ({#} Hava: -{~}) ({#} Toprak: -{~})",
+   "role": "desc"
+  },
+  "blk011": {
+   "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
+   "dst": "Puppet Master +{~} Kukla kazanır. {#} Toplam Hasar: -{~} (DPS'inin) ({#} Hasar: -{~}) ({#} Hava: -{~}) ({#} Toprak: -{~})",
+   "role": "desc"
+  },
+  "blk012": {
+   "src": "Awakened requires -{~} mana to activate. Awakened gains +{~}s {#} Duration.",
+   "dst": "Awakened etkinleşmek için -{~} daha az mana ister. Awakened +{~} sn {#} Süre kazanır.",
+   "role": "desc"
+  },
+  "blk013": {
+   "src": "Patchwork Abomination lasts +{~}s longer. Sundered Skies' delay between lightning strikes is -{~}s shorter. Monument to Gloom lasts +{~} longer.",
+   "dst": "Yamalı Ucube +{~} sn daha uzun sürer. Sundered Skies yıldırım düşüşleri arasındaki bekleme -{~} sn kısalır. Monument to Gloom +{~} daha uzun sürer.",
+   "role": "desc"
+  },
+  "blk014": {
+   "src": "Triple Totem gains +{~} Totem. Totem and Aura will do {~} less damage.",
+   "dst": "Triple Totem +{~} Totem kazanır. Totem ve Aura {~} daha az hasar verir.",
+   "role": "desc"
+  },
+  "blk015": {
+   "src": "Hummingbird's Song gains +{~} Hummingbird. Hummingbirds attack {~} faster.",
+   "dst": "Hummingbird's Song +{~} Sinekkuşu kazanır. Sinekkuşları {~} daha hızlı saldırır.",
+   "role": "desc"
+  },
+  "blk016": {
+   "src": "Uppercut deals +{~} neutral and +{~} Damage in all Elements. {#} Total Damage: +{~} ({#} Damage: +{~}) ({#} Damage: +{~})",
+   "dst": "Uppercut +{~} nötr ve tüm Elementlerde +{~} Hasar verir. {#} Toplam Hasar: +{~} ({#} Hasar: +{~}) ({#} Hasar: +{~})",
+   "role": "desc"
+  },
+  "blk017": {
+   "src": "War Scream grants a higher damage boost. {#} Effect: +{~} Damage Bonus (⚔) to Players",
+   "dst": "War Scream daha yüksek hasar artışı verir. {#} Etki: Oyunculara +{~} Hasar Bonusu (⚔)",
+   "role": "desc"
+  },
+  "blk018": {
+   "src": "Bash gains +{~}x as many hits and more damage. {#} Total Damage: +{~} ({#} Thunder: +{~})",
+   "dst": "Bash {~}x daha fazla vurur ve daha fazla hasar verir. {#} Toplam Hasar: +{~} ({#} Yıldırım: +{~})",
+   "role": "desc"
+  },
+  "blk019": {
+   "src": "Blood Pact's health cost is reduced by {~}. Blood Pact adds +{~} to +{~} more damage when using health.",
+   "dst": "Blood Pact can maliyeti {~} azalır. Blood Pact can kullanırken +{~} ile +{~} arası daha fazla hasar ekler.",
+   "role": "desc"
+  },
+  "blk020": {
+   "src": "Beyond Salvation spawns +{~} spikes. Zenith Stance lasts +{~}s longer. Judgement lasts +{~} longer.",
+   "dst": "Beyond Salvation +{~} diken oluşturur. Zenith Stance +{~} sn daha uzun sürer. Judgement +{~} daha uzun sürer.",
+   "role": "desc"
+  }
+ }
+}

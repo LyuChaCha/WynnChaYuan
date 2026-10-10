@@ -56,7 +56,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
-LANGS = ("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es")
+LANGS = ("zh_tw", "zh_cn", "ja_jp", "ko_kr", "ru_ru", "es_es", "tr_tr")
 SAME_AT = 0.90
 PUNCT = re.compile(r"[^\w{}~#pu]+", re.UNICODE)
 
