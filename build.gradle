@@ -834,6 +834,14 @@ tasks.register('runItemNameContextChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runItemNameContextChecks' }
 
+tasks.register('runFetchedLanguagesChecks', JavaExec) {
+    group = 'verification'
+    description = '切語言時每種語言每次開遊戲只跟 GitHub 對一次'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.FetchedLanguagesTest'
+}
+tasks.named('check') { dependsOn 'runFetchedLanguagesChecks' }
+
 tasks.register('runStatRowChecks', JavaExec) {
     group = 'verification'
     description = '裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去'
@@ -841,6 +849,14 @@ tasks.register('runStatRowChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.StatRowTest'
 }
 tasks.named('check') { dependsOn 'runStatRowChecks' }
+
+tasks.register('runWynnModRowsChecks', JavaExec) {
+    group = 'verification'
+    description = 'WynnMod 重畫的裝備說明：標籤拆成兩段、或被砍掉尾巴的列也翻得出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WynnModRowsTest'
+}
+tasks.named('check') { dependsOn 'runWynnModRowsChecks' }
 
 tasks.register('runAbilityRowChecks', JavaExec) {
     group = 'verification'
