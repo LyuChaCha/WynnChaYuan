@@ -843,7 +843,7 @@ public final class CollectorConfig {
         if (!v.matches("#[0-9a-fA-F]{6}")) {
             return false;
         }
-        accentColor = v.toUpperCase();
+        accentColor = v.toUpperCase(java.util.Locale.ROOT);
         save();
         return true;
     }
@@ -919,7 +919,7 @@ public final class CollectorConfig {
         if (!v.startsWith("#")) {
             v = "#" + v;
         }
-        return v.matches("#[0-9a-fA-F]{6}") ? v.toUpperCase() : null;
+        return v.matches("#[0-9a-fA-F]{6}") ? v.toUpperCase(java.util.Locale.ROOT) : null;
     }
 
     private static int parseHex(String hex) {

@@ -89,7 +89,14 @@ public final class DialogueOffsetTest {
         check("日文畫不出來", !DialogueRewriter.drawable("グルック"));
         check("諺文畫不出來", !DialogueRewriter.drawable("계속하려면"));
         check("西里爾畫不出來", !DialogueRewriter.drawable("продолжить"));
-        check("ç 交給配對字型（Wynncraft 字型裡是空白字）", !DialogueRewriter.drawable("devam etmek için"));
+        check("ç 交給配對字型", !DialogueRewriter.drawable("devam etmek için"));
+        // 提示列的字型只有 ASCII 那張表，帶重音的字母在那一列全是缺字
+        String control = "minecraft:hud/dialogue/text/control";
+        String body = "minecraft:hud/dialogue/text/wynncraft/body_0";
+        check("提示列：é 交給配對字型", !DialogueRewriter.drawable("Muévete para continuar", control));
+        check("提示列：純 ASCII 留在原字型", DialogueRewriter.drawable("para continuar", control));
+        check("內文列：é 留在原字型", DialogueRewriter.drawable("Muévete para continuar", body));
+        check("內文列：ç 交給配對字型", !DialogueRewriter.drawable("devam etmek için", body));
 
         // 折行處被吃掉的空格要補回來，否則跨行的台詞永遠查不到
         check("接第一行不補空格",

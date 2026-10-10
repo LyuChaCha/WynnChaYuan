@@ -6811,11 +6811,28 @@ public final class LineTranslator {
             return null;
         }
         String tail = template.substring(from);
-        if (colonFirst(tail) && store.itemNameOnly(label)) {
-            return itemAsLabel(label, tail, store);
+        if (store.itemNameOnly(label)) {
+            // 物品的名字不是標籤。後面接冒號的看語料有沒有另外收帶冒號的那一條；
+            // 接數量的（「名字 [3/5]」「名字 (2)」）才真的是在講那件物品，照舊翻；
+            // 其餘的（「Return to {p}」「Frog - {~}❤」）前面那個字只是剛好同名。
+            if (colonFirst(tail)) {
+                return itemAsLabel(label, tail, store);
+            }
+            if (!countFirst(tail)) {
+                return null;
+            }
         }
         if (!tail.isEmpty()) {
-            String zh = statLabel(label, store, percent);
+            // 標籤是<b>拼出來的</b>也一樣（「Defective Bolt {#}{#}」會被拆成品質詞加一把
+            // 叫 Bolt 的武器）：尾巴不是數量，裡面查到的物品名就不算數。
+            boolean was = TranslationStore.itemNamesBarred();
+            TranslationStore.barItemNames(was || !countFirst(tail));
+            String zh;
+            try {
+                zh = statLabel(label, store, percent);
+            } finally {
+                TranslationStore.barItemNames(was);
+            }
             if (zh != null) {
                 return zh + translateTail(tail, store);
             }
@@ -6852,6 +6869,12 @@ public final class LineTranslator {
         }
         String zh = statLabel(name, store, percent);
         return zh == null ? null : translateTail(lead, store) + zh + translateTail(tail, store);
+    }
+
+    /** 尾巴的第一個字（不算空白）是不是括號——「{@code 名字 [數量]}」那種列。見 {@link #statRow}。 */
+    private static boolean countFirst(String tail) {
+        String t = tail.stripLeading();
+        return !t.isEmpty() && (t.charAt(0) == '[' || t.charAt(0) == '(');
     }
 
     /** 尾巴的第一個字（不算空白）是不是冒號——「{@code 名字: 數值}」那種列。 */
@@ -7196,24 +7219,35 @@ public final class LineTranslator {
         if (start == 0 && end == template.length()) {
             return null;                       // 首尾沒有可剝的，不必重查
         }
-        String hit = null;
-        int used = keepColon;
-        if (keepColon > end) {                 // 尾端真的有冒號可留
-            String withColon = template.substring(start, keepColon);
-            hit = withColon.isBlank() ? null : withPercent(withColon, store, percent);
-        }
-        if (hit == null) {
-            used = end;
-            String core = template.substring(start, end);
-            if (core.isBlank()) {
+        // 前面什麼都沒剝、只剝了後面的圖示或冒號：那是<b>名牌或標籤</b>的形狀
+        // （「Fatal {#}{#}」「Scythe:」），前面那個字不是物品。物品清單是反過來的——
+        // 圖示或項目符號在前面（「{#}{#}Stormleader」），那種不擋。
+        // 見 TranslationStore#barItemNames。
+        boolean plate = start == 0 && !template.substring(end).isBlank();
+        boolean was = TranslationStore.itemNamesBarred();
+        TranslationStore.barItemNames(was || plate);
+        try {
+            String hit = null;
+            int used = keepColon;
+            if (keepColon > end) {             // 尾端真的有冒號可留
+                String withColon = template.substring(start, keepColon);
+                hit = withColon.isBlank() ? null : withPercent(withColon, store, percent);
+            }
+            if (hit == null) {
+                used = end;
+                String core = template.substring(start, end);
+                if (core.isBlank()) {
+                    return null;
+                }
+                hit = withPercent(core, store, percent);
+            }
+            if (hit == null) {
                 return null;
             }
-            hit = withPercent(core, store, percent);
+            return template.substring(0, start) + hit + reattach(hit, template.substring(used));
+        } finally {
+            TranslationStore.barItemNames(was);
         }
-        if (hit == null) {
-            return null;
-        }
-        return template.substring(0, start) + hit + reattach(hit, template.substring(used));
     }
 
     /**
@@ -7378,7 +7412,16 @@ public final class LineTranslator {
             return null;
         }
         String thing = core.substring(at + 3).strip();
-        String zh = thing.isEmpty() ? null : store.lookup(thing);
+        // 「某人的東西」後半是石碑、寵物這類，不會是一件裝備：「Grook's Nest」的 Nest
+        // 剛好是一把法杖的名字。見 TranslationStore#barItemNames。
+        boolean was = TranslationStore.itemNamesBarred();
+        TranslationStore.barItemNames(true);
+        String zh;
+        try {
+            zh = thing.isEmpty() ? null : store.lookup(thing);
+        } finally {
+            TranslationStore.barItemNames(was);
+        }
         return zh == null || zh.isBlank() ? null : name + " 的" + zh;
     }
 

@@ -266,7 +266,7 @@ public final class DialogueRewriter {
             if (tip == null || tip.isBlank() || !renderable(tip)) {
                 continue;
             }
-            if (!drawable(tip) && fontMissing(fontOf(styles.get(i)))) {
+            if (!drawable(tip, fontOf(styles.get(i))) && fontMissing(fontOf(styles.get(i)))) {
                 continue;                       // 沒有這一份中文字型，換了是一排方框
             }
             // 圖示要留在<b>原本的字型</b>裡：那個 SHIFT 按鈕是它畫出來的，
@@ -326,7 +326,7 @@ public final class DialogueRewriter {
                 i = end;
                 continue;                       // 查不到就留英文，不要換一半
             }
-            if (!drawable(pick) && fontMissing(fontOf(styles.get(i)))) {
+            if (!drawable(pick, fontOf(styles.get(i))) && fontMissing(fontOf(styles.get(i)))) {
                 i = end;
                 continue;                       // 沒有這一列的中文字型，換了是一排方框
             }
@@ -479,7 +479,7 @@ public final class DialogueRewriter {
                 continue;
             }
             Style style = styles.get(i);
-            if (swapped[i] && !drawable(texts.get(i))) {
+            if (swapped[i] && !drawable(texts.get(i), fontOf(styles.get(i)))) {
                 style = fitted(texts.get(i), style, styles.get(i));
             }
             if (swapped[i] && tofu == null) {
@@ -517,7 +517,7 @@ public final class DialogueRewriter {
         StringBuilder bad = new StringBuilder();
         text.codePoints().forEach(cp -> {
             String one = new String(Character.toChars(cp));
-            if (!(ours ? covered(one, lang) : drawable(one))) {
+            if (!(ours ? covered(one, lang) : drawable(one, font))) {
                 bad.append(String.format("U+%04X ", cp));
             }
         });
@@ -1761,7 +1761,7 @@ public final class DialogueRewriter {
      * 留英文的物品名原樣用原字型，位置跟原文一模一樣。
      */
     private static Style fitted(String text, Style style, Style original) {
-        if (drawable(text)) {
+        if (drawable(text, fontOf(original))) {
             return style;
         }
         FontDescription pair = paired(fontOf(original));
@@ -1782,7 +1782,7 @@ public final class DialogueRewriter {
     }
 
     private static int width(String text, Style original) {
-        if (drawable(text)) {
+        if (drawable(text, fontOf(original))) {
             return width(Component.literal(text).withStyle(original));
         }
         FontDescription pair = paired(fontOf(original));
@@ -1827,11 +1827,31 @@ public final class DialogueRewriter {
      * 畫出來是空框，那才需要換字型——代價是位置會掉。
      */
     static boolean drawable(String text) {
-        // Ç／ç 不在這裡：Wynncraft 的對話字型裡這兩個字是空白字，實機（土耳其文的
-        // 「için」）畫出來是「i in」。交給配對字型才畫得出來。
+        // Ç／ç 不在這裡：土耳其文的「için」在提示列實機畫出來是「i in」
+        //（見下面帶字型的那一支），交給配對字型才畫得出來。內文那幾列的配對字型
+        // 第一個 provider 就是 Wynncraft 自己那份，所以外觀不變。
         return text.codePoints().allMatch(cp ->
-                (cp >= 0x20 && cp < 0x7F) || cp == 0x2014
-                        || "ÀÁÂÃÄÅÆÈÉÊËÌÍÎÏàáâãäåæèéêëìíîï".indexOf(cp) >= 0);
+                plain(cp) || "ÀÁÂÃÄÅÆÈÉÊËÌÍÎÏàáâãäåæèéêëìíîï".indexOf(cp) >= 0);
+    }
+
+    /**
+     * 同上，但照<b>這一段實際用的字型</b>判斷。
+     *
+     * <p>帶重音的那張表（{@code wynncraft_latin.png}）只掛在內文、選項與名牌的
+     * 字型上；{@code text/control}（SHIFT 提示那一列）只有 ASCII 那一張
+     *（2026-10-10 解開資源包逐份核對）。在那一列，é、í、ç 都是缺字：畫出來的
+     * 缺字框落在預設字型的高度，被對話框蓋住，看起來就是字憑空少一個。
+     */
+    static boolean drawable(String text, String font) {
+        if (font != null && font.contains(CONTROL)) {
+            return text.codePoints().allMatch(DialogueRewriter::plain);
+        }
+        return drawable(text);
+    }
+
+    /** {@code wynncraft.png} 那張表：可見的 ASCII，空白那一格放的是破折號。 */
+    private static boolean plain(int cp) {
+        return (cp >= 0x20 && cp < 0x7F) || cp == 0x2014;
     }
 
     private static boolean readable(String text) {
