@@ -1,0 +1,464 @@
+{
+ "_meta": {
+  "quest": "Redbeard's Booty",
+  "count": 45,
+  "translated": 45,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Redbeard's Booty#000": {
+   "src": "It be disappointin' that I wasn't able to accompany ye. Mighta been able to thump the dogs together, eh?",
+   "dst": "Seninle gelemediğim için içim burkuluyor be. O itleri birlikte pataklayabilirdik, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "Grook 󏿿󏿿󏿿󏿿󏿿󏿿󏿢 󐀂\n󏿿󏿿󏿿󏿿󏿬󐀂",
+   "source": "captured"
+  },
+  "Redbeard's Booty#001": {
+   "src": "Aye! Let's find the booty and bring back some doubloons! Here be that map I snagged. Swim or whatever ye landlubbers do to get to Pirate Cove. It'll be the first house to the right when ye arrive.",
+   "dst": "Aye! Hadi ganimeti bulup birkaç altın dublon getirelim! Al, kaptığım harita bu. Yüz mü, ne yaparsınız siz kara fareleri, Pirate Cove'a git işte. Varınca sağdaki ilk ev.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 1",
+   "speaker": "Marston",
+   "source": "captured"
+  },
+  "Redbeard's Booty#002": {
+   "src": "Do ye remember where to go?",
+   "dst": "Nereye gideceğini hatırlıyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#003": {
+   "src": "No? The crew be loiterin' at Pirate Cove. I'll be along soon, don't ye worry!",
+   "dst": "Hayır mı? Tayfa Pirate Cove'da aylak aylak dolanıyor. Ben de az sonra gelirim, merak etme sen!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#004": {
+   "src": "You are not able to move but you still hear the ongoing conversation.",
+   "dst": "Kıpırdayamıyorsun ama süren konuşmayı hâlâ duyabiliyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Redbeard's Booty#005": {
+   "src": "What? Another clue! This be just a wild grook hunt, where be the real booty?! No one ever got rich off a heap o' keys!! Maybe this 'ere jewel attached will sell...",
+   "dst": "Ne? Bir ipucu daha! Bu tam bir boş yere grook kovalamaca, asıl ganimet nerede be?! Bir yığın anahtarla kimse zengin olmadı!! Belki şu takılı mücevher para eder...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "captured"
+  },
+  "Redbeard's Booty#006": {
+   "src": "Talk with Marston in the ocean at [-{~} {~} -{~}]",
+   "dst": "Okyanustaki Marston ile konuş: [-{~} {~} -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#007": {
+   "src": "Ah, ahoy matey! Are ye here to get a glimpse of ol' Redbeard's sunken galleon as well?",
+   "dst": "Ah, ahoy tayfa! Sen de mi ihtiyar Kızılsakal'ın batık kalyonunu görmeye geldin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 1",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#008": {
+   "src": "A fine ship it once was, aye? Accordin' to the stories, it sank in one o' the greatest sea battles in history! The cap'n sank beneath the waves, ne'er to be seen again!",
+   "dst": "Bir zamanlar ne güzel gemiydi, değil mi? Hikâyelere göre tarihin en büyük deniz savaşlarından birinde batmış! Kaptan da dalgaların altına gömülmüş, bir daha da görülmemiş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 1",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#009": {
+   "src": "...Say. Have ye ever wanted to go on a real treasure hunt? Ye look like someone with an eye for treasure, aye?",
+   "dst": "...Baksana. Hiç gerçek bir hazine avına çıkmak istedin mi? Hazineden anlar birine benziyorsun, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 1",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#010": {
+   "src": "Good for ye then! I bought meself a real treasure map on Pirate Cove, a fine deal if ye ask me. And, if the jack wasn't fibbing, it leads to the feared Redbeard's real treasure!",
+   "dst": "Aferin sana o zaman! Pirate Cove'dan kendime gerçek bir hazine haritası aldım, bence kelepir. Hem o herif yalan söylemiyorsa, harita korkunç Kızılsakal'ın gerçek hazinesine çıkıyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 1",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#011": {
+   "src": "O' course, there always be room for another! Ye joinin'? We could use another hand.",
+   "dst": "Tabii ki bir kişilik daha yer hep var! Katılıyor musun? Bir el daha işimize yarar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 1",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#012": {
+   "src": "Find Marston's crew on Pirate Cove at [-{~}, {~}, -{~}]",
+   "dst": "Pirate Cove'da Marston'ın tayfasını bul: [-{~}, {~}, -{~}]",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#013": {
+   "src": "And that be when ye will...",
+   "dst": "İşte o zaman sen de...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 2",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#014": {
+   "src": "Cor lad...ye don' look like a pirate ta me, and I be but a young lass!",
+   "dst": "Vay be delikanlı... bana hiç korsan gibi görünmüyorsun, ben de daha genç bir kızım be!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 2",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#015": {
+   "src": "'s right, bucko. Who be ye, bargin' into our home in yer fancy armour 'n whatnot?",
+   "dst": "Doğru diyor, ahbap. Kimsin sen, süslü zırhınla falan evimize böyle dalıyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 2",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#016": {
+   "src": "Ah, ye be accompanyin' Marston, eh? Well if ye insist on that, where be the man 'himself?",
+   "dst": "Ah, Marston ile geliyorsun ha? Madem öyle diyorsun, adamın kendisi nerede?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 2",
+   "speaker": "Argus",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#017": {
+   "src": "Comin' later? Hm. Well, more hands always be helpful. Let us go down to me ship, the Black Ring.",
+   "dst": "Sonra mı geliyor? Hm. Eh, fazladan el hep işe yarar. Hadi gemime inelim, Black Ring'e.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 2",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#018": {
+   "src": "So he told ye about the plan? We'll bathe in doubloons when we get back! Ah, me fair lass will be so happy.",
+   "dst": "Sana planı anlattı mı yani? Dönünce dublonların içinde yüzeceğiz! Ah, benim güzel sevgilim pek sevinecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 2",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#019": {
+   "src": "Hop aboard the Black Ring down at the dock of Pirate Cove.",
+   "dst": "Pirate Cove'un iskelesindeki Black Ring'e atla.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#020": {
+   "src": "Find the treasure.",
+   "dst": "Hazineyi bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#021": {
+   "src": "Aha, quick on yer feet, lad! Ye got 'ere before us!",
+   "dst": "Aha, ayağına çabuksun delikanlı! Bizden önce gelmişsin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#022": {
+   "src": "No trace o' Marston yet?",
+   "dst": "Marston'dan hâlâ iz yok mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Argus",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#023": {
+   "src": "How's about we wait up fer him? He's the one who's givin us the opportunity fer this hunt, anyways.",
+   "dst": "Onu beklesek mi? Bu av için bize fırsatı veren o sonuçta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#024": {
+   "src": "I be getting impatient... The whole crew is 'ere, 'cept fer him!",
+   "dst": "Sabrım taşıyor... Bütün tayfa burada, bir o hariç!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Argus",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#025": {
+   "src": "Argh! Where be our mate? It be getting dark out! We will have to leave Marston at land.",
+   "dst": "Argh! Nerede kaldı bizimki? Hava kararıyor! Marston'ı karada bırakmamız gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#026": {
+   "src": "Do ya have the map Marston bought?",
+   "dst": "Marston'ın aldığı harita sende mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#027": {
+   "src": "Let us take a looksie at the map and see where to go.",
+   "dst": "Hadi şu haritaya bir göz atıp nereye gideceğimize bakalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#028": {
+   "src": "It seems like one of these islands have the treasure... A'ight, yer in charge, landlubber! Set us on a course fer an island!",
+   "dst": "Hazine şu adalardan birinde gibi görünüyor... Pekâlâ, komuta sende, kara faresi! Bizi bir adaya doğru yönlendir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Argus",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#029": {
+   "src": "Ahoy, this must be the booty. Fret not, Argus is keepin' the ship prepared so we can leave.",
+   "dst": "Ahoy, ganimet bu olmalı. Merak etme, Argus gemiyi hazır tutuyor ki gidebilelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#030": {
+   "src": "A'ight, let's us dig it up, jacks!",
+   "dst": "Pekâlâ, kazıp çıkaralım şunu, tayfa!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#031": {
+   "src": "Aha, I see somethin' gleaming in there! Methinks we hit gold, lads.",
+   "dst": "Aha, içeride parıldayan bir şey görüyorum! Bence altını bulduk, çocuklar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#032": {
+   "src": "Now Martim, knock the lubber out.",
+   "dst": "Şimdi Martim, bayılt şu kara faresini.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#033": {
+   "src": "Wait, there be a clue on the key! Presented to the ruined Galleon, a true path forward will arise.",
+   "dst": "Durun, anahtarın üstünde bir ipucu var! Harap Kalyon'a sunulduğunda, gerçek bir yol açılacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#034": {
+   "src": "Garh...I be losin' my patience. Argus arrived, let's ditch the lubber before they awake, hm? This island be hidden by magic, ain't no way they're gettin' found.",
+   "dst": "Garh... sabrım tükeniyor. Argus geldi, kara faresi uyanmadan onu burada bırakıp gidelim, ha? Bu ada büyüyle gizlenmiş, onu bulmalarına imkân yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Martim",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#035": {
+   "src": "Arright! This key... We might be able to bring Redbeard 'imself back to life... He'll strike terror in the seas again, and we will be 'is crew!",
+   "dst": "Pekâlâ! Bu anahtar... Belki Kızılsakal'ın kendisini hayata döndürebiliriz... Denizlere yine dehşet salacak, biz de onun tayfası olacağız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 4",
+   "speaker": "Karkun",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#036": {
+   "src": "Leave the hidden island and stop the pirates from stealing Redbeard's Booty.",
+   "dst": "Gizli adadan ayrıl ve korsanların Kızılsakal'ın Ganimeti'ni çalmasını engelle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#037": {
+   "src": "Talk to Marston about his crew at [-{~}, {~}, -{~}].",
+   "dst": "Tayfası hakkında Marston ile konuş: [-{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#038": {
+   "src": "Can't say I expected all that... Those dogs are quick, eh?",
+   "dst": "Bunların hiçbirini beklemiyordum doğrusu... O itler çabuk davranıyor, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#039": {
+   "src": "Fer a landlubber, ye sure are quick. When I got ta Pirate Cove, ye were already but a speck on the horizon.",
+   "dst": "Bir kara faresine göre epey hızlısın. Ben Pirate Cove'a vardığımda sen çoktan ufukta bir noktaya dönmüştün.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#040": {
+   "src": "Speakin' of, what'n the name o' Davy Jones' Locket happened out there?!",
+   "dst": "Demişken, Davy Jones'un Madalyonu adına orada ne oldu öyle?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#041": {
+   "src": "Ye look a bit bruised! Reckon ye ran aground o' trouble with 'em too, eh?",
+   "dst": "Biraz hırpalanmış görünüyorsun! Sen de onlarla başını belaya soktun herhalde, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#042": {
+   "src": "Well, lad! Methinks ye oughta go in after 'em! We may be a rowdy lot, but a mutiny's somethin' ye don't tolerate.",
+   "dst": "Eh, delikanlı! Bence peşlerinden gitmelisin! Biz kavgacı bir güruh olabiliriz ama isyan hoş görülecek şey değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#043": {
+   "src": "They don't deserve that treasure, lad! It ain't be mine either, since I missed ye. That gold be yours fer the takin...so take it!",
+   "dst": "O hazineyi hak etmiyorlar, delikanlı! Benim de değil, size yetişemedim sonuçta. O altın senin, al götür... hadi al!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "Marston",
+   "source": "wiki"
+  },
+  "Redbeard's Booty#044": {
+   "src": "Speakin' of...I ain't got much a penny ta my name, but I found this fish while ye were gone. I hear it sells for a decent haul, so here.",
+   "dst": "Demişken... cebimde pek beş kuruş yok ama sen yokken şu balığı buldum. İyi para ettiğini duydum, al bakalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Redbeard's Booty",
+   "stage": "Stage 6",
+   "speaker": "Marston",
+   "source": "wiki"
+  }
+ }
+}

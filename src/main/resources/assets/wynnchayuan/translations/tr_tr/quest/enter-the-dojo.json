@@ -1,0 +1,1164 @@
+{
+ "_meta": {
+  "quest": "Enter the Dojo",
+  "count": 115,
+  "translated": 115,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Enter the Dojo#000": {
+   "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
+   "dst": "Nekromantik uygulamalardaki yükseliş, tekniğin yasaklanmasıyla {~} AP yılında sona erdi. Ölülere saygısızlık edip ruhlarının göçmesini engellemek...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#001": {
+   "src": "It is best to not add too much to the tea, for too many conflicting tastes will leave it muddled and foul-tasting. Three ingredients is a fine benchmark.",
+   "dst": "Çaya çok fazla şey katmamak en iyisidir, çünkü birbiriyle çatışan çok sayıda tat onu bulanık ve kötü tatlı yapar. Üç malzeme iyi bir ölçüdür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#002": {
+   "src": "Talk to Sensei Miyagi at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] konumundaki Sensei Miyagi ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#003": {
+   "src": "Oh hohoho! So a human has found their way to my humble dojo? Intriguing! I am called Sensei Miyagi. I welcome you.",
+   "dst": "Oh hohoho! Demek bir insan mütevazı dojoma yolunu buldu? İlginç! Adım Sensei Miyagi. Hoş geldin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#004": {
+   "src": "This dojo- I have dedicated to honing skills in all of the arts- from mental prowess and mental acuity, to craftsmanship and artistry.",
+   "dst": "Bu dojoyu- bütün sanatlarda beceri geliştirmeye adadım. Zihin gücünden ve keskinliğinden zanaata ve sanatkârlığa kadar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#005": {
+   "src": "Many have come- traveled from all corners of the earth to this humble one's dojo to train themselves and grow stronger. I am to presume you are the same?",
+   "dst": "Pek çok kişi geldi- kendini eğitip güçlenmek için dünyanın dört bir yanından bu naçizane kişinin dojosuna yolculuk etti. Senin de öyle olduğunu varsayayım mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#006": {
+   "src": "Although, while I have enjoyed my life's work here, I cannot deny I am getting on in years. I seek a successor, a master of many skills to take my place.",
+   "dst": "Gerçi buradaki ömürlük işimden keyif alsam da yaşlandığımı inkâr edemem. Yerimi alacak, pek çok beceride usta bir halef arıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#007": {
+   "src": "To the one who should master the arts, I would bequeath the Master's Gi, a symbol of resolute skill. Of course, do not feel pressured to take over for me, hoho!",
+   "dst": "Sanatlarda ustalaşacak kişiye, kararlı becerinin simgesi olan Master's Gi'yi bırakırım. Elbette yerime geçmek için baskı hissetme, hoho!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#008": {
+   "src": "As long as I may teach others and bring them to new heights, I am satisfied. Whether your aim be merely to sharpen your skills or to allow me to retire, you are welcomed.",
+   "dst": "Başkalarına öğretip onları yeni zirvelere taşıyabildiğim sürece memnunum. Amacın ister sadece becerini bilemek, ister emekliye ayrılmamı sağlamak olsun, hoş geldin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#009": {
+   "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
+   "dst": "Başlamaya hazır olduğunda dojonun arkasındaki pınarın sularında arın, ben de seni ilk sınavına götüreyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 1",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#010": {
+   "src": "Jump down the water pit to begin the challenges.",
+   "dst": "Sınavlara başlamak için su çukuruna atla.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#011": {
+   "src": "Ascend the Lufar Room in the physical strength challenge.",
+   "dst": "Fiziksel güç sınavında Lufar Odası'nın tepesine tırman.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#012": {
+   "src": "Here we are then- The Lufar Room. Here tests your agility! Even these old bones can scale this room in short order- how shall you fare?",
+   "dst": "İşte geldik- Lufar Odası. Burada çevikliğin sınanır! Bu yaşlı kemikler bile bu odayı kısa sürede tırmanabilir- ya sen nasıl yapacaksın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 3",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#013": {
+   "src": "Fight your way through the Fiata Room in the combat challenge.",
+   "dst": "Dövüş sınavında Fiata Odası'nda savaşarak ilerle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#014": {
+   "src": "I recognize your skill, and you have passed the challenge of the Lufar Room! Hoho, but the next challenge has defeated many an apprentice.",
+   "dst": "Becerini takdir ediyorum, Lufar Odası'nın sınavını geçtin! Hoho, ama sıradaki sınav nice çırağı yenmiştir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#015": {
+   "src": "Now, comes the Fiata Room! Here, your combat prowess shall be put to the test. Martial skill comes easily to me...but what of your own?",
+   "dst": "Şimdi sıra Fiata Odası'nda! Burada dövüş yeteneğin sınanacak. Dövüş sanatı bana kolay gelir... peki ya sana?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#017": {
+   "src": "Solve the puzzle of sight in the Cliste Room in the sight challenge.",
+   "dst": "Görme sınavında Cliste Odası'ndaki görme bulmacasını çöz.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#019": {
+   "src": "Next, however, is not a challenge of physical skill, but of observation and logical reasoning, in this- the Cliste Room. Here, a puzzle awaits.",
+   "dst": "Ancak sıradaki, fiziksel beceri değil; gözlem ve mantık yürütme sınavı. Burası- Cliste Odası. Burada seni bir bulmaca bekliyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#020": {
+   "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as there are many things.",
+   "dst": "Kırmızı bloğu altın bloğa götürmek için yolu çözmen gerekiyor. Teoride basit... pratikte karmaşık, çünkü pek çok şey var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#021": {
+   "src": "Remember this as you work- Change your perspective, and the reality changes.",
+   "dst": "Çalışırken şunu unutma- Bakış açını değiştir, gerçeklik de değişir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 5",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#023": {
+   "src": "And there, I recognize your mental acuity! You have passed the Cliste Room. You are doing quite well, but many have gotten to this point and had a single point stymie them.",
+   "dst": "İşte, zihin keskinliğini takdir ediyorum! Cliste Odası'nı geçtin. Gayet iyi gidiyorsun, ama pek çoğu bu noktaya gelip tek bir noktada takılıp kaldı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#024": {
+   "src": "Welcome then, to the last challenge I offer you, held within the Sitheach Room and cavern.",
+   "dst": "O hâlde sana sunduğum son sınava hoş geldin. Sitheach Odası'nda ve mağarasında gerçekleşiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#025": {
+   "src": "Your task here, is to become tranquil, and at peace with nature. What that entails... I leave up to you.",
+   "dst": "Buradaki görevin dinginleşmek ve doğayla barış içinde olmak. Bunun ne gerektirdiğini... sana bırakıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#026": {
+   "src": "There are many paths to tranquility. Whatever you choose, you will know when you have reached the point of success.",
+   "dst": "Dinginliğe giden pek çok yol var. Hangisini seçersen seç, başarıya ulaştığında bunu anlayacaksın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#027": {
+   "src": "Exit the Sitheach cave through the tunnel near the temple.",
+   "dst": "Tapınağın yakınındaki tünelden Sitheach mağarasından çık.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#028": {
+   "src": "Speak to Sensei Miyagi.",
+   "dst": "Sensei Miyagi ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Enter the Dojo#029": {
+   "src": "I see it now. The troubled heart you came here with is troubled no longer. I recognize your mastery of the Sitheach Room.",
+   "dst": "Şimdi görüyorum. Buraya getirdiğin sıkıntılı kalp artık sıkıntılı değil. Sitheach Odası'ndaki ustalığını takdir ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#030": {
+   "src": "Oh hoho... It is just like a human to do what cannot be done. That is each challenge of my humble dojo, completed!",
+   "dst": "Oh hoho... Yapılamayanı yapmak tam da bir insana yakışır. Böylece mütevazı dojomun bütün sınavları tamamlandı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#031": {
+   "src": "So! While I did advise you not to feel pressured of it, I am curious, young master. Do you wish to take my place here, so I may sit these old bones down?",
+   "dst": "Evet! Baskı hissetmemeni tavsiye etsem de merak ediyorum, genç usta. Bu yaşlı kemikleri dinlendirebilmem için burada yerimi almak ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#032": {
+   "src": "Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
+   "dst": "Ah, tabii ki hayır. Ustalığına rağmen bu, yolculuğunda yalnızca bir adım. Dert etme, gayet iyi anlıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#033": {
+   "src": "I am certain that I will find a suitable successor before my time comes- and equally as certain that I've many a year to go, hoho!",
+   "dst": "Vaktim gelmeden uygun bir halef bulacağımdan eminim- önümde daha nice yıl olduğundan da bir o kadar eminim, hoho!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#034": {
+   "src": "Nevertheless, you have completed the challenges of this humble Sensei, as such, I will provide you what was promised.",
+   "dst": "Yine de bu naçizane Sensei'nin sınavlarını tamamladın, o yüzden sana söz verileni vereceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#035": {
+   "src": "Wear this [Master's Gi] with pride, and remember this final lesson- There is never a point in life that you will stop learning. See the world and its lessons every day of your life, young master.",
+   "dst": "Bu [Master's Gi]'yi gururla giy ve şu son dersi unutma- Hayatta öğrenmeyi bırakacağın bir an asla yoktur. Hayatının her gününde dünyayı ve derslerini gör, genç usta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 8",
+   "speaker": "Sensei Miyagi",
+   "source": "wiki"
+  },
+  "Enter the Dojo#036": {
+   "src": "I hear many things about human combat skill, so I believe I shall watch this challenge myself. Enter now, challenger!",
+   "dst": "İnsanların dövüş becerisi hakkında çok şey duyuyorum, o yüzden bu sınavı bizzat izleyeceğim. Gir şimdi, meydan okuyan!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#037": {
+   "src": "Fight your way through the combat challenge",
+   "dst": "Dövüş sınavında savaşarak ilerle",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#038": {
+   "src": "And I am to recognize your combat skill, and proclaim your passage of the fiata Room. Well done!",
+   "dst": "Dövüş becerini takdir ediyor ve Fiata Odası'nı geçtiğini ilan ediyorum. Aferin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 4",
+   "speaker": "Sensei Miyagi",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#039": {
+   "src": "In founding this dojo, I was inspired by many a tale. I was many a time scoffed at by others, for taking stock in the legends of old...",
+   "dst": "Bu dojoyu kurarken nice hikâyeden ilham aldım. Eski efsanelere değer verdiğim için başkaları bana defalarca burun kıvırdı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#040": {
+   "src": "And yet the results speak for themselves. As of the time of writing this, being {~} AP, I am {~} years old.",
+   "dst": "Yine de sonuçlar ortada. Bunu yazdığım {~} AP yılında {~} yaşındayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#041": {
+   "src": "Many forget the power one's body can rise to, thanks to the prevalence of magic practices. Although magical knowledge is itself important, and I am guilty of neglecting it myself.",
+   "dst": "Büyü uygulamalarının yaygınlığı yüzünden çoğu kişi bedenin ulaşabileceği gücü unutuyor. Gerçi büyü bilgisi de önemli, ben de onu ihmal etmekten suçluyum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#042": {
+   "src": "But the tales and practices of ancient warriors and kings, such as Remikas, or even modern soldiers such as Tisaun Sodeta, have great value.",
+   "dst": "Ama Remikas gibi kadim savaşçıların ve kralların, hatta Tisaun Sodeta gibi günümüz askerlerinin hikâyeleri ve uygulamaları büyük değer taşır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#043": {
+   "src": "Here, I will tell of what tales have brought me my wisdom, my power, and my health, and pass on that knowledge to you, dear reader.",
+   "dst": "Burada bana bilgeliğimi, gücümü ve sağlığımı kazandıran hikâyeleri anlatacak ve bu bilgiyi sana aktaracağım, sevgili okur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#045": {
+   "src": "...though this is a fascinating read, you're already going through a lot of what is described in the book, and it hasn't brought you tranquility.",
+   "dst": "...ilginç bir okuma, ama kitapta anlatılanların çoğunu zaten yaşıyorsun ve bu sana dinginlik getirmedi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#046": {
+   "src": "Become at one with nature in the room and cavern",
+   "dst": "Odada ve mağarada doğayla bir ol",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#047": {
+   "src": "To meditate is to remove all distractions, and to peacefully introspect- to be at one with yourself and anchor yourself to the moment, or merely to relax.",
+   "dst": "Meditasyon yapmak, bütün dikkat dağıtıcıları uzaklaştırıp huzurla içine bakmaktır- kendinle bir olup kendini âna demirlemek, ya da sadece rahatlamak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#048": {
+   "src": "It is highly recommended for anyone experiencing stress or a clouded mind. Here will be detailed the basic steps for practicing meditation.",
+   "dst": "Stres yaşayan ya da zihni bulanık olan herkese şiddetle tavsiye edilir. Burada meditasyon yapmanın temel adımları anlatılacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#049": {
+   "src": "First, find a quiet, comfortable place. Someplace that you feel safe in, and where you will not be interrupted by outside influences.",
+   "dst": "Önce sessiz, rahat bir yer bul. Kendini güvende hissettiğin ve dışarıdan bölünmeyeceğin bir yer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#050": {
+   "src": "If you are first beginning, set an hourglass or clock alarm for a short time. Ten or fifteen minutes will do. Even short sessions can help.",
+   "dst": "Yeni başlıyorsan bir kum saati ya da saat alarmını kısa bir süreye kur. On ya da on beş dakika yeter. Kısa seanslar bile işe yarar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#051": {
+   "src": "Next, sit down. The traditional position is to sit cross-legged with hands in the lap, but so long as you are comfortable, any position works.",
+   "dst": "Sonra otur. Geleneksel duruş, eller kucakta bağdaş kurup oturmaktır, ama rahat olduğun sürece her duruş olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#052": {
+   "src": "Once you have found a comfortable spot, close your eyes and breathe deeply. Breathe in deeply, hold for a few seconds, breathe out, and hold for the same amount.",
+   "dst": "Rahat bir yer bulunca gözlerini kapat ve derin nefes al. Derin nefes al, birkaç saniye tut, nefes ver ve aynı süre bekle.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#053": {
+   "src": "Focus on the sensation of your breathing, and on only the sensation of your breathing. If your mind wanders, do not fret- simply return your attention to your breath.",
+   "dst": "Nefesinin hissine odaklan, sadece nefesinin hissine. Zihnin dağılırsa telaşlanma- dikkatini yeniden nefesine ver.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#054": {
+   "src": "When you feel ready to rise, or when your time ends, slowly open your eyes and notice your environment- the sights and sounds, and the feeling of your body.",
+   "dst": "Kalkmaya hazır hissettiğinde ya da süren dolduğunda gözlerini yavaşça aç ve çevrene dikkat et- görüntülere, seslere ve bedenindeki hisse.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "Guide to Meditation",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#055": {
+   "src": "Although there are more complex and involved methods of meditation, they are not necessary- Now that you have read this, try it yourself whenever you have a spare moment.",
+   "dst": "Daha karmaşık ve kapsamlı meditasyon yöntemleri olsa da bunlar gerekli değil- Bunu okuduğuna göre, boş bir anın olduğunda kendin dene.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#056": {
+   "src": "...this seems promising. Carefully, you settle down and close your eyes.",
+   "dst": "...bu umut verici görünüyor. Dikkatlice yere oturup gözlerini kapatıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#057": {
+   "src": "...breathe in...",
+   "dst": "...nefes al...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#058": {
+   "src": "...breathe out...",
+   "dst": "...nefes ver...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#059": {
+   "src": "...you can't focus. Your mind is wandering too many directions at once. Unfortunate, but it's worth remembering anyways.",
+   "dst": "...odaklanamıyorsun. Zihnin aynı anda çok fazla yöne dağılıyor. Ne yazık, ama yine de akılda tutmaya değer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#060": {
+   "src": "When fighting unarmed or with weapons such as knuckles, katars, or gauntlets, one's stance is paramount in fighting an opponent.",
+   "dst": "Silahsız ya da muşta, katar veya eldiven gibi silahlarla dövüşürken rakiple mücadelede duruş çok önemlidir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#061": {
+   "src": "The way one is positioned can ground the body, allowing for blows to be taken with less consequence, or allow one to be light enough to evade attack.",
+   "dst": "Kişinin konumu bedeni yere sabitleyip darbelerin daha az zararla karşılanmasını sağlayabilir, ya da saldırılardan kaçacak kadar hafif olmasına imkân verir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#062": {
+   "src": "All combat must of course be learned through rigorous training- One cannot expect to become an expert simply by reading. Here are a handful of basic stances to practice.",
+   "dst": "Her dövüş elbette sıkı bir eğitimle öğrenilmelidir- Sadece okuyarak usta olunmaz. İşte çalışman için birkaç temel duruş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#063": {
+   "src": "The Forward Stance has the legs placed broadly apart, the back leg outstretched fully and the body upright. This is a firm stance to steady oneself.",
+   "dst": "Öne Duruş'ta bacaklar geniş açılır, arka bacak tamamen uzatılır ve beden dik tutulur. Dengede kalmak için sağlam bir duruştur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#065": {
+   "src": "The Back Stance has one foot in front of the other, with the back foot facing to the side and one's weight on the back leg. For evading attacks to the top of the body.",
+   "dst": "Geri Duruş'ta bir ayak diğerinin önündedir, arka ayak yana döner ve ağırlık arka bacaktadır. Bedenin üst kısmına gelen saldırılardan kaçmak içindir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#066": {
+   "src": "The Cat Stance also has weight on the back foot, with legs bent and held close together and the front foot resting on the heel. This allows easy preparation for strong front kicks.",
+   "dst": "Kedi Duruşu'nda da ağırlık arka ayaktadır, bacaklar bükülüp birbirine yakın tutulur ve ön ayak topuğa dayanır. Güçlü ön tekmelere kolayca hazırlanmayı sağlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#067": {
+   "src": "The Crane Stance has one leg raised, the foot level with the other knee. Also used in preparation for kicking, as well as dodging a sweeping attack by the enemy.",
+   "dst": "Turna Duruşu'nda bir bacak kaldırılır, ayak diğer dizle aynı hizadadır. Tekmeye hazırlanmak ve düşmanın süpürme saldırısından kaçmak için de kullanılır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#068": {
+   "src": "Many a venerable mage has made their mark on history. There is a reason their names are repeated- we can learn much from what they have demonstrated.",
+   "dst": "Nice saygın büyücü tarihe iz bırakmıştır. Adlarının tekrar tekrar anılmasının bir sebebi var- gösterdiklerinden çok şey öğrenebiliriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#069": {
+   "src": "This, unfortunately, applies both for positive and negative reasons. For instance, a lesson that has become law involves the use of soul-binding magic.",
+   "dst": "Ne yazık ki bu hem olumlu hem olumsuz sebeplerle geçerli. Örneğin yasaya dönüşmüş bir ders, ruh bağlama büyüsünün kullanımıyla ilgilidir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#070": {
+   "src": "...was considered a monstrous and immoral practice. Keeping the spirit trapped, forced to obey orders, in a decaying body wracked with pain, is something that could not be abided by.",
+   "dst": "...canavarca ve ahlaksız bir uygulama sayıldı. Ruhu, acıyla kıvranan çürüyen bir bedende hapsedip emir dinlemeye zorlamak, katlanılabilecek bir şey değildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#071": {
+   "src": "Since then, soul-binding is the most strictly punished brand of magic in all of Gavel, above demonic rites and even the necromancy that soul-binding was endemic within.",
+   "dst": "O zamandan beri ruh bağlama, bütün Gavel'de en ağır cezalandırılan büyü türüdür. Şeytani ayinlerin, hatta ruh bağlamanın içinde yaygın olduğu nekromansinin bile üstünde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#072": {
+   "src": "...this is a very heavy read. Certainly not suitable for finding tranquility.",
+   "dst": "...bu çok ağır bir okuma. Dinginlik bulmak için kesinlikle uygun değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#073": {
+   "src": "To brew tea is a simple, meditative process that in itself has deep intricacies. We shall draw upon its heritage now.",
+   "dst": "Çay demlemek, kendi içinde derin incelikleri olan basit ve meditatif bir süreçtir. Şimdi onun mirasından yararlanacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#074": {
+   "src": "Fresh, clean water is required. Bring it to a soft boil in a pot or cauldron, and then mix in herbs and ingredients to taste..",
+   "dst": "Taze, temiz su gerekir. Bir tencerede ya da kazanda hafifçe kaynat, sonra damak zevkine göre otları ve malzemeleri kat..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#075": {
+   "src": "Harvesting ingredients freshly can add extra depth to the tea, although you can make fine tea from any ingredients, so long as they are not rotten.",
+   "dst": "Malzemeleri taze toplamak çaya ekstra derinlik katabilir, ama çürük olmadıkları sürece her malzemeden güzel çay yapılabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#076": {
+   "src": "Common ingredients include sugar, lemongrass, ginger root, chamomile, and lavender. Each has their own purpose for tea.",
+   "dst": "Yaygın malzemeler arasında şeker, limon otu, zencefil kökü, papatya ve lavanta var. Her birinin çayda kendine has bir amacı vardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#077": {
+   "src": "Sugar helps sweeten the bitterness of some brews, and balances the flavors to be mild. However, too much will leave the brew sickly and tacky.",
+   "dst": "Şeker bazı demlerin acılığını tatlandırır ve tatları dengeleyip yumuşatır. Ama fazlası demi bayık ve yapış yapış yapar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#078": {
+   "src": "The unique tang of lemongrass is lauded as signature for green tea. The mild, lightly-minty flavor is a perfect base for which to create a relaxing brew.",
+   "dst": "Limon otunun kendine özgü keskinliği yeşil çayın imzası sayılır. Yumuşak, hafif nane tadı rahatlatıcı bir dem için kusursuz bir temeldir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#079": {
+   "src": "Although Ginger Root is bitingly bitter and inevitably overpowers other ingredients, it has potent medicinal effects which may help invigorate the sick.",
+   "dst": "Zencefil kökü yakıcı derecede acı olup kaçınılmaz olarak diğer malzemeleri bastırsa da, hastaları canlandırabilecek güçlü şifalı etkileri vardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#080": {
+   "src": "Lavender is similarly relaxing, but must be the focus of the brew. It must be steeped for a long while, and is severely bitter, which causes it to drown out other ingredients.",
+   "dst": "Lavanta da benzer şekilde rahatlatıcıdır, ama demin odak noktası olmalıdır. Uzun süre demlenmesi gerekir ve çok acıdır, bu yüzden diğer malzemeleri bastırır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#081": {
+   "src": "...come to think of it, a cup of tea sounds like it would be quite nice, after all the hard training. Perhaps you should make a cup.",
+   "dst": "...düşünüyorum da, bunca zorlu antrenmandan sonra bir fincan çay hiç fena olmazdı. Belki bir fincan yapmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#082": {
+   "src": "While many people think that relaxation is out of reach with their busy schedules, the truth is there are many things you can do daily to wind down that take little time.",
+   "dst": "Pek çok kişi yoğun programları yüzünden rahatlamanın imkânsız olduğunu düşünse de gerçek şu ki, her gün gevşemek için yapabileceğin az zaman alan pek çok şey var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#083": {
+   "src": "For instance, caring for houseplants is a simple task. You can grow them from seeds or get them pre-bought, and caring for gardens is an easy way to relax, while also giving you a place to relax.",
+   "dst": "Örneğin saksı bitkilerine bakmak basit bir iştir. Tohumdan yetiştirebilir ya da hazır alabilirsin. Bahçeyle uğraşmak hem rahatlamanın kolay bir yolu hem de sana rahatlayacak bir yer verir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#084": {
+   "src": "You can turn any room into a garden simply by getting planter pots, but for those who can't devote enough time to that, you could try caring for a bonsai tree instead.",
+   "dst": "Sadece saksı alarak her odayı bahçeye çevirebilirsin, ama buna yeterince vakit ayıramayanlar onun yerine bir bonsai ağacına bakmayı deneyebilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#085": {
+   "src": "They just need water, sunlight, and care by using garden shears to carefully cut the limbs of the tree. Shaping it like this is artful in itself, and has spiritual significance as well.",
+   "dst": "Tek ihtiyaçları su, güneş ışığı ve bahçe makasıyla dalları dikkatlice budayarak gösterilen özen. Ona böyle şekil vermek başlı başına bir sanattır ve manevi bir anlamı da vardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#086": {
+   "src": "It requires focus in the moment, but not much time at all, meaning that you can simply set aside short time and be done. It also helps clean the air in the house as well!",
+   "dst": "O ana odaklanmayı gerektirir ama hiç fazla zaman almaz, yani kısa bir süre ayırıp işini bitirebilirsin. Üstelik evin havasını temizlemeye de yardım eder!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#087": {
+   "src": "Another easy way to relax is to set up a stone garden. You don't need a large amount of space to have one- even a small box will do. Fill it with gravel and smooth stones.",
+   "dst": "Rahatlamanın bir başka kolay yolu da taş bahçesi kurmaktır. Bunun için geniş bir alana gerek yok- küçük bir kutu bile olur. İçini çakıl ve pürüzsüz taşlarla doldur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#088": {
+   "src": "Use a small handheld rake to draw lines in the gravel in different patterns, each day. It's as simple as that- don't focus on making specific ones though, just draw whatever your hand draws.",
+   "dst": "Küçük bir el tırmığıyla her gün çakılda farklı desenlerde çizgiler çiz. Bu kadar basit- belirli desenler yapmaya odaklanma ama, elin ne çizerse onu çiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#089": {
+   "src": "Doing this can help draw focus away from stressful thoughts, and bring you back to the moment, while also being a fun conversation piece that's easy and cheap to set up.",
+   "dst": "Bunu yapmak dikkatini stresli düşüncelerden uzaklaştırıp seni âna geri getirebilir. Üstelik kurması kolay ve ucuz, eğlenceli bir sohbet konusu olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#090": {
+   "src": "...those are nice thoughts, but unfortunately there isn't a zen garden set up here, and you don't have a bonsai tree or garden shears handy.",
+   "dst": "...güzel düşünceler, ama ne yazık ki burada kurulu bir zen bahçesi yok, elinde de bonsai ağacı ya da bahçe makası yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#091": {
+   "src": "The sheep raises its head to look at you, then returns to its business.",
+   "dst": "Koyun başını kaldırıp sana bakıyor, sonra kendi işine dönüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#092": {
+   "src": "The cow raises its head to look at you, then returns to its business.",
+   "dst": "İnek başını kaldırıp sana bakıyor, sonra kendi işine dönüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#093": {
+   "src": "The pig raises its head to look at you, then returns to its business.",
+   "dst": "Domuz başını kaldırıp sana bakıyor, sonra kendi işine dönüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#094": {
+   "src": "With the tea brewed and the scent of it filling the room, you gently take a few sips.",
+   "dst": "Çay demlenip kokusu odayı doldurunca yavaşça birkaç yudum alıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#095": {
+   "src": "The heat of the tea and the gently sweet, floral taste warms your throat and body. You feel more relaxed, but...not at peace with nature yet.",
+   "dst": "Çayın sıcaklığı ve hafif tatlı, çiçeksi tadı boğazını ve bedenini ısıtıyor. Daha rahat hissediyorsun ama... henüz doğayla barış içinde değilsin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#096": {
+   "src": "...there were some animals wandering the cave. Making a small offering seems like the right way to go, and there's plenty of tea left...",
+   "dst": "...mağarada dolaşan birkaç hayvan vardı. Küçük bir sunu yapmak doğru yol gibi görünüyor, hem daha bolca çay kaldı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#097": {
+   "src": "...hm? This isn't actually a book, it's a dossier. Did Miyagi leave this out by accident?",
+   "dst": "...hm? Bu aslında bir kitap değil, bir dosya. Miyagi bunu yanlışlıkla mı ortada bıraktı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#098": {
+   "src": "Seems to contain a number of trade agreements, between the Sakura Dojo and the {p}.",
+   "dst": "Sakura Dojo ile {p} arasındaki birkaç ticaret anlaşmasını içeriyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#099": {
+   "src": "It appears that recently, a large shipment of Hive silk has been received. There's no record of emerald payment.",
+   "dst": "Görünüşe göre yakın zamanda büyük bir Kovan ipeği sevkiyatı teslim alınmış. Zümrüt ödemesine dair bir kayıt yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#100": {
+   "src": "A shipment of cherries and rice has been sent out at the same time- they must trade products directly.",
+   "dst": "Aynı zamanda bir kiraz ve pirinç sevkiyatı gönderilmiş- ürünleri doğrudan takas ediyor olmalılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#101": {
+   "src": "Previous records show trades of metal salvage for cherry wood, and gifted shipments of tea leaves and ingredients.",
+   "dst": "Önceki kayıtlarda kiraz ağacı karşılığında hurda metal takasları ve hediye olarak gönderilmiş çay yaprağı ve malzeme sevkiyatları görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#102": {
+   "src": "...there's a letter here, too. The script is very ornate...this is addressed from the Mistress of the Hive herself, only a few months ago.",
+   "dst": "...burada bir de mektup var. Yazı çok süslü... bu, birkaç ay önce bizzat Kovan Hanımı tarafından gönderilmiş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#103": {
+   "src": "\"I hope this letter finds you well. I once again thank you for the trade. The caravans from {p} have been scarce recently, and your donations have kept the servants from going hungry.\"",
+   "dst": "\"Umarım bu mektup seni iyi bulur. Takas için sana bir kez daha teşekkür ederim. Son zamanlarda {p} kervanları seyrekleşti ve bağışların hizmetkârlarımın aç kalmasını önledi.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#104": {
+   "src": "\"Although I would under most circumstances send a small party of my creations to run for supplies, it is a logistical and political nightmare that I would just as soon avoid.\"",
+   "dst": "\"Çoğu durumda malzeme getirmeleri için yarattıklarımdan küçük bir grup gönderirdim, ama bu hem lojistik hem siyasi bir kâbus ve bundan kaçınmayı tercih ederim.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#105": {
+   "src": "\"I will provide remuneration for this in due time- certainly, I may spare a sum of emeralds if you wish it. You are trusted enough to write a blank check on this for, so you may name your price.\"",
+   "dst": "\"Bunun karşılığını zamanı gelince vereceğim- istersen elbette bir miktar Zümrüt ayırabilirim. Sana açık çek yazacak kadar güveniyorum, fiyatını sen belirle.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#106": {
+   "src": "\"Equally I am willing to offer extra salvage metal of top quality, or perhaps further silk or animant stones for your training dummies. Please write back quickly with your request.\"",
+   "dst": "\"Aynı şekilde birinci kalite ekstra hurda metal ya da antrenman kuklaların için daha fazla ipek veya canlandırıcı taş da sunabilirim. Lütfen isteğinle birlikte hemen cevap yaz.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#107": {
+   "src": "\"I plan to accompany the next caravan which will bring our recompensation, and I look forward to the visit. We may finally finish our set of Go yet.\"",
+   "dst": "\"Karşılığınızı getirecek bir sonraki kervana eşlik etmeyi planlıyorum ve ziyareti dört gözle bekliyorum. Belki sonunda Go oyunumuzu bitiririz.\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#108": {
+   "src": "\"Regards, Mistress Qira\"",
+   "dst": "\"Saygılarımla, Hanım Qira\"",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#109": {
+   "src": "The cow raises its head to look at you. Its eyes flare at the sight of the green tea.",
+   "dst": "İnek başını kaldırıp sana bakıyor. Yeşil çayı görünce gözleri parlıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#110": {
+   "src": "You gesture the tea generously towards the cow, and place it on the ground for it to drink. The cow nods respectfully to you.",
+   "dst": "Çayı cömertçe ineğe uzatıp içsin diye yere koyuyorsun. İnek saygıyla başını eğiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#111": {
+   "src": "...watching it drink from the cup as you did, there's a certain kinship you feel, and with that realization comes a feeling of peace.",
+   "dst": "...onun da senin gibi fincandan içişini izlerken bir yakınlık hissediyorsun ve bu farkındalıkla içini bir huzur kaplıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#112": {
+   "src": "You can't recall the last time you've felt this relaxed. You know for certain that you have mastered the challenge of tranquility. Time to leave.",
+   "dst": "En son ne zaman bu kadar rahat hissettiğini hatırlamıyorsun. Dinginlik sınavında ustalaştığından eminsin. Gitme vakti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#113": {
+   "src": "The pig raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "Domuz başını kaldırıp sana bakıyor ve saygıyla başını eğiyor. Doğayla huzuru ve dostluğu başarıyla kazandın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#114": {
+   "src": "The sheep raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "Koyun başını kaldırıp sana bakıyor ve saygıyla başını eğiyor. Doğayla huzuru ve dostluğu başarıyla kazandın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#115": {
+   "src": "The cow raises its head to look at you, and nods respectfully. You have successfully gained peace and friendship with nature.",
+   "dst": "İnek başını kaldırıp sana bakıyor ve saygıyla başını eğiyor. Doğayla huzuru ve dostluğu başarıyla kazandın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Enter the Dojo#116": {
+   "src": "You gesture the tea generously towards the sheep, and place it on the ground for it to drink. The sheep nods respectfully to you.",
+   "dst": "Çayı cömertçe koyuna uzatıp içsin diye yere koyuyorsun. Koyun saygıyla başını eğiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#117": {
+   "src": "You gesture the tea generously towards the pig, and place it on the ground for it to drink. The pig nods respectfully to you.",
+   "dst": "Çayı cömertçe domuza uzatıp içsin diye yere koyuyorsun. Domuz saygıyla başını eğiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#118": {
+   "src": "Exit the cave through the tunnel near the temple",
+   "dst": "Tapınağın yakınındaki tünelden mağaradan çık",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Enter the Dojo",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": ""
+  },
+  "Enter the Dojo#119": {
+   "src": "Hoho... Yes, this old man still has plenty of life left in him. Do not waste the gifts you have, young master.",
+   "dst": "Hoho... Evet, bu yaşlı adamın daha çok ömrü var. Sahip olduğun yetenekleri boşa harcama, genç usta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "Sensei Miyagi",
+   "source": ""
+  }
+ }
+}

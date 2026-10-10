@@ -1,0 +1,714 @@
+{
+ "_meta": {
+  "quest": "Lost Soles",
+  "count": 70,
+  "translated": 70,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Lost Soles#000": {
+   "src": "You can keep them for now but i will need them back if your mission is successful!",
+   "dst": "Şimdilik sende kalabilirler ama görevin başarılı olursa onları geri isteyeceğim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#001": {
+   "src": "Remember, it is imperative you find the {~} digit code to the basement.",
+   "dst": "Unutma, bodrumun {~} haneli şifresini bulman şart.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#002": {
+   "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get to them, maybe you can find out what they mean. Here, try this one:",
+   "dst": "Botları kutuyla birlikte konakta saklamışlar. Bu günlüğün yazarı onlara nasıl ulaşılacağına dair bazı ipuçları yazmış, belki ne anlama geldiklerini sen çözebilirsin. Al, şunu bir dene:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#003": {
+   "src": "Whoever placed down that sign might have meant a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
+   "dst": "O tabelayı kim koyduysa ikinci kata çıkan gizli bir yolu kastetmiş olabilir. Merdivenler çöktüğünden beri epey uzun süredir oraya çıkılamıyor. Leacen hariç, ama o biraz kaçık...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "captured"
+  },
+  "Lost Soles#004": {
+   "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a hidden passage, can you believe it?",
+   "dst": "Evet, ben de bir süredir uğraşıyorum. Birkaç kere bir şey yakaladım sandım! Mesela burada. Bu kitapların bir tanesi bile gizli geçit açmıyor, inanabiliyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "captured"
+  },
+  "Lost Soles#005": {
+   "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow in the master bedroom for two seconds, and then it disappeared!",
+   "dst": "Üstelik defterimi kaybettim, notlarımı bile yazamıyorum. Ana yatak odasındaki yastığın üstüne iki saniyeliğine koydum, sonra ortadan kayboldu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "captured"
+  },
+  "Lost Soles#006": {
+   "src": "So you have the container and the boots! I wish I would have gone with you...",
+   "dst": "Demek kutu da botlar da sende! Keşke ben de seninle gelseydim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#007": {
+   "src": "Now that the boots are back in place, we only need to repair the mansion, and we can live normally again!",
+   "dst": "Botlar yerine döndüğüne göre sadece konağı onarmamız lazım, sonra yine normal yaşayabiliriz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#008": {
+   "src": "Were you not paying attention earlier?",
+   "dst": "Az önce dinlemiyor muydun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#009": {
+   "src": "Start by placing your mount in the enclosure. To keep your friend happy and growing you will need to provide it with some tasty food.",
+   "dst": "Önce bineğini ağıla koy. Dostunun mutlu kalması ve büyümesi için ona lezzetli yiyecekler vermen gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#010": {
+   "src": "Materials should do the trick!",
+   "dst": "Malzemeler iş görür!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#011": {
+   "src": "To breed your mount, simply place two of them in the same row in the Feeder.",
+   "dst": "Bineğini çiftleştirmek için ikisini Yemlik'te aynı sıraya koyman yeterli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lost Soles#012": {
+   "src": "Talk to Ferndor at [-{~}, {~}, -{~}], make sure to bring Abysso Galoshes with you.",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Ferndor ile konuş, yanında Abysso Galoshes'ı getirmeyi unutma.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#013": {
+   "src": "Have you seen boots called Abysso Galoshes on your journey, a pirate stole them from us years ago! I could reward you if you could bring me the Abysso Galoshes and help us!",
+   "dst": "Yolculuğunda Abysso Galoshes adlı botları gördün mü? Yıllar önce bir korsan onları bizden çaldı! Bana Abysso Galoshes'ı getirip yardım edersen seni ödüllendirebilirim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#014": {
+   "src": "Bring back Abysso Galoshes, received during the quest Beneath the Depths.",
+   "dst": "Beneath the Depths görevinde aldığın Abysso Galoshes'ı geri getir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#015": {
+   "src": "I see you have the infamous galoshes with you. But do you know even half of the story of them?",
+   "dst": "Görüyorum ki o meşhur galoşlar yanında. Ama hikâyelerinin yarısını bile biliyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#016": {
+   "src": "The boots were once owned by my ancestors, who decided to lock it away in this manor years ago.",
+   "dst": "Botlar bir zamanlar atalarıma aitti, onlar da yıllar önce onları bu malikâneye kilitlemeye karar verdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#017": {
+   "src": "Nobody knows why they decided to hide the boots just after they got into my family's hands. I was told they were acquired from a strange man with pale grey skin.",
+   "dst": "Ailemin eline geçer geçmez botları neden saklamaya karar verdiklerini kimse bilmiyor. Bana söylenene göre soluk gri tenli tuhaf bir adamdan alınmışlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#018": {
+   "src": "We think they hid the boots in some kind of basement in the manor. You can get to it by following the river to the waterfall, but you will need some kind of code to open it...",
+   "dst": "Botları malikânede bir çeşit bodruma sakladıklarını düşünüyoruz. Nehri şelaleye kadar takip ederek oraya ulaşabilirsin ama açmak için bir çeşit şifre gerekecek...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#019": {
+   "src": "I remember Grandon saying that he found a book which is apparently a diary from one of my ancestors. Ever since that filthy pirate raided our home and stole our treasures, weird things have been happening.",
+   "dst": "Grandon'ın, atalarımdan birinin günlüğü olduğu anlaşılan bir kitap bulduğunu söylediğini hatırlıyorum. O pis korsan evimizi basıp hazinelerimizi çaldığından beri tuhaf şeyler oluyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#020": {
+   "src": "Grandon should already have finished reading it. If I allow you to enter my home, would you talk to him?",
+   "dst": "Grandon okumayı çoktan bitirmiş olmalı. Evime girmene izin verirsem onunla konuşur musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#021": {
+   "src": "There are strange things going on in this mansion and I hope that book reveals everything we need to know...",
+   "dst": "Bu konakta tuhaf şeyler oluyor, umarım o kitap bilmemiz gereken her şeyi ortaya çıkarır...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#022": {
+   "src": "I almost forgot to give you your boots back, I am not sure if I want to have them near me. Remember, it is imperative you find the {~} digit code to the basement.",
+   "dst": "Botlarını geri vermeyi neredeyse unutuyordum, onların yanımda olmasını istediğimden emin değilim. Unutma, bodrumun {~} haneli şifresini bulman şart.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 2",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#023": {
+   "src": "Visit the mansion dining room and ask Grandon about the book",
+   "dst": "Konağın yemek odasına git ve Grandon'a kitabı sor",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#024": {
+   "src": "Ferndor sent you here, correct? That must mean you’re here to help find the hidden {~} digit code in the manor.",
+   "dst": "Seni Ferndor gönderdi, değil mi? Demek konaktaki gizli {~} haneli şifreyi bulmaya yardım etmek için buradasın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#025": {
+   "src": "The book is actually a diary written by our ancestors decades ago. It is actually very interesting, how they remodeled almost the whole house.",
+   "dst": "Kitap aslında atalarımızın onlarca yıl önce yazdığı bir günlük. Evin neredeyse tamamını nasıl yeniden düzenledikleri gerçekten çok ilginç.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#026": {
+   "src": "Ferndor probably told you about the boots, right? The diary has some information about them...ah, here, on this page.",
+   "dst": "Ferndor sana botlardan bahsetmiştir, değil mi? Günlükte onlarla ilgili bazı bilgiler var...ah, işte, bu sayfada.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#027": {
+   "src": "Here...our family bought them from \"a dark and mysterious humanoid creature\" a long time ago.",
+   "dst": "İşte...ailemiz onları uzun zaman önce \"karanlık ve gizemli, insansı bir yaratıktan\" satın almış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#028": {
+   "src": "The boots were apparently so valuable that the creature as part of the deal, said they put some kind of spell on them, but that was a lie.",
+   "dst": "Botlar öyle değerliymiş ki yaratık, anlaşmanın bir parçası olarak üzerlerine bir çeşit büyü yaptığını söylemiş ama bu bir yalanmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#029": {
+   "src": "It was found that the boots themselves were horrendously powerful, imbued with dark magic that will deteriorate and decay everything around it over time.",
+   "dst": "Botların kendisinin korkunç derecede güçlü olduğu, zamanla etrafındaki her şeyi yıpratıp çürüten kara büyüyle dolu olduğu anlaşılmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#030": {
+   "src": "They were given a special boot container with similar effects, but when the Galoshes are within the Container, they cancel each others' effects out.",
+   "dst": "Onlara benzer etkileri olan özel bir bot kutusu verilmiş ama Galoşlar Kutunun içindeyken birbirlerinin etkisini yok ediyorlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#032": {
+   "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
+   "dst": "\"Salonun üstündeki yüzün burnu, yolu açmak için daha ağır olmalı\".",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#033": {
+   "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
+   "dst": "Hmm, bütün ipuçları bu odayla, yemek salonuyla ilgili bir bölümde geçiyor. Bunun ne anlama geldiğine dair fikrin var mı? Apaçık olmalı gibi geliyor ama hayatta çözemiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 3",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#034": {
+   "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
+   "dst": "\"Salonun üstündeki yüzün burnu, yolu açmak için daha ağır olmalı\"",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#035": {
+   "src": "Talk to Grandon and tell him about your findings",
+   "dst": "Grandon ile konuş ve bulduklarını anlat",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#036": {
+   "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
+   "dst": "Büyük kafanın altında gizli bir oda mı? Bu neden benim aklıma gelmedi!? Onu oraya koymak için ne kadar kendini beğenmiş olmaları gerektiğini hep merak etmiştim, meğer gerçekten bir amacı varmış!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#037": {
+   "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
+   "dst": "Demek köşedeki taşı aramanı söyleyen bir tabela vardı? Hm...ilginç!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#039": {
+   "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
+   "dst": "Neyse, görünüşe göre botları geri getirmenin bir yolunu aramamız gerekeceğini tahmin edip hazırlık yapmışlar. İyi ki de yapmışlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#040": {
+   "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
+   "dst": "Dediğim gibi, merdivenlerin hepsi kırık. Yani ben o çürük tahta parçalarına kesinlikle tırmanamazdım. En iyisi o taşı aramak, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#041": {
+   "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
+   "dst": "Ama nerede olabilir...oh? Bu bir ipucu mu? Bunu sonraki sayfada yeni fark ettim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#042": {
+   "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
+   "dst": "\"Farklı renkteki halı, masanın sırrını açığa çıkaracak taşı sana gösterecek\".",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 5",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#043": {
+   "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
+   "dst": "\"Farklı renkteki halı, masanın sırrını açığa çıkaracak taşı sana gösterecek\"",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#045": {
+   "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
+   "dst": "Vay be! Ne mühendismiş bu eski herifler! Evde böyle şeyler olacağını hiç hayal etmezdim. Neyse, bir mesaj var mıydı? Ne diyordu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#046": {
+   "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
+   "dst": "Kimsenin istemediği delik mi? Ancak bu salonun arka tarafındaki küçük fare deliğini kastediyor olabilir. Gerçi artık sadece bir delik, farelerin hepsi gitti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#047": {
+   "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
+   "dst": "Neyse, ayrıntılar, ayrıntılar. Fare kapanı kurmaktan başka hiç bakmadık, şu düzeneklerin ne kadar karmaşık olduğunu düşününce içinde bir şey olabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#048": {
+   "src": "I would say, you look into the hole and then search on top of the blue flags!",
+   "dst": "Bence deliğe bak, sonra mavi bayrakların üstünde ara!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#049": {
+   "src": "But if that's the way up to the second floor, what does the diary mean by this?",
+   "dst": "Ama ikinci kata çıkan yol oysa, günlük bununla ne demek istiyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#050": {
+   "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
+   "dst": "\"Kodun bir parçasını ortaya çıkarmak için duvardaki haritanın arkasına bir şey at\" mı? Dur, bu muhtemelen bodrumun şifresi demek! Bunu yapınca hemen bana dön, sana anlatacak daha çok şeyim var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 7",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#051": {
+   "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
+   "dst": "\"Kodun bir parçasını ortaya çıkarmak için duvardaki haritanın arkasına bir şey at\"",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#052": {
+   "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
+   "dst": "Şifrenin bir parçasını mı buldun!? Hahah, mükemmel! Söylemeliyim ki birkaç dakikada benim birkaç yılda kat ettiğimden fazla yol aldın! Siz insanlar gerçekten bambaşkasınız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#053": {
+   "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
+   "dst": "Şimdi günlük, şifrenin diğer {~} hanesini bulmak için ikinci kata çıkman gerektiğini söylüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#054": {
+   "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
+   "dst": "Unutma, ikinci kata çıkmak için fare deliğindeki düğmeyi kullanıp tavandan sarkan mavi bayrakların üstündeki geçidi açman lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#055": {
+   "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
+   "dst": "Nerede olduklarını söylemiyor, sadece iyi saklandıklarını ve evin etrafında başka ipuçları olduğunu söylüyor. Diğer {~} hanenin hepsi yukarıda, ikinci katta olmalı! Belki Leacen de oradayken onlarla ilgili bir şey görmüştür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#056": {
+   "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
+   "dst": "Şifrenin tamamını bulunca bodruma git. Elinde olunca konağın dışındaki yolu ve tabelaları takip etmen yeterli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 8",
+   "speaker": "Grandon",
+   "source": "wiki"
+  },
+  "Lost Soles#057": {
+   "src": "Open the secret passage above the flags by reaching into the unwanted hole",
+   "dst": "İstenmeyen deliğe uzanarak bayrakların üstündeki gizli geçidi aç",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#058": {
+   "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
+   "dst": "[{~} Boot Container] ve [Abysso Galoshes] eşyalarını Ferndor'a geri getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Lost Soles#059": {
+   "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
+   "dst": "Hay aksi, bu kitaplardan birinin gizli bir rafı açacağından emindim...oh, selam İnsancık. Sen de merdivenlerden tırmanmayı başardın mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "wiki"
+  },
+  "Lost Soles#060": {
+   "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
+   "dst": "Vay canına, gizli geçit! Tırmanarak çıkmak kadar etkileyici değil ama yine de aferin! Tahminimce şifre ipuçlarını arıyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "wiki"
+  },
+  "Lost Soles#063": {
+   "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
+   "dst": "Bak ne diyeceğim, İnsancık. Sen bize yardım et, ben de sana duymak isteyebileceğin bazı bilgiler vereyim. Nasıl, uyar mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Leacen",
+   "source": "wiki"
+  },
+  "Lost Soles#064": {
+   "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
+   "dst": "Üst katta birkaç yatak odası ve [-{~}, {~}, -{~}] konumunda başlayan döner bir merdiven var. Merdivenin tepesine çık, seni konağın çatısına götürecek. Tabela çatının kenarında, [-{~}, {~}, -{~}] konumunda ve üzerinde \"Birincisi {~}\" yazıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "First Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#065": {
+   "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
+   "dst": "İkinci hanenin tabelası, {~}. aşamada bulduğun tabela. Grandon'ın yanındaki haritaya herhangi bir eşya atınca ikinci hanenin {~} olduğu ortaya çıkıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Second Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#066": {
+   "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
+   "dst": "İkinci katta, [-{~}, {~}, -{~}] konumunda yanında düğme olan bir demir kapı var. Kapıyı açmak için düğmeye bas ve küçük odaya gir; \"Bize mavi çiçeklerin özel olduğunu söyledi...\" yazan bir tabela bulacaksın. Demir kapının dışındaki alana dönünce, [-{~}, {~}, -{~}] konumunda bir düğmenin yanındaki yüksek rafta tek bir mavi çiçek var. Düğme, odanın köşesindeki bir yatak odasına çıkan bir merdiven açar, [-{~}, {~}, -{~}] konumunda. Üçüncü tabela merdivenin çıktığı odanın duvarında, [-{~}, {~}, -{~}] konumunda ve üzerinde \"Üçüncüsü {~}\" yazıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Third Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#067": {
+   "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
+   "dst": "Üçüncü katta [-{~}, {~}, -{~}] konumunda başlayan ve bir koridorun üstünden geçen bir yürüme yoluna çıkan merdiven var. Yürüme yolundan kuzey taraftaki korkuluk boşluğundan atlarsan \"Yastığının altına hep bir şey saklardı...\" yazan bir tabelanın olduğu küçük bir deliğe girebilirsin. [-{~}, {~}, -{~}] konumundaki Ana Yatak Odasına geri in ve ipucunun dediği gibi yastığın üstüne bir zümrüt at. Bu, [-{~}, {~}, -{~}] konumunda yüksek bir rafın arkasında küçük bir oda açar ve son tabelaya çıkar; üzerinde \"Dördüncüsü {~}\" yazıyor. Odaya girmeye yetişemezsen rafın üstünde dururken yastığa zümrüt atabileceğini unutma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Fourth Digit",
+   "source": "wiki"
+  },
+  "Lost Soles#068": {
+   "src": "You found the container? I wish I would have gone with you...",
+   "dst": "Kutuyu buldun mu? Keşke ben de seninle gelseydim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#069": {
+   "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
+   "dst": "En azından konağın yavaş yavaş çürümesini durdurabiliriz! Botları kutuya bir koyayım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#070": {
+   "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
+   "dst": "Kolay oldu. Bu kadar küçük bir şeyin bu kadar sorun çıkarabildiğine hâlâ inanamıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#071": {
+   "src": "Well, I can not just let you stand there without a reward, right?",
+   "dst": "Eh, seni ödülsüz öyle bekletemem, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#072": {
+   "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
+   "dst": "Al, biraz zümrüte ve şu botlara ne dersin? Bu konağın eski sahibi Sodeta Loncası'nın ailemize bıraktığı yadigârlar. Söz veriyorum, kötü değiller! İstediğin zaman bizi ziyaret et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 10",
+   "speaker": "Ferndor",
+   "source": "wiki"
+  },
+  "Lost Soles#073": {
+   "src": "I wonder where those boots have gone... It's been such a long time. Do you know about the [Abysso Galoshes]?",
+   "dst": "O botlar nereye gitti acaba... Üzerinden çok zaman geçti. [Abysso Galoshes] hakkında bir şey biliyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "captured"
+  },
+  "Lost Soles#074": {
+   "src": "A pirate stole them from us years ago! I could reward you if you could bring me the [Abysso Galoshes] and help us!",
+   "dst": "Yıllar önce bir korsan onları bizden çaldı! Bana [Abysso Galoshes] getirip yardım edersen seni ödüllendirebilirim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lost Soles",
+   "stage": "Stage 1",
+   "speaker": "Ferndor",
+   "source": "captured"
+  }
+ }
+}

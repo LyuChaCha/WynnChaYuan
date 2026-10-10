@@ -1,0 +1,694 @@
+{
+ "_meta": {
+  "quest": "Tunnel Trouble",
+  "count": 68,
+  "translated": 68,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Tunnel Trouble#000": {
+   "src": "You shouldn't go in here just yet.",
+   "dst": "Şimdilik buraya girmemelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#001": {
+   "src": "May the woman who died here in tonight's raid rest in peace. Though we did not know her name, her memory will live on through her son.",
+   "dst": "Bu gece baskında burada ölen kadın huzur içinde yatsın. Adını bilmesek de hatırası oğluyla yaşamaya devam edecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#002": {
+   "src": "Now, here's where you come in- I need you to clear out that cave route so we can use it once more! Good luck, soldier!",
+   "dst": "Şimdi sıra sende: Şu mağara yolunu temizlemeni istiyorum ki onu yeniden kullanabilelim! Bol şans, asker!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#003": {
+   "src": "I can see the other side! Just a little bit more...",
+   "dst": "Öbür tarafı görebiliyorum! Az kaldı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "captured"
+  },
+  "Tunnel Trouble#004": {
+   "src": "[!] Right-Click the gates of the cow pens to open them and free the cows!",
+   "dst": "[!] İnek ağıllarının kapılarına Sağ Tıklayarak onları aç ve inekleri serbest bırak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#005": {
+   "src": "Go free those cows from the farmers before they're taken to the slaughterhouse! Oh man, the slaughterhouse...",
+   "dst": "Mezbahaya götürülmeden önce o inekleri çiftçilerden kurtar! Ah be, mezbaha...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 6",
+   "speaker": "Drale",
+   "source": "captured"
+  },
+  "Tunnel Trouble#006": {
+   "src": "Looks like you freed the cows successfully! You should return to Drale, before-",
+   "dst": "Görünüşe göre inekleri başarıyla serbest bıraktın! Drale'nin yanına dönmelisin, yoksa-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#007": {
+   "src": "An intruder! What are you doing with my cows!? Guard golem! Attack!",
+   "dst": "Bir davetsiz misafir! İneklerime ne yapıyorsun sen!? Muhafız golem! Saldır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#008": {
+   "src": "You've defeated Bylvis' Guard Golem! You're in the clear now, and the cows are saved! You should return to Drale.",
+   "dst": "Bylvis'in Muhafız Golemini yendin! Artık güvendesin, inekler de kurtuldu! Drale'nin yanına dönmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Tunnel Trouble#009": {
+   "src": "Hello again, friend! I'm here with the help! Cows, to me!",
+   "dst": "Yine merhaba, dostum! Yardımla geldim! İnekler, bana gelin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Drale",
+   "source": "captured"
+  },
+  "Tunnel Trouble#010": {
+   "src": "You can... go on ahead. Tell whoever's on the other end that we succeeded. And while you do that, I'll be searching for a better career.",
+   "dst": "Sen... devam edebilirsin. Öbür uçta kim varsa başardığımızı söyle. Sen onu yaparken ben de kendime daha iyi bir meslek arayacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "captured"
+  },
+  "Tunnel Trouble#011": {
+   "src": "Talk to Captain Fenor in front of {p} at [{~}, {~}, -{~}].",
+   "dst": "{p} önündeki Kaptan Fenor ile konuş: [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#012": {
+   "src": "Ah! You must be a new recruit! Well, I've got a mission for you.",
+   "dst": "Ah! Sen yeni acemi olmalısın! Pekâlâ, sana bir görevim var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#013": {
+   "src": "There's an old cave behind me. It was used in the Corruption Wars...",
+   "dst": "Arkamda eski bir mağara var. Yozlaşma Savaşları'nda kullanılmıştı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#014": {
+   "src": "We used it for quick and easy travel between {p} and {p}. It’s been abandoned for years.",
+   "dst": "{p} ile {p} arasında hızlı ve kolay yolculuk için kullanırdık. Yıllardır terk edilmiş durumda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#015": {
+   "src": "This cave could prove to be very useful for future recruits who need to travel between {p} and {p}.",
+   "dst": "Bu mağara, {p} ile {p} arasında yolculuk etmesi gereken yeni acemiler için çok işe yarayabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 1",
+   "speaker": "Captain Fenor",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#016": {
+   "src": "Enter the cave behind Captain Fenor at [{~}, {~}, -{~}].",
+   "dst": "Kaptan Fenor'un arkasındaki mağaraya gir: [{~}, {~}, -{~}].",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#017": {
+   "src": "...Oh! Shoot, is it time to get to work already?",
+   "dst": "...Ha! Hay aksi, işe başlama vakti geldi mi bile?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#018": {
+   "src": "Guess you're the soldier, then?",
+   "dst": "Asker sen oluyorsun herhalde?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#019": {
+   "src": "Uh... well, to start, we'll need to clear that debris. Just... give it a shove, or something. That'll probably do it.",
+   "dst": "Şey... ee, başlangıç olarak şu molozu temizlememiz lazım. Bir... ittir işte, ne bileyim. Muhtemelen o kadarı yeter.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 2",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#020": {
+   "src": "Help Miner Linton remove the debris blocking the path.",
+   "dst": "Madenci Linton'a yolu kapatan molozu kaldırmada yardım et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#021": {
+   "src": "Pretty easy, huh? Hey, maybe you can just go on ahead, and do the rest yourself?",
+   "dst": "Kolaymış, değil mi? Hey, belki sen önden gidip gerisini kendin hallediverirsin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 3",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#022": {
+   "src": "...Yeah, no, I should probably do my job. Let me grab my pickaxe, and we can keep going forward.",
+   "dst": "...Yok, olmaz, herhalde işimi yapmam lazım. Kazmamı alayım da ilerlemeye devam edelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 3",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#023": {
+   "src": "Clear the cave of possible roadblocks.",
+   "dst": "Mağaradaki olası engelleri temizle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#024": {
+   "src": "Oh, come on... Hey, soldier, do your job! Get rid of those monsters, would you?",
+   "dst": "Ah, hadi ama... Hey, asker, işini yap! Şu canavarlardan kurtul, olur mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#025": {
+   "src": "Huh?!",
+   "dst": "Ha?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#026": {
+   "src": "A cave-in? Really? More work for me... I'll make us a way through, just keep fighting those corrupteds!",
+   "dst": "Göçük mü? Cidden mi? Bana yine iş çıktı... Ben bize bir yol açarım, sen şu yozlaşmışlarla savaşmaya devam et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#027": {
+   "src": "Halfway there... Ugh, I knew I should have brought explosives...",
+   "dst": "Yarısı bitti... Of, patlayıcı getirmem gerektiğini biliyordum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#028": {
+   "src": "There we go, I've made us a hole! Get over here, quickly!",
+   "dst": "İşte oldu, bize bir delik açtım! Çabuk, buraya gel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#029": {
+   "src": "...Oh, come on. You've got to be kidding me. Another cave-in? Really?",
+   "dst": "...Ah, hadi ama. Dalga geçiyor olmalısın. Bir göçük daha mı? Cidden mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#030": {
+   "src": "And of course it's bigger than the last one. What's my pickaxe going to do against this thing?!",
+   "dst": "Tabii ki bir öncekinden de büyük. Kazmam bu şeye ne yapsın?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#031": {
+   "src": "Really should have thought to bring explosives. Well, soldier, we tried our best! Nobody'll blame us if we give up now.",
+   "dst": "Patlayıcı getirmeyi gerçekten akıl etmeliydim. Neyse asker, elimizden geleni yaptık! Şimdi bıraksak kimse bizi suçlamaz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#032": {
+   "src": "...What? Don't look at me like that. Fine, we can- huh? Do you hear that? Over there, to the right.",
+   "dst": "...Ne? Bana öyle bakma. Peki, şey yapa- ha? Duydun mu? Orada, sağda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#033": {
+   "src": "Oh, uh... Hi... Well, this is a little awkward... I'll just... Go.",
+   "dst": "Ah, ee... Merhaba... Şey, bu biraz garip oldu... Ben en iyisi... Gideyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#034": {
+   "src": "...You know what? I'm not going to ask. As far as I'm concerned, that didn't happen.",
+   "dst": "...Biliyor musun? Sormayacağım bile. Bana kalırsa bu hiç yaşanmadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#035": {
+   "src": "Right, of course you want to check it out. Fine! Go ahead. I'll just... sit here and twiddle my thumbs 'till you're back.",
+   "dst": "Tabii, kesin gidip bakmak istersin. Peki! Git hadi. Ben de... sen dönene kadar burada oturup parmaklarımı çeviririm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 4",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#036": {
+   "src": "Investigate the small hole to the right of the large pile of debris.",
+   "dst": "Büyük moloz yığınının sağındaki küçük deliği araştır.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#037": {
+   "src": "Oh... Didn't expect you to follow me... Well, um... Hi! This will sound mad but...",
+   "dst": "Ah... Peşimden geleceğini beklemiyordum... Şey, ee... Merhaba! Kulağa çılgınca gelecek ama...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#038": {
+   "src": "I'm Drale, and I'm on a mission to free these cows from the enslavement of {p}.",
+   "dst": "Ben Drale, bu inekleri {p} çiftçilerinin esaretinden kurtarmak için bir görevdeyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#039": {
+   "src": "Those farmers stole those cows. They are sacred animals. Now they're about to turn them into steak! If you were to help me, maybe I could help you...",
+   "dst": "O çiftçiler bu inekleri çaldı. Onlar kutsal hayvanlar. Şimdi onları bifteğe çevirmek üzereler! Bana yardım edersen belki ben de sana yardım ederim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#040": {
+   "src": "Go free those innocent cows from enslavement! Qu-quickly! Before that farmer gets back...",
+   "dst": "Git o masum inekleri esaretten kurtar! Ç-çabuk! O çiftçi geri dönmeden...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#041": {
+   "src": "Where are you going? Come here and talk to me first.",
+   "dst": "Nereye gidiyorsun? Önce buraya gel de benimle konuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 5",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#042": {
+   "src": "Free the cows without being seen by the farmer.",
+   "dst": "Çiftçiye görünmeden inekleri serbest bırak.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#043": {
+   "src": "Ah, good to see my cows are all in tip-top shape! Welp, time to- gah!",
+   "dst": "Ah, ineklerimin hepsinin turp gibi olduğunu görmek ne güzel! Eh, artık şey zamanı- ah!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 6",
+   "speaker": "Bylvis",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#044": {
+   "src": "Defeat the farmer's Guard Golem.",
+   "dst": "Çiftçinin Muhafız Golemini yen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#045": {
+   "src": "Golem! No! That cost me thousands of emeralds!",
+   "dst": "Golem! Hayır! Ona binlerce Zümrüt verdim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 7",
+   "speaker": "Bylvis",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#046": {
+   "src": "Return to Drale about your success.",
+   "dst": "Başarını anlatmak için Drale'nin yanına dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#047": {
+   "src": "Thank you so much, but we're not done yet. We need to get these cows out the province.",
+   "dst": "Çok teşekkür ederim ama henüz işimiz bitmedi. Bu inekleri eyaletten çıkarmamız lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 8",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#048": {
+   "src": "There's a small opening behind me. Go through it and help me get these cows on a raft to Gavel!",
+   "dst": "Arkamda küçük bir açıklık var. Oradan geç ve bu inekleri bir salla Gavel'a göndermeme yardım et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 8",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#049": {
+   "src": "Help Drale push the raft with the cows out to sea.",
+   "dst": "Drale'ye inekleri taşıyan salı denize itmede yardım et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#050": {
+   "src": "There's the raft! Help me push it for the cows!",
+   "dst": "İşte sal! İnekler için itmeme yardım et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#051": {
+   "src": "And, that should do it! Be free, my friends! A new life awaits!",
+   "dst": "Ve, bu kadar! Özgür olun dostlarım! Sizi yeni bir hayat bekliyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#052": {
+   "src": "Again, thank you so much for what you have done this day. These cows deserve a better life than being farm animals.",
+   "dst": "Bugün yaptıkların için tekrar çok teşekkür ederim. Bu inekler çiftlik hayvanı olmaktan daha iyi bir hayatı hak ediyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#053": {
+   "src": "...Oh! Right! You were busy with something before you came to help me, weren't you? Hm... I think I might be able to help you with that as well! Let's go back to the tunnel!",
+   "dst": "...Ah! Doğru ya! Bana yardım etmeye gelmeden önce bir işle uğraşıyordun, değil mi? Hm... Sanırım o konuda da sana yardım edebilirim! Tünele geri dönelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 9",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#054": {
+   "src": "Return to Miner Linton back in the abandoned cave.",
+   "dst": "Terk edilmiş mağaradaki Madenci Linton'un yanına dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#055": {
+   "src": "Oh, good, you're back. It's been, like, an hour! What were you even doing for that long!",
+   "dst": "Ah, güzel, döndün. Neredeyse bir saat oldu! Bu kadar zamandır ne yapıyordun ki!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#056": {
+   "src": "...You helped some crazy cow-obsessed lunatic steal some cows? I don't think you're allowed to do that. There's a law against that, or something.",
+   "dst": "...İneklere kafayı takmış bir delinin inek çalmasına mı yardım ettin? Bunu yapmana izin olduğunu sanmıyorum. Buna karşı bir yasa falan var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#057": {
+   "src": "Eh. Not that I really care, either way. I've certainly done worse.",
+   "dst": "Eh. Gerçi umrumda da değil. Ben bundan beterlerini yaptım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#058": {
+   "src": "Well then! Ready to call it quits? We're definitely not going to make any progress, so we might as we-",
+   "dst": "Pekâlâ! Bırakmaya hazır mısın? Kesinlikle hiç ilerleme kaydedemeyeceğiz, o yüzden biz de artık-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#059": {
+   "src": "Wh- huh?!",
+   "dst": "N- ha?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#060": {
+   "src": "Since you helped me with my problem, I thought I should repay that favor by helping you!",
+   "dst": "Sorunumda bana yardım ettiğin için ben de sana yardım ederek iyiliğini ödemem gerektiğini düşündüm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#061": {
+   "src": "Welp, see ya! Oh, and nice to meet you, miner! Now, let's get going my cows!",
+   "dst": "Eh, görüşürüz! Ha, bir de memnun oldum, madenci! Hadi bakalım ineklerim, yola koyulalım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Drale",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#062": {
+   "src": "...I- huh. You saw that too, right? I didn't just imagine that?",
+   "dst": "...Ben- ha. Sen de gördün, değil mi? Hayal görmedim, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#063": {
+   "src": "You know what? I think I quit. I think this has finally pushed me to my limit! I didn't know that I had one, but apparently I do!",
+   "dst": "Biliyor musun? Galiba istifa ediyorum. Sanırım bu sonunda beni sınırıma getirdi! Bir sınırım olduğunu bilmiyordum ama meğer varmış!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#064": {
+   "src": "See you around, I guess!",
+   "dst": "Eh, görüşürüz herhalde!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 10",
+   "speaker": "Miner Linton",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#065": {
+   "src": "Speak to Sergeant Klafson next to the {p} entrance of the cave.",
+   "dst": "Mağaranın {p} tarafındaki girişinin yanında duran Çavuş Klafson ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#066": {
+   "src": "Recruit, Captain Fenor told me to meet you here, said if you came out on this side of that tunnel then you completed your mission!",
+   "dst": "Acemi, Kaptan Fenor seninle burada buluşmamı söyledi, tünelin bu tarafından çıkarsan görevini tamamlamışsın demektir dedi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 11",
+   "speaker": "Sergeant Klafson",
+   "source": "wiki"
+  },
+  "Tunnel Trouble#067": {
+   "src": "You did a great deed today, soldier! We can now use this cave to travel easily between {p} and {p}! Great job!",
+   "dst": "Bugün büyük bir iş başardın, asker! Artık bu mağarayı {p} ile {p} arasında kolayca yolculuk etmek için kullanabiliriz! Harika iş!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Tunnel Trouble",
+   "stage": "Stage 11",
+   "speaker": "Sergeant Klafson",
+   "source": "wiki"
+  }
+ }
+}

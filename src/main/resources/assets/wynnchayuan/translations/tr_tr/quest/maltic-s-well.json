@@ -1,0 +1,296 @@
+{
+ "_meta": {
+  "quest": "Maltic's Well",
+  "count": 27,
+  "translated": 27,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Maltic's Well#000": {
+   "src": "At the northern side of {p}, there is a very dangerous cave.",
+   "dst": "{p} kuzey tarafında çok tehlikeli bir mağara var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#001": {
+   "src": "It's filled with an unnaturally large nest of spiders. I wouldn't dare go in there.",
+   "dst": "İçi doğal olmayan büyüklükte bir örümcek yuvasıyla dolu. Ben oraya girmeye cesaret edemem.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#002": {
+   "src": "Please do something! I know {p} isn't of much importance to you humans, being a villager settlement, but...my son!",
+   "dst": "Lütfen bir şey yap! {p} bir köylü yerleşimi olduğu için siz insanlar için pek önemli değil, biliyorum ama...oğlum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
+   "source": "captured"
+  },
+  "Maltic's Well#003": {
+   "src": "New Quest Started: {p}'s Well",
+   "dst": "Yeni Görev Başladı: {p} Kuyusu",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "New Quest Started: {p} Trouble",
+    "file": "quest/tempo-town-trouble.json",
+    "ratio": 0.814,
+    "reason": "candidate"
+   }
+  },
+  "Maltic's Well#004": {
+   "src": "I don't know why they call me a witch. This one's father made fun of my looks, so I'll turn his son into a Grook!",
+   "dst": "Bana neden cadı dediklerini bilmiyorum. Bunun babası görünüşümle dalga geçti, ben de oğlunu bir Grook'a çevireceğim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "captured",
+   "similar": {
+    "text": "I don't know why they call me a witch. Magic is everywhere, you know. This one's father made fun of my looks, so I'll turn his son into a Grook!",
+    "file": "quest/maltic-s-well.json",
+    "ratio": 0.879,
+    "reason": "candidate"
+   }
+  },
+  "Maltic's Well#005": {
+   "src": "...for if you choose the wrong door, you'll be sent to a beast, a beast most foul! The... the Beast-That-Eats-{p}-Guards-For-Brunch!!",
+   "dst": "...çünkü yanlış kapıyı seçersen bir canavara gönderilirsin, en iğrenç canavara! Şey... Brunch'ta-{p}-Muhafızı-Yiyen-Canavar'a!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "captured"
+  },
+  "Maltic's Well#006": {
+   "src": "Oh...didn't think that'd fool you. You know, I'm really not all that good at magic. I just like wearing this cowl, and have warts.",
+   "dst": "Oh...bunun seni kandıracağını düşünmemiştim. Biliyor musun, büyüde aslında hiç iyi değilim. Sadece bu başlığı giymeyi seviyorum, bir de siğillerim var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "captured"
+  },
+  "Maltic's Well#007": {
+   "src": "I cannot thank you enough for your help!",
+   "dst": "Yardımın için sana ne kadar teşekkür etsem az!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Maltic's Well#008": {
+   "src": "Talk to Rynend located in {p} at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumunda, {p} içindeki Rynend ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Maltic's Well",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Maltic's Well#009": {
+   "src": "Please help us! We called for a {p} guard days ago, but Humans tend to forget this little village.",
+   "dst": "Lütfen bize yardım et! Günler önce {p} muhafızı çağırdık ama İnsanlar bu küçük köyü unutmaya meyillidir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
+   "source": "wiki"
+  },
+  "Maltic's Well#010": {
+   "src": "Last week, an evil witch found refuge in our old well. Normally this wouldn't be a problem...",
+   "dst": "Geçen hafta kötü bir cadı eski kuyumuza sığındı. Normalde bu sorun olmazdı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
+   "source": "wiki"
+  },
+  "Maltic's Well#011": {
+   "src": "But she's lured my child into the well! My only child! He was born in Wynn, that makes him a Wynn citizen!",
+   "dst": "Ama oğlumu kuyuya kandırıp götürdü! Biricik çocuğumu! Wynn'de doğdu, yani o bir Wynn vatandaşı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 1",
+   "speaker": "Rynend",
+   "source": "wiki"
+  },
+  "Maltic's Well#012": {
+   "src": "Investigate the old {p} well at [-{~}, {~}, -{~}] and bring [{~} Witch's Empty Bottle] to Rynend",
+   "dst": "[-{~}, {~}, -{~}] konumundaki eski {p} kuyusunu araştır ve Rynend'e [{~} Witch's Empty Bottle] getir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Maltic's Well#013": {
+   "src": "Help me! Someone! The witch is being mean!!",
+   "dst": "Yardım edin! Biri! Cadı bana kötü davranıyor!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Child",
+   "source": "wiki"
+  },
+  "Maltic's Well#014": {
+   "src": "I wondered when they'd send the famous {p} guards. You'll never get me!",
+   "dst": "Ünlü {p} muhafızlarını ne zaman gönderecekler diye merak ediyordum. Beni asla yakalayamayacaksın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#015": {
+   "src": "Treat me like a witch, I'll act like one, darn it! You'll have to pass through my dastardly magical defenses to find me!",
+   "dst": "Bana cadı gibi davranırsanız cadı gibi davranırım, hay aksi! Beni bulmak için alçakça büyülü savunmalarımı geçmen gerekecek!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#016": {
+   "src": "Oh...drat. I never could get that spell right. Well, now you'll have to guess the way, um, you fool! Turn back now, for, uh...",
+   "dst": "Oh...hay aksi. O büyüyü bir türlü doğru yapamadım. Eh, şimdi yolu tahmin etmen gerekecek, şey, seni aptal! Hemen geri dön, çünkü, ıı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#017": {
+   "src": "Maybe if the people of this village weren't so mean to me, I wouldn't have been forced to live here.",
+   "dst": "Bu köyün insanları bana bu kadar kötü davranmasaydı belki burada yaşamak zorunda kalmazdım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#018": {
+   "src": "I know it's a crime, but his father and the rest of the villagers here hunt me like I'm a rabid dog!",
+   "dst": "Suç olduğunu biliyorum ama babası ve buradaki diğer köylüler beni kuduz bir köpek gibi avlıyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#019": {
+   "src": "I wasn't really going to turn this boy into a Grook. I doubt I could even make him grow one feather. I mean, watch...",
+   "dst": "Bu çocuğu gerçekten Grook'a çevirmeyecektim. Ona tek bir tüy bile çıkartabileceğimi sanmıyorum. Yani, izle bak...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#020": {
+   "src": "Aiyeeee! What's happening to meeee?!",
+   "dst": "Ayyyy! Bana neler oluyooor?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Child",
+   "source": "wiki"
+  },
+  "Maltic's Well#021": {
+   "src": "...oh my gosh it worked???? It worked, I did a spell for once in my miserable life!!",
+   "dst": "...aman tanrım işe yaradı mı???? İşe yaradı, sefil hayatımda bir kez olsun büyü yaptım!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#022": {
+   "src": "W-Wait, that's not good at all, you're gonna... No! You won't take me out of here alive!",
+   "dst": "D-dur, bu hiç iyi değil, sen şimdi... Hayır! Beni buradan canlı çıkaramayacaksın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Witch",
+   "source": "wiki"
+  },
+  "Maltic's Well#023": {
+   "src": "Thank you for saving me from the witch... She was nice at first and made me cookies, but I want to go home now.",
+   "dst": "Beni cadıdan kurtardığın için teşekkürler... Başta iyiydi, bana kurabiye yaptı ama artık eve gitmek istiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Child",
+   "source": "wiki"
+  },
+  "Maltic's Well#024": {
+   "src": "Oh my son! What happened down there? Erh, not a witch, you say?",
+   "dst": "Ah oğlum! Aşağıda ne oldu? Ee, cadı değil miymiş diyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Rynend",
+   "source": "wiki"
+  },
+  "Maltic's Well#025": {
+   "src": "Preposterous! She wore a hat and had warts! I guess it's too late now... Thank you so much for your help.",
+   "dst": "Saçmalık! Şapka takıyordu, siğilleri vardı! Sanırım artık çok geç... Yardımın için çok teşekkür ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Rynend",
+   "source": "wiki"
+  },
+  "Maltic's Well#026": {
+   "src": "I have very little to offer you as reward... I hope my appreciation will be more than enough!",
+   "dst": "Sana ödül olarak verebileceğim pek bir şey yok... Umarım minnettarlığım fazlasıyla yeterli olur!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Maltic's Well",
+   "stage": "Stage 2",
+   "speaker": "Rynend",
+   "source": "wiki"
+  }
+ }
+}

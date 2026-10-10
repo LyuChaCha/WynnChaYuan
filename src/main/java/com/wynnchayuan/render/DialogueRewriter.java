@@ -1827,9 +1827,11 @@ public final class DialogueRewriter {
      * 畫出來是空框，那才需要換字型——代價是位置會掉。
      */
     static boolean drawable(String text) {
+        // Ç／ç 不在這裡：Wynncraft 的對話字型裡這兩個字是空白字，實機（土耳其文的
+        // 「için」）畫出來是「i in」。交給配對字型才畫得出來。
         return text.codePoints().allMatch(cp ->
                 (cp >= 0x20 && cp < 0x7F) || cp == 0x2014
-                        || "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîï".indexOf(cp) >= 0);
+                        || "ÀÁÂÃÄÅÆÈÉÊËÌÍÎÏàáâãäåæèéêëìíîï".indexOf(cp) >= 0);
     }
 
     private static boolean readable(String text) {

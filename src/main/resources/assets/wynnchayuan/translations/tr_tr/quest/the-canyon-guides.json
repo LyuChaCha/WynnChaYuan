@@ -1,0 +1,730 @@
+{
+ "_meta": {
+  "quest": "The Canyon Guides",
+  "count": 71,
+  "translated": 71,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Canyon Guides#000": {
+   "src": "Welcome to Bantisu Temple, wandering human. We aid travelers such as yourself in navigating the capricious canyon walls.",
+   "dst": "Bantisu Tapınağı'na hoş geldin, gezgin insan. Senin gibi yolculara kanyonun kaprisli duvarları arasında yol bulmalarında yardım ederiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#001": {
+   "src": "You appear quite strong, and well-kept by your wits. Might we ask you to aid us, then?",
+   "dst": "Epey güçlü görünüyorsun, aklın da başında. O hâlde senden yardım isteyebilir miyiz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#002": {
+   "src": "You see, a lost man is staking out in a camp on the nearby cliff faces. It pains us to see him, but be unable to reach him.",
+   "dst": "Bak, kaybolmuş bir adam yakındaki yamaçlarda bir kampta bekliyor. Onu görüp de ona ulaşamamak bizi üzüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#003": {
+   "src": "So we ask you to guide Seluc to us. We shall send you to him, and you shall bring him here. If you wish to help, you will be rewarded for your time.",
+   "dst": "Bu yüzden Seluc'u bize getirmeni istiyoruz. Seni ona göndereceğiz, sen de onu buraya getireceksin. Yardım etmek istersen emeğinin karşılığını alırsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#004": {
+   "src": "Wait, a human! Ugh, I shouldn't have gotten my hopes up. What did you do, take a day of cliff diving?",
+   "dst": "Dur, bir insan! Ah, boşuna umutlanmışım. Ne oldu, bugün uçurumdan atlama günün müydü?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#005": {
+   "src": "If you really want to make yourself useful, get a Bantisu monk over here! You're good at doing that, right? Fetching things and people?",
+   "dst": "Gerçekten işe yaramak istiyorsan buraya bir Bantisu keşişi getir! Bunda iyisin, değil mi? Bir şeyleri, birilerini getirip götürmekte?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#006": {
+   "src": "Kill them! Kill them now! And get me OUT OF HERE! You got me into this mess, now get me out!!",
+   "dst": "Öldür onları! Hemen öldür! Ve beni BURADAN ÇIKAR! Beni bu belaya sen soktun, şimdi de çıkar!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#007": {
+   "src": "Are you blind?! You knocked my shoes off in that lake! Follow the path, and don't take any off routes! I don't want to risk cutting up my feet!",
+   "dst": "Kör müsün?! O gölde ayakkabılarımı düşürttün! Patikayı takip et, yoldan sapma! Ayaklarımı kesme riskine giremem!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#008": {
+   "src": "Trying to ditch on me while I'm talking my coat off? You have an obligation to help me you know!",
+   "dst": "Ben paltomu çıkarırken beni ekmeye mi çalışıyorsun? Bana yardım etmek zorundasın, haberin olsun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#009": {
+   "src": "All this walking...I'm taking a break here. You forced me to jump off a cliff, I get to force you to slow down. It's only fair!. Besides that...",
+   "dst": "Bu kadar yürümek... Burada mola veriyorum. Sen beni uçurumdan atlamaya zorladın, ben de seni yavaşlamaya zorlarım. Adil olan bu! Hem zaten...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#010": {
+   "src": "I only even came out here to see the view. At least that can't be ruined. Still, some vacation this turned out to be...",
+   "dst": "Buraya sadece manzarayı görmeye gelmiştim. En azından o mahvolamaz. Yine de ne biçim tatil oldu bu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#011": {
+   "src": "Ugh, my feet are killing me. Maybe this hike wouldn't be so bad if SOMEONE hadn't knocked me into a lake and made me lose my shoes!",
+   "dst": "Ah, ayaklarım beni öldürüyor. BİRİSİ beni göle düşürüp ayakkabılarımı kaybettirmeseydi bu yürüyüş belki o kadar kötü olmazdı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#012": {
+   "src": "Find me a way up, and fast! I've had enough of this stupid canyon.",
+   "dst": "Bana yukarı çıkacak bir yol bul, hem de çabuk! Bu aptal kanyondan bıktım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#013": {
+   "src": "Huff...puff... Well...huff... Wait, there's...there's no way down the other side! Huff...what a waste!!",
+   "dst": "Hah...püf... Eh...hah... Dur, öbür taraftan...aşağı inecek yol yok! Hah...ne boşa zahmet!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#014": {
+   "src": "You...had better count yourself lucky I haven't broken any bones from this. Agh...but that doesn't mean I'm not aching all over!!",
+   "dst": "Bu yüzden...hiçbir kemiğimi kırmadığım için şükretsen iyi olur. Ah...ama bu her yerimin sızlamadığı anlamına gelmiyor!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#015": {
+   "src": "I paid two weeks' wages for that coat you soaked. I'm not leaving here without it, and I'm way too tired to walk back down.",
+   "dst": "Islattığın o palto için iki haftalık maaşımı verdim. Onsuz buradan gitmem, aşağıya geri yürüyemeyecek kadar da yorgunum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "captured"
+  },
+  "The Canyon Guides#016": {
+   "src": "[+{~} Ornamental Coat]",
+   "dst": "[+{~} Süslü Palto]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#017": {
+   "src": "Now that you have the coat, you should return to Seluc",
+   "dst": "Paltoyu aldığına göre Seluc'un yanına dönmelisin",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#018": {
+   "src": "Seluc doesn't seem to be here any more. Maybe he's moved further.",
+   "dst": "Seluc artık burada değil gibi. Belki daha ileri gitmiştir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Canyon Guides#019": {
+   "src": "Let this be a lesson to you, Seluc. You cannot lie to those who see with the wind. Now show your gratitude to this kind human.",
+   "dst": "Bu sana ders olsun, Seluc. Rüzgârla görenlere yalan söyleyemezsin. Şimdi bu iyi kalpli insana minnetini göster.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "captured"
+  },
+  "The Canyon Guides#020": {
+   "src": "As thanks, we will also grant you access to the Bantisu Air Boosters found around the canyon. I hope they are of assistance to you.",
+   "dst": "Teşekkür olarak, kanyonun dört bir yanındaki Bantisu Hava Yükselticilerini kullanma iznini de sana veriyoruz. Umarım işine yararlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "captured",
+   "similar": {
+    "text": "As thanks, we will also grant you access to our Bantisu Air Boosters. Magical clouds of air found around the canyon. I hope they are of assistance to you.",
+    "file": "quest/the-canyon-guides.json",
+    "ratio": 0.898,
+    "reason": "candidate"
+   }
+  },
+  "The Canyon Guides#021": {
+   "src": "Speak to Gana at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] konumundaki Gana ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#023": {
+   "src": "We commune with the wind, and she gives us her sight. Wherever the breeze blows, we may see.",
+   "dst": "Rüzgârla iletişim kurarız, o da bize gözlerini verir. Esinti nereye eserse orayı görebiliriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#026": {
+   "src": "The canyon creatures there are ruthless, and we are not suited to physical combat. We would be able to reach him, but we would be stranded ourselves.",
+   "dst": "Oradaki kanyon yaratıkları acımasız, biz de fiziksel dövüşe uygun değiliz. Ona ulaşabiliriz ama bu sefer biz mahsur kalırız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#028": {
+   "src": "Find Seluc in his camp at [{~}, {~}, -{~}].",
+   "dst": "[{~}, {~}, -{~}] konumundaki kampında Seluc'u bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#029": {
+   "src": "Who's that? Am I finally being rescued!?",
+   "dst": "Kim o? Sonunda kurtarılıyor muyum!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#031": {
+   "src": "If you really did intend to rescue me, you've assuredly wasted both our time.",
+   "dst": "Gerçekten beni kurtarmaya geldiysen ikimizin de vaktini boşa harcadığın kesin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#033": {
+   "src": "WHY YOU-",
+   "dst": "SENİ GİDİ-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#034": {
+   "src": "You're trying to kill me, aren't you?! What, can't take hearing the truth? Now my coat is drenched, and! AND!",
+   "dst": "Beni öldürmeye çalışıyorsun, değil mi?! Ne o, gerçekleri duymaya dayanamıyor musun? Şimdi paltom sırılsıklam, üstelik! ÜSTELİK!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#035": {
+   "src": "These Jinko are going to pounce any second now!! I haven't got a weapon, were you expecting me to rush off and get into a rumble?!",
+   "dst": "Bu Jinkolar her an üstümüze atlayacak!! Silahım yok, koşup kavgaya dalmamı mı bekliyordun?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 2",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#037": {
+   "src": "Escort Seluc back to Gana.",
+   "dst": "Seluc'u Gana'nın yanına geri götür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#038": {
+   "src": "Ugh, all that danger got me flustered. I'm sweating in this coat...and it's all soaked already. Let me just...",
+   "dst": "Ah, bu kadar tehlike beni allak bullak etti. Bu paltonun içinde terliyorum... üstelik zaten sırılsıklam. Şunu bir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#039": {
+   "src": "...set that aside. Congratulations, human! I'm probably never getting that coat back, and it cost me a pretty sum. Thanks for nothing.",
+   "dst": "...kenara koyayım. Tebrikler, insan! O paltoyu muhtemelen bir daha göremeyeceğim, üstelik bana epey pahalıya patladı. Hiçbir şey için teşekkürler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#042": {
+   "src": "Wait, what in the world- What's going on?!",
+   "dst": "Dur, bu da ne- Neler oluyor?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#043": {
+   "src": "GAH! NOT AGAIN!!!",
+   "dst": "AAH! YİNE Mİ!!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#044": {
+   "src": "NO ONE TELLS ME ANYTHING! The brochure didn't mention earthquakes, YOU didn't tell me either, but what was I expecting from a human anyways?!",
+   "dst": "KİMSE BANA BİR ŞEY SÖYLEMİYOR! Broşürde deprem yazmıyordu, SEN de söylemedin, ama zaten bir insandan ne bekliyordum ki?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#045": {
+   "src": "I'm not a carrot! You'd better get me out of h- ...wait, wait, those...",
+   "dst": "Ben havuç değilim! Beni buradan çıkarsan iyi ed- ...dur, dur, onlar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#046": {
+   "src": "H-Hobgoblins. Hobgoblins HOBGOBLINS THERE'S HOBGOBLINS!! KILL THEM! AAAAH! AAH! AAAAAAH!",
+   "dst": "H-Hobgoblinler. Hobgoblinler HOBGOBLİNLER, HOBGOBLİN VAR!! ÖLDÜR ONLARI! AAAAH! AAH! AAAAAAH!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#047": {
+   "src": "Sweet baby bovine I just saw my life flash before my eyes. Ugh...now pull me up. I'm stuck. But easy on the goods, I'm NOT a carrot I'll remind you!",
+   "dst": "Aman tanrım, bütün hayatım gözümün önünden geçti. Ah...şimdi çek beni yukarı. Sıkıştım. Ama yavaş ol, HAVUÇ DEĞİLİM, hatırlatayım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#048": {
+   "src": "Great. I'm SO grateful to be covered in mud and hobgoblin blood, and to be lacking my coat, AND to be stuck with a human.",
+   "dst": "Harika. Çamura ve hobgoblin kanına bulandığım, paltosuz kaldığım VE bir insana mahkûm olduğum için ÇOK minnettarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#049": {
+   "src": "Just get me out of here already. See, if an actual Bantisu monk had come down I'd probably be at home already, sipping tea by the fire!",
+   "dst": "Çıkar artık beni buradan. Bak, gerçek bir Bantisu keşişi gelseydi şimdiye çoktan evde ateşin başında çay yudumluyor olurdum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#050": {
+   "src": "I know you humans are reckless, but I'd have expected you to have SOME concern, since you supposedly wanted to rescue me.",
+   "dst": "Siz insanların pervasız olduğunu biliyorum ama güya beni kurtarmak istediğine göre BİRAZ olsun umursarsın sanmıştım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#052": {
+   "src": "More earthquakes...? Wait-",
+   "dst": "Yine mi deprem...? Dur-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#053": {
+   "src": "The ridge is collapsing!!",
+   "dst": "Sırt çöküyor!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#054": {
+   "src": "RUN!",
+   "dst": "KOŞ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#055": {
+   "src": "...perfect. Just GREAT! The only available path to the temple, and now it's blocked off! Just my luck!!",
+   "dst": "...mükemmel. Gerçekten HARİKA! Tapınağa giden tek yol, o da kapandı! Benim şansım işte!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#056": {
+   "src": "...wait. You're reckless and willing to endanger your life, right? There's no way that I could possibly use them, but I see some ledges.",
+   "dst": "...dur. Sen pervasızsın ve canını tehlikeye atmaya hazırsın, değil mi? Benim kullanmam imkânsız ama birkaç çıkıntı görüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#057": {
+   "src": "See, just to the side of the rockslide? There's some ledges to jump around on.",
+   "dst": "Bak, heyelanın hemen yanında? Üstünde zıplanacak çıkıntılar var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 3",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#058": {
+   "src": "Find a way to get Seluc past the blockage.",
+   "dst": "Seluc'u yığıntının ötesine geçirmenin bir yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#059": {
+   "src": "...of course it's a ladder. I'm going to be feeling this climb for weeks...",
+   "dst": "...tabii ki merdiven. Bu tırmanışın acısını haftalarca çekeceğim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#061": {
+   "src": "Can you do ANYTHING right?! There's no way I'm jumping down there, you maniac!",
+   "dst": "HİÇBİR ŞEYİ doğru yapamaz mısın?! Oraya asla atlamam, seni manyak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#062": {
+   "src": "YOU-!",
+   "dst": "SEN-!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#064": {
+   "src": "When I said you were reckless, I was hoping that maybe you'd keep that side of yourself away from other people!!",
+   "dst": "Pervasız olduğunu söylediğimde, belki o yanını başkalarından uzak tutarsın diye ummuştum!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 4",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#066": {
+   "src": "At least we're nearly at the temple now. Come on Seluc, silver linings, silver linings. You're nearly away from this freak...",
+   "dst": "En azından artık tapınağa az kaldı. Hadi Seluc, her işte bir hayır var, bir hayır var. Bu ucubeden kurtulmana az kaldı...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#067": {
+   "src": "Okay, you know what? No. You've put me through QUITE a lot here, human, so you're going to do me a favor and I'm not going to move another step til it's done.",
+   "dst": "Tamam, biliyor musun? Hayır. Bana burada BAYAĞI çektirdin, insan, o yüzden bana bir iyilik yapacaksın ve o bitene kadar bir adım daha atmayacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#069": {
+   "src": "So you're going back down to the bottom of the ridge, and you're going to get me my coat. It's the least you could do.",
+   "dst": "Yani sırtın dibine geri inip bana paltomu getireceksin. Yapabileceğin en az şey bu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#070": {
+   "src": "And be quick about it! I feel like these quakes are going to make the whole mountain collapse. That looks like it opened up a hole straight to the bottom!",
+   "dst": "Hem de çabuk ol! Bu depremler bütün dağı çökertecek gibi geliyor. Şurada dosdoğru dibe inen bir delik açılmış gibi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 5",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#071": {
+   "src": "Retrieve the coat Seluc left behind at [{~}, {~}, -{~}].",
+   "dst": "Seluc'un [{~}, {~}, -{~}] konumunda bıraktığı paltoyu al.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#072": {
+   "src": "Talk to Gana and Seluc.",
+   "dst": "Gana ve Seluc ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canyon Guides#073": {
+   "src": "Took you long enough, coat-fetcher! I'm practically frostbitten up here!",
+   "dst": "Ne kadar da geciktin, palto getiricisi! Burada neredeyse donuyordum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#074": {
+   "src": "You see, I was just speaking to Gana about your dirt-poor imitation of their job! You ought to be ashamed- I had to get up here all on my own!",
+   "dst": "Bak, ben de tam Gana'ya onların işini ne kadar berbat taklit ettiğini anlatıyordum! Utanmalısın, buraya tek başıma çıkmak zorunda kaldım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#075": {
+   "src": "...hm. I will say, there are many lost around the canyon, Seluc- it may have been a long time before we were able to help you.",
+   "dst": "...hm. Şunu söyleyeyim Seluc, kanyonda kaybolan çok kişi var. Sana yardım edebilmemiz uzun sürebilirdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#076": {
+   "src": "Anyway! Give me that coat. The monks here are going to provide me some hospitality then guide me out of these wretched canyon walls.",
+   "dst": "Neyse! Ver şu paltoyu. Buradaki keşişler beni ağırlayacak, sonra da bu berbat kanyon duvarlarından çıkaracaklar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#077": {
+   "src": "This is goodbye then, human, I won't be missing you. Shoo!",
+   "dst": "Demek veda zamanı, insan, seni özlemeyeceğim. Hadi kış kış!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#078": {
+   "src": "...He did not really guide himself here. Did he.",
+   "dst": "...Buraya gerçekten kendi başına gelmedi. Değil mi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#079": {
+   "src": "...uh. ...dang it, why you gotta did that.",
+   "dst": "...ıı. ...hay aksi, niye öyle yapmak zorunda kaldın ki.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#081": {
+   "src": "That's right! See, Gana? After all that, at least the human isn't a liar.",
+   "dst": "Aynen öyle! Gördün mü Gana? Bunca şeyden sonra en azından insan yalancı değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Seluc",
+   "source": "wiki"
+  },
+  "The Canyon Guides#082": {
+   "src": "...Well, 'coat fetcher', getting this man his coat is still a fine deed. And for that, you shall be rewarded.",
+   "dst": "...Pekâlâ, 'palto getiricisi', bu adama paltosunu getirmek yine de güzel bir iyilik. Bunun için ödüllendirileceksin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 7",
+   "speaker": "Gana",
+   "source": "wiki"
+  },
+  "The Canyon Guides#084": {
+   "src": "Maybe you think anything's possible for you since you're a soldier, but I'm just a guy from {p}! I hardly know anything about the canyon outside of what the brochures say!",
+   "dst": "Asker olduğun için belki senin için her şey mümkündür ama ben {p} kökenli sıradan biriyim! Kanyon hakkında broşürlerde yazanlar dışında neredeyse hiçbir şey bilmiyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canyon Guides#085": {
+   "src": "Seluc hides in a camp northeast of here, atop the cliffs.",
+   "dst": "Seluc buranın kuzeydoğusunda, uçurumların tepesindeki bir kampta saklanıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "",
+   "speaker": "",
+   "source": "ja_jp"
+  },
+  "The Canyon Guides#086": {
+   "src": "We ask you to guide Seluc to us. If you wish to help, you will be rewarded for your time.",
+   "dst": "Seluc'u bize getirmeni istiyoruz. Yardım etmek istersen emeğinin karşılığını alırsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canyon Guides",
+   "stage": "Stage 1",
+   "speaker": "Gana",
+   "source": "ja_jp"
+  }
+ }
+}
