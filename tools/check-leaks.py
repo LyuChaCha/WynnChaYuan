@@ -215,6 +215,12 @@ SIGN_SHAPES = [
 # {~} 不算：玩家取的名字裡也會有數字（"insu spell 5 times"）。
 TEMPLATE_MARKS = ("{#}", "✔", "✖", "✫", "[|")
 
+# 第二行是遊戲自己的操作提示（「Right-Click to guide」）。這種也不是玩家打的字：
+# 靈魂節的「Lost Soul／Right-Click to guide」是要你帶路的 NPC，第一行剛好跟一把
+# 武器同名，被當成改過名字的物品擋下來（issue #1124）。玩家替物品取的名字不會是
+# 這個句型——取名只有一行，而且打不出換行。
+CLICK_HINT = re.compile(r"^(?:Shift[- ])?(?:Right|Left|Middle)[- ]Click to \S")
+
 
 # 帳號名黏著 {~}，而且<b>不在行首</b>
 # ----------------------------------
@@ -354,6 +360,8 @@ def player_sign(src: str, items: set) -> str | None:
     head, rest = src.split("\n", 1)
     if not rest.strip() or any(mark in rest for mark in TEMPLATE_MARKS):
         return None
+    if CLICK_HINT.match(rest.strip()):
+        return None
     base = re.sub(r"\s*\[\{~\}/\{~\}\]$", "", head).strip()
     return "改過名字的物品" if base in items else None
 
@@ -445,6 +453,24 @@ def selftest() -> int:
               + ("該抓到" if want else "不該抓到") + "：" + src[:64]
               + ("" if ok else "（實際%s抓到）" % ("" if got else "沒")))
         bad += 0 if ok else 1
+
+    def sign(src: str, want: bool) -> None:
+        nonlocal bad
+        got = player_sign(src, {"Lost Soul", "Morph-Stardust"}) is not None
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ")
+              + ("該抓到" if want else "不該抓到") + "：" + src.replace("\n", " / ")[:64]
+              + ("" if ok else "（實際%s抓到）" % ("" if got else "沒")))
+        bad += 0 if ok else 1
+
+    # 改過名字的物品：第一行是遊戲的物品名，第二行是玩家打的字
+    sign("Lost Soul\nbest spear ever", True)
+    sign("Morph-Stardust [{~}/{~}]\ndo not sell", True)
+    # 第二行是遊戲自己的操作提示，不是玩家打的字（issue #1124）
+    sign("Lost Soul\nRight-Click to guide", False)
+    sign("Lost Soul\nShift Right-Click to open", False)
+    # 只是剛好提到 click 的玩家文字照擋
+    sign("Lost Soul\nclick to buy pls", True)
 
     # 要抓到 —— 名字夾在句子中間，上面兩條限定位置的規則都漏過去
     for src in (
