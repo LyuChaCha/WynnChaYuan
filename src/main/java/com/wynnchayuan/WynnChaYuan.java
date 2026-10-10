@@ -401,14 +401,43 @@ public final class WynnChaYuan implements ClientModInitializer {
      * @return 內容真的有變的檔案數；0 表示不必重新載入
      */
     private static int fetchCurrentLanguages() {
+        // 先記再抓：抓到一半使用者切語言的話，那一邊不必再排一趟。見 FetchedLanguages。
+        com.wynnchayuan.translate.FetchedLanguages.mark(language);
         int changed = RemoteSync.fetchInto(
                 com.wynnchayuan.translate.Languages.dir(configDir, language), language);
         String under = fallbackLanguage();
         if (under != null) {
+            com.wynnchayuan.translate.FetchedLanguages.mark(under);
             changed += RemoteSync.fetchInto(
                     com.wynnchayuan.translate.Languages.dir(configDir, under), under);
         }
         return changed;
+    }
+
+    /**
+     * 剛切到這一種語言：這一次開遊戲還沒跟 GitHub 對過的話，在背景對一次。
+     *
+     * <p>有變才重載，沒變就什麼都不做。只在「自動更新翻譯」開著時做——關著的人
+     * 是自己決定什麼時候更新的，切語言不該替他偷抓；他那一邊至少有
+     * {@code TranslationCache#prepare} 換上來的這一版 jar 內建的那一份。
+     * 為什麼需要，見 {@link com.wynnchayuan.translate.FetchedLanguages}。
+     */
+    private static void refreshOncePerSession(String lang) {
+        if (config.source() != CollectorConfig.Source.GITHUB
+                || !config.autoUpdateTranslations()
+                || !com.wynnchayuan.translate.FetchedLanguages.firstTime(lang)) {
+            return;
+        }
+        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, lang);
+        Thread worker = new Thread(() -> {
+            int changed = RemoteSync.fetchInto(dir, lang);
+            System.out.println("[" + MOD_NAME + "] 切到 " + lang + "：" + RemoteSync.lastResult());
+            if (changed > 0) {
+                reloadOnMainThread();
+            }
+        }, MOD_ID + "-switch-sync");
+        worker.setDaemon(true);
+        worker.start();
     }
 
     private static void reloadOnMainThread() {
@@ -486,6 +515,12 @@ public final class WynnChaYuan implements ClientModInitializer {
                                       java.util.function.Consumer<String> done,
                                       RemoteSync.Progress progress) {
         config.setFallbackLanguage(lang);
+        String wanted = fallbackLanguage();
+        if (wanted != null) {
+            // 跟 switchLanguage 一樣：墊底那一種的快取也可能是舊版留下的
+            com.wynnchayuan.translate.TranslationCache.prepare(
+                    com.wynnchayuan.translate.Languages.dir(configDir, wanted), wanted);
+        }
         loadLayers();
         String under = fallbackLanguage();
         if (under == null || config.source() != CollectorConfig.Source.GITHUB) {
@@ -494,6 +529,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             return;
         }
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, under);
+        com.wynnchayuan.translate.FetchedLanguages.mark(under);
         Thread worker = new Thread(() -> {
             RemoteSync.fetchInto(dir, under, progress);
             net.minecraft.client.Minecraft.getInstance().execute(() -> {
@@ -547,7 +583,15 @@ public final class WynnChaYuan implements ClientModInitializer {
         //
         // 要最新的就按資料頁的「更新翻譯」，或在 F6 打開自動更新。
         // progress 留著不用：呼叫端的簽章不動，將來要接回進度條也還在。
+        //
+        // 但「手上那一份」不能是好幾個版本以前的：平常沒在用的語言不會被背景同步抓到，
+        // 快取就停在最後一次用它的那一天。先照啟動時的做法備好快取（換過模組版本的話
+        // 換回這一版 jar 內建的那一份），載入之後再在背景跟 GitHub 對一次——
+        // 每種語言每次開遊戲只對一次。見 FetchedLanguages。
+        Path chosen = com.wynnchayuan.translate.Languages.dir(configDir, language);
+        com.wynnchayuan.translate.TranslationCache.prepare(chosen, language);
         loadLayers();
+        refreshOncePerSession(language);
         done.accept(com.wynnchayuan.client.T.s("data.language.done",
                 com.wynnchayuan.translate.Languages.nativeName(language),
                 translations.size()));
