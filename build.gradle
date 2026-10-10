@@ -648,6 +648,14 @@ tasks.register('runChatHoldChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatHoldChecks' }
 
+tasks.register('runCaptureNoiseChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證匯出的缺口清單沒有名牌圖示、自己重送的譯文、折行句子的後半截'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.CaptureNoiseTest'
+}
+tasks.named('check') { dependsOn 'runCaptureNoiseChecks' }
+
 tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'
