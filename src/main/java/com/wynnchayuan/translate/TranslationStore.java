@@ -1866,6 +1866,9 @@ public final class TranslationStore {
     private static volatile boolean nameLine = false;
 
     public String lookup(String template) {
+        if (barItems && template != null && getsOriginal(template.strip())) {
+            return null;                       // 這個位置不會是物品，見 barItemNames
+        }
         if (nameLine && template != null) {
             String own = gearOwnName(template);
             if (own != null) {
@@ -2020,6 +2023,44 @@ public final class TranslationStore {
 
     /** 見 {@link #holdAppendedOriginal}。算繪只有一條執行緒，用靜態的就夠。 */
     private static volatile boolean holdAppended = false;
+
+    /**
+     * 接下來查的這一段<b>不在物品會出現的位置</b>：只有物品在用的名字查到了也不算數。
+     *
+     * <h2>實機回報（2026-10-10）：「漂浮字會翻譯到武器或裝備」</h2>
+     * 傳送點上浮著「Return to Detlas」，畫面上是「回归之戒 (Return) 至 Detlas」——
+     * {@code Return} 剛好是一枚戒指的名字。六個語言的裝備名補齊之後，四千多個名字都是
+     * 查得到的鍵，其中不少是一般的字，而查表本身不知道自己被問的是哪個位置：
+     *
+     * <pre>
+     *   Return to Detlas     名字 + 數值尾巴（to 與地名都算尾巴）
+     *   Frog - 1200❤          血條：名字 + 血量
+     *   Fatal {#}{#}          怪物名牌：名字 + 等級與血條的圖示
+     *   Grook's Nest          某人的東西
+     * </pre>
+     *
+     * 這幾種形狀前面的那個字是<b>標籤或怪物的名字</b>，不是物品。由認得出形狀的呼叫端
+     * （{@code LineTranslator}）掛上這個旗標；物品清單（{@code - 名字}、圖示開頭的
+     * {@code {#}{#}名字}）與「名字 [數量]」不掛，照舊翻。
+     *
+     * <p>只擋<b>只有物品在用</b>的原文（{@link #getsOriginal}）：別的檔案有同名條目的
+     * （{@code Thorns} 既是屬性也是裝備）照舊查得到。擋下來的結果是留原文——
+     * 留英文比寫上一件不相干的裝備好，真正該翻的怪物名補進 {@code npc.json} 就會先命中。
+     *
+     * <p>預設是關的。呼叫端要自己還原成進來時的值（見 {@link #itemNamesBarred}），
+     * 這幾條路會互相呼叫。
+     */
+    public static void barItemNames(boolean on) {
+        barItems = on;
+    }
+
+    /** 見 {@link #barItemNames}。 */
+    public static boolean itemNamesBarred() {
+        return barItems;
+    }
+
+    /** 見 {@link #barItemNames}。算繪只有一條執行緒，用靜態的就夠。 */
+    private static volatile boolean barItems = false;
 
     /** F6 選的是「譯名 + 原文」嗎。見 {@link #appendedOriginalSpan}。 */
     public boolean namesWithOriginal() {

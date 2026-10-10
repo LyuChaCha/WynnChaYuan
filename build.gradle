@@ -826,6 +826,14 @@ tasks.register('runFestivalCardChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runFestivalCardChecks' }
 
+tasks.register('runItemNameContextChecks', JavaExec) {
+    group = 'verification'
+    description = '物品的名字只在物品會出現的位置才算數：名牌、血條、「名字 to 地名」不會變成裝備'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ItemNameContextTest'
+}
+tasks.named('check') { dependsOn 'runItemNameContextChecks' }
+
 tasks.register('runStatRowChecks', JavaExec) {
     group = 'verification'
     description = '裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去'
