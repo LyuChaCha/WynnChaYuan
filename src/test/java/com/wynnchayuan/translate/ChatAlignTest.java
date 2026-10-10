@@ -577,6 +577,26 @@ public final class ChatAlignTest {
         if (kept != null) {
             check("★ 靠左的清單列縮排照舊（實際 " + leads(kept)[0] + "）", leads(kept)[0] == 8);
         }
+
+        // 寫滿整個聊天寬度的句子，中心天生就在置中線附近——它是靠左的，縮排不能動
+        String full = "- +Access to the Province of Wynn";
+        int pad = (309 - 2 * 8 - measure(Component.literal(full))) / measure(Component.literal("x"));
+        check("前提：湊得出一列寬到中心落在置中線上的靠左句子", pad > 0);
+        String wide = full + "x".repeat(Math.max(0, pad));
+        com.google.gson.JsonObject more = new com.google.gson.JsonObject();
+        more.addProperty("{#}" + wide, "{#}- +取得進入 Wynn 行省的資格");
+        Path dir2 = Files.createTempDirectory("wynnchayuan-chat-centre-wide");
+        Files.writeString(dir2.resolve("misc.json"), more.toString(), StandardCharsets.UTF_8);
+        TranslationStore store2 = new TranslationStore();
+        store2.loadAll(dir2);
+        MutableComponent row = Component.empty();
+        row.append(offset(8)).append(lit(wide, GREY));
+        Component same = LineTranslator.translateChat(StyledText.fromComponent(row), store2);
+        check("寫滿一行的句子查得到譯文", same != null);
+        if (same != null) {
+            check("★ 寫滿一行的靠左句子縮排照舊（實際 " + leads(same)[0] + "）",
+                  leads(same)[0] == 8);
+        }
     }
 
     private static void panelSingles() {

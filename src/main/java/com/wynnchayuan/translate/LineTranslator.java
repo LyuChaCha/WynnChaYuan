@@ -5395,28 +5395,45 @@ public final class LineTranslator {
      * 所以看起來沒歪）。
      *
      * <p>不必跟別行比：伺服器是照固定的寬度置中的，中心落在那條線上就是置中。
-     * 分欄的列另有規則，不在這裡管；靠左的清單（縮排 8、40 那種）離那條線很遠，
-     * 不會被誤認。
+     *
+     * <h2>只管「整塊就這一列」的情況</h2>
+     * 兩行以上的訊息不在這裡管，原本那幾道判斷看得到別行，比這條線可靠。而且
+     * <b>折滿整個聊天寬度的散文</b>中心天生就在那條線附近——
+     * 「Hateful echoes erupt from the Portal. Wynn faces」縮排 8、寬 288，中心 152，
+     * 它是靠左的散文不是置中；算成置中的話整段就不會重新斷行了
+     * （{@code ChatReflowTest} 釘著這一條）。同一個道理，縮排太小的單獨一列
+     * （不到 {@value #CHAT_CENTRE_MIN_LEAD}px）也不認：那是寫滿一整行的句子。
+     * 分欄的列另有規則，同樣不在這裡管。
      */
     private static void onChatCentre(List<List<Run>> rows, boolean[] centre) {
+        int only = -1;
         for (int i = 0; i < rows.size() && i < centre.length; i++) {
-            if (centre[i]) {
-                continue;
-            }
             List<Run> row = rows.get(i);
-            int lead = leadWidth(row);
-            int body = rowWidth(row) - lead;
-            if (lead <= 0 || body <= 0) {
-                continue;
+            if (rowWidth(row) - leadWidth(row) <= 0) {
+                continue;                              // 空行
             }
-            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
-                continue;                              // 分欄的面板另有規則
+            if (only >= 0) {
+                return;                                // 不只一列有字
             }
-            if (Math.abs(2 * lead + body - CHAT_CENTRE_X2) <= CHAT_CENTRE_SLACK_X2) {
-                centre[i] = true;
-            }
+            only = i;
+        }
+        if (only < 0 || centre[only]) {
+            return;
+        }
+        List<Run> row = rows.get(only);
+        int lead = leadWidth(row);
+        int body = rowWidth(row) - lead;
+        if (lead < CHAT_CENTRE_MIN_LEAD
+                || columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
+            return;
+        }
+        if (Math.abs(2 * lead + body - CHAT_CENTRE_X2) <= CHAT_CENTRE_SLACK_X2) {
+            centre[only] = true;
         }
     }
+
+    /** 縮排不到這麼多的單獨一列不當成置中。見 {@link #onChatCentre}。 */
+    private static final int CHAT_CENTRE_MIN_LEAD = 16;
 
     /**
      * 聊天裡用空白墊出來的置中：幾行都有縮排、縮排長短不一，中心卻落在差不多的位置。
