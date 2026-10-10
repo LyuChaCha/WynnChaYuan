@@ -79,7 +79,10 @@ public final class WynnModRowsTest {
                 stat(14, true, "+34%", "Healing Efficiency"),
                 stat(9, true, "+366", "Elemental Spell Damage"),
                 stat(9, true, "+12%", "Elemental Spell Damage"),
-                stat(44, false, "-5", "Ice Snake Cost"));
+                stat(44, false, "-5", "Ice Snake Cost"),
+                stat(9, false, "+405", "Fire Main Attack Damage"),
+                stat(9, false, "+32%", "Fire Main Attack Damage"),
+                stat(9, false, "+29%", "Elemental Spell Damage"));
         // 實機的寫法：「Main」＋「 Scale」，「Elemental Spell Da」＋「..」
         List<Component> split = List.of(
                 row("Halcyon"),
@@ -88,7 +91,15 @@ public final class WynnModRowsTest {
                 stat(14, true, "+34%", "Healing Efficiency"),
                 stat(9, true, "+366", "Elemental Spell Da", ".."),
                 stat(9, true, "+12%", "Elemental Spell Da", ".."),
-                stat(44, false, "-5", "Ice Snake Cost"));
+                stat(44, false, "-5", "Ice Snake Cost"),
+                // 第二版測試還是沒翻到的那一種：兩個點是 WynnMod 另外做好接上去的，
+                // 畫出來一樣，樣式物件卻不相等（斜體「沒設」對「否」、顏色「沒設」對白色）。
+                truncated(9, "+405", "Fire Main Attack Da", WYNN.withItalic(false)),
+                truncated(9, "+32%", "Fire Main Attack D", font("language/wynncraft")),
+                // 連懸停事件都不一樣的兩個點：照樣是那個標籤的一部分
+                truncated(9, "+29%", "Elemental Spell Da", WYNN.withInsertion("x")));
+        check("前提：那兩種兩個點的樣式跟標籤不相等，但畫出來一樣",
+                !WYNN.equals(WYNN.withItalic(false)) && !WYNN.equals(font("language/wynncraft")));
 
         List<String> want = labels(TooltipPanel.translateInPlace(whole, store));
         List<Component> shown = TooltipPanel.translateInPlace(
@@ -115,6 +126,17 @@ public final class WynnModRowsTest {
             String all = shown.get(i).getString();
             check("第 " + i + " 列沒有留下兩個點（實際 " + got.get(i) + "）", !all.contains(".."));
         }
+        check("★ 兩個點的樣式物件不相等也併得起來（實際 " + got.get(7) + "、" + got.get(8) + "）",
+                got.get(7).equals(want.get(7)) && got.get(8).equals(want.get(8)));
+        check("★ 兩個點帶著別的欄位也併（實際 " + got.get(9) + "）", got.get(9).equals(want.get(9)));
+        check("前提：火屬性普攻的實數與百分比是兩種標籤（實際 " + want.get(7) + "／" + want.get(8) + "）",
+                !want.get(7).equals(want.get(8)));
+        // 顏色不同的不併：那是兩個欄位，不是一個標籤
+        Component twoColours = Component.empty()
+                .append(Component.literal("Main").withStyle(WYNN))
+                .append(Component.literal(" Scale").withStyle(VALUE));
+        check("顏色不同的相鄰片段不併",
+                WynnModTooltip.joinSameStyle(List.of(twoColours)).get(0) == twoColours);
         check("沒被拆的列不受影響（實際 " + got.get(3) + "、" + got.get(6) + "）",
                 got.get(3).equals(want.get(3)) && got.get(6).equals(want.get(6)));
 
@@ -213,6 +235,17 @@ public final class WynnModRowsTest {
             row.append(Component.literal("*").withStyle(STAR));
         }
         return row.append(Component.literal(value).withStyle(VALUE))
+                .append(Component.literal(" ").withStyle(PLAIN))
+                .append(Component.literal("[92.0%]").withStyle(ROLL));
+    }
+
+    /** 砍過的標籤：兩個點用另一個「畫出來一樣」的樣式接上去。 */
+    private static Component truncated(int gap, String value, String label, Style dots) {
+        return Component.empty()
+                .append(Component.literal(label).withStyle(WYNN))
+                .append(Component.literal("..").withStyle(dots))
+                .append(Component.literal(SpaceOffset.encode(gap)).withStyle(SPACE))
+                .append(Component.literal(value).withStyle(VALUE))
                 .append(Component.literal(" ").withStyle(PLAIN))
                 .append(Component.literal("[92.0%]").withStyle(ROLL));
     }

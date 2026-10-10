@@ -78,8 +78,9 @@ public final class WynnModTooltip {
                 return Optional.empty();
             }
             int last = styles.size() - 1;
-            if (last >= 0 && styles.get(last).equals(style)
-                    && plain(text) && plain(texts.get(last))) {
+            if (last >= 0 && plain(text) && plain(texts.get(last))
+                    && (sameLook(styles.get(last), style)
+                        || cutMark(text))) {
                 texts.get(last).append(text);
                 joined[0] = true;
             } else {
@@ -96,6 +97,49 @@ public final class WynnModTooltip {
             out.append(Component.literal(texts.get(i).toString()).withStyle(styles.get(i)));
         }
         return out;
+    }
+
+    /**
+     * 兩種樣式<b>畫出來</b>一樣嗎。
+     *
+     * <h2>為什麼不能用 {@code Style#equals}</h2>
+     * 實機回報（2026-10-10，第二版測試）：「Main」＋「 Scale」併起來了，
+     * 「Elemental Spell Da」＋「..」沒有。WynnMod 砍標籤時，砍剩的字套的是原本那一段的
+     * 樣式，兩個點卻是它另外做好再接上去的——字型、顏色都一樣，但欄位「沒設」與
+     * 「設成預設值」在 {@code equals} 眼中是兩回事（沒設斜體 vs 斜體＝否、沒設顏色 vs 白色）。
+     *
+     * <p>所以比的是畫出來的樣子：字型、顏色（沒設就是說明文字預設的白）、粗斜底線刪除
+     * 亂碼五個旗標（沒設就是否）、陰影色，再加上點擊／懸停／插入——那三個不影響外觀，
+     * 但併掉會改變行為，不一樣就不併。
+     */
+    static boolean sameLook(Style a, Style b) {
+        return a.getFont().equals(b.getFont())
+                && colourOf(a) == colourOf(b)
+                && a.isBold() == b.isBold()
+                && a.isItalic() == b.isItalic()
+                && a.isUnderlined() == b.isUnderlined()
+                && a.isStrikethrough() == b.isStrikethrough()
+                && a.isObfuscated() == b.isObfuscated()
+                && java.util.Objects.equals(a.getShadowColor(), b.getShadowColor())
+                && java.util.Objects.equals(a.getClickEvent(), b.getClickEvent())
+                && java.util.Objects.equals(a.getHoverEvent(), b.getHoverEvent())
+                && java.util.Objects.equals(a.getInsertion(), b.getInsertion());
+    }
+
+    /**
+     * 這一段就是 WynnMod 砍標籤時接上去的那兩個點。
+     *
+     * <p>它一定屬於前面那個標籤，所以樣式完全不看：{@link #sameLook} 列的那些只要有一個
+     * 是我沒料到的不相等，這一列就又會留著英文，而那種失敗在畫面上跟「沒修」長得
+     * 一模一樣。併進去之後跟著標籤的樣式；標籤翻出來時兩個點本來就不留。
+     */
+    private static boolean cutMark(String text) {
+        return "..".equals(text);
+    }
+
+    /** 沒設顏色的字在物品說明裡是白的。 */
+    private static int colourOf(Style style) {
+        return style.getColor() == null ? 0xFFFFFF : style.getColor().getValue();
     }
 
     /** 整段都是一般文字：沒有圖示（私用區）也沒有排版偏移。 */

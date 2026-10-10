@@ -144,6 +144,20 @@ public final class TooltipDebug {
             at++;
             JsonObject o = describe(line);
             o.addProperty("row", at);
+            if (line.getString().contains("..")) {
+                // 被砍過的標籤（「Elemental Spell Da..」）：兩個點是不是跟標籤同一種樣式，
+                // 上面的 segments 看不出來——那裡只有字型與顏色，「沒設」與「設成預設值」
+                // 長得一樣。這裡把原始的樣式物件整個印出來。
+                JsonArray raw = new JsonArray();
+                line.visit((style, text) -> {
+                    JsonObject each = new JsonObject();
+                    each.addProperty("text", text);
+                    each.addProperty("style", String.valueOf(style));
+                    raw.add(each);
+                    return java.util.Optional.empty();
+                }, net.minecraft.network.chat.Style.EMPTY);
+                o.add("rawStyles", raw);
+            }
             if (hit != null && at < hit.length) {
                 o.addProperty("translated", hit[at]);
             }
