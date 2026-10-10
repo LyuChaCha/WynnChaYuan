@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Royal Trials",
-  "count": 83,
-  "translated": 83,
+  "count": 100,
+  "translated": 100,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -37,7 +37,7 @@
    "source": "wiki"
   },
   "Royal Trials#003": {
-   "src": "Off with ya now! Before I call the gals to gut you. And dun' go wandering around chatting to any skyraiders!",
+   "src": "Off with ya now! Before I call the gals to gut you. And dun' go wandering round chatting to any skyraiders!",
    "dst": "快滾吧！趁我還沒叫姊妹們來把你開膛之前。還有，別在這兒到處亂晃跟 Skyraider 搭話！",
    "role": "desc",
    "kind": "dialogue",
@@ -147,7 +147,7 @@
    "source": "wiki"
   },
   "Royal Trials#014": {
-   "src": "Here, these are what I'd trade it to ye for.",
+   "src": "Here, these are what I would trade it to ye for.",
    "dst": "喏，這些就是我肯拿它換的東西。",
    "role": "desc",
    "kind": "dialogue",
@@ -167,7 +167,7 @@
    "source": "wiki"
   },
   "Royal Trials#016": {
-   "src": "Of course, if you're running low on funds, how about ye grab me [{~} Dragonling Eggs] instead? Y'know, the ingredient. I'm 'oping to raise some 'o the lil critters!",
+   "src": "Of course, if yer running low on funds, how about ye grab me [{~} Dragonling Eggs] instead? Y'know, the ingredient. I'm 'oping to raise some 'o the lil critters!",
    "dst": "當然，要是你手頭緊，不如幫我弄 [{~} Dragonling Eggs] 來？就是那個素材啦。我一直想養幾隻那種小東西！",
    "role": "desc",
    "kind": "dialogue",
@@ -187,7 +187,7 @@
    "source": "wiki"
   },
   "Royal Trials#018": {
-   "src": "Ye can get me one o' those three, landwalker, and ye can have my outfit!",
+   "src": "Ye get me one o' those three, landwalker, and ye can have my outfit!",
    "dst": "旱地佬，這三樣你隨便弄一樣給我，我這身衣服就是你的了！",
    "role": "desc",
    "kind": "dialogue",
@@ -537,7 +537,7 @@
    "source": "wiki"
   },
   "Royal Trials#054": {
-   "src": "This here is the garden you we'll tunnel into, and yer'll 'ave to find a way into the Mansion, maybe yer can just ask nicely, heh.",
+   "src": "This is the garden we'll tunnel into, and yer'll 'ave to find a way into the Mansion, maybe yer can just ask nicely, heh.",
    "dst": "這裡就是咱們要挖地道進去的花園，然後你們得自己想辦法進宅邸，說不定好聲好氣問一下就成了，嘿。",
    "role": "desc",
    "kind": "dialogue",
@@ -557,7 +557,7 @@
    "source": "wiki"
   },
   "Royal Trials#056": {
-   "src": "This, o' course, is the mythical treasure that yer gonna want to grab and get outta here, stat. I'm sure there'll be some extra defenses, though.",
+   "src": "This, o' course, is the mythical treasure that yer want to grab and get outta here, stat. I'm sure there'll be some extra defenses around, though...",
    "dst": "這個嘛，當然就是你們要抓了就跑的那件傳說寶物了。不過我想那邊應該還會有額外的防衛。",
    "role": "desc",
    "kind": "dialogue",
@@ -657,7 +657,7 @@
    "source": "wiki"
   },
   "Royal Trials#066": {
-   "src": "Head to the airship behind me, lassie. We'll wait a second before the others.",
+   "src": "Head into the airship behind me, lassie. We'll wait a second for the others.",
    "dst": "上我後面那艘飛船，小妞。咱們再等一下其他人。",
    "role": "desc",
    "kind": "dialogue",
@@ -807,8 +807,8 @@
    "source": "wiki"
   },
   "Royal Trials#082": {
-   "src": "Now, we must crown ye, and give you yer reward.",
-   "dst": "現在，我們得為你加冕，並給你應得的報酬。",
+   "src": "Now that ye've been crown, we must give ye the reward.",
+   "dst": "既然已經為你加冕，我們也該把報酬交給你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Royal Trials",
@@ -827,7 +827,7 @@
    "source": "wiki"
   },
   "Royal Trials#084": {
-   "src": "Please accept this, your majesty.",
+   "src": "Please accept this, yer majesty.",
    "dst": "陛下，請收下這個。",
    "role": "desc",
    "kind": "dialogue",
@@ -835,6 +835,176 @@
    "stage": "Stage 19",
    "speaker": "Trials Overseer",
    "source": "wiki"
+  },
+  "Royal Trials#085": {
+   "src": "What item would you trade to Egpla for her outfit?",
+   "dst": "要拿哪樣東西跟 Egpla 換她的衣服？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Royal Trials#086": {
+   "src": "Landwalker! Have ye found any of the items yet?",
+   "dst": "旱地佬！那幾樣東西你找到了沒？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 19",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#087": {
+   "src": "Remember, I'd trade it to ye for [{~} Emerald Blocks], [{~} Dragonling Eggs] or [{~} Shiny Shell] from the cave to the south-east!",
+   "dst": "記住，[{~} Emerald Blocks]、[{~} Dragonling Eggs]，或是東南邊洞穴裡的 [{~} Shiny Shell]，拿哪一樣來我都換！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 4",
+   "speaker": "Egpla",
+   "source": "wiki"
+  },
+  "Royal Trials#088": {
+   "src": "Watcha be doin' here?",
+   "dst": "你在這兒幹嘛？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "Skyraider Guard",
+   "source": "wiki"
+  },
+  "Royal Trials#089": {
+   "src": "Don' waste your time 'round me! You've got trials to attend.",
+   "dst": "別在我這兒浪費時間！你還有試煉要參加。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "Hrona",
+   "source": "wiki"
+  },
+  "Royal Trials#090": {
+   "src": "As you walk, you hear arguments between other contestants either side of you...",
+   "dst": "你一邊走，一邊聽見兩旁其他參賽者的爭吵聲……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#091": {
+   "src": "Perhaps you could try throwing this at the window?",
+   "dst": "或許可以試著拿這個去丟窗戶？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#092": {
+   "src": "What item would you like to throw at the window?",
+   "dst": "要拿哪樣東西丟窗戶？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#093": {
+   "src": "It doesn't look like your leaf did anything... you should find another item to throw.",
+   "dst": "你的葉子看來沒起什麼作用……再找別的東西來丟吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#094": {
+   "src": "It doesn't look like your grape did anything... you should find another item to throw.",
+   "dst": "你的葡萄看來沒起什麼作用……再找別的東西來丟吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#095": {
+   "src": "It doesn't look like your flower did anything... you should find another item to throw.",
+   "dst": "你的花看來沒起什麼作用……再找別的東西來丟吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#096": {
+   "src": "It doesn't look like your apple did anything... you should find another item to throw.",
+   "dst": "你的蘋果看來沒起什麼作用……再找別的東西來丟吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#097": {
+   "src": "It doesn't look like your egg did anything... you should find another item to throw.",
+   "dst": "你的蛋看來沒起什麼作用……再找別的東西來丟吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#098": {
+   "src": "The rock broke the window! Now you've just got to find a way up there...",
+   "dst": "石頭把窗戶砸破了！接下來只要想辦法上去就行了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#099": {
+   "src": "Looks like you're inside the Mansion... now you've got to your way to the treasure.",
+   "dst": "看來你進到宅邸裡了……接下來得設法找到寶物。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Royal Trials#100": {
+   "src": "Aye, we caught the dirty thief. We'll 'ave that treasure back, and ye can rot in this cell!",
+   "dst": "沒錯，我們逮到這個骯髒的賊了。寶物我們要拿回來，你就在這牢房裡爛掉吧！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Mansion Guard",
+   "source": "captured.json"
+  },
+  "Royal Trials#101": {
+   "src": "Move along, ya' got clearance to board the airship!",
+   "dst": "走吧，你已經獲准登上飛船了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Royal Trials",
+   "stage": "Stage 13",
+   "speaker": "Mansion Guard",
+   "source": "captured.json"
   }
  }
 }
