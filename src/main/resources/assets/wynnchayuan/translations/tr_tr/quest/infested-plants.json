@@ -1,0 +1,548 @@
+{
+ "_meta": {
+  "quest": "Infested Plants",
+  "count": 60,
+  "translated": 59,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Infested Plants#000": {
+   "src": "I'm going to go on ahead. Just follow the coordinates in your content book to find that cave!",
+   "dst": "Ben önden gidiyorum. Mağarayı bulmak için içerik kitabındaki koordinatları takip et yeter!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#001": {
+   "src": "...mm, cutting it a little close, but... oh! You're, uh, still here...! Right. Right- you have to go into that cave, remember?",
+   "dst": "...mm, biraz son dakikaya kaldı ama... ah! Sen, ıı, hâlâ buradasın...! Doğru. Doğru- o mağaraya girmen gerekiyor, hatırladın mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#002": {
+   "src": "[+{~} Saccharum Plant]",
+   "dst": "[+{~} Saccharum Bitkisi]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#003": {
+   "src": "[-{~} Saccharum Plant]",
+   "dst": "[-{~} Saccharum Bitkisi]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#004": {
+   "src": "Meet up with Tasim at the entrance to {p} at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda, {p} girişinde Tasim ile buluş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#005": {
+   "src": "Oh, {u}! There you are. It's good to see you. Are you ready to continue on towards {p}?",
+   "dst": "Ah, {u}! İşte buradasın. Seni görmek güzel. {p} yönünde devam etmeye hazır mısın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#006": {
+   "src": "H-hey! You two! You're soldiers, right? I can tell from your weird fashion sense. You folk are supposed to help people! So. Help!",
+   "dst": "H-hey! Siz ikiniz! Askersiniz, değil mi? Tuhaf giyim zevkinizden belli. Sizin insanlara yardım etmeniz gerekiyor! Hadi. Yardım edin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Infested Plants#007": {
+   "src": "Huh? Oh- yes, of course! What's your name? What do you need help with?",
+   "dst": "Ha? Ah- evet, tabii ki! Adın ne? Ne konuda yardıma ihtiyacın var?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#008": {
+   "src": "I'm Ope! I was recently... uh... bit by a spider! And now I need your help to get a rare medicinal herb to heal me!",
+   "dst": "Ben Ope! Yakın zamanda... ıı... beni bir örümcek ısırdı! Ve şimdi beni iyileştirecek nadir bir şifalı otu almak için yardımınıza ihtiyacım var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#009": {
+   "src": "It only grows in an infested cave filled with creepy crawlies. And I'm clearly in no condition to go get it myself!",
+   "dst": "Sadece ürkütücü böceklerle dolu, istila edilmiş bir mağarada yetişiyor. Ve belli ki kendim gidip alacak durumda değilim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#010": {
+   "src": "Well, alright! We're here to help, after all, so... We'll get you that herb!",
+   "dst": "Peki, tamam! Ne de olsa yardım etmek için buradayız, yani... O otu sana getireceğiz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 1",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#011": {
+   "src": "Follow Ope to the cave at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki mağaraya Ope'yi takip et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#012": {
+   "src": "Hm... There's two of you. Good! One of your can climb up into that cave, and the other can protect me from the crawly spiders down here!",
+   "dst": "Hm... İki kişisiniz. Güzel! Biriniz şu mağaraya tırmanabilir, diğeri de beni aşağıdaki iğrenç örümceklerden koruyabilir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 2",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#013": {
+   "src": "Alright! {u}, you can go into the cave, and I can defend Ope here while you do that.",
+   "dst": "Tamam! {u}, sen mağaraya gir, sen o işi yaparken ben de Ope'yi burada korurum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#014": {
+   "src": "Locate the medicine in the spider cave behind Ope at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda, Ope'nin arkasındaki örümcek mağarasında ilacı bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#015": {
+   "src": "Exit the cave at [-{~}, {~}, -{~}] with the medicinal herb.",
+   "dst": "Şifalı otla birlikte [-{~}, {~}, -{~}] konumundan mağaradan çık.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#016": {
+   "src": "There you are! It feels like we've been waiting for hours.",
+   "dst": "İşte buradasın! Sanki saatlerdir bekliyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#017": {
+   "src": "It... really hasn't been that long. Maybe ten minutes at most.",
+   "dst": "Aslında... o kadar uzun sürmedi. En fazla on dakika.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#018": {
+   "src": "Well-... Anyway! Do you have the herb? It's very- uh, important! To cure me. Yep.",
+   "dst": "Şey-... Neyse! Ot sende mi? Çok- ıı, önemli! Beni iyileştirmek için. Evet.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#019": {
+   "src": "Well. Goodbye!",
+   "dst": "Peki. Hoşça kalın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Ope",
+   "source": "wiki"
+  },
+  "Infested Plants#020": {
+   "src": "...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#021": {
+   "src": "That's... frustrating. He seemed shady from the start, I should have-... Well. What's done is done. Let's go speak to that mayor.",
+   "dst": "Bu... sinir bozucu. Baştan beri şüpheli görünüyordu, ben-... Neyse. Olan oldu. Hadi gidip şu belediye başkanıyla konuşalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 4",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#022": {
+   "src": "Speak to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda, {p} içindeki Belediye Başkanı Alvin ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Infested Plants#023": {
+   "src": "Ah, travelers... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
+   "dst": "Ah, yolcular... mütevazı orman kasabamıza hoş geldiniz. Kalmaya mı geldiniz, yoksa sadece geçiyor musunuz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Infested Plants#024": {
+   "src": "Probably the latter. Though, we ran into a man named Ope, who directed us to speak with you.",
+   "dst": "Muhtemelen ikincisi. Gerçi Ope adında bir adamla karşılaştık, bizi sizinle konuşmaya yönlendirdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#025": {
+   "src": "Here, I may offer you a small sum of emeralds as an apology. I hope he has not soured your opinion of our small town, here...",
+   "dst": "Buyurun, özür olarak size biraz Zümrüt verebilirim. Umarım o, küçük kasabamız hakkındaki fikrinizi bozmamıştır...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Mayor Alvin",
+   "source": "wiki"
+  },
+  "Infested Plants#026": {
+   "src": "Oh... Thank you. That's very kind of you. We'll probably stay for a while, before we continue towards {p}.",
+   "dst": "Ah... Teşekkür ederim. Çok naziksiniz. {p} yönünde devam etmeden önce muhtemelen bir süre kalacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Infested Plants#027": {
+   "src": "Oh, {u}! There you are. It's good to see you. I'd say we should keep heading towards {p}, but...",
+   "dst": "Ah, {u}! İşte buradasın. Seni görmek güzel. {p} yönünde ilerlemeye devam etmeliyiz derdim, ama...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#028": {
+   "src": "It looks like we'll need to pass through the {p} first. I've heard the forest is crawling with spiders... and the undead are a danger, as always... but between you and me, we should be-",
+   "dst": "Görünüşe göre önce {p} içinden geçmemiz gerekecek. Ormanın örümcek kaynadığını duydum... ölümsüzler de her zamanki gibi tehlikeli... ama aramızda kalsın, biz-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#029": {
+   "src": "H-hey! You two! You're soldiers, right?",
+   "dst": "H-hey! Siz ikiniz! Askersiniz, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#030": {
+   "src": "Uh- yes, we are, but-",
+   "dst": "Iı- evet, öyleyiz, ama-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#031": {
+   "src": "Yep, I could tell from your weird fashion sense! You folk are supposed to help people, right? So. Help!",
+   "dst": "Evet, tuhaf giyim zevkinizden anlamıştım! Sizin insanlara yardım etmeniz gerekiyor, değil mi? Hadi. Yardım edin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#032": {
+   "src": "Well, sure- but who are you? Why are you out on your own, isn't it dangerous? Aren't the undead...",
+   "dst": "Şey, tabii- ama sen kimsin? Neden tek başına dışarıdasın, tehlikeli değil mi? Ölümsüzler...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#033": {
+   "src": "I'm Ope! And the undead... eh, there's not as many of them around here. The spiders aren't picky 'bout who they go for.",
+   "dst": "Ben Ope! Ölümsüzler mi... eh, buralarda o kadar çok yoklar. Örümcekler de kime saldıracakları konusunda pek seçici değil.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#034": {
+   "src": "Right... okay. That makes sense. What did you need help with?",
+   "dst": "Doğru... tamam. Mantıklı. Ne konuda yardıma ihtiyacın vardı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#035": {
+   "src": "I... uh... so, there's this rare medicinal herb that grows in these woods, right? And it's important. But the only place I know to find it is an infested cave, filled with creepy crawly spiders.",
+   "dst": "Ben... ıı... şimdi, bu ormanda yetişen nadir bir şifalı ot var, tamam mı? Ve önemli. Ama bulunduğunu bildiğim tek yer, iğrenç örümceklerle dolu, istila edilmiş bir mağara.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#036": {
+   "src": "And, y'know, I- I'm no soldier! Can't just go in there and get it myself! So, I was hoping you could help me out.",
+   "dst": "Ve, bilirsiniz, b- ben asker değilim! Öylece içeri girip kendim alamam! O yüzden bana yardım edersiniz diye umuyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#037": {
+   "src": "Well... we came to Wynn to help out, after all. So... we can get you that herb!",
+   "dst": "Şey... ne de olsa Wynn'e yardım etmeye geldik. Yani... o otu sana getirebiliriz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#038": {
+   "src": "Great. Great! I'll bring you to the cave, and you can do the rest from there. Follow me!",
+   "dst": "Harika. Harika! Sizi mağaraya götüreyim, gerisini oradan siz halledersiniz. Beni takip edin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#039": {
+   "src": "Well, here we are! That's the cave right over there- just climb up the rocks and jump into it. It's safe! Uh, probably.",
+   "dst": "İşte geldik! Mağara tam şurada- kayalara tırmanıp içine atlayın yeter. Güvenli! Iı, muhtemelen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#040": {
+   "src": "...eek. There's a lot of spiders even up here... hey, since there's two of you- one of you can go get the herb, and the other can, uh... protect me from the crawly spiders?",
+   "dst": "...iy. Burada bile bir sürü örümcek var... hey, madem iki kişisiniz- biriniz gidip otu alır, diğeri de, ıı... beni iğrenç örümceklerden korur?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#041": {
+   "src": "That works for me. {u}, you go into the cave, and I'll defend Ope up here while you do that.",
+   "dst": "Bana uyar. {u}, sen mağaraya gir, sen o işi yaparken ben de Ope'yi burada korurum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#042": {
+   "src": "Yep... good! Good, good! Good, uh, luck up there! Try not to get bitten too much by the spiders!",
+   "dst": "Evet... güzel! Güzel, güzel! Yukarıda, ıı, bol şans! Örümceklere çok ısırılmamaya çalış!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#043": {
+   "src": "...ah- there you are!! What took you so long, it feels like we've been waiting for hours!",
+   "dst": "...ah- işte buradasın!! Neden bu kadar uzun sürdü, sanki saatlerdir bekliyoruz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#044": {
+   "src": "It-... mm. A-anyway! Do you have the herb? It's very important, yep.",
+   "dst": "Bu-... mm. N-neyse! Ot sende mi? Çok önemli, evet.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#045": {
+   "src": "Come to think of it... I don't think you ever mentioned what you needed it for.",
+   "dst": "Şimdi düşünüyorum da... ona neden ihtiyacın olduğunu hiç söylemedin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#046": {
+   "src": "Oh, I- eheh, it... I... uh, it's n-none of your business, actually.",
+   "dst": "Ah, ben- ehe, o... ben... ıı, aslında s-seni ilgilendirmez.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#047": {
+   "src": "I- I thank you kindly for your work, soldiers! Now, about your payment... let's see, what do I have...",
+   "dst": "E- emeğiniz için çok teşekkür ederim, askerler! Şimdi, ödemenize gelince... bakalım, neyim var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#048": {
+   "src": "Oh. I seem to be out of emeralds. Well- then, I- I can offer some advice! There's lots to find in this forest. Plenty of other caves with valuables to explore! Might be worth your time!",
+   "dst": "Ah. Zümrüdüm kalmamış galiba. Şey- o zaman, b- bir tavsiye verebilirim! Bu ormanda bulunacak çok şey var. Keşfedilecek değerli eşyalarla dolu bir sürü başka mağara! Zamanınıza değebilir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#049": {
+   "src": "Wait, what? Hey, are you seriously not going to-",
+   "dst": "Dur, ne? Hey, cidden şey yapmayacak mısın-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#050": {
+   "src": "It has been a time soldiers, but I- I truly must be going! Important things to get to! We're near {p}, you should stop on by! Just keep going east down the main road!",
+   "dst": "Güzel vakit geçirdik askerler, ama b- benim gerçekten gitmem lazım! Yetişmem gereken önemli işler var! {p} yakınındayız, mutlaka uğrayın! Ana yoldan doğuya doğru devam edin yeter!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#051": {
+   "src": "You can, uh, go speak to the mayor! He can cover my expenses!",
+   "dst": "Gidip, ıı, belediye başkanıyla konuşabilirsiniz! Masraflarımı o karşılar!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#052": {
+   "src": "...well. Goodbye!",
+   "dst": "...peki. Hoşça kalın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#053": {
+   "src": "That's... frustrating. I really did just want to know... well. What's done is done. Let's just go talk to that mayor he mentioned.",
+   "dst": "Bu... sinir bozucu. Gerçekten sadece bilmek istemiştim... neyse. Olan oldu. Hadi gidip bahsettiği belediye başkanıyla konuşalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#054": {
+   "src": "I'm going to go on ahead. I'll meet you in {p}, it's just down the main road to the east.",
+   "dst": "Ben önden gidiyorum. {p} içinde buluşuruz, ana yoldan doğuya doğru hemen ileride.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#055": {
+   "src": "Ah, recruits... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
+   "dst": "Ah, acemiler... mütevazı orman kasabamıza hoş geldiniz. Kalmaya mı geldiniz, yoksa sadece geçiyor musunuz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#056": {
+   "src": "Just passing through, our destination is {p}. Though... we ran into a man named Ope, who directed us to speak with you.",
+   "dst": "Sadece geçiyoruz, hedefimiz {p}. Gerçi... Ope adında bir adamla karşılaştık, bizi sizinle konuşmaya yönlendirdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#057": {
+   "src": "Oh, Ope... I take it your meeting with him went poorly? I must apologize for him, he is... a tough man to deal with sometimes.",
+   "dst": "Ah, Ope... Onunla görüşmeniz kötü geçti sanırım? Onun adına özür dilerim, kendisi... bazen başa çıkması zor bir adamdır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#058": {
+   "src": "Oh... thank you. That's very kind of you. We'll probably stay a while, before we continue towards {p}.",
+   "dst": "Ah... teşekkür ederim. Çok naziksiniz. {p} yönünde devam etmeden önce muhtemelen bir süre kalacağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#059": {
+   "src": "Then feel free to make yourselves at home! We welcome all travelers here, no matter how long their stay.",
+   "dst": "O halde kendinizi evinizde hissedin! Kalış süresi ne olursa olsun bütün yolculara kapımız açık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  }
+ }
+}

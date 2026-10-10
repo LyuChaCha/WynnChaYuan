@@ -1,0 +1,784 @@
+{
+ "_meta": {
+  "quest": "The Ultimate Weapon",
+  "count": 77,
+  "translated": 77,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Ultimate Weapon#000": {
+   "src": "Speak to Dodegar Bandysnoot at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Dodegar Bandysnoot ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#001": {
+   "src": "I'm glad you came along, I could do with a little help if you're not too busy.",
+   "dst": "İyi ki geldin, çok meşgul değilsen biraz yardıma ihtiyacım var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#002": {
+   "src": "I'm Dodegar Bandysnoot, the world famous Hobbit swordsmith! Perhaps you've heard of me?",
+   "dst": "Ben Dodegar Bandysnoot, dünyaca ünlü Hobbit kılıç ustası! Belki adımı duymuşsundur?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#003": {
+   "src": "No? Oh... Well, I've had an idea about how I could make the best weapon that the world has ever seen!",
+   "dst": "Duymadın mı? Ah... Neyse, dünyanın gördüğü en iyi silahı nasıl yapabileceğime dair bir fikrim var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#004": {
+   "src": "But, I need some help getting the special resources to make it.",
+   "dst": "Ama onu yapmak için gereken özel malzemeleri toplamada yardıma ihtiyacım var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#005": {
+   "src": "You'll help?! Excellent! We shall gather enough resources to make one for each of us!",
+   "dst": "Yardım mı edeceksin?! Harika! İkimize birer tane yetecek kadar malzeme toplayacağız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#006": {
+   "src": "So firstly, I need some living wood for the handle, [{~} Enchanted Stick] should be enough.",
+   "dst": "İlk olarak sap için biraz canlı ahşap lazım, [{~} Enchanted Stick] yeterli olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#007": {
+   "src": "The wood sprites located across the river to the west, in a big tree trunk, have magical properties! The handle can then mold to the user's hand! One shouldn't be too hard to come across!",
+   "dst": "Batıdaki nehrin karşısında, büyük bir ağaç gövdesinin içindeki orman perilerinin büyülü özellikleri var! Böylece sap, kullananın eline göre şekil alır! Bir tane bulmak çok zor olmamalı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#008": {
+   "src": "I hope you are prepared, this will be your best quest yet!",
+   "dst": "Umarım hazırsındır, bu şimdiye kadarki en iyi görevin olacak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 1",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#009": {
+   "src": "Collect [{~} Enchanted Stick] from Wood Sprites at [-{~}, {~}, -{~}] and return them to Dodegar",
+   "dst": "[-{~2}, {~3}, -{~4}] konumundaki Wood Sprite'lardan [{~1} Enchanted Stick] topla ve Dodegar'a götür",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#010": {
+   "src": "Wow! You got the wood I needed, thanks!",
+   "dst": "Vay! İhtiyacım olan ahşabı getirmişsin, sağ ol!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#011": {
+   "src": "While I'm making the handle, could you help me with the blade?",
+   "dst": "Ben sapı yaparken bıçak konusunda bana yardım edebilir misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#012": {
+   "src": "Since we want this weapon to be as good as possible we need to find some sacred Hobbit metal!",
+   "dst": "Bu silahın olabildiğince iyi olmasını istediğimiz için biraz kutsal Hobbit metali bulmamız lazım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#013": {
+   "src": "The hobbit village, The Shiar, is really close! Follow the southern road. My brother Gogedar should be there!",
+   "dst": "Hobbit köyü The Shiar çok yakında! Güney yolunu takip et. Kardeşim Gogedar orada olmalı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 2",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#014": {
+   "src": "Dodegar needs [{~} Sacred Hobbit Metal] from the Shiar at [-{~}, {~}, -{~}]",
+   "dst": "Dodegar'ın [-{~2}, {~3}, -{~4}] konumundaki Shiar'dan [{~1} Sacred Hobbit Metal] almaya ihtiyacı var",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#015": {
+   "src": "My brother you say... Trying to create a weapon...",
+   "dst": "Kardeşim diyorsun... Bir silah yapmaya çalışıyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#016": {
+   "src": "Hmmm...",
+   "dst": "Hımmm...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#017": {
+   "src": "Oh he needs Sacred Hobbit Metal!?",
+   "dst": "Ah, Kutsal Hobbit Metali mi lazımmış!?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#018": {
+   "src": "Hmm...!",
+   "dst": "Hımm...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#019": {
+   "src": "Sorry can't help you. I don't really know what that is.",
+   "dst": "Kusura bakma, yardım edemem. Onun ne olduğunu pek bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#020": {
+   "src": "Maybe ask our cousin, Togedar?",
+   "dst": "Belki kuzenimiz Togedar'a sorarsın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 3",
+   "speaker": "Gogedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#021": {
+   "src": "Find Togedar in the Shiar.",
+   "dst": "Shiar'da Togedar'ı bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#022": {
+   "src": "Dodegar? Does not really ring a bell I'm afraid.",
+   "dst": "Dodegar mı? Korkarım pek tanıdık gelmiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#023": {
+   "src": "Oh! Gogedar's brother, why didn't you tell me that.",
+   "dst": "Ha! Gogedar'ın kardeşi, bunu neden söylemedin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#024": {
+   "src": "Sacred Hobbit Metal... This is a metal forged by master blacksmith hobbits within our village. It is a bit expensive to get by but holds great potential, if used properly.",
+   "dst": "Kutsal Hobbit Metali... Köyümüzdeki usta demirci hobbitlerin dövdüğü bir metal. Bulması biraz pahalıdır ama doğru kullanılırsa büyük bir potansiyeli vardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#025": {
+   "src": "Oh. You need a piece?",
+   "dst": "Ah. Bir parça mı lazım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#026": {
+   "src": "I don't have any. Maybe ask my nephew's brother Alegdar?",
+   "dst": "Bende hiç yok. Belki yeğenimin kardeşi Alegdar'a sorarsın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 4",
+   "speaker": "Togedar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#027": {
+   "src": "Find Alegdar in the Shiar.",
+   "dst": "Shiar'da Alegdar'ı bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#028": {
+   "src": "Oh?",
+   "dst": "Ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#029": {
+   "src": "I actually don't know much about... anything.",
+   "dst": "Aslında pek bir şey bilmiyorum... hiçbir konuda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#030": {
+   "src": "I kind of just... stand around here.",
+   "dst": "Ben öylece... burada dikilip duruyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#031": {
+   "src": "Everyone I have ever met just calls me annoying and useless. So I decided to stop trying.",
+   "dst": "Tanıştığım herkes bana sinir bozucu ve işe yaramaz diyor. Ben de denemeyi bıraktım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#032": {
+   "src": "You know, life is hard. We all just have to fight through, and then eventually, we might become happy.",
+   "dst": "Biliyor musun, hayat zor. Hepimiz mücadele etmek zorundayız, sonunda belki mutlu oluruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#033": {
+   "src": "Right sorry... Ask Balegar for any information. He is way smarter.",
+   "dst": "Doğru, kusura bakma... Bilgi için Balegar'a sor. O benden çok daha akıllı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 5",
+   "speaker": "Alegdar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#034": {
+   "src": "Find Balegar in the Shiar.",
+   "dst": "Shiar'da Balegar'ı bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#035": {
+   "src": "My cousin's nephew's dad has had a rough year... I feel bad for him.",
+   "dst": "Kuzenimin yeğeninin babası zor bir yıl geçirdi... Ona üzülüyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#036": {
+   "src": "Oh well!",
+   "dst": "Neyse!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#037": {
+   "src": "I have nooooo clue about that metal. I heard it was just a valuable as a normal rock.",
+   "dst": "O metal hakkında hiiiç fikrim yok. Sıradan bir taş kadar değerli olduğunu duydum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#038": {
+   "src": "Maybe my cousin Reyoretrsed knows anything about it.",
+   "dst": "Belki kuzenim Reyoretrsed bir şey biliyordur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 6",
+   "speaker": "Balegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#039": {
+   "src": "Find Reyoretrsed in the Shiar.",
+   "dst": "Shiar'da Reyoretrsed'i bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#040": {
+   "src": "Reyoretrsed? That's me!",
+   "dst": "Reyoretrsed mi? O benim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#041": {
+   "src": "You are wondering how my name is pronounced? What a rude question.",
+   "dst": "Adımın nasıl okunduğunu mu merak ediyorsun? Ne kaba bir soru.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#042": {
+   "src": "Ray-ore-tree-sed, obviously. What is a human doing here?",
+   "dst": "Rey-or-tri-sed, belli değil mi? Bir insanın burada ne işi var?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#043": {
+   "src": "You are wondering if I have Sacred whatever metal?",
+   "dst": "Bende Kutsal bilmem ne metali var mı diye mi merak ediyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#044": {
+   "src": "I'm {~}. Now if you excuse me, I am busy standing still. Go bother Richard or something.",
+   "dst": "Yaşım {~}. Şimdi izin verirsen, kıpırdamadan durmakla meşgulüm. Git Richard'ı falan rahatsız et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 7",
+   "speaker": "Reyoretrsed",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#045": {
+   "src": "Find Richard in the Shiar.",
+   "dst": "Shiar'da Richard'ı bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#046": {
+   "src": "I've been trying to tell you that I have what you need.",
+   "dst": "Aradığın şeyin bende olduğunu sana söylemeye çalışıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "Richard",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#047": {
+   "src": "You humans really need to practice your communication skills, please.",
+   "dst": "Siz insanların iletişim becerilerinizi geliştirmeniz lazım, lütfen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "Richard",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#048": {
+   "src": "Anyway, here. Take it! This metal is just a scam anyway, nothing special with it.",
+   "dst": "Neyse, al bakalım. Al şunu! Bu metal zaten bir kazık, hiçbir özelliği yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 8",
+   "speaker": "Richard",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#049": {
+   "src": "Return to Dodegar with the metal.",
+   "dst": "Metalle Dodegar'a dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#050": {
+   "src": "I hope it wasn't too much of an issue to get!",
+   "dst": "Umarım bulmak çok dert olmamıştır!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#051": {
+   "src": "... I forgot a step. I can't attach a blade without a binder material.",
+   "dst": "... Bir adımı unuttum. Bağlayıcı bir malzeme olmadan bıçağı takamam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#052": {
+   "src": "I need the nectar of a native flower of the forest to attach it. [{~} Diplacus Aurantiacus] would do the trick.",
+   "dst": "Takmak için ormana özgü bir çiçeğin özüne ihtiyacım var. [{~} Diplacus Aurantiacus] işimi görür.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#053": {
+   "src": "Finding the flower can be rather difficult, here's a riddle on how to find it.",
+   "dst": "Çiçeği bulmak epey zor olabilir, nasıl bulacağına dair bir bilmece vereyim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#054": {
+   "src": "On the side of a hut, hidden inside a hole. Resting in a forest of light, without plight. Whatever that would mean.",
+   "dst": "Bir kulübenin yanında, bir deliğin içinde saklı. Işığın ormanında, dertsiz tasasız yatar. Ne demekse artık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 9",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#055": {
+   "src": "Find the Diplacus Aurantiacus by following the riddle to [-{~}, {~}, -{~}].",
+   "dst": "Bilmeceyi takip ederek [-{~}, {~}, -{~}] konumundaki Diplacus Aurantiacus'u bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#056": {
+   "src": "Hold up! This feels waaay, toooo easy.",
+   "dst": "Dur bakalım! Bu fazlaaa, kolaaay geldi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#057": {
+   "src": "If I'm going to give you this amazingly, incredible, showstopping, crazy item particulary for free, you need to at least work for it!",
+   "dst": "Sana bu inanılmaz, muhteşem, nefes kesici, çılgın eşyayı neredeyse bedavaya vereceksem, en azından biraz emek vermelisin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#058": {
+   "src": "Give me that!",
+   "dst": "Ver şunu bana!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#059": {
+   "src": "Let me just...",
+   "dst": "Bir dakika...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#060": {
+   "src": "This looks so much better! Anyway, bring me that flower now!",
+   "dst": "Bu çok daha iyi görünüyor! Neyse, şimdi bana o çiçeği getir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 10",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#061": {
+   "src": "Talk to Dodegar with the Diplacus Aurantiacus.",
+   "dst": "Diplacus Aurantiacus ile Dodegar'a konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#062": {
+   "src": "Took you a while, did it not?",
+   "dst": "Epey zaman aldı, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#063": {
+   "src": "It's starting to look pretty amazing! Just like it's supposed to I'm sure!",
+   "dst": "Gitgide harika görünmeye başlıyor! Tam olması gerektiği gibi, eminim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#064": {
+   "src": "Maybe this will actually work out. Either way, last ingredient we need!",
+   "dst": "Belki bu iş gerçekten olur. Her halükârda, son bir malzeme kaldı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#065": {
+   "src": "So to finalize and apply some magical properties to this uniquely amazing item we need something known as Luster Blood.",
+   "dst": "Bu eşsiz harika eşyayı tamamlayıp ona büyülü özellikler kazandırmak için Luster Blood denen bir şeye ihtiyacımız var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#066": {
+   "src": "The only known creature in the west, probably in the whole world, if I'm being frank, is known as the Glow Dust Leaf Beetle of the Underworld, not sure where the name comes from.",
+   "dst": "Batıdaki, açık konuşmak gerekirse belki de bütün dünyadaki bilinen tek yaratık Yeraltının Işıltılı Toz Yaprak Böceği diye bilinir, adı nereden geliyor bilmiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#067": {
+   "src": "I happen to know that this beetle lives in a cave in the eastern ravine thingy! If you walk straight east, you should stumble upon it, I promise!",
+   "dst": "Bu böceğin doğudaki şu kanyon gibi yerdeki bir mağarada yaşadığını biliyorum! Dosdoğru doğuya yürürsen karşına çıkar, söz veriyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#068": {
+   "src": "Oh! Almost forgot to mention, about {~} Luster Blood is probably enough.",
+   "dst": "Ah! Söylemeyi neredeyse unutuyordum, {~} Luster Blood muhtemelen yeterli olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 11",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#069": {
+   "src": "Find the cave at [-{~}, {~}, -{~}] and bring back [{~} Luster Blood] and bring it back to Dodegar.",
+   "dst": "[-{~}, {~}, -{~}] konumundaki mağarayı bul ve Dodegar'a [{~} Luster Blood] getir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#070": {
+   "src": "Do not step any closer... Or I will be forced to obliterate you!",
+   "dst": "Bir adım daha yaklaşma... Yoksa seni yok etmek zorunda kalırım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#071": {
+   "src": "The final component! It is finally here!",
+   "dst": "Son parça! Sonunda burada!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#072": {
+   "src": "Oh my Orphion!",
+   "dst": "Aman Orphion'um!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#073": {
+   "src": "Do you see how it's glowing, sparkling and... and radiating!",
+   "dst": "Nasıl parlıyor, ışıldıyor ve... ve ışık saçıyor, görüyor musun!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#074": {
+   "src": "You don't? Uhm... maybe you need glasses humie.",
+   "dst": "Görmüyor musun? Şey... belki gözlüğe ihtiyacın vardır insancık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#075": {
+   "src": "As promised! Here you go! Always happy to practice the art of weapon creation.",
+   "dst": "Söz verdiğim gibi! Al bakalım! Silah yapım sanatını icra etmekten her zaman mutluluk duyarım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "Stage 12",
+   "speaker": "Dodegar",
+   "source": "wiki"
+  },
+  "The Ultimate Weapon#000~1": {
+   "src": "The metal is rather rare so I don't know if you can even find it...",
+   "dst": "Metal epey nadir, bulabilir misin bilmiyorum bile...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}

@@ -1,0 +1,1308 @@
+{
+ "_meta": {
+  "quest": "Memory Paranoia",
+  "count": 127,
+  "translated": 126,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Memory Paranoia#000": {
+   "src": "You can't quite make out the messy scribbles in the journal, but it looks very intense.",
+   "dst": "Defterdeki dağınık karalamaları tam okuyamıyorsun ama çok yoğun bir şeyler yazıldığı belli.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#001": {
+   "src": "The check is made out to a charity for a rather large amount of emeralds.",
+   "dst": "Çek, bir yardım kuruluşuna epey yüklü miktarda Zümrüt için yazılmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "This check is made out to a charity for a lot of emeralds.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.855,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#002": {
+   "src": "Nothing happened.",
+   "dst": "Hiçbir şey olmadı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#003": {
+   "src": "Oh, a human? If I could beg your pardon a moment... could I talk to you about the mansion here?",
+   "dst": "Aa, bir insan mı? Bir dakikanı alabilirsem... Buradaki konak hakkında seninle konuşabilir miyim?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#004": {
+   "src": "But... Eventually... Erm, we're not entirely sure what happened, only rumours have surfaced over the years, but... things took a turn, shall we say.",
+   "dst": "Ama... Sonunda... Şey, ne olduğundan tam emin değiliz, yıllar içinde sadece söylentiler ortaya çıktı ama... işler kötüye gitti diyelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#005": {
+   "src": "Because, aah... How shall I put this... One day they were all... discovered dead. Murdered. By each other.",
+   "dst": "Çünkü, ah... Nasıl söylesem... Bir gün hepsi... ölü bulundu. Öldürülmüş. Birbirleri tarafından.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#006": {
+   "src": "Since, erm... Since there was no one alive to report the incident, it wasn't discovered until days later when a traveller passing by took notice of the mansion.",
+   "dst": "Olayı haber verecek kimse hayatta kalmadığı için, ancak günler sonra yoldan geçen bir gezgin konağı fark edince ortaya çıktı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#007": {
+   "src": "Yet, I am... scared of this place. It is the ruins of the life I should have had. The spirits of the dead are still there... Cursed. I need someone else to uncover my heritage.",
+   "dst": "Yine de... buradan korkuyorum. Burası, yaşamam gereken hayatın yıkıntıları. Ölülerin ruhları hâlâ orada... Lanetli. Mirasımı gün yüzüne çıkaracak başka birine ihtiyacım var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "captured"
+  },
+  "Memory Paranoia#008": {
+   "src": "It's so kind of the Caritats to donate these supplies to the struggling people in the forest.",
+   "dst": "Caritat'ların bu malzemeleri ormandaki zor durumdaki insanlara bağışlaması ne kadar büyük bir iyilik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "It's so nice that the Caritats are donating all of these supplies to the struggling people in the forest.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.859,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#009": {
+   "src": "Mr. Caritat is always writing so intensely in that book... I do wonder what he could be saying.",
+   "dst": "Bay Caritat o deftere hep öyle hararetle yazıyor ki... Ne yazıyor olabilir, merak ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#010": {
+   "src": "I'll bet he's writing insults about us or something. He can't be as nice as he appears, no one is!",
+   "dst": "Bahse girerim bizim hakkımızda hakaretler falan yazıyordur. Göründüğü kadar iyi olamaz, kimse o kadar iyi değildir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "captured",
+   "similar": {
+    "text": "I'll bet he's writing insults about us. He can't be as nice as he appears.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.849,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#011": {
+   "src": "Come on, Timmy. Mr. Caritat is crazily sweet. I doubt he'd be upset, even if you'd thrown it down there on purpose.",
+   "dst": "Hadi ama Timmy. Bay Caritat inanılmaz tatlı biridir. Bunu oraya bilerek atmış olsan bile kızacağını sanmam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#012": {
+   "src": "G-g-ghosts?!",
+   "dst": "H-h-hayalet mi?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "captured"
+  },
+  "Memory Paranoia#013": {
+   "src": "Mr. Caritat looks very engrossed in his writing... you best not disturb him.",
+   "dst": "Bay Caritat kendini yazmaya fena kaptırmış görünüyor... Onu rahatsız etmesen iyi olur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#014": {
+   "src": "I've forgotten, where should I look for my Library Key?",
+   "dst": "Unuttum, Kütüphane Anahtarımı nerede aramalıydım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#015": {
+   "src": "The drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, you should check there.",
+   "dst": "Gider boruları anahtarı şimdiye kadar konağın güneydoğu köşesindeki bodruma taşımıştır, oraya bakmalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well, the drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, that's most likely where it is.",
+    "file": "quest/memory-paranoia.json",
+    "ratio": 0.829,
+    "reason": "candidate"
+   }
+  },
+  "Memory Paranoia#016": {
+   "src": "Page {~}: The Caritats are as nice as people say. They're some of the kindest people I've ever met, let alone work for.",
+   "dst": "Sayfa {~}: Caritat'lar söylendiği kadar iyi insanlar. Değil yanlarında çalışmak, şimdiye kadar tanıdığım en iyi kalpli insanlardan.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#017": {
+   "src": "Page {~}: That Timmy boy has been acting rather unusual lately... Uncharacteristically hostile. I wonder what's come over him.",
+   "dst": "Sayfa {~}: Şu Timmy çocuk son zamanlarda epey tuhaf davranıyor... Hiç ona göre olmayan bir düşmanlık. Ona ne oldu acaba?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#018": {
+   "src": "Page {~}: I've been hearing strange noises at night. Scratching, and sometimes yelling... I do hope nothing bad is going on.",
+   "dst": "Sayfa {~}: Geceleri tuhaf sesler duyuyorum. Tırmalama, bazen de bağırış... Umarım kötü bir şey olmuyordur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#019": {
+   "src": "Page {~}: I don't even know how this happened, but Timmy performed dark magic. He shot a fireball! The north wall of the library was wrecked!",
+   "dst": "Sayfa {~}: Bunun nasıl olduğunu bile bilmiyorum ama Timmy kara büyü yaptı. Bir ateş topu fırlattı! Kütüphanenin kuzey duvarı yerle bir oldu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#020": {
+   "src": "It appears that all of the pages have been torn out...",
+   "dst": "Görünüşe göre bütün sayfalar yırtılıp koparılmış...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#021": {
+   "src": "Aw man, I can't believe I'm not allowed to sit with the adults. I'm nearly twelve!",
+   "dst": "Of ya, büyüklerle oturmama izin verilmemesine inanamıyorum. Neredeyse on iki yaşındayım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#022": {
+   "src": "They appear to be chatting about local politics.",
+   "dst": "Yerel siyaset hakkında sohbet ediyor gibiler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#023": {
+   "src": "You hold up the spoon...",
+   "dst": "Kaşığı havaya kaldırıyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#024": {
+   "src": "It's been depleted of its magic. How disappointing.",
+   "dst": "Büyüsü tükenmiş. Ne hayal kırıklığı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#025": {
+   "src": "Thank you very much, Father, and everyone here. Here's to more years of health-",
+   "dst": "Çok teşekkür ederim baba, burada bulunan herkese de. Nice sağlıklı yıllara-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Timothy",
+   "source": "captured"
+  },
+  "Memory Paranoia#026": {
+   "src": "My god... What is wrong with this place? No matter what I do, what I try...",
+   "dst": "Tanrım... Bu evin derdi ne? Ne yaparsam yapayım, neyi denersem deneyeyim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#027": {
+   "src": "...Timothy, I'm going to ask you something, and I need you to answer me honestly. Were you... Were you responsible for this?",
+   "dst": "...Timothy, sana bir şey soracağım ve bana dürüstçe cevap vermeni istiyorum. Bundan... Bundan sen mi sorumlusun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#028": {
+   "src": "Never, never!! That study is off-limits to everyone, even your mother! If I had known back then, I'd... I'd have... urgh...",
+   "dst": "Asla, asla!! O çalışma odasına herkesin girmesi yasak, annenin bile! O zaman bilseydim... ben... ben... ıyy...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#029": {
+   "src": "Page {~}: DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH DEATH.",
+   "dst": "Sayfa {~}: ÖLÜM ÖLÜM ÖLÜM ÖLÜM ÖLÜM ÖLÜM ÖLÜM ÖLÜM ÖLÜM ÖLÜM ÖLÜM.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#030": {
+   "src": "Page {~}: There is a dark power beyond our control within this mansion. There is no use trying to fight it.",
+   "dst": "Sayfa {~}: Bu konağın içinde gücümüzün yetmediği karanlık bir kuvvet var. Onunla savaşmaya çalışmanın faydası yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#031": {
+   "src": "Page {~}: I felt like all of the skulls were watching me. I have had to turn them all towards the fireplace.",
+   "dst": "Sayfa {~}: Bütün kafataslarının beni izlediğini hissettim. Hepsini şömineye doğru çevirmek zorunda kaldım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#032": {
+   "src": "THAT WHICH STARTED THIS WAR SHALL RISE ONCE MORE. FROM THE REALM OF SHADOWS, DECEIT AND PAIN.",
+   "dst": "BU SAVAŞI BAŞLATAN BİR KEZ DAHA YÜKSELECEK. GÖLGELERİN, HİLENİN VE ACININ DİYARINDAN.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 15",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#033": {
+   "src": "FOREVER TRAPPED, FROM WHENCE IT CAME. THROUGH THE WEAK POINT BETWEEN REALMS IT. SHALL. RISE. AGAIN!",
+   "dst": "GELDİĞİ YERDE SONSUZA DEK HAPSOLMUŞ. DİYARLAR ARASINDAKİ ZAYIF NOKTADAN. YENİDEN. YÜKSELECEK. O!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 15",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#034": {
+   "src": "Dear Anton, the chandelier fell in the main hall. Please fix it as soon as possible.",
+   "dst": "Sevgili Anton, ana salondaki avize düştü. Lütfen en kısa zamanda tamir et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#035": {
+   "src": "FROM SOILS OF DOOM THE SERVANT LAID",
+   "dst": "KIYAMET TOPRAKLARINDAN HİZMETKÂR SERİLDİ",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "captured"
+  },
+  "Memory Paranoia#036": {
+   "src": "All you have to do, is go in there and find answers. I'm sure the past won't haunt us both. Something happened here all those years ago... I want to know what.",
+   "dst": "Tek yapman gereken içeri girip cevapları bulmak. Eminim geçmiş ikimize de musallat olmaz. Bunca yıl önce burada bir şey oldu... Ne olduğunu öğrenmek istiyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#037": {
+   "src": "I don't think it's wise you enter the mansion ever again...",
+   "dst": "Konağa bir daha girmenin akıllıca olduğunu sanmıyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Memory Paranoia#038": {
+   "src": "Speak to Atisun.",
+   "dst": "Atisun ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#039": {
+   "src": "It was not always so dilapidated. It once stood tall, a monument to the family of Caritat, who constructed it from the ground up.",
+   "dst": "Her zaman bu kadar harap değildi. Bir zamanlar dimdik dururdu; onu temelden inşa eden Caritat ailesinin bir anıtı gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#040": {
+   "src": "The Caritats were unlike any other. Uncharacteristically selfless and helpful. Their wealth was everyone’s wealth as far as they were concerned.",
+   "dst": "Caritat'lar başka hiçbir aileye benzemezdi. Alışılmadık derecede fedakâr ve yardımseverlerdi. Onlara göre servetleri herkesin servetiydi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#041": {
+   "src": "I am the last remaining descendant, Atisun Caritat. I was the only survivor of the... incident. I was only an infant when I was found by a passerby.",
+   "dst": "Ben son kalan torunum, Atisun Caritat. O... olaydan sağ kurtulan tek kişiydim. Yoldan geçen biri beni bulduğunda henüz bebektim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#042": {
+   "src": "I do not believe that my family simply went mad, but I do not know what happened. I want to know the truth. I think this mansion still holds the answers I'm looking for.",
+   "dst": "Ailemin öylece delirdiğine inanmıyorum ama ne olduğunu da bilmiyorum. Gerçeği öğrenmek istiyorum. Bence bu konak aradığım cevapları hâlâ saklıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#043": {
+   "src": "Don't you worry, like my ancestors, I'm a generous man. If you help me, I will reward you handsomely. All you have to do, is go in there and find answers. I'm sure the past won't haunt us both.",
+   "dst": "Hiç endişelenme, atalarım gibi ben de cömert bir adamım. Bana yardım edersen seni cömertçe ödüllendiririm. Tek yapman gereken içeri girip cevapları bulmak. Eminim geçmiş ikimize de musallat olmaz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 1",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#044": {
+   "src": "Enter the {p}.",
+   "dst": "Şuraya gir: {p}.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#045": {
+   "src": "Learn the story of the Caritat Family.",
+   "dst": "Caritat Ailesi'nin hikâyesini öğren.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#046": {
+   "src": "This check is made out to a charity for a lot of emeralds.",
+   "dst": "Bu çek, bir yardım kuruluşuna yüklü miktarda Zümrüt için yazılmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Check",
+   "source": "wiki"
+  },
+  "Memory Paranoia#047": {
+   "src": "It's so nice that the Caritats are donating all of these supplies to the struggling people in the forest.",
+   "dst": "Caritat'ların bütün bu malzemeleri ormandaki zor durumdaki insanlara bağışlaması ne güzel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "wiki"
+  },
+  "Memory Paranoia#048": {
+   "src": "He seems to be very engrossed in his writing.",
+   "dst": "Kendini yazmaya fena kaptırmış görünüyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#049": {
+   "src": "I've heard about weird things happening around the house. People are saying the mansion might be haunted!",
+   "dst": "Evin içinde tuhaf şeyler olduğunu duydum. Herkes konağın perili olabileceğini söylüyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "wiki"
+  },
+  "Memory Paranoia#050": {
+   "src": "Ghosts? Preposterous! This mansion isn't haunted, don't believe those silly rumors!",
+   "dst": "Hayalet mi? Saçmalık! Bu konak perili falan değil, o aptal söylentilere inanmayın!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#051": {
+   "src": "Mister Caritat is always writing in that book, always so intensely. I wonder what he is writing.",
+   "dst": "Bay Caritat o deftere hep yazıyor, hem de hep öyle hararetle. Ne yazdığını merak ediyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#052": {
+   "src": "He won't even tell me what he's writing.",
+   "dst": "Bana bile ne yazdığını söylemiyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#053": {
+   "src": "I accidentally dropped my Library Key down the drain, do you think my dad will be angry?",
+   "dst": "Kütüphane Anahtarımı yanlışlıkla gidere düşürdüm, sence babam kızar mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#054": {
+   "src": "No, Mister Caritat is very forgiving. I doubt he'd be upset, especially if it was an accident.",
+   "dst": "Hayır, Bay Caritat çok bağışlayıcıdır. Hele kaza olduysa kızacağını hiç sanmam.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Maid",
+   "source": "wiki"
+  },
+  "Memory Paranoia#055": {
+   "src": "I still want to find the key though, do you know where I should look?",
+   "dst": "Yine de anahtarı bulmak istiyorum, sence nereye bakmalıyım?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#056": {
+   "src": "Well, the drainage pipes have probably taken the key to the basement in the southeast corner of the mansion by now, that's most likely where it is.",
+   "dst": "Şey, gider boruları anahtarı şimdiye kadar konağın güneydoğu köşesindeki bodruma taşımıştır, büyük ihtimalle oradadır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 3",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#057": {
+   "src": "Enter the basement and recover the Library Key.",
+   "dst": "Bodruma gir ve Kütüphane Anahtarını bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#058": {
+   "src": "Enter the library of {p}.",
+   "dst": "{p} kütüphanesine gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#059": {
+   "src": "Enter the hole in the wall.",
+   "dst": "Duvardaki delikten içeri gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#060": {
+   "src": "Timmy, is something bothering you? You have been acting so weird lately.",
+   "dst": "Timmy, seni rahatsız eden bir şey mi var? Son zamanlarda çok tuhaf davranıyorsun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#061": {
+   "src": "You cannot command me, mortal! You and all of your inferior species will bow to the darkness!",
+   "dst": "Bana emir veremezsin, ölümlü! Sen ve bütün aşağılık türün karanlığın önünde diz çökeceksiniz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#062": {
+   "src": "I don't know what game you are playing, Timmy. But I will not stand for it any longer, snap out of it!",
+   "dst": "Ne oyun oynuyorsun bilmiyorum Timmy. Ama buna daha fazla katlanmayacağım, kendine gel!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#063": {
+   "src": "You shall pay for your insolence, mortal!",
+   "dst": "Küstahlığının bedelini ödeyeceksin, ölümlü!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#064": {
+   "src": "Dark magic? What foul books have you been reading? And what's that in your hand?",
+   "dst": "Kara büyü mü? Ne biçim iğrenç kitaplar okuyorsun sen? Bir de elindeki o ne?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#065": {
+   "src": "Casting spells with a black spoon? I'm going to get rid of this foul thing!",
+   "dst": "Kara bir kaşıkla büyü mü yapıyorsun? Bu iğrenç şeyden kurtulacağım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#066": {
+   "src": "That is an item beyond you, mortal. Give it back to me this instant!",
+   "dst": "O, senin aklının alamayacağı bir eşya, ölümlü. Derhal geri ver onu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 6",
+   "speaker": "Timmy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#067": {
+   "src": "Return the spoon to the Kitchen.",
+   "dst": "Kaşığı Mutfağa geri götür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#068": {
+   "src": "Listen to Mr. Caritat's announcement.",
+   "dst": "Bay Caritat'ın duyurusunu dinle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#069": {
+   "src": "Attention, attention everyone! I have an announcement I'd like to make!",
+   "dst": "Dikkat, herkes dikkat! Yapmak istediğim bir duyuru var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#070": {
+   "src": "My son, Timothy, has just turned eighteen today.",
+   "dst": "Oğlum Timothy bugün on sekiz yaşına girdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#071": {
+   "src": "Now, there have been a few slight hiccups over the years, but we've made it through mostly in one piece.",
+   "dst": "Yıllar içinde ufak tefek aksilikler yaşadık ama çoğunlukla sağ salim atlattık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#072": {
+   "src": "And I'd like to say, I'm very proud of him. To Timothy, a new man!",
+   "dst": "Şunu da söylemek isterim, onunla çok gurur duyuyorum. Timothy'ye, yeni bir adama!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#073": {
+   "src": "Please, everyone stay calm. I'm sure it's just the cooks spilling something...",
+   "dst": "Lütfen herkes sakin olsun. Eminim aşçılar bir şey dökmüştür...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 8",
+   "speaker": "Mister Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#074": {
+   "src": "Enter the Kitchen.",
+   "dst": "Mutfağa gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#075": {
+   "src": "Oh my god... what is that thing?!",
+   "dst": "Aman tanrım... o şey de ne?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 9",
+   "speaker": "Baker",
+   "source": "wiki"
+  },
+  "Memory Paranoia#076": {
+   "src": "Everyone out, now! We can't fight these things!",
+   "dst": "Herkes dışarı, hemen! Bu şeylerle savaşamayız!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 9",
+   "speaker": "Chef",
+   "source": "wiki"
+  },
+  "Memory Paranoia#077": {
+   "src": "Exit the Kitchen.",
+   "dst": "Mutfaktan çık.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#078": {
+   "src": "Speak to people who haven't fled from the disaster.",
+   "dst": "Felaketten kaçmayan insanlarla konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#079": {
+   "src": "How was any of that even possible? What are we going to tell their families?",
+   "dst": "Bunların hiçbiri nasıl mümkün olabilir? Ailelerine ne diyeceğiz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Timothy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#080": {
+   "src": "No, of course not! I overcame that years ago, you know that, I can't believe you still suspect me of-",
+   "dst": "Hayır, tabii ki hayır! Onu yıllar önce atlattım, biliyorsun, beni hâlâ şeyden şüphelendiğine inanamıyorum-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Timothy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#081": {
+   "src": "Ah, sir, we did find something rather unusual in the kitchen that might interest you? Maybe?",
+   "dst": "Ah, efendim, mutfakta ilginizi çekebilecek epey tuhaf bir şey bulduk? Belki?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#082": {
+   "src": "What- Out with it! What did you find?! Please, please tell me I'm wrong!!",
+   "dst": "Ne- Söyle hadi! Ne buldunuz?! Lütfen, lütfen yanıldığımı söyleyin!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#083": {
+   "src": "We found this charred-looking black spoon. I've worked here for years, and I've never seen any spoons of this style in the mansion.",
+   "dst": "Kömür gibi yanmış görünen şu kara kaşığı bulduk. Yıllardır burada çalışırım, konakta bu tarzda bir kaşık hiç görmedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Servant",
+   "source": "wiki"
+  },
+  "Memory Paranoia#084": {
+   "src": "Wait, that spoon? I remember sneaking into your study that one time to get it, but how did it survive the fire?",
+   "dst": "Dur, o kaşık mı? Bir keresinde onu almak için gizlice çalışma odana girdiğimi hatırlıyorum ama yangından nasıl sağ çıktı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 11",
+   "speaker": "Timothy",
+   "source": "wiki"
+  },
+  "Memory Paranoia#085": {
+   "src": "Unlock the Study.",
+   "dst": "Çalışma Odasının kilidini aç.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#086": {
+   "src": "Enter the Study",
+   "dst": "Çalışma Odasına gir",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#087": {
+   "src": "Leave the Study.",
+   "dst": "Çalışma Odasından çık.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#088": {
+   "src": "Speak with the Possessed Mr. Caritat.",
+   "dst": "Ele geçirilmiş Bay Caritat ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#089": {
+   "src": "Bring the key to Timmy's bedroom.",
+   "dst": "Anahtarı Timmy'nin yatak odasına götür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#090": {
+   "src": "Enter Timmy’s bedroom.",
+   "dst": "Timmy'nin yatak odasına gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#091": {
+   "src": "Search Timmy's bedroom.",
+   "dst": "Timmy'nin yatak odasını ara.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#092": {
+   "src": "Bring the key to the Master Bedroom.",
+   "dst": "Anahtarı Ana Yatak Odasına götür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#093": {
+   "src": "Enter the Master Bedroom.",
+   "dst": "Ana Yatak Odasına gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#094": {
+   "src": "Harold, please...",
+   "dst": "Harold, lütfen...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mrs. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#095": {
+   "src": "Stop this madness...",
+   "dst": "Bu deliliğe son ver...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mrs. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#096": {
+   "src": "Harold...?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mrs. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#097": {
+   "src": "BREAK THROUGH THE REALMS TO THE LAND OF TRADE.",
+   "dst": "DİYARLARI YAR, TİCARET TOPRAĞINA VAR.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#098": {
+   "src": "CORRUPT THE WORLD WITH SEEDS OF PAIN",
+   "dst": "ACI TOHUMLARIYLA DÜNYAYI YOZLAŞTIR",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#099": {
+   "src": "SO THAT HE...",
+   "dst": "Kİ O...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#100": {
+   "src": "...MAY RISE AGAIN!",
+   "dst": "...YENİDEN YÜKSELEBİLSİN!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 21",
+   "speaker": "Mr. Caritat",
+   "source": "wiki"
+  },
+  "Memory Paranoia#101": {
+   "src": "Escape the flaming mansion through the back door.",
+   "dst": "Alevler içindeki konaktan arka kapıdan kaç.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#102": {
+   "src": "Navigate the Caritat's basement.",
+   "dst": "Caritat'ların bodrumunda yolunu bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 23",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#103": {
+   "src": "Escape through the mysterious rift.",
+   "dst": "Gizemli yarıktan kaç.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Memory Paranoia#104": {
+   "src": "No, no! I said three feet left, you absolute...",
+   "dst": "Hayır, hayır! Üç adım sola dedim, seni gidi koca...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#105": {
+   "src": "Mr. Caritat! What are you doing?!",
+   "dst": "Bay Caritat! Ne yapıyorsunuz?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#106": {
+   "src": "What are you doing here, Elf? You need proper equipment to be on this site-",
+   "dst": "Senin burada ne işin var, Elf? Bu şantiyede durmak için uygun teçhizat gerekir-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#107": {
+   "src": "Mr Caritat, you can't build a house here!",
+   "dst": "Bay Caritat, buraya ev inşa edemezsiniz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#108": {
+   "src": "I can do whatever I like here, I bought the land.",
+   "dst": "Burada ne istersem yaparım, araziyi ben satın aldım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#109": {
+   "src": "You don't understand! This is where it came... this is where the darkness invaded!",
+   "dst": "Anlamıyorsunuz! Burası onun geldiği yer... karanlığın istila ettiği yer burası!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#110": {
+   "src": "Don't be preposterous. I'm building here to show the people that there's simply nothing to worry about!",
+   "dst": "Saçmalama. Halka endişelenecek hiçbir şey olmadığını göstermek için burada inşa ediyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#111": {
+   "src": "Besides, even if there was something, now that Dullahan's gone, it'll go too.",
+   "dst": "Hem bir şey olsa bile, Dullahan gittiğine göre o da gider.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#112": {
+   "src": "What?! He wasn't the one causing all this, it was-",
+   "dst": "Ne?! Bütün bunlara sebep olan o değildi, asıl-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#113": {
+   "src": "Well of course you would think that. You and him had some... history, didn't you?",
+   "dst": "Eh, tabii sen öyle düşünürsün. Onunla aranızda bir... geçmiş vardı, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#114": {
+   "src": "I... Please, Mr Caritat. You don't understand what you're doing...",
+   "dst": "Ben... Lütfen, Bay Caritat. Ne yaptığınızı anlamıyorsunuz...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#115": {
+   "src": "I am securing some prime real-estate right here. Oh... Perhaps that is why you're here?",
+   "dst": "Ben tam burada birinci sınıf bir arsa kapatıyorum. Ah... Belki de buraya bu yüzden geldin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#116": {
+   "src": "What? No, I-",
+   "dst": "Ne? Hayır, ben-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Lari",
+   "source": "wiki"
+  },
+  "Memory Paranoia#117": {
+   "src": "Trying to expand elven territories, are you?! Well, I'll be having none of that! Leave, before I have my men escort you!",
+   "dst": "Elf topraklarını genişletmeye çalışıyorsun, değil mi?! Buna asla izin vermem! Adamlarıma seni dışarı attırmadan git buradan!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Caritat Senior",
+   "source": "wiki"
+  },
+  "Memory Paranoia#118": {
+   "src": "Hey! Human! Are you alright?! Please, calm down, quit flailing around, you're safe!",
+   "dst": "Hey! İnsan! İyi misin?! Lütfen sakin ol, çırpınmayı bırak, güvendesin!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 24",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#119": {
+   "src": "Oh thank goodness, you're back to us. I was so worried... er, you might not recall. Let me explain...",
+   "dst": "Ah, çok şükür, kendine geldin. Çok endişelendim... şey, hatırlamıyor olabilirsin. İzin ver açıklayayım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#120": {
+   "src": "It... it seemed like you were possessed. You stood in the hall for... I don't know how long. I couldn't snap you out of it, no matter what I tried.",
+   "dst": "Sanki... sanki ele geçirilmiş gibiydin. Salonda öylece... ne kadar durdun bilmiyorum. Ne denediysem seni kendine getiremedim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#121": {
+   "src": "Voices that weren't yours, you spoke out their moments and thoughts. The maids, my father... everyone. I... you said what I needed to hear.",
+   "dst": "Sana ait olmayan seslerle onların anlarını ve düşüncelerini dile getirdin. Hizmetçiler, babam... herkes. Ben... duymam gerekeni söyledin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#122": {
+   "src": "My great grandfather, wanting to prove to everyone that the forest was still good, built his mansion atop the very spot that was acclaimed to be the cause of the Decay.",
+   "dst": "Büyük dedemin dedesi, herkese ormanın hâlâ iyi olduğunu kanıtlamak isteyip konağını Çürüme'nin sebebi olduğu söylenen noktanın tam üstüne inşa etmiş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#123": {
+   "src": "My father tried to continue the traditions... but all of it was burned to ashes. I must consider myself lucky that I did not fall with them.",
+   "dst": "Babam gelenekleri sürdürmeye çalıştı... ama hepsi yanıp kül oldu. Onlarla birlikte gitmediğim için kendimi şanslı saymalıyım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#124": {
+   "src": "And what emerged from that spot? Who knows... but, whatever it was... the darkness must have lingered, and drove them all to madness.",
+   "dst": "Peki o noktadan ne çıktı? Kim bilir... ama her neyse... karanlık oralarda kalıp hepsini deliliğe sürüklemiş olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#125": {
+   "src": "I'm sorry you went through that ordeal... I would suggest seeing a healer as soon as possible.",
+   "dst": "Bu çileyi yaşadığın için üzgünüm... En kısa zamanda bir şifacıya görünmeni öneririm.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  },
+  "Memory Paranoia#126": {
+   "src": "I will make sure no one enters this house again. It is cursed. Thank you for helping me.",
+   "dst": "Bu eve bir daha kimsenin girmemesini sağlayacağım. Lanetli. Bana yardım ettiğin için teşekkür ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Memory Paranoia",
+   "stage": "Stage 25",
+   "speaker": "Atisun",
+   "source": "wiki"
+  }
+ }
+}

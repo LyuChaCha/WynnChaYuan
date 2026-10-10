@@ -1,0 +1,714 @@
+{
+ "_meta": {
+  "quest": "Dwarves and Doguns Part IV",
+  "count": 70,
+  "translated": 69,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Dwarves and Doguns Part IV#000": {
+   "src": "Quiet. Dwarven whelp...you have failed... We will not go quietly. AWAKEN.",
+   "dst": "Sus. Cüce yavrusu... başaramadın... Sessizce gitmeyeceğiz. UYAN.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Dogun Chieftain",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part IV#001": {
+   "src": "{u}... Do you have...the staff? And the amulet...?",
+   "dst": "{u}... Sende mi...asa? Ya tılsım...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part IV#003": {
+   "src": "Return to Korzim on the second floor of the enchanter in {p} with the Amulet of Fire Resistance and the Staff of True Ice.",
+   "dst": "Amulet of Fire Resistance ve Staff of True Ice ile {p} şehrindeki büyücü dükkânının ikinci katında bulunan Korzim'e dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#005": {
+   "src": "The war is starting... and Axelus... He has not returned.",
+   "dst": "Savaş başlıyor... ve Axelus... Geri dönmedi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#006": {
+   "src": "We can not go... Not without him. Find him... And bring him to the... Dogun village.",
+   "dst": "Gidemeyiz... Onsuz olmaz. Onu bul... Ve getir onu... Dogun köyüne.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#007": {
+   "src": "I can not leave. The guard...it is on high alert. He was last at {p}...yes?",
+   "dst": "Ben ayrılamam. Muhafızlar...alarm halinde. En son {p} şehrindeydi...değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#008": {
+   "src": "Head to {p} and look for Axelus.",
+   "dst": "{p} şehrine git ve Axelus'u ara.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#009": {
+   "src": "The first group has already started their climb, let's hurry.",
+   "dst": "İlk grup tırmanışa başladı bile, acele edelim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#010": {
+   "src": "Hey! Everyone, the king has someone in the cage! It's been years since we used it!",
+   "dst": "Hey! Millet, kral kafese birini koymuş! Kullanmayalı yıllar oldu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#011": {
+   "src": "Wait, that's Axelus up there!! The king locked up his son?! What in the world?",
+   "dst": "Durun, yukarıdaki Axelus!! Kral kendi oğlunu mu hapsetmiş?! Bu da ne böyle?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#012": {
+   "src": "I heard he was consorting with demons, but that can't possibly be true, can it?",
+   "dst": "Şeytanlarla iş birliği yaptığını duydum ama bu doğru olamaz, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#013": {
+   "src": "For the last time, they are not demons!! Gods, I've been telling you this whole time! Not even my father will listen to reason!",
+   "dst": "Son kez söylüyorum, onlar şeytan değil!! Tanrım, en başından beri bunu anlatıyorum! Babam bile laf dinlemiyor!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#014": {
+   "src": "If I don't get freed we're doomed, you hear me?! We won't survive another war! As your prince I demand to be freed!",
+   "dst": "Serbest bırakılmazsam hepimiz mahvoluruz, duydunuz mu?! Bir savaşı daha atlatamayız! Prensiniz olarak serbest bırakılmamı emrediyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#015": {
+   "src": "Listen, the statues are climbable and there's a control panel for the lava siphons near them! Now help me so we all don't die!",
+   "dst": "Dinle, heykellere tırmanılabiliyor ve yanlarında lav sifonlarının kontrol paneli var! Şimdi yardım et de hepimiz ölmeyelim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 2",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#016": {
+   "src": "Free Axelus and escape the city.",
+   "dst": "Axelus'u kurtar ve şehirden kaç.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#017": {
+   "src": "Wait, that human just defaced the hero's monument!! Are they working with the demons too?",
+   "dst": "Durun, o insan kahramanın anıtını tahrip etti!! O da mı şeytanlarla iş birliği yapıyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Rodoroc Citizen",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#018": {
+   "src": "{u}! I didn't think you'd be back, but we need to leave, now! Meet me outside!",
+   "dst": "{u}! Geri döneceğini hiç sanmıyordum ama hemen gitmemiz lazım! Dışarıda buluşalım!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#019": {
+   "src": "{u}! Over here, to the right! By the cannon! I'm commandeering this thing.",
+   "dst": "{u}! Buraya, sağa! Topun yanına! Bu şeye el koyuyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#020": {
+   "src": "We need to get up to the Doguns before the Dwarves begin their assault, or before the Doguns take their last resort.",
+   "dst": "Cüceler saldırıya geçmeden ya da Dogunlar son çarelerine başvurmadan önce Dogunların yanına çıkmamız lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#021": {
+   "src": "Get in the cannon, now! You've got your armour, you might end up charred and covered in soot but you'll be fine!",
+   "dst": "Topa gir, hemen! Zırhın var, biraz kavrulup isle kaplanabilirsin ama bir şey olmaz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#022": {
+   "src": "Don't tell anyone we shot ourselves out of a cannon, I'll never live it down. Now come on, to the Dogun village, hurry!",
+   "dst": "Kendimizi toptan fırlattığımızı kimseye söyleme, ömür boyu bunu yüzüme vururlar. Hadi, Dogun köyüne, acele et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#023": {
+   "src": "If the Doguns are taking their last resort and summoning Garaheth, then we've got two sides to stop at once...basically, the odds are astronomically against us.",
+   "dst": "Dogunlar son çarelerine başvurup Garaheth'i çağırıyorsa aynı anda iki tarafı durdurmamız gerekecek... yani şansımız neredeyse sıfır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#024": {
+   "src": "That means you do what you need to do, no matter what. Understood? If we can stop this madness then the casualties won't have died for nothing! Now move!",
+   "dst": "Yani ne gerekiyorsa yapacaksın, ne olursa olsun. Anlaşıldı mı? Bu deliliği durdurabilirsek ölenler boşuna ölmemiş olur! Şimdi kımılda!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 3",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#025": {
+   "src": "Reach the portal and stop Garaheth.",
+   "dst": "Geçide ulaş ve Garaheth'i durdur.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#026": {
+   "src": "WAIT, STOP THE-",
+   "dst": "DUR, DURDURUN ŞU-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#028": {
+   "src": "I can't believe this... That bone was part of the ritual?! Agh, how could we have been so STUPID! You're all lucky we prepared for this!!",
+   "dst": "İnanamıyorum... O kemik ritüelin bir parçası mıydı?! Ah, nasıl bu kadar APTAL olabildik! Buna hazırlıklı olduğumuz için şanslısınız!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#029": {
+   "src": "You need to get inside him. He's still chained! The amulet will protect you from the heat! Freeze him from the inside out!!",
+   "dst": "İçine girmen lazım. Hâlâ zincirli! Tılsım seni sıcaktan koruyacak! Onu içeriden dışarıya dondur!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#030": {
+   "src": "Enter the body of Garaheth.",
+   "dst": "Garaheth'in bedenine gir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#031": {
+   "src": "Find all {~} organs and destroy them.",
+   "dst": "{~} organın hepsini bul ve yok et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#032": {
+   "src": "Leave Garaheth and exit his realm.",
+   "dst": "Garaheth'ten ayrıl ve onun diyarından çık.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#033": {
+   "src": "EVERYONE, STOP THIS! RIGHT NOW!! IT'S OVER!!",
+   "dst": "HERKES, DURUN! HEMEN ŞİMDİ!! BİTTİ!!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#034": {
+   "src": "Open your eyes for once in your lives!! You see that?! Behind me! THAT was going to be the end result!",
+   "dst": "Hayatınızda bir kez olsun gözünüzü açın!! Gördünüz mü?! Arkamda! İŞTE sonuç bu olacaktı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#035": {
+   "src": "Garaheth would have killed every one of us, damn it! Are you that short-sighted that you can't see this?!",
+   "dst": "Garaheth hepimizi öldürecekti, kahretsin! Bunu göremeyecek kadar mı dar görüşlüsünüz?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#036": {
+   "src": "Everyone here is to blame, except the human who helped stop this! The Doguns were already exiled, they wouldn't have hurt anyone!",
+   "dst": "Bunu durdurmaya yardım eden insan dışında buradaki herkes suçlu! Dogunlar zaten sürgündeydi, kimseye zarar vermeyeceklerdi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#037": {
+   "src": "But we couldn't just let ANYTHING be! You always need more glory, more, more, MORE! Don't you, Draani? I'm ashamed to be your lineage!",
+   "dst": "Ama biz HİÇBİR ŞEYİ öylece bırakamadık! Hep daha fazla şan, daha fazla, daha, DAHA! Değil mi, Draani? Senin soyundan geldiğim için utanıyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#038": {
+   "src": "And you, Doguns! I...I pitied you. You were wronged, but you resort to this? You'd doom the world over to spite the Dwarves? Is that it?!",
+   "dst": "Ya siz, Dogunlar! Ben...size acıdım. Size haksızlık edildi, ama başvurduğunuz yol bu mu? Cücelere inat bütün dünyayı yok mu edecektiniz? Mesele bu mu?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#039": {
+   "src": "Whelp. You do not understand. To be persecuted...and see your people tortured...hunted.",
+   "dst": "Yavru. Anlamıyorsun. Zulüm görmek...halkının işkence görüşünü...avlanışını izlemek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#040": {
+   "src": "You all deserve it! You attacked our ancestors for sport! Eye for an eye, have you heard of it? It's only fair!",
+   "dst": "Hepiniz bunu hak ettiniz! Atalarımıza eğlence olsun diye saldırdınız! Göze göz, hiç duydun mu? Bu adalet!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dwarven Commander",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#041": {
+   "src": "Imbeciles...your stories are not true. We... We lived through the war. You took everything...and suffered none.",
+   "dst": "Ahmaklar...hikâyeleriniz doğru değil. Biz... Biz o savaşı yaşadık. Her şeyi aldınız...ve hiç acı çekmediniz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#042": {
+   "src": "I've been trying to tell BOTH of you that the monarchy has been spreading lies for centuries! One bad king doesn't mean the whole species is a loss!",
+   "dst": "İkinize de krallığın yüzyıllardır yalan yaydığını anlatmaya çalışıyorum! Tek bir kötü kral yüzünden bütün bir ırk kötü sayılmaz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#043": {
+   "src": "Shut your mouth. Even now...you trample on the bones of our god... You have taken everything from us...",
+   "dst": "Kapa çeneni. Şimdi bile...tanrımızın kemiklerini çiğniyorsunuz... Bizden her şeyi aldınız...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#044": {
+   "src": "This earth is stained by you. We...we shall burn you...and scatter your ash to the wind.",
+   "dst": "Bu toprak sizin yüzünüzden lekelendi. Biz...sizi yakacağız...ve külünüzü rüzgâra savuracağız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#045": {
+   "src": "DON'T YOU DARE! STOP, RIGHT NOW!",
+   "dst": "SAKIN HA! DUR, HEMEN ŞİMDİ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#046": {
+   "src": "Axelus!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#047": {
+   "src": "...he..",
+   "dst": "...o..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#048": {
+   "src": "You would... You would kill a savior...?",
+   "dst": "Bir kurtarıcıyı... Bir kurtarıcıyı mı öldürürsünüz...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Korzim",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#049": {
+   "src": "No, no! No no no, this can't be happening! H-Hang on, we'll save you, I...I'll do something, I...",
+   "dst": "Hayır, hayır! Hayır hayır hayır, bu olamaz! D-Dayan, seni kurtaracağız, ben...ben bir şey yapacağım, ben...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#050": {
+   "src": "Y-You DEMONS! MONSTERS! I'll avenge you, Axelus, j-just give me time-",
+   "dst": "S-Sizi ŞEYTANLAR! CANAVARLAR! Öcünü alacağım Axelus, s-sadece bana zaman ver-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#051": {
+   "src": "AGH, SHUT UP! SHUT...ack... Q-Quiet. Listen to one damn word from my mouth, Draani... For once in your miserable life",
+   "dst": "AH, KES SESİNİ! KES...ıh... S-Sus. Ağzımdan çıkan tek bir lanet kelimeyi dinle, Draani... Şu sefil hayatında bir kez olsun",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#052": {
+   "src": "Tell. The. TRUTH!! G-gaagh...you know that's th...the only way to stop this. Swallow your pride, you...old fool...",
+   "dst": "Gerçeği. Söyle. ARTIK!! G-gaagh...biliyorsun bu...bunu durdurmanın tek yolu bu. Gururunu yut, seni...yaşlı aptal...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#053": {
+   "src": "I...I... Axelus... He...he called me Draani...why did...?",
+   "dst": "Ben...ben... Axelus... O...bana Draani dedi...neden...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#054": {
+   "src": "Men, stand down. This... This war is over! I will not have one more life lost! Touch the Doguns and I'll personally behead you!",
+   "dst": "Askerler, geri çekilin. Bu... Bu savaş bitti! Bir can daha kaybedilmesine izin vermeyeceğim! Dogunlara dokunan olursa kafasını kendi ellerimle keserim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#055": {
+   "src": "Chief, I...I ask of you but an hour of your time. If you are willing to negotiate...",
+   "dst": "Reis, ben...senden yalnızca bir saatini istiyorum. Müzakereye razıysan...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#056": {
+   "src": "Speak with the King of {p} and the Dogun Chieftain.",
+   "dst": "{p} Kralı ve Dogun Reisi ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#057": {
+   "src": "Ah, you've arrived. I...actually remember you from earlier. So you and...",
+   "dst": "Ah, geldin. Ben...aslında seni daha önceden hatırlıyorum. Demek sen ve...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#058": {
+   "src": "A-and...",
+   "dst": "V-ve...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#059": {
+   "src": "...you knew my son. Were helping him try to put an end to this, before everything was too far gone. Heh...apologies, for that.",
+   "dst": "...oğlumu tanıyordun. Her şey iş işten geçmeden buna bir son vermesine yardım ediyordun. Heh...bunun için özür dilerim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#060": {
+   "src": "Paku and I have had a long discussion about the wisdom of youth over the old. You all were right. I needed to swallow my pride.",
+   "dst": "Paku ile gençliğin yaşlılığa karşı bilgeliği üzerine uzun uzun konuştuk. Hepiniz haklıydınız. Gururumu yutmam gerekiyordu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#061": {
+   "src": "We agreed upon a peace treaty... A new city... The Dwarves will aid us in building it.",
+   "dst": "Bir barış antlaşmasında anlaştık... Yeni bir şehir... Cüceler onu kurmamıza yardım edecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#062": {
+   "src": "All hostilities...will end. My people will...be free to roam the caverns. It has been...too long.",
+   "dst": "Bütün düşmanlıklar...sona erecek. Halkım...mağaralarda özgürce dolaşabilecek. Çok...uzun zaman oldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#063": {
+   "src": "And the entombed Doguns at Courag will be reconstituted, as well, supposing that is a possibility.",
+   "dst": "Courag'da gömülü Dogunlar da, eğer mümkünse, yeniden canlandırılacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#064": {
+   "src": "Every king, since my so-far-great grandfather, Draani Thunderwill, has battled with their morality over the lies told to my people.",
+   "dst": "Büyük büyük dedem Draani Thunderwill'den beri her kral, halkıma söylenen yalanlar yüzünden vicdanıyla savaştı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#065": {
+   "src": "It ends here, with the name Draani VIII. It will take time, but the bloodshed has proven things must begin to change now.",
+   "dst": "Bu iş burada, Draani VIII adıyla bitiyor. Zaman alacak ama dökülen kan, değişimin hemen başlaması gerektiğini gösterdi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#066": {
+   "src": "You and the coalition have saved the Heights, and Gavel. In {p}, you will find a stall to trade valuable minerals. You will be granted special Dwarven privileges to purchase it now.",
+   "dst": "Sen ve koalisyon Heights'ı ve Gavel'ı kurtardınız. {p} şehrinde değerli mineral takas edilen bir tezgâh bulacaksın. Artık oradan alışveriş yapman için sana özel Cüce ayrıcalıkları tanınacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#067": {
+   "src": "Though that is...almost certainly not enough a reward for everything you have done...sincerely. Thank you, Wynn soldier.",
+   "dst": "Gerçi bu...yaptığın her şeyin karşılığı olarak neredeyse kesinlikle yetersiz...içtenlikle. Teşekkür ederim, Wynn askeri.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 8",
+   "speaker": "King of Rodoroc",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part IV#068": {
+   "src": "Return to Korzim at [{~}, {~}, -{~}] on the second floor of the enchanter in {p} with the Amulet of Fire and the Staff of Ice.",
+   "dst": "Amulet of Fire ve Staff of Ice ile {p} şehrindeki büyücü dükkânının ikinci katında [{~}, {~}, -{~}] konumundaki Korzim'e dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#069": {
+   "src": "Reach the ritual colosseum and prevent Garaheth from being summoned",
+   "dst": "Ritüel arenasına ulaş ve Garaheth'in çağrılmasını engelle",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#070": {
+   "src": "Freeze any vital point of Garaheth you can find!",
+   "dst": "Garaheth'in bulabildiğin her hayati noktasını dondur!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#071": {
+   "src": "Get out of Garaheth!",
+   "dst": "Garaheth'in içinden çık!",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "Dwarves and Doguns Part IV#072": {
+   "src": "We...we have nothing left... We could have...taken them with us... Now they will...will... You...!",
+   "dst": "Biz...bizim hiçbir şeyimiz kalmadı... Onları da...yanımızda götürebilirdik... Şimdi onlar...onlar... Sen...!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part IV",
+   "stage": "Stage 7",
+   "speaker": "Dogun Chieftain",
+   "source": "captured.json"
+  }
+ }
+}

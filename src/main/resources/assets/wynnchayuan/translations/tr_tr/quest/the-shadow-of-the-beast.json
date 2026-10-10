@@ -1,0 +1,920 @@
+{
+ "_meta": {
+  "quest": "The Shadow of the Beast",
+  "count": 90,
+  "translated": 89,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "The Shadow of the Beast#000": {
+   "src": "See the blood on the ground? That stuff is fresh. Follow it, see where it leads, and hunt that beast before it does something terrible!",
+   "dst": "Yerdeki kanı görüyor musun? Daha taze. Peşine düş, nereye gittiğine bak ve o canavar korkunç bir şey yapmadan onu avla!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#001": {
+   "src": "The blood trail ought to lead you to wherever the beast went. Hunt that thing down for us all!",
+   "dst": "Kan izi seni canavarın gittiği yere götürür. Hepimiz için şu yaratığın icabına bak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#002": {
+   "src": "CANNOT EXIT OPERATION AREA. RETURNING TO POST.",
+   "dst": "OPERASYON ALANINDAN ÇIKILAMAZ. NÖBET YERİNE DÖNÜLÜYOR.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#003": {
+   "src": "[+{~} Emerald Blocks]",
+   "dst": "[+{~} Zümrüt Bloğu]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "[+{~} Emeralds]",
+    "file": "gui.json",
+    "ratio": 0.833,
+    "reason": "candidate"
+   }
+  },
+  "The Shadow of the Beast#004": {
+   "src": "If you are done fixing my house, it looks like there're tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "Evimi tamir etmeyi bitirdiysen, doğuya doğru izler var gibi görünüyor... kocaman izler. Peşlerinden gitmede bol şans, kendine dikkat et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#005": {
+   "src": "Looks like there's tracks off to the east...big tracks. Good luck following it, stay safe!",
+   "dst": "Doğuya doğru izler var gibi görünüyor... kocaman izler. Peşlerinden gitmede bol şans, kendine dikkat et!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#006": {
+   "src": "Aah, there's so many people hurt already, don't make it worse, please!",
+   "dst": "Ah, zaten bu kadar çok yaralı var, n'olur işleri daha da kötüleştirme!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#007": {
+   "src": "Ugh, think Rileen! You have the herbs, what else goes into those poultices...",
+   "dst": "Of, düşün Rileen! Otlar sende, o lapalara başka ne giriyordu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#008": {
+   "src": "She just keeps worrying over what she can do. Seems like getting the oil might help her calm down.",
+   "dst": "Elinden ne geleceğini düşünüp duruyor. Yağı getirmek onu sakinleştirebilir gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#009": {
+   "src": "She's still freaking out. She mentioned needing [{~} Salmon Oil] for medicine, and a pond out back full of fish...",
+   "dst": "Hâlâ panik halinde. İlaç için [{~} Salmon Oil] gerektiğinden ve arkada balık dolu bir gölet olduğundan bahsetti...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#010": {
+   "src": "I think the giant went into the cave east of here. Go for it! Stop that thing before it causes any more damage!",
+   "dst": "Bence dev, buranın doğusundaki mağaraya girdi. Hadi git! Daha fazla zarar vermeden durdur şu şeyi!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "captured"
+  },
+  "The Shadow of the Beast#011": {
+   "src": "Talk to Dereg in his house at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki evinde Dereg ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#012": {
+   "src": "Oh, you look tough. You must be one of those humans I keep hearing about, right? People talk about your kind all the time.",
+   "dst": "Aa, sağlam birine benziyorsun. Sürekli duyduğum o insanlardan birisin, değil mi? Millet hep sizin türünüzden bahsediyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#013": {
+   "src": "You know, that you're all scrappers. Tough as nails, and willing to kill all sorts of beasts, you know?",
+   "dst": "Bilirsin işte, hepiniz kavgacıymışsınız. Taş gibi sert, her türlü canavarı öldürmeye hazır, anlıyor musun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#014": {
+   "src": "I think you know what I'm getting at. I saw some massive thing lumbering around the swamp one night! Tall as the trees, it was.",
+   "dst": "Sanırım ne demek istediğimi anladın. Bir gece bataklıkta dolanan devasa bir şey gördüm! Ağaçlar kadar uzundu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#015": {
+   "src": "I couldn't make out the details, but if its size was any indication, it could just step over the {p} walls and wreck the whole town!",
+   "dst": "Ayrıntıları seçemedim ama boyutuna bakılırsa {p} surlarının üstünden adımlayıp bütün kasabayı yerle bir edebilir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#016": {
+   "src": "Of course, there's so many scam artists around here trying to sell anti-monster underwear or whatever that no one believes me.",
+   "dst": "Tabii buralarda canavar geçirmez iç çamaşırı falan satmaya çalışan o kadar dolandırıcı var ki kimse bana inanmıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#017": {
+   "src": "So, that means it's up to you! Ehm, supposing that you're willing to help out, at least... The one thing I know for sure is that it was eating something.",
+   "dst": "Yani iş sana kalıyor! Ee, yani yardım etmeye gönüllüysen tabii... Kesin bildiğim tek şey, bir şey yiyor olduğu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 1",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#020": {
+   "src": "Follow the trail of blood left by the beast.",
+   "dst": "Canavarın bıraktığı kan izini takip et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#021": {
+   "src": "Oh, this is such a mess! And my axe is busted, too...how am I going to get this fixed?!",
+   "dst": "Of, ne berbat bir durum! Baltam da kırıldı... bunu nasıl tamir ettireceğim?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#022": {
+   "src": "I can't pay for- AAAH! H-Human! What do you want?! Not a good time!",
+   "dst": "Ödeyemem ki- AAAH! İ-İnsan! Ne istiyorsun?! Hiç sırası değil!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#023": {
+   "src": "Something destroyed my cow pen and wrecked up my entire farm!",
+   "dst": "Bir şey inek ağılımı yıktı, bütün çiftliğimi darmadağın etti!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#024": {
+   "src": "And they were solid, good-quality Willow, too...uff...",
+   "dst": "Hem de sağlam, kaliteli Willow'dan yapılmışlardı... of...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#025": {
+   "src": "Wait, what? You're hunting the thing? Well, that's fine and dandy, but do you think you could help here first?",
+   "dst": "Dur, ne? O şeyin peşinde misin? Güzel, hoş da, önce burada yardım edebilir misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#026": {
+   "src": "I have an idea of where it went, so...you scratch my back, I scratch yours?",
+   "dst": "Nereye gittiğine dair bir fikrim var, yani... sen bana yardım et, ben de sana?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#027": {
+   "src": "Okay, this can work, this can work! I have to figure out how to fix this, and some of my cows ran off in a panic.",
+   "dst": "Tamam, bu olur, bu olur! Bunu nasıl tamir edeceğimi çözmem lazım, bazı ineklerim de paniğe kapılıp kaçtı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#028": {
+   "src": "So, you can take care of them while I re-plan my fencing. Simple enough, right?",
+   "dst": "Yani ben çitleri yeniden planlarken sen onlarla ilgilenirsin. Gayet basit, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#029": {
+   "src": "Three of my cows ran off. Look around the farm for them. They were eating, so look for fallen wheat on the ground!",
+   "dst": "Üç ineğim kaçtı. Çiftliğin etrafında onlara bak. Yemek yiyorlardı, yani yere düşmüş buğdaylara bak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#030": {
+   "src": "Go on, hop to it! I'm waiting for you right here!",
+   "dst": "Hadi, kımılda! Ben tam burada seni bekliyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 2",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#031": {
+   "src": "Deal with the three escaped cows near the house and in the cave under the farm.",
+   "dst": "Evin yakınındaki ve çiftliğin altındaki mağaradaki kaçak üç inekle ilgilen.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#032": {
+   "src": "Oh, back aleady? I haven't even finished my stuff, where are the cows?",
+   "dst": "Aa, döndün mü bile? Ben daha işimi bitirmedim, inekler nerede?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#033": {
+   "src": "...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#034": {
+   "src": "...eheh. You. You're. This is a joke, right? We're having a chuckle?!",
+   "dst": "...ehe. Sen. Sen. Bu bir şaka, değil mi? Gülüyoruz, değil mi?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#035": {
+   "src": "WE'RE JOKING, RIGHT?! FOR THE LOVE OF ALL THAT'S HOLY TELL ME THIS IS A JOKE!",
+   "dst": "ŞAKA YAPIYORUZ, DEĞİL Mİ?! ALLAH AŞKINA BANA BUNUN ŞAKA OLDUĞUNU SÖYLE!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#036": {
+   "src": "WHAT IS THIS?! ARE YOU BRAINDEAD?!",
+   "dst": "BU NE?! BEYNİN Mİ YOK SENİN?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#037": {
+   "src": "NO, WAIT, YOU'RE HUMAN, THAT'S THE PROBLEM! IDIOT THUGS, ALL OF YOU!",
+   "dst": "HAYIR, DUR, SEN İNSANSIN, SORUN DA BU! HEPİNİZ AHMAK HAYDUTLARSINIZ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#038": {
+   "src": "DID I NEED TO SPECIFY THAT I WANTED THEM BACK ALIVE? WAS THAT NOT OBVIOUS TO YOU?!",
+   "dst": "ONLARI CANLI İSTEDİĞİMİ AYRICA SÖYLEMEM Mİ GEREKİYORDU? BU SANA AÇIK DEĞİL MİYDİ?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#039": {
+   "src": "Hff...haah...hrrgh...I...I can't bellevue...bellevue? Believe! I can't believe this!",
+   "dst": "Hff...haah...hrrgh...Ben...ben buna inanamıyo... inanmalayamıyorum? İnanamıyorum! Buna inanamıyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#040": {
+   "src": "Uff, settle down, Tolem, settle down...you can still salvage this...",
+   "dst": "Of, sakin ol Tolem, sakin ol... bunu hâlâ kurtarabilirsin...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#041": {
+   "src": "Alright, two things. Your new name is Idiot, and I'm changing our deal. You owe me [{~} Willow Planks].",
+   "dst": "Pekâlâ, iki şey var. Yeni adın Salak ve anlaşmamızı değiştiriyorum. Bana [{~} Willow Planks] borçlusun.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#042": {
+   "src": "You're going to help me get at least one thing around here working. You get the wood, I'll keep looking over the fencing.",
+   "dst": "Buralarda en az bir şeyi çalışır hale getirmeme yardım edeceksin. Sen odunu getir, ben çitlere bakmaya devam edeceğim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 3",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#043": {
+   "src": "Gather [{~} Willow Planks] for Tolem.",
+   "dst": "Tolem için [{~} Willow Planks] topla.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#044": {
+   "src": "Oh lovely. Idiot's back! Joy of joys. Willow planks, please.",
+   "dst": "Ah, ne güzel. Salak geri gelmiş! Sevinçten havalara uçtum. Willow kalaslarını alayım lütfen.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#045": {
+   "src": "Good. Even if you've got murder on the mind constantly, you have decent woodcutting arms.",
+   "dst": "Güzel. Kafanda sürekli cinayet olsa da odun kesmeye yarar kolların var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#046": {
+   "src": "I'll sell the remainder of these planks to try and recoup the money for my cows you mulched.",
+   "dst": "Kalan kalasları da satıp kıyma ettiğin ineklerimin parasını çıkarmaya çalışacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#047": {
+   "src": "So go on, get out of here now. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
+   "dst": "Hadi bakalım, şimdi defol git buradan. Bir işe yara da yerdeki dev ayak izlerini takip et. Sığır yerine avlanması GEREKEN bir şeyi avla!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#048": {
+   "src": "Go on, get out of here. Make yourself useful and follow the giant footprints in the ground. Hunt something that NEEDS hunting, instead of cattle!",
+   "dst": "Hadi, defol git buradan. Bir işe yara da yerdeki dev ayak izlerini takip et. Sığır yerine avlanması GEREKEN bir şeyi avla!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 4",
+   "speaker": "Tolem",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#049": {
+   "src": "Follow the footprints from Tolem's house at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Tolem'in evinden başlayan ayak izlerini takip et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#050": {
+   "src": "Oh, I'll never be able to fix this with my back in this state...",
+   "dst": "Ah, belim bu haldeyken bunu asla tamir edemem...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 5",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#051": {
+   "src": "Talk to Kroac at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumunda Kroac ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#052": {
+   "src": "Oh, look at this...all my years of carpentry and my bad back does my poor house in.",
+   "dst": "Ah, şuna bak... onca yıllık marangozluk, ama şu kötü belim yüzünden zavallı evim mahvoldu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#053": {
+   "src": "What on earth could have done this?! It must be the biggest beast in the swamp!",
+   "dst": "Bunu ne yapmış olabilir ki?! Bataklıktaki en büyük canavar olmalı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#054": {
+   "src": "I was just sitting inside having some dinner, I hear some rumbling, and suddenly my house is falling apart!",
+   "dst": "İçeride oturmuş akşam yemeğimi yiyordum, bir gümbürtü duydum ve bir anda evim yıkılıyordu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#055": {
+   "src": "You human folk are good with physical labor, I hear? Do you think you could help me out here?",
+   "dst": "Siz insanlar beden işinde iyiymişsiniz, öyle duydum? Bana burada yardım edebilir misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#056": {
+   "src": "There's a mine just over there. Think you can get [{~} Cobblestone] out of it?",
+   "dst": "Hemen şurada bir maden var. Oradan [{~} Cobblestone] çıkarabilir misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#057": {
+   "src": "I'll go find someone who's selling any spare wood for the roof...",
+   "dst": "Ben de çatı için fazla odun satan birini bulmaya gideyim...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#058": {
+   "src": "Think you could help fix my house? You'll need [{~} Cobblestone] to do it.",
+   "dst": "Evimi tamir etmeme yardım edebilir misin? Bunun için [{~} Cobblestone] gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 6",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#059": {
+   "src": "Enter Kroac's mine and gather [{~} Cobblestone].",
+   "dst": "Kroac'ın madenine gir ve [{~} Cobblestone] topla.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#060": {
+   "src": "Did you get enough cobblestone? I found a guy down the street selling this top-quality Willow...",
+   "dst": "Yeterince kırık taş topladın mı? Sokağın aşağısında birinci kalite Willow satan birini buldum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#061": {
+   "src": "Good, perfect. That should be enough. Though, I do have one other thing to ask you, soldier.",
+   "dst": "Güzel, mükemmel. Bu kadarı yeter. Gerçi senden isteyeceğim bir şey daha var, asker.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#062": {
+   "src": "My back's already screaming at me just from lugging the wood over here, there's no way I can climb up there and fix the roof like this.",
+   "dst": "Sadece odunu buraya taşırken bile belim feryat ediyor, bu halde oraya tırmanıp çatıyı tamir etmemin imkânı yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#063": {
+   "src": "I can compensate you for the trouble, but d'you think you could do some patchwork for me with that cobble?",
+   "dst": "Zahmetinin karşılığını veririm ama şu kırık taşla benim için biraz yama yapabilir misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#064": {
+   "src": "Oh, you're a saint. Can't imagine why the guy was grumbling about humans... Just climb right on up the ladder!",
+   "dst": "Ah, sen bir azizsin. Adamın insanlar hakkında neden söylendiğini anlamıyorum... Merdivenden yukarı tırman yeter!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 7",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#065": {
+   "src": "Repair Kroac's house using the cobblestone from the mine.",
+   "dst": "Madenden çıkan kırık taşla Kroac'ın evini onar.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#066": {
+   "src": "I'm sorry, but your patchjob fell apart. You'll need something like {~} cobblestone to help fix this.",
+   "dst": "Kusura bakma ama yaptığın yama dağıldı. Bunu düzeltmek için {~} kadar kırık taş lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#067": {
+   "src": "That'll do just fine, kind soldier! You're a lifesaver, really, you are.",
+   "dst": "Bu gayet iyi olur, iyi kalpli asker! Hayat kurtardın, gerçekten.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#068": {
+   "src": "Wait, you're going after the thing that did this? Really?! Fantastic! That's a load off my mind.",
+   "dst": "Dur, bunu yapan şeyin peşine mi düşüyorsun? Gerçekten mi?! Harika! İçim rahatladı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 8",
+   "speaker": "Kroac",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#071": {
+   "src": "Keep following the tracks of the beast.",
+   "dst": "Canavarın izlerini takip etmeye devam et.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#072": {
+   "src": "EVERYONE, MOVE! THE BEAST IS ON A RAMPAGE!",
+   "dst": "HERKES KAÇSIN! CANAVAR ÇILDIRMIŞ!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#073": {
+   "src": "Aah, no! There were people in that house!",
+   "dst": "Ah, hayır! O evde insanlar vardı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#074": {
+   "src": "Wah! H-Human! Get away, there's nothing you can help with here!",
+   "dst": "Vay! İ-İnsan! Uzak dur, burada yardım edebileceğin bir şey yok!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#075": {
+   "src": "All your type does is break and hurt! You have more in common with the giant there than any of us!",
+   "dst": "Sizin türünüz sadece kırar ve incitir! O devle bizden daha çok ortak noktan var!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#077": {
+   "src": "We don't even have any medicine...",
+   "dst": "Hiç ilacımız bile yok...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#079": {
+   "src": "Oh, right! Fish oil...but I don't have a rod, gah!",
+   "dst": "Ah, doğru! Balık yağı... ama oltam yok, of!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#080": {
+   "src": "There's no way I can get [{~} Salmon Oil], even if that pond out back is teeming with fish...",
+   "dst": "Arkadaki gölet balık kaynasa bile [{~} Salmon Oil] bulmamın imkânı yok...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 9",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#081": {
+   "src": "Gather [{~} Salmon Oil] for Rileen.",
+   "dst": "Rileen için [{~} Salmon Oil] topla.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#082": {
+   "src": "No, there's no time to make a fishing spear- AAH! You're still here? What do you WANT?!",
+   "dst": "Hayır, balık zıpkını yapacak vakit yok- AAH! Hâlâ burada mısın? Ne İSTİYORSUN?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#083": {
+   "src": "W-wait, what's...is this... This is salmon oil! Ten bottles of it! You...you heard me talking?",
+   "dst": "D-dur, bu ne... bu... Bu somon yağı! Hem de on şişe! Sen... sen konuştuklarımı duydun mu?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#084": {
+   "src": "And you went out of your way to... What kind of a human are you? I've only ever heard horror stories about your kind.",
+   "dst": "Ve kendi yolundan çıkıp... Sen nasıl bir insansın? Sizin türünüz hakkında hep korku hikâyeleri duydum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#086": {
+   "src": "...maybe you're not so bad. I don't have anything that I can give you in return, but thank you, still.",
+   "dst": "...belki o kadar da kötü değilsin. Karşılığında verebileceğim bir şeyim yok ama yine de teşekkürler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#087": {
+   "src": "Wait, you were chasing the giant? That's why you were here? That...that's amazing news!",
+   "dst": "Dur, devin peşinde miydin? Bu yüzden mi buradaydın? Bu... bu harika bir haber!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 10",
+   "speaker": "Rileen",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#089": {
+   "src": "Find the cave of the beast by following the footprints behind Rileen's house.",
+   "dst": "Rileen'in evinin arkasındaki ayak izlerini takip ederek canavarın mağarasını bul.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#090": {
+   "src": "Kill the beast and return to Dereg with proof of its death at [-{~}, {~}, -{~}].",
+   "dst": "Canavarı öldür ve öldüğünün kanıtıyla [-{~}, {~}, -{~}] konumundaki Dereg'e dön.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#091": {
+   "src": "You're back! Any luck hunting the thing down?",
+   "dst": "Döndün! Şu şeyi avlayabildin mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#092": {
+   "src": "What? You actually found the beast?! Heck of a hunting job, human!",
+   "dst": "Ne? Canavarı gerçekten buldun mu?! Ne avcılık ama, insan!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#093": {
+   "src": "You wouldn't be back here if you didn't manage to kill it...which means our problems are solved, right?",
+   "dst": "Öldürmeyi başaramasaydın burada olmazdın... yani sorunlarımız çözüldü, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#094": {
+   "src": "Heheh! That bone powder looks giant enough to me! Great job, bucko!",
+   "dst": "Hehe! O kemik tozu bana yeterince dev görünüyor! Aferin, dostum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#095": {
+   "src": "Y'know, come to think of it, I remember something that might be interesting to your sort.",
+   "dst": "Biliyor musun, şimdi aklıma geldi de, senin gibilerin ilgisini çekebilecek bir şey hatırlıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#096": {
+   "src": "The weapon merchant in {p} researches cryptids as a hobby, and that beast seemed one-of-a-kind to me.",
+   "dst": "{p} kasabasındaki silah tüccarı hobi olarak gizemli yaratıkları araştırıyor ve o canavar bana eşsiz göründü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  },
+  "The Shadow of the Beast#097": {
+   "src": "You should show him that bone powder! He might have some good gear for you.",
+   "dst": "O kemik tozunu ona göstermelisin! Sana verecek iyi teçhizatı olabilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Shadow of the Beast",
+   "stage": "Stage 12",
+   "speaker": "Dereg",
+   "source": "wiki"
+  }
+ }
+}

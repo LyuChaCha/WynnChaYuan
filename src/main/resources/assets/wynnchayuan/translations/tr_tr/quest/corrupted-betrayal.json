@@ -1,0 +1,704 @@
+{
+ "_meta": {
+  "quest": "Corrupted Betrayal",
+  "count": 69,
+  "translated": 69,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Corrupted Betrayal#003": {
+   "src": "{u}, good to see you again! Been a while, huh?",
+   "dst": "{u}, seni yeniden görmek güzel! Epey oldu, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#004": {
+   "src": "We've got a major problem with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
+   "dst": "Bu eski kaleyle büyük bir sorunumuz var. Durmadan şu lanet balçıkları kusuyor ve {p} bölgesine bu kadar yakın olmaları sorun yaratıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#005": {
+   "src": "You lean in close to read the riddle inscribed on the ancient stone...",
+   "dst": "Kadim taşa kazınmış bilmeceyi okumak için eğiliyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#006": {
+   "src": "[+{~} Mage's Riddle]",
+   "dst": "[+{~} Büyücünün Bilmecesi]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#007": {
+   "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! To prove you are even worth my time, return when you reach Level {~}.",
+   "dst": "Ancak bir Efsane olarak çok meşgulüm, imza dağıtmalar falan, muhafızlık görevimi saymıyorum bile! Vaktime değdiğini kanıtlamak için Seviye {~} olunca gel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#008": {
+   "src": "You seem to have fallen into an ancient ruin of some sort. Maybe the incantation is somewhere inside...",
+   "dst": "Bir tür kadim harabenin içine düşmüş gibisin. Belki büyü sözleri içeride bir yerdedir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#009": {
+   "src": "The King sought the help of a shaman, Slykaar. Shamans use the life of sacrifices to inflict damage. Dark magic.",
+   "dst": "Kral, Slykaar adında bir şamandan yardım istedi. Şamanlar hasar vermek için kurbanların canını kullanır. Kara büyü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#010": {
+   "src": "Slykaar defended {p}. At an immense cost. Slykaar loved the attention and power. He controlled the city.",
+   "dst": "Slykaar {p} şehrini korudu. Muazzam bir bedelle. Slykaar ilgiye ve güce bayılıyordu. Şehri o yönetiyordu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#011": {
+   "src": "{p} had suffered from the hordes and from the endless sacrifices of Slykaar for years.",
+   "dst": "{p} yıllarca hem sürülerden hem de Slykaar'ın bitmek bilmeyen kurbanlarından çekmişti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#012": {
+   "src": "Then... Bob appeared. The people of {p} instantly dropped their horrible shaman for the pure hero.",
+   "dst": "Sonra... Bob çıkageldi. {p} halkı o korkunç şamanı hemen bırakıp saf kahramana yöneldi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#013": {
+   "src": "Slykaar, bitter and humiliated, sunk underground to restart his demonic experiments for an army.",
+   "dst": "Ezilmiş ve kin dolu Slykaar, bir ordu için şeytani deneylerine yeniden başlamak üzere yeraltına çekildi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#014": {
+   "src": "It appears the mutant contained the key for that door.",
+   "dst": "Görünüşe göre o kapının anahtarı mutantın içindeymiş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#015": {
+   "src": "It's an old, dusty journal. It seems to be left open to a page. You begin to read it out of curiosity...",
+   "dst": "Eski, tozlu bir günlük. Bir sayfası açık bırakılmış gibi. Merakla okumaya başlıyorsun...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#016": {
+   "src": "...{p} is beginning to grow suspicious of me...some guy named Robert came into town...",
+   "dst": "...{p} halkı benden şüphelenmeye başladı...şehre Robert adında biri geldi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#017": {
+   "src": "...I know they will banish me...he is too good...too nice...",
+   "dst": "...beni sürgün edecekler, biliyorum...o fazla iyi...fazla kibar...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#018": {
+   "src": "...I must open a portal...make a dimension to become more powerful...",
+   "dst": "...bir geçit açmalıyım...daha güçlü olmak için bir boyut yaratmalıyım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#019": {
+   "src": "...the books...I have prepared well for this...",
+   "dst": "...kitaplar...buna iyi hazırlandım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#020": {
+   "src": "...I will carve a hidden room...behind a visible wall...to create my world...my revenge...",
+   "dst": "...gizli bir oda oyacağım...görünen bir duvarın ardına...kendi dünyamı yaratmak için...intikamım için...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#021": {
+   "src": "Go have fun while you can. It's not like you have much of a life to live, anyways.",
+   "dst": "Hadi, fırsatın varken eğlen. Zaten önünde yaşayacak pek bir ömrün yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#022": {
+   "src": "You should head back to Lanu...",
+   "dst": "Lanu'nun yanına dönmelisin...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#023": {
+   "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of the cave.",
+   "dst": "Ah, döndün. İlginç bir şey buldun mu? Ben de mağaradan arada bir fırlayan balçıkları geri püskürtüp duruyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#024": {
+   "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",
+   "dst": "{~} AP'de {p} dize gelmişti. Ölümsüz sürüleri orduyu ve kaleyi çökertiyordu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Corrupted Betrayal#025": {
+   "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
+   "dst": "[-{~}, {~}, -{~}] konumundaki Lanu ile konuş.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#026": {
+   "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
+   "dst": "Hey, asker! Evet, sen! Bir el atacak vaktin var mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#028": {
+   "src": "Soldiers are spending half their guard duty slicing the critters into sludge. Ideally we'd raid the cave, cut out the source, but...",
+   "dst": "Askerler muhafızlık görevlerinin yarısını bu yaratıkları doğrayıp çamura çevirmekle geçiriyor. En iyisi mağaraya baskın yapıp kaynağı kurutmak ama...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#029": {
+   "src": "This place has some history. Nasty stuff. I'd prefer not to head in blind, so I've been checking for any clues to what we might find inside.",
+   "dst": "Buranın bir geçmişi var. Pis işler. Körü körüne dalmak istemiyorum, o yüzden içeride ne bulabileceğimize dair ipucu arıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#030": {
+   "src": "Haven't found much... except this verse, 'scribed into the wall over there. Go on, check it out and let me know what you think.",
+   "dst": "Pek bir şey bulamadım... şuradaki duvara kazınmış bu dize hariç. Hadi, bir bak da ne düşündüğünü söyle.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#031": {
+   "src": "Nonsense, if you ask me. Most likely kids from {p} messing about. But we haven't found anything else, so... if you've got any time, fancy checking it out for me?",
+   "dst": "Bana sorarsan saçmalık. Büyük ihtimalle {p} bölgesinden gelen veletlerin işi. Ama başka bir şey de bulamadık, yani... vaktin varsa benim için bir bakar mısın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#032": {
+   "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
+   "dst": "İlk satır belli ki Büyük Köprü'den bahsediyor ama gerisi ne demek, hiç fikrim yok. Oraya git, etrafa bir göz at ve ilginç bir şey bulursan bana haber ver.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#033": {
+   "src": "Found anything interesting around the riddle yet? Do you need to hear it again?",
+   "dst": "Bilmecenin çevresinde ilginç bir şey buldun mu? Bir daha dinlemek ister misin?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#034": {
+   "src": "Near a corrupted bridge, a ruin past its prime..",
+   "dst": "Yozlaşmış bir köprünün yanında, devri geçmiş bir harabe..",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#035": {
+   "src": "Lives a cursed sheep, with the color of lime...",
+   "dst": "Orada yaşar lanetli bir koyun, misket limonu renginde...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#036": {
+   "src": "Lead it down the trail, headed to the slime...",
+   "dst": "Yoldan aşağı götür onu, balçığa doğru...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#037": {
+   "src": "Sacrifice its soul, in the blood and the grime.",
+   "dst": "Feda et ruhunu, kanın ve pisliğin içinde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#039": {
+   "src": "Alrighty. Let me know what when you've got something then.",
+   "dst": "Pekâlâ. Bir şey bulunca haber ver o zaman.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 1",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#040": {
+   "src": "Use the Mage's riddle to figure out where it leads",
+   "dst": "Büyücünün bilmecesini kullanarak nereye çıktığını bul",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#041": {
+   "src": "If you are heading towards the Great Bridge, be cautious in the plains around the jungle entrance.",
+   "dst": "Büyük Köprü'ye gidiyorsan, orman girişinin çevresindeki ovalarda dikkatli ol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#042": {
+   "src": "I have received reports of a strange cursed sheep taking refuge in one of the more fortified ruins around there.",
+   "dst": "Oradaki daha sağlam harabelerden birine sığınmış tuhaf, lanetli bir koyun olduğuna dair raporlar aldım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#043": {
+   "src": "As far as I know, it is trapped in the ruins by some jungle growth, though if it was cut down it might escape...",
+   "dst": "Bildiğim kadarıyla orman bitkileri yüzünden harabelerde mahsur kalmış, ama onlar kesilirse kaçabilir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 2",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#044": {
+   "src": "Explore the temple for a way to break the barrier.",
+   "dst": "Bariyeri kırmanın bir yolunu bulmak için tapınağı keşfet.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#045": {
+   "src": "Go to Slykaar's residence at [-{~}, {~}, -{~}] to find out what is hidden there.",
+   "dst": "Orada neyin saklı olduğunu öğrenmek için [-{~}, {~}, -{~}] konumundaki Slykaar'ın evine git.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#046": {
+   "src": "By order of the city of {p}, I am here to keep other citizens from entering this house.",
+   "dst": "{p} şehrinin emriyle, diğer vatandaşların bu eve girmesini engellemek için buradayım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#047": {
+   "src": "From past experiences, everyone who has entered this house has vanished from existence...",
+   "dst": "Geçmiş tecrübelere göre bu eve giren herkes bir daha görülmemek üzere ortadan kayboldu...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#048": {
+   "src": "I would advise not going inside unless you know what you are doing.",
+   "dst": "Ne yaptığını bilmiyorsan içeri girmemeni tavsiye ederim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Troms Guard",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#049": {
+   "src": "Well, I guess you must know who I am.",
+   "dst": "Eh, sanırım kim olduğumu biliyorsundur.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#050": {
+   "src": "Welcome to my domain. I am the hero of {p}, Slykaar.",
+   "dst": "Diyarıma hoş geldin. Ben {p} şehrinin kahramanı Slykaar'ım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#051": {
+   "src": "Well, I used to be. Banished by the very people who asked for my help. Pathetic.",
+   "dst": "Eskiden öyleydim, yani. Yardımımı isteyen o insanlar tarafından sürgün edildim. Zavallılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#052": {
+   "src": "They couldn't give me a few peasants for their safety? Weak.",
+   "dst": "Kendi güvenlikleri için birkaç köylüyü bile veremediler mi? Korkaklar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 4",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#053": {
+   "src": "Journey through Slykaar's dimension.",
+   "dst": "Slykaar'ın boyutunda ilerle.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#054": {
+   "src": "I experimented my shamanism for many years underground to create the perfect mix of monster.",
+   "dst": "Kusursuz canavar karışımını yaratmak için yıllarca yeraltında şamanlığımla deneyler yaptım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#055": {
+   "src": "Most ended in horrific slimes. Aggressive and powerful, but alas, just slimes.",
+   "dst": "Çoğu korkunç balçıklarla sonuçlandı. Saldırgan ve güçlü, ama ne yazık ki sadece balçık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#056": {
+   "src": "Then I found this place. A dark land. A dark god. A source of power.",
+   "dst": "Sonra burayı buldum. Karanlık bir diyar. Karanlık bir tanrı. Bir güç kaynağı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#057": {
+   "src": "You mediocre wielders of magic have no idea what this world holds.",
+   "dst": "Siz vasat büyü kullanıcılarının bu dünyanın neler barındırdığından haberi bile yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#058": {
+   "src": "You all strive to be that hero of heroes, “Bob”, but here's the truth. He's lost. You're lost.",
+   "dst": "Hepiniz o kahramanlar kahramanı “Bob” gibi olmaya çalışıyorsunuz, ama gerçek şu: O kayıp. Sen de kayıpsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#059": {
+   "src": "No one in the Wynn province is willing to make the sacrifices I am to gain power.",
+   "dst": "Wynn eyaletinde güç kazanmak için benim kadar fedakârlık yapmaya razı kimse yok.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#060": {
+   "src": "If you want power, you have to give some. Sacrifice a few to save many.",
+   "dst": "Güç istiyorsan, biraz da vermen gerek. Çoğunu kurtarmak için birkaçını feda et.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#061": {
+   "src": "They were willing to give me a few peasants in {~}, when the hordes crossed the bridge.",
+   "dst": "{~} yılında sürüler köprüyü geçtiğinde bana birkaç köylüyü vermeye razıydılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#062": {
+   "src": "The king was happy to throw away lives to save his. But then the hero of Wynn waltzed in a few years later.",
+   "dst": "Kral, kendi canını kurtarmak için başkalarınınkini seve seve harcadı. Ama sonra birkaç yıl sonra Wynn'in kahramanı salına salına çıkageldi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#063": {
+   "src": "They banished me like a rotten fruit. Their hero, their protector. So what if a few hundred nobodies died for it.",
+   "dst": "Beni çürük bir meyve gibi kovdular. Kahramanlarını, koruyucularını. Bunun için birkaç yüz kimsesiz öldüyse ne olmuş?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#064": {
+   "src": "Looks like we have a Bob aspirer. Pale imitation.",
+   "dst": "Bob özentisi biri var galiba. Soluk bir taklit.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#065": {
+   "src": "So. Feel free to visit me down below, bring the entire might of the {p} army upon me. It will not be enough.",
+   "dst": "Yani. Aşağıda beni ziyaret etmekten çekinme, {p} ordusunun bütün gücünü üstüme getir. Yetmeyecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#066": {
+   "src": "I am ready. Soon, {p} will be in ruins. And I shall have my revenge.",
+   "dst": "Ben hazırım. Yakında {p} harabeye dönecek. Ve ben intikamımı alacağım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 5",
+   "speaker": "Slykaar",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#068": {
+   "src": "Report back to Lanu about what you've learned.",
+   "dst": "Öğrendiklerini Lanu'ya bildir.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#070": {
+   "src": "You... saw Slykaar? In another dimension?!",
+   "dst": "Sen... Slykaar'ı mı gördün? Başka bir boyutta mı?!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#071": {
+   "src": "This is bad. If he can materialise outside of this cave, even psychoactively... he's getting stronger. It explains the slimes, the attacks on {p}...",
+   "dst": "Bu kötü. Bu mağaranın dışında, zihinsel olarak bile olsa, belirebiliyorsa... güçleniyor demektir. Balçıkları da, {p} bölgesine yapılan saldırıları da açıklıyor...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#072": {
+   "src": "He's an incredibly powerful shaman, {u}. He has to be stopped, but it would take forever for {p} to mobile a force against him.",
+   "dst": "İnanılmaz güçlü bir şaman o, {u}. Durdurulması lazım, ama {p} ona karşı bir kuvvet toplayana kadar ömür geçer.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#073": {
+   "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
+   "dst": "Elinden gelirse içeri gir ve... işini bitir. Ama önce iyice teçhizatlan ve arkanı kollayacak birkaç arkadaş bul.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#074": {
+   "src": "{u}, how's it going? Run into another shaman hallucination at all?",
+   "dst": "{u}, nasıl gidiyor? Bir şaman hayaline daha rastladın mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  },
+  "Corrupted Betrayal#075": {
+   "src": "Anyway, good luck in the cave. If you choose to go in, be careful.",
+   "dst": "Neyse, mağarada bol şans. İçeri girmeye karar verirsen dikkatli ol.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Corrupted Betrayal",
+   "stage": "Stage 6",
+   "speaker": "Lanu",
+   "source": "wiki"
+  }
+ }
+}

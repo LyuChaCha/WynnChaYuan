@@ -1,0 +1,484 @@
+{
+ "_meta": {
+  "quest": "Beneath the Depths",
+  "count": 47,
+  "translated": 47,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
+ },
+ "entries": {
+  "Beneath the Depths#000": {
+   "src": "I left me old sea farin' map in me old hideout, it'll tell ye where we can find me old gold.",
+   "dst": "Eski deniz haritamı eski sığınağımda bıraktım, eski altınlarımın yerini o gösterir sana.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "captured"
+  },
+  "Beneath the Depths#001": {
+   "src": "Me old hideout's hidden inside that there skull at the entrance to our mighty fine establishment. Bring me that map, lad!",
+   "dst": "Eski sığınağım, şu bizim pek şahane mekânın girişindeki kafatasının içinde saklı. Getir bana o haritayı, evlat!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#002": {
+   "src": "Just north of 'ere is a mysterious island. It's a big ol' cave, filled with the remains of old pirates.",
+   "dst": "Buranın hemen kuzeyinde gizemli bir ada var. Kocaman eski bir mağara, eski korsanların kalıntılarıyla dolu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#003": {
+   "src": "But then, their bones began attacking me! I was forced to retreat.",
+   "dst": "Ama sonra kemikleri bana saldırmaya başladı! Geri çekilmek zorunda kaldım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#004": {
+   "src": "I think there be somethin' sinister about that place...",
+   "dst": "Bence o yerde uğursuz bir şeyler var...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#005": {
+   "src": "I'm sorry, that's not enough money. Magic doesn't come cheap! Come back when you have [{~} Emerald Blocks] and we will aid you. Make sure to bring the [{~} Faded Map] too.",
+   "dst": "Üzgünüm, bu para yetmez. Büyü ucuz değildir! [{~} Zümrüt Bloğu] olduğunda gel, sana yardım edelim. [{~} Faded Map] da getirmeyi unutma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#006": {
+   "src": "We only hope that the boots will never fall into the hands of that pirate again, we'd much rather they fall into yours.",
+   "dst": "Tek umudumuz, o çizmelerin bir daha asla o korsanın eline geçmemesi. Senin elinde olmaları çok daha iyi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "captured"
+  },
+  "Beneath the Depths#007": {
+   "src": "Garh, lad!",
+   "dst": "Garh, evlat!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Beneath the Depths#008": {
+   "src": "Talk to Javier in the Pirate Cove at [-{~}, {~}, -{~}]",
+   "dst": "Pirate Cove'da, [-{~}, {~}, -{~}] konumundaki Javier ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#009": {
+   "src": "Garh, you look like a mighty fine adventurer, lad. But perhaps your pockets are a little lighter than you want, eh?",
+   "dst": "Garh, pek usta bir maceracıya benziyorsun, evlat. Ama ceplerin istediğinden biraz hafif olabilir, ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#010": {
+   "src": "Perhaps we be making a deal, lad, and it'll make us both rich!",
+   "dst": "Belki bir anlaşma yaparız, evlat, ikimiz de zengin oluruz!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#011": {
+   "src": "Ye see, lad, me treasure has been lost for quite some time, I kept it in a ocean village named Sarnfic, in a secret room.",
+   "dst": "Bak evlat, hazinem epeydir kayıp, onu Sarnfic adında bir deniz köyünde, gizli bir odada saklıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#012": {
+   "src": "Argh, but lad. The village vanished out of nowhere! Like some kind of dark magic! I swears to ye, I tell no lies!",
+   "dst": "Argh, ama evlat. Köy birdenbire yok oldu! Kara büyü gibi bir şey! Yemin ederim, yalan söylemiyorum!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#013": {
+   "src": "So ye see, in me old age I could use a spot of me lawful gold to see me through me final years.",
+   "dst": "Anlayacağın, bu yaşımda son yıllarımı geçirmek için helal altınlarımdan biraz işime yarar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#014": {
+   "src": "Don't fret though, chuck, old Javier always kept a back up plan.",
+   "dst": "Ama sen dert etme, canım, yaşlı Javier'in her zaman bir yedek planı vardır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#016": {
+   "src": "So, lad. Are ya willin' to make ye'self mighty wealthy? Good.",
+   "dst": "Eee, evlat. Kendini bir güzel zengin etmeye var mısın? Güzel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 1",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#018": {
+   "src": "Find Javier's map, hidden in the skull tomb at the entrance of the island",
+   "dst": "Adanın girişindeki kafatası mezarında saklı Javier'in haritasını bul",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#019": {
+   "src": "Halt it there, laddy! The wind has told us that yer looking for treasure map. Ah, ye'll not get it so easily.",
+   "dst": "Dur bakalım orada, evlat! Rüzgâr bize hazine haritası aradığını fısıldadı. Ah, onu öyle kolay alamazsın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#020": {
+   "src": "Ye see, us spirits are as greedy as our physical selves were. 'ere's no foolin' 'round there. We want yer money, and only then will we open the paths to the map.",
+   "dst": "Bak, biz ruhlar da etten kemikten hallerimiz kadar açgözlüyüz. Burada şaka maka yok. Paranı isteriz, ancak o zaman haritaya giden yolları açarız.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#021": {
+   "src": "One full stack of emeralds will satisfy our needs. Go to the front of this tomb if ye have what we want.",
+   "dst": "Tam bir deste zümrüt ihtiyacımızı karşılar. İstediğimiz sendeyse bu mezarın önüne gel.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#022": {
+   "src": "Good luck on that petty journey of yers. Just find the whole path, and yerself'll be just fine...",
+   "dst": "O değersiz yolculuğunda bol şans. Bütün yolu bul yeter, gerisi kendiliğinden yoluna girer...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Deceased Buccaneer",
+   "source": "wiki"
+  },
+  "Beneath the Depths#023": {
+   "src": "Argh, yer talented aren't you lad! Many thanks indeed, now we can see where me treasure be buried.",
+   "dst": "Argh, sen de amma becerikliymişsin evlat! Sağ ol, şimdi hazinemin nereye gömülü olduğunu görebiliriz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#024": {
+   "src": "Hrmm, well, garr, blast it all",
+   "dst": "Hrmm, şey, garr, kahrolsun",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#025": {
+   "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
+   "dst": "Kendi lanet haritamı okuyamıyorum, evlat! Ne yaptın buna? Mürekkebini bozuk paranla mı kazıdın?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#026": {
+   "src": "Gar, sorry lad. It be the test of time that failed old Javier, not you.",
+   "dst": "Gar, kusura bakma evlat. Yaşlı Javier'i yüzüstü bırakan sen değil, zamanmış.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#027": {
+   "src": "Fear not, lad. There be an old friend of Javier's that can help decipher this old rag.",
+   "dst": "Korkma, evlat. Javier'in bu eski paçavrayı çözebilecek eski bir dostu var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#028": {
+   "src": "Go to the old {p}, there be a man by the name of Dalben who can restore me map to its former glory. Get it done lad, and bring me treasure back!",
+   "dst": "Eski {p} bölgesine git, orada Dalben adında bir adam var, haritamı eski haline getirebilir. Hallet şu işi evlat, hazinemi de geri getir!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 2",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#029": {
+   "src": "Talk to Dalben on {p} about restoring the map",
+   "dst": "Haritayı onarmak için {p} bölgesindeki Dalben ile konuş",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#030": {
+   "src": "What's this? A traveller? How might we assist you?",
+   "dst": "Bu da ne? Bir yolcu mu? Sana nasıl yardım edebiliriz?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#031": {
+   "src": "Ah, I see, you wish to explore the ocean depths? But for what possible reason?",
+   "dst": "Ah, anlıyorum, okyanusun derinliklerini keşfetmek mi istiyorsun? Ama ne sebeple?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#032": {
+   "src": "This map... How did you acquire it? This is enchanted by our people.",
+   "dst": "Bu harita... Bunu nereden buldun? Bunu bizim halkımız büyüledi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#033": {
+   "src": "You... You seek Sarnfic, don't you?",
+   "dst": "Sen... Sarnfic'i arıyorsun, değil mi?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#034": {
+   "src": "Alas, that place has history. We, the Mage Council, banished that city long ago to hide the horrific power hidden within a treasure a pirate hid there.",
+   "dst": "Ne yazık ki o yerin bir geçmişi var. Biz, Büyücü Konseyi, bir korsanın orada sakladığı hazinedeki korkunç gücü gizlemek için o şehri uzun zaman önce sürgün ettik.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#035": {
+   "src": "A pair of boots, made from a black material fashioned from the stone of an evil place, incredibly dark magic. But we do not believe the filthy idiotic pirate knew what he'd found.",
+   "dst": "Bir çift çizme; kötü bir yerin taşından yapılmış kara bir maddeden, son derece karanlık bir büyüyle. Ama o pis, aptal korsanın ne bulduğunu bildiğini sanmıyoruz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#036": {
+   "src": "I must say, we, the council regret having to lay waste an entire village over a pair of boots. There was no other way.",
+   "dst": "Şunu söylemeliyim, biz konsey olarak bir çift çizme yüzünden koca bir köyü yok etmek zorunda kaldığımız için pişmanız. Başka yolu yoktu.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#037": {
+   "src": "Who knows why he even kept the boots. If he had known about their power, I'm sure he would have used it for evil. But we sense no evil in you, so as such we will aid you in your quest.",
+   "dst": "Çizmeleri neden sakladığını kim bilir. Güçlerini bilseydi eminim kötülük için kullanırdı. Ama sende kötülük sezmiyoruz, bu yüzden görevinde sana yardım edeceğiz.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#038": {
+   "src": "We hope that you will use the boots for good, despite the dark intentions. We will lift the enchantment once lain upon the charts, but it will cost you.",
+   "dst": "Karanlık niyetlere rağmen çizmeleri iyilik için kullanacağını umuyoruz. Haritalara bir zamanlar yapılan büyüyü kaldıracağız ama bunun bir bedeli var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#039": {
+   "src": "Give me [{~} Emerald Blocks], that should cover the cost.",
+   "dst": "Bana [{~} Zümrüt Bloğu] ver, bu masrafı karşılar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 3",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#040": {
+   "src": "Bring back [{~} Blocks of Emerald] to Dalben",
+   "dst": "Dalben'e [{~} Zümrüt Bloğu] götür",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#041": {
+   "src": "Brilliant. That seems in order. Here you go.",
+   "dst": "Harika. Her şey yolunda görünüyor. Al bakalım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#043": {
+   "src": "Well? What does it say? Go to that location! Find the treasure!",
+   "dst": "Eee? Ne yazıyor? O yere git! Hazineyi bul!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 4",
+   "speaker": "Dalben",
+   "source": "wiki"
+  },
+  "Beneath the Depths#044": {
+   "src": "Explore the cave in the ocean, located at [-{~}, {~}, -{~}]",
+   "dst": "[-{~}, {~}, -{~}] konumundaki okyanus mağarasını keşfet",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#045": {
+   "src": "Find [{~} Ocean Treasure] and bring it back to Javier in Pirate Cove",
+   "dst": "[{~} Ocean Treasure] bul ve Pirate Cove'daki Javier'e geri götür",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Beneath the Depths#046": {
+   "src": "Gnar, you did it lad! Ye brought back old Javiers gold! And as I promised, heres yer share of the loot.",
+   "dst": "Gnar, başardın evlat! Yaşlı Javier'in altınlarını geri getirdin! Söz verdiğim gibi, al ganimetten payın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#047": {
+   "src": "I threw in something extra for ye. It's an old key I salvaged a few years back, from the shipwreck of a legendary pirate.",
+   "dst": "Sana fazladan bir şey de kattım. Birkaç yıl önce efsanevi bir korsanın batık gemisinden kurtardığım eski bir anahtar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#048": {
+   "src": "Who knows what it leads to? Maybe a treasure hoard, or maybe the ol' swashbuckler wanted to lead someone into a trap.",
+   "dst": "Nereye açılır kim bilir? Belki bir hazine yığınına, belki de o yaşlı deniz kurdu birini tuzağa çekmek istemişti.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  },
+  "Beneath the Depths#049": {
+   "src": "Me bones are too old for a grand adventure like that, guess ye'll have to figure it out for yerself.",
+   "dst": "Kemiklerim böyle büyük bir macera için fazla yaşlı, galiba bunu kendin çözmen gerekecek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Beneath the Depths",
+   "stage": "Stage 6",
+   "speaker": "Javier",
+   "source": "wiki"
+  }
+ }
+}
