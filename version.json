@@ -1,12 +1,32 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.0_1",
+ "latest": "1.0.1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.1": {
+   "headline": "1.0.1: Turkish",
+   "items": [
+    "New language: Turkish, contributed by anilken. It covers everything, quest dialogue included, as well as the settings screen and the class screen. It is machine translated and has not been proofread yet.",
+    "Festival of the Spirits: the Banish the Beyond minigame is translated in Traditional and Simplified Chinese (perk and spirit cards, items, messages).",
+    "Fixed: floating labels, mob nameplates and boss bars were sometimes replaced by a piece of gear with the same name (\"Return to Detlas\" showed a ring in place of \"Return\").",
+    "Fixed: in the hint row under a dialogue (the \"to continue\" line), accented letters in the translation were not drawn.",
+    "Fixed: on a system set to Turkish, some checks of English text failed because of how upper and lower case are converted there."
+   ],
+   "zh_tw": {
+    "headline": "1.0.1：新增土耳其文",
+    "items": [
+     "新語言：土耳其文，由 anilken 提供。所有內容含任務對話都有，設定畫面與職業選擇畫面也是。目前是機器翻譯，還沒有人工校稿。",
+     "靈魂節：小遊戲「驅逐彼界」有繁中與簡中譯文了（特長與惡靈的說明卡、道具、訊息）。",
+     "修正：漂浮字、怪物名牌與血條有時會被換成同名的裝備（「Return to Detlas」的 Return 變成一枚戒指）。",
+     "修正：對話底下的提示列（「繼續」那一行），譯文裡帶重音的字母畫不出來。",
+     "修正：系統語言設成土耳其文時，部分英文字串的大小寫比對會失準。"
+    ]
+   }
+  },
   "1.0.0_1": {
    "headline": "1.0.0_1: bomb broadcasts, the Lootrun beacon panel in \"Replace in place\" chat, fixes",
    "items": [
