@@ -75,6 +75,7 @@ public final class NameWrapTest {
         inStep(store);
         invisibleRow(store);
         fitsTheCard(store);
+        fewerRows(store);
 
         System.out.println(failures == 0
                 ? "NameWrapTest 全部通過" : failures + " 項失敗");
@@ -292,6 +293,61 @@ public final class NameWrapTest {
             return Optional.empty();
         }, Style.EMPTY);
         return found[0];
+    }
+
+    /**
+     * ★ 譯文的行數比原文少時也要拆。
+     *
+     * <h2>實機回報（2026-10-10）</h2>
+     * 還沒鑑定的精通書卷：「{@code 深淵戰鬥精通書卷 III (Abyssal Tome of Combat Mastery III)}」
+     * 整行擠在同一列，把說明撐寬了一半。武器會拆、它不拆，差別在它帶著一句折成三列的
+     * 「This item's power has been sealed…」——中文兩列講完，譯文比原文少一行，
+     * 先前行數一對不上就整個不做事。
+     */
+    private static void fewerRows(TranslationStore store) {
+        List<Component> original = List.of(
+                row("", NAME),                                   // 看不見的第 0 行
+                row("Cindercurse Crosier", NAME),
+                row("This item's power has", NAME),
+                row("been sealed, an Item", NAME),
+                row("Identifier can unlock it.", NAME),
+                row("Combat Level        105", NAME));
+        List<Component> translated = List.of(
+                row("", NAME),
+                row("燼咒牧杖 (Cindercurse Crosier)", NAME),
+                row("這件物品的力量已被封印，", NAME),
+                row("物品鑑定師可以解放它。", NAME),
+                row("戰鬥等級            105", NAME));
+        // 置中旗標是照原文算的：六格，比譯文多一格
+        boolean[] centered = {false, false, true, true, true, false};
+
+        NameWrap.Split split = NameWrap.split(original, translated, centered, store, WIDTH);
+        List<Component> out = split.translated();
+        check("★ 行數對不上也拆了（實際 " + out.size() + " 行）", out.size() == 6);
+        if (out.size() != 6) {
+            return;
+        }
+        check("名稱留在原本那一行（實際 " + out.get(1).getString() + "）",
+              "燼咒牧杖".equals(out.get(1).getString()));
+        check("原文自己一行（實際 " + out.get(2).getString() + "）",
+              out.get(2).getString().strip().equals("(Cindercurse Crosier)"));
+        check("後面的敘述沒有被動到", out.get(3) == translated.get(2)
+                && out.get(5) == translated.get(4));
+        check("原文那一份也補了一行", split.original().size() == 7);
+        check("置中旗標照自己的長度補一格、後面沒有錯位",
+              split.centered().length == 7 && !split.centered()[1] && !split.centered()[2]
+                      && split.centered()[3] && !split.centered()[6]);
+
+        // 反面：行數對不上時，名稱以外的行不拿來比（行號已經錯開）。
+        // 第 3 行剛好長得像「譯名 (原文)」也不拆。
+        List<Component> later = List.of(
+                row("", NAME),
+                row("燼咒牧杖", NAME),
+                row("這件物品的力量已被封印。", NAME),
+                row("神像 (Idol) 這個名字在敘述裡出現，而且這一行特別特別特別長", NAME),
+                row("戰鬥等級            105", NAME));
+        check("名稱以外的行不動", NameWrap.split(original, later, centered, store, WIDTH)
+                .translated() == later);
     }
 
     private static void check(String what, boolean ok) {
