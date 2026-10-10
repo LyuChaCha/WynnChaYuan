@@ -834,6 +834,14 @@ tasks.register('runItemNameContextChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runItemNameContextChecks' }
 
+tasks.register('runFetchedLanguagesChecks', JavaExec) {
+    group = 'verification'
+    description = '切語言時每種語言每次開遊戲只跟 GitHub 對一次'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.FetchedLanguagesTest'
+}
+tasks.named('check') { dependsOn 'runFetchedLanguagesChecks' }
+
 tasks.register('runStatRowChecks', JavaExec) {
     group = 'verification'
     description = '裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去'
