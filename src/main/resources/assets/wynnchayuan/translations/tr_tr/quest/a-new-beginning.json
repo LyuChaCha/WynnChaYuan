@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "A New Beginning",
-  "count": 323,
-  "translated": 322,
+  "count": 348,
+  "translated": 347,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -11,6 +11,256 @@
  },
  "entries": {
   "A New Beginning#000": {
+   "src": "What? Since when do I need to show papers to get in?",
+   "dst": "Ne? Ne zamandan beri içeri girmek için belge göstermem gerekiyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Espren Border Guard",
+   "source": "captured"
+  },
+  "A New Beginning#001": {
+   "src": "...Yep. Silly me. Always forgetting my papers.",
+   "dst": "...Evet. Ne dalgınım. Belgelerimi hep unutuyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Espren Border Guard",
+   "source": "captured"
+  },
+  "A New Beginning#002": {
+   "src": "This looks to be a religious altar. It depicts some sort of moth or butterfly.",
+   "dst": "Burası dini bir sunağa benziyor. Üzerinde bir tür güve ya da kelebek tasvir edilmiş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#003": {
+   "src": "Record #{~} - Eviction of family house has been completed.",
+   "dst": "Kayıt #{~} - Aile evinin tahliyesi tamamlandı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#004": {
+   "src": "Operation took approximately {~} minutes. Guards will remain at the site for further preperations.",
+   "dst": "Operasyon yaklaşık {~} dakika sürdü. Muhafızlar sonraki hazırlıklar için olay yerinde kalacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#005": {
+   "src": "No reports seem to mention you.",
+   "dst": "Raporların hiçbirinde senden bahsedilmiyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#006": {
+   "src": "There must be another room.",
+   "dst": "Başka bir oda daha olmalı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#007": {
+   "src": "The festival travels through every part of Fruma, and Her Majesty travels with it.",
+   "dst": "Festival Fruma'nın her köşesini dolaşır, Majesteleri de onunla birlikte yolculuk eder.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#008": {
+   "src": "There doesn't seem to be much of use in this book...",
+   "dst": "Bu kitapta işe yarar pek bir şey yok gibi...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#009": {
+   "src": "Some of the weapons radiate a weak magical energy.",
+   "dst": "Silahların bazıları zayıf bir büyü enerjisi yayıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#010": {
+   "src": "It's a long way down... probably shouldn't jump.",
+   "dst": "Aşağısı epey derin... atlamasan iyi olur herhalde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A New Beginning#011": {
+   "src": "I'm from the Wynn province.",
+   "dst": "Wynn Eyaleti'ndenim.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Zeph",
+   "source": "captured"
+  },
+  "A New Beginning#012": {
+   "src": "You keep calling me cursed. What does it mean?",
+   "dst": "Bana durmadan lanetli diyorsun. Bu ne demek?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Syndra",
+   "source": "captured"
+  },
+  "A New Beginning#013": {
+   "src": "What do you do around here?",
+   "dst": "Sen buralarda ne iş yapıyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Zeph",
+   "source": "captured"
+  },
+  "A New Beginning#014": {
+   "src": "What were you getting from Nixeph?",
+   "dst": "Nixeph'ten ne alıyordun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Zeph",
+   "source": "captured"
+  },
+  "A New Beginning#015": {
+   "src": "What's going on with Rex?",
+   "dst": "Rex'e ne oluyor?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Zeph",
+   "source": "captured"
+  },
+  "A New Beginning#016": {
+   "src": "Is this everyone? I thought the resistance would be bigger.",
+   "dst": "Herkes bu kadar mı? Direnişin daha kalabalık olduğunu sanıyordum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Mora",
+   "source": "captured"
+  },
+  "A New Beginning#017": {
+   "src": "What're your thoughts on Zeph?",
+   "dst": "Zeph hakkında ne düşünüyorsun?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Rex",
+   "source": "captured"
+  },
+  "A New Beginning#018": {
+   "src": "Did I do something? What's your problem with me?",
+   "dst": "Ben bir şey mi yaptım? Benimle derdin ne?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Rex",
+   "source": "captured"
+  },
+  "A New Beginning#019": {
+   "src": "The frog! The frog! *hic* I seen 'im! I did!",
+   "dst": "Kurbağa! Kurbağa! *hık* Gördüm onu! Gördüm!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Old Drunk",
+   "source": "captured"
+  },
+  "A New Beginning#020": {
+   "src": "Ech... You young'uns never believe it... Let me tell yer my story...",
+   "dst": "Eh... Siz gençler hiç inanmazsınız... Dur sana hikâyemi anlatıyım...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Old Drunk",
+   "source": "captured"
+  },
+  "A New Beginning#021": {
+   "src": "For donkey's years they've said that there's a big frog in the bog... And he eats people...",
+   "dst": "Kırk yıldır derler ki bataklıkta koca bir kurbağa varmış... İnsanları da yermiş...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Old Drunk",
+   "source": "captured"
+  },
+  "A New Beginning#022": {
+   "src": "I used to be young and stupid, just like you... I went out into the bog, to prove 'em all wrong... and then...",
+   "dst": "Ben de bir zamanlar senin gibi genç ve aptaldım... Hepsinin yanıldığını kanıtlamak için bataklığa gittim... sonra da...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Old Drunk",
+   "source": "captured"
+  },
+  "A New Beginning#023": {
+   "src": "'is huge tongue... Tries to... *hic* grab me with 'is tongue... Misses, and I run...",
+   "dst": "O koca dili... Beni... *hık* diliyle yakalamaya çalışıyor... Iskalıyor, ben de kaçıyorum...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Old Drunk",
+   "source": "captured"
+  },
+  "A New Beginning#024": {
+   "src": "I'll never forget 'is grimy green skin... 'is evil yeller eyes... 'is... dapper little bowler hat... whuh?",
+   "dst": "O kirli yeşil derisini hiç unutmam... o şeytani sarı gözlerini... o... şık, minik melon şapkasını... ha?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A New Beginning",
+   "stage": "",
+   "speaker": "Old Drunk",
+   "source": "captured"
+  },
+  "A New Beginning#025": {
    "src": "[+{~} Lotus Seedpods]",
    "dst": "[+{~} Nilüfer Tohum Kabuğu]",
    "role": "desc",
@@ -20,7 +270,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#001": {
+  "A New Beginning#026": {
    "src": "Mo'in, friend!",
    "dst": "Selam, dostum!",
    "role": "desc",
@@ -30,7 +280,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#002": {
+  "A New Beginning#027": {
    "src": "\"The Festival of the Crown\"",
    "dst": "\"Taç Festivali\"",
    "role": "desc",
@@ -40,7 +290,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#003": {
+  "A New Beginning#028": {
    "src": "To honor Her Majesty and to celebrate Her grace and blessings placed upon the land.",
    "dst": "Majesteleri'ni onurlandırmak, O'nun bu topraklara bahşettiği lütfu ve bereketi kutlamak için.",
    "role": "desc",
@@ -50,7 +300,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#004": {
+  "A New Beginning#029": {
    "src": "You've gotten about as much worthwhile information out of this conversation as you'll get.",
    "dst": "Bu konuşmadan alabileceğin işe yarar bilginin hepsini aldın sayılır.",
    "role": "desc",
@@ -60,7 +310,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#005": {
+  "A New Beginning#030": {
    "src": "E's real! Real I tells ya! Saw 'im with my own two eyes I did!",
    "dst": "O gerçek! Gerçek diyorum sana! Kendi gözlerimle gördüm onu, gördüm!",
    "role": "desc",
@@ -70,7 +320,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#006": {
+  "A New Beginning#031": {
    "src": "But enough of that. You want to go to {p}, right?",
    "dst": "Ama bu kadarı yeter. {p} tarafına gitmek istiyorsun, değil mi?",
    "role": "desc",
@@ -80,7 +330,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#007": {
+  "A New Beginning#032": {
    "src": "WRAHAHHEHGHHHHOROOOARRRRR!!!!!! 'E jumps out at me... And 'e... 'e...",
    "dst": "WRAHAHHEHGHHHHOROOOARRRRR!!!!!! Üstüme atlıyor... Sonra da... sonra da...",
    "role": "desc",
@@ -90,7 +340,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#008": {
+  "A New Beginning#033": {
    "src": "The bottles are labeled \"Auburn Amaretto.\"",
    "dst": "Şişelerin etiketinde \"Auburn Amaretto\" yazıyor.",
    "role": "desc",
@@ -100,7 +350,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#009": {
+  "A New Beginning#034": {
    "src": "So, want me to take you over?",
    "dst": "Eee, seni karşıya geçireyim mi?",
    "role": "desc",
@@ -110,7 +360,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#010": {
+  "A New Beginning#035": {
    "src": "What do you do for the resistance?",
    "dst": "Direniş için ne yapıyorsun?",
    "role": "desc",
@@ -120,7 +370,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#011": {
+  "A New Beginning#036": {
    "src": "You youngsters *hic* always poke fun... think it's make-believe... But I promises ya! 'e's real!",
    "dst": "Siz gençler *hık* hep dalga geçersiniz... uydurma sanırsınız... Ama söz veriyom! O gerçek!",
    "role": "desc",
@@ -130,7 +380,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#012": {
+  "A New Beginning#037": {
    "src": "And I have to say: You look just like the kind of person that could take it on.",
    "dst": "Şunu da söylemeliyim: Tam da bunun üstesinden gelebilecek birine benziyorsun.",
    "role": "desc",
@@ -140,7 +390,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#013": {
+  "A New Beginning#038": {
    "src": "Owners have been listed as unloyal to the crown. Have been disposed of.",
    "dst": "Sahipleri taca sadakatsiz olarak kaydedildi. Ortadan kaldırıldılar.",
    "role": "desc",
@@ -150,7 +400,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#014": {
+  "A New Beginning#039": {
    "src": "Another region? What do you mean?",
    "dst": "Başka bir bölge mi? Ne demek istiyorsun?",
    "role": "desc",
@@ -160,7 +410,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#015": {
+  "A New Beginning#040": {
    "src": "Uh... one second. Let me find them...",
    "dst": "Şey... bir saniye. Bulayım onları...",
    "role": "desc",
@@ -170,7 +420,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#016": {
+  "A New Beginning#041": {
    "src": "Understood. Now, back to- where did they go?!",
    "dst": "Anlaşıldı. Şimdi, nerede kalmıştık- nereye gittiler?!",
    "role": "desc",
@@ -180,7 +430,7 @@
    "speaker": "Espren Border Guard",
    "source": "captured"
   },
-  "A New Beginning#017": {
+  "A New Beginning#042": {
    "src": "New Chapter Started: Leaves in the Wind",
    "dst": "Yeni Bölüm Başladı: Leaves in the Wind",
    "role": "desc",
@@ -190,7 +440,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#018": {
+  "A New Beginning#043": {
    "src": "Um. The thing at T-Torann... you w-wouldn't happen to-... n-n-nevermind. I don't need to know!",
    "dst": "Şey. T-Torann'daki o olay... s-sen yoksa-... b-b-boş ver. Bilmem gerekmiyor!",
    "role": "desc",
@@ -200,7 +450,7 @@
    "speaker": "???",
    "source": "captured"
   },
-  "A New Beginning#019": {
+  "A New Beginning#044": {
    "src": "You'll need to search quickly, in case any guards return.",
    "dst": "Muhafızlardan biri dönerse diye hızlı aramalısın.",
    "role": "desc",
@@ -210,7 +460,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#020": {
+  "A New Beginning#045": {
    "src": "The door is locked from the other side.",
    "dst": "Kapı öbür taraftan kilitli.",
    "role": "desc",
@@ -220,7 +470,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#021": {
+  "A New Beginning#046": {
    "src": "Perhaps it's accessible from another location.",
    "dst": "Belki başka bir yerden girilebiliyordur.",
    "role": "desc",
@@ -230,7 +480,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#022": {
+  "A New Beginning#047": {
    "src": "This must be the records room... It's locked.",
    "dst": "Burası kayıt odası olmalı... Kilitli.",
    "role": "desc",
@@ -240,7 +490,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#023": {
+  "A New Beginning#048": {
    "src": "\"Only guards with appropriate clearance may access the records. If you believe a mistake has been made with your clearance level, inquire at the office.\"",
    "dst": "\"Kayıtlara yalnızca uygun yetkiye sahip muhafızlar erişebilir. Yetki seviyenizde bir hata olduğunu düşünüyorsanız ofise başvurun.\"",
    "role": "desc",
@@ -250,7 +500,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#024": {
+  "A New Beginning#049": {
    "src": "Wait, a suspicious person in the region- is this the cursed one?! Get them!!",
    "dst": "Dur, bölgede şüpheli biri var- yoksa bu lanetli mi?! Yakalayın!!",
    "role": "desc",
@@ -260,7 +510,7 @@
    "speaker": "Nixeph Watchman",
    "source": "captured"
   },
-  "A New Beginning#025": {
+  "A New Beginning#050": {
    "src": "The Sovereign must be in the office with the key- that'd be in the other tower. You need to hurry before you're discovered.",
    "dst": "Anahtar Hükümdar'da olmalı, o da ofiste- yani öbür kulede. Fark edilmeden önce acele etmelisin.",
    "role": "desc",
@@ -270,7 +520,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#026": {
+  "A New Beginning#051": {
    "src": "Sovereign, sir. It seems {p} was not prepared to directly face a cursed one. Dozens of soldiers are dead.",
    "dst": "Hükümdarım, efendim. Görünüşe göre {p} bir lanetliyle doğrudan yüzleşmeye hazır değilmiş. Onlarca asker öldü.",
    "role": "desc",
@@ -280,7 +530,7 @@
    "speaker": "Espren Guard Captain",
    "source": "captured"
   },
-  "A New Beginning#027": {
+  "A New Beginning#052": {
    "src": "I have a dozen and a half other problems to solve that need to be pushed back- oh, would you put away the key already?",
    "dst": "Ertelenmesi gereken bir buçuk düzine başka sorunum var- ah, şu anahtarı artık kaldırır mısın?",
    "role": "desc",
@@ -290,7 +540,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "captured"
   },
-  "A New Beginning#028": {
+  "A New Beginning#053": {
    "src": "[+{~} Record Storage #{~} Key]",
    "dst": "[+{~} Kayıt Deposu #{~} Anahtarı]",
    "role": "desc",
@@ -300,7 +550,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#029": {
+  "A New Beginning#054": {
    "src": "This must be the key that unlocks the record storage.",
    "dst": "Bu, kayıt deposunu açan anahtar olmalı.",
    "role": "desc",
@@ -310,7 +560,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#030": {
+  "A New Beginning#055": {
    "src": "[-{~} Record Storage Key]",
    "dst": "[-{~} Kayıt Deposu Anahtarı]",
    "role": "desc",
@@ -320,7 +570,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#031": {
+  "A New Beginning#056": {
    "src": "\"Unknown Cursed One\"",
    "dst": "\"Bilinmeyen Lanetli\"",
    "role": "desc",
@@ -330,7 +580,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#032": {
+  "A New Beginning#057": {
    "src": "Subject brought to {p} by the Driver. (Note: Interrogate Driver for reasoning.)",
    "dst": "Şahıs, Sürücü tarafından {p} bölgesine getirildi. (Not: Gerekçesi için Sürücü sorgulanmalı.)",
    "role": "desc",
@@ -340,7 +590,7 @@
    "speaker": "\"Unknown Cursed One\"",
    "source": "captured"
   },
-  "A New Beginning#033": {
+  "A New Beginning#058": {
    "src": "Seems to originate from Wynn Province. Matches description of one Queen's Tournament participant.",
    "dst": "Wynn Eyaleti'nden geldiği düşünülüyor. Kraliçe Turnuvası katılımcılarından birinin tarifine uyuyor.",
    "role": "desc",
@@ -350,7 +600,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#034": {
+  "A New Beginning#059": {
    "src": "Do not engage without backup or blessed equipment. Subject is dangerous, and has shown no regard for military life.",
    "dst": "Destek ya da kutsanmış teçhizat olmadan çatışmaya girmeyin. Şahıs tehlikelidir ve asker canına hiç değer vermemiştir.",
    "role": "desc",
@@ -360,7 +610,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#035": {
+  "A New Beginning#060": {
    "src": "If sighted, report to superiors immediately. Keep an eye on subject, but do not engage. Keep them in sight until-",
    "dst": "Görülürse derhal amirlere bildirin. Şahsı gözetim altında tutun, ama çatışmaya girmeyin. Şu zamana kadar gözden kaçırmayın-",
    "role": "desc",
@@ -370,7 +620,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#036": {
+  "A New Beginning#061": {
    "src": "You can't afford to be spotted. You need to take the records, and find a way out without alerting the guards.",
    "dst": "Görülmeyi göze alamazsın. Kayıtları alıp muhafızları uyandırmadan bir çıkış yolu bulmalısın.",
    "role": "desc",
@@ -380,7 +630,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#037": {
+  "A New Beginning#062": {
    "src": "[+{~} Cursed One Report]",
    "dst": "[+{~} Lanetli Raporu]",
    "role": "desc",
@@ -390,7 +640,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#038": {
+  "A New Beginning#063": {
    "src": "...I th-thought you were m-making things up again.",
    "dst": "...y-yine bir şeyler u-uyduruyorsun sanmıştım.",
    "role": "desc",
@@ -400,7 +650,7 @@
    "speaker": "Zeph",
    "source": "captured"
   },
-  "A New Beginning#039": {
+  "A New Beginning#064": {
    "src": "Excuse you? I don't make things up! You can ask Mora, he saw it too.",
    "dst": "Pardon? Ben bir şey uydurmam! Mora'ya sor, o da gördü.",
    "role": "desc",
@@ -410,7 +660,7 @@
    "speaker": "Rex",
    "source": "captured"
   },
-  "A New Beginning#040": {
+  "A New Beginning#065": {
    "src": "If you s-say so... I just- I-I-I thought there were no p-people left out there. The c-crown keeps a whole g-garrison stationed to f-fight off... um... m-m-monsters.",
    "dst": "Sen ö-öyle diyorsan... Ben sadece- B-b-ben dışarıda hiç i-insan kalmadı sanıyordum. T-taç orada koca bir g-garnizon tutuyor, şeyleri p-püskürtmek için... ıı... c-c-canavarları.",
    "role": "desc",
@@ -420,7 +670,7 @@
    "speaker": "Zeph",
    "source": "captured"
   },
-  "A New Beginning#041": {
+  "A New Beginning#066": {
    "src": "Wh- I d-don't know! It s-s-sounded believable to me!",
    "dst": "N- B-bilmiyorum! B-b-bana inandırıcı gelmişti!",
    "role": "desc",
@@ -430,7 +680,7 @@
    "speaker": "Zeph",
    "source": "captured"
   },
-  "A New Beginning#042": {
+  "A New Beginning#067": {
    "src": "Ugh, whatever! I don't have time for this, Zeph, I have work to do. Just... stay on your guard. I don't trust whatever's going on with this stranger.",
    "dst": "Off, her neyse! Buna ayıracak vaktim yok Zeph, işim var. Sadece... tetikte ol. Bu yabancıyla ilgili dönen işlere hiç güvenmiyorum.",
    "role": "desc",
@@ -440,7 +690,7 @@
    "speaker": "Rex",
    "source": "captured"
   },
-  "A New Beginning#043": {
+  "A New Beginning#068": {
    "src": "How'd you know I needed help?",
    "dst": "Yardıma ihtiyacım olduğunu nereden bildin?",
    "role": "desc",
@@ -450,7 +700,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#044": {
+  "A New Beginning#069": {
    "src": "The breeze carries the sounds of windchimes...",
    "dst": "Esinti rüzgâr çanlarının seslerini taşıyor...",
    "role": "desc",
@@ -460,7 +710,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#045": {
+  "A New Beginning#070": {
    "src": "So let's get to the business at hand. I'll start with this - you're from the Wynn Province, aren't you?",
    "dst": "Öyleyse asıl meseleye gelelim. Şununla başlayayım - sen Wynn Eyaleti'ndensin, değil mi?",
    "role": "desc",
@@ -470,7 +720,7 @@
    "speaker": "???",
    "source": "captured"
   },
-  "A New Beginning#046": {
+  "A New Beginning#071": {
    "src": "You trust me enough to tell me that?",
    "dst": "Bunu bana söyleyecek kadar güveniyor musun?",
    "role": "desc",
@@ -480,7 +730,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#047": {
+  "A New Beginning#072": {
    "src": "Even if you chose to reveal my secrets - and if anyone even believed you - you'd have no guarantee of your own safety.",
    "dst": "Sırlarımı ifşa etmeyi seçsen bile - ki biri sana inanırsa - kendi güvenliğinin hiçbir garantisi olmazdı.",
    "role": "desc",
@@ -490,7 +740,7 @@
    "speaker": "Syndra",
    "source": "captured"
   },
-  "A New Beginning#048": {
+  "A New Beginning#073": {
    "src": "Something strange is happening here. I can feel it.",
    "dst": "Burada tuhaf bir şeyler oluyor. Hissedebiliyorum.",
    "role": "desc",
@@ -500,7 +750,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#049": {
+  "A New Beginning#074": {
    "src": "The power you carry - the curse you bear. I have seen such things before, yet always at a distance. Never up close.",
    "dst": "Taşıdığın güç - omuzlarındaki lanet. Böyle şeyleri daha önce gördüm, ama hep uzaktan. Hiç yakından değil.",
    "role": "desc",
@@ -510,7 +760,7 @@
    "speaker": "Syndra",
    "source": "captured"
   },
-  "A New Beginning#050": {
+  "A New Beginning#075": {
    "src": "...I have a different perspective on this story, you might imagine. The crown has wronged me, and many others. Yet, the stories hold truths to them, to some extent.",
    "dst": "...tahmin edersin ki bu hikâyeye benim bakışım farklı. Taç bana ve başka birçoklarına haksızlık etti. Yine de hikâyelerde bir dereceye kadar gerçek payı var.",
    "role": "desc",
@@ -520,7 +770,7 @@
    "speaker": "Syndra",
    "source": "captured"
   },
-  "A New Beginning#051": {
+  "A New Beginning#076": {
    "src": "I've only ever known it as magic. Where I'm from, most people can wield it.",
    "dst": "Ben onu hep büyü olarak bildim. Geldiğim yerde çoğu insan kullanabilir.",
    "role": "desc",
@@ -530,7 +780,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#052": {
+  "A New Beginning#077": {
    "src": "Then that leads me to my final request. Would you join our cause, and offer your help to our resistance group? Your knowledge and strength will be greatly appreciated.",
    "dst": "Bu da beni son ricama getiriyor. Davamıza katılıp direniş grubumuza yardım eder misin? Bilgin ve gücün çok makbule geçer.",
    "role": "desc",
@@ -540,7 +790,7 @@
    "speaker": "Syndra",
    "source": "captured"
   },
-  "A New Beginning#053": {
+  "A New Beginning#078": {
    "src": "I'll join your resistance group.",
    "dst": "Direniş grubunuza katılacağım.",
    "role": "desc",
@@ -550,7 +800,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#054": {
+  "A New Beginning#079": {
    "src": "Um... wait, can I ask- actually... nevermind.",
    "dst": "Şey... dur, bir şey sorabilir miyim- aslında... boş ver.",
    "role": "desc",
@@ -560,7 +810,7 @@
    "speaker": "Sui",
    "source": "captured"
   },
-  "A New Beginning#055": {
+  "A New Beginning#080": {
    "src": "Well, welcome to the Leaves in the Wind! Pardon the hesitation earlier, the cursed are a... sensitive subject. If Syndra believes you to be safe, I will choose to believe her.",
    "dst": "Leaves in the Wind'e hoş geldin! Az önceki tereddüdü bağışla, lanetliler... hassas bir konu. Syndra senin güvenilir olduğuna inanıyorsa, ben de ona inanmayı seçerim.",
    "role": "desc",
@@ -570,7 +820,7 @@
    "speaker": "Mora",
    "source": "captured"
   },
-  "A New Beginning#056": {
+  "A New Beginning#081": {
    "src": "It's always nice to have some fresh blood under our canopy! No matter how abnormal. We may wait for Syndra's return before getting you properly settled in.",
    "dst": "Gölgeliğimizin altına taze kan gelmesi hep güzel! Ne kadar sıra dışı olursa olsun. Seni düzgünce yerleştirmeden önce Syndra'nın dönmesini bekleyebiliriz.",
    "role": "desc",
@@ -580,7 +830,7 @@
    "speaker": "Mora",
    "source": "captured"
   },
-  "A New Beginning#057": {
+  "A New Beginning#082": {
    "src": "If you have any issues whatsoever, don't hesitate to inform me!",
    "dst": "Herhangi bir sorunun olursa bana söylemekten çekinme!",
    "role": "desc",
@@ -590,7 +840,7 @@
    "speaker": "Mora",
    "source": "captured"
   },
-  "A New Beginning#058": {
+  "A New Beginning#083": {
    "src": "I am Syndra's right hand! I deal with many of the tasks involving our family here, to lighten the workload she places upon herself.",
    "dst": "Ben Syndra'nın sağ koluyum! Kendine yüklediği iş yükünü hafifletmek için buradaki ailemizle ilgili işlerin çoğunu ben hallederim.",
    "role": "desc",
@@ -600,7 +850,7 @@
    "speaker": "Mora",
    "source": "captured"
   },
-  "A New Beginning#059": {
+  "A New Beginning#084": {
    "src": "Such tasks could include onboarding new recruits, assigning members to various missions... handling disputes- that sort of thing.",
    "dst": "Bu işler yeni üyeleri alıştırmak, üyeleri çeşitli görevlere atamak... anlaşmazlıkları çözmek gibi şeyler olabilir.",
    "role": "desc",
@@ -610,7 +860,7 @@
    "speaker": "Mora",
    "source": "captured"
   },
-  "A New Beginning#060": {
+  "A New Beginning#085": {
    "src": "Of course, my \"official\" occupation by the crown's terms is that of a lumberjack. Fighting for a better future isn't exactly a well paying job, hoho!",
    "dst": "Tabii tacın gözündeki \"resmi\" mesleğim oduncu. Daha iyi bir gelecek için savaşmak pek iyi para getiren bir iş değil, hoho!",
    "role": "desc",
@@ -620,7 +870,7 @@
    "speaker": "Mora",
    "source": "captured"
   },
-  "A New Beginning#061": {
+  "A New Beginning#086": {
    "src": "I'm a tactician, otherwise. Not the tactician- that'd be Syndra- but... y'know.",
    "dst": "Bunun dışında taktisyenim. Asıl taktisyen değil- o Syndra- ama... işte.",
    "role": "desc",
@@ -630,7 +880,7 @@
    "speaker": "Rex",
    "source": "captured"
   },
-  "A New Beginning#062": {
+  "A New Beginning#087": {
    "src": "No, you didn't- ugh! It's not you personally, it's just...",
    "dst": "Hayır, sen- off! Seninle kişisel bir derdim yok, sadece...",
    "role": "desc",
@@ -640,7 +890,7 @@
    "speaker": "Rex",
    "source": "captured"
   },
-  "A New Beginning#063": {
+  "A New Beginning#088": {
    "src": "So, where's Syndra going?",
    "dst": "Peki, Syndra nereye gidiyor?",
    "role": "desc",
@@ -650,7 +900,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#064": {
+  "A New Beginning#089": {
    "src": "Let's prove them wrong, then.",
    "dst": "O zaman yanıldıklarını kanıtlayalım.",
    "role": "desc",
@@ -660,7 +910,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#065": {
+  "A New Beginning#090": {
    "src": "Yes... A toddler could calculate that by watching you. I'll solve that problem for you. Keep them out of trouble, and we won't have any issues- as usual.",
    "dst": "Evet... Seni izleyen bir bebek bile bunu hesaplayabilirdi. O sorunu senin için çözerim. Onları beladan uzak tut, biz de bir sorun yaşamayız- her zamanki gibi.",
    "role": "desc",
@@ -670,7 +920,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "captured"
   },
-  "A New Beginning#066": {
+  "A New Beginning#091": {
    "src": "[+{~} {p} Passport]",
    "dst": "[+{~} {p} Pasaportu]",
    "role": "desc",
@@ -680,7 +930,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#067": {
+  "A New Beginning#092": {
    "src": "Simple - I don't. You don't need to worry about him. As I said, we have an agreement. He doesn't know about anything we do.",
    "dst": "Basit - güvenmiyorum. Onu dert etme. Dediğim gibi, bir anlaşmamız var. Yaptığımız hiçbir şeyden haberi yok.",
    "role": "desc",
@@ -690,7 +940,7 @@
    "speaker": "Syndra",
    "source": "captured"
   },
-  "A New Beginning#068": {
+  "A New Beginning#093": {
    "src": "You shouldn't get near a running saw that big! Find a way to disable it first.",
    "dst": "O kadar büyük, çalışan bir testereye yaklaşmamalısın! Önce onu durdurmanın bir yolunu bul.",
    "role": "desc",
@@ -700,7 +950,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "A New Beginning#069": {
+  "A New Beginning#094": {
    "src": "Enter the city at [-{~}, {~}, -{~}]",
    "dst": "[-{~}, {~}, -{~}] konumundan şehre gir",
    "role": "desc",
@@ -710,7 +960,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#070": {
+  "A New Beginning#095": {
    "src": "Halt! I'll need to see some form of identification.",
    "dst": "Dur! Bir kimlik belgesi görmem gerekiyor.",
    "role": "desc",
@@ -720,7 +970,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#071": {
+  "A New Beginning#096": {
    "src": "New policy, sorry for the inconvenience. We're heightening security around here.",
    "dst": "Yeni kural, rahatsızlık için kusura bakma. Buralarda güvenliği artırıyoruz.",
    "role": "desc",
@@ -730,7 +980,7 @@
    "speaker": "Espren City Guard",
    "source": "wiki"
   },
-  "A New Beginning#072": {
+  "A New Beginning#097": {
    "src": "It shouldn't take too much of your time, don't worry! Just show us your citizen identification papers, and we'll let you on through.",
    "dst": "Fazla vaktini almaz, merak etme! Vatandaşlık kimlik belgelerini göster, seni hemen geçirelim.",
    "role": "desc",
@@ -740,7 +990,7 @@
    "speaker": "Espren City Guard",
    "source": "wiki"
   },
-  "A New Beginning#073": {
+  "A New Beginning#098": {
    "src": "Yep! All good.",
    "dst": "Evet! Her şey yolunda.",
    "role": "desc",
@@ -750,7 +1000,7 @@
    "speaker": "Espren City Guard",
    "source": "wiki"
   },
-  "A New Beginning#074": {
+  "A New Beginning#099": {
    "src": "...",
    "dst": "",
    "role": "desc",
@@ -760,7 +1010,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#075": {
+  "A New Beginning#100": {
    "src": "What's taking so long? It can't be that hard to find those. You should have them on your person at all times.",
    "dst": "Ne bu kadar uzun sürdü? Bulması o kadar zor olamaz. Onları her zaman üstünde taşıman gerekiyor.",
    "role": "desc",
@@ -770,7 +1020,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#076": {
+  "A New Beginning#101": {
    "src": "It’s a very new restriction. There was some incident nearby. I’m not sure on the details, but-",
    "dst": "Çok yeni bir kısıtlama. Yakınlarda bir olay olmuş. Ayrıntılarını tam bilmiyorum, ama-",
    "role": "desc",
@@ -780,7 +1030,7 @@
    "speaker": "Espren City Guard",
    "source": "wiki"
   },
-  "A New Beginning#077": {
+  "A New Beginning#102": {
    "src": "Enough stalling. Where are your papers?",
    "dst": "Oyalamayı bırak. Belgelerin nerede?",
    "role": "desc",
@@ -790,7 +1040,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#078": {
+  "A New Beginning#103": {
    "src": "If you don’t present identification, I’m going to need to take you in for questioning.",
    "dst": "Kimlik göstermezsen seni sorgu için götürmem gerekecek.",
    "role": "desc",
@@ -800,7 +1050,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#079": {
+  "A New Beginning#104": {
    "src": "O-oh, hey, th-there you are! Gosh, I was w-wondering where you'd gotten off to!",
    "dst": "A-ah, hey, i-işte buradasın! Tanrım, n-nereye kaybolduğunu merak ediyordum!",
    "role": "desc",
@@ -810,7 +1060,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#080": {
+  "A New Beginning#105": {
    "src": "Ha... d-don't tell me you forgot your papers again! I k-keep telling you to keep th-them with you...",
    "dst": "Ha... s-sakın yine belgelerini unuttum deme! Y-yanında taşı diye s-sürekli söylüyorum...",
    "role": "desc",
@@ -820,7 +1070,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#081": {
+  "A New Beginning#106": {
    "src": "One of th-these days, you'll remember! F-for sure...",
    "dst": "B-bir gün hatırlayacaksın! K-kesin...",
    "role": "desc",
@@ -830,7 +1080,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#082": {
+  "A New Beginning#107": {
    "src": "You d-didn’t forget our conversation too, d-did you? S-s-sorry for my friend, sir!",
    "dst": "Konuşmamızı da u-unutmadın, d-değil mi? A-a-arkadaşım adına özür dilerim, efendim!",
    "role": "desc",
@@ -840,7 +1090,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#083": {
+  "A New Beginning#108": {
    "src": "Ahem. I'll still need to see identification if you want to enter the city.",
    "dst": "Ahem. Şehre girmek istiyorsan yine de kimlik görmem gerekiyor.",
    "role": "desc",
@@ -850,7 +1100,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#084": {
+  "A New Beginning#109": {
    "src": "Oh! O-o-of course! L-let me just...",
    "dst": "Ah! E-e-elbette! B-bir saniye...",
    "role": "desc",
@@ -860,7 +1110,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#085": {
+  "A New Beginning#110": {
    "src": "...They're a-around here s-s-somewhere, I'm s-sure... I think they m-might be",
    "dst": "...Buralarda b-b-bir yerdeler, eminim... Sanırım ş-şeyde olabilirler",
    "role": "desc",
@@ -870,7 +1120,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#086": {
+  "A New Beginning#111": {
    "src": "Aha! Here! Identification p-papers, just for y-you!",
    "dst": "Aha! İşte! Kimlik b-belgeleri, tam s-sana göre!",
    "role": "desc",
@@ -880,7 +1130,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#087": {
+  "A New Beginning#112": {
    "src": "...What even is this? I can barely read the handwriting... Is that Sovereign Selium's signature? The previous sovereign?",
    "dst": "...Bu da ne böyle? El yazısını zor okuyorum... Bu Hükümdar Selium'un imzası mı? Önceki hükümdarın?",
    "role": "desc",
@@ -890,7 +1140,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#088": {
+  "A New Beginning#113": {
    "src": "I've had enough of these games. The two of you are under",
    "dst": "Bu oyunlardan bıktım. İkiniz de",
    "role": "desc",
@@ -900,7 +1150,7 @@
    "speaker": "Espren Border Guard",
    "source": "wiki"
   },
-  "A New Beginning#089": {
+  "A New Beginning#114": {
    "src": "You two! Make room!",
    "dst": "Siz ikiniz! Yol açın!",
    "role": "desc",
@@ -910,7 +1160,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#090": {
+  "A New Beginning#115": {
    "src": "Y-yessir! What's going on?",
    "dst": "E-emredersiniz! Neler oluyor?",
    "role": "desc",
@@ -920,7 +1170,7 @@
    "speaker": "Espren City Guard",
    "source": "wiki"
   },
-  "A New Beginning#091": {
+  "A New Beginning#116": {
    "src": "We've received more information about the incident at {p}. There's a new cursed one to look out for. Dozens of soldiers were killed in an attempt to capture them.",
    "dst": "{p} bölgesindeki olayla ilgili yeni bilgiler aldık. Dikkat edilmesi gereken yeni bir lanetli var. Onu yakalama girişiminde onlarca asker öldü.",
    "role": "desc",
@@ -930,7 +1180,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#092": {
+  "A New Beginning#117": {
    "src": "We're taking reinforcements to the fort, but I need you to remain at your posts. Keep a watchful eye on any suspicious individuals.",
    "dst": "Kaleye takviye götürüyoruz, ama sizin görev yerinizde kalmanız lazım. Şüpheli kişileri gözünüzü dört açıp izleyin.",
    "role": "desc",
@@ -940,7 +1190,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#093": {
+  "A New Beginning#118": {
    "src": "...Th-this might be a good time to run. While they're distracted! Quick, f-follow me!",
    "dst": "...K-kaçmak için iyi bir zaman olabilir. Dikkatleri dağılmışken! Çabuk, b-beni takip et!",
    "role": "desc",
@@ -950,7 +1200,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#095": {
+  "A New Beginning#119": {
    "src": "Talk to the man at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki adamla konuş.",
    "role": "desc",
@@ -960,7 +1210,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#096": {
+  "A New Beginning#120": {
    "src": "Phew... G-glad we got out of there...",
    "dst": "Oh... O-oradan çıktığımıza sevindim...",
    "role": "desc",
@@ -970,7 +1220,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#097": {
+  "A New Beginning#121": {
    "src": "A-anyway. What were you th-thinking? Trying to enter the city without p-papers...",
    "dst": "N-neyse. Ne d-düşünüyordun? Şehre b-belgesiz girmeye çalışmak...",
    "role": "desc",
@@ -980,7 +1230,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#098": {
+  "A New Beginning#122": {
    "src": "You're n-new around here, right? Transferred in f-from elsewhere. Y-you're interesting, though.",
    "dst": "Buralarda y-yenisin, değil mi? Başka bir yerden t-tayin edilmişsin. Ama i-ilginç birisin.",
    "role": "desc",
@@ -990,7 +1240,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#100": {
+  "A New Beginning#123": {
    "src": "But, if y-you're interested... The military k-keeps records of these sorts of things! Th-they want a paper trail... or s-something.",
    "dst": "Ama, i-ilgileniyorsan... Ordu böyle şeylerin k-kaydını tutar! Belgeli iz istiyorlar... ya da ö-öyle bir şey.",
    "role": "desc",
@@ -1000,7 +1250,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#101": {
+  "A New Beginning#124": {
    "src": "You d-didn't hear this from me... but the l-leaves have whispered something about th-the location of a record storage. Here, hand me that b-book of yours...",
    "dst": "Bunu benden d-duymadın... ama y-yapraklar bir kayıt deposunun yeri hakkında bir şeyler fısıldadı. Ver bakayım şu k-kitabını...",
    "role": "desc",
@@ -1010,7 +1260,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#102": {
+  "A New Beginning#125": {
    "src": "Well, good luck s-stranger! If anyone asks, we never m-met. But, um... y-you can call me Zeph.",
    "dst": "Neyse, bol şans y-yabancı! Soran olursa hiç t-tanışmadık. Ama, şey... b-bana Zeph diyebilirsin.",
    "role": "desc",
@@ -1020,7 +1270,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#103": {
+  "A New Beginning#126": {
    "src": "Find your report in the storage at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki depoda raporunu bul.",
    "role": "desc",
@@ -1030,7 +1280,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#104": {
+  "A New Beginning#127": {
    "src": "W-we never met, remember?",
    "dst": "H-hiç tanışmadık, unutma.",
    "role": "desc",
@@ -1040,7 +1290,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#105": {
+  "A New Beginning#128": {
    "src": "HALT! Intruder! For trespassing on restricted property, you are under",
    "dst": "DUR! Davetsiz misafir! Yasak bölgeye izinsiz girdiğin için",
    "role": "desc",
@@ -1050,7 +1300,7 @@
    "speaker": "Nixeph Watchman",
    "source": "wiki"
   },
-  "A New Beginning#107": {
+  "A New Beginning#129": {
    "src": "They're after... Sovereign Zhiraok... D-don't...y...you...",
    "dst": "Onlar... Hükümdar Zhiraok'un peşinde... S-sakın...s...sen...",
    "role": "desc",
@@ -1060,7 +1310,7 @@
    "speaker": "Nixeph Watchman",
    "source": "wiki"
   },
-  "A New Beginning#108": {
+  "A New Beginning#130": {
    "src": "Well? You've crunched the numbers. Give me the report.",
    "dst": "Eee? Hesapları yaptın. Raporu ver.",
    "role": "desc",
@@ -1070,7 +1320,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#110": {
+  "A New Beginning#131": {
    "src": "...of all the possibilities. How could that have factored out...? Hm. Who was the commanding officer? Their take on the problem would help fill the gaps.",
    "dst": "...bunca ihtimalin içinden. Bu nasıl hesaba girmemiş olabilir...? Hm. Komutan subay kimdi? Sorun hakkındaki görüşü boşlukları doldurmaya yardım ederdi.",
    "role": "desc",
@@ -1080,7 +1330,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#111": {
+  "A New Beginning#132": {
    "src": "Well... it seems it was Commander Lilles, sir. But he was one of the casualties of the incident, and a replacement has yet to be promoted.",
    "dst": "Şey... Komutan Lilles'miş, efendim. Ama olayda hayatını kaybedenlerden biriydi ve yerine henüz kimse terfi ettirilmedi.",
    "role": "desc",
@@ -1090,7 +1340,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#112": {
+  "A New Beginning#133": {
    "src": "Naturally... I'll need to get hold of his family later and break the news. What else do you have on the Cursed One?",
    "dst": "Tabii ya... Sonra ailesine ulaşıp haberi vermem gerekecek. Lanetli hakkında başka ne var elinde?",
    "role": "desc",
@@ -1100,7 +1350,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#113": {
+  "A New Beginning#134": {
    "src": "I've heard reports that they're... from outside. Possibly one of the ones who were invited into our province recently, though nobody seems certain on that.",
    "dst": "Onun... dışarıdan olduğuna dair raporlar duydum. Muhtemelen yakın zamanda eyaletimize davet edilenlerden biri, gerçi kimse bundan emin değil.",
    "role": "desc",
@@ -1110,7 +1360,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#114": {
+  "A New Beginning#135": {
    "src": "We've already raised security in {p}, and we have forces moving to Torann.",
    "dst": "{p} bölgesinde güvenliği çoktan artırdık, Torann'a da birlik gönderiyoruz.",
    "role": "desc",
@@ -1120,7 +1370,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#115": {
+  "A New Beginning#136": {
    "src": "One positive in a sea of negatives, I suppose. Good work. File the report in the records room, and then we'll go view the damages for ourselves.",
    "dst": "Olumsuzluklar denizinde tek bir olumlu şey, herhalde. Aferin. Raporu kayıt odasına dosyala, sonra hasarı kendi gözlerimizle görmeye gideriz.",
    "role": "desc",
@@ -1130,7 +1380,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#116": {
+  "A New Beginning#137": {
    "src": "One more thing. Since Torann is compromised, we've taken the liberty of storing the cursed one's report here, so",
    "dst": "Bir şey daha. Torann'ın güvenliği tehlikede olduğu için lanetlinin raporunu burada saklamayı uygun gördük, yani",
    "role": "desc",
@@ -1140,7 +1390,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#117": {
+  "A New Beginning#138": {
    "src": "Do we not have a higher priority right now?!",
    "dst": "Şu an daha öncelikli bir işimiz yok mu?!",
    "role": "desc",
@@ -1150,7 +1400,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#118": {
+  "A New Beginning#139": {
    "src": "...N-n-no, sir. My- my apologies. I simply thought",
    "dst": "...H-h-hayır, efendim. Ö- özür dilerim. Sadece şey düşünmüştüm",
    "role": "desc",
@@ -1160,7 +1410,7 @@
    "speaker": "Espren Guard Captain",
    "source": "wiki"
   },
-  "A New Beginning#120": {
+  "A New Beginning#140": {
    "src": "We haven't got time to sit around like this when there's a tragedy of that value to look into! We need to get to {p}, yesterday!",
    "dst": "O büyüklükte bir felaketi incelememiz gerekirken böyle oturacak vaktimiz yok! {p} bölgesine gitmemiz lazım, hem de dün!",
    "role": "desc",
@@ -1170,7 +1420,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#121": {
+  "A New Beginning#141": {
    "src": "Locate the key inside the eastern tower and retrieve your report.",
    "dst": "Doğu kulesindeki anahtarı bul ve raporunu al.",
    "role": "desc",
@@ -1180,7 +1430,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#123": {
+  "A New Beginning#142": {
    "src": "Guards! Return to your stations!",
    "dst": "Muhafızlar! Görev yerlerinize dönün!",
    "role": "desc",
@@ -1190,7 +1440,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#124": {
+  "A New Beginning#143": {
    "src": "Someone's been here... search the outpost, quickly!",
    "dst": "Biri buraya girmiş... karakolu arayın, çabuk!",
    "role": "desc",
@@ -1200,7 +1450,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#126": {
+  "A New Beginning#144": {
    "src": "H-hold tight!",
    "dst": "S-sıkı tutun!",
    "role": "desc",
@@ -1210,7 +1460,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#127": {
+  "A New Beginning#145": {
    "src": "H-hey again, at the w-window! Tough s-situation, huh?",
    "dst": "H-hey yine ben, p-pencerede! Zor d-durum, ha?",
    "role": "desc",
@@ -1220,7 +1470,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#128": {
+  "A New Beginning#146": {
    "src": "I f-figured you could use a hand... Stand back a m-moment.",
    "dst": "Yardıma i-ihtiyacın olabilir diye düşündüm... Bir s-saniye geri çekil.",
    "role": "desc",
@@ -1230,7 +1480,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#129": {
+  "A New Beginning#147": {
    "src": "Rex! The r-rope!",
    "dst": "Rex! İ-ip!",
    "role": "desc",
@@ -1240,7 +1490,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#130": {
+  "A New Beginning#148": {
    "src": "I-I'll be down in a bit. Just h-hold on tight to the rope, and you'll be f-fine!",
    "dst": "B-birazdan aşağı inerim. Sadece i-ipe sıkı tutun, b-bir şey olmaz!",
    "role": "desc",
@@ -1250,7 +1500,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#131": {
+  "A New Beginning#149": {
    "src": "Talk to Rex and Zeph at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki Rex ve Zeph ile konuş.",
    "role": "desc",
@@ -1260,7 +1510,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#132": {
+  "A New Beginning#150": {
    "src": "Phew! W-we got you out. G-good work back there, though!",
    "dst": "Oh! S-seni çıkardık. Ama orada i-iyi iş çıkardın!",
    "role": "desc",
@@ -1270,7 +1520,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#133": {
+  "A New Beginning#151": {
    "src": "Good enough, I guess.",
    "dst": "Fena değil, herhalde.",
    "role": "desc",
@@ -1280,7 +1530,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#134": {
+  "A New Beginning#152": {
    "src": "D-don't mind her, she's just like that. Rex, this is",
    "dst": "O-ona aldırma, o hep böyledir. Rex, bu",
    "role": "desc",
@@ -1290,7 +1540,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#135": {
+  "A New Beginning#153": {
    "src": "The stranger you found trying to get into {p} without identification, I know. Do you really need me here still?",
    "dst": "Kimliksiz {p} bölgesine girmeye çalışırken bulduğun yabancı, biliyorum. Hâlâ burada olmama gerçekten gerek var mı?",
    "role": "desc",
@@ -1300,7 +1550,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#136": {
+  "A New Beginning#154": {
    "src": "...I-I-I'd like it if you s-stayed, yes.",
    "dst": "...K-k-kalsan sevinirim, evet.",
    "role": "desc",
@@ -1310,7 +1560,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#137": {
+  "A New Beginning#155": {
    "src": "Hmph.",
    "dst": "Hıh.",
    "role": "desc",
@@ -1320,7 +1570,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#138": {
+  "A New Beginning#156": {
    "src": "Um... I- I don't think I c-c-caught your name.",
    "dst": "Şey... B- Adını d-d-duyamadım sanırım.",
    "role": "desc",
@@ -1330,7 +1580,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#139": {
+  "A New Beginning#157": {
    "src": "{u}... so, wh-where are you from? Y-you must've transferred in from an-another region, right?",
    "dst": "{u}... peki, n-nerelisin? B-başka bir bölgeden t-tayin edilmiş olmalısın, değil mi?",
    "role": "desc",
@@ -1340,7 +1590,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#140": {
+  "A New Beginning#158": {
    "src": "Another... um... wh-what do you-... you d-don't know?",
    "dst": "Başka bir... şey... n-ne demek-... b-bilmiyor musun?",
    "role": "desc",
@@ -1350,7 +1600,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#141": {
+  "A New Beginning#159": {
    "src": "Obviously they're not from here, Zeph! Remember that thing I told you about? The big spectacle event they had with people from beyond the gates?",
    "dst": "Belli ki buralı değil, Zeph! Sana anlattığım şeyi hatırlıyor musun? Kapıların ötesinden gelen insanlarla yaptıkları o büyük gösteri?",
    "role": "desc",
@@ -1360,7 +1610,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#142": {
+  "A New Beginning#160": {
    "src": "You w-w-what?! But, there’s- th-that’s not possible...",
    "dst": "N-n-ne?! Ama, orada- b-bu imkânsız...",
    "role": "desc",
@@ -1370,7 +1620,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#143": {
+  "A New Beginning#161": {
    "src": "Possible or not, they’re obviously from outside the province! They’re probably involved with that big spectacle event with people from beyond the gates that I was telling you about.",
    "dst": "İmkânsız ya da değil, eyaletin dışından geldiği belli! Muhtemelen sana anlattığım, kapıların ötesinden gelen insanlarla yapılan o büyük gösteriye karışmıştır.",
    "role": "desc",
@@ -1380,7 +1630,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#147": {
+  "A New Beginning#162": {
    "src": "And you believed that? Really?",
    "dst": "Sen de buna inandın mı? Cidden?",
    "role": "desc",
@@ -1390,7 +1640,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#151": {
+  "A New Beginning#163": {
    "src": "She's- um... she's n-not normally like this. S-sorry about that.",
    "dst": "O- şey... n-normalde böyle değildir. K-kusura bakma.",
    "role": "desc",
@@ -1400,7 +1650,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#152": {
+  "A New Beginning#164": {
    "src": "O-Oh! I f-followed you, of course.",
    "dst": "A-Ah! Seni t-takip ettim, tabii ki.",
    "role": "desc",
@@ -1410,7 +1660,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#153": {
+  "A New Beginning#165": {
    "src": "A s-stranger comes to our region without p-papers and is supposedly a c-cursed one? I wasn't letting you go th-that easily!",
    "dst": "B-belgesi olmayan ve güya l-lanetli olan bir yabancı bölgemize geliyor? Seni ö-öyle kolay bırakacak değildim!",
    "role": "desc",
@@ -1420,7 +1670,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#154": {
+  "A New Beginning#166": {
    "src": "O-Oh! N-no problem! It was... it w-was nothing. Y-you did most of the work.",
    "dst": "A-Ah! S-sorun değil! Bir şey... b-bir şey değildi. İşin çoğunu s-sen yaptın.",
    "role": "desc",
@@ -1430,7 +1680,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#155": {
+  "A New Beginning#167": {
    "src": "N-Nixeph is... n-not an easy place to break into! I g-guess all the guards were gone.",
    "dst": "N-Nixeph'e... g-girmek kolay değildir! S-sanırım bütün muhafızlar gitmişti.",
    "role": "desc",
@@ -1440,7 +1690,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#156": {
+  "A New Beginning#168": {
    "src": "But, um... y-you got what you needed, and I got what I- what I needed, s-so...",
    "dst": "Ama, şey... s-sen ihtiyacın olanı aldın, ben de b- benim ihtiyacım olanı, y-yani...",
    "role": "desc",
@@ -1450,7 +1700,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#157": {
+  "A New Beginning#169": {
    "src": "B-besides! I had s-something I needed to get from... f-from the outpost, anyway.",
    "dst": "H-hem! Zaten karakoldan... k-karakoldan almam gereken bir ş-şey vardı.",
    "role": "desc",
@@ -1460,7 +1710,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#158": {
+  "A New Beginning#170": {
    "src": "Um... th-there is someone you should meet. I was told to pass on a m-message...",
    "dst": "Şey... t-tanışman gereken biri var. Bir m-mesaj iletmem söylendi...",
    "role": "desc",
@@ -1470,7 +1720,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#159": {
+  "A New Beginning#171": {
    "src": "And- and you'll be on y-your own this time. N-no help from me!",
    "dst": "Ve- ve bu sefer y-yalnızsın. B-benden yardım yok!",
    "role": "desc",
@@ -1480,7 +1730,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#160": {
+  "A New Beginning#172": {
    "src": "The m-message is: w-westward, the giant lays its roots. As the wind blows, they s-sing along.",
    "dst": "M-mesaj şu: b-batıda dev köklerini salar. Rüzgâr estikçe onlar da ş-şarkıya eşlik eder.",
    "role": "desc",
@@ -1490,7 +1740,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#161": {
+  "A New Beginning#173": {
    "src": "\"Westward, the giant lays its roots. As the wind blows, they sing along.\"",
    "dst": "\"Batıda dev köklerini salar. Rüzgâr estikçe onlar da şarkıya eşlik eder.\"",
    "role": "desc",
@@ -1500,7 +1750,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#163": {
+  "A New Beginning#174": {
    "src": "Talk to the woman in the cave.",
    "dst": "Mağaradaki kadınla konuş.",
    "role": "desc",
@@ -1510,7 +1760,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#164": {
+  "A New Beginning#175": {
    "src": "Well, well. If it isn't a fresh breeze dancing in the leaves...",
    "dst": "Vay vay. Yapraklar arasında dans eden taze bir esinti değil mi bu...",
    "role": "desc",
@@ -1520,7 +1770,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#165": {
+  "A New Beginning#176": {
    "src": "You must be the Cursed One who caused such a stir at Torann, yes? News has spread quickly of your actions.",
    "dst": "Torann'da o kadar ortalığı karıştıran Lanetli sen olmalısın, değil mi? Yaptıkların hızla duyuldu.",
    "role": "desc",
@@ -1530,7 +1780,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#166": {
+  "A New Beginning#177": {
    "src": "I'm impressed you found your way to me.",
    "dst": "Yolunu bana kadar bulmana etkilendim.",
    "role": "desc",
@@ -1540,7 +1790,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#168": {
+  "A New Beginning#178": {
    "src": "I thought so... You're certainly not from around here. Though, I would recommend you keep that information close to your chest.",
    "dst": "Ben de öyle düşünmüştüm... Kesinlikle buralı değilsin. Yine de bu bilgiyi kendine saklamanı tavsiye ederim.",
    "role": "desc",
@@ -1550,7 +1800,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#169": {
+  "A New Beginning#179": {
    "src": "Very few people have knowledge of the outside world, and those that do... they're the ones who will be looking for you. Best to avoid drawing their attention.",
    "dst": "Dış dünyadan haberi olan çok az insan var, olanlar da... seni arayacak olanlar onlar. Dikkatlerini çekmemek en iyisi.",
    "role": "desc",
@@ -1560,7 +1810,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "A New Beginning#170": {
+  "A New Beginning#180": {
    "src": "But I should introduce myself. My name is Syndra, leader of the Leaves in the Wind resistance group.",
    "dst": "Ama kendimi tanıtmalıyım. Adım Syndra, Leaves in the Wind direniş grubunun lideriyim.",
    "role": "desc",
@@ -1570,7 +1820,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#171": {
+  "A New Beginning#181": {
    "src": "Call it something of a gamble. Given your... shall we say, explosive entrance into the province, I find it unlikely you're with the crown.",
    "dst": "Bir tür kumar diyelim. Eyalete... nasıl desek, patlayıcı girişini düşününce, taçla birlikte olman pek olası görünmüyor.",
    "role": "desc",
@@ -1580,7 +1830,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#173": {
+  "A New Beginning#182": {
    "src": "Yes. You haven’t been here long, but you’ve felt it, haven’t you? The crown has its roots buried deep in this province, and it certainly isn’t kind to all.",
    "dst": "Evet. Burada uzun zamandır değilsin, ama hissettin, değil mi? Taç köklerini bu eyalette derinlere gömmüş ve kesinlikle herkese karşı nazik değil.",
    "role": "desc",
@@ -1590,7 +1840,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#174": {
+  "A New Beginning#183": {
    "src": "Those it sees as disposable… they don’t often make it far. That is why I have taken my role. I’d like to see a day where none are left behind.",
    "dst": "Gözden çıkarılabilir gördükleri… pek uzağa gidemezler. Bu yüzden bu rolü üstlendim. Kimsenin geride bırakılmadığı bir gün görmek isterim.",
    "role": "desc",
@@ -1600,7 +1850,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#175": {
+  "A New Beginning#184": {
    "src": "But that's enough about me. On to you. Why are you here, cursed one? For what purpose have you come to Fruma?",
    "dst": "Ama benden bu kadar yeter. Sıra sende. Neden buradasın, lanetli? Fruma'ya hangi amaçla geldin?",
    "role": "desc",
@@ -1610,7 +1860,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#176": {
+  "A New Beginning#185": {
    "src": "Interesting. A sense that something isn't right...",
    "dst": "İlginç. Bir şeylerin yolunda olmadığı hissi...",
    "role": "desc",
@@ -1620,7 +1870,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#177": {
+  "A New Beginning#186": {
    "src": "To tell you the truth, it's one I've had myself for quite some time. Though, likely for a different reason to you.",
    "dst": "Doğrusunu söylemek gerekirse, bu his bende de epeydir var. Gerçi muhtemelen seninkinden farklı bir sebeple.",
    "role": "desc",
@@ -1630,7 +1880,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#178": {
+  "A New Beginning#187": {
    "src": "A noble cause… It is one I can wholeheartedly support.",
    "dst": "Asil bir dava… Bütün kalbimle destekleyebileceğim bir dava.",
    "role": "desc",
@@ -1640,7 +1890,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#179": {
+  "A New Beginning#188": {
    "src": "In a world like this, the most we can do sometimes is hold on to those we care for. Take care not to lose that drive.",
    "dst": "Böyle bir dünyada bazen yapabileceğimiz en fazla şey değer verdiklerimize tutunmaktır. O azmi kaybetmemeye dikkat et.",
    "role": "desc",
@@ -1650,7 +1900,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#180": {
+  "A New Beginning#189": {
    "src": "Then, I would ask of you one more thing. A test, in a way...",
    "dst": "O halde senden bir şey daha isteyeceğim. Bir bakıma bir sınav...",
    "role": "desc",
@@ -1660,7 +1910,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#182": {
+  "A New Beginning#190": {
    "src": "I would ask for a duel. Nothing dangerous, or lethal... I have safeguards in place for myself, so do not test my limits. When I call it, we stop.",
    "dst": "Bir düello isteyeceğim. Tehlikeli ya da ölümcül bir şey değil... Kendim için önlemlerim var, o yüzden sınırlarımı zorlama. Dur dediğimde dururuz.",
    "role": "desc",
@@ -1670,7 +1920,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#183": {
+  "A New Beginning#191": {
    "src": "I would simply like to see the strength of a cursed one in battle firsthand. So, then. Let us begin!",
    "dst": "Sadece bir lanetlinin savaştaki gücünü kendi gözlerimle görmek istiyorum. Öyleyse. Başlayalım!",
    "role": "desc",
@@ -1680,7 +1930,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#184": {
+  "A New Beginning#192": {
    "src": "Complete Syndra's challenge.",
    "dst": "Syndra'nın mücadelesını tamamla.",
    "role": "desc",
@@ -1690,7 +1940,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#185": {
+  "A New Beginning#193": {
    "src": "Enough! Come speak to me.",
    "dst": "Yeter! Gel benimle konuş.",
    "role": "desc",
@@ -1700,7 +1950,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#186": {
+  "A New Beginning#194": {
    "src": "Impressive. Very impressive. I have never seen a cursed one with such control and technique...",
    "dst": "Etkileyici. Çok etkileyici. Böyle bir kontrol ve tekniğe sahip bir lanetli hiç görmemiştim...",
    "role": "desc",
@@ -1710,7 +1960,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#187": {
+  "A New Beginning#195": {
    "src": "If I did not know better, I would believe you to have been blessed by the crown itself.",
    "dst": "Bilmesem, tacın kendisi tarafından kutsandığını düşünürdüm.",
    "role": "desc",
@@ -1720,7 +1970,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#188": {
+  "A New Beginning#196": {
    "src": "Your power, your spells. The ability to bend the world to your whim, to wield the elements for your own gain.",
    "dst": "Gücün, büyülerin. Dünyayı isteğine göre bükme, elementleri kendi çıkarın için kullanma yeteneği.",
    "role": "desc",
@@ -1730,7 +1980,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#189": {
+  "A New Beginning#197": {
    "src": "Eons ago, so the stories say, the world was pure and balanced. Our people lived with the land, content with what we had.",
    "dst": "Hikâyelere göre çağlar önce dünya saf ve dengeliydi. Halkımız toprakla uyum içinde yaşar, elindekiyle yetinirdi.",
    "role": "desc",
@@ -1740,7 +1990,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#190": {
+  "A New Beginning#198": {
    "src": "And yet, an evil force lurked within us, a malice which despised our peace and happiness. One day, it burst forth, granting unimaginable power to those it deemed worthy...",
    "dst": "Ama yine de içimizde kötü bir güç pusuya yatmıştı, huzurumuzdan ve mutluluğumuzdan nefret eden bir kötülük. Bir gün patlayıp çıktı ve layık gördüklerine akıl almaz bir güç bahşetti...",
    "role": "desc",
@@ -1750,7 +2000,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#191": {
+  "A New Beginning#199": {
    "src": "Its power could not be controlled. Those cursed by its touch went on to tear apart the land, destroying cities and towns... fear overtook the land, none were safe.",
    "dst": "O güç kontrol edilemiyordu. Dokunuşuyla lanetlenenler toprakları paramparça etti, şehirleri ve kasabaları yıktı... korku her yeri sardı, kimse güvende değildi.",
    "role": "desc",
@@ -1760,7 +2010,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#192": {
+  "A New Beginning#200": {
    "src": "Until she arrived, a force of good to counter the evil. She granted her own blessings to the people of Fruma, power which could be controlled and wielded to banish the cursed.",
    "dst": "Ta ki o gelene kadar, kötülüğe karşı bir iyilik gücü. Fruma halkına kendi lütfunu bahşetti, kontrol edilebilen ve lanetlileri kovmak için kullanılabilen bir güç.",
    "role": "desc",
@@ -1770,7 +2020,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#193": {
+  "A New Beginning#201": {
    "src": "She saved our province, and became our immortal Queen. Always looking out for the people, always alert for the presence of evil... for it could not be killed, only staved off.",
    "dst": "Eyaletimizi kurtardı ve ölümsüz Kraliçemiz oldu. Hep halkı gözetti, kötülüğün varlığına karşı hep tetikteydi... çünkü kötülük öldürülemezdi, yalnızca uzak tutulabilirdi.",
    "role": "desc",
@@ -1780,7 +2030,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#194": {
+  "A New Beginning#202": {
    "src": "The cursed ones never left. They only grew smarter, more capable of hiding from the crown's watchful eye.",
    "dst": "Lanetliler hiç gitmedi. Sadece daha kurnaz oldular, tacın dikkatli gözünden saklanmakta daha usta.",
    "role": "desc",
@@ -1790,7 +2040,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#195": {
+  "A New Beginning#203": {
    "src": "And so, it tells the people, always be aware. Always be looking for the cursed ones. It is only a matter of time before they hurt you.",
    "dst": "Bu yüzden taç halka şunu söyler: hep tetikte olun. Lanetlileri hep gözetleyin. Size zarar vermeleri an meselesi.",
    "role": "desc",
@@ -1800,7 +2050,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#197": {
+  "A New Beginning#204": {
    "src": "That is why your control over your power has interested me. It bears more traits of the crown's blessings than of the evil's curses, and yet...",
    "dst": "Gücün üzerindeki kontrolünün ilgimi çekmesinin sebebi bu. Kötülüğün lanetlerinden çok tacın lütuflarına benziyor, ama yine de...",
    "role": "desc",
@@ -1810,7 +2060,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#198": {
+  "A New Beginning#205": {
    "src": "Magic... yes, that term has been used in higher studies at the University.",
    "dst": "Büyü... evet, bu terim Üniversite'deki ileri çalışmalarda kullanılmıştı.",
    "role": "desc",
@@ -1820,7 +2070,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#199": {
+  "A New Beginning#206": {
    "src": "But a land filled with cursed ones... and it isn't destroyed? I suppose I have had no reason to believe the crown's reports about it, but...",
    "dst": "Ama lanetlilerle dolu bir diyar... ve yok olmamış mı? Sanırım tacın oraya dair raporlarına inanmam için hiçbir sebep yoktu, ama...",
    "role": "desc",
@@ -1830,7 +2080,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#200": {
+  "A New Beginning#207": {
    "src": "I need time to process this information. But I would like to discuss it with you further, at a later date, if you would be willing.",
    "dst": "Bu bilgiyi sindirmem için zamana ihtiyacım var. Ama istersen, ileride seninle bunu daha ayrıntılı konuşmak isterim.",
    "role": "desc",
@@ -1840,7 +2090,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#202": {
+  "A New Beginning#208": {
    "src": "Thank you. I will take you to meet with the others, then. Our home is directly to the south-west, it should be hard to miss. I'll meet you there.",
    "dst": "Teşekkür ederim. O halde seni diğerleriyle tanıştırmaya götüreyim. Evimiz tam güneybatıda, gözden kaçırmak zor. Orada buluşuruz.",
    "role": "desc",
@@ -1850,7 +2100,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#203": {
+  "A New Beginning#209": {
    "src": "Follow Syndra to the resistance base at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki direniş üssüne giderken Syndra'yı takip et.",
    "role": "desc",
@@ -1860,7 +2110,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#204": {
+  "A New Beginning#210": {
    "src": "There you are, {u}. I see you found your way here alright.",
    "dst": "İşte buradasın, {u}. Yolu sorunsuz bulmuşsun.",
    "role": "desc",
@@ -1870,7 +2120,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#205": {
+  "A New Beginning#211": {
    "src": "If you're going to be joining us, I should introduce you to the others.",
    "dst": "Bize katılacaksan seni diğerleriyle tanıştırmalıyım.",
    "role": "desc",
@@ -1880,7 +2130,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#206": {
+  "A New Beginning#212": {
    "src": "Ahem... Children, come on out! We have a new member I'd like you to meet.",
    "dst": "Ahem... Çocuklar, dışarı gelin! Tanışmanızı istediğim yeni bir üyemiz var.",
    "role": "desc",
@@ -1890,7 +2140,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#207": {
+  "A New Beginning#213": {
    "src": "We m-meet again! I knew you'd be a g-good fit!",
    "dst": "Yine k-karşılaştık! Bize u-uyacağını biliyordum!",
    "role": "desc",
@@ -1900,7 +2150,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#208": {
+  "A New Beginning#214": {
    "src": "Yeah, Zeph, we know. You've been saying so for hours...",
    "dst": "Evet Zeph, biliyoruz. Saatlerdir bunu söyleyip duruyorsun...",
    "role": "desc",
@@ -1910,7 +2160,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#209": {
+  "A New Beginning#215": {
    "src": "Ah, lighten up Rex. Welcome to the Leaves, friend! No matter your origin, if Syndra believes you to be trustworthy, it must be so.",
    "dst": "Ah, biraz gevşe Rex. Leaves'e hoş geldin, dostum! Nereden gelirsen gel, Syndra güvenilir olduğuna inanıyorsa öyledir.",
    "role": "desc",
@@ -1920,7 +2170,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#210": {
+  "A New Beginning#216": {
    "src": "On that subject, {u} here is from outside of our province. They'll be joining our resistance against the crown...",
    "dst": "Bu konuda, buradaki {u} eyaletimizin dışından geliyor. Taca karşı direnişimize katılacak...",
    "role": "desc",
@@ -1930,7 +2180,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#211": {
+  "A New Beginning#217": {
    "src": "...and, hopefully, they'll be able to help me resolve some theories I have on the nature of curses and blessings.",
    "dst": "...ve umarım lanetlerin ve lütufların doğasıyla ilgili bazı teorilerimi çözmeme yardım edebilir.",
    "role": "desc",
@@ -1940,7 +2190,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#212": {
+  "A New Beginning#218": {
    "src": "Oh... they're cursed...?",
    "dst": "Ah... lanetli mi...?",
    "role": "desc",
@@ -1950,7 +2200,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#213": {
+  "A New Beginning#219": {
    "src": "Yes. But they're no threat to us. We share the same enemies. And, having that power on our side could make a huge difference for our efforts.",
    "dst": "Evet. Ama bize bir tehdit değil. Düşmanlarımız ortak. Ve o gücün bizim tarafımızda olması çabalarımızda büyük fark yaratabilir.",
    "role": "desc",
@@ -1960,7 +2210,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#214": {
+  "A New Beginning#220": {
    "src": "Hm... are you certain, miss? I do trust your judgment, but perhaps it would be best to err on the side of caution when dealing with the cursed.",
    "dst": "Hm... emin misiniz, hanımım? Kararınıza güvenirim ama lanetlilerle uğraşırken temkinli davranmak en iyisi olabilir.",
    "role": "desc",
@@ -1970,7 +2220,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#215": {
+  "A New Beginning#221": {
    "src": "The curse is the least of our problems! Are we really blindly trusting someone who says they're from Wynn? People don't just... just... come back from there!",
    "dst": "Lanet sorunların en küçüğü! Wynn'den geldiğini söyleyen birine gerçekten körü körüne mi güveneceğiz? İnsanlar oradan öylece... öylece... geri dönmez!",
    "role": "desc",
@@ -1980,7 +2230,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#216": {
+  "A New Beginning#222": {
    "src": "That's enough, Rex. I understand your misgivings, but I have reasons for my trust. I would ask you to have faith in me.",
    "dst": "Yeter, Rex. Kuşkularını anlıyorum ama güvenmek için sebeplerim var. Bana inanmanı istiyorum.",
    "role": "desc",
@@ -1990,7 +2240,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#217": {
+  "A New Beginning#223": {
    "src": "...fine. Whatever.",
    "dst": "...peki. Her neyse.",
    "role": "desc",
@@ -2000,7 +2250,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#218": {
+  "A New Beginning#224": {
    "src": "Now. I still need to acquire the proper papers for {u} to be able to access {p}. In the meantime, why don't you all get to know each other properly?",
    "dst": "Şimdi. {u} adlı arkadaşımızın {p} şehrine girebilmesi için hâlâ uygun belgeleri ayarlamam gerekiyor. Bu arada neden hepiniz birbirinizi düzgünce tanımıyorsunuz?",
    "role": "desc",
@@ -2010,7 +2260,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#219": {
+  "A New Beginning#225": {
    "src": "I'll be back shortly.",
    "dst": "Birazdan dönerim.",
    "role": "desc",
@@ -2020,7 +2270,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#221": {
+  "A New Beginning#226": {
    "src": "...What do you want? Do you need something?",
    "dst": "...Ne istiyorsun? Bir şeye mi ihtiyacın var?",
    "role": "desc",
@@ -2030,7 +2280,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#222": {
+  "A New Beginning#227": {
    "src": "I... shoot things? With my bow?",
    "dst": "Ben... bir şeyleri vururum? Yayımla?",
    "role": "desc",
@@ -2040,8 +2290,8 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#224": {
-   "src": "...You don't know. Because look, it doesn't matter what I do! Not to you, at least.",
+  "A New Beginning#228": {
+   "src": "...You don't know. Because- look, it doesn't matter what I do! Not to you, at least.",
    "dst": "...Bilmiyorsun. Çünkü bak, ne yaptığımın bir önemi yok! En azından senin için.",
    "role": "desc",
    "kind": "dialogue",
@@ -2050,7 +2300,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#225": {
+  "A New Beginning#229": {
    "src": "What, are you looking for gossip?",
    "dst": "Ne o, dedikodu mu arıyorsun?",
    "role": "desc",
@@ -2060,7 +2310,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#226": {
+  "A New Beginning#230": {
    "src": "Well, you're not going to get any out of me.",
    "dst": "Benden alamazsın.",
    "role": "desc",
@@ -2070,7 +2320,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#228": {
+  "A New Beginning#231": {
    "src": "Nevermind. Doesn't matter.",
    "dst": "Boş ver. Önemli değil.",
    "role": "desc",
@@ -2080,7 +2330,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#229": {
+  "A New Beginning#232": {
    "src": "You're cursed, and you say you're from Wynn. Both of those are problems.",
    "dst": "Lanetlisin ve Wynn'den geldiğini söylüyorsun. İkisi de sorun.",
    "role": "desc",
@@ -2090,7 +2340,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#230": {
+  "A New Beginning#233": {
    "src": "I don't know what Syndra sees in you... but whatever it is, it'd better make up for both of those things.",
    "dst": "Syndra sende ne görüyor bilmiyorum... ama her neyse, bu ikisini telafi etse iyi olur.",
    "role": "desc",
@@ -2100,7 +2350,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#231": {
+  "A New Beginning#234": {
    "src": "...okay? Whatever.",
    "dst": "...tamam? Her neyse.",
    "role": "desc",
@@ -2120,7 +2370,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#239": {
+  "A New Beginning#236": {
    "src": "Ah! Yes, well, these are not our full numbers. The others live elsewhere, either in town or in various villages. They stop by every so often, so perhaps you’ll have the chance to meet them later!",
    "dst": "Ah! Evet, şey, hepimiz bu kadar değiliz. Diğerleri başka yerlerde yaşıyor, ya kasabada ya da çeşitli köylerde. Arada sırada uğrarlar, belki sonra tanışma fırsatın olur!",
    "role": "desc",
@@ -2130,7 +2380,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#240": {
+  "A New Beginning#237": {
    "src": "We all are the ones who live here full-time. Nowhere else in particular we can go, if you catch my meaning.",
    "dst": "Burada sürekli yaşayanlar bizleriz. Gidebileceğimiz başka bir yer yok pek, ne demek istediğimi anlıyorsan.",
    "role": "desc",
@@ -2140,7 +2390,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#241": {
+  "A New Beginning#238": {
    "src": "If you’re from beyond our province’s walls, I expect we’ll be wanting to set you up with a room of your own sometime… but we can discuss that later.",
    "dst": "Eyaletimizin duvarlarının ötesinden geldiysen, bir ara sana kendi odanı ayarlamak isteriz herhalde… ama bunu sonra konuşuruz.",
    "role": "desc",
@@ -2150,7 +2400,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#242": {
+  "A New Beginning#239": {
    "src": "Indeed. I hope we can do some good work together, young leaf!",
    "dst": "Aynen öyle. Umarım birlikte güzel işler yaparız, genç yaprak!",
    "role": "desc",
@@ -2160,7 +2410,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#243": {
+  "A New Beginning#240": {
    "src": "Um... nice to meet you, I guess?",
    "dst": "Şey... memnun oldum, sanırım?",
    "role": "desc",
@@ -2170,7 +2420,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#244": {
+  "A New Beginning#241": {
    "src": "Oh... I take care of the injured. I also cook... sometimes.",
    "dst": "Ah... yaralılarla ben ilgileniyorum. Bir de yemek yapıyorum... bazen.",
    "role": "desc",
@@ -2180,7 +2430,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#245": {
+  "A New Beginning#242": {
    "src": "I'm not really much of a fighter... not much of, um, anything, really.",
    "dst": "Pek savaşçı sayılmam... pek, şey, hiçbir şey sayılmam aslında.",
    "role": "desc",
@@ -2190,7 +2440,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#246": {
+  "A New Beginning#243": {
    "src": "I'm mostly just here because of Mora... he's, um, my brother.",
    "dst": "Burada çoğunlukla Mora yüzünden varım... o, şey, ağabeyim.",
    "role": "desc",
@@ -2200,7 +2450,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#247": {
+  "A New Beginning#244": {
    "src": "Yeah.",
    "dst": "Evet.",
    "role": "desc",
@@ -2210,7 +2460,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#249": {
+  "A New Beginning#245": {
    "src": "I'm g-glad you were able to c-convince Syndra to let you j-join! It'll be n-nice having someone new a-around.",
    "dst": "Syndra'yı katılmana i-ikna edebilmene s-sevindim! Etrafta yeni birinin o-olması güzel olacak.",
    "role": "desc",
@@ -2220,7 +2470,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#250": {
+  "A New Beginning#246": {
    "src": "S-so... what do you need?",
    "dst": "E-eee... neye ihtiyacın var?",
    "role": "desc",
@@ -2230,7 +2480,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#251": {
+  "A New Beginning#247": {
    "src": "I... d-don't know, actually. It looks like she's h-heading towards the F-Frog Tavern... but why...?",
    "dst": "Ben... b-bilmiyorum aslında. F-Frog Tavern'a doğru g-gidiyor gibi... ama neden...?",
    "role": "desc",
@@ -2240,7 +2490,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#252": {
+  "A New Beginning#248": {
    "src": "Hey... {u}. How'd you l-like to have your first of-official resistance mission with me?",
    "dst": "Hey... {u}. İlk r-resmi direniş görevini benimle yapmaya ne dersin?",
    "role": "desc",
@@ -2250,7 +2500,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#253": {
+  "A New Beginning#249": {
    "src": "I-I want to f-follow her and see what she g-gets up to at a r-random bar, of all places...",
    "dst": "O-onu takip edip sıradan bir m-meyhanede, hem de orada, n-ne işler çevirdiğini görmek istiyorum...",
    "role": "desc",
@@ -2260,7 +2510,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#254": {
+  "A New Beginning#250": {
    "src": "You know, I-I-I've always suspected that the t-tavern isn't what it a-appears to be!",
    "dst": "Biliyor musun, b-b-ben hep o meyhanenin g-göründüğü gibi olmadığından şüphelenmişimdir!",
    "role": "desc",
@@ -2270,7 +2520,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#255": {
+  "A New Beginning#251": {
    "src": "...Everyone else thinks I'm p-paranoid.",
    "dst": "...Herkes p-paranoyak olduğumu düşünüyor.",
    "role": "desc",
@@ -2280,7 +2530,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#256": {
+  "A New Beginning#252": {
    "src": "Y-yeah! Th-that's the spirit!",
    "dst": "E-evet! İ-işte bu!",
    "role": "desc",
@@ -2290,7 +2540,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#257": {
+  "A New Beginning#253": {
    "src": "Wh- I- n-no! I j-just want to m-m-make sure she's okay. Th-that's all.",
    "dst": "N- Ben- h-hayır! Sadece i-iyi olduğundan e-e-emin olmak istiyorum. B-bu kadar.",
    "role": "desc",
@@ -2300,7 +2550,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#258": {
+  "A New Beginning#254": {
    "src": "Let's m-meet up at the tavern. It's j-just to the north of here.",
    "dst": "Meyhanede b-buluşalım. Hemen b-buranın kuzeyinde.",
    "role": "desc",
@@ -2310,7 +2560,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#259": {
+  "A New Beginning#255": {
    "src": "I m-mainly gather intel for the resistance! Th-that usually involves needing to st-stay hidden.",
    "dst": "Direniş için ç-çoğunlukla bilgi toplarım! B-bu da genelde g-gizli kalmayı gerektirir.",
    "role": "desc",
@@ -2320,7 +2570,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#260": {
+  "A New Beginning#256": {
    "src": "I've picked up a t-t-trick or two over the y-years.",
    "dst": "Yıllar içinde b-b-bir iki numara öğrendim.",
    "role": "desc",
@@ -2330,7 +2580,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#261": {
+  "A New Beginning#257": {
    "src": "S-sometimes I sell stuff I f-find in the forest in town! B-but that's not really f-for the resistance. That's for m-me.",
    "dst": "B-bazen ormanda b-bulduğum şeyleri kasabada satarım! A-ama o direniş için değil. O b-benim için.",
    "role": "desc",
@@ -2340,7 +2590,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#262": {
+  "A New Beginning#258": {
    "src": "Huh? Oh, r-right! I was l-looking for guard rotations, for th-the upcoming festival.",
    "dst": "Ha? Ah, d-doğru! Yaklaşan festival için m-muhafız nöbet çizelgelerine b-bakıyordum.",
    "role": "desc",
@@ -2350,7 +2600,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#263": {
+  "A New Beginning#259": {
    "src": "S-security is usually pretty high, so... it's g-good to know where and when is s-s-safe.",
    "dst": "G-güvenlik genelde epey sıkı olur, yani... nerenin ne zaman g-g-güvenli olduğunu bilmek iyidir.",
    "role": "desc",
@@ -2360,7 +2610,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#264": {
+  "A New Beginning#260": {
    "src": "I-I've been wondering the s-same thing...",
    "dst": "B-ben de aynı şeyi merak e-ediyordum...",
    "role": "desc",
@@ -2370,7 +2620,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#265": {
+  "A New Beginning#261": {
    "src": "She usually isn't l-like this! I wonder if s-something's wrong...",
    "dst": "Normalde b-böyle değildir! A-acaba bir sorun mu var...",
    "role": "desc",
@@ -2380,7 +2630,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#266": {
+  "A New Beginning#262": {
    "src": "...I can t-talk to her about it later.",
    "dst": "...Sonra onunla k-konuşurum.",
    "role": "desc",
@@ -2390,7 +2640,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#267": {
+  "A New Beginning#263": {
    "src": "It's g-good to have you!",
    "dst": "Aramızda olman ç-çok güzel!",
    "role": "desc",
@@ -2400,7 +2650,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#268": {
+  "A New Beginning#264": {
    "src": "Meet up with Zeph outside the Frog Tavern at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki Frog Tavern'ın önünde Zeph ile buluş.",
    "role": "desc",
@@ -2410,7 +2660,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#269": {
+  "A New Beginning#265": {
    "src": "W-wait. We can't j-just go through the f-front, she'll s-see us.",
    "dst": "D-dur. Öylece ö-önden giremeyiz, b-bizi görür.",
    "role": "desc",
@@ -2420,7 +2670,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#270": {
+  "A New Beginning#266": {
    "src": "C-come on, follow me!",
    "dst": "H-hadi, beni takip et!",
    "role": "desc",
@@ -2430,7 +2680,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#271": {
+  "A New Beginning#267": {
    "src": "You'll get s-spotted! Let's get in from above i-instead.",
    "dst": "G-görüleceksin! Onun y-yerine yukarıdan girelim.",
    "role": "desc",
@@ -2440,7 +2690,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#272": {
+  "A New Beginning#268": {
    "src": "Sneak into the Frog Tavern at [-{~}, {~}, -{~}].",
    "dst": "[-{~}, {~}, -{~}] konumundaki Frog Tavern'a gizlice gir.",
    "role": "desc",
@@ -2450,7 +2700,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A New Beginning#273": {
+  "A New Beginning#269": {
    "src": "R-right behind you. D-don't get spotted!",
    "dst": "H-hemen arkandayım. S-sakın görünme!",
    "role": "desc",
@@ -2460,7 +2710,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#274": {
+  "A New Beginning#270": {
    "src": "Th-there she is! I w-wonder what she's",
    "dst": "İ-işte orada! Acaba n-ne",
    "role": "desc",
@@ -2470,7 +2720,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#275": {
+  "A New Beginning#271": {
    "src": "... W-wait. Is that...",
    "dst": "... D-dur. Bu...",
    "role": "desc",
@@ -2480,7 +2730,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#276": {
+  "A New Beginning#272": {
    "src": "Sovereign.",
    "dst": "Hükümdar.",
    "role": "desc",
@@ -2490,7 +2740,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#277": {
+  "A New Beginning#273": {
    "src": "You interrupt my sequence like this and won't even say my name? Come on, now.",
    "dst": "Düzenimi böyle bozuyorsun, bir de adımı bile söylemiyor musun? Hadi ama.",
    "role": "desc",
@@ -2500,7 +2750,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#278": {
+  "A New Beginning#274": {
    "src": "Bartender, my usual mix. I need a boost.",
    "dst": "Barmen, her zamanki karışımım. Biraz enerjiye ihtiyacım var.",
    "role": "desc",
@@ -2510,7 +2760,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#279": {
+  "A New Beginning#275": {
    "src": "You seem... stressed.",
    "dst": "Biraz... stresli görünüyorsun.",
    "role": "desc",
@@ -2520,7 +2770,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#280": {
+  "A New Beginning#276": {
    "src": "Oh, thank you for noticing! It's because of the stress. Look, I know you're aware of the attack on Torann by now. You've always kept up with the details.",
    "dst": "Ah, fark ettiğin için teşekkürler! Stresten. Bak, Torann'a yapılan saldırıdan artık haberin olduğunu biliyorum. Ayrıntıları hep takip edersin.",
    "role": "desc",
@@ -2530,7 +2780,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#281": {
+  "A New Beginning#277": {
    "src": "But how about we accelerate this. You know how little time I have and you didn't bring me here just for drinks.",
    "dst": "Ama şunu hızlandıralım mı? Ne kadar az vaktim olduğunu biliyorsun ve beni buraya sadece içki için çağırmadın.",
    "role": "desc",
@@ -2540,7 +2790,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#282": {
+  "A New Beginning#278": {
    "src": "Skipping the small talk, I see. Are my intentions really that transparent?",
    "dst": "Hal hatır kısmını geçiyoruz demek. Niyetim gerçekten o kadar belli mi?",
    "role": "desc",
@@ -2550,7 +2800,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#283": {
+  "A New Beginning#279": {
    "src": "Predictable, more like, after all this time. You've always got an angle you're working towards when you call me here.",
    "dst": "Bunca zamandan sonra daha çok tahmin edilebilir diyelim. Beni buraya çağırdığında hep bir hesabın olur.",
    "role": "desc",
@@ -2560,7 +2810,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#284": {
+  "A New Beginning#280": {
    "src": "Maybe I just like the ambience.",
    "dst": "Belki sadece ortamı seviyorumdur.",
    "role": "desc",
@@ -2570,7 +2820,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#285": {
+  "A New Beginning#281": {
    "src": "...I need another passport. Same as the rest.",
    "dst": "...Bir pasaport daha lazım. Diğerleri gibi.",
    "role": "desc",
@@ -2580,7 +2830,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#286": {
+  "A New Beginning#282": {
    "src": "Naturally. You and your trend for collecting strays... Really you should just start a family by this point.",
    "dst": "Tabii ya. Sen ve şu sahipsizleri toplama huyun... Artık resmen bir aile kursan iyi olur.",
    "role": "desc",
@@ -2590,7 +2840,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#287": {
+  "A New Beginning#283": {
    "src": "You of all people should know that I can't just stand by and leave them to fend for themselves.",
    "dst": "Herkesten çok sen bilmelisin ki öylece kenarda durup onları kendi başlarının çaresine bakmaya bırakamam.",
    "role": "desc",
@@ -2600,7 +2850,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#289": {
+  "A New Beginning#284": {
    "src": "Of course. As I always do.",
    "dst": "Elbette. Her zaman yaptığım gibi.",
    "role": "desc",
@@ -2610,7 +2860,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#290": {
+  "A New Beginning#285": {
    "src": "Ha! \"Always.\" If I were a gambling man I'd never bet on your odds.",
    "dst": "Ha! \"Her zaman.\" Kumarbaz biri olsam senin şansına asla bahse girmezdim.",
    "role": "desc",
@@ -2620,7 +2870,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#291": {
+  "A New Beginning#286": {
    "src": "I need to get moving. There's always something that needs me to crunch the numbers... and today's events have only added to the pile.",
    "dst": "Gitmem lazım. Hesap kitap yapmamı bekleyen hep bir şey vardır... bugünün olayları da yığına eklendi.",
    "role": "desc",
@@ -2630,7 +2880,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#292": {
+  "A New Beginning#287": {
    "src": "I certainly wouldn't want to delay you, Sovereign. I hope you manage to sort out all these problems.",
    "dst": "Seni kesinlikle geciktirmek istemem, Hükümdar. Umarım bütün bu sorunları çözersin.",
    "role": "desc",
@@ -2640,7 +2890,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#293": {
+  "A New Beginning#288": {
    "src": "Oh, we will. It's only a matter of time. Take care, Syndra. Keep it constant.",
    "dst": "Ah, çözeceğiz. Sadece zaman meselesi. Kendine iyi bak, Syndra. Sabit kal.",
    "role": "desc",
@@ -2650,7 +2900,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "A New Beginning#295": {
+  "A New Beginning#289": {
    "src": "Sigh. You may as well come down now. Zeph, {u}.",
    "dst": "Of. Artık aşağı inebilirsiniz. Zeph, {u}.",
    "role": "desc",
@@ -2660,7 +2910,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#296": {
+  "A New Beginning#290": {
    "src": "D-damn it... Sh-she spotted us.",
    "dst": "K-kahretsin... B-bizi gördü.",
    "role": "desc",
@@ -2670,7 +2920,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#297": {
+  "A New Beginning#291": {
    "src": "That was... risky. You're lucky he didn't look up.",
    "dst": "Bu... riskliydi. Yukarı bakmadığı için şanslısınız.",
    "role": "desc",
@@ -2680,7 +2930,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#298": {
+  "A New Beginning#292": {
    "src": "S-sure, but- b-but what were you d-doing meeting up w-with him?!",
    "dst": "T-tamam, ama- a-ama onunla b-buluşup ne yapıyordun?!",
    "role": "desc",
@@ -2690,7 +2940,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#299": {
+  "A New Beginning#293": {
    "src": "Its... complicated we have something of an agreement. What matters is that everything is taken care of. Since you're here, {u}, take this. Your passport.",
    "dst": "Bu... karışık bir anlaşmamız var gibi bir şey. Önemli olan her şeyin halledilmiş olması. Hazır buradasın, {u}, al bunu. Pasaportun.",
    "role": "desc",
@@ -2700,7 +2950,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#300": {
+  "A New Beginning#294": {
    "src": "It's... complicated - we have something of an agreement. What matters is that everything is taken care of. Since you're here, {u}, take this. Your passport.",
    "dst": "Bu... karışık - bir tür anlaşmamız var. Önemli olan her şeyin halledilmiş olması. Hazır buradasın, {u}, al bunu. Pasaportun.",
    "role": "desc",
@@ -2710,7 +2960,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#301": {
+  "A New Beginning#295": {
    "src": "He's... h-he's with the c-crown, though. H-how can you t-trust him?",
    "dst": "O... o t-taçtan biri ama. Ona n-nasıl g-güvenebilirsin?",
    "role": "desc",
@@ -2720,7 +2970,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#303": {
+  "A New Beginning#296": {
    "src": "I had hoped to keep this a secret for a reason... but what's done is done. Just... don't do anything rash, would you?",
    "dst": "Bunu bir sebeple gizli tutmayı ummuştum... ama olan oldu. Sadece... düşüncesizce bir şey yapmayın, olur mu?",
    "role": "desc",
@@ -2730,7 +2980,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#304": {
+  "A New Beginning#297": {
    "src": "{u}, your passport will let you enter the city. I'd suggest you take some time to visit and look around, to familiarize yourself with the place.",
    "dst": "{u}, pasaportun şehre girmeni sağlayacak. Biraz vakit ayırıp şehri gezmeni, oraya alışmanı öneririm.",
    "role": "desc",
@@ -2740,7 +2990,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#305": {
+  "A New Beginning#298": {
    "src": "And when you have time... I'd like to follow up on our discussion we had earlier. I think it's time we start taking steps forward.",
    "dst": "Vaktin olduğunda da... daha önce yaptığımız konuşmanın devamını getirmek isterim. Sanırım ileriye adım atmaya başlamanın zamanı geldi.",
    "role": "desc",
@@ -2750,7 +3000,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#306": {
+  "A New Beginning#299": {
    "src": "I'll be returning to our home. Zeph, you can come with me if you'd like.",
    "dst": "Ben evimize dönüyorum. Zeph, istersen benimle gelebilirsin.",
    "role": "desc",
@@ -2760,7 +3010,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "A New Beginning#307": {
+  "A New Beginning#300": {
    "src": "I-I guess... S-see you later, {u}.",
    "dst": "S-sanırım... S-sonra görüşürüz, {u}.",
    "role": "desc",
@@ -2770,7 +3020,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#309": {
+  "A New Beginning#301": {
    "src": "Ugh. What do you want? I'm clearly busy.",
    "dst": "Off. Ne istiyorsun? Meşgul olduğum belli.",
    "role": "desc",
@@ -2780,7 +3030,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#310": {
+  "A New Beginning#302": {
    "src": "...what?",
    "dst": "...ne?",
    "role": "desc",
@@ -2790,7 +3040,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#311": {
+  "A New Beginning#303": {
    "src": "No, just... leave me alone, okay? I don't want to talk to you.",
    "dst": "Hayır, sadece... beni rahat bırak, tamam mı? Seninle konuşmak istemiyorum.",
    "role": "desc",
@@ -2800,7 +3050,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "A New Beginning#314": {
+  "A New Beginning#304": {
    "src": "Ah! You ca-caught- caught me off guard. How's your time in Auburn bee-been?",
    "dst": "Ah! Beni ha-hazırlıksız- hazırlıksız yakaladın. Auburn'deki vaktin na-nasıl geçti?",
    "role": "desc",
@@ -2810,7 +3060,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#315": {
+  "A New Beginning#305": {
    "src": "Yup! I've s-s-stayed here the longest so I've ma-managed to gather quite the assortment of useful stuff. Rex w-w-would call it junk but...",
    "dst": "Evet! Burada en uzun ben k-k-kaldım, o yüzden epey işe yarar ı-ıvır zıvır toplamayı başardım. Rex b-b-buna çöp derdi ama...",
    "role": "desc",
@@ -2820,7 +3070,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#316": {
+  "A New Beginning#306": {
    "src": "An old friend a-actually helped me make this training dum-dummy.",
    "dst": "Bu antrenman ku-kuklasını yapmama aslında eski bir arkadaşım yardım etti.",
    "role": "desc",
@@ -2830,7 +3080,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#317": {
+  "A New Beginning#307": {
    "src": "Gotta stay on t-top of my training! Especially with you here.",
    "dst": "Antrenmanımı a-aksatmamalıyım! Özellikle sen buradayken.",
    "role": "desc",
@@ -2840,7 +3090,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#318": {
+  "A New Beginning#308": {
    "src": "Besides, I wa-wa-want I want to be able to help when it matters.",
    "dst": "Hem, ö-ö-önemli olduğunda yardım edebilmek istiyorum, istiyorum.",
    "role": "desc",
@@ -2850,7 +3100,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#319": {
+  "A New Beginning#309": {
    "src": "We should t-train together some day.",
    "dst": "Bir gün birlikte a-antrenman yapmalıyız.",
    "role": "desc",
@@ -2860,7 +3110,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "A New Beginning#320": {
+  "A New Beginning#310": {
    "src": "...oh. Um, hi.",
    "dst": "...ah. Şey, selam.",
    "role": "desc",
@@ -2870,7 +3120,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#321": {
+  "A New Beginning#311": {
    "src": "Did you... need help with anything?",
    "dst": "Bir şey için... yardıma mı ihtiyacın var?",
    "role": "desc",
@@ -2880,7 +3130,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#322": {
+  "A New Beginning#312": {
    "src": "Mhm! Me, Zeph, Rex, and Mora all, um, have rooms here. Oh, and Syndra, too. And Kaio lives nearby too...",
    "dst": "Hı hı! Ben, Zeph, Rex ve Mora, şey, burada hepimizin odası var. Ah, Syndra'nın da. Kaio da yakınlarda yaşıyor...",
    "role": "desc",
@@ -2890,7 +3140,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#323": {
+  "A New Beginning#313": {
    "src": "I've... been meaning to decorate some more. You know... make it more, um, homely.",
    "dst": "Ben... biraz daha süslemeyi düşünüyordum. Bilirsin... daha, şey, ev gibi yapmak.",
    "role": "desc",
@@ -2900,7 +3150,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#324": {
+  "A New Beginning#314": {
    "src": "...but life's been getting in the way, I suppose.",
    "dst": "...ama hayat araya giriyor işte.",
    "role": "desc",
@@ -2910,7 +3160,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#325": {
+  "A New Beginning#315": {
    "src": "Um! I d-don't, ha, judge me for this, but... I'm, um, writing in my diary.",
    "dst": "Şey! Ben- y-yargılama, ha, ama... şey, günlüğüme yazıyorum.",
    "role": "desc",
@@ -2920,7 +3170,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#326": {
+  "A New Beginning#316": {
    "src": "...a-and before you ask! No!! You're, um, not allowed to read it.",
    "dst": "...v-ve sormadan söyleyeyim! Hayır!! Şey, okuman yasak.",
    "role": "desc",
@@ -2930,7 +3180,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#327": {
+  "A New Beginning#317": {
    "src": "...thank you. I'll, um, see you later.",
    "dst": "...teşekkürler. Şey, sonra görüşürüz.",
    "role": "desc",
@@ -2940,7 +3190,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "A New Beginning#328": {
+  "A New Beginning#318": {
    "src": "Hmm... Delivering mail from river settlement to {p}... Kaio... Check... Hmmm.",
    "dst": "Hmm... Nehir yerleşiminden {p} şehrine posta teslimi... Kaio... Tamam... Hmmm.",
    "role": "desc",
@@ -2950,7 +3200,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#329": {
+  "A New Beginning#319": {
    "src": "Ah! {u}, do you require my assistance?",
    "dst": "Ah! {u}, yardımıma ihtiyacın var mı?",
    "role": "desc",
@@ -2960,7 +3210,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#330": {
+  "A New Beginning#320": {
    "src": "Ah... You overheard me talking to myself, then. Hoh!",
    "dst": "Ah... Demek kendi kendime konuştuğumu duydun. Hoh!",
    "role": "desc",
@@ -2970,7 +3220,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#331": {
+  "A New Beginning#321": {
    "src": "I am just writing and filing some reports I had forgotten about. We are trying to keep better track of our activities throughout the forest, you see.",
    "dst": "Sadece unuttuğum bazı raporları yazıp dosyalıyorum. Orman boyunca yaptığımız faaliyetlerin kaydını daha iyi tutmaya çalışıyoruz da.",
    "role": "desc",
@@ -2980,7 +3230,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A New Beginning#332": {
+  "A New Beginning#322": {
    "src": "Mmn... So, you're cursed, then?",
    "dst": "Hımm... Demek lanetlisin, ha?",
    "role": "desc",
@@ -2990,7 +3240,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#333": {
+  "A New Beginning#323": {
    "src": "Hm... I guess not, thinking on it now. A few years ago, had you asked, I'd've probably said yes. But I don't got the strength in me for it anymore.",
    "dst": "Hm... şimdi düşününce, sanırım değil. Birkaç yıl önce sorsaydın muhtemelen evet derdim. Ama artık içimde ona güç kalmadı.",
    "role": "desc",
@@ -3000,7 +3250,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#334": {
+  "A New Beginning#324": {
    "src": "It's good your arrival has given Syndra and the younguns some hope, for once. We've been a bit, eh... lacking in it lately.",
    "dst": "Gelişinin Syndra'ya ve gençlere bir kez olsun umut vermesi iyi. Son zamanlarda bizde o biraz, eh... eksikti.",
    "role": "desc",
@@ -3010,7 +3260,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#335": {
+  "A New Beginning#325": {
    "src": "I've got no such delusions, unfortunately. I reckon this path only ends in tragedy. But it's not my place to say so, so I don't.",
    "dst": "Ne yazık ki bende öyle hayaller yok. Bence bu yolun sonu felaket. Ama bunu söylemek bana düşmez, o yüzden söylemem.",
    "role": "desc",
@@ -3020,7 +3270,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#336": {
+  "A New Beginning#326": {
    "src": "Would be good to be proven wrong... but I don't think I will be. I've seen this sorta thing before.",
    "dst": "Yanıldığımın kanıtlanması iyi olurdu... ama yanılacağımı sanmıyorum. Böyle şeyleri daha önce gördüm.",
    "role": "desc",
@@ -3030,7 +3280,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#337": {
+  "A New Beginning#327": {
    "src": "...what? I got nothin' else to say.",
    "dst": "...ne? Başka diyeceğim bi' şey yok.",
    "role": "desc",
@@ -3040,7 +3290,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#338": {
+  "A New Beginning#328": {
    "src": "Interesting that you're drawn to that grave in particular. S'our latest loss, that'n there.",
    "dst": "Özellikle o mezara ilgi duyman ilginç. Son kaybımız o, şuradaki.",
    "role": "desc",
@@ -3050,7 +3300,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#339": {
+  "A New Beginning#329": {
    "src": "It's a damn shame. A tragedy each 'n every time, yet still happens often enough to feel routine. But that's life, I reckon.",
    "dst": "Lanet olası bir yazık. Her seferinde bir felaket, yine de alışkanlık gibi gelecek kadar sık oluyor. Ama hayat bu, sanırım.",
    "role": "desc",
@@ -3060,7 +3310,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#340": {
+  "A New Beginning#330": {
    "src": "...did you now? Funny thing to say about a dead man, considering I ain't ever seen you 'round these parts before.",
    "dst": "...öyle mi? Ölü bir adam için tuhaf bi' laf, hele seni buralarda daha önce hiç görmemişken.",
    "role": "desc",
@@ -3070,7 +3320,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#341": {
+  "A New Beginning#331": {
    "src": "Now, spill. 'Fore I go and tell Synny you ain't no good after all.",
    "dst": "Hadi, dök içini. Gidip Synny'ye zaten iyi biri olmadığını söylemeden önce.",
    "role": "desc",
@@ -3080,7 +3330,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#342": {
+  "A New Beginning#332": {
    "src": "Ah... caught Rex muttering something 'bout that once or twice before. Poor girl... it'd do her well to set it aside, for a time.",
    "dst": "Ah... Rex'in bir iki kere bununla ilgili bir şeyler mırıldandığını duymuştum. Zavallı kız... bir süre bunu bir kenara koysa iyi olur.",
    "role": "desc",
@@ -3090,7 +3340,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#343": {
+  "A New Beginning#333": {
    "src": "Didn't think much of it, but I suppose you're livin' proof, aren'tcha? Strange as can be...",
    "dst": "Pek üstünde durmamıştım ama galiba sen yaşayan kanıtısın, değil mi? Tuhaf mı tuhaf...",
    "role": "desc",
@@ -3100,7 +3350,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#344": {
+  "A New Beginning#334": {
    "src": "Say, is the memory wipin' a real thing? Got no damn clue where that theory started, but... well, if one thing's true, why not the rest?",
    "dst": "Baksana, hafıza silme olayı gerçek mi? Bu teori nereden çıktı hiç bilmiyorum ama... eh, biri doğruysa diğerleri neden olmasın?",
    "role": "desc",
@@ -3110,7 +3360,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#345": {
+  "A New Beginning#335": {
    "src": "Damn. Damn. That's rough. That real rough, ain't it. And you're tellin' me that's where he ended up?",
    "dst": "Lanet. Lanet olsun. Bu ağır. Çok ağır, değil mi. Ve sen bana onun oraya düştüğünü mü söylüyorsun?",
    "role": "desc",
@@ -3120,7 +3370,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#346": {
+  "A New Beginning#336": {
    "src": "Hrm... y'know, it's funny. Big guy like him, you wouldn't take him for a thief. Hard to keep hidden, eh? And yet...",
    "dst": "Hrm... bilirsin, komik. Onun gibi iri bir adamı hırsız sanmazsın. Saklanması zor, ha? Ama yine de...",
    "role": "desc",
@@ -3130,7 +3380,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#347": {
+  "A New Beginning#337": {
    "src": "He'd manage to turn blending into a crowd into an art. No matter where he was, who he spoke to, how he was actin', he'd always seem like he fit right in.",
    "dst": "Kalabalığa karışmayı sanata dönüştürürdü. Nerede olursa olsun, kiminle konuşursa konuşsun, nasıl davranırsa davransın, hep tam oraya aitmiş gibi görünürdü.",
    "role": "desc",
@@ -3140,7 +3390,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#348": {
+  "A New Beginning#338": {
    "src": "...t'was a right stupid risk that did him in, in the end. I told him, I did it ain't worth breaking into the Sovereign's place, especially not during festival times...",
    "dst": "...sonunda onu bitiren düpedüz aptalca bir risk oldu. Söyledim ona, söyledim Hükümdar'ın evine girmeye değmez, hele festival zamanında hiç...",
    "role": "desc",
@@ -3150,7 +3400,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#349": {
+  "A New Beginning#339": {
    "src": "But he was the kinda sort to dig in his heels. Said he'd be fine, said it'd be worth it, nabbin' all those documents. Something to help the cause... I hardly even remember now.",
    "dst": "Ama o inat eden türdendi. Bir şey olmaz dedi, o belgeleri kapmaya değer dedi. Davaya yardım edecek bir şey... şimdi pek hatırlamıyorum bile.",
    "role": "desc",
@@ -3160,7 +3410,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#350": {
+  "A New Beginning#340": {
    "src": "Can't save 'em all. Especially not from themselves. I've learned that many times over, over my years.",
    "dst": "Hepsini kurtaramazsın. Hele kendilerinden hiç. Bunu yıllar içinde defalarca öğrendim.",
    "role": "desc",
@@ -3170,7 +3420,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#351": {
+  "A New Beginning#341": {
    "src": "So he got caught. Heard a cursed one got involved... was a whole damn mess. Sovereign really wasn't happy with Synny when he heard, let me tell you. Ain't seen her that shellshocked in years.",
    "dst": "Sonunda yakalandı. Bir lanetlinin de işe karıştığını duydum... tam bir rezaletti. Hükümdar duyunca Synny'den hiç memnun kalmadı, inan bana. Onu yıllardır o kadar şokta görmemiştim.",
    "role": "desc",
@@ -3180,7 +3430,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#352": {
+  "A New Beginning#342": {
    "src": "...but you're sayin' he lived? How's that all work out?",
    "dst": "...ama yaşadığını mı söylüyorsun? Bu nasıl oldu peki?",
    "role": "desc",
@@ -3190,7 +3440,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#353": {
+  "A New Beginning#343": {
    "src": "Ah. I see. I... see.",
    "dst": "Ah. Anlıyorum. Ben... anlıyorum.",
    "role": "desc",
@@ -3200,7 +3450,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#354": {
+  "A New Beginning#344": {
    "src": "Well... tell me this, then. Was he happy, you think? Out there in the wider world? Did he live a good life?",
    "dst": "Eh... o zaman şunu söyle bana. Mutlu muydu sence? Oralarda, o geniş dünyada? İyi bir hayat yaşadı mı?",
    "role": "desc",
@@ -3210,7 +3460,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#355": {
+  "A New Beginning#345": {
    "src": "...alright. Alrighty. Good. That that's good, y'hear. I... I'm glad for that much.",
    "dst": "...tamam. Pekâlâ. Güzel. Bu bu güzel, duydun mu. Ben... en azından buna seviniyorum.",
    "role": "desc",
@@ -3220,7 +3470,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#356": {
+  "A New Beginning#346": {
    "src": "Thank you for... for tellin' me all that. S'not a tale that ends in happiness, but I reckon so long as he made the most of it... that's all you can really hope for.",
    "dst": "Bunları... bunları bana anlattığın için sağ ol. Mutlu biten bir hikâye değil ama bence elinden gelenin en iyisini yaptıysa... insan ancak bunu umabilir.",
    "role": "desc",
@@ -3230,7 +3480,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A New Beginning#357": {
+  "A New Beginning#347": {
    "src": "Y'may as well leave me be a while, now. Got some thinkin' to get through.",
    "dst": "Artık beni bir süre yalnız bıraksan iyi olur. Düşünmem gereken şeyler var.",
    "role": "desc",
