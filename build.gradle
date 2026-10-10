@@ -818,6 +818,22 @@ tasks.register('runFlowedBlockChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runFlowedBlockChecks' }
 
+tasks.register('runFestivalCardChecks', JavaExec) {
+    group = 'verification'
+    description = '靈魂節小遊戲的說明卡：條列項目連同縮排的續行各自成句'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.FestivalCardTest'
+}
+tasks.named('check') { dependsOn 'runFestivalCardChecks' }
+
+tasks.register('runItemNameContextChecks', JavaExec) {
+    group = 'verification'
+    description = '物品的名字只在物品會出現的位置才算數：名牌、血條、「名字 to 地名」不會變成裝備'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ItemNameContextTest'
+}
+tasks.named('check') { dependsOn 'runItemNameContextChecks' }
+
 tasks.register('runStatRowChecks', JavaExec) {
     group = 'verification'
     description = '裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去'

@@ -390,7 +390,7 @@ public final class SettingsScreen extends Screen {
             case "zh_cn" -> "简";
             case "ja_jp" -> "日";
             case "ko_kr" -> "한";
-            default -> lang.length() >= 2 ? lang.substring(0, 2).toUpperCase() : lang;
+            default -> lang.length() >= 2 ? lang.substring(0, 2).toUpperCase(java.util.Locale.ROOT) : lang;
         };
     }
 
