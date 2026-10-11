@@ -287,6 +287,7 @@ public final class TranslationStore {
         prefixIndex.clear();
         terms.clear();
         uiLabels.clear();
+        pageNames.clear();
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
@@ -533,6 +534,12 @@ public final class TranslationStore {
                 // 不是每個扁平檔都能這樣用：`gui.json` 那種收的是整行，
                 // 把它們全部當成詞會在不相干的句子裡亂換。所以用檔名明說。
                 readFlat(obj, file.getFileName().toString().endsWith("-terms.json"));
+                for (String key : obj.keySet()) {
+                    String name = PageNames.nameOfTitle(key);
+                    if (name != null && name.indexOf('{') < 0) {
+                        pageNames.add(name.strip());   // 見 #isPageName
+                    }
+                }
                 if (file.getFileName().toString().equals(UI_LABELS)) {
                     for (String key : obj.keySet()) {
                         if (!key.startsWith("_")) {
@@ -1358,6 +1365,40 @@ public final class TranslationStore {
     public void setNameMode(com.wynnchayuan.CollectorConfig.ItemNames mode) {
         this.translateNames = mode != com.wynnchayuan.CollectorConfig.ItemNames.OFF;
         this.namesWithOriginal = mode == com.wynnchayuan.CollectorConfig.ItemNames.BOTH;
+    }
+
+    /**
+     * 內容名稱（任務、洞窟、探索點…）照 F6 設定顯示。見 {@link PageNames}。
+     *
+     * <p>跟物品名稱分開一個設定：那一個預設關著（裝備名留原文才對得上交易市場），
+     * 這一個預設是譯名——內容書的標題一直都是翻的。
+     */
+    public void setPageNameMode(com.wynnchayuan.CollectorConfig.ItemNames mode) {
+        this.pageNameMode = mode == null ? com.wynnchayuan.CollectorConfig.ItemNames.ON : mode;
+    }
+
+    /** 見 {@link #setPageNameMode}。 */
+    public com.wynnchayuan.CollectorConfig.ItemNames pageNameMode() {
+        return pageNameMode;
+    }
+
+    private volatile com.wynnchayuan.CollectorConfig.ItemNames pageNameMode =
+            com.wynnchayuan.CollectorConfig.ItemNames.ON;
+
+    /**
+     * 語料裡每一條「名字 [類型]」卡片標題的<b>名字</b>那一段。見 {@link #isPageName}。
+     */
+    private final java.util.Set<String> pageNames = new java.util.HashSet<>();
+
+    /**
+     * 這段字是不是一個內容的名稱（清單那一列送來的裸名）。
+     *
+     * <p>語料裡有「這個名字 [Cave]」「這個名字 [Quest]」這種卡片標題才算——清單與卡片
+     * 是同一批內容，卡片認得的名字清單也認得。{@code Scorched Earth} 這種跟技能撞名的
+     * 洞窟也會中，但呼叫端只在 Wynntils 自己的畫面上問，那裡出現的就是洞窟。
+     */
+    public boolean isPageName(String text) {
+        return text != null && pageNames.contains(text.strip());
     }
 
     /** 見 {@link #setNameMode}：譯名後面要不要括號附原文。 */

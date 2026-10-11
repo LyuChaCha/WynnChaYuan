@@ -248,7 +248,7 @@ public final class SettingsViewTest {
 
     /** 整頁換成兩列時會跟著換的那些列（分段、下拉、滑桿）。 */
     private static final java.util.Set<String> STRETCHY = java.util.Set.of(
-            "items.tooltip", "items.names", "items.shot", "panel.anchor", "panel.side", "panel.gap",
+            "items.tooltip", "items.names", "items.pages", "items.shot", "panel.anchor", "panel.side", "panel.gap",
             "dialogue.mode", "dialogue.choices", "dialogue.hold", "world.nametag", "world.chat",
             "world.tracker", "data.language", "data.fallback", "data.ui", "data.source");
 
@@ -466,6 +466,7 @@ public final class SettingsViewTest {
                     segment("items.tooltip", 0, new Row.Tone[] {a, rp, off}, "mode.panel", "mode.replace", "mode.off"),
                     segment("items.names", 2, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "mode.off"),
                     toggle("items.shiftpeek", true, null),
+                    segment("items.pages", 0, new Row.Tone[] {a, bo, off}, "mode.on", "items.names.both", "items.pages.off"),
                     toggle("items.market", true, null),
                     segment("items.shot", 0, new Row.Tone[] {a, off}, "mode.hotkey", "mode.off")
                             .extra(() -> tr("button.keybinds"), () -> { }));

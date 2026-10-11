@@ -862,6 +862,14 @@ tasks.register('runFetchedLanguagesChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runFetchedLanguagesChecks' }
 
+tasks.register('runPageNamesChecks', JavaExec) {
+    group = 'verification'
+    description = '內容名稱（任務、洞窟…）的三段式顯示：譯名／譯名加原文／保留原文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.PageNamesTest'
+}
+tasks.named('check') { dependsOn 'runPageNamesChecks' }
+
 tasks.register('runStatRowChecks', JavaExec) {
     group = 'verification'
     description = '裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去'

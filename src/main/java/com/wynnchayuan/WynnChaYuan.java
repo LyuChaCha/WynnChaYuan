@@ -157,6 +157,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         }
         translations = new TranslationStore();
         translations.setNameMode(config.itemNames());
+        translations.setPageNameMode(config.pageNames());
         // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
         // 實機那份 308 條裡有 249 條語料早就翻好了，真正的缺口全被淹掉。
         // 用述詞接而不是把 store 交過去，收集端就不必認識翻譯端。
@@ -382,6 +383,7 @@ public final class WynnChaYuan implements ClientModInitializer {
 
     private static void loadLayers() {
         translations.setNameMode(config.itemNames());
+        translations.setPageNameMode(config.pageNames());
         java.util.List<Path> layers = new java.util.ArrayList<>();
         String under = fallbackLanguage();
         if (under != null) {
