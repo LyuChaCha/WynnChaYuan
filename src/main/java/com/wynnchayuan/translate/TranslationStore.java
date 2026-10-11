@@ -297,6 +297,8 @@ public final class TranslationStore {
         market.clear();
         ordered.clear();
         byQuest.clear();
+        questCast.clear();
+        questOfLine.clear();
         playerKeys.clear();
         wordCount.clear();
         fromWiki.clear();
@@ -573,6 +575,63 @@ public final class TranslationStore {
         return key != null && uiLabels.contains(key.strip());
     }
 
+    /** 短於這個長度的開頭不拿來猜：三四個字母對得上的標籤太多。見 {@link #completeUiLabel}。 */
+    private static final int MIN_TRUNCATED_LABEL = 6;
+
+    /**
+     * 被截短的介面標籤原本是哪一條。
+     *
+     * <h2>實機回報（2026-10-10）</h2>
+     * WynnMod 重畫的裝備說明把標籤欄限在固定寬度，放不下的砍掉尾巴接兩個點：
+     *
+     * <pre>
+     *   Elemental Spell Da..  *+366 [92.0%]
+     * </pre>
+     *
+     * 整份說明都翻好了，只有這一列留著英文——「Elemental Spell Da」不是任何一條鍵。
+     *
+     * <h2>怎麼認</h2>
+     * 拿開頭去對 {@code ui-labels.json} 的每一條鍵，<b>只對得上一個標籤</b>才算數。
+     * 同一個屬性的三條鍵（{@code X}、{@code X%}、{@code X Raw}）是同一個標籤的
+     * 三種數值，不算三個；要挑哪一種由呼叫端照數值決定。對得上兩個以上不同的
+     * 標籤就不猜，那一列留原文。
+     *
+     * @param prefix 砍剩的開頭，結尾的空白有意義（砍在空白後面的，下一個字要從頭對）
+     * @return 完整的標籤（不帶 {@code %} 與 {@code Raw}）；認不出來回傳 {@code null}
+     */
+    public String completeUiLabel(String prefix) {
+        if (prefix == null) {
+            return null;
+        }
+        String head = prefix.stripLeading();
+        if (head.strip().length() < MIN_TRUNCATED_LABEL) {
+            return null;
+        }
+        String found = null;
+        for (String key : uiLabels) {
+            String base = labelBase(key);
+            if (base.length() <= head.length() || !base.startsWith(head)) {
+                continue;
+            }
+            if (found != null && !found.equals(base)) {
+                return null;                   // 兩個不同的標籤都對得上，不猜
+            }
+            found = base;
+        }
+        return found;
+    }
+
+    /** 標籤去掉數值種類的記號：{@code "Spell Damage%"}、{@code "Spell Damage Raw"} 都是「Spell Damage」。 */
+    private static String labelBase(String key) {
+        if (key.endsWith("%")) {
+            return key.substring(0, key.length() - 1).stripTrailing();
+        }
+        if (key.endsWith(" Raw")) {
+            return key.substring(0, key.length() - 4).stripTrailing();
+        }
+        return key;
+    }
+
     /**
      * 名稱要怎麼收，是<b>兩個各自獨立的問題</b>，用兩個旗標分開問。
      *
@@ -683,12 +742,20 @@ public final class TranslationStore {
                     byQuest.computeIfAbsent(quest.strip(),
                             q -> new java.util.TreeMap<>()).put(srcKey, dst.strip());
                 }
+                if (quest != null && !quest.isBlank()) {
+                    questOfLine.put(srcKey, quest.strip());
+                }
                 if ("wiki".equals(optString(e, "source"))) {
                     fromWiki.add(srcKey);      // 見 #curatedRival
                 }
                 String who = optString(e, "speaker");
                 if (who != null && !who.isBlank()) {
                     speakers.put(srcKey, who.strip());
+                    String name = com.wynnchayuan.capture.DialogueSpeaker.cleanName(who);
+                    if (quest != null && !quest.isBlank() && name != null) {
+                        questCast.computeIfAbsent(quest.strip(),
+                                q -> ConcurrentHashMap.newKeySet()).add(name);
+                    }
                 }
                 if ("name".equals(optString(e, "role"))) {
                     if (tradable) {
@@ -1312,6 +1379,41 @@ public final class TranslationStore {
 
     /** 每一句對話的說話者。見 {@link #speakerOf}。 */
     private final Map<String, String> speakers = new ConcurrentHashMap<>();
+
+    /**
+     * 這個說話者是不是這個任務的人。
+     *
+     * <h2>為什麼要有（issue #1138）</h2>
+     * 收集時的任務名稱是追蹤欄上的那一個，而玩家追著 Undersupply 的時候，順路跟
+     * 茶館的 Marseled 聊天、跑完整段祕密發現 Solace in Pain——一百多句全被記成
+     * Undersupply，匯入時會進錯的任務檔。語料知道每個任務有哪些說話者：
+     * 說話者不在名單上，這句多半不是這個任務的台詞。
+     *
+     * @return {@code true}／{@code false}；任務在語料裡沒有說話者名單（新任務）
+     *         或不知道說話者時回傳 {@code null}——判斷不了
+     */
+    public Boolean inCast(String quest, String speaker) {
+        if (quest == null || speaker == null || speaker.isBlank()) {
+            return null;
+        }
+        java.util.Set<String> cast = questCast.get(
+                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+        if (cast == null || cast.isEmpty()) {
+            return null;
+        }
+        return cast.contains(speaker.strip());
+    }
+
+    /** @return 語料裡這一句屬於哪個任務；沒有標就回傳 {@code null}。給收集端核對用 */
+    public String questOf(String template) {
+        return template == null ? null : questOfLine.get(template.strip());
+    }
+
+    /** 每個任務在語料裡出現過的說話者（已剝掉名牌圖示）。見 {@link #inCast}。 */
+    private final Map<String, java.util.Set<String>> questCast = new ConcurrentHashMap<>();
+
+    /** 每一句台詞的任務。見 {@link #questOf}。 */
+    private final Map<String, String> questOfLine = new ConcurrentHashMap<>();
 
     /**
      * 半句話也查得到：拿<b>開頭</b>去比對。

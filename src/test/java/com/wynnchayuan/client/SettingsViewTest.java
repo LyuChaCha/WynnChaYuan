@@ -512,7 +512,8 @@ public final class SettingsViewTest {
             List<Row> mods = List.of(
                     toggle("world.wynntils", true, null),
                     toggle("items.wms", true, null),
-                    toggle("items.wynnventory", true, null));
+                    toggle("items.wynnventory", true, null),
+                    toggle("items.wynnmod", true, null));
             tabs.add(tab("items", Icons.Icon.BOW, Preview.Scene.TOOLTIP,
                     group("group.items", false, items), group("group.mods", false, mods)));
             tabs.add(tab("panel", Icons.Icon.SCROLL, Preview.Scene.PANEL,

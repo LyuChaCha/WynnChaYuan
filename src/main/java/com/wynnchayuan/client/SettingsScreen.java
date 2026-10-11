@@ -165,6 +165,10 @@ public final class SettingsScreen extends Screen {
         if (com.wynnchayuan.translate.WynnventoryBridge.installed()) {
             rows.add(toggle("items.wynnventory", true, cfg()::wynnventory, cfg()::toggleWynnventory));
         }
+        if (com.wynnchayuan.render.WynnModTooltip.installed()) {
+            rows.add(toggle("items.wynnmod", true, cfg()::wynnmodTooltip,
+                    cfg()::toggleWynnmodTooltip));
+        }
         return rows;
     }
 

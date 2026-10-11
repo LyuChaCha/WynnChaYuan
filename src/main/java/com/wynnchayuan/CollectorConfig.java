@@ -187,6 +187,12 @@ public final class CollectorConfig {
     private boolean wynnventory = true;
 
     /**
+     * WynnMod 重畫的物品說明也翻。有裝那個模組才有作用，設定畫面也是有裝才出現這一列。
+     * 見 {@code WynnModTooltipMixin}。
+     */
+    private boolean wynnmodTooltip = true;
+
+    /**
      * 按住 Shift 暫時換成另一種：看譯名的人看到原文，看原文的人看到譯名。
      *
      * <h2>為什麼不是再開一個模式</h2>
@@ -620,6 +626,17 @@ public final class CollectorConfig {
         wynnventory = !wynnventory;
         save();
         return wynnventory;
+    }
+
+    /** 見 {@link #wynnmodTooltip}。 */
+    public boolean wynnmodTooltip() {
+        return wynnmodTooltip;
+    }
+
+    public boolean toggleWynnmodTooltip() {
+        wynnmodTooltip = !wynnmodTooltip;
+        save();
+        return wynnmodTooltip;
     }
 
     /** 見 {@link #shiftPeekNames}：按住 Shift 要不要暫時換另一種。 */
@@ -1396,6 +1413,7 @@ public final class CollectorConfig {
         translateHeldItem = bool(o, "translateHeldItem", translateHeldItem);
         marketSearch = bool(o, "marketSearch", marketSearch);
         wynnventory = bool(o, "wynnventory", wynnventory);
+        wynnmodTooltip = bool(o, "wynnmodTooltip", wynnmodTooltip);
         wynnMarketSearch = bool(o, "wynnMarketSearch", wynnMarketSearch);
         shiftPeekNames = bool(o, "shiftPeekNames", shiftPeekNames);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
@@ -1624,6 +1642,7 @@ public final class CollectorConfig {
             o.addProperty("translateScoreboard", translateScoreboard);
             o.addProperty("translateHeldItem", translateHeldItem);
             o.addProperty("wynnventory", wynnventory);
+            o.addProperty("wynnmodTooltip", wynnmodTooltip);
             o.addProperty("wynnMarketSearch", wynnMarketSearch);
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("wynntilsUi", wynntilsUi);
