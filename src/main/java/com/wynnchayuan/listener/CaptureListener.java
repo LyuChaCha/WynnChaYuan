@@ -194,13 +194,13 @@ public final class CaptureListener {
         if (completed == null || !WynnChaYuan.config().collect()) {
             return;
         }
-        // 說話者只用對話框自己的名牌——那是遊戲畫給玩家看的名字，不會錯。
+        // nameplate 是 feed 時記下的：對話框的名牌（從 action bar 原始訊息讀），
+        // 沒有名牌才是玩家右鍵點的那個 NPC（ConversationPartner）。
         //
-        // 沒有名牌時先前會退回「玩家正前方那塊名牌」（LookAtTranslator#nearestLabel）
-        // 去猜，實機（issue #1138）猜到的是寵物（Cookie Wybel、玩家自己的寵物），
-        // 只收語料認得的名字之後，在 Espren 那座四個 NPC 擠在一起的小公園裡
-        // 仍然把衛兵的話記成園丁、把園丁的話記成市民。猜錯的說話者比沒有說話者
-        // 更糟：譯者會照著錯的角色去抓語氣。所以不猜了，沒有名牌就不記說話者。
+        // 不再退回「玩家正前方那塊名牌」（LookAtTranslator#nearestLabel）去猜：
+        // 實機（issue #1138）猜到的是寵物（別人的 Wybel、玩家自己的寵物），在 Espren
+        // 那座四個 NPC 擠在一起的小公園裡，還把衛兵的話記成園丁、園丁的話記成市民。
+        // 猜錯的說話者比沒有說話者更糟：譯者會照著錯的角色去抓語氣。
         String speaker = nameplate;
         auditSpeaker(completed, speaker);
         WynnChaYuan.store().record(
