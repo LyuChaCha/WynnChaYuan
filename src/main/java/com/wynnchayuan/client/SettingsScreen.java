@@ -146,12 +146,10 @@ public final class SettingsScreen extends Screen {
                 Preview.Scene.DATA, List.of(
                         new Row.Group(t("group.lang"), false, languages()),
                         new Row.Group(t("group.tools"), true, tools()))));
-        // 徽章自己一頁，排在左邊那一列的最後：在名單上的人才有（使用者 2026-10-11）
-        List<Row> badge = badge();
-        if (!badge.isEmpty()) {
-            tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
-                    Preview.Scene.WORLD, List.of(new Row.Group(t("group.badge"), false, badge))));
-        }
+        // 徽章自己一頁，排在左邊那一列的最後（使用者 2026-10-11）。
+        // 在名單上的人看到的是自己那片葉子的設定；不在名單上的人看到的是怎麼加入。
+        tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
+                Preview.Scene.WORLD, List.of(new Row.Group(t("group.badge"), false, badge()))));
         return tabs;
     }
 
@@ -180,11 +178,22 @@ public final class SettingsScreen extends Screen {
 
     private long badgeCopiedAt;
 
+    /** 怎麼參與翻譯（貢獻者）。 */
+    private static final String CONTRIBUTE_URL =
+            "https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md";
+
     /**
-     * 自己的徽章：<b>在名單上的人才有這一頁</b>（使用者 2026-10-11）。
+     * 怎麼贊助（贊助者）。指到 README 的「贊助」那一節，不直接寫贊助平台的網址——
+     * 模組裡寫死的網址只留 GitHub 與 jsDelivr（CorpusExportTest 會擋），平台換了也只要改 README。
+     */
+    private static final String SPONSOR_URL =
+            "https://github.com/LyuChaCha/WynnChaYuan#%E8%B4%8A%E5%8A%A9";
+
+    /**
+     * 徽章那一頁（使用者 2026-10-11）。
      *
-     * <p>不在名單上的人沒有東西可以選，左邊那一列就不會多出這一頁——跟沒裝的模組
-     * 不列出來是同一個道理。
+     * <p>在名單上的人：自己那片葉子要展示哪些身分、什麼顏色。不在名單上的人沒有東西
+     * 可以選，看到的是「怎麼拿到徽章」——參與翻譯成為貢獻者，或是贊助成為贊助者。
      *
      * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是
      * {@code credits.json} 登記的那一份。所以最後一列是「申請徽章」，把現在的選擇
@@ -192,10 +201,23 @@ public final class SettingsScreen extends Screen {
      */
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
+        // 看不看得到別人的葉子，這個人人都有。原本在「關於」那一頁的左下角。
+        rows.add(toggle("badge.show", true, cfg()::showBadges, cfg()::toggleBadges));
         String self = com.wynnchayuan.render.Badges.selfName();
         List<com.wynnchayuan.render.Badges.Role> mine =
                 com.wynnchayuan.render.Badges.registered(self);
         if (mine.isEmpty()) {
+            // 沒有身分的人：說明葉子是什麼，還有兩條加入的路。
+            rows.add(Row.status("badge.none", t("badge.none"), t("badge.none.hint"))
+                    .label(t("badge.none.label"))
+                    .labelColour(() -> com.wynnchayuan.render.Colors.opaque(
+                            com.wynnchayuan.render.Badges.INSTALLED)));
+            rows.add(Row.action("badge.contribute", t("badge.contribute"), t("badge.contribute.hint"))
+                    .label(t("badge.contribute.button"))
+                    .run(() -> ConfirmLinkScreen.confirmLinkNow(this, CONTRIBUTE_URL)));
+            rows.add(Row.action("badge.sponsor", t("badge.sponsor"), t("badge.sponsor.hint"))
+                    .label(t("badge.sponsor.button"))
+                    .run(() -> ConfirmLinkScreen.confirmLinkNow(this, SPONSOR_URL)));
             return rows;
         }
         for (com.wynnchayuan.render.Badges.Role role : mine) {

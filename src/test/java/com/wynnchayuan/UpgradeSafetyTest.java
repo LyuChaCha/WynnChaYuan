@@ -160,9 +160,8 @@ public final class UpgradeSafetyTest {
                 !c.collect() && c.fixedX() == 40);
         check("不認得的 tooltipMode 退回舊欄位 showPanel=false 的換算（OFF）",
                 c.tooltipMode() == CollectorConfig.TooltipMode.OFF && !c.showOverlays());
-        check("\"wide\" 的 panelGap、null 的 language、數字的 badgeStyle 用預設",
-                c.panelGap() == 12 && c.language().isEmpty()
-                        && c.badgeStyle() == CollectorConfig.BadgeStyle.GRADIENT);
+        check("\"wide\" 的 panelGap、null 的 language 用預設（已經拿掉的 badgeStyle 不礙事）",
+                c.panelGap() == 12 && c.language().isEmpty());
         check("極端數值夾回範圍（名牌距離 64、對話停留 = 持續顯示）",
                 c.nametagRange() == 64.0 && c.dialogueHoldMs() == Integer.MAX_VALUE);
         check("小寫的列舉值、字串的布林值也認得", c.chatMode() == CollectorConfig.ChatMode.BOTH
@@ -241,6 +240,9 @@ public final class UpgradeSafetyTest {
         expected.addProperty("wynnmodTooltip", true);
         // 1.0.2：內容名稱（任務、洞窟…）的三段式顯示。舊設定檔沒有，預設是譯名（跟原本一樣）。
         expected.addProperty("pageNames", "ON");
+        // 徽章改成名字前面的葉子：「多重身分只看第一個」那個開關拿掉了，
+        // 要展示哪些身分由本人在「徽章」那一頁決定。
+        expected.remove("badgeStyle");
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));

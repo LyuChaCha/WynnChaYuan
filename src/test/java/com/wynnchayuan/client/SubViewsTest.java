@@ -292,8 +292,6 @@ public final class SubViewsTest {
         FakeCredits host = new FakeCredits(shell);
         CreditsView view = new CreditsView(shell, host);
         render(view, "zh_tw", 640, 360, 1, -100, -100);
-        press(view, "b:badge");
-        must("徽章開關點得到", host.toggles == 1);
         press(view, "b:back");
         must("返回會關掉畫面", host.closes == 1);
     }
@@ -484,8 +482,6 @@ public final class SubViewsTest {
     private static final class FakeCredits implements CreditsView.Host {
         private final FakeShell shell;
         private final List<CreditsView.Section> sections = new ArrayList<>();
-        private boolean badges = true;
-        int toggles;
         int closes;
 
         FakeCredits(FakeShell shell) throws Exception {
@@ -528,25 +524,6 @@ public final class SubViewsTest {
         public String version() {
             return "0.2.8_2";
         }
-
-        @Override
-        public String badgeLabel() {
-            return shell.tr("credits.badges", shell.tr(badges ? "mode.on" : "mode.off"));
-        }
-
-        @Override
-        public void toggleBadges() {
-            badges = !badges;
-            toggles++;
-        }
-
-        @Override
-        public String styleLabel() {
-            return shell.tr("credits.badges.style", shell.tr("credits.badges.all"));
-        }
-
-        @Override
-        public void cycleStyle() { }
 
         @Override
         public void close() {

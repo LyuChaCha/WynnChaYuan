@@ -150,9 +150,6 @@ public final class Badges {
             out.add(new Role(role.id(), role.name(),
                     mine ? ownColour(config, role) : role.color(), rainbow, false));
         }
-        if (config.badgeStyle() == CollectorConfig.BadgeStyle.PRIMARY && out.size() > 1) {
-            return List.of(out.get(0));
-        }
         return out;
     }
 

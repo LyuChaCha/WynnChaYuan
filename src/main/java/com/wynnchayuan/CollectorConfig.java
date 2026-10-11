@@ -1014,16 +1014,6 @@ public final class CollectorConfig {
     private boolean showBadges = true;
 
     /**
-     * 別人有好幾個身分時畫幾片葉子：GRADIENT 全部、PRIMARY 只畫第一個。
-     *
-     * <p>名字是舊的——先前徽章是一行字，多重身分用逐字漸層。存檔裡的值沿用，
-     * 所以不改名。
-     */
-    private BadgeStyle badgeStyle = BadgeStyle.GRADIENT;
-
-    public enum BadgeStyle { GRADIENT, PRIMARY }
-
-    /**
      * 自己的徽章要展示哪些身分：身分代號 → 要不要展示。沒寫到的照名單上登記的。
      *
      * <p>只影響<b>自己畫面上</b>自己的名牌；別人看到的是 {@code credits.json} 登記的。
@@ -1093,17 +1083,6 @@ public final class CollectorConfig {
         showBadges = !showBadges;
         save();
         return showBadges;
-    }
-
-    public BadgeStyle badgeStyle() {
-        return badgeStyle;
-    }
-
-    public BadgeStyle cycleBadgeStyle() {
-        badgeStyle = badgeStyle == BadgeStyle.GRADIENT
-                ? BadgeStyle.PRIMARY : BadgeStyle.GRADIENT;
-        save();
-        return badgeStyle;
     }
 
     public double nametagRange() {
@@ -1555,7 +1534,8 @@ public final class CollectorConfig {
         readPairs(o, "overlayPos", overlayPos);
         readPairs(o, "overlaySize", overlaySize);
         showBadges = bool(o, "showBadges", showBadges);
-        badgeStyle = enumOr(o, "badgeStyle", BadgeStyle.class, badgeStyle);
+        // badgeStyle（多重身分只看第一個）拿掉了：要展示哪些身分由本人決定，
+        // 看的人那邊不必再有一個開關。舊設定檔裡那一欄不讀，下次存檔就不見。
         badgeRoles.clear();
         if (o.has("badgeRoles") && o.get("badgeRoles").isJsonObject()) {
             for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
@@ -1784,7 +1764,6 @@ public final class CollectorConfig {
             });
             o.add("overlaySize", sizes);
             o.addProperty("showBadges", showBadges);
-            o.addProperty("badgeStyle", badgeStyle.name());
             // 沒動過就不寫：不在名單上的人設定檔裡不必多這兩項
             if (!badgeRoles.isEmpty()) {
                 JsonObject roles = new JsonObject();

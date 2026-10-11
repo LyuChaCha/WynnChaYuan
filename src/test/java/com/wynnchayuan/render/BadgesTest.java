@@ -101,11 +101,6 @@ public final class BadgesTest {
                 "Multi_Role", "Someone", config, 0);
         check("多重身分：照名單順序一人一片，登記成不展示的不畫；登記的顏色蓋過分區的",
                 icons(multi).equals(List.of(GOLD, 0xFF66AA)));
-        config.cycleBadgeStyle();
-        check("看的人選「只顯示主要」：只畫第一片", icons(Badges.decorate(
-                Component.literal("Multi_Role"), "Multi_Role", "Someone", config, 0))
-                .equals(List.of(GOLD)));
-        config.cycleBadgeStyle();
 
         // ---- 彩色 ----
         List<Integer> a = icons(Badges.decorate(Component.literal("Shiny"), "Shiny", "Someone", config, 0));
@@ -201,6 +196,32 @@ public final class BadgesTest {
             check("字型檔指到的圖在 jar 裡", Badges.class.getResource(
                     "/assets/wynnchayuan/textures/font/nametag_leaf.png") != null
                     && provider.get("file").getAsString().equals("wynnchayuan:font/nametag_leaf.png"));
+        }
+
+        // ---- 圖只能有全透明與全不透明 ----
+        // Wynncraft 的文字 shader 拿特定的透明度當記號。葉子的圖有過半透明的邊（縮圖留下的
+        // 251～254），實機上筆畫中間就冒出一粒一粒的黑點（使用者 2026-10-12）。
+        try (InputStream in = Badges.class.getResourceAsStream(
+                "/assets/wynnchayuan/textures/font/nametag_leaf.png")) {
+            java.awt.image.BufferedImage leaf = javax.imageio.ImageIO.read(in);
+            int odd = 0;
+            int solid = 0;
+            for (int y = 0; y < leaf.getHeight(); y++) {
+                for (int x = 0; x < leaf.getWidth(); x++) {
+                    int argb = leaf.getRGB(x, y);
+                    int alpha = argb >>> 24;
+                    if (alpha == 255) {
+                        solid++;
+                        if ((argb & 0xFFFFFF) != 0xFFFFFF) {
+                            odd++;          // 不是純白的話，上色會偏
+                        }
+                    } else if (alpha != 0) {
+                        odd++;
+                    }
+                }
+            }
+            check("葉子的圖沒有半透明的像素，實心的都是純白（有 " + odd + " 個不合）", odd == 0);
+            check("葉子的圖不是空的", solid > 200);
         }
 
         // ---- 出貨的名單讀得進來 ----
