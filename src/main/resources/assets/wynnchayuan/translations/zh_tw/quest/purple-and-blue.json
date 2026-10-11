@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "Purple and Blue",
-  "count": 81,
-  "translated": 81,
+  "count": 102,
+  "translated": 102,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -67,7 +67,7 @@
    "source": "wiki"
   },
   "Purple and Blue#006": {
-   "src": "The deeper into the lake you dive, the stronger the magical power becomes. I think something strange is happening at the heart of the lake. I believe a lot of answers lie inside.",
+   "src": "The deeper into the lake you dive, the stronger the magical power becomes. I think something strange is occurring in the heart of the lake. I believe a lot of answers lie inside.",
    "dst": "往湖裡潛得越深，魔力就越強。我認為湖心正在發生某種奇怪的事。我相信很多答案就藏在那裡面。",
    "role": "desc",
    "kind": "dialogue",
@@ -97,7 +97,7 @@
    "source": "wiki"
   },
   "Purple and Blue#009": {
-   "src": "And while I somewhat hope he's gotten himself in trouble, he might've figured out something about the lake.",
+   "src": "And while I somewhat hope he's gotten himself in trouble, he might've figured something out about the lake.",
    "dst": "雖然我某方面還挺希望他是自己惹上了麻煩，但他也可能真的查出了這座湖的什麼線索。",
    "role": "desc",
    "kind": "dialogue",
@@ -107,6 +107,206 @@
    "source": "wiki"
   },
   "Purple and Blue#010": {
+   "src": "There's a note here. You start reading it...",
+   "dst": "這裡有一張筆記。你開始讀了起來……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#011": {
+   "src": "IMPORTANT NOTES: The map to the talisman is in the basement!! That fool Korun will never see all this coming.",
+   "dst": "重要筆記：通往護符的地圖在地下室！！Korun 那個蠢貨絕對料不到這一切。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#012": {
+   "src": "If everything goes right, it should grant access to the heart of the mountain... I can't wait!",
+   "dst": "如果一切順利，它應該能讓我進入這座山的心臟……我等不及了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#013": {
+   "src": "I needn't forget to input the total number of lit candles inside the house in order to get in the basement... That's why I made that tube! I'm so good at handling security!! No need for blasted overpriced Corkian equipment!",
+   "dst": "要進地下室，可別忘了輸入屋裡點著的蠟燭總數……所以我才做了那根管子！我對保全真是太在行了！！才不需要 Corkus 那些貴得要命的鬼設備！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#014": {
+   "src": "You read what's behind the note...",
+   "dst": "你讀起筆記背面的內容……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#015": {
+   "src": "I actually don't know if I'm making it out of this, but I absolutely have to find out what's inside the lake.",
+   "dst": "其實我也不知道自己能不能活著回來，但我非得弄清楚湖裡到底有什麼不可。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#016": {
+   "src": "One part of me wants to bring Korun along. As much as we hate each other, it'd surely increase our chance of survival.",
+   "dst": "我心裡有一部分想把 Korun 一起帶去。雖然我們彼此討厭得要命，但那肯定能提高我們活下來的機會。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#017": {
+   "src": "And, who knows, maybe the heart of the mountain is actually perfectly safe?",
+   "dst": "而且誰知道呢，說不定這座山的心臟其實安全得很？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#018": {
+   "src": "Though, I mustn't forget that three of the greatest minds of our time got lost to cosmic powers...",
+   "dst": "不過我可不能忘了，我們這個時代最頂尖的三個頭腦，都葬送在宇宙力量之下……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#019": {
+   "src": "No matter what, if you really want to join me, I left you enough clues.",
+   "dst": "無論如何，如果你真的想跟上來，我留給你的線索夠多了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#020": {
+   "src": "See you later, Korun.",
+   "dst": "回頭見，Korun。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#021": {
+   "src": "[+{~} Gylia Treasure Map]",
+   "dst": "[+{~} Gylia 藏寶圖]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#022": {
+   "src": "This map seems to lead towards a particular location nearby...",
+   "dst": "這張地圖似乎指向附近的某個地點……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#023": {
+   "src": "Some mechanisms can be heard... There's probably another lever to press.",
+   "dst": "聽得見某些機關運作的聲音……大概還有另一根拉桿要扳。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#024": {
+   "src": "Upon touching the crystal, you notice a peculiar device...",
+   "dst": "一碰到水晶，你就注意到一個奇特的裝置……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#025": {
+   "src": "It begins to change shape!",
+   "dst": "它開始變形了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#026": {
+   "src": "The crystal finished forming something, you should retrieve it.",
+   "dst": "水晶凝成了某樣東西，你該把它取走。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#027": {
+   "src": "[+{~} Cosmic Stone]",
+   "dst": "[+{~} 宇宙之石]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#028": {
+   "src": "Looks like you can leave this place now.",
+   "dst": "看來你現在可以離開這裡了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#029": {
+   "src": "[+{~} Impervious Talisman]",
+   "dst": "[+{~} 不侵護符]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#030": {
    "src": "I suspect he's gone in to the heart of the lake... Come with me a moment, please.",
    "dst": "我懷疑他進到湖心去了……請你跟我來一下。",
    "role": "desc",
@@ -116,7 +316,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#011": {
+  "Purple and Blue#031": {
    "src": "Alright, this leads underwater where the heart is. How about you try and enter?",
    "dst": "好，這條路通往水下的湖心。你要不要試著進去看看？",
    "role": "desc",
@@ -126,7 +326,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#012": {
+  "Purple and Blue#032": {
    "src": "...just as I thought, you can't get in just like me. We'll need to gather more information.",
    "dst": "……跟我想的一樣，你跟我一樣進不去。我們得再蒐集更多情報。",
    "role": "desc",
@@ -136,7 +336,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#013": {
+  "Purple and Blue#033": {
    "src": "Human, investigate Nikoler's house for me. It's north down the coast.",
    "dst": "人類，替我去調查 Nikoler 的房子。就在北邊沿著海岸走。",
    "role": "desc",
@@ -146,7 +346,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#014": {
+  "Purple and Blue#034": {
    "src": "Where could he be... There's no way he found access to- Hey!",
    "dst": "他會在哪呢……他不可能找到進去的方法才對——喂！",
    "role": "desc",
@@ -156,7 +356,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#015": {
+  "Purple and Blue#035": {
    "src": "Don't just listen to me mumbling! Have you found Nikoler?!",
    "dst": "別光聽我在那邊碎念！你到底找到 Nikoler 沒有？！",
    "role": "desc",
@@ -166,7 +366,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#016": {
+  "Purple and Blue#036": {
    "src": "Investigate Nikoler's house for clues at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~}, {~}, -{~}] 調查 Nikoler 的房子，尋找線索。",
    "role": "desc",
@@ -176,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Purple and Blue#017": {
+  "Purple and Blue#037": {
    "src": "Follow the hints in the cellar to the mysterious cave.",
    "dst": "照著地窖裡的線索找到那個神祕洞穴。",
    "role": "desc",
@@ -186,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Purple and Blue#018": {
+  "Purple and Blue#038": {
    "src": "Enter and explore the mysterious cave at [-{~}, {~}, -{~}].",
    "dst": "進入並探索 [-{~}, {~}, -{~}] 的神祕洞穴。",
    "role": "desc",
@@ -196,7 +396,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Purple and Blue#019": {
+  "Purple and Blue#039": {
    "src": "Return to Korun in his home at [-{~}, {~}, -{~}].",
    "dst": "回到 [-{~}, {~}, -{~}] 的家中找 Korun。",
    "role": "desc",
@@ -206,8 +406,8 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Purple and Blue#020": {
-   "src": "Y-you've actually found a lead?! There was clues in his basement? And you found a... talisman? This must be it, then!",
+  "Purple and Blue#040": {
+   "src": "Y-you've actually found a lead?! There were clues in his basement? And you found a... talisman? This must be it, then!",
    "dst": "你、你真的找到線索了？！他地下室裡有線索？而且你還找到一個……護符？那這一定就是了！",
    "role": "desc",
    "kind": "dialogue",
@@ -216,7 +416,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#021": {
+  "Purple and Blue#041": {
    "src": "This might very well be the key to enter the heart, especially if it was as well-guarded with cosmic creatures as you say.",
    "dst": "這說不定就是進入湖心的鑰匙，尤其如果它真像你說的，被那些宇宙生物守得那麼嚴實。",
    "role": "desc",
@@ -226,7 +426,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#022": {
+  "Purple and Blue#042": {
    "src": "Alright then! This might be too dangerous for me, so I'm entrusting this task to you once more. Enter the tunnel in my basement, and explore as much as you can!",
    "dst": "那好！這件事對我來說可能太危險了，所以我要再一次把它託付給你。從我地下室的隧道進去，能探多深就探多深！",
    "role": "desc",
@@ -236,7 +436,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#023": {
+  "Purple and Blue#043": {
    "src": "If you can bring me samples of any kind, I'll try to reward you handsomely. However, if you find Nikoler alive... Please bring him back.",
    "dst": "如果你能帶回任何樣本，我會盡量給你優厚的報酬。不過，如果你找到還活著的 Nikoler……請把他帶回來。",
    "role": "desc",
@@ -246,8 +446,8 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#024": {
-   "src": "As for the talisman, make sure to hold it whilst in the tunnel. Be careful, you're in uncharted territory from now on.",
+  "Purple and Blue#044": {
+   "src": "As for the talisman, make sure you hold it whilst in the tunnel. Be careful, you're in uncharted territory from now on.",
    "dst": "至於那個護符，進隧道的時候記得拿在手上。小心點，從這裡開始就是未知領域了。",
    "role": "desc",
    "kind": "dialogue",
@@ -256,7 +456,17 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#025": {
+  "Purple and Blue#045": {
+   "src": "As Korun said, it's probably better to hold that talisman to traverse the tunnel...",
+   "dst": "就像 Korun 說的，穿過隧道時最好把那個護符拿在手上……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Purple and Blue",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Purple and Blue#046": {
    "src": "Good luck, human. Please bring me back Nikoler, or any sample you might find.",
    "dst": "祝你好運，人類。請把 Nikoler 帶回來給我，或是任何你找得到的樣本。",
    "role": "desc",
@@ -266,7 +476,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#026": {
+  "Purple and Blue#047": {
    "src": "Enter the heart of Gylia from under the lake.",
    "dst": "從湖底進入 Gylia 之心。",
    "role": "desc",
@@ -276,7 +486,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Purple and Blue#027": {
+  "Purple and Blue#048": {
    "src": "Explore the Heart of Gylia.",
    "dst": "探索 Gylia 之心。",
    "role": "desc",
@@ -286,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Purple and Blue#028": {
+  "Purple and Blue#049": {
    "src": "The drill should be ready by now... In just a little bit, I'll have single-handedly conquered the heart of the mountain...!",
    "dst": "鑽頭現在應該已經備妥了……再過一下子，我就要獨力征服這座山的心臟了……！",
    "role": "desc",
@@ -296,7 +506,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Purple and Blue#029": {
+  "Purple and Blue#050": {
    "src": "A human!? W...What? Did you read the notes I left for Korun? I'll have you know that's theft!! I - you...!",
    "dst": "人類！？什、什麼？你看了我留給 Korun 的筆記？我告訴你那叫偷竊！！我——你……！",
    "role": "desc",
@@ -306,7 +516,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#030": {
+  "Purple and Blue#051": {
    "src": "Don't get any closer!! I'll destroy the path if I have to!!",
    "dst": "別再靠近了！！必要的話我會把路毀掉！！",
    "role": "desc",
@@ -316,7 +526,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#031": {
+  "Purple and Blue#052": {
    "src": "This is MY story! Don't you dare interfere!!",
    "dst": "這是「我」的故事！你敢插手試試看！！",
    "role": "desc",
@@ -326,7 +536,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#032": {
+  "Purple and Blue#053": {
    "src": "You're... persistent. Are you trying to steal from these meteors I'VE found?! Do you have any idea how much research I did to get this far??",
    "dst": "你還真是……鍥而不捨。你是想從「我」找到的這些隕石上偷東西嗎？！你知不知道我做了多少研究才走到這一步？？",
    "role": "desc",
@@ -336,7 +546,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#033": {
+  "Purple and Blue#054": {
    "src": "It's too late! I've already drilled a piece. Once I show Korun, I'll be known as the better researcher...",
    "dst": "太遲了！我已經鑽下一塊了。只要拿給 Korun 看，我就會被公認是更優秀的研究者……",
    "role": "desc",
@@ -346,7 +556,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#034": {
+  "Purple and Blue#055": {
    "src": "Ah... how good this'll b-",
    "dst": "啊……這下可真是太——",
    "role": "desc",
@@ -356,7 +566,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#035": {
+  "Purple and Blue#056": {
    "src": "N-no!",
    "dst": "不、不會吧！",
    "role": "desc",
@@ -366,7 +576,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#036": {
+  "Purple and Blue#057": {
    "src": "No no no no no no! This CAN'T be happening!",
    "dst": "不不不不不不！這不可能發生！",
    "role": "desc",
@@ -376,7 +586,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#037": {
+  "Purple and Blue#058": {
    "src": "Tampering with the meteors must be making the cave instable! I... I thought this'd happen and yet-",
    "dst": "對隕石動手腳一定讓這個洞穴變得不穩定了！我……我早就想過會這樣，可是——",
    "role": "desc",
@@ -386,7 +596,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#038": {
+  "Purple and Blue#059": {
    "src": "This is all YOUR fault! Why'd you have to come and make me panic? We're both DOOMED!",
    "dst": "這全都是「你」害的！你幹嘛跑來害我慌了手腳？我們兩個都完蛋了！",
    "role": "desc",
@@ -396,7 +606,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#039": {
+  "Purple and Blue#060": {
    "src": "No... I can't die here, I can't die now, what will he think...",
    "dst": "不……我不能死在這裡，我現在不能死，他會怎麼想……",
    "role": "desc",
@@ -406,7 +616,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#040": {
+  "Purple and Blue#061": {
    "src": "I... We might still have a shot at escaping... And then, human, I'll report you to the authorities!!",
    "dst": "我……我們或許還有機會逃出去……然後，人類，我一定要去告發你！！",
    "role": "desc",
@@ -416,7 +626,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#041": {
+  "Purple and Blue#062": {
    "src": "I'm STUCK! Urgh... No... Not like this, please, not like this...",
    "dst": "我卡住了！唔……不……別是這樣，拜託，別是這樣……",
    "role": "desc",
@@ -426,7 +636,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#042": {
+  "Purple and Blue#063": {
    "src": "You... Why? You came to get me? Not the... meteors?",
    "dst": "你……為什麼？你是來救我的？不是為了……隕石？",
    "role": "desc",
@@ -436,7 +646,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#043": {
+  "Purple and Blue#064": {
    "src": "I... Fine then. Let's make a run for it, human!",
    "dst": "我……好吧。人類，我們一起衝出去！",
    "role": "desc",
@@ -446,7 +656,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#044": {
+  "Purple and Blue#065": {
    "src": "Escape the Heart of Gylia.",
    "dst": "逃離 Gylia 之心。",
    "role": "desc",
@@ -456,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Purple and Blue#045": {
+  "Purple and Blue#066": {
    "src": "Rats! That dynamite went and backfired on us! Quick, try to run in to the rubble with me, we need to hurry!",
    "dst": "可惡！那炸藥反倒炸到我們自己了！快，跟我一起衝進碎石堆，我們得快點！",
    "role": "desc",
@@ -466,7 +676,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#046": {
+  "Purple and Blue#067": {
    "src": "AH-",
    "dst": "啊——",
    "role": "desc",
@@ -476,8 +686,8 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#047": {
-   "src": "Welcome back! I see you're completely drenched! How did things go? I assume you explored the place thoroughly.",
+  "Purple and Blue#068": {
+   "src": "Welcome back! I see you're completely drenched! How did things go? I assume you've explored the place thoroughly.",
    "dst": "歡迎回來！我看你全身都濕透了！情況怎麼樣？我想你應該把那地方徹底探過一遍了。",
    "role": "desc",
    "kind": "dialogue",
@@ -486,7 +696,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#048": {
+  "Purple and Blue#069": {
    "src": "YOU! Y-You're alive!!",
    "dst": "你！你、你還活著！！",
    "role": "desc",
@@ -496,7 +706,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#049": {
+  "Purple and Blue#070": {
    "src": "...were you worrying about me? What a fool. This mountain could never do so much as scratch me!",
    "dst": "……你剛剛是在擔心我嗎？真是個傻子。這座山連我一根寒毛都傷不了！",
    "role": "desc",
@@ -506,9 +716,9 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#050": {
-   "src": "This human right here actually saved me, right after endangering me. You don't mean to tell me you sent him for me?",
-   "dst": "我旁邊這個人類其實救了我一命，雖然也是他先把我害到那步田地的。你該不會是要說，是你叫他去找我的吧？",
+  "Purple and Blue#071": {
+   "src": "This human right here actually saved me, right after endangering me. You don't mean to tell me you sent them for me?",
+   "dst": "我旁邊這個人類其實救了我一命，雖然也是這位先把我害到那步田地的。你該不會是要說，人是你派來找我的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -516,7 +726,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#051": {
+  "Purple and Blue#072": {
    "src": "Well, it's very simple. Where's the fun in our rivalry if you just go off and die somewhere?",
    "dst": "這很簡單啊。你要是自己跑去哪裡死掉了，我們這場較勁還有什麼樂趣可言？",
    "role": "desc",
@@ -526,7 +736,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#052": {
+  "Purple and Blue#073": {
    "src": "That aside, what did you find in there? What happened?",
    "dst": "這先不談，你在裡面找到什麼了？發生了什麼事？",
    "role": "desc",
@@ -536,8 +746,8 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#053": {
-   "src": "I found them, Korun. I found the meteors! The still seemed potent somehow, but the cave collapsed and...",
+  "Purple and Blue#074": {
+   "src": "I found them, Korun. I found the meteors! They still seemed potent somehow, but the cave collapsed and...",
    "dst": "我找到了，Korun。我找到那些隕石了！它們不知怎地似乎還帶著強大的力量，可是洞穴塌了，然後……",
    "role": "desc",
    "kind": "dialogue",
@@ -546,7 +756,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#054": {
+  "Purple and Blue#075": {
    "src": "That's... fine. We can always go back and try clearing the rubble. There's always opportunities to take a hold of. Next time, please don't just go off on your own!",
    "dst": "那……沒關係。我們隨時可以再回去試著把碎石清掉。機會永遠都在，就看你抓不抓得住。下次拜託別再自己一個人跑掉了！",
    "role": "desc",
@@ -556,8 +766,8 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#055": {
-   "src": "Human, you made the right choice... Without Nikoler, our efforts would have been in vain. I'll try to work with him a bit more, as it seems the logical course of action now. Thank you.",
+  "Purple and Blue#076": {
+   "src": "Human, you made the right choice... Without Nikoler, our efforts would have been in vain. I'll try to work with him a bit more, as it seems like the logical course of action now. Thank you.",
    "dst": "人類，你做了正確的選擇……少了 Nikoler，我們的努力都會白費。看來現在合乎邏輯的做法就是跟他多合作一點了。謝謝你。",
    "role": "desc",
    "kind": "dialogue",
@@ -566,7 +776,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#056": {
+  "Purple and Blue#077": {
    "src": "H-Hey! I never agreed to-",
    "dst": "欸、欸！我可從來沒答應要——",
    "role": "desc",
@@ -576,7 +786,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#057": {
+  "Purple and Blue#078": {
    "src": "I see you're completely drenched! There's this odd aura around you... What happened?",
    "dst": "我看你全身都濕透了！你身上還有一股奇怪的氣息……發生什麼事了？",
    "role": "desc",
@@ -586,7 +796,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#058": {
+  "Purple and Blue#079": {
    "src": "You... You actually found a meteor shard! That's amazing! That's... that's... um...",
    "dst": "你……你居然真的找到了一塊隕石碎片！太驚人了！那……那……呃……",
    "role": "desc",
@@ -596,7 +806,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#059": {
+  "Purple and Blue#080": {
    "src": "Uh, what did you say j-just now? The cave collapsed and Nikoler d-died...?",
    "dst": "呃，你、你剛剛說什麼？洞穴塌了，Nikoler 他、他死了……？",
    "role": "desc",
@@ -606,7 +816,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#060": {
+  "Purple and Blue#081": {
    "src": "That's, um, haha... That doesn't sound right, he can't die, he can't leave like that, he can't-",
    "dst": "那個，呃，哈哈……這聽起來不對啊，他不會死的，他不可能就這樣走掉，他不會——",
    "role": "desc",
@@ -616,7 +826,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#061": {
+  "Purple and Blue#082": {
    "src": "S-Sorry. I'm just a little shocked is all. I do have to thank you for the shard...",
    "dst": "抱、抱歉。我只是有點震驚而已。碎片的事我還是得謝謝你……",
    "role": "desc",
@@ -626,7 +836,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#062": {
+  "Purple and Blue#083": {
    "src": "A-at the very least, you saw this through... I have to commend you for that... I think.",
    "dst": "至、至少你把這件事做完了……這一點我得稱讚你……我想。",
    "role": "desc",
@@ -636,7 +846,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#063": {
+  "Purple and Blue#084": {
    "src": "Just take these, and go. I have much to think about.",
    "dst": "這些你拿去，然後走吧。我有很多事要想。",
    "role": "desc",
@@ -646,7 +856,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#064": {
+  "Purple and Blue#085": {
    "src": "You explored thoroughly, and couldn't find a shard? Well, we still have much to discover I suppose.",
    "dst": "你徹底探過了，卻找不到碎片？唉，看來我們要發現的東西還多著呢。",
    "role": "desc",
@@ -656,7 +866,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#065": {
+  "Purple and Blue#086": {
    "src": "Uh, what did you say j-just now? The cave collapsed and Nikoler d-died..?",
    "dst": "呃，你、你剛剛說什麼？洞穴塌了，Nikoler 他、他死了……？",
    "role": "desc",
@@ -666,7 +876,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#067": {
+  "Purple and Blue#087": {
    "src": "S-Sorry. I'm just a little shocked is all. And you came back empty-handed... This was just a loss with everyone involved.",
    "dst": "抱、抱歉。我只是有點震驚而已。而且你還兩手空空回來……這下所有人都是輸家了。",
    "role": "desc",
@@ -676,7 +886,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#070": {
+  "Purple and Blue#088": {
    "src": "I see you're completely drenched, so I suppose you thoroughly explored the place. How did it go?",
    "dst": "我看你全身都濕透了，那我想你應該把那地方徹底探過了。情況怎麼樣？",
    "role": "desc",
@@ -686,7 +896,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#071": {
+  "Purple and Blue#089": {
    "src": "You found... Nothing? Really? And the meteors were too unstable to temper with?",
    "dst": "你什麼……都沒找到？真的？而且那些隕石不穩定到沒辦法動手腳？",
    "role": "desc",
@@ -696,7 +906,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#072": {
+  "Purple and Blue#090": {
    "src": "Actually, how would you know about tempering with the- wait...",
    "dst": "等等，你怎麼會知道能不能動手腳——等一下……",
    "role": "desc",
@@ -706,7 +916,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#073": {
+  "Purple and Blue#091": {
    "src": "Did you find him? Please... please tell me you found him, there's no way he'd die just like that. I...",
    "dst": "你找到他了嗎？拜託……拜託告訴我你找到他了，他不可能就這樣死掉的。我……",
    "role": "desc",
@@ -716,7 +926,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#074": {
+  "Purple and Blue#092": {
    "src": "W-what? The whole cave COLLAPSED on him? And you couldn't even save him?! N-no, it can't be your fault, I... I'm sorry.",
    "dst": "什、什麼？整個洞穴塌在他身上？而且你連救都救不了他？！不、不對，這不能怪你，我……我很抱歉。",
    "role": "desc",
@@ -726,7 +936,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#075": {
+  "Purple and Blue#093": {
    "src": "This is all way too much to take in for me, but I suppose you've explored and served the purpose I gave you.",
    "dst": "這些事我一時之間實在消化不了，不過我想你確實探索過了，也完成了我交給你的任務。",
    "role": "desc",
@@ -736,7 +946,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#076": {
+  "Purple and Blue#094": {
    "src": "Here's your reward, then. Now please, just leave me be. There's a lot I have to think about.",
    "dst": "那這是你的報酬。現在拜託，讓我一個人靜一靜。我有很多事要想。",
    "role": "desc",
@@ -746,7 +956,7 @@
    "speaker": "Korun",
    "source": "wiki"
   },
-  "Purple and Blue#077": {
+  "Purple and Blue#095": {
    "src": "It's you! Glad to have crossed paths again!",
    "dst": "是你！很高興又碰到你！",
    "role": "desc",
@@ -756,7 +966,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#078": {
+  "Purple and Blue#096": {
    "src": "Since the incident, I've decided to start fishing as a hobby.",
    "dst": "那件事之後，我決定開始把釣魚當興趣。",
    "role": "desc",
@@ -766,7 +976,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#079": {
+  "Purple and Blue#097": {
    "src": "Take this- for all I care, you can own this!",
    "dst": "這個拿去——我一點都不在乎，你留著吧！",
    "role": "desc",
@@ -776,7 +986,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#080": {
+  "Purple and Blue#098": {
    "src": "Thank you... for saving me.",
    "dst": "謝謝你……救了我。",
    "role": "desc",
@@ -786,7 +996,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#081": {
+  "Purple and Blue#099": {
    "src": "Check up on Korun from time to time for me, will you?",
    "dst": "幫我三不五時去看看 Korun，好嗎？",
    "role": "desc",
@@ -796,7 +1006,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#082": {
+  "Purple and Blue#100": {
    "src": "I'm still taking a break from all the science stuff... But he definitely hasn't seen the last of me!",
    "dst": "科學那一套我還在休息當中……不過他絕對還會再見識到我的！",
    "role": "desc",
@@ -806,7 +1016,7 @@
    "speaker": "Nikoler",
    "source": "wiki"
   },
-  "Purple and Blue#083": {
+  "Purple and Blue#101": {
    "src": "After all, I'm the one who got to the heart of the mountain! I'm even able to sleep soundly knowing that I've won...",
    "dst": "畢竟，抵達那座山心臟的人是我！光是知道自己贏了，我連覺都睡得特別香……",
    "role": "desc",

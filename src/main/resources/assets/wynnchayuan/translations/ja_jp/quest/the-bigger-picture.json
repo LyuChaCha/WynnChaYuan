@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "The Bigger Picture",
-  "count": 25,
+  "count": 27,
   "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Bigger Picture#000": {
+   "src": "Since you're so big, you won't fall asleep! Please retrieve some mushroom for me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Bigger Picture",
+   "stage": "",
+   "speaker": "Psilo",
+   "source": "captured"
+  },
+  "The Bigger Picture#001": {
+   "src": "You've taken care of the Razorice problem, now you just need to find that blue mushroom Psilo was talking about...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Bigger Picture",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Bigger Picture#002": {
    "src": "Talk to Psilo in the mushroom cave.",
    "dst": "キノコの洞窟で Psilo と話す。",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#001": {
+  "The Bigger Picture#003": {
    "src": "Welcome, large human! What's that look for, never seen a Gnome before?! My house may look small, but it's perfect for me!",
    "dst": "ようこそ、大きな人間さん！何その顔、ノームを見るのは初めて？！家は小さく見えるかもだけど、私にはぴったりなんだ！",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#002": {
+  "The Bigger Picture#004": {
    "src": "I actually need some help, you see Razorice plague my home! They are similar to the rats of your province, but vicious and deadly to Gnomes!",
    "dst": "実は助けてほしいんだ。Razorice が家を荒らしてて！君の地方のネズミみたいなものだけど、凶暴でノームには命取りなの！",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#003": {
+  "The Bigger Picture#005": {
    "src": "An easy fix exists for it though. There are many magical mushrooms in this cave and a rare one called Subtraxerim Utilium is the one we need.",
    "dst": "でも簡単な解決法があるよ。この洞窟には魔法のキノコがたくさんあって、Subtraxerim Utilium っていう珍しいのが必要なんだ。",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#004": {
+  "The Bigger Picture#006": {
    "src": "It emits a sleeping spore that will knock the Razorice out long enough to kill them! I've seen one in the cave but every time I go to get it, I fall asleep!",
    "dst": "眠りの胞子を出して、Razorice を倒せるくらい長く眠らせてくれる！洞窟で一本見たけど、取りに行くたびに私が寝ちゃうの！",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#005": {
+  "The Bigger Picture#007": {
    "src": "I left a trail of spores from the location. Since you're so big, you won't fall asleep! Please retrieve some mushroom for me.",
    "dst": "その場所から胞子で道しるべを残しておいたよ。君は大きいから眠らないはず！キノコを取ってきて。",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#006": {
+  "The Bigger Picture#008": {
    "src": "I think I left a trail of rainbow spores last time I tried to collect some, just follow the colours through the cave to find the mushroom!",
    "dst": "前に取ろうとした時、虹色の胞子の跡を残したと思う。色をたどって洞窟を進めばキノコが見つかるよ！",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#007": {
+  "The Bigger Picture#009": {
    "src": "Find the Subtraxerim Utilium mushroom in the cave and bring it back to Psilo.",
    "dst": "洞窟で Subtraxerim Utilium のキノコを見つけ、Psilo に届ける。",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#008": {
+  "The Bigger Picture#010": {
    "src": "Return to Psilo.",
    "dst": "Psilo のもとへ戻る。",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#009": {
+  "The Bigger Picture#011": {
    "src": "Did you find any? Wait, something is different about you. Have you gotten smaller? Oh my...",
    "dst": "見つかった？待って、なんだか様子が違う。小さくなってない？あらら…",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#010": {
+  "The Bigger Picture#012": {
    "src": "... You have.",
    "dst": "…なってるね。",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#011": {
+  "The Bigger Picture#013": {
    "src": "I’m really sorry about this, I didn't think the mushroom would have a different effect on humans! But what did I expect from a mushroom that changes colour?!",
    "dst": "本当にごめん、人間には違う効き目があるなんて思わなかった！でも色が変わるキノコに何を期待してたんだろ？！",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#012": {
+  "The Bigger Picture#014": {
    "src": "Do not panic. I have a mushroom in my house that wakes people up; logic says that if the sleeping mushroom shrinks you, then this one should make you grow again!",
    "dst": "慌てないで。家に目覚ましのキノコがあるの。眠りのキノコで縮んだなら、そっちで元に戻るのが理屈でしょ！",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#013": {
+  "The Bigger Picture#015": {
    "src": "Oh my, you are still shrinking before my eyes. You must hurry to the mushroom. Be careful, though! The Razorice will probably hunt you!",
    "dst": "わあ、目の前でまだ縮んでる。急いでキノコの所へ行って。でも気をつけて！Razorice に狙われるかも！",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#014": {
+  "The Bigger Picture#016": {
    "src": "I keep it on the top shelf, so you will probably have to fight them at some point... If you kill them while you^re there, we can kill two birds with one stone! Just follow the cheese crumbs to find them!",
    "dst": "一番上の棚に置いてあるから、どこかで奴らと戦うことになると思う…ついでに倒してくれたら一石二鳥だよ！チーズのかけらをたどれば見つかるから！",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#015": {
+  "The Bigger Picture#017": {
    "src": "Good luck! Oh and, do watch out for my pet zombie.",
    "dst": "がんばって！あ、それとペットのゾンビに気をつけてね。",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#016": {
+  "The Bigger Picture#018": {
    "src": "Find the mushroom in Psilo's house.",
    "dst": "Psilo の家でキノコを見つける。",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#017": {
+  "The Bigger Picture#019": {
    "src": "Get to the mouse nest by following the cheese trail and get rid of the pest.",
    "dst": "チーズの跡をたどってネズミの巣へ行き、害獣を始末する。",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#018": {
+  "The Bigger Picture#020": {
    "src": "Get to the blue mushroom and return to normal size.",
    "dst": "青いキノコのところへ行き、元の大きさに戻る。",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#019": {
+  "The Bigger Picture#021": {
    "src": "Give Psilo the good news about the mice.",
    "dst": "ネズミの朗報を Psilo に伝える。",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#020": {
+  "The Bigger Picture#022": {
    "src": "What the... my house! What did you do?!",
    "dst": "な…私の家！何をしたの？！",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#021": {
+  "The Bigger Picture#023": {
    "src": "Springy plant? Bookshelf levers? Razorice king?! Hold on a moment, slow down and tell me properly.",
    "dst": "跳ねる植物？本棚のレバー？Razorice の王？！ちょっと待って、落ち着いてちゃんと話して。",
    "role": "desc",
@@ -226,8 +246,8 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#022": {
-   "src": "I see. Well, at least you handled those damned Razorice, and I can actually live in my house again - not that it'll offer much shelter now you've blown a hole in the side of it!",
+  "The Bigger Picture#024": {
+   "src": "I see. Well, at least you handled those damned Razorice, and I can actually live inside my house again - not that it'll offer much shelter now you've blown a hole in the side of it!",
    "dst": "なるほど。まあ、あの憎き Razorice を片付けてくれたし、やっと家に住めるよ。横に穴を開けられたから、雨風はろくにしのげないけどね！",
    "role": "desc",
    "kind": "dialogue",
@@ -236,7 +256,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#023": {
+  "The Bigger Picture#025": {
    "src": "Ah, I suppose that's alright. The mushroom will grow back over to cover it - and righto, your reward!",
    "dst": "まあ、いいか。キノコがまた伸びて穴をふさぐはず。さてと、お礼だよ！",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#024": {
+  "The Bigger Picture#026": {
    "src": "Here, take some of our Gnome gold, we have plenty to go around. And sorry about the whole you-getting-shrunk thing, but hey, being small isn't so bad! See you around, human!",
    "dst": "はい、ノームの金をどうぞ、たくさんあるから。縮ませちゃってごめんね、でも小さいのも悪くないでしょ！またね、人間さん！",
    "role": "desc",
