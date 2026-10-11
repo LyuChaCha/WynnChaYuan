@@ -149,7 +149,7 @@ public final class PageNames {
             // 保留原文：名字那一段<b>整段拿原文的</b>（字型、顏色都是遊戲原本的）
             copy(out, original, 0, name.length());
         } else {
-            net.minecraft.network.chat.TextColor colour = colourAt(original, 0);
+            net.minecraft.network.chat.TextColor colour = nameColour(original, name.length());
             int[] at = {0};
             boolean[] same = {true};
             translated.visit((style, part) -> {
@@ -170,20 +170,41 @@ public final class PageNames {
         return out;
     }
 
-    /** 畫出來的第 {@code index} 個字的顏色；沒設顏色回傳 {@code null}。 */
-    private static net.minecraft.network.chat.TextColor colourAt(Component line, int index) {
-        net.minecraft.network.chat.TextColor[] hit = {null};
-        boolean[] found = {false};
+    /**
+     * 原文名字那一段是什麼顏色：<b>佔最多字的那一個</b>。
+     *
+     * <h2>為什麼不看第一個字元（使用者 2026-10-11 實測第二版）</h2>
+     * 「原本的 title 顏色消失了」——任務卡的標題從綠色變成白的。第二版拿原文第一個字元的
+     * 顏色去塗，而那張卡的標題開頭有一個看不見的字元，顏色跟名字不一樣；下面那一列原文
+     * 是整段照抄的，所以還是綠的，只有標題被塗錯。
+     *
+     * <p>只數字母與數字（空白、圖示、排版用的字元都不算），哪個顏色的字最多就是名字的顏色。
+     *
+     * @return 名字的顏色；整段都沒設顏色時回傳 {@code null}（那就不重塗）
+     */
+    private static net.minecraft.network.chat.TextColor nameColour(Component line, int length) {
+        java.util.Map<net.minecraft.network.chat.TextColor, Integer> votes = new java.util.LinkedHashMap<>();
         int[] at = {0};
         line.visit((style, part) -> {
-            if (!found[0] && index < at[0] + part.length()) {
-                hit[0] = style.getColor();
-                found[0] = true;
+            for (int i = 0; i < part.length() && at[0] + i < length; i++) {
+                char c = part.charAt(i);
+                if (Character.isLetterOrDigit(c) && !(c >= 0xE000 && c <= 0xF8FF)
+                        && style.getColor() != null) {
+                    votes.merge(style.getColor(), 1, Integer::sum);
+                }
             }
             at[0] += part.length();
             return Optional.empty();
         }, Style.EMPTY);
-        return hit[0];
+        net.minecraft.network.chat.TextColor best = null;
+        int most = 0;
+        for (java.util.Map.Entry<net.minecraft.network.chat.TextColor, Integer> e : votes.entrySet()) {
+            if (e.getValue() > most) {
+                most = e.getValue();
+                best = e.getKey();
+            }
+        }
+        return best;
     }
 
     /** 把 {@code line} 畫出來的 {@code [from, to)} 接到 {@code out} 後面，樣式原樣。 */

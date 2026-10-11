@@ -180,6 +180,35 @@ public final class PageNamesTest {
                 "Aelumia Metalmill".equals(text(PageNames.titles(
                         card("Aelumia Metalmill", "Cave"), seen, ItemNames.BOTH), 1)));
 
+        // ---- ★ 標題開頭有一個別種顏色的隱形字元 ----
+        // 使用者 2026-10-11 實測第二版：任務卡的標題從綠色變成白的。拿「第一個字元」的顏色
+        // 去塗會塗錯——開頭那個看不見的字元不是名字的顏色。
+        Style green = Style.EMPTY.withColor(TextColor.fromRgb(0x33B33B));
+        List<Component> quest = new ArrayList<>();
+        quest.add(Component.empty()
+                .append(Component.literal("​").withStyle(white))
+                .append(Component.literal("Burning Bonds").withStyle(green))
+                .append(Component.literal(" [Quest]").withStyle(TAG)));
+        List<Component> questShown = List.of(Component.empty()
+                .append(Component.literal("羈絆成灰").withStyle(green))
+                .append(Component.literal(" [任務]").withStyle(TAG)));
+        for (ItemNames mode : new ItemNames[] {ItemNames.ON, ItemNames.BOTH}) {
+            List<Component> fixed = PageNames.titles(quest, questShown, mode);
+            boolean stays = true;
+            for (int i = 0; i < "羈絆成灰".length(); i++) {
+                stays &= colourAt(fixed.get(0), i) == 0x33B33B;
+            }
+            check("★ " + mode + "：標題照樣是名字的顏色，不被開頭那個隱形字元帶歪", stays);
+        }
+        // 譯文那一側花掉、原文開頭又有隱形字元：照名字佔多數的顏色塗
+        List<Component> questMixed = List.of(Component.empty()
+                .append(Component.literal("Burning ").withStyle(green))
+                .append(Component.literal("之絆").withStyle(white))
+                .append(Component.literal(" [任務]").withStyle(TAG)));
+        List<Component> repainted = PageNames.titles(quest, questMixed, ItemNames.ON);
+        check("★ 花掉的標題塗回名字佔多數的顏色（綠），不是開頭那個字元的白",
+                colourAt(repainted.get(0), "Burning ".length()) == 0x33B33B);
+
         // ---- 不是內容名稱的不動 ----
         store.setPageNameMode(ItemNames.BOTH);
         List<Component> made = card("Zzyzx Made Up Place", "Cave");
