@@ -1,6 +1,5 @@
 package com.wynnchayuan.client;
 
-import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.ui.CreditsView;
 import com.wynnchayuan.client.ui.Surface;
@@ -46,30 +45,6 @@ public final class CreditsScreen extends CanvasScreen {
             @Override
             public String version() {
                 return WynnChaYuan.version();
-            }
-
-            @Override
-            public String badgeLabel() {
-                return T.s("credits.badges",
-                        T.s(WynnChaYuan.config().showBadges() ? "mode.on" : "mode.off"));
-            }
-
-            @Override
-            public void toggleBadges() {
-                WynnChaYuan.config().toggleBadges();
-            }
-
-            @Override
-            public String styleLabel() {
-                boolean gradient = WynnChaYuan.config().badgeStyle()
-                        == CollectorConfig.BadgeStyle.GRADIENT;
-                return T.s("credits.badges.style",
-                        T.s(gradient ? "credits.badges.all" : "credits.badges.main"));
-            }
-
-            @Override
-            public void cycleStyle() {
-                WynnChaYuan.config().cycleBadgeStyle();
             }
 
             @Override
