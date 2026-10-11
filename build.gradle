@@ -502,6 +502,26 @@ tasks.register('runChoiceChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChoiceChecks' }
 
+// 對話框的名牌：從 action bar 原始訊息讀，只給內文對得上的那一句（issue #1138）。
+tasks.register('runDialogueSpeakerChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話框名牌讀得到、換句時不會錯開'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.DialogueSpeakerTest'
+}
+tasks.named('check') { dependsOn 'runDialogueSpeakerChecks' }
+
+// 對話要不要掛追蹤中的任務名：說話者不在那個任務的語料名單上就不掛（issue #1138）。
+tasks.register('runQuestGuessChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話的任務歸屬不會被追蹤欄帶錯'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.QuestGuessTest'
+}
+tasks.named('check') { dependsOn 'runQuestGuessChecks' }
+
 tasks.register('runLabelReplaceChecks', JavaExec) {
     group = 'verification'
     description = '驗證漂浮名牌就地替換不會動到遊戲自己的版面'

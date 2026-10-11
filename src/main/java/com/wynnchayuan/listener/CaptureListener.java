@@ -57,13 +57,20 @@ public final class CaptureListener {
     private volatile boolean lastHadChoices = false;
 
     /**
-     * 目前這段對話框上的名牌。
+     * 緩衝區裡<b>那一句</b>的名牌與選項旗標。
      *
      * <p>{@link DialogueBuffer} 是延後送出的：判定「打完了」的那一刻，
      * 畫面上往往已經換成下一句了。所以說話者要在<b>餵進去的時候</b>記下來，
      * 不能等到記錄的時候才去讀畫面。
+     *
+     * <h2>跟著句子走，不是跟著畫面走（issue #1138）</h2>
+     * 先前只有一個 {@code lastSpeaker}，而且是先更新、再送出上一句：換人講話的
+     * 那一刻，上一句被記成下一個人的話。沒有名牌的句子（旁白、日記）又不會清掉它，
+     * 前一個人的名字就一路黏下去。現在名牌跟著緩衝區裡的那一句：送出時用它自己的，
+     * 換句或靜置送出之後就重來。
      */
-    private volatile String lastSpeaker = null;
+    private volatile String lineSpeaker = null;
+    private volatile boolean lineHadChoices = false;
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onDialogueStarted(NpcDialogueEvent.Started event) {
@@ -129,28 +136,113 @@ public final class CaptureListener {
         // 說話者要在句子送出之前記下來：等 buffer 判定「打完了」時，
         // 畫面上通常已經換成下一句、換成下一個人了。
         String speaker = DialogueSpeaker.of(styled);
-        if (speaker != null) {
-            lastSpeaker = speaker;
+        if (speaker == null) {
+            // 對話事件的文字只有內文；名牌在 action bar 的原始訊息裡
+            speaker = DialogueSpeaker.currentFor(styled.getString());
         }
-        record(buffer.offer(styled.getString(), GlyphSplitter.toTemplate(styled)));
+        // 對話框沒畫名牌時，說話者是玩家剛剛右鍵點的那個 NPC。見 ConversationPartner
+        String partner = com.wynnchayuan.capture.ConversationPartner.forLine();
+        String done = buffer.offer(styled.getString(), GlyphSplitter.toTemplate(styled));
+        if (done != null) {
+            // 送出的是上一句：用上一句自己的名牌，再換成這一句的
+            record(done, lineSpeaker, lineHadChoices);
+            lineSpeaker = speaker != null ? speaker : partner;
+        } else if (speaker != null) {
+            lineSpeaker = speaker;
+        } else if (lineSpeaker == null) {
+            lineSpeaker = partner;
+        }
+        lineHadChoices = lastHadChoices;
     }
 
     /** 供定時器呼叫：內容穩定夠久就送出，避免最後一句卡在緩衝區。 */
     public void flushSettled() {
-        record(buffer.flushIfSettled());
+        String done = buffer.flushIfSettled();
+        if (done != null) {
+            record(done, lineSpeaker, lineHadChoices);
+            lineSpeaker = null;      // 緩衝區空了，下一句的名牌從頭算
+        }
     }
 
-    private void record(String completed) {
+    /**
+     * 診斷：語料裡已經有說話者的句子，拿來核對這次認出來的對不對。
+     *
+     * <p>收集只留沒翻過的句子，已經翻好的任務玩一輪什麼都不會留下，看不出說話者
+     * 認得準不準。語料裡大部分台詞本來就標了 speaker，正好當標準答案。
+     */
+    private static void auditSpeaker(String template, String speaker) {
+        try {
+            String known = com.wynnchayuan.capture.DialogueSpeaker.cleanName(
+                    WynnChaYuan.translations().speakerOf(template));
+            if (known == null) {
+                return;
+            }
+            String got = com.wynnchayuan.capture.DialogueSpeaker.cleanName(speaker);
+            if (got == null) {
+                WynnChaYuan.store().noteEvent("speaker.audit.none");
+            } else if (got.equalsIgnoreCase(known)) {
+                WynnChaYuan.store().noteEvent("speaker.audit.match");
+            } else {
+                WynnChaYuan.store().noteEvent("speaker.audit.mismatch");
+            }
+        } catch (Throwable ignored) {
+            // 只是診斷
+        }
+    }
+
+    private void record(String completed, String nameplate, boolean hadChoices) {
         if (completed == null || !WynnChaYuan.config().collect()) {
             return;
         }
-        // 說話者優先用對話框自己的名牌——那是遊戲畫給玩家看的名字，不會錯。
-        // 沒有名牌（旁白框）才退回「玩家正在看的實體」那個間接的猜測。
-        String speaker = lastSpeaker != null ? lastSpeaker : LookAtTranslator.nearestLabel();
+        // nameplate 是 feed 時記下的：對話框的名牌（從 action bar 原始訊息讀），
+        // 沒有名牌才是玩家右鍵點的那個 NPC（ConversationPartner）。
+        //
+        // 不再退回「玩家正前方那塊名牌」（LookAtTranslator#nearestLabel）去猜：
+        // 實機（issue #1138）猜到的是寵物（別人的 Wybel、玩家自己的寵物），在 Espren
+        // 那座四個 NPC 擠在一起的小公園裡，還把衛兵的話記成園丁、園丁的話記成市民。
+        // 猜錯的說話者比沒有說話者更糟：譯者會照著錯的角色去抓語氣。
+        String speaker = nameplate;
+        auditSpeaker(completed, speaker);
+        // 追蹤欄上的任務不一定是這段對話的任務。見 QuestGuess
+        String quest = CurrentQuest.get();
+        boolean withQuest = com.wynnchayuan.capture.QuestGuess.withQuest(
+                quest, speaker,
+                WynnChaYuan.translations().inCast(quest, speaker),
+                com.wynnchayuan.capture.ConversationPartner.fromBlock());
+        auditQuest(completed, quest, withQuest);
         WynnChaYuan.store().record(
                 completed, "desc", "quest",
-                CurrentQuest.tag(lastHadChoices ? "dialogue/choices" : "dialogue",
-                                 speaker));
+                CurrentQuest.tag(hadChoices ? "dialogue/choices" : "dialogue",
+                                 speaker, withQuest));
+    }
+
+    /**
+     * 診斷：語料裡已經標了任務的句子，拿來核對這次掛的任務名對不對。
+     *
+     * <ul>
+     *   <li>{@code match}：掛了，而且就是那個任務</li>
+     *   <li>{@code mismatch}：掛了，但語料說是別的任務</li>
+     *   <li>{@code avoided}：沒掛——而追蹤中的任務本來就不是它的（擋對了）</li>
+     *   <li>{@code missed}：沒掛——但它就是追蹤中那個任務的（擋錯了）</li>
+     * </ul>
+     */
+    private static void auditQuest(String template, String quest, boolean withQuest) {
+        try {
+            if (quest == null) {
+                return;
+            }
+            String known = WynnChaYuan.translations().questOf(template);
+            if (known == null) {
+                return;
+            }
+            String tracked = com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip();
+            boolean same = tracked.equalsIgnoreCase(known.strip());
+            String verdict = withQuest ? (same ? "match" : "mismatch")
+                                       : (same ? "missed" : "avoided");
+            WynnChaYuan.store().noteEvent("quest.audit." + verdict);
+        } catch (Throwable ignored) {
+            // 只是診斷
+        }
     }
 
     // ---------------------------------------------------------------- 聊天
