@@ -297,6 +297,8 @@ public final class TranslationStore {
         market.clear();
         ordered.clear();
         byQuest.clear();
+        questCast.clear();
+        questOfLine.clear();
         playerKeys.clear();
         wordCount.clear();
         fromWiki.clear();
@@ -740,12 +742,20 @@ public final class TranslationStore {
                     byQuest.computeIfAbsent(quest.strip(),
                             q -> new java.util.TreeMap<>()).put(srcKey, dst.strip());
                 }
+                if (quest != null && !quest.isBlank()) {
+                    questOfLine.put(srcKey, quest.strip());
+                }
                 if ("wiki".equals(optString(e, "source"))) {
                     fromWiki.add(srcKey);      // 見 #curatedRival
                 }
                 String who = optString(e, "speaker");
                 if (who != null && !who.isBlank()) {
                     speakers.put(srcKey, who.strip());
+                    String name = com.wynnchayuan.capture.DialogueSpeaker.cleanName(who);
+                    if (quest != null && !quest.isBlank() && name != null) {
+                        questCast.computeIfAbsent(quest.strip(),
+                                q -> ConcurrentHashMap.newKeySet()).add(name);
+                    }
                 }
                 if ("name".equals(optString(e, "role"))) {
                     if (tradable) {
@@ -1369,6 +1379,41 @@ public final class TranslationStore {
 
     /** 每一句對話的說話者。見 {@link #speakerOf}。 */
     private final Map<String, String> speakers = new ConcurrentHashMap<>();
+
+    /**
+     * 這個說話者是不是這個任務的人。
+     *
+     * <h2>為什麼要有（issue #1138）</h2>
+     * 收集時的任務名稱是追蹤欄上的那一個，而玩家追著 Undersupply 的時候，順路跟
+     * 茶館的 Marseled 聊天、跑完整段祕密發現 Solace in Pain——一百多句全被記成
+     * Undersupply，匯入時會進錯的任務檔。語料知道每個任務有哪些說話者：
+     * 說話者不在名單上，這句多半不是這個任務的台詞。
+     *
+     * @return {@code true}／{@code false}；任務在語料裡沒有說話者名單（新任務）
+     *         或不知道說話者時回傳 {@code null}——判斷不了
+     */
+    public Boolean inCast(String quest, String speaker) {
+        if (quest == null || speaker == null || speaker.isBlank()) {
+            return null;
+        }
+        java.util.Set<String> cast = questCast.get(
+                com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+        if (cast == null || cast.isEmpty()) {
+            return null;
+        }
+        return cast.contains(speaker.strip());
+    }
+
+    /** @return 語料裡這一句屬於哪個任務；沒有標就回傳 {@code null}。給收集端核對用 */
+    public String questOf(String template) {
+        return template == null ? null : questOfLine.get(template.strip());
+    }
+
+    /** 每個任務在語料裡出現過的說話者（已剝掉名牌圖示）。見 {@link #inCast}。 */
+    private final Map<String, java.util.Set<String>> questCast = new ConcurrentHashMap<>();
+
+    /** 每一句台詞的任務。見 {@link #questOf}。 */
+    private final Map<String, String> questOfLine = new ConcurrentHashMap<>();
 
     /**
      * 半句話也查得到：拿<b>開頭</b>去比對。

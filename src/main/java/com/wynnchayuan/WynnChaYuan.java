@@ -227,6 +227,25 @@ public final class WynnChaYuan implements ClientModInitializer {
         } catch (Throwable t) {
             System.out.println("[" + MOD_NAME + "] 指令註冊失敗，其餘功能照常：" + t);
         }
+        // 右鍵點了哪個 NPC：沒有名牌的對話框靠它知道是誰在講話。見 ConversationPartner
+        try {
+            net.fabricmc.fabric.api.event.player.UseEntityCallback.EVENT.register(
+                    (player, world, hand, entity, hit) -> {
+                        if (world.isClientSide()) {
+                            com.wynnchayuan.capture.ConversationPartner.clicked(entity);
+                        }
+                        return net.minecraft.world.InteractionResult.PASS;
+                    });
+            net.fabricmc.fabric.api.event.player.UseBlockCallback.EVENT.register(
+                    (player, world, hand, hit) -> {
+                        if (world.isClientSide()) {
+                            com.wynnchayuan.capture.ConversationPartner.blockClicked();
+                        }
+                        return net.minecraft.world.InteractionResult.PASS;
+                    });
+        } catch (Throwable t) {
+            System.out.println("[" + MOD_NAME + "] 點擊監聽註冊失敗，說話者只看名牌：" + t);
+        }
 
         // tooltip 面板要在整個畫面畫完之後才畫，否則會被原始 tooltip 蓋掉。
         // Wynntils 的 ItemTooltipRenderEvent.Post 從來沒被發送過，用不了，
