@@ -48,6 +48,7 @@ import collections
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -121,8 +122,52 @@ def official_quests() -> set[str]:
 
 _OFFICIAL: set[str] | None = None
 
-# ctx 長成 dialogue/Cook Assistant#Aledar 或 dialogue/choices/Cook Assistant
-CTX = re.compile(r"^dialogue(?:/choices)?/([^#]+)(?:#(.*))?$")
+# ctx 長成 dialogue/Cook Assistant#Aledar 或 dialogue/choices/Cook Assistant。
+# 井號後面可能跨行（舊版模組把整塊名牌記進去了，見 clean_speaker），所以要 re.S。
+CTX = re.compile(r"^dialogue(?:/choices)?/([^#]+)(?:#(.*))?$", re.S)
+
+# 排版偏移（minecraft:space 字型）的碼位範圍：U+D0000 前後各 1024。
+# 與 mod 端 SpaceOffset#isOffset 同一個範圍。
+OFFSET_LOW, OFFSET_HIGH = 0xD0000 - 1024, 0xD0000 + 1024
+
+
+def plate_junk(ch: str) -> bool:
+    """名牌上不屬於名字的東西：私用區的圖示、未分配碼位、排版偏移。"""
+    return (unicodedata.category(ch) in ("Co", "Cn")
+            or OFFSET_LOW <= ord(ch) <= OFFSET_HIGH)
+
+
+def clean_speaker(raw: str) -> str:
+    """說話者只留名字。
+
+    1.0.1_1 以前的模組在對話框沒給名牌時，把「玩家面前那塊名牌」<b>整塊</b>當成
+    說話者——名字底下還有一列等級牌，全是自訂字型的圖示與排版偏移：
+
+        Old Drunk⏎U+E060 U+CFFFF U+E03D … U+D0002
+        Espren Citizen U+E060 U+CFFFF …          （沒有換行的那一種）
+
+    issue #1124 那一份 75 句對話裡有 33 句是這樣，匯進任務檔之前得一句一句手改。
+    模組那一邊已經修了（CurrentQuest#speakerName），這裡用<b>同一套規則</b>，
+    舊版交上來的檔案才不必再手清：開頭的圖示與空白跳過，名字到第一個換行、
+    或第一個圖示／排版偏移碼位為止。
+    """
+    text = raw or ""
+    start = 0
+    while start < len(text) and (text[start].isspace() or plate_junk(text[start])):
+        start += 1
+    end = start
+    while end < len(text) and text[end] not in "\r\n" and not plate_junk(text[end]):
+        end += 1
+    return text[start:end].strip()
+
+
+def clean_ctx(ctx: str) -> str:
+    """對話 ctx 裡的說話者也清成只剩名字；不是對話的原樣回傳。"""
+    if not ctx.startswith("dialogue") or "#" not in ctx:
+        return ctx
+    head, who = ctx.split("#", 1)
+    who = clean_speaker(who)
+    return f"{head}#{who}" if who else head
 
 
 def quest_of(entry: dict) -> tuple[str, str] | None:
@@ -135,12 +180,12 @@ def quest_of(entry: dict) -> tuple[str, str] | None:
     # 不必再去解 ctx——解字串是舊版的做法，兩條路留著遲早會分岔。
     quest = (entry.get("quest") or "").strip()
     if quest:
-        return quest, (entry.get("speaker") or "").strip()
+        return quest, clean_speaker(entry.get("speaker") or "")
     match = CTX.match(entry.get("ctx", ""))
     if not match:
         return None
     quest = match.group(1).strip()
-    return (quest, (match.group(2) or "").strip()) if quest else None
+    return (quest, clean_speaker(match.group(2) or "")) if quest else None
 
 
 def slug(name: str) -> str:
@@ -612,7 +657,49 @@ def selftest() -> int:
     print(("  [PASS] " if ok else "  [FAIL] ") + "similar 欄位不帶譯文、候選標 candidate"
           + ("" if ok else f"（實際 {got}）"))
     bad += 0 if ok else 1
-    print("對話插入與提示：" + ("全部通過" if bad == 0 else f"{bad} 項失敗"))
+    # 說話者只留名字（issue #1124）。碼位照那一份檔案裡的樣子。
+    plate = "".join(map(chr, (0xE060, 0xCFFFF, 0xE03D, 0xCFFFF, 0xE03F, 0xCFFFF, 0xE032,
+                              0xCFFFF, 0xE062, 0xCFFEC, 0xE00D, 0xE00F, 0xE002, 0xD0002)))
+    speakers = [
+        ("名字底下的等級牌", "Old Drunk\n" + plate, "Old Drunk"),
+        ("圖示直接跟在名字後面", "Espren Citizen " + plate, "Espren Citizen"),
+        ("名字上面還有一列圖示", plate + "\nZeph\n" + plate, "Zeph"),
+        ("乾淨的名字不動", "Espren Border Guard", "Espren Border Guard"),
+        ("帶重音與撇號的名字不動", "Thésead's Mayor", "Thésead's Mayor"),
+        ("整塊都是圖示", plate, ""),
+        ("空的", "", ""),
+    ]
+    for what, raw, want in speakers:
+        got = clean_speaker(raw)
+        ok = got == want
+        print(("  [PASS] " if ok else "  [FAIL] ") + "說話者：" + what
+              + ("" if ok else f"（實際 {got!r}）"))
+        bad += 0 if ok else 1
+    # 模組寫好的 quest／speaker 兩欄
+    got = quest_of({"quest": "A New Beginning", "speaker": "Old Drunk\n" + plate,
+                    "ctx": "dialogue/A New Beginning#Old Drunk\n" + plate})
+    ok = got == ("A New Beginning", "Old Drunk")
+    print(("  [PASS] " if ok else "  [FAIL] ") + "quest_of：speaker 欄帶著圖示也只留名字"
+          + ("" if ok else f"（實際 {got!r}）"))
+    bad += 0 if ok else 1
+    # 更舊的檔案只有 ctx；井號後面跨了行，先前整條比對不到、對話就掉進 quest.json
+    got = quest_of({"ctx": "dialogue/The Cursed One#Syndra\n" + plate})
+    ok = got == ("The Cursed One", "Syndra")
+    print(("  [PASS] " if ok else "  [FAIL] ") + "quest_of：只有 ctx、說話者跨行也解得出來"
+          + ("" if ok else f"（實際 {got!r}）"))
+    bad += 0 if ok else 1
+    got = quest_of({"ctx": "dialogue/Cook Assistant#Aledar"})
+    ok = got == ("Cook Assistant", "Aledar")
+    print(("  [PASS] " if ok else "  [FAIL] ") + "quest_of：乾淨的 ctx 照舊"
+          + ("" if ok else f"（實際 {got!r}）"))
+    bad += 0 if ok else 1
+    got = [clean_ctx("dialogue/choices/The Cursed One#Syndra\n" + plate),
+           clean_ctx("dialogue/The Cursed One#" + plate), clean_ctx("chat/INFO")]
+    ok = got == ["dialogue/choices/The Cursed One#Syndra", "dialogue/The Cursed One", "chat/INFO"]
+    print(("  [PASS] " if ok else "  [FAIL] ") + "clean_ctx：對話的清乾淨，其他的不動"
+          + ("" if ok else f"（實際 {got!r}）"))
+    bad += 0 if ok else 1
+    print("對話插入、提示與說話者：" + ("全部通過" if bad == 0 else f"{bad} 項失敗"))
     return 1 if bad else 0
 
 
@@ -757,7 +844,7 @@ def main(argv: list[str]) -> int:
                     "src": entry["src"], "dst": "",
                     "role": entry.get("role", "desc"),
                     "kind": entry.get("kind") or "sentence",
-                    "ctx": [entry.get("ctx", "captured")],
+                    "ctx": [clean_ctx(entry.get("ctx", "captured"))],
                     "from": "captured",
                 }
                 similar = note(entry, target, "field")

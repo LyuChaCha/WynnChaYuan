@@ -821,6 +821,27 @@ public final class CollectorConfig {
         save();
     }
 
+    /**
+     * 內容名稱（任務、洞窟、探索點、地城…）怎麼顯示。
+     *
+     * <p>使用者 2026-10-11：「Wynntils 頁面的名稱希望也可以像物品名稱一樣可以開啟
+     * 完全取代、中英對照、關閉」。沿用物品名稱那三格，但<b>預設是譯名</b>——內容書的
+     * 標題一直都是翻的，升級上來的人不該看到畫面自己變了。
+     */
+    private ItemNames pageNames = ItemNames.ON;
+
+    public ItemNames pageNames() {
+        return pageNames;
+    }
+
+    /** 在 譯名 → 譯名加原文 → 保留原文 之間輪替。 */
+    public ItemNames cyclePageNames(int step) {
+        ItemNames[] all = ItemNames.values();
+        pageNames = all[Math.floorMod(pageNames.ordinal() + step, all.length)];
+        save();
+        return pageNames;
+    }
+
     /** 在 譯名 → 譯名加原文 → 關閉 之間輪替；{@code step = -1} 往回。 */
     public ItemNames cycleItemNames(int step) {
         ItemNames[] all = ItemNames.values();
@@ -1441,6 +1462,7 @@ public final class CollectorConfig {
         noticeDismissed = bool(o, "noticeDismissed", noticeDismissed);
         oldKeysReleased = bool(o, "oldKeysReleased", oldKeysReleased);
         // 舊版只有開／關：開過的人給「譯名」，其餘照預設（關閉）。
+        pageNames = enumOr(o, "pageNames", ItemNames.class, pageNames);
         if (o.has("itemNames")) {
             itemNames = enumOr(o, "itemNames", ItemNames.class, itemNames);
         } else if (bool(o, "translateItemNames", false)) {
@@ -1627,6 +1649,7 @@ public final class CollectorConfig {
             o.addProperty("nametagMode", nametagMode.name());
             o.addProperty("panelSide", panelSide.name());
             o.addProperty("itemNames", itemNames.name());
+            o.addProperty("pageNames", pageNames.name());
             o.addProperty("noticeDismissed", noticeDismissed);
             o.addProperty("oldKeysReleased", oldKeysReleased);
             o.addProperty("panelGap", panelGap);
