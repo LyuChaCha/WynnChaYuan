@@ -206,6 +206,46 @@ public final class CaptureStore {
      */
     public boolean record(String template, String role, String domain, String ctx,
                           String full) {
+        return record(template, role, domain, ctx, full, false);
+    }
+
+    /**
+     * 聊天的一列。同一句話折成好幾列的會先接回去看，見 {@link ChatRows}。
+     *
+     * @param ctx 出處，例如 {@code chat/INFO}
+     * @param now 現在的時間（毫秒）；由呼叫端給，測試才控制得了
+     */
+    public void recordChat(String template, String ctx, long now) {
+        recordChatRows(chatRows.offer(template, ctx, now));
+    }
+
+    /** 扣著等下一列的聊天，等夠久了就照常記。由計時器呼叫。 */
+    public void settleChat(long now) {
+        recordChatRows(chatRows.settle(now));
+    }
+
+    private void recordChatRows(java.util.List<ChatRows.Row> rows) {
+        for (ChatRows.Row row : rows) {
+            // 放行出來的都是<b>完整的一列</b>，不是打到一半的半句，
+            // 所以不過「語料裡有更長的」那一關。見 ChatRows。
+            record(row.template(), "desc", "chat", row.ctx(), null, true);
+        }
+    }
+
+    /**
+     * 聊天的列怎麼接。述詞讀的是欄位<b>當下</b>的值——{@link #knowsSources} 這些
+     * 是建好之後才接上的。
+     */
+    private final ChatRows chatRows = new ChatRows(
+            t -> translated.test(t) || known.test(t),
+            t -> longer.test(t));
+
+    /**
+     * @param wholeLine 呼叫端已經確定這是完整的一列（聊天），不必再問
+     *                  「是不是某一條打到一半」
+     */
+    private boolean record(String template, String role, String domain, String ctx,
+                           String full, boolean wholeLine) {
         if (template == null || template.isBlank() || !GlyphSplitter.hasLetter(template)) {
             return false;   // 沒有字母 = 純符號或純數字，不值得記錄
         }
@@ -241,7 +281,7 @@ public final class CaptureStore {
             noteEvent("counted.untranslated");
             return false;
         }
-        if (longer.test(template)) {
+        if (!wholeLine && longer.test(template)) {
             // 打到一半的半句、或提示框只收到第一行。見 knowsLonger。
             noteEvent("skipped.fragment");
             return false;
@@ -604,6 +644,7 @@ public final class CaptureStore {
             if (c.dst == null) {
                 c.dst = "";
             }
+            c.ctx = cleanCtx(c.ctx);
             return c;
         } catch (RuntimeException e) {
             return null;
@@ -667,8 +708,28 @@ public final class CaptureStore {
         if (at < 0) {
             return null;
         }
-        String who = ctx.substring(at + 1).strip();
-        return who.isEmpty() ? null : who;
+        // 舊版收進來的 ctx 可能帶著名牌底下那一列圖示。見 CurrentQuest#speakerName。
+        return CurrentQuest.speakerName(ctx.substring(at + 1));
+    }
+
+    /**
+     * 把對話 ctx 裡的說話者清成只剩名字。
+     *
+     * <p>{@link CurrentQuest#tag} 現在收的當下就會清，但<b>先前版本</b>寫進檔案的
+     * 還帶著換行與圖示（issue #1124）。讀回來時清一次，本機那份與匯出的檔案
+     * 就都是乾淨的，不必等那幾句被重新收一遍。
+     */
+    static String cleanCtx(String ctx) {
+        if (ctx == null || !ctx.startsWith("dialogue")) {
+            return ctx;
+        }
+        int at = ctx.indexOf('#');
+        if (at < 0) {
+            return ctx;
+        }
+        String who = CurrentQuest.speakerName(ctx.substring(at + 1));
+        String head = ctx.substring(0, at);
+        return who == null ? head : head + "#" + who;
     }
 
     /**
