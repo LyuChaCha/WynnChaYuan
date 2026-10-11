@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "The Ultimate Weapon",
-  "count": 77,
-  "translated": 77,
+  "count": 84,
+  "translated": 84,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Ultimate Weapon#000": {
+   "src": "These must be the Wood Sprites Dodegar was talking about...",
+   "dst": "这些一定就是 Dodegar 说的木精灵了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#001": {
+   "src": "Dodegar carefully grabs the piece of wood and begins carving.",
+   "dst": "Dodegar 小心翼翼地拿起那块木头，开始雕刻。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#002": {
+   "src": "Hmmm...?",
+   "dst": "嗯嗯嗯……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "Gogedar",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#003": {
    "src": "Speak to Dodegar Bandysnoot at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的 Dodegar Bandysnoot 交谈。",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#001": {
+  "The Ultimate Weapon#004": {
    "src": "I'm glad you came along, I could do with a little help if you're not too busy.",
    "dst": "真高兴你来了，如果你不太忙的话，我正需要一点帮助。",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#002": {
+  "The Ultimate Weapon#005": {
    "src": "I'm Dodegar Bandysnoot, the world famous Hobbit swordsmith! Perhaps you've heard of me?",
    "dst": "我是 Dodegar Bandysnoot，世界闻名的霍比特剑匠！你大概听说过我吧？",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#003": {
+  "The Ultimate Weapon#006": {
    "src": "No? Oh... Well, I've had an idea about how I could make the best weapon that the world has ever seen!",
    "dst": "没有？噢……好吧，我想到了一个办法，能打造出世界上前所未见的最强武器！",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#004": {
+  "The Ultimate Weapon#007": {
    "src": "But, I need some help getting the special resources to make it.",
    "dst": "不过，我需要人帮忙收集打造它的特殊材料。",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#005": {
+  "The Ultimate Weapon#008": {
    "src": "You'll help?! Excellent! We shall gather enough resources to make one for each of us!",
    "dst": "你愿意帮忙？！太好了！我们收集够材料，给我们俩各打造一把！",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#006": {
+  "The Ultimate Weapon#009": {
    "src": "So firstly, I need some living wood for the handle, [{~} Enchanted Stick] should be enough.",
    "dst": "首先，我需要一些活木头来做握柄，[{~} 附魔木棍] 应该就够了。",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#007": {
+  "The Ultimate Weapon#010": {
    "src": "The wood sprites located across the river to the west, in a big tree trunk, have magical properties! The handle can then mold to the user's hand! One shouldn't be too hard to come across!",
    "dst": "西边河对岸那棵大树干里的木精灵有魔法特性！这样握柄就能贴合使用者的手！找一个应该不会太难！",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#008": {
+  "The Ultimate Weapon#011": {
    "src": "I hope you are prepared, this will be your best quest yet!",
    "dst": "希望你准备好了，这会是你迄今为止最棒的任务！",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#009": {
+  "The Ultimate Weapon#012": {
    "src": "Collect [{~} Enchanted Stick] from Wood Sprites at [-{~}, {~}, -{~}] and return them to Dodegar",
    "dst": "收集 [{~} 附魔木棍]，从 [-{~}, {~}, -{~}] 的木精灵身上取得，带回给 Dodegar",
    "role": "desc",
@@ -106,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#010": {
+  "The Ultimate Weapon#013": {
    "src": "Wow! You got the wood I needed, thanks!",
    "dst": "哇！你拿到我需要的木头了，谢谢！",
    "role": "desc",
@@ -116,7 +146,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#011": {
+  "The Ultimate Weapon#014": {
    "src": "While I'm making the handle, could you help me with the blade?",
    "dst": "我做握柄的时候，你能帮我弄刀刃吗？",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#012": {
+  "The Ultimate Weapon#015": {
    "src": "Since we want this weapon to be as good as possible we need to find some sacred Hobbit metal!",
    "dst": "既然我们想让这把武器尽可能好，就得找到一些神圣霍比特金属！",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#013": {
+  "The Ultimate Weapon#016": {
    "src": "The hobbit village, The Shiar, is really close! Follow the southern road. My brother Gogedar should be there!",
    "dst": "霍比特村 Shiar 离这里很近！沿着南边的路走。我哥哥 Gogedar 应该在那里！",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#014": {
+  "The Ultimate Weapon#017": {
    "src": "Dodegar needs [{~} Sacred Hobbit Metal] from the Shiar at [-{~}, {~}, -{~}]",
    "dst": "Dodegar 需要 [{~} 神圣霍比特金属]，到 [-{~}, {~}, -{~}] 的 Shiar 找找",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#015": {
+  "The Ultimate Weapon#018": {
    "src": "My brother you say... Trying to create a weapon...",
    "dst": "你说是我弟弟……想打造一把武器……",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Gogedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#016": {
+  "The Ultimate Weapon#019": {
    "src": "Hmmm...",
    "dst": "嗯嗯嗯……",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "Gogedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#017": {
+  "The Ultimate Weapon#020": {
    "src": "Oh he needs Sacred Hobbit Metal!?",
    "dst": "噢，他需要神圣霍比特金属！？",
    "role": "desc",
@@ -186,7 +216,7 @@
    "speaker": "Gogedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#018": {
+  "The Ultimate Weapon#021": {
    "src": "Hmm...!",
    "dst": "嗯……！",
    "role": "desc",
@@ -196,7 +226,7 @@
    "speaker": "Gogedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#019": {
+  "The Ultimate Weapon#022": {
    "src": "Sorry can't help you. I don't really know what that is.",
    "dst": "抱歉帮不上忙。我其实不太清楚那是什么。",
    "role": "desc",
@@ -206,7 +236,7 @@
    "speaker": "Gogedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#020": {
+  "The Ultimate Weapon#023": {
    "src": "Maybe ask our cousin, Togedar?",
    "dst": "要不去问问我们的表亲 Togedar？",
    "role": "desc",
@@ -216,7 +246,7 @@
    "speaker": "Gogedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#021": {
+  "The Ultimate Weapon#024": {
    "src": "Find Togedar in the Shiar.",
    "dst": "在 Shiar 找到 Togedar。",
    "role": "desc",
@@ -226,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#022": {
+  "The Ultimate Weapon#025": {
    "src": "Dodegar? Does not really ring a bell I'm afraid.",
    "dst": "Dodegar？恐怕我没什么印象。",
    "role": "desc",
@@ -236,7 +266,7 @@
    "speaker": "Togedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#023": {
+  "The Ultimate Weapon#026": {
    "src": "Oh! Gogedar's brother, why didn't you tell me that.",
    "dst": "噢！Gogedar 的弟弟，你怎么不早说。",
    "role": "desc",
@@ -246,7 +276,7 @@
    "speaker": "Togedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#024": {
+  "The Ultimate Weapon#027": {
    "src": "Sacred Hobbit Metal... This is a metal forged by master blacksmith hobbits within our village. It is a bit expensive to get by but holds great potential, if used properly.",
    "dst": "神圣霍比特金属……这是我们村里的霍比特铁匠大师锻造的金属。有点贵，不容易弄到，但只要用得好，潜力非常大。",
    "role": "desc",
@@ -256,7 +286,7 @@
    "speaker": "Togedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#025": {
+  "The Ultimate Weapon#028": {
    "src": "Oh. You need a piece?",
    "dst": "噢。你需要一块？",
    "role": "desc",
@@ -266,7 +296,7 @@
    "speaker": "Togedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#026": {
+  "The Ultimate Weapon#029": {
    "src": "I don't have any. Maybe ask my nephew's brother Alegdar?",
    "dst": "我没有。要不去问问我侄子的哥哥 Alegdar？",
    "role": "desc",
@@ -276,7 +306,7 @@
    "speaker": "Togedar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#027": {
+  "The Ultimate Weapon#030": {
    "src": "Find Alegdar in the Shiar.",
    "dst": "在 Shiar 找到 Alegdar。",
    "role": "desc",
@@ -286,7 +316,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#028": {
+  "The Ultimate Weapon#031": {
    "src": "Oh?",
    "dst": "噢？",
    "role": "desc",
@@ -296,7 +326,7 @@
    "speaker": "Alegdar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#029": {
+  "The Ultimate Weapon#032": {
    "src": "I actually don't know much about... anything.",
    "dst": "其实我什么……都不太懂。",
    "role": "desc",
@@ -306,7 +336,7 @@
    "speaker": "Alegdar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#030": {
+  "The Ultimate Weapon#033": {
    "src": "I kind of just... stand around here.",
    "dst": "我就只是……在这里站着。",
    "role": "desc",
@@ -316,7 +346,7 @@
    "speaker": "Alegdar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#031": {
+  "The Ultimate Weapon#034": {
    "src": "Everyone I have ever met just calls me annoying and useless. So I decided to stop trying.",
    "dst": "我遇到的每个人都说我烦人又没用。所以我决定不再努力了。",
    "role": "desc",
@@ -326,7 +356,7 @@
    "speaker": "Alegdar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#032": {
+  "The Ultimate Weapon#035": {
    "src": "You know, life is hard. We all just have to fight through, and then eventually, we might become happy.",
    "dst": "你知道吗，人生很艰难。我们只能咬牙撑过去，然后总有一天，也许会变得快乐。",
    "role": "desc",
@@ -336,7 +366,7 @@
    "speaker": "Alegdar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#033": {
+  "The Ultimate Weapon#036": {
    "src": "Right sorry... Ask Balegar for any information. He is way smarter.",
    "dst": "对，抱歉……去问 Balegar 吧。他聪明多了。",
    "role": "desc",
@@ -346,7 +376,7 @@
    "speaker": "Alegdar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#034": {
+  "The Ultimate Weapon#037": {
    "src": "Find Balegar in the Shiar.",
    "dst": "在 Shiar 找到 Balegar。",
    "role": "desc",
@@ -356,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#035": {
+  "The Ultimate Weapon#038": {
    "src": "My cousin's nephew's dad has had a rough year... I feel bad for him.",
    "dst": "我表亲的侄子的爸爸今年过得很惨……我替他难过。",
    "role": "desc",
@@ -366,7 +396,7 @@
    "speaker": "Balegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#036": {
+  "The Ultimate Weapon#039": {
    "src": "Oh well!",
    "dst": "唉，算了！",
    "role": "desc",
@@ -376,8 +406,8 @@
    "speaker": "Balegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#037": {
-   "src": "I have nooooo clue about that metal. I heard it was just a valuable as a normal rock.",
+  "The Ultimate Weapon#040": {
+   "src": "I have nooooo clue about that metal. I heard it was just as valuable as a normal rock.",
    "dst": "那种金属我完——全不知道。我听说它就跟普通石头一样值钱。",
    "role": "desc",
    "kind": "dialogue",
@@ -386,7 +416,17 @@
    "speaker": "Balegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#038": {
+  "The Ultimate Weapon#041": {
+   "src": "Dodegar takes the piece of metal and starts welding it.",
+   "dst": "Dodegar 接过那块金属，开始焊接。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#042": {
    "src": "Maybe my cousin Reyoretrsed knows anything about it.",
    "dst": "也许我表亲 Reyoretrsed 知道点什么。",
    "role": "desc",
@@ -396,7 +436,7 @@
    "speaker": "Balegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#039": {
+  "The Ultimate Weapon#043": {
    "src": "Find Reyoretrsed in the Shiar.",
    "dst": "在 Shiar 找到 Reyoretrsed。",
    "role": "desc",
@@ -406,7 +446,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#040": {
+  "The Ultimate Weapon#044": {
    "src": "Reyoretrsed? That's me!",
    "dst": "Reyoretrsed？就是我！",
    "role": "desc",
@@ -416,7 +456,7 @@
    "speaker": "Reyoretrsed",
    "source": "wiki"
   },
-  "The Ultimate Weapon#041": {
+  "The Ultimate Weapon#045": {
    "src": "You are wondering how my name is pronounced? What a rude question.",
    "dst": "你想知道我的名字怎么念？真是个没礼貌的问题。",
    "role": "desc",
@@ -426,7 +466,7 @@
    "speaker": "Reyoretrsed",
    "source": "wiki"
   },
-  "The Ultimate Weapon#042": {
+  "The Ultimate Weapon#046": {
    "src": "Ray-ore-tree-sed, obviously. What is a human doing here?",
    "dst": "Ray-ore-tree-sed，这不是很明显吗。人类跑来这里干嘛？",
    "role": "desc",
@@ -436,7 +476,7 @@
    "speaker": "Reyoretrsed",
    "source": "wiki"
   },
-  "The Ultimate Weapon#043": {
+  "The Ultimate Weapon#047": {
    "src": "You are wondering if I have Sacred whatever metal?",
    "dst": "你想知道我有没有神圣什么什么金属？",
    "role": "desc",
@@ -446,7 +486,7 @@
    "speaker": "Reyoretrsed",
    "source": "wiki"
   },
-  "The Ultimate Weapon#044": {
+  "The Ultimate Weapon#048": {
    "src": "I'm {~}. Now if you excuse me, I am busy standing still. Go bother Richard or something.",
    "dst": "我 {~} 岁了。好了，失陪，我正忙着站着不动呢。去烦 Richard 之类的吧。",
    "role": "desc",
@@ -456,7 +496,7 @@
    "speaker": "Reyoretrsed",
    "source": "wiki"
   },
-  "The Ultimate Weapon#045": {
+  "The Ultimate Weapon#049": {
    "src": "Find Richard in the Shiar.",
    "dst": "在 Shiar 找到 Richard。",
    "role": "desc",
@@ -466,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#046": {
+  "The Ultimate Weapon#050": {
    "src": "I've been trying to tell you that I have what you need.",
    "dst": "我一直想告诉你，我有你需要的东西。",
    "role": "desc",
@@ -476,7 +516,7 @@
    "speaker": "Richard",
    "source": "wiki"
   },
-  "The Ultimate Weapon#047": {
+  "The Ultimate Weapon#051": {
    "src": "You humans really need to practice your communication skills, please.",
    "dst": "你们人类真的得好好练练沟通技巧，拜托。",
    "role": "desc",
@@ -486,7 +526,7 @@
    "speaker": "Richard",
    "source": "wiki"
   },
-  "The Ultimate Weapon#048": {
+  "The Ultimate Weapon#052": {
    "src": "Anyway, here. Take it! This metal is just a scam anyway, nothing special with it.",
    "dst": "总之，给你。拿去吧！这金属根本就是个骗局，没什么特别的。",
    "role": "desc",
@@ -496,7 +536,7 @@
    "speaker": "Richard",
    "source": "wiki"
   },
-  "The Ultimate Weapon#049": {
+  "The Ultimate Weapon#053": {
    "src": "Return to Dodegar with the metal.",
    "dst": "带着金属回到 Dodegar 那里。",
    "role": "desc",
@@ -506,7 +546,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#050": {
+  "The Ultimate Weapon#054": {
    "src": "I hope it wasn't too much of an issue to get!",
    "dst": "希望弄到它没给你添太多麻烦！",
    "role": "desc",
@@ -516,7 +556,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#051": {
+  "The Ultimate Weapon#055": {
    "src": "... I forgot a step. I can't attach a blade without a binder material.",
    "dst": "……我忘了一个步骤。没有黏合材料，我没法把刀刃装上去。",
    "role": "desc",
@@ -526,7 +566,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#052": {
+  "The Ultimate Weapon#056": {
    "src": "I need the nectar of a native flower of the forest to attach it. [{~} Diplacus Aurantiacus] would do the trick.",
    "dst": "我需要森林里一种本地花朵的花蜜来黏合。[{~} Diplacus Aurantiacus] 就行。",
    "role": "desc",
@@ -536,7 +576,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#053": {
+  "The Ultimate Weapon#057": {
    "src": "Finding the flower can be rather difficult, here's a riddle on how to find it.",
    "dst": "找那种花可能相当困难，这里有个关于怎么找到它的谜语。",
    "role": "desc",
@@ -546,7 +586,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#054": {
+  "The Ultimate Weapon#058": {
    "src": "On the side of a hut, hidden inside a hole. Resting in a forest of light, without plight. Whatever that would mean.",
    "dst": "小屋的一侧，藏在洞里头。安歇在光之森林，无忧也无愁。管它是什么意思。",
    "role": "desc",
@@ -556,7 +596,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#055": {
+  "The Ultimate Weapon#059": {
    "src": "Find the Diplacus Aurantiacus by following the riddle to [-{~}, {~}, -{~}].",
    "dst": "照着谜语前往 [-{~}, {~}, -{~}]，找到 Diplacus Aurantiacus。",
    "role": "desc",
@@ -566,7 +606,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#056": {
+  "The Ultimate Weapon#060": {
    "src": "Hold up! This feels waaay, toooo easy.",
    "dst": "等一下！这感觉太——太——简单了。",
    "role": "desc",
@@ -576,9 +616,9 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#057": {
-   "src": "If I'm going to give you this amazingly, incredible, showstopping, crazy item particulary for free, you need to at least work for it!",
-   "dst": "既然我要免费送你这件惊人、不可思议、震撼全场、疯狂的宝贝，你至少得出点力！",
+  "The Ultimate Weapon#061": {
+   "src": "If I'm going to give you this amazingly, incredible, showstopping, crazy item practically for free, you need to at least work for it!",
+   "dst": "既然我要几乎免费送你这件惊人、不可思议、震撼全场、疯狂的宝贝，你至少得出点力！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Ultimate Weapon",
@@ -586,7 +626,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#058": {
+  "The Ultimate Weapon#062": {
    "src": "Give me that!",
    "dst": "把那个给我！",
    "role": "desc",
@@ -596,7 +636,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#059": {
+  "The Ultimate Weapon#063": {
    "src": "Let me just...",
    "dst": "让我来……",
    "role": "desc",
@@ -606,7 +646,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#060": {
+  "The Ultimate Weapon#064": {
    "src": "This looks so much better! Anyway, bring me that flower now!",
    "dst": "这样看起来好多了！总之，现在把那朵花拿来给我！",
    "role": "desc",
@@ -616,7 +656,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#061": {
+  "The Ultimate Weapon#065": {
    "src": "Talk to Dodegar with the Diplacus Aurantiacus.",
    "dst": "带着 Diplacus Aurantiacus 去找 Dodegar 谈谈。",
    "role": "desc",
@@ -626,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#062": {
+  "The Ultimate Weapon#066": {
    "src": "Took you a while, did it not?",
    "dst": "花了你不少时间，是吧？",
    "role": "desc",
@@ -636,7 +676,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#063": {
+  "The Ultimate Weapon#067": {
    "src": "It's starting to look pretty amazing! Just like it's supposed to I'm sure!",
    "dst": "它开始看起来相当惊人了！我敢肯定就跟它应该的样子一样！",
    "role": "desc",
@@ -646,7 +686,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#064": {
+  "The Ultimate Weapon#068": {
    "src": "Maybe this will actually work out. Either way, last ingredient we need!",
    "dst": "也许这真的会成功。不管怎样，我们需要最后一样材料了！",
    "role": "desc",
@@ -656,7 +696,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#065": {
+  "The Ultimate Weapon#069": {
    "src": "So to finalize and apply some magical properties to this uniquely amazing item we need something known as Luster Blood.",
    "dst": "为了完成这件独一无二的惊人宝贝，并赋予它魔法特性，我们需要一种叫光泽之血的东西。",
    "role": "desc",
@@ -666,8 +706,8 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#066": {
-   "src": "The only known creature in the west, probably in the whole world, if I'm being frank, is known as the Glow Dust Leaf Beetle of the Underworld, not sure where the name comes from.",
+  "The Ultimate Weapon#070": {
+   "src": "The only known creature in the west, probably the whole world if I'm being frank, is known as the Glow Dust Leaf Beetle of the Underworld, not sure where the name comes from.",
    "dst": "老实说，西边、大概全世界唯一已知有这东西的生物，叫作冥界荧尘叶甲虫，不知道这名字是怎么来的。",
    "role": "desc",
    "kind": "dialogue",
@@ -676,8 +716,8 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#067": {
-   "src": "I happen to know that this beetle lives in a cave in the eastern ravine thingy! If you walk straight east, you should stumble upon it, I promise!",
+  "The Ultimate Weapon#071": {
+   "src": "I happen to know that this Beetle lives in a cave in the eastern ravine thingy! If you walk straight east you will stumble upon it, I promise!",
    "dst": "我碰巧知道这种甲虫住在东边峡谷那个什么地方的洞里！你一直往东走，就会碰到它，我保证！",
    "role": "desc",
    "kind": "dialogue",
@@ -686,7 +726,37 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#068": {
+  "The Ultimate Weapon#072": {
+   "src": "Since when do Beetles talk...",
+   "dst": "甲虫什么时候会说话了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#073": {
+   "src": "You should return to Dodegar with the blood, he should be nearby.",
+   "dst": "你该带着血回去找 Dodegar，他应该就在附近。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#074": {
+   "src": "Dodegar smears the weapon with the glowing blood.",
+   "dst": "Dodegar 把发光的血抹在武器上。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Ultimate Weapon",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Ultimate Weapon#075": {
    "src": "Oh! Almost forgot to mention, about {~} Luster Blood is probably enough.",
    "dst": "噢！差点忘了说，大概 {~} 份光泽之血就够了。",
    "role": "desc",
@@ -696,7 +766,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#069": {
+  "The Ultimate Weapon#076": {
    "src": "Find the cave at [-{~}, {~}, -{~}] and bring back [{~} Luster Blood] and bring it back to Dodegar.",
    "dst": "找到 [-{~}, {~}, -{~}] 的洞窟，把 [{~} 光泽之血] 带回给 Dodegar。",
    "role": "desc",
@@ -706,7 +776,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Ultimate Weapon#070": {
+  "The Ultimate Weapon#077": {
    "src": "Do not step any closer... Or I will be forced to obliterate you!",
    "dst": "别再靠近了……否则我只好把你消灭！",
    "role": "desc",
@@ -716,7 +786,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Ultimate Weapon#071": {
+  "The Ultimate Weapon#078": {
    "src": "The final component! It is finally here!",
    "dst": "最后一个组件！终于到了！",
    "role": "desc",
@@ -726,7 +796,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#072": {
+  "The Ultimate Weapon#079": {
    "src": "Oh my Orphion!",
    "dst": "噢我的 Orphion 啊！",
    "role": "desc",
@@ -736,7 +806,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#073": {
+  "The Ultimate Weapon#080": {
    "src": "Do you see how it's glowing, sparkling and... and radiating!",
    "dst": "你看到它在发光、闪耀，还……还在放射光芒了吗！",
    "role": "desc",
@@ -746,7 +816,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#074": {
+  "The Ultimate Weapon#081": {
    "src": "You don't? Uhm... maybe you need glasses humie.",
    "dst": "看不到？呃……也许你需要配副眼镜，人类小家伙。",
    "role": "desc",
@@ -756,7 +826,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#075": {
+  "The Ultimate Weapon#082": {
    "src": "As promised! Here you go! Always happy to practice the art of weapon creation.",
    "dst": "说好的！给你！我总是乐意练习打造武器的技艺。",
    "role": "desc",
@@ -766,7 +836,7 @@
    "speaker": "Dodegar",
    "source": "wiki"
   },
-  "The Ultimate Weapon#000~1": {
+  "The Ultimate Weapon#083": {
    "src": "The metal is rather rare so I don't know if you can even find it...",
    "dst": "这种金属相当稀有，我不知道你能不能找到……",
    "role": "desc",
