@@ -82,6 +82,27 @@ public final class ThirdPartyLiteralsTest {
         check("開場邀請那句在清單上", wynnmod.contains("would like to start"));
         check("增益選擇那句在清單上", wynnmod.contains("has chosen the"));
 
+        // WynnMarketSearch（模組 ID：wms）靠聊天裡那句提示跳出它的搜尋面板，而且是在
+        // 聊天畫出來之前才讀——聊天開成就地取代，它讀到的就是譯文（issue #1148）。
+        String prompt = "Type the item name or type 'cancel' to cancel:";
+        check("清單有 wms 這一組", root.has("wms"));
+        check("市集搜尋的那句提示在 wms 那一組",
+              root.has("wms") && root.get("wms").toString().contains(prompt));
+        ThirdPartyLiterals.forTest(List.of(prompt));
+        check("遊戲送來的那一則（前後帶圖示、一共三行）擋得下來",
+              ThirdPartyLiterals.reserved("󏿼 \n Type the item name or type 'cancel' to cancel:\n󏿼"));
+        check("市集的其他訊息不受影響",
+              !ThirdPartyLiterals.reserved(" You moved and your chat input was canceled."));
+        // 那句提示要跟語料的鍵是同一句：官方改了措辭的話，語料的鍵會跟著改，這裡要一起改
+        com.google.gson.JsonObject ui = com.google.gson.JsonParser.parseString(Files.readString(
+                Path.of("src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-ui.json"),
+                StandardCharsets.UTF_8)).getAsJsonObject();
+        boolean inCorpus = false;
+        for (String key : ui.keySet()) {
+            inCorpus |= key.contains(prompt) && !ui.get(key).getAsString().isBlank();
+        }
+        check("那句提示就是語料裡翻過的那一條", inCorpus);
+
         stats();
         chat();
         report();
