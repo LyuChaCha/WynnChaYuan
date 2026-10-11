@@ -197,6 +197,18 @@ public final class SettingsScreen extends Screen {
                         () -> cycleTo(cfg()::itemNames, nextName, CollectorConfig.ItemNames.OFF)));
         rows.add(toggle("items.shiftpeek", true, cfg()::shiftPeekNames,
                 cfg()::toggleShiftPeekNames));
+        // 內容名稱（任務、洞窟、探索點…）：同樣三格，預設是譯名。見 PageNames。
+        Runnable nextPage = () ->
+                WynnChaYuan.translations().setPageNameMode(cfg().cyclePageNames(1));
+        rows.add(Row.segment("items.pages", t("items.pages"), t("items.pages.hint"))
+                .option(T.s("mode.on"), Row.Tone.ACCENT)
+                .option(T.s("items.names.both"), Row.Tone.BOTH)
+                .option(T.s("items.pages.off"), Row.Tone.OFF)
+                .selected(() -> cfg().pageNames().ordinal())
+                .pick(i -> cycleTo(cfg()::pageNames, nextPage,
+                        CollectorConfig.ItemNames.values()[i]))
+                .reset(() -> cfg().pageNames() == CollectorConfig.ItemNames.ON,
+                        () -> cycleTo(cfg()::pageNames, nextPage, CollectorConfig.ItemNames.ON)));
         rows.add(toggle("items.market", true, cfg()::marketSearch, cfg()::toggleMarketSearch));
         rows.add(Row.segment("items.shot", t("items.shot"), () -> {
                     String clash = PanelShot.conflict();

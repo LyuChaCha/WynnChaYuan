@@ -239,6 +239,8 @@ public final class UpgradeSafetyTest {
         expected.addProperty("wynnMarketSearch", true);
         // WynnMod 重畫的物品說明也翻（有裝才有作用）。舊設定檔沒有，補上預設值。
         expected.addProperty("wynnmodTooltip", true);
+        // 1.0.2：內容名稱（任務、洞窟…）的三段式顯示。舊設定檔沒有，預設是譯名（跟原本一樣）。
+        expected.addProperty("pageNames", "ON");
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));

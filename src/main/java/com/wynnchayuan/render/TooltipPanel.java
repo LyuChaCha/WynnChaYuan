@@ -105,7 +105,7 @@ public final class TooltipPanel {
                     && hit.translateNames() == store.translatesNames()
                     // 按住 Shift 的那幾幀是另一份答案，放開要馬上換回來
                     && hit.peekPlain() == store.peeksPlainNames()) {
-                return new ArrayList<>(hit.lines());
+                return pageTitle(key, new ArrayList<>(hit.lines()), store);
             }
         }
         List<Component> out = List.copyOf(translateLines(tooltip, store));
@@ -114,7 +114,22 @@ public final class TooltipPanel {
                     store.namesWithOriginal(), store.translatesNames(),
                     store.peeksPlainNames(), out));
         }
-        return new ArrayList<>(out);
+        return pageTitle(key, new ArrayList<>(out), store);
+    }
+
+    /**
+     * 內容書卡片的標題（「Visceral Remains [Cave]」）照 F6「任務與洞窟名稱」的設定顯示。
+     *
+     * <p>放在快取<b>外面</b>：記住的那一份永遠是「譯名」的樣子，設定一切換馬上生效，
+     * 不必多一把鑰匙去作廢整個快取。只動第一列，而且只在那一列是標題時才動，
+     * 物品的說明不受影響。見 {@link com.wynnchayuan.translate.PageNames}。
+     */
+    private static List<Component> pageTitle(List<Component> tooltip, List<Component> lines,
+                                             TranslationStore store) {
+        if (lines.isEmpty()) {
+            return lines;
+        }
+        return com.wynnchayuan.translate.PageNames.titles(tooltip, lines, store.pageNameMode());
     }
 
     /**
