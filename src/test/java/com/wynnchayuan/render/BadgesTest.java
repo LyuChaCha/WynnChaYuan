@@ -31,7 +31,8 @@ import java.util.Optional;
  *   <li>葉子接在名牌<b>前面</b>，原本的名牌一個字、一個顏色都不動；</li>
  *   <li>同一個名牌再送一次不會多接一片（事件一幀可能發好幾次）；</li>
  *   <li>顏色照「登記的 → 分區的」，彩色模式的顏色是切成格的；</li>
- *   <li>登記成不展示的身分不畫；本機的選擇只管自己，別人照登記的；</li>
+ *   <li>登記成不展示的身分不畫；本機的選擇（展示哪些、顏色、彩色）只管自己，
+ *       別人照登記的；</li>
  *   <li>不在名單上的人：自己是灰色，別人沒有。</li>
  * </ul>
  */
@@ -118,6 +119,21 @@ public final class BadgesTest {
                 !icons(Badges.decorate(Component.literal("Pinky"), "Pinky", "Someone", config, 0))
                         .equals(List.of(CYAN)));
 
+        // ---- 顏色自己調 ----
+        check("自己調顏色：馬上照自己選的畫", config.setBadgeColourLive("developers", "#123456")
+                && icons(Badges.decorate(Component.literal("Solo_Dev"), "Solo_Dev", "solo_dev", config, 0))
+                        .equals(List.of(0x123456)));
+        check("別人看到的還是登記的顏色", icons(Badges.decorate(Component.literal("Solo_Dev"),
+                "Solo_Dev", "Someone", config, 0)).equals(List.of(GOLD)));
+        check("不是顏色的字不收，原本選的還在", !config.setBadgeColourLive("developers", "leaf")
+                && "#123456".equalsIgnoreCase(config.badgeColour("developers")));
+        config.clearBadgeColour("developers");
+        check("清掉就回到登記的顏色", config.badgeColour("developers") == null
+                && icons(Badges.decorate(Component.literal("Solo_Dev"), "Solo_Dev", "solo_dev", config, 0))
+                        .equals(List.of(GOLD)));
+        config.setBadgeColourLive("sponsors", "#ABCDEF");
+        config.saveIfDirty();
+
         // ---- 本機的選擇只管自己 ----
         config.setBadgeRole("sponsors", false);
         config.setBadgeRole("contributors", true);
@@ -141,7 +157,8 @@ public final class BadgesTest {
         // ---- 設定存得回來 ----
         CollectorConfig again = new CollectorConfig(file);
         check("本機的選擇存檔再讀回來還在", !again.badgeRoleShown("sponsors", true)
-                && !again.badgeRoleShown("developers", true) && again.badgeRainbow(false));
+                && !again.badgeRoleShown("developers", true) && again.badgeRainbow(false)
+                && "#ABCDEF".equalsIgnoreCase(again.badgeColour("sponsors")));
         Path fresh = Files.createTempFile("wcy-badges-fresh", ".json");
         Files.deleteIfExists(fresh);
         CollectorConfig untouched = new CollectorConfig(fresh);
@@ -149,8 +166,9 @@ public final class BadgesTest {
         untouched.toggleBadges();
         JsonObject saved = JsonParser.parseString(
                 Files.readString(fresh, StandardCharsets.UTF_8)).getAsJsonObject();
-        check("沒動過的人設定檔裡不會多出徽章的兩項",
-                !saved.toString().contains("badgeRoles") && !saved.toString().contains("badgeRainbow"));
+        check("沒動過的人設定檔裡不會多出徽章的三項",
+                !saved.toString().contains("badgeRoles") && !saved.toString().contains("badgeRainbow")
+                        && !saved.toString().contains("badgeColours"));
         check("沒動過就照名單上登記的", untouched.badgeRoleShown("x", true)
                 && !untouched.badgeRoleShown("x", false) && !untouched.badgeRainbow(false));
 

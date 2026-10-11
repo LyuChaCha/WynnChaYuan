@@ -187,8 +187,8 @@ public final class SettingsScreen extends Screen {
      * 不列出來是同一個道理。
      *
      * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是
-     * {@code credits.json} 登記的那一份。所以最後一列是「複製登記內容」，把現在的選擇
-     * 變成一行字，交給開發團隊登記。
+     * {@code credits.json} 登記的那一份。所以最後一列是「申請徽章」，把現在的選擇
+     * （展示的身分、顏色、彩色模式）變成一行字，交給開發團隊登記。
      */
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
@@ -207,6 +207,17 @@ public final class SettingsScreen extends Screen {
                     .flip(() -> cfg().setBadgeRole(role.id(), !shown.getAsBoolean()))
                     .reset(() -> shown.getAsBoolean() == !role.hidden(),
                             () -> cfg().setBadgeRole(role.id(), !role.hidden())));
+            String registered = String.format("#%06X", role.color() & 0xFFFFFF);
+            rows.add(Row.colour("badge.colour." + role.id(),
+                            () -> T.s("badge.colour", role.name()), t("badge.colour.hint"))
+                    .hex(() -> {
+                        String own = cfg().badgeColour(role.id());
+                        return own == null ? registered : own;
+                    })
+                    .setHex(hex -> cfg().setBadgeColourLive(role.id(), hex))
+                    .commit(cfg()::saveIfDirty)
+                    .reset(() -> cfg().badgeColour(role.id()) == null,
+                            () -> cfg().clearBadgeColour(role.id())));
             if (com.wynnchayuan.render.Badges.rainbowAllowed(role)) {
                 java.util.function.BooleanSupplier rainbow =
                         () -> cfg().badgeRainbow(role.rainbow());
@@ -232,10 +243,14 @@ public final class SettingsScreen extends Screen {
     private String badgeRegistration(String self,
                                      List<com.wynnchayuan.render.Badges.Role> mine) {
         StringBuilder show = new StringBuilder();
+        StringBuilder colours = new StringBuilder();
         boolean rainbow = false;
         for (com.wynnchayuan.render.Badges.Role role : mine) {
             if (cfg().badgeRoleShown(role.id(), !role.hidden())) {
                 show.append(show.length() > 0 ? ", " : "").append(role.id());
+                String own = cfg().badgeColour(role.id());
+                colours.append(colours.length() > 0 ? ", " : "").append(role.id()).append("=")
+                        .append(own == null ? "default" : own);
                 rainbow |= com.wynnchayuan.render.Badges.rainbowAllowed(role)
                         && cfg().badgeRainbow(role.rainbow());
             }
@@ -243,7 +258,7 @@ public final class SettingsScreen extends Screen {
         return "WynnChaYuan badge | mc: " + self
                 + " | show: " + (show.length() > 0 ? show : "none")
                 + " | rainbow: " + (rainbow ? "on" : "off")
-                + " | colour: (#RRGGBB, or leave as default)";
+                + " | colour: " + (colours.length() > 0 ? colours : "default");
     }
 
     private List<Row> items() {

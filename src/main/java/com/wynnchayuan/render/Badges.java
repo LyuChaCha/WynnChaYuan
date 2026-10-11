@@ -147,12 +147,26 @@ public final class Badges {
             }
             boolean rainbow = mine ? config.badgeRainbow(role.rainbow()) && rainbowAllowed(role)
                     : role.rainbow();
-            out.add(new Role(role.id(), role.name(), role.color(), rainbow, false));
+            out.add(new Role(role.id(), role.name(),
+                    mine ? ownColour(config, role) : role.color(), rainbow, false));
         }
         if (config.badgeStyle() == CollectorConfig.BadgeStyle.PRIMARY && out.size() > 1) {
             return List.of(out.get(0));
         }
         return out;
+    }
+
+    /** 自己替這個身分選的顏色；沒選（或設定檔被改壞）就用名單上登記的。 */
+    private static int ownColour(CollectorConfig config, Role role) {
+        String hex = config.badgeColour(role.id());
+        if (hex != null) {
+            try {
+                return Integer.parseInt(hex.replace("#", "").strip(), 16) & 0xFFFFFF;
+            } catch (NumberFormatException e) {
+                // 落到下面
+            }
+        }
+        return role.color();
     }
 
     /** 彩色模式是開發者的；其他身分就算設定檔被手改也不給。 */

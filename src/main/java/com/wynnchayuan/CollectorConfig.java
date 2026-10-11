@@ -1033,6 +1033,39 @@ public final class CollectorConfig {
     /** 自己的開發者徽章要不要彩色；{@code null} 表示照名單上登記的。 */
     private Boolean badgeRainbow;
 
+    /**
+     * 自己各個身分的葉子顏色（{@code #RRGGBB}）。沒寫到的照名單上登記的。
+     *
+     * <p>有身分的人自己調（使用者 2026-10-11）。跟上面一樣只影響自己的畫面，
+     * 要讓別人看到得送申請、登記進 {@code credits.json}。
+     */
+    private final java.util.Map<String, String> badgeColours = new java.util.LinkedHashMap<>();
+
+    /** 自己替這個身分選的顏色；沒選就回傳 {@code null}。 */
+    public String badgeColour(String role) {
+        return badgeColours.get(role);
+    }
+
+    /** 拖色盤的時候用，見 {@link #setThemeColorLive}。 */
+    public boolean setBadgeColourLive(String role, String hex) {
+        String v = normalHex(hex);
+        if (v == null) {
+            return false;
+        }
+        if (!v.equals(badgeColours.get(role))) {
+            badgeColours.put(role, v);
+            dirty = true;
+        }
+        return true;
+    }
+
+    /** 回到名單上登記的顏色。 */
+    public void clearBadgeColour(String role) {
+        if (badgeColours.remove(role) != null) {
+            save();
+        }
+    }
+
     public boolean badgeRoleShown(String role, boolean registered) {
         Boolean mine = badgeRoles.get(role);
         return mine == null ? registered : mine;
@@ -1535,6 +1568,20 @@ public final class CollectorConfig {
             }
         }
         badgeRainbow = o.has("badgeRainbow") ? (Boolean) bool(o, "badgeRainbow", false) : null;
+        badgeColours.clear();
+        if (o.has("badgeColours") && o.get("badgeColours").isJsonObject()) {
+            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
+                    : o.getAsJsonObject("badgeColours").entrySet()) {
+                try {
+                    String hex = normalHex(e.getValue().getAsString());
+                    if (hex != null) {
+                        badgeColours.put(e.getKey(), hex);
+                    }
+                } catch (Exception ignored) {
+                    // 手改壞的那一項當沒寫
+                }
+            }
+        }
         nametagRange = clamp(number(o, "nametagRange", nametagRange), 2.0, 64.0);
         nametagAngle = clamp(number(o, "nametagAngle", nametagAngle), 1.0, 45.0);
         fixedX = integer(o, "fixedX", fixedX);
@@ -1746,6 +1793,11 @@ public final class CollectorConfig {
             }
             if (badgeRainbow != null) {
                 o.addProperty("badgeRainbow", badgeRainbow);
+            }
+            if (!badgeColours.isEmpty()) {
+                JsonObject colours = new JsonObject();
+                badgeColours.forEach(colours::addProperty);
+                o.add("badgeColours", colours);
             }
             o.addProperty("nametagRange", nametagRange);
             o.addProperty("nametagAngle", nametagAngle);
