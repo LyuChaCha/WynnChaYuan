@@ -140,18 +140,18 @@ public final class SettingsScreen extends Screen {
         tabs.add(new Row.Tab("dialogue", t("tab.dialogue"), t("tab.dialogue.about"),
                 Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE,
                 List.of(new Row.Group(t("group.dialogue"), false, dialogue()))));
-        List<Row.Group> world = new ArrayList<>();
-        world.add(new Row.Group(t("group.world"), false, world()));
-        List<Row> badge = badge();
-        if (!badge.isEmpty()) {
-            world.add(new Row.Group(t("group.badge"), false, badge));
-        }
         tabs.add(new Row.Tab("world", t("tab.world"), t("tab.world.about"), Icons.Icon.COMPASS,
-                Preview.Scene.WORLD, List.copyOf(world)));
+                Preview.Scene.WORLD, List.of(new Row.Group(t("group.world"), false, world()))));
         tabs.add(new Row.Tab("data", t("tab.data"), t("tab.data.about"), Icons.Icon.BOOK,
                 Preview.Scene.DATA, List.of(
                         new Row.Group(t("group.lang"), false, languages()),
                         new Row.Group(t("group.tools"), true, tools()))));
+        // 徽章自己一頁，排在左邊那一列的最後：在名單上的人才有（使用者 2026-10-11）
+        List<Row> badge = badge();
+        if (!badge.isEmpty()) {
+            tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
+                    Preview.Scene.WORLD, List.of(new Row.Group(t("group.badge"), false, badge))));
+        }
         return tabs;
     }
 
@@ -181,9 +181,10 @@ public final class SettingsScreen extends Screen {
     private long badgeCopiedAt;
 
     /**
-     * 自己的徽章：<b>在名單上的人才有這一區</b>（使用者 2026-10-11）。
+     * 自己的徽章：<b>在名單上的人才有這一頁</b>（使用者 2026-10-11）。
      *
-     * <p>不在名單上的人沒有東西可以選，整區不出現——跟沒裝的模組不列出來是同一個道理。
+     * <p>不在名單上的人沒有東西可以選，左邊那一列就不會多出這一頁——跟沒裝的模組
+     * 不列出來是同一個道理。
      *
      * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是
      * {@code credits.json} 登記的那一份。所以最後一列是「複製登記內容」，把現在的選擇
