@@ -50,7 +50,17 @@ public final class CurrentQuest {
      * @return 例如 {@code dialogue/Cook Assistant#Aledar}
      */
     public static String tag(String base, String speaker) {
-        String tagged = tag(base);
+        return tag(base, speaker, true);
+    }
+
+    /**
+     * 同上，但可以不掛任務名。
+     *
+     * @param withQuest {@code false} 時只接說話者，例如 {@code dialogue#Marseled}——
+     *                  這句判斷不是追蹤中那個任務的台詞時用，見 {@code QuestGuess}
+     */
+    public static String tag(String base, String speaker, boolean withQuest) {
+        String tagged = withQuest ? tag(base) : base;
         return speaker == null || speaker.isBlank()
                 ? tagged : tagged + "#" + sanitise(speaker);
     }

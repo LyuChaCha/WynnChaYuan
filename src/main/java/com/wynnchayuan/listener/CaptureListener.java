@@ -203,10 +203,46 @@ public final class CaptureListener {
         // 猜錯的說話者比沒有說話者更糟：譯者會照著錯的角色去抓語氣。
         String speaker = nameplate;
         auditSpeaker(completed, speaker);
+        // 追蹤欄上的任務不一定是這段對話的任務。見 QuestGuess
+        String quest = CurrentQuest.get();
+        boolean withQuest = com.wynnchayuan.capture.QuestGuess.withQuest(
+                quest, speaker,
+                WynnChaYuan.translations().inCast(quest, speaker),
+                com.wynnchayuan.capture.ConversationPartner.fromBlock());
+        auditQuest(completed, quest, withQuest);
         WynnChaYuan.store().record(
                 completed, "desc", "quest",
                 CurrentQuest.tag(hadChoices ? "dialogue/choices" : "dialogue",
-                                 speaker));
+                                 speaker, withQuest));
+    }
+
+    /**
+     * 診斷：語料裡已經標了任務的句子，拿來核對這次掛的任務名對不對。
+     *
+     * <ul>
+     *   <li>{@code match}：掛了，而且就是那個任務</li>
+     *   <li>{@code mismatch}：掛了，但語料說是別的任務</li>
+     *   <li>{@code avoided}：沒掛——而追蹤中的任務本來就不是它的（擋對了）</li>
+     *   <li>{@code missed}：沒掛——但它就是追蹤中那個任務的（擋錯了）</li>
+     * </ul>
+     */
+    private static void auditQuest(String template, String quest, boolean withQuest) {
+        try {
+            if (quest == null) {
+                return;
+            }
+            String known = WynnChaYuan.translations().questOf(template);
+            if (known == null) {
+                return;
+            }
+            String tracked = com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip();
+            boolean same = tracked.equalsIgnoreCase(known.strip());
+            String verdict = withQuest ? (same ? "match" : "mismatch")
+                                       : (same ? "missed" : "avoided");
+            WynnChaYuan.store().noteEvent("quest.audit." + verdict);
+        } catch (Throwable ignored) {
+            // 只是診斷
+        }
     }
 
     // ---------------------------------------------------------------- 聊天

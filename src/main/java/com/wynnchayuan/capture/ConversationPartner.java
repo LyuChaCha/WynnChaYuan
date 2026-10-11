@@ -52,11 +52,28 @@ public final class ConversationPartner {
         }
         note(found == null ? "partner.unset" : "partner.set");
         name = found;
+        blockAt = 0;
         clickedAt = System.currentTimeMillis();
         talking = false;
     }
 
-    /** 右鍵點了方塊，或任何確定不是同一段對話的時候。 */
+    /** 右鍵點了方塊（日記、書、門）：之後的旁白不是剛才那個 NPC 說的。 */
+    public static void blockClicked() {
+        clear();
+        blockAt = System.currentTimeMillis();
+    }
+
+    /**
+     * 這段對話是不是剛右鍵點了方塊才開始的（日記、書、告示）。
+     * 給 {@link QuestGuess} 判斷旁白要不要掛任務名。
+     */
+    public static boolean fromBlock() {
+        return name == null && System.currentTimeMillis() - blockAt <= IDLE_MS;
+    }
+
+    private static volatile long blockAt;
+
+    /** 任何確定不是同一段對話的時候。 */
     public static void clear() {
         if (name != null) {
             note("partner.cleared");

@@ -239,7 +239,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             net.fabricmc.fabric.api.event.player.UseBlockCallback.EVENT.register(
                     (player, world, hand, hit) -> {
                         if (world.isClientSide()) {
-                            com.wynnchayuan.capture.ConversationPartner.clear();
+                            com.wynnchayuan.capture.ConversationPartner.blockClicked();
                         }
                         return net.minecraft.world.InteractionResult.PASS;
                     });
