@@ -502,6 +502,26 @@ tasks.register('runChoiceChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChoiceChecks' }
 
+// 對話框的名牌：從 action bar 原始訊息讀，只給內文對得上的那一句（issue #1138）。
+tasks.register('runDialogueSpeakerChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話框名牌讀得到、換句時不會錯開'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.DialogueSpeakerTest'
+}
+tasks.named('check') { dependsOn 'runDialogueSpeakerChecks' }
+
+// 對話要不要掛追蹤中的任務名：說話者不在那個任務的語料名單上就不掛（issue #1138）。
+tasks.register('runQuestGuessChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話的任務歸屬不會被追蹤欄帶錯'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.QuestGuessTest'
+}
+tasks.named('check') { dependsOn 'runQuestGuessChecks' }
+
 tasks.register('runLabelReplaceChecks', JavaExec) {
     group = 'verification'
     description = '驗證漂浮名牌就地替換不會動到遊戲自己的版面'
@@ -834,6 +854,14 @@ tasks.register('runItemNameContextChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runItemNameContextChecks' }
 
+tasks.register('runFetchedLanguagesChecks', JavaExec) {
+    group = 'verification'
+    description = '切語言時每種語言每次開遊戲只跟 GitHub 對一次'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.FetchedLanguagesTest'
+}
+tasks.named('check') { dependsOn 'runFetchedLanguagesChecks' }
+
 tasks.register('runStatRowChecks', JavaExec) {
     group = 'verification'
     description = '裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去'
@@ -841,6 +869,14 @@ tasks.register('runStatRowChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.StatRowTest'
 }
 tasks.named('check') { dependsOn 'runStatRowChecks' }
+
+tasks.register('runWynnModRowsChecks', JavaExec) {
+    group = 'verification'
+    description = 'WynnMod 重畫的裝備說明：標籤拆成兩段、或被砍掉尾巴的列也翻得出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WynnModRowsTest'
+}
+tasks.named('check') { dependsOn 'runWynnModRowsChecks' }
 
 tasks.register('runAbilityRowChecks', JavaExec) {
     group = 'verification'

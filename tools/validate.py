@@ -137,6 +137,23 @@ def load_glossary(path: Path) -> dict[str, str]:
     return terms
 
 
+_PLACE_PATTERNS: dict[str, re.Pattern[str]] = {}
+
+
+def _place_pattern(place: str) -> re.Pattern[str]:
+    """地名的比對式，編譯一次就留著。
+
+    先前在 check_pair 裡每一句、每一個地名都現場 re.escape + re.search：
+    六萬句 × 四百多個地名 ≈ 兩千九百萬次，而 re 的快取只有 512 個，
+    四百多個地名輪流進出，等於每次都重新編譯。單是 tr_tr 就要兩分半，
+    七種語言在 CI 上要十一分鐘多。
+    """
+    pattern = _PLACE_PATTERNS.get(place)
+    if pattern is None:
+        pattern = _PLACE_PATTERNS[place] = re.compile(rf"\b{re.escape(place)}\b")
+    return pattern
+
+
 def load_places() -> set[str]:
     data = json.loads(PLACES_FILE.read_text(encoding="utf-8"))
     return {p.strip() for p in data.get("places", []) if p.strip()}
@@ -389,8 +406,9 @@ def check_pair(path: str, key: str, src: str, dst: str,
                            f"整句會留英文；等玩家收到實機字串後由 near-miss.py 補上"))
 
     # 地名永遠保留原文，翻掉的話跟其他玩家對不上話
+    # 先用字串包含擋掉：比對得到的話原文一定含有這個地名，結果跟只用 re 一樣
     for place in places:
-        if re.search(rf"\b{re.escape(place)}\b", src) and place not in dst:
+        if place in src and place not in dst and _place_pattern(place).search(src):
             out.append(Problem("warn", path, key,
                                f"原文有地名「{place}」但譯文裡找不到 —— 地名不翻譯"))
 

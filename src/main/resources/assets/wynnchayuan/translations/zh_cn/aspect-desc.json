@@ -11,7 +11,7 @@
  "entries": {
   "aspect-desc#0000": {
    "src": "Your Ultimate charges {~} faster.",
-   "dst": "你的大招蓄能速度加快 {~}。",
+   "dst": "{c1}你的{c2}大招{c1}蓄能速度加快 {c3}{~}{c1}。",
    "role": "desc",
    "aspect": "Archer's Embodiment of Perceptive Finesse",
    "class": "archer"
@@ -109,7 +109,7 @@
   },
   "aspect-desc#0014": {
    "src": "Reduces Sniffer Dog's cooldown by -{~}s.",
-   "dst": "Sniffer Dog 的冷却时间缩短 {~} 秒。",
+   "dst": "{c2}Sniffer Dog{c1} 的冷却时间缩短 {c3}{~} 秒{c1}。",
    "role": "desc",
    "aspect": "Aspect of Olfactorial Enhancement",
    "class": "archer"
@@ -1124,7 +1124,7 @@
   },
   "aspect-desc#0159": {
    "src": "Rejuvenating Skin restores Health {~}s faster.",
-   "dst": "Rejuvenating Skin 恢复生命的速度加快 {~} 秒。",
+   "dst": "{c1}Rejuvenating Skin{c2} 恢复生命的速度加快 {c3}{~} 秒{c2}。",
    "role": "desc",
    "aspect": "Aspect of Rekindling",
    "class": "warrior"
@@ -1159,7 +1159,7 @@
   },
   "aspect-desc#0164": {
    "src": "Boiling Blood's cooldown is reduced by -{~}s.",
-   "dst": "Boiling Blood's cooldown 缩短 -{~} 秒。",
+   "dst": "{c1}Boiling Blood{c2}'s cooldown 缩短 {c3}-{~} 秒{c2}。",
    "role": "desc",
    "aspect": "Aspect of Unquenching Flames",
    "class": "warrior"
@@ -1352,7 +1352,7 @@
   },
   "blk005": {
    "src": "Pierce the Veil lasts +{~}s longer. Another Self has +{~} more health. Serpent's Garden lasts +{~}s longer.",
-   "dst": "Pierce the Veil 的持续时间延长 +{~1} 秒。Another Self 的生命增加 +{~2}。Serpent's Garden 的持续时间延长 +{~3} 秒。",
+   "dst": "{c1}Pierce the Veil{c2} 的持续时间延长 {c3}+{~1} 秒{c2}。{c1}Another Self{c2} 的生命增加 {c3}+{~2}{c2}。{c1}Serpent's Garden{c2} 的持续时间延长 {c3}+{~3} 秒{c2}。",
    "role": "desc"
   },
   "blk006": {
