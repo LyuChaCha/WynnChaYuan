@@ -171,6 +171,49 @@ public final class LookAtTranslator {
     private static final double SPEAKER_RADIUS = 2.5;
 
     /** 由名牌事件呼叫，記下這個實體對應的原文。 */
+    /**
+     * 頭頂上那塊名牌：給「右鍵點了誰」用，見 {@code ConversationPartner}。
+     *
+     * <p>Wynncraft 的 NPC 名字是另一個 TextDisplay 實體，浮在模型正上方。
+     * 找水平距離最近、高度在模型上方幾格內的那一塊。
+     *
+     * @return 名牌原文（不含格式碼）；附近沒有就回傳 {@code null}
+     */
+    public static String labelAbove(Entity target) {
+        if (target == null) {
+            return null;
+        }
+        try {
+            Vec3 base = target.position();
+            String best = null;
+            double bestHorizontal = Double.MAX_VALUE;
+            for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
+                Entity label = e.getKey();
+                if (label == null || !label.isAlive() || e.getValue() == null) {
+                    continue;
+                }
+                Vec3 d = label.position().subtract(base);
+                double horizontal = Math.sqrt(d.x * d.x + d.z * d.z);
+                if (d.y < 0 || d.y > ABOVE_HEIGHT || horizontal > ABOVE_RADIUS) {
+                    continue;
+                }
+                if (horizontal < bestHorizontal) {
+                    bestHorizontal = horizontal;
+                    best = e.getValue().getStringWithoutFormatting().strip();
+                }
+            }
+            return best;
+        } catch (Throwable t) {
+            return null;   // 只是給譯者的線索，取不到不影響任何事
+        }
+    }
+
+    /** 名牌離模型多高以內算「頭頂上」。 */
+    private static final double ABOVE_HEIGHT = 3.5;
+
+    /** 名牌離模型水平多遠以內算同一個 NPC。 */
+    private static final double ABOVE_RADIUS = 0.75;
+
     public static void remember(Entity entity, StyledText label) {
         if (entity != null && label != null) {
             LABELS.put(entity, label);
