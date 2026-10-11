@@ -149,6 +149,22 @@ public final class BadgesTest {
                 Component.literal("Multi_Role"), "Multi_Role", "Multi_Role", config, 0))
                 .equals(List.of(Badges.INSTALLED)));
 
+        // ---- 申請徽章：自己在名單裡的那幾筆 ----
+        // 這時候 Multi_Role 把三個身分都關了、開了彩色、贊助者選了 #ABCDEF
+        String mine = Badges.creditsEntries(sections, "multi_role", config);
+        check("申請內容：每個身分一筆，帶著分區代號",
+                mine.contains("// developers\n") && mine.contains("// sponsors\n")
+                        && mine.contains("// contributors\n"));
+        check("申請內容：是名單的寫法，名字與 ID 照名單上的", mine.contains(
+                "{\"name\":\"Multi\",\"mc\":\"Multi_Role\",\"rainbow\":true,\"hide\":true}"));
+        check("申請內容：自己選的顏色寫進去，蓋過原本登記的", mine.contains(
+                "{\"name\":\"Multi\",\"mc\":\"Multi_Role\",\"color\":\"#ABCDEF\",\"hide\":true}"));
+        check("申請內容：彩色只寫在開發者那一筆",
+                mine.indexOf("rainbow") == mine.lastIndexOf("rainbow"));
+        check("不在名單上的人沒有東西可以申請",
+                Badges.creditsEntries(sections, "Nobody", config).isEmpty()
+                        && Badges.creditsEntries(sections, null, config).isEmpty());
+
         // ---- 設定存得回來 ----
         CollectorConfig again = new CollectorConfig(file);
         check("本機的選擇存檔再讀回來還在", !again.badgeRoleShown("sponsors", true)

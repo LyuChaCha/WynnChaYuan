@@ -166,6 +166,47 @@ public final class Badges {
         return role.color();
     }
 
+    /**
+     * 自己在 {@code credits.json} 裡的那幾筆，照現在面板上的選擇寫好。
+     *
+     * <p>別人看到的是 repo 上那份名單。這裡把「展示哪些身分、顏色、彩色」換成名單的
+     * 寫法，本人貼回去、送出修改，合併之後大家下次同步就看得到——模組自己不送任何東西。
+     *
+     * @return 每個身分兩行：{@code // 分區代號} 與那一筆的 JSON；不在名單上就是空字串
+     */
+    public static String creditsEntries(List<Credits.Section> sections, String self,
+                                        CollectorConfig config) {
+        StringBuilder out = new StringBuilder();
+        if (self == null) {
+            return "";
+        }
+        for (Credits.Section section : sections) {
+            for (Credits.Member member : section.members()) {
+                if (!member.hasHead() || !member.mc().equalsIgnoreCase(self)) {
+                    continue;
+                }
+                String id = section.id();
+                com.google.gson.JsonObject entry = new com.google.gson.JsonObject();
+                entry.addProperty("name", member.label());
+                entry.addProperty("mc", member.mc());
+                String own = config.badgeColour(id);
+                if (own != null) {
+                    entry.addProperty("color", own);
+                } else if (member.colour() != 0) {
+                    entry.addProperty("color", String.format("#%06X", member.colour() & 0xFFFFFF));
+                }
+                if ("developers".equals(id) && config.badgeRainbow(member.rainbow())) {
+                    entry.addProperty("rainbow", true);
+                }
+                if (!config.badgeRoleShown(id, !member.hidden())) {
+                    entry.addProperty("hide", true);
+                }
+                out.append("// ").append(id).append('\n').append(entry).append('\n');
+            }
+        }
+        return out.toString();
+    }
+
     /** 彩色模式是開發者的；其他身分就算設定檔被手改也不給。 */
     public static boolean rainbowAllowed(Role role) {
         return "developers".equals(role.id());

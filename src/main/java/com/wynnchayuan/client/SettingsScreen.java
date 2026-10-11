@@ -178,6 +178,13 @@ public final class SettingsScreen extends Screen {
 
     private long badgeCopiedAt;
 
+    /**
+     * repo 上那份名單的編輯頁。別人看到的徽章照這個檔畫，本人把自己那一筆貼回去、
+     * 送出修改（GitHub 會開成一個 PR），合併之後大家下次同步就看得到。
+     */
+    private static final String CREDITS_EDIT_URL = "https://github.com/LyuChaCha/WynnChaYuan/edit/main/"
+            + "src/main/resources/assets/wynnchayuan/credits.json";
+
     /** 怎麼參與翻譯（貢獻者）。 */
     private static final String CONTRIBUTE_URL =
             "https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md";
@@ -196,8 +203,9 @@ public final class SettingsScreen extends Screen {
      * 可以選，看到的是「怎麼拿到徽章」——參與翻譯成為貢獻者，或是贊助成為贊助者。
      *
      * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是
-     * {@code credits.json} 登記的那一份。所以最後一列是「申請徽章」，把現在的選擇
-     * （展示的身分、顏色、彩色模式）變成一行字，交給開發團隊登記。
+     * repo 上 {@code credits.json} 的那一份。所以最後一列是「申請徽章」：把現在的選擇
+     * （展示的身分、顏色、彩色模式）照名單的寫法複製起來，並打開那個檔在 GitHub 上的編輯頁，
+     * 本人貼回去送出就好。
      */
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
@@ -255,32 +263,12 @@ public final class SettingsScreen extends Screen {
                         ? "badge.register.done" : "badge.register.button"))
                 .run(() -> {
                     Minecraft.getInstance().keyboardHandler.setClipboard(
-                            badgeRegistration(self, mine));
+                            com.wynnchayuan.render.Badges.creditsEntries(
+                                    Credits.sections(), self, cfg()));
                     badgeCopiedAt = System.currentTimeMillis();
+                    ConfirmLinkScreen.confirmLinkNow(this, CREDITS_EDIT_URL);
                 }));
         return rows;
-    }
-
-    /** 交給開發團隊登記的那一行字：帳號、要展示的身分、彩色、顏色留給本人填。 */
-    private String badgeRegistration(String self,
-                                     List<com.wynnchayuan.render.Badges.Role> mine) {
-        StringBuilder show = new StringBuilder();
-        StringBuilder colours = new StringBuilder();
-        boolean rainbow = false;
-        for (com.wynnchayuan.render.Badges.Role role : mine) {
-            if (cfg().badgeRoleShown(role.id(), !role.hidden())) {
-                show.append(show.length() > 0 ? ", " : "").append(role.id());
-                String own = cfg().badgeColour(role.id());
-                colours.append(colours.length() > 0 ? ", " : "").append(role.id()).append("=")
-                        .append(own == null ? "default" : own);
-                rainbow |= com.wynnchayuan.render.Badges.rainbowAllowed(role)
-                        && cfg().badgeRainbow(role.rainbow());
-            }
-        }
-        return "WynnChaYuan badge | mc: " + self
-                + " | show: " + (show.length() > 0 ? show : "none")
-                + " | rainbow: " + (rainbow ? "on" : "off")
-                + " | colour: " + (colours.length() > 0 ? colours : "default");
     }
 
     private List<Row> items() {
