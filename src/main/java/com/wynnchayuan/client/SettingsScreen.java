@@ -140,8 +140,14 @@ public final class SettingsScreen extends Screen {
         tabs.add(new Row.Tab("dialogue", t("tab.dialogue"), t("tab.dialogue.about"),
                 Icons.Icon.BUBBLE, Preview.Scene.DIALOGUE,
                 List.of(new Row.Group(t("group.dialogue"), false, dialogue()))));
+        List<Row.Group> world = new ArrayList<>();
+        world.add(new Row.Group(t("group.world"), false, world()));
+        List<Row> badge = badge();
+        if (!badge.isEmpty()) {
+            world.add(new Row.Group(t("group.badge"), false, badge));
+        }
         tabs.add(new Row.Tab("world", t("tab.world"), t("tab.world.about"), Icons.Icon.COMPASS,
-                Preview.Scene.WORLD, List.of(new Row.Group(t("group.world"), false, world()))));
+                Preview.Scene.WORLD, List.copyOf(world)));
         tabs.add(new Row.Tab("data", t("tab.data"), t("tab.data.about"), Icons.Icon.BOOK,
                 Preview.Scene.DATA, List.of(
                         new Row.Group(t("group.lang"), false, languages()),
@@ -170,6 +176,73 @@ public final class SettingsScreen extends Screen {
                     cfg()::toggleWynnmodTooltip));
         }
         return rows;
+    }
+
+    private long badgeCopiedAt;
+
+    /**
+     * 自己的徽章：<b>在名單上的人才有這一區</b>（使用者 2026-10-11）。
+     *
+     * <p>不在名單上的人沒有東西可以選，整區不出現——跟沒裝的模組不列出來是同一個道理。
+     *
+     * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是
+     * {@code credits.json} 登記的那一份。所以最後一列是「複製登記內容」，把現在的選擇
+     * 變成一行字，交給開發團隊登記。
+     */
+    private List<Row> badge() {
+        List<Row> rows = new ArrayList<>();
+        String self = com.wynnchayuan.render.Badges.selfName();
+        List<com.wynnchayuan.render.Badges.Role> mine =
+                com.wynnchayuan.render.Badges.registered(self);
+        if (mine.isEmpty()) {
+            return rows;
+        }
+        for (com.wynnchayuan.render.Badges.Role role : mine) {
+            java.util.function.BooleanSupplier shown =
+                    () -> cfg().badgeRoleShown(role.id(), !role.hidden());
+            rows.add(Row.toggle("badge.role." + role.id(),
+                            () -> T.s("badge.role", role.name()), t("badge.role.hint"))
+                    .on(shown)
+                    .flip(() -> cfg().setBadgeRole(role.id(), !shown.getAsBoolean()))
+                    .reset(() -> shown.getAsBoolean() == !role.hidden(),
+                            () -> cfg().setBadgeRole(role.id(), !role.hidden())));
+            if (com.wynnchayuan.render.Badges.rainbowAllowed(role)) {
+                java.util.function.BooleanSupplier rainbow =
+                        () -> cfg().badgeRainbow(role.rainbow());
+                rows.add(Row.toggle("badge.rainbow", t("badge.rainbow"), t("badge.rainbow.hint"))
+                        .on(rainbow)
+                        .flip(() -> cfg().setBadgeRainbow(!rainbow.getAsBoolean()))
+                        .reset(() -> rainbow.getAsBoolean() == role.rainbow(),
+                                () -> cfg().setBadgeRainbow(role.rainbow())));
+            }
+        }
+        rows.add(Row.action("badge.register", t("badge.register"), t("badge.register.hint"))
+                .label(() -> T.s(System.currentTimeMillis() - badgeCopiedAt < 2000
+                        ? "badge.register.done" : "badge.register.button"))
+                .run(() -> {
+                    Minecraft.getInstance().keyboardHandler.setClipboard(
+                            badgeRegistration(self, mine));
+                    badgeCopiedAt = System.currentTimeMillis();
+                }));
+        return rows;
+    }
+
+    /** 交給開發團隊登記的那一行字：帳號、要展示的身分、彩色、顏色留給本人填。 */
+    private String badgeRegistration(String self,
+                                     List<com.wynnchayuan.render.Badges.Role> mine) {
+        StringBuilder show = new StringBuilder();
+        boolean rainbow = false;
+        for (com.wynnchayuan.render.Badges.Role role : mine) {
+            if (cfg().badgeRoleShown(role.id(), !role.hidden())) {
+                show.append(show.length() > 0 ? ", " : "").append(role.id());
+                rainbow |= com.wynnchayuan.render.Badges.rainbowAllowed(role)
+                        && cfg().badgeRainbow(role.rainbow());
+            }
+        }
+        return "WynnChaYuan badge | mc: " + self
+                + " | show: " + (show.length() > 0 ? show : "none")
+                + " | rainbow: " + (rainbow ? "on" : "off")
+                + " | colour: (#RRGGBB, or leave as default)";
     }
 
     private List<Row> items() {

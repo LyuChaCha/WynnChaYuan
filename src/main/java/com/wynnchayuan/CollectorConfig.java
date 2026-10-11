@@ -1013,10 +1013,44 @@ public final class CollectorConfig {
      */
     private boolean showBadges = true;
 
-    /** GRADIENT 多重身分逐字漸層；PRIMARY 只顯示第一個身分。 */
+    /**
+     * 別人有好幾個身分時畫幾片葉子：GRADIENT 全部、PRIMARY 只畫第一個。
+     *
+     * <p>名字是舊的——先前徽章是一行字，多重身分用逐字漸層。存檔裡的值沿用，
+     * 所以不改名。
+     */
     private BadgeStyle badgeStyle = BadgeStyle.GRADIENT;
 
     public enum BadgeStyle { GRADIENT, PRIMARY }
+
+    /**
+     * 自己的徽章要展示哪些身分：身分代號 → 要不要展示。沒寫到的照名單上登記的。
+     *
+     * <p>只影響<b>自己畫面上</b>自己的名牌；別人看到的是 {@code credits.json} 登記的。
+     */
+    private final java.util.Map<String, Boolean> badgeRoles = new java.util.LinkedHashMap<>();
+
+    /** 自己的開發者徽章要不要彩色；{@code null} 表示照名單上登記的。 */
+    private Boolean badgeRainbow;
+
+    public boolean badgeRoleShown(String role, boolean registered) {
+        Boolean mine = badgeRoles.get(role);
+        return mine == null ? registered : mine;
+    }
+
+    public void setBadgeRole(String role, boolean shown) {
+        badgeRoles.put(role, shown);
+        save();
+    }
+
+    public boolean badgeRainbow(boolean registered) {
+        return badgeRainbow == null ? registered : badgeRainbow;
+    }
+
+    public void setBadgeRainbow(boolean on) {
+        badgeRainbow = on;
+        save();
+    }
 
     public boolean showBadges() {
         return showBadges;
@@ -1489,6 +1523,18 @@ public final class CollectorConfig {
         readPairs(o, "overlaySize", overlaySize);
         showBadges = bool(o, "showBadges", showBadges);
         badgeStyle = enumOr(o, "badgeStyle", BadgeStyle.class, badgeStyle);
+        badgeRoles.clear();
+        if (o.has("badgeRoles") && o.get("badgeRoles").isJsonObject()) {
+            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
+                    : o.getAsJsonObject("badgeRoles").entrySet()) {
+                try {
+                    badgeRoles.put(e.getKey(), e.getValue().getAsBoolean());
+                } catch (Exception ignored) {
+                    // 手改壞的那一項當沒寫
+                }
+            }
+        }
+        badgeRainbow = o.has("badgeRainbow") ? (Boolean) bool(o, "badgeRainbow", false) : null;
         nametagRange = clamp(number(o, "nametagRange", nametagRange), 2.0, 64.0);
         nametagAngle = clamp(number(o, "nametagAngle", nametagAngle), 1.0, 45.0);
         fixedX = integer(o, "fixedX", fixedX);
@@ -1692,6 +1738,15 @@ public final class CollectorConfig {
             o.add("overlaySize", sizes);
             o.addProperty("showBadges", showBadges);
             o.addProperty("badgeStyle", badgeStyle.name());
+            // 沒動過就不寫：不在名單上的人設定檔裡不必多這兩項
+            if (!badgeRoles.isEmpty()) {
+                JsonObject roles = new JsonObject();
+                badgeRoles.forEach(roles::addProperty);
+                o.add("badgeRoles", roles);
+            }
+            if (badgeRainbow != null) {
+                o.addProperty("badgeRainbow", badgeRainbow);
+            }
             o.addProperty("nametagRange", nametagRange);
             o.addProperty("nametagAngle", nametagAngle);
             o.addProperty("fixedX", fixedX);
