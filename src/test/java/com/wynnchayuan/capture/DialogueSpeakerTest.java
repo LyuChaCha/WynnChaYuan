@@ -92,6 +92,19 @@ public final class DialogueSpeakerTest {
         check("全是圖示就是沒有名字",
               DialogueSpeaker.cleanName(new String(Character.toChars(0xE060))) == null);
 
+        // 8. 名牌位置只放了間隔字 À（實機 Tunnel Trouble）
+        DialogueSpeaker.noteRaw(box("À", "Looks like you freed the cows successfully!"));
+        check("只有 À 的名牌不算說話者",
+              DialogueSpeaker.currentFor("Looks like you freed the cows") == null);
+        check("頭頂名牌只有 À 也不算名字", DialogueSpeaker.cleanName("À") == null);
+        check("名字裡的 À 照留", "Àlvaro".equals(DialogueSpeaker.cleanName("Àlvaro")));
+        check("換成別的佔位字（ÀÀ、Ï）也不算", DialogueSpeaker.cleanName("ÀÀ") == null
+                && DialogueSpeaker.cleanName("Ï") == null);
+        check("只有符號或數字不算", DialogueSpeaker.cleanName("#*") == null
+                && DialogueSpeaker.cleanName("12") == null);
+        check("藏名字的「???」照留", "???".equals(DialogueSpeaker.cleanName("???")));
+        check("短的真名照留（Bob）", "Bob".equals(DialogueSpeaker.cleanName("Bob")));
+
         report();
     }
 

@@ -98,8 +98,7 @@ public final class DialogueSpeaker {
             return null;
         }
         String first = raw.strip().split("\n", 2)[0];
-        String name = GlyphSplitter.stripGlyphChars(first).strip();
-        return name.isEmpty() ? null : name;
+        return named(GlyphSplitter.stripGlyphChars(first).strip());
     }
 
     /** 只留字母與數字：原始訊息裡夾滿排版偏移與圖示，比對時不能算進去。 */
@@ -123,8 +122,34 @@ public final class DialogueSpeaker {
             return Optional.empty();
         }, Style.EMPTY);
         // 名牌兩側常有排版偏移與框線圖示，跟本文一樣要清掉才拿得到名字
-        String out = GlyphSplitter.stripGlyphChars(name.toString()).strip();
-        return out.isEmpty() ? null : out;
+        return named(GlyphSplitter.stripGlyphChars(name.toString()).strip());
+    }
+
+    /**
+     * 不像名字的就不算名字：至少要有兩個 A–Z 字母。
+     *
+     * <h2>為什麼（實機，Tunnel Trouble）</h2>
+     * 有些對話框的名牌位置只放一個 {@code À}，那是 Wynncraft 拿來佔位的字
+     * （漂浮字的 Seaskipper 也是 {@code §0À}）。它在名牌字型裡是普通的字
+     * （{@code wynncraft_latin.png}），從字型看不出是佔位，所以不能只擋 À 一個——
+     * 下次換成 Á、Ï 一樣會被記成說話者，還會因為不在任務的說話者名單上，
+     * 把整句的任務名一起拿掉。NPC 的名字都是英文，兩個字母擋不到真名
+     * （Bob、Espren Guard、Álvaro），擋得掉只有佔位字、符號、數字的名牌——只有問號的「???」除外。
+     */
+    /** 只有問號（可能帶附加符號、空白）的名牌。 */
+    private static final java.util.regex.Pattern MYSTERY =
+            java.util.regex.Pattern.compile("[?\\p{M}\\s]*\\?[?\\p{M}\\s]*");
+
+    private static String named(String text) {
+        if (text == null) {
+            return null;
+        }
+        long letters = text.chars().filter(c -> (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')).count();
+        if (letters >= 2) {
+            return text;
+        }
+        // 「???」是遊戲刻意藏名字的角色，語料裡有好幾個，譯者要知道是同一個謎樣人物
+        return MYSTERY.matcher(text).matches() ? text : null;
     }
 
     /**
