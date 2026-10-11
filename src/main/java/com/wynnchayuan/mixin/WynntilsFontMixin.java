@@ -41,4 +41,27 @@ public abstract class WynntilsFontMixin {
     private StyledText wynnchayuan$translate(StyledText text) {
         return WynntilsText.screenText(text);
     }
+
+    /**
+     * 會自己捲動的那一種（內容書清單的每一列）。
+     *
+     * <h2>為什麼這一支要另外打</h2>
+     * {@code renderScrollingText} 先量這段字多寬、放不下才捲，然後轉進上面那一支去畫。
+     * 只打上面那一支的話，它量的是<b>英文</b>：英文放得下就不捲，畫出來的卻是比較長的
+     * 譯文——設成「譯名加原文」之後整列凸出去，蓋到隔壁那一欄（使用者 2026-10-11 的截圖）。
+     *
+     * <p>在這一支的入口就換掉，量的與畫的是同一段字，放不下時 Wynntils 自己會捲。
+     * 到了上面那一支，字已經是譯文，查不到就原樣通過，不會換第二次。
+     */
+    @ModifyVariable(
+            method = "renderScrollingText(Lnet/minecraft/client/gui/GuiGraphics;"
+                    + "Lcom/wynntils/core/text/StyledText;FFF"
+                    + "Lcom/wynntils/utils/colors/CustomColor;"
+                    + "Lcom/wynntils/utils/render/type/HorizontalAlignment;"
+                    + "Lcom/wynntils/utils/render/type/VerticalAlignment;"
+                    + "Lcom/wynntils/utils/render/type/TextShadow;F)V",
+            at = @At("HEAD"), argsOnly = true, remap = false)
+    private StyledText wynnchayuan$translateScrolling(StyledText text) {
+        return WynntilsText.screenText(text);
+    }
 }

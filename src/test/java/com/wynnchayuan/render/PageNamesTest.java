@@ -104,13 +104,15 @@ public final class PageNamesTest {
 
         store.setPageNameMode(ItemNames.BOTH);
         List<Component> both = TooltipPanel.translateInPlace(card, store);
-        check("★ 譯名加原文：名字後面括號附原文，類型標籤照舊（實際 " + text(both, 0) + "）",
-                (local + " (" + name + ")" + tag).equals(text(both, 0)));
-        check("★ 附上去的原文跟名字同色，不是跟標籤同色",
-                colourAt(both.get(0), local.length() + 3) == 0xFF8C19);
+        check("★ 譯名加原文：標題照舊是譯名（實際 " + text(both, 0) + "）",
+                (local + tag).equals(text(both, 0)));
+        check("★ 原文自己一列，排在標題下面（實際 " + text(both, 1) + "）",
+                name.equals(text(both, 1)));
+        check("★ 那一列是遊戲原本的樣式（字型與顏色）", NAME.equals(styleAt(both.get(1), 0)));
+        check("只多出這一列", both.size() == on.size() + 1);
         check("類型標籤的顏色沒變",
                 colourAt(both.get(0), text(both, 0).length() - 2) == 0xAAAAAA);
-        check("卡片其餘各行不受影響", text(both, 2).equals(text(on, 2)));
+        check("卡片其餘各行不受影響，只是往下挪一列", text(both, 3).equals(text(on, 2)));
 
         store.setPageNameMode(ItemNames.OFF);
         List<Component> off = TooltipPanel.translateInPlace(card, store);
@@ -124,21 +126,75 @@ public final class PageNamesTest {
         check("★ 切回譯名馬上生效，不會被快取卡在上一種",
                 (local + tag).equals(text(TooltipPanel.translateInPlace(card, store), 0)));
 
+        // ---- ★ 名字裡留著英文的卡，名字整段一個顏色 ----
+        // 使用者 2026-10-11 的截圖：「Aelumia 冶金廠」的 Aelumia 是橘的、冶金廠是白的。
+        String mixedKey = null;
+        for (String key : misc.keySet()) {
+            String dst = misc.get(key).isJsonPrimitive() ? misc.get(key).getAsString() : "";
+            if (key.endsWith(" [Cave]") && dst.contains(" [") && key.indexOf('{') < 0) {
+                String n = key.substring(0, key.length() - " [Cave]".length());
+                String l = dst.substring(0, dst.lastIndexOf(" ["));
+                String head = n.split(" ")[0];
+                if (!n.equals(l) && n.contains(" ") && l.startsWith(head + " ")
+                        && l.chars().anyMatch(c -> c >= 0x4E00)) {
+                    mixedKey = n;
+                    break;
+                }
+            }
+        }
+        check("前提：語料裡找得到一張名字留著英文的洞窟卡（" + mixedKey + "）", mixedKey != null);
+        if (mixedKey != null) {
+            for (ItemNames mode : new ItemNames[] {ItemNames.ON, ItemNames.BOTH}) {
+                store.setPageNameMode(mode);
+                List<Component> mixed = TooltipPanel.translateInPlace(card(mixedKey, "Cave"), store);
+                String shown = text(mixed, 0);
+                int cut = shown.lastIndexOf(" [");
+                boolean oneColour = cut > 0;
+                for (int i = 0; i < cut; i++) {
+                    oneColour &= colourAt(mixed.get(0), i) == 0xFF8C19;
+                }
+                check("★ " + mode + "：名字整段是原文名字的顏色（實際 " + shown + "）", oneColour);
+            }
+            store.setPageNameMode(ItemNames.ON);
+        }
+
+        // 上面那一段在沒有字型的測試環境裡重現不出花掉的顏色（實機才會），所以直接拿
+        // 截圖上的樣子餵進去：Aelumia 橘、冶金廠白、標籤灰。
+        Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
+        List<Component> seen = List.of(Component.empty()
+                .append(Component.literal("Aelumia ").withStyle(NAME))
+                .append(Component.literal("冶金廠").withStyle(white))
+                .append(Component.literal(" [洞窟]").withStyle(TAG)));
+        for (ItemNames mode : new ItemNames[] {ItemNames.ON, ItemNames.BOTH}) {
+            List<Component> fixed = PageNames.titles(card("Aelumia Metalmill", "Cave"), seen, mode);
+            boolean oneColour = true;
+            for (int i = 0; i < "Aelumia 冶金廠".length(); i++) {
+                oneColour &= colourAt(fixed.get(0), i) == 0xFF8C19;
+            }
+            check("★ " + mode + "：截圖上那種花掉的名字會被塗回同一個顏色", oneColour);
+            check(mode + "：字沒變、標籤還是灰的", "Aelumia 冶金廠 [洞窟]".equals(text(fixed, 0))
+                    && colourAt(fixed.get(0), text(fixed, 0).length() - 2) == 0xAAAAAA);
+        }
+        check("★ 譯名加原文：原文在第二列（實際 "
+                        + text(PageNames.titles(card("Aelumia Metalmill", "Cave"), seen, ItemNames.BOTH), 1) + "）",
+                "Aelumia Metalmill".equals(text(PageNames.titles(
+                        card("Aelumia Metalmill", "Cave"), seen, ItemNames.BOTH), 1)));
+
         // ---- 不是內容名稱的不動 ----
         store.setPageNameMode(ItemNames.BOTH);
         List<Component> made = card("Zzyzx Made Up Place", "Cave");
         List<Component> madeOut = TooltipPanel.translateInPlace(made, store);
-        check("沒翻到的名字不會被附上一份一樣的原文（實際 "
-                        + (madeOut.isEmpty() ? "（原文不動）" : text(madeOut, 0)) + "）",
-                madeOut.isEmpty() || !text(madeOut, 0).contains("(Zzyzx"));
+        check("沒翻到的名字底下不會多一列一樣的原文（實際 "
+                        + (madeOut.isEmpty() ? "（原文不動）" : madeOut.size() + " 列") + "）",
+                madeOut.isEmpty() || madeOut.size() == made.size());
 
         List<Component> chat = new ArrayList<>();
         chat.add(Component.literal("+ New Quest [Cowfusion]").withStyle(NAME));
         chat.add(Component.literal("Can be explored").withStyle(TAG));
         List<Component> chatOut = TooltipPanel.translateInPlace(chat, store);
-        check("「+ New Quest [X]」那種列不會被附原文（實際 "
-                        + (chatOut.isEmpty() ? "（原文不動）" : text(chatOut, 0)) + "）",
-                chatOut.isEmpty() || !text(chatOut, 0).contains("("));
+        check("「+ New Quest [X]」那種列底下不會多一列（實際 "
+                        + (chatOut.isEmpty() ? "（原文不動）" : chatOut.size() + " 列") + "）",
+                chatOut.isEmpty() || chatOut.size() == chat.size());
 
         // ---- ★ 清單那一列的裸名 ----
         check("前提：清單認得這個名字", store.isPageName(name));

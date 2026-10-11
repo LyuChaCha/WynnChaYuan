@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
  *
  * <pre>
  *   ON     臟腑殘骸 [洞窟]                       （照舊）
- *   BOTH   臟腑殘骸 (Visceral Remains) [洞窟]
+ *   BOTH   臟腑殘骸 [洞窟]  ＋下一列 Visceral Remains
  *   OFF    Visceral Remains [洞窟]
  * </pre>
  *
@@ -66,36 +66,74 @@ public final class PageNames {
     /**
      * 一份說明翻完之後，把標題那一列照設定改好。
      *
+     * <h2>三種設定</h2>
+     * <pre>
+     *   ON     Aelumia 冶金廠 [洞窟]
+     *   BOTH   Aelumia 冶金廠 [洞窟]
+     *          Aelumia Metalmill            ← 原文自己一列，排在標題下面
+     *   OFF    Aelumia Metalmill [洞窟]
+     * </pre>
+     *
+     * <h2>原文為什麼不接在同一列（使用者 2026-10-11 實測第一版）</h2>
+     * 第一版是「Aelumia 冶金廠 (Aelumia Metalmill) [洞窟]」。太長，而且名字裡留著英文的
+     * 那幾張卡顏色是花的——見 {@link #title}。使用者：「似乎可以讓原文在下面一列」。
+     * 物品名稱放不下時也是這樣挪（{@link NameWrap}）。
+     *
      * @param original   原文的每一行
-     * @param translated 翻好的每一行（設定是「譯名」時的樣子）
+     * @param translated 翻好的每一行
      * @return 改好的那一份；不必改時回傳 {@code translated} 本身
      */
     public static List<Component> titles(List<Component> original, List<Component> translated,
                                          CollectorConfig.ItemNames mode) {
-        if (mode == null || mode == CollectorConfig.ItemNames.ON
-                || original == null || original.isEmpty()
+        if (original == null || original.isEmpty()
                 || translated == null || translated.isEmpty()) {
             return translated;
         }
+        Component first = original.get(0);
+        String name = first == null ? null : nameOfTitle(first.getString());
+        if (name == null) {
+            return translated;                 // 不是內容的卡片（物品、技能…），整份不碰
+        }
+        if (mode == null) {
+            mode = CollectorConfig.ItemNames.ON;
+        }
         // 標題只會在第一列。譯文的行數可能比原文少（整段條目收短），但第一列對第一列。
-        Component changed = title(original.get(0), translated.get(0), mode);
-        if (changed == translated.get(0)) {
+        Component changed = title(first, translated.get(0), name, mode);
+        boolean below = mode == CollectorConfig.ItemNames.BOTH && changed != null
+                && !titleName(changed.getString()).equals(name);
+        if (changed == translated.get(0) && !below) {
             return translated;
         }
         List<Component> out = new ArrayList<>(translated);
         out.set(0, changed);
+        if (below) {
+            // 原文那一段照遊戲原本的樣子（字型、顏色）抄下來，自己一列
+            MutableComponent row = Component.empty();
+            copy(row, first, 0, name.length());
+            out.add(1, row);
+        }
         return out;
     }
 
-    /** 一列標題。不是標題、沒翻到、或譯名跟原文一樣時，回傳 {@code translated} 本身。 */
-    static Component title(Component original, Component translated,
+    /** 「名字 [類型]」的名字那一段；不是這個形狀就整串回傳。 */
+    private static String titleName(String shown) {
+        int cut = shown.lastIndexOf(" [");
+        return cut > 0 && shown.endsWith("]") ? shown.substring(0, cut) : shown;
+    }
+
+    /**
+     * 一列標題。不是「名字 [類型]」的形狀、或譯名跟原文一樣時，回傳 {@code translated} 本身。
+     *
+     * <h2>名字整段一個顏色</h2>
+     * 原文的名字是一整段橘色。譯名裡留著英文的（「Aelumia 冶金廠」）重建時顏色是照字面
+     * 對回去的：「Aelumia」對得到原文那一段、拿到橘色，「冶金廠」對不到、掉成預設的白色。
+     * 所以不管哪一種設定，名字那一段都重新塗成原文名字的顏色——這一列的結構是固定的，
+     * 用不著猜。
+     */
+    static Component title(Component original, Component translated, String name,
                            CollectorConfig.ItemNames mode) {
-        if (original == null || translated == null) {
-            return translated;
-        }
-        String name = nameOfTitle(original.getString());
-        if (name == null) {
-            return translated;
+        if (translated == null) {
+            return null;
         }
         String shown = translated.getString();
         int cut = shown.lastIndexOf(" [");
@@ -104,17 +142,48 @@ public final class PageNames {
         }
         String local = shown.substring(0, cut);
         if (local.equals(name)) {
-            return translated;                 // 名字本來就留原文，沒有東西可附
+            return translated;                 // 名字本來就留原文
         }
-        if (mode == CollectorConfig.ItemNames.BOTH) {
-            return splice(translated, cut, cut, " (" + name + ")");
-        }
-        // 保留原文：名字那一段<b>整段拿原文的</b>（字型、顏色都是遊戲原本的），
-        // 後面接譯文的類型標籤。
         MutableComponent out = Component.empty();
-        copy(out, original, 0, name.length());
+        if (mode == CollectorConfig.ItemNames.OFF) {
+            // 保留原文：名字那一段<b>整段拿原文的</b>（字型、顏色都是遊戲原本的）
+            copy(out, original, 0, name.length());
+        } else {
+            net.minecraft.network.chat.TextColor colour = colourAt(original, 0);
+            int[] at = {0};
+            boolean[] same = {true};
+            translated.visit((style, part) -> {
+                int end = Math.min(at[0] + part.length(), cut);
+                if (end > at[0]) {
+                    Style painted = colour == null ? style : style.withColor(colour);
+                    same[0] &= painted.equals(style);
+                    out.append(Component.literal(part.substring(0, end - at[0])).withStyle(painted));
+                }
+                at[0] += part.length();
+                return Optional.empty();
+            }, Style.EMPTY);
+            if (same[0]) {
+                return translated;             // 顏色本來就對，原樣交回去
+            }
+        }
         copy(out, translated, cut, shown.length());
         return out;
+    }
+
+    /** 畫出來的第 {@code index} 個字的顏色；沒設顏色回傳 {@code null}。 */
+    private static net.minecraft.network.chat.TextColor colourAt(Component line, int index) {
+        net.minecraft.network.chat.TextColor[] hit = {null};
+        boolean[] found = {false};
+        int[] at = {0};
+        line.visit((style, part) -> {
+            if (!found[0] && index < at[0] + part.length()) {
+                hit[0] = style.getColor();
+                found[0] = true;
+            }
+            at[0] += part.length();
+            return Optional.empty();
+        }, Style.EMPTY);
+        return hit[0];
     }
 
     /** 把 {@code line} 畫出來的 {@code [from, to)} 接到 {@code out} 後面，樣式原樣。 */
