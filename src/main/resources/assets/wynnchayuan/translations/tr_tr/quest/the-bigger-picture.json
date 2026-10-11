@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "The Bigger Picture",
-  "count": 25,
+  "count": 27,
   "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -11,6 +11,26 @@
  },
  "entries": {
   "The Bigger Picture#000": {
+   "src": "Since you're so big, you won't fall asleep! Please retrieve some mushroom for me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Bigger Picture",
+   "stage": "",
+   "speaker": "Psilo",
+   "source": "captured"
+  },
+  "The Bigger Picture#001": {
+   "src": "You've taken care of the Razorice problem, now you just need to find that blue mushroom Psilo was talking about...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Bigger Picture",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Bigger Picture#002": {
    "src": "Talk to Psilo in the mushroom cave.",
    "dst": "Mantar mağarasındaki Psilo ile konuş.",
    "role": "desc",
@@ -20,7 +40,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#001": {
+  "The Bigger Picture#003": {
    "src": "Welcome, large human! What's that look for, never seen a Gnome before?! My house may look small, but it's perfect for me!",
    "dst": "Hoş geldin, kocaman insan! O bakış da ne, hiç Gnome görmedin mi?! Evim küçük görünebilir ama bana tam göre!",
    "role": "desc",
@@ -30,7 +50,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#002": {
+  "The Bigger Picture#004": {
    "src": "I actually need some help, you see Razorice plague my home! They are similar to the rats of your province, but vicious and deadly to Gnomes!",
    "dst": "Aslında biraz yardıma ihtiyacım var, bak, evimi Razorice'lar bastı! Sizin eyaletinizdeki farelere benziyorlar ama Gnome'lar için vahşi ve ölümcüller!",
    "role": "desc",
@@ -40,7 +60,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#003": {
+  "The Bigger Picture#005": {
    "src": "An easy fix exists for it though. There are many magical mushrooms in this cave and a rare one called Subtraxerim Utilium is the one we need.",
    "dst": "Ama bunun kolay bir çaresi var. Bu mağarada pek çok büyülü mantar var, bize gereken de Subtraxerim Utilium denen nadir bir tanesi.",
    "role": "desc",
@@ -50,7 +70,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#004": {
+  "The Bigger Picture#006": {
    "src": "It emits a sleeping spore that will knock the Razorice out long enough to kill them! I've seen one in the cave but every time I go to get it, I fall asleep!",
    "dst": "Razorice'ları öldürmeye yetecek kadar uzun süre bayıltan uyku sporları saçıyor! Mağarada bir tane gördüm ama ne zaman almaya gitsem uyuyakalıyorum!",
    "role": "desc",
@@ -60,7 +80,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#005": {
+  "The Bigger Picture#007": {
    "src": "I left a trail of spores from the location. Since you're so big, you won't fall asleep! Please retrieve some mushroom for me.",
    "dst": "O yerden bir spor izi bıraktım. Sen çok iri olduğun için uyuyakalmazsın! Lütfen bana biraz mantar getir.",
    "role": "desc",
@@ -70,7 +90,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#006": {
+  "The Bigger Picture#008": {
    "src": "I think I left a trail of rainbow spores last time I tried to collect some, just follow the colours through the cave to find the mushroom!",
    "dst": "Sanırım geçen sefer toplamaya çalıştığımda gökkuşağı renginde bir spor izi bırakmıştım, mantarı bulmak için mağarada renkleri takip et yeter!",
    "role": "desc",
@@ -80,7 +100,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#007": {
+  "The Bigger Picture#009": {
    "src": "Find the Subtraxerim Utilium mushroom in the cave and bring it back to Psilo.",
    "dst": "Mağarada Subtraxerim Utilium mantarını bul ve Psilo'ya geri getir.",
    "role": "desc",
@@ -90,7 +110,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#008": {
+  "The Bigger Picture#010": {
    "src": "Return to Psilo.",
    "dst": "Psilo'ya geri dön.",
    "role": "desc",
@@ -100,7 +120,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#009": {
+  "The Bigger Picture#011": {
    "src": "Did you find any? Wait, something is different about you. Have you gotten smaller? Oh my...",
    "dst": "Bulabildin mi? Dur, sende bir değişiklik var. Küçüldün mü sen? Aman tanrım...",
    "role": "desc",
@@ -110,7 +130,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#010": {
+  "The Bigger Picture#012": {
    "src": "... You have.",
    "dst": "... Küçülmüşsün.",
    "role": "desc",
@@ -120,7 +140,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#011": {
+  "The Bigger Picture#013": {
    "src": "I’m really sorry about this, I didn't think the mushroom would have a different effect on humans! But what did I expect from a mushroom that changes colour?!",
    "dst": "Bunun için gerçekten çok üzgünüm, mantarın insanlarda farklı bir etki yapacağını düşünmemiştim! Ama renk değiştiren bir mantardan ne bekliyordum ki?!",
    "role": "desc",
@@ -130,7 +150,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#012": {
+  "The Bigger Picture#014": {
    "src": "Do not panic. I have a mushroom in my house that wakes people up; logic says that if the sleeping mushroom shrinks you, then this one should make you grow again!",
    "dst": "Panik yapma. Evimde insanları uyandıran bir mantar var; mantık der ki uyku mantarı seni küçültüyorsa, bu da seni yeniden büyütmeli!",
    "role": "desc",
@@ -140,7 +160,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#013": {
+  "The Bigger Picture#015": {
    "src": "Oh my, you are still shrinking before my eyes. You must hurry to the mushroom. Be careful, though! The Razorice will probably hunt you!",
    "dst": "Aman tanrım, hâlâ gözümün önünde küçülüyorsun. Hemen mantara gitmelisin. Ama dikkatli ol! Razorice'lar muhtemelen seni avlayacak!",
    "role": "desc",
@@ -150,7 +170,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#014": {
+  "The Bigger Picture#016": {
    "src": "I keep it on the top shelf, so you will probably have to fight them at some point... If you kill them while you^re there, we can kill two birds with one stone! Just follow the cheese crumbs to find them!",
    "dst": "Onu en üst rafta tutuyorum, yani bir noktada muhtemelen onlarla dövüşmen gerekecek... Oradayken onları da öldürürsen bir taşla iki kuş vurmuş oluruz! Onları bulmak için peynir kırıntılarını takip et yeter!",
    "role": "desc",
@@ -160,7 +180,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#015": {
+  "The Bigger Picture#017": {
    "src": "Good luck! Oh and, do watch out for my pet zombie.",
    "dst": "Bol şans! Ha bir de, evcil zombime dikkat et.",
    "role": "desc",
@@ -170,7 +190,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#016": {
+  "The Bigger Picture#018": {
    "src": "Find the mushroom in Psilo's house.",
    "dst": "Psilo'nun evindeki mantarı bul.",
    "role": "desc",
@@ -180,7 +200,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#017": {
+  "The Bigger Picture#019": {
    "src": "Get to the mouse nest by following the cheese trail and get rid of the pest.",
    "dst": "Peynir izini takip ederek fare yuvasına ulaş ve haşereden kurtul.",
    "role": "desc",
@@ -190,7 +210,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#018": {
+  "The Bigger Picture#020": {
    "src": "Get to the blue mushroom and return to normal size.",
    "dst": "Mavi mantara ulaş ve normal boyutuna dön.",
    "role": "desc",
@@ -200,7 +220,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#019": {
+  "The Bigger Picture#021": {
    "src": "Give Psilo the good news about the mice.",
    "dst": "Farelerle ilgili güzel haberi Psilo'ya ver.",
    "role": "desc",
@@ -210,7 +230,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Bigger Picture#020": {
+  "The Bigger Picture#022": {
    "src": "What the... my house! What did you do?!",
    "dst": "Bu da ne... evim! Ne yaptın sen?!",
    "role": "desc",
@@ -220,7 +240,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#021": {
+  "The Bigger Picture#023": {
    "src": "Springy plant? Bookshelf levers? Razorice king?! Hold on a moment, slow down and tell me properly.",
    "dst": "Zıplatan bitki mi? Kitaplık şalterleri mi? Razorice kralı mı?! Bir dakika, yavaş ol da bana düzgünce anlat.",
    "role": "desc",
@@ -230,8 +250,8 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#022": {
-   "src": "I see. Well, at least you handled those damned Razorice, and I can actually live in my house again - not that it'll offer much shelter now you've blown a hole in the side of it!",
+  "The Bigger Picture#024": {
+   "src": "I see. Well, at least you handled those damned Razorice, and I can actually live inside my house again - not that it'll offer much shelter now you've blown a hole in the side of it!",
    "dst": "Anlıyorum. Neyse, en azından o lanet Razorice'ların işini bitirdin ve evimde yeniden yaşayabileceğim - gerçi yan tarafında koca bir delik açtığına göre artık pek barınak sayılmaz!",
    "role": "desc",
    "kind": "dialogue",
@@ -240,7 +260,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#023": {
+  "The Bigger Picture#025": {
    "src": "Ah, I suppose that's alright. The mushroom will grow back over to cover it - and righto, your reward!",
    "dst": "Ah, sanırım sorun değil. Mantar yeniden büyüyüp orayı kapatır - ha, doğru ya, ödülün!",
    "role": "desc",
@@ -250,7 +270,7 @@
    "speaker": "Psilo",
    "source": "wiki"
   },
-  "The Bigger Picture#024": {
+  "The Bigger Picture#026": {
    "src": "Here, take some of our Gnome gold, we have plenty to go around. And sorry about the whole you-getting-shrunk thing, but hey, being small isn't so bad! See you around, human!",
    "dst": "Al, biraz Gnome altınımızdan al, herkese yetecek kadar var. Bir de şu küçültülme meselesi için kusura bakma, ama hey, küçük olmak o kadar da kötü değil! Görüşürüz, insan!",
    "role": "desc",
