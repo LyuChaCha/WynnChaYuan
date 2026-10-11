@@ -432,6 +432,10 @@ public final class WynnChaYuan implements ClientModInitializer {
             changed += RemoteSync.fetchInto(
                     com.wynnchayuan.translate.Languages.dir(configDir, under), under);
         }
+        // 名單跟著譯文一起抓，但不算進「有變」——它變了不必重載譯文。
+        if (RemoteSync.fetchCredits(configDir)) {
+            com.wynnchayuan.client.Credits.reload();
+        }
         return changed;
     }
 

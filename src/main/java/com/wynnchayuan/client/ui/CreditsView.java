@@ -27,15 +27,6 @@ public final class CreditsView extends Surface {
 
         String version();
 
-        /** 「遊戲內標記：開啟」那顆按鈕上的字。 */
-        String badgeLabel();
-
-        void toggleBadges();
-
-        String styleLabel();
-
-        void cycleStyle();
-
         void close();
     }
 
@@ -154,15 +145,8 @@ public final class CreditsView extends Surface {
         float by = footY + 5;
         String back = shell.tr("button.back");
         float bw = buttonWidth(back) + 14;
+        // 徽章的開關搬去設定畫面的「徽章」那一頁了，這裡只剩名單（使用者 2026-10-11）
         button("back", right - bw, by, bw, 18, back, true, true, null, host::close);
-        float room = right - bw - 8 - left;
-        String badge = host.badgeLabel();
-        String style = host.styleLabel();
-        float aw = Math.min(buttonWidth(badge), room / 2f - 3);
-        float sw = Math.min(buttonWidth(style), room / 2f - 3);
-        // 標記的開關放在名單這一頁，因為它就是「這份名單要不要顯示在遊戲裡」
-        button("badge", left, by, aw, 18, badge, true, false, null, host::toggleBadges);
-        button("style", left + aw + 5, by, sw, 18, style, true, false, null, host::cycleStyle);
     }
 
     /** 一位貢獻者：頭像、暱稱、Minecraft ID。暱稱用分類的顏色，ID 用灰色，才分得出哪個是哪個。 */

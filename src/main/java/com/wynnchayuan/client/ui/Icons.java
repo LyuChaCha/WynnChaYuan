@@ -41,7 +41,11 @@ public final class Icons {
         UP(line(6, 15, 12, 9, 18, 15)),
         RIGHT(line(9, 6, 15, 12, 9, 18)),
         CHECK(line(5, 12.5f, 10, 17.5f, 19, 7)),
-        CLOSE(line(6, 6, 18, 18), line(18, 6, 6, 18));
+        CLOSE(line(6, 6, 18, 18), line(18, 6, 6, 18)),
+        /** 名牌徽章那片葉子，同一個外形。 */
+        LEAF(join(cubic(9, 18, 15.2f, 18, 19.5f, 14.7f, 20, 6), line(20, 4, 16, 4),
+                  cubic(16, 4, 7, 4, 4, 8, 4, 13), cubic(4, 13, 4, 14, 4, 16, 6, 18), line(9, 18)),
+             cubic(5, 21, 5.5f, 16.5f, 7.5f, 13, 12, 11));
 
         final float[][] paths;
 
@@ -52,6 +56,21 @@ public final class Icons {
 
     private static float[] line(float... xy) {
         return xy;
+    }
+
+    /** 幾段接成一條連續的線。 */
+    private static float[] join(float[]... parts) {
+        int n = 0;
+        for (float[] part : parts) {
+            n += part.length;
+        }
+        float[] out = new float[n];
+        int at = 0;
+        for (float[] part : parts) {
+            System.arraycopy(part, 0, out, at, part.length);
+            at += part.length;
+        }
+        return out;
     }
 
     private static float[] closed(float... xy) {

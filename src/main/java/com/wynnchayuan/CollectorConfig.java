@@ -1013,10 +1013,67 @@ public final class CollectorConfig {
      */
     private boolean showBadges = true;
 
-    /** GRADIENT 多重身分逐字漸層；PRIMARY 只顯示第一個身分。 */
-    private BadgeStyle badgeStyle = BadgeStyle.GRADIENT;
+    /**
+     * 自己的徽章要展示哪些身分：身分代號 → 要不要展示。沒寫到的照名單上登記的。
+     *
+     * <p>只影響<b>自己畫面上</b>自己的名牌；別人看到的是 {@code credits.json} 登記的。
+     */
+    private final java.util.Map<String, Boolean> badgeRoles = new java.util.LinkedHashMap<>();
 
-    public enum BadgeStyle { GRADIENT, PRIMARY }
+    /** 自己的開發者徽章要不要彩色；{@code null} 表示照名單上登記的。 */
+    private Boolean badgeRainbow;
+
+    /**
+     * 自己各個身分的葉子顏色（{@code #RRGGBB}）。沒寫到的照名單上登記的。
+     *
+     * <p>有身分的人自己調（使用者 2026-10-11）。跟上面一樣只影響自己的畫面，
+     * 要讓別人看到得送申請、登記進 {@code credits.json}。
+     */
+    private final java.util.Map<String, String> badgeColours = new java.util.LinkedHashMap<>();
+
+    /** 自己替這個身分選的顏色；沒選就回傳 {@code null}。 */
+    public String badgeColour(String role) {
+        return badgeColours.get(role);
+    }
+
+    /** 拖色盤的時候用，見 {@link #setThemeColorLive}。 */
+    public boolean setBadgeColourLive(String role, String hex) {
+        String v = normalHex(hex);
+        if (v == null) {
+            return false;
+        }
+        if (!v.equals(badgeColours.get(role))) {
+            badgeColours.put(role, v);
+            dirty = true;
+        }
+        return true;
+    }
+
+    /** 回到名單上登記的顏色。 */
+    public void clearBadgeColour(String role) {
+        if (badgeColours.remove(role) != null) {
+            save();
+        }
+    }
+
+    public boolean badgeRoleShown(String role, boolean registered) {
+        Boolean mine = badgeRoles.get(role);
+        return mine == null ? registered : mine;
+    }
+
+    public void setBadgeRole(String role, boolean shown) {
+        badgeRoles.put(role, shown);
+        save();
+    }
+
+    public boolean badgeRainbow(boolean registered) {
+        return badgeRainbow == null ? registered : badgeRainbow;
+    }
+
+    public void setBadgeRainbow(boolean on) {
+        badgeRainbow = on;
+        save();
+    }
 
     public boolean showBadges() {
         return showBadges;
@@ -1026,17 +1083,6 @@ public final class CollectorConfig {
         showBadges = !showBadges;
         save();
         return showBadges;
-    }
-
-    public BadgeStyle badgeStyle() {
-        return badgeStyle;
-    }
-
-    public BadgeStyle cycleBadgeStyle() {
-        badgeStyle = badgeStyle == BadgeStyle.GRADIENT
-                ? BadgeStyle.PRIMARY : BadgeStyle.GRADIENT;
-        save();
-        return badgeStyle;
     }
 
     public double nametagRange() {
@@ -1488,7 +1534,34 @@ public final class CollectorConfig {
         readPairs(o, "overlayPos", overlayPos);
         readPairs(o, "overlaySize", overlaySize);
         showBadges = bool(o, "showBadges", showBadges);
-        badgeStyle = enumOr(o, "badgeStyle", BadgeStyle.class, badgeStyle);
+        // badgeStyle（多重身分只看第一個）拿掉了：要展示哪些身分由本人決定，
+        // 看的人那邊不必再有一個開關。舊設定檔裡那一欄不讀，下次存檔就不見。
+        badgeRoles.clear();
+        if (o.has("badgeRoles") && o.get("badgeRoles").isJsonObject()) {
+            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
+                    : o.getAsJsonObject("badgeRoles").entrySet()) {
+                try {
+                    badgeRoles.put(e.getKey(), e.getValue().getAsBoolean());
+                } catch (Exception ignored) {
+                    // 手改壞的那一項當沒寫
+                }
+            }
+        }
+        badgeRainbow = o.has("badgeRainbow") ? (Boolean) bool(o, "badgeRainbow", false) : null;
+        badgeColours.clear();
+        if (o.has("badgeColours") && o.get("badgeColours").isJsonObject()) {
+            for (java.util.Map.Entry<String, com.google.gson.JsonElement> e
+                    : o.getAsJsonObject("badgeColours").entrySet()) {
+                try {
+                    String hex = normalHex(e.getValue().getAsString());
+                    if (hex != null) {
+                        badgeColours.put(e.getKey(), hex);
+                    }
+                } catch (Exception ignored) {
+                    // 手改壞的那一項當沒寫
+                }
+            }
+        }
         nametagRange = clamp(number(o, "nametagRange", nametagRange), 2.0, 64.0);
         nametagAngle = clamp(number(o, "nametagAngle", nametagAngle), 1.0, 45.0);
         fixedX = integer(o, "fixedX", fixedX);
@@ -1691,7 +1764,20 @@ public final class CollectorConfig {
             });
             o.add("overlaySize", sizes);
             o.addProperty("showBadges", showBadges);
-            o.addProperty("badgeStyle", badgeStyle.name());
+            // 沒動過就不寫：不在名單上的人設定檔裡不必多這兩項
+            if (!badgeRoles.isEmpty()) {
+                JsonObject roles = new JsonObject();
+                badgeRoles.forEach(roles::addProperty);
+                o.add("badgeRoles", roles);
+            }
+            if (badgeRainbow != null) {
+                o.addProperty("badgeRainbow", badgeRainbow);
+            }
+            if (!badgeColours.isEmpty()) {
+                JsonObject colours = new JsonObject();
+                badgeColours.forEach(colours::addProperty);
+                o.add("badgeColours", colours);
+            }
             o.addProperty("nametagRange", nametagRange);
             o.addProperty("nametagAngle", nametagAngle);
             o.addProperty("fixedX", fixedX);

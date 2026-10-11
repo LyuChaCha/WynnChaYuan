@@ -4,114 +4,304 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
+import net.minecraft.resources.Identifier;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 /**
- * 在開發者、贊助者、貢獻者的名牌上方加一行標記。
+ * 在開發者、贊助者、貢獻者的名字前面加一片葉子。
+ *
+ * <h2>為什麼是圖示，不是一行字</h2>
+ * 先前是在名牌上方多畫一行「WynnChaYuan 開發者」。那一行字要跟著介面語言翻，
+ * 而且 Wynntils、WynnMod 都已經把自己的標記放在<b>名字前面</b>——同一個位置放
+ * 一個小圖示、用顏色分身分，掃一眼就認得出來，也不必翻（使用者 2026-10-11）。
+ *
+ * <p>顏色：開發者金、贊助者青藍、貢獻者綠，各自可以在 {@code credits.json} 登記
+ * 自己的顏色；開發者另外可以登記成會變色的彩色。只是裝了模組、不在名單上的人是灰色。
  *
  * <h2>只有裝了這個模組的人看得到</h2>
- * 這是純客戶端的繪製，伺服器完全不知情，被標記的人自己也看不到（除非他也裝了）。
- * 所以它的意義是「模組使用者之間互相認得出來」，不是對全服公告。
+ * 這是純客戶端的繪製，伺服器完全不知情。名單就是 {@code credits.json}，
+ * 同步譯文時會一起更新，加人、改顏色都不必重新發版。
  *
- * <p>名單就是 {@code credits.json}——同一份資料同時餵給關於頁與這裡。
- * 加人只要送一個 PR，不必改程式，也不必重新發版（譯文同步時會一起更新）。
+ * <h2>「誰裝了模組」目前只認得自己</h2>
+ * 模組不對外送任何資料，所以別人有沒有裝，這一端無從得知；灰色葉子只會出現在
+ * 自己的名牌上。要讓它出現在別人身上，得有一個回報「我在線上」的服務——那是
+ * 另一個決定，這裡先把位置留好（{@link #isInstalled}）。
  *
  * <h2>怎麼認出是誰</h2>
- * 名牌上的文字不一定等於帳號名稱：Wynncraft 會加上階級前綴與顏色，
- * Wynntils 也可能再改一手。所以是拿名單裡的 ID 去<b>名牌文字裡找</b>，
+ * 名牌上的文字不一定等於帳號名稱：Wynncraft 會加上階級前綴與顏色，WynnMod 會把
+ * 整行重建。所以先問實體本身的帳號名稱，問不到才拿名單裡的 ID 去名牌文字裡找，
  * 而且要求前後是詞的邊界——用「包含」的話，{@code Bob} 會誤中 {@code Bobby}。
  */
 public final class Badges {
 
+    /** 葉子在 {@code wynnchayuan:nametag} 字型裡的碼位。 */
+    public static final String ICON = "";
+
+    /** 只是裝了模組、不在名單上的人。 */
+    public static final int INSTALLED = 0xA8A8A8;
+
+    static final FontDescription FONT = new FontDescription.Resource(
+            Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID, "nametag"));
+
+    /** 彩色模式轉一圈要多久、分成幾格。 */
+    private static final long RAINBOW_MS = 3000;
+    private static final int RAINBOW_STEPS = 60;
+
     /**
-     * 標記要比名牌高多少（世界座標）。
+     * 一個人的一種身分。
      *
-     * <p>抓兩行的高度而不是一行：Wynntils 自己也會在名牌上下加東西
-     * （donator 標記、公會標籤），只抬一行會跟它疊在同一個位置，
-     * 後畫的那個會把先畫的蓋掉。
+     * @param id      分區的代號（{@code developers}、{@code sponsors}、{@code contributors}）
+     * @param name    畫面上的稱呼，照介面語言
+     * @param color   葉子的顏色：登記了就用登記的，沒有就用分區的
+     * @param rainbow 登記成彩色
+     * @param hidden  登記成不展示（多重身分的人挑著放）
      */
-    public static final double HEIGHT = 0.62;
+    public record Role(String id, String name, int color, boolean rainbow, boolean hidden) {}
 
-    private static final String PREFIX = "WynnChaYuan ";
+    /**
+     * 名單建好的查表。整份一起換，讀的人拿到的永遠是完整的一份。
+     *
+     * <p>不用鎖：名牌每幀都在畫（繪製執行緒），名單是同步的背景執行緒換的。
+     * 兩邊各拿一把鎖互等的話，畫面會整個卡住。
+     */
+    private record Table(Map<String, List<Role>> byName, Map<String, Pattern> patterns) {}
 
-    /** 一個人的身分。可能有好幾個。 */
-    public record Role(String name, int color) {}
-
-    private static Map<String, List<Role>> byName;
-    private static Map<String, Pattern> patterns;
+    private static volatile Table table;
 
     private Badges() {}
 
+    /** 名單換了（同步抓到新的 {@code credits.json}）。 */
+    public static void reload() {
+        table = null;
+    }
+
     /** 名單第一次用到時才建，之後重複使用。 */
-    private static void ensureLoaded() {
-        if (byName != null) {
-            return;
+    private static Table table() {
+        Table now = table;
+        if (now == null) {
+            now = build(Credits.sections());
+            table = now;
         }
+        return now;
+    }
+
+    /** 照這份名單建表。平常是 {@code credits.json}，測試會塞自己的。 */
+    static void load(List<Credits.Section> sections) {
+        table = build(sections);
+    }
+
+    private static Table build(List<Credits.Section> sections) {
         Map<String, List<Role>> roles = new LinkedHashMap<>();
         Map<String, Pattern> pats = new LinkedHashMap<>();
-        for (Credits.Section section : Credits.sections()) {
+        for (Credits.Section section : sections) {
             for (Credits.Member member : section.members()) {
                 if (!member.hasHead()) {
                     continue;              // 沒有遊戲 ID 的（資料來源那類）不用標
                 }
                 String key = member.mc().toLowerCase(Locale.ROOT);
-                roles.computeIfAbsent(key, k -> new ArrayList<>())
-                     .add(new Role(section.role(), section.color()));
+                roles.computeIfAbsent(key, k -> new ArrayList<>()).add(new Role(
+                        section.id(), section.role(),
+                        member.colour() != 0 ? member.colour() : section.color(),
+                        member.rainbow(), member.hidden()));
                 pats.computeIfAbsent(key, k -> Pattern.compile(
                         "(?i)\\b" + Pattern.quote(member.mc()) + "\\b"));
             }
         }
-        byName = roles;
-        patterns = pats;
+        return new Table(roles, pats);
+    }
+
+    /** 這個帳號在名單上的所有身分，連登記成不展示的；不在名單上就是空的。 */
+    public static List<Role> registered(String account) {
+        List<Role> roles = account == null
+                ? null : table().byName().get(account.toLowerCase(Locale.ROOT));
+        return roles == null ? List.of() : roles;
     }
 
     /**
-     * 這個名牌該不該加標記，要加什麼。
+     * 這個帳號要畫哪幾片葉子。
+     *
+     * <p>別人照名單上登記的；<b>自己</b>再套一層本機的選擇（設定畫面的「我的徽章」），
+     * 這樣改了馬上看得到。本機的選擇不會傳出去，別人看到的仍然是登記的那一份。
+     *
+     * @param account 帳號名稱
+     * @param self    自己的帳號名稱；不知道就傳 {@code null}
+     */
+    public static List<Role> shown(String account, String self, CollectorConfig config) {
+        boolean mine = account != null && account.equalsIgnoreCase(self);
+        List<Role> out = new ArrayList<>();
+        for (Role role : registered(account)) {
+            boolean show = mine ? config.badgeRoleShown(role.id(), !role.hidden()) : !role.hidden();
+            if (!show) {
+                continue;
+            }
+            boolean rainbow = mine ? config.badgeRainbow(role.rainbow()) && rainbowAllowed(role)
+                    : role.rainbow();
+            out.add(new Role(role.id(), role.name(),
+                    mine ? ownColour(config, role) : role.color(), rainbow, false));
+        }
+        return out;
+    }
+
+    /** 自己替這個身分選的顏色；沒選（或設定檔被改壞）就用名單上登記的。 */
+    private static int ownColour(CollectorConfig config, Role role) {
+        String hex = config.badgeColour(role.id());
+        if (hex != null) {
+            try {
+                return Integer.parseInt(hex.replace("#", "").strip(), 16) & 0xFFFFFF;
+            } catch (NumberFormatException e) {
+                // 落到下面
+            }
+        }
+        return role.color();
+    }
+
+    /**
+     * 自己在 {@code credits.json} 裡的那幾筆，照現在面板上的選擇寫好。
+     *
+     * <p>別人看到的是 repo 上那份名單。這裡把「展示哪些身分、顏色、彩色」換成名單的
+     * 寫法，本人貼回去、送出修改，合併之後大家下次同步就看得到——模組自己不送任何東西。
+     *
+     * @return 每個身分兩行：{@code // 分區代號} 與那一筆的 JSON；不在名單上就是空字串
+     */
+    public static String creditsEntries(List<Credits.Section> sections, String self,
+                                        CollectorConfig config) {
+        StringBuilder out = new StringBuilder();
+        if (self == null) {
+            return "";
+        }
+        for (Credits.Section section : sections) {
+            for (Credits.Member member : section.members()) {
+                if (!member.hasHead() || !member.mc().equalsIgnoreCase(self)) {
+                    continue;
+                }
+                String id = section.id();
+                com.google.gson.JsonObject entry = new com.google.gson.JsonObject();
+                entry.addProperty("name", member.label());
+                entry.addProperty("mc", member.mc());
+                String own = config.badgeColour(id);
+                if (own != null) {
+                    entry.addProperty("color", own);
+                } else if (member.colour() != 0) {
+                    entry.addProperty("color", String.format("#%06X", member.colour() & 0xFFFFFF));
+                }
+                if ("developers".equals(id) && config.badgeRainbow(member.rainbow())) {
+                    entry.addProperty("rainbow", true);
+                }
+                if (!config.badgeRoleShown(id, !member.hidden())) {
+                    entry.addProperty("hide", true);
+                }
+                out.append("// ").append(id).append('\n').append(entry).append('\n');
+            }
+        }
+        return out.toString();
+    }
+
+    /** 彩色模式是開發者的；其他身分就算設定檔被手改也不給。 */
+    public static boolean rainbowAllowed(Role role) {
+        return "developers".equals(role.id());
+    }
+
+    /**
+     * 這個帳號是不是裝了模組。
+     *
+     * <p>現在只認得自己。見類別說明。
+     */
+    static boolean isInstalled(String account, String self) {
+        return account != null && account.equalsIgnoreCase(self);
+    }
+
+    /**
+     * 把葉子接到名牌前面。
      *
      * @param nameTag  名牌上的文字，可能是 {@code null}
      * @param entityId 這個名牌屬於哪個實體；{@code < 0} 表示不知道
-     * @return 要畫的那一行；不是名單上的人就回傳 {@code null}
+     * @return 加了葉子的名牌；不必加就回傳 {@code null}
      */
-    public static Component forNameTag(Component nameTag, int entityId) {
-        if (!WynnChaYuan.config().showBadges()) {
+    public static Component decorate(Component nameTag, int entityId) {
+        return decorate(nameTag, accountName(entityId), selfName(), WynnChaYuan.config(),
+                System.currentTimeMillis());
+    }
+
+    /** 同上，但所有外部狀態都從參數來——測試用。 */
+    static Component decorate(Component nameTag, String account, String self,
+                              CollectorConfig config, long now) {
+        if (nameTag == null || !config.showBadges() || startsWithIcon(nameTag)) {
             return null;
         }
-        ensureLoaded();
-        if (byName.isEmpty()) {
+        String who = account != null ? account : accountIn(nameTag.getString());
+        List<Role> roles = shown(who, self, config);
+        MutableComponent icons = Component.empty();
+        if (!roles.isEmpty()) {
+            for (Role role : roles) {
+                icons.append(icon(role.rainbow() ? rainbowAt(now) : role.color()));
+            }
+        } else if (isInstalled(who, self)) {
+            icons.append(icon(INSTALLED));
+        } else {
             return null;
         }
-        // 先問實體本身。名牌上的文字不可靠——Wynntils 會整個換掉它
-        // （階級前綴、donator 標記、公會標籤都是它加的），甚至可能清空。
-        // 帳號名稱則是這個玩家的事實，誰都改不了。
-        List<Role> byProfile = rolesOf(accountName(entityId));
-        if (byProfile != null) {
-            return build(byProfile);
-        }
-        if (nameTag == null) {
-            return null;
-        }
-        // 退路：名牌文字裡找得到名單上的 ID
-        String plain = nameTag.getString();
-        for (Map.Entry<String, Pattern> e : patterns.entrySet()) {
+        return Component.empty().append(icons).append(" ").append(nameTag);
+    }
+
+    /** 一片葉子。 */
+    static Component icon(int rgb) {
+        return Component.literal(ICON).withStyle(
+                Style.EMPTY.withFont(FONT).withColor(TextColor.fromRgb(rgb & 0xFFFFFF)));
+    }
+
+    /**
+     * 名牌是不是已經加過葉子了。
+     *
+     * <p>事件一幀可能發不只一次；沒有這一關，葉子會越接越多。看的是<b>字型</b>
+     * 而不是字元——私用區的碼位 Wynncraft 自己也在用。
+     */
+    static boolean startsWithIcon(Component nameTag) {
+        Optional<Boolean> first = nameTag.visit((style, text) -> text.isEmpty()
+                ? Optional.empty()
+                : Optional.of(text.startsWith(ICON) && FONT.equals(style.getFont())), Style.EMPTY);
+        return first.orElse(false);
+    }
+
+    /**
+     * 彩色模式這一刻的顏色。
+     *
+     * <p>切成固定的幾格，不是每幀算一個新顏色：WynnMod 拿名牌的內容當快取的鍵，
+     * 顏色連續變化會讓它每幀都算一份新的。
+     */
+    static int rainbowAt(long now) {
+        long step = Math.floorMod(now, RAINBOW_MS) * RAINBOW_STEPS / RAINBOW_MS;
+        return hsv((float) step / RAINBOW_STEPS, 0.7f, 1.0f);
+    }
+
+    /** 名牌文字裡找得到名單上的哪個 ID；找不到就回傳 {@code null}。 */
+    private static String accountIn(String plain) {
+        for (Map.Entry<String, Pattern> e : table().patterns().entrySet()) {
             if (e.getValue().matcher(plain).find()) {
-                return build(byName.get(e.getKey()));
+                return e.getKey();
             }
         }
         return null;
     }
 
-    private static List<Role> rolesOf(String accountName) {
-        return accountName == null
-                ? null : byName.get(accountName.toLowerCase(Locale.ROOT));
+    /** 自己的帳號名稱；還沒登入（或在測試裡）就回傳 {@code null}。 */
+    public static String selfName() {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            return mc == null ? null : mc.getUser().getName();
+        } catch (Throwable t) {
+            return null;
+        }
     }
 
     /** 這個實體是哪個玩家的帳號名稱；不是玩家就回傳 {@code null}。 */
@@ -130,73 +320,6 @@ public final class Badges {
         } catch (Throwable t) {
             return null;   // 這只是裝飾，查不到就退回看名牌文字
         }
-    }
-
-    /**
-     * 組出標記文字。
-     *
-     * <p>一個身分就用那個身分的顏色；多個身分則<b>逐字漸層</b>掃過所有顏色。
-     * 三種身分都有的人給整段彩虹——那是刻意的稀有感，不是隨便挑的效果。
-     */
-    private static Component build(List<Role> roles) {
-        if (roles == null || roles.isEmpty()) {
-            return null;
-        }
-        if (WynnChaYuan.config().badgeStyle() == CollectorConfig.BadgeStyle.PRIMARY
-                || roles.size() == 1) {
-            Role first = roles.get(0);
-            return Component.literal(PREFIX + first.name())
-                    .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(first.color())));
-        }
-        String text = PREFIX + joinNames(roles);
-        return roles.size() >= 3 ? rainbow(text) : gradient(text, roles);
-    }
-
-    private static String joinNames(List<Role> roles) {
-        StringBuilder sb = new StringBuilder();
-        for (Role r : roles) {
-            if (sb.length() > 0) {
-                sb.append(" · ");
-            }
-            sb.append(r.name());
-        }
-        return sb.toString();
-    }
-
-    /** 逐字在各身分的顏色之間內插。 */
-    private static Component gradient(String text, List<Role> roles) {
-        MutableComponent out = Component.empty();
-        int n = Math.max(1, text.length() - 1);
-        for (int i = 0; i < text.length(); i++) {
-            double t = (double) i / n * (roles.size() - 1);
-            int index = Math.min((int) t, roles.size() - 2);
-            int color = lerp(roles.get(index).color(),
-                             roles.get(index + 1).color(), t - index);
-            out.append(charWith(text.charAt(i), color));
-        }
-        return out;
-    }
-
-    /** 整段掃過色相環。三種身分都有的人專用。 */
-    private static Component rainbow(String text) {
-        MutableComponent out = Component.empty();
-        int n = Math.max(1, text.length() - 1);
-        for (int i = 0; i < text.length(); i++) {
-            out.append(charWith(text.charAt(i), hsv((float) i / n, 0.75f, 1.0f)));
-        }
-        return out;
-    }
-
-    private static Component charWith(char c, int color) {
-        return Component.literal(String.valueOf(c))
-                .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(color)));
-    }
-
-    private static int lerp(int from, int to, double t) {
-        int r = (int) Math.round(((from >> 16) & 0xFF) + (((to >> 16) & 0xFF) - ((from >> 16) & 0xFF)) * t);
-        int g = (int) Math.round(((from >> 8) & 0xFF) + (((to >> 8) & 0xFF) - ((from >> 8) & 0xFF)) * t);
-        int b = (int) Math.round((from & 0xFF) + ((to & 0xFF) - (from & 0xFF)) * t);
-        return (r << 16) | (g << 8) | b;
     }
 
     /** 自己算而不是用 {@code Mth.hsvToRgb}，因為那支在不同版本間搬過家。 */

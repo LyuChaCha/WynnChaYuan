@@ -878,6 +878,14 @@ tasks.register('runPageNamesChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runPageNamesChecks' }
 
+tasks.register('runBadgesChecks', JavaExec) {
+    group = 'verification'
+    description = '名字前面的葉子徽章：身分與顏色、彩色模式、多重身分、本機的選擇只管自己'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.BadgesTest'
+}
+tasks.named('check') { dependsOn 'runBadgesChecks' }
+
 tasks.register('runStatRowChecks', JavaExec) {
     group = 'verification'
     description = '裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去'

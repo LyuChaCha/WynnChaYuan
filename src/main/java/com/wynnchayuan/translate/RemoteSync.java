@@ -257,6 +257,70 @@ public final class RemoteSync {
         return fetchInto(cacheDir, lang, null);
     }
 
+    /** 貢獻者名單。跟譯文同一個 repo、同一個分支，網址寫死在這裡。 */
+    private static final List<String> CREDITS = List.of(
+            "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/"
+                    + "src/main/resources/assets/wynnchayuan/credits.json",
+            "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/"
+                    + "src/main/resources/assets/wynnchayuan/credits.json");
+
+    /**
+     * 抓貢獻者名單，放在設定資料夾底下。
+     *
+     * <p>名牌上的徽章照這份名單畫：加人、登記顏色、改展示的身分都只要改 repo 上那個檔，
+     * 不必發版。這裡只有下載，不送出任何東西。
+     *
+     * @return 抓到了而且跟手上的不一樣
+     */
+    public static boolean fetchCredits(Path configDir) {
+        Path target = configDir.resolve(com.wynnchayuan.client.Credits.FILE);
+        Path tmp = configDir.resolve(com.wynnchayuan.client.Credits.FILE + ".tmp");
+        try (HttpClient client = HttpClient.newBuilder()
+                .connectTimeout(TIMEOUT)
+                .followRedirects(HttpClient.Redirect.NORMAL)
+                .build()) {
+            for (String url : CREDITS) {
+                try {
+                    HttpRequest request = HttpRequest.newBuilder(URI.create(url))
+                            .timeout(TIMEOUT)
+                            .header("User-Agent", "WynnChaYuan")
+                            .header("Cache-Control", "no-cache")
+                            .header("Pragma", "no-cache")
+                            .GET()
+                            .build();
+                    HttpResponse<InputStream> response =
+                            client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+                    if (response.statusCode() != 200) {
+                        continue;
+                    }
+                    try (InputStream in = response.body()) {
+                        Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
+                    }
+                    // 半截或錯誤頁面不能蓋掉手上那一份
+                    if (!com.wynnchayuan.SafeFiles.parsesAsObject(tmp)) {
+                        Files.deleteIfExists(tmp);
+                        continue;
+                    }
+                    if (Files.isRegularFile(target) && Files.mismatch(tmp, target) == -1L) {
+                        Files.deleteIfExists(tmp);
+                        return false;
+                    }
+                    com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
+                    return true;
+                } catch (Exception e) {
+                    try {
+                        Files.deleteIfExists(tmp);
+                    } catch (Exception ignored) {
+                        // 刪不掉的話下次抓的時候會蓋掉
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // 名單只是裝飾，抓不到就用手上的
+        }
+        return false;
+    }
+
     /**
      * 抓到第幾個檔了。
      *
