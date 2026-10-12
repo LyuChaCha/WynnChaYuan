@@ -77,8 +77,11 @@ const MAX_USERS = 50000;
 /** JSON body 的上限。 */
 const MAX_BODY = 512;
 
-/** 披風圖檔的上限。 */
+/** 披風圖檔的上限：名單上的成員（開發者、贊助者、貢獻者）。 */
 export const MAX_CAPE_BYTES = 20 * 1024 * 1024;
+
+/** 一般玩家的上限（使用者 2026-10-12：「一般使用者只能上傳 1mb」）。 */
+export const MAX_PLAIN_CAPE_BYTES = 1024 * 1024;
 
 /** GIF 最多幾格。 */
 export const MAX_CAPE_FRAMES = 120;
@@ -279,11 +282,63 @@ const OAUTH_COOKIE = 'wcy_oauth';
 const oauthCookie = (value, age) => OAUTH_COOKIE + '=' + value
   + '; Path=/auth; Max-Age=' + age + '; HttpOnly; Secure; SameSite=Lax';
 
+const INTENT = /^[0-9a-f]{32}$/;
+const INTENT_COOKIE = 'wcy_intent';
+
+/** 綁定：一個遊戲帳號只綁一個網站帳號，反過來也是，兩邊原本綁著別的都先解掉。 */
+async function bind(env, id, uuid, name, now) {
+  const record = await account(env, id) || {};
+  const before = await env.CORPUS.get('l:' + uuid);
+  if (before && before !== id) {
+    const other = await account(env, before);
+    if (other) {
+      delete other.u;
+      delete other.m;
+      delete other.t;
+      await env.CORPUS.put('d:' + before, JSON.stringify(other));
+    }
+  }
+  if (record.u && record.u !== uuid) await env.CORPUS.delete('l:' + record.u);
+  record.u = uuid;
+  record.m = name;
+  record.t = now;
+  await env.CORPUS.put('d:' + id, JSON.stringify(record));
+  await env.CORPUS.put('l:' + uuid, id);
+  return record;
+}
+
+/**
+ * 已經以遊戲帳號登入的人（從遊戲開的網頁）要綁 Discord：記下「接下來登入的那個 Discord 帳號
+ * 綁到這個遊戲帳號」，十分鐘內有效，用完就丟。
+ *
+ * <p>這張單子另外用 cookie 綁在開單的瀏覽器上：別人把他開的單子連結塞給你、你去 Discord
+ * 登入的話，你的 Discord 就會被綁到他的遊戲帳號——沒有那個 cookie 的瀏覽器不認這張單子。
+ */
+async function handleLinkIntent(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  if (user.discord) return no('already linked', 409);
+  if (!discordOn(env)) return no('discord off', 503);
+  const id = hex(crypto.getRandomValues(new Uint8Array(16)));
+  await env.CORPUS.put('intent:' + id, JSON.stringify({ u: user.uuid, m: user.name }),
+    { expirationTtl: LINK_TTL_SECONDS });
+  return json({ ok: true, url: '/auth/discord?intent=' + id }, 200, {
+    'cache-control': 'no-store',
+    'set-cookie': INTENT_COOKIE + '=' + id + '; Path=/auth; Max-Age=600; HttpOnly; Secure; SameSite=Lax',
+  });
+}
+
 /** 去 Discord 登入。state 自己簽、再用 cookie 綁在這個瀏覽器上，別人拿不走也塞不進來。 */
 async function handleDiscordStart(request, env, now) {
-  const origin = new URL(request.url).origin;
+  const url = new URL(request.url);
+  const origin = url.origin;
   if (!discordOn(env)) return redirect(origin + '/account#e=discord-off');
-  const nonce = hex(crypto.getRandomValues(new Uint8Array(16)));
+  // 帶著綁定單的：單子要是這個瀏覽器自己開的（cookie 對得上）才帶進 state
+  const asked = url.searchParams.get('intent') || '';
+  const mine = new RegExp('(?:^|;\\s*)' + INTENT_COOKIE + '=([0-9a-f]{32})')
+    .exec(request.headers.get('cookie') || '');
+  const intent = INTENT.test(asked) && mine && mine[1] === asked ? asked : '';
+  const nonce = hex(crypto.getRandomValues(new Uint8Array(16))) + intent;
   const state = now + '.' + nonce + '.' + await sign(env, 'oauth.' + now + '.' + nonce);
   const to = new URL('https://discord.com/oauth2/authorize');
   to.searchParams.set('client_id', env.DISCORD_CLIENT_ID);
@@ -300,7 +355,7 @@ async function handleDiscordCallback(request, env, now) {
   if (!discordOn(env)) return failed;
   const code = url.searchParams.get('code') || '';
   const parts = (url.searchParams.get('state') || '').split('.');
-  const cookie = new RegExp('(?:^|;\\s*)' + OAUTH_COOKIE + '=([0-9a-f]{32})')
+  const cookie = new RegExp('(?:^|;\\s*)' + OAUTH_COOKIE + '=([0-9a-f]{32}(?:[0-9a-f]{32})?)(?:;|$)')
     .exec(request.headers.get('cookie') || '');
   if (!code || code.length > 512 || parts.length !== 3 || !cookie || cookie[1] !== parts[1]) return failed;
   if (!/^\d{1,16}$/.test(parts[0]) || now - Number(parts[0]) > 600000 || Number(parts[0]) > now + 60000) return failed;
@@ -334,6 +389,19 @@ async function handleDiscordCallback(request, env, now) {
   const record = await account(env, id) || {};
   record.n = shown;
   await env.CORPUS.put('d:' + id, JSON.stringify(record));
+  // state 後半帶著綁定單：這個人是從「已經以遊戲帳號登入」的網頁來的，登入完直接綁
+  const intent = parts[1].slice(32);
+  if (INTENT.test(intent)) {
+    try {
+      const wanted = JSON.parse(await env.CORPUS.get('intent:' + intent) || 'null');
+      if (wanted && UUID.test(wanted.u || '') && NAME.test(wanted.m || '')) {
+        await bind(env, id, wanted.u, wanted.m, now);
+      }
+    } catch (e) {
+      // 單子壞了或過期了：照樣登入，只是沒綁
+    }
+    await env.CORPUS.delete('intent:' + intent);
+  }
   // 憑證放在 # 後面：那一段不會送到任何伺服器，網頁收進 localStorage 之後就從網址列拿掉
   return redirect(url.origin + '/account#t=' + await issueDiscordToken(env, id, now), oauthCookie('', 0));
 }
@@ -361,24 +429,7 @@ async function handleLink(request, env, now) {
   if (!LINK_CODE.test(code)) return no('bad code');
   const id = await env.CORPUS.get('link:' + code);
   if (!id || !DISCORD_ID.test(id)) return no('unknown code', 404);
-  const record = await account(env, id) || {};
-  // 一個遊戲帳號只綁一個網站帳號，反過來也是：兩邊原本綁著別的都先解掉
-  const before = await env.CORPUS.get('l:' + user.uuid);
-  if (before && before !== id) {
-    const other = await account(env, before);
-    if (other) {
-      delete other.u;
-      delete other.m;
-      delete other.t;
-      await env.CORPUS.put('d:' + before, JSON.stringify(other));
-    }
-  }
-  if (record.u && record.u !== user.uuid) await env.CORPUS.delete('l:' + record.u);
-  record.u = user.uuid;
-  record.m = user.name;
-  record.t = now;
-  await env.CORPUS.put('d:' + id, JSON.stringify(record));
-  await env.CORPUS.put('l:' + user.uuid, id);
+  const record = await bind(env, id, user.uuid, user.name, now);
   await env.CORPUS.delete('link:' + code);
   return json({ ok: true, discord: record.n || '' });
 }
@@ -797,6 +848,12 @@ async function mayUpload(env, user, now, type) {
   return mode === 'tiered' ? 'gif members only' : 'not listed';
 }
 
+/** 這個人的披風最大可以多大。 */
+async function capeLimit(name, now) {
+  const list = await credits(now);
+  return list && list.names.has(name.toLowerCase()) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES;
+}
+
 /** 這個人是不是開發者（可以拿掉別人的披風）。 */
 async function isDeveloper(name, now) {
   const list = await credits(now);
@@ -814,6 +871,9 @@ async function handleUpload(request, env, now) {
   if (found.why) return no(found.why, found.why === 'too large' ? 413 : 400);
   const refusal = await mayUpload(env, user, now, found.type);
   if (refusal) return no(refusal, 403);
+  // 一般玩家 1 MB，名單上的成員 20 MB。名單讀不到的時候當成一般玩家。
+  const limit = await capeLimit(user.name, now);
+  if (bytes.length > limit) return json({ ok: false, why: 'too large', limit }, 413);
   const id = await publicId(user.uuid);
   const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (have && have.metadata && now - have.metadata.v < UPLOAD_EVERY_MS) {
@@ -828,7 +888,8 @@ async function handleUpload(request, env, now) {
     await env.CORPUS.put('blob:' + hash, bytes, { metadata: { t: found.type, s: bytes.length } });
   }
   await env.CORPUS.put('cape:' + id, '', {
-    metadata: { t: found.type, v: now, s: bytes.length, u: user.uuid, n: user.name, h: hash },
+    metadata: { t: found.type, v: now, s: bytes.length, u: user.uuid, n: user.name, h: hash,
+      x: found.width, y: found.height },
   });
   if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h);
   const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
@@ -890,6 +951,10 @@ export function groupCapes(capes) {
     let group = byHash.get(cape.h);
     if (!group) {
       group = { h: cape.h, t: cape.t, s: cape.s, v: 0, ids: [] };
+      if (cape.x && cape.y) {
+        group.x = cape.x;                       // 早期上傳的沒有記尺寸，網頁會自己量
+        group.y = cape.y;
+      }
       byHash.set(cape.h, group);
     }
     group.ids.push(cape.id);
@@ -951,7 +1016,9 @@ async function handleMe(request, env, now) {
     member: Boolean(list && list.names.has(name)),
     banned: Boolean(await env.CORPUS.get('ban:' + user.uuid)),
     uploads: env.UPLOADS || 'tiered',
-    cape: cape && cape.metadata ? { t: cape.metadata.t, v: cape.metadata.v, s: cape.metadata.s } : null,
+    limit: list && list.names.has(name) ? MAX_CAPE_BYTES : MAX_PLAIN_CAPE_BYTES,
+    cape: cape && cape.metadata ? { t: cape.metadata.t, v: cape.metadata.v, s: cape.metadata.s,
+      x: cape.metadata.x || 0, y: cape.metadata.y || 0 } : null,
   });
 }
 
@@ -1199,6 +1266,7 @@ export default {
     if (route === 'POST /login') return handleLogin(request, env, now);
     if (route === 'POST /web-link') return handleWebLink(request, env, now);
     if (route === 'POST /link/start') return handleLinkStart(request, env, now);
+    if (route === 'POST /link/intent') return handleLinkIntent(request, env, now);
     if (route === 'POST /link') return handleLink(request, env, now);
     if (route === 'POST /unlink') return handleUnlink(request, env, now);
     if (route === 'GET /me') return handleMe(request, env, now);

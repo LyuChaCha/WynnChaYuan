@@ -266,13 +266,20 @@ public final class SettingsScreen extends Screen {
                 say(T.s("fun.upload." + problem.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
                 return;
             }
-            // GIF 只有名單上的成員能傳。登記站會再擋一次，這裡先說，省一趟來回。
-            if (file.getFileName().toString().endsWith(".gif")
-                    && com.wynnchayuan.render.Badges.registered(
-                            com.wynnchayuan.render.Badges.selfName()).isEmpty()) {
+            // GIF 只有名單上的成員能傳，一般玩家的檔案上限也比較小（1 MB）。
+            // 登記站會再擋一次，這裡先說，省一趟來回。
+            boolean member = !com.wynnchayuan.render.Badges.registered(
+                    com.wynnchayuan.render.Badges.selfName()).isEmpty();
+            if (file.getFileName().toString().endsWith(".gif") && !member) {
                 say(T.s("fun.upload.gif_members_only"), Ui.RED);
                 return;
             }
+            if (bytes.length > com.wynnchayuan.cape.CapeRules.limitFor(member)) {
+                say(T.s("fun.upload.too_large"), Ui.RED);
+                return;
+            }
+            int[] size = com.wynnchayuan.cape.CapeRules.size(bytes);
+            uploadedSize = size == null ? "" : size[0] + "\u00d7" + size[1];
             say(T.s("fun.upload.sending"), Ui.TEXT_3);
             com.wynnchayuan.Presence.upload(bytes,
                     file.getFileName().toString().endsWith(".gif") ? "image/gif" : "image/png",
@@ -282,11 +289,16 @@ public final class SettingsScreen extends Screen {
         }
     }
 
+    /** 剛剛送出去的那張圖多大（「176×136」），上傳成功時說給玩家聽。 */
+    private volatile String uploadedSize = "";
+
     /** 上傳／移除的結果，回到畫圖的執行緒上說。 */
     private void capeResult(com.wynnchayuan.Presence.Result result, boolean removing) {
         net.minecraft.client.Minecraft.getInstance().execute(() -> {
             if (result == com.wynnchayuan.Presence.Result.DONE) {
-                say(T.s(removing ? "fun.remove.done" : "fun.upload.done"), Ui.GREEN);
+                // 上傳成功順便說這件披風多大（使用者 2026-10-12）
+                say(removing ? T.s("fun.remove.done") : T.s("fun.upload.done", uploadedSize),
+                        Ui.GREEN);
             } else {
                 say(T.s("fun.upload." + result.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
             }

@@ -90,6 +90,23 @@ public final class PresenceTest {
                 && Presence.linkResultOf(400) == Presence.LinkResult.BAD_CODE
                 && Presence.linkResultOf(401) == Presence.LinkResult.LOGIN_FAILED
                 && Presence.linkResultOf(500) == Presence.LinkResult.FAILED);
+        // 檔案上限分級：一般玩家 1 MB，名單上的成員 20 MB（登記站是同一條規矩）
+        check("★ 一般玩家 1 MB、成員 20 MB", CapeRules.limitFor(false) == 1024 * 1024
+                && CapeRules.limitFor(true) == 20 * 1024 * 1024);
+        byte[] pngHead = new byte[64];
+        System.arraycopy(new byte[] {(byte) 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A}, 0, pngHead, 0, 8);
+        System.arraycopy("IHDR".getBytes(java.nio.charset.StandardCharsets.US_ASCII), 0, pngHead, 12, 4);
+        pngHead[19] = (byte) 176;
+        pngHead[23] = (byte) 136;
+        int[] measured = CapeRules.size(pngHead);
+        check("★ 量得出 PNG 的尺寸（上傳完要說給玩家聽）", measured != null && measured[0] == 176 && measured[1] == 136);
+        byte[] gifHead = new byte[32];
+        System.arraycopy("GIF89a".getBytes(java.nio.charset.StandardCharsets.US_ASCII), 0, gifHead, 0, 6);
+        gifHead[6] = 88;
+        gifHead[8] = 68;
+        measured = CapeRules.size(gifHead);
+        check("量得出 GIF 的尺寸", measured != null && measured[0] == 88 && measured[1] == 68);
+        check("不是圖的量不出來", CapeRules.size(new byte[40]) == null && CapeRules.size(null) == null);
         JsonObject hello = JsonParser.parseString(Presence.helloBody(true)).getAsJsonObject();
         check("★ 報到只有一欄：cape（實際 " + hello.keySet() + "）",
                 hello.keySet().equals(Set.of("cape")) && hello.get("cape").getAsBoolean()

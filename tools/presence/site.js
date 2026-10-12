@@ -198,7 +198,7 @@ export const TEXT = {
     'capes.mine': '上傳我的披風',
     'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。',
     'view.title': '披風', 'view.flat': '披風的範本圖：左邊正面、右邊背面',
-    'view.type': '格式', 'view.size': '大小', 'view.users': '使用', 'view.date': '上傳',
+    'view.type': '格式', 'view.dim': '尺寸', 'view.size': '檔案大小', 'view.users': '使用', 'view.date': '上傳',
     'view.del': '刪除這件披風', 'view.ban': '刪除並封禁上傳的人', 'view.close': '關閉',
 
     'account.title': '帳號 - WynnChaYuan',
@@ -209,7 +209,8 @@ export const TEXT = {
     'account.discord.btn': '用 Discord 登入',
     'account.discord.off': '這個網站還沒有開放 Discord 登入，請先從遊戲裡開。',
     'account.discord.err': 'Discord 登入沒有成功，請再試一次。',
-    'account.discord.hint': '也可以用 Discord 註冊網站帳號再綁定這個遊戲 ID，之後不必開遊戲也登得進來。',
+    'account.discord.hint': '綁定 Discord 之後，不必開遊戲也能用 Discord 登入這個網站。',
+    'account.discord.bind': '綁定 Discord',
     'account.link.h': '綁定遊戲 ID',
     'account.link.p': '網站沒辦法自己確認遊戲帳號是不是你的，所以綁定要從遊戲裡做：先拿一組綁定碼，再到遊戲裡輸入。',
     'account.link.get': '取得綁定碼',
@@ -226,7 +227,7 @@ export const TEXT = {
     'account.signout': '登出這個瀏覽器',
     'account.mine': '我的披風', 'account.none': '還沒有上傳。', 'account.remove': '移除我的披風',
     'account.upload': '上傳披風',
-    'account.spec': '要照<a href="' + TEMPLATES + '">範本</a>畫：' + SIZES + '，檔案 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。',
+    'account.spec': '要照<a href="' + TEMPLATES + '">範本</a>畫：' + SIZES + '。檔案大小：一般玩家 1 MB 以內，開發者、贊助者、貢獻者 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。',
     'account.pick': '選一張披風的圖', 'account.send': '上傳',
 
     'admin.title': '管理 - WynnChaYuan',
@@ -252,14 +253,16 @@ export const TEXT = {
       expired: '沒有成功（{s}）。登入一天過期，請從遊戲裡重新開一次。',
       readFail: '讀不到清單，請重新整理。',
       roleDev: '開發者', roleMember: '名單上的成員', roleUser: '裝了模組的玩家',
-      mineHint: '{t} · {s} · 拖曳可以旋轉', mineNo3d: '立體檢視載不起來。',
+      mineHint: '{t} · {d}{s} · 拖曳可以旋轉', mineNo3d: '立體檢視載不起來。',
       discordAs: 'Discord：{n}', codeFail: '拿不到綁定碼，請再試一次', copied: '已複製',
       confirmUnlink: '解除這個遊戲 ID 與 Discord 的綁定？',
       confirmRemove: '移除你上傳的披風？', removed: '披風拿掉了', tryLater: '沒有成功，等一下再試',
-      pickFirst: '先選一張圖', uploading: '上傳中…', uploaded: '披風上傳好了，別人幾分鐘內就會看到',
+      pickFirst: '先選一張圖', uploading: '上傳中…', uploaded: '披風上傳好了（{w}×{h}），別人幾分鐘內就會看到',
+      picked: '這張圖是 {w}×{h}，{s}', pickedBad: '這張圖是 {w}×{h}，不是範本的尺寸（' + SIZES + '）',
+      bindFail: '沒有成功，請再試一次',
       failed: '沒有成功（{s}），等一下再試', offline: '連不上，等一下再試',
       why: {
-        'too large': '檔案太大了（上限 20 MB）',
+        'too large': '檔案太大了（一般玩家 1 MB；開發者、贊助者、貢獻者 20 MB）',
         'bad size': '尺寸不對：要照範本畫，' + SIZES + ' 其中一種',
         'bad format': '這不是 PNG 或 GIF，或是檔案壞了',
         'too many frames': 'GIF 的格數太多了（最多 120 格）',
@@ -319,7 +322,7 @@ export const TEXT = {
     'capes.mine': 'Upload my cape',
     'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content. Capes that break the rules are removed, and the uploader may lose the ability to upload.',
     'view.title': 'Cape', 'view.flat': 'The cape template image: front on the left, back on the right',
-    'view.type': 'Format', 'view.size': 'Size', 'view.users': 'Players', 'view.date': 'Uploaded',
+    'view.type': 'Format', 'view.dim': 'Dimensions', 'view.size': 'File size', 'view.users': 'Players', 'view.date': 'Uploaded',
     'view.del': 'Delete this cape', 'view.ban': 'Delete and ban the uploaders', 'view.close': 'Close',
 
     'account.title': 'Account - WynnChaYuan',
@@ -330,7 +333,8 @@ export const TEXT = {
     'account.discord.btn': 'Sign in with Discord',
     'account.discord.off': 'Discord sign-in is not enabled on this site yet. Please open the site from the game.',
     'account.discord.err': 'Discord sign-in did not work. Please try again.',
-    'account.discord.hint': 'You can also register a site account with Discord and link this game ID to it, so you can sign in without starting the game.',
+    'account.discord.hint': 'Link Discord and you can sign in to this site with Discord, without starting the game.',
+    'account.discord.bind': 'Link Discord',
     'account.link.h': 'Link your game ID',
     'account.link.p': 'This site cannot verify by itself that a game account is yours, so linking is done from inside the game: get a link code here, then enter it in game.',
     'account.link.get': 'Get a link code',
@@ -347,7 +351,7 @@ export const TEXT = {
     'account.signout': 'Sign out of this browser',
     'account.mine': 'My cape', 'account.none': 'Nothing uploaded yet.', 'account.remove': 'Remove my cape',
     'account.upload': 'Upload a cape',
-    'account.spec': 'Draw it on the <a href="' + TEMPLATES + '">template</a>: ' + SIZES + ', at most 20 MB. Anyone can upload a PNG; GIFs (up to 120 frames) are for developers, sponsors and contributors.',
+    'account.spec': 'Draw it on the <a href="' + TEMPLATES + '">template</a>: ' + SIZES + '. File size: up to 1 MB for regular players, 20 MB for developers, sponsors and contributors. Anyone can upload a PNG; GIFs (up to 120 frames) are for developers, sponsors and contributors.',
     'account.pick': 'Choose a cape image', 'account.send': 'Upload',
 
     'admin.title': 'Admin - WynnChaYuan',
@@ -373,14 +377,16 @@ export const TEXT = {
       expired: 'That did not work ({s}). A sign-in lasts one day - open the site from the game again.',
       readFail: 'Could not load the list. Please refresh.',
       roleDev: 'Developer', roleMember: 'Listed member', roleUser: 'Player with the mod',
-      mineHint: '{t} · {s} · drag to rotate', mineNo3d: 'The 3D view could not load.',
+      mineHint: '{t} · {d}{s} · drag to rotate', mineNo3d: 'The 3D view could not load.',
       discordAs: 'Discord: {n}', codeFail: 'Could not get a link code - please try again', copied: 'Copied',
       confirmUnlink: 'Unlink this game ID from Discord?',
       confirmRemove: 'Remove the cape you uploaded?', removed: 'Cape removed', tryLater: 'That did not work - try again later',
-      pickFirst: 'Choose an image first', uploading: 'Uploading…', uploaded: 'Cape uploaded - others will see it within a few minutes',
+      pickFirst: 'Choose an image first', uploading: 'Uploading…', uploaded: 'Cape uploaded ({w}×{h}) - others will see it within a few minutes',
+      picked: 'This image is {w}×{h}, {s}', pickedBad: 'This image is {w}×{h}, which is not a template size (' + SIZES + ')',
+      bindFail: 'That did not work - please try again',
       failed: 'That did not work ({s}) - try again later', offline: 'Could not connect - try again later',
       why: {
-        'too large': 'The file is too large (20 MB at most)',
+        'too large': 'The file is too large (1 MB for regular players; 20 MB for developers, sponsors and contributors)',
         'bad size': 'Wrong size: draw it on the template - ' + SIZES,
         'bad format': 'This is not a PNG or GIF, or the file is damaged',
         'too many frames': 'The GIF has too many frames (120 at most)',
@@ -651,6 +657,7 @@ const CAPES = String.raw`
         <img class="flat" id="flat" alt="%%view.flat%%">
         <dl>
           <dt>%%view.type%%</dt><dd id="d-type"></dd>
+          <dt>%%view.dim%%</dt><dd id="d-dim"></dd>
           <dt>%%view.size%%</dt><dd id="d-size"></dd>
           <dt>%%view.users%%</dt><dd id="d-users"></dd>
           <dt>%%view.date%%</dt><dd id="d-date"></dd>
@@ -680,6 +687,12 @@ const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     document.getElementById('flat').src = url(cape);
     document.getElementById('d-type').textContent = cape.t.toUpperCase();
     document.getElementById('d-size').textContent = bytes(cape.s);
+    /* 尺寸：有記的用記的；早期上傳的沒記，等那張圖載進來自己量 */
+    var dim = document.getElementById('d-dim');
+    dim.textContent = cape.x ? cape.x + '×' + cape.y : '';
+    document.getElementById('flat').onload = function () {
+      if (!cape.x) dim.textContent = this.naturalWidth + '×' + this.naturalHeight;
+    };
     document.getElementById('d-users').textContent = fmt(L.users, { n: cape.ids.length });
     document.getElementById('d-date').textContent = new Date(cape.v).toLocaleDateString();
     document.getElementById('del').hidden = !developer;
@@ -808,7 +821,7 @@ const ACCOUNT = String.raw`
         <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px">
           <button class="btn" id="signout">%%account.signout%%</button>
           <button class="btn" id="unlink" hidden>%%account.unlink%%</button>
-          <a class="btn" id="discord2" href="/auth/discord" hidden>%%account.discord.btn%%</a>
+          <button class="btn" id="discord2" hidden>%%account.discord.bind%%</button>
         </div>
       </div>
       <div class="panel">
@@ -845,7 +858,8 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     if (!me.cape) { stopCape(); return; }
     if (!viewer) viewer = makeViewer(canvas);
     if (!viewer) { hint.textContent = L.mineNo3d; canvas.hidden = true; return; }
-    hint.textContent = fmt(L.mineHint, { t: me.cape.t.toUpperCase(), s: bytes(me.cape.s) });
+    hint.textContent = fmt(L.mineHint, { t: me.cape.t.toUpperCase(), s: bytes(me.cape.s),
+      d: me.cape.x ? me.cape.x + '×' + me.cape.y + ' · ' : '' });
     wear(viewer, '/api/cape/' + me.id + '?v=' + me.cape.v, me.cape.t === 'gif');
   }
   function refresh() {
@@ -856,6 +870,8 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var discordOn = fetch('/api/status').then(function (r) { return r.json(); })
     .then(function (status) { return Boolean(status.discord); }).catch(function () { return false; });
   var linkMsg = document.getElementById('linkmsg');
+  var limit = 20 * 1024 * 1024;          /* 檔案上限：登入之後換成這個人自己的（一般玩家 1 MB） */
+  var SIZES_OK = [[22, 17], [44, 34], [88, 68], [176, 136]];
   var watching = null;
 
   /* 用 Discord 登入了、還沒綁：要一組綁定碼，然後等遊戲那邊把它送回來 */
@@ -904,6 +920,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
       return;
     }
     document.getElementById('in').hidden = false;
+    if (me.limit) limit = me.limit;
     if (me.discord) {
       var line = document.getElementById('dc-line');
       line.hidden = false;
@@ -923,6 +940,33 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     show(me);
   });
   document.getElementById('signout').onclick = signOut;
+  /* 一鍵綁定：這一頁已經是驗過的遊戲帳號，去 Discord 登入回來就綁好了 */
+  document.getElementById('discord2').onclick = function () {
+    api('/link/intent', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (answer) {
+        if (answer && String(answer.url).indexOf('/auth/discord?intent=') === 0) location.href = answer.url;
+        else say(L.bindFail, false);
+      }).catch(function () { say(L.offline, false); });
+  };
+  /* 選了圖就先說它多大：尺寸不對的話不必等傳完才知道 */
+  document.getElementById('file').onchange = function () {
+    var file = this.files[0];
+    if (!file) return;
+    var probe = new Image();
+    var address = URL.createObjectURL(file);
+    probe.onload = function () {
+      var w = probe.naturalWidth;
+      var h = probe.naturalHeight;
+      URL.revokeObjectURL(address);
+      var fits = SIZES_OK.some(function (size) { return size[0] === w && size[1] === h; });
+      if (!fits) say(fmt(L.pickedBad, { w: w, h: h }), false);
+      else if (file.size > limit) say(L.why['too large'], false);
+      else say(fmt(L.picked, { w: w, h: h, s: bytes(file.size) }), true);
+    };
+    probe.onerror = function () { URL.revokeObjectURL(address); say(L.why['bad format'], false); };
+    probe.src = address;
+  };
   document.getElementById('unlink').onclick = function () {
     if (!confirm(L.confirmUnlink)) return;
     api('/unlink', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
@@ -937,12 +981,12 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   document.getElementById('upload').onclick = function () {
     var file = document.getElementById('file').files[0];
     if (!file) { say(L.pickFirst, false); return; }
-    if (file.size > 20 * 1024 * 1024) { say(L.why['too large'], false); return; }
+    if (file.size > limit) { say(L.why['too large'], false); return; }
     say(L.uploading, true);
     api('/cape', { method: 'PUT', body: file, headers: { 'content-type': file.type || 'application/octet-stream' } })
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (body) {
-          if (r.ok) { say(L.uploaded, true); refresh(); }
+          if (r.ok) { say(fmt(L.uploaded, { w: body.width, h: body.height }), true); refresh(); }
           else say(L.why[body.why] || fmt(L.failed, { s: r.status }), false);
         });
       }).catch(function () { say(L.offline, false); });

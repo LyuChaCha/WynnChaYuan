@@ -25,6 +25,33 @@ public final class CapeRules {
     public static final int[][] SIZES = {{22, 17}, {44, 34}, {88, 68}, {176, 136}};
 
     /** 哪裡不對。 */
+    /** 一般玩家的上限（使用者 2026-10-12：「一般使用者只能上傳 1mb」）。名單上的成員是 {@link #MAX_BYTES}。 */
+    public static final int MAX_BYTES_PLAIN = 1024 * 1024;
+
+    /** 這個人的披風最大可以多大。跟登記站的 {@code capeLimit} 同一條規矩。 */
+    public static int limitFor(boolean member) {
+        return member ? MAX_BYTES : MAX_BYTES_PLAIN;
+    }
+
+    /**
+     * 這張圖的寬與高（看檔頭，不解壓）。
+     *
+     * @return {@code {寬, 高}}；不是 PNG 也不是 GIF 就回 {@code null}
+     */
+    public static int[] size(byte[] bytes) {
+        if (bytes == null || bytes.length < 24) {
+            return null;
+        }
+        if (isPng(bytes)) {
+            return new int[] {u32(bytes, 16), u32(bytes, 20)};
+        }
+        if (Gif.looksLikeGif(bytes)) {
+            return new int[] {(bytes[6] & 0xFF) | ((bytes[7] & 0xFF) << 8),
+                    (bytes[8] & 0xFF) | ((bytes[9] & 0xFF) << 8)};
+        }
+        return null;
+    }
+
     public enum Problem { TOO_LARGE, BAD_FORMAT, BAD_SIZE, TOO_MANY_FRAMES }
 
     /** @return 可以上傳就回 {@code null} */

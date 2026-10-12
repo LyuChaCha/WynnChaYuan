@@ -694,6 +694,60 @@ list = await (await worker.fetch(get('/list'), env)).json();
 check('自己拿掉披風：那一筆、圖檔、名單都沒了', r.status === 200
   && !env.CORPUS.data.has('cape:' + bobId) && !(bobId in list.capes) && blobs().length === 0);
 
+// ---- ★ 檔案上限分級：一般玩家 1 MB，名單上的成員 20 MB ----
+const padded = (width, height, size) => {
+  const out = new Uint8Array(size);
+  out.set(png(width, height));
+  return out;
+};
+r = await worker.fetch(put('/cape', padded(88, 68, 1024 * 1024 + 1), bobToken), env);
+body = await r.json();
+check('★ 一般玩家超過 1 MB：不收，而且說了上限是多少', r.status === 413 && body.why === 'too large' && body.limit === 1024 * 1024);
+r = await worker.fetch(put('/cape', padded(88, 68, 1024 * 1024), bobToken), env);
+body = await r.json();
+check('一般玩家剛好 1 MB：收', r.status === 200);
+check('★ 上傳成功時回尺寸（告訴人這件披風多大）', body.width === 88 && body.height === 68 && body.type === 'png');
+r = await worker.fetch(get('/me', bobToken), env);
+body = await r.json();
+check('★ 帳號頁拿得到自己的上限與披風尺寸', body.limit === 1024 * 1024 && body.cape.x === 88 && body.cape.y === 68);
+check('一覽裡每一件也有尺寸', (await (await worker.fetch(api('/capes'), env)).json()).capes
+  .some((cape) => cape.x === 88 && cape.y === 68));
+if (env.CORPUS.data.has('cape:' + aliceId)) pushBack(aliceId);
+r = await worker.fetch(put('/cape', padded(176, 136, 3 * 1024 * 1024), aliceToken), env);
+check('★ 名單上的成員超過 1 MB 照收（上限 20 MB）', r.status === 200
+  && (await (await worker.fetch(get('/me', aliceToken), env)).json()).limit === MAX_CAPE_BYTES);
+await worker.fetch(del('/cape', aliceToken), env);
+pushBack(bobId);
+await worker.fetch(del('/cape', bobToken), env);
+
+// ---- ★ 一鍵綁定 Discord：從遊戲開的網頁（已經驗過遊戲帳號）直接綁 ----
+check('要先以遊戲帳號登入才能開綁定單', (await dc('/link/intent', null, {})).status === 401);
+check('已經綁了 Discord 的那種登入不必再開', (await dc('/link/intent', dcToken, {})).status === 409);
+r = await dc('/link/intent', bobToken, {});
+body = await r.json();
+const intentCookie = (r.headers.get('set-cookie') || '').split(';')[0];
+check('★ 開單：回要去的網址，單子用 cookie 綁在這個瀏覽器上', r.status === 200
+  && /^\/auth\/discord\?intent=[0-9a-f]{32}$/.test(body.url) && /^wcy_intent=[0-9a-f]{32}$/.test(intentCookie)
+  && /HttpOnly/i.test(r.headers.get('set-cookie')));
+discordUser = { id: '333333333333333333', username: 'bob_dc', global_name: 'Bob 的 Discord' };
+// 別人的瀏覽器（沒有那個 cookie）拿著同一張單子去登入：照樣登入，但不綁
+r = await page(body.url);
+let stateNow = new URL(r.headers.get('location')).searchParams.get('state');
+r = await oauthBack('code=goodcode&state=' + stateNow, (r.headers.get('set-cookie') || '').split(';')[0]);
+const stranger = r.headers.get('location').match(/#t=(dc\.[^&]+)$/)[1];
+check('★ 單子不是這個瀏覽器開的：登入照常，但沒有被綁到別人的遊戲帳號',
+  (await (await dc('/me', stranger)).json()).linked === false);
+// 開單的那個瀏覽器
+r = await page(body.url, { cookie: intentCookie });
+stateNow = new URL(r.headers.get('location')).searchParams.get('state');
+check('單子帶進 state（跟著 Discord 繞一圈回來）', stateNow.split('.')[1].length === 64);
+r = await oauthBack('code=goodcode&state=' + stateNow, (r.headers.get('set-cookie') || '').split(';')[0]);
+const bobDc = r.headers.get('location').match(/#t=(dc\.[^&]+)$/)[1];
+body = await (await dc('/me', bobDc)).json();
+check('★ 登入完就綁好了：不必打指令', body.linked === true && body.name === BOB.name && body.discord.name === 'Bob 的 Discord');
+check('★ 單子用過就丟', [...env.CORPUS.data.keys()].filter((k) => k.startsWith('intent:')).length === 0);
+await dc('/unlink', bobDc, {});
+
 r = await worker.fetch(get('/status'), env);
 check('/api/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
 
