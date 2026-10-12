@@ -47,6 +47,7 @@ public final class WynntilsTextTest {
         switched(config);
         wynntilsScreens(config, store);
         beaconCount(config);
+        statusEffects(config);
 
         System.out.println(failures == 0 ? "\n就地取代：全部通過"
                 : "\n就地取代：" + failures + " 項失敗");
@@ -385,6 +386,59 @@ public final class WynntilsTextTest {
             check("★ 「" + name + ": 0/1」不是屬性列，原樣留著（實際 "
                     + out.getStringWithoutFormatting() + "）", out == in);
         }
+    }
+
+    /**
+     * Wynntils 的狀態效果那一欄：效果名不是物品（使用者 2026-10-12 的截圖：
+     * 「29% 抵抗護腿 (Resistance) (00:27)」）。
+     */
+    private static void statusEffects(CollectorConfig config) throws Exception {
+        check("尾巴是倒數的時間：是狀態列", WynntilsText.statusRow("29% Resistance (00:27)")
+                && WynntilsText.statusRow("Tree Manipulation (**:**)")
+                && WynntilsText.statusRow("8% Strength (1:05:00) "));
+        check("沒有時間的不是（物品名、一般的標籤、括號裡是別的東西）",
+                !WynntilsText.statusRow("Resistance") && !WynntilsText.statusRow("Loot Chests: 0/12")
+                        && !WynntilsText.statusRow("Oak Wood Dagger (Lv. 12)")
+                        && !WynntilsText.statusRow(null));
+        for (String lang : List.of("zh_tw", "zh_cn", "ja_jp")) {
+            TranslationStore store = new TranslationStore();
+            store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
+            // 找一個「只有裝備在用」的名字：語料改了也照樣測得到東西
+            String gear = null;
+            for (String candidate : List.of("Resistance", "Fatal", "Halcyon", "Warp")) {
+                if (store.itemNameOnly(candidate) && store.lookup(candidate) != null) {
+                    gear = candidate;
+                    break;
+                }
+            }
+            check(lang + "：前提：找得到一個只有裝備在用的名字", gear != null);
+            if (gear == null) {
+                continue;
+            }
+            String worn = store.lookup(gear);
+            for (CollectorConfig.ItemNames mode : List.of(CollectorConfig.ItemNames.ON,
+                    CollectorConfig.ItemNames.BOTH)) {
+                store.setNameMode(mode);
+                StyledText row = StyledText.fromString(
+                        "\u00a7729% \u00a7f" + gear + " \u00a77(00:27)");
+                String out = WynntilsText.screenText(row, config, store).getStringWithoutFormatting();
+                check(lang + "／" + mode + "：★ 狀態列的「" + gear + "」不會變成裝備的譯名（實際 " + out + "）",
+                        out.contains(gear) && !out.contains(worn));
+                StyledText endless = StyledText.fromString("\u00a7f" + gear + " \u00a77(**:**)");
+                out = WynntilsText.screenText(endless, config, store).getStringWithoutFormatting();
+                check(lang + "／" + mode + "：★ 沒有期限的那一種也一樣（實際 " + out + "）",
+                        out.contains(gear) && !out.contains(worn));
+            }
+            store.setNameMode(CollectorConfig.ItemNames.ON);
+            // 屬性也在用的字照舊翻（每個語言用不同的秒數：畫面字的快取按內容記，三份 store 的世代又一樣）
+            String strength = store.lookup("Strength");
+            if (strength != null && !strength.equals("Strength")) {
+                StyledText row = StyledText.fromString("\u00a778% \u00a7fStrength \u00a77(00:" + (30 + lang.charAt(0) % 20 + lang.charAt(3) % 7) + ")");
+                String out = WynntilsText.screenText(row, config, store).getStringWithoutFormatting();
+                check(lang + "：屬性也在用的字照舊翻（實際 " + out + "）", out.contains(strength));
+            }
+        }
+        check("狀態列查完之後旗標有還原", !TranslationStore.itemNamesBarred());
     }
 
     private static void wynntilsScreens(CollectorConfig config, TranslationStore store) {
