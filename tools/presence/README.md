@@ -12,7 +12,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | 檔案 | |
 |---|---|
 | `worker.js` | API 與路由 |
-| `site.js` | 四張網頁（共用樣式、頁首、頁尾） |
+| `site.js` | 四張網頁（共用樣式、頁首、頁尾），中文與英文 |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
 | `dev.mjs` | 在本機用假資料開網站來看 |
 
@@ -24,6 +24,12 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `/capes` | 披風一覽。每張卡片是披風的正面；點開是一個穿著它的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖） |
 | `/account` | 帳號：登入狀態、自己的披風、上傳與移除 |
 | `/admin` | 管理（開發者）：封禁名單、新增成員 |
+
+### 語言
+
+中文與英文各一份。字都在 `site.js` 的 `TEXT`，頁面樣板用 `%%鍵%%` 標位置；加一種語言就是在 `TEXT` 加一份（測試會比兩邊的鍵是不是一樣）。
+
+用哪一種：網址上的 `?lang=en`／`?lang=zh`（貼連結給人用）> 訪客在頁首選過的（記在 `lang` 這個 cookie）> 瀏覽器的語言 > 英文。
 
 ### 登入
 

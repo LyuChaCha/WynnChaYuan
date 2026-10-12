@@ -280,10 +280,21 @@ check('groupCapes：新的排前面', groupCapes([
   { id: 'c', h: 'x', t: 'png', s: 1, v: 7 }]).map((g) => g.h + g.ids.length).join() === 'y1,x2');
 
 // ---- 網頁 ----
+const { LANGS, PATHS, TEXT, pickLang } = await import('./site.js');
+const inLang = (path, headers) => worker.fetch(new Request('https://x.test' + path, { headers }), env);
 const pages = {};
+const english = {};
 for (const path of ['/', '/capes', '/account', '/admin']) {
-  r = await worker.fetch(get(path), env);
+  english[path] = await (await inLang(path, { cookie: 'lang=en' })).text();
+  r = await inLang(path, { cookie: 'lang=zh' });
   pages[path] = await r.text();
+  check(path + ' 兩種語言都填滿了，沒有漏掉的 %%鍵%%',
+    !/%%[\w.]+%%/.test(pages[path]) && !/%%[\w.]+%%/.test(english[path]));
+  check(path + ' 的 lang 屬性跟著語言走', pages[path].includes('<html lang="zh-Hant">')
+    && english[path].includes('<html lang="en">'));
+  check(path + ' 英文版也有頁尾，也沒有會被樣板字串吃掉的寫法',
+    english[path].includes('Designed by LyuChaCha')
+    && !english[path].includes(String.fromCharCode(96)) && !english[path].includes('$' + '{'));
   check(path + ' 是一張網頁', r.status === 200 && r.headers.get('content-type').startsWith('text/html')
     && pages[path].includes('<title>'));
   check(path + ' 有頁尾', pages[path].includes('© 2026 WynnChaYuan - All rights reserved.')
@@ -293,6 +304,55 @@ for (const path of ['/', '/capes', '/account', '/admin']) {
     !pages[path].includes(String.fromCharCode(96)) && !pages[path].includes('$' + '{'));
 }
 check('★ 披風一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => pages['/capes'].includes(w)));
+check('★ 英文版的披風一覽也寫著不可以上傳什麼',
+  ['political', 'obscene', 'unlawful', 'racist'].every((w) => english['/capes'].includes(w)));
+check('英文版的帳號頁用的是遊戲裡英文介面的字',
+  ['F6', 'Badge &amp; cape', 'Let others know I use this mod', 'Cape gallery'].every((w) => english['/account'].includes(w)));
+
+// ---- ★ 網站的語言 ----
+check('有中文與英文', LANGS.join() === 'zh,en' && PATHS.join() === '/,/capes,/account,/admin');
+const keysOf = (o, at) => Object.entries(o).flatMap(([k, v]) =>
+  (v && typeof v === 'object' ? keysOf(v, at + k + '.') : [at + k]));
+check('★ 兩種語言的鍵一模一樣（少翻一條就是一塊空白）',
+  keysOf(TEXT.zh, '').sort().join() === keysOf(TEXT.en, '').sort().join());
+const valuesOf = (o) => Object.values(o).flatMap((v) => (v && typeof v === 'object' ? valuesOf(v) : [v]));
+check('每一條都有字', LANGS.every((l) => valuesOf(TEXT[l]).every((v) => typeof v === 'string' && v.trim().length > 0)));
+// 看得到的字：拿掉程式與樣式、標籤；語言切換上的「中文」與首頁的語言清單本來就是各寫各的
+const visible = (html) => html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
+  .replace(/<span class="chip">[^<]*<\/span>/g, ' ').replace(/<button type="button" value="zh"[^<]*<\/button>/g, ' ')
+  .replace(/<[^>]+>/g, ' ');
+const cjk = /[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]/;
+for (const path of PATHS) {
+  const left = visible(english[path]).match(cjk);
+  check('★ 英文版的 ' + path + ' 看得到的字裡沒有中文' + (left ? '（' + left[0] + '）' : ''), !left);
+  const strings = (english[path].match(/var L = (.*);$/m) || [])[1] || '';
+  check('英文版的 ' + path + ' 程式用的字也沒有中文', strings.length > 100 && !cjk.test(strings));
+  check('中文版的 ' + path + ' 真的是中文', cjk.test(visible(pages[path])));
+}
+check('兩頁的語言切換都在，按下的是現在這一種',
+  english['/'].includes('value="en" aria-pressed="true"') && english['/'].includes('value="zh" aria-pressed="false"')
+  && pages['/'].includes('value="zh" aria-pressed="true"'));
+check('pickLang：選過的優先', pickLang('a=1; lang=zh', 'en-US,en;q=0.9') === 'zh'
+  && pickLang('lang=en', 'zh-TW') === 'en');
+check('pickLang：沒選過看瀏覽器，照它排的順序', pickLang('', 'zh-TW,zh;q=0.9,en;q=0.8') === 'zh'
+  && pickLang(null, 'en-GB,zh;q=0.5') === 'en' && pickLang('', 'zh-CN') === 'zh');
+check('pickLang：別的語言、什麼都沒有、亂填的 cookie 都給英文', pickLang('', 'ja,ko;q=0.9') === 'en'
+  && pickLang(null, null) === 'en' && pickLang('lang=xx', '') === 'en' && pickLang('lang=__proto__', 'tr') === 'en');
+check('pickLang：日文排在中文前面的人，給他排得到的第一個我們有的', pickLang('', 'ja,zh-TW;q=0.8,en;q=0.5') === 'zh');
+r = await inLang('/capes', { 'accept-language': 'zh-TW,zh;q=0.9' });
+check('★ 沒選過：中文的瀏覽器拿到中文', (await r.text()).includes('<html lang="zh-Hant">')
+  && r.headers.get('content-language') === 'zh-Hant');
+r = await inLang('/capes', { 'accept-language': 'tr-TR,tr;q=0.9' });
+check('★ 沒選過：其他語言的瀏覽器拿到英文', (await r.text()).includes('<html lang="en">')
+  && r.headers.get('content-language') === 'en');
+r = await inLang('/capes', {});
+check('什麼都沒帶：英文', (await r.text()).includes('<html lang="en">'));
+check('回應說了它會隨 cookie 與語言變', /cookie/i.test(r.headers.get('vary')) && /accept-language/i.test(r.headers.get('vary')));
+r = await inLang('/account?lang=zh', { cookie: 'lang=en', 'accept-language': 'en' });
+check('網址上的 ?lang= 最優先（貼連結給人用）', (await r.text()).includes('<html lang="zh-Hant">'));
+r = await inLang('/account?lang=klingon', { cookie: 'lang=en' });
+check('?lang= 亂填的不理', (await r.text()).includes('<html lang="en">'));
+
 check('首頁有下載的連結', pages['/'].includes('https://modrinth.com/mod/wynnchayuan')
   && pages['/'].includes('https://www.curseforge.com/minecraft/mc-mods/wynnchayuan'));
 check('帳號頁講了怎麼從遊戲裡登入', pages['/account'].includes('F6') && pages['/account'].includes('披風一覽'));

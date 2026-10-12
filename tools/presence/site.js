@@ -1,7 +1,11 @@
 /**
- * wynnchayuan.com 的網頁：首頁、披風一覽、帳號、管理。
+ * wynnchayuan.com 的網頁：首頁、披風一覽、帳號、管理。中文與英文各一份。
  *
  * 四頁共用一份樣式、頁首與頁尾，各自一段程式。全部是靜態的字串，資料都跟 /api 要。
+ *
+ * 語言：字都在下面的 TEXT 裡，頁面的樣板用 %%鍵%% 標位置，render() 填進去。
+ * 用哪一種由 worker 決定（訪客選過的那個 cookie，沒選過就看瀏覽器的語言）；
+ * 頁首右邊可以切換。加一種語言就是在 TEXT 加一份。
  *
  * 登入：網站沒辦法自己確認 Minecraft 帳號，所以是<b>從遊戲裡開</b>——模組拿通行證換一條
  * 網址（#t=…），這裡把它收進 localStorage、從網址列上拿掉，之後每個 API 請求帶著它。
@@ -33,12 +37,17 @@ const STYLE = String.raw`
   .top .in { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 22px; }
   .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: .02em; }
   .brand:hover { text-decoration: none; }
+  .brand span { color: var(--leaf); display: flex; }
   .brand svg { width: 26px; height: 26px; }
   nav { display: flex; gap: 4px; flex-wrap: wrap; }
   nav a { padding: 6px 12px; border-radius: 8px; color: var(--ink-2); font-size: 14px; }
   nav a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
   nav a[aria-current="page"] { color: var(--ink); background: var(--panel-2); }
-  .me { margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); }
+  .tools { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+  .lang { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .lang button { font: inherit; font-size: 12px; padding: 4px 9px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); }
+  .me { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); }
   .me img { width: 22px; height: 22px; border-radius: 4px; image-rendering: pixelated; }
   main { flex: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 44px 20px 72px; }
   h1 { margin: 0; font-size: 28px; font-weight: 650; letter-spacing: .02em; text-wrap: balance; }
@@ -56,7 +65,6 @@ const STYLE = String.raw`
   .btn.primary:hover { background: #93dba0; }
   .btn.danger { border-color: #5a2b2b; background: #2e1a1a; color: var(--danger); }
   .btn.danger:hover { background: #3d2020; }
-  .btn[disabled] { opacity: .5; cursor: default; }
   label { display: block; font-size: 13px; color: var(--ink-2); margin: 0 0 4px; }
   input[type="text"], select {
     width: 100%; font: inherit; padding: 8px 10px; border-radius: 8px; color: var(--ink);
@@ -74,11 +82,10 @@ const STYLE = String.raw`
   footer .in { max-width: 1120px; margin: 0 auto; padding: 22px 20px 28px; display: flex; flex-wrap: wrap; gap: 4px 24px; justify-content: space-between; }
   [hidden] { display: none !important; }
 
-  /* 首頁 */
   .hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 18px 0 8px; }
   .hero h1 { font-size: 40px; line-height: 1.25; }
   .hero .lede { font-size: 16px; }
-  .hero img { width: 100%; max-width: 380px; justify-self: center; filter: drop-shadow(0 18px 40px #000a); }
+  .hero img { width: 100%; max-width: 380px; height: auto; justify-self: center; filter: drop-shadow(0 18px 40px #000a); }
   .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .chip { padding: 3px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--ink-2); background: var(--panel); }
@@ -89,10 +96,9 @@ const STYLE = String.raw`
   .role { display: flex; gap: 12px; align-items: flex-start; }
   .role svg { flex: none; width: 26px; height: 26px; margin-top: 2px; }
   .role b { display: block; font-weight: 650; }
-  .role span { color: var(--ink-2); font-size: 14px; }
+  .role span span { color: var(--ink-2); font-size: 14px; }
   .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 
-  /* 披風 */
   .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: 22px 0 14px; }
   .count { font-variant-numeric: tabular-nums; color: var(--ink-2); }
   .count b { color: var(--ink); font-weight: 600; }
@@ -147,7 +153,232 @@ const STYLE = String.raw`
 
 const LEAF = String.raw`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c.5-4.5 2.5-8 7-10"/><path d="M9 18c6.2 0 10.5-3.3 11-12V4h-4C7 4 4 8 4 13c0 1 0 3 2 5h3z"/></svg>`;
 
-/** 每一頁都有的程式：收下登入的網址、帶著通行證問 API、頁首右邊那一格。 */
+const LOGO = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/2026/wynnchayuan-logo-transparent-on-dark-1024.png';
+const TEMPLATES = 'https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates';
+const ISSUES = 'https://github.com/LyuChaCha/WynnChaYuan/issues';
+const SIZES = '22×17, 44×34, 88×68, 176×136';
+
+// ------------------------------------------------------------------ 字
+
+export const TEXT = {
+  zh: {
+    html: 'zh-Hant',
+    'nav.home': '首頁', 'nav.capes': '披風', 'nav.account': '帳號', 'nav.admin': '管理', 'nav.label': '主選單',
+    'lang.label': '語言',
+
+    'home.title': 'WynnChaYuan - Wynncraft 的多語言翻譯模組',
+    'home.h1': '把 Wynncraft 翻成你的語言',
+    'home.lede': 'WynnChaYuan 是 Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。原文保留，譯文顯示在旁邊，或直接寫進原本的位置——任務、對話、物品與介面都看得懂。',
+    'home.modrinth': '從 Modrinth 下載',
+    'home.langs': '支援的語言',
+    'home.logo': 'WynnChaYuan 的標誌：一片葉子形狀的對話框',
+    'home.what': '翻了什麼',
+    'home.f1': '物品與裝備', 'home.f1b': '裝備敘述、屬性、Major ID。旁邊另開面板，或寫進原本的說明框。',
+    'home.f2': '任務與對話', 'home.f2b': '寫進 Wynncraft 自己的對話框，逐字打出的節奏跟原文同步；任務追蹤也有。',
+    'home.f3': '技能樹', 'home.f3b': '五個職業的節點、說明與流派。',
+    'home.f4': '聊天與提示', 'home.f4b': '伺服器發的訊息：任務完成、獎勵、進出區域。玩家的發言不翻。',
+    'home.f5': '選單與介面', 'home.f5b': '交易市場、公會、商城，還有 Lootrun、討伐戰、地城的面板。',
+    'home.f6': '譯文自動更新', 'home.f6b': '新的翻譯合併之後，下次進遊戲就生效，不必更新模組。',
+    'home.install': '安裝',
+    'home.need': '需要 <a href="https://modrinth.com/mod/wynntils">Wynntils</a> 4.2 以上與 <a href="https://modrinth.com/mod/fabric-api">Fabric API</a>。純客戶端，伺服器不需要裝。',
+    'home.how': '把 jar 放進 mods 資料夾，進遊戲按 F6 開設定。',
+    'home.about': '<b>關於譯文。</b>部分譯文由人工輸入再經 AI 轉出，一小部分直接由 AI 翻譯，大部分基礎內容經過人工校稿。其他語言目前多半是圍繞著繁體中文再做 AI 翻譯，可能有錯譯與用詞不一致。遇到問題請到 <a href="' + ISSUES + '">GitHub Issues</a> 回報。',
+    'home.badges': '徽章與披風',
+    'home.dev': '開發者', 'home.devb': '協助程式開發與維護。',
+    'home.sponsor': '贊助者', 'home.sponsorb': '單次 20 USD 或每月 2 USD 以上。',
+    'home.contrib': '貢獻者', 'home.contribb': '替自己的語言翻譯、修正錯誤，或提供程式上的實質協助。',
+    'home.user': '裝了模組的人', 'home.userb': '名字前面是一片灰色的葉子。',
+    'home.seecapes': '看看大家的披風', 'home.donate': '贊助', 'home.join': '怎麼參與',
+
+    'capes.title': '披風一覽 - WynnChaYuan',
+    'capes.h1': '披風一覽',
+    'capes.lede': 'WynnChaYuan 玩家上傳的披風。點一件可以轉著看。',
+    'capes.mine': '上傳我的披風',
+    'rules': '<b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。',
+    'view.title': '披風', 'view.flat': '披風的範本圖：左邊正面、右邊背面',
+    'view.type': '格式', 'view.size': '大小', 'view.users': '使用', 'view.date': '上傳',
+    'view.del': '刪除這件披風', 'view.ban': '刪除並封禁上傳的人', 'view.close': '關閉',
+
+    'account.title': '帳號 - WynnChaYuan',
+    'account.h1': '帳號',
+    'account.lede': '網站沒辦法自己確認你的 Minecraft 帳號，所以登入是從遊戲裡開的。',
+    'account.how': '怎麼登入',
+    'account.s1': '進 Wynncraft，按 <b>F6</b> 開 WynnChaYuan 的設定。',
+    'account.s2': '到「<b>徽章與披風</b>」那一頁，確認「讓別人知道我有裝」開著。',
+    'account.s3': '按「<b>披風一覽</b>」旁邊的「打開」。瀏覽器開起來的時候就是登入的。',
+    'account.expire': '登入一天有效，過期了從遊戲裡再開一次。離線帳號沒辦法登入。',
+    'account.banned': '這個帳號不能上傳披風。',
+    'account.signout': '登出這個瀏覽器',
+    'account.mine': '我的披風', 'account.none': '還沒有上傳。', 'account.remove': '移除我的披風',
+    'account.upload': '上傳披風',
+    'account.spec': '要照<a href="' + TEMPLATES + '">範本</a>畫：' + SIZES + '，檔案 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。',
+    'account.pick': '選一張披風的圖', 'account.send': '上傳',
+
+    'admin.title': '管理 - WynnChaYuan',
+    'admin.h1': '管理',
+    'admin.gate': '這一頁只有名單上的開發者能用。請從遊戲裡登入。',
+    'admin.lede': '披風的刪除與封禁在<a href="/capes">披風一覽</a>：點開一件，就看得到是誰傳的。',
+    'admin.bans': '封禁名單',
+    'admin.player': '玩家', 'admin.when': '封禁的時間', 'admin.by': '誰封的',
+    'admin.nobans': '目前沒有人被封禁。',
+    'admin.add': '新增成員',
+    'admin.addnote': '送出之後會在 GitHub 開一個 PR 改 <code>credits.json</code>，合併之後玩家下次同步名單就生效（名牌的葉子、傳 GIF 披風的資格）。',
+    'admin.section': '身分', 'admin.name': '顯示的名字', 'admin.mc': 'Minecraft ID', 'admin.color': '葉子顏色（可以不填）',
+    'admin.contributors': '貢獻者', 'admin.sponsors': '贊助者', 'admin.developers': '開發者',
+    'admin.send': '開 PR',
+
+    js: {
+      login: '登入', loading: '讀取中…',
+      count: '共 {n} 件（相同的圖算一件）', empty: '還沒有人上傳披風。', users: '{n} 人', wearing: '{n} 人',
+      card: '{t} 披風，{n} 人使用',
+      drag: '拖曳可以旋轉。', no3d: '立體檢視載不起來，只能看平面的圖。',
+      confirmDel: '刪除這件披風（{n} 個人在用）？',
+      confirmBan: '刪除這件披風，並封禁用它的 {n} 個人（之後不能再上傳）？',
+      expired: '沒有成功（{s}）。登入一天過期，請從遊戲裡重新開一次。',
+      readFail: '讀不到清單，請重新整理。',
+      roleDev: '開發者', roleMember: '名單上的成員', roleUser: '裝了模組的玩家',
+      mineHint: '{t} · {s} · 拖曳可以旋轉', mineNo3d: '立體檢視載不起來。',
+      confirmRemove: '移除你上傳的披風？', removed: '披風拿掉了', tryLater: '沒有成功，等一下再試',
+      pickFirst: '先選一張圖', uploading: '上傳中…', uploaded: '披風上傳好了，別人幾分鐘內就會看到',
+      failed: '沒有成功（{s}），等一下再試', offline: '連不上，等一下再試',
+      why: {
+        'too large': '檔案太大了（上限 20 MB）',
+        'bad size': '尺寸不對：要照範本畫，' + SIZES + ' 其中一種',
+        'bad format': '這不是 PNG 或 GIF，或是檔案壞了',
+        'too many frames': 'GIF 的格數太多了（最多 120 格）',
+        'gif members only': 'GIF 只有開發者、贊助者、貢獻者能上傳；PNG 大家都可以',
+        'not listed': '目前只開放名單上的成員上傳',
+        banned: '這個帳號不能上傳披風',
+        'uploads off': '現在沒有開放上傳',
+        'slow down': '剛剛才傳過，等一下再試',
+        'login first': '登入過期了，請從遊戲裡重新開一次',
+      },
+      noName: '（不知道名字）', lift: '解除', confirmLift: '解除 {who} 的封禁？', liftFail: '沒有成功（{s}）',
+      sending: '送出中…', prDone: 'PR 開好了', prFail: '沒有成功（{s}）',
+      credit: {
+        'bad name': '顯示的名字不能空白，也不能超過 40 個字',
+        'bad mc': 'Minecraft ID 只能是英數與底線，最多 16 個字',
+        'bad color': '顏色要寫成 #RRGGBB',
+        'bad section': '身分不對',
+        'already listed': '這個 Minecraft ID 已經在那一區了',
+        'github not configured': '還沒設定 GITHUB_TOKEN，沒辦法開 PR（見 tools/presence/README.md）',
+        forbidden: '登入過期了，或你不在開發者名單上',
+      },
+    },
+  },
+
+  en: {
+    html: 'en',
+    'nav.home': 'Home', 'nav.capes': 'Capes', 'nav.account': 'Account', 'nav.admin': 'Admin', 'nav.label': 'Main menu',
+    'lang.label': 'Language',
+
+    'home.title': 'WynnChaYuan - Wynncraft in your language',
+    'home.h1': 'Wynncraft, in your language',
+    'home.lede': 'WynnChaYuan is a translation mod for Wynncraft (Fabric 1.21.11). The original text stays; the translation appears next to it or is written into the same spot - quests, dialogue, items and menus.',
+    'home.modrinth': 'Download on Modrinth',
+    'home.langs': 'Supported languages',
+    'home.logo': 'The WynnChaYuan logo: a speech bubble shaped like a leaf',
+    'home.what': 'What gets translated',
+    'home.f1': 'Items and gear', 'home.f1b': 'Lore, stats and Major IDs, in a side panel or inside the original tooltip.',
+    'home.f2': 'Quests and dialogue', 'home.f2b': 'Written into Wynncraft’s own dialogue box, typed out in step with the original. The quest tracker too.',
+    'home.f3': 'Ability trees', 'home.f3b': 'Nodes, descriptions and archetypes for all five classes.',
+    'home.f4': 'Chat and notices', 'home.f4b': 'Server messages: quest completion, rewards, entering areas. What players say is left alone.',
+    'home.f5': 'Menus and screens', 'home.f5b': 'Trade market, guild and store, plus the lootrun, raid and dungeon panels.',
+    'home.f6': 'Translations update themselves', 'home.f6b': 'New translations take effect the next time you start the game. No mod update needed.',
+    'home.install': 'Install',
+    'home.need': 'Requires <a href="https://modrinth.com/mod/wynntils">Wynntils</a> 4.2 or newer and <a href="https://modrinth.com/mod/fabric-api">Fabric API</a>. Client side only; nothing to install on the server.',
+    'home.how': 'Drop the jar into your mods folder, then press F6 in game for settings.',
+    'home.about': '<b>About the translations.</b> Some text was written by people and passed through AI, a small part is AI translation, and most of the core content has been proofread by hand. Languages other than Traditional Chinese are mostly AI translations built from it, so expect some errors and inconsistent wording. Please report problems on <a href="' + ISSUES + '">GitHub Issues</a>.',
+    'home.badges': 'Badges and capes',
+    'home.dev': 'Developers', 'home.devb': 'Help build and maintain the mod.',
+    'home.sponsor': 'Sponsors', 'home.sponsorb': 'A one-off 20 USD or 2 USD a month and up.',
+    'home.contrib': 'Contributors', 'home.contribb': 'Translate for their language, fix mistakes, or help with the code.',
+    'home.user': 'Everyone with the mod', 'home.userb': 'A grey leaf before their name.',
+    'home.seecapes': 'Browse the capes', 'home.donate': 'Sponsor', 'home.join': 'How to contribute',
+
+    'capes.title': 'Cape gallery - WynnChaYuan',
+    'capes.h1': 'Cape gallery',
+    'capes.lede': 'Capes uploaded by WynnChaYuan players. Click one to turn it around.',
+    'capes.mine': 'Upload my cape',
+    'rules': '<b>Not allowed:</b> political, obscene or sexual, unlawful, racist or hateful content. Capes that break the rules are removed, and the uploader may lose the ability to upload.',
+    'view.title': 'Cape', 'view.flat': 'The cape template image: front on the left, back on the right',
+    'view.type': 'Format', 'view.size': 'Size', 'view.users': 'Players', 'view.date': 'Uploaded',
+    'view.del': 'Delete this cape', 'view.ban': 'Delete and ban the uploaders', 'view.close': 'Close',
+
+    'account.title': 'Account - WynnChaYuan',
+    'account.h1': 'Account',
+    'account.lede': 'This site cannot verify your Minecraft account by itself, so you sign in from inside the game.',
+    'account.how': 'How to sign in',
+    'account.s1': 'Join Wynncraft and press <b>F6</b> to open the WynnChaYuan settings.',
+    'account.s2': 'On the <b>Badge &amp; cape</b> page, make sure “Let others know I use this mod” is on.',
+    'account.s3': 'Press <b>Open</b> next to <b>Cape gallery</b>. Your browser opens already signed in.',
+    'account.expire': 'A sign-in lasts one day; open it from the game again when it expires. Offline accounts cannot sign in.',
+    'account.banned': 'This account cannot upload capes.',
+    'account.signout': 'Sign out of this browser',
+    'account.mine': 'My cape', 'account.none': 'Nothing uploaded yet.', 'account.remove': 'Remove my cape',
+    'account.upload': 'Upload a cape',
+    'account.spec': 'Draw it on the <a href="' + TEMPLATES + '">template</a>: ' + SIZES + ', at most 20 MB. Anyone can upload a PNG; GIFs (up to 120 frames) are for developers, sponsors and contributors.',
+    'account.pick': 'Choose a cape image', 'account.send': 'Upload',
+
+    'admin.title': 'Admin - WynnChaYuan',
+    'admin.h1': 'Admin',
+    'admin.gate': 'This page is for listed developers only. Please sign in from the game.',
+    'admin.lede': 'Deleting capes and banning uploaders happens in the <a href="/capes">cape gallery</a>: open a cape to see who uploaded it.',
+    'admin.bans': 'Bans',
+    'admin.player': 'Player', 'admin.when': 'Banned at', 'admin.by': 'Banned by',
+    'admin.nobans': 'Nobody is banned.',
+    'admin.add': 'Add a member',
+    'admin.addnote': 'This opens a pull request on GitHub that edits <code>credits.json</code>. Once merged, it takes effect the next time players sync the list (name-tag leaf, permission to upload GIF capes).',
+    'admin.section': 'Role', 'admin.name': 'Display name', 'admin.mc': 'Minecraft ID', 'admin.color': 'Leaf colour (optional)',
+    'admin.contributors': 'Contributor', 'admin.sponsors': 'Sponsor', 'admin.developers': 'Developer',
+    'admin.send': 'Open PR',
+
+    js: {
+      login: 'Sign in', loading: 'Loading…',
+      count: '{n} capes (identical images count once)', empty: 'Nobody has uploaded a cape yet.', users: '{n}', wearing: '{n} wearing',
+      card: '{t} cape, worn by {n}',
+      drag: 'Drag to rotate.', no3d: 'The 3D view could not load; only the flat image is shown.',
+      confirmDel: 'Delete this cape (worn by {n})?',
+      confirmBan: 'Delete this cape and ban the {n} players wearing it from uploading?',
+      expired: 'That did not work ({s}). A sign-in lasts one day - open the site from the game again.',
+      readFail: 'Could not load the list. Please refresh.',
+      roleDev: 'Developer', roleMember: 'Listed member', roleUser: 'Player with the mod',
+      mineHint: '{t} · {s} · drag to rotate', mineNo3d: 'The 3D view could not load.',
+      confirmRemove: 'Remove the cape you uploaded?', removed: 'Cape removed', tryLater: 'That did not work - try again later',
+      pickFirst: 'Choose an image first', uploading: 'Uploading…', uploaded: 'Cape uploaded - others will see it within a few minutes',
+      failed: 'That did not work ({s}) - try again later', offline: 'Could not connect - try again later',
+      why: {
+        'too large': 'The file is too large (20 MB at most)',
+        'bad size': 'Wrong size: draw it on the template - ' + SIZES,
+        'bad format': 'This is not a PNG or GIF, or the file is damaged',
+        'too many frames': 'The GIF has too many frames (120 at most)',
+        'gif members only': 'GIFs are for developers, sponsors and contributors; anyone can upload a PNG',
+        'not listed': 'Uploads are open to listed members only for now',
+        banned: 'This account cannot upload capes',
+        'uploads off': 'Uploads are closed right now',
+        'slow down': 'You just uploaded - try again in a moment',
+        'login first': 'Your sign-in expired - open the site from the game again',
+      },
+      noName: '(name unknown)', lift: 'Unban', confirmLift: 'Lift the ban on {who}?', liftFail: 'That did not work ({s})',
+      sending: 'Sending…', prDone: 'Pull request opened', prFail: 'That did not work ({s})',
+      credit: {
+        'bad name': 'The display name cannot be empty or longer than 40 characters',
+        'bad mc': 'A Minecraft ID is letters, digits and underscores, 16 at most',
+        'bad color': 'Write the colour as #RRGGBB',
+        'bad section': 'Unknown role',
+        'already listed': 'That Minecraft ID is already in this section',
+        'github not configured': 'GITHUB_TOKEN is not set, so no pull request can be opened (see tools/presence/README.md)',
+        forbidden: 'Your sign-in expired, or you are not on the developer list',
+      },
+    },
+  },
+};
+
+/** 有哪幾種語言。 */
+export const LANGS = Object.keys(TEXT);
+
+// ------------------------------------------------------------------ 每一頁都有的程式
+
 const COMMON = String.raw`
   var TOKEN_KEY = 'wcy.token';
   (function () {
@@ -171,7 +402,18 @@ const COMMON = String.raw`
     if (text !== undefined) node.textContent = text;
     return node;
   }
+  /* 把 {n} 這種位置換成值。 */
+  function fmt(text, values) {
+    return text.replace(/\{(\w+)\}/g, function (all, key) { return key in values ? values[key] : all; });
+  }
   function bytes(n) { return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
+  /* 換語言：記在 cookie 裡（伺服器照它挑頁面），重新載入。 */
+  Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function (button) {
+    button.onclick = function () {
+      document.cookie = 'lang=' + button.value + '; path=/; max-age=31536000; samesite=lax';
+      location.replace(location.pathname);     /* 網址上的 ?lang= 比 cookie 優先，要拿掉 */
+    };
+  });
   /* 我是誰。沒登入、或通行證過期了，就是 null。 */
   var whoami = !token() ? Promise.resolve(null) : api('/me').then(function (r) {
     if (r.status === 401) { try { localStorage.removeItem(TOKEN_KEY); } catch (e) {} return null; }
@@ -181,7 +423,7 @@ const COMMON = String.raw`
     var slot = document.getElementById('me');
     slot.replaceChildren();
     if (!me) {
-      var link = el('a', '', '登入');
+      var link = el('a', '', L.login);
       link.href = '/account';
       slot.append(link);
       return;
@@ -196,81 +438,86 @@ const COMMON = String.raw`
   });
 `;
 
-function layout(title, active, body, script) {
-  const nav = [['/', '首頁'], ['/capes', '披風'], ['/account', '帳號']]
-    .map(([href, label]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '') + '>' + label + '</a>')
-    .join('');
-  return '<!doctype html>\n<html lang="zh-Hant">\n<head>\n<meta charset="utf-8">\n'
+/** 語言切換上每一種語言叫什麼（用它自己的話寫）。 */
+const LANG_NAMES = { zh: '中文', en: 'English' };
+
+function layout(lang, title, active, body, script) {
+  const nav = [['/', 'nav.home'], ['/capes', 'nav.capes'], ['/account', 'nav.account']]
+    .map(([href, key]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '')
+      + '>%%' + key + '%%</a>').join('');
+  const switcher = LANGS.map((code) => '<button type="button" value="' + code + '" aria-pressed="'
+    + (code === lang) + '">' + LANG_NAMES[code] + '</button>').join('');
+  return '<!doctype html>\n<html lang="%%html%%">\n<head>\n<meta charset="utf-8">\n'
     + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     + '<meta name="color-scheme" content="dark">\n'
     + '<title>' + title + '</title>\n<style>' + STYLE + '</style>\n</head>\n<body>\n'
     + '<div class="top"><div class="in">'
-    + '<a class="brand" href="/" style="color:var(--ink)"><span style="color:var(--leaf);display:flex">' + LEAF + '</span>WynnChaYuan</a>'
-    + '<nav aria-label="主選單">' + nav
-    + '<a href="/admin" id="nav-admin" hidden' + (active === '/admin' ? ' aria-current="page"' : '') + '>管理</a></nav>'
-    + '<div class="me" id="me"></div>'
+    + '<a class="brand" href="/"><span>' + LEAF + '</span>WynnChaYuan</a>'
+    + '<nav aria-label="%%nav.label%%">' + nav
+    + '<a href="/admin" id="nav-admin" hidden' + (active === '/admin' ? ' aria-current="page"' : '')
+    + '>%%nav.admin%%</a></nav>'
+    + '<div class="tools"><div class="lang" role="group" aria-label="%%lang.label%%">' + switcher + '</div>'
+    + '<div class="me" id="me"></div></div>'
     + '</div></div>\n<main>' + body + '</main>\n'
     + '<footer><div class="in"><span>© 2026 WynnChaYuan - All rights reserved.</span>'
     + '<span>Designed by LyuChaCha</span></div></footer>\n'
-    + '<script>' + COMMON + '</script>\n' + (script || '') + '\n</body>\n</html>';
+    + '<script>var L = %%js%%;' + COMMON + '</script>\n' + (script || '') + '\n</body>\n</html>';
 }
 
 // ------------------------------------------------------------------ 首頁
 
-const RAW = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/2026/';
+const leaf = (colour) => '<span style="color:' + colour + ';display:flex">' + LEAF + '</span>';
 
-const HOME = layout('WynnChaYuan - Wynncraft 的多語言翻譯模組', '/', String.raw`
+const HOME = String.raw`
   <section class="hero">
     <div>
-      <h1>把 Wynncraft 翻成你的語言</h1>
-      <p class="lede">WynnChaYuan 是 Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。原文保留，譯文顯示在旁邊，或直接寫進原本的位置——任務、對話、物品與介面都看得懂。</p>
+      <h1>%%home.h1%%</h1>
+      <p class="lede">%%home.lede%%</p>
       <div class="cta">
-        <a class="btn primary" href="https://modrinth.com/mod/wynnchayuan">從 Modrinth 下載</a>
+        <a class="btn primary" href="https://modrinth.com/mod/wynnchayuan">%%home.modrinth%%</a>
         <a class="btn" href="https://www.curseforge.com/minecraft/mc-mods/wynnchayuan">CurseForge</a>
         <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/releases/latest">GitHub</a>
       </div>
-      <div class="chips" aria-label="支援的語言">
+      <div class="chips" aria-label="%%home.langs%%">
         <span class="chip">繁體中文</span><span class="chip">简体中文</span><span class="chip">日本語</span>
         <span class="chip">한국어</span><span class="chip">Русский</span><span class="chip">Español</span><span class="chip">Türkçe</span>
       </div>
     </div>
-    <img src="` + RAW + String.raw`wynnchayuan-logo-transparent-on-dark-1024.png" alt="WynnChaYuan 的標誌：一片葉子形狀的對話框" width="380" height="380">
+    <img src="` + LOGO + String.raw`" alt="%%home.logo%%" width="380" height="380">
   </section>
 
-  <h2>翻了什麼</h2>
+  <h2>%%home.what%%</h2>
   <div class="features">
-    <div class="panel"><h3>物品與裝備</h3><p>裝備敘述、屬性、Major ID。旁邊另開面板，或寫進原本的說明框。</p></div>
-    <div class="panel"><h3>任務與對話</h3><p>寫進 Wynncraft 自己的對話框，逐字打出的節奏跟原文同步；任務追蹤也有。</p></div>
-    <div class="panel"><h3>技能樹</h3><p>五個職業的節點、說明與流派。</p></div>
-    <div class="panel"><h3>聊天與提示</h3><p>伺服器發的訊息：任務完成、獎勵、進出區域。玩家的發言不翻。</p></div>
-    <div class="panel"><h3>選單與介面</h3><p>交易市場、公會、商城，還有 Lootrun、討伐戰、地城的面板。</p></div>
-    <div class="panel"><h3>譯文自動更新</h3><p>新的翻譯合併之後，下次進遊戲就生效，不必更新模組。</p></div>
+    <div class="panel"><h3>%%home.f1%%</h3><p>%%home.f1b%%</p></div>
+    <div class="panel"><h3>%%home.f2%%</h3><p>%%home.f2b%%</p></div>
+    <div class="panel"><h3>%%home.f3%%</h3><p>%%home.f3b%%</p></div>
+    <div class="panel"><h3>%%home.f4%%</h3><p>%%home.f4b%%</p></div>
+    <div class="panel"><h3>%%home.f5%%</h3><p>%%home.f5b%%</p></div>
+    <div class="panel"><h3>%%home.f6%%</h3><p>%%home.f6b%%</p></div>
   </div>
 
-  <h2>安裝</h2>
+  <h2>%%home.install%%</h2>
   <div class="split">
     <div class="panel">
-      <p style="margin:0">需要 <a href="https://modrinth.com/mod/wynntils">Wynntils</a> 4.2 以上與 <a href="https://modrinth.com/mod/fabric-api">Fabric API</a>。純客戶端，伺服器不需要裝。</p>
-      <p class="note" style="margin:8px 0 0">把 jar 放進 mods 資料夾，進遊戲按 F6 開設定。</p>
+      <p style="margin:0">%%home.need%%</p>
+      <p class="note" style="margin:8px 0 0">%%home.how%%</p>
     </div>
-    <div class="panel note">
-      <b>關於譯文。</b>部分譯文由人工輸入再經 AI 轉出，一小部分直接由 AI 翻譯，大部分基礎內容經過人工校稿。其他語言目前多半是圍繞著繁體中文再做 AI 翻譯，可能有錯譯與用詞不一致。遇到問題請到 <a href="https://github.com/LyuChaCha/WynnChaYuan/issues">GitHub Issues</a> 回報。
-    </div>
+    <div class="panel note">%%home.about%%</div>
   </div>
 
-  <h2>徽章與披風</h2>
+  <h2>%%home.badges%%</h2>
   <div class="roles">
-    <div class="panel role"><span style="color:#FFD24A;display:flex">` + LEAF + String.raw`</span><div><b>開發者</b><span>協助程式開發與維護。</span></div></div>
-    <div class="panel role"><span style="color:#5BD8E8;display:flex">` + LEAF + String.raw`</span><div><b>贊助者</b><span>單次 20 USD 或每月 2 USD 以上。</span></div></div>
-    <div class="panel role"><span style="color:#5BD86F;display:flex">` + LEAF + String.raw`</span><div><b>貢獻者</b><span>替自己的語言翻譯、修正錯誤，或提供程式上的實質協助。</span></div></div>
-    <div class="panel role"><span style="color:#A8A8A8;display:flex">` + LEAF + String.raw`</span><div><b>裝了模組的人</b><span>名字前面是一片灰色的葉子。</span></div></div>
+    <div class="panel role">` + leaf('#FFD24A') + String.raw`<span><b>%%home.dev%%</b><span>%%home.devb%%</span></span></div>
+    <div class="panel role">` + leaf('#5BD8E8') + String.raw`<span><b>%%home.sponsor%%</b><span>%%home.sponsorb%%</span></span></div>
+    <div class="panel role">` + leaf('#5BD86F') + String.raw`<span><b>%%home.contrib%%</b><span>%%home.contribb%%</span></span></div>
+    <div class="panel role">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b><span>%%home.userb%%</span></span></div>
   </div>
   <div class="cta">
-    <a class="btn" href="/capes">看看大家的披風</a>
-    <a class="btn" href="https://ko-fi.com/lyuchacha">贊助</a>
-    <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">怎麼參與</a>
+    <a class="btn" href="/capes">%%home.seecapes%%</a>
+    <a class="btn" href="https://ko-fi.com/lyuchacha">%%home.donate%%</a>
+    <a class="btn" href="https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md">%%home.join%%</a>
   </div>
-`);
+`;
 
 // ------------------------------------------------------------------ 披風一覽
 
@@ -348,43 +595,46 @@ const VIEWER = String.raw`
 
 const SKINVIEW = '<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.4.1/bundles/skinview3d.bundle.js"></script>';
 
-const CAPES = layout('披風一覽 - WynnChaYuan', '/capes', String.raw`
-  <h1>披風一覽</h1>
-  <p class="lede">WynnChaYuan 玩家上傳的披風。點一件可以轉著看。</p>
+const CAPES = String.raw`
+  <h1>%%capes.h1%%</h1>
+  <p class="lede">%%capes.lede%%</p>
   <div class="bar">
-    <span class="count" id="count">讀取中…</span>
-    <a class="btn" href="/account">上傳我的披風</a>
+    <span class="count" id="count"></span>
+    <a class="btn" href="/account">%%capes.mine%%</a>
   </div>
-  <p class="panel note"><b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。違規的披風會被移除，上傳的人可能不能再傳。</p>
+  <p class="panel note">%%rules%%</p>
   <div class="grid" id="grid" style="margin-top:22px"></div>
 
   <dialog id="viewer" aria-labelledby="viewer-title">
     <div class="view">
       <canvas class="model" id="model" width="520" height="440"></canvas>
       <div class="side">
-        <h2 id="viewer-title">披風</h2>
-        <img class="flat" id="flat" alt="披風的範本圖：左邊正面、右邊背面">
+        <h2 id="viewer-title">%%view.title%%</h2>
+        <img class="flat" id="flat" alt="%%view.flat%%">
         <dl>
-          <dt>格式</dt><dd id="d-type"></dd>
-          <dt>大小</dt><dd id="d-size"></dd>
-          <dt>使用</dt><dd id="d-users"></dd>
-          <dt>上傳</dt><dd id="d-date"></dd>
+          <dt>%%view.type%%</dt><dd id="d-type"></dd>
+          <dt>%%view.size%%</dt><dd id="d-size"></dd>
+          <dt>%%view.users%%</dt><dd id="d-users"></dd>
+          <dt>%%view.date%%</dt><dd id="d-date"></dd>
         </dl>
         <ul class="owners" id="owners" hidden></ul>
-        <p class="hint" id="hint">拖曳可以旋轉。</p>
+        <p class="hint" id="hint"></p>
         <div class="spacer"></div>
-        <button class="btn danger" id="del" hidden>刪除這件披風</button>
-        <button class="btn danger" id="ban" hidden>刪除並封禁上傳的人</button>
-        <button class="btn" id="close">關閉</button>
+        <button class="btn danger" id="del" hidden>%%view.del%%</button>
+        <button class="btn danger" id="ban" hidden>%%view.ban%%</button>
+        <button class="btn" id="close">%%view.close%%</button>
       </div>
     </div>
   </dialog>
-`, SKINVIEW + '<script>' + VIEWER + String.raw`
+`;
+
+const CAPES_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var grid = document.getElementById('grid');
   var dialog = document.getElementById('viewer');
   var current = null;
   var viewer = null;
   var developer = false;
+  document.getElementById('count').textContent = L.loading;
   function url(cape) { return '/api/cape/' + cape.ids[0] + '?v=' + cape.v; }
 
   function open(cape) {
@@ -392,7 +642,7 @@ const CAPES = layout('披風一覽 - WynnChaYuan', '/capes', String.raw`
     document.getElementById('flat').src = url(cape);
     document.getElementById('d-type').textContent = cape.t.toUpperCase();
     document.getElementById('d-size').textContent = bytes(cape.s);
-    document.getElementById('d-users').textContent = cape.ids.length + ' 人';
+    document.getElementById('d-users').textContent = fmt(L.users, { n: cape.ids.length });
     document.getElementById('d-date').textContent = new Date(cape.v).toLocaleDateString();
     document.getElementById('del').hidden = !developer;
     document.getElementById('ban').hidden = !developer;
@@ -413,8 +663,8 @@ const CAPES = layout('披風一覽 - WynnChaYuan', '/capes', String.raw`
     dialog.showModal();
     var hint = document.getElementById('hint');
     if (!viewer) viewer = makeViewer(document.getElementById('model'));
-    if (!viewer) { hint.textContent = '立體檢視載不起來，只能看平面的圖。'; return; }
-    hint.textContent = '拖曳可以旋轉。';
+    if (!viewer) { hint.textContent = L.no3d; return; }
+    hint.textContent = L.drag;
     wear(viewer, url(cape), cape.t === 'gif');
   }
   function shut() { stopCape(); current = null; if (dialog.open) dialog.close(); }
@@ -425,15 +675,13 @@ const CAPES = layout('披風一覽 - WynnChaYuan', '/capes', String.raw`
   function remove(ban) {
     var cape = current;
     if (!cape) return;
-    var text = ban ? '刪除這件披風，並封禁用它的 ' + cape.ids.length + ' 個人（之後不能再上傳）？'
-                   : '刪除這件披風（' + cape.ids.length + ' 個人在用）？';
-    if (!confirm(text)) return;
+    if (!confirm(fmt(ban ? L.confirmBan : L.confirmDel, { n: cape.ids.length }))) return;
     var body = { hash: cape.h };
     if (ban) body.ban = true;
     api('/admin/remove', { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } })
       .then(function (r) {
         if (r.ok) { shut(); load(); }
-        else alert('沒有成功（' + r.status + '）。登入一天過期，請從遊戲裡重新開一次。');
+        else alert(fmt(L.expired, { s: r.status }));
       });
   }
   document.getElementById('del').onclick = function () { remove(false); };
@@ -442,13 +690,14 @@ const CAPES = layout('披風一覽 - WynnChaYuan', '/capes', String.raw`
   function load() {
     return api(developer ? '/admin/capes' : '/capes').then(function (r) { return r.json(); }).then(function (data) {
       var count = document.getElementById('count');
-      count.replaceChildren('共 ', el('b', '', String(data.capes.length)), ' 件（相同的圖算一件）');
+      var parts = L.count.split('{n}');
+      count.replaceChildren(parts[0], el('b', '', String(data.capes.length)), parts[1] || '');
       grid.replaceChildren();
-      if (!data.capes.length) grid.append(el('div', 'empty', '還沒有人上傳披風。'));
+      if (!data.capes.length) grid.append(el('div', 'empty', L.empty));
       data.capes.forEach(function (cape) {
         var card = el('button', 'card');
         card.type = 'button';
-        card.setAttribute('aria-label', cape.t.toUpperCase() + ' 披風，' + cape.ids.length + ' 人使用');
+        card.setAttribute('aria-label', fmt(L.card, { t: cape.t.toUpperCase(), n: cape.ids.length }));
         var stage = el('div', 'stage');
         var face = el('div', 'face');
         var img = el('img');
@@ -458,7 +707,7 @@ const CAPES = layout('披風一覽 - WynnChaYuan', '/capes', String.raw`
         face.append(img);
         stage.append(face);
         var meta = el('div', 'meta');
-        meta.append(el('span', 'tag ' + cape.t, cape.t.toUpperCase()), el('span', 'who', cape.ids.length + ' 人'));
+        meta.append(el('span', 'tag ' + cape.t, cape.t.toUpperCase()), el('span', 'who', fmt(L.wearing, { n: cape.ids.length })));
         card.append(stage, meta);
         card.onclick = function () { open(cape); };
         grid.append(card);
@@ -468,62 +717,52 @@ const CAPES = layout('披風一覽 - WynnChaYuan', '/capes', String.raw`
   whoami.then(function (me) {
     developer = Boolean(me && me.developer);
     return load();
-  }).catch(function () { document.getElementById('count').textContent = '讀不到清單，請重新整理。'; });
-` + '</script>');
+  }).catch(function () { document.getElementById('count').textContent = L.readFail; });
+` + '</script>';
 
 // ------------------------------------------------------------------ 帳號
 
-const ACCOUNT = layout('帳號 - WynnChaYuan', '/account', String.raw`
-  <h1>帳號</h1>
+const ACCOUNT = String.raw`
+  <h1>%%account.h1%%</h1>
   <div id="out" hidden>
-    <p class="lede">網站沒辦法自己確認你的 Minecraft 帳號，所以登入是從遊戲裡開的。</p>
+    <p class="lede">%%account.lede%%</p>
     <div class="panel" style="margin-top:22px;max-width:640px">
-      <b>怎麼登入</b>
+      <b>%%account.how%%</b>
       <ol class="steps">
-        <li>進 Wynncraft，按 <b>F6</b> 開 WynnChaYuan 的設定。</li>
-        <li>到「<b>徽章與披風</b>」那一頁，確認「讓別人知道我有裝」開著。</li>
-        <li>按「<b>披風一覽</b>」旁邊的「打開」。瀏覽器開起來的時候就是登入的。</li>
+        <li>%%account.s1%%</li>
+        <li>%%account.s2%%</li>
+        <li>%%account.s3%%</li>
       </ol>
-      <p class="note" style="margin:10px 0 0">登入一天有效，過期了從遊戲裡再開一次。離線帳號沒辦法登入。</p>
+      <p class="note" style="margin:10px 0 0">%%account.expire%%</p>
     </div>
   </div>
   <div id="in" hidden>
     <div class="account" style="margin-top:22px">
       <div class="panel">
         <div class="who-am-i"><img id="avatar" alt=""><div><b id="name"></b><div class="note" id="roles"></div></div></div>
-        <p class="note" id="banned" hidden style="color:var(--danger);margin:12px 0 0">這個帳號不能上傳披風。</p>
-        <div style="margin-top:16px"><button class="btn" id="signout">登出這個瀏覽器</button></div>
+        <p class="note" id="banned" hidden style="color:var(--danger);margin:12px 0 0">%%account.banned%%</p>
+        <div style="margin-top:16px"><button class="btn" id="signout">%%account.signout%%</button></div>
       </div>
       <div class="panel">
-        <b>我的披風</b>
-        <p class="note" id="nocape" style="margin:8px 0 0">還沒有上傳。</p>
+        <b>%%account.mine%%</b>
+        <p class="note" id="nocape" style="margin:8px 0 0">%%account.none%%</p>
         <canvas class="model" id="mine" width="400" height="320" hidden style="height:320px;border-radius:8px;margin-top:10px"></canvas>
         <p class="hint" id="minehint" hidden style="margin-top:6px"></p>
-        <div style="margin-top:12px"><button class="btn danger" id="remove" hidden>移除我的披風</button></div>
+        <div style="margin-top:12px"><button class="btn danger" id="remove" hidden>%%account.remove%%</button></div>
       </div>
     </div>
-    <h2>上傳披風</h2>
+    <h2>%%account.upload%%</h2>
     <div class="panel" style="max-width:720px">
-      <p class="note" style="margin:0 0 12px">要照<a href="https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates">範本</a>畫：22×17、44×34、88×68 或 176×136，檔案 20 MB 以內。PNG 大家都能傳；GIF（最多 120 格）只有開發者、贊助者、貢獻者能傳。</p>
-      <p class="note" style="margin:0 0 12px"><b>不可以上傳：</b>政治、不雅或色情、違反法規、種族歧視或仇恨的內容。</p>
-      <input type="file" id="file" accept="image/png,image/gif" aria-label="選一張披風的圖">
-      <button class="btn primary" id="upload" style="margin-left:8px">上傳</button>
+      <p class="note" style="margin:0 0 12px">%%account.spec%%</p>
+      <p class="note" style="margin:0 0 12px">%%rules%%</p>
+      <input type="file" id="file" accept="image/png,image/gif" aria-label="%%account.pick%%">
+      <button class="btn primary" id="upload" style="margin-left:8px">%%account.send%%</button>
       <p class="msg" id="msg" role="status"></p>
     </div>
   </div>
-`, SKINVIEW + '<script>' + VIEWER + String.raw`
-  var WHY = {
-    'too large': '檔案太大了（上限 20 MB）',
-    'bad size': '尺寸不對：要照範本畫，22×17、44×34、88×68、176×136 其中一種',
-    'bad format': '這不是 PNG 或 GIF，或是檔案壞了',
-    'too many frames': 'GIF 的格數太多了（最多 120 格）',
-    'gif members only': 'GIF 只有開發者、贊助者、貢獻者能上傳；PNG 大家都可以',
-    'not listed': '目前只開放名單上的成員上傳',
-    'banned': '這個帳號不能上傳披風',
-    'uploads off': '現在沒有開放上傳',
-    'slow down': '剛剛才傳過，等一下再試',
-    'login first': '登入過期了，請從遊戲裡重新開一次'
-  };
+`;
+
+const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
   var msg = document.getElementById('msg');
   function say(text, ok) { msg.textContent = text; msg.className = 'msg ' + (ok ? 'ok' : 'bad'); }
   var viewer = null;
@@ -537,8 +776,8 @@ const ACCOUNT = layout('帳號 - WynnChaYuan', '/account', String.raw`
     hint.hidden = !me.cape;
     if (!me.cape) { stopCape(); return; }
     if (!viewer) viewer = makeViewer(canvas);
-    if (!viewer) { hint.textContent = '立體檢視載不起來。'; canvas.hidden = true; return; }
-    hint.textContent = me.cape.t.toUpperCase() + ' · ' + bytes(me.cape.s) + ' · 拖曳可以旋轉';
+    if (!viewer) { hint.textContent = L.mineNo3d; canvas.hidden = true; return; }
+    hint.textContent = fmt(L.mineHint, { t: me.cape.t.toUpperCase(), s: bytes(me.cape.s) });
     wear(viewer, '/api/cape/' + me.id + '?v=' + me.cape.v, me.cape.t === 'gif');
   }
   function refresh() {
@@ -550,73 +789,66 @@ const ACCOUNT = layout('帳號 - WynnChaYuan', '/account', String.raw`
     if (!me) return;
     document.getElementById('avatar').src = head(me.name, 96);
     document.getElementById('name').textContent = me.name;
-    document.getElementById('roles').textContent = me.developer ? '開發者' : (me.member ? '名單上的成員' : '裝了模組的玩家');
+    document.getElementById('roles').textContent = me.developer ? L.roleDev : (me.member ? L.roleMember : L.roleUser);
     document.getElementById('banned').hidden = !me.banned;
     show(me);
   });
   document.getElementById('signout').onclick = signOut;
   document.getElementById('remove').onclick = function () {
-    if (!confirm('移除你上傳的披風？')) return;
+    if (!confirm(L.confirmRemove)) return;
     api('/cape', { method: 'DELETE' }).then(function (r) {
-      if (r.ok) { say('披風拿掉了', true); refresh(); } else say('沒有成功，等一下再試', false);
+      if (r.ok) { say(L.removed, true); refresh(); } else say(L.tryLater, false);
     });
   };
   document.getElementById('upload').onclick = function () {
     var file = document.getElementById('file').files[0];
-    if (!file) { say('先選一張圖', false); return; }
-    if (file.size > 20 * 1024 * 1024) { say(WHY['too large'], false); return; }
-    say('上傳中…', true);
+    if (!file) { say(L.pickFirst, false); return; }
+    if (file.size > 20 * 1024 * 1024) { say(L.why['too large'], false); return; }
+    say(L.uploading, true);
     api('/cape', { method: 'PUT', body: file, headers: { 'content-type': file.type || 'application/octet-stream' } })
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (body) {
-          if (r.ok) { say('披風上傳好了，別人幾分鐘內就會看到', true); refresh(); }
-          else say(WHY[body.why] || '沒有成功（' + r.status + '），等一下再試', false);
+          if (r.ok) { say(L.uploaded, true); refresh(); }
+          else say(L.why[body.why] || fmt(L.failed, { s: r.status }), false);
         });
-      }).catch(function () { say('連不上，等一下再試', false); });
+      }).catch(function () { say(L.offline, false); });
   };
-` + '</script>');
+` + '</script>';
 
 // ------------------------------------------------------------------ 管理
 
-const ADMIN = layout('管理 - WynnChaYuan', '/admin', String.raw`
-  <h1>管理</h1>
-  <p class="lede" id="gate">這一頁只有名單上的開發者能用。請從遊戲裡登入。</p>
+const ADMIN = String.raw`
+  <h1>%%admin.h1%%</h1>
+  <p class="lede" id="gate">%%admin.gate%%</p>
   <div id="panel" hidden>
-    <p class="lede">披風的刪除與封禁在<a href="/capes">披風一覽</a>：點開一件，就看得到是誰傳的。</p>
+    <p class="lede">%%admin.lede%%</p>
 
-    <h2>封禁名單</h2>
+    <h2>%%admin.bans%%</h2>
     <div class="panel scroll">
       <table>
-        <thead><tr><th>玩家</th><th>UUID</th><th>封禁的時間</th><th>誰封的</th><th></th></tr></thead>
+        <thead><tr><th>%%admin.player%%</th><th>UUID</th><th>%%admin.when%%</th><th>%%admin.by%%</th><th></th></tr></thead>
         <tbody id="bans"></tbody>
       </table>
-      <p class="note" id="nobans" hidden style="margin:10px">目前沒有人被封禁。</p>
+      <p class="note" id="nobans" hidden style="margin:10px">%%admin.nobans%%</p>
     </div>
 
-    <h2>新增成員</h2>
+    <h2>%%admin.add%%</h2>
     <div class="panel">
-      <p class="note" style="margin:0 0 14px">送出之後會在 GitHub 開一個 PR 改 <code>credits.json</code>，合併之後玩家下次同步名單就生效（名牌的葉子、傳 GIF 披風的資格）。</p>
+      <p class="note" style="margin:0 0 14px">%%admin.addnote%%</p>
       <div class="form">
-        <div><label for="c-section">身分</label>
-          <select id="c-section"><option value="contributors">貢獻者</option><option value="sponsors">贊助者</option><option value="developers">開發者</option></select></div>
-        <div><label for="c-name">顯示的名字</label><input type="text" id="c-name" maxlength="40" autocomplete="off"></div>
-        <div><label for="c-mc">Minecraft ID</label><input type="text" id="c-mc" maxlength="16" autocomplete="off" spellcheck="false"></div>
-        <div><label for="c-color">葉子顏色（可以不填）</label><input type="text" id="c-color" maxlength="7" placeholder="#RRGGBB" autocomplete="off" spellcheck="false"></div>
-        <div><button class="btn primary" id="c-send">開 PR</button></div>
+        <div><label for="c-section">%%admin.section%%</label>
+          <select id="c-section"><option value="contributors">%%admin.contributors%%</option><option value="sponsors">%%admin.sponsors%%</option><option value="developers">%%admin.developers%%</option></select></div>
+        <div><label for="c-name">%%admin.name%%</label><input type="text" id="c-name" maxlength="40" autocomplete="off"></div>
+        <div><label for="c-mc">%%admin.mc%%</label><input type="text" id="c-mc" maxlength="16" autocomplete="off" spellcheck="false"></div>
+        <div><label for="c-color">%%admin.color%%</label><input type="text" id="c-color" maxlength="7" placeholder="#RRGGBB" autocomplete="off" spellcheck="false"></div>
+        <div><button class="btn primary" id="c-send">%%admin.send%%</button></div>
       </div>
       <p class="msg" id="c-msg" role="status"></p>
     </div>
   </div>
-`, '<script>' + String.raw`
-  var CREDIT_WHY = {
-    'bad name': '顯示的名字不能空白，也不能超過 40 個字',
-    'bad mc': 'Minecraft ID 只能是英數與底線，最多 16 個字',
-    'bad color': '顏色要寫成 #RRGGBB',
-    'bad section': '身分不對',
-    'already listed': '這個 Minecraft ID 已經在那一區了',
-    'github not configured': '還沒設定 GITHUB_TOKEN，沒辦法開 PR（見 tools/presence/README.md）',
-    'forbidden': '登入過期了，或你不在開發者名單上'
-  };
+`;
+
+const ADMIN_JS = '<script>' + String.raw`
   function loadBans() {
     return api('/admin/bans').then(function (r) { return r.json(); }).then(function (data) {
       var body = document.getElementById('bans');
@@ -631,14 +863,14 @@ const ADMIN = layout('管理 - WynnChaYuan', '/admin', String.raw`
           img.src = head(ban.name, 44);
           who.append(img);
         }
-        who.append(ban.name || '（不知道名字）');
+        who.append(ban.name || L.noName);
         var uuid = el('td');
         uuid.append(el('code', '', ban.uuid));
-        var lift = el('button', 'btn', '解除');
+        var lift = el('button', 'btn', L.lift);
         lift.onclick = function () {
-          if (!confirm('解除 ' + (ban.name || ban.uuid) + ' 的封禁？')) return;
+          if (!confirm(fmt(L.confirmLift, { who: ban.name || ban.uuid }))) return;
           api('/admin/unban', { method: 'POST', body: JSON.stringify({ uuid: ban.uuid }), headers: { 'content-type': 'application/json' } })
-            .then(function (r) { if (r.ok) loadBans(); else alert('沒有成功（' + r.status + '）'); });
+            .then(function (r) { if (r.ok) loadBans(); else alert(fmt(L.liftFail, { s: r.status })); });
         };
         var action = el('td');
         action.append(lift);
@@ -663,28 +895,78 @@ const ADMIN = layout('管理 - WynnChaYuan', '/admin', String.raw`
     var color = document.getElementById('c-color').value.trim();
     if (color) entry.color = color;
     msg.className = 'msg ok';
-    msg.textContent = '送出中…';
+    msg.textContent = L.sending;
     api('/admin/credits', { method: 'POST', body: JSON.stringify(entry), headers: { 'content-type': 'application/json' } })
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (body) {
           msg.replaceChildren();
           if (r.ok) {
             msg.className = 'msg ok';
+            msg.append(L.prDone);
             if (String(body.url).indexOf('https://github.com/') === 0) {
               var link = el('a', '', body.url);
               link.href = body.url;
-              msg.append('PR 開好了：', link);
-            } else {
-              msg.textContent = 'PR 開好了';
+              msg.append(': ', link);
             }
           } else {
             msg.className = 'msg bad';
-            msg.textContent = CREDIT_WHY[body.why] || '沒有成功（' + (body.why || r.status) + '）';
+            msg.textContent = L.credit[body.why] || fmt(L.prFail, { s: body.why || r.status });
           }
         });
-      }).catch(function () { msg.className = 'msg bad'; msg.textContent = '連不上，等一下再試'; });
+      }).catch(function () { msg.className = 'msg bad'; msg.textContent = L.offline; });
   };
-` + '</script>');
+` + '</script>';
 
-/** 路徑 → 那一頁的 HTML。 */
-export const PAGES = { '/': HOME, '/capes': CAPES, '/account': ACCOUNT, '/admin': ADMIN };
+/** 每一頁：標題的鍵、內容、程式。 */
+const PAGES = {
+  '/': ['home.title', HOME, ''],
+  '/capes': ['capes.title', CAPES, CAPES_JS],
+  '/account': ['account.title', ACCOUNT, ACCOUNT_JS],
+  '/admin': ['admin.title', ADMIN, ADMIN_JS],
+};
+
+/** 網站有哪幾頁。 */
+export const PATHS = Object.keys(PAGES);
+
+const built = new Map();
+
+/**
+ * 某一頁的 HTML。
+ *
+ * @param path 路徑
+ * @param lang 語言（LANGS 之一；別的當成英文）
+ * @returns 沒有這一頁回 null
+ */
+export function render(path, lang) {
+  if (!Object.hasOwn(PAGES, path)) return null;
+  const code = Object.hasOwn(TEXT, lang) ? lang : 'en';
+  const key = code + ' ' + path;
+  if (!built.has(key)) {
+    const text = TEXT[code];
+    const [title, body, script] = PAGES[path];
+    const html = layout(code, '%%' + title + '%%', path, body, script)
+      .replace(/%%([\w.]+)%%/g, (all, name) => {
+        if (name === 'js') return JSON.stringify(text.js).replace(/</g, '\\u003c');
+        return Object.hasOwn(text, name) ? text[name] : all;
+      });
+    built.set(key, html);
+  }
+  return built.get(key);
+}
+
+/**
+ * 訪客要看哪一種語言：選過的（cookie）優先，沒選過看瀏覽器的語言，再沒有就英文。
+ *
+ * @param cookie Cookie 標頭
+ * @param accept Accept-Language 標頭
+ */
+export function pickLang(cookie, accept) {
+  const chosen = /(?:^|;\s*)lang=([a-z]+)/.exec(cookie || '');
+  if (chosen && LANGS.includes(chosen[1])) return chosen[1];
+  for (const part of String(accept || '').toLowerCase().split(',')) {
+    const tag = part.split(';')[0].trim();
+    if (tag.startsWith('zh')) return 'zh';
+    if (tag.startsWith('en')) return 'en';
+  }
+  return 'en';
+}

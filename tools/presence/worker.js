@@ -41,7 +41,7 @@
  * 部署方式見同一個資料夾的 README.md。
  */
 
-import { PAGES } from './site.js';
+import { LANGS, PATHS, pickLang, render } from './site.js';
 
 /** 公開代碼的樣子：24 個小寫十六進位字元。 */
 const ID = /^[0-9a-f]{24}$/;
@@ -788,11 +788,13 @@ async function handleAddCredit(request, env, now) {
   }
 }
 
-function page(html) {
+function page(html, lang) {
   return new Response(html, {
     headers: {
       'content-type': 'text/html; charset=utf-8',
+      'content-language': lang === 'zh' ? 'zh-Hant' : lang,
       'cache-control': 'no-store',
+      vary: 'Cookie, Accept-Language',
       'referrer-policy': 'no-referrer',
       'x-content-type-options': 'nosniff',
       'x-frame-options': 'DENY',
@@ -810,7 +812,13 @@ export default {
     const url = new URL(request.url);
     const now = Date.now();
     const path = url.pathname;
-    if (request.method === 'GET' && Object.hasOwn(PAGES, path)) return page(PAGES[path]);
+    if (request.method === 'GET' && PATHS.includes(path)) {
+      // 語言：網址上指定的（?lang=en，給人貼連結用）> 訪客選過的 > 瀏覽器的語言 > 英文
+      const asked = url.searchParams.get('lang');
+      const lang = LANGS.includes(asked) ? asked
+        : pickLang(request.headers.get('cookie'), request.headers.get('accept-language'));
+      return page(render(path, lang), lang);
+    }
     if (request.method === 'GET' && path === '/gallery') {
       return Response.redirect(url.origin + '/capes', 302);
     }
