@@ -10,20 +10,6 @@
     "The Canyon Colossus",
     "The Nameless Anomaly",
     "The Wartorn Palace",
-    "Time Elapsed:",
-    "Hover for more",
-    [
-      "Raid Experience",
-      "%)"
-    ],
-    [
-      "Reward Pulls",
-      "%)"
-    ],
-    [
-      "Aspect Pulls",
-      "%)"
-    ],
     "would like to start",
     [
       "has chosen the",
@@ -37,6 +23,23 @@
     "Slay Target!",
     "Spelunk!",
     "Destroy!"
+  ],
+  "_wynnmod_chat_first": "下面這一組的鍵後面多了「@unless:類別名」：那個模組有裝、而且<b>沒有</b>那個類別時才生效。WynnMod 新的版本（2.3.7 看過）是在封包那一層讀聊天的——ClientPacketListenerMixin 包住 handleSystemChat 裡呼叫 ChatListener.handleSystemMessage 那一處，發 S2CPacketEvents$ChatMsg，RaidState.raidEndData 讀的就是它。Wynntils 的事件是在 handleSystemMessage <b>裡面</b>才發的，我們更晚，所以它讀到的一定是原文，結算那幾列翻不翻都不影響它。1.0.0_1 起就地取代模式的面板也守這份清單，有裝 WynnMod 的人整塊結算就留成英文了（使用者 2026-10-12 回報「raid 的翻譯消失了」）。沒有那個類別的舊版照舊留英文。",
+  "wynnmod@unless:com.wynnmod.mixin.events.S2CPacketEvents$ChatMsg": [
+    "Time Elapsed:",
+    "Hover for more",
+    [
+      "Raid Experience",
+      "%)"
+    ],
+    [
+      "Reward Pulls",
+      "%)"
+    ],
+    [
+      "Aspect Pulls",
+      "%)"
+    ]
   ],
   "_wynnmod_names": "RaidState.onTitle 還會用 getRaidFromName(標題) 認出這是哪一場副本,而且會先把非 ASCII 全部剝掉。副本名稱翻成中文的話它連 startRaid 都不會觸發,整場都不會被記錄。名稱取自 WynnMod 自己的 WynnRaid 列舉。",
   "_wynnmod_chat": "RaidState 另外解析兩句聊天:「X would like to start <副本名>!」用來認出開場邀請,「X has chosen the Y buff!」用來記錄隊伍拿了哪些增益。前者翻掉就認不出開場;後者我們本來就不會翻(帶著隊友 ID,收集階段就被 PlayerDataFilter 擋掉了),列在這裡是防止哪天有人手動補進語料。",
