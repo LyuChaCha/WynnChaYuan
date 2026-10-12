@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Hero of Gavel",
-  "count": 193,
-  "translated": 193,
+  "count": 242,
+  "translated": 242,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -517,8 +517,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#053": {
-   "src": "Welcome ! Congratulations on winning the scavenger hunt!",
-   "dst": "어서 오게! 보물찾기 우승을 축하하네!",
+   "src": "Welcome {u}! Congratulations on winning the scavenger hunt!",
+   "dst": "어서 오게, {u}! 보물찾기 우승을 축하하네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -547,7 +547,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#056": {
-   "src": "It’s up at the airship docks – I’ll teleport us there!",
+   "src": "It's up at the airship docks - I'll teleport us there!",
    "dst": "비행선 선착장에 있지. 내가 순간이동으로 데려가겠네!",
    "role": "desc",
    "kind": "dialogue",
@@ -557,8 +557,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#057": {
-   "src": "(translated: Gavellian) MAGICAL MAGICKY MAGIC MAGICSPELL. Teleport!",
-   "dst": "(번역: Gavel어) 마법마법 마법이 마법주문. 순간이동!",
+   "src": "magical magicky magic magicspell, Teleport!",
+   "dst": "마법마법 마법이 마법주문, 순간이동!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -577,7 +577,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#059": {
-   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~},-{~}]",
+   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~},-{~}]의 {p} 비행선 선착장에서 Siegfried와 함께 비행선을 타세요",
    "role": "desc",
    "kind": "objective",
@@ -687,7 +687,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#070": {
-   "src": "Anyway, we’re about to land now – be careful not to fall off!",
+   "src": "Anyway, we're about to land now - be careful not to fall off!",
    "dst": "아무튼 곧 착륙하네. 떨어지지 않게 조심하게!",
    "role": "desc",
    "kind": "dialogue",
@@ -697,7 +697,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#071": {
-   "src": "Enter the perilous cave on the eastern edge of the {p} with Siegfried at [{~}, {~}, -{~}]",
+   "src": "Enter the perilous cave on the eastern edge of {p} with Siegfried at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]의 {p} 동쪽 끝에 있는 위험한 동굴에 Siegfried와 함께 들어가세요",
    "role": "desc",
    "kind": "objective",
@@ -757,7 +757,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#077": {
-   "src": "Follow Siegfried through the cave on the eastern edge of the {p} at [{~}, {~}, -{~}]",
+   "src": "Follow Siegfried through the cave on the eastern edge of {p} at [{~}, {~}, -{~}]",
    "dst": "[{~}, {~}, -{~}]의 {p} 동쪽 끝 동굴에서 Siegfried를 따라가세요",
    "role": "desc",
    "kind": "objective",
@@ -807,8 +807,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#082": {
-   "src": "Stay behind me, I’ll open it with my magic spell. (translated: Gavellian) OPEN!",
-   "dst": "내 뒤에 있게, 마법 주문으로 열겠네. (번역: Gavel어) 열려라!",
+   "src": "Stay behind me, I'll open it with my magical spell. open!",
+   "dst": "내 뒤에 있게, 마법 주문으로 열겠네. 열려라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1067,8 +1067,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#108": {
-   "src": "WE’RE ON OUR OWN! This is REAL now! No coming back after ‘dying’, no more obvious traps, no more Siegfried. If I die here, I DIE! No coming back!",
-   "dst": "우린 우리끼리라고! 이젠 진짜야! '죽어도' 다시 돌아오는 거 없어, 뻔한 함정도 없고, Siegfried도 없어. 여기서 죽으면 진짜 죽는 거야! 돌아올 수 없어!",
+   "src": "WE'RE ON OUR OWN! This is REAL now! No coming back after 'dying', no more obvious traps, no more Siegfried! If I die here, I DIE! No coming back!",
+   "dst": "우린 우리끼리라고! 이젠 진짜야! '죽어도' 다시 돌아오는 거 없어, 뻔한 함정도 없고, Siegfried도 없어! 여기서 죽으면 진짜 죽는 거야! 돌아올 수 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1907,8 +1907,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#193": {
-   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items.",
-   "dst": "불운한 사고에 대한 보상으로, Siegfried가 보물찾기 물건 구입에 쓴 에메랄드를 돌려드립니다.",
+   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items, and some more as compensation.",
+   "dst": "불운한 사고에 대한 보상으로, Siegfried가 보물찾기 물건 구입에 쓴 에메랄드를 돌려드리고, 보상으로 조금 더 얹어 드립니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1917,8 +1917,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#194": {
-   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried!",
-   "dst": "금액은... 액체 에메랄드 {~}개입니다. Siegfried와의 모험 중 겪으신 불편에 사과드립니다!",
+   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried, The Hero of Gavel!",
+   "dst": "금액은... 액체 에메랄드 {~}개입니다. Gavel의 영웅 Siegfried와의 모험 중 겪으신 불편에 사과드립니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1935,6 +1935,496 @@
    "stage": "Stage 22",
    "speaker": "Coming Soon",
    "source": "wiki"
+  },
+  "The Hero of Gavel#197": {
+   "src": "I've been saving up for this scavenger hunt all year, there's no way I can lose!",
+   "dst": "이 보물찾기 때문에 1년 내내 돈을 모았어, 내가 질 리가 없지!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#198": {
+   "src": "Participating in the Siegfried Scavenger Hunt? If you are, the theatre's right behind me.",
+   "dst": "Siegfried 보물찾기 대회에 참가해? 그렇다면 극장은 바로 내 뒤에 있어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#199": {
+   "src": "The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
+   "dst": "이번 대회의 우승자는 나와 함께 일생에 단 한 번뿐인, 진짜배기 모험을 떠나는 영광을 누리게 될 것이다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#200": {
+   "src": "*whistling*",
+   "dst": "*휘파람*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#201": {
+   "src": "The map's in the upper level of the airship. Ignore anything else you find there.",
+   "dst": "지도는 비행선 위층에 있네. 거기서 다른 게 보여도 신경 쓰지 말게.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#202": {
+   "src": "Maybe you should get the rope too...",
+   "dst": "밧줄도 챙기는 게 좋을지도...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#203": {
+   "src": "This rope may be useful later on...",
+   "dst": "이 밧줄은 나중에 쓸모가 있을지도 모른다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#204": {
+   "src": "Hey, I told you to stay behind me! I have to enter the cave first!",
+   "dst": "이보게, 내 뒤에 있으라고 했잖나! 동굴엔 내가 먼저 들어가야 하네!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#205": {
+   "src": "You should jump in after him.",
+   "dst": "그를 따라 뛰어들어야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#206": {
+   "src": "[!] This quest uses particles to display some information. It is recommended to have at least some particles enabled to enhance your experience.",
+   "dst": "[!] 이 퀘스트는 일부 정보를 입자 효과로 표시합니다. 더 나은 플레이를 위해 입자 효과를 어느 정도는 켜 두는 것을 권장합니다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#207": {
+   "src": "He's unconscious. Perhaps there's something around here to wake him up?",
+   "dst": "그는 정신을 잃었다. 근처에 그를 깨울 만한 게 있을까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#208": {
+   "src": "This should wake Siegfried.",
+   "dst": "이거면 Siegfried를 깨울 수 있겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#209": {
+   "src": "This boulder is stopping the portcullis chains... You'd need a pickaxe to break it, however.",
+   "dst": "이 바위가 쇠창살문의 사슬을 막고 있다... 하지만 부수려면 곡괭이가 필요하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#210": {
+   "src": "It's an old mining expedition's log:",
+   "dst": "오래된 채굴 원정대의 일지다:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#211": {
+   "src": "Supplies are limited, excavation yielding little success.",
+   "dst": "보급품은 부족하고, 발굴은 성과가 거의 없다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#212": {
+   "src": "We've attempted going around the portcullis, but the beast in the only cave past it killed one of our crew.",
+   "dst": "쇠창살문을 돌아서 가 보려 했으나, 그 너머 하나뿐인 동굴에 있던 야수가 대원 한 명을 죽였다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#213": {
+   "src": "Apart from the portcullis, there are no signs of villagers or of the town itself. The team is beginning to doubt its existence.",
+   "dst": "쇠창살문 말고는 주민의 흔적도, 마을 자체의 흔적도 없다. 대원들은 마을이 정말 있기는 했는지 의심하기 시작했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#214": {
+   "src": "The return crew is lowering the crane tomorrow, so it's unlikely we can find anything before then. Logs will be left for use of any future excavations.",
+   "dst": "복귀조가 내일 크레인을 내릴 예정이라, 그 전에 뭔가를 찾아내기는 어려울 것이다. 일지는 훗날의 발굴에 쓰이도록 남겨 둔다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#215": {
+   "src": "The rest of the log lists geological information about the cave and a supply manifest.",
+   "dst": "일지의 나머지 부분에는 동굴의 지질 정보와 보급품 목록이 적혀 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#216": {
+   "src": "Find a way deeper into the cave and lead Siegfried there with you.",
+   "dst": "동굴 더 깊은 곳으로 가는 길을 찾아 Siegfried를 데려가세요.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#217": {
+   "src": "Why would you need this?",
+   "dst": "이게 왜 필요하지?",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#218": {
+   "src": "The cage fell! You should go help Siegfried out.",
+   "dst": "철창이 떨어졌다! 가서 Siegfried를 꺼내 줘야겠다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#219": {
+   "src": "Siegfried has died in the cage. You'll have to find your way out yourself.",
+   "dst": "Siegfried가 철창 안에서 죽었다. 나가는 길은 혼자서 찾아야 한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#220": {
+   "src": "It seems the trap machinery broke down!",
+   "dst": "함정 장치가 고장 난 것 같다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#221": {
+   "src": "This area seems like a good place to rest before moving on. Siegfried would have been overjoyed to see this.",
+   "dst": "이곳은 계속 가기 전에 쉬어 가기 좋은 곳 같다. Siegfried가 봤다면 무척 기뻐했을 텐데.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#222": {
+   "src": "This is a wood wall.",
+   "dst": "나무 벽이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#223": {
+   "src": "Maybe that web would fall if you cut the ones supporting it?",
+   "dst": "받치고 있는 거미줄들을 자르면 저 거미줄이 떨어지지 않을까?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#224": {
+   "src": "It looks like the way forward is across the yellow shards...",
+   "dst": "앞으로 가는 길은 노란 파편들 너머인 것 같다...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#225": {
+   "src": "Picking up lava with your bare hands seems like a bad idea.",
+   "dst": "맨손으로 용암을 퍼 담는 건 좋은 생각이 아닌 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#226": {
+   "src": "... Is that sunlight at the other side of the cave?",
+   "dst": "... 동굴 저편에 보이는 저건 햇빛인가?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#227": {
+   "src": "This is a sewing machine.. It still seems to work.",
+   "dst": "재봉틀이다.. 아직 작동하는 것 같다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#228": {
+   "src": "It's a tailor's notes on how to create some items:",
+   "dst": "재봉사가 몇 가지 물건 만드는 법을 적어 둔 쪽지다:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#229": {
+   "src": "To Sarnim - If you really wanted to learn the craft, here's some simple items to get you started.",
+   "dst": "Sarnim에게 - 정말로 이 기술을 배우고 싶다면, 처음 만들어 보기 좋은 간단한 물건 몇 가지를 적어 둔다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#230": {
+   "src": "Parachute: Some cloth and rope. I haven't found any rope since the shattering, I don't think there's any in the storage either.",
+   "dst": "낙하산: 천과 밧줄. 대붕괴 이후로 밧줄은 구경도 못 했고, 창고에도 없을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#231": {
+   "src": "Soft Boots: Cloth, and some soft slime. I usually get my slime from the spider burrows past the gate.",
+   "dst": "푹신한 부츠: 천, 그리고 말랑한 슬라임 약간. 슬라임은 보통 문 너머 거미 굴에서 구한다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#232": {
+   "src": "Hard Boots: Cloth and leather. These hurt quite a bit, so be careful. There should be some leather in the storage if you make these.",
+   "dst": "딱딱한 부츠: 천과 가죽. 꽤 아프니 조심할 것. 만들 거라면 창고에 가죽이 좀 있을 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#233": {
+   "src": "It's an old notebook listing some research about geysers:",
+   "dst": "간헐천에 관한 연구가 적힌 낡은 공책이다:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#234": {
+   "src": "The geyser was active back before the shattering, but it seems to have filled up.",
+   "dst": "간헐천은 대붕괴 이전에는 활동했지만, 지금은 메워져 버린 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#235": {
+   "src": "It hasn't erupted in weeks. However! My studies on the small geysers have proven lava can activate them again!",
+   "dst": "몇 주째 분출하지 않고 있다. 하지만! 작은 간헐천들을 연구한 결과, 용암으로 다시 활성화할 수 있다는 사실이 증명되었다!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#236": {
+   "src": "Hannux still refuses to give me molten metal from his forge, though. My next tests ought to convince him.",
+   "dst": "그런데도 Hannux는 여전히 대장간의 쇳물을 내주지 않는다. 다음 실험이면 그도 납득할 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#237": {
+   "src": "It's an old, tattered book labelled 'Sustainable Food in the Caverns, by Hannux and Ilorav'",
+   "dst": "'동굴에서의 지속 가능한 식량 - Hannux, Ilorav 공저'라고 적힌 낡고 너덜너덜한 책이다",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#238": {
+   "src": "This document should outline a sustainable method for the continued survival of our town for however long we may be in these caverns.",
+   "dst": "이 문서는 우리가 이 동굴에 얼마나 오래 머물게 되든, 우리 마을이 계속 살아남을 수 있는 지속 가능한 방법을 정리한 것이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#239": {
+   "src": "Multiple varieties of mushrooms have grown in the years after the shattering. These are edible and a primary source of food.",
+   "dst": "대붕괴 이후 몇 해 동안 여러 종류의 버섯이 자라났다. 이 버섯들은 먹을 수 있으며 주된 식량원이다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#240": {
+   "src": "A bioluminescent material allows for trees and grass to grow, albeit very slowly.",
+   "dst": "생물 발광 물질 덕분에 나무와 풀이 자랄 수 있다. 다만 매우 느리다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#241": {
+   "src": "We recommend taking good care of the trees, grass, and bushes - they may become a valuable source of food in the future.",
+   "dst": "나무와 풀, 덤불을 잘 돌볼 것을 권한다 - 훗날 귀중한 식량원이 될 수 있다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#242": {
+   "src": "We have also found that there is very little edible plant life outside of our section of the cave.",
+   "dst": "또한 동굴에서 우리 구역 바깥에는 먹을 수 있는 식물이 거의 없다는 사실도 알아냈다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#243": {
+   "src": "A smaller group was far less lucky than us and ended up in an area with virtually no edible material - we found the remains of their homes in a recent expedition.",
+   "dst": "우리보다 훨씬 운이 없었던 작은 무리는 먹을 것이 사실상 전혀 없는 곳에 떨어졌다 - 최근 탐사에서 그들이 살던 집의 잔해를 발견했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#244": {
+   "src": "A species of spiders and creeping mold has appeared as well. These are not suitable for consumption, and should be left alone. They are peaceful unless attacked.",
+   "dst": "거미와 기어다니는 곰팡이의 일종도 나타났다. 이것들은 먹기에 적합하지 않으니 건드리지 말아야 한다. 공격받지 않는 한 온순하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#245": {
+   "src": "The rest of the book seems to be repeating the same information but in extreme detail.",
+   "dst": "책의 나머지 부분은 같은 내용을 극도로 자세하게 되풀이하는 듯하다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
   }
  }
 }

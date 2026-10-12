@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "tr_tr",
-  "count": 22976,
-  "translated": 22767,
+  "count": 23026,
+  "translated": 22817,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -136587,6 +136587,16 @@
    "speaker": "Brie",
    "stage": "Stage 8"
   },
+  "Recipe For Disaster#175": {
+   "src": "Welcome back, mon ami! Alas, running a restaurant is busy work, so I can't talk for long. Maybe take a seat in the restaurant?",
+   "dst": "Tekrar hoş geldin, mon ami! Ne yazık ki restoran işletmek yoğun iş, o yüzden uzun konuşamam. Restoranda bir yere otursana?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "Daha fazla ateş gücüne ihtiyacım var, eğer...ben...",
@@ -183458,8 +183468,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#053": {
-   "src": "Welcome ! Congratulations on winning the scavenger hunt!",
-   "dst": "Hoş geldin ! Hazine avını kazandığın için tebrikler!",
+   "src": "Welcome {u}! Congratulations on winning the scavenger hunt!",
+   "dst": "Hoş geldin {u}! Hazine avını kazandığın için tebrikler!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -183488,7 +183498,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#056": {
-   "src": "It’s up at the airship docks – I’ll teleport us there!",
+   "src": "It's up at the airship docks - I'll teleport us there!",
    "dst": "Zeplin limanında duruyor, bizi oraya ışınlayacağım!",
    "role": "desc",
    "kind": "dialogue",
@@ -183498,8 +183508,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#057": {
-   "src": "(translated: Gavellian) MAGICAL MAGICKY MAGIC MAGICSPELL. Teleport!",
-   "dst": "(çeviri: Gavelce) BÜYÜLÜ BÜYÜCÜK BÜYÜ BÜYÜSÖZ. Işınlan!",
+   "src": "magical magicky magic magicspell, Teleport!",
+   "dst": "büyülü büyücük büyü büyüsöz, Işınlan!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -183518,7 +183528,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#059": {
-   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~},-{~}]",
+   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~}, -{~}]",
    "dst": "{p} zeplin limanında Siegfried'in zepliniyle yolculuk et: [{~}, {~},-{~}]",
    "role": "desc",
    "kind": "objective",
@@ -183628,7 +183638,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#070": {
-   "src": "Anyway, we’re about to land now – be careful not to fall off!",
+   "src": "Anyway, we're about to land now - be careful not to fall off!",
    "dst": "Neyse, inmek üzereyiz, dikkat et de düşme!",
    "role": "desc",
    "kind": "dialogue",
@@ -183638,7 +183648,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#071": {
-   "src": "Enter the perilous cave on the eastern edge of the {p} with Siegfried at [{~}, {~}, -{~}]",
+   "src": "Enter the perilous cave on the eastern edge of {p} with Siegfried at [{~}, {~}, -{~}]",
    "dst": "Siegfried'le birlikte {p} bölgesinin doğu ucundaki tehlikeli mağaraya gir: [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
@@ -183698,7 +183708,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#077": {
-   "src": "Follow Siegfried through the cave on the eastern edge of the {p} at [{~}, {~}, -{~}]",
+   "src": "Follow Siegfried through the cave on the eastern edge of {p} at [{~}, {~}, -{~}]",
    "dst": "{p} bölgesinin doğu ucundaki mağarada Siegfried'i takip et: [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
@@ -183748,8 +183758,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#082": {
-   "src": "Stay behind me, I’ll open it with my magic spell. (translated: Gavellian) OPEN!",
-   "dst": "Arkamda dur, büyümle açacağım. (çeviri: Gavelce) AÇIL!",
+   "src": "Stay behind me, I'll open it with my magical spell. open!",
+   "dst": "Arkamda dur, büyümle açacağım. açıl!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184008,8 +184018,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#108": {
-   "src": "WE’RE ON OUR OWN! This is REAL now! No coming back after ‘dying’, no more obvious traps, no more Siegfried. If I die here, I DIE! No coming back!",
-   "dst": "YAPAYALNIZIZ! Bu artık GERÇEK! 'Öldükten' sonra geri dönmek yok, göstermelik tuzaklar yok, Siegfried yok. Burada ölürsem ÖLÜRÜM! Dönüşü yok!",
+   "src": "WE'RE ON OUR OWN! This is REAL now! No coming back after 'dying', no more obvious traps, no more Siegfried! If I die here, I DIE! No coming back!",
+   "dst": "YAPAYALNIZIZ! Bu artık GERÇEK! 'Öldükten' sonra geri dönmek yok, göstermelik tuzaklar yok, Siegfried yok! Burada ölürsem ÖLÜRÜM! Dönüşü yok!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184848,8 +184858,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#193": {
-   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items.",
-   "dst": "Talihsiz kazanın için tazminat olarak Siegfried, hazine avı eşyalarına harcadığın zümrütleri sana geri verecek.",
+   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items, and some more as compensation.",
+   "dst": "Talihsiz kazanın için tazminat olarak Siegfried, hazine avı eşyalarına harcadığın zümrütleri, bir de tazminat olarak biraz daha fazlasını sana geri verecek.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184858,8 +184868,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#194": {
-   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried!",
-   "dst": "Bu da... {~} Sıvı Zümrüt ediyor. Siegfried'le maceran sırasında yaşadığın zorluklar için özür dileriz!",
+   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried, The Hero of Gavel!",
+   "dst": "Bu da... {~} Sıvı Zümrüt ediyor. Gavel'ın Kahramanı Siegfried'le maceran sırasında yaşadığın zorluklar için özür dileriz!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184876,6 +184886,496 @@
    "stage": "Stage 22",
    "speaker": "Coming Soon",
    "source": "wiki"
+  },
+  "The Hero of Gavel#197": {
+   "src": "I've been saving up for this scavenger hunt all year, there's no way I can lose!",
+   "dst": "Bütün yıl bu hazine avı için para biriktirdim, kaybetmeme imkân yok!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#198": {
+   "src": "Participating in the Siegfried Scavenger Hunt? If you are, the theatre's right behind me.",
+   "dst": "Siegfried Hazine Avı'na mı katılıyorsun? Öyleyse tiyatro hemen arkamda.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#199": {
+   "src": "The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
+   "dst": "Bu avın galibi, benimle hayatında bir kez yaşanacak, tamamen gerçek bir maceraya çıkma ayrıcalığına sahip olacak!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#200": {
+   "src": "*whistling*",
+   "dst": "*ıslık çalıyor*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#201": {
+   "src": "The map's in the upper level of the airship. Ignore anything else you find there.",
+   "dst": "Harita zeplinin üst katında. Orada bulduğun başka hiçbir şeye aldırma.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#202": {
+   "src": "Maybe you should get the rope too...",
+   "dst": "Belki ipi de almalısın...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#203": {
+   "src": "This rope may be useful later on...",
+   "dst": "Bu ip ileride işe yarayabilir...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#204": {
+   "src": "Hey, I told you to stay behind me! I have to enter the cave first!",
+   "dst": "Hey, sana arkamda dur demiştim! Mağaraya önce ben girmeliyim!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#205": {
+   "src": "You should jump in after him.",
+   "dst": "Peşinden atlamalısın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#206": {
+   "src": "[!] This quest uses particles to display some information. It is recommended to have at least some particles enabled to enhance your experience.",
+   "dst": "[!] Bu görev bazı bilgileri göstermek için parçacıkları kullanıyor. Deneyimini iyileştirmek için en azından bazı parçacıkları açık tutman önerilir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#207": {
+   "src": "He's unconscious. Perhaps there's something around here to wake him up?",
+   "dst": "Baygın. Belki buralarda onu uyandıracak bir şey vardır?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#208": {
+   "src": "This should wake Siegfried.",
+   "dst": "Bu, Siegfried'i uyandırır herhalde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#209": {
+   "src": "This boulder is stopping the portcullis chains... You'd need a pickaxe to break it, however.",
+   "dst": "Bu kaya ızgara kapının zincirlerini engelliyor... Ama kırmak için kazma gerek.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#210": {
+   "src": "It's an old mining expedition's log:",
+   "dst": "Eski bir maden seferinin kayıt defteri:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#211": {
+   "src": "Supplies are limited, excavation yielding little success.",
+   "dst": "Erzak kısıtlı, kazılardan pek sonuç çıkmıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#212": {
+   "src": "We've attempted going around the portcullis, but the beast in the only cave past it killed one of our crew.",
+   "dst": "Izgara kapının etrafından dolaşmayı denedik ama ötesindeki tek mağarada yaşayan canavar ekibimizden birini öldürdü.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#213": {
+   "src": "Apart from the portcullis, there are no signs of villagers or of the town itself. The team is beginning to doubt its existence.",
+   "dst": "Izgara kapı dışında ne köylülerden ne de kasabanın kendisinden bir iz var. Ekip, kasabanın var olduğundan şüphe etmeye başladı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#214": {
+   "src": "The return crew is lowering the crane tomorrow, so it's unlikely we can find anything before then. Logs will be left for use of any future excavations.",
+   "dst": "Dönüş ekibi yarın vinci indiriyor, yani o zamana kadar bir şey bulmamız pek olası değil. Kayıtlar, ileride yapılacak kazılarda kullanılmak üzere burada bırakılacak.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#215": {
+   "src": "The rest of the log lists geological information about the cave and a supply manifest.",
+   "dst": "Kayıt defterinin geri kalanında mağaraya dair jeolojik bilgiler ve bir erzak listesi var.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#216": {
+   "src": "Find a way deeper into the cave and lead Siegfried there with you.",
+   "dst": "Mağaranın derinliklerine inen bir yol bul ve Siegfried'i de yanında götür.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#217": {
+   "src": "Why would you need this?",
+   "dst": "Buna neden ihtiyacın olsun ki?",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#218": {
+   "src": "The cage fell! You should go help Siegfried out.",
+   "dst": "Kafes düştü! Gidip Siegfried'e yardım etmelisin.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#219": {
+   "src": "Siegfried has died in the cage. You'll have to find your way out yourself.",
+   "dst": "Siegfried kafeste öldü. Çıkış yolunu kendin bulmak zorundasın.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#220": {
+   "src": "It seems the trap machinery broke down!",
+   "dst": "Görünüşe göre tuzak mekanizması bozuldu!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#221": {
+   "src": "This area seems like a good place to rest before moving on. Siegfried would have been overjoyed to see this.",
+   "dst": "Burası, devam etmeden önce dinlenmek için iyi bir yere benziyor. Siegfried bunu görse sevinçten havalara uçardı.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#222": {
+   "src": "This is a wood wall.",
+   "dst": "Bu bir ahşap duvar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#223": {
+   "src": "Maybe that web would fall if you cut the ones supporting it?",
+   "dst": "Belki onu taşıyan ağları kesersen o ağ düşer?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#224": {
+   "src": "It looks like the way forward is across the yellow shards...",
+   "dst": "Görünüşe göre ileriye giden yol sarı kristallerin karşısında...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#225": {
+   "src": "Picking up lava with your bare hands seems like a bad idea.",
+   "dst": "Lavı çıplak elle almak kötü bir fikir gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#226": {
+   "src": "... Is that sunlight at the other side of the cave?",
+   "dst": "... Mağaranın öbür ucundaki şey güneş ışığı mı?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#227": {
+   "src": "This is a sewing machine.. It still seems to work.",
+   "dst": "Bu bir dikiş makinesi.. Hâlâ çalışıyor gibi.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#228": {
+   "src": "It's a tailor's notes on how to create some items:",
+   "dst": "Bir terzinin bazı eşyaların nasıl yapılacağına dair notları:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#229": {
+   "src": "To Sarnim - If you really wanted to learn the craft, here's some simple items to get you started.",
+   "dst": "Sarnim'e - Zanaatı gerçekten öğrenmek istiyorsan, işte başlaman için birkaç basit eşya.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#230": {
+   "src": "Parachute: Some cloth and rope. I haven't found any rope since the shattering, I don't think there's any in the storage either.",
+   "dst": "Paraşüt: Biraz kumaş ve ip. Parçalanış'tan beri hiç ip bulamadım, depoda da olduğunu sanmıyorum.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#231": {
+   "src": "Soft Boots: Cloth, and some soft slime. I usually get my slime from the spider burrows past the gate.",
+   "dst": "Yumuşak Botlar: Kumaş ve biraz yumuşak balçık. Balçığı genelde kapının ötesindeki örümcek yuvalarından alırım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#232": {
+   "src": "Hard Boots: Cloth and leather. These hurt quite a bit, so be careful. There should be some leather in the storage if you make these.",
+   "dst": "Sert Botlar: Kumaş ve deri. Bunlar epey acıtır, o yüzden dikkatli ol. Bunlardan yapacaksan depoda biraz deri olması lazım.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#233": {
+   "src": "It's an old notebook listing some research about geysers:",
+   "dst": "Gayzerler üzerine bazı araştırmaların yazılı olduğu eski bir defter:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#234": {
+   "src": "The geyser was active back before the shattering, but it seems to have filled up.",
+   "dst": "Gayzer, Parçalanış'tan önce etkindi ama görünüşe göre içi dolmuş.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#235": {
+   "src": "It hasn't erupted in weeks. However! My studies on the small geysers have proven lava can activate them again!",
+   "dst": "Haftalardır püskürmedi. Ama! Küçük gayzerler üzerindeki çalışmalarım, lavın onları yeniden harekete geçirebildiğini kanıtladı!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#236": {
+   "src": "Hannux still refuses to give me molten metal from his forge, though. My next tests ought to convince him.",
+   "dst": "Yine de Hannux, demirhanesindeki erimiş metalden vermeyi hâlâ reddediyor. Sıradaki deneylerim onu ikna eder herhalde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#237": {
+   "src": "It's an old, tattered book labelled 'Sustainable Food in the Caverns, by Hannux and Ilorav'",
+   "dst": "Üzerinde 'Mağaralarda Sürdürülebilir Gıda, Yazanlar: Hannux ve Ilorav' yazan eski, yıpranmış bir kitap",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#238": {
+   "src": "This document should outline a sustainable method for the continued survival of our town for however long we may be in these caverns.",
+   "dst": "Bu belge, bu mağaralarda ne kadar kalırsak kalalım kasabamızın hayatta kalabilmesi için sürdürülebilir bir yöntemin ana hatlarını çizmektedir.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#239": {
+   "src": "Multiple varieties of mushrooms have grown in the years after the shattering. These are edible and a primary source of food.",
+   "dst": "Parçalanış'tan sonraki yıllarda pek çok mantar türü yetişti. Bunlar yenilebilir ve başlıca besin kaynağımızdır.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#240": {
+   "src": "A bioluminescent material allows for trees and grass to grow, albeit very slowly.",
+   "dst": "Biyolüminesan bir madde, çok yavaş da olsa ağaçların ve otların büyümesini sağlıyor.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#241": {
+   "src": "We recommend taking good care of the trees, grass, and bushes - they may become a valuable source of food in the future.",
+   "dst": "Ağaçlara, otlara ve çalılara iyi bakılmasını öneririz - ileride değerli bir besin kaynağı olabilirler.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#242": {
+   "src": "We have also found that there is very little edible plant life outside of our section of the cave.",
+   "dst": "Ayrıca mağaranın bize ait kısmının dışında yenilebilir bitki örtüsünün çok az olduğunu da saptadık.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#243": {
+   "src": "A smaller group was far less lucky than us and ended up in an area with virtually no edible material - we found the remains of their homes in a recent expedition.",
+   "dst": "Daha küçük bir grup bizim kadar şanslı değildi ve neredeyse hiç yenilebilir madde bulunmayan bir bölgeye düştü - yakın zamandaki bir seferde evlerinin kalıntılarını bulduk.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#244": {
+   "src": "A species of spiders and creeping mold has appeared as well. These are not suitable for consumption, and should be left alone. They are peaceful unless attacked.",
+   "dst": "Bir örümcek türü ve yayılan bir küf de ortaya çıktı. Bunlar tüketime uygun değildir, kendi hallerine bırakılmalıdır. Saldırıya uğramadıkça barışçıldırlar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#245": {
+   "src": "The rest of the book seems to be repeating the same information but in extreme detail.",
+   "dst": "Kitabın geri kalanı aynı bilgileri tekrarlıyor gibi, ama aşırı ayrıntılı biçimde.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
   },
   "The Hidden City#000": {
    "src": "Speak to Narder.",

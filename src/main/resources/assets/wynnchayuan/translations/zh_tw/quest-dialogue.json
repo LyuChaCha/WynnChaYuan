@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22976,
-  "translated": 22973,
+  "count": 23026,
+  "translated": 23023,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -136587,6 +136587,16 @@
    "speaker": "Brie",
    "stage": "Stage 8"
   },
+  "Recipe For Disaster#175": {
+   "src": "Welcome back, mon ami! Alas, running a restaurant is busy work, so I can't talk for long. Maybe take a seat in the restaurant?",
+   "dst": "歡迎回來，mon ami！唉，開餐廳就是忙，我沒辦法聊太久。要不要到餐廳裡找個位子坐？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "如果我要……奪回……我需要更多火力……",
@@ -183458,8 +183468,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#053": {
-   "src": "Welcome ! Congratulations on winning the scavenger hunt!",
-   "dst": "歡迎！恭喜你贏得尋寶大賽！",
+   "src": "Welcome {u}! Congratulations on winning the scavenger hunt!",
+   "dst": "歡迎 {u}！恭喜你贏得尋寶大賽！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -183488,7 +183498,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#056": {
-   "src": "It’s up at the airship docks – I’ll teleport us there!",
+   "src": "It's up at the airship docks - I'll teleport us there!",
    "dst": "它就停在飛船碼頭——我來把我們傳送過去！",
    "role": "desc",
    "kind": "dialogue",
@@ -183498,8 +183508,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#057": {
-   "src": "(translated: Gavellian) MAGICAL MAGICKY MAGIC MAGICSPELL. Teleport!",
-   "dst": "(已翻譯: Gavel 語)魔法魔魔法法魔法咒語。傳送！",
+   "src": "magical magicky magic magicspell, Teleport!",
+   "dst": "魔法魔魔法法魔法咒語，傳送！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -183518,7 +183528,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#059": {
-   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~},-{~}]",
+   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~}, -{~}]",
    "dst": "與 Siegfried 一同從 {p} 飛船碼頭 [{~1}, {~2},-{~3}] 搭乘他的飛船出發",
    "role": "desc",
    "kind": "objective",
@@ -183628,7 +183638,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#070": {
-   "src": "Anyway, we’re about to land now – be careful not to fall off!",
+   "src": "Anyway, we're about to land now - be careful not to fall off!",
    "dst": "總之，我們馬上就要降落了——小心別掉下去！",
    "role": "desc",
    "kind": "dialogue",
@@ -183638,7 +183648,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#071": {
-   "src": "Enter the perilous cave on the eastern edge of the {p} with Siegfried at [{~}, {~}, -{~}]",
+   "src": "Enter the perilous cave on the eastern edge of {p} with Siegfried at [{~}, {~}, -{~}]",
    "dst": "與 Siegfried 一同進入 {p} 東緣 [{~1}, {~2}, -{~3}] 的險惡洞穴",
    "role": "desc",
    "kind": "objective",
@@ -183698,7 +183708,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#077": {
-   "src": "Follow Siegfried through the cave on the eastern edge of the {p} at [{~}, {~}, -{~}]",
+   "src": "Follow Siegfried through the cave on the eastern edge of {p} at [{~}, {~}, -{~}]",
    "dst": "跟著 Siegfried 穿越 {p} 東緣 [{~1}, {~2}, -{~3}] 的洞穴",
    "role": "desc",
    "kind": "objective",
@@ -183748,8 +183758,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#082": {
-   "src": "Stay behind me, I’ll open it with my magic spell. (translated: Gavellian) OPEN!",
-   "dst": "站在我後面，我用魔法咒語打開它。(已翻譯: Gavel 語)開啟！",
+   "src": "Stay behind me, I'll open it with my magical spell. open!",
+   "dst": "站在我後面，我用魔法咒語打開它。開啟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184008,8 +184018,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#108": {
-   "src": "WE’RE ON OUR OWN! This is REAL now! No coming back after ‘dying’, no more obvious traps, no more Siegfried. If I die here, I DIE! No coming back!",
-   "dst": "我們只能靠自己！這次是「真的」！沒有『死掉』之後再回來這回事，沒有一眼就看得出來的陷阱，沒有 Siegfried。我要是死在這裡，就是真的死了！回不來了！",
+   "src": "WE'RE ON OUR OWN! This is REAL now! No coming back after 'dying', no more obvious traps, no more Siegfried! If I die here, I DIE! No coming back!",
+   "dst": "我們只能靠自己！這次是「真的」！沒有『死掉』之後再回來這回事，沒有一眼就看得出來的陷阱，沒有 Siegfried！我要是死在這裡，就是真的死了！回不來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184848,8 +184858,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#193": {
-   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items.",
-   "dst": "作為你這場不幸意外的補償，Siegfried 會退還你購買尋寶大賽物品所花的綠寶石。",
+   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items, and some more as compensation.",
+   "dst": "作為你這場不幸意外的補償，Siegfried 會退還你購買尋寶大賽物品所花的綠寶石，另外再多給一些當作補償。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184858,8 +184868,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#194": {
-   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried!",
-   "dst": "金額應該是……{~} 液態綠寶石。對於你在與 Siegfried 冒險期間遇到的困難，我們深感抱歉！",
+   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried, The Hero of Gavel!",
+   "dst": "金額應該是……{~} 液態綠寶石。對於你在與 Gavel 的英雄 Siegfried 冒險期間遇到的困難，我們深感抱歉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184876,6 +184886,496 @@
    "stage": "Stage 22",
    "speaker": "Coming Soon",
    "source": "wiki"
+  },
+  "The Hero of Gavel#197": {
+   "src": "I've been saving up for this scavenger hunt all year, there's no way I can lose!",
+   "dst": "我為了這場尋寶大賽存了一整年的錢，不可能輸的！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#198": {
+   "src": "Participating in the Siegfried Scavenger Hunt? If you are, the theatre's right behind me.",
+   "dst": "要參加 Siegfried 尋寶大賽嗎？要的話，劇院就在我後面。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#199": {
+   "src": "The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
+   "dst": "本次尋寶的優勝者，將享有與我一同展開一場千載難逢、完全真實的冒險的殊榮！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#200": {
+   "src": "*whistling*",
+   "dst": "*吹口哨*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#201": {
+   "src": "The map's in the upper level of the airship. Ignore anything else you find there.",
+   "dst": "地圖在飛船的上層。你在那裡看到的其他東西都別管。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#202": {
+   "src": "Maybe you should get the rope too...",
+   "dst": "也許你該把繩子也帶上……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#203": {
+   "src": "This rope may be useful later on...",
+   "dst": "這條繩子之後說不定用得上……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#204": {
+   "src": "Hey, I told you to stay behind me! I have to enter the cave first!",
+   "dst": "喂，我說過要你待在我後面！得由我先進洞穴才行！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#205": {
+   "src": "You should jump in after him.",
+   "dst": "你該跟著他跳下去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#206": {
+   "src": "[!] This quest uses particles to display some information. It is recommended to have at least some particles enabled to enhance your experience.",
+   "dst": "[!] 這個任務會用粒子效果顯示部分資訊。建議至少開啟一部分粒子效果，以獲得更好的體驗。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#207": {
+   "src": "He's unconscious. Perhaps there's something around here to wake him up?",
+   "dst": "他昏過去了。這附近說不定有什麼東西能把他弄醒？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#208": {
+   "src": "This should wake Siegfried.",
+   "dst": "這應該能把 Siegfried 弄醒。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#209": {
+   "src": "This boulder is stopping the portcullis chains... You'd need a pickaxe to break it, however.",
+   "dst": "這塊巨石卡住了鐵閘門的鎖鏈……不過要敲碎它，得有一把鎬才行。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#210": {
+   "src": "It's an old mining expedition's log:",
+   "dst": "這是一支舊採礦探勘隊留下的日誌:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#211": {
+   "src": "Supplies are limited, excavation yielding little success.",
+   "dst": "補給有限，挖掘幾乎毫無進展。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#212": {
+   "src": "We've attempted going around the portcullis, but the beast in the only cave past it killed one of our crew.",
+   "dst": "我們試過繞過鐵閘門，但閘門後面唯一那座洞穴裡的野獸殺了我們一名隊員。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#213": {
+   "src": "Apart from the portcullis, there are no signs of villagers or of the town itself. The team is beginning to doubt its existence.",
+   "dst": "除了那道鐵閘門，這裡看不到任何村民或城鎮本身的蹤跡。隊員們開始懷疑它是否真的存在。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#214": {
+   "src": "The return crew is lowering the crane tomorrow, so it's unlikely we can find anything before then. Logs will be left for use of any future excavations.",
+   "dst": "回程小組明天就會把吊車降下來，在那之前恐怕找不到什麼了。日誌會留在這裡，供日後的挖掘行動使用。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#215": {
+   "src": "The rest of the log lists geological information about the cave and a supply manifest.",
+   "dst": "日誌剩下的部分列的是這座洞穴的地質資料，還有一份補給清單。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#216": {
+   "src": "Find a way deeper into the cave and lead Siegfried there with you.",
+   "dst": "找出通往洞穴更深處的路，並帶著 Siegfried 一起過去。",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#217": {
+   "src": "Why would you need this?",
+   "dst": "你拿這個要做什麼？",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#218": {
+   "src": "The cage fell! You should go help Siegfried out.",
+   "dst": "籠子掉下來了！你該去把 Siegfried 救出來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#219": {
+   "src": "Siegfried has died in the cage. You'll have to find your way out yourself.",
+   "dst": "Siegfried 死在籠子裡了。你得自己找路出去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#220": {
+   "src": "It seems the trap machinery broke down!",
+   "dst": "陷阱的機關好像故障了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#221": {
+   "src": "This area seems like a good place to rest before moving on. Siegfried would have been overjoyed to see this.",
+   "dst": "這一帶看起來是繼續前進之前歇腳的好地方。Siegfried 要是看到這裡，一定會樂壞的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#222": {
+   "src": "This is a wood wall.",
+   "dst": "這是一面木牆。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#223": {
+   "src": "Maybe that web would fall if you cut the ones supporting it?",
+   "dst": "如果把撐著它的那幾張蛛網割斷，那張蛛網說不定就會掉下來？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#224": {
+   "src": "It looks like the way forward is across the yellow shards...",
+   "dst": "看來往前的路就在那些黃色碎片的另一邊……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#225": {
+   "src": "Picking up lava with your bare hands seems like a bad idea.",
+   "dst": "徒手去撈熔岩，怎麼想都不是好主意。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#226": {
+   "src": "... Is that sunlight at the other side of the cave?",
+   "dst": "……洞穴另一頭那是陽光嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#227": {
+   "src": "This is a sewing machine.. It still seems to work.",
+   "dst": "這是一台縫紉機……看起來還能用。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#228": {
+   "src": "It's a tailor's notes on how to create some items:",
+   "dst": "這是一位裁縫的筆記，寫著幾樣東西的做法:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#229": {
+   "src": "To Sarnim - If you really wanted to learn the craft, here's some simple items to get you started.",
+   "dst": "給 Sarnim，你要是真的想學這門手藝，這裡有幾樣簡單的東西可以讓你起步。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#230": {
+   "src": "Parachute: Some cloth and rope. I haven't found any rope since the shattering, I don't think there's any in the storage either.",
+   "dst": "降落傘: 一些布和繩子。大崩裂之後我就沒再找到過繩子，我想倉庫裡也沒有。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#231": {
+   "src": "Soft Boots: Cloth, and some soft slime. I usually get my slime from the spider burrows past the gate.",
+   "dst": "軟靴: 布，加上一些軟黏液。我的黏液通常是到大門後面的蜘蛛巢穴拿的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#232": {
+   "src": "Hard Boots: Cloth and leather. These hurt quite a bit, so be careful. There should be some leather in the storage if you make these.",
+   "dst": "硬靴: 布和皮革。穿起來相當痛，所以要小心。要做的話，倉庫裡應該有一些皮革。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#233": {
+   "src": "It's an old notebook listing some research about geysers:",
+   "dst": "這是一本舊筆記本，記著一些關於間歇泉的研究:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#234": {
+   "src": "The geyser was active back before the shattering, but it seems to have filled up.",
+   "dst": "這座間歇泉在大崩裂之前還會噴發，但現在似乎被填滿了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#235": {
+   "src": "It hasn't erupted in weeks. However! My studies on the small geysers have proven lava can activate them again!",
+   "dst": "它已經好幾個星期沒噴發了。不過！我對小型間歇泉的研究證明，熔岩可以讓它們再次噴發！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#236": {
+   "src": "Hannux still refuses to give me molten metal from his forge, though. My next tests ought to convince him.",
+   "dst": "只是 Hannux 還是不肯把他鍛造場裡的熔融金屬給我。我接下來的實驗應該能說服他。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#237": {
+   "src": "It's an old, tattered book labelled 'Sustainable Food in the Caverns, by Hannux and Ilorav'",
+   "dst": "這是一本又舊又破的書，封面寫著「洞窟裡的永續糧食，Hannux 與 Ilorav 合著」",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#238": {
+   "src": "This document should outline a sustainable method for the continued survival of our town for however long we may be in these caverns.",
+   "dst": "本文件旨在概述一套可長可久的方法，無論我們要在這些洞窟裡待多久，都能讓我們的城鎮繼續存活下去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#239": {
+   "src": "Multiple varieties of mushrooms have grown in the years after the shattering. These are edible and a primary source of food.",
+   "dst": "大崩裂之後的這些年裡，長出了好幾種蘑菇。它們可以食用，是主要的糧食來源。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#240": {
+   "src": "A bioluminescent material allows for trees and grass to grow, albeit very slowly.",
+   "dst": "有一種生物發光物質讓樹木與草得以生長，只是速度非常緩慢。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#241": {
+   "src": "We recommend taking good care of the trees, grass, and bushes - they may become a valuable source of food in the future.",
+   "dst": "我們建議好好照料樹木、草和灌木，它們日後可能成為寶貴的糧食來源。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#242": {
+   "src": "We have also found that there is very little edible plant life outside of our section of the cave.",
+   "dst": "我們還發現，在我們這一區洞窟以外，可食用的植物非常稀少。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#243": {
+   "src": "A smaller group was far less lucky than us and ended up in an area with virtually no edible material - we found the remains of their homes in a recent expedition.",
+   "dst": "有一小群人遠不如我們幸運，落腳在一個幾乎沒有東西可吃的地方。我們在最近一次探勘中發現了他們住處的遺跡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#244": {
+   "src": "A species of spiders and creeping mold has appeared as well. These are not suitable for consumption, and should be left alone. They are peaceful unless attacked.",
+   "dst": "另外還出現了一種蜘蛛和一種會蔓延的黴菌。這些都不適合食用，不要去招惹。只要不受攻擊，牠們並不會傷人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#245": {
+   "src": "The rest of the book seems to be repeating the same information but in extreme detail.",
+   "dst": "這本書剩下的部分似乎都在重複同樣的資訊，只是寫得極其詳盡。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
   },
   "The Hidden City#000": {
    "src": "Speak to Narder.",
