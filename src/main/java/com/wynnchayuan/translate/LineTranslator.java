@@ -7587,6 +7587,38 @@ public final class LineTranslator {
         return one == null ? null : one.get(0);
     }
 
+    /**
+     * 譯文套不上去的時候，問一次是不是<b>語料那一條本身</b>就對不上，是就記下來。
+     *
+     * <p>這支程式的呼叫端很多，有些是「試試看這樣拼」——那種失敗很正常。所以不記
+     * 「這次沒拼成」，只記「拿這句原文查到的那一條，佔位符跟原文對不上」。
+     * 見 {@link com.wynnchayuan.capture.UnappliedAudit}。
+     */
+    private static void noteUnapplied(List<LineParts> parts, TranslationStore store) {
+        try {
+            if (store == null || parts.isEmpty()) {
+                return;
+            }
+            StringBuilder src = new StringBuilder();
+            for (LineParts part : parts) {
+                if (src.length() > 0) {
+                    src.append(NEWLINE);
+                }
+                src.append(part.template());
+            }
+            String key = src.toString().strip();
+            if (com.wynnchayuan.capture.UnappliedAudit.asked(key)) {
+                return;
+            }
+            String corpus = store.lookup(key);
+            if (corpus != null && !corpus.isBlank()) {
+                com.wynnchayuan.capture.UnappliedAudit.note(key, corpus);
+            }
+        } catch (Throwable t) {
+            // 這是診斷，絕不能反過來弄壞畫面
+        }
+    }
+
     /** 同上，但自己指定符號池——併成一句之後續行的圖示要拿掉。見 {@link #unwrappedGlyphs}。 */
     private static Component rebuild(String translated, LineParts parts,
                                      List<LineParts.Piece> glyphs, TranslationStore store) {
@@ -8788,8 +8820,12 @@ public final class LineTranslator {
         boolean numbersOk = numbered == 0
                 ? wantNumbers == numbers.size()
                 : wantNumbers <= numbers.size() && numbered <= numbers.size();
+        // 玩家名字可以少、不能多。原文謝的是「{u}」，譯文寫成「謝謝各位」是譯法，
+        // 不是寫錯——為了這個整句留英文，譯者連哪裡錯都看不出來（issue #1158）。
+        // 圖示與地名照舊要一樣多：少一個就是畫面上少一個東西。
         if (wantGlyphs != glyphs.size() || wantPlaces != places.size()
-                || !numbersOk || wantUsers != users.size()) {
+                || !numbersOk || wantUsers > users.size()) {
+            noteUnapplied(parts, store);
             return null;              // 譯者刪了或多加了佔位符，整段放棄
         }
 

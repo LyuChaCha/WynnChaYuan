@@ -470,6 +470,9 @@ public final class CaptureStore {
         if (OverflowAudit.takeDirty()) {
             dirty.set(true);
         }
+        if (UnappliedAudit.takeDirty()) {
+            dirty.set(true);
+        }
         if (!dirty.getAndSet(false)) {
             return;
         }
@@ -494,9 +497,14 @@ public final class CaptureStore {
                 + " overflow 是<翻出來了、但譯文比原本那一格大>的句子：where 是介面"
                 + "（dialogue 對話框、tooltip 物品說明），room 是原本容得下多少、"
                 + "need 是譯文要多少，unit 是單位（rows 列、px 像素）。"
-                + "對話那一種在畫面上會改由小框顯示。");
+                + "對話那一種在畫面上會改由小框顯示。"
+                + " unapplied 是<語料有譯文、卻套不上去>的句子，畫面上會留原文："
+                + "why 寫的是哪一種佔位符差了幾個（src 原文幾個、dst 譯文幾個）。"
+                + "{#} 與 {p} 要跟原文一樣多，{~} 也是（或改用 {~1} {~2} 指名），"
+                + "{u} 可以少不能多。這一段每次開遊戲重新記。");
         meta.addProperty("colours", ColourAudit.size());
         meta.addProperty("overflow", OverflowAudit.size());
+        meta.addProperty("unapplied", UnappliedAudit.size());
         meta.addProperty("untranslated", untranslated.size());
         JsonObject events = new JsonObject();
         eventCounts.entrySet().stream()
@@ -557,6 +565,10 @@ public final class CaptureStore {
         // 譯文比原本那一格大的句子。見 OverflowAudit。
         if (OverflowAudit.size() > 0) {
             root.add("overflow", OverflowAudit.toJson());
+        }
+        // 有譯文卻套不上去的句子。見 UnappliedAudit。
+        if (UnappliedAudit.size() > 0) {
+            root.add("unapplied", UnappliedAudit.toJson());
         }
 
         try {
