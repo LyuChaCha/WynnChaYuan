@@ -55,10 +55,11 @@ export const MAX_CAPE_FRAMES = 120;
 const UPLOAD_EVERY_MS = 20 * 1000;
 
 /**
- * 收哪幾種尺寸——就是 capes/templates 的範本：64×32 的 1、2、4、8 倍。
+ * 收哪幾種尺寸——就是 capes/templates 的範本：22×17 格的 1、2、4、8 倍
+ * （左邊 1 ＋ 正面 10 ＋ 右邊 1 ＋ 背面 10 寬，上下緣 1 ＋ 面 16 高）。
  * 不照範本畫的圖不收，免得什麼圖都往上傳。
  */
-export const CAPE_SIZES = [[64, 32], [128, 64], [256, 128], [512, 256]];
+export const CAPE_SIZES = [[22, 17], [44, 34], [88, 68], [176, 136]];
 
 const CREDITS_URL = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/'
   + 'src/main/resources/assets/wynnchayuan/credits.json';

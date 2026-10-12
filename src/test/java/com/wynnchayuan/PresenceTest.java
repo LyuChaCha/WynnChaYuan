@@ -95,11 +95,13 @@ public final class PresenceTest {
                         && Presence.resultOf(400, "{\"why\":\"???\"}") == Presence.Result.FAILED);
 
         // ---- 上傳之前先驗 ----
-        byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/full.gif"));   // 64×32，三格
+        byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/template.gif"));   // 22×17，三格
         check("照範本畫的 GIF 可以上傳", CapeRules.check(gif) == null);
         check("★ 只畫一面的圖不能上傳——要照範本", CapeRules.check(Files.readAllBytes(
                 Path.of("src/test/resources/cape/anim.gif"))) == CapeRules.Problem.BAD_SIZE
                 && CapeRules.check(png(40, 64)) == CapeRules.Problem.BAD_SIZE);
+        check("★ 沒裁掉空白的完整版型也不能上傳", CapeRules.check(png(64, 32)) == CapeRules.Problem.BAD_SIZE
+                && CapeRules.check(png(128, 64)) == CapeRules.Problem.BAD_SIZE);
         check("上限是 20 MB", CapeRules.MAX_BYTES == 20 * 1024 * 1024);
         check("★ 下載到一半的 GIF 不行", CapeRules.check(Arrays.copyOf(gif, gif.length - 40))
                 == CapeRules.Problem.BAD_FORMAT);
@@ -111,10 +113,10 @@ public final class PresenceTest {
                 CapeRules.SIZES.length == 4 && Arrays.stream(CapeRules.SIZES)
                 .allMatch(size -> CapeRules.check(png(size[0], size[1])) == null));
         check("★ PNG：別的尺寸不行", CapeRules.check(png(100, 100)) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(192, 96)) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(1024, 512)) == CapeRules.Problem.BAD_SIZE);
+                && CapeRules.check(png(66, 51)) == CapeRules.Problem.BAD_SIZE
+                && CapeRules.check(png(352, 272)) == CapeRules.Problem.BAD_SIZE);
         byte[] wide = gif.clone();
-        wide[6] = 65;                                   // 寬改成 65
+        wide[6] = 23;                                   // 寬改成 23
         check("GIF：別的尺寸不行", CapeRules.check(wide) == CapeRules.Problem.BAD_SIZE);
 
         System.out.println(failures == 0 ? "登記站：全部通過" : "登記站：" + failures + " 項失敗");

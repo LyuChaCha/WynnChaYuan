@@ -8,8 +8,8 @@ package com.wynnchayuan.cape;
  * 不必等一趟來回。兩邊的數字要一起改。
  *
  * <p>只收照範本畫的圖（使用者 2026-10-12：「防止別人亂傳圖片……需要使用我們範本」）：
- * 尺寸要是 {@code capes/templates} 那幾種，也就是 64×32 的倍數的完整版型——正面、背面、
- * 邊框都在圖上。放在自己資料夾裡預覽的圖沒有這些限制，那是只有自己看得到的。
+ * 尺寸要是 {@code capes/templates} 那幾種，也就是 22×17 格的倍數——正面、背面、邊框都在
+ * 圖上，用不到的空白已經裁掉。放在自己資料夾裡預覽的圖沒有這些限制，那是只有自己看得到的。
  */
 public final class CapeRules {
 
@@ -21,8 +21,8 @@ public final class CapeRules {
     /** GIF 最多幾格。 */
     public static final int MAX_FRAMES = 120;
 
-    /** 收哪幾種尺寸：範本的 64×32 與它的 2、4、8 倍。 */
-    public static final int[][] SIZES = {{64, 32}, {128, 64}, {256, 128}, {512, 256}};
+    /** 收哪幾種尺寸：範本的 22×17 與它的 2、4、8 倍。見 {@link CapeImage#template}。 */
+    public static final int[][] SIZES = {{22, 17}, {44, 34}, {88, 68}, {176, 136}};
 
     /** 哪裡不對。 */
     public enum Problem { TOO_LARGE, BAD_FORMAT, BAD_SIZE, TOO_MANY_FRAMES }

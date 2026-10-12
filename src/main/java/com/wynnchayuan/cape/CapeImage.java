@@ -12,6 +12,8 @@ import java.util.List;
  * <ul>
  *   <li><b>只有一面</b>（任何尺寸、任何比例）：當成披風<b>背後看到的那一面</b>，
  *       裁成 10:16 縮到合適的大小，內側與四邊由這裡補；</li>
+ *   <li><b>範本</b>（22×17 格的倍數）：我們自己的版型——正面、背面、邊框都在圖上，
+ *       用不到的空白裁掉了。上傳只收這一種；</li>
  *   <li><b>完整版型</b>（寬是高的兩倍、寬是 64 的倍數）：Minecraft 自己的披風貼圖，照用；</li>
  *   <li><b>直排的多格 PNG</b>（Wynntils 的動畫披風）：每一格是一張完整版型，從上往下排，
  *       拆開當動畫——已經做好的檔不必重做。</li>
@@ -58,6 +60,44 @@ public final class CapeImage {
 
     /** @param argb 一列接一列，沒用到的地方是 0 */
     public record Frame(int width, int height, int[] argb, int delayMs) {}
+
+    /**
+     * 範本的大小，以格為單位：披風貼圖左上角用得到的那一塊。
+     * 寬 22 ＝ 左邊 1 ＋ 正面 10 ＋ 右邊 1 ＋ 背面 10；高 17 ＝ 上下緣 1 ＋ 面 16。
+     */
+    public static final int TEMPLATE_W = 22;
+    public static final int TEMPLATE_H = 17;
+
+    /** 寬高是不是我們的範本（22×17 的整數倍）。 */
+    public static boolean template(int width, int height) {
+        return width >= TEMPLATE_W && width % TEMPLATE_W == 0
+                && (long) height * TEMPLATE_W == (long) width * TEMPLATE_H;
+    }
+
+    /**
+     * 範本 → 完整的披風貼圖：內容原封不動放在左上角，右邊與下面補空白。
+     *
+     * @param frames 這件披風總共幾格（算預算用）
+     */
+    public static Frame fromTemplate(int[] source, int sw, int sh, int frames, int delayMs) {
+        int k = sw / TEMPLATE_W;
+        int limit = (int) Math.floor(Math.sqrt(
+                PIXEL_BUDGET / (64.0 * 32.0 * Math.max(1, frames))));
+        int target = Math.max(1, Math.min(k, Math.min(MAX_SCALE, limit)));
+        int tw = TEMPLATE_W * target;
+        int th = TEMPLATE_H * target;
+        int[] used = target == k ? source : resample(source, sw, 0, 0, sw, sh, tw, th);
+        int width = 64 * target;
+        int[] out = new int[width * 32 * target];
+        for (int y = 0; y < th; y++) {
+            for (int x = 0; x < tw; x++) {
+                // 版型左上與右上各有一小塊不屬於任何一面（邊框的轉角），留空
+                boolean corner = y < target && (x < target || x >= 21 * target);
+                out[y * width + x] = corner ? 0 : opaque(used[y * tw + x]);
+            }
+        }
+        return new Frame(width, 32 * target, out, delayMs);
+    }
 
     /** 寬高是不是一張完整的披風版型。 */
     public static boolean fullLayout(int width, int height) {
@@ -170,6 +210,9 @@ public final class CapeImage {
      * @param frames 這件披風總共幾格
      */
     public static Frame layout(int[] source, int sw, int sh, int frames, int delayMs) {
+        if (template(sw, sh)) {
+            return fromTemplate(source, sw, sh, frames, delayMs);
+        }
         return fullLayout(sw, sh)
                 ? full(source, sw, sh, frames, delayMs)
                 : face(source, sw, sh, scaleFor(sh, frames), delayMs);

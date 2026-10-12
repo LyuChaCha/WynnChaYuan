@@ -36,6 +36,7 @@ public final class CapeImageTest {
         gif();
         broken();
         face();
+        template();
         fullAndStrip();
         budget();
         credits();
@@ -193,6 +194,55 @@ public final class CapeImageTest {
                 Math.abs(((corner >> 16) & 0xFF) - 0x7F) <= 1);
         check("半透明的像素壓在黑底上變不透明",
                 CapeImage.opaque(0x80FF0000) == 0xFF800000 && CapeImage.opaque(0) == 0xFF000000);
+    }
+
+    /** 我們的範本：裁掉空白的版型，內容原封不動放回完整貼圖的左上角。 */
+    private static void template() throws Exception {
+        check("22×17 與它的倍數是範本", CapeImage.template(22, 17) && CapeImage.template(44, 34)
+                && CapeImage.template(176, 136));
+        check("別的尺寸不是（64×32、20×32、23×17、44×17）", !CapeImage.template(64, 32)
+                && !CapeImage.template(20, 32) && !CapeImage.template(23, 17)
+                && !CapeImage.template(44, 17));
+        int k = 2;
+        int w = 22 * k;
+        int h = 17 * k;
+        int[] source = new int[w * h];
+        for (int i = 0; i < source.length; i++) {
+            source[i] = 0xFF000000 | (i * 37 & 0xFFFFFF);
+        }
+        CapeImage.Frame out = CapeImage.layout(source, w, h, 1, 55);
+        check("★ 貼圖是完整的 64k×32k（實際 " + out.width() + "×" + out.height() + "）",
+                out.width() == 64 * k && out.height() == 32 * k && out.delayMs() == 55);
+        boolean same = true;
+        boolean blank = true;
+        for (int y = 0; y < out.height(); y++) {
+            for (int x = 0; x < out.width(); x++) {
+                int p = out.argb()[y * out.width() + x];
+                boolean corner = y < k && (x < k || x >= 21 * k);
+                if (x < w && y < h && !corner) {
+                    same &= p == source[y * w + x];
+                } else {
+                    blank &= p == 0;
+                }
+            }
+        }
+        check("★ 範本的內容原封不動在左上角：正面、背面、邊框的位置跟完整版型一樣", same);
+        check("★ 範本以外的地方（原本的空白）是空的", blank);
+        // 正面在 (1k,1k)、背面在 (12k,1k)：跟只畫一面時補出來的位置是同一個
+        check("正面與背面落在披風模型讀的位置",
+                out.argb()[k * out.width() + k] == source[k * w + k]
+                        && out.argb()[k * out.width() + 12 * k] == source[k * w + 12 * k]);
+        int[] big = new int[176 * 136];
+        java.util.Arrays.fill(big, 0xFF336699);
+        CapeImage.Frame shrunk = CapeImage.fromTemplate(big, 176, 136, 100, 0);
+        check("★ 格數多的大範本自動縮小（實際 " + shrunk.width() + "×" + shrunk.height() + "）",
+                100L * shrunk.width() * shrunk.height() <= CapeImage.PIXEL_BUDGET
+                        && shrunk.argb()[(shrunk.width() / 64) * shrunk.width() + shrunk.width() / 64]
+                                == 0xFF336699);
+        Gif.Image gif = Gif.decode(file("template.gif"), 9);
+        check("範本尺寸的 GIF：22×17、三格，每一格都排得進去", gif.width() == 22 && gif.height() == 17
+                && gif.frames().size() == 3 && CapeImage.layout(gif.frames().get(1).argb(),
+                        22, 17, 3, 100).width() == 64);
     }
 
     private static void fullAndStrip() {
