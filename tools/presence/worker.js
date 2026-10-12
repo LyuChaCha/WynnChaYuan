@@ -46,7 +46,7 @@ const MAX_USERS = 50000;
 const MAX_BODY = 512;
 
 /** 披風圖檔的上限。 */
-export const MAX_CAPE_BYTES = 4 * 1024 * 1024;
+export const MAX_CAPE_BYTES = 20 * 1024 * 1024;
 
 /** GIF 最多幾格。 */
 export const MAX_CAPE_FRAMES = 120;
@@ -55,13 +55,10 @@ export const MAX_CAPE_FRAMES = 120;
 const UPLOAD_EVERY_MS = 20 * 1000;
 
 /**
- * 收哪幾種尺寸——跟 capes/templates 的範例版型一一對應。
- * 「一面」是只畫背後那一面（10:16）；「完整」是 Minecraft 的披風版型（2:1）。
+ * 收哪幾種尺寸——就是 capes/templates 的範本：64×32 的 1、2、4、8 倍。
+ * 不照範本畫的圖不收，免得什麼圖都往上傳。
  */
-export const CAPE_SIZES = [
-  [20, 32], [40, 64], [80, 128], [160, 256],     // 一面
-  [64, 32], [128, 64], [256, 128],               // 完整
-];
+export const CAPE_SIZES = [[64, 32], [128, 64], [256, 128], [512, 256]];
 
 const CREDITS_URL = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/'
   + 'src/main/resources/assets/wynnchayuan/credits.json';

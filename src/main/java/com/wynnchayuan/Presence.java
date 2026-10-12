@@ -68,8 +68,11 @@ public final class Presence {
 
     private static final Duration TIMEOUT = Duration.ofSeconds(15);
 
+    /** 傳披風、抓披風的時限。圖檔最大 20 MB，慢一點的線路要幾十秒。 */
+    private static final Duration CAPE_TIMEOUT = Duration.ofMinutes(3);
+
     private static final int MAX_LIST_BYTES = 4 * 1024 * 1024;
-    private static final int MAX_CAPE_BYTES = 5 * 1024 * 1024;
+    private static final int MAX_CAPE_BYTES = 21 * 1024 * 1024;
 
     /**
      * 名單。
@@ -336,7 +339,8 @@ public final class Presence {
     /** 送一個請求。通行證過期（401）的話丟掉它，下一輪會重新登入。 */
     private static HttpResponse<byte[]> send(HttpRequest.Builder request, boolean withToken)
             throws Exception {
-        request.timeout(TIMEOUT).header("User-Agent", "WynnChaYuan");
+        boolean cape = request.build().uri().getPath().startsWith("/cape");
+        request.timeout(cape ? CAPE_TIMEOUT : TIMEOUT).header("User-Agent", "WynnChaYuan");
         if (withToken && token != null) {
             request.header("Authorization", "Bearer " + token);
         }

@@ -68,7 +68,7 @@ public final class Capes {
     static final Pattern FILE = Pattern.compile("[a-z0-9][a-z0-9_-]{0,40}\\.(png|gif)");
 
     /** 圖檔的大小上限。 */
-    static final int MAX_BYTES = 4 * 1024 * 1024;
+    static final int MAX_BYTES = 21 * 1024 * 1024;
 
     /** 下載來的圖放多久再重抓一次。 */
     private static final long REFRESH_MS = 24 * 3600_000L;

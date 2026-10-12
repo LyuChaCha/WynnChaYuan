@@ -7,24 +7,22 @@ package com.wynnchayuan.cape;
  * <p>登記站那邊會再驗一次，那一次才算數；這裡先驗是為了在送出去之前就告訴玩家哪裡不對，
  * 不必等一趟來回。兩邊的數字要一起改。
  *
- * <p>尺寸跟 {@code capes/templates} 的範例版型一一對應（使用者 2026-10-12：「限制大小以及
- * 格式要符合範例」）。放在自己資料夾裡預覽的圖沒有這些限制，那是只有自己看得到的。
+ * <p>只收照範本畫的圖（使用者 2026-10-12：「防止別人亂傳圖片……需要使用我們範本」）：
+ * 尺寸要是 {@code capes/templates} 那幾種，也就是 64×32 的倍數的完整版型——正面、背面、
+ * 邊框都在圖上。放在自己資料夾裡預覽的圖沒有這些限制，那是只有自己看得到的。
  */
 public final class CapeRules {
 
     private CapeRules() {}
 
     /** 圖檔的上限。 */
-    public static final int MAX_BYTES = 4 * 1024 * 1024;
+    public static final int MAX_BYTES = 20 * 1024 * 1024;
 
     /** GIF 最多幾格。 */
     public static final int MAX_FRAMES = 120;
 
-    /** 收哪幾種尺寸：前四個是只畫一面的，後三個是完整版型。 */
-    public static final int[][] SIZES = {
-        {20, 32}, {40, 64}, {80, 128}, {160, 256},
-        {64, 32}, {128, 64}, {256, 128},
-    };
+    /** 收哪幾種尺寸：範本的 64×32 與它的 2、4、8 倍。 */
+    public static final int[][] SIZES = {{64, 32}, {128, 64}, {256, 128}, {512, 256}};
 
     /** 哪裡不對。 */
     public enum Problem { TOO_LARGE, BAD_FORMAT, BAD_SIZE, TOO_MANY_FRAMES }

@@ -40,7 +40,7 @@ Minecraft 多人伺服器自己那一套：模組向 Mojang 說「我要加入 <
 - `anyone`：驗過身分的人都可以。
 - `off`：不收。
 
-圖的規則（尺寸、大小、格數）跟模組的 `CapeRules` 同一套，見 `capes/README.md`。
+圖的規則跟模組的 `CapeRules` 同一套：只收照範本畫的（64×32、128×64、256×128、512×256），20 MB 以內，GIF 最多 120 格。見 `capes/README.md`。
 
 ## 拿掉不該出現的披風
 

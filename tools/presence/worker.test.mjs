@@ -178,38 +178,39 @@ check('沒變的現況不改名單', applyRecord(
   { t: 1, users: ['x'], capes: { x: 3 }, hidden: [] }, { i: 'x', c: 1, v: 3 }) === null);
 
 // ---- 圖檔的規則 ----
-check('一面的四種尺寸都收', [[20, 32], [40, 64], [80, 128], [160, 256]]
+check('範本的四種尺寸都收', [[64, 32], [128, 64], [256, 128], [512, 256]]
   .every(([w, h]) => inspectCape(png(w, h)).type === 'png'));
-check('完整版型的三種尺寸都收', [[64, 32], [128, 64], [256, 128]]
-  .every(([w, h]) => inspectCape(png(w, h)).type === 'png'));
-check('★ 別的尺寸不收（實際 ' + inspectCape(png(100, 100)).why + '）',
-  inspectCape(png(100, 100)).why === 'bad size' && inspectCape(png(41, 64)).why === 'bad size');
-check('GIF 讀得出尺寸與格數', JSON.stringify(inspectCape(gif(40, 64, 5)))
-  === JSON.stringify({ type: 'gif', width: 40, height: 64, frames: 5 }));
-check('完整版型的 GIF 也收（正面、背面、邊框自己畫）', inspectCape(gif(128, 64, 3)).frames === 3);
-check('★ 格數太多不收', inspectCape(gif(40, 64, MAX_CAPE_FRAMES + 1)).why === 'too many frames');
-check('★ 下載到一半的 GIF 不收', gifFrames(gif(40, 64, 3, false)) === 0
-  && inspectCape(gif(40, 64, 3, false)).why === 'bad format');
+check('★ 不是範本的尺寸不收（實際 ' + inspectCape(png(100, 100)).why + '）',
+  inspectCape(png(100, 100)).why === 'bad size' && inspectCape(png(65, 32)).why === 'bad size'
+  && inspectCape(png(192, 96)).why === 'bad size' && inspectCape(png(1024, 512)).why === 'bad size');
+check('★ 只畫一面的圖不收——要照範本，正面、背面、邊框都在', inspectCape(png(40, 64)).why === 'bad size'
+  && inspectCape(gif(20, 32, 3)).why === 'bad size');
+check('GIF 讀得出尺寸與格數', JSON.stringify(inspectCape(gif(128, 64, 5)))
+  === JSON.stringify({ type: 'gif', width: 128, height: 64, frames: 5 }));
+check('★ 格數太多不收', inspectCape(gif(64, 32, MAX_CAPE_FRAMES + 1)).why === 'too many frames');
+check('★ 下載到一半的 GIF 不收', gifFrames(gif(64, 32, 3, false)) === 0
+  && inspectCape(gif(64, 32, 3, false)).why === 'bad format');
+check('上限是 20 MB', MAX_CAPE_BYTES === 20 * 1024 * 1024);
 check('★ 太大的檔不收', inspectCape(new Uint8Array(MAX_CAPE_BYTES + 1)).why === 'too large');
 check('不是圖的不收', inspectCape(new TextEncoder().encode('<html>hello</html>')).why === 'bad format');
 
 // ---- 上傳 ----
-r = await worker.fetch(put('/cape', gif(40, 64, 4)), env);
+r = await worker.fetch(put('/cape', gif(128, 64, 4)), env);
 check('★ 沒有通行證不能上傳', r.status === 401);
-r = await worker.fetch(put('/cape', gif(40, 64, 4), bobToken), env);
+r = await worker.fetch(put('/cape', gif(128, 64, 4), bobToken), env);
 check('★ 不在名單上的人不能上傳（預設）', r.status === 403 && (await r.json()).why === 'not listed');
 r = await worker.fetch(put('/cape', png(33, 33), aliceToken), env);
 check('尺寸不對回 400', r.status === 400 && (await r.json()).why === 'bad size');
-r = await worker.fetch(put('/cape', gif(40, 64, 4), aliceToken), env);
+r = await worker.fetch(put('/cape', gif(128, 64, 4), aliceToken), env);
 body = await r.json();
 check('名單上的人上傳成功', r.status === 200 && body.type === 'gif' && body.frames === 4);
 r = await worker.fetch(get('/cape/' + aliceId), env);
 const back = new Uint8Array(await r.arrayBuffer());
-check('★ 下載回來一個位元組都沒變', r.status === 200 && back.length === gif(40, 64, 4).length
-  && back.every((b, i) => b === gif(40, 64, 4)[i]) && r.headers.get('content-type') === 'image/gif');
+check('★ 下載回來一個位元組都沒變', r.status === 200 && back.length === gif(128, 64, 4).length
+  && back.every((b, i) => b === gif(128, 64, 4)[i]) && r.headers.get('content-type') === 'image/gif');
 list = await (await worker.fetch(get('/list'), env)).json();
 check('★ 名單馬上看得到她的披風與版本', list.capes[aliceId] === body.v);
-r = await worker.fetch(put('/cape', png(40, 64), aliceToken), env);
+r = await worker.fetch(put('/cape', png(64, 32), aliceToken), env);
 check('連續上傳要等一下', r.status === 429);
 await worker.fetch(post('/hello', { cape: false }, aliceToken), env);
 list = await (await worker.fetch(get('/list'), env)).json();
@@ -223,9 +224,9 @@ check('沒有的披風回 404', (await worker.fetch(get('/cape/' + bobId), env))
 
 // 開放給所有人
 const open = { CORPUS: env.CORPUS, UPLOADS: 'anyone' };
-r = await worker.fetch(put('/cape', png(20, 32), bobToken), open);
+r = await worker.fetch(put('/cape', png(64, 32), bobToken), open);
 check('UPLOADS=anyone：不在名單上的人也能傳', r.status === 200);
-r = await worker.fetch(put('/cape', png(20, 32), aliceToken), { CORPUS: env.CORPUS, UPLOADS: 'off' });
+r = await worker.fetch(put('/cape', png(64, 32), aliceToken), { CORPUS: env.CORPUS, UPLOADS: 'off' });
 check('UPLOADS=off：誰都不能傳', r.status === 403 && (await r.json()).why === 'uploads off');
 
 // ---- 管理 ----
@@ -239,7 +240,7 @@ check('拿掉他的披風', r.status === 200 && !env.CORPUS.data.has('cape:' + b
 list = await (await worker.fetch(get('/list'), admin)).json();
 check('名單上也沒有了', !(bobId in list.capes));
 env.CORPUS.data.delete('cape:' + bobId);
-r = await worker.fetch(put('/cape', png(20, 32), bobToken), admin);
+r = await worker.fetch(put('/cape', png(64, 32), bobToken), admin);
 check('★ 被禁止的人不能再傳', r.status === 403 && (await r.json()).why === 'banned');
 
 // ---- 自己拿掉 ----
