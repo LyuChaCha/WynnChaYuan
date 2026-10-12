@@ -1407,3 +1407,11 @@ tasks.register('runWynnventoryBoxChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.WynnventoryBoxTest'
 }
 tasks.named('check') { dependsOn 'runWynnventoryBoxChecks' }
+
+tasks.register('runOwnNameChatChecks', JavaExec) {
+    group = 'verification'
+    description = '有譯文卻套不上去的句子：不提玩家名字的照畫，真的對不上的記進 captured.json'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.OwnNameChatTest'
+}
+tasks.named('check') { dependsOn 'runOwnNameChatChecks' }
