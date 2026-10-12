@@ -327,15 +327,80 @@ public final class WynnventoryBridge {
         List<Component> out = null;
         for (int i = 0; i < lines.size(); i++) {
             Component line = lines.get(i);
-            Component done = line == null ? null : line(store, line);
-            if (done != line && out == null) {
-                out = new ArrayList<>(lines);
+            List<Component> rows = line == null ? null : rows(store, line);
+            boolean same = rows == null || (rows.size() == 1 && rows.get(0) == line);
+            if (!same && out == null) {
+                out = new ArrayList<>(lines.subList(0, i));
             }
             if (out != null) {
-                out.set(i, done);
+                if (rows == null) {
+                    out.add(line);
+                } else {
+                    out.addAll(rows);
+                }
             }
         }
         return out == null ? lines : out;
+    }
+
+    /** 原文那一行前面空多少：大約對齊上一行圓點與圖示後面的名字。 */
+    private static final String ORIGINAL_INDENT = "     ";
+
+    /**
+     * 一行翻完之後畫成哪幾行。通常就是一行；名字後面附了原文的話，<b>原文自己一行</b>。
+     *
+     * <h2>為什麼要拆（使用者 2026-10-12）</h2>
+     * 物品名稱選「譯名加原文」的人，討伐戰的意象清單每一行都是
+     * 「刺客的超脫塵世化身 (Assassin's Embodiment of Otherworldly Detachment)」——意象的英文名
+     * 很長，整個框被撐到比旁邊的說明還寬。原文移到下一行、往內縮，框的寬度就回到譯名那麼寬。
+     *
+     * <p>只拆我們自己附上去的那一段：括號裡正好是這一段原本的英文名。行裡本來就有的括號
+     * （「{@code  (+8%)}」）不是這個形狀，不會動。
+     *
+     * @return 沒有東西可換時回只有原物件的清單
+     */
+    static List<Component> rows(TranslationStore store, Component line) {
+        List<Piece> pieces = new ArrayList<>();
+        line.visit((style, text) -> {
+            pieces.add(new Piece(style, text));
+            return Optional.empty();
+        }, Style.EMPTY);
+        boolean changed = false;
+        MutableComponent out = Component.empty();
+        Component original = null;
+        for (Piece p : pieces) {
+            String done = piece(store, p.text());
+            if (done == null) {
+                out.append(Component.literal(p.text()).withStyle(p.style()));
+                continue;
+            }
+            changed = true;
+            String english = englishOf(p.text());
+            String tail = english == null ? null : " (" + english + ")";
+            int at = tail == null ? -1 : done.lastIndexOf(tail);
+            if (original == null && at > 0 && done.substring(at + tail.length()).isBlank()) {
+                out.append(Component.literal(done.substring(0, at)
+                        + done.substring(at + tail.length())).withStyle(p.style()));
+                original = Component.literal(ORIGINAL_INDENT + tail.strip()).withStyle(p.style());
+            } else {
+                out.append(Component.literal(done).withStyle(p.style()));
+            }
+        }
+        if (!changed) {
+            return List.of(line);
+        }
+        return original == null ? List.of(out) : List.of(out, original);
+    }
+
+    /** 這一段裡的英文名：開頭不是字母的東西（圓點、圖示）不算，尾巴的空白不算。 */
+    private static String englishOf(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            if (latinLetter(text.charAt(i))) {
+                String body = text.substring(i).stripTrailing();
+                return body.isEmpty() ? null : body;
+            }
+        }
+        return null;
     }
 
     private record Piece(Style style, String text) {}
