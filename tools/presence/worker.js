@@ -8,7 +8,8 @@
  *   DELETE /cape                            拿掉自己上傳的披風（要通行證）
  *   GET    /cape/<代碼>                      下載某個人的披風
  *   GET    /capes                           所有上傳的披風（相同的圖併成一筆）
- *   GET    /gallery                         披風一覽（網頁）
+ *   GET    /  與  /gallery                  披風一覽（網頁）
+ *   GET    /status                          有幾個人、幾件披風
  *   POST   /mod-link                        開發者拿一條帶著管理權的一覽網址（要通行證）
  *   POST   /admin/remove {id|hash, ban}     拿掉披風、要不要順便禁止再傳（開發者，或 ADMIN_TOKEN）
  *
@@ -26,6 +27,8 @@
  *
  * 部署方式見同一個資料夾的 README.md。
  */
+
+import { GALLERY } from './gallery.js';
 
 /** 公開代碼的樣子：24 個小寫十六進位字元。 */
 const ID = /^[0-9a-f]{24}$/;
@@ -577,99 +580,6 @@ async function handleAdminRemove(request, env, now) {
   return json({ ok: true, removed, banned: body.ban === true });
 }
 
-/**
- * 披風一覽。一張靜態的網頁：跟 /capes 要清單，圖直接用 /cape/<代碼>。
- * 網址帶著管理憑證（#k=…，開發者從遊戲裡開）的話，每一張多出刪除的按鈕。
- */
-const GALLERY = `<!doctype html>
-<html lang="zh-Hant">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WynnChaYuan 披風一覽</title>
-<style>
-  :root { color-scheme: dark; }
-  body { margin: 0; padding: 24px 16px 48px; background: #14171b; color: #e6e8ea;
-         font: 15px/1.6 system-ui, "Microsoft JhengHei", "PingFang TC", sans-serif; }
-  main { max-width: 1080px; margin: 0 auto; }
-  h1 { font-size: 22px; margin: 0 0 4px; }
-  p { margin: 4px 0; color: #a8afb7; }
-  .rules { margin: 14px 0 20px; padding: 10px 14px; border: 1px solid #2c333a; border-radius: 8px; }
-  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
-  .card { border: 1px solid #2c333a; border-radius: 10px; padding: 12px; background: #1a1e23; }
-  .card img { display: block; width: 100%; image-rendering: pixelated; background: #0c0e10;
-              border-radius: 4px; aspect-ratio: 22 / 17; }
-  .meta { margin-top: 8px; font-size: 13px; color: #a8afb7; font-variant-numeric: tabular-nums; }
-  .actions { display: flex; gap: 8px; margin-top: 10px; }
-  button { font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 6px; cursor: pointer;
-           border: 1px solid #5a2b2b; background: #3a1c1c; color: #ffd9d9; }
-  button:hover { background: #532626; }
-  button:focus-visible { outline: 2px solid #7fd08a; outline-offset: 2px; }
-  .mod { color: #7fd08a; }
-  .empty { padding: 40px 0; text-align: center; color: #a8afb7; }
-</style>
-<main>
-  <h1>WynnChaYuan 披風一覽</h1>
-  <p id="count">讀取中…</p>
-  <p id="mod" class="mod" hidden>你有管理權：可以刪除違規的披風。</p>
-  <div class="rules">不可以上傳的內容：政治、不雅或色情、違反法規、種族歧視或仇恨。違規的披風會被移除，上傳的人可能不能再傳。</div>
-  <div id="grid" class="grid"></div>
-</main>
-<script>
-  const key = (location.hash.match(/k=([^&]+)/) || [])[1] || '';
-  if (key) document.getElementById('mod').hidden = false;
-  const grid = document.getElementById('grid');
-  const kb = (n) => n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB';
-  async function remove(cape, ban) {
-    const text = ban ? '刪除這張披風，並禁止用它的 ' + cape.ids.length + ' 個人再上傳？'
-                     : '刪除這張披風（' + cape.ids.length + ' 個人在用）？';
-    if (!confirm(text)) return;
-    const body = { hash: cape.h };
-    if (ban) body.ban = true;
-    const r = await fetch('/admin/remove', { method: 'POST', body: JSON.stringify(body),
-      headers: { authorization: 'Bearer ' + key, 'content-type': 'application/json' } });
-    if (r.ok) load(); else alert('沒有成功（' + r.status + '）。管理權兩個小時過期，請從遊戲裡重新開一次。');
-  }
-  async function load() {
-    const data = await (await fetch('/capes')).json();
-    document.getElementById('count').textContent = '共 ' + data.capes.length + ' 張（相同的圖算一張）';
-    grid.replaceChildren();
-    if (!data.capes.length) {
-      const empty = document.createElement('div');
-      empty.className = 'empty';
-      empty.textContent = '還沒有人上傳披風。';
-      grid.append(empty);
-    }
-    for (const cape of data.capes) {
-      const card = document.createElement('div');
-      card.className = 'card';
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      img.alt = '披風 ' + cape.h.slice(0, 8);
-      img.src = '/cape/' + cape.ids[0] + '?v=' + cape.v;
-      const meta = document.createElement('div');
-      meta.className = 'meta';
-      meta.textContent = cape.t.toUpperCase() + ' · ' + kb(cape.s) + ' · ' + cape.ids.length + ' 人使用 · '
-        + new Date(cape.v).toLocaleDateString();
-      card.append(img, meta);
-      if (key) {
-        const actions = document.createElement('div');
-        actions.className = 'actions';
-        const del = document.createElement('button');
-        del.textContent = '刪除';
-        del.onclick = () => remove(cape, false);
-        const ban = document.createElement('button');
-        ban.textContent = '刪除並禁止再傳';
-        ban.onclick = () => remove(cape, true);
-        actions.append(del, ban);
-        card.append(actions);
-      }
-      grid.append(card);
-    }
-  }
-  load().catch(() => { document.getElementById('count').textContent = '讀不到清單，請重新整理。'; });
-</script>
-</html>`;
-
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -683,20 +593,25 @@ export default {
     if (route === 'POST /admin/remove') return handleAdminRemove(request, env, now);
     if (route === 'POST /mod-link') return handleModLink(request, env, now);
     if (route === 'GET /capes') return handleCapes(env);
-    if (route === 'GET /gallery') {
+    if (route === 'GET /gallery' || route === 'GET /') {
       return new Response(GALLERY, {
         headers: {
           'content-type': 'text/html; charset=utf-8',
           'cache-control': 'no-store',
           'referrer-policy': 'no-referrer',
           'x-content-type-options': 'nosniff',
+          'x-frame-options': 'DENY',
+          // 這一頁只跑自己的程式與 jsDelivr 上的立體檢視；圖只從自己這裡來
+          'content-security-policy': "default-src 'self'; img-src 'self' data: blob:; "
+            + "style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; "
+            + "connect-src 'self'; base-uri 'none'; form-action 'none'",
         },
       });
     }
     if (request.method === 'GET' && url.pathname.startsWith('/cape/')) {
       return handleCape(env, url.pathname.slice('/cape/'.length));
     }
-    if (route === 'GET /') {
+    if (route === 'GET /status') {
       const list = await storedList(env);
       return json({
         what: 'WynnChaYuan presence',

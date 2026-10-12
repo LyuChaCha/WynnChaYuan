@@ -151,7 +151,7 @@ public final class SettingsScreen extends Screen {
         // 披風跟徽章放同一頁（使用者 2026-10-12：「娛樂可以跟徽章放一起」）——兩樣都只是好看，
         // 不影響翻譯。
         tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
-                Preview.Scene.WORLD, List.of(
+                Preview.Scene.CAPE, List.of(
                         new Row.Group(t("group.badge"), false, badge()),
                         new Row.Group(t("group.cape"), false, fun()))));
         return tabs;
@@ -1071,6 +1071,63 @@ public final class SettingsScreen extends Screen {
         } finally {
             canvas.end();
         }
+        // 「徽章與披風」的預覽：玩家本人穿著披風，疊在預覽那一塊上面
+        float[] model = view.spot("preview.model");
+        if (model != null && mc.player != null) {
+            try {
+                drawPlayer(g, mc, model, view.modelYaw(), view.modelPitch());
+            } catch (Throwable t) {
+                com.wynnchayuan.translate.ErrorDebug.note("settings.model", null, t);
+            }
+        }
+    }
+
+    /**
+     * 把玩家畫在預覽那一塊裡。做法跟物品欄畫面左邊那個小人一樣（{@code InventoryScreen}），
+     * 差別是不跟著滑鼠轉頭——轉多少由拖曳決定。
+     *
+     * <p>披風照遊戲裡的規則畫（{@code CapeLayerMixin}）：穿不穿、穿哪一件，跟走在路上
+     * 看到的一樣，所以改了設定、換了資料夾裡的圖，這裡馬上跟著變。
+     */
+    private static void drawPlayer(GuiGraphics g, Minecraft mc, float[] box, float yaw,
+                                   float pitch) {
+        net.minecraft.world.entity.LivingEntity player = mc.player;
+        int x1 = Math.round(box[0]);
+        int y1 = Math.round(box[1]);
+        int x2 = Math.round(box[0] + box[2]);
+        int y2 = Math.round(box[1] + box[3]) - 14;          // 底下那一行提示讓出來
+        if (x2 - x1 < 20 || y2 - y1 < 30) {
+            return;
+        }
+        net.minecraft.client.renderer.entity.state.EntityRenderState state =
+                mc.getEntityRenderDispatcher().getRenderer(player).createRenderState(player, 1.0f);
+        state.lightCoords = 15728880;
+        state.shadowPieces.clear();
+        state.outlineColor = 0;
+        state.nameTag = null;                               // 預覽裡不要名牌
+        if (state instanceof net.minecraft.client.renderer.entity.state.LivingEntityRenderState
+                living) {
+            living.bodyRot = 180.0f + yaw;
+            living.yRot = 0;
+            living.xRot = 0;
+            living.boundingBoxWidth /= living.scale;
+            living.boundingBoxHeight /= living.scale;
+            living.scale = 1.0f;
+        }
+        if (state instanceof net.minecraft.client.renderer.entity.state.AvatarRenderState avatar) {
+            // 披風稍微掀起來一點，看得到它不是貼在背上的一張圖
+            avatar.capeFlap = 0;
+            avatar.capeLean = 6;
+            avatar.capeLean2 = 0;
+        }
+        org.joml.Quaternionf pose = new org.joml.Quaternionf().rotateZ((float) Math.PI);
+        org.joml.Quaternionf camera = new org.joml.Quaternionf()
+                .rotateX(pitch * (float) (Math.PI / 180.0));
+        pose.mul(camera);
+        // 人高 1.8 格：上下各留一點邊，寬度也要塞得下（轉到側面時手臂會伸出去）
+        float size = Math.min((y2 - y1) / 2.3f, (x2 - x1) / 1.5f);
+        org.joml.Vector3f lift = new org.joml.Vector3f(0, state.boundingBoxHeight / 2.0f, 0);
+        g.submitEntityRenderState(state, size, lift, pose, camera, x1, y1, x2, y2);
     }
 
     @Override

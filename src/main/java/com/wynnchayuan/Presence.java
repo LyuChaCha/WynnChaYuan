@@ -52,7 +52,7 @@ public final class Presence {
     private Presence() {}
 
     /** 登記站。沿用先前語料收集站那一支 Worker，程式在 {@code tools/presence}。 */
-    static final String BASE = "https://wynnchayuan-corpus.green09good.workers.dev";
+    static final String BASE = "https://capes.wynnchayuan.com";
 
     /** 名單多久抓一次。 */
     private static final long LIST_EVERY_MS = 5 * 60_000L;

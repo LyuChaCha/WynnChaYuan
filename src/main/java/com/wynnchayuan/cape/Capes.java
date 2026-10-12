@@ -160,7 +160,7 @@ public final class Capes {
         try {
             Path dir = folder();
             if (dir != null) {
-                for (String name : new String[] {"self.gif", "self.png"}) {
+                for (String name : selfFiles()) {
                     Path file = dir.resolve(name);
                     if (Files.isRegularFile(file)) {
                         // 改過的檔時間不同，鍵就不同：存檔之後自動換上新的
@@ -176,12 +176,28 @@ public final class Capes {
         return found;
     }
 
+    /**
+     * 自己資料夾裡認哪幾個檔名。
+     *
+     * <p>會動的披風（GIF）是名單成員才有的（使用者 2026-10-12：「應該是只能用 PNG，否則別人
+     * 上傳 gif 一般用戶也能使用」）：不在名單上的人只認 {@code self.png}，放了 {@code self.gif}
+     * 也不會穿上——不然從一覽把別人的 GIF 抓下來放進資料夾，自己身上就有了。
+     */
+    static String[] selfFiles() {
+        return selfFiles(!com.wynnchayuan.render.Badges.registered(
+                com.wynnchayuan.render.Badges.selfName()).isEmpty());
+    }
+
+    static String[] selfFiles(boolean member) {
+        return member ? new String[] {"self.gif", "self.png"} : new String[] {"self.png"};
+    }
+
     /** 自己資料夾裡那張預覽圖的路徑（{@code self.gif} 優先）；沒有就回 {@code null}。 */
     public static Path localFile() {
         try {
             Path dir = folder();
             if (dir != null) {
-                for (String name : new String[] {"self.gif", "self.png"}) {
+                for (String name : selfFiles()) {
                     if (Files.isRegularFile(dir.resolve(name))) {
                         return dir.resolve(name);
                     }

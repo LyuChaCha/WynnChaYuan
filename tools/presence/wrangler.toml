@@ -3,6 +3,10 @@ name = "wynnchayuan-corpus"
 main = "worker.js"
 compatibility_date = "2026-01-01"
 
+# 自己的網域（Cloudflare 上的 wynnchayuan.com）。部署時 wrangler 會自己建好 DNS 與憑證。
+# 模組連的就是這個網址；workers.dev 那個網址照樣可以用。
+routes = [{ pattern = "capes.wynnchayuan.com", custom_domain = true }]
+
 [[kv_namespaces]]
 binding = "CORPUS"
 id = "70fa88851cfa4cee87b3e818dc40cb75"

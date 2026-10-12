@@ -261,6 +261,11 @@ r = await worker.fetch(get('/gallery'), env);
 const page = await r.text();
 check('一覽是一張網頁', r.status === 200 && r.headers.get('content-type').startsWith('text/html')
   && page.includes('披風一覽') && page.includes('/capes'));
+check('首頁就是一覽', (await (await worker.fetch(get('/'), env)).text()) === page);
+check('★ 一覽頁只准跑自己的程式與 jsDelivr 的立體檢視',
+  (r.headers.get('content-security-policy') || '').includes("script-src 'unsafe-inline' https://cdn.jsdelivr.net"));
+// 頁面是包在樣板字串裡送出去的：裡面不能有反引號或 \${
+check('頁面裡沒有會被樣板字串吃掉的寫法', !page.includes(String.fromCharCode(96)) && !page.includes('$' + '{'));
 check('★ 一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => page.includes(w)));
 
 // ---- ★ 開發者可以刪 ----
@@ -305,8 +310,8 @@ list = await (await worker.fetch(get('/list'), env)).json();
 check('自己拿掉披風：那一筆、圖檔、名單都沒了', r.status === 200
   && !env.CORPUS.data.has('cape:' + aliceId) && !(aliceId in list.capes) && blobs().length === 0);
 
-r = await worker.fetch(get('/'), env);
-check('首頁回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
+r = await worker.fetch(get('/status'), env);
+check('/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
 check('舊的語料路由不在了', (await worker.fetch(get('/submit'), env)).status === 404);
 
 console.log(failures === 0 ? '登記站：全部通過' : '登記站：' + failures + ' 項失敗');

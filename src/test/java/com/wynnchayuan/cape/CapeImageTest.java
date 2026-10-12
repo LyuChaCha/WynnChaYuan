@@ -302,6 +302,9 @@ public final class CapeImageTest {
         check("★ 怪檔名不收——它要拿去拼網址與路徑（實際 " + table + "）",
                 !table.containsKey("someone") && !table.containsKey("shouty"));
         check("沒有披風、沒有遊戲 ID 的不在表上", table.size() == 1);
+        check("★ 自己資料夾的預覽：名單成員認 GIF 與 PNG，一般玩家只認 PNG",
+                java.util.Arrays.equals(Capes.selfFiles(true), new String[] {"self.gif", "self.png"})
+                        && java.util.Arrays.equals(Capes.selfFiles(false), new String[] {"self.png"}));
         check("檔名的規則", Capes.FILE.matcher("my-cape_2.png").matches()
                 && !Capes.FILE.matcher("a/b.png").matches() && !Capes.FILE.matcher("x.jpg").matches()
                 && !Capes.FILE.matcher(".png").matches());

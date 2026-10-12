@@ -19,7 +19,8 @@
 | `DELETE /cape` | | 拿掉自己的披風（要通行證） |
 | `GET /cape/<代碼>` | | 下載某個人的披風 |
 | `GET /capes` | | 所有上傳的披風，相同的圖併成一筆 |
-| `GET /gallery` | | 披風一覽（網頁） |
+| `GET /`、`GET /gallery` | | 披風一覽（網頁） |
+| `GET /status` | | 有幾個人、幾件披風 |
 | `POST /mod-link` | | 開發者拿一條帶著管理權的一覽網址（要通行證） |
 | `POST /admin/remove` | `{id}` 或 `{hash}`，加 `ban` | 拿掉披風、要不要禁止再傳（開發者，或 `ADMIN_TOKEN`） |
 
@@ -52,7 +53,7 @@ Minecraft 多人伺服器自己那一套：模組向 Mojang 說「我要加入 <
 
 ## 披風一覽與下架
 
-`/gallery` 是一張網頁，列出所有上傳的披風（相同的圖算一張）。誰都可以看。
+首頁（`/`，也是 `/gallery`）是一張網頁，列出所有上傳的披風（相同的圖算一張），誰都可以看。每張卡片是披風的正面；點開是一個穿著那件披風的人偶，可以拖曳旋轉（立體的部分用 jsDelivr 上的 skinview3d，載不到就只看平面的圖）。頁面在 `gallery.js`。
 
 **不可以上傳的內容：政治、不雅或色情、違反法規、種族歧視或仇恨。**
 
@@ -70,12 +71,16 @@ npx wrangler secret put ADMIN_TOKEN
 ```
 
 ```bash
-curl -X POST https://wynnchayuan-corpus.green09good.workers.dev/admin/remove \
+curl -X POST https://capes.wynnchayuan.com/admin/remove \
   -H "Authorization: Bearer <密語>" -H "Content-Type: application/json" \
   -d '{"id": "<那個人的 24 字元代碼>", "ban": true}'
 ```
 
 `ban` 是 `true` 的話那個人之後不能再傳，`false` 是解除。也可以用 `{"hash": "<圖的 SHA-256>"}` 一次拿掉所有用同一張圖的人。
+
+## 網址
+
+`https://capes.wynnchayuan.com`（`wrangler.toml` 的 `routes`，Cloudflare 上自己的網域）。模組連的是這個網址；首頁就是披風一覽。`wynnchayuan-corpus.*.workers.dev` 那個網址照樣可以用。
 
 ## 部署
 
@@ -84,6 +89,22 @@ cd tools/presence
 npx wrangler login
 npx wrangler deploy
 ```
+
+Windows 的 PowerShell 擋 `npx.ps1` 的話（「因為這個系統上已停用指令碼執行」），改打 `npx.cmd`：
+
+```bash
+npx.cmd wrangler deploy
+```
+
+第一次部署到自己的網域時，wrangler 會自己建好 DNS 紀錄與憑證，一兩分鐘後生效。
+
+## 在本機看一覽頁
+
+```bash
+node tools/presence/dev.mjs
+```
+
+用放在記憶體裡的假資料跑同一支 Worker，塞了 `capes/templates` 的示範披風。改 `gallery.js` 的時候拿來看樣子；登入與上傳要連 Mojang，這裡沒有接。
 
 ## 測試
 
