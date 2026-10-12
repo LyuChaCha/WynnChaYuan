@@ -62,6 +62,7 @@ public final class BadgesTest {
                   {"role": "貢獻者", "key": "credits.role.contributors", "color": "#5BD86F", "members": [
                     {"name": "Multi", "mc": "Multi_Role", "hide": true},
                     {"name": "Leafy", "mc": "Leafy"},
+                    {"name": "Shy", "mc": "Shy_One", "hide": true},
                     {"name": "資料來源", "key": "credits.source.wiki"}]}
                 ]}"""));
         Badges.load(sections);
@@ -145,25 +146,12 @@ public final class BadgesTest {
                 Component.literal("Leafy"), "Leafy", "Leafy", config, 500)).equals(List.of(GREEN)));
         config.setBadgeRole("developers", false);
         config.setBadgeRole("contributors", false);
-        check("自己把身分全關掉：剩下「有裝模組」的灰色", icons(Badges.decorate(
-                Component.literal("Multi_Role"), "Multi_Role", "Multi_Role", config, 0))
-                .equals(List.of(Badges.INSTALLED)));
-
-        // ---- 申請徽章：自己在名單裡的那幾筆 ----
-        // 這時候 Multi_Role 把三個身分都關了、開了彩色、贊助者選了 #ABCDEF
-        String mine = Badges.creditsEntries(sections, "multi_role", config);
-        check("申請內容：每個身分一筆，帶著分區代號",
-                mine.contains("// developers\n") && mine.contains("// sponsors\n")
-                        && mine.contains("// contributors\n"));
-        check("申請內容：是名單的寫法，名字與 ID 照名單上的", mine.contains(
-                "{\"name\":\"Multi\",\"mc\":\"Multi_Role\",\"rainbow\":true,\"hide\":true}"));
-        check("申請內容：自己選的顏色寫進去，蓋過原本登記的", mine.contains(
-                "{\"name\":\"Multi\",\"mc\":\"Multi_Role\",\"color\":\"#ABCDEF\",\"hide\":true}"));
-        check("申請內容：彩色只寫在開發者那一筆",
-                mine.indexOf("rainbow") == mine.lastIndexOf("rainbow"));
-        check("不在名單上的人沒有東西可以申請",
-                Badges.creditsEntries(sections, "Nobody", config).isEmpty()
-                        && Badges.creditsEntries(sections, null, config).isEmpty());
+        List<Integer> last = icons(Badges.decorate(
+                Component.literal("Multi_Role"), "Multi_Role", "Multi_Role", config, 500));
+        check("徽章不能整個關掉：身分全關還是留一片，而且是名單上第一個身分的（不是灰色）",
+                last.size() == 1 && last.get(0) != Badges.INSTALLED && last.get(0) != 0xABCDEF);
+        check("名單上唯一的身分登記成不展示：別人還是看得到那一片", icons(Badges.decorate(
+                Component.literal("Shy_One"), "Shy_One", "Someone", config, 0)).equals(List.of(GREEN)));
 
         // ---- 設定存得回來 ----
         CollectorConfig again = new CollectorConfig(file);
@@ -173,8 +161,8 @@ public final class BadgesTest {
         Path fresh = Files.createTempFile("wcy-badges-fresh", ".json");
         Files.deleteIfExists(fresh);
         CollectorConfig untouched = new CollectorConfig(fresh);
-        untouched.toggleBadges();
-        untouched.toggleBadges();
+        untouched.toggleWynntilsUi();
+        untouched.toggleWynntilsUi();
         JsonObject saved = JsonParser.parseString(
                 Files.readString(fresh, StandardCharsets.UTF_8)).getAsJsonObject();
         check("沒動過的人設定檔裡不會多出徽章的三項",
@@ -196,11 +184,6 @@ public final class BadgesTest {
                 .equals(List.of(GOLD)));
         check("ID 要是完整的詞：Solo_Dev2 不算", Badges.decorate(
                 Component.literal("Solo_Dev2"), null, "Someone", untouched, 0) == null);
-
-        // ---- 開關 ----
-        untouched.toggleBadges();
-        check("關掉標記就不加", Badges.decorate(Component.literal("Solo_Dev"),
-                "Solo_Dev", "Someone", untouched, 0) == null);
 
         // ---- 字型檔與圖 ----
         try (InputStream in = Badges.class.getResourceAsStream("/assets/wynnchayuan/font/nametag.json")) {

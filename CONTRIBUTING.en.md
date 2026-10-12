@@ -5,6 +5,10 @@
 You don't need to know Java, Git or Minecraft modding. Everything a translator
 touches is JSON, and you can edit it in the GitHub web interface.
 
+> **Getting on the contributor list** (the green leaf before your name): translations for your own
+> language, correct fixes, or real help with the code. Once it has been used, a maintainer adds you.
+> The criteria are in the [README, "Roles and badges"](README.en.md#roles-and-badges).
+
 ## The quickest way: edit on GitHub
 
 1. Open [docs/PROGRESS.md](docs/PROGRESS.md) and find your language.
