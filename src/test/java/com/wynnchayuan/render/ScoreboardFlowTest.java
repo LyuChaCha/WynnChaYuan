@@ -166,6 +166,7 @@ public final class ScoreboardFlowTest {
         check("★ 第二列是時間那一項，整項都在（" + second + "）",
                 second.equals("- 剩餘時間: 07:20"));
         check("★ 第三列是圈數那一項（" + third + "）", third.equals("- 圈數: 1/12"));
+        check("三列都翻出來了：沒有缺的（整段就不必再收進 capture）", plan.missing() == 0);
         check("面板也是一項一行", plan.panel().size() == 3
                 && second.equals(plan.panel().get(1).getString()));
         for (Component line : plan.panel()) {
@@ -191,6 +192,24 @@ public final class ScoreboardFlowTest {
         List<StyledText> more = new java.util.ArrayList<>(rows);
         more.add(StyledText.fromString("Zzyzx qwfp"));
         ScoreboardFlow.Plan mixed = ScoreboardFlow.plan(more, store);
+        check("後面多一列查不到的：缺一列", mixed.missing() == 1);
+        // 使用者 2026-10-12 的 captured.json：Lootrun 帶著試煉的那一段有六列，
+        // 「Orphion's Grace:」那一列當時沒有譯文，整段就一直以「還沒翻」的樣子被收走
+        List<StyledText> trial = List.of(
+                StyledText.fromString("Choose a beacon!"),
+                StyledText.fromString("- Time Left: 07:20"),
+                StyledText.fromString("- Challenges: 1/12"),
+                StyledText.fromString("Orphion's Grace:"),
+                StyledText.fromString("- Get 0/3 Boons"),
+                StyledText.fromString("- Get 1/3 Curses"));
+        ScoreboardFlow.Plan six = ScoreboardFlow.plan(trial, store);
+        StringBuilder shown = new StringBuilder();
+        for (StyledText row : trial) {
+            shown.append(text(six, row)).append('｜');
+        }
+        check("★ 帶試煉的 Lootrun 那六列全部翻得出來（" + shown + "）", six.missing() == 0);
+        check("六列各佔一列，數字留在自己那一列", text(six, trial.get(4)).contains("0/3")
+                && text(six, trial.get(5)).contains("1/3") && !text(six, trial.get(3)).contains("/"));
         check("後面多一列查不到的：前三列不受影響", mixed.panel().size() == 4
                 && second.equals(text(mixed, rows.get(1))));
     }

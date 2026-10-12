@@ -4949,6 +4949,9 @@ public final class LineTranslator {
                     Component original = PanelRow.text(row.cells().get(c));
                     cell = translate(StyledText.fromComponent(original), store);
                     if (cell == null) {
+                        cell = panelCell(row, c, store);
+                    }
+                    if (cell == null) {
                         cell = original;
                     }
                 }
@@ -4959,6 +4962,67 @@ public final class LineTranslator {
                     centred == null ? null : centred[i], true));
         }
         return out;
+    }
+
+    /**
+     * 面板上的一格，<b>連同它前面那段排版偏移</b>一起查。
+     *
+     * <h2>實機回報（使用者 2026-10-12）</h2>
+     * 詛咒與賜福併排的那塊面板：
+     *
+     * <pre>
+     *   [+2.5% 敵人抗性]          Orphion 的恩典
+     *   [+25% Enemy Damage]       賜福效果
+     *   [+2.5% Enemy Resistance]  提升 50%。
+     *   [+25% 敵人生命]
+     * </pre>
+     *
+     * 中間兩列的左欄留成英文。語料裡這些詛咒收的是<b>整列</b>的樣子——前面帶著
+     * 排版偏移的 {@code {#}[+{~} Enemy Damage]}（單獨一列時就是長這樣，所以第四列翻得出來）。
+     * 右欄併成句子的那幾列是一格一格重組的，左欄那一格拿掉了偏移去查，
+     * {@code [+{~} Enemy Damage]} 語料裡沒有。
+     *
+     * <p>所以單獨查不到時，把那一格前面的偏移（還有後面的）接回去再查一次，
+     * 查到了再把偏移拿掉——偏移由呼叫端照原樣擺回去。
+     *
+     * @return 那一格的譯文（不帶偏移）；查不到回 {@code null}
+     */
+    private static Component panelCell(PanelRow row, int c, TranslationStore store) {
+        List<Run> before = c == 0 ? row.lead() : row.gaps().get(c - 1);
+        List<Run> after = row.gaps().get(c);
+        if (before.isEmpty() && after.isEmpty()) {
+            return null;
+        }
+        List<Run> cell = row.cells().get(c);
+        // 前面有偏移的先試（一列一格時就是這個樣子），再試前後都有的
+        for (int shape = 0; shape < 3; shape++) {
+            List<Run> framed = new ArrayList<>();
+            if (shape != 2) {
+                framed.addAll(before);
+            }
+            framed.addAll(cell);
+            if (shape != 0) {
+                framed.addAll(after);
+            }
+            if (framed.size() == cell.size()) {
+                continue;
+            }
+            Component hit = translate(StyledText.fromComponent(PanelRow.text(framed)), store);
+            if (hit == null) {
+                continue;
+            }
+            List<Run> made = new ArrayList<>(runs(hit));
+            while (!made.isEmpty() && made.get(0).space()) {
+                made.remove(0);
+            }
+            while (!made.isEmpty() && made.get(made.size() - 1).space()) {
+                made.remove(made.size() - 1);
+            }
+            if (!made.isEmpty() && PanelRow.hasText(made)) {
+                return PanelRow.text(made);
+            }
+        }
+        return null;
     }
 
     /**

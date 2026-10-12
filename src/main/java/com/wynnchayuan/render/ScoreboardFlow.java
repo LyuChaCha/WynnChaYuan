@@ -74,8 +74,10 @@ public final class ScoreboardFlow {
      * @param panel 給我們自己那個面板的：一句一行，面板會自己折
      * @param rows  給就地取代的：原本那一列的字（去掉樣式）→ 換上去的那一列
      * @param any   有沒有任何一列真的翻出來
+     * @param missing 有幾列沒翻出來（照原文擺的）
      */
-    public record Plan(List<Component> panel, Map<String, StyledText> rows, boolean any) {}
+    public record Plan(List<Component> panel, Map<String, StyledText> rows, boolean any,
+                       int missing) {}
 
     /**
      * 排一段內容。
@@ -95,6 +97,7 @@ public final class ScoreboardFlow {
         List<Component> panel = new ArrayList<>();
         Map<String, StyledText> rows = new LinkedHashMap<>();
         boolean any = false;
+        int missing = 0;
         int i = 0;
         while (i < live.size()) {
             int end = -1;
@@ -131,11 +134,13 @@ public final class ScoreboardFlow {
                 one = oneLine(one);
                 rows.put(key(row), styled(one));
                 any = true;
+            } else {
+                missing++;
             }
             panel.add(one != null ? one : LineTranslator.untranslated(row));
             i++;
         }
-        return new Plan(panel, rows, any);
+        return new Plan(panel, rows, any, missing);
     }
 
     /** 那一列在對照表裡的鍵：畫面上的字，去掉樣式。 */
