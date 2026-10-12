@@ -97,6 +97,8 @@ const STYLE = String.raw`
   .role svg { flex: none; width: 26px; height: 26px; margin-top: 2px; }
   .role b { display: block; font-weight: 650; }
   .role span span { color: var(--ink-2); font-size: 14px; }
+  .plain { margin: 10px 0 0; padding-left: 1.2em; color: var(--ink-2); }
+  .plain li { margin: 4px 0; } .plain b { color: var(--ink); font-weight: 600; }
   .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 
   .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: 22px 0 14px; }
@@ -190,6 +192,11 @@ export const TEXT = {
     'home.sponsor': '贊助者', 'home.sponsorb': '單次 20 USD 或每月 2 USD 以上。',
     'home.contrib': '貢獻者', 'home.contribb': '替自己的語言翻譯、修正錯誤，或提供程式上的實質協助。',
     'home.user': '裝了模組的人', 'home.userb': '名字前面是一片灰色的葉子。',
+    'home.support': '關於贊助',
+    'home.free': '<b>翻譯免費，也會一直免費。</b>所有譯文與翻譯功能都由團隊無償提供，不存在「付費才有翻譯」這回事。贊助完全出於自願：',
+    'home.sup1': '<b>不贊助，翻譯品質不會打折。</b>每個人拿到的譯文、更新與修正都是同一份，不會因為沒贊助而變少或變慢。',
+    'home.sup2': '<b>贊助者多的只有趣味性的東西：</b>名字前面的青藍色葉子、列在名單上，以及動態（GIF）披風與比較大的檔案上限。',
+    'home.sup3': '<b>贊助者的意見會優先採納：</b>回報與建議我們會優先看、優先處理。',
     'home.seecapes': '看看大家的披風', 'home.donate': '贊助', 'home.join': '怎麼參與',
 
     'capes.title': '披風一覽 - WynnChaYuan',
@@ -314,6 +321,11 @@ export const TEXT = {
     'home.sponsor': 'Sponsors', 'home.sponsorb': 'A one-off 20 USD or 2 USD a month and up.',
     'home.contrib': 'Contributors', 'home.contribb': 'Translate for their language, fix mistakes, or help with the code.',
     'home.user': 'Everyone with the mod', 'home.userb': 'A grey leaf before their name.',
+    'home.support': 'About sponsoring',
+    'home.free': '<b>The translations are free, and will stay free.</b> Every translation and every translation feature is provided by the team at no cost; nothing is locked behind payment. Sponsoring is entirely voluntary:',
+    'home.sup1': '<b>Not sponsoring never lowers translation quality.</b> Everyone gets the same translations, updates and fixes - no fewer and no later.',
+    'home.sup2': '<b>Sponsors only get fun extras:</b> the cyan leaf before their name, a place on the list, and animated (GIF) capes with a larger file limit.',
+    'home.sup3': '<b>Sponsors\u2019 feedback is given priority:</b> we look at and act on their reports and suggestions first.',
     'home.seecapes': 'Browse the capes', 'home.donate': 'Sponsor', 'home.join': 'How to contribute',
 
     'capes.title': 'Cape gallery - WynnChaYuan',
@@ -555,6 +567,15 @@ const HOME = String.raw`
     <div class="panel role">` + leaf('#5BD8E8') + String.raw`<span><b>%%home.sponsor%%</b><span>%%home.sponsorb%%</span></span></div>
     <div class="panel role">` + leaf('#5BD86F') + String.raw`<span><b>%%home.contrib%%</b><span>%%home.contribb%%</span></span></div>
     <div class="panel role">` + leaf('#A8A8A8') + String.raw`<span><b>%%home.user%%</b><span>%%home.userb%%</span></span></div>
+  </div>
+  <h2 id="sponsoring">%%home.support%%</h2>
+  <div class="panel">
+    <p style="margin:0">%%home.free%%</p>
+    <ul class="plain">
+      <li>%%home.sup1%%</li>
+      <li>%%home.sup2%%</li>
+      <li>%%home.sup3%%</li>
+    </ul>
   </div>
   <div class="cta">
     <a class="btn" href="/capes">%%home.seecapes%%</a>
