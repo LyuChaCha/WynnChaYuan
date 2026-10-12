@@ -9791,7 +9791,10 @@ public final class LineTranslator {
         if (at < 0 || measure.applyAsInt(text) <= maxPx) {
             return text;
         }
-        return text.substring(0, at) + "\n" + text.substring(at + 1);
+        // 括號後面的圖示（鍵本身帶圖示的名字）留在名字那一行，跟 NameWrap 拆出來的一樣
+        int close = text.lastIndexOf(')') + 1;
+        return text.substring(0, at) + text.substring(close) + "\n"
+                + text.substring(at + 1, close);
     }
 
     static String termsWithin(String text, TranslationStore store) {

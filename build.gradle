@@ -1376,6 +1376,14 @@ tasks.register('runNameRowChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runNameRowChecks' }
 
+tasks.register('runGlyphNameOriginalChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證「譯名 + 原文」附的原文不會重複名稱鍵裡的佔位符'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.GlyphNameOriginalTest'
+}
+tasks.named('check') { dependsOn 'runGlyphNameOriginalChecks' }
+
 tasks.register('runOverflowAuditChecks', JavaExec) {
     group = 'verification'
     description = '譯文比原本那一格大的句子：塞不下才記、帶玩家資料不記、改短之後自己消失'
