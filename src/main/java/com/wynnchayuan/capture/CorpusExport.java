@@ -95,6 +95,10 @@ public final class CorpusExport {
         if (OverflowAudit.size() > 0) {
             root.add("overflow", OverflowAudit.toJson());
         }
+        // 套不上去的譯文也帶著：記的時候就濾掉帶玩家資料的了。見 UnappliedAudit。
+        if (UnappliedAudit.size() > 0) {
+            root.add("unapplied", UnappliedAudit.toJson());
+        }
 
         Path out = file(configDir);
         Files.createDirectories(out.getParent());
