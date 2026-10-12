@@ -134,21 +134,29 @@ public final class Badges {
      * <p>別人照名單上登記的；<b>自己</b>再套一層本機的選擇（設定畫面的「我的徽章」），
      * 這樣改了馬上看得到。本機的選擇不會傳出去，別人看到的仍然是登記的那一份。
      *
+     * <p>名單上的人<b>至少有一片</b>，不會是空的。
+     *
      * @param account 帳號名稱
      * @param self    自己的帳號名稱；不知道就傳 {@code null}
      */
     public static List<Role> shown(String account, String self, CollectorConfig config) {
         boolean mine = account != null && account.equalsIgnoreCase(self);
+        List<Role> all = new ArrayList<>();
         List<Role> out = new ArrayList<>();
         for (Role role : registered(account)) {
-            boolean show = mine ? config.badgeRoleShown(role.id(), !role.hidden()) : !role.hidden();
-            if (!show) {
-                continue;
-            }
             boolean rainbow = mine ? config.badgeRainbow(role.rainbow()) && rainbowAllowed(role)
                     : role.rainbow();
-            out.add(new Role(role.id(), role.name(),
-                    mine ? ownColour(config, role) : role.color(), rainbow, false));
+            Role resolved = new Role(role.id(), role.name(),
+                    mine ? ownColour(config, role) : role.color(), rainbow, false);
+            all.add(resolved);
+            if (mine ? config.badgeRoleShown(role.id(), !role.hidden()) : !role.hidden()) {
+                out.add(resolved);
+            }
+        }
+        // 最少留一片：徽章是「這個人是誰」，不能整個關掉（使用者 2026-10-12）。
+        // 多重身分的人可以挑要放哪幾片，全關掉的話留名單上的第一個。
+        if (out.isEmpty() && !all.isEmpty()) {
+            out.add(all.get(0));
         }
         return out;
     }
@@ -164,47 +172,6 @@ public final class Badges {
             }
         }
         return role.color();
-    }
-
-    /**
-     * 自己在 {@code credits.json} 裡的那幾筆，照現在面板上的選擇寫好。
-     *
-     * <p>別人看到的是 repo 上那份名單。這裡把「展示哪些身分、顏色、彩色」換成名單的
-     * 寫法，本人貼回去、送出修改，合併之後大家下次同步就看得到——模組自己不送任何東西。
-     *
-     * @return 每個身分兩行：{@code // 分區代號} 與那一筆的 JSON；不在名單上就是空字串
-     */
-    public static String creditsEntries(List<Credits.Section> sections, String self,
-                                        CollectorConfig config) {
-        StringBuilder out = new StringBuilder();
-        if (self == null) {
-            return "";
-        }
-        for (Credits.Section section : sections) {
-            for (Credits.Member member : section.members()) {
-                if (!member.hasHead() || !member.mc().equalsIgnoreCase(self)) {
-                    continue;
-                }
-                String id = section.id();
-                com.google.gson.JsonObject entry = new com.google.gson.JsonObject();
-                entry.addProperty("name", member.label());
-                entry.addProperty("mc", member.mc());
-                String own = config.badgeColour(id);
-                if (own != null) {
-                    entry.addProperty("color", own);
-                } else if (member.colour() != 0) {
-                    entry.addProperty("color", String.format("#%06X", member.colour() & 0xFFFFFF));
-                }
-                if ("developers".equals(id) && config.badgeRainbow(member.rainbow())) {
-                    entry.addProperty("rainbow", true);
-                }
-                if (!config.badgeRoleShown(id, !member.hidden())) {
-                    entry.addProperty("hide", true);
-                }
-                out.append("// ").append(id).append('\n').append(entry).append('\n');
-            }
-        }
-        return out.toString();
     }
 
     /** 彩色模式是開發者的；其他身分就算設定檔被手改也不給。 */
@@ -236,7 +203,7 @@ public final class Badges {
     /** 同上，但所有外部狀態都從參數來——測試用。 */
     static Component decorate(Component nameTag, String account, String self,
                               CollectorConfig config, long now) {
-        if (nameTag == null || !config.showBadges() || startsWithIcon(nameTag)) {
+        if (nameTag == null || startsWithIcon(nameTag)) {
             return null;
         }
         String who = account != null ? account : accountIn(nameTag.getString());

@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="docs/icon.png" width="160" alt="WynnChaYuan">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="logo/2026/wynnchayuan-banner-transparent-for-dark-2640.png">
+    <img src="logo/2026/wynnchayuan-banner-transparent-for-light-2640.png" width="760" alt="WynnChaYuan">
+  </picture>
 </p>
 
 # WynnChaYuan
@@ -50,7 +53,7 @@ the English ones. You can turn them on in the settings.
 - **Panel screenshot**: copies the translation panel to the clipboard or saves it to a file (key unbound by default)
 - **Adjustable panels**: boxes can be dragged; dialogue, choices and the tracker can be resized from the corner
 - **Update notice**: says so once in chat when a new version is out, linking to GitHub Releases
-- **Contributor tags**: people on the credits list get an extra line above their nameplate, visible only to others running the mod (can be turned off)
+- **Leaf badges**: developers, sponsors and contributors get a leaf before their name (gold, cyan, green), visible only to others running the mod; see [Roles and badges](#roles-and-badges)
 
 **Client-side only.** The server does not need it.
 
@@ -177,9 +180,30 @@ you if it is missing). Corpus checks: `python tools/validate.py`.
 
 Free, and it will stay free. To buy us a tea: **<https://ko-fi.com/lyuchacha>**
 
-**3 USD/month** or a one-off **10 USD** or more puts you on the sponsor list: below, under
-Settings → About / Credits, and as an extra line above your nameplate. Sponsoring does not influence
+A one-off **20 USD** or **2 USD/month** or more puts you on the sponsor list: below, under
+Settings → About / Credits, and as a cyan leaf before your name. Sponsoring does not influence
 translations, and there are no paid features.
+
+## Roles and badges
+
+The colour of the leaf before your name depends on your role on the credits list. That list is the
+"Translation team" section below; a maintainer adds you once it is confirmed, and needs your Minecraft ID.
+
+| Role | Leaf | How to get it |
+|---|---|---|
+| Developer | Gold | Helps develop and maintain the code |
+| Sponsor | Cyan | A one-off **20 USD** or **2 USD/month** or more ([Ko-fi](https://ko-fi.com/lyuchacha)) |
+| Contributor | Green | Any one of the items below |
+| Everyone else running the mod | Grey | — (for now it only shows on your own screen) |
+
+**What counts for contributors** — whether it was used, not how much:
+
+- **Translations for your own language**: filling in missing lines, or a `captured.json` you sent that was used to fill gaps, merged into main.
+- **Correct fixes**: pointing out a mistranslation, a missing line or inconsistent wording that is confirmed and fixed.
+- **Real help with the code**: a merged fix or feature, or a report that reproduces a problem and helps find the cause.
+
+People on the list can change their leaf colour under Settings → Badge; with several roles you can pick
+which leaves to show, at least one.
 
 ## Translation team
 
