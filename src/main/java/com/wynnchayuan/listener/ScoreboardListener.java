@@ -109,8 +109,13 @@ public final class ScoreboardListener {
                 shown.add(ScoreboardFlow.key(row));
                 capture(row, "desc");
             }
-            captureBlock(content);
             ScoreboardFlow.Plan plan = ScoreboardFlow.plan(content, store);
+            // 每一列都翻出來了就不必再收整段：整段只是給譯者拼原句用的。
+            // 不擋的話，Lootrun 那一段（狀態 × 時間加成 × 試煉，各自都翻得出來）
+            // 每一種組合都會以「還沒翻」的樣子出現在 captured.json，補也補不完。
+            if (plan.missing() > 0) {
+                captureBlock(content);
+            }
             replaced.putAll(plan.rows());
             // Lootrun（記分板本來就在）不抄進面板，見 #mirrors；但上面那份對照表照做
             if (!mirrors(part)) {
