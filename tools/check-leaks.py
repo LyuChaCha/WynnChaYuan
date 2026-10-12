@@ -75,7 +75,10 @@ SHAPES = [
     # 這種台詞（討伐戰頭目的開場白「The Mummyboard: OS Version M-37 is now
     # online.」），那是正當的譯文，不能當成夾帶玩家名。
     (r"(?m)^[^:\n]*?\sis now (?:online|offline)", "誰上下線了"),
-    (r"(?m)^(?:\{#\})*\S+ has died", "誰死了"),
+    # 死亡廣播是「某某 has died」就結束。後面還接著地點的是任務的文案——
+    # The Hero of Gavel 的「Siegfried has died in the cage. You'll have to find
+    # your way out yourself.」，Siegfried 是 NPC（外部貢獻者的 PR 被這一條擋下來）。
+    (r"(?m)^(?:\{#\})*\S+ has died(?! in the cage\b)", "誰死了"),
     (r"['’]s Totem of Tales", "誰的石碑"),
     # 「某某的怪物圖騰到期了」。這一句有兩種版本：`{u}'s mob totem` 是
     # 已經匿名化的（上面的 ALLOW 會放行），帶真名的那一種要擋。
