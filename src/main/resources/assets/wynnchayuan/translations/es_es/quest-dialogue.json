@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "es_es",
-  "count": 22976,
-  "translated": 22724,
+  "count": 23026,
+  "translated": 22777,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -38129,7 +38129,7 @@
   },
   "Blazing Retribution#001": {
    "src": "Hmm.. I wonder if there's any tier {~} items here.",
-   "dst": "",
+   "dst": "Mmm.. Me pregunto si habrá por aquí algún objeto de nivel {~}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -38139,7 +38139,7 @@
   },
   "Blazing Retribution#002": {
    "src": "AHA! HIS MUG!",
-   "dst": "",
+   "dst": "¡AJÁ! ¡SU TAZA!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -38149,7 +38149,7 @@
   },
   "Blazing Retribution#003": {
    "src": "...It's expensive though. Oh well, it's worth it for a chance to adventure with Siegfried!",
-   "dst": "",
+   "dst": "...Aunque es cara. Bueno, ¡merece la pena por la oportunidad de ir de aventura con Siegfried!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -136587,6 +136587,16 @@
    "speaker": "Brie",
    "stage": "Stage 8"
   },
+  "Recipe For Disaster#175": {
+   "src": "Welcome back, mon ami! Alas, running a restaurant is busy work, so I can't talk for long. Maybe take a seat in the restaurant?",
+   "dst": "¡Bienvenido de vuelta, mon ami! Por desgracia, llevar un restaurante da mucho trabajo, así que no puedo hablar mucho rato. ¿Y si te sientas en el restaurante?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Recipe For Disaster",
+   "stage": "",
+   "speaker": "Chef Hamsey",
+   "source": "captured.json"
+  },
   "Reclaiming the House#001": {
    "src": "I need more firepower if I'm going...to get...",
    "dst": "Necesito más potencia de fuego si quiero... recuperar...",
@@ -183458,8 +183468,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#053": {
-   "src": "Welcome ! Congratulations on winning the scavenger hunt!",
-   "dst": "¡Bienvenido! ¡Enhorabuena por ganar la búsqueda del tesoro!",
+   "src": "Welcome {u}! Congratulations on winning the scavenger hunt!",
+   "dst": "¡Bienvenido, {u}! ¡Enhorabuena por ganar la búsqueda del tesoro!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -183488,7 +183498,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#056": {
-   "src": "It’s up at the airship docks – I’ll teleport us there!",
+   "src": "It's up at the airship docks - I'll teleport us there!",
    "dst": "Está en los muelles de aeronaves. ¡Nos teletransportaré!",
    "role": "desc",
    "kind": "dialogue",
@@ -183498,8 +183508,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#057": {
-   "src": "(translated: Gavellian) MAGICAL MAGICKY MAGIC MAGICSPELL. Teleport!",
-   "dst": "(traducido: gavelliano) MÁGICO MAGIQUI MAGIA MAGIHECHIZO. ¡Teletransporte!",
+   "src": "magical magicky magic magicspell, Teleport!",
+   "dst": "mágico magiqui magia magihechizo, ¡Teletransporte!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -183518,7 +183528,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#059": {
-   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~},-{~}]",
+   "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~}, -{~}]",
    "dst": "Viaja con Siegfried en su aeronave desde los muelles de {p} en [{~}, {~},-{~}]",
    "role": "desc",
    "kind": "objective",
@@ -183628,7 +183638,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#070": {
-   "src": "Anyway, we’re about to land now – be careful not to fall off!",
+   "src": "Anyway, we're about to land now - be careful not to fall off!",
    "dst": "En fin, ya vamos a aterrizar. ¡Cuidado, no te caigas!",
    "role": "desc",
    "kind": "dialogue",
@@ -183638,7 +183648,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#071": {
-   "src": "Enter the perilous cave on the eastern edge of the {p} with Siegfried at [{~}, {~}, -{~}]",
+   "src": "Enter the perilous cave on the eastern edge of {p} with Siegfried at [{~}, {~}, -{~}]",
    "dst": "Entra con Siegfried en la peligrosa cueva del extremo oriental de {p} en [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
@@ -183698,7 +183708,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#077": {
-   "src": "Follow Siegfried through the cave on the eastern edge of the {p} at [{~}, {~}, -{~}]",
+   "src": "Follow Siegfried through the cave on the eastern edge of {p} at [{~}, {~}, -{~}]",
    "dst": "Sigue a Siegfried por la cueva del extremo oriental de {p} en [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
@@ -183748,8 +183758,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#082": {
-   "src": "Stay behind me, I’ll open it with my magic spell. (translated: Gavellian) OPEN!",
-   "dst": "Ponte detrás de mí, la abriré con mi hechizo mágico. (traducido: gavelliano) ¡ÁBRETE!",
+   "src": "Stay behind me, I'll open it with my magical spell. open!",
+   "dst": "Ponte detrás de mí, la abriré con mi hechizo mágico. ¡ábrete!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184008,8 +184018,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#108": {
-   "src": "WE’RE ON OUR OWN! This is REAL now! No coming back after ‘dying’, no more obvious traps, no more Siegfried. If I die here, I DIE! No coming back!",
-   "dst": "¡ESTAMOS SOLOS! ¡Ahora esto es REAL! Nada de volver tras 'morir', ni trampas evidentes, ni Siegfried. ¡Si muero aquí, MUERO! ¡Sin vuelta atrás!",
+   "src": "WE'RE ON OUR OWN! This is REAL now! No coming back after 'dying', no more obvious traps, no more Siegfried! If I die here, I DIE! No coming back!",
+   "dst": "¡ESTAMOS SOLOS! ¡Ahora esto es REAL! Nada de volver tras 'morir', ni trampas evidentes, ¡ni Siegfried! ¡Si muero aquí, MUERO! ¡Sin vuelta atrás!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184848,8 +184858,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#193": {
-   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items.",
-   "dst": "Como compensación por su desafortunado accidente, Siegfried le devolverá las esmeraldas gastadas en los objetos de la búsqueda del tesoro.",
+   "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items, and some more as compensation.",
+   "dst": "Como compensación por su desafortunado accidente, Siegfried le devolverá las esmeraldas gastadas en los objetos de la búsqueda del tesoro, y algunas más a modo de compensación.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184858,8 +184868,8 @@
    "source": "wiki"
   },
   "The Hero of Gavel#194": {
-   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried!",
-   "dst": "El total asciende a... {~} esmeraldas líquidas. ¡Lamentamos las dificultades sufridas durante su aventura con Siegfried!",
+   "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried, The Hero of Gavel!",
+   "dst": "El total asciende a... {~} esmeraldas líquidas. ¡Lamentamos las dificultades sufridas durante su aventura con Siegfried, el Héroe de Gavel!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -184876,6 +184886,496 @@
    "stage": "Stage 22",
    "speaker": "Coming Soon",
    "source": "wiki"
+  },
+  "The Hero of Gavel#197": {
+   "src": "I've been saving up for this scavenger hunt all year, there's no way I can lose!",
+   "dst": "Llevo todo el año ahorrando para esta búsqueda del tesoro, ¡es imposible que pierda!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#198": {
+   "src": "Participating in the Siegfried Scavenger Hunt? If you are, the theatre's right behind me.",
+   "dst": "¿Participas en la Búsqueda del Tesoro de Siegfried? Si es así, el teatro está justo detrás de mí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Excited Fan",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#199": {
+   "src": "The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
+   "dst": "¡El ganador tendrá el privilegio de vivir conmigo una aventura única e irrepetible, totalmente auténtica!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 2",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#200": {
+   "src": "*whistling*",
+   "dst": "*silbando*",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#201": {
+   "src": "The map's in the upper level of the airship. Ignore anything else you find there.",
+   "dst": "El mapa está en la cubierta superior de la aeronave. No hagas caso de nada más que encuentres allí.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#202": {
+   "src": "Maybe you should get the rope too...",
+   "dst": "Quizá deberías llevarte también la cuerda...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#203": {
+   "src": "This rope may be useful later on...",
+   "dst": "Esta cuerda podría ser útil más adelante...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#204": {
+   "src": "Hey, I told you to stay behind me! I have to enter the cave first!",
+   "dst": "¡Eh, te dije que te quedaras detrás de mí! ¡Tengo que entrar yo primero en la cueva!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "Siegfried",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#205": {
+   "src": "You should jump in after him.",
+   "dst": "Deberías saltar tras él.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#206": {
+   "src": "[!] This quest uses particles to display some information. It is recommended to have at least some particles enabled to enhance your experience.",
+   "dst": "[!] Esta misión usa partículas para mostrar cierta información. Se recomienda tener activadas al menos algunas partículas para mejorar tu experiencia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#207": {
+   "src": "He's unconscious. Perhaps there's something around here to wake him up?",
+   "dst": "Está inconsciente. ¿Habrá por aquí algo para despertarlo?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#208": {
+   "src": "This should wake Siegfried.",
+   "dst": "Esto debería despertar a Siegfried.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#209": {
+   "src": "This boulder is stopping the portcullis chains... You'd need a pickaxe to break it, however.",
+   "dst": "Esta roca bloquea las cadenas del rastrillo... Eso sí, haría falta un pico para romperla.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#210": {
+   "src": "It's an old mining expedition's log:",
+   "dst": "Es el registro de una antigua expedición minera:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#211": {
+   "src": "Supplies are limited, excavation yielding little success.",
+   "dst": "Los suministros escasean y la excavación apenas da resultados.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#212": {
+   "src": "We've attempted going around the portcullis, but the beast in the only cave past it killed one of our crew.",
+   "dst": "Hemos intentado rodear el rastrillo, pero la bestia de la única cueva que hay al otro lado mató a uno de los nuestros.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#213": {
+   "src": "Apart from the portcullis, there are no signs of villagers or of the town itself. The team is beginning to doubt its existence.",
+   "dst": "Aparte del rastrillo, no hay señales de aldeanos ni del pueblo en sí. El equipo empieza a dudar de su existencia.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#214": {
+   "src": "The return crew is lowering the crane tomorrow, so it's unlikely we can find anything before then. Logs will be left for use of any future excavations.",
+   "dst": "El equipo de regreso baja la grúa mañana, así que es poco probable que encontremos algo antes. Los registros se dejarán aquí para uso de futuras excavaciones.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#215": {
+   "src": "The rest of the log lists geological information about the cave and a supply manifest.",
+   "dst": "El resto del registro recoge información geológica sobre la cueva y un inventario de suministros.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#216": {
+   "src": "Find a way deeper into the cave and lead Siegfried there with you.",
+   "dst": "Encuentra la forma de adentrarte más en la cueva y lleva a Siegfried contigo.",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#217": {
+   "src": "Why would you need this?",
+   "dst": "¿Para qué ibas a necesitar esto?",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#218": {
+   "src": "The cage fell! You should go help Siegfried out.",
+   "dst": "¡La jaula ha caído! Deberías ir a ayudar a Siegfried.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#219": {
+   "src": "Siegfried has died in the cage. You'll have to find your way out yourself.",
+   "dst": "Siegfried ha muerto en la jaula. Tendrás que buscar la salida por tu cuenta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#220": {
+   "src": "It seems the trap machinery broke down!",
+   "dst": "¡Parece que el mecanismo de la trampa se ha averiado!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#221": {
+   "src": "This area seems like a good place to rest before moving on. Siegfried would have been overjoyed to see this.",
+   "dst": "Esta zona parece un buen lugar para descansar antes de seguir. Siegfried se habría alegrado muchísimo de ver esto.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#222": {
+   "src": "This is a wood wall.",
+   "dst": "Es una pared de madera.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#223": {
+   "src": "Maybe that web would fall if you cut the ones supporting it?",
+   "dst": "¿Quizá esa telaraña caiga si cortas las que la sostienen?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#224": {
+   "src": "It looks like the way forward is across the yellow shards...",
+   "dst": "Parece que el camino sigue por los fragmentos amarillos...",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#225": {
+   "src": "Picking up lava with your bare hands seems like a bad idea.",
+   "dst": "Coger lava con las manos desnudas no parece buena idea.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#226": {
+   "src": "... Is that sunlight at the other side of the cave?",
+   "dst": "... ¿Eso del otro lado de la cueva es luz del sol?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#227": {
+   "src": "This is a sewing machine.. It still seems to work.",
+   "dst": "Es una máquina de coser.. Parece que aún funciona.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#228": {
+   "src": "It's a tailor's notes on how to create some items:",
+   "dst": "Son las notas de un sastre sobre cómo fabricar algunos objetos:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#229": {
+   "src": "To Sarnim - If you really wanted to learn the craft, here's some simple items to get you started.",
+   "dst": "Para Sarnim - Si de verdad querías aprender el oficio, aquí tienes unos objetos sencillos para empezar.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#230": {
+   "src": "Parachute: Some cloth and rope. I haven't found any rope since the shattering, I don't think there's any in the storage either.",
+   "dst": "Paracaídas: algo de tela y cuerda. No he encontrado cuerda desde la Ruptura, y tampoco creo que quede en el almacén.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#231": {
+   "src": "Soft Boots: Cloth, and some soft slime. I usually get my slime from the spider burrows past the gate.",
+   "dst": "Botas blandas: tela y un poco de limo blando. Yo suelo sacar el limo de las madrigueras de arañas que hay pasada la puerta.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#232": {
+   "src": "Hard Boots: Cloth and leather. These hurt quite a bit, so be careful. There should be some leather in the storage if you make these.",
+   "dst": "Botas duras: tela y cuero. Hacen bastante daño, así que ten cuidado. Si las haces, debería quedar algo de cuero en el almacén.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#233": {
+   "src": "It's an old notebook listing some research about geysers:",
+   "dst": "Es un cuaderno viejo con apuntes de una investigación sobre géiseres:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#234": {
+   "src": "The geyser was active back before the shattering, but it seems to have filled up.",
+   "dst": "El géiser estaba activo antes de la Ruptura, pero parece que se ha taponado.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#235": {
+   "src": "It hasn't erupted in weeks. However! My studies on the small geysers have proven lava can activate them again!",
+   "dst": "Lleva semanas sin entrar en erupción. ¡Pero! ¡Mis estudios con los géiseres pequeños han demostrado que la lava puede reactivarlos!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#236": {
+   "src": "Hannux still refuses to give me molten metal from his forge, though. My next tests ought to convince him.",
+   "dst": "Eso sí, Hannux sigue negándose a darme metal fundido de su fragua. Mis próximas pruebas deberían convencerlo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#237": {
+   "src": "It's an old, tattered book labelled 'Sustainable Food in the Caverns, by Hannux and Ilorav'",
+   "dst": "Es un libro viejo y hecho jirones titulado 'Alimentación sostenible en las cavernas, por Hannux e Ilorav'",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#238": {
+   "src": "This document should outline a sustainable method for the continued survival of our town for however long we may be in these caverns.",
+   "dst": "Este documento pretende exponer un método sostenible para que nuestro pueblo siga sobreviviendo, por mucho tiempo que tengamos que pasar en estas cavernas.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#239": {
+   "src": "Multiple varieties of mushrooms have grown in the years after the shattering. These are edible and a primary source of food.",
+   "dst": "En los años posteriores a la Ruptura han crecido múltiples variedades de setas. Son comestibles y una fuente principal de alimento.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#240": {
+   "src": "A bioluminescent material allows for trees and grass to grow, albeit very slowly.",
+   "dst": "Un material bioluminiscente permite que crezcan árboles y hierba, aunque muy despacio.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#241": {
+   "src": "We recommend taking good care of the trees, grass, and bushes - they may become a valuable source of food in the future.",
+   "dst": "Recomendamos cuidar bien los árboles, la hierba y los arbustos: en el futuro pueden convertirse en una valiosa fuente de alimento.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#242": {
+   "src": "We have also found that there is very little edible plant life outside of our section of the cave.",
+   "dst": "También hemos comprobado que hay muy poca vida vegetal comestible fuera de nuestra sección de la cueva.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#243": {
+   "src": "A smaller group was far less lucky than us and ended up in an area with virtually no edible material - we found the remains of their homes in a recent expedition.",
+   "dst": "Un grupo más pequeño tuvo mucha menos suerte que nosotros y acabó en una zona prácticamente sin nada comestible; encontramos los restos de sus hogares en una expedición reciente.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#244": {
+   "src": "A species of spiders and creeping mold has appeared as well. These are not suitable for consumption, and should be left alone. They are peaceful unless attacked.",
+   "dst": "También han aparecido una especie de arañas y un moho rastrero. No son aptos para el consumo y conviene dejarlos en paz. Son pacíficos a menos que se los ataque.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
+  },
+  "The Hero of Gavel#245": {
+   "src": "The rest of the book seems to be repeating the same information but in extreme detail.",
+   "dst": "El resto del libro parece repetir la misma información, pero con un detalle extremo.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Hero of Gavel",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "captured.json"
   },
   "The Hidden City#000": {
    "src": "Speak to Narder.",
