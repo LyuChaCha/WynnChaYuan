@@ -239,7 +239,8 @@ public final class UpgradeSafetyTest {
         // WynnMod 重畫的物品說明也翻（有裝才有作用）。舊設定檔沒有，補上預設值。
         expected.addProperty("wynnmodTooltip", true);
         // 披風的兩個開關。舊設定檔沒有，補上預設值。
-        expected.addProperty("presence", true);
+        // 「讓別人知道我有裝」（presence）拿掉了：每個使用者都有葉子，這一欄不再寫出去。
+        expected.remove("presence");
         expected.addProperty("capes", true);
         expected.addProperty("ownCape", true);
         // 1.0.2：內容名稱（任務、洞窟…）的三段式顯示。舊設定檔沒有，預設是譯名（跟原本一樣）。

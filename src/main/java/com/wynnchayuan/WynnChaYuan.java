@@ -905,7 +905,9 @@ public final class WynnChaYuan implements ClientModInitializer {
             if (client.player != null && client.getCurrentServer() != null
                     && client.getCurrentServer().ip.toLowerCase(java.util.Locale.ROOT)
                             .contains("wynncraft")) {
-                Presence.tick(config.presence(), config.ownCape());
+                Presence.tick(true, config.ownCape(),
+                        com.wynnchayuan.render.Badges.ownRainbow(config),
+                        com.wynnchayuan.render.Badges.ownShown(config));
             }
             // 有新翻譯也說一次，但只說「有」，抓不抓由玩家決定。
             // 見 TranslationUpdate#tellOnce。

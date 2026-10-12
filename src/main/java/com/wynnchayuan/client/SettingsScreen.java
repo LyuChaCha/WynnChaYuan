@@ -240,17 +240,13 @@ public final class SettingsScreen extends Screen {
         // 登入之後可以在網站上傳；開發者還看得到管理的頁面。
         rows.add(Row.action("fun.gallery", t("fun.gallery"), t("fun.gallery.hint"))
                 .label(t("fun.gallery.button"))
-                .run(() -> com.wynnchayuan.Presence.gallery(cfg().presence(),
+                .run(() -> com.wynnchayuan.Presence.gallery(true,
                         url -> net.minecraft.client.Minecraft.getInstance().execute(
                                 () -> ConfirmLinkScreen.confirmLinkNow(this, url)))));
         return rows;
     }
 
     private void uploadCape() {
-        if (!cfg().presence()) {
-            say(T.s("fun.upload.needpresence"), Ui.RED);
-            return;
-        }
         java.nio.file.Path file = com.wynnchayuan.cape.Capes.localFile();
         if (file == null) {
             say(T.s("fun.upload.nofile"), Ui.RED);
@@ -307,8 +303,8 @@ public final class SettingsScreen extends Screen {
 
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
-        // 讓別人知道我有裝：模組唯一往外送東西的地方，所以開關放在最上面、每個人都看得到。
-        rows.add(toggle("badge.presence", true, cfg()::presence, cfg()::togglePresence));
+        // 「讓別人知道我有裝」的開關拿掉了：每個 WynnChaYuan 使用者都有葉子（使用者 2026-10-12）。
+        // 報到這件事寫在灰色葉子的說明、README 與商店頁上。
         String self = com.wynnchayuan.render.Badges.selfName();
         List<com.wynnchayuan.render.Badges.Role> mine =
                 com.wynnchayuan.render.Badges.registered(self);

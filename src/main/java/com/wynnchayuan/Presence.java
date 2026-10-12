@@ -37,7 +37,8 @@ import java.util.function.Consumer;
  *       （公鑰、到期時間、Mojang 的簽章）、對登記站那道題的簽名，以及 Mojang 簽過的
  *       個人檔案（名字與外觀，本來就是公開資料）。私鑰與登入憑證不會離開遊戲。
  *       為什麼是這一套，見 {@link #login}。</li>
- *   <li><b>報到</b>（{@link #helloBody}）：要不要讓別人看到我的披風。就這一欄。</li>
+ *   <li><b>報到</b>（{@link #helloBody}）：要不要讓別人看到我的披風，以及「我的徽章」的選擇
+ *       （葉子要不要彩色、要展示哪幾個身分）——別人畫你的名牌時照這個畫。</li>
  *   <li><b>綁定網站帳號</b>（{@link #linkBody}）：玩家自己打 {@code /wcy link <綁定碼>} 才送，
  *       送的就是他打的那組碼。</li>
  *   <li><b>上傳披風</b>：玩家在 F6 按了「上傳」才送，送的是他自己放進資料夾的那張圖。</li>
@@ -86,8 +87,36 @@ public final class Presence {
      * @param capes  有上傳披風、而且要給別人看的人 → 披風的版本
      * @param hidden 關掉「讓別人看到我的披風」的人
      */
-    public record Roster(Set<String> users, Map<String, Long> capes, Set<String> hidden) {
+    public record Roster(Set<String> users, Map<String, Long> capes, Set<String> hidden,
+                         Set<String> rainbow, Map<String, java.util.List<String>> shown) {
         public static final Roster EMPTY = new Roster(Set.of(), Map.of(), Set.of());
+
+        /** 沒有徽章選擇的名單（舊格式、測試）。 */
+        public Roster(Set<String> users, Map<String, Long> capes, Set<String> hidden) {
+            this(users, capes, hidden, Set.of(), Map.of());
+        }
+    }
+
+    /**
+     * 別人替自己的徽章做的選擇（使用者 2026-10-12：「我有開啟全彩模式，他看我也只是金色而已」）。
+     *
+     * @param rainbow 葉子用彩色
+     * @param shown   要展示哪幾個身分；{@code null} 表示他沒有挑，照名單上登記的
+     */
+    public record BadgeChoice(boolean rainbow, java.util.List<String> shown) {
+        public static final BadgeChoice NONE = new BadgeChoice(false, null);
+    }
+
+    /** 這個人替自己的徽章做的選擇；不在名單上、或他沒有報過，就是 {@link BadgeChoice#NONE}。 */
+    public static BadgeChoice badgeChoice(UUID uuid) {
+        String id = idOf(uuid);
+        Roster now = roster;
+        if (id == null || !now.users().contains(id)) {
+            return BadgeChoice.NONE;
+        }
+        boolean rainbow = now.rainbow().contains(id);
+        java.util.List<String> shown = now.shown().get(id);
+        return rainbow || shown != null ? new BadgeChoice(rainbow, shown) : BadgeChoice.NONE;
     }
 
     private static volatile Roster roster = Roster.EMPTY;
@@ -106,7 +135,8 @@ public final class Presence {
     private static volatile long loginFailedAt;
     private static volatile boolean busy;
     private static volatile long lastHello;
-    private static volatile boolean lastCape;
+    /** 上一次報到時說的內容（披風開關與徽章的選擇），變了才重新報到。 */
+    private static volatile String lastSaid;
     private static volatile long lastHelloTry;
     private static volatile long lastList;
     private static volatile long lastListTry;
@@ -200,7 +230,31 @@ public final class Presence {
                 }
             }
             capes.keySet().removeAll(hidden);
-            return new Roster(Set.copyOf(users), Map.copyOf(capes), Set.copyOf(hidden));
+            Set<String> rainbow = new HashSet<>();
+            if (root.has("rainbow")) {
+                for (JsonElement el : root.getAsJsonArray("rainbow")) {
+                    if (users.contains(el.getAsString())) {
+                        rainbow.add(el.getAsString());
+                    }
+                }
+            }
+            Map<String, java.util.List<String>> shown = new HashMap<>();
+            if (root.has("show")) {
+                for (Map.Entry<String, JsonElement> e : root.getAsJsonObject("show").entrySet()) {
+                    if (!users.contains(e.getKey())) {
+                        continue;
+                    }
+                    java.util.List<String> roles = new java.util.ArrayList<>();
+                    for (String role : e.getValue().getAsString().split(",")) {
+                        if (role.matches("[a-z]{1,24}")) {
+                            roles.add(role);
+                        }
+                    }
+                    shown.put(e.getKey(), java.util.List.copyOf(roles));
+                }
+            }
+            return new Roster(Set.copyOf(users), Map.copyOf(capes), Set.copyOf(hidden),
+                    Set.copyOf(rainbow), Map.copyOf(shown));
         } catch (Exception e) {
             return null;
         }
@@ -271,10 +325,24 @@ public final class Presence {
         return o.toString();
     }
 
-    /** 報到時送的全部內容。 */
-    static String helloBody(boolean cape) {
+    /**
+     * 報到時送的全部內容。
+     *
+     * @param cape    要不要讓別人看到我的披風
+     * @param rainbow 葉子要不要彩色（「我的徽章」的彩色模式）
+     * @param show    要展示哪幾個身分的葉子；不在名單上的人沒有身分可挑，傳 {@code null} 就不送這一欄
+     */
+    static String helloBody(boolean cape, boolean rainbow, java.util.List<String> show) {
         JsonObject o = new JsonObject();
         o.addProperty("cape", cape);
+        o.addProperty("rainbow", rainbow);
+        if (show != null) {
+            com.google.gson.JsonArray roles = new com.google.gson.JsonArray();
+            for (String role : show) {
+                roles.add(role);
+            }
+            o.add("show", roles);
+        }
         return o.toString();
     }
 
@@ -283,17 +351,22 @@ public final class Presence {
     /**
      * 每個 tick 來問一次：該報到、該抓名單了嗎。真的要連線的時候丟給背景執行緒。
      *
-     * @param report 設定裡開著「讓別人知道我有裝」
-     * @param cape   要讓別人看到我的披風
+     * @param report  要不要報到。實機一律是 {@code true}——那個開關拿掉了，每個使用者都有葉子
+     * @param cape    要讓別人看到我的披風
+     * @param rainbow 「我的徽章」開著彩色模式
+     * @param show    「我的徽章」要展示哪幾個身分；不在名單上的人傳 {@code null}
      */
-    public static void tick(boolean report, boolean cape) {
+    public static void tick(boolean report, boolean cape, boolean rainbow,
+                            java.util.List<String> show) {
         if (busy) {
             return;
         }
         long now = System.currentTimeMillis();
+        // 披風開關或徽章的選擇一改就重新報到，不必等到明天
+        String said = cape + "|" + rainbow + "|" + (show == null ? "-" : String.join(",", show));
         boolean helloDue = report && now - lastHelloTry >= RETRY_MS
                 && now - loginFailedAt >= LOGIN_RETRY_MS
-                && (lastHello == 0 || cape != lastCape || now - lastHello >= HELLO_EVERY_MS);
+                && (lastHello == 0 || !said.equals(lastSaid) || now - lastHello >= HELLO_EVERY_MS);
         boolean listDue = now - lastListTry >= RETRY_MS && now - lastList >= LIST_EVERY_MS;
         if (!helloDue && !listDue) {
             return;
@@ -303,9 +376,9 @@ public final class Presence {
             try {
                 if (helloDue) {
                     lastHelloTry = System.currentTimeMillis();
-                    if (hello(cape)) {
+                    if (hello(cape, rainbow, show)) {
                         lastHello = System.currentTimeMillis();
-                        lastCape = cape;
+                        lastSaid = said;
                         lastList = 0;              // 剛報到完，名單馬上抓一次才看得到自己
                     }
                 }
@@ -460,13 +533,15 @@ public final class Presence {
         return null;
     }
 
-    private static boolean hello(boolean cape) throws Exception {
+    private static boolean hello(boolean cape, boolean rainbow, java.util.List<String> show)
+            throws Exception {
         if (!login()) {
             return false;
         }
         HttpResponse<byte[]> response = send(HttpRequest.newBuilder(URI.create(API + "/hello"))
                 .header("Content-Type", "application/json")
-                .POST(HttpRequest.BodyPublishers.ofString(helloBody(cape), StandardCharsets.UTF_8)),
+                .POST(HttpRequest.BodyPublishers.ofString(helloBody(cape, rainbow, show),
+                        StandardCharsets.UTF_8)),
                 true);
         return response.statusCode() == 200;
     }

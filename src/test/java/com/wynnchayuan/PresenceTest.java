@@ -107,10 +107,36 @@ public final class PresenceTest {
         measured = CapeRules.size(gifHead);
         check("量得出 GIF 的尺寸", measured != null && measured[0] == 88 && measured[1] == 68);
         check("不是圖的量不出來", CapeRules.size(new byte[40]) == null && CapeRules.size(null) == null);
-        JsonObject hello = JsonParser.parseString(Presence.helloBody(true)).getAsJsonObject();
-        check("★ 報到只有一欄：cape（實際 " + hello.keySet() + "）",
-                hello.keySet().equals(Set.of("cape")) && hello.get("cape").getAsBoolean()
-                        && !JsonParser.parseString(Presence.helloBody(false)).getAsJsonObject()
+        JsonObject hello = JsonParser.parseString(
+                Presence.helloBody(true, true, java.util.List.of("developers", "sponsors"))).getAsJsonObject();
+        check("★ 報到只有三欄：披風開關與徽章的選擇（實際 " + hello.keySet() + "）",
+                hello.keySet().equals(Set.of("cape", "rainbow", "show"))
+                        && hello.get("rainbow").getAsBoolean()
+                        && hello.getAsJsonArray("show").size() == 2
+                        && "developers".equals(hello.getAsJsonArray("show").get(0).getAsString()));
+        check("不在名單上的人沒有身分可挑：不送 show",
+                JsonParser.parseString(Presence.helloBody(true, false, null)).getAsJsonObject()
+                        .keySet().equals(Set.of("cape", "rainbow")));
+        // 名單上別人的選擇讀得回來
+        String mine = Presence.idOf(ME);
+        String theirs = Presence.idOf(OTHER);
+        Presence.load(Presence.parse("{\"t\":1,\"users\":[\"" + mine + "\",\"" + theirs
+                + "\"],\"capes\":{},\"hidden\":[],\"rainbow\":[\"" + theirs + "\",\"ffffffffffffffffffffffff\"],"
+                + "\"show\":{\"" + theirs + "\":\"developers,sponsors\",\"" + mine + "\":\"Dev!,contributors\"}}"));
+        Presence.BadgeChoice picked = Presence.badgeChoice(OTHER);
+        check("★ 名單上讀得到別人開了彩色、挑了哪幾片", picked.rainbow()
+                && java.util.List.of("developers", "sponsors").equals(picked.shown()));
+        check("怪的身分代號不收", java.util.List.of("contributors").equals(Presence.badgeChoice(ME).shown())
+                && !Presence.badgeChoice(ME).rainbow());
+        check("不在名單上的人沒有選擇（名單外的代碼開彩色不算）",
+                Presence.badgeChoice(GHOST) == Presence.BadgeChoice.NONE
+                        && Presence.badgeChoice(null) == Presence.BadgeChoice.NONE);
+        Presence.load(Presence.parse("{\"t\":1,\"users\":[\"" + theirs + "\"],\"capes\":{},\"hidden\":[]}"));
+        check("舊格式的名單（沒有那兩欄）照樣讀得進來", Presence.installed(OTHER)
+                && Presence.badgeChoice(OTHER) == Presence.BadgeChoice.NONE);
+        Presence.load(null);
+        check("報到的披風開關照送", hello.get("cape").getAsBoolean()
+                        && !JsonParser.parseString(Presence.helloBody(false, false, null)).getAsJsonObject()
                                 .get("cape").getAsBoolean());
 
         // ---- 名單 ----

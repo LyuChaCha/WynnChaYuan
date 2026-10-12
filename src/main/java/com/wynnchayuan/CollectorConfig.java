@@ -145,15 +145,6 @@ public final class CollectorConfig {
      */
     private boolean chatCopy = true;
 
-    /**
-     * 讓別人知道我有裝（名牌前面的灰色葉子）。
-     *
-     * <p>開著的時候上線會向登記站驗證身分、報到一次，見 {@code Presence}。這是模組唯一
-     * 往外送的東西，所以給一個開關；關掉之後照樣看得到別人的葉子與披風，只是別人看不到
-     * 你的灰色葉子，也不能上傳披風。
-     */
-    private boolean presence = true;
-
     /** 畫面上要不要顯示 WynnChaYuan 的披風（自己的與別人的）。見 {@code Capes}。 */
     private boolean capes = true;
 
@@ -670,17 +661,6 @@ public final class CollectorConfig {
 
     public boolean chatCopy() {
         return chatCopy;
-    }
-
-    /** 見 {@link #presence}。 */
-    public boolean presence() {
-        return presence;
-    }
-
-    public boolean togglePresence() {
-        presence = !presence;
-        save();
-        return presence;
     }
 
     /** 見 {@link #capes}。 */
@@ -1498,7 +1478,6 @@ public final class CollectorConfig {
             choiceMode = dialogue;
         }
         chatCopy = bool(o, "chatCopy", chatCopy);
-        presence = bool(o, "presence", presence);
         capes = bool(o, "capes", capes);
         ownCape = bool(o, "ownCape", ownCape);
         wynntilsUi = bool(o, "wynntilsUi", wynntilsUi);
@@ -1777,7 +1756,6 @@ public final class CollectorConfig {
             o.addProperty("wynnmodTooltip", wynnmodTooltip);
             o.addProperty("wynnMarketSearch", wynnMarketSearch);
             o.addProperty("chatCopy", chatCopy);
-            o.addProperty("presence", presence);
             o.addProperty("capes", capes);
             o.addProperty("ownCape", ownCape);
             o.addProperty("wynntilsUi", wynntilsUi);

@@ -1,6 +1,6 @@
 // node tools/presence/worker.test.mjs
 import worker, {
-  publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, inspectCape, gifFrames, groupCapes,
+  publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, badgePrefs, inspectCape, gifFrames, groupCapes,
   addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
@@ -397,6 +397,43 @@ await worker.fetch(post('/hello', { cape: true }, bobToken), env);
 list = await (await worker.fetch(get('/list'), env)).json();
 check('再打開就不在 hidden 了', !list.hidden.includes(bobId));
 
+// ---- ★ 徽章的選擇跟著報到走：彩色模式、要展示哪幾片 ----
+check('沒帶徽章的選擇（舊版模組）：不動原本記的', badgePrefs({ cape: true }) === undefined);
+check('帶了：彩色與要展示的身分', JSON.stringify(badgePrefs({ rainbow: true, show: ['sponsors', 'developers', 'sponsors'] }))
+  === JSON.stringify({ r: 1, s: 'developers,sponsors' }));
+check('只帶彩色：身分那一欄不動', JSON.stringify(badgePrefs({ rainbow: false })) === JSON.stringify({ r: 0 }));
+check('★ 怪的不收：彩色不是布林、身分不是陣列、太多、怪字', badgePrefs({ rainbow: 'yes' }) === null
+  && badgePrefs({ show: 'developers' }) === null && badgePrefs({ show: Array(9).fill('a') }) === null
+  && badgePrefs({ show: ['Dev!'] }) === null && badgePrefs({ show: [1] }) === null);
+check('彩色換了、展示的身分換了都要寫', needsWrite({ c: 1, d: 5, v: 9 }, { c: 1, d: 5, v: 9, r: 1 })
+  && needsWrite({ c: 1, d: 5, v: 9, s: 'developers' }, { c: 1, d: 5, v: 9, s: 'developers,sponsors' })
+  && !needsWrite({ c: 1, d: 5, v: 9, r: 1, s: 'developers' }, { c: 1, d: 5, v: 9, r: 1, s: 'developers' }));
+{
+  const before = { t: 1, users: ['a'], capes: {}, hidden: [] };          // 舊名單沒有那兩欄
+  const after = applyRecord(before, { i: 'a', c: 1, v: 0, r: 1, s: 'developers' });
+  check('★ 名單記下誰開了彩色、誰挑了哪幾片', after && after.rainbow.join() === 'a' && after.show.a === 'developers');
+  check('沒變就不改名單', applyRecord(after, { i: 'a', c: 1, v: 0, r: 1, s: 'developers' }) === null);
+  const off = applyRecord(after, { i: 'a', c: 1, v: 0 });
+  check('關掉彩色、不再挑身分：兩欄都拿掉', off && off.rainbow.length === 0 && !('a' in off.show));
+}
+r = await worker.fetch(post('/hello', { cape: true, rainbow: true, show: ['developers'] }, aliceToken), env);
+check('★ 報到帶著徽章的選擇', r.status === 200 && env.CORPUS.data.get('u:' + ALICE.id).metadata.r === 1
+  && env.CORPUS.data.get('u:' + ALICE.id).metadata.s === 'developers');
+list = await (await worker.fetch(get('/list'), env)).json();
+check('★ 名單上看得到：她開了彩色、只展示開發者那一片', list.rainbow.includes(aliceId) && list.show[aliceId] === 'developers');
+check('名單上還是沒有 UUID 與名字', !JSON.stringify(list).includes(ALICE.id) && !JSON.stringify(list).includes(ALICE.name));
+r = await worker.fetch(post('/hello', { cape: true }, aliceToken), env);
+check('舊版模組再報到（沒帶那兩欄）：原本的選擇留著', env.CORPUS.data.get('u:' + ALICE.id).metadata.r === 1);
+r = await worker.fetch(post('/hello', { cape: true, rainbow: 'yes' }, aliceToken), env);
+check('怪的報到回 400', r.status === 400
+  && (await worker.fetch(post('/hello', { cape: true, show: 'developers' }, aliceToken), env)).status === 400);
+r = await worker.fetch(post('/hello', { cape: true, rainbow: false, show: ['developers', 'sponsors'] }, aliceToken), env);
+list = await (await worker.fetch(get('/list'), env)).json();
+check('★ 關掉彩色、多展示一片：名單跟著變', !list.rainbow.includes(aliceId) && list.show[aliceId] === 'developers,sponsors');
+env.CORPUS.data.delete('presence:list');
+list = await (await worker.fetch(get('/list'), env)).json();
+check('整份重算出來也一樣', !list.rainbow.includes(aliceId) && list.show[aliceId] === 'developers,sponsors');
+
 check('沒登記過要寫', needsWrite(null, { c: 1, d: 5, v: 0 }));
 check('設定、日期、披風都一樣不必寫', !needsWrite({ c: 1, d: 5, v: 9 }, { c: 1, d: 5, v: 9 }));
 check('披風換了要寫', needsWrite({ c: 1, d: 5, v: 9 }, { c: 1, d: 5, v: 10 }));
@@ -520,7 +557,8 @@ check('★ 披風一覽上寫著不可以上傳什麼', ['政治', '不雅', '�
 check('★ 英文版的披風一覽也寫著不可以上傳什麼',
   ['political', 'obscene', 'unlawful', 'racist'].every((w) => english['/capes'].includes(w)));
 check('英文版的帳號頁用的是遊戲裡英文介面的字',
-  ['F6', 'Badge &amp; cape', 'Let others know I use this mod', 'Cape gallery'].every((w) => english['/account'].includes(w)));
+  ['F6', 'Badge &amp; cape', 'Cape gallery'].every((w) => english['/account'].includes(w)));
+check('★ 開關拿掉了：網站不再叫人去確認它開著', LANGS.every((lang) => !/Let others know|讓別人知道|让别人知道/.test(TEXT[lang]['account.s2'])));
 
 // ---- ★ 網站的語言 ----
 const WANTED = ['zh', 'zh-cn', 'en', 'ja', 'ko', 'ru', 'es', 'tr'];

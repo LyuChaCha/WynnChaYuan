@@ -631,7 +631,32 @@ async function handleLogin(request, env, now) {
 /** 這一次報到要不要寫進 KV：沒登記過、設定變了、披風換了、或上次是昨天以前。 */
 export function needsWrite(existing, next) {
   if (!existing) return true;
-  return existing.c !== next.c || existing.d !== next.d || existing.v !== next.v;
+  return existing.c !== next.c || existing.d !== next.d || existing.v !== next.v
+    || (existing.r || 0) !== (next.r || 0) || existing.s !== next.s;
+}
+
+const ROLE = /^[a-z]{1,24}$/;
+
+/**
+ * 報到時帶的徽章選擇（使用者 2026-10-12：「我有開啟全彩模式，他看我也只是金色而已」）。
+ *
+ * 模組的「我的徽章」原本只存在自己的電腦上，別人看到的是 credits.json 登記的那一份。
+ * 現在跟著報到送來：rainbow（葉子用彩色）、show（要展示哪幾個身分的葉子）。
+ * 這裡只管記與發；「彩色是開發者才有的」「只能展示自己真的有的身分」由看的人那一邊
+ * 對著 credits.json 判斷——那份名單是公開的，亂送也畫不出不屬於他的東西。
+ *
+ * @returns undefined 沒帶（舊版模組，或從別的路來的）；null 格式不對；否則 {r, s}
+ */
+export function badgePrefs(body) {
+  if (!('rainbow' in body) && !('show' in body)) return undefined;
+  if ('rainbow' in body && typeof body.rainbow !== 'boolean') return null;
+  let shown;
+  if ('show' in body) {
+    if (!Array.isArray(body.show) || body.show.length > 8) return null;
+    if (!body.show.every((role) => typeof role === 'string' && ROLE.test(role))) return null;
+    shown = [...new Set(body.show)].sort().join(',');
+  }
+  return { r: body.rainbow === true ? 1 : 0, s: shown };
 }
 
 async function handleHello(request, env, now) {
@@ -640,12 +665,14 @@ async function handleHello(request, env, now) {
   const body = await readJson(request);
   if (body === undefined) return no('too large', 413);
   if (!body || ('cape' in body && typeof body.cape !== 'boolean')) return no('bad hello');
-  const record = await remember(env, user.uuid, body.cape !== false, now);
+  const prefs = badgePrefs(body);
+  if (prefs === null) return no('bad hello');
+  const record = await remember(env, user.uuid, body.cape !== false, now, prefs);
   return json({ ok: true, id: record.i, cape: record.v > 0 });
 }
 
 /** 把一個人的現況寫進 KV（有變才寫），順手改進現成的名單。回傳他那一筆。 */
-async function remember(env, uuid, wantsCape, now) {
+async function remember(env, uuid, wantsCape, now, prefs) {
   const id = await publicId(uuid);
   const key = 'u:' + uuid;
   const have = await env.CORPUS.getWithMetadata(key);
@@ -654,9 +681,15 @@ async function remember(env, uuid, wantsCape, now) {
   if (cape && cape.value && cape.value.cancel) cape.value.cancel();
   const next = { i: id, c: wantsCape ? 1 : 0, d: day(now), v: version };
   const before = have && have.metadata;
+  // 徽章的選擇：這一次有帶就用帶來的，沒帶（上傳披風那幾條路）就留著原本的
+  const rainbow = prefs ? prefs.r : (before && before.r) || 0;
+  const shown = prefs ? prefs.s : before && before.s;
+  if (rainbow) next.r = 1;
+  if (typeof shown === 'string') next.s = shown;
   if (needsWrite(before, next)) {
     await env.CORPUS.put(key, '', { expirationTtl: TTL_SECONDS, metadata: next });
-    if (!before || before.c !== next.c || before.v !== next.v) {
+    if (!before || before.c !== next.c || before.v !== next.v
+        || (before.r || 0) !== (next.r || 0) || before.s !== next.s) {
       await patchList(env, next);
     }
   }
@@ -670,15 +703,28 @@ export function applyRecord(list, record) {
   const hidden = record.c !== 1;
   const wasShown = list.capes[record.i] || 0;
   const wasHidden = list.hidden.includes(record.i);
-  if (known && shown === wasShown && hidden === wasHidden) return null;
+  const rainbows = list.rainbow || [];
+  const roles = list.show || {};
+  const rainbow = record.r === 1;
+  const wasRainbow = rainbows.includes(record.i);
+  const picked = typeof record.s === 'string' ? record.s : undefined;
+  if (known && shown === wasShown && hidden === wasHidden && rainbow === wasRainbow
+      && picked === roles[record.i]) {
+    return null;
+  }
   const capes = { ...list.capes };
   if (shown) capes[record.i] = shown; else delete capes[record.i];
+  const show = { ...roles };
+  if (picked === undefined) delete show[record.i]; else show[record.i] = picked;
   return {
     t: list.t,
     users: known ? list.users : [...list.users, record.i],
     capes,
     hidden: hidden ? (wasHidden ? list.hidden : [...list.hidden, record.i])
       : list.hidden.filter((id) => id !== record.i),
+    rainbow: rainbow ? (wasRainbow ? rainbows : [...rainbows, record.i])
+      : rainbows.filter((id) => id !== record.i),
+    show,
   };
 }
 
@@ -707,6 +753,8 @@ async function buildList(env, now) {
   const users = [];
   const capes = {};
   const hidden = [];
+  const rainbow = [];
+  const show = {};
   let cursor;
   do {
     const page = await env.CORPUS.list({ prefix: 'u:', limit: 1000, cursor });
@@ -716,10 +764,12 @@ async function buildList(env, now) {
       users.push(m.i);
       if (m.c !== 1) hidden.push(m.i);
       else if (m.v > 0) capes[m.i] = m.v;
+      if (m.r === 1) rainbow.push(m.i);
+      if (typeof m.s === 'string') show[m.i] = m.s;
     }
     cursor = page.list_complete ? undefined : page.cursor;
   } while (cursor && users.length < MAX_USERS);
-  return { t: now, users, capes, hidden };
+  return { t: now, users, capes, hidden, rainbow, show };
 }
 
 async function handleList(env, now) {
