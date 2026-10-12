@@ -878,6 +878,14 @@ tasks.register('runPageNamesChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runPageNamesChecks' }
 
+tasks.register('runSelfUpdateChecks', JavaExec) {
+    group = 'verification'
+    description = '遊戲內更新：下載回來的檔要驗、關遊戲時蓋到舊檔上、沒套用成功的下次看得到'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.SelfUpdateTest'
+}
+tasks.named('check') { dependsOn 'runSelfUpdateChecks' }
+
 tasks.register('runCraftedNameChecks', JavaExec) {
     group = 'verification'
     description = '製作物的名字是製作者取的，不翻；說明的其他列照常'
@@ -1423,3 +1431,19 @@ tasks.register('runOwnNameChatChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.listener.OwnNameChatTest'
 }
 tasks.named('check') { dependsOn 'runOwnNameChatChecks' }
+
+tasks.register('runCapeImageChecks', JavaExec) {
+    group = 'verification'
+    description = '披風的圖：GIF 讀得對、什麼尺寸都排得進版型'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.cape.CapeImageTest'
+}
+tasks.named('check') { dependsOn 'runCapeImageChecks' }
+
+tasks.register('runPresenceChecks', JavaExec) {
+    group = 'verification'
+    description = '登記站：送出去的只有登入、披風開關與玩家自己選的圖；名單讀得對'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.PresenceTest'
+}
+tasks.named('check') { dependsOn 'runPresenceChecks' }

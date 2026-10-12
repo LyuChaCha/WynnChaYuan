@@ -28,7 +28,14 @@ public final class Preview {
      * （使用者 2026-10-08 回報「不管用哪種模式都沒有動作」）。所以那一頁照樣把面板畫出來，
      * 底下再講一聲現在的設定下它不會出現。
      */
-    public enum Scene { TOOLTIP, PANEL, DIALOGUE, WORLD, DATA }
+    public enum Scene {
+        TOOLTIP, PANEL, DIALOGUE, WORLD, DATA,
+        /**
+         * 玩家穿著披風的樣子。這裡只畫底板——人是遊戲畫的（{@code SettingsScreen} 疊在這一塊
+         * 上面），離線算畫面的時候那裡是空的。
+         */
+        CAPE
+    }
 
     /**
      * 預覽要看的值。每一幀由 {@code SettingsScreen} 從設定填一次。
@@ -123,6 +130,7 @@ public final class Preview {
             case PANEL -> tooltip(c, x, y, w, h, s, frame, gapShown, true);
             case DIALOGUE -> dialogue(c, x, y, w, h, s, frame);
             case WORLD -> world(c, x, y, w, h, s, frame);
+            case CAPE -> { }
             default -> data(c, x, y, w, h, s, accent);
         }
         c.unclip();

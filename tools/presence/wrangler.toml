@@ -1,0 +1,29 @@
+# 沿用語料收集站那一支 Worker 與它的 KV：網址不變，鍵用 u:／cape:／ban: 開頭，跟舊資料不相干。
+name = "wynnchayuan-corpus"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# 自己的網域（Cloudflare 上的 wynnchayuan.com）。部署時 wrangler 會自己建好 DNS 與憑證。
+# 整個網站（首頁、披風、帳號、管理）與模組用的 API 都在這裡。
+routes = [
+  { pattern = "wynnchayuan.com", custom_domain = true },
+  { pattern = "www.wynnchayuan.com", custom_domain = true },
+]
+# 有設 routes 的話 workers.dev 預設會關掉；留著，方便部署完先用那個網址看一眼。
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "CORPUS"
+id = "70fa88851cfa4cee87b3e818dc40cb75"
+
+[vars]
+# 誰可以上傳披風：
+#   tiered  驗過身分的人都能傳 PNG；GIF 只有 credits.json 上的成員（開發者、贊助者、貢獻者）
+#   listed  只有 credits.json 上的成員能傳
+#   anyone  驗過身分的人都能傳，PNG、GIF 都可以
+#   off     不收
+UPLOADS = "tiered"
+
+# 兩個秘密不寫在這裡，用 wrangler secret put 設定（見 README.md）：
+#   GITHUB_TOKEN  管理頁「新增成員」開 PR 用。沒設的話那個表單會說還沒設定。
+#   ADMIN_TOKEN   不在遊戲裡的時候用 curl 管理。沒設就沒有這條路。

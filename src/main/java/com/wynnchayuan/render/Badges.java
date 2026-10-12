@@ -131,8 +131,13 @@ public final class Badges {
     /**
      * 這個帳號要畫哪幾片葉子。
      *
-     * <p>別人照名單上登記的；<b>自己</b>再套一層本機的選擇（設定畫面的「我的徽章」），
-     * 這樣改了馬上看得到。本機的選擇不會傳出去，別人看到的仍然是登記的那一份。
+     * <p><b>自己</b>照本機的選擇（設定畫面的「我的徽章」），改了馬上看得到。
+     * <b>別人</b>照名單上登記的，再套上他報到時帶的選擇（彩色模式、要展示哪幾片）——
+     * 所以你開了彩色，別的裝了模組的人看到的也是彩色（使用者 2026-10-12：「我有開啟
+     * 全彩模式，他看我也只是金色而已」）。他沒裝、或沒報過，就只有登記的那一份。
+     *
+     * <p>別人帶來的選擇只能在<b>他真的有的身分</b>裡挑：彩色是開發者才有的，展示哪幾片也只在
+     * 名單上登記給他的那幾個身分裡選。自訂的顏色不跟著走——顏色代表身分，照名單。
      *
      * <p>名單上的人<b>至少有一片</b>，不會是空的。
      *
@@ -140,16 +145,24 @@ public final class Badges {
      * @param self    自己的帳號名稱；不知道就傳 {@code null}
      */
     public static List<Role> shown(String account, String self, CollectorConfig config) {
+        return shown(account, self, config, com.wynnchayuan.Presence.BadgeChoice.NONE);
+    }
+
+    /** @param theirs 這個人報到時帶的選擇（自己的話不看這個） */
+    public static List<Role> shown(String account, String self, CollectorConfig config,
+                                   com.wynnchayuan.Presence.BadgeChoice theirs) {
         boolean mine = account != null && account.equalsIgnoreCase(self);
         List<Role> all = new ArrayList<>();
         List<Role> out = new ArrayList<>();
         for (Role role : registered(account)) {
             boolean rainbow = mine ? config.badgeRainbow(role.rainbow()) && rainbowAllowed(role)
-                    : role.rainbow();
+                    : role.rainbow() || (theirs.rainbow() && rainbowAllowed(role));
             Role resolved = new Role(role.id(), role.name(),
                     mine ? ownColour(config, role) : role.color(), rainbow, false);
             all.add(resolved);
-            if (mine ? config.badgeRoleShown(role.id(), !role.hidden()) : !role.hidden()) {
+            boolean visible = mine ? config.badgeRoleShown(role.id(), !role.hidden())
+                    : theirs.shown() != null ? theirs.shown().contains(role.id()) : !role.hidden();
+            if (visible) {
                 out.add(resolved);
             }
         }
@@ -174,6 +187,38 @@ public final class Badges {
         return role.color();
     }
 
+    /** 自己的「彩色模式」現在是不是開著（而且自己有資格）。報到時說給別人聽的就是這個。 */
+    public static boolean ownRainbow(CollectorConfig config) {
+        for (Role role : registered(selfName())) {
+            if (rainbowAllowed(role) && config.badgeRainbow(role.rainbow())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 自己現在展示哪幾個身分的葉子。報到時說給別人聽的就是這個。
+     *
+     * @return 不在名單上的人沒有身分可挑，回 {@code null}
+     */
+    public static List<String> ownShown(CollectorConfig config) {
+        List<Role> mine = registered(selfName());
+        if (mine.isEmpty()) {
+            return null;
+        }
+        List<String> out = new ArrayList<>();
+        for (Role role : mine) {
+            if (config.badgeRoleShown(role.id(), !role.hidden())) {
+                out.add(role.id());
+            }
+        }
+        if (out.isEmpty()) {
+            out.add(mine.get(0).id());           // 最少一片，跟畫的時候同一條規矩
+        }
+        return out;
+    }
+
     /** 彩色模式是開發者的；其他身分就算設定檔被手改也不給。 */
     public static boolean rainbowAllowed(Role role) {
         return "developers".equals(role.id());
@@ -196,24 +241,42 @@ public final class Badges {
      * @return 加了葉子的名牌；不必加就回傳 {@code null}
      */
     public static Component decorate(Component nameTag, int entityId) {
+        java.util.UUID uuid = uuidOf(entityId);
         return decorate(nameTag, accountName(entityId), selfName(), WynnChaYuan.config(),
-                System.currentTimeMillis());
+                System.currentTimeMillis(), com.wynnchayuan.Presence.installed(uuid),
+                com.wynnchayuan.Presence.badgeChoice(uuid));
     }
 
-    /** 同上，但所有外部狀態都從參數來——測試用。 */
+    /** 同上，但所有外部狀態都從參數來——測試用。不知道對方有沒有裝的時候當成沒有。 */
     static Component decorate(Component nameTag, String account, String self,
                               CollectorConfig config, long now) {
+        return decorate(nameTag, account, self, config, now, false);
+    }
+
+    /**
+     * @param onRoster 這個人在登記站的名單上（有裝模組）。見 {@code Presence}。
+     */
+    static Component decorate(Component nameTag, String account, String self,
+                              CollectorConfig config, long now, boolean onRoster) {
+        return decorate(nameTag, account, self, config, now, onRoster,
+                com.wynnchayuan.Presence.BadgeChoice.NONE);
+    }
+
+    /** @param theirs 這個人報到時帶的徽章選擇。見 {@link #shown(String, String, CollectorConfig, com.wynnchayuan.Presence.BadgeChoice)}。 */
+    static Component decorate(Component nameTag, String account, String self,
+                              CollectorConfig config, long now, boolean onRoster,
+                              com.wynnchayuan.Presence.BadgeChoice theirs) {
         if (nameTag == null || startsWithIcon(nameTag)) {
             return null;
         }
         String who = account != null ? account : accountIn(nameTag.getString());
-        List<Role> roles = shown(who, self, config);
+        List<Role> roles = shown(who, self, config, theirs);
         MutableComponent icons = Component.empty();
         if (!roles.isEmpty()) {
             for (Role role : roles) {
                 icons.append(icon(role.rainbow() ? rainbowAt(now) : role.color()));
             }
-        } else if (isInstalled(who, self)) {
+        } else if (onRoster || isInstalled(who, self)) {
             icons.append(icon(INSTALLED));
         } else {
             return null;
@@ -272,6 +335,21 @@ public final class Badges {
     }
 
     /** 這個實體是哪個玩家的帳號名稱；不是玩家就回傳 {@code null}。 */
+    private static java.util.UUID uuidOf(int entityId) {
+        if (entityId < 0) {
+            return null;
+        }
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            net.minecraft.world.entity.Entity entity =
+                    mc == null || mc.level == null ? null : mc.level.getEntity(entityId);
+            return entity instanceof net.minecraft.world.entity.player.Player player
+                    ? player.getUUID() : null;
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
     private static String accountName(int entityId) {
         if (entityId < 0) {
             return null;

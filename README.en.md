@@ -75,6 +75,15 @@ Three ways to open them:
 
 Hover a setting for an explanation.
 
+## Capes, the grey leaf, and what the mod sends
+
+- **Capes**: wear your own WynnChaYuan cape, visible to other players who have this mod. Upload it under F6 > Badge & cape, or upload and browse at <https://wynnchayuan.com>. Anyone can upload a PNG (up to 1 MB); GIFs and the 20 MB limit are for developers, sponsors and contributors. Draw it on a template from [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates).
+- **Leaves**: every player who has this mod gets a leaf before their name (grey if you have no role), visible to each other. A developer's rainbow mode and the roles you chose to show look the same to others as they do to you.
+- **These two features talk to our server (wynnchayuan.com).** The mod checks in once when you join Wynncraft and sends: your Minecraft UUID, your Mojang-signed public profile (name and skin), a public key and signature that prove the account is yours, whether to show your cape, and your badge settings (rainbow leaf, which roles to show). Uploading a cape also sends the image you chose. **Your private key and login credentials never leave the game; the mod does not send your world, chat or any game content, and the server does not store IP addresses.** The public list holds hashed codes only, not UUIDs or names.
+- **There is no switch for this**: the mod checks in whenever it is installed and you join Wynncraft, so every user has a leaf. If you do not want others to see your cape, turn off "Wear my cape" under F6 > Badge & cape.
+- **Site account** (optional): register at wynnchayuan.com with Discord, then type `/wcy link <code>` in game to link your game ID. We only read your Discord account ID and display name.
+- **Update button**: the release notes screen has an Update button. Only when you press it does the mod download the new version from GitHub Releases, and it is swapped in when you close the game.
+
 ## Languages and progress
 
 | Language | Coverage |
@@ -150,7 +159,7 @@ into them. **You do not have to translate anything**, just hand us the gaps you 
 2. Look through the file and delete anything personal (other players' names, guild names, private chat).
 3. **Settings → Data → How to submit** opens the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml); drag the file in. Or send it to **LyuChaCha** on Discord.
 
-The mod **never sends anything by itself**. The export already leaves out player names and guild,
+The mod **never sends game text by itself**. (What the mod does send for capes and leaves is listed under "Capes, the grey leaf, and what the mod sends" above.) The export already leaves out player names and guild,
 party, shout and private chat, but the filter is heuristic, so check it before you send it.
 
 For a wrong translation or term, open a [GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues);
@@ -201,7 +210,7 @@ The colour of the leaf before your name depends on your role on the credits list
 | Developer | Gold | Helps develop and maintain the code |
 | Sponsor | Cyan | A one-off **20 USD** or **2 USD/month** or more ([Ko-fi](https://ko-fi.com/lyuchacha)) |
 | Contributor | Green | Any one of the items below |
-| Everyone else running the mod | Grey | — (for now it only shows on your own screen) |
+| Everyone else running the mod | Grey | — (comes with the mod; other players with the mod see it) |
 
 **What counts for contributors** — whether it was used, not how much:
 

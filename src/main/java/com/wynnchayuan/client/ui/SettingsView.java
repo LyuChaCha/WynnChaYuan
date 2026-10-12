@@ -1394,6 +1394,47 @@ public final class SettingsView extends Surface {
         gapShown = Ui.ease(gapShown, state.gap, dt, 45f);
         Preview.draw(c, Math.round(x), Math.round(y + 13), Math.round(w), Math.round(h - 13),
                      t.scene(), state, 0xFF000000 | (host.frame() & 0xFFFFFF), accent, gapShown);
+        if (t.scene() == Preview.Scene.CAPE) {
+            modelPreview(x, y + 13, w, h - 13);
+        }
+    }
+
+    /** 模型預覽轉到哪裡：0 是正面，180 是背面（披風那一面）。一開始稍微側一點，看得出立體。 */
+    private float modelYaw = 205;
+    private float modelPitch = -8;
+    private double modelDragX;
+    private double modelDragY;
+
+    public float modelYaw() {
+        return modelYaw;
+    }
+
+    public float modelPitch() {
+        return modelPitch;
+    }
+
+    /**
+     * 玩家穿著披風的預覽（使用者 2026-10-12：「放玩家＋披風的樣子，然後使用者能旋轉」）。
+     *
+     * <p>這裡只管那一塊在哪、拖曳轉了多少；人是 {@code SettingsScreen} 照 {@code "preview.model"}
+     * 這一塊的位置請遊戲畫上去的。左右拖是轉身，上下拖是俯仰（限制在看得到的範圍）。
+     */
+    private void modelPreview(float x, float y, float w, float h) {
+        String hint = Ui.fit(c, host.tr("preview.cape.hint"), (int) (w - 12));
+        c.text(hint, x + (w - c.width(hint)) / 2, y + h - 14, Ui.TEXT_3);
+        Zone z = zone(x + 2, y + 2, w - 4, h - 4, (px, py, b) -> {
+            modelDragX = px;
+            modelDragY = py;
+        });
+        z.key = "preview.model";
+        z.drag = (px, py, b) -> {
+            // 往右拖，人的正面跟著往右轉（跟物品欄那個小人看滑鼠的方向一樣）。
+            // 原本是加的，使用者 2026-10-12：「滑鼠拖曳方向反了」。
+            modelYaw = (float) ((modelYaw - (px - modelDragX) * 1.5) % 360.0);
+            modelPitch = (float) Math.max(-35, Math.min(35, modelPitch - (py - modelDragY) * 0.6));
+            modelDragX = px;
+            modelDragY = py;
+        };
     }
 
     // ------------------------------------------------------------ 底列
