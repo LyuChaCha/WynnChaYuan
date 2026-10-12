@@ -358,7 +358,8 @@ public final class Presence {
 
     /** 上傳／移除披風的結果。 */
     public enum Result {
-        DONE, TOO_LARGE, BAD_SIZE, BAD_FORMAT, TOO_MANY_FRAMES, NOT_LISTED, BANNED, OFF,
+        DONE, TOO_LARGE, BAD_SIZE, BAD_FORMAT, TOO_MANY_FRAMES, NOT_LISTED, GIF_MEMBERS_ONLY,
+        BANNED, OFF,
         SLOW_DOWN, LOGIN_FAILED, FAILED
     }
 
@@ -379,6 +380,7 @@ public final class Presence {
             case "bad format" -> Result.BAD_FORMAT;
             case "too many frames" -> Result.TOO_MANY_FRAMES;
             case "not listed" -> Result.NOT_LISTED;
+            case "gif members only" -> Result.GIF_MEMBERS_ONLY;
             case "banned" -> Result.BANNED;
             case "uploads off" -> Result.OFF;
             case "slow down" -> Result.SLOW_DOWN;
@@ -420,6 +422,53 @@ public final class Presence {
         } catch (Throwable t) {
             com.wynnchayuan.translate.ErrorDebug.note("presence.cape", null, t);
             return Result.FAILED;
+        }
+    }
+
+    /**
+     * 披風一覽的網址（登記站上的一張網頁，列出所有上傳的披風）。
+     *
+     * <p>開發者要的是<b>帶著管理權</b>的網址：登記站確認他是名單上的開發者之後，回一條
+     * 兩個小時有效的網址，那一頁上每張披風多出刪除的按鈕。管理權放在網址 {@code #} 後面，
+     * 那一段不會送到任何伺服器。不是開發者、或驗證沒過，就是一般的網址。
+     *
+     * @param moderator 自己在名單上是開發者
+     * @param open      拿到網址之後叫（在背景執行緒上）
+     */
+    public static void gallery(boolean moderator, Consumer<String> open) {
+        WORKER.execute(() -> {
+            String url = BASE + "/gallery";
+            if (moderator) {
+                try {
+                    if (login()) {
+                        HttpResponse<byte[]> response = send(HttpRequest.newBuilder(
+                                URI.create(BASE + "/mod-link"))
+                                .header("Content-Type", "application/json")
+                                .POST(HttpRequest.BodyPublishers.ofString("{}")), true);
+                        String link = moderatorLink(response.statusCode(),
+                                new String(response.body(), StandardCharsets.UTF_8));
+                        if (link != null) {
+                            url = link;
+                        }
+                    }
+                } catch (Throwable t) {
+                    com.wynnchayuan.translate.ErrorDebug.note("presence.gallery", null, t);
+                }
+            }
+            open.accept(url);
+        });
+    }
+
+    /** 登記站回的管理網址。只認指回登記站一覽頁的——別的網址不開。 */
+    static String moderatorLink(int status, String body) {
+        if (status != 200) {
+            return null;
+        }
+        try {
+            String url = JsonParser.parseString(body).getAsJsonObject().get("url").getAsString();
+            return url.startsWith(BASE + "/gallery#k=") ? url : null;
+        } catch (Exception e) {
+            return null;
         }
     }
 

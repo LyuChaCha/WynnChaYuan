@@ -7,7 +7,10 @@
  *   PUT    /cape         圖檔本體            上傳披風（要通行證）
  *   DELETE /cape                            拿掉自己上傳的披風（要通行證）
  *   GET    /cape/<代碼>                      下載某個人的披風
- *   POST   /admin/remove {id, ban}          管理：拿掉一件披風、要不要順便禁止再傳（要 ADMIN_TOKEN）
+ *   GET    /capes                           所有上傳的披風（相同的圖併成一筆）
+ *   GET    /gallery                         披風一覽（網頁）
+ *   POST   /mod-link                        開發者拿一條帶著管理權的一覽網址（要通行證）
+ *   POST   /admin/remove {id|hash, ban}     拿掉披風、要不要順便禁止再傳（開發者，或 ADMIN_TOKEN）
  *
  * 一個 KV（綁定叫 CORPUS，沿用語料收集站那一個），沒有別的儲存。
  *
@@ -348,57 +351,85 @@ export function gifFrames(bytes) {
 
 let cachedCredits = null;
 
-/** 名單上有遊戲 ID 的人（小寫）。抓不到就回上一次的；從來沒抓到過回 null。 */
-async function listedNames(now) {
-  if (cachedCredits && now - cachedCredits.t < CREDITS_MAX_AGE_MS) return cachedCredits.names;
+/**
+ * credits.json 上有遊戲 ID 的人（小寫）：names 是所有成員（開發者、贊助者、貢獻者），
+ * developers 是其中的開發者。抓不到就回上一次的；從來沒抓到過回 null。
+ */
+async function credits(now) {
+  if (cachedCredits && now - cachedCredits.t < CREDITS_MAX_AGE_MS) return cachedCredits;
   try {
     const answer = await fetch(CREDITS_URL, { cf: { cacheTtl: 300 } });
     if (answer.status === 200) {
       const names = new Set();
+      const developers = new Set();
       for (const section of (await answer.json()).sections || []) {
+        const dev = typeof section.key === 'string' && section.key.endsWith('.developers');
         for (const member of section.members || []) {
-          if (typeof member.mc === 'string' && member.mc) names.add(member.mc.toLowerCase());
+          if (typeof member.mc !== 'string' || !member.mc) continue;
+          names.add(member.mc.toLowerCase());
+          if (dev) developers.add(member.mc.toLowerCase());
         }
       }
-      cachedCredits = { t: now, names };
+      cachedCredits = { t: now, names, developers };
     }
   } catch (e) {
     // 用舊的
   }
-  return cachedCredits ? cachedCredits.names : null;
+  return cachedCredits;
 }
 
-/** 這個人能不能上傳。UPLOADS：listed（預設，名單上的人）、anyone（裝了的人都可以）、off。 */
-async function mayUpload(env, user, now) {
-  const mode = env.UPLOADS || 'listed';
+/**
+ * 這個人能不能上傳這種檔。UPLOADS：
+ *   tiered（預設）：驗過身分的人都能傳 PNG；GIF 只有名單上的成員（開發者、贊助者、貢獻者）
+ *   listed：只有名單上的成員能傳
+ *   anyone：驗過身分的人都能傳，PNG、GIF 都可以
+ *   off：不收
+ */
+async function mayUpload(env, user, now, type) {
+  const mode = env.UPLOADS || 'tiered';
   if (mode === 'off') return 'uploads off';
   if (await env.CORPUS.get('ban:' + user.uuid)) return 'banned';
-  if (mode === 'anyone') return null;
-  const names = await listedNames(now);
-  if (!names) return 'try later';
-  return names.has(user.name.toLowerCase()) ? null : 'not listed';
+  if (mode === 'anyone' || (mode === 'tiered' && type !== 'gif')) return null;
+  const list = await credits(now);
+  if (!list) return 'try later';
+  if (list.names.has(user.name.toLowerCase())) return null;
+  return mode === 'tiered' ? 'gif members only' : 'not listed';
+}
+
+/** 這個人是不是開發者（可以拿掉別人的披風）。 */
+async function isDeveloper(name, now) {
+  const list = await credits(now);
+  return Boolean(list && list.developers.has(name.toLowerCase()));
 }
 
 async function handleUpload(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
-  const refusal = await mayUpload(env, user, now);
-  if (refusal) return no(refusal, 403);
   if (Number(request.headers.get('content-length') || 0) > MAX_CAPE_BYTES) {
     return no('too large', 413);
   }
   const bytes = new Uint8Array(await request.arrayBuffer());
   const found = inspectCape(bytes);
   if (found.why) return no(found.why, found.why === 'too large' ? 413 : 400);
+  const refusal = await mayUpload(env, user, now, found.type);
+  if (refusal) return no(refusal, 403);
   const id = await publicId(user.uuid);
-  const have = await env.CORPUS.getWithMetadata('cape:' + id, { type: 'stream' });
-  if (have && have.value && have.value.cancel) have.value.cancel();
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
   if (have && have.metadata && now - have.metadata.v < UPLOAD_EVERY_MS) {
     return no('slow down', 429);
   }
-  await env.CORPUS.put('cape:' + id, bytes, {
-    metadata: { t: found.type, v: now, s: bytes.length, u: user.uuid },
+  // 圖檔照內容存（blob:<雜湊>），披風那一筆只記它指到哪一張——
+  // 好幾個人傳同一張圖，只存一份。
+  const hash = hex(await crypto.subtle.digest('SHA-256', bytes));
+  const blob = await env.CORPUS.getWithMetadata('blob:' + hash, { type: 'stream' });
+  if (blob && blob.value && blob.value.cancel) blob.value.cancel();
+  if (!blob || !blob.metadata) {
+    await env.CORPUS.put('blob:' + hash, bytes, { metadata: { t: found.type, s: bytes.length } });
+  }
+  await env.CORPUS.put('cape:' + id, '', {
+    metadata: { t: found.type, v: now, s: bytes.length, u: user.uuid, h: hash },
   });
+  if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h);
   const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
   await remember(env, user.uuid, !(mine && mine.metadata && mine.metadata.c === 0), now);
   return json({ ok: true, id, v: now, ...found });
@@ -408,16 +439,75 @@ async function handleRemove(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
   const id = await publicId(user.uuid);
-  await env.CORPUS.delete('cape:' + id);
-  const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
-  await remember(env, user.uuid, !(mine && mine.metadata && mine.metadata.c === 0), now);
+  await dropCape(env, id, now);
   return json({ ok: true });
+}
+
+/** 所有上傳的披風（披風那一筆的 metadata）。 */
+async function allCapes(env) {
+  const out = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'cape:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      if (k.metadata && typeof k.metadata.h === 'string') {
+        out.push({ id: k.name.slice(5), ...k.metadata });
+      }
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  return out;
+}
+
+/** 這張圖沒有人在用了就刪掉。 */
+async function sweep(env, hash) {
+  if (!hash) return;
+  if ((await allCapes(env)).some((cape) => cape.h === hash)) return;
+  await env.CORPUS.delete('blob:' + hash);
+}
+
+/** 拿掉一個人的披風：那一筆、沒人用的圖、名單上的記號。回傳那個人的 UUID。 */
+async function dropCape(env, id, now) {
+  const have = await env.CORPUS.getWithMetadata('cape:' + id);
+  if (!have || !have.metadata) return null;
+  await env.CORPUS.delete('cape:' + id);
+  await sweep(env, have.metadata.h);
+  const uuid = have.metadata.u;
+  if (uuid && UUID.test(uuid)) {
+    const mine = await env.CORPUS.getWithMetadata('u:' + uuid);
+    if (mine && mine.metadata) await remember(env, uuid, mine.metadata.c !== 0, now);
+  }
+  return uuid || null;
+}
+
+/**
+ * 相同的圖併成一筆：誰在用、最近一次是什麼時候傳的。新的排前面。純函式。
+ */
+export function groupCapes(capes) {
+  const byHash = new Map();
+  for (const cape of capes) {
+    let group = byHash.get(cape.h);
+    if (!group) {
+      group = { h: cape.h, t: cape.t, s: cape.s, v: 0, ids: [] };
+      byHash.set(cape.h, group);
+    }
+    group.ids.push(cape.id);
+    group.v = Math.max(group.v, cape.v || 0);
+  }
+  return [...byHash.values()].sort((a, b) => b.v - a.v);
+}
+
+async function handleCapes(env) {
+  return json({ capes: groupCapes(await allCapes(env)) }, 200, { 'cache-control': 'no-store' });
 }
 
 async function handleCape(env, id) {
   if (!ID.test(id)) return no('not found', 404);
-  const have = await env.CORPUS.getWithMetadata('cape:' + id, { type: 'arrayBuffer' });
-  if (!have || !have.value || !have.metadata) return no('not found', 404);
+  const cape = await env.CORPUS.getWithMetadata('cape:' + id);
+  if (!cape || !cape.metadata || !cape.metadata.h) return no('not found', 404);
+  const have = await env.CORPUS.getWithMetadata('blob:' + cape.metadata.h, { type: 'arrayBuffer' });
+  if (!have || !have.value) return no('not found', 404);
+  have.metadata = cape.metadata;
   return new Response(have.value, {
     status: 200,
     headers: {
@@ -429,24 +519,156 @@ async function handleCape(env, id) {
   });
 }
 
-/** 管理：拿掉一件披風，要的話順便禁止那個人再傳。 */
-async function handleAdminRemove(request, env, now) {
+/** 管理權的效期：開發者從遊戲裡開一覽頁，兩個小時內可以刪。 */
+const MOD_TTL_MS = 2 * 3600 * 1000;
+
+/** 開發者拿一條帶著管理權的一覽網址。網址 # 後面那一段不會送到任何伺服器，只有那一頁讀得到。 */
+async function handleModLink(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  if (!await isDeveloper(user.name, now)) return no('not a developer', 403);
+  const body = 'mod.' + user.uuid + '.' + user.name + '.' + (now + MOD_TTL_MS);
+  const key = body + '.' + await sign(env, body);
+  return json({ ok: true, url: new URL(request.url).origin + '/gallery#k=' + key });
+}
+
+/** 這個請求有沒有管理權：ADMIN_TOKEN，或一張還沒過期、而且本人還是開發者的管理憑證。 */
+async function mayModerate(request, env, now) {
   const header = request.headers.get('authorization') || '';
-  if (!env.ADMIN_TOKEN || header !== 'Bearer ' + env.ADMIN_TOKEN) return no('forbidden', 403);
+  if (!header.startsWith('Bearer ')) return false;
+  const given = header.slice(7);
+  if (env.ADMIN_TOKEN && given === env.ADMIN_TOKEN) return true;
+  const parts = given.split('.');
+  if (parts.length !== 5 || parts[0] !== 'mod') return false;
+  const [, uuid, name, expires, signature] = parts;
+  if (!UUID.test(uuid) || !NAME.test(name) || !/^\d{1,16}$/.test(expires)) return false;
+  if (Number(expires) < now) return false;
+  const expected = await sign(env, 'mod.' + uuid + '.' + name + '.' + expires);
+  if (expected.length !== signature.length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
+  return diff === 0 && isDeveloper(name, now);
+}
+
+/**
+ * 拿掉披風：{id} 是一個人的，{hash} 是所有用同一張圖的。ban 是 true 的話那些人之後不能再傳，
+ * false 是解除。
+ */
+async function handleAdminRemove(request, env, now) {
+  if (!await mayModerate(request, env, now)) return no('forbidden', 403);
   const body = await readJson(request);
-  if (!body || typeof body.id !== 'string' || !ID.test(body.id)) return no('bad request');
-  const have = await env.CORPUS.getWithMetadata('cape:' + body.id, { type: 'stream' });
-  if (have && have.value && have.value.cancel) have.value.cancel();
-  const uuid = have && have.metadata ? have.metadata.u : null;
-  await env.CORPUS.delete('cape:' + body.id);
-  if (uuid && UUID.test(uuid)) {
+  if (!body) return no('bad request');
+  let ids;
+  if (typeof body.id === 'string' && ID.test(body.id)) {
+    ids = [body.id];
+  } else if (typeof body.hash === 'string' && /^[0-9a-f]{64}$/.test(body.hash)) {
+    ids = (await allCapes(env)).filter((cape) => cape.h === body.hash).map((cape) => cape.id);
+  } else {
+    return no('bad request');
+  }
+  let removed = 0;
+  for (const id of ids) {
+    const uuid = await dropCape(env, id, now);
+    if (!uuid) continue;
+    removed++;
     if (body.ban === true) await env.CORPUS.put('ban:' + uuid, String(now));
     if (body.ban === false) await env.CORPUS.delete('ban:' + uuid);
-    const mine = await env.CORPUS.getWithMetadata('u:' + uuid);
-    if (mine && mine.metadata) await remember(env, uuid, mine.metadata.c !== 0, now);
   }
-  return json({ ok: true, removed: Boolean(uuid), banned: body.ban === true });
+  return json({ ok: true, removed, banned: body.ban === true });
 }
+
+/**
+ * 披風一覽。一張靜態的網頁：跟 /capes 要清單，圖直接用 /cape/<代碼>。
+ * 網址帶著管理憑證（#k=…，開發者從遊戲裡開）的話，每一張多出刪除的按鈕。
+ */
+const GALLERY = `<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WynnChaYuan 披風一覽</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; padding: 24px 16px 48px; background: #14171b; color: #e6e8ea;
+         font: 15px/1.6 system-ui, "Microsoft JhengHei", "PingFang TC", sans-serif; }
+  main { max-width: 1080px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  p { margin: 4px 0; color: #a8afb7; }
+  .rules { margin: 14px 0 20px; padding: 10px 14px; border: 1px solid #2c333a; border-radius: 8px; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+  .card { border: 1px solid #2c333a; border-radius: 10px; padding: 12px; background: #1a1e23; }
+  .card img { display: block; width: 100%; image-rendering: pixelated; background: #0c0e10;
+              border-radius: 4px; aspect-ratio: 22 / 17; }
+  .meta { margin-top: 8px; font-size: 13px; color: #a8afb7; font-variant-numeric: tabular-nums; }
+  .actions { display: flex; gap: 8px; margin-top: 10px; }
+  button { font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 6px; cursor: pointer;
+           border: 1px solid #5a2b2b; background: #3a1c1c; color: #ffd9d9; }
+  button:hover { background: #532626; }
+  button:focus-visible { outline: 2px solid #7fd08a; outline-offset: 2px; }
+  .mod { color: #7fd08a; }
+  .empty { padding: 40px 0; text-align: center; color: #a8afb7; }
+</style>
+<main>
+  <h1>WynnChaYuan 披風一覽</h1>
+  <p id="count">讀取中…</p>
+  <p id="mod" class="mod" hidden>你有管理權：可以刪除違規的披風。</p>
+  <div class="rules">不可以上傳的內容：政治、不雅或色情、違反法規、種族歧視或仇恨。違規的披風會被移除，上傳的人可能不能再傳。</div>
+  <div id="grid" class="grid"></div>
+</main>
+<script>
+  const key = (location.hash.match(/k=([^&]+)/) || [])[1] || '';
+  if (key) document.getElementById('mod').hidden = false;
+  const grid = document.getElementById('grid');
+  const kb = (n) => n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB';
+  async function remove(cape, ban) {
+    const text = ban ? '刪除這張披風，並禁止用它的 ' + cape.ids.length + ' 個人再上傳？'
+                     : '刪除這張披風（' + cape.ids.length + ' 個人在用）？';
+    if (!confirm(text)) return;
+    const body = { hash: cape.h };
+    if (ban) body.ban = true;
+    const r = await fetch('/admin/remove', { method: 'POST', body: JSON.stringify(body),
+      headers: { authorization: 'Bearer ' + key, 'content-type': 'application/json' } });
+    if (r.ok) load(); else alert('沒有成功（' + r.status + '）。管理權兩個小時過期，請從遊戲裡重新開一次。');
+  }
+  async function load() {
+    const data = await (await fetch('/capes')).json();
+    document.getElementById('count').textContent = '共 ' + data.capes.length + ' 張（相同的圖算一張）';
+    grid.replaceChildren();
+    if (!data.capes.length) {
+      const empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.textContent = '還沒有人上傳披風。';
+      grid.append(empty);
+    }
+    for (const cape of data.capes) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.alt = '披風 ' + cape.h.slice(0, 8);
+      img.src = '/cape/' + cape.ids[0] + '?v=' + cape.v;
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.textContent = cape.t.toUpperCase() + ' · ' + kb(cape.s) + ' · ' + cape.ids.length + ' 人使用 · '
+        + new Date(cape.v).toLocaleDateString();
+      card.append(img, meta);
+      if (key) {
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+        const del = document.createElement('button');
+        del.textContent = '刪除';
+        del.onclick = () => remove(cape, false);
+        const ban = document.createElement('button');
+        ban.textContent = '刪除並禁止再傳';
+        ban.onclick = () => remove(cape, true);
+        actions.append(del, ban);
+        card.append(actions);
+      }
+      grid.append(card);
+    }
+  }
+  load().catch(() => { document.getElementById('count').textContent = '讀不到清單，請重新整理。'; });
+</script>
+</html>`;
 
 export default {
   async fetch(request, env) {
@@ -459,6 +681,18 @@ export default {
     if (route === 'PUT /cape') return handleUpload(request, env, now);
     if (route === 'DELETE /cape') return handleRemove(request, env, now);
     if (route === 'POST /admin/remove') return handleAdminRemove(request, env, now);
+    if (route === 'POST /mod-link') return handleModLink(request, env, now);
+    if (route === 'GET /capes') return handleCapes(env);
+    if (route === 'GET /gallery') {
+      return new Response(GALLERY, {
+        headers: {
+          'content-type': 'text/html; charset=utf-8',
+          'cache-control': 'no-store',
+          'referrer-policy': 'no-referrer',
+          'x-content-type-options': 'nosniff',
+        },
+      });
+    }
     if (request.method === 'GET' && url.pathname.startsWith('/cape/')) {
       return handleCape(env, url.pathname.slice('/cape/'.length));
     }
@@ -468,7 +702,7 @@ export default {
         what: 'WynnChaYuan presence',
         users: list ? list.users.length : 0,
         capes: list ? Object.keys(list.capes).length : 0,
-        uploads: env.UPLOADS || 'listed',
+        uploads: env.UPLOADS || 'tiered',
       });
     }
     return no('not found', 404);

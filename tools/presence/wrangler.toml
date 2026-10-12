@@ -8,7 +8,11 @@ binding = "CORPUS"
 id = "70fa88851cfa4cee87b3e818dc40cb75"
 
 [vars]
-# 誰可以上傳披風：listed（credits.json 上的成員）、anyone（驗過身分的人都可以）、off（不收）
-UPLOADS = "listed"
+# 誰可以上傳披風：
+#   tiered  驗過身分的人都能傳 PNG；GIF 只有 credits.json 上的成員（開發者、贊助者、貢獻者）
+#   listed  只有 credits.json 上的成員能傳
+#   anyone  驗過身分的人都能傳，PNG、GIF 都可以
+#   off     不收
+UPLOADS = "tiered"
 
 # ADMIN_TOKEN 不寫在這裡——它是秘密，用 wrangler secret put ADMIN_TOKEN 設定。見 README.md。

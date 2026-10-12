@@ -1,6 +1,6 @@
 // node tools/presence/worker.test.mjs
 import worker, {
-  publicId, issueToken, readToken, needsWrite, applyRecord, inspectCape, gifFrames,
+  publicId, issueToken, readToken, needsWrite, applyRecord, inspectCape, gifFrames, groupCapes,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
 
@@ -59,7 +59,9 @@ globalThis.fetch = async (url) => {
   }
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
-      sections: [{ role: 'dev', members: [{ name: 'A', mc: 'Alice_Dev' }, { name: 'data' }] }],
+      sections: [
+        { role: 'dev', key: 'credits.role.developers', members: [{ name: 'A', mc: 'Alice_Dev' }, { name: 'data' }] },
+        { role: 'sponsor', key: 'credits.role.sponsors', members: [{ name: 'C', mc: 'Carol' }] }],
     }), { status: 200 });
   }
   throw new Error('unexpected fetch ' + u);
@@ -195,16 +197,17 @@ check('上限是 20 MB', MAX_CAPE_BYTES === 20 * 1024 * 1024);
 check('★ 太大的檔不收', inspectCape(new Uint8Array(MAX_CAPE_BYTES + 1)).why === 'too large');
 check('不是圖的不收', inspectCape(new TextEncoder().encode('<html>hello</html>')).why === 'bad format');
 
-// ---- 上傳 ----
+// ---- 上傳：PNG 大家都能傳，GIF 只有名單上的成員 ----
 r = await worker.fetch(put('/cape', gif(44, 34, 4)), env);
 check('★ 沒有通行證不能上傳', r.status === 401);
 r = await worker.fetch(put('/cape', gif(44, 34, 4), bobToken), env);
-check('★ 不在名單上的人不能上傳（預設）', r.status === 403 && (await r.json()).why === 'not listed');
+check('★ 不在名單上的人不能傳 GIF（預設）', r.status === 403
+  && (await r.json()).why === 'gif members only');
 r = await worker.fetch(put('/cape', png(33, 33), aliceToken), env);
 check('尺寸不對回 400', r.status === 400 && (await r.json()).why === 'bad size');
 r = await worker.fetch(put('/cape', gif(44, 34, 4), aliceToken), env);
 body = await r.json();
-check('名單上的人上傳成功', r.status === 200 && body.type === 'gif' && body.frames === 4);
+check('名單上的人傳 GIF 成功', r.status === 200 && body.type === 'gif' && body.frames === 4);
 r = await worker.fetch(get('/cape/' + aliceId), env);
 const back = new Uint8Array(await r.arrayBuffer());
 check('★ 下載回來一個位元組都沒變', r.status === 200 && back.length === gif(44, 34, 4).length
@@ -223,35 +226,87 @@ check('再打開：披風回來了', list.capes[aliceId] === body.v);
 check('沒有的披風回 404', (await worker.fetch(get('/cape/' + bobId), env)).status === 404
   && (await worker.fetch(get('/cape/../x'), env)).status === 404);
 
-// 開放給所有人
-const open = { CORPUS: env.CORPUS, UPLOADS: 'anyone' };
-r = await worker.fetch(put('/cape', png(22, 17), bobToken), open);
-check('UPLOADS=anyone：不在名單上的人也能傳', r.status === 200);
+r = await worker.fetch(put('/cape', png(22, 17), bobToken), env);
+check('★ 不在名單上的人可以傳 PNG（預設）', r.status === 200 && (await r.json()).type === 'png');
+r = await worker.fetch(put('/cape', png(22, 17), bobToken), { CORPUS: env.CORPUS, UPLOADS: 'listed' });
+check('UPLOADS=listed：不在名單上的人連 PNG 也不能傳', r.status === 403
+  && (await r.json()).why === 'not listed');
 r = await worker.fetch(put('/cape', png(22, 17), aliceToken), { CORPUS: env.CORPUS, UPLOADS: 'off' });
 check('UPLOADS=off：誰都不能傳', r.status === 403 && (await r.json()).why === 'uploads off');
 
-// ---- 管理 ----
-r = await worker.fetch(post('/admin/remove', { id: bobId, ban: true }), open);
-check('★ 沒設 ADMIN_TOKEN：管理路由不開', r.status === 403);
-const admin = { CORPUS: env.CORPUS, UPLOADS: 'anyone', ADMIN_TOKEN: 'sesame' };
-r = await worker.fetch(post('/admin/remove', { id: bobId, ban: true }, 'wrong'), admin);
-check('密語不對不行', r.status === 403);
-r = await worker.fetch(post('/admin/remove', { id: bobId, ban: true }, 'sesame'), admin);
-check('拿掉他的披風', r.status === 200 && !env.CORPUS.data.has('cape:' + bobId));
-list = await (await worker.fetch(get('/list'), admin)).json();
-check('名單上也沒有了', !(bobId in list.capes));
-env.CORPUS.data.delete('cape:' + bobId);
-r = await worker.fetch(put('/cape', png(22, 17), bobToken), admin);
+// ---- ★ 相同的圖只存一份 ----
+const blobs = () => [...env.CORPUS.data.keys()].filter((k) => k.startsWith('blob:'));
+check('現在兩個人、兩張不同的圖', blobs().length === 2);
+// 把她那一筆的時間往前推，她才能馬上再傳
+const pushBack = (id) => { env.CORPUS.data.get('cape:' + id).metadata.v -= 60000; };
+pushBack(aliceId);
+r = await worker.fetch(put('/cape', png(22, 17), aliceToken), env);
+check('她改傳跟他一樣的圖', r.status === 200);
+check('★ 兩個人同一張圖：只存一份，她原本那張沒人用了就刪掉（實際 ' + blobs().length + ' 份）',
+  blobs().length === 1);
+r = await worker.fetch(get('/capes'), env);
+const capes = (await r.json()).capes;
+check('★ 一覽把相同的圖併成一筆，列出兩個人', capes.length === 1 && capes[0].ids.length === 2
+  && capes[0].ids.includes(aliceId) && capes[0].ids.includes(bobId) && capes[0].t === 'png');
+check('★ 一覽裡沒有 UUID 也沒有名字', !JSON.stringify(capes).includes(ALICE.id)
+  && !JSON.stringify(capes).includes(BOB.name));
+check('兩個人都下載得到', (await worker.fetch(get('/cape/' + aliceId), env)).status === 200
+  && (await worker.fetch(get('/cape/' + bobId), env)).status === 200);
+check('groupCapes：新的排前面', groupCapes([
+  { id: 'a', h: 'x', t: 'png', s: 1, v: 5 }, { id: 'b', h: 'y', t: 'gif', s: 2, v: 9 },
+  { id: 'c', h: 'x', t: 'png', s: 1, v: 7 }]).map((g) => g.h + g.ids.length).join() === 'y1,x2');
+
+// ---- 披風一覽頁 ----
+r = await worker.fetch(get('/gallery'), env);
+const page = await r.text();
+check('一覽是一張網頁', r.status === 200 && r.headers.get('content-type').startsWith('text/html')
+  && page.includes('披風一覽') && page.includes('/capes'));
+check('★ 一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => page.includes(w)));
+
+// ---- ★ 開發者可以刪 ----
+r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }), env);
+check('★ 沒有憑證不能刪', r.status === 403);
+r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, bobToken), env);
+check('★ 拿一般的通行證不能刪', r.status === 403);
+r = await worker.fetch(post('/mod-link', {}, bobToken), env);
+check('★ 不是開發者拿不到管理網址', r.status === 403);
+r = await worker.fetch(post('/mod-link', {}, aliceToken), env);
+const link = (await r.json()).url;
+check('開發者拿得到管理網址，憑證在 # 後面', r.status === 200 && link.includes('/gallery#k=mod.'));
+const modKey = link.split('#k=')[1];
+r = await worker.fetch(post('/admin/remove', { hash: 'f'.repeat(64) }, modKey), env);
+check('沒有這張圖：成功但什麼都沒刪', r.status === 200 && (await r.json()).removed === 0);
+r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, modKey.replace(ALICE.id, BOB.id)), env);
+check('★ 竄改過的管理憑證不認', r.status === 403);
+r = await worker.fetch(post('/admin/remove', { id: bobId, ban: true }, modKey), env);
+check('★ 開發者刪掉他的披風並禁止再傳', r.status === 200 && (await r.json()).removed === 1
+  && !env.CORPUS.data.has('cape:' + bobId) && env.CORPUS.data.has('ban:' + BOB.id));
+check('她還在用同一張圖，圖檔留著', blobs().length === 1);
+list = await (await worker.fetch(get('/list'), env)).json();
+check('名單上他的披風也沒了，她的還在', !(bobId in list.capes) && aliceId in list.capes);
+r = await worker.fetch(put('/cape', png(22, 17), bobToken), env);
 check('★ 被禁止的人不能再傳', r.status === 403 && (await r.json()).why === 'banned');
+r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, modKey), env);
+check('★ 照雜湊刪：所有用這張圖的人一起拿掉，圖檔也刪了', (await r.json()).removed === 1
+  && blobs().length === 0 && !env.CORPUS.data.has('cape:' + aliceId));
+
+// ADMIN_TOKEN 是另一條路（不在遊戲裡的時候用）
+const admin = { CORPUS: env.CORPUS, ADMIN_TOKEN: 'sesame' };
+r = await worker.fetch(post('/admin/remove', { id: bobId, ban: false }, 'wrong'), admin);
+check('密語不對不行', r.status === 403);
+env.CORPUS.data.set('cape:' + bobId, { value: '', metadata: { t: 'png', v: 1, s: 1, u: BOB.id, h: 'e'.repeat(64) } });
+r = await worker.fetch(post('/admin/remove', { id: bobId, ban: false }, 'sesame'), admin);
+check('ADMIN_TOKEN 也能刪，ban:false 是解除禁止', r.status === 200 && !env.CORPUS.data.has('ban:' + BOB.id));
 
 // ---- 自己拿掉 ----
+await worker.fetch(put('/cape', gif(22, 17, 2), aliceToken), env);
 r = await worker.fetch(del('/cape', aliceToken), env);
 list = await (await worker.fetch(get('/list'), env)).json();
-check('自己拿掉披風：圖檔與名單都沒了', r.status === 200
-  && !env.CORPUS.data.has('cape:' + aliceId) && !(aliceId in list.capes));
+check('自己拿掉披風：那一筆、圖檔、名單都沒了', r.status === 200
+  && !env.CORPUS.data.has('cape:' + aliceId) && !(aliceId in list.capes) && blobs().length === 0);
 
 r = await worker.fetch(get('/'), env);
-check('首頁回人數', (await r.json()).users === 2);
+check('首頁回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
 check('舊的語料路由不在了', (await worker.fetch(get('/submit'), env)).status === 404);
 
 console.log(failures === 0 ? '登記站：全部通過' : '登記站：' + failures + ' 項失敗');

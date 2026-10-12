@@ -86,6 +86,8 @@ public final class PresenceTest {
                         && Presence.resultOf(413, "{\"why\":\"too large\"}") == Presence.Result.TOO_LARGE
                         && Presence.resultOf(403, "{\"why\":\"not listed\"}") == Presence.Result.NOT_LISTED
                         && Presence.resultOf(403, "{\"why\":\"banned\"}") == Presence.Result.BANNED
+                        && Presence.resultOf(403, "{\"why\":\"gif members only\"}")
+                                == Presence.Result.GIF_MEMBERS_ONLY
                         && Presence.resultOf(403, "{\"why\":\"uploads off\"}") == Presence.Result.OFF
                         && Presence.resultOf(429, "{\"why\":\"slow down\"}") == Presence.Result.SLOW_DOWN
                         && Presence.resultOf(400, "{\"why\":\"too many frames\"}")
@@ -93,6 +95,17 @@ public final class PresenceTest {
         check("不認得的、不是 JSON 的都是「沒有成功」",
                 Presence.resultOf(502, "<html>Bad Gateway</html>") == Presence.Result.FAILED
                         && Presence.resultOf(400, "{\"why\":\"???\"}") == Presence.Result.FAILED);
+
+        // ---- 披風一覽的管理網址 ----
+        String link = Presence.BASE + "/gallery#k=mod.abc";
+        check("登記站回的管理網址照用", link.equals(
+                Presence.moderatorLink(200, "{\"ok\":true,\"url\":\"" + link + "\"}")));
+        check("★ 指到別的地方的網址不開", Presence.moderatorLink(200,
+                "{\"url\":\"https://example.com/gallery#k=mod.abc\"}") == null
+                && Presence.moderatorLink(200, "{\"url\":\"" + Presence.BASE + ".evil.test/gallery#k=x\"}")
+                        == null);
+        check("不是開發者（403）、不是 JSON：沒有管理網址", Presence.moderatorLink(403, "{}") == null
+                && Presence.moderatorLink(200, "<html>") == null);
 
         // ---- 上傳之前先驗 ----
         byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/template.gif"));   // 22×17，三格

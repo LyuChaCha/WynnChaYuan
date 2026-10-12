@@ -236,7 +236,24 @@ public final class SettingsScreen extends Screen {
         rows.add(Row.action("fun.remove", t("fun.remove"), t("fun.remove.hint"))
                 .label(t("fun.remove.button"))
                 .run(() -> com.wynnchayuan.Presence.remove(result -> capeResult(result, true))));
+        // 披風一覽：登記站上的一張網頁。開發者開的那一條帶著管理權，可以刪違規的披風。
+        rows.add(Row.action("fun.gallery", t("fun.gallery"), t("fun.gallery.hint"))
+                .label(t("fun.gallery.button"))
+                .run(() -> com.wynnchayuan.Presence.gallery(isDeveloper(),
+                        url -> net.minecraft.client.Minecraft.getInstance().execute(
+                                () -> ConfirmLinkScreen.confirmLinkNow(this, url)))));
         return rows;
+    }
+
+    /** 自己在名單上是不是開發者。 */
+    private static boolean isDeveloper() {
+        for (com.wynnchayuan.render.Badges.Role role : com.wynnchayuan.render.Badges.registered(
+                com.wynnchayuan.render.Badges.selfName())) {
+            if ("developers".equals(role.id())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void uploadCape() {
@@ -257,6 +274,13 @@ public final class SettingsScreen extends Screen {
                     com.wynnchayuan.cape.CapeRules.check(bytes);
             if (problem != null) {
                 say(T.s("fun.upload." + problem.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
+                return;
+            }
+            // GIF 只有名單上的成員能傳。登記站會再擋一次，這裡先說，省一趟來回。
+            if (file.getFileName().toString().endsWith(".gif")
+                    && com.wynnchayuan.render.Badges.registered(
+                            com.wynnchayuan.render.Badges.selfName()).isEmpty()) {
+                say(T.s("fun.upload.gif_members_only"), Ui.RED);
                 return;
             }
             say(T.s("fun.upload.sending"), Ui.TEXT_3);
