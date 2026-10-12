@@ -43,6 +43,7 @@
 
 import { LANGS, PATHS, pickLang, render } from './site.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
+import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
 
 /** 公開代碼的樣子：24 個小寫十六進位字元。 */
 const ID = /^[0-9a-f]{24}$/;
@@ -1222,6 +1223,27 @@ async function handleAddCredit(request, env, now) {
   }
 }
 
+/** 網站的圖示。/favicon.ico 是瀏覽器沒人叫也會自己來要的那一個，給它同一張 PNG。 */
+const ICONS = {
+  '/favicon.ico': FAVICON,
+  '/favicon.png': FAVICON,
+  '/icon-192.png': ICON_192,
+  '/apple-touch-icon.png': APPLE_TOUCH,
+};
+
+function icon(base64) {
+  const raw = atob(base64);
+  const bytes = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+  return new Response(bytes, {
+    headers: {
+      'content-type': 'image/png',
+      'cache-control': 'public, max-age=86400',
+      'x-content-type-options': 'nosniff',
+    },
+  });
+}
+
 function page(html, lang) {
   return new Response(html, {
     headers: {
@@ -1253,6 +1275,7 @@ export default {
         : pickLang(request.headers.get('cookie'), request.headers.get('accept-language'));
       return page(render(path, lang), lang);
     }
+    if (request.method === 'GET' && Object.hasOwn(ICONS, path)) return icon(ICONS[path]);
     if (request.method === 'GET' && path === '/auth/discord') return handleDiscordStart(request, env, now);
     if (request.method === 'GET' && path === '/auth/discord/callback') {
       return handleDiscordCallback(request, env, now);

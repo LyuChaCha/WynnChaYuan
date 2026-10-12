@@ -504,6 +504,18 @@ for (const path of ['/', '/capes', '/account', '/admin']) {
   check(path + ' 裡沒有會被樣板字串吃掉的寫法',
     !pages[path].includes(String.fromCharCode(96)) && !pages[path].includes('$' + '{'));
 }
+// 圖示：分頁上的、手機主畫面的；瀏覽器自己來要的 /favicon.ico 也有
+for (const path of ['/favicon.ico', '/favicon.png', '/icon-192.png', '/apple-touch-icon.png']) {
+  const answer = await worker.fetch(new Request('https://x.test' + path), env);
+  const bytes = new Uint8Array(await answer.arrayBuffer());
+  check(path + ' 是一張 PNG（' + bytes.length + ' 位元組）', answer.status === 200
+    && answer.headers.get('content-type') === 'image/png' && bytes.length > 500
+    && bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47
+    && /max-age=\d+/.test(answer.headers.get('cache-control')));
+}
+check('★ 每一頁都掛了圖示', Object.values(pages).concat(Object.values(english)).every((html) =>
+  html.includes('<link rel="icon" type="image/png" href="/favicon.png">')
+  && html.includes('<link rel="apple-touch-icon" href="/apple-touch-icon.png">')));
 check('★ 披風一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => pages['/capes'].includes(w)));
 check('★ 英文版的披風一覽也寫著不可以上傳什麼',
   ['political', 'obscene', 'unlawful', 'racist'].every((w) => english['/capes'].includes(w)));
