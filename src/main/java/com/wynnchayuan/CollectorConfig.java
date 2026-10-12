@@ -1006,14 +1006,6 @@ public final class CollectorConfig {
     private double nametagAngle = 6.0;
 
     /**
-     * 要不要顯示貢獻者標記。
-     *
-     * <p>預設開：這是給模組使用者之間互相認得出來用的，關掉就沒意義了。
-     * 但覺得畫面吵的人應該能關。
-     */
-    private boolean showBadges = true;
-
-    /**
      * 自己的徽章要展示哪些身分：身分代號 → 要不要展示。沒寫到的照名單上登記的。
      *
      * <p>只影響<b>自己畫面上</b>自己的名牌；別人看到的是 {@code credits.json} 登記的。
@@ -1027,7 +1019,7 @@ public final class CollectorConfig {
      * 自己各個身分的葉子顏色（{@code #RRGGBB}）。沒寫到的照名單上登記的。
      *
      * <p>有身分的人自己調（使用者 2026-10-11）。跟上面一樣只影響自己的畫面，
-     * 要讓別人看到得送申請、登記進 {@code credits.json}。
+     * 要讓別人看到得由維護名單的人改 {@code credits.json}。
      */
     private final java.util.Map<String, String> badgeColours = new java.util.LinkedHashMap<>();
 
@@ -1073,16 +1065,6 @@ public final class CollectorConfig {
     public void setBadgeRainbow(boolean on) {
         badgeRainbow = on;
         save();
-    }
-
-    public boolean showBadges() {
-        return showBadges;
-    }
-
-    public boolean toggleBadges() {
-        showBadges = !showBadges;
-        save();
-        return showBadges;
     }
 
     public double nametagRange() {
@@ -1533,7 +1515,7 @@ public final class CollectorConfig {
         panelAnchor = enumOr(o, "panelAnchor", PanelAnchor.class, panelAnchor);
         readPairs(o, "overlayPos", overlayPos);
         readPairs(o, "overlaySize", overlaySize);
-        showBadges = bool(o, "showBadges", showBadges);
+        // showBadges 拿掉了：徽章不能關（使用者 2026-10-12）。舊設定檔裡那一欄不讀。
         // badgeStyle（多重身分只看第一個）拿掉了：要展示哪些身分由本人決定，
         // 看的人那邊不必再有一個開關。舊設定檔裡那一欄不讀，下次存檔就不見。
         badgeRoles.clear();
@@ -1763,7 +1745,6 @@ public final class CollectorConfig {
                 sizes.add(which.name(), arr);
             });
             o.add("overlaySize", sizes);
-            o.addProperty("showBadges", showBadges);
             // 沒動過就不寫：不在名單上的人設定檔裡不必多這兩項
             if (!badgeRoles.isEmpty()) {
                 JsonObject roles = new JsonObject();

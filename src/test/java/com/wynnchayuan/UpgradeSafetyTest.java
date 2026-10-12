@@ -243,6 +243,8 @@ public final class UpgradeSafetyTest {
         // 徽章改成名字前面的葉子：「多重身分只看第一個」那個開關拿掉了，
         // 要展示哪些身分由本人在「徽章」那一頁決定。
         expected.remove("badgeStyle");
+        // 徽章不能關：開關連同這一欄一起拿掉（使用者 2026-10-12）。
+        expected.remove("showBadges");
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了補寫的那幾欄，其他每一欄都一樣",
                 expected.equals(rewritten));

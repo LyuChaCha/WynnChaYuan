@@ -1,4 +1,4 @@
-![WynnChaYuan](https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/docs/icon.png)
+![WynnChaYuan](https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/2026/wynnchayuan-banner-dark-2640.png)
 
 # WynnChaYuan
 
@@ -83,7 +83,11 @@ The mod never sends anything by itself. The export already leaves out player nam
 
 ### Sponsoring
 
-Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month or 10 USD one-off puts you on the sponsor list. No paid features.
+Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): a one-off 20 USD or 2 USD/month puts you on the sponsor list. No paid features.
+
+### Roles and badges
+
+People on the credits list get a leaf before their name, visible to players running the mod: **developers** (gold) help develop and maintain the code; **sponsors** (cyan) give a one-off 20 USD or 2 USD/month; **contributors** (green) add translations for their own language, send correct fixes, or give real help with the code.
 
 ### Licence
 
@@ -166,7 +170,11 @@ jar 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設
 
 ### 贊助
 
-免費，也會一直免費。[Ko-fi](https://ko-fi.com/lyuchacha)：每月 3 USD 或單次 10 USD 以上列入贊助者名單。沒有付費功能。
+免費，也會一直免費。[Ko-fi](https://ko-fi.com/lyuchacha)：單次 20 USD 或每月 2 USD 以上列入贊助者名單。沒有付費功能。
+
+### 身分與徽章
+
+名單上的人名字前面會有一片葉子，裝了本模組的人看得到：**開發者**（金色）協助程式的開發與維護；**贊助者**（青藍色）單次 20 USD 或每月 2 USD 以上；**貢獻者**（綠色）為自己的語言貢獻譯文、提出正確的修正，或在程式上提供實質協助。
 
 ### 授權
 

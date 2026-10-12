@@ -176,15 +176,6 @@ public final class SettingsScreen extends Screen {
         return rows;
     }
 
-    private long badgeCopiedAt;
-
-    /**
-     * repo 上那份名單的編輯頁。別人看到的徽章照這個檔畫，本人把自己那一筆貼回去、
-     * 送出修改（GitHub 會開成一個 PR），合併之後大家下次同步就看得到。
-     */
-    private static final String CREDITS_EDIT_URL = "https://github.com/LyuChaCha/WynnChaYuan/edit/main/"
-            + "src/main/resources/assets/wynnchayuan/credits.json";
-
     /** 怎麼參與翻譯（貢獻者）。 */
     private static final String CONTRIBUTE_URL =
             "https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md";
@@ -197,20 +188,17 @@ public final class SettingsScreen extends Screen {
             "https://github.com/LyuChaCha/WynnChaYuan#%E8%B4%8A%E5%8A%A9";
 
     /**
-     * 徽章那一頁（使用者 2026-10-11）。
+     * 徽章那一頁（使用者 2026-10-11、10-12）。
      *
-     * <p>在名單上的人：自己那片葉子要展示哪些身分、什麼顏色。不在名單上的人沒有東西
-     * 可以選，看到的是「怎麼拿到徽章」——參與翻譯成為貢獻者，或是贊助成為贊助者。
+     * <p>徽章<b>不能關</b>：它是「這個人是誰」。在名單上的人可以調自己那片葉子的顏色；
+     * 有好幾個身分的人可以挑要放哪幾片，但最少留一片。不在名單上的人沒有東西可以選，
+     * 看到的是「怎麼拿到有顏色的徽章」——參與翻譯成為貢獻者，或是贊助成為贊助者。
      *
-     * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是
-     * repo 上 {@code credits.json} 的那一份。所以最後一列是「申請徽章」：把現在的選擇
-     * （展示的身分、顏色、彩色模式）照名單的寫法複製起來，並打開那個檔在 GitHub 上的編輯頁，
-     * 本人貼回去送出就好。
+     * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是 repo 上
+     * {@code credits.json} 的那一份，那一份由維護名單的人改。
      */
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
-        // 看不看得到別人的葉子，這個人人都有。原本在「關於」那一頁的左下角。
-        rows.add(toggle("badge.show", true, cfg()::showBadges, cfg()::toggleBadges));
         String self = com.wynnchayuan.render.Badges.selfName();
         List<com.wynnchayuan.render.Badges.Role> mine =
                 com.wynnchayuan.render.Badges.registered(self);
@@ -229,14 +217,22 @@ public final class SettingsScreen extends Screen {
             return rows;
         }
         for (com.wynnchayuan.render.Badges.Role role : mine) {
-            java.util.function.BooleanSupplier shown =
-                    () -> cfg().badgeRoleShown(role.id(), !role.hidden());
-            rows.add(Row.toggle("badge.role." + role.id(),
-                            () -> T.s("badge.role", role.name()), t("badge.role.hint"))
-                    .on(shown)
-                    .flip(() -> cfg().setBadgeRole(role.id(), !shown.getAsBoolean()))
-                    .reset(() -> shown.getAsBoolean() == !role.hidden(),
-                            () -> cfg().setBadgeRole(role.id(), !role.hidden())));
+            // 只有一個身分的人沒有開關——那一片就是他的徽章
+            if (mine.size() > 1) {
+                java.util.function.BooleanSupplier shown =
+                        () -> cfg().badgeRoleShown(role.id(), !role.hidden());
+                rows.add(Row.toggle("badge.role." + role.id(),
+                                () -> T.s("badge.role", role.name()), t("badge.role.hint"))
+                        .on(shown)
+                        .flip(() -> {
+                            // 最後一片關不掉
+                            if (!shown.getAsBoolean() || badgesShown(mine) > 1) {
+                                cfg().setBadgeRole(role.id(), !shown.getAsBoolean());
+                            }
+                        })
+                        .reset(() -> shown.getAsBoolean() == !role.hidden(),
+                                () -> cfg().setBadgeRole(role.id(), !role.hidden())));
+            }
             String registered = String.format("#%06X", role.color() & 0xFFFFFF);
             rows.add(Row.colour("badge.colour." + role.id(),
                             () -> T.s("badge.colour", role.name()), t("badge.colour.hint"))
@@ -258,17 +254,18 @@ public final class SettingsScreen extends Screen {
                                 () -> cfg().setBadgeRainbow(role.rainbow())));
             }
         }
-        rows.add(Row.action("badge.register", t("badge.register"), t("badge.register.hint"))
-                .label(() -> T.s(System.currentTimeMillis() - badgeCopiedAt < 2000
-                        ? "badge.register.done" : "badge.register.button"))
-                .run(() -> {
-                    Minecraft.getInstance().keyboardHandler.setClipboard(
-                            com.wynnchayuan.render.Badges.creditsEntries(
-                                    Credits.sections(), self, cfg()));
-                    badgeCopiedAt = System.currentTimeMillis();
-                    ConfirmLinkScreen.confirmLinkNow(this, CREDITS_EDIT_URL);
-                }));
         return rows;
+    }
+
+    /** 這個人現在開著幾片葉子。 */
+    private int badgesShown(List<com.wynnchayuan.render.Badges.Role> mine) {
+        int n = 0;
+        for (com.wynnchayuan.render.Badges.Role role : mine) {
+            if (cfg().badgeRoleShown(role.id(), !role.hidden())) {
+                n++;
+            }
+        }
+        return n;
     }
 
     private List<Row> items() {
