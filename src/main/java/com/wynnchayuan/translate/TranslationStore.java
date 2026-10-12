@@ -2245,9 +2245,9 @@ public final class TranslationStore {
      * 的 {@code Shiny} 翻，後面的裝備名照裝備自己的譯名。
      *
      * <p>語料裡不會有「Shiny X」這種鍵——那是遊戲替追蹤數據的 Mythic 加上的前綴，
-     * 每一件都收一條只會翻倍。後面的名字沒有自己的譯文時（繁中的 Mythic）
+     * 每一件都收一條只會翻倍。後面的名字沒有自己的譯文時（純造字的名字）
      * 保留英文，而且<b>不能</b>去借別的檔案的同名譯文：Shiny Guardian 不是
-     * Major ID 的「守護者」，見 {@link #gearNameKeys}。
+     * Major ID 的「守護者」，見 {@link #gearNameKeys} 與 {@link #gearOwnName}。
      *
      * <p>F6 關掉物品名稱時整個留英文；真的叫「Shiny Mask」的物品先被精確查表
      * 接走，走不到這裡。
@@ -2271,12 +2271,17 @@ public final class TranslationStore {
         if (pattern == null || !pattern.contains("{name}")) {
             return null;
         }
-        String name = bare ? null : lookupBase(rest);
+        // 先問裝備自己的名字：Guardian 的扁平條目跟 Major ID 一樣是「守護者」，
+        // 它自己的名字在 scoped/gear.json（見 #gearOwnName）。
+        String name = gearOwnName(rest);
+        if (name == null) {
+            name = bare ? null : lookupBase(rest);
+        }
         if (name == null) {
             name = rest;
         }
         String out = pattern.replace("{name}", name);
-        // 前綴是中日文、名字是英文時中間要空一格：「耀光的 Sunstar」
+        // 前綴是中日文、名字是英文時中間要空一格：「溯光的 Breuil」
         int at = pattern.indexOf("{name}");
         if (at > 0 && name.equals(rest) && !Character.isWhitespace(pattern.charAt(at - 1))
                 && pattern.charAt(at - 1) > 0x2E80) {
