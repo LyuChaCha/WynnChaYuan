@@ -181,8 +181,11 @@ public final class MajorIdTermWrapTest {
             say("  " + name + "：還沒翻的裝備名 " + store.isBareGearName(name)
                     + "、詞表 " + store.lookupTerm(name));
         }
-        check("★ Guardian 確實是還沒翻的裝備名（上面 Death Sentence 那一條才測得到撞名）",
-                store.isBareGearName("Guardian"));
+        // Guardian 同時是一把 Mythic 長矛的名字。2026-10-12 以前它還沒翻（isBareGearName），
+        // 之後它有了自己的名字（scoped/gear.json）；兩種都算「撞名」，上面 Death Sentence
+        // 那一條才測得到東西。
+        check("★ Guardian 確實也是裝備名（上面 Death Sentence 那一條才測得到撞名）",
+                store.isBareGearName("Guardian") || store.gearOwnName("Guardian") != null);
         check("Guardian Angels 在詞表裡是守護天使", "守護天使".equals(store.lookupTerm("Guardian Angels")));
         // Mana Regen 不是詞表裡的詞（只有 ui-labels.json 收了屬性列的標籤），所以句子裡
         // 換不掉；Mana Steal 在 ability-terms.json 裡，換得掉。0.1.9_6 的畫面「受影響的友軍
