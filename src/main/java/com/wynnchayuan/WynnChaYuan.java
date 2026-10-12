@@ -397,6 +397,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 讀不懂的檔（上次被關掉時寫到一半）改名放旁邊、從 jar 補回來再載一次
         com.wynnchayuan.translate.TranslationCache.loadRepairing(translations, layers);
         loadReferenceKeys(layers);
+        // 譯文換了一份：「套不上去」的清單重新問，改好的那幾條才會消失。
+        com.wynnchayuan.capture.UnappliedAudit.clear();
     }
 
     /**
