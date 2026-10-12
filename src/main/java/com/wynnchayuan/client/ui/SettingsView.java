@@ -1428,7 +1428,9 @@ public final class SettingsView extends Surface {
         });
         z.key = "preview.model";
         z.drag = (px, py, b) -> {
-            modelYaw = (float) ((modelYaw + (px - modelDragX) * 1.5) % 360.0);
+            // 往右拖，人的正面跟著往右轉（跟物品欄那個小人看滑鼠的方向一樣）。
+            // 原本是加的，使用者 2026-10-12：「滑鼠拖曳方向反了」。
+            modelYaw = (float) ((modelYaw - (px - modelDragX) * 1.5) % 360.0);
             modelPitch = (float) Math.max(-35, Math.min(35, modelPitch - (py - modelDragY) * 0.6));
             modelDragX = px;
             modelDragY = py;

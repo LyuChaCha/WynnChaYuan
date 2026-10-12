@@ -1,9 +1,10 @@
 // node tools/presence/worker.test.mjs
 import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, inspectCape, gifFrames, groupCapes,
-  addMember,
+  addMember, certificatePayload, issueChallenge, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
+import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 
 let failures = 0;
 function check(what, ok) {
@@ -47,8 +48,6 @@ function fakeKv() {
 // ---- 假的 Mojang 與 GitHub ----
 const ALICE = { id: 'a'.repeat(32), name: 'Alice_Dev' };          // 名單上的人
 const BOB = { id: 'b'.repeat(32), name: 'Bob' };                  // 不在名單上
-const joined = new Map();                                         // serverId → 帳號
-let mojangDown = false;
 let githubFile = '';
 const githubCalls = [];
 globalThis.fetch = async (url, init = {}) => {
@@ -68,13 +67,7 @@ globalThis.fetch = async (url, init = {}) => {
     if (path === '/pulls') return answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201);
     return answer({}, 404);
   }
-  if (u.hostname === 'sessionserver.mojang.com') {
-    if (mojangDown) throw new Error('down');
-    const profile = joined.get(u.searchParams.get('serverId'));
-    return profile && profile.name === u.searchParams.get('username')
-      ? new Response(JSON.stringify(profile), { status: 200 })
-      : new Response(null, { status: 204 });
-  }
+  // 沒有 Mojang 這一支：Worker 連不到它（403），登入不可以再去問。問了就在下面丟例外。
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
       sections: [
@@ -143,28 +136,113 @@ check('★ 把 UUID 換成別人的：簽章對不上，不認', await readToken
 check('亂寫的通行證不認', await readToken(env, 'x.y.z', NOW) === null
   && await readToken(env, null, NOW) === null);
 
-// ---- 登入：要 Mojang 說是 ----
-const sid = 'c'.repeat(40);
-let r = await worker.fetch(post('/login', { name: ALICE.name, serverId: sid }), env);
-check('★ 沒有向 Mojang 加入過：不發通行證', r.status === 403);
-joined.set(sid, ALICE);
-r = await worker.fetch(post('/login', { name: ALICE.name, serverId: sid }), env);
+// ---- 登入：驗 Mojang 簽過的玩家金鑰憑證 ----
+//
+// 測試裡的「Mojang」是當場產生的兩把金鑰，用 MOJANG_KEYS 蓋過釘住的那一份。
+const subtle = globalThis.crypto.subtle;
+const b64 = (bytes) => Buffer.from(bytes).toString('base64');
+const utf8 = (text) => new TextEncoder().encode(text);
+const rsa = (hash) => subtle.generateKey({ name: 'RSASSA-PKCS1-v1_5', modulusLength: 2048,
+  publicExponent: new Uint8Array([1, 0, 1]), hash }, true, ['sign', 'verify']);
+const spki = async (pair) => new Uint8Array(await subtle.exportKey('spki', pair.publicKey));
+const rsaSign = async (pair, data) => new Uint8Array(await subtle.sign('RSASSA-PKCS1-v1_5', pair.privateKey, data));
+const mojangCert = await rsa('SHA-1');
+const mojangProfile = await rsa('SHA-1');
+const notMojang = await rsa('SHA-1');
+env.MOJANG_KEYS = JSON.stringify({
+  playerCertificateKeys: [{ publicKey: b64(await spki(mojangCert)) }],
+  profilePropertyKeys: [b64(await spki(mojangProfile))],
+});
+
+/** 一個玩家手上的東西：自己的金鑰，與 Mojang 替那把公鑰簽的憑證。 */
+async function player(who, { signer = mojangCert, expiresAt = Date.now() + 86400000 } = {}) {
+  const keys = await rsa('SHA-256');
+  const der = await spki(keys);
+  return { ...who, keys, der, expiresAt,
+    keySignature: await rsaSign(signer, certificatePayload(who.id, expiresAt, der)) };
+}
+/** Mojang 簽的個人檔案（公開資料：誰都抓得到任何人的）。 */
+async function texturesOf(who, { signer = mojangProfile, age = 3600000 } = {}) {
+  const dashed = who.id.replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
+  const value = b64(utf8(JSON.stringify({ timestamp: Date.now() - age,
+    profileId: who.dashes ? dashed : who.id, profileName: who.name, textures: {} })));
+  return { value, signature: b64(await rsaSign(signer, utf8(value))) };
+}
+const newChallenge = async () => (await (await worker.fetch(post('/challenge', {}), env)).json()).challenge;
+/** 模組登入時送的那一包。over 可以換掉任何一樣，用來試冒名。 */
+async function loginBody(p, over = {}) {
+  const challenge = over.challenge || await newChallenge();
+  const uuid = over.uuid || p.id;
+  const signature = await rsaSign(over.signWith || p.keys,
+    utf8((over.prefix ?? LOGIN_PREFIX) + (over.signedChallenge || challenge) + '\n' + (over.signedUuid || uuid)));
+  return { uuid, expiresAt: over.expiresAt || p.expiresAt, publicKey: b64(over.der || p.der),
+    keySignature: b64(over.keySignature || p.keySignature), challenge, signature: b64(signature),
+    textures: over.textures === undefined ? await texturesOf(p) : over.textures };
+}
+const login = async (p, over) => worker.fetch(post('/login', await loginBody(p, over)), env);
+
+const alice = await player(ALICE);
+const bob = await player(BOB);
+let r = await worker.fetch(post('/challenge', {}), env);
 let body = await r.json();
-check('Mojang 說是：發通行證，回公開代碼', r.status === 200 && body.id === aliceId && body.token);
+check('出題：一串「時間.亂數.簽章」，不快取', r.status === 200 && /^\d+\.[0-9a-f]{32}\.[0-9a-f]{64}$/.test(body.challenge)
+  && r.headers.get('cache-control') === 'no-store' && body.challenge !== await newChallenge());
+
+r = await login(alice);
+body = await r.json();
+check('★ 憑證是 Mojang 簽的、題目是本人簽的：發通行證，回公開代碼',
+  r.status === 200 && body.id === aliceId && body.token);
 const aliceToken = body.token;
-r = await worker.fetch(post('/login', { name: BOB.name, serverId: sid }), env);
-check('★ 拿別人的 serverId 冒名：不發', r.status === 403);
-r = await worker.fetch(post('/login', { name: 'bad name!', serverId: sid }), env);
-check('怪名字、怪 serverId 回 400', r.status === 400
-  && (await worker.fetch(post('/login', { name: 'Bob', serverId: 'nope' }), env)).status === 400);
-mojangDown = true;
-r = await worker.fetch(post('/login', { name: ALICE.name, serverId: sid }), env);
-check('Mojang 連不上回 502，不是當成通過', r.status === 502);
-mojangDown = false;
-const bobSid = 'd'.repeat(40);
-joined.set(bobSid, BOB);
-const bobToken = (await (await worker.fetch(
-  post('/login', { name: BOB.name, serverId: bobSid }), env)).json()).token;
+const who = await readToken(env, aliceToken, Date.now());
+check('★ 通行證上的名字是 Mojang 簽的那一個', who && who.uuid === ALICE.id && who.name === ALICE.name);
+r = await login({ ...alice, dashes: true });
+check('個人檔案裡的 UUID 帶連字號也認', r.status === 200);
+
+// ★ 冒名的各種走法。別人的憑證與個人檔案都當成拿得到（公鑰本來就不是祕密）。
+const why = async (response) => response.status + ' ' + (await response.json()).why;
+check('★ 拿 Alice 的憑證、用自己的私鑰簽：不發', await why(await login(alice, { signWith: bob.keys })) === '403 bad signature');
+check('★ 拿自己的憑證、UUID 寫 Alice：憑證對不上，不發',
+  await why(await login(bob, { uuid: ALICE.id, textures: await texturesOf(ALICE) })) === '403 bad certificate');
+const selfMade = await player(ALICE, { signer: notMojang });
+check('★ 自己簽一張 Alice 的憑證（不是 Mojang 的公鑰）：不發', await why(await login(selfMade)) === '403 bad certificate');
+check('★ 自己的憑證配上 Alice 的個人檔案（想掛她的名字拿管理權）：不發',
+  await why(await login(bob, { textures: await texturesOf(ALICE) })) === '403 bad profile');
+check('★ 個人檔案寫 Alice 的名字、自己簽（不是 Mojang 的公鑰）：不發',
+  await why(await login(bob, { textures: await texturesOf({ id: BOB.id, name: ALICE.name }, { signer: notMojang }) })) === '403 bad profile');
+check('個人檔案被改過一個字：簽章對不上，不發', await why(await login(bob, { textures: await (async () => {
+  const t = await texturesOf(BOB);
+  return { value: b64(utf8(Buffer.from(t.value, 'base64').toString().replace('Bob', 'Bib'))), signature: t.signature };
+})() })) === '403 bad profile');
+check('個人檔案太舊（兩個月前簽的）：不發', await why(await login(bob, { textures: await texturesOf(BOB, { age: 60 * 86400000 }) })) === '403 bad profile');
+check('沒附個人檔案：不發（名字不可以用說的）', await why(await login(bob, { textures: null })) === '403 bad profile');
+check('★ 簽的不是這一題（拿舊的簽章來重放）：不發',
+  await why(await login(alice, { signedChallenge: await newChallenge() })) === '403 bad signature');
+check('★ 簽的字沒有綁我們的網域（別的網站騙來的簽章）：不發',
+  await why(await login(alice, { prefix: 'example.com login\n' })) === '403 bad signature');
+check('★ 題目不是我們出的：不發', await why(await login(alice, { challenge: Date.now() + '.' + 'a'.repeat(32) + '.' + 'b'.repeat(64) })) === '403 stale challenge');
+check('★ 題目過了五分鐘：不發', await why(await login(alice, { challenge: await issueChallenge(env, Date.now() - 6 * 60000) })) === '403 stale challenge');
+const expired = await player(BOB, { expiresAt: Date.now() - 1000 });
+check('憑證過期了：不發', await why(await login(expired)) === '403 certificate expired');
+check('到期時間被改掉（想讓過期的憑證復活）：憑證對不上', await why(await login(expired, { expiresAt: Date.now() + 86400000 })) === '403 bad certificate');
+r = await worker.fetch(post('/login', { uuid: 'nope', expiresAt: 1, publicKey: 'AA==', keySignature: 'AA==', signature: 'AA==', challenge: 'x' }), env);
+check('怪的 UUID、缺欄位、不是 base64 都回 400', r.status === 400
+  && (await worker.fetch(post('/login', { uuid: BOB.id }), env)).status === 400
+  && (await worker.fetch(post('/login', { ...(await loginBody(bob)), publicKey: '不是 base64' }), env)).status === 400);
+check('舊版模組送的那一種（name 與 serverId）回 400，不是當成通過',
+  (await worker.fetch(post('/login', { name: ALICE.name, serverId: 'c'.repeat(40) }), env)).status === 400);
+check('太大的一包回 413', (await worker.fetch(post('/login', { ...(await loginBody(bob)), pad: 'x'.repeat(13000) }), env)).status === 413);
+// 釘住的那一份是真的 Mojang 公鑰：讀得進來、各兩把以內
+const importable = async (list) => (await Promise.all(list.map((k) => subtle.importKey('spki', Buffer.from(k, 'base64'),
+  { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-1' }, false, ['verify'])))).length;
+check('釘住的 Mojang 公鑰讀得進來（憑證 ' + CERT_KEYS.length + ' 把、個人檔案 ' + PROFILE_KEYS.length + ' 把）',
+  CERT_KEYS.length >= 1 && PROFILE_KEYS.length >= 1 && await importable(CERT_KEYS) === CERT_KEYS.length
+  && await importable(PROFILE_KEYS) === PROFILE_KEYS.length);
+const pinned = { CORPUS: env.CORPUS };
+check('★ 沒設 MOJANG_KEYS 時用釘住的那一份：測試的假 Mojang 就不算數了',
+  (await worker.fetch(post('/login', await loginBody(alice)), pinned)).status === 403);
+check('MOJANG_KEYS 寫壞了：退回釘住的那一份，不是全部放行',
+  (await worker.fetch(post('/login', await loginBody(alice)), { CORPUS: env.CORPUS, MOJANG_KEYS: '{oops' })).status === 403);
+const bobToken = (await (await login(bob)).json()).token;
 const bobId = await publicId(BOB.id);
 
 // ---- 報到與名單 ----

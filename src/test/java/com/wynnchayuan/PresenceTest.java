@@ -40,15 +40,42 @@ public final class PresenceTest {
         check("★ 代碼裡看不出 UUID", !id.contains("aaaaaaaa"));
 
         // ---- ★ 送出去的東西 ----
-        String serverId = Presence.newServerId();
-        check("給 Mojang 對的那串字是 40 個十六進位字元，每次都不一樣",
-                serverId.matches("[0-9a-f]{40}") && !serverId.equals(Presence.newServerId()));
-        JsonObject login = JsonParser.parseString(Presence.loginBody("Green_teaTW", serverId))
-                .getAsJsonObject();
-        check("★ 登入只有兩欄：name 與 serverId（實際 " + login.keySet() + "）",
-                login.keySet().equals(Set.of("name", "serverId"))
-                        && "Green_teaTW".equals(login.get("name").getAsString())
-                        && serverId.equals(login.get("serverId").getAsString()));
+        // 登入：用玩家金鑰的私鑰對登記站出的題簽名。私鑰與登入憑證都不在送出去的內容裡。
+        java.security.KeyPairGenerator generator = java.security.KeyPairGenerator.getInstance("RSA");
+        generator.initialize(2048);
+        java.security.KeyPair keys = generator.generateKeyPair();
+        String uuid = ME.toString().replace("-", "");
+        String challenge = "1791800000000." + "ab".repeat(16) + "." + "cd".repeat(32);
+        // worker.test.mjs 簽的是同一串：LOGIN_PREFIX + 題目 + 換行 + UUID
+        check("★ 簽的那串字綁住網域、這一題、這個帳號",
+                new String(Presence.loginMessage(challenge, uuid), java.nio.charset.StandardCharsets.UTF_8)
+                        .equals("wynnchayuan.com login\n" + challenge + "\n" + uuid));
+        byte[] signature = Presence.signLogin(keys.getPrivate(), challenge, uuid);
+        java.security.Signature verifier = java.security.Signature.getInstance("SHA256withRSA");
+        verifier.initVerify(keys.getPublic());
+        verifier.update(Presence.loginMessage(challenge, uuid));
+        check("★ 簽名用公鑰驗得過（SHA256withRSA，登記站用同一種驗）", verifier.verify(signature));
+        verifier.initVerify(keys.getPublic());
+        verifier.update(Presence.loginMessage(challenge, OTHER.toString().replace("-", "")));
+        check("換一個 UUID 就驗不過", !verifier.verify(signature));
+        byte[] keySignature = {1, 2, 3, 4};
+        String sent = Presence.loginBody(uuid, 1791900000000L, keys.getPublic().getEncoded(),
+                keySignature, challenge, signature, "dGV4dHVyZXM=", "c2lnbmVk");
+        JsonObject login = JsonParser.parseString(sent).getAsJsonObject();
+        check("★ 登入送的就是這七欄（實際 " + login.keySet() + "）",
+                login.keySet().equals(Set.of("uuid", "expiresAt", "publicKey", "keySignature",
+                        "challenge", "signature", "textures"))
+                        && login.getAsJsonObject("textures").keySet().equals(Set.of("value", "signature")));
+        java.util.Base64.Decoder b64 = java.util.Base64.getDecoder();
+        check("公鑰、兩份簽章是 base64，內容原樣", uuid.equals(login.get("uuid").getAsString())
+                && login.get("expiresAt").getAsLong() == 1791900000000L
+                && Arrays.equals(b64.decode(login.get("publicKey").getAsString()), keys.getPublic().getEncoded())
+                && Arrays.equals(b64.decode(login.get("keySignature").getAsString()), keySignature)
+                && Arrays.equals(b64.decode(login.get("signature").getAsString()), signature)
+                && challenge.equals(login.get("challenge").getAsString()));
+        String privateKey = java.util.Base64.getEncoder().encodeToString(keys.getPrivate().getEncoded());
+        check("★ 私鑰不在送出去的內容裡", !sent.contains(privateKey.substring(0, 64))
+                && !sent.contains(privateKey.substring(privateKey.length() - 64)));
         JsonObject hello = JsonParser.parseString(Presence.helloBody(true)).getAsJsonObject();
         check("★ 報到只有一欄：cape（實際 " + hello.keySet() + "）",
                 hello.keySet().equals(Set.of("cape")) && hello.get("cape").getAsBoolean()

@@ -42,12 +42,25 @@
  */
 
 import { LANGS, PATHS, pickLang, render } from './site.js';
+import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 
 /** 公開代碼的樣子：24 個小寫十六進位字元。 */
 const ID = /^[0-9a-f]{24}$/;
 const UUID = /^[0-9a-f]{32}$/;
 const NAME = /^[A-Za-z0-9_]{1,16}$/;
-const SERVER_ID = /^[0-9a-f]{40}$/;
+const BASE64 = /^[A-Za-z0-9+/]+={0,2}$/;
+
+/** 登入要簽的那串字的開頭：綁住網域，這份簽章拿去別的地方沒有用。 */
+export const LOGIN_PREFIX = 'wynnchayuan.com login\n';
+
+/** 出的題目幾分鐘內要答。 */
+const CHALLENGE_TTL_MS = 5 * 60 * 1000;
+
+/** 個人檔案那份 Mojang 簽章最舊可以多舊。遊戲是啟動時抓的，開著幾天都有可能。 */
+const PROFILE_MAX_AGE_MS = 30 * 24 * 3600 * 1000;
+
+/** 登入那一包的上限：兩把公鑰的簽章加上個人檔案，三、四 KB。 */
+const MAX_LOGIN_BODY = 12 * 1024;
 
 /** 多久沒報到就從名單上消失。 */
 const TTL_SECONDS = 14 * 24 * 3600;
@@ -180,12 +193,12 @@ async function who(request, env, now) {
   return token.startsWith('web.') ? readWebToken(env, token, now) : readToken(env, token, now);
 }
 
-async function readJson(request) {
+async function readJson(request, limit = MAX_BODY) {
   const length = Number(request.headers.get('content-length') || 0);
-  if (length > MAX_BODY) return undefined;
+  if (length > limit) return undefined;
   try {
     const text = await request.text();
-    if (text.length > MAX_BODY) return undefined;
+    if (text.length > limit) return undefined;
     const body = JSON.parse(text);
     return body && typeof body === 'object' && !Array.isArray(body) ? body : null;
   } catch (e) {
@@ -193,25 +206,154 @@ async function readJson(request) {
   }
 }
 
+// ---------------------------------------------------------------- 登入
+//
+// 要證明的是「這個遊戲帳號是本人」。原本的做法是 Minecraft 多人伺服器那一套
+// （模組向 Mojang 說「我要加入 X」，這裡再問 Mojang「他加入 X 了嗎」），但 Mojang 把
+// Cloudflare Worker 發出去的請求一律擋掉（403），那個問題永遠問不到答案——
+// 部署之後所有人都登不進來（使用者 2026-10-12）。
+//
+// 現在不問 Mojang，改驗它<b>已經簽好</b>的東西：
+//
+//   1. 玩家金鑰憑證。1.19 起每個正版帳號都有一對 Mojang 發的金鑰（聊天簽章用的），
+//      公鑰連同 UUID 與到期時間由 Mojang 簽過。私鑰要帳號的登入憑證才拿得到。
+//   2. 這裡出一道題（challenge），模組用那把私鑰簽。簽得出來＝手上有私鑰＝是本人。
+//   3. 名字不在憑證裡，另外驗個人檔案的 textures 屬性——那也是 Mojang 簽的，
+//      裡面有 UUID、名字與時間。這份資料是公開的（誰都抓得到任何人的），所以它只用來
+//      回答「這個 UUID 叫什麼名字」，不能拿來證明身分；身分靠的是上面兩步。
+//
+// 模組送來的沒有一樣是祕密：公鑰、簽章、公開的個人檔案。私鑰與登入憑證都留在玩家那裡。
+
+function fromBase64(text, max) {
+  if (typeof text !== 'string' || !text || text.length > max || !BASE64.test(text)) return null;
+  try {
+    const raw = atob(text);
+    const out = new Uint8Array(raw.length);
+    for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+    return out;
+  } catch (e) {
+    return null;
+  }
+}
+
+/**
+ * Mojang 的公鑰。預設是釘在 mojang-keys.js 的那一份；MOJANG_KEYS（publickeys 那個
+ * JSON 的樣子，值可以是字串或 {publicKey}）蓋過它——公鑰換了、來不及重新部署時用。
+ */
+function mojangKeys(env, name) {
+  if (env.MOJANG_KEYS) {
+    try {
+      const all = JSON.parse(env.MOJANG_KEYS);
+      const list = (all[name] || []).map((k) => (typeof k === 'string' ? k : k && k.publicKey))
+        .filter((k) => typeof k === 'string');
+      if (list.length) return list;
+    } catch (e) {
+      // 寫壞了就用釘住的那一份
+    }
+  }
+  return name === 'playerCertificateKeys' ? CERT_KEYS : PROFILE_KEYS;
+}
+
+/** 這份簽章是不是其中一把公鑰簽的。 */
+async function signedBy(keys, hash, signature, data) {
+  for (const spki of keys) {
+    try {
+      const key = await crypto.subtle.importKey('spki', fromBase64(spki, 4096),
+        { name: 'RSASSA-PKCS1-v1_5', hash }, false, ['verify']);
+      if (await crypto.subtle.verify('RSASSA-PKCS1-v1_5', key, signature, data)) return true;
+    } catch (e) {
+      // 這一把讀不進來就試下一把
+    }
+  }
+  return false;
+}
+
+/** Mojang 簽憑證時簽的內容：UUID 16 個位元組、到期時間（毫秒）8 個位元組、公鑰本體。 */
+export function certificatePayload(uuid, expiresAt, publicKey) {
+  const out = new Uint8Array(24 + publicKey.length);
+  for (let i = 0; i < 16; i++) out[i] = parseInt(uuid.slice(i * 2, i * 2 + 2), 16);
+  new DataView(out.buffer).setBigUint64(16, BigInt(expiresAt));
+  out.set(publicKey, 24);
+  return out;
+}
+
+/** 出一道題：時間、一段亂數，加上我們自己的簽章（不必記在哪裡）。 */
+export async function issueChallenge(env, now) {
+  const body = now + '.' + hex(crypto.getRandomValues(new Uint8Array(16)));
+  return body + '.' + await sign(env, 'challenge.' + body);
+}
+
+async function challengeFresh(env, challenge, now) {
+  if (typeof challenge !== 'string' || challenge.length > 128) return false;
+  const parts = challenge.split('.');
+  if (parts.length !== 3 || !/^\d{1,16}$/.test(parts[0]) || !/^[0-9a-f]{32}$/.test(parts[1])) return false;
+  const issued = Number(parts[0]);
+  if (issued > now + 60000 || now - issued > CHALLENGE_TTL_MS) return false;
+  const expected = await sign(env, 'challenge.' + parts[0] + '.' + parts[1]);
+  if (expected.length !== parts[2].length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ parts[2].charCodeAt(i);
+  return diff === 0;
+}
+
+async function handleChallenge(env, now) {
+  return json({ ok: true, challenge: await issueChallenge(env, now) }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 個人檔案那份屬性裡的名字：簽章對、UUID 對、不太舊才算數。 */
+async function profileName(env, textures, uuid, now) {
+  if (!textures || typeof textures !== 'object') return null;
+  const signature = fromBase64(textures.signature, 1024);
+  if (!signature || typeof textures.value !== 'string' || textures.value.length > 6000) return null;
+  const value = fromBase64(textures.value, 6000);
+  if (!value) return null;
+  const signed = new TextEncoder().encode(textures.value);     // 簽的是那串 base64 本身
+  if (!await signedBy(mojangKeys(env, 'profilePropertyKeys'), 'SHA-1', signature, signed)) return null;
+  try {
+    const profile = JSON.parse(new TextDecoder().decode(value));
+    const id = String(profile.profileId || '').replace(/-/g, '').toLowerCase();
+    const age = now - Number(profile.timestamp);
+    if (id !== uuid || !NAME.test(profile.profileName || '')) return null;
+    if (!(age <= PROFILE_MAX_AGE_MS && age >= -86400000)) return null;
+    return profile.profileName;
+  } catch (e) {
+    return null;
+  }
+}
+
 async function handleLogin(request, env, now) {
-  const body = await readJson(request);
+  const body = await readJson(request, MAX_LOGIN_BODY);
   if (body === undefined) return no('too large', 413);
-  if (!body || typeof body.name !== 'string' || !NAME.test(body.name)
-      || typeof body.serverId !== 'string' || !SERVER_ID.test(body.serverId)) {
+  if (!body || typeof body.uuid !== 'string' || !UUID.test(body.uuid)
+      || !Number.isSafeInteger(body.expiresAt) || body.expiresAt <= 0) {
     return no('bad login');
   }
-  let profile = null;
-  try {
-    const answer = await fetch('https://sessionserver.mojang.com/session/minecraft/hasJoined'
-      + '?username=' + encodeURIComponent(body.name) + '&serverId=' + body.serverId);
-    if (answer.status === 200) profile = await answer.json();
-  } catch (e) {
-    return no('mojang unreachable', 502);
+  const publicKey = fromBase64(body.publicKey, 1024);
+  const keySignature = fromBase64(body.keySignature, 1024);
+  const signature = fromBase64(body.signature, 1024);
+  if (!publicKey || !keySignature || !signature || typeof body.challenge !== 'string') {
+    return no('bad login');
   }
-  const uuid = profile && typeof profile.id === 'string' ? profile.id.toLowerCase() : '';
-  const name = profile && typeof profile.name === 'string' ? profile.name : '';
-  if (!UUID.test(uuid) || !NAME.test(name)) return no('not verified', 403);
-  return json({ ok: true, token: await issueToken(env, uuid, name, now), id: await publicId(uuid) });
+  // 先驗自己出的題：亂送的請求在這裡就擋掉，不必算 RSA
+  if (!await challengeFresh(env, body.challenge, now)) return no('stale challenge', 403);
+  if (body.expiresAt <= now) return no('certificate expired', 403);
+  if (!await signedBy(mojangKeys(env, 'playerCertificateKeys'), 'SHA-1', keySignature,
+    certificatePayload(body.uuid, body.expiresAt, publicKey))) {
+    return no('bad certificate', 403);
+  }
+  let answered = false;
+  try {
+    const key = await crypto.subtle.importKey('spki', publicKey,
+      { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
+    answered = await crypto.subtle.verify('RSASSA-PKCS1-v1_5', key, signature,
+      new TextEncoder().encode(LOGIN_PREFIX + body.challenge + '\n' + body.uuid));
+  } catch (e) {
+    answered = false;
+  }
+  if (!answered) return no('bad signature', 403);
+  const name = await profileName(env, body.textures, body.uuid, now);
+  if (!name) return no('bad profile', 403);
+  return json({ ok: true, token: await issueToken(env, body.uuid, name, now), id: await publicId(body.uuid) });
 }
 
 // ---------------------------------------------------------------- 報到與名單
@@ -824,6 +966,7 @@ export default {
     }
     if (!path.startsWith('/api/')) return no('not found', 404);
     const route = request.method + ' ' + path.slice(4);
+    if (route === 'POST /challenge') return handleChallenge(env, now);
     if (route === 'POST /login') return handleLogin(request, env, now);
     if (route === 'POST /web-link') return handleWebLink(request, env, now);
     if (route === 'GET /me') return handleMe(request, env, now);

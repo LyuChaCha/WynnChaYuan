@@ -13,6 +13,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 |---|---|
 | `worker.js` | API 與路由 |
 | `site.js` | 四張網頁（共用樣式、頁首、頁尾），中文與英文 |
+| `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
 | `dev.mjs` | 在本機用假資料開網站來看 |
 
@@ -39,7 +40,8 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 | | | |
 |---|---|---|
-| `POST /api/login` | `{name, serverId}` | 向 Mojang 確認身分，發通行證（模組用） |
+| `POST /api/challenge` | | 出一道題（登入的第一步） |
+| `POST /api/login` | 憑證、對題目的簽名、個人檔案 | 驗過身分就發通行證（模組用） |
 | `POST /api/web-link` | | 拿一條替瀏覽器登入的網址（要通行證） |
 | `GET /api/me` | | 我是誰、有沒有披風、是不是開發者（要通行證） |
 | `POST /api/hello` | `{cape}` | 報到（要通行證） |
@@ -63,9 +65,35 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 ## 身分怎麼驗
 
-Minecraft 多人伺服器自己那一套：模組向 Mojang 說「我要加入 <隨機字串>」，登記站再問 Mojang「這個帳號剛剛是不是加入了 <隨機字串>」。模組的登入憑證只給 Mojang，不會經過這裡。驗過之後發一張七天的通行證（HMAC 簽的，密鑰第一次用到時自己產生、存在 KV）；網頁的那一張只有一天。
+要證明的是「這個遊戲帳號是本人」。
 
-所以別人沒辦法替你報到、替你換披風。離線帳號驗不過。
+**不能用「加入伺服器」那一套**（模組向 Mojang 說「我要加入 X」，伺服器再問 Mojang「他加入了嗎」）：Mojang 把 Cloudflare Worker 發出去的請求一律擋掉（403），那個問題從這裡永遠問不到答案。第一版就是這樣寫的，部署之後所有人都登不進來。
+
+現在驗的是 Mojang **已經簽好**的東西，全程不必連它：
+
+1. **玩家金鑰憑證**。1.19 起每個正版帳號都有一對 Mojang 發的金鑰（聊天簽章用的），公鑰連同 UUID 與到期時間由 Mojang 簽過（SHA1withRSA，內容是 UUID 16 個位元組＋到期時間 8 個位元組＋公鑰）。私鑰要帳號的登入憑證才拿得到。
+2. **答題**。登記站出一道題（`/api/challenge`，五分鐘內有效），模組用那把私鑰簽 `wynnchayuan.com login
+<題目>
+<UUID>`（SHA256withRSA）。簽得出來＝手上有私鑰＝是本人；開頭綁住網域，這份簽名拿去別處沒有用。
+3. **名字**。憑證裡沒有名字，另外驗個人檔案的 `textures` 屬性——也是 Mojang 簽的，裡面有 UUID、名字與時間。這份資料是公開的（誰都抓得到任何人的），所以它只回答「這個 UUID 叫什麼名字」，不能拿來證明身分。
+
+模組送來的沒有一樣是祕密：公鑰、簽章、公開的個人檔案。**私鑰與登入憑證都留在玩家那裡。** 驗過之後發一張七天的通行證（HMAC 簽的，密鑰第一次用到時自己產生、存在 KV）；網頁的那一張只有一天。
+
+離線帳號沒有憑證，驗不過。
+
+### Mojang 的公鑰
+
+Worker 自己抓不到（同一個原因），所以釘在 `mojang-keys.js`。Mojang 換公鑰的話登入會全部失敗：
+
+```bash
+node tools/presence/update-mojang-keys.mjs --check
+```
+
+不一樣就不帶 `--check` 重跑一次、重新部署。來不及部署時可以先設 `MOJANG_KEYS`（`https://api.minecraftservices.com/publickeys` 回的那個 JSON 整份貼上）：
+
+```bash
+npx wrangler secret put MOJANG_KEYS
+```
 
 ## 誰可以上傳
 

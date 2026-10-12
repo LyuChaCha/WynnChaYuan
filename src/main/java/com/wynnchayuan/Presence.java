@@ -10,7 +10,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.security.SecureRandom;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -34,9 +33,10 @@ import java.util.function.Consumer;
  * <b>這是整個模組唯一會往外送資料的地方</b>（{@code CorpusExportTest} 釘住「只有這一個檔、
  * 只送到這一個網址」，{@code PresenceTest} 釘住送什麼）：
  * <ul>
- *   <li><b>登入</b>（{@link #loginBody}）：帳號名，加一串這次隨機產生的字。登記站拿這兩樣去問
- *       Mojang「這個帳號剛剛是不是加入了這串字」——跟每一台多人伺服器確認玩家身分是同一套
- *       做法，登入憑證不會離開遊戲。登記站因此知道這個人的 UUID。</li>
+ *   <li><b>登入</b>（{@link #loginBody}）：UUID、Mojang 替這個帳號的玩家金鑰簽的憑證
+ *       （公鑰、到期時間、Mojang 的簽章）、對登記站那道題的簽名，以及 Mojang 簽過的
+ *       個人檔案（名字與外觀，本來就是公開資料）。私鑰與登入憑證不會離開遊戲。
+ *       為什麼是這一套，見 {@link #login}。</li>
  *   <li><b>報到</b>（{@link #helloBody}）：要不要讓別人看到我的披風。就這一欄。</li>
  *   <li><b>上傳披風</b>：玩家在 F6 按了「上傳」才送，送的是他自己放進資料夾的那張圖。</li>
  * </ul>
@@ -215,11 +215,50 @@ public final class Presence {
 
     // ------------------------------------------------------------ 送出去的內容
 
-    /** 登入時送的全部內容：帳號名與這次隨機產生的那串字。 */
-    static String loginBody(String name, String serverId) {
+    /** 登入要簽的那串字的開頭：綁住網域。跟 {@code worker.js} 的 {@code LOGIN_PREFIX} 是同一串。 */
+    static final String LOGIN_PREFIX = "wynnchayuan.com login\n";
+
+    /** 登入要簽的內容：開頭、登記站這一次出的題、自己的 UUID。 */
+    static byte[] loginMessage(String challenge, String uuid) {
+        return (LOGIN_PREFIX + challenge + "\n" + uuid).getBytes(StandardCharsets.UTF_8);
+    }
+
+    /** 用玩家金鑰的私鑰答題。私鑰只在這裡用一下，不會被送出去。 */
+    static byte[] signLogin(java.security.PrivateKey key, String challenge, String uuid)
+            throws java.security.GeneralSecurityException {
+        java.security.Signature signer = java.security.Signature.getInstance("SHA256withRSA");
+        signer.initSign(key);
+        signer.update(loginMessage(challenge, uuid));
+        return signer.sign();
+    }
+
+    /**
+     * 登入時送的全部內容。
+     *
+     * @param uuid             沒有連字號的小寫 UUID
+     * @param expiresAt        憑證的到期時間（毫秒）
+     * @param publicKey        玩家金鑰的公鑰（X.509）
+     * @param keySignature     Mojang 替那把公鑰簽的章
+     * @param challenge        登記站出的題
+     * @param signature        用私鑰對那道題簽的名（{@link #signLogin}）
+     * @param texturesValue    個人檔案的 textures 屬性（Mojang 簽過的公開資料，裡面有名字）
+     * @param texturesSignature 它的簽章
+     */
+    static String loginBody(String uuid, long expiresAt, byte[] publicKey, byte[] keySignature,
+                            String challenge, byte[] signature,
+                            String texturesValue, String texturesSignature) {
+        java.util.Base64.Encoder b64 = java.util.Base64.getEncoder();
         JsonObject o = new JsonObject();
-        o.addProperty("name", name);
-        o.addProperty("serverId", serverId);
+        o.addProperty("uuid", uuid);
+        o.addProperty("expiresAt", expiresAt);
+        o.addProperty("publicKey", b64.encodeToString(publicKey));
+        o.addProperty("keySignature", b64.encodeToString(keySignature));
+        o.addProperty("challenge", challenge);
+        o.addProperty("signature", b64.encodeToString(signature));
+        JsonObject textures = new JsonObject();
+        textures.addProperty("value", texturesValue);
+        textures.addProperty("signature", texturesSignature);
+        o.add("textures", textures);
         return o.toString();
     }
 
@@ -228,13 +267,6 @@ public final class Presence {
         JsonObject o = new JsonObject();
         o.addProperty("cape", cape);
         return o.toString();
-    }
-
-    /** 給 Mojang 與登記站對的那串字：40 個隨機的十六進位字元，每次登入都不一樣。 */
-    static String newServerId() {
-        byte[] bytes = new byte[20];
-        new SecureRandom().nextBytes(bytes);
-        return hex(bytes, 20);
     }
 
     // ------------------------------------------------------------ 定時的事
@@ -297,35 +329,126 @@ public final class Presence {
     /**
      * 向登記站證明「我是這個帳號」，換一張通行證。
      *
-     * <p>先向 Mojang 說「我要加入 {@code serverId}」（原版加入多人伺服器時做的同一件事），
-     * 再把帳號名與 {@code serverId} 交給登記站，由它去問 Mojang。登入憑證只給 Mojang。
+     * <h2>為什麼不是「加入伺服器」那一套</h2>
+     * 第一版用的是 Minecraft 多人伺服器的做法：這裡向 Mojang 說「我要加入 X」，登記站再問
+     * Mojang「他加入 X 了嗎」。部署之後所有人都登不進來（使用者 2026-10-12：「登入還是
+     * 沒辦法」）——登記站在 Cloudflare Worker 上，而 Mojang 把 Worker 發出去的請求一律
+     * 擋掉（403），那個問題永遠問不到答案。
+     *
+     * <h2>現在的做法</h2>
+     * 1.19 起每個正版帳號都有一對 Mojang 發的金鑰（聊天簽章用的那一對，遊戲自己會去拿），
+     * 公鑰連同 UUID 與到期時間由 Mojang 簽過。登記站出一道題，這裡用私鑰簽；它拿 Mojang 的
+     * 公鑰驗憑證、拿憑證裡的公鑰驗答案，全程不必連 Mojang。私鑰要帳號的登入憑證才拿得到，
+     * 所以簽得出來就是本人。
+     *
+     * <p>名字不在憑證裡，另外附 Mojang 簽過的個人檔案（textures 屬性：UUID、名字、外觀）。
+     * 那是公開資料，只用來回答「這個 UUID 叫什麼名字」。
+     *
+     * <p>送出去的：公鑰、兩份 Mojang 的簽章、對題目的簽名、公開的個人檔案。
+     * <b>私鑰與登入憑證不會離開遊戲。</b>
      */
     private static boolean login() throws Exception {
         if (token != null) {
             return true;
         }
+        String problem;
         try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
-            net.minecraft.client.User user = mc.getUser();
-            String serverId = newServerId();
-            mc.services().sessionService().joinServer(
-                    user.getProfileId(), user.getAccessToken(), serverId);
-            HttpResponse<byte[]> response = send(
-                    HttpRequest.newBuilder(URI.create(API + "/login"))
-                            .header("Content-Type", "application/json")
-                            .POST(HttpRequest.BodyPublishers.ofString(
-                                    loginBody(user.getName(), serverId), StandardCharsets.UTF_8)),
-                    false);
-            if (response.statusCode() == 200) {
-                token = JsonParser.parseString(new String(response.body(), StandardCharsets.UTF_8))
-                        .getAsJsonObject().get("token").getAsString();
-                return true;
-            }
+            problem = proveAccount();
         } catch (Exception e) {
             com.wynnchayuan.translate.ErrorDebug.note("presence.login", null, e);
+            problem = e.toString();
+        }
+        if (problem == null) {
+            return true;
         }
         loginFailedAt = System.currentTimeMillis();
+        if (!problem.equals(lastProblem)) {
+            // 同一個原因只說一次：十分鐘重試一輪，不要把 log 洗掉
+            lastProblem = problem;
+            System.out.println("[WynnChaYuan] 登記站登入沒有成功：" + problem);
+        }
         return false;
+    }
+
+    /** 上一次登入失敗的原因（給 log 去重複用）。 */
+    private static volatile String lastProblem;
+
+    /** 拿玩家金鑰最多等多久。遊戲通常早就拿好了，這裡只是不要卡住背景那條執行緒。 */
+    private static final long KEY_WAIT_SECONDS = 20;
+
+    /** @return 成功回 {@code null}（通行證已經記下）；失敗回原因 */
+    private static String proveAccount() throws Exception {
+        net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+        UUID id = mc.getUser().getProfileId();
+        if (id == null) {
+            return "沒有 UUID";
+        }
+        java.util.Optional<net.minecraft.world.entity.player.ProfileKeyPair> pair =
+                mc.getProfileKeyPairManager().prepareKeyPair()
+                        .get(KEY_WAIT_SECONDS, java.util.concurrent.TimeUnit.SECONDS);
+        if (pair == null || pair.isEmpty()) {
+            return "拿不到 Mojang 發的玩家金鑰（離線帳號，或是 Mojang 暫時連不上）";
+        }
+        net.minecraft.world.entity.player.ProfilePublicKey.Data certificate =
+                pair.get().publicKey().data();
+        com.mojang.authlib.properties.Property textures = signedTextures(mc, id);
+        if (textures == null) {
+            return "拿不到 Mojang 簽過的個人檔案";
+        }
+        HttpResponse<byte[]> asked = send(HttpRequest.newBuilder(URI.create(API + "/challenge"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString("{}", StandardCharsets.UTF_8)), false);
+        if (asked.statusCode() != 200) {
+            return "登記站沒有出題（" + asked.statusCode() + "）";
+        }
+        String challenge = JsonParser.parseString(new String(asked.body(), StandardCharsets.UTF_8))
+                .getAsJsonObject().get("challenge").getAsString();
+        String uuid = id.toString().replace("-", "");
+        String body = loginBody(uuid, certificate.expiresAt().toEpochMilli(),
+                certificate.key().getEncoded(), certificate.keySignature(), challenge,
+                signLogin(pair.get().privateKey(), challenge, uuid),
+                textures.value(), textures.signature());
+        HttpResponse<byte[]> response = send(HttpRequest.newBuilder(URI.create(API + "/login"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(body, StandardCharsets.UTF_8)), false);
+        String answer = new String(response.body(), StandardCharsets.UTF_8);
+        if (response.statusCode() != 200) {
+            return "登記站回 " + response.statusCode() + " "
+                    + (answer.length() > 120 ? answer.substring(0, 120) : answer);
+        }
+        token = JsonParser.parseString(answer).getAsJsonObject().get("token").getAsString();
+        lastProblem = null;
+        return null;
+    }
+
+    /**
+     * 自己的個人檔案裡 Mojang 簽過的那份 textures 屬性。
+     *
+     * <p>遊戲啟動時就抓過一份帶簽章的（畫自己的外觀用的），通常直接有；啟動時剛好沒抓到的話，
+     * 請遊戲自己的服務再抓一次——那是對 Mojang 的查詢，跟畫任何玩家的外觀時做的一樣。
+     */
+    private static com.mojang.authlib.properties.Property signedTextures(
+            net.minecraft.client.Minecraft mc, UUID id) {
+        com.mojang.authlib.properties.Property found = signedTextures(mc.getGameProfile());
+        if (found == null) {
+            com.mojang.authlib.yggdrasil.ProfileResult fetched =
+                    mc.services().sessionService().fetchProfile(id, true);
+            found = fetched == null ? null : signedTextures(fetched.profile());
+        }
+        return found;
+    }
+
+    private static com.mojang.authlib.properties.Property signedTextures(
+            com.mojang.authlib.GameProfile profile) {
+        if (profile == null || profile.properties() == null) {
+            return null;
+        }
+        for (com.mojang.authlib.properties.Property property : profile.properties().get("textures")) {
+            if (property.hasSignature() && property.value() != null) {
+                return property;
+            }
+        }
+        return null;
     }
 
     private static boolean hello(boolean cape) throws Exception {
