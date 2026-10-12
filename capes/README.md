@@ -19,6 +19,11 @@ WynnChaYuan 的披風，裝了模組的人都看得到。有兩條路：
 | `templates/template-44x34.png` | 44×34 | `example-44x34.gif` |
 | `templates/template-88x68.png` | 88×68 | `example-88x68.gif`、`example-88x68.png` |
 | `templates/template-176x136.png` | 176×136 | `example-176x136.gif` |
+| `templates/template-352x272.png` | 352×272 | — |
+| `templates/template-704x544.png` | 704×544 | — |
+| `templates/template-1056x816.png` | 1056×816 | — |
+
+遊戲裡披風最多用到 352×272，更大的兩種在遊戲裡看起來一樣，主要是網站上比較清楚。
 
 - **藍色＝正面**：別人從你背後看到的那一面（10×16 格）。
 - **紅色＝背面**：貼著身體的那一面（10×16 格）。
