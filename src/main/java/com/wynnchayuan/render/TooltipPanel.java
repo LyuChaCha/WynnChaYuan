@@ -318,6 +318,26 @@ public final class TooltipPanel {
                 i = 2;
             }
         }
+        // 製作物的名字是<b>製作者自己取的</b>，跟別人的 ID 一樣不翻。
+        //
+        // 實機回報（使用者 2026-10-12）：別人做的藥水取名「XP 30」，被語料裡的
+        // 「XP {~}」翻成「經驗值 30」。認的是說明裡那一行「Crafted by 某某」——
+        // 有那一行，第一列就是人取的名字。原版的說明名字佔兩列（第 0 列寬度是 0），
+        // WynnMod 重畫的只有一列；第二列剝掉裝飾之後是同一個名字才一起留。
+        if (i == 0 && n > 0 && !abilityPanel && crafted(styled)) {
+            String name = bareName(com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
+            if (!name.isEmpty()) {
+                out.add(LineTranslator.untranslated(styled.get(0)));
+                spans.add(new int[] {0, 1, 0, 1});
+                i = 1;
+                if (n > 1 && name.equals(bareName(
+                        com.wynnchayuan.capture.LineParts.of(styled.get(1)).template()))) {
+                    out.add(LineTranslator.untranslated(styled.get(1)));
+                    spans.add(new int[] {1, 2, 1, 2});
+                    i = 2;
+                }
+            }
+        }
         // 物品名稱最多佔前兩行（第 0 行寬度是 0，看得見的在第 1 行）。
         // 第三行起是敘述，裡面提到的同名裝備不附原文。見
         // TranslationStore#holdAppendedOriginal。
@@ -1011,6 +1031,25 @@ public final class TooltipPanel {
 
     /** 見 {@link #blockedGearName}。跟 {@code LineTranslator} 那一份是同一組。 */
     private static final String BULLETS = "-–—•*";
+
+    /** 「Crafted by 某某」：製作物說明裡寫製作者的那一行。 */
+    private static final java.util.regex.Pattern CRAFTED_BY =
+            java.util.regex.Pattern.compile("(?:^|[^A-Za-z])Crafted by \\S");
+
+    /**
+     * 這份說明是不是製作物的。
+     *
+     * <p>只看有沒有寫製作者的那一行，不看「CRAFTED」那個標籤——標籤是圖示字，
+     * 資源包一改碼位就認不到了。
+     */
+    static boolean crafted(List<StyledText> lines) {
+        for (StyledText line : lines) {
+            if (line != null && CRAFTED_BY.matcher(line.getStringWithoutFormatting()).find()) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static String bareName(String template) {
         String s = template

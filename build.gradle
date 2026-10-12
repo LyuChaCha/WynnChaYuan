@@ -878,6 +878,14 @@ tasks.register('runPageNamesChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runPageNamesChecks' }
 
+tasks.register('runCraftedNameChecks', JavaExec) {
+    group = 'verification'
+    description = '製作物的名字是製作者取的，不翻；說明的其他列照常'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.CraftedNameTest'
+}
+tasks.named('check') { dependsOn 'runCraftedNameChecks' }
+
 tasks.register('runBadgesChecks', JavaExec) {
     group = 'verification'
     description = '名字前面的葉子徽章：身分與顏色、彩色模式、多重身分、本機的選擇只管自己'
