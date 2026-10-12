@@ -178,11 +178,18 @@ you if it is missing). Corpus checks: `python tools/validate.py`.
 
 ## Sponsoring
 
-Free, and it will stay free. To buy us a tea: **<https://ko-fi.com/lyuchacha>**
+**The translations are free, and will stay free.** Every translation and every translation feature is provided by the team at no cost. Nothing is locked behind payment.
+
+Sponsoring is entirely voluntary:
+
+- **Not sponsoring never lowers translation quality.** Everyone gets the same translations, updates and fixes - no fewer and no later.
+- **Sponsors only get fun extras**: the cyan leaf before your name, a place on the list, and cosmetic features such as the upcoming animated capes.
+- **Sponsors' feedback is given priority**: we look at and act on their reports and suggestions first.
+
+To buy us a tea: **<https://ko-fi.com/lyuchacha>**
 
 A one-off **20 USD** or **2 USD/month** or more puts you on the sponsor list: below, under
-Settings → About / Credits, and as a cyan leaf before your name. Sponsoring does not influence
-translations, and there are no paid features.
+Settings → About / Credits, and as a cyan leaf before your name.
 
 ## Roles and badges
 

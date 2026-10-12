@@ -83,7 +83,7 @@ The mod never sends anything by itself. The export already leaves out player nam
 
 ### Sponsoring
 
-Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): a one-off 20 USD or 2 USD/month puts you on the sponsor list. No paid features.
+**The translations are free and will stay free** - all of them are provided by the team at no cost, and nothing is locked behind payment. Sponsoring is entirely voluntary: not sponsoring never lowers translation quality; sponsors only get fun extras (the leaf, later capes) and priority for their feedback. [Ko-fi](https://ko-fi.com/lyuchacha): a one-off 20 USD or 2 USD/month puts you on the sponsor list. No paid features.
 
 ### Roles and badges
 
@@ -170,7 +170,7 @@ jar 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設
 
 ### 贊助
 
-免費，也會一直免費。[Ko-fi](https://ko-fi.com/lyuchacha)：單次 20 USD 或每月 2 USD 以上列入贊助者名單。沒有付費功能。
+**翻譯免費，也會一直免費**——所有譯文都由團隊無償提供，不存在付費才有翻譯的問題。贊助完全出於自願：不贊助翻譯品質也不會打折，贊助者多的只有趣味性的功能（葉子、之後的披風），以及意見優先採納。[Ko-fi](https://ko-fi.com/lyuchacha)：單次 20 USD 或每月 2 USD 以上列入贊助者名單。沒有付費功能。
 
 ### 身分與徽章
 
