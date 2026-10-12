@@ -190,7 +190,223 @@ async function who(request, env, now) {
   const header = request.headers.get('authorization') || '';
   if (!header.startsWith('Bearer ')) return null;
   const token = header.slice(7);
+  if (token.startsWith('dc.')) {
+    // 網站帳號：綁了遊戲 ID 才算「是某個玩家」。沒綁的只有 /me 與綁定那幾條路認得（discordSession）。
+    const session = await discordSession(request, env, now);
+    const linked = session && session.account;
+    return linked && UUID.test(linked.u || '') && NAME.test(linked.m || '')
+      ? { uuid: linked.u, name: linked.m, web: true, discord: session.id, discordName: linked.n || '' }
+      : null;
+  }
   return token.startsWith('web.') ? readWebToken(env, token, now) : readToken(env, token, now);
+}
+
+// ---------------------------------------------------------------- 網站帳號（Discord）
+//
+// 使用者 2026-10-12：「像 Wynntils 一樣先註冊，然後再綁定遊戲 ID」「或許可以用 Discord 登入」。
+//
+//   1. 註冊／登入：Discord 的 OAuth（只要 identify：代號與顯示名稱）。
+//   2. 綁定：網站給一組綁定碼，玩家在遊戲裡打 /wcy link <碼>。模組帶著它自己的通行證
+//      （那一張是驗過 Mojang 憑證才發的）把碼送來，這裡就知道「這個 Discord 帳號＝這個遊戲帳號」。
+//
+// Discord 只證明 Discord 帳號；「遊戲帳號是本人」靠的還是第 2 步模組那張通行證。
+// 所以綁定一定要從遊戲裡來——在網頁上自己填遊戲 ID 是不算數的。
+//
+// KV：d:<Discord 代號> → {n 顯示名稱, u 遊戲 UUID, m 遊戲名字, t 綁定時間}；
+//     l:<UUID> → Discord 代號；link:<綁定碼> → Discord 代號（十分鐘）。
+
+const DISCORD_API = 'https://discord.com/api';
+const DISCORD_ID = /^\d{5,25}$/;
+
+/** 網站帳號登入一次管多久。 */
+const SESSION_TTL_MS = 30 * 24 * 3600 * 1000;
+
+/** 綁定碼幾秒內要用掉。 */
+const LINK_TTL_SECONDS = 600;
+
+/** 綁定碼用的字：拿掉長得像的 0／O、1／I。 */
+const LINK_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const LINK_CODE = /^[A-HJ-NP-Z2-9]{8}$/;
+
+function discordOn(env) {
+  return Boolean(env.DISCORD_CLIENT_ID && env.DISCORD_CLIENT_SECRET);
+}
+
+export async function issueDiscordToken(env, id, now) {
+  const body = 'dc.' + id + '.' + (now + SESSION_TTL_MS);
+  return body + '.' + await sign(env, body);
+}
+
+async function readDiscordToken(env, token, now) {
+  const parts = token.split('.');
+  if (parts.length !== 4 || parts[0] !== 'dc') return null;
+  const [, id, expires, signature] = parts;
+  if (!DISCORD_ID.test(id) || !/^\d{1,16}$/.test(expires) || Number(expires) < now) return null;
+  const expected = await sign(env, 'dc.' + id + '.' + expires);
+  if (expected.length !== signature.length) return null;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
+  return diff === 0 ? id : null;
+}
+
+async function account(env, id) {
+  try {
+    const raw = await env.CORPUS.get('d:' + id);
+    const value = raw ? JSON.parse(raw) : null;
+    return value && typeof value === 'object' ? value : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+/** 這個請求帶著的網站帳號：{id, account}。沒登入、過期、帳號不在了都是 null。 */
+async function discordSession(request, env, now) {
+  const header = request.headers.get('authorization') || '';
+  if (!header.startsWith('Bearer dc.')) return null;
+  const id = await readDiscordToken(env, header.slice(7), now);
+  if (!id) return null;
+  const found = await account(env, id);
+  return found ? { id, account: found } : null;
+}
+
+function redirect(location, cookie) {
+  const headers = { location, 'cache-control': 'no-store', 'referrer-policy': 'no-referrer' };
+  if (cookie) headers['set-cookie'] = cookie;
+  return new Response(null, { status: 302, headers });
+}
+
+const OAUTH_COOKIE = 'wcy_oauth';
+const oauthCookie = (value, age) => OAUTH_COOKIE + '=' + value
+  + '; Path=/auth; Max-Age=' + age + '; HttpOnly; Secure; SameSite=Lax';
+
+/** 去 Discord 登入。state 自己簽、再用 cookie 綁在這個瀏覽器上，別人拿不走也塞不進來。 */
+async function handleDiscordStart(request, env, now) {
+  const origin = new URL(request.url).origin;
+  if (!discordOn(env)) return redirect(origin + '/account#e=discord-off');
+  const nonce = hex(crypto.getRandomValues(new Uint8Array(16)));
+  const state = now + '.' + nonce + '.' + await sign(env, 'oauth.' + now + '.' + nonce);
+  const to = new URL('https://discord.com/oauth2/authorize');
+  to.searchParams.set('client_id', env.DISCORD_CLIENT_ID);
+  to.searchParams.set('response_type', 'code');
+  to.searchParams.set('redirect_uri', origin + '/auth/discord/callback');
+  to.searchParams.set('scope', 'identify');
+  to.searchParams.set('state', state);
+  return redirect(to.toString(), oauthCookie(nonce, 600));
+}
+
+async function handleDiscordCallback(request, env, now) {
+  const url = new URL(request.url);
+  const failed = redirect(url.origin + '/account#e=discord', oauthCookie('', 0));
+  if (!discordOn(env)) return failed;
+  const code = url.searchParams.get('code') || '';
+  const parts = (url.searchParams.get('state') || '').split('.');
+  const cookie = new RegExp('(?:^|;\\s*)' + OAUTH_COOKIE + '=([0-9a-f]{32})')
+    .exec(request.headers.get('cookie') || '');
+  if (!code || code.length > 512 || parts.length !== 3 || !cookie || cookie[1] !== parts[1]) return failed;
+  if (!/^\d{1,16}$/.test(parts[0]) || now - Number(parts[0]) > 600000 || Number(parts[0]) > now + 60000) return failed;
+  const expected = await sign(env, 'oauth.' + parts[0] + '.' + parts[1]);
+  if (expected !== parts[2]) return failed;
+  let profile = null;
+  try {
+    const token = await fetch(DISCORD_API + '/oauth2/token', {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: env.DISCORD_CLIENT_ID,
+        client_secret: env.DISCORD_CLIENT_SECRET,
+        grant_type: 'authorization_code',
+        code,
+        redirect_uri: url.origin + '/auth/discord/callback',
+      }).toString(),
+    });
+    if (token.status !== 200) return failed;
+    const access = (await token.json()).access_token;
+    if (typeof access !== 'string' || !access) return failed;
+    const me = await fetch(DISCORD_API + '/users/@me', { headers: { authorization: 'Bearer ' + access } });
+    if (me.status !== 200) return failed;
+    profile = await me.json();
+  } catch (e) {
+    return failed;
+  }
+  const id = profile && typeof profile.id === 'string' ? profile.id : '';
+  if (!DISCORD_ID.test(id)) return failed;
+  const shown = String(profile.global_name || profile.username || '').slice(0, 64);
+  const record = await account(env, id) || {};
+  record.n = shown;
+  await env.CORPUS.put('d:' + id, JSON.stringify(record));
+  // 憑證放在 # 後面：那一段不會送到任何伺服器，網頁收進 localStorage 之後就從網址列拿掉
+  return redirect(url.origin + '/account#t=' + await issueDiscordToken(env, id, now), oauthCookie('', 0));
+}
+
+/** 網站帳號要一組綁定碼。 */
+async function handleLinkStart(request, env, now) {
+  const session = await discordSession(request, env, now);
+  if (!session) return no('login first', 401);
+  const bytes = crypto.getRandomValues(new Uint8Array(8));
+  let code = '';
+  for (const b of bytes) code += LINK_ALPHABET[b % LINK_ALPHABET.length];
+  await env.CORPUS.put('link:' + code, session.id, { expirationTtl: LINK_TTL_SECONDS });
+  return json({ ok: true, code, minutes: LINK_TTL_SECONDS / 60 });
+}
+
+/** 遊戲裡打 /wcy link <碼>：模組帶著它的通行證把碼送來。 */
+async function handleLink(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  // 要的是「遊戲帳號是本人」的證明。Discord 那一張本身就是綁定的結果，不能拿來再綁別人。
+  if (user.discord) return no('use the game', 403);
+  const body = await readJson(request);
+  if (body === undefined) return no('too large', 413);
+  const code = body && typeof body.code === 'string' ? body.code.trim().toUpperCase() : '';
+  if (!LINK_CODE.test(code)) return no('bad code');
+  const id = await env.CORPUS.get('link:' + code);
+  if (!id || !DISCORD_ID.test(id)) return no('unknown code', 404);
+  const record = await account(env, id) || {};
+  // 一個遊戲帳號只綁一個網站帳號，反過來也是：兩邊原本綁著別的都先解掉
+  const before = await env.CORPUS.get('l:' + user.uuid);
+  if (before && before !== id) {
+    const other = await account(env, before);
+    if (other) {
+      delete other.u;
+      delete other.m;
+      delete other.t;
+      await env.CORPUS.put('d:' + before, JSON.stringify(other));
+    }
+  }
+  if (record.u && record.u !== user.uuid) await env.CORPUS.delete('l:' + record.u);
+  record.u = user.uuid;
+  record.m = user.name;
+  record.t = now;
+  await env.CORPUS.put('d:' + id, JSON.stringify(record));
+  await env.CORPUS.put('l:' + user.uuid, id);
+  await env.CORPUS.delete('link:' + code);
+  return json({ ok: true, discord: record.n || '' });
+}
+
+/** 網站帳號解除綁定。 */
+async function handleUnlink(request, env, now) {
+  const session = await discordSession(request, env, now);
+  if (!session) return no('login first', 401);
+  const record = session.account;
+  if (record.u) {
+    await env.CORPUS.delete('l:' + record.u);
+    delete record.u;
+    delete record.m;
+    delete record.t;
+    await env.CORPUS.put('d:' + session.id, JSON.stringify(record));
+  }
+  return json({ ok: true });
+}
+
+/** 遊戲登入時順手：這個帳號有綁網站帳號的話，把記著的名字換成 Mojang 剛簽的那一個。 */
+async function refreshLinkedName(env, uuid, name) {
+  const id = await env.CORPUS.get('l:' + uuid);
+  if (!id) return;
+  const record = await account(env, id);
+  if (record && record.u === uuid && record.m !== name) {
+    record.m = name;
+    await env.CORPUS.put('d:' + id, JSON.stringify(record));
+  }
 }
 
 async function readJson(request, limit = MAX_BODY) {
@@ -353,6 +569,8 @@ async function handleLogin(request, env, now) {
   if (!answered) return no('bad signature', 403);
   const name = await profileName(env, body.textures, body.uuid, now);
   if (!name) return no('bad profile', 403);
+  // 管理權是照名字認的：綁著網站帳號的話，那邊記的名字不可以比這裡舊
+  await refreshLinkedName(env, body.uuid, name);
   return json({ ok: true, token: await issueToken(env, body.uuid, name, now), id: await publicId(body.uuid) });
 }
 
@@ -713,13 +931,20 @@ async function handleWebLink(request, env, now) {
 /** 我是誰。網頁拿這個決定畫面上要有什麼。 */
 async function handleMe(request, env, now) {
   const user = await who(request, env, now);
-  if (!user) return no('login first', 401);
+  if (!user) {
+    // 用 Discord 登入了、還沒綁遊戲 ID：認得是誰，但還不是任何一個玩家
+    const session = await discordSession(request, env, now);
+    if (!session) return no('login first', 401);
+    return json({ ok: true, linked: false, discord: { name: session.account.n || '' } });
+  }
   const id = await publicId(user.uuid);
   const cape = await env.CORPUS.getWithMetadata('cape:' + id);
   const list = await credits(now);
   const name = user.name.toLowerCase();
   return json({
     ok: true,
+    linked: true,
+    discord: user.discord ? { name: user.discordName } : null,
     name: user.name,
     id,
     developer: Boolean(list && list.developers.has(name)),
@@ -961,6 +1186,10 @@ export default {
         : pickLang(request.headers.get('cookie'), request.headers.get('accept-language'));
       return page(render(path, lang), lang);
     }
+    if (request.method === 'GET' && path === '/auth/discord') return handleDiscordStart(request, env, now);
+    if (request.method === 'GET' && path === '/auth/discord/callback') {
+      return handleDiscordCallback(request, env, now);
+    }
     if (request.method === 'GET' && path === '/gallery') {
       return Response.redirect(url.origin + '/capes', 302);
     }
@@ -969,6 +1198,9 @@ export default {
     if (route === 'POST /challenge') return handleChallenge(env, now);
     if (route === 'POST /login') return handleLogin(request, env, now);
     if (route === 'POST /web-link') return handleWebLink(request, env, now);
+    if (route === 'POST /link/start') return handleLinkStart(request, env, now);
+    if (route === 'POST /link') return handleLink(request, env, now);
+    if (route === 'POST /unlink') return handleUnlink(request, env, now);
     if (route === 'GET /me') return handleMe(request, env, now);
     if (route === 'POST /hello') return handleHello(request, env, now);
     if (route === 'GET /list') return handleList(env, now);
@@ -990,6 +1222,7 @@ export default {
         users: list ? list.users.length : 0,
         capes: list ? Object.keys(list.capes).length : 0,
         uploads: env.UPLOADS || 'tiered',
+        discord: discordOn(env),
       });
     }
     return no('not found', 404);

@@ -76,6 +76,20 @@ public final class PresenceTest {
         String privateKey = java.util.Base64.getEncoder().encodeToString(keys.getPrivate().getEncoded());
         check("★ 私鑰不在送出去的內容裡", !sent.contains(privateKey.substring(0, 64))
                 && !sent.contains(privateKey.substring(privateKey.length() - 64)));
+        // 綁定網站帳號：只送玩家自己打的那組碼
+        JsonObject linkSent = JsonParser.parseString(Presence.linkBody("ABCD2345")).getAsJsonObject();
+        check("★ 綁定只有一欄：code（實際 " + linkSent.keySet() + "）",
+                linkSent.keySet().equals(Set.of("code")) && "ABCD2345".equals(linkSent.get("code").getAsString()));
+        check("綁定碼不計較大小寫與前後空白", "ABCD2345".equals(Presence.linkCode(" abcd2345 ")));
+        check("★ 不像綁定碼的不送（太短、有 0／O／1／I、有怪字元）", Presence.linkCode("ABC") == null
+                && Presence.linkCode("ABCD0345") == null && Presence.linkCode("ABCDO345") == null
+                && Presence.linkCode("ABCD1345") == null && Presence.linkCode("ABCDI345") == null
+                && Presence.linkCode("ABCD-345") == null && Presence.linkCode(null) == null);
+        check("登記站的回答對得上結果", Presence.linkResultOf(200) == Presence.LinkResult.DONE
+                && Presence.linkResultOf(404) == Presence.LinkResult.UNKNOWN_CODE
+                && Presence.linkResultOf(400) == Presence.LinkResult.BAD_CODE
+                && Presence.linkResultOf(401) == Presence.LinkResult.LOGIN_FAILED
+                && Presence.linkResultOf(500) == Presence.LinkResult.FAILED);
         JsonObject hello = JsonParser.parseString(Presence.helloBody(true)).getAsJsonObject();
         check("★ 報到只有一欄：cape（實際 " + hello.keySet() + "）",
                 hello.keySet().equals(Set.of("cape")) && hello.get("cape").getAsBoolean()

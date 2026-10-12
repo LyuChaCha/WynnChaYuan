@@ -139,6 +139,8 @@ const STYLE = String.raw`
   .who-am-i b { font-size: 18px; }
   .steps { margin: 10px 0 0; padding-left: 1.3em; color: var(--ink-2); }
   .steps li { margin: 4px 0; } .steps b { color: var(--ink); font-weight: 600; }
+  .linkcode { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0; }
+  .linkcode code { font-size: 18px; color: var(--ink); background: #0f1512; border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; user-select: all; }
   .form { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: end; }
   @media (max-width: 720px) {
     .hero, .account { grid-template-columns: 1fr; }
@@ -201,8 +203,21 @@ export const TEXT = {
 
     'account.title': '帳號 - WynnChaYuan',
     'account.h1': '帳號',
-    'account.lede': '網站沒辦法自己確認你的 Minecraft 帳號，所以登入是從遊戲裡開的。',
-    'account.how': '怎麼登入',
+    'account.lede': '先用 Discord 註冊，再到遊戲裡綁定你的遊戲 ID；或是直接從遊戲裡開這個網站。',
+    'account.discord.h': '用 Discord 註冊／登入',
+    'account.discord.p': '網站帳號用 Discord 登入，我們只讀你的 Discord 名稱。登入之後到遊戲裡綁定遊戲 ID，就能上傳披風；之後不必開遊戲也登得進來。',
+    'account.discord.btn': '用 Discord 登入',
+    'account.discord.off': '這個網站還沒有開放 Discord 登入，請先從遊戲裡開。',
+    'account.discord.err': 'Discord 登入沒有成功，請再試一次。',
+    'account.discord.hint': '也可以用 Discord 註冊網站帳號再綁定這個遊戲 ID，之後不必開遊戲也登得進來。',
+    'account.link.h': '綁定遊戲 ID',
+    'account.link.p': '網站沒辦法自己確認遊戲帳號是不是你的，所以綁定要從遊戲裡做：先拿一組綁定碼，再到遊戲裡輸入。',
+    'account.link.get': '取得綁定碼',
+    'account.link.type': '進 Wynncraft，在聊天欄輸入這一行（十分鐘內有效，要裝 WynnChaYuan）：',
+    'account.link.copy': '複製',
+    'account.link.wait': '輸入之後這一頁會自己更新。',
+    'account.unlink': '解除 Discord 綁定',
+    'account.how': '或是從遊戲裡直接開',
     'account.s1': '進 Wynncraft，按 <b>F6</b> 開 WynnChaYuan 的設定。',
     'account.s2': '到「<b>徽章與披風</b>」那一頁，確認「讓別人知道我有裝」開著。',
     'account.s3': '按「<b>披風一覽</b>」旁邊的「打開」。瀏覽器開起來的時候就是登入的。',
@@ -238,6 +253,8 @@ export const TEXT = {
       readFail: '讀不到清單，請重新整理。',
       roleDev: '開發者', roleMember: '名單上的成員', roleUser: '裝了模組的玩家',
       mineHint: '{t} · {s} · 拖曳可以旋轉', mineNo3d: '立體檢視載不起來。',
+      discordAs: 'Discord：{n}', codeFail: '拿不到綁定碼，請再試一次', copied: '已複製',
+      confirmUnlink: '解除這個遊戲 ID 與 Discord 的綁定？',
       confirmRemove: '移除你上傳的披風？', removed: '披風拿掉了', tryLater: '沒有成功，等一下再試',
       pickFirst: '先選一張圖', uploading: '上傳中…', uploaded: '披風上傳好了，別人幾分鐘內就會看到',
       failed: '沒有成功（{s}），等一下再試', offline: '連不上，等一下再試',
@@ -307,8 +324,21 @@ export const TEXT = {
 
     'account.title': 'Account - WynnChaYuan',
     'account.h1': 'Account',
-    'account.lede': 'This site cannot verify your Minecraft account by itself, so you sign in from inside the game.',
-    'account.how': 'How to sign in',
+    'account.lede': 'Register with Discord, then link your game ID from inside the game - or simply open this site from the game.',
+    'account.discord.h': 'Register / sign in with Discord',
+    'account.discord.p': 'Site accounts sign in with Discord; we only read your Discord name. After signing in, link your game ID from inside the game to upload capes. From then on you can sign in without starting the game.',
+    'account.discord.btn': 'Sign in with Discord',
+    'account.discord.off': 'Discord sign-in is not enabled on this site yet. Please open the site from the game.',
+    'account.discord.err': 'Discord sign-in did not work. Please try again.',
+    'account.discord.hint': 'You can also register a site account with Discord and link this game ID to it, so you can sign in without starting the game.',
+    'account.link.h': 'Link your game ID',
+    'account.link.p': 'This site cannot verify by itself that a game account is yours, so linking is done from inside the game: get a link code here, then enter it in game.',
+    'account.link.get': 'Get a link code',
+    'account.link.type': 'Join Wynncraft and type this line in chat (valid for ten minutes; WynnChaYuan must be installed):',
+    'account.link.copy': 'Copy',
+    'account.link.wait': 'This page updates by itself once you have entered it.',
+    'account.unlink': 'Unlink Discord',
+    'account.how': 'Or open it straight from the game',
     'account.s1': 'Join Wynncraft and press <b>F6</b> to open the WynnChaYuan settings.',
     'account.s2': 'On the <b>Badge &amp; cape</b> page, make sure “Let others know I use this mod” is on.',
     'account.s3': 'Press <b>Open</b> next to <b>Cape gallery</b>. Your browser opens already signed in.',
@@ -344,6 +374,8 @@ export const TEXT = {
       readFail: 'Could not load the list. Please refresh.',
       roleDev: 'Developer', roleMember: 'Listed member', roleUser: 'Player with the mod',
       mineHint: '{t} · {s} · drag to rotate', mineNo3d: 'The 3D view could not load.',
+      discordAs: 'Discord: {n}', codeFail: 'Could not get a link code - please try again', copied: 'Copied',
+      confirmUnlink: 'Unlink this game ID from Discord?',
       confirmRemove: 'Remove the cape you uploaded?', removed: 'Cape removed', tryLater: 'That did not work - try again later',
       pickFirst: 'Choose an image first', uploading: 'Uploading…', uploaded: 'Cape uploaded - others will see it within a few minutes',
       failed: 'That did not work ({s}) - try again later', offline: 'Could not connect - try again later',
@@ -426,6 +458,12 @@ const COMMON = String.raw`
       var link = el('a', '', L.login);
       link.href = '/account';
       slot.append(link);
+      return;
+    }
+    if (me.linked === false) {              /* 用 Discord 登入了，還沒綁遊戲 ID */
+      var pending = el('a', '', (me.discord && me.discord.name) || 'Discord');
+      pending.href = '/account';
+      slot.append(pending);
       return;
     }
     var img = el('img');
@@ -726,22 +764,52 @@ const ACCOUNT = String.raw`
   <h1>%%account.h1%%</h1>
   <div id="out" hidden>
     <p class="lede">%%account.lede%%</p>
-    <div class="panel" style="margin-top:22px;max-width:640px">
-      <b>%%account.how%%</b>
-      <ol class="steps">
-        <li>%%account.s1%%</li>
-        <li>%%account.s2%%</li>
-        <li>%%account.s3%%</li>
-      </ol>
-      <p class="note" style="margin:10px 0 0">%%account.expire%%</p>
+    <div class="split" style="margin-top:22px">
+      <div class="panel">
+        <b>%%account.discord.h%%</b>
+        <p class="note" style="margin:8px 0 14px">%%account.discord.p%%</p>
+        <a class="btn primary" id="discord" href="/auth/discord" hidden>%%account.discord.btn%%</a>
+        <p class="note" id="discord-off" hidden style="margin:0">%%account.discord.off%%</p>
+        <p class="msg bad" id="oauth-error" hidden>%%account.discord.err%%</p>
+      </div>
+      <div class="panel">
+        <b>%%account.how%%</b>
+        <ol class="steps">
+          <li>%%account.s1%%</li>
+          <li>%%account.s2%%</li>
+          <li>%%account.s3%%</li>
+        </ol>
+        <p class="note" style="margin:10px 0 0">%%account.expire%%</p>
+      </div>
+    </div>
+  </div>
+  <div id="link" hidden>
+    <div class="panel" style="margin-top:22px;max-width:680px">
+      <b id="dc-name"></b>
+      <h2 style="margin:14px 0 6px">%%account.link.h%%</h2>
+      <p class="note" style="margin:0 0 12px">%%account.link.p%%</p>
+      <button class="btn primary" id="getcode">%%account.link.get%%</button>
+      <div id="codebox" hidden>
+        <p class="note" style="margin:0">%%account.link.type%%</p>
+        <div class="linkcode"><code id="cmd"></code><button class="btn" id="copy">%%account.link.copy%%</button></div>
+        <p class="note" style="margin:0">%%account.link.wait%%</p>
+      </div>
+      <p class="msg" id="linkmsg" role="status"></p>
+      <div style="margin-top:8px"><button class="btn" id="signout2">%%account.signout%%</button></div>
     </div>
   </div>
   <div id="in" hidden>
     <div class="account" style="margin-top:22px">
       <div class="panel">
         <div class="who-am-i"><img id="avatar" alt=""><div><b id="name"></b><div class="note" id="roles"></div></div></div>
+        <p class="note" id="dc-line" hidden style="margin:12px 0 0"></p>
+        <p class="note" id="dc-hint" hidden style="margin:12px 0 0">%%account.discord.hint%%</p>
         <p class="note" id="banned" hidden style="color:var(--danger);margin:12px 0 0">%%account.banned%%</p>
-        <div style="margin-top:16px"><button class="btn" id="signout">%%account.signout%%</button></div>
+        <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px">
+          <button class="btn" id="signout">%%account.signout%%</button>
+          <button class="btn" id="unlink" hidden>%%account.unlink%%</button>
+          <a class="btn" id="discord2" href="/auth/discord" hidden>%%account.discord.btn%%</a>
+        </div>
       </div>
       <div class="panel">
         <b>%%account.mine%%</b>
@@ -784,9 +852,70 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     return api('/me').then(function (r) { return r.ok ? r.json() : null; }).then(function (me) { if (me) show(me); });
   }
 
+  /* 網站有沒有開 Discord 登入：有才把按鈕露出來 */
+  var discordOn = fetch('/api/status').then(function (r) { return r.json(); })
+    .then(function (status) { return Boolean(status.discord); }).catch(function () { return false; });
+  var linkMsg = document.getElementById('linkmsg');
+  var watching = null;
+
+  /* 用 Discord 登入了、還沒綁：要一組綁定碼，然後等遊戲那邊把它送回來 */
+  function linking(me) {
+    document.getElementById('dc-name').textContent = fmt(L.discordAs, { n: (me.discord && me.discord.name) || '' });
+    document.getElementById('getcode').onclick = function () {
+      linkMsg.textContent = '';
+      api('/link/start', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (answer) {
+          if (!answer || !answer.code) { linkMsg.className = 'msg bad'; linkMsg.textContent = L.codeFail; return; }
+          document.getElementById('cmd').textContent = '/wcy link ' + answer.code;
+          document.getElementById('codebox').hidden = false;
+          if (watching) clearInterval(watching);
+          watching = setInterval(function () {
+            api('/me').then(function (r) { return r.ok ? r.json() : null; })
+              .then(function (now) { if (now && now.linked) location.reload(); });
+          }, 3000);
+        }).catch(function () { linkMsg.className = 'msg bad'; linkMsg.textContent = L.offline; });
+    };
+    document.getElementById('copy').onclick = function () {
+      var text = document.getElementById('cmd').textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function () {
+          linkMsg.className = 'msg ok';
+          linkMsg.textContent = L.copied;
+        }).catch(function () {});
+      }
+    };
+    document.getElementById('signout2').onclick = signOut;
+  }
+
   whoami.then(function (me) {
-    document.getElementById(me ? 'in' : 'out').hidden = false;
-    if (!me) return;
+    if (!me) {
+      document.getElementById('out').hidden = false;
+      document.getElementById('oauth-error').hidden = !/e=discord$/.test(location.hash);
+      discordOn.then(function (on) {
+        document.getElementById('discord').hidden = !on;
+        document.getElementById('discord-off').hidden = on;
+      });
+      return;
+    }
+    if (me.linked === false) {
+      document.getElementById('link').hidden = false;
+      linking(me);
+      return;
+    }
+    document.getElementById('in').hidden = false;
+    if (me.discord) {
+      var line = document.getElementById('dc-line');
+      line.hidden = false;
+      line.textContent = fmt(L.discordAs, { n: me.discord.name || '' });
+      document.getElementById('unlink').hidden = false;
+    } else {
+      /* 從遊戲開的：提醒可以另外用 Discord 註冊，之後不開遊戲也登得進來 */
+      discordOn.then(function (on) {
+        document.getElementById('dc-hint').hidden = !on;
+        document.getElementById('discord2').hidden = !on;
+      });
+    }
     document.getElementById('avatar').src = head(me.name, 96);
     document.getElementById('name').textContent = me.name;
     document.getElementById('roles').textContent = me.developer ? L.roleDev : (me.member ? L.roleMember : L.roleUser);
@@ -794,6 +923,11 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     show(me);
   });
   document.getElementById('signout').onclick = signOut;
+  document.getElementById('unlink').onclick = function () {
+    if (!confirm(L.confirmUnlink)) return;
+    api('/unlink', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json' } })
+      .then(function () { location.reload(); });
+  };
   document.getElementById('remove').onclick = function () {
     if (!confirm(L.confirmRemove)) return;
     api('/cape', { method: 'DELETE' }).then(function (r) {

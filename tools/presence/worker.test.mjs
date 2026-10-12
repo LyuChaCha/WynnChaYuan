@@ -1,7 +1,7 @@
 // node tools/presence/worker.test.mjs
 import worker, {
   publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, inspectCape, gifFrames, groupCapes,
-  addMember, certificatePayload, issueChallenge, LOGIN_PREFIX,
+  addMember, certificatePayload, issueChallenge, issueDiscordToken, LOGIN_PREFIX,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
@@ -49,6 +49,8 @@ function fakeKv() {
 const ALICE = { id: 'a'.repeat(32), name: 'Alice_Dev' };          // 名單上的人
 const BOB = { id: 'b'.repeat(32), name: 'Bob' };                  // 不在名單上
 let githubFile = '';
+const discordCalls = [];
+let discordUser = { id: '111111111111111111', username: 'alice_dc', global_name: 'Alice 的 Discord' };
 const githubCalls = [];
 globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
@@ -68,6 +70,22 @@ globalThis.fetch = async (url, init = {}) => {
     return answer({}, 404);
   }
   // 沒有 Mojang 這一支：Worker 連不到它（403），登入不可以再去問。問了就在下面丟例外。
+  if (u.hostname === 'discord.com') {
+    discordCalls.push({ path: u.pathname, body: String(init.body || ''), auth: (init.headers || {}).authorization });
+    if (u.pathname === '/api/oauth2/token') {
+      const form = new URLSearchParams(String(init.body));
+      return form.get('code') === 'goodcode' && form.get('client_secret') === 'shh'
+        && form.get('redirect_uri') === 'https://x.test/auth/discord/callback'
+        ? new Response(JSON.stringify({ access_token: 'acc-' + discordUser.id }), { status: 200 })
+        : new Response('{}', { status: 400 });
+    }
+    if (u.pathname === '/api/users/@me') {
+      return (init.headers || {}).authorization === 'Bearer acc-' + discordUser.id
+        ? new Response(JSON.stringify(discordUser), { status: 200 })
+        : new Response('{}', { status: 401 });
+    }
+    return new Response('{}', { status: 404 });
+  }
   if (u.hostname === 'raw.githubusercontent.com') {
     return new Response(JSON.stringify({
       sections: [
@@ -244,6 +262,111 @@ check('MOJANG_KEYS 寫壞了：退回釘住的那一份，不是全部放行',
   (await worker.fetch(post('/login', await loginBody(alice)), { CORPUS: env.CORPUS, MOJANG_KEYS: '{oops' })).status === 403);
 const bobToken = (await (await login(bob)).json()).token;
 const bobId = await publicId(BOB.id);
+
+// ---- ★ 網站帳號：用 Discord 註冊／登入，再從遊戲裡綁定遊戲 ID ----
+const page = (path, headers = {}) => worker.fetch(new Request('https://x.test' + path, { headers, redirect: 'manual' }), env);
+const dc = (path, token, bodyValue) => worker.fetch(new Request('https://x.test/api' + path, {
+  method: bodyValue === undefined ? 'GET' : 'POST', body: bodyValue === undefined ? undefined : JSON.stringify(bodyValue),
+  headers: token ? { authorization: 'Bearer ' + token } : {},
+}), env);
+r = await page('/auth/discord');
+check('沒設 Discord 的時候：登入鈕帶回帳號頁，說還沒開放', r.status === 302 && r.headers.get('location') === 'https://x.test/account#e=discord-off');
+check('/api/status 說 Discord 沒開', (await (await worker.fetch(api('/status'), env)).json()).discord === false);
+env.DISCORD_CLIENT_ID = 'app123';
+env.DISCORD_CLIENT_SECRET = 'shh';
+check('設好之後 /api/status 說有開', (await (await worker.fetch(api('/status'), env)).json()).discord === true);
+r = await page('/auth/discord');
+const authorize = new URL(r.headers.get('location'));
+const oauthCookie = (r.headers.get('set-cookie') || '').split(';')[0];
+check('★ 去 Discord 登入：只要 identify，回來的網址是我們自己的', r.status === 302 && authorize.origin === 'https://discord.com'
+  && authorize.searchParams.get('client_id') === 'app123' && authorize.searchParams.get('scope') === 'identify'
+  && authorize.searchParams.get('redirect_uri') === 'https://x.test/auth/discord/callback'
+  && authorize.searchParams.get('response_type') === 'code');
+check('state 用 cookie 綁在這個瀏覽器上（HttpOnly、Secure）', /^wcy_oauth=[0-9a-f]{32}$/.test(oauthCookie)
+  && /HttpOnly/i.test(r.headers.get('set-cookie')) && /Secure/i.test(r.headers.get('set-cookie')));
+const state = authorize.searchParams.get('state');
+const oauthBack = (query, cookie) => page('/auth/discord/callback?' + query, cookie ? { cookie } : {});
+r = await oauthBack('code=goodcode&state=' + state, null);
+check('★ 回來時沒有那個 cookie（別人把他的登入連結塞給你）：不認', r.headers.get('location') === 'https://x.test/account#e=discord');
+r = await oauthBack('code=goodcode&state=' + state, 'wcy_oauth=' + 'f'.repeat(32));
+check('★ cookie 對不上 state：不認', r.headers.get('location').endsWith('#e=discord'));
+r = await oauthBack('code=goodcode&state=' + state.replace(/\.[0-9a-f]{64}$/, '.' + '0'.repeat(64)), oauthCookie);
+check('★ state 的簽章是假的：不認', r.headers.get('location').endsWith('#e=discord'));
+r = await oauthBack('code=wrong&state=' + state, oauthCookie);
+check('Discord 不認這個 code：不認', r.headers.get('location').endsWith('#e=discord'));
+r = await oauthBack('code=goodcode&state=' + state, oauthCookie);
+const dcToken = (r.headers.get('location').match(/#t=(dc\.[^&]+)$/) || [])[1];
+check('★ 都對：帶著網站帳號的憑證回帳號頁，cookie 清掉', r.status === 302 && r.headers.get('location').startsWith('https://x.test/account#t=dc.')
+  && /Max-Age=0/.test(r.headers.get('set-cookie')));
+check('換憑證時帶了 client_secret，拿使用者資料時帶了 Discord 給的那一張',
+  discordCalls.some((c) => c.path === '/api/oauth2/token' && c.body.includes('client_secret=shh'))
+  && discordCalls.some((c) => c.path === '/api/users/@me' && c.auth === 'Bearer acc-111111111111111111'));
+r = await dc('/me', dcToken);
+body = await r.json();
+check('★ 登入了、還沒綁：認得 Discord 名稱，但還不是任何一個玩家', r.status === 200 && body.linked === false
+  && body.discord.name === 'Alice 的 Discord' && body.name === undefined && body.developer === undefined);
+check('★ 沒綁之前不能報到、不能上傳、不能進管理', (await dc('/hello', dcToken, { cape: true })).status === 401
+  && (await worker.fetch(put('/cape', png(22, 17), dcToken), env)).status === 401
+  && (await dc('/admin/bans', dcToken)).status === 403);
+check('網站帳號的憑證過期就不認', (await dc('/me', await issueDiscordToken(env, '111111111111111111', Date.now() - 31 * 86400000))).status === 401);
+check('沒註冊過的 Discord 代號（自己編一張憑證簽不出來；簽得出來也沒有帳號）不認',
+  (await dc('/me', await issueDiscordToken(env, '999999999999999999', Date.now()))).status === 401);
+
+check('要綁定碼得先登入網站帳號', (await dc('/link/start', null, {})).status === 401
+  && (await dc('/link/start', aliceToken, {})).status === 401);
+r = await dc('/link/start', dcToken, {});
+body = await r.json();
+const linkCode = body.code;
+check('綁定碼是 8 個不容易看錯的字，十分鐘內有效', r.status === 200 && /^[A-HJ-NP-Z2-9]{8}$/.test(linkCode) && body.minutes === 10
+  && env.CORPUS.data.get('link:' + linkCode).ttl === 600);
+check('★ 綁定要遊戲的通行證：沒帶的、只有網站帳號的都不行', (await dc('/link', null, { code: linkCode })).status === 401
+  && (await dc('/link', dcToken, { code: linkCode })).status === 401);
+check('亂打的碼：格式不對 400、沒有這組 404', (await dc('/link', aliceToken, { code: 'nope' })).status === 400
+  && (await dc('/link', aliceToken, { code: 'ZZZZZZZZ' })).status === 404);
+r = await dc('/link', aliceToken, { code: linkCode.toLowerCase() + ' ' });
+body = await r.json();
+check('★ 遊戲裡送對的碼（大小寫、多打的空白都不計較）：綁起來了', r.status === 200 && body.discord === 'Alice 的 Discord');
+check('★ 綁定碼只能用一次', (await dc('/link', bobToken, { code: linkCode })).status === 404);
+r = await dc('/me', dcToken);
+body = await r.json();
+check('★ 之後用 Discord 登入就是那個玩家：名字、代碼、開發者身分都對', body.linked === true && body.name === ALICE.name
+  && body.id === aliceId && body.developer === true && body.discord.name === 'Alice 的 Discord');
+check('★ 用 Discord 登入的開發者進得了管理', (await dc('/admin/bans', dcToken)).status === 200);
+check('★ 網站帳號的憑證不能拿來綁別的網站帳號（要從遊戲裡來）',
+  (await dc('/link', dcToken, { code: (await (await dc('/link/start', dcToken, {})).json()).code })).status === 403);
+r = await dc('/me', aliceToken);
+check('從遊戲開的那一條路照舊：沒有 Discord 也是她', (await r.json()).discord === null);
+
+// 名字是照 Mojang 簽的為準：她改名之後再從遊戲登入一次，網站帳號那邊跟著換
+const renamed = await player({ id: ALICE.id, name: 'Alice_New' });
+await login(renamed);
+check('★ 遊戲帳號改名：網站帳號記的名字跟著換，舊名字的管理權沒了',
+  JSON.parse(env.CORPUS.data.get('d:111111111111111111').value).m === 'Alice_New'
+  && (await (await dc('/me', dcToken)).json()).developer === false);
+await login(alice);                                                 // 改回來，後面的測試還要用她
+
+// Bob 也拿同一個 Discord 帳號來綁：一個網站帳號只綁一個遊戲帳號
+r = await dc('/link', bobToken, { code: (await (await dc('/link/start', dcToken, {})).json()).code });
+check('★ 同一個網站帳號改綁別的遊戲帳號：舊的那一邊解掉', r.status === 200
+  && (await (await dc('/me', dcToken)).json()).name === BOB.name
+  && !env.CORPUS.data.has('l:' + ALICE.id) && env.CORPUS.data.get('l:' + BOB.id).value === '111111111111111111');
+// 另一個 Discord 帳號來綁 Bob：一個遊戲帳號也只綁一個網站帳號
+discordUser = { id: '222222222222222222', username: 'second' };
+r = await page('/auth/discord');
+const second = new URL(r.headers.get('location')).searchParams.get('state');
+r = await oauthBack('code=goodcode&state=' + second, (r.headers.get('set-cookie') || '').split(';')[0]);
+const dcSecond = r.headers.get('location').match(/#t=(dc\.[^&]+)$/)[1];
+check('沒有顯示名稱的 Discord 帳號用使用者名稱', (await (await dc('/me', dcSecond)).json()).discord.name === 'second');
+r = await dc('/link', bobToken, { code: (await (await dc('/link/start', dcSecond, {})).json()).code });
+check('★ 同一個遊戲帳號改綁別的網站帳號：原本那個網站帳號變回沒綁', r.status === 200
+  && (await (await dc('/me', dcToken)).json()).linked === false
+  && (await (await dc('/me', dcSecond)).json()).name === BOB.name);
+r = await dc('/unlink', dcSecond, {});
+check('★ 解除綁定：網站帳號變回沒綁，遊戲那一邊的紀錄也清掉', r.status === 200
+  && (await (await dc('/me', dcSecond)).json()).linked === false && !env.CORPUS.data.has('l:' + BOB.id));
+check('解除綁定要登入', (await dc('/unlink', null, {})).status === 401);
+// 綁回 Alice，後面網頁的測試會用到
+await dc('/link', aliceToken, { code: (await (await dc('/link/start', dcToken, {})).json()).code });
 
 // ---- 報到與名單 ----
 r = await worker.fetch(post('/hello', { cape: true }), env);

@@ -983,9 +983,47 @@ public final class WynnChaYuan implements ClientModInitializer {
                                         .executes(context -> {
                                             openSettingsNextTick = true;
                                             return 1;
-                                        }));
+                                        })
+                                        // /wcy link <綁定碼>：把遊戲 ID 綁到網站帳號。見 Presence#link。
+                                        .then(net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+                                                .literal("link")
+                                                .executes(context -> {
+                                                    say("chat.link.usage");
+                                                    return 1;
+                                                })
+                                                .then(net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+                                                        .argument("code", com.mojang.brigadier.arguments
+                                                                .StringArgumentType.word())
+                                                        .executes(context -> {
+                                                            linkAccount(com.mojang.brigadier.arguments
+                                                                    .StringArgumentType.getString(context, "code"));
+                                                            return 1;
+                                                        }))));
                     }
                 });
+    }
+
+    /** {@code /wcy link <綁定碼>}：送出去，結果說在聊天欄。 */
+    private static void linkAccount(String code) {
+        say("chat.link.working");
+        Presence.link(code, result -> net.minecraft.client.Minecraft.getInstance().execute(() -> say(switch (result) {
+            case DONE -> "chat.link.done";
+            case BAD_CODE -> "chat.link.bad";
+            case UNKNOWN_CODE -> "chat.link.unknown";
+            case LOGIN_FAILED -> "chat.link.login";
+            case FAILED -> "chat.link.failed";
+        })));
+    }
+
+    /** 在聊天欄對玩家說一行（只有自己看得到）。 */
+    private static void say(String key) {
+        net.minecraft.client.Minecraft client = net.minecraft.client.Minecraft.getInstance();
+        if (client.player == null) {
+            return;
+        }
+        net.minecraft.network.chat.Component line = com.wynnchayuan.client.T.c(key);
+        com.wynnchayuan.capture.OwnOutputs.note(line);
+        client.player.displayClientMessage(line, false);
     }
 
     /** 把打完但還沒送出的對話收進 store。 */

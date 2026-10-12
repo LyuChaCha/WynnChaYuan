@@ -38,6 +38,8 @@ import java.util.function.Consumer;
  *       個人檔案（名字與外觀，本來就是公開資料）。私鑰與登入憑證不會離開遊戲。
  *       為什麼是這一套，見 {@link #login}。</li>
  *   <li><b>報到</b>（{@link #helloBody}）：要不要讓別人看到我的披風。就這一欄。</li>
+ *   <li><b>綁定網站帳號</b>（{@link #linkBody}）：玩家自己打 {@code /wcy link <綁定碼>} 才送，
+ *       送的就是他打的那組碼。</li>
  *   <li><b>上傳披風</b>：玩家在 F6 按了「上傳」才送，送的是他自己放進資料夾的那張圖。</li>
  * </ul>
  * 沒有所在的世界、沒有任何遊戲內容。F6 可以關掉報到；關掉之後照樣看得到別人，
@@ -262,6 +264,13 @@ public final class Presence {
         return o.toString();
     }
 
+    /** 綁定網站帳號時送的全部內容：玩家打的那組綁定碼。 */
+    static String linkBody(String code) {
+        JsonObject o = new JsonObject();
+        o.addProperty("code", code);
+        return o.toString();
+    }
+
     /** 報到時送的全部內容。 */
     static String helloBody(boolean cape) {
         JsonObject o = new JsonObject();
@@ -478,6 +487,74 @@ public final class Presence {
             }
             return response;
         }
+    }
+
+    // ------------------------------------------------------------ 綁定網站帳號
+
+    /** 綁定的結果。 */
+    public enum LinkResult {
+        DONE, BAD_CODE, UNKNOWN_CODE, LOGIN_FAILED, FAILED
+    }
+
+    /** 綁定碼的樣子：8 個字，沒有長得像的 0／O、1／I。跟 {@code worker.js} 的 LINK_CODE 同一條。 */
+    private static final java.util.regex.Pattern LINK_CODE =
+            java.util.regex.Pattern.compile("[A-HJ-NP-Z2-9]{8}");
+
+    /** 玩家打的字整理成綁定碼（大小寫、前後空白不計較）；不像綁定碼就回 {@code null}。 */
+    static String linkCode(String typed) {
+        if (typed == null) {
+            return null;
+        }
+        String code = typed.strip().toUpperCase(java.util.Locale.ROOT);
+        return LINK_CODE.matcher(code).matches() ? code : null;
+    }
+
+    static LinkResult linkResultOf(int status) {
+        return switch (status) {
+            case 200 -> LinkResult.DONE;
+            case 400 -> LinkResult.BAD_CODE;
+            case 404 -> LinkResult.UNKNOWN_CODE;
+            case 401 -> LinkResult.LOGIN_FAILED;
+            default -> LinkResult.FAILED;
+        };
+    }
+
+    /**
+     * 把這個遊戲帳號綁到網站帳號（使用者 2026-10-12：「像 Wynntils 一樣先註冊，然後再綁定
+     * 遊戲 ID」）。
+     *
+     * <p>網站帳號是用 Discord 註冊的，它證明不了遊戲帳號是誰的；所以網站給一組綁定碼，
+     * 玩家在遊戲裡打 {@code /wcy link <碼>}，由這裡帶著驗過身分的通行證把碼送回去。
+     * 只有玩家自己打了指令才會走到這裡。
+     *
+     * @param typed 玩家打的那組碼
+     * @param done  結果（在背景執行緒上叫）
+     */
+    public static void link(String typed, Consumer<LinkResult> done) {
+        String code = linkCode(typed);
+        if (code == null) {
+            done.accept(LinkResult.BAD_CODE);
+            return;
+        }
+        WORKER.execute(() -> {
+            LinkResult result;
+            try {
+                if (!login()) {
+                    result = LinkResult.LOGIN_FAILED;
+                } else {
+                    HttpResponse<byte[]> response = send(HttpRequest.newBuilder(
+                            URI.create(API + "/link"))
+                            .header("Content-Type", "application/json")
+                            .POST(HttpRequest.BodyPublishers.ofString(linkBody(code),
+                                    StandardCharsets.UTF_8)), true);
+                    result = linkResultOf(response.statusCode());
+                }
+            } catch (Throwable t) {
+                com.wynnchayuan.translate.ErrorDebug.note("presence.link", null, t);
+                result = LinkResult.FAILED;
+            }
+            done.accept(result);
+        });
     }
 
     // ------------------------------------------------------------ 披風

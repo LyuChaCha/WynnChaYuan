@@ -34,7 +34,43 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 ### 登入
 
-網站沒辦法自己確認 Minecraft 帳號，所以登入是**從遊戲裡開**：F6 →「徽章與披風」→「披風一覽」。模組拿它的通行證向 `/api/web-link` 換一條一天有效的網址（憑證在 `#` 後面，那一段不會送到任何伺服器），瀏覽器開了就是登入的。網頁把憑證收進 `localStorage`、從網址列上拿掉。
+兩條路，進來之後是同一個身分：
+
+1. **網站帳號（Discord）＋綁定遊戲 ID**——使用者 2026-10-12：「像 Wynntils 一樣先註冊，然後再綁定遊戲 ID」。
+   - 帳號頁按「用 Discord 登入」（OAuth，只要 `identify`：代號與顯示名稱）。第一次登入就是註冊。
+   - 登入後按「取得綁定碼」，網頁給一行 `/wcy link XXXXXXXX`（十分鐘內有效）。
+   - 玩家在遊戲裡打那一行。模組帶著它驗過身分的通行證把碼送來，兩邊就綁起來；網頁會自己更新。
+   - 之後用 Discord 在任何瀏覽器登入都是那個玩家，不必開遊戲。一個網站帳號綁一個遊戲帳號，重綁會把舊的解掉。
+2. **從遊戲裡直接開**：F6 →「徽章與披風」→「披風一覽」。模組拿它的通行證向 `/api/web-link` 換一條一天有效的網址，瀏覽器開了就是登入的。
+
+Discord 只證明 Discord 帳號。「這個遊戲帳號是本人」靠的是模組那張通行證（見下面〈身分怎麼驗〉），所以**綁定一定要從遊戲裡做**——讓人在網頁上自己填遊戲 ID 的話，誰都能把自己綁成開發者。
+
+兩條路的憑證都放在網址的 `#` 後面（那一段不會送到任何伺服器），網頁收進 `localStorage`、從網址列上拿掉。
+
+#### 開 Discord 登入要設的東西
+
+沒設的話「用 Discord 登入」的按鈕不會出現，其他功能照常。
+
+1. 到 <https://discord.com/developers/applications> 按 **New Application**，取個名字（玩家登入時會看到）。
+2. 左邊 **OAuth2**：記下 **Client ID**；按 **Reset Secret** 拿 **Client Secret**（只顯示一次）。
+3. 同一頁的 **Redirects** 加這兩條：
+
+   ```
+   https://wynnchayuan.com/auth/discord/callback
+   https://www.wynnchayuan.com/auth/discord/callback
+   ```
+
+4. 在這個資料夾把兩個值設成 secret（各跑一次，貼上值按 Enter）：
+
+   ```bash
+   npx wrangler secret put DISCORD_CLIENT_ID
+   ```
+
+   ```bash
+   npx wrangler secret put DISCORD_CLIENT_SECRET
+   ```
+
+不需要 Bot、不需要其他 scope。設好不必重新部署，`/api/status` 的 `discord` 會變成 `true`。
 
 ## API
 
@@ -43,6 +79,11 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `POST /api/challenge` | | 出一道題（登入的第一步） |
 | `POST /api/login` | 憑證、對題目的簽名、個人檔案 | 驗過身分就發通行證（模組用） |
 | `POST /api/web-link` | | 拿一條替瀏覽器登入的網址（要通行證） |
+| `GET /auth/discord` | | 去 Discord 登入（網站帳號） |
+| `GET /auth/discord/callback` | | Discord 登入完回來的地方 |
+| `POST /api/link/start` | | 網站帳號要一組綁定碼 |
+| `POST /api/link` | `{code}` | 遊戲裡打 `/wcy link` 送來的：把遊戲 ID 綁到那個網站帳號（要模組的通行證） |
+| `POST /api/unlink` | | 網站帳號解除綁定 |
 | `GET /api/me` | | 我是誰、有沒有披風、是不是開發者（要通行證） |
 | `POST /api/hello` | `{cape}` | 報到（要通行證） |
 | `GET /api/list` | | 名單：有裝的人、有上傳披風的人、關掉披風的人 |
@@ -60,6 +101,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 ## 它記什麼
 
 - **記的**：玩家的 UUID（當成鍵）、要不要顯示披風、哪一天報到的；上傳的披風圖檔，連同上傳的人的帳號名（管理的人要知道是誰傳的）；被封禁的人（UUID、帳號名、時間、誰封的）。十四天沒再報到就從名單上消失；圖檔留著，回來報到就又出現。
+- **網站帳號**：Discord 的代號與顯示名稱；綁了遊戲 ID 的話再加 UUID、遊戲名字與綁定時間。不拿 email、不拿伺服器清單，Discord 給的存取憑證用完就丟。
 - **不記的**：IP、所在的世界、任何遊戲內容。
 - **公開的名單與一覽不放 UUID 與帳號名**：放的是 UUID 雜湊出來的代碼。誰傳了哪一件只有開發者看得到。
 
@@ -156,7 +198,7 @@ npx.cmd wrangler deploy
 node tools/presence/dev.mjs
 ```
 
-用放在記憶體裡的假資料跑同一支 Worker，塞了 `capes/templates` 的示範披風與一筆封禁。真的登入要連 Mojang，這裡沒有接，改成 `/dev-login?as=dev`（當成開發者）與 `/dev-login?as=user`（當成一般玩家）。
+用放在記憶體裡的假資料跑同一支 Worker，塞了 `capes/templates` 的示範披風與一筆封禁。真的登入這裡沒有接，改成 `/dev-login?as=dev`（當成開發者）、`/dev-login?as=user`（當成一般玩家）、`/dev-login?as=discord`（剛用 Discord 註冊、還沒綁）；`/dev-link?code=XXXXXXXX` 假裝遊戲裡打了 `/wcy link`。
 
 ## 測試
 
