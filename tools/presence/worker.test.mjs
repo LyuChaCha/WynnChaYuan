@@ -523,18 +523,44 @@ check('英文版的帳號頁用的是遊戲裡英文介面的字',
   ['F6', 'Badge &amp; cape', 'Let others know I use this mod', 'Cape gallery'].every((w) => english['/account'].includes(w)));
 
 // ---- ★ 網站的語言 ----
-check('有中文與英文', LANGS.join() === 'zh,en' && PATHS.join() === '/,/capes,/account,/admin');
+const WANTED = ['zh', 'zh-cn', 'en', 'ja', 'ko', 'ru', 'es', 'tr'];
+check('★ 八種語言都在，選單照這個順序（實際 ' + LANGS.join() + '）', LANGS.join() === WANTED.join()
+  && PATHS.join() === '/,/capes,/account,/admin');
 const keysOf = (o, at) => Object.entries(o).flatMap(([k, v]) =>
   (v && typeof v === 'object' ? keysOf(v, at + k + '.') : [at + k]));
-check('★ 兩種語言的鍵一模一樣（少翻一條就是一塊空白）',
-  keysOf(TEXT.zh, '').sort().join() === keysOf(TEXT.en, '').sort().join());
 const valuesOf = (o) => Object.values(o).flatMap((v) => (v && typeof v === 'object' ? valuesOf(v) : [v]));
-check('每一條都有字', LANGS.every((l) => valuesOf(TEXT[l]).every((v) => typeof v === 'string' && v.trim().length > 0)));
-// 看得到的字：拿掉程式與樣式、標籤；語言切換上的「中文」與首頁的語言清單本來就是各寫各的
+const wantedKeys = keysOf(TEXT.en, '').sort().join();
+const marks = (text) => (String(text).match(/\{\w+\}|<[^>]+>/g) || []).sort().join(' ');
+for (const lang of LANGS) {
+  check('★ ' + lang + '：鍵跟英文一模一樣（少翻一條就是一塊英文）', keysOf(TEXT[lang], '').sort().join() === wantedKeys);
+  check(lang + '：每一條都有字', valuesOf(TEXT[lang]).every((v) => typeof v === 'string' && v.trim().length > 0));
+  // 網址、標籤、{n} 這種位置在每個語言都要原樣在：少一個 {n} 畫面上就少一個數字
+  const broken = [];
+  const walk = (en, own, at) => {
+    for (const [k, v] of Object.entries(en)) {
+      if (v && typeof v === 'object') walk(v, (own && own[k]) || {}, at + k + '.');
+      else if (k !== 'html' && lang !== 'zh' && marks(v) !== marks(own ? own[k] : '')) broken.push(at + k);
+    }
+  };
+  walk(TEXT.en, TEXT[lang], '');
+  check('★ ' + lang + '：標籤、連結與 {n} 這類位置都跟英文一樣' + (broken.length ? '（' + broken.slice(0, 4).join('、') + '）' : ''),
+    broken.length === 0);
+  const home = await (await inLang('/?lang=' + lang, {})).text();
+  check(lang + '：首頁填滿了、html 的 lang 是 ' + TEXT[lang].html, !/%%[\w.]+%%/.test(home)
+    && home.includes('<html lang="' + TEXT[lang].html + '">')
+    && home.includes('<option value="' + lang + '" selected'));
+  for (const path of PATHS) {
+    const html = await (await inLang(path + '?lang=' + lang, {})).text();
+    check(lang + ' 的 ' + path + ' 沒有會被樣板字串吃掉的寫法、也沒有漏掉的鍵',
+      !html.includes(String.fromCharCode(96)) && !html.includes('$' + '{') && !/%%[\w.]+%%/.test(html));
+  }
+}
+check('html 上的語言標籤各不相同', new Set(LANGS.map((l) => TEXT[l].html)).size === LANGS.length);
+// 看得到的字：拿掉程式與樣式、標籤；語言選單與首頁的語言清單本來就是各寫各的
 const visible = (html) => html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ')
-  .replace(/<span class="chip">[^<]*<\/span>/g, ' ').replace(/<button type="button" value="zh"[^<]*<\/button>/g, ' ')
+  .replace(/<span class="chip">[^<]*<\/span>/g, ' ').replace(/<select class="lang"[\s\S]*?<\/select>/g, ' ')
   .replace(/<[^>]+>/g, ' ');
-const cjk = /[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]/;
+const cjk = /[㐀-鿿＀-￯　-〿]/;
 for (const path of PATHS) {
   const left = visible(english[path]).match(cjk);
   check('★ 英文版的 ' + path + ' 看得到的字裡沒有中文' + (left ? '（' + left[0] + '）' : ''), !left);
@@ -542,21 +568,40 @@ for (const path of PATHS) {
   check('英文版的 ' + path + ' 程式用的字也沒有中文', strings.length > 100 && !cjk.test(strings));
   check('中文版的 ' + path + ' 真的是中文', cjk.test(visible(pages[path])));
 }
-check('兩頁的語言切換都在，按下的是現在這一種',
-  english['/'].includes('value="en" aria-pressed="true"') && english['/'].includes('value="zh" aria-pressed="false"')
-  && pages['/'].includes('value="zh" aria-pressed="true"'));
+// 每一種語言真的是那一種語言：看得到的字裡有它自己的文字
+const SCRIPT = { 'zh-cn': /[一-鿿]/, ja: /[぀-ヿ]/, ko: /[가-힯]/, ru: /[Ѐ-ӿ]/,
+  es: /[áéíóúñ¿¡]/i, tr: /[ığşçöüİ]/ };
+for (const [lang, own] of Object.entries(SCRIPT)) {
+  const account = visible(await (await inLang('/account?lang=' + lang, {})).text());
+  check('★ ' + lang + ' 的帳號頁真的是那個語言', own.test(account));
+}
+check('簡體不是繁體照搬：帳號頁沒有繁體才有的字', !/[帳號檔說這個們]/.test(
+  visible(await (await inLang('/account?lang=zh-cn', {})).text())));
+check('語言選單是下拉、八種都在、選著的是現在這一種',
+  english['/'].includes('<select class="lang" id="lang"') && english['/'].includes('<option value="en" selected')
+  && pages['/'].includes('<option value="zh" selected') && WANTED.every((l) => english['/'].includes('<option value="' + l + '"'))
+  && ['繁體中文', '简体中文', 'English', '日本語', '한국어', 'Русский', 'Español', 'Türkçe'].every((n) => english['/'].includes('>' + n + '</option>')));
 check('pickLang：選過的優先', pickLang('a=1; lang=zh', 'en-US,en;q=0.9') === 'zh'
-  && pickLang('lang=en', 'zh-TW') === 'en');
+  && pickLang('lang=en', 'zh-TW') === 'en' && pickLang('lang=zh-cn', 'en') === 'zh-cn' && pickLang('lang=ja', 'en') === 'ja');
 check('pickLang：沒選過看瀏覽器，照它排的順序', pickLang('', 'zh-TW,zh;q=0.9,en;q=0.8') === 'zh'
-  && pickLang(null, 'en-GB,zh;q=0.5') === 'en' && pickLang('', 'zh-CN') === 'zh');
-check('pickLang：別的語言、什麼都沒有、亂填的 cookie 都給英文', pickLang('', 'ja,ko;q=0.9') === 'en'
-  && pickLang(null, null) === 'en' && pickLang('lang=xx', '') === 'en' && pickLang('lang=__proto__', 'tr') === 'en');
-check('pickLang：日文排在中文前面的人，給他排得到的第一個我們有的', pickLang('', 'ja,zh-TW;q=0.8,en;q=0.5') === 'zh');
+  && pickLang(null, 'en-GB,zh;q=0.5') === 'en' && pickLang('', 'ja,zh-TW;q=0.8,en;q=0.5') === 'ja');
+check('★ pickLang：簡體的瀏覽器給簡體，台灣、香港、只寫 zh 的給繁體', pickLang('', 'zh-CN,zh;q=0.9') === 'zh-cn'
+  && pickLang('', 'zh-Hans-CN') === 'zh-cn' && pickLang('', 'zh-SG') === 'zh-cn'
+  && pickLang('', 'zh-TW') === 'zh' && pickLang('', 'zh-HK') === 'zh' && pickLang('', 'zh-Hant') === 'zh' && pickLang('', 'zh') === 'zh');
+check('★ pickLang：日、韓、俄、西、土各給各的', pickLang('', 'ja-JP') === 'ja' && pickLang('', 'ko-KR,ko;q=0.9') === 'ko'
+  && pickLang('', 'ru') === 'ru' && pickLang('', 'es-MX,es;q=0.9') === 'es' && pickLang('', 'tr-TR') === 'tr');
+check('pickLang：我們沒有的語言、什麼都沒有、亂填的 cookie 都給英文', pickLang('', 'fr-FR,de;q=0.9') === 'en'
+  && pickLang(null, null) === 'en' && pickLang('lang=xx', '') === 'en' && pickLang('lang=__proto__', 'fr') === 'en'
+  && pickLang('lang=constructor', '') === 'en');
+check('pickLang：我們沒有的排前面，給他排得到的第一個我們有的', pickLang('', 'fr,de;q=0.9,ko;q=0.8,en;q=0.5') === 'ko');
 r = await inLang('/capes', { 'accept-language': 'zh-TW,zh;q=0.9' });
-check('★ 沒選過：中文的瀏覽器拿到中文', (await r.text()).includes('<html lang="zh-Hant">')
+check('★ 沒選過：繁體的瀏覽器拿到繁體', (await r.text()).includes('<html lang="zh-Hant">')
   && r.headers.get('content-language') === 'zh-Hant');
 r = await inLang('/capes', { 'accept-language': 'tr-TR,tr;q=0.9' });
-check('★ 沒選過：其他語言的瀏覽器拿到英文', (await r.text()).includes('<html lang="en">')
+check('★ 沒選過：土耳其文的瀏覽器拿到土耳其文', (await r.text()).includes('<html lang="tr">')
+  && r.headers.get('content-language') === 'tr');
+r = await inLang('/capes', { 'accept-language': 'fr-FR,fr;q=0.9' });
+check('★ 沒選過：我們沒有的語言拿到英文', (await r.text()).includes('<html lang="en">')
   && r.headers.get('content-language') === 'en');
 r = await inLang('/capes', {});
 check('什麼都沒帶：英文', (await r.text()).includes('<html lang="en">'));

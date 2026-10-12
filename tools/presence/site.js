@@ -3,15 +3,18 @@
  *
  * 四頁共用一份樣式、頁首與頁尾，各自一段程式。全部是靜態的字串，資料都跟 /api 要。
  *
- * 語言：字都在下面的 TEXT 裡，頁面的樣板用 %%鍵%% 標位置，render() 填進去。
- * 用哪一種由 worker 決定（訪客選過的那個 cookie，沒選過就看瀏覽器的語言）；
- * 頁首右邊可以切換。加一種語言就是在 TEXT 加一份。
+ * 語言：頁面的樣板用 %%鍵%% 標位置，render() 填進去。繁體中文與英文的字在下面的 TEXT
+ * （這兩份是正本，改字先改這裡）；其他語言在 lang/<代碼>.json，由 build-site-text.mjs
+ * 併成 site-text.js。用哪一種由 worker 決定（訪客選過的那個 cookie，沒選過就看瀏覽器的
+ * 語言）；頁首右邊可以切換。加一種語言就是在 lang/ 加一份、在 LANG_NAMES 加一個名字。
  *
  * 登入：網站沒辦法自己確認 Minecraft 帳號，所以是<b>從遊戲裡開</b>——模組拿通行證換一條
  * 網址（#t=…），這裡把它收進 localStorage、從網址列上拿掉，之後每個 API 請求帶著它。
  *
  * 頁面裡的程式刻意不用樣板字串（反引號、錢字號加大括號）：整頁是包在樣板字串裡的。
  */
+
+import { MORE_TEXT } from './site-text.js';
 
 const STYLE = String.raw`
   :root {
@@ -44,9 +47,12 @@ const STYLE = String.raw`
   nav a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
   nav a[aria-current="page"] { color: var(--ink); background: var(--panel-2); }
   .tools { margin-left: auto; display: flex; align-items: center; gap: 14px; }
-  .lang { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-  .lang button { font: inherit; font-size: 12px; padding: 4px 9px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer; }
-  .lang button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); }
+  select.lang { width: auto; font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-2); cursor: pointer; }
+  select.lang:hover { color: var(--ink); border-color: var(--leaf-deep); }
+  /* 同一個漢字在各語言的寫法不一樣：照頁面的語言挑字型，不要一律拿繁體中文的字型去畫 */
+  :lang(zh-Hans) body { font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif; }
+  :lang(ja) body { font-family: "Segoe UI", "Yu Gothic UI", "Hiragino Sans", "Noto Sans JP", "Meiryo", system-ui, sans-serif; }
+  :lang(ko) body { font-family: "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
   .me { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); }
   .me img { width: 22px; height: 22px; border-radius: 4px; image-rendering: pixelated; }
   main { flex: 1; width: 100%; max-width: 1120px; margin: 0 auto; padding: 44px 20px 72px; }
@@ -424,8 +430,21 @@ export const TEXT = {
   },
 };
 
-/** 有哪幾種語言。 */
-export const LANGS = Object.keys(TEXT);
+Object.assign(TEXT, MORE_TEXT);
+
+/** 語言選單上每一種語言叫什麼（用它自己的話寫），也是選單的順序。 */
+const LANG_NAMES = {
+  zh: '繁體中文', 'zh-cn': '简体中文', en: 'English', ja: '日本語', ko: '한국어',
+  ru: 'Русский', es: 'Español', tr: 'Türkçe',
+};
+
+/** 有哪幾種語言：有名字、也真的有字的那幾種。 */
+export const LANGS = Object.keys(LANG_NAMES).filter((code) => Object.hasOwn(TEXT, code));
+
+/** 這個語言的頁面寫在 html 上的標籤（zh-Hant、ja…）。 */
+export function tagOf(lang) {
+  return Object.hasOwn(TEXT, lang) && TEXT[lang].html ? TEXT[lang].html : 'en';
+}
 
 // ------------------------------------------------------------------ 每一頁都有的程式
 
@@ -458,12 +477,10 @@ const COMMON = String.raw`
   }
   function bytes(n) { return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB'; }
   /* 換語言：記在 cookie 裡（伺服器照它挑頁面），重新載入。 */
-  Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function (button) {
-    button.onclick = function () {
-      document.cookie = 'lang=' + button.value + '; path=/; max-age=31536000; samesite=lax';
-      location.replace(location.pathname);     /* 網址上的 ?lang= 比 cookie 優先，要拿掉 */
-    };
-  });
+  document.getElementById('lang').onchange = function () {
+    document.cookie = 'lang=' + this.value + '; path=/; max-age=31536000; samesite=lax';
+    location.replace(location.pathname);     /* 網址上的 ?lang= 比 cookie 優先，要拿掉 */
+  };
   /* 我是誰。沒登入、或通行證過期了，就是 null。 */
   var whoami = !token() ? Promise.resolve(null) : api('/me').then(function (r) {
     if (r.status === 401) { try { localStorage.removeItem(TOKEN_KEY); } catch (e) {} return null; }
@@ -494,15 +511,12 @@ const COMMON = String.raw`
   });
 `;
 
-/** 語言切換上每一種語言叫什麼（用它自己的話寫）。 */
-const LANG_NAMES = { zh: '中文', en: 'English' };
-
 function layout(lang, title, active, body, script) {
   const nav = [['/', 'nav.home'], ['/capes', 'nav.capes'], ['/account', 'nav.account']]
     .map(([href, key]) => '<a href="' + href + '"' + (href === active ? ' aria-current="page"' : '')
       + '>%%' + key + '%%</a>').join('');
-  const switcher = LANGS.map((code) => '<button type="button" value="' + code + '" aria-pressed="'
-    + (code === lang) + '">' + LANG_NAMES[code] + '</button>').join('');
+  const switcher = LANGS.map((code) => '<option value="' + code + '"' + (code === lang ? ' selected' : '')
+    + ' lang="' + tagOf(code) + '">' + LANG_NAMES[code] + '</option>').join('');
   return '<!doctype html>\n<html lang="%%html%%">\n<head>\n<meta charset="utf-8">\n'
     + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
     + '<meta name="color-scheme" content="dark">\n'
@@ -517,7 +531,7 @@ function layout(lang, title, active, body, script) {
     + '<nav aria-label="%%nav.label%%">' + nav
     + '<a href="/admin" id="nav-admin" hidden' + (active === '/admin' ? ' aria-current="page"' : '')
     + '>%%nav.admin%%</a></nav>'
-    + '<div class="tools"><div class="lang" role="group" aria-label="%%lang.label%%">' + switcher + '</div>'
+    + '<div class="tools"><select class="lang" id="lang" aria-label="%%lang.label%%">' + switcher + '</select>'
     + '<div class="me" id="me"></div></div>'
     + '</div></div>\n<main>' + body + '</main>\n'
     + '<footer><div class="in"><span>© 2026 WynnChaYuan - All rights reserved.</span>'
@@ -1146,7 +1160,7 @@ export function render(path, lang) {
   const code = Object.hasOwn(TEXT, lang) ? lang : 'en';
   const key = code + ' ' + path;
   if (!built.has(key)) {
-    const text = TEXT[code];
+    const text = filled(code);
     const [title, body, script] = PAGES[path];
     const html = layout(code, '%%' + title + '%%', path, body, script)
       .replace(/%%([\w.]+)%%/g, (all, name) => {
@@ -1158,6 +1172,28 @@ export function render(path, lang) {
   return built.get(key);
 }
 
+/** 這個語言的字，缺的拿英文補：新加的字還沒翻到的語言不會冒出一個 %%鍵%%。 */
+function filled(code) {
+  const own = TEXT[code];
+  if (code === 'en') return own;
+  const base = TEXT.en;
+  const js = { ...base.js, ...(own.js || {}) };
+  js.why = { ...base.js.why, ...((own.js && own.js.why) || {}) };
+  js.credit = { ...base.js.credit, ...((own.js && own.js.credit) || {}) };
+  return { ...base, ...own, js };
+}
+
+/** 瀏覽器說的語言標籤（已經轉小寫）對到我們有的哪一種；沒有回 null。 */
+function fromTag(tag) {
+  if (tag === 'zh' || tag.startsWith('zh-')) {
+    // 簡體：zh-CN、zh-SG、zh-MY、zh-Hans…；其餘（台灣、香港、澳門、只寫 zh 的）給繁體
+    const simplified = /^zh-(?:cn|sg|my|hans)\b/.test(tag) && LANGS.includes('zh-cn');
+    return simplified ? 'zh-cn' : 'zh';
+  }
+  const primary = tag.split('-')[0];
+  return primary !== 'zh' && LANGS.includes(primary) ? primary : null;
+}
+
 /**
  * 訪客要看哪一種語言：選過的（cookie）優先，沒選過看瀏覽器的語言，再沒有就英文。
  *
@@ -1165,12 +1201,11 @@ export function render(path, lang) {
  * @param accept Accept-Language 標頭
  */
 export function pickLang(cookie, accept) {
-  const chosen = /(?:^|;\s*)lang=([a-z]+)/.exec(cookie || '');
+  const chosen = /(?:^|;\s*)lang=([a-z-]+)/.exec(cookie || '');
   if (chosen && LANGS.includes(chosen[1])) return chosen[1];
   for (const part of String(accept || '').toLowerCase().split(',')) {
-    const tag = part.split(';')[0].trim();
-    if (tag.startsWith('zh')) return 'zh';
-    if (tag.startsWith('en')) return 'en';
+    const hit = fromTag(part.split(';')[0].trim());
+    if (hit) return hit;
   }
   return 'en';
 }

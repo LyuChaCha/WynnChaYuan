@@ -14,6 +14,7 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 | `worker.js` | API 與路由 |
 | `site.js` | 四張網頁（共用樣式、頁首、頁尾），中文與英文 |
 | `mojang-keys.js` | 釘住的 Mojang 公鑰（`update-mojang-keys.mjs` 產生的） |
+| `lang/*.json`、`site-text.js` | 其他語言的字，與 `build-site-text.mjs` 併出來給 Worker 讀的那一份 |
 | `icons.js` | 網站的圖示（`make-icons.py` 從 `logo/2026` 縮出來的；`/favicon.png`、`/icon-192.png`、`/apple-touch-icon.png`） |
 | `worker.test.mjs` | `node tools/presence/worker.test.mjs` |
 | `dev.mjs` | 在本機用假資料開網站來看 |
@@ -29,9 +30,19 @@ Worker 的名字還是 `wynnchayuan-corpus`（沿用語料收集站那一支與�
 
 ### 語言
 
-中文與英文各一份。字都在 `site.js` 的 `TEXT`，頁面樣板用 `%%鍵%%` 標位置；加一種語言就是在 `TEXT` 加一份（測試會比兩邊的鍵是不是一樣）。
+八種：繁體中文、简体中文、English、日本語、한국어、Русский、Español、Türkçe（跟模組支援的語言一樣）。
 
-用哪一種：網址上的 `?lang=en`／`?lang=zh`（貼連結給人用）> 訪客在頁首選過的（記在 `lang` 這個 cookie）> 瀏覽器的語言 > 英文。
+- 繁體中文與英文的字在 `site.js` 的 `TEXT`，這兩份是正本；頁面樣板用 `%%鍵%%` 標位置。
+- 其他語言一個檔一種，在 `lang/<代碼>.json`，鍵跟英文那一份一樣。改完要重跑：
+
+  ```bash
+  node tools/presence/build-site-text.mjs
+  ```
+
+  它把 `lang/*.json` 併成 `site-text.js`（Worker 讀的是這一份）。少翻的鍵網頁會拿英文補，測試會指出是哪幾條。
+- 加一種語言：在 `lang/` 加一份、在 `site.js` 的 `LANG_NAMES` 加它的名字。
+
+用哪一種：網址上的 `?lang=ja`（貼連結給人用）> 訪客在頁首選過的（記在 `lang` 這個 cookie）> 瀏覽器的語言 > 英文。簡體的瀏覽器（`zh-CN`、`zh-SG`、`zh-Hans`）給簡體，其餘的中文給繁體。
 
 ### 登入
 

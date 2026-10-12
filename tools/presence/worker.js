@@ -41,7 +41,7 @@
  * 部署方式見同一個資料夾的 README.md。
  */
 
-import { LANGS, PATHS, pickLang, render } from './site.js';
+import { LANGS, PATHS, pickLang, render, tagOf } from './site.js';
 import { CERT_KEYS, PROFILE_KEYS } from './mojang-keys.js';
 import { APPLE_TOUCH, FAVICON, ICON_192 } from './icons.js';
 
@@ -1248,7 +1248,7 @@ function page(html, lang) {
   return new Response(html, {
     headers: {
       'content-type': 'text/html; charset=utf-8',
-      'content-language': lang === 'zh' ? 'zh-Hant' : lang,
+      'content-language': tagOf(lang),
       'cache-control': 'no-store',
       vary: 'Cookie, Accept-Language',
       'referrer-policy': 'no-referrer',
