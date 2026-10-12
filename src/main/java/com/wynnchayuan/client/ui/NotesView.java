@@ -37,6 +37,14 @@ public final class NotesView extends Surface {
 
         void download();
 
+        /**
+         * 「在遊戲裡更新」那顆按鈕上的字：還沒按、下載到幾成、下載好了、失敗了。
+         * 這個環境不能在遊戲裡更新（找不到自己的 jar）就回 {@code null}，按鈕不出現。
+         */
+        String updateLabel();
+
+        void update();
+
         void close();
     }
 
@@ -170,8 +178,16 @@ public final class NotesView extends Surface {
         if (newer != null) {
             String download = shell.tr("notes.download", newer);
             float dw = Math.min(buttonWidth(download) + 8, end - left);
-            button("download", end - dw, by, dw, 18, download, true, true, null, host::download);
-            end -= dw + 8;
+            String update = host.updateLabel();
+            // 能在遊戲裡更新的時候，那一顆是主要的；去 GitHub 下載的退成次要的
+            button("download", end - dw, by, dw, 18, download, true, update == null, null,
+                    host::download);
+            end -= dw + 5;
+            if (update != null && end - left > 40) {
+                float uw = Math.min(buttonWidth(update) + 8, end - left);
+                button("update", end - uw, by, uw, 18, update, true, true, null, host::update);
+                end -= uw + 8;
+            }
         }
         if (maxScroll > 0 && end - left > 60) {
             c.text(Ui.fit(c, shell.tr("notes.scroll"), (int) (end - left)), left, by + 5,

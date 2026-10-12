@@ -1,12 +1,63 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "1.0.1_1",
+ "latest": "1.0.2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "1.0.2": {
+   "headline": "1.0.2: capes, leaves for everyone, a website and in-game updates",
+   "items": [
+    "Capes: wear your own WynnChaYuan cape, visible to other players who have the mod. Upload it under F6 > Badge & cape; the preview can be dragged around. Anyone can upload a PNG (1 MB); GIFs and the 20 MB limit are for developers, sponsors and contributors. Capes can be up to 1056×816. Templates are in capes/templates on GitHub.",
+    "Leaves before names: gold for developers, cyan for sponsors, green for contributors, and grey for everyone else with the mod. Players with the mod see each other's, including a developer's rainbow leaf and which leaves you chose to show.",
+    "New website, wynnchayuan.com, in eight languages: a cape gallery and an account page. You can register with Discord, then type `/wcy link <code>` in game to link your game ID.",
+    "For the two features above, the mod checks in with wynnchayuan.com when you join Wynncraft (your UUID, your public profile, a public key and signature that prove the account is yours, and your cape and badge settings). No game content is sent. There is no switch for this: everyone with the mod has a leaf.",
+    "The release notes screen has an Update button: it downloads the new version and swaps it in when you close the game.",
+    "Names of quests, caves, discoveries and other content can be shown translated, translated with the original, or left in the original.",
+    "Traditional Chinese: Mythic gear now has translated names, and Shiny items have a new name.",
+    "Fixed: with WynnMod installed, the four lines of the raid summary stayed in English.",
+    "Fixed: the Lootrun section of the scoreboard was split across the wrong lines, and curses in the left column of the beacon panel stayed in English.",
+    "Fixed: effect names in the Wynntils status overlay were replaced by gear of the same name.",
+    "Fixed: with names set to translated plus original, some tome names stayed in English; Wynnventory now puts the original on its own line; names of crafted items are no longer translated.",
+    "Translations: more than three thousand new lines of quest dialogue, mob nameplates and menus recorded in game, across all languages, including Japanese by yool141."
+   ],
+   "zh_tw": {
+    "headline": "1.0.2：披風、人人都有的葉子、網站與遊戲內更新",
+    "items": [
+     "披風：可以穿上自己的 WynnChaYuan 披風，其他裝了模組的玩家看得到。在 F6「徽章與披風」上傳，預覽可以拖曳旋轉。PNG 大家都能傳（1 MB）；GIF 與 20 MB 的上限給開發者、贊助者、貢獻者。披風最大可以到 1056×816。範本在 GitHub 的 capes/templates。",
+     "名字前面的葉子：開發者金色、贊助者青藍色、貢獻者綠色，其他裝了模組的玩家是灰色。裝了模組的玩家互相看得到，包含開發者的彩色模式與你選了要展示哪幾片。",
+     "新網站 wynnchayuan.com，有八種語言：披風一覽與帳號頁。可以用 Discord 註冊，再在遊戲裡輸入 `/wcy link 綁定碼` 綁定遊戲 ID。",
+     "為了上面兩項，模組在你進 Wynncraft 時會向 wynnchayuan.com 報到（你的 UUID、公開的個人檔案、用來證明帳號是本人的公鑰與簽章，以及披風與徽章的設定）。不送任何遊戲內容。這一項沒有開關：裝了模組的人都有葉子。",
+     "更新說明的畫面多一顆「直接更新」：按了就下載新版，關遊戲時自動換上。",
+     "任務、洞窟、探索點等內容的名稱，可以選譯名、譯名加原文，或保留原文。",
+     "繁體中文：Mythic 裝備有譯名了，Shiny 物品也換了新的叫法。",
+     "修正：有裝 WynnMod 時，討伐戰結算的四列留成英文。",
+     "修正：記分板的 Lootrun 那一段被切錯行，信標面板左欄的詛咒留成英文。",
+     "修正：Wynntils 狀態效果列的效果名被換成同名的裝備。",
+     "修正：物品名稱設成「譯名加原文」時，部分書卷的名稱留成英文；Wynnventory 的原文改成自己一行；玩家製作物的名字不再被翻譯。",
+     "譯文：實機收到的任務對話、怪物名牌與介面三千多條（各語言），包含 yool141 提供的日文。"
+    ]
+   },
+   "zh_cn": {
+    "headline": "1.0.2：披风、人人都有的叶子、网站与游戏内更新",
+    "items": [
+     "披风：可以穿上自己的 WynnChaYuan 披风，其他装了模组的玩家看得到。在 F6「徽章与披风」上传，预览可以拖动旋转。PNG 大家都能传（1 MB）；GIF 与 20 MB 的上限给开发者、赞助者、贡献者。披风最大可以到 1056×816。模板在 GitHub 的 capes/templates。",
+     "名字前面的叶子：开发者金色、赞助者青蓝色、贡献者绿色，其他装了模组的玩家是灰色。装了模组的玩家互相看得到，包含开发者的彩色模式与你选了要展示哪几片。",
+     "新网站 wynnchayuan.com，有八种语言：披风一览与账号页。可以用 Discord 注册，再在游戏里输入 `/wcy link 绑定码` 绑定游戏 ID。",
+     "为了上面两项，模组在你进 Wynncraft 时会向 wynnchayuan.com 报到（你的 UUID、公开的个人资料、用来证明账号是本人的公钥与签名，以及披风与徽章的设置）。不发送任何游戏内容。这一项没有开关：装了模组的人都有叶子。",
+     "更新说明的界面多一个「直接更新」：点了就下载新版，关游戏时自动换上。",
+     "任务、洞窟、探索点等内容的名称，可以选译名、译名加原文，或保留原文。",
+     "繁体中文：Mythic 装备有译名了，Shiny 物品也换了新的叫法。",
+     "修正：装了 WynnMod 时，副本结算的四行留成英文。",
+     "修正：记分板的 Lootrun 那一段被切错行，信标面板左栏的诅咒留成英文。",
+     "修正：Wynntils 状态效果栏的效果名被换成同名的装备。",
+     "修正：物品名称设成「译名加原文」时，部分书卷的名称留成英文；Wynnventory 的原文改成自己一行；玩家制作物的名字不再被翻译。",
+     "译文：实机收到的任务对话、怪物名牌与界面三千多条（各语言），包含 yool141 提供的日文。"
+    ]
+   }
+  },
   "1.0.1_1": {
    "headline": "1.0.1_1: WynnMod tooltips, item name fixes",
    "items": [

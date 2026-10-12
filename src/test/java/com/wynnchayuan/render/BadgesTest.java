@@ -140,6 +140,34 @@ public final class BadgesTest {
                         "Multi_Role", "multi_role", config, 0)).get(1) == GREEN);
         check("自己：開了彩色，開發者那片不再是金色", icons(Badges.decorate(
                 Component.literal("Multi_Role"), "Multi_Role", "multi_role", config, 500)).get(0) != GOLD);
+        // ★ 別人報到時帶的選擇（使用者 2026-10-12：「我有開啟全彩模式，他看我也只是金色而已」）
+        com.wynnchayuan.Presence.BadgeChoice rainbowOn =
+                new com.wynnchayuan.Presence.BadgeChoice(true, null);
+        List<Integer> gold = icons(Badges.decorate(Component.literal("Solo_Dev"),
+                "Solo_Dev", "Someone", config, 500, true));
+        List<Integer> theirRainbow = icons(Badges.decorate(Component.literal("Solo_Dev"),
+                "Solo_Dev", "Someone", config, 500, true, rainbowOn));
+        check("★ 別的開發者開了彩色：我這邊看到的也不是金色", gold.size() == 1 && theirRainbow.size() == 1
+                && !gold.equals(theirRainbow));
+        check("★ 彩色是開發者的：貢獻者帶著「彩色」來也還是綠色",
+                icons(Badges.decorate(Component.literal("Leafy"), "Leafy", "Someone", config, 500, true, rainbowOn))
+                        .equals(icons(Badges.decorate(Component.literal("Leafy"), "Leafy", "Someone", config, 500, true))));
+        List<Integer> registeredPair = icons(Badges.decorate(Component.literal("Multi_Role"),
+                "Multi_Role", "Someone", config, 0, true));
+        List<Integer> onlyOne = icons(Badges.decorate(Component.literal("Multi_Role"),
+                "Multi_Role", "Someone", config, 0, true,
+                new com.wynnchayuan.Presence.BadgeChoice(false, List.of("developers"))));
+        check("★ 別人挑了只展示開發者那一片：我這邊也只畫那一片（登記的是 " + registeredPair.size() + " 片）",
+                onlyOne.size() == 1 && registeredPair.size() >= 1);
+        check("★ 挑了他沒有的身分：畫不出不屬於他的葉子，而且至少留一片",
+                icons(Badges.decorate(Component.literal("Leafy"), "Leafy", "Someone", config, 0, true,
+                        new com.wynnchayuan.Presence.BadgeChoice(false, List.of("developers")))).size() == 1
+                        && icons(Badges.decorate(Component.literal("Leafy"), "Leafy", "Someone", config, 0, true,
+                        new com.wynnchayuan.Presence.BadgeChoice(false, List.of("developers"))))
+                        .equals(icons(Badges.decorate(Component.literal("Leafy"), "Leafy", "Someone", config, 0, true))));
+        check("不在名單上的人帶著選擇來：還是只有灰色那一片",
+                icons(Badges.decorate(Component.literal("Nobody"), "Nobody", "Someone", config, 0, true, rainbowOn))
+                        .size() == 1);
         check("別人不受本機的選擇影響", icons(Badges.decorate(Component.literal("Multi_Role"),
                 "Multi_Role", "Someone", config, 0)).equals(List.of(GOLD, 0xFF66AA)));
         check("自己是貢獻者：本機開了彩色也沒有——彩色是開發者的", icons(Badges.decorate(
@@ -177,6 +205,15 @@ public final class BadgesTest {
         check("不在名單上的別人：沒有葉子", Badges.decorate(Component.literal("Nobody"),
                 "Nobody", "Someone", untouched, 0) == null);
         check("沒有名牌就什麼都不做", Badges.decorate(null, "Solo_Dev", "Someone", untouched, 0) == null);
+
+        // ---- ★ 別人有沒有裝：看登記站的名單（使用者 2026-10-12）----
+        check("★ 名單上的別人：灰色的葉子", icons(Badges.decorate(Component.literal("Nobody"),
+                "Nobody", "Someone", untouched, 0, true)).equals(List.of(Badges.INSTALLED)));
+        check("不在名單上的別人還是沒有", Badges.decorate(Component.literal("Stranger"),
+                "Stranger", "Someone", untouched, 0, false) == null);
+        check("有身分的人照舊是身分的顏色，不會多一片灰的", !icons(Badges.decorate(
+                Component.literal("Solo_Dev"), "Solo_Dev", "Someone", untouched, 0, true))
+                .contains(Badges.INSTALLED));
 
         // ---- 認不出帳號時看名牌文字 ----
         check("帳號問不到：名牌文字裡有名單上的 ID 就認", icons(Badges.decorate(

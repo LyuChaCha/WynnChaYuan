@@ -6,7 +6,7 @@
 
 **Wynncraft 多語言翻譯模組。** 原文保留，譯文顯示在旁邊，或直接寫進原本的位置。
 
-**[GitHub](https://github.com/LyuChaCha/WynnChaYuan)** · **[Report a line / 回報](https://github.com/LyuChaCha/WynnChaYuan/issues)** · **[Changelog / 更新日誌](https://github.com/LyuChaCha/WynnChaYuan/blob/main/CHANGELOG.md)** · **[Ko-fi](https://ko-fi.com/lyuchacha)** · Discord: **LyuChaCha**
+**[GitHub](https://github.com/LyuChaCha/WynnChaYuan)** · **[Report a line / 回報](https://github.com/LyuChaCha/WynnChaYuan/issues)** · **[Changelog / 更新日誌](https://github.com/LyuChaCha/WynnChaYuan/blob/main/CHANGELOG.md)** · Discord: **LyuChaCha**
 
 ---
 
@@ -39,6 +39,15 @@ Gear names stay in English by default; they can be turned on in the settings.
 - **Update notice**: a one-time chat notice linking to GitHub Releases
 
 Client-side only. The server does not need it.
+
+### Capes, the grey leaf, and what the mod sends
+
+- **Capes**: wear your own WynnChaYuan cape, visible to other players who have this mod. Upload it under F6 > Badge & cape, or upload and browse at <https://wynnchayuan.com>. Anyone can upload a PNG (up to 1 MB); GIFs and the 20 MB limit are for developers, sponsors and contributors. Draw it on a template from [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates).
+- **Leaves**: every player who has this mod gets a leaf before their name (grey if you have no role), visible to each other. A developer's rainbow mode and the roles you chose to show look the same to others as they do to you.
+- **These two features talk to our server (wynnchayuan.com).** The mod checks in once when you join Wynncraft and sends: your Minecraft UUID, your Mojang-signed public profile (name and skin), a public key and signature that prove the account is yours, whether to show your cape, and your badge settings (rainbow leaf, which roles to show). Uploading a cape also sends the image you chose. **Your private key and login credentials never leave the game; the mod does not send your world, chat or any game content, and the server does not store IP addresses.** The public list holds hashed codes only, not UUIDs or names.
+- **There is no switch for this**: the mod checks in whenever it is installed and you join Wynncraft, so every user has a leaf. If you do not want others to see your cape, turn off "Wear my cape" under F6 > Badge & cape.
+- **Site account** (optional): register at wynnchayuan.com with Discord, then type `/wcy link <code>` in game to link your game ID. We only read your Discord account ID and display name.
+- **Update button**: the release notes screen has an Update button. Only when you press it does the mod download the new version from GitHub Releases, and it is swapped in when you close the game.
 
 ### Languages
 
@@ -79,11 +88,11 @@ Put the jar in `mods/`. In game, open the settings from Mod Menu or by typing `/
 
 Open **Settings → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**Settings → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
 
-The mod never sends anything by itself. The export already leaves out player names and guild, party, shout and private chat.
+The mod never sends game text by itself. (What the mod does send for capes and leaves is listed under "Capes, the grey leaf, and what the mod sends" above.) The export already leaves out player names and guild, party, shout and private chat.
 
 ### Sponsoring
 
-**The translations are free and will stay free** - all of them are provided by the team at no cost, and nothing is locked behind payment. Sponsoring is entirely voluntary: not sponsoring never lowers translation quality; sponsors only get fun extras (the leaf, later capes) and priority for their feedback. [Ko-fi](https://ko-fi.com/lyuchacha): a one-off 20 USD or 2 USD/month puts you on the sponsor list. No paid features.
+**The translations are free and will stay free** - all of them are provided by the team at no cost, and nothing is locked behind payment. Sponsoring is entirely voluntary: not sponsoring never lowers translation quality; sponsors only get fun extras (the leaf, animated capes and a larger upload limit) and priority for their feedback. [Ko-fi](https://ko-fi.com/lyuchacha): a one-off 20 USD or 2 USD/month puts you on the sponsor list. No paid features.
 
 ### Roles and badges
 
@@ -127,6 +136,15 @@ Code: [GNU AGPLv3 or later](https://github.com/LyuChaCha/WynnChaYuan/blob/main/L
 
 純客戶端，伺服器不需要裝。
 
+### 披風、灰色葉子與會送出的資料
+
+- **披風**：可以穿上自己的 WynnChaYuan 披風，其他裝了本模組的玩家看得到。在 F6「徽章與披風」上傳，或到 <https://wynnchayuan.com> 上傳與瀏覽。PNG 大家都能傳（1 MB 以內）；GIF 與 20 MB 的上限給開發者、贊助者、貢獻者。要照 [`capes/templates`](https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates) 的範本畫。
+- **葉子**：裝了本模組的玩家，名字前面都有一片葉子（沒有身分的是灰色），彼此看得到。開發者的彩色模式、要展示哪幾個身分的葉子，別人看到的跟你設的一樣。
+- **這兩項需要連到我們的伺服器（wynnchayuan.com）**。模組在你進 Wynncraft 時報到一次，送出的是：你的 Minecraft UUID、Mojang 簽過的公開個人檔案（名字與外觀）、用來證明帳號是本人的公鑰與簽章、要不要顯示披風，以及徽章的設定（葉子要不要彩色、要展示哪幾個身分）。上傳披風時另外送出你選的那張圖。**私鑰與登入憑證不會離開遊戲；不送所在的世界、聊天或任何遊戲內容，伺服器也不記 IP。** 公開的名單上只有雜湊過的代碼，沒有 UUID 與名字。
+- **這一項沒有開關**：只要裝了模組、進了 Wynncraft 就會報到，所以每個使用者都有葉子。不想讓別人看到自己的披風，可以在 F6「徽章與披風」關掉「穿上我的披風」。
+- **網站帳號**（選用）：在 wynnchayuan.com 用 Discord 註冊後，在遊戲裡輸入 `/wcy link 綁定碼` 把遊戲 ID 綁上去。我們只讀 Discord 的帳號代號與顯示名稱。
+- **直接更新**：更新說明的畫面有一顆「直接更新」，只有你按了才會從 GitHub Releases 下載新版，關遊戲時換上。
+
 ### 支援語言
 
 - **繁體中文**：主要語言，所有內容
@@ -166,11 +184,11 @@ jar 放進 `mods/`。進遊戲後從 Mod Menu、或在聊天輸入 `/wcy` 開設
 
 打開 **設定 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**設定 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
 
-模組不會自動送出任何東西；匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
+模組不會自動送出遊戲裡的文字（披風與葉子會送出什麼，見上面「披風、灰色葉子與會送出的資料」。）匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
 
 ### 贊助
 
-**翻譯免費，也會一直免費**——所有譯文都由團隊無償提供，不存在付費才有翻譯的問題。贊助完全出於自願：不贊助翻譯品質也不會打折，贊助者多的只有趣味性的功能（葉子、之後的披風），以及意見優先採納。[Ko-fi](https://ko-fi.com/lyuchacha)：單次 20 USD 或每月 2 USD 以上列入贊助者名單。沒有付費功能。
+**翻譯免費，也會一直免費**——所有譯文都由團隊無償提供，不存在付費才有翻譯的問題。贊助完全出於自願：不贊助翻譯品質也不會打折，贊助者多的只有趣味性的功能（葉子、動態披風與比較大的上傳上限），以及意見優先採納。[Ko-fi](https://ko-fi.com/lyuchacha)：單次 20 USD 或每月 2 USD 以上列入贊助者名單。沒有付費功能。
 
 ### 身分與徽章
 

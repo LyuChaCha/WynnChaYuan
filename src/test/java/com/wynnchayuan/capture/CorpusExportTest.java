@@ -108,9 +108,13 @@ public final class CorpusExportTest {
     }
 
     /**
-     * 模組原始碼裡沒有上傳，而且連出去的主機只有寫死的那幾個。
+     * 模組原始碼裡會往外送的只有登記站那一個檔，而且連出去的主機只有寫死的那幾個。
      *
      * <p>下載（GET）照常允許：譯文同步與更新檢查要用。擋的是「把東西送出去」的寫法。
+     *
+     * <p>唯一的例外是 {@code Presence}（使用者 2026-10-12：「可以放寬那條測試、讓模組報到」）：
+     * 它向登記站驗證身分、報到、上傳玩家自己選的披風，送出去的內容由 {@code PresenceTest}
+     * 釘住。別的檔出現送資料的寫法、別的檔連到登記站、或多了別的主機，這裡照舊會紅。
      */
     private static void noUpload() throws Exception {
         Pattern send = Pattern.compile(
@@ -120,7 +124,9 @@ public final class CorpusExportTest {
         // 一次 GET、不帶任何本機資料。見 RemoteSync#remoteVersion。
         Set<String> allowed = Set.of(
                 "raw.githubusercontent.com", "cdn.jsdelivr.net", "github.com",
-                "api.github.com");
+                "api.github.com",
+                // 我們自己的網站與登記站，只有 Presence 連它。
+                "wynnchayuan.com");
         List<String> senders = new ArrayList<>();
         Set<String> hosts = new TreeSet<>();
         try (Stream<Path> files = Files.walk(Path.of("src/main/java"))) {
@@ -135,11 +141,21 @@ public final class CorpusExportTest {
                 }
             }
         }
-        check("★ 模組原始碼裡沒有任何把資料送出去的 HTTP 呼叫"
-                        + (senders.isEmpty() ? "" : "：" + senders),
-                senders.isEmpty());
+        check("★ 模組原始碼裡會把資料送出去的只有 Presence（實際 " + senders + "）",
+                senders.equals(List.of("Presence.java")));
+        String registry = "://wynnchayuan.com";
+        List<String> callers = new ArrayList<>();
+        try (Stream<Path> sources = Files.walk(Path.of("src/main/java"))) {
+            for (Path file : sources.filter(p -> p.toString().endsWith(".java")).toList()) {
+                if (Files.readString(file, StandardCharsets.UTF_8).contains(registry)) {
+                    callers.add(file.getFileName().toString());
+                }
+            }
+        }
+        check("★ 連到登記站的也只有 Presence（實際 " + callers + "）",
+                callers.equals(List.of("Presence.java")));
         check("掃到了寫死的網址（確認掃描有意義）：" + hosts, !hosts.isEmpty());
-        check("★ 寫死的網址只有 GitHub 與 jsDelivr",
+        check("★ 寫死的網址只有 GitHub、jsDelivr 與登記站",
                 allowed.containsAll(hosts));
         check("CorpusUpload 不在了", !Files.exists(
                 Path.of("src/main/java/com/wynnchayuan/capture/CorpusUpload.java")));

@@ -145,6 +145,15 @@ public final class CollectorConfig {
      */
     private boolean chatCopy = true;
 
+    /** 畫面上要不要顯示 WynnChaYuan 的披風（自己的與別人的）。見 {@code Capes}。 */
+    private boolean capes = true;
+
+    /**
+     * 我自己的 WynnChaYuan 披風要不要穿上（取代 Wynntils 或原版的披風）。
+     * 這個選擇跟著報到送出去，關掉之後別人也看不到。
+     */
+    private boolean ownCape = true;
+
     /**
      * Wynntils 自己畫的那些介面要不要換成中文。
      *
@@ -652,6 +661,28 @@ public final class CollectorConfig {
 
     public boolean chatCopy() {
         return chatCopy;
+    }
+
+    /** 見 {@link #capes}。 */
+    public boolean capes() {
+        return capes;
+    }
+
+    public boolean toggleCapes() {
+        capes = !capes;
+        save();
+        return capes;
+    }
+
+    /** 見 {@link #ownCape}。 */
+    public boolean ownCape() {
+        return ownCape;
+    }
+
+    public boolean toggleOwnCape() {
+        ownCape = !ownCape;
+        save();
+        return ownCape;
     }
 
     public boolean toggleChatCopy() {
@@ -1447,6 +1478,8 @@ public final class CollectorConfig {
             choiceMode = dialogue;
         }
         chatCopy = bool(o, "chatCopy", chatCopy);
+        capes = bool(o, "capes", capes);
+        ownCape = bool(o, "ownCape", ownCape);
         wynntilsUi = bool(o, "wynntilsUi", wynntilsUi);
         translateTitles = bool(o, "translateTitles", translateTitles);
         // 0.1.9_10 的 showScoreboard 是「右上那一欄要不要進面板」，0.2.0 換成
@@ -1723,6 +1756,8 @@ public final class CollectorConfig {
             o.addProperty("wynnmodTooltip", wynnmodTooltip);
             o.addProperty("wynnMarketSearch", wynnMarketSearch);
             o.addProperty("chatCopy", chatCopy);
+            o.addProperty("capes", capes);
+            o.addProperty("ownCape", ownCape);
             o.addProperty("wynntilsUi", wynntilsUi);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shiftPeekNames", shiftPeekNames);

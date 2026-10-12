@@ -148,8 +148,12 @@ public final class SettingsScreen extends Screen {
                         new Row.Group(t("group.tools"), true, tools()))));
         // 徽章自己一頁，排在左邊那一列的最後（使用者 2026-10-11）。
         // 在名單上的人看到的是自己那片葉子的設定；不在名單上的人看到的是怎麼加入。
+        // 披風跟徽章放同一頁（使用者 2026-10-12：「娛樂可以跟徽章放一起」）——兩樣都只是好看，
+        // 不影響翻譯。
         tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
-                Preview.Scene.WORLD, List.of(new Row.Group(t("group.badge"), false, badge()))));
+                Preview.Scene.CAPE, List.of(
+                        new Row.Group(t("group.badge"), false, badge()),
+                        new Row.Group(t("group.cape"), false, fun()))));
         return tabs;
     }
 
@@ -197,8 +201,110 @@ public final class SettingsScreen extends Screen {
      * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是 repo 上
      * {@code credits.json} 的那一份，那一份由維護名單的人改。
      */
+    /**
+     * 披風。
+     *
+     * <p>第一列是「畫面上要不要有 WynnChaYuan 的披風」，每個人都有。第二列是自己那一件
+     * 要不要穿上——穿上就取代 Wynntils／原版的披風；沒有披風的人看到的是怎麼先預覽。
+     */
+    private List<Row> fun() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(toggle("fun.capes", true, cfg()::capes, cfg()::toggleCapes));
+        String self = com.wynnchayuan.render.Badges.selfName();
+        java.util.UUID me = this.minecraft == null ? null : this.minecraft.getUser().getProfileId();
+        if (com.wynnchayuan.cape.Capes.hasCape(self, me, true)) {
+            rows.add(toggle("fun.owncape", true, cfg()::ownCape, cfg()::toggleOwnCape));
+        } else {
+            rows.add(Row.status("fun.nocape", t("fun.nocape"), t("fun.nocape.hint"))
+                    .label(t("fun.nocape.label")));
+        }
+        rows.add(Row.action("fun.folder", t("fun.folder"), t("fun.folder.hint"))
+                .label(t("fun.folder.button"))
+                .run(() -> {
+                    try {
+                        java.nio.file.Path dir = com.wynnchayuan.cape.Capes.folder();
+                        java.nio.file.Files.createDirectories(dir);
+                        Util.getPlatform().openPath(dir);
+                    } catch (Exception e) {
+                        say(T.s("fun.folder.failed"), Ui.RED);
+                    }
+                }));
+        // 上傳：送的是資料夾裡那張 self.png／self.gif——先在自己身上看過，再決定要不要給別人看
+        rows.add(Row.action("fun.upload", t("fun.upload"), t("fun.upload.hint"))
+                .label(t("fun.upload.button"))
+                .run(this::uploadCape));
+        rows.add(Row.action("fun.remove", t("fun.remove"), t("fun.remove.hint"))
+                .label(t("fun.remove.button"))
+                .run(() -> com.wynnchayuan.Presence.remove(result -> capeResult(result, true))));
+        // 披風一覽：網站上的一頁。從這裡開會順便替瀏覽器登入（網站自己沒辦法確認帳號），
+        // 登入之後可以在網站上傳；開發者還看得到管理的頁面。
+        rows.add(Row.action("fun.gallery", t("fun.gallery"), t("fun.gallery.hint"))
+                .label(t("fun.gallery.button"))
+                .run(() -> com.wynnchayuan.Presence.gallery(true,
+                        url -> net.minecraft.client.Minecraft.getInstance().execute(
+                                () -> ConfirmLinkScreen.confirmLinkNow(this, url)))));
+        return rows;
+    }
+
+    private void uploadCape() {
+        java.nio.file.Path file = com.wynnchayuan.cape.Capes.localFile();
+        if (file == null) {
+            say(T.s("fun.upload.nofile"), Ui.RED);
+            return;
+        }
+        try {
+            byte[] bytes = java.nio.file.Files.size(file) > com.wynnchayuan.cape.CapeRules.MAX_BYTES
+                    ? new byte[com.wynnchayuan.cape.CapeRules.MAX_BYTES + 1]
+                    : java.nio.file.Files.readAllBytes(file);
+            com.wynnchayuan.cape.CapeRules.Problem problem =
+                    com.wynnchayuan.cape.CapeRules.check(bytes);
+            if (problem != null) {
+                say(T.s("fun.upload." + problem.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
+                return;
+            }
+            // GIF 只有名單上的成員能傳，一般玩家的檔案上限也比較小（1 MB）。
+            // 登記站會再擋一次，這裡先說，省一趟來回。
+            boolean member = !com.wynnchayuan.render.Badges.registered(
+                    com.wynnchayuan.render.Badges.selfName()).isEmpty();
+            if (file.getFileName().toString().endsWith(".gif") && !member) {
+                say(T.s("fun.upload.gif_members_only"), Ui.RED);
+                return;
+            }
+            if (bytes.length > com.wynnchayuan.cape.CapeRules.limitFor(member)) {
+                say(T.s("fun.upload.too_large"), Ui.RED);
+                return;
+            }
+            int[] size = com.wynnchayuan.cape.CapeRules.size(bytes);
+            uploadedSize = size == null ? "" : size[0] + "\u00d7" + size[1];
+            say(T.s("fun.upload.sending"), Ui.TEXT_3);
+            com.wynnchayuan.Presence.upload(bytes,
+                    file.getFileName().toString().endsWith(".gif") ? "image/gif" : "image/png",
+                    result -> capeResult(result, false));
+        } catch (Exception e) {
+            say(T.s("fun.upload.failed"), Ui.RED);
+        }
+    }
+
+    /** 剛剛送出去的那張圖多大（「176×136」），上傳成功時說給玩家聽。 */
+    private volatile String uploadedSize = "";
+
+    /** 上傳／移除的結果，回到畫圖的執行緒上說。 */
+    private void capeResult(com.wynnchayuan.Presence.Result result, boolean removing) {
+        net.minecraft.client.Minecraft.getInstance().execute(() -> {
+            if (result == com.wynnchayuan.Presence.Result.DONE) {
+                // 上傳成功順便說這件披風多大（使用者 2026-10-12）
+                say(removing ? T.s("fun.remove.done") : T.s("fun.upload.done", uploadedSize),
+                        Ui.GREEN);
+            } else {
+                say(T.s("fun.upload." + result.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
+            }
+        });
+    }
+
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
+        // 「讓別人知道我有裝」的開關拿掉了：每個 WynnChaYuan 使用者都有葉子（使用者 2026-10-12）。
+        // 報到這件事寫在灰色葉子的說明、README 與商店頁上。
         String self = com.wynnchayuan.render.Badges.selfName();
         List<com.wynnchayuan.render.Badges.Role> mine =
                 com.wynnchayuan.render.Badges.registered(self);
@@ -963,6 +1069,63 @@ public final class SettingsScreen extends Screen {
         } finally {
             canvas.end();
         }
+        // 「徽章與披風」的預覽：玩家本人穿著披風，疊在預覽那一塊上面
+        float[] model = view.spot("preview.model");
+        if (model != null && mc.player != null) {
+            try {
+                drawPlayer(g, mc, model, view.modelYaw(), view.modelPitch());
+            } catch (Throwable t) {
+                com.wynnchayuan.translate.ErrorDebug.note("settings.model", null, t);
+            }
+        }
+    }
+
+    /**
+     * 把玩家畫在預覽那一塊裡。做法跟物品欄畫面左邊那個小人一樣（{@code InventoryScreen}），
+     * 差別是不跟著滑鼠轉頭——轉多少由拖曳決定。
+     *
+     * <p>披風照遊戲裡的規則畫（{@code CapeLayerMixin}）：穿不穿、穿哪一件，跟走在路上
+     * 看到的一樣，所以改了設定、換了資料夾裡的圖，這裡馬上跟著變。
+     */
+    private static void drawPlayer(GuiGraphics g, Minecraft mc, float[] box, float yaw,
+                                   float pitch) {
+        net.minecraft.world.entity.LivingEntity player = mc.player;
+        int x1 = Math.round(box[0]);
+        int y1 = Math.round(box[1]);
+        int x2 = Math.round(box[0] + box[2]);
+        int y2 = Math.round(box[1] + box[3]) - 14;          // 底下那一行提示讓出來
+        if (x2 - x1 < 20 || y2 - y1 < 30) {
+            return;
+        }
+        net.minecraft.client.renderer.entity.state.EntityRenderState state =
+                mc.getEntityRenderDispatcher().getRenderer(player).createRenderState(player, 1.0f);
+        state.lightCoords = 15728880;
+        state.shadowPieces.clear();
+        state.outlineColor = 0;
+        state.nameTag = null;                               // 預覽裡不要名牌
+        if (state instanceof net.minecraft.client.renderer.entity.state.LivingEntityRenderState
+                living) {
+            living.bodyRot = 180.0f + yaw;
+            living.yRot = 0;
+            living.xRot = 0;
+            living.boundingBoxWidth /= living.scale;
+            living.boundingBoxHeight /= living.scale;
+            living.scale = 1.0f;
+        }
+        if (state instanceof net.minecraft.client.renderer.entity.state.AvatarRenderState avatar) {
+            // 披風稍微掀起來一點，看得到它不是貼在背上的一張圖
+            avatar.capeFlap = 0;
+            avatar.capeLean = 6;
+            avatar.capeLean2 = 0;
+        }
+        org.joml.Quaternionf pose = new org.joml.Quaternionf().rotateZ((float) Math.PI);
+        org.joml.Quaternionf camera = new org.joml.Quaternionf()
+                .rotateX(pitch * (float) (Math.PI / 180.0));
+        pose.mul(camera);
+        // 人高 1.8 格：上下各留一點邊，寬度也要塞得下（轉到側面時手臂會伸出去）
+        float size = Math.min((y2 - y1) / 2.3f, (x2 - x1) / 1.5f);
+        org.joml.Vector3f lift = new org.joml.Vector3f(0, state.boundingBoxHeight / 2.0f, 0);
+        g.submitEntityRenderState(state, size, lift, pose, camera, x1, y1, x2, y2);
     }
 
     @Override
