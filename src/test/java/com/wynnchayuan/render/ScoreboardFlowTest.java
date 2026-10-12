@@ -37,6 +37,11 @@ public final class ScoreboardFlowTest {
     private static final String SENTENCE_ZH = "摧毀雕像頂端的護盾，擊殺夢魘騎士。";
     private static final String TIMED = "Hold the Upper and Lower platforms for {~} seconds";
     private static final String TIMED_ZH = "守住上層與下層平台 {~} 秒";
+    /** 一整段（三列各是一項）收成一條的那種鍵。 */
+    private static final String BLOCK =
+            "Guard the gate! Lap {~} - {~} Foes Left!\\n- Time Left: {~}:{~}\\n- Laps: {~}/{~}";
+    private static final String BLOCK_ZH =
+            "守住大門！第 {~} 圈 - 還剩 {~} 個敵人！\\n- 剩餘時間: {~}:{~}\\n- 圈數: {~}/{~}";
 
     public static void main(String[] args) throws Exception {
         net.minecraft.SharedConstants.tryDetectVersion();
@@ -47,7 +52,8 @@ public final class ScoreboardFlowTest {
         Path extra = Files.createTempDirectory("wcy-board");
         Files.writeString(extra.resolve("raid.json"),
                 "{\n \"" + SENTENCE + "\": \"" + SENTENCE_ZH + "\",\n \""
-                        + TIMED + "\": \"" + TIMED_ZH + "\"\n}\n", StandardCharsets.UTF_8);
+                        + TIMED + "\": \"" + TIMED_ZH + "\",\n \""
+                        + BLOCK + "\": \"" + BLOCK_ZH + "\"\n}\n", StandardCharsets.UTF_8);
         TranslationStore store = new TranslationStore();
         store.loadAll(List.of(corpus, extra));
         check("疊上去的那一層讀得到", SENTENCE_ZH.equals(store.lookup(SENTENCE)));
@@ -55,6 +61,7 @@ public final class ScoreboardFlowTest {
         oneLine(store);
         merged(store);
         numbers(store);
+        block(store);
         split();
         toggle(store);
 
@@ -137,6 +144,60 @@ public final class ScoreboardFlowTest {
                 plan.panel().size() == 1 && shown.contains("51") && !shown.contains("{~}"));
         check("鍵是當下畫面上的字（含數字），下一秒換一份",
                 plan.rows().containsKey("51 seconds"));
+    }
+
+    /**
+     * 整段條目：三列各是一項，不是折成三列的一句話。
+     *
+     * <p>使用者 2026-10-12 的截圖（Lootrun）：
+     * 「殲滅！第 1 波 - 還剩」「2 隻怪物！ - 剩餘時」「間: 07:20 - 挑戰: 1/12」。
+     */
+    private static void block(TranslationStore store) {
+        List<StyledText> rows = List.of(
+                StyledText.fromString("Guard the gate! Lap 1 - 2 Foes Left!"),
+                StyledText.fromString("- Time Left: 07:20"),
+                StyledText.fromString("- Laps: 1/12"));
+        ScoreboardFlow.Plan plan = ScoreboardFlow.plan(rows, store);
+        String first = text(plan, rows.get(0));
+        String second = text(plan, rows.get(1));
+        String third = text(plan, rows.get(2));
+        check("★ 整段條目：第一列是第一項，沒有吃到下一項的字（" + first + "）",
+                first.equals("守住大門！第 1 圈 - 還剩 2 個敵人！"));
+        check("★ 第二列是時間那一項，整項都在（" + second + "）",
+                second.equals("- 剩餘時間: 07:20"));
+        check("★ 第三列是圈數那一項（" + third + "）", third.equals("- 圈數: 1/12"));
+        check("面板也是一項一行", plan.panel().size() == 3
+                && second.equals(plan.panel().get(1).getString()));
+        for (Component line : plan.panel()) {
+            check("面板的每一行都沒有換行", line.getString().indexOf('\n') < 0);
+        }
+
+        // 內附語料裡真的那一段（措辭不寫死，只看每一項留在自己那一列）
+        List<StyledText> real = List.of(
+                StyledText.fromString("Slay! Wave 1 - 2 Mobs Left!"),
+                StyledText.fromString("- Time Left: 07:20"),
+                StyledText.fromString("- Challenges: 1/12"));
+        ScoreboardFlow.Plan lootrun = ScoreboardFlow.plan(real, store);
+        String wave = text(lootrun, real.get(0));
+        String time = text(lootrun, real.get(1));
+        String challenges = text(lootrun, real.get(2));
+        check("★ Lootrun 那一段：時間整個在第二列，不在別列（" + wave + "｜" + time + "｜"
+                        + challenges + "）",
+                time.contains("07:20") && !wave.contains("07:20") && !challenges.contains("07:20"));
+        check("★ 挑戰的數字在第三列，第二列沒有", challenges.contains("1/12") && !time.contains("1/12"));
+        check("第二、三列都是「- 」開頭的項目", time.startsWith("- ") && challenges.startsWith("- "));
+
+        // 後面多一段別的：前三列照樣一行對一列
+        List<StyledText> more = new java.util.ArrayList<>(rows);
+        more.add(StyledText.fromString("Zzyzx qwfp"));
+        ScoreboardFlow.Plan mixed = ScoreboardFlow.plan(more, store);
+        check("後面多一列查不到的：前三列不受影響", mixed.panel().size() == 4
+                && second.equals(text(mixed, rows.get(1))));
+    }
+
+    private static String text(ScoreboardFlow.Plan plan, StyledText row) {
+        StyledText piece = plan.rows().get(ScoreboardFlow.key(row));
+        return piece == null ? "<null>" : piece.getString();
     }
 
     private static void split() {

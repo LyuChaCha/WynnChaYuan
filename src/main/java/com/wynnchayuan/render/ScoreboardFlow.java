@@ -39,6 +39,26 @@ import java.util.Map;
  * 記分板一列只畫一行，換行字元就被畫成一個方框——使用者 2026-10-08 回報的
  * 「守住□這座平台」。原文沒有換行的地方，譯文裡的換行一律併掉，見 {@link #oneLine}。
  *
+ * <h2>整段條目不是一句話</h2>
+ * 語料裡另外有一種鍵：記分板的一整段，各列用換行接起來（capture 的
+ * {@code scoreboard/block} 收的就是它）——
+ *
+ * <pre>
+ *   Slay! Wave {~} - {~} Mobs Left!\n- Time Left: {~}:{~}\n- Challenges: {~}/{~}
+ * </pre>
+ *
+ * 查表不分換行與空白，所以三列併起來查也對得到這一條。那是三個各自成行的項目，
+ * 不是折成三列的一句話：併掉換行再平均切回去，就成了使用者 2026-10-12 截圖裡的
+ *
+ * <pre>
+ *   殲滅！第 1 波 - 還剩
+ *   2 隻怪物！ - 剩餘時
+ *   間: 07:20 - 挑戰: 1/12
+ * </pre>
+ *
+ * 分辨的辦法：譯文的行數剛好等於併起來的列數，就是一行對一列，原樣擺回去，
+ * 不重切。對不上的（譯文沒有換行、或行數不同）才當成一句話。
+ *
  * <p>這個類別不碰遊戲的畫面，只算；設定與面板由呼叫的那一邊決定。
  */
 public final class ScoreboardFlow {
@@ -88,8 +108,16 @@ public final class ScoreboardFlow {
                 }
             }
             if (whole != null) {
-                panel.add(whole);
-                List<Component> parts = split(whole, end - i + 1);
+                int count = end - i + 1;
+                List<Component> parts = TextSplit.lines(whole);
+                if (parts.size() == count) {
+                    // 整段條目：譯文一行對原文一列，面板也是一項一行
+                    panel.addAll(parts);
+                } else {
+                    whole = oneLine(whole);
+                    panel.add(whole);
+                    parts = split(whole, count);
+                }
                 for (int k = 0; k <= end - i; k++) {
                     rows.put(key(live.get(i + k)), styled(parts.get(k)));
                 }
@@ -121,7 +149,8 @@ public final class ScoreboardFlow {
     }
 
     /**
-     * 這幾列併成一句查不查得到；查得到就回整句的譯文。
+     * 這幾列併成一句查不查得到；查得到就回整句的譯文（換行還在，由 {@link #plan} 決定
+     * 是一行對一列還是併成一句）。
      *
      * <p>先問語料「有沒有這一整句」才翻：{@link LineTranslator#translate} 查不到整句
      * 時會退去換句子裡的詞，那樣隨便哪幾列併起來都「翻得出一點東西」，分不出
@@ -133,8 +162,7 @@ public final class ScoreboardFlow {
         if (template.isBlank() || store.lookup(template) == null) {
             return null;
         }
-        Component hit = LineTranslator.translate(joined, store);
-        return hit == null ? null : oneLine(hit);
+        return LineTranslator.translate(joined, store);
     }
 
     // 併掉換行與切列的算法在 TextSplit（信標面板的兩欄也用同一套），這裡只是轉手
