@@ -347,6 +347,31 @@ public final class WynnventoryBridge {
     private static final String ORIGINAL_INDENT = "     ";
 
     /**
+     * 原文那一行要縮多少，看<b>譯名那一行名字前面有什麼</b>。
+     *
+     * <p>清單的列前面有圓點與圖示（「•  踐踏之蹄意象」），原文縮進去才對得齊名字。
+     * 價格框的標題沒有那些東西，名字就在最左邊——照樣縮五格的話原文會歪出去一截
+     * （使用者 2026-10-12 的截圖：「君臨權戟」底下的「(Ascendancy)」）。
+     *
+     * @param before 這一行裡名字前面的字（前幾段，加上這一段開頭不是名字的部分）
+     */
+    static String indentFor(String before) {
+        if (before.isEmpty()) {
+            return "";
+        }
+        return before.isBlank() ? before : ORIGINAL_INDENT;
+    }
+
+    /** 這一段開頭有幾個字不是名字（空白、圓點、圖示）。 */
+    private static int leadOf(String text) {
+        int at = 0;
+        while (at < text.length() && !Character.isLetterOrDigit(text.codePointAt(at))) {
+            at += Character.charCount(text.codePointAt(at));
+        }
+        return at;
+    }
+
+    /**
      * 一行翻完之後畫成哪幾行。通常就是一行；名字後面附了原文的話，<b>原文自己一行</b>。
      *
      * <h2>為什麼要拆（使用者 2026-10-12）</h2>
@@ -379,9 +404,11 @@ public final class WynnventoryBridge {
             String tail = english == null ? null : " (" + english + ")";
             int at = tail == null ? -1 : done.lastIndexOf(tail);
             if (original == null && at > 0 && done.substring(at + tail.length()).isBlank()) {
+                // 先量名字前面有什麼，再把這一段接上去——接上去之後就量不到了
+                String before = out.getString() + done.substring(0, Math.min(at, leadOf(done)));
                 out.append(Component.literal(done.substring(0, at)
                         + done.substring(at + tail.length())).withStyle(p.style()));
-                original = Component.literal(ORIGINAL_INDENT + tail.strip()).withStyle(p.style());
+                original = Component.literal(indentFor(before) + tail.strip()).withStyle(p.style());
             } else {
                 out.append(Component.literal(done).withStyle(p.style()));
             }

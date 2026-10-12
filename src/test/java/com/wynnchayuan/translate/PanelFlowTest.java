@@ -67,6 +67,7 @@ public final class PanelFlowTest {
         twoColumns(right, whole, store);
         continuation(right, whole, store);
         untouched(store);
+        leftCells(store);
 
         finish();
     }
@@ -130,6 +131,55 @@ public final class PanelFlowTest {
                 indented(59, "play.wynncraft.com"));
         Component[] none = LineTranslator.flowPanel(single, store, null);
         check("不是多欄的訊息不碰", none[0] == null && none[1] == null);
+    }
+
+    /**
+     * 右欄併成句子的那幾列，左欄的格子也要翻。
+     *
+     * <p>使用者 2026-10-12 的畫面（遊戲 log 還原的）：詛咒與「Orphion's Grace」併排，
+     * 「Boons are now 50% more／effective.」那兩列的左欄留成
+     * 「[+25% Enemy Damage]」「[+2.5% Enemy Resistance]」。語料裡詛咒只有帶著行首偏移的
+     * 整列樣子（{@code {#}[+{~} Enemy Damage]}），一格一格重組時拿掉偏移就查不到。
+     */
+    private static void leftCells(TranslationStore store) {
+        String[] right = {"Boons are now 50% more", "effective."};
+        String whole = whole(right, store);
+        check("前提：語料裡有「Boons are now … effective.」這一整句", whole != null && hasCjk(whole));
+        check("前提：詛咒只有帶偏移的整列樣子，單獨一格查不到",
+                store.lookup("[+{~} Enemy Damage]") == null
+                        && store.lookup("{#}[+{~} Enemy Damage]") != null);
+        if (whole == null) {
+            return;
+        }
+        List<StyledText> rows = new ArrayList<>();
+        rows.add(row(18, "[+25% Enemy Damage]", 21, right[0]));
+        rows.add(row(8, "[+2.5% Enemy Resistance]", 49, right[1]));
+        rows.add(trailing(21, "[+25% Enemy Health]", 98));
+        Component[] out = LineTranslator.flowPanel(rows, store, null);
+        check("右欄併成句子的兩列都換了", out[0] != null && out[1] != null);
+        if (out[0] == null || out[1] == null) {
+            return;
+        }
+        String first = textOf(out[0]);
+        String second = textOf(out[1]);
+        check("★ 第一列的左欄翻了，不是英文（「" + first + "」）",
+                !first.contains("Enemy") && first.startsWith("[+25% ") && hasCjk(first.substring(0, 10)));
+        check("★ 第二列的左欄也翻了（「" + second + "」）",
+                !second.contains("Enemy") && second.startsWith("[+2.5% "));
+        check("數字還在，佔位符沒有漏出來", first.contains("50%") || second.contains("50%"));
+        check("偏移沒有被吃進字裡：左欄的字後面接著的是右欄的字",
+                !first.contains("{#}") && !second.contains("{#}"));
+        check("每一列還是一行", first.indexOf('\n') < 0 && second.indexOf('\n') < 0);
+        String joined = (first.substring(first.indexOf(']') + 1)
+                + second.substring(second.indexOf(']') + 1));
+        check("右欄接回去還是整句（" + joined + "）", squeeze(joined).equals(squeeze(whole)));
+    }
+
+    /** 只有一格、後面還掛著一段偏移的列（伺服器把右欄留空時就是這樣送的）。 */
+    private static StyledText trailing(int lead, String text, int tail) {
+        MutableComponent out = Component.empty();
+        out.append(offset(lead)).append(Component.literal(text)).append(offset(tail));
+        return StyledText.fromComponent(out);
     }
 
     /** 同一段敘述整段一次查的結果（選單上那條路），接成一句。 */

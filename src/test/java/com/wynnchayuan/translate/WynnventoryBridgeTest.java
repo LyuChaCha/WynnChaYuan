@@ -145,6 +145,12 @@ public final class WynnventoryBridgeTest {
                         + both.get(2).getString().strip() + "）",
                 "橡木匕首".equals(both.get(1).getString())
                         && "(Oak Wood Dagger)".equals(both.get(2).getString().strip()));
+        // 標題那一行名字前面什麼都沒有：原文不縮（使用者 2026-10-12 的截圖多出一截空白）
+        check("★ 名字在最左邊的行，原文也在最左邊（實際 [" + both.get(2).getString() + "]）",
+                "(Oak Wood Dagger)".equals(both.get(2).getString()));
+        check("縮多少看名字前面有什麼", WynnventoryBridge.indentFor("").isEmpty()
+                && "  ".equals(WynnventoryBridge.indentFor("  "))
+                && WynnventoryBridge.indentFor("•  ").length() == 5);
         check("★ 行裡本來就有的括號不拆（實際 " + both.get(4).getString() + "）",
                 both.get(4).getString().endsWith("(+3 EB)"));
         check("沒附原文的行照舊是同一個物件", both.get(3) == box.get(2));

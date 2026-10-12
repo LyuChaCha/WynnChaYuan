@@ -89,6 +89,26 @@ public final class TextSplit {
         return build(out);
     }
 
+    /**
+     * 照譯文裡的換行切開，一行一份，樣式跟著字走；每一行頭尾的空白去掉。
+     *
+     * <p>沒有換行的回只有一份的清單。
+     */
+    public static List<Component> lines(Component text) {
+        List<Component> out = new ArrayList<>();
+        List<Glyph> line = new ArrayList<>();
+        for (Glyph g : glyphs(text)) {
+            if (g.cp() == '\n') {
+                out.add(build(trim(line)));
+                line = new ArrayList<>();
+            } else {
+                line.add(g);
+            }
+        }
+        out.add(build(trim(line)));
+        return out;
+    }
+
     /** 好幾行接成一句（同 {@link #oneLine} 的接法）。 */
     public static Component join(List<Component> lines) {
         MutableComponent all = Component.empty();

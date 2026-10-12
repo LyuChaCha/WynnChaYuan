@@ -63,15 +63,59 @@ public final class ThirdPartyLiterals {
     }
 
     public static void load(Path configDir) {
-        JsonObject root = read(configDir);
+        active = groups(read(configDir),
+                id -> FabricLoader.getInstance().isModLoaded(id),
+                ThirdPartyLiterals::classPresent);
+    }
+
+    /** 鍵裡分開模組 ID 與條件的記號。見 {@link #groups}。 */
+    private static final String UNLESS = "@unless:";
+
+    /**
+     * 清單裡現在生效的那幾組。
+     *
+     * <h2>鍵的寫法</h2>
+     * <ul>
+     *   <li>{@code "wynnmod"}：那個模組有裝就生效。</li>
+     *   <li>{@code "wynnmod@unless:某個類別"}：有裝、而且<b>沒有</b>那個類別才生效。</li>
+     * </ul>
+     *
+     * <h2>為什麼要有第二種</h2>
+     * 同一個模組，讀字串的<b>時機</b>會隨版本改。WynnMod 讀聊天的地方在封包那一層
+     * （包住 {@code handleSystemChat} 裡呼叫 {@code ChatListener.handleSystemMessage}
+     * 那一處），Wynntils 的聊天事件是在 {@code handleSystemMessage} <b>裡面</b>才發的，
+     * 我們又在它後面——它讀到的一定是原文，那幾列我們翻不翻都不影響它。這種時候還
+     * 留英文，只是讓有裝它的人白白少一塊譯文（使用者 2026-10-12：「raid 的翻譯消失了」
+     * ——就地取代模式的面板 1.0.0_1 起也守這份清單，整塊結算就留成英文了）。
+     *
+     * <p>「它是不是在我們之前讀」沒辦法直接問，問的是它那條路上的類別在不在：
+     * 在，就不必讓；不在（舊版），照舊留英文。標題那幾條不適用——標題是 Wynntils
+     * 先攔、我們取消再重送，它在後面，一定要留。
+     *
+     * @param modLoaded    這個模組 ID 有沒有裝
+     * @param classPresent 這個類別在不在（不載入它，只問有沒有）
+     */
+    public static List<List<String>> groups(JsonObject root,
+                                            java.util.function.Predicate<String> modLoaded,
+                                            java.util.function.Predicate<String> classPresent) {
         List<List<String>> out = new ArrayList<>();
         if (root != null) {
             for (Map.Entry<String, JsonElement> mod : root.entrySet()) {
                 if (mod.getKey().startsWith("_") || !mod.getValue().isJsonArray()) {
                     continue;             // _comment 之類的說明欄位
                 }
-                if (!FabricLoader.getInstance().isModLoaded(mod.getKey())) {
+                String id = mod.getKey();
+                String unless = null;
+                int at = id.indexOf(UNLESS);
+                if (at > 0) {
+                    unless = id.substring(at + UNLESS.length()).strip();
+                    id = id.substring(0, at);
+                }
+                if (!modLoaded.test(id)) {
                     continue;             // 沒裝就不必讓步
+                }
+                if (unless != null && !unless.isEmpty() && classPresent.test(unless)) {
+                    continue;             // 它在我們之前就讀完了，不必讓
                 }
                 for (JsonElement literal : mod.getValue().getAsJsonArray()) {
                     List<String> group = new ArrayList<>();
@@ -94,7 +138,17 @@ public final class ThirdPartyLiterals {
                 }
             }
         }
-        active = List.copyOf(out);
+        return List.copyOf(out);
+    }
+
+    /** 這個類別在不在。只問資源、不載入：載入別人的 mixin 事件類別沒有好處。 */
+    private static boolean classPresent(String name) {
+        try {
+            return ThirdPartyLiterals.class.getClassLoader()
+                    .getResource(name.replace('.', '/') + ".class") != null;
+        } catch (Throwable t) {
+            return false;                 // 問不到就當成不在：留英文是安全的那一邊
+        }
     }
 
     /**

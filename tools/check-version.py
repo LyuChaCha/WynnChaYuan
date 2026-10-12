@@ -75,6 +75,20 @@ def main() -> int:
             problems.append(f"notes[{running!r}] 少了 headline")
         if not one.get("items"):
             problems.append(f"notes[{running!r}] 少了 items")
+        # 繁中與簡中各要有一份，條數跟預設（英文）那一份一樣。
+        # 少了哪一種，F6「更新說明」切到那個語言就是整頁英文——0.2.8 到 1.0.1_1
+        # 連續八版只寫了繁中，簡中的分頁一直是英文（使用者 2026-10-12 回報）。
+        for lang in ("zh_tw", "zh_cn"):
+            own = one.get(lang)
+            if not isinstance(own, dict):
+                problems.append(f"notes[{running!r}] 少了 {lang} 那一份")
+                continue
+            if not own.get("headline", "").strip():
+                problems.append(f"notes[{running!r}][{lang!r}] 少了 headline")
+            if len(own.get("items") or []) != len(one.get("items") or []):
+                problems.append(
+                    f"notes[{running!r}][{lang!r}] 有 {len(own.get('items') or [])} 條，"
+                    f"預設那一份是 {len(one.get('items') or [])} 條 —— 兩邊要一樣多")
 
     download = data.get("download", {})
     for key in ("curseforge", "modrinth", "github"):

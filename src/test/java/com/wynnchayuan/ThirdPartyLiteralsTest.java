@@ -105,6 +105,7 @@ public final class ThirdPartyLiteralsTest {
 
         stats();
         chat();
+        readsChatFirst(root);
         report();
     }
 
@@ -153,6 +154,65 @@ public final class ThirdPartyLiteralsTest {
         // 討伐戰大廳的每日獎勵面板也不該被擋——那不是 WynnMod 在解的行。
         check("大廳的每日獎勵不受影響",
               !ThirdPartyLiterals.reserved("- Aspect Pulls: 3"));
+    }
+
+    /**
+     * 討伐戰結算那幾列：WynnMod 在我們之前就讀完聊天的版本，不必為它留英文。
+     *
+     * <h2>實機回報（使用者 2026-10-12）</h2>
+     * 「raid 的翻譯消失了」：結算那一塊標題是「統計／獎勵」，底下四列全是英文。
+     * 1.0.0_1 起就地取代模式的面板也守這份清單，有裝 WynnMod 的人整塊就留成英文。
+     * 而 WynnMod 2.3.7 是在封包那一層讀聊天的（{@code S2CPacketEvents$ChatMsg}），
+     * 比 Wynntils 的事件、比我們都早——截圖裡它加的 PB 徽章已經在我們收到的那一列上。
+     *
+     * <p>這裡用出貨的清單、假的「裝了沒／類別在不在」釘住三種情況。
+     */
+    private static void readsChatFirst(com.google.gson.JsonObject root) {
+        String probe = "com.wynnmod.mixin.events.S2CPacketEvents$ChatMsg";
+        check("★ 出貨的清單有帶條件的那一組，條件是 WynnMod 封包層的聊天事件",
+              root.has("wynnmod@unless:" + probe));
+        String[] rows = {
+            "DMG 64.9M/293M (22.13%)  55 Reward Pulls",
+            "DEF 69.4K/323K (21.49%)  16 Aspect Pulls",
+            "HEAL 93.5K/44.8M (0.21%)  400 Raid Experience",
+            "Hover for more  10m Combat Experience",
+            "87 Reward Pulls  Time Elapsed: 19:01",
+        };
+        String[] titles = {"Raid Completed!", "Raid Failed!", "Lootrun Completed!",
+            "Orphion's Nexus of Light", "Prepare to Lootrun"};
+
+        // 新的 WynnMod：類別在
+        ThirdPartyLiterals.forTestGroups(ThirdPartyLiterals.groups(root,
+                id -> id.equals("wynnmod"), probe::equals));
+        for (String row : rows) {
+            check("★ 新版 WynnMod：結算這一列不留英文（" + row + "）",
+                  !ThirdPartyLiterals.reserved(row));
+        }
+        for (String title : titles) {
+            check("★ 新版 WynnMod：標題照舊留英文（" + title + "）",
+                  ThirdPartyLiterals.reserved(title));
+        }
+        check("開場邀請照舊留英文", ThirdPartyLiterals.reserved(
+                "Watari would like to start Nest of the Grootslangs!"));
+
+        // 舊的 WynnMod：類別不在
+        ThirdPartyLiterals.forTestGroups(ThirdPartyLiterals.groups(root,
+                id -> id.equals("wynnmod"), name -> false));
+        for (String row : rows) {
+            check("舊版 WynnMod：結算這一列照舊留英文（" + row + "）",
+                  ThirdPartyLiterals.reserved(row));
+        }
+        check("舊版 WynnMod：標題也留", ThirdPartyLiterals.reserved("Raid Completed!"));
+        check("舊版 WynnMod：信標面板不受影響",
+              !ThirdPartyLiterals.reserved("Reward Pulls  next Beacon Effects"));
+
+        // 沒裝：帶條件的鍵不可以被當成另一個模組 ID 而生效
+        check("沒裝 WynnMod：什麼都不留", ThirdPartyLiterals.groups(root,
+                id -> false, name -> false).isEmpty());
+        check("只裝了別的模組（wms）：WynnMod 那兩組都不生效",
+              ThirdPartyLiterals.groups(root, id -> id.equals("wms"), name -> true).size() == 1);
+        check("清單是空的也不出事", ThirdPartyLiterals.groups(null, id -> true, name -> true).isEmpty());
+        ThirdPartyLiterals.forTestGroups(java.util.List.of());
     }
 
     /**
