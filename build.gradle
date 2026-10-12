@@ -1415,3 +1415,11 @@ tasks.register('runOwnNameChatChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.listener.OwnNameChatTest'
 }
 tasks.named('check') { dependsOn 'runOwnNameChatChecks' }
+
+tasks.register('runCapeImageChecks', JavaExec) {
+    group = 'verification'
+    description = '披風的圖：GIF 讀得對、什麼尺寸都排得進版型'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.cape.CapeImageTest'
+}
+tasks.named('check') { dependsOn 'runCapeImageChecks' }

@@ -31,7 +31,7 @@ public final class Credits {
      * @param hidden  這個身分不放在名牌上（{@code "hide": true}）——多重身分的人挑著放
      */
     public record Member(String label, String key, String mc,
-                         int colour, boolean rainbow, boolean hidden) {
+                         int colour, boolean rainbow, boolean hidden, String cape) {
         public boolean hasHead() {
             return mc != null && !mc.isBlank();
         }
@@ -158,7 +158,10 @@ public final class Credits {
                         m.has("key") ? m.get("key").getAsString() : null,
                         m.has("mc") ? m.get("mc").getAsString() : null,
                         m.has("color") ? Colors.opaque(parseHex(m.get("color").getAsString())) : 0,
-                        flag(m, "rainbow"), flag(m, "hide")));
+                        flag(m, "rainbow"), flag(m, "hide"),
+                        // 披風的檔名（倉庫根目錄 capes/ 底下）。見 Capes。
+                        m.has("cape") && m.get("cape").isJsonPrimitive()
+                                ? m.get("cape").getAsString() : null));
             }
         }
         // 空分區照樣留著：「貢獻者」欄位空著本身就是在邀請別人來填

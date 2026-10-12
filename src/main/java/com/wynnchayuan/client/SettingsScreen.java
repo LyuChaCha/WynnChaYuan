@@ -150,6 +150,9 @@ public final class SettingsScreen extends Screen {
         // 在名單上的人看到的是自己那片葉子的設定；不在名單上的人看到的是怎麼加入。
         tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
                 Preview.Scene.WORLD, List.of(new Row.Group(t("group.badge"), false, badge()))));
+        // 娛樂：披風（使用者 2026-10-12）。跟徽章同一類——只是好看，不影響翻譯。
+        tabs.add(new Row.Tab("fun", t("tab.fun"), t("tab.fun.about"), Icons.Icon.CAPE,
+                Preview.Scene.WORLD, List.of(new Row.Group(t("group.cape"), false, fun()))));
         return tabs;
     }
 
@@ -197,6 +200,36 @@ public final class SettingsScreen extends Screen {
      * <p>這裡的選擇只改自己畫面上的樣子：模組不對外送資料，別人看到的是 repo 上
      * {@code credits.json} 的那一份，那一份由維護名單的人改。
      */
+    /**
+     * 披風。
+     *
+     * <p>第一列是「畫面上要不要有 WynnChaYuan 的披風」，每個人都有。第二列是自己那一件
+     * 要不要穿上——穿上就取代 Wynntils／原版的披風；沒有披風的人看到的是怎麼先預覽。
+     */
+    private List<Row> fun() {
+        List<Row> rows = new ArrayList<>();
+        rows.add(toggle("fun.capes", true, cfg()::capes, cfg()::toggleCapes));
+        String self = com.wynnchayuan.render.Badges.selfName();
+        if (com.wynnchayuan.cape.Capes.hasCape(self, true)) {
+            rows.add(toggle("fun.owncape", true, cfg()::ownCape, cfg()::toggleOwnCape));
+        } else {
+            rows.add(Row.status("fun.nocape", t("fun.nocape"), t("fun.nocape.hint"))
+                    .label(t("fun.nocape.label")));
+        }
+        rows.add(Row.action("fun.folder", t("fun.folder"), t("fun.folder.hint"))
+                .label(t("fun.folder.button"))
+                .run(() -> {
+                    try {
+                        java.nio.file.Path dir = com.wynnchayuan.cape.Capes.folder();
+                        java.nio.file.Files.createDirectories(dir);
+                        Util.getPlatform().openPath(dir);
+                    } catch (Exception e) {
+                        say(T.s("fun.folder.failed"), Ui.RED);
+                    }
+                }));
+        return rows;
+    }
+
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
         String self = com.wynnchayuan.render.Badges.selfName();
