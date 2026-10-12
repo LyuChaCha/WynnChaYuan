@@ -46,10 +46,10 @@ const MAX_USERS = 50000;
 const MAX_BODY = 512;
 
 /** 披風圖檔的上限。 */
-export const MAX_CAPE_BYTES = 1024 * 1024;
+export const MAX_CAPE_BYTES = 4 * 1024 * 1024;
 
 /** GIF 最多幾格。 */
-export const MAX_CAPE_FRAMES = 60;
+export const MAX_CAPE_FRAMES = 120;
 
 /** 同一個人多久才能再傳一次。 */
 const UPLOAD_EVERY_MS = 20 * 1000;

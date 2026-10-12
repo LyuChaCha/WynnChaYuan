@@ -69,7 +69,7 @@ public final class Presence {
     private static final Duration TIMEOUT = Duration.ofSeconds(15);
 
     private static final int MAX_LIST_BYTES = 4 * 1024 * 1024;
-    private static final int MAX_CAPE_BYTES = 2 * 1024 * 1024;
+    private static final int MAX_CAPE_BYTES = 5 * 1024 * 1024;
 
     /**
      * 名單。

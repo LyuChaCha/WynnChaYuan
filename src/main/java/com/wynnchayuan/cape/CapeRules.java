@@ -15,10 +15,10 @@ public final class CapeRules {
     private CapeRules() {}
 
     /** 圖檔的上限。 */
-    public static final int MAX_BYTES = 1024 * 1024;
+    public static final int MAX_BYTES = 4 * 1024 * 1024;
 
     /** GIF 最多幾格。 */
-    public static final int MAX_FRAMES = 60;
+    public static final int MAX_FRAMES = 120;
 
     /** 收哪幾種尺寸：前四個是只畫一面的，後三個是完整版型。 */
     public static final int[][] SIZES = {
