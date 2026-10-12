@@ -178,6 +178,15 @@ public final class BadgesTest {
                 "Nobody", "Someone", untouched, 0) == null);
         check("沒有名牌就什麼都不做", Badges.decorate(null, "Solo_Dev", "Someone", untouched, 0) == null);
 
+        // ---- ★ 別人有沒有裝：看登記站的名單（使用者 2026-10-12）----
+        check("★ 名單上的別人：灰色的葉子", icons(Badges.decorate(Component.literal("Nobody"),
+                "Nobody", "Someone", untouched, 0, true)).equals(List.of(Badges.INSTALLED)));
+        check("不在名單上的別人還是沒有", Badges.decorate(Component.literal("Stranger"),
+                "Stranger", "Someone", untouched, 0, false) == null);
+        check("有身分的人照舊是身分的顏色，不會多一片灰的", !icons(Badges.decorate(
+                Component.literal("Solo_Dev"), "Solo_Dev", "Someone", untouched, 0, true))
+                .contains(Badges.INSTALLED));
+
         // ---- 認不出帳號時看名牌文字 ----
         check("帳號問不到：名牌文字裡有名單上的 ID 就認", icons(Badges.decorate(
                 Component.literal("[VIP+] Solo_Dev [Lv. 105]"), null, "Someone", untouched, 0))

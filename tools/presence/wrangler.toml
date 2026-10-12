@@ -1,0 +1,14 @@
+# 沿用語料收集站那一支 Worker 與它的 KV：網址不變，鍵用 u:／cape:／ban: 開頭，跟舊資料不相干。
+name = "wynnchayuan-corpus"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[[kv_namespaces]]
+binding = "CORPUS"
+id = "70fa88851cfa4cee87b3e818dc40cb75"
+
+[vars]
+# 誰可以上傳披風：listed（credits.json 上的成員）、anyone（驗過身分的人都可以）、off（不收）
+UPLOADS = "listed"
+
+# ADMIN_TOKEN 不寫在這裡——它是秘密，用 wrangler secret put ADMIN_TOKEN 設定。見 README.md。

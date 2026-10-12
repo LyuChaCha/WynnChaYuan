@@ -901,6 +901,12 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.render.PanelShot.tick();
             // 有新版就在聊天室說一次，附下載連結。見 Releases#tellOnce。
             Releases.tellOnce(client);
+            // 上線報到、定時抓「誰有裝」的名單。只在連著 Wynncraft 的時候做。見 Presence。
+            if (client.player != null && client.getCurrentServer() != null
+                    && client.getCurrentServer().ip.toLowerCase(java.util.Locale.ROOT)
+                            .contains("wynncraft")) {
+                Presence.tick(config.presence(), config.ownCape());
+            }
             // 有新翻譯也說一次，但只說「有」，抓不抓由玩家決定。
             // 見 TranslationUpdate#tellOnce。
             com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);

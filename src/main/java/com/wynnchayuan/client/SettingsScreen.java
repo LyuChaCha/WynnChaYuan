@@ -148,11 +148,12 @@ public final class SettingsScreen extends Screen {
                         new Row.Group(t("group.tools"), true, tools()))));
         // 徽章自己一頁，排在左邊那一列的最後（使用者 2026-10-11）。
         // 在名單上的人看到的是自己那片葉子的設定；不在名單上的人看到的是怎麼加入。
-        tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
-                Preview.Scene.WORLD, List.of(new Row.Group(t("group.badge"), false, badge()))));
-        // 娛樂：披風（使用者 2026-10-12）。跟徽章同一類——只是好看，不影響翻譯。
-        tabs.add(new Row.Tab("fun", t("tab.fun"), t("tab.fun.about"), Icons.Icon.CAPE,
-                Preview.Scene.WORLD, List.of(new Row.Group(t("group.cape"), false, fun()))));
+        // 披風跟徽章放同一頁（使用者 2026-10-12：「娛樂可以跟徽章放一起」）——兩樣都只是好看，
+        // 不影響翻譯。
+        tabs.add(new Row.Tab("badge", t("tab.fun"), t("tab.fun.about"), Icons.Icon.LEAF,
+                Preview.Scene.WORLD, List.of(
+                        new Row.Group(t("group.badge"), false, badge()),
+                        new Row.Group(t("group.cape"), false, fun()))));
         return tabs;
     }
 
@@ -210,7 +211,8 @@ public final class SettingsScreen extends Screen {
         List<Row> rows = new ArrayList<>();
         rows.add(toggle("fun.capes", true, cfg()::capes, cfg()::toggleCapes));
         String self = com.wynnchayuan.render.Badges.selfName();
-        if (com.wynnchayuan.cape.Capes.hasCape(self, true)) {
+        java.util.UUID me = this.minecraft == null ? null : this.minecraft.getUser().getProfileId();
+        if (com.wynnchayuan.cape.Capes.hasCape(self, me, true)) {
             rows.add(toggle("fun.owncape", true, cfg()::ownCape, cfg()::toggleOwnCape));
         } else {
             rows.add(Row.status("fun.nocape", t("fun.nocape"), t("fun.nocape.hint"))
@@ -227,11 +229,60 @@ public final class SettingsScreen extends Screen {
                         say(T.s("fun.folder.failed"), Ui.RED);
                     }
                 }));
+        // 上傳：送的是資料夾裡那張 self.png／self.gif——先在自己身上看過，再決定要不要給別人看
+        rows.add(Row.action("fun.upload", t("fun.upload"), t("fun.upload.hint"))
+                .label(t("fun.upload.button"))
+                .run(this::uploadCape));
+        rows.add(Row.action("fun.remove", t("fun.remove"), t("fun.remove.hint"))
+                .label(t("fun.remove.button"))
+                .run(() -> com.wynnchayuan.Presence.remove(result -> capeResult(result, true))));
         return rows;
+    }
+
+    private void uploadCape() {
+        if (!cfg().presence()) {
+            say(T.s("fun.upload.needpresence"), Ui.RED);
+            return;
+        }
+        java.nio.file.Path file = com.wynnchayuan.cape.Capes.localFile();
+        if (file == null) {
+            say(T.s("fun.upload.nofile"), Ui.RED);
+            return;
+        }
+        try {
+            byte[] bytes = java.nio.file.Files.size(file) > com.wynnchayuan.cape.CapeRules.MAX_BYTES
+                    ? new byte[com.wynnchayuan.cape.CapeRules.MAX_BYTES + 1]
+                    : java.nio.file.Files.readAllBytes(file);
+            com.wynnchayuan.cape.CapeRules.Problem problem =
+                    com.wynnchayuan.cape.CapeRules.check(bytes);
+            if (problem != null) {
+                say(T.s("fun.upload." + problem.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
+                return;
+            }
+            say(T.s("fun.upload.sending"), Ui.TEXT_3);
+            com.wynnchayuan.Presence.upload(bytes,
+                    file.getFileName().toString().endsWith(".gif") ? "image/gif" : "image/png",
+                    result -> capeResult(result, false));
+        } catch (Exception e) {
+            say(T.s("fun.upload.failed"), Ui.RED);
+        }
+    }
+
+    /** 上傳／移除的結果，回到畫圖的執行緒上說。 */
+    private void capeResult(com.wynnchayuan.Presence.Result result, boolean removing) {
+        net.minecraft.client.Minecraft.getInstance().execute(() -> {
+            if (result == com.wynnchayuan.Presence.Result.DONE) {
+                say(T.s(removing ? "fun.remove.done" : "fun.upload.done"), Ui.GREEN);
+            } else {
+                say(T.s("fun.upload." + result.name().toLowerCase(java.util.Locale.ROOT)), Ui.RED);
+            }
+        });
     }
 
     private List<Row> badge() {
         List<Row> rows = new ArrayList<>();
+        // 讓別人知道我有裝：模組唯一往外送東西的地方，所以開關放在最上面、每個人都看得到。
+        rows.add(toggle("badge.presence", true, cfg()::presence, cfg()::togglePresence));
         String self = com.wynnchayuan.render.Badges.selfName();
         List<com.wynnchayuan.render.Badges.Role> mine =
                 com.wynnchayuan.render.Badges.registered(self);

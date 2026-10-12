@@ -2,6 +2,7 @@ package com.wynnchayuan.cape;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.Presence;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.client.Credits;
 import net.minecraft.client.Minecraft;
@@ -42,10 +43,13 @@ import java.util.regex.Pattern;
  * {@code self.gif}，自己身上就會穿著它——<b>只有自己看得到</b>，給還沒登記的人先看效果、
  * 給做圖的人邊改邊看（存檔之後幾秒內就換上）。
  *
+ * <h2>上傳的披風</h2>
+ * 玩家也可以在 F6 上傳自己的披風（見 {@link Presence#upload}）。登記站的名單會寫誰傳了、
+ * 是哪一版；有上傳的人用上傳的那一件，沒有才看 {@code credits.json} 登記的。
+ *
  * <h2>別人看不看得到</h2>
- * 名單上有披風的人，裝了模組的人都看得到。F6「穿上我的披風」只管<b>自己的畫面</b>：
- * 模組不往外送東西，本人關掉之後別人那邊照樣照名單畫。要讓本人的選擇傳給別人，
- * 得有地方記（登記站），那是另一件事。
+ * 預設大家都看得到。本人在 F6 關掉「穿上我的披風」，那個選擇跟著報到送出去，
+ * 名單上會記著；別人那邊就不畫他的披風了。名單抓不到的時候照預設畫。
  *
  * <h2>怎麼畫上去</h2>
  * 原版的披風層畫的是 {@code state.skin.cape()} 那張貼圖。{@code CapeLayerMixin} 在它開畫
@@ -172,9 +176,33 @@ public final class Capes {
         return found;
     }
 
+    /** 自己資料夾裡那張預覽圖的路徑（{@code self.gif} 優先）；沒有就回 {@code null}。 */
+    public static Path localFile() {
+        try {
+            Path dir = folder();
+            if (dir != null) {
+                for (String name : new String[] {"self.gif", "self.png"}) {
+                    if (Files.isRegularFile(dir.resolve(name))) {
+                        return dir.resolve(name);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // 當成沒有
+        }
+        return null;
+    }
+
     /** 這個人有披風嗎（自己的話，資料夾裡的預覽圖也算）。 */
-    public static boolean hasCape(String account, boolean self) {
-        return registered(account) != null || (self && localKey() != null);
+    public static boolean hasCape(String account, java.util.UUID uuid, boolean self) {
+        return registered(account) != null || Presence.capeVersion(uuid) > 0
+                || (self && localKey() != null);
+    }
+
+    /** 上傳的披風在這裡的鍵：代碼加版本，換了一件鍵就不同。 */
+    private static String uploadedKey(java.util.UUID uuid) {
+        long version = Presence.capeVersion(uuid);
+        return version > 0 ? "up:" + Presence.idOf(uuid) + ":" + version : null;
     }
 
     /**
@@ -182,8 +210,8 @@ public final class Capes {
      *
      * @return 貼圖；沒有披風、被關掉、或還沒載好時回 {@code null}（照原本的畫）
      */
-    public static Identifier textureFor(String account, boolean self, CollectorConfig config,
-                                        long now) {
+    public static Identifier textureFor(String account, java.util.UUID uuid, boolean self,
+                                        CollectorConfig config, long now) {
         if (account == null || config == null || !config.capes()) {
             return null;
         }
@@ -192,14 +220,31 @@ public final class Capes {
             if (!config.ownCape()) {
                 return null;
             }
-            String local = localKey();
-            key = local != null ? local : registered(account);
+            // 資料夾裡的預覽圖最優先：那是正在改的那一張
+            key = localKey();
+            if (key == null) {
+                key = uploadedKey(uuid);
+            }
+            if (key == null) {
+                key = registered(account);
+            }
         } else {
-            key = registered(account);
+            if (Presence.capeHidden(uuid)) {
+                return null;               // 本人關掉了
+            }
+            key = uploadedKey(uuid);
+            if (key == null) {
+                key = registered(account);
+            }
         }
         if (key == null) {
             return null;
         }
+        return loaded(key, now);
+    }
+
+    /** 這個鍵的披風載好了就回現在那一格；還沒載就開始載、先回 {@code null}。 */
+    private static Identifier loaded(String key, long now) {
         Object state = STATE.get(key);
         if (state instanceof Loaded loaded) {
             return loaded.at(now);
@@ -214,13 +259,22 @@ public final class Capes {
 
     // ------------------------------------------------------------ 掛點用
 
-    private static String accountOf(AvatarRenderState state) {
+    private static Player playerOf(AvatarRenderState state) {
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.level == null || state == null) {
             return null;
         }
         Entity entity = mc.level.getEntity(state.id);
-        return entity instanceof Player player ? player.getGameProfile().name() : null;
+        return entity instanceof Player player ? player : null;
+    }
+
+    private static Identifier textureFor(Player player) {
+        if (player == null) {
+            return null;
+        }
+        String account = player.getGameProfile().name();
+        return textureFor(account, player.getUUID(), isSelf(account), WynnChaYuan.config(),
+                System.currentTimeMillis());
     }
 
     private static boolean isSelf(String account) {
@@ -235,9 +289,7 @@ public final class Capes {
      */
     public static PlayerSkin swap(AvatarRenderState state) {
         try {
-            String account = accountOf(state);
-            Identifier texture = textureFor(account, isSelf(account), WynnChaYuan.config(),
-                    System.currentTimeMillis());
+            Identifier texture = textureFor(playerOf(state));
             if (texture == null || state.skin == null) {
                 return null;
             }
@@ -254,12 +306,7 @@ public final class Capes {
     /** Wynntils 要不要對這個玩家讓開：他穿著我們的披風，而且貼圖已經載好了。 */
     public static boolean overrides(Player player) {
         try {
-            if (player == null) {
-                return false;
-            }
-            String account = player.getGameProfile().name();
-            return textureFor(account, isSelf(account), WynnChaYuan.config(),
-                    System.currentTimeMillis()) != null;
+            return textureFor(player) != null;
         } catch (Throwable t) {
             return false;
         }
@@ -269,8 +316,8 @@ public final class Capes {
 
     private static void load(String key) {
         try {
-            byte[] bytes = key.startsWith("local:")
-                    ? readLocal(key.split(":")[1]) : readRemote(key);
+            byte[] bytes = key.startsWith("local:") ? readLocal(key.split(":")[1])
+                    : key.startsWith("up:") ? readUploaded(key) : readRemote(key);
             List<CapeImage.Frame> frames = bytes == null ? null : decode(bytes);
             if (frames == null || frames.isEmpty()) {
                 STATE.put(key, new Pending(System.currentTimeMillis() + RETRY_MS));
@@ -286,6 +333,23 @@ public final class Capes {
     private static byte[] readLocal(String name) throws Exception {
         Path file = folder().resolve(name);
         return Files.size(file) > MAX_BYTES ? null : Files.readAllBytes(file);
+    }
+
+    /** 別人上傳的披風：鍵裡帶著版本，同一版的內容不會變，抓過一次就一直用本機那一份。 */
+    private static byte[] readUploaded(String key) throws Exception {
+        String[] parts = key.split(":");
+        Path cache = folder().resolve("cache").resolve("up-" + parts[1] + "-" + parts[2]);
+        if (Files.isRegularFile(cache) && Files.size(cache) <= MAX_BYTES) {
+            return Files.readAllBytes(cache);
+        }
+        byte[] fresh = Presence.capeBytes(parts[1], Long.parseLong(parts[2]));
+        if (fresh != null) {
+            Files.createDirectories(cache.getParent());
+            Path tmp = cache.resolveSibling(cache.getFileName() + ".tmp");
+            Files.write(tmp, fresh);
+            com.wynnchayuan.SafeFiles.moveAtomically(tmp, cache);
+        }
+        return fresh;
     }
 
     /** 下載來的圖在本機留一份；一天之內不重抓，抓不到就用舊的。 */

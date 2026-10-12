@@ -197,12 +197,21 @@ public final class Badges {
      */
     public static Component decorate(Component nameTag, int entityId) {
         return decorate(nameTag, accountName(entityId), selfName(), WynnChaYuan.config(),
-                System.currentTimeMillis());
+                System.currentTimeMillis(),
+                com.wynnchayuan.Presence.installed(uuidOf(entityId)));
     }
 
-    /** 同上，但所有外部狀態都從參數來——測試用。 */
+    /** 同上，但所有外部狀態都從參數來——測試用。不知道對方有沒有裝的時候當成沒有。 */
     static Component decorate(Component nameTag, String account, String self,
                               CollectorConfig config, long now) {
+        return decorate(nameTag, account, self, config, now, false);
+    }
+
+    /**
+     * @param onRoster 這個人在登記站的名單上（有裝模組）。見 {@code Presence}。
+     */
+    static Component decorate(Component nameTag, String account, String self,
+                              CollectorConfig config, long now, boolean onRoster) {
         if (nameTag == null || startsWithIcon(nameTag)) {
             return null;
         }
@@ -213,7 +222,7 @@ public final class Badges {
             for (Role role : roles) {
                 icons.append(icon(role.rainbow() ? rainbowAt(now) : role.color()));
             }
-        } else if (isInstalled(who, self)) {
+        } else if (onRoster || isInstalled(who, self)) {
             icons.append(icon(INSTALLED));
         } else {
             return null;
@@ -272,6 +281,21 @@ public final class Badges {
     }
 
     /** 這個實體是哪個玩家的帳號名稱；不是玩家就回傳 {@code null}。 */
+    private static java.util.UUID uuidOf(int entityId) {
+        if (entityId < 0) {
+            return null;
+        }
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            net.minecraft.world.entity.Entity entity =
+                    mc == null || mc.level == null ? null : mc.level.getEntity(entityId);
+            return entity instanceof net.minecraft.world.entity.player.Player player
+                    ? player.getUUID() : null;
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
     private static String accountName(int entityId) {
         if (entityId < 0) {
             return null;

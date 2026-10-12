@@ -35,7 +35,8 @@ public final class Gif {
     /** @param argb 整張畫布，一列接一列；沒畫到的地方是 0（全透明） */
     public record Frame(int[] argb, int delayMs) {}
 
-    public record Image(int width, int height, List<Frame> frames) {}
+    /** @param complete 有讀到檔尾（沒有的話是下載到一半、或被截斷的檔） */
+    public record Image(int width, int height, List<Frame> frames, boolean complete) {}
 
     public static boolean looksLikeGif(byte[] data) {
         return data != null && data.length >= 13 && data[0] == 'G' && data[1] == 'I'
@@ -53,6 +54,15 @@ public final class Gif {
             return walk(data, Integer.MAX_VALUE, false).frames().size();
         } catch (IOException e) {
             return 0;
+        }
+    }
+
+    /** 這個檔從頭到尾是完整的嗎：每個區塊都走得完，而且有檔尾。 */
+    public static boolean complete(byte[] data) {
+        try {
+            return walk(data, Integer.MAX_VALUE, false).complete();
+        } catch (IOException e) {
+            return false;
         }
     }
 
@@ -93,10 +103,12 @@ public final class Gif {
             int delay = DEFAULT_DELAY_MS;
             int transparent = -1;
             int disposal = 0;
+            boolean complete = false;
             while (pos < data.length && frames.size() < maxFrames) {
                 int block = data[pos++] & 0xFF;
                 if (block == 0x3B) {
-                    break;                             // 檔尾
+                    complete = true;                   // 檔尾
+                    break;
                 }
                 if (block == 0x21) {
                     int label = data[pos++] & 0xFF;
@@ -151,7 +163,7 @@ public final class Gif {
                 transparent = -1;
                 disposal = 0;
             }
-            return new Image(width, height, frames);
+            return new Image(width, height, frames, complete);
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new IOException("GIF 檔不完整");
         }

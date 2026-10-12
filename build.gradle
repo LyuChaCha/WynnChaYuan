@@ -1423,3 +1423,11 @@ tasks.register('runCapeImageChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.cape.CapeImageTest'
 }
 tasks.named('check') { dependsOn 'runCapeImageChecks' }
+
+tasks.register('runPresenceChecks', JavaExec) {
+    group = 'verification'
+    description = '登記站：送出去的只有登入、披風開關與玩家自己選的圖；名單讀得對'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.PresenceTest'
+}
+tasks.named('check') { dependsOn 'runPresenceChecks' }
