@@ -818,7 +818,10 @@ public final class SettingsScreen extends Screen {
             return;
         }
         WynnChaYuan.reloadTranslations();
-        report(WynnChaYuan.translations().lastResult(), WynnChaYuan.translations().size() > 0);
+        var store = WynnChaYuan.translations();
+        // lastResult 是寫死的中文；載入成功這一句改走介面語言，其他語言的玩家才看得懂
+        report(store.size() > 0 ? T.s("status.loaded", store.size(), store.loadedFiles()) : store.lastResult(),
+                store.size() > 0);
     }
 
     /** 結果同時寫進狀態列與聊天：聊天留得久，按完切回遊戲還看得到。 */
