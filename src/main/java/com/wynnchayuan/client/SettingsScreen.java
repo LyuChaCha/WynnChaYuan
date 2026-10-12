@@ -150,7 +150,7 @@ public final class SettingsScreen extends Screen {
         // 在名單上的人看到的是自己那片葉子的設定；不在名單上的人看到的是怎麼加入。
         // 披風跟徽章放同一頁（使用者 2026-10-12：「娛樂可以跟徽章放一起」）——兩樣都只是好看，
         // 不影響翻譯。
-        tabs.add(new Row.Tab("badge", t("tab.fun"), t("tab.fun.about"), Icons.Icon.LEAF,
+        tabs.add(new Row.Tab("badge", t("tab.badge"), t("tab.badge.about"), Icons.Icon.LEAF,
                 Preview.Scene.WORLD, List.of(
                         new Row.Group(t("group.badge"), false, badge()),
                         new Row.Group(t("group.cape"), false, fun()))));
