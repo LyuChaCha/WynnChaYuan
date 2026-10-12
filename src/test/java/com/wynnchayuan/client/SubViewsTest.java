@@ -257,6 +257,9 @@ public final class SubViewsTest {
         must("點第二格換成繁中", host.language() == 1);
         render(view, "ja_jp", 640, 360, 1, -100, -100);
         must("有新版的時候有下載鈕", view.spot("b:download") != null);
+        must("能在遊戲裡更新的時候多一顆更新鈕", view.spot("b:update") != null);
+        press(view, "b:update");
+        must("更新鈕會叫到外面", host.updates == 1);
         press(view, "b:download");
         must("下載鈕會叫到外面", host.downloads == 1);
         press(view, "b:back");
@@ -265,6 +268,14 @@ public final class SubViewsTest {
         NotesView plain = new NotesView(shell, new FakeNotes(shell, false));
         render(plain, "ja_jp", 640, 360, 1, -100, -100);
         must("沒有新版就沒有下載鈕", plain.spot("b:download") == null);
+        must("沒有新版也沒有更新鈕", plain.spot("b:update") == null);
+
+        FakeNotes manual = new FakeNotes(shell, true);
+        manual.canUpdate = false;
+        NotesView byHand = new NotesView(shell, manual);
+        render(byHand, "ja_jp", 640, 360, 1, -100, -100);
+        must("不能在遊戲裡更新的環境：只有下載鈕，沒有更新鈕",
+                byHand.spot("b:download") != null && byHand.spot("b:update") == null);
     }
 
     // ------------------------------------------------------------ 使用須知
@@ -401,7 +412,10 @@ public final class SubViewsTest {
         private final FakeShell shell;
         private int chosen = -1;
         int downloads;
+        int updates;
         int closes;
+        /** 這個環境能不能在遊戲裡更新（找不找得到自己的 jar）。 */
+        boolean canUpdate = true;
 
         FakeNotes(FakeShell shell, boolean newer) throws Exception {
             this.shell = shell;
@@ -442,6 +456,16 @@ public final class SubViewsTest {
         @Override
         public String newer() {
             return newer ? versions().get(0) : null;
+        }
+
+        @Override
+        public String updateLabel() {
+            return canUpdate ? shell.tr("notes.update") : null;
+        }
+
+        @Override
+        public void update() {
+            updates++;
         }
 
         @Override

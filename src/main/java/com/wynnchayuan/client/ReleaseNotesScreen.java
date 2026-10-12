@@ -72,6 +72,29 @@ public final class ReleaseNotesScreen extends CanvasScreen {
             }
 
             @Override
+            public String updateLabel() {
+                if (!com.wynnchayuan.SelfUpdate.available()) {
+                    return null;
+                }
+                return switch (com.wynnchayuan.SelfUpdate.state()) {
+                    case DOWNLOADING -> com.wynnchayuan.SelfUpdate.percent() < 0
+                            ? T.s("notes.update.downloading")
+                            : T.s("notes.update.progress", com.wynnchayuan.SelfUpdate.percent() + "%");
+                    case READY -> T.s("notes.update.ready");
+                    case FAILED -> T.s("notes.update.failed");
+                    default -> T.s("notes.update");
+                };
+            }
+
+            @Override
+            public void update() {
+                String latest = Releases.newer();
+                if (latest != null) {
+                    com.wynnchayuan.SelfUpdate.start(latest);
+                }
+            }
+
+            @Override
             public void close() {
                 onClose();
             }
