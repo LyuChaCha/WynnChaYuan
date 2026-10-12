@@ -763,7 +763,19 @@ public final class WynntilsText {
             // 「沒翻到就原樣回去」在這個入口是用 == 比的（見 WynntilsTextTest）。
             return seen.out() == null ? text : seen.out();
         }
-        net.minecraft.network.chat.Component hit = LineTranslator.translate(text, store);
+        net.minecraft.network.chat.Component hit;
+        if (statusRow(text.getStringWithoutFormatting())) {
+            // 狀態效果那一欄：效果的名字不是物品。見 #statusRow。
+            boolean was = TranslationStore.itemNamesBarred();
+            TranslationStore.barItemNames(true);
+            try {
+                hit = LineTranslator.translate(text, store);
+            } finally {
+                TranslationStore.barItemNames(was);
+            }
+        } else {
+            hit = LineTranslator.translate(text, store);
+        }
         // 這個入口一次只畫一行。查表不分換行與空白，所以單行的字可能對到
         // 兩行的條目（「Hold the platform」對到漂浮字的「Hold\nthe platform」），
         // 譯文裡的換行會被畫成方框——併掉。
@@ -785,6 +797,29 @@ public final class WynntilsText {
         }
         return out == null ? text : out;
     }
+
+    /**
+     * 這一行是不是 Wynntils 狀態效果那一欄的一列：尾巴掛著倒數的時間。
+     *
+     * <h2>實機回報（使用者 2026-10-12 的截圖）</h2>
+     * <pre>
+     *   29% 抵抗護腿 (Resistance) (00:27)
+     *    8% 力量 (00:27)
+     * </pre>
+     * 第一列的效果叫 {@code Resistance}，剛好是一件護腿的名字——語料裡這個字只有裝備在用，
+     * 查表就把護腿的譯名寫了上去。狀態效果是技能、藥水、圖騰給的增益，那一欄不會出現物品；
+     * 跟漂浮字、血條同一類（見 {@code TranslationStore#barItemNames}）：只有物品在用的名字
+     * 在這裡查到了也不算數，留原文。屬性與技能也在用的字（{@code Strength}）照舊翻。
+     *
+     * <p>認的是形狀：行尾是 {@code (00:27)}、{@code (1:05:00)} 或沒有期限的 {@code (**:**)}。
+     * 物品的名字後面不會接這個。
+     */
+    static boolean statusRow(String plain) {
+        return plain != null && STATUS_TIMER.matcher(plain).find();
+    }
+
+    private static final java.util.regex.Pattern STATUS_TIMER = java.util.regex.Pattern.compile(
+            "\\((?:\\d{1,2}:)?(?:\\d{1,2}:\\d{2}|\\*\\*:\\*\\*)\\)\\s*$");
 
     /**
      * 同一個字串的翻譯結果，按內容記住。
