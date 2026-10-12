@@ -236,24 +236,14 @@ public final class SettingsScreen extends Screen {
         rows.add(Row.action("fun.remove", t("fun.remove"), t("fun.remove.hint"))
                 .label(t("fun.remove.button"))
                 .run(() -> com.wynnchayuan.Presence.remove(result -> capeResult(result, true))));
-        // 披風一覽：登記站上的一張網頁。開發者開的那一條帶著管理權，可以刪違規的披風。
+        // 披風一覽：網站上的一頁。從這裡開會順便替瀏覽器登入（網站自己沒辦法確認帳號），
+        // 登入之後可以在網站上傳；開發者還看得到管理的頁面。
         rows.add(Row.action("fun.gallery", t("fun.gallery"), t("fun.gallery.hint"))
                 .label(t("fun.gallery.button"))
-                .run(() -> com.wynnchayuan.Presence.gallery(isDeveloper(),
+                .run(() -> com.wynnchayuan.Presence.gallery(cfg().presence(),
                         url -> net.minecraft.client.Minecraft.getInstance().execute(
                                 () -> ConfirmLinkScreen.confirmLinkNow(this, url)))));
         return rows;
-    }
-
-    /** 自己在名單上是不是開發者。 */
-    private static boolean isDeveloper() {
-        for (com.wynnchayuan.render.Badges.Role role : com.wynnchayuan.render.Badges.registered(
-                com.wynnchayuan.render.Badges.selfName())) {
-            if ("developers".equals(role.id())) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private void uploadCape() {

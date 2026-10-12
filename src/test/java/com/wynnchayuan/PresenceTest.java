@@ -96,16 +96,17 @@ public final class PresenceTest {
                 Presence.resultOf(502, "<html>Bad Gateway</html>") == Presence.Result.FAILED
                         && Presence.resultOf(400, "{\"why\":\"???\"}") == Presence.Result.FAILED);
 
-        // ---- 披風一覽的管理網址 ----
-        String link = Presence.BASE + "/gallery#k=mod.abc";
-        check("登記站回的管理網址照用", link.equals(
-                Presence.moderatorLink(200, "{\"ok\":true,\"url\":\"" + link + "\"}")));
-        check("★ 指到別的地方的網址不開", Presence.moderatorLink(200,
-                "{\"url\":\"https://example.com/gallery#k=mod.abc\"}") == null
-                && Presence.moderatorLink(200, "{\"url\":\"" + Presence.BASE + ".evil.test/gallery#k=x\"}")
+        // ---- 替瀏覽器登入的網址 ----
+        String link = Presence.BASE + "/capes#t=web.abc";
+        check("登記站回的登入網址照用", link.equals(
+                Presence.signedInLink(200, "{\"ok\":true,\"url\":\"" + link + "\"}")));
+        check("★ 指到別的地方的網址不開", Presence.signedInLink(200,
+                "{\"url\":\"https://example.com/capes#t=web.abc\"}") == null
+                && Presence.signedInLink(200, "{\"url\":\"" + Presence.BASE + ".evil.test/capes#t=x\"}")
                         == null);
-        check("不是開發者（403）、不是 JSON：沒有管理網址", Presence.moderatorLink(403, "{}") == null
-                && Presence.moderatorLink(200, "<html>") == null);
+        check("沒有通行證（401）、不是 JSON：沒有登入網址", Presence.signedInLink(401, "{}") == null
+                && Presence.signedInLink(200, "<html>") == null);
+        check("網站是 wynnchayuan.com", "https://wynnchayuan.com".equals(Presence.BASE));
 
         // ---- 上傳之前先驗 ----
         byte[] gif = Files.readAllBytes(Path.of("src/test/resources/cape/template.gif"));   // 22×17，三格

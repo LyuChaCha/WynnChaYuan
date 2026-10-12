@@ -125,8 +125,8 @@ public final class CorpusExportTest {
         Set<String> allowed = Set.of(
                 "raw.githubusercontent.com", "cdn.jsdelivr.net", "github.com",
                 "api.github.com",
-                // 登記站，只有 Presence 連它。
-                "capes.wynnchayuan.com");
+                // 我們自己的網站與登記站，只有 Presence 連它。
+                "wynnchayuan.com");
         List<String> senders = new ArrayList<>();
         Set<String> hosts = new TreeSet<>();
         try (Stream<Path> files = Files.walk(Path.of("src/main/java"))) {
@@ -143,7 +143,7 @@ public final class CorpusExportTest {
         }
         check("★ 模組原始碼裡會把資料送出去的只有 Presence（實際 " + senders + "）",
                 senders.equals(List.of("Presence.java")));
-        String registry = "capes.wynnchayuan.com";
+        String registry = "://wynnchayuan.com";
         List<String> callers = new ArrayList<>();
         try (Stream<Path> sources = Files.walk(Path.of("src/main/java"))) {
             for (Path file : sources.filter(p -> p.toString().endsWith(".java")).toList()) {

@@ -1,34 +1,47 @@
 /**
- * WynnChaYuan 的登記站：誰有裝、誰的披風要給別人看、玩家上傳的披風。
+ * WynnChaYuan 的網站與登記站（wynnchayuan.com）。
  *
- *   POST   /login        {name, serverId}   向 Mojang 確認這個人真的是他說的那個帳號，發一張通行證
- *   POST   /hello        {cape}             報到（要通行證）
- *   GET    /list                            名單：有裝的人、有上傳披風的人、關掉披風的人
- *   PUT    /cape         圖檔本體            上傳披風（要通行證）
- *   DELETE /cape                            拿掉自己上傳的披風（要通行證）
- *   GET    /cape/<代碼>                      下載某個人的披風
- *   GET    /capes                           所有上傳的披風（相同的圖併成一筆）
- *   GET    /  與  /gallery                  披風一覽（網頁）
- *   GET    /status                          有幾個人、幾件披風
- *   POST   /mod-link                        開發者拿一條帶著管理權的一覽網址（要通行證）
- *   POST   /admin/remove {id|hash, ban}     拿掉披風、要不要順便禁止再傳（開發者，或 ADMIN_TOKEN）
+ * 網頁（內容在 site.js）：
+ *   /          首頁
+ *   /capes     披風一覽
+ *   /account   帳號：登入狀態、自己的披風、上傳
+ *   /admin     管理（開發者）：封禁名單、新增成員
+ *
+ * API（模組與網頁都用）：
+ *   POST   /api/login          {name, serverId}   向 Mojang 確認身分，發一張通行證（模組用）
+ *   POST   /api/web-link                          拿一條替瀏覽器登入的網址（要通行證）
+ *   GET    /api/me                                我是誰、有沒有披風、是不是開發者（要通行證）
+ *   POST   /api/hello          {cape}             報到（要通行證）
+ *   GET    /api/list                              名單：有裝的人、有上傳披風的人、關掉披風的人
+ *   PUT    /api/cape           圖檔本體            上傳披風（要通行證）
+ *   DELETE /api/cape                              拿掉自己上傳的披風（要通行證）
+ *   GET    /api/cape/<代碼>                        下載某個人的披風
+ *   GET    /api/capes                             所有上傳的披風（相同的圖併成一筆）
+ *   GET    /api/status                            有幾個人、幾件披風
+ *   GET    /api/admin/capes                       同上，多了每一件是誰傳的（開發者）
+ *   POST   /api/admin/remove   {id|hash, ban}     拿掉披風、要不要順便禁止再傳（開發者）
+ *   GET    /api/admin/bans                        封禁名單（開發者）
+ *   POST   /api/admin/unban    {uuid}             解除封禁（開發者）
+ *   POST   /api/admin/credits  {section, name, mc, color}   替名單加一個人：開一個 PR（開發者）
  *
  * 一個 KV（綁定叫 CORPUS，沿用語料收集站那一個），沒有別的儲存。
  *
- * 它記什麼：玩家的 UUID（當成鍵）、要不要顯示披風、哪一天報到的、上傳的披風圖檔。
+ * 它記什麼：玩家的 UUID（當成鍵）、要不要顯示披風、哪一天報到的；上傳的披風圖檔，
+ * 連同上傳的人的帳號名（管理的人要知道是誰傳的）；被封禁的人。
  * 十四天沒再報到就從名單上消失（圖檔留著，回來報到就又出現）。
- * 它不記：IP、所在的世界、任何遊戲內容。帳號名只在驗證與「是不是名單上的人」那一刻用到。
+ * 它不記：IP、所在的世界、任何遊戲內容。
  *
- * 對外公開的名單不放 UUID，放的是 UUID 雜湊出來的代碼——模組把畫面上那個人的 UUID
- * 算成代碼再去名單裡找。
+ * 對外公開的名單與一覽不放 UUID 與帳號名，放的是 UUID 雜湊出來的代碼。
  *
  * 身分驗證用的是 Minecraft 多人伺服器自己那一套：模組向 Mojang 說「我要加入 <隨機字串>」，
  * 我們再問 Mojang「這個帳號剛剛是不是加入了 <隨機字串>」。模組的登入憑證不會經過這裡。
+ * 網頁沒辦法自己做這件事，所以網頁的登入是<b>從遊戲裡開</b>：模組拿通行證換一條
+ * 一天有效的網址，瀏覽器開了就是登入的。
  *
  * 部署方式見同一個資料夾的 README.md。
  */
 
-import { GALLERY } from './gallery.js';
+import { PAGES } from './site.js';
 
 /** 公開代碼的樣子：24 個小寫十六進位字元。 */
 const ID = /^[0-9a-f]{24}$/;
@@ -137,9 +150,34 @@ export async function readToken(env, token, now) {
   return diff === 0 ? { uuid, name } : null;
 }
 
+/** 網頁的通行證多久過期。從遊戲裡再開一次就有新的。 */
+const WEB_TTL_MS = 24 * 3600 * 1000;
+
+/** 給瀏覽器用的通行證：前面多一個 web，效期短。網址會留在瀏覽紀錄裡，所以不發長的。 */
+export async function issueWebToken(env, uuid, name, now) {
+  const body = 'web.' + uuid + '.' + name + '.' + (now + WEB_TTL_MS);
+  return body + '.' + await sign(env, body);
+}
+
+async function readWebToken(env, token, now) {
+  const parts = token.split('.');
+  if (parts.length !== 5 || parts[0] !== 'web') return null;
+  const [, uuid, name, expires, signature] = parts;
+  if (!UUID.test(uuid) || !NAME.test(name) || !/^\d{1,16}$/.test(expires)) return null;
+  if (Number(expires) < now) return null;
+  const expected = await sign(env, 'web.' + uuid + '.' + name + '.' + expires);
+  if (expected.length !== signature.length) return null;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
+  return diff === 0 ? { uuid, name, web: true } : null;
+}
+
+/** 這個請求是誰發的：模組的通行證或網頁的通行證都認。 */
 async function who(request, env, now) {
   const header = request.headers.get('authorization') || '';
-  return header.startsWith('Bearer ') ? readToken(env, header.slice(7), now) : null;
+  if (!header.startsWith('Bearer ')) return null;
+  const token = header.slice(7);
+  return token.startsWith('web.') ? readWebToken(env, token, now) : readToken(env, token, now);
 }
 
 async function readJson(request) {
@@ -430,7 +468,7 @@ async function handleUpload(request, env, now) {
     await env.CORPUS.put('blob:' + hash, bytes, { metadata: { t: found.type, s: bytes.length } });
   }
   await env.CORPUS.put('cape:' + id, '', {
-    metadata: { t: found.type, v: now, s: bytes.length, u: user.uuid, h: hash },
+    metadata: { t: found.type, v: now, s: bytes.length, u: user.uuid, n: user.name, h: hash },
   });
   if (have && have.metadata && have.metadata.h !== hash) await sweep(env, have.metadata.h);
   const mine = await env.CORPUS.getWithMetadata('u:' + user.uuid);
@@ -522,99 +560,282 @@ async function handleCape(env, id) {
   });
 }
 
-/** 管理權的效期：開發者從遊戲裡開一覽頁，兩個小時內可以刪。 */
-const MOD_TTL_MS = 2 * 3600 * 1000;
-
-/** 開發者拿一條帶著管理權的一覽網址。網址 # 後面那一段不會送到任何伺服器，只有那一頁讀得到。 */
-async function handleModLink(request, env, now) {
+/** 替瀏覽器登入：拿模組的通行證換一條一天有效的網址。# 後面那一段不會送到任何伺服器。 */
+async function handleWebLink(request, env, now) {
   const user = await who(request, env, now);
   if (!user) return no('login first', 401);
-  if (!await isDeveloper(user.name, now)) return no('not a developer', 403);
-  const body = 'mod.' + user.uuid + '.' + user.name + '.' + (now + MOD_TTL_MS);
-  const key = body + '.' + await sign(env, body);
-  return json({ ok: true, url: new URL(request.url).origin + '/gallery#k=' + key });
+  const token = await issueWebToken(env, user.uuid, user.name, now);
+  return json({ ok: true, url: new URL(request.url).origin + '/capes#t=' + token });
 }
 
-/** 這個請求有沒有管理權：ADMIN_TOKEN，或一張還沒過期、而且本人還是開發者的管理憑證。 */
-async function mayModerate(request, env, now) {
-  const header = request.headers.get('authorization') || '';
-  if (!header.startsWith('Bearer ')) return false;
-  const given = header.slice(7);
-  if (env.ADMIN_TOKEN && given === env.ADMIN_TOKEN) return true;
-  const parts = given.split('.');
-  if (parts.length !== 5 || parts[0] !== 'mod') return false;
-  const [, uuid, name, expires, signature] = parts;
-  if (!UUID.test(uuid) || !NAME.test(name) || !/^\d{1,16}$/.test(expires)) return false;
-  if (Number(expires) < now) return false;
-  const expected = await sign(env, 'mod.' + uuid + '.' + name + '.' + expires);
-  if (expected.length !== signature.length) return false;
-  let diff = 0;
-  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
-  return diff === 0 && isDeveloper(name, now);
+/** 我是誰。網頁拿這個決定畫面上要有什麼。 */
+async function handleMe(request, env, now) {
+  const user = await who(request, env, now);
+  if (!user) return no('login first', 401);
+  const id = await publicId(user.uuid);
+  const cape = await env.CORPUS.getWithMetadata('cape:' + id);
+  const list = await credits(now);
+  const name = user.name.toLowerCase();
+  return json({
+    ok: true,
+    name: user.name,
+    id,
+    developer: Boolean(list && list.developers.has(name)),
+    member: Boolean(list && list.names.has(name)),
+    banned: Boolean(await env.CORPUS.get('ban:' + user.uuid)),
+    uploads: env.UPLOADS || 'tiered',
+    cape: cape && cape.metadata ? { t: cape.metadata.t, v: cape.metadata.v, s: cape.metadata.s } : null,
+  });
 }
 
 /**
- * 拿掉披風：{id} 是一個人的，{hash} 是所有用同一張圖的。ban 是 true 的話那些人之後不能再傳，
- * false 是解除。
+ * 這個請求有沒有管理權。有的話回是誰（寫進紀錄用），沒有回 null。
+ * 兩條路：本人在名單上是開發者（每次都重新查名單），或帶著 ADMIN_TOKEN。
+ */
+async function moderator(request, env, now) {
+  const header = request.headers.get('authorization') || '';
+  if (env.ADMIN_TOKEN && header === 'Bearer ' + env.ADMIN_TOKEN) return 'admin';
+  const user = await who(request, env, now);
+  return user && await isDeveloper(user.name, now) ? user.name : null;
+}
+
+/**
+ * 拿掉披風：{id} 是一個人的，{hash} 是所有用同一張圖的。ban 是 true 的話那些人之後不能再傳。
  */
 async function handleAdminRemove(request, env, now) {
-  if (!await mayModerate(request, env, now)) return no('forbidden', 403);
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
   const body = await readJson(request);
   if (!body) return no('bad request');
-  let ids;
+  let targets;
+  const capes = await allCapes(env);
   if (typeof body.id === 'string' && ID.test(body.id)) {
-    ids = [body.id];
+    targets = capes.filter((cape) => cape.id === body.id);
   } else if (typeof body.hash === 'string' && /^[0-9a-f]{64}$/.test(body.hash)) {
-    ids = (await allCapes(env)).filter((cape) => cape.h === body.hash).map((cape) => cape.id);
+    targets = capes.filter((cape) => cape.h === body.hash);
   } else {
     return no('bad request');
   }
   let removed = 0;
-  for (const id of ids) {
-    const uuid = await dropCape(env, id, now);
+  for (const cape of targets) {
+    const uuid = await dropCape(env, cape.id, now);
     if (!uuid) continue;
     removed++;
-    if (body.ban === true) await env.CORPUS.put('ban:' + uuid, String(now));
-    if (body.ban === false) await env.CORPUS.delete('ban:' + uuid);
+    if (body.ban === true) {
+      await env.CORPUS.put('ban:' + uuid, JSON.stringify({ n: cape.n || null, t: now, by }));
+    }
   }
   return json({ ok: true, removed, banned: body.ban === true });
+}
+
+/** 所有上傳的披風，連同每一件是誰傳的。只給管理的人看。 */
+async function handleAdminCapes(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const capes = await allCapes(env);
+  const groups = groupCapes(capes);
+  for (const group of groups) {
+    group.owners = capes.filter((cape) => cape.h === group.h)
+      .map((cape) => ({ id: cape.id, name: cape.n || null, uuid: cape.u, v: cape.v }));
+  }
+  return json({ capes: groups }, 200, { 'cache-control': 'no-store' });
+}
+
+/** 封禁名單。 */
+async function handleBans(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const bans = [];
+  let cursor;
+  do {
+    const page = await env.CORPUS.list({ prefix: 'ban:', limit: 1000, cursor });
+    for (const k of page.keys) {
+      let record = {};
+      try {
+        record = JSON.parse((await env.CORPUS.get(k.name)) || '{}');
+      } catch (e) {
+        record = {};                     // 舊格式只存了時間
+      }
+      if (typeof record !== 'object' || record === null) record = {};
+      bans.push({ uuid: k.name.slice(4), name: record.n || null, t: record.t || null, by: record.by || null });
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
+  bans.sort((a, b) => (b.t || 0) - (a.t || 0));
+  return json({ bans }, 200, { 'cache-control': 'no-store' });
+}
+
+async function handleUnban(request, env, now) {
+  if (!await moderator(request, env, now)) return no('forbidden', 403);
+  const body = await readJson(request);
+  if (!body || typeof body.uuid !== 'string' || !UUID.test(body.uuid)) return no('bad request');
+  await env.CORPUS.delete('ban:' + body.uuid);
+  return json({ ok: true });
+}
+
+// ---------------------------------------------------------------- 名單：替 credits.json 加一個人
+
+const REPO = 'LyuChaCha/WynnChaYuan';
+const CREDITS_PATH = 'src/main/resources/assets/wynnchayuan/credits.json';
+
+/** 可以加到哪幾區。鍵是 credits.json 裡那一區 key 的最後一段。 */
+const SECTIONS = { developers: '開發者', sponsors: '贊助者', contributors: '貢獻者' };
+
+/**
+ * 加一個成員之後的 credits.json。純函式，測試直接餵。
+ *
+ * @returns {{text: string}|{why: string}}
+ */
+export function addMember(text, entry) {
+  if (!entry || typeof entry !== 'object') return { why: 'bad request' };
+  const { section, name, mc, color } = entry;
+  if (!Object.hasOwn(SECTIONS, section)) return { why: 'bad section' };
+  if (typeof name !== 'string' || !name.trim() || name.length > 40 || /[\u0000-\u001f<>]/.test(name)) {
+    return { why: 'bad name' };
+  }
+  if (typeof mc !== 'string' || !NAME.test(mc)) return { why: 'bad mc' };
+  if (color !== undefined && color !== '' && (typeof color !== 'string' || !/^#[0-9A-Fa-f]{6}$/.test(color))) {
+    return { why: 'bad color' };
+  }
+  let doc;
+  try {
+    doc = JSON.parse(text);
+  } catch (e) {
+    return { why: 'bad credits' };
+  }
+  const target = (doc.sections || []).find((item) => typeof item.key === 'string'
+    && item.key.endsWith('.' + section));
+  if (!target || !Array.isArray(target.members)) return { why: 'bad credits' };
+  if (target.members.some((member) => typeof member.mc === 'string'
+      && member.mc.toLowerCase() === mc.toLowerCase())) {
+    return { why: 'already listed' };
+  }
+  const member = { name: name.trim(), mc };
+  if (color) member.color = color.toUpperCase();
+  target.members.push(member);
+  // 倉庫裡那一份就是兩格縮排、結尾一個換行；照這樣寫回去，diff 只有新增的那幾行
+  return { text: JSON.stringify(doc, null, 2) + '\n' };
+}
+
+function utf8ToBase64(text) {
+  let binary = '';
+  for (const byte of new TextEncoder().encode(text)) binary += String.fromCharCode(byte);
+  return btoa(binary);
+}
+
+function base64ToUtf8(base64) {
+  const binary = atob(base64.replace(/\s/g, ''));
+  return new TextDecoder().decode(Uint8Array.from(binary, (c) => c.charCodeAt(0)));
+}
+
+/**
+ * 替名單加一個人：在倉庫開一個分支、改 credits.json、開 PR。合併還是照倉庫的規矩來
+ * （檢查要過、要有人按）——這裡只是省掉手改 JSON。
+ * 要先設好 GITHUB_TOKEN（能寫這個倉庫的內容與 PR 的 token）。
+ */
+async function handleAddCredit(request, env, now) {
+  const by = await moderator(request, env, now);
+  if (!by) return no('forbidden', 403);
+  if (!env.GITHUB_TOKEN) return no('github not configured', 503);
+  let entry;
+  try {
+    entry = JSON.parse(await request.text());
+  } catch (e) {
+    return no('bad request');
+  }
+  const github = (path, init = {}) => fetch('https://api.github.com/repos/' + REPO + path, {
+    ...init,
+    headers: {
+      authorization: 'Bearer ' + env.GITHUB_TOKEN,
+      accept: 'application/vnd.github+json',
+      'user-agent': 'wynnchayuan-site',
+      'content-type': 'application/json',
+    },
+  });
+  try {
+    const file = await github('/contents/' + CREDITS_PATH + '?ref=main');
+    if (file.status !== 200) return no('github ' + file.status, 502);
+    const current = await file.json();
+    const changed = addMember(base64ToUtf8(current.content), entry);
+    if (changed.why) return no(changed.why, changed.why === 'already listed' ? 409 : 400);
+    const head = await github('/git/ref/heads/main');
+    if (head.status !== 200) return no('github ' + head.status, 502);
+    const branch = 'credits/add-' + entry.mc.toLowerCase() + '-' + now;
+    const made = await github('/git/refs', {
+      method: 'POST',
+      body: JSON.stringify({ ref: 'refs/heads/' + branch, sha: (await head.json()).object.sha }),
+    });
+    if (made.status !== 201) return no('github ' + made.status, 502);
+    const title = '名單：' + SECTIONS[entry.section] + '加入 ' + entry.name.trim() + '（' + entry.mc + '）';
+    const commit = await github('/contents/' + CREDITS_PATH, {
+      method: 'PUT',
+      body: JSON.stringify({ message: title, content: utf8ToBase64(changed.text), sha: current.sha, branch }),
+    });
+    if (commit.status !== 200 && commit.status !== 201) return no('github ' + commit.status, 502);
+    const pull = await github('/pulls', {
+      method: 'POST',
+      body: JSON.stringify({
+        title,
+        head: branch,
+        base: 'main',
+        body: '從網站的管理頁送出，送出的人：' + by + '。\n\n'
+          + '在 `credits.json` 的「' + SECTIONS[entry.section] + '」加一個成員。合併之後，名牌上的葉子與'
+          + '披風的資格會在玩家下次同步名單時生效。',
+      }),
+    });
+    if (pull.status !== 201) return no('github ' + pull.status, 502);
+    return json({ ok: true, url: (await pull.json()).html_url });
+  } catch (e) {
+    return no('github unreachable', 502);
+  }
+}
+
+function page(html) {
+  return new Response(html, {
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
+      'cache-control': 'no-store',
+      'referrer-policy': 'no-referrer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'DENY',
+      // 只跑自己的程式與 jsDelivr 上的立體檢視；圖從自己這裡、玩家頭像與倉庫的標誌來
+      'content-security-policy': "default-src 'self'; "
+        + "img-src 'self' data: blob: https://raw.githubusercontent.com https://mc-heads.net; "
+        + "style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; "
+        + "connect-src 'self'; base-uri 'none'; form-action 'none'",
+    },
+  });
 }
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const now = Date.now();
-    const route = request.method + ' ' + url.pathname;
+    const path = url.pathname;
+    if (request.method === 'GET' && Object.hasOwn(PAGES, path)) return page(PAGES[path]);
+    if (request.method === 'GET' && path === '/gallery') {
+      return Response.redirect(url.origin + '/capes', 302);
+    }
+    if (!path.startsWith('/api/')) return no('not found', 404);
+    const route = request.method + ' ' + path.slice(4);
     if (route === 'POST /login') return handleLogin(request, env, now);
+    if (route === 'POST /web-link') return handleWebLink(request, env, now);
+    if (route === 'GET /me') return handleMe(request, env, now);
     if (route === 'POST /hello') return handleHello(request, env, now);
     if (route === 'GET /list') return handleList(env, now);
     if (route === 'PUT /cape') return handleUpload(request, env, now);
     if (route === 'DELETE /cape') return handleRemove(request, env, now);
-    if (route === 'POST /admin/remove') return handleAdminRemove(request, env, now);
-    if (route === 'POST /mod-link') return handleModLink(request, env, now);
     if (route === 'GET /capes') return handleCapes(env);
-    if (route === 'GET /gallery' || route === 'GET /') {
-      return new Response(GALLERY, {
-        headers: {
-          'content-type': 'text/html; charset=utf-8',
-          'cache-control': 'no-store',
-          'referrer-policy': 'no-referrer',
-          'x-content-type-options': 'nosniff',
-          'x-frame-options': 'DENY',
-          // 這一頁只跑自己的程式與 jsDelivr 上的立體檢視；圖只從自己這裡來
-          'content-security-policy': "default-src 'self'; img-src 'self' data: blob:; "
-            + "style-src 'unsafe-inline'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; "
-            + "connect-src 'self'; base-uri 'none'; form-action 'none'",
-        },
-      });
-    }
-    if (request.method === 'GET' && url.pathname.startsWith('/cape/')) {
-      return handleCape(env, url.pathname.slice('/cape/'.length));
+    if (route === 'GET /admin/capes') return handleAdminCapes(request, env, now);
+    if (route === 'POST /admin/remove') return handleAdminRemove(request, env, now);
+    if (route === 'GET /admin/bans') return handleBans(request, env, now);
+    if (route === 'POST /admin/unban') return handleUnban(request, env, now);
+    if (route === 'POST /admin/credits') return handleAddCredit(request, env, now);
+    if (request.method === 'GET' && route.startsWith('GET /cape/')) {
+      return handleCape(env, route.slice('GET /cape/'.length));
     }
     if (route === 'GET /status') {
       const list = await storedList(env);
       return json({
-        what: 'WynnChaYuan presence',
+        what: 'WynnChaYuan',
         users: list ? list.users.length : 0,
         capes: list ? Object.keys(list.capes).length : 0,
         uploads: env.UPLOADS || 'tiered',

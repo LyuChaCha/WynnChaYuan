@@ -1,6 +1,7 @@
 // node tools/presence/worker.test.mjs
 import worker, {
-  publicId, issueToken, readToken, needsWrite, applyRecord, inspectCape, gifFrames, groupCapes,
+  publicId, issueToken, issueWebToken, readToken, needsWrite, applyRecord, inspectCape, gifFrames, groupCapes,
+  addMember,
   MAX_CAPE_BYTES, MAX_CAPE_FRAMES,
 } from './worker.js';
 
@@ -48,8 +49,25 @@ const ALICE = { id: 'a'.repeat(32), name: 'Alice_Dev' };          // 名單上�
 const BOB = { id: 'b'.repeat(32), name: 'Bob' };                  // 不在名單上
 const joined = new Map();                                         // serverId → 帳號
 let mojangDown = false;
-globalThis.fetch = async (url) => {
+let githubFile = '';
+const githubCalls = [];
+globalThis.fetch = async (url, init = {}) => {
   const u = new URL(typeof url === 'string' ? url : url.url);
+  if (u.hostname === 'api.github.com') {
+    const path = u.pathname.replace('/repos/LyuChaCha/WynnChaYuan', '') + u.search;
+    const call = { method: init.method || 'GET', path, auth: (init.headers || {}).authorization,
+      body: init.body ? JSON.parse(init.body) : null };
+    githubCalls.push(call);
+    const answer = (body, status = 200) => new Response(JSON.stringify(body), { status });
+    if (call.method === 'GET' && path.startsWith('/contents/')) {
+      return answer({ content: Buffer.from(githubFile, 'utf8').toString('base64'), sha: 'filesha' });
+    }
+    if (path === '/git/ref/heads/main') return answer({ object: { sha: 'mainsha' } });
+    if (path === '/git/refs') return answer({}, 201);
+    if (call.method === 'PUT') return answer({}, 200);
+    if (path === '/pulls') return answer({ html_url: 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999' }, 201);
+    return answer({}, 404);
+  }
   if (u.hostname === 'sessionserver.mojang.com') {
     if (mojangDown) throw new Error('down');
     const profile = joined.get(u.searchParams.get('serverId'));
@@ -67,16 +85,21 @@ globalThis.fetch = async (url) => {
   throw new Error('unexpected fetch ' + u);
 };
 
-const post = (path, body, token) => new Request('https://x.test' + path, {
+/** 網頁的路徑照原樣，其餘的都是 API。 */
+const at = (path) => 'https://x.test' + (['/', '/capes', '/account', '/admin'].includes(path) ? path : '/api' + path);
+const post = (path, body, token) => new Request(at(path), {
   method: 'POST',
   body: typeof body === 'string' ? body : JSON.stringify(body),
   headers: token ? { authorization: 'Bearer ' + token } : {},
 });
-const get = (path) => new Request('https://x.test' + path);
-const put = (path, bytes, token) => new Request('https://x.test' + path, {
+const get = (path, token) => new Request(at(path), {
+  headers: token ? { authorization: 'Bearer ' + token } : {},
+});
+const api = (path) => new Request('https://x.test/api' + path);
+const put = (path, bytes, token) => new Request(at(path), {
   method: 'PUT', body: bytes, headers: token ? { authorization: 'Bearer ' + token } : {},
 });
-const del = (path, token) => new Request('https://x.test' + path, {
+const del = (path, token) => new Request(at(path), {
   method: 'DELETE', headers: token ? { authorization: 'Bearer ' + token } : {},
 });
 
@@ -244,7 +267,7 @@ r = await worker.fetch(put('/cape', png(22, 17), aliceToken), env);
 check('她改傳跟他一樣的圖', r.status === 200);
 check('★ 兩個人同一張圖：只存一份，她原本那張沒人用了就刪掉（實際 ' + blobs().length + ' 份）',
   blobs().length === 1);
-r = await worker.fetch(get('/capes'), env);
+r = await worker.fetch(api('/capes'), env);
 const capes = (await r.json()).capes;
 check('★ 一覽把相同的圖併成一筆，列出兩個人', capes.length === 1 && capes[0].ids.length === 2
   && capes[0].ids.includes(aliceId) && capes[0].ids.includes(bobId) && capes[0].t === 'png');
@@ -256,63 +279,162 @@ check('groupCapes：新的排前面', groupCapes([
   { id: 'a', h: 'x', t: 'png', s: 1, v: 5 }, { id: 'b', h: 'y', t: 'gif', s: 2, v: 9 },
   { id: 'c', h: 'x', t: 'png', s: 1, v: 7 }]).map((g) => g.h + g.ids.length).join() === 'y1,x2');
 
-// ---- 披風一覽頁 ----
-r = await worker.fetch(get('/gallery'), env);
-const page = await r.text();
-check('一覽是一張網頁', r.status === 200 && r.headers.get('content-type').startsWith('text/html')
-  && page.includes('披風一覽') && page.includes('/capes'));
-check('首頁就是一覽', (await (await worker.fetch(get('/'), env)).text()) === page);
-check('★ 一覽頁只准跑自己的程式與 jsDelivr 的立體檢視',
+// ---- 網頁 ----
+const pages = {};
+for (const path of ['/', '/capes', '/account', '/admin']) {
+  r = await worker.fetch(get(path), env);
+  pages[path] = await r.text();
+  check(path + ' 是一張網頁', r.status === 200 && r.headers.get('content-type').startsWith('text/html')
+    && pages[path].includes('<title>'));
+  check(path + ' 有頁尾', pages[path].includes('© 2026 WynnChaYuan - All rights reserved.')
+    && pages[path].includes('Designed by LyuChaCha'));
+  // 頁面是包在樣板字串裡送出去的：裡面不能有反引號或錢字號加大括號
+  check(path + ' 裡沒有會被樣板字串吃掉的寫法',
+    !pages[path].includes(String.fromCharCode(96)) && !pages[path].includes('$' + '{'));
+}
+check('★ 披風一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => pages['/capes'].includes(w)));
+check('首頁有下載的連結', pages['/'].includes('https://modrinth.com/mod/wynnchayuan')
+  && pages['/'].includes('https://www.curseforge.com/minecraft/mc-mods/wynnchayuan'));
+check('帳號頁講了怎麼從遊戲裡登入', pages['/account'].includes('F6') && pages['/account'].includes('披風一覽'));
+check('★ 網頁只准跑自己的程式與 jsDelivr 的立體檢視',
   (r.headers.get('content-security-policy') || '').includes("script-src 'unsafe-inline' https://cdn.jsdelivr.net"));
-// 頁面是包在樣板字串裡送出去的：裡面不能有反引號或 \${
-check('頁面裡沒有會被樣板字串吃掉的寫法', !page.includes(String.fromCharCode(96)) && !page.includes('$' + '{'));
-check('★ 一覽上寫著不可以上傳什麼', ['政治', '不雅', '違反法規', '種族歧視'].every((w) => page.includes(w)));
+r = await worker.fetch(new Request('https://x.test/gallery', { redirect: 'manual' }), env);
+check('舊的 /gallery 轉到 /capes', r.status === 302 && r.headers.get('location').endsWith('/capes'));
+check('沒有 /api 的舊路徑不在了', (await worker.fetch(new Request('https://x.test/list'), env)).status === 404
+  && (await worker.fetch(new Request('https://x.test/submit'), env)).status === 404);
 
-// ---- ★ 開發者可以刪 ----
+// ---- ★ 網頁的登入：從遊戲裡換一條網址 ----
+r = await worker.fetch(post('/web-link', {}), env);
+check('★ 沒有通行證換不到登入網址', r.status === 401);
+r = await worker.fetch(post('/web-link', {}, bobToken), env);
+const bobLink = (await r.json()).url;
+check('換得到，通行證在 # 後面（不會送到伺服器）', r.status === 200 && bobLink.includes('/capes#t=web.'));
+const bobWeb = bobLink.split('#t=')[1];
+r = await worker.fetch(get('/me', bobWeb), env);
+let me = await r.json();
+check('★ 網頁的通行證認得出是誰；他不是開發者、不是成員', r.status === 200 && me.name === BOB.name
+  && me.id === bobId && me.developer === false && me.member === false);
+check('沒登入問我是誰：401', (await worker.fetch(get('/me'), env)).status === 401);
+check('★ 把網頁通行證的 UUID 換成別人的：不認',
+  (await worker.fetch(get('/me', bobWeb.replace(BOB.id, ALICE.id)), env)).status === 401);
+check('★ 網頁的通行證一天就過期', await issueWebToken(env, BOB.id, BOB.name, NOW - 25 * 3600 * 1000)
+  .then((old) => worker.fetch(get('/me', old), env)).then((x) => x.status === 401));
+const aliceWeb = (await (await worker.fetch(post('/web-link', {}, aliceToken), env)).json()).url.split('#t=')[1];
+me = await (await worker.fetch(get('/me', aliceWeb), env)).json();
+check('她是開發者，/me 看得到她的披風', me.developer === true && me.member === true && me.cape && me.cape.t === 'png');
+
+// ---- ★ 開發者：看得到是誰傳的 ----
+r = await worker.fetch(get('/admin/capes', bobWeb), env);
+check('★ 不是開發者看不到是誰傳的', r.status === 403);
+r = await worker.fetch(get('/admin/capes', aliceWeb), env);
+const adminCapes = (await r.json()).capes;
+check('★ 開發者看得到每一件是誰傳的', r.status === 200 && adminCapes.length === 1
+  && adminCapes[0].owners.map((o) => o.name).sort().join() === 'Alice_Dev,Bob');
+
+// ---- ★ 開發者：刪除與封禁 ----
 r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }), env);
-check('★ 沒有憑證不能刪', r.status === 403);
-r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, bobToken), env);
-check('★ 拿一般的通行證不能刪', r.status === 403);
-r = await worker.fetch(post('/mod-link', {}, bobToken), env);
-check('★ 不是開發者拿不到管理網址', r.status === 403);
-r = await worker.fetch(post('/mod-link', {}, aliceToken), env);
-const link = (await r.json()).url;
-check('開發者拿得到管理網址，憑證在 # 後面', r.status === 200 && link.includes('/gallery#k=mod.'));
-const modKey = link.split('#k=')[1];
-r = await worker.fetch(post('/admin/remove', { hash: 'f'.repeat(64) }, modKey), env);
+check('★ 沒有通行證不能刪', r.status === 403);
+r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, bobWeb), env);
+check('★ 不是開發者不能刪', r.status === 403);
+r = await worker.fetch(post('/admin/remove', { hash: 'f'.repeat(64) }, aliceWeb), env);
 check('沒有這張圖：成功但什麼都沒刪', r.status === 200 && (await r.json()).removed === 0);
-r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, modKey.replace(ALICE.id, BOB.id)), env);
-check('★ 竄改過的管理憑證不認', r.status === 403);
-r = await worker.fetch(post('/admin/remove', { id: bobId, ban: true }, modKey), env);
-check('★ 開發者刪掉他的披風並禁止再傳', r.status === 200 && (await r.json()).removed === 1
+r = await worker.fetch(post('/admin/remove', { id: bobId, ban: true }, aliceWeb), env);
+check('★ 開發者刪掉他的披風並封禁', r.status === 200 && (await r.json()).removed === 1
   && !env.CORPUS.data.has('cape:' + bobId) && env.CORPUS.data.has('ban:' + BOB.id));
 check('她還在用同一張圖，圖檔留著', blobs().length === 1);
 list = await (await worker.fetch(get('/list'), env)).json();
 check('名單上他的披風也沒了，她的還在', !(bobId in list.capes) && aliceId in list.capes);
 r = await worker.fetch(put('/cape', png(22, 17), bobToken), env);
-check('★ 被禁止的人不能再傳', r.status === 403 && (await r.json()).why === 'banned');
-r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, modKey), env);
-check('★ 照雜湊刪：所有用這張圖的人一起拿掉，圖檔也刪了', (await r.json()).removed === 1
-  && blobs().length === 0 && !env.CORPUS.data.has('cape:' + aliceId));
+check('★ 被封禁的人不能再傳', r.status === 403 && (await r.json()).why === 'banned');
+me = await (await worker.fetch(get('/me', bobWeb), env)).json();
+check('他自己的帳號頁看得到被封禁', me.banned === true && me.cape === null);
+
+// ---- ★ 封禁名單 ----
+r = await worker.fetch(get('/admin/bans', bobWeb), env);
+check('★ 不是開發者看不到封禁名單', r.status === 403);
+r = await worker.fetch(get('/admin/bans', aliceWeb), env);
+let bans = (await r.json()).bans;
+check('★ 封禁名單：誰、什麼時候、誰封的', r.status === 200 && bans.length === 1 && bans[0].uuid === BOB.id
+  && bans[0].name === 'Bob' && bans[0].by === 'Alice_Dev' && typeof bans[0].t === 'number');
+env.CORPUS.data.set('ban:' + 'e'.repeat(32), { value: '1700000000000', metadata: null });   // 舊格式
+bans = (await (await worker.fetch(get('/admin/bans', aliceWeb), env)).json()).bans;
+check('舊格式的封禁（只存了時間）也列得出來', bans.length === 2 && bans.some((b) => b.name === null));
+r = await worker.fetch(post('/admin/unban', { uuid: BOB.id }, bobWeb), env);
+check('★ 不能自己替自己解除', r.status === 403);
+r = await worker.fetch(post('/admin/unban', { uuid: BOB.id }, aliceWeb), env);
+check('★ 開發者解除封禁，他又能傳了', r.status === 200 && !env.CORPUS.data.has('ban:' + BOB.id)
+  && (await worker.fetch(put('/cape', png(44, 34), bobToken), env)).status === 200);
+r = await worker.fetch(post('/admin/remove', { hash: capes[0].h }, aliceWeb), env);
+check('★ 照雜湊刪：所有用這張圖的人一起拿掉，沒人用的圖檔也刪了', (await r.json()).removed === 1
+  && !env.CORPUS.data.has('cape:' + aliceId) && blobs().length === 1);
 
 // ADMIN_TOKEN 是另一條路（不在遊戲裡的時候用）
 const admin = { CORPUS: env.CORPUS, ADMIN_TOKEN: 'sesame' };
-r = await worker.fetch(post('/admin/remove', { id: bobId, ban: false }, 'wrong'), admin);
-check('密語不對不行', r.status === 403);
-env.CORPUS.data.set('cape:' + bobId, { value: '', metadata: { t: 'png', v: 1, s: 1, u: BOB.id, h: 'e'.repeat(64) } });
-r = await worker.fetch(post('/admin/remove', { id: bobId, ban: false }, 'sesame'), admin);
-check('ADMIN_TOKEN 也能刪，ban:false 是解除禁止', r.status === 200 && !env.CORPUS.data.has('ban:' + BOB.id));
+check('密語不對不行', (await worker.fetch(get('/admin/bans', 'wrong'), admin)).status === 403);
+check('ADMIN_TOKEN 也有管理權', (await worker.fetch(get('/admin/bans', 'sesame'), admin)).status === 200);
+
+// ---- ★ 新增成員：開 PR ----
+const CREDITS = JSON.stringify({
+  _note: 'x',
+  sections: [
+    { role: '開發者', key: 'credits.role.developers', color: '#FFD24A', members: [{ name: 'A', mc: 'Alice_Dev' }] },
+    { role: '貢獻者', key: 'credits.role.contributors', color: '#5BD86F', members: [] },
+    { role: '資料來源', key: 'credits.role.sources', members: [{ name: 'Wynntils' }] },
+  ],
+}, null, 2) + '\n';
+let added = addMember(CREDITS, { section: 'contributors', name: ' 小明 ', mc: 'Ming_01', color: '#abcdef' });
+let doc = JSON.parse(added.text);
+check('★ 加進對的那一區，名字去掉頭尾空白，顏色轉大寫', doc.sections[1].members.length === 1
+  && JSON.stringify(doc.sections[1].members[0]) === JSON.stringify({ name: '小明', mc: 'Ming_01', color: '#ABCDEF' }));
+doc.sections[1].members.pop();
+check('★ 別的地方一個字都沒動：把那個人拿掉重寫一次，跟原本一模一樣',
+  JSON.stringify(doc, null, 2) + '\n' === CREDITS && added.text.endsWith('}\n'));
+check('不填顏色就沒有 color 這一欄', !('color' in JSON.parse(addMember(CREDITS,
+  { section: 'sponsors'.replace('sponsors', 'contributors'), name: 'B', mc: 'Bee' }).text).sections[1].members[0]));
+check('★ 已經在那一區的人不重複加（不分大小寫）',
+  addMember(CREDITS, { section: 'developers', name: 'A2', mc: 'alice_dev' }).why === 'already listed');
+check('★ 怪的 Minecraft ID、怪的區、怪的顏色、空的名字都不收',
+  addMember(CREDITS, { section: 'contributors', name: 'x', mc: 'bad name!' }).why === 'bad mc'
+  && addMember(CREDITS, { section: 'sources', name: 'x', mc: 'Okay' }).why === 'bad section'
+  && addMember(CREDITS, { section: 'contributors', name: 'x', mc: 'Okay', color: 'red' }).why === 'bad color'
+  && addMember(CREDITS, { section: 'contributors', name: '  ', mc: 'Okay' }).why === 'bad name'
+  && addMember(CREDITS, { section: 'contributors', name: '<b>x</b>', mc: 'Okay' }).why === 'bad name');
+check('沒有的區（credits.json 裡找不到）回 bad credits',
+  addMember(CREDITS, { section: 'sponsors', name: 'x', mc: 'Okay' }).why === 'bad credits');
+
+const entry = { section: 'contributors', name: '小明', mc: 'Ming_01' };
+r = await worker.fetch(post('/admin/credits', entry, bobWeb), { CORPUS: env.CORPUS, GITHUB_TOKEN: 't' });
+check('★ 不是開發者不能加人', r.status === 403);
+r = await worker.fetch(post('/admin/credits', entry, aliceWeb), env);
+check('沒設 GITHUB_TOKEN：說清楚是沒設定', r.status === 503 && (await r.json()).why === 'github not configured');
+githubFile = CREDITS;
+r = await worker.fetch(post('/admin/credits', entry, aliceWeb), { CORPUS: env.CORPUS, GITHUB_TOKEN: 'secret-token' });
+body = await r.json();
+check('★ 開發者送出：開好 PR，回 PR 的網址', r.status === 200 && body.url === 'https://github.com/LyuChaCha/WynnChaYuan/pull/9999');
+check('★ 照順序：讀檔、讀 main、開分支、寫檔、開 PR（實際 ' + githubCalls.map((c) => c.method).join(' ') + '）',
+  githubCalls.length === 5 && githubCalls[0].path.startsWith('/contents/') && githubCalls[1].path === '/git/ref/heads/main'
+  && githubCalls[2].method === 'POST' && githubCalls[2].path === '/git/refs'
+  && githubCalls[3].method === 'PUT' && githubCalls[4].path === '/pulls');
+check('★ 每一個請求都帶著 token', githubCalls.every((c) => c.auth === 'Bearer secret-token'));
+const written = JSON.parse(Buffer.from(githubCalls[3].body.content, 'base64').toString('utf8'));
+check('★ 寫回去的檔多了那個人，中文沒有變亂碼', written.sections[1].members[0].name === '小明'
+  && githubCalls[3].body.branch.startsWith('credits/add-ming_01-') && githubCalls[3].body.sha === 'filesha');
+check('PR 是開到 main，說明裡寫了是誰送的', githubCalls[4].body.base === 'main'
+  && githubCalls[4].body.body.includes('Alice_Dev') && githubCalls[4].body.title.includes('小明'));
+r = await worker.fetch(post('/admin/credits', { section: 'developers', name: 'A', mc: 'Alice_Dev' }, aliceWeb),
+  { CORPUS: env.CORPUS, GITHUB_TOKEN: 't' });
+check('已經在名單上：409', r.status === 409 && (await r.json()).why === 'already listed');
 
 // ---- 自己拿掉 ----
-await worker.fetch(put('/cape', gif(22, 17, 2), aliceToken), env);
-r = await worker.fetch(del('/cape', aliceToken), env);
+pushBack(bobId);
+await worker.fetch(put('/cape', png(22, 17), bobToken), env);
+r = await worker.fetch(del('/cape', bobToken), env);
 list = await (await worker.fetch(get('/list'), env)).json();
 check('自己拿掉披風：那一筆、圖檔、名單都沒了', r.status === 200
-  && !env.CORPUS.data.has('cape:' + aliceId) && !(aliceId in list.capes) && blobs().length === 0);
+  && !env.CORPUS.data.has('cape:' + bobId) && !(bobId in list.capes) && blobs().length === 0);
 
 r = await worker.fetch(get('/status'), env);
-check('/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
-check('舊的語料路由不在了', (await worker.fetch(get('/submit'), env)).status === 404);
+check('/api/status 回人數與上傳模式', JSON.stringify(await r.json()).includes('"uploads":"tiered"'));
 
 console.log(failures === 0 ? '登記站：全部通過' : '登記站：' + failures + ' 項失敗');
 process.exit(failures === 0 ? 0 : 1);

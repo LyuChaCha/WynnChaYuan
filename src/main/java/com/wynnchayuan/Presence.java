@@ -51,8 +51,11 @@ public final class Presence {
 
     private Presence() {}
 
-    /** 登記站。沿用先前語料收集站那一支 Worker，程式在 {@code tools/presence}。 */
-    static final String BASE = "https://capes.wynnchayuan.com";
+    /** WynnChaYuan 的網站。程式在 {@code tools/presence}（一支 Cloudflare Worker）。 */
+    static final String BASE = "https://wynnchayuan.com";
+
+    /** 登記站的 API，跟網站同一個地方。 */
+    private static final String API = BASE + "/api";
 
     /** 名單多久抓一次。 */
     private static final long LIST_EVERY_MS = 5 * 60_000L;
@@ -278,7 +281,7 @@ public final class Presence {
 
     private static void refresh() throws Exception {
         lastListTry = System.currentTimeMillis();
-        HttpResponse<byte[]> response = send(HttpRequest.newBuilder(URI.create(BASE + "/list"))
+        HttpResponse<byte[]> response = send(HttpRequest.newBuilder(URI.create(API + "/list"))
                 .GET(), false);
         if (response.statusCode() == 200 && response.body().length <= MAX_LIST_BYTES) {
             Roster next = parse(new String(response.body(), StandardCharsets.UTF_8));
@@ -308,7 +311,7 @@ public final class Presence {
             mc.services().sessionService().joinServer(
                     user.getProfileId(), user.getAccessToken(), serverId);
             HttpResponse<byte[]> response = send(
-                    HttpRequest.newBuilder(URI.create(BASE + "/login"))
+                    HttpRequest.newBuilder(URI.create(API + "/login"))
                             .header("Content-Type", "application/json")
                             .POST(HttpRequest.BodyPublishers.ofString(
                                     loginBody(user.getName(), serverId), StandardCharsets.UTF_8)),
@@ -329,7 +332,7 @@ public final class Presence {
         if (!login()) {
             return false;
         }
-        HttpResponse<byte[]> response = send(HttpRequest.newBuilder(URI.create(BASE + "/hello"))
+        HttpResponse<byte[]> response = send(HttpRequest.newBuilder(URI.create(API + "/hello"))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(helloBody(cape), StandardCharsets.UTF_8)),
                 true);
@@ -339,7 +342,7 @@ public final class Presence {
     /** 送一個請求。通行證過期（401）的話丟掉它，下一輪會重新登入。 */
     private static HttpResponse<byte[]> send(HttpRequest.Builder request, boolean withToken)
             throws Exception {
-        boolean cape = request.build().uri().getPath().startsWith("/cape");
+        boolean cape = request.build().uri().getPath().startsWith("/api/cape");
         request.timeout(cape ? CAPE_TIMEOUT : TIMEOUT).header("User-Agent", "WynnChaYuan");
         if (withToken && token != null) {
             request.header("Authorization", "Bearer " + token);
@@ -397,14 +400,14 @@ public final class Presence {
      */
     public static void upload(byte[] bytes, String contentType, Consumer<Result> done) {
         WORKER.execute(() -> done.accept(change(HttpRequest.newBuilder(
-                URI.create(BASE + "/cape")).header("Content-Type", contentType)
+                URI.create(API + "/cape")).header("Content-Type", contentType)
                 .PUT(HttpRequest.BodyPublishers.ofByteArray(bytes)))));
     }
 
     /** 拿掉自己上傳的披風。 */
     public static void remove(Consumer<Result> done) {
         WORKER.execute(() -> done.accept(change(HttpRequest.newBuilder(
-                URI.create(BASE + "/cape")).DELETE())));
+                URI.create(API + "/cape")).DELETE())));
     }
 
     private static Result change(HttpRequest.Builder request) {
@@ -426,26 +429,27 @@ public final class Presence {
     }
 
     /**
-     * 披風一覽的網址（登記站上的一張網頁，列出所有上傳的披風）。
+     * 披風一覽的網址（網站上的一頁，列出所有上傳的披風）。
      *
-     * <p>開發者要的是<b>帶著管理權</b>的網址：登記站確認他是名單上的開發者之後，回一條
-     * 兩個小時有效的網址，那一頁上每張披風多出刪除的按鈕。管理權放在網址 {@code #} 後面，
-     * 那一段不會送到任何伺服器。不是開發者、或驗證沒過，就是一般的網址。
+     * <p>有開報到的人拿到的是<b>順便替瀏覽器登入</b>的網址：網站沒辦法自己確認 Minecraft
+     * 帳號，所以由模組拿通行證換一條一天有效的網址。登入的憑證放在網址 {@code #} 後面，
+     * 那一段不會送到任何伺服器。登入之後可以在網站上傳、移除自己的披風；名單上的開發者
+     * 還看得到管理的頁面。沒開報到、或驗證沒過，就是一般的網址。
      *
-     * @param moderator 自己在名單上是開發者
-     * @param open      拿到網址之後叫（在背景執行緒上）
+     * @param signIn 要不要替瀏覽器登入（設定裡開著「讓別人知道我有裝」）
+     * @param open   拿到網址之後叫（在背景執行緒上）
      */
-    public static void gallery(boolean moderator, Consumer<String> open) {
+    public static void gallery(boolean signIn, Consumer<String> open) {
         WORKER.execute(() -> {
-            String url = BASE + "/gallery";
-            if (moderator) {
+            String url = BASE + "/capes";
+            if (signIn) {
                 try {
                     if (login()) {
                         HttpResponse<byte[]> response = send(HttpRequest.newBuilder(
-                                URI.create(BASE + "/mod-link"))
+                                URI.create(API + "/web-link"))
                                 .header("Content-Type", "application/json")
                                 .POST(HttpRequest.BodyPublishers.ofString("{}")), true);
-                        String link = moderatorLink(response.statusCode(),
+                        String link = signedInLink(response.statusCode(),
                                 new String(response.body(), StandardCharsets.UTF_8));
                         if (link != null) {
                             url = link;
@@ -459,14 +463,14 @@ public final class Presence {
         });
     }
 
-    /** 登記站回的管理網址。只認指回登記站一覽頁的——別的網址不開。 */
-    static String moderatorLink(int status, String body) {
+    /** 登記站回的登入網址。只認指回我們網站的——別的網址不開。 */
+    static String signedInLink(int status, String body) {
         if (status != 200) {
             return null;
         }
         try {
             String url = JsonParser.parseString(body).getAsJsonObject().get("url").getAsString();
-            return url.startsWith(BASE + "/gallery#k=") ? url : null;
+            return url.startsWith(BASE + "/capes#t=") ? url : null;
         } catch (Exception e) {
             return null;
         }
@@ -483,7 +487,7 @@ public final class Presence {
         }
         try {
             HttpResponse<byte[]> response = send(HttpRequest.newBuilder(
-                    URI.create(BASE + "/cape/" + id + "?v=" + version)).GET(), false);
+                    URI.create(API + "/cape/" + id + "?v=" + version)).GET(), false);
             return response.statusCode() == 200 && response.body().length <= MAX_CAPE_BYTES
                     ? response.body() : null;
         } catch (Exception e) {
