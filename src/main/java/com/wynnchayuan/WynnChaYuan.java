@@ -284,6 +284,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             flushQuietly();
             System.out.println("[WynnChaYuan] 已收集 " + store.size() + " 條字串");
+            // 最後才換 jar：上面存檔要用的類別都載入過了。見 SelfUpdate#applyPending。
+            SelfUpdate.applyPending();
         }, MOD_ID + "-shutdown"));
 
         System.out.println("[WynnChaYuan] 就緒，輸出於 " + dir.resolve("captured.json"));
@@ -899,6 +901,8 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.render.PanelShot.tick();
             // 有新版就在聊天室說一次，附下載連結。見 Releases#tellOnce。
             Releases.tellOnce(client);
+            // 上次在遊戲裡下載的更新沒套用成功的話，說一聲檔案在哪。見 SelfUpdate#tellLeftover。
+            SelfUpdate.tellLeftover(client);
             // 有新翻譯也說一次，但只說「有」，抓不抓由玩家決定。
             // 見 TranslationUpdate#tellOnce。
             com.wynnchayuan.translate.TranslationUpdate.tellOnce(client);
