@@ -95,7 +95,9 @@ const UPLOAD_EVERY_MS = 20 * 1000;
  * （左邊 1 ＋ 正面 10 ＋ 右邊 1 ＋ 背面 10 寬，上下緣 1 ＋ 面 16 高）。
  * 不照範本畫的圖不收，免得什麼圖都往上傳。
  */
-export const CAPE_SIZES = [[22, 17], [44, 34], [88, 68], [176, 136]];
+// 22×17 格的 1、2、4、8、16、32、48 倍。最大那一張 1056×816（使用者 2026-10-12：「最多支援到 1000 左右」）。
+// 遊戲裡最多用到 16 倍（352×272），再大的模組會自己縮；大的主要是網站上看得清楚。
+export const CAPE_SIZES = [[22, 17], [44, 34], [88, 68], [176, 136], [352, 272], [704, 544], [1056, 816]];
 
 const CREDITS_URL = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/'
   + 'src/main/resources/assets/wynnchayuan/credits.json';

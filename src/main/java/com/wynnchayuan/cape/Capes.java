@@ -425,12 +425,10 @@ public final class Capes {
     static List<CapeImage.Frame> decode(byte[] bytes) throws Exception {
         List<CapeImage.Frame> out = new ArrayList<>();
         if (Gif.looksLikeGif(bytes)) {
-            int count = Math.min(CapeImage.MAX_FRAMES, Gif.countFrames(bytes));
-            Gif.Image gif = Gif.decode(bytes, CapeImage.MAX_FRAMES);
-            for (Gif.Frame frame : gif.frames()) {
-                out.add(CapeImage.layout(frame.argb(), gif.width(), gif.height(),
-                        Math.max(count, gif.frames().size()), frame.delayMs()));
-            }
+            // 解一格排一格：大張的動畫不把每一格原圖都留著（見 Gif#each）
+            int count = Math.max(1, Math.min(CapeImage.MAX_FRAMES, Gif.countFrames(bytes)));
+            Gif.each(bytes, CapeImage.MAX_FRAMES, (canvas, width, height, delayMs) ->
+                    out.add(CapeImage.layoutDetached(canvas, width, height, count, delayMs)));
             return out;
         }
         try (NativeImage image = NativeImage.read(bytes)) {

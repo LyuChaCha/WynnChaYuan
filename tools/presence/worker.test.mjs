@@ -441,11 +441,12 @@ check('沒變的現況不改名單', applyRecord(
   { t: 1, users: ['x'], capes: { x: 3 }, hidden: [] }, { i: 'x', c: 1, v: 3 }) === null);
 
 // ---- 圖檔的規則 ----
-check('範本的四種尺寸都收', [[22, 17], [44, 34], [88, 68], [176, 136]]
+check('★ 範本的七種尺寸都收，最大 1056×816', [[22, 17], [44, 34], [88, 68], [176, 136], [352, 272], [704, 544], [1056, 816]]
   .every(([w, h]) => inspectCape(png(w, h)).type === 'png'));
 check('★ 不是範本的尺寸不收（實際 ' + inspectCape(png(100, 100)).why + '）',
   inspectCape(png(100, 100)).why === 'bad size' && inspectCape(png(23, 17)).why === 'bad size'
-  && inspectCape(png(66, 51)).why === 'bad size' && inspectCape(png(352, 272)).why === 'bad size');
+  && inspectCape(png(66, 51)).why === 'bad size' && inspectCape(png(1408, 1088)).why === 'bad size'
+  && inspectCape(png(990, 765)).why === 'bad size');
 check('★ 只畫一面的、或沒裁掉空白的完整版型都不收——要照範本', inspectCape(png(40, 64)).why === 'bad size'
   && inspectCape(png(64, 32)).why === 'bad size' && inspectCape(png(128, 64)).why === 'bad size'
   && inspectCape(gif(20, 32, 3)).why === 'bad size');

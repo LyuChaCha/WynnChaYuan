@@ -21,8 +21,14 @@ public final class CapeRules {
     /** GIF 最多幾格。 */
     public static final int MAX_FRAMES = 120;
 
-    /** 收哪幾種尺寸：範本的 22×17 與它的 2、4、8 倍。見 {@link CapeImage#template}。 */
-    public static final int[][] SIZES = {{22, 17}, {44, 34}, {88, 68}, {176, 136}};
+    /**
+     * 收哪幾種尺寸：範本的 22×17 與它的 2、4、8、16、32、48 倍。見 {@link CapeImage#template}。
+     *
+     * <p>最大 1056×816（使用者 2026-10-12：「最多支援到 1000 左右」）。遊戲裡最多用到 16 倍
+     * （{@link CapeImage#MAX_SCALE}），再大的在排版型時縮下來；大的主要是網站上看得清楚。
+     */
+    public static final int[][] SIZES = {{22, 17}, {44, 34}, {88, 68}, {176, 136},
+            {352, 272}, {704, 544}, {1056, 816}};
 
     /** 哪裡不對。 */
     /** 一般玩家的上限（使用者 2026-10-12：「一般使用者只能上傳 1mb」）。名單上的成員是 {@link #MAX_BYTES}。 */

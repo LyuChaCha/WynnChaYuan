@@ -207,12 +207,14 @@ public final class PresenceTest {
                 == CapeRules.Problem.TOO_LARGE);
         check("不是圖的不行", CapeRules.check("<html>".getBytes()) == CapeRules.Problem.BAD_FORMAT
                 && CapeRules.check(null) == CapeRules.Problem.BAD_FORMAT);
-        check("PNG：範本的四種尺寸都可以（實際 " + CapeRules.SIZES.length + " 種）",
-                CapeRules.SIZES.length == 4 && Arrays.stream(CapeRules.SIZES)
+        check("★ PNG：範本的七種尺寸都可以，最大 1056×816（實際 " + CapeRules.SIZES.length + " 種）",
+                CapeRules.SIZES.length == 7 && CapeRules.check(png(1056, 816)) == null
+                        && Arrays.stream(CapeRules.SIZES)
                 .allMatch(size -> CapeRules.check(png(size[0], size[1])) == null));
         check("★ PNG：別的尺寸不行", CapeRules.check(png(100, 100)) == CapeRules.Problem.BAD_SIZE
                 && CapeRules.check(png(66, 51)) == CapeRules.Problem.BAD_SIZE
-                && CapeRules.check(png(352, 272)) == CapeRules.Problem.BAD_SIZE);
+                && CapeRules.check(png(990, 765)) == CapeRules.Problem.BAD_SIZE
+                && CapeRules.check(png(1408, 1088)) == CapeRules.Problem.BAD_SIZE);
         byte[] wide = gif.clone();
         wide[6] = 23;                                   // 寬改成 23
         check("GIF：別的尺寸不行", CapeRules.check(wide) == CapeRules.Problem.BAD_SIZE);

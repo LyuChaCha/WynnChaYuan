@@ -25,8 +25,30 @@ public final class Gif {
 
     private Gif() {}
 
-    /** 畫布一邊最多幾個像素。披風的一面才 10×16 格，再大只是浪費。 */
-    public static final int MAX_SIDE = 1024;
+    /** 畫布一邊最多幾個像素：最大的範本是 1056×816。 */
+    public static final int MAX_SIDE = 1056;
+
+    /** 一格一格收：畫布是解碼器自己那一張，下一格就會被改掉，要留就自己複製或當場用掉。 */
+    public interface Sink {
+        void frame(int[] canvas, int width, int height, int delayMs);
+    }
+
+    /**
+     * 一格一格解，解一格交一格，不把每一格都留在記憶體裡。
+     *
+     * <p>大張的動畫要這樣讀：1056×816 的 120 格全留著是四百多 MB，一格一格交出去
+     * （接的人當場縮成披風貼圖）就只有一張畫布。
+     *
+     * @return 交出去幾格
+     * @throws IOException 不是 GIF、尺寸離譜、或檔案是壞的
+     */
+    public static int each(byte[] data, int maxFrames, Sink sink) throws IOException {
+        int count = walk(data, maxFrames, true, sink).frames().size();
+        if (count == 0) {
+            throw new IOException("GIF 裡沒有影像");
+        }
+        return count;
+    }
 
     /** 停留時間寫 0 或太短的，照瀏覽器的慣例當成十分之一秒。 */
     private static final int DEFAULT_DELAY_MS = 100;
@@ -51,7 +73,7 @@ public final class Gif {
      */
     public static int countFrames(byte[] data) {
         try {
-            return walk(data, Integer.MAX_VALUE, false).frames().size();
+            return walk(data, Integer.MAX_VALUE, false, null).frames().size();
         } catch (IOException e) {
             return 0;
         }
@@ -60,7 +82,7 @@ public final class Gif {
     /** 這個檔從頭到尾是完整的嗎：每個區塊都走得完，而且有檔尾。 */
     public static boolean complete(byte[] data) {
         try {
-            return walk(data, Integer.MAX_VALUE, false).complete();
+            return walk(data, Integer.MAX_VALUE, false, null).complete();
         } catch (IOException e) {
             return false;
         }
@@ -73,14 +95,15 @@ public final class Gif {
      * @throws IOException 不是 GIF、尺寸離譜、或檔案是壞的
      */
     public static Image decode(byte[] data, int maxFrames) throws IOException {
-        Image image = walk(data, maxFrames, true);
+        Image image = walk(data, maxFrames, true, null);
         if (image.frames().isEmpty()) {
             throw new IOException("GIF 裡沒有影像");
         }
         return image;
     }
 
-    private static Image walk(byte[] data, int maxFrames, boolean pixels) throws IOException {
+    private static Image walk(byte[] data, int maxFrames, boolean pixels, Sink sink)
+            throws IOException {
         if (!looksLikeGif(data)) {
             throw new IOException("不是 GIF");
         }
@@ -152,7 +175,12 @@ public final class Gif {
                     int[] before = disposal == 3 ? canvas.clone() : null;
                     draw(canvas, width, height, indices, left, top, w, h,
                             (local & 0x40) != 0, colours, transparent);
-                    frames.add(new Frame(canvas.clone(), delay));
+                    if (sink != null) {
+                        sink.frame(canvas, width, height, delay);
+                        frames.add(new Frame(null, delay));
+                    } else {
+                        frames.add(new Frame(canvas.clone(), delay));
+                    }
                     if (disposal == 2) {
                         clear(canvas, width, height, left, top, w, h);
                     } else if (before != null) {

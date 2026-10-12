@@ -166,7 +166,7 @@ const LEAF = String.raw`<svg viewBox="0 0 24 24" fill="none" stroke="currentColo
 const LOGO = 'https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/logo/2026/wynnchayuan-logo-transparent-on-dark-1024.png';
 const TEMPLATES = 'https://github.com/LyuChaCha/WynnChaYuan/tree/main/capes/templates';
 const ISSUES = 'https://github.com/LyuChaCha/WynnChaYuan/issues';
-const SIZES = '22×17, 44×34, 88×68, 176×136';
+const SIZES = '22×17, 44×34, 88×68, 176×136, 352×272, 704×544, 1056×816';
 
 // ------------------------------------------------------------------ 字
 
@@ -911,7 +911,7 @@ const ACCOUNT_JS = SKINVIEW + '<script>' + VIEWER + String.raw`
     .then(function (status) { return Boolean(status.discord); }).catch(function () { return false; });
   var linkMsg = document.getElementById('linkmsg');
   var limit = 20 * 1024 * 1024;          /* 檔案上限：登入之後換成這個人自己的（一般玩家 1 MB） */
-  var SIZES_OK = [[22, 17], [44, 34], [88, 68], [176, 136]];
+  var SIZES_OK = [[22, 17], [44, 34], [88, 68], [176, 136], [352, 272], [704, 544], [1056, 816]];
   var watching = null;
 
   /* 用 Discord 登入了、還沒綁：要一組綁定碼，然後等遊戲那邊把它送回來 */

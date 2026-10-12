@@ -219,6 +219,19 @@ public final class CapeImage {
     }
 
     /**
+     * 同 {@link #layout}，但保證回來的那一格不跟 {@code source} 共用陣列。
+     *
+     * <p>來源是會被重複使用的畫布時用這個（{@link Gif#each} 一格一格交出同一張畫布）：
+     * 完整版型不必縮的時候 {@link #full} 直接把來源交回去，不複製的話每一格都會變成最後一格。
+     */
+    public static Frame layoutDetached(int[] source, int sw, int sh, int frames, int delayMs) {
+        Frame frame = layout(source, sw, sh, frames, delayMs);
+        return frame.argb() == source
+                ? new Frame(frame.width(), frame.height(), source.clone(), frame.delayMs())
+                : frame;
+    }
+
+    /**
      * 取樣：目的地的每一個像素，是來源對應那一塊的平均。縮小時不會掉細節，
      * 放大時那一塊不到一個像素，等於取最近的那一點（像素畫不會糊）。
      */

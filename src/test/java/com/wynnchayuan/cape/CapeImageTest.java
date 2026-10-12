@@ -239,6 +239,40 @@ public final class CapeImageTest {
                 100L * shrunk.width() * shrunk.height() <= CapeImage.PIXEL_BUDGET
                         && shrunk.argb()[(shrunk.width() / 64) * shrunk.width() + shrunk.width() / 64]
                                 == 0xFF336699);
+        // ★ 一格一格交出去的讀法（大張動畫用）：內容跟整份解出來的一樣，而且每一格各自獨立
+        Gif.Image whole = Gif.decode(file("anim.gif"), 99);
+        List<int[]> streamed = new java.util.ArrayList<>();
+        List<int[]> canvases = new java.util.ArrayList<>();
+        int handed = Gif.each(file("anim.gif"), 99, (canvas, gw, gh, delayMs) -> {
+            canvases.add(canvas);
+            streamed.add(canvas.clone());
+        });
+        boolean sameFrames = handed == whole.frames().size();
+        for (int i = 0; sameFrames && i < handed; i++) {
+            sameFrames = Arrays.equals(streamed.get(i), whole.frames().get(i).argb());
+        }
+        check("★ 一格一格讀：格數與每一格的內容都跟整份解出來的一樣（" + handed + " 格）",
+                handed > 1 && sameFrames);
+        check("只要兩格就只交兩格", Gif.each(file("anim.gif"), 2, (canvas, gw, gh, delayMs) -> { }) == 2);
+        int[] canvas64 = new int[64 * 32];
+        java.util.Arrays.fill(canvas64, 0xFF112233);
+        CapeImage.Frame first = CapeImage.layoutDetached(canvas64, 64, 32, 2, 100);
+        java.util.Arrays.fill(canvas64, 0xFF445566);                  // 解碼器接著畫下一格
+        check("★ 完整版型的動畫：畫布被下一格蓋掉，前一格還是原本的樣子",
+                first.argb() != canvas64 && first.argb()[0] == 0xFF112233
+                        && CapeImage.layout(canvas64, 64, 32, 2, 100).argb() == canvas64);
+        int[] huge = new int[1056 * 816];
+        java.util.Arrays.fill(huge, 0xFF336699);
+        CapeImage.Frame fromHuge = CapeImage.layoutDetached(huge, 1056, 816, 120, 100);
+        check("★ 最大的範本（1056×816）120 格：縮到預算以內（實際 " + fromHuge.width() + "×"
+                        + fromHuge.height() + "）", CapeImage.template(1056, 816)
+                && 120L * fromHuge.width() * fromHuge.height() <= CapeImage.PIXEL_BUDGET
+                && fromHuge.argb()[(fromHuge.width() / 64) * fromHuge.width() + fromHuge.width() / 64]
+                        == 0xFF336699);
+        CapeImage.Frame still = CapeImage.layout(huge, 1056, 816, 1, 0);
+        check("最大的範本單張：遊戲裡用 16 倍（實際 " + still.width() + "×" + still.height() + "）",
+                still.width() == 64 * CapeImage.MAX_SCALE);
+        check("GIF 的畫布上限跟最大的範本一樣", Gif.MAX_SIDE == 1056);
         Gif.Image gif = Gif.decode(file("template.gif"), 9);
         check("範本尺寸的 GIF：22×17、三格，每一格都排得進去", gif.width() == 22 && gif.height() == 17
                 && gif.frames().size() == 3 && CapeImage.layout(gif.frames().get(1).argb(),
