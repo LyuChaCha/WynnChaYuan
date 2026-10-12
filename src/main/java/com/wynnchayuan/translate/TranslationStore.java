@@ -292,6 +292,7 @@ public final class TranslationStore {
         maxBlockLines = 1;
         nameKeys.clear();
         plainNameKeys.clear();
+        bareNames.clear();
         otherOwners.clear();
         nonItemOwners.clear();
         gearNameKeys.clear();
@@ -774,14 +775,23 @@ public final class TranslationStore {
                         noteTerm(srcKey, dst.strip());
                     } else if (gearNames) {
                         nameKeys.add(srcKey);       // 受 F6 開關管
+                        noteBareName(srcKey);
                     } else {
                         // 兩個都不是（素材、材料）：照一般條目翻，既不會被拿去
                         // 替換別的句子，也不受裝備開關影響——只有按住 Shift
                         // 看原文那一下會用到，見 #plainNameKeys。
                         plainNameKeys.add(srcKey);
+                        noteBareName(srcKey);
                     }
                 }
             }
+        }
+    }
+
+    /** 見 {@link #bareNames}。 */
+    private void noteBareName(String key) {
+        if (key.indexOf(ICON) >= 0) {
+            bareNames.putIfAbsent(bareName(key), key);
         }
     }
 
@@ -2022,7 +2032,7 @@ public final class TranslationStore {
                 }
                 // 「譯名 (原文)」：跟一般裝備名同一個規矩
                 return namesWithOriginal && !holdAppended
-                        ? own + " (" + template.strip() + ")" : own;
+                        ? withOriginal(own, template.strip()) : own;
             }
         }
         String hit = lookupBase(template);
@@ -2031,10 +2041,100 @@ public final class TranslationStore {
         }
         if (namesWithOriginal && !holdAppended && getsOriginal(template.strip())) {
             // 「譯名 (原文)」：看得懂，又對得上 wiki 與交易市場
-            return hit + " (" + template.strip() + ")";
+            return withOriginal(hit, template.strip());
         }
         return hit;
     }
+
+    /**
+     * 「譯名 (原文)」。原文裡的佔位符<b>不能照抄</b>。
+     *
+     * <h2>實機回報（2026-10-12）</h2>
+     * 「譯名 + 原文」模式下，書卷 {@code Arsonist's Tome of Allegiance} 的名稱留英文。
+     * 使用者的 {@code captured.json} 記著：
+     *
+     * <pre>
+     *   src  {#}Arsonist's Tome of Allegiance{#}
+     *   dst  {#}戀火效忠書卷{#} ({#}Arsonist's Tome of Allegiance{#})
+     *   why  {#}: src 2, dst 4
+     * </pre>
+     *
+     * 語料那一條的鍵本身帶著圖示（當時的 {@code tome.json}：遊戲把稀有度外框當圖示送來），
+     * 這裡原本把鍵<b>整個</b>接在後面，圖示就多了一倍。原文只有兩個圖示可以填，
+     * {@code LineTranslator#rebuildAll} 判定佔位符對不上、整條放棄——開了這個模式
+     * 反而連譯名都看不到。名字裡帶數值或地名的裝備（{@code H-{~} Micro Defibrillator}、
+     * {@code {p} Banner}，五十幾件）是同一個毛病。
+     *
+     * <h2>各種佔位符怎麼辦</h2>
+     * <ul>
+     *   <li>{@code {#}} 圖示：外框不是名字的一部分，原文那一份不帶。括號接在譯名後面、
+     *       <b>結尾的圖示之前</b>——圖示留在遊戲擺的位置，跟逐片段那條路畫出來的
+     *       「{@code {#}越相杖 (Warp){#}}」同一個樣子；</li>
+     *   <li>{@code {~}} 數值：改成指名的 {@code {~1}}、{@code {~2}}，同一個數字再用一次，
+     *       不多消耗；</li>
+     *   <li>{@code {p}} 地名、{@code {u}} 玩家名：沒有指名的寫法，照順序只填得了一次。
+     *       這種名字只給譯名、不附原文——地名本來就不翻，譯名裡看得到。</li>
+     * </ul>
+     */
+    private static String withOriginal(String hit, String key) {
+        String original = originalOf(key);
+        if (original == null) {
+            return hit;
+        }
+        int tail = hit.length();
+        while (tail >= ICON.length() && hit.startsWith(ICON, tail - ICON.length())) {
+            tail -= ICON.length();
+        }
+        return hit.substring(0, tail) + " (" + original + ")" + hit.substring(tail);
+    }
+
+    /**
+     * 附在譯名後面的那一份原文。見 {@link #withOriginal}。
+     *
+     * @return {@code null} 代表這個名字附不了原文
+     */
+    static String originalOf(String key) {
+        if (key.indexOf('{') < 0) {
+            return key;                        // 絕大多數的名字
+        }
+        if (key.contains(GlyphSplitter.PLACE_PLACEHOLDER)
+                || key.contains(GlyphSplitter.PLAYER_PLACEHOLDER)) {
+            return null;
+        }
+        String bare = bareName(key);
+        if (bare.isEmpty()) {
+            return null;
+        }
+        String number = GlyphSplitter.NUMBER_PLACEHOLDER;
+        StringBuilder out = new StringBuilder();
+        int from = 0;
+        int nth = 0;
+        for (int at = bare.indexOf(number); at >= 0; at = bare.indexOf(number, from)) {
+            out.append(bare, from, at).append("{~").append(++nth).append('}');
+            from = at + number.length();
+        }
+        return out.append(bare, from, bare.length()).toString();
+    }
+
+    /** 名稱的鍵拿掉圖示之後的樣子；圖示兩邊的空白併成一個。見 {@link #bareNames}。 */
+    private static String bareName(String key) {
+        return key.indexOf(ICON) < 0 ? key
+                : key.replace(ICON, " ").strip().replaceAll(" {2,}", " ");
+    }
+
+    /** 指名的數值（{@code {~1}}）。見 {@link #originalOf}。 */
+    private static final java.util.regex.Pattern NUMBERED =
+            java.util.regex.Pattern.compile("\\{~\\d+}");
+
+    /**
+     * 鍵本身帶圖示的物品名稱：拿掉圖示的樣子 → 語料的鍵。
+     *
+     * <p>附上去的原文不帶圖示（見 {@link #withOriginal}），所以括號裡的字
+     * 「{@code Arsonist's Tome of Allegiance}」本身<b>不是</b>語料的鍵，
+     * {@link #isAppendedOriginal} 要靠這一份才認得出那是我們自己附的——認不出來的話，
+     * 括號裡的英文會被詞表換掉，太長時也不會挪到下一行。
+     */
+    private final Map<String, String> bareNames = new ConcurrentHashMap<>();
 
     /**
      * 「譯名 + 原文」附在後面的那段「{@code  (原文)}」從哪裡開始。
@@ -2054,17 +2154,28 @@ public final class TranslationStore {
      * 只有裝備檔用到的名字（或 {@code Shiny} + 這種名字）。敘述本來就帶的括號
      * ——「{@code Mask (Courage)}」——括號裡不是裝備名，照樣換。
      *
+     * <p>括號後面只剩圖示的也算結尾：鍵本身帶圖示的名字，原文接在結尾的圖示
+     * <b>之前</b>（見 {@link #withOriginal}），整句是
+     * 「{@code {#}戀火效忠書卷 (Arsonist's Tome of Allegiance){#}}」。
+     *
      * @return 「{@code  (}」的索引；沒有附原文時回傳 {@code -1}
      */
     public int appendedOriginalAt(String text) {
-        if (!namesWithOriginal || text == null || !text.endsWith(")")) {
+        if (!namesWithOriginal || text == null) {
             return -1;
         }
-        int at = text.lastIndexOf(" (");
+        int end = text.length();
+        while (end >= ICON.length() && text.startsWith(ICON, end - ICON.length())) {
+            end -= ICON.length();
+        }
+        if (end == 0 || text.charAt(end - 1) != ')') {
+            return -1;
+        }
+        int at = text.lastIndexOf(" (", end);
         if (at < 0) {
             return -1;
         }
-        return isAppendedOriginal(text.substring(at + 2, text.length() - 1),
+        return isAppendedOriginal(text.substring(at + 2, end - 1),
                 text.substring(0, at)) ? at : -1;
     }
 
@@ -2127,6 +2238,19 @@ public final class TranslationStore {
     /** 括號裡這個字是<b>我們自己附上去的原文</b>嗎。見 {@link #appendedOriginalAt}。 */
     private boolean isAppendedOriginal(String inner) {
         if (getsOriginal(inner)) {
+            return true;
+        }
+        // 鍵裡帶佔位符的名字，附上去的那一份跟鍵不是同一個字。見 #withOriginal。
+        // 畫之前數值是指名的 {~1}；畫好之後（NameWrap 看到的）已經填成數字了。
+        String templated = inner.indexOf('{') >= 0
+                ? NUMBERED.matcher(inner).replaceAll(java.util.regex.Matcher.quoteReplacement(
+                        GlyphSplitter.NUMBER_PLACEHOLDER))
+                : GlyphSplitter.parametrizeNumbers(inner);
+        if (!templated.equals(inner) && getsOriginal(templated)) {
+            return true;
+        }
+        String wrapped = bareNames.get(templated);
+        if (wrapped != null && getsOriginal(wrapped)) {
             return true;
         }
         // Shiny 的原文是「Shiny X」，語料裡不會有這種鍵，見 #shiny
