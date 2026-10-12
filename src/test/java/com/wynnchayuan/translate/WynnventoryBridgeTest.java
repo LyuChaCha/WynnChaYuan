@@ -49,12 +49,12 @@ public final class WynnventoryBridgeTest {
         Files.writeString(dir.resolve("gear-weapon.json"), """
                 {"_meta": {"gearNames": true},
                  "entries": {
-                   "w1": {"src": "Oak Wood Dagger", "dst": "橡木匕首", "role": "name"}
+                   "w1": {"src": "Oak Wood Dagger", "dst": "橡木匕首", "role": "name"},
+                   "a1": {"src": "Aspect of the Trampling Hooves", "dst": "踐踏之蹄意象", "role": "name"}
                  }}
                 """, StandardCharsets.UTF_8);
         Files.writeString(dir.resolve("misc.json"), """
                 {"Walk Speed": "移動速度",
-                 "Aspect of the Trampling Hooves": "踐踏之蹄意象",
                  "Lowest:": "不該用到這一條"}
                 """, StandardCharsets.UTF_8);
         Files.writeString(dir.resolve("scoped").resolve("wynnventory.json"), """
@@ -127,6 +127,29 @@ public final class WynnventoryBridgeTest {
         check("數字開頭的不查（實際 " + WynnventoryBridge.piece(store, "12 Lowest:") + "）",
                 WynnventoryBridge.piece(store, "12 Lowest:") == null);
         check("已經是譯文的不查", WynnventoryBridge.piece(store, "最低: ") == null);
+
+        // ---- ★ 譯名加原文：原文自己一行 ----
+        // 意象的英文名很長，「譯名 (原文)」會把整個框撐寬（使用者 2026-10-12 的截圖）
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.BOTH);
+        List<Component> both = WynnventoryBridge.lines(store, box);
+        check("★ 譯名加原文：意象那一行拆成兩行、物品名那一行也是（實際 " + both.size() + " 行）",
+                both.size() == box.size() + 2);
+        check("★ 第一行只剩譯名，圓點與圖示留在前面——跟只顯示譯名時一模一樣（實際 "
+                        + both.get(7).getString() + "）",
+                out.get(6).getString().equals(both.get(7).getString()));
+        check("★ 原文在下一行、往內縮、帶括號（實際 [" + both.get(8).getString() + "]）",
+                both.get(8).getString().startsWith(" ")
+                        && "(Aspect of the Trampling Hooves)".equals(both.get(8).getString().strip()));
+        check("★ 原文那一行跟名字同一個顏色", colours(both.get(8)).equals(colours(box.get(6))));
+        check("★ 物品名：譯名一行、原文一行（實際 " + both.get(1).getString() + "／"
+                        + both.get(2).getString().strip() + "）",
+                "橡木匕首".equals(both.get(1).getString())
+                        && "(Oak Wood Dagger)".equals(both.get(2).getString().strip()));
+        check("★ 行裡本來就有的括號不拆（實際 " + both.get(4).getString() + "）",
+                both.get(4).getString().endsWith("(+3 EB)"));
+        check("沒附原文的行照舊是同一個物件", both.get(3) == box.get(2));
+        store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.ON);
+        check("只顯示譯名時行數不變", WynnventoryBridge.lines(store, box).size() == box.size());
 
         // 關掉物品名稱的人：價格框的物品名也留原文
         store.setNameMode(com.wynnchayuan.CollectorConfig.ItemNames.OFF);
