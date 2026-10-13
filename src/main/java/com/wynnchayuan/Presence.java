@@ -499,8 +499,35 @@ public final class Presence {
                     + (answer.length() > 120 ? answer.substring(0, 120) : answer);
         }
         token = JsonParser.parseString(answer).getAsJsonObject().get("token").getAsString();
+        member = memberOf(answer);
         lastProblem = null;
         return null;
+    }
+
+    /**
+     * 登記站說這個人上傳有沒有成員的待遇（GIF、20 MB）。
+     *
+     * <p>名單上的成員模組自己看得出來（{@code credits.json}）；這個旗標是給<b>特別名單</b>的——
+     * 開發者在管理頁手動加的 UUID，不在 {@code credits.json} 上、沒有葉子，只有登記站知道
+     * （使用者 2026-10-13）。登入之前不知道，當成沒有。
+     */
+    private static volatile boolean member;
+
+    /** 見 {@link #member}。登記站會再擋一次，那一次才算數。 */
+    public static boolean member() {
+        return member;
+    }
+
+    /** 登入的回覆裡有沒有 {@code "member": true}。舊的登記站沒有這一欄，當成沒有。 */
+    static boolean memberOf(String answer) {
+        try {
+            JsonObject root = JsonParser.parseString(answer).getAsJsonObject();
+            return root.has("member") && root.get("member").isJsonPrimitive()
+                    && root.get("member").getAsJsonPrimitive().isBoolean()
+                    && root.get("member").getAsBoolean();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /**
