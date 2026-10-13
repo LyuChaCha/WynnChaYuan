@@ -256,6 +256,70 @@ public final class PageNamesTest {
         check("不是名稱的字照樣翻",
                 otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
 
+        // ---- ★ 清單與卡片要是同一個名字（使用者 2026-10-13 的截圖） ----
+        // 內容書左邊那一列是「燃燒大地」、右邊那張卡是「焦土 [洞窟]」：裸名 Scorched Earth
+        // 照一般的查表對到弓箭手的技能。譯名從語料讀，不寫死（術語統一會改它）。
+        store.setPageNameMode(ItemNames.ON);
+        for (String clash : new String[] {"Scorched Earth", "Dust Bowl"}) {
+            String cardRow = misc.has(clash + " [Cave]") ? misc.get(clash + " [Cave]").getAsString() : "";
+            String cardName = cardRow.contains(" [") ? cardRow.substring(0, cardRow.lastIndexOf(" [")) : "";
+            check("前提：語料有 " + clash + " 的洞窟卡（" + cardRow + "）", !cardName.isEmpty() && !cardName.equals(clash));
+            if (cardName.isEmpty()) {
+                continue;
+            }
+            StyledText clashRow = StyledText.fromComponent(Component.literal(clash).withStyle(NAME));
+            WynntilsText.contentScreen = () -> false;
+            String elsewhere = plain(WynntilsText.screenText(clashRow, config, store));
+            check("前提：" + clash + " 照一般的查表拿到的是別的東西（" + elsewhere + "）", !cardName.equals(elsewhere));
+            check("卡片的名字查得到（" + store.pageTitleName(clash) + "）", cardName.equals(store.pageTitleName(clash)));
+            WynntilsText.contentScreen = () -> true;
+            StyledText shown = WynntilsText.screenText(clashRow, config, store);
+            check("★ 內容書的清單跟卡片同一個名字：" + clash + "（實際 " + plain(shown) + "）", cardName.equals(plain(shown)));
+            net.minecraft.network.chat.TextColor[] colour = {null};
+            shown.getComponent().visit((style, part) -> {
+                if (!part.isEmpty() && colour[0] == null) {
+                    colour[0] = style.getColor();
+                }
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+            check("★ 顏色照原本那一列", NAME.getColor() != null && NAME.getColor().equals(colour[0]));
+            store.setPageNameMode(ItemNames.BOTH);
+            check("★ 譯名加原文：附的是原文，名字還是卡片那一個（實際 "
+                            + plain(WynntilsText.screenText(clashRow, config, store)) + "）",
+                    (cardName + " (" + clash + ")").equals(plain(WynntilsText.screenText(clashRow, config, store))));
+            store.setPageNameMode(ItemNames.OFF);
+            check("★ 保留原文：原樣交回", WynntilsText.screenText(clashRow, config, store) == clashRow);
+            store.setPageNameMode(ItemNames.ON);
+            WynntilsText.contentScreen = () -> false;
+            check("★ 離開內容書：同一個字串回到一般的查表，不吃到剛剛的快取（實際 "
+                            + plain(WynntilsText.screenText(clashRow, config, store)) + "）",
+                    elsewhere.equals(plain(WynntilsText.screenText(clashRow, config, store))));
+            String header = WynntilsText.splitHeader("Cave - " + clash, store);
+            check("★ 追蹤欄的標題也是卡片那一個名字（實際 " + header + "）",
+                    header != null && header.endsWith(" - " + cardName));
+        }
+        WynntilsText.contentScreen = () -> true;
+        check("本來就一致的名字照舊（實際 " + plain(WynntilsText.screenText(row, config, store)) + "）",
+                local.equals(plain(WynntilsText.screenText(row, config, store))));
+        check("不是內容名稱的字照舊", otherOn.equals(plain(WynntilsText.screenText(other, config, store))));
+        check("語料沒有這張卡的名字：沒有答案", store.pageTitleName("Can be explored") == null
+                && store.pageTitleName(null) == null);
+        // 同一個名字兩種類型、兩種譯名：光看名字分不出來，不硬挑
+        {
+            Path two = Files.createTempDirectory("wcy-pagetitles");
+            Files.writeString(two.resolve("misc.json"), "{\"Taproot [Quest]\": \"甲 [任務]\","
+                    + " \"Taproot [World Discovery]\": \"乙 [世界探索]\", \"Same [Quest]\": \"丙 [任務]\","
+                    + " \"Same [Cave]\": \"丙 [洞窟]\", \"Plain [Cave]\": \"Plain [洞窟]\","
+                    + " \"Blank [Cave]\": \"\"}", StandardCharsets.UTF_8);
+            TranslationStore small = new TranslationStore();
+            small.loadAll(two);
+            check("★ 兩種類型兩種譯名的不挑", small.pageTitleName("Taproot") == null);
+            check("兩種類型同一個譯名的照用", "丙".equals(small.pageTitleName("Same")));
+            check("名字還是原文、或譯文空白的不算", small.pageTitleName("Plain") == null
+                    && small.pageTitleName("Blank") == null);
+        }
+        WynntilsText.contentScreen = () -> false;
+
         // ---- 設定存得住 ----
         check("預設是譯名", config.pageNames() == ItemNames.ON);
         config.cyclePageNames(1);
