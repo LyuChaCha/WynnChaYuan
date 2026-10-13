@@ -216,6 +216,32 @@ public final class Capes {
                 || (self && localKey() != null);
     }
 
+    /**
+     * 自己身上穿哪一件：資料夾裡的預覽圖，還是登記站上的那一件。
+     *
+     * <p>原本預覽圖一律優先（它是「正在改的那一張」）。但登記站上的那一件現在也可能是後來才
+     * 換的——在網站的披風一覽按了「穿上這件」或「復原」（使用者 2026-10-13）——那時候別人
+     * 看到的已經換了，自己卻還穿著資料夾裡的舊圖。所以改成<b>誰比較新就穿誰</b>：預覽圖的
+     * 時間是檔案最後修改的時間，登記站那一件的版本就是它換上的時間。改了預覽圖（還沒上傳）
+     * 是它比較新，照舊先看到它；之後在網站換了一件，就是那一件比較新。
+     *
+     * @param local    預覽圖的鍵（{@code local:檔名:修改時間}）；沒有是 {@code null}
+     * @param uploaded 登記站那一件的鍵；沒有是 {@code null}
+     * @param version  登記站那一件的版本（換上的時間，毫秒）
+     */
+    static String ownKey(String local, String uploaded, long version) {
+        if (local == null || uploaded == null) {
+            return local != null ? local : uploaded;
+        }
+        long edited;
+        try {
+            edited = Long.parseLong(local.substring(local.lastIndexOf(':') + 1));
+        } catch (NumberFormatException e) {
+            return local;                  // 看不懂時間就照舊：預覽圖優先
+        }
+        return version > edited ? uploaded : local;
+    }
+
     /** 上傳的披風在這裡的鍵：代碼加版本，換了一件鍵就不同。 */
     private static String uploadedKey(java.util.UUID uuid) {
         long version = Presence.capeVersion(uuid);
@@ -237,11 +263,8 @@ public final class Capes {
             if (!config.ownCape()) {
                 return null;
             }
-            // 資料夾裡的預覽圖最優先：那是正在改的那一張
-            key = localKey();
-            if (key == null) {
-                key = uploadedKey(uuid);
-            }
+            // 資料夾裡的預覽圖與登記站上的那一件：誰比較新就穿誰（見 ownKey）
+            key = ownKey(localKey(), uploadedKey(uuid), Presence.capeVersion(uuid));
             if (key == null) {
                 key = registered(account);
             }
