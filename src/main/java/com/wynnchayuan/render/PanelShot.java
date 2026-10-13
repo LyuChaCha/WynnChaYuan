@@ -214,7 +214,7 @@ public final class PanelShot {
         // 先在收到按鍵的當下說一聲，後面每一步失敗也各自說——
         // 這樣使用者回報「停在哪一句」就等於告訴我卡在哪一步。
         log("request：收到，準備拍");
-        tell(Component.literal("拍照中…").withStyle(ChatFormatting.GRAY));
+        tell(Component.literal(com.wynnchayuan.client.T.s("shot.taking")).withStyle(ChatFormatting.GRAY));
     }
 
     /**
@@ -432,7 +432,7 @@ public final class PanelShot {
             try (NativeImage image = full) {
                 cropped = crop(image, px, py, pw, ph);
             } catch (Exception e) {
-                tell(Component.literal("截圖失敗：" + e.getMessage())
+                tell(Component.literal(com.wynnchayuan.client.T.s("shot.capture_failed", e.getMessage()))
                         .withStyle(ChatFormatting.RED));
                 return;
             }
@@ -446,8 +446,8 @@ public final class PanelShot {
                     // 先前這裡沒有退路：面板開失敗＝什麼都沒發生。
                     com.wynnchayuan.translate.ErrorDebug.note(
                             "shot.screen", name, t);
-                    tell(Component.literal("面板開不起來（" + t.getClass()
-                            .getSimpleName() + "），改成直接存檔")
+                    tell(Component.literal(com.wynnchayuan.client.T.s("shot.panel_failed",
+                            t.getClass().getSimpleName()))
                             .withStyle(ChatFormatting.YELLOW));
                     save(cropped, name);
                 }
@@ -488,7 +488,7 @@ public final class PanelShot {
             shot.writeToFile(file);
             tell(saved(file));
         } catch (Exception e) {
-            tell(Component.literal("截圖存檔失敗：" + e.getMessage())
+            tell(Component.literal(com.wynnchayuan.client.T.s("shot.save_failed", e.getMessage()))
                     .withStyle(ChatFormatting.RED));
         }
     }
@@ -509,7 +509,7 @@ public final class PanelShot {
     public static Component saved(Path file) {
         Path abs = file.toAbsolutePath();
         Path dir = abs.getParent();
-        return Component.literal("已存下譯文截圖：")
+        return Component.literal(com.wynnchayuan.client.T.s("shot.saved"))
                 .withStyle(ChatFormatting.GREEN)
                 .append(Component.literal(shown(abs))
                         .withStyle(Style.EMPTY
@@ -518,9 +518,9 @@ public final class PanelShot {
                                 .withClickEvent(new ClickEvent.OpenFile(abs.toString()))
                                 .withHoverEvent(new net.minecraft.network.chat.HoverEvent
                                         .ShowText(Component.literal(
-                                                "點擊開啟" + System.lineSeparator()
+                                                com.wynnchayuan.client.T.s("shot.click_open") + System.lineSeparator()
                                                 + abs)))))
-                .append(Component.literal("  [開啟資料夾]")
+                .append(Component.literal("  " + com.wynnchayuan.client.T.s("shot.open_folder"))
                         .withStyle(Style.EMPTY
                                 .withColor(ChatFormatting.GOLD)
                                 .withClickEvent(new ClickEvent.OpenFile(

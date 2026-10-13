@@ -223,7 +223,7 @@ public final class TranslationStore {
     }
 
     /** 上一次載入的結果，供設定面板顯示。 */
-    private volatile String lastResult = "尚未載入";
+    private volatile String lastResult;
 
     /**
      * 讀取一個目錄下的所有 .json。
@@ -391,10 +391,10 @@ public final class TranslationStore {
         if (!Files.isDirectory(dir)) {
             try {
                 Files.createDirectories(dir);
-                lastResult = "已建立譯文資料夾，把 json 放進去再按重新載入";
+                lastResult = com.wynnchayuan.client.T.s("status.folder_created");
                 System.out.println("[WynnChaYuan] 譯文資料夾不存在，已建立：" + dir);
             } catch (Exception e) {
-                lastResult = "無法建立譯文資料夾：" + e.getMessage();
+                lastResult = com.wynnchayuan.client.T.s("status.folder_failed", e.getMessage());
                 System.err.println("[WynnChaYuan] 建立譯文資料夾失敗 " + dir + ": " + e.getMessage());
             }
             return;
@@ -427,7 +427,7 @@ public final class TranslationStore {
             wanted.forEach(this::load);
             loadScoped(dir);
         } catch (Exception e) {
-            lastResult = "讀取失敗：" + e.getMessage();
+            lastResult = com.wynnchayuan.client.T.s("status.read_failed", e.getMessage());
             System.err.println("[WynnChaYuan] 讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
         }
     }
@@ -489,15 +489,15 @@ public final class TranslationStore {
             return;
         }
         if (loadedFiles == 0) {
-            lastResult = "資料夾裡沒有 .json 檔案";
+            lastResult = com.wynnchayuan.client.T.s("status.no_json");
             System.out.println("[WynnChaYuan] " + dir + " 裡沒有譯文檔");
         } else if (entries.isEmpty()) {
             // 檔案讀到了但一條也沒有 —— 幾乎都是 dst 全部留空
-            lastResult = "讀了 " + loadedFiles + " 個檔案，但沒有任何已填寫的 dst";
-            System.out.println("[WynnChaYuan] " + lastResult);
+            lastResult = com.wynnchayuan.client.T.s("status.no_dst", loadedFiles);
+            System.out.println("[WynnChaYuan] 讀了 " + loadedFiles + " 個檔案，但沒有任何已填寫的 dst");
         } else {
-            lastResult = "已載入 " + entries.size() + " 條譯文（" + loadedFiles + " 個檔案）";
-            System.out.println("[WynnChaYuan] " + lastResult);
+            lastResult = com.wynnchayuan.client.T.s("status.loaded", entries.size(), loadedFiles);
+            System.out.println("[WynnChaYuan] 已載入 " + entries.size() + " 條譯文（" + loadedFiles + " 個檔案）");
         }
     }
 
@@ -509,7 +509,7 @@ public final class TranslationStore {
 
     /** 上一次載入的人話結果，直接顯示給使用者看。 */
     public String lastResult() {
-        return lastResult;
+        return lastResult != null ? lastResult : com.wynnchayuan.client.T.s("status.not_loaded");
     }
 
     private void load(Path file) {

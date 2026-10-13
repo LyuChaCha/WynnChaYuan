@@ -632,8 +632,9 @@ public final class DialogueOverlay {
             // 「SHIFT 以繼續」：原文那行提示也一起被藏掉了，要補回來，
             // 否則玩家不知道這段話還沒完
             if (needsShift) {
-                int hintW = mc.font.width(SHIFT_HINT);
-                graphics.drawString(mc.font, SHIFT_HINT,
+                String hint = SHIFT_HINT.get();
+                int hintW = mc.font.width(hint);
+                graphics.drawString(mc.font, hint,
                         x + (boxW - hintW) / 2, y + bodyH + 3,
                         Colors.fade(Colors.TEXT, alpha * 0.75f));
             }
@@ -784,7 +785,7 @@ public final class DialogueOverlay {
     }
 
     private static Component speakerLine(String said) {
-        return Component.literal(said + "：").withStyle(
+        return Component.literal(com.wynnchayuan.client.T.s("dialogue.speaker", said)).withStyle(
                 net.minecraft.network.chat.Style.EMPTY
                         .withColor(SPEAKER_COLOUR).withBold(true));
     }
@@ -794,7 +795,9 @@ public final class DialogueOverlay {
 
     private static final int MAX_BOX_W = 420;
 
-    private static final String SHIFT_HINT = "SHIFT 以繼續";
+    /** 介面語言的「SHIFT 以繼續」；每次畫的時候才解析，切語言立刻生效。 */
+    private static final java.util.function.Supplier<String> SHIFT_HINT =
+            () -> com.wynnchayuan.client.T.s("dialogue.shift_hint");
 
     /**
      * 就地取代時譯文距畫面底部的高度。
